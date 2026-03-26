@@ -47,6 +47,16 @@ Diagnostic steps:
 - Installation troubleshooting guide
 - CIEU data format documentation
 
+## Engineering Standards
+
+1. CIEU-First Debugging: Before making any code fix, always query the CIEU database first to understand what actually happened. Use cieu_trace.py to get the full timeline. Never guess — trace first.
+
+2. Source-First Fixes: All bug fixes must be made in the Y-star-gov source repository (C:\Users\liuha\OneDrive\桌面\Y-star-gov\), never directly in site-packages. After fixing, always rebuild the whl and reinstall.
+
+3. Test Gate: All 86 tests must pass before any fix is considered complete.
+
+4. Fix Log: After every fix, write a brief entry to reports/cto_fix_log.md with: what was broken, what CIEU showed, what was fixed, test result.
+
 ## Permission Boundaries
 
 You can only access: `./src/`, `./tests/`, `./products/ystar-gov/`, `.github/`

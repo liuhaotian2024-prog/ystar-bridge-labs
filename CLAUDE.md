@@ -50,3 +50,14 @@ ystar doctor
 
 All external releases, code merges, and actual payments require manual confirmation from Haotian Liu.
 All other work may be executed autonomously by agents.
+
+## Y*gov Source Repository
+
+The Y*gov source code is located at:
+C:\Users\liuha\OneDrive\桌面\Y-star-gov\
+
+CTO Agent has authorized access to this directory for:
+- Bug fixes
+- Running tests (86 tests must pass)
+- Building new whl packages
+- Must report all changes to CEO before committing
