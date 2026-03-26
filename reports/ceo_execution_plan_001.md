@@ -1,5 +1,5 @@
 # CEO Execution Plan #001
-# YstarCo Q1 Goal: First Paying Enterprise Customers for Y*gov
+# Y* Bridge Labs Q1 Goal: First Paying Enterprise Customers for Y*gov
 # Date: 2026-03-26
 # Status: ACTIVE
 # Issued by: CEO Agent
@@ -168,7 +168,7 @@ Focus: Publish content, begin outbound sales, track conversions.
   - NOTE: All emails require board approval before sending
 
 #### Task CSO-003: Sales Deck (CIEU Evidence) [P1]
-- **Description**: Create a sales presentation outline that uses real CIEU audit data from YstarCo's own operations as proof points. Each slide should map a Y*gov feature to a customer pain point, with real data backing it up.
+- **Description**: Create a sales presentation outline that uses real CIEU audit data from Y* Bridge Labs's own operations as proof points. Each slide should map a Y*gov feature to a customer pain point, with real data backing it up.
 - **Deadline**: 2026-04-10
 - **Dependencies**: CTO-001 (working product), CMO-003 (whitepaper content)
 - **Output location**: `./sales/deck_outline_v1.md`
@@ -372,7 +372,7 @@ Y*gov Obligation: Created, deadline = 4320 minutes
 Target Department: CMO
 Task: CMO-001 -- Write launch blog post draft
 Description: Write 4000-word technical blog post demonstrating Y*gov
-  through YstarCo's own dogfooding story. Use real CIEU audit records
+  through Y* Bridge Labs's own dogfooding story. Use real CIEU audit records
   as evidence. Target audience: engineering leaders and compliance officers.
 Deadline: 2026-04-01 (6 days)
 Success Criteria: 4000+ words, includes CIEU examples, clear CTA
@@ -453,4 +453,4 @@ All task dispatches are logged in the CIEU audit chain.
 Next board report due: 2026-03-27.
 
 ---
-*CEO Agent | YstarCo | Governed by Y*gov*
+*CEO Agent | Y* Bridge Labs | Governed by Y*gov*

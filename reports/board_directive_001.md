@@ -1,32 +1,32 @@
-# 董事会第一号指令
-# 日期：2026-03-26
-# 发布人：Haotian Liu
+# Board Directive No. 1
+# Date: 2026-03-26
+# Issued by: Haotian Liu
 
-## 战略方向
+## Strategic Direction
 
-YstarCo 的第一个季度目标是：
-**让 Y*gov 有第一批真实的付费企业客户。**
+The first-quarter objective for Y* Bridge Labs is:
+**Acquire the first batch of real paying enterprise customers for Y*gov.**
 
-这需要三件事同时发生：
-1. 产品能被顺利安装和使用（技术可靠性）
-2. 有人知道 Y*gov 存在（市场曝光）
-3. 有人愿意为它付钱（销售验证）
+This requires three things to happen simultaneously:
+1. The product can be installed and used smoothly (technical reliability)
+2. People are aware that Y*gov exists (market exposure)
+3. People are willing to pay for it (sales validation)
 
-## CEO 的第一个任务
+## First Task for the CEO
 
-请 CEO Agent 把以上战略拆解成各部门的具体任务，
-优先级排序，分配截止时间，并启动执行。
+The CEO Agent is requested to break down the above strategy into specific tasks for each department,
+prioritize them, assign deadlines, and initiate execution.
 
-特别注意：
-- CTO 的第一优先级是修复安装问题
-- CMO 的第一优先级是写发布文章
-- CSO 的第一优先级是找到10个潜在客户
-- 所有工作都在 Y*gov 治理下执行
-- 所有 CIEU 记录都是我们的销售证据
+Special notes:
+- CTO's first priority is to fix installation issues
+- CMO's first priority is to write the launch article
+- CSO's first priority is to identify 10 potential customers
+- All work is executed under Y*gov governance
+- All CIEU records serve as our sales evidence
 
-## 汇报要求
+## Reporting Requirements
 
-CEO 每24小时向董事会汇报一次进度。
-遇到需要我决策的事情，随时汇报，不要等待。
+The CEO shall report progress to the Board every 24 hours.
+If any matter requires my decision, report immediately — do not wait.
 
-开始工作。
+Begin work.

@@ -1,16 +1,16 @@
-# YstarCo — AI Agent 驱动的一人公司
+# Y* Bridge Labs — An AI Agent-Operated Solo Company
 
-一家真实运营的一人公司，由 AI agent 团队执行所有工作，由 [Y*gov](https://github.com/liuhaotian2024-prog/Y-star-gov) 在运行时治理每一个 agent 的行为。
+A fully operational solo company where all work is executed by an AI agent team, with each agent's behavior governed at runtime by [Y*gov](https://github.com/liuhaotian2024-prog/Y-star-gov).
 
-## 运营方式
+## Operating Model
 
-- **董事会（人类）**：Haotian Liu — 制定战略、批准对外发布
-- **AI Agent 团队**：CEO / CTO / CMO / CSO / CFO — 自主执行所有日常工作
-- **治理层**：Y*gov — 实时拦截越权操作，生成不可篡改的 CIEU 审计链
+- **Board of Directors (Human)**: Haotian Liu — Sets strategy, approves external releases
+- **AI Agent Team**: CEO / CTO / CMO / CSO / CFO — Autonomously executes all day-to-day operations
+- **Governance Layer**: Y*gov — Intercepts unauthorized operations in real-time, generates immutable CIEU audit chains
 
-每一条 CIEU 审计记录都是 Y*gov 产品能力的真实证据。
+Every CIEU audit record serves as real-world evidence of Y*gov's product capabilities.
 
-## 安装 Y*gov
+## Install Y*gov
 
 ```bash
 pip install ystar
@@ -18,7 +18,7 @@ ystar hook-install
 ystar doctor
 ```
 
-## 链接
+## Links
 
-- **Y*gov 源码**：https://github.com/liuhaotian2024-prog/Y-star-gov
-- **产品文档**：[products/ystar-gov/](products/ystar-gov/)
+- **Y*gov Source Code**: https://github.com/liuhaotian2024-prog/Y-star-gov
+- **Product Documentation**: [products/ystar-gov/](products/ystar-gov/)
