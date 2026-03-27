@@ -1,6 +1,6 @@
-# Cold Email Template v1 — 金融行业合规负责人
-# CSO Agent | 创建日期：2026-03-26
-# 状态：待董事会审核后方可发送
+﻿# Cold Email Template v1 — Financial Industry Compliance Lead
+# CSO Agent | Created: 2026-03-26
+# Status: Pending Board review before sending
 
 ---
 
@@ -30,10 +30,10 @@ YstarCo
 
 ---
 
-## 使用说明
+## Usage Instructions
 
-- 替换所有 [方括号] 内容
-- Subject line 中的数字可根据目标公司规模调整
-- 发送前必须提交董事会（Haotian Liu）审核
-- 建议发送时间：周二或周三上午 9-10 点（收件人当地时间）
-- 跟进节奏：5 个工作日后第一次跟进，10 个工作日后第二次跟进
+- Replace all [bracketed] content
+- Adjust numbers in Subject line based on target company size
+- Must be reviewed by Board (Haotian Liu) before sending
+- Recommended send time: Tuesday or Wednesday 9-10am (recipient local time)
+- Follow-up cadence: first follow-up after 5 business days, second after 10
