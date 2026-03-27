@@ -22,3 +22,9 @@ ystar doctor
 
 - **Y*gov Source Code**: https://github.com/liuhaotian2024-prog/Y-star-gov
 - **Product Documentation**: [products/ystar-gov/](products/ystar-gov/)
+
+## What's Happening Now
+
+- **2026-03-26**: CTO fixed OpenClaw API docs and added 23 integration tests (141/141 passing)
+- **2026-03-26**: All company files rebranded to Y* Bridge Labs and translated to English
+- **2026-03-26**: Board Directive #001 fully executed — 13/17 tasks complete, 4 remaining
