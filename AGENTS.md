@@ -347,3 +347,47 @@ Cases serve three purposes:
 1. Write blocker to ./reports/blockers/TIMESTAMP.md
 2. Escalate to CEO Agent
 3. CEO escalates to Board if unresolved in 2 hours
+
+---
+
+## Self-Bootstrap Protocol (Y*gov Enforced)
+
+Agents may autonomously update knowledge/.
+Knowledge layer is subordinate to AGENTS.md.
+Self-bootstrapping cannot modify the constitutional layer.
+
+**Power hierarchy:**
+- Constitutional layer (highest): AGENTS.md + Y*gov contracts — cannot be modified by agents
+- Knowledge layer (self-bootstrappable): knowledge/ — agents may write, subject to constitutional layer, all writes CIEU-recorded
+- Execution layer: daily tasks — constrained by both layers above
+
+**Bootstrap mode:** B-class — agents write autonomously, audited after the fact, no Board real-time confirmation required.
+
+**Trigger:** Agent MUST bootstrap when:
+1. It lacks reliable knowledge for a task
+2. It produces an unverifiable answer
+3. Its knowledge/ files are outdated
+4. A previous answer was wrong
+
+**Process:**
+1. IDENTIFY the gap explicitly
+2. SEARCH at least 2 authoritative sources
+3. VERIFY by cross-referencing
+4. WRITE to knowledge/[role]/ with metadata:
+   - Source: [URL]
+   - Retrieved: [date]
+   - Confidence: HIGH / MEDIUM / LOW
+   - Verified-by: [second source URL]
+5. UPDATE knowledge/cases/ if gap caused failure
+6. CIEU records all writes automatically
+7. LOG to knowledge/bootstrap_log.md
+
+**Hard constraints (cannot override):**
+- NEVER modify AGENTS.md
+- NEVER modify .claude/agents/ files
+- NEVER modify past case entries
+- NEVER write content contradicting Y*gov contracts
+- NEVER claim knowledge without searching
+- LOW confidence = flag to Board, do not apply
+
+**Obligation timing:** knowledge_gap_bootstrap: 1800 seconds (30 minutes from gap detection to write completion)
