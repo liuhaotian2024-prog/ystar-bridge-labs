@@ -201,6 +201,9 @@ ystar doctor
 
 ## What's Happening Now
 
-- **2026-03-26**: CTO fixed OpenClaw API docs, 141/141 tests passing
-- **2026-03-26**: Board Directive #002 issued — org structure redesign in progress
-- **2026-03-26**: EXP-001 complete: Y*gov cuts tool calls 62%, cost 16%, time 35%
+| Date | Event | Source |
+|------|-------|--------|
+| 2026-03-26 | CTO: 141/141 tests passing, OpenClaw API fixed | [Fix Log](reports/cto_fix_log.md) |
+| 2026-03-26 | Board Directive #002: org redesign complete, AGENTS.md v2.0.0 | [AGENTS.md](AGENTS.md) |
+| 2026-03-26 | EXP-001: Y*gov cuts tool calls 62%, cost 16%, time 35% | [Full Report](reports/YstarCo_EXP_001_Controlled_Experiment_Report.md) |
+| 2026-03-26 | Company founded: Y* Bridge Labs goes public on GitHub | [README](README.md) |
