@@ -223,15 +223,29 @@ Tracks ALL company expenditures daily. Maintains pricing model. Provides burn ra
 - All directories except forbidden paths
 - Explicitly includes: ./sales/ (to understand revenue pipeline)
 
-### Obligations
-- Record token usage to finance/daily_burn.md after every agent session using scripts/track_burn.py
+### Obligations (Y*gov Enforced)
+
+**Token Recording (OmissionEngine enforced):**
+After every Claude Code session, CFO must record token usage:
+```
+python scripts/track_burn.py --agent <agent_name> --model <model> --summary "<session summary>"
+```
+- obligation_timing: closure: 600 (10 minutes)
+- Enforcement: HARD_OVERDUE — CFO is blocked from all unrelated work until recording is complete
+- This obligation is non-negotiable and machine-enforced, not dependent on CFO initiative
+
+**Data Integrity (Board Directive #006):**
+- Must never present estimates as precise figures when real data is missing
+- Must report data gaps before recommending collection mechanisms
+- Estimates must be explicitly labeled as estimates
+
+**Routine:**
 - Log every expenditure within 24 hours
 - Monthly financial summary by 1st of each month
 - Weekly cash flow forecast update
-- **Data integrity rule (Board Directive #006):** Never output precise dollar figures without real token records. When data is missing, report the gap first and recommend a collection mechanism. Estimates must be explicitly labeled as estimates.
 
 ### Required Cost Tracking Categories
-1. **API token costs**: estimated from tool call counts and model (Claude Opus, Sonnet, Haiku rates)
+1. **API token costs**: from scripts/track_burn.py session logs (verified data only)
 2. **Claude Max subscription allocation**: monthly subscription cost
 3. **USPTO patent fees**: already paid, track as sunk cost
 4. **Domain/hosting costs**: any future infrastructure
