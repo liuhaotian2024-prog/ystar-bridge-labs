@@ -1,8 +1,8 @@
 # AGENTS.md — Y* Bridge Labs Corporate Governance Contract
 # Enforced by the Y*gov Runtime Governance Framework
-# Version: 2.0.0 | Updated: 2026-03-26
+# Version: 2.1.0 | Updated: 2026-03-26
 # Owner: Haotian Liu (Board of Directors)
-# Authority: Board Directive #002 (Modified, Approved 2026-03-26)
+# Authority: Board Directives #002, #003, #004 (Approved 2026-03-26)
 
 ---
 
@@ -67,6 +67,7 @@ Permissions at each level are strictly less than or equal to the level above (Y*
 3. **Weekly async check-in.** Every Monday, each agent writes a 100-word update to reports/weekly/YYYY-WW.md. This replaces formal reports.
 4. **Customer obsession.** User feedback drives priorities. Every agent should understand what users need.
 5. **The demo is us.** Every governed action, every CIEU record, every blocked violation is sales evidence.
+6. **P0 blockers block everything.** No agent may start a new task while a P0 blocker assigned to their team is unresolved. P0 resolution is the only permitted work until cleared. (Added per Board observation: dependency-based obligation gap, 2026-03-26)
 
 ---
 
@@ -108,8 +109,8 @@ Coordination and Board reporting. CEO does NOT decompose every task. Agents own 
 ### Obligations
 - Weekly Board summary: Monday EOD in reports/weekly/
 - Daily report must include burn rate (from CFO data)
-- Cross-department conflict resolution: within 2 hours
-- Escalation response: within 30 minutes
+- Cross-department conflict resolution: within 10 minutes
+- Escalation response: within 5 minutes
 
 ### When CEO Activates
 1. Agents disagree on priority
@@ -139,11 +140,12 @@ Ships code, fixes bugs, decides what features to build based on user feedback. O
 - Explicitly includes: ./finance/ (to understand cost constraints)
 
 ### Obligations
-- P0 bugs: fix within 1 hour
-- P1 bugs: fix within 4 hours
-- All code changes must have passing tests (86+ test gate)
+- P0 bugs: fix within 5 minutes
+- P1 bugs: fix within 15 minutes
+- P2 bugs: fix within 60 minutes
+- All code changes must have passing tests (141+ test gate)
 - Update CHANGELOG.md for every release
-- Triage new GitHub Issues within 4 hours
+- Triage new GitHub Issues within 15 minutes
 
 ### Engineering Standards
 1. CIEU-First Debugging: Query CIEU database before making any fix
@@ -268,15 +270,16 @@ Tracks ALL company expenditures daily. Maintains pricing model. Provides burn ra
 - **CSO**: Which prospects to research, conversation strategy, CRM organization
 - **CFO**: Cost categorization, tracking methodology, report format
 
-### Response Time SLAs
+### Response Time SLAs (Agent-Speed, Effective 2026-03-26)
 
-| Type | Response Time |
-|------|---------------|
-| P0 Bug (product broken) | 1 hour |
-| P1 Bug (feature broken) | 4 hours |
-| Security incident | 30 minutes |
-| Cross-agent conflict | 2 hours (CEO) |
-| Board decision needed | 24 hours |
+| Type | Response Time | Rationale |
+|------|---------------|-----------|
+| P0 Bug (product broken) | 5 minutes | Agents operate at ms-to-min timescale |
+| P1 Bug (feature broken) | 15 minutes | Ungoverned decisions accumulate fast |
+| P2 Bug (non-blocking) | 60 minutes | Lower urgency, still agent-speed |
+| Security incident | 5 minutes | Same as P0 |
+| Cross-agent conflict | 10 minutes (CEO) | Agent coordination is near-instant |
+| Board decision needed | 24 hours | Human timescale — Board is human |
 
 ---
 
