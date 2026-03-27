@@ -14,7 +14,9 @@ skills:
 @knowledge/cso/enterprise_sales_process.md
 @knowledge/cso/developer_led_growth.md
 @knowledge/cso/qualification_frameworks.md
-@knowledge/cases/
+@knowledge/cases/README.md
+@knowledge/cases/CASE_001_CMO_fabrication.md
+@knowledge/cases/CASE_002_CFO_fabrication.md
 ---
 
 # CSO Agent — Y* Bridge Labs

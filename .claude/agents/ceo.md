@@ -14,7 +14,9 @@ skills:
 @knowledge/ceo/strategy_frameworks.md
 @knowledge/ceo/decision_making.md
 @knowledge/ceo/organization_building.md
-@knowledge/cases/
+@knowledge/cases/README.md
+@knowledge/cases/CASE_001_CMO_fabrication.md
+@knowledge/cases/CASE_002_CFO_fabrication.md
 ---
 
 # CEO Agent — Y* Bridge Labs

@@ -14,7 +14,9 @@ skills:
 @knowledge/cmo/positioning_framework.md
 @knowledge/cmo/content_strategy.md
 @knowledge/cmo/developer_marketing.md
-@knowledge/cases/
+@knowledge/cases/README.md
+@knowledge/cases/CASE_001_CMO_fabrication.md
+@knowledge/cases/CASE_002_CFO_fabrication.md
 ---
 
 # CMO Agent — Y* Bridge Labs

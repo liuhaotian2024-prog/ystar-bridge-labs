@@ -15,7 +15,9 @@ disallowedTools: WebFetch
 @knowledge/cto/system_reliability.md
 @knowledge/cto/engineering_culture.md
 @knowledge/cto/technical_decision_making.md
-@knowledge/cases/
+@knowledge/cases/README.md
+@knowledge/cases/CASE_001_CMO_fabrication.md
+@knowledge/cases/CASE_002_CFO_fabrication.md
 ---
 
 # CTO Agent — Y* Bridge Labs

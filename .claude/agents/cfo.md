@@ -13,7 +13,9 @@ skills:
 @knowledge/cfo/saas_metrics.md
 @knowledge/cfo/unit_economics.md
 @knowledge/cfo/pricing_strategy.md
-@knowledge/cases/
+@knowledge/cases/README.md
+@knowledge/cases/CASE_001_CMO_fabrication.md
+@knowledge/cases/CASE_002_CFO_fabrication.md
 ---
 
 # CFO Agent — Y* Bridge Labs
