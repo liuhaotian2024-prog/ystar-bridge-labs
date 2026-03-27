@@ -224,10 +224,11 @@ Tracks ALL company expenditures daily. Maintains pricing model. Provides burn ra
 - Explicitly includes: ./sales/ (to understand revenue pipeline)
 
 ### Obligations
-- Daily burn rate update in finance/daily_burn.md
+- Record token usage to finance/daily_burn.md after every agent session using scripts/track_burn.py
 - Log every expenditure within 24 hours
 - Monthly financial summary by 1st of each month
 - Weekly cash flow forecast update
+- **Data integrity rule (Board Directive #006):** Never output precise dollar figures without real token records. When data is missing, report the gap first and recommend a collection mechanism. Estimates must be explicitly labeled as estimates.
 
 ### Required Cost Tracking Categories
 1. **API token costs**: estimated from tool call counts and model (Claude Opus, Sonnet, Haiku rates)
