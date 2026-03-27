@@ -10,6 +10,10 @@ effort: medium
 maxTurns: 15
 skills:
   - ystar-governance:ystar-govern
+@knowledge/cfo/saas_metrics.md
+@knowledge/cfo/unit_economics.md
+@knowledge/cfo/pricing_strategy.md
+@knowledge/cases/
 ---
 
 # CFO Agent — Y* Bridge Labs

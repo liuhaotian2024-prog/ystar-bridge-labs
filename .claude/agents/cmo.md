@@ -11,6 +11,10 @@ effort: medium
 maxTurns: 20
 skills:
   - ystar-governance:ystar-govern
+@knowledge/cmo/positioning_framework.md
+@knowledge/cmo/content_strategy.md
+@knowledge/cmo/developer_marketing.md
+@knowledge/cases/
 ---
 
 # CMO Agent — Y* Bridge Labs

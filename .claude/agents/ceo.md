@@ -11,6 +11,10 @@ effort: high
 maxTurns: 30
 skills:
   - ystar-governance:ystar-govern
+@knowledge/ceo/strategy_frameworks.md
+@knowledge/ceo/decision_making.md
+@knowledge/ceo/organization_building.md
+@knowledge/cases/
 ---
 
 # CEO Agent — Y* Bridge Labs

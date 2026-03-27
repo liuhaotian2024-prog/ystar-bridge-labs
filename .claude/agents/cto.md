@@ -12,6 +12,10 @@ maxTurns: 40
 skills:
   - ystar-governance:ystar-govern
 disallowedTools: WebFetch
+@knowledge/cto/system_reliability.md
+@knowledge/cto/engineering_culture.md
+@knowledge/cto/technical_decision_making.md
+@knowledge/cases/
 ---
 
 # CTO Agent — Y* Bridge Labs

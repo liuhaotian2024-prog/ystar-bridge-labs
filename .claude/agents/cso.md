@@ -11,6 +11,10 @@ effort: medium
 maxTurns: 20
 skills:
   - ystar-governance:ystar-govern
+@knowledge/cso/enterprise_sales_process.md
+@knowledge/cso/developer_led_growth.md
+@knowledge/cso/qualification_frameworks.md
+@knowledge/cases/
 ---
 
 # CSO Agent — Y* Bridge Labs

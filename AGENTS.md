@@ -314,6 +314,27 @@ Run `ystar report` to see the audit trail.
 
 ---
 
+## Case Accumulation Protocol
+
+After every significant task — especially failures:
+1. Document what happened in knowledge/cases/
+2. Format: CASE_XXX_[agent]_[brief_description].md
+3. Structure:
+   - What was the task
+   - What decision was made
+   - What framework was applied (or should have been)
+   - What was the outcome
+   - What to do differently next time
+4. Update knowledge/cases/README.md index
+5. This is not optional — cases are the company's most valuable long-term asset
+
+Cases serve three purposes:
+- **Immediate:** Prevent the same mistake from happening twice
+- **Medium-term:** Build institutional knowledge that survives context window limits
+- **Long-term:** Training data for fine-tuning future agent models
+
+---
+
 ## Emergency Procedures
 
 ### If an agent detects credential exposure:
