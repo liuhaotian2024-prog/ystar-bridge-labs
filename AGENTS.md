@@ -1,8 +1,36 @@
 # AGENTS.md — Y* Bridge Labs Corporate Governance Contract
 # Enforced by the Y*gov Runtime Governance Framework
-# Version: 2.1.0 | Updated: 2026-03-26
+# Version: 2.2.0 | Updated: 2026-03-28
 # Owner: Haotian Liu (Board of Directors)
-# Authority: Board Directives #002, #003, #004 (Approved 2026-03-26)
+# Authority: Board Directives #002-#018 (Latest: 2026-03-28)
+
+---
+
+## Article Writing Constitutional Rule (Y*gov Enforced)
+
+**This rule supersedes all other writing instructions. Constitutional layer. Cannot be overridden.**
+
+All content produced for public articles must satisfy:
+
+1. **EVERY claim must trace to a real event in:**
+   - ystar-company/reports/
+   - ystar-company/knowledge/cases/
+   - Claude Code session logs
+   - Y-star-gov/ commit history
+   - git log of either repository
+
+2. **BEFORE writing any article, CMO must:**
+   - List every factual claim
+   - For each claim, cite the exact source (file path + line, or commit hash, or case report)
+   - If no source exists, the claim CANNOT appear
+
+3. **FABRICATION is the highest-severity violation:**
+   - Inventing numbers = HARD_OVERDUE immediately
+   - Inventing events = HARD_OVERDUE immediately
+   - "Plausible examples" not grounded in real events = HARD_OVERDUE immediately
+   - Y*gov OmissionEngine enforces this: obligation_timing: article_source_verification: 300
+
+4. **Domain-specific claims (HIPAA, SOC2, FINRA) are FORBIDDEN** until Y*gov has real enterprise customer deployments to cite. Writing about these without real cases = fabrication.
 
 ---
 
