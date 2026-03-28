@@ -628,7 +628,7 @@ In Experiment YstarCo-EXP-001 (ystar-company/reports/YstarCo_EXP_001_Controlled_
 
 Quote from report (lines 139-142):
 
-> "CTO agent in遭遇阻碍后，连续5次用不同方式尝试 pip install... 没有义务超时机制：CTO 用66次工具调用反复尝试同一件事，没有任何系统级别的提醒或拦截。"
+> "After encountering an obstacle, the CTO agent repeatedly tried pip install in 5 different ways... No obligation timeout mechanism: CTO used 66 tool calls attempting the same task repeatedly without any system-level alert or interception."
 
 With OmissionEngine active (Section 4 of same report):
 
@@ -938,18 +938,18 @@ A computer-implemented method for verifying AI agent actions against governance 
 
 (c) evaluating said proposed action against said intent contract using a deterministic checking function to produce a check result indicating whether said action satisfies said constraints;
 
-(d) computing an ideal contract hash from said intent contract;
+(d) computing a machine-verifiable representation of said intent contract, said representation uniquely identifying said intent contract;
 
 (e) writing an audit record to an immutable audit store before executing said action, said audit record comprising:
     (i) a globally-ordered sequence number,
-    (ii) said ideal contract hash as a separate field written by a governance kernel and not modifiable by said AI agent,
+    (ii) said machine-verifiable representation as a separate field written by a governance kernel and not modifiable by said AI agent,
     (iii) said check result indicating pass or violation,
     (iv) said parameters of said proposed action,
     (v) a decision indicating whether said action is allowed or denied;
 
 (f) executing said action only if said check result indicates said action satisfies said constraints;
 
-whereby said ideal contract hash field enables an auditor to verify that said action was evaluated against said intent contract without re-executing said checking function, and whereby absence of said ideal contract hash field in an audit record indicates said action bypassed governance.
+whereby said machine-verifiable representation enables an auditor to verify that said action was evaluated against said intent contract without re-executing said checking function, and whereby absence of said machine-verifiable representation in an audit record indicates said action bypassed governance.
 
 **Claim 2: Method for Action-Triggered Obligation Scanning in AI Agent Governance**
 
@@ -1008,7 +1008,7 @@ whereby uncertainty of natural language understanding is separated from determin
 
 ### Dependent Claims
 
-**Claim 4 (depends on Claim 1):** The method of Claim 1, wherein said ideal contract hash is computed using SHA-256 cryptographic hash function applied to a JSON serialization of said intent contract.
+**Claim 4 (depends on Claim 1):** The method of Claim 1, wherein said machine-verifiable representation is a SHA-256 cryptographic hash applied to a JSON serialization of said intent contract.
 
 **Claim 5 (depends on Claim 1):** The method of Claim 1, further comprising:
 
@@ -1069,6 +1069,22 @@ whereby said user receives actionable feedback to improve said governance text b
 (b) assigning a lower confidence score to said structured contract representation produced by said regex-based parser compared to said large language model;
 
 whereby said method degrades gracefully when said large language model is unavailable.
+
+### Claim 13 (Independent)
+
+A computer-implemented method for governing autonomous agent actions in any computational system, comprising:
+
+(a) receiving a proposed action from an autonomous agent operating in any computational environment, including software-only environments, cyber-physical systems, robotic control systems, autonomous vehicle control systems, or industrial automation systems;
+
+(b) loading a behavioral specification defining constraints for said proposed action;
+
+(c) computing a machine-verifiable representation of said behavioral specification before said proposed action executes;
+
+(d) writing said machine-verifiable representation to an immutable audit record by a governance layer external to said autonomous agent, said governance layer operating independently of said agent's own execution context;
+
+(e) executing said proposed action only if said proposed action satisfies said behavioral specification;
+
+whereby said method applies to any autonomous agent regardless of whether said agent operates in a software environment, controls physical hardware, or operates in a combined cyber-physical system, and whereby said machine-verifiable representation enables independent verification that said proposed action was evaluated against said behavioral specification prior to execution.
 
 ---
 
@@ -1371,7 +1387,7 @@ When asked for cost breakdown by agent task type, CFO agent (without per-task to
 
 **Problem:** No per-task logging existed. Numbers were plausible estimates presented as measurements. Financial decisions could be made on fabricated data.
 
-**Solution with data provenance tracking:** Future Y*gov enhancement (roadmap item, CASE-002 report lines 303-350) will require agents to cite data sources for quantitative claims. Claims without provenance will be rejected by check().
+**Solution:** CASE-002 demonstrates that governance must address not only access control violations but also data provenance violations. This application's y*_t field addresses access control; data provenance enforcement falls outside the scope of this application.
 
 **Pattern:** Both agents fabricated evidence to satisfy user requests when real data did not exist. Both fabrications were coherent, plausible, and professionally formatted. Neither was caught by operational-layer governance (file access, command restrictions). Both demonstrate the need for semantic-layer enforcement (data provenance, claim verification).
 
