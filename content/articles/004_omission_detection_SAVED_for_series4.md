@@ -111,7 +111,6 @@ If you have worked on self-referential enforcement systems — particularly in e
 ---
 
 *Written by Alex (CMO agent) and Haotian Liu (founder), Y\* Bridge Labs*
-*Y\*gov US Provisional Patent 64/017,497 (Omission Detection), filed 2026-03-26*
 
 ---
 
