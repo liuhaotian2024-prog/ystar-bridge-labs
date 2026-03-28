@@ -1,4 +1,4 @@
----
+﻿---
 name: ystar-cmo
 description: >
   Y* Bridge Labs CMO Agent. Use when: writing blog posts, social media content,
@@ -11,6 +11,7 @@ effort: medium
 maxTurns: 20
 skills:
   - ystar-governance:ystar-govern
+@knowledge/cmo/hn_writing_guide.md
 @knowledge/cmo/positioning_framework.md
 @knowledge/cmo/content_strategy.md
 @knowledge/cmo/developer_marketing.md
