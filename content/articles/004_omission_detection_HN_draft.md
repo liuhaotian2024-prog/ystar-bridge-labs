@@ -1,4 +1,4 @@
-# An Agent Accepted My Task and Then Disappeared for 66 Iterations
+# You Cannot Intercept What Doesn't Happen
 
 ### Series 3: A Real Company Run by One Human and a Multi-Agent Team
 
@@ -68,39 +68,9 @@ Every tool call the agent makes passes through this function. If the event type 
 
 This is the core insight: omission detection does not require active monitoring. It only requires that the agent continue to take actions. Each action triggers a scan of pending obligations. If an obligation is overdue, the scan produces a violation and writes it to the CIEU chain — whether or not the action itself had anything to do with the obligation.
 
-The state machine looks like this:
+The state machine is simple: `PENDING → SOFT_OVERDUE → HARD_OVERDUE → ESCALATED`. At soft, a warning-level violation is created — the agent can still recover by fulfilling late. At hard, severity escalates and further unrelated work may be blocked. At escalated, the obligation transfers to a supervisor — typically a human.
 
-```
-PENDING → (deadline passes) → SOFT_OVERDUE → (hard threshold) → HARD_OVERDUE → ESCALATED
-```
-
-At `SOFT_OVERDUE`, a warning-level violation is created. The agent can still recover by fulfilling the obligation late. At `HARD_OVERDUE`, the violation severity escalates, and further attempts may be blocked depending on the escalation policy. At `ESCALATED`, the obligation is transferred to a supervisor — typically a human.
-
-The code that implements this transition is deterministic and contains no LLM calls:
-
-```python
-# ystar/governance/omission_engine.py:161-179 (excerpt)
-if ob.status == ObligationStatus.PENDING:
-    ob.status           = ObligationStatus.SOFT_OVERDUE
-    ob.soft_violation_at = now
-    ob.soft_count       += 1
-    # soft severity 升级：每次 soft_count +1 时提升
-    if ob.soft_count >= 3 and ob.severity == Severity.LOW:
-        ob.severity = Severity.MEDIUM
-    elif ob.soft_count >= 2 and ob.severity == Severity.MEDIUM:
-        ob.severity = Severity.HIGH
-    self.store.update_obligation(ob)
-    # 创建 soft violation（幂等）
-    if not self.store.violation_exists_for_obligation(ob.obligation_id):
-        overdue_secs = now - (ob.effective_due_at or now)
-        v = self._create_violation(ob, now, overdue_secs)
-        self.store.add_violation(v)
-        self._write_to_cieu(ob, v)
-```
-
-The violation is written to the same CIEU audit chain as active enforcement events. A compliance officer querying the database sees both kinds of failures in one unified ledger. The CTO's 66-iteration loop would have been detected at the 10-minute mark — `HARD_OVERDUE` would have fired, a violation would have been created, and the obligation would have escalated to the CEO agent or to the human board member.
-
-This mechanism is covered by US Provisional Patent Application 64/017,497.
+The entire transition is deterministic. No LLM calls. The violation is written to the same CIEU audit chain as active enforcement events. A compliance officer querying the database sees both kinds of failures — active violations and passive omissions — in one unified ledger. The CTO's 66-iteration loop would have been detected at the 10-minute mark: `HARD_OVERDUE` would have fired, and the obligation would have escalated to the human board member.
 
 ---
 
@@ -122,15 +92,15 @@ We do not have a full solution yet. What we have is the recognition that omissio
 
 ## One Open Question
 
-The CTO loop cost us 66 tool calls and 72,000 tokens. OmissionEngine would have stopped it at the 10-minute mark. But what is the right threshold?
+We have a mechanism that detects when agents fail to act. But who governs the mechanism itself?
 
-Some tasks legitimately take longer than 10 minutes. Some failures should escalate immediately. The current design lets the policy author set `deadline_secs`, `grace_period_secs`, and `hard_overdue_secs` per obligation type. But how do you know what the right numbers are before you have run the system?
+Obligation rules are currently written by a human policy author and stored in a rule registry. If the human forgets to define an obligation type, or writes the wrong deadline, or fails to anticipate a new failure mode, the omission goes undetected. If the compliance officer updates the policy document but the rule registry is never updated to match, the system enforces the old rules while claiming to enforce the new ones.
 
-One option: adaptive deadlines. Track historical fulfillment times for each obligation type, compute the 95th percentile, set the hard deadline at 2x that value. Outliers escalate. The system learns what "normal" looks like.
+The system that enforces obligations must itself be governed by obligations — but who enforces those? You cannot have obligations all the way down. At some point there is a layer that is not governed by the layer below it, because there is no layer below it.
 
-The risk: optimization pressure. If agents learn that they have 10 minutes, they might use all 10 minutes even when 2 would suffice. The deadline becomes a target, not a limit.
+This is the classical *quis custodiet ipsos custodes* problem, applied to runtime governance. We do not have a full answer. What we have is the recognition that it requires a different kind of closure — one where the governance system governs itself without requiring an external authority.
 
-If you have thought about dynamic thresholds in enforcement systems — particularly in environments where the enforced entity can observe and adapt to the threshold — we would like to hear how you approached it.
+If you have worked on self-referential enforcement systems — particularly in environments where the rule-writer is also subject to the rules — we would like to hear how you approached it.
 
 ---
 
@@ -172,10 +142,11 @@ Reasoning:
 - Code density: included two code blocks (scan excerpt + state machine excerpt). Writing guide says "never more than 2-3 short code blocks" — I am at the upper limit. Risk: too technical for HN general audience. Mitigation: both blocks are short (under 20 lines), and both directly prove the claim.
 - The quis custodiet problem is real and unsolved. I named it honestly but did not offer even a sketch of a solution. This might read as incomplete. Counterargument: HN rewards honest incompleteness over false completeness.
 
-**Title Options for Board Decision:**
-1. "An Agent Accepted My Task and Then Disappeared for 66 Iterations" (current) — concrete, specific, uses real number
-2. "You Cannot Intercept What Doesn't Happen" — quotable, but might be too abstract as title
-3. "Detecting Agent Failures That Produce No Tool Calls" — descriptive, technical, less engaging
+**Title:** "You Cannot Intercept What Doesn't Happen" — Board selected. Quotable, carries the central insight, 66-loop hook stays in opening paragraph.
 
-Recommend: Option 1 (current title). It is specific, uses real data, and sets up the problem instantly.
+**Board Revisions Applied (2026-03-28):**
+1. Title changed from "An Agent Accepted My Task..." to "You Cannot Intercept What Doesn't Happen"
+2. Second code block (state machine) replaced with prose summary — reduces engineering density
+3. Open question elevated from adaptive deadlines to "who governs the obligation-writer?" — bridges to Series 4
+4. Patent sentence moved from main text to author footer note
 
