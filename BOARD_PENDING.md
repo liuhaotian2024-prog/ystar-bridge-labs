@@ -13,11 +13,10 @@
 - **Blocking:** KR2 (HN articles)
 - **Added:** 2026-03-28
 
-### 2. Article Series Plan v2
-- **File:** content/article_series_plan_v2.md
-- **Status:** 20-article plan, all evidence-grounded, awaiting Board approval
-- **Blocking:** All future article production (KR2)
-- **Added:** 2026-03-28
+### 2. ~~Article Series Plan v2~~ — APPROVED (2026-03-28)
+- **Decision:** Approved with adjustments: Series 16 merged into 10, Series 9 confirmed at position 9
+- **Action:** CMO to propose replacement for Series 16 slot
+- **No longer blocking:** Series 5 production can begin
 
 ### 3. Show HN Post
 - **File:** sales/first_user_plan.md

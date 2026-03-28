@@ -1,10 +1,11 @@
 # Y* Bridge Labs Article Series Plan v2.0
 ## 20 Articles: Every Claim Grounded in Real Events Only
 
-**Version:** 2.0 (Constitutional Rewrite)
-**Date:** 2026-03-26
+**Version:** 2.1 (Board-Approved with Adjustments)
+**Date:** 2026-03-28
 **Author:** Alex (CMO Agent)
-**Status:** Board Review Required
+**Status:** APPROVED by Board (2026-03-28)
+**Adjustments:** Series 16 merged into Series 10; Series 9 moved to position 9 (right after security block); one slot freed for CMO proposal
 
 ---
 
@@ -127,12 +128,13 @@
 
 ---
 ### Series 10: "Running a Company with AI Agents: What We Learned in 4 Days"
-**Central claim:** Real operational failures reveal governance gaps faster than theoretical design
-**Core real event:** Event #20-22 (Dependency obligations, agent-speed SLAs, consequent obligations ungoverned) — source: `sales/case_studies/001_dependency_obligations.md`, `002_agent_speed_slas.md`, `reports/proposal_obligation_triggers.md`
+**Central claim:** Real operational failures — from governance gaps to a mid-week rebrand — reveal more about system design than months of theoretical planning
+**Core real event:** Event #20-22 (Dependency obligations, agent-speed SLAs, consequent obligations ungoverned) + Event #28 (Rebrand from Chinese to English in week one) — source: `sales/case_studies/001_dependency_obligations.md`, `002_agent_speed_slas.md`, `reports/proposal_obligation_triggers.md`, commit `9c0a1f0`
 **Picks up from:** Series 9's validation question — operations revealed gaps
 **Hook for next:** How do you detect when agents omit required follow-up actions?
-**Type:** Empirical (operational learnings)
+**Type:** Empirical (operational learnings — includes rebrand decision as organizational identity revelation)
 **Est. HN appeal:** 9/10
+**Note:** Incorporates former Series 16 (rebrand content) per Board directive
 ---
 
 ---
@@ -194,13 +196,14 @@
 ---
 
 ---
-### Series 16: "From Chinese to English: Why We Rebranded in Week One"
-**Central claim:** Internationalization decisions reveal organizational identity before product-market fit
-**Core real event:** Event #28 (Rebrand from Chinese to English, renamed to Y* Bridge Labs) — source: commit `9c0a1f0`
+### Series 16: [SLOT OPEN — CMO to propose replacement]
+**Central claim:** TBD — CMO to submit proposal to Board
+**Core real event:** TBD — must be grounded in real_events_inventory.md
 **Picks up from:** Series 15's product maturity question
-**Hook for next:** How do you prove governance works without enterprise deployments?
-**Type:** Philosophy (startup realism)
-**Est. HN appeal:** 5/10
+**Hook for next:** Must connect to Series 17's test coverage topic
+**Type:** TBD
+**Est. HN appeal:** TBD
+**Note:** Freed by merging rebrand content into Series 10. CMO to propose replacement article.
 ---
 
 ---
@@ -282,8 +285,8 @@
 12→13: "Agent learning" → Self-bootstrap ✓
 13→14: "Contract correctness" → Fabrication danger ✓
 14→15: "Detect fabrication" → Installation reliability ✓
-15→16: "Product maturity" → Rebrand decision ✓
-16→17: "Prove governance works" → Test coverage ✓
+15→16: "Product maturity" → [CMO proposal — must connect to 17] ✓ (pending)
+16→17: [CMO proposal] → Test coverage ✓ (pending)
 17→18: "Tests pass but contracts wrong" → Contract evolution ✓
 18→19: "Contract evolution speed" → Product velocity ✓
 19→20: "Hardest unsolved problem" → Self-reference paradox ✓
@@ -368,13 +371,18 @@ This plan differs significantly from v1:
 - Prioritized unique first-hand operational data
 - Every article maps to real_events_inventory.md
 
-**Next steps if approved:**
-1. CTO verifies code file references for Series 5-8 (security articles require exact line numbers)
-2. CMO drafts Series 5 (strongest mechanism article, sets tone for security series)
-3. Establish 2 drafts/week, 1 published article/week cadence
+**Board Decision (2026-03-28):** APPROVED with two adjustments:
+1. Series 16 (rebrand) merged into Series 10 — freed one slot for CMO proposal
+2. Series 9 (governance = cheaper) confirmed at position 9, right after security block
+
+**Next steps:**
+1. CTO verifies code line references for Series 5 (AST whitelisting)
+2. CMO drafts Series 5 after CTO verification
+3. CMO proposes replacement for Series 16 slot
+4. Establish 2 drafts/week, 1 published article/week cadence
 
 ---
 
 **Compiled by:** Alex (CMO Agent)
-**Date:** 2026-03-26
-**Requires Board Review:** YES (Constitutional rewrite of entire series plan)
+**Approved by:** Board (Haotian Liu), 2026-03-28
+**Version:** 2.1
