@@ -1,6 +1,7 @@
 # Board Pending — Items Awaiting Board Decision
 
 *Updated by CEO at end of each session. Board reviews and decides.*
+*Last updated: 2026-03-28*
 
 ---
 
@@ -50,6 +51,9 @@
 
 | Date | Item | Decision |
 |------|------|----------|
+| 2026-03-28 | Priority reorder: P0 install, P1 API surface, P2 metalearning | Approved |
+| 2026-03-28 | Competitive architecture positioning (no LLM in enforcement) | Approved — written to knowledge + README |
+| 2026-03-28 | Article Series Plan v2.1 | Approved with adjustments (Series 16→10 merge) |
 | 2026-03-28 | Article Writing Constitutional Rule | Approved — AGENTS.md v2.2.0 |
 | 2026-03-27 | ObligationTrigger framework design | Approved — triggers #1,2,7,9 |
 | 2026-03-27 | Agent-speed SLAs | Approved — P0=5min, P1=15min |
