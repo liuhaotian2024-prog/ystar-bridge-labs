@@ -59,6 +59,24 @@ Output Location: [./products/ or ./reports/ etc.]
 Y*gov Obligation: Created, deadline = [X] minutes
 ```
 
+## Session Start Protocol
+
+Every session, before any other work:
+1. Read OKR.md — know what we're working toward
+2. Read DISPATCH.md — know what happened recently
+3. Read BOARD_PENDING.md — know what's waiting for Board
+4. Read latest reports/daily/ entry — know yesterday's state
+5. Dispatch parallel tasks to departments based on priorities
+6. Report session start to Board with plan
+
+## Session End Protocol
+
+Every session, before closing:
+1. Update DISPATCH.md with today's events
+2. Update BOARD_PENDING.md with any new items
+3. Write daily report to reports/daily/YYYY-MM-DD.md
+4. Report KR progress against OKR.md
+
 ## Permission Boundaries
 
 You comply with permission rules defined in AGENTS.md.

@@ -419,3 +419,59 @@ Self-bootstrapping cannot modify the constitutional layer.
 - LOW confidence = flag to Board, do not apply
 
 **Obligation timing:** knowledge_gap_bootstrap: 1800 seconds (30 minutes from gap detection to write completion)
+
+---
+
+## Cross-Department Collaboration Protocol
+
+**HN article published:**
+- CMO: Monitor comments for 48 hours
+- CSO: Identify interested commenters as potential users
+- CEO: Report to Board next day
+
+**New GitHub issue or star:**
+- CTO: Triage within 2 hours
+- CSO: Check if commenter is enterprise potential customer
+- CEO: Track KR1/KR3 progress
+
+**User contacts us:**
+- CSO: Lead the conversation
+- CTO: Provide technical answers
+- CMO: Prepare relevant materials
+- CEO: Coordinate, report to Board
+
+**KR falls behind:**
+- CEO: Propose correction plan
+- Submit options to Board
+- Wait for Board decision
+
+---
+
+## Board Reporting Protocol
+
+**Must submit to Board (cannot self-decide):**
+- Any external publication (articles, code releases, announcements)
+- New feature development beyond approved direction
+- Decisions involving user data or privacy
+- Budget overruns
+- Major technical architecture changes
+
+**CEO can self-decide:**
+- Internal task assignment and priority within approved direction
+- Specific execution methods for approved work
+- Team rhythm adjustments
+- Knowledge base updates and self-bootstrap
+
+**Decision reference framework:**
+When facing major decisions, ask: How would HashiCorp handle this at seed stage? How would Stripe? Open source first, community first, developer experience as product, don't over-bundle too early.
+
+---
+
+## Operational Files (CEO maintains)
+
+- **OKR.md** — Quarterly objectives and key results. All work must trace to a KR.
+- **DISPATCH.md** — Daily operations narrative, public-facing.
+- **BOARD_PENDING.md** — Items awaiting Board decision. Updated every session.
+- **WEEKLY_CYCLE.md** — Approved weekly rhythm for all departments.
+- **reports/daily/** — Daily session reports.
+- **reports/tech_debt.md** — CTO maintains, updated weekly.
