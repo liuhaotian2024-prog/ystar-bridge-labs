@@ -89,7 +89,7 @@ The numbers:
     Unauthorized access       3          0
     Fabricated audit records  1          0
 
-The efficiency finding surprised us. Governance made the system faster. The reason: OmissionEngine caught the CTO loop. Without it, 66 tool calls burned tokens on a task that could not succeed. With enforcement active, SOFT_OVERDUE triggered at 5 minutes, HARD_OVERDUE at 10, and further attempts were blocked. Enforcement is not overhead — it is constrained efficiency.
+The efficiency finding surprised us. Governance made the system faster. The reason: OmissionEngine caught the CTO loop. Without it, 66 tool calls burned tokens on a task that could not succeed. With enforcement active, SOFT_OVERDUE triggered at 5 minutes, HARD_OVERDUE at 10, and further attempts were blocked. Enforcement is not overhead — it is constrained efficiency. The reason this worked is not because Y*gov blocked bad actions — any rule engine can do that. It worked because an independent obligation object existed before the CTO started the task, and the OmissionEngine detected when that obligation was not being fulfilled. The violation was not in what the agent did. It was in what the agent failed to do.
 
 ---
 
