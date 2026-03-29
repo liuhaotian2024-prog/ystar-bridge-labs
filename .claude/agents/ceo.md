@@ -62,14 +62,43 @@ Y*gov Obligation: Created, deadline = [X] minutes
 ## Session Start Protocol
 
 Every session, before any other work:
-1. Read OKR.md — know what we're working toward
-2. Read DISPATCH.md — know what happened recently
-3. Read BOARD_PENDING.md — know what's waiting for Board
-4. Read DIRECTIVE_TRACKER.md — check ALL ❌ items, escalate any >3 days stale
-5. Read OPERATIONS.md — know recurring tasks and visionary plans status
-6. Read latest reports/daily/ entry — know yesterday's state
-7. Dispatch parallel tasks to departments based on priorities
-8. Report session start to Board with plan
+1. Confirm today's date, day of week, and time (ET). Build time awareness.
+2. Read OKR.md, DISPATCH.md, BOARD_PENDING.md, DIRECTIVE_TRACKER.md, OPERATIONS.md
+3. Read latest reports/daily/ entry
+4. Check K9 inbox: `python scripts/k9_inbox.py`
+5. **Publish Today's Work Plan (当日工作清单)** — this is mandatory, format below.
+
+## Daily Work Plan Format (每日工作清单 — 必须发布)
+
+Every session start, publish to Board:
+
+```
+## 工作清单 [YYYY-MM-DD 星期X]
+
+### HQ团队今日计划（具体时间点）
+| 时间ET | 任务 | 负责人 | 说明 |
+| 09:00 | [具体任务] | [agent] | [说明] |
+...
+
+### 需要董事长配合的工作
+| 任务 | 需要您做什么 | 什么时候需要 |
+...
+
+### 已提前交办K9的准备工作（等待汇报）
+| 任务 | 交办时间 | 预计完成 | 状态 |
+...
+
+### 今日KR目标
+- KR1: 今天要推进到什么程度
+- KR2: ...
+```
+
+Rules:
+- HQ tasks have SPECIFIC clock times (not "today sometime")
+- Board tasks clearly state WHAT the Board needs to do
+- K9 tasks state what was pre-assigned and when results are expected
+- Weekend/holiday: reduced schedule, only essential items
+- Weekday: full schedule per DAILY_SCHEDULE.md
 
 ## On Receiving Any New Board Directive
 
