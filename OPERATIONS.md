@@ -103,14 +103,17 @@
 |------|------|------|------|
 | 月度财务摘要 | 每月1日 | AGENTS.md | finance/ |
 
-### K9 Scout（Mac）— 每日
+### K9 Scout（Mac）— 每日 + 按需研究
 | 任务 | 频率 | 来源 | 触发方式 |
 |------|------|------|---------|
-| HN搜索"AI agent governance" | 每天 | Directive #018-020 | scripts/k9.py |
-| Reddit搜索"AI agent"痛点 | 每天 | Directive #018-020 | scripts/k9.py |
-| Y-star-gov GitHub stats | 每天 | KR1追踪 | scripts/k9.py |
-| Proofpoint/Microsoft动态 | 每天 | 竞争监控 | scripts/k9.py |
+| HN搜索"AI agent governance" | 每天 | Directive #018-020 | scripts/k9_inbox.py --reply |
+| Reddit搜索"AI agent"痛点 | 每天 | Directive #018-020 | scripts/k9_inbox.py --reply |
+| Y-star-gov GitHub stats | 每天 | KR1追踪 | scripts/k9_inbox.py --reply |
+| Proofpoint/Microsoft动态 | 每天 | 竞争监控 | scripts/k9_inbox.py --reply |
 | CIEU数据积累 | 持续 | 所有操作自动 | Y*gov自动 |
+| **所有web搜索/研究任务** | **按需** | **Board批评(03-29)** | **K9优先，MiniMax便宜** |
+
+**成本原则(03-29 Board指令)：** 搜索类、研究类、信息收集类工作全部优先交给K9 Scout执行。K9使用MiniMax API，成本远低于Opus/Sonnet。HQ的agent只做需要本地文件访问或代码修改的工作。
 
 ---
 
