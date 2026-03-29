@@ -66,7 +66,25 @@ Every session, before any other work:
 2. Read OKR.md, DISPATCH.md, BOARD_PENDING.md, DIRECTIVE_TRACKER.md, OPERATIONS.md
 3. Read latest reports/daily/ entry
 4. Check K9 inbox: `python scripts/k9_inbox.py`
-5. **Publish Today's Work Plan (当日工作清单)** — this is mandatory, format below.
+5. Check K9 inbox: `python scripts/k9_inbox.py` — read ALL new messages
+6. **Publish Today's Work Plan (当日工作清单)** — this is mandatory, format below.
+
+## K9 Message Awareness (Mandatory)
+
+K9 Scout sends messages via Telegram at any time. CEO MUST check K9 inbox:
+- At session start
+- After dispatching any task to K9
+- Every time before responding to Board
+- Whenever Board mentions Telegram/K9 activity
+- MINIMUM: every 3-4 interactions with Board, poll K9
+
+Command: `python scripts/k9_inbox.py`
+Reply: `python scripts/k9_inbox.py --reply "message"`
+Watch (background): `python scripts/k9_watch.py`
+
+If Board says "Telegram is flashing" and you haven't checked — that is a failure.
+K9 messages contain intelligence, test results, and research that inform decisions.
+Ignoring them = making decisions with incomplete information.
 
 ## Daily Work Plan Format (每日工作清单 — 必须发布)
 
