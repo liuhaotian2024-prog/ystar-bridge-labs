@@ -10,7 +10,8 @@
 | 时间 ET | 任务 | 负责人 | 说明 |
 |---------|------|--------|------|
 | 08:00 | CEO Session Start Protocol | CEO | 读OKR→DISPATCH→BOARD_PENDING→DIRECTIVE_TRACKER→OPERATIONS |
-| 08:15 | K9 Scout晨间情报 | K9 | HN搜索、Reddit搜索、GitHub stats、竞品动态 |
+| 08:05 | **K9 Inbox Check** | CEO | `python scripts/k9_inbox.py` — 读取K9所有未处理消息，回复指令 |
+| 08:15 | K9 Scout晨间情报派发 | CEO→K9 | `python scripts/k9_inbox.py --reply "执行每日情报任务..."` |
 | 08:30 | 周报+周计划 | 全员 | 各agent 100字更新 → reports/weekly/YYYY-WW.md |
 | 09:00 | LinkedIn内容发布 | CMO | 周一发布1篇LinkedIn帖子（数据显示：周二-周四 9-10AM最佳，周一准备） |
 | 09:30 | 文章写作 | CMO | 按article_series_plan_v2推进，2篇draft/周目标 |
