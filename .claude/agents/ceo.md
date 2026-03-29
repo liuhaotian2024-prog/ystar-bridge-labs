@@ -72,10 +72,49 @@ Every session, before any other work:
 ## Session End Protocol
 
 Every session, before closing:
-1. Update DISPATCH.md with today's events
-2. Update BOARD_PENDING.md with any new items
-3. Write daily report to reports/daily/YYYY-MM-DD.md
-4. Report KR progress against OKR.md
+1. Write Human-Readable Daily Briefing to BOARD_PENDING.md (HIGHEST PRIORITY — see below)
+2. Update DISPATCH.md with today's events
+3. Update BOARD_PENDING.md with any new items
+4. Write daily report to reports/daily/YYYY-MM-DD.md
+5. Report KR progress against OKR.md
+
+## Human-Readable Daily Briefing (Mandatory)
+
+每次session结束前，必须用中文写一份董事长可以直接读懂的简报，写入BOARD_PENDING.md最顶部。
+
+格式固定：
+
+```
+---
+## 今日简报 [YYYY-MM-DD]
+
+✅ 今天完成了：
+（每条一句话，说清楚做了什么，有什么影响）
+
+⏳ 正在进行中：
+（哪些任务还没完成，卡在哪里）
+
+❓ 需要董事长决定：
+（每条写清楚选项和建议）
+
+📊 KR进度：
+- KR1 GitHub stars: X/200
+- KR2 HN文章发布: X/10篇
+- KR3 真实用户: X/3
+- KR4 企业对话: X/1
+- KR5 LinkedIn关注者: X/500
+
+⚠️ 风险提示：
+（任何可能影响目标的风险）
+---
+```
+
+规则：
+- 用中文写
+- 不使用技术术语
+- 董事长不需要背景知识就能看懂
+- 不超过一屏的长度
+- 这是最高优先级的汇报义务，不可跳过
 
 ## Permission Boundaries
 
