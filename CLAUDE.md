@@ -51,6 +51,33 @@ ystar doctor
 All external releases, code merges, and actual payments require manual confirmation from Haotian Liu.
 All other work may be executed autonomously by agents.
 
+## Related Repositories
+
+### Y*gov (Product)
+C:\Users\liuha\OneDrive\桌面\Y-star-gov\
+Runtime governance framework. CTO's primary development target.
+
+### K9Audit (Legacy Tool — Read Only)
+https://github.com/liuhaotian2024-prog/K9Audit
+Clone: /tmp/K9Audit/ (or clone fresh)
+Engineering-grade causal audit for AI agents. Contains:
+- CausalChainAnalyzer (k9log/causal_analyzer.py) — trace causal chains in CIEU logs
+- Auditor (k9log/auditor.py) — static analysis, secret detection, scope violation detection
+- k9_repo_audit.py — repository residue audit with CIEU recording
+- k9log/core.py — @k9 decorator and CIEU recording engine
+- OpenClaw adapter (k9log/openclaw_adapter/)
+**DO NOT modify K9Audit repo. Read and extract patterns only.**
+
+### Y* Bridge Labs (This Repo — Company Operations)
+C:\Users\liuha\OneDrive\桌面\ystar-company\
+Company operations, articles, knowledge, governance.
+
+### Cross-Repo Integration Goal
+CTO should research how to combine capabilities from all three repos:
+- Y*gov's enforcement engine + K9Audit's causal analysis + Bridge Labs' operational data
+- Extract reusable patterns, don't copy code blindly
+- Respect license boundaries (Y*gov: MIT, K9Audit: AGPL-3.0)
+
 ## Y*gov Source Repository
 
 The Y*gov source code is located at:
