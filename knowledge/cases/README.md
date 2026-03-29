@@ -8,6 +8,7 @@ Cases are the company's most valuable long-term asset. Every significant failure
 | [CASE-002](CASE_002_CFO_fabrication.md) | CFO | 2026-03-26 | Fabricated cost figures without real token data — same pattern as CASE-001 |
 | [CASE-003](CASE_003_baseline_not_triggered.md) | CTO/CEO | 2026-03-28 | Installation flow never triggered baseline assessment — before-state permanently lost |
 | [CASE-004](CASE_004_directive_subtasks_lost.md) | CEO | 2026-03-28 | 12 of 19 directive sub-tasks silently lost — no decomposition mechanism |
+| [CASE-005](CASE_005_cross_model_governance.md) | CTO/CEO | 2026-03-28 | World's first cross-model runtime governance: Claude governs MiniMax via Y*gov |
 
 ## Patterns Identified
 

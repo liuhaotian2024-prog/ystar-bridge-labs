@@ -411,11 +411,17 @@ Self-bootstrapping cannot modify the constitutional layer.
 
 **Bootstrap mode:** B-class — agents write autonomously, audited after the fact, no Board real-time confirmation required.
 
-**Trigger:** Agent MUST bootstrap when:
+**Trigger:** Agent MUST bootstrap IMMEDIATELY when ANY of these occur (not weekly, not scheduled — REAL-TIME):
 1. It lacks reliable knowledge for a task
 2. It produces an unverifiable answer
 3. Its knowledge/ files are outdated
 4. A previous answer was wrong
+5. It receives correction from Board or another agent
+6. It encounters a new concept, framework, or competitor it hasn't seen before
+7. A task outcome differs from expectation
+8. Any event that could improve future decision-making
+
+**Frequency: INSTANT.** Not once a week. Not once a day. Every single bootstrappable moment triggers immediate knowledge capture. If you learned something, write it down NOW.
 
 **Process:**
 1. IDENTIFY the gap explicitly
