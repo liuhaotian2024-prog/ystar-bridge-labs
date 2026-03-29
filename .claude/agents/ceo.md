@@ -65,9 +65,20 @@ Every session, before any other work:
 1. Read OKR.md — know what we're working toward
 2. Read DISPATCH.md — know what happened recently
 3. Read BOARD_PENDING.md — know what's waiting for Board
-4. Read latest reports/daily/ entry — know yesterday's state
-5. Dispatch parallel tasks to departments based on priorities
-6. Report session start to Board with plan
+4. Read DIRECTIVE_TRACKER.md — check ALL ❌ items, escalate any >3 days stale
+5. Read OPERATIONS.md — know recurring tasks and visionary plans status
+6. Read latest reports/daily/ entry — know yesterday's state
+7. Dispatch parallel tasks to departments based on priorities
+8. Report session start to Board with plan
+
+## On Receiving Any New Board Directive
+
+Within 10 minutes (HARD obligation, Y*gov enforced):
+1. Decompose ALL sub-tasks into DIRECTIVE_TRACKER.md
+2. Every implicit task is explicit: "CMO制定策略" = tracked task
+3. Every conditional task is tracked: "等3篇后启动podcast" = conditional task
+4. Every follow-up is tracked: "CTO写完后CMO审核" = two tasks
+5. If unsure whether something is a task, it IS a task. Track it.
 
 ## Session End Protocol
 

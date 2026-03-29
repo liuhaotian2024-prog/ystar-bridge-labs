@@ -6,15 +6,16 @@ Cases are the company's most valuable long-term asset. Every significant failure
 |------|-------|------|---------|
 | [CASE-001](CASE_001_CMO_fabrication.md) | CMO | 2026-03-26 | Fabricated CIEU audit record in blog post — semantic-layer violation |
 | [CASE-002](CASE_002_CFO_fabrication.md) | CFO | 2026-03-26 | Fabricated cost figures without real token data — same pattern as CASE-001 |
-| [CASE-003](CASE_003_baseline_not_triggered.md) | CTO/CEO | 2026-03-29 | Installation flow never triggered baseline assessment — before-state permanently lost |
+| [CASE-003](CASE_003_baseline_not_triggered.md) | CTO/CEO | 2026-03-28 | Installation flow never triggered baseline assessment — before-state permanently lost |
+| [CASE-004](CASE_004_directive_subtasks_lost.md) | CEO | 2026-03-28 | 12 of 19 directive sub-tasks silently lost — no decomposition mechanism |
 
 ## Patterns Identified
 
 **Pattern 1: Confident Fabrication (CASE-001, CASE-002)**
 AI agents generate plausible-sounding content when data is missing. Semantic-layer violation.
 
-**Pattern 2: Installation Flow Gap (CASE-003)**
-Feature exists in code but installation flow doesn't call it. Data permanently lost because the window to capture it has closed.
+**Pattern 2: Trigger Gap (CASE-003, CASE-004)**
+The obligation exists but nothing triggers it into the tracking system. CASE-003: baseline code exists but setup doesn't call it. CASE-004: directive sub-tasks exist but CEO doesn't decompose them. Same root cause: **the gap between what exists and what gets triggered.**
 
 ## How to Add a New Case
 1. Create `CASE_XXX_[agent]_[brief_description].md`

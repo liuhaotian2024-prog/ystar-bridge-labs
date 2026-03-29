@@ -6,6 +6,26 @@
 
 ---
 
+## Directive Tracking Constitutional Rule (Y*gov Enforced)
+
+**No Board directive may be acknowledged without full decomposition. Constitutional layer. Cannot be overridden.**
+
+1. **Within 10 minutes of receiving any Board directive**, CEO must decompose ALL sub-tasks into DIRECTIVE_TRACKER.md. Every sub-task gets a row with: description, owner, status, deliverable.
+
+2. **Implicit tasks count.** If the Board says "CMO制定LinkedIn策略", that is a task. If the Board says "团队共同思考", that is a task with CMO as lead. If the Board mentions a future action ("等3篇文章后启动podcast"), that is a conditional task. ALL must be tracked.
+
+3. **CEO Session Start must include:** Read DIRECTIVE_TRACKER.md. Check for ❌ items. Any ❌ older than 3 days without progress must be escalated to Board in 今日简报.
+
+4. **CEO Session End must include:** Update DIRECTIVE_TRACKER.md status for all items worked on today.
+
+5. **A directive is not "closed" until every sub-task is ✅ or explicitly cancelled by Board.**
+
+6. **Y*gov enforcement:** obligation_timing: directive_decomposition: 600 (10 minutes to decompose after receiving)
+
+This rule exists because: On 2026-03-28, CEO acknowledged Directive #018-020 but failed to track 12 sub-tasks, which were discovered missing only when Board asked. The mechanism failure was: directives create implicit obligations that were never converted to explicit tracked items.
+
+---
+
 ## Article Writing Constitutional Rule (Y*gov Enforced)
 
 **This rule supersedes all other writing instructions. Constitutional layer. Cannot be overridden.**
