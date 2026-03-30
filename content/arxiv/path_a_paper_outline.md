@@ -35,10 +35,18 @@
 - CASE-005: cross-model (Claude→MiniMax), 23/23 tests
 - ChatGPT 3-round audit: 12 issues found and fixed
 
+## 5.4 Ablation
+- Each component is load-bearing: remove closure → fabrication returns; remove CausalEngine → all decisions require human; remove OmissionEngine → dropped tasks undetected
+
 ## 6. Limitations
 - n=1, accidental design, not pre-registered
-- Runtime activation partially simulated
-- Convergence not formally proven
+- Cold-start weakness: CausalEngine has no history on first cycle, defaults to human approval
+- Single-level depth: Path A governs itself but doesn't yet govern a governance-of-governance agent
+- No adversarial evaluation: agents were cooperative (Claude), not adversarial
+- Human-authored constitution (PATH_A_AGENTS.md): bootstrap still requires human seed
+- Runtime activation partially simulated (importlib + activate() protocol, not full hot-swap)
+- Convergence not formally proven — empirical evidence only
+- Latent-space communication gap: Y*gov intercepts tool calls (text), not internal representations
 
 ## 7. Conclusion
 - Quis custodiet has an architectural answer
