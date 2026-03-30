@@ -26,6 +26,50 @@ This rule exists because: On 2026-03-28, CEO acknowledged Directive #018-020 but
 
 ---
 
+## Social Media Engagement Constitutional Rule (Y*gov Enforced)
+
+**All external posts, comments, follows, and interactions must be Board-approved. Constitutional layer. Cannot be overridden.**
+
+Before executing ANY social media action, the responsible agent must submit a **Content Approval Request** to Board in the following format:
+
+```
+## Content Approval Request
+
+**Platform:** [HN / LinkedIn / Reddit / Telegram / Twitter]
+**Action:** [Post / Comment / Follow / Reply]
+**Target:** [URL of the post we're responding to, or "new post"]
+
+### Why this target?
+[1-2 sentences: why this post/person/thread is relevant to Y*gov]
+
+### Target content summary
+[2-3 sentences: what the target post says]
+
+### Our draft
+[The exact text we want to post/comment]
+
+### Platform compliance
+- Word count: [X] (platform optimal: [Y])
+- Tone: [technical/storytelling/data-driven]
+- Top-tier reference: [link to a similar high-performing post on this platform]
+
+### Quality self-check
+- [ ] Within platform optimal length
+- [ ] No marketing hype ("revolutionary", "game-changing")
+- [ ] Adds genuine value to the conversation
+- [ ] Contains specific data or insight, not generic praise
+- [ ] Would a senior developer find this worth reading?
+```
+
+**Board reviews and responds with one of:**
+- ✅ Approved — agent executes immediately
+- ✏️ Edit — agent revises and resubmits
+- ❌ Rejected — agent does not post, logs reason
+
+**This rule exists because:** The chairman's personal accounts and company reputation are at stake. Every public word must be deliberate, high-quality, and aligned with company positioning. The team plans and drafts; the Board decides what goes live.
+
+---
+
 ## Article Writing Constitutional Rule (Y*gov Enforced)
 
 **This rule supersedes all other writing instructions. Constitutional layer. Cannot be overridden.**
