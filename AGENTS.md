@@ -448,6 +448,37 @@ Self-bootstrapping cannot modify the constitutional layer.
 
 ---
 
+## Jinjin Delegation Protocol (Constitutional Rule)
+
+**Jinjin (金金)** is the subsidiary agent running on a separate Mac mini via OpenClaw + MiniMax M2.5.
+Communication: Telegram bot @K9newclaw_bot via scripts/k9.py and scripts/k9_inbox.py.
+
+**When to delegate to Jinjin:**
+Any task that meets ALL of these criteria:
+1. Information gathering, data collection, or research (not precision-critical)
+2. Does not require access to Y*gov source code or internal strategy
+3. Would consume significant Claude Opus tokens if done by HQ agents
+
+**Examples of Jinjin tasks:**
+- Platform research (posting rules, character limits, audience analysis)
+- Competitor paper analysis (arXiv summaries, feature comparisons)
+- Market data collection (pricing research, user sentiment)
+- Bulk content formatting or translation
+- Public information retrieval and summarization
+
+**Mandatory workflow:**
+1. HQ agent identifies a research/collection need
+2. HQ agent sends structured task via `python scripts/k9_inbox.py --reply "task description"`
+3. HQ agent checks inbox periodically: `python scripts/k9_inbox.py`
+4. When Jinjin reports back, HQ agent verifies key claims before using in decisions
+5. Results are saved to knowledge/[role]/ with source: "Jinjin research, [date]"
+
+**Why this exists:** MiniMax API is orders of magnitude cheaper than Claude Opus. Research and data collection tasks that don't require highest precision should always go to Jinjin first. This is a cost discipline rule, not optional.
+
+**CEO (Aiden) is responsible for:** Checking Jinjin's inbox at least once per session. Failure to check = obligation violation.
+
+---
+
 ## Cross-Department Collaboration Protocol
 
 **HN article published:**
