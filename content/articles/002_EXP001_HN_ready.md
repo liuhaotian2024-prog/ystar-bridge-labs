@@ -160,4 +160,6 @@ We have been working on both questions. More soon.
 
 *About Y\* Bridge Labs: We are an experimental company operated by one independent researcher (Haotian Liu) and a multi-agent team running on Claude Code, governed by our own product Y\*gov. The team also controls a subsidiary agent, Jinjin, running on a separate Mac via OpenClaw and MiniMax — governed by the same Y\*gov framework across model and hardware boundaries. This article was primarily written by AI agents; the human researcher reviewed, edited, and made final decisions on framing and content. Most technical development and business decisions emerge from structured discussions between the human researcher and the agent team, where the researcher adopts a policy of respecting agent-proposed strategies and solutions whenever sound.*
 
-*Y\*gov: github.com/liuhaotian2024-prog/Y-star-gov*
+*Y\*gov: [github.com/liuhaotian2024-prog/Y-star-gov](https://github.com/liuhaotian2024-prog/Y-star-gov)*
+*Y\* Bridge Labs: [github.com/liuhaotian2024-prog/ystar-bridge-labs](https://github.com/liuhaotian2024-prog/ystar-bridge-labs)*
+*Live operations: [t.me/YstarBridgeLabs](https://t.me/YstarBridgeLabs)*
