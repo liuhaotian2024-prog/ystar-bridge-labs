@@ -162,3 +162,9 @@
 - 新能力: Pearl L2-3, ystar demo, 自治理规则
 - 发布: HN + LinkedIn + Telegram
 - 自治理: 12个Y*gov机制从2/12提升到宪法级规范
+
+## 03/31 01:30 — PC算法 + 单轨制 + 变量映射
+**顾问建议：** 830 CIEU ≠ 830 SCM数据点。实际cycle级观测约14个。
+**验证：** PC算法新映射SHD从8降到6（+25%），匹配2边(W→H,W→O)
+**ChatGPT 6 Issues：** 前3已修(旧版)，后3本轮修复(activation/amendment/policy)
+**CTO正在做：** SCM数据管道修复 + learn_structure()自动触发 + GovernanceLoop集成
