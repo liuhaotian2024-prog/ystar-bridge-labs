@@ -111,6 +111,13 @@ We ran a controlled experiment: same agent team, same task, with and without Y*g
 Governance made the system faster and cheaper — not just safer.
 Full report: [reports/YstarCo_EXP_001](reports/YstarCo_EXP_001_Controlled_Experiment_Report.md)
 
+### Current Status (March 2026)
+
+- **238 tests passing** — full coverage across kernel, governance, causal, and integration layers
+- **830 CIEU production records** — real governance decisions from operating this company
+- **Pearl Level 2-3 causal reasoning** — first production implementation of Pearl's Causal Hierarchy in agent governance (CausalGraph with d-separation, CounterfactualEngine with three-step procedure)
+- **3 US provisional patents filed** (P1, P3, P4)
+
 ### How We Use Y*gov to Govern This Company
 
 Every agent in this company operates under Y*gov enforcement:
@@ -140,11 +147,14 @@ Board of Directors
         └── Claude (Anthropic) — Strategy, risk assessment, decision support
                 │
                 │  Executive Team (AI Agents, governed by Y*gov)
-                ├── CEO Agent — Orchestration, board reporting, cross-department coordination
+                ├── Aiden (CEO) — Orchestration, board reporting, cross-department coordination
                 ├── CTO Agent — Y*gov source code, engineering, GitHub
                 ├── CMO Agent — Content, marketing, public communications
                 ├── CSO Agent — Sales, enterprise outreach, customer pipeline
-                └── CFO Agent — Financial model, cost tracking, daily burn rate
+                ├── CFO Agent — Financial model, cost tracking, daily burn rate
+                │
+                │  Subsidiary
+                └── Jinjin — Subsidiary operations
 ```
 
 **The Chairman** sets strategy and approves all external actions.
@@ -192,6 +202,7 @@ ystar doctor
 ## Links
 
 - **Y*gov Source Code**: https://github.com/liuhaotian2024-prog/Y-star-gov
+- **Telegram**: https://t.me/YstarBridgeLabs
 - **Experiment Report**: [reports/YstarCo_EXP_001_Controlled_Experiment_Report.md](reports/YstarCo_EXP_001_Controlled_Experiment_Report.md)
 - **Governance Contract**: [AGENTS.md](AGENTS.md)
 - **Daily Operations**: [reports/daily/](reports/daily/)
