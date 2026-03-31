@@ -460,6 +460,15 @@ SCM方程:
 
   Without temporal ordering: SHD=8 (skeleton 4/4, directions 0/4)
   With temporal ordering:    SHD=0 (skeleton 4/4, directions 4/4) ← PERFECT
+
+  Independent validation (DirectLiNGAM, Shimizu et al. 2011):
+    Exploits non-Gaussianity in bounded variables O,H ∈ [0,1]
+    Independently confirms: O→H ✓, W→H ✓ (2/4 directions without temporal knowledge)
+    SHD=6 (pure-Python simplified implementation)
+
+  Combined evidence:
+    PC + temporal: SHD=0 (primary, zero dependencies, architectural guarantee)
+    LiNGAM: confirms 2/4 directions from data alone (independent validation)
 ```
 
 **论文怎么写（建议原文）：**
