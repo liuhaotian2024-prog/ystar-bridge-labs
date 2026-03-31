@@ -1,63 +1,64 @@
-# Y*gov Architecture — One-Page Overview
-
-## System Summary
-
-Y*gov is a **dual-track governance system** for AI agents.
-Path A governs Y*gov itself ("who governs the governors").
-Path B governs external agents ("how to control what they do").
-A Bridge feeds external experience back into internal improvement.
-
-## Five-Layer Architecture
+# Y*gov Architecture Overview
 
 ```
- ┌─────────────────────────────────────────────────────────────┐
- │  Layer 5 — BRIDGE                                          │
- │  ExperienceBridge: Path B patterns → GovernanceLoop KPIs   │
- │  Direction: Path B ──► Bridge ──► GovernanceLoop (one-way) │
- └──────────────────────────┬──────────────────────────────────┘
-           ▲ aggregates     │ feeds metrics
- ┌─────────┴───────────┐  ┌▼──────────────────────────────────┐
- │ Layer 3 — PATH B    │  │ Layer 2 — PATH A                  │
- │ External Governance  │  │ Internal Meta-Governance          │
- │                      │  │                                   │
- │ ExternalObservation  │  │ GovernanceSuggestion              │
- │   → constraint       │  │   → suggestion_to_contract()     │
- │ ConstraintBudget     │  │ check() own actions               │
- │ Escalation ladder:   │  │ Causal confidence tracking        │
- │  warn→down→freeze→dc │  │ CIEU audit trail                  │
- └──────────┬──────────┘  └──────────────────┬────────────────┘
-            │ uses                            │ uses
- ┌──────────▼────────────────────────────────▼────────────────┐
- │  Layer 1 — INTENT COMPILATION                              │
- │  AGENTS.md (rules) → nl_to_contract → IntentContract       │
- │  ConstitutionalContract → statutory merge → check-ready    │
- └────────────────────────────┬────────────────────────────────┘
-                              │ enforced by
- ┌────────────────────────────▼────────────────────────────────┐
- │  Layer 0 — FOUNDATION                                      │
- │  check()  CIEU  OmissionEngine  InterventionEngine         │
- │  CausalEngine (Pearl L2-3)  GovernanceLoop  Metalearning   │
- │  8 constraint dimensions + 4 higher-order dimensions       │
- └─────────────────────────────────────────────────────────────┘
+                        Human Intent (natural language)
+                                  |
+                                  v
+  ┌─────────────────────────────────────────────────────────────┐
+  │                   INTENT COMPILATION LINE                   │
+  │         NL policy  ──>  IntentContract (8 dimensions)       │
+  │         "Do not touch /etc"  ──>  deny: ["/etc"]            │
+  └───────────────────────────┬─────────────────────────────────┘
+                              |
+          ┌───────────────────┼───────────────────┐
+          v                   v                   v
+  ┌──────────────┐   ┌──────────────┐   ┌──────────────┐
+  │   PATH  A    │   │   KERNEL     │   │   PATH  B    │
+  │  Internal    │   │  Foundation  │   │  External    │
+  │  Meta-Gov    │   │  Engine      │   │  Gov Loop    │
+  │              │   │              │   │              │
+  │ Governs the  │   │ check():     │   │ Governs AI  │
+  │ governor     │   │ contract vs  │   │ agents in   │
+  │ itself.      │   │ actual call. │   │ production. │
+  │ Single-track │   │ Deterministic│   │ Multi-agent │
+  │ fail-closed. │   │ pure function│   │ delegation. │
+  └──────┬───────┘   └──────┬───────┘   └──────┬───────┘
+         │                  │                  │
+         └──────────────────┼──────────────────┘
+                            v
+  ┌─────────────────────────────────────────────────────────────┐
+  │                    GOVERNANCE SERVICES                      │
+  │  Omission Engine  |  Intervention Engine  |  Causal Engine  │
+  │  Obligation track |  Gate check (deny/    |  Pearl L2-3     │
+  │  + escalation     |  allow/escalate)      |  do-calculus    │
+  └───────────────────────────┬─────────────────────────────────┘
+                              |
+  ┌─────────────────────────────────────────────────────────────┐
+  │                      CIEU AUDIT TRAIL                       │
+  │  SQLite WAL  |  SHA-256 sealed sessions  |  FTS5 search     │
+  │  Every check() writes one immutable record. Tamper-evident. │
+  └───────────────────────────┬─────────────────────────────────┘
+                              |
+          ┌───────────────────┼───────────────────┐
+          v                   v                   v
+  ┌──────────────┐   ┌──────────────┐   ┌──────────────┐
+  │ Claude Code  │   │  OpenClaw    │   │  Any Python  │
+  │   Adapter    │   │  Connector   │   │    Agent     │
+  └──────────────┘   └──────────────┘   └──────────────┘
 ```
 
-## Call Directions
+**One foundation**: Kernel engine -- deterministic `check()` with 8 constraint dimensions.
+Same contract + same params = same result, every time. Zero ML in the critical path.
 
-| From | To | Mechanism |
-|------|----|-----------|
-| Path B | Foundation | check(), CIEU, CausalEngine |
-| Path A | Foundation | check(), CIEU, CausalEngine |
-| Bridge | Path B | reads CIEU records |
-| Bridge | GovernanceLoop | injects 3 KPIs into raw_kpis |
-| GovernanceLoop | Path A | produces GovernanceSuggestion |
+**Three lines**: Intent Compilation (NL to contract), Governance Services
+(omission/intervention/causal), and CIEU audit trail (immutable, sealed, searchable).
 
-## Key Numbers
+**Bridge**: Adapter layer connects any AI runtime -- Claude Code hooks, OpenClaw SSE/webhook,
+or raw Python `import ystar` -- to the same governance backbone.
 
 | Metric | Value |
-|--------|-------|
-| Test coverage | 304 tests passing |
-| CIEU audit records | 830+ |
-| Causal reasoning | Pearl Ladder L2-L3 (do-calculus, counterfactuals) |
-| Patent applications | 3 filed |
-| Safety-critical halt distance | SHD = 0 |
-| Constraint dimensions | 8 base + 4 higher-order |
+|---|---|
+| Test coverage | 304 tests, all passing |
+| CIEU audit records | 830+ in production |
+| Causal reasoning | Pearl Level 2-3 (do-calculus, counterfactuals) |
+| Patent filings | 3 provisional (governance loop, causal engine, omission detection) |
