@@ -168,3 +168,15 @@
 **验证：** PC算法新映射SHD从8降到6（+25%），匹配2边(W→H,W→O)
 **ChatGPT 6 Issues：** 前3已修(旧版)，后3本轮修复(activation/amendment/policy)
 **CTO正在做：** SCM数据管道修复 + learn_structure()自动触发 + GovernanceLoop集成
+
+## 03/31 02:30 — Path B 6项升级全部执行
+**老大指令：** ChatGPT三段评估确认后全部执行
+**团队验证：** 6/6技术可行，代码层面确认
+**CTO后台任务启动：** 6项同时实施
+  1. Experience Bridge (experience_bridge.py)
+  2. Path B Constitution (PATH_B_AGENTS.md + hash)
+  3. Obligation/Inconclusive/Human Gate
+  4. Authority Boundary (allowed_dimensions)
+  5. external: kernel semantics
+  6. Real disconnect execution
+**Deadline:** 15分钟，每3分钟检查
