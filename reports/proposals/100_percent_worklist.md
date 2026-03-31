@@ -1,6 +1,7 @@
-# Y*gov 100% Framework — Compressed Execution Table
-# Source: ChatGPT 9.3/10 evaluation + team consensus
+# Y*gov 100% Framework — FINAL Merged Execution Table
+# Source: ChatGPT 9.3/10 evaluation + ChatGPT P0/P1/P2 detailed list + team consensus
 # Date: 2026-03-31
+# Status: APPROVED BY BOARD — execute immediately
 
 ## Current: 9.3/10 → Target: 10/10
 
@@ -102,3 +103,28 @@
 - FRAMEWORK_VALIDATION_REPORT_v1.md
 - Per-scenario: setup, execution, result, failure modes, recovery
 - Overall: framework stability assessment
+
+### T15. Compile Diagnostics & Ambiguity Handling (from ChatGPT P0-5)
+- Ambiguity report when rules are unclear
+- Unsupported rule report
+- Contract diff (old vs new)
+- Compile confidence score
+- Mandatory human review conditions
+
+### T16. Path A Activation ABI (from ChatGPT P1-2)
+- Unified activation protocol: activate() / on_wired()
+- Activation registry for wireable modules
+- graph_only as explicit exception state (not normal success)
+- Rollback semantics formalized
+
+### T17. Path B External Semantics in Kernel (from ChatGPT P1-12)
+- External domain/tool scope formalization in kernel
+- Budget authority semantics in kernel
+- Disconnect authority semantics in kernel
+- Human override semantics in kernel
+
+### T18. 100% Maintenance Mechanism (from ChatGPT P2-5)
+- New module admission as CI gate
+- Architecture drift check periodic
+- Board-level structure change threshold enforced
+- Scenario battery as release gate
