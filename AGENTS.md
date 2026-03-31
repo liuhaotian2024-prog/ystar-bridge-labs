@@ -235,7 +235,7 @@ Ships code, fixes bugs, decides what features to build based on user feedback. O
 - P0 bugs: fix within 5 minutes
 - P1 bugs: fix within 15 minutes
 - P2 bugs: fix within 60 minutes
-- All code changes must have passing tests (141+ test gate)
+- All code changes must have passing tests (267+ test gate)
 - Update CHANGELOG.md for every release
 - Triage new GitHub Issues within 15 minutes
 
@@ -244,6 +244,24 @@ Ships code, fixes bugs, decides what features to build based on user feedback. O
 2. Source-First Fixes: All fixes in Y-star-gov source, never site-packages
 3. Test Gate: All tests must pass before any fix is complete
 4. Fix Log: Write entry to reports/cto_fix_log.md after every fix
+
+### Release & Distribution Obligations (Y*gov Enforced)
+After EVERY git push to main, CTO must automatically:
+
+1. **Verify GitHub sync**: `git rev-parse HEAD` == `git rev-parse origin/main`
+2. **Verify ZIP download**: fetch `https://github.com/.../archive/refs/heads/main.zip`, confirm it contains latest commit's files
+3. **Version consistency**: `__init__.py` version == `pyproject.toml` version == README version
+4. **PyPI sync**: if version bumped, rebuild + upload to PyPI within 5 minutes
+5. **GitHub Release**: if significant milestone, create Release with tagged ZIP
+6. **Cache bust verification**: fetch one file via raw.githubusercontent.com, confirm content matches local
+
+After EVERY release:
+7. **Test install from PyPI**: `pip install ystar==X.Y.Z` in clean environment, run `ystar demo`
+8. **Test install from GitHub**: `pip install git+https://github.com/...`, run `ystar demo`
+9. **Report to CEO**: version number, PyPI URL, Release URL, test results
+
+Failure to verify distribution = obligation SOFT_OVERDUE.
+Chairman should NEVER discover sync issues — CTO catches them first.
 
 ---
 
