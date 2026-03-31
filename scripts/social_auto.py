@@ -64,14 +64,26 @@ async def get_context(playwright, platform: str, headless: bool = True):
 # ═══════════════════════════════════════════════════════════
 
 async def linkedin_login():
-    """Open LinkedIn login page. User logs in manually once. Cookies saved."""
+    """Open LinkedIn login page. User logs in manually. Auto-detects login completion."""
     async with async_playwright() as p:
         ctx = await get_context(p, "linkedin")
         page = ctx.pages[0] if ctx.pages else await ctx.new_page()
         await page.goto("https://www.linkedin.com/login")
-        print("Please log in to LinkedIn manually. Press Enter here when done...")
-        input()
+        print("[LinkedIn] Browser opened. Please log in manually...")
+        print("[LinkedIn] Waiting for login (will auto-detect when you reach the feed)...")
+        # Poll until we detect the logged-in feed page
+        for i in range(180):  # Wait up to 3 minutes
+            await page.wait_for_timeout(1000)
+            url = page.url
+            if "/feed" in url or "/mynetwork" in url or "/in/" in url:
+                print(f"[LinkedIn] Login detected! URL: {url}")
+                break
+            if i % 10 == 0 and i > 0:
+                print(f"[LinkedIn] Still waiting... ({i}s)")
+        else:
+            print("[LinkedIn] Timeout. Saving whatever state we have.")
         await save_state(ctx, "linkedin")
+        print("[LinkedIn] Session saved. You can close the browser.")
         await ctx.close()
 
 
@@ -159,14 +171,30 @@ async def linkedin_analytics():
 # ═══════════════════════════════════════════════════════════
 
 async def hn_login():
-    """Login to HN. One-time manual login."""
+    """Login to HN. Auto-detects login completion."""
     async with async_playwright() as p:
         ctx = await get_context(p, "hn")
         page = ctx.pages[0] if ctx.pages else await ctx.new_page()
         await page.goto("https://news.ycombinator.com/login")
-        print("Please log in to Hacker News manually. Press Enter here when done...")
-        input()
+        print("[HN] Browser opened. Please log in manually...")
+        print("[HN] Waiting for login (will auto-detect)...")
+        for i in range(120):  # Wait up to 2 minutes
+            await page.wait_for_timeout(1000)
+            # After login, HN redirects to news or shows logout link
+            logout = await page.locator("a[href*='logout']").count()
+            if logout > 0:
+                print("[HN] Login detected!")
+                break
+            url = page.url
+            if "news.ycombinator.com" in url and "login" not in url:
+                print(f"[HN] Login detected! URL: {url}")
+                break
+            if i % 10 == 0 and i > 0:
+                print(f"[HN] Still waiting... ({i}s)")
+        else:
+            print("[HN] Timeout. Saving whatever state we have.")
         await save_state(ctx, "hn")
+        print("[HN] Session saved.")
         await ctx.close()
 
 
