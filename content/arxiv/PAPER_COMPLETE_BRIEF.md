@@ -20,13 +20,31 @@ Y*gov是全球第一个在生产环境中实现Pearl因果层级(Level 2-3)的AI
 
 ## 二、三个贡献 + Pearl作为贯穿基础设施
 
-**重要澄清**: Pearl L2-3不是一个独立贡献——它贯穿了全部三个贡献：
-- C1 (SRGCS): GovernanceLoop用Pearl L2评估suggestion，PathAAgent用Pearl L2选plan + Pearl L3做反事实
-- C2 (Pearl架构): CIEU五元组=Pearl三层的数据结构体现 + CausalEngine的形式化实现
-- C3 (不作为检测): OmissionEngine检测结果feed into CausalEngine，义务违规→健康下降的因果链
+**Y*gov的29个治理能力分三层，Pearl L2-3贯穿全部：**
+
+### 全景能力图：Commission + Omission + Meta-Governance
+
+**Commission层（治理agent乱做）— 12个能力:**
+check() 8维度执法(0.042ms) | 4个安全补丁(路径穿越/eval逃逸/子域名欺骗/类型混淆) | DelegationChain单调性 | NonceLedger防重放 | GoalDrift检测 | SkillProvenance风险评估(MITRE ATLAS 155技术) | CIEU SHA-256 Merkle审计链 | Session Sealing | Contract Legitimacy 6状态生命周期
+
+**Omission层（治理agent不做）— 9个能力:**
+OmissionEngine行动触发扫描 | 8状态义务生命周期 | 7种不作为类型 | 两阶段超时(SOFT→HARD) | 5步升级策略 | ObligationTrigger自动义务 | InterventionEngine(ALLOW/DENY/REDIRECT) | Obligation-First Gate | deny_closure_on_open
+
+**Meta-Governance层（治理治理者）— 8个能力:**
+Path A (SRGCS自指闭环) | Path B (CBGP跨边界投射) | GovernanceLoop | Metalearning | CausalEngine Pearl L2 | CausalEngine Pearl L3 | RuleAdvisor | DimensionDiscovery
+
+### Pearl L2-3 在每一层的体现
+
+| 层 | Pearl L2 (干预) | Pearl L3 (反事实) |
+|---|----------------|------------------|
+| **Commission** | check() = do-operator | CIEU记录Y*_t vs E的差距 = 每条记录都是反事实比较 |
+| **Commission** | Contract Legitimacy衰减 = 干预合约有效性 | "如果合约没过期会怎样" = 反事实 |
+| **Omission** | ObligationTrigger = 强制创建义务 | OmissionEngine = "如果agent做了承诺的事会怎样" |
+| **Omission** | InterventionEngine gate = 强制重定向 | deny_closure = "如果义务已完成，任务才真正完成" |
+| **Meta** | GovernanceLoop.tighten() + CausalEngine | Path A + CausalEngine counterfactual_query() |
 
 **Pearl接入的模块**: GovernanceLoop ✅, PathAAgent ✅, ExternalGovernanceLoop ✅, InterventionEngine ✅, ReportEngine ✅
-**未接入**: PathBAgent, OmissionEngine直接调用（通过meta_agent间接feed）, check()（底层纯谓词，设计上不需要Pearl）
+**未直接接入但间接使用**: OmissionEngine(通过meta_agent feed), PathBAgent, check()(底层纯谓词，设计上不需要Pearl)
 
 ### C1: 自指治理闭环 (SRGCS — Self-Referential Governance Closure)
 
