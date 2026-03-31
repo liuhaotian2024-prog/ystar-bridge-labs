@@ -18,7 +18,15 @@ Y*gov是全球第一个在生产环境中实现Pearl因果层级(Level 2-3)的AI
 
 ---
 
-## 二、三个贡献
+## 二、三个贡献 + Pearl作为贯穿基础设施
+
+**重要澄清**: Pearl L2-3不是一个独立贡献——它贯穿了全部三个贡献：
+- C1 (SRGCS): GovernanceLoop用Pearl L2评估suggestion，PathAAgent用Pearl L2选plan + Pearl L3做反事实
+- C2 (Pearl架构): CIEU五元组=Pearl三层的数据结构体现 + CausalEngine的形式化实现
+- C3 (不作为检测): OmissionEngine检测结果feed into CausalEngine，义务违规→健康下降的因果链
+
+**Pearl接入的模块**: GovernanceLoop ✅, PathAAgent ✅, ExternalGovernanceLoop ✅, InterventionEngine ✅, ReportEngine ✅
+**未接入**: PathBAgent, OmissionEngine直接调用（通过meta_agent间接feed）, check()（底层纯谓词，设计上不需要Pearl）
 
 ### C1: 自指治理闭环 (SRGCS — Self-Referential Governance Closure)
 
