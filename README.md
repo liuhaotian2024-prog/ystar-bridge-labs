@@ -111,12 +111,14 @@ We ran a controlled experiment: same agent team, same task, with and without Y*g
 Governance made the system faster and cheaper — not just safer.
 Full report: [reports/YstarCo_EXP_001](reports/YstarCo_EXP_001_Controlled_Experiment_Report.md)
 
-### Current Status (March 2026)
+### Current Status (April 2026)
 
-- **238 tests passing** — full coverage across kernel, governance, causal, and integration layers
-- **830 CIEU production records** — real governance decisions from operating this company
-- **Pearl Level 2-3 causal reasoning** — first production implementation of Pearl's Causal Hierarchy in agent governance (CausalGraph with d-separation, CounterfactualEngine with three-step procedure)
-- **3 US provisional patents filed** (P1, P3, P4)
+- **406 tests passing** — full coverage across kernel, governance, causal, and integration layers
+- **Per-agent governance** — dynamic multi-agent contract parsing from any AGENTS.md (zero hardcoded roles)
+- **Real-time orchestration** — Path A, GovernanceLoop, InterventionEngine wired into hook execution path
+- **Pearl Level 2-3 causal reasoning** — first production implementation of Pearl's Causal Hierarchy in agent governance
+- **Governance Coverage Assurance** — quantitative GCS scoring of intent-enforcement alignment (P5 patent candidate)
+- **3 US provisional patents filed** (P1: CIEU, P3: SRGCS, P4: OmissionEngine), 2 more in pipeline (P5: GCS, P6: Postcondition Verification)
 
 ### How We Use Y*gov to Govern This Company
 
@@ -140,33 +142,41 @@ CIEU records come from real `check()` calls, or they don't exist.
 ## Organizational Structure
 
 ```
-Board of Directors
-└── Haotian Liu (Chairman)
+Board of Directors (Haotian Liu, Chairman)
+  │
+  └── CEO (Aiden) — Strategy execution, team coordination, board reporting
         │
-        │  Strategic Advisor
-        └── Claude (Anthropic) — Strategy, risk assessment, decision support
-                │
-                │  Executive Team (AI Agents, governed by Y*gov)
-                ├── Aiden (CEO) — Orchestration, board reporting, cross-department coordination
-                ├── CTO Agent — Y*gov source code, engineering, GitHub
-                ├── CMO Agent — Content, marketing, public communications
-                ├── CSO Agent — Sales, enterprise outreach, customer pipeline
-                ├── CFO Agent — Financial model, cost tracking, daily burn rate
-                │
-                │  Subsidiary
-                └── Jinjin — Subsidiary operations
+        ├── CTO (Tech Lead) — Architecture decisions, code review, release management
+        │     │
+        │     ├── Kernel Engineer    — Core engine, compiler, contract parsing
+        │     ├── Governance Engineer — CIEU, omission/intervention engines, Path A/B
+        │     ├── Platform Engineer  — Hook adapters, CLI, QA/integration testing
+        │     └── Domains Engineer   — Domain packs, templates, OpenClaw integration
+        │
+        ├── CMO — Content, marketing, public communications
+        ├── CSO — Sales, user discovery, enterprise outreach
+        ├── CFO — Financial model, token cost tracking, daily burn rate
+        │
+        └── Jinjin (K9 Scout) — Research, data collection (Mac mini subsidiary)
 ```
 
-**The Chairman** sets strategy and approves all external actions.
-Board directives are the only way work enters the system.
+**9 agents, all governed by Y*gov at runtime.**
 
-**The Strategic Advisor** (Claude, Anthropic) provides analysis, identifies risks,
-challenges assumptions, and helps the Chairman make better decisions.
-The Advisor does not execute — the GitHub team executes.
+Every agent operates autonomously — with or without board instruction.
+An [Agent Daemon](scripts/agent_daemon.py) runs continuously on the company workstation:
+when the Board is in session, agents respond to directives;
+when the Board is offline, agents execute self-directed work cycles in parallel.
 
-**The AI Agent Team** executes all day-to-day operations autonomously,
-within the boundaries defined by AGENTS.md and enforced by Y*gov at runtime.
-Every action is recorded in an immutable CIEU audit chain.
+The engineering team runs in two parallel zones:
+**Zone A** (Kernel + Governance engineers) and **Zone B** (Platform + Domains engineers)
+work simultaneously, followed by CTO review and non-technical team work,
+with CEO running last to synthesize all output.
+
+**Every tool call by every agent is:**
+- Checked against per-agent governance contracts (Y*gov `check()`)
+- Recorded in an immutable CIEU audit chain (SHA-256 Merkle hash)
+- Subject to write-path boundaries (agents can only write to their assigned directories)
+- Subject to obligation deadlines (missed deadlines block the agent's next action)
 
 ---
 
