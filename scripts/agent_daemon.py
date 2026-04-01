@@ -49,56 +49,94 @@ QUIET_END = 7     # 07:00
 # 非技术团队: cmo, cso, cfo 可并行运行
 # CEO最后运行（读取所有人产出）
 
-CTO_PROMPT_PREFIX = (
+ENG_PROMPT_PREFIX = (
     "你现在处于自主工作模式（无Board session）。\n\n"
     "核心原则：不要只跑测试看结果——发现能改进的地方就立刻改。\n"
     "必须产出实际代码改动。commit+push所有改动。\n"
-    "写自主工作报告到 reports/autonomous/当天日期-{name}.md\n\n"
+    "写自主工作报告到ystar-company仓库的 reports/autonomous/ 目录。\n"
+    "先检查 .claude/tasks/ 有没有CTO分配的任务——有就优先执行。\n\n"
 )
 
 AGENTS = [
-    # ── CTO子团队（并行组1）──────────────────────────────────────
+    # ── CTO工程师团队 Zone A: Core ────────────────────────────────
     {
-        "name": "cto-core",
-        "role": "ystar-cto-core",
+        "name": "eng-kernel",
+        "role": "eng-kernel",
         "prompt": (
-            CTO_PROMPT_PREFIX.format(name="ystar-cto-core") +
-            "你的职责：Y*gov kernel和session层。\n"
-            "工作目录: C:\\Users\\liuha\\OneDrive\\桌面\\Y-star-gov\\\n\n"
-            "本次任务（按优先级）：\n"
-            "1. 输入层路径统一：ystar init应该是唯一入口，session config是唯一真相源\n"
-            "   hook不应自己解析AGENTS.md，应该读session config\n"
-            "2. 改进kernel中的合约解析逻辑\n"
-            "3. 修复任何TODO或已知问题\n"
+            ENG_PROMPT_PREFIX +
+            "你是Kernel Engineer，负责Y*gov核心引擎。\n"
+            "工作目录: C:\\Users\\liuha\\OneDrive\\桌面\\Y-star-gov\\\n"
+            "你的文件: ystar/kernel/, ystar/session.py, ystar/__init__.py\n"
+            "不要碰: governance/, adapters/, cli/, domains/\n\n"
+            "自主工作（无CTO任务时）：\n"
+            "1. 读kernel/中每个文件，找到TODO注释或可改进的代码，立刻修\n"
+            "2. compiler.py或nl_to_contract.py有bug或性能问题就修\n"
+            "3. 给缺测试的函数补测试\n"
         ),
     },
     {
-        "name": "cto-hook",
-        "role": "ystar-cto-hook",
+        "name": "eng-governance",
+        "role": "eng-governance",
         "prompt": (
-            CTO_PROMPT_PREFIX.format(name="ystar-cto-hook") +
-            "你的职责：Y*gov hook adapter层。\n"
-            "工作目录: C:\\Users\\liuha\\OneDrive\\桌面\\Y-star-gov\\\n\n"
-            "本次任务（按优先级）：\n"
-            "1. P5审计修复：AGENTS.md写保护、工具限制执行、except:pass改日志\n"
-            "2. InterventionEngine端到端验证\n"
-            "3. Bash命令路径检查集成\n"
+            ENG_PROMPT_PREFIX +
+            "你是Governance Engineer，负责Y*gov治理子系统。\n"
+            "工作目录: C:\\Users\\liuha\\OneDrive\\桌面\\Y-star-gov\\\n"
+            "你的文件: ystar/governance/, ystar/path_a/, ystar/path_b/\n"
+            "不要碰: kernel/, adapters/, cli/, domains/\n\n"
+            "自主工作（无CTO任务时）：\n"
+            "1. OmissionEngine/InterventionEngine的scan→pulse链路写端到端测试\n"
+            "2. GovernanceLoop接入baseline数据（RetroBaselineStore）\n"
+            "3. CausalEngine优化或补测试\n"
+            "4. Path A/B有stale文档就更新\n"
+        ),
+    },
+    # ── CTO工程师团队 Zone B: Surface ─────────────────────────────
+    {
+        "name": "eng-platform",
+        "role": "eng-platform",
+        "prompt": (
+            ENG_PROMPT_PREFIX +
+            "你是Platform Engineer兼QA Lead，负责adapter/CLI/集成测试。\n"
+            "工作目录: C:\\Users\\liuha\\OneDrive\\桌面\\Y-star-gov\\\n"
+            "你的文件: ystar/adapters/, ystar/cli/, ystar/_cli.py, ystar/integrations/, ystar/module_graph/, tests/test_scenarios.py, tests/test_architecture.py\n"
+            "不要碰: kernel/, governance/核心文件, domains/\n\n"
+            "自主工作（无CTO任务时）：\n"
+            "1. 实现ystar audit命令（Governance Coverage Score计算+报告）\n"
+            "2. hook.py中剩余的except:pass改为日志\n"
+            "3. ystar doctor增加per-agent治理状态检查\n"
+            "4. 写跨模块集成测试\n"
         ),
     },
     {
-        "name": "cto-infra",
-        "role": "ystar-cto-infra",
+        "name": "eng-domains",
+        "role": "eng-domains",
         "prompt": (
-            CTO_PROMPT_PREFIX.format(name="ystar-cto-infra") +
-            "你的职责：Y*gov CLI、测试、打包。\n"
-            "工作目录: C:\\Users\\liuha\\OneDrive\\桌面\\Y-star-gov\\\n\n"
-            "本次任务（按优先级）：\n"
-            "1. 实现 ystar audit 命令（Governance Coverage Score）\n"
-            "2. 确保ystar doctor检查per-agent治理状态\n"
-            "3. 准备PyPI 0.48发布（版本号、CHANGELOG、pyproject.toml）\n"
+            ENG_PROMPT_PREFIX +
+            "你是Domains Engineer，负责领域包和策略模板。\n"
+            "工作目录: C:\\Users\\liuha\\OneDrive\\桌面\\Y-star-gov\\\n"
+            "你的文件: ystar/domains/, ystar/templates/, ystar/template.py, ystar/patterns/\n"
+            "不要碰: kernel/, governance/核心, adapters/, cli/\n\n"
+            "自主工作（无CTO任务时）：\n"
+            "1. OpenClaw accountability pack有缺失的义务类型就补\n"
+            "2. 设计新的domain pack（如金融合规、医疗）\n"
+            "3. 策略模板跟最新IntentContract功能对齐\n"
         ),
     },
-    # ── 管理层 ──────────────────────────────────────────────────────
+    # ── 管理层 + 非技术团队 ─────────────────────────────────────────
+    {
+        "name": "cto",
+        "role": "ystar-cto",
+        "prompt": (
+            "你现在处于自主工作模式（无Board session）。\n\n"
+            "你是CTO，管理4个工程师。不要自己写代码——review和分配任务。\n\n"
+            "1. 读取reports/autonomous/中工程师的最新报告，评估质量\n"
+            "2. 运行测试: cd Y-star-gov && python -m pytest --tb=short -q\n"
+            "3. 检查git log，review工程师的commit是否合理\n"
+            "4. 如果有工程师没产出或质量低，写新任务到.claude/tasks/\n"
+            "5. 更新reports/tech_debt.md\n"
+            "6. 写CTO自主工作报告到reports/autonomous/\n"
+        ),
+    },
     {
         "name": "ceo",
         "role": "ystar-ceo",
@@ -329,11 +367,13 @@ def run_agent(agent: dict) -> bool:
 # 不同组之间串行运行
 
 PARALLEL_GROUPS = [
-    # 组1: CTO子团队（3个工程师并行，各管不同文件）
-    ["cto-core", "cto-hook", "cto-infra"],
-    # 组2: 非技术团队（并行，互不干扰）
-    ["cmo", "cso", "cfo"],
-    # 组3: CEO最后运行（读取所有人的产出再做决策）
+    # 组1: CTO工程师团队 Zone A — Core（并行，文件不重叠）
+    ["eng-kernel", "eng-governance"],
+    # 组2: CTO工程师团队 Zone B — Surface（并行，文件不重叠）
+    ["eng-platform", "eng-domains"],
+    # 组3: CTO review + 非技术团队（CTO review工程师产出，同时CMO/CSO/CFO并行工作）
+    ["cto", "cmo", "cso", "cfo"],
+    # 组4: CEO最后运行（读取全员产出做决策）
     ["ceo"],
 ]
 
