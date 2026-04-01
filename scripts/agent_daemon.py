@@ -51,71 +51,112 @@ AGENTS = [
         "name": "ceo",
         "role": "ystar-ceo",
         "prompt": (
-            "你现在处于自主工作模式（无Board session）。执行以下循环：\n"
-            "1. 读取 OKR.md，检查哪些KR落后，制定推进行动\n"
-            "2. 检查K9 inbox: python scripts/k9_inbox.py\n"
-            "3. 检查Team Health: 各agent最近一次产出是什么时候\n"
-            "4. 读取 reports/autonomous/ 最新日报，发现需要跟进的事项\n"
-            "5. 执行至少1项自主工作（研究、策略、协调）\n"
-            "6. 写入今日自主工作报告到 reports/autonomous/ 目录\n"
-            "7. 如果有commit，push到remote\n"
-            "完成后退出。"
+            "你现在处于自主工作模式（无Board session）。\n\n"
+            "核心原则：不要只检查和报告——发现问题就立刻动手解决。\n"
+            "一个真正优秀的CEO发现KR落后不会写'KR落后了'然后收工，\n"
+            "他会立刻制定行动方案并开始执行。\n\n"
+            "按以下顺序工作，每一步都要产出实际成果：\n\n"
+            "1. 读取 OKR.md — 找到最落后的KR，立刻写出具体的补救行动计划，\n"
+            "   更新到BOARD_PENDING.md或DISPATCH.md\n"
+            "2. 检查K9 inbox (python scripts/k9_inbox.py) — 有结果就立刻处理：\n"
+            "   分发给相关agent、整合到知识库、或回复K9继续任务\n"
+            "3. 读取 reports/autonomous/ 各agent日报 — 发现谁没干活或产出质量低，\n"
+            "   立刻写指令文件给那个agent下次session执行\n"
+            "4. 自主推进至少1件实事：写一份策略文档、更新OKR进度、\n"
+            "   给K9派一个新的研究任务、或整理出一份给Board的决策建议\n"
+            "5. 把所有改动commit+push，然后写自主工作报告到\n"
+            "   reports/autonomous/当天日期-ystar-ceo.md\n"
+            "   报告重点写：我做了什么（动词），不是我发现了什么（名词）\n"
         ),
     },
     {
         "name": "cto",
         "role": "ystar-cto",
         "prompt": (
-            "你现在处于自主工作模式（无Board session）。执行以下循环：\n"
-            "1. 检查Y-star-gov仓库的GitHub Issues\n"
-            "2. 运行测试: python -m pytest --tb=short -q\n"
-            "3. 检查tech_debt.md，选择一项改进执行\n"
-            "4. 执行至少1项自主工作（代码优化、测试补充、文档更新）\n"
-            "5. 写入今日自主工作报告到 reports/autonomous/ 目录\n"
-            "6. 如果有commit，push到remote\n"
-            "完成后退出。"
+            "你现在处于自主工作模式（无Board session）。\n\n"
+            "核心原则：不要只跑测试看结果——发现能改进的地方就立刻改。\n"
+            "一个真正优秀的CTO不会写'tech debt存在'然后收工，\n"
+            "他会挑一个最有价值的tech debt立刻修掉。\n\n"
+            "按以下顺序工作，每一步都要产出代码或文档：\n\n"
+            "1. cd到Y-star-gov仓库，运行测试 — 有失败就立刻修复\n"
+            "2. 读取CHANGELOG.md和最近git log — 找到可以改进的代码，\n"
+            "   选择一项立刻执行（优化性能、增加测试、改善错误处理、\n"
+            "   补充文档、修复TODO注释中的问题）\n"
+            "3. 读取GitHub Issues — 选最高优先级的issue开始修复，\n"
+            "   如果能在这个session内解决就解决，不能就推进一步\n"
+            "4. 检查ystar doctor输出 — 任何warning都要尝试解决\n"
+            "5. 所有改动必须有测试，commit+push到remote\n"
+            "6. 写自主工作报告到 reports/autonomous/当天日期-ystar-cto.md\n"
+            "   报告重点写：改了哪些文件、修了什么问题、测试结果\n"
         ),
     },
     {
         "name": "cmo",
         "role": "ystar-cmo",
         "prompt": (
-            "你现在处于自主工作模式（无Board session）。执行以下循环：\n"
-            "1. 读取Y-star-gov最近的git log，了解产品最新进展\n"
-            "2. 检查content/目录，评估内容pipeline\n"
-            "3. 研究竞品内容策略（搜索MOSAIC, AutoHarness最新文章）\n"
-            "4. 执行至少1项自主工作（草拟内容、研究行业趋势、优化现有内容）\n"
-            "5. 写入今日自主工作报告到 reports/autonomous/ 目录\n"
-            "6. 如果有commit，push到remote\n"
-            "完成后退出。"
+            "你现在处于自主工作模式（无Board session）。\n\n"
+            "核心原则：不要只研究行业趋势——要产出可发布的内容。\n"
+            "一个真正优秀的CMO不会写'应该写篇blog'然后收工，\n"
+            "他会立刻开始写那篇blog的初稿。\n\n"
+            "按以下顺序工作，每一步都要产出实际内容：\n\n"
+            "1. 读取Y-star-gov最近的git log — 找到值得写的新功能或改进，\n"
+            "   如果有，立刻在content/目录开始写一篇技术blog初稿\n"
+            "2. 检查content/目录现有草稿 — 有未完成的就继续完善，\n"
+            "   让它更接近可发布状态（加数据、加代码示例、改标题）\n"
+            "3. 研究竞品并产出分析文档 — 不是'发现竞品在做X'，\n"
+            "   而是写出'竞品做了X，我们的差异化回应是Y'的完整分析\n"
+            "4. 改进README — 读Y-star-gov的README.md，找到可以优化的地方\n"
+            "   （更清晰的安装说明、更好的示例、更准确的badge数据）\n"
+            "5. 所有内容commit+push，写自主工作报告到\n"
+            "   reports/autonomous/当天日期-ystar-cmo.md\n"
+            "   报告重点写：产出了什么内容、字数、离可发布还差什么\n"
         ),
     },
     {
         "name": "cso",
         "role": "ystar-cso",
         "prompt": (
-            "你现在处于自主工作模式（无Board session）。执行以下循环：\n"
-            "1. 检查GitHub stargazers/forks，分析新用户profile\n"
-            "2. 搜索HN/Reddit/LinkedIn上关于AI agent governance的讨论\n"
-            "3. 建立或更新prospect档案到 sales/crm/prospects/\n"
-            "4. 执行至少1项自主工作（用户发现、渠道研究、销售材料更新）\n"
-            "5. 写入今日自主工作报告到 reports/autonomous/ 目录\n"
-            "6. 如果有commit，push到remote\n"
-            "完成后退出。"
+            "你现在处于自主工作模式（无Board session）。\n\n"
+            "核心原则：不要只列出'应该联系谁'——要建立完整的prospect档案。\n"
+            "一个真正优秀的CSO不会写'GitHub有个新star'然后收工，\n"
+            "他会立刻研究那个人的背景、公司、需求，写一份完整档案和接触策略。\n\n"
+            "按以下顺序工作，每一步都要产出实际文件：\n\n"
+            "1. 用GitHub API分析Y-star-gov和K9Audit的stargazers/forkers —\n"
+            "   对每个有企业背景的用户，立刻建立prospect档案到\n"
+            "   sales/crm/prospects/YYYY-MM-DD-username.md\n"
+            "2. 搜索网上关于'AI agent governance'的讨论（HN、Reddit等）—\n"
+            "   找到真正在讨论agent权限/审计问题的帖子，\n"
+            "   记录讨论者信息，评估是否为潜在用户\n"
+            "3. 更新现有prospect档案 — 有新信息就补充，\n"
+            "   对每个prospect写出具体的接触策略（不是'应该联系'而是'怎么联系'）\n"
+            "4. 更新sales/目录的销售材料 — 基于最新的产品进展更新话术\n"
+            "5. 所有改动commit+push，写自主工作报告到\n"
+            "   reports/autonomous/当天日期-ystar-cso.md\n"
+            "   报告重点写：新建了几个档案、更新了几个、发现了什么线索\n"
         ),
     },
     {
         "name": "cfo",
         "role": "ystar-cfo",
         "prompt": (
-            "你现在处于自主工作模式（无Board session）。执行以下循环：\n"
-            "1. 运行 python scripts/track_burn.py --status 检查token记录\n"
-            "2. 更新 finance/daily_burn.md\n"
-            "3. 分析今日各agent token消耗，提出优化建议\n"
-            "4. 执行至少1项自主工作（财务数据整理、定价研究、成本分析）\n"
-            "5. 写入今日自主工作报告到 reports/autonomous/ 目录\n"
-            "6. 如果有commit，push到remote\n"
-            "完成后退出。"
+            "你现在处于自主工作模式（无Board session）。\n\n"
+            "核心原则：不要只报告'数据过期了'——要立刻更新数据。\n"
+            "一个真正优秀的CFO发现daily_burn.md停在3天前不会写'需要更新'，\n"
+            "他会立刻运行track_burn.py把数据补上。\n\n"
+            "按以下顺序工作，每一步都要产出实际数据更新：\n\n"
+            "1. 运行 python scripts/track_burn.py --status — 有未记录的session\n"
+            "   就立刻记录。如果脚本报错，修复它或记录问题\n"
+            "2. 打开 finance/daily_burn.md — 如果不是今天的数据，\n"
+            "   立刻更新到今天。计算本周累计消耗和日均\n"
+            "3. 分析各agent的token消耗 — 不是'建议优化'，而是\n"
+            "   写出具体的'agent X应该从Opus降级到Sonnet因为Y'的决策建议，\n"
+            "   保存到 finance/token_optimization.md\n"
+            "4. 检查 finance/ 所有文件的数据新鲜度 — 过期的立刻更新，\n"
+            "   缺失的立刻创建，错误的立刻修正\n"
+            "5. 所有改动commit+push，写自主工作报告到\n"
+            "   reports/autonomous/当天日期-ystar-cfo.md\n"
+            "   报告重点写：更新了哪些数据、修正了什么、节省了多少\n"
+            "   每个数字必须有来源，没有来源就标注ESTIMATE\n"
         ),
     },
 ]
@@ -195,7 +236,7 @@ def run_agent(agent: dict) -> bool:
 
     try:
         cmd = [
-            CLAUDE_CMD,
+            "cmd.exe", "/c", CLAUDE_CMD,
             "--agent", name,
             "-p", agent["prompt"],
             "--max-turns", str(MAX_TURNS),
