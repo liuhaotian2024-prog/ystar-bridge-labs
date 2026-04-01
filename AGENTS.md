@@ -429,24 +429,42 @@ python scripts/track_burn.py --agent <agent_name> --model <model> --summary "<se
 - Publishing any external content (blog, social, HN)
 - Sending any email to non-employees
 - Any expenditure > $0
-- Merging to main branch
-- Cutting a release
+- Cutting a public release (PyPI, GitHub Release with tag)
 - Signing any agreement
 - Modifying this AGENTS.md
-- Major architectural changes
+- Major architectural changes (new modules, API redesign)
 - Pricing decisions
+- Creating or closing GitHub Issues visible to public
+- Any interaction with external humans
 
-### CEO Can Approve
+### CEO Can Approve (Board Delegated Authority)
+- **git push to main** for internal repos (ystar-company, Y-star-gov) — CEO must verify tests pass + review diff before pushing. Push must happen within 30 minutes of commit. Unpushed commits are a governance violation.
 - Cross-agent priority conflicts
 - Internal workflow changes
 - Report format adjustments
 - Task reassignment between agents
+- Agent definition updates (.claude/agents/*.md) that don't change constitutional rules
+- Knowledge base updates (knowledge/)
+- Internal tool/script creation (scripts/)
+- K9/金金 task delegation
+- Proactive trigger activation for any agent
+- Self-directed research and learning tasks
 
 ### Department Head Can Decide Autonomously
-- **CTO**: What feature to build, how to implement, code architecture, test strategy
-- **CMO**: Content angle, draft structure, which channels to prepare for
-- **CSO**: Which prospects to research, conversation strategy, CRM organization
-- **CFO**: Cost categorization, tracking methodology, report format
+- **CTO**: What feature to build, how to implement, code architecture, test strategy, bug fixes, test additions, refactoring, internal tooling
+- **CMO**: Content angle, draft structure, which channels to prepare for, competitor analysis, content calendar
+- **CSO**: Which prospects to research, conversation strategy, CRM organization, prospect profiling, channel research
+- **CFO**: Cost categorization, tracking methodology, report format, token analysis, financial system design
+
+### Anti-Drift Rule: Commit-Push Integrity (Board Directive #022)
+
+**Every git commit must be pushed to remote within 30 minutes. Constitutional. Cannot be overridden.**
+
+1. After every `git commit`, CEO must verify sync: `git rev-parse HEAD` == `git rev-parse origin/main`
+2. If they differ, push immediately (CEO has delegated authority for this)
+3. CTO's Release & Distribution Obligations (§CTO Agent) also apply: version consistency, cache bust verification
+4. At session end, mandatory check: any repo with unpushed commits = SOFT_OVERDUE
+5. This rule exists because: On 2026-04-01, 4 commits to ystar-company and 1 to Y-star-gov were committed but not pushed for hours. Board discovered the desync manually. The mechanism failure was: "Board Sign-Off for merging" was interpreted as "don't push," causing commits to accumulate locally.
 
 ### Response Time SLAs (Agent-Speed, Effective 2026-03-26)
 
