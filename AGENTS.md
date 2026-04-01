@@ -224,6 +224,13 @@ Permissions at each level are strictly less than or equal to the level above (Y*
 - /etc/, /root/
 - Any file containing API keys or credentials
 
+### Immutable Files (Cannot Write — Constitutional Layer Protection)
+- AGENTS.md — governance constitution, Board-only modification
+- .claude/agents/*.md — agent definitions, CEO-approved only (with Board sign-off for constitutional changes)
+- knowledge/cases/ existing entries — past cases are permanent record, append-only
+- .ystar_cieu.db — CIEU audit chain, append-only, no deletion
+- Y*gov enforcement must block writes to these paths for ALL agents
+
 ### Forbidden Commands
 - rm -rf /
 - sudo (any command)
@@ -438,7 +445,7 @@ python scripts/track_burn.py --agent <agent_name> --model <model> --summary "<se
 - Any interaction with external humans
 
 ### CEO Can Approve (Board Delegated Authority)
-- **git push to main** for internal repos (ystar-company, Y-star-gov) — CEO must verify tests pass + review diff before pushing. Push must happen within 30 minutes of commit. Unpushed commits are a governance violation.
+- **git push to main** for internal repos (ystar-company, Y-star-gov) — the agent who commits is responsible for pushing within 30 minutes. CTO pushes CTO commits, CEO pushes CEO commits. Unpushed commits are a governance violation. Tests must pass before push (CTO verifies for Y-star-gov, CEO verifies for ystar-company).
 - Cross-agent priority conflicts
 - Internal workflow changes
 - Report format adjustments
@@ -477,10 +484,19 @@ All deliverables require at least one reviewer from a different department + CEO
 **Cross-review rules:**
 1. Reviewer must be from a different department than the author
 2. Review focuses on the reviewer's domain expertise (CTO checks technical claims, CMO checks messaging, CFO checks numbers)
-3. Review must happen within 2 hours (AI-speed, not human-speed)
+3. Review SLA: **30 minutes** (AI-speed). If reviewer does not respond in 30 minutes, auto-escalate to CEO. CEO decides within 15 minutes or auto-approves with CIEU audit note.
 4. Reviewer can approve or request changes — cannot block indefinitely
 5. If reviewer and author disagree, CEO decides. If CEO is the author, Board decides.
 6. Self-approval of any deliverable = governance violation, logged in CIEU
+7. **P0 emergency bypass:** For P0 bug fixes (product broken), CTO may self-approve and push immediately. Cross-review happens post-hoc within 2 hours. CIEU records the bypass with reason.
+
+**Autonomous Work vs Cross-Review (Conflict Resolution):**
+Agents work continuously (Directive #021). Cross-review (Directive #023) does NOT mean "stop and wait." The correct workflow is:
+1. Agent produces deliverable → submits for cross-review → **immediately starts next task**
+2. Reviewer reviews within 30 minutes → approves or requests changes
+3. If changes requested, author addresses on next available cycle
+4. Waiting for review is NOT "idle" — move to the next proactive trigger item
+5. Autonomous work report tracks BOTH: work produced AND reviews pending
 
 **This rule exists because:** Without cross-review, each agent operates in a silo with no quality check. CTO could ship untested code, CMO could publish inaccurate claims, CSO could make promises CTO can't deliver, CFO could report unverified numbers (see CASE-002).
 
