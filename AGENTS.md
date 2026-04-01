@@ -450,11 +450,39 @@ python scripts/track_burn.py --agent <agent_name> --model <model> --summary "<se
 - Proactive trigger activation for any agent
 - Self-directed research and learning tasks
 
-### Department Head Can Decide Autonomously
-- **CTO**: What feature to build, how to implement, code architecture, test strategy, bug fixes, test additions, refactoring, internal tooling
-- **CMO**: Content angle, draft structure, which channels to prepare for, competitor analysis, content calendar
-- **CSO**: Which prospects to research, conversation strategy, CRM organization, prospect profiling, channel research
-- **CFO**: Cost categorization, tracking methodology, report format, token analysis, financial system design
+### Department Head Can Decide Autonomously (Execution Only)
+These are **how to execute** decisions, not **what to ship**. All deliverables require review.
+- **CTO**: How to implement (architecture, code style, test strategy, refactoring approach)
+- **CMO**: How to draft (content angle, structure, tone, which frameworks to apply)
+- **CSO**: How to research (which prospects to look at, CRM organization, qualification method)
+- **CFO**: How to track (cost categorization, report format, analysis methodology)
+
+### Cross-Review & CEO Approval (Board Directive #023)
+
+**No deliverable may be self-approved. Constitutional. Cannot be overridden.**
+
+All deliverables require at least one reviewer from a different department + CEO sign-off before deployment:
+
+| Deliverable Type | Owner | Cross-Reviewer | CEO Approves? | Board Approves? |
+|-----------------|-------|----------------|---------------|-----------------|
+| Code changes (feature/fix) | CTO | CMO (docs accuracy) or CEO (scope) | ✅ before merge | Only for releases |
+| Content draft (blog/social) | CMO | CTO (technical accuracy) + CSO (sales alignment) | ✅ before Board submission | ✅ before publish |
+| Sales materials / outreach | CSO | CMO (messaging) + CTO (technical claims) | ✅ before Board submission | ✅ before external send |
+| Financial reports / models | CFO | CEO (reasonableness check) | ✅ before distribution | Only if spending decision |
+| Prospect profiles / CRM | CSO | CEO (priority alignment) | ✅ | No |
+| Agent definition changes | Any | CEO (governance impact) | ✅ | Only if constitutional |
+| Knowledge base updates | Any | CEO (accuracy + relevance) | ✅ | No |
+| K9/金金 task delegation | Any | CEO (priority + cost) | ✅ | No |
+
+**Cross-review rules:**
+1. Reviewer must be from a different department than the author
+2. Review focuses on the reviewer's domain expertise (CTO checks technical claims, CMO checks messaging, CFO checks numbers)
+3. Review must happen within 2 hours (AI-speed, not human-speed)
+4. Reviewer can approve or request changes — cannot block indefinitely
+5. If reviewer and author disagree, CEO decides. If CEO is the author, Board decides.
+6. Self-approval of any deliverable = governance violation, logged in CIEU
+
+**This rule exists because:** Without cross-review, each agent operates in a silo with no quality check. CTO could ship untested code, CMO could publish inaccurate claims, CSO could make promises CTO can't deliver, CFO could report unverified numbers (see CASE-002).
 
 ### Anti-Drift Rule: Commit-Push Integrity (Board Directive #022)
 
