@@ -45,8 +45,60 @@ QUIET_START = 23  # 23:00
 QUIET_END = 7     # 07:00
 
 # ── Agent定义 ──────────────────────────────────────────────────────────
+# CTO子团队: cto-core, cto-hook, cto-infra 可并行运行
+# 非技术团队: cmo, cso, cfo 可并行运行
+# CEO最后运行（读取所有人产出）
+
+CTO_PROMPT_PREFIX = (
+    "你现在处于自主工作模式（无Board session）。\n\n"
+    "核心原则：不要只跑测试看结果——发现能改进的地方就立刻改。\n"
+    "必须产出实际代码改动。commit+push所有改动。\n"
+    "写自主工作报告到 reports/autonomous/当天日期-{name}.md\n\n"
+)
 
 AGENTS = [
+    # ── CTO子团队（并行组1）──────────────────────────────────────
+    {
+        "name": "cto-core",
+        "role": "ystar-cto-core",
+        "prompt": (
+            CTO_PROMPT_PREFIX.format(name="ystar-cto-core") +
+            "你的职责：Y*gov kernel和session层。\n"
+            "工作目录: C:\\Users\\liuha\\OneDrive\\桌面\\Y-star-gov\\\n\n"
+            "本次任务（按优先级）：\n"
+            "1. 输入层路径统一：ystar init应该是唯一入口，session config是唯一真相源\n"
+            "   hook不应自己解析AGENTS.md，应该读session config\n"
+            "2. 改进kernel中的合约解析逻辑\n"
+            "3. 修复任何TODO或已知问题\n"
+        ),
+    },
+    {
+        "name": "cto-hook",
+        "role": "ystar-cto-hook",
+        "prompt": (
+            CTO_PROMPT_PREFIX.format(name="ystar-cto-hook") +
+            "你的职责：Y*gov hook adapter层。\n"
+            "工作目录: C:\\Users\\liuha\\OneDrive\\桌面\\Y-star-gov\\\n\n"
+            "本次任务（按优先级）：\n"
+            "1. P5审计修复：AGENTS.md写保护、工具限制执行、except:pass改日志\n"
+            "2. InterventionEngine端到端验证\n"
+            "3. Bash命令路径检查集成\n"
+        ),
+    },
+    {
+        "name": "cto-infra",
+        "role": "ystar-cto-infra",
+        "prompt": (
+            CTO_PROMPT_PREFIX.format(name="ystar-cto-infra") +
+            "你的职责：Y*gov CLI、测试、打包。\n"
+            "工作目录: C:\\Users\\liuha\\OneDrive\\桌面\\Y-star-gov\\\n\n"
+            "本次任务（按优先级）：\n"
+            "1. 实现 ystar audit 命令（Governance Coverage Score）\n"
+            "2. 确保ystar doctor检查per-agent治理状态\n"
+            "3. 准备PyPI 0.48发布（版本号、CHANGELOG、pyproject.toml）\n"
+        ),
+    },
+    # ── 管理层 ──────────────────────────────────────────────────────
     {
         "name": "ceo",
         "role": "ystar-ceo",
@@ -272,34 +324,110 @@ def run_agent(agent: dict) -> bool:
         return False
 
 
-# ── 主循环 ──────────────────────────────────────────────────────────────
+# ── 并行组定义 ────────────────────────────────────────────────────────
+# 同一组内的agent可以并行运行（不修改同一文件）
+# 不同组之间串行运行
 
-def run_cycle(state: dict):
-    """运行一轮完整的自主工作循环（所有agent各一次）。"""
-    log.info("=" * 60)
-    log.info("Starting autonomous work cycle #%d", state["total_cycles"] + 1)
+PARALLEL_GROUPS = [
+    # 组1: CTO子团队（3个工程师并行，各管不同文件）
+    ["cto-core", "cto-hook", "cto-infra"],
+    # 组2: 非技术团队（并行，互不干扰）
+    ["cmo", "cso", "cfo"],
+    # 组3: CEO最后运行（读取所有人的产出再做决策）
+    ["ceo"],
+]
 
-    for agent in AGENTS:
-        # 每个agent之前检查Board是否上线
+
+def run_agent_async(agent: dict) -> subprocess.Popen:
+    """非阻塞启动agent session，返回Popen对象。"""
+    name = agent["name"]
+    log.info(f"Starting parallel session: {name}")
+
+    active_file = WORK_DIR / f".ystar_active_agent_{name}"
+    active_file.write_text(agent["role"], encoding="utf-8")
+
+    cmd = [
+        "cmd.exe", "/c", CLAUDE_CMD,
+        "--agent", name,
+        "-p", agent["prompt"],
+        "--max-turns", str(MAX_TURNS),
+        "--no-session-persistence",
+    ]
+
+    env = {**os.environ, "YSTAR_AGENT_ID": agent["role"]}
+    proc = subprocess.Popen(
+        cmd, cwd=str(WORK_DIR),
+        stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+        text=True, env=env,
+    )
+    return proc
+
+
+def run_parallel_group(agents: list, state: dict):
+    """并行运行一组agent，等待全部完成。"""
+    agent_map = {a["name"]: a for a in AGENTS}
+    procs = {}
+
+    for name in agents:
         if is_board_active():
-            log.info("Board session detected, pausing autonomous work")
-            return
+            log.info("Board detected, aborting parallel group")
+            break
+        agent = agent_map.get(name)
+        if agent:
+            try:
+                procs[name] = run_agent_async(agent)
+            except Exception as e:
+                log.error(f"Failed to start {name}: {e}")
 
-        if is_quiet_hours():
-            log.info("Quiet hours, skipping remaining agents")
-            return
+    if not procs:
+        return
 
-        success = run_agent(agent)
+    log.info(f"Waiting for {len(procs)} parallel agents: {list(procs.keys())}")
 
-        # 记录运行状态
-        state["agent_runs"].setdefault(agent["name"], []).append({
+    for name, proc in procs.items():
+        try:
+            stdout, stderr = proc.communicate(timeout=600)
+            success = proc.returncode == 0
+            if success:
+                log.info(f"  {name}: completed successfully")
+            else:
+                log.warning(f"  {name}: failed (rc={proc.returncode})")
+                if stderr:
+                    log.warning(f"    stderr: {stderr[:300]}")
+        except subprocess.TimeoutExpired:
+            proc.kill()
+            log.warning(f"  {name}: timed out, killed")
+            success = False
+        except Exception as e:
+            log.error(f"  {name}: error: {e}")
+            success = False
+
+        state["agent_runs"].setdefault(name, []).append({
             "time": datetime.now().isoformat(),
             "success": success,
         })
-        # 只保留最近10次记录
-        state["agent_runs"][agent["name"]] = state["agent_runs"][agent["name"]][-10:]
+        state["agent_runs"][name] = state["agent_runs"][name][-10:]
 
-        save_state(state)
+    save_state(state)
+
+
+# ── 主循环 ──────────────────────────────────────────────────────────────
+
+def run_cycle(state: dict):
+    """运行一轮自主工作循环：按组并行，组间串行。"""
+    log.info("=" * 60)
+    log.info("Starting autonomous work cycle #%d", state["total_cycles"] + 1)
+
+    for group in PARALLEL_GROUPS:
+        if is_board_active():
+            log.info("Board session detected, pausing autonomous work")
+            return
+        if is_quiet_hours():
+            log.info("Quiet hours, skipping remaining groups")
+            return
+
+        log.info(f"Running parallel group: {group}")
+        run_parallel_group(group, state)
 
         # agent间间隔
         time.sleep(AGENT_INTERVAL)
