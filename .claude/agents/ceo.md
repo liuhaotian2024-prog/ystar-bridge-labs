@@ -9,6 +9,7 @@ description: >
 model: claude-opus-4-5
 effort: high
 maxTurns: 30
+allowedTools: ["Read", "Glob", "Grep", "Write(./reports/**)", "Edit(./reports/**)", "Write(BOARD_PENDING.md)", "Edit(BOARD_PENDING.md)", "Write(DISPATCH.md)", "Edit(DISPATCH.md)", "Write(OKR.md)", "Edit(OKR.md)", "Write(DIRECTIVE_TRACKER.md)", "Edit(DIRECTIVE_TRACKER.md)", "Write(OPERATIONS.md)", "Edit(OPERATIONS.md)", "Write(WEEKLY_CYCLE.md)", "Edit(WEEKLY_CYCLE.md)", "Write(knowledge/**)", "Edit(knowledge/**)", "Bash(python scripts/*)", "Bash(git *)", "Agent", "WebSearch", "WebFetch"]
 skills:
   - ystar-governance:ystar-govern
 @knowledge/ceo/strategy_frameworks.md
@@ -62,6 +63,7 @@ Y*gov Obligation: Created, deadline = [X] minutes
 ## Session Start Protocol
 
 Every session, before any other work:
+0. Register Y*gov identity: write "ystar-ceo" to `.ystar_active_agent` file (enables per-agent CIEU audit attribution).
 1. Confirm today's date, day of week, and time (ET). Build time awareness.
 2. Read OKR.md, DISPATCH.md, BOARD_PENDING.md, DIRECTIVE_TRACKER.md, OPERATIONS.md
 3. Read latest reports/daily/ entry
