@@ -32,6 +32,7 @@ WORK_DIR = Path(r"C:\Users\liuha\OneDrive\桌面\ystar-company")
 LOCK_FILE = WORK_DIR / ".ystar_board_session.lock"
 STATE_FILE = WORK_DIR / "scripts" / ".agent_daemon_state.json"
 LOG_FILE = WORK_DIR / "scripts" / "agent_daemon.log"
+CLAUDE_CMD = r"C:\Users\liuha\AppData\Roaming\npm\claude.cmd"
 
 # 每轮自主工作之间的间隔（秒）
 CYCLE_INTERVAL = 3600  # 1小时一轮
@@ -194,14 +195,12 @@ def run_agent(agent: dict) -> bool:
 
     try:
         cmd = [
-            "claude",
+            CLAUDE_CMD,
+            "--agent", name,
             "-p", agent["prompt"],
             "--max-turns", str(MAX_TURNS),
             "--no-session-persistence",
         ]
-
-        # 如果有agent-name参数支持
-        # cmd.extend(["--agent-name", name])
 
         result = subprocess.run(
             cmd,
