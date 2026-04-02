@@ -24,6 +24,11 @@
 
 **Session结束时必须：** 删除 `scripts/.session_booted` 和 `scripts/.session_call_count`，确保下次session必须重新boot。
 
+**热重启：** 老大说"重启"时，立即：
+1. 删除 `scripts/.session_booted` 和 `scripts/.session_call_count`
+2. 重新执行上方完整boot协议（8步全部重跑）
+3. 这不需要退出Claude Code，在当前对话中直接执行
+
 ---
 
 ## Project Overview
