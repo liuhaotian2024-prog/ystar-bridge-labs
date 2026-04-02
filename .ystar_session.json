@@ -47,7 +47,21 @@
       "case_documentation": 86400.0,
       "github_issue_triage": 900.0,
       "social_media_board_approval": 0.0,
-      "distribution_verify_post_push": 300.0
+      "distribution_verify_post_push": 300.0,
+      "hot_reboot_protocol": 120.0,
+      "session_cleanup_boot_markers": 60.0,
+      "k9_task_reply_check": 60.0,
+      "session_handoff_update": 300.0,
+      "board_session_lock_cleanup": 60.0,
+      "pre_commit_silent_exception_check": 0.0,
+      "readme_verify_section_update": 3600.0,
+      "p2_task_definition_complete": 600.0,
+      "directive_tracker_check": 120.0,
+      "directive_tracker_update": 300.0,
+      "daemon_status_check": 60.0,
+      "platform_research_before_write": 1800.0,
+      "k9_task_routing_check": 0.0,
+      "ab_experiment_true_control": 0.0
     }
   },
   "obligation_agent_scope": {
@@ -84,7 +98,21 @@
     "case_documentation":         ["*"],
     "github_issue_triage":        ["ystar-cto"],
     "social_media_board_approval":["ystar-cmo", "ystar-cso"],
-    "distribution_verify_post_push": ["ystar-cto"]
+    "distribution_verify_post_push": ["ystar-cto"],
+    "hot_reboot_protocol":            ["ystar-ceo"],
+    "session_cleanup_boot_markers":   ["ystar-ceo"],
+    "k9_task_reply_check":            ["ystar-ceo"],
+    "session_handoff_update":         ["ystar-ceo"],
+    "board_session_lock_cleanup":     ["ystar-ceo"],
+    "pre_commit_silent_exception_check": ["ystar-cto", "eng-kernel", "eng-governance", "eng-platform", "eng-domains"],
+    "readme_verify_section_update":   ["ystar-cto"],
+    "p2_task_definition_complete":    ["ystar-cto", "ystar-ceo"],
+    "directive_tracker_check":        ["ystar-ceo"],
+    "directive_tracker_update":       ["ystar-ceo"],
+    "daemon_status_check":            ["ystar-ceo"],
+    "platform_research_before_write": ["ystar-cmo"],
+    "k9_task_routing_check":          ["ystar-ceo"],
+    "ab_experiment_true_control":     ["ystar-ceo"]
   },
   "agent_write_paths": {
     "ceo":  ["./reports/", "./BOARD_PENDING.md", "./DISPATCH.md", "./OKR.md", "./DIRECTIVE_TRACKER.md", "./OPERATIONS.md", "./WEEKLY_CYCLE.md", "./knowledge/"],
@@ -95,7 +123,12 @@
     "eng-kernel": [],
     "eng-governance": [],
     "eng-platform": [],
-    "eng-domains": []
+    "eng-domains": [],
+    "k9": ["./research/", "./knowledge/", "./sales/feedback/"]
+  },
+  "restricted_write_paths": {
+    "DIRECTIVE_TRACKER.md": ["ystar-ceo"],
+    "memory/session_handoff.md": ["ystar-ceo"]
   },
   "ceo_deny_paths": [
     "C:/Users/liuha/OneDrive/桌面/Y-star-gov/ystar/",
@@ -106,7 +139,9 @@
     "social_media_board_approval": ["content/outreach/", "marketing/social/"],
     "distribution_verify_post_push": ["ystar/", "src/"],
     "case_documentation": ["knowledge/cases/"],
-    "cross_review_critical_file": ["AGENTS.md", ".ystar_session.json", "CLAUDE.md", "memory/", ".claude/agents/"]
+    "cross_review_critical_file": ["AGENTS.md", ".ystar_session.json", "CLAUDE.md", "memory/", ".claude/agents/"],
+    "platform_research_before_write": ["content/articles/", "content/outreach/", "marketing/social/"],
+    "k9_task_routing_check": ["ystar/kernel/", "ystar/governance/", "ystar/adapters/", "ystar/domains/", "Y-star-gov/"]
   },
   "delegation_chain": {
     "links": [
@@ -118,7 +153,8 @@
       {"parent": "cto", "child": "eng-kernel", "scope": "ystar/kernel/,ystar/session.py"},
       {"parent": "cto", "child": "eng-governance", "scope": "ystar/governance/,ystar/path_a/,ystar/path_b/"},
       {"parent": "cto", "child": "eng-platform", "scope": "ystar/adapters/,ystar/cli/"},
-      {"parent": "cto", "child": "eng-domains", "scope": "ystar/domains/,ystar/templates/"}
+      {"parent": "cto", "child": "eng-domains", "scope": "ystar/domains/,ystar/templates/"},
+      {"parent": "ceo", "child": "k9", "scope": "research/,knowledge/,sales/feedback/", "restrictions": "read-only,no-git,no-ystar-source"}
     ]
   }
 }
