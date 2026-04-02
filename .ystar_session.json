@@ -61,7 +61,19 @@
       "daemon_status_check": 60.0,
       "platform_research_before_write": 1800.0,
       "k9_task_routing_check": 0.0,
-      "ab_experiment_true_control": 0.0
+      "ab_experiment_true_control": 0.0,
+      "mandatory_agent_identity_check": 0.0,
+      "cieu_liveness_enforcement_block": 60.0,
+      "security_incident_auto_escalation": 30.0,
+      "shell_command_approval": 0.0,
+      "governance_loop_rate_limit": 10.0,
+      "handoff_backpressure_check": 0.0,
+      "escalation_resolution_timeout": 3600.0,
+      "off_hours_activity_notification": 0.0,
+      "path_a_mandatory_report": 300.0,
+      "diagnostic_agent_read_access": 0.0,
+      "mandatory_session_boot_record": 10.0,
+      "weekly_cieu_behavioral_audit": 604800.0
     }
   },
   "obligation_agent_scope": {
@@ -112,7 +124,19 @@
     "daemon_status_check":            ["ystar-ceo"],
     "platform_research_before_write": ["ystar-cmo"],
     "k9_task_routing_check":          ["ystar-ceo"],
-    "ab_experiment_true_control":     ["ystar-ceo"]
+    "ab_experiment_true_control":     ["ystar-ceo"],
+    "mandatory_agent_identity_check": ["*"],
+    "cieu_liveness_enforcement_block":["*"],
+    "security_incident_auto_escalation": ["*"],
+    "shell_command_approval":         ["*"],
+    "governance_loop_rate_limit":     ["orchestrator"],
+    "handoff_backpressure_check":     ["*"],
+    "escalation_resolution_timeout":  ["ystar-ceo"],
+    "off_hours_activity_notification":["*"],
+    "path_a_mandatory_report":        ["path_a_agent"],
+    "diagnostic_agent_read_access":   ["doctor_agent"],
+    "mandatory_session_boot_record":  ["*"],
+    "weekly_cieu_behavioral_audit":   ["eng-governance"]
   },
   "agent_write_paths": {
     "ceo":  ["./reports/", "./BOARD_PENDING.md", "./DISPATCH.md", "./OKR.md", "./DIRECTIVE_TRACKER.md", "./OPERATIONS.md", "./WEEKLY_CYCLE.md", "./knowledge/"],
