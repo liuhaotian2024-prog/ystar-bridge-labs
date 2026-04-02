@@ -213,6 +213,24 @@ Permissions at each level are strictly less than or equal to the level above (Y*
 4. **Customer obsession.** User feedback drives priorities. Every agent should understand what users need.
 5. **The demo is us.** Every governed action, every CIEU record, every blocked violation is sales evidence.
 6. **P0 blockers block everything.** No agent may start a new task while a P0 blocker assigned to their team is unresolved. P0 resolution is the only permitted work until cleared. (Added per Board observation: dependency-based obligation gap, 2026-03-26)
+7. **CIEU must flow.** Every session — Board session or autonomous — must verify CIEU is actively recording within the first 60 seconds. If CIEU is not flowing, that is a P0 blocker. Fix it before doing anything else. (Added per Board observation: 10-hour session produced zero CIEU records because hook wasn't loaded, 2026-04-01)
+
+---
+
+## CIEU Liveness Check (Board Directive #024 — Constitutional)
+
+**Every agent session must verify CIEU is recording. Constitutional. Cannot be overridden.**
+
+At session start, within 60 seconds:
+1. Query `.ystar_cieu.db`: count total records
+2. Perform one governed action (e.g., read a file)
+3. Query again: count must have increased by ≥1
+4. If count did NOT increase: **CIEU is dead.** This is P0.
+   - Report to CEO immediately
+   - Do NOT proceed with any other work until CIEU is confirmed alive
+   - Try: restart session, re-run `ystar hook-install`, check settings.json
+
+**This rule exists because:** On 2026-04-01, a 10-hour Board session executed hundreds of tool calls — code refactoring, architecture redesign, governance audits, team restructuring — and produced exactly zero CIEU records. The hook was configured but not loaded by the session runtime. The entire session's governance was unrecorded and unenforceable. Path A, Path B, GovernanceLoop, and SCM received zero data despite massive work volume. This is the worst governance failure in company history: the system appeared to be working but was completely inert.
 
 ---
 
