@@ -91,12 +91,13 @@ Every Monday, CFO will:
 
 | Data Type | Status | Tool | First Log Date | Days of Data |
 |-----------|--------|------|----------------|--------------|
-| Per-session token costs | ACTIVE | track_burn.py | 2026-03-27 | 3 days |
-| Per-agent session breakdown | ACTIVE | track_burn.py | 2026-03-27 | 3 days |
+| Per-session token costs | ACTIVE | track_burn.py | 2026-03-27 | 5 days (as of 04-01) |
+| Per-agent session breakdown | ACTIVE | track_burn.py | 2026-03-27 | 5 days (as of 04-01) |
 | Per-task cost analysis | BLOCKED | Requires 7+ days of logs | TBD | 0 days |
 | Context reload overhead | NOT STARTED | Requires CTO instrumentation | TBD | 0 days |
 
 **Data collection milestone:** 2026-04-02 (7 days of track_burn.py logs → enables cost_analysis_002 with real data)
+**Status as of 2026-04-01:** 5 days of track_burn.py data collected. 2 more days until milestone. March close-out added to daily_burn.md.
 
 ---
 
@@ -116,4 +117,4 @@ Every Monday, CFO will:
 
 **Maintained by:** CFO Agent
 **Reviewed by:** Board (quarterly)
-**Last Updated:** 2026-03-29
+**Last Updated:** 2026-04-01

@@ -1,19 +1,49 @@
 # Daily Burn Rate Log
 
-**Last Updated:** 2026-03-27
+**Last Updated:** 2026-04-01
 **Purpose:** Track daily operational costs for CEO reporting
 
 ---
 
-## Current Month: March 2026
+## March 2026 Close-Out Summary
+
+**Status:** INCOMPLETE — requires Board reconciliation
+
+- **Data coverage:** March tracking began 2026-03-26; data stops at 2026-03-27 (2 days only)
+- **March 1-25:** No daily burn data exists for this period. DATA GAP.
+- **March 26-27 operational total:** $200.34 (ESTIMATE — based on unverified API cost assumptions, see cfo_claims_audit.md)
+- **One-time costs (patents):** $130.00 (VERIFIED — USPTO P3 + P4 provisionals)
+- **Claude Max subscription (March):** $200.00 (VERIFIED — expenditure_log.md)
+- **March API actuals:** UNKNOWN — require reconciliation from Anthropic dashboard by Board
+- **Board action required:** Verify actual March API spend via Anthropic billing dashboard and update expenditure_log.md accordingly
+- **April tracking begins below**
+
+---
+
+## Archived: March 2026 (partial data, 2 days)
 
 | Date | API Costs | Claude Max | Other | Daily Total | Running MTD |
 |------|-----------|------------|-------|-------------|-------------|
-| 2026-03-26 | $45.00 | $6.67 | $0.00 | $51.67 | $181.67 |
-| 2026-03-27 | $12.00 | $6.67 | $0.00 | $18.67 | $200.34 |
+| 2026-03-26 | ESTIMATE: $45.00 | $6.67 | $0.00 | $51.67 | $181.67 |
+| 2026-03-27 | ESTIMATE: $12.00 | $6.67 | $0.00 | $18.67 | $200.34 |
 | 2026-03-26 (patents) | -- | -- | $130.00 | -- | -- |
 
-**March 2026 Total:** $200.34 operational + $130.00 one-time (patents) = $330.34
+**March 2026 Recorded Total:** $200.34 operational (ESTIMATE) + $130.00 one-time (VERIFIED) = $330.34
+**Note:** API cost figures are ESTIMATES. Real March totals require Anthropic dashboard verification.
+
+---
+
+## Current Month: April 2026
+
+| Date | API Costs | Claude Max | Other | Daily Total | Running MTD |
+|------|-----------|------------|-------|-------------|-------------|
+| 2026-04-01 | ESTIMATE: UNKNOWN | $6.67 | $0.00 | UNKNOWN | UNKNOWN |
+
+**Notes for 2026-04-01:**
+- Claude Max daily allocation: $200/month / 30 = $6.67/day (VERIFIED subscription cost)
+- API costs: Cannot estimate without Anthropic dashboard data. Marked UNKNOWN.
+- track_burn.py data collection milestone: 2026-04-02 (7 days of logs). After that date, cost_analysis_002 can use real data.
+- No one-time costs today.
 
 ---
 
@@ -67,13 +97,11 @@
 
 ## Monthly Burn Rate Projection
 
-**Current Model (no optimization):** $51.67/day × 30 = $1,550/month
+**Previous projections from cost_analysis_001 are VOID** (see cfo_claims_audit.md — fabricated data, retracted).
 
-**Optimized Model (post cost-analysis_001 recommendations):** $32.17/day × 30 = $965/month
+**March actual operational total:** UNKNOWN — only 2 days of estimated data ($200.34 ESTIMATE). Requires Anthropic dashboard reconciliation.
 
-**March actuals (through 03-27):** $200.34 operational + $130.00 one-time = $330.34 total
-
-**Projected March close:** $200.34 + ($32.17 × 4 remaining days) = $329.02 operational + $130.00 = $459.02 total
+**April projection:** Cannot project until track_burn.py provides 7+ days of real data (milestone: 2026-04-02). Will produce cost_analysis_002 with verified figures after that date.
 
 ---
 

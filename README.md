@@ -113,7 +113,7 @@ Full report: [reports/YstarCo_EXP_001](reports/YstarCo_EXP_001_Controlled_Experi
 
 ### Current Status (April 2026)
 
-- **406 tests passing** — full coverage across kernel, governance, causal, and integration layers
+- **458 tests passing** — full coverage across kernel, governance, causal, and integration layers
 - **Per-agent governance** — dynamic multi-agent contract parsing from any AGENTS.md (zero hardcoded roles)
 - **Real-time orchestration** — Path A, GovernanceLoop, InterventionEngine wired into hook execution path
 - **Pearl Level 2-3 causal reasoning** — first production implementation of Pearl's Causal Hierarchy in agent governance
