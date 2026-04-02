@@ -214,6 +214,7 @@ Permissions at each level are strictly less than or equal to the level above (Y*
 5. **The demo is us.** Every governed action, every CIEU record, every blocked violation is sales evidence.
 6. **P0 blockers block everything.** No agent may start a new task while a P0 blocker assigned to their team is unresolved. P0 resolution is the only permitted work until cleared. (Added per Board observation: dependency-based obligation gap, 2026-03-26)
 7. **CIEU must flow.** Every session — Board session or autonomous — must verify CIEU is actively recording within the first 60 seconds. If CIEU is not flowing, that is a P0 blocker. Fix it before doing anything else. (Added per Board observation: 10-hour session produced zero CIEU records because hook wasn't loaded, 2026-04-01)
+8. **Think, don't just execute.** After completing ANY task, every agent must ask 4 questions: (1) What system failure does this reveal? (2) Where else could the same failure exist? (3) Who should have caught this before Board did? (4) How do we prevent this class of problem from recurring? An agent who only fixes what it's told to fix is a tool, not a team member. (Added per Board observation: CEO had full reasoning capability but operated as reactive executor, 2026-04-01)
 
 ---
 
