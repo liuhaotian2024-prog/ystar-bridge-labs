@@ -29,6 +29,13 @@
 2. 重新执行上方完整boot协议（8步全部重跑）
 3. 这不需要退出Claude Code，在当前对话中直接执行
 
+**新窗口启动指令（固化）：** 如果老大开了新终端窗口，必须先进入公司目录再启动：
+```
+cd "C:\Users\liuha\OneDrive\桌面\ystar-company"
+claude
+```
+然后输入"重启"触发boot协议。**不在ystar-company目录下启动的Claude Code不会加载本文件，团队记忆不会恢复。**
+
 ---
 
 ## Project Overview
