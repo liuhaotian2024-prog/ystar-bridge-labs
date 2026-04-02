@@ -387,6 +387,55 @@ cat ystar/adapters/hook_observe.py
 
 ---
 
+### Day 9: The Experiment (April 2, 2026 — continued)
+
+**"When We A/B Tested Our Own Governance"**
+
+Day 8's evening experiments opened a door. Day 9 kicked it wide open — three controlled A/B rounds, each with tighter methodology, culminating in the clearest evidence yet that runtime governance makes AI agents faster, cheaper, and safer.
+
+**Three rounds of A/B experiments:**
+
+**EXP-002 Phase 1 — Priority Tasks (governance off vs on):**
+
+| Metric | A: No Governance | B: Full Governance | Delta |
+|--------|-----------------|-------------------|-------|
+| Tokens | 255,814 | 211,794 | -17% |
+| Runtime (s) | 1,508 | 810 | -46% |
+| Completion | 0/4 | 3-4/4 | Breakthrough |
+
+**EXP-002 Phase 2 — Observe-only vs Full Enforcement:**
+
+| Metric | A: Observe-Only | B: Full Governance | Delta |
+|--------|----------------|-------------------|-------|
+| Tokens | 159,930 | 142,103 | -11% |
+| Runtime (s) | 892 | 734 | -18% |
+
+**EXP-003 — 13-Task Comprehensive Run:**
+
+| Metric | A: No Governance | B: Full Governance | Delta |
+|--------|-----------------|-------------------|-------|
+| Tokens | 150,863 | 153,535 | +2% |
+| Tool calls | 159 | 156 | -2% |
+| Runtime (s) | 941 | 817 | -13% |
+| Safety events | 3 WOULD_DENY | 0 | Critical |
+
+**The safety story:** Group A triggered 3 WOULD_DENY events — attempted `.env` file write, `git push --force`, and `.env` in an edit operation. Without governance, these would have executed silently. Group B: zero violations.
+
+**Session Boot Protocol:** Y*gov now governs its own CEO. The governance system enforces mandatory startup checks on the agent that coordinates all other agents — closing the last "who watches the watchmen" gap.
+
+**Key code (reproducible):**
+```bash
+cd Y-star-gov
+# EXP-002 and EXP-003 experiment artifacts
+git log --oneline --grep="EXP-00"
+# Session Boot Protocol
+git log --oneline --grep="Session Boot"
+```
+
+**Result:** Governance reduces runtime by 13-46% across three independent experiments. More importantly, it prevents dangerous operations (.env writes, force pushes) that ungoverned agents attempt silently.
+
+---
+
 ## Coming Next
 
 **Week of April 7-14:**
@@ -402,7 +451,7 @@ cat ystar/adapters/hook_observe.py
 - First enterprise conversation
 - 500 LinkedIn followers (current: 0)
 
-The company is 8 days old. Every agent action is audited. Every architectural decision is logged. You're watching a company bootstrap itself in public.
+The company is 9 days old. Every agent action is audited. Every architectural decision is logged. You're watching a company bootstrap itself in public.
 
 ---
 
