@@ -15,7 +15,24 @@ def log(msg):
         f.write(f"{time.strftime('%H:%M:%S')} {msg}\n")
 
 try:
-    log(f"Hook invoked. CWD={os.getcwd()}")
+    # ── Session Boot Check ──────────────────────────────────────────────
+    # Detects if CEO has completed the mandatory boot protocol.
+    # Boot flag is written by the first successful handoff read.
+    # If missing after 5+ tool calls in this session, inject a reminder.
+    session_id_env = os.environ.get("CLAUDE_SESSION_ID", "")
+    boot_flag = os.path.join(os.path.dirname(__file__), ".session_booted")
+    call_counter = os.path.join(os.path.dirname(__file__), ".session_call_count")
+
+    # Increment call counter for this session
+    try:
+        count = int(open(call_counter, "r").read().strip()) if os.path.exists(call_counter) else 0
+    except Exception:
+        count = 0
+    count += 1
+    with open(call_counter, "w") as f:
+        f.write(str(count))
+
+    log(f"Hook invoked. CWD={os.getcwd()} call={count} booted={os.path.exists(boot_flag)}")
 
     # Read stdin
     raw = sys.stdin.read()
@@ -79,6 +96,16 @@ try:
         log(f"CIEU count AFTER: {count_after} (delta={count_after - count_before})")
     except Exception as e:
         log(f"CIEU count after failed: {e}")
+
+    # ── Session Boot Enforcement ─────────────────────────────────────────
+    # If 5+ tool calls and boot protocol not completed, inject reminder
+    if count >= 5 and not os.path.exists(boot_flag):
+        if result.get("action") != "block":
+            # Don't block, but add a message that appears in hook output
+            result = {
+                "message": "[Y*gov] ⚠️ SESSION BOOT NOT COMPLETED. 你还没有执行启动协议！请立即读取 memory/session_handoff.md 和 memory/team_dna.md，然后向老大汇报。完成后运行: echo BOOTED > scripts/.session_booted"
+            }
+            log(f"BOOT REMINDER injected at call {count}")
 
     # Output ONLY valid JSON to stdout
     sys.stdout.write(json.dumps(result))
