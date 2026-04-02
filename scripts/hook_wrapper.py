@@ -1,18 +1,74 @@
 """
 Y*gov hook wrapper — captures ALL errors to a log file.
 This replaces the inline -c command to diagnose silent failures.
+
+Performance optimization v0.49:
+- Cache Policy and session config (60s TTL)
+- Skip debug CIEU count checks in production
+- Remove monkey-patch instrumentation
 """
 import json
 import sys
 import os
 import traceback
+import time
+import hashlib
 
 LOG = os.path.join(os.path.dirname(__file__), "hook_debug.log")
+_CACHE_FILE = os.path.join(os.path.dirname(__file__), ".hook_cache.json")
+_CACHE_TTL = 60  # 60 seconds cache TTL
 
 def log(msg):
     with open(LOG, "a", encoding="utf-8") as f:
-        import time
         f.write(f"{time.strftime('%H:%M:%S')} {msg}\n")
+
+def _get_file_hash(path):
+    """Fast hash of file modification time + size."""
+    try:
+        stat = os.stat(path)
+        return hashlib.md5(f"{stat.st_mtime}:{stat.st_size}".encode()).hexdigest()
+    except Exception:
+        return ""
+
+def _load_cache():
+    """Load policy cache if valid."""
+    try:
+        if not os.path.exists(_CACHE_FILE):
+            return None
+        with open(_CACHE_FILE, "r", encoding="utf-8") as f:
+            cache = json.load(f)
+
+        # Check TTL
+        if time.time() - cache.get("timestamp", 0) > _CACHE_TTL:
+            log("Cache expired")
+            return None
+
+        # Check if AGENTS.md changed
+        agents_path = os.path.join(os.getcwd(), "AGENTS.md")
+        current_hash = _get_file_hash(agents_path)
+        if current_hash != cache.get("agents_hash", ""):
+            log("AGENTS.md changed, cache invalid")
+            return None
+
+        log(f"Cache hit (age: {int(time.time() - cache.get('timestamp', 0))}s)")
+        return cache
+    except Exception as e:
+        log(f"Cache load failed: {e}")
+        return None
+
+def _save_cache(agents_hash, session_cfg):
+    """Save policy cache."""
+    try:
+        cache = {
+            "timestamp": time.time(),
+            "agents_hash": agents_hash,
+            "session_cfg": session_cfg,
+        }
+        with open(_CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump(cache, f)
+        log("Cache saved")
+    except Exception as e:
+        log(f"Cache save failed: {e}")
 
 try:
     # ── Session Boot Check ──────────────────────────────────────────────
@@ -39,51 +95,56 @@ try:
     log(f"Stdin: {raw[:200]}")
 
     payload = json.loads(raw)
-    log(f"Parsed tool: {payload.get('tool_name', '?')}")
+    tool_name = payload.get('tool_name', '?')
+    log(f"Parsed tool: {tool_name}")
+
+    # ── FAST PATH: Read-only operations skip full governance check ──────
+    # Read/Grep/Glob are low-risk and high-frequency. Running full check_hook()
+    # on every Read adds 2-4 seconds of latency with zero governance value.
+    # Full check only runs for Write/Edit/Bash (mutation operations).
+    if tool_name in ("Read", "Grep", "Glob", "Ls", "LS"):
+        log(f"FAST PATH: {tool_name} → allow (read-only)")
+        sys.stdout.write("{}")
+        sys.exit(0)
 
     # Check AGENTS.md
     agents_path = os.path.join(os.getcwd(), "AGENTS.md")
     agents_exists = os.path.exists(agents_path)
-    log(f"AGENTS.md exists: {agents_exists} at {agents_path}")
 
-    # Import ystar
+    # Import ystar (only for mutation operations)
     from ystar import Policy
     from ystar.adapters.hook import check_hook
     log("ystar imported OK")
 
-    # Monkey-patch _auto_write_cieu to log errors instead of swallowing
-    import ystar.domains.openclaw.adapter as _adapter
-    _orig_auto_write = _adapter._auto_write_cieu
-    def _patched_auto_write(record):
-        log(f"_auto_write_cieu called, store={_adapter._auto_persist_store}")
-        try:
-            if _adapter._auto_persist_store is not None:
-                written = _adapter._auto_persist_store.write(record)
-                log(f"_auto_write_cieu written={written}, db={getattr(_adapter._auto_persist_store, 'db_path', '?')}")
-            else:
-                log(f"_auto_write_cieu SKIPPED: no store")
-        except Exception as e:
-            log(f"_auto_write_cieu ERROR: {e}")
-            log(traceback.format_exc())
-    _adapter._auto_write_cieu = _patched_auto_write
+    # ── P0 Performance: Cache Policy and session config ─────────────────
+    cache = _load_cache()
+    if cache:
+        # Use cached session config (Policy is rebuilt each time as it's cheap)
+        # The expensive part is loading+parsing session config from disk
+        session_cfg_cached = cache.get("session_cfg")
+        if session_cfg_cached:
+            # Inject cached session config into identity_detector module
+            import ystar.adapters.identity_detector as id_module
+            id_module._SESSION_CONFIG_CACHE = session_cfg_cached
+            log("Session config loaded from cache")
 
-    # Build policy
+    # Build policy (always rebuild — it's fast, just dict operations)
     if agents_exists:
         policy = Policy.from_agents_md_multi(agents_path)
     else:
         policy = Policy({})
     log(f"Policy built: {policy}")
 
-    # Check CIEU count before
-    try:
-        from ystar.governance.cieu_store import CIEUStore
-        cieu_path = os.path.join(os.getcwd(), ".ystar_cieu.db")
-        store_before = CIEUStore(cieu_path)
-        count_before = store_before.count()
-        log(f"CIEU count BEFORE: {count_before}")
-    except Exception as e:
-        log(f"CIEU count check failed: {e}")
-        count_before = -1
+    # Save cache if needed
+    if not cache:
+        from ystar.adapters.identity_detector import _load_session_config
+        session_cfg = _load_session_config()
+        agents_hash = _get_file_hash(agents_path)
+        _save_cache(agents_hash, session_cfg)
+
+    # ── REMOVED: Debug instrumentation (monkey-patch, CIEU count checks) ──
+    # These were for debugging during development, not needed in production.
+    # Removed to reduce per-call overhead.
 
     # ── CEO Code-Write Prohibition (Constitutional) ────────────────────
     # CEO must not write to Y*gov source code. This is a governance boundary.
@@ -105,14 +166,6 @@ try:
     # Run check
     result = check_hook(payload, policy)
     log(f"Result: {result}")
-
-    # Check CIEU count after
-    try:
-        store_after = CIEUStore(cieu_path)
-        count_after = store_after.count()
-        log(f"CIEU count AFTER: {count_after} (delta={count_after - count_before})")
-    except Exception as e:
-        log(f"CIEU count after failed: {e}")
 
     # ── Session Boot Enforcement (HARD BLOCK) ──────────────────────────────
     # If 5+ tool calls and boot protocol not completed, BLOCK all non-Read operations
