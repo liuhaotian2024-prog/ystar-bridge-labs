@@ -1,0 +1,98 @@
+{
+  "session_id": "ystar-company_0a84f3c6",
+  "cieu_db": "C:/Users/liuha/OneDrive/桌面/ystar-company/.ystar_cieu.db",
+  "contract": {
+    "name": "ystar-company_policy",
+    "deny": [
+      "/etc",
+      "/root",
+      "/production"
+    ],
+    "deny_commands": [
+      "rm -rf",
+      "sudo",
+      "DROP TABLE"
+    ],
+    "obligation_timing": {
+      "respond_to_complaint": 300.0,
+      "cfo_token_recording": 600.0,
+      "knowledge_gap_bootstrap": 1800.0,
+      "article_source_verification": 300.0,
+      "directive_decomposition": 600.0,
+      "p0_bug_fix": 300.0,
+      "p1_bug_fix": 900.0,
+      "p2_bug_fix": 3600.0,
+      "blog_first_draft": 14400.0,
+      "conversation_documentation": 86400.0,
+      "lead_followup": 172800.0,
+      "monthly_financial_summary": 86400.0,
+      "weekly_cash_flow": 604800.0,
+      "fix_log_entry": 600.0,
+      "autonomous_daily_report": 86400.0,
+      "ceo_daily_consolidation": 90000.0,
+      "session_boot": 120.0,
+      "ceo_delegation_dispatch": 600.0,
+      "governance_pipeline_check": 3600.0,
+      "pre_commit_test": 60.0,
+      "pipeline_health_verify": 1800.0,
+      "content_accuracy_review": 600.0,
+      "thinking_discipline_check": 300.0,
+      "cross_review_critical_file": 600.0,
+      "k9_inbox_check": 60.0
+    }
+  },
+  "obligation_agent_scope": {
+    "respond_to_complaint":       ["ystar-ceo"],
+    "directive_decomposition":    ["ystar-ceo"],
+    "p0_bug_fix":                 ["ystar-cto"],
+    "p1_bug_fix":                 ["ystar-cto"],
+    "p2_bug_fix":                 ["ystar-cto"],
+    "fix_log_entry":              ["ystar-cto"],
+    "article_source_verification":["ystar-cmo"],
+    "blog_first_draft":           ["ystar-cmo"],
+    "conversation_documentation": ["ystar-cso"],
+    "lead_followup":              ["ystar-cso"],
+    "cfo_token_recording":        ["ystar-cfo"],
+    "monthly_financial_summary":  ["ystar-cfo"],
+    "weekly_cash_flow":           ["ystar-cfo"],
+    "knowledge_gap_bootstrap":    ["*"],
+    "autonomous_daily_report":    ["*"],
+    "ceo_daily_consolidation":    ["ystar-ceo"],
+    "session_boot":               ["*"],
+    "ceo_delegation_dispatch":    ["ystar-ceo"],
+    "governance_pipeline_check":  ["ystar-ceo"],
+    "pre_commit_test":            ["ystar-cto", "eng-kernel", "eng-governance", "eng-platform", "eng-domains"],
+    "pipeline_health_verify":     ["ystar-cto"],
+    "content_accuracy_review":    ["ystar-cmo"],
+    "thinking_discipline_check":  ["*"],
+    "cross_review_critical_file": ["*"],
+    "k9_inbox_check":             ["ystar-ceo"]
+  },
+  "agent_write_paths": {
+    "ceo":  ["./reports/", "./BOARD_PENDING.md", "./DISPATCH.md", "./OKR.md", "./DIRECTIVE_TRACKER.md", "./OPERATIONS.md", "./WEEKLY_CYCLE.md", "./knowledge/"],
+    "cto":  ["./src/", "./tests/", "./products/", "./docs/", "./.github/", "./CHANGELOG.md"],
+    "cmo":  ["./content/", "./marketing/"],
+    "cso":  ["./sales/"],
+    "cfo":  ["./finance/", "./reports/"],
+    "eng-kernel": [],
+    "eng-governance": [],
+    "eng-platform": [],
+    "eng-domains": []
+  },
+  "trigger_path_patterns": {
+    "content_accuracy_review": ["content/", "marketing/"]
+  },
+  "delegation_chain": {
+    "links": [
+      {"parent": "board", "child": "ceo", "scope": "*"},
+      {"parent": "ceo", "child": "cto", "scope": "src/,tests/,products/,docs/"},
+      {"parent": "ceo", "child": "cmo", "scope": "content/,marketing/"},
+      {"parent": "ceo", "child": "cso", "scope": "sales/"},
+      {"parent": "ceo", "child": "cfo", "scope": "finance/,reports/"},
+      {"parent": "cto", "child": "eng-kernel", "scope": "ystar/kernel/,ystar/session.py"},
+      {"parent": "cto", "child": "eng-governance", "scope": "ystar/governance/,ystar/path_a/,ystar/path_b/"},
+      {"parent": "cto", "child": "eng-platform", "scope": "ystar/adapters/,ystar/cli/"},
+      {"parent": "cto", "child": "eng-domains", "scope": "ystar/domains/,ystar/templates/"}
+    ]
+  }
+}

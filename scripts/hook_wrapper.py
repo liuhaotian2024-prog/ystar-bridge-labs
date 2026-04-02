@@ -97,15 +97,17 @@ try:
     except Exception as e:
         log(f"CIEU count after failed: {e}")
 
-    # ── Session Boot Enforcement ─────────────────────────────────────────
-    # If 5+ tool calls and boot protocol not completed, inject reminder
+    # ── Session Boot Enforcement (HARD BLOCK) ──────────────────────────────
+    # If 5+ tool calls and boot protocol not completed, BLOCK all non-Read operations
     if count >= 5 and not os.path.exists(boot_flag):
-        if result.get("action") != "block":
-            # Don't block, but add a message that appears in hook output
+        tool = payload.get("tool_name", "")
+        # Allow Read/Grep/Glob (needed to execute boot protocol itself)
+        if tool not in ("Read", "Grep", "Glob"):
             result = {
-                "message": "[Y*gov] ⚠️ SESSION BOOT NOT COMPLETED. 你还没有执行启动协议！请立即读取 memory/session_handoff.md 和 memory/team_dna.md，然后向老大汇报。完成后运行: echo BOOTED > scripts/.session_booted"
+                "action": "block",
+                "message": "[Y*gov CONSTITUTIONAL] SESSION BOOT NOT COMPLETED. 所有非读取操作被阻断。请立即执行boot协议：读取memory/session_handoff.md → memory/team_dna.md → 验证CIEU → 向老大汇报 → echo BOOTED > scripts/.session_booted"
             }
-            log(f"BOOT REMINDER injected at call {count}")
+            log(f"BOOT HARD BLOCK at call {count}, tool={tool}")
 
     # Output ONLY valid JSON to stdout
     sys.stdout.write(json.dumps(result))
