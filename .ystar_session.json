@@ -38,7 +38,16 @@
       "content_accuracy_review": 600.0,
       "thinking_discipline_check": 300.0,
       "cross_review_critical_file": 600.0,
-      "k9_inbox_check": 60.0
+      "k9_inbox_check": 60.0,
+      "commit_push_sync": 1800.0,
+      "cieu_liveness_check": 60.0,
+      "cross_review_sla": 1800.0,
+      "escalation_response": 300.0,
+      "security_incident_response": 300.0,
+      "case_documentation": 86400.0,
+      "github_issue_triage": 900.0,
+      "social_media_board_approval": 0.0,
+      "distribution_verify_post_push": 300.0
     }
   },
   "obligation_agent_scope": {
@@ -66,7 +75,16 @@
     "content_accuracy_review":    ["ystar-cmo"],
     "thinking_discipline_check":  ["*"],
     "cross_review_critical_file": ["*"],
-    "k9_inbox_check":             ["ystar-ceo"]
+    "k9_inbox_check":             ["ystar-ceo"],
+    "commit_push_sync":           ["*"],
+    "cieu_liveness_check":        ["*"],
+    "cross_review_sla":           ["*"],
+    "escalation_response":        ["ystar-ceo"],
+    "security_incident_response": ["*"],
+    "case_documentation":         ["*"],
+    "github_issue_triage":        ["ystar-cto"],
+    "social_media_board_approval":["ystar-cmo", "ystar-cso"],
+    "distribution_verify_post_push": ["ystar-cto"]
   },
   "agent_write_paths": {
     "ceo":  ["./reports/", "./BOARD_PENDING.md", "./DISPATCH.md", "./OKR.md", "./DIRECTIVE_TRACKER.md", "./OPERATIONS.md", "./WEEKLY_CYCLE.md", "./knowledge/"],
@@ -79,8 +97,16 @@
     "eng-platform": [],
     "eng-domains": []
   },
+  "ceo_deny_paths": [
+    "C:/Users/liuha/OneDrive/桌面/Y-star-gov/ystar/",
+    "./src/"
+  ],
   "trigger_path_patterns": {
-    "content_accuracy_review": ["content/", "marketing/"]
+    "content_accuracy_review": ["content/", "marketing/"],
+    "social_media_board_approval": ["content/outreach/", "marketing/social/"],
+    "distribution_verify_post_push": ["ystar/", "src/"],
+    "case_documentation": ["knowledge/cases/"],
+    "cross_review_critical_file": ["AGENTS.md", ".ystar_session.json", "CLAUDE.md", "memory/", ".claude/agents/"]
   },
   "delegation_chain": {
     "links": [

@@ -85,6 +85,23 @@ try:
         log(f"CIEU count check failed: {e}")
         count_before = -1
 
+    # ── CEO Code-Write Prohibition (Constitutional) ────────────────────
+    # CEO must not write to Y*gov source code. This is a governance boundary.
+    tool = payload.get("tool_name", "")
+    tool_input = payload.get("tool_input", {})
+    if tool in ("Write", "Edit", "NotebookEdit"):
+        file_path = tool_input.get("file_path", "")
+        ceo_deny = ["Y-star-gov/ystar/", "Y-star-gov\\ystar\\", "/src/ystar/"]
+        for deny_pattern in ceo_deny:
+            if deny_pattern in file_path:
+                result = {
+                    "action": "block",
+                    "message": f"[Y*gov CONSTITUTIONAL] CEO禁止直接写代码。文件 {file_path} 属于CTO管辖范围。请派工程师执行。"
+                }
+                log(f"CEO CODE-WRITE BLOCK: {file_path}")
+                sys.stdout.write(json.dumps(result))
+                sys.exit(0)
+
     # Run check
     result = check_hook(payload, policy)
     log(f"Result: {result}")
