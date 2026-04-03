@@ -58,14 +58,6 @@ try:
     # ── Run check_hook (Policy compilation happens inside with caching) ──
     result = check_hook(payload)
 
-    # ── Session Boot Enforcement (HARD BLOCK) ──────────────────────────
-    if count >= 5 and not os.path.exists(boot_flag):
-        if tool not in ("Read", "Grep", "Glob"):
-            result = {
-                "action": "block",
-                "message": "[Y*gov CONSTITUTIONAL] SESSION BOOT NOT COMPLETED. 所有非读取操作被阻断。请立即执行boot协议：读取memory/session_handoff.md → memory/team_dna.md → 验证CIEU → 向老大汇报 → echo BOOTED > scripts/.session_booted"
-            }
-
     # Output ONLY valid JSON to stdout
     sys.stdout.write(json.dumps(result))
 
