@@ -9,7 +9,6 @@
 cd "C:/Users/liuha/OneDrive/桌面/ystar-company" && \
 cat memory/session_handoff.md
  \
-echo BOOTED > scripts\\.session_booted && \
 
 ```
 
