@@ -358,6 +358,11 @@ Ships code, fixes bugs, decides what features to build based on user feedback. O
 失败 = SOFT_OVERDUE，禁止开始下一个任务  
 验证步骤：见 `ystar/cli/release_cmd.py` 或 `knowledge/cto/release_verification_guide.md`
 
+**每次PyPI发布前必须：**
+1. 运行 `python scripts/check_wheel_contents.py`
+2. 输出写入CIEU (包clean验证记录)
+3. 检查失败 = 禁止上传到PyPI
+
 **Y*gov enforcement:** 见 Obligation Timing Registry (distribution_verify_post_push: 300)
 
 Chairman should NEVER discover sync issues — CTO catches them first.
