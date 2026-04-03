@@ -34,6 +34,7 @@ try:
 
     # Read stdin
     raw = sys.stdin.buffer.read().decode('utf-8-sig')
+    raw = raw.lstrip(chr(0xFEFF))
     payload = json.loads(raw)
 
     # Import ystar
