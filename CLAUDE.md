@@ -9,7 +9,7 @@
 cd "C:/Users/liuha/OneDrive/桌面/ystar-company" && \
 cat memory/session_handoff.md && \
  \
-echo BOOTED > scripts/.session_booted && \
+echo BOOTED > scripts\\.session_booted && \
 echo "BOOT COMPLETE"
 ```
 
@@ -123,5 +123,6 @@ CTO Agent has authorized access to this directory for:
 - Running tests (86 tests must pass)
 - Building new whl packages
 - Must report all changes to CEO before committing
+
 
 
