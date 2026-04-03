@@ -1,0 +1,21 @@
+# Y*gov runtime database
+.ystar_cieu.db
+
+# Source code (managed separately)
+src/
+
+# Python
+__pycache__/
+*.pyc
+
+# Environment
+.env
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Temp test files
+test_*.py
+pyproject.toml
+.ystar_session.json
+.ystar_cieu_omission.db
