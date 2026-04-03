@@ -19,3 +19,4 @@ test_*.py
 pyproject.toml
 .ystar_session.json
 .ystar_cieu_omission.db
+.claude/worktrees/
