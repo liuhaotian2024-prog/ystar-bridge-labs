@@ -1,8 +1,36 @@
 # AGENTS.md — Y* Bridge Labs Corporate Governance Contract
 # Enforced by the Y*gov Runtime Governance Framework
-# Version: 2.2.0 | Updated: 2026-03-28
+# Version: 2.3.0 | Updated: 2026-04-03
 # Owner: Haotian Liu (Board of Directors)
 # Authority: Board Directives #002-#018 (Latest: 2026-03-28)
+
+---
+
+## CIEU Data Preservation Constitutional Rule (Y*gov Enforced)
+
+**All CIEU governance data must be permanently archived before any database cleanup. Constitutional layer. Cannot be overridden.**
+
+1. **Before clearing `.ystar_cieu.db`**, the responsible agent MUST run:
+   ```bash
+   ystar archive-cieu
+   ```
+   This creates a permanent JSONL archive in `data/cieu_archive/YYYY-MM-DD.jsonl`.
+
+2. **Before clearing `.ystar_cieu_omission.db`**, the same archive requirement applies. Both databases contain irreplaceable governance evidence.
+
+3. **Experiment completion requires experiment-specific archive:**
+   ```bash
+   ystar archive-cieu --experiment EXP_001
+   ```
+   This preserves complete governance records in `data/experiments/EXP_001_cieu.jsonl` alongside experiment reports.
+
+4. **Automated health check:** `ystar doctor --layer1` checks archive freshness. If >7 days since last archive, it shows WARNING. The governance loop should trigger weekly archives automatically.
+
+5. **Archive format:** JSONL (one JSON object per line) for easy parsing, version control, and long-term preservation. Never delete archived files.
+
+**This rule exists because:** On 2026-04-03, we lost all historical CIEU data including EXP-001's complete governance records. Database cleanup without archive = permanent deletion of audit trail. A governance system that cannot preserve its own audit trail is not credible.
+
+**Y*gov enforcement:** Before any database cleanup command, the governance engine should verify archive existence and freshness. Violation = HARD_OVERDUE immediately.
 
 ---
 
