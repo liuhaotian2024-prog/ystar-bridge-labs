@@ -736,6 +736,7 @@ When facing major decisions, ask: How would HashiCorp handle this at seed stage?
 - **directive_decomposition: 600** — Board下达指令后10分钟内分解所有子任务
 - **autonomous_daily_report: 86400** — 每天consolidate各agent工作报告
 - **knowledge_gap_bootstrap: 1800** — 发现知识缺口后30分钟内写入knowledge/[role]/
+- **required_acknowledgement_omission: 120** — Agent被分配任务后2分钟内必须确认(acknowledgement/decline/blocker)
 - **cfo_token_recording: 600** — Session结束后10分钟内记录token消耗
 - **ceo_daily_consolidation: 90000** — 每天（25小时）consolidate工作报告
 - **weekly_board_summary: 604800** — 每周（7天）提交Board summary
@@ -766,6 +767,7 @@ When facing major decisions, ask: How would HashiCorp handle this at seed stage?
 | directive_decomposition | DIRECTIVE_TRACKER.md更新 | 文件write事件 + 所有子任务有row |
 | autonomous_daily_report | reports/autonomous/summary_YYYY-MM-DD.md创建 | 文件write事件 |
 | knowledge_gap_bootstrap | knowledge/[role]/[topic].md创建 | 文件write事件 + metadata block完整 |
+| required_acknowledgement_omission | acknowledgement/decline/blocker event | CIEU event: acknowledgement_event / decline_event / blocker_report_event |
 | cfo_token_recording | data/token_logs/YYYY-MM.jsonl追加 | 文件write事件 + valid JSON |
 | ceo_daily_consolidation | reports/autonomous/summary_YYYY-MM-DD.md创建 | 文件write事件 |
 | weekly_board_summary | reports/weekly/YYYY-MM-DD.md创建 | 文件write事件 |
