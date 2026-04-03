@@ -8,7 +8,7 @@
 # 一条Bash命令完成全部boot（复制粘贴即可）：
 cd "C:/Users/liuha/OneDrive/桌面/ystar-company" && \
 cat memory/session_handoff.md && \
-echo "===CIEU===" && python -c "import sqlite3;c=sqlite3.connect('.ystar_cieu.db');print(f'CIEU:{c.execute(\"SELECT COUNT(*) FROM cieu_events\").fetchone()[0]}条')" && \
+ \
 echo BOOTED > scripts/.session_booted && \
 echo "BOOT COMPLETE"
 ```
@@ -123,4 +123,5 @@ CTO Agent has authorized access to this directory for:
 - Running tests (86 tests must pass)
 - Building new whl packages
 - Must report all changes to CEO before committing
+
 
