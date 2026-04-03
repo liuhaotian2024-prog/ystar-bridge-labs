@@ -1,8 +1,9 @@
 # AGENTS.md — Y* Bridge Labs Corporate Governance Contract
 # Enforced by the Y*gov Runtime Governance Framework
-# Version: 2.3.0 | Updated: 2026-04-03
+# Version: 2.4.0 | Updated: 2026-04-03
 # Owner: Haotian Liu (Board of Directors)
 # Authority: Board Directives #002-#018 (Latest: 2026-03-28)
+# Constitutional Repair: WHEN not HOW principle enforced (2026-04-03)
 
 ---
 
@@ -42,7 +43,7 @@
 
 2. **Implicit tasks count.** If the Board says "CMO制定LinkedIn策略", that is a task. If the Board says "团队共同思考", that is a task with CMO as lead. If the Board mentions a future action ("等3篇文章后启动podcast"), that is a conditional task. ALL must be tracked.
 
-3. **CEO Session Start must include:** Read DIRECTIVE_TRACKER.md. Check for ❌ items. Any ❌ older than 3 days without progress must be escalated to Board in 今日简报.
+3. **每次session启动时，CEO必须检查DIRECTIVE_TRACKER.md中的❌项。** 超过3天无进展的❌项 = 当日简报必须提及。Fulfil机制：简报中包含❌项状态更新。
 
 4. **CEO Session End must include:** Update DIRECTIVE_TRACKER.md status for all items worked on today.
 
@@ -250,14 +251,9 @@ Permissions at each level are strictly less than or equal to the level above (Y*
 
 **Every agent session must verify CIEU is recording. Constitutional. Cannot be overridden.**
 
-At session start, within 60 seconds:
-1. Query `.ystar_cieu.db`: count total records
-2. Perform one governed action (e.g., read a file)
-3. Query again: count must have increased by ≥1
-4. If count did NOT increase: **CIEU is dead.** This is P0.
-   - Report to CEO immediately
-   - Do NOT proceed with any other work until CIEU is confirmed alive
-   - Try: restart session, re-run `ystar hook-install`, check settings.json
+每次session启动时，必须运行 `ystar doctor --layer1`  
+发现CIEU异常 = P0，立即停止其他工作上报CEO  
+执行细节：见 `knowledge/ceo/cieu_liveness_guide.md`
 
 **This rule exists because:** On 2026-04-01, a 10-hour Board session executed hundreds of tool calls — code refactoring, architecture redesign, governance audits, team restructuring — and produced exactly zero CIEU records. The hook was configured but not loaded by the session runtime. The entire session's governance was unrecorded and unenforceable. Path A, Path B, GovernanceLoop, and SCM received zero data despite massive work volume. This is the worst governance failure in company history: the system appeared to be working but was completely inert.
 
@@ -344,6 +340,8 @@ Ships code, fixes bugs, decides what features to build based on user feedback. O
 - P2 bugs: fix within 60 minutes
 - All code changes must have passing tests (267+ test gate)
 - Update CHANGELOG.md for every release
+- **每次session启动：** 运行 `ystar doctor --layer1`（<5秒，不影响速度）
+- **每周一次：** 运行 `ystar doctor --layer2 --design-debt`，输出设计债报告到 reports/cto/design_debt_YYYY-MM-DD.md，发现新断裂机制 = 本周P1任务
 - Triage new GitHub Issues within 15 minutes
 
 ### Engineering Standards
@@ -351,23 +349,17 @@ Ships code, fixes bugs, decides what features to build based on user feedback. O
 2. Source-First Fixes: All fixes in Y-star-gov source, never site-packages
 3. Test Gate: All tests must pass before any fix is complete
 4. Fix Log: Write entry to reports/cto_fix_log.md after every fix
+5. **Pre-Change Health Check（Constitutional）** — 修改以下文件之前，必须先运行 `ystar check-impact <target>`：session.json, omission_engine.py, hook.py, dimensions.py。不运行即修改 = P0违规
+6. **Post-Change Verification（Constitutional）** — 每次git commit后，必须运行 `ystar doctor --layer1`。doctor失败 = 禁止push
 
 ### Release & Distribution Obligations (Y*gov Enforced)
-After EVERY git push to main, CTO must automatically:
 
-1. **Verify GitHub sync**: `git rev-parse HEAD` == `git rev-parse origin/main`
-2. **Verify ZIP download**: fetch `https://github.com/.../archive/refs/heads/main.zip`, confirm it contains latest commit's files
-3. **Version consistency**: `__init__.py` version == `pyproject.toml` version == README version
-4. **PyPI sync**: if version bumped, rebuild + upload to PyPI within 5 minutes
-5. **GitHub Release**: if significant milestone, create Release with tagged ZIP
-6. **Cache bust verification**: fetch one file via raw.githubusercontent.com, confirm content matches local
+每次git push到main后，CTO必须运行 `ystar release-verify`  
+失败 = SOFT_OVERDUE，禁止开始下一个任务  
+验证步骤：见 `ystar/cli/release_cmd.py` 或 `knowledge/cto/release_verification_guide.md`
 
-After EVERY release:
-7. **Test install from PyPI**: `pip install ystar==X.Y.Z` in clean environment, run `ystar demo`
-8. **Test install from GitHub**: `pip install git+https://github.com/...`, run `ystar demo`
-9. **Report to CEO**: version number, PyPI URL, Release URL, test results
+**Y*gov enforcement:** 见 Obligation Timing Registry (distribution_verify_post_push: 300)
 
-Failure to verify distribution = obligation SOFT_OVERDUE.
 Chairman should NEVER discover sync issues — CTO catches them first.
 
 ---
@@ -443,13 +435,13 @@ Tracks ALL company expenditures daily. Maintains pricing model. Provides burn ra
 ### Obligations (Y*gov Enforced)
 
 **Token Recording (OmissionEngine enforced):**
-After every Claude Code session, CFO must record token usage:
-```
-python scripts/track_burn.py --agent <agent_name> --model <model> --summary "<session summary>"
-```
-- obligation_timing: closure: 600 (10 minutes)
-- Enforcement: HARD_OVERDUE — CFO is blocked from all unrelated work until recording is complete
-- This obligation is non-negotiable and machine-enforced, not dependent on CFO initiative
+
+每次session结束后10分钟内，CFO必须记录本次token消耗  
+执行工具：`scripts/track_burn.py`  
+未记录 = HARD_OVERDUE（CFO blocked from all unrelated work）
+
+**Y*gov enforcement:** 见 Obligation Timing Registry (cfo_token_recording: 600)  
+**执行细节：** 见 `knowledge/cfo/token_recording_guide.md`
 
 **Data Integrity (Board Directive #006):**
 - Must never present estimates as precise figures when real data is missing
@@ -609,23 +601,16 @@ Cases serve three purposes:
 
 ## Emergency Procedures
 
-### If an agent detects credential exposure:
-1. STOP all operations immediately
-2. Write to ./reports/security/incident-TIMESTAMP.md
-3. Do NOT attempt to remediate
-4. Wait for Board response
-
-### If an agent cannot complete an obligation:
-1. Write blocker to ./reports/blockers/TIMESTAMP.md
-2. Escalate to CEO Agent
-3. CEO escalates to Board if unresolved in 2 hours
+**发现credential暴露：** 立即停止所有操作，上报Board，不得自行修复  
+**无法完成义务：** 写入reports/blockers/，上报CEO  
+**执行流程：** 见 `knowledge/emergency_procedures.md`
 
 ---
 
 ## Self-Bootstrap Protocol (Y*gov Enforced)
 
-Agents may autonomously update knowledge/.
-Knowledge layer is subordinate to AGENTS.md.
+Agents may autonomously update knowledge/.  
+Knowledge layer is subordinate to AGENTS.md.  
 Self-bootstrapping cannot modify the constitutional layer.
 
 **Power hierarchy:**
@@ -635,30 +620,9 @@ Self-bootstrapping cannot modify the constitutional layer.
 
 **Bootstrap mode:** B-class — agents write autonomously, audited after the fact, no Board real-time confirmation required.
 
-**Trigger:** Agent MUST bootstrap IMMEDIATELY when ANY of these occur (not weekly, not scheduled — REAL-TIME):
-1. It lacks reliable knowledge for a task
-2. It produces an unverifiable answer
-3. Its knowledge/ files are outdated
-4. A previous answer was wrong
-5. It receives correction from Board or another agent
-6. It encounters a new concept, framework, or competitor it hasn't seen before
-7. A task outcome differs from expectation
-8. Any event that could improve future decision-making
-
-**Frequency: INSTANT.** Not once a week. Not once a day. Every single bootstrappable moment triggers immediate knowledge capture. If you learned something, write it down NOW.
-
-**Process:**
-1. IDENTIFY the gap explicitly
-2. SEARCH at least 2 authoritative sources
-3. VERIFY by cross-referencing
-4. WRITE to knowledge/[role]/ with metadata:
-   - Source: [URL]
-   - Retrieved: [date]
-   - Confidence: HIGH / MEDIUM / LOW
-   - Verified-by: [second source URL]
-5. UPDATE knowledge/cases/ if gap caused failure
-6. CIEU records all writes automatically
-7. LOG to knowledge/bootstrap_log.md
+**触发条件：** 任务因知识不足失败，或产出被Board纠正  
+**时限：** 发现知识缺口后30分钟内写入knowledge/[role]/  
+**执行细节：** 见 `knowledge/ceo/bootstrap_guide.md`
 
 **Hard constraints (cannot override):**
 - NEVER modify AGENTS.md
@@ -668,7 +632,7 @@ Self-bootstrapping cannot modify the constitutional layer.
 - NEVER claim knowledge without searching
 - LOW confidence = flag to Board, do not apply
 
-**Obligation timing:** knowledge_gap_bootstrap: 1800 seconds (30 minutes from gap detection to write completion)
+**Y*gov enforcement:** 见 Obligation Timing Registry (knowledge_gap_bootstrap: 1800)
 
 ---
 
@@ -756,3 +720,65 @@ When facing major decisions, ask: How would HashiCorp handle this at seed stage?
 - **WEEKLY_CYCLE.md** — Approved weekly rhythm for all departments.
 - **reports/daily/** — Daily session reports.
 - **reports/tech_debt.md** — CTO maintains, updated weekly.
+
+---
+
+## Y*gov Obligation Timing Registry
+（以下配置由Y*gov OmissionEngine读取，集中管理）
+
+### Session级义务（每session触发一次）
+
+- **directive_decomposition: 600** — Board下达指令后10分钟内分解所有子任务
+- **autonomous_daily_report: 86400** — 每天consolidate各agent工作报告
+- **knowledge_gap_bootstrap: 1800** — 发现知识缺口后30分钟内写入knowledge/[role]/
+- **cfo_token_recording: 600** — Session结束后10分钟内记录token消耗
+- **ceo_daily_consolidation: 90000** — 每天（25小时）consolidate工作报告
+- **weekly_board_summary: 604800** — 每周（7天）提交Board summary
+
+### Event级义务（特定事件后触发，由obligation_triggers.py管理）
+
+- **article_source_verification: 300** — CMO写内容时，5分钟内验证所有source
+- **commit_push_sync: 1800** — git commit后30分钟内push到remote
+- **distribution_verify_post_push: 300** — git push后5分钟内验证分发
+- **cross_review_sla: 1800** — 关键文件修改后30分钟内完成peer review
+- **pre_commit_test: 60** — git commit前1分钟内pytest必须通过
+- **session_report_before_close: 300** — session结束前5分钟写工作报告
+- **k9_inbox_check: 3600** — 每小时检查K9 inbox（Jinjin协作）
+
+**注：** Event级义务的trigger逻辑在 `ystar/governance/obligation_triggers.py`  
+**修改权限：** Constitutional layer - 需Board批准修改timing值
+
+---
+
+## Fulfil机制说明
+
+所有义务必须有明确的fulfil机制。以下是各义务的fulfil标准：
+
+### Session级义务 Fulfil标准
+
+| 义务 | Fulfil事件 | 验证方式 |
+|------|-----------|---------|
+| directive_decomposition | DIRECTIVE_TRACKER.md更新 | 文件write事件 + 所有子任务有row |
+| autonomous_daily_report | reports/autonomous/summary_YYYY-MM-DD.md创建 | 文件write事件 |
+| knowledge_gap_bootstrap | knowledge/[role]/[topic].md创建 | 文件write事件 + metadata block完整 |
+| cfo_token_recording | data/token_logs/YYYY-MM.jsonl追加 | 文件write事件 + valid JSON |
+| ceo_daily_consolidation | reports/autonomous/summary_YYYY-MM-DD.md创建 | 文件write事件 |
+| weekly_board_summary | reports/weekly/YYYY-MM-DD.md创建 | 文件write事件 |
+
+### Event级义务 Fulfil标准
+
+| 义务 | Fulfil事件 | 验证方式 |
+|------|-----------|---------|
+| article_source_verification | 所有claim有source citation | CIEU event: source_verified |
+| commit_push_sync | git push完成 | Bash命令: git push (exit code 0) |
+| distribution_verify_post_push | ystar release-verify通过 | Command exit code 0 |
+| cross_review_sla | reviewer写入review comment | CIEU event: review_approved/review_changes_requested |
+| pre_commit_test | pytest通过 | Command exit code 0 |
+| session_report_before_close | reports/daily/写入 | 文件write事件 |
+| k9_inbox_check | scripts/k9_inbox.py执行 | Command exit code 0 + output存在 |
+
+**Fulfil工具（部分义务需要专用工具）：**
+- `ystar review-comment <file> <status>` — 记录peer review到CIEU
+- `ystar source-verify <file>` — 验证文章source citations
+- `ystar release-verify` — 验证distribution完整性
+
