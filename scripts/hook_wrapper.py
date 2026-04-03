@@ -1,4 +1,4 @@
-"""
+﻿"""
 Y*gov hook wrapper — thin shell that delegates to check_hook().
 
 Task 3: Simplified architecture (v0.49)
@@ -73,3 +73,4 @@ except Exception as e:
     log(traceback.format_exc())
     # Output empty JSON so Claude Code doesn't crash
     sys.stdout.write("{}")
+
