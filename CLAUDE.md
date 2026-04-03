@@ -10,7 +10,7 @@ cd "C:/Users/liuha/OneDrive/桌面/ystar-company" && \
 cat memory/session_handoff.md
  \
 echo BOOTED > scripts\\.session_booted && \
-echo "BOOT COMPLETE"
+
 ```
 
 然后用中文向老大汇报："欢迎回来老大。[简述handoff内容]。CIEU X条。我现在处理你的请求。"
@@ -123,6 +123,7 @@ CTO Agent has authorized access to this directory for:
 - Running tests (86 tests must pass)
 - Building new whl packages
 - Must report all changes to CEO before committing
+
 
 
 
