@@ -33,7 +33,7 @@ try:
         f.write(str(count))
 
     # Read stdin
-    raw = sys.stdin.read()
+    raw = sys.stdin.buffer.read().decode('utf-8-sig')
     payload = json.loads(raw)
 
     # Import ystar
