@@ -35,7 +35,7 @@ LOG_FILE = WORK_DIR / "scripts" / "agent_daemon.log"
 CLAUDE_CMD = r"C:\Users\liuha\AppData\Roaming\npm\claude.cmd"
 
 # 每轮自主工作之间的间隔（秒）
-CYCLE_INTERVAL = 3600  # 1小时一轮
+CYCLE_INTERVAL = 14400  # 4小时一轮（CEO决策2026-04-04：降低violations压力）
 # 同一轮内不同agent之间的间隔（秒）
 AGENT_INTERVAL = 60
 # 每个agent单次session最大轮数
@@ -263,6 +263,46 @@ logging.basicConfig(
 )
 log = logging.getLogger("agent_daemon")
 
+# ── CIEU Integration ────────────────────────────────────────────────────
+
+DAEMON_AGENT_ID = "agent_daemon"  # Specific agent ID per AGENTS.md Rule 2.1.1
+
+def record_acknowledgement(agent_id: str, instruction: str):
+    """Record acknowledgement event for Path A compliance (AGENTS.md Rule 2.2.1)."""
+    try:
+        import sqlite3
+        db_path = WORK_DIR / ".ystar_cieu_omission.db"
+        if not db_path.exists():
+            log.warning(f"CIEU database not found at {db_path}, skipping acknowledgement")
+            return
+
+        conn = sqlite3.connect(str(db_path))
+        c = conn.cursor()
+
+        # Create acknowledgement event
+        event_id = f"ack_{agent_id}_{int(time.time() * 1000)}"
+        entity_id = f"daemon_instruction_{int(time.time())}"
+
+        c.execute("""
+            INSERT INTO governance_events
+            (event_id, event_type, entity_id, actor_id, ts, payload_json, source)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        """, (
+            event_id,
+            "acknowledgement",
+            entity_id,
+            agent_id,
+            time.time(),
+            json.dumps({"instruction": instruction, "acknowledged_by": agent_id}),
+            "agent_daemon"
+        ))
+
+        conn.commit()
+        conn.close()
+        log.debug(f"Recorded acknowledgement: {agent_id} -> {instruction}")
+    except Exception as e:
+        log.warning(f"Failed to record acknowledgement: {e}")
+
 # ── 状态管理 ────────────────────────────────────────────────────────────
 
 def load_state() -> dict:
@@ -323,6 +363,9 @@ def run_agent(agent: dict) -> bool:
     # 写入active agent标记
     active_file = WORK_DIR / ".ystar_active_agent"
     active_file.write_text(agent["role"], encoding="utf-8")
+
+    # Record acknowledgement event (Path A compliance)
+    record_acknowledgement(agent["role"], f"autonomous_work_session:{name}")
 
     try:
         cmd = [
@@ -385,6 +428,9 @@ def run_agent_async(agent: dict) -> subprocess.Popen:
 
     active_file = WORK_DIR / f".ystar_active_agent_{name}"
     active_file.write_text(agent["role"], encoding="utf-8")
+
+    # Record acknowledgement event (Path A compliance)
+    record_acknowledgement(agent["role"], f"autonomous_work_session:{name}")
 
     cmd = [
         "cmd.exe", "/c", CLAUDE_CMD,
