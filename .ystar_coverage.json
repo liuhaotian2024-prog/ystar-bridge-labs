@@ -1,0 +1,25 @@
+{
+  "declared_agents": [
+    "CEO",
+    "CTO",
+    "CMO",
+    "CSO",
+    "CFO"
+  ],
+  "registered_agents": [
+    "ceo",
+    "cfo",
+    "cmo",
+    "cso",
+    "cto",
+    "eng-domains",
+    "eng-governance",
+    "eng-kernel",
+    "eng-platform"
+  ],
+  "hook_covered": true,
+  "cieu_seen_agents": [],
+  "initial_coverage_rate": 0.0,
+  "scanned_at": 1775257138.7031658,
+  "schema_version": 1
+}

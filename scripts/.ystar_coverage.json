@@ -1,0 +1,13 @@
+{
+  "declared_agents": [],
+  "registered_agents": [],
+  "hook_covered": true,
+  "cieu_seen_agents": [
+    "bench",
+    "orchestrator",
+    "ystar-cso"
+  ],
+  "initial_coverage_rate": 0.0,
+  "scanned_at": 1775311977.0301874,
+  "schema_version": 1
+}

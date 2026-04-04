@@ -27872,3 +27872,43 @@ SyntaxError: closing parenthesis ')' does not match opening parenthesis '{' on l
 19:02:38 Stdin: {"session_id":"d1ba1293-0441-4e3b-a034-cd7a9aca3fd2","transcript_path":"C:\\Users\\liuha\\.claude\\projects\\C--Users-liuha-OneDrive----ystar-company\\d1ba1293-0441-4e3b-a034-cd7a9aca3fd2.jsonl","cwd"
 19:02:38 Parsed tool: Write
 19:02:38 ystar imported OK
+12:57:38 FATAL ERROR: name '_feed_path_b' is not defined
+12:57:38 Traceback (most recent call last):
+  File "C:\Users\liuha\OneDrive\桌面\ystar-company\scripts\hook_wrapper.py", line 59, in <module>
+    result = check_hook(payload)
+  File "C:\Users\liuha\OneDrive\桌面\Y-star-gov\ystar\adapters\hook.py", line 355, in check_hook
+    _feed_path_b(who, tool_name, params, response, session_id_payload)
+    ^^^^^^^^^^^^
+NameError: name '_feed_path_b' is not defined
+
+12:57:52 FATAL ERROR: name '_feed_path_b' is not defined
+12:57:52 Traceback (most recent call last):
+  File "C:\Users\liuha\OneDrive\桌面\ystar-company\scripts\hook_wrapper.py", line 59, in <module>
+    result = check_hook(payload)
+  File "C:\Users\liuha\OneDrive\桌面\Y-star-gov\ystar\adapters\hook.py", line 355, in check_hook
+    _feed_path_b(who, tool_name, params, response, session_id_payload)
+    ^^^^^^^^^^^^
+NameError: name '_feed_path_b' is not defined
+
+14:16:10 FATAL ERROR: closing parenthesis ')' does not match opening parenthesis '[' on line 618 (omission_store.py, line 619)
+14:16:10 Traceback (most recent call last):
+  File "C:\Users\liuha\OneDrive\桌面\ystar-company\scripts\hook_wrapper.py", line 41, in <module>
+    from ystar.adapters.hook import check_hook
+  File "C:\Users\liuha\OneDrive\桌面\Y-star-gov\ystar\__init__.py", line 79, in <module>
+    from .adapters.hook import check_hook   # 轻量 hook 适配层（1-D）
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\liuha\OneDrive\桌面\Y-star-gov\ystar\adapters\__init__.py", line 27, in <module>
+    from ystar.adapters.omission_adapter import (
+    ...<4 lines>...
+    )
+  File "C:\Users\liuha\OneDrive\桌面\Y-star-gov\ystar\adapters\omission_adapter.py", line 25, in <module>
+    from ystar.governance.omission_models import (
+        EntityStatus, GEventType, TrackedEntity, GovernanceEvent,
+    )
+  File "C:\Users\liuha\OneDrive\桌面\Y-star-gov\ystar\governance\__init__.py", line 25, in <module>
+    from ystar.governance.omission_store import InMemoryOmissionStore, OmissionStore
+  File "C:\Users\liuha\OneDrive\桌面\Y-star-gov\ystar\governance\omission_store.py", line 619
+    )
+    ^
+SyntaxError: closing parenthesis ')' does not match opening parenthesis '[' on line 618
+

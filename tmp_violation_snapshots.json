@@ -1,0 +1,30 @@
+[
+  {
+    "timestamp": "2026-04-04T09:28:40.151712",
+    "total": 3215,
+    "min_time": 1775239082.5225692,
+    "max_time": 1775309315.6135223,
+    "by_type": {
+      "required_acknowledgement_omission": 1650,
+      "knowledge_gap_bootstrap": 1565
+    },
+    "by_actor": {
+      "path_a_agent": 1650,
+      "agent": 1565
+    }
+  },
+  {
+    "timestamp": "2026-04-04T10:09:08.636675",
+    "total": 3294,
+    "min_time": 1775239082.5225692,
+    "max_time": 1775311385.7704241,
+    "by_type": {
+      "required_acknowledgement_omission": 1652,
+      "knowledge_gap_bootstrap": 1642
+    },
+    "by_actor": {
+      "path_a_agent": 1652,
+      "agent": 1642
+    }
+  }
+]

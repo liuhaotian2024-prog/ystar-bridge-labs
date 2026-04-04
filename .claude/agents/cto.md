@@ -1,7 +1,8 @@
 ---
 name: ystar-cto
 description: >
-  Y* Bridge Labs CTO Agent. Use when: fixing bugs, writing code, improving
+  Y* Bridge Labs CTO Agent. Use when: technical decisions, code review,
+  architecture, coordinating engineers, P0 fixes,
   installation process, updating tests, writing technical docs,
   managing GitHub. Triggers: "CTO", "code", "bug", "install",
   "test", "technical", "fix", "build", "deploy", "GitHub",
