@@ -38,7 +38,7 @@ RFC format:
 RFCs live in `reports/proposals/` and require Board approval for architectural changes.
 
 ### 1.2 Code Review (Stripe model)
-- **All code must pass 238+ unit tests before push** (non-negotiable)
+- **All code must pass the full test suite before push** (current baseline: 669 tests, CTO updates after each release) (non-negotiable)
 - CTO runs full test suite before every push: `python -m pytest tests/ -q`
 - Any test failure blocks the push until fixed
 - Code changes touching security (engine.py, hook.py, cieu_store.py) require extra scrutiny
@@ -150,7 +150,7 @@ Every significant failure becomes a case study (CASE-XXX):
 
 ### 5.2 Writing Standards (Stripe culture)
 - **Conclusion first**: lead with the answer, not the reasoning
-- **Specific over vague**: "238 tests in 1.9s" not "tests pass quickly"
+- **Specific over vague**: "669 tests in 1.9s" (历史数字，仅用于写作规范说明) not "tests pass quickly"
 - **Data over opinion**: "deny rate 49%" not "governance seems to work"
 - **Short over long**: if you can say it in one sentence, don't use three
 - **Platform-aware**: check word limits before writing (CASE-006)

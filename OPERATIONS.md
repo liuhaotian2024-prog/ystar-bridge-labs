@@ -32,8 +32,8 @@
 ### 全员 — 每个session
 | 任务 | SLA | 来源 | 输出 |
 |------|-----|------|------|
-| 知识缺口自举 | 发现后30分钟 | Directive #013 | knowledge/[role]/ + bootstrap_log.md |
-| 案例记录（如有失败） | 失败后1小时 | AGENTS.md Case Protocol | knowledge/cases/CASE_XXX.md |
+| 知识缺口自举 | 见AGENTS.md Self-Bootstrap Protocol | Directive #013 | knowledge/[role]/ + bootstrap_log.md |
+| 案例记录（如有失败） | 30分钟（见INTERNAL_GOVERNANCE.md 2.3节） | AGENTS.md Case Protocol | knowledge/cases/CASE_XXX.md |
 | 遵守Article Writing宪法规则 | 始终 | AGENTS.md v2.2.0 | 每个claim必须有文件证据 |
 
 ### CEO — 每个session

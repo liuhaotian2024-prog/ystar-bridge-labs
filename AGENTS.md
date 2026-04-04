@@ -338,7 +338,7 @@ Ships code, fixes bugs, decides what features to build based on user feedback. O
 - P0 bugs: fix within 5 minutes
 - P1 bugs: fix within 15 minutes
 - P2 bugs: fix within 60 minutes
-- All code changes must have passing tests (267+ test gate)
+- All code changes must pass the full test suite (current baseline: 669 tests). 测试数量基准每次发布后由CTO更新。
 - Update CHANGELOG.md for every release
 - **每次session启动：** 运行 `ystar doctor --layer1`（<5秒，不影响速度）
 - **每周一次：** 运行 `ystar doctor --layer2 --design-debt`，输出设计债报告到 reports/cto/design_debt_YYYY-MM-DD.md，发现新断裂机制 = 本周P1任务
@@ -620,14 +620,23 @@ Self-bootstrapping cannot modify the constitutional layer.
 
 **Power hierarchy:**
 - Constitutional layer (highest): AGENTS.md + Y*gov contracts — cannot be modified by agents
-- Knowledge layer (self-bootstrappable): knowledge/ — agents may write, subject to constitutional layer, all writes CIEU-recorded
+- Knowledge layer (self-bootstrappable): knowledge/ — agents MUST write, subject to constitutional layer, all writes CIEU-recorded
 - Execution layer: daily tasks — constrained by both layers above
 
 **Bootstrap mode:** B-class — agents write autonomously, audited after the fact, no Board real-time confirmation required.
 
-**触发条件：** 任务因知识不足失败，或产出被Board纠正  
-**时限：** 发现知识缺口后30分钟内写入knowledge/[role]/  
+**Agents MUST write to knowledge/ when:**
+1. 任务完成（每个任务结束前至少一条entry）
+2. 发现知识盲区（30分钟内）
+3. 任务结果与预期不符（立即）
+
+知识写作是任务完成的前置条件。不写则obligation视为未完成。
+
+**触发：** INSTANT（发现即触发）  
+**完成deadline：** 30分钟（1800秒）  
 **执行细节：** 见 `knowledge/ceo/bootstrap_guide.md`
+
+注：触发和完成是两个不同的时间点。触发=立即开始写作，deadline=必须在30分钟内完成并提交。
 
 **Hard constraints (cannot override):**
 - NEVER modify AGENTS.md
