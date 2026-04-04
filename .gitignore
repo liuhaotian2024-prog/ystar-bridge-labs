@@ -20,3 +20,6 @@ pyproject.toml
 .ystar_session.json
 .ystar_cieu_omission.db
 .claude/worktrees/
+.ystar_cieu_omission.db-shm 
+.ystar_cieu_omission.db-wal 
+scripts/.session_call_count 
