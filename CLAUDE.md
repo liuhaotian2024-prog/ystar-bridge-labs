@@ -123,9 +123,18 @@ CTO Agent has authorized access to this directory for:
 - Building new whl packages
 - Must report all changes to CEO before committing
 
+## 双机分工原则（Y* Bridge Labs专用）
 
+Windows（本机）Aiden负责：
+- 读文件、分析状态、写文档、生成报告
+- 向Board汇报、等待指令、协调任务分配
+- 收到代码任务时：写入.claude/tasks/，通知Board转发MAC执行
 
-
+MAC mini（192.168.1.228）工程团队负责：
+- 所有写代码的任务
+- 所有测试运行
+- 所有git操作
+- GOV MCP server常驻运行
 
 
 
