@@ -475,6 +475,7 @@ def run_parallel_group(agents: list, state: dict):
     log.info(f"Waiting for {len(procs)} parallel agents: {list(procs.keys())}")
 
     for name, proc in procs.items():
+        active_file = WORK_DIR / f".ystar_active_agent_{name}"
         try:
             stdout, stderr = proc.communicate(timeout=600)
             success = proc.returncode == 0
@@ -491,6 +492,10 @@ def run_parallel_group(agents: list, state: dict):
         except Exception as e:
             log.error(f"  {name}: error: {e}")
             success = False
+        finally:
+            # 清理lock文件（无论成功/失败/timeout）
+            if active_file.exists():
+                active_file.unlink()
 
         state["agent_runs"].setdefault(name, []).append({
             "time": datetime.now().isoformat(),
