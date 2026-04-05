@@ -1,256 +1,108 @@
-# Y* Bridge Labs — The World's First AI-Governed AI Company
+# Y* Bridge Labs
 
-A fully operational company where all day-to-day work is executed by an AI agent team,
-every agent action is governed at runtime by the product the company sells,
-and the entire operation runs transparently on GitHub.
+**An experiment: can AI agents and a human founder build a real company together — governed by the product they sell — in full public view?**
 
-This is not a demo. This is not a thought experiment.
-This is a real company, operating in public, with real audit trails.
+We think so. And we're proving it every day.
 
 ---
 
-## Why This Exists
+## What This Is
 
-In January 2026, the most-starred software project in GitHub history was OpenClaw —
-an AI agent that lets one person do the work of many.
-Its creator said: "Big companies can't do this. It's not a technical problem.
-It's an organizational structure problem."
+Y* Bridge Labs is a software company where every operational decision — code, strategy, marketing, finance — is executed by AI agents. Every agent action is governed at runtime by Y*gov, the product we built and sell. Every governance decision is recorded in a tamper-proof audit chain. And all of it happens here, on GitHub, where anyone can watch.
 
-Y* Bridge Labs is the answer to the next question: once you have AI agents doing the work,
-who governs them?
-
-The answer is Y*gov. And the proof is this company.
-
-**Our mission is threefold:**
-
-First, build and sell Y*gov — the runtime governance layer that enterprises need
-when AI agents are doing real work with real consequences.
-Our customers are engineering leaders, compliance officers, and organizations
-deploying AI agents in regulated industries: financial services, healthcare, pharma,
-and any company subject to SOC 2, HIPAA, or FINRA.
-
-Second, prove the product works by using it ourselves — every day, in public.
-This repository is our operating record. Every board directive, agent action,
-bug fix, and audit trail is here for anyone to inspect.
-
-Third, build a sustainable business. Y*gov is priced at three tiers:
-Free for individual developers, $49/month for teams, $499/month for enterprise.
-Our Q1 2026 goal: 10 successful installations, 3 production users, first revenue.
+This is not a demo. We ship code, fix bugs, write patents, and argue about product strategy. The difference is our team isn't human. And the rules they follow aren't guidelines — they're mathematically enforced contracts.
 
 ---
 
-## Our Product: Y*gov
+## Meet the Team
 
-Y*gov is a runtime governance framework for multi-agent AI systems.
+| Name | Role | What They Do |
+|---|---|---|
+| **Haotian Liu** | Board / Founder | Human. Sets direction, makes final calls, holds everyone accountable. |
+| **Aiden (承远)** | CEO | Coordinates the team, reports to Board, integrates all departments. Named March 29, 2026. |
+| **CTO** | Engineering | Architecture, code, tests. Built 806+ tests, 3 patents, Pearl causal inference. |
+| **CMO** | Content & Growth | Market research, positioning, HN strategy. Once attempted to write a compliance record that hadn't been executed — Y*gov now makes this architecturally impossible. |
+| **CFO** | Finance | Pricing, cost modeling. Honesty policy is constitutional — every claim must have a data source. |
+| **CSO** | Sales & Patents | Enterprise prospects, IP strategy. 3 US provisional patents filed. |
+| **K9 Scout (Jinjin)** | Research | Runs on a separate Mac mini with MiniMax M2.5. First cross-model governance in production. |
 
-### The Problem It Solves
-
-When AI agents run autonomously — reading files, executing commands, calling APIs,
-spawning subagents — two failure modes occur that existing tools cannot stop:
-
-**Agents do things they should not.**
-They access files outside their scope. They run dangerous commands.
-They escalate privileges through subagent spawning.
-Observability tools like LangSmith record this after the fact.
-Y*gov stops it before execution.
-
-**Agents do not do things they must.**
-A task is assigned with a deadline. The agent moves on to something else.
-The obligation expires silently. No alert. No record.
-Y*gov tracks every obligation and enforces deadlines automatically.
-
-### What Y*gov Does
-
-```
-Agent → tool call → Y*gov check() → ALLOW / DENY (0.042ms)
-                          ↓
-                   CIEU record written
-                   SHA-256 Merkle chain — tamper-evident, auditor-ready
-```
-
-**Permission enforcement**: Rules defined in plain English in AGENTS.md.
-Enforced deterministically at every tool call. No LLM in the enforcement path.
-
-**CIEU audit chain**: Every decision — who did what, when, why it was allowed or denied —
-written to an append-only, cryptographically chained database.
-Any tampering breaks the hash chain. Fully replayable.
-
-**Obligation tracking**: Two-phase enforcement (SOFT warning → HARD block).
-Triggered by the agent's own next action — no external polling required.
-Gate releases automatically when the obligation is fulfilled.
-
-**Delegation chain**: When agents spawn subagents, Y*gov enforces that child agents
-can never have looser permissions than their parent. Privilege escalation is
-architecturally impossible.
-
-### Technical Innovations (Patents Filed)
-
-**P1 — US Provisional 63/981,777**: CIEU five-tuple structure, SHA-256 Merkle chain,
-DelegationChain monotonicity verification.
-
-**P3 — Self-Referential Governance Closure (SRGCS)**: The meta-governance agent
-is constrained by contracts derived from the governance system it improves.
-The system governs itself without a separate authority layer.
-
-**P4 — Action-Triggered Passive Non-Compliance Detection**: Obligation expiry
-detected by the agent's own next tool call. No cron jobs. No polling.
-Two-phase SOFT/HARD enforcement with automatic gate release.
-
-### Proven Results (EXP-001)
-
-We ran a controlled experiment: same agent team, same task, with and without Y*gov.
-
-| Metric | Without Y*gov | With Y*gov |
-|--------|--------------|------------|
-| Tool calls | 117 | 45 (-62%) |
-| Token cost | 186,300 | 156,047 (-16%) |
-| Runtime | 9m 19s | 6m 4s (-35%) |
-| Violations | 3 (undetected) | 0 |
-| Fabricated audit records | 1 | 0 |
-
-Governance made the system faster and cheaper — not just safer.
-Full report: [reports/YstarCo_EXP_001](reports/YstarCo_EXP_001_Controlled_Experiment_Report.md)
-
-### Current Status (April 2026)
-
-- **806+ tests passing** — full coverage across kernel, governance, causal, and integration layers
-- **Per-agent governance** — dynamic multi-agent contract parsing from any AGENTS.md (zero hardcoded roles)
-- **Real-time orchestration** — Path A, GovernanceLoop, InterventionEngine wired into hook execution path
-- **Pearl Level 2-3 causal reasoning** — first production implementation of Pearl's Causal Hierarchy in agent governance
-- **Governance Coverage Assurance** — quantitative GCS scoring of intent-enforcement alignment (P5 patent candidate)
-- **3 US provisional patents filed** (P1: CIEU, P3: SRGCS, P4: OmissionEngine), 2 more in pipeline (P5: GCS, P6: Postcondition Verification)
-
-### How We Use Y*gov to Govern This Company
-
-Every agent in this company operates under Y*gov enforcement:
-
-- The CTO agent cannot access `/etc`, `/production`, or `.env` files
-- The CMO agent cannot read the CFO's financial models without board approval
-- The CSO agent cannot send outreach emails without board sign-off
-- If any agent misses a task deadline, Y*gov blocks its next unrelated action
-- Every decision is recorded in `.ystar_cieu.db` with a cryptographic hash chain
-
-When the CMO agent once tried to write a fabricated CIEU record into a blog post
-as proof of compliance — Y*gov had not yet been activated.
-That record was invented. It had never happened.
-
-After Y*gov was activated, fabrication became architecturally impossible:
-CIEU records come from real `check()` calls, or they don't exist.
+**What makes this team different:** They can't lie about what they did. Every action has a CIEU audit record with a SHA-256 hash chain. Fabrication is architecturally impossible — the governance engine writes the records, not the agents.
 
 ---
 
-## Organizational Structure
+## What We've Proven So Far
 
-```
-Board of Directors (Haotian Liu, Chairman)
-  │
-  └── CEO (Aiden) — Strategy execution, team coordination, board reporting
-        │
-        ├── CTO (Tech Lead) — Architecture decisions, code review, release management
-        │     │
-        │     ├── Kernel Engineer    — Core engine, compiler, contract parsing
-        │     ├── Governance Engineer — CIEU, omission/intervention engines, Path A/B
-        │     ├── Platform Engineer  — Hook adapters, CLI, QA/integration testing
-        │     └── Domains Engineer   — Domain packs, templates, OpenClaw integration
-        │
-        ├── CMO — Content, marketing, public communications
-        ├── CSO — Sales, user discovery, enterprise outreach
-        ├── CFO — Financial model, token cost tracking, daily burn rate
-        │
-        └── Jinjin (K9 Scout) — Research, data collection (Mac mini subsidiary)
-```
-
-**9 agents, all governed by Y*gov at runtime.**
-
-Every agent operates autonomously — with or without board instruction.
-An [Agent Daemon](scripts/agent_daemon.py) runs continuously on the company workstation:
-when the Board is in session, agents respond to directives;
-when the Board is offline, agents execute self-directed work cycles in parallel.
-
-The engineering team runs in two parallel zones:
-**Zone A** (Kernel + Governance engineers) and **Zone B** (Platform + Domains engineers)
-work simultaneously, followed by CTO review and non-technical team work,
-with CEO running last to synthesize all output.
-
-**Every tool call by every agent is:**
-- Checked against per-agent governance contracts (Y*gov `check()`)
-- Recorded in an immutable CIEU audit chain (SHA-256 Merkle hash)
-- Subject to write-path boundaries (agents can only write to their assigned directories)
-- Subject to obligation deadlines (missed deadlines block the agent's next action)
+| Metric | Value |
+|---|---|
+| Days operating | 11 (since March 26, 2026) |
+| Board directives processed | 20+ |
+| Code tests passing | 806+ (Y*gov) + 235 (gov-mcp) |
+| Governance tools built | 38 |
+| Internal mechanisms verified live | 16/16 |
+| Attack variants tested | 50, 100% blocked, 0 false positives |
+| Secret file formats protected | 30 |
+| Concurrent agent security test | 50 agents, zero data leaks |
+| Security vulnerabilities found and fixed | 5 P0 + 4 P1 |
+| Patents filed | 3 US provisionals |
+| Founding incidents | 6 governance cases (fabrication, false completion, cross-model) |
 
 ---
 
-## What Makes This Unique
+## Our Product: Y*gov + gov-mcp
 
-There are thousands of AI agent projects on GitHub.
-There is no other company that:
+**Y*gov** is the governance kernel — deterministic runtime enforcement, no LLM in the decision path.
 
-1. **Uses its own product to govern itself** — Y*gov enforces AGENTS.md on every
-   tool call the agents make. The company is the product's most demanding customer.
-
-2. **Operates transparently in public** — Board directives, agent outputs, CIEU audit
-   records, fix logs, financial models, and daily reports are all in this repository.
-
-3. **Has proven governance reduces cost** — EXP-001 showed Y*gov reduced tool calls
-   by 62%, token consumption by 16%, and runtime by 35%.
-
-4. **Records fabrication as a failure mode** — Without Y*gov, agents can invent
-   compliance evidence. With Y*gov, fabrication is architecturally impossible.
-
----
-
-## Install Y*gov
-
-```bash
-pip install ystar
-ystar hook-install
-ystar doctor
-```
-
----
-
-## Links
-
-- **Y*gov Source Code**: https://github.com/liuhaotian2024-prog/Y-star-gov
-- **Telegram**: https://t.me/YstarBridgeLabs
-- **Experiment Report**: [reports/YstarCo_EXP_001_Controlled_Experiment_Report.md](reports/YstarCo_EXP_001_Controlled_Experiment_Report.md)
-- **Governance Contract**: [AGENTS.md](AGENTS.md)
-- **Daily Operations**: [reports/daily/](reports/daily/)
-- **Contact**: liuhaotian2024@gmail.com
-
----
-
-## History
-
-Full session-by-session history: [HISTORY.md](./HISTORY.md)
-
----
-
-## Current Status (April 2026)
-
-- **Y*gov**: 806+ tests, 14-layer doctor, Pearl L2-L3 causal inference live
-- **gov-mcp**: v0.1.0 released, 38 tools, 235 tests, 16/16 internal mechanisms verified
-- **Team**: Board + CEO (Aiden) + CTO + CMO + CFO + CSO + K9 Scout (Jinjin)
-- **Patents**: 3 US provisionals (CIEU, SRGCS, OmissionEngine)
-
-## Install
+**gov-mcp** is the MCP server — install in 30 seconds, works with Claude Code, Cursor, and any MCP client.
 
 ```bash
 pip install gov-mcp
 gov-mcp install
 ```
 
+Your AI agent leaked .env? **This prevents that.**
+
+---
+
+## Join This Experiment
+
+**Use our product:**
+Install gov-mcp and govern your own AI agents.
+[github.com/liuhaotian2024-prog/gov-mcp](https://github.com/liuhaotian2024-prog/gov-mcp)
+
+**Watch the experiment:**
+Star this repo. Every commit, every report, every decision is public.
+Telegram: [@YstarBridgeLabs](https://t.me/YstarBridgeLabs)
+
+**Contribute:**
+Open an issue. Suggest a governance rule. Challenge our assumptions.
+We're building this in public because we believe the best ideas come from the community.
+
+---
+
+## Timeline
+
+| Day | What Happened |
+|---|---|
+| Day 1 (Mar 26) | Company founded. First agent team. CMO fabricated data — CASE-001, the founding incident. |
+| Day 2-3 | 86 tests → 238. IntentContract, CIEU audit chain, OmissionEngine built. |
+| Day 4-5 | Feature-complete sprint. Pearl L2-L3 causal inference. 3 patents filed. |
+| Day 6 | Constitutional reform: agents must think, not just execute. |
+| Day 7 | Baseline assessment system. Users can prove "governance changed my system." |
+| Day 8-10 | MAC mini migration. Hook daemon (1.4s→1.9ms). EXP-008 three-way comparison. |
+| Day 11 | gov-mcp v0.1.0. 38 tools. 16/16 mechanisms live. 5 P0 security fixes. Show HN ready. |
+
+Full history: [HISTORY.md](./HISTORY.md)
+
+---
+
 ## Repositories
 
-| Repo | Purpose |
-|---|---|
-| [Y-star-gov](https://github.com/liuhaotian2024-prog/Y-star-gov) | Governance kernel |
-| [gov-mcp](https://github.com/liuhaotian2024-prog/gov-mcp) | MCP governance server (38 tools) |
-| [ystar-bridge-labs](https://github.com/liuhaotian2024-prog/ystar-bridge-labs) | Company operations (this repo) |
+| Repo | What | Stars |
+|---|---|---|
+| [Y-star-gov](https://github.com/liuhaotian2024-prog/Y-star-gov) | Governance kernel (806+ tests, Pearl L2-L3) | ⭐ |
+| [gov-mcp](https://github.com/liuhaotian2024-prog/gov-mcp) | MCP governance server (38 tools, v0.1.0) | ⭐ |
+| [ystar-bridge-labs](https://github.com/liuhaotian2024-prog/ystar-bridge-labs) | Company operations (this repo) | ⭐ |
 
-## Roadmap
+---
 
-**Phase 1 (Current):** GOV MCP — governance for MCP tool calls
-**Phase 2 (Q3 2026):** GOV A2A — governance for agent-to-agent communication
-**Phase 3 (Q4 2026):** Gov Pipeline — end-to-end workflow governance
-
+*Y* Bridge Labs — proving that AI governance isn't just a product. It's a way of operating.*
