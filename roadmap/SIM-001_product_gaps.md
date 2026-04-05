@@ -70,3 +70,17 @@
 1. Per-client encryption (#9) is P1 for legal vertical — invest before or after first legal customer?
 2. Country modules (#14) — which country first? EU (largest regulatory pressure) or US (largest market)?
 3. Non-MCP ERP adapter (#13) — build or partner?
+
+---
+
+## Phase 2 Code Implementation Items (from V1 Layer Reports)
+
+| # | Item | Effort | Source |
+|---|---|---|---|
+| C1 | field_deny + postcondition dimension verification | 1h | Layer 1 |
+| C2 | tighten() → contract modification closedloop | 3h | Layer 5 |
+| C3 | Counterfactual → Re-baseline chain | 3h | Layer 6 |
+| C4 | Pearl L3 trigger threshold: 3 consecutive violations | 1h | Layer 6 |
+| C5 | Three report formats (operator/principal/public) | 3h | Layer 7 |
+
+Total: 11h estimated. All P2 — not blocking v0.1.0 release.
