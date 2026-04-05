@@ -29,3 +29,8 @@ __pycache__/
 # Runtime
 scripts/.session_call_count
 scripts/.session_booted
+
+# OpenClaw config (may contain bot tokens)
+.openclaw/config.json
+openclaw.json
+.openclaw/*.json
