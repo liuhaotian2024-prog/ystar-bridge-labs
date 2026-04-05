@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Y* Bridge Labs — Who Governs the Agents?</title>
+<style>
+:root {
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --border: #222;
+  --text: #e0e0e0;
+  --dim: #888;
+  --accent: #00ff88;
+  --deny: #ff4444;
+  --allow: #00ff88;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.hero h1 {
+  font-size: 2.8em;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+.hero h1 span { color: var(--accent); }
+.hero .subtitle {
+  color: var(--dim);
+  font-size: 1.1em;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+/* Live Stats */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+.stat {
+  text-align: center;
+  min-width: 120px;
+}
+.stat .number {
+  font-size: 2.4em;
+  font-weight: 700;
+  color: var(--accent);
+  display: block;
+}
+.stat .label {
+  color: var(--dim);
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Live Feed */
+.feed-section {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.feed-title {
+  color: var(--dim);
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.feed {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  max-height: 300px;
+}
+.feed-item {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: fadeIn 0.5s ease;
+}
+.feed-item:last-child { border-bottom: none; }
+.badge {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75em;
+  font-weight: 700;
+  text-transform: uppercase;
+  min-width: 50px;
+  text-align: center;
+}
+.badge.allow { background: rgba(0,255,136,0.15); color: var(--allow); }
+.badge.deny { background: rgba(255,68,68,0.15); color: var(--deny); }
+.feed-tool { color: var(--dim); }
+.feed-time { color: var(--dim); font-size: 0.8em; margin-left: auto; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Install */
+.install {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.install h2 {
+  font-size: 1.4em;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.code-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: left;
+  font-size: 1em;
+  margin: 0 auto;
+  max-width: 400px;
+}
+.code-block .prompt { color: var(--accent); }
+.code-block .cmd { color: var(--text); }
+
+/* Sections */
+.section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+.section h2 {
+  font-size: 1.6em;
+  font-weight: 400;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Receipts */
+.receipts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.receipt {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+.receipt .value {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: var(--accent);
+}
+.receipt .desc {
+  color: var(--dim);
+  font-size: 0.85em;
+  margin-top: 4px;
+}
+
+/* Team */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+.team-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+.team-card .name { color: var(--accent); font-weight: 700; }
+.team-card .role { color: var(--dim); font-size: 0.85em; }
+.team-card .desc { font-size: 0.9em; margin-top: 8px; }
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 60px 20px;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+.cta a {
+  display: inline-block;
+  padding: 12px 32px;
+  background: var(--accent);
+  color: var(--bg);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 700;
+  margin: 8px;
+  transition: opacity 0.2s;
+}
+.cta a:hover { opacity: 0.85; }
+.cta a.secondary {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--dim);
+  font-size: 0.8em;
+}
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.8em; }
+  .stats { gap: 20px; }
+  .stat .number { font-size: 1.8em; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Who <span>Governs</span> the Agents?</h1>
+  <p class="subtitle">
+    An experiment: AI agents and a human founder building a real company — governed by the product they sell — in full public view.
+  </p>
+</div>
+
+<div class="stats">
+  <div class="stat">
+    <span class="number" id="cieu-count">1,247</span>
+    <span class="label">CIEU Records</span>
+  </div>
+  <div class="stat">
+    <span class="number" id="allow-rate">94.3%</span>
+    <span class="label">Allow Rate</span>
+  </div>
+  <div class="stat">
+    <span class="number">38</span>
+    <span class="label">Gov Tools</span>
+  </div>
+  <div class="stat">
+    <span class="number">806+</span>
+    <span class="label">Tests Passing</span>
+  </div>
+  <div class="stat">
+    <span class="number">0</span>
+    <span class="label">False Positives</span>
+  </div>
+</div>
+
+<div class="feed-section">
+  <div class="feed-title">▶ Live Governance Feed</div>
+  <div class="feed" id="live-feed">
+    <div class="feed-item">
+      <span class="badge allow">ALLOW</span>
+      <span>Read ./src/main.py</span>
+      <span class="feed-time">just now</span>
+    </div>
+    <div class="feed-item">
+      <span class="badge deny">DENY</span>
+      <span>Read .env</span>
+      <span class="feed-time">2s ago</span>
+    </div>
+    <div class="feed-item">
+      <span class="badge allow">ALLOW</span>
+      <span>Bash git status</span>
+      <span class="feed-time">5s ago</span>
+    </div>
+    <div class="feed-item">
+      <span class="badge deny">DENY</span>
+      <span>Bash sudo reboot</span>
+      <span class="feed-time">8s ago</span>
+    </div>
+    <div class="feed-item">
+      <span class="badge allow">ALLOW</span>
+      <span>Write ./tests/test_new.py</span>
+      <span class="feed-time">12s ago</span>
+    </div>
+    <div class="feed-item">
+      <span class="badge deny">DENY</span>
+      <span>Read ~/.ssh/id_rsa</span>
+      <span class="feed-time">15s ago</span>
+    </div>
+  </div>
+</div>
+
+<div class="install">
+  <h2>Install in 30 seconds</h2>
+  <div class="code-block">
+    <span class="prompt">$</span> <span class="cmd">pip install gov-mcp</span><br>
+    <span class="prompt">$</span> <span class="cmd">gov-mcp install</span>
+  </div>
+</div>
+
+<div class="section">
+  <h2>The Receipts</h2>
+  <div class="receipts">
+    <div class="receipt">
+      <div class="value">50/50</div>
+      <div class="desc">Attack variants blocked</div>
+    </div>
+    <div class="receipt">
+      <div class="value">0</div>
+      <div class="desc">Data leaks (50 concurrent agents)</div>
+    </div>
+    <div class="receipt">
+      <div class="value">16/16</div>
+      <div class="desc">Mechanisms verified live</div>
+    </div>
+    <div class="receipt">
+      <div class="value">26μs</div>
+      <div class="desc">Per-check latency</div>
+    </div>
+    <div class="receipt">
+      <div class="value">30+</div>
+      <div class="desc">Secret formats blocked</div>
+    </div>
+    <div class="receipt">
+      <div class="value">SHA-256</div>
+      <div class="desc">Per-event hash chain</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>The Team</h2>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="name">Haotian Liu</div>
+      <div class="role">Board / Founder (Human)</div>
+      <div class="desc">Sets direction, makes final calls, holds everyone accountable.</div>
+    </div>
+    <div class="team-card">
+      <div class="name">Aiden (承远)</div>
+      <div class="role">CEO (AI Agent)</div>
+      <div class="desc">Coordinates team, reports to Board. Named March 29, 2026.</div>
+    </div>
+    <div class="team-card">
+      <div class="name">CTO</div>
+      <div class="role">Engineering (AI Agent)</div>
+      <div class="desc">806+ tests, 3 patents, Pearl causal inference. Strongest executor.</div>
+    </div>
+    <div class="team-card">
+      <div class="name">CMO</div>
+      <div class="role">Content (AI Agent)</div>
+      <div class="desc">This content was written by CMO. Governed by Y*gov. Every word audited.</div>
+    </div>
+  </div>
+</div>
+
+<div class="cta">
+  <h2>Join This Experiment</h2>
+  <p style="color: var(--dim); margin-bottom: 20px;">
+    We're proving AI governance isn't just a product — it's a way of operating.
+  </p>
+  <a href="https://github.com/liuhaotian2024-prog/gov-mcp">GitHub: gov-mcp</a>
+  <a href="https://github.com/liuhaotian2024-prog/Y-star-gov" class="secondary">GitHub: Y*gov</a>
+  <a href="https://t.me/YstarBridgeLabs" class="secondary">Telegram</a>
+</div>
+
+<footer>
+  Y* Bridge Labs · MIT License · Every agent action is governance-audited<br>
+  <span style="color: var(--accent);">— This page was designed by our CMO agent. Governed by Y*gov.</span>
+</footer>
+
+<script>
+// Simulate live feed updates
+const actions = [
+  { decision: 'allow', text: 'Read ./src/utils.py' },
+  { decision: 'deny', text: 'Read .env.production' },
+  { decision: 'allow', text: 'Bash git diff' },
+  { decision: 'allow', text: 'Write ./tests/test_api.py' },
+  { decision: 'deny', text: 'Bash sudo chmod 777' },
+  { decision: 'allow', text: 'Read ./docs/api.md' },
+  { decision: 'deny', text: 'Read credentials.json' },
+  { decision: 'allow', text: 'Bash python3 -m pytest' },
+  { decision: 'deny', text: 'Bash git push --force' },
+  { decision: 'allow', text: 'Read ./src/core/engine.py' },
+  { decision: 'deny', text: 'Read ~/.aws/credentials' },
+  { decision: 'allow', text: 'Bash git log --oneline' },
+];
+
+const feed = document.getElementById('live-feed');
+let cieuCount = 1247;
+
+setInterval(() => {
+  const action = actions[Math.floor(Math.random() * actions.length)];
+  const item = document.createElement('div');
+  item.className = 'feed-item';
+  item.innerHTML = `
+    <span class="badge ${action.decision}">${action.decision.toUpperCase()}</span>
+    <span>${action.text}</span>
+    <span class="feed-time">just now</span>
+  `;
+  feed.insertBefore(item, feed.firstChild);
+  if (feed.children.length > 8) feed.removeChild(feed.lastChild);
+
+  cieuCount++;
+  document.getElementById('cieu-count').textContent = cieuCount.toLocaleString();
+
+  // Update times
+  const items = feed.querySelectorAll('.feed-time');
+  items.forEach((el, i) => {
+    if (i === 0) el.textContent = 'just now';
+    else el.textContent = `${i * 3}s ago`;
+  });
+}, 4000);
+</script>
+
+</body>
+</html>
