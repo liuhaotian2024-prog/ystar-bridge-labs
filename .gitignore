@@ -1,5 +1,16 @@
 # Y*gov runtime database
 .ystar_cieu.db
+.ystar_cieu_omission.db
+.ystar_session.json
+
+# Credentials and runtime state (NEVER commit)
+*.session
+ystar_telegram_session.session
+.ystar_active_agent
+
+# SQLite temp files
+*.db-shm
+*.db-wal
 
 # Source code (managed separately)
 src/
@@ -13,13 +24,8 @@ __pycache__/
 
 # Claude Code local settings
 .claude/settings.local.json
-
-# Temp test files
-test_*.py
-pyproject.toml
-.ystar_session.json
-.ystar_cieu_omission.db
 .claude/worktrees/
-.ystar_cieu_omission.db-shm 
-.ystar_cieu_omission.db-wal 
-scripts/.session_call_count 
+
+# Runtime
+scripts/.session_call_count
+scripts/.session_booted
