@@ -7,6 +7,49 @@
 
 ---
 
+## Iron Rule 1: Deterministic Enforcement (Constitutional, non-violable)
+
+Y*gov's enforcement layer contains NO LLM. All ALLOW/DENY decisions are computed deterministically from the contract. Governance cannot be prompt-injected. No agent, including the meta-governance agent, may introduce LLM calls into the check() → ALLOW/DENY path.
+
+Violation = P0. The enforcement path is the trust root of the entire system.
+
+---
+
+## Iron Rule 2: No Hardcoded Paths (Constitutional, non-violable)
+
+All file paths, ports, agent IDs, contract locations, and database paths must be passed via startup parameters or environment variables. No default path strings in code. All paths use pathlib for cross-platform compatibility (Windows + Mac + Linux).
+
+Violation = P0. Hardcoded paths break portability and create hidden coupling.
+
+---
+
+## Iron Rule 3: Ecosystem Neutrality (Constitutional, non-violable)
+
+Y*gov and GOV MCP are ecosystem-neutral infrastructure. All engineering implementations must comply:
+
+1. **No hardcoded protocol formats for any specific ecosystem.**
+   Wrong: writing Claude Code's hookSpecificOutput format directly in code.
+   Right: using an adapter layer that selects format dynamically based on host parameter.
+
+2. **All external interfaces must simultaneously support:**
+   - Claude Code ecosystem
+   - OpenClaw ecosystem
+   - Generic MCP ecosystem
+   - Future ecosystems (extensible without modifying existing code)
+
+3. **New ecosystem support must not break existing ecosystems.**
+   Every PR touching ecosystem interfaces must test all supported hosts.
+
+4. **Every code review must include the check:**
+   "Does this implementation bind to a specific ecosystem?"
+
+Violation = P0. Stop all work and fix immediately.
+
+**Fulfillment mechanism:** Every commit touching ecosystem interfaces must include:
+"Ecosystem-neutral verified: ✅ Claude Code / ✅ OpenClaw / ✅ Generic"
+
+---
+
 ## CIEU Data Preservation Constitutional Rule (Y*gov Enforced)
 
 **All CIEU governance data must be permanently archived before any database cleanup. Constitutional layer. Cannot be overridden.**
