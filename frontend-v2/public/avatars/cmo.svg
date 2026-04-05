@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- CMO robot with paintbrush -->
+  <circle cx="60" cy="40" r="25" fill="#F0E0F0" stroke="#993366" stroke-width="2"/>
+  <!-- Creative antenna (star) -->
+  <line x1="60" y1="15" x2="60" y2="5" stroke="#993366" stroke-width="2"/>
+  <polygon points="60,0 62,5 67,5 63,8 65,13 60,10 55,13 57,8 53,5 58,5" fill="#993366" transform="translate(0,-2) scale(0.6)" style="transform-origin: 60px 5px"/>
+  <!-- Eyes (expressive) -->
+  <circle cx="50" cy="36" r="4" fill="#993366"/>
+  <circle cx="70" cy="36" r="4" fill="#993366"/>
+  <circle cx="51" cy="35" r="1.5" fill="white"/>
+  <circle cx="71" cy="35" r="1.5" fill="white"/>
+  <!-- Smile (creative) -->
+  <path d="M46 48 Q60 58 74 48" fill="none" stroke="#993366" stroke-width="2" stroke-linecap="round"/>
+  <!-- Body -->
+  <path d="M35 65 Q60 58 85 65 L90 110 H30 Z" fill="#7a2a5a" stroke="none"/>
+  <!-- Paintbrush -->
+  <line x1="85" y1="70" x2="100" y2="55" stroke="#8B6914" stroke-width="3" stroke-linecap="round"/>
+  <ellipse cx="102" cy="53" rx="4" ry="6" fill="#ff6b9d" transform="rotate(-30, 102, 53)"/>
+  <!-- Paint splashes -->
+  <circle cx="25" cy="90" r="4" fill="#ff6b9d" opacity="0.3"/>
+  <circle cx="35" cy="100" r="3" fill="#6b9dff" opacity="0.3"/>
+  <circle cx="80" cy="95" r="5" fill="#9dff6b" opacity="0.3"/>
+</svg>

@@ -7,7 +7,7 @@ const team = [
   {
     name: "Haotian Liu",
     role: "Board / Founder",
-    emoji: "☕",
+    avatar: "/avatars/haotian.svg",
     desc: "Human. Sets direction, makes final calls.",
     today: "Reviewed market intel, approved Show HN positioning.",
     color: "#8B6914",
@@ -15,7 +15,7 @@ const team = [
   {
     name: "Aiden (承远)",
     role: "CEO",
-    emoji: "👔",
+    avatar: "/avatars/aiden.svg",
     desc: "AI Agent. Coordinates team, reports to Board.",
     today: "Led 8-layer capability verification. 16/16 mechanisms live.",
     color: "#1a7a4c",
@@ -23,7 +23,7 @@ const team = [
   {
     name: "CTO",
     role: "Engineering",
-    emoji: "🔧",
+    avatar: "/avatars/cto.svg",
     desc: "AI Agent. Code, tests, architecture.",
     today: "Fixed GovernanceLoop bug. Shipped 5 P0 security patches.",
     color: "#2a5599",
@@ -31,7 +31,7 @@ const team = [
   {
     name: "CMO",
     role: "Content & Growth",
-    emoji: "🎨",
+    avatar: "/avatars/cmo.svg",
     desc: "AI Agent. First day working independently.",
     today: "Writing this page. Every word governance-audited.",
     color: "#993366",
@@ -141,7 +141,7 @@ export default function Home() {
                 style={{ background: '#fff', border: '1px solid #e8e4df' }}
                 onClick={() => setSelectedMember(selectedMember === i ? null : i)}
               >
-                <div className="text-4xl mb-2">{member.emoji}</div>
+                <img src={member.avatar} alt={member.name} className="w-16 h-16 mb-2 rounded-full" style={{ background: '#f5f0eb' }} />
                 <div className="font-bold" style={{ color: member.color }}>{member.name}</div>
                 <div className="text-sm" style={{ color: '#8a8580', fontFamily: 'system-ui, sans-serif' }}>{member.role}</div>
                 <div className="text-sm mt-2">{member.desc}</div>

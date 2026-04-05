@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- CEO robot with tie -->
+  <circle cx="60" cy="40" r="25" fill="#E0E8F0" stroke="#1a7a4c" stroke-width="2"/>
+  <!-- Antenna -->
+  <line x1="60" y1="15" x2="60" y2="6" stroke="#1a7a4c" stroke-width="2"/>
+  <circle cx="60" cy="4" r="3" fill="#1a7a4c"/>
+  <!-- Eyes (screens) -->
+  <rect x="46" y="33" width="10" height="7" rx="2" fill="#1a7a4c"/>
+  <rect x="64" y="33" width="10" height="7" rx="2" fill="#1a7a4c"/>
+  <!-- Eye glow -->
+  <rect x="48" y="35" width="3" height="3" rx="1" fill="#00ff88" opacity="0.8"/>
+  <rect x="66" y="35" width="3" height="3" rx="1" fill="#00ff88" opacity="0.8"/>
+  <!-- Mouth -->
+  <rect x="48" y="48" width="24" height="3" rx="1.5" fill="#1a7a4c"/>
+  <!-- Body (suit) -->
+  <path d="M35 65 Q60 58 85 65 L90 110 H30 Z" fill="#2a3540" stroke="none"/>
+  <!-- Tie -->
+  <polygon points="60,62 54,78 60,85 66,78" fill="#c44" stroke="none"/>
+  <!-- Lapels -->
+  <path d="M48 65 L60 78" fill="none" stroke="#3a4550" stroke-width="2"/>
+  <path d="M72 65 L60 78" fill="none" stroke="#3a4550" stroke-width="2"/>
+</svg>
