@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+:root {
+  --warm-bg: #faf8f5;
+  --warm-surface: #ffffff;
+  --warm-border: #e8e4df;
+  --warm-text: #2a2520;
+  --warm-dim: #8a8580;
+  --accent: #1a7a4c;
+  --deny: #c44;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: var(--warm-bg);
+  color: var(--warm-text);
+}

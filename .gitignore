@@ -13,7 +13,7 @@ ystar_telegram_session.session
 *.db-wal
 
 # Source code (managed separately)
-src/
+/src/
 
 # Python
 __pycache__/
