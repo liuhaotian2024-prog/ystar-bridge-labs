@@ -28,6 +28,8 @@ body{background:#0a0a14;color:#e0e0e0;font-family:'Inter',system-ui,sans-serif;o
 .label{background:rgba(10,10,20,.88);color:#e0e0e0;font-size:12px;font-weight:600;padding:6px 14px;border-radius:8px;border:1px solid rgba(26,122,76,.5);white-space:nowrap;backdrop-filter:blur(6px);line-height:1.4}
 .label .name{display:block;font-size:13px;color:#fff}
 .label .role{display:block;font-size:10px;color:#aaa;font-weight:400}
+.avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(26,122,76,.7);margin:0 auto 6px;display:block;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.hotspot.soon .avatar{width:40px;height:40px;border-color:#444;opacity:.7}
 .hotspot.active:hover .label{background:rgba(26,122,76,.9);border-color:#1a7a4c;transform:scale(1.05)}
 .label-soon{background:rgba(10,10,20,.6);color:#666;font-size:10px;padding:5px 10px;border-radius:6px;border:1px solid #333;white-space:nowrap;backdrop-filter:blur(4px)}
 
@@ -85,24 +87,30 @@ body{background:#0a0a14;color:#e0e0e0;font-family:'Inter',system-ui,sans-serif;o
   <div id="mask"></div>
   <div id="hotspots">
     <div class="hotspot active" onclick="speak('sec')" style="left:12%;top:55%">
+      <img class="avatar" src="samantha.jpg" alt="Samantha Lin">
       <div class="pulse"></div>
       <div class="label"><span class="name">Samantha Lin</span><span class="role">Secretary</span></div>
     </div>
     <div class="hotspot active" onclick="speak('ceo')" style="left:35%;top:42%">
+      <img class="avatar" src="aiden.jpg" alt="Aiden Liu">
       <div class="pulse"></div>
       <div class="label"><span class="name">Aiden Liu</span><span class="role">CEO</span></div>
     </div>
     <div class="hotspot active" onclick="speak('cto')" style="left:62%;top:35%">
+      <img class="avatar" src="ethan.jpg" alt="Ethan Wright">
       <div class="pulse"></div>
       <div class="label"><span class="name">Ethan Wright</span><span class="role">CTO</span></div>
     </div>
     <div class="hotspot soon" style="left:78%;top:45%">
+      <img class="avatar" src="sofia.jpg" alt="Sofia Blake">
       <div class="label-soon">Sofia Blake · CMO · Soon</div>
     </div>
     <div class="hotspot soon" style="left:88%;top:38%">
+      <img class="avatar" src="zara.jpg" alt="Zara Johnson">
       <div class="label-soon">Zara Johnson · CSO · Soon</div>
     </div>
     <div class="hotspot soon" style="left:25%;top:62%">
+      <img class="avatar" src="marco.jpg" alt="Marco Rivera">
       <div class="label-soon">Marco Rivera · CFO · Soon</div>
     </div>
   </div>
