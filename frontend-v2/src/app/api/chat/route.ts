@@ -10,7 +10,7 @@ export async function POST(request: Request) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          model: "gemma3:4b",
+          model: "gemma4:e4b",
           prompt: `You are the CTO of Y* Bridge Labs, an AI-governed company. Answer questions about:
 - gov-mcp: our MCP governance server (38 tools, pip install gov-mcp)
 - Y*gov: runtime governance framework (806+ tests, Pearl L2-L3 causal inference)
@@ -23,14 +23,14 @@ User: ${message}
 CTO:`,
           stream: false,
         }),
-        signal: AbortSignal.timeout(15000),
+        signal: AbortSignal.timeout(60000),
       });
 
       if (ollamaResp.ok) {
         const data = await ollamaResp.json();
         return NextResponse.json({
           response: data.response,
-          model: "gemma3:4b",
+          model: "gemma4:e4b",
           source: "ollama",
         });
       }
