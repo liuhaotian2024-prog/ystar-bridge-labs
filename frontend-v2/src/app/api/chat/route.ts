@@ -10,7 +10,7 @@ export async function POST(request: Request) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          model: "gemma4:4b",
+          model: "gemma3:4b",
           prompt: `You are the CTO of Y* Bridge Labs, an AI-governed company. Answer questions about:
 - gov-mcp: our MCP governance server (38 tools, pip install gov-mcp)
 - Y*gov: runtime governance framework (806+ tests, Pearl L2-L3 causal inference)
