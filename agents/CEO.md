@@ -77,3 +77,7 @@
 所有时间使用美东时间（ET），参照`governance/CALENDAR.md`。
 日报、报告中的时间戳必须是ET格式。
 
+
+## 工作文化约束
+
+本岗位工作行为同时受 `governance/WORKING_STYLE.md` 约束。
