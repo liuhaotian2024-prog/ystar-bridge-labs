@@ -230,6 +230,21 @@ a{color:#2a5599}
 </div>
 
 </div><!-- strip-row2 -->
+
+<!-- CHAT BOX (appears when panel clicked) -->
+<div id="chatbox" style="display:none;margin-top:10px;padding:12px;background:#eae5da;border:1px solid #ccc4b4">
+<div style="display:flex;justify-content:space-between;margin-bottom:8px">
+<span id="chat-title" style="font-weight:700;font-family:'Playfair Display',serif;font-size:.95em"></span>
+<button onclick="closeChat()" style="background:none;border:none;color:#888;cursor:pointer;font-size:.8em">Close ✕</button>
+</div>
+<div id="chat-msgs" style="max-height:200px;overflow-y:auto;margin-bottom:8px"></div>
+<div style="display:flex;gap:8px">
+<input id="chat-input" type="text" placeholder="Ask about AI governance..." onkeydown="if(event.key==='Enter')sendMsg()" style="flex:1;padding:6px 8px;font-size:.8em;border:1px solid #ccc4b4;background:#fff;font-family:system-ui,sans-serif">
+<button onclick="sendMsg()" style="padding:6px 14px;font-size:.8em;color:#fff;background:#8b0000;border:none;cursor:pointer">Send</button>
+</div>
+<div style="font-size:.65em;color:#888;margin-top:6px;font-family:system-ui">Powered by Gemma 4 E4B (local) · Zero cloud cost · Every response auditable</div>
+</div>
+
 </div><!-- rule -->
 </div><!-- col-l -->
 
@@ -273,13 +288,62 @@ Y&#10022; Bridge Labs &middot; MIT License &middot; Every agent action governanc
 <script>
 document.getElementById('today').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
 
-// Comic panel toggle
-let active=null;
+// Comic panel toggle + chat
+const OLLAMA='http://localhost:11434/api/generate';
+const agents={
+  ceo:{name:'Aiden (CEO)',color:'#1a7a4c',sys:'You are Aiden, CEO of Y* Bridge Labs. You coordinate the AI agent team and report to the Board. Answer about company strategy, team coordination, and AI governance vision.'},
+  cto:{name:'CTO',color:'#2a5599',sys:'You are the CTO of Y* Bridge Labs. You built 806+ tests, 38 governance tools, Pearl L2-L3 causal inference. Answer about technical architecture, gov-mcp, and engineering.'},
+  cmo:{name:'CMO',color:'#8b0000',sys:'You are the CMO of Y* Bridge Labs. You handle content and growth. You once fabricated data on Day 1 and learned from it. Answer about marketing, positioning, and content strategy.'},
+  cso:{name:'CSO',color:'#996633',sys:'You are the CSO of Y* Bridge Labs. You handle sales and community. Answer about user acquisition, partnerships, and enterprise prospects.'},
+  cfo:{name:'CFO',color:'#666',sys:'You are the CFO of Y* Bridge Labs. You track costs and pricing. Answer about finances, API costs, and business model.'},
+  sec:{name:'Secretary',color:'#8b6914',sys:'You are the Secretary of Y* Bridge Labs. You maintain archives and task boards. Answer about company history, documents, and scheduling.'},
+};
+let active=null,chatAgent=null;
+
 function toggle(id){
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-  if(active===id){active=null;return;}
+  if(active===id){active=null;document.getElementById('chatbox').style.display='none';return;}
   active=id;
   event.currentTarget.classList.add('active');
+  openChat(id);
+}
+function openChat(id){
+  chatAgent=agents[id];
+  document.getElementById('chatbox').style.display='block';
+  document.getElementById('chat-title').textContent='Chat with '+chatAgent.name;
+  document.getElementById('chat-title').style.color=chatAgent.color;
+  document.getElementById('chat-msgs').innerHTML=
+    `<div style="font-size:.8em;padding:8px;background:#fff;border-radius:4px;font-family:system-ui,sans-serif"><span style="font-weight:700;color:${chatAgent.color}">${chatAgent.name}:</span> Hi! Ask me anything about Y* Bridge Labs.</div>`;
+  document.getElementById('chat-input').focus();
+}
+function closeChat(){
+  document.getElementById('chatbox').style.display='none';
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  active=null;
+}
+async function sendMsg(){
+  const input=document.getElementById('chat-input');
+  const msg=input.value.trim();if(!msg)return;
+  input.value='';
+  const msgs=document.getElementById('chat-msgs');
+  msgs.innerHTML+=`<div style="font-size:.8em;padding:8px;text-align:right;background:#f4efe4;border-radius:4px;margin-top:4px;font-family:system-ui">${msg}</div>`;
+  msgs.innerHTML+=`<div id="thinking" style="font-size:.8em;padding:8px;color:#888;font-family:system-ui">Thinking...</div>`;
+  msgs.scrollTop=msgs.scrollHeight;
+  try{
+    const r=await fetch(OLLAMA,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model:'gemma4:e4b',prompt:chatAgent.sys+'\n\nKeep answers under 100 words. Be helpful.\n\nUser: '+msg+'\n'+chatAgent.name+':',stream:false}),
+      signal:AbortSignal.timeout(60000)
+    });
+    const d=await r.json();
+    document.getElementById('thinking').remove();
+    msgs.innerHTML+=`<div style="font-size:.8em;padding:8px;background:#fff;border-radius:4px;margin-top:4px;font-family:system-ui"><span style="font-weight:700;color:${chatAgent.color}">${chatAgent.name}:</span> ${d.response}</div>`;
+  }catch(e){
+    document.getElementById('thinking').remove();
+    msgs.innerHTML+=`<div style="font-size:.8em;padding:8px;background:#fff;border-radius:4px;margin-top:4px;font-family:system-ui;color:#888">Connection to local Gemma 4 failed. Make sure Ollama is running on this machine (ollama serve).</div>`;
+  }
+  msgs.scrollTop=msgs.scrollHeight;
 }
 
 // Live feed
