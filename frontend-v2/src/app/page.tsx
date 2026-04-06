@@ -136,22 +136,203 @@ export default function Home() {
             </p>
           </div>
 
-          {/* TEAM SECTION */}
+          {/* COMIC STRIP — The Executive Team */}
           <div style={S.rule}>
-            <h3 style={{ ...S.sectionTitle, marginBottom: 12 }}>The Executive Team — Click to Chat</h3>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10 }}>
-              {team.map((m) => (
-                <div key={m.id} style={{ ...S.card, borderColor: activeAgent === m.id ? m.color : "#e8e0d0", boxShadow: activeAgent === m.id ? `0 0 8px ${m.color}40` : "none" }}
-                  onClick={() => openChat(m.id)}
-                  onMouseOver={(e) => (e.currentTarget.style.boxShadow = `0 2px 8px rgba(0,0,0,0.1)`)}
-                  onMouseOut={(e) => (e.currentTarget.style.boxShadow = activeAgent === m.id ? `0 0 8px ${m.color}40` : "none")}>
-                  <div style={{ fontSize: "2em", marginBottom: 4 }}>
-                    {m.id === "ceo" && "👔"}{m.id === "cto" && "🔧"}{m.id === "cmo" && "🎨"}
-                    {m.id === "cso" && "📞"}{m.id === "cfo" && "📊"}{m.id === "sec" && "📋"}
+            <h3 style={{ ...S.sectionTitle, marginBottom: 6, textAlign: "center" }}>&#9733; THE DAILY STRIP &#9733;</h3>
+
+            {/* Row 1: CEO wide panel */}
+            <div style={{ display: "flex", justifyContent: "center", marginBottom: 5 }}>
+              <div onClick={() => openChat("ceo")} style={{
+                width: "58%", height: 210, border: "2.5px solid #1a1a1a", position: "relative",
+                background: "#fefcf8", cursor: "pointer", overflow: "hidden",
+                boxShadow: activeAgent === "ceo" ? "0 0 0 3px #1a7a4c" : "none",
+              }}>
+                {/* CEO Scene: standing with tablet looking at dashboard */}
+                <svg viewBox="0 0 400 200" width="100%" height="100%" style={{ position: "absolute", top: 0, left: 0 }}>
+                  {/* Dashboard on wall */}
+                  <rect x="20" y="15" width="120" height="80" rx="4" fill="#f0f4f8" stroke="#ccc" strokeWidth="1.5"/>
+                  <rect x="28" y="25" width="45" height="20" rx="2" fill="#e8f5e9"/>
+                  <rect x="80" y="25" width="45" height="20" rx="2" fill="#ffebee"/>
+                  <rect x="28" y="52" width="100" height="8" rx="1" fill="#e3f2fd"/>
+                  <rect x="28" y="65" width="75" height="8" rx="1" fill="#e3f2fd"/>
+                  <text x="80" y="92" textAnchor="middle" fontSize="6" fill="#aaa" fontFamily="system-ui">GOVERNANCE DASHBOARD</text>
+
+                  {/* CEO figure — manga style */}
+                  <g transform="translate(220, 20)">
+                    {/* Body — suit */}
+                    <path d="M30 70 Q50 62 70 70 L75 160 H25 Z" fill="#2a3d55"/>
+                    {/* Shirt/tie */}
+                    <path d="M42 70 L50 85 L58 70" fill="#fff" stroke="#ddd" strokeWidth="0.5"/>
+                    <line x1="50" y1="75" x2="50" y2="110" stroke="#1a7a4c" strokeWidth="3"/>
+                    {/* Head */}
+                    <ellipse cx="50" cy="45" rx="22" ry="26" fill="#fde8d0"/>
+                    {/* Hair — neat, side-parted */}
+                    <path d="M28 38 Q30 15 50 12 Q70 15 72 38 Q72 28 65 22 Q55 10 40 14 Q30 18 28 30 Z" fill="#1a1a2e"/>
+                    {/* Eyes — manga large with highlight */}
+                    <ellipse cx="40" cy="43" rx="5" ry="6" fill="white"/>
+                    <circle cx="41" cy="44" r="3.5" fill="#1a7a4c"/>
+                    <circle cx="42" cy="42" r="1.5" fill="white"/>
+                    <ellipse cx="60" cy="43" rx="5" ry="6" fill="white"/>
+                    <circle cx="61" cy="44" r="3.5" fill="#1a7a4c"/>
+                    <circle cx="62" cy="42" r="1.5" fill="white"/>
+                    {/* Eyebrows */}
+                    <path d="M34 36 Q40 33 46 36" fill="none" stroke="#1a1a2e" strokeWidth="1.5"/>
+                    <path d="M54 36 Q60 33 66 36" fill="none" stroke="#1a1a2e" strokeWidth="1.5"/>
+                    {/* Small nose + slight smile */}
+                    <path d="M49 49 Q50 52 52 50" fill="none" stroke="#d4a574" strokeWidth="1"/>
+                    <path d="M42 57 Q50 62 58 57" fill="none" stroke="#c4846a" strokeWidth="1.5"/>
+                    {/* Tablet in hand */}
+                    <rect x="75" y="90" width="30" height="45" rx="3" fill="#333" stroke="#555" strokeWidth="1">
+                      <animateTransform attributeName="transform" type="rotate" values="-2,90,112;1,90,112;-2,90,112" dur="4s" repeatCount="indefinite"/>
+                    </rect>
+                    <rect x="78" y="94" width="24" height="37" rx="1" fill="#4a7a9a" opacity="0.7"/>
+                    {/* Arm holding tablet */}
+                    <path d="M65 85 Q80 88 78 95" fill="none" stroke="#fde8d0" strokeWidth="7" strokeLinecap="round"/>
+                  </g>
+                </svg>
+                {/* Speech bubble on click */}
+                {activeAgent === "ceo" && (
+                  <div style={{
+                    position: "absolute", top: 12, right: 12, maxWidth: 180,
+                    background: "white", border: "2px solid #1a1a1a", borderRadius: 12,
+                    padding: "8px 10px", fontSize: "0.72em", fontFamily: "'Libre Baskerville', serif",
+                    fontStyle: "italic", lineHeight: 1.4,
+                  }}>
+                    &ldquo;All 16 mechanisms verified live. Team is performing at partner standard.&rdquo;
+                    <div style={{ position: "absolute", bottom: -10, left: 30, width: 0, height: 0, borderLeft: "8px solid transparent", borderRight: "8px solid transparent", borderTop: "10px solid #1a1a1a" }}/>
+                    <div style={{ position: "absolute", bottom: -7, left: 31, width: 0, height: 0, borderLeft: "6px solid transparent", borderRight: "6px solid transparent", borderTop: "8px solid white" }}/>
                   </div>
-                  <div style={{ fontWeight: 700, fontSize: "0.85em", color: m.color }}>{m.name}</div>
-                  <div style={{ fontSize: "0.7em", color: "#888", fontFamily: "system-ui" }}>{m.role}</div>
-                  <div style={{ fontSize: "0.65em", color: "#aaa", fontStyle: "italic", marginTop: 4, fontFamily: "system-ui" }}>{m.idle}</div>
+                )}
+                {/* Caption bar */}
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "#1a1a1a", color: "#f4efe4", padding: "3px 8px", display: "flex", justifyContent: "space-between", fontSize: "0.6em", fontFamily: "system-ui", textTransform: "uppercase", letterSpacing: "0.1em" }}>
+                  <span>CEO</span><span>AIDEN (承远)</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Row 2: Five panels */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 5 }}>
+              {team.filter(m => m.id !== "ceo").map((m) => (
+                <div key={m.id} onClick={() => openChat(m.id)} style={{
+                  height: 170, border: "2.5px solid #1a1a1a", position: "relative",
+                  background: "#fefcf8", cursor: "pointer", overflow: "hidden",
+                  boxShadow: activeAgent === m.id ? `0 0 0 3px ${m.color}` : "none",
+                }}>
+                  {/* Character scene */}
+                  <svg viewBox="0 0 120 140" width="100%" height="calc(100% - 22px)" style={{ position: "absolute", top: 0, left: 0 }}>
+                    {/* Desk */}
+                    <rect x="5" y="95" width="110" height="5" rx="1" fill="#8B7355"/>
+
+                    {/* Generic manga character — differentiated by props */}
+                    <g transform="translate(25, 15)">
+                      {/* Body */}
+                      <path d="M15 50 Q35 44 55 50 L58 110 H12 Z" fill={m.color} opacity="0.85"/>
+                      {/* Head */}
+                      <ellipse cx="35" cy="30" rx="18" ry="21" fill="#fde8d0"/>
+                      {/* Hair variations */}
+                      {m.id === "cto" && <path d="M17 25 Q20 5 35 2 Q50 5 53 25 Q53 15 45 10 Q35 0 25 8 Q18 14 17 20 Z" fill="#2a2a4a"/>}
+                      {m.id === "cmo" && <path d="M17 28 Q15 8 35 5 Q55 8 53 28 Q50 18 45 15 Q38 12 30 15 Q22 18 17 25 Z" fill="#4a1a2a"/>}
+                      {m.id === "cso" && <path d="M17 25 Q20 8 35 5 Q50 8 53 25 L53 20 Q50 12 35 8 Q20 12 17 22 Z" fill="#1a3a3a"/>}
+                      {m.id === "cfo" && <path d="M17 24 Q22 6 35 4 Q48 6 53 24 Q50 16 42 12 Q30 10 20 16 Z" fill="#3a3a3a"/>}
+                      {m.id === "sec" && <path d="M17 28 Q18 6 35 3 Q52 6 53 28 Q52 15 48 10 Q40 5 30 8 Q20 12 17 22 Z" fill="#5a2a1a"/>}
+                      {/* Eyes — manga */}
+                      <ellipse cx="27" cy="29" rx="4" ry="4.5" fill="white"/>
+                      <circle cx="28" cy="30" r="2.8" fill={m.color}/>
+                      <circle cx="29" cy="28.5" r="1.2" fill="white"/>
+                      <ellipse cx="43" cy="29" rx="4" ry="4.5" fill="white"/>
+                      <circle cx="44" cy="30" r="2.8" fill={m.color}/>
+                      <circle cx="45" cy="28.5" r="1.2" fill="white"/>
+                      {/* Eyebrows */}
+                      <path d="M22 23 Q27 21 32 23" fill="none" stroke="#333" strokeWidth="1.2"/>
+                      <path d="M38 23 Q43 21 48 23" fill="none" stroke="#333" strokeWidth="1.2"/>
+                      {/* Nose + mouth */}
+                      <path d="M34 34 Q35 37 37 35" fill="none" stroke="#d4a574" strokeWidth="0.8"/>
+                      <path d="M28 40 Q35 44 42 40" fill="none" stroke="#c4846a" strokeWidth="1.2"/>
+
+                      {/* Props per character */}
+                      {m.id === "cto" && <>
+                        {/* Glasses */}
+                        <rect x="22" y="25" width="12" height="9" rx="2" fill="none" stroke="#2a5599" strokeWidth="1.5"/>
+                        <rect x="37" y="25" width="12" height="9" rx="2" fill="none" stroke="#2a5599" strokeWidth="1.5"/>
+                        <line x1="34" y1="29" x2="37" y2="29" stroke="#2a5599" strokeWidth="1"/>
+                        {/* Monitor */}
+                        <rect x="55" y="-5" width="35" height="25" rx="2" fill="#222" stroke="#444" strokeWidth="1"/>
+                        <rect x="57" y="-3" width="31" height="21" rx="1" fill="#1a2a3a"/>
+                        <line x1="60" y1="2" x2="78" y2="2" stroke="#4a8a4a" strokeWidth="1" opacity="0.7"/>
+                        <line x1="62" y1="6" x2="82" y2="6" stroke="#8a8adf" strokeWidth="1" opacity="0.6"/>
+                        <line x1="60" y1="10" x2="75" y2="10" stroke="#df8a4a" strokeWidth="1" opacity="0.5"/>
+                        {/* Typing hands */}
+                        <g>
+                          <circle cx="60" cy="55" r="3" fill="#fde8d0">
+                            <animate attributeName="cy" values="55;53;55" dur="0.5s" repeatCount="indefinite"/>
+                          </circle>
+                          <circle cx="70" cy="56" r="3" fill="#fde8d0">
+                            <animate attributeName="cy" values="56;54;56" dur="0.5s" begin="0.25s" repeatCount="indefinite"/>
+                          </circle>
+                        </g>
+                      </>}
+                      {m.id === "cmo" && <>
+                        {/* Whiteboard */}
+                        <rect x="55" y="-10" width="35" height="45" rx="2" fill="white" stroke="#ccc" strokeWidth="1"/>
+                        <line x1="60" y1="0" x2="80" y2="0" stroke="#8b0000" strokeWidth="1.5"/>
+                        <line x1="60" y1="8" x2="75" y2="8" stroke="#8b0000" strokeWidth="1"/>
+                        <line x1="60" y1="16" x2="82" y2="16" stroke="#333" strokeWidth="1"/>
+                        {/* Marker in hand */}
+                        <line x1="55" y1="45" x2="65" y2="25" stroke="#8b0000" strokeWidth="3" strokeLinecap="round">
+                          <animate attributeName="x2" values="65;67;65" dur="2s" repeatCount="indefinite"/>
+                        </line>
+                      </>}
+                      {m.id === "cso" && <>
+                        {/* Phone */}
+                        <rect x="52" y="30" width="14" height="24" rx="3" fill="#333"/>
+                        <rect x="54" y="33" width="10" height="17" rx="1" fill="#4a9a9a" opacity="0.6"/>
+                        {/* Hand holding phone */}
+                        <path d="M48 50 Q55 45 55 35" fill="none" stroke="#fde8d0" strokeWidth="5" strokeLinecap="round"/>
+                      </>}
+                      {m.id === "cfo" && <>
+                        {/* Spreadsheet */}
+                        <rect x="55" y="5" width="30" height="40" rx="1" fill="white" stroke="#ccc" strokeWidth="1"/>
+                        <line x1="65" y1="5" x2="65" y2="45" stroke="#ddd" strokeWidth="0.5"/>
+                        <line x1="75" y1="5" x2="75" y2="45" stroke="#ddd" strokeWidth="0.5"/>
+                        {[12,19,26,33,40].map((y,i)=><line key={i} x1="55" y1={y} x2="85" y2={y} stroke="#ddd" strokeWidth="0.5"/>)}
+                        {/* Calculator */}
+                        <rect x="0" y="55" width="18" height="25" rx="2" fill="#555"/>
+                        <rect x="2" y="57" width="14" height="8" rx="1" fill="#8a8" opacity="0.5"/>
+                      </>}
+                      {m.id === "sec" && <>
+                        {/* Filing folders */}
+                        <rect x="55" y="10" width="28" height="35" rx="1" fill="#d4a574" stroke="#b08050" strokeWidth="1"/>
+                        <rect x="58" y="5" width="28" height="35" rx="1" fill="#e4b584" stroke="#c09060" strokeWidth="1"/>
+                        <rect x="61" y="0" width="28" height="35" rx="1" fill="#f4c594" stroke="#d0a070" strokeWidth="1"/>
+                        {/* Tab labels */}
+                        <rect x="75" y="-2" width="16" height="8" rx="1" fill="#8b6914"/>
+                        <rect x="75" y="3" width="16" height="8" rx="1" fill="#6b4914" opacity="0.6"/>
+                      </>}
+                    </g>
+                  </svg>
+
+                  {/* Speech bubble on click */}
+                  {activeAgent === m.id && (
+                    <div style={{
+                      position: "absolute", top: 6, left: 6, right: 6,
+                      background: "white", border: "1.5px solid #1a1a1a", borderRadius: 10,
+                      padding: "5px 7px", fontSize: "0.6em", fontFamily: "'Libre Baskerville', serif",
+                      fontStyle: "italic", lineHeight: 1.3, zIndex: 10,
+                    }}>
+                      {m.id === "cto" && `"806 tests passing. Found a bug today — meta-learning wasn't running. Fixed it."`}
+                      {m.id === "cmo" && `"Just published our first autonomous X thread. Every word governance-audited."`}
+                      {m.id === "cso" && `"Following 10 target accounts today. Simon Willison is our #1 priority."`}
+                      {m.id === "cfo" && `"API costs tracked. X API: $5 credit. Ollama: $0. Total burn rate: minimal."`}
+                      {m.id === "sec" && `"190-line archive index built. All experiments summarized. Task board current."`}
+                      <div style={{ position: "absolute", bottom: -7, left: 15, width: 0, height: 0, borderLeft: "5px solid transparent", borderRight: "5px solid transparent", borderTop: "7px solid #1a1a1a" }}/>
+                      <div style={{ position: "absolute", bottom: -5, left: 16, width: 0, height: 0, borderLeft: "4px solid transparent", borderRight: "4px solid transparent", borderTop: "5px solid white" }}/>
+                    </div>
+                  )}
+
+                  {/* Caption bar */}
+                  <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "#1a1a1a", color: "#f4efe4", padding: "2px 6px", display: "flex", justifyContent: "space-between", fontSize: "0.5em", fontFamily: "system-ui", textTransform: "uppercase", letterSpacing: "0.1em" }}>
+                    <span>{m.role}</span><span style={{ color: m.color }}>{m.name}</span>
+                  </div>
                 </div>
               ))}
             </div>
