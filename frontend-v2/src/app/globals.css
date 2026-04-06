@@ -1,17 +1,24 @@
 @import "tailwindcss";
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+
 :root {
-  --warm-bg: #faf8f5;
-  --warm-surface: #ffffff;
-  --warm-border: #e8e4df;
-  --warm-text: #2a2520;
-  --warm-dim: #8a8580;
-  --accent: #1a7a4c;
-  --deny: #c44;
+  --paper: #f4efe4;
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faded: #888;
+  --accent: #8b0000;
+  --rule: #2a2a2a;
+  --rule-light: #ccc4b4;
 }
 
 body {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  background: var(--warm-bg);
-  color: var(--warm-text);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Libre Baskerville', 'Georgia', serif;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
