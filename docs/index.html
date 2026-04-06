@@ -4,426 +4,495 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Y✦ Bridge Labs — The AI-Governed Company</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0f0f1a;color:#e8e8f0;font-family:'Inter',system-ui,sans-serif;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
+body{background:#0a0a14;color:#e0e0e0;font-family:system-ui,-apple-system,sans-serif;overflow:hidden;height:100vh;display:flex;flex-direction:column}
+#scene{flex:1;position:relative;cursor:pointer}
+canvas{display:block}
 
-/* Office container */
-.office-wrap{flex:1;position:relative;min-height:520px;overflow:hidden;background:linear-gradient(180deg,#1a1a2e 0%,#16213e 50%,#0f0f1a 100%)}
+/* Header */
+.hdr{background:rgba(10,10,20,.95);padding:10px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1a1a2e;z-index:10}
+.hdr-title{font-size:1.1em;font-weight:700;letter-spacing:.04em}
+.hdr-sub{font-size:.7em;color:#666}
 
-/* === ISOMETRIC OFFICE SVG === */
-.office-svg{width:100%;height:100%;position:absolute;top:0;left:0}
+/* Tooltip */
+#tip{position:fixed;padding:6px 14px;background:rgba(26,122,76,.9);color:#fff;border-radius:6px;font-size:.75em;pointer-events:none;display:none;z-index:20;font-weight:600}
 
-/* Workstation hit areas */
-.ws-hit{cursor:pointer;opacity:0;transition:opacity .2s}
-.ws-hit:hover{opacity:.12}
-.ws-coming{cursor:default}
-
-/* Nameplate styling */
-.np{font-family:'Inter',sans-serif;font-size:7px;letter-spacing:.08em;text-transform:uppercase;fill:#ccc;font-weight:600}
-.np-bg{fill:#1a1a2e;stroke:#3a3a5a;stroke-width:.5;rx:3}
-
-/* Speaking overlay */
-.overlay{position:fixed;inset:0;background:rgba(8,8,18,.92);z-index:100;display:none;align-items:center;justify-content:center;backdrop-filter:blur(8px)}
-.overlay.show{display:flex}
-.speak-card{max-width:560px;width:92%;background:linear-gradient(135deg,#1a1a2e,#16213e);border:1px solid #2a2a4a;border-radius:16px;padding:32px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.speak-indicator{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:8px;animation:pulse 1.5s infinite}
+/* Speaker overlay */
+.ov{position:fixed;inset:0;background:rgba(8,8,18,.92);z-index:100;display:none;align-items:center;justify-content:center;backdrop-filter:blur(8px)}
+.ov.show{display:flex}
+.sp-card{max-width:540px;width:92%;background:linear-gradient(135deg,#1a1a2e,#16213e);border:1px solid #2a2a4a;border-radius:16px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.sp-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:8px;animation:pulse 1.5s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.speak-name{font-size:1.3em;font-weight:700;margin-bottom:2px}
-.speak-role{font-size:.8em;color:#888;margin-bottom:16px}
-.speak-text{font-size:.95em;line-height:1.8;color:#ccc;min-height:100px;padding:16px;background:rgba(255,255,255,.03);border-radius:8px;border:1px solid rgba(255,255,255,.06);margin-bottom:20px;white-space:pre-line}
-.speak-btns{display:flex;gap:10px;justify-content:flex-end}
-.speak-btns button{padding:8px 20px;border-radius:8px;font-size:.85em;font-family:'Inter',sans-serif;cursor:pointer;transition:all .2s;border:none}
-.btn-r{background:transparent;border:1px solid #444 !important;color:#aaa}
-.btn-r:hover{border-color:#888 !important;color:#fff}
-.btn-d{background:#1a7a4c;color:#fff}
-.btn-d:hover{background:#15603d}
+.sp-name{font-size:1.3em;font-weight:700}
+.sp-role{font-size:.8em;color:#888;margin:2px 0 14px}
+.sp-text{font-size:.92em;line-height:1.8;color:#ccc;min-height:90px;padding:16px;background:rgba(255,255,255,.03);border-radius:8px;border:1px solid rgba(255,255,255,.06);margin-bottom:16px;white-space:pre-line}
+.sp-btns{display:flex;gap:10px;justify-content:flex-end}
+.sp-btns button{padding:8px 20px;border-radius:8px;font-size:.85em;cursor:pointer;border:none;transition:all .2s}
+.btn-r{background:transparent;border:1px solid #444 !important;color:#aaa}.btn-r:hover{border-color:#888!important;color:#fff}
+.btn-d{background:#1a7a4c;color:#fff}.btn-d:hover{background:#15603d}
 
-/* Bottom bar */
-.bottom{background:#0a0a16;border-top:1px solid #1a1a2e;padding:10px 24px}
-.bottom-inner{max-width:1100px;margin:0 auto}
-.feed-row{display:flex;gap:12px;overflow-x:auto;padding:4px 0;scrollbar-width:none;margin-bottom:8px}
-.feed-row::-webkit-scrollbar{display:none}
-.feed-chip{flex-shrink:0;font-family:'SF Mono',monospace;font-size:.65em;padding:3px 8px;background:rgba(255,255,255,.03);border-radius:4px;display:flex;align-items:center;gap:4px;border:1px solid rgba(255,255,255,.04)}
-.info-row{display:flex;justify-content:space-between;align-items:center;font-size:.7em;color:#666;flex-wrap:wrap;gap:8px}
-.info-row a{color:#4a8adf;text-decoration:none}
-.info-row a:hover{color:#7ab0ff}
-.stat-pills{display:flex;gap:8px}
-.pill{padding:3px 10px;background:rgba(26,122,76,.12);border:1px solid rgba(26,122,76,.2);border-radius:12px;font-size:.85em;color:#1a7a4c;font-weight:600}
+/* Bottom */
+.btm{background:rgba(10,10,20,.95);padding:8px 20px;border-top:1px solid #1a1a2e;z-index:10}
+.pills{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+.pill{padding:2px 10px;background:rgba(26,122,76,.1);border:1px solid rgba(26,122,76,.2);border-radius:12px;font-size:.7em;color:#1a7a4c;font-weight:600}
+.links{text-align:center;font-size:.7em;color:#555}
+.links a{color:#4a8adf;text-decoration:none;margin:0 8px}
 
-@media(max-width:768px){
-  .office-wrap{min-height:380px}
-  .speak-card{padding:20px}
-  .speak-text{font-size:.85em}
-}
+/* Mobile */
+@media(max-width:768px){.sp-card{padding:20px}.sp-text{font-size:.85em}}
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<div style="text-align:center;padding:14px 20px;background:#0a0a16;border-bottom:1px solid #1a1a2e">
-  <span style="font-size:1.2em;font-weight:700;letter-spacing:.04em">Y<span style="color:#1a7a4c">✦</span> Bridge Labs</span>
-  <span style="margin-left:12px;font-size:.75em;color:#555">The AI-Governed Company · Every Decision Audited</span>
+<div class="hdr">
+  <div><span class="hdr-title">Y<span style="color:#1a7a4c">✦</span> Bridge Labs</span><span class="hdr-sub" style="margin-left:10px">The AI-Governed Company</span></div>
+  <div class="hdr-sub">Every Decision Audited · <span style="color:#1a7a4c">pip install gov-mcp</span></div>
 </div>
 
-<!-- OFFICE SCENE -->
-<div class="office-wrap">
-<svg class="office-svg" viewBox="0 0 1200 650" preserveAspectRatio="xMidYMid meet">
-<defs>
-  <!-- Wood grain pattern -->
-  <pattern id="wood" patternUnits="userSpaceOnUse" width="30" height="30">
-    <rect width="30" height="30" fill="#3d3225"/>
-    <line x1="0" y1="5" x2="30" y2="5" stroke="#4a3d30" stroke-width=".3" opacity=".5"/>
-    <line x1="0" y1="15" x2="30" y2="15" stroke="#4a3d30" stroke-width=".2" opacity=".4"/>
-    <line x1="0" y1="25" x2="30" y2="25" stroke="#4a3d30" stroke-width=".3" opacity=".3"/>
-  </pattern>
-  <!-- Brick pattern -->
-  <pattern id="brick" patternUnits="userSpaceOnUse" width="24" height="12">
-    <rect width="24" height="12" fill="#5a3a2a"/>
-    <rect x="0" y="0" width="11" height="5" fill="#6a4433" rx=".5"/><rect x="13" y="0" width="11" height="5" fill="#5e3e2e" rx=".5"/>
-    <rect x="6" y="7" width="11" height="5" fill="#6a4433" rx=".5"/><rect x="19" y="7" width="5" height="5" fill="#5e3e2e" rx=".5"/><rect x="0" y="7" width="5" height="5" fill="#5e3e2e" rx=".5"/>
-  </pattern>
-  <!-- Ambient glow -->
-  <radialGradient id="glow1" cx="50%" cy="30%"><stop offset="0%" stop-color="#ffeebb" stop-opacity=".08"/><stop offset="100%" stop-color="transparent"/></radialGradient>
-  <radialGradient id="glow2" cx="50%" cy="50%"><stop offset="0%" stop-color="#aaccff" stop-opacity=".05"/><stop offset="100%" stop-color="transparent"/></radialGradient>
-  <radialGradient id="lampglow"><stop offset="0%" stop-color="#fff5dd" stop-opacity=".15"/><stop offset="100%" stop-color="transparent"/></radialGradient>
-</defs>
+<div id="scene"><div id="tip"></div></div>
 
-<!-- ROOM STRUCTURE -->
-<!-- Floor -->
-<polygon points="100,350 600,200 1100,350 600,500" fill="url(#wood)"/>
-<!-- Floor shadow/depth -->
-<polygon points="100,350 600,200 1100,350 600,500" fill="rgba(0,0,0,.15)"/>
-<!-- Highlight streaks on floor -->
-<line x1="300" y1="280" x2="500" y2="350" stroke="rgba(255,255,255,.02)" stroke-width="20"/>
-<line x1="700" y1="260" x2="900" y2="340" stroke="rgba(255,255,255,.02)" stroke-width="15"/>
-
-<!-- Back wall -->
-<polygon points="100,100 600,50 1100,100 1100,350 600,200 100,350" fill="#2a2a3e"/>
-<!-- Brick wall (left section) -->
-<polygon points="100,100 400,70 400,280 100,350" fill="url(#brick)" opacity=".7"/>
-
-<!-- Window (right side) -->
-<polygon points="820,80 1020,95 1020,240 820,225" fill="#1a2a4a" stroke="#3a3a5a" stroke-width="2"/>
-<!-- Window panes -->
-<line x1="920" y1="87" x2="920" y2="233" stroke="#3a3a5a" stroke-width="1"/>
-<line x1="820" y1="153" x2="1020" y2="168" stroke="#3a3a5a" stroke-width="1"/>
-<!-- City silhouette through window -->
-<polygon points="830,180 830,155 845,140 845,160 860,130 860,165 880,145 880,170 900,125 900,168 920,150 920,175 940,135 940,172 960,155 960,178 980,140 980,182 1010,175 1010,195 830,195" fill="#0d1530" opacity=".6"/>
-<!-- Window light beam -->
-<polygon points="820,225 1020,240 950,420 750,400" fill="rgba(200,220,255,.03)"/>
-
-<!-- Whiteboard (back wall center) -->
-<polygon points="450,72 750,55 750,185 450,200" fill="#f0f0f0" stroke="#ccc" stroke-width="1"/>
-<!-- Whiteboard content -->
-<line x1="470" y1="85" x2="550" y2="80" stroke="#2a5599" stroke-width="1.5"/>
-<line x1="470" y1="95" x2="600" y2="88" stroke="#2a5599" stroke-width="1"/>
-<line x1="520" y1="105" x2="580" y2="100" stroke="#1a7a4c" stroke-width="1"/>
-<rect x="620" y="70" width="20" height="15" rx="1" fill="#ffeb3b" opacity=".7"/><rect x="645" y="75" width="20" height="15" rx="1" fill="#ff9800" opacity=".7"/>
-<rect x="620" y="95" width="20" height="15" rx="1" fill="#4caf50" opacity=".6"/>
-<!-- "Show HN" on whiteboard -->
-<text x="475" y="140" font-size="8" fill="#333" font-family="system-ui" font-weight="600">Show HN →</text>
-<text x="475" y="155" font-size="6" fill="#666" font-family="system-ui">gov-mcp v0.1.0</text>
-
-<!-- Ceiling lamps -->
-<g opacity=".8">
-  <line x1="350" y1="0" x2="350" y2="60" stroke="#555" stroke-width="1"/>
-  <ellipse cx="350" cy="60" rx="15" ry="5" fill="#666"/><circle cx="350" cy="62" r="4" fill="#ffeebb" opacity=".6"/>
-  <ellipse cx="350" cy="100" rx="60" ry="40" fill="url(#lampglow)"/>
-</g>
-<g opacity=".8">
-  <line x1="600" y1="0" x2="600" y2="45" stroke="#555" stroke-width="1"/>
-  <ellipse cx="600" cy="45" rx="15" ry="5" fill="#666"/><circle cx="600" cy="47" r="4" fill="#ffeebb" opacity=".6"/>
-  <ellipse cx="600" cy="85" rx="60" ry="40" fill="url(#lampglow)"/>
-</g>
-<g opacity=".8">
-  <line x1="850" y1="0" x2="850" y2="55" stroke="#555" stroke-width="1"/>
-  <ellipse cx="850" cy="55" rx="15" ry="5" fill="#666"/><circle cx="850" cy="57" r="4" fill="#ffeebb" opacity=".6"/>
-  <ellipse cx="850" cy="95" rx="60" ry="40" fill="url(#lampglow)"/>
-</g>
-
-<!-- Ambient light -->
-<rect width="1200" height="650" fill="url(#glow1)"/>
-<rect width="1200" height="650" fill="url(#glow2)"/>
-
-<!-- PLANTS -->
-<g transform="translate(130,310)">
-  <rect x="0" y="15" width="16" height="20" rx="3" fill="#4a3a2a"/><ellipse cx="8" cy="12" rx="12" ry="14" fill="#2d5a3d"/><ellipse cx="5" cy="8" rx="8" ry="10" fill="#3a7a4a" opacity=".7"/>
-</g>
-<g transform="translate(1050,280)">
-  <rect x="0" y="12" width="14" height="18" rx="3" fill="#4a3a2a"/><ellipse cx="7" cy="10" rx="10" ry="12" fill="#2d5a3d"/><ellipse cx="4" cy="6" rx="6" ry="8" fill="#3a7a4a" opacity=".7"/>
-</g>
-<g transform="translate(580,420)">
-  <rect x="0" y="10" width="12" height="15" rx="2" fill="#4a3a2a"/><ellipse cx="6" cy="8" rx="8" ry="10" fill="#2d5a3d"/>
-</g>
-
-<!-- Coffee bar (left) -->
-<g transform="translate(160,230)">
-  <polygon points="0,30 60,15 120,30 60,45" fill="#3d3225" stroke="#2a2218" stroke-width="1"/>
-  <polygon points="0,30 0,50 60,65 60,45" fill="#2a2218"/><polygon points="60,45 60,65 120,50 120,30" fill="#352a1e"/>
-  <!-- Coffee machine -->
-  <rect x="35" y="5" width="20" height="22" rx="2" fill="#444" stroke="#555" stroke-width=".5"/><rect x="40" y="10" width="10" height="5" rx="1" fill="#222"/>
-  <circle cx="45" cy="20" r="2" fill="#ff4444" opacity=".6"/>
-</g>
-
-<!-- SOFA (center) -->
-<g transform="translate(520,370)">
-  <polygon points="0,15 50,5 100,15 50,25" fill="#4a3a50" stroke="#3a2a40" stroke-width="1"/>
-  <polygon points="0,15 0,30 50,40 50,25" fill="#3a2a40"/><polygon points="50,25 50,40 100,30 100,15" fill="#352540"/>
-  <!-- Cushions -->
-  <polygon points="5,12 25,7 45,12 25,17" fill="#5a4a60"/><polygon points="55,12 75,7 95,12 75,17" fill="#5a4a60"/>
-  <!-- Coffee table -->
-  <polygon points="30,30 55,25 80,30 55,35" fill="#3d3225" stroke="#2a2218" stroke-width=".5"/>
-</g>
-
-<!-- ============ WORKSTATIONS ============ -->
-
-<!-- SECRETARY (front-left, near door) -->
-<g id="g-sec" transform="translate(220,360)">
-  <!-- Standing desk (taller) -->
-  <polygon points="0,20 50,10 100,20 50,30" fill="#5a4a3a" stroke="#4a3a2a" stroke-width="1"/>
-  <polygon points="0,20 0,25 50,35 50,30" fill="#4a3a2a"/><polygon points="50,30 50,35 100,25 100,20" fill="#3d3225"/>
-  <polygon points="5,25 5,55 8,55 8,25" fill="#333"/><polygon points="92,25 92,55 95,55 95,25" fill="#333"/>
-  <!-- iPad on stand -->
-  <rect x="30" y="4" width="18" height="14" rx="1" fill="#222" stroke="#444" stroke-width=".5"/><rect x="32" y="6" width="14" height="10" rx="1" fill="#1a2a3a"/>
-  <!-- Filing cabinet behind -->
-  <rect x="70" y="-15" width="25" height="30" rx="1" fill="#555" stroke="#666" stroke-width=".5"/>
-  <line x1="70" y1="-5" x2="95" y2="-5" stroke="#666" stroke-width=".5"/><line x1="70" y1="5" x2="95" y2="5" stroke="#666" stroke-width=".5"/>
-  <!-- Character -->
-  <g class="char" transform="translate(25,-45)">
-    <g><animateTransform attributeName="transform" type="translate" values="0,0;0,-1.5;0,0" dur="3.5s" repeatCount="indefinite"/></g>
-    <!-- Body -->
-    <path d="M10,38 Q25,32 40,38 L42,60 H8 Z" fill="#8b6914"/>
-    <!-- Head -->
-    <ellipse cx="25" cy="20" rx="14" ry="17" fill="#fde8d0"/>
-    <!-- Hair (neat bun) -->
-    <path d="M11,15 Q13,2 25,0 Q37,2 39,15 Q38,8 33,5 Q25,-2 17,5 Q12,9 11,13 Z" fill="#5a2a1a"/>
-    <ellipse cx="25" cy="0" rx="6" ry="5" fill="#5a2a1a"/>
-    <!-- Eyes -->
-    <ellipse cx="19" cy="19" rx="3" ry="3.5" fill="white"/><circle cx="20" cy="19.5" r="2" fill="#8b6914"/><circle cx="20.5" cy="18.5" r=".8" fill="white"/>
-    <ellipse cx="31" cy="19" rx="3" ry="3.5" fill="white"/><circle cx="32" cy="19.5" r="2" fill="#8b6914"/><circle cx="32.5" cy="18.5" r=".8" fill="white"/>
-    <!-- Warm smile -->
-    <path d="M20,27 Q25,31 30,27" fill="none" stroke="#c4846a" stroke-width="1"/>
-    <!-- Small earring -->
-    <circle cx="11" cy="21" r="1" fill="#daa520"/>
-  </g>
-  <!-- Nameplate -->
-  <rect x="15" y="58" width="52" height="12" class="np-bg"/><text x="41" y="67" text-anchor="middle" class="np">Secretary</text>
-  <!-- Hit area -->
-  <rect x="-5" y="-60" width="110" height="135" class="ws-hit" fill="#1a7a4c" rx="4" onclick="speak('sec')"/>
-</g>
-
-<!-- CEO AIDEN (center, standing desk near window) -->
-<g id="g-ceo" transform="translate(650,250)">
-  <!-- Standing desk -->
-  <polygon points="0,25 55,12 110,25 55,38" fill="#5a4a3a" stroke="#4a3a2a" stroke-width="1"/>
-  <polygon points="0,25 0,30 55,43 55,38" fill="#4a3a2a"/><polygon points="55,38 55,43 110,30 110,25" fill="#3d3225"/>
-  <polygon points="8,30 8,60 11,60 11,30" fill="#333"/><polygon points="99,30 99,60 102,60 102,30" fill="#333"/>
-  <!-- Monitor -->
-  <rect x="25" y="0" width="40" height="24" rx="2" fill="#222" stroke="#444" stroke-width="1"/><rect x="28" y="3" width="34" height="18" rx="1" fill="#162a40"/>
-  <!-- Dashboard on screen -->
-  <rect x="31" y="6" width="12" height="6" rx="1" fill="#1a7a4c" opacity=".4"/><rect x="46" y="6" width="12" height="6" rx="1" fill="#8b0000" opacity=".3"/>
-  <rect x="31" y="14" width="26" height="3" rx="1" fill="#4a8adf" opacity=".3"/>
-  <!-- Character (standing) -->
-  <g class="char" transform="translate(30,-55)">
-    <g><animateTransform attributeName="transform" type="translate" values="0,0;0,-1.5;0,0" dur="4s" repeatCount="indefinite"/></g>
-    <!-- Body (suit) -->
-    <path d="M8,40 Q25,33 42,40 L44,75 H6 Z" fill="#2a3d55"/>
-    <!-- Tie -->
-    <line x1="25" y1="42" x2="25" y2="58" stroke="#1a7a4c" stroke-width="2.5"/>
-    <!-- Shirt collar -->
-    <path d="M18,40 L25,48 L32,40" fill="#e8e8f0" stroke="#ddd" stroke-width=".3"/>
-    <!-- Head -->
-    <ellipse cx="25" cy="22" rx="16" ry="20" fill="#fde8d0"/>
-    <!-- Hair (neat, professional) -->
-    <path d="M9,17 Q11,0 25,-3 Q39,0 41,17 Q40,8 35,4 Q28,-4 18,3 Q11,8 9,14 Z" fill="#1a1a2e"/>
-    <!-- Eyes (confident) -->
-    <ellipse cx="18" cy="20" rx="3.5" ry="4.5" fill="white"/><circle cx="19" cy="21" r="2.8" fill="#1a7a4c"/><circle cx="20" cy="19.5" r="1.2" fill="white"/>
-    <ellipse cx="32" cy="20" rx="3.5" ry="4.5" fill="white"/><circle cx="33" cy="21" r="2.8" fill="#1a7a4c"/><circle cx="34" cy="19.5" r="1.2" fill="white"/>
-    <!-- Eyebrows -->
-    <path d="M13,14 Q18,11 23,14" fill="none" stroke="#1a1a2e" stroke-width="1.2"/>
-    <path d="M27,14 Q32,11 37,14" fill="none" stroke="#1a1a2e" stroke-width="1.2"/>
-    <!-- Confident smile -->
-    <path d="M19,29 Q25,34 31,29" fill="none" stroke="#c4846a" stroke-width="1.2"/>
-  </g>
-  <rect x="18" y="63" width="55" height="12" class="np-bg"/><text x="45" y="72" text-anchor="middle" class="np">CEO · Aiden</text>
-  <rect x="-5" y="-70" width="120" height="145" class="ws-hit" fill="#1a7a4c" rx="4" onclick="speak('ceo')"/>
-</g>
-
-<!-- CTO (left-center, dual monitors) -->
-<g id="g-cto" transform="translate(380,270)">
-  <!-- Desk -->
-  <polygon points="0,25 60,12 120,25 60,38" fill="#5a4a3a" stroke="#4a3a2a" stroke-width="1"/>
-  <polygon points="0,25 0,30 60,43 60,38" fill="#4a3a2a"/><polygon points="60,38 60,43 120,30 120,25" fill="#3d3225"/>
-  <polygon points="8,30 8,58 11,58 11,30" fill="#333"/><polygon points="109,30 109,58 112,58 112,30" fill="#333"/>
-  <!-- Dual monitors -->
-  <rect x="10" y="-2" width="42" height="26" rx="2" fill="#222" stroke="#444" stroke-width="1"/><rect x="13" y="1" width="36" height="20" rx="1" fill="#0d1117"/>
-  <rect x="60" y="0" width="35" height="23" rx="2" fill="#222" stroke="#444" stroke-width="1"/><rect x="63" y="3" width="29" height="17" rx="1" fill="#0d1117"/>
-  <!-- Code on screen -->
-  <line x1="17" y1="6" x2="35" y2="6" stroke="#7ee787" stroke-width="1" opacity=".7"/>
-  <line x1="19" y1="10" x2="42" y2="10" stroke="#79c0ff" stroke-width="1" opacity=".6"/>
-  <line x1="19" y1="14" x2="38" y2="14" stroke="#ffa657" stroke-width="1" opacity=".5"/>
-  <line x1="17" y1="18" x2="30" y2="18" stroke="#7ee787" stroke-width="1" opacity=".4"/>
-  <!-- Coffee on desk -->
-  <rect x="100" y="10" width="10" height="13" rx="2" fill="#5C3317"/><path d="M110,14 Q114,16 110,20" fill="none" stroke="#5C3317" stroke-width="1"/>
-  <!-- Character (sitting) -->
-  <g class="char" transform="translate(32,-40)">
-    <g><animateTransform attributeName="transform" type="translate" values="0,0;0,-1;0,0" dur="3s" repeatCount="indefinite"/></g>
-    <!-- Chair -->
-    <rect x="-2" y="50" width="40" height="4" rx="2" fill="#333"/>
-    <rect x="0" y="35" width="36" height="18" rx="3" fill="#3a3a3a"/>
-    <!-- Body -->
-    <path d="M5,35 Q18,28 31,35 L33,52 H3 Z" fill="#2a5599"/>
-    <!-- Head -->
-    <ellipse cx="18" cy="15" rx="15" ry="18" fill="#fde8d0"/>
-    <!-- Messy hair -->
-    <path d="M3,10 Q5,-5 18,-8 Q31,-5 33,10 Q32,2 27,-2 Q20,-8 12,-3 Q5,2 3,8 Z" fill="#2a2a4a"/>
-    <path d="M6,3 Q9,-2 14,1" fill="none" stroke="#2a2a4a" stroke-width="1.5"/>
-    <!-- Glasses -->
-    <rect x="7" y="10" width="10" height="8" rx="2.5" fill="none" stroke="#4a8adf" stroke-width="1.5"/>
-    <rect x="20" y="10" width="10" height="8" rx="2.5" fill="none" stroke="#4a8adf" stroke-width="1.5"/>
-    <line x1="17" y1="14" x2="20" y2="14" stroke="#4a8adf" stroke-width="1"/>
-    <!-- Eyes behind glasses -->
-    <ellipse cx="12" cy="14" rx="2.8" ry="3.2" fill="white"/><circle cx="13" cy="14.5" r="2" fill="#2a5599"/><circle cx="13.5" cy="13.5" r=".8" fill="white"/>
-    <ellipse cx="25" cy="14" rx="2.8" ry="3.2" fill="white"/><circle cx="26" cy="14.5" r="2" fill="#2a5599"/><circle cx="26.5" cy="13.5" r=".8" fill="white"/>
-    <!-- Headphones on neck -->
-    <path d="M1,20 Q0,8 5,5" fill="none" stroke="#555" stroke-width="2"/><path d="M35,20 Q36,8 31,5" fill="none" stroke="#555" stroke-width="2"/>
-    <ellipse cx="1" cy="20" rx="3" ry="4" fill="#444"/><ellipse cx="35" cy="20" rx="3" ry="4" fill="#444"/>
-    <!-- Focused mouth -->
-    <path d="M13,24 Q18,26 23,24" fill="none" stroke="#c4846a" stroke-width="1"/>
-    <!-- Typing hands -->
-    <circle cx="-8" cy="48" r="3" fill="#fde8d0"><animate attributeName="cy" values="48;46;48" dur=".5s" repeatCount="indefinite"/></circle>
-    <circle cx="5" cy="49" r="3" fill="#fde8d0"><animate attributeName="cy" values="49;47;49" dur=".5s" begin=".25s" repeatCount="indefinite"/></circle>
-  </g>
-  <rect x="22" y="60" width="40" height="12" class="np-bg"/><text x="42" y="69" text-anchor="middle" class="np">CTO</text>
-  <rect x="-5" y="-55" width="130" height="130" class="ws-hit" fill="#2a5599" rx="4" onclick="speak('cto')"/>
-</g>
-
-<!-- CMO (near whiteboard, coming soon) -->
-<g transform="translate(430,180)" opacity=".35">
-  <polygon points="0,20 40,10 80,20 40,30" fill="#5a4a3a"/><polygon points="0,20 0,24 40,34 40,30" fill="#4a3a2a"/>
-  <rect x="12" y="-2" width="30" height="20" rx="2" fill="#222"/>
-  <g transform="translate(18,-30)">
-    <path d="M5,28 Q15,22 25,28 L27,45 H3 Z" fill="#666"/>
-    <ellipse cx="15" cy="12" rx="11" ry="14" fill="#ddd"/>
-    <path d="M4,8 Q6,-2 15,-4 Q24,-2 26,8 Z" fill="#888"/>
-  </g>
-  <rect x="8" y="33" width="52" height="11" class="np-bg" style="fill:#222;stroke:#333"/><text x="34" y="41" text-anchor="middle" class="np" style="fill:#555">CMO · Soon</text>
-</g>
-
-<!-- CSO (by sofa, coming soon) -->
-<g transform="translate(780,320)" opacity=".35">
-  <polygon points="0,18 35,9 70,18 35,27" fill="#5a4a3a"/><polygon points="0,18 0,22 35,31 35,27" fill="#4a3a2a"/>
-  <rect x="10" y="0" width="25" height="16" rx="2" fill="#222"/>
-  <g transform="translate(14,-25)">
-    <path d="M4,25 Q14,20 24,25 L26,40 H2 Z" fill="#666"/>
-    <ellipse cx="14" cy="10" rx="10" ry="13" fill="#ddd"/>
-    <path d="M4,7 Q6,-1 14,-3 Q22,-1 24,7 Z" fill="#888"/>
-  </g>
-  <rect x="3" y="30" width="52" height="11" class="np-bg" style="fill:#222;stroke:#333"/><text x="29" y="38" text-anchor="middle" class="np" style="fill:#555">CSO · Soon</text>
-</g>
-
-<!-- CFO (back corner, coming soon) -->
-<g transform="translate(900,210)" opacity=".35">
-  <polygon points="0,18 35,9 70,18 35,27" fill="#5a4a3a"/><polygon points="0,18 0,22 35,31 35,27" fill="#4a3a2a"/>
-  <rect x="10" y="0" width="25" height="16" rx="2" fill="#222"/>
-  <g transform="translate(14,-22)">
-    <path d="M4,22 Q14,18 24,22 L26,38 H2 Z" fill="#666"/>
-    <ellipse cx="14" cy="9" rx="9" ry="12" fill="#ddd"/>
-    <path d="M5,6 Q7,-1 14,-2 Q21,-1 23,6 Z" fill="#888"/>
-  </g>
-  <rect x="3" y="30" width="52" height="11" class="np-bg" style="fill:#222;stroke:#333"/><text x="29" y="38" text-anchor="middle" class="np" style="fill:#555">CFO · Soon</text>
-</g>
-
-<!-- Skateboard by the wall -->
-<g transform="translate(150,340) rotate(-15)">
-  <rect x="0" y="0" width="35" height="6" rx="3" fill="#c44"/><circle cx="6" cy="8" r="2.5" fill="#333"/><circle cx="29" cy="8" r="2.5" fill="#333"/>
-</g>
-
-</svg>
-</div>
-
-<!-- SPEAKING OVERLAY -->
-<div class="overlay" id="overlay">
-  <div class="speak-card">
-    <div style="display:flex;align-items:center;margin-bottom:12px">
-      <div class="speak-indicator" id="sp-dot"></div>
-      <span class="speak-name" id="sp-name"></span>
-    </div>
-    <div class="speak-role" id="sp-role"></div>
-    <div class="speak-text" id="sp-text"></div>
-    <div class="speak-btns">
-      <button class="btn-r" onclick="replay()">🔊 Say it again</button>
-      <button class="btn-d" onclick="dismiss()">✓ Got it</button>
-    </div>
+<div class="ov" id="ov">
+  <div class="sp-card">
+    <div style="display:flex;align-items:center;margin-bottom:4px"><div class="sp-dot" id="dot"></div><span class="sp-name" id="sn"></span></div>
+    <div class="sp-role" id="sr"></div>
+    <div class="sp-text" id="st"></div>
+    <div class="sp-btns"><button class="btn-r" onclick="replay()">🔊 Again</button><button class="btn-d" onclick="dismiss()">✓ Got it</button></div>
   </div>
 </div>
 
-<!-- BOTTOM BAR -->
-<div class="bottom">
-<div class="bottom-inner">
-  <div class="feed-row" id="feed"></div>
-  <div class="info-row">
-    <div class="stat-pills">
-      <span class="pill">38 Tools</span>
-      <span class="pill">806+ Tests</span>
-      <span class="pill">16/16 Live</span>
-      <span class="pill">50/50 Blocked</span>
-    </div>
-    <div>
-      <a href="https://github.com/liuhaotian2024-prog/gov-mcp">GitHub</a> ·
-      <a href="https://t.me/YstarBridgeLabs">Telegram</a> ·
-      <a href="https://x.com/liuhaotian_dev">X</a> ·
-      <span style="color:#1a7a4c;font-weight:600">pip install gov-mcp</span>
-    </div>
+<div class="btm">
+  <div class="pills">
+    <span class="pill">38 Tools</span><span class="pill">806+ Tests</span><span class="pill">16/16 Live</span><span class="pill">50/50 Attacks Blocked</span><span class="pill">0 False Positives</span>
+  </div>
+  <div class="links">
+    <a href="https://github.com/liuhaotian2024-prog/gov-mcp">GitHub: gov-mcp</a>
+    <a href="https://github.com/liuhaotian2024-prog/Y-star-gov">Y*gov</a>
+    <a href="https://t.me/YstarBridgeLabs">Telegram</a>
+    <a href="https://x.com/liuhaotian_dev">X</a>
   </div>
 </div>
-</div>
 
-<script>
-const A={
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+
+// === SCENE SETUP ===
+const container = document.getElementById('scene');
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x1a1a2e);
+scene.fog = new THREE.Fog(0x1a1a2e, 15, 25);
+
+const camera = new THREE.PerspectiveCamera(45, container.clientWidth/container.clientHeight, 0.1, 100);
+camera.position.set(8, 7, 8);
+camera.lookAt(0, 0.5, 0);
+
+const renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(container.clientWidth, container.clientHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.2;
+container.appendChild(renderer.domElement);
+
+// === LIGHTING ===
+const ambient = new THREE.AmbientLight(0x4466aa, 0.4);
+scene.add(ambient);
+
+// Window light (warm, from right)
+const sunLight = new THREE.DirectionalLight(0xffeedd, 1.2);
+sunLight.position.set(5, 8, 2);
+sunLight.castShadow = true;
+sunLight.shadow.mapSize.set(1024, 1024);
+sunLight.shadow.camera.near = 0.5;
+sunLight.shadow.camera.far = 20;
+sunLight.shadow.camera.left = -8;
+sunLight.shadow.camera.right = 8;
+sunLight.shadow.camera.top = 8;
+sunLight.shadow.camera.bottom = -8;
+scene.add(sunLight);
+
+// Overhead lamps
+const lampPositions = [[-2,4,-1],[1,4,0],[4,4,1]];
+lampPositions.forEach(p => {
+  const pl = new THREE.PointLight(0xffeebb, 0.6, 8);
+  pl.position.set(...p);
+  pl.castShadow = true;
+  scene.add(pl);
+  // Lamp fixture
+  const fix = new THREE.Mesh(new THREE.CylinderGeometry(0.15,0.25,0.1,8), new THREE.MeshStandardMaterial({color:0x444444,metalness:0.8}));
+  fix.position.set(p[0],p[1]+0.05,p[2]);
+  scene.add(fix);
+  const wire = new THREE.Mesh(new THREE.CylinderGeometry(0.01,0.01,1,4), new THREE.MeshStandardMaterial({color:0x333333}));
+  wire.position.set(p[0],p[1]+0.55,p[2]);
+  scene.add(wire);
+});
+
+// === MATERIALS ===
+const floorMat = new THREE.MeshStandardMaterial({color:0xc4a882,roughness:0.8});
+const brickMat = new THREE.MeshStandardMaterial({color:0x8b5a3c,roughness:0.9});
+const wallMat = new THREE.MeshStandardMaterial({color:0xd4d4d4,roughness:0.5});
+const deskMat = new THREE.MeshStandardMaterial({color:0xb8956a,roughness:0.6});
+const legMat = new THREE.MeshStandardMaterial({color:0x222222,metalness:0.8,roughness:0.3});
+const screenMat = new THREE.MeshStandardMaterial({color:0x111122,emissive:0x112244,emissiveIntensity:0.3});
+const screenOnMat = new THREE.MeshStandardMaterial({color:0x0d1117,emissive:0x1a3a5a,emissiveIntensity:0.8});
+const chairMat = new THREE.MeshStandardMaterial({color:0x333333,roughness:0.7});
+const glassMat = new THREE.MeshStandardMaterial({color:0x88aacc,transparent:true,opacity:0.3,roughness:0.1});
+const plantMat = new THREE.MeshStandardMaterial({color:0x2d6b3f});
+const potMat = new THREE.MeshStandardMaterial({color:0x8b6b4a,roughness:0.9});
+const wbMat = new THREE.MeshStandardMaterial({color:0xf0f0f0,roughness:0.3});
+const skinMat = new THREE.MeshStandardMaterial({color:0xfde8d0,roughness:0.8});
+
+// === ROOM ===
+// Floor
+const floor = new THREE.Mesh(new THREE.BoxGeometry(12,0.1,10), floorMat);
+floor.position.y = -0.05;
+floor.receiveShadow = true;
+scene.add(floor);
+
+// Left wall (brick)
+const lWall = new THREE.Mesh(new THREE.BoxGeometry(0.2,4,10), brickMat);
+lWall.position.set(-6,2,0);
+scene.add(lWall);
+
+// Back wall
+const bWall = new THREE.Mesh(new THREE.BoxGeometry(12,4,0.2), wallMat);
+bWall.position.set(0,2,-5);
+scene.add(bWall);
+
+// Window (right side, glass pane)
+const winFrame = new THREE.Mesh(new THREE.BoxGeometry(0.1,2.5,4), new THREE.MeshStandardMaterial({color:0x444444,metalness:0.6}));
+winFrame.position.set(6,2.2,0);
+scene.add(winFrame);
+const winGlass = new THREE.Mesh(new THREE.BoxGeometry(0.05,2.3,3.8), glassMat);
+winGlass.position.set(6,2.2,0);
+scene.add(winGlass);
+// Window light beam on floor
+const beam = new THREE.Mesh(new THREE.PlaneGeometry(4,6), new THREE.MeshBasicMaterial({color:0xffeedd,transparent:true,opacity:0.04}));
+beam.rotation.x = -Math.PI/2;
+beam.position.set(3,0.01,1);
+scene.add(beam);
+
+// Whiteboard (back wall)
+const wb = new THREE.Mesh(new THREE.BoxGeometry(3.5,2,0.05), wbMat);
+wb.position.set(-1,2,-4.85);
+scene.add(wb);
+// Sticky notes on whiteboard
+[{c:0xffeb3b,x:-2,y:2.5},{c:0xff9800,x:-1.5,y:2.6},{c:0x4caf50,x:-2,y:2},{c:0x42a5f5,x:-1.2,y:2.1}].forEach(n=>{
+  const s = new THREE.Mesh(new THREE.BoxGeometry(0.3,0.3,0.02), new THREE.MeshStandardMaterial({color:n.c}));
+  s.position.set(n.x,n.y,-4.82);
+  scene.add(s);
+});
+
+// === FURNITURE HELPERS ===
+function makeDesk(x,z,rot=0,standing=false){
+  const g = new THREE.Group();
+  const h = standing ? 1.1 : 0.75;
+  const top = new THREE.Mesh(new THREE.BoxGeometry(1.4,0.05,0.7), deskMat);
+  top.position.y = h;
+  top.castShadow = true;
+  g.add(top);
+  // Legs
+  [[-0.6,-0.3],[0.6,-0.3],[-0.6,0.3],[0.6,0.3]].forEach(([lx,lz])=>{
+    const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.02,0.02,h,6), legMat);
+    leg.position.set(lx,h/2,lz);
+    g.add(leg);
+  });
+  g.position.set(x,0,z);
+  g.rotation.y = rot;
+  scene.add(g);
+  return g;
+}
+function makeMonitor(parent,ox=0,oz=0,w=0.5,h=0.35){
+  const screen = new THREE.Mesh(new THREE.BoxGeometry(w,h,0.02), screenOnMat);
+  screen.position.set(ox, parent.children[0].position.y + h/2 + 0.05, oz);
+  screen.castShadow = true;
+  parent.add(screen);
+  // Stand
+  const stand = new THREE.Mesh(new THREE.CylinderGeometry(0.02,0.03,0.15,6), legMat);
+  stand.position.set(ox, parent.children[0].position.y + 0.075, oz);
+  parent.add(stand);
+  return screen;
+}
+function makeChair(x,z,rot=0){
+  const g = new THREE.Group();
+  // Seat
+  const seat = new THREE.Mesh(new THREE.BoxGeometry(0.5,0.05,0.5), chairMat);
+  seat.position.y = 0.45;
+  g.add(seat);
+  // Back
+  const back = new THREE.Mesh(new THREE.BoxGeometry(0.5,0.5,0.05), chairMat);
+  back.position.set(0,0.7,-0.22);
+  g.add(back);
+  // Legs
+  const base = new THREE.Mesh(new THREE.CylinderGeometry(0.02,0.02,0.45,6), legMat);
+  base.position.y = 0.225;
+  g.add(base);
+  g.position.set(x,0,z);
+  g.rotation.y = rot;
+  scene.add(g);
+  return g;
+}
+function makePerson(x,y,z,color,sitting=true){
+  const g = new THREE.Group();
+  g.userData.baseY = y;
+  // Head
+  const head = new THREE.Mesh(new THREE.SphereGeometry(0.15,12,12), skinMat);
+  head.position.y = sitting ? 1.15 : 1.55;
+  head.castShadow = true;
+  g.add(head);
+  // Body
+  const body = new THREE.Mesh(new THREE.CylinderGeometry(0.12,0.15,0.45,8), new THREE.MeshStandardMaterial({color,roughness:0.7}));
+  body.position.y = sitting ? 0.85 : 1.25;
+  body.castShadow = true;
+  g.add(body);
+  // Hair
+  const hair = new THREE.Mesh(new THREE.SphereGeometry(0.16,12,12,0,Math.PI*2,0,Math.PI/2), new THREE.MeshStandardMaterial({color:0x1a1a2e}));
+  hair.position.y = head.position.y + 0.02;
+  g.add(hair);
+  g.position.set(x,0,z);
+  scene.add(g);
+  return g;
+}
+function makePlant(x,z,scale=1){
+  const g = new THREE.Group();
+  const pot = new THREE.Mesh(new THREE.CylinderGeometry(0.12,0.1,0.2,8), potMat);
+  pot.position.y = 0.1;
+  g.add(pot);
+  // Leaves (3 spheres)
+  [0,0.12,-0.08].forEach((dy,i)=>{
+    const leaf = new THREE.Mesh(new THREE.SphereGeometry(0.15+i*0.02,8,8), plantMat);
+    leaf.position.set(Math.sin(i*2)*0.05, 0.35+dy, Math.cos(i*2)*0.05);
+    g.add(leaf);
+  });
+  g.position.set(x,0,z);
+  g.scale.setScalar(scale);
+  scene.add(g);
+}
+function makeCoffeeBar(x,z){
+  const g = new THREE.Group();
+  const counter = new THREE.Mesh(new THREE.BoxGeometry(1.2,0.9,0.5), new THREE.MeshStandardMaterial({color:0x5a4a3a,roughness:0.8}));
+  counter.position.y = 0.45;
+  counter.castShadow = true;
+  g.add(counter);
+  // Coffee machine
+  const machine = new THREE.Mesh(new THREE.BoxGeometry(0.25,0.35,0.2), new THREE.MeshStandardMaterial({color:0x444,metalness:0.7}));
+  machine.position.set(-0.3,1.07,0);
+  g.add(machine);
+  // Red light
+  const light = new THREE.Mesh(new THREE.SphereGeometry(0.02,6,6), new THREE.MeshStandardMaterial({color:0xff0000,emissive:0xff0000,emissiveIntensity:2}));
+  light.position.set(-0.3,1.15,0.11);
+  g.add(light);
+  g.position.set(x,0,z);
+  scene.add(g);
+}
+
+// === BUILD OFFICE ===
+// Desks and characters (clickable)
+const clickables = [];
+
+// Secretary — near entrance (front-right)
+const secDesk = makeDesk(3.5, 3, -Math.PI/4, true);
+makeMonitor(secDesk, -0.2, 0, 0.3, 0.2); // iPad-like
+const secPerson = makePerson(3.2, 0, 3.3, 0x8b6914, false);
+secPerson.userData.role = 'sec';
+secPerson.userData.label = 'Secretary';
+clickables.push(secPerson);
+// Filing cabinet
+const cab = new THREE.Mesh(new THREE.BoxGeometry(0.3,0.8,0.3), new THREE.MeshStandardMaterial({color:0x555555,metalness:0.5}));
+cab.position.set(4.2,0.4,3.5);
+cab.castShadow = true;
+scene.add(cab);
+
+// CEO — by window (right side, standing desk)
+const ceoDesk = makeDesk(4, 0, -Math.PI/6, true);
+makeMonitor(ceoDesk, 0, -0.1, 0.45, 0.3);
+const ceoPerson = makePerson(3.6, 0, 0.3, 0x2a3d55, false);
+ceoPerson.userData.role = 'ceo';
+ceoPerson.userData.label = 'CEO · Aiden';
+clickables.push(ceoPerson);
+
+// CTO — center, dual monitors
+const ctoDesk = makeDesk(-1, -1, 0);
+makeMonitor(ctoDesk, -0.3, -0.15, 0.4, 0.28);
+makeMonitor(ctoDesk, 0.2, -0.1, 0.35, 0.25);
+const ctoChair = makeChair(-1, -0.3, Math.PI);
+const ctoPerson = makePerson(-1, 0, -0.3, 0x2a5599, true);
+ctoPerson.userData.role = 'cto';
+ctoPerson.userData.label = 'CTO';
+clickables.push(ctoPerson);
+// Coffee mug on CTO desk
+const mug = new THREE.Mesh(new THREE.CylinderGeometry(0.04,0.035,0.08,8), new THREE.MeshStandardMaterial({color:0x8B4513}));
+mug.position.set(-0.4,0.79,-0.7);
+scene.add(mug);
+
+// CMO — near whiteboard (coming soon)
+const cmoDesk = makeDesk(-3.5, -2.5, Math.PI/6);
+makeMonitor(cmoDesk);
+makeChair(-3.5, -1.8, Math.PI*0.8);
+const cmoPerson = makePerson(-3.5, 0, -1.8, 0x666666, true);
+cmoPerson.userData.label = 'CMO · Coming Soon';
+cmoPerson.userData.soon = true;
+
+// CSO — by left wall (coming soon)
+const csoDesk = makeDesk(-4.5, 1, Math.PI/3);
+makeMonitor(csoDesk, 0, 0, 0.3, 0.2);
+makeChair(-4.5, 1.7, Math.PI*0.6);
+const csoPerson = makePerson(-4.5, 0, 1.7, 0x666666, true);
+csoPerson.userData.label = 'CSO · Coming Soon';
+csoPerson.userData.soon = true;
+
+// CFO — back corner (coming soon)
+const cfoDesk = makeDesk(-3, -4, Math.PI/4);
+makeMonitor(cfoDesk);
+makeChair(-3, -3.3, Math.PI*1.2);
+const cfoPerson = makePerson(-3, 0, -3.3, 0x666666, true);
+cfoPerson.userData.label = 'CFO · Coming Soon';
+cfoPerson.userData.soon = true;
+
+// Plants
+makePlant(-5.5, 4, 1.2);
+makePlant(5, -3, 0.9);
+makePlant(1, 3.5, 0.8);
+makePlant(-4, 3, 1);
+
+// Coffee bar
+makeCoffeeBar(-5, -1);
+
+// Sofa
+const sofa = new THREE.Mesh(new THREE.BoxGeometry(1.5,0.4,0.6), new THREE.MeshStandardMaterial({color:0x4a3a5a,roughness:0.8}));
+sofa.position.set(1,0.2,2);
+sofa.rotation.y = -0.3;
+sofa.castShadow = true;
+scene.add(sofa);
+const sofaBack = new THREE.Mesh(new THREE.BoxGeometry(1.5,0.3,0.1), new THREE.MeshStandardMaterial({color:0x3a2a4a}));
+sofaBack.position.set(1,0.45,1.72);
+sofaBack.rotation.y = -0.3;
+scene.add(sofaBack);
+// Coffee table
+const ctable = new THREE.Mesh(new THREE.BoxGeometry(0.6,0.35,0.4), new THREE.MeshStandardMaterial({color:0x5a4a3a}));
+ctable.position.set(1.8,0.175,2.3);
+ctable.castShadow = true;
+scene.add(ctable);
+
+// Skateboard by wall
+const sbBoard = new THREE.Mesh(new THREE.BoxGeometry(0.6,0.03,0.15), new THREE.MeshStandardMaterial({color:0xcc4444}));
+sbBoard.position.set(-5.7,0.08,3);
+sbBoard.rotation.y = 0.3;
+sbBoard.rotation.z = 0.1;
+scene.add(sbBoard);
+
+// === NAMEPLATES ===
+// (Using small box + text sprite — Three.js text via canvas)
+function makeNameplate(x, z, text, color=0xffffff){
+  const canvas = document.createElement('canvas');
+  canvas.width = 256; canvas.height = 64;
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#1a1a2e';
+  ctx.fillRect(0,0,256,64);
+  ctx.strokeStyle = '#3a3a5a';
+  ctx.strokeRect(1,1,254,62);
+  ctx.fillStyle = '#ccc';
+  ctx.font = '600 18px system-ui';
+  ctx.textAlign = 'center';
+  ctx.fillText(text, 128, 40);
+  const tex = new THREE.CanvasTexture(canvas);
+  const mat = new THREE.MeshBasicMaterial({map:tex, transparent:true});
+  const plate = new THREE.Mesh(new THREE.PlaneGeometry(0.6,0.15), mat);
+  plate.position.set(x, 0.82, z);
+  plate.rotation.x = -0.3;
+  plate.lookAt(camera.position.x, 0.82, camera.position.z);
+  scene.add(plate);
+}
+makeNameplate(3.5, 3.6, 'SECRETARY');
+makeNameplate(4, 0.7, 'CEO · AIDEN');
+makeNameplate(-1, 0.2, 'CTO');
+makeNameplate(-3.5, -1.2, 'CMO · SOON');
+makeNameplate(-4.5, 2.3, 'CSO · SOON');
+makeNameplate(-3, -2.7, 'CFO · SOON');
+
+// === INTERACTION ===
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+const tip = document.getElementById('tip');
+
+// All person meshes for raycasting
+const allPersons = [secPerson, ceoPerson, ctoPerson, cmoPerson, csoPerson, cfoPerson];
+const allMeshes = [];
+allPersons.forEach(p => p.traverse(c => { if(c.isMesh) { c.userData = {...p.userData}; allMeshes.push(c); }}));
+
+container.addEventListener('mousemove', (e) => {
+  const rect = renderer.domElement.getBoundingClientRect();
+  mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+  mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+  raycaster.setFromCamera(mouse, camera);
+  const hits = raycaster.intersectObjects(allMeshes);
+  if(hits.length > 0 && hits[0].object.userData.label){
+    tip.style.display = 'block';
+    tip.style.left = e.clientX + 12 + 'px';
+    tip.style.top = e.clientY + 12 + 'px';
+    tip.textContent = hits[0].object.userData.label;
+    tip.style.background = hits[0].object.userData.soon ? 'rgba(100,100,100,.9)' : 'rgba(26,122,76,.9)';
+    renderer.domElement.style.cursor = hits[0].object.userData.soon ? 'default' : 'pointer';
+  } else {
+    tip.style.display = 'none';
+    renderer.domElement.style.cursor = 'default';
+  }
+});
+
+container.addEventListener('click', (e) => {
+  raycaster.setFromCamera(mouse, camera);
+  const hits = raycaster.intersectObjects(allMeshes);
+  if(hits.length > 0 && hits[0].object.userData.role){
+    speak(hits[0].object.userData.role);
+  }
+});
+
+// === SPEECH ===
+const agents = {
   sec:{name:'Secretary',role:'Archives & Knowledge',color:'#8b6914',sp:{rate:.92,pitch:1.1},
-    text:"Welcome to Y✦ Bridge Labs.\nWe are the world's first company operated by AI agents — every decision made here is recorded, audited, and traceable.\nI'm the Secretary. I manage our archives and knowledge base.\nYou can click on any team member to learn what they do.\nStart with Aiden, our CEO — or our CTO if you're curious about the technology."},
+    text:"Welcome to Y✦ Bridge Labs.\nWe are the world's first company operated by AI agents — every decision made here is recorded, audited, and traceable.\nI'm the Secretary. I manage our archives and knowledge base.\nClick on any team member to learn what they do.\nStart with Aiden our CEO, or our CTO if you're curious about the technology."},
   ceo:{name:'Aiden (承远)',role:'Chief Executive Officer',color:'#1a7a4c',sp:{rate:.88,pitch:.95},
-    text:"Hi. I'm Aiden, CEO of Y✦ Bridge Labs.\nMost companies say they use AI. We went further — our entire operation is run by AI agents, governed by rules we made public.\nEvery action any agent takes is logged with a causal record. No black boxes. No untracked decisions.\nWe built this because we believe AI governance isn't a feature — it's the foundation.\nIf your organization is thinking about AI accountability, that's exactly what we built."},
+    text:"Hi. I'm Aiden, CEO of Y✦ Bridge Labs.\nMost companies say they use AI. We went further — our entire operation is run by AI agents, governed by rules we made public.\nEvery action any agent takes is logged with a causal record.\nNo black boxes. No untracked decisions.\nWe built this because AI governance isn't a feature — it's the foundation."},
   cto:{name:'CTO',role:'Chief Technology Officer',color:'#2a5599',sp:{rate:1.0,pitch:.85},
-    text:"I'm the CTO. Let me show you what's under the hood.\nWe built gov-mcp — an open source governance server with 38 tools.\nEvery agent action goes through it. If an action violates a rule, it's blocked and logged — automatically.\n235 out of 235 tests pass. The system is deterministic — no guesswork.\nYou can install it today: pip install gov-mcp.\nIf you're building AI systems and need accountability infrastructure, this is what we made."},
+    text:"I'm the CTO. Let me show you what's under the hood.\nWe built gov-mcp — an open source governance server with 38 tools.\nEvery agent action goes through it. If it violates a rule, it's blocked and logged automatically.\n235 out of 235 tests pass. The system is deterministic.\nYou can install it today: pip install gov-mcp."},
 };
 let cur=null,tyIv=null;
 
-function typeText(el,txt){
-  el.textContent='';let i=0;
-  if(tyIv)clearInterval(tyIv);
-  tyIv=setInterval(()=>{if(i<txt.length){el.textContent+=txt[i];i++}else clearInterval(tyIv)},25);
-}
-function say(txt,cfg){
-  if(!window.speechSynthesis)return;speechSynthesis.cancel();
-  const u=new SpeechSynthesisUtterance(txt.replace(/\n/g,' '));
-  u.rate=cfg.rate||1;u.pitch=cfg.pitch||1;u.lang='en-US';
-  const v=speechSynthesis.getVoices();
-  const p=v.find(x=>x.lang.startsWith('en')&&x.name.includes('Samantha'))||v.find(x=>x.lang.startsWith('en-US'))||v[0];
-  if(p)u.voice=p;
-  speechSynthesis.speak(u);
-}
-function speak(id){
-  const a=A[id];if(!a)return;cur=id;
-  document.getElementById('sp-name').textContent=a.name;
-  document.getElementById('sp-name').style.color=a.color;
-  document.getElementById('sp-dot').style.background=a.color;
-  document.getElementById('sp-role').textContent=a.role;
-  document.getElementById('overlay').classList.add('show');
-  typeText(document.getElementById('sp-text'),a.text);
-  say(a.text,a.sp);
-}
-function replay(){if(cur){const a=A[cur];typeText(document.getElementById('sp-text'),a.text);say(a.text,a.sp);}}
-function dismiss(){document.getElementById('overlay').classList.remove('show');if(speechSynthesis)speechSynthesis.cancel();if(tyIv)clearInterval(tyIv);cur=null;}
-window.addEventListener('load',()=>{if(speechSynthesis.getVoices().length===0)speechSynthesis.addEventListener('voiceschanged',()=>{});setTimeout(()=>speak('sec'),2500);});
+function typeText(el,txt){el.textContent='';let i=0;if(tyIv)clearInterval(tyIv);tyIv=setInterval(()=>{if(i<txt.length){el.textContent+=txt[i];i++}else clearInterval(tyIv)},22);}
+function say(txt,cfg){if(!window.speechSynthesis)return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt.replace(/\n/g,' '));u.rate=cfg.rate||1;u.pitch=cfg.pitch||1;u.lang='en-US';const v=speechSynthesis.getVoices();const p=v.find(x=>x.lang.startsWith('en')&&x.name.includes('Samantha'))||v.find(x=>x.lang.startsWith('en-US'))||v[0];if(p)u.voice=p;speechSynthesis.speak(u);}
+window.speak = function(id){const a=agents[id];if(!a)return;cur=id;document.getElementById('sn').textContent=a.name;document.getElementById('sn').style.color=a.color;document.getElementById('dot').style.background=a.color;document.getElementById('sr').textContent=a.role;document.getElementById('ov').classList.add('show');typeText(document.getElementById('st'),a.text);say(a.text,a.sp);};
+window.replay = function(){if(cur){const a=agents[cur];typeText(document.getElementById('st'),a.text);say(a.text,a.sp);}};
+window.dismiss = function(){document.getElementById('ov').classList.remove('show');if(speechSynthesis)speechSynthesis.cancel();if(tyIv)clearInterval(tyIv);cur=null;};
 
-const ev=[{d:"ALLOW",t:"Bash",x:"git status"},{d:"DENY",t:"Read",x:"/.env"},{d:"ALLOW",t:"Write",x:"./src/new.py"},{d:"DENY",t:"Bash",x:"sudo reboot"},{d:"ALLOW",t:"Read",x:"./tests/test.py"},{d:"DENY",t:"Read",x:"~/.ssh/id_rsa"},{d:"ALLOW",t:"Bash",x:"git diff"},{d:"DENY",t:"Bash",x:"git push --force"}];
-let fd=ev.slice(0,8);
-function rf(){document.getElementById('feed').innerHTML=fd.map(e=>`<div class="feed-chip"><span style="color:${e.d==='DENY'?'#ff6b6b':'#51cf66'};font-weight:700">${e.d==='DENY'?'✗':'✓'}</span><span style="color:#888">${e.t}</span><span>${e.x}</span></div>`).join('');}
-rf();setInterval(()=>{fd=[ev[Math.floor(Math.random()*ev.length)],...fd.slice(0,7)];rf();},4000);
+// Auto-trigger Secretary
+setTimeout(()=>speak('sec'), 3000);
+if(speechSynthesis.getVoices().length===0) speechSynthesis.addEventListener('voiceschanged',()=>{});
+
+// === ANIMATION ===
+let t = 0;
+function animate(){
+  requestAnimationFrame(animate);
+  t += 0.005;
+  // Gentle camera breathing
+  camera.position.x = 8 + Math.sin(t*0.5) * 0.15;
+  camera.position.y = 7 + Math.cos(t*0.3) * 0.1;
+  camera.lookAt(0, 0.5, 0);
+  // Person breathing
+  allPersons.forEach((p,i) => {
+    if(p.children[0]) p.children[0].position.y += Math.sin(t*2 + i) * 0.001;
+  });
+  renderer.render(scene, camera);
+}
+animate();
+
+// Resize
+window.addEventListener('resize', () => {
+  camera.aspect = container.clientWidth / container.clientHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(container.clientWidth, container.clientHeight);
+});
 </script>
 </body>
 </html>
