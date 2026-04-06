@@ -16,7 +16,7 @@ body{background:#0a0a14;color:#e0e0e0;font-family:'Inter',system-ui,sans-serif;o
 
 /* Office Scene */
 #office-scene{position:relative;width:100vw;height:75vh;overflow:hidden}
-#office-bg{width:100%;height:100%;object-fit:cover;object-position:center top}
+#office-bg{width:100%;height:100%;object-fit:cover;object-position:center 60%}
 #mask{position:absolute;inset:0;background:rgba(10,10,20,.15)}
 #hotspots{position:absolute;inset:0}
 
@@ -25,9 +25,11 @@ body{background:#0a0a14;color:#e0e0e0;font-family:'Inter',system-ui,sans-serif;o
 .hotspot.soon{cursor:default}
 .pulse{width:18px;height:18px;border-radius:50%;background:rgba(26,122,76,.9);margin:0 auto 5px;animation:ping 2s infinite}
 @keyframes ping{0%{box-shadow:0 0 0 0 rgba(26,122,76,.6)}70%{box-shadow:0 0 0 14px rgba(26,122,76,0)}100%{box-shadow:0 0 0 0 rgba(26,122,76,0)}}
-.label{background:rgba(10,10,20,.85);color:#e0e0e0;font-size:11px;font-weight:600;padding:3px 10px;border-radius:4px;border:1px solid rgba(26,122,76,.5);white-space:nowrap}
-.hotspot.active:hover .label{background:rgba(26,122,76,.9);color:white}
-.label-soon{background:rgba(10,10,20,.6);color:#555;font-size:10px;padding:3px 8px;border-radius:4px;border:1px solid #333;white-space:nowrap}
+.label{background:rgba(10,10,20,.88);color:#e0e0e0;font-size:12px;font-weight:600;padding:6px 14px;border-radius:8px;border:1px solid rgba(26,122,76,.5);white-space:nowrap;backdrop-filter:blur(6px);line-height:1.4}
+.label .name{display:block;font-size:13px;color:#fff}
+.label .role{display:block;font-size:10px;color:#aaa;font-weight:400}
+.hotspot.active:hover .label{background:rgba(26,122,76,.9);border-color:#1a7a4c;transform:scale(1.05)}
+.label-soon{background:rgba(10,10,20,.6);color:#666;font-size:10px;padding:5px 10px;border-radius:6px;border:1px solid #333;white-space:nowrap;backdrop-filter:blur(4px)}
 
 /* Speaker Overlay */
 .ov{position:fixed;inset:0;background:rgba(8,8,18,.93);z-index:100;display:none;align-items:center;justify-content:center;backdrop-filter:blur(10px)}
@@ -82,26 +84,26 @@ body{background:#0a0a14;color:#e0e0e0;font-family:'Inter',system-ui,sans-serif;o
   <img id="office-bg" src="office.jpg" alt="Y* Bridge Labs Office">
   <div id="mask"></div>
   <div id="hotspots">
-    <div class="hotspot active" onclick="speak('sec')" style="left:12%;top:78%">
+    <div class="hotspot active" onclick="speak('sec')" style="left:15%;top:72%">
       <div class="pulse"></div>
-      <div class="label">Secretary</div>
+      <div class="label"><span class="name">Samantha Lin</span><span class="role">Secretary</span></div>
     </div>
-    <div class="hotspot active" onclick="speak('ceo')" style="left:32%;top:65%">
+    <div class="hotspot active" onclick="speak('ceo')" style="left:38%;top:55%">
       <div class="pulse"></div>
-      <div class="label">CEO · Aiden</div>
+      <div class="label"><span class="name">Aiden Liu</span><span class="role">CEO</span></div>
     </div>
-    <div class="hotspot active" onclick="speak('cto')" style="left:52%;top:60%">
+    <div class="hotspot active" onclick="speak('cto')" style="left:58%;top:50%">
       <div class="pulse"></div>
-      <div class="label">CTO</div>
+      <div class="label"><span class="name">Ethan Wright</span><span class="role">CTO</span></div>
     </div>
-    <div class="hotspot soon" style="left:68%;top:55%">
-      <div class="label-soon">CMO · Soon</div>
+    <div class="hotspot soon" style="left:72%;top:58%">
+      <div class="label-soon">Sofia Blake · CMO · Soon</div>
     </div>
-    <div class="hotspot soon" style="left:80%;top:50%">
-      <div class="label-soon">CSO · Soon</div>
+    <div class="hotspot soon" style="left:82%;top:48%">
+      <div class="label-soon">Zara Johnson · CSO · Soon</div>
     </div>
-    <div class="hotspot soon" style="left:88%;top:45%">
-      <div class="label-soon">CFO · Soon</div>
+    <div class="hotspot soon" style="left:28%;top:68%">
+      <div class="label-soon">Marco Rivera · CFO · Soon</div>
     </div>
   </div>
 </div>
