@@ -32,11 +32,37 @@ def read_tasks():
     with open(tasks_file) as f:
         return f.read()
 
+def check_temp_laws():
+    """Check for active Temp Laws in governance/TEMP_LAW.md"""
+    tl_file = os.path.expanduser(
+        "~/.openclaw/workspace/ystar-company/governance/TEMP_LAW.md"
+    )
+    if not os.path.isfile(tl_file):
+        return 0, []
+    with open(tl_file) as f:
+        content = f.read()
+    active = []
+    for line in content.split("\n"):
+        if line.startswith("### TL-") and "执行中" in content[content.index(line):content.index(line)+500]:
+            active.append(line.strip())
+    return len(active), active
+
+
 def main():
-    today = time.strftime("%Y-%m-%d")
-    day_num = (int(time.time()) - 1742947200) // 86400 + 1  # Day 1 = March 26
+    # Use ET timezone
+    os.environ['TZ'] = 'America/New_York'
+    try:
+        time.tzset()
+    except AttributeError:
+        pass  # Windows doesn't have tzset
+
+    today = time.strftime("%Y-%m-%d %H:%M ET")
+    day_num = (int(time.time()) - 1742961600) // 86400 + 1  # Day 1 = March 26 UTC
 
     tasks = read_tasks()
+
+    # Check Temp Laws
+    tl_count, tl_items = check_temp_laws()
 
     # Extract Board pending items
     board_items = []
@@ -50,8 +76,14 @@ def main():
         if in_board and line.strip() == "" and board_items:
             in_board = False
 
+    # Temp Law alert
+    tl_alert = ""
+    if tl_count > 0:
+        tl_alert = f"\n⚖️ 当前有{tl_count}条临时约法生效中，请各Agent优先处理。\n"
+
     msg = f"""📋 Secretary Daily Reminder
 📅 {today} · Day {day_num}
+{tl_alert}
 
 ━━ Board待决事项 ━━
 {chr(10).join(board_items) if board_items else "无待决事项"}
