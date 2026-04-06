@@ -23,7 +23,11 @@ body{background:#0a0a14;color:#e0e0e0;font-family:'Inter',system-ui,sans-serif;o
 /* Characters */
 .char{position:absolute;cursor:pointer;text-align:center;z-index:5;transform:translate(-50%,0)}
 .char.soon{cursor:default}
-.char-img{height:22%;width:auto;display:block;margin:0 auto;filter:drop-shadow(2px 4px 8px rgba(0,0,0,.5));transition:transform .3s;animation:breathe 4s ease-in-out infinite}
+.char-img{width:auto;display:block;margin:0 auto;filter:drop-shadow(2px 4px 8px rgba(0,0,0,.5));transition:transform .3s;animation:breathe 4s ease-in-out infinite}
+/* 近大远小透视 */
+.char.front .char-img{height:30%}
+.char.mid .char-img{height:22%}
+.char.back .char-img{height:16%}
 .char:hover .char-img{transform:scale(1.05)}
 .char.soon .char-img{opacity:.75}
 @keyframes breathe{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
@@ -88,38 +92,38 @@ body{background:#0a0a14;color:#e0e0e0;font-family:'Inter',system-ui,sans-serif;o
   <img id="office-bg" src="office.jpg?v=20260406" alt="Y* Bridge Labs Office">
   <div id="mask"></div>
   <div id="hotspots">
-    <!-- Secretary: 左前方第一排，接待位 -->
-    <div class="char" onclick="speak('sec')" style="left:20%;top:38%">
+    <!-- Secretary: 左前方第一排桌椅，最近镜头 -->
+    <div class="char front" onclick="speak('sec')" style="left:18%;top:48%">
       <img class="char-img" src="samantha_full.png" alt="Samantha Lin">
       <div class="nametag"><span class="n">Samantha Lin</span><span class="r">Secretary</span></div>
       <div class="pulse-dot"></div>
     </div>
-    <!-- CEO: 中央主位 -->
-    <div class="char" onclick="speak('ceo')" style="left:40%;top:30%">
+    <!-- CFO: 左前方第二个工位，近镜头 -->
+    <div class="char front soon" style="left:35%;top:46%">
+      <img class="char-img" src="marco_full.png" alt="Marco Rivera">
+      <div class="nametag"><span class="n">Marco Rivera</span><span class="r">CFO · Soon</span></div>
+    </div>
+    <!-- CEO: 中间过道后方，中距离 -->
+    <div class="char mid" onclick="speak('ceo')" style="left:45%;top:32%">
       <img class="char-img" src="aiden_full.png" alt="Aiden Liu">
       <div class="nametag"><span class="n">Aiden Liu</span><span class="r">CEO</span></div>
       <div class="pulse-dot"></div>
     </div>
-    <!-- CTO: 右侧高台技术区 -->
-    <div class="char" onclick="speak('cto')" style="left:72%;top:24%">
+    <!-- CMO: 左侧靠窗，中距离 -->
+    <div class="char mid soon" style="left:10%;top:28%">
+      <img class="char-img" src="sofia_full.png" alt="Sofia Blake">
+      <div class="nametag"><span class="n">Sofia Blake</span><span class="r">CMO · Soon</span></div>
+    </div>
+    <!-- CTO: 右侧高台，远处 -->
+    <div class="char back" onclick="speak('cto')" style="left:70%;top:22%">
       <img class="char-img" src="ethan_full.png" alt="Ethan Wright">
       <div class="nametag"><span class="n">Ethan Wright</span><span class="r">CTO</span></div>
       <div class="pulse-dot"></div>
     </div>
-    <!-- CMO: 左侧靠窗创意区 -->
-    <div class="char soon" style="left:8%;top:26%">
-      <img class="char-img" src="sofia_full.png" alt="Sofia Blake">
-      <div class="nametag"><span class="n">Sofia Blake</span><span class="r">CMO · Soon</span></div>
-    </div>
-    <!-- CSO: 右侧深处 -->
-    <div class="char soon" style="left:86%;top:32%">
+    <!-- CSO: 右侧深处高台，远处 -->
+    <div class="char back soon" style="left:85%;top:26%">
       <img class="char-img" src="zara_full.png" alt="Zara Johnson">
       <div class="nametag"><span class="n">Zara Johnson</span><span class="r">CSO · Soon</span></div>
-    </div>
-    <!-- CFO: 中央偏右台阶上 -->
-    <div class="char soon" style="left:56%;top:36%">
-      <img class="char-img" src="marco_full.png" alt="Marco Rivera">
-      <div class="nametag"><span class="n">Marco Rivera</span><span class="r">CFO · Soon</span></div>
     </div>
   </div>
 </div>
