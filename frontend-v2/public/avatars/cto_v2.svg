@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280" width="200" height="280">
+  <defs>
+    <!-- Idle animation: typing hands -->
+    <style>
+      @keyframes typing {
+        0%, 100% { transform: translateY(0); }
+        25% { transform: translateY(-2px); }
+        50% { transform: translateY(0); }
+        75% { transform: translateY(-1px); }
+      }
+      @keyframes blink {
+        0%, 94%, 100% { transform: scaleY(1); }
+        96% { transform: scaleY(0.1); }
+      }
+      @keyframes screenGlow {
+        0%, 100% { opacity: 0.7; }
+        50% { opacity: 0.9; }
+      }
+      .typing-hand { animation: typing 0.4s infinite; transform-origin: center; }
+      .typing-hand-r { animation: typing 0.4s infinite 0.2s; transform-origin: center; }
+      .eye-blink { animation: blink 4s infinite; transform-origin: center; }
+      .screen-glow { animation: screenGlow 2s infinite; }
+    </style>
+  </defs>
+
+  <!-- Chair -->
+  <ellipse cx="100" cy="265" rx="35" ry="8" fill="#444" opacity="0.3"/>
+  <rect x="70" y="200" width="60" height="60" rx="8" fill="#3a3a3a"/>
+  <!-- Chair back -->
+  <rect x="65" y="140" width="70" height="65" rx="10" fill="#4a4a4a"/>
+  <!-- Chair armrests -->
+  <rect x="55" y="195" width="15" height="8" rx="4" fill="#555"/>
+  <rect x="130" y="195" width="15" height="8" rx="4" fill="#555"/>
+
+  <!-- Body (sitting) -->
+  <path d="M75 175 Q100 165 125 175 L128 210 H72 Z" fill="#2a4570" stroke="none"/>
+  <!-- Collar -->
+  <path d="M88 175 L100 185 L112 175" fill="none" stroke="#3a5580" stroke-width="2"/>
+
+  <!-- Head -->
+  <ellipse cx="100" cy="145" rx="28" ry="32" fill="#f5deb3"/>
+  <!-- Hair (messy developer style) -->
+  <path d="M72 135 Q75 105 100 100 Q125 105 128 135 Q130 120 125 115 Q110 95 90 98 Q75 100 72 120 Z" fill="#2a1a0a"/>
+  <path d="M78 118 Q82 108 90 110" fill="none" stroke="#2a1a0a" stroke-width="2"/>
+  <path d="M115 112 Q120 108 125 115" fill="none" stroke="#2a1a0a" stroke-width="2"/>
+
+  <!-- Glasses frame -->
+  <rect x="82" y="133" width="16" height="12" rx="3" fill="none" stroke="#2a5599" stroke-width="2.5"/>
+  <rect x="102" y="133" width="16" height="12" rx="3" fill="none" stroke="#2a5599" stroke-width="2.5"/>
+  <line x1="98" y1="139" x2="102" y2="139" stroke="#2a5599" stroke-width="2"/>
+  <line x1="82" y1="139" x2="76" y2="137" stroke="#2a5599" stroke-width="1.5"/>
+  <line x1="118" y1="139" x2="124" y2="137" stroke="#2a5599" stroke-width="1.5"/>
+
+  <!-- Eyes behind glasses -->
+  <g class="eye-blink">
+    <ellipse cx="90" cy="139" rx="4" ry="4.5" fill="white"/>
+    <circle cx="91" cy="139" r="2.5" fill="#1a1a1a"/>
+    <circle cx="92" cy="138" r="1" fill="white"/>
+    <ellipse cx="110" cy="139" rx="4" ry="4.5" fill="white"/>
+    <circle cx="111" cy="139" r="2.5" fill="#1a1a1a"/>
+    <circle cx="112" cy="138" r="1" fill="white"/>
+  </g>
+
+  <!-- Nose -->
+  <path d="M99 143 Q100 147 102 145" fill="none" stroke="#d4a574" stroke-width="1.5"/>
+
+  <!-- Mouth (slight focused expression) -->
+  <path d="M93 153 Q100 155 107 153" fill="none" stroke="#b08060" stroke-width="1.5"/>
+
+  <!-- Monitor -->
+  <rect x="140" y="120" width="50" height="38" rx="3" fill="#222" stroke="#444" stroke-width="2"/>
+  <rect x="143" y="123" width="44" height="32" rx="1" fill="#1a2a3a" class="screen-glow"/>
+  <!-- Code on screen -->
+  <line x1="147" y1="130" x2="170" y2="130" stroke="#4a8adf" stroke-width="1.5" opacity="0.8"/>
+  <line x1="150" y1="135" x2="180" y2="135" stroke="#6aaa6a" stroke-width="1.5" opacity="0.6"/>
+  <line x1="150" y1="140" x2="175" y2="140" stroke="#df8a4a" stroke-width="1.5" opacity="0.7"/>
+  <line x1="147" y1="145" x2="165" y2="145" stroke="#4a8adf" stroke-width="1.5" opacity="0.5"/>
+  <line x1="150" y1="150" x2="182" y2="150" stroke="#aaa" stroke-width="1" opacity="0.4"/>
+  <!-- Monitor stand -->
+  <rect x="160" y="158" width="10" height="12" fill="#444"/>
+  <rect x="152" y="170" width="26" height="3" rx="1" fill="#444"/>
+
+  <!-- Keyboard -->
+  <rect x="135" y="195" width="55" height="15" rx="3" fill="#333" stroke="#555" stroke-width="1"/>
+  <rect x="138" y="198" width="4" height="3" rx="1" fill="#555" opacity="0.6"/>
+  <rect x="144" y="198" width="4" height="3" rx="1" fill="#555" opacity="0.6"/>
+  <rect x="150" y="198" width="4" height="3" rx="1" fill="#555" opacity="0.6"/>
+  <rect x="156" y="198" width="4" height="3" rx="1" fill="#555" opacity="0.6"/>
+  <rect x="162" y="198" width="4" height="3" rx="1" fill="#555" opacity="0.6"/>
+  <rect x="168" y="198" width="4" height="3" rx="1" fill="#555" opacity="0.6"/>
+  <rect x="174" y="198" width="4" height="3" rx="1" fill="#555" opacity="0.6"/>
+  <rect x="180" y="198" width="4" height="3" rx="1" fill="#555" opacity="0.6"/>
+  <rect x="140" y="203" width="4" height="3" rx="1" fill="#555" opacity="0.6"/>
+  <rect x="146" y="203" width="4" height="3" rx="1" fill="#555" opacity="0.6"/>
+  <rect x="152" y="203" width="12" height="3" rx="1" fill="#555" opacity="0.6"/>
+  <rect x="166" y="203" width="4" height="3" rx="1" fill="#555" opacity="0.6"/>
+  <rect x="172" y="203" width="4" height="3" rx="1" fill="#555" opacity="0.6"/>
+
+  <!-- Arms reaching to keyboard -->
+  <g class="typing-hand">
+    <path d="M80 195 Q100 200 135 200" fill="none" stroke="#f5deb3" stroke-width="8" stroke-linecap="round"/>
+    <!-- Left hand fingers -->
+    <circle cx="138" cy="200" r="4" fill="#f5deb3"/>
+  </g>
+  <g class="typing-hand-r">
+    <path d="M125 190 Q140 195 165 198" fill="none" stroke="#f5deb3" stroke-width="8" stroke-linecap="round"/>
+    <!-- Right hand fingers -->
+    <circle cx="168" cy="198" r="4" fill="#f5deb3"/>
+  </g>
+
+  <!-- Coffee mug on desk -->
+  <rect x="12" y="188" width="14" height="18" rx="2" fill="#8B4513" stroke="#5C3317" stroke-width="1.5"/>
+  <path d="M26 194 Q32 197 26 203" fill="none" stroke="#5C3317" stroke-width="1.5"/>
+  <!-- Steam -->
+  <path d="M16 186 Q18 180 16 174" fill="none" stroke="#ccc" stroke-width="1" opacity="0.4">
+    <animate attributeName="d" values="M16 186 Q18 180 16 174;M16 186 Q14 179 16 172;M16 186 Q18 180 16 174" dur="3s" repeatCount="indefinite"/>
+  </path>
+  <path d="M20 186 Q22 178 20 170" fill="none" stroke="#ccc" stroke-width="1" opacity="0.3">
+    <animate attributeName="d" values="M20 186 Q22 178 20 170;M20 186 Q18 177 20 168;M20 186 Q22 178 20 170" dur="4s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Name tag -->
+  <text x="100" y="275" text-anchor="middle" font-family="system-ui" font-size="11" fill="#2a5599" font-weight="bold">CTO</text>
+</svg>
