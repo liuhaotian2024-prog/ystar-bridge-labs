@@ -39,9 +39,13 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const i = setInterval(() => {
-      setFeed(prev => [sampleEvents[Math.floor(Math.random() * sampleEvents.length)], ...prev.slice(0, 7)]);
-    }, 4000);
+    const fetchFeed = () => {
+      fetch("/api/feed").then(r => r.json()).then(data => {
+        if (data.events?.length > 0) setFeed(data.events.slice(0, 8));
+      }).catch(() => {});
+    };
+    fetchFeed();
+    const i = setInterval(fetchFeed, 10000);
     return () => clearInterval(i);
   }, []);
 
