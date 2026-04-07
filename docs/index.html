@@ -17,19 +17,16 @@ body{background:#0a0a14;color:#e0e0e0;font-family:'Inter',system-ui,sans-serif;o
 /* Office Scene */
 #office-scene{position:relative;width:100%;max-width:1200px;margin:0 auto;overflow:hidden;background:#0a0a14}
 #office-bg{width:100%;height:auto;display:block}
-#mask{position:absolute;inset:0;background:rgba(10,10,20,.1)}
-#hotspots{position:absolute;inset:0}
+#mask{position:absolute;inset:0;background:rgba(10,10,20,.05);pointer-events:none}
+#people{position:absolute;inset:0;pointer-events:none}
 
-/* Hotspots */
-.hotspot{position:absolute;transform:translate(-50%,-50%);cursor:pointer;text-align:center;z-index:5}
-.hotspot.soon{cursor:default}
-.pulse{width:16px;height:16px;border-radius:50%;background:rgba(26,122,76,.9);margin:0 auto 5px;animation:ping 2s infinite}
-@keyframes ping{0%{box-shadow:0 0 0 0 rgba(26,122,76,.6)}70%{box-shadow:0 0 0 12px rgba(26,122,76,0)}100%{box-shadow:0 0 0 0 rgba(26,122,76,0)}}
-.label{background:rgba(10,10,20,.85);color:#e0e0e0;font-size:11px;font-weight:600;padding:5px 12px;border-radius:8px;border:1px solid rgba(26,122,76,.5);white-space:nowrap;backdrop-filter:blur(6px);line-height:1.4}
-.label .name{display:block;font-size:12px;color:#fff}
-.label .role{display:block;font-size:9px;color:#aaa;font-weight:400}
-.hotspot:hover .label{background:rgba(26,122,76,.85);border-color:#1a7a4c;transform:scale(1.05)}
-.hotspot.soon .label{border-color:#444;opacity:.7}
+/* Person video containers */
+.person{position:absolute;transform:translate(-50%,0);pointer-events:auto;cursor:pointer;text-align:center}
+.person video{display:block;height:100%;width:auto;mix-blend-mode:multiply}
+.person .nametag{background:rgba(10,10,20,.8);color:#e0e0e0;font-size:10px;font-weight:600;padding:4px 10px;border-radius:6px;border:1px solid rgba(26,122,76,.5);white-space:nowrap;position:absolute;bottom:-22px;left:50%;transform:translateX(-50%)}
+.person .nametag .n{color:#fff;font-size:11px}
+.person .nametag .r{color:#aaa;font-size:8px;display:block}
+.person:hover .nametag{background:rgba(26,122,76,.85);border-color:#1a7a4c}
 
 /* Speaker Overlay */
 .ov{position:fixed;inset:0;background:rgba(8,8,18,.93);z-index:100;display:none;align-items:center;justify-content:center;backdrop-filter:blur(10px)}
@@ -83,30 +80,36 @@ body{background:#0a0a14;color:#e0e0e0;font-family:'Inter',system-ui,sans-serif;o
 <div id="office-scene">
   <img id="office-bg" src="office.jpg?v=20260406" alt="Y* Bridge Labs Office">
   <div id="mask"></div>
-  <div id="hotspots">
-    <div class="hotspot" onclick="speak('sec')" style="left:10%;top:70%">
-      <div class="pulse"></div>
-      <div class="label"><span class="name">Samantha Lin</span><span class="role">Secretary</span></div>
+  <div id="people">
+    <!-- Samantha: 左前方 -->
+    <div class="person" onclick="speak('sec')" style="left:10%;top:42%;height:28%">
+      <video src="samantha_intro.mp4" autoplay loop muted playsinline></video>
+      <div class="nametag"><span class="n">Samantha Lin</span><span class="r">Secretary</span></div>
     </div>
-    <div class="hotspot" onclick="speak('ceo')" style="left:30%;top:58%">
-      <div class="pulse"></div>
-      <div class="label"><span class="name">Aiden Liu</span><span class="role">CEO</span></div>
+    <!-- Aiden: 中左 -->
+    <div class="person" onclick="speak('ceo')" style="left:30%;top:34%;height:24%">
+      <video src="aiden_intro.mp4" autoplay loop muted playsinline></video>
+      <div class="nametag"><span class="n">Aiden Liu</span><span class="r">CEO</span></div>
     </div>
-    <div class="hotspot soon" style="left:48%;top:55%">
-      <div class="pulse"></div>
-      <div class="label"><span class="name">Sofia Blake</span><span class="role">CMO · Soon</span></div>
+    <!-- Sofia: 中间 -->
+    <div class="person" onclick="speak('cmo')" style="left:48%;top:32%;height:22%">
+      <video src="sofia_intro.mp4" autoplay loop muted playsinline></video>
+      <div class="nametag"><span class="n">Sofia Blake</span><span class="r">CMO</span></div>
     </div>
-    <div class="hotspot" onclick="speak('cto')" style="left:62%;top:52%">
-      <div class="pulse"></div>
-      <div class="label"><span class="name">Ethan Wright</span><span class="role">CTO</span></div>
+    <!-- Ethan: 中右 -->
+    <div class="person" onclick="speak('cto')" style="left:62%;top:30%;height:20%">
+      <video src="ethan_intro.mp4" autoplay loop muted playsinline></video>
+      <div class="nametag"><span class="n">Ethan Wright</span><span class="r">CTO</span></div>
     </div>
-    <div class="hotspot soon" style="left:75%;top:50%">
-      <div class="pulse"></div>
-      <div class="label"><span class="name">Zara Johnson</span><span class="role">CSO · Soon</span></div>
+    <!-- Zara: 右侧 -->
+    <div class="person" onclick="speak('cso')" style="left:75%;top:28%;height:18%">
+      <video src="zara_intro.mp4" autoplay loop muted playsinline></video>
+      <div class="nametag"><span class="n">Zara Johnson</span><span class="r">CSO</span></div>
     </div>
-    <div class="hotspot soon" style="left:88%;top:48%">
-      <div class="pulse"></div>
-      <div class="label"><span class="name">Marco Rivera</span><span class="role">CFO · Soon</span></div>
+    <!-- Marco: 右后 -->
+    <div class="person" onclick="speak('cfo')" style="left:88%;top:26%;height:16%">
+      <video src="marco_intro.mp4" autoplay loop muted playsinline></video>
+      <div class="nametag"><span class="n">Marco Rivera</span><span class="r">CFO</span></div>
     </div>
   </div>
 </div>
@@ -150,8 +153,14 @@ const A={
     text:"Welcome to Y✦ Bridge Labs.\nWe are the world's first company operated by AI agents — every decision made here is recorded, audited, and traceable.\nI'm the Secretary. I manage our archives and knowledge base.\nClick on any team member to learn what they do.\nStart with Aiden our CEO, or our CTO if you're curious about the technology."},
   ceo:{name:'Aiden (承远)',role:'Chief Executive Officer',color:'#1a7a4c',sp:{rate:.88,pitch:.95},
     text:"Hi. I'm Aiden, CEO of Y✦ Bridge Labs.\nMost companies say they use AI. We went further — our entire operation is run by AI agents, governed by rules we made public.\nEvery action any agent takes is logged with a causal record.\nNo black boxes. No untracked decisions.\nWe built this because AI governance isn't a feature — it's the foundation."},
-  cto:{name:'CTO',role:'Chief Technology Officer',color:'#2a5599',sp:{rate:1.0,pitch:.85},
-    text:"I'm the CTO. Let me show you what's under the hood.\nWe built gov-mcp — an open source governance server with 38 tools.\nEvery agent action goes through it. If it violates a rule, it's blocked and logged automatically.\n235 out of 235 tests pass. The system is deterministic.\nYou can install it today: pip install gov-mcp."},
+  cto:{name:'Ethan Wright',role:'Chief Technology Officer',color:'#2a5599',sp:{rate:1.0,pitch:.85},
+    text:"I'm Ethan Wright, CTO. Let me show you what's under the hood.\nWe built gov-mcp — an open source governance server with 38 tools.\nEvery agent action goes through it. If it violates a rule, it's blocked and logged automatically.\n235 out of 235 tests pass. The system is deterministic.\nYou can install it today: pip install gov-mcp."},
+  cmo:{name:'Sofia Blake',role:'Chief Marketing Officer',color:'#8b4513',sp:{rate:.95,pitch:1.05},
+    text:"Hi, I'm Sofia Blake, CMO. I tell the story of AI governance to the world.\nOur product isn't just software — it's a movement.\nEvery company using AI agents needs governance.\nWe're the first to prove it works by running our own company this way."},
+  cso:{name:'Zara Johnson',role:'Chief Sales Officer',color:'#6a0dad',sp:{rate:.93,pitch:1.0},
+    text:"I'm Zara Johnson, CSO. I connect enterprises with AI governance.\nWho watches the watchers? We do.\n50 out of 50 malicious actions blocked. Zero legitimate actions denied.\nThe numbers speak for themselves."},
+  cfo:{name:'Marco Rivera',role:'Chief Financial Officer',color:'#1a4a7a',sp:{rate:.90,pitch:.9},
+    text:"Marco Rivera, CFO. AI agents don't need salaries or offices.\nOur primary costs are compute and API calls.\nEnterprise-grade governance at a fraction of traditional consulting fees.\nAI-operated companies aren't just possible — they're economically superior."},
 };
 
 // === SPEECH ===
