@@ -1,6 +1,6 @@
 {
   "session_id": "ystar-company_0a84f3c6",
-  "cieu_db": "C:/Users/liuha/OneDrive/桌面/ystar-company/.ystar_cieu.db",
+  "cieu_db": "/Users/haotianliu/.openclaw/workspace/ystar-company/.ystar_cieu.db",
   "contract": {
     "name": "ystar-company_policy",
     "deny": [
@@ -267,7 +267,7 @@
     ]
   },
   "ceo_deny_paths": [
-    "C:/Users/liuha/OneDrive/桌面/Y-star-gov/ystar/",
+    "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/",
     "./src/"
   ],
   "trigger_path_patterns": {
