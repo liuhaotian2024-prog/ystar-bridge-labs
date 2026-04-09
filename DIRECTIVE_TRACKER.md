@@ -394,3 +394,61 @@ Accenture/Deloitte/PwC partnerships（revenue model待pilot谈判确定）
 **Prepared by:** CEO Aiden (承远)  
 **Status:** Awaiting Board decisions on 3 priorities  
 **Next CEO session:** Post-Board-decision execution
+
+---
+
+## GOV-005 Status: EXECUTED (2026-04-09)
+
+**Directive**: GOV-005 治理机制升级 (2026-04-09)
+**主责**: Secretary Samantha Lin · Aiden Liu (CEO) · Ethan Wright (CTO)
+**前置条件**: GOV-001 ✅ · GOV-004 Part 1 ✅
+**最终状态**: **EXECUTED**
+
+### 5 Parts 全部完成
+
+| Part | 主责 | 交付物 | Commit |
+|---|---|---|---|
+| 1. 反事实推理提案机制 | Secretary | `governance/WORKING_STYLE.md` 第七条 + `agents/CEO.md` 决策框架段落 | `3ccc570` |
+| 2. 三级决策权限体系 | Secretary | `governance/INTERNAL_GOVERNANCE.md` (新文件,131 行) | `34a6be4` |
+| 3. AMENDMENT-001 执行层修复 | Ethan | `.ystar_session.json` `deny_commands` 加 `ystar setup --yes` | `2f4d2e8` (+ `93a3156` backfill) |
+| 4. Agent ID 体系重建 | Ethan + Secretary | `agent_display_names` + 41 处 obligation_agent_scope rename + `check_obligations.py` 升级 + 6 agents/*.md | `717e79f` |
+| 4 followup. restricted_write_paths 一致性 | Ethan (Aiden Level 2 授权) | `.ystar_session.json` 2 处 `ystar-ceo` → `ceo` | `74b761c` |
+| 5 易部分. TEMP_LAW + memory INDEX | Secretary | `governance/TEMP_LAW.md` 状态化 + `memory/INDEX.md` 创建 | `f88c250` |
+| 5 hard phase. OPERATIONS 重写 + 文件归并 | Secretary (Aiden Level 2 授权) | `OPERATIONS.md` 298→947 行 + `DIRECTIVE_TRACKER.md` +273 + 5 文件删除 + 1 rename | `034c437` |
+
+### 衍生工作 (本 directive 范围内的额外架构决策)
+
+| 任务 | 来源 | Commit | 产出 |
+|---|---|---|---|
+| Daemon 架构提案 | Ethan, GOV-005 反事实推理首次实战 | `626030e` | `reports/cto/daemon_governance_architecture_proposal.md` (413 行 Level 3 提案) |
+| Daemon 退役 (option C) | Board GOV-005 directive | `57d8aec` | 12 文件归档,daemon experiment frozen 5 天后正式退役 |
+| Spawned MCP config 安装 (option A) | Board GOV-005 directive | `90af9ed` | `scripts/spawned_mcp_config.json` + `scripts/SPAWNED_SESSION_GOV_MCP.md` + DNA #006 |
+| Daemon archive 重定位 (Reconcile 1) | Board GOV-005 path standardization | `8a95c2a` | `archive/deprecated/` 标准长期废弃区建立,`AMENDMENT-002` 记录 |
+
+### Obligation Lifecycle Pipeline 端到端验证
+
+GOV-005 期间 Board 提的"指令发出 → 义务注册 → tool call 治理 → deadline OVERDUE 自动标记"全 4 阶段验证:
+
+| 阶段 | 状态 | 证据 |
+|---|---|---|
+| 1. 指令发出 → CIEU obligation 注册 | ✅ 手动可工作 | GOV-001 Step 7 注册 2 条真实 obligation,GOV-005 Part 5 followup 注册 1 条 OVERDUE 测试 |
+| 2. Agent 执行时每个 tool call 经 gov-mcp 治理 | ✅ verified | gov-mcp PID 65833 正在跑,本 session 是 client (12 个 mcp__gov-mcp__* tools 在 deferred list);spawned 路径靠 `scripts/spawned_mcp_config.json` 完整路径接通 |
+| 3. Deadline 到期标记 OVERDUE | ✅ verified | Task 3 注册 due_secs=-300 测试 obligation `81ef0851...`,`check_obligations --overdue-only` 正确返回 OVERDUE,`mark-fulfilled` 正确转换 OVERDUE→FULFILLED |
+| 4. 完整闭环 | ✅ verified | 注册→检测→标记→关闭 全流程跑通,CIEU records 不可变,显示层 normalization 正确 |
+
+**Board 的"机制有了未跑过完整周期" → 跑过了。**
+
+### 治理状态当前快照
+
+```
+ystar doctor: All 8 checks passed -- Y*gov is healthy
+CIEU database: 20+ records (allow=4 deny=6 + obligation lifecycle records)
+gov-mcp server: PID 65833, port 7922 SSE, LISTEN
+Active obligations: 0 PENDING, 0 OVERDUE, 3 FULFILLED
+```
+
+### 关闭归档
+
+**Secretary 标记本 directive 状态为 EXECUTED**, 写入本 DIRECTIVE_TRACKER.md (Appendix B)。
+
+GOV-005 关闭。下一条 Board directive 将启动新条目。
