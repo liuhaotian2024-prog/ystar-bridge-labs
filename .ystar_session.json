@@ -11,7 +11,8 @@
     "deny_commands": [
       "rm -rf",
       "sudo",
-      "DROP TABLE"
+      "DROP TABLE",
+      "ystar setup --yes"
     ],
     "obligation_timing": {
       "monthly_financial_summary": 86400.0,

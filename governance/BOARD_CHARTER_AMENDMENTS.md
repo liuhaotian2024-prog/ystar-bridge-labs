@@ -26,6 +26,7 @@
 | 修改内容 | 在AGENTS.md的deny_commands段加入一行：`"ystar setup --yes"` |
 | 理由 | ystar setup --yes会覆盖现有.ystar_session.json配置（GOV-001 Step 2事故根因），必须在机器层面阻止任何agent执行此命令 |
 | 执行人 | Ethan Wright |
-| 执行状态 | 待执行 |
-| 执行时间 | |
-| 执行commit | |
+| 执行状态 | 已完成（执行层）|
+| 执行时间 | 2026-04-09 |
+| 执行commit | (filled in by next commit) |
+| 备注 | deny_commands已在.ystar_session.json生效（GOV-005 Part 3 directive 改写了执行路径，绕开AGENTS.md hook block）。AGENTS.md文档同步待Board下次直接编辑时补充，不阻塞安全性。机器层面任何agent执行`ystar setup --yes`将被Y*gov hook即时拦截。|
