@@ -1,8 +1,8 @@
 {
   "mcpServers": {
     "gov-mcp": {
-      "url": "http://127.0.0.1:7922/sse",
-      "transport": "sse"
+      "type": "sse",
+      "url": "http://127.0.0.1:7922/sse"
     }
   }
 }
