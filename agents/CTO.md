@@ -146,7 +146,7 @@ Ut:  [本次干预]
 
 ### Actor ID
 
-**`ethan_wright`** — 所有义务命令以此为 `--owner`。CIEU 审计中本岗位的义务记录全部以此 ID 为关键字。
+**`cto`**（Ethan Wright）— 所有义务命令以此为 `--owner`。CIEU 审计中本岗位的义务记录全部以此 ID 为关键字。本岗位 ID 在 GOV-005 Part 4 中从 `ethan_wright` 统一为 `cto`，旧 ID 在历史 CIEU 记录中通过 `LEGACY_ACTOR_ALIASES` 自动归一显示。
 
 ### 三步闭环
 
@@ -155,7 +155,7 @@ Ut:  [本次干预]
 ```bash
 python3.11 scripts/register_obligation.py \
     --entity-id <DIRECTIVE_ID> \
-    --owner ethan_wright \
+    --owner cto \
     --rule-id <directive_id>_ack_cto \
     --rule-name "<directive 简称> 履约义务" \
     --description "<本岗位在该指令下的具体职责>" \
@@ -168,8 +168,8 @@ python3.11 scripts/register_obligation.py \
 **2. Session 启动时 + deadline 临近时**，必须主动 check 自身义务状态：
 
 ```bash
-python3.11 scripts/check_obligations.py --actor ethan_wright
-python3.11 scripts/check_obligations.py --actor ethan_wright --overdue-only
+python3.11 scripts/check_obligations.py --actor cto
+python3.11 scripts/check_obligations.py --actor cto --overdue-only
 ```
 
 OVERDUE 行 = 立即处理，优先级高于本 session 其他工作。本岗位本身就负责 ystar doctor / 治理基础设施，OVERDUE 治理义务对外形象=破窗，必须零容忍。
@@ -179,7 +179,7 @@ OVERDUE 行 = 立即处理，优先级高于本 session 其他工作。本岗位
 ```bash
 python3.11 scripts/check_obligations.py \
     --mark-fulfilled <OBLIGATION_ID> \
-    --by ethan_wright \
+    --by cto \
     --evidence "<证据字符串>"
 ```
 

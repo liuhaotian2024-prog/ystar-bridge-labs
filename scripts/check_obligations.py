@@ -38,6 +38,34 @@ STATUS_OVERDUE = "OVERDUE"
 
 QUERY_LIMIT = 1000  # CIEU query default is 50, lift it for full audit pulls
 
+SESSION_PATH = ".ystar_session.json"
+
+# Legacy real-name actor IDs from GOV-001 Step 7 (before GOV-005 Part 4 unified
+# the system to role-based IDs). These keep historical CIEU records readable
+# without rewriting them — CIEU is append-only, so we resolve at display time.
+LEGACY_ACTOR_ALIASES = {
+    "ethan_wright": "cto",
+    "aiden_liu": "ceo",
+    "sofia_blake": "cmo",
+    "zara_johnson": "cso",
+    "marco_rivera": "cfo",
+    "samantha_lin": "secretary",
+}
+
+
+def load_display_names(session_path: str = SESSION_PATH) -> dict:
+    """Load agent_display_names from .ystar_session.json. Empty dict on failure."""
+    try:
+        with open(session_path, "r") as f:
+            return json.load(f).get("agent_display_names", {})
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        return {}
+
+
+def canonical_actor(actor: str) -> str:
+    """Map any actor ID (legacy real-name OR role) to its canonical role ID."""
+    return LEGACY_ACTOR_ALIASES.get(actor, actor)
+
 
 def fmt_secs(s: float) -> str:
     s = abs(float(s))
@@ -81,16 +109,20 @@ def build_rows(regs: list, fulfilled_map: dict, *,
                overdue_only: bool = False) -> list[dict]:
     now = time.time()
     rows = []
+    # Normalize the filter once so the per-row comparison is cheap.
+    filter_canonical = canonical_actor(actor_filter) if actor_filter else None
+
     for r in regs:
         payload = parse_payload(r)
         ob_id = payload.get("obligation_id")
         if not ob_id:
             continue
 
-        actor = payload.get("actor_id") or r.agent_id or "?"
+        actor_raw = payload.get("actor_id") or r.agent_id or "?"
+        actor_role = canonical_actor(actor_raw)
         directive = payload.get("directive_ref") or payload.get("entity_id") or r.session_id or "?"
 
-        if actor_filter and actor != actor_filter:
+        if filter_canonical and filter_canonical != actor_role:
             continue
         if directive_filter and directive != directive_filter:
             continue
@@ -113,7 +145,8 @@ def build_rows(regs: list, fulfilled_map: dict, *,
 
         rows.append({
             "obligation_id": ob_id,
-            "actor": actor,
+            "actor": actor_raw,           # original record value (audit-faithful)
+            "actor_role": actor_role,     # canonical role for display lookup
             "directive": directive,
             "type": payload.get("obligation_type") or "?",
             "status": status,
@@ -129,20 +162,23 @@ def build_rows(regs: list, fulfilled_map: dict, *,
     return rows
 
 
-def print_table(rows: list[dict]) -> None:
+def print_table(rows: list[dict], display_names: dict) -> None:
     if not rows:
         print("(no obligations match the filter)")
         return
 
     header = (
-        f"{'Status':<10} {'Sev':<8} {'Actor':<16} "
+        f"{'Status':<10} {'Sev':<8} {'Actor':<26} "
         f"{'Directive':<14} {'Rule':<18} {'OBL_ID':<14} Extra"
     )
     print(header)
-    print("-" * 130)
+    print("-" * 140)
     for r in rows:
+        # Resolve display name via the canonical role; fall back to raw actor
+        # if the role isn't in the map (e.g., 'doctor_agent', 'eng-kernel').
+        actor_display = display_names.get(r["actor_role"], r["actor"])
         print(
-            f"{r['status']:<10} {r['severity']:<8} {r['actor']:<16} "
+            f"{r['status']:<10} {r['severity']:<8} {actor_display[:25]:<26} "
             f"{r['directive']:<14} {r['rule_id'][:16]:<18} "
             f"{r['obligation_id'][:12]:<14} {r['extra']}"
         )
@@ -217,7 +253,10 @@ def main() -> int:
     p.add_argument("--db", default=".ystar_cieu.db",
                    help="CIEU database path (default: .ystar_cieu.db)")
     p.add_argument("--actor", default=None,
-                   help="Filter by actor_id (e.g. ethan_wright)")
+                   help="Filter by actor_id. Accepts both new role-based IDs "
+                        "(ceo/cto/cmo/cso/cfo/secretary) and legacy real-name "
+                        "format (ethan_wright/aiden_liu/...). Both resolve to "
+                        "the same canonical role.")
     p.add_argument("--directive", default=None,
                    help="Filter by directive reference (e.g. GOV-001)")
     p.add_argument("--overdue-only", action="store_true",
@@ -246,7 +285,8 @@ def main() -> int:
         directive_filter=args.directive,
         overdue_only=args.overdue_only,
     )
-    print_table(rows)
+    display_names = load_display_names()
+    print_table(rows, display_names)
     return 0
 
 

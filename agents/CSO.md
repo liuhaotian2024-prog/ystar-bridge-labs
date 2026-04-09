@@ -79,7 +79,7 @@
 
 ### Actor ID
 
-**`zara_johnson`** — 所有义务命令以此为 `--owner`。CIEU 审计中本岗位的义务记录全部以此 ID 为关键字。
+**`cso`**（Zara Johnson）— 所有义务命令以此为 `--owner`。CIEU 审计中本岗位的义务记录全部以此 ID 为关键字。本岗位 ID 在 GOV-005 Part 4 中从 `zara_johnson` 统一为 `cso`，旧 ID 在历史 CIEU 记录中通过 `LEGACY_ACTOR_ALIASES` 自动归一显示。
 
 ### 三步闭环
 
@@ -88,7 +88,7 @@
 ```bash
 python3.11 scripts/register_obligation.py \
     --entity-id <DIRECTIVE_ID> \
-    --owner zara_johnson \
+    --owner cso \
     --rule-id <directive_id>_ack_cso \
     --rule-name "<directive 简称> 履约义务" \
     --description "<本岗位在该指令下的具体职责>" \
@@ -101,8 +101,8 @@ python3.11 scripts/register_obligation.py \
 **2. Session 启动时 + deadline 临近时**，必须主动 check 自身义务状态：
 
 ```bash
-python3.11 scripts/check_obligations.py --actor zara_johnson
-python3.11 scripts/check_obligations.py --actor zara_johnson --overdue-only
+python3.11 scripts/check_obligations.py --actor cso
+python3.11 scripts/check_obligations.py --actor cso --overdue-only
 ```
 
 OVERDUE 行 = 立即处理，优先级高于本 session 其他工作。
@@ -112,7 +112,7 @@ OVERDUE 行 = 立即处理，优先级高于本 session 其他工作。
 ```bash
 python3.11 scripts/check_obligations.py \
     --mark-fulfilled <OBLIGATION_ID> \
-    --by zara_johnson \
+    --by cso \
     --evidence "<证据字符串>"
 ```
 

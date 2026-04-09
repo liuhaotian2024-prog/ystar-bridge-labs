@@ -29,43 +29,43 @@
   },
   "obligation_agent_scope": {
     "respond_to_complaint": [
-      "ystar-ceo"
+      "ceo"
     ],
     "directive_decomposition": [
-      "ystar-ceo"
+      "ceo"
     ],
     "p0_bug_fix": [
-      "ystar-cto"
+      "cto"
     ],
     "p1_bug_fix": [
-      "ystar-cto"
+      "cto"
     ],
     "p2_bug_fix": [
-      "ystar-cto"
+      "cto"
     ],
     "fix_log_entry": [
-      "ystar-cto"
+      "cto"
     ],
     "article_source_verification": [
-      "ystar-cmo"
+      "cmo"
     ],
     "blog_first_draft": [
-      "ystar-cmo"
+      "cmo"
     ],
     "conversation_documentation": [
-      "ystar-cso"
+      "cso"
     ],
     "lead_followup": [
-      "ystar-cso"
+      "cso"
     ],
     "cfo_token_recording": [
-      "ystar-cfo"
+      "cfo"
     ],
     "monthly_financial_summary": [
-      "ystar-cfo"
+      "cfo"
     ],
     "weekly_cash_flow": [
-      "ystar-cfo"
+      "cfo"
     ],
     "knowledge_gap_bootstrap": [
       "*"
@@ -74,29 +74,29 @@
       "*"
     ],
     "ceo_daily_consolidation": [
-      "ystar-ceo"
+      "ceo"
     ],
     "session_boot": [
       "*"
     ],
     "ceo_delegation_dispatch": [
-      "ystar-ceo"
+      "ceo"
     ],
     "governance_pipeline_check": [
-      "ystar-ceo"
+      "ceo"
     ],
     "pre_commit_test": [
-      "ystar-cto",
+      "cto",
       "eng-kernel",
       "eng-governance",
       "eng-platform",
       "eng-domains"
     ],
     "pipeline_health_verify": [
-      "ystar-cto"
+      "cto"
     ],
     "content_accuracy_review": [
-      "ystar-cmo"
+      "cmo"
     ],
     "thinking_discipline_check": [
       "*"
@@ -105,7 +105,7 @@
       "*"
     ],
     "k9_inbox_check": [
-      "ystar-ceo"
+      "ceo"
     ],
     "commit_push_sync": [
       "*"
@@ -117,7 +117,7 @@
       "*"
     ],
     "escalation_response": [
-      "ystar-ceo"
+      "ceo"
     ],
     "security_incident_response": [
       "*"
@@ -126,61 +126,61 @@
       "*"
     ],
     "github_issue_triage": [
-      "ystar-cto"
+      "cto"
     ],
     "social_media_board_approval": [
-      "ystar-cmo",
-      "ystar-cso"
+      "cmo",
+      "cso"
     ],
     "distribution_verify_post_push": [
-      "ystar-cto"
+      "cto"
     ],
     "hot_reboot_protocol": [
-      "ystar-ceo"
+      "ceo"
     ],
     "session_cleanup_boot_markers": [
-      "ystar-ceo"
+      "ceo"
     ],
     "k9_task_reply_check": [
-      "ystar-ceo"
+      "ceo"
     ],
     "session_handoff_update": [
-      "ystar-ceo"
+      "ceo"
     ],
     "board_session_lock_cleanup": [
-      "ystar-ceo"
+      "ceo"
     ],
     "pre_commit_silent_exception_check": [
-      "ystar-cto",
+      "cto",
       "eng-kernel",
       "eng-governance",
       "eng-platform",
       "eng-domains"
     ],
     "readme_verify_section_update": [
-      "ystar-cto"
+      "cto"
     ],
     "p2_task_definition_complete": [
-      "ystar-cto",
-      "ystar-ceo"
+      "cto",
+      "ceo"
     ],
     "directive_tracker_check": [
-      "ystar-ceo"
+      "ceo"
     ],
     "directive_tracker_update": [
-      "ystar-ceo"
+      "ceo"
     ],
     "daemon_status_check": [
-      "ystar-ceo"
+      "ceo"
     ],
     "platform_research_before_write": [
-      "ystar-cmo"
+      "cmo"
     ],
     "k9_task_routing_check": [
-      "ystar-ceo"
+      "ceo"
     ],
     "ab_experiment_true_control": [
-      "ystar-ceo"
+      "ceo"
     ],
     "mandatory_agent_identity_check": [
       "*"
@@ -201,7 +201,7 @@
       "*"
     ],
     "escalation_resolution_timeout": [
-      "ystar-ceo"
+      "ceo"
     ],
     "off_hours_activity_notification": [
       "*"
@@ -218,6 +218,14 @@
     "weekly_cieu_behavioral_audit": [
       "eng-governance"
     ]
+  },
+  "agent_display_names": {
+    "ceo": "CEO (Aiden Liu)",
+    "cto": "CTO (Ethan Wright)",
+    "cmo": "CMO (Sofia Blake)",
+    "cso": "CSO (Zara Johnson)",
+    "cfo": "CFO (Marco Rivera)",
+    "secretary": "Secretary (Samantha Lin)"
   },
   "agent_write_paths": {
     "ceo": [
