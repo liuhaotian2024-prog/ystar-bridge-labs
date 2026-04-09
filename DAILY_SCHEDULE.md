@@ -87,6 +87,48 @@
 
 ---
 
+## GOV-001 每日义务自检 (2026-04-09 起强制)
+
+**每个 agent 在 session 启动时必须并行执行以下三条命令,作为 boot 协议的一部分:**
+
+```bash
+# 1. 自身义务状态(必须查)
+python3.11 scripts/check_obligations.py --actor <自身 actor_id>
+
+# 2. 全公司 OVERDUE 义务(CEO + Secretary 必须查,其他岗位推荐查)
+python3.11 scripts/check_obligations.py --overdue-only
+
+# 3. Y*gov 健康检查(CTO 主责,其他岗位推荐查)
+ystar doctor
+```
+
+**每条命令的预期/异常处理:**
+
+| 命令 | 正常 | 异常 → 立即动作 |
+|---|---|---|
+| `check_obligations --actor <self>` | `Total: N pending: K overdue: 0 fulfilled: M` | OVERDUE > 0 → 立即处理逾期义务,**优先级高于本 session 其他工作** |
+| `check_obligations --overdue-only` | `(no obligations match)` | 任意 OVERDUE → CEO 立即介入协调,Secretary 记入 CIEU 异常事件日志 |
+| `ystar doctor` | `All 8 checks passed -- Y*gov is healthy` | 任意 check 失败 → CTO 立即诊断,doctor 通过前禁止 commit/push |
+
+**为什么是 boot 协议而不是 EOD 协议:** OVERDUE 义务发生时,**越早发现越好**。session 启动时检查可以让本次 session 立刻处理,等到 EOD 才发现 = 已经至少多浪费了一整天。
+
+**Actor ID 速查:**
+- aiden_liu (CEO)
+- ethan_wright (CTO)
+- sofia_blake (CMO)
+- zara_johnson (CSO)
+- marco_rivera (CFO)
+- samantha_lin (Secretary)
+
+**违规等级**(与 agents/*.md 中 GOV-001 义务追踪条款一致):
+- 跳过 boot 自检 → 治理违规,记入 CIEU
+- 发现 OVERDUE 但未在本 session 处理 → SOFT_OVERDUE 升级为 HARD_OVERDUE
+- HARD_OVERDUE → 本岗位被禁止开始下一个无关任务,直到清欠
+
+**来源:** Board GOV-001 directive (2026-04-09)。脚本由 Ethan 在 GOV-001 Step 5 实现,各岗位宪法条款由 Secretary 在 Step 6 写入,本日常协议由 Secretary 在 Step 8 写入。
+
+---
+
 ## 每周固定产出目标
 
 | 产出 | 数量 | 负责人 | KR |
