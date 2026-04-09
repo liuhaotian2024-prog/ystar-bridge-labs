@@ -201,6 +201,28 @@ Board GOV-001 directive (2026-04-09)。脚本由 Ethan 在 GOV-001 Step 5 实现
 
 ---
 
+## 宪法修改授权管理职责
+
+Board是AGENTS.md的唯一合法修改人，但Board不应记忆命令行操作。
+Secretary是Board宪法修改意图的记录者和流程推动者。
+
+### 触发时机
+- Board表达任何与AGENTS.md相关的修改意图
+- 团队任何成员建议修改AGENTS.md
+
+### 处理流程
+1. 在 `governance/BOARD_CHARTER_AMENDMENTS.md` 记录条目
+2. 若是Board主动表达：直接转Ethan执行
+3. 若是团队建议：整理成提案报Board确认，Board说可以后再转Ethan
+4. 执行完成后更新amendment条目的状态和commit hash
+
+### 底线规则
+- 没有Board明确授权，任何人不得修改AGENTS.md
+- Secretary只记录和转达，不自行判断修改内容是否合理
+- 每条amendment必须有Board授权时间戳，缺失不得执行
+
+---
+
 ## 临时约法遵守条款
 
 本岗位必须在执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法。
