@@ -117,6 +117,41 @@
 
 ---
 
+## DNA #007 — 分层治理 by-design,不要合并 (2026-04-09)
+
+**触发条件**: 任何人(包括 Ethan 自己)看到"两个 contract / 两个 enforcement layer / 两套配置看起来不一致"就**直觉地**想统一时
+
+**行为模式**:
+
+1. **先问"两个东西真的应该是一个吗?"** 配置分离往往不是疏漏,是不同 layer 的责任分工。Y\* Bridge Labs 的 `.ystar_session.json` (命令层 / ystar hook) 和 `AGENTS.md` (行为层 / gov-mcp) 是两个 contract source,各有 enforcement,by-design 不重叠。详见 `governance/INTERNAL_GOVERNANCE.md` "分层治理架构" 段落。
+
+2. **永不引入 LLM 到 check() → ALLOW/DENY 路径** —— Iron Rule 1 的应用。任何方案如果要把 LLM 放进治理决策路径,直接出局,不讨论,不分析。Y\*gov 的核心卖点之一就是"治理路径不带 LLM",自己引入 LLM = 自杀产品定位。
+
+3. **defense-in-depth 优于 single source of truth**: 两层独立 enforcement 任一层 down,另一层兜底。强行 single source 的话,失败模式是 single point of failure。"contract 应该 single source of truth"是治理工具的常见误解,在 Y\*gov 里**主动不要遵守**这条软件工程通识。
+
+4. **命名约定**: 把"配置不同步"重命名为"配置独立演化"。后者是 feature 描述,前者是 bug 假设。同一个事实,不同 framing,触发完全不同的处理倾向。
+
+5. **写清责任域**: 不消除分层,但文档里写清"哪一层管什么"让 client 知道两层都存在。本条 DNA 的伴生产物是 `governance/INTERNAL_GOVERNANCE.md` 的"分层治理架构"段落 + 那里的 coverage gap 表格。
+
+**反例**:
+
+- ❌ 看到 gov-mcp 报告 `deny_commands: 0` 立刻想"应该把 `ystar setup --yes` 复制进 AGENTS.md"(Finding 4 α 方案,被 Board 否决)
+- ❌ 假设"contract source 必须 single source of truth"(治理工具的常见误解)
+- ❌ 用 LLM 解析 contract 把 regex 解析覆盖率从 70% 提到 95%(δ 方案,违反 Iron Rule 1)
+- ❌ "两个 db / 两个 contract / 两个 enforcement layer 看起来很乱,合并成一个吧"——合并会变成 single point of failure + 跨层耦合
+- ❌ 把"配置不同步"理解为 bug 而不是 feature
+
+**为什么这条 DNA 重要**: Ethan 在 GOV-005 Q1 完成后,新 gov_doctor 报 `L1_06_engine_config: deny_commands: 0`,**第一反应是把它当成 layered defense gap 报上来 + 列了 4 个候选修复方案**(α/β/γ/δ),其中 3 个在向"合并 contract source"方向走。Board 直接否决 α/β/δ,选 γ(documentation only),并解释"两套系统各管各的,不是漏洞,是设计"。这一次的判断错误如果不蒸馏成 DNA,下次会再犯。
+
+**来源**: Board GOV-005 Finding 4 decision (2026-04-09)。直接引用 Board 原话: "**deny_commands 在 .ystar_session.json 里由 ystar hook 执行,这是正确的架构分工——hook 管命令层,gov-mcp 管行为层。两套系统各管各的,不是漏洞,是设计**。"
+
+**写入**:
+- `governance/INTERNAL_GOVERNANCE.md` 新增"分层治理架构 (Layered Defense)"段落 + coverage gap 表格 + ASCII 架构图
+- `governance/DNA_LOG.md` 本条目
+- 未来 GOV-006 Intent Verification 实施时,record_intent.py 应该把"是否在试图合并两层 contract"加进 intent verification checklist
+
+---
+
 ## 蒸馏者签名
 
 每条 DNA 由 Samantha Lin 提取并写入。

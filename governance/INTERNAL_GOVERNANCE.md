@@ -122,6 +122,103 @@ Level 3 → 反事实提案 → CEO转交 → Board批准/否决 → 执行 → 
 
 ---
 
+## 分层治理架构 (Layered Defense, GOV-005 Finding 4)
+
+Y\* Bridge Labs 的**治理执行**分两层,每层有自己的契约源,**by-design 不是 redundancy**。这和上面的"决策权限层级"是两个独立维度:
+
+- **决策权限层级** (Level 1/2/3) 回答的是"谁来决定?"
+- **分层治理架构** (Layer 1 命令层 / Layer 2 行为层) 回答的是"谁来执行?"
+
+两个维度互相正交,任何一个 directive 同时受两组规则约束。
+
+### Layer 1: 命令层(ystar Python hook)
+
+- **契约源**: `.ystar_session.json` 的 `deny_commands`、`deny`、`obligation_agent_scope`、`restricted_write_paths`、`delegation_chain` 等结构化字段
+- **执行点**: ystar Python hook (PreToolUse / PostToolUse) 在 Claude Code 的 tool layer 拦截
+- **覆盖**: 所有走 Claude Code tool layer 的 file ops、bash commands、edits
+- **典型 catch**: `ystar setup --yes` (GOV-005 Part 3 / AMENDMENT-001)、写 `/etc`、`rm -rf`、AGENTS.md 修改尝试
+- **运行时刻**: 本地 Mac mini Python 进程,响应 Claude Code hook 调用
+
+### Layer 2: 行为层(gov-mcp MCP server)
+
+- **契约源**: `AGENTS.md` 的 markdown prose,通过 `gov-mcp` 的 regex parser 翻译成 `IntentContract`
+- **执行点**: gov-mcp 的 `gov_check` / `gov_enforce` MCP 工具,在每次 MCP client 调用工具时拦截
+- **覆盖**: 所有走 MCP 协议的 tool call(自然语言意图层面的 ALLOW/DENY)
+- **典型 catch**: 合约范围外的工具使用、agent_id 越权、跨 domain 调用、监督式 agent 行为模式
+- **运行时刻**: 本地 Mac mini gov-mcp server (PID 监听 :7922 SSE),响应 MCP client 请求
+
+### 为什么是两层而不是一层?
+
+GOV-005 Finding 4 提出了 4 个候选合并方案,Board 全部否决:
+
+| 候选 | 做什么 | Board 否决理由 |
+|---|---|---|
+| α | 把 `.ystar_session.json` 的 `deny_commands` 复制到 `AGENTS.md` | **制造 redundancy + 同步漂移**: 一个文件改了另一个没改 → 两层规则不一致 → 哪一层是真相? |
+| β | 改 gov-mcp 产品代码,让它同时读 `AGENTS.md` + `.ystar_session.json` | **跨 repo 改产品** = Level 3 + gov-mcp release 周期耦合 + 长期工程债 |
+| γ | **接受分层 by-design,文档讲清责任域**(本节) | **采纳** ✅ |
+| δ | 启用 `YSTAR_LLM_PROVIDER=anthropic`,让 gov-mcp 用 LLM 解析 `AGENTS.md` 提高 contract coverage | **违反 Iron Rule 1 (Deterministic Enforcement)**: LLM 进 ALLOW/DENY check() 路径 = 治理可被 prompt-injected。Y\*gov 的核心卖点之一就是"治理路径不带 LLM",自己破坏这个卖点 = 自杀 |
+
+### 正确的心智模型
+
+**两个 contract source,两个执行点,两个责任域,任何客户端同时受两层保护**:
+
+```
+      ┌──────────────────────────────────────────┐
+      │ Client (Claude Code / spawned subprocess)│
+      └──────┬──────────────────────┬────────────┘
+             │                      │
+   tool call                   MCP request
+   (file/bash/edit)            (gov_check/gov_exec)
+             │                      │
+             ▼                      ▼
+   ┌─────────────────┐    ┌──────────────────┐
+   │ Layer 1         │    │ Layer 2          │
+   │ ystar hook      │    │ gov-mcp server   │
+   │ (PreToolUse)    │    │ (port 7922 SSE)  │
+   ├─────────────────┤    ├──────────────────┤
+   │ contract source:│    │ contract source: │
+   │ .ystar_session  │    │ AGENTS.md        │
+   │ .json           │    │ (regex parsed)   │
+   ├─────────────────┤    ├──────────────────┤
+   │ enforces:       │    │ enforces:        │
+   │ - deny_commands │    │ - intent contract│
+   │ - file deny     │    │ - delegation chain│
+   │ - obligation    │    │ - agent_id scope │
+   │   triggers      │    │ - MCP tool ALLOW │
+   └─────────────────┘    └──────────────────┘
+```
+
+- 走 Claude Code tool layer(file ops、bash、edit)→ **Layer 1 (ystar hook) 拦截**
+- 走 MCP 协议(MCP tool calls)→ **Layer 2 (gov-mcp) 拦截**
+- 同一个动作如果两层都覆盖,**会被两层都检查一遍**
+
+**这不是 redundancy,这是 defense-in-depth**。两层任何一层放过,另一层有机会拦;两层任何一层 down,另一层有机会兜底。
+
+### 配置不同步是 feature 不是 bug
+
+- `.ystar_session.json` 改 `deny_commands` 不需要同步到 `AGENTS.md`
+- `AGENTS.md` 改 contract prose 不需要同步到 `.ystar_session.json`
+- 两个文件**单独演化**,Board 在改任何一个时不需要考虑另一个
+- 这降低了 cognitive load,代价是每个 client 必须知道**两个执行点都存在**
+
+**如果未来有人提议"统一 contract source 简化架构",立刻引用 GOV-005 Finding 4 决策 + 本节 + Iron Rule 1**。这是 Y\*gov 哲学的硬约束。
+
+### 已知 coverage gap (by-design)
+
+| 拦截能力 | Layer 1 (ystar hook) | Layer 2 (gov-mcp) |
+|---|---|---|
+| `ystar setup --yes` | ✅ AMENDMENT-001 | ❌ (在 .ystar_session.json 不在 AGENTS.md) |
+| `rm -rf` / `sudo` / `DROP TABLE` | ✅ deny_commands | ❌ |
+| 写 `/etc` `/root` `/production` | ✅ deny | ⚠️ regex 0.7 confidence,部分覆盖 |
+| GOV-001 obligation 跟踪 | ✅ obligation_agent_scope | ✅ OmissionEngine (内部) |
+| AGENTS.md 不可变 | ✅ Y\*gov hook (commit 90ffd4f) | (gov-mcp 自己读 AGENTS.md,不修改) |
+| Spawned MCP tool calls | ❌ (hook 不在 MCP layer) | ✅ gov_check 拦截 |
+| Agent_id 越权 | ⚠️ restricted_write_paths(部分) | ✅ delegation chain |
+
+**这些 gap 是 by-design 的两层分工**,不是 bug list。要把某个 gap 关掉,问题不是"应该关",而是"应该让哪一层关",因为关错层会破坏单层心智模型的简洁性。
+
+---
+
 ## 来源
 
 Board GOV-005 directive (2026-04-09) 第二部分。本文件由 Secretary 在
