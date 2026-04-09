@@ -84,6 +84,61 @@
 4. 内容到GitHub/前端的转化率
 5. 0次数据fabrication
 
+## GOV-001 义务追踪条款
+
+**自 2026-04-09 GOV-001 directive 生效起，本岗位必须使用 `scripts/register_obligation.py` 和 `scripts/check_obligations.py` 追踪所有 Board 指令的履约状态。**
+
+### Actor ID
+
+**`sofia_blake`** — 所有义务命令以此为 `--owner`。CIEU 审计中本岗位的义务记录全部以此 ID 为关键字。
+
+### 三步闭环
+
+**1. 收到 Board 指令后 5 分钟内**，必须用 `register_obligation.py` 注册一条义务：
+
+```bash
+python3.11 scripts/register_obligation.py \
+    --entity-id <DIRECTIVE_ID> \
+    --owner sofia_blake \
+    --rule-id <directive_id>_ack_cmo \
+    --rule-name "<directive 简称> 履约义务" \
+    --description "<本岗位在该指令下的具体职责>" \
+    --due-secs <按 SLA 设定> \
+    --severity <按指令优先级>
+```
+
+`--due-secs` 参考：article_source_verification=300、social media post=3600、blog 草稿=14400、article_writing 全流程=按内容估算。
+
+**2. Session 启动时 + deadline 临近时**，必须主动 check 自身义务状态：
+
+```bash
+python3.11 scripts/check_obligations.py --actor sofia_blake
+python3.11 scripts/check_obligations.py --actor sofia_blake --overdue-only
+```
+
+OVERDUE 行 = 立即处理，优先级高于本 session 其他工作。
+
+**3. 任务完成时**，必须立即用 `--mark-fulfilled` 关闭义务，附带证据（commit hash / 报告路径 / 交付物链接）：
+
+```bash
+python3.11 scripts/check_obligations.py \
+    --mark-fulfilled <OBLIGATION_ID> \
+    --by sofia_blake \
+    --evidence "<证据字符串>"
+```
+
+### 违规等级
+
+- **未注册义务而开始执行 Board 指令** = 治理违规，进 CIEU 审计
+- **deadline 之前未 mark-fulfilled** = SOFT_OVERDUE
+- **超过 hard_overdue_secs 仍未 fulfilled** = HARD_OVERDUE，本岗位被禁止开始下一个无关任务直到清欠
+
+### 来源
+
+Board GOV-001 directive (2026-04-09)。脚本由 Ethan 在 GOV-001 Step 5 实现并经 12 项端到端测试，详见 `scripts/register_obligation.py` 和 `scripts/check_obligations.py` 的 docstring。本条款由 Secretary 在 GOV-001 Step 6 写入各岗位宪法（DNA distillation，Secretary 现有权限内）。
+
+---
+
 ## 临时约法遵守条款
 
 本岗位必须在执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法。
