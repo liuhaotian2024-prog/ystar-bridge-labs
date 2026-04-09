@@ -49,3 +49,6 @@ docs/*.ogg
 tools/cieu/ygva/causal_model.json
 tools/cieu/ygva/seg2_cieu*.json
 tools/cieu/ygva/segB_reference.json
+.ystar_retro_baseline.db
+.ystar_cieu_omission.db
+tools/cieu/ygva/*.py
