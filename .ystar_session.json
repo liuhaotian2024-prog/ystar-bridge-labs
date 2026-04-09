@@ -269,10 +269,10 @@
   },
   "restricted_write_paths": {
     "DIRECTIVE_TRACKER.md": [
-      "ystar-ceo"
+      "ceo"
     ],
     "memory/session_handoff.md": [
-      "ystar-ceo"
+      "ceo"
     ]
   },
   "ceo_deny_paths": [
