@@ -28,5 +28,5 @@
 | 执行人 | Ethan Wright |
 | 执行状态 | 已完成（执行层）|
 | 执行时间 | 2026-04-09 |
-| 执行commit | (filled in by next commit) |
+| 执行commit | `2f4d2e8` |
 | 备注 | deny_commands已在.ystar_session.json生效（GOV-005 Part 3 directive 改写了执行路径，绕开AGENTS.md hook block）。AGENTS.md文档同步待Board下次直接编辑时补充，不阻塞安全性。机器层面任何agent执行`ystar setup --yes`将被Y*gov hook即时拦截。|
