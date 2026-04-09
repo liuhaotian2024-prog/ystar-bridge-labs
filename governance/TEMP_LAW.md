@@ -17,7 +17,7 @@
 - **负责人**：CEO Aiden
 - **内容**：用真实办公室照片替换现有场景，叠加角色热点，接入AI对话。串行执行，每步需Board确认。第一步：找3张候选照片供Board选定。
 - **验收标准**：Board逐步确认每一步完成
-- **状态**：执行中
+- **状态**：**生效中**（GOV-005 Part 5 状态化标注，2026-04-09）
 
 ### TL-004 · 人物生成与场景集成
 - **发布**：2026-04-06 ET · Day 12
@@ -25,7 +25,7 @@
 - **负责人**：CEO Aiden Liu
 - **内容**：为6名团队成员生成AI照片→Avaturn 3D头像→Three.js场景集成。串行执行：Samantha Lin优先（生成照片→3D头像→放入场景→交互），Board逐步确认后依次完成其余5人。审美标准：全员高颜值，符合全球主流审美，好莱坞明星级别，亚裔女性参照韩国女明星标准。并行任务：照片热点版独立push上线，不互相阻塞。
 - **验收标准**：Board逐步确认每个角色的外观、场景位置和交互效果
-- **状态**：执行中
+- **状态**：**生效中**（GOV-005 Part 5 状态化标注，2026-04-09）
 
 ### TL-008 · Samantha第一层视频分镜头脚本（68秒）
 - **发布**：2026-04-08 ET · Day 14
@@ -63,18 +63,8 @@
 **台词**：`We're at the very beginning. This whole experiment — a company you can walk into and actually talk to — is still rough around the edges. We'd love your feedback. Tell us what's missing. Tell us what could be better. You're not just a visitor here — you're part of what this becomes.`
 **动作**：说"very beginning"语速略放慢；说"rough around the edges"时**微微耸肩**，表情坦诚；说"We'd love your feedback"时双手轻合于胸前；说"you're part of what this becomes"时右手向镜头方向伸出邀请姿态；结束保持微笑静止2秒
 
-- **状态**：执行中
+- **状态**：**生效中**（GOV-005 Part 5 状态化标注，2026-04-09）
 - **执行方式**：每段对应一个CIEU迭代，可灵续写，Board逐段确认Δ→0
-
----
-
-### TL-007 · CEO岗位宪法v2.0 — Aiden成为Board数字分身
-- **发布**：2026-04-07 ET · Day 13
-- **发布人**：Board
-- **负责人**：Secretary Samantha Lin（存档）
-- **内容**：CEO岗位宪法升级至v2.0。核心变更：(1) Aiden正式成为Board数字分身 (2) 植入Board真实思维DNA（CIEU诊断框架、决策风格、执行标准、管理哲学）(3) 确立CIEU双向架构——主动型（决策指导，Δ→0）和被动型（Y*gov记录溯源治理） (4) 产品知识、说话风格、红线规则全面刻入
-- **验收标准**：agents/CEO.md v2.0 写入完成
-- **状态**：已完成 ✅
 
 ---
 
@@ -87,7 +77,7 @@
 - **内容**：确立6人团队官方姓名和形象定位，写入WORKING_STYLE.md和岗位宪法
 - **验收标准**：角色卡写入+6岗位第一行更新+commit提交
 - **关闭时间**：2026-04-06 ET · Day 12 · Board确认，永久有效
-- **状态**：已关闭 ✅
+- **状态**：**已关闭→2026-04-06**（Board 确认完成 + 永久生效，已升级为 governance/WORKING_STYLE.md 团队角色卡章节）
 
 ### TL-002 · 创建WORKING_STYLE.md并纳入宪法
 - **发布**：2026-04-06 ET · Day 12
@@ -96,4 +86,13 @@
 - **内容**：创建工作文化宪法(WORKING_STYLE.md)，纳入所有岗位宪法引用，加入Y*gov治理
 - **验收标准**：文件创建+6岗位引用+commit提交，Board确认后关闭
 - **关闭时间**：2026-04-06 ET · Day 12 · Board确认
-- **状态**：已关闭 ✅
+- **状态**：**已升级→governance/WORKING_STYLE.md**（永久宪法层，2026-04-06 关闭）
+
+### TL-007 · CEO岗位宪法v2.0 — Aiden成为Board数字分身
+- **发布**：2026-04-07 ET · Day 13
+- **发布人**：Board
+- **负责人**：Secretary Samantha Lin（存档）
+- **内容**：CEO岗位宪法升级至v2.0。核心变更：(1) Aiden正式成为Board数字分身 (2) 植入Board真实思维DNA（CIEU诊断框架、决策风格、执行标准、管理哲学）(3) 确立CIEU双向架构——主动型（决策指导，Δ→0）和被动型（Y*gov记录溯源治理） (4) 产品知识、说话风格、红线规则全面刻入
+- **验收标准**：agents/CEO.md v2.0 写入完成
+- **关闭时间**：2026-04-07 ET · Day 13
+- **状态**：**已升级→agents/CEO.md v2.0**（CEO 岗位宪法第二/三/四章常驻条款，2026-04-07 完成。GOV-005 Part 5 移入归档区）
