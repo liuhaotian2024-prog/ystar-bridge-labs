@@ -30,16 +30,15 @@
       "ystar setup --yes"
     ],
     "obligation_timing": {
-      "monthly_financial_summary": 86400.0,
-      "weekly_cash_flow": 604800.0,
-      "autonomous_daily_report": 86400.0,
-      "session_handoff_update": 300.0,
-      "path_a_mandatory_report": 300.0,
-      "pipeline_health_verify": 1800.0,
-      "p2_task_definition_complete": 600.0,
-      "knowledge_gap_bootstrap": 1800.0,
-      "cfo_token_recording": 600.0,
-      "directive_tracker_update": 300.0
+      "directive_acknowledgement": 120,
+      "intent_declaration": 300,
+      "progress_update": 1800,
+      "task_completion_report": 3600,
+      "knowledge_update": 21600,
+      "theory_library_daily": 86400,
+      "autonomous_daily_report": 86400,
+      "gemma_session_daily": 86400,
+      "weekly_roadmap_audit": 604800
     }
   },
   "obligation_agent_scope": {

@@ -235,6 +235,24 @@ def _main():
         # ── Run check_hook (Policy compilation happens inside with caching) ──
         result = check_hook(payload)
 
+        # ── GOV-010: OmissionScheduler tick (at most once per 5 min) ──────
+        # Piggybacks on every PreToolUse call. The scheduler's should_scan()
+        # rate-limits so actual scans happen at most once per interval.
+        # Fail-open: scan errors are logged but never block the tool call.
+        try:
+            from ystar.governance.omission_engine import OmissionEngine
+            from ystar.governance.omission_scheduler import OmissionScheduler
+            if not hasattr(_main, '_omission_scheduler'):
+                _engine = OmissionEngine()  # defaults to SQLite store (GOV-010)
+                _main._omission_scheduler = OmissionScheduler(
+                    _engine, interval_seconds=300, log_fn=log
+                )
+            scan_result = _main._omission_scheduler.tick()
+            if scan_result.get("scanned") and scan_result.get("violations"):
+                log(f"[omission-scan] {len(scan_result['violations'])} violation(s) found")
+        except Exception as scan_exc:
+            log(f"[omission-scan] fail-open: {scan_exc}")
+
         # Output ONLY valid JSON to stdout
         sys.stdout.write(json.dumps(result))
 

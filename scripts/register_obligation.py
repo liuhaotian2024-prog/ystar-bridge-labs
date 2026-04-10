@@ -43,7 +43,7 @@ from ystar import (  # noqa: E402  (intentional after warnings filter)
     EntityStatus,
     GEventType,
     GovernanceEvent,
-    InMemoryOmissionStore,
+    # GOV-010: switched from InMemoryOmissionStore to persistent default
     OmissionEngine,
     OmissionRule,
     TrackedEntity,
@@ -114,7 +114,8 @@ def build_engine_and_rule(args: argparse.Namespace) -> tuple[OmissionEngine, Omi
         severity=Severity(args.severity),
     )
     registry.register(rule)
-    engine = OmissionEngine(store=InMemoryOmissionStore(), registry=registry)
+    # GOV-010: OmissionEngine now defaults to SQLite OmissionStore
+    engine = OmissionEngine(registry=registry)
     return engine, rule
 
 
