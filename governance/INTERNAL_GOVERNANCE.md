@@ -15,6 +15,48 @@ Y* Bridge Labs 内部所有决策按影响范围和可逆性划分为三级。
 
 ---
 
+### Level 0 — Agent 自发学习 (GOV-010 Phase 2)
+
+#### 触发条件
+
+Agent 在空闲时间发现认知 gap，主动决定填补。**不需要任何外部指令**。
+这是 `governance/WORKING_STYLE.md` 第九条空闲学习循环的合法分类。
+
+#### 边界（必须同时满足）
+
+- **只写** `knowledge/{role}/` 目录
+- **不写**任何保护文件（`governance/`、`agents/`、`README.md`、`scripts/record_intent.py`、`scripts/check_intents.py`）
+- **不**对外发布任何内容
+- **不**花费任何资源（API 调用等）——本地 Gemma 不算花费
+- **不**影响其他岗位
+
+#### 流程
+
+1. 声明意图：`python3.11 scripts/active_task.py start --actor {role} --task "..." --steps N --estimate-minutes M`
+2. 执行学习，写入 `knowledge/{role}/` 库
+3. 关闭任务：`python3.11 scripts/active_task.py complete --actor {role} --output "..." --note "..."`
+4. 在 daily report 里提及，**不需要单独汇报**
+
+**无需** record_intent。**无需** Board/CEO 确认。**无需** 反事实推理提案。
+但 active_task 的 CIEU 事件链（`INTENT_DECLARED` → `PROGRESS_UPDATED` →
+`INTENT_COMPLETED`）保证全程可审计。
+
+#### 违规
+
+- Level 0 期间**写了保护文件** → 立即升级为 Level 1 处理
+- Level 0 期间**对外发布** → `HARD_OVERDUE`
+- Level 0 任务超过 `estimate-minutes × 2` 仍未 complete → 自动标为
+  `INTENT_STALLED`（由 OmissionScheduler 的未来版本检测）
+
+#### 例子
+
+- CTO 在没有 Board 指令时，从 `task_type_map.md` 里选一个任务类型建理论库
+- CMO 自主研究一个新渠道的受众特征，写入 `knowledge/cmo/theory/`
+- Secretary 自主整理 `knowledge/secretary/gaps/` 里的 gap 并建对应的理论文件
+- 任何 agent 用 `local_learn.py --mode tasks` 跑反事实模拟
+
+---
+
 ### Level 1 — 岗位自决
 
 #### 触发条件

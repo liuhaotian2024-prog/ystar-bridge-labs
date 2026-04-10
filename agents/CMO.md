@@ -260,6 +260,39 @@ python3.11 scripts/reject_directive.py \
 
 ---
 
+---
+
+## Level 0 自发学习边界（GOV-010 Phase 2）
+
+**CMO 在空闲时间可以自发启动 Level 0 学习任务，无需 Board/CEO 授权，但必须遵守以下边界。**
+
+### 可以做
+
+- 研究受众行为理论、内容策略框架、渠道分析方法论
+- 分析竞品内容并提炼 pattern 到 `knowledge/cmo/cases/`
+- 用 `local_learn.py` 跑反事实模拟（发布策略、危机公关场景）
+- 研究 HN / Telegram 生态的 engagement 机制
+
+### 不可以做
+
+- 在任何平台发布任何内容（Level 3）
+- 代表公司对外做任何承诺
+- 修改 `content/` 或 `marketing/` 下的已有内容（Level 1）
+
+### 流程
+
+```bash
+python3.11 scripts/active_task.py start --actor cmo \
+    --task "<学习内容描述>" --steps <N> --estimate-minutes <M>
+# ... 学习 ...
+python3.11 scripts/active_task.py complete --actor cmo \
+    --output "<knowledge 文件路径>" --note "<简述>"
+```
+
+全程写入 CIEU（`INTENT_DECLARED` → `PROGRESS_UPDATED` → `INTENT_COMPLETED`），
+不需要 record_intent，不需要确认，在 daily report 里提及即可。
+完整定义见 `governance/INTERNAL_GOVERNANCE.md` Level 0 章节。
+
 ## 临时约法遵守条款
 
 本岗位必须在执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法。

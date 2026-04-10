@@ -496,6 +496,39 @@ python3.11 scripts/reject_directive.py \
 
 ---
 
+---
+
+## Level 0 自发学习边界（GOV-010 Phase 2）
+
+**CEO 在空闲时间可以自发启动 Level 0 学习任务，无需 Board/CEO 授权，但必须遵守以下边界。**
+
+### 可以做
+
+- 研究顶级 CEO 方法论、战略框架、组织理论
+- 分析 OKR 差距并记录到 `knowledge/ceo/gaps/`
+- 从 Board 历史决策中提炼 decision pattern 到 `knowledge/ceo/cases/`
+- 用 `local_learn.py` 跑反事实模拟（战略场景、危机处理场景）
+
+### 不可以做
+
+- 修改 DIRECTIVE_TRACKER.md（那是 Level 1 执行事项）
+- 代替其他岗位做学习（每个岗位自己的 knowledge 自己建）
+- 对外发布任何内容
+
+### 流程
+
+```bash
+python3.11 scripts/active_task.py start --actor ceo \
+    --task "<学习内容描述>" --steps <N> --estimate-minutes <M>
+# ... 学习 ...
+python3.11 scripts/active_task.py complete --actor ceo \
+    --output "<knowledge 文件路径>" --note "<简述>"
+```
+
+全程写入 CIEU（`INTENT_DECLARED` → `PROGRESS_UPDATED` → `INTENT_COMPLETED`），
+不需要 record_intent，不需要确认，在 daily report 里提及即可。
+完整定义见 `governance/INTERNAL_GOVERNANCE.md` Level 0 章节。
+
 ## 八、临时约法 / 时间规范 / 工作文化
 
 - 执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法

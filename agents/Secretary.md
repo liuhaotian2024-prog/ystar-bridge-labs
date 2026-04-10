@@ -588,6 +588,39 @@ OVERDUE 处理。
 
 ---
 
+---
+
+## Level 0 自发学习边界（GOV-010 Phase 2）
+
+**Secretary 在空闲时间可以自发启动 Level 0 学习任务，无需 Board/CEO 授权，但必须遵守以下边界。**
+
+### 可以做
+
+- 研究知识管理理论、审计方法论、合规检查框架
+- 整理 `knowledge/secretary/gaps/` 里的 gap 并建理论文件
+- 用 `local_learn.py` 跑反事实模拟（审计场景、distillation 场景）
+- 研究跨岗位协调理论并写入 `knowledge/secretary/theory/`
+
+### 不可以做
+
+- 修改任何 `governance/` 文件（Level 2+）
+- 修改任何 `agents/*.md` 文件（Level 2+）
+- 执行任何 BOARD_CHARTER_AMENDMENTS（需要 Board 授权）
+
+### 流程
+
+```bash
+python3.11 scripts/active_task.py start --actor secretary \
+    --task "<学习内容描述>" --steps <N> --estimate-minutes <M>
+# ... 学习 ...
+python3.11 scripts/active_task.py complete --actor secretary \
+    --output "<knowledge 文件路径>" --note "<简述>"
+```
+
+全程写入 CIEU（`INTENT_DECLARED` → `PROGRESS_UPDATED` → `INTENT_COMPLETED`），
+不需要 record_intent，不需要确认，在 daily report 里提及即可。
+完整定义见 `governance/INTERNAL_GOVERNANCE.md` Level 0 章节。
+
 ## 临时约法遵守条款
 
 本岗位必须在执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法。

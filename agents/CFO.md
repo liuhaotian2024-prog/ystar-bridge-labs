@@ -220,6 +220,39 @@ python3.11 scripts/reject_directive.py \
 
 ---
 
+---
+
+## Level 0 自发学习边界（GOV-010 Phase 2）
+
+**CFO 在空闲时间可以自发启动 Level 0 学习任务，无需 Board/CEO 授权，但必须遵守以下边界。**
+
+### 可以做
+
+- 研究 SaaS 财务建模、定价理论、风险评估框架
+- 分析内部 token 消耗数据并记录到 `knowledge/cfo/cases/`
+- 用 `local_learn.py` 跑反事实模拟（定价场景、现金流危机场景）
+- 学习投资评估方法论并写入 `knowledge/cfo/theory/`
+
+### 不可以做
+
+- 对外报出任何数字（Level 3）
+- 修改 `finance/` 下的任何已有文件（Level 1）
+- 做出任何资金调度决策
+
+### 流程
+
+```bash
+python3.11 scripts/active_task.py start --actor cfo \
+    --task "<学习内容描述>" --steps <N> --estimate-minutes <M>
+# ... 学习 ...
+python3.11 scripts/active_task.py complete --actor cfo \
+    --output "<knowledge 文件路径>" --note "<简述>"
+```
+
+全程写入 CIEU（`INTENT_DECLARED` → `PROGRESS_UPDATED` → `INTENT_COMPLETED`），
+不需要 record_intent，不需要确认，在 daily report 里提及即可。
+完整定义见 `governance/INTERNAL_GOVERNANCE.md` Level 0 章节。
+
 ## 临时约法遵守条款
 
 本岗位必须在执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法。
