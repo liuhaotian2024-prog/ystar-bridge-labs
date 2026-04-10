@@ -122,6 +122,7 @@ def cmd_start(args):
 
     task_id = f"task_{uuid.uuid4().hex[:12]}"
     now = time.time()
+    is_mission = getattr(args, 'mission', False)
     state = {
         "task_id": task_id,
         "actor": role,
@@ -130,6 +131,7 @@ def cmd_start(args):
         "current_step": 0,
         "estimate_minutes": args.estimate_minutes,
         "status": "active",
+        "mission": is_mission,
         "started_at": now,
         "last_update": now,
         "notes": [],
@@ -217,10 +219,62 @@ def cmd_complete(args):
     print(f"  task     : {current['task'][:60]}")
     print(f"  duration : {duration/60:.1f}min")
     print(f"  output   : {args.output}")
+
+    # Auto knowledge check if output is in knowledge/
+    _auto_knowledge_check(role, args.output)
+
+    # Mission mode: if the original task was --mission, auto-cycle
+    if current.get("mission"):
+        print(f"\n[mission] Autonomous Mission cycle complete. "
+              f"Next cycle can be started with:")
+        print(f"  python3.11 scripts/active_task.py start --actor {role} "
+              f"--task \"{current['task']}\" --steps {current['total_steps']} "
+              f"--estimate-minutes {current.get('estimate_minutes', 30)} --mission")
+
     return 0
 
 
 # ─── main ────────────────────────────────────────────────────────────
+
+def _auto_knowledge_check(role, output_path):
+    """After complete, if output is in knowledge/, run contradiction check."""
+    if not output_path or "knowledge/" not in output_path:
+        return
+    target = REPO_ROOT / output_path
+    if not target.exists() or not target.suffix == ".md":
+        return
+    try:
+        from knowledge_check import check_file, load_config
+        endpoints, model, cieu_db = load_config()
+        print(f"\n[knowledge-check] scanning {target.name} for contradictions...")
+        contradictions = check_file(target, role, endpoints, model, cieu_db)
+        if contradictions:
+            print(f"[knowledge-check] ⚠ {len(contradictions)} contradiction(s) → CIEU")
+        else:
+            print(f"[knowledge-check] ✓ no contradictions found")
+    except Exception as e:
+        print(f"[knowledge-check] skip (fail-open): {e}")
+
+
+def cmd_mission_status(args):
+    """Show all active/completed missions across roles."""
+    print("Active tasks by role:")
+    print("-" * 60)
+    found = False
+    for role in sorted(ROLES):
+        state = load_state(role)
+        if state:
+            found = True
+            status = state.get("status", "?")
+            task = state.get("task", "?")[:50]
+            step = state.get("current_step", 0)
+            total = state.get("total_steps", 0)
+            icon = {"active": "▶", "completed": "✓", "stalled": "⚠"}
+            print(f"  {icon.get(status, '?')} {role:<10} [{status}] {task} ({step}/{total})")
+    if not found:
+        print("  (no active tasks)")
+    return 0
+
 
 def main():
     p = argparse.ArgumentParser(
@@ -233,6 +287,8 @@ def main():
     s.add_argument("--task", required=True, help="What you're going to do")
     s.add_argument("--steps", type=int, required=True, help="Number of steps")
     s.add_argument("--estimate-minutes", type=int, required=True, help="Estimated duration")
+    s.add_argument("--mission", action="store_true",
+                   help="Mark as Autonomous Mission (auto-cycles, doesn't truly close)")
 
     u = sub.add_parser("update", help="Report progress on active task")
     u.add_argument("--actor", required=True)
@@ -244,12 +300,21 @@ def main():
     c.add_argument("--output", required=True, help="Output path or description")
     c.add_argument("--note", default="", help="Completion note")
 
+    ms = sub.add_parser("mission-status", help="Show all active tasks across roles")
+    ms.add_argument("--actor", default=None, help="Filter by role (optional)")
+
     args = p.parse_args()
     if not args.command:
         p.print_help()
         return 2
 
-    return {"start": cmd_start, "update": cmd_update, "complete": cmd_complete}[args.command](args)
+    handlers = {
+        "start": cmd_start,
+        "update": cmd_update,
+        "complete": cmd_complete,
+        "mission-status": cmd_mission_status,
+    }
+    return handlers[args.command](args)
 
 
 if __name__ == "__main__":
