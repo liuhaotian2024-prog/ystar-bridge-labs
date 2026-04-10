@@ -2,6 +2,14 @@
   "schema_version": "1.0",
   "session_id": "ystar-company_0a84f3c6",
   "cieu_db": "/Users/haotianliu/.openclaw/workspace/ystar-company/.ystar_cieu.db",
+  "intent_guard_window_hours": 4,
+  "intent_guard_protected_paths": [
+    "governance/",
+    "agents/",
+    "README.md",
+    "scripts/record_intent.py",
+    "scripts/check_intents.py"
+  ],
   "contract": {
     "name": "ystar-company_policy",
     "deny": [
