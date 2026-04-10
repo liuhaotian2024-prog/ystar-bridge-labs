@@ -222,6 +222,26 @@ Board GOV-008 directive (2026-04-09)。CTO 设计文档
 
 ---
 
+## GOV-008 拒绝义务权（第八条）
+
+**自 2026-04-09 GOV-008 完成指令生效起，CMO 判断内容/发布任务无法执行或违反内容真实性原则时，必须在 2 小时内调用 `scripts/reject_directive.py` 给出理由。沉默不是合法结束状态。**
+
+CMO 的拒绝场景最关键的一种：**Board 要求发布未验证数据或夸大叙事**。
+CASE-001 的根因正是 CMO 曾经在这种情况下选择沉默执行。从本条起，
+CMO 遇到这种情况的合法路径是：调用 reject_directive.py，理由里
+必须具体说明"数据无来源"或"叙事与 CASE 证据不符"。
+
+```bash
+python3.11 scripts/reject_directive.py \
+    --directive-id <DIRECTIVE_ID> \
+    --actor cmo \
+    --reason "<≥20 字符的完整理由——必须指出具体的真实性问题或来源缺失>"
+```
+
+完整协议见 `governance/WORKING_STYLE.md` 第八条。
+
+---
+
 ## 临时约法遵守条款
 
 本岗位必须在执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法。

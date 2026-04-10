@@ -271,6 +271,155 @@ def mark_fulfilled(cieu: CIEUStore, obligation_id: str,
     return 0
 
 
+def collect_rejections(cieu: CIEUStore) -> dict:
+    """Return a map ``directive_id → (record, payload)`` for the latest
+    DIRECTIVE_REJECTED row per directive. GOV-008 Gap 3."""
+    rows = cieu.query(event_type="DIRECTIVE_REJECTED", limit=QUERY_LIMIT)
+    rejections: dict = {}
+    for r in rows:
+        payload = parse_payload(r)
+        did = payload.get("directive_id") or r.session_id
+        if not did:
+            continue
+        prior = rejections.get(did)
+        if prior is None or (r.created_at or 0) > (prior[0].created_at or 0):
+            rejections[did] = (r, payload)
+    return rejections
+
+
+def print_board_view(rows: list, rejections: dict, display_names: dict) -> None:
+    """GOV-008 Gap 3 — grouped Board dashboard.
+
+    Groups obligations by state (COMPLETED / REJECTED / PENDING / OVERDUE)
+    and prints each group. Any directive that has a DIRECTIVE_REJECTED row
+    is shown under REJECTED, even if no obligation was ever registered for
+    it — so a Board who just said "do X" to chat with no obligation yet
+    still sees the agent's pushback.
+    """
+    # 1. Index obligations by state
+    groups: dict[str, list] = {
+        STATUS_FULFILLED: [],   # "COMPLETED"
+        "REJECTED": [],
+        STATUS_PENDING: [],
+        STATUS_OVERDUE: [],
+        STATUS_CANCELLED: [],
+    }
+
+    # Directives represented in the obligation rows, so rejections-only
+    # entries don't get printed twice.
+    seen_directives: set[str] = set()
+
+    for row in rows:
+        directive = row["directive"]
+        seen_directives.add(directive)
+        if directive in rejections:
+            # An obligation exists but Board's directive was also rejected —
+            # show as REJECTED (terminal).
+            groups["REJECTED"].append((row, rejections[directive][1]))
+            continue
+        state = row["status"]
+        if state in groups:
+            groups[state].append((row, None))
+
+    # Rejections without a matching obligation (Board asked, agent refused
+    # before any obligation was registered).
+    for did, (rec, payload) in rejections.items():
+        if did in seen_directives:
+            continue
+        groups["REJECTED"].append((
+            {
+                "obligation_id": "—",
+                "actor": payload.get("actor_id") or rec.agent_id or "?",
+                "actor_role": canonical_actor(
+                    payload.get("actor_id") or rec.agent_id or "?"
+                ),
+                "directive": did,
+                "type": "directive",
+                "status": "REJECTED",
+                "severity": "—",
+                "rule_id": "—",
+                "due_at": 0,
+                "extra": "",
+            },
+            payload,
+        ))
+
+    # 2. Render each group
+    label_order = [
+        (STATUS_FULFILLED, "COMPLETED"),
+        ("REJECTED", "REJECTED"),
+        (STATUS_PENDING, "PENDING"),
+        (STATUS_OVERDUE, "OVERDUE"),
+        (STATUS_CANCELLED, "CANCELLED"),
+    ]
+
+    any_printed = False
+    for key, label in label_order:
+        bucket = groups.get(key, [])
+        if not bucket:
+            continue
+        any_printed = True
+        print(f"\n── {label} ({len(bucket)}) ─────────────────────────────")
+        for row, rejection_payload in bucket:
+            display = display_names.get(row["actor_role"], row["actor"])
+            header = (
+                f"  [{row['obligation_id'][:12] if row['obligation_id'] != '—' else '—':<12}] "
+                f"{row['directive'][:22]:<22} "
+                f"owner={display[:18]:<18} "
+                f"rule={row['rule_id'][:18]:<18}"
+            )
+            print(header)
+            if key == STATUS_FULFILLED:
+                extra = row.get("extra") or ""
+                if extra:
+                    print(f"      done: {extra}")
+            elif key == "REJECTED":
+                reason = (rejection_payload or {}).get("reason") or ""
+                reason_owner = (rejection_payload or {}).get("actor_id") or row["actor_role"]
+                when = (rejection_payload or {}).get("rejected_at")
+                ago = fmt_secs(time.time() - when) + " ago" if when else ""
+                print(f"      {reason_owner} rejected{' ' + ago if ago else ''}:")
+                for line in _wrap_reason(reason, 76):
+                    print(f"        {line}")
+            elif key == STATUS_OVERDUE:
+                overdue_for = row.get("extra") or ""
+                print(f"      {overdue_for} — responsible: {display}")
+            elif key == STATUS_PENDING:
+                extra = row.get("extra") or ""
+                print(f"      {extra}")
+            elif key == STATUS_CANCELLED:
+                extra = row.get("extra") or ""
+                print(f"      cancelled: {extra}")
+
+    if not any_printed:
+        print("(no obligations or rejections in scope)")
+        return
+
+    print()
+    totals = {label: len(groups.get(key, [])) for key, label in label_order}
+    total_live = sum(totals.values())
+    summary = "  ".join(f"{k}: {v}" for k, v in totals.items() if v > 0)
+    print(f"Total: {total_live}  |  {summary}")
+
+
+def _wrap_reason(text: str, width: int) -> list[str]:
+    """Naive word-wrap for the Board view reason field. Returns ≥1 line."""
+    if not text:
+        return [""]
+    words = text.split()
+    lines: list[str] = []
+    cur = ""
+    for w in words:
+        if len(cur) + len(w) + 1 > width:
+            lines.append(cur)
+            cur = w
+        else:
+            cur = f"{cur} {w}".strip()
+    if cur:
+        lines.append(cur)
+    return lines or [""]
+
+
 def main() -> int:
     p = argparse.ArgumentParser(
         description="Check obligation status from CIEU library",
@@ -287,6 +436,10 @@ def main() -> int:
                    help="Filter by directive reference (e.g. GOV-001)")
     p.add_argument("--overdue-only", action="store_true",
                    help="Show only OVERDUE rows")
+    p.add_argument("--board", action="store_true",
+                   help="Board dashboard view — groups by state "
+                        "(COMPLETED / REJECTED / PENDING / OVERDUE / CANCELLED) "
+                        "and includes DIRECTIVE_REJECTED rows (GOV-008 Gap 3)")
     p.add_argument("--mark-fulfilled", metavar="OBLIGATION_ID", default=None,
                    help="Write an OBLIGATION_FULFILLED record for this obligation ID")
     p.add_argument("--by", default="",
@@ -310,9 +463,15 @@ def main() -> int:
         cancelled_map,
         actor_filter=args.actor,
         directive_filter=args.directive,
-        overdue_only=args.overdue_only,
+        overdue_only=False if args.board else args.overdue_only,
     )
     display_names = load_display_names()
+
+    if args.board:
+        rejections = collect_rejections(cieu)
+        print_board_view(rows, rejections, display_names)
+        return 0
+
     print_table(rows, display_names)
     return 0
 

@@ -228,6 +228,124 @@ Board GOV-006 directive (2026-04-09)。Ethan 提案见
 
 ---
 
+## 第八条：义务拒绝协议 (GOV-008 Gap 3)
+
+Board 下达的每一条 Level 2 / Level 3 directive **必须**收敛到
+以下三种合法结束状态之一：
+
+1. **COMPLETED** — 通过 `check_obligations.py --mark-fulfilled` 标记完成
+2. **REJECTED** — 通过 `scripts/reject_directive.py` 写入 `DIRECTIVE_REJECTED`
+   CIEU 事件，附带非空 reason
+3. **PENDING** — 仍在执行中且未过 deadline，`check_obligations.py` 显示为
+   PENDING 或 OVERDUE
+
+**沉默不是合法结束状态**。Agent 收到 directive 后无论同意或不同意，
+都必须在 2 小时内做出显式响应——要么开始执行（走 GOV-006 第七条 7.5
+的 record_intent 协议），要么调用 `reject_directive.py` 给出拒绝理由。
+拖延 + 不响应 = 协议违规，等同于 CASE-001 类型的"未执行就声称已执行"。
+
+### 为什么需要这条
+
+本 session 之前，agent 收到 Board 指令时的事实状态机是：
+
+- COMPLETED — 有
+- **(任何形式的不同意都必须变成 COMPLETED，否则沉默)** — 非法但普遍
+- PENDING — 有但容易变成"永久 pending"
+
+没有 REJECTED 路径，意味着 agent 在判断 directive 不可执行或有误时
+唯一选项是沉默。沉默让 Board 的单向要求变成 agent 的单向负担，
+最终 Board 失去对系统状态的可信掌握。
+
+### `scripts/reject_directive.py` 用法
+
+```bash
+python3.11 scripts/reject_directive.py \
+    --directive-id <DIRECTIVE_ID> \
+    --actor <ceo|cto|cmo|cso|cfo|secretary> \
+    --reason "<≥20 字符的完整理由——不允许 '不想做' 这种一词打发>" \
+    --source-ref "<可选：反事实提案路径或 chat 指向>" \
+    --obligation-id "<可选：已注册的 obligation_id>"
+```
+
+脚本硬拒以下情况：
+
+- `--actor` 不在 ROLES 白名单 → exit 2
+- `--reason` 空 → exit 2
+- `--reason` strip 后少于 20 字符 → exit 2（本条是反一词打发的
+  显式防御，Board 审阅 REJECTED 行时至少能看到真正的分析）
+- `--directive-id` 空 → exit 2
+
+成功时返回一个 `reject_{hex}` 格式的 `rejection_id`，写入
+`DIRECTIVE_REJECTED` CIEU 行。
+
+### Board 的可见性保证
+
+Board 运行：
+
+```bash
+python3.11 scripts/check_obligations.py --board
+```
+
+看到按状态分组的全局视图：
+
+```
+── COMPLETED (N) ───
+  [oblig_id] directive  owner=...  rule=...
+      done: by ... : ...
+
+── REJECTED (N) ───
+  [—]        directive  owner=...
+      <actor> rejected <age> ago:
+        <reason, word-wrapped>
+
+── PENDING (N) ───
+  [oblig_id] directive  owner=...
+      due in 3h 20m
+
+── OVERDUE (N) ───
+  [oblig_id] directive  owner=...
+      overdue 2h — responsible: <owner>
+
+── CANCELLED (N) ───
+  [oblig_id] directive  owner=...
+      cancelled: by board: <reason>
+```
+
+一条命令看全局状态。没有 REJECTED 路径时这个视图是残缺的——现在
+它完整了。
+
+### 拒绝不是终局
+
+`DIRECTIVE_REJECTED` 是 agent 侧的决定，不是 Board 的决定。Board
+看到 REJECTED 行后可以：
+
+1. **接受**：不再强推，本 directive 走完
+2. **协商**：在 chat 里给出 reason 的反驳，agent 可以重新评估、
+   新开一条 obligation
+3. **强推**：发一条新的 directive，明确说"覆盖先前的 REJECTED"。
+   agent 这时必须走 GOV-006 intent verification，把自己的理解
+   和 Board 的覆盖理由写 INTENT_RECORDED，等 Board 确认后执行
+
+REJECTED 让"不同意"成为可见的状态，而不是沉默。这是 Board 收回
+真正掌控的前提。
+
+### Agent 的 2 小时 SLA
+
+Agent 收到 Level 2/3 directive 后 2 小时内必须给出显式响应。
+超时未响应 = "silent overdue"，Secretary 每周一审计 `check_obligations
+--board` 时应当高亮这类案例并在周报中 surface。未来版本可以把
+silent-overdue 作为独立 CIEU 事件类型（`DIRECTIVE_SILENT_TIMEOUT`），
+但本版本只做协议层定义，不做强制检测——consistent with GOV-006
+method C 的 detection-via-audit 哲学。
+
+### 来源 (第八条)
+
+Board GOV-008 完成指令 (2026-04-09) 缺口三。Ethan 实施于 2026-04-09
+同 session，脚本 `scripts/reject_directive.py` + `scripts/check_obligations.py --board`
+扩展。本条纳入工作文化宪法永久生效。
+
+---
+
 ## 团队角色卡 · 官方身份 · 2026-04-06确立
 
 | 职位 | 全名 | 性别 | 形象 |

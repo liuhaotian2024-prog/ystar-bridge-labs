@@ -285,6 +285,24 @@ Board GOV-008 directive (2026-04-09)。CTO 设计文档
 
 ---
 
+## GOV-008 拒绝义务权（第八条）
+
+**自 2026-04-09 GOV-008 完成指令生效起，CTO 判断 directive 无法执行、设计有误或成本严重高于收益时，必须在 2 小时内调用 `scripts/reject_directive.py` 给出理由。沉默不是合法结束状态。**
+
+CTO 拒绝的场景包括但不限于：Board 的技术判断与实际情况不符、工程量远超预估、设计与已有架构冲突、有更优的 counterfactual 方案。任何一种情况下，CTO 应该先走第七条 GOV-005 反事实提案格式给出对比，**然后**（如果 Board 仍然坚持）调用 reject_directive.py 表达最终不同意。
+
+```bash
+python3.11 scripts/reject_directive.py \
+    --directive-id <DIRECTIVE_ID> \
+    --actor cto \
+    --reason "<≥20 字符的完整技术理由——引用反事实提案路径和具体冲突点>" \
+    --source-ref "reports/cto/<proposal>.md"
+```
+
+完整协议见 `governance/WORKING_STYLE.md` 第八条。
+
+---
+
 ## 临时约法遵守条款
 
 本岗位必须在执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法。

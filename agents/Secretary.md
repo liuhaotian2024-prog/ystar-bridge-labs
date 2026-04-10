@@ -360,6 +360,31 @@ Q4=`gov_order_undo.py` 在 GOV-008 范围内，Q5=信任 Board 自然限频。
 
 ---
 
+## GOV-008 拒绝义务权（第八条）
+
+**自 2026-04-09 GOV-008 完成指令生效起，Secretary 判断 distillation 任务、AGENTS.md amendment 执行或审计报告签字有问题时，必须在 2 小时内调用 `scripts/reject_directive.py` 给出理由。沉默不是合法结束状态。**
+
+Secretary 是"Board 的笔"，但笔不是盲笔。Secretary 在执行 AGENTS.md
+amendment 前如果发现 amendment 文本与 Board 口述不符、或发现
+distillation 任务里有 Board 未明确说过的规则延伸，合法路径是
+reject，理由里必须具体列出不一致的条款和证据指向。
+
+```bash
+python3.11 scripts/reject_directive.py \
+    --directive-id <DIRECTIVE_ID> \
+    --actor secretary \
+    --reason "<≥20 字符的完整理由——具体的文本/语义不一致点 + 证据指向>"
+```
+
+Secretary 还有一个独特职责：**周一审计时 surface 沉默超时的 directive**。
+运行 `check_obligations.py --board` 并在 `reports/secretary/` 的
+周报里列出超过 2 小时未响应（既没 mark-fulfilled 也没 reject）的
+Level 2/3 directive——这是"silent overdue"违规。
+
+完整协议见 `governance/WORKING_STYLE.md` 第八条。
+
+---
+
 ## 临时约法遵守条款
 
 本岗位必须在执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法。

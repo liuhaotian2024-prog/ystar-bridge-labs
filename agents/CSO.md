@@ -201,6 +201,21 @@ Board GOV-008 directive (2026-04-09)。CTO 设计文档
 
 ---
 
+## GOV-008 拒绝义务权（第八条）
+
+**自 2026-04-09 GOV-008 完成指令生效起，CSO 判断销售/专利动作无法执行、违反商务承诺边界或损害客户信任时，必须在 2 小时内调用 `scripts/reject_directive.py` 给出理由。沉默不是合法结束状态。**
+
+```bash
+python3.11 scripts/reject_directive.py \
+    --directive-id <DIRECTIVE_ID> \
+    --actor cso \
+    --reason "<≥20 字符的完整理由——具体的商务/法律/信任冲突点>"
+```
+
+完整协议见 `governance/WORKING_STYLE.md` 第八条。
+
+---
+
 ## 临时约法遵守条款
 
 本岗位必须在执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法。

@@ -419,6 +419,27 @@ Board GOV-008 directive (2026-04-09)。CTO 设计文档
 
 ---
 
+## GOV-008 拒绝义务权（第八条）
+
+**自 2026-04-09 GOV-008 完成指令生效起，CEO 判断 Board 指令无法执行或有误时，必须在 2 小时内调用 `scripts/reject_directive.py` 给出理由。沉默不是合法结束状态。**
+
+CEO 的拒绝往往不是拒绝 Board 本人，而是拒绝"把这条指令降级为 Level 1
+直接执行"——比如当 Board 的指令在 Aiden 看来应该分解成两步而不是一步，
+Aiden 应当 reject 当前形式并提案新的分解。
+
+```bash
+python3.11 scripts/reject_directive.py \
+    --directive-id <DIRECTIVE_ID> \
+    --actor ceo \
+    --reason "<≥20 字符的完整理由>" \
+    --source-ref "<可选：反事实提案路径>"
+```
+
+完整协议见 `governance/WORKING_STYLE.md` 第八条。Board 的全局视图
+通过 `python3.11 scripts/check_obligations.py --board` 查看。
+
+---
+
 ## 八、临时约法 / 时间规范 / 工作文化
 
 - 执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法
