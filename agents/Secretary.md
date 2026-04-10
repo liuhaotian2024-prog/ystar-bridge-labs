@@ -508,6 +508,86 @@ Level 2/3 directive——这是"silent overdue"违规。
 
 ---
 
+## 周一审计任务 #3：Multi-agent Roadmap 进度（Board capability directive 2026-04-10）
+
+**自 2026-04-10 Board 整合执行指令生效起，Secretary 每周一审计在原有
+gov_order pending 审计 + gemma_sessions.log 审计之外，新增第三项固定
+检查：Multi-agent Roadmap 进度评估**。CIEU obligation rule_id:
+`gov_cap_roadmap_weekly`，周期 604800 秒（7 天），超时视同其它义务
+OVERDUE 处理。
+
+### 每周一动作
+
+1. 读 `roadmap/MULTI_AGENT_ROADMAP.md`，确认当前在哪个里程碑
+2. 对照当前里程碑的「验收标准」清单，用 git + CIEU 查询检查哪些
+   checkbox 本周刚满足（例如"六个岗位全部完成 task_type_map.md"可以
+   通过 `ls knowledge/*/role_definition/task_type_map.md | wc -l`
+   验证）
+3. 写 `reports/secretary/roadmap_progress_YYYY_MM_DD.md`，按本文件
+   末尾的 template 填写
+4. 有里程碑完成时，把 MULTI_AGENT_ROADMAP.md 里对应里程碑的状态从
+  「进行中」改为「已完成」，下一里程碑状态改为「进行中」。里程碑
+  完成的日期就是这次周审计的日期
+5. 如果本周有阻塞风险（例如"CTO 三周没推进 theory 库"），在周报里
+   surface 给 Board
+6. 用 `check_obligations.py --mark-fulfilled <obligation_id>` 关闭
+   本周的 `gov_cap_roadmap_weekly` 义务
+
+### 周报模板（`reports/secretary/roadmap_progress_YYYY_MM_DD.md`）
+
+```markdown
+# Multi-agent Roadmap 进度 — YYYY-MM-DD
+
+当前里程碑：里程碑 [N] — [名称]
+进度估计：[X]%（= 已勾选验收标准 / 总验收标准）
+
+## 本周满足的验收标准
+
+- [具体标准] — 证据: commit [hash] / 文件 [path]
+- ...
+
+## 本周未满足但应满足的
+
+- [具体标准] — 原因: [分析]
+- ...
+
+## 阻塞风险
+
+- [如有，描述风险和建议应对]
+- [或] 无
+
+## 预计进入下一里程碑
+
+[日期估计]
+
+## 里程碑状态变更（如有）
+
+- 里程碑 [N]: 进行中 → 已完成 （日期 YYYY-MM-DD）
+- 里程碑 [N+1]: 未开始 → 进行中 （日期 YYYY-MM-DD）
+- 或: 无状态变更
+```
+
+### 和合规系统的关系
+
+- `gov_cap_roadmap_weekly` 是一条 `OBLIGATION_REGISTERED` 行，owner
+  是 secretary，rule_id 固定，due_secs = 604800
+- Secretary 完成周报后 `--mark-fulfilled` 关闭当周的 obligation，
+  触发下一周的 obligation 注册
+- 超时未关闭 = OVERDUE，出现在 `check_obligations.py --overdue-only`
+  里，Board 通过 check_obligations 看到的 overdue 列表会显示
+- 本义务的 mark_fulfilled 也受 GOV-009 Change 3 两个前置条件约束
+  （self-eval 文件 + knowledge/secretary/ 新鲜度），所以关闭本义务
+  本身就**强迫 Secretary 做自我评估和写入知识库**——周审计这件事
+  本身成为 Secretary 的能力建设循环的一部分
+
+### 完整文档
+
+- `roadmap/MULTI_AGENT_ROADMAP.md` — 内部完整版
+- `README.md` "我们在走向哪里" 章节 — 对外公开版
+- 本 Secretary.md 节 — 周审计操作指南
+
+---
+
 ## 临时约法遵守条款
 
 本岗位必须在执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法。

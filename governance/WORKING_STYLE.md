@@ -396,322 +396,268 @@ Board GOV-008 完成指令 (2026-04-09) 缺口三。Ethan 实施于 2026-04-09
 
 ### 认识论基础
 
-**知识不是被动接收的，是在认知冲突中主动建构的**（建构主义，Piaget /
-Vygotsky）。本方法论的每一层不是 checklist，是**制造认知冲突的机制**
-——每一层都要求 agent 发现自己不知道的东西，然后去解决它。**理论
-先于案例**：理论给你概念框架，框架决定你能看见什么问题，没有理论
-直接找案例，案例就是噪音。
-
-合规系统（GOV-006 到 GOV-009）抓「Board 说 X，agent 做非 X」。能力
-系统抓「Board 说 X，agent 做了完美的 X，但 agent 对世界的理解本来就
-错了」。第九条是能力系统的本体，第七条到第八条是合规系统的本体。
-两套系统必须都在才算完整。
+知识不是被动接收的，是在认知冲突中主动建构的（建构主义，Piaget /
+Vygotsky）。框架的每一层不是 checklist，是**制造认知冲突的机制**——
+每一层都要求 agent 发现自己不知道的东西，然后去解决它。**理论先于
+案例**：理论给你概念框架，框架决定你能看见什么问题，没有理论直接
+找案例，案例就是噪音。
 
 ### 分级适用规则
 
-决定一条指令需不需要走完整十二层框架，看它的权限层级：
+```
+Level 1：直接执行，不走框架，完成后汇报
+Level 2：必须完成启动阶段（第 0-2 层）+ 闭合阶段（第 10-12 层）
+Level 3：必须完成完整十二层，不得跳过任何一层
+```
 
-- **Level 1 任务**：直接执行，不走框架，完成后汇报。Level 1 定义见
-  `governance/INTERNAL_GOVERNANCE.md` 三级决策权限章节。
-- **Level 2 任务**：必须完成**启动阶段**（第 0-3 层）+ **闭合阶段**
-  （第 10-12 层）。认知建构阶段和执行阶段可以按 agent 判断压缩，但
-  不得跳过。
-- **Level 3 任务**：必须完成**完整十二层**，不得跳过任何一层。
+Level 1/2/3 的完整定义见 `governance/INTERNAL_GOVERNANCE.md` 三级
+决策权限章节。本条只定义当任务被判为 Level 2 或 Level 3 时必须走
+的十二层框架。
 
-例外：如果 agent 已经在相同 task type 的 SOP 里跑过至少一次完整框架
-且 SOP 覆盖当前情境，则 Level 3 可以从 SOP 起点开始执行（第 8 层直接
-应用 SOP 方案，第 10-12 层仍必须跑）。SOP 由重复执行的 role 自己维护，
-不走 Secretary distillation。
+---
 
-### 完整十二层闭环
+## 完整十二层闭环
 
-#### 启动阶段（layers 0–3）
+### 启动阶段（执行前必须完成）
 
-**第 0 层：意义建构**（理论依据：Weick sensemaking + Deci 自决理论）
+#### 第 0 层：意义建构
 
-- 核心问题：这件事为什么重要？它和公司整体目标如何连接？
-- 具体操作：用一句话回答"如果这件事做成了，世界和现在有什么不同"。
-  答不出 30 个字就别做。
-- 完成标志：`record_intent.py --meaning` 字段通过 parse-time 校验
-  （≥ 30 字）。
+- **核心问题**：这件事为什么重要，和公司整体目标如何连接？
+- **理论依据**：Weick 意义建构理论（sensemaking）+ Deci 自我决定
+  理论（self-determination theory）
+- **具体操作**：用一段话回答"如果这件事做成了，世界和现在有什么
+  不同"，并把这件事在公司当前 OKR 或核心使命中的位置写下来
+- **完成标志**：写不清楚说明理解不够，必须先澄清再往下走。
+  `record_intent.py --meaning` 字段通过 parse-time 校验（≥ 30 字符）
+  是这一层的机器检查。
 
-**第 1 层：目标澄清**（理论依据：Locke 目标设定理论）
+#### 第 1 层：目标澄清
 
-- 核心问题：Rt = 0 长什么样？"做完"不是目标。
-- 具体操作：写出**至少一条可验证**的完成判定标准。不能是「做完」
-  「做好」「完成」这类 vague 短语。必须是测试通过、文件存在、指标
-  达到阈值这种具体条件。
-- 完成标志：`record_intent.py --success-bar` 字段通过 parse-time 校验
-  （非 vague + ≥ 10 字）。
+- **核心问题**：可测量的成功标准是什么？
+- **理论依据**：Locke 目标设定理论（goal-setting theory）
+- **具体操作**：写出至少一条**可验证**的完成判定标准。不是「做完」
+  「做好」「完成」这类模糊表述，是测试通过、文件存在、指标达到阈值
+  这类具体条件
+- **完成标志**：至少一条可验证的判定标准，**第 10 层会逐条对照**。
+  `record_intent.py --success-bar` 的 vague-phrase 拒绝规则是这一层
+  的机器检查。
 
-**第 2 层：假设显式化**（理论依据：Argyris 双环学习）
+#### 第 2 层：假设显式化
 
-- 核心问题：这件事里隐含的判断是什么？哪些已经验证，哪些还没？
-- 具体操作：把假设一条一条写下来，每条标注验证状态。没有隐含判断是
-  不可能的——如果 agent 觉得"没什么假设"，说明没想到；回头再想。
-- 完成标志：`record_intent.py --assumptions` 至少一条，格式
-  `内容——已验证|未验证`。
+- **核心问题**：我的隐含判断是什么，验证了吗？
+- **理论依据**：Argyris 双环学习理论（double-loop learning）
+- **格式强制**：`[假设内容]——已验证 / 未验证`
+- **具体操作**：把所有隐含的 assumption 逐条写下来，每条标注是否
+  已经验证过。假设不允许"没什么假设"——如果 agent 觉得没有，说明
+  没想到，回头再想。**没有写出来的假设是最危险的假设**
+- **完成标志**：`record_intent.py --assumptions` 至少一条，格式
+  带 `——` 分隔符，status 是 `已验证` 或 `未验证`。
 
-**第 3 层：理论校准**（理论依据：建构主义 + 元认知）
+#### 第 3 层：理论校准
 
-- 核心问题：处理这类问题的人类已经总结了什么理论？这些理论里哪些
-  和我这次任务直接相关？
-- 具体操作：**理论校准六步协议**（下一段单独展开）
-- 完成标志：`record_intent.py --theory` 至少一条，格式
-  `理论名——一句话启示`，并在 `knowledge/{role}/theory/` 下有对应
-  任务类型的理论库文件。
+- **核心问题**：这个任务涉及哪些学科，最近的理论是什么？
+- **理论依据**：建构主义认识论（constructivist epistemology）
+- **完成标志**：`record_intent.py --theory` 至少一条，并且在
+  `knowledge/{role}/theory/` 下有对应任务类型的理论库文件。
 
-#### 认知建构阶段（layers 4–7）
+##### 理论校准六步协议
 
-**第 4 层：Benchmark**（理论依据：Festinger 社会比较理论）
+```
+① 把任务分解为核心动词（2-4 个）
 
-- 核心问题：这件事的世界顶级水准是什么？
-- 具体操作：查 `knowledge/{role}/role_definition/world_class_standard.md`，
-  如果没有就去读。对照"如果我做到 80 分是什么样，90 分是什么样，
-  100 分是什么样"，明确自己瞄准哪个分位。
-- 完成标志：能用一句话描述"本任务的 100 分看起来长什么样"。
+② 每个动词映射到最近的学科
 
-**第 5 层：相关性过滤**（理论依据：Simon 有限理性）
+③ 搜索协议：[动词] + theory
+   → 找被引用最多的经典（Google Scholar 引用次数为主要 proxy）
+   → 找一页纸总结（Wikipedia 词条是标准起点）
+   → 用不确定点清单判断距离：能回答 2 个以上不确定点的理论才
+     继续深入
+   → 不确定点清单必须由 scripts/local_learn.py --mode questions
+     生成，不允许跳过 Gemma 提问直接搜索
 
-- 核心问题：理论和 benchmark 信息很多，哪些和本任务**直接**相关？
-- 具体操作：从第 3 层的理论库里挑出**最多 3 条**与本任务强相关的，
-  从第 4 层的 benchmark 里挑出**最多 3 个**强相关的对比点。剩下的
-  明确 park 掉，不在本次任务里处理。
-- 完成标志：一份不超过 6 条的"相关素材清单"。
+④ 深入学习：用自己的话复述核心命题 + 对本任务的启示
+   写不出来说明没有理解，继续学
 
-**第 6 层：案例提炼**（理论依据：决策模式抽取，非案例堆积）
+⑤ 写入 knowledge/{role}/theory/{任务类型}.md
+   格式：理论名 / 核心命题 / 对本任务的启示 / 来源 / 日期
 
-- 核心问题：`knowledge/{role}/cases/` 里有没有相似 shape 的过去案例？
-- 具体操作：grep cases，找 decision pattern（不是事件复述），抽取
-  "上次我们在类似情况下用的是什么判断路径"。没有相似案例就跳过，
-  但要在 `gaps/` 里留一行记录"这类情境我们还没处理过"。
-- 完成标志：一份"可借鉴的 decision pattern 列表"或明确的 "no prior
-  case" 记录。
+⑥ 理论校准完成后，再带着被理论框定的问题去找案例
+```
 
-**第 7 层：能力边界**（理论依据：资源基础理论 / Barney）
+---
 
-- 核心问题：本任务是不是我这个岗位该做的？是不是我这个岗位有能力
-  做好的？
-- 具体操作：对照 `role_definition/task_type_map.md`，确认本任务匹配
-  一个已经有理论库的 task type；如果不匹配，要么向 CEO 重新分配，
-  要么接下来几个 idle cycle 先建该 task type 的理论库，再回来执行。
-- 完成标志：明确的 "go / escalate / build theory first" 判断。
+### 认知建构阶段
 
-#### 执行阶段（layers 8–9）
+#### 第 4 层：Benchmark
 
-**第 8 层：方案设计**（理论依据：反事实推理 + 第一性原理）
+- **核心问题**：外部最高标准长什么样？
+- **理论依据**：社会比较理论（Festinger, 1954）
+- **具体操作**：查 `knowledge/{role}/role_definition/world_class_standard.md`，
+  如果缺失就去建。针对本任务 sample 外部的顶级案例
+- **完成标志**：连续 3 个样本没有发现新的结构元素时停止。再 sample
+  下去是边际递减。
 
-- 核心问题：基于前 7 层，具体方案是什么？方案如何**对回**第 1 层
-  的 success bar？
-- 具体操作：写出执行计划（`record_intent.py --plan` 字段），每一步
-  都能映射到 success bar 的某一条可验证条件。映射不上的步骤是冗余，
-  删掉。
-- 完成标志：`plan` 和 `success_bar` 之间有完整的双向映射。
+#### 第 5 层：相关性过滤
 
-**第 9 层：执行**（理论依据：实践即认识 + Kolb 循环）
+- **核心问题**：哪些真正适合我们？
+- **理论依据**：有限理性理论（Simon, 1955）
+- **三个过滤维度**：
+  - **受众匹配**：目标用户是否和我们一致
+  - **定位匹配**：战略定位是否和我们可比
+  - **资源匹配**：所需资源是否和我们可得
+- **完成标志**：匹配度低于 2/3 的列为"**参考但不借鉴结构**"。只有
+  三个维度都匹配或至少两个维度高度匹配的才进入第 6 层。
 
-- 核心问题：按第 8 层方案真的去做。
-- 具体操作：运行计划。遇到**第 8 层没覆盖**的情况时，必须显式记录
-  判断 + 理由，不允许沉默处理。记录位置：chat 里给 Board 可见的
-  报告 + 必要时写入 `cases/` 或 `gaps/`。
-- 完成标志：执行完毕 + 所有意外判断有 explicit 记录。
+#### 第 6 层：案例提炼
 
-#### 闭合阶段（layers 10–12）
-
-**第 10 层：对照目标判定完成**
-
-- 核心问题：第 1 层的 success bar 每一条都达到了吗？
-- 具体操作：写 `reports/{role}/self_eval_{obligation_id}.md`，
-  针对每一条 success_bar 给「达到 / 未达到 / 部分达到」+ 原因。
-  GOV-009 Change 3 的 mark_fulfilled 前置条件 ② 会强制检查这个文件
-  存在且非空。
-- 完成标志：self-eval 文件存在且每条 success_bar 都有判定。
-
-**第 11 层：提交 + 自评报告**
-
-- 核心问题：交付物 + self-eval 同时提交给 Board / CEO。
-- 具体操作：commit + push + 在 chat 里报告 commit hash + self-eval
-  路径。可以用 `local_learn.py --mode eval` 生成 self-eval 初稿，
-  但 agent 必须**修改确认**后才能作为正式 self-eval 提交。
-- 完成标志：commit hash 和 self-eval 路径已发送给 reviewer。
-
-**第 12 层：知识库回写**（**闭环关键**）
-
-- 核心问题：这次执行让下次起点更高了吗？
-- 具体操作：把本次的 decision pattern 写入 `cases/`，把新发现的
-  gap 写入 `gaps/`，如果本次用到的理论或 SOP 得到了修正/扩展，
-  同步更新 `theory/{task_type}.md` 或 `sop/{task_type}.md`。**不回
-  写就不算闭环**——GOV-009 Change 3 的 mark_fulfilled 前置条件 ③
-  （48 小时知识库新鲜度）强制保证这件事不被跳过。
-- 完成标志：`knowledge/{role}/` 下有至少一个文件的 mtime 在本次
-  session 之内。
-
-### 理论校准六步协议（第 3 层的展开）
-
-本协议是第 3 层的具体操作步骤。六步必须按顺序执行，不得跳步。
-
-**步骤 ①：把任务分解为核心动词**
-- 从任务描述里抽出 2-4 个核心动作动词
-- 例：「设计一个新 CIEU 事件类型」→ 动词是 `design` / `specify` / `integrate`
-
-**步骤 ②：每个动词映射到最近的学科**
-- 每个动词映射到一个学术学科
-- 例：`design` → software architecture; `specify` → formal methods;
-  `integrate` → systems engineering
-
-**步骤 ③：搜索协议**
-- 搜索关键词：`{动词} + theory`
-- 找被引用最多的经典（Google Scholar 引用次数为主要 proxy）
-- 找一页纸总结（Wikipedia 词条是标准起点，之后再深入）
-- 用**不确定点清单**判断距离：能回答 2 个以上不确定点的理论才继续深入
-- 不确定点清单从哪里来？用 `scripts/local_learn.py --mode questions
-  --actor {role} --task "{描述}"` 让本地 Gemma 生成——Gemma 在这里是
-  Socratic 提问者，不是答题者。它的价值是生成 agent **自己想不到**
-  的问题
-
-**步骤 ④：深入学习**
-- 对能回答 2+ 不确定点的理论，深入到能"用自己的话复述核心命题 +
-  对本任务的启示"
-- **写不出来 = 没理解 = 继续学**，不允许自我欺骗说"知道了"
-
-**步骤 ⑤：结果写入 `knowledge/{role}/theory/{task_type}.md`**
-- 每条理论的 entry 格式：
+- **核心问题**：从案例里能抽取什么可复用的决策模式？
+- **格式强制**：对每个进入的案例写四行：
   ```
-  ## 理论名
-  - **核心命题**：一两句话
-  - **对本任务的启示**：一句话
-  - **来源**：论文/书/Wikipedia + 链接
-  - **日期**：YYYY-MM-DD
-  - **来自**：[自主学习 | 任务触发 | gemma 提问 | 其他]
+  - 这个案例做了什么选择
+  - 结果是什么
+  - 能借鉴什么
+  - 不能借鉴什么
   ```
+- **完成标志**：**不是堆案例，是提炼模式**。如果一个案例最后写不出
+  "能借鉴什么"和"不能借鉴什么"，它就是噪音，丢掉。
 
-**步骤 ⑥：理论校准完成后，再带着被理论框定过的问题去找案例**
-- 顺序是 theory → cases，**不是 cases → theory**
-- 理论给你"能看见什么问题"的 frame，case 是 frame 下的具体实例
-- 直接找 case 不走理论 = 看见什么都是"似乎相关的故事"，没有判断依据
+#### 第 7 层：能力边界
 
-### 空闲学习循环 (Idle Learning Loop) — Board capability system directive 2026-04-10
+- **核心问题**：我能独立做什么，需要协作什么，需要 Board 决策什么？
+- **理论依据**：资源基础理论（Barney, 1991）
+- **具体操作**：把任务执行步骤分到三个区域：
+  - **独立区**：本岗位完全可执行
+  - **协作区**：需要其它岗位或 Board 提供输入、资源、或背书
+  - **Board 决策区**：Level 3 的分叉点，需要 Board 显式拍板
+- **完成标志**：三个区域画清楚，**不能执行到一半才发现越界**。
+  越界的正确路径是调用 `reject_directive.py` 返还给 Board 或 CEO，
+  不是硬着头皮做下去。
 
-本节是 Board 的 capability system directive 里 "AGENTS.md 新增空闲学习
-循环" 的**运行时权威文本**。由于 Y\*gov 内核 immutable-path hook 拒绝
-任何 agent 编辑 `AGENTS.md`，本规则的最高权威位置是本节——所有 agent
-在 session boot 时必须读 `governance/WORKING_STYLE.md`，所以本节定义
-的规则在运行时完全有效。BOARD_CHARTER_AMENDMENTS AMENDMENT-003
-记录了 AGENTS.md 文本挂接的 BLOCKED 状态和后续补救方案（Board 自己
-手动编辑 或 保留本节作为唯一权威）。
+---
 
-**没有 Board 指令时的 agent 默认工作不是空转，而是按以下三优先级循环：**
+### 执行阶段
 
-**Priority 1（每人只做一次，之后持续更新）：岗位认知建构**
+#### 第 8 层：方案设计
 
-建立 `knowledge/{role}/role_definition/` 下的三份文件：
-- `world_class_standard.md` — 世界顶级这个岗位的核心能力和评判标准
-- `role_heroes.md` — 谁是这个岗位的顶级实践者，他们怎么工作
-- `task_type_map.md` — 这个岗位涉及哪些任务类型（≥8 个），每个任务
-  类型含描述 / 核心动词 / 优先级 / 频率
+- **核心问题**：方案是否指向第 1 层的成功标准？
+- **具体操作**：把执行计划的每一步都映射到第 1 层 success_bar 的
+  某一条可验证条件。映射不上的步骤是冗余，删掉
+- **完成标志**：plan 和 success_bar 之间有完整的双向映射。对不上
+  就在这里修正，**不带着错误方向去执行**。
 
-Priority 1 是 Priority 2 的**输入**。没有 `task_type_map.md`，
-Priority 2 无法启动。
+#### 第 9 层：执行
 
-**Priority 2（每天至少推进一个任务类型）：理论库构建**
+- **核心问题**：遇到 SOP 未覆盖的情况怎么办？
+- **具体操作**：按第 8 层方案真的去做。遇到 SOP 或理论未覆盖的
+  情境时，**记录判断 + 理由**（可以是 chat 里给 Board 的报告、
+  `cases/` 或 `gaps/` 里的新条目、或 CIEU OBLIGATION_REGISTERED 的
+  description 字段）
+- **完成标志**：**不沉默，不等待**。沉默是第八条明确禁止的状态。
+  遇到未覆盖情况时的合法路径是记录+继续 或 记录+reject_directive.py。
 
-- 从 `task_type_map.md` 里选一个**还没有理论库**的任务类型
-- 走理论校准六步协议（本条前文）完成该任务类型的理论库
-- 写入 `knowledge/{role}/theory/{task_type}.md`
-- **步骤 ③ 的不确定点清单必须由 `local_learn.py --mode questions`
-  生成**——不允许跳过 Gemma 提问直接搜索
+---
 
-**Priority 3（每天至少一次）：反事实模拟练习**
+### 闭合阶段
 
-- 用 `scripts/local_learn.py --mode tasks --actor {role}` 让 Gemma 生成
-  一个虚构的任务场景
-- 走十二层框架的第 0-8 层，产出方案，**不真正执行**
-- 用 `scripts/local_learn.py --mode eval --task ... --success-bar ...
-  --result ...` 生成自评初稿，agent **修改确认**后写入
-  `knowledge/{role}/gaps/YYYY-MM-DD-{scenario_slug}.md`
-- 把本次发现的认知 gap 明确列出来——gap 是下个 idle cycle 的 Priority 2
-  输入
+#### 第 10 层：对照目标判定完成
 
-**强制 Gemma 使用（非协商条款）**
+- **核心问题**：第 1 层的每条成功标准达到了吗？
+- **具体操作**：写 `reports/{role}/self_eval_{obligation_id}.md`，
+  **逐条判定**达到 / 未达到 + 原因。不允许"感觉还不错"这种印象
+  判断
+- **完成标志**：self_eval 文件存在、非空、且对每一条 success_bar
+  都有明确判定。GOV-009 Change 3 前置条件 ② 是这一层的机器检查。
 
-上述三个优先级的全部学习任务，必须使用本地 Gemma 驱动：
+#### 第 11 层：提交 + 自评报告
 
-- Priority 2 开始每一个新任务类型前：调用 `local_learn.py --mode
-  questions` 生成**本次学习的不确定点清单**。不允许跳过这一步直接
-  开始搜索。
-- Priority 3 反事实模拟结束后：调用 `local_learn.py --mode eval` 生成
-  **自评初稿**。agent 必须修改确认后写入 `gaps/`。
+- **核心问题**：Board 和 CEO 看到的是**执行 + 判断**的组合吗？
+- **内容**：
+  - 参考了哪些理论和案例
+  - 哪些假设被验证了
+  - 哪些被推翻了
+  - 哪里还不够好
+  - 原因是什么
+- **具体操作**：commit + push + 在 chat 里报告 commit hash +
+  self-eval 路径。可以用 `local_learn.py --mode eval` 生成自评
+  初稿，但 agent 必须修改确认后才能作为正式 self-eval 提交
+- **完成标志**：commit hash 和 self-eval 路径已发送给 reviewer。
 
-**理由**：Gemma 在本地 Mac mini（localhost + LAN fallbacks）运行，零
-成本，热启动 < 10 秒。强制使用的目的**不是**依赖 Gemma 的判断——
-Gemma 是 4B 小模型，它的判断可能是错的。目的是**用 Gemma 的提问
-打破 agent 的认知盲点**。Agent 自己生成的问题永远在**已知范围内**
-（agent 只能想到它知道自己不知道的事）；Gemma 生成的问题会暴露
-**未知的未知**。协议的杠杆是"提问来自外部"，不是"回答来自外部"。
+#### 第 12 层：知识库回写
 
-**日志（非否认的证据）**
+- **核心问题**：这次执行让下次的起点更高了吗？
+- **写入内容**：
+  - 理论在实际中是否成立（更新 `theory/{task_type}.md`）
+  - 哪些假设被证伪（写入 `gaps/` 或更新 theory entry）
+  - 自己这次执行成为下一次的案例（写入 `cases/`）
+  - SOP 未覆盖的情况补写（更新 `sop/{task_type}.md`）
+- **完成标志**：`knowledge/{role}/` 在 48 小时内有更新。GOV-009
+  Change 3 前置条件 ③ 是这一层的机器检查。**这是闭环关键**——
+  不回写就不算闭环。
 
-`local_learn.py` 每次调用写一条 JSONL 进
-`knowledge/{role}/gaps/gemma_sessions.log`，字段：timestamp / mode /
-actor / endpoint / model / input_summary（≤200 字符）/ question_count
-（mode=questions 时）/ output_hash（sha256 前 16 位）/ output_length。
+---
 
-**Secretary 每周一审计**
+### 与合规系统（GOV-006/008/009）的接口
 
-Secretary 的周一审计在现有 gov_order_weekly_audit 之外**独立**增加
-一项：读所有六个 `knowledge/{role}/gaps/gemma_sessions.log`，验证
-每个岗位**每个工作日至少有一条记录**。没有记录视同违反空闲学习义务，
-记入 Secretary 周报的违规清单上报 Board。
+第九条不引入新的 hook 或 CIEU 事件类型。合规系统已经把机器检查
+点架好了，本条只负责定义**行为语义**：
 
-本周审计和 GOV-009 Change 3 的 48 小时知识库新鲜度检查是**两个独立
-的检查**，不混在一起，per Board Q2 answer。freshness check 是
-mark_fulfilled 的硬门（agent 不守就关不掉 obligation）；weekly Gemma
-audit 是 Secretary 的软检查（报 Board，由 Board 决定后续）。
-
-**每日报告格式扩展**
-
-AGENTS.md rule 3 的 autonomous daily report 格式（"Learning Done
-(self-directed)" 段）新增四行：
-- 今日学的理论（理论名 + 对岗位的启示）
-- 完成的任务类型理论库（哪个 task type，在 `theory/` 里新增了哪个
-  文件）
-- 今日模拟的场景 + 发现的 gap（`gaps/` 里的哪个文件）
-- 知识库更新路径（哪些 `knowledge/{role}/*` 文件在本次 session 里
-  被写入或修改）
-
-### 与合规系统的接口
-
-第九条不需要额外的 hook 来执行。GOV-006 到 GOV-009 已经把必要的硬点
-架好了：
-
-- **GOV-009 Change 1** record_intent.py 的四个必填字段（meaning /
-  success_bar / assumptions / theory）对应第九条的第 0-3 层——parse
-  阶段直接拒
-- **GOV-008 Gap 2** hook intent guard 对应执行前的保护——qualified
-  intent 才能编辑受保护路径
-- **GOV-009 Change 3** mark_fulfilled 的两个前置条件对应第 10-12 层
-  ——self_eval + knowledge 48h freshness 不满足就关不掉 obligation
-- **GOV-008 Gap 3** reject_directive.py 对应能力不足时的合法出口
-  （第 7 层判断"本任务不是我该做的"时用）
+| 层 | 合规系统的机器检查 |
+|---|---|
+| 0 | `record_intent.py --meaning` 必填且 ≥ 30 字符 |
+| 1 | `record_intent.py --success-bar` 拒绝 vague 短语 |
+| 2 | `record_intent.py --assumptions` 格式强制 `——已验证/未验证` |
+| 3 | `record_intent.py --theory` 格式强制 `——启示` + 非空 |
+| 0-3 | `hook_wrapper.py` intent guard：`_intent_is_qualified` 要求上面四个字段非空 |
+| 7 | 越界路径走 `scripts/reject_directive.py`（第八条） |
+| 10 | `check_obligations.py --mark-fulfilled` 前置条件 ② 检查 self_eval 文件 |
+| 12 | `check_obligations.py --mark-fulfilled` 前置条件 ③ 检查知识库 48h 新鲜度 |
 
 整个十二层框架是**已有合规硬点的行为语义包装**，不引入新的 hook
 或 CIEU 事件类型。新的只是 `scripts/local_learn.py` 和知识库目录
-结构，这些都是**工具**而不是**守卫**。
+结构，这些都是**工具**不是**守卫**。
+
+### 空闲学习循环（运行时权威）
+
+空闲学习循环的完整规则定义在 `AGENTS.md` 的 "Continuous Autonomous
+Work Mandate" rule 7 + rule 8（AMENDMENT-003，2026-04-10）。
+AGENTS.md 文本挂接如果被 Y\*gov 内核 immutable-path hook 阻塞，
+运行时权威回落到 `governance/BOARD_CHARTER_AMENDMENTS.md` 附录 A
+的预制文本 + `agents/Secretary.md` 的周审计条款。当前阻塞状态见
+`BOARD_CHARTER_AMENDMENTS.md` AMENDMENT-003。
+
+空闲学习循环的三个优先级简述：
+
+1. **岗位认知建构**（每人只做一次，之后持续更新）——建立
+   `knowledge/{role}/role_definition/` 下的三份文件：
+   world_class_standard.md、role_heroes.md、task_type_map.md
+2. **理论库构建**（每天至少推进一个任务类型）——从 task_type_map.md
+   里选一个还没有理论库的任务类型，按第 3 层六步协议完成，写入
+   `knowledge/{role}/theory/{task_type}.md`
+3. **反事实模拟练习**（每天至少一次）——用 `local_learn.py --mode
+   tasks` 生成虚构任务，走第 0-8 层，用 `local_learn.py --mode eval`
+   生成自评初稿，修改确认后写入 `knowledge/{role}/gaps/`
+
+空闲学习循环的 **Gemma 强制使用**规则：每个学习任务开始前必须调用
+`local_learn.py --mode questions` 让 Gemma 生成不确定点清单。理由：
+agent 自己生成的问题永远在已知范围内，Gemma 生成的问题会暴露未知
+的未知。每次调用写一条 JSONL 进 `knowledge/{role}/gaps/gemma_sessions.log`，
+字段：timestamp / mode / actor / endpoint / model / input_summary
+（≤200 字符）/ question_count / output_hash / output_length。
+Secretary 周一审计读这个 log，**和 GOV-009 freshness gate 是两个
+独立检查**（per Board Q2 answer）。
 
 ### 来源 (第九条)
 
-Board capability system directive (2026-04-10)，经 Q1-Q4 review
-review（见本 session 历史）后由 Samantha 执行。配套交付：
-- commit a49595e（CTO）: 基础设施
-- 本 commit（Secretary）: 第九条 + AMENDMENT-003
-- 后续 commit C: 六岗位 task_type_map 起草稿
-
-AGENTS.md rule 7 文本挂接 **BLOCKED** by Y\*gov 内核 immutable-path
-hook; 运行时权威回落到本节。详见
-`governance/BOARD_CHARTER_AMENDMENTS.md` AMENDMENT-003 的执行阻塞
-章节。
+Board capability system directive (2026-04-10) 整合执行指令
+（Samantha 完整执行指令）。开头认识论基础和 12 层内容由 Board
+直接给出；第 9 层 Gemma 强制、第 12 层闭环回写、理论校准六步协议
+由 Board 早先 review 阶段给出，本条整合为统一版本。配套交付：
+- commit `a49595e`: 基础设施（`scripts/local_learn.py` + `knowledge/`）
+- commit `fe41ad1`: 第九条初版 + AMENDMENT-003 BLOCKED 记录
+- 本 commit: 第九条整合版 + 其它任务
 
 ---
+
 
 ## 团队角色卡 · 官方身份 · 2026-04-06确立
 

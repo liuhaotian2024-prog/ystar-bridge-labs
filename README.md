@@ -20,6 +20,18 @@ Most competitors will tell you their product audits an agent's actions. We will 
 
 ---
 
+## 我们在走向哪里 / Where we're heading
+
+**Now**: the compliance system is complete, the capability system is under construction. Six executive roles have full job-description constitutions, intent-verification protocol, a directive closure protocol with a legal REJECTED state, and a hook that catches silent scope drift. Every Level 2 and Level 3 action is wrapped in a CIEU audit chain that survives the session that produced it.
+
+**Next**: single-agent stability verification. Each role builds its own theory library, does idle-time learning and counterfactual simulation using a local-Gemma Socratic questioner, and the autonomous daily report runs 14 consecutive days without OVERDUE. The goal at this stage is that a single-process agent can sustain itself without Board micro-correction.
+
+**The final target**: a real multi-agent business team. Six independent processes running in parallel, 24 hours a day, with real information asymmetry, real negotiation between roles, real division of labor, a single Y\*gov governing them all. Not one agent pretending to be six; six agents that actually are six.
+
+→ Complete milestones, acceptance criteria, and trigger conditions for each phase: [`roadmap/MULTI_AGENT_ROADMAP.md`](./roadmap/MULTI_AGENT_ROADMAP.md)
+
+---
+
 ## The hole in "AI governance"
 
 There is a hole in every AI governance product on the market. They watch the agent. They miss the human.
