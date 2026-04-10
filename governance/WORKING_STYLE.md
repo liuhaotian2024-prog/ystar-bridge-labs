@@ -392,6 +392,33 @@ Board GOV-008 完成指令 (2026-04-09) 缺口三。Ethan 实施于 2026-04-09
 
 ---
 
+## Session 定义（Y* Bridge Labs 内部标准）
+
+**Session = 一个任务的完整生命周期。**
+
+- **开始**：agent 收到 Board/CEO 指令，或 agent 自发产生 Level 0 意图
+- **结束**：任务 COMPLETED 或 REJECTED，CIEU 记录关闭
+
+### 核心原则
+
+- 同一个 Claude Code 窗口内可以有**多个 session**
+- 新开窗口**不等于**新 session，**接到新任务**才是新 session 开始
+- 窗口关闭时所有未关闭的 session 自动标记为 `INTERRUPTED`
+- 下次任何 agent 的 session boot 时，**必须先检查并处理 INTERRUPTED 任务**
+
+### 与技术层的关系
+
+- Claude Code 的对话窗口是**运行环境**，不是 session 边界
+- Session 边界由**任务生命周期**定义，不由窗口开关定义
+- `active_task.py` 的 `start` / `complete` 是 session 开始和结束的
+  **机器可读标记**
+
+### 来源
+
+Board 2026-04-10 Session 定义补充指令。
+
+---
+
 ## 第九条：自主执行方法论 (Board capability system directive, 2026-04-10)
 
 ### 认识论基础
