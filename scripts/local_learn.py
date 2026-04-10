@@ -78,7 +78,7 @@ DEFAULT_ENDPOINTS = [
     "http://192.168.1.225:11434",
     "http://192.168.1.228:11434",
 ]
-DEFAULT_MODEL = "gemma3:4b"
+DEFAULT_MODEL = "ystar-gemma"
 PROBE_TIMEOUT = 2.0
 GENERATE_TIMEOUT = 60.0
 
