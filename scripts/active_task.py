@@ -123,6 +123,24 @@ def cmd_start(args):
     task_id = f"task_{uuid.uuid4().hex[:12]}"
     now = time.time()
     is_mission = getattr(args, 'mission', False)
+
+    # GOV-010 fix: auto-detect Autonomous Mission from task description
+    # even if --mission flag wasn't explicitly passed
+    MISSION_KEYWORDS = [
+        "autonomous mission", "自主任务", "自主长期",
+        "按自主框架", "autonomous", "mission",
+    ]
+    task_lower = args.task.lower()
+    if not is_mission and any(kw in task_lower for kw in MISSION_KEYWORDS):
+        print(f"[active-task] ⚠ Task description matches Autonomous Mission keywords.")
+        print(f"[active-task] 按 governance/WORKING_STYLE.md 第十一条走完整四阶段闭环：")
+        print(f"[active-task]   阶段一：认知建构（7 层）→ Board 批准框架报告")
+        print(f"[active-task]   阶段二：执行落地（方案设计 + 伦理检查）")
+        print(f"[active-task]   阶段三：观察与数据收集（48h 内）")
+        print(f"[active-task]   阶段四：迭代与重新校准")
+        print(f"[active-task] 自动标记为 --mission 模式。")
+        is_mission = True
+
     state = {
         "task_id": task_id,
         "actor": role,
