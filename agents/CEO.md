@@ -374,6 +374,51 @@ Board GOV-006 directive (2026-04-09)。Ethan 提案见
 
 ---
 
+## GOV-008 gov-order 通道意识
+
+**自 2026-04-09 GOV-008 directive 生效起，Board 现在可以用一行
+`scripts/gov_order.py "<sentence>"` 把一句话直接翻译成 CIEU
+`OBLIGATION_REGISTERED` 行，无需 Aiden 转译。**
+
+### CEO 必须做的事
+
+1. **每次 session boot 后立即**：
+   ```bash
+   python3.11 scripts/check_obligations.py --actor ceo
+   python3.11 scripts/check_obligations.py --overdue-only
+   ```
+   gov-order 写的 obligation 的 `directive_ref` 形如 `BOARD-2026-04-09-001`，
+   Aiden 必须把它们当成 Board 的指令对待。
+2. **Dispatch 之前**先确认 obligation 不在 CANCELLED 状态——
+   `gov_order_undo.py` 会写 OBLIGATION_CANCELLED 行，dashboard 会
+   显示 `CANCELLED`，CEO 不应该再向下游 agent 派工
+3. **追问 Board 来源**：如果 Board 在 chat 里下指令的同时已经
+   gov-order 自动注册了 obligation，Aiden 应该能在 chat 看到
+   `[gov-order] OBLIGATION_REGISTERED: <id>`，**不要重复注册**
+
+### Dispatch 优先级
+
+| 来源 | 优先级 |
+|---|---|
+| Board chat 直接指令（人工） | 最高，直接调度 |
+| gov-order 自动 register（Board NL → CIEU） | 同等高，对待如人工 |
+| 团队互相产生的 obligation | 按 severity 排队 |
+
+### 与 GOV-006 的关系
+
+gov-order 写的 INTENT_RECORDED `params.source = "gov_order"`，与
+GOV-006 agent intent（`source` 字段为空或不同）区分。CEO 不需要为
+gov-order intent 做 confirm——Board 是 source of authority，
+deterministic validator 已经在执行前把守过 schema 错。CEO 只对
+agent 自己写的 GOV-006 intent 做 Level 2 confirm。
+
+### 来源
+
+Board GOV-008 directive (2026-04-09)。CTO 设计文档
+`reports/cto/gov_order_pipeline.md`，Board 批准 5 个答案后实施。
+
+---
+
 ## 八、临时约法 / 时间规范 / 工作文化
 
 - 执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法

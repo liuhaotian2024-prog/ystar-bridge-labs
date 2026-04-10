@@ -192,6 +192,36 @@ Board GOV-006 directive (2026-04-09)。Ethan 提案见
 
 ---
 
+## GOV-008 gov-order 通道意识
+
+**自 2026-04-09 GOV-008 directive 生效起，Board 可以用 `scripts/gov_order.py "<sentence>"` 直接把内容任务（"今天发一篇 X"、"下周一推 HN"）注册到 CIEU。CMO 必须在每次 session boot 后 poll 自己的 obligation 表。**
+
+### 每次 session boot 必跑
+
+```bash
+python3.11 scripts/check_obligations.py --actor cmo
+python3.11 scripts/check_obligations.py --actor cmo --overdue-only
+```
+
+新出现的 PENDING 行如果 `directive_ref` 形如 `BOARD-2026-04-09-NNN`，
+来源大概率是 gov-order。CMO 把它们当 Board 直接的发布/内容指令对待。
+**任何外部发布都是 Level 3，必须先 record_intent，等 Board confirm
+后才能动笔**——gov-order 注册的 obligation **不**等价于"已经被批准
+发布"，它只是"Board 让你做这件事"，发布前的内容审批仍走 GOV-006
+两段式流程。
+
+### CANCELLED 行的语义
+
+`gov_order_undo.py` 写的 OBLIGATION_CANCELLED 行 = Board 改主意了。
+CMO 看到 CANCELLED 立即停手，不再继续草稿或发布。
+
+### 来源
+
+Board GOV-008 directive (2026-04-09)。CTO 设计文档
+`reports/cto/gov_order_pipeline.md`。
+
+---
+
 ## 临时约法遵守条款
 
 本岗位必须在执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法。

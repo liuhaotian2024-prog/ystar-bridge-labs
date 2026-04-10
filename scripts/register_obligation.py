@@ -118,7 +118,9 @@ def build_engine_and_rule(args: argparse.Namespace) -> tuple[OmissionEngine, Omi
     return engine, rule
 
 
-def make_cieu_record(ob, args: argparse.Namespace) -> dict:
+def _build_cieu_record(ob, *, entity_id: str, rule_id: str, rule_name: str,
+                       description: str, due_within_secs: float,
+                       directive_ref: str, initiator: str) -> dict:
     """Build a CIEU record dict for one ObligationRecord.
 
     NOTE on schema: CIEUStore._insert_dict reads `d.get("params")` (raw dict),
@@ -128,7 +130,7 @@ def make_cieu_record(ob, args: argparse.Namespace) -> dict:
     now = time.time()
     return {
         "event_id": str(uuid.uuid4()),
-        "session_id": args.entity_id,
+        "session_id": entity_id,
         "agent_id": ob.actor_id,
         "event_type": "OBLIGATION_REGISTERED",
         "decision": "info",
@@ -137,78 +139,168 @@ def make_cieu_record(ob, args: argparse.Namespace) -> dict:
         "seq_global": time.time_ns() // 1000,
         "params": {
             "obligation_id": ob.obligation_id,
-            "rule_id": args.rule_id,
-            "rule_name": args.rule_name,
+            "rule_id": rule_id,
+            "rule_name": rule_name,
             "obligation_type": ob.obligation_type,
             "required_event_types": list(ob.required_event_types),
             "due_at": ob.due_at,
-            "due_within_secs": args.due_secs,
+            "due_within_secs": due_within_secs,
             "severity": ob.severity.value if hasattr(ob.severity, "value") else str(ob.severity),
             "actor_id": ob.actor_id,
             "entity_id": ob.entity_id,
-            "directive_ref": args.directive_ref or args.entity_id,
-            "description": args.description,
+            "directive_ref": directive_ref or entity_id,
+            "description": description,
             "trigger_event_id": ob.trigger_event_id,
             "registered_at": now,
         },
         "violations": [],
         "drift_detected": False,
-        "human_initiator": args.initiator,
+        "human_initiator": initiator,
     }
 
 
-def main() -> int:
-    args = build_argparser().parse_args()
-
-    cieu = CIEUStore(db_path=args.db)
-    engine, rule = build_engine_and_rule(args)
-
-    # Register the entity (the directive itself).
-    entity = TrackedEntity(
+def make_cieu_record(ob, args: argparse.Namespace) -> dict:
+    """Backward-compat wrapper for the original ``args``-based call site."""
+    return _build_cieu_record(
+        ob,
         entity_id=args.entity_id,
+        rule_id=args.rule_id,
+        rule_name=args.rule_name,
+        description=args.description,
+        due_within_secs=args.due_secs,
+        directive_ref=args.directive_ref,
+        initiator=args.initiator,
+    )
+
+
+def register_obligation_programmatic(
+    *,
+    db_path: str,
+    entity_id: str,
+    owner: str,
+    rule_id: str,
+    rule_name: str,
+    description: str,
+    due_secs: float,
+    severity: str = "high",
+    obligation_type: str = "required_acknowledgement_omission",
+    required_event: str = "acknowledgement_event",
+    initiator: str = "board",
+    directive_ref: str = "",
+    verbose: bool = True,
+) -> list[str]:
+    """Register one obligation in the CIEU library, callable from Python code.
+
+    This is the GOV-008 Step 2a refactor target. ``main()`` below is a thin
+    argparse wrapper around this function. Both call sites land in the same
+    write path so unit tests can exercise the function directly without
+    spawning a subprocess.
+
+    Returns a list of obligation_ids actually written (one per
+    ``OmissionEngine`` rule firing — typically 1).
+    """
+    # Build a synthetic argparse.Namespace so build_engine_and_rule can stay
+    # untouched (it only reads args.* fields and not anything else).
+    ns = argparse.Namespace(
+        db=db_path,
+        entity_id=entity_id,
+        owner=owner,
+        rule_id=rule_id,
+        rule_name=rule_name,
+        description=description,
+        obligation_type=obligation_type,
+        required_event=required_event,
+        due_secs=due_secs,
+        severity=severity,
+        initiator=initiator,
+        directive_ref=directive_ref,
+    )
+
+    cieu = CIEUStore(db_path=db_path)
+    engine, _rule = build_engine_and_rule(ns)
+
+    entity = TrackedEntity(
+        entity_id=entity_id,
         entity_type="directive",
-        initiator_id=args.initiator,
-        current_owner_id=args.owner,
+        initiator_id=initiator,
+        current_owner_id=owner,
         status=EntityStatus.CREATED,
-        goal_summary=args.description,
+        goal_summary=description,
     )
     engine.register_entity(entity)
 
-    # Fire the trigger event so the rule produces an obligation.
     ev = GovernanceEvent(
         event_type=GEventType.ENTITY_CREATED,
-        entity_id=args.entity_id,
-        actor_id=args.initiator,
-        source="register_obligation_cli",
-        payload={"directive_ref": args.directive_ref or args.entity_id},
+        entity_id=entity_id,
+        actor_id=initiator,
+        source="register_obligation_programmatic",
+        payload={"directive_ref": directive_ref or entity_id},
     )
     result = engine.ingest_event(ev)
 
     if not result.new_obligations:
-        print("ERROR: rule did not produce any obligation. Check rule fields.",
-              file=sys.stderr)
-        return 1
+        raise RuntimeError(
+            f"rule {rule_id!r} did not produce any obligation; "
+            f"check rule fields"
+        )
 
-    # Persist each new obligation as one CIEU record.
-    written = 0
+    written: list[str] = []
     for ob in result.new_obligations:
-        record = make_cieu_record(ob, args)
+        record = _build_cieu_record(
+            ob,
+            entity_id=entity_id,
+            rule_id=rule_id,
+            rule_name=rule_name,
+            description=description,
+            due_within_secs=due_secs,
+            directive_ref=directive_ref,
+            initiator=initiator,
+        )
         ok = cieu.write_dict(record)
         if ok:
-            written += 1
-            due_in = ob.due_at - time.time()
-            print(f"  registered: {ob.obligation_id}")
-            print(f"    actor    : {ob.actor_id}")
-            print(f"    rule     : {args.rule_id}")
-            print(f"    type     : {ob.obligation_type}")
-            print(f"    due_in   : {due_in/3600:.1f}h ({due_in:.0f}s)")
-            print(f"    severity : {ob.severity.value if hasattr(ob.severity, 'value') else ob.severity}")
+            written.append(ob.obligation_id)
+            if verbose:
+                due_in = ob.due_at - time.time()
+                print(f"  registered: {ob.obligation_id}")
+                print(f"    actor    : {ob.actor_id}")
+                print(f"    rule     : {rule_id}")
+                print(f"    type     : {ob.obligation_type}")
+                print(f"    due_in   : {due_in/3600:.1f}h ({due_in:.0f}s)")
+                print(f"    severity : "
+                      f"{ob.severity.value if hasattr(ob.severity, 'value') else ob.severity}")
         else:
-            print(f"  WARN: duplicate or write failed for {ob.obligation_id}",
-                  file=sys.stderr)
+            print(
+                f"  WARN: duplicate or write failed for {ob.obligation_id}",
+                file=sys.stderr,
+            )
+    return written
 
+
+def main() -> int:
+    args = build_argparser().parse_args()
+    try:
+        written = register_obligation_programmatic(
+            db_path=args.db,
+            entity_id=args.entity_id,
+            owner=args.owner,
+            rule_id=args.rule_id,
+            rule_name=args.rule_name,
+            description=args.description,
+            due_secs=args.due_secs,
+            severity=args.severity,
+            obligation_type=args.obligation_type,
+            required_event=args.required_event,
+            initiator=args.initiator,
+            directive_ref=args.directive_ref,
+            verbose=True,
+        )
+    except RuntimeError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 1
+
+    cieu = CIEUStore(db_path=args.db)
     print()
-    print(f"OK: wrote {written} obligation(s) to {args.db}")
+    print(f"OK: wrote {len(written)} obligation(s) to {args.db}")
     print(f"    total CIEU records now: {cieu.count()}")
     return 0
 

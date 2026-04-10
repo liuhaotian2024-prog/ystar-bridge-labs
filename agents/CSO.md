@@ -172,6 +172,35 @@ Board GOV-006 directive (2026-04-09)。Ethan 提案见
 
 ---
 
+## GOV-008 gov-order 通道意识
+
+**自 2026-04-09 GOV-008 directive 生效起，Board 可以用 `scripts/gov_order.py "<sentence>"` 直接把销售/专利任务（"周三前联系 X"、"submit 那个专利"）注册到 CIEU。CSO 必须在每次 session boot 后 poll 自己的 obligation 表。**
+
+### 每次 session boot 必跑
+
+```bash
+python3.11 scripts/check_obligations.py --actor cso
+python3.11 scripts/check_obligations.py --actor cso --overdue-only
+```
+
+新出现的 PENDING 行如果 `directive_ref` 形如 `BOARD-2026-04-09-NNN`，
+来源大概率是 gov-order。CSO 把它们当 Board 直接的销售/外联指令对待。
+**任何对外销售动作都是 Level 3，gov-order 注册的 obligation **不**
+等价于"可以直接联系客户/对外报价"——执行前仍要走 GOV-006 两段式
+流程，先 record_intent，等 Board confirm 后才动手。
+
+### CANCELLED 行的语义
+
+`gov_order_undo.py` 写的 OBLIGATION_CANCELLED 行 = Board 改主意了
+或客户已撤销。CSO 看到 CANCELLED 立即停手，不再继续 outreach。
+
+### 来源
+
+Board GOV-008 directive (2026-04-09)。CTO 设计文档
+`reports/cto/gov_order_pipeline.md`。
+
+---
+
 ## 临时约法遵守条款
 
 本岗位必须在执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法。

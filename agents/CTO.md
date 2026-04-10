@@ -248,6 +248,43 @@ Board GOV-006 directive (2026-04-09)。Ethan 提案见
 
 ---
 
+## GOV-008 gov-order 通道意识
+
+**自 2026-04-09 GOV-008 directive 生效起，Board 可以用 `scripts/gov_order.py "<sentence>"` 直接把指令注册到 CIEU。CTO 必须在每次 session boot 后 poll 自己的 obligation 表。**
+
+### 每次 session boot 必跑
+
+```bash
+python3.11 scripts/check_obligations.py --actor cto
+python3.11 scripts/check_obligations.py --actor cto --overdue-only
+```
+
+新出现的 PENDING 行如果 `directive_ref` 形如 `BOARD-2026-04-09-NNN`，
+来源大概率是 gov-order。CTO 必须把它们当 Board 直接指令对待。
+**未注册 INTENT_RECORDED 不得开始执行 Level 2/3 工作**——
+gov-order 写的是 board intent，不能代替 cto 自己的 GOV-006 intent。
+
+### CANCELLED 行的语义
+
+`gov_order_undo.py` 会把 obligation 标 CANCELLED + 写
+INTENT_REJECTED。CTO 看到 CANCELLED 行**立即停手**，不再继续
+该 obligation 的工作；如果已经动了，立即向 CEO/Board 汇报当前进度，
+等待新指令。
+
+### 与维护 gov_order.py 的责任
+
+CTO 是 gov_order.py 的所有者。任何 LLM provider 接入新增、prompt
+调整、validator 字段调整都是 CTO 的工作。修改前必须按 GOV-006 走
+record_intent → confirm → execute 流程，因为 gov_order.py 的修改
+是 Level 3（影响 6 岗位 + 引入新 LLM 依赖路径）。
+
+### 来源
+
+Board GOV-008 directive (2026-04-09)。CTO 设计文档
+`reports/cto/gov_order_pipeline.md`，Board 批准 5 个答案后实施。
+
+---
+
 ## 临时约法遵守条款
 
 本岗位必须在执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法。

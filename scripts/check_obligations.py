@@ -35,6 +35,7 @@ from ystar.governance.cieu_store import CIEUStore
 STATUS_PENDING = "PENDING"
 STATUS_FULFILLED = "FULFILLED"
 STATUS_OVERDUE = "OVERDUE"
+STATUS_CANCELLED = "CANCELLED"
 
 QUERY_LIMIT = 1000  # CIEU query default is 50, lift it for full audit pulls
 
@@ -86,13 +87,17 @@ def parse_payload(record) -> dict:
         return {}
 
 
-def collect_obligations(cieu: CIEUStore) -> tuple[list, dict]:
+def collect_obligations(cieu: CIEUStore) -> tuple[list, dict, dict]:
     """
-    Return (registered_records, fulfilled_map).
-    fulfilled_map: obligation_id -> (record, payload).
+    Return ``(registered_records, fulfilled_map, cancelled_map)``.
+
+    ``fulfilled_map``: obligation_id -> (record, payload)
+    ``cancelled_map``: obligation_id -> (record, payload) — populated by
+    ``gov_order_undo.py`` writes (GOV-008 Q4) and treated as terminal.
     """
     regs = cieu.query(event_type="OBLIGATION_REGISTERED", limit=QUERY_LIMIT)
     fulfs = cieu.query(event_type="OBLIGATION_FULFILLED", limit=QUERY_LIMIT)
+    cancs = cieu.query(event_type="OBLIGATION_CANCELLED", limit=QUERY_LIMIT)
 
     fulfilled_map = {}
     for f in fulfs:
@@ -100,10 +105,17 @@ def collect_obligations(cieu: CIEUStore) -> tuple[list, dict]:
         ob_id = payload.get("obligation_id")
         if ob_id:
             fulfilled_map[ob_id] = (f, payload)
-    return regs, fulfilled_map
+
+    cancelled_map = {}
+    for c in cancs:
+        payload = parse_payload(c)
+        ob_id = payload.get("obligation_id")
+        if ob_id:
+            cancelled_map[ob_id] = (c, payload)
+    return regs, fulfilled_map, cancelled_map
 
 
-def build_rows(regs: list, fulfilled_map: dict, *,
+def build_rows(regs: list, fulfilled_map: dict, cancelled_map: dict, *,
                actor_filter: str | None = None,
                directive_filter: str | None = None,
                overdue_only: bool = False) -> list[dict]:
@@ -129,7 +141,12 @@ def build_rows(regs: list, fulfilled_map: dict, *,
 
         due_at = float(payload.get("due_at") or 0)
 
-        if ob_id in fulfilled_map:
+        if ob_id in cancelled_map:
+            status = STATUS_CANCELLED
+            canc_payload = cancelled_map[ob_id][1]
+            reason = (canc_payload.get("reason") or "")[:50]
+            extra = f"by {canc_payload.get('cancelled_by', '?')}: {reason}"
+        elif ob_id in fulfilled_map:
             status = STATUS_FULFILLED
             ful_payload = fulfilled_map[ob_id][1]
             extra = f"by {ful_payload.get('fulfilled_by', '?')}: {ful_payload.get('evidence', '')[:50]}"
@@ -156,8 +173,13 @@ def build_rows(regs: list, fulfilled_map: dict, *,
             "due_at": due_at,
         })
 
-    # Sort: OVERDUE first, then PENDING by due_at, then FULFILLED last
-    status_rank = {STATUS_OVERDUE: 0, STATUS_PENDING: 1, STATUS_FULFILLED: 2}
+    # Sort: OVERDUE first, then PENDING by due_at, then FULFILLED, then CANCELLED last
+    status_rank = {
+        STATUS_OVERDUE: 0,
+        STATUS_PENDING: 1,
+        STATUS_FULFILLED: 2,
+        STATUS_CANCELLED: 3,
+    }
     rows.sort(key=lambda r: (status_rank.get(r["status"], 9), r["due_at"]))
     return rows
 
@@ -186,8 +208,12 @@ def print_table(rows: list[dict], display_names: dict) -> None:
     pending = sum(1 for r in rows if r["status"] == STATUS_PENDING)
     overdue = sum(1 for r in rows if r["status"] == STATUS_OVERDUE)
     fulfilled = sum(1 for r in rows if r["status"] == STATUS_FULFILLED)
+    cancelled = sum(1 for r in rows if r["status"] == STATUS_CANCELLED)
     print()
-    print(f"Total: {len(rows)}  |  pending: {pending}  overdue: {overdue}  fulfilled: {fulfilled}")
+    print(
+        f"Total: {len(rows)}  |  pending: {pending}  overdue: {overdue}  "
+        f"fulfilled: {fulfilled}  cancelled: {cancelled}"
+    )
 
 
 def mark_fulfilled(cieu: CIEUStore, obligation_id: str,
@@ -277,10 +303,11 @@ def main() -> int:
             return 2
         return mark_fulfilled(cieu, args.mark_fulfilled, args.by, args.evidence)
 
-    regs, fulfilled_map = collect_obligations(cieu)
+    regs, fulfilled_map, cancelled_map = collect_obligations(cieu)
     rows = build_rows(
         regs,
         fulfilled_map,
+        cancelled_map,
         actor_filter=args.actor,
         directive_filter=args.directive,
         overdue_only=args.overdue_only,

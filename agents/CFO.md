@@ -153,6 +153,36 @@ Board GOV-006 directive (2026-04-09)。Ethan 提案见
 
 ---
 
+## GOV-008 gov-order 通道意识
+
+**自 2026-04-09 GOV-008 directive 生效起，Board 可以用 `scripts/gov_order.py "<sentence>"` 直接把财务任务（"月初出 burn rate 报告"、"算一下下周现金流"）注册到 CIEU。CFO 必须在每次 session boot 后 poll 自己的 obligation 表。**
+
+### 每次 session boot 必跑
+
+```bash
+python3.11 scripts/check_obligations.py --actor cfo
+python3.11 scripts/check_obligations.py --actor cfo --overdue-only
+```
+
+新出现的 PENDING 行如果 `directive_ref` 形如 `BOARD-2026-04-09-NNN`，
+来源大概率是 gov-order。CFO 把它们当 Board 直接的财务汇报指令对待。
+**所有数字必须有来源**——CASE-002 教训依然适用，gov-order 不豁免
+诚实政策。如果 Board 让你"快速给个估算"，先走 GOV-006 record_intent
+把"我能得到的数据来源是 X / 真实数据缺什么"写下来等 Board 确认，
+再开始算，不要直接编。
+
+### CANCELLED 行的语义
+
+`gov_order_undo.py` 写的 OBLIGATION_CANCELLED 行 = Board 改主意。
+CFO 看到 CANCELLED 立即停手，不再继续报告生成。
+
+### 来源
+
+Board GOV-008 directive (2026-04-09)。CTO 设计文档
+`reports/cto/gov_order_pipeline.md`。
+
+---
+
 ## 临时约法遵守条款
 
 本岗位必须在执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法。

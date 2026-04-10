@@ -223,27 +223,63 @@ def show_one(recorded_rows: list, reviews_map: dict, intent_id: str) -> int:
         if payload.get("intent_id") != intent_id:
             continue
         status, review_payload = status_for(intent_id, reviews_map)
+        source = payload.get("source")
+        is_gov_order = source == "gov_order"
+
         print(f"Intent       : {intent_id}")
-        print(f"Directive    : {payload.get('directive_id')}")
-        print(f"Level        : {payload.get('level')}")
-        print(f"Actor        : {payload.get('actor_id')}")
+        if is_gov_order:
+            print(f"Source       : gov_order (Board NL → CIEU)")
+            print(f"Directive    : {payload.get('directive_id') or rec.session_id}")
+            print(f"Actor        : board")
+        else:
+            print(f"Directive    : {payload.get('directive_id')}")
+            print(f"Level        : {payload.get('level')}")
+            print(f"Actor        : {payload.get('actor_id')}")
         print(f"Status       : {status}")
         print(f"Recorded at  : {time.ctime(payload.get('recorded_at') or rec.created_at or 0)}")
         print()
-        print(f"Xt (current state understanding):")
-        print(f"  {payload.get('xt')}")
-        print()
-        print(f"Y* (target understanding):")
-        print(f"  {payload.get('y_star')}")
-        print()
-        print("Plan:")
-        for i, step in enumerate(payload.get("plan") or [], 1):
-            print(f"  {i}. {step}")
-        if payload.get("notes"):
+
+        if is_gov_order:
+            # gov_order schema: input_nl, llm_provider, llm_model, llm_output, validation_status
+            print(f"Input NL:")
+            print(f"  {payload.get('input_nl')}")
             print()
-            print(f"Notes: {payload.get('notes')}")
-        if payload.get("source_ref"):
-            print(f"Source ref: {payload.get('source_ref')}")
+            print(f"LLM provider : {payload.get('llm_provider')}")
+            print(f"LLM model    : {payload.get('llm_model')}")
+            print(f"Validation   : {payload.get('validation_status')}")
+            errors = payload.get("validation_errors") or []
+            if errors:
+                print("Validation errors:")
+                for e in errors:
+                    print(f"  - {e}")
+            llm_out = payload.get("llm_output")
+            if isinstance(llm_out, dict):
+                print()
+                print("LLM output:")
+                for k in ("owner", "entity_id", "rule_id", "rule_name",
+                          "due_secs", "severity", "required_event"):
+                    print(f"  {k:<14} : {llm_out.get(k)}")
+                desc = (llm_out.get("description") or "").strip()
+                if desc:
+                    snippet = desc if len(desc) <= 200 else desc[:200] + "…"
+                    print(f"  description    : {snippet}")
+        else:
+            # GOV-006 agent-intent schema: xt, y_star, plan, notes
+            print(f"Xt (current state understanding):")
+            print(f"  {payload.get('xt')}")
+            print()
+            print(f"Y* (target understanding):")
+            print(f"  {payload.get('y_star')}")
+            print()
+            print("Plan:")
+            for i, step in enumerate(payload.get("plan") or [], 1):
+                print(f"  {i}. {step}")
+            if payload.get("notes"):
+                print()
+                print(f"Notes: {payload.get('notes')}")
+            if payload.get("source_ref"):
+                print(f"Source ref: {payload.get('source_ref')}")
+
         if review_payload is not None:
             print()
             print("--- Review ---")

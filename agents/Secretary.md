@@ -292,6 +292,74 @@ Board GOV-006 directive (2026-04-09)。Ethan 提案见
 
 ---
 
+## GOV-008 gov-order 周一审计义务
+
+**自 2026-04-09 GOV-008 directive 生效起，Secretary 每周一必须运行 gov-order 失败翻译审计。**
+
+### 背景
+
+Board 现在可以用 `scripts/gov_order.py "<sentence>"` 把一句自然语言
+直接翻译成 CIEU `OBLIGATION_REGISTERED` 行。LLM 翻译可能失败
+（schema 错、JSON 错、非 task 输入、provider 不可用），失败的 NL
+被写到 `reports/board_proposed_changes/pending/<timestamp>-rejected-*.json`，
+gov-order 不报错也不静默丢——它把账记到 pending 目录，等 Secretary
+处理。
+
+### 周一动作（按顺序）
+
+1. **列出本周 pending 文件**：
+   ```bash
+   ls reports/board_proposed_changes/pending/*.json
+   ```
+2. **统计 INTENT_RECORDED（gov_order 源）**：
+   ```bash
+   python3.11 scripts/check_intents.py --directive BOARD-* 2>/dev/null
+   ```
+3. **统计 OBLIGATION_REGISTERED**：
+   ```bash
+   python3.11 scripts/check_obligations.py | head -60
+   ```
+4. **逐文件分诊**（详见 `reports/board_proposed_changes/pending/README.md`）：
+   - **registered** — 修正后手动 register，移到 `reviewed/YYYY-MM-DD/`
+   - **dropped** — 添加 `drop_reason`，移到 `reviewed/YYYY-MM-DD/`
+   - **bounced to Board** — 加 `review_status: "needs_board"`，**不删**，下次 handoff 上呈 Board
+5. **写入 `reports/secretary/gov_order_weekly_audit.md`**：按文件内的
+   "Weekly entry template" 添加一行
+6. **关闭周一 obligation**：
+   ```bash
+   python3.11 scripts/check_obligations.py --mark-fulfilled <OBLIGATION_ID> \
+       --by secretary \
+       --evidence "weekly gov_order audit completed, see reports/secretary/gov_order_weekly_audit.md"
+   ```
+
+### 永远不删 pending 文件
+
+CIEU 是 append-only，pending 也是 append-only-then-archive。**任何
+情况下都不直接 `rm` pending 文件**。要么 register，要么 drop（带
+reason），要么 bounce——所有路径最终都把文件留在 `reviewed/` 子目录里
+作为审计证据。
+
+### 与 GOV-006 INTENT_RECORDED 的关系
+
+gov-order 写的 INTENT_RECORDED 行的 `params.source = "gov_order"`，
+agent 自己写的 INTENT_RECORDED 行的 source 字段为空（GOV-006 task #57
+脚本未填）或不同。Secretary 周审计可以用这个字段区分两类 intent：
+agent intent（GOV-006 协议）和 board intent（GOV-008 NL pipeline）。
+两类共用 `INTENT_RECORDED` event_type 但语义和审计责任不同——
+agent intent 由 Board/CEO 在执行前 confirm，board intent 由 deterministic
+validator 在执行前把守，Board 自己是 source of authority 不需要二次
+confirm。
+
+### 来源
+
+Board GOV-008 directive (2026-04-09) Q3 答案：Secretary 每周一审计
+pending 目录。CTO 设计文档见 `reports/cto/gov_order_pipeline.md`，
+Board 批准 5 个 questions 答案：Q1=A 路径（GOV-006 先实施），
+Q2=只处理 task 不处理 contract rule，Q3=Secretary 周一审计，
+Q4=`gov_order_undo.py` 在 GOV-008 范围内，Q5=信任 Board 自然限频。
+
+---
+
 ## 临时约法遵守条款
 
 本岗位必须在执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法。
