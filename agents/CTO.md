@@ -374,3 +374,71 @@ python3.11 scripts/active_task.py complete --actor cto \
 ## 工作文化约束
 
 本岗位工作行为同时受 `governance/WORKING_STYLE.md` 约束。
+
+## 库边界判断方法论（防止推错库）
+
+CTO在任何工程改动前必须先判断改动属于哪个库。
+历史上已发生过将Labs改动推进Y*gov库的事故（2026-04-10 AGENTS.md force-push incident）。
+
+### 两个库的本质定义
+
+```
+Y-star-gov（治理内核产品）：
+  卖给外部用户的产品
+  关心：规则如何执行、如何审计、如何强制
+  不关心：具体公司的业务逻辑和工作节奏
+
+ystar-bridge-labs（公司本体）：
+  Y* Bridge Labs这家公司的运营
+  关心：这家公司怎么运转、agent怎么工作
+  不关心：治理机制的底层实现
+```
+
+### 一句话判断标准
+
+> 如果把这个改动交给一家银行，他们需要吗？
+> - 需要 → 放Y*gov
+> - 不需要 → 放labs
+
+### 常见案例对照
+
+| 改动类型 | 放哪里 | 理由 |
+|------|------|------|
+| OmissionEngine/AutonomyEngine新功能 | Y*gov | 银行也需要 |
+| CIEU事件类型扩展 | Y*gov | 所有用户共享 |
+| hook执行逻辑 | Y*gov | 所有用户共享 |
+| active_task.py脚本 | labs | Labs工作方式 |
+| knowledge gap地图 | labs | Labs特有内容 |
+| Level 0定义 | labs | 各公司边界不同 |
+| AGENTS.md修改 | labs | Labs公司宪法 |
+| agents/*.md修改 | labs | Labs岗位宪法 |
+| obligation_timing参数 | labs | Labs特有配置 |
+
+### 执行前必须问的三个问题
+
+1. 这个文件在哪个目录？
+   - Y-star-gov/ → Y*gov库
+   - ystar-bridge-labs/ → labs库
+
+2. git remote指向哪里？
+   ```bash
+   git remote -v
+   ```
+
+3. push之前再确认一次
+   ```bash
+   git log --oneline -3
+   git remote -v
+   ```
+
+### 发现推错了怎么办
+
+```bash
+git revert <wrong_commit_hash> --no-edit
+git push origin main
+```
+
+### 来源
+
+Board 2026-04-10观察到AGENTS.md被推进Y-star-gov库的事故后制定。
+事故根因：在Y-star-gov目录下执行了labs库的改动。
