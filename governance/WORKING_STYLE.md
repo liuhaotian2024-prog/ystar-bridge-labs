@@ -142,6 +142,11 @@ Reviewer 回复 `确认` / `调整: ...` / `拒绝` 之后，agent 的第二次
 
 #### 强制 record_intent 的 CLI 形态
 
+**GOV-009 升级（2026-04-10，commit `84afd52`）**：在原有三个描述字段之
+上，`record_intent.py` 新增四个**必填的质量门字段**。任何一个缺失或
+不合格，脚本在 CLI parse 阶段直接 exit 2，不写 CIEU。hook 端的
+`_intent_is_qualified` 也用同一组字段判断"合格"。
+
 ```bash
 python3.11 scripts/record_intent.py \
     --directive-id <DIRECTIVE_ID> \
@@ -150,14 +155,55 @@ python3.11 scripts/record_intent.py \
     --xt "当前状态我的理解是 ..." \
     --y-star "目标 Y* 我的理解是 ..." \
     --plan "step 1" --plan "step 2" --plan "step 3" \
-    --notes "可选：约束、假设、未知点" \
+    --meaning "这件事为什么重要，和公司整体目标如何连接（≥30 字）" \
+    --success-bar "可测量的完成判定标准，至少一条可验证" \
+    --assumptions "假设内容 A——已验证" \
+    --assumptions "假设内容 B——未验证" \
+    --theory "理论名 1——对本任务的一句话启示" \
+    --theory "理论名 2——对本任务的一句话启示" \
+    --notes "可选：约束、已知未知、上下文" \
     --source-ref "reports/cto/<proposal>.md"  # 可选
 ```
+
+#### 字段硬约束规则
+
+**原有三个描述字段**（GOV-006）：
 
 - `--xt`: 一句话或短段，必须是"可验证"的状态陈述，不能是心境或情绪
 - `--y-star`: 以 Rt = 0 的可观察条件描述目标
 - `--plan`: 至少 1 个 `--plan`，每步独立、可在 chat 里对齐
 - `--actor`: 必须是 `ROLES` 白名单内的角色名（含 secretary）
+
+**GOV-009 新增四个质量门字段**——缺一不可，每条违反 exit 2：
+
+- `--meaning`: **strip 后 ≥ 30 字符**。描述这件事为什么重要，以及它
+  和公司整体目标如何连接。这不是礼仪句式，是让 agent 在动手之前先
+  被迫回答"为什么做这个"——答不出 30 个字就别做
+- `--success-bar`: **不能是 vague 短语**。脚本显式拒绝整值等于
+  `做完` / `做好` / `完成` / `搞定` / `弄好` / `done` / `finish` /
+  `finished` / `ok` / `okay` 的输入；也拒绝 strip 后少于 10 个字符
+  的短串。描述一个**具体、可验证**的完成判定条件（测试通过、某文件
+  存在、某指标达到阈值）
+- `--assumptions`: **action=append，至少一条**。每一条必须符合格式
+  `内容——已验证` 或 `内容——未验证`（`——` 是中文破折号，U+2014 两个）。
+  分隔符前的内容不能为空，分隔符后的状态必须是 `已验证` 或 `未验证`
+  之一。这个字段强迫 agent 把隐含判断显式化并标注验证状态
+- `--theory`: **action=append，至少一条**。每一条必须符合格式
+  `理论名——一句话启示`。分隔符两侧都必须非空。理论名可以是学术名称
+  （Conway's Law、Pearl do-calculus）也可以是实践总结（"单点变更"、
+  "反向调参"），启示必须是对本任务的具体指向，不能是泛泛而谈
+
+**为什么这四条是"质量门"而不是"额外麻烦"**：没有它们的 intent 等于
+"我打算做 X，计划是 1/2/3"——这是 checklist，不是推理。有了它们的
+intent 等于"我理解这件事在公司层面的位置是 M，成功长成什么样是 S，
+我依赖的隐含判断是 A（其中哪些已验证、哪些未验证），我用来框架这件
+事的理论是 T"——这才是推理。hook 端 `_intent_is_qualified` 读取这
+四个字段的非空性作为"合格"的定义，所以从 GOV-009 开始，**只记录三
+字段的 intent 在 CIEU 审计上等同于没记录**。
+
+**升级前的历史 intent 行**（GOV-009 commit 84afd52 之前写入的）被
+自动视为 `unqualified_intent_gov009`——这不是 bug，是预期行为。新
+标准不回溯，但老行在新标准下自动失效。
 
 #### Level 区分
 

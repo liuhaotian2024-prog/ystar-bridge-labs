@@ -245,10 +245,28 @@ Secretary是Board宪法修改意图的记录者和流程推动者。
 
 收到 Level 2/3 指令的第一次回复**只能包含**：
 
-1. `python3.11 scripts/record_intent.py --directive-id <DIRECTIVE_ID> --level <2|3> --actor secretary --xt "..." --y-star "..." --plan "..." --plan "..."`
-2. 在 chat 里回显 intent 块（Xt / Y* / Plan / Notes）
+1. 调用 `scripts/record_intent.py` 写一条 INTENT_RECORDED，包含全部七个字段 + 四个 GOV-009 质量门字段——具体 CLI 模板见下
+2. 在 chat 里回显 intent 块（Xt / Y* / Plan / Meaning / Success Bar / Assumptions / Theory）
 3. **不得输出任何工具调用 / 文件写入 / amendment 执行**
 4. 以"等待 CEO/Board 确认"结束
+
+**具体 CLI 形态（GOV-009 更新，commit `84afd52`）**：
+
+```bash
+python3.11 scripts/record_intent.py \
+    --directive-id <DIRECTIVE_ID> \
+    --level <2|3> \
+    --actor secretary \
+    --xt "当前状态理解..." \
+    --y-star "目标理解..." \
+    --plan "step 1" --plan "step 2" \
+    --meaning "这件事为什么重要，和公司整体目标如何连接(≥30 字)" \
+    --success-bar "可测量的完成判定标准，至少一条可验证" \
+    --assumptions "假设内容——已验证" \
+    --theory "理论名——对本任务的一句话启示"
+```
+
+四个质量门字段（`meaning` / `success-bar` / `assumptions` / `theory`）的硬约束规则见 `governance/WORKING_STYLE.md` 第七条 7.5。缺任一或格式错误，`record_intent.py` 直接 exit 2 不写 CIEU，hook 端 `_intent_is_qualified` 也会把这类 intent 判为 `unqualified_intent_gov009`。
 
 第二次回复才可以开始执行。执行完毕后用：
 
