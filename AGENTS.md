@@ -1,4 +1,4 @@
-# AGENTS.md — Y* Bridge Labs Corporate Governance Contract
+﻿# AGENTS.md — Y* Bridge Labs Corporate Governance Contract
 # Enforced by the Y*gov Runtime Governance Framework
 # Version: 2.4.0 | Updated: 2026-04-03
 # Owner: Haotian Liu (Board of Directors)
@@ -72,6 +72,30 @@ Violation = P0. Stop all work and fix immediately.
 
 5. **Archive format:** JSONL (one JSON object per line) for easy parsing, version control, and long-term preservation. Never delete archived files.
 
+
+7. **Idle Learning Loop (空闲学习循环) — Constitutional as of 2026-04-10, AMENDMENT-003.** When no Board directive is active, self-directed work is not arbitrary. It runs through a three-priority ordered loop designed to build role capability rather than just fill hours. Every agent, every idle session, follows this loop.
+
+   **Priority 1 (once per role, then updated as the role evolves): 岗位认知建构 (role cognition construction).**
+   Build the three files under `knowledge/{role}/role_definition/`:
+   - `world_class_standard.md` — what does world-class at this role look like (outside world's standard, not self-description)
+   - `role_heroes.md` — named top practitioners and how they actually work
+   - `task_type_map.md` — self-decomposition into ≥8 task types with description / core verbs / priority / frequency
+
+   Priority 1 is the *input* to Priority 2. Until it exists, Priority 2 cannot start.
+
+   **Priority 2 (at least one task type advanced per idle day): 理论库构建 (theory library building).**
+   Pick a task type from `task_type_map.md` that has no file in `knowledge/{role}/theory/` yet. Walk the **6-step theory calibration protocol** documented in `governance/WORKING_STYLE.md` 第九条 layer 3. Write the resulting theory entry to `knowledge/{role}/theory/{task_type}.md`.
+
+   **Priority 3 (at least one simulation per idle day): 反事实模拟练习 (counterfactual simulation practice).**
+   Use `scripts/local_learn.py --mode tasks --actor {role}` to generate a fictional scenario. Walk through the 12-layer framework (layers 0-8), output a plan but do NOT execute. Use `scripts/local_learn.py --mode eval ...` to generate a first-draft self-evaluation, then revise it. Record the surfaced cognitive gaps in `knowledge/{role}/gaps/YYYY-MM-DD-{scenario_slug}.md`.
+
+   **Mandatory Gemma usage (non-negotiable).** All three priorities run under local-Gemma assistance via `scripts/local_learn.py`. Before starting Priority 2, call `local_learn.py --mode questions` to generate an uncertainty-point list. Do NOT skip this step. After every Priority 3 simulation, call `local_learn.py --mode eval` to generate the first-draft self-evaluation.
+
+   **Audit log.** Every `local_learn.py` invocation writes one JSONL entry to `knowledge/{actor}/gaps/gemma_sessions.log`. Secretary reads this log every Monday and verifies at least one entry per working day per role.
+
+   **Daily report additions.** Nightly report gains four new lines: 今日学的理论、完成的任务类型理论库、今日模拟的场景+发现的gap、知识库更新路径。
+
+8. **Y*gov enforcement for idle learning:** The idle learning loop is enforced via GOV-009 Change 3 (`check_obligations.py --mark-fulfilled` precondition ③ requires `knowledge/{actor}/` to have at least one file with mtime within the last 48 hours).
 **This rule exists because:** On 2026-04-03, we lost all historical CIEU data including EXP-001's complete governance records. Database cleanup without archive = permanent deletion of audit trail. A governance system that cannot preserve its own audit trail is not credible.
 
 **Y*gov enforcement:** Before any database cleanup command, the governance engine should verify archive existence and freshness. Violation = HARD_OVERDUE immediately.
@@ -138,6 +162,30 @@ Before executing ANY social media action, the responsible agent must submit a **
 - ✏️ Edit — agent revises and resubmits
 - ❌ Rejected — agent does not post, logs reason
 
+
+7. **Idle Learning Loop (空闲学习循环) — Constitutional as of 2026-04-10, AMENDMENT-003.** When no Board directive is active, self-directed work is not arbitrary. It runs through a three-priority ordered loop designed to build role capability rather than just fill hours. Every agent, every idle session, follows this loop.
+
+   **Priority 1 (once per role, then updated as the role evolves): 岗位认知建构 (role cognition construction).**
+   Build the three files under `knowledge/{role}/role_definition/`:
+   - `world_class_standard.md` — what does world-class at this role look like (outside world's standard, not self-description)
+   - `role_heroes.md` — named top practitioners and how they actually work
+   - `task_type_map.md` — self-decomposition into ≥8 task types with description / core verbs / priority / frequency
+
+   Priority 1 is the *input* to Priority 2. Until it exists, Priority 2 cannot start.
+
+   **Priority 2 (at least one task type advanced per idle day): 理论库构建 (theory library building).**
+   Pick a task type from `task_type_map.md` that has no file in `knowledge/{role}/theory/` yet. Walk the **6-step theory calibration protocol** documented in `governance/WORKING_STYLE.md` 第九条 layer 3. Write the resulting theory entry to `knowledge/{role}/theory/{task_type}.md`.
+
+   **Priority 3 (at least one simulation per idle day): 反事实模拟练习 (counterfactual simulation practice).**
+   Use `scripts/local_learn.py --mode tasks --actor {role}` to generate a fictional scenario. Walk through the 12-layer framework (layers 0-8), output a plan but do NOT execute. Use `scripts/local_learn.py --mode eval ...` to generate a first-draft self-evaluation, then revise it. Record the surfaced cognitive gaps in `knowledge/{role}/gaps/YYYY-MM-DD-{scenario_slug}.md`.
+
+   **Mandatory Gemma usage (non-negotiable).** All three priorities run under local-Gemma assistance via `scripts/local_learn.py`. Before starting Priority 2, call `local_learn.py --mode questions` to generate an uncertainty-point list. Do NOT skip this step. After every Priority 3 simulation, call `local_learn.py --mode eval` to generate the first-draft self-evaluation.
+
+   **Audit log.** Every `local_learn.py` invocation writes one JSONL entry to `knowledge/{actor}/gaps/gemma_sessions.log`. Secretary reads this log every Monday and verifies at least one entry per working day per role.
+
+   **Daily report additions.** Nightly report gains four new lines: 今日学的理论、完成的任务类型理论库、今日模拟的场景+发现的gap、知识库更新路径。
+
+8. **Y*gov enforcement for idle learning:** The idle learning loop is enforced via GOV-009 Change 3 (`check_obligations.py --mark-fulfilled` precondition ③ requires `knowledge/{actor}/` to have at least one file with mtime within the last 48 hours).
 **This rule exists because:** The chairman's personal accounts and company reputation are at stake. Every public word must be deliberate, high-quality, and aligned with company positioning. The team plans and drafts; the Board decides what goes live.
 
 ---
@@ -273,6 +321,30 @@ Permissions at each level are strictly less than or equal to the level above (Y*
 
 6. **Y*gov enforcement:** Each agent's nightly report is an obligation with `obligation_timing: autonomous_daily_report: 86400` (24h cycle). Missing a nightly report = SOFT_OVERDUE. Missing 2 consecutive = HARD_OVERDUE.
 
+
+7. **Idle Learning Loop (空闲学习循环) — Constitutional as of 2026-04-10, AMENDMENT-003.** When no Board directive is active, self-directed work is not arbitrary. It runs through a three-priority ordered loop designed to build role capability rather than just fill hours. Every agent, every idle session, follows this loop.
+
+   **Priority 1 (once per role, then updated as the role evolves): 岗位认知建构 (role cognition construction).**
+   Build the three files under `knowledge/{role}/role_definition/`:
+   - `world_class_standard.md` — what does world-class at this role look like (outside world's standard, not self-description)
+   - `role_heroes.md` — named top practitioners and how they actually work
+   - `task_type_map.md` — self-decomposition into ≥8 task types with description / core verbs / priority / frequency
+
+   Priority 1 is the *input* to Priority 2. Until it exists, Priority 2 cannot start.
+
+   **Priority 2 (at least one task type advanced per idle day): 理论库构建 (theory library building).**
+   Pick a task type from `task_type_map.md` that has no file in `knowledge/{role}/theory/` yet. Walk the **6-step theory calibration protocol** documented in `governance/WORKING_STYLE.md` 第九条 layer 3. Write the resulting theory entry to `knowledge/{role}/theory/{task_type}.md`.
+
+   **Priority 3 (at least one simulation per idle day): 反事实模拟练习 (counterfactual simulation practice).**
+   Use `scripts/local_learn.py --mode tasks --actor {role}` to generate a fictional scenario. Walk through the 12-layer framework (layers 0-8), output a plan but do NOT execute. Use `scripts/local_learn.py --mode eval ...` to generate a first-draft self-evaluation, then revise it. Record the surfaced cognitive gaps in `knowledge/{role}/gaps/YYYY-MM-DD-{scenario_slug}.md`.
+
+   **Mandatory Gemma usage (non-negotiable).** All three priorities run under local-Gemma assistance via `scripts/local_learn.py`. Before starting Priority 2, call `local_learn.py --mode questions` to generate an uncertainty-point list. Do NOT skip this step. After every Priority 3 simulation, call `local_learn.py --mode eval` to generate the first-draft self-evaluation.
+
+   **Audit log.** Every `local_learn.py` invocation writes one JSONL entry to `knowledge/{actor}/gaps/gemma_sessions.log`. Secretary reads this log every Monday and verifies at least one entry per working day per role.
+
+   **Daily report additions.** Nightly report gains four new lines: 今日学的理论、完成的任务类型理论库、今日模拟的场景+发现的gap、知识库更新路径。
+
+8. **Y*gov enforcement for idle learning:** The idle learning loop is enforced via GOV-009 Change 3 (`check_obligations.py --mark-fulfilled` precondition ③ requires `knowledge/{actor}/` to have at least one file with mtime within the last 48 hours).
 **This rule exists because:** The Board observed that agents only work when explicitly commanded, leaving 90%+ of available work time unused. A world-class company requires every team member to be self-driven toward the mission at all times.
 
 ---
@@ -298,6 +370,30 @@ Permissions at each level are strictly less than or equal to the level above (Y*
 发现CIEU异常 = P0，立即停止其他工作上报CEO  
 执行细节：见 `knowledge/ceo/cieu_liveness_guide.md`
 
+
+7. **Idle Learning Loop (空闲学习循环) — Constitutional as of 2026-04-10, AMENDMENT-003.** When no Board directive is active, self-directed work is not arbitrary. It runs through a three-priority ordered loop designed to build role capability rather than just fill hours. Every agent, every idle session, follows this loop.
+
+   **Priority 1 (once per role, then updated as the role evolves): 岗位认知建构 (role cognition construction).**
+   Build the three files under `knowledge/{role}/role_definition/`:
+   - `world_class_standard.md` — what does world-class at this role look like (outside world's standard, not self-description)
+   - `role_heroes.md` — named top practitioners and how they actually work
+   - `task_type_map.md` — self-decomposition into ≥8 task types with description / core verbs / priority / frequency
+
+   Priority 1 is the *input* to Priority 2. Until it exists, Priority 2 cannot start.
+
+   **Priority 2 (at least one task type advanced per idle day): 理论库构建 (theory library building).**
+   Pick a task type from `task_type_map.md` that has no file in `knowledge/{role}/theory/` yet. Walk the **6-step theory calibration protocol** documented in `governance/WORKING_STYLE.md` 第九条 layer 3. Write the resulting theory entry to `knowledge/{role}/theory/{task_type}.md`.
+
+   **Priority 3 (at least one simulation per idle day): 反事实模拟练习 (counterfactual simulation practice).**
+   Use `scripts/local_learn.py --mode tasks --actor {role}` to generate a fictional scenario. Walk through the 12-layer framework (layers 0-8), output a plan but do NOT execute. Use `scripts/local_learn.py --mode eval ...` to generate a first-draft self-evaluation, then revise it. Record the surfaced cognitive gaps in `knowledge/{role}/gaps/YYYY-MM-DD-{scenario_slug}.md`.
+
+   **Mandatory Gemma usage (non-negotiable).** All three priorities run under local-Gemma assistance via `scripts/local_learn.py`. Before starting Priority 2, call `local_learn.py --mode questions` to generate an uncertainty-point list. Do NOT skip this step. After every Priority 3 simulation, call `local_learn.py --mode eval` to generate the first-draft self-evaluation.
+
+   **Audit log.** Every `local_learn.py` invocation writes one JSONL entry to `knowledge/{actor}/gaps/gemma_sessions.log`. Secretary reads this log every Monday and verifies at least one entry per working day per role.
+
+   **Daily report additions.** Nightly report gains four new lines: 今日学的理论、完成的任务类型理论库、今日模拟的场景+发现的gap、知识库更新路径。
+
+8. **Y*gov enforcement for idle learning:** The idle learning loop is enforced via GOV-009 Change 3 (`check_obligations.py --mark-fulfilled` precondition ③ requires `knowledge/{actor}/` to have at least one file with mtime within the last 48 hours).
 **This rule exists because:** On 2026-04-01, a 10-hour Board session executed hundreds of tool calls — code refactoring, architecture redesign, governance audits, team restructuring — and produced exactly zero CIEU records. The hook was configured but not loaded by the session runtime. The entire session's governance was unrecorded and unenforceable. Path A, Path B, GovernanceLoop, and SCM received zero data despite massive work volume. This is the worst governance failure in company history: the system appeared to be working but was completely inert.
 
 ---
@@ -585,6 +681,30 @@ Agents work continuously (Directive #021). Cross-review (Directive #023) does NO
 4. Waiting for review is NOT "idle" — move to the next proactive trigger item
 5. Autonomous work report tracks BOTH: work produced AND reviews pending
 
+
+7. **Idle Learning Loop (空闲学习循环) — Constitutional as of 2026-04-10, AMENDMENT-003.** When no Board directive is active, self-directed work is not arbitrary. It runs through a three-priority ordered loop designed to build role capability rather than just fill hours. Every agent, every idle session, follows this loop.
+
+   **Priority 1 (once per role, then updated as the role evolves): 岗位认知建构 (role cognition construction).**
+   Build the three files under `knowledge/{role}/role_definition/`:
+   - `world_class_standard.md` — what does world-class at this role look like (outside world's standard, not self-description)
+   - `role_heroes.md` — named top practitioners and how they actually work
+   - `task_type_map.md` — self-decomposition into ≥8 task types with description / core verbs / priority / frequency
+
+   Priority 1 is the *input* to Priority 2. Until it exists, Priority 2 cannot start.
+
+   **Priority 2 (at least one task type advanced per idle day): 理论库构建 (theory library building).**
+   Pick a task type from `task_type_map.md` that has no file in `knowledge/{role}/theory/` yet. Walk the **6-step theory calibration protocol** documented in `governance/WORKING_STYLE.md` 第九条 layer 3. Write the resulting theory entry to `knowledge/{role}/theory/{task_type}.md`.
+
+   **Priority 3 (at least one simulation per idle day): 反事实模拟练习 (counterfactual simulation practice).**
+   Use `scripts/local_learn.py --mode tasks --actor {role}` to generate a fictional scenario. Walk through the 12-layer framework (layers 0-8), output a plan but do NOT execute. Use `scripts/local_learn.py --mode eval ...` to generate a first-draft self-evaluation, then revise it. Record the surfaced cognitive gaps in `knowledge/{role}/gaps/YYYY-MM-DD-{scenario_slug}.md`.
+
+   **Mandatory Gemma usage (non-negotiable).** All three priorities run under local-Gemma assistance via `scripts/local_learn.py`. Before starting Priority 2, call `local_learn.py --mode questions` to generate an uncertainty-point list. Do NOT skip this step. After every Priority 3 simulation, call `local_learn.py --mode eval` to generate the first-draft self-evaluation.
+
+   **Audit log.** Every `local_learn.py` invocation writes one JSONL entry to `knowledge/{actor}/gaps/gemma_sessions.log`. Secretary reads this log every Monday and verifies at least one entry per working day per role.
+
+   **Daily report additions.** Nightly report gains four new lines: 今日学的理论、完成的任务类型理论库、今日模拟的场景+发现的gap、知识库更新路径。
+
+8. **Y*gov enforcement for idle learning:** The idle learning loop is enforced via GOV-009 Change 3 (`check_obligations.py --mark-fulfilled` precondition ③ requires `knowledge/{actor}/` to have at least one file with mtime within the last 48 hours).
 **This rule exists because:** Without cross-review, each agent operates in a silo with no quality check. CTO could ship untested code, CMO could publish inaccurate claims, CSO could make promises CTO can't deliver, CFO could report unverified numbers (see CASE-002).
 
 ### Anti-Drift Rule: Commit-Push Integrity (Board Directive #022)
