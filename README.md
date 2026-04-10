@@ -8,6 +8,18 @@ This README, the company that ships the product, and the audit chain you can rep
 
 ---
 
+## The deepest claim: governance covers the decider, not just the deed
+
+Most "AI governance" products watch what an agent **does**. They do not watch what a human **decides**. Y*gov watches both.
+
+When the Board gives an order, the order itself is logged — verbatim, timestamped, attributed to the Board by name — before any agent touches it. When the CTO reads that order and interprets it, the interpretation is recorded *before a single line of code executes*. When an agent then fails to deliver — **either by doing the wrong thing (commission) or by quietly not doing the right thing (omission)** — the gap is visible in the same audit chain that holds the original directive. Every actor that touches this system is **accountable for their own decisions**, and the evidence lives where nobody can edit it retroactively.
+
+This is Y*gov's deepest claim, and it is the single feature that makes the rest of the product coherent. The deterministic enforcement engine, the CIEU hash chain, the intent verification protocol, the counterfactual proposal format — all of it is plumbing in service of one sentence: **the governance applies to the decider, not just the deed, and the decider includes the founder**.
+
+Most competitors will tell you their product audits an agent's actions. We will tell you our product audits a person's decisions. Including the Board's. Including the CTO's. Including our own, when we get it wrong. The deviation you can read about in §"What happened today" — item 4 — is *this very investigation*, fired because Samantha (who wrote this README the first time) did not put this section in and the Board caught it. That is the product working on the people who ship it.
+
+---
+
 ## The hole in "AI governance"
 
 There is a hole in every AI governance product on the market. They watch the agent. They miss the human.
@@ -24,7 +36,7 @@ This is **bidirectional governance**. It is the deepest claim Y*gov makes. It is
 
 ## What happened today (2026-04-09, one real working day)
 
-In a single day on this very repository, the system caught and corrected three real human mistakes that would otherwise have shipped:
+In a single day on this very repository, the system caught and corrected **four** real human mistakes that would otherwise have shipped:
 
 1. **Spawned MCP config schema bug** ([`07b1754`](../../commit/07b1754)). The CTO wrote a small JSON file claiming to wire a new feature into production. He never tested it. The Board insisted on a manual verification. The verification surfaced the bug — a `transport` field that Claude Code expected as `type`. The fix is now in the audit chain alongside the original mistake. *Without the Board's verification request, the file would have stayed broken indefinitely.*
 
@@ -32,10 +44,14 @@ In a single day on this very repository, the system caught and corrected three r
 
 3. **Layered defense framing over-claim** ([`da3977e`](../../commit/da3977e) + [`4900c27`](../../commit/4900c27)). The CTO documented Finding 4 with a framing that turned out to be sharper than the underlying principle. When the next directive used a contradicting design, the CTO had to revise the documentation to clarify *what* was actually invariant (enforcement points stay separate) versus *what* was incidental (contract sources happened to be separate). Both versions are in git history. The reasoning chain is auditable.
 
-Across the same day, the system also processed:
+4. **README missed the core bidirectional-accountability claim** ([`43759eb`](../../commit/43759eb) → this fix commit). Samantha rewrote the README earlier in the same session. Her draft included the "agents and humans alike" framing but did not concentrate the three specific phrasings Board had asked for — governance covers decisions not just actions, Board orders are logged, every actor is accountable for their own decisions — into one named, unmissable section. The Board read the commit, caught the omission, and ordered a parallel remediation: Samantha fixes the README *and* the CTO files a formal investigation on whether GOV-006 triggered. The investigation (`reports/cto/gov006_case1_readme_deviation.md`) is now on file. The honest finding: GOV-006 did not trigger because it did not yet exist at the moment Samantha committed — `scripts/record_intent.py` first entered the tree 8 minutes 41 seconds *later*, at commit `4eba26f`. This case is therefore the edge condition of any append-only protocol: **it cannot protect work that predates its own commit**. From this commit onward, every Level 2 and Level 3 task runs under `record_intent.py`, including this very README fix.
 
-- **6 Board directives** (GOV-001 through GOV-008) of escalating scope, every step tracked in CIEU
+Across the same day, the system also shipped:
+
+- **8 Board directives** (GOV-001 through GOV-008) of escalating scope, every step tracked in CIEU
 - **30+ commits** across three repositories — `ystar-bridge-labs`, `gov-mcp`, `K9Audit`
+- **GOV-006: Intent Verification Protocol** ([`4eba26f`](../../commit/4eba26f)). The protocol that makes silent interpretation drift architecturally impossible — `record_intent.py` + `check_intents.py` + four new CIEU event types (`INTENT_RECORDED` / `INTENT_CONFIRMED` / `INTENT_ADJUSTED` / `INTENT_REJECTED`) + 第七条 7.5 of the Working Style constitution + a new section in all six agent job descriptions. Level 3 intents cannot be confirmed by anyone except the Board (the script hard-rejects). The first real use of the protocol is this very investigation.
+- **GOV-008: gov-order NL → CIEU pipeline** ([`9a421f7`](../../commit/9a421f7)). Board can now type one natural-language sentence and the sentence is translated by an LLM, hard-gated by a deterministic validator, recorded in CIEU as a `BOARD_NL → INTENT_RECORDED → OBLIGATION_REGISTERED → INTENT_LINKED` chain, and picked up by the owning agent on their next session boot. Zero friction for the Board. Failed translations are never dropped silently — they go to `reports/board_proposed_changes/pending/` for Secretary's Monday triage. A `gov_order_undo.py` rollback tool ships alongside. Full design doc at `reports/cto/gov_order_pipeline.md`.
 - **5 counterfactual research proposals** written *before* any implementation code, per the GOV-005 §7 / GOV-006 protocol
 - **2 external user bug fixes** in K9Audit pushed within a single session, in response to a real user report
 - **1 production gov-mcp cutover** from regex AGENTS.md parsing to structured `.ystar_session.json` loading — `deny_commands` coverage went from 0 rules to 4, total contract rules from 1 to 7, verified end-to-end via a spawned independent Claude Code session
@@ -111,7 +127,10 @@ The team ships under their real names because the audit chain demands it. There 
 | Founding governance incidents documented | 6 (`knowledge/cases/CASE_001` through `CASE_006`) |
 | Failed experiments archived (not deleted) | 1 — `archive/deprecated/daemon_failed_experiment_2026_04_04` |
 | Counterfactual reasoning proposals submitted to Board | 6+ (all in `reports/cto/`) |
-| Self-corrections of human mistakes in the last 24 hours | 3 (see "What happened today" above) |
+| Self-corrections of human mistakes in the last 24 hours | **4** (three CTO, one Secretary — see "What happened today" above) |
+| GOV-006 CIEU event types introduced | 4 (`INTENT_RECORDED` / `_CONFIRMED` / `_ADJUSTED` / `_REJECTED`) |
+| gov-order shipping state | **live** — `scripts/gov_order.py` + `scripts/gov_order_undo.py` + Secretary Monday audit |
+| First real GOV-006 audit case on file | [`reports/cto/gov006_case1_readme_deviation.md`](./reports/cto/gov006_case1_readme_deviation.md) |
 
 ---
 
@@ -141,7 +160,17 @@ This detects whether you are running Claude Code, Cursor, Windsurf, or OpenClaw 
 - [`QUICKSTART_PYTHON.md`](https://github.com/liuhaotian2024-prog/gov-mcp/blob/main/docs/QUICKSTART_PYTHON.md) — minimal raw Python client, no framework
 - [`QUICKSTART_CREWAI.md`](https://github.com/liuhaotian2024-prog/gov-mcp/blob/main/docs/QUICKSTART_CREWAI.md) — full CrewAI integration, end-to-end runnable example
 
-Your AI agent leaked `.env`? **This prevents that.** Your CTO interpreted the Board wrong and shipped a broken config? **This catches that too.**
+### And if you are the Board
+
+Clone this repo, set `ANTHROPIC_API_KEY` (or `OPENAI_API_KEY`, or `OLLAMA_HOST`, or `LM_STUDIO_HOST` — the script detects them in order), and type:
+
+```bash
+python3.11 scripts/gov_order.py "ethan finish the gov-008 migration by tonight"
+```
+
+The sentence is LLM-translated into a structured obligation, hard-gated by a deterministic Python validator, recorded in CIEU as a `BOARD_NL → INTENT_RECORDED → OBLIGATION_REGISTERED → INTENT_LINKED` chain, and picked up by the owning agent on their next session boot. Zero extra keystrokes. If the validator catches an LLM mistranslation, the NL is saved to `reports/board_proposed_changes/pending/` for Secretary's Monday triage — never dropped, never silently shipped. If you change your mind, `python3.11 scripts/gov_order_undo.py --intent-id <id> --reason "<why>"` writes an `OBLIGATION_CANCELLED` + `INTENT_REJECTED` row and the dashboard clears. The full design is in [`reports/cto/gov_order_pipeline.md`](./reports/cto/gov_order_pipeline.md).
+
+Your AI agent leaked `.env`? **This prevents that.** Your CTO interpreted the Board wrong and shipped a broken config? **This catches that too.** Your own founder gave an order and forgot to log it? **This logs it for you, before the agent even moves.**
 
 ---
 
@@ -165,7 +194,7 @@ We are also on Telegram: [`@YstarBridgeLabs`](https://t.me/YstarBridgeLabs).
 | Day 8–11 | Mac mini migration. Hook daemon latency 1.4s → 1.9ms. EXP-008 three-way comparison. gov-mcp v0.1.0 with 38 tools. 16/16 internal mechanisms verified live. |
 | Day 12 (2026-04-04) | Autonomous daemon experiment fails: violation rate accelerates 173 → 386 → 466 per hour. CEO issues emergency stop. Five days of frozen state follow. |
 | Day 13 (2026-04-08) | Board reads the failure and decides to retire the daemon entirely rather than try to fix it. |
-| Day 14 (2026-04-09) | The day described above. GOV-001 through GOV-008. Daemon retired (commit `57d8aec`). Spawned-session governance config installed and verified (commit `90af9ed` + `07b1754`). Gov-mcp cutover from AGENTS.md regex to `.ystar_session.json` direct load (commit `69a9b7c` in gov-mcp + `351e982` in this repo). Three CTO mistakes self-caught and corrected. |
+| Day 14 (2026-04-09) | The day described above. GOV-001 through GOV-008 all executed. Daemon retired (commit `57d8aec`). Spawned-session governance config installed and verified (commit `90af9ed` + `07b1754`). Gov-mcp cutover from AGENTS.md regex to `.ystar_session.json` direct load (commit `69a9b7c` in gov-mcp + `351e982` in this repo). **GOV-006 Intent Verification Protocol shipped** (commit `4eba26f`) — `record_intent.py`, `check_intents.py`, four new CIEU event types, 第七条 7.5 in the Working Style constitution, GOV-006 section in all six agent job descriptions. **GOV-008 gov-order NL pipeline shipped** (commit `9a421f7`) — `gov_order.py`, `gov_order_undo.py`, `register_obligation_programmatic()` refactor, Secretary Monday audit duty, gov-order awareness section in all six agent job descriptions. **Three CTO mistakes self-caught and corrected. One Secretary mistake (this README) caught by Board, investigated by CTO, and fixed in the same working day under the now-live GOV-006 protocol.** |
 
 Full history: [`HISTORY.md`](./HISTORY.md). Live state: [`OPERATIONS.md`](./OPERATIONS.md). Active directives: [`DIRECTIVE_TRACKER.md`](./DIRECTIVE_TRACKER.md). Decision authority: [`governance/INTERNAL_GOVERNANCE.md`](./governance/INTERNAL_GOVERNANCE.md). Distilled lessons: [`governance/DNA_LOG.md`](./governance/DNA_LOG.md).
 
