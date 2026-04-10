@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-04-09T22:45:40.448209",
+  "input_nl": "ethan needs to finish the gov-008 completion directive end-to-end by tonight, high priority engineering work",
+  "llm_provider": "ollama",
+  "llm_model": "gemma4:e4b",
+  "llm_raw_output": null,
+  "llm_parsed_dict": null,
+  "validation_errors": [
+    "LLM call failed: TimeoutError: timed out"
+  ],
+  "suggested_manual_command": "python3.11 scripts/register_obligation.py \\\n    --entity-id BOARD-YYYY-MM-DD-NNN \\\n    --owner <owner> \\\n    --rule-id <rule_id> \\\n    --rule-name '<rule name>' \\\n    --description 'ethan needs to finish the gov-008 completion directive end-to-end by tonight, hi' \\\n    --due-secs 14400 \\\n    --severity high",
+  "review_status": "pending"
+}
