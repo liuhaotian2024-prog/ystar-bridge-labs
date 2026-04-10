@@ -13,6 +13,14 @@ GOV-008 Gap 2: Intent guard
   GOV006_VIOLATION_WARNING row to CIEU and log. WARN-ONLY. FAIL-OPEN.
 - Window + protected path list are loaded from .ystar_session.json. Defaults
   are 4 hours and the five paths above.
+
+GOV-009 upgrade (2026-04-10): "qualified" is now stricter.
+- A recent INTENT_RECORDED row counts as qualified ONLY if its params dict
+  contains non-empty values for meaning, success_bar, assumptions, theory.
+- Unqualified rows are treated identically to missing rows: the guard
+  writes one GOV006_VIOLATION_WARNING and logs. Warn-only, fail-open.
+- _intent_is_qualified() encapsulates the check so hook_debug.log can
+  distinguish "no recent intent" from "recent intent lacks GOV-009 fields".
 """
 import json
 import sys
@@ -36,6 +44,39 @@ DEFAULT_GUARD_PROTECTED = [
 def log(msg):
     with open(LOG, "a", encoding="utf-8") as f:
         f.write(f"{time.strftime('%H:%M:%S')} {msg}\n")
+
+
+# GOV-009 quality-bar fields required on every INTENT_RECORDED row.
+GOV009_REQUIRED_FIELDS = ("meaning", "success_bar", "assumptions", "theory")
+
+
+def _intent_is_qualified(params) -> bool:
+    """GOV-009 — return True iff all four quality-bar fields are present
+    and non-empty in the row's params dict.
+
+    The CIEUStore returns params as a JSON string on read
+    (``record.params_json``) — this helper expects the already-parsed dict.
+    """
+    if not isinstance(params, dict):
+        return False
+    for field in GOV009_REQUIRED_FIELDS:
+        val = params.get(field)
+        if val is None:
+            return False
+        if isinstance(val, str):
+            if not val.strip():
+                return False
+        elif isinstance(val, (list, tuple)):
+            if not val:
+                return False
+            # Require at least one non-empty string entry for list fields.
+            if not any(isinstance(x, str) and x.strip() for x in val):
+                return False
+        else:
+            # Any other type is treated as unqualified — the schema is
+            # str for meaning/success_bar and list[str] for assumptions/theory.
+            return False
+    return True
 
 
 def _intent_guard_check(tool_name, file_path):
@@ -93,11 +134,29 @@ def _intent_guard_check(tool_name, file_path):
         now = time.time()
         window_secs = window_hours * 3600.0
         rows = cieu.query(event_type="INTENT_RECORDED", limit=200)
-        has_recent = any((now - (r.created_at or 0)) <= window_secs for r in rows)
-        if has_recent:
-            return  # silent pass
 
-        # No recent intent → warn-only violation row.
+        # GOV-009: a row counts only if recent AND has all four
+        # quality-bar fields non-empty. Track which reason applies so
+        # hook_debug.log can distinguish "no recent intent" from
+        # "recent intent lacks GOV-009 fields".
+        recent_rows = [r for r in rows if (now - (r.created_at or 0)) <= window_secs]
+        if not recent_rows:
+            violation_reason = "no_recent_intent"
+        else:
+            qualified = False
+            for r in recent_rows:
+                try:
+                    params = json.loads(r.params_json or "{}")
+                except (json.JSONDecodeError, TypeError):
+                    params = {}
+                if _intent_is_qualified(params):
+                    qualified = True
+                    break
+            if qualified:
+                return  # silent pass
+            violation_reason = "unqualified_intent_gov009"
+
+        # No qualified recent intent → warn-only violation row.
         warn = {
             "event_id": str(uuid.uuid4()),
             "session_id": "hook_intent_guard",
@@ -113,17 +172,18 @@ def _intent_guard_check(tool_name, file_path):
                 "window_hours": window_hours,
                 "protected_path_match": next(
                     (p for p in protected if _matches(p, fp_rel)), None),
+                "violation_reason": violation_reason,  # GOV-009
                 "warned_at": now,
                 "source": "hook_wrapper.intent_guard",
             },
-            "violations": ["missing_recent_intent"],
+            "violations": [violation_reason],
             "drift_detected": True,
             "human_initiator": "hook",
         }
         try:
             cieu.write_dict(warn)
-            log(f"[intent-guard] WARN: {tool_name} {fp_rel} — no INTENT_RECORDED "
-                f"in {window_hours}h window")
+            log(f"[intent-guard] WARN: {tool_name} {fp_rel} — {violation_reason} "
+                f"(window={window_hours}h)")
         except Exception as exc:
             log(f"[intent-guard] warn write failed ({exc}); fail-open")
     except Exception as exc:

@@ -25,11 +25,17 @@ Usage:
 """
 import argparse
 import json
+import os
 import sys
 import time
 import uuid
+from pathlib import Path
 
 from ystar.governance.cieu_store import CIEUStore
+
+# GOV-009: mark_fulfilled preconditions
+KNOWLEDGE_FRESHNESS_SECS = 48 * 3600  # 48 hours
+REPO_ROOT = Path(__file__).resolve().parent.parent
 
 
 STATUS_PENDING = "PENDING"
@@ -216,6 +222,82 @@ def print_table(rows: list[dict], display_names: dict) -> None:
     )
 
 
+def _check_self_eval(canonical: str, obligation_id: str) -> str | None:
+    """GOV-009 precondition: a self-eval report must exist.
+
+    Returns an error message if the self-eval file is missing, else None.
+    Expected path: ``reports/{canonical_actor}/self_eval_{obligation_id}.md``
+    """
+    rel_path = f"reports/{canonical}/self_eval_{obligation_id}.md"
+    abs_path = REPO_ROOT / rel_path
+    if not abs_path.is_file():
+        return (
+            f"missing self-eval report. Create:\n"
+            f"    {rel_path}\n"
+            f"  Content: against each --success-bar criterion from the intent, "
+            f"mark 达到 / 未达到 and give the reason. This file is the "
+            f"evidence that you actually checked the original success bar "
+            f"before claiming the obligation is done."
+        )
+    # Also reject a zero-byte file — it exists but is not evidence of work.
+    try:
+        if abs_path.stat().st_size == 0:
+            return (
+                f"self-eval report is empty: {rel_path}\n"
+                f"  An empty file is not a self-eval. Write the actual content."
+            )
+    except OSError:
+        pass  # stat failure is non-fatal; treat as present
+    return None
+
+
+def _check_knowledge_freshness(canonical: str) -> str | None:
+    """GOV-009 precondition: knowledge/{canonical_actor}/ must have at least
+    one file with mtime within the last 48 hours.
+
+    Returns an error message if stale/missing, else None.
+    """
+    rel_dir = f"knowledge/{canonical}"
+    abs_dir = REPO_ROOT / rel_dir
+    if not abs_dir.is_dir():
+        return (
+            f"knowledge directory does not exist: {rel_dir}/\n"
+            f"  Create it and write at least one file capturing this "
+            f"execution's theory/assumptions/case. Cannot mark fulfilled "
+            f"without a knowledge trail."
+        )
+    now = time.time()
+    cutoff = now - KNOWLEDGE_FRESHNESS_SECS
+    freshest: tuple[float, Path] | None = None
+    for path in abs_dir.rglob("*"):
+        if not path.is_file():
+            continue
+        try:
+            mtime = path.stat().st_mtime
+        except OSError:
+            continue
+        if freshest is None or mtime > freshest[0]:
+            freshest = (mtime, path)
+        if mtime >= cutoff:
+            return None  # at least one fresh file — condition satisfied
+    # No fresh file found.
+    if freshest is None:
+        return (
+            f"{rel_dir}/ has no files at all. Write at least one file "
+            f"capturing the theory/assumptions/case for this execution "
+            f"before closing the obligation."
+        )
+    age_hours = (now - freshest[0]) / 3600.0
+    return (
+        f"knowledge/{canonical}/ has no file modified in the last 48 hours "
+        f"(freshest: {freshest[1].relative_to(REPO_ROOT)}, "
+        f"{age_hours:.1f}h old).\n"
+        f"  Before marking this obligation fulfilled, add or update at least "
+        f"one knowledge file in {rel_dir}/ reflecting what you learned, what "
+        f"theories applied, what assumptions held or broke."
+    )
+
+
 def mark_fulfilled(cieu: CIEUStore, obligation_id: str,
                    by_actor: str, evidence: str) -> int:
     # Find the registration record so we can copy session_id and validate the id.
@@ -231,6 +313,34 @@ def mark_fulfilled(cieu: CIEUStore, obligation_id: str,
         print(f"ERROR: obligation_id {obligation_id} not found in CIEU registry",
               file=sys.stderr)
         return 1
+
+    # ── GOV-009 preconditions ──────────────────────────────────────
+    # Resolve the canonical actor from --by so legacy real-name IDs work.
+    canonical = canonical_actor(by_actor)
+
+    precondition_errors: list[str] = []
+    self_eval_err = _check_self_eval(canonical, obligation_id)
+    if self_eval_err:
+        precondition_errors.append(f"[GOV-009 condition ②] {self_eval_err}")
+    knowledge_err = _check_knowledge_freshness(canonical)
+    if knowledge_err:
+        precondition_errors.append(f"[GOV-009 condition ③] {knowledge_err}")
+
+    if precondition_errors:
+        print(
+            "ERROR: mark-fulfilled refused — GOV-009 preconditions not met:\n",
+            file=sys.stderr,
+        )
+        for err in precondition_errors:
+            print(err, file=sys.stderr)
+            print(file=sys.stderr)
+        print(
+            "No OBLIGATION_FULFILLED row has been written. Fix the issues "
+            "above and retry. This is a hard gate — the obligation cannot "
+            "be closed until both conditions pass.",
+            file=sys.stderr,
+        )
+        return 3
 
     reg_record, reg_payload = target
     now = time.time()
