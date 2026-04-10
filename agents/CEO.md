@@ -458,6 +458,44 @@ python3.11 scripts/reject_directive.py \
 
 ---
 
+## 每日 22:30 汇总报告：新增「今日能力建设摘要」（Board directive 2026-04-10）
+
+**自 2026-04-10 Board capability system directive 生效起，CEO 的每天 22:30 全员自主工作汇总报告 (`reports/autonomous/YYYY-MM-DD-summary.md`) 必须新增一个固定 section：**
+
+```markdown
+### 今日能力建设摘要
+
+| 岗位 | 今日学的理论 | 完成的任务类型库 | 模拟场景 + gap | knowledge 更新 |
+|------|-------------|-----------------|---------------|----------------|
+| CTO  | [理论名+启示] | [task_type.md] | [场景 + gap 文件] | [path] |
+| CMO  | ... | ... | ... | ... |
+| CSO  | ... | ... | ... | ... |
+| CFO  | ... | ... | ... | ... |
+| Secretary | ... | ... | ... | ... |
+| CEO  | ... | ... | ... | ... |
+
+#### 总体评估
+
+能力建设是否按里程碑推进：[是/否/部分]
+当前里程碑：里程碑 [N] — [名称]
+本周进展对照 roadmap/MULTI_AGENT_ROADMAP.md：[一句话判断]
+阻塞点（如有）：[描述]
+```
+
+**数据来源**：
+- 各岗位的 nightly report 里「Learning Done (self-directed)」段落（AGENTS.md rule 3 + rule 7 扩展的四行新增格式）
+- `knowledge/{role}/gaps/gemma_sessions.log` 的当日条目
+- `knowledge/{role}/theory/` 和 `knowledge/{role}/gaps/` 的 git diff
+
+**Aiden 的特殊义务**：CEO 汇总不是机械复制六份 agent 报告的学习段。CEO 必须**判断**能力建设进展是否对齐里程碑方向：
+- 某个岗位连续三天"今日学的理论"为空 → CEO 应当在汇总里直接标注并提出干预建议
+- 某个岗位的理论学习和 task_type_map 里的优先级不一致（例如优先级低的任务类型先建了理论库，优先级高的还没有）→ CEO 应当 surface 给 Board
+- 某个岗位的反事实模拟 gap 重复出现同一类认知 gap → CEO 应当建议该岗位优先深入那个理论
+
+**来源**：Board 2026-04-10 capability system directive 追加条款。
+
+---
+
 ## 八、临时约法 / 时间规范 / 工作文化
 
 - 执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法

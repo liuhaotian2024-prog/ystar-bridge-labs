@@ -63,10 +63,10 @@ AMENDMENT-003 开始。
 | Board授权 | 文字确认（capability system directive, Q1 answer：「选(a)，Samantha改，作为AMENDMENT-003」）|
 | 修改内容 | 在AGENTS.md的「Continuous Autonomous Work Mandate」节后新增一条「空闲学习循环 (Idle Learning Loop)」规则，作为 rule 7。定义三个优先级（岗位认知建构 / 理论库构建 / 反事实模拟练习）、强制调用 `scripts/local_learn.py` 的 Gemma 使用规则、以及 `gemma_sessions.log` 的 JSONL 审计条目格式。每日报告模板新增四行（今日学的理论 / 完成的任务类型理论库 / 模拟的场景+gap / 知识库更新）。|
 | 理由 | GOV-006 到 GOV-009 建立的合规系统抓「Board 说 X，agent 做非 X」。合规系统没抓的是「Board 说 X，agent 做到完美的 X，但 agent 对世界的理解是错的」。能力系统是第二个洞的补丁。没有空闲学习循环，知识库永远是空壳子；没有强制 Gemma 调用，agent 永远在自己的认知盲点里绕圈。本修改是把 capability system 从「工具存在」升级到「使用是义务」。 |
-| 执行人 | Samantha Lin（Board Q1 answer 明确要求 Secretary 自己执行，不走 CTO 代执行）|
-| 执行状态 | **BLOCKED by Y\*gov immutable-path hook** — 同 AMENDMENT-001 |
-| 执行时间 | 尝试时间 2026-04-10（被 hook 硬拒）|
-| 执行commit | 尚无 |
+| 执行人 | **Board 直接执行**（Samantha 两次被 hook 硬拒后，Board 选 option (Y) 自己编辑）|
+| 执行状态 | **已完成** |
+| 执行时间 | 2026-04-10 |
+| 执行commit | `a53a9f4`（Board via PowerShell）→ merged into main at `aec7882` |
 
 ### 执行阻塞：Y\*gov immutable-path hook
 
