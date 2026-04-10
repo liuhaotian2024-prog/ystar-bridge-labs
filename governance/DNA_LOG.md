@@ -148,6 +148,17 @@
 **写入**:
 - `governance/INTERNAL_GOVERNANCE.md` 新增"分层治理架构 (Layered Defense)"段落 + coverage gap 表格 + ASCII 架构图
 - `governance/DNA_LOG.md` 本条目
+
+**post GOV-007 Step 2 (2026-04-09) 更新**:
+
+DNA #007 的核心原则("两层独立 governance 的合并冲动应该被抵制")**仍然有效**,但需要精确区分两件事:
+
+- **合并 enforcement points** = 永远错(single point of failure),DNA #007 永久否决
+- **统一 contract source** = post GOV-007 Step 2 的正确选择(single source of truth),Layer 1 + Layer 2 都从 `.ystar_session.json` 读规则,enforcement points 仍然分离
+
+GOV-007 Step 2 不是反转 DNA #007 —— 它是 architectural refinement。当时的 framing("两套独立 contract source 是 by-design")过宽,精确的 framing 是"两个独立 enforcement points 是 by-design,source 共享是更优策略"。Iron Rule 1 (no LLM in check()) 在两种 framing 下都不变。
+
+**未来引用 DNA #007 时**: "不要合并 enforcement points",not "不要合并 contract source"。前者是宪法,后者是已被 GOV-007 Step 2 推翻的 over-claim。
 - 未来 GOV-006 Intent Verification 实施时,record_intent.py 应该把"是否在试图合并两层 contract"加进 intent verification checklist
 
 ---

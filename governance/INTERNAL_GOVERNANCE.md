@@ -122,100 +122,125 @@ Level 3 → 反事实提案 → CEO转交 → Board批准/否决 → 执行 → 
 
 ---
 
-## 分层治理架构 (Layered Defense, GOV-005 Finding 4)
+## 分层治理架构 (Layered Defense — GOV-005 Finding 4 + GOV-007 Step 2 update)
 
-Y\* Bridge Labs 的**治理执行**分两层,每层有自己的契约源,**by-design 不是 redundancy**。这和上面的"决策权限层级"是两个独立维度:
+Y\* Bridge Labs 的**治理执行**分两层。**Source 共享,enforcement points 独立**——这是 GOV-007 Step 2 (2026-04-09) 之后的稳定架构。
 
-- **决策权限层级** (Level 1/2/3) 回答的是"谁来决定?"
-- **分层治理架构** (Layer 1 命令层 / Layer 2 行为层) 回答的是"谁来执行?"
+> **历史注**: 本节最初由 GOV-005 Finding 4 (2026-04-09) 写入,当时 Layer 2 从 `AGENTS.md` regex 解析 contract,与 Layer 1 的 `.ystar_session.json` 是两套独立 source。GOV-007 Step 2 把 Layer 2 的 source 切换到 `.ystar_session.json`,与 Layer 1 共用。**Defense-in-depth 的精神不变**(两个 enforcement points 各自独立检查),但 framing 从"两个 source"修订为"共享 source + 独立 enforcement"。两个原则在不同维度,互不矛盾:
 
-两个维度互相正交,任何一个 directive 同时受两组规则约束。
+- **Single source of truth at the contract level** 解决"一致性"(零 drift,零同步成本)
+- **Defense-in-depth at the enforcement point level** 解决"鲁棒性"(任一 enforcement point 失效另一兜底)
+
+这和"决策权限层级"也是正交维度:
+
+- **决策权限层级** (Level 1/2/3) 回答"谁来决定?"
+- **分层治理架构** (Layer 1 命令层 / Layer 2 行为层) 回答"谁来执行?"
+
+任何一个 directive 同时受两组维度约束。
+
+### 共享 contract source: `.ystar_session.json`
+
+两层都从同一个文件读规则:
+
+| 字段 | 用途 | Layer 1 (hook) | Layer 2 (gov-mcp) |
+|---|---|---|---|
+| `schema_version` | 协议版本协调 | ignore (兼容) | ✅ 启动校验 |
+| `contract.deny` | 路径 deny 列表 | ✅ | ✅ post Step 2 |
+| `contract.deny_commands` | 命令 deny 列表 | ✅ | ✅ post Step 2 |
+| `contract.obligation_timing` | 义务时限 | ✅ | ✅ post Step 2 |
+| `obligation_agent_scope` | 义务 ↔ agent 映射 | ✅ | ⚠️ Layer 2 暂不利用 (GOV-008 候选) |
+| `agent_write_paths` | per-role 写权限 | ✅ | ⚠️ 同上 |
+| `restricted_write_paths` | file ↔ allowed agent | ✅ | ⚠️ 同上 |
+| `delegation_chain` | 委派链 | ✅ | ✅ |
+
+`.ystar_session.json` 是**单一真相源 (single source of truth)**,所有规则的 authoritative 拷贝住在这里。`AGENTS.md` 退化为**人类可读的伴随文档**(human story / rationale),**不是 enforcement source**。
 
 ### Layer 1: 命令层(ystar Python hook)
 
-- **契约源**: `.ystar_session.json` 的 `deny_commands`、`deny`、`obligation_agent_scope`、`restricted_write_paths`、`delegation_chain` 等结构化字段
+- **契约源**: `.ystar_session.json`(直接 dict load,无翻译)
 - **执行点**: ystar Python hook (PreToolUse / PostToolUse) 在 Claude Code 的 tool layer 拦截
 - **覆盖**: 所有走 Claude Code tool layer 的 file ops、bash commands、edits
-- **典型 catch**: `ystar setup --yes` (GOV-005 Part 3 / AMENDMENT-001)、写 `/etc`、`rm -rf`、AGENTS.md 修改尝试
+- **典型 catch**: `ystar setup --yes` (AMENDMENT-001)、写 `/etc`、`rm -rf`、AGENTS.md 修改尝试
 - **运行时刻**: 本地 Mac mini Python 进程,响应 Claude Code hook 调用
+- **生命周期**: 无状态,每次 PreToolUse 都是新进程,自动读最新 `.ystar_session.json`,不需要 reload 信号
 
 ### Layer 2: 行为层(gov-mcp MCP server)
 
-- **契约源**: `AGENTS.md` 的 markdown prose,通过 `gov-mcp` 的 regex parser 翻译成 `IntentContract`
+- **契约源**: `.ystar_session.json`(post GOV-007 Step 2,通过 `--session-config` flag 启动)
+  - **历史**(pre GOV-007 Step 2): 从 `AGENTS.md` 用 regex 解析,confidence ≤0.7,只能提取部分规则
+  - **现在**: 直接 dict load,confidence ≥0.95(structured data, no parsing)
+  - **`--agents-md` 仍保留为 deprecated fallback**(向后兼容旧部署)
 - **执行点**: gov-mcp 的 `gov_check` / `gov_enforce` MCP 工具,在每次 MCP client 调用工具时拦截
 - **覆盖**: 所有走 MCP 协议的 tool call(自然语言意图层面的 ALLOW/DENY)
 - **典型 catch**: 合约范围外的工具使用、agent_id 越权、跨 domain 调用、监督式 agent 行为模式
 - **运行时刻**: 本地 Mac mini gov-mcp server (PID 监听 :7922 SSE),响应 MCP client 请求
+- **生命周期**: 长驻进程,启动时读 `.ystar_session.json`,需要重启或 SIGHUP (待 GOV-008 NL pipeline) 才能 reload
 
-### 为什么是两层而不是一层?
+### Finding 4 的 4 个候选方案历史回顾
 
-GOV-005 Finding 4 提出了 4 个候选合并方案,Board 全部否决:
+GOV-005 Finding 4 (2026-04-09 早些时候)曾提出 4 个候选合并方案。Board 当时全部否决,**post GOV-007 Step 2 视角下的复盘**:
 
-| 候选 | 做什么 | Board 否决理由 |
-|---|---|---|
-| α | 把 `.ystar_session.json` 的 `deny_commands` 复制到 `AGENTS.md` | **制造 redundancy + 同步漂移**: 一个文件改了另一个没改 → 两层规则不一致 → 哪一层是真相? |
-| β | 改 gov-mcp 产品代码,让它同时读 `AGENTS.md` + `.ystar_session.json` | **跨 repo 改产品** = Level 3 + gov-mcp release 周期耦合 + 长期工程债 |
-| γ | **接受分层 by-design,文档讲清责任域**(本节) | **采纳** ✅ |
-| δ | 启用 `YSTAR_LLM_PROVIDER=anthropic`,让 gov-mcp 用 LLM 解析 `AGENTS.md` 提高 contract coverage | **违反 Iron Rule 1 (Deterministic Enforcement)**: LLM 进 ALLOW/DENY check() 路径 = 治理可被 prompt-injected。Y\*gov 的核心卖点之一就是"治理路径不带 LLM",自己破坏这个卖点 = 自杀 |
+| 候选 | 当时做什么 | Board 当时否决理由 | post Step 2 复盘 |
+|---|---|---|---|
+| α | 把 `.ystar_session.json` deny_commands **复制**到 AGENTS.md prose | redundancy + drift | **当时正确** —— 复制是错的。GOV-007 Step 2 用 "Layer 2 直接读 source" 而不是 "复制 source",解决了 underlying 问题 |
+| β | gov-mcp 同时读 AGENTS.md + .ystar_session.json (改产品代码) | 跨 repo + Level 3 + 工程债 | **GOV-007 Step 2 是 β 的精简版**: 不"同时读两个"而是"只读 .ystar_session.json"。工程量从 β 估的"重大改动"降为 ~80 行 |
+| γ | 接受当前架构,文档讲清责任域 | 采纳 ✅ | **现在被 GOV-007 Step 2 superseded** —— γ 是 short-term mitigation,Step 2 是 long-term fix |
+| δ | 启用 LLM-based contract translation 提高 regex 覆盖率 | **违反 Iron Rule 1** | **永久否决,不可逆** —— Iron Rule 1 是宪法层硬约束,GOV-007 Step 2 之后仍然严守 |
 
-### 正确的心智模型
+**GOV-007 Step 2 的本质**: 在保持 Iron Rule 1 (no LLM in check()) 和 Finding 4 enforcement-point 分离原则的前提下,通过更窄的 scope 实现了 β 的 underlying intent。这是 architectural refinement,**不是反转 Finding 4**。
 
-**两个 contract source,两个执行点,两个责任域,任何客户端同时受两层保护**:
+### 正确的心智模型(post GOV-007 Step 2)
 
 ```
-      ┌──────────────────────────────────────────┐
-      │ Client (Claude Code / spawned subprocess)│
-      └──────┬──────────────────────┬────────────┘
-             │                      │
-   tool call                   MCP request
-   (file/bash/edit)            (gov_check/gov_exec)
-             │                      │
-             ▼                      ▼
-   ┌─────────────────┐    ┌──────────────────┐
-   │ Layer 1         │    │ Layer 2          │
-   │ ystar hook      │    │ gov-mcp server   │
-   │ (PreToolUse)    │    │ (port 7922 SSE)  │
-   ├─────────────────┤    ├──────────────────┤
-   │ contract source:│    │ contract source: │
-   │ .ystar_session  │    │ AGENTS.md        │
-   │ .json           │    │ (regex parsed)   │
-   ├─────────────────┤    ├──────────────────┤
-   │ enforces:       │    │ enforces:        │
-   │ - deny_commands │    │ - intent contract│
-   │ - file deny     │    │ - delegation chain│
-   │ - obligation    │    │ - agent_id scope │
-   │   triggers      │    │ - MCP tool ALLOW │
-   └─────────────────┘    └──────────────────┘
+                         .ystar_session.json
+                         (single source of truth)
+                                  │
+                ┌─────────────────┴─────────────────┐
+                │                                   │
+                ▼                                   ▼
+       ┌──────────────────┐               ┌──────────────────┐
+       │ Layer 1          │               │ Layer 2          │
+       │ ystar Python hook│               │ gov-mcp server   │
+       │ (PreToolUse)     │               │ (port 7922 SSE)  │
+       │ stateless,每次   │               │ long-lived,启动 │
+       │ tool call 重读   │               │ 时 load,需 reload│
+       └────────┬─────────┘               └────────┬─────────┘
+                │                                   │
+        intercepts                          intercepts
+        Claude Code tool calls              MCP protocol calls
+        (Bash/Read/Edit/Write/etc.)         (gov_check/gov_exec/etc.)
+                │                                   │
+                ▼                                   ▼
+              ALLOW or DENY                 ALLOW or DENY
+              (deterministic, no LLM)       (deterministic, no LLM)
 ```
 
-- 走 Claude Code tool layer(file ops、bash、edit)→ **Layer 1 (ystar hook) 拦截**
-- 走 MCP 协议(MCP tool calls)→ **Layer 2 (gov-mcp) 拦截**
-- 同一个动作如果两层都覆盖,**会被两层都检查一遍**
+- **Source: 1 个**(`.ystar_session.json`)→ 零 drift,零同步成本
+- **Enforcement points: 2 个**(hook + MCP server)→ defense-in-depth,任一失效另一兜底
+- **Source ↔ enforcement 关系**: 1-to-many (一个 source 喂两个 enforcement points)
 
-**这不是 redundancy,这是 defense-in-depth**。两层任何一层放过,另一层有机会拦;两层任何一层 down,另一层有机会兜底。
+### 已知 coverage matrix(post GOV-007 Step 2)
 
-### 配置不同步是 feature 不是 bug
+| 拦截能力 | Layer 1 (ystar hook) | Layer 2 (gov-mcp) | 改善 |
+|---|---|---|---|
+| `ystar setup --yes` | ✅ AMENDMENT-001 | ✅ post Step 2 | ⬆️ pre-Step-2 是 ❌ |
+| `rm -rf` / `sudo` / `DROP TABLE` | ✅ deny_commands | ✅ post Step 2 | ⬆️ pre-Step-2 是 ❌ |
+| 写 `/etc` `/root` `/production` | ✅ deny | ✅ post Step 2 | ⬆️ pre-Step-2 是 ⚠️(regex 0.7) |
+| GOV-001 obligation 跟踪 | ✅ obligation_agent_scope | ✅ OmissionEngine (内部) | unchanged |
+| AGENTS.md 不可变 | ✅ Y\*gov hook (commit 90ffd4f) | (gov-mcp 不修改 AGENTS.md) | unchanged |
+| Spawned MCP tool calls | ❌ (hook 不在 MCP layer) | ✅ gov_check 拦截 | unchanged |
+| Agent_id 越权 | ⚠️ restricted_write_paths(部分) | ✅ delegation chain | unchanged |
+| `obligation_agent_scope` 利用 | ✅ | ⚠️ Layer 2 暂不利用 | GOV-008 候选 |
 
-- `.ystar_session.json` 改 `deny_commands` 不需要同步到 `AGENTS.md`
-- `AGENTS.md` 改 contract prose 不需要同步到 `.ystar_session.json`
-- 两个文件**单独演化**,Board 在改任何一个时不需要考虑另一个
-- 这降低了 cognitive load,代价是每个 client 必须知道**两个执行点都存在**
+**post GOV-007 Step 2 的最大实际改进**: 前 3 行从"Layer 2 ❌"变成"Layer 2 ✅"。Defense-in-depth 现在在前 4 项上是**双层兜底**而不是单层。
 
-**如果未来有人提议"统一 contract source 简化架构",立刻引用 GOV-005 Finding 4 决策 + 本节 + Iron Rule 1**。这是 Y\*gov 哲学的硬约束。
+### 如果未来有人提议"再回到两个独立 source"
 
-### 已知 coverage gap (by-design)
+引用本节 + GOV-005 Finding 4 历史 + GOV-007 Step 2 commit 链。**两层独立 enforcement points 是要保留的(defense-in-depth),两套独立 sources 是 GOV-007 之前的临时状态,不应该回滚**。
 
-| 拦截能力 | Layer 1 (ystar hook) | Layer 2 (gov-mcp) |
-|---|---|---|
-| `ystar setup --yes` | ✅ AMENDMENT-001 | ❌ (在 .ystar_session.json 不在 AGENTS.md) |
-| `rm -rf` / `sudo` / `DROP TABLE` | ✅ deny_commands | ❌ |
-| 写 `/etc` `/root` `/production` | ✅ deny | ⚠️ regex 0.7 confidence,部分覆盖 |
-| GOV-001 obligation 跟踪 | ✅ obligation_agent_scope | ✅ OmissionEngine (内部) |
-| AGENTS.md 不可变 | ✅ Y\*gov hook (commit 90ffd4f) | (gov-mcp 自己读 AGENTS.md,不修改) |
-| Spawned MCP tool calls | ❌ (hook 不在 MCP layer) | ✅ gov_check 拦截 |
-| Agent_id 越权 | ⚠️ restricted_write_paths(部分) | ✅ delegation chain |
+### 如果未来有人提议"在 check() 路径加 LLM"
 
-**这些 gap 是 by-design 的两层分工**,不是 bug list。要把某个 gap 关掉,问题不是"应该关",而是"应该让哪一层关",因为关错层会破坏单层心智模型的简洁性。
+引用 Iron Rule 1 + Finding 4 δ 候选历史 + DNA #007。**永远 No,不讨论**。LLM 可以用在 contract authoring(GOV-008 NL pipeline),不能用在 contract enforcement。这是宪法层硬约束。
 
 ---
 
