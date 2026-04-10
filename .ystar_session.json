@@ -10,6 +10,12 @@
     "scripts/record_intent.py",
     "scripts/check_intents.py"
   ],
+  "gemma_endpoints": [
+    "http://localhost:11434",
+    "http://192.168.1.225:11434",
+    "http://192.168.1.228:11434"
+  ],
+  "gemma_default_model": "gemma3:4b",
   "contract": {
     "name": "ystar-company_policy",
     "deny": [
