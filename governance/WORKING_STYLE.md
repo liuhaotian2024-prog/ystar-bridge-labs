@@ -658,6 +658,69 @@ Board capability system directive (2026-04-10) 整合执行指令
 
 ---
 
+## 第十条：Board 在欲望驱动体系下的角色 (GOV-010 Phase 4)
+
+第一到第九条定义了合规系统和能力系统。第十条定义 Board 在 agent 自主
+行动时代的角色——当 agent 可以自发学习（Level 0）并主动填补认知 gap
+（AutonomyEngine desire-driven 模式）之后，Board 不再是"发每一条
+指令的人"，而是：
+
+### 1. 认知地图优先级设定者
+
+Board 阅读 `knowledge/{role}/role_definition/gap_map.md`（由
+`scripts/update_gap_map.py` 自动生成），对各岗位的理论库建设方向
+给出优先级指导。例如："CTO 先把安全审计的理论库建好，性能优化可以
+排后面"。agent 据此调整 idle learning priority 2 的选题顺序。
+
+Board **不**直接指定要学什么理论——理论选择是 agent 自己按第九条
+六步协议做的。Board 只设定**方向优先级**。
+
+### 2. 真实阻塞的解决者
+
+Agent 在 Level 0 学习中遇到超出 knowledge 目录写入范围的阻塞
+（需要访问外部 API、需要跨岗位协调、需要花钱）时，通过
+`reject_directive.py` 或 chat 上报 Board。Board 的角色是**打通
+阻塞**，而不是替 agent 做学习。
+
+### 3. 战略情报接收者
+
+CEO 的 22:30 汇总报告包含"今日能力建设摘要"和"今日自主活动摘要
+（Level 0）"。Board 通过这两个 section 接收全公司 agent 的学习
+动态，发现**战略层面**的 pattern（例如："所有岗位都在学理论但
+没有一个在做反事实模拟"→ Board 可以发一条 directive 调整循环
+优先级）。
+
+### 4. 授权边界扩展者
+
+Level 0 的边界（只写 knowledge、不碰保护文件、不花钱）是初始设置。
+随着 agent 能力被证明（里程碑二稳定性验证），Board 可以**逐步扩展
+Level 0 的边界**。例如：
+
+- 里程碑二完成 → 允许 Level 0 期间读（不写）其它岗位的 knowledge
+- 里程碑三完成 → 允许 Level 0 期间向其它 agent 发送学习协作请求
+- 里程碑四完成 → 允许 Level 0 期间自动发起跨岗位学习项目
+
+边界扩展走 `governance/BOARD_CHARTER_AMENDMENTS.md` 流程。每次
+扩展是一条 amendment，记录 Board 的授权和新边界定义。
+
+### Board 不做的事
+
+- **不微管理学习内容**——agent 自己选理论、自己跑六步协议
+- **不审批 Level 0 任务**——Level 0 不需要 record_intent 或 Board
+  确认，`active_task.py` 的 CIEU 事件足够审计
+- **不替 agent 做学习**——Board 是方向设定者和阻塞移除者，不是
+  内容生产者
+- **不以 gap_map 覆盖率作为唯一 KPI**——理论库的质量比覆盖率重要，
+  10 条深入的理论 > 50 条一行摘要
+
+### 来源 (第十条)
+
+Board GOV-010 Phase 4 directive (2026-04-10)。定义 Board 从
+"指令发出者"向"认知地图设定者 + 阻塞解决者"的角色转型，匹配
+AutonomyEngine 的 desire-driven 模式下 agent 自主权扩大后的
+管理实际。
+
+---
 
 ## 团队角色卡 · 官方身份 · 2026-04-06确立
 

@@ -492,7 +492,27 @@ python3.11 scripts/reject_directive.py \
 - 某个岗位的理论学习和 task_type_map 里的优先级不一致（例如优先级低的任务类型先建了理论库，优先级高的还没有）→ CEO 应当 surface 给 Board
 - 某个岗位的反事实模拟 gap 重复出现同一类认知 gap → CEO 应当建议该岗位优先深入那个理论
 
-**来源**：Board 2026-04-10 capability system directive 追加条款。
+#### 今日自主活动摘要（Level 0）
+
+每个岗位的 Level 0 行为必须在汇总里单独列出：
+
+```markdown
+### 今日自主活动摘要（Level 0）
+
+| 岗位 | active_task 数 | 填补的 gap | 知识库新增条目 | 异常 |
+|------|---------------|-----------|--------------|------|
+| CTO  | 2 | system_architecture | theory/system_architecture.md | — |
+| CMO  | 0 | — | — | ⚠️ 连续 3 天无 Level 0 活动 |
+| ...  | ... | ... | ... | ... |
+```
+
+**异常信号**（CEO 必须标注并提出建议）：
+
+- 某岗位**连续 3 天**未发起 Level 0 任务（`active_task.json` 无 recent entries）
+- `active_task` 超过 `estimate_minutes × 2` 仍未 complete（`INTENT_STALLED`）
+- `gap_map.md`**连续 7 天无变化**（`update_gap_map.py` 输出不变 = 没在填 gap）
+
+**来源**：Board 2026-04-10 capability system directive 追加条款 + GOV-010 Phase 4。
 
 ---
 
