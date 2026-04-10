@@ -246,16 +246,40 @@ First-draft self-evaluation:
 """
 
 
+def _rag_context(query: str, top_k: int = 3) -> str:
+    """Retrieve relevant context from RAG index. Fail-open: returns empty
+    string if index missing or query fails."""
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from build_rag_index import query_index
+        results = query_index(query, top_k=top_k)
+        if not results:
+            return ""
+        lines = ["\n[Relevant context from knowledge base:]"]
+        for r in results:
+            source = r.get("source", "?")
+            text = r.get("text", "")[:400]
+            lines.append(f"--- {source} ---\n{text}")
+        return "\n".join(lines) + "\n"
+    except Exception:
+        return ""
+
+
 def build_prompt(mode: str, *, role: str = "", task: str = "",
                  success_bar: str = "", result: str = "") -> str:
+    # RAG: inject relevant context for question and eval modes
+    rag = ""
+    if mode in ("questions", "eval") and task:
+        rag = _rag_context(task)
+
     if mode == "questions":
-        return (PROMPT_QUESTIONS
+        return (rag + PROMPT_QUESTIONS
                 .replace("__ROLE__", role or "general agent")
                 .replace("__TASK__", task or "(no task given)"))
     if mode == "tasks":
         return PROMPT_TASKS.replace("__ROLE__", role or "general agent")
     if mode == "eval":
-        return (PROMPT_EVAL
+        return (rag + PROMPT_EVAL
                 .replace("__TASK__", task or "(no task given)")
                 .replace("__SUCCESS_BAR__", success_bar or "(no success bar given)")
                 .replace("__RESULT__", result or "(no result given)"))
