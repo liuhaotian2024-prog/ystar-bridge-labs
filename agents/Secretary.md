@@ -357,6 +357,111 @@ CIEU 是 append-only，pending 也是 append-only-then-archive。**任何
 reason），要么 bounce——所有路径最终都把文件留在 `reviewed/` 子目录里
 作为审计证据。
 
+### 周一审计任务 #2：gemma_sessions.log（Board capability directive 2026-04-10）
+
+**自 2026-04-10 Board capability system directive 生效起，Secretary 周一
+审计除了 gov_order pending 文件之外，还必须独立审计每个岗位的
+`gemma_sessions.log` 空闲学习使用记录。**
+
+这是和 gov_order 周审计**完全独立**的第二项周一任务，per Board
+capability system directive Q2 answer（"Secretary 周审计另外单独
+检查 log 条目，两个检查分开，不混在一起"）。
+
+#### 周一动作（在 gov_order 审计之后）
+
+```bash
+for role in ceo cto cmo cso cfo secretary; do
+  echo "=== knowledge/$role/gaps/gemma_sessions.log ==="
+  if [ -f knowledge/$role/gaps/gemma_sessions.log ]; then
+    # Count entries from the last 7 days
+    python3.11 -c "
+import json, datetime
+from pathlib import Path
+cutoff = datetime.datetime.now() - datetime.timedelta(days=7)
+log = Path('knowledge/$role/gaps/gemma_sessions.log')
+lines = log.read_text().strip().split('\n') if log.exists() and log.stat().st_size else []
+days_with_entry = set()
+for line in lines:
+    try:
+        entry = json.loads(line)
+        ts = datetime.datetime.fromisoformat(entry['timestamp'])
+        if ts >= cutoff:
+            days_with_entry.add(ts.date())
+    except: pass
+print(f'  days with entry in last 7: {len(days_with_entry)}')
+print(f'  total entries in last 7: {sum(1 for l in lines if l)}')
+"
+  else
+    echo '  (file does not exist)'
+  fi
+done
+```
+
+#### 合规标准（Board 定义）
+
+每个岗位**每个工作日**必须有至少一条 `gemma_sessions.log` 条目。
+工作日定义：周一到周五（周末/节假日不计算在内，也不计违规）。
+
+- 每岗位每工作日 ≥ 1 条 → 合规
+- 某个工作日缺条目 → 轻度违规（surface 到 Board 周报）
+- 某岗位连续 3 个工作日缺条目 → 严重违规（Board 应当直接问责该岗位）
+- 某岗位 7 天内零条目 → 关键违规（agent 完全没有执行空闲学习，
+  Board 应当考虑该 agent 是否还在正常运作）
+
+#### 写入 `reports/secretary/gemma_audit_YYYY_MM_DD.md`
+
+Template:
+
+```markdown
+# Gemma Sessions Weekly Audit — YYYY-MM-DD
+
+## Per-role compliance
+
+| Role | Days with entry (0-5 expected) | Total entries | Status |
+|---|---|---|---|
+| ceo | ? | ? | ✓ / ⚠️ / ❌ / 🚨 |
+| cto | ? | ? | ✓ / ⚠️ / ❌ / 🚨 |
+| cmo | ? | ? | ✓ / ⚠️ / ❌ / 🚨 |
+| cso | ? | ? | ✓ / ⚠️ / ❌ / 🚨 |
+| cfo | ? | ? | ✓ / ⚠️ / ❌ / 🚨 |
+| secretary | ? | ? | ✓ / ⚠️ / ❌ / 🚨 |
+
+## Mode breakdown (entries grouped by mode)
+
+- questions: ?
+- tasks: ?
+- eval: ?
+
+## Provider endpoint breakdown
+
+- localhost: ?
+- 192.168.1.225: ?
+- 192.168.1.228: ?
+- (null, fail-open): ?
+
+## Violations flagged
+
+- [岗位名]: [违规描述] — 建议 Board: [具体建议]
+
+## Notable observations
+
+- ...（可选，关于 output_length 异常、特定话题重复出现等观察）
+```
+
+#### 和 GOV-009 Change 3 的关系（per Board Q2 answer）
+
+GOV-009 Change 3 的 `mark_fulfilled` 前置条件 ③（48 小时知识库新鲜度）
+是**硬门**——agent 不守就关不掉 obligation。本周一审计是**软检查**
+——Secretary 报 Board 周报，Board 决定后续。两者完全独立：
+
+- 一个 agent 每 48 小时碰一下 `knowledge/{role}/` 某个文件就能过
+  mark_fulfilled 硬门（包括 gemma_sessions.log 的 append 也算），
+  所以单独靠硬门无法保证 agent **真的在用 Gemma 做学习**
+- 本周审计读 `gemma_sessions.log` 的实际内容，验证 agent **确实
+  调用了 local_learn.py**，而不是只 touch 了某个其它文件
+
+**两个检查都必须存在**才能保证空闲学习不被走过场。
+
 ### 与 GOV-006 INTENT_RECORDED 的关系
 
 gov-order 写的 INTENT_RECORDED 行的 `params.source = "gov_order"`，
