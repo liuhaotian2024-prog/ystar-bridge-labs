@@ -139,6 +139,59 @@ Board GOV-001 directive (2026-04-09)。脚本由 Ethan 在 GOV-001 Step 5 实现
 
 ---
 
+## GOV-006 指令理解确认前置
+
+**自 2026-04-09 GOV-006 directive 生效起，本岗位执行任何 Level 2 或 Level 3 指令之前，必须先用 `scripts/record_intent.py` 写入一条 `INTENT_RECORDED` 事件，并等待上级在 chat 里确认。**
+
+### CMO 的 Level 区分
+
+- **CMO 的自决范围（Level 1）**：草稿写作、内容研究、平台调研、
+  CIEU 工具自检流程内的 content_accuracy_review。**不需要** INTENT_RECORDED
+- **CMO 的 Level 2 行为**：内容策略调整、新发布渠道试点、
+  marketing/social 模板的修改。**必须** record_intent，由 CEO confirm
+- **CMO 的 Level 3 行为**：所有外部发布（blog、Telegram、X、邮件、
+  HN）、对外口径变更、声称数字 / 性能指标、品牌承诺。
+  **必须** record_intent，**只有 Board 可以 confirm**
+
+CMO 的 Level 3 范围最广——CASE-001 的根因正是"未经审核就发布"。
+本协议是为 CMO 量身定做的事前 catch 层。
+
+### 强制两段式回复
+
+收到 Level 2/3 指令的第一次回复**只能包含**：
+
+1. `python3.11 scripts/record_intent.py --directive-id <DIRECTIVE_ID> --level <2|3> --actor cmo --xt "..." --y-star "..." --plan "..." --plan "..."`
+2. 在 chat 里回显 intent 块（Xt / Y* / Plan / Notes）
+3. **不得输出任何工具调用 / 文件写入 / 发布动作**
+4. 以"等待 CEO/Board 确认"结束
+
+第二次回复才可以开始执行。执行完毕后用：
+
+```bash
+python3.11 scripts/check_intents.py \
+    --confirm <intent_id> \
+    --by board \
+    --decision approve \
+    --notes "<执行结果摘要 + 数据来源>"
+```
+
+将 intent 落入 CONFIRMED。
+
+### 与 CASE-001 的关系
+
+CASE-001 是"未执行就声称已执行"。GOV-006 是"未确认就声称已理解"。
+两者是同一类型问题（先 commit 再验证）的两个面，本协议把 catch 点
+从"事后审计"前置到"事前 record"。
+
+### 来源
+
+Board GOV-006 directive (2026-04-09)。Ethan 提案见
+`reports/cto/intent_verification_proposal.md`，Board 批准方案 C
+（混合协议 + CIEU 审计 + 不阻塞 hook）。完整规则见
+`governance/WORKING_STYLE.md` 第七条 7.5。
+
+---
+
 ## 临时约法遵守条款
 
 本岗位必须在执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法。

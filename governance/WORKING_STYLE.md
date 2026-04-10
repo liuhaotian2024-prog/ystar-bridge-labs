@@ -110,6 +110,124 @@ Board GOV-005 directive (2026-04-09) 第一部分。
 
 ---
 
+### 7.5 指令理解确认协议 (GOV-006)
+
+Level 2 和 Level 3 directive 的执行存在两段：**理解阶段** 和 **执行阶段**。
+Agent 必须在执行阶段开始之前，把对当前状态、目标、执行手段的理解
+显式写入 CIEU 审计链，等待上级确认后才能动工具。这是反事实推理提案
+规范（第七条正文）的自然延伸：提案阶段解决"选哪个方案"，确认阶段
+解决"我对方案的解读是否正确"。
+
+#### 为什么需要
+
+本 session 已经发生 3 次可审计的解读偏差（GOV-001 Step 2、GOV-001
+Step 6、GOV-005 Part 5 reconcile），每次 Board 都是在 commit 之后
+才发现。每一次都花掉 1 个 reconcile cycle。根因是"agent 拿到指令
+直接执行，Board 没有机会在执行前看到 agent 的理解"。把这一步前置
+到 CIEU，偏差会在工具调用之前被 catch。
+
+#### 强制两段式回复
+
+Level 2/3 directive 的第一次回复**只能包含**：
+
+1. 使用 `scripts/record_intent.py` 写入一条 `INTENT_RECORDED` 事件
+2. 在 chat 里回显 intent 块（Xt / Y* / Plan / Notes）
+3. **不得输出任何工具调用 / 代码修改 / Bash 执行**
+4. 以"等待 Board（Level 3）或 CEO（Level 2）确认"结束
+
+Reviewer 回复 `确认` / `调整: ...` / `拒绝` 之后，agent 的第二次
+回复才可以开始执行。执行过程中 agent 或 reviewer 使用
+`scripts/check_intents.py --confirm <intent_id> --by <board|ceo>
+--decision <approve|adjust|reject>` 将审议结果落入 CIEU。
+
+#### 强制 record_intent 的 CLI 形态
+
+```bash
+python3.11 scripts/record_intent.py \
+    --directive-id <DIRECTIVE_ID> \
+    --level <2|3> \
+    --actor <ceo|cto|cmo|cso|cfo|secretary> \
+    --xt "当前状态我的理解是 ..." \
+    --y-star "目标 Y* 我的理解是 ..." \
+    --plan "step 1" --plan "step 2" --plan "step 3" \
+    --notes "可选：约束、假设、未知点" \
+    --source-ref "reports/cto/<proposal>.md"  # 可选
+```
+
+- `--xt`: 一句话或短段，必须是"可验证"的状态陈述，不能是心境或情绪
+- `--y-star`: 以 Rt = 0 的可观察条件描述目标
+- `--plan`: 至少 1 个 `--plan`，每步独立、可在 chat 里对齐
+- `--actor`: 必须是 `ROLES` 白名单内的角色名（含 secretary）
+
+#### Level 区分
+
+- **Level 1**（自决、可逆、无外部可见性）：**不需要** INTENT_RECORDED
+- **Level 2**（跨岗位、影响内部流程）：**必须** INTENT_RECORDED，由 CEO 确认
+- **Level 3**（外部发布、宪法修改、产品对外承诺、Board 直接指令）：
+  **必须** INTENT_RECORDED，由 Board 确认。CEO 不得代替 Board 确认
+  Level 3 intent（由 `check_intents.py` 强制）
+
+#### Reviewer 的权利和义务
+
+收到 intent 后，reviewer 有三种回应：
+
+1. **approve**：plan 和 Xt/Y* 都正确，原样执行
+2. **adjust**：plan 或 Xt/Y* 有偏差；reviewer 给出修正 notes；
+   agent 必须重新阅读 notes 并按修正后的版本执行。Notes 是强制字段
+3. **reject**：执行被拒绝；agent 不得动工具；需要时 agent 可以写
+   一条新的 INTENT_RECORDED 再来一次
+
+**Level 3 intent 只能由 Board 批准**——CEO 无权代替 Board 确认。
+`check_intents.py --confirm` 会在 `level=3 且 by!=board` 时硬拒。
+
+#### CIEU 事件类型和 evidence_grade
+
+本协议引入四个新事件类型，全部写 `evidence_grade="intent"`，与
+`ops` 行区分：
+
+- `INTENT_RECORDED` — agent 提交解读
+- `INTENT_CONFIRMED` — reviewer approve
+- `INTENT_ADJUSTED`  — reviewer adjust（notes 非空）
+- `INTENT_REJECTED`  — reviewer reject
+
+所有事件的 `session_id` 一律用 `directive_id`（例如 `GOV-006`），
+这样一个 directive 下的完整 intent 生命周期可以用一次 CIEU 查询
+全部取回。
+
+#### 不走 hook 强制
+
+本协议**不修改** Y\*gov layer-1 hook。强制力来自宪法（本条）+
+Secretary 每周一的 intent audit + Board 对 reconcile 成本的
+不耐受。反事实推理提案（第七条正文）也是这样执行的，协议一致性
+优先于强制强度。
+
+#### 违规情境
+
+- Level 2/3 指令执行后才发现缺 INTENT_RECORDED 前置 → 进 CIEU 违规表
+- Level 3 intent 被 CEO 试图 confirm → 脚本硬拒
+- `--decision adjust` 但 `--notes` 为空 → 脚本硬拒
+- Level 2/3 agent 在第一次回复就输出工具调用 → 协议违规，reviewer
+  应当立即 reject 并要求补写 intent
+
+#### Secretary 周一审计
+
+Secretary 每周一运行 `scripts/check_intents.py` 并在
+`reports/secretary/intent_audit_YYYY_MM_DD.md` 记录：
+
+- 本周 Level 2/3 directive 数量（从 `DIRECTIVE_TRACKER.md` 统计）
+- 对应的 INTENT_RECORDED 数量
+- 差值（= 缺 intent 的违规）
+- 超过 24h 未 reviewed 的 pending intent
+- ADJUSTED/REJECTED 的比例（= Board 对 agent 理解的矫正率）
+
+### 来源 (7.5)
+
+Board GOV-006 directive (2026-04-09)。Ethan 提案见
+`reports/cto/intent_verification_proposal.md`，Board 批准方案 C
+（混合协议 + CIEU 审计 + 不阻塞 hook）。实施于 2026-04-09 同 session。
+
+---
+
 ## 团队角色卡 · 官方身份 · 2026-04-06确立
 
 | 职位 | 全名 | 性别 | 形象 |

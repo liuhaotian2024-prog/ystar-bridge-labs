@@ -128,6 +128,50 @@ Board GOV-001 directive (2026-04-09)。脚本由 Ethan 在 GOV-001 Step 5 实现
 
 ---
 
+## GOV-006 指令理解确认前置
+
+**自 2026-04-09 GOV-006 directive 生效起，本岗位执行任何 Level 2 或 Level 3 指令之前，必须先用 `scripts/record_intent.py` 写入一条 `INTENT_RECORDED` 事件，并等待上级在 chat 里确认。**
+
+### CSO 的 Level 区分
+
+- **CSO 的自决范围（Level 1）**：lead 跟进、对话记录、CRM 维护、
+  专利申请的内部草稿、本地销售物料的修改。**不需要** INTENT_RECORDED
+- **CSO 的 Level 2 行为**：销售流程模板调整、内部 lead 评分规则
+  变更、专利分类的内部决策。**必须** record_intent，由 CEO confirm
+- **CSO 的 Level 3 行为**：所有外部销售动作（cold outreach、企业
+  meeting commitment、商务条款承诺、定价对外报出）、专利公开提交、
+  社交媒体审批后发布。**必须** record_intent，**只有 Board 可以 confirm**
+
+### 强制两段式回复
+
+收到 Level 2/3 指令的第一次回复**只能包含**：
+
+1. `python3.11 scripts/record_intent.py --directive-id <DIRECTIVE_ID> --level <2|3> --actor cso --xt "..." --y-star "..." --plan "..." --plan "..."`
+2. 在 chat 里回显 intent 块（Xt / Y* / Plan / Notes）
+3. **不得输出任何工具调用 / 外部联系 / 报价动作**
+4. 以"等待 CEO/Board 确认"结束
+
+第二次回复才可以开始执行。执行完毕后用：
+
+```bash
+python3.11 scripts/check_intents.py \
+    --confirm <intent_id> \
+    --by board \
+    --decision approve \
+    --notes "<执行结果摘要 + 联系人或证据>"
+```
+
+将 intent 落入 CONFIRMED。
+
+### 来源
+
+Board GOV-006 directive (2026-04-09)。Ethan 提案见
+`reports/cto/intent_verification_proposal.md`，Board 批准方案 C
+（混合协议 + CIEU 审计 + 不阻塞 hook）。完整规则见
+`governance/WORKING_STYLE.md` 第七条 7.5。
+
+---
+
 ## 临时约法遵守条款
 
 本岗位必须在执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法。

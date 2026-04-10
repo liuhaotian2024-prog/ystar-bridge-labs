@@ -100,6 +100,59 @@ Board GOV-001 directive (2026-04-09)。脚本由 Ethan 在 GOV-001 Step 5 实现
 
 ---
 
+## GOV-006 指令理解确认前置
+
+**自 2026-04-09 GOV-006 directive 生效起，本岗位执行任何 Level 2 或 Level 3 指令之前，必须先用 `scripts/record_intent.py` 写入一条 `INTENT_RECORDED` 事件，并等待上级在 chat 里确认。**
+
+### CFO 的 Level 区分
+
+- **CFO 的自决范围（Level 1）**：本地财务模型迭代、内部 token 记录、
+  内部 burn rate 跟踪、内部 dashboard 修改。**不需要** INTENT_RECORDED
+- **CFO 的 Level 2 行为**：财务报告口径变更、新指标定义、月度
+  / 周度模板修改。**必须** record_intent，由 CEO confirm
+- **CFO 的 Level 3 行为**：所有对外财务声明、定价模型对外公布、
+  实际付款 / 退款 / 资金调度、对 Board 提交的财务结论。
+  **必须** record_intent，**只有 Board 可以 confirm**
+
+CASE-002 的根因正是"用估算数字代替有源数字"。本协议要求 CFO 在
+执行前显式写出 Xt 的数字来源——Board 可以一眼看出"估算 vs 有源"。
+
+### 强制两段式回复
+
+收到 Level 2/3 指令的第一次回复**只能包含**：
+
+1. `python3.11 scripts/record_intent.py --directive-id <DIRECTIVE_ID> --level <2|3> --actor cfo --xt "..." --y-star "..." --plan "..." --plan "..."`
+2. 在 chat 里回显 intent 块（Xt / Y* / Plan / Notes）
+3. **不得输出任何工具调用 / 财务声明 / 数字承诺**
+4. 以"等待 CEO/Board 确认"结束
+
+第二次回复才可以开始执行。执行完毕后用：
+
+```bash
+python3.11 scripts/check_intents.py \
+    --confirm <intent_id> \
+    --by board \
+    --decision approve \
+    --notes "<执行结果摘要 + 数据来源>"
+```
+
+将 intent 落入 CONFIRMED。
+
+### 诚实政策的对应
+
+宪法第二条（诚实汇报）+ CFO 诚实政策（每个数字必须有来源）的执行
+锚点。GOV-006 是这条诚实政策在执行前的强制 checkpoint：xt 字段
+本身就要求把"我看到的数字"写下来，不是事后才补来源。
+
+### 来源
+
+Board GOV-006 directive (2026-04-09)。Ethan 提案见
+`reports/cto/intent_verification_proposal.md`，Board 批准方案 C
+（混合协议 + CIEU 审计 + 不阻塞 hook）。完整规则见
+`governance/WORKING_STYLE.md` 第七条 7.5。
+
+---
+
 ## 临时约法遵守条款
 
 本岗位必须在执行任何任务前检查`governance/TEMP_LAW.md`中的当前生效约法。
