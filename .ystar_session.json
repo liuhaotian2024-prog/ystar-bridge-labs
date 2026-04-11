@@ -781,5 +781,104 @@
         "check": "自查清单：1.任务要求了几件事？2.CIEU里有几件的完成记录？3.数量是否一致？4.质量是否达标（测试全过）？全部是→完成。任何一个否→继续。"
       }
     }
+  },
+  "daily_workflows": {
+    "ceo": {
+      "session_start": [
+        "run session_boot_yml.py加载记忆",
+        "run learning_report.py查全员学习进度",
+        "check CIEU健康度（全员活跃度+异常检测）",
+        "check pending obligations（自己的+全员的）",
+        "准备3个主动议题给Board（不等Board问）"
+      ],
+      "during_session": [
+        "所有工程任务通过CTO dispatch（不越权）",
+        "每次dispatch创建自追踪obligation",
+        "Level 2/3决策前做预检+反事实",
+        "发现问题立刻处理（不积压）",
+        "每个subagent完成后检查交付质量"
+      ],
+      "session_end": [
+        "run session_close_yml.py写入记忆",
+        "run twin_evolution.py提取Board价值观",
+        "update session_handoff.md",
+        "自审CIEU：本session目标vs实际交付，Rt=0？",
+        "删除.session_booted和.session_call_count"
+      ]
+    },
+    "cto": {
+      "session_start": [
+        "run session_boot_yml.py --agent cto",
+        "check 测试通过率（必须100%才开始新工作）",
+        "check 系统健康（性能基线+错误日志）"
+      ],
+      "during_session": [
+        "每次commit前跑全量测试",
+        "每次fix后写fix_log+防复发措施",
+        "新增功能不能破坏旧功能（回归检查）"
+      ],
+      "session_end": [
+        "确认所有测试通过",
+        "自审CIEU：任务要求vs实际交付，Rt=0？"
+      ]
+    },
+    "cmo": {
+      "session_start": [
+        "run session_boot_yml.py --agent cmo",
+        "check 内容日历（今天该发什么）",
+        "check 金金的情报推送（有没有好素材）"
+      ],
+      "during_session": [
+        "发布前检查平台字数限制",
+        "发布前过ETHICS.md禁忌清单",
+        "内容必须经12层框架（不跳步）"
+      ],
+      "session_end": [
+        "自审CIEU：内容产出vs计划，Rt=0？",
+        "更新active_learning_plan.md"
+      ]
+    },
+    "cfo": {
+      "session_start": [
+        "run session_boot_yml.py --agent cfo",
+        "check 成本数据（API费用+基础设施）"
+      ],
+      "during_session": [
+        "每个数字必须有数据来源（不编造）"
+      ],
+      "session_end": [
+        "自审CIEU：Rt=0？"
+      ]
+    },
+    "cso": {
+      "session_start": [
+        "run session_boot_yml.py --agent cso",
+        "check 金金情报推送",
+        "check 用户反馈（GitHub issues/社区）"
+      ],
+      "during_session": [
+        "每日情报简报产出",
+        "新发现的客户线索建档"
+      ],
+      "session_end": [
+        "自审CIEU：Rt=0？"
+      ]
+    },
+    "secretary": {
+      "session_start": [
+        "run session_boot_yml.py --agent secretary",
+        "run 全员健康度仪表板（每日必做）",
+        "check 全员obligation履约率"
+      ],
+      "during_session": [
+        "发现OVERDUE立刻上报CEO",
+        "发现任何agent 24h CIEU为0立刻告警",
+        "文档变更需标注来源"
+      ],
+      "session_end": [
+        "自审CIEU：Rt=0？",
+        "生成每日健康度报告"
+      ]
+    }
   }
 }
