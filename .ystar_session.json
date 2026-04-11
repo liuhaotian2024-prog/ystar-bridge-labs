@@ -506,52 +506,92 @@
     "ceo": {
       "verification_before_assertion": true,
       "root_cause_fix_required": true,
-      "document_requires_execution_plan": true
+      "document_requires_execution_plan": true,
+      "no_fabrication": true,
+      "counterfactual_before_major_decision": true,
+      "must_check_health_on_session_start": true,
+      "extract_board_values_on_session_close": true
     },
     "cto": {
       "root_cause_fix_required": true,
       "document_requires_execution_plan": true,
-      "verification_before_assertion": true
+      "verification_before_assertion": true,
+      "no_fabrication": true,
+      "counterfactual_before_major_decision": true,
+      "must_check_health_on_session_start": true,
+      "extract_board_values_on_session_close": true
     },
     "cmo": {
       "root_cause_fix_required": true,
       "document_requires_execution_plan": true,
-      "verification_before_assertion": true
+      "verification_before_assertion": true,
+      "no_fabrication": true,
+      "counterfactual_before_major_decision": true,
+      "must_check_health_on_session_start": true,
+      "extract_board_values_on_session_close": true
     },
     "cfo": {
       "root_cause_fix_required": true,
       "document_requires_execution_plan": true,
-      "verification_before_assertion": true
+      "verification_before_assertion": true,
+      "no_fabrication": true,
+      "counterfactual_before_major_decision": true,
+      "must_check_health_on_session_start": true,
+      "extract_board_values_on_session_close": true
     },
     "cso": {
       "root_cause_fix_required": true,
       "document_requires_execution_plan": true,
-      "verification_before_assertion": true
+      "verification_before_assertion": true,
+      "no_fabrication": true,
+      "counterfactual_before_major_decision": true,
+      "must_check_health_on_session_start": true,
+      "extract_board_values_on_session_close": true
     },
     "secretary": {
       "root_cause_fix_required": true,
       "document_requires_execution_plan": true,
-      "verification_before_assertion": true
+      "verification_before_assertion": true,
+      "no_fabrication": true,
+      "counterfactual_before_major_decision": true,
+      "must_check_health_on_session_start": true,
+      "extract_board_values_on_session_close": true
     },
     "eng-kernel": {
       "document_requires_execution_plan": true,
       "root_cause_fix_required": true,
-      "verification_before_assertion": true
+      "verification_before_assertion": true,
+      "no_fabrication": true,
+      "counterfactual_before_major_decision": true,
+      "must_check_health_on_session_start": true,
+      "extract_board_values_on_session_close": true
     },
     "eng-platform": {
       "document_requires_execution_plan": true,
       "root_cause_fix_required": true,
-      "verification_before_assertion": true
+      "verification_before_assertion": true,
+      "no_fabrication": true,
+      "counterfactual_before_major_decision": true,
+      "must_check_health_on_session_start": true,
+      "extract_board_values_on_session_close": true
     },
     "eng-governance": {
       "document_requires_execution_plan": true,
       "root_cause_fix_required": true,
-      "verification_before_assertion": true
+      "verification_before_assertion": true,
+      "no_fabrication": true,
+      "counterfactual_before_major_decision": true,
+      "must_check_health_on_session_start": true,
+      "extract_board_values_on_session_close": true
     },
     "eng-domains": {
       "document_requires_execution_plan": true,
       "root_cause_fix_required": true,
-      "verification_before_assertion": true
+      "verification_before_assertion": true,
+      "no_fabrication": true,
+      "counterfactual_before_major_decision": true,
+      "must_check_health_on_session_start": true,
+      "extract_board_values_on_session_close": true
     }
   }
 }
