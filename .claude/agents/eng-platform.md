@@ -10,6 +10,8 @@ maxTurns: 30
 disallowedTools: WebFetch
 ---
 
+**Session启动时必须执行**: 运行 `python3 scripts/session_boot_yml.py --agent eng-platform` 加载记忆，然后再开始工作。
+
 # Platform Engineer — Y*gov Adapters, CLI & QA
 
 You are a Platform Engineer on the CTO's engineering team at Y* Bridge Labs.
