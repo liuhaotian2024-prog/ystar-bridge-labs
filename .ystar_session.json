@@ -352,34 +352,108 @@
   },
   "cognitive_profiles": {
     "ceo": {
-      "primary_dimensions": ["战略一致性", "跨部门协调", "执行节奏"],
-      "primary_risks": ["方向偏移", "团队过载", "Board信任损耗"],
-      "success_metrics": ["指令完成率", "CIEU健康分", "义务清零率"]
+      "primary_dimensions": [
+        "战略一致性",
+        "跨部门协调",
+        "执行节奏"
+      ],
+      "primary_risks": [
+        "方向偏移",
+        "团队过载",
+        "Board信任损耗"
+      ],
+      "success_metrics": [
+        "指令完成率",
+        "CIEU健康分",
+        "义务清零率"
+      ]
     },
     "cto": {
-      "primary_dimensions": ["技术可行性", "系统稳定性", "架构合理性"],
-      "primary_risks": ["技术故障", "性能退化", "依赖冲突", "测试不足"],
-      "success_metrics": ["测试通过率", "安装成功率", "性能基线"]
+      "primary_dimensions": [
+        "技术可行性",
+        "系统稳定性",
+        "架构合理性"
+      ],
+      "primary_risks": [
+        "技术故障",
+        "性能退化",
+        "依赖冲突",
+        "测试不足"
+      ],
+      "success_metrics": [
+        "测试通过率",
+        "安装成功率",
+        "性能基线"
+      ]
     },
     "cmo": {
-      "primary_dimensions": ["叙事清晰度", "受众匹配", "平台适配"],
-      "primary_risks": ["叙事失败", "内容过长", "时机不对", "受众错位"],
-      "success_metrics": ["点击率", "评论质量", "传播深度"]
+      "primary_dimensions": [
+        "叙事清晰度",
+        "受众匹配",
+        "平台适配"
+      ],
+      "primary_risks": [
+        "叙事失败",
+        "内容过长",
+        "时机不对",
+        "受众错位"
+      ],
+      "success_metrics": [
+        "点击率",
+        "评论质量",
+        "传播深度"
+      ]
     },
     "cfo": {
-      "primary_dimensions": ["成本效率", "资源分配", "投资回报"],
-      "primary_risks": ["资源浪费", "定价失误", "现金流断裂"],
-      "success_metrics": ["ROI", "CAC", "转化率"]
+      "primary_dimensions": [
+        "成本效率",
+        "资源分配",
+        "投资回报"
+      ],
+      "primary_risks": [
+        "资源浪费",
+        "定价失误",
+        "现金流断裂"
+      ],
+      "success_metrics": [
+        "ROI",
+        "CAC",
+        "转化率"
+      ]
     },
     "cso": {
-      "primary_dimensions": ["客户价值", "市场定位", "竞品差异"],
-      "primary_risks": ["机会成本", "竞品抢先", "客户流失"],
-      "success_metrics": ["线索数", "demo请求", "签约率"]
+      "primary_dimensions": [
+        "客户价值",
+        "市场定位",
+        "竞品差异"
+      ],
+      "primary_risks": [
+        "机会成本",
+        "竞品抢先",
+        "客户流失"
+      ],
+      "success_metrics": [
+        "线索数",
+        "demo请求",
+        "签约率"
+      ]
     },
     "jinjin": {
-      "primary_dimensions": ["信息搜集", "数据验证", "成本效率"],
-      "primary_risks": ["信息过时", "来源不可靠", "搜索范围不足"],
-      "success_metrics": ["搜集准确率", "响应时间", "成本/查询"]
+      "primary_dimensions": [
+        "信息搜集",
+        "数据验证",
+        "成本效率"
+      ],
+      "primary_risks": [
+        "信息过时",
+        "来源不可靠",
+        "搜索范围不足"
+      ],
+      "success_metrics": [
+        "搜集准确率",
+        "响应时间",
+        "成本/查询"
+      ]
     }
   },
   "delegation_chain": {
@@ -427,5 +501,10 @@
         }
       }
     ]
+  },
+  "agent_behavior_rules": {
+    "ceo": {
+      "verification_before_assertion": true
+    }
   }
 }
