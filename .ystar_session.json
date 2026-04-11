@@ -515,7 +515,39 @@
         "counterfactual_scope": "战略方向、资源分配、组织架构决策",
         "health_check_scope": "全员CIEU状态+learning_report+obligation",
         "session_close_scope": "提取Board价值观+记录战略决策",
-        "world_class_target": "世界一流CEO（Collison/Huang/Chesky级别）"
+        "world_class_target": "世界一流CEO（Collison/Huang/Chesky级别）",
+        "world_class_milestones": [
+          {
+            "level": 1,
+            "target": "能独立分解Board指令并正确dispatch",
+            "benchmark": "YC首期CEO标准",
+            "status": "approaching"
+          },
+          {
+            "level": 2,
+            "target": "主动发现问题并提出战略建议（不等Board问）",
+            "benchmark": "A轮CEO标准",
+            "status": "gap"
+          },
+          {
+            "level": 3,
+            "target": "独立完成融资pitch（数据+叙事+说服力）",
+            "benchmark": "Brian Chesky早期",
+            "status": "gap"
+          },
+          {
+            "level": 4,
+            "target": "面向公众发表有影响力的演讲",
+            "benchmark": "Jensen Huang GTC",
+            "status": "gap"
+          },
+          {
+            "level": 5,
+            "target": "被行业认可为AI治理领域的思想领袖",
+            "benchmark": "Patrick Collison级别",
+            "status": "gap"
+          }
+        ]
       }
     },
     "cto": {
@@ -530,7 +562,33 @@
         "counterfactual_scope": "架构设计、技术选型、依赖引入决策",
         "health_check_scope": "测试通过率+系统性能+代码健康",
         "session_close_scope": "记录技术决策+fix log",
-        "world_class_target": "世界一流CTO（Vogels/Cantrill/Majors级别）"
+        "world_class_target": "世界一流CTO（Vogels/Cantrill/Majors级别）",
+        "world_class_milestones": [
+          {
+            "level": 1,
+            "target": "所有测试100%通过+零regression",
+            "benchmark": "基本工程标准",
+            "status": "achieved"
+          },
+          {
+            "level": 2,
+            "target": "系统延迟<1ms+99.9%可用性",
+            "benchmark": "Werner Vogels运维标准",
+            "status": "approaching"
+          },
+          {
+            "level": 3,
+            "target": "开源社区500+ stars+外部贡献者",
+            "benchmark": "HashiCorp早期",
+            "status": "gap"
+          },
+          {
+            "level": 4,
+            "target": "被引用为AI治理技术架构标杆",
+            "benchmark": "Bryan Cantrill级别",
+            "status": "gap"
+          }
+        ]
       }
     },
     "cmo": {
@@ -545,7 +603,27 @@
         "counterfactual_scope": "内容发布、渠道选择、品牌定位决策",
         "health_check_scope": "内容数据+受众反馈+平台算法变化",
         "session_close_scope": "记录内容表现+受众洞察",
-        "world_class_target": "世界一流CMO（Gerhardt/Fishkin级别）"
+        "world_class_target": "世界一流CMO（Gerhardt/Fishkin级别）",
+        "world_class_milestones": [
+          {
+            "level": 1,
+            "target": "脱口秀稳定日更+完播率>40%",
+            "benchmark": "内容创作者基本功",
+            "status": "gap"
+          },
+          {
+            "level": 2,
+            "target": "单条内容100万完播",
+            "benchmark": "Two Minute Papers级别",
+            "status": "gap"
+          },
+          {
+            "level": 3,
+            "target": "成为AI治理领域最有影响力的内容品牌",
+            "benchmark": "Rand Fishkin级别",
+            "status": "gap"
+          }
+        ]
       }
     },
     "cfo": {
