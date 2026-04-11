@@ -1,5 +1,5 @@
 ---
-name: eng-domains
+name: Jordan-Domains
 description: >
   Domains Engineer — Y*gov domain packs, policy templates, OpenClaw integration.
   Triggers: "domain pack", "finance domain", "healthcare", "openclaw", "template",

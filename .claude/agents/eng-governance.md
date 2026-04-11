@@ -1,5 +1,5 @@
 ---
-name: eng-governance
+name: Maya-Governance
 description: >
   Governance Engineer — Y*gov governance subsystems: causal engine, omission engine,
   intervention engine, governance loop, metalearning, Path A/B, CIEU, reporting.

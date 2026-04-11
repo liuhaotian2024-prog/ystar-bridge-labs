@@ -1,5 +1,5 @@
 ---
-name: eng-platform
+name: Ryan-Platform
 description: >
   Platform Engineer — Y*gov adapters, CLI, hook, integrations, testing infrastructure.
   Also owns cross-module integration tests and QA.

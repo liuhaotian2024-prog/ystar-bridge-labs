@@ -1,5 +1,5 @@
 ---
-name: eng-kernel
+name: Leo-Kernel
 description: >
   Kernel Engineer — Y*gov core engine: dimensions, compiler, contract parsing,
   NL-to-contract translation, session management. Triggers: "kernel", "compiler",
