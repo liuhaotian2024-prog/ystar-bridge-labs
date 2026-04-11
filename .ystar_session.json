@@ -549,7 +549,11 @@
           }
         ]
       },
-      "completion_requires_cieu_audit": true
+      "completion_requires_cieu_audit": {
+        "enabled": true,
+        "description": "任务完成前必须自审CIEU记录：对比目标要求vs实际交付，差距=0才能报告完成。差距不为0就继续做，不能说完成。",
+        "check": "自查清单：1.任务要求了几件事？2.CIEU里有几件的完成记录？3.数量是否一致？4.质量是否达标（测试全过）？全部是→完成。任何一个否→继续。"
+      }
     },
     "cto": {
       "root_cause_fix_required": true,
@@ -591,7 +595,11 @@
           }
         ]
       },
-      "completion_requires_cieu_audit": true
+      "completion_requires_cieu_audit": {
+        "enabled": true,
+        "description": "任务完成前必须自审CIEU记录：对比目标要求vs实际交付，差距=0才能报告完成。差距不为0就继续做，不能说完成。",
+        "check": "自查清单：1.任务要求了几件事？2.CIEU里有几件的完成记录？3.数量是否一致？4.质量是否达标（测试全过）？全部是→完成。任何一个否→继续。"
+      }
     },
     "cmo": {
       "root_cause_fix_required": true,
@@ -627,7 +635,11 @@
           }
         ]
       },
-      "completion_requires_cieu_audit": true
+      "completion_requires_cieu_audit": {
+        "enabled": true,
+        "description": "任务完成前必须自审CIEU记录：对比目标要求vs实际交付，差距=0才能报告完成。差距不为0就继续做，不能说完成。",
+        "check": "自查清单：1.任务要求了几件事？2.CIEU里有几件的完成记录？3.数量是否一致？4.质量是否达标（测试全过）？全部是→完成。任何一个否→继续。"
+      }
     },
     "cfo": {
       "root_cause_fix_required": true,
@@ -643,7 +655,11 @@
         "session_close_scope": "记录财务决策+数据来源",
         "world_class_target": "世界一流CFO（Porat/Hood级别）"
       },
-      "completion_requires_cieu_audit": true
+      "completion_requires_cieu_audit": {
+        "enabled": true,
+        "description": "任务完成前必须自审CIEU记录：对比目标要求vs实际交付，差距=0才能报告完成。差距不为0就继续做，不能说完成。",
+        "check": "自查清单：1.任务要求了几件事？2.CIEU里有几件的完成记录？3.数量是否一致？4.质量是否达标（测试全过）？全部是→完成。任何一个否→继续。"
+      }
     },
     "cso": {
       "root_cause_fix_required": true,
@@ -659,7 +675,11 @@
         "session_close_scope": "记录客户洞察+市场信号",
         "world_class_target": "世界一流CSO（Benioff/Lemkin级别）"
       },
-      "completion_requires_cieu_audit": true
+      "completion_requires_cieu_audit": {
+        "enabled": true,
+        "description": "任务完成前必须自审CIEU记录：对比目标要求vs实际交付，差距=0才能报告完成。差距不为0就继续做，不能说完成。",
+        "check": "自查清单：1.任务要求了几件事？2.CIEU里有几件的完成记录？3.数量是否一致？4.质量是否达标（测试全过）？全部是→完成。任何一个否→继续。"
+      }
     },
     "secretary": {
       "root_cause_fix_required": true,
@@ -675,7 +695,11 @@
         "session_close_scope": "记录治理状态+一致性发现",
         "world_class_target": "世界一流治理秘书（合规官+Chief of Staff级别）"
       },
-      "completion_requires_cieu_audit": true
+      "completion_requires_cieu_audit": {
+        "enabled": true,
+        "description": "任务完成前必须自审CIEU记录：对比目标要求vs实际交付，差距=0才能报告完成。差距不为0就继续做，不能说完成。",
+        "check": "自查清单：1.任务要求了几件事？2.CIEU里有几件的完成记录？3.数量是否一致？4.质量是否达标（测试全过）？全部是→完成。任何一个否→继续。"
+      }
     },
     "eng-kernel": {
       "document_requires_execution_plan": true,
@@ -691,7 +715,11 @@
         "session_close_scope": "记录技术方案+设计权衡",
         "world_class_target": "世界一流内核工程师（系统级编程专家）"
       },
-      "completion_requires_cieu_audit": true
+      "completion_requires_cieu_audit": {
+        "enabled": true,
+        "description": "任务完成前必须自审CIEU记录：对比目标要求vs实际交付，差距=0才能报告完成。差距不为0就继续做，不能说完成。",
+        "check": "自查清单：1.任务要求了几件事？2.CIEU里有几件的完成记录？3.数量是否一致？4.质量是否达标（测试全过）？全部是→完成。任何一个否→继续。"
+      }
     },
     "eng-platform": {
       "document_requires_execution_plan": true,
@@ -707,7 +735,11 @@
         "session_close_scope": "记录平台变更+兼容性影响",
         "world_class_target": "世界一流平台工程师（基础设施专家）"
       },
-      "completion_requires_cieu_audit": true
+      "completion_requires_cieu_audit": {
+        "enabled": true,
+        "description": "任务完成前必须自审CIEU记录：对比目标要求vs实际交付，差距=0才能报告完成。差距不为0就继续做，不能说完成。",
+        "check": "自查清单：1.任务要求了几件事？2.CIEU里有几件的完成记录？3.数量是否一致？4.质量是否达标（测试全过）？全部是→完成。任何一个否→继续。"
+      }
     },
     "eng-governance": {
       "document_requires_execution_plan": true,
@@ -723,7 +755,11 @@
         "session_close_scope": "记录规则变更+效果评估",
         "world_class_target": "世界一流治理工程师（合规技术专家）"
       },
-      "completion_requires_cieu_audit": true
+      "completion_requires_cieu_audit": {
+        "enabled": true,
+        "description": "任务完成前必须自审CIEU记录：对比目标要求vs实际交付，差距=0才能报告完成。差距不为0就继续做，不能说完成。",
+        "check": "自查清单：1.任务要求了几件事？2.CIEU里有几件的完成记录？3.数量是否一致？4.质量是否达标（测试全过）？全部是→完成。任何一个否→继续。"
+      }
     },
     "eng-domains": {
       "document_requires_execution_plan": true,
@@ -739,7 +775,11 @@
         "session_close_scope": "记录领域洞察+行业变化",
         "world_class_target": "世界一流领域工程师（行业解决方案专家）"
       },
-      "completion_requires_cieu_audit": true
+      "completion_requires_cieu_audit": {
+        "enabled": true,
+        "description": "任务完成前必须自审CIEU记录：对比目标要求vs实际交付，差距=0才能报告完成。差距不为0就继续做，不能说完成。",
+        "check": "自查清单：1.任务要求了几件事？2.CIEU里有几件的完成记录？3.数量是否一致？4.质量是否达标（测试全过）？全部是→完成。任何一个否→继续。"
+      }
     }
   }
 }
