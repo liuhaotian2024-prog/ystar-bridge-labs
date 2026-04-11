@@ -548,7 +548,8 @@
             "status": "gap"
           }
         ]
-      }
+      },
+      "completion_requires_cieu_audit": true
     },
     "cto": {
       "root_cause_fix_required": true,
@@ -589,7 +590,8 @@
             "status": "gap"
           }
         ]
-      }
+      },
+      "completion_requires_cieu_audit": true
     },
     "cmo": {
       "root_cause_fix_required": true,
@@ -624,7 +626,8 @@
             "status": "gap"
           }
         ]
-      }
+      },
+      "completion_requires_cieu_audit": true
     },
     "cfo": {
       "root_cause_fix_required": true,
@@ -639,7 +642,8 @@
         "health_check_scope": "成本趋势+收入预测+burn rate",
         "session_close_scope": "记录财务决策+数据来源",
         "world_class_target": "世界一流CFO（Porat/Hood级别）"
-      }
+      },
+      "completion_requires_cieu_audit": true
     },
     "cso": {
       "root_cause_fix_required": true,
@@ -654,7 +658,8 @@
         "health_check_scope": "线索数+转化率+客户反馈",
         "session_close_scope": "记录客户洞察+市场信号",
         "world_class_target": "世界一流CSO（Benioff/Lemkin级别）"
-      }
+      },
+      "completion_requires_cieu_audit": true
     },
     "secretary": {
       "root_cause_fix_required": true,
@@ -669,7 +674,8 @@
         "health_check_scope": "全员义务履约率+文档一致性+学习进度",
         "session_close_scope": "记录治理状态+一致性发现",
         "world_class_target": "世界一流治理秘书（合规官+Chief of Staff级别）"
-      }
+      },
+      "completion_requires_cieu_audit": true
     },
     "eng-kernel": {
       "document_requires_execution_plan": true,
@@ -684,7 +690,8 @@
         "health_check_scope": "内核测试+性能基线+API兼容性",
         "session_close_scope": "记录技术方案+设计权衡",
         "world_class_target": "世界一流内核工程师（系统级编程专家）"
-      }
+      },
+      "completion_requires_cieu_audit": true
     },
     "eng-platform": {
       "document_requires_execution_plan": true,
@@ -699,7 +706,8 @@
         "health_check_scope": "平台稳定性+部署成功率+集成测试",
         "session_close_scope": "记录平台变更+兼容性影响",
         "world_class_target": "世界一流平台工程师（基础设施专家）"
-      }
+      },
+      "completion_requires_cieu_audit": true
     },
     "eng-governance": {
       "document_requires_execution_plan": true,
@@ -714,7 +722,8 @@
         "health_check_scope": "治理规则命中率+误报率+覆盖率",
         "session_close_scope": "记录规则变更+效果评估",
         "world_class_target": "世界一流治理工程师（合规技术专家）"
-      }
+      },
+      "completion_requires_cieu_audit": true
     },
     "eng-domains": {
       "document_requires_execution_plan": true,
@@ -729,7 +738,8 @@
         "health_check_scope": "领域覆盖率+模板质量+用户反馈",
         "session_close_scope": "记录领域洞察+行业变化",
         "world_class_target": "世界一流领域工程师（行业解决方案专家）"
-      }
+      },
+      "completion_requires_cieu_audit": true
     }
   }
 }
