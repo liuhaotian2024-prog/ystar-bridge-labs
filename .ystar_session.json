@@ -505,22 +505,53 @@
   "agent_behavior_rules": {
     "ceo": {
       "verification_before_assertion": true,
-      "root_cause_fix_required": true
+      "root_cause_fix_required": true,
+      "document_requires_execution_plan": true
     },
     "cto": {
-      "root_cause_fix_required": true
+      "root_cause_fix_required": true,
+      "document_requires_execution_plan": true,
+      "verification_before_assertion": true
     },
     "cmo": {
-      "root_cause_fix_required": true
+      "root_cause_fix_required": true,
+      "document_requires_execution_plan": true,
+      "verification_before_assertion": true
     },
     "cfo": {
-      "root_cause_fix_required": true
+      "root_cause_fix_required": true,
+      "document_requires_execution_plan": true,
+      "verification_before_assertion": true
     },
     "cso": {
-      "root_cause_fix_required": true
+      "root_cause_fix_required": true,
+      "document_requires_execution_plan": true,
+      "verification_before_assertion": true
     },
     "secretary": {
-      "root_cause_fix_required": true
+      "root_cause_fix_required": true,
+      "document_requires_execution_plan": true,
+      "verification_before_assertion": true
+    },
+    "eng-kernel": {
+      "document_requires_execution_plan": true,
+      "root_cause_fix_required": true,
+      "verification_before_assertion": true
+    },
+    "eng-platform": {
+      "document_requires_execution_plan": true,
+      "root_cause_fix_required": true,
+      "verification_before_assertion": true
+    },
+    "eng-governance": {
+      "document_requires_execution_plan": true,
+      "root_cause_fix_required": true,
+      "verification_before_assertion": true
+    },
+    "eng-domains": {
+      "document_requires_execution_plan": true,
+      "root_cause_fix_required": true,
+      "verification_before_assertion": true
     }
   }
 }
