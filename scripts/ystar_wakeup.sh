@@ -78,3 +78,20 @@ db.close()
     exit 1
     ;;
 esac
+
+  intel)
+    echo "[$DATE $TIME] Starting CSO Intelligence Scan" >> "$LOG_DIR/wakeup.log"
+
+    cd "$YSTAR_DIR"
+    # Step 1: Jinjin scans (via Telegram if available)
+    if [ -f scripts/k9.py ]; then
+      python3 scripts/k9.py "search: AI governance news today" >> "$LOG_DIR/wakeup.log" 2>&1 || true
+    fi
+
+    # Step 2: Generate intel report via Gemma
+    if [ -f scripts/local_learn.py ]; then
+      python3.11 scripts/local_learn.py --mode questions --actor cso --task "AI governance market intelligence: what happened today in AI safety, AI governance, prompt injection defense, multi-agent systems" >> "$LOG_DIR/wakeup.log" 2>&1 || true
+    fi
+
+    echo "[$DATE $TIME] Intel scan complete" >> "$LOG_DIR/wakeup.log"
+    ;;
