@@ -95,3 +95,41 @@ esac
 
     echo "[$DATE $TIME] Intel scan complete" >> "$LOG_DIR/wakeup.log"
     ;;
+
+  mission_report)
+    echo "[$DATE $TIME] Generating Daily Mission Report" >> "$LOG_DIR/wakeup.log"
+    cd "$YSTAR_DIR"
+    
+    # Generate comprehensive mission report
+    cat > "$LOG_DIR/${DATE}_mission_report.md" << REPORT
+# Y* Bridge Labs 每日任务进程报告
+**日期**: $DATE
+**生成**: CEO Aiden (自动)
+
+## 一、今日计划 vs 实际完成
+（由CEO在每日结束时填写）
+
+## 二、各产品线进度
+### ystar-defuse
+- MVP状态：
+- 测试通过率：
+- 距离PyPI发布：
+
+### 冒犯了AI脱口秀
+- Episode进度：
+- 视频生成状态：
+
+### Y*gov核心
+- behavior rules：
+- 测试总数：
+
+## 三、明日计划
+
+## 四、需要Board关注的事项
+
+## 五、团队健康度
+$(python3 scripts/learning_report.py 2>/dev/null || echo "报告脚本未就绪")
+REPORT
+
+    echo "[$DATE $TIME] Mission report saved to $LOG_DIR/${DATE}_mission_report.md" >> "$LOG_DIR/wakeup.log"
+    ;;
