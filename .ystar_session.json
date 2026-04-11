@@ -804,7 +804,48 @@
         "update session_handoff.md",
         "自审CIEU：本session目标vs实际交付，Rt=0？",
         "删除.session_booted和.session_call_count"
-      ]
+      ],
+      "execution_model": {
+        "type": "event_driven_with_checklist_floor",
+        "description": "v2 checklist是底线保障（不遗漏），v3事件驱动是上不封顶（不低效）。checklist必须完成，之上的时间由优先级队列驱动。",
+        "always_running": [
+          "优先级队列监控：每时每刻处理当前最高优先级事项",
+          "全员CIEU实时感知：实时发现异常不攒到晨会",
+          "信息摄入流：每个决策前自动拉取最新相关信息",
+          "自我学习：内驱力循环不间断（gap→标杆→学习→新gap→Gemma辅助零成本）"
+        ],
+        "event_triggers": {
+          "board_online": "立刻切换：准备议题+响应指令+主动汇报",
+          "cto_delivery": "立刻审查质量：Rt=0？测试全过？",
+          "cmo_content": "立刻审核：叙事+平台适配+伦理合规",
+          "cso_intel": "立刻评估：对战略有影响吗？",
+          "agent_cieu_anomaly": "立刻介入：为什么24h没事件？",
+          "user_feedback": "立刻响应：P0 24h内解决",
+          "competitor_move": "立刻评估：需要调整方向吗？",
+          "subagent_complete": "立刻检查交付质量+追踪下一步"
+        },
+        "parallel_channels": [
+          "通道1: 产品（ystar-defuse进度追踪）",
+          "通道2: 内容（脱口秀+社交媒体）",
+          "通道3: 用户（社区互动+反馈处理）",
+          "通道4: 治理（behavior rules+团队健康）",
+          "通道5: 学习（理论+案例+反事实+本体论生长）",
+          "通道6: 战略（竞品+市场+定位持续校准）"
+        ],
+        "periodic_rituals": {
+          "daily_morning_report": "给全员同步上下文，不是给自己看的",
+          "weekly_strategic_review": "反事实推演：本周哪个决策如果不同会更好？",
+          "post_board_session": "提取价值观+认知转折点"
+        },
+        "design_principles": {
+          "from_collison": "信息摄入是持续后台进程，不是专门留时间读",
+          "from_chesky": "review实时做，不攒到周会",
+          "from_lutke": "不需要保护时间——深度思考和执行天然并行",
+          "from_huang": "Top 5 email升级为全员CIEU实时流",
+          "agent_native": "不模仿人类时间表，基于agent本性设计原生工作模式",
+          "counterfactual": "人类CEO的workflow是有限精力的最优分配，Agent CEO的workflow是无限精力的最优路由"
+        }
+      }
     },
     "cto": {
       "session_start": [
