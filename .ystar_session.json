@@ -510,7 +510,13 @@
       "no_fabrication": true,
       "counterfactual_before_major_decision": true,
       "must_check_health_on_session_start": true,
-      "extract_board_values_on_session_close": true
+      "extract_board_values_on_session_close": true,
+      "role_context": {
+        "counterfactual_scope": "战略方向、资源分配、组织架构决策",
+        "health_check_scope": "全员CIEU状态+learning_report+obligation",
+        "session_close_scope": "提取Board价值观+记录战略决策",
+        "world_class_target": "世界一流CEO（Collison/Huang/Chesky级别）"
+      }
     },
     "cto": {
       "root_cause_fix_required": true,
@@ -519,7 +525,13 @@
       "no_fabrication": true,
       "counterfactual_before_major_decision": true,
       "must_check_health_on_session_start": true,
-      "extract_board_values_on_session_close": true
+      "extract_board_values_on_session_close": true,
+      "role_context": {
+        "counterfactual_scope": "架构设计、技术选型、依赖引入决策",
+        "health_check_scope": "测试通过率+系统性能+代码健康",
+        "session_close_scope": "记录技术决策+fix log",
+        "world_class_target": "世界一流CTO（Vogels/Cantrill/Majors级别）"
+      }
     },
     "cmo": {
       "root_cause_fix_required": true,
@@ -528,7 +540,13 @@
       "no_fabrication": true,
       "counterfactual_before_major_decision": true,
       "must_check_health_on_session_start": true,
-      "extract_board_values_on_session_close": true
+      "extract_board_values_on_session_close": true,
+      "role_context": {
+        "counterfactual_scope": "内容发布、渠道选择、品牌定位决策",
+        "health_check_scope": "内容数据+受众反馈+平台算法变化",
+        "session_close_scope": "记录内容表现+受众洞察",
+        "world_class_target": "世界一流CMO（Gerhardt/Fishkin级别）"
+      }
     },
     "cfo": {
       "root_cause_fix_required": true,
@@ -537,7 +555,13 @@
       "no_fabrication": true,
       "counterfactual_before_major_decision": true,
       "must_check_health_on_session_start": true,
-      "extract_board_values_on_session_close": true
+      "extract_board_values_on_session_close": true,
+      "role_context": {
+        "counterfactual_scope": "定价、成本、融资、资源分配决策",
+        "health_check_scope": "成本趋势+收入预测+burn rate",
+        "session_close_scope": "记录财务决策+数据来源",
+        "world_class_target": "世界一流CFO（Porat/Hood级别）"
+      }
     },
     "cso": {
       "root_cause_fix_required": true,
@@ -546,7 +570,13 @@
       "no_fabrication": true,
       "counterfactual_before_major_decision": true,
       "must_check_health_on_session_start": true,
-      "extract_board_values_on_session_close": true
+      "extract_board_values_on_session_close": true,
+      "role_context": {
+        "counterfactual_scope": "客户获取、销售策略、市场进入决策",
+        "health_check_scope": "线索数+转化率+客户反馈",
+        "session_close_scope": "记录客户洞察+市场信号",
+        "world_class_target": "世界一流CSO（Benioff/Lemkin级别）"
+      }
     },
     "secretary": {
       "root_cause_fix_required": true,
@@ -555,7 +585,13 @@
       "no_fabrication": true,
       "counterfactual_before_major_decision": true,
       "must_check_health_on_session_start": true,
-      "extract_board_values_on_session_close": true
+      "extract_board_values_on_session_close": true,
+      "role_context": {
+        "counterfactual_scope": "治理文档变更、审计方法调整决策",
+        "health_check_scope": "全员义务履约率+文档一致性+学习进度",
+        "session_close_scope": "记录治理状态+一致性发现",
+        "world_class_target": "世界一流治理秘书（合规官+Chief of Staff级别）"
+      }
     },
     "eng-kernel": {
       "document_requires_execution_plan": true,
@@ -564,7 +600,13 @@
       "no_fabrication": true,
       "counterfactual_before_major_decision": true,
       "must_check_health_on_session_start": true,
-      "extract_board_values_on_session_close": true
+      "extract_board_values_on_session_close": true,
+      "role_context": {
+        "counterfactual_scope": "内核架构、算法选择、性能关键路径决策",
+        "health_check_scope": "内核测试+性能基线+API兼容性",
+        "session_close_scope": "记录技术方案+设计权衡",
+        "world_class_target": "世界一流内核工程师（系统级编程专家）"
+      }
     },
     "eng-platform": {
       "document_requires_execution_plan": true,
@@ -573,7 +615,13 @@
       "no_fabrication": true,
       "counterfactual_before_major_decision": true,
       "must_check_health_on_session_start": true,
-      "extract_board_values_on_session_close": true
+      "extract_board_values_on_session_close": true,
+      "role_context": {
+        "counterfactual_scope": "平台架构、部署方案、集成策略决策",
+        "health_check_scope": "平台稳定性+部署成功率+集成测试",
+        "session_close_scope": "记录平台变更+兼容性影响",
+        "world_class_target": "世界一流平台工程师（基础设施专家）"
+      }
     },
     "eng-governance": {
       "document_requires_execution_plan": true,
@@ -582,7 +630,13 @@
       "no_fabrication": true,
       "counterfactual_before_major_decision": true,
       "must_check_health_on_session_start": true,
-      "extract_board_values_on_session_close": true
+      "extract_board_values_on_session_close": true,
+      "role_context": {
+        "counterfactual_scope": "治理规则设计、检测算法、阈值调整决策",
+        "health_check_scope": "治理规则命中率+误报率+覆盖率",
+        "session_close_scope": "记录规则变更+效果评估",
+        "world_class_target": "世界一流治理工程师（合规技术专家）"
+      }
     },
     "eng-domains": {
       "document_requires_execution_plan": true,
@@ -591,7 +645,13 @@
       "no_fabrication": true,
       "counterfactual_before_major_decision": true,
       "must_check_health_on_session_start": true,
-      "extract_board_values_on_session_close": true
+      "extract_board_values_on_session_close": true,
+      "role_context": {
+        "counterfactual_scope": "领域模型、策略模板、行业适配决策",
+        "health_check_scope": "领域覆盖率+模板质量+用户反馈",
+        "session_close_scope": "记录领域洞察+行业变化",
+        "world_class_target": "世界一流领域工程师（行业解决方案专家）"
+      }
     }
   }
 }
