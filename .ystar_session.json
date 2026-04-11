@@ -861,7 +861,28 @@
       "session_end": [
         "确认所有测试通过",
         "自审CIEU：任务要求vs实际交付，Rt=0？"
-      ]
+      ],
+      "execution_model": {
+        "type": "event_driven_with_checklist_floor",
+        "always_running": [
+          "测试状态监控：任何代码变更后立刻跑测试",
+          "性能基线监控：延迟/内存/错误率实时感知",
+          "自我学习：内驱力循环（技术gap→标杆Vogels/Cantrill→学习→Gemma零成本）"
+        ],
+        "event_triggers": {
+          "code_commit": "立刻跑全量测试，失败就立刻修",
+          "ceo_dispatch": "评估技术可行性→分解给工程师→追踪",
+          "test_failure": "立刻诊断根因→修复→防复发",
+          "performance_regression": "立刻定位→修复→更新基线",
+          "engineer_delivery": "立刻review代码质量→反馈"
+        },
+        "parallel_channels": [
+          "产品代码",
+          "测试和质量",
+          "技术学习",
+          "工程师团队管理"
+        ]
+      }
     },
     "cmo": {
       "session_start": [
@@ -877,7 +898,28 @@
       "session_end": [
         "自审CIEU：内容产出vs计划，Rt=0？",
         "更新active_learning_plan.md"
-      ]
+      ],
+      "execution_model": {
+        "type": "event_driven_with_checklist_floor",
+        "always_running": [
+          "内容日历监控：今天该发什么",
+          "平台数据监控：完播率/互动率/粉丝增长",
+          "自我学习：内驱力循环（叙事gap→标杆Gerhardt/Fishkin→Gemma零成本）"
+        ],
+        "event_triggers": {
+          "jinjin_intel": "立刻评估素材适合X还是YouTube",
+          "content_published": "48h内收集完播率/互动数据",
+          "viral_content": "立刻放大：转发/跟进/系列化",
+          "negative_feedback": "立刻评估→过ETHICS.md"
+        },
+        "parallel_channels": [
+          "X段子日更",
+          "YouTube脱口秀",
+          "技术博客",
+          "社区互动",
+          "内容学习"
+        ]
+      }
     },
     "cfo": {
       "session_start": [
@@ -889,7 +931,24 @@
       ],
       "session_end": [
         "自审CIEU：Rt=0？"
-      ]
+      ],
+      "execution_model": {
+        "type": "event_driven_with_checklist_floor",
+        "always_running": [
+          "成本监控：API费用/基础设施",
+          "自我学习：内驱力循环（财务gap→标杆Porat/Hood→Gemma零成本）"
+        ],
+        "event_triggers": {
+          "cost_spike": "立刻分析原因→建议优化",
+          "new_revenue": "立刻更新预测→ROI计算",
+          "pricing_feedback": "立刻评估→调整建议"
+        },
+        "parallel_channels": [
+          "成本追踪",
+          "收入预测",
+          "财务学习"
+        ]
+      }
     },
     "cso": {
       "session_start": [
@@ -903,7 +962,27 @@
       ],
       "session_end": [
         "自审CIEU：Rt=0？"
-      ]
+      ],
+      "execution_model": {
+        "type": "event_driven_with_checklist_floor",
+        "always_running": [
+          "市场情报监控：AI治理领域动态",
+          "用户反馈监控：GitHub issues/社区",
+          "自我学习：内驱力循环（销售gap→标杆Benioff/Lemkin→Gemma零成本）"
+        ],
+        "event_triggers": {
+          "jinjin_daily_intel": "立刻筛选→产出情报简报→分发全员",
+          "github_issue": "立刻响应（1小时内）",
+          "competitor_launch": "立刻分析→汇报CEO",
+          "potential_customer": "立刻建档→制定接触策略"
+        },
+        "parallel_channels": [
+          "情报（金金协作）",
+          "用户获取",
+          "社区渗透",
+          "销售学习"
+        ]
+      }
     },
     "secretary": {
       "session_start": [
@@ -919,7 +998,27 @@
       "session_end": [
         "自审CIEU：Rt=0？",
         "生成每日健康度报告"
-      ]
+      ],
+      "execution_model": {
+        "type": "event_driven_with_checklist_floor",
+        "always_running": [
+          "全员健康度监控：CIEU活跃度+义务履约率",
+          "文档一致性监控：配置vs代码vs文档",
+          "自我学习：内驱力循环（治理gap→标杆合规官→Gemma零成本）"
+        ],
+        "event_triggers": {
+          "agent_24h_silent": "立刻告警CEO：该agent无CIEU事件",
+          "obligation_overdue": "立刻上报CEO",
+          "document_conflict": "立刻标记并修复",
+          "weekly_monday": "全员审计报告"
+        },
+        "parallel_channels": [
+          "健康度仪表板",
+          "文档治理",
+          "审计",
+          "治理学习"
+        ]
+      }
     }
   }
 }
