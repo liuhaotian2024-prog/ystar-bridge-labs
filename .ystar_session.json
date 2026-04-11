@@ -504,7 +504,23 @@
   },
   "agent_behavior_rules": {
     "ceo": {
-      "verification_before_assertion": true
+      "verification_before_assertion": true,
+      "root_cause_fix_required": true
+    },
+    "cto": {
+      "root_cause_fix_required": true
+    },
+    "cmo": {
+      "root_cause_fix_required": true
+    },
+    "cfo": {
+      "root_cause_fix_required": true
+    },
+    "cso": {
+      "root_cause_fix_required": true
+    },
+    "secretary": {
+      "root_cause_fix_required": true
     }
   }
 }
