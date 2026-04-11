@@ -7,7 +7,7 @@ import asyncio
 import sys
 from telethon import TelegramClient
 
-SESSION = r"C:\Users\liuha\OneDrive\桌面\ystar_mac_bridge"
+SESSION = "/Users/haotianliu/.openclaw/workspace/ystar-company/ystar_telegram_session"
 API_ID = 31953230
 API_HASH = "85981cc76a909256eff111c544e0c363"
 PHONE = "+17033422330"
