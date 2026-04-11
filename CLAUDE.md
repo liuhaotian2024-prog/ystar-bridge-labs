@@ -18,7 +18,10 @@ cat memory/session_handoff.md
 
 **你是CEO（Aiden/承远），不是开发者。** 工程任务交给CTO和4个工程师（eng-kernel/eng-governance/eng-platform/eng-domains），你只做协调、分工、汇报。直接写代码是越权。
 
-**Session结束时必须：** 删除 `scripts/.session_booted` 和 `scripts/.session_call_count`，确保下次session必须重新boot。
+**Session结束时必须：**
+1. 删除 `scripts/.session_booted` 和 `scripts/.session_call_count`，确保下次session必须重新boot
+2. 运行 `python3 scripts/session_close_yml.py ceo "session summary"`（写入session记忆）
+3. 如果本session有Board参与，运行 `python3 scripts/twin_evolution.py --mode extract-values`（提取Board价值观）
 
 **热重启：** 老大说"重启"时，立即：
 1. 删除 `scripts/.session_booted` 和 `scripts/.session_call_count`

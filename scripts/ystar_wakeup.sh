@@ -4,6 +4,7 @@
 # 安装：crontab -e 添加以下行（每3小时跑一次）：
 #   23 */3 * * * /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/ystar_wakeup.sh learning
 #   47 8 * * *   /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/ystar_wakeup.sh morning_report
+#   37 22 * * *  /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/ystar_wakeup.sh twin
 #
 # Board授权后执行: chmod +x scripts/ystar_wakeup.sh && crontab -e
 
@@ -55,8 +56,25 @@ db.close()
     echo "[$DATE $TIME] Morning report saved to $LOG_DIR/${DATE}_morning.md" >> "$LOG_DIR/wakeup.log"
     ;;
 
+  twin)
+    echo "[$DATE $TIME] Starting Digital Twin Evolution" >> "$LOG_DIR/wakeup.log"
+
+    cd "$YSTAR_DIR"
+    if [ -f scripts/twin_evolution.py ]; then
+      python3 scripts/twin_evolution.py --mode all >> "$LOG_DIR/wakeup.log" 2>&1
+    else
+      echo "[$DATE $TIME] twin_evolution.py not found, skipping" >> "$LOG_DIR/wakeup.log"
+    fi
+
+    # Generate twin report
+    if [ -f scripts/twin_report.py ]; then
+      python3 scripts/twin_report.py > "$LOG_DIR/${DATE}_twin_evolution.md" 2>&1
+      echo "[$DATE $TIME] Twin evolution report saved to $LOG_DIR/${DATE}_twin_evolution.md" >> "$LOG_DIR/wakeup.log"
+    fi
+    ;;
+
   *)
-    echo "Usage: $0 {learning|morning_report}"
+    echo "Usage: $0 {learning|morning_report|twin}"
     exit 1
     ;;
 esac
