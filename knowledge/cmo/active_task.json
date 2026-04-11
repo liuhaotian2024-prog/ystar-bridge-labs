@@ -1,0 +1,22 @@
+{
+  "task_id": "task_36016b606b6c",
+  "actor": "cmo",
+  "task": "Autonomous Mission: build video content strategy",
+  "total_steps": 4,
+  "current_step": 0,
+  "estimate_minutes": 60,
+  "status": "completed",
+  "mission": true,
+  "started_at": 1775852268.830801,
+  "last_update": 1775852268.830801,
+  "notes": [
+    {
+      "step": "complete",
+      "note": "auto-detect verified",
+      "at": 1775852268.90677
+    }
+  ],
+  "completed_at": 1775852268.90677,
+  "duration_s": 0.07596898078918457,
+  "output": "test"
+}

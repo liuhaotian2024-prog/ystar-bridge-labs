@@ -27912,3 +27912,23 @@ NameError: name '_feed_path_b' is not defined
     ^
 SyntaxError: closing parenthesis ')' does not match opening parenthesis '[' on line 618
 
+22:39:10 FATAL ERROR: Expecting value: line 1 column 1 (char 0)
+22:39:10 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 150, in <module>
+    payload = json.loads(raw)
+              ^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+22:39:11 [intent-guard] WARN: Edit governance/DNA_LOG.md — no INTENT_RECORDED in 1e-05h window
+22:39:11 [intent-guard] unexpected error (unable to open database file); fail-open
+00:05:18 [intent-guard] WARN: Edit governance/DNA_LOG.md — unqualified_intent_gov009 (window=0.0003h)
+00:05:19 [intent-guard] WARN: Write README.md — no_recent_intent (window=0.0003h)
+00:05:19 [intent-guard] unexpected error (unable to open database file); fail-open

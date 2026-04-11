@@ -18,8 +18,21 @@ import time
 CHANNEL = "@YstarBridgeLabs"
 
 
+def _load_secrets():
+    """Load credentials from ~/.gov_mcp_secrets.env"""
+    secrets_path = os.path.expanduser("~/.gov_mcp_secrets.env")
+    if os.path.isfile(secrets_path):
+        with open(secrets_path) as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    key, val = line.split("=", 1)
+                    os.environ.setdefault(key.strip(), val.strip())
+
+
 def publish_telegram(text: str) -> dict:
     """Send message to Telegram channel."""
+    _load_secrets()
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
     if not token:
         print("Error: Set TELEGRAM_BOT_TOKEN environment variable", file=sys.stderr)

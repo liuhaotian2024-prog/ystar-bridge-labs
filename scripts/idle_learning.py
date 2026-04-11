@@ -35,7 +35,12 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 KNOWLEDGE_ROOT = REPO_ROOT / "knowledge"
 
-ROLES = {"ceo", "cto", "cmo", "cso", "cfo", "secretary"}
+# All 11 agents (6 executives + 4 engineers + Secretary)
+ROLES = {
+    "ceo", "cto", "cmo", "cso", "cfo", "secretary",
+    "eng-kernel", "eng-governance", "eng-platform", "eng-domains",
+    "jinjin"  # CFO's financial assistant
+}
 
 PRIORITY_1_FILES = [
     "world_class_standard.md",
@@ -53,6 +58,12 @@ def canonical_actor(actor: str) -> str:
         "zara_johnson": "cso",
         "marco_rivera": "cfo",
         "samantha_lin": "secretary",
+        "ethan": "cto",
+        "aiden": "ceo",
+        "sofia": "cmo",
+        "zara": "cso",
+        "marco": "cfo",
+        "samantha": "secretary",
     }
     return aliases.get(actor, actor)
 
@@ -76,8 +87,12 @@ def write_gemma_log(actor: str, priority: int, action: str, result: str):
         f.write(json.dumps(entry) + "\n")
 
 
-def write_cieu_event(actor: str, priority: int, action: str, outcome: str):
-    """Write CIEU event for idle learning completion."""
+def write_cieu_event(actor: str, priority: int, action: str, outcome: str, violation: bool = False):
+    """Write CIEU event for idle learning completion.
+
+    Args:
+        violation: If True, marks this as a behavior rule violation (e.g., P3 without new gaps)
+    """
     try:
         cieu_db = REPO_ROOT / ".ystar_cieu.db"
         if not cieu_db.exists():
@@ -85,16 +100,19 @@ def write_cieu_event(actor: str, priority: int, action: str, outcome: str):
 
         from ystar.governance.omission_models import GovernanceEvent, GEventType
 
+        event_subtype = "IDLE_LEARNING_VIOLATION" if violation else "IDLE_LEARNING_COMPLETED"
+
         event = GovernanceEvent(
             event_type=GEventType.CUSTOM,
             entity_id=f"idle_learning_{actor}_{int(time.time())}",
             actor_id=actor,
             ts=time.time(),
             payload={
-                "event_subtype": "IDLE_LEARNING_COMPLETED",
+                "event_subtype": event_subtype,
                 "priority": priority,
                 "action": action,
                 "outcome": outcome,
+                "violation": violation,
             },
             source="idle_learning",
         )
@@ -305,11 +323,138 @@ Next: Refine after executing 5 tasks of this type
 """
 
 
+def extract_feedbacks_from_simulation(actor: str, scenario: str) -> dict:
+    """
+    Extract learning gaps and new task types from P3 simulation scenario.
+
+    This is the P3→P2 feedback loop: simulation reveals blind spots which
+    become new learning tasks for next P2 run.
+
+    Returns:
+        {
+            "gaps_created": int,
+            "task_types_appended": int,
+            "summary": List[str]
+        }
+    """
+    gaps_dir = KNOWLEDGE_ROOT / actor / "gaps"
+    role_def_dir = KNOWLEDGE_ROOT / actor / "role_definition"
+    task_type_map = role_def_dir / "task_type_map.md"
+
+    gaps_created = 0
+    task_types_appended = 0
+    summary = []
+
+    # Heuristic: If scenario contains keywords suggesting new task types
+    # that aren't in task_type_map, create a gap file for them
+    NEW_TASK_KEYWORDS = {
+        "crisis": "crisis_handling",
+        "emergency": "emergency_response",
+        "debugging": "technical_debugging",
+        "negotiation": "stakeholder_negotiation",
+        "refactoring": "code_refactoring",
+        "audit": "compliance_audit",
+        "onboarding": "team_onboarding",
+        "retrospective": "retrospective_facilitation",
+        "architecture": "architecture_design",
+        "incident": "incident_response",
+        "security": "security_review",
+        "performance": "performance_optimization",
+        "deployment": "deployment_planning",
+        "rollback": "rollback_execution",
+        "migration": "data_migration",
+        "integration": "system_integration",
+    }
+
+    scenario_lower = scenario.lower()
+    detected_tasks = []
+
+    for keyword, task_type in NEW_TASK_KEYWORDS.items():
+        if keyword in scenario_lower:
+            detected_tasks.append(task_type)
+
+    # Check which detected tasks are not in current task_type_map
+    if task_type_map.exists():
+        current_content = task_type_map.read_text()
+        current_tasks = extract_task_types(current_content)
+
+        new_tasks = [t for t in detected_tasks if t not in current_tasks]
+
+        if new_tasks:
+            # Append new task types to task_type_map
+            with open(task_type_map, "a") as f:
+                f.write(f"\n## {len(current_tasks) + 1}. New task type (from P3 simulation)\n\n")
+                for task in new_tasks:
+                    task_types_appended += 1
+                    f.write(f"### {task.replace('_', ' ').title()}\n")
+                    f.write(f"- **Description**: (Detected from counterfactual simulation)\n")
+                    f.write(f"- **Frequency**: (To be determined)\n")
+                    f.write(f"- **Criticality**: (To be determined)\n")
+                    f.write(f"- **Theory status**: ⬜ Pending P2 learning\n\n")
+
+                    summary.append(f"Appended new task type: {task}")
+
+            # Create gap file for each new task type
+            for task in new_tasks:
+                gap_file = gaps_dir / f"p3_feedback_{task}_{int(time.time())}.md"
+                gap_content = f"""# P3 Feedback Loop: New Task Type Detected
+
+## Task Type
+{task}
+
+## Source
+Detected from counterfactual simulation on {time.strftime('%Y-%m-%d')}
+
+## Scenario Fragment
+{scenario[:500]}...
+
+## Next Steps
+1. P2 learning should build theory/{task}.md
+2. Review whether this task type is actually in scope for {actor}
+3. If in scope, define success criteria and patterns
+
+---
+Mode: p3_to_p2_feedback
+"""
+                gap_file.write_text(gap_content)
+                gaps_created += 1
+                summary.append(f"Created gap file for: {task}")
+
+    # Always create at least one meta-gap about the simulation itself
+    meta_gap = gaps_dir / f"p3_meta_{int(time.time())}.md"
+    meta_content = f"""# P3 Meta-Gap: Simulation Insights
+
+## What this simulation revealed
+(To be filled by next agent session reading this file)
+
+## Scenario
+{scenario[:1000]}
+
+## Questions raised
+- What assumptions did we make that might be wrong?
+- What edge cases did this scenario expose?
+- What capabilities are we missing to handle this well?
+
+---
+Generated: {time.strftime('%Y-%m-%d')}
+Mode: idle_learning_priority_3_meta
+"""
+    meta_gap.write_text(meta_content)
+    gaps_created += 1
+    summary.append("Created meta-gap for simulation insights")
+
+    return {
+        "gaps_created": gaps_created,
+        "task_types_appended": task_types_appended,
+        "summary": summary,
+    }
+
+
 def priority_3_execute(actor: str) -> dict:
     """Priority 3: Counterfactual simulation via local_learn.py.
 
     Returns:
-        {"scenario": str, "plan_generated": bool, "gaps_recorded": int}
+        {"scenario": str, "plan_generated": bool, "gaps_recorded": int, "feedbacks": List[str]}
     """
     local_learn_script = REPO_ROOT / "scripts" / "local_learn.py"
     if not local_learn_script.exists():
@@ -317,6 +462,7 @@ def priority_3_execute(actor: str) -> dict:
             "scenario": "",
             "plan_generated": False,
             "gaps_recorded": 0,
+            "feedbacks": [],
             "error": "local_learn.py not found",
         }
 
@@ -358,16 +504,25 @@ Mode: idle_learning_priority_3
 """
             sim_file.write_text(sim_content)
 
+            # ── P3→P2 Feedback Loop: Extract gaps and new task types from simulation ──
+            feedbacks = extract_feedbacks_from_simulation(actor, scenario)
+            gaps_created = feedbacks["gaps_created"]
+            task_types_appended = feedbacks["task_types_appended"]
+
             return {
                 "scenario": scenario[:200] + "..." if len(scenario) > 200 else scenario,
                 "plan_generated": True,
-                "gaps_recorded": 1,
+                "gaps_recorded": 1 + gaps_created,
+                "feedbacks": feedbacks["summary"],
+                "new_gaps": gaps_created,
+                "new_task_types": task_types_appended,
             }
         else:
             return {
                 "scenario": "",
                 "plan_generated": False,
                 "gaps_recorded": 0,
+                "feedbacks": [],
                 "error": result.stderr[:200],
             }
     except subprocess.TimeoutExpired:
@@ -375,6 +530,7 @@ Mode: idle_learning_priority_3
             "scenario": "",
             "plan_generated": False,
             "gaps_recorded": 0,
+            "feedbacks": [],
             "error": "local_learn.py timeout",
         }
     except Exception as e:
@@ -382,6 +538,7 @@ Mode: idle_learning_priority_3
             "scenario": "",
             "plan_generated": False,
             "gaps_recorded": 0,
+            "feedbacks": [],
             "error": str(e),
         }
 
@@ -442,18 +599,33 @@ def main():
         elif priority == 3:
             result = priority_3_execute(actor)
             action = f"counterfactual_simulation"
+            is_violation = False
+
             if "error" in result:
                 outcome = result["error"]
                 print(f"Error: {outcome}")
             else:
                 outcome = f"scenario generated, {result['gaps_recorded']} gaps recorded"
                 print(f"Scenario: {result['scenario']}")
+                if result.get("feedbacks"):
+                    print(f"\nP3→P2 Feedback Loop:")
+                    for fb in result["feedbacks"]:
+                        print(f"  - {fb}")
+
+                # Check learning_loop_must_be_cyclic rule
+                if result.get("new_gaps", 0) == 0:
+                    is_violation = True
+                    print(f"\n⚠️  BEHAVIOR RULE VIOLATION: learning_loop_must_be_cyclic")
+                    print(f"    P3 simulation did not produce new gaps.")
+                    print(f"    Either simulation was too shallow or gap extraction failed.")
+                    print(f"    Deep simulations MUST reveal cognitive blind spots.")
+                    print(f"    This violation has been recorded in CIEU.")
 
         results[f"priority_{priority}"] = result
 
         # Write logs
         write_gemma_log(actor, priority, action, json.dumps(result))
-        write_cieu_event(actor, priority, action, outcome)
+        write_cieu_event(actor, priority, action, outcome, violation=is_violation if priority == 3 else False)
 
     print(f"\n=== Learning Summary ===")
     print(json.dumps(results, indent=2))

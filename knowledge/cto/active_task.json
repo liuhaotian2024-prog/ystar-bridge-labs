@@ -1,0 +1,67 @@
+{
+  "task_id": "YSTAR_DEFUSE_MVP",
+  "actor": "cto",
+  "type": "Autonomous Mission",
+  "status": "in_progress",
+  "created": "2026-04-11T09:38:00Z",
+  "completed": null,
+  "intent": {
+    "goal": "Build ystar-defuse MVP - AI bomb disposal product that defuses delayed injection attacks with 100% guarantee",
+    "core_requirements": [
+      "Level 1 Hard Bottom Line: Block sensitive file access, data exfiltration, destructive commands, secret output, dangerous behavior combinations",
+      "Level 2 Auto-Learning Whitelist: 24h silent observation -> auto-generate whitelist -> lightweight confirmation",
+      "CIEU Lightweight: SQLite-based event recording compatible with Y*gov format",
+      "Cross-turn/cross-session behavior correlation",
+      "Zero-friction UX: 10s install, 24h auto-learn, 1 click confirm, zero maintenance"
+    ],
+    "technical_constraints": [
+      "Independent package (no Y*gov dependency)",
+      "Deterministic execution (no LLM, Iron Rule 1)",
+      "Default Deny + Intent Contract",
+      "Friction checklist: 10 items must all pass"
+    ],
+    "deliverables": [
+      "Core engine with Level 1 + Level 2 protection",
+      "CIEU lightweight SQLite storage",
+      "Claude Code PreToolUse hook integration",
+      "CLI: start|stop|report|config",
+      "pip package + Claude Code Skill",
+      "20+ tests covering both protection levels",
+      "README for non-IT users"
+    ]
+  },
+  "current_layer": 4,
+  "twelve_layer_progress": {
+    "0_INTENT_RECORDED": true,
+    "1_gemma_questions": true,
+    "2_vector_search": false,
+    "3_exec_plan": true,
+    "4_exec_start": true,
+    "5_mid_check": false,
+    "6_pivot": false,
+    "7_integration": false,
+    "8_exec_complete": false,
+    "9_human_review": false,
+    "10_self_eval": false,
+    "11_board_approval": false,
+    "12_knowledge_writeback": false
+  },
+  "execution_plan": {
+    "day_1_2": "Core engine: Level 1 rules + CIEU SQLite + hook integration + basic CLI",
+    "day_2_3": "Auto-learning: observation mode + whitelist generation + Level 2 lightweight reminder + permission decay",
+    "day_3_4": "Productization: pip package + Claude Code Skill + report command + README + 20+ tests"
+  },
+  "deliverables": {
+    "repository": "/Users/haotianliu/.openclaw/workspace/ystar-defuse/",
+    "pip_package": "ystar-defuse",
+    "skill_package": "ystar-defuse.skill",
+    "tests": "tests/ with 20+ test cases",
+    "documentation": "README.md (non-IT user friendly)"
+  },
+  "key_design_decisions": {
+    "no_llm": "Deterministic rules only - cannot be injected",
+    "cieu_compatible": "Event format matches Y*gov for zero-migration upgrade path",
+    "cross_session_correlation": "session_seq enables behavior chain analysis",
+    "auto_whitelist_generation": "User never writes rules, only clicks confirm"
+  }
+}

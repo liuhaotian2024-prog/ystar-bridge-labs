@@ -63,7 +63,12 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SESSION_PATH = REPO_ROOT / ".ystar_session.json"
-ROLES = {"ceo", "cto", "cmo", "cso", "cfo", "secretary"}
+# All 11 agents (6 executives + 4 engineers + 1 assistant)
+ROLES = {
+    "ceo", "cto", "cmo", "cso", "cfo", "secretary",
+    "eng-kernel", "eng-governance", "eng-platform", "eng-domains",
+    "jinjin"
+}
 LEGACY_ACTOR_ALIASES = {
     "ethan_wright": "cto",
     "aiden_liu": "ceo",
@@ -71,6 +76,12 @@ LEGACY_ACTOR_ALIASES = {
     "zara_johnson": "cso",
     "marco_rivera": "cfo",
     "samantha_lin": "secretary",
+    "ethan": "cto",
+    "aiden": "ceo",
+    "sofia": "cmo",
+    "zara": "cso",
+    "marco": "cfo",
+    "samantha": "secretary",
 }
 
 DEFAULT_ENDPOINTS = [

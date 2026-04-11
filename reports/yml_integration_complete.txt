@@ -1,0 +1,132 @@
+YML Integration — Three Tasks Complete
+Board directive executed by: Kernel Engineer
+Date: 2026-04-10
+=================================================================
+
+TASK 1: 6 Memory Tools Added to gov-mcp/server.py ✓
+-----------------------------------------------------------------
+Tools registered with @mcp.tool() decorator:
+
+1. gov_remember — Store memories with type, score, tags, half-life
+2. gov_recall — Retrieve memories with decay filtering, sorting
+3. gov_forget — Delete memory with CIEU audit trail
+4. gov_memory_summary — Agent memory health report
+5. gov_memory_decay — Manual decay scan (prune old memories)
+6. gov_memory_reinforce — Boost initial_score of important memories
+
+Implementation:
+- Added MemoryStore initialization to _State.__init__
+- Database path: {config_dir}/.ystar_memory.db
+- All tools follow existing pattern:
+  * @mcp.tool() decorator
+  * _governance_envelope for responses
+  * Latency tracking
+  * Exception handling with traceback
+
+File modified:
+/Users/haotianliu/.openclaw/workspace/gov-mcp/gov_mcp/server.py
+
+Import added:
+from ystar.memory import MemoryStore, Memory
+
+TASK 2: Session Boot/Close Scripts ✓
+-----------------------------------------------------------------
+Created 2 scripts in ystar-company/scripts/:
+
+1. session_boot_yml.py
+   - Loads agent memories at session start
+   - Default: min_relevance=0.4, limit=20
+   - Formats output grouped by memory_type
+   - Shows relevance, age, access count
+   - Auto-detects agent_id from env or defaults to "ceo"
+
+2. session_close_yml.py
+   - Stores session summary at session end
+   - Accepts agent_id + summary via args or stdin
+   - Creates task_context memory with 7-day half-life
+   - Tags with "session_summary"
+
+Usage:
+  python3 scripts/session_boot_yml.py [agent_id]
+  python3 scripts/session_close_yml.py <agent_id> <summary_text>
+  echo "Summary" | python3 scripts/session_close_yml.py ceo
+
+TASK 3: session_handoff.md Migration ✓
+-----------------------------------------------------------------
+Created migration script:
+  scripts/migrate_handoff_to_yml.py
+
+Migrated 29 memories from session_handoff.md to .ystar_memory.db:
+
+CEO (27 memories):
+  - 4 knowledge: team identity, board rules, workflow, competitive
+  - 13 lessons: 6 founding cases + 7 recurring mistakes
+  - 9 obligations: pending tasks (P0, P1, P2)
+  - 1 task_context: session summary (from test)
+
+CTO (2 memories):
+  - 2 knowledge: architecture state, infrastructure
+
+CMO (1 memory):
+  - 1 knowledge: external channels
+
+Memory type mapping (as specified):
+  Team Identity → knowledge, 180 days, ceo
+  Founding Cases → lesson, 180 days, ceo
+  Architecture → knowledge, 60 days, cto
+  Pending Tasks → obligation, 30 days, ceo
+  Recurring Mistakes → lesson, 180 days, ceo
+  External Channels → knowledge, 60 days, cmo
+
+Database location:
+/Users/haotianliu/.openclaw/workspace/ystar-company/.ystar_memory.db
+
+VERIFICATION ✓
+-----------------------------------------------------------------
+All tests passed:
+
+1. YML core tests (14/14) ✓
+   cd Y-star-gov && pytest tests/test_memory_store.py -v
+
+2. Integration test ✓
+   scripts/test_yml_integration.py
+   - MemoryStore import
+   - server.py syntax check
+   - Memory CRUD operations
+
+3. Migration verification ✓
+   - CEO: 27 memories loaded
+   - CTO: 2 memories loaded
+   - CMO: 1 memory loaded
+   - All memory types correctly distributed
+
+4. Session boot test ✓
+   python3 scripts/session_boot_yml.py ceo
+   → 20 memories displayed (top relevance)
+
+5. Session close test ✓
+   python3 scripts/session_close_yml.py ceo "test summary"
+   → Memory stored successfully
+
+DELIVERABLES
+-----------------------------------------------------------------
+Files modified:
+  /Users/haotianliu/.openclaw/workspace/gov-mcp/gov_mcp/server.py
+
+Files created:
+  /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/session_boot_yml.py
+  /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/session_close_yml.py
+  /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/migrate_handoff_to_yml.py
+  /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/test_yml_integration.py
+  /Users/haotianliu/.openclaw/workspace/ystar-company/.ystar_memory.db (68 KB)
+
+NEXT STEPS (Recommended)
+-----------------------------------------------------------------
+1. Restart gov-mcp server to load new memory tools
+2. Test memory tools via MCP client
+3. Update session boot protocol in CLAUDE.md to call session_boot_yml.py
+4. Consider adding auto-decay to session close (run gov_memory_decay)
+5. Document memory tools in gov-mcp README
+6. Add MCP tool usage examples
+
+STATUS: ALL 3 TASKS COMPLETE ✓

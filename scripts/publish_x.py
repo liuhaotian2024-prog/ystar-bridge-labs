@@ -15,6 +15,18 @@ import time
 import json
 
 
+def _load_secrets():
+    """Load credentials from ~/.gov_mcp_secrets.env"""
+    secrets_path = os.path.expanduser("~/.gov_mcp_secrets.env")
+    if os.path.isfile(secrets_path):
+        with open(secrets_path) as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    key, val = line.split("=", 1)
+                    os.environ.setdefault(key.strip(), val.strip())
+
+
 def publish_tweet(text: str) -> dict:
     """Post a tweet. Returns API response dict."""
     try:
@@ -23,6 +35,7 @@ def publish_tweet(text: str) -> dict:
         print("Error: pip install tweepy", file=sys.stderr)
         sys.exit(1)
 
+    _load_secrets()
     api_key = os.environ.get("X_API_KEY")
     api_secret = os.environ.get("X_API_SECRET")
     access_token = os.environ.get("X_ACCESS_TOKEN")
