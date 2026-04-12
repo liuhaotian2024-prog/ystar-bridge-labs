@@ -233,6 +233,21 @@ def cmd_complete(args):
         "completed_at": now,
     })
 
+    # Closure 3: Stream continuation.json update (fail-open)
+    try:
+        from continuation_writer import rewrite_continuation
+        rewrite_continuation(REPO_ROOT, {
+            "event": "INTENT_COMPLETED",
+            "task_id": current["task_id"],
+            "role": role,
+            "task": current["task"],
+            "output": args.output,
+        })
+    except Exception as e:
+        import time as _time
+        with open(REPO_ROOT / "scripts" / "hook_debug.log", "a") as f:
+            f.write(f"[{_time.time()}] continuation hook failed: {e}\n")
+
     print(f"OK: task completed")
     print(f"  task     : {current['task'][:60]}")
     print(f"  duration : {duration/60:.1f}min")
