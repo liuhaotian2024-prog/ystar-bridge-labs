@@ -1,7 +1,7 @@
 # [CSO Sales Report]
 
 **Task:** US Provisional Patent Application for Y*gov y*_t Concept
-**File Location:** C:\Users\liuha\OneDrive\桌面\ystar-company\reports\patent_ystar_t_provisional_draft.md
+**File Location:** /Users/haotianliu/.openclaw/workspace/ystar-company/reports/patent_ystar_t_provisional_draft.md
 **Date:** March 26, 2026
 
 ---
@@ -209,7 +209,7 @@ Decision: DENIED
 
 ## Sources Section (Web Research Conducted)
 
-The knowledge file (C:\Users\liuha\OneDrive\桌面\ystar-company\knowledge\cso\patent_law_knowhow.md) documents research on:
+The knowledge file (/Users/haotianliu/.openclaw/workspace/ystar-company/knowledge/cso/patent_law_knowhow.md) documents research on:
 
 **USPTO Requirements:**
 - [Provisional Application for Patent | USPTO](https://www.uspto.gov/patents/basics/apply/provisional-application)

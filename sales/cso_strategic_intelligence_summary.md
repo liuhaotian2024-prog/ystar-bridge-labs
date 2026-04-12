@@ -263,7 +263,7 @@ New standard RFP template released March 2026 for AI governance evaluation. Ente
 ## Full Research Report Location
 
 **Complete 75-source research document:**
-`C:\Users\liuha\OneDrive\桌面\ystar-company\knowledge\cso\user_engagement_research.md`
+`/Users/haotianliu/.openclaw/workspace/ystar-company/knowledge/cso/user_engagement_research.md`
 
 Includes:
 - Detailed source citations (75+ authoritative sources)
