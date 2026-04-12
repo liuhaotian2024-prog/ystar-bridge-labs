@@ -265,7 +265,7 @@ Board 永远不选 (Y)，规则本身是 effective 的。
 | 执行人 | Samantha Lin (Secretary) |
 | 执行日期 | 2026-04-12 |
 | 提案原文 | `reports/proposals/charter_amendment_singlemachine.md` |
-| 执行 commit hash | （见本次 commit，见 `git log` 搜 "AMENDMENT-004"） |
+| 执行 commit hash | `e6ca1df` |
 
 ### 摘要
 
