@@ -289,6 +289,14 @@ elif [ -f "$YSTAR_DIR/memory/continuation.md" ]; then
   cat "$YSTAR_DIR/memory/continuation.md"
 fi
 
+# STEP 7: Wisdom Package Injection (Board 2026-04-12 — Continuity Guardian)
+if [ -f "$YSTAR_DIR/memory/wisdom_package_latest.md" ]; then
+  echo ""
+  echo "--- SESSION WISDOM (你刚醒来 — 这是你5分钟前的自己) ---"
+  cat "$YSTAR_DIR/memory/wisdom_package_latest.md"
+  echo ""
+fi
+
 # STEP 11: Memory consistency check (Closure 2 — Boot-time drift detection)
 echo ""
 echo "-- STEP 11: memory_consistency_check --"
