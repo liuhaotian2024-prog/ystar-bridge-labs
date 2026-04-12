@@ -25,6 +25,124 @@ if YSTAR_GOV_PATH.exists():
 from ystar.memory import MemoryStore, Memory
 
 
+def generate_continuation(company_root: Path, agent_id: str, db_path: Path):
+    """Generate memory/continuation.json — machine-readable structured state.
+
+    v2: JSON replaces v1 markdown. Parsed by governance_boot.sh Step 10
+    and enforced by hook_wrapper.py continuation compliance check.
+
+    Reads from:
+    - .ystar_memory.db (obligation memories)
+    - knowledge/*/active_task.json (per-role task state)
+    - DISPATCH.md (current dispatch state)
+
+    Writes: memory/continuation.json
+    """
+    import re
+
+    continuation = {
+        "generated_at": time.strftime('%Y-%m-%dT%H:%M:%S'),
+        "generated_by": agent_id,
+    }
+
+    # --- Section 1: Campaign (from highest-priority obligation) ---
+    conn = sqlite3.connect(str(db_path))
+    obs = conn.execute(
+        "SELECT content, created_at FROM memories WHERE memory_type='obligation' ORDER BY created_at DESC"
+    ).fetchall()
+    conn.close()
+
+    campaign = {"name": "unknown", "day": 1, "start_date": "", "target": ""}
+    for content, created_at in obs:
+        lower = content.lower()
+        if "defuse" in lower or "\u6218\u5f79" in lower:
+            campaign["name"] = "Y*Defuse 30\u5929\u6218\u5f79"
+            campaign["target"] = "10K users + 20K stars"
+            try:
+                date_match = re.search(r'Day\s*(\d+)', content)
+                if date_match:
+                    campaign["day"] = int(date_match.group(1))
+                date_match2 = re.search(r'(\d{4}-\d{2}-\d{2})', content)
+                if date_match2:
+                    campaign["start_date"] = date_match2.group(1)
+            except Exception:
+                pass
+            break
+    continuation["campaign"] = campaign
+
+    # --- Section 2: Team state ---
+    team_state = {}
+    knowledge_dir = company_root / "knowledge"
+    role_ids = ["cto", "cmo", "cso", "cfo", "eng-kernel", "eng-platform", "eng-governance", "eng-domains"]
+    for role_id in role_ids:
+        task_file = knowledge_dir / role_id / "active_task.json"
+        if task_file.exists():
+            try:
+                task = json.loads(task_file.read_text())
+                task_name = task.get("intent", {}).get("goal", task.get("task", "unknown"))[:80]
+                status = task.get("status", "unknown")
+                blocked = task.get("blocked", False)
+                team_state[role_id] = {"task": task_name, "progress": status, "blocked": blocked}
+            except (json.JSONDecodeError, KeyError):
+                team_state[role_id] = {"task": "(parse error)", "progress": "unknown", "blocked": True}
+    continuation["team_state"] = team_state
+
+    # --- Section 3: Action queue (from DISPATCH + team state) ---
+    action_queue = []
+    dispatch_file = company_root / "DISPATCH.md"
+    unchecked = []
+    if dispatch_file.exists():
+        dispatch_text = dispatch_file.read_text()
+        unchecked = [line.strip() for line in dispatch_text.splitlines() if line.strip().startswith("- [ ]")]
+
+    seq = 1
+    for role_id, state in team_state.items():
+        if state.get("progress") == "in_progress":
+            task_file = knowledge_dir / role_id / "active_task.json"
+            action_queue.append({
+                "seq": seq,
+                "action": "check_delivery",
+                "agent": role_id,
+                "command": f"cat {task_file}",
+                "success_criteria": "task in_progress, not blocked",
+                "on_fail": f"dispatch to {role_id.upper()} as P0",
+            })
+            seq += 1
+    if unchecked:
+        action_queue.append({
+            "seq": seq,
+            "action": "review_dispatch",
+            "agent": "ceo",
+            "command": f"head -40 {dispatch_file}",
+            "success_criteria": f"{len(unchecked)} items tracked",
+            "on_fail": "update DISPATCH.md",
+        })
+    continuation["action_queue"] = action_queue
+
+    # --- Section 4: Anti-patterns ---
+    continuation["anti_patterns"] = [
+        "report_plumbing_to_board",
+        "ask_board_approval_for_decided_items",
+        "list_choices_instead_of_deciding",
+    ]
+
+    # --- Section 5: Obligations summary ---
+    continuation["obligations"] = [
+        {"content": content[:300], "created_at": created_at}
+        for content, created_at in obs
+    ]
+
+    # Write to memory/continuation.json
+    memory_dir = company_root / "memory"
+    memory_dir.mkdir(exist_ok=True)
+    continuation_path = memory_dir / "continuation.json"
+    continuation_path.write_text(json.dumps(continuation, indent=2, ensure_ascii=False))
+    print(f"\nContinuation written: {continuation_path}")
+    print(f"  Obligations: {len(obs)}")
+    print(f"  Pending DISPATCH items: {len(unchecked)}")
+    print(f"  Action queue: {len(action_queue)} items")
+
+
 def extract_board_lessons(company_root: Path, session_start_time: float) -> List[Dict]:
     """
     Scan CIEU events from this session for Board-surprising decisions.
@@ -228,6 +346,36 @@ def main():
 
     lessons = extract_board_lessons(company_root, session_start)
     write_board_lessons(lessons, store, cieu_db_path)
+
+    # Generate continuation.md for seamless next-session resume
+    generate_continuation(company_root, agent_id, db_path)
+
+    # Emit session_close CIEU event (Board 2026-04-11)
+    try:
+        sys.path.insert(0, str(YSTAR_GOV_PATH))
+        from ystar.adapters.cieu_writer import _write_session_lifecycle
+        sid = "unknown"
+        sess_cfg_path = company_root / ".ystar_session.json"
+        if sess_cfg_path.exists():
+            sid = json.loads(sess_cfg_path.read_text()).get("session_id", "unknown")
+        _write_session_lifecycle(
+            "session_close", agent_id, sid, str(cieu_db_path),
+            {"summary_preview": summary[:120]},
+        )
+        print("[ok] session_close CIEU event emitted")
+    except Exception as e:
+        print(f"[warn] session_close emit failed: {e}", file=sys.stderr)
+
+    # NEW: active_agent home state cleanup (方案 C)
+    try:
+        marker_path = company_root / ".ystar_active_agent"
+        if marker_path.exists():
+            current_marker = marker_path.read_text().strip()
+            if current_marker and current_marker != "ceo":
+                print(f"[CLEANUP] session close with active_agent='{current_marker}', resetting to ceo")
+                marker_path.write_text("ceo")
+    except Exception as e:
+        print(f"[warn] home state cleanup failed: {e}", file=sys.stderr)
 
     return 0
 

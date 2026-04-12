@@ -37,6 +37,29 @@ else
   echo "[1/7] Agent identity: $CURRENT_AGENT (verify-only, not changed)"
 fi
 
+# NEW: Home State Reset (方案 C — Board 2026-04-12 批, L2 CTO 自主)
+# 当 AGENT_ID=ceo (默认) 且磁盘 marker 不一致时, 强制回 ceo home state
+if [ "$AGENT_ID" = "ceo" ] && [ "$VERIFY_ONLY" = false ]; then
+  CURRENT_MARKER=$(cat "$YSTAR_DIR/.ystar_active_agent" 2>/dev/null || echo "")
+  if [ -n "$CURRENT_MARKER" ] && [ "$CURRENT_MARKER" != "ceo" ]; then
+    echo "[HOME-RESET] active_agent was '$CURRENT_MARKER', resetting to 'ceo' home state"
+    echo "ceo" > "$YSTAR_DIR/.ystar_active_agent"
+    # CIEU fail-open
+    export OLD_AGENT="$CURRENT_MARKER"
+    python3 - <<'PYEOF' 2>/dev/null
+import os, sys
+try:
+    sys.path.insert(0, "/Users/haotianliu/.openclaw/workspace/Y-star-gov")
+    from ystar.adapters.cieu_writer import _write_session_lifecycle
+    _write_session_lifecycle("home_state_reset", "ceo", "unknown",
+                             ".ystar_cieu.db",
+                             {"previous_agent": os.environ.get("OLD_AGENT", "unknown")})
+except Exception:
+    pass
+PYEOF
+  fi
+fi
+
 # 2. 确保hook daemon运行（在正确目录，带正确PYTHONPATH）
 if [ "$VERIFY_ONLY" = false ]; then
   pkill -f "_hook_daemon.py" 2>/dev/null

@@ -59,42 +59,36 @@ case "$1" in
     # Clean session markers
     rm -f scripts/.session_booted scripts/.session_call_count
 
+    # NEW: active_agent home state cleanup (方案 C)
+    CURRENT_MARKER=$(cat ".ystar_active_agent" 2>/dev/null || echo "")
+    if [ -n "$CURRENT_MARKER" ] && [ "$CURRENT_MARKER" != "ceo" ]; then
+      echo "[CLEANUP] session close with active_agent='$CURRENT_MARKER', resetting to ceo"
+      echo "ceo" > ".ystar_active_agent"
+    fi
+
     echo "[$DATE $TIME] Session state saved. Ready for restart." >> "$LOG_DIR/wakeup.log"
     echo "STATE_SAVED"
     ;;
 
   verify)
-    # After restart, verify state was loaded correctly
-    cd "$YSTAR_DIR"
+    # After restart: delegate to governance_boot.sh (single source of truth)
+    AGENT_ID="${2:-ceo}"
+    echo "=== Post-Restart Verification (delegating to governance_boot.sh) ==="
 
-    echo "=== Verification ==="
+    # Show session handoff summary first
+    echo "--- Session Handoff Summary ---"
+    if [ -f "$YSTAR_DIR/memory/session_handoff.md" ]; then
+      head -30 "$YSTAR_DIR/memory/session_handoff.md"
+      echo "... ($(wc -l < "$YSTAR_DIR/memory/session_handoff.md") total lines)"
+    fi
+    echo ""
 
-    # Check YML memories loaded
-    MEMORIES=$(python3 -c "
-import sys; sys.path.insert(0,'/Users/haotianliu/.openclaw/workspace/Y-star-gov')
-from ystar.memory import MemoryStore
-s = MemoryStore(db_path='.ystar_memory.db')
-total = sum(s.get_agent_summary(a)['total_memories'] for a in ['ceo','cto','cmo','cfo','cso','secretary'])
-print(total)
-" 2>/dev/null)
-    echo "YML memories: $MEMORIES"
+    # Delegate full boot + verification to governance_boot.sh
+    bash "$YSTAR_DIR/scripts/governance_boot.sh" "$AGENT_ID"
+    BOOT_EXIT=$?
 
-    # Check session handoff
-    echo "session_handoff.md: $(wc -l < memory/session_handoff.md 2>/dev/null) lines"
-
-    # Check CIEU
-    CIEU=$(python3 -c "
-import sqlite3
-db = sqlite3.connect('.ystar_cieu.db')
-print(db.execute('SELECT COUNT(*) FROM cieu_events').fetchone()[0])
-db.close()
-" 2>/dev/null)
-    echo "CIEU events: $CIEU"
-
-    # Check cron jobs
-    echo "Cron jobs: $(crontab -l 2>/dev/null | grep ystar | wc -l)"
-
-    echo "=== Verification Complete ==="
+    echo ""
+    echo "=== Verification Complete (governance_boot exit: $BOOT_EXIT) ==="
     ;;
 
   *)
