@@ -436,7 +436,7 @@ Template:
 
 - localhost: ?
 - 192.168.1.225: ?
-- 192.168.1.228: ?
+- 192.168.1.228: ? (归属待 CTO 验证 — AMENDMENT-004 follow-up，是否为本机 localhost 别名或独立局域网主机)
 - (null, fail-open): ?
 
 ## Violations flagged

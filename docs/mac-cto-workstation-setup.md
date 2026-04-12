@@ -1,6 +1,8 @@
 # MAC CTO Workstation Setup Guide
 
-## Executive Summary
+> **DEPRECATED as of AMENDMENT-004 (2026-04-12).** This document describes the historical Windows + MAC mini dual-machine configuration. The company now runs on a single Mac under the OpenClaw workspace (`/Users/haotianliu/.openclaw/workspace/ystar-company`). CTO is a sub-agent in the same Claude Code session, not a separate physical machine. Retained for historical reference only — do not follow these setup steps.
+
+## Executive Summary (historical)
 
 Deploy Claude Code on MAC mini to serve as CTO engineering workstation.
 - Windows machine = Board-CEO dialogue

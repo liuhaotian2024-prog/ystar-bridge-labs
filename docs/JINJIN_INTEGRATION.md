@@ -20,7 +20,7 @@ Jinjin (金金) is a MiniMax-M2.7 agent running on OpenClaw Gateway (Mac mini). 
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ Mac mini (192.168.1.228)                                    │
+│ Host Mac (OpenClaw workspace; 192.168.1.228 历史标注,归属待CTO验证) │
 │                                                             │
 │  ┌──────────────────┐          ┌────────────────────┐      │
 │  │ OpenClaw Gateway │◄─────────┤ Jinjin Agent       │      │

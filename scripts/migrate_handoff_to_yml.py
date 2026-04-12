@@ -92,9 +92,9 @@ GOV MCP: 14 tools (gov_check, gov_enforce, gov_exec, gov_delegate, gov_escalate,
 
     # ── Infrastructure ─────────────────────────────────────────────
     infrastructure = """
-MAC mini: Primary for all code, tests, git, GOV MCP server (port 7922)
-Windows: Relay + display only
-GOV MCP: Deployed on MAC, Windows connected via user scope config
+Single Mac (OpenClaw workspace /Users/haotianliu/.openclaw/workspace/ystar-company): Primary for all code, tests, git, GOV MCP server (port 7922)
+All agents (CEO/CTO/CMO/CSO/CFO/Secretary/4 engineers): sub-agents in the same Claude Code session (AMENDMENT-004, 2026-04-12)
+GOV MCP: Local long-running process on this Mac
 AGENTS.md: Immutable (protected by Y*gov hook), only human can edit
 .env deny rules: Active via gov_contract_load workaround
 """
