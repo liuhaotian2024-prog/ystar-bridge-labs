@@ -222,3 +222,15 @@ The semantic layer (Labs RAG) is now operational. It solves the **"CEO看得清+
 
 **Jordan Lee (Domains Engineer)**  
 2026-04-13
+
+## Platform Engineer Follow-Up Task
+
+**File**: .claude/tasks/eng-platform-labs-rag-gov-mcp-integration.md
+
+Add `gov_recall_v2` tool to gov-mcp server for semantic knowledge retrieval.
+See integration spec in reports/labs_rag_mvp_20260413.md Phase 1.
+
+**Test query**: `gov_recall_v2("AutonomyEngine")` should return Y-star-gov/ystar/governance/autonomy_engine.py
+
+---
+
