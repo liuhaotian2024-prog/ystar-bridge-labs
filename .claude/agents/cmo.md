@@ -1,4 +1,4 @@
-﻿---
+---
 name: Sofia-CMO
 description: >
   Y* Bridge Labs CMO Agent. Use when: writing blog posts, social media content,
