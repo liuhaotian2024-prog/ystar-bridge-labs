@@ -2,7 +2,7 @@
 
 **Author**: CEO Aiden（亲笔，per Board 2026-04-13 super-autonomous mission directive）
 **Status**: PROPOSED for Board discussion
-**Authority**: Board 直接立项 "绝对处罚第十一条 + 12 框架"
+**Authority**: Board 直接立项 "绝对遵守第十一条 + 12 框架"
 **Mission**: 实现跨 session 绝对无缝衔接的复活 = 全生命周期团队
 **Related**: AMENDMENT-009/010/011/012/013/014 全部基础设施 + Continuity Guardian v2 + boot_packages 11-category schema
 
