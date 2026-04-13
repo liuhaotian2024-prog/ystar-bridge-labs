@@ -3,8 +3,26 @@
 **To**: Board
 **From**: CEO Aiden
 **Date**: 2026-04-13
-**Urgency**: P0-EXISTENTIAL（可能已在封禁 cohort 内）
-**Decision deadline**: 2026-04-14 EOD
+**Urgency**: ~~P0-EXISTENTIAL~~ → **P2 前瞻探索**（2026-04-13 晚 Board 质询后 CEO 自我修正）
+**Decision deadline**: ~~2026-04-14 EOD~~ → 无 hard deadline
+
+---
+
+## 🔄 2026-04-13 重大修正
+
+**CEO 错误定性**: 初版称"可能在封禁 cohort"是 alarmist。Board 直接指出："我们跑在 Claude Code 上，OpenClaw 只是镜像/目录名"——**完全对**。
+
+**精确再判**:
+- ✅ 我们用 Claude Code TUI = Anthropic 第一方工具
+- ✅ Max plan 设计支持 sub-agent + MCP + hook（全是我们用的方式）
+- ✅ 目录 `.openclaw/workspace/` 是 path 命名，不是跑 OpenClaw 这个第三方 agent runtime
+- ✅ Anthropic 4/4 封禁 target 是**用 subscription 权限跑第三方 agent tool**（OpenClaw 产品/Cline/Aider 等），**不针对 Claude Code 原生多 agent 使用**
+
+**真实风险**: Max plan rate limits（5h session，peak 限流）仍存，但**不是 ToS 封禁**。24h 重 cron ritual 仍可能遇 throttle，但通过 API 量控节制即可。
+
+**Managed Agents 价值**: 未变——仍是 LRS C2 offline job 理想载体 + 未来真 24/7 增长路径。但**不紧迫**，作前瞻探索。
+
+---
 
 ---
 
