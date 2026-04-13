@@ -87,10 +87,12 @@ def apply_intervention(frame, face_mask, params):
     b, g, r = bgr[:, :, 0].copy(), bgr[:, :, 1].copy(), bgr[:, :, 2].copy()
     h, w = b.shape
 
-    # Soft face mask (smooth edges to avoid hard transitions)
+    # Soft face mask — DNA #011: sigma=8 (was 18) to prevent operations
+    # bleeding into hair/neck/background halo. Smaller blur = sharper falloff
+    # = ops stay confined to actual face area, not the surrounding 60-pixel halo.
     if face_mask is not None and face_mask.sum() > 0:
         face_norm = cv2.GaussianBlur(face_mask.astype(np.float32) / 255.0,
-                                       (61, 61), 18)
+                                       (25, 25), 8)
     else:
         face_norm = np.zeros_like(b, dtype=np.float32)
 

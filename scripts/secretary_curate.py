@@ -41,6 +41,16 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
+# Import ADE from Y-star-gov
+try:
+    sys.path.insert(0, "/Users/haotianliu/.openclaw/workspace/Y-star-gov")
+    from ystar.governance.autonomy_driver import AutonomyDriver
+    from ystar.governance.omission_store import InMemoryOmissionStore
+    ADE_AVAILABLE = True
+except ImportError as e:
+    print(f"[warn] ADE not available: {e}", file=sys.stderr)
+    ADE_AVAILABLE = False
+
 YSTAR_DIR = Path("/Users/haotianliu/.openclaw/workspace/ystar-company")
 SESSION_JSON = YSTAR_DIR / ".ystar_session.json"
 CIEU_DB = YSTAR_DIR / ".ystar_cieu.db"
@@ -480,59 +490,149 @@ def generate_action_queue(role: str, context: Dict[str, Any], new_skills: List[s
 
     Returns list of actions with format:
     {action, why, how_to_verify, on_fail, estimated_minutes, priority}
+
+    Integration: ADE (Autonomy Driver Engine) provides prescriptive action queue
+    from priority_brief + obligation backlog + role capabilities.
     """
     actions = []
 
-    # Priority 0: Check if role has any active P0 tasks
-    active_tasks = context.get("active_tasks", {})
-    p0_tasks = [t for t in active_tasks.values()
-                if isinstance(t, dict) and t.get("priority") == "P0" and t.get("status") != "deprecated"]
+    # NEW: Pull from ADE if available
+    if ADE_AVAILABLE:
+        try:
+            # Initialize ADE with minimal config
+            omission_store = InMemoryOmissionStore()
+            # Load existing omissions if available
+            omission_db = YSTAR_DIR / ".ystar_omission.db"
+            if omission_db.exists():
+                try:
+                    conn = sqlite3.connect(str(omission_db))
+                    cursor = conn.execute("""
+                        SELECT obligation_id, obligation_type, description, actor_id, status
+                        FROM obligations
+                        WHERE status IN ('pending', 'in_progress')
+                    """)
+                    for oblig_id, oblig_type, desc, actor_id, status in cursor.fetchall():
+                        if actor_id == role or not actor_id:
+                            # Add to store (simplified, real store has more fields)
+                            pass  # InMemoryOmissionStore doesn't support direct loading yet
+                    conn.close()
+                except Exception as e:
+                    print(f"[warn] Failed to load obligations from DB: {e}", file=sys.stderr)
 
-    if p0_tasks:
-        for task in p0_tasks[:2]:  # Limit to 2 P0 tasks
+            # Role capabilities map
+            role_capabilities = {
+                "ceo": ["delegation", "coordination", "board_reporting"],
+                "cto": ["architecture", "code_review", "testing"],
+                "cmo": ["content", "marketing", "messaging"],
+                "cso": ["sales", "partnerships", "growth"],
+                "cfo": ["finance", "pricing", "metrics"],
+                "secretary": ["curation", "documentation", "compliance"],
+                "eng-kernel": ["kernel", "core_runtime", "performance"],
+                "eng-platform": ["adapters", "cli", "qa"],
+                "eng-governance": ["governance", "enforcement", "auditing"],
+                "eng-domains": ["domain_logic", "validation", "schemas"]
+            }
+
+            priority_brief_path = YSTAR_DIR / "reports" / "priority_brief.md"
+
+            driver = AutonomyDriver(
+                omission_store=omission_store,
+                role_capabilities=role_capabilities,
+                priority_brief_path=str(priority_brief_path)
+            )
+
+            # Get action queue summary from ADE
+            ade_summary = driver.get_action_queue_summary(agent_id=role)
+
+            # Parse ADE summary (format: "  [N] description\n      why: ..., verify: ...")
+            if ade_summary and ade_summary != "No actions queued":
+                lines = ade_summary.strip().split("\n")
+                i = 0
+                while i < len(lines):
+                    line = lines[i].strip()
+                    if line.startswith("["):
+                        # Extract description
+                        desc = line.split("]", 1)[1].strip() if "]" in line else line
+                        # Look for next line with why/verify
+                        why = ""
+                        verify = ""
+                        if i + 1 < len(lines) and "why:" in lines[i + 1]:
+                            detail_line = lines[i + 1]
+                            if "why:" in detail_line and "verify:" in detail_line:
+                                parts = detail_line.split("verify:")
+                                why_part = parts[0].split("why:", 1)[1].strip().rstrip(",")
+                                verify = parts[1].strip() if len(parts) > 1 else ""
+                                why = why_part
+
+                        actions.append({
+                            "action": desc,
+                            "why": why or "ADE prescriptive queue",
+                            "how_to_verify": verify or "Action completed successfully",
+                            "on_fail": "Report to CEO as blocked",
+                            "estimated_minutes": 30,
+                            "priority": "P0"  # ADE actions are high priority
+                        })
+                        i += 2  # Skip detail line
+                    else:
+                        i += 1
+
+            print(f"[info] ADE generated {len(actions)} actions for {role}", file=sys.stderr)
+
+        except Exception as e:
+            print(f"[warn] ADE integration failed for {role}: {e}", file=sys.stderr)
+            # Fall back to legacy method below
+
+    # Legacy method: Check for P0 tasks, new skills, deprecated tasks
+    if not actions:
+        active_tasks = context.get("active_tasks", {})
+        p0_tasks = [t for t in active_tasks.values()
+                    if isinstance(t, dict) and t.get("priority") == "P0" and t.get("status") != "deprecated"]
+
+        if p0_tasks:
+            for task in p0_tasks[:2]:  # Limit to 2 P0 tasks
+                actions.append({
+                    "action": f"Resume P0 task: {task.get('name', 'unknown')}",
+                    "why": "P0 task incomplete from previous session",
+                    "how_to_verify": f"Check task status in {role}/active_task.json",
+                    "on_fail": "Report to CEO as blocked",
+                    "estimated_minutes": 30,
+                    "priority": "P0"
+                })
+
+        # Priority 1: Apply new skills learned in this session
+        if new_skills:
             actions.append({
-                "action": f"Resume P0 task: {task.get('name', 'unknown')}",
-                "why": "P0 task incomplete from previous session",
-                "how_to_verify": f"Check task status in {role}/active_task.json",
-                "on_fail": "Report to CEO as blocked",
-                "estimated_minutes": 30,
-                "priority": "P0"
+                "action": f"Review and sign {len(new_skills)} new skill draft(s)",
+                "why": "Secretary extracted reusable skills from last session",
+                "how_to_verify": f"Check knowledge/{role}/skills/ for new signed skills",
+                "on_fail": "Skills remain in _draft/, not activated",
+                "estimated_minutes": 15,
+                "priority": "P1"
             })
 
-    # Priority 1: Apply new skills learned in this session
-    if new_skills:
-        actions.append({
-            "action": f"Review and sign {len(new_skills)} new skill draft(s)",
-            "why": "Secretary extracted reusable skills from last session",
-            "how_to_verify": f"Check knowledge/{role}/skills/ for new signed skills",
-            "on_fail": "Skills remain in _draft/, not activated",
-            "estimated_minutes": 15,
-            "priority": "P1"
-        })
+        # Priority 2: Check for deprecated tasks needing cleanup
+        deprecated_tasks = [t for t in active_tasks.values()
+                           if isinstance(t, dict) and t.get("status") == "deprecated"]
+        if deprecated_tasks:
+            actions.append({
+                "action": f"Archive {len(deprecated_tasks)} deprecated task(s)",
+                "why": "Tombstone scan marked these as stale",
+                "how_to_verify": "Deprecated tasks moved to archive/",
+                "on_fail": "Tasks stay in active list, cluttering workspace",
+                "estimated_minutes": 10,
+                "priority": "P2"
+            })
 
-    # Priority 2: Check for deprecated tasks needing cleanup
-    deprecated_tasks = [t for t in active_tasks.values()
-                       if isinstance(t, dict) and t.get("status") == "deprecated"]
-    if deprecated_tasks:
-        actions.append({
-            "action": f"Archive {len(deprecated_tasks)} deprecated task(s)",
-            "why": "Tombstone scan marked these as stale",
-            "how_to_verify": "Deprecated tasks moved to archive/",
-            "on_fail": "Tasks stay in active list, cluttering workspace",
-            "estimated_minutes": 10,
-            "priority": "P2"
-        })
-
-    # Fallback: If no specific actions, provide default
-    if not actions:
-        actions.append({
-            "action": "Review priority_brief.md for new assignments",
-            "why": "No pending tasks found",
-            "how_to_verify": "Found at least one actionable item",
-            "on_fail": "Request task from CEO",
-            "estimated_minutes": 5,
-            "priority": "P1"
-        })
+        # Fallback: If no specific actions, provide default
+        if not actions:
+            actions.append({
+                "action": "Review priority_brief.md for new assignments",
+                "why": "No pending tasks found",
+                "how_to_verify": "Found at least one actionable item",
+                "on_fail": "Request task from CEO",
+                "estimated_minutes": 5,
+                "priority": "P1"
+            })
 
     return actions
 

@@ -294,6 +294,99 @@ def extract_video_reference(video_path, frame_index='last', n_average=5,
     return ref
 
 
+def mirror_face_reference(frame, face_mask):
+    """
+    Build an "ideal symmetric face" reference frame by mirroring the brighter
+    half of the face to the dark side.
+
+    The mirror reference is the closest physically-meaningful approximation of
+    "what this face would look like under symmetric lighting" — using only the
+    pixels we already have in the frame. This is the same person, same skin
+    tone, same color temperature, same identity — just mirrored to be balanced.
+
+    Algorithm:
+      1. Find face bbox center (cx)
+      2. Compute Y mean of left half vs right half of face
+      3. Identify the BRIGHTER half (this is the "well-lit" reference)
+      4. Take that half, flip it horizontally
+      5. Composite: keep the bright half, replace the dark half with the mirror
+      6. Smooth the seam at face center with a gaussian gradient
+      7. Return both the mirrored frame AND its fingerprint
+
+    Args:
+        frame: BGR uint8 (H, W, 3)
+        face_mask: uint8 (H, W) — 255 inside face
+
+    Returns:
+        (mirrored_frame, mirror_fingerprint) tuple, or (frame, None) on failure.
+    """
+    if face_mask is None or face_mask.sum() == 0:
+        return frame, None
+
+    h, w = frame.shape[:2]
+    rows = np.where(face_mask.sum(axis=1) > 0)[0]
+    cols = np.where(face_mask.sum(axis=0) > 0)[0]
+    if len(rows) == 0 or len(cols) == 0:
+        return frame, None
+
+    cx = (cols[0] + cols[-1]) // 2
+    face_w = cols[-1] - cols[0]
+
+    # Compute Y mean per half (within face mask)
+    bgr = frame.astype(np.float32)
+    Y = 0.114 * bgr[:, :, 0] + 0.587 * bgr[:, :, 1] + 0.299 * bgr[:, :, 2]
+    L_mask = face_mask.copy(); L_mask[:, cx:] = 0
+    R_mask = face_mask.copy(); R_mask[:, :cx] = 0
+    if L_mask.sum() == 0 or R_mask.sum() == 0:
+        return frame, None
+    Y_left = Y[L_mask > 0].mean()
+    Y_right = Y[R_mask > 0].mean()
+
+    # The bright side becomes the reference, the dark side gets replaced
+    if Y_left >= Y_right:
+        bright_is_left = True
+    else:
+        bright_is_left = False
+
+    # Flip the entire frame horizontally
+    flipped = cv2.flip(frame, 1)
+    # cx in flipped image: w - cx
+    cx_flip = w - cx
+
+    # Build composite: take bright half from original, dark half from flipped
+    # We need to translate the flipped frame so that its face center aligns with cx
+    # Translation amount: cx - cx_flip = cx - (w - cx) = 2*cx - w
+    # Use affine warp for sub-pixel alignment
+    M = np.float32([[1, 0, 2 * cx - w], [0, 1, 0]])
+    flipped_aligned = cv2.warpAffine(flipped, M, (w, h),
+                                       borderMode=cv2.BORDER_REPLICATE)
+
+    # Build a smooth blend mask: 1 on the bright side, 0 on the dark side,
+    # with sigmoid transition near cx (entire frame width, but only matters in face)
+    x_coords = np.arange(w, dtype=np.float32)
+    sigma = max(face_w * 0.10, 8.0)  # transition zone width
+    if bright_is_left:
+        # Keep left from original, take right from flipped_aligned
+        bright_weight = 1.0 / (1.0 + np.exp((x_coords - cx) / sigma))
+    else:
+        # Keep right from original, take left from flipped_aligned
+        bright_weight = 1.0 - 1.0 / (1.0 + np.exp((x_coords - cx) / sigma))
+    bright_w_2d = np.tile(bright_weight, (h, 1))[:, :, None]  # (H, W, 1)
+
+    # Restrict the mirroring to face area only — outside face, keep original
+    face_norm = cv2.GaussianBlur(face_mask.astype(np.float32) / 255.0,
+                                   (51, 51), 15)[:, :, None]
+    # Blend weight: face_norm * (1 - bright_weight) selects flipped pixels
+    flipped_weight = face_norm * (1 - bright_w_2d)
+    composite = (frame.astype(np.float32) * (1 - flipped_weight)
+                 + flipped_aligned.astype(np.float32) * flipped_weight)
+    composite = np.clip(composite, 0, 255).astype(np.uint8)
+
+    # Extract fingerprint from the composite
+    mirror_fp = extract_fingerprint(composite, face_mask=face_mask)
+    return composite, mirror_fp
+
+
 def fingerprint_distance(fp_a, fp_b, weights=None):
     """
     Weighted L2 distance (Rt) between two fingerprints.

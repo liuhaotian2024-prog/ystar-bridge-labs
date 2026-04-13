@@ -16,7 +16,8 @@
 
 | 文件 | 用途 | 维护责任人 | 更新频率 | 受 Y\*gov restricted_write_paths 保护 |
 |---|---|---|---|---|
-| `session_handoff.md` | Session 之间的状态接力——上一个 session 结束时记录"下一个 session 必须知道的事",包括未完成的 Board 指令、阻塞点、CIEU 异常、待决事项 | CEO (`ceo`) | 每次 session 结束 | ✅ 是（限定 `ceo` 写入） |
+| `memory_sync/` | OpenClaw → Claude Code 记忆同步缓存 | CEO (`ceo`) | 每次 session 结束 + cron 每15分钟自动同步 | ✅ 是（`session_handoff.md` 同步目标） |
+| `memory/continuation.md` | 下一个 session 的执行上下文（含活跃任务、阻塞点、团队状态） | CEO (`ceo`) | 每次 session 结束 | ✅ 是（`ceo` 写入） |
 
 ---
 

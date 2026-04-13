@@ -73,12 +73,6 @@ db.close()
     fi
     ;;
 
-  *)
-    echo "Usage: $0 {learning|morning_report|twin}"
-    exit 1
-    ;;
-esac
-
   intel)
     echo "[$DATE $TIME] Starting CSO Intelligence Scan" >> "$LOG_DIR/wakeup.log"
 
@@ -133,3 +127,9 @@ REPORT
 
     echo "[$DATE $TIME] Mission report saved to $LOG_DIR/${DATE}_mission_report.md" >> "$LOG_DIR/wakeup.log"
     ;;
+
+  *)
+    echo "Usage: $0 {learning|morning_report|twin|intel|mission_report}"
+    exit 1
+    ;;
+esac

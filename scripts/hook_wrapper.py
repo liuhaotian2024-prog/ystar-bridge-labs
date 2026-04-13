@@ -190,6 +190,44 @@ def _intent_guard_check(tool_name, file_path):
         # Catch-all fail-open. Hook failures must never become tool failures.
         log(f"[intent-guard] unexpected error ({exc}); fail-open")
 
+def check_continuation_compliance(tool_name, tool_input, call_count):
+    """Session前5个tool call必须和action_queue相关。
+
+    v2 continuation protocol: if agent is querying CIEU/session.json
+    plumbing instead of executing action_queue items, emit a warning.
+    Warn-only, never blocks.
+    """
+    if call_count > 5:
+        return None  # Only enforce first 5 calls
+
+    cont_path = os.path.join(REPO_ROOT, "memory", "continuation.json")
+    if not os.path.exists(cont_path):
+        return None
+
+    try:
+        with open(cont_path, "r") as f:
+            cont = json.load(f)
+    except (json.JSONDecodeError, OSError):
+        return None
+
+    anti = cont.get("anti_patterns", [])
+
+    # Detect plumbing queries in early calls
+    if tool_name == "Bash":
+        cmd = tool_input.get("command", "").lower()
+        plumbing_indicators = ["cieu", "session.json", "omission", ".ystar_session"]
+        if any(x in cmd for x in plumbing_indicators):
+            if "report_plumbing_to_board" in anti:
+                log(f"[continuation] WARN: call #{call_count} is plumbing query, "
+                    f"should be executing action_queue. cmd={cmd[:80]}")
+                return {
+                    "action": "warn",
+                    "message": "[CONTINUATION] \u524d5\u4e2a\u52a8\u4f5c\u5e94\u6267\u884caction_queue\uff0c\u4e0d\u662f\u67e5\u6c34\u7ba1\u3002"
+                }
+
+    return None
+
+
 def _main():
     try:
         # ── Session Boot Check ──────────────────────────────────────────────
@@ -209,6 +247,14 @@ def _main():
         raw = sys.stdin.buffer.read().decode('utf-8-sig')
         raw = raw.lstrip(chr(0xFEFF))
         payload = json.loads(raw)
+
+        # ── Continuation Compliance Check (v2 protocol) ───────────────────
+        tool = payload.get("tool_name", "")
+        tool_input_raw = payload.get("tool_input", {})
+        cont_warn = check_continuation_compliance(tool, tool_input_raw, count)
+        if cont_warn is not None:
+            log(f"[continuation] warn emitted for call #{count}: {tool}")
+            # Warn-only: log but don't block
 
         # Import ystar
         from ystar.adapters.hook import check_hook
@@ -234,6 +280,54 @@ def _main():
 
         # ── Run check_hook (Policy compilation happens inside with caching) ──
         result = check_hook(payload)
+
+        # ── AMENDMENT-013: Proactive Skill Activation ──────────────────────
+        # Check if activation triggers, inject skill content if matched
+        # Fail-open: activation errors logged but never block
+        try:
+            from ystar.adapters.activation_triggers import should_activate_skill
+            # Get active agent from session
+            agent_name = os.environ.get("YSTAR_ACTIVE_AGENT", "ceo")
+
+            activation = should_activate_skill(
+                agent_name=agent_name,
+                action_type=tool,
+                action_params=tool_input,
+                context={}
+            )
+
+            if activation:
+                # Emit CIEU SKILL_ACTIVATION event
+                try:
+                    from ystar.kernel.cieu import emit
+                    emit(
+                        "SKILL_ACTIVATION",
+                        agent=agent_name,
+                        skill_id=activation.skill_id,
+                        trigger_rule=activation.trigger_rule,
+                        action_type=tool,
+                        priority=activation.priority
+                    )
+                except Exception as emit_exc:
+                    log(f"[activation] CIEU emit failed: {emit_exc}")
+
+                # Prepend skill to result message (if ALLOW)
+                if result.get("action") in ("continue", "allow", None):
+                    skill_header = (
+                        f"[Y*] 📖 SKILL ACTIVATED: {os.path.basename(activation.skill_id)}\n\n"
+                        f"{activation.skill_content}\n\n"
+                        f"---\n\n"
+                    )
+                    # Prepend to message if exists, else create message
+                    if "message" in result:
+                        result["message"] = skill_header + result["message"]
+                    else:
+                        result["message"] = skill_header
+
+                    log(f"[activation] Skill injected: {activation.skill_id} (rule: {activation.trigger_rule})")
+        except Exception as activation_exc:
+            # Fail-open: activation failures should never block
+            log(f"[activation] fail-open: {activation_exc}")
 
         # ── GOV-010: OmissionScheduler tick (at most once per 5 min) ──────
         # Piggybacks on every PreToolUse call. The scheduler's should_scan()

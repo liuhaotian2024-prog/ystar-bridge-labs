@@ -35,6 +35,25 @@ reports/_fix_*.py
 reports/.commit_msg_*.txt
 reports/.msg.txt
 
+# More runtime state (2026-04-13)
+.ystar_active_agent
+.ystar_ceo_mode.json
+.ystar_memory.db-shm
+.ystar_memory.db-wal
+.ystar_cieu_omission.db
+.ystar_retro_baseline.db
+.ystar_services_installed
+.ystar_session.json.pre_override.*
+.openclaw/
+.labs_rag_index.pkl
+.claude/settings.local.json
+memory/boot_packages/*.json
+memory/boot_packages/history/
+memory/working_memory_snapshot_*.json
+memory/sleep_digest_*.md
+memory/subjective_state_*.md
+memory/_curate_cache/
+
 # Boot packages (runtime memory)
 memory/boot_packages/*.json
 memory/session_handoff.md
