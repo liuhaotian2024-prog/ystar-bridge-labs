@@ -12,11 +12,17 @@ Usage:
     python scripts/social_auto.py hn_upvote "item_id"
     python scripts/social_auto.py hn_comment "item_id" "comment text"
     python scripts/social_auto.py hn_check "item_id"
-    python scripts/social_auto.py reddit_login
-    python scripts/social_auto.py reddit_post "subreddit" "title" "body"
+    python scripts/social_auto.py x_login
+    python scripts/social_auto.py x_post "Aiden-CEO" "content here" [--live]
+    python scripts/social_auto.py x_reply "post_url" "Sofia-CMO" "reply here" [--live]
+    python scripts/social_auto.py x_follow "@handle" "Zara-CSO"
+    python scripts/social_auto.py x_like "post_url" "Ethan-CTO"
 
 First run: use *_login to authenticate (one-time manual login, cookies saved).
 After that: all actions are fully automated.
+
+X commands default to dry_run=True. Add --live to actually post/reply.
+All X operations enforce R1-R6 safety checks (see knowledge/ceo/lessons/public_x_engagement_policy_2026_04_13.md).
 """
 import asyncio
 import sys
@@ -24,9 +30,56 @@ import json
 import os
 from pathlib import Path
 from playwright.async_api import async_playwright
+from datetime import datetime
 
-COOKIE_DIR = Path(r"C:\Users\liuha\OneDrive\桌面\ystar-company\scripts\.social_cookies")
+# Y*gov CIEU integration
+try:
+    from x_content_safety_check import safety_check, increment_quota
+    from x_disclosure_templates import get_disclosure
+except ImportError:
+    # Fallback if modules not in path
+    safety_check = None
+    increment_quota = None
+    get_disclosure = None
+
+COOKIE_DIR = Path("/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/.social_cookies")
 COOKIE_DIR.mkdir(exist_ok=True)
+
+# CIEU event emission
+CIEU_LOG = Path(__file__).parent.parent / ".ystar_omission.db"  # Use existing omission db
+
+
+def emit_cieu_event(event_type: str, data: dict):
+    """
+    Emit CIEU event for X engagement auditing.
+
+    Event types:
+    - X_ENGAGEMENT_POSTED: Post/reply published
+    - X_ENGAGEMENT_VIOLATION: Safety check failed
+    """
+    try:
+        import sqlite3
+        conn = sqlite3.connect(CIEU_LOG)
+        cursor = conn.cursor()
+
+        # Ensure table exists
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS cieu_events (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                timestamp TEXT NOT NULL,
+                event_type TEXT NOT NULL,
+                data TEXT NOT NULL
+            )
+        """)
+
+        cursor.execute(
+            "INSERT INTO cieu_events (timestamp, event_type, data) VALUES (?, ?, ?)",
+            (datetime.now().isoformat(), event_type, json.dumps(data))
+        )
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        print(f"[CIEU] Warning: Failed to emit event {event_type}: {e}")
 
 
 def cookie_path(platform: str) -> Path:
@@ -236,6 +289,301 @@ async def hn_comment(item_id: str, text: str):
 
 
 # ═══════════════════════════════════════════════════════════
+# X (TWITTER)
+# ═══════════════════════════════════════════════════════════
+
+async def x_login():
+    """Open X login page. User logs in manually. Auto-detects login completion."""
+    async with async_playwright() as p:
+        ctx = await get_context(p, "x")
+        page = ctx.pages[0] if ctx.pages else await ctx.new_page()
+        await page.goto("https://x.com/login")
+        print("[X] Browser opened. Please log in manually...")
+        print("[X] Waiting for login (will auto-detect when you reach the home timeline)...")
+
+        for i in range(180):  # Wait up to 3 minutes
+            await page.wait_for_timeout(1000)
+            url = page.url
+            if "/home" in url or url == "https://x.com/" or url == "https://twitter.com/":
+                print(f"[X] Login detected! URL: {url}")
+                break
+            if i % 10 == 0 and i > 0:
+                print(f"[X] Still waiting... ({i}s)")
+        else:
+            print("[X] Timeout. Saving whatever state we have.")
+
+        await save_state(ctx, "x")
+        print("[X] Session saved. You can close the browser.")
+        await ctx.close()
+
+
+async def x_post(content: str, role: str, dry_run: bool = True):
+    """
+    Post original tweet to X.
+
+    Args:
+        content: Tweet content (MUST include disclosure per R1)
+        role: Agent role (e.g., 'Aiden-CEO', 'Sofia-CMO')
+        dry_run: If True, only validate + log, don't actually post
+    """
+    if not safety_check:
+        print("[X] ERROR: Safety check module not loaded. Cannot post.")
+        return
+
+    # R2/R4 safety check
+    passed, reasons = safety_check(content, role, action='posts', require_disclosure=True)
+
+    if not passed:
+        print(f"[X] Safety check FAILED for {role}: {reasons}")
+        emit_cieu_event("X_ENGAGEMENT_VIOLATION", {
+            "role": role,
+            "action": "post",
+            "content": content,
+            "reasons": reasons,
+            "timestamp": datetime.now().isoformat(),
+        })
+        return
+
+    if dry_run:
+        print(f"[X] DRY RUN: Would post as {role}:")
+        print(f"    {content[:100]}...")
+        print(f"    Safety: PASS")
+        emit_cieu_event("X_ENGAGEMENT_POSTED", {
+            "role": role,
+            "action": "post",
+            "content": content,
+            "dry_run": True,
+            "safety_check_pass": True,
+            "disclose_present": True,
+            "timestamp": datetime.now().isoformat(),
+        })
+        return
+
+    # Real posting
+    async with async_playwright() as p:
+        ctx = await get_context(p, "x")
+        page = ctx.pages[0] if ctx.pages else await ctx.new_page()
+        await page.goto("https://x.com/home")
+        await page.wait_for_timeout(3000)
+
+        # Click "What's happening?" or "Post" button
+        tweet_box = page.locator('div[data-testid="tweetTextarea_0"]')
+        await tweet_box.click()
+        await tweet_box.fill(content)
+        await page.wait_for_timeout(1000)
+
+        # Click Post button
+        post_btn = page.locator('div[data-testid="tweetButtonInline"]')
+        await post_btn.click()
+        await page.wait_for_timeout(3000)
+
+        await save_state(ctx, "x")
+        print(f"[X] Posted as {role}!")
+
+        # Increment quota + emit CIEU
+        increment_quota(role, 'posts')
+        emit_cieu_event("X_ENGAGEMENT_POSTED", {
+            "role": role,
+            "action": "post",
+            "content": content,
+            "dry_run": False,
+            "safety_check_pass": True,
+            "disclose_present": True,
+            "timestamp": datetime.now().isoformat(),
+        })
+        await ctx.close()
+
+
+async def x_reply(post_url: str, content: str, role: str, dry_run: bool = True):
+    """
+    Reply to an X post.
+
+    Args:
+        post_url: URL of the post to reply to
+        content: Reply content (MUST include disclosure per R1)
+        role: Agent role
+        dry_run: If True, only validate + log, don't actually reply
+    """
+    if not safety_check:
+        print("[X] ERROR: Safety check module not loaded. Cannot reply.")
+        return
+
+    # R2/R4 safety check
+    passed, reasons = safety_check(content, role, action='replies', require_disclosure=True)
+
+    if not passed:
+        print(f"[X] Safety check FAILED for {role}: {reasons}")
+        emit_cieu_event("X_ENGAGEMENT_VIOLATION", {
+            "role": role,
+            "action": "reply",
+            "content": content,
+            "post_url": post_url,
+            "reasons": reasons,
+            "timestamp": datetime.now().isoformat(),
+        })
+        return
+
+    if dry_run:
+        print(f"[X] DRY RUN: Would reply to {post_url} as {role}:")
+        print(f"    {content[:100]}...")
+        print(f"    Safety: PASS")
+        emit_cieu_event("X_ENGAGEMENT_POSTED", {
+            "role": role,
+            "action": "reply",
+            "content": content,
+            "post_url": post_url,
+            "dry_run": True,
+            "safety_check_pass": True,
+            "disclose_present": True,
+            "timestamp": datetime.now().isoformat(),
+        })
+        return
+
+    # Real reply
+    async with async_playwright() as p:
+        ctx = await get_context(p, "x")
+        page = ctx.pages[0] if ctx.pages else await ctx.new_page()
+        await page.goto(post_url)
+        await page.wait_for_timeout(3000)
+
+        # Click reply button
+        reply_btn = page.locator('div[data-testid="reply"]').first
+        await reply_btn.click()
+        await page.wait_for_timeout(1000)
+
+        # Type reply
+        reply_box = page.locator('div[data-testid="tweetTextarea_0"]')
+        await reply_box.fill(content)
+        await page.wait_for_timeout(1000)
+
+        # Submit
+        submit_btn = page.locator('div[data-testid="tweetButton"]')
+        await submit_btn.click()
+        await page.wait_for_timeout(2000)
+
+        await save_state(ctx, "x")
+        print(f"[X] Replied to {post_url} as {role}!")
+
+        # Increment quota + emit CIEU
+        increment_quota(role, 'replies')
+        emit_cieu_event("X_ENGAGEMENT_POSTED", {
+            "role": role,
+            "action": "reply",
+            "content": content,
+            "post_url": post_url,
+            "dry_run": False,
+            "safety_check_pass": True,
+            "disclose_present": True,
+            "timestamp": datetime.now().isoformat(),
+        })
+        await ctx.close()
+
+
+async def x_follow(handle: str, role: str):
+    """
+    Follow a user on X.
+
+    Args:
+        handle: Username (with or without @)
+        role: Agent role
+    """
+    if not safety_check:
+        print("[X] ERROR: Safety check module not loaded. Cannot follow.")
+        return
+
+    # R4 rate limit check only (no content)
+    passed, reasons = safety_check("", role, action='follows', require_disclosure=False)
+    if not passed:
+        print(f"[X] Rate limit check FAILED for {role}: {reasons}")
+        emit_cieu_event("X_ENGAGEMENT_VIOLATION", {
+            "role": role,
+            "action": "follow",
+            "handle": handle,
+            "reasons": reasons,
+            "timestamp": datetime.now().isoformat(),
+        })
+        return
+
+    handle = handle.lstrip('@')
+
+    async with async_playwright() as p:
+        ctx = await get_context(p, "x")
+        page = ctx.pages[0] if ctx.pages else await ctx.new_page()
+        await page.goto(f"https://x.com/{handle}")
+        await page.wait_for_timeout(3000)
+
+        # Click Follow button
+        follow_btn = page.locator('div[data-testid$="follow"]').first
+        await follow_btn.click()
+        await page.wait_for_timeout(1000)
+
+        await save_state(ctx, "x")
+        print(f"[X] Followed @{handle} as {role}!")
+
+        # Increment quota + emit CIEU
+        increment_quota(role, 'follows')
+        emit_cieu_event("X_ENGAGEMENT_POSTED", {
+            "role": role,
+            "action": "follow",
+            "handle": handle,
+            "dry_run": False,
+            "timestamp": datetime.now().isoformat(),
+        })
+        await ctx.close()
+
+
+async def x_like(post_url: str, role: str):
+    """
+    Like a post on X.
+
+    Args:
+        post_url: URL of the post
+        role: Agent role
+    """
+    if not safety_check:
+        print("[X] ERROR: Safety check module not loaded. Cannot like.")
+        return
+
+    # R4 rate limit check only (no content)
+    passed, reasons = safety_check("", role, action='likes', require_disclosure=False)
+    if not passed:
+        print(f"[X] Rate limit check FAILED for {role}: {reasons}")
+        emit_cieu_event("X_ENGAGEMENT_VIOLATION", {
+            "role": role,
+            "action": "like",
+            "post_url": post_url,
+            "reasons": reasons,
+            "timestamp": datetime.now().isoformat(),
+        })
+        return
+
+    async with async_playwright() as p:
+        ctx = await get_context(p, "x")
+        page = ctx.pages[0] if ctx.pages else await ctx.new_page()
+        await page.goto(post_url)
+        await page.wait_for_timeout(3000)
+
+        # Click Like button
+        like_btn = page.locator('div[data-testid="like"]').first
+        await like_btn.click()
+        await page.wait_for_timeout(500)
+
+        await save_state(ctx, "x")
+        print(f"[X] Liked {post_url} as {role}!")
+
+        # Increment quota + emit CIEU
+        increment_quota(role, 'likes')
+        emit_cieu_event("X_ENGAGEMENT_POSTED", {
+            "role": role,
+            "action": "like",
+            "post_url": post_url,
+            "dry_run": False,
+            "timestamp": datetime.now().isoformat(),
+        })
+        await ctx.close()
+
+
+# ═══════════════════════════════════════════════════════════
 # EDGE-TTS PODCAST
 # ═══════════════════════════════════════════════════════════
 
@@ -280,6 +628,27 @@ async def main():
         await hn_check(sys.argv[2])
     elif cmd == "hn_comment" and len(sys.argv) > 3:
         await hn_comment(sys.argv[2], " ".join(sys.argv[3:]))
+    elif cmd == "x_login":
+        await x_login()
+    elif cmd == "x_post" and len(sys.argv) > 3:
+        role = sys.argv[2]
+        content = " ".join(sys.argv[3:])
+        dry_run = "--live" not in sys.argv
+        await x_post(content, role, dry_run=dry_run)
+    elif cmd == "x_reply" and len(sys.argv) > 4:
+        post_url = sys.argv[2]
+        role = sys.argv[3]
+        content = " ".join(sys.argv[4:])
+        dry_run = "--live" not in sys.argv
+        await x_reply(post_url, content, role, dry_run=dry_run)
+    elif cmd == "x_follow" and len(sys.argv) > 3:
+        handle = sys.argv[2]
+        role = sys.argv[3]
+        await x_follow(handle, role)
+    elif cmd == "x_like" and len(sys.argv) > 3:
+        post_url = sys.argv[2]
+        role = sys.argv[3]
+        await x_like(post_url, role)
     elif cmd == "podcast" and len(sys.argv) > 3:
         await generate_podcast(sys.argv[2], sys.argv[3])
     else:
