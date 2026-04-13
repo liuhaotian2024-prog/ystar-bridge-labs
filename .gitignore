@@ -27,6 +27,14 @@ docs/*.png
 # Task locks
 .claude/scheduled_tasks.lock
 
+# Agent frontmatter fix backups (local-only)
+.claude/agents/*.pre_csuite_fix
+reports/_*.py
+reports/_backfill.py
+reports/_fix_*.py
+reports/.commit_msg_*.txt
+reports/.msg.txt
+
 # Boot packages (runtime memory)
 memory/boot_packages/*.json
 memory/session_handoff.md
