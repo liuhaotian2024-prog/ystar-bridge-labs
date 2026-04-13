@@ -45,7 +45,7 @@ def check_hook_wiring():
 
     # Find all hook_*.py scripts
     hook_scripts = list(WORKSPACE_ROOT.glob("scripts/hook_*.py"))
-    hook_names = {s.stem.replace('hook_', ''): s for s in hook_scripts}
+    hook_script_basenames = {s.name for s in hook_scripts}
 
     # Load settings.json hooks
     try:
@@ -55,29 +55,24 @@ def check_hook_wiring():
     except Exception as e:
         return [f"Cannot read settings.json: {e}"]
 
+    # Extract all registered hook script basenames from settings.json
+    registered_basenames = set()
+    for event_name, event_hooks in registered_hooks.items():
+        for hook_entry in event_hooks:
+            for hook_def in hook_entry.get("hooks", []):
+                command = hook_def.get("command", "")
+                # Extract basename from command (handles both absolute paths and script names)
+                parts = command.split()
+                for part in parts:
+                    if part.endswith(".py") or part.endswith(".sh"):
+                        # Get basename (last path component)
+                        basename = Path(part).name
+                        registered_basenames.add(basename)
+
     # Check each hook script is registered
-    for hook_name, script_path in hook_names.items():
-        # Normalize hook name to event name (e.g., user_prompt_tracker → UserPromptSubmit)
-        # This is heuristic; may need manual mapping
-        event_candidates = [
-            hook_name,
-            ''.join(word.capitalize() for word in hook_name.split('_')),
-            hook_name.replace('_', '').capitalize()
-        ]
-
-        registered = False
-        for event_name in registered_hooks.keys():
-            if any(cand.lower() in event_name.lower() for cand in event_candidates):
-                # Check if script path is in command
-                event_hooks = registered_hooks[event_name]
-                for hook_entry in event_hooks:
-                    for hook_def in hook_entry.get("hooks", []):
-                        if str(script_path) in hook_def.get("command", ""):
-                            registered = True
-                            break
-
-        if not registered:
-            broken.append(f"Hook script {script_path.name} not registered in settings.json")
+    for script_basename in hook_script_basenames:
+        if script_basename not in registered_basenames:
+            broken.append(f"Hook script {script_basename} not registered in settings.json")
 
     return broken
 

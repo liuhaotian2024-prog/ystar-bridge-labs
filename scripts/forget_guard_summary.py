@@ -42,15 +42,27 @@ def get_drift_events(hours_back=1):
 
         cutoff_time = datetime.now() - timedelta(hours=hours_back)
         cursor.execute("""
-            SELECT rule_id, details, timestamp FROM cieu_events
-            WHERE event_type = 'FORGET_GUARD'
-            AND timestamp > ?
-            ORDER BY timestamp DESC
-        """, (cutoff_time.isoformat(),))
+            SELECT event_type, drift_details, created_at FROM cieu_events
+            WHERE event_type LIKE 'FORGET_GUARD%'
+            AND created_at > ?
+            ORDER BY created_at DESC
+        """, (cutoff_time.timestamp(),))
 
         rows = cursor.fetchall()
         conn.close()
-        return rows
+
+        # Parse rule_id from drift_details JSON
+        parsed = []
+        for event_type, details_json, timestamp in rows:
+            try:
+                details = json.loads(details_json) if details_json else {}
+                rule_id = details.get('rule_id', event_type)
+            except (json.JSONDecodeError, AttributeError):
+                rule_id = event_type
+
+            parsed.append((rule_id, details_json, datetime.fromtimestamp(timestamp).isoformat()))
+
+        return parsed
     except Exception as e:
         print(f"Error querying CIEU: {e}", file=sys.stderr)
         return []

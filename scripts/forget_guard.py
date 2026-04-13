@@ -200,7 +200,16 @@ def main():
         if not payload_raw.strip():
             sys.exit(0)
 
-        payload = json.loads(payload_raw)
+        payload_input = json.loads(payload_raw)
+
+        # Normalize payload schema (support both flat and nested formats)
+        # Flat: {"tool": "Bash", "command": "..."} (real PreToolUse format)
+        # Nested: {"tool_input": {"command": "..."}} (legacy format)
+        if "tool_input" in payload_input:
+            payload = payload_input["tool_input"]
+            payload["tool"] = payload_input.get("tool_name", "unknown")
+        else:
+            payload = payload_input
 
         # Build context
         context = {

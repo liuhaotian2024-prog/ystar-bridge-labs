@@ -177,6 +177,71 @@ rules:
     cieu_event: BOARD_CHOICE_QUESTION_DRIFT
     severity: high
 
+  - id: defer_language_in_commit_msg
+    enabled: true
+    description: "Defer semantics in commit messages (禁止明日/tomorrow/queued等语义)"
+    last_reviewed: "2026-04-13"
+    reviewer: "eng-platform"
+
+    trigger:
+      tool: ["Bash"]
+      conditions:
+        - type: content_contains
+          keywords: ["git commit"]
+        - type: content_contains
+          keywords: ["明日", "明早", "tomorrow", "next session", "queued for", "wait for", "稍后", "later"]
+
+    action: warn
+    recipe: |
+      禁止在 commit message 中使用 defer 语义词汇。
+
+      Commit 表示"已完成落盘"，与"明日/queued/稍后"语义冲突。
+
+      正确做法：
+      1. 立刻执行任务，commit 时用 [LX] 标记实际完成度
+      2. 或通过 Agent tool dispatch 给对应岗位，不要写进 commit msg
+
+      违规示例：
+      - "git commit -m 'fix明日'"
+      - "git commit -m 'queued for tomorrow'"
+
+      合规示例：
+      - "git commit -m '[L2→L3] fix forget guard SQL bug'"
+      - dispatch 到 sub-agent，不提交 commit
+
+    cieu_event: DEFER_IN_COMMIT_DRIFT
+    severity: high
+
+  - id: defer_language_in_echo
+    enabled: true
+    description: "Echo defer language to Board-facing outputs"
+    last_reviewed: "2026-04-13"
+    reviewer: "eng-platform"
+
+    trigger:
+      tool: ["Bash"]
+      conditions:
+        - type: content_contains
+          keywords: ["echo"]
+        - type: content_contains
+          keywords: ["明日", "明早", "tomorrow", "next session", "queued for", "wait for", "稍后", "later"]
+
+    action: warn
+    recipe: |
+      禁止 echo defer 语义到 Board 可见输出（如 reports/、session_close 等）。
+
+      Board 期望自主执行，defer 语义违反 autonomous operation 原则。
+
+      正确做法：
+      1. 立刻执行
+      2. 或 Article 11 spawn sub-agent 并行
+      3. 或明确问 Board："Can I defer X to next session?"
+
+      Ref: feedback_no_clock_out.md
+
+    cieu_event: DEFER_IN_BASH_DRIFT
+    severity: medium
+
 # Future rule candidates (disabled, needs definition):
 # - parallel_work_no_article11: Article 11 not declared when spawning 3+ sub-agents
 # - external_release_no_intent: Level 3 action without INTENT_RECORDED
