@@ -26,6 +26,10 @@ echo "Agent: $AGENT_ID"
 echo "Mode: $([ "$VERIFY_ONLY" = true ] && echo 'VERIFY-ONLY' || echo 'FULL BOOT')"
 echo "Time: $(date)"
 
+# Set LLM provider for nl_to_contract (AMENDMENT-022)
+export YSTAR_LLM_PROVIDER=anthropic
+echo "LLM provider: $YSTAR_LLM_PROVIDER"
+
 FAILURES=0
 WARNINGS=0
 

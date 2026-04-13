@@ -18,6 +18,7 @@ from pathlib import Path
 from datetime import datetime
 
 WORKSPACE_ROOT = Path("/Users/haotianliu/.openclaw/workspace/ystar-company")
+YGOV_ROOT = Path("/Users/haotianliu/.openclaw/workspace/Y-star-gov")
 LAST_BOARD_MSG_FILE = WORKSPACE_ROOT / "scripts/.ystar_last_board_msg"
 MODE_MANAGER_SCRIPT = WORKSPACE_ROOT / "scripts/ceo_mode_manager.py"
 ACTIVE_AGENT_FILE = WORKSPACE_ROOT / ".ystar_active_agent"
@@ -25,6 +26,8 @@ SESSION_JSON = WORKSPACE_ROOT / ".ystar_session.json"
 CIEU_DB = WORKSPACE_ROOT / ".ystar_cieu.db"
 WHITELIST_MATCHER = WORKSPACE_ROOT / "scripts/whitelist_matcher.py"
 INJECT_LOG = Path("/tmp/ystar_user_prompt_hook.log")
+DIALOGUE_CONTRACT_LOG = WORKSPACE_ROOT / "scripts/.logs/dialogue_contract.log"
+DIALOGUE_CONTRACT_SCRIPT = WORKSPACE_ROOT / "scripts/dialogue_to_contract_worker.py"
 
 
 def get_active_agent():
@@ -156,6 +159,28 @@ def inject_context(user_msg_preview=""):
     return context
 
 
+def trigger_dialogue_contract_translation(user_msg: str):
+    """
+    AMENDMENT-022: Fork dialogue text to async nl_to_contract pipeline.
+    Fire-and-forget background subprocess, emits DIALOGUE_CONTRACT_DRAFT CIEU event.
+    """
+    if not user_msg or len(user_msg.strip()) < 10:
+        return  # Skip empty/trivial messages
+
+    try:
+        # Launch background worker (fire-and-forget)
+        subprocess.Popen(
+            ["python3", str(DIALOGUE_CONTRACT_SCRIPT), user_msg[:1000]],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            start_new_session=True  # Detach from parent
+        )
+    except Exception as e:
+        # Log error but never fail the hook
+        with open(DIALOGUE_CONTRACT_LOG, "a") as f:
+            f.write(f"{datetime.now().isoformat()} | spawn_error: {e}\n")
+
+
 def main():
     """Hook entry point (fail-open, max 500ms)"""
     start_time = time.time()
@@ -180,12 +205,16 @@ def main():
         user_msg_preview = ""
         if not sys.stdin.isatty():
             try:
-                user_msg_preview = sys.stdin.read(200)  # First 200 chars
+                user_msg_preview = sys.stdin.read(1000)  # Read full message for contract analysis
             except Exception:
                 pass
 
-        context = inject_context(user_msg_preview)
+        context = inject_context(user_msg_preview[:200])  # Inject uses first 200 chars
         print(context, file=sys.stdout)
+
+        # AMENDMENT-022: Async dialogue→contract translation (non-blocking)
+        if user_msg_preview:
+            trigger_dialogue_contract_translation(user_msg_preview)
 
         # Log injection for audit trail
         elapsed_ms = int((time.time() - start_time) * 1000)

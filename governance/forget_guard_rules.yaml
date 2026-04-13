@@ -242,6 +242,48 @@ rules:
     cieu_event: DEFER_IN_BASH_DRIFT
     severity: medium
 
+  - id: dialogue_contract_drift
+    enabled: true
+    description: "Dialogue contains constraints not in current whitelist (AMENDMENT-022)"
+    last_reviewed: "2026-04-13"
+    reviewer: "CTO"
+
+    trigger:
+      event_source: cieu
+      conditions:
+        - type: event_type_equals
+          value: "DIALOGUE_CONTRACT_DRAFT"
+        - type: contract_fields_not_in_whitelist
+          fields: ["deny", "only_paths", "deny_commands", "only_domains"]
+          whitelist_corpus: "governance/whitelist/*.yaml"
+
+    action: warn
+    recipe: |
+      Board dialogue contains governance constraints not in current whitelist.
+
+      Detected contract fields from nl_to_contract translation:
+      {contract_summary}
+
+      Three compliant paths:
+
+      (1) Add to whitelist (if legitimate new constraint):
+          - Edit appropriate governance/whitelist/*.yaml file
+          - Commit with [L3] tag after verification
+
+      (2) Refuse the promise to Board:
+          - Reply: "I cannot promise X because it conflicts with Y"
+          - Propose alternative approach
+
+      (3) Emit ALLOW_EXCEPTION CIEU event (with justification):
+          - Document why this one-time deviation is necessary
+          - Record exception in CIEU for audit trail
+
+      Ref: AMENDMENT-022, nl_to_contract architecture
+           governance/whitelist/ (7-corpus whitelist system)
+
+    cieu_event: DIALOGUE_DRIFT
+    severity: medium
+
 # Future rule candidates (disabled, needs definition):
 # - parallel_work_no_article11: Article 11 not declared when spawning 3+ sub-agents
 # - external_release_no_intent: Level 3 action without INTENT_RECORDED
