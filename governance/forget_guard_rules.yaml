@@ -1,0 +1,184 @@
+# ForgetGuard Rules — AMENDMENT-020
+# Institutional memory enforcement via warn-with-recipe pattern
+# Schema version: 1.0
+# Last updated: 2026-04-13
+
+schema_version: "1.0"
+default_action: warn  # warn | deny (future)
+global_enable: true
+
+rules:
+  - id: missing_l_tag
+    enabled: true
+    description: "Detect completion claims without maturity level tags (Article 11 v2)"
+    last_reviewed: "2026-04-13"
+    reviewer: "CEO"
+
+    trigger:
+      tool: ["Bash", "Edit", "Write"]
+      conditions:
+        - type: path_match
+          pattern: "^(git commit|reports/)"
+          context: ["command", "file_path"]
+        - type: content_contains
+          keywords: ["done", "shipped", "completed", "finished", "落盘", "完成"]
+        - type: content_missing
+          pattern: '\[L[0-5]\]|L[0-5]\s+(IDEA|SPEC|IMPL|TESTED|SHIPPED|ADOPTED)'
+
+    action: warn
+    recipe: |
+      Add [LX] maturity tag to your commit message or report.
+      See WORKING_STYLE.md Article 11 v2 for verb→L mapping:
+      - L0 IDEA: conception, initial design
+      - L1 SPEC: written proposal/doc/task card exists
+      - L2 IMPL: code/content written (pre-test)
+      - L3 TESTED: tests pass, review approved
+      - L4 SHIPPED: live in production/published
+      - L5 ADOPTED: ≥1 real user actively using
+      Ref: governance/WORKING_STYLE.md lines 829-850
+
+    cieu_event: MATURITY_TAG_MISSING
+    severity: medium
+
+  - id: immutable_no_break_glass
+    enabled: true
+    description: "CEO editing immutable files without break-glass mode or delegation"
+    last_reviewed: "2026-04-13"
+    reviewer: "CEO"
+
+    trigger:
+      tool: ["Edit", "Write"]
+      conditions:
+        - type: path_match
+          pattern: "^(AGENTS\\.md|governance/WORKING_STYLE\\.md|governance/BOARD_CHARTER_AMENDMENTS\\.md)"
+          context: "file_path"
+        - type: active_agent_equals
+          value: "ceo"
+        - type: ceo_mode_not_equals
+          value: "break_glass"
+
+    action: warn
+    recipe: |
+      You are CEO attempting to edit an immutable governance file.
+      Two compliant paths:
+
+      (1) Break-glass mode (20min cap, full CIEU audit):
+          python3 scripts/ceo_mode_manager.py force_break_glass --trigger T1
+          Then retry your edit.
+
+      (2) Delegate to Secretary (recommended for routine updates):
+          Use Agent tool with subagent_type=Samantha-Secretary
+          Secretary has native write access to governance files.
+
+      Ref: knowledge/ceo/skills/board_ceo_override_or_delegate.md
+      AMENDMENT-013: governance/BOARD_CHARTER_AMENDMENTS.md
+
+    cieu_event: IMMUTABLE_FORGOT_BREAK_GLASS
+    severity: high
+
+  - id: ceo_writes_code
+    enabled: true
+    description: "CEO directly writing code instead of delegating to engineers"
+    last_reviewed: "2026-04-13"
+    reviewer: "CEO"
+
+    trigger:
+      tool: ["Edit", "Write"]
+      conditions:
+        - type: active_agent_equals
+          value: "ceo"
+        - type: path_match
+          pattern: "^(scripts/|src/|tests/|ystar/|gov-mcp/|Y-star-gov/)"
+          context: "file_path"
+
+    action: warn
+    recipe: |
+      CEO does not write code (AGENTS.md role definition).
+      Dispatch to appropriate engineer:
+
+      - CTO (Ethan Wright): architecture, task assignment, code review
+      - Leo Chen (eng-kernel): Y*gov core engine, compiler, contract parsing
+      - Maya Patel (eng-governance): CIEU, autonomy, Path A/B
+      - Ryan Park (eng-platform): hooks, CLI, adapters, QA
+      - Jordan Lee (eng-domains): domain packs, templates
+
+      Use Agent tool with subagent_type=Ethan-CTO (for delegation)
+      or spawn specific engineer for immediate execution.
+
+      Ref: AGENTS.md lines 82-120, knowledge/ceo/skills/board_ceo_override_or_delegate.md
+
+    cieu_event: CEO_CODE_WRITE_DRIFT
+    severity: medium
+
+  - id: defer_language
+    enabled: true
+    description: "Agent using defer language without explicit Board stop signal"
+    last_reviewed: "2026-04-13"
+    reviewer: "CEO"
+
+    trigger:
+      tool: ["Edit", "Write"]
+      conditions:
+        - type: content_contains
+          keywords: ["明日", "tomorrow", "queued for", "next session", "明早", "wait for", "稍后", "later"]
+
+    action: warn
+    recipe: |
+      Defer language detected. Per feedback_no_clock_out memory:
+
+      Only explicit Board "stop" / "收工" permits deferral.
+      Otherwise you must:
+
+      (1) Execute now (inline in current session), OR
+      (2) Spawn sub-agent to execute in parallel (Article 11), OR
+      (3) Ask Board explicitly: "Can I defer X to next session?"
+
+      Unilateral deferral violates autonomous operation principle.
+      Board expects work to continue until explicit stop signal.
+
+      Ref: .claude/projects/.../memory/feedback_no_clock_out.md
+
+    cieu_event: DEFER_LANGUAGE_DRIFT
+    severity: low
+
+  - id: choice_question_to_board
+    enabled: true
+    description: "Agent offering Board a choice menu instead of making unilateral decision"
+    last_reviewed: "2026-04-13"
+    reviewer: "CEO"
+
+    trigger:
+      tool: ["Edit", "Write"]
+      conditions:
+        - type: content_contains
+          keywords: ["Option A", "Option B", "请选择", "1)", "2)", "3)", "方案一", "方案二"]
+        - type: addressee_context
+          value: "board"
+
+    action: warn
+    recipe: |
+      Choice questions to Board are PROHIBITED (AGENTS.md hard constraint).
+
+      CEO must make unilateral decisions and execute.
+      Board will override/stop you if the decision is wrong.
+
+      How to fix:
+      1. Pick the best option based on your judgment
+      2. Execute immediately
+      3. Report: "I chose X because Y, now executing."
+
+      Rationale: Choice questions block autonomous operation.
+      Unattended systems cannot answer "pick 1/2/3" questions.
+
+      Ref: CLAUDE.md "硬约束:禁止出选择题"
+           feedback_no_clock_out.md
+           AGENTS.md (CEO role definition)
+
+    cieu_event: BOARD_CHOICE_QUESTION_DRIFT
+    severity: high
+
+# Future rule candidates (disabled, needs definition):
+# - parallel_work_no_article11: Article 11 not declared when spawning 3+ sub-agents
+# - external_release_no_intent: Level 3 action without INTENT_RECORDED
+# - secretary_domain_write: Non-secretary agent writing to .claude/agents/
+# - forgotten_cieu_emit: High-risk action without manual CIEU event emission

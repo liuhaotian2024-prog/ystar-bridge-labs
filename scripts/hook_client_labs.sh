@@ -42,6 +42,10 @@ sys.stdout.write(d.decode())
     if [ -n "$RESULT" ]; then
         # AMENDMENT-018 sync A: emit WHITELIST event (async, fail-open)
         echo "$PAYLOAD" | python3.11 "$YSTAR_DIR/scripts/whitelist_emit.py" 2>/dev/null &
+
+        # AMENDMENT-020: ForgetGuard drift detection (async, fail-open)
+        echo "$PAYLOAD" | python3.11 "$YSTAR_DIR/scripts/forget_guard.py" 2>&1 | tee -a /tmp/ystar_forget_guard.log >/dev/null &
+
         echo "$RESULT"
         exit 0
     fi
