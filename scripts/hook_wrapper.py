@@ -21,6 +21,13 @@ GOV-009 upgrade (2026-04-10): "qualified" is now stricter.
   writes one GOV006_VIOLATION_WARNING and logs. Warn-only, fail-open.
 - _intent_is_qualified() encapsulates the check so hook_debug.log can
   distinguish "no recent intent" from "recent intent lacks GOV-009 fields".
+
+DAEMON CACHE LOCK FIX (2026-04-13):
+- Backported exp7 watcher (71fd6db from ystar-company-test)
+- GovernanceWatcher polls .ystar_active_agent, AGENTS.md, .ystar_session.json (2s)
+- On change → invalidates daemon identity + rule cache → next hook call reloads
+- Fail-open: watcher crash never blocks main flow, hook runs with last cached state
+- E2E target: <5s from file write → daemon behavior change
 """
 import json
 import sys
@@ -44,6 +51,59 @@ DEFAULT_GUARD_PROTECTED = [
 def log(msg):
     with open(LOG, "a", encoding="utf-8") as f:
         f.write(f"{time.strftime('%H:%M:%S')} {msg}\n")
+
+
+# ── Daemon Cache Invalidation (exp7 backport) ─────────────────────────────
+_daemon_cache_valid = True
+_governance_watcher = None
+
+
+def invalidate_daemon_cache(changed_files):
+    """Invalidation callback for GovernanceWatcher.
+
+    Clears ystar.adapters.identity_detector._SESSION_CONFIG_CACHE.
+    Next hook call will reload identity + session config + rules from disk.
+    """
+    global _daemon_cache_valid
+    _daemon_cache_valid = False
+
+    # Clear Y*gov's session config cache
+    try:
+        sys.path.insert(0, REPO_ROOT)
+        from ystar.adapters import identity_detector
+        identity_detector._SESSION_CONFIG_CACHE = None
+        log(f"[cache] cleared Y*gov session config cache")
+    except Exception as e:
+        log(f"[cache] failed to clear Y*gov cache (fail-open): {e}")
+
+    # Clear boundary_enforcer's write_paths cache
+    try:
+        from ystar.adapters import boundary_enforcer
+        boundary_enforcer._AGENT_WRITE_PATHS.clear()
+        log(f"[cache] cleared write_paths cache")
+    except Exception as e:
+        log(f"[cache] failed to clear write_paths cache (fail-open): {e}")
+
+    log(f"[cache] invalidated due to: {', '.join(changed_files)}")
+
+
+def ensure_watcher_started():
+    """Start GovernanceWatcher on first hook call (lazy init)."""
+    global _governance_watcher
+    if _governance_watcher is not None:
+        return  # Already started
+
+    try:
+        sys.path.insert(0, os.path.dirname(__file__))
+        from governance_watcher import create_watcher
+
+        _governance_watcher = create_watcher(REPO_ROOT, log_fn=log)
+        _governance_watcher.set_invalidation_callback(invalidate_daemon_cache)
+        _governance_watcher.start()
+        log("[watcher] GovernanceWatcher started")
+    except Exception as e:
+        log(f"[watcher] FAIL-OPEN: startup error {e}")
+        # Fail-open: watcher failure never blocks main flow
 
 
 # GOV-009 quality-bar fields required on every INTENT_RECORDED row.
@@ -229,7 +289,12 @@ def check_continuation_compliance(tool_name, tool_input, call_count):
 
 
 def _main():
+    global _daemon_cache_valid
+
     try:
+        # ── Governance Watcher (lazy start on first call) ──────────────────
+        ensure_watcher_started()
+
         # ── Session Boot Check ──────────────────────────────────────────────
         boot_flag = os.path.join(os.path.dirname(__file__), ".session_booted")
         call_counter = os.path.join(os.path.dirname(__file__), ".session_call_count")
