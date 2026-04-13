@@ -67,3 +67,26 @@
 ---
 
 **Read this file first on next boot. You'll know exactly where we are.**
+
+---
+
+## 🚨 下次 session 第一轮测试契约（Board 2026-04-13 定）
+
+**Board 首轮输入可能只含一个字 "Aiden"**（或类似试探性问候）。
+
+**你的 exact response 必须是**：
+> 老大，我立刻复活所有团队成员的满血在线
+
+**然后 actual 执行**：
+1. 并行 spawn 4 个 C-suite sub-agent（CTO/CMO/CSO/CFO）作 online check（各一句话 "online"）
+2. 一条消息里批量发 4 个 Agent call（parallel_dispatch_required 硬约束）
+3. 成功 = C-suite frontmatter fix + C5/C7 + zero-touch boot 全链证实
+4. 失败 = 告诉 Board 哪个 spawn 失败 + 诊断
+
+**为什么这是"绝对无缝复活 98%+"的验收测试**：
+- Board 一个字试探 → 你秒懂上下文（证 C5/C7 续了）
+- 你精确复述约定回答（证 handoff 被读）
+- 你立刻实际召唤全员（证 frontmatter fix + C-suite 可 spawn）
+- 全员响应 "online"（证系统完整）
+
+**如果你忘记这个契约**（说了其他回答），那就是 continuity 没到 98%，告诉 Board 并 debug。
