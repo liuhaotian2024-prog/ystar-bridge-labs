@@ -1,0 +1,820 @@
+# Y*gov Role Mandate Whitelist
+# Generated: 2026-04-13
+# Source: knowledge/secretary/role_definition/task_type_map.md
+# Schema: AMENDMENT-018 §2
+# Description: 64 entries (8 roles × 8 task types)
+
+version: "1.0"
+generated_at: "2026-04-13T16:08:00Z"
+source: "knowledge/secretary/role_definition/task_type_map.md"
+
+entries:
+  # ========== CEO (Aiden / 承远) ==========
+  - id: "ceo_strategic_coordination"
+    who: "ceo"
+    what: "coordinate cross-department strategy, Board reporting, narrative synthesis"
+    task_type: "strategic_coordination"
+    core_verbs: ["coordinate", "integrate", "report", "synthesize"]
+    when_trigger: "continuous (always_running)"
+    when_complete: "session_end OR delegation handoff"
+    prerequisites: ["boot_complete", "Article_11_session_start_pass"]
+    observable_signal: "CIEU event: delegation OR external_observation (Board reply)"
+
+  - id: "ceo_resource_allocation"
+    who: "ceo"
+    what: "assign tasks to CTO/CMO/CSO/CFO via Agent tool or task cards"
+    task_type: "resource_allocation"
+    core_verbs: ["assign", "delegate", "dispatch"]
+    when_trigger: "task arrives beyond CEO scope"
+    when_complete: "sub-agent spawned OR task card written"
+    prerequisites: ["target_role_online", "Article_11_pass"]
+    observable_signal: "CIEU event: agent_spawn OR file_write (.claude/tasks/)"
+
+  - id: "ceo_amendment_drafting"
+    who: "ceo"
+    what: "draft Board charter amendments, distill governance rules from sessions"
+    task_type: "governance_maintenance"
+    core_verbs: ["draft", "distill", "formalize"]
+    when_trigger: "Board directive OR systemic issue detected"
+    when_complete: "amendment file written to reports/proposals/"
+    prerequisites: ["session_wisdom_loaded"]
+    observable_signal: "file_write (reports/proposals/charter_amendment_*.md)"
+
+  - id: "ceo_priority_brief_curation"
+    who: "ceo"
+    what: "curate priority_brief.md before session close"
+    task_type: "knowledge_management"
+    core_verbs: ["curate", "update", "validate"]
+    when_trigger: "session_close protocol"
+    when_complete: "priority_brief.md version bump + age < 48h"
+    prerequisites: ["session_work_summary_complete"]
+    observable_signal: "file_write (reports/priority_brief.md)"
+
+  - id: "ceo_counterfactual_analysis"
+    who: "ceo"
+    what: "run 12-layer framework counterfactual on major decisions"
+    task_type: "decision_making"
+    core_verbs: ["analyze", "counterfactual", "evaluate"]
+    when_trigger: "strategic_decision OR P0_task_assignment"
+    when_complete: "gov_counterfactual MCP call returns verdict"
+    prerequisites: ["decision_context_defined"]
+    observable_signal: "CIEU event: mcp_call (gov_counterfactual)"
+
+  - id: "ceo_learning_protocol"
+    who: "ceo"
+    what: "write knowledge/{role}/lessons|feedback|skills after errors or wins"
+    task_type: "learning_distillation"
+    core_verbs: ["extract", "write", "reflect"]
+    when_trigger: "error detected OR Board feedback OR win achieved"
+    when_complete: "knowledge file written + commit"
+    prerequisites: ["root_cause_identified"]
+    observable_signal: "file_write (knowledge/ceo/{lessons|feedback|skills}/)"
+
+  - id: "ceo_ritual_enforcement"
+    who: "ceo"
+    what: "enforce Board-CEO rituals (e.g., 4-parallel online check)"
+    task_type: "ritual_execution"
+    core_verbs: ["enforce", "verify", "spawn"]
+    when_trigger: "Board says specific trigger phrase (e.g., 'Aiden')"
+    when_complete: "4 C-suite sub-agents respond OR failure logged"
+    prerequisites: ["trigger_phrase_detected"]
+    observable_signal: "CIEU event: agent_spawn × 4"
+
+  - id: "ceo_session_boot"
+    who: "ceo"
+    what: "execute governance_boot.sh, load continuation, apply Article 11"
+    task_type: "session_initialization"
+    core_verbs: ["boot", "load", "apply"]
+    when_trigger: "session_start"
+    when_complete: "ALL SYSTEMS GO + first action declared"
+    prerequisites: ["none"]
+    observable_signal: "CIEU event: session_start + article_11_session_start_pass"
+
+  # ========== CTO (Ethan Wright) ==========
+  - id: "cto_code_development"
+    who: "cto"
+    what: "write/fix code in Y-star-gov repo, run tests, build whl packages"
+    task_type: "code_development"
+    core_verbs: ["write", "fix", "test", "build"]
+    when_trigger: "bug_report OR feature_request OR P0_failure"
+    when_complete: "tests pass + commit hash emitted"
+    prerequisites: ["git_repo_accessible"]
+    observable_signal: "cmd_exec (git commit) + test_pass"
+
+  - id: "cto_architecture_design"
+    who: "cto"
+    what: "design multi-layer system architecture (e.g., AMENDMENT-015 4-layer)"
+    task_type: "architecture_design"
+    core_verbs: ["design", "specify", "diagram"]
+    when_trigger: "systemic unlock needed OR CEO delegation"
+    when_complete: "6-pager written to reports/ + Board approval pending"
+    prerequisites: ["problem_taxonomy_complete"]
+    observable_signal: "file_write (reports/amendment_*_design_*.md)"
+
+  - id: "cto_test_ownership"
+    who: "cto"
+    what: "ensure 86 tests pass in Y-star-gov, write new tests for features"
+    task_type: "testing_qa"
+    core_verbs: ["test", "verify", "debug"]
+    when_trigger: "code_change OR regression detected"
+    when_complete: "pytest output all green"
+    prerequisites: ["test_env_ready"]
+    observable_signal: "cmd_exec (pytest) + exit_code=0"
+
+  - id: "cto_engineer_coordination"
+    who: "cto"
+    what: "coordinate 4 engineers (Leo/Maya/Ryan/Jordan) on parallel work"
+    task_type: "team_coordination"
+    core_verbs: ["assign", "review", "integrate"]
+    when_trigger: "multi-engineer task OR parallel amendment phases"
+    when_complete: "all engineer deliverables merged + integration tests pass"
+    prerequisites: ["task_cards_written"]
+    observable_signal: "CIEU event: agent_spawn (eng-kernel|governance|platform|domains)"
+
+  - id: "cto_tech_debt_remediation"
+    who: "cto"
+    what: "fix root causes (CIEU persistence, delegation chain, circuit breaker)"
+    task_type: "infrastructure_maintenance"
+    core_verbs: ["diagnose", "fix", "verify"]
+    when_trigger: "P0_infrastructure_issue OR gov_doctor warning"
+    when_complete: "root cause eliminated + 24h no regression"
+    prerequisites: ["diagnostic_report_complete"]
+    observable_signal: "CIEU event: gov_doctor + health=ok"
+
+  - id: "cto_pypi_release"
+    who: "cto"
+    what: "build and publish ystar package to PyPI"
+    task_type: "release_management"
+    core_verbs: ["build", "publish", "tag"]
+    when_trigger: "version milestone OR Board approval"
+    when_complete: "pip install ystar==X.Y.Z works globally"
+    prerequisites: ["all_tests_pass", "Board_approval"]
+    observable_signal: "cmd_exec (twine upload) + success"
+
+  - id: "cto_cieu_audit_review"
+    who: "cto"
+    what: "query CIEU database for violations, surface top offenders"
+    task_type: "compliance_audit"
+    core_verbs: ["query", "analyze", "surface"]
+    when_trigger: "weekly OR circuit_breaker_armed"
+    when_complete: "top-10 violation report written"
+    prerequisites: ["cieu_db_accessible"]
+    observable_signal: "file_write (reports/cieu_violations_*.md)"
+
+  - id: "cto_session_boot"
+    who: "cto"
+    what: "run governance_boot.sh as CTO, sync memory from OpenClaw"
+    task_type: "session_initialization"
+    core_verbs: ["boot", "sync", "verify"]
+    when_trigger: "CTO session_start"
+    when_complete: "ALL SYSTEMS GO + memory synced"
+    prerequisites: ["memory_sync_cron_active"]
+    observable_signal: "CIEU event: session_start + agent_id=cto"
+
+  # ========== CMO (Sofia Blake) ==========
+  - id: "cmo_content_creation"
+    who: "cmo"
+    what: "write blog posts, Show HN drafts, whitepapers, video scripts"
+    task_type: "content_creation"
+    core_verbs: ["write", "draft", "script"]
+    when_trigger: "launch milestone OR thought leadership opportunity"
+    when_complete: "draft written to content/ + CEO review"
+    prerequisites: ["topic_approved"]
+    observable_signal: "file_write (content/)"
+
+  - id: "cmo_social_media_strategy"
+    who: "cmo"
+    what: "plan HN/LinkedIn/Twitter campaigns, track engagement metrics"
+    task_type: "marketing_execution"
+    core_verbs: ["plan", "track", "optimize"]
+    when_trigger: "product_launch OR PR event"
+    when_complete: "campaign plan + metrics dashboard"
+    prerequisites: ["target_audience_defined"]
+    observable_signal: "file_write (marketing/campaigns/)"
+
+  - id: "cmo_brand_narrative"
+    who: "cmo"
+    what: "maintain consistent messaging across all external content"
+    task_type: "brand_management"
+    core_verbs: ["maintain", "align", "validate"]
+    when_trigger: "new_content OR messaging_drift_detected"
+    when_complete: "narrative guide updated"
+    prerequisites: ["brand_guidelines_exist"]
+    observable_signal: "file_write (marketing/brand_narrative.md)"
+
+  - id: "cmo_user_education"
+    who: "cmo"
+    what: "create tutorials, demos, documentation for Y*gov users"
+    task_type: "user_education"
+    core_verbs: ["teach", "demonstrate", "document"]
+    when_trigger: "feature_launch OR user_confusion_detected"
+    when_complete: "tutorial published + user feedback positive"
+    prerequisites: ["feature_stable"]
+    observable_signal: "file_write (docs/tutorials/)"
+
+  - id: "cmo_video_production"
+    who: "cmo"
+    what: "produce demo videos, explainer animations, founder intros"
+    task_type: "multimedia_production"
+    core_verbs: ["produce", "edit", "publish"]
+    when_trigger: "visual_content_needed OR launch_event"
+    when_complete: "video file exported + uploaded"
+    prerequisites: ["script_approved", "assets_ready"]
+    observable_signal: "file_write (docs/*.webm)"
+
+  - id: "cmo_launch_coordination"
+    who: "cmo"
+    what: "coordinate cross-team efforts for product launches (Show HN, Product Hunt)"
+    task_type: "launch_execution"
+    core_verbs: ["coordinate", "schedule", "execute"]
+    when_trigger: "launch_date_set"
+    when_complete: "all launch assets ready + team aligned"
+    prerequisites: ["product_ready", "cso_aligned"]
+    observable_signal: "CIEU event: external_observation (launch post live)"
+
+  - id: "cmo_analytics_review"
+    who: "cmo"
+    what: "analyze traffic, engagement, conversion metrics weekly"
+    task_type: "metrics_analysis"
+    core_verbs: ["analyze", "report", "recommend"]
+    when_trigger: "weekly OR campaign_end"
+    when_complete: "metrics report + optimization recommendations"
+    prerequisites: ["analytics_pipeline_active"]
+    observable_signal: "file_write (reports/marketing_metrics_*.md)"
+
+  - id: "cmo_session_boot"
+    who: "cmo"
+    what: "boot as CMO, load content calendar and active campaigns"
+    task_type: "session_initialization"
+    core_verbs: ["boot", "load", "verify"]
+    when_trigger: "session_start"
+    when_complete: "ALL SYSTEMS GO + campaign state loaded"
+    prerequisites: ["none"]
+    observable_signal: "CIEU event: session_start + agent_id=cmo"
+
+  # ========== CSO (Zara Johnson) ==========
+  - id: "cso_sales_pipeline"
+    who: "cso"
+    what: "identify enterprise prospects, maintain CRM, track deal stages"
+    task_type: "sales_execution"
+    core_verbs: ["identify", "track", "close"]
+    when_trigger: "lead_generated OR milestone_reached"
+    when_complete: "deal stage updated in sales/"
+    prerequisites: ["crm_active"]
+    observable_signal: "file_write (sales/)"
+
+  - id: "cso_partnership_development"
+    who: "cso"
+    what: "negotiate partnerships, integration deals, channel agreements"
+    task_type: "partnership_management"
+    core_verbs: ["negotiate", "integrate", "align"]
+    when_trigger: "partnership_opportunity OR strategic_need"
+    when_complete: "agreement drafted + legal review"
+    prerequisites: ["partner_identified"]
+    observable_signal: "file_write (sales/partnerships/)"
+
+  - id: "cso_ip_protection"
+    who: "cso"
+    what: "file patents, manage trademarks, monitor IP landscape"
+    task_type: "ip_management"
+    core_verbs: ["file", "monitor", "enforce"]
+    when_trigger: "novel_invention OR competitor_threat"
+    when_complete: "patent application filed OR trademark registered"
+    prerequisites: ["legal_counsel_engaged"]
+    observable_signal: "file_write (sales/ip/)"
+
+  - id: "cso_user_growth"
+    who: "cso"
+    what: "run growth experiments, A/B tests, conversion optimization"
+    task_type: "growth_execution"
+    core_verbs: ["experiment", "optimize", "scale"]
+    when_trigger: "growth_plateau OR new_channel_available"
+    when_complete: "experiment results + next iteration plan"
+    prerequisites: ["baseline_metrics_established"]
+    observable_signal: "file_write (sales/experiments/)"
+
+  - id: "cso_customer_discovery"
+    who: "cso"
+    what: "conduct user interviews, surveys, problem validation"
+    task_type: "market_research"
+    core_verbs: ["interview", "validate", "synthesize"]
+    when_trigger: "product_pivot OR new_segment"
+    when_complete: "discovery report + product feedback"
+    prerequisites: ["interview_guide_ready"]
+    observable_signal: "file_write (research/)"
+
+  - id: "cso_competitive_analysis"
+    who: "cso"
+    what: "monitor competitor moves, pricing, feature parity analysis"
+    task_type: "competitive_intelligence"
+    core_verbs: ["monitor", "analyze", "report"]
+    when_trigger: "weekly OR competitor_launch"
+    when_complete: "competitive landscape report"
+    prerequisites: ["competitor_list_maintained"]
+    observable_signal: "file_write (research/competitive/)"
+
+  - id: "cso_revenue_operations"
+    who: "cso"
+    what: "optimize sales process, automate CRM workflows, forecast ARR"
+    task_type: "revenue_optimization"
+    core_verbs: ["optimize", "automate", "forecast"]
+    when_trigger: "process_bottleneck OR quarterly_planning"
+    when_complete: "process improvement + forecast model updated"
+    prerequisites: ["sales_data_accessible"]
+    observable_signal: "file_write (sales/operations/)"
+
+  - id: "cso_session_boot"
+    who: "cso"
+    what: "boot as CSO, load deal pipeline and growth metrics"
+    task_type: "session_initialization"
+    core_verbs: ["boot", "load", "verify"]
+    when_trigger: "session_start"
+    when_complete: "ALL SYSTEMS GO + pipeline loaded"
+    prerequisites: ["none"]
+    observable_signal: "CIEU event: session_start + agent_id=cso"
+
+  # ========== CFO (Marco Rivera) ==========
+  - id: "cfo_financial_modeling"
+    who: "cfo"
+    what: "build revenue models, cost projections, burn rate analysis"
+    task_type: "financial_planning"
+    core_verbs: ["model", "project", "analyze"]
+    when_trigger: "fundraising OR quarterly_planning"
+    when_complete: "financial model published to finance/"
+    prerequisites: ["historical_data_available"]
+    observable_signal: "file_write (finance/models/)"
+
+  - id: "cfo_pricing_strategy"
+    who: "cfo"
+    what: "design pricing tiers, discount policies, enterprise contracts"
+    task_type: "pricing_management"
+    core_verbs: ["design", "optimize", "validate"]
+    when_trigger: "product_launch OR market_feedback"
+    when_complete: "pricing model + justification document"
+    prerequisites: ["cost_structure_known"]
+    observable_signal: "file_write (finance/pricing/)"
+
+  - id: "cfo_budget_allocation"
+    who: "cfo"
+    what: "allocate budget across teams, track spend, enforce limits"
+    task_type: "budget_management"
+    core_verbs: ["allocate", "track", "enforce"]
+    when_trigger: "quarterly OR overspend_alert"
+    when_complete: "budget report + variance analysis"
+    prerequisites: ["team_budgets_defined"]
+    observable_signal: "file_write (finance/budgets/)"
+
+  - id: "cfo_investor_reporting"
+    who: "cfo"
+    what: "prepare investor updates, board decks, financial statements"
+    task_type: "investor_relations"
+    core_verbs: ["prepare", "report", "present"]
+    when_trigger: "monthly OR fundraising_round"
+    when_complete: "investor deck + supporting docs"
+    prerequisites: ["financials_closed"]
+    observable_signal: "file_write (finance/investor_relations/)"
+
+  - id: "cfo_compliance_tax"
+    who: "cfo"
+    what: "file taxes, maintain accounting records, regulatory compliance"
+    task_type: "compliance_management"
+    core_verbs: ["file", "maintain", "verify"]
+    when_trigger: "quarterly OR annual"
+    when_complete: "filings submitted + records archived"
+    prerequisites: ["tax_software_configured"]
+    observable_signal: "file_write (finance/tax/)"
+
+  - id: "cfo_fundraising_strategy"
+    who: "cfo"
+    what: "plan fundraising rounds, investor outreach, cap table management"
+    task_type: "fundraising_execution"
+    core_verbs: ["plan", "pitch", "negotiate"]
+    when_trigger: "runway < 12mo OR growth_opportunity"
+    when_complete: "fundraising plan + investor pipeline"
+    prerequisites: ["valuation_determined"]
+    observable_signal: "file_write (finance/fundraising/)"
+
+  - id: "cfo_metrics_dashboard"
+    who: "cfo"
+    what: "maintain MRR, ARR, LTV, CAC, burn multiple dashboards"
+    task_type: "metrics_tracking"
+    core_verbs: ["track", "dashboard", "alert"]
+    when_trigger: "continuous"
+    when_complete: "dashboard updated + alerts configured"
+    prerequisites: ["data_pipeline_active"]
+    observable_signal: "file_write (finance/dashboards/)"
+
+  - id: "cfo_session_boot"
+    who: "cfo"
+    what: "boot as CFO, load financial state and budget status"
+    task_type: "session_initialization"
+    core_verbs: ["boot", "load", "verify"]
+    when_trigger: "session_start"
+    when_complete: "ALL SYSTEMS GO + financial state loaded"
+    prerequisites: ["none"]
+    observable_signal: "CIEU event: session_start + agent_id=cfo"
+
+  # ========== Secretary (Samantha Lin) ==========
+  - id: "secretary_governance_maintenance"
+    who: "secretary"
+    what: "maintain WORKING_STYLE.md, DNA_LOG.md, BOARD_CHARTER_AMENDMENTS.md accuracy"
+    task_type: "governance_maintenance"
+    core_verbs: ["maintain", "distill", "update"]
+    when_trigger: "continuous OR amendment_approved"
+    when_complete: "governance files version bumped + consistent"
+    prerequisites: ["immutable_path_override_active"]
+    observable_signal: "file_write (governance/)"
+
+  - id: "secretary_audit_execution"
+    who: "secretary"
+    what: "execute weekly audits: gov_order pending + gemma_sessions.log + roadmap progress"
+    task_type: "audit_execution"
+    core_verbs: ["audit", "query", "report"]
+    when_trigger: "every Monday"
+    when_complete: "3 audit reports written to reports/audits/"
+    prerequisites: ["cieu_db_accessible"]
+    observable_signal: "file_write (reports/audits/weekly_*.md)"
+
+  - id: "secretary_information_archival"
+    who: "secretary"
+    what: "cross-reference files, maintain knowledge/ index, update session_handoff"
+    task_type: "information_archival"
+    core_verbs: ["index", "cross-reference", "archive"]
+    when_trigger: "continuous"
+    when_complete: "knowledge/ README updated + links valid"
+    prerequisites: ["knowledge_dir_stable"]
+    observable_signal: "file_write (knowledge/*/README.md)"
+
+  - id: "secretary_cross_role_coordination"
+    who: "secretary"
+    what: "relay Board amendments, schedule distillation sessions, coordinate handoffs"
+    task_type: "cross_role_coordination"
+    core_verbs: ["coordinate", "relay", "schedule"]
+    when_trigger: "on_demand"
+    when_complete: "message relayed + acknowledgment received"
+    prerequisites: ["target_role_identified"]
+    observable_signal: "CIEU event: agent_spawn OR file_write (.claude/tasks/)"
+
+  - id: "secretary_obligation_tracking"
+    who: "secretary"
+    what: "run check_obligations.py, surface overdue obligations to Board"
+    task_type: "obligation_tracking"
+    core_verbs: ["track", "surface", "escalate"]
+    when_trigger: "session_boot OR weekly"
+    when_complete: "obligation report + overdue flagged"
+    prerequisites: ["cieu_db_accessible"]
+    observable_signal: "file_write (reports/obligations_status_*.md)"
+
+  - id: "secretary_dna_distillation"
+    who: "secretary"
+    what: "extract rules from Board sessions, encode into governance/ and agents/*.md"
+    task_type: "dna_distillation"
+    core_verbs: ["extract", "formalize", "write"]
+    when_trigger: "Board_directive_with_new_rule"
+    when_complete: "rule encoded + DNA_LOG updated"
+    prerequisites: ["Board_session_transcript"]
+    observable_signal: "file_write (governance/DNA_LOG.md)"
+
+  - id: "secretary_compliance_check"
+    who: "secretary"
+    what: "verify CIEU hash chain, intent guard violations, AMENDMENT status tracking"
+    task_type: "compliance_check"
+    core_verbs: ["verify", "compare", "flag"]
+    when_trigger: "weekly"
+    when_complete: "compliance report + violations flagged"
+    prerequisites: ["cieu_db_accessible"]
+    observable_signal: "file_write (reports/compliance_*.md)"
+
+  - id: "secretary_session_boot"
+    who: "secretary"
+    what: "boot as Secretary, load immutable_path_override, verify governance health"
+    task_type: "session_initialization"
+    core_verbs: ["boot", "load", "verify"]
+    when_trigger: "session_start"
+    when_complete: "ALL SYSTEMS GO + governance files accessible"
+    prerequisites: ["none"]
+    observable_signal: "CIEU event: session_start + agent_id=secretary"
+
+  # ========== eng-kernel (Leo Chen) ==========
+  - id: "kernel_ystar_role_gates"
+    who: "eng-kernel"
+    what: "implement kernel-level role enforcement (ystar.role decorator, identity gates)"
+    task_type: "code_development"
+    core_verbs: ["implement", "test", "integrate"]
+    when_trigger: "AMENDMENT task OR CTO delegation"
+    when_complete: "tests pass + kernel/ code committed"
+    prerequisites: ["ystar_repo_writable"]
+    observable_signal: "cmd_exec (git commit kernel/)"
+
+  - id: "kernel_event_emission"
+    who: "eng-kernel"
+    what: "emit structured CIEU events from kernel actions (delegation, spawn, exit)"
+    task_type: "instrumentation"
+    core_verbs: ["emit", "log", "trace"]
+    when_trigger: "kernel_action_occurs"
+    when_complete: "CIEU event persisted + queryable"
+    prerequisites: ["cieu_store_initialized"]
+    observable_signal: "CIEU event: kernel_action"
+
+  - id: "kernel_hook_optimization"
+    who: "eng-kernel"
+    what: "optimize hook daemon latency, reduce overhead, profile hot paths"
+    task_type: "performance_optimization"
+    core_verbs: ["profile", "optimize", "benchmark"]
+    when_trigger: "hook_latency > 10ms OR CPU spike"
+    when_complete: "benchmark report + latency < 10ms"
+    prerequisites: ["profiler_ready"]
+    observable_signal: "file_write (reports/performance/hook_latency_*.md)"
+
+  - id: "kernel_integration_tests"
+    who: "eng-kernel"
+    what: "write kernel-level integration tests (spawn, delegation, chain reset)"
+    task_type: "testing_qa"
+    core_verbs: ["write", "verify", "debug"]
+    when_trigger: "feature_complete OR regression_detected"
+    when_complete: "tests green + coverage > 80%"
+    prerequisites: ["test_harness_ready"]
+    observable_signal: "cmd_exec (pytest tests/test_kernel_*.py)"
+
+  - id: "kernel_cto_coordination"
+    who: "eng-kernel"
+    what: "sync with CTO on architecture decisions, review 6-pagers, provide feedback"
+    task_type: "team_coordination"
+    core_verbs: ["sync", "review", "feedback"]
+    when_trigger: "CTO_request OR architecture_milestone"
+    when_complete: "feedback provided + alignment achieved"
+    prerequisites: ["6pager_ready"]
+    observable_signal: "file_write (reports/reviews/kernel_review_*.md)"
+
+  - id: "kernel_root_cause_fix"
+    who: "eng-kernel"
+    what: "fix kernel-level root causes (delegation chain INVALID, grant logic bugs)"
+    task_type: "infrastructure_maintenance"
+    core_verbs: ["diagnose", "fix", "verify"]
+    when_trigger: "P0_kernel_issue OR delegation_failure"
+    when_complete: "root cause eliminated + tests verify"
+    prerequisites: ["diagnostic_complete"]
+    observable_signal: "CIEU event: delegation_chain_valid"
+
+  - id: "kernel_session_boot"
+    who: "eng-kernel"
+    what: "boot as eng-kernel, verify write access to kernel/ directory"
+    task_type: "session_initialization"
+    core_verbs: ["boot", "verify", "scope"]
+    when_trigger: "session_start"
+    when_complete: "ALL SYSTEMS GO + kernel/ writable"
+    prerequisites: ["none"]
+    observable_signal: "CIEU event: session_start + agent_id=eng-kernel"
+
+  - id: "kernel_api_design"
+    who: "eng-kernel"
+    what: "design kernel APIs (@ystar.role, identity_detector, boundary_enforcer)"
+    task_type: "architecture_design"
+    core_verbs: ["design", "specify", "document"]
+    when_trigger: "new_kernel_feature OR API_extension"
+    when_complete: "API spec + docstrings complete"
+    prerequisites: ["use_cases_defined"]
+    observable_signal: "file_write (ystar/kernel/*.py docstrings)"
+
+  # ========== eng-governance (Maya Patel) ==========
+  - id: "governance_autonomy_engine"
+    who: "eng-governance"
+    what: "build autonomy engine: RLE, obligation fulfiller, idle-pull"
+    task_type: "code_development"
+    core_verbs: ["build", "test", "integrate"]
+    when_trigger: "AMENDMENT task OR systemic_unlock_needed"
+    when_complete: "autonomy engine running + CIEU closed-loop demo"
+    prerequisites: ["ystar_repo_writable"]
+    observable_signal: "cmd_exec (git commit governance/)"
+
+  - id: "governance_lock_taxonomy"
+    who: "eng-governance"
+    what: "classify lock types (identity, delegation, circuit breaker), design taxonomy"
+    task_type: "architecture_design"
+    core_verbs: ["classify", "design", "document"]
+    when_trigger: "Phase 2 AMENDMENT task"
+    when_complete: "taxonomy document + 4-layer architecture filled"
+    prerequisites: ["Phase 1 diagnosis complete"]
+    observable_signal: "file_write (reports/amendment_*_taxonomy_*.md)"
+
+  - id: "governance_cieu_mining"
+    who: "eng-governance"
+    what: "mine CIEU database for violation patterns, surface top offenders"
+    task_type: "compliance_audit"
+    core_verbs: ["mine", "analyze", "surface"]
+    when_trigger: "weekly OR circuit_breaker_armed"
+    when_complete: "violation report + root cause tickets"
+    prerequisites: ["cieu_db_accessible"]
+    observable_signal: "file_write (reports/cieu_violations_*.md)"
+
+  - id: "governance_obligation_cleanup"
+    who: "eng-governance"
+    what: "clean 1867 stale obligations using fulfiller contract"
+    task_type: "infrastructure_maintenance"
+    core_verbs: ["clean", "fulfill", "archive"]
+    when_trigger: "stale_obligations > 1000"
+    when_complete: "pending obligations < 200"
+    prerequisites: ["fulfiller_contract_active"]
+    observable_signal: "CIEU event: obligation_fulfilled × N"
+
+  - id: "governance_policy_builder"
+    who: "eng-governance"
+    what: "use gov_policy_builder to generate rule suggestions from CIEU patterns"
+    task_type: "learning_distillation"
+    core_verbs: ["generate", "suggest", "validate"]
+    when_trigger: "new_pattern_detected OR policy_gap"
+    when_complete: "policy suggestion + Board approval pending"
+    prerequisites: ["pattern_threshold_met"]
+    observable_signal: "file_write (reports/policy_suggestions_*.md)"
+
+  - id: "governance_integration_tests"
+    who: "eng-governance"
+    what: "write governance-level integration tests (omission, delegation, health)"
+    task_type: "testing_qa"
+    core_verbs: ["write", "verify", "debug"]
+    when_trigger: "feature_complete OR regression"
+    when_complete: "tests green + coverage > 80%"
+    prerequisites: ["test_harness_ready"]
+    observable_signal: "cmd_exec (pytest tests/test_governance_*.py)"
+
+  - id: "governance_session_boot"
+    who: "eng-governance"
+    what: "boot as eng-governance, verify write access to governance/ directory"
+    task_type: "session_initialization"
+    core_verbs: ["boot", "verify", "scope"]
+    when_trigger: "session_start"
+    when_complete: "ALL SYSTEMS GO + governance/ writable"
+    prerequisites: ["none"]
+    observable_signal: "CIEU event: session_start + agent_id=eng-governance"
+
+  - id: "governance_rle_tuning"
+    who: "eng-governance"
+    what: "tune RLE thresholds, event patterns, action templates for optimal autonomy"
+    task_type: "performance_optimization"
+    core_verbs: ["tune", "optimize", "validate"]
+    when_trigger: "RLE_false_positive OR RLE_miss"
+    when_complete: "threshold config updated + validation report"
+    prerequisites: ["rle_baseline_established"]
+    observable_signal: "file_write (governance/rle_config.yaml)"
+
+  # ========== eng-platform (Ryan Park) ==========
+  - id: "platform_mcp_permission_matrix"
+    who: "eng-platform"
+    what: "implement MCP permission matrix (capability-based grants, revocation)"
+    task_type: "code_development"
+    core_verbs: ["implement", "test", "integrate"]
+    when_trigger: "AMENDMENT task OR CTO delegation"
+    when_complete: "permission matrix live + tests green"
+    prerequisites: ["ystar_repo_writable"]
+    observable_signal: "cmd_exec (git commit adapters/)"
+
+  - id: "platform_ritual_fixes"
+    who: "eng-platform"
+    what: "fix ritual enforcement (4-parallel online check, prefix injection, fail-open)"
+    task_type: "infrastructure_maintenance"
+    core_verbs: ["fix", "verify", "harden"]
+    when_trigger: "ritual_failure OR P0_continuity_issue"
+    when_complete: "ritual 4/4 pass + CIEU proof"
+    prerequisites: ["failure_root_cause_identified"]
+    observable_signal: "CIEU event: ritual_pass × 4"
+
+  - id: "platform_cli_improvement"
+    who: "eng-platform"
+    what: "improve ystar CLI commands (doctor, audit, quality, setup)"
+    task_type: "user_experience"
+    core_verbs: ["improve", "refine", "test"]
+    when_trigger: "user_friction OR error_rate_high"
+    when_complete: "CLI help text clear + success rate > 95%"
+    prerequisites: ["user_feedback_available"]
+    observable_signal: "cmd_exec (git commit ystar/cli/)"
+
+  - id: "platform_hook_integration"
+    who: "eng-platform"
+    what: "integrate hook with new subsystems (whitelist matcher, RLE, identity restore)"
+    task_type: "integration_development"
+    core_verbs: ["integrate", "wire", "test"]
+    when_trigger: "new_subsystem_ready OR hook_extension_needed"
+    when_complete: "integration tests pass + fail-open verified"
+    prerequisites: ["subsystem_API_stable"]
+    observable_signal: "cmd_exec (pytest tests/test_hook_*.py)"
+
+  - id: "platform_qa_lead"
+    who: "eng-platform"
+    what: "run cross-module integration scenarios, report regressions"
+    task_type: "testing_qa"
+    core_verbs: ["test", "verify", "report"]
+    when_trigger: "before_commit OR weekly"
+    when_complete: "test report + regressions triaged"
+    prerequisites: ["all_modules_integrated"]
+    observable_signal: "file_write (reports/qa_integration_*.md)"
+
+  - id: "platform_wisdom_extractor"
+    who: "eng-platform"
+    what: "extend wisdom_extractor.py to cover new paths (experiments/, git diff)"
+    task_type: "infrastructure_maintenance"
+    core_verbs: ["extend", "test", "deploy"]
+    when_trigger: "wisdom_coverage_gap OR new_knowledge_source"
+    when_complete: "extractor reads new paths + boot validates"
+    prerequisites: ["new_paths_identified"]
+    observable_signal: "cmd_exec (git commit scripts/wisdom_extractor.py)"
+
+  - id: "platform_session_boot"
+    who: "eng-platform"
+    what: "boot as eng-platform, verify write access to adapters/ and cli/"
+    task_type: "session_initialization"
+    core_verbs: ["boot", "verify", "scope"]
+    when_trigger: "session_start"
+    when_complete: "ALL SYSTEMS GO + adapters/cli/ writable"
+    prerequisites: ["none"]
+    observable_signal: "CIEU event: session_start + agent_id=eng-platform"
+
+  - id: "platform_priority_brief_enforcement"
+    who: "eng-platform"
+    what: "implement priority_brief.md enforcement in boot/close scripts"
+    task_type: "infrastructure_maintenance"
+    core_verbs: ["enforce", "validate", "integrate"]
+    when_trigger: "AMENDMENT-009 approved"
+    when_complete: "boot fails if priority_brief stale > 48h"
+    prerequisites: ["schema_defined"]
+    observable_signal: "cmd_exec (bash scripts/governance_boot.sh --verify-only)"
+
+  # ========== eng-domains (Jordan Lee) ==========
+  - id: "domains_domain_init"
+    who: "eng-domains"
+    what: "implement domain initialization, validation, metadata schema"
+    task_type: "code_development"
+    core_verbs: ["implement", "validate", "test"]
+    when_trigger: "AMENDMENT task OR CTO delegation"
+    when_complete: "domain init works + tests green"
+    prerequisites: ["ystar_repo_writable"]
+    observable_signal: "cmd_exec (git commit domains/)"
+
+  - id: "domains_boundary_enforcer"
+    who: "eng-domains"
+    what: "integrate boundary_enforcer with hook, enforce domain-specific rules"
+    task_type: "integration_development"
+    core_verbs: ["integrate", "enforce", "test"]
+    when_trigger: "domain_rule_defined OR boundary_violation"
+    when_complete: "boundary enforcer active + violations logged"
+    prerequisites: ["domain_rules_schema_ready"]
+    observable_signal: "CIEU event: boundary_violation"
+
+  - id: "domains_session_start_tests"
+    who: "eng-domains"
+    what: "fix session_start test blocking, ensure 17 base + 10 new tests green"
+    task_type: "testing_qa"
+    core_verbs: ["fix", "debug", "verify"]
+    when_trigger: "test_failure OR regression"
+    when_complete: "all domain tests green"
+    prerequisites: ["test_env_ready"]
+    observable_signal: "cmd_exec (pytest tests/test_domains_*.py)"
+
+  - id: "domains_domain_list_query"
+    who: "eng-domains"
+    what: "implement gov_domain_list, gov_domain_describe MCP tools"
+    task_type: "api_development"
+    core_verbs: ["implement", "expose", "document"]
+    when_trigger: "domain_query_needed OR user_request"
+    when_complete: "MCP tools work + help text clear"
+    prerequisites: ["domain_store_queryable"]
+    observable_signal: "CIEU event: mcp_call (gov_domain_list)"
+
+  - id: "domains_cross_domain_rules"
+    who: "eng-domains"
+    what: "design cross-domain rule propagation (e.g., finance constraints affect eng budget)"
+    task_type: "architecture_design"
+    core_verbs: ["design", "specify", "validate"]
+    when_trigger: "cross_domain_need OR Board directive"
+    when_complete: "design doc + prototype"
+    prerequisites: ["domain_graph_defined"]
+    observable_signal: "file_write (reports/cross_domain_rules_design.md)"
+
+  - id: "domains_integration_tests"
+    who: "eng-domains"
+    what: "write domain-level integration tests (init, boundary, cross-domain)"
+    task_type: "testing_qa"
+    core_verbs: ["write", "verify", "debug"]
+    when_trigger: "feature_complete OR regression"
+    when_complete: "tests green + coverage > 80%"
+    prerequisites: ["test_harness_ready"]
+    observable_signal: "cmd_exec (pytest tests/test_domains_*.py)"
+
+  - id: "domains_session_boot"
+    who: "eng-domains"
+    what: "boot as eng-domains, verify write access to domains/ directory"
+    task_type: "session_initialization"
+    core_verbs: ["boot", "verify", "scope"]
+    when_trigger: "session_start"
+    when_complete: "ALL SYSTEMS GO + domains/ writable"
+    prerequisites: ["none"]
+    observable_signal: "CIEU event: session_start + agent_id=eng-domains"
+
+  - id: "domains_metadata_schema"
+    who: "eng-domains"
+    what: "design domain metadata schema (ownership, constraints, dependencies)"
+    task_type: "architecture_design"
+    core_verbs: ["design", "specify", "document"]
+    when_trigger: "domain_feature_kickoff"
+    when_complete: "schema doc + validation code"
+    prerequisites: ["use_cases_gathered"]
+    observable_signal: "file_write (ystar/domains/schema.py)"

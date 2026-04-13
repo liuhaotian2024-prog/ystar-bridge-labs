@@ -1,0 +1,212 @@
+# Y*gov Event Workflow Whitelist
+# Generated: 2026-04-13
+# Source: reports/priority_brief.md always_running + event_triggers
+# Schema: AMENDMENT-018 §2
+# Description: 20 workflow entries from continuous operations + event triggers
+
+version: "1.0"
+generated_at: "2026-04-13T16:08:00Z"
+source: "reports/priority_brief.md"
+
+entries:
+  # ========== Always Running (Continuous Operations) ==========
+  - id: "workflow_session_boot_protocol"
+    who: "all_agents"
+    what: "execute governance_boot.sh, load memory, verify ALL SYSTEMS GO"
+    task_type: "session_initialization"
+    core_verbs: ["boot", "load", "verify"]
+    when_trigger: "session_start"
+    when_complete: "ALL SYSTEMS GO + continuation loaded"
+    prerequisites: ["none"]
+    observable_signal: "CIEU event: session_start + boot_complete"
+
+  - id: "workflow_priority_brief_enforcement"
+    who: "ceo"
+    what: "read priority_brief.md first on boot, fail if stale > 48h"
+    task_type: "governance_maintenance"
+    core_verbs: ["read", "validate", "enforce"]
+    when_trigger: "session_boot STEP 0"
+    when_complete: "priority_brief age < 48h verified"
+    prerequisites: ["governance_boot_running"]
+    observable_signal: "CIEU event: priority_brief_validated"
+
+  - id: "workflow_article_11_session_start"
+    who: "ceo"
+    what: "run Article 11 7-layer framework before first strategic decision"
+    task_type: "decision_making"
+    core_verbs: ["analyze", "counterfactual", "decide"]
+    when_trigger: "session_start (before first decision)"
+    when_complete: "CIEU event: article_11_session_start_pass emitted"
+    prerequisites: ["boot_complete"]
+    observable_signal: "CIEU event: article_11_session_start_pass"
+
+  - id: "workflow_cieu_audit_continuous"
+    who: "all_agents"
+    what: "emit CIEU events for all tool calls, record context + agent_id"
+    task_type: "compliance_audit"
+    core_verbs: ["emit", "record", "persist"]
+    when_trigger: "continuous (every tool call)"
+    when_complete: "never (continuous)"
+    prerequisites: ["hook_daemon_running"]
+    observable_signal: "CIEU event: cmd_exec OR file_write OR mcp_call"
+
+  - id: "workflow_hook_daemon_heartbeat"
+    who: "eng-platform"
+    what: "hook daemon listens for tool calls, enforces rules, emits violations"
+    task_type: "infrastructure_maintenance"
+    core_verbs: ["listen", "enforce", "emit"]
+    when_trigger: "continuous (daemon loop)"
+    when_complete: "never (continuous)"
+    prerequisites: ["governance_boot_complete"]
+    observable_signal: "CIEU event: hook_heartbeat"
+
+  - id: "workflow_active_agent_tracking"
+    who: "all_agents"
+    what: "update .ystar_active_agent on role switch, restore on sub-agent exit"
+    task_type: "session_initialization"
+    core_verbs: ["update", "restore", "validate"]
+    when_trigger: "agent_spawn OR agent_exit"
+    when_complete: "active_agent matches actual operator"
+    prerequisites: ["identity_system_active"]
+    observable_signal: "CIEU event: agent_switch"
+
+  - id: "workflow_mission_report_daily"
+    who: "ceo"
+    what: "generate daily mission report summarizing progress on P0 tasks"
+    task_type: "resource_allocation"
+    core_verbs: ["summarize", "report", "publish"]
+    when_trigger: "daily 21:57 (cron)"
+    when_complete: "report written to reports/missions/"
+    prerequisites: ["cron_installed"]
+    observable_signal: "file_write (reports/missions/daily_*.md)"
+
+  - id: "workflow_idle_learning_cycle"
+    who: "all_agents"
+    what: "execute idle learning protocol when Board offline > 3h"
+    task_type: "learning_distillation"
+    core_verbs: ["learn", "practice", "write"]
+    when_trigger: "idle > 3h (cron trigger)"
+    when_complete: "learning report + knowledge file written"
+    prerequisites: ["cron_installed", "priority_queue_loaded"]
+    observable_signal: "file_write (knowledge/{role}/theory/)"
+
+  - id: "workflow_gov_health_monitor"
+    who: "all_agents"
+    what: "check gov_health after every 5 tool calls in session"
+    task_type: "compliance_audit"
+    core_verbs: ["check", "monitor", "alert"]
+    when_trigger: "tool_call_count % 5 == 0"
+    when_complete: "health check passed OR alert emitted"
+    prerequisites: ["hook_daemon_running"]
+    observable_signal: "CIEU event: gov_health_check"
+
+  - id: "workflow_obligation_tracking_boot"
+    who: "secretary"
+    what: "run check_obligations.py on boot, surface overdue to Board"
+    task_type: "obligation_tracking"
+    core_verbs: ["track", "surface", "escalate"]
+    when_trigger: "session_boot"
+    when_complete: "obligation status emitted"
+    prerequisites: ["cieu_db_accessible"]
+    observable_signal: "CIEU event: obligation_status"
+
+  # ========== Event Triggers (Reactive Operations) ==========
+  - id: "workflow_circuit_breaker_armed_response"
+    who: "ceo"
+    what: "diagnose root cause when circuit breaker ARMED, dispatch fix to CTO"
+    task_type: "infrastructure_maintenance"
+    core_verbs: ["diagnose", "dispatch", "verify"]
+    when_trigger: "CIEU event: circuit_breaker_armed"
+    when_complete: "root cause identified + fix task card written"
+    prerequisites: ["violation_log_accessible"]
+    observable_signal: "file_write (.claude/tasks/fix_breaker_*.md)"
+
+  - id: "workflow_delegation_chain_invalid"
+    who: "eng-kernel"
+    what: "reset delegation chain, audit grant logic, emit chain_reset event"
+    task_type: "infrastructure_maintenance"
+    core_verbs: ["reset", "audit", "emit"]
+    when_trigger: "CIEU event: delegation_chain_invalid"
+    when_complete: "chain valid + grant logic fixed"
+    prerequisites: ["mcp_server_accessible"]
+    observable_signal: "CIEU event: delegation_chain_valid"
+
+  - id: "workflow_immutable_path_violation"
+    who: "secretary"
+    what: "log immutable path violation, notify Board if non-secretary write attempt"
+    task_type: "compliance_check"
+    core_verbs: ["log", "notify", "block"]
+    when_trigger: "CIEU event: immutable_path_violation"
+    when_complete: "violation logged + write blocked"
+    prerequisites: ["hook_daemon_running"]
+    observable_signal: "CIEU event: write_blocked"
+
+  - id: "workflow_pip_install_failure"
+    who: "cto"
+    what: "diagnose pip install failure, fix root cause in setup.py or whl build"
+    task_type: "infrastructure_maintenance"
+    core_verbs: ["diagnose", "fix", "test"]
+    when_trigger: "user_report OR CI failure"
+    when_complete: "pip install works + test green"
+    prerequisites: ["ystar_repo_writable"]
+    observable_signal: "cmd_exec (pip install ystar) success"
+
+  - id: "workflow_board_amendment_approval"
+    who: "secretary"
+    what: "archive approved amendment to BOARD_CHARTER_AMENDMENTS.md, notify all agents"
+    task_type: "governance_maintenance"
+    core_verbs: ["archive", "notify", "publish"]
+    when_trigger: "Board approves amendment"
+    when_complete: "amendment in charter + changelog updated"
+    prerequisites: ["immutable_path_override_active"]
+    observable_signal: "file_write (governance/BOARD_CHARTER_AMENDMENTS.md)"
+
+  - id: "workflow_test_regression_detected"
+    who: "cto"
+    what: "triage test regression, assign to responsible engineer, track fix"
+    task_type: "testing_qa"
+    core_verbs: ["triage", "assign", "track"]
+    when_trigger: "pytest failure OR CI red"
+    when_complete: "fix assigned + ETA set"
+    prerequisites: ["test_output_accessible"]
+    observable_signal: "file_write (.claude/tasks/fix_regression_*.md)"
+
+  - id: "workflow_board_override_request"
+    who: "all_agents"
+    what: "emit gov_safemode request with justification, wait Board approval"
+    task_type: "governance_maintenance"
+    core_verbs: ["request", "justify", "wait"]
+    when_trigger: "governance_block_unfixable"
+    when_complete: "Board approval + safemode action executed"
+    prerequisites: ["justification_written"]
+    observable_signal: "CIEU event: gov_safemode_request"
+
+  - id: "workflow_knowledge_gap_detected"
+    who: "all_agents"
+    what: "write knowledge/{role}/lessons or feedback file when gap found"
+    task_type: "learning_distillation"
+    core_verbs: ["write", "distill", "commit"]
+    when_trigger: "error OR Board feedback OR win achieved"
+    when_complete: "knowledge file committed"
+    prerequisites: ["root_cause_identified"]
+    observable_signal: "file_write (knowledge/{role}/{lessons|feedback}/)"
+
+  - id: "workflow_user_friction_reported"
+    who: "eng-platform"
+    what: "improve CLI UX, error messages, or doctor output when user friction detected"
+    task_type: "user_experience"
+    core_verbs: ["improve", "refine", "test"]
+    when_trigger: "user_feedback OR error_rate_spike"
+    when_complete: "friction eliminated + success rate improved"
+    prerequisites: ["user_feedback_available"]
+    observable_signal: "cmd_exec (git commit ystar/cli/)"
+
+  - id: "workflow_cieu_persistence_warning"
+    who: "eng-governance"
+    what: "diagnose CIEU persistence warning, verify production vs test store"
+    task_type: "infrastructure_maintenance"
+    core_verbs: ["diagnose", "verify", "document"]
+    when_trigger: "CIEU event: in_memory_only warning"
+    when_complete: "diagnosis report + production verified"
+    prerequisites: ["cieu_db_accessible"]
+    observable_signal: "file_write (reports/diagnostics/cieu_persistence_*.md)"

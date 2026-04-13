@@ -288,6 +288,115 @@ def check_continuation_compliance(tool_name, tool_input, call_count):
     return None
 
 
+def _try_whitelist_match(payload):
+    """AMENDMENT-018 Phase 1 Sync Mechanism A: match hook event to whitelist.
+
+    Emits WHITELIST_MATCH (score >= threshold) or WHITELIST_DRIFT (top-3 near-miss).
+    Fail-open: errors logged, never blocks main flow.
+    """
+    try:
+        # Import whitelist matcher
+        sys.path.insert(0, os.path.dirname(__file__))
+        from whitelist_match import WhitelistMatcher
+
+        # Initialize matcher
+        whitelist_dir = os.path.join(REPO_ROOT, "governance", "whitelist")
+        if not os.path.exists(whitelist_dir):
+            log(f"[whitelist] whitelist dir not found: {whitelist_dir}, skipping match")
+            return
+
+        matcher = WhitelistMatcher(whitelist_dir)
+
+        # Build event payload for matcher
+        event_payload = {
+            "agent_id": payload.get("context", {}).get("agent_id", "unknown"),
+            "tool": payload.get("tool_name", ""),
+            "command": payload.get("tool_input", {}).get("command", ""),
+            "file_path": payload.get("tool_input", {}).get("file_path", ""),
+            "event_type": payload.get("tool_name", ""),
+            "context": payload.get("context", {}),
+        }
+
+        # Try to match
+        result = matcher.match_event(event_payload)
+
+        # Emit CIEU event
+        try:
+            sys.path.insert(0, REPO_ROOT)
+            from ystar.governance.cieu_store import CIEUStore
+            cieu_db = os.path.join(REPO_ROOT, ".ystar_cieu.db")
+            cieu = CIEUStore(db_path=cieu_db)
+
+            now = time.time()
+
+            if result:
+                # WHITELIST_MATCH
+                event = {
+                    "event_id": str(uuid.uuid4()),
+                    "session_id": "hook_whitelist",
+                    "agent_id": event_payload["agent_id"],
+                    "event_type": "WHITELIST_MATCH",
+                    "decision": "info",
+                    "evidence_grade": "whitelist",
+                    "created_at": now,
+                    "seq_global": time.time_ns() // 1000,
+                    "params": {
+                        "matched_entry_id": result.entry_id,
+                        "score": result.score,
+                        "source_file": result.entry.source_file,
+                        "who": result.entry.who,
+                        "what": result.entry.what,
+                        "task_type": result.entry.task_type,
+                        "matched_fields": result.matched_fields,
+                        "tool": event_payload["tool"],
+                        "source": "hook_wrapper.whitelist_match",
+                    },
+                    "violations": [],
+                    "drift_detected": False,
+                    "human_initiator": "hook",
+                }
+                cieu.write_dict(event)
+                log(f"[whitelist] MATCH: {result.entry_id} (score={result.score:.1f})")
+            else:
+                # WHITELIST_DRIFT: emit top-3 near-misses
+                top_3 = matcher.get_top_k_similar(event_payload, k=3)
+                event = {
+                    "event_id": str(uuid.uuid4()),
+                    "session_id": "hook_whitelist",
+                    "agent_id": event_payload["agent_id"],
+                    "event_type": "WHITELIST_DRIFT",
+                    "decision": "info",
+                    "evidence_grade": "whitelist",
+                    "created_at": now,
+                    "seq_global": time.time_ns() // 1000,
+                    "params": {
+                        "tool": event_payload["tool"],
+                        "threshold": matcher.THRESHOLD,
+                        "top_3_near_miss": [
+                            {
+                                "entry_id": m.entry_id,
+                                "score": m.score,
+                                "who": m.entry.who,
+                                "what": m.entry.what,
+                                "diff": f"score {m.score:.1f} < threshold {matcher.THRESHOLD}",
+                            }
+                            for m in top_3
+                        ],
+                        "source": "hook_wrapper.whitelist_match",
+                    },
+                    "violations": ["whitelist_drift"],
+                    "drift_detected": True,
+                    "human_initiator": "hook",
+                }
+                cieu.write_dict(event)
+                log(f"[whitelist] DRIFT: no match (threshold={matcher.THRESHOLD}), "
+                    f"top-3: {[m.entry_id for m in top_3]}")
+        except Exception as cieu_exc:
+            log(f"[whitelist] CIEU emit failed: {cieu_exc}")
+    except Exception as exc:
+        log(f"[whitelist] FAIL-OPEN error: {exc}")
+
+
 def _main():
     global _daemon_cache_valid
 
@@ -392,6 +501,15 @@ def _main():
                     log(f"[activation] Skill injected: {activation.skill_id} (rule: {activation.trigger_rule})")
         except Exception as activation_exc:
             # Fail-open: activation failures should never block
+            log(f"[activation] FAIL-OPEN error: {activation_exc}")
+
+        # ── AMENDMENT-018 Phase 1: Whitelist Match (Sync Mechanism A) ──────
+        # Asynchronously match hook event to whitelist, emit WHITELIST_MATCH or WHITELIST_DRIFT
+        # Fail-open: matcher errors never block main flow
+        try:
+            _try_whitelist_match(payload)
+        except Exception as whitelist_exc:
+            # Fail-open: whitelist matcher failures should never block
             log(f"[activation] fail-open: {activation_exc}")
 
         # ── GOV-010: OmissionScheduler tick (at most once per 5 min) ──────
