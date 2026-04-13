@@ -826,20 +826,27 @@ AutonomyEngine 的 desire-driven 模式下 agent 自主权扩大后的
 **输出**：认知框架报告（上述七层的结构化总结）。Board 审阅的不是
 计划，是 agent 的**认知深度**。Board 批准后才进入执行阶段。
 
-### 阶段二：执行落地
+### 阶段二：执行落地与成熟度跟踪 (v2 — AMENDMENT-019, 2026-04-13)
 
 每个执行周期的结构：
 
-**方案设计（第 8 层）**：基于认知框架设计本周期具体行动，必须回对
-第 1 层的阶段性指标，用 `active_task.py start` 声明意图。
+**方案设计（第 8 层）**：基于认知框架设计本周期具体行动，必须回对第 1 层的阶段性指标，用 `active_task.py start` 声明意图。初始状态：L0 IDEA。
 
-**执行（第 9 层）**：按方案执行。遇到未覆盖情况：记录判断 + 理由，
-写进 CIEU。不沉默，不等待，做判断继续。每完成一步用
-`active_task.py update` 报告进度。
+**执行（第 9 层）：成熟度门控执行**
 
-**伦理检查（每次发布前强制）**：对照 `governance/ETHICS.md` 逐条
-检查。任何一条有疑问，停止执行，上报 Board。**不确定的情况下，
-默认不发布**。
+所有执行必须经过 5 级成熟度门控，每个门控转换需显式证据 + CIEU 记录：
+
+- **9.1 规格化 (L0 → L1 SPEC)**：输出书面提案/设计文档/任务卡，证据 = 文件存在 + git commit hash 或任务卡 ID，触发 `MATURITY_TRANSITION(item_id, L0, L1, evidence)` CIEU 事件
+- **9.2 实现 (L1 → L2 IMPL)**：代码/内容/基础设施完成（测试前），证据 = 实现文件存在 + commit hash 或内容路径，触发 `MATURITY_TRANSITION(item_id, L1, L2, evidence)`
+- **9.3 验证 (L2 → L3 TESTED)**：测试通过/同行评审批准/验证完成，证据 = 测试输出/评审记录/验证报告，触发 `MATURITY_TRANSITION(item_id, L2, L3, evidence)`
+- **9.4 部署 (L3 → L4 SHIPPED)**：生产环境运行/内容发布/功能上线，证据 = 可观察的线上行为 + 监控激活，触发 `MATURITY_TRANSITION(item_id, L3, L4, evidence)`
+- **9.5 采用 (L4 → L5 ADOPTED)**：≥1 真实用户/消费者主动使用，证据 = 使用指标/用户反馈/消费日志，触发 `MATURITY_TRANSITION(item_id, L4, L5, evidence)`
+
+**状态通信硬约束**：所有状态报告必须包含成熟度 L 标签。格式：`[LX]` 或 `LX STATE_NAME`。所有包含完成性关键词（"done" / "completed" / "finished" / "shipped" / "落盘"）的 git commit、报告、任务更新，如缺失 L 标签，触发 `MATURITY_TAG_MISSING` CIEU 事件，Secretary 每周审计。
+
+**违反者检测**：CIEU hook 自动扫描所有 commit 消息、`reports/` 写入、`active_task.py update` 调用，检测完成性关键词 + L 标签缺失组合。
+
+**伦理检查（每次 L3→L4 转换前强制）**：对照 `governance/ETHICS.md` 逐条检查。任何一条有疑问，停止执行，上报 Board。**不确定的情况下，默认不发布**。
 
 ### 阶段三：观察与数据收集
 

@@ -15,6 +15,24 @@ Violation = P0. The enforcement path is the trust root of the entire system.
 
 ---
 
+## Iron Rule 1.5: Maturity State Transparency (Constitutional, non-violable, AMENDMENT-019)
+
+All work products must carry explicit maturity level (L0 IDEA → L5 ADOPTED) in status communication. All git commits, reports, and task updates containing completion-indicating keywords ("done", "completed", "shipped", "finished", "落盘") must include L-tag in format `[LX]` or `LX STATE_NAME`.
+
+Maturity taxonomy:
+- L0 IDEA: verbal/written concept, zero artifact, no validation
+- L1 SPEC: proposal submitted, commit hash or task card exists
+- L2 IMPL: code/content written, pre-test, file exists
+- L3 TESTED: tests pass / review approved / validation complete
+- L4 SHIPPED: production running / content live / feature deployed
+- L5 ADOPTED: ≥1 real user/consumer actively using, usage metric exists
+
+Missing L-tag in completion communication triggers `MATURITY_TAG_MISSING` CIEU event. Secretary audits weekly. This rule enforces Board's ability to distinguish "code written" from "users adopting" without asking clarifying questions.
+
+Violation = communication ambiguity, degrades Board trust. Fulfill via Appendix C verb→L mapping table (see WORKING_STYLE.md Article 11 v2).
+
+---
+
 ## Iron Rule 2: No Hardcoded Paths (Constitutional, non-violable)
 
 All file paths, ports, agent IDs, contract locations, and database paths must be passed via startup parameters or environment variables. No default path strings in code. All paths use pathlib for cross-platform compatibility (Windows + Mac + Linux).
