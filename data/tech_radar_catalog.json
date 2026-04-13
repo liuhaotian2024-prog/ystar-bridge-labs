@@ -1,0 +1,301 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-04-13",
+  "categories": {
+    "long_term_memory": [
+      {
+        "name": "Letta (MemGPT)",
+        "github_url": "https://github.com/letta-ai/letta",
+        "paper_url": "https://arxiv.org/abs/2310.08560",
+        "mature_score": 0.85,
+        "labs_relevance_areas": ["agent_continuity", "cross_session_memory", "hierarchical_memory"],
+        "integration_complexity": "medium",
+        "license": "Apache-2.0",
+        "notes": "Production-grade, used in Labs for AMENDMENT-007 eval, hierarchical memory (core/archival/recall)"
+      },
+      {
+        "name": "Mem0",
+        "github_url": "https://github.com/mem0ai/mem0",
+        "paper_url": "",
+        "mature_score": 0.70,
+        "labs_relevance_areas": ["personalization", "entity_memory"],
+        "integration_complexity": "low",
+        "license": "Apache-2.0",
+        "notes": "User-centric memory, graph-based entity extraction"
+      },
+      {
+        "name": "Zep",
+        "github_url": "https://github.com/getzep/zep",
+        "paper_url": "",
+        "mature_score": 0.75,
+        "labs_relevance_areas": ["long_term_memory", "fact_extraction", "session_summarization"],
+        "integration_complexity": "medium",
+        "license": "Apache-2.0",
+        "notes": "Long-term memory store with vector + graph, fact extraction, session summary"
+      }
+    ],
+    "rag_variants": [
+      {
+        "name": "GraphRAG",
+        "github_url": "https://github.com/microsoft/graphrag",
+        "paper_url": "https://arxiv.org/abs/2404.16130",
+        "mature_score": 0.90,
+        "labs_relevance_areas": ["knowledge_graph", "contextual_retrieval", "agent_knowledge_base"],
+        "integration_complexity": "high",
+        "license": "MIT",
+        "notes": "Microsoft Research, knowledge graph + LLM-generated summaries, best for complex domain knowledge"
+      },
+      {
+        "name": "HyDE",
+        "github_url": "https://github.com/texttron/hyde",
+        "paper_url": "https://arxiv.org/abs/2212.10496",
+        "mature_score": 0.65,
+        "labs_relevance_areas": ["retrieval_accuracy"],
+        "integration_complexity": "low",
+        "license": "MIT",
+        "notes": "Hypothetical Document Embeddings - generate hypothetical answer first, embed that for retrieval"
+      },
+      {
+        "name": "ColBERT v2",
+        "github_url": "https://github.com/stanford-futuredata/ColBERT",
+        "paper_url": "https://arxiv.org/abs/2112.01488",
+        "mature_score": 0.80,
+        "labs_relevance_areas": ["efficient_retrieval", "token_level_matching"],
+        "integration_complexity": "high",
+        "license": "MIT",
+        "notes": "Stanford, late interaction for efficient retrieval, token-level embeddings"
+      },
+      {
+        "name": "FlashRAG",
+        "github_url": "https://github.com/RUC-NLPIR/FlashRAG",
+        "paper_url": "https://arxiv.org/abs/2405.13576",
+        "mature_score": 0.60,
+        "labs_relevance_areas": ["rag_toolkit", "modular_rag"],
+        "integration_complexity": "medium",
+        "license": "MIT",
+        "notes": "Modular RAG toolkit with 12+ retrieval methods, active iteration framework"
+      }
+    ],
+    "multi_agent_orchestration": [
+      {
+        "name": "AutoGen",
+        "github_url": "https://github.com/microsoft/autogen",
+        "paper_url": "https://arxiv.org/abs/2308.08155",
+        "mature_score": 0.90,
+        "labs_relevance_areas": ["peer_collaboration", "role_based_agents", "conversational_orchestration"],
+        "integration_complexity": "medium",
+        "license": "MIT",
+        "notes": "Microsoft, conversational multi-agent, role-based, group chat orchestration, production-grade"
+      },
+      {
+        "name": "CrewAI",
+        "github_url": "https://github.com/joaomdmoura/crewAI",
+        "paper_url": "",
+        "mature_score": 0.75,
+        "labs_relevance_areas": ["task_delegation", "role_specialization", "sequential_collaboration"],
+        "integration_complexity": "low",
+        "license": "MIT",
+        "notes": "Role-based crews, sequential/hierarchical task delegation, simple API"
+      },
+      {
+        "name": "LangGraph",
+        "github_url": "https://github.com/langchain-ai/langgraph",
+        "paper_url": "",
+        "mature_score": 0.85,
+        "labs_relevance_areas": ["state_machine_orchestration", "cyclic_workflows", "multi_agent_coordination"],
+        "integration_complexity": "medium",
+        "license": "MIT",
+        "notes": "LangChain stateful graph orchestration, cyclic workflows, human-in-the-loop"
+      },
+      {
+        "name": "MetaGPT",
+        "github_url": "https://github.com/geekan/MetaGPT",
+        "paper_url": "https://arxiv.org/abs/2308.00352",
+        "mature_score": 0.70,
+        "labs_relevance_areas": ["software_team_simulation", "role_based_sop"],
+        "integration_complexity": "high",
+        "license": "MIT",
+        "notes": "Software company simulation, SOP-based role coordination (PM/Architect/Engineer)"
+      },
+      {
+        "name": "ChatDev",
+        "github_url": "https://github.com/OpenBMB/ChatDev",
+        "paper_url": "https://arxiv.org/abs/2307.07924",
+        "mature_score": 0.65,
+        "labs_relevance_areas": ["waterfall_collaboration", "chain_of_roles"],
+        "integration_complexity": "medium",
+        "license": "Apache-2.0",
+        "notes": "Waterfall-style software development, CEO/CTO/Programmer/Tester roles"
+      }
+    ],
+    "reasoning": [
+      {
+        "name": "ReAct",
+        "github_url": "https://github.com/ysymyth/ReAct",
+        "paper_url": "https://arxiv.org/abs/2210.03629",
+        "mature_score": 0.95,
+        "labs_relevance_areas": ["tool_use", "reasoning_trace", "action_justification"],
+        "integration_complexity": "low",
+        "license": "MIT",
+        "notes": "Reason + Act interleaving, foundational pattern used in most tool-calling agents"
+      },
+      {
+        "name": "Reflexion",
+        "github_url": "https://github.com/noahshinn024/reflexion",
+        "paper_url": "https://arxiv.org/abs/2303.11366",
+        "mature_score": 0.80,
+        "labs_relevance_areas": ["self_reflection", "iterative_improvement", "failure_learning"],
+        "integration_complexity": "medium",
+        "license": "MIT",
+        "notes": "Self-reflection on failures, verbal reinforcement learning, iterative task solving"
+      },
+      {
+        "name": "Tree of Thoughts",
+        "github_url": "https://github.com/princeton-nlp/tree-of-thought-llm",
+        "paper_url": "https://arxiv.org/abs/2305.10601",
+        "mature_score": 0.75,
+        "labs_relevance_areas": ["strategic_planning", "search_based_reasoning"],
+        "integration_complexity": "high",
+        "license": "MIT",
+        "notes": "Tree search over reasoning paths, BFS/DFS exploration, good for planning problems"
+      },
+      {
+        "name": "Self-Discover",
+        "github_url": "https://github.com/catid/self-discover",
+        "paper_url": "https://arxiv.org/abs/2402.03620",
+        "mature_score": 0.70,
+        "labs_relevance_areas": ["reasoning_structure_selection", "task_intrinsic_reasoning"],
+        "integration_complexity": "medium",
+        "license": "MIT",
+        "notes": "LLM selects reasoning structures (e.g., divide-and-conquer, analogy) based on task"
+      }
+    ],
+    "tool_use": [
+      {
+        "name": "Toolformer",
+        "github_url": "",
+        "paper_url": "https://arxiv.org/abs/2302.04761",
+        "mature_score": 0.60,
+        "labs_relevance_areas": ["tool_learning", "api_calling"],
+        "integration_complexity": "high",
+        "license": "",
+        "notes": "Meta AI, self-supervised tool use learning, no public implementation"
+      },
+      {
+        "name": "Gorilla",
+        "github_url": "https://github.com/ShishirPatil/gorilla",
+        "paper_url": "https://arxiv.org/abs/2305.15334",
+        "mature_score": 0.75,
+        "labs_relevance_areas": ["api_calling", "tool_retrieval"],
+        "integration_complexity": "medium",
+        "license": "Apache-2.0",
+        "notes": "Berkeley, LLM fine-tuned for API calling with retrieval, API documentation grounding"
+      },
+      {
+        "name": "Voyager",
+        "github_url": "https://github.com/MineDojo/Voyager",
+        "paper_url": "https://arxiv.org/abs/2305.16291",
+        "mature_score": 0.70,
+        "labs_relevance_areas": ["skill_library", "open_ended_exploration"],
+        "integration_complexity": "high",
+        "license": "MIT",
+        "notes": "NVIDIA, lifelong learning agent in Minecraft, iterative skill library building"
+      }
+    ],
+    "self_improvement": [
+      {
+        "name": "Self-Refine",
+        "github_url": "https://github.com/madaan/self-refine",
+        "paper_url": "https://arxiv.org/abs/2303.17651",
+        "mature_score": 0.80,
+        "labs_relevance_areas": ["iterative_refinement", "self_critique"],
+        "integration_complexity": "low",
+        "license": "MIT",
+        "notes": "Iterative refinement via self-feedback, no external reward model needed"
+      },
+      {
+        "name": "Constitutional AI",
+        "github_url": "",
+        "paper_url": "https://arxiv.org/abs/2212.08073",
+        "mature_score": 0.90,
+        "labs_relevance_areas": ["constitutional_governance", "self_supervised_alignment"],
+        "integration_complexity": "high",
+        "license": "",
+        "notes": "Anthropic, self-critique against constitutional principles, RL from AI feedback (RLAIF)"
+      },
+      {
+        "name": "DPO (Direct Preference Optimization)",
+        "github_url": "https://github.com/eric-mitchell/direct-preference-optimization",
+        "paper_url": "https://arxiv.org/abs/2305.18290",
+        "mature_score": 0.85,
+        "labs_relevance_areas": ["preference_learning", "alignment"],
+        "integration_complexity": "high",
+        "license": "MIT",
+        "notes": "Stanford, direct optimization without reward model, simpler than RLHF"
+      }
+    ],
+    "agent_dev_frameworks": [
+      {
+        "name": "AutoGPT",
+        "github_url": "https://github.com/Significant-Gravitas/AutoGPT",
+        "paper_url": "",
+        "mature_score": 0.70,
+        "labs_relevance_areas": ["autonomous_agents", "goal_decomposition"],
+        "integration_complexity": "medium",
+        "license": "MIT",
+        "notes": "Early autonomous agent, goal-driven task decomposition, plugin ecosystem"
+      },
+      {
+        "name": "BabyAGI",
+        "github_url": "https://github.com/yoheinakajima/babyagi",
+        "paper_url": "",
+        "mature_score": 0.60,
+        "labs_relevance_areas": ["task_prioritization", "autonomous_looping"],
+        "integration_complexity": "low",
+        "license": "MIT",
+        "notes": "Simple autonomous task management loop, task creation + prioritization + execution"
+      },
+      {
+        "name": "OpenDevin (All-Hands)",
+        "github_url": "https://github.com/All-Hands-AI/OpenHands",
+        "paper_url": "https://arxiv.org/abs/2407.16741",
+        "mature_score": 0.75,
+        "labs_relevance_areas": ["software_engineering_agents", "sandbox_execution"],
+        "integration_complexity": "high",
+        "license": "MIT",
+        "notes": "Open-source Devin alternative, sandboxed code execution, browser interaction"
+      },
+      {
+        "name": "Letta Agents",
+        "github_url": "https://github.com/letta-ai/letta",
+        "paper_url": "https://arxiv.org/abs/2310.08560",
+        "mature_score": 0.85,
+        "labs_relevance_areas": ["stateful_agents", "memory_management", "agent_server"],
+        "integration_complexity": "medium",
+        "license": "Apache-2.0",
+        "notes": "Full agent server with persistent memory, tool calling, human-in-the-loop"
+      }
+    ],
+    "hermes_skill_system": [
+      {
+        "name": "Nous Hermes",
+        "github_url": "https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-8B",
+        "paper_url": "https://nousresearch.com/hermes3/",
+        "mature_score": 0.80,
+        "labs_relevance_areas": ["tool_calling", "function_calling", "agent_skills"],
+        "integration_complexity": "low",
+        "license": "Llama 3.1 Community License",
+        "notes": "Nous Research, Hermes tool calling format (partially adopted in Labs Skill system), JSON-mode tool definitions"
+      }
+    ]
+  },
+  "gap_patterns": {
+    "agent_peer_collaboration": ["AutoGen", "CrewAI", "LangGraph", "MetaGPT"],
+    "long_term_memory": ["Letta (MemGPT)", "Zep", "Mem0"],
+    "causal_reasoning": ["Tree of Thoughts", "Self-Discover", "ReAct"],
+    "self_improvement": ["Self-Refine", "Reflexion", "Constitutional AI"],
+    "knowledge_retrieval": ["GraphRAG", "ColBERT v2", "FlashRAG"],
+    "tool_orchestration": ["Gorilla", "ReAct", "Voyager"],
+    "autonomous_agents": ["AutoGPT", "BabyAGI", "OpenDevin", "Letta Agents"]
+  }
+}
