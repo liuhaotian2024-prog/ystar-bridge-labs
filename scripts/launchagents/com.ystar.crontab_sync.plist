@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.ystar.crontab_sync</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/ensure_crontab.sh</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/haotianliu/.openclaw/workspace/ystar-company</string>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/ystar_crontab_sync.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/ystar_crontab_sync_error.log</string>
+</dict>
+</plist>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.ystar.hook_daemon</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/opt/homebrew/Cellar/python@3.11/3.11.14_3/Frameworks/Python.framework/Versions/3.11/Resources/Python.app/Contents/MacOS/Python</string>
+        <string>/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/_hook_daemon.py</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/haotianliu/.openclaw/workspace/ystar-company</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PYTHONPATH</key>
+        <string>/Users/haotianliu/.openclaw/workspace/Y-star-gov</string>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <dict>
+        <key>SuccessfulExit</key>
+        <false/>
+        <key>Crashed</key>
+        <true/>
+        <key>PathState</key>
+        <dict>
+            <key>/tmp/ystar_hook.sock</key>
+            <false/>
+        </dict>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/ystar_hook_daemon.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/ystar_hook_daemon_error.log</string>
+
+    <key>ThrottleInterval</key>
+    <integer>10</integer>
+</dict>
+</plist>
