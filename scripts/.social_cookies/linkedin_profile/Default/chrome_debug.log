@@ -1,0 +1,31 @@
+[0330/123335.799:INFO:CONSOLE:100] "<link rel=preload> must have a valid `as` value", source: https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F (100)
+[0330/123335.799:INFO:CONSOLE:101] "<link rel=preload> must have a valid `as` value", source: https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F (101)
+[0330/123335.799:INFO:CONSOLE:102] "<link rel=preload> must have a valid `as` value", source: https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F (102)
+[0330/123335.799:INFO:CONSOLE:103] "<link rel=preload> must have a valid `as` value", source: https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F (103)
+[0330/123335.800:INFO:CONSOLE:106] "<link rel=preload> must have a valid `as` value", source: https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F (106)
+[0330/123335.800:INFO:CONSOLE:107] "<link rel=preload> must have a valid `as` value", source: https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F (107)
+[0330/123336.096:ERROR:content\public\browser\web_contents_delegate.cc:302] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+[0330/123336.096:ERROR:content\public\browser\web_contents_delegate.cc:302] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+[0330/123336.416:ERROR:content\public\browser\web_contents_delegate.cc:302] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+[0330/123336.416:ERROR:content\public\browser\web_contents_delegate.cc:302] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+[0330/123336.460:ERROR:content\public\browser\web_contents_delegate.cc:302] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+[0330/123336.460:ERROR:content\public\browser\web_contents_delegate.cc:302] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+[0330/123336.512:ERROR:content\public\browser\web_contents_delegate.cc:302] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+[0330/123336.512:ERROR:content\public\browser\web_contents_delegate.cc:302] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+[0330/123336.597:ERROR:content\public\browser\web_contents_delegate.cc:302] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+[0330/123336.597:ERROR:content\public\browser\web_contents_delegate.cc:302] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+[0330/123336.675:INFO:CONSOLE:0] "[.WebGL-0x224c02ae6a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels", source: https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F (0)
+[0330/123336.693:INFO:CONSOLE:0] "[.WebGL-0x224c02f96a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels", source: https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F (0)
+[0330/123336.694:INFO:CONSOLE:0] "[.WebGL-0x224c02f99b00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels", source: https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F (0)
+[0330/123336.695:INFO:CONSOLE:0] "[.WebGL-0x224c01e96a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)", source: https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F (0)
+[0330/123336.730:INFO:CONSOLE:169] "[GSI_LOGGER]: Your client application may not display the Google One Tap in its default position. When FedCM becomes mandatory, One Tap only displays in the default position. Refer to the migration guide to update your code accordingly and opt-in to FedCM to test your changes. Learn more: https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#layout", source: https://static.licdn.com/sc/h/aofke6z5sqc44bjlvj6yr05c8 (169)
+[0330/123336.732:INFO:CONSOLE:169] "[GSI_LOGGER]: Your client application uses one of the Google One Tap prompt UI status methods that may stop functioning when FedCM becomes mandatory. Refer to the migration guide to update your code accordingly and opt-in to FedCM to test your changes. Learn more: https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#display_moment and https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#skipped_moment", source: https://static.licdn.com/sc/h/aofke6z5sqc44bjlvj6yr05c8 (169)
+[0330/123336.732:INFO:CONSOLE:169] "[GSI_LOGGER]: Currently, you disable FedCM on Google One Tap. FedCM for One Tap will become mandatory starting Oct 2024, and you won’t be able to disable it. Refer to the migration guide to update your code accordingly to ensure users will not be blocked from logging in. Learn more: https://developers.google.com/identity/gsi/web/guides/fedcm-migration", source: https://static.licdn.com/sc/h/aofke6z5sqc44bjlvj6yr05c8 (169)
+[0330/123336.779:ERROR:content\public\browser\web_contents_delegate.cc:302] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+[0330/123336.781:ERROR:content\public\browser\web_contents_delegate.cc:302] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+[0330/123336.810:INFO:CONSOLE:1] "WARNING: Too many active WebGL contexts. Oldest context will be lost.", source: https://static.licdn.com/sc/h/7kposvlmadm04u71pp9u1qzyg (1)
+[0330/123336.835:INFO:CONSOLE:1] "WARNING: Too many active WebGL contexts. Oldest context will be lost.", source: https://static.licdn.com/sc/h/7kposvlmadm04u71pp9u1qzyg (1)
+[0330/123336.959:INFO:CONSOLE:2] "%c ", source: https://client.protechts.net/PXdOjV695v/main.min.js (2)
+[0330/123337.129:INFO:CONSOLE:2] "WARNING: Too many active WebGL contexts. Oldest context will be lost.", source: https://client.protechts.net/PXdOjV695v/main.min.js (2)
+[0330/123337.518:INFO:CONSOLE:8] "TMS load event sent successfully: ", source: https://static.licdn.com/sc/h/cyu2si00e7hmrsgmy7p1aw87j (8)
+[0330/123337.529:INFO:CONSOLE:8] "External tag load event sent successfully: ", source: https://static.licdn.com/sc/h/cyu2si00e7hmrsgmy7p1aw87j (8)

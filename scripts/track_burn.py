@@ -157,8 +157,10 @@ Examples:
             print(f"Error: Invalid date format '{args.date}'. Use YYYY-MM-DD")
             return 1
 
-    # File path
-    burn_file = r'C:\Users\liuha\OneDrive\桌面\ystar-company\finance\daily_burn.md'
+    # File path (relative to script location for cross-platform compatibility)
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    workspace_root = os.path.dirname(script_dir)
+    burn_file = os.path.join(workspace_root, 'finance', 'daily_burn.md')
 
     # Append session
     append_session(burn_file, date, args.agent, tool_uses, tokens, duration, cost, args.dry_run)

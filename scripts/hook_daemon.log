@@ -1,0 +1,63 @@
+[Y*hook] WARNING DENY immutable path: ceo → /Users/haotianliu/.openclaw/workspace/ystar-company/AGENTS.md
+  [Y*] No LLM provider configured. Using regex fallback (limited coverage).
+  [Y*] To enable LLM translation, set YSTAR_LLM_PROVIDER=openai or anthropic
+  [Y*] Regex mode has limited coverage. For better results, set YSTAR_LLM_PROVIDER=anthropic or openai
+Circuit breaker ARMED: 927 violations reached threshold 50. Pulse generation STOPPED.
+  [Y*] No LLM provider configured. Using regex fallback (limited coverage).
+  [Y*] To enable LLM translation, set YSTAR_LLM_PROVIDER=openai or anthropic
+  [Y*] Regex mode has limited coverage. For better results, set YSTAR_LLM_PROVIDER=anthropic or openai
+  [Y*] No LLM provider configured. Using regex fallback (limited coverage).
+  [Y*] To enable LLM translation, set YSTAR_LLM_PROVIDER=openai or anthropic
+  [Y*] Regex mode has limited coverage. For better results, set YSTAR_LLM_PROVIDER=anthropic or openai
+  [Y*] No LLM provider configured. Using regex fallback (limited coverage).
+  [Y*] To enable LLM translation, set YSTAR_LLM_PROVIDER=openai or anthropic
+  [Y*] Regex mode has limited coverage. For better results, set YSTAR_LLM_PROVIDER=anthropic or openai
+YStarLoop coefficient update failed: NormativeObjective.__init__() missing 1 required positional argument: 'fp_tolerance'
+YStarLoop coefficient update failed: NormativeObjective.__init__() missing 1 required positional argument: 'fp_tolerance'
+  [Y*] No LLM provider configured. Using regex fallback (limited coverage).
+  [Y*] To enable LLM translation, set YSTAR_LLM_PROVIDER=openai or anthropic
+  [Y*] Regex mode has limited coverage. For better results, set YSTAR_LLM_PROVIDER=anthropic or openai
+YStarLoop coefficient update failed: NormativeObjective.__init__() missing 1 required positional argument: 'fp_tolerance'
+YStarLoop coefficient update failed: NormativeObjective.__init__() missing 1 required positional argument: 'fp_tolerance'
+  [Y*] No LLM provider configured. Using regex fallback (limited coverage).
+  [Y*] To enable LLM translation, set YSTAR_LLM_PROVIDER=openai or anthropic
+  [Y*] Regex mode has limited coverage. For better results, set YSTAR_LLM_PROVIDER=anthropic or openai
+YStarLoop coefficient update failed: NormativeObjective.__init__() missing 1 required positional argument: 'fp_tolerance'
+YStarLoop coefficient update failed: NormativeObjective.__init__() missing 1 required positional argument: 'fp_tolerance'
+  [Y*] No LLM provider configured. Using regex fallback (limited coverage).
+  [Y*] To enable LLM translation, set YSTAR_LLM_PROVIDER=openai or anthropic
+  [Y*] Regex mode has limited coverage. For better results, set YSTAR_LLM_PROVIDER=anthropic or openai
+[Y*boundary] WARNING Behavior rule warning: agent 'ceo' created policy document '/Users/haotianliu/.openclaw/workspace/ystar-company/.claude/tasks/sofia-whitepaper-market-mapping.md' but no execution actions detected. Consider dispatching tasks or implementing the protocol.
+[Y*boundary] WARNING Behavior rule warning: agent 'ceo' claiming task completion without CIEU audit. Before marking complete, run 'gov_audit' or check CIEU database to confirm Rt=0 (zero residue).
+[Y*hook] WARNING DENY write boundary: ceo → /Users/haotianliu/.openclaw/workspace/ystar-company/.claude/tasks/sofia-whitepaper-market-mapping.md (Write boundary violation: agent 'ceo' cannot write to '/Users/haotianliu/.openclaw/workspace/ystar-company/.claude/tasks/sofia-whitepaper-market-mapping.md'. Allowed write paths: ['./reports/', './BOARD_PENDING.md', './DISPATCH.md', './OKR.md', './DIRECTIVE_TRACKER.md', './OPERATIONS.md', './WEEKLY_CYCLE.md', './knowledge/'])
+[Y*boundary] WARNING Behavior rule warning: agent 'ceo' created policy document '/Users/haotianliu/.openclaw/workspace/ystar-company/reports/proposals/sofia_whitepaper_v1_brief.md' but no execution actions detected. Consider dispatching tasks or implementing the protocol.
+[Y*boundary] WARNING Behavior rule warning: agent 'ceo' claiming task completion without CIEU audit. Before marking complete, run 'gov_audit' or check CIEU database to confirm Rt=0 (zero residue).
+YStarLoop coefficient update failed: NormativeObjective.__init__() missing 1 required positional argument: 'fp_tolerance'
+YStarLoop coefficient update failed: NormativeObjective.__init__() missing 1 required positional argument: 'fp_tolerance'
+  [Y*] No LLM provider configured. Using regex fallback (limited coverage).
+  [Y*] To enable LLM translation, set YSTAR_LLM_PROVIDER=openai or anthropic
+  [Y*] Regex mode has limited coverage. For better results, set YSTAR_LLM_PROVIDER=anthropic or openai
+[Y*boundary] WARNING Behavior rule warning: agent 'ceo' claiming task completion without CIEU audit. Before marking complete, run 'gov_audit' or check CIEU database to confirm Rt=0 (zero residue).
+[Y*boundary] WARNING Behavior rule warning: agent 'ceo' claiming task completion without CIEU audit. Before marking complete, run 'gov_audit' or check CIEU database to confirm Rt=0 (zero residue).
+[Y*hook] WARNING DENY write boundary: ceo → /Users/haotianliu/.claude/projects/-Users-haotianliu--openclaw-workspace-ystar-company/memory/feedback_permission_self_classify.md (Write boundary violation: agent 'ceo' cannot write to '/Users/haotianliu/.claude/projects/-Users-haotianliu--openclaw-workspace-ystar-company/memory/feedback_permission_self_classify.md'. Allowed write paths: ['./reports/', './BOARD_PENDING.md', './DISPATCH.md', './OKR.md', './DIRECTIVE_TRACKER.md', './OPERATIONS.md', './WEEKLY_CYCLE.md', './knowledge/'])
+[Y*boundary] WARNING Behavior rule warning: agent 'ceo' claiming task completion without CIEU audit. Before marking complete, run 'gov_audit' or check CIEU database to confirm Rt=0 (zero residue).
+[Y*hook] WARNING DENY write boundary: ceo → /Users/haotianliu/.claude/projects/-Users-haotianliu--openclaw-workspace-ystar-company/memory/project_pricing_premature.md (Write boundary violation: agent 'ceo' cannot write to '/Users/haotianliu/.claude/projects/-Users-haotianliu--openclaw-workspace-ystar-company/memory/project_pricing_premature.md'. Allowed write paths: ['./reports/', './BOARD_PENDING.md', './DISPATCH.md', './OKR.md', './DIRECTIVE_TRACKER.md', './OPERATIONS.md', './WEEKLY_CYCLE.md', './knowledge/'])
+[Y*boundary] WARNING Behavior rule warning: agent 'ceo' claiming task completion without CIEU audit. Before marking complete, run 'gov_audit' or check CIEU database to confirm Rt=0 (zero residue).
+YStarLoop coefficient update failed: NormativeObjective.__init__() missing 1 required positional argument: 'fp_tolerance'
+YStarLoop coefficient update failed: NormativeObjective.__init__() missing 1 required positional argument: 'fp_tolerance'
+  [Y*] No LLM provider configured. Using regex fallback (limited coverage).
+  [Y*] To enable LLM translation, set YSTAR_LLM_PROVIDER=openai or anthropic
+  [Y*] Regex mode has limited coverage. For better results, set YSTAR_LLM_PROVIDER=anthropic or openai
+[Y*boundary] WARNING Behavior rule warning: agent 'ceo' claiming task completion without CIEU audit. Before marking complete, run 'gov_audit' or check CIEU database to confirm Rt=0 (zero residue).
+[Y*boundary] WARNING Behavior rule warning: agent 'ceo' created policy document '/Users/haotianliu/.openclaw/workspace/ystar-company/knowledge/ceo/feedback/permission_self_classify_before_escalation.md' but no execution actions detected. Consider dispatching tasks or implementing the protocol.
+[Y*boundary] WARNING Behavior rule warning: agent 'ceo' claiming task completion without CIEU audit. Before marking complete, run 'gov_audit' or check CIEU database to confirm Rt=0 (zero residue).
+[Y*boundary] WARNING Behavior rule warning: agent 'ceo' created policy document '/Users/haotianliu/.openclaw/workspace/ystar-company/knowledge/ceo/decisions/pricing_premature_no_external_disclosure.md' but no execution actions detected. Consider dispatching tasks or implementing the protocol.
+[Y*boundary] WARNING Behavior rule warning: agent 'ceo' claiming task completion without CIEU audit. Before marking complete, run 'gov_audit' or check CIEU database to confirm Rt=0 (zero residue).
+[Y*boundary] WARNING Behavior rule warning: agent 'ceo' created policy document '/Users/haotianliu/.openclaw/workspace/ystar-company/knowledge/ceo/lessons/auto_memory_vs_ystar_governance_boundary_conflict.md' but no execution actions detected. Consider dispatching tasks or implementing the protocol.
+YStarLoop coefficient update failed: NormativeObjective.__init__() missing 1 required positional argument: 'fp_tolerance'
+YStarLoop coefficient update failed: NormativeObjective.__init__() missing 1 required positional argument: 'fp_tolerance'
+  [Y*] No LLM provider configured. Using regex fallback (limited coverage).
+  [Y*] To enable LLM translation, set YSTAR_LLM_PROVIDER=openai or anthropic
+  [Y*] Regex mode has limited coverage. For better results, set YSTAR_LLM_PROVIDER=anthropic or openai
+[Y*hook] WARNING DENY Bash command (restricted path): ceo → /Users/haotianliu/.openclaw/workspace/ystar-company/.ystar_active_agent
+Y*gov hook daemon started (pid=89556, sock=/tmp/ystar_hook.sock)
