@@ -24,6 +24,25 @@ CATALOG_PATH = Path(__file__).parent.parent / "data" / "tech_radar_catalog.json"
 REPORTS_DIR = Path(__file__).parent.parent / "reports" / "tech_radar_briefs"
 WORKSPACE = Path(__file__).parent.parent
 
+# Y*gov Core Innovations — Preservation Guard (from knowledge/ceo/lessons/innovation_preservation_guard_2026_04_13.md)
+PRESERVED_INNOVATIONS = {
+    "iron_rule_1": ["hook", "zero llm", "deterministic", "constitutional ai", "llm critique"],
+    "cieu_5tuple": ["cieu", "5-tuple", "5tuple", "xt u y* yt+1 rt+1", "mathematical form"],
+    "omission_engine": ["omission", "未发生", "missing detection", "what didn't happen", "reverse detection"],
+    "12_layer_construction": ["第十一条", "12层", "12 layer", "l0-l12", "cognitive construction"],
+    "capability_delegation": ["capability", "gov_delegate", "monotonicity", "delegation chain", "rbac", "acl"],
+    "name_role_binding": ["name-role", "aiden-ceo", "behavior rules", "c-suite identity", "agent role placeholder"],
+    "boot_contract": ["193 constraints", "11 category", "boot contract", "code-enforced", "hard constraints"],
+    "dogfooding_product": ["dogfooding", "company as product", "self-governance", "product validation"],
+    "autonomy_engine": ["autonomyengine", "ade", "prescriptive dual", "detector driver", "omission autonomy"],
+    "memory_classification": ["4类记忆", "4 memory types", "relevance scoring", "memory classification"],
+    "amendment_evolution": ["amendment", "dasc", "governance evolution", "self-evolution protocol"],
+    "three_modes": ["break-glass", "autonomous", "standard", "mode switching", "human-ai collaboration mode"]
+}
+
+# Red Line Innovations — Conflicts require adapter-only approach
+RED_LINE = ["iron_rule_1", "cieu_5tuple", "omission_engine", "12_layer_construction", "capability_delegation", "name_role_binding"]
+
 
 class TechRadar:
     def __init__(self, catalog_path: Path = CATALOG_PATH):
@@ -95,6 +114,47 @@ class TechRadar:
 
         return list(set(matched))  # deduplicate
 
+    def _detect_innovation_conflicts(self, tech_name: str, tech_data: Dict) -> Tuple[List[str], bool, bool]:
+        """
+        Detect potential conflicts with Y*gov core innovations.
+        Returns: (preserved_innovations, is_red_line_conflict, borrowed_pattern_only)
+        """
+        # Build search text from tech data
+        search_text = " ".join([
+            tech_name.lower(),
+            " ".join(tech_data.get("labs_relevance_areas", [])),
+            tech_data.get("notes", "").lower(),
+            tech_data.get("category", "")
+        ])
+
+        detected_conflicts = []
+        red_line_hit = False
+
+        # Scan for keyword matches
+        for innovation_key, keywords in PRESERVED_INNOVATIONS.items():
+            for keyword in keywords:
+                if keyword.lower() in search_text:
+                    detected_conflicts.append(innovation_key)
+                    if innovation_key in RED_LINE:
+                        red_line_hit = True
+                    break  # One hit per innovation is enough
+
+        # Determine borrowed_pattern_only
+        # High complexity OR framework-level = likely SDK replacement (bad)
+        # Low complexity OR mentions "pattern"/"idea"/"approach" = likely pattern borrow (good)
+        borrowed_pattern_only = (
+            tech_data.get("integration_complexity") == "low"
+            or "pattern" in search_text
+            or "idea" in search_text
+            or "approach" in search_text
+        )
+
+        # Override: if it's a framework/orchestration tool with high maturity, likely SDK replacement
+        if tech_data.get("category") == "multi_agent_orchestration" and tech_data.get("mature_score", 0) > 0.8:
+            borrowed_pattern_only = False
+
+        return list(set(detected_conflicts)), red_line_hit, borrowed_pattern_only
+
     def generate_brief(self, gap_id: str, gap_description: str, top_k: int = 3) -> str:
         """Generate integration brief for a specific gap."""
         # Match by pattern first, then keyword search
@@ -115,16 +175,48 @@ class TechRadar:
             if len(candidates) >= top_k:
                 break
 
+        # Detect preservation conflicts for all candidates
+        any_red_line = False
+        for tech in candidates:
+            conflicts, red_line_hit, borrowed_pattern = self._detect_innovation_conflicts(tech["name"], tech)
+            tech["preserved_innovations"] = conflicts
+            tech["red_line_conflict"] = red_line_hit
+            tech["borrowed_pattern_only"] = borrowed_pattern
+            if red_line_hit:
+                any_red_line = True
+
         # Generate markdown brief
         brief = f"""# Tech Radar Brief — {gap_id}
 Generated: {datetime.now().isoformat()}
 Gap: {gap_description}
 
-## Matched Technologies (Top {len(candidates)})
+"""
+
+        # Add RED LINE warning if any tech has red line conflict
+        if any_red_line:
+            brief += """## ⚠️ RED LINE — Adapt-Only Required
+
+**CRITICAL**: One or more candidates conflict with Y*gov core innovations that define our product differentiation.
+
+**Rules**:
+1. Borrow IDEA/pattern only — DO NOT import SDK or allow framework replacement
+2. Build Y*gov-native adapter wrapping the borrowed concept
+3. Preserve mathematical form, enforcement mechanisms, and cognitive architecture
+
+**Why**: Y* Bridge Labs' value is "governance-as-dogfooding" — if core innovations are replaced by external frameworks, we become another LangGraph/AutoGen demo. External tech is training equipment, not organ replacement.
+
+Conflicting innovations flagged below with 🔴.
+
+---
+
+"""
+
+        brief += f"""## Matched Technologies (Top {len(candidates)})
 
 """
         for i, tech in enumerate(candidates, 1):
-            brief += f"""### {i}. {tech['name']}
+            red_flag = "🔴 " if tech["red_line_conflict"] else ""
+            brief += f"""### {i}. {red_flag}{tech['name']}
 - **Maturity**: {tech['mature_score']:.2f}/1.00
 - **License**: {tech['license']}
 - **GitHub**: {tech['github_url']}
@@ -133,10 +225,19 @@ Gap: {gap_description}
 - **Integration Complexity**: {tech['integration_complexity']}
 - **Notes**: {tech.get('notes', 'N/A')}
 
+**Preservation Analysis**:
+- **Preserved Innovations**: {', '.join(tech['preserved_innovations']) if tech['preserved_innovations'] else 'None detected'}
+- **Red Line Conflict**: {'YES — Adapter-only integration' if tech['red_line_conflict'] else 'No'}
+- **Borrowed Pattern Only**: {'YES — Extract idea/pattern' if tech['borrowed_pattern_only'] else 'NO — Requires SDK/framework integration'}
+
 **Integration Recommendation**:
 """
-            # Generate recommendation based on complexity + maturity
-            if tech['integration_complexity'] == 'low' and tech['mature_score'] > 0.75:
+            # Generate recommendation based on preservation + complexity + maturity
+            if tech['red_line_conflict']:
+                brief += "🔴 **ADAPT ONLY** — Core innovation conflict detected. Borrow the concept/pattern, build Y*gov-native implementation. DO NOT import SDK.\n"
+                brief += f"   - Conflicts: {', '.join([c for c in tech['preserved_innovations'] if c in RED_LINE])}\n"
+                brief += "   - Recommended: Create adapter in ystar/adapters/ that wraps external idea into Y*gov primitives\n"
+            elif tech['integration_complexity'] == 'low' and tech['mature_score'] > 0.75:
                 brief += "✅ **High Priority** — Low complexity, high maturity. Recommend POC within 1 sprint.\n"
             elif tech['mature_score'] > 0.80:
                 brief += "🔍 **Evaluate** — High maturity but complex integration. Needs architecture design.\n"
@@ -150,13 +251,15 @@ Gap: {gap_description}
         # Add action items
         brief += f"""## Next Steps
 1. Review GitHub repos and papers for selected candidates
-2. Create proof-of-concept branch for top-1 candidate
-3. Update gap status in SUBSYSTEM_INDEX or priority_brief
-4. Record decision in knowledge/{{role}}/decisions/
+2. For RED LINE conflicts: Design adapter architecture before any implementation
+3. For non-conflicts: Create proof-of-concept branch for top-1 candidate
+4. Update gap status in SUBSYSTEM_INDEX or priority_brief
+5. Record decision in knowledge/{{role}}/decisions/ with preservation rationale
 
 ---
-**Generated by**: Tech Radar Engine MVP
+**Generated by**: Tech Radar Engine MVP + Preservation Guard
 **Catalog version**: {self.catalog.get("version", "1.0")}
+**Preservation Guard**: Active — 12 core innovations, 6 red lines
 """
 
         return brief
