@@ -28,6 +28,7 @@ WHITELIST_MATCHER = WORKSPACE_ROOT / "scripts/whitelist_matcher.py"
 INJECT_LOG = Path("/tmp/ystar_user_prompt_hook.log")
 DIALOGUE_CONTRACT_LOG = WORKSPACE_ROOT / "scripts/.logs/dialogue_contract.log"
 DIALOGUE_CONTRACT_SCRIPT = WORKSPACE_ROOT / "scripts/dialogue_to_contract_worker.py"
+CLAUDE_PROJECT_DIR = Path.home() / ".claude/projects/-Users-haotianliu--openclaw-workspace-ystar-company"
 
 
 def get_active_agent():
@@ -126,6 +127,89 @@ def get_whitelist_hints(user_msg):
     return []
 
 
+def get_current_session_id():
+    """Extract current session ID from CLAUDE_SESSION_ID env or fallback to latest transcript"""
+    import os
+    session_id = os.environ.get("CLAUDE_SESSION_ID")
+    if session_id:
+        return session_id
+
+    # Fallback: find most recently modified .jsonl file
+    try:
+        jsonl_files = list(CLAUDE_PROJECT_DIR.glob("*.jsonl"))
+        if jsonl_files:
+            latest = max(jsonl_files, key=lambda p: p.stat().st_mtime)
+            return latest.stem
+    except Exception:
+        pass
+    return None
+
+
+def detect_assistant_defer_drift():
+    """
+    [L7] ForgetGuard: scan last assistant message for defer language.
+    Returns (snippet, full_text) if defer detected, else (None, None).
+    Fail-open (returns None on any error).
+    """
+    try:
+        session_id = get_current_session_id()
+        if not session_id:
+            return None, None
+
+        transcript = CLAUDE_PROJECT_DIR / f"{session_id}.jsonl"
+        if not transcript.exists():
+            return None, None
+
+        # Read last 200 lines (efficient for large transcripts)
+        last_assistant_text = None
+        with open(transcript, 'r') as f:
+            lines = f.readlines()
+            for line in reversed(lines[-200:]):
+                try:
+                    msg = json.loads(line)
+                    if msg.get('role') == 'assistant' or msg.get('type') == 'assistant':
+                        content = msg.get('message', {}).get('content') or msg.get('content')
+                        if isinstance(content, list):
+                            for item in content:
+                                if isinstance(item, dict) and item.get('type') == 'text':
+                                    last_assistant_text = item.get('text', '')
+                                    break
+                        elif isinstance(content, str):
+                            last_assistant_text = content
+                        if last_assistant_text:
+                            break
+                except Exception:
+                    continue
+
+        if not last_assistant_text:
+            return None, None
+
+        # Defer pattern matching (case-insensitive)
+        import re
+        defer_patterns = [
+            r'明日|明早|下周|下次|未来.*内',
+            r'tomorrow|next\s+(session|time|week)',
+            r'queued?\s+for|wait\s+for|稍后|later',
+            r'TBD|待研究|to\s+be\s+determined',
+            r'\d+[-~]\d+\s*月',  # "3-6月"
+            r'\d+\s*月内',       # "N月内"
+            r'等.*回|等回报',     # CEO's "等回报" pattern
+        ]
+
+        for pattern in defer_patterns:
+            match = re.search(pattern, last_assistant_text, re.IGNORECASE)
+            if match:
+                snippet = last_assistant_text[max(0, match.start()-20):match.end()+30]
+                return snippet.strip(), last_assistant_text
+
+        return None, None
+
+    except Exception as e:
+        # Fail-open: log error but don't block hook
+        sys.stderr.write(f"[ASSISTANT_DEFER_DRIFT] parse_error: {e}\n")
+        return None, None
+
+
 def inject_context(user_msg_preview=""):
     """Generate system context injection block"""
     active_agent = get_active_agent()
@@ -134,6 +218,7 @@ def inject_context(user_msg_preview=""):
     obligations = get_top_obligations()
     recent_drift = get_recent_drift()
     whitelist_hints = get_whitelist_hints(user_msg_preview)
+    defer_snippet, defer_full_text = detect_assistant_defer_drift()
 
     context = f"""<system-context auto-injected="UserPromptSubmit">
 [STATE] active_agent={active_agent} | ceo_mode={ceo_mode} | session_age={session_age}min
@@ -151,6 +236,40 @@ def inject_context(user_msg_preview=""):
         context += "[WHITELIST_HINT] Matching patterns:\n"
         for hint in whitelist_hints:
             context += f"  - {hint}\n"
+
+    # [L7] ForgetGuard: detect defer drift in last assistant reply
+    if defer_snippet:
+        context += f"[⚠️ LAST_REPLY_DEFER] You wrote \"{defer_snippet}\" in your previous reply.\n"
+        context += "  Recipe: respond now with \"I dispatched X NOW\" or \"I am doing X right now\" not future tense.\n"
+        # Emit CIEU event
+        try:
+            import sqlite3
+            import uuid
+            conn = sqlite3.connect(CIEU_DB)
+            cursor = conn.cursor()
+            event_id = str(uuid.uuid4())
+            seq_global = int(time.time() * 1_000_000)
+            session_json = {}
+            try:
+                with open(SESSION_JSON) as f:
+                    session_json = json.load(f)
+            except:
+                pass
+            session_id = session_json.get('session_id', 'unknown')
+            cursor.execute("""
+                INSERT INTO cieu_events (
+                    event_id, seq_global, created_at, session_id, agent_id,
+                    event_type, decision, passed, drift_detected, drift_details
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (
+                event_id, seq_global, time.time(), session_id, active_agent,
+                "FORGET_GUARD", "warn", 0, 1, defer_snippet[:200]
+            ))
+            conn.commit()
+            conn.close()
+            sys.stderr.write(f"[ASSISTANT_DEFER_DRIFT] last reply contains: '{defer_snippet}'\n")
+        except Exception as e:
+            sys.stderr.write(f"[ASSISTANT_DEFER_DRIFT] cieu_write_error: {e}\n")
 
     context += "[L_TAG_REMINDER] All status reports must include [LX] tag (Iron Rule 1.5)\n"
     context += "[BREAK_GLASS_AVAILABLE] python3 scripts/ceo_mode_manager.py force_break_glass --trigger T1\n"
