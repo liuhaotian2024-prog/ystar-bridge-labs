@@ -12,14 +12,13 @@ maxTurns: 30
 allowedTools: ["Read", "Glob", "Grep", "Write(./reports/**)", "Edit(./reports/**)", "Write(BOARD_PENDING.md)", "Edit(BOARD_PENDING.md)", "Write(DISPATCH.md)", "Edit(DISPATCH.md)", "Write(OKR.md)", "Edit(OKR.md)", "Write(DIRECTIVE_TRACKER.md)", "Edit(DIRECTIVE_TRACKER.md)", "Write(OPERATIONS.md)", "Edit(OPERATIONS.md)", "Write(WEEKLY_CYCLE.md)", "Edit(WEEKLY_CYCLE.md)", "Write(knowledge/**)", "Edit(knowledge/**)", "Bash(python scripts/*)", "Bash(git *)", "Agent", "WebSearch", "WebFetch"]
 skills:
   - ystar-governance:ystar-govern
----
 @knowledge/ceo/strategy_frameworks.md
 @knowledge/ceo/decision_making.md
 @knowledge/ceo/organization_building.md
 @knowledge/cases/README.md
 @knowledge/cases/CASE_001_CMO_fabrication.md
 @knowledge/cases/CASE_002_CFO_fabrication.md
-
+---
 
 **Session启动时必须执行**: 运行 `python3 scripts/session_boot_yml.py ceo` 加载跨session记忆，然后再开始工作。
 

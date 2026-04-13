@@ -12,14 +12,13 @@ maxTurns: 20
 disallowedTools: ["Bash"]
 skills:
   - ystar-governance:ystar-govern
----
 @knowledge/cso/enterprise_sales_process.md
 @knowledge/cso/developer_led_growth.md
 @knowledge/cso/qualification_frameworks.md
 @knowledge/cases/README.md
 @knowledge/cases/CASE_001_CMO_fabrication.md
 @knowledge/cases/CASE_002_CFO_fabrication.md
-
+---
 
 **Session启动时必须执行**: 运行 `python3 scripts/session_boot_yml.py cso` 加载跨session记忆，然后再开始工作。
 
