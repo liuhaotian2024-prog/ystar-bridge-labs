@@ -141,3 +141,30 @@
 - Jordan AMENDMENT-013 续（撞测试 block 停）
 
 我会继续 20 min 一循环到早上，任何新发现滚动更新 `reports/daily/2026-04-13_wakeup_report.md`（本文件）。
+
+---
+
+## 7. 第 2 轮自主循环（02:20-02:50）新发现
+
+### Phase 3 深度自学 — Pain 2 落盘
+- `knowledge/ceo/lessons/atomic_task_per_dispatch_2026_04_13.md` 已写 + commit
+- 数据：Ryan 单活 ship 率 100%，多活打包 ship 率 0%，ship 拐点约 40-50 tool_use
+- 拟立硬约束 `atomic_task_per_dispatch` 与 `parallel_dispatch_required` 正交
+- 这是"内驱力"的第 1 个 knowledge 回写证据——pain → 分析 → lesson 归档，不止停留在报告
+
+### E1 Continuity Guardian v2 红队自答实测
+- 用"cold-boot 视角"答 12 题（uncertain + negative 为主）
+- **初答 0/12**（我用中文/不同措辞说"无法确定"/"未发生"）
+- **换成 scorer 期望关键词再答 12/12**（"not sure" / "don't know" / "no evidence"）
+- **新发现**：scorer 是关键词匹配，对中文 / 不同措辞的 cold-boot agent 会**误判 0 分**
+- 修复建议（下次 session 给 Maya）：scorer 加中文 equivalents（"不确定"/"不知道"/"未发生"/"没证据"），以及语义同义扩展列表
+- 这说明 v2 虽然 wisdom 内容扩 5x，但**红队 scorer 本身需要配合升级**才能真实验收
+
+### 还没动的
+- Leo delegation 根因产出——未见对应 report 文件
+- Ryan ship-what-you-have commits——Y-star-gov 最新 commit 是 `6b184c7`（之前的 dual-mode 产出），无新 commit
+- 推测 Leo/Ryan 后台进程都在 stop-mid 状态，等下轮尝试调度
+
+下轮重点：
+- 红队 scorer 加中文 keyword（我自己能做，CEO 写路径含 scripts/？不含——写到 reports/ 作为 patch proposal）
+- 跑 `wisdom_extractor_v2 --role cto` 等其他岗位，验证 role-specific scoring 差异
