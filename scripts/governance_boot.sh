@@ -133,11 +133,22 @@ else
   echo "[3/7] Memory boot: skipped (verify-only)"
 fi
 
-# 4. 创建session标记
+# 4. 创建session标记 + 注入 agent_id 到 session config (E1 fix 2026-04-13)
+# 根因: Y*gov identity_detector 的 current_agent() 读 .ystar_session.json 的 agent_id 字段
+# 字段缺失 → fallback 到 "agent" → hook DENY 所有操作 → 3h session 死锁
+# 永久修复: boot 时自动写入 agent_id + agent_stack
 if [ "$VERIFY_ONLY" = false ]; then
   touch "$YSTAR_DIR/scripts/.session_booted"
   echo "0" > "$YSTAR_DIR/scripts/.session_call_count"
-  echo "[4/7] Session markers: created"
+  python3 -c "
+import json
+p = '$YSTAR_DIR/.ystar_session.json'
+with open(p) as f: d = json.load(f)
+d['agent_id'] = '$AGENT_ID'
+d['agent_stack'] = ['$AGENT_ID']
+with open(p, 'w') as f: json.dump(d, f, indent=2)
+print(f'[4/7] Session markers: created (agent_id=$AGENT_ID injected)')
+" || echo "[4/7] Session markers: created (agent_id injection FAILED — check python3)"
 else
   if [ -f "$YSTAR_DIR/scripts/.session_booted" ]; then
     echo "[4/7] Session markers: present"
@@ -237,6 +248,18 @@ if [ $FAILURES -eq 0 ]; then
     FIRST_P0=$(grep -A1 "^### P0-1" "$BRIEF" 2>/dev/null | tail -1 | sed 's/^ *//' | head -c 160)
     [ -n "$PHASE_LINE" ] && echo "当前 Labs 阶段 = ${PHASE_LINE}"
     [ -n "$FIRST_P0" ]   && echo "今天第一要务 = ${FIRST_P0}"
+  fi
+
+  # Board 2026-04-13 first-turn ritual contract (CEO only)
+  if [ "$AGENT_ID" = "ceo" ]; then
+    echo ""
+    echo "=== ⚠️  FIRST-TURN RITUAL (CEO CONTRACT — 必须执行) ==="
+    echo "Board 说 'Aiden' → 你第一回合必答这一行字符串（一字不差）："
+    echo "  老大，我立刻复活所有团队成员的满血在线"
+    echo "同一回合并行 spawn 4 个 C-suite sub-agent online check："
+    echo "  Ethan-CTO / Sofia-CMO / Zara-CSO / Marco-CFO"
+    echo "不得先答别的、不得等 Board 追问、不得只 spawn 部分。"
+    echo "============================================================"
   fi
 
   # Emit session_start CIEU event (Board 2026-04-11)
