@@ -297,6 +297,14 @@ for trigger, action in em.get('event_triggers', {}).items():
 " 2>/dev/null)
 echo "$EXEC_MODEL"
 echo ""
+
+# STEP 8.5: Labs Atlas snapshot (CEO panoramic vision)
+if [ -f "$YSTAR_DIR/SUBSYSTEM_INDEX.md" ]; then
+  echo "--- Labs Subsystem Index (head 30) ---"
+  head -30 "$YSTAR_DIR/SUBSYSTEM_INDEX.md"
+  echo ""
+fi
+
 echo "=== BEGIN AUTONOMOUS EXECUTION ==="
 
 # STEP 9: Surface active obligations (认知恢复核心)
