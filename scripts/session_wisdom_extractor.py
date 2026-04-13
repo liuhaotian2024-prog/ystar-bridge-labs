@@ -351,6 +351,163 @@ def generate_wisdom_package(company_root: Path, session_id: str, session_start: 
     return "\n".join(wisdom)
 
 
+ROLES_V2 = ["ceo", "cto", "cmo", "cso", "cfo", "secretary",
+            "eng-kernel", "eng-platform", "eng-governance", "eng-domains"]
+
+
+def extract_priority_brief(company_root: Path) -> str:
+    """AMENDMENT-009 §3.4: inject priority_brief.md integrally (highest weight)."""
+    brief = company_root / "reports" / "priority_brief.md"
+    if not brief.exists():
+        return ""
+    return brief.read_text(errors="replace")[:8192]
+
+
+def extract_experiments_verdicts(company_root: Path) -> List[str]:
+    exp_dir = company_root / "reports" / "experiments"
+    if not exp_dir.exists():
+        return []
+    out = []
+    for f in sorted(exp_dir.glob("*.md"))[-10:]:
+        text = f.read_text(errors="replace")
+        for line in text.splitlines():
+            if any(k in line.lower() for k in ["verdict", "go/no-go", "result:"]):
+                out.append(f"{f.name}: {line.strip()[:160]}")
+                break
+    return out
+
+
+def extract_role_knowledge(company_root: Path, role: str) -> Dict[str, List[str]]:
+    kn = company_root / "knowledge" / role
+    buckets = {"feedback": [], "decisions": [], "lessons": [], "theory": [],
+               "dead_paths": [], "cases": [], "gaps": []}
+    for k in buckets:
+        d = kn / k
+        if not d.exists():
+            continue
+        for f in sorted(d.glob("*.md"))[-5:]:
+            try:
+                first_line = f.read_text(errors="replace").splitlines()[0] if f.read_text(errors="replace").strip() else f.name
+            except Exception:
+                first_line = f.name
+            buckets[k].append(f"{f.name}: {first_line[:120]}")
+    return buckets
+
+
+def extract_git_diff_stat(company_root: Path) -> str:
+    import subprocess
+    try:
+        r = subprocess.run(["git", "diff", "HEAD~3..HEAD", "--stat"],
+                           cwd=str(company_root), capture_output=True, timeout=5, text=True)
+        return r.stdout[:2048]
+    except Exception:
+        return ""
+
+
+def extract_proposals_summary(company_root: Path) -> List[str]:
+    pd = company_root / "reports" / "proposals"
+    if not pd.exists():
+        return []
+    out = []
+    for f in sorted(pd.glob("*.md"))[-10:]:
+        text = f.read_text(errors="replace")
+        status = "?"
+        for line in text.splitlines()[:20]:
+            m = re.search(r"status[:\s]+([A-Z_ ]+)", line, re.IGNORECASE)
+            if m:
+                status = m.group(1).strip()
+                break
+        title = text.splitlines()[0] if text else f.name
+        out.append(f"{f.name}: [{status}] {title[:120]}")
+    return out
+
+
+def generate_boot_package_for_role(company_root: Path, role: str, session_id: str,
+                                    session_start: float) -> dict:
+    """AMENDMENT-010 §4 S-2 + §5: per-role 11-category boot pack."""
+    brief = extract_priority_brief(company_root)
+    role_knowledge = extract_role_knowledge(company_root, role)
+    experiments = extract_experiments_verdicts(company_root)
+    git_stat = extract_git_diff_stat(company_root)
+    proposals = extract_proposals_summary(company_root)
+    obligations = extract_uncompleted_obligations(company_root)
+    continuation = extract_continuation_state(company_root)
+    cieu = extract_recent_cieu_events(company_root, session_start)
+
+    pack = {
+        "pack_meta": {
+            "role": role,
+            "session_id": session_id,
+            "generated_at": int(time.time()),
+            "generator": "session_wisdom_extractor.py v2 (AMENDMENT-010)",
+            "schema_version": "0.1",
+        },
+        "category_1_identity_dna": {
+            "active_agent_marker_path": ".ystar_active_agent",
+            "note": "Identity DNA loaded from AGENTS.md + team_dna.md via session_boot_yml.py",
+        },
+        "category_2_constitutional_charter": {
+            "note": "Charter loaded from governance/BOARD_CHARTER_AMENDMENTS.md + INTERNAL_GOVERNANCE.md",
+        },
+        "category_3_role_mandate": {
+            "role": role,
+            "knowledge_dir": f"knowledge/{role}/role_definition/",
+        },
+        "category_4_process_frameworks": {
+            "note": "methodology_v1.md + strategy_frameworks.md + decision_making.md",
+        },
+        "category_5_skills": {
+            "skills_dir": f"knowledge/{role}/skills/",
+            "skills_registered": [],
+        },
+        "category_6_current_state": {
+            "priority_brief_snippet": brief[:2048],
+            "continuation": continuation,
+            "open_obligations": obligations[:10],
+        },
+        "category_7_historical_truth": {
+            "git_diff_stat": git_stat,
+            "recent_cieu": cieu[:10],
+        },
+        "category_8_anti_patterns": {
+            k: v for k, v in role_knowledge.items()
+        },
+        "category_9_relationship_map": {
+            "board_mental_model_path": f"knowledge/{role}/board_mental_model.md",
+        },
+        "category_10_external_commitments": {
+            "log_path": "knowledge/cso/external_commitments_log.md",
+        },
+        "category_11_next_session_action_queue": [],
+        "_inputs": {
+            "experiments_verdicts": experiments[:5],
+            "proposals_summary": proposals[:5],
+        },
+    }
+    return pack
+
+
+def generate_boot_packages_v2(company_root: Path, session_id: str, session_start: float) -> List[Path]:
+    """Generate memory/boot_packages/{role}.json x 10 roles."""
+    out_dir = company_root / "memory" / "boot_packages"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    history_dir = out_dir / "history"
+    history_dir.mkdir(exist_ok=True)
+
+    written = []
+    for role in ROLES_V2:
+        pack = generate_boot_package_for_role(company_root, role, session_id, session_start)
+        fn = out_dir / f"{role}.json"
+        fn.write_text(json.dumps(pack, ensure_ascii=False, indent=2))
+        hist_fn = history_dir / f"{role}_{session_id}.json"
+        hist_fn.write_text(json.dumps(pack, ensure_ascii=False, indent=2))
+        written.append(fn)
+    return written
+
+
+import re
+
+
 def main():
     company_root = Path(__file__).parent.parent
 
@@ -394,6 +551,13 @@ def main():
     print(f"Wisdom package generated: {output_path}")
     print(f"Size: {wisdom_kb:.2f} KB")
     print(f"Latest link: {latest_path}")
+
+    # AMENDMENT-010 §6.2: also generate per-role 11-category boot packs (v2)
+    try:
+        packs = generate_boot_packages_v2(company_root, session_id, session_start)
+        print(f"[v2] boot packages generated: {len(packs)} roles -> memory/boot_packages/")
+    except Exception as e:
+        print(f"[warn] boot_packages v2 generation failed: {e}", file=sys.stderr)
 
     return 0
 

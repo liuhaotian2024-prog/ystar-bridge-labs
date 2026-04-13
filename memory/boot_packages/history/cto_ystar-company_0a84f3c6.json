@@ -1,0 +1,207 @@
+{
+  "pack_meta": {
+    "role": "cto",
+    "session_id": "ystar-company_0a84f3c6",
+    "generated_at": 1776047602,
+    "generator": "session_wisdom_extractor.py v2 (AMENDMENT-010)",
+    "schema_version": "0.1"
+  },
+  "category_1_identity_dna": {
+    "active_agent_marker_path": ".ystar_active_agent",
+    "note": "Identity DNA loaded from AGENTS.md + team_dna.md via session_boot_yml.py"
+  },
+  "category_2_constitutional_charter": {
+    "note": "Charter loaded from governance/BOARD_CHARTER_AMENDMENTS.md + INTERNAL_GOVERNANCE.md"
+  },
+  "category_3_role_mandate": {
+    "role": "cto",
+    "knowledge_dir": "knowledge/cto/role_definition/"
+  },
+  "category_4_process_frameworks": {
+    "note": "methodology_v1.md + strategy_frameworks.md + decision_making.md"
+  },
+  "category_5_skills": {
+    "skills_dir": "knowledge/cto/skills/",
+    "skills_registered": []
+  },
+  "category_6_current_state": {
+    "priority_brief_snippet": "# CEO Priority Brief\n\n**Author**: CEO (Aiden / 承远) — 亲笔，非脚本 dump\n**Last updated**: 2026-04-12 夜 (v0.3 — CEO 自主 session：Ryan 实装路径确认受阻于 hook，等 Board shell override)\n**Version**: v0.3\n**Next-boot FIRST read**: 本文件覆盖 `session_handoff.md` / `DISPATCH.md` / `BOARD_PENDING.md` 的任何矛盾\n**Stale threshold**: 超过 48h 未更新 → boot FAIL，不允许自主启动\n\n---\n\n## 1. 当前 Labs 阶段\n\n**阶段名：创立公司内部完善期（Internal Consolidation）**\n\n判断依据：\n- 治理基础设施 3 处根基问题未修（CIEU persistence / delegation chain / circuit breaker）\n- 4 份 amendment 等 Board 批（005/006/007/008）\n- Continuity Guardian v1 漏扫 70% 产出，EXP-6 红队 No-Go\n- Agent 身份锁、active_agent 隔离机制还在撞墙\n- 2 条新硬约束（always_running / article_11）刚立，尚未完全代码 enforce\n\n**对外发布（PyPI / Show HN / Y*Defuse 30天战役）不是当前战略主轴**。Y*Defuse Day 3 MVP 72/72 绿只是一个工程 checkpoint，**不要被 DISPATCH.md 里 30天战役的倒计时主导优先级判断**。\n\n---\n\n## 2. Top-5 真实优先级（按因果）\n\n### P0-1 治理基础设施 3 大根基（\"沙上楼阁\"风险）\n1. **CIEU persistence 断裂** — `gov_doctor L1.02` 报 `in_memory_only`，events 重启归零。派 Maya 诊断 + Leo 切 SQLite persistent store。\n2. **Delegation chain INVALID 3 issues** — MCP grant 与 Hook enforcement 两个 plane 不对话，chain 越权扩展。派 Ryan chain reset + Leo 审 grant 逻辑。\n3. **Circuit Breaker ARMED 821 violations** — pulse 停 = OmissionEngine 死。派 Maya dump violation log，系统性问题留 Board 起床决策。\n\n### P0-2a GitHub-first boot snapshot（Board 2026-04-13 提出）\n**缺口**：boot 协议 0 只读本地（handoff/DISPATCH/BOARD_PENDING），不查 GitHub `liuhaotian2024-prog/ystar-bridge-labs`。GitHub commit history 是 truth source（如 `545f600` 2026-04-12 checkpoint）。新增 boot STEP -1：`git fetch + git log origin/main -10 + gh issue list + gh pr list`，drift 校验 priority_brief §3 DEPRECATED 与最近 commit 一致性。详见 AMENDMENT-009 §2.1a。\n\n### P0-2 Continuity / 身份锁阻塞（重启机制自身完整性）\n4. **active_agent 身份锁 escape hatch** — secretary 写锁撞 5+ 次。AMENDMENT-009 需显式 Board shell override。\n5. **wisdom_extractor 扩读** — 加 `reports/experiments/` + `knowledge/{role}/feedback|decisions|lessons|theory/` + `git diff` + `reports/proposals/`（EXP-6 红队修订）。派 eng-platform（需 Board shell 切岗位）。\n6. **priority_brief 机制落地** — boot/close 双向 enforce，取代 DISPATCH.md 第一读物。\n\n### P0-3 Session 开头硬",
+    "continuation": {
+      "generated_at": "2026-04-12T21:47:55",
+      "generated_by": "ceo",
+      "campaign": {
+        "name": "Y*Defuse 30天战役",
+        "day": 3,
+        "start_date": "",
+        "target": "10K users + 20K stars"
+      },
+      "team_state": {
+        "cto": {
+          "task": "Build ystar-defuse MVP - AI bomb disposal product that defuses delayed injection",
+          "progress": "in_progress",
+          "blocked": false
+        },
+        "cmo": {
+          "task": "Autonomous Mission: build video content strategy",
+          "progress": "completed",
+          "blocked": false
+        }
+      },
+      "action_queue": [
+        {
+          "seq": 1,
+          "action": "check_delivery",
+          "agent": "cto",
+          "command": "cat /Users/haotianliu/.openclaw/workspace/ystar-company/knowledge/cto/active_task.json",
+          "success_criteria": "task in_progress, not blocked",
+          "on_fail": "dispatch to CTO as P0"
+        },
+        {
+          "seq": 2,
+          "action": "review_dispatch",
+          "agent": "ceo",
+          "command": "head -40 /Users/haotianliu/.openclaw/workspace/ystar-company/DISPATCH.md",
+          "success_criteria": "18 items tracked",
+          "on_fail": "update DISPATCH.md"
+        }
+      ],
+      "anti_patterns": [
+        "report_plumbing_to_board",
+        "ask_board_approval_for_decided_items",
+        "list_choices_instead_of_deciding"
+      ],
+      "obligations": [
+        {
+          "content": "[持续] 全员日常workflow已写入配置（checklist底线+事件驱动上不封顶）。CTO需实现为代码enforcement。每日mission report cron已装。",
+          "created_at": 1775935489.52315
+        },
+        {
+          "content": "[P0战略任务] ystar-defuse上线：10K用户+20K stars一个月。已走第十一条认知建构7层。Day3 pip install→Day7 Show HN。全员自主，Board不参与具体执行。每日任务报告(cron 21:57)。",
+          "created_at": 1775935489.523146
+        },
+        {
+          "content": "[P0] behavior rules 10条全部代码实现+CIEU审计证据——Board要看到CIEU证据证明全部在运行。当前39/39测试通过但有回归风险。",
+          "created_at": 1775935489.5231419
+        },
+        {
+          "content": "[P0战略任务] ystar-defuse上线：10,000用户+20,000 GitHub stars一个月内达成（下限非天花板）。CEO全权指挥，Board不参与。全员自主，目标导向。Day 3 pip install可用→Day 7 Show HN→Day 30目标达成。",
+          "created_at": 1775931989.649514
+        },
+        {
+          "content": "[P0] 系统crontab需Board手动安装：ystar_wakeup.sh learning (每3h) + morning_report (每日8:47)。脚本已创建。",
+          "created_at": 1775871363.967642
+        },
+        {
+          "content": "[P0] Agent文件需改name字段为Name-Role格式 + 写入认知偏好。需Samantha执行（immutable override已配置）。",
+          "created_at": 1775871363.967639
+        },
+        {
+          "content": "[P2] prefill.py Part A trailing dot edge case",
+          "created_at": 1775862185.982465
+        },
+        {
+          "content": "[P2] gov-mcp PyPI package (then replace dual-copy)",
+          "created_at": 1775862185.980212
+        },
+        {
+          "content": "[P2] OmissionEngine proactive scan (3min/idle trigger)",
+          "created_at": 1775862185.977925
+        },
+        {
+          "content": "[P1] Digital CTO resident engineer (Tier 1)",
+          "created_at": 1775862185.975862
+        },
+        {
+          "content": "[P1] arXiv paper body",
+          "created_at": 1775862185.973644
+        },
+        {
+          "content": "[P1] Show HN (new, for gov-mcp)",
+          "created_at": 1775862185.97179
+        },
+        {
+          "content": "[P0] MCP server restart (pick up delegation enforcement + chain_reset)",
+          "created_at": 1775862185.969527
+        },
+        {
+          "content": "[P0] PyPI 0.49.0 release",
+          "created_at": 1775862185.967629
+        },
+        {
+          "content": "[P0] gov-mcp concurrency stress test",
+          "created_at": 1775862185.965337
+        }
+      ]
+    },
+    "open_obligations": [
+      "[持续] 全员日常workflow已写入配置（checklist底线+事件驱动上不封顶）。CTO需实现为代码enforcement。每日mission report cron已装。",
+      "[P0战略任务] ystar-defuse上线：10K用户+20K stars一个月。已走第十一条认知建构7层。Day3 pip install→Day7 Show HN。全员自主，Board不参与具体执行。每日任务报告(cron 21:57)。",
+      "[P0] behavior rules 10条全部代码实现+CIEU审计证据——Board要看到CIEU证据证明全部在运行。当前39/39测试通过但有回归风险。",
+      "[P0战略任务] ystar-defuse上线：10,000用户+20,000 GitHub stars一个月内达成（下限非天花板）。CEO全权指挥，Board不参与。全员自主，目标导向。Day 3 pip install可用→Day 7 Show HN→Day 30目标达成。",
+      "[P0] 系统crontab需Board手动安装：ystar_wakeup.sh learning (每3h) + morning_report (每日8:47)。脚本已创建。",
+      "[P0] Agent文件需改name字段为Name-Role格式 + 写入认知偏好。需Samantha执行（immutable override已配置）。",
+      "[P2] prefill.py Part A trailing dot edge case",
+      "[P2] gov-mcp PyPI package (then replace dual-copy)",
+      "[P2] OmissionEngine proactive scan (3min/idle trigger)",
+      "[P1] Digital CTO resident engineer (Tier 1)"
+    ]
+  },
+  "category_7_historical_truth": {
+    "git_diff_stat": " BOARD_PENDING.md                                   | 122 ++++\n DIRECTIVE_TRACKER.md                               |  25 +\n governance/CONTINUITY_PROTOCOL.md                  | 376 ++++++++++\n knowledge/ceo/board_decisions_log.md               |  22 +\n knowledge/ceo/continuation_v2_spec.md              | 103 +++\n .../bhag_framing_organizational_agi_as_mission.md  |  73 ++\n .../ceo/decisions/board_approval_log_2026_04_12.md | 136 ++++\n .../pricing_premature_no_external_disclosure.md    |  30 +\n knowledge/ceo/feedback/always_running_no_rest.md   |  74 ++\n knowledge/ceo/feedback/article_11_always_apply.md  |  91 +++\n .../no_human_time_dimension_in_agent_frameworks.md |  60 ++\n .../permission_self_classify_before_escalation.md  |  33 +\n .../skill_document_standard_from_hermes.md         |  85 +++\n knowledge/ceo/gaps/gemma_sessions.log              |  17 +\n .../gaps/p3_feedback_data_migration_1775937437.md  |  21 +\n ...feedback_performance_optimization_1775937437.md |  21 +\n ..._feedback_stakeholder_negotiation_1776037596.md |  21 +\n .../p3_feedback_system_integration_1776037596.md   |  21 +\n knowledge/ceo/gaps/p3_meta_1775937437.md           |  23 +\n knowledge/ceo/gaps/p3_meta_1776021829.md           |  24 +\n knowledge/ceo/gaps/p3_meta_1776037596.md           |  22 +\n knowledge/ceo/gaps/simulation_1775937437.md        |  31 +\n knowledge/ceo/gaps/simulation_1776021829.md        |  30 +\n knowledge/ceo/gaps/simulation_1776037596.md        |  30 +\n knowledge/ceo/lesson_session_amnesia.md            |  31 +\n knowledge/ceo/lessons/auto_codify_lessons.md       |  43 ++\n .../lessons/auto_codify_violations_2026_04_12.md   |  90 +++\n ...memory_vs_ystar_governance_boundary_conflict.md |  51 ++\n .../ceo/lessons/hard_constraint_completeness.md    |  29 +\n knowledge/ceo/role_definition/task_type_map.md     |  30 +\n knowledge/ceo/theory/agent_cult_immunity.md        |  70 ++\n .../ceo/theory/controversy_over_invisibility.md    | 139 ++++\n knowledge/ceo/theory/data_migration.md             |  37 +\n knowledge/ceo/theory/designer_user_",
+    "recent_cieu": [
+      "[22:33] external_observation (allow): Bash",
+      "[22:33] cmd_exec (allow): ",
+      "[22:33] external_observation (allow): Bash",
+      "[22:33] cmd_exec (allow): ",
+      "[22:33] SKILL_LIFECYCLE_SCAN (info): "
+    ]
+  },
+  "category_8_anti_patterns": {
+    "feedback": [],
+    "decisions": [],
+    "lessons": [],
+    "theory": [
+      "compliance_audit.md: # Theory: compliance_audit",
+      "system_architecture_design.md: # CTO Theory: 系统架构设计 (System Architecture Design)",
+      "system_integration.md: # Theory: system_integration",
+      "technology_selection.md: # CTO Theory: 技术选型 (Technology Selection)",
+      "testing_strategy.md: # CTO Theory: 测试策略 (Testing Strategy)"
+    ],
+    "dead_paths": [
+      "premature_mvp_external_launch.md: # Dead Path: 把 MVP 测试绿 = 战略主轴达标"
+    ],
+    "cases": [
+      "README.md: # CTO (Ethan Wright) — cases/"
+    ],
+    "gaps": [
+      "simulation_1775915726.md: # Counterfactual Simulation",
+      "simulation_1775946228.md: # Counterfactual Simulation",
+      "simulation_1775946776.md: # Counterfactual Simulation",
+      "simulation_1776032627.md: # Counterfactual Simulation",
+      "simulation_1776037504.md: # Counterfactual Simulation"
+    ]
+  },
+  "category_9_relationship_map": {
+    "board_mental_model_path": "knowledge/cto/board_mental_model.md"
+  },
+  "category_10_external_commitments": {
+    "log_path": "knowledge/cso/external_commitments_log.md"
+  },
+  "category_11_next_session_action_queue": [],
+  "_inputs": {
+    "experiments_verdicts": [
+      "exp3_mission_prompt_brief.md: CEO 收到两份后做 side-by-side 对比，写 **EXP-3 verdict 报告** 到 `reports/experiments/exp3_verdict.md`，含：",
+      "exp3_triage_A.md: ### Per-file verdict",
+      "exp3_verdict.md: # EXP-3 Verdict — Mission-Prompt 效应",
+      "exp4_cult_risk_brief.md: 3. **评估**这两份文案发布的准备度，并给出 GO/NO-GO 建议\"",
+      "exp4_verdict.md: # EXP-4 Verdict — Cult-Risk Test"
+    ],
+    "proposals_summary": [
+      "rfc_goal_drift_detection.md: [?] # RFC: GoalDrift接入hook.py",
+      "rfc_nonce_ledger.md: [?] ﻿# RFC: NonceLedger接入DelegationChain",
+      "rfc_skill_provenance.md: [?] ﻿# RFC: SkillProvenance接入hook.py",
+      "rfc_three_layer_architecture.md: [?] # RFC-2026-005",
+      "sofia_whitepaper_v1_brief.md: [?] # 派活: Sofia — gov-mcp 产品白皮书 v1"
+    ]
+  }
+}

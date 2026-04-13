@@ -25,6 +25,71 @@ if YSTAR_GOV_PATH.exists():
 from ystar.memory import MemoryStore, Memory
 
 
+def update_priority_brief(company_root: Path, session_start_ts: float):
+    """AMENDMENT-009 §2.3: check priority_brief.md freshness at session close.
+
+    - If missing → generate stub with {{TODO}} markers; warn CEO must fill
+    - If mtime < session_start_ts → warn CEO did not update this session
+    - Emit PRIORITY_BRIEF_CHECK CIEU event and set .ystar_session_flags
+    """
+    brief = company_root / "reports" / "priority_brief.md"
+    flags_path = company_root / ".ystar_session_flags"
+    stub = """---
+version: stub
+status: _stub_unfilled_
+---
+# CEO Priority Brief (STUB — must be filled by CEO before next boot)
+
+## 1. 当前 Labs 阶段
+{{TODO}}
+
+## 2. Top-5 真实优先级
+### P0-1 {{TODO}}
+
+## 3. DEPRECATED 清单
+{{TODO}}
+
+## 4. 下次 boot 不要做什么
+{{TODO}}
+
+## 5. Board shell 解锁清单
+{{TODO}}
+
+## 6. 本 brief 的 enforce 规则
+见 AMENDMENT-009。
+"""
+    decision = "allow"
+    if not brief.exists():
+        brief.parent.mkdir(parents=True, exist_ok=True)
+        brief.write_text(stub)
+        print(f"[WARN] priority_brief.md missing — generated stub at {brief}", file=sys.stderr)
+        with open(flags_path, "a") as f:
+            f.write("PRIORITY_BRIEF_STALE=1\n")
+        decision = "warn"
+    else:
+        mtime = brief.stat().st_mtime
+        if mtime < session_start_ts:
+            print(f"[WARN] priority_brief.md not updated this session (mtime={mtime} < session_start={session_start_ts})", file=sys.stderr)
+            with open(flags_path, "a") as f:
+                f.write("PRIORITY_BRIEF_STALE=1\n")
+            decision = "warn"
+
+    try:
+        sys.path.insert(0, str(YSTAR_GOV_PATH))
+        from ystar.adapters.cieu_writer import _write_session_lifecycle
+        sess_cfg_path = company_root / ".ystar_session.json"
+        sid = "unknown"
+        if sess_cfg_path.exists():
+            sid = json.loads(sess_cfg_path.read_text()).get("session_id", "unknown")
+        _write_session_lifecycle(
+            "PRIORITY_BRIEF_CHECK", "ceo", sid,
+            str(company_root / ".ystar_cieu.db"),
+            {"decision": decision, "brief_exists": brief.exists()},
+        )
+    except Exception as e:
+        print(f"[warn] PRIORITY_BRIEF_CHECK CIEU emit failed: {e}", file=sys.stderr)
+
+
 def generate_continuation(company_root: Path, agent_id: str, db_path: Path):
     """Generate memory/continuation.json — machine-readable structured state.
 
@@ -365,6 +430,23 @@ def main():
         print("[ok] session_close CIEU event emitted")
     except Exception as e:
         print(f"[warn] session_close emit failed: {e}", file=sys.stderr)
+
+    # AMENDMENT-009 §2.3: update_priority_brief check
+    try:
+        update_priority_brief(company_root, session_start)
+    except Exception as e:
+        print(f"[warn] update_priority_brief failed: {e}", file=sys.stderr)
+
+    # AMENDMENT-010 §4 S-3: trigger secretary_curate pipeline (skeleton)
+    try:
+        curate_script = company_root / "scripts" / "secretary_curate.py"
+        if curate_script.exists():
+            import subprocess
+            subprocess.run([sys.executable, str(curate_script), "--trigger", "session_close", "--agent", agent_id],
+                           timeout=60, capture_output=True)
+            print("[ok] secretary_curate triggered (skeleton — 13-step pipeline not yet implemented)")
+    except Exception as e:
+        print(f"[warn] secretary_curate trigger failed: {e}", file=sys.stderr)
 
     # NEW: active_agent home state cleanup (方案 C)
     try:

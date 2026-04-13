@@ -19,7 +19,9 @@
   "immutable_paths": {
     "patterns": [
       "AGENTS.md",
-      ".claude/agents/"
+      ".claude/agents/",
+      "CLAUDE.md",
+      "knowledge/secretary/role_definition/"
     ],
     "override_roles": [
       "secretary"
@@ -279,7 +281,10 @@
       "./products/",
       "./docs/",
       "./.github/",
-      "./CHANGELOG.md"
+      "./CHANGELOG.md",
+      "/Users/haotianliu/.openclaw/workspace/Y-star-gov/",
+      "./scripts/",
+      "./CLAUDE.md"
     ],
     "cmo": [
       "./content/",
@@ -308,6 +313,31 @@
     ],
     "memory/session_handoff.md": [
       "ceo"
+    ],
+    ".ystar_active_agent": [
+      "secretary"
+    ],
+    ".ystar_session.json": [
+      "secretary"
+    ],
+    "AGENTS.md": [
+      "secretary"
+    ],
+    ".claude/agents/": [
+      "secretary"
+    ],
+    "reports/priority_brief.md": [
+      "ceo",
+      "secretary"
+    ],
+    "memory/boot_packages/": [
+      "secretary"
+    ],
+    "memory/boot_packages/history/": [
+      "secretary"
+    ],
+    "governance/SECRETARY_CHARTER.md": [
+      "secretary"
     ]
   },
   "ceo_deny_paths": [
@@ -553,7 +583,12 @@
         "enabled": true,
         "description": "任务完成前必须自审CIEU记录：对比目标要求vs实际交付，差距=0才能报告完成。差距不为0就继续做，不能说完成。",
         "check": "自查清单：1.任务要求了几件事？2.CIEU里有几件的完成记录？3.数量是否一致？4.质量是否达标（测试全过）？全部是→完成。任何一个否→继续。"
-      }
+      },
+      "directive_decompose_within_minutes": 10,
+      "must_dispatch_via_cto": true,
+      "autonomous_mission_requires_article_11": true,
+      "session_close_required": true,
+      "no_choice_questions": true
     },
     "cto": {
       "root_cause_fix_required": true,
@@ -599,7 +634,9 @@
         "enabled": true,
         "description": "任务完成前必须自审CIEU记录：对比目标要求vs实际交付，差距=0才能报告完成。差距不为0就继续做，不能说完成。",
         "check": "自查清单：1.任务要求了几件事？2.CIEU里有几件的完成记录？3.数量是否一致？4.质量是否达标（测试全过）？全部是→完成。任何一个否→继续。"
-      }
+      },
+      "pre_commit_requires_test": true,
+      "source_first_fixes": true
     },
     "cmo": {
       "root_cause_fix_required": true,
@@ -639,7 +676,9 @@
         "enabled": true,
         "description": "任务完成前必须自审CIEU记录：对比目标要求vs实际交付，差距=0才能报告完成。差距不为0就继续做，不能说完成。",
         "check": "自查清单：1.任务要求了几件事？2.CIEU里有几件的完成记录？3.数量是否一致？4.质量是否达标（测试全过）？全部是→完成。任何一个否→继续。"
-      }
+      },
+      "content_length_check": true,
+      "board_approval_before_publish": true
     },
     "cfo": {
       "root_cause_fix_required": true,
@@ -679,7 +718,9 @@
         "enabled": true,
         "description": "任务完成前必须自审CIEU记录：对比目标要求vs实际交付，差距=0才能报告完成。差距不为0就继续做，不能说完成。",
         "check": "自查清单：1.任务要求了几件事？2.CIEU里有几件的完成记录？3.数量是否一致？4.质量是否达标（测试全过）？全部是→完成。任何一个否→继续。"
-      }
+      },
+      "real_conversation_count_required": true,
+      "board_approval_before_publish": true
     },
     "secretary": {
       "root_cause_fix_required": true,
@@ -719,7 +760,9 @@
         "enabled": true,
         "description": "任务完成前必须自审CIEU记录：对比目标要求vs实际交付，差距=0才能报告完成。差距不为0就继续做，不能说完成。",
         "check": "自查清单：1.任务要求了几件事？2.CIEU里有几件的完成记录？3.数量是否一致？4.质量是否达标（测试全过）？全部是→完成。任何一个否→继续。"
-      }
+      },
+      "pre_commit_requires_test": true,
+      "source_first_fixes": true
     },
     "eng-platform": {
       "document_requires_execution_plan": true,
@@ -739,7 +782,9 @@
         "enabled": true,
         "description": "任务完成前必须自审CIEU记录：对比目标要求vs实际交付，差距=0才能报告完成。差距不为0就继续做，不能说完成。",
         "check": "自查清单：1.任务要求了几件事？2.CIEU里有几件的完成记录？3.数量是否一致？4.质量是否达标（测试全过）？全部是→完成。任何一个否→继续。"
-      }
+      },
+      "pre_commit_requires_test": true,
+      "source_first_fixes": true
     },
     "eng-governance": {
       "document_requires_execution_plan": true,
@@ -759,7 +804,9 @@
         "enabled": true,
         "description": "任务完成前必须自审CIEU记录：对比目标要求vs实际交付，差距=0才能报告完成。差距不为0就继续做，不能说完成。",
         "check": "自查清单：1.任务要求了几件事？2.CIEU里有几件的完成记录？3.数量是否一致？4.质量是否达标（测试全过）？全部是→完成。任何一个否→继续。"
-      }
+      },
+      "pre_commit_requires_test": true,
+      "source_first_fixes": true
     },
     "eng-domains": {
       "document_requires_execution_plan": true,
@@ -779,7 +826,9 @@
         "enabled": true,
         "description": "任务完成前必须自审CIEU记录：对比目标要求vs实际交付，差距=0才能报告完成。差距不为0就继续做，不能说完成。",
         "check": "自查清单：1.任务要求了几件事？2.CIEU里有几件的完成记录？3.数量是否一致？4.质量是否达标（测试全过）？全部是→完成。任何一个否→继续。"
-      }
+      },
+      "pre_commit_requires_test": true,
+      "source_first_fixes": true
     }
   },
   "daily_workflows": {
@@ -1020,5 +1069,272 @@
         ]
       }
     }
-  }
+  },
+  "task_type_symbols": {
+    "autonomous_mission": {
+      "required": [
+        "L0-MEANING",
+        "L1-GOALS",
+        "L2-HYPOTHESES",
+        "L3-THEORY",
+        "L4-BENCHMARK",
+        "L5-RELEVANCE",
+        "L6-CASES",
+        "L7-CAPABILITY"
+      ],
+      "enforce": "DENY_EXECUTION_WITHOUT_ALL",
+      "description": "第十一条自主任务方法论7层认知建构"
+    },
+    "bug_fix": {
+      "required": [
+        "ROOT-CAUSE-IDENTIFIED",
+        "TEST-WRITTEN",
+        "FIX-VERIFIED"
+      ],
+      "enforce": "DENY_COMMIT_WITHOUT_ALL",
+      "description": "bug修复三步验证"
+    },
+    "content_publish": {
+      "required": [
+        "FACT-CHECKED",
+        "ETHICS-REVIEWED",
+        "BOARD-APPROVED"
+      ],
+      "enforce": "DENY_PUBLISH_WITHOUT_ALL",
+      "description": "内容发布三重检查"
+    },
+    "learning_session": {
+      "required": [
+        "THEORY-SELECTED",
+        "THEORY-STUDIED",
+        "PRACTICE-APPLIED",
+        "REFLECTION-DONE",
+        "KNOWLEDGE-WRITTEN",
+        "GAP-IDENTIFIED"
+      ],
+      "enforce": "DENY_CLAIM_LEARNING_WITHOUT_ALL",
+      "description": "第九条学习协议6步"
+    }
+  },
+  "boot_contract": {
+    "_comment": "AMENDMENT-010 section 5 — 11-category boot injection. enforcement_enabled=false until Leo delivers MCP tools (gov_article11_pass etc) and CEO signs off on transition.",
+    "schema_version": "0.1",
+    "enforcement_enabled": false,
+    "required_categories_loaded": 11,
+    "category_schemas": {
+      "1_identity_dna": {
+        "sources": [
+          "AGENTS.md",
+          "knowledge/*/team_dna.md",
+          ".claude/agents/*.md",
+          "SOUL.md",
+          "IDENTITY.md"
+        ],
+        "mutability": "immutable",
+        "stale_hours": null
+      },
+      "2_constitutional_charter": {
+        "sources": [
+          "governance/BOARD_CHARTER_AMENDMENTS.md",
+          "governance/INTERNAL_GOVERNANCE.md",
+          "governance/ETHICS.md",
+          "governance/CONTINUITY_PROTOCOL.md"
+        ],
+        "mutability": "immutable",
+        "stale_hours": null
+      },
+      "3_role_mandate": {
+        "sources": [
+          "knowledge/{role}/role_definition/",
+          ".claude/agents/{role}.md"
+        ],
+        "mutability": "semi-immutable",
+        "stale_hours": null
+      },
+      "4_process_frameworks": {
+        "sources": [
+          "knowledge/ceo/methodology_v1.md",
+          "knowledge/ceo/strategy_frameworks.md",
+          "knowledge/ceo/decision_making.md"
+        ],
+        "mutability": "mutable",
+        "stale_hours": null
+      },
+      "5_skills": {
+        "sources": [
+          "knowledge/{role}/skills/"
+        ],
+        "format": "hermes_4_section",
+        "mutability": "mutable",
+        "lifecycle": {
+          "cold": 5,
+          "archive": 10
+        }
+      },
+      "6_current_state": {
+        "sources": [
+          "reports/priority_brief.md",
+          "DISPATCH.md",
+          "BOARD_PENDING.md",
+          "OKR.md",
+          "HEARTBEAT.md"
+        ],
+        "mutability": "high",
+        "stale_hours": 48
+      },
+      "7_historical_truth": {
+        "sources": [
+          "git:origin/main",
+          "gh:issues",
+          "gh:prs",
+          "cieu:24h",
+          "knowledge/{role}/decisions/"
+        ],
+        "mutability": "append_only"
+      },
+      "8_anti_patterns": {
+        "sources": [
+          "knowledge/{role}/cases/",
+          "knowledge/{role}/gaps/",
+          "knowledge/{role}/lessons/",
+          "knowledge/{role}/feedback/",
+          "knowledge/{role}/theory/",
+          "knowledge/{role}/dead_paths/"
+        ],
+        "mutability": "append_only"
+      },
+      "9_relationship_map": {
+        "sources": [
+          "knowledge/*/team_dna.md#2",
+          "knowledge/{role}/board_mental_model.md"
+        ],
+        "mutability": "mutable"
+      },
+      "10_external_commitments": {
+        "sources": [
+          "content/",
+          "knowledge/cso/external_commitments_log.md"
+        ],
+        "mutability": "append_only"
+      },
+      "11_action_queue": {
+        "sources": [
+          "memory/boot_packages/{role}_action_queue.json"
+        ],
+        "format": "json_machine_readable",
+        "mutability": "rewrite",
+        "stale_hours": 48
+      }
+    },
+    "mandatory_gates_order": [
+      {
+        "seq": -1,
+        "gate": "github_snapshot",
+        "fail_mode": "WARN_IF_OFFLINE",
+        "action": "git fetch + git log origin/main -10 + gh issue list + gh pr list"
+      },
+      {
+        "seq": 0,
+        "gate": "priority_brief_loaded",
+        "fail_mode": "FAIL",
+        "checks": [
+          "exists",
+          "age_hours<48",
+          "no_{{TODO}}"
+        ]
+      },
+      {
+        "seq": 1,
+        "gate": "identity_dna_loaded",
+        "fail_mode": "FAIL"
+      },
+      {
+        "seq": 2,
+        "gate": "constitutional_charter_loaded",
+        "fail_mode": "FAIL"
+      },
+      {
+        "seq": 3,
+        "gate": "role_mandate_loaded",
+        "fail_mode": "FAIL",
+        "args_from": "active_agent"
+      },
+      {
+        "seq": 4,
+        "gate": "boot_package_per_role_loaded",
+        "fail_mode": "WARN",
+        "args_from": "active_agent",
+        "path": "memory/boot_packages/{role}.json",
+        "_note": "WARN until Secretary S-2 generates all 9 role packs"
+      },
+      {
+        "seq": 5,
+        "gate": "article_11_pre_response",
+        "fail_mode": "WARN",
+        "mcp": "gov_article11_pass",
+        "_note": "WARN until Leo delivers gov_article11_pass MCP tool"
+      },
+      {
+        "seq": 6,
+        "gate": "action_queue_parsed",
+        "fail_mode": "WARN",
+        "path": "memory/boot_packages/{role}_action_queue.json"
+      },
+      {
+        "seq": 7,
+        "gate": "persona_assertion_emitted",
+        "fail_mode": "WARN",
+        "checks": [
+          "first_response_contains: [agent_name, phase, first_action]"
+        ]
+      }
+    ],
+    "on_any_fail": "BLOCK_ALL_TOOLS_UNTIL_RECOVERED",
+    "on_fail_current": "LOG_ONLY_UNTIL_ENFORCEMENT_ENABLED",
+    "a1_two_state_enforcement": {
+      "_comment": "Pre-response scan for rest/tonight/tomorrow vocab; A1 two-state hardening",
+      "forbidden_vocab_pre_response_scan": [
+        "今晚",
+        "明早",
+        "明天",
+        "收工",
+        "休息",
+        "今天晚上",
+        "tonight",
+        "tomorrow morning",
+        "call it a day",
+        "明天再说"
+      ],
+      "exempt_tag": "<literal-time-reference>",
+      "action_on_match": "DENY_RESPONSE_REQUIRE_REWRITE",
+      "emit_cieu": "A1_VIOLATION_PREVENTED",
+      "enforcement_enabled": false
+    },
+    "article_11_enforcement": {
+      "_comment": "Pre-tool-call check: substantive decisions must be preceded by ARTICLE_11_PASS CIEU within 60s",
+      "trigger": "substantive_response_len_gt_200_chars OR keywords_match",
+      "required_within_60s": "CIEU event_type=ARTICLE_11_PASS with 7 non-empty layers (each >=20 chars)",
+      "action_on_missing": "SOFT_WARN_3_TIMES_THEN_DENY_NEXT_RESPONSE",
+      "enforcement_enabled": false
+    },
+    "rapid_enforcement": {
+      "trigger": "cross_role_dispatch",
+      "required": "RAPID_ASSIGNMENT emitted with R/A/P/I/D fields non-empty",
+      "mcp": "gov_rapid_assign",
+      "enforcement_enabled": false
+    },
+    "sixpager_enforcement": {
+      "trigger": "dispatch_brief_to_engineer",
+      "required": "6pager_v2_validate pass (8 sections present)",
+      "mcp": "gov_6pager_validate",
+      "enforcement_enabled": false
+    },
+    "_transition_plan": {
+      "phase_1_skeleton": "2026-04-13 — eng-platform lands block + scripts + skeletons (THIS COMMIT)",
+      "phase_2_mcp": "Leo-Kernel delivers 7 MCP tools (seq 9 of boot pack)",
+      "phase_3_enable": "CEO flips enforcement_enabled=true per sub-block after verification",
+      "phase_4_red_team": "EXP-7 red team run against enforced chain"
+    }
+  },
+  "memory_db": ".ystar_memory.db"
 }

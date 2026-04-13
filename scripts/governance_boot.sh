@@ -27,6 +27,49 @@ echo "Mode: $([ "$VERIFY_ONLY" = true ] && echo 'VERIFY-ONLY' || echo 'FULL BOOT
 echo "Time: $(date)"
 
 FAILURES=0
+WARNINGS=0
+
+# STEP -1: GitHub-first snapshot (AMENDMENT-009 §2.1a) — soft, never FAIL
+if [ "$VERIFY_ONLY" = false ]; then
+  echo "[-1/7] GitHub snapshot:"
+  if command -v git >/dev/null 2>&1 && [ -d "$YSTAR_DIR/.git" ]; then
+    (cd "$YSTAR_DIR" && git fetch origin --quiet 2>/dev/null)
+    AHEAD=$(cd "$YSTAR_DIR" && git rev-list --count origin/main..HEAD 2>/dev/null || echo "?")
+    BEHIND=$(cd "$YSTAR_DIR" && git rev-list --count HEAD..origin/main 2>/dev/null || echo "?")
+    echo "  local vs origin/main: ahead=$AHEAD behind=$BEHIND"
+    echo "  recent 5 commits on origin/main:"
+    (cd "$YSTAR_DIR" && git log origin/main -5 --oneline 2>/dev/null | sed 's/^/    /')
+    if command -v gh >/dev/null 2>&1; then
+      OPEN_ISSUES=$(gh issue list --limit 3 --json number,title 2>/dev/null | python3 -c "import sys,json; d=json.load(sys.stdin); print('\n'.join(f'    #{x[\"number\"]} {x[\"title\"]}' for x in d))" 2>/dev/null)
+      if [ -n "$OPEN_ISSUES" ]; then echo "  open issues (top 3):"; echo "$OPEN_ISSUES"; fi
+    fi
+  else
+    echo "  SKIPPED (no git or not a repo)"
+    WARNINGS=$((WARNINGS+1))
+  fi
+else
+  echo "[-1/7] GitHub snapshot: SKIPPED (verify-only)"
+fi
+
+# STEP 0: Priority Brief (AMENDMENT-009 §2.2) — FAIL if missing/stale/stub
+BRIEF="$YSTAR_DIR/reports/priority_brief.md"
+if [ ! -f "$BRIEF" ]; then
+  echo "[0/7] PRIORITY BRIEF: MISSING — boot FAIL (AMENDMENT-009)"
+  FAILURES=$((FAILURES+1))
+else
+  BRIEF_MTIME=$(stat -f %m "$BRIEF" 2>/dev/null || stat -c %Y "$BRIEF" 2>/dev/null)
+  NOW=$(date +%s)
+  BRIEF_AGE_HOURS=$(( (NOW - BRIEF_MTIME) / 3600 ))
+  if [ "$BRIEF_AGE_HOURS" -gt 48 ]; then
+    echo "[0/7] PRIORITY BRIEF: STALE (${BRIEF_AGE_HOURS}h old, limit 48h) — boot FAIL"
+    FAILURES=$((FAILURES+1))
+  elif grep -vE '^\s*[\{\"`]|^\s*-\s+\{|```' "$BRIEF" 2>/dev/null | grep -qE "\{\{TODO\}\}|_stub_unfilled_"; then
+    echo "[0/7] PRIORITY BRIEF: STUB NOT FILLED — CEO must update — boot FAIL"
+    FAILURES=$((FAILURES+1))
+  else
+    echo "[0/7] Priority Brief: LOADED (age ${BRIEF_AGE_HOURS}h)"
+  fi
+fi
 
 # 1. 设置agent identity（Secretary授权操作）
 if [ "$VERIFY_ONLY" = false ]; then
@@ -188,6 +231,13 @@ fi
 echo ""
 if [ $FAILURES -eq 0 ]; then
   echo "=== GOVERNANCE BOOT: ALL SYSTEMS GO ==="
+  # AMENDMENT-009 §2.2: echo phase + first action from priority_brief
+  if [ -f "$BRIEF" ]; then
+    PHASE_LINE=$(grep -A1 "^## 1\. 当前 Labs 阶段" "$BRIEF" 2>/dev/null | tail -1 | sed 's/^ *//' | head -c 120)
+    FIRST_P0=$(grep -A1 "^### P0-1" "$BRIEF" 2>/dev/null | tail -1 | sed 's/^ *//' | head -c 160)
+    [ -n "$PHASE_LINE" ] && echo "当前 Labs 阶段 = ${PHASE_LINE}"
+    [ -n "$FIRST_P0" ]   && echo "今天第一要务 = ${FIRST_P0}"
+  fi
 
   # Emit session_start CIEU event (Board 2026-04-11)
   export AGENT_ID
