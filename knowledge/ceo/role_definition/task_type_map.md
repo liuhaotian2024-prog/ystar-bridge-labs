@@ -127,3 +127,12 @@
 - **Criticality**: (To be determined)
 - **Theory status**: ⬜ Pending P2 learning
 
+
+## 8. New task type (from P3 simulation)
+
+### Deployment Planning
+- **Description**: (Detected from counterfactual simulation)
+- **Frequency**: (To be determined)
+- **Criticality**: (To be determined)
+- **Theory status**: ⬜ Pending P2 learning
+

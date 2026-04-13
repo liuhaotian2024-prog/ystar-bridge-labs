@@ -396,6 +396,50 @@ python3.11 scripts/active_task.py complete --actor cto \
 
 本岗位工作行为同时受 `governance/WORKING_STYLE.md` 约束。
 
+## 记忆同步架构（2026-04-12 Board批准）
+
+**记忆中心：OpenClaw workspace（ystar-company/）**
+- 所有团队记忆（session_handoff、DIRECTIVE_TRACKER、continuation、OPERATIONS）持久化在 OpenClaw workspace
+- CTO/Ethan 在 Claude Code 运行时，每次 session boot 必须读取同步后的记忆文件
+
+### 同步机制
+
+```bash
+# 手动同步
+bash scripts/memory_sync.sh
+
+# 自动同步（每15分钟一次，由 cron job `memory-sync-openclaw-to-claude` 执行）
+# 同步目标：~/.claude/cache/memory_sync/
+# 核心产出：CTO_context.md（session_handoff + continuation 合并版）
+```
+
+### CTO Session Boot 记忆读取顺序
+
+1. `~/.claude/cache/memory_sync/CTO_context.md`（最新同步的合并记忆）
+2. `~/.claude/cache/memory_sync/latest__DIRECTIVE_TRACKER.md`（最新指令状态）
+3. `~/.claude/cache/memory_sync/latest__memory__continuation.md`（当前活跃任务）
+
+### 写入规则
+
+CTO 完成工作后，**必须**将结果写回 OpenClaw workspace（通过 `ystar exec` 或 workspace 写操作）：
+- 代码 → 写入 ystar-bridge-labs 相应目录
+- 报告 → 写入 reports/cto/
+- 状态更新 → 写入 knowledge/cto/active_task.json
+
+**永远不要把最终交付物留在 Claude Code 本地。** OpenClaw 是唯一的记忆源。
+
+### 同步文件列表（memory_sync.sh）
+
+```
+memory/session_handoff.md
+DIRECTIVE_TRACKER.md
+memory/continuation.md
+OPERATIONS.md
+knowledge/cto/active_task.json
+```
+
+---
+
 ## 库边界判断方法论（防止推错库）
 
 CTO在任何工程改动前必须先判断改动属于哪个库。

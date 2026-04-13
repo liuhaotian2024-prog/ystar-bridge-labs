@@ -110,6 +110,15 @@ All external platforms and APIs used by Y* Bridge Labs, maintained by Secretary.
 - **Channel**: @YstarBridgeLabs
 - **First used**: 2026-03-30
 
+### PyPI
+- **URL**: https://pypi.org
+- **Purpose**: Python包发布（ystar-defuse等产品）
+- **Auth**: API Token stored in `~/.gov_mcp_secrets.env` as `PYPI_API_TOKEN`
+- **Account**: Board的PyPI账号
+- **Package**: ystar-defuse (https://pypi.org/project/ystar-defuse/)
+- **First published**: 2026-04-11 (v0.1.0)
+- **Upload method**: `python3 -m twine upload -u __token__ -p $PYPI_API_TOKEN dist/*`
+
 ---
 
 *Secretary Samantha Lin — all secrets stored in `~/.gov_mcp_secrets.env` (chmod 600, never committed)*

@@ -1,4 +1,14 @@
-# DISPATCH — Y*Defuse 30天全自主战役 (2026-04-11)
+# 🛑 AMENDMENT-009 TOMBSTONE HEADER (2026-04-13)
+
+**本 DISPATCH 已 DEPRECATED**。Labs 当前为**内部完善期**，Y*Defuse 30天战役降级为"MVP 冻结 + 被动维护"——Day 3 已达标，**不冲 Day 4 PyPI，不做 Show HN**。
+
+**新 Aiden 请读 `reports/priority_brief.md`**（优先级高于本文件）。
+
+保留本文件正文仅为历史参考，DO NOT 按其倒计时派活。
+
+---
+
+# DISPATCH — Y*Defuse 30天全自主战役 (2026-04-11) [DEPRECATED 2026-04-13]
 
 **Authority**: Board直接授权，第十一条全自主
 **Master Plan**: products/ystar-defuse/LAUNCH_BATTLE_PLAN.md

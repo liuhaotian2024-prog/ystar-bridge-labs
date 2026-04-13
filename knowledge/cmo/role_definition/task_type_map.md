@@ -66,3 +66,12 @@
 - **优先级**：P2
 - **频率**：每两周
 - **理论库状态**：⬜ 未建（待本岗位按第九条第 3 层六步协议完成）
+
+## 1. New task type (from P3 simulation)
+
+### Compliance Audit
+- **Description**: (Detected from counterfactual simulation)
+- **Frequency**: (To be determined)
+- **Criticality**: (To be determined)
+- **Theory status**: ⬜ Pending P2 learning
+
