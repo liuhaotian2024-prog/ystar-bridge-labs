@@ -331,7 +331,7 @@ async def x_post(content: str, role: str, dry_run: bool = True):
         return
 
     # R2/R4 safety check
-    passed, reasons = safety_check(content, role, action='posts', require_disclosure=True)
+    passed, reasons, modified_content = safety_check(content, role, action='posts', require_disclosure=True, is_reply=False)
 
     if not passed:
         print(f"[X] Safety check FAILED for {role}: {reasons}")
@@ -343,6 +343,18 @@ async def x_post(content: str, role: str, dry_run: bool = True):
             "timestamp": datetime.now().isoformat(),
         })
         return
+
+    # Use modified content if safety check applied transformations
+    if modified_content != content:
+        print(f"[X] Content rewritten by safety check (original hash: {hash(content)}, modified hash: {hash(modified_content)})")
+        emit_cieu_event("CONTENT_REWRITTEN_BY_SAFETY", {
+            "role": role,
+            "action": "post",
+            "original_hash": hash(content),
+            "modified_hash": hash(modified_content),
+            "timestamp": datetime.now().isoformat(),
+        })
+        content = modified_content
 
     if dry_run:
         print(f"[X] DRY RUN: Would post as {role}:")
@@ -408,8 +420,8 @@ async def x_reply(post_url: str, content: str, role: str, dry_run: bool = True):
         print("[X] ERROR: Safety check module not loaded. Cannot reply.")
         return
 
-    # R2/R4 safety check
-    passed, reasons = safety_check(content, role, action='replies', require_disclosure=True)
+    # R2/R4 safety check (with R1.5 hostile reply detection)
+    passed, reasons, modified_content = safety_check(content, role, action='replies', require_disclosure=True, is_reply=True)
 
     if not passed:
         print(f"[X] Safety check FAILED for {role}: {reasons}")
@@ -422,6 +434,20 @@ async def x_reply(post_url: str, content: str, role: str, dry_run: bool = True):
             "timestamp": datetime.now().isoformat(),
         })
         return
+
+    # Use modified content if safety check applied transformations (R1.5 polite template)
+    if modified_content != content:
+        print(f"[X] Hostile content detected, replaced with polite template (original hash: {hash(content)}, modified hash: {hash(modified_content)})")
+        emit_cieu_event("CONTENT_REWRITTEN_BY_SAFETY", {
+            "role": role,
+            "action": "reply",
+            "original_hash": hash(content),
+            "modified_hash": hash(modified_content),
+            "post_url": post_url,
+            "reason": "R1.5_hostile_reply_mitigation",
+            "timestamp": datetime.now().isoformat(),
+        })
+        content = modified_content
 
     if dry_run:
         print(f"[X] DRY RUN: Would reply to {post_url} as {role}:")
@@ -492,7 +518,7 @@ async def x_follow(handle: str, role: str):
         return
 
     # R4 rate limit check only (no content)
-    passed, reasons = safety_check("", role, action='follows', require_disclosure=False)
+    passed, reasons, _ = safety_check("", role, action='follows', require_disclosure=False, is_reply=False)
     if not passed:
         print(f"[X] Rate limit check FAILED for {role}: {reasons}")
         emit_cieu_event("X_ENGAGEMENT_VIOLATION", {
@@ -545,7 +571,7 @@ async def x_like(post_url: str, role: str):
         return
 
     # R4 rate limit check only (no content)
-    passed, reasons = safety_check("", role, action='likes', require_disclosure=False)
+    passed, reasons, _ = safety_check("", role, action='likes', require_disclosure=False, is_reply=False)
     if not passed:
         print(f"[X] Rate limit check FAILED for {role}: {reasons}")
         emit_cieu_event("X_ENGAGEMENT_VIOLATION", {
