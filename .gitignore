@@ -60,3 +60,8 @@ memory/session_handoff.md
 
 # Active task tracking (runtime state)
 knowledge/*/active_task.json
+
+# API keys (never commit)
+.env
+.envrc
+knowledge/secretary/secrets/*

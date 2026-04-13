@@ -30,6 +30,15 @@ echo "Time: $(date)"
 export YSTAR_LLM_PROVIDER=anthropic
 echo "LLM provider: $YSTAR_LLM_PROVIDER"
 
+# Load Anthropic API key for nl_to_contract LLM mode (AMENDMENT-022)
+SECRET_ENV="/Users/haotianliu/.openclaw/workspace/ystar-company/knowledge/secretary/secrets/anthropic_api_key.env"
+if [ -f "$SECRET_ENV" ]; then
+  set -a; source "$SECRET_ENV"; set +a
+  echo "ANTHROPIC_API_KEY: loaded from secretary vault"
+else
+  echo "ANTHROPIC_API_KEY: vault missing — regex fallback only"
+fi
+
 FAILURES=0
 WARNINGS=0
 
