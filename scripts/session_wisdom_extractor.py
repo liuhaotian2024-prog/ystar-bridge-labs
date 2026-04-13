@@ -23,6 +23,7 @@ import sys
 import time
 import json
 import sqlite3
+import yaml
 from pathlib import Path
 from typing import List, Dict, Optional
 from collections import Counter
@@ -434,6 +435,9 @@ def generate_boot_package_for_role(company_root: Path, role: str, session_id: st
     continuation = extract_continuation_state(company_root)
     cieu = extract_recent_cieu_events(company_root, session_start)
 
+    # Generate next-session action queue (category_11)
+    action_queue = populate_category_11_actions(company_root, role, obligations, brief, cieu)
+
     pack = {
         "pack_meta": {
             "role": role,
@@ -478,7 +482,11 @@ def generate_boot_package_for_role(company_root: Path, role: str, session_id: st
         "category_10_external_commitments": {
             "log_path": "knowledge/cso/external_commitments_log.md",
         },
-        "category_11_next_session_action_queue": [],
+        "category_11_action_queue": {
+            "generated_at": int(time.time()),
+            "session_id": session_id,
+            "actions": action_queue
+        },
         "_inputs": {
             "experiments_verdicts": experiments[:5],
             "proposals_summary": proposals[:5],
@@ -506,6 +514,102 @@ def generate_boot_packages_v2(company_root: Path, session_id: str, session_start
 
 
 import re
+
+
+def populate_category_11_actions(company_root: Path, role: str, obligations: List[str],
+                                   brief: str, cieu: List[str]) -> List[Dict]:
+    """Populate category_11 action queue from priority_brief, obligations, CIEU hints.
+
+    Sources (in priority order):
+    1. priority_brief.md today_targets where owner=role
+    2. Pending obligations (from extract_uncompleted_obligations)
+    3. CIEU hints from OFF_TARGET/IDLE_PULL events
+
+    Each action must include: action, why, how_to_verify, priority
+    """
+    actions = []
+
+    # Source 1: priority_brief.md today_targets
+    priority_brief_path = company_root / "reports/priority_brief.md"
+    if priority_brief_path.exists():
+        try:
+            import yaml
+            content = priority_brief_path.read_text()
+
+            # Extract YAML front matter
+            if content.startswith("---"):
+                parts = content.split("---", 2)
+                if len(parts) >= 3:
+                    yaml_content = parts[1]
+                    front_matter = yaml.safe_load(yaml_content)
+
+                    today_targets = front_matter.get("today_targets", [])
+                    for target in today_targets:
+                        if target.get("owner") == role:
+                            actions.append({
+                                "action": target.get("target", "Unknown target"),
+                                "why": f"Priority brief today_targets for {role}",
+                                "how_to_verify": target.get("verify", "Target completion verified"),
+                                "deadline": target.get("deadline", "EOD"),
+                                "priority": "P0"
+                            })
+        except Exception as e:
+            print(f"Warning: Failed to parse priority_brief for {role}: {e}", file=sys.stderr)
+
+    # Source 2: Pending obligations
+    for obl in obligations[:3]:  # Top 3 obligations
+        if role in obl.lower() or "all" in obl.lower():
+            actions.append({
+                "action": obl,
+                "why": "Pending obligation from previous session",
+                "how_to_verify": "Obligation marked as completed in tracking",
+                "priority": "P1"
+            })
+
+    # Source 3: CIEU hints (OFF_TARGET, IDLE_PULL)
+    cieu_db = company_root / ".ystar_cieu.db"
+    if cieu_db.exists():
+        try:
+            conn = sqlite3.connect(str(cieu_db))
+            cursor = conn.execute("""
+                SELECT event_type, task_description, params_json
+                FROM cieu_events
+                WHERE event_type IN ('OFF_TARGET', 'IDLE_PULL')
+                ORDER BY created_at DESC
+                LIMIT 5
+            """)
+
+            for event_type, task_desc, params_json in cursor.fetchall():
+                hint = task_desc or ""
+                if params_json:
+                    try:
+                        params = json.loads(params_json)
+                        hint = params.get("hint", hint)
+                    except:
+                        pass
+
+                if hint:
+                    actions.append({
+                        "action": f"Address {event_type}: {hint[:100]}",
+                        "why": f"CIEU {event_type} event detected",
+                        "how_to_verify": f"No new {event_type} events after fix",
+                        "priority": "P1"
+                    })
+
+            conn.close()
+        except Exception as e:
+            print(f"Warning: Failed to extract CIEU hints: {e}", file=sys.stderr)
+
+    # Fallback: If no actions found, add default action
+    if not actions:
+        actions.append({
+            "action": "Review priority_brief.md for new assignments",
+            "why": "No pending tasks found in wisdom extraction",
+            "how_to_verify": "Found actionable items or confirmed no work needed",
+            "priority": "P2"
+        })
+
+    return actions
 
 
 def main():

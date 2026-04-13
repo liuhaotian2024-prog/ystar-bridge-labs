@@ -661,12 +661,13 @@ def step5_next_session_action_queue(ctx: dict, step1_result: dict, step2_result:
             try:
                 boot_pack = json.loads(boot_pack_path.read_text())
 
-                # Add or update category_11_action_queue
-                boot_pack["category_11_action_queue"] = {
-                    "generated_at": time.time(),
-                    "session_id": ctx.get("session_id", "unknown"),
-                    "actions": action_queue
-                }
+                # Add or update category_11_action_queue (fallback only if wisdom_extractor didn't populate)
+                if not boot_pack.get("category_11_action_queue") or not boot_pack["category_11_action_queue"].get("actions"):
+                    boot_pack["category_11_action_queue"] = {
+                        "generated_at": time.time(),
+                        "session_id": ctx.get("session_id", "unknown"),
+                        "actions": action_queue
+                    }
 
                 boot_pack_path.write_text(json.dumps(boot_pack, indent=2))
                 queues_generated.append(role)
