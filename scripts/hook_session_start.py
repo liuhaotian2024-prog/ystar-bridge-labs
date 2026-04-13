@@ -65,6 +65,81 @@ def _append_morning_brief():
     return ''.join(briefs) if briefs else ''
 
 
+def _append_conversation_replay():
+    """Load C7 Conversation Replay (AMENDMENT-015 v2 LRS) - PRIORITY 1."""
+    import subprocess
+
+    replay_script = REPO_ROOT / 'scripts' / 'conversation_replay.py'
+    if not replay_script.exists():
+        return ''
+
+    try:
+        result = subprocess.run(
+            [sys.executable, str(replay_script),
+             '--lookback-hours', '24',
+             '--max-tokens', '800000'],
+            cwd=str(REPO_ROOT),
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+
+        if result.returncode == 0 and result.stdout.strip():
+            return '\n\n' + result.stdout.strip()
+    except (subprocess.TimeoutExpired, subprocess.SubprocessError, OSError):
+        pass
+
+    return ''
+
+
+def _append_working_memory_snapshot():
+    """Load latest working memory snapshot (C5 - AMENDMENT-015 v2 LRS)."""
+    import subprocess
+
+    snapshot_script = REPO_ROOT / 'scripts' / 'working_memory_snapshot.py'
+    if not snapshot_script.exists():
+        return ''
+
+    try:
+        result = subprocess.run(
+            [sys.executable, str(snapshot_script), 'load-latest'],
+            cwd=str(REPO_ROOT),
+            capture_output=True,
+            text=True,
+            timeout=10
+        )
+
+        if result.returncode == 0 and result.stdout.strip():
+            snapshot_json = result.stdout.strip()
+            # Parse to get summary stats
+            import json
+            try:
+                data = json.loads(snapshot_json)
+                summary = f"""
+## Working Memory Snapshot (C5 LRS)
+- Session: {data.get('session_id', 'unknown')}
+- Captured: {data.get('captured_at', 'unknown')}
+- Recent CIEU events: {len(data.get('recent_cieu_events', []))}
+- Active subagents: {len(data.get('active_subagents', []))}
+- Recent commits: {sum(len(r.get('commits', [])) for r in data.get('recent_commits', []))}
+
+<details>
+<summary>Full snapshot (click to expand)</summary>
+
+```json
+{snapshot_json}
+```
+</details>
+"""
+                return summary
+            except json.JSONDecodeError:
+                return ''
+    except (subprocess.TimeoutExpired, subprocess.SubprocessError, OSError):
+        pass
+
+    return ''
+
+
 def _main():
     try:
         try: _ = json.loads(sys.stdin.read() or '{}')
@@ -76,7 +151,18 @@ def _main():
         text, _truncated, _spill = render_for_additional_context(
             packet, max_chars=9800)
 
-        # Append morning brief
+        # AMENDMENT-015 v2 LRS - Priority Order:
+        # C7 Conversation Replay (PRIORITY 1) - verbatim transcript
+        replay = _append_conversation_replay()
+        if replay:
+            text = replay + '\n\n' + text
+
+        # C5 Working Memory Snapshot (PRIORITY 3)
+        snapshot = _append_working_memory_snapshot()
+        if snapshot:
+            text += '\n\n# Working Memory Snapshot' + snapshot
+
+        # Morning brief (lowest priority)
         morning = _append_morning_brief()
         if morning:
             text += '\n\n# Daily Brief' + morning
