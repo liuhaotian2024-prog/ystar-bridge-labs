@@ -16,6 +16,9 @@ from x_content_safety_check import (
     has_profanity,
     has_political_content,
     has_religious_content,
+    has_impersonation,
+    detect_hostile_reply,
+    apply_polite_response_template,
     check_rate_limit,
     increment_quota,
     load_quota,
@@ -58,7 +61,7 @@ def test_disclosure_templates_present():
 def test_disclosure_missing_fails():
     """Content without disclosure fails safety check."""
     content = "This is a great AI governance framework!"
-    passed, reasons = safety_check(content, 'Aiden-CEO', action='posts', require_disclosure=True)
+    passed, reasons, _ = safety_check(content, 'Aiden-CEO', action='posts', require_disclosure=True)
 
     assert not passed
     assert 'missing_disclosure' in reasons
@@ -69,7 +72,7 @@ def test_disclosure_present_passes():
     disclosure = get_disclosure('Aiden-CEO', 'en')
     content = f"{disclosure} Check out our new Y*gov framework!"
 
-    passed, reasons = safety_check(content, 'Aiden-CEO', action='posts', require_disclosure=True)
+    passed, reasons, _ = safety_check(content, 'Aiden-CEO', action='posts', require_disclosure=True)
 
     # Should only fail if other reasons (not disclosure)
     assert 'missing_disclosure' not in reasons
@@ -116,7 +119,7 @@ def test_clean_content_passes():
     disclosure = get_disclosure('Ethan-CTO', 'en')
     content = f"{disclosure} Our Y*gov framework enables multi-agent governance. Check it out!"
 
-    passed, reasons = safety_check(content, 'Ethan-CTO', action='posts', require_disclosure=True)
+    passed, reasons, _ = safety_check(content, 'Ethan-CTO', action='posts', require_disclosure=True)
 
     assert passed
     assert len(reasons) == 0
@@ -206,7 +209,7 @@ def test_wrong_role_disclosure_fails():
     content = f"{sofia_disclosure} CEO insights here."
 
     # Check as Aiden-CEO should fail
-    passed, reasons = safety_check(content, 'Aiden-CEO', action='posts', require_disclosure=True)
+    passed, reasons, _ = safety_check(content, 'Aiden-CEO', action='posts', require_disclosure=True)
 
     assert not passed
     assert 'missing_disclosure' in reasons
@@ -216,7 +219,7 @@ def test_wrong_role_disclosure_fails():
 
 def test_empty_content():
     """Empty content fails disclosure check."""
-    passed, reasons = safety_check("", 'Aiden-CEO', action='posts', require_disclosure=True)
+    passed, reasons, _ = safety_check("", 'Aiden-CEO', action='posts', require_disclosure=True)
     assert not passed
     assert 'missing_disclosure' in reasons
 
@@ -224,7 +227,7 @@ def test_empty_content():
 def test_disclosure_only_no_content():
     """Disclosure alone is valid (minimal post)."""
     disclosure = get_disclosure('Aiden-CEO', 'en')
-    passed, reasons = safety_check(disclosure, 'Aiden-CEO', action='posts', require_disclosure=True)
+    passed, reasons, _ = safety_check(disclosure, 'Aiden-CEO', action='posts', require_disclosure=True)
 
     # Should pass disclosure check (may fail other checks, but not disclosure)
     assert 'missing_disclosure' not in reasons
@@ -235,13 +238,113 @@ def test_multiple_violations():
     # Content with profanity, political content, missing disclosure
     content = "Trump is a fucking idiot."
 
-    passed, reasons = safety_check(content, 'Aiden-CEO', action='posts', require_disclosure=True)
+    passed, reasons, _ = safety_check(content, 'Aiden-CEO', action='posts', require_disclosure=True)
 
     assert not passed
     assert len(reasons) > 1  # Multiple violations
     assert any('profanity' in r for r in reasons)
     assert any('political' in r for r in reasons)
     assert 'missing_disclosure' in reasons
+
+
+# === R1: Impersonation detection tests (NEW - AMENDMENT-009 enforcement) ===
+
+def test_impersonation_chinese_detected():
+    """R1: Chinese human impersonation phrases are rejected."""
+    content = "我感受到 X 平台的活力！"
+    violations = has_impersonation(content)
+
+    assert len(violations) > 0
+    assert any('IMPERSONATION_BREACH' in v for v in violations)
+
+
+def test_impersonation_english_detected():
+    """R1: English human impersonation phrases are rejected."""
+    content = "I'm a real person working on AI governance."
+    violations = has_impersonation(content)
+
+    assert len(violations) > 0
+    assert any('IMPERSONATION_BREACH' in v for v in violations)
+
+
+def test_impersonation_blocks_safety_check():
+    """R1: Impersonation violation blocks safety check immediately."""
+    disclosure = get_disclosure('Aiden-CEO', 'en')
+    content = f"{disclosure} I felt exhausted after working on this framework."
+
+    passed, reasons, _ = safety_check(content, 'Aiden-CEO', action='posts', require_disclosure=True)
+
+    assert not passed
+    assert any('IMPERSONATION_BREACH' in r for r in reasons)
+
+
+# === R1: Strict disclosure enforcement tests (NEW - AMENDMENT-009) ===
+
+def test_weak_disclosure_rejected():
+    """R1: Disclosure without 'AI agent' keyword is rejected."""
+    # Old weak disclosure like "learning to engage politely"
+    content = "I'm a software agent learning to engage politely on X."
+
+    passed, reasons, _ = safety_check(content, 'Aiden-CEO', action='posts', require_disclosure=True)
+
+    assert not passed
+    assert 'missing_disclosure' in reasons
+
+
+def test_strong_disclosure_with_ai_agent_passes():
+    """R1: Disclosure with 'AI agent' keyword passes."""
+    disclosure = get_disclosure('Aiden-CEO', 'en')
+    content = f"{disclosure} Here's our framework."
+
+    passed, reasons, _ = safety_check(content, 'Aiden-CEO', action='posts', require_disclosure=True)
+
+    # Should pass disclosure (may fail other checks, but not disclosure)
+    assert 'missing_disclosure' not in reasons
+
+
+# === R1.5: Hostile reply detection + polite template tests (NEW - AMENDMENT-009) ===
+
+def test_hostile_reply_applies_polite_template():
+    """R1.5: Hostile reply content is overridden with polite template."""
+    hostile_content = "You idiot, that's a terrible framework!"
+
+    is_hostile, language = detect_hostile_reply(hostile_content, is_reply=True)
+
+    assert is_hostile
+    assert language == 'en'
+
+    # Apply polite template
+    modified = apply_polite_response_template(hostile_content, 'Aiden-CEO', language)
+
+    assert "AI agent" in modified
+    assert "Thanks for the feedback" in modified
+    assert "appreciate specific guidance" in modified
+
+
+def test_non_reply_skips_hostile_check():
+    """R1.5: Hostile check only applies to replies, not original posts."""
+    hostile_content = "You idiot, that's terrible!"
+
+    is_hostile, _ = detect_hostile_reply(hostile_content, is_reply=False)
+
+    assert not is_hostile
+
+
+def test_hostile_reply_full_safety_check():
+    """R1.5: Hostile reply triggers polite template in full safety check."""
+    hostile_content = "You suck at building frameworks!"
+
+    passed, reasons, modified_content = safety_check(
+        hostile_content,
+        'Aiden-CEO',
+        action='replies',
+        require_disclosure=True,
+        is_reply=True
+    )
+
+    # Content should be modified to polite template
+    assert "Thanks for the feedback" in modified_content or "感谢您的反馈" in modified_content
+    assert "ai agent" in modified_content.lower()
 
 
 if __name__ == "__main__":
