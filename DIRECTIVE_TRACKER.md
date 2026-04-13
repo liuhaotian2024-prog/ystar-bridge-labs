@@ -452,3 +452,28 @@ Active obligations: 0 PENDING, 0 OVERDUE, 3 FULFILLED
 **Secretary 标记本 directive 状态为 EXECUTED**, 写入本 DIRECTIVE_TRACKER.md (Appendix B)。
 
 GOV-005 关闭。下一条 Board directive 将启动新条目。
+
+---
+
+## 2026-04-12 Board Session 决议 (authoritative log: `knowledge/ceo/decisions/board_approval_log_2026_04_12.md`)
+
+**Board 当面批准**:
+- ✅ AMENDMENT-005 (RAPID 替 L0-L3)
+- ✅ AMENDMENT-006 (6-pager v2 强制)
+- ✅ AMENDMENT-007 (CEO OS v1, with 007.1 修订承诺)
+- ✅ AMENDMENT-008 (BHAG + 12 Tenets + META 反向护栏)
+- ✅ 硬约束 H-1 永远 Running
+- ✅ 硬约束 H-2 CEO 时刻遵守第十一条
+- ✅ 硬约束 H-3 Controversy over Invisibility
+- ✅ 对外 framing: "organizational-scale AGI as mission" (aspirational)
+
+**批准方法**: 对话当面口头批, CEO 归档到 `knowledge/ceo/decisions/` (authoritative), Secretary 在身份锁解后做 `governance/BOARD_CHARTER_AMENDMENTS.md` 形式归档.
+
+**后续实施**:
+- Maya: .ystar_session.json patch + hook 代码 (等身份锁解)
+- Secretary: 形式归档 + 007.1 patch + AMENDMENT-009 (等身份锁解)
+- Sofia: 白皮书 v2 按 AGI mission framing 重写 (等团队整理)
+
+**今日治理修复**:
+- ✅ CTO 方案 C (commit `755143c`) — boot/close 自动归位 ceo, 循环锁永久不再发生
+- ⏳ 方案 B (AMENDMENT-009) — 并发写保护 + subagent 中途切身份, pending

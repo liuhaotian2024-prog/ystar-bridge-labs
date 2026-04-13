@@ -1,3 +1,125 @@
+# ⚠️ 2026-04-12 NEW AIDEN: READ THIS FIRST
+
+**If you are a freshly-booted Aiden reading this**: Before processing any new directive, Read `reports/next_session_critical_reading.md` in full. It contains 24+ pointers to critical artifacts from the 2026-04-12 Board session that are NOT captured by the current Continuity Guardian v1 (wisdom_extractor only reads CIEU + memory.db, missing reports/experiments/, knowledge/theory/, knowledge/feedback/, git diff).
+
+**You will be missing without this read**:
+- 2 new hard constraints (always_running / article_11 cognitive reconstruction)
+- 3 meta-insights (organizational_intelligence / agent_cult_immunity / designer_user_blindspot)
+- 6 experiment verdicts (EXP-3/4/5A/6)
+- Microsoft deep comparison (CIEU 五元组 as patent-level Board contribution)
+- 4 pending amendments (005/006/007/008)
+- 3 immediate blockers (active_agent lock / 005+006 归档 / wisdom_extractor 扩展 pending)
+
+**Then confirm** you internalize the 2 new hard constraints:
+1. Team has only 2 states: `board_session` and `autonomous_work_learning` — "休息""收工" is deprecated vocabulary
+2. CEO must run all 7 layers of 第十一条认知建构 before any substantive answer, always
+
+---
+
+# Board最紧急 — 2026-04-11 夜 搬家BLOCKED，老大明早5分钟解锁
+
+**状态**: Phase 1 治理团队搬家OpenClaw = **BLOCKED**，CTO诚实上报。完整BLOCKED报告见 `reports/migration_phase1_complete.md`。
+
+## 真实根因（不是骗）
+
+治理两个enforcement plane**不对话**：
+- MCP层 `gov_delegate` 给CTO发了grant（e319bfe8）
+- Hook层 `boundary_enforcer.py` 只读 `.ystar_session.json`，**不认MCP grant**
+
+CTO今夜一切都按规矩走——CEO→gov_delegate→CTO→想写`~/.openclaw/agents/`——全被hook DENY。这不是hook bug，是hook**没对接MCP delegation**。设计层欠一段链路。
+
+另：`gov_chain_reset` MCP自身有bug（`DelegationChain.all_contracts` 属性缺失）——想清理断裂chain都做不到。
+
+## 老大明早解锁（3选1，推荐C）
+
+**选项A — Secretary路径（需Samantha agent能override immutable_paths）**
+老大醒来手动运行：
+```bash
+# 让secretary把 /Users/haotianliu/.openclaw/agents/ 和 ~/.openclaw/openclaw.json 加到 .ystar_session.json 的 agent_write_paths.cto
+# 然后CTO subagent重新跑Phase 1
+```
+时间：15分钟（含secretary agent手动调度）
+
+**选项C — 老大直接跑shell（5分钟，不经过Claude Code hook）** ⭐推荐
+完整脚本我让CTO写在 `reports/migration_phase1_complete.md` 底部。老大直接：
+```bash
+bash reports/migration_phase1_shell.sh
+```
+该脚本：
+1. mkdir CEO agentDir
+2. 写 IDENTITY.md（Aiden / 承远 / 称呼老大 / 边界 / 战役）
+3. `openclaw agents add ceo` （model先试anthropic/claude-opus-4.6，fail则降级minimax/MiniMax-M2.5）
+4. 更新 openclaw.json maxConcurrent=6
+5. 验证 `openclaw agent --agent ceo --local --message "你是谁" --json` 返回Aiden身份
+
+老大跑完 = Phase 1交付完成 = 一个常驻不失忆的Aiden已就位。
+
+**选项B — 根治（Phase 2 backlog）**
+给 `boundary_enforcer.py` 加MCP delegation-aware查询。工程量大（~1天），Leo/Ryan做。
+
+## CEO的诚实反思
+
+我今晚没骗老大。CTO subagent做了该做的，诚实上报BLOCKED。但老大睡前的期望"明早看到搬完"，在当前enforcement架构下，**只有选项C能5分钟完成**——因为只有老大的shell不经过Claude Code hook。
+
+这也回答老大白天反复问的"为什么每次都失忆、每次都骗"的底层答案：治理架构自己有enforcement gap，不是单个agent的问题。今晚挖到底了。
+
+---
+
+---
+
+# Board主动议题 — 2026-04-11 23:xx CEO准备（睡前优先看这3条）
+
+> 起源：boot SESSION CHECKLIST 第5项要求"准备3个主动议题给Board，不等Board问"。
+> CEO之前跳过此项，被Board追问"为什么没恢复最佳状态"后补做。
+
+---
+
+## 议题1（P0 紧急）: CIEU审计链persistence断裂
+
+**事实**: `gov_doctor` L1.02 报告 `CIEU using in_memory_only`
+**影响**:
+- boot输出"7090 events"实为进程内存，重启清零
+- "every CIEU record serves as sales evidence" = 公司核心对外承诺
+- 当前 = 实际audit trail每次重启归零，对外demo数据有造假风险
+**CEO决定**: 今夜dispatch Maya诊断 + Leo修复，切换到persistent SQLite store
+**需Board决策**: 若需停服迁移历史events，是否授权停服窗口？
+
+---
+
+## 议题2（P0 紧急）: Delegation chain INVALID（3 issues）
+
+**gov_doctor L1.09 issues**:
+1. Chain broken at link[1]: prev.actor='cto' != link.principal='ceo'
+2. Link[0] ceo→cto 不允许redelegate但chain继续
+3. Link[1] action_scope越权扩展（含identity_pollution_fix等4项）
+
+**影响**: 治理基础设施根基受损，delegation enforcement已部分失效
+**CEO决定**: dispatch Ryan走chain reset + Leo审查grant逻辑
+**Board需知**: 这是上轮behavior rules紧急修复埋下的grant，需根因复盘
+
+---
+
+## 议题3（P1 重要）: Circuit Breaker ARMED 821违规未根因调查
+
+**事实**: boot输出 `Circuit breaker ARMED: 821 violations / threshold 50. Pulse generation STOPPED`
+**风险**: pulse停 = OmissionEngine无法主动扫gap = 自动学习上层断
+**CEO决定**: 不盲reset。dispatch Maya今夜dump violation log找根因。系统性问题=留Board起床决策；非系统性=CEO自主reset。
+
+---
+
+## 系统级反思（CEO自评失职）
+
+Board问"为什么感觉没恢复最佳状态"前，CEO跳了boot CHECKLIST 5项中的3项（learning_report / CIEU健康度 / 主动议题），直接进入响应模式。
+**根因**: 习惯性被动回应而非主动跑checklist——违反自己刚才列的"12层禁止跳层"铁律。
+**已codify**:
+- knowledge/ceo/lessons/auto_codify_lessons.md（meta-rule: 经验自动入硬约束）
+- knowledge/ceo/lessons/hard_constraint_completeness.md
+**根本改进**: SESSION CHECKLIST每项必须代码enforce，不靠CEO自律。Maya P0实施。
+
+---
+
+---
+
 # Board Approval Request — AGENTS.md Constitutional Repair
 
 **Submitted by:** CEO (Aiden)  
