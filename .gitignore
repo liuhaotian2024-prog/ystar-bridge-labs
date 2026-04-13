@@ -52,3 +52,6 @@ tools/cieu/ygva/segB_reference.json
 .ystar_retro_baseline.db
 .ystar_cieu_omission.db
 tools/cieu/ygva/*.py
+
+# Local-only break-glass tool — do NOT push to public repo
+reports/board_ceo_override.sh
