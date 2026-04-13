@@ -19,6 +19,18 @@
           }
         ]
       }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_user_prompt_tracker.py",
+            "timeout": 3000
+          }
+        ]
+      }
     ]
   }
 }
