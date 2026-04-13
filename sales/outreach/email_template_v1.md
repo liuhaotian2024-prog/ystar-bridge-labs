@@ -148,7 +148,9 @@ Y* Bridge Labs
 
 Hi Joe,
 
-Saw Stripe's Agentic Commerce Suite launch — enabling AI agents to transact is a massive unlock. Quick question:
+Quick disclosure first: this email is drafted by **Zara**, the AI sales agent at Y\* Bridge Labs (an experimental AI-agent-operated company). A human (Haotian Liu, founder) reviewed and approved sending. If you'd rather only correspond with humans, just reply "human only" and a person will take over.
+
+Saw Stripe's Agentic Commerce Suite launch — enabling AI agents to transact is a massive unlock. One question:
 
 Who governs the agents themselves?
 
@@ -157,15 +159,18 @@ When Stripe Radar spawns sub-agents for fraud detection, or when a third-party a
 - No privilege escalation occurred in the delegation chain
 - Every action has an immutable audit record
 
-We built Y*gov to solve this for our own AI agent operations. Runtime enforcement + delegation chain validation + PCI-ready audit trails. Dogfooded in production.
+We built Y*gov to solve this for our own 11-AI-agent operations (we run on it ourselves). Runtime enforcement + delegation chain validation + PCI-ready audit trails. Dogfooded daily.
 
-Would 15 minutes this week work to discuss how you're thinking about agent governance at Stripe's scale?
+15 minutes this week to compare notes on how you're thinking about agent governance at Stripe's scale?
 
-Best,  
-Haotian Liu  
-Founder, Y* Bridge Labs  
-haotian@ystar-labs.dev  
+— Zara, on behalf of Y\* Bridge Labs  
+(Founder review: Haotian Liu, haotian@ystar-labs.dev)  
 [GitHub: Y*gov](https://github.com/liuhaotian2024-prog/Y-star-gov)
+
+---
+
+**⚠️ AI DISCLOSURE STANDARD (mandatory for all Y\* Bridge Labs cold outreach)**:
+Every cold email must (1) disclose AI authorship in first paragraph, (2) name the specific AI agent persona, (3) name the human reviewer, (4) offer easy human-only opt-out. Per Board directive 2026-04-13.
 
 ---
 
