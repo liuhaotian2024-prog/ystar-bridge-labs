@@ -437,6 +437,24 @@ def main():
     except Exception as e:
         print(f"[warn] update_priority_brief failed: {e}", file=sys.stderr)
 
+    # Run priority_brief_validator (target schema enforcement)
+    try:
+        import subprocess
+        validator_script = company_root / "scripts" / "priority_brief_validator.py"
+        if validator_script.exists():
+            result = subprocess.run(
+                [sys.executable, str(validator_script)],
+                capture_output=True,
+                text=True,
+                timeout=10
+            )
+            if result.returncode != 0:
+                print(f"[WARN] priority_brief targets validation failed:\n{result.stderr}", file=sys.stderr)
+            else:
+                print(f"[ok] priority_brief targets validated: {result.stdout.strip()}")
+    except Exception as e:
+        print(f"[warn] priority_brief_validator failed: {e}", file=sys.stderr)
+
     # AMENDMENT-010 §4 S-3: trigger secretary_curate pipeline (skeleton)
     try:
         curate_script = company_root / "scripts" / "secretary_curate.py"
