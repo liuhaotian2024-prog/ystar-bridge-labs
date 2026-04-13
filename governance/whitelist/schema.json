@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ybridgelabs.com/schemas/governance/whitelist/v2.json",
+  "title": "Y* Bridge Labs Whitelist Entry Schema v2",
+  "description": "Permissive core + extension support for 7 corpus types (AMENDMENT-018 Phase 1)",
+  "type": "object",
+  "definitions": {
+    "core_entry": {
+      "description": "Core fields that every entry must have after normalization",
+      "type": "object",
+      "required": ["entry_id", "entry_what"],
+      "properties": {
+        "entry_id": {
+          "type": "string",
+          "description": "Normalized from id / flow_id / decision_type_id / *_id"
+        },
+        "entry_what": {
+          "type": "string",
+          "description": "Normalized from what / description / title"
+        },
+        "entry_who": {
+          "type": "string",
+          "description": "Normalized from who / default_R / required_roles (optional)"
+        },
+        "entry_trigger": {
+          "type": "string",
+          "description": "Normalized from when_trigger / trigger_condition (optional)"
+        },
+        "entry_complete": {
+          "type": "string",
+          "description": "Normalized from when_complete (optional)"
+        }
+      }
+    },
+    "raw_entry": {
+      "description": "Raw entry as written by engineers - permissive schema",
+      "type": "object",
+      "anyOf": [
+        {"required": ["id"]},
+        {"required": ["flow_id"]},
+        {"required": ["decision_type_id"]}
+      ],
+      "anyOf": [
+        {"required": ["what"]},
+        {"required": ["description"]},
+        {"required": ["title"]}
+      ],
+      "properties": {
+        "id": {"type": "string"},
+        "flow_id": {"type": "string"},
+        "decision_type_id": {"type": "string"},
+        "what": {"type": "string"},
+        "description": {"type": "string"},
+        "title": {"type": "string"},
+        "who": {"type": "string"},
+        "default_R": {"type": "string"},
+        "default_D": {"type": "string"},
+        "required_roles": {
+          "oneOf": [
+            {"type": "array"},
+            {"type": "string"}
+          ]
+        },
+        "when_trigger": {"type": "string"},
+        "trigger_condition": {"type": "string"},
+        "when_complete": {"type": "string"},
+        "prerequisites": {
+          "oneOf": [
+            {"type": "array"},
+            {"type": "string"}
+          ]
+        },
+        "observable_signal": {
+          "oneOf": [
+            {"type": "string"},
+            {"type": "object"}
+          ]
+        },
+        "source_ref": {
+          "oneOf": [
+            {"type": "string"},
+            {"type": "object"}
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "normalization_rules": {
+    "entry_id": "First non-null from: id, flow_id, decision_type_id, or any field ending with '_id'",
+    "entry_what": "First non-null from: what, description, title",
+    "entry_who": "First non-null from: who, default_R, default_D, required_roles (join if array)",
+    "entry_trigger": "First non-null from: when_trigger, trigger_condition",
+    "entry_complete": "when_complete",
+    "observable_signal": "Accept str or dict; if str, wrap in {cieu_event: str}",
+    "source_ref": "Optional; if missing, fallback to file path"
+  }
+}
