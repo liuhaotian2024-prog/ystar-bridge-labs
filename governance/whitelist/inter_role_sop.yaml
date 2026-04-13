@@ -1,0 +1,220 @@
+# Y* Bridge Labs · Inter-Role Standard Operating Procedures
+# 内部治理流程白名单 — 从 governance/INTERNAL_GOVERNANCE.md 提取的关键流程
+# Created: 2026-04-13 by Maya Patel (eng-platform)
+# Source: INTERNAL_GOVERNANCE.md L1/L2/L3 decision flows
+# Consumed by: whitelist_coverage.py (A018 sync mechanism C)
+
+version: 1
+schema: inter_role_sop_v1
+scope: cross_role_coordination_flows
+
+# Schema 说明:
+# - flow_id: 唯一标识符 (必需)
+# - description: 流程描述 (必需)
+# - trigger_condition: 触发条件 (必需)
+# - required_roles: 必须参与的角色 (list, 必需)
+# - decision_level: L0/L1/L2/L3 或 RAPID 角色映射 (必需)
+# - cieu_markers: CIEU 事件链 pattern，用于匹配覆盖率 (list, 可选)
+# - authority: 最终决策权归属 (必需)
+# - bypass_allowed: 是否允许绕过 (bool, 必需)
+
+entries:
+  - flow_id: SOP-001
+    description: "Level 1 决策 — 单岗位自决 (bug fix / 归档更新 / 本岗位可逆操作)"
+    trigger_condition: "单岗位、完全可逆、无外部可见性"
+    required_roles:
+      - responsible_agent
+    decision_level: L1
+    cieu_markers:
+      - INTENT_DECLARED
+      - INTENT_COMPLETED
+    authority: responsible_agent
+    bypass_allowed: false
+
+  - flow_id: SOP-002
+    description: "Level 2 决策 — CEO 决策 (跨岗位协调)"
+    trigger_condition: "跨岗位协调 / 影响内部流程 / 可逆但涉及多人"
+    required_roles:
+      - responsible_agent  # 提案者
+      - ceo               # 决策者
+    decision_level: L2
+    cieu_markers:
+      - COUNTERFACTUAL_PROPOSAL_DRAFTED
+      - CEO_APPROVAL
+      - INTENT_DECLARED
+      - BOARD_NOTIFICATION
+    authority: ceo
+    bypass_allowed: false
+
+  - flow_id: SOP-003
+    description: "Level 3 决策 — Board 决策 (宪法/外部发布/金钱/产品承诺)"
+    trigger_condition: "修改 AGENTS.md / 外部发布不可撤回 / 金钱支出 / 产品对外承诺 / 架构变更影响 ≥2 岗位"
+    required_roles:
+      - team               # 反事实推理提案
+      - ceo                # 转交 Board
+      - board              # 最终决策
+      - secretary          # 归档
+    decision_level: L3
+    cieu_markers:
+      - COUNTERFACTUAL_PROPOSAL_DRAFTED
+      - BOARD_APPROVAL
+      - SECRETARY_ARCHIVE
+    authority: board
+    bypass_allowed: false
+
+  - flow_id: SOP-004
+    description: "Autonomous Mission 启动 — Board directive 触发第十一条协议"
+    trigger_condition: "Board 明确标记 'Autonomous Mission' 关键词"
+    required_roles:
+      - mission_owner      # 执行 agent
+      - ceo                # 认知建构阶段审阅
+      - board              # 批准框架报告
+    decision_level: L2_equiv_for_tactics_L3_for_strategy
+    cieu_markers:
+      - AUTONOMOUS_MISSION_DECLARED
+      - COGNITIVE_FRAMEWORK_SUBMITTED
+      - BOARD_FRAMEWORK_APPROVAL
+    authority: board_for_start_mission_owner_for_execution
+    bypass_allowed: false
+
+  - flow_id: SOP-005
+    description: "义务注册 (register_obligation.py 真实运行)"
+    trigger_condition: "Board 发 GOV-XXX 指令 或 agent 发现新 obligation"
+    required_roles:
+      - responsible_agent  # 起草义务
+      - ceo                # Level 2 审批
+    decision_level: L2
+    cieu_markers:
+      - OBLIGATION_REGISTERED
+      - INTENT_DECLARED
+    authority: ceo
+    bypass_allowed: false
+
+  - flow_id: SOP-006
+    description: "agents/*.md 修改 (岗位行为宪法更新)"
+    trigger_condition: "Secretary 在 DNA 蒸馏权限内改岗位行为宪法"
+    required_roles:
+      - secretary          # 执行者
+      - ceo                # Level 2 审批
+    decision_level: L2
+    cieu_markers:
+      - AGENT_CONTRACT_MODIFIED
+      - CEO_APPROVAL
+    authority: ceo
+    bypass_allowed: false
+
+  - flow_id: SOP-007
+    description: ".ystar_session.json 修改 (运行时配置变更)"
+    trigger_condition: "Ethan 在 Level 2 授权下修改治理运行时配置"
+    required_roles:
+      - cto                # 执行者
+      - ceo                # Level 2 审批
+      - eng-governance     # 合约审查 (A 角色)
+    decision_level: L2
+    cieu_markers:
+      - SESSION_CONFIG_MODIFIED
+      - GOVERNANCE_COMPLIANCE_CHECK
+      - CEO_APPROVAL
+    authority: ceo
+    bypass_allowed: false
+
+  - flow_id: SOP-008
+    description: "dispatch 必经 CTO (GOV-005 + INTERNAL_GOVERNANCE.md)"
+    trigger_condition: "任何代码/测试/git 操作类任务"
+    required_roles:
+      - ceo                # 分配者
+      - cto                # 强制中间层
+      - engineer           # 最终执行者
+    decision_level: L1_within_eng_L2_if_cross_dept
+    cieu_markers:
+      - TASK_DISPATCHED
+      - CTO_DELEGATION
+      - ENGINEER_ASSIGNED
+    authority: cto_for_engineering_tasks
+    bypass_allowed: false
+
+  - flow_id: SOP-009
+    description: "Level 0 自主学习 (agent 空闲时填补认知 gap)"
+    trigger_condition: "Agent 空闲 + 发现认知 gap + 无外部指令"
+    required_roles:
+      - learning_agent     # 自身
+    decision_level: L0
+    cieu_markers:
+      - INTENT_DECLARED
+      - INTENT_COMPLETED
+    authority: learning_agent
+    bypass_allowed: false
+
+  - flow_id: SOP-010
+    description: "RAPID Recommend 发起提案"
+    trigger_condition: "跨岗位决策发起点 (R 角色)"
+    required_roles:
+      - recommender        # R 角色
+    decision_level: RAPID_R
+    cieu_markers:
+      - RAPID_PROPOSAL_DRAFTED
+      - COUNTERFACTUAL_ALTERNATIVES_GE_2
+    authority: decider_not_recommender
+    bypass_allowed: false
+
+  - flow_id: SOP-011
+    description: "RAPID Agree 合规审查"
+    trigger_condition: "R 提案在专业域需 A 正式同意"
+    required_roles:
+      - agree_agent        # A 角色 (eng-governance / secretary / cto / cfo / cso / cmo)
+    decision_level: RAPID_A
+    cieu_markers:
+      - RAPID_AGREE_STATE
+      - CONDITIONAL_AGREE_OR_REJECT
+    authority: decider_after_A_pass
+    bypass_allowed: false
+
+  - flow_id: SOP-012
+    description: "RAPID Decide 最终拍板"
+    trigger_condition: "R/A/P/I 四方齐备, A 无 REJECT"
+    required_roles:
+      - decider            # D 角色 (每决策唯一)
+    decision_level: RAPID_D
+    cieu_markers:
+      - RAPID_DECIDED
+      - DECISION_RATIONALE_LOGGED
+    authority: decider
+    bypass_allowed: false
+
+  - flow_id: SOP-013
+    description: "RAPID Perform 执行阶段"
+    trigger_condition: "D 决定后自动激活"
+    required_roles:
+      - performer          # P 角色
+    decision_level: RAPID_P
+    cieu_markers:
+      - RAPID_PERFORM_START
+      - RAPID_PERFORM_END
+      - COMPLETION_INTENT_ID
+    authority: decider
+    bypass_allowed: false
+
+  - flow_id: SOP-014
+    description: "RAPID Input 提供专业输入"
+    trigger_condition: "被 R 邀请 或 I 自荐"
+    required_roles:
+      - input_agent        # I 角色
+    decision_level: RAPID_I
+    cieu_markers:
+      - RAPID_INPUT_ADDED
+      - DELTA_TO_PROPOSAL
+    authority: decider
+    bypass_allowed: false
+
+  - flow_id: SOP-015
+    description: "反事实推理提案格式 (WORKING_STYLE.md 第七条)"
+    trigger_condition: "Level 2/3 决策 或 D≠R 的 RAPID 提案"
+    required_roles:
+      - responsible_agent  # R 角色
+    decision_level: L2_or_L3_or_RAPID_D_ne_R
+    cieu_markers:
+      - COUNTERFACTUAL_PROPOSAL_DRAFTED
+      - ALTERNATIVES_GE_2
+      - RT_ANALYSIS
+    authority: ceo_or_board_or_decider
+    bypass_allowed: false

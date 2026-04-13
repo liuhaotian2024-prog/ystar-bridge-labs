@@ -1,0 +1,509 @@
+# Y* Bridge Labs · RAPID Decision Matrix
+# RAPID 五角色决策类型白名单 — 从 AMENDMENT-005 提取的决策矩阵
+# Created: 2026-04-13 by Maya Patel (eng-platform)
+# Source: reports/proposals/charter_amendment_005_rapid.md §4 迁移映射表
+# Consumed by: whitelist_coverage.py (A018 sync mechanism C)
+
+version: 1
+schema: rapid_decision_matrix_v1
+scope: cross_role_decision_types
+
+# Schema 说明:
+# - decision_type_id: 唯一标识符 (必需)
+# - description: 决策类型描述 (必需)
+# - legacy_level: 旧 L0-L3 等价映射 (可选)
+# - default_R: 默认 Recommender 角色 (必需)
+# - default_A: 默认 Agree 角色 (list, 可选)
+# - default_P: 默认 Performer 角色 (必需)
+# - default_I: 默认 Input 角色 (list, 可选)
+# - default_D: 默认 Decider 角色 (必需, 唯一)
+# - trigger_condition: 触发条件 (必需)
+# - cieu_markers: CIEU 事件链 pattern (list, 可选)
+# - board_approval_required: Board 是否为 D (bool, 必需)
+
+entries:
+  - decision_type_id: RAPID-001
+    description: "Agent 空闲自学 (knowledge/{role}/ 只写)"
+    legacy_level: L0
+    default_R: learning_agent
+    default_A: []
+    default_P: learning_agent
+    default_I: []
+    default_D: learning_agent
+    trigger_condition: "Agent 空闲 + 认知 gap + 无外部指令"
+    cieu_markers:
+      - INTENT_DECLARED
+      - INTENT_COMPLETED
+    board_approval_required: false
+
+  - decision_type_id: RAPID-002
+    description: "单岗位可逆操作 (bug fix / 归档更新)"
+    legacy_level: L1
+    default_R: responsible_agent
+    default_A: []
+    default_P: responsible_agent
+    default_I: []
+    default_D: responsible_agent
+    trigger_condition: "单岗位、完全可逆、无外部可见性"
+    cieu_markers:
+      - INTENT_DECLARED
+      - INTENT_COMPLETED
+    board_approval_required: false
+
+  - decision_type_id: RAPID-003
+    description: "跨岗位协调 (memory 闭环 / 义务注册 / agent_write_paths 小改)"
+    legacy_level: L2
+    default_R: responsible_agent
+    default_A:
+      - eng-governance
+      - secretary
+    default_P: execution_agent
+    default_I:
+      - related_c_suite
+    default_D: ceo
+    trigger_condition: "跨岗位协调、影响内部流程、可逆但涉及多人"
+    cieu_markers:
+      - COUNTERFACTUAL_PROPOSAL_DRAFTED
+      - RAPID_AGREE_STATE
+      - CEO_APPROVAL
+      - BOARD_NOTIFICATION
+    board_approval_required: false
+
+  - decision_type_id: RAPID-004
+    description: "内部流程规范 (WORKING_STYLE 小修 / agents/*.md 更新)"
+    legacy_level: L2
+    default_R: secretary
+    default_A:
+      - eng-governance
+    default_P: secretary
+    default_I:
+      - affected_roles
+    default_D: ceo
+    trigger_condition: "影响内部流程但不触及宪法"
+    cieu_markers:
+      - COUNTERFACTUAL_PROPOSAL_DRAFTED
+      - RAPID_AGREE_STATE
+      - CEO_APPROVAL
+    board_approval_required: false
+
+  - decision_type_id: RAPID-005
+    description: "宪法/架构变更 (AMENDMENT / AGENTS.md / 架构 refactor)"
+    legacy_level: L3
+    default_R: drafting_agent
+    default_A:
+      - secretary
+      - eng-governance
+    default_P: secretary
+    default_I:
+      - all_c_suite
+    default_D: board
+    trigger_condition: "修改 AGENTS.md / 架构变更影响 ≥2 岗位"
+    cieu_markers:
+      - COUNTERFACTUAL_PROPOSAL_DRAFTED
+      - RAPID_AGREE_STATE
+      - BOARD_APPROVAL
+      - SECRETARY_ARCHIVE
+    board_approval_required: true
+
+  - decision_type_id: RAPID-006
+    description: "外部发布 (HN / LinkedIn / PyPI / blog / whitepaper)"
+    legacy_level: L3
+    default_R:
+      - cmo
+      - ceo
+    default_A:
+      - cmo
+      - secretary
+    default_P:
+      - cmo
+      - cto
+    default_I:
+      - related_agents
+    default_D: board
+    trigger_condition: "外部发布且不可撤回"
+    cieu_markers:
+      - COUNTERFACTUAL_PROPOSAL_DRAFTED
+      - RAPID_AGREE_STATE
+      - BOARD_APPROVAL
+    board_approval_required: true
+
+  - decision_type_id: RAPID-007
+    description: "金钱支出 (预算动用 / 付费工具)"
+    legacy_level: L3
+    default_R: cfo
+    default_A:
+      - secretary
+    default_P: cfo
+    default_I:
+      - c_suite
+    default_D: board
+    trigger_condition: "任何金钱支出"
+    cieu_markers:
+      - COUNTERFACTUAL_PROPOSAL_DRAFTED
+      - RAPID_AGREE_STATE
+      - BOARD_APPROVAL
+    board_approval_required: true
+
+  - decision_type_id: RAPID-008
+    description: "产品对外承诺 (定价 / API 合约 / 版本号 / 专利)"
+    legacy_level: L3
+    default_R:
+      - cso
+      - cto
+    default_A:
+      - secretary
+      - cfo
+    default_P: responsible_agent
+    default_I:
+      - all_agents
+    default_D: board
+    trigger_condition: "影响产品对外承诺"
+    cieu_markers:
+      - COUNTERFACTUAL_PROPOSAL_DRAFTED
+      - RAPID_AGREE_STATE
+      - BOARD_APPROVAL
+    board_approval_required: true
+
+  - decision_type_id: RAPID-009
+    description: "Autonomous Mission 内战术决策"
+    legacy_level: autonomous_mission_L1_equiv
+    default_R: mission_owner
+    default_A: []
+    default_P: mission_owner
+    default_I: []
+    default_D: mission_owner
+    trigger_condition: "Mission 执行周期内的战术调整"
+    cieu_markers:
+      - AUTONOMOUS_MISSION_TACTICAL
+      - INTENT_DECLARED
+      - INTENT_COMPLETED
+    board_approval_required: false
+
+  - decision_type_id: RAPID-010
+    description: "Autonomous Mission 跨周期策略调整"
+    legacy_level: autonomous_mission_L2_equiv
+    default_R: mission_owner
+    default_A:
+      - secretary
+      - eng-governance
+    default_P: mission_owner
+    default_I:
+      - c_suite
+    default_D: ceo
+    trigger_condition: "Mission 跨周期策略变更"
+    cieu_markers:
+      - AUTONOMOUS_MISSION_STRATEGIC
+      - COUNTERFACTUAL_PROPOSAL_DRAFTED
+      - CEO_APPROVAL
+    board_approval_required: false
+
+  - decision_type_id: RAPID-011
+    description: "Autonomous Mission 资源调用 / 对外合作 / 预算"
+    legacy_level: autonomous_mission_L3_equiv
+    default_R: mission_owner
+    default_A:
+      - secretary
+      - cfo
+    default_P: mission_owner
+    default_I:
+      - all_c_suite
+    default_D: board
+    trigger_condition: "Mission 需外部资源 / 预算 / 对外合作"
+    cieu_markers:
+      - AUTONOMOUS_MISSION_RESOURCE_REQUEST
+      - COUNTERFACTUAL_PROPOSAL_DRAFTED
+      - BOARD_APPROVAL
+    board_approval_required: true
+
+  - decision_type_id: RAPID-012
+    description: "义务注册 (register_obligation.py 真实运行)"
+    legacy_level: L2
+    default_R: responsible_agent
+    default_A:
+      - eng-governance
+    default_P: responsible_agent
+    default_I: []
+    default_D: ceo
+    trigger_condition: "Board GOV-XXX 指令 或 agent 发现新 obligation"
+    cieu_markers:
+      - OBLIGATION_REGISTERED
+      - CEO_APPROVAL
+    board_approval_required: false
+
+  - decision_type_id: RAPID-013
+    description: ".ystar_session.json 修改 (运行时配置变更)"
+    legacy_level: L2
+    default_R: cto
+    default_A:
+      - eng-governance
+      - secretary
+    default_P: cto
+    default_I: []
+    default_D: ceo
+    trigger_condition: "治理运行时配置变更"
+    cieu_markers:
+      - SESSION_CONFIG_MODIFIED
+      - GOVERNANCE_COMPLIANCE_CHECK
+      - CEO_APPROVAL
+    board_approval_required: false
+
+  - decision_type_id: RAPID-014
+    description: "agents/*.md 修改 (岗位行为宪法更新)"
+    legacy_level: L2
+    default_R: secretary
+    default_A:
+      - eng-governance
+    default_P: secretary
+    default_I:
+      - affected_roles
+    default_D: ceo
+    trigger_condition: "Secretary 在 DNA 蒸馏权限内改岗位行为宪法"
+    cieu_markers:
+      - AGENT_CONTRACT_MODIFIED
+      - CEO_APPROVAL
+    board_approval_required: false
+
+  - decision_type_id: RAPID-015
+    description: "DIRECTIVE_TRACKER.md 更新"
+    legacy_level: L2
+    default_R: secretary
+    default_A:
+      - eng-governance
+    default_P: secretary
+    default_I: []
+    default_D: ceo
+    trigger_condition: "Board directive 归档更新"
+    cieu_markers:
+      - DIRECTIVE_ARCHIVED
+      - CEO_APPROVAL
+    board_approval_required: false
+
+  - decision_type_id: RAPID-016
+    description: "新建/重命名/删除 governance/ 下非宪法文档"
+    legacy_level: L2
+    default_R: responsible_agent
+    default_A:
+      - secretary
+      - eng-governance
+    default_P: responsible_agent
+    default_I: []
+    default_D: ceo
+    trigger_condition: "修改 governance/ 下非宪法文档"
+    cieu_markers:
+      - GOVERNANCE_DOC_MODIFIED
+      - CEO_APPROVAL
+    board_approval_required: false
+
+  - decision_type_id: RAPID-017
+    description: "新建/修改 scripts/ 下工具脚本 (内部工具)"
+    legacy_level: L2
+    default_R: eng_agent
+    default_A:
+      - cto
+    default_P: eng_agent
+    default_I: []
+    default_D: ceo
+    trigger_condition: "不影响外部 commit / 发布行为的 scripts/ 修改"
+    cieu_markers:
+      - SCRIPT_MODIFIED
+      - CTO_APPROVAL
+      - CEO_APPROVAL
+    board_approval_required: false
+
+  - decision_type_id: RAPID-018
+    description: "dispatch 必经 CTO (工程任务分配)"
+    legacy_level: L1_within_eng_L2_if_cross_dept
+    default_R: ceo
+    default_A:
+      - cto
+    default_P: engineer
+    default_I: []
+    default_D: cto
+    trigger_condition: "任何代码/测试/git 操作类任务"
+    cieu_markers:
+      - TASK_DISPATCHED
+      - CTO_DELEGATION
+      - ENGINEER_ASSIGNED
+    board_approval_required: false
+
+  - decision_type_id: RAPID-019
+    description: "反事实推理提案 (WORKING_STYLE.md 第七条)"
+    legacy_level: L2_or_L3_or_RAPID_D_ne_R
+    default_R: responsible_agent
+    default_A: []
+    default_P: responsible_agent
+    default_I: []
+    default_D: ceo_or_board_or_decider
+    trigger_condition: "Level 2/3 决策 或 D≠R 的 RAPID 提案"
+    cieu_markers:
+      - COUNTERFACTUAL_PROPOSAL_DRAFTED
+      - ALTERNATIVES_GE_2
+      - RT_ANALYSIS
+    board_approval_required: conditional_on_decision_type
+
+  - decision_type_id: RAPID-020
+    description: "ystar doctor / check_obligations.py 等只读命令"
+    legacy_level: L1
+    default_R: any_agent
+    default_A: []
+    default_P: any_agent
+    default_I: []
+    default_D: any_agent
+    trigger_condition: "只读诊断命令"
+    cieu_markers:
+      - CMD_EXEC
+      - READ_ONLY
+    board_approval_required: false
+
+  - decision_type_id: RAPID-021
+    description: "PyPI 发布 (ystar-gov / gov-mcp / ystar-defuse)"
+    legacy_level: L3
+    default_R: cto
+    default_A:
+      - secretary
+      - cmo
+    default_P: cto
+    default_I:
+      - ceo
+    default_D: board
+    trigger_condition: "PyPI package 版本发布"
+    cieu_markers:
+      - PYPI_RELEASE_PROPOSED
+      - BOARD_APPROVAL
+    board_approval_required: true
+
+  - decision_type_id: RAPID-022
+    description: "arXiv paper 提交"
+    legacy_level: L3
+    default_R: cto
+    default_A:
+      - secretary
+      - cmo
+    default_P: cto
+    default_I:
+      - all_c_suite
+    default_D: board
+    trigger_condition: "学术论文对外提交"
+    cieu_markers:
+      - ARXIV_SUBMISSION_PROPOSED
+      - BOARD_APPROVAL
+    board_approval_required: true
+
+  - decision_type_id: RAPID-023
+    description: "Show HN post 发布"
+    legacy_level: L3
+    default_R: cmo
+    default_A:
+      - secretary
+      - ceo
+    default_P: cmo
+    default_I:
+      - cso
+      - cto
+    default_D: board
+    trigger_condition: "Hacker News 对外发布"
+    cieu_markers:
+      - SHOW_HN_PROPOSED
+      - BOARD_APPROVAL
+    board_approval_required: true
+
+  - decision_type_id: RAPID-024
+    description: "LinkedIn / X 对外发布"
+    legacy_level: L3
+    default_R: cmo
+    default_A:
+      - secretary
+    default_P: cmo
+    default_I:
+      - ceo
+    default_D: board
+    trigger_condition: "社交媒体对外发布"
+    cieu_markers:
+      - SOCIAL_MEDIA_PROPOSED
+      - BOARD_APPROVAL
+    board_approval_required: true
+
+  - decision_type_id: RAPID-025
+    description: "内部 blog 草稿 (content/drafts/)"
+    legacy_level: L1
+    default_R: cmo
+    default_A: []
+    default_P: cmo
+    default_I: []
+    default_D: cmo
+    trigger_condition: "内部草稿，无外部可见性"
+    cieu_markers:
+      - CONTENT_DRAFTED
+    board_approval_required: false
+
+  - decision_type_id: RAPID-026
+    description: "burn rate 记录更新 (scripts/track_burn.py)"
+    legacy_level: L1
+    default_R: cfo
+    default_A: []
+    default_P: cfo
+    default_I: []
+    default_D: cfo
+    trigger_condition: "财务数据记录更新"
+    cieu_markers:
+      - BURN_RATE_UPDATED
+    board_approval_required: false
+
+  - decision_type_id: RAPID-027
+    description: "Secretary 归档索引更新"
+    legacy_level: L1
+    default_R: secretary
+    default_A: []
+    default_P: secretary
+    default_I: []
+    default_D: secretary
+    trigger_condition: "归档索引维护"
+    cieu_markers:
+      - ARCHIVE_INDEX_UPDATED
+    board_approval_required: false
+
+  - decision_type_id: RAPID-028
+    description: "CTO 运行 pytest (86 tests must pass)"
+    legacy_level: L1
+    default_R: cto
+    default_A: []
+    default_P: cto
+    default_I: []
+    default_D: cto
+    trigger_condition: "测试验证 (无修改代码)"
+    cieu_markers:
+      - PYTEST_RUN
+    board_approval_required: false
+
+  - decision_type_id: RAPID-029
+    description: "CTO 修 bug (Y*gov 源码)"
+    legacy_level: L2_for_cross_module_L1_for_single_module
+    default_R: cto
+    default_A:
+      - eng-governance
+    default_P: cto
+    default_I: []
+    default_D: ceo
+    trigger_condition: "Y*gov 源码 bug 修复"
+    cieu_markers:
+      - BUG_FIX_PROPOSED
+      - CEO_APPROVAL
+    board_approval_required: false
+
+  - decision_type_id: RAPID-030
+    description: "定价模型建立 (finance/)"
+    legacy_level: L3_if_externally_committed_L2_if_internal_draft
+    default_R: cfo
+    default_A:
+      - secretary
+      - cso
+    default_P: cfo
+    default_I:
+      - ceo
+      - cmo
+    default_D: board_if_committed_ceo_if_draft
+    trigger_condition: "定价模型初建或修改"
+    cieu_markers:
+      - PRICING_MODEL_PROPOSED
+      - BOARD_APPROVAL_IF_COMMITTED
+    board_approval_required: conditional_on_external_commitment

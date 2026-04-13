@@ -1,0 +1,171 @@
+# Escape Hatch Whitelist - Y* Bridge Labs Self-Rescue Protocols
+# Source: AMENDMENT-009 (Priority Brief + Tombstone + Escape Hatch)
+# Owner: CTO (Ethan Wright)
+# Schema Version: 1.0
+# Last Updated: 2026-04-13T14:30:00Z
+# Authority: AMENDMENT-018 §2.2 unified entry schema
+
+schema_version: "1.0"
+corpus: "escape_hatch"
+last_updated: "2026-04-13T14:30:00Z"
+source_files:
+  - "reports/proposals/charter_amendment_009_priority_brief_tombstone_escape_hatch.md"
+
+entries:
+  - id: escape_001
+    who: board
+    what: "Active_agent deadlock escape - 当.ystar_active_agent文件锁导致agent无法切换岗位时,Board通过shell直接覆写active_agent文件. 环境变量YSTAR_BOARD_SHELL=1存在时允许任意active_agent切换."
+    when_trigger: "active_agent file locked AND agent cannot switch roles AND Board intervention needed"
+    when_complete: "Board runs shell command `echo {role} > .ystar_active_agent` OR `export YSTAR_BOARD_SHELL=1` + CIEU event BOARD_SHELL_OVERRIDE emitted with 前/后 agent + timestamp"
+    prerequisites:
+      - "active_agent deadlock confirmed (agent reports cannot write to .ystar_active_agent)"
+      - "Board has shell access"
+    observable_signal:
+      cieu_event: "BOARD_SHELL_OVERRIDE"
+      must_contain:
+        scenario: "active_agent_deadlock"
+        previous_agent: "{previous_role}"
+        new_agent: "{new_role}"
+        board_shell_env: true
+    source_ref:
+      file: "reports/proposals/charter_amendment_009_priority_brief_tombstone_escape_hatch.md"
+      section: "§2.5 Board Shell Escape Hatch"
+      line_range: "147-155"
+
+  - id: escape_002
+    who: cto
+    what: "Circuit breaker ARMED escape - 当Y*gov circuit breaker进入ARMED状态(连续违规触发)时,CTO运行`gov_reset_breaker` + git commit breach evidence作为reset理由,然后继续工作."
+    when_trigger: "circuit_breaker_state == ARMED"
+    when_complete: "gov_reset_breaker executed + breach evidence committed to git with commit message referencing circuit breaker event_id + CIEU event CIRCUIT_BREAKER_RESET emitted"
+    prerequisites:
+      - "circuit breaker ARMED state detected in CIEU log"
+      - "breach root cause identified"
+    observable_signal:
+      cieu_event: "CIRCUIT_BREAKER_RESET"
+      must_contain:
+        scenario: "breaker_armed"
+        breach_evidence_commit: "{commit_hash}"
+        reset_reason: "documented"
+    source_ref:
+      file: "reports/proposals/charter_amendment_009_priority_brief_tombstone_escape_hatch.md"
+      section: "§1 Problem Statement (implied failure modes)"
+      line_range: "13-22"
+
+  - id: escape_003
+    who: eng_platform
+    what: "Watcher daemon deadlock escape - 当AMENDMENT-016 watcher进程(pid文件存在但进程已死)导致新watcher无法启动时,Platform工程师pkill watcher进程并删除stale pid文件,然后重启watcher."
+    when_trigger: "watcher startup fails with 'pid file exists' error AND `ps aux | grep watcher` shows no running process"
+    when_complete: "stale pid file removed + watcher process restarted + CIEU event WATCHER_DEADLOCK_RESOLVED emitted with old_pid + new_pid"
+    prerequisites:
+      - "watcher startup failure detected"
+      - "stale pid file confirmed (pid not in process table)"
+    observable_signal:
+      cieu_event: "WATCHER_DEADLOCK_RESOLVED"
+      must_contain:
+        scenario: "watcher_pid_stale"
+        old_pid: "{stale_pid}"
+        new_pid: "{new_watcher_pid}"
+    source_ref:
+      file: "reports/proposals/charter_amendment_009_priority_brief_tombstone_escape_hatch.md"
+      section: "§2.1a GitHub-first boot snapshot (offline降级机制暗示的故障模式)"
+      line_range: "70-72"
+
+  - id: escape_004
+    who: ceo
+    what: "Priority brief stale/stub escape - 当reports/priority_brief.md stale(mtime>48h)或未填(包含{{TODO}}或_stub_unfilled_)导致governance_boot.sh FAIL时,CEO立即手写priority brief填充所有必填字段,然后重新boot."
+    when_trigger: "governance_boot.sh STEP 0 fails with PRIORITY BRIEF: STALE or STUB NOT FILLED"
+    when_complete: "reports/priority_brief.md updated with all required sections (当前Labs阶段/Top-5优先级/DEPRECATED清单/下次boot不要做什么/Board shell解锁清单/enforce规则) + mtime < 48h + no stub markers + boot retry succeeds"
+    prerequisites:
+      - "boot failure due to priority_brief stale or stub"
+      - "CEO has write access to reports/priority_brief.md"
+    observable_signal:
+      cieu_event: "PRIORITY_BRIEF_UPDATED"
+      must_contain:
+        scenario: "boot_failure_escape"
+        update_reason: "stale|stub_unfilled"
+        all_sections_filled: true
+    source_ref:
+      file: "reports/proposals/charter_amendment_009_priority_brief_tombstone_escape_hatch.md"
+      section: "§2.2 Boot 协议改动: STEP 0"
+      line_range: "76-104"
+
+  - id: escape_005
+    who: secretary
+    what: "DEPRECATED条目污染escape - 当BOARD_PENDING.md或DISPATCH.md中deprecated条目(status!=active)误导boot时,Secretary tombstone这些条目(添加frontmatter: status=deprecated + deprecated_at + deprecated_reason),boot时只读status=active条目."
+    when_trigger: "boot reads BOARD_PENDING.md or DISPATCH.md AND deprecated items cause confusion"
+    when_complete: "deprecated items have frontmatter with status=deprecated + deprecated_at + deprecated_reason + boot script filters to show only status=active items + CIEU event TOMBSTONE_APPLIED emitted"
+    prerequisites:
+      - "deprecated items identified in BOARD_PENDING.md or DISPATCH.md"
+      - "Secretary has write access to these files"
+    observable_signal:
+      cieu_event: "TOMBSTONE_APPLIED"
+      must_contain:
+        scenario: "deprecated_item_pollution"
+        file: "BOARD_PENDING.md|DISPATCH.md"
+        tombstone_count: ">= 1"
+    source_ref:
+      file: "reports/proposals/charter_amendment_009_priority_brief_tombstone_escape_hatch.md"
+      section: "§2.4 Deprecation Tombstone 机制"
+      line_range: "117-134"
+
+  - id: escape_006
+    who: all_agents
+    what: "Session boot GitHub drift escape - 当governance_boot.sh STEP -1 GitHub snapshot发现local vs origin/main drift(ahead>5 OR behind>5)时,agent先git fetch + git status检查conflict,无conflict则git pull,有conflict则git stash + git pull + Board通知merge needed."
+    when_trigger: "governance_boot.sh STEP -1 reports ahead>5 or behind>5"
+    when_complete: "git pull executed (if no conflicts) OR git stash + git pull + Board notified (if conflicts) + CIEU event GITHUB_DRIFT_RESOLVED emitted"
+    prerequisites:
+      - "GitHub snapshot shows drift"
+      - "network available"
+    observable_signal:
+      cieu_event: "GITHUB_DRIFT_RESOLVED"
+      must_contain:
+        scenario: "boot_github_drift"
+        ahead_count: "{N}"
+        behind_count: "{N}"
+        conflicts_detected: "true|false"
+        board_notified: "true|false"
+    source_ref:
+      file: "reports/proposals/charter_amendment_009_priority_brief_tombstone_escape_hatch.md"
+      section: "§2.1a GitHub-first boot snapshot"
+      line_range: "44-72"
+
+  - id: escape_007
+    who: cto
+    what: "Y*gov source-first bug fix escape - 当site-packages中Y*gov代码有bug时,CTO绝不直接修改site-packages,而是修Y*gov源码库(sibling workspace),rebuild whl,reinstall. 所有fix必须在源码库中commit + 86 tests pass."
+    when_trigger: "Y*gov bug detected in installed package"
+    when_complete: "bug fix committed in Y*gov source repo + whl rebuilt + reinstalled + 86 tests pass + CIEU event YSTAR_SOURCE_FIX_COMPLETE emitted + reports/cto_fix_log.md entry added"
+    prerequisites:
+      - "bug reproduced"
+      - "CIEU trace shows root cause"
+      - "CTO has access to Y*gov source workspace"
+    observable_signal:
+      cieu_event: "YSTAR_SOURCE_FIX_COMPLETE"
+      must_contain:
+        scenario: "site_packages_bug"
+        source_repo_commit: "{commit_hash}"
+        tests_passed: 86
+        fix_log_entry: "reports/cto_fix_log.md"
+    source_ref:
+      file: "AGENTS.md (CTO section)"
+      section: "Engineering Standards - Source-First Fixes"
+      line_range: "implied from CTO role definition (not explicit in AMENDMENT-009)"
+
+  - id: escape_008
+    who: all_agents
+    what: "Article 11 enforcement hook failure escape - 当article11_compliance.py hook连续3次DENY CEO response(因缺ARTICLE_11_PASS事件)但CEO确认已完成7层时,CEO运行`mcp__gov-mcp__gov_article11_pass`手动提交7层内容,hook校验字段非空+长度≥20字/层后放行."
+    when_trigger: "article11_compliance.py hook DENY count >= 3 AND CEO confirms 7 layers completed"
+    when_complete: "gov_article11_pass tool called with all 7 layers (layer_1_intent...layer_7_execution) + each layer ≥20 chars + hook validates + ARTICLE_11_PASS event emitted + response allowed"
+    prerequisites:
+      - "hook DENY count >= 3"
+      - "CEO has completed 7-layer framework"
+    observable_signal:
+      cieu_event: "ARTICLE_11_PASS"
+      must_contain:
+        scenario: "hook_enforcement_escape"
+        layer_count: 7
+        each_layer_min_length: 20
+        hook_validated: true
+    source_ref:
+      file: "reports/proposals/charter_amendment_009_priority_brief_tombstone_escape_hatch.md"
+      section: "§2.5a Article 11 Pre-Response Hook"
+      line_range: "135-144"
