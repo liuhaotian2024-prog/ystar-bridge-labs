@@ -1,4 +1,68 @@
-# ⚠️ 2026-04-12 NEW AIDEN: READ THIS FIRST
+# 🛑 AMENDMENT-009 TOMBSTONE HEADER (2026-04-13)
+
+**下次 boot 的 Aiden：先读 `reports/priority_brief.md`，它优先级高于本文件。**
+
+---
+
+# 🆕 2026-04-13 AMENDMENT-011 立项（P0）
+
+**Board 2026-04-13 晨口头授权立项**（session CEO Aiden）。提案：
+`reports/proposals/charter_amendment_011_truth_source_multiagent_dna_slicing.md`
+
+**三项结构性漏洞**（本 session 实证）：
+1. Truth source 冲突：handoff/DISPATCH/priority_brief 三份同权威讲不同故事 → 唯一真源 + boot 一致性校验
+2. C-suite 非 sub-agent：CEO session 里物理派不动 CTO → hook 改 capability-based (gov_delegate chain 验证)
+3. DNA 未切片：全员共读 AGENTS.md → 按 role 切片 + boot_pack 内嵌 role-specific payload
+
+**附加**：Secretary `secretary_curate.py` 13 步 pipeline 全 stub，72h 内必须落地 Step 1/2/5
+
+**Board D/A/S/C 待签**。
+
+---
+
+本文件中以下区块已 **DEPRECATED**（不要按它们行动）：
+- 「2026-04-11 夜 搬家 BLOCKED 选项 A/B/C」整块 — 单机单 workspace 是最终架构（AMENDMENT-004），搬家方案作废
+- 任何 `192.168.1.228 MAC mini` / Windows+Mac 双机分工引用 — AMENDMENT-004 已固化单机
+- 任何 Y*Defuse 30天战役 Day N 倒计时的优先级主张 — Labs 现为内部完善期（见 priority_brief §1）
+
+仍 active 的议题：CIEU persistence / delegation chain / circuit breaker（priority_brief §2 P0-1）。
+
+正式 tombstone frontmatter 机制由 AMENDMENT-009 落地后接管，本 header 为过渡标记。
+
+---
+
+# 🔔 2026-04-12 夜 — Board Shell Override 清单（最紧急）
+
+**上下文**: CEO 自主 session 推进至此，两条主路径均被 hook 阻塞（符合治理设计，非 bug）。以下 3 项需 Board 手动 shell，每项完成后系统可继续自主运行。
+
+## Ask 1 — 让 Ryan 实装 AMENDMENT-009+010（~90 min）
+
+**阻塞**: hook `must_dispatch_via_cto` 禁 CEO → Ryan-Platform 直派；CTO sub-agent 无 nested-spawn 工具。
+
+**解法**: 新开终端以 eng-platform 身份启动 Claude Code：
+```bash
+cd /Users/haotianliu/.openclaw/workspace/ystar-company
+YSTAR_AGENT_ID=eng-platform claude
+```
+首句输入：`按 reports/boot_packages/eng-platform.json action_queue 15 步执行`
+
+**任务卡已写**: `.claude/tasks/ryan-amendment-009-010-impl.md`（完整 15 步合约，含 partial-execution 协议）
+
+## Ask 2 — Secretary 归档 AMENDMENT-005+006 到 charter（~2 min）
+
+**阻塞**: active_agent 身份锁，CEO 切不到 secretary 写 `governance/BOARD_CHARTER_AMENDMENTS.md`。
+
+**解法**: 同上方式，`YSTAR_AGENT_ID=secretary claude`，指令：归档 005+006 到 charter。
+
+## Ask 3 — AMENDMENT-009 正式批入 charter
+
+**阻塞**: 需要 Board 对话中审批。
+
+**解法**: 直接对话确认"批准 AMENDMENT-009"即可，Secretary 下一次 shell 一并归档。
+
+---
+
+# ⚠️ 2026-04-12 NEW AIDEN: READ THIS FIRST (⛔ 以下大段部分已被上方 TOMBSTONE 覆盖，仅保留作历史参考)
 
 **If you are a freshly-booted Aiden reading this**: Before processing any new directive, Read `reports/next_session_critical_reading.md` in full. It contains 24+ pointers to critical artifacts from the 2026-04-12 Board session that are NOT captured by the current Continuity Guardian v1 (wisdom_extractor only reads CIEU + memory.db, missing reports/experiments/, knowledge/theory/, knowledge/feedback/, git diff).
 
