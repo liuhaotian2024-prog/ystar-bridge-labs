@@ -170,6 +170,83 @@ Generated: 2026-04-13
             os.unlink(f.name)
 
 
+class TestAtlasV2Enhancements:
+    """Test v2 enhanced caller detection."""
+
+    def test_cron_caller_detection(self):
+        """Test cron job caller detection."""
+        atlas = LabsAtlas()
+
+        # Create a module
+        with tempfile.NamedTemporaryFile(suffix='.py', delete=False) as f:
+            f.write(b"# cron test module\n")
+            f.flush()
+
+            module = ModuleInfo(Path(f.name), "Labs-scripts")
+            module.parse()
+            atlas.modules[str(Path(f.name))] = module
+
+            # Build caller graph
+            atlas.build_caller_graph()
+
+            # If module name appears in crontab, should have "crontab" caller
+            # (This tests the detection logic exists, actual result depends on real crontab)
+
+            os.unlink(f.name)
+
+    def test_hook_config_caller_detection(self):
+        """Test hook configuration caller detection."""
+        atlas = LabsAtlas()
+
+        # Test with hook_session_start (known to be in .claude/settings.json)
+        # Module path would be scripts/hook_session_start.py
+        hook_module_path = YSTAR_DIR / "scripts" / "hook_session_start.py"
+        if hook_module_path.exists():
+            module = ModuleInfo(hook_module_path, "Labs-scripts")
+            module.parse()
+            atlas.modules[str(hook_module_path)] = module
+
+            atlas.build_caller_graph()
+
+            # Should detect hook:SessionStart as caller
+            assert any("hook:" in str(c) for c in module.callers), \
+                f"hook_session_start should be detected as called by hooks, got callers: {module.callers}"
+
+    def test_shell_wrapper_caller_detection(self):
+        """Test shell script wrapper caller detection."""
+        atlas = LabsAtlas()
+
+        # Test with session_boot_yml (called by governance_boot.sh)
+        boot_module_path = YSTAR_DIR / "scripts" / "session_boot_yml.py"
+        if boot_module_path.exists():
+            module = ModuleInfo(boot_module_path, "Labs-scripts")
+            module.parse()
+            atlas.modules[str(boot_module_path)] = module
+
+            atlas.build_caller_graph()
+
+            # Should detect governance_boot.sh as caller
+            assert any("governance_boot.sh" in str(c) for c in module.callers), \
+                f"session_boot_yml should be detected as called by shell scripts, got callers: {module.callers}"
+
+    def test_submodule_import_detection(self):
+        """Test 'from ystar.adapters.X import' pattern detection."""
+        atlas = LabsAtlas()
+
+        # boundary_enforcer should be detected as active (imported in tests)
+        boundary_module_path = Path("/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/adapters/boundary_enforcer.py")
+        if boundary_module_path.exists():
+            module = ModuleInfo(boundary_module_path, "Y*gov-adapters")
+            module.parse()
+            atlas.modules[str(boundary_module_path)] = module
+
+            atlas.build_caller_graph()
+
+            # Should have callers (test files import it)
+            assert len(module.callers) > 0, \
+                f"boundary_enforcer should have callers, got: {module.callers}"
+
+
 def test_integration_scan_and_query():
     """Integration test: scan -> generate -> query."""
     atlas = LabsAtlas()

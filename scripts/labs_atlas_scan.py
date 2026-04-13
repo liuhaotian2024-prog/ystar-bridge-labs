@@ -108,30 +108,79 @@ class LabsAtlas:
             self.modules[str(py_file)] = module
 
     def build_caller_graph(self):
-        """Build who-calls-whom graph by grepping imports."""
-        print("🔗 Building caller graph...")
+        """Build who-calls-whom graph by grepping imports + execution patterns."""
+        print("🔗 Building caller graph (v2: enhanced detection)...")
 
         for module_path, module in self.modules.items():
-            # Grep for imports of this module across all repos
+            module_stem = module.path.stem  # e.g., "boundary_enforcer"
             module_name = module.module_name.split(".")[-1]  # Last component
 
-            # Search patterns
-            patterns = [
+            # 1. Standard import patterns
+            import_patterns = [
                 f"from .* import .*{module_name}",
                 f"import .*{module_name}",
+                f"from ystar\\..*{module_name} import",  # Submodule imports
             ]
 
             for search_root, _ in SCAN_PATHS:
                 if not search_root.exists():
                     continue
 
-                for pattern in patterns:
+                for pattern in import_patterns:
                     try:
-                        # Use grep to find imports
                         result = os.popen(f"grep -r -l '{pattern}' {search_root} --include='*.py' 2>/dev/null").read()
                         for caller_file in result.strip().split('\n'):
                             if caller_file and caller_file != str(module.path):
                                 module.callers.add(caller_file)
+                    except Exception:
+                        pass
+
+            # 2. Cron job executions (scripts/*.py called by crontab)
+            if module.subsystem == "Labs-scripts":
+                try:
+                    crontab = os.popen("crontab -l 2>/dev/null").read()
+                    if module_stem in crontab:
+                        module.callers.add("crontab")
+                except Exception:
+                    pass
+
+            # 3. Hook config executions (.claude/settings.json)
+            if module.subsystem == "Labs-scripts":
+                try:
+                    hook_config = YSTAR_COMPANY / ".claude" / "settings.json"
+                    if hook_config.exists():
+                        with open(hook_config) as f:
+                            config_text = f.read()
+                            if module_stem in config_text:
+                                module.callers.add("hook:SessionStart")
+                except Exception:
+                    pass
+
+            # 4. Shell wrapper executions (scripts/*.sh calling python3 scripts/X.py)
+            if module.subsystem == "Labs-scripts":
+                try:
+                    for sh_file in (YSTAR_COMPANY / "scripts").glob("*.sh"):
+                        with open(sh_file) as f:
+                            sh_content = f.read()
+                            # Match: python3 scripts/X.py or python3.11 scripts/X.py
+                            if re.search(rf'python3(?:\.11)?\s+.*{module_stem}\.py', sh_content):
+                                module.callers.add(str(sh_file))
+                except Exception:
+                    pass
+
+            # 5. MCP tool registrations (gov_mcp/server.py or tools/cieu/ygva)
+            # Check if this module is referenced in MCP server tool registration
+            mcp_paths = [
+                YSTAR_COMPANY / "gov-mcp" / "gov_mcp" / "server.py",
+                YSTAR_COMPANY / "tools" / "cieu" / "ygva" / "governor.py",
+            ]
+            for mcp_file in mcp_paths:
+                if mcp_file.exists():
+                    try:
+                        with open(mcp_file) as f:
+                            mcp_content = f.read()
+                            if module_stem in mcp_content or module_name in mcp_content:
+                                module.callers.add(f"mcp:{mcp_file.name}")
                     except Exception:
                         pass
 
@@ -166,35 +215,65 @@ class LabsAtlas:
 
     def detect_dead_patterns(self):
         """Detect modules/symbols that are exported but never consumed."""
-        print("🔍 Detecting dead code patterns...")
+        print("🔍 Detecting dead code patterns (v2: caller-aware)...")
 
         now = datetime.now()
         dormant_threshold = now - timedelta(days=7)
         dead_threshold = now - timedelta(days=30)
 
         for module_path, module in self.modules.items():
-            # Status determination
-            if module.last_invoked is None:
-                if not module.callers:
+            # Enhanced status determination (v2)
+            has_callers = len(module.callers) > 0
+            has_invocation = module.last_invoked is not None
+
+            if has_invocation:
+                # Has CIEU records - use timestamp-based logic
+                if module.last_invoked >= dormant_threshold:
+                    module.status = "active"
+                elif module.last_invoked >= dead_threshold:
+                    module.status = "dormant"
+                elif not has_callers:
+                    module.status = "dead"
+                    self.dead_patterns.append((
+                        module.subsystem,
+                        module.module_name,
+                        f"Last invoked {(now - module.last_invoked).days}d ago, no callers"
+                    ))
+                else:
+                    module.status = "dormant"
+            else:
+                # No CIEU records - rely on caller graph
+                if has_callers:
+                    # Has callers but no CIEU: likely a library/adapter module
+                    caller_sources = [str(c) for c in module.callers]
+
+                    # Check if actively used (has cron/hook/shell/MCP callers)
+                    active_caller_patterns = ["crontab", "hook:", ".sh", "mcp:"]
+                    has_active_caller = any(
+                        any(pattern in caller for pattern in active_caller_patterns)
+                        for caller in caller_sources
+                    )
+
+                    # Also check if imported by production code (non-test files)
+                    has_production_caller = any(
+                        "test_" not in caller and "/tests/" not in caller
+                        for caller in caller_sources
+                        if not any(p in caller for p in active_caller_patterns)
+                    )
+
+                    if has_active_caller or has_production_caller:
+                        module.status = "active"
+                    else:
+                        # Has callers but no active execution context (only test imports)
+                        module.status = "unknown"
+                else:
+                    # No callers, no invocation - truly dead
                     module.status = "dead"
                     self.dead_patterns.append((
                         module.subsystem,
                         module.module_name,
                         "Never invoked, no callers"
                     ))
-                else:
-                    module.status = "unknown"
-            elif module.last_invoked < dead_threshold and not module.callers:
-                module.status = "dead"
-                self.dead_patterns.append((
-                    module.subsystem,
-                    module.module_name,
-                    f"Last invoked {(now - module.last_invoked).days}d ago, no callers"
-                ))
-            elif module.last_invoked < dormant_threshold:
-                module.status = "dormant"
-            else:
-                module.status = "active"
 
             # Check for instantiated-but-never-consumed classes
             for cls in module.classes:
