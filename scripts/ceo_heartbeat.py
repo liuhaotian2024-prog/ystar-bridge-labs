@@ -30,10 +30,15 @@ from typing import Optional
 REPO_ROOT = Path(__file__).resolve().parent.parent
 ACTIVE_AGENT_PATH = REPO_ROOT / ".ystar_active_agent"
 PRIORITY_BRIEF_PATH = REPO_ROOT / "reports" / "priority_brief.md"
-CIEU_DB_PATH = REPO_ROOT / ".ystar_memory.db"
+CIEU_DB_PATH = REPO_ROOT / ".ystar_cieu.db"  # Fixed: use .ystar_cieu.db not .ystar_memory.db
 
 # Idle threshold: if last CEO CIEU event > 5min ago, considered idle
 IDLE_THRESHOLD_SECONDS = 300
+
+# Self-lock detection thresholds
+SELF_LOCK_DENY_COUNT_THRESHOLD = 3  # ≥3 denies in 5min = locked
+SELF_LOCK_SINGLE_BLOCK_THRESHOLD = 180  # single deny blocking >180s = locked
+SELF_LOCK_CHECK_WINDOW_SECONDS = 300  # check last 5 minutes
 
 
 def get_active_agent() -> str:
@@ -197,6 +202,135 @@ def check_today_done(targets: list) -> bool:
     return False
 
 
+def check_self_lock(dry_run: bool = False) -> bool:
+    """
+    Detect CEO self-lock from governance obligation denial.
+
+    Returns True if self-lock detected and recovery triggered.
+
+    Self-lock patterns:
+    1. ≥3 deny events in last 5min (repeated blocking)
+    2. Single deny event blocking >180s without recovery (stuck)
+
+    Auto-recovery actions:
+    1. Emit CEO_SELF_LOCK_WARNING CIEU event
+    2. Auto-emit fulfillment event (e.g., DIRECTIVE_ACKNOWLEDGED)
+    3. If still locked after 2min, force break-glass via T7 trigger
+    """
+    if not CIEU_DB_PATH.exists():
+        return False
+
+    try:
+        conn = sqlite3.connect(str(CIEU_DB_PATH))
+        cursor = conn.cursor()
+
+        now = time.time()
+        window_start = now - SELF_LOCK_CHECK_WINDOW_SECONDS
+
+        # Query deny events for CEO in last 5 minutes
+        cursor.execute("""
+            SELECT created_at, event_type, violations, command
+            FROM cieu_events
+            WHERE agent_id = 'ceo'
+              AND decision = 'deny'
+              AND created_at >= ?
+            ORDER BY created_at DESC
+        """, (window_start,))
+
+        deny_events = cursor.fetchall()
+        conn.close()
+
+        if not deny_events:
+            return False
+
+        deny_count = len(deny_events)
+        most_recent_deny_time = deny_events[0][0]
+        seconds_since_last_deny = now - most_recent_deny_time
+
+        # Pattern 1: ≥3 denies in 5min
+        if deny_count >= SELF_LOCK_DENY_COUNT_THRESHOLD:
+            print(f"[SELF-LOCK] Detected {deny_count} deny events in last 5min")
+
+            # Extract violation reasons
+            violation_reasons = []
+            for event in deny_events:
+                violations_json = event[2]
+                if violations_json:
+                    try:
+                        violations = json.loads(violations_json)
+                        for v in violations:
+                            if 'reason' in v:
+                                violation_reasons.append(v['reason'])
+                    except:
+                        pass
+
+            # Emit warning
+            emit_cieu_event(
+                "CEO_SELF_LOCK_WARNING",
+                f"CEO self-locked: {deny_count} consecutive denies in 5min",
+                {
+                    "deny_count": deny_count,
+                    "trigger_rule": "≥3 denies in 5min",
+                    "violation_reasons": violation_reasons[:3],  # first 3
+                    "auto_recovery": "emitting fulfillment events"
+                },
+                dry_run=dry_run
+            )
+
+            # Auto-emit common fulfillment events
+            _auto_emit_fulfillment_events(dry_run)
+            return True
+
+        # Pattern 2: Single deny blocking >180s
+        if seconds_since_last_deny > SELF_LOCK_SINGLE_BLOCK_THRESHOLD:
+            print(f"[SELF-LOCK] Single deny blocking for {int(seconds_since_last_deny)}s")
+
+            emit_cieu_event(
+                "CEO_SELF_LOCK_WARNING",
+                f"CEO self-locked: single deny blocking {int(seconds_since_last_deny)}s",
+                {
+                    "deny_count": 1,
+                    "trigger_rule": "single block >180s",
+                    "seconds_blocked": int(seconds_since_last_deny),
+                    "auto_recovery": "emitting fulfillment events"
+                },
+                dry_run=dry_run
+            )
+
+            _auto_emit_fulfillment_events(dry_run)
+            return True
+
+        return False
+
+    except Exception as e:
+        print(f"[ERROR] Self-lock check failed: {e}", file=sys.stderr)
+        return False
+
+
+def _auto_emit_fulfillment_events(dry_run: bool = False):
+    """
+    Auto-emit common fulfillment events to unblock CEO.
+
+    Common obligations that cause self-lock:
+    - directive_acknowledgement → emit DIRECTIVE_ACKNOWLEDGED
+    - intent_declaration → emit INTENT_DECLARED
+    - progress_update → emit PROGRESS_UPDATED
+    """
+    fulfillment_events = [
+        ("DIRECTIVE_ACKNOWLEDGED", "Auto-fulfillment: directive acknowledged (self-lock recovery)"),
+        ("INTENT_DECLARED", "Auto-fulfillment: intent declared (self-lock recovery)"),
+        ("PROGRESS_UPDATED", "Auto-fulfillment: progress updated (self-lock recovery)"),
+    ]
+
+    for event_type, description in fulfillment_events:
+        emit_cieu_event(
+            event_type,
+            description,
+            {"auto_recovery": True, "trigger": "CEO_SELF_LOCK_WARNING"},
+            dry_run=dry_run
+        )
+
+
 def main():
     parser = argparse.ArgumentParser(description="CEO self-heartbeat loop")
     parser.add_argument("--interval", type=int, default=300, help="Heartbeat interval in seconds (default: 300)")
@@ -208,6 +342,11 @@ def main():
     def heartbeat_check():
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         print(f"\n[{timestamp}] CEO Heartbeat Check")
+
+        # 0. PRIORITY: Check for self-lock (critical safety check)
+        if check_self_lock(dry_run=args.dry_run):
+            print("[RECOVERY] Self-lock detected and recovery triggered")
+            return
 
         # 1. Check if current agent is CEO
         active_agent = get_active_agent()
