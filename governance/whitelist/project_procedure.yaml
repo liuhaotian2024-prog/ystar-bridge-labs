@@ -1,0 +1,187 @@
+# Project Procedure Whitelist
+# Constitutional procedures extracted from AGENTS.md, governance protocols, and Y*gov workflows
+# Sync mechanism: governance_watcher.py monitors this file → daemon reloads on change
+# Owner: eng-kernel (Leo Chen)
+# Generated: 2026-04-13 (A018 Phase 1)
+
+procedures:
+  # ====================
+  # Board Directive Flow
+  # ====================
+  - id: directive_acknowledgement
+    title: Board Directive Acknowledgement Protocol
+    source: AGENTS.md Constitutional Rule — Directive Tracking
+    steps:
+      - CEO receives Board directive
+      - Within 10 minutes → decompose ALL sub-tasks into DIRECTIVE_TRACKER.md
+      - Every sub-task gets row with description/owner/status/deliverable
+      - Implicit tasks count (if mentioned → must track)
+      - Conditional tasks count (future triggers → must track)
+      - No directive closed until all sub-tasks ✅ or Board-cancelled
+    enforcement: obligation_timing.directive_decomposition = 600s
+    violation_severity: HARD_OVERDUE
+
+  - id: directive_session_check
+    title: Directive Status Check at Session Start
+    source: AGENTS.md Constitutional Rule — Directive Tracking §3
+    steps:
+      - Every session start → CEO checks DIRECTIVE_TRACKER.md for ❌ items
+      - Any ❌ item >3 days stale → must mention in today's briefing
+      - Session end → update DIRECTIVE_TRACKER.md for all items worked today
+    enforcement: session_start_checklist.directive_check
+    violation_severity: ALLOW (warning only)
+
+  # ====================
+  # Content Approval
+  # ====================
+  - id: social_media_approval
+    title: Social Media Content Approval Request
+    source: AGENTS.md Constitutional Rule — Social Media Engagement
+    steps:
+      - Agent drafts Content Approval Request with Platform/Action/Target/Why/Draft/Compliance/Quality-check
+      - Submit to Board
+      - Board responds ✅ Approved / ✏️ Edit / ❌ Rejected
+      - Agent executes only if ✅
+    enforcement: pre-action gate (no automation)
+    violation_severity: HARD_OVERDUE
+    rationale: Chairman's personal accounts + company reputation at stake
+
+  - id: article_source_verification
+    title: Article Writing Source Verification
+    source: AGENTS.md Constitutional Rule — Article Writing
+    steps:
+      - Before writing any article → CMO lists every factual claim
+      - For each claim → cite exact source (file path+line / commit hash / case report)
+      - If no source exists → claim CANNOT appear
+      - FORBIDDEN claims → domain-specific without real customer (HIPAA/SOC2/FINRA)
+      - Fabrication = inventing numbers/events/plausible examples not grounded in real events
+    enforcement: obligation_timing.article_source_verification = 300s
+    violation_severity: HARD_OVERDUE
+    rationale: Fabrication is highest-severity violation
+
+  # ====================
+  # Data Governance
+  # ====================
+  - id: cieu_archive_before_cleanup
+    title: CIEU Data Archive Before Database Cleanup
+    source: AGENTS.md Constitutional Rule — CIEU Data Preservation
+    steps:
+      - Before clearing .ystar_cieu.db → run `ystar archive-cieu`
+      - Before clearing .ystar_cieu_omission.db → same archive requirement
+      - Archive creates permanent JSONL in data/cieu_archive/YYYY-MM-DD.jsonl
+      - Experiment completion → `ystar archive-cieu --experiment EXP_NNN`
+      - Archive format JSONL (one JSON object per line)
+      - Never delete archived files
+    enforcement: pre-action gate + ystar doctor weekly check
+    violation_severity: P0 (HARD_OVERDUE)
+    rationale: 2026-04-03 lost all EXP-001 governance records due to cleanup without archive
+
+  # ====================
+  # Engineering Workflow
+  # ====================
+  - id: ystar_6pager_assignment
+    title: Y*gov 6-Pager Task Assignment
+    source: Y*gov internal delegation protocol
+    steps:
+      - CTO receives complex task requiring delegation
+      - Draft 6-pager with Context/Goal/Scope/Constraints/Success-criteria/Timeline
+      - Save to .claude/tasks/{assignee}-{task-id}-{slug}.md
+      - Use Agent tool to spawn sub-agent with prompt pointing to card
+      - Sub-agent reads card → acknowledges → executes → reports back
+      - CTO verifies deliverable against success criteria
+    enforcement: delegation_chain validation
+    violation_severity: ALLOW (quality gate, not blocker)
+
+  - id: release_sign_off
+    title: Y*gov Release Sign-off
+    source: Y*gov release protocol (implicit from past sessions)
+    steps:
+      - All tests pass (pytest --tb=short -q)
+      - Version bump in ystar/__init__.py + setup.py
+      - Update CHANGELOG.md with new version section
+      - git tag vX.Y.Z
+      - Build wheel with `python setup.py bdist_wheel`
+      - Test install in clean venv
+      - CEO approval required before `twine upload`
+      - Board approval required for major versions (X.0.0)
+    enforcement: manual gate (CEO/Board approval)
+    violation_severity: HARD_OVERDUE if shipped without approval
+
+  - id: amendment_lifecycle
+    title: AGENTS.md Amendment Lifecycle
+    source: Y*gov governance evolution protocol
+    steps:
+      - Agent discovers systemic issue or governance gap
+      - Draft amendment proposal in reports/proposals/charter_amendment_NNN_title.md
+      - Include Problem/Solution/Evidence/Impact/Enforcement
+      - Submit to Board for review
+      - Board approves → CEO integrates into AGENTS.md
+      - CTO implements enforcement code if needed
+      - Test enforcement with CIEU audit
+      - Deploy to production
+    enforcement: manual + CIEU verification
+    violation_severity: N/A (evolution protocol)
+
+  # ====================
+  # Continuous Learning
+  # ====================
+  - id: idle_learning_loop
+    title: Idle Learning Loop (Constitutional)
+    source: AGENTS.md Constitutional Rule — Idle Learning Loop (AMENDMENT-003)
+    steps:
+      - Priority 1 (once per role) → role cognition construction (world_class_standard.md / role_heroes.md / task_type_map.md)
+      - Priority 2 (≥1 per idle day) → theory library building via 6-step calibration protocol
+      - Priority 3 (≥1 per idle day) → counterfactual simulation practice with 12-layer framework
+      - Mandatory Gemma usage via scripts/local_learn.py for all three priorities
+      - Every invocation logs to knowledge/{actor}/gaps/gemma_sessions.log
+      - Secretary verifies ≥1 entry per working day per role (Monday audit)
+    enforcement: obligation_timing + knowledge file mtime check (48h)
+    violation_severity: HARD_OVERDUE
+
+  - id: nightly_autonomous_report
+    title: Nightly Autonomous Work Report
+    source: AGENTS.md Constitutional Rule — Continuous Autonomous Work Mandate (Directive #021)
+    steps:
+      - Every agent submits daily report to reports/autonomous/YYYY-MM-DD-{agent}.md
+      - Report includes Work-Done / Learning-Done / Discoveries / Tomorrow-Plan
+      - Deadline 22:00 ET daily (mandatory)
+      - Secretary consolidates into priority_brief.md next morning
+    enforcement: cron job + Secretary audit
+    violation_severity: ALLOW (soft reminder)
+
+  # ====================
+  # Session Management
+  # ====================
+  - id: session_boot_protocol
+    title: Session Boot Protocol
+    source: CLAUDE.md + governance_boot.sh
+    steps:
+      - Read memory/session_handoff.md
+      - Run `bash scripts/governance_boot.sh AGENT_ID`
+      - Wait for "ALL SYSTEMS GO"
+      - If FAILURES → investigate + fix + rerun script
+      - Read CONTINUATION from boot output → execute directly (no listing, no approval-seeking)
+      - Enter event-driven mode per SESSION START CHECKLIST
+    enforcement: governance_boot.sh + .session_booted marker
+    violation_severity: HARD_OVERDUE if boot incomplete
+
+  - id: session_close_protocol
+    title: Session Close Protocol
+    source: CLAUDE.md Session Protocol
+    steps:
+      - Delete scripts/.session_booted and scripts/.session_call_count
+      - Run `python3 scripts/session_close_yml.py {agent_id} "session summary"`
+      - If Board participated → run `python3 scripts/twin_evolution.py --mode extract-values`
+      - Commit all uncommitted changes
+      - Push to remote
+    enforcement: manual (agent responsibility)
+    violation_severity: ALLOW (best practice, not blocker)
+
+# ====================
+# Metadata
+# ====================
+version: "1.0.0"
+last_updated: "2026-04-13"
+entries: 12
+sync_mechanism: governance_watcher.py
+owner: eng-kernel

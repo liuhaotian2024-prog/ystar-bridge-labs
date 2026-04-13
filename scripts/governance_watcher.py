@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 """
-Governance config watcher — monitors identity + rules + session config.
+Governance config watcher — monitors identity + rules + session config + whitelists.
 
 Watches:
 - .ystar_active_agent (agent identity)
 - AGENTS.md (governance rules)
 - .ystar_session.json (session config)
+- governance/whitelist/*.yaml (procedure whitelists)
 
 On change → invalidates daemon cache → next hook call reloads config.
+Emits WHITELIST_UPDATE CIEU event when whitelist files change.
 
 Backported from exp7_watcher_prototype.py (71fd6db) with multi-file support.
+Extended for A018 Phase 1 (whitelist sync mechanism B).
 Latency target: <5s from file write → daemon cache invalidation.
 """
 import os
@@ -18,26 +21,31 @@ import json
 import hashlib
 import threading
 from pathlib import Path
-from typing import Optional, Callable
+from typing import Optional, Callable, Dict, List
 
 
 class GovernanceWatcher:
-    """Watch governance config files, invalidate daemon cache on change."""
+    """Watch governance config files + whitelists, invalidate daemon cache on change."""
 
-    def __init__(self, repo_root: str, poll_interval: float = 2.0, log_fn: Optional[Callable] = None):
+    def __init__(self, repo_root: str, poll_interval: float = 2.0, log_fn: Optional[Callable] = None, cieu_emit_fn: Optional[Callable] = None):
         self.repo_root = Path(repo_root)
         self.active_agent = self.repo_root / ".ystar_active_agent"
         self.agents_md = self.repo_root / "AGENTS.md"
         self.session_json = self.repo_root / ".ystar_session.json"
+        self.whitelist_dir = self.repo_root / "governance" / "whitelist"
         self.poll_interval = poll_interval
         self.log = log_fn or print
+        self.cieu_emit = cieu_emit_fn  # Optional CIEU event emitter
 
-        # Track file hashes for change detection
+        # Track file hashes for change detection (static files)
         self._hashes = {
             "active_agent": None,
             "agents_md": None,
             "session_json": None,
         }
+
+        # Track whitelist YAML hashes (dynamic: multiple files)
+        self._whitelist_hashes: Dict[str, str] = {}
 
         self._running = False
         self._thread = None
@@ -73,6 +81,73 @@ class GovernanceWatcher:
 
         return old_hash is not None  # Only return True if this is a real change, not first poll
 
+    def _scan_whitelist_yamls(self) -> List[Path]:
+        """Scan governance/whitelist/ for *.yaml files."""
+        if not self.whitelist_dir.exists():
+            return []
+        try:
+            return list(self.whitelist_dir.glob("*.yaml"))
+        except Exception as e:
+            self.log(f"[gov-watcher] whitelist scan error: {e}")
+            return []
+
+    def _check_whitelist_changes(self) -> List[str]:
+        """Check all whitelist YAML files for changes. Returns list of changed filenames."""
+        changed = []
+        current_yamls = {p.name: p for p in self._scan_whitelist_yamls()}
+
+        # Check existing files for changes + detect new files
+        for name, path in current_yamls.items():
+            current_hash = self._compute_hash(path)
+            old_hash = self._whitelist_hashes.get(name)
+
+            if current_hash != old_hash:
+                self._whitelist_hashes[name] = current_hash
+                if old_hash is not None:  # File was tracked before → it changed
+                    changed.append(f"governance/whitelist/{name}")
+                    self.log(f"[gov-watcher] whitelist/{name} changed (hash: {current_hash[:8]})")
+                elif old_hash is None and name in self._whitelist_hashes:
+                    # New file creation (not in initial hash capture)
+                    # Note: this branch won't hit on first poll because we do initial capture
+                    # But if a file is created AFTER startup, old_hash is None
+                    changed.append(f"governance/whitelist/{name} [NEW]")
+                    self.log(f"[gov-watcher] whitelist/{name} created (hash: {current_hash[:8]})")
+
+        # Detect new files (not in previous poll but exists now)
+        new_files = set(current_yamls.keys()) - set(self._whitelist_hashes.keys())
+        for name in new_files:
+            path = current_yamls[name]
+            current_hash = self._compute_hash(path)
+            self._whitelist_hashes[name] = current_hash
+            changed.append(f"governance/whitelist/{name} [NEW]")
+            self.log(f"[gov-watcher] whitelist/{name} created (hash: {current_hash[:8]})")
+
+        # Detect deleted files
+        deleted = set(self._whitelist_hashes.keys()) - set(current_yamls.keys())
+        for name in deleted:
+            del self._whitelist_hashes[name]
+            changed.append(f"governance/whitelist/{name} [DELETED]")
+            self.log(f"[gov-watcher] whitelist/{name} deleted")
+
+        return changed
+
+    def _emit_whitelist_update_event(self, changed_files: List[str]):
+        """Emit WHITELIST_UPDATE CIEU event when whitelist files change."""
+        if self.cieu_emit:
+            try:
+                self.cieu_emit(
+                    event_type="WHITELIST_UPDATE",
+                    data={
+                        "changed_files": changed_files,
+                        "timestamp": time.time(),
+                        "whitelist_dir": str(self.whitelist_dir),
+                    },
+                    severity="info"
+                )
+                self.log(f"[gov-watcher] CIEU event emitted: WHITELIST_UPDATE ({len(changed_files)} files)")
+            except Exception as e:
+                self.log(f"[gov-watcher] CIEU emission failed: {e}")
+
     def _invalidate_cache(self, changed_files: list):
         """Invalidate daemon cache when config changes."""
         if self._cache_invalidation_callback:
@@ -85,7 +160,7 @@ class GovernanceWatcher:
             self.log(f"[gov-watcher] files changed but no invalidation callback set: {changed_files}")
 
     def _poll_cycle(self) -> None:
-        """Single poll cycle — check all files, invalidate if any changed."""
+        """Single poll cycle — check all files + whitelists, invalidate if any changed."""
         try:
             changed = []
 
@@ -97,6 +172,12 @@ class GovernanceWatcher:
 
             if self._check_file_change("session_json", self.session_json):
                 changed.append(".ystar_session.json")
+
+            # Check whitelist YAMLs
+            whitelist_changed = self._check_whitelist_changes()
+            if whitelist_changed:
+                changed.extend(whitelist_changed)
+                self._emit_whitelist_update_event(whitelist_changed)
 
             if changed:
                 self._invalidate_cache(changed)
@@ -115,6 +196,10 @@ class GovernanceWatcher:
             ("session_json", self.session_json),
         ]:
             self._hashes[key] = self._compute_hash(path)
+
+        # Initial whitelist hash capture
+        for yaml_path in self._scan_whitelist_yamls():
+            self._whitelist_hashes[yaml_path.name] = self._compute_hash(yaml_path)
 
         # Poll loop
         while self._running:
@@ -139,9 +224,9 @@ class GovernanceWatcher:
             self.log("[gov-watcher] stopped")
 
 
-def create_watcher(repo_root: str, log_fn: Optional[Callable] = None) -> GovernanceWatcher:
+def create_watcher(repo_root: str, log_fn: Optional[Callable] = None, cieu_emit_fn: Optional[Callable] = None) -> GovernanceWatcher:
     """Factory function for hook_wrapper.py integration."""
-    return GovernanceWatcher(repo_root, poll_interval=2.0, log_fn=log_fn)
+    return GovernanceWatcher(repo_root, poll_interval=2.0, log_fn=log_fn, cieu_emit_fn=cieu_emit_fn)
 
 
 if __name__ == "__main__":
