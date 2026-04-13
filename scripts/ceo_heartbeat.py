@@ -19,10 +19,13 @@ Cron:
 """
 
 import argparse
+import hashlib
 import json
 import sqlite3
 import sys
 import time
+import urllib.error
+import urllib.request
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Optional
@@ -31,6 +34,8 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 ACTIVE_AGENT_PATH = REPO_ROOT / ".ystar_active_agent"
 PRIORITY_BRIEF_PATH = REPO_ROOT / "reports" / "priority_brief.md"
 CIEU_DB_PATH = REPO_ROOT / ".ystar_cieu.db"  # Fixed: use .ystar_cieu.db not .ystar_memory.db
+SESSION_PATH = REPO_ROOT / ".ystar_session.json"
+EMBEDDING_CACHE_PATH = Path("/tmp/.priority_brief_embeddings.json")
 
 # Idle threshold: if last CEO CIEU event > 5min ago, considered idle
 IDLE_THRESHOLD_SECONDS = 300
@@ -39,6 +44,11 @@ IDLE_THRESHOLD_SECONDS = 300
 SELF_LOCK_DENY_COUNT_THRESHOLD = 3  # ≥3 denies in 5min = locked
 SELF_LOCK_SINGLE_BLOCK_THRESHOLD = 180  # single deny blocking >180s = locked
 SELF_LOCK_CHECK_WINDOW_SECONDS = 300  # check last 5 minutes
+
+# Semantic matching thresholds
+SEMANTIC_MATCH_THRESHOLD = 0.6  # cosine similarity threshold
+FUZZ_MATCH_THRESHOLD = 70  # rapidfuzz token_set_ratio threshold
+GEMMA_TIMEOUT = 5.0  # seconds
 
 
 def get_active_agent() -> str:
@@ -166,15 +176,273 @@ def emit_cieu_event(event_type: str, description: str, metadata: dict = None, dr
         print(f"[ERROR] Failed to emit CIEU event: {e}", file=sys.stderr)
 
 
-def check_off_target(targets: list) -> bool:
-    """
-    Detect if CEO is off-target.
+def _get_gemma_endpoint() -> Optional[str]:
+    """Get first reachable Gemma endpoint from .ystar_session.json."""
+    try:
+        with open(SESSION_PATH, "r") as f:
+            config = json.load(f)
+        endpoints = config.get("gemma_endpoints", [])
 
-    For MVP: return False (always assume on-target).
-    Future: integrate with ADE detect_off_target(agent_id, current_action).
+        for endpoint in endpoints:
+            try:
+                req = urllib.request.Request(f"{endpoint}/api/tags")
+                with urllib.request.urlopen(req, timeout=2.0) as r:
+                    r.read()
+                return endpoint
+            except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, OSError):
+                continue
+        return None
+    except Exception:
+        return None
+
+
+def _get_embedding_gemma(text: str, endpoint: str) -> Optional[list]:
+    """Get embedding from Gemma via Ollama API. Returns None on failure."""
+    try:
+        with open(SESSION_PATH, "r") as f:
+            config = json.load(f)
+        model = config.get("gemma_default_model", "ystar-gemma")
+
+        payload = json.dumps({
+            "model": model,
+            "prompt": text,
+        }).encode("utf-8")
+
+        req = urllib.request.Request(
+            f"{endpoint}/api/embeddings",
+            data=payload,
+            headers={"Content-Type": "application/json"},
+        )
+
+        with urllib.request.urlopen(req, timeout=GEMMA_TIMEOUT) as r:
+            body = json.loads(r.read().decode("utf-8"))
+
+        return body.get("embedding")
+    except Exception:
+        return None
+
+
+def _cosine_similarity(vec1: list, vec2: list) -> float:
+    """Compute cosine similarity between two vectors."""
+    import math
+
+    dot_product = sum(a * b for a, b in zip(vec1, vec2))
+    magnitude1 = math.sqrt(sum(a * a for a in vec1))
+    magnitude2 = math.sqrt(sum(b * b for b in vec2))
+
+    if magnitude1 == 0 or magnitude2 == 0:
+        return 0.0
+
+    return dot_product / (magnitude1 * magnitude2)
+
+
+def _fuzz_match(action: str, target: str) -> float:
+    """Fuzzy match using rapidfuzz. Returns score 0-100."""
+    try:
+        from rapidfuzz import fuzz
+        return fuzz.token_set_ratio(action.lower(), target.lower())
+    except ImportError:
+        # Fallback to simple substring match
+        action_lower = action.lower()
+        target_lower = target.lower()
+        if target_lower in action_lower or action_lower in target_lower:
+            return 100.0
+        # Check word overlap
+        action_words = set(action_lower.split())
+        target_words = set(target_lower.split())
+        overlap = len(action_words & target_words)
+        total = len(action_words | target_words)
+        return (overlap / total * 100) if total > 0 else 0.0
+
+
+def _semantic_match(action: str, targets: list, threshold: float = SEMANTIC_MATCH_THRESHOLD, dry_run: bool = False) -> bool:
     """
-    # TODO: Integrate with actual ADE when it's implemented
+    Check if action semantically matches any target.
+
+    Strategy:
+    1. Try Gemma embeddings with cosine similarity (threshold 0.6)
+    2. Fallback to rapidfuzz token_set_ratio (threshold 70)
+
+    Returns True if action matches any target.
+    """
+    if not action or not targets:
+        return False
+
+    # Try Gemma embeddings
+    endpoint = _get_gemma_endpoint()
+    if endpoint:
+        action_emb = _get_embedding_gemma(action, endpoint)
+        if action_emb:
+            # Load or compute target embeddings
+            cache = {}
+            if EMBEDDING_CACHE_PATH.exists():
+                try:
+                    with open(EMBEDDING_CACHE_PATH, "r") as f:
+                        cache = json.load(f)
+                except Exception:
+                    pass
+
+            # Check each target
+            for target in targets:
+                target_hash = hashlib.sha256(target.encode()).hexdigest()
+
+                # Get or compute target embedding
+                target_emb = cache.get(target_hash)
+                if target_emb is None:
+                    target_emb = _get_embedding_gemma(target, endpoint)
+                    if target_emb:
+                        cache[target_hash] = target_emb
+
+                if target_emb:
+                    similarity = _cosine_similarity(action_emb, target_emb)
+                    if dry_run:
+                        print(f"  [COSINE] {similarity:.3f} | {action[:60]} <-> {target[:60]}")
+                    if similarity >= threshold:
+                        # Save cache
+                        try:
+                            with open(EMBEDDING_CACHE_PATH, "w") as f:
+                                json.dump(cache, f)
+                        except Exception:
+                            pass
+                        return True
+
+            # Save cache even if no match
+            try:
+                with open(EMBEDDING_CACHE_PATH, "w") as f:
+                    json.dump(cache, f)
+            except Exception:
+                pass
+
+    # Fallback to fuzzy matching
+    for target in targets:
+        score = _fuzz_match(action, target)
+        if dry_run:
+            print(f"  [FUZZ] {score:.1f} | {action[:60]} <-> {target[:60]}")
+        if score >= FUZZ_MATCH_THRESHOLD:
+            return True
+
     return False
+
+
+def check_off_target(targets: list, dry_run: bool = False) -> bool:
+    """
+    Detect if CEO is off-target by checking recent CEO actions against priority_brief targets.
+
+    Uses semantic matching (Gemma embeddings + fuzzy fallback) instead of substring match.
+
+    Filters out governance noise events (omission_violation, intervention_pulse, etc.)
+    and only considers actual work events (tool calls, commands, substantive task descriptions).
+
+    NEW STRATEGY (post-CIEU mining findings):
+    - If no work events found in recent history → return False (assume on-target, can't prove otherwise)
+    - This prevents the 34% false-positive rate from governance noise
+    """
+    if not targets:
+        return False
+
+    # Get last 50 CEO actions from CIEU (filter for actual work, not governance noise)
+    if not CIEU_DB_PATH.exists():
+        return False
+
+    # Governance noise event types to ignore (these are not CEO's actual work)
+    NOISE_EVENT_TYPES = {
+        "omission_violation:task_completion_report",
+        "omission_violation:progress_update",
+        "omission_violation:directive_acknowledgement",
+        "omission_violation:intent_declaration",
+        "omission_violation:required_acknowledgement_omission",
+        "intervention_pulse:soft_pulse",
+        "intervention_pulse:interrupt_gate",
+        "BEHAVIOR_RULE_VIOLATION",
+        "DRIFT_DETECTED",
+        "CEO_SELF_LOCK_WARNING",
+        "CEO_HEARTBEAT_IDLE",
+        "CEO_HEARTBEAT_OFF_TARGET",
+        "TWIN_EVOLUTION",
+        "INTENT_ADJUSTED",
+    }
+
+    try:
+        conn = sqlite3.connect(str(CIEU_DB_PATH))
+        cursor = conn.cursor()
+
+        # Query recent CEO events
+        cursor.execute("""
+            SELECT event_type, task_description, command, file_path
+            FROM cieu_events
+            WHERE agent_id = 'ceo'
+            ORDER BY created_at DESC
+            LIMIT 50
+        """)
+
+        all_events = cursor.fetchall()
+        conn.close()
+
+        if not all_events:
+            return False
+
+        # Filter out governance noise
+        work_events = []
+        for event_type, task_desc, command, file_path in all_events:
+            # Skip pure governance noise events
+            if event_type in NOISE_EVENT_TYPES:
+                continue
+
+            # Require either a meaningful task_description, command, or file_path
+            if not task_desc and not command and not file_path:
+                continue
+
+            work_events.append((event_type, task_desc, command, file_path))
+
+            # Stop after collecting 5 real work events
+            if len(work_events) >= 5:
+                break
+
+        if not work_events:
+            # No real work events found - can't determine if off-target
+            # Return FALSE (assume on-target) to avoid false-positive OFF_TARGET warnings
+            if dry_run:
+                print("[INFO] No work events found in recent 50 CEO events - assuming on-target")
+            return False
+
+        # Check if any work event matches any target
+        for event_type, task_desc, command, file_path in work_events:
+            # Build action text from available fields
+            parts = []
+            if event_type:
+                parts.append(event_type)
+            if task_desc:
+                parts.append(task_desc)
+            if command:
+                # Extract meaningful parts from command (ignore ls/cat noise)
+                if command and not any(cmd in command for cmd in ["ls ", "cat ", "head ", "tail ", "grep "]):
+                    parts.append(command)
+            if file_path:
+                # Extract filename for context
+                from pathlib import Path
+                parts.append(Path(file_path).name)
+
+            if not parts:
+                continue
+
+            action_text = " | ".join(parts)
+
+            # Use LOWER threshold for semantic matching (0.4 instead of 0.6)
+            # to reduce false-positives
+            if _semantic_match(action_text, targets, threshold=0.4, dry_run=dry_run):
+                if dry_run:
+                    print(f"[ON-TARGET] Match found: {action_text[:100]}")
+                return False  # Found a match, CEO is on-target
+
+        # No match found, CEO is off-target
+        if dry_run:
+            print(f"[OFF-TARGET] No semantic match found for recent {len(work_events)} work events")
+        return True
+
+    except Exception as e:
+        if dry_run:
+            print(f"[ERROR] check_off_target failed: {e}", file=sys.stderr)
+        return False
 
 
 def check_idle() -> bool:
@@ -360,7 +628,7 @@ def main():
         print(f"[INFO] Today's targets: {len(targets)} items")
 
         # 3. Check off-target
-        if check_off_target(targets):
+        if check_off_target(targets, dry_run=args.dry_run):
             emit_cieu_event(
                 "CEO_HEARTBEAT_OFF_TARGET",
                 "CEO current action misaligned with priority_brief.today_targets",
