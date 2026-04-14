@@ -1,4 +1,8 @@
-# AMENDMENT-026 — Per-Role Write Boundary Matrix + Cross-Role Help Protocol
+# AMENDMENT-026 — CTO-Centralized Dispatch Architecture (Path B 选定)
+
+> **2026-04-13 Board 重写指示**: 原本提议"per-role write + cross-role help"是 both-and 复杂方案。Board 二选一选 **Path B (CTO 派单写)** — 理由："自己写自己岗位的容易乱"。下面是修正版。
+
+---
 
 | 字段 | 内容 |
 |---|---|
@@ -9,11 +13,14 @@
 
 ## §0 TL;DR
 
-**Board 原话**: "CMO 写 content/ 越 cto boundary，这就是我们的之前的技术债，当时就没写清楚每个岗位都有自己的业务范围内的写入权利，或者如何交给别人帮助自己写的机制。"
+**Board 原话第一轮**: "CMO 写 content/ 越 cto boundary，这就是之前的技术债"
+**Board 原话第二轮 (corrective)**: "不是 both 关系，是二选一。要么定好 [per-role] 或者 CTO 派单写。自己写自己岗位的容易乱"
 
-修复 = 2 件事：
-1. **Per-role allowed_write_paths matrix** — 每岗位显式 own 业务路径写权
-2. **Cross-role help protocol** — 当 X 需要 Y 帮写，formal 协议（不是越权 + 不是找 Board）
+**选定 Path B**: CTO-Centralized Dispatch (单点 orchestration)
+
+修复 = 1 件事 + 1 个固化：
+1. **激活 `must_dispatch_via_cto` rule** (当前 NOT_ENFORCING per session boot output) — CEO/Board 不直派 engineer/specialist subagent，必经 CTO
+2. **每岗位仍 own 自己业务 allowed_write_paths** (domain expert 实际写)，但 spawn 入口收拢到 CTO 一处
 
 ---
 
@@ -66,30 +73,26 @@
 
 每岗位**默认 own 业务路径** + 可显式 deny / restrict 子路径
 
-### Part B: Cross-Role Help Protocol
+### Part B: 单点 Spawn 入口 — `must_dispatch_via_cto` 激活
 
-X 需要写 Y 的 path 时，3 选 1 (按 ROI):
+**核心规则** (现 NOT_ENFORCING → 改 ENFORCING):
+- CEO/Board 不可直接 spawn CMO/CSO/CFO/Secretary/任何 engineer subagent
+- 唯一允许 CEO/Board 直 spawn: **Ethan-CTO** subagent
+- 其他角色 spawn 必经 CTO: `CEO → CTO → CMO/CSO/.../engineer`
 
-**Option 1: Spawn Y subagent (best)**
-```
-X: Agent(subagent_type=Y, prompt="替我做 Z 在 your_domain/")
-```
-Daemon 自动按 Y 的 allowed_write_paths enforce — 0 deny。
+**实现:**
+1. `governance/forget_guard_rules.yaml` 加 rule `ceo_direct_engineer_dispatch` (Maya 上次 Gap 2 已规划但没 ship 因 hook bug)
+2. ForgetGuard trigger: `tool=Agent + active_agent=ceo + subagent_type in [CMO/CSO/CFO/Secretary/engineer*] + 不在 break_glass + 缺 "via CTO override" justification`
+3. action: **deny** (不 warn — 这是硬约束) + recipe "Use Agent(subagent_type=Ethan-CTO, ...) and have CTO dispatch downstream"
 
-**Option 2: Formal delegation grant (cross-domain)**
-```python
-gov_delegate(
-    principal="X",
-    actor="X-self",
-    additional_paths=["Y/some_specific_file.md"],
-    reason="X needs to write 1 file in Y domain because Y subagent unavailable",
-    expires_at=now + 1h
-)
-```
-Y 接受 / 拒绝 (CIEU event)；接受后 X 临时 elevated。
+**ForgetGuard rule 例外 (whitelist)**:
+- general-purpose subagent (顶岗 protocol) 仍允许 CEO 直 spawn — 因为顶岗是 emergency 不是常规
+- break_glass mode 期间 CEO 直 spawn 任何 — 紧急逃生
 
-**Option 3: pkill window self-heal (emergency only)**
-仅用于 active_agent 漂移类 emergency，不是常规 cross-domain write。已 codify `feedback_self_heal_via_daemon_window.md`.
+### Part C: 移除 (Cross-Role Help Protocol DROPPED)
+
+原 Part C "X 帮 Y 写"复杂协议**全部废弃**——Board 选了 Path B 后，cross-role 写法只一种：让 CTO 派对应 domain expert subagent。  
+没有 self-help。没有 grant transfer。没有 顶岗 except emergency。简化。
 
 ### Part C: 顶岗 Protocol (when subagent unavailable)
 
