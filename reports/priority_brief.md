@@ -1,8 +1,16 @@
 ---
-version: "v0.4"
-last_updated: "2026-04-13"
+version: "v0.6"
+last_updated: "2026-04-13T23:45"
 status: "active"
 phase: "internal_consolidation"
+next_session_p0_carryover:
+  - "A028 Auto-Registration Plugin Discovery — 扫目录 auto register gov-mcp tools / hook scripts / ForgetGuard rules (避免手动 miss)"
+  - "Continuity Guardian e2e test — 真 wrap claude 进程验重启 + memory 恢复 (今天标 L3 实际未测 e2e)"
+  - "Sofia whitepaper §4.6 demo 换 Scenario C (CROBA BOUNDARY VIOLATION) — 顾问 catch CEO 不要 overclaim Scenario A"
+  - "Exp 1 stress test threshold 调整 + 剩余 24h / disk-full / 2-agent-race 压测"
+  - "Path B (Y*gov product) vs CDP (A026 dispatch) 命名 disambiguation 全系统 propagate"
+  - "注意: restart 不自动 sync ystar-company-test mirror；continuity 靠 CLAUDE.md + memory/session_handoff.md + boot_packages/ceo.json"
+  - "⚠️ CRITICAL 下个 Aiden 必读 memory/session_handoff.md 顶部 Scenario C lesson"
 today_targets:
   - target: "🧪 P0-test 下次 session 首轮验收契约：Board 说 'Aiden' → CEO 必答 '老大，我立刻复活所有团队成员的满血在线' + 并行 spawn 4 C-suite sub-agent online check"
     owner: "ceo"
