@@ -1,0 +1,38 @@
+/Users/haotianliu/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/content/offended_ai/v7/kling_replicate_pipeline.py", line 193, in main
+    generate_base_video()
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/content/offended_ai/v7/kling_replicate_pipeline.py", line 116, in generate_base_video
+    output = client.run(
+  File "/Users/haotianliu/Library/Python/3.9/lib/python/site-packages/replicate/client.py", line 175, in run
+    return run(self, ref, input, use_file_output=use_file_output, **params)
+  File "/Users/haotianliu/Library/Python/3.9/lib/python/site-packages/replicate/run.py", line 50, in run
+    prediction = client.models.predictions.create(
+  File "/Users/haotianliu/Library/Python/3.9/lib/python/site-packages/replicate/model.py", line 405, in create
+    resp = self._client._request("POST", path, json=body, **extras)
+  File "/Users/haotianliu/Library/Python/3.9/lib/python/site-packages/replicate/client.py", line 89, in _request
+    _raise_for_status(resp)
+  File "/Users/haotianliu/Library/Python/3.9/lib/python/site-packages/replicate/client.py", line 407, in _raise_for_status
+    raise ReplicateError.from_response(resp)
+replicate.exceptions.ReplicateError: ReplicateError Details:
+title: Input validation failed
+status: 422
+detail: - input: start_image is required
+- input.duration: Invalid type. Expected: integer, given: string
+
+============================================================
+Episode 001 v7 — Kling via Replicate Pipeline
+============================================================
+[1/5] Extracting frame from sofia_intro.webm...
+✓ Saved: /Users/haotianliu/.openclaw/workspace/ystar-company/content/offended_ai/v7/sofia_ref_frame.jpg
+[2/5] Generating TTS audio (142 words)...
+✓ Saved: /Users/haotianliu/.openclaw/workspace/ystar-company/content/offended_ai/v7/episode_001_v7_tts.mp3
+[3/5] Generating base video with Kling v2.1 (image-to-video)...
+
+❌ PIPELINE FAILED: ReplicateError Details:
+title: Input validation failed
+status: 422
+detail: - input: start_image is required
+- input.duration: Invalid type. Expected: integer, given: string
+

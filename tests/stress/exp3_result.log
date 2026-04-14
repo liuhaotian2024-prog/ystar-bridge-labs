@@ -1,0 +1,4 @@
+=== Exp 3: Adversarial rule bypass dry_run ===
+Created malicious rule without dry_run_until
+Testing governance_boot.sh with malicious rule...
+PASS: governance_boot detected missing dry_run_until and failed boot
