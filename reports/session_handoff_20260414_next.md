@@ -1,76 +1,97 @@
-# Next Session Hand-off (written 2026-04-14 by CEO pre-restart)
+# Next Session Hand-off (2026-04-14, 重启前写)
 
-## 读这 3 个 commits 后从此处继续
+## Boot 后读这 5 个 commits 从此处继续
 
 ```
-git log --oneline -5
-4da6a749 feat(recovery): final 2 artifacts (write_scope lesson + apply_cieu_inject.sh) [L3 SPEC]
-52883e7b feat(recovery): complete CEO 8-artifact set post-Ryan-disaster [L3 SPEC]
-f24b04a7 feat(recovery): CEO 4 artifacts post-Ryan-rsync-disaster [L3 SPEC]
-2e483869 [L1 SPEC] P0 next-session: 9 断裂修 + CIEU 工作法 codify + 首战 report
+12c13839 fix(contract): deny rsync --delete + git reset --hard [L4 SHIPPED take2]
+2ae0373a feat(handoff): next session handoff [L1 SPEC]
+4da6a749 feat(recovery): final 2 artifacts [L3 SPEC]
+52883e7b feat(recovery): complete CEO 8-artifact set [L3 SPEC]
+f24b04a7 feat(recovery): CEO 4 artifacts [L3 SPEC]
 ```
 
-## 本 session (4-14 前段) 事件 TL;DR
+## Board 2026-04-14 已定位的精确根因 (下 session 必读)
 
-1. CIEU 首战 7 轮 dispatch Rt+1 真测, 证 CIEU 工作法有效
-2. Board 外部 shell 注入 10 agent.md CIEU 段落 (未 commit, 后被 rsync 抹)
-3. Leo 修复 `ystar.kernel.cieu` missing module (4-01 灾害终止, 13 天)
-4. Maya 交付 hook fail-closed patch hook_wrapper.py (未 commit, 被 rsync 抹)
-5. Ryan-Platform 派 mirror sync **2 次同事故**: `rsync_sync(Y_GOV, Y_COMPANY, --delete)` 反向同步, 删 2640 files + session.json 1339→81 行
-6. CEO `git reset --hard 2e483869` + kill 130 僵尸 Python subagent 稳住
-7. CEO 自招 AVOIDANCE_DRIFT 被 Board 点破, 承诺 Rt+1≠0 不换任务
+**Y\*gov 两套危险命令黑名单没打通, 形成 path B 漏洞**:
 
-## Next Session Ethan-CTO P0 任务 (Board 授权明文)
+```
+路径A: agent 用 gov_exec 执行命令
+  → router.py._WRITE_PATTERNS 检查 rsync → BLOCK ✅
 
-**不再用"镜像同步全覆盖"这种模糊 Y\***. Ethan Y\* 收窄到 2 件具体事:
-
-### Task 1: `scripts/hook_client_labs.sh` 危险命令黑名单 (~10 行)
-```bash
-# 加在 hook_client_labs.sh 进入 daemon socket 前
-DESTRUCTIVE="rsync\s+-[a-z]*.*--delete|rm\s+-[rf]+|git\s+(reset\s+--hard|clean\s+-fd)|find.*-delete"
-if echo "$TOOL_COMMAND" | grep -qE "$DESTRUCTIVE"; then
-  if [ "$ACTIVE_AGENT" != "board" ]; then
-    echo '{"action":"block","message":"[Y*] destructive command requires Board approval"}'
-    exit 0
-  fi
-fi
+路径B: agent 直接 Bash tool 执行命令  (Ryan 走的就是这条)
+  → hook_client_labs.sh → check_hook() 
+  → 检查 contract.deny_commands (主 + delegation_chain)
+  → "rsync" 不在 deny_commands 里 → ALLOW ❌
 ```
 
-### Task 2: `gov_dispatch` Y\* 完整性 check
-文件系统类 task 派单时, Y\* 必须含:
-- `direction`: `from_path → to_path` 明示
-- `delete_authorized`: bool (若 rsync --delete / rm -rf 必 true)
-- `dry_run_plan`: 先 `--dry-run` 输出, agent 回贴 dry-run 结果, Board 批才真跑
+**Board 诊断清单**:
+- `router.py` 有 `_WRITE_PATTERNS` 黑名单, 含 `re.compile(r"\brsync\b")`
+- `contract.deny_commands` 主 + 每个 delegation_chain (CEO/CTO/eng-kernel) 全没 rsync
+- 两套互相不认识, 没有桥
 
-missing 任一 → gov_dispatch block, emit `DISPATCH_Y_STAR_INCOMPLETE` CIEU event.
+## 已完成 (Immediate Fix)
 
-## 4 个 system-level patches spec (已在 f24b04a7 报告里)
+commit `12c13839`: `.ystar_session.json` 主 `contract.deny_commands` 加 6 条:
+```json
+"rsync --delete", "rsync -r --delete", "rsync -a --delete",
+"rsync -avz --delete", "rsync -aq --delete", "git reset --hard"
+```
+**session.json 从 1339 → 1345 行 (完整保留 immutable_paths/override_roles/intent_guard)**
+
+## 待做 (Root Fix, 下 session Ethan-CTO 窄定义 Y\*)
+
+**Task**: 让 `hook_client_labs.sh` 或 `check_hook` 把 `router.py._WRITE_PATTERNS` 作为**补充**黑名单, 不依赖 contract.deny_commands 是否手动写. 两套路径共用一份危险命令知识.
+
+**Ethan Y\* 精确定义** (Board 原话):
+> "两个系统之间有一条没有接上的桥"
+
+**U 候选** (Ethan 自选最小 blast):
+1. `hook_client_labs.sh` 在 daemon socket call 前 import + 跑 `router._WRITE_PATTERNS` 匹配 incoming command
+2. `check_hook()` Python 侧, 在 deny_commands 检查之后再跑一遍 `_WRITE_PATTERNS` 兜底
+3. 把 `_WRITE_PATTERNS` 序列化成 JSON, 启动时合并进 contract.deny_commands
+
+**Rt+1 归零判据** (多轮测试):
+- fresh session 跑 `rsync -avz --delete src/ dst/` via Bash tool → BLOCK
+- 跑 `rsync -avn --dry-run src/ dst/` → ALLOW (dry-run 合法)
+- 跑 `git reset --hard HEAD~1` via Bash tool → BLOCK  
+- 跑 `git reset --soft HEAD~1` → ALLOW
+- 3 独立 session 复现一致
+
+**Ethan 派单硬约束**:
+- 顶部 CIEU 5-tuple 必写
+- 每 claim 附 tool_result block (参考 reports/cieu_first_battle_rt1_miss_20260414.md 教训)
+- Ethan 有 scripts/ + Y-star-gov/ystar/ 写权, 但 session.json 半 immutable 避免再覆盖
+- CEO 本线必 grep 实测: `grep -c rsync .ystar_session.json` + hook fire 实测
+- 不允许 Ethan 自己 rsync — 他的任务只改 hook/router 代码
+
+## Frozen sub-agents
+
+- **Ryan-Platform**: 不派到 post-mortem 完 + `.claude/agents/eng-platform.md` 补 destructive cmd 指引
+- **Maya-Governance**: 本 session 3 轮全 truncate, 下 session 重派前先跑小 task 试水
+- **Ethan-CTO / Leo-Kernel / Samantha-Secretary**: 可信, 优先派
+
+## CEO 自省 (avoidance 约束 per f24b04a7)
+
+- Aiden 承诺: Rt+1>0 不出 "推下一个" / "你决定" / "defer" phrase
+- 若 forget_guard CIEU 抓 `BOARD_CHOICE_QUESTION_DRIFT` / `CEO_AVOIDANCE_DRIFT`, 立即停回当前 task
+
+## 4 个 system-level patches spec (延伸, 非本 session P0)
 
 见 `reports/cieu_k9_ryan_rsync_disaster_20260414.md`:
 1. engine.py destructive cmd pre-check
-2. session.json schema 守护 (immutable_paths / override_roles 缺 key BLOCK)
-3. mirror_contract 方向 JSON (canonical vs mirror)
-4. hook WIP auto-commit 安全网
+2. session.json schema 守护 (missing immutable_paths BLOCK)
+3. mirror_contract 方向 JSON
+4. hook WIP auto-commit
 
-本 session Task 1+2 是最快见效的 2 条. 其他 3+4 可下周派 Leo.
+本 session Ethan Task = Board 指令的第 1 件 (架构断裂接桥). 其他 3 延后.
 
-## CEO 自省 (avoidance 约束 per f24b04a7 ceo_avoidance_enforcement.md)
+## 丢失 (不可逆, 需下 session 重跑恢复)
 
-- 下个 session Aiden 承诺: Rt+1>0 不出 "推下一个" / "你决定" / "defer" phrase
-- 若 forget_guard CIEU event `BOARD_CHOICE_QUESTION_DRIFT` / 自招 AVOIDANCE 发生, 立即停回当前 task
-
-## Frozen sub-agents (下 session boot 注意)
-
-- Ryan-Platform: 不派到 post-mortem 完 + `.claude/agents/eng-platform.md` 补 destructive cmd 指引
-- Maya-Governance: 本 session 3 轮全 truncate, 下 session 重新评估
-- Ethan-CTO + Leo-Kernel + Samantha-Secretary: 可信, 优先派
-
-## 丢失 (不可逆)
-
-- Board 今早 shell 注入 10 agent.md CIEU 段落 (未 commit)
-- Maya hook_wrapper.py fail-closed patch (未 commit)
+- Board 今早 shell 注入 10 agent.md CIEU 段落 → 下 session Board 外部 shell 再跑:
+  ```
+  bash reports/apply_cieu_inject.sh && bash reports/apply_cieu_rename.sh
+  ```
+- Maya hook_wrapper.py fail-closed patch (未 commit, 被抹) — 下 session Ethan 一起带回来
 - Ryan 自己的 video_storage_migration 报告 + content/video_registry.yml
-
-需下 session 从 reports/apply_cieu_inject.sh + apply_cieu_rename.sh (已 commit) 重新跑一遍 Board 外部 shell.
 
 ## End
