@@ -397,10 +397,26 @@ def _try_whitelist_match(payload):
         log(f"[whitelist] FAIL-OPEN error: {exc}")
 
 
+def _read_active_agent_fresh():
+    """Gap 1: Read .ystar_active_agent on EVERY hook call (no caching).
+    Returns (agent_id, mtime_ns) tuple for version tracking."""
+    agent_file = os.path.join(REPO_ROOT, ".ystar_active_agent")
+    try:
+        stat = os.stat(agent_file)
+        with open(agent_file, "r") as f:
+            agent_id = f.read().strip()
+        return agent_id, stat.st_mtime_ns
+    except Exception as e:
+        log(f"[active_agent] read failed: {e}")
+        return "unknown", 0
+
 def _main():
     global _daemon_cache_valid
 
     try:
+        # ── Gap 1: Read active agent on EVERY call (no cache) ──────────────
+        active_agent, active_agent_mtime = _read_active_agent_fresh()
+
         # ── Governance Watcher (lazy start on first call) ──────────────────
         ensure_watcher_started()
 
@@ -529,6 +545,10 @@ def _main():
                 log(f"[omission-scan] {len(scan_result['violations'])} violation(s) found")
         except Exception as scan_exc:
             log(f"[omission-scan] fail-open: {scan_exc}")
+
+        # Gap 1: Include active_agent version in hook output (for logging)
+        if isinstance(result, dict):
+            result["active_agent_version"] = active_agent_mtime
 
         # Output ONLY valid JSON to stdout
         sys.stdout.write(json.dumps(result))

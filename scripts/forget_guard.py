@@ -273,9 +273,24 @@ def main():
             "ceo_mode": get_ceo_mode(),
         }
 
-        # Load rules
+        # Gap 2: Reload rules on EVERY call (with mtime-based cache invalidation)
         rules_path = Path.cwd() / "governance" / "forget_guard_rules.yaml"
-        rules_data = load_rules(rules_path)
+        if not hasattr(main, '_rules_cache'):
+            main._rules_cache = {}
+
+        try:
+            current_mtime = rules_path.stat().st_mtime_ns if rules_path.exists() else 0
+            cached_mtime = main._rules_cache.get('mtime', -1)
+
+            if current_mtime != cached_mtime:
+                # Reload rules
+                rules_data = load_rules(rules_path)
+                main._rules_cache = {'mtime': current_mtime, 'rules': rules_data}
+            else:
+                rules_data = main._rules_cache['rules']
+        except Exception:
+            # Fail-open on mtime check failure — reload every time
+            rules_data = load_rules(rules_path)
 
         if not rules_data.get("global_enable", False):
             sys.exit(0)

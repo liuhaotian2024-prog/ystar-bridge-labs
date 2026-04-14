@@ -349,6 +349,56 @@ def trigger_dialogue_contract_translation(user_msg: str):
             f.write(f"{datetime.now().isoformat()} | spawn_error: {e}\n")
 
 
+def detect_governance_doc_changes():
+    """Gap 3 & Gap 4: Detect changes in AGENTS.md, WORKING_STYLE.md, .claude/agents/*.
+    Returns injected context string if changes detected, else empty string."""
+    mtime_cache_file = Path("/tmp/ystar_gov_md_mtime.json")
+    context_diff = ""
+
+    try:
+        # Load previous mtimes
+        prev_mtimes = {}
+        if mtime_cache_file.exists():
+            with open(mtime_cache_file, 'r') as f:
+                prev_mtimes = json.load(f)
+
+        current_mtimes = {}
+        changed_files = []
+
+        # Track AGENTS.md and WORKING_STYLE.md
+        for doc_path in [WORKSPACE_ROOT / "AGENTS.md", WORKSPACE_ROOT / "WORKING_STYLE.md"]:
+            if doc_path.exists():
+                current_mtime = doc_path.stat().st_mtime_ns
+                current_mtimes[str(doc_path)] = current_mtime
+                if prev_mtimes.get(str(doc_path), -1) != current_mtime:
+                    changed_files.append(str(doc_path.relative_to(WORKSPACE_ROOT)))
+
+        # Track .claude/agents/*.md
+        agents_dir = WORKSPACE_ROOT / ".claude" / "agents"
+        if agents_dir.exists():
+            for agent_file in agents_dir.glob("*.md"):
+                current_mtime = agent_file.stat().st_mtime_ns
+                current_mtimes[str(agent_file)] = current_mtime
+                if prev_mtimes.get(str(agent_file), -1) != current_mtime:
+                    changed_files.append(f".claude/agents/{agent_file.name}")
+
+        # If changes detected, inject alert
+        if changed_files:
+            context_diff = f"\n[⚠️ GOV_DOC_CHANGED] Runtime governance files modified:\n"
+            for f in changed_files[:5]:  # Limit to 5 files
+                context_diff += f"  - {f}\n"
+            context_diff += "  Recipe: If spawning sub-agents, ensure they read updated configs. Consider session restart for full propagation.\n"
+
+        # Save updated mtimes
+        with open(mtime_cache_file, 'w') as f:
+            json.dump(current_mtimes, f)
+
+    except Exception as e:
+        # Fail-open: log error but don't block
+        sys.stderr.write(f"[GOV_DOC_CHANGES] detect_error: {e}\n")
+
+    return context_diff
+
 def main():
     """Hook entry point (fail-open, max 500ms)"""
     start_time = time.time()
@@ -357,6 +407,9 @@ def main():
         # Update last Board message timestamp
         now = time.time()
         LAST_BOARD_MSG_FILE.write_text(str(now))
+
+        # Gap 3 & Gap 4: Detect governance doc changes
+        gov_doc_diff = detect_governance_doc_changes()
 
         # Revoke CEO mode (Board is back → exit autonomous/break_glass)
         try:
@@ -378,6 +431,11 @@ def main():
                 pass
 
         context = inject_context(user_msg_preview[:200])  # Inject uses first 200 chars
+
+        # Append gov doc changes alert (Gap 3 & Gap 4)
+        if gov_doc_diff:
+            context += gov_doc_diff
+
         print(context, file=sys.stdout)
 
         # AMENDMENT-022: Async dialogue→contract translation (non-blocking)
