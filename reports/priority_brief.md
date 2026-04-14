@@ -4,7 +4,7 @@ last_updated: "2026-04-13T23:45"
 status: "active"
 phase: "internal_consolidation"
 next_session_p0_carryover:
-  - "⭐ P0 最高优先 — YML Session Bridge (最后一公里 顾问 2026-04-14 catch): session_memory_boot.py + session_memory_commit.py + governance_boot.sh STEP 8.7 + cron 30min commit. 详 spec 在 .claude/tasks/NEXT_SESSION_P0_yml_session_bridge.md. YML 库完整但空转, 不做下次 session 记忆仍丢. Dispatch Ryan-Platform via Ethan-CTO (Path B-lite)"
+  - "✅ YML Session Bridge 已完成 (commit 80e723f, Rt+1=0 via CIEU 工作法首战) — script 2 个 + STEP 8.7 + cron 全 ship. 下 session boot 时自动从 YML 读 top-N memories."
   - "A028 Universal Plugin Registry (UPR) — 10 class auto-register gap 统一解:  (1) gov-mcp tool/server.py [顾问 catch 实际已 register 了 — 忽略此项] (2) hook script/settings.json (3) cron job (4) ForgetGuard rule (5) Whitelist entry (6) Subagent .claude/agents (7) Role knowledge/boot_pack cat (8) API credential env export (9) Skill Y*gov skill_register (10) Amendment BOARD_CHARTER archive. governance_boot STEP -1 filesystem walk + auto-fix + emit REGISTRY_DRIFT CIEU"
   - "A029 Enhanced Continuity Guardian — E2E wrap test + restart 时 prod vs mirror diff restore + reports/continuity/restore_log"
   - "P0 Sofia v11 aspect ratio 修 — v10 (d516a41) ffmpeg crop 540px scale 720 = 1.33x 垂直拉伸 = 人/背景走形。真解: HeyGen 补 credits ($5-10) 一次原生 1280x720 生成, 不做后期 scale, OR Sofia subagent 下 session 真 register (BOM 已 aa2ecd5 修) 走 12-layer 强 Rt 自检 — general-purpose 顶岗 反复粗暴不学，Board 建议'开除她'"
