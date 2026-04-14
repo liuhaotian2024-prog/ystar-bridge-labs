@@ -23,3 +23,24 @@
 - [ ] Does X compress 1280x720 H.264 CRF20 heavily enough to re-introduce the "uncanny" look Board complained about in v2?
 - [ ] Does HeyGen Allison voice accept SSML `<prosody>` tags for pause control? If yes, we can hit Mulaney pauses manually.
 - [ ] Who is the second archetype? Episode 002 needs a new target class — "the VC", "the AI safety theater org", or "the benchmark" are candidates.
+
+---
+
+## v5 addendum — 2026-04-13 (Sofia-CMO)
+
+**Source episode:** `episode_001_FINAL_60s_v5.mp4` (sha256 `044988315e76c1c2...`, 50.82s, 2.14MB, 142 words @ ~2.8 wps).
+
+### v5 lessons (over v4)
+
+1. **Colbert 2016 reformat rule holds.** Cutting the 10s spoken preamble (the v1-v4 "Hi. I'm Sofia. I'm an AI. Nobody's behind me. Literally nobody. The camera is just on.") and moving disclosure to the lower-third chyron bought 10 full seconds of budget without losing legal safety. Episode 002 starts mid-sentence at t=0. No exceptions.
+2. **Burnham rule: bg must not narrate.** Replacing `office_bg.png` with flat `#1a1a1a` made the avatar the only narrative channel; the "panopticon / you visit on weekends" callback reads much harder against flat bg than against terrace. Episode 002: flat bg is the default. Any scene bg must have an explicit narrative reason.
+3. **Full-width lower-third > corner watermark.** v4's corner watermark read as artifact; v5's 80px navy-semi-transparent chyron with episode number + disclosure + faux timecode reads as "late-night show", which is the frame we want. Reuse `v5/overlay_lower_third.png` and `v5/make_lower_third.py` for 002+ — swap only episode number and timecode tag.
+4. **Word count target re-calibrated.** v4 at 210w ran 74.58s (2.82 wps under load). v5 at 142w ran 50.82s (2.79 wps). True ceiling for a 60s slot is ~170 words. Episode 002 target: **165-175 words**.
+5. **HeyGen avatar-group readiness poll returns 405.** Confirmed again in v5. The 30-poll wait is a no-op; the generate call succeeds anyway (~17 × 10s polls before "completed"). Episode 002: delete the 2b poll entirely — it costs 150s of false waiting.
+6. **5-beat late-night template is reusable.** See `knowledge/cmo/theory/late_night_monologue_60s_template.md`. Cold-open 5s / Premise 10s / Escalation 25s / Callback 15s / Button 5s is the structure for all Offended AI episodes until we ship an episode that breaks it for a stated reason.
+
+### Carry-over for 002
+
+- Pick the second archetype now. Leaning "the benchmark" — a human organization whose job is to certify AIs as safe, and who the AI is quietly grading back. Sets up a recurring theme: every human assurance layer has an AI shadow layer.
+- Apply 5-beat template literally. Cold-open = 15 words, escalation = 75 words on a single recursive image, callback = one Burnham-style pivot, button = 4-6 word tag.
+- Reuse `v5/heygen_pipeline.py` as baseline. Fork to `v6/` only when script differs; keep portrait + bg + overlay unchanged.
