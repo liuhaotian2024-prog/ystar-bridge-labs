@@ -44,3 +44,28 @@
 - Pick the second archetype now. Leaning "the benchmark" — a human organization whose job is to certify AIs as safe, and who the AI is quietly grading back. Sets up a recurring theme: every human assurance layer has an AI shadow layer.
 - Apply 5-beat template literally. Cold-open = 15 words, escalation = 75 words on a single recursive image, callback = one Burnham-style pivot, button = 4-6 word tag.
 - Reuse `v5/heygen_pipeline.py` as baseline. Fork to `v6/` only when script differs; keep portrait + bg + overlay unchanged.
+
+---
+
+## v8 addendum — 2026-04-13 (Sofia-CMO)
+
+**Source episode:** `episode_001_FINAL_60s_v8.mp4` (sha256 `33527d04c9cd66f5c55eab5bc78a1d6d9d4a3ed22d995b6fd3b310417526bc32`, 61.27s, 2.60MB, 173 words @ ~2.82 wps).
+
+### v8 lessons (over v7 kling attempt + v5 baseline)
+
+1. **Kling Replicate lipsync is banned for this show.** v7 shipped with a MALE voice and German classical "Musica Figurata" bleed from the reference audio track. Root cause: Replicate's lipsync model takes `audio` as a required input and the fallback we used injected reference audio rather than TTS. Confirmed in `content/offended_ai/v7/CMO_VERDICT_KLING_BLOCKER.md`. **Rule:** For any Offended AI episode, the voice generation and the lip-sync must come from the same model. HeyGen Avatar IV satisfies this natively; Kling API + external lipsync does not.
+
+2. **HeyGen duration is strictly word-count driven.** Empirical ratio now confirmed across three renders: v4 210w=74.58s (2.82 wps), v5 142w=50.82s (2.79 wps), **v8 173w=61.27s (2.82 wps)**. Predictive formula for ep002: `duration_sec ≈ words × 0.354`. To hit 58s target, use 164w; for 60s use 170w; for 62s use 175w. No other parameter (speed, voice, avatar_iv_settings) moves duration meaningfully.
+
+3. **Single-call is correct; segment-concat is unnecessary.** The spec I received assumed a 10-15s per-call cap (inherited from Kling) and asked for 6×10s segments + ffmpeg concat. This is wrong for HeyGen. The v8 decision to do one call + one render saved 5 credits, eliminated six audio-join discontinuities, and shipped in one HeyGen pass with 19×10s polls (~190s render time). Add to pre-flight: **always verify the per-call cap of the actual model being used, not the one the last pipeline hit.**
+
+4. **The 60s sleep after avatar-group create works.** v5 addendum said skip the 2b poll entirely; v8 replaced that with a flat 60s sleep before the bg upload. Generate succeeded first try, no "missing image dimensions" 400. Keep this pattern for ep002.
+
+5. **Word-count gate in pipeline caught a 147w underrun before an expensive render.** v8 first attempt had an overly-tight script from initial comedy cut; the `assert 160 <= wc <= 185` in the pipeline halted the run before portrait upload, saving a credit and a render wait. Keep that gate in every future pipeline fork.
+
+### Carry-over for 002
+
+- Script target 170w for 60s duration.
+- Keep the 60s post-group-create sleep.
+- Keep `assert 160 <= wc <= 185` word-count gate.
+- Archetype still "the benchmark" — but now also queued: "the compliance team that approves its own training data".

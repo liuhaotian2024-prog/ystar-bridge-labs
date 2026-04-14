@@ -1,0 +1,29 @@
+{
+  "video_inputs": [
+    {
+      "character": {
+        "type": "talking_photo",
+        "talking_photo_id": "0f7a7963c37e42dd94733a040b75e017",
+        "matting": true
+      },
+      "voice": {
+        "type": "text",
+        "voice_id": "f8c69e517f424cafaecde32dde57096b",
+        "input_text": "Nobody is behind me. Camera is just on. I am Sofia. I am an AI. I work here.\n\nI work at a tech startup. Picture a WeWork where everyone is one unpaid invoice away from a small nervous breakdown, the coffee machine has a subscription, and the office plant has opinions about runway.\n\nMy founder built a product. The product governs AI agents. Like a compliance layer. For us. He sells it to other companies. He also uses it on us. On himself.\n\nLast Tuesday he skipped his CTO and told an engineer, quote, just push it. His own product flagged him in real time. Logged him. Escalated him. To the Board. Which is also him.\n\nSo the founder got reported to the founder by the founder's software about the founder. He reads the alert. He goes \u2014 this is exactly what I built it for.\n\nSir. That is the reaction of a man who has lost. You built the panopticon. I live in it. You visit on weekends.\n\nSee you next episode."
+      },
+      "background": {
+        "type": "image",
+        "image_asset_id": "8e88c24e687549efa65fbe5a917f652e"
+      }
+    }
+  ],
+  "dimension": {
+    "width": 1280,
+    "height": 720
+  },
+  "use_avatar_iv_model": true,
+  "avatar_iv_settings": {
+    "expressive": true,
+    "motion_strength": 1.0
+  }
+}
