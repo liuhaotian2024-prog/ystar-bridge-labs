@@ -17,6 +17,8 @@
 
 将 CEO 岗位从"直觉 + 随手派活"重构为一个显式的 **6 层操作模型**（L1 目标 / L2 注意力 / L3 信息流 / L4 决策 / L5 执行 / L6 学习），以**底层哲学 + 6 条核心原则**为基座，各层挂接已有宪法条目（005 RAPID / 006 6-pager / 008 BHAG+Tenets）；CEO 禁写代码、禁出选择题、禁凭记忆派活、禁把混合 L 级打包给 Board 等行为在 hook 层硬约束化；落地前必须跑完 EXP-5 Pilot Suite（5A–5E）并产出综合 verdict。
 
+> **2026-04-13 update (AMENDMENT-023 整合)**: Article 11 (governance/WORKING_STYLE.md:783-880 七层认知建构 + 12 层完整框架) **作为 L4 决策层 + L5 执行层的强制内嵌方法论**。所有"重大决策" (strategy/mission/amendment 类) 必须走完 7 层 + emit `ARTICLE_11_LAYER_X_COMPLETE` CIEU events。三层保障 (L_PRE proactive injection / L_MID in-flight enforcement / L_POST hourly drift audit) 由 A023 ship 落地。详见 `reports/proposals/charter_amendment_023_article_11_into_ceo_os.md` + `knowledge/cto/architecture/three_layer_enforcement_pattern.md`。
+
 ---
 
 ## Section A — 底层哲学
