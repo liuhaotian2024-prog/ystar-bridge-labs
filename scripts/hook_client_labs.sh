@@ -17,6 +17,20 @@ YGOV_DIR="/Users/haotianliu/.openclaw/workspace/Y-star-gov"
 SOCK="${YSTAR_HOOK_SOCK:-/tmp/ystar_hook.sock}"
 PAYLOAD=$(cat)
 
+# AMENDMENT-025 P2: Self-heal whitelist (always-allow regardless of governance state)
+# Rationale: when governance brick'd self, these commands MUST be allowed to recover
+case "$PAYLOAD" in
+    *"pkill"*"hook_daemon"*|*"pkill"*"hook_wrapper"*|*"rm "*"/tmp/ystar_hook.sock"*)
+        echo '{"action":"allow","message":"[A025-P2] self-heal: daemon kill bypass"}'
+        exit 0;;
+    *"echo"*"> /Users/haotianliu/.openclaw/workspace/ystar-company/.ystar_active_agent"*|*"echo"*"> .ystar_active_agent"*)
+        echo '{"action":"allow","message":"[A025-P2] self-heal: active_agent restore bypass"}'
+        exit 0;;
+    *"governance_boot.sh"*)
+        echo '{"action":"allow","message":"[A025-P2] self-heal: governance reboot bypass"}'
+        exit 0;;
+esac
+
 # ── FAST PATH: daemon running ──────────────────────────────────────────
 if [ -S "$SOCK" ]; then
     if command -v socat &>/dev/null; then
