@@ -173,8 +173,24 @@ with urllib.request.urlopen(video_url, timeout=300) as r, open("raw_heygen_v6.mp
 print(f"Downloaded raw_heygen_v6.mp4 ({os.path.getsize('raw_heygen_v6.mp4')} bytes)")
 
 
-# --- 6. Extract sofia_intro.mp4 bg frames ---------------------------------
-print("\n== 6. Extract sofia_intro.mp4 frames as bg sequence ==")
+# --- 6. Clean green screen with despill chain ----------------------------
+print("\n== 6. ffmpeg despill chain (tighter chroma-key + edge cleanup) ==")
+CLEAN_FG = BASE / "sofia_clean_despill.mp4"
+subprocess.run([
+    "ffmpeg", "-y", "-i", "raw_heygen_v6.mp4",
+    "-vf",
+    "chromakey=color=0x00FF00:similarity=0.15:blend=0.03,"
+    "despill=type=green:mix=0.6:expand=0,"
+    "eq=contrast=1.05:brightness=0.02",
+    "-c:v", "qtrle",  # lossless codec preserves alpha
+    "-c:a", "copy",
+    str(CLEAN_FG),
+], check=True)
+print(f"Despilled foreground -> {CLEAN_FG}")
+
+
+# --- 7. Extract sofia_intro.mp4 bg frames ---------------------------------
+print("\n== 7. Extract sofia_intro.mp4 frames as bg sequence ==")
 BG_VIDEO = pathlib.Path("/Users/haotianliu/.openclaw/workspace/ystar-company/docs/sofia_intro.mp4")
 BG_FRAMES = BASE / "bg_frames"
 BG_FRAMES.mkdir(exist_ok=True)
@@ -186,18 +202,17 @@ subprocess.run([
 print(f"Extracted bg frames to {BG_FRAMES}")
 
 
-# --- 7. Chroma-key composite onto real bg + lower-third ------------------
-print("\n== 7. Chroma-key green screen onto real bg + lower-third ==")
-out = "episode_001_FINAL_60s_v6.mp4"
-# Chroma-key green screen and overlay onto bg + lower-third
+# --- 8. Composite despilled fg onto bg + lower-third ---------------------
+print("\n== 8. Composite despilled fg onto real bg + lower-third ==")
+out = "episode_001_FINAL_60s_v6_1.mp4"
 cmd = [
     "ffmpeg", "-y",
     "-framerate", "30", "-i", str(BG_FRAMES / "bg_%04d.png"),
-    "-i", "raw_heygen_v6.mp4",
+    "-i", str(CLEAN_FG),
     "-i", str(OVERLAY),
     "-filter_complex",
-    "[1:v]chromakey=0x00FF00:0.3:0.2[ckout];[0:v][ckout]overlay=shortest=1[bg_avatar];[bg_avatar][2:v]overlay=0:0:format=auto",
-    "-map", "1:a",  # audio from HeyGen
+    "[0:v][1:v]overlay=shortest=1[bg_avatar];[bg_avatar][2:v]overlay=0:0:format=auto",
+    "-map", "1:a",  # audio from cleaned foreground
     "-c:v", "libx264", "-crf", "20", "-preset", "medium",
     "-c:a", "aac", "-b:a", "128k",
     "-movflags", "+faststart",
@@ -208,12 +223,12 @@ subprocess.run(cmd, check=True)
 print(f"Wrote {out} ({os.path.getsize(out)} bytes)")
 
 
-# --- 8. Canonical copy ----------------------------------------------------
-canonical = "/Users/haotianliu/.openclaw/workspace/ystar-company/content/offended_ai/episode_001_FINAL_60s_v6.mp4"
+# --- 9. Canonical copy ----------------------------------------------------
+canonical = "/Users/haotianliu/.openclaw/workspace/ystar-company/content/offended_ai/episode_001_FINAL_60s_v6_1.mp4"
 shutil.copy(out, canonical)
 print(f"Copied -> {canonical}")
 
-# --- 9. Duration probe ----------------------------------------------------
+# --- 10. Duration probe ---------------------------------------------------
 try:
     r = subprocess.run(
         ["ffprobe", "-v", "error", "-show_entries", "format=duration",
