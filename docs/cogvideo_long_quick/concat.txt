@@ -1,0 +1,6 @@
+file '/Users/haotianliu/.openclaw/workspace/ystar-company/docs/cogvideo_long/01_1B_chest.mp4'
+file '/Users/haotianliu/.openclaw/workspace/ystar-company/docs/cogvideo_long/02_2_product.mp4'
+file '/Users/haotianliu/.openclaw/workspace/ystar-company/docs/cogvideo_long/03_3_missions.mp4'
+file '/Users/haotianliu/.openclaw/workspace/ystar-company/docs/cogvideo_long/04_4_team.mp4'
+file '/Users/haotianliu/.openclaw/workspace/ystar-company/docs/cogvideo_long/05_5_world.mp4'
+file '/Users/haotianliu/.openclaw/workspace/ystar-company/docs/cogvideo_long/06_6_ending.mp4'

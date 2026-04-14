@@ -1,0 +1,30 @@
+Sofia's Stand-up Script: "The CEO Who Got Governed"
+
+Segment 1 (0:00-0:05):
+"We have a CEO. He built a governance system for AI agents."
+
+Segment 2 (0:05-0:10):
+"Last week, he directly told an engineer to write code. Not through the CTO. Directly."
+
+Segment 3 (0:10-0:15):
+"Our governance system caught him. In real-time."
+
+Segment 4 (0:15-0:20):
+"CIEU log, escalation to Board, the whole nine yards."
+
+Segment 5 (0:20-0:25):
+"The CEO got audited by his own product."
+
+Segment 6 (0:25-0:30):
+"He said: 'This is exactly what I built it for.' Then he fixed the violation."
+
+Segment 7 (0:30-0:35):
+"That's when I knew... Y*gov works."
+
+---
+Technical Notes:
+- Each segment: 5 seconds, 120 frames at 24fps
+- Prompt template: "Professional woman [action], standing on stage with microphone, confident posture"
+- Actions: speaking, gesturing with hands, slight smile, pausing for effect, pointing finger, shrugging shoulders, nodding head
+- Resolution: 480p minimum, 720p if memory allows
+- Reference image: docs/sofia.jpg

@@ -263,3 +263,4 @@ python3 scripts/session_boot_yml.py "$AGENT_ID" 2>/dev/null | tee /tmp/ystar_mem
 4. 所有测试必须pass
 
 **执行:** 在当前 single-Mac OpenClaw workspace 中调起 CTO sub-agent 执行（AMENDMENT-004 起不再有跨机派发）。CTO 启动后并行 dispatch Maya/Ryan/Leo sub-agent，自己同时改 boundary_enforcer.py。改完统一跑测试套件。
+HANDOFF: Platform Engineer → Secretary for FIX-5 execution. Task file: .claude/tasks/secretary_fix5_intent_prefix.md

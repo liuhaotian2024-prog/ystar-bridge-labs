@@ -100,3 +100,12 @@
 - **Criticality**: (To be determined)
 - **Theory status**: ⬜ Pending P2 learning
 
+
+## 5. New task type (from P3 simulation)
+
+### System Integration
+- **Description**: (Detected from counterfactual simulation)
+- **Frequency**: (To be determined)
+- **Criticality**: (To be determined)
+- **Theory status**: ⬜ Pending P2 learning
+

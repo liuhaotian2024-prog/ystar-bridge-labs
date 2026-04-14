@@ -13,6 +13,7 @@ import sys
 import json
 import re
 import os
+import sqlite3
 from pathlib import Path
 from datetime import datetime
 
@@ -173,13 +174,68 @@ def evaluate_rule(rule: dict, payload: dict, context: dict) -> bool:
     return True
 
 
-def emit_cieu_event(event_type: str, rule_id: str, severity: str):
-    """Emit a CIEU drift event (stub — real implementation would use cieu_trace.py)"""
-    # For now, just log to stderr
-    # Future: integrate with cieu_trace.py or Y*gov MCP gov_remember
-    timestamp = datetime.utcnow().isoformat() + "Z"
-    print(f"[CIEU_DRIFT] {timestamp} | {event_type} | rule={rule_id} severity={severity}",
-          file=sys.stderr)
+def emit_cieu_event(event_type: str, rule_id: str, severity: str, payload: dict):
+    """Emit a CIEU drift event to .ystar_cieu.db"""
+    try:
+        db_path = Path.cwd() / ".ystar_cieu.db"
+        if not db_path.exists():
+            print(f"[FORGET_GUARD_EMIT] ERROR: CIEU DB not found at {db_path}", file=sys.stderr)
+            return
+
+        conn = sqlite3.connect(str(db_path))
+        c = conn.cursor()
+
+        # Get session_id and agent_id from session file
+        session_file = Path.cwd() / ".ystar_session.json"
+        session_id = "unknown"
+        agent_id = "forget_guard"
+        if session_file.exists():
+            try:
+                with open(session_file, 'r') as f:
+                    session_data = json.load(f)
+                    session_id = session_data.get("session_id", "unknown")
+            except Exception:
+                pass
+
+        # Get next seq_global
+        c.execute("SELECT MAX(seq_global) FROM cieu_events")
+        max_seq = c.fetchone()[0]
+        seq_global = (max_seq or 0) + 1
+
+        # Generate event_id
+        event_id = f"fg_{int(datetime.utcnow().timestamp() * 1000)}_{seq_global}"
+        created_at = datetime.utcnow().timestamp()
+
+        # Build drift_details
+        drift_details = json.dumps({
+            "rule_id": rule_id,
+            "severity": severity,
+            "tool": payload.get("tool", "unknown"),
+            "file_path": payload.get("file_path"),
+            "command": payload.get("command"),
+        })
+
+        # Insert event
+        c.execute('''
+            INSERT INTO cieu_events (
+                event_id, seq_global, created_at, session_id, agent_id, event_type,
+                decision, passed, drift_detected, drift_details, drift_category,
+                file_path, command, evidence_grade
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (
+            event_id, seq_global, created_at, session_id, agent_id, event_type,
+            "warn", 0, 1, drift_details, "institutional_memory",
+            payload.get("file_path"), payload.get("command"), "drift"
+        ))
+
+        conn.commit()
+        conn.close()
+
+        print(f"[FORGET_GUARD_EMIT] {event_type} | rule={rule_id} severity={severity}", file=sys.stderr)
+
+    except Exception as e:
+        # Fail-open: don't crash on CIEU errors
+        print(f"[FORGET_GUARD_EMIT] ERROR: {e}", file=sys.stderr)
 
 
 def emit_warning(rule_id: str, recipe: str):
@@ -234,7 +290,7 @@ def main():
 
                 # Emit warning and CIEU event
                 emit_warning(rule_id, recipe)
-                emit_cieu_event(cieu_event, rule_id, severity)
+                emit_cieu_event(cieu_event, rule_id, severity, payload)
 
         sys.exit(0)
 

@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-04-10T01:50:19.694355",
+  "model": "THUDM/CogVideoX-2b",
+  "resolution": "480x320",
+  "steps": 20,
+  "total_frames": 25,
+  "duration_s": 3.125,
+  "fps": 8,
+  "micro_segments": [
+    {
+      "micro_idx": 0,
+      "frames": 9,
+      "drift_before_mean": 4363.367176935982,
+      "drift_before_max": 4365.252419569417,
+      "drift_after_mean": 2012.9826196592492,
+      "drift_after_max": 2019.498592739096,
+      "reduction_pct": 53.86630237538721,
+      "gen_time_s": 103.54311418533325,
+      "gov_time_s": 0.6103718280792236,
+      "prompt_suffix": "standing facing camera, right hand moving toward chest, professional cinematic l"
+    },
+    {
+      "micro_idx": 1,
+      "frames": 9,
+      "drift_before_mean": 2213.51701803134,
+      "drift_before_max": 2224.769294259327,
+      "drift_after_mean": 898.324026785006,
+      "drift_after_max": 916.0809697106622,
+      "reduction_pct": 59.416439111728245,
+      "gen_time_s": 134.15181708335876,
+      "gov_time_s": 0.5752062797546387,
+      "prompt_suffix": "standing still, right hand on chest, looking directly at camera, soft expression"
+    },
+    {
+      "micro_idx": 2,
+      "frames": 9,
+      "drift_before_mean": 3015.532173152713,
+      "drift_before_max": 3019.9965854964253,
+      "drift_after_mean": 1130.181807072279,
+      "drift_after_max": 1133.3394620269635,
+      "reduction_pct": 62.52131490639399,
+      "gen_time_s": 141.68985176086426,
+      "gov_time_s": 0.5703108310699463,
+      "prompt_suffix": "standing, looking slightly upward with a thoughtful expression, hand relaxing fr"
+    }
+  ],
+  "summary": {
+    "avg_drift_before": 3197.472122706678,
+    "avg_drift_after": 1347.1628178388448,
+    "avg_reduction_pct": 58.60135213116982,
+    "total_gen_time_s": 379.3847830295563,
+    "total_gov_time_s": 1.7558889389038086
+  }
+}

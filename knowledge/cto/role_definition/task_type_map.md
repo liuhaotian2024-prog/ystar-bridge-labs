@@ -143,3 +143,12 @@
 - **Criticality**: (To be determined)
 - **Theory status**: ⬜ Pending P2 learning
 
+
+## 9. New task type (from P3 simulation)
+
+### Code Refactoring
+- **Description**: (Detected from counterfactual simulation)
+- **Frequency**: (To be determined)
+- **Criticality**: (To be determined)
+- **Theory status**: ⬜ Pending P2 learning
+

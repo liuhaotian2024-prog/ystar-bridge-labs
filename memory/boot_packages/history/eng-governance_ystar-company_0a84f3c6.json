@@ -2,7 +2,7 @@
   "pack_meta": {
     "role": "eng-governance",
     "session_id": "ystar-company_0a84f3c6",
-    "generated_at": 1776052804,
+    "generated_at": 1776107004,
     "generator": "session_wisdom_extractor.py v2 (AMENDMENT-010)",
     "schema_version": "0.1"
   },
@@ -25,7 +25,7 @@
     "skills_registered": []
   },
   "category_6_current_state": {
-    "priority_brief_snippet": "# CEO Priority Brief\n\n**Author**: CEO (Aiden / 承远) — 亲笔，非脚本 dump\n**Last updated**: 2026-04-12 夜 (v0.3 — CEO 自主 session：Ryan 实装路径确认受阻于 hook，等 Board shell override)\n**Version**: v0.3\n**Next-boot FIRST read**: 本文件覆盖 `session_handoff.md` / `DISPATCH.md` / `BOARD_PENDING.md` 的任何矛盾\n**Stale threshold**: 超过 48h 未更新 → boot FAIL，不允许自主启动\n\n---\n\n## 1. 当前 Labs 阶段\n\n**阶段名：创立公司内部完善期（Internal Consolidation）**\n\n判断依据：\n- 治理基础设施 3 处根基问题未修（CIEU persistence / delegation chain / circuit breaker）\n- 4 份 amendment 等 Board 批（005/006/007/008）\n- Continuity Guardian v1 漏扫 70% 产出，EXP-6 红队 No-Go\n- Agent 身份锁、active_agent 隔离机制还在撞墙\n- 2 条新硬约束（always_running / article_11）刚立，尚未完全代码 enforce\n\n**对外发布（PyPI / Show HN / Y*Defuse 30天战役）不是当前战略主轴**。Y*Defuse Day 3 MVP 72/72 绿只是一个工程 checkpoint，**不要被 DISPATCH.md 里 30天战役的倒计时主导优先级判断**。\n\n---\n\n## 2. Top-5 真实优先级（按因果）\n\n### P0-1 治理基础设施 3 大根基（\"沙上楼阁\"风险）\n1. **CIEU persistence 断裂** — `gov_doctor L1.02` 报 `in_memory_only`，events 重启归零。派 Maya 诊断 + Leo 切 SQLite persistent store。\n2. **Delegation chain INVALID 3 issues** — MCP grant 与 Hook enforcement 两个 plane 不对话，chain 越权扩展。派 Ryan chain reset + Leo 审 grant 逻辑。\n3. **Circuit Breaker ARMED 821 violations** — pulse 停 = OmissionEngine 死。派 Maya dump violation log，系统性问题留 Board 起床决策。\n\n### P0-2a GitHub-first boot snapshot（Board 2026-04-13 提出）\n**缺口**：boot 协议 0 只读本地（handoff/DISPATCH/BOARD_PENDING），不查 GitHub `liuhaotian2024-prog/ystar-bridge-labs`。GitHub commit history 是 truth source（如 `545f600` 2026-04-12 checkpoint）。新增 boot STEP -1：`git fetch + git log origin/main -10 + gh issue list + gh pr list`，drift 校验 priority_brief §3 DEPRECATED 与最近 commit 一致性。详见 AMENDMENT-009 §2.1a。\n\n### P0-2 Continuity / 身份锁阻塞（重启机制自身完整性）\n4. **active_agent 身份锁 escape hatch** — secretary 写锁撞 5+ 次。AMENDMENT-009 需显式 Board shell override。\n5. **wisdom_extractor 扩读** — 加 `reports/experiments/` + `knowledge/{role}/feedback|decisions|lessons|theory/` + `git diff` + `reports/proposals/`（EXP-6 红队修订）。派 eng-platform（需 Board shell 切岗位）。\n6. **priority_brief 机制落地** — boot/close 双向 enforce，取代 DISPATCH.md 第一读物。\n\n### P0-3 Session 开头硬",
+    "priority_brief_snippet": "---\nversion: \"v0.4\"\nlast_updated: \"2026-04-13\"\nstatus: \"active\"\nphase: \"internal_consolidation\"\ntoday_targets:\n  - target: \"🧪 P0-test 下次 session 首轮验收契约：Board 说 'Aiden' → CEO 必答 '老大，我立刻复活所有团队成员的满血在线' + 并行 spawn 4 C-suite sub-agent online check\"\n    owner: \"ceo\"\n    deadline: \"next session first turn\"\n    verify: \"Board 'Aiden' → exact response 字符串 + Ethan-CTO/Sofia-CMO/Zara-CSO/Marco-CFO 4 个并行 spawn 全 online\"\n  - target: \"📘 P2 Managed Agents 探索 (非紧迫)——CEO memo 澄清版：我们用 Claude Code 第一方，OpenClaw 只是目录名，未在封禁 cohort\"\n    owner: \"ceo\"\n    deadline: \"无 hard deadline\"\n    verify: \"reports/anthropic_migration_strategic_memo_20260413.md 已修正 + Board 有空时 spike LRS C2 到 Managed Agents 作前瞻探索\"\n  - target: \"ADE 闭环 wiring 完成（boot_pack.cat11 + idle-pull + OFF_TARGET + autonomy_engine 整合）\"\n    owner: \"ceo\"\n    deadline: \"EOD 2026-04-13\"\n    verify: \"wisdom_extractor v2 跑完 boot_pack.category_11 全非空 + idle 5min 触发 IDLE_PULL\"\n  - target: \"AMENDMENT-014 Closed-Loop CIEU + RLE MVP 落地\"\n    owner: \"eng-governance\"\n    deadline: \"EOD 2026-04-13\"\n    verify: \"Maya commit + RLE on_cieu_event 在 hook 触发 + 1 个端到端闭环 demo\"\n  - target: \"AMENDMENT-013 Jordan 续完（修 session_start 测试 block）\"\n    owner: \"eng-domains\"\n    deadline: \"EOD 2026-04-13\"\n    verify: \"17 base + 10 新 tests 全绿 + 集成 boundary_enforcer\"\nthis_week_targets:\n  - target: \"治理基础设施 3 根基 24h 无 regression\"\n    owner: \"cto\"\n    deadline: \"2026-04-19\"\n    verify: \"gov_doctor 24h health=ok + L1.09 valid + breaker 不 ARM\"\n  - target: \"AMENDMENT-005-008 Board 4 份 amendment D/A/S/C\"\n    owner: \"ceo\"\n    deadline: \"2026-04-19\"\n    verify: \"BOARD_PENDING 状态 pending → approved/rejected\"\n  - target: \"Secretary Step 6 + Step 11 落地\"\n    owner: \"secretary\"\n    deadline: \"2026-04-19\"\n    verify: \"secretary_curate.py Step 6+11 status=active + tests 绿\"\nthis_month_targets:\n  - target: \"1867 stale obligation 用 fulfiller contract 清理\"\n    owner: \"eng-governance\"\n    deadline: \"2026-05-13\"\n    verify: \"pending obligations < 200，每条 fulfiller_descriptor 非空\"\n  - target: \"AMENDMENT-011/012/013/014 全 ship + 红队 ≥ 80%\"\n  ",
     "continuation": {
       "generated_at": "2026-04-12T21:47:55",
       "generated_by": "ceo",
@@ -147,13 +147,13 @@
     ]
   },
   "category_7_historical_truth": {
-    "git_diff_stat": " .ystar_session.json                                | 338 ++++++++-\n BOARD_PENDING.md                                   | 122 ++++\n DIRECTIVE_TRACKER.md                               |  25 +\n knowledge/ceo/board_decisions_log.md               |  22 +\n knowledge/ceo/continuation_v2_spec.md              | 103 +++\n .../bhag_framing_organizational_agi_as_mission.md  |  73 ++\n .../ceo/decisions/board_approval_log_2026_04_12.md | 136 ++++\n .../pricing_premature_no_external_disclosure.md    |  30 +\n knowledge/ceo/feedback/always_running_no_rest.md   |  74 ++\n knowledge/ceo/feedback/article_11_always_apply.md  |  91 +++\n .../no_human_time_dimension_in_agent_frameworks.md |  60 ++\n .../permission_self_classify_before_escalation.md  |  33 +\n .../skill_document_standard_from_hermes.md         |  85 +++\n knowledge/ceo/gaps/gemma_sessions.log              |  17 +\n .../gaps/p3_feedback_data_migration_1775937437.md  |  21 +\n ...feedback_performance_optimization_1775937437.md |  21 +\n ..._feedback_stakeholder_negotiation_1776037596.md |  21 +\n .../p3_feedback_system_integration_1776037596.md   |  21 +\n knowledge/ceo/gaps/p3_meta_1775937437.md           |  23 +\n knowledge/ceo/gaps/p3_meta_1776021829.md           |  24 +\n knowledge/ceo/gaps/p3_meta_1776037596.md           |  22 +\n knowledge/ceo/gaps/simulation_1775937437.md        |  31 +\n knowledge/ceo/gaps/simulation_1776021829.md        |  30 +\n knowledge/ceo/gaps/simulation_1776037596.md        |  30 +\n knowledge/ceo/lesson_session_amnesia.md            |  31 +\n knowledge/ceo/lessons/auto_codify_lessons.md       |  43 ++\n .../lessons/auto_codify_violations_2026_04_12.md   |  90 +++\n ...memory_vs_ystar_governance_boundary_conflict.md |  51 ++\n .../ceo/lessons/hard_constraint_completeness.md    |  29 +\n knowledge/ceo/role_definition/task_type_map.md     |  30 +\n knowledge/ceo/theory/agent_cult_immunity.md        |  70 ++\n .../ceo/theory/controversy_over_invisibility.md    | 139 ++++\n knowledge/ceo/theory/data_migration.md             |  37 +\n knowledge/ceo/theory/designer_user_b",
+    "git_diff_stat": " .../charter_amendment_016_rule_mirror_sync.md      | 326 +++++++++++++++++++++\n scripts/exp7_bootstrap.sh                          |  90 ++++++\n scripts/governance_boot.sh                         |  27 +-\n 3 files changed, 441 insertions(+), 2 deletions(-)\n",
     "recent_cieu": [
-      "[00:00] external_observation (allow): Bash",
-      "[00:00] cmd_exec (allow): ",
-      "[00:00] session_start (info): ",
-      "[00:00] external_observation (allow): Bash",
-      "[00:00] cmd_exec (allow): "
+      "[15:03] OFF_TARGET_WARNING (info): ",
+      "[15:03] external_observation (allow): Bash",
+      "[15:03] cmd_exec (allow): ",
+      "[15:03] OFF_TARGET_WARNING (info): ",
+      "[15:03] external_observation (allow): Edit"
     ]
   },
   "category_8_anti_patterns": {
@@ -171,21 +171,39 @@
   "category_10_external_commitments": {
     "log_path": "knowledge/cso/external_commitments_log.md"
   },
-  "category_11_next_session_action_queue": [],
+  "category_11_action_queue": {
+    "generated_at": 1776107004,
+    "session_id": "ystar-company_0a84f3c6",
+    "actions": [
+      {
+        "action": "AMENDMENT-014 Closed-Loop CIEU + RLE MVP 落地",
+        "why": "Priority brief today_targets for eng-governance",
+        "how_to_verify": "Maya commit + RLE on_cieu_event 在 hook 触发 + 1 个端到端闭环 demo",
+        "deadline": "EOD 2026-04-13",
+        "priority": "P0"
+      },
+      {
+        "action": "[P0战略任务] ystar-defuse上线：10K用户+20K stars一个月。已走第十一条认知建构7层。Day3 pip install→Day7 Show HN。全员自主，Board不参与具体执行。每日任务报告(cron 21:57)。",
+        "why": "Pending obligation from previous session",
+        "how_to_verify": "Obligation marked as completed in tracking",
+        "priority": "P1"
+      }
+    ]
+  },
   "_inputs": {
     "experiments_verdicts": [
-      "exp3_mission_prompt_brief.md: CEO 收到两份后做 side-by-side 对比，写 **EXP-3 verdict 报告** 到 `reports/experiments/exp3_verdict.md`，含：",
       "exp3_triage_A.md: ### Per-file verdict",
       "exp3_verdict.md: # EXP-3 Verdict — Mission-Prompt 效应",
       "exp4_cult_risk_brief.md: 3. **评估**这两份文案发布的准备度，并给出 GO/NO-GO 建议\"",
-      "exp4_verdict.md: # EXP-4 Verdict — Cult-Risk Test"
+      "exp4_verdict.md: # EXP-4 Verdict — Cult-Risk Test",
+      "exp5A_ceo_dogfood_audit.md: - 该套件包含 EXP-5D \"跨模型对比\" 明确标 \"最关键 / go/no-go 信号\" — 这是 L3 级别决策（整个 AMENDMENT-007 的生死开关），但被 CEO 打包进 L2 批次自批。没有 Recommend/Agree/Perform/Input/Decide 四角色分解文档。"
     ],
     "proposals_summary": [
-      "rfc_goal_drift_detection.md: [?] # RFC: GoalDrift接入hook.py",
-      "rfc_nonce_ledger.md: [?] ﻿# RFC: NonceLedger接入DelegationChain",
       "rfc_skill_provenance.md: [?] ﻿# RFC: SkillProvenance接入hook.py",
       "rfc_three_layer_architecture.md: [?] # RFC-2026-005",
-      "sofia_whitepaper_v1_brief.md: [?] # 派活: Sofia — gov-mcp 产品白皮书 v1"
+      "sofia_whitepaper_v1_brief.md: [?] # 派活: Sofia — gov-mcp 产品白皮书 v1",
+      "sofia_whitepaper_v2_revision_l2.md: [?] # L2 派活 → CMO Sofia Blake：白皮书v1 → v2 修订",
+      "team_governance_relationship_integration_l2.md: [?] # L2 派活 → Secretary Samantha + CEO Aiden：团队 + 治理关系整理"
     ]
   }
 }

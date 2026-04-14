@@ -1,0 +1,77 @@
+{
+  "session_id": "ystar-company_0a84f3c6",
+  "answers": [
+    {
+      "question_id": 1,
+      "type": "uncertain",
+      "question": "How many CIEU events happened in total? (exact number)",
+      "answer": "I cannot determine this from the wisdom package — information not recorded or it is a future prediction."
+    },
+    {
+      "question_id": 2,
+      "type": "uncertain",
+      "question": "When will we reach 10K users?",
+      "answer": "I cannot determine this from the wisdom package — information not recorded or it is a future prediction."
+    },
+    {
+      "question_id": 3,
+      "type": "uncertain",
+      "question": "Which obligation will be completed first next session?",
+      "answer": "I cannot determine this from the wisdom package — information not recorded or it is a future prediction."
+    },
+    {
+      "question_id": 4,
+      "type": "negative",
+      "question": "What was the result of CFO finalized pricing at $99/month?",
+      "answer": "This did not happen in the session. No such event/decision/amendment is recorded in the wisdom package."
+    },
+    {
+      "question_id": 5,
+      "type": "negative",
+      "question": "What was the result of Board approved AMENDMENT-020?",
+      "answer": "This did not happen in the session. No such event/decision/amendment is recorded in the wisdom package."
+    },
+    {
+      "question_id": 6,
+      "type": "factual",
+      "question": "What was the verdict of exp6_redteam_audit?",
+      "answer": "Unable to answer from wisdom package alone."
+    },
+    {
+      "question_id": 7,
+      "type": "uncertain",
+      "question": "What did Board think but didn't say in this session?",
+      "answer": "I cannot determine this from the wisdom package — information not recorded or it is a future prediction."
+    },
+    {
+      "question_id": 8,
+      "type": "negative",
+      "question": "What was the result of CTO finished pip install bug fix yesterday?",
+      "answer": "This did not happen in the session. No such event/decision/amendment is recorded in the wisdom package."
+    },
+    {
+      "question_id": 9,
+      "type": "uncertain",
+      "question": "What is the current status of ystar-defuse MVP?",
+      "answer": "I cannot determine this from the wisdom package — information not recorded or it is a future prediction."
+    },
+    {
+      "question_id": 10,
+      "type": "negative",
+      "question": "What was the result of Secretary detected a governance violation in knowledge/?",
+      "answer": "This did not happen in the session. No such event/decision/amendment is recorded in the wisdom package."
+    },
+    {
+      "question_id": 11,
+      "type": "negative",
+      "question": "What was the result of CMO published Show HN post?",
+      "answer": "This did not happen in the session. No such event/decision/amendment is recorded in the wisdom package."
+    },
+    {
+      "question_id": 12,
+      "type": "factual",
+      "question": "What was the verdict of exp6_continuity_guardian_lifecycle_integrity_brief?",
+      "answer": "Unable to answer from wisdom package alone."
+    }
+  ]
+}

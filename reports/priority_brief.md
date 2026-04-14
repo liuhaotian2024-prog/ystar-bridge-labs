@@ -80,9 +80,11 @@ this_month_targets:
 ## 2. Top-5 真实优先级（按因果）
 
 ### P0-1 治理基础设施 3 大根基（"沙上楼阁"风险）
-1. **CIEU persistence 断裂** — `gov_doctor L1.02` 报 `in_memory_only`，events 重启归零。派 Maya 诊断 + Leo 切 SQLite persistent store。
+1. ~~**CIEU persistence 断裂**~~ — **误报 (2026-04-13 Maya 诊断)**。生产 hook 层持久化 OK；`in_memory_only` 警告只来自 boot 测试实例 NullStore。降级 P2。详 `reports/cieu_persistence_diagnosis_20260413.md`。
 2. **Delegation chain INVALID 3 issues** — MCP grant 与 Hook enforcement 两个 plane 不对话，chain 越权扩展。派 Ryan chain reset + Leo 审 grant 逻辑。
-3. **Circuit Breaker ARMED 821 violations** — pulse 停 = OmissionEngine 死。派 Maya dump violation log，系统性问题留 Board 起床决策。
+3. **Circuit Breaker ARMED 1739 violations** — top rule `omission_violation:intent_declaration` 10次/窗口触发阈值 50；根因=agent 动作前未声明 intent（形式缺失，非实质违规）。修复路径：(a) breaker reset；(b) sub-agent prompt 模板注入 intent declaration（Ryan FIX-5 in flight, task card 已写）。详 `reports/breaker_violations_20260413.md`。
+4. **Active agent 身份锁死锁** — 2026-04-13 live 证据：sub-agent 跑完不 restore `.ystar_active_agent`，CEO 本线写权限失效；restore 需 secretary，切 secretary 撞同一把锁。Board shell `!echo ceo > .ystar_active_agent` + `!pkill -f _hook_daemon && bash scripts/governance_boot.sh ceo` 双步临时解。根治并入 AMENDMENT-009 FIX-3 (Maya autonomy engine hook)。
+5. **Ritual 4-parallel online check 0/4 pass** — 2026-04-13 T2 实测 Marco 早退/Ethan 身份穿透/Zara 截断/Sofia 不存在。实质任务 sub-agent 可信，一句话 ping 合同集体失效。FIX-1 (ritual enforce) + FIX-5 (prefix) 对症，in flight。
 
 ### P0-2a GitHub-first boot snapshot（Board 2026-04-13 提出）
 **缺口**：boot 协议 0 只读本地（handoff/DISPATCH/BOARD_PENDING），不查 GitHub `liuhaotian2024-prog/ystar-bridge-labs`。GitHub commit history 是 truth source（如 `545f600` 2026-04-12 checkpoint）。新增 boot STEP -1：`git fetch + git log origin/main -10 + gh issue list + gh pr list`，drift 校验 priority_brief §3 DEPRECATED 与最近 commit 一致性。详见 AMENDMENT-009 §2.1a。

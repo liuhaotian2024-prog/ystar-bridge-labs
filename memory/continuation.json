@@ -1,0 +1,107 @@
+{
+  "generated_at": "2026-04-12T21:47:55",
+  "generated_by": "ceo",
+  "campaign": {
+    "name": "Y*Defuse 30天战役",
+    "day": 3,
+    "start_date": "",
+    "target": "10K users + 20K stars"
+  },
+  "team_state": {
+    "cto": {
+      "task": "Build ystar-defuse MVP - AI bomb disposal product that defuses delayed injection",
+      "progress": "in_progress",
+      "blocked": false
+    },
+    "cmo": {
+      "task": "Autonomous Mission: build video content strategy",
+      "progress": "completed",
+      "blocked": false
+    }
+  },
+  "action_queue": [
+    {
+      "seq": 1,
+      "action": "check_delivery",
+      "agent": "cto",
+      "command": "cat /Users/haotianliu/.openclaw/workspace/ystar-company/knowledge/cto/active_task.json",
+      "success_criteria": "task in_progress, not blocked",
+      "on_fail": "dispatch to CTO as P0"
+    },
+    {
+      "seq": 2,
+      "action": "review_dispatch",
+      "agent": "ceo",
+      "command": "head -40 /Users/haotianliu/.openclaw/workspace/ystar-company/DISPATCH.md",
+      "success_criteria": "18 items tracked",
+      "on_fail": "update DISPATCH.md"
+    }
+  ],
+  "anti_patterns": [
+    "report_plumbing_to_board",
+    "ask_board_approval_for_decided_items",
+    "list_choices_instead_of_deciding"
+  ],
+  "obligations": [
+    {
+      "content": "[持续] 全员日常workflow已写入配置（checklist底线+事件驱动上不封顶）。CTO需实现为代码enforcement。每日mission report cron已装。",
+      "created_at": 1775935489.52315
+    },
+    {
+      "content": "[P0战略任务] ystar-defuse上线：10K用户+20K stars一个月。已走第十一条认知建构7层。Day3 pip install→Day7 Show HN。全员自主，Board不参与具体执行。每日任务报告(cron 21:57)。",
+      "created_at": 1775935489.523146
+    },
+    {
+      "content": "[P0] behavior rules 10条全部代码实现+CIEU审计证据——Board要看到CIEU证据证明全部在运行。当前39/39测试通过但有回归风险。",
+      "created_at": 1775935489.5231419
+    },
+    {
+      "content": "[P0战略任务] ystar-defuse上线：10,000用户+20,000 GitHub stars一个月内达成（下限非天花板）。CEO全权指挥，Board不参与。全员自主，目标导向。Day 3 pip install可用→Day 7 Show HN→Day 30目标达成。",
+      "created_at": 1775931989.649514
+    },
+    {
+      "content": "[P0] 系统crontab需Board手动安装：ystar_wakeup.sh learning (每3h) + morning_report (每日8:47)。脚本已创建。",
+      "created_at": 1775871363.967642
+    },
+    {
+      "content": "[P0] Agent文件需改name字段为Name-Role格式 + 写入认知偏好。需Samantha执行（immutable override已配置）。",
+      "created_at": 1775871363.967639
+    },
+    {
+      "content": "[P2] prefill.py Part A trailing dot edge case",
+      "created_at": 1775862185.982465
+    },
+    {
+      "content": "[P2] gov-mcp PyPI package (then replace dual-copy)",
+      "created_at": 1775862185.980212
+    },
+    {
+      "content": "[P2] OmissionEngine proactive scan (3min/idle trigger)",
+      "created_at": 1775862185.977925
+    },
+    {
+      "content": "[P1] Digital CTO resident engineer (Tier 1)",
+      "created_at": 1775862185.975862
+    },
+    {
+      "content": "[P1] arXiv paper body",
+      "created_at": 1775862185.973644
+    },
+    {
+      "content": "[P1] Show HN (new, for gov-mcp)",
+      "created_at": 1775862185.97179
+    },
+    {
+      "content": "[P0] MCP server restart (pick up delegation enforcement + chain_reset)",
+      "created_at": 1775862185.969527
+    },
+    {
+      "content": "[P0] PyPI 0.49.0 release",
+      "created_at": 1775862185.967629
+    },
+    {
+      "content": "[P0] gov-mcp concurrency stress test",
+      "created_at": 1775862185.965337
+    }
+  ]
+}
