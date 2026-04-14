@@ -210,6 +210,24 @@ def detect_assistant_defer_drift():
         return None, None
 
 
+def detect_decision_context(user_msg):
+    """
+    [AMENDMENT-023] Detect strategic decision keywords in user message.
+    Returns True if message contains decision-making context requiring Article 11.
+    """
+    if not user_msg:
+        return False
+
+    DECISION_KEYWORDS = [
+        "strategy", "mission", "amendment", "重大", "决策", "战略",
+        "deploy", "launch", "roadmap", "pivot", "reorg", "restructure",
+        "架构", "重组", "发布", "上线", "部署"
+    ]
+
+    user_msg_lower = user_msg.lower()
+    return any(kw in user_msg_lower for kw in DECISION_KEYWORDS)
+
+
 def inject_context(user_msg_preview=""):
     """Generate system context injection block"""
     active_agent = get_active_agent()
@@ -219,6 +237,7 @@ def inject_context(user_msg_preview=""):
     recent_drift = get_recent_drift()
     whitelist_hints = get_whitelist_hints(user_msg_preview)
     defer_snippet, defer_full_text = detect_assistant_defer_drift()
+    is_decision_context = detect_decision_context(user_msg_preview)
 
     context = f"""<system-context auto-injected="UserPromptSubmit">
 [STATE] active_agent={active_agent} | ceo_mode={ceo_mode} | session_age={session_age}min
@@ -270,6 +289,25 @@ def inject_context(user_msg_preview=""):
             sys.stderr.write(f"[ASSISTANT_DEFER_DRIFT] last reply contains: '{defer_snippet}'\n")
         except Exception as e:
             sys.stderr.write(f"[ASSISTANT_DEFER_DRIFT] cieu_write_error: {e}\n")
+
+    # [AMENDMENT-023] Article 11 Enforcement — Proactive Injection (Layer 1)
+    if is_decision_context and active_agent == "ceo":
+        context += """
+[ARTICLE_11_REQUIRED] This prompt contains strategic decision keywords. CEO must walk 7-layer cognitive construction:
+  Layer 0: Y* (ideal contract) — What would Werner Vogels do?
+  Layer 1: Pre-session context (twin trace) — Read memory/session_handoff.md
+  Layer 2: Decision (counterfactual analysis) — What if I decide X vs Y?
+  Layer 3: Memory (session state + LRS) — Check .ystar_session.json + CIEU
+  Layer 4: Execution (RAPID + constraints) — Who does what, when?
+  Layer 5: Track (emit CIEU events) — python3 scripts/article_11_tracker.py layer_complete --layer X --evidence "..."
+  Layer 6: Learn (extract lessons) — What did this decision teach me?
+
+After completing each layer, emit event via:
+  python3 scripts/article_11_tracker.py layer_complete --layer N --evidence "brief description"
+
+Before finalizing decision, verify compliance:
+  python3 scripts/article_11_tracker.py check_compliance --window_hours 2
+"""
 
     context += "[L_TAG_REMINDER] All status reports must include [LX] tag (Iron Rule 1.5)\n"
     context += "[BREAK_GLASS_AVAILABLE] python3 scripts/ceo_mode_manager.py force_break_glass --trigger T1\n"

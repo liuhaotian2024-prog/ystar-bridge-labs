@@ -284,6 +284,144 @@ rules:
     cieu_event: DIALOGUE_DRIFT
     severity: medium
 
+  # AMENDMENT-023: Article 11 Enforcement Rules
+  - id: decision_without_article_11
+    enabled: true
+    description: "CEO wrote strategic decision content without Article 11 layer completion events"
+    last_reviewed: "2026-04-13"
+    reviewer: "CTO"
+
+    trigger:
+      tool: ["Edit", "Write"]
+      conditions:
+        - type: active_agent_equals
+          value: "ceo"
+        - type: path_match
+          pattern: "^(AMENDMENT_|reports/proposals/|knowledge/ceo/working_style/|content/strategy)"
+          context: "file_path"
+        - type: content_contains
+          keywords: ["strategy", "mission", "amendment", "roadmap", "pivot", "重大决策", "战略", "架构重组"]
+
+    validation:
+      - type: cieu_events_exist
+        event_types:
+          - "ARTICLE_11_LAYER_0_COMPLETE"
+          - "ARTICLE_11_LAYER_1_COMPLETE"
+          - "ARTICLE_11_LAYER_2_COMPLETE"
+          - "ARTICLE_11_LAYER_3_COMPLETE"
+          - "ARTICLE_11_LAYER_4_COMPLETE"
+          - "ARTICLE_11_LAYER_5_COMPLETE"
+          - "ARTICLE_11_LAYER_6_COMPLETE"
+        time_window_seconds: 7200  # 2 hours
+        min_count_per_type: 1
+
+    action: warn
+    recipe: |
+      CEO is writing strategic decision without completing Article 11 7-layer discipline.
+
+      Before finalizing decision documents, you must walk all 7 layers:
+      Layer 0: Y* (ideal contract) — What would Werner Vogels do?
+      Layer 1: Pre-session context — Read memory/session_handoff.md
+      Layer 2: Decision (counterfactual) — What if I choose X vs Y?
+      Layer 3: Memory (session state) — Check .ystar_session.json + CIEU
+      Layer 4: Execution (RAPID) — Who does what, when?
+      Layer 5: Track (CIEU events) — Emit events as you go
+      Layer 6: Learn (lessons) — What did this teach me?
+
+      After completing each layer, emit event:
+        python3 scripts/article_11_tracker.py layer_complete --layer N --evidence "..."
+
+      Verify compliance before finalizing:
+        python3 scripts/article_11_tracker.py check_compliance --window_hours 2
+
+      Ref: knowledge/ceo/working_style/WORKING_STYLE.md Article 11
+           reports/proposals/charter_amendment_023_article_11_into_ceo_os.md
+
+    cieu_event: FORGET_GUARD_ARTICLE_11_BYPASS_WARNING
+    severity: high
+
+  - id: article_11_partial_walk
+    enabled: true
+    description: "CEO completed some Article 11 layers but not all 7"
+    last_reviewed: "2026-04-13"
+    reviewer: "CTO"
+
+    trigger:
+      event_source: cieu
+      conditions:
+        - type: event_type_pattern
+          value: "ARTICLE_11_LAYER_._COMPLETE"
+        - type: active_agent_equals
+          value: "ceo"
+
+    validation:
+      - type: incomplete_sequence
+        required_event_types:
+          - "ARTICLE_11_LAYER_0_COMPLETE"
+          - "ARTICLE_11_LAYER_1_COMPLETE"
+          - "ARTICLE_11_LAYER_2_COMPLETE"
+          - "ARTICLE_11_LAYER_3_COMPLETE"
+          - "ARTICLE_11_LAYER_4_COMPLETE"
+          - "ARTICLE_11_LAYER_5_COMPLETE"
+          - "ARTICLE_11_LAYER_6_COMPLETE"
+        time_window_seconds: 3600  # 1 hour
+        trigger_on: any_missing
+
+    action: warn
+    recipe: |
+      Article 11 partially completed. Missing layers: {missing_layers}
+
+      You started the 7-layer cognitive construction but did not complete all layers.
+      This violates the discipline framework.
+
+      Complete the missing layers now:
+        python3 scripts/article_11_tracker.py layer_complete --layer N --evidence "..."
+
+      Or if you abandoned the decision, emit explicit DECISION_ABANDONED event:
+        python3 scripts/article_11_tracker.py abandon_decision --reason "..."
+
+      Ref: WORKING_STYLE.md Article 11
+
+    cieu_event: FORGET_GUARD_ARTICLE_11_PARTIAL_WALK
+    severity: medium
+
+  - id: article_11_post_decision_audit_failure
+    enabled: true
+    description: "Hourly audit detected decision keywords without Article 11 events (drift spike)"
+    last_reviewed: "2026-04-13"
+    reviewer: "CTO"
+
+    trigger:
+      event_source: cieu
+      conditions:
+        - type: event_type_equals
+          value: "ARTICLE_11_DRIFT_SPIKE"
+
+    action: warn
+    recipe: |
+      Post-decision audit FAILED: {drift_count} strategic decisions made without Article 11 discipline.
+
+      Hourly audit (scripts/forget_guard_summary.py) detected user messages containing
+      decision keywords (strategy/mission/amendment/pivot) but no corresponding
+      ARTICLE_11_LAYER_X_COMPLETE events within the time window.
+
+      This indicates CEO bypassed 7-layer cognitive construction discipline.
+
+      Immediate actions:
+      (1) Review incidents in reports/drift_hourly/{timestamp}.md
+      (2) Retroactively document decision rationale
+      (3) Update session_handoff.md with lessons learned
+      (4) Enable proactive enforcement to prevent recurrence
+
+      Escalation: This violation will be reported to Board in next autonomous summary.
+
+      Ref: AMENDMENT-023, Article 11 enforcement architecture
+
+    cieu_event: FORGET_GUARD_ARTICLE_11_AUDIT_FAILURE
+    severity: high
+    escalate: true
+    notify: [cto, board]
+
 # Future rule candidates (disabled, needs definition):
 # - parallel_work_no_article11: Article 11 not declared when spawning 3+ sub-agents
 # - external_release_no_intent: Level 3 action without INTENT_RECORDED

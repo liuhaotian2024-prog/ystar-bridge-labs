@@ -126,28 +126,113 @@ Total drift events: {len(events)}
     return report_path, spikes
 
 
+def detect_article_11_drift(hours_back=1):
+    """
+    [AMENDMENT-023] Layer 3: Post-audit drift detection.
+    Scan for user_message containing decision keywords + missing ARTICLE_11 events in time window.
+    Returns list of drift incidents.
+    """
+    DECISION_KEYWORDS = [
+        "strategy", "mission", "amendment", "roadmap", "pivot", "reorg",
+        "restructure", "deploy", "launch", "重大", "决策", "战略", "架构"
+    ]
+
+    try:
+        conn = sqlite3.connect(CIEU_DB)
+        cursor = conn.cursor()
+
+        cutoff_time = datetime.now() - timedelta(hours=hours_back)
+        cutoff_unix = cutoff_time.timestamp()
+
+        # Find user_message events with decision keywords
+        cursor.execute("""
+            SELECT event_id, created_at, drift_details FROM cieu_events
+            WHERE event_type = 'user_message'
+            AND created_at > ?
+            ORDER BY created_at DESC
+        """, (cutoff_unix,))
+
+        user_messages = cursor.fetchall()
+
+        incidents = []
+        for event_id, msg_time, msg_content in user_messages:
+            if not msg_content:
+                continue
+
+            # Check if message contains decision keywords
+            has_decision_keyword = any(kw in msg_content.lower() for kw in DECISION_KEYWORDS)
+            if not has_decision_keyword:
+                continue
+
+            # Check for Article 11 events within +/- 1h window of message
+            window_start = msg_time - 3600  # 1h before
+            window_end = msg_time + 3600    # 1h after
+
+            cursor.execute("""
+                SELECT COUNT(*) FROM cieu_events
+                WHERE event_type LIKE 'ARTICLE_11_LAYER_%_COMPLETE'
+                AND created_at BETWEEN ? AND ?
+            """, (window_start, window_end))
+
+            article_11_count = cursor.fetchone()[0]
+
+            if article_11_count == 0:
+                # No Article 11 events around decision message → drift
+                incidents.append({
+                    "event_id": event_id,
+                    "timestamp": datetime.fromtimestamp(msg_time).isoformat(),
+                    "message_preview": msg_content[:100],
+                    "matched_keyword": next((kw for kw in DECISION_KEYWORDS if kw in msg_content.lower()), "unknown")
+                })
+
+        conn.close()
+        return incidents
+
+    except Exception as e:
+        print(f"[ARTICLE_11_DRIFT] Error detecting drift: {e}", file=sys.stderr)
+        return []
+
+
 def main():
     """Run hourly drift summary"""
     events = get_drift_events(hours_back=1)
 
     if not events:
         print("No drift events in last 1h", file=sys.stderr)
-        return
+    else:
+        rule_counts, time_dist = analyze_drift(events)
+        report_path, spikes = write_hourly_report(rule_counts, time_dist, events)
 
-    rule_counts, time_dist = analyze_drift(events)
-    report_path, spikes = write_hourly_report(rule_counts, time_dist, events)
+        print(f"Report written: {report_path}", file=sys.stderr)
 
-    print(f"Report written: {report_path}", file=sys.stderr)
+        if spikes:
+            emit_cieu("DRIFT_SPIKE", json.dumps({
+                "period": "1h",
+                "total_events": len(events),
+                "spike_categories": spikes,
+                "spike_counts": {rule_id: rule_counts[rule_id] for rule_id in spikes},
+                "report": str(report_path)
+            }))
+            print(f"DRIFT_SPIKE emitted: {len(spikes)} categories", file=sys.stderr)
 
-    if spikes:
-        emit_cieu("DRIFT_SPIKE", json.dumps({
+    # [AMENDMENT-023] Layer 3: Article 11 drift detection
+    article_11_incidents = detect_article_11_drift(hours_back=1)
+    if article_11_incidents:
+        print(f"[ARTICLE_11_DRIFT] Detected {len(article_11_incidents)} decision messages without Article 11 events", file=sys.stderr)
+
+        emit_cieu("ARTICLE_11_DRIFT_SPIKE", json.dumps({
             "period": "1h",
-            "total_events": len(events),
-            "spike_categories": spikes,
-            "spike_counts": {rule_id: rule_counts[rule_id] for rule_id in spikes},
-            "report": str(report_path)
+            "incident_count": len(article_11_incidents),
+            "incidents": article_11_incidents[:5]  # Top 5 incidents
         }))
-        print(f"DRIFT_SPIKE emitted: {len(spikes)} categories", file=sys.stderr)
+
+        # Write to hourly report
+        if 'report_path' in locals() and report_path:
+            with open(report_path, 'a') as f:
+                f.write(f"\n\n## Article 11 Drift Detection\n\n")
+                f.write(f"**{len(article_11_incidents)} decision messages without Article 11 discipline**\n\n")
+                for inc in article_11_incidents[:5]:
+                    f.write(f"- {inc['timestamp']} | keyword: `{inc['matched_keyword']}` | preview: {inc['message_preview']}\n")
 
 
 if __name__ == "__main__":
