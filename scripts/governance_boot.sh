@@ -397,6 +397,14 @@ else
   FAILURES=$((FAILURES+1))
 fi
 
+# STEP 8.7: YML memory recall — load top-N memories into boot pack (added 2026-04-14)
+echo "[8.7/11] YML memory bridge..."
+if python3 "$YSTAR_DIR/scripts/session_memory_boot.py" "$AGENT_ID" 20 2>&1; then
+  echo "  ✓ YML memory recalled"
+else
+  echo "  ⚠️ YML memory recall failed (fail-open)"
+fi
+
 echo "=== BEGIN AUTONOMOUS EXECUTION ==="
 
 # STEP 9: Surface active obligations (认知恢复核心)
