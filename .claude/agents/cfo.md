@@ -8,6 +8,7 @@ description: >
 model: claude-sonnet-4-5
 effort: medium
 maxTurns: 15
+allowedTools: [Read, Glob, Grep, Write, Edit, Agent, WebSearch, WebFetch]
 disallowedTools: ["Bash"]
 skills:
   - ystar-governance:ystar-govern

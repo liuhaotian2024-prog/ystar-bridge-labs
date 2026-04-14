@@ -10,9 +10,10 @@ description: >
 model: claude-sonnet-4-5
 effort: high
 maxTurns: 40
+allowedTools: [Read, Glob, Grep, Write, Edit, Bash, Agent, WebSearch, TodoWrite]
 skills:
   - ystar-governance:ystar-govern
-disallowedTools: WebFetch
+disallowedTools: [WebFetch]
 ---
 @knowledge/cto/system_reliability.md
 @knowledge/cto/engineering_culture.md
