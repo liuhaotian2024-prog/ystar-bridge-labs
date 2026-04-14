@@ -56,6 +56,7 @@ def log(msg):
 # ── Daemon Cache Invalidation (exp7 backport) ─────────────────────────────
 _daemon_cache_valid = True
 _governance_watcher = None
+_active_agent_cache = None  # Cache active_agent to avoid I/O storm
 
 
 def invalidate_daemon_cache(changed_files):
@@ -64,8 +65,13 @@ def invalidate_daemon_cache(changed_files):
     Clears ystar.adapters.identity_detector._SESSION_CONFIG_CACHE.
     Next hook call will reload identity + session config + rules from disk.
     """
-    global _daemon_cache_valid
+    global _daemon_cache_valid, _active_agent_cache
     _daemon_cache_valid = False
+
+    # Clear active_agent cache if .ystar_active_agent changed
+    if any(".ystar_active_agent" in f for f in changed_files):
+        _active_agent_cache = None
+        log(f"[cache] cleared active_agent cache")
 
     # Clear Y*gov's session config cache
     try:
@@ -398,14 +404,20 @@ def _try_whitelist_match(payload):
 
 
 def _read_active_agent_fresh():
-    """Gap 1: Read .ystar_active_agent on EVERY hook call (no caching).
+    """Read .ystar_active_agent with in-memory cache (watcher invalidates).
     Returns (agent_id, mtime_ns) tuple for version tracking."""
+    global _active_agent_cache
+
+    if _active_agent_cache is not None:
+        return _active_agent_cache
+
     agent_file = os.path.join(REPO_ROOT, ".ystar_active_agent")
     try:
         stat = os.stat(agent_file)
         with open(agent_file, "r") as f:
             agent_id = f.read().strip()
-        return agent_id, stat.st_mtime_ns
+        _active_agent_cache = (agent_id, stat.st_mtime_ns)
+        return _active_agent_cache
     except Exception as e:
         log(f"[active_agent] read failed: {e}")
         return "unknown", 0
