@@ -246,6 +246,17 @@ def inject_context(user_msg_preview=""):
     for i, obl in enumerate(obligations, 1):
         context += f"  {i}. {obl}\n"
 
+    # [M-X] CROBA contract injection — consume once
+    croba_contract_file = Path(f"/tmp/ystar_contract_inject_{active_agent}.txt")
+    if croba_contract_file.exists():
+        try:
+            croba_content = croba_contract_file.read_text().strip()
+            if croba_content:
+                context += f"[CROBA_CONTRACT] {croba_content}\n"
+            croba_contract_file.unlink()  # Consume once
+        except Exception as e:
+            sys.stderr.write(f"[CROBA_CONTRACT] read_error: {e}\n")
+
     if recent_drift:
         context += f"[RECENT_DRIFT] {len(recent_drift)} events (last 1h)\n"
         for drift in recent_drift:
