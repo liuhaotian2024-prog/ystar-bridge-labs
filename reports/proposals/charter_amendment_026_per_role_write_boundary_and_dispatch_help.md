@@ -1,6 +1,6 @@
-# AMENDMENT-026 — CTO-Centralized Dispatch Architecture (Path B 选定)
+# AMENDMENT-026 — CTO-Centralized Dispatch Architecture (CDP (CTO Dispatch Protocol — Y*gov Path B 是产品术语，本文 CDP 是流程术语，2026-04-13 rename 避免冲突) 选定)
 
-> **2026-04-13 Board 重写指示**: 原本提议"per-role write + cross-role help"是 both-and 复杂方案。Board 二选一选 **Path B (CTO 派单写)** — 理由："自己写自己岗位的容易乱"。下面是修正版。
+> **2026-04-13 Board 重写指示**: 原本提议"per-role write + cross-role help"是 both-and 复杂方案。Board 二选一选 **CDP (CTO Dispatch Protocol — Y*gov Path B 是产品术语，本文 CDP 是流程术语，2026-04-13 rename 避免冲突) (CTO 派单写)** — 理由："自己写自己岗位的容易乱"。下面是修正版。
 
 ---
 
@@ -16,7 +16,7 @@
 **Board 原话第一轮**: "CMO 写 content/ 越 cto boundary，这就是之前的技术债"
 **Board 原话第二轮 (corrective)**: "不是 both 关系，是二选一。要么定好 [per-role] 或者 CTO 派单写。自己写自己岗位的容易乱"
 
-**选定 Path B**: CTO-Centralized Dispatch (单点 orchestration)
+**选定 CDP (CTO Dispatch Protocol — Y*gov Path B 是产品术语，本文 CDP 是流程术语，2026-04-13 rename 避免冲突)**: CTO-Centralized Dispatch (单点 orchestration)
 
 修复 = 1 件事 + 1 个固化：
 1. **激活 `must_dispatch_via_cto` rule** (当前 NOT_ENFORCING per session boot output) — CEO/Board 不直派 engineer/specialist subagent，必经 CTO
@@ -91,7 +91,7 @@
 
 ### Part C: 移除 (Cross-Role Help Protocol DROPPED)
 
-原 Part C "X 帮 Y 写"复杂协议**全部废弃**——Board 选了 Path B 后，cross-role 写法只一种：让 CTO 派对应 domain expert subagent。  
+原 Part C "X 帮 Y 写"复杂协议**全部废弃**——Board 选了 CDP (CTO Dispatch Protocol — Y*gov Path B 是产品术语，本文 CDP 是流程术语，2026-04-13 rename 避免冲突) 后，cross-role 写法只一种：让 CTO 派对应 domain expert subagent。  
 没有 self-help。没有 grant transfer。没有 顶岗 except emergency。简化。
 
 ### Part C: 顶岗 Protocol (when subagent unavailable)
