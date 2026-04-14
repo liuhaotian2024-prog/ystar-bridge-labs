@@ -1,0 +1,176 @@
+ffmpeg version 8.1 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.0.123.102)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/8.1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      60. 26.100 / 60. 26.100
+  libavcodec     62. 28.100 / 62. 28.100
+  libavformat    62. 12.100 / 62. 12.100
+  libavdevice    62.  3.100 / 62.  3.100
+  libavfilter    11. 14.100 / 11. 14.100
+  libswscale      9.  5.100 /  9.  5.100
+  libswresample   6.  3.100 /  6.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'raw_heygen_v9.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf62.3.100
+  Duration: 00:01:04.15, start: 0.000000, bitrate: 519 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1280x720 [SAR 1:1 DAR 16:9], 324 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 189 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+Input #1, png_pipe, from '/Users/haotianliu/.openclaw/workspace/ystar-company/content/offended_ai/v9/overlay_lower_third.png':
+  Duration: N/A, bitrate: N/A
+  Stream #1:0: Video: png, rgba(pc, gbr/unknown/unknown), 1280x720, 25 fps, 25 tbr, 25 tbn
+Stream mapping:
+  Stream #0:0 (h264) -> overlay
+  Stream #1:0 (png) -> overlay
+  overlay:default -> Stream #0:0 (libx264)
+  Stream #0:1 -> #0:1 (aac (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 0xaf1051880] using SAR=1/1
+[libx264 @ 0xaf1051880] using cpu capabilities: ARMv8 NEON DotProd I8MM
+[libx264 @ 0xaf1051880] profile High 4:4:4 Predictive, level 3.1, 4:4:4, 8-bit
+[libx264 @ 0xaf1051880] 264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=4 threads=15 lookahead_threads=2 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=20.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'episode_001_FINAL_60s_v9.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf62.12.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv444p(tv, progressive), 1280x720 [SAR 1:1 DAR 16:9], q=2-31, 25 fps, 12800 tbn
+    Metadata:
+      encoder         : Lavc62.28.100 libx264
+    Side data:
+      CPB properties: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      encoder         : Lavc62.28.100 aac
+      handler_name    : SoundHandler
+frame=  200 fps=0.0 q=25.0 size=     256KiB time=00:00:07.92 bitrate= 264.8kbits/s speed=15.7x elapsed=0:00:00.50    frame=  448 fps=444 q=25.0 size=     768KiB time=00:00:17.84 bitrate= 352.7kbits/s speed=17.7x elapsed=0:00:01.01    frame=  698 fps=461 q=25.0 size=    1280KiB time=00:00:27.84 bitrate= 376.7kbits/s speed=18.4x elapsed=0:00:01.51    frame=  948 fps=469 q=25.0 size=    1536KiB time=00:00:37.84 bitrate= 332.5kbits/s speed=18.7x elapsed=0:00:02.01    frame= 1199 fps=475 q=25.0 size=    2048KiB time=00:00:47.88 bitrate= 350.4kbits/s speed=  19x elapsed=0:00:02.52    frame= 1457 fps=481 q=25.0 size=    2560KiB time=00:00:58.20 bitrate= 360.3kbits/s speed=19.2x elapsed=0:00:03.02    [mp4 @ 0xaf0c27980] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 0xaf0c14780] video:1960KiB audio:943KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.692782%
+frame= 1603 fps=491 q=-1.0 Lsize=    2952KiB time=00:01:04.04 bitrate= 377.7kbits/s speed=19.6x elapsed=0:00:03.26    
+[libx264 @ 0xaf1051880] frame I:7     Avg QP:12.59  size: 91899
+[libx264 @ 0xaf1051880] frame P:404   Avg QP:15.09  size:  2562
+[libx264 @ 0xaf1051880] frame B:1192  Avg QP:19.71  size:   275
+[libx264 @ 0xaf1051880] consecutive B-frames:  0.8%  0.1%  0.0% 99.1%
+[libx264 @ 0xaf1051880] mb I  I16..4:  8.0% 69.2% 22.7%
+[libx264 @ 0xaf1051880] mb P  I16..4:  0.0%  0.1%  0.0%  P16..4:  5.8%  2.4%  1.6%  0.0%  0.0%    skip:90.1%
+[libx264 @ 0xaf1051880] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  3.4%  0.3%  0.0%  direct: 0.0%  skip:96.2%  L0:44.1% L1:47.1% BI: 8.8%
+[libx264 @ 0xaf1051880] 8x8 transform intra:69.6% inter:68.5%
+[libx264 @ 0xaf1051880] coded y,u,v intra: 52.3% 37.8% 35.1% inter: 0.9% 0.3% 0.3%
+[libx264 @ 0xaf1051880] i16 v,h,dc,p: 16% 68%  6% 10%
+[libx264 @ 0xaf1051880] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 13% 43%  2%  3%  4%  4%  3%  4%
+[libx264 @ 0xaf1051880] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 21% 31% 14%  4%  7%  6%  7%  4%  6%
+[libx264 @ 0xaf1051880] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0xaf1051880] ref P L0: 50.8%  9.9% 24.2% 15.1%
+[libx264 @ 0xaf1051880] ref B L0: 91.5%  7.0%  1.6%
+[libx264 @ 0xaf1051880] ref B L1: 97.6%  2.4%
+[libx264 @ 0xaf1051880] kb/s:250.35
+[aac @ 0xaf1051f80] Qavg: 8665.296
+copied portrait from v4: /Users/haotianliu/.openclaw/workspace/ystar-company/content/offended_ai/v9/sofia_portrait_v4.jpg
+using terrace bg: /Users/haotianliu/.openclaw/workspace/ystar-company/content/offended_ai/v9/terrace_bg_v2.png (741951 bytes)
+[v9] script word count = 173 (target 165-180 for 57-60s at 3.0 wps)
+
+== 1. Upload portrait (v4 asset inherited) ==
+{
+  "code": 100,
+  "data": {
+    "id": "3ed50c42a3774118a9c6f70ae248567c",
+    "name": "3ed50c42a3774118a9c6f70ae248567c",
+    "file_type": "image",
+    "folder_id": "",
+    "meta": null,
+    "created_ts": 1776136970,
+    "url": "https://resource2.heygen.ai/image/3ed50c42a3774118a9c6f70ae248567c/original.jpg",
+    "image_key": "image/3ed50c42a3774118a9c6f70ae248567c/original.jpg"
+  },
+  "msg": null,
+  "message": null
+}
+
+== 2. Create photo avatar group ==
+{
+  "error": null,
+  "data": {
+    "id": "5988bbc2e8394ac1b5edd43b4b1ba853",
+    "image_url": "https://files2.heygen.ai/image/3ed50c42a3774118a9c6f70ae248567c/original.jpg?Expires=1776741770&Signature=cKvqrk1dGp4OXztA1lzS9h~X~Rnx~wRRmW6j1UGqoeX5fJcXGwRaau~p-rQr9Ke6IXRb2xaBIvc8YgQuJHmcYnIt3wfCDfItPCx97NQd6iVZtvJYh-olGKITRpx9woWrATd-G3VFuLMlktg4A6Wkp9xktJocx4NIpgIeg6kXYM-mrwC5L7XzCv7eHzlJfA02QNqEvtmsBu~4PLMykDsncnmVBs4taRIzV2DzaYgPPMYYEl~WJ4lD~PJrrgqe3KMIq-II01IQTsyyLZRq9G5KrHlSvkl4uXAVLJzi4Vf0tM02BieE-DC93Rw1StjNvdwZ7LzVpWuThDgeAfJwrKj6Xw__&Key-Pair-Id=K38HBHX5LX3X2H",
+    "created_at": 1776136970.866851,
+    "name": "sofia_v9_terrace_20260413",
+    "status": "pending",
+    "group_id": "5988bbc2e8394ac1b5edd43b4b1ba853",
+    "is_motion": false,
+    "motion_preview_url": null,
+    "business_type": "uploaded",
+    "upscale_availability": {
+      "available": false,
+      "reason": "Photo avatar look upload not completed"
+    },
+    "upscaled": false,
+    "background_sound_effect": null,
+    "default_voice_id": null,
+    "moderation_msg": null,
+    "workflow_error": null
+  }
+}
+
+== 2b. Allow 60s for internal dimension extraction ==
+
+== 3. Upload REAL terrace background (frame from sofia_intro.mp4) ==
+{
+  "code": 100,
+  "data": {
+    "id": "d8f1645d1ff44695963f9f210286f6ae",
+    "name": "d8f1645d1ff44695963f9f210286f6ae",
+    "file_type": "image",
+    "folder_id": "",
+    "meta": null,
+    "created_ts": 1776137031,
+    "url": "https://resource2.heygen.ai/image/d8f1645d1ff44695963f9f210286f6ae/original.png",
+    "image_key": "image/d8f1645d1ff44695963f9f210286f6ae/original.png"
+  },
+  "msg": null,
+  "message": null
+}
+
+== 4. Generate Avatar IV video (REAL terrace bg server-composited) ==
+{
+  "error": null,
+  "data": {
+    "video_id": "0f2fda138d8944e98d8e6e1a2961fcd5"
+  }
+}
+
+== 5. Poll status ==
+[00] status=waiting
+[01] status=processing
+[02] status=processing
+[03] status=processing
+[04] status=processing
+[05] status=processing
+[06] status=processing
+[07] status=processing
+[08] status=processing
+[09] status=processing
+[10] status=processing
+[11] status=processing
+[12] status=processing
+[13] status=processing
+[14] status=processing
+[15] status=processing
+[16] status=processing
+[17] status=processing
+[18] status=processing
+[19] status=processing
+[20] status=completed
+VIDEO_URL=https://files2.heygen.ai/aws_pacific/avatar_tmp/e57ca395ff1740708674fe17987df17b/0f2fda138d8944e98d8e6e1a2961fcd5.mp4?Ex...
+Downloaded raw_heygen_v9.mp4 (4168115 bytes)
+
+== 6. Composite lower-third overlay (direct overlay, no chroma-key) ==
+Wrote episode_001_FINAL_60s_v9.mp4 (3023302 bytes)
+Copied -> /Users/haotianliu/.openclaw/workspace/ystar-company/content/offended_ai/episode_001_FINAL_60s_v9.mp4
+duration_sec=64.151000
+sha256=f0aa997cce3f3cba9e53504e90a561b9896062226a95e150b3d366e03d7d32f3
+bytes=3023302

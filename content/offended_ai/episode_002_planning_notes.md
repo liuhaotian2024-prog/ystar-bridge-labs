@@ -69,3 +69,25 @@
 - Keep the 60s post-group-create sleep.
 - Keep `assert 160 <= wc <= 185` word-count gate.
 - Archetype still "the benchmark" — but now also queued: "the compliance team that approves its own training data".
+
+---
+
+## v9 addendum — 2026-04-13 (Sofia-CMO) — BG FIX
+
+**Source episode:** `episode_001_FINAL_60s_v9.mp4` (sha256 `f0aa997cce3f3cba9e53504e90a561b9896062226a95e150b3d366e03d7d32f3`, 64.15s, 2.95MB, 173 words — same script as v8, only bg changed).
+
+### v9 lessons (over v8)
+
+1. **`sofia_intro.mp4` frames are valid HeyGen bg assets.** Extract frame via `ffmpeg -ss 2.0 -frames:v 1 -update 1`, upload via `https://upload.heygen.com/v1/asset` (Content-Type image/png), pass returned `image_key` as `image_asset_id` in `background: {type: "image", image_asset_id: ...}`. HeyGen server-composites Avatar IV over it natively. No chroma-key. No rembg. No client-side matting. `matting: True` on the character node is sufficient.
+
+2. **Burnham "bg must not narrate" rule v2: flat bg for draft, Sofia-native bg for ship.** v5 decided flat #1a1a1a because a generic `office_bg.png` narrated. The terrace frame from Sofia's own intro video is part of Sofia's visual identity, not an independent narrative source. Board was right to reject flat bg for v8 — it reads as "still drafting" even when comedy lands.
+
+3. **Portrait continuity held v4 -> v8 -> v9.** `sofia_portrait_v4.jpg` is load-bearing across renders. Do not re-pick portrait frame per episode until explicit brand refresh.
+
+4. **Duration drift +2.88s vs v8 (64.15 vs 61.27) despite identical script.** Hypothesis: HeyGen adds ~3s render padding when bg is image vs flat color. If reconfirmed across 2 more renders, reduce word target to 165w for image-bg episodes.
+
+### Carry-over for 002
+
+- Default bg: frame from `docs/sofia_intro.mp4` at t=2.0s (or matched frame if wardrobe/location changes). NOT flat #1a1a1a.
+- New pipeline baseline: `content/offended_ai/v9/heygen_pipeline.py`.
+- Keep 60s post-group-create sleep + `assert 160 <= wc <= 185` word-count gate.
