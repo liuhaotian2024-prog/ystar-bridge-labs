@@ -17,7 +17,7 @@ Every production multi-agent deployment eventually hits the same wall: agents dr
 
 **Y\*gov is a deterministic runtime governance layer for multi-agent systems.** It installs between the agent loop and the tool execution surface. Every tool call is intercepted, matched against a per-role IntentContract, written to a causal audit log (CIEU), and either executed or hard-denied — not suggested, denied. Agents cannot bypass it because the enforcement point is below the agent, not beside it.
 
-We dogfood it. This whitepaper was drafted inside a session where Y\*gov governed 11 concurrent agents (1 CEO + 1 CTO + 3 C-suite + 4 engineers + 2 sub-agents) across the authoring of this very file. The evidence block in §4 is drawn from the same `.ystar_cieu.db` that governed this session.
+We dogfood it. This whitepaper was drafted inside a session where Y\*gov governed the **PMP-SES paradigm** (Primary/Manager/Professional/Specialist/Expert/Sub-agent hierarchy) — 1 CEO + 1 CTO + 3 C-suite managers + 4 specialist engineers + N sub-agents dynamically spawned — across the authoring of this very file. The evidence block in §4 is drawn from the same `.ystar_cieu.db` that governed this session.
 
 ---
 
@@ -128,7 +128,7 @@ The full pipeline:
 
 ## §4 — Dogfooding Evidence
 
-We do not ask customers to trust claims we haven't bet our own operation on. Y\* Bridge Labs is a solo-owner company (one human Board: Haotian Liu) running an 11-agent team — CEO, CTO, CMO, CSO, CFO, Secretary, and four engineers — all governed by Y\*gov.
+We do not ask customers to trust claims we haven't bet our own operation on. Y\* Bridge Labs is a solo-owner company (one human Board: Haotian Liu) running the **PMP-SES agent hierarchy** — Primary (CEO), Managers (CTO/CMO/CSO/CFO), Professionals (Secretary), Specialists (4 engineers: kernel/governance/platform/domains), Expert consultants (K9 auditor), and dynamically spawned Sub-agents — all governed by Y\*gov at runtime.
 
 **Numbers pulled from the live `.ystar_cieu.db` at the time of this writing (`2026-04-13`):**
 
