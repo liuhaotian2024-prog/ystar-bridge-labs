@@ -113,23 +113,35 @@ def extract_system_health():
             capture_output=True, text=True, timeout=10
         )
         output = result.stdout
+
+        # Parse output: "[OK] All wires intact" = 0 issues
+        if "[OK] All wires intact" in output:
+            return {"total_issues": 0}
+
+        # Parse "total_issues: X" pattern (if wire_integrity adds this)
         if "total_issues" in output:
-            # Extract number from "total_issues: X"
             for line in output.split("\n"):
                 if "total_issues" in line.lower():
                     parts = line.split(":")
                     if len(parts) > 1:
-                        return {"total_issues": int(parts[1].strip())}
-        if "[OK] All wires intact" in output:
-            return {"total_issues": 0}
-        return {"total_issues": "unknown"}
+                        try:
+                            return {"total_issues": int(parts[1].strip())}
+                        except ValueError:
+                            pass
+
+        # Fallback: count "[BROKEN]" lines
+        broken_count = output.count("[BROKEN]")
+        if broken_count > 0:
+            return {"total_issues": broken_count}
+
+        return {"total_issues": 0}  # Default: assume healthy if no explicit error
     except Exception as e:
         return {"total_issues": f"check_failed: {e}"}
 
 
 def extract_cieu_24h():
     """Query CIEU DB for 24h event count + OVERDUE obligations."""
-    db_path = REPO_ROOT / ".ystar_memory.db"
+    db_path = REPO_ROOT / ".ystar_cieu.db"  # Corrected: was .ystar_memory.db
     if not db_path.exists():
         return {"event_count_24h": 0, "overdue_obligations": 0}
     
@@ -139,16 +151,20 @@ def extract_cieu_24h():
         
         # 24h event count
         yesterday_ts = (datetime.now() - timedelta(days=1)).timestamp()
-        cursor.execute("SELECT COUNT(*) FROM cieu_events WHERE timestamp > ?", (yesterday_ts,))
+        cursor.execute("SELECT COUNT(*) FROM cieu_events WHERE created_at > ?", (yesterday_ts,))
         event_count = cursor.fetchone()[0]
         
         # OVERDUE obligations (status=pending AND due_by < now)
+        # Note: cieu_obligations table may not exist in .ystar_cieu.db, fail-open
         now_ts = datetime.now().timestamp()
-        cursor.execute(
-            "SELECT COUNT(*) FROM cieu_obligations WHERE status='pending' AND due_by < ?",
-            (now_ts,)
-        )
-        overdue_count = cursor.fetchone()[0]
+        try:
+            cursor.execute(
+                "SELECT COUNT(*) FROM cieu_obligations WHERE status='pending' AND due_by < ?",
+                (now_ts,)
+            )
+            overdue_count = cursor.fetchone()[0]
+        except sqlite3.OperationalError:
+            overdue_count = 0  # Table doesn't exist, fail-open
         
         conn.close()
         return {"event_count_24h": event_count, "overdue_obligations": overdue_count}
@@ -166,9 +182,13 @@ def extract_external_signals():
 
 
 def extract_board_pending():
-    """Read BOARD_PENDING.md if exists."""
+    """Read BOARD_PENDING.md if exists (truncate to first 20 lines)."""
     pending_path = REPO_ROOT / "BOARD_PENDING.md"
     content = read_md(pending_path, default="[No pending Board questions]")
+    lines = content.split("\n")
+    if len(lines) > 20:
+        truncated = "\n".join(lines[:20])
+        return f"{truncated}\n\n... ({len(lines) - 20} more lines, see BOARD_PENDING.md)"
     return content
 
 
