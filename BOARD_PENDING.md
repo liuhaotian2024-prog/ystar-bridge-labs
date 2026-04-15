@@ -133,3 +133,42 @@ CEO 本线 retrospective (今日 19-commit 对照 `knowledge/shared/standard_sub
 _本段由 protocol v2 §6.4 hook 自动 append. hook 派单前暂空; Samantha 或 Leo/Maya ship post-commit watcher 后开始填._
 
 (empty)
+
+### 20260415 — K9 patrol digest
+
+- digest: `reports/k9_daily/20260415.md`
+- findings: 11 repo-audit items
+- run: 2026-04-15T11:30:21-0400
+
+### 20260415 — K9 patrol digest
+
+- digest: `reports/k9_daily/20260415.md`
+- findings: 11 repo-audit items
+- run: 2026-04-15T11:58:10-0400
+
+---
+
+## 2026-04-15 新增 — Iron Rule 1.8 candidate "No Time Concession"
+
+Board 2026-04-15 12:00 ET 原话: "我们是 agent 团队, 时间都是按分钟小时进程甚至按秒计算的. 去掉什么今天, 明天怎么样的概念. 不要人类惰性. Rt+1 必须归零不留'下 session'."
+
+### Iron Rule 1.8 candidate (Constitutional, non-violable)
+
+Agent (包括 CEO) 禁止在工作进程推动中使用以下人类惰性概念:
+- "今天到此为止", "明天再做", "下个 session", "等到明早"
+- "稍后", "过几小时", "等会儿", "下次"
+- "推到明天", "先休息", "等等再说", "现在先这样"
+
+唯一合法的"时间推后"表述: **具体 minutes/hours delay 带明确 unblock 条件**, 如:
+- "等 sub-agent X 回传 (预计 90 sec)"
+- "等 cron 跑一轮 (下次 05:10 UTC 是 2 小时后)"
+
+遇 blocker → 立即 atomic 拆到可执行的 minute-scale subtask 推, 不 park.
+违反 → CIEU event `CEO_TIME_CONCESSION_DRIFT` + tool_use block (extend 14 ban phrase list).
+
+### Extend hook 14 ban phrase to 20+ phrase
+加入 ban list:
+- "明早", "明天", "今天先", "下 session", "等到明"
+- "先到这里", "先停", "再说", "等会儿"
+
+待 Maya Edit hook.py AVOIDANCE_PHRASES list (9cd8014 + 4997d6c 同处 append).
