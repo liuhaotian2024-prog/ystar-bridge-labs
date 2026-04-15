@@ -1,3 +1,7 @@
+---
+lesson_id: 06702d14-6927-4433-8386-4187eb70e7ef
+---
+
 # Domain Pack Audit — 12-Layer Self-Learning
 **Date**: 2026-04-14  
 **Agent**: Jordan Lee (Domains Engineer)  
