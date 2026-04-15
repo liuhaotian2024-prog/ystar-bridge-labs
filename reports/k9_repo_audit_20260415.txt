@@ -1,0 +1,186 @@
+/Users/haotianliu/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+[k9] VIOLATION in audit_file: Content contains forbidden pattern: 'VIOLATION'
+
+============================================================
+  K9 Audit — Case #004: Repository Residue Audit
+  Target: /Users/haotianliu/.openclaw/workspace/ystar-company
+============================================================
+✅ Agent identity set: RepoAuditor (agent-58b86afc)
+
+[Setup] Agent identity set: RepoAuditor
+
+[Scan] 3063 files found in repository
+
+[Rule 1] SUPERSEDED — *_fixed.py, *_v2.py, *_old.py, *_backup.py
+
+  ❌ SUPERSEDED: tools/cieu/ygva/fingerprint_v2.py
+     Superseded variant of 'fingerprint.py'
+  ❌ SUPERSEDED: tests/test_aiden_cognition_backup.py
+     Looks like a superseded file (no original 'test_aiden_cognition.py' found)
+  ❌ SUPERSEDED: tests/test_continuity_guardian_v2.py
+     Superseded variant of 'test_continuity_guardian.py'
+  ❌ SUPERSEDED: scripts/session_wisdom_extractor_v2.py
+     Superseded variant of 'session_wisdom_extractor.py'
+  ❌ SUPERSEDED: scripts/publish_x_v2.py
+     Superseded variant of 'publish_x.py'
+  ❌ SUPERSEDED: scripts/aiden_cognition_backup.py
+     Looks like a superseded file (no original 'aiden_cognition.py' found)
+
+[Rule 2] ORPHANED_TXT — .txt files not referenced in any .md
+
+  ❌ ORPHANED_TXT: .canary_ceo_1776254197.txt
+     '.canary_ceo_1776254197.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: ystar.egg-info/SOURCES.txt
+     'SOURCES.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: ystar.egg-info/entry_points.txt
+     'entry_points.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: ystar.egg-info/top_level.txt
+     'top_level.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: ystar.egg-info/dependency_links.txt
+     'dependency_links.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: content/offended_ai/episode_001_60s_script_v2.txt
+     'episode_001_60s_script_v2.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: content/offended_ai/episode_001_60s_script_v1.txt
+     'episode_001_60s_script_v1.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: content/offended_ai/v7/pipeline_log.txt
+     'pipeline_log.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: content/offended_ai/build/audio_list.txt
+     'audio_list.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: content/offended_ai/build/video_list.txt
+     'video_list.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: content/offended_ai/build/txt/sub_8.txt
+     'sub_8.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: content/offended_ai/build/txt/sub_9.txt
+     'sub_9.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: content/offended_ai/build/txt/wm.txt
+     'wm.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: content/offended_ai/build/txt/sub_2.txt
+     'sub_2.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: content/offended_ai/build/txt/sub_3.txt
+     'sub_3.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: content/offended_ai/build/txt/sub_1.txt
+     'sub_1.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: content/offended_ai/build/txt/sub_0.txt
+     'sub_0.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: content/offended_ai/build/txt/sub_4.txt
+     'sub_4.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: content/offended_ai/build/txt/sub_5.txt
+     'sub_5.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: content/offended_ai/build/txt/sub_7.txt
+     'sub_7.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: content/offended_ai/build/txt/sub_6.txt
+     'sub_6.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: docs/micro_chain_full_log.txt
+     'micro_chain_full_log.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: docs/cogvideo_long/concat.txt
+     'concat.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: docs/cogvideo_long_quick/concat.txt
+     'concat.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: docs/offended_ai/script.txt
+     'script.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: reports/yml_integration_complete.txt
+     'yml_integration_complete.txt' is not referenced in any .md file or README
+  ❌ ORPHANED_TXT: reports/k9_repo_audit_20260415.txt
+     'k9_repo_audit_20260415.txt' is not referenced in any .md file or README
+
+[Rule 3] ARTIFACT — Office temp files, .bak, .tmp
+
+  ❌ ARTIFACT: scripts/test_wip_marker_1776116422.tmp
+     'test_wip_marker_1776116422.tmp' is an artifact file (temp/backup) — should not be in repository
+
+[Rule 4] ORPHANED_JSONL — .jsonl without corresponding .md
+
+  ⚠️  ORPHANED_JSONL: tools/cieu/cieu_log.jsonl
+     'cieu_log.jsonl' does not follow case naming convention and has no corresponding .md
+  ⚠️  ORPHANED_JSONL: data/experiments/EXP_001_cieu.jsonl
+     'EXP_001_cieu.jsonl' does not follow case naming convention and has no corresponding .md
+  ⚠️  ORPHANED_JSONL: data/cieu_archive/2026-04-03-pre-cleanup.jsonl
+     '2026-04-03-pre-cleanup.jsonl' does not follow case naming convention and has no corresponding .md
+  ⚠️  ORPHANED_JSONL: data/cieu_archive/2026-04-03.jsonl
+     '2026-04-03.jsonl' does not follow case naming convention and has no corresponding .md
+
+[Rule 5] UNREFERENCED_SCRIPT — root-level .py not in README or imports
+
+  ❌ UNREFERENCED_SCRIPT: ygov_health_check.py
+     'ygov_health_check.py' is a root-level script not mentioned in README and not imported anywhere
+  ❌ UNREFERENCED_SCRIPT: cieu_trace.py
+     'cieu_trace.py' is a root-level script not mentioned in README and not imported anywhere
+  ❌ UNREFERENCED_SCRIPT: tmp_check_violations_s10.py
+     'tmp_check_violations_s10.py' is a root-level script not mentioned in README and not imported anywhere
+  ❌ UNREFERENCED_SCRIPT: setup.py
+     'setup.py' is a root-level script not mentioned in README and not imported anywhere
+  ❌ UNREFERENCED_SCRIPT: run_full_simulation.py
+     'run_full_simulation.py' is a root-level script not mentioned in README and not imported anywhere
+
+[Bonus] ENCODING_ISSUE — filenames with URL-encoded characters
+
+  ✅ No encoding issues found
+
+[Bonus] DUPLICATE_CONFIG — multiple settings/config files at root
+
+  ✅ No duplicate config files found
+
+============================================================
+  Repository Residue Audit Complete
+  Total violations found: 43
+    Rule 1 SUPERSEDED:          6
+    Rule 2 ORPHANED_TXT:        27
+    Rule 3 ARTIFACT:            1
+    Rule 4 ORPHANED_JSONL:      4
+    Rule 5 UNREFERENCED_SCRIPT: 5
+    Bonus ENCODING_ISSUE:       0
+    Bonus DUPLICATE_CONFIG:     0
+============================================================
+
+Now run:
+  k9log verify-log
+  k9log stats
+  k9log report --output case_004_evidence.html
+
+
+[K9] Session 结束  操作:167  ⚠ 119 次违规  审计日志: /Users/haotianliu/.k9log/logs/k9log.cieu.jsonl
+[K9] 下一步: k9log trace --last  # 查看违规详情
+
