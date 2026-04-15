@@ -46,7 +46,7 @@ Every agent, on receiving any task of non-trivial scope (non-trivial = multi-ste
    - Yt+1 (predicted end state)
    - Rt+1 (honest gap + zero-condition)
 
-2. **Article 11 (执行结构层)** — medium+ complexity tasks MUST spawn parallel sub-agents AND keep the main thread productive. Forbidden: dispatch and idle. Forbidden: strict-serial sub-agent wait.
+2. **第十一条 — 自主任务执行方法论 (执行结构层)** — 权威原版：`governance/WORKING_STYLE.md:783-884` (commit d4a8181a, 2026-04-10 Board directive). 摘要（不替代原文，必须读全文）：4 阶段执行框架 / 7 层认知建构 / 全维度白名单+黑名单主动观看 / 反事实推理 / 观察迭代 / 伦理检查 / 多线并列 sub-agent 只是其中一个执行维度. **不允许在本文件里截取/缩略/slogan 化**——见 IMMUTABLE-DRIFT-20260415-001.
 
 3. **12-layer flow (任务内部流程层)** — 0_INTENT → 1_reflect → 2_search → 3_plan → 4_exec → 5_mid_check → 6_pivot → 7_integration → 8_complete → 9_review → 10_self_eval → 11_board_approval → 12_writeback. Each layer emits a CIEU event tagged `CIEU_LAYER_{n}`.
 

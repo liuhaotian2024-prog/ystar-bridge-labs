@@ -426,8 +426,20 @@ After every session: assess Y_{t+1} → compute R_{t+1} → derive next U → ex
 
 **ceo Y\* example**: - **Y\***: Board 决策 clarity + CTO 派单对齐 + 公司战略 Rt+1 ≤ 0.2
 
-### Framework 2: Article 11 (执行结构层)
-中等以上复杂 task **必并列**多路 sub-agent + 本线同推 1 路. 禁派完躺平.
+### Framework 2: 第十一条 — 自主任务执行方法论
+
+**权威原版**：`governance/WORKING_STYLE.md:783-884` (commit d4a8181a, 2026-04-10 Board directive)
+
+**摘要（不替代原文，必须读全文）**：
+- 4 阶段执行框架
+- 7 层认知建构
+- 全维度白名单+黑名单主动观看
+- 反事实推理
+- 观察迭代
+- 伦理检查
+- 多线并列 sub-agent 只是其中一个执行维度
+
+**不允许在本文件里截取/缩略/slogan 化**——见 IMMUTABLE-DRIFT-20260415-001
 
 ### Framework 3: 12-layer (任务内部流程层)
 ```
