@@ -455,6 +455,53 @@ def main():
     except Exception as e:
         print(f"[warn] priority_brief_validator failed: {e}", file=sys.stderr)
 
+    # HiAgent V4: Trigger CZL subgoal compression if current_subgoal matches recent TASK_COMPLETED
+    try:
+        czl_path = company_root / ".czl_subgoals.json"
+        if czl_path.exists():
+            czl_data = json.loads(czl_path.read_text(encoding="utf-8"))
+            current = czl_data.get("current_subgoal")
+
+            if current and current.get("id"):
+                # Check if this session had a TASK_COMPLETED event for current_subgoal.id
+                # Query CIEU for last 10 events
+                try:
+                    from ystar.governance.cieu_store import CIEUStore
+                    cieu_store = CIEUStore(str(cieu_db_path))
+                    recent_events = cieu_store.query_events(
+                        agent_id=agent_id,
+                        limit=50  # last 50 events this session
+                    )
+
+                    task_completed = any(
+                        ev.get("event_type") == "TASK_COMPLETED" and
+                        ev.get("metadata", {}).get("task_id") == current["id"]
+                        for ev in recent_events
+                    )
+
+                    if task_completed:
+                        # Trigger compression via hook daemon method
+                        # Send compression request to daemon socket
+                        import socket
+                        sock_path = "/tmp/ystar_hook.sock"
+                        if Path(sock_path).exists():
+                            compress_msg = json.dumps({
+                                "action": "compress_subgoal",
+                                "task_id": current["id"]
+                            })
+                            s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+                            s.connect(sock_path)
+                            s.sendall(compress_msg.encode("utf-8"))
+                            response = s.recv(4096)
+                            s.close()
+                            print(f"[ok] CZL subgoal {current['id']} compression triggered: {response.decode()}")
+                        else:
+                            print(f"[warn] CZL compression skipped: hook daemon not running", file=sys.stderr)
+                except Exception as cieu_err:
+                    print(f"[warn] CZL compression CIEU query failed: {cieu_err}", file=sys.stderr)
+    except Exception as e:
+        print(f"[warn] CZL subgoal compression trigger failed: {e}", file=sys.stderr)
+
     # AMENDMENT-010 §4 S-3: trigger secretary_curate pipeline (skeleton)
     try:
         curate_script = company_root / "scripts" / "secretary_curate.py"

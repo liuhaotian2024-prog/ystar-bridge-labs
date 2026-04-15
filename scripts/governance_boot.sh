@@ -405,31 +405,11 @@ else
   echo "  ⚠️ YML memory recall failed (fail-open)"
 fi
 
+# STEP 8.8: CZL subgoal injection (HiAgent campaign context)
+echo "[8.8/11] CZL subgoal injection..."
+python3 "$YSTAR_DIR/scripts/czl_boot_inject.py" "$AGENT_ID"
+
 echo "=== BEGIN AUTONOMOUS EXECUTION ==="
-
-# STEP 9: Surface active obligations (认知恢复核心)
-echo ""
-echo "--- ACTIVE OBLIGATIONS (你在打什么仗) ---"
-cd "$YSTAR_DIR"
-python3 -c "
-import sqlite3
-db = sqlite3.connect('.ystar_memory.db')
-obs = db.execute(\"SELECT content, created_at FROM memories WHERE memory_type='obligation' ORDER BY created_at DESC\").fetchall()
-if obs:
-    for content, ts in obs:
-        print(f'  [OBLIGATION] {content[:200]}')
-else:
-    print('  (no obligations found)')
-
-# Also show active lessons (top 5 by access)
-lessons = db.execute(\"SELECT content FROM memories WHERE memory_type='lesson' ORDER BY access_count DESC LIMIT 5\").fetchall()
-if lessons:
-    print()
-    print('TOP LESSONS:')
-    for (content,) in lessons:
-        print(f'  [LESSON] {content[:150]}')
-db.close()
-" 2>/dev/null
 
 # STEP 10: Load continuation v2 (JSON machine-readable, 无缝衔接核心)
 if [ -f "$YSTAR_DIR/memory/continuation.json" ]; then
