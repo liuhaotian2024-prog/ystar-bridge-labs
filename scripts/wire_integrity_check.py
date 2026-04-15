@@ -157,6 +157,81 @@ def check_whitelist_wiring():
     return broken
 
 
+def check_canonical_hashes():
+    """
+    Check canonical file hashes against genesis tag expectations.
+
+    W6 Phase 2: Detects drift in immutable CZL files.
+    Prevents "Article 11 slogan-ization" and other canonical drift.
+    """
+    import hashlib
+
+    broken = []
+
+    canonical_hashes_file = WORKSPACE_ROOT / "governance/canonical_hashes.json"
+    if not canonical_hashes_file.exists():
+        return [f"Missing {canonical_hashes_file} — cannot verify canonical files"]
+
+    try:
+        with open(canonical_hashes_file) as f:
+            expected_hashes = json.load(f)
+    except Exception as e:
+        return [f"Cannot read canonical_hashes.json: {e}"]
+
+    def get_file_hash(path, start_line=None, end_line=None):
+        """Get SHA256 hash of file or specific line range"""
+        try:
+            full_path = WORKSPACE_ROOT / path if not Path(path).is_absolute() else Path(path)
+            content = full_path.read_text()
+            if start_line and end_line:
+                lines = content.split('\n')
+                content = '\n'.join(lines[start_line-1:end_line])
+            return hashlib.sha256(content.encode()).hexdigest()
+        except Exception as e:
+            return f"ERROR:{e}"
+
+    # Check each canonical file
+    for file_spec, expected_hash in expected_hashes.items():
+        if ":schema_fields" in file_spec:
+            # Special case: .czl_subgoals.json schema fields
+            czl_file = WORKSPACE_ROOT / ".czl_subgoals.json"
+            try:
+                with open(czl_file) as f:
+                    czl_data = json.load(f)
+                actual_fields = sorted(czl_data.keys())
+                actual_hash = hashlib.sha256(json.dumps(actual_fields).encode()).hexdigest()
+            except Exception as e:
+                broken.append(f"{file_spec}: cannot read file ({e})")
+                continue
+        elif ":" in file_spec:
+            # Parse file:range or file:tag specification
+            parts = file_spec.rsplit(":", 1)
+            file_path = parts[0]
+            range_or_tag = parts[1]
+
+            if "-" in range_or_tag and range_or_tag.replace("-", "").isdigit():
+                # Line range specification (e.g., "file.md:100-200")
+                start, end = map(int, range_or_tag.split("-"))
+                actual_hash = get_file_hash(file_path, start, end)
+            else:
+                # Tag specification (e.g., "AGENTS.md:Memory&Continuity") — treat as full file
+                # The tag is just a label, hash the full file
+                actual_hash = get_file_hash(file_path)
+        else:
+            # Full file hash
+            actual_hash = get_file_hash(file_spec)
+
+        if actual_hash.startswith("ERROR:"):
+            broken.append(f"{file_spec}: {actual_hash}")
+        elif actual_hash != expected_hash:
+            broken.append(
+                f"{file_spec}: CANONICAL_HASH_DRIFT "
+                f"(expected {expected_hash[:16]}..., got {actual_hash[:16]}...)"
+            )
+
+    return broken
+
+
 def main():
     """Run all wire integrity checks"""
     print("=== Wire Integrity Check ===", file=sys.stderr)
@@ -184,14 +259,24 @@ def main():
         for issue in whitelist_broken:
             print(f"  - {issue}", file=sys.stderr)
 
+    # W6 Phase 2: Canonical hash checks
+    canonical_broken = check_canonical_hashes()
+    if canonical_broken:
+        all_broken.extend(canonical_broken)
+        print(f"[CANONICAL HASHES] {len(canonical_broken)} issues found", file=sys.stderr)
+        for issue in canonical_broken:
+            print(f"  - {issue}", file=sys.stderr)
+
     if all_broken:
+        categories = {
+            "hooks": len(hook_broken),
+            "cron": len(cron_broken),
+            "whitelist": len(whitelist_broken),
+            "canonical_hashes": len(canonical_broken) if canonical_broken else 0
+        }
         emit_cieu("WIRE_BROKEN", json.dumps({
             "total_issues": len(all_broken),
-            "categories": {
-                "hooks": len(hook_broken),
-                "cron": len(cron_broken),
-                "whitelist": len(whitelist_broken)
-            },
+            "categories": categories,
             "details": all_broken
         }))
         print(f"\n[WIRE_BROKEN] {len(all_broken)} total issues", file=sys.stderr)
