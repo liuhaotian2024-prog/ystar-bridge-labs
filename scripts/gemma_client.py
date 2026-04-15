@@ -288,14 +288,13 @@ def _emit_cieu_quality_event(
         conn = sqlite3.connect(CIEU_DB)
         cur = conn.cursor()
         cur.execute("""
-            INSERT INTO events (C, I, E, U, tau)
-            VALUES (?, ?, ?, ?, ?)
+            INSERT INTO events (timestamp, event_type, agent, metadata)
+            VALUES (?, ?, ?, ?)
         """, (
-            "llm_quality_audit",
-            json.dumps(intent_data),
-            event_type,
-            active_agent,
             time.time(),
+            event_type,  # quality_compared | quality_threshold_breached
+            active_agent,
+            json.dumps(intent_data),
         ))
         conn.commit()
         conn.close()
