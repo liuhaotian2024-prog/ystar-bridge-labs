@@ -74,6 +74,18 @@
           }
         ]
       }
+    ],
+    "Stop": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_stop_reply_scan.py",
+            "timeout": 3000
+          }
+        ]
+      }
     ]
   }
 }

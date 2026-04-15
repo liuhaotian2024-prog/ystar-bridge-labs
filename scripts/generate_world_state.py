@@ -222,6 +222,64 @@ def extract_board_pending():
     return content
 
 
+def _run_git(cmd, cwd):
+    import subprocess
+    try:
+        r = subprocess.run(cmd, cwd=str(cwd), capture_output=True, text=True, timeout=5)
+        return r.stdout.strip()
+    except Exception as e:
+        return f"(err: {e})"
+
+
+def extract_ystar_gov_state():
+    """W12 — scan Y*gov product repo."""
+    import subprocess
+    ygov = Path("/Users/haotianliu/.openclaw/workspace/Y-star-gov")
+    if not ygov.exists():
+        return "**Y*gov**: path not found"
+    head = _run_git(["git", "log", "-1", "--format=%h %s"], ygov)[:100]
+    commits_24h = _run_git(["git", "log", "--since=24 hours ago", "--oneline"], ygov).count("\n") + 1 if _run_git(["git", "log", "--since=24 hours ago", "--oneline"], ygov) else 0
+    ahead = _run_git(["git", "rev-list", "--count", "origin/main..HEAD"], ygov) or "0"
+    tests_count = len(list((ygov / "tests").glob("*.py"))) if (ygov / "tests").exists() else 0
+    version = "?"
+    try:
+        toml = (ygov / "pyproject.toml").read_text(encoding="utf-8")
+        for line in toml.split("\n"):
+            if "version" in line and "=" in line:
+                version = line.split("=")[1].strip().strip('"')
+                break
+    except Exception:
+        pass
+    return f"**HEAD**: `{head}`\n**24h commits**: {commits_24h}\n**ahead origin**: {ahead}\n**test files**: {tests_count}\n**version**: {version}"
+
+
+def extract_gov_mcp_state():
+    """W12 — gov-mcp nested in Y*gov."""
+    govmcp = Path("/Users/haotianliu/.openclaw/workspace/Y-star-gov/gov_mcp")
+    if not govmcp.exists():
+        return "**gov-mcp**: not found"
+    server = govmcp / "server.py"
+    loc = "?"
+    try:
+        loc = str(len(server.read_text().split("\n")))
+    except Exception:
+        pass
+    local_health = Path("/Users/haotianliu/.openclaw/workspace/ystar-company/gov_mcp/health.py")
+    return f"**location**: `{govmcp}`\n**server.py LoC**: {loc}\n**ystar-company side health.py**: {'exists' if local_health.exists() else 'missing'}"
+
+
+def extract_k9audit_state():
+    """W12 — K9Audit read-only reference."""
+    import time
+    k9 = Path("/tmp/K9Audit")
+    if not k9.exists():
+        return "**K9Audit**: not cloned locally (run: `git clone https://github.com/liuhaotian2024-prog/K9Audit /tmp/K9Audit`)"
+    head = _run_git(["git", "log", "-1", "--format=%h %s"], k9)[:100]
+    stale_s = time.time() - (k9 / ".git").stat().st_mtime
+    stale_days = int(stale_s / 86400)
+    return f"**local clone**: `/tmp/K9Audit`\n**HEAD**: `{head}`\n**stale days**: {stale_days}\n**migration queue**: CausalChainAnalyzer + Auditor + k9_repo_audit.py → CIEU (TODO)"
+
+
 def generate_world_state():
     """Generate memory/WORLD_STATE.md from all data sources."""
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -284,7 +342,22 @@ def generate_world_state():
 ---
 
 ## 7. Reserved (Auto-Expansion Slot)
-(Future: K9 audit summary, stress test alerts, etc.)
+(Future: stress test alerts, campaign analytics, etc.)
+
+---
+
+## 8. Ecosystem — Y*gov Product Repo
+{extract_ystar_gov_state()}
+
+---
+
+## 9. Ecosystem — gov-mcp (nested in Y*gov)
+{extract_gov_mcp_state()}
+
+---
+
+## 10. Ecosystem — K9Audit (read-only reference)
+{extract_k9audit_state()}
 """
     
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)

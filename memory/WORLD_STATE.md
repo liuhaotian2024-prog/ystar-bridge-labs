@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-15 19:08:25
+**Generated**: 2026-04-15 19:55:09
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -29,7 +29,7 @@
 
 ## 3. Current Campaign
 **Campaign**: Campaign v3 — Enforcement Hardening + Guardian Micro-Integration + Phase 3 Debt Plugging (2026-04-15)
-**Progress**: 10 completed, 1 remaining
+**Progress**: 12 completed, 1 remaining
 **Rt+1 Status**: 10/11 — campaign 实质完成 (W1-W8 + W5.1 + W7.1 全 Rt+1=0)，W9 yaml drift 入 backlog
 **Current Subgoal**: (none)
 
@@ -37,8 +37,8 @@
 
 ## 4. System Health
 **Wire Integrity**: 0 issues
-**Y* Schema v2 Compliance**: INVALID (0 errors)
-**CIEU 24h Events**: 21328
+**Y* Schema v2 Compliance**: 10/10 valid
+**CIEU 24h Events**: 23633
 **Overdue Obligations**: 0
 
 ---
@@ -81,4 +81,28 @@ ceo          | 3/3          | 24           | 17       | Never
 ---
 
 ## 7. Reserved (Auto-Expansion Slot)
-(Future: K9 audit summary, stress test alerts, etc.)
+(Future: stress test alerts, campaign analytics, etc.)
+
+---
+
+## 8. Ecosystem — Y*gov Product Repo
+**HEAD**: `5276766 feat(governance): sync 4 defer/choice rules to Y*gov from ystar-company [L2 IMPL]`
+**24h commits**: 20
+**ahead origin**: 0
+**test files**: 89
+**version**: 0.48.0
+
+---
+
+## 9. Ecosystem — gov-mcp (nested in Y*gov)
+**location**: `/Users/haotianliu/.openclaw/workspace/Y-star-gov/gov_mcp`
+**server.py LoC**: 1150
+**ystar-company side health.py**: exists
+
+---
+
+## 10. Ecosystem — K9Audit (read-only reference)
+**local clone**: `/tmp/K9Audit`
+**HEAD**: `37911e1 fix: f-string syntax (cli.py) + dict-native CIEU writes (langchain_adapter.py)`
+**stale days**: 0
+**migration queue**: CausalChainAnalyzer + Auditor + k9_repo_audit.py → CIEU (TODO)
