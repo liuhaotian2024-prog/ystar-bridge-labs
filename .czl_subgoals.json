@@ -1,31 +1,96 @@
 {
-  "y_star_ref": "test",
-  "campaign": "Test Campaign",
+  "y_star_ref": "reports/cto/v3_guardian_ecosystem_audit_20260415.md + 顾问 2026-04-15 enforcement 硬化 spec",
+  "campaign": "Campaign v3 — Enforcement Hardening + Guardian Micro-Integration + Phase 3 Debt Plugging (2026-04-15)",
+  "campaign_status": "COMPLETE — all Phase 1+2+3 Rt+1=0, W9 yaml drift 入 backlog",
+  "campaign_finished_at": "2026-04-15T18:55Z",
   "y_star_criteria": [
     {
-      "id": "Y1",
-      "description": "Test criterion without required fields"
+      "id": "W1",
+      "statement": "forget_guard_rules.yaml 4 条 rule (defer_language / choice_question_to_board / defer_language_in_commit_msg / defer_language_in_echo) action: warn → deny",
+      "artifact_persistence": ["commit_to_origin"],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "cto"
+    },
+    {
+      "id": "W2",
+      "statement": "hook_session_start.py 加 _detect_board_presence + _get_violation_count + _inject_behavioral_constraints 注入 (本月违规计数首屏可见)",
+      "artifact_persistence": ["commit_to_origin"],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "cto"
+    },
+    {
+      "id": "W3",
+      "statement": "hook_client_labs.sh forget_guard 从 async 改 sync deny 路径 (deny 能真返回 harness)",
+      "artifact_persistence": ["commit_to_origin"],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "cto"
+    },
+    {
+      "id": "W4",
+      "statement": "scripts/forget_guard_stress_test.py 10 case 全过 10/10 (8 block 预期 deny + 2 safe 预期 allow)",
+      "artifact_persistence": ["commit_to_origin", "referenced_in_covenant"],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "cto"
+    },
+    {
+      "id": "W5",
+      "statement": "ystar/governance/contract_lifecycle.py 扩 Y* Schema v2 (artifact_persistence + freshness_policy + owner_after_rt1 必填)",
+      "artifact_persistence": ["commit_to_origin"],
+      "freshness_policy": "never_deprecate",
+      "owner_after_rt1": "eng-governance"
+    },
+    {
+      "id": "W6",
+      "statement": "scripts/wire_integrity_check.py 扩 Canonical Hash Guard (验 5 个 canonical 文件 SHA256 对 genesis tag)",
+      "artifact_persistence": ["commit_to_origin", "tagged_in_genesis"],
+      "freshness_policy": "never_deprecate",
+      "owner_after_rt1": "eng-platform"
+    },
+    {
+      "id": "W7",
+      "statement": "ystar/governance/narrative_coherence_detector.py 挂 UserPromptSubmit/PostToolUse hook (prompt 对 current_subgoal 做 drift_score 检测, warn 级)",
+      "artifact_persistence": ["commit_to_origin"],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "eng-governance"
+    },
+    {
+      "id": "W5.1",
+      "statement": "Phase 3 补漏：validator 挂 czl_new_campaign.sh + czl_boot_inject.py + generate_world_state.py 3 生产入口 (Layer 2 激活)",
+      "artifact_persistence": ["commit_to_origin"],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "cto"
+    },
+    {
+      "id": "W7.1",
+      "statement": "Phase 3 补漏：scripts/hook_prompt_gate.py 新建 + .claude/settings.json PostToolUse 真注册 (Layer 2 激活)",
+      "artifact_persistence": ["commit_to_origin"],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "cto"
+    },
+    {
+      "id": "W8",
+      "statement": "Samantha 审计 CZL 核心 3 rule 历史 drift — 订正 CEO 诊断错判 (id vs name schema)",
+      "artifact_persistence": ["commit_to_origin"],
+      "freshness_policy": "never_deprecate",
+      "owner_after_rt1": "secretary"
     }
   ],
   "current_subgoal": null,
   "completed": [
-    {
-      "id": "W5.1",
-      "summary": "Y* schema v2 validator hooked into 3 production entry points (czl_new_campaign.sh / czl_boot_inject.py / generate_world_state.py). Invalid stubs now blocked at creation time. WORLD_STATE.md Section 4 reports N/M compliance.",
-      "duration_min": 45,
-      "maturity": "L2",
-      "commit": "0bc2a426",
-      "completed_at": "2026-04-15T18:51:24.916573"
-    },
-    {
-      "id": "W7.1",
-      "summary": "Prompt gate (check_ceo_output_vs_subgoal) hooked into PostToolUse. Drift score > 0.7 emits CIEU PROMPT_SUBGOAL_DRIFT event (warn-only, fail-open). Hook registered in .claude/settings.json.",
-      "duration_min": 90,
-      "maturity": "L2",
-      "commit": "8b7a3a0d",
-      "completed_at": "2026-04-15T18:51:24.916576"
-    }
+    {"id": "W1", "summary": "4 rule warn→deny 改完 (defer_language×3/choice×2/commit×2/echo×1)，ystar-company 副本 schema v0.X。stress test 阶段一次过。", "maturity": "L3 TESTED"},
+    {"id": "W2", "summary": "hook_session_start.py 加 _inject_behavioral_constraints 注入首屏含本月违规次数 (启动时=16)。", "maturity": "L3 TESTED"},
+    {"id": "W3", "summary": "hook_client_labs.sh async→sync，deny 返回能真 reject tool call。", "maturity": "L3 TESTED"},
+    {"id": "W4", "summary": "scripts/forget_guard_stress_test.py 10/10 (100%) 全过。deny 路径 live 验证。", "maturity": "L3 TESTED"},
+    {"id": "W5", "summary": "Y*gov 70ce917 contract_lifecycle.py 加 validate_y_star_schema_v2() + 3 必填字段 unit test。Layer 1 过 Layer 2 挂点 W5.1 补。", "maturity": "L2 IMPL", "commit": "70ce917"},
+    {"id": "W6", "summary": "56af44b5 wire_integrity_check.py::check_canonical_hashes() + governance/canonical_hashes.json 锁 5 个 canonical 文件 SHA256 + CANONICAL_HASH_DRIFT CIEU event。每小时 cron。", "maturity": "L3 IMPL", "commit": "56af44b5"},
+    {"id": "W7", "summary": "Y*gov 84ea68e narrative_coherence_detector.py::check_ceo_output_vs_subgoal() 函数。Layer 1 过 Layer 2 挂点 W7.1 补。", "maturity": "L2 IMPL", "commit": "84ea68e"},
+    {"id": "W5.1", "summary": "0bc2a426 validator 挂 3 production 入口 (czl_new_campaign.sh:71,74 / czl_boot_inject.py:104,106 / generate_world_state.py:143,148)。Layer 2 独立 grep verified。WORLD_STATE.md 加 Compliance metric 行。", "maturity": "L2 IMPL", "commit": "0bc2a426"},
+    {"id": "W7.1", "summary": "0dcf87c6 + 8b7a3a0d hook_prompt_gate.py + settings.json PostToolUse 真注册。drift > 0.7 emit PROMPT_SUBGOAL_DRIFT warn 级 event。fail-open 设计。", "maturity": "L2 IMPL", "commit": "8b7a3a0d"},
+    {"id": "W8", "summary": "Samantha 审 Y*gov forget_guard_rules.yaml 证实 3 CZL 核心 rule 全存在 mode=deny (line 5/13/21, schema 字段 name: 不是 id:)。CEO 早上 grep 错 schema 字段判 Layer 1 缺失系 prose-claim，被三层 doctrine 当场抓。报告 reports/secretary/czl_core_rules_drift_audit_20260415.md。", "maturity": "L3 AUDIT"}
   ],
-  "remaining": [],
-  "rt1_status": "0/0"
+  "remaining": [
+    {"id": "W9", "statement": "Y*gov engine 侧 yaml 同步 defer/choice 4 rule + 建立两份 yaml 权威策略 (方案 A：Y*gov 侧作权威，ystar-company 副本 deprecated)", "artifact_persistence": ["commit_to_origin"], "freshness_policy": "tied_to_campaign", "owner_after_rt1": "eng-governance", "eta_min": 90}
+  ],
+  "rt1_status": "10/11 — campaign 实质完成 (W1-W8 + W5.1 + W7.1 全 Rt+1=0)，W9 yaml drift 入 backlog",
+  "boot_injection_spec": "沿用 v0.1 — Y* / current / completed summaries 三块。Y* Schema v2 validator 现在真在跑 + 真拦 invalid dogfood。"
 }
