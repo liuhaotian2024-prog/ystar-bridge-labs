@@ -1,0 +1,25 @@
+{
+  "call_id": "call_00001",
+  "timestamp": 1776266717.724572,
+  "prompt_hash": "d9e7709364920668",
+  "prompt_snippet": "Summarize Y*gov in one sentence.",
+  "gemma": {
+    "provider": "ystar-gemma:latest",
+    "text": "",
+    "tokens": 100,
+    "latency_ms": 6362,
+    "error": null
+  },
+  "claude": {
+    "provider": "claude-sonnet-4.5",
+    "text": "",
+    "tokens": 0,
+    "latency_ms": 0,
+    "error": "ANTHROPIC_API_KEY not set"
+  },
+  "metrics": {
+    "similarity": 0.0,
+    "key_info_retention": 1.0,
+    "length_ratio": 0.0
+  }
+}

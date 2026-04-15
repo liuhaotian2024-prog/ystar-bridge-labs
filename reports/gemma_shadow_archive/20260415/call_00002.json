@@ -1,0 +1,25 @@
+{
+  "call_id": "call_00002",
+  "timestamp": 1776266770.8581278,
+  "prompt_hash": "10964869b53dbf0a",
+  "prompt_snippet": "Say hello in 5 words.",
+  "gemma": {
+    "provider": "ystar-gemma:latest",
+    "text": "Hello. Y*gov ensures secure AI operations.",
+    "tokens": 11,
+    "latency_ms": 575,
+    "error": null
+  },
+  "claude": {
+    "provider": "claude-sonnet-4.5",
+    "text": "",
+    "tokens": 0,
+    "latency_ms": 0,
+    "error": "ANTHROPIC_API_KEY not set"
+  },
+  "metrics": {
+    "similarity": 0.0,
+    "key_info_retention": 1.0,
+    "length_ratio": 0.0
+  }
+}
