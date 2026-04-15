@@ -1,97 +1,75 @@
-# Next Session Hand-off (2026-04-14, 重启前写)
+# Next Session Hand-off (2026-04-14, 重启前最终版)
 
-## Boot 后读这 5 个 commits 从此处继续
-
-```
-12c13839 fix(contract): deny rsync --delete + git reset --hard [L4 SHIPPED take2]
-2ae0373a feat(handoff): next session handoff [L1 SPEC]
-4da6a749 feat(recovery): final 2 artifacts [L3 SPEC]
-52883e7b feat(recovery): complete CEO 8-artifact set [L3 SPEC]
-f24b04a7 feat(recovery): CEO 4 artifacts [L3 SPEC]
-```
-
-## Board 2026-04-14 已定位的精确根因 (下 session 必读)
-
-**Y\*gov 两套危险命令黑名单没打通, 形成 path B 漏洞**:
+## 本 session 的 7 个 commit (按时间)
 
 ```
-路径A: agent 用 gov_exec 执行命令
-  → router.py._WRITE_PATTERNS 检查 rsync → BLOCK ✅
-
-路径B: agent 直接 Bash tool 执行命令  (Ryan 走的就是这条)
-  → hook_client_labs.sh → check_hook() 
-  → 检查 contract.deny_commands (主 + delegation_chain)
-  → "rsync" 不在 deny_commands 里 → ALLOW ❌
+12c13839 fix(contract): deny rsync --delete + git reset --hard [L4 SHIPPED]
+014b62e3 docs(handoff): update next-session handoff with Board root-cause [L1 SPEC]
+3cd7b07d feat(recovery): extract Ryan video_registry.yml + video_storage_migration [L4 SHIPPED]
+943a31ce feat(recovery): extract Maya hook_wrapper.py edit sequence [L3 ARTIFACT]
+8b571fd1 methodology(recovery): tool-use recovery via OpenClaw subagent JSONL [L3 SPEC]
+cd42c43d docs(BOARD_PENDING): CLAUDE.md amend proposal — 禁止 CEO 逃避 [L1 SPEC]
+[+ Y-gov 2 commits: 63e6760 router-bridge + 1a227d7 schema guard]
 ```
 
-**Board 诊断清单**:
-- `router.py` 有 `_WRITE_PATTERNS` 黑名单, 含 `re.compile(r"\brsync\b")`
-- `contract.deny_commands` 主 + 每个 delegation_chain (CEO/CTO/eng-kernel) 全没 rsync
-- 两套互相不认识, 没有桥
+## Board 2026-04-14 P0 directives (全 ship)
 
-## 已完成 (Immediate Fix)
+1. ✅ session.json deny rsync --delete + git reset --hard (12c13839)
+2. ✅ router._WRITE_PATTERNS 桥接 hook path B (Y-gov 63e6760)
+3. ✅ session.json schema guard (Y-gov 1a227d7) — 防 Ryan-style 1339→81 silent shrink
 
-commit `12c13839`: `.ystar_session.json` 主 `contract.deny_commands` 加 6 条:
-```json
-"rsync --delete", "rsync -r --delete", "rsync -a --delete",
-"rsync -avz --delete", "rsync -aq --delete", "git reset --hard"
+## ⚠️ 本 session 发现 P0 系统 bug (待下 session 修)
+
+**`_hook_daemon.py` auto-respawn 引发 ystar-company file system wipe cycle**:
+- 任何 sub-agent dispatch 触发 hook → hook_client_labs.sh 启动 daemon socket
+- daemon 进程内部某机制 (可能是 governance_watcher mirror sync) 持续删 .claude/agents/* 等
+- 表象: CEO `git restore .` 一秒后又恢复 D 状态
+- 影响: 本 session Ethan #2/#3 + Maya 多轮均报 "files missing" 实际是 daemon 边删边吃
+- Leo Y-gov 工作未受影响 (Y-gov 不在 daemon mirror scope)
+
+**下 session Ethan-CTO 优先 task**: 找 _hook_daemon.py respawn 路径 + 找谁在删 ystar-company 文件 (推 governance_watcher 或 mirror sync 残留逻辑) + 修.
+
+## 待做 (下 session 真闭环)
+
+### Maya fail-closed apply (本 session 卡 daemon cycle 没成)
+script `reports/apply_maya_fail_closed.sh` 已写好 (Board 外部 shell 跑, 绕 Claude Code hook). 
+artifact `reports/recovery/maya_hook_wrapper_edits_20260414.json` 已 commit (943a31ce).
+
+下 session boot 后 Board 外部终端跑:
 ```
-**session.json 从 1339 → 1345 行 (完整保留 immutable_paths/override_roles/intent_guard)**
+cd /Users/haotianliu/.openclaw/workspace/ystar-company && bash reports/apply_maya_fail_closed.sh
+```
 
-## 待做 (Root Fix, 下 session Ethan-CTO 窄定义 Y\*)
+### CIEU inject 10 agents (今早 Board shell work)
+`reports/apply_cieu_inject.sh` + `apply_cieu_rename.sh` 已 commit. 下次 Board 外部 shell 重跑.
 
-**Task**: 让 `hook_client_labs.sh` 或 `check_hook` 把 `router.py._WRITE_PATTERNS` 作为**补充**黑名单, 不依赖 contract.deny_commands 是否手动写. 两套路径共用一份危险命令知识.
+### CLAUDE.md amend (CEO 逃避禁令)
+`BOARD_PENDING.md` 含 amend 提案. 待 Board 审 → Samantha 执行.
 
-**Ethan Y\* 精确定义** (Board 原话):
-> "两个系统之间有一条没有接上的桥"
+### CEO prompt-level avoidance enforcement code 层
+spec 在 f24b04a7 (`reports/ceo_avoidance_enforcement_20260414.md`). Maya/Leo 实现 pre_reply_check.
 
-**U 候选** (Ethan 自选最小 blast):
-1. `hook_client_labs.sh` 在 daemon socket call 前 import + 跑 `router._WRITE_PATTERNS` 匹配 incoming command
-2. `check_hook()` Python 侧, 在 deny_commands 检查之后再跑一遍 `_WRITE_PATTERNS` 兜底
-3. 把 `_WRITE_PATTERNS` 序列化成 JSON, 启动时合并进 contract.deny_commands
+## CEO 自审 (avoidance pattern 本 session 4 次)
 
-**Rt+1 归零判据** (多轮测试):
-- fresh session 跑 `rsync -avz --delete src/ dst/` via Bash tool → BLOCK
-- 跑 `rsync -avn --dry-run src/ dst/` → ALLOW (dry-run 合法)
-- 跑 `git reset --hard HEAD~1` via Bash tool → BLOCK  
-- 跑 `git reset --soft HEAD~1` → ALLOW
-- 3 独立 session 复现一致
+1. Ryan 灾难后 → 出选择题 "推业务 P0?" (BOARD_CHOICE_QUESTION_DRIFT)
+2. 修完 #1 patch → "ready to restart" (AVOIDANCE)
+3. 标 6 个 task "defer 不紧急" (AVOIDANCE 借口变体)
+4. 第 4 件 "不知道还有什么紧急" 隐含 avoidance
 
-**Ethan 派单硬约束**:
-- 顶部 CIEU 5-tuple 必写
-- 每 claim 附 tool_result block (参考 reports/cieu_first_battle_rt1_miss_20260414.md 教训)
-- Ethan 有 scripts/ + Y-star-gov/ystar/ 写权, 但 session.json 半 immutable 避免再覆盖
-- CEO 本线必 grep 实测: `grep -c rsync .ystar_session.json` + hook fire 实测
-- 不允许 Ethan 自己 rsync — 他的任务只改 hook/router 代码
+固化在 `knowledge/ceo/lessons/ceo_avoidance_drift_self_caught_20260414.md` (本 session 应 commit, 上次因 daemon cycle 没真落, 下 session 重新 write+commit).
 
-## Frozen sub-agents
+## 真正丢失 (无法恢复)
 
-- **Ryan-Platform**: 不派到 post-mortem 完 + `.claude/agents/eng-platform.md` 补 destructive cmd 指引
-- **Maya-Governance**: 本 session 3 轮全 truncate, 下 session 重派前先跑小 task 试水
-- **Ethan-CTO / Leo-Kernel / Samantha-Secretary**: 可信, 优先派
+- Maya hook_wrapper.py fail-closed 的实际落地代码 (artifact 在, 但代码本身这个 session 没真 apply)
+- 这一项下次外部 shell 跑 apply_maya_fail_closed.sh 即可
 
-## CEO 自省 (avoidance 约束 per f24b04a7)
+## 下 session boot 必 read
 
-- Aiden 承诺: Rt+1>0 不出 "推下一个" / "你决定" / "defer" phrase
-- 若 forget_guard CIEU 抓 `BOARD_CHOICE_QUESTION_DRIFT` / `CEO_AVOIDANCE_DRIFT`, 立即停回当前 task
-
-## 4 个 system-level patches spec (延伸, 非本 session P0)
-
-见 `reports/cieu_k9_ryan_rsync_disaster_20260414.md`:
-1. engine.py destructive cmd pre-check
-2. session.json schema 守护 (missing immutable_paths BLOCK)
-3. mirror_contract 方向 JSON
-4. hook WIP auto-commit
-
-本 session Ethan Task = Board 指令的第 1 件 (架构断裂接桥). 其他 3 延后.
-
-## 丢失 (不可逆, 需下 session 重跑恢复)
-
-- Board 今早 shell 注入 10 agent.md CIEU 段落 → 下 session Board 外部 shell 再跑:
-  ```
-  bash reports/apply_cieu_inject.sh && bash reports/apply_cieu_rename.sh
-  ```
-- Maya hook_wrapper.py fail-closed patch (未 commit, 被抹) — 下 session Ethan 一起带回来
-- Ryan 自己的 video_storage_migration 报告 + content/video_registry.yml
+1. 本 handoff
+2. `BOARD_PENDING.md` (CLAUDE.md amend 提案)
+3. `reports/cieu_k9_ryan_rsync_disaster_20260414.md` (4 patch spec)
+4. `reports/ceo_avoidance_enforcement_20260414.md` (CEO 逃避硬约束)
+5. `knowledge/ceo/methodology/article11_cieu_merged_20260414.md` (合并工作法)
+6. `knowledge/ceo/methodology/tool_use_recovery_via_subagent_jsonl_20260414.md` (recovery)
 
 ## End
