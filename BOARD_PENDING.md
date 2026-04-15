@@ -49,6 +49,15 @@ Agent tool 调用的 persona (Sofia/Marco/Ryan/Zara 等) 必须在 `.claude/agen
 
 ---
 
+## K9 Daily Findings
+
+_Auto-populated by `scripts/k9_daily_patrol.sh` every day at 06:00 (cron).
+Each entry links to `reports/k9_daily/{YYYYMMDD}.md` digest. Board/CTO review at 07:00._
+
+(no entries yet — first cron run pending)
+
+---
+
 ## 2026-04-15 新增 — K9 Daily Patrol 升级方案
 
 详见 `reports/k9_upgrade_daily_patrol_spec_20260415.md`. 
@@ -59,3 +68,9 @@ Agent tool 调用的 persona (Sofia/Marco/Ryan/Zara 等) 必须在 `.claude/agen
 - CTO 升级派单 (Leo schema / Maya rule 6-10 / Jordan digest / Samantha cron / Ethan e2e)
 
 你同意即派 Ethan 领队升级.
+
+### 20260415 — K9 patrol digest
+
+- digest: `reports/k9_daily/20260415.md`
+- findings: 11 repo-audit items
+- run: 2026-04-15T09:01:00-0400
