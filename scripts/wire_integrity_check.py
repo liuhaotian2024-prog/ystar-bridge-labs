@@ -174,7 +174,16 @@ def check_canonical_hashes():
 
     try:
         with open(canonical_hashes_file) as f:
-            expected_hashes = json.load(f)
+            canonical_data = json.load(f)
+        # W6.1: Schema v1.1 splits static_frozen vs live_tracked
+        schema_version = canonical_data.get("schema_version", "1.0")
+        if schema_version == "1.1":
+            static_frozen = canonical_data.get("static_frozen", {})
+            live_tracked = canonical_data.get("live_tracked", {})
+        else:
+            # Legacy v1.0: treat all as static (backward compat)
+            static_frozen = canonical_data
+            live_tracked = {}
     except Exception as e:
         return [f"Cannot read canonical_hashes.json: {e}"]
 
@@ -190,44 +199,74 @@ def check_canonical_hashes():
         except Exception as e:
             return f"ERROR:{e}"
 
-    # Check each canonical file
-    for file_spec, expected_hash in expected_hashes.items():
-        if ":schema_fields" in file_spec:
-            # Special case: .czl_subgoals.json schema fields
-            czl_file = WORKSPACE_ROOT / ".czl_subgoals.json"
-            try:
-                with open(czl_file) as f:
-                    czl_data = json.load(f)
-                actual_fields = sorted(czl_data.keys())
-                actual_hash = hashlib.sha256(json.dumps(actual_fields).encode()).hexdigest()
-            except Exception as e:
-                broken.append(f"{file_spec}: cannot read file ({e})")
-                continue
-        elif ":" in file_spec:
-            # Parse file:range or file:tag specification
-            parts = file_spec.rsplit(":", 1)
-            file_path = parts[0]
-            range_or_tag = parts[1]
+    # W6.1: Check static_frozen (P0 severity) and live_tracked (INFO severity) separately
+    def check_files(file_dict, category):
+        """Check files and return broken list with category label"""
+        broken_in_category = []
+        for file_spec, expected_hash in file_dict.items():
+            if ":schema_fields" in file_spec:
+                # Special case: .czl_subgoals.json schema fields
+                czl_file = WORKSPACE_ROOT / ".czl_subgoals.json"
+                try:
+                    with open(czl_file) as f:
+                        czl_data = json.load(f)
+                    actual_fields = sorted(czl_data.keys())
+                    actual_hash = hashlib.sha256(json.dumps(actual_fields).encode()).hexdigest()
+                except Exception as e:
+                    broken_in_category.append(f"[{category}] {file_spec}: cannot read file ({e})")
+                    continue
+            elif ":" in file_spec:
+                # Parse file:range or file:tag specification
+                parts = file_spec.rsplit(":", 1)
+                file_path = parts[0]
+                range_or_tag = parts[1]
 
-            if "-" in range_or_tag and range_or_tag.replace("-", "").isdigit():
-                # Line range specification (e.g., "file.md:100-200")
-                start, end = map(int, range_or_tag.split("-"))
-                actual_hash = get_file_hash(file_path, start, end)
+                if "-" in range_or_tag and range_or_tag.replace("-", "").isdigit():
+                    # Line range specification (e.g., "file.md:100-200")
+                    start, end = map(int, range_or_tag.split("-"))
+                    actual_hash = get_file_hash(file_path, start, end)
+                else:
+                    # Tag specification (e.g., "AGENTS.md:Memory&Continuity") — treat as full file
+                    # The tag is just a label, hash the full file
+                    actual_hash = get_file_hash(file_path)
             else:
-                # Tag specification (e.g., "AGENTS.md:Memory&Continuity") — treat as full file
-                # The tag is just a label, hash the full file
-                actual_hash = get_file_hash(file_path)
-        else:
-            # Full file hash
-            actual_hash = get_file_hash(file_spec)
+                # Full file hash
+                actual_hash = get_file_hash(file_spec)
 
-        if actual_hash.startswith("ERROR:"):
-            broken.append(f"{file_spec}: {actual_hash}")
-        elif actual_hash != expected_hash:
-            broken.append(
-                f"{file_spec}: CANONICAL_HASH_DRIFT "
-                f"(expected {expected_hash[:16]}..., got {actual_hash[:16]}...)"
-            )
+            if actual_hash.startswith("ERROR:"):
+                broken_in_category.append(f"[{category}] {file_spec}: {actual_hash}")
+            elif actual_hash != expected_hash:
+                if category == "STATIC":
+                    # P0 severity: static frozen files must never drift
+                    broken_in_category.append(
+                        f"[P0 CANONICAL_HASH_DRIFT] {file_spec}: "
+                        f"(expected {expected_hash[:16]}..., got {actual_hash[:16]}...)"
+                    )
+                    # Emit CIEU event for static drift
+                    emit_cieu("CANONICAL_HASH_DRIFT", json.dumps({
+                        "file": file_spec,
+                        "expected": expected_hash[:16],
+                        "actual": actual_hash[:16],
+                        "severity": "P0"
+                    }))
+                else:
+                    # INFO severity: live files expected to change
+                    broken_in_category.append(
+                        f"[INFO LIVE_FILE_CHANGED] {file_spec}: "
+                        f"(expected {expected_hash[:16]}..., got {actual_hash[:16]}...)"
+                    )
+                    # Emit CIEU event for live change
+                    emit_cieu("LIVE_FILE_CHANGED", json.dumps({
+                        "file": file_spec,
+                        "expected": expected_hash[:16],
+                        "actual": actual_hash[:16],
+                        "severity": "INFO"
+                    }))
+        return broken_in_category
+
+    # Check both categories
+    broken.extend(check_files(static_frozen, "STATIC"))
+    broken.extend(check_files(live_tracked, "LIVE"))
 
     return broken
 

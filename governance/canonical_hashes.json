@@ -1,8 +1,13 @@
 {
-  "governance/WORKING_STYLE.md:783-884": "edec3db2f8cbc18cd6a157f3b2ce5b87a9bf93f8bbbf0abc8e232822ca012e2f",
-  "governance/WORKING_STYLE.md:889-947": "e9a54d6a5ce3c7f522174351426ca219d73929439bbdcece879dcd3337c4667c",
-  "AGENTS.md:408-423": "72cfd7bc3562eb791ce5a1f81c0f9ad28604a8fee91c1e53595cbbfb18a16535",
-  "governance/forget_guard_rules.yaml": "a5280f74874e49d676ec3ec9371a0d74f6fa4f038834b0274c5609ba44b04181",
-  "scripts/czl_boot_inject.py": "10974dbb8d770ad5e1d4065db1aac7ce1dc90862579378f2c967a7671479abc9",
-  ".czl_subgoals.json:schema_fields": "6f643b4836e20d349a82461fd015947dcfaeb8d9f80c7050d28690fe94f4fa03"
+  "schema_version": "1.1",
+  "static_frozen": {
+    "governance/WORKING_STYLE.md:783-884": "edec3db2f8cbc18cd6a157f3b2ce5b87a9bf93f8bbbf0abc8e232822ca012e2f",
+    "governance/WORKING_STYLE.md:889-947": "e9a54d6a5ce3c7f522174351426ca219d73929439bbdcece879dcd3337c4667c",
+    "AGENTS.md:408-423": "72cfd7bc3562eb791ce5a1f81c0f9ad28604a8fee91c1e53595cbbfb18a16535"
+  },
+  "live_tracked": {
+    "governance/forget_guard_rules.yaml": "9be9ba2ed32f1ad498416cade3cc67f8f3dc043af353ed431f7232a0ba20d6b2",
+    "scripts/czl_boot_inject.py": "f70bee580f3f15eb1605cc333ffca2ac7c941fea0dddf998df7cc989ed3cb522",
+    ".czl_subgoals.json:schema_fields": "614b678306257c89579ed3c5c6e130edc207b58dda3f500fe7e39d4206e6939b"
+  }
 }
