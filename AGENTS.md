@@ -33,6 +33,31 @@ Violation = communication ambiguity, degrades Board trust. Fulfill via Appendix 
 
 ---
 
+## Iron Rule 1.6: Unified Three-Framework Work Protocol (Constitutional, non-violable, Board 2026-04-15)
+
+**Trigger**: Board 2026-04-15 正式批 — 三框架工作法 (CIEU 5-Tuple + Article 11 + 12-layer) 合并为 constitutional 最高原则之一，**每时每刻由 every agent including CEO 必遵循**，代码层 hook enforce。canonical spec: `knowledge/shared/unified_work_protocol_20260415.md` (commit 2ab700c).
+
+Every agent, on receiving any task of non-trivial scope (non-trivial = multi-step, or ambiguous, or Board-facing, or writes to non-scratch paths), must:
+
+1. **CIEU 5-Tuple (度量层)** — emit at the top of response and as CIEU event:
+   - Y* (理想契约, verifiable predicate)
+   - Xt (current state, measured via tool_use not recall)
+   - U (action set, tool_use level, numbered)
+   - Yt+1 (predicted end state)
+   - Rt+1 (honest gap + zero-condition)
+
+2. **Article 11 (执行结构层)** — medium+ complexity tasks MUST spawn parallel sub-agents AND keep the main thread productive. Forbidden: dispatch and idle. Forbidden: strict-serial sub-agent wait.
+
+3. **12-layer flow (任务内部流程层)** — 0_INTENT → 1_reflect → 2_search → 3_plan → 4_exec → 5_mid_check → 6_pivot → 7_integration → 8_complete → 9_review → 10_self_eval → 11_board_approval → 12_writeback. Each layer emits a CIEU event tagged `CIEU_LAYER_{n}`.
+
+**Rt+1 = 0 criterion**: every claim backed by tool_result (Bash/Read/grep), commit hash verifiable, CIEU events count ≥ U step count, main-agent independent verify passed. **Prose-claim alone is a constitutional violation.**
+
+**Enforcement**: `CEO_AVOIDANCE_DRIFT` hook (Y-gov commit 4997d6c) 14-phrase block live. `BOARD_CHOICE_QUESTION_DRIFT` active. CIEU 5-Tuple-missing and 12-layer-marker-missing enforcement patches in flight (Leo/Maya).
+
+Violation = P0. This rule sits above operational rules but below Iron Rules 1 / 1.5 (deterministic enforcement + maturity transparency remain supreme).
+
+---
+
 ## Iron Rule 2: No Hardcoded Paths (Constitutional, non-violable)
 
 All file paths, ports, agent IDs, contract locations, and database paths must be passed via startup parameters or environment variables. No default path strings in code. All paths use pathlib for cross-platform compatibility (Windows + Mac + Linux).
