@@ -136,7 +136,7 @@ def extract_system_health():
     except Exception as e:
         result_dict["total_issues"] = f"check_failed: {e}"
 
-    # W5.1: Y* schema v2 compliance
+    # W5.1: Y* schema v2 compliance (W5.2: fixed to iterate criteria, not validate entire dict)
     try:
         import sys
         sys.path.insert(0, str(REPO_ROOT.parent / "Y-star-gov"))
@@ -145,13 +145,22 @@ def extract_system_health():
         czl_path = REPO_ROOT / ".czl_subgoals.json"
         if czl_path.exists():
             czl_data = json.loads(czl_path.read_text())
-            validation_result = validate_y_star_schema_v2(czl_data)
-            if validation_result.get("valid", False):
-                total_criteria = len(czl_data.get("y_star_criteria", []))
-                result_dict["y_star_schema_v2"] = f"{total_criteria}/{total_criteria} valid"
+            criteria = czl_data.get("y_star_criteria", [])
+            total = len(criteria)
+            valid_count = 0
+            all_errors = []
+
+            for criterion in criteria:
+                validation_result = validate_y_star_schema_v2(criterion)
+                if validation_result.get("valid", False):
+                    valid_count += 1
+                else:
+                    all_errors.extend(validation_result.get("errors", []))
+
+            if valid_count == total:
+                result_dict["y_star_schema_v2"] = f"{valid_count}/{total} valid"
             else:
-                error_count = len(validation_result.get("errors", []))
-                result_dict["y_star_schema_v2"] = f"INVALID ({error_count} errors)"
+                result_dict["y_star_schema_v2"] = f"{valid_count}/{total} valid ({len(all_errors)} errors)"
         else:
             result_dict["y_star_schema_v2"] = "no_campaign"
     except Exception as e:
