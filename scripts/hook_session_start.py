@@ -140,6 +140,22 @@ def _append_working_memory_snapshot():
     return ''
 
 
+def _append_world_state():
+    """Load WORLD_STATE.md (Mission Control - PRIORITY 0 - single file context)."""
+    world_state_path = REPO_ROOT / 'memory' / 'WORLD_STATE.md'
+    if not world_state_path.exists():
+        return ''
+
+    try:
+        content = world_state_path.read_text(encoding='utf-8').strip()
+        if content:
+            return '\n\n# WORLD_STATE — Mission Control\n' + content
+    except OSError:
+        pass
+
+    return ''
+
+
 def _append_yml_memories():
     """Load YML memories for agent (P0-B U2 - obligation-driven memory retrieval)."""
     import subprocess
@@ -176,7 +192,12 @@ def _main():
         text, _truncated, _spill = render_for_additional_context(
             packet, max_chars=9800)
 
-        # AMENDMENT-015 v2 LRS - Priority Order:
+        # AMENDMENT-015 v2 LRS + Mission Control - Priority Order:
+        # PRIORITY 0: WORLD_STATE (Mission Control - single file context for CEO)
+        world_state = _append_world_state()
+        if world_state:
+            text = world_state + '\n\n---\n\n' + text
+
         # C7 Conversation Replay (PRIORITY 1) - verbatim transcript
         replay = _append_conversation_replay()
         if replay:
