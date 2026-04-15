@@ -1,120 +1,31 @@
 {
-  "y_star_ref": "\u987e\u95ee 2026-04-15 enforcement \u786c\u5316 spec + reports/cto/v3_guardian_ecosystem_audit_20260415.md",
-  "campaign": "Campaign v3 \u2014 Enforcement Hardening + Guardian Micro-Integration (2026-04-15 PM)",
+  "y_star_ref": "test",
+  "campaign": "Test Campaign",
   "y_star_criteria": [
     {
-      "id": "W1",
-      "desc": "forget_guard_rules.yaml 4 \u6761 rule action: warn \u2192 deny",
-      "artifact_persistence": [
-        "commit_to_origin",
-        "referenced_in_covenant"
-      ],
-      "freshness_policy": "never_deprecate",
-      "owner_after_rt1": "eng-platform"
-    },
-    {
-      "id": "W2",
-      "desc": "hook_session_start.py \u52a0 Board \u5728\u7ebf\u68c0\u6d4b + \u8fdd\u89c4\u8ba1\u6570\u6ce8\u5165",
-      "artifact_persistence": [
-        "commit_to_origin",
-        "referenced_in_covenant"
-      ],
-      "freshness_policy": "never_deprecate",
-      "owner_after_rt1": "eng-platform"
-    },
-    {
-      "id": "W3",
-      "desc": "hook_client_labs.sh forget_guard async \u2192 sync deny \u8def\u5f84",
-      "artifact_persistence": [
-        "commit_to_origin"
-      ],
-      "freshness_policy": "never_deprecate",
-      "owner_after_rt1": "eng-platform"
-    },
-    {
-      "id": "W4",
-      "desc": "forget_guard_stress_test.py 10 case \u5168\u8fc7 10/10",
-      "artifact_persistence": [
-        "commit_to_origin"
-      ],
-      "freshness_policy": "tied_to_campaign",
-      "owner_after_rt1": "cto"
-    },
-    {
-      "id": "W5",
-      "desc": "Y* Schema v2 (artifact_persistence + freshness_policy + owner_after_rt1 \u5fc5\u586b)",
-      "artifact_persistence": [
-        "commit_to_origin",
-        "tagged_in_genesis"
-      ],
-      "freshness_policy": "never_deprecate",
-      "owner_after_rt1": "cto"
-    },
-    {
-      "id": "W6",
-      "desc": "Canonical Hash Guard (\u9a8c WORKING_STYLE \u00a711 \u00a712 + AGENTS.md Memory \u7ae0\u8282 hash)",
-      "artifact_persistence": [
-        "commit_to_origin",
-        "referenced_in_covenant"
-      ],
-      "freshness_policy": "never_deprecate",
-      "owner_after_rt1": "eng-platform"
-    },
-    {
-      "id": "W7",
-      "desc": "Prompt Gate \u6302 narrative_coherence_detector (check vs current_subgoal, warn \u7ea7)",
-      "artifact_persistence": [
-        "commit_to_origin"
-      ],
-      "freshness_policy": "never_deprecate",
-      "owner_after_rt1": "eng-governance"
+      "id": "Y1",
+      "description": "Test criterion without required fields"
     }
   ],
-  "current_subgoal": {
-    "id": "Phase-2 W5 (Y* Schema v2)",
-    "goal": "contract_lifecycle.py \u6269\u5c55 + 12 unit tests + E2E + .czl_subgoals.json dogfood",
-    "owner": "Ethan-CTO",
-    "agent_id": "cto",
-    "started": "2026-04-15T17:20Z",
-    "rt1_predicate": "12/12 tests pass + .czl_subgoals.json \u6bcf\u4e2a W \u542b\u4e09\u5b57\u6bb5 + commit hash"
-  },
+  "current_subgoal": null,
   "completed": [
     {
-      "id": "campaign_v3_w1",
-      "title": "W1 - forget_guard 4 rule warn\u2192deny",
-      "completed_at": "2026-04-15T16:08:36.079702",
-      "evidence": "Patch1\u5b8c\u6210\uff0c4 rule action=deny",
-      "maturity": "L3 TESTED"
+      "id": "W5.1",
+      "summary": "Y* schema v2 validator hooked into 3 production entry points (czl_new_campaign.sh / czl_boot_inject.py / generate_world_state.py). Invalid stubs now blocked at creation time. WORLD_STATE.md Section 4 reports N/M compliance.",
+      "duration_min": 45,
+      "maturity": "L2",
+      "commit": "0bc2a426",
+      "completed_at": "2026-04-15T18:51:24.916573"
     },
     {
-      "id": "campaign_v3_w2",
-      "title": "W2 - hook_session_start CEO\u884c\u4e3a\u7ea6\u675f\u6ce8\u5165",
-      "completed_at": "2026-04-15T16:08:36.079706",
-      "evidence": "Patch2\u5b8c\u6210\uff0c\u672c\u6708\u8fdd\u89c4\u6b21\u6570=16 \u663e\u793a",
-      "maturity": "L3 TESTED"
-    },
-    {
-      "id": "campaign_v3_w3",
-      "title": "W3 - hook_client_labs.sh async\u2192sync deny",
-      "completed_at": "2026-04-15T16:08:36.079706",
-      "evidence": "Patch3\u5b8c\u6210\uff0cforget_guard sync \u8c03\u7528\u751f\u6548",
-      "maturity": "L3 TESTED"
-    },
-    {
-      "id": "campaign_v3_w4",
-      "title": "W4 - stress test 10/10 pass",
-      "completed_at": "2026-04-15T16:08:36.079707",
-      "evidence": "10/10 (100%) \u5168\u90e8\u901a\u8fc7",
-      "maturity": "L3 TESTED"
+      "id": "W7.1",
+      "summary": "Prompt gate (check_ceo_output_vs_subgoal) hooked into PostToolUse. Drift score > 0.7 emits CIEU PROMPT_SUBGOAL_DRIFT event (warn-only, fail-open). Hook registered in .claude/settings.json.",
+      "duration_min": 90,
+      "maturity": "L2",
+      "commit": "8b7a3a0d",
+      "completed_at": "2026-04-15T18:51:24.916576"
     }
   ],
-  "remaining": [
-    {
-      "id": "Phase-2",
-      "owner": "Ethan-CTO",
-      "goal": "W5-W7 Guardian micro-integration (~5.5h)"
-    }
-  ],
-  "rt1_status": "4/7 \u2014 Phase 1 \u5b8c\u6210\uff0cPhase 2 W5 \u8fdb\u884c\u4e2d",
-  "boot_injection_spec": "\u6cbf\u7528 v0.1 \u2014 Y* / current / completed summaries \u4e09\u5757"
+  "remaining": [],
+  "rt1_status": "0/0"
 }
