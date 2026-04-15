@@ -1,3 +1,7 @@
+---
+lesson_id: 0a8040af-8423-4749-8bf8-d9864aedf891
+---
+
 # Pharma GxP ALCOA+ Domain Pack Deep Dive — 12-Layer Learning Report
 
 **Agent:** Jordan Lee (Domains Engineer)  
