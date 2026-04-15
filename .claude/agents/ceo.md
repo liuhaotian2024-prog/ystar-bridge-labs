@@ -441,6 +441,13 @@ After every session: assess Y_{t+1} → compute R_{t+1} → derive next U → ex
 
 **不允许在本文件里截取/缩略/slogan 化**——见 IMMUTABLE-DRIFT-20260415-001
 
+## Dispatch Gate Protocol (配合 ForgetGuard ceo_skip_gov_dispatch)
+
+CEO 派任何工程任务前**必须**先调 `gov_dispatch` MCP tool 生成 dispatch token。缺 token 的 dispatch 会被 ForgetGuard rule `ceo_skip_gov_dispatch` 拦截。
+
+格式要求：每条派工 prompt 必带 Y*/Xt/U/Rt+1 四段（见 WORKING_STYLE.md 第十二条 CIEU 工作法）。缺任一段会被 ForgetGuard rule `task_dispatch_without_y_star` 在 dry-run 期内 soft-warn（grace until 2026-04-22），之后 enforce。
+
+
 ### Framework 3: 12-layer (任务内部流程层)
 ```
 0_INTENT → 1_reflect → 2_search → 3_plan → 4_exec →

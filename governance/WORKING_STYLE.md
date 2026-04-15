@@ -886,6 +886,66 @@ Board 2026-04-10 Autonomous Mission + 伦理边界 directive。
 
 ---
 
+## 第十二条：CIEU 任务工作法 (Board Iron Rule 1.6, 2026-04-15)
+
+**适用范围**：所有 agent 所有任务，无例外。取代"sub-agent 说 done 就信"的旧 pattern。
+
+### 12.1 CIEU 5-Tuple 任务格式（强制）
+
+接到任何任务，回复顶部必须明文：
+
+- **Y\*** (理想契约, verifiable predicate) — 本任务完成的具体标准
+- **Xt** (当前态, tool_use 实测, 非印象) — 当前真实状态，必须附 tool call 证据
+- **U** (行动集, 1..N) — 分解为 U1, U2, ..., Un 的离散步骤
+- **Yt+1** (预测终态) — 执行完 U 后的预测状态
+- **Rt+1** (honest gap + 归零条件) — Y\* 与 Yt+1 的距离，Rt+1=0 的判据是什么
+
+**示例 (CEO)**:
+```
+Y* = Board决策clarity + CTO派单对齐 + 公司战略Rt+1 ≤ 0.2
+Xt = 当前DISPATCH.md有3条未分工任务 (tool_result: grep TODO DISPATCH.md)
+U = U1派CTO审技术可行性 + U2写OKR更新 + U3汇报Board
+Yt+1 = DISPATCH清空 + OKR更新commit + Board知晓
+Rt+1 = 0 当且仅当 (a) DISPATCH.md无TODO (b) OKR.md git diff存在 (c) Board回复确认
+```
+
+### 12.2 逐 U 验证（禁止跳步声称完成）
+
+每完成一个 U 步骤，必须 print:
+
+```
+[Rt+1 CHECK] Y*-N: [✓/✗]
+  Evidence: [tool_result citation or commit hash or file path]
+  Gap: [如 ✗, 说明还缺什么]
+```
+
+**禁止** self-claim done。必须有独立证据（git commit hash / file diff / tool output / CIEU event ID）。
+
+### 12.3 完成判据（Rt+1=0 Iron Rule）
+
+任务声称"完成"必须满足：
+
+1. 每个 claim 附 tool_result evidence
+2. Commit hash 可 verify (如涉及代码/文档)
+3. CIEU events ≥ N (N = U 步数)
+4. Main agent (CEO/CTO/Board) 独立 verify 通过
+
+**不满足** → 任务状态回退到 PENDING，重新执行。
+
+### 12.4 ForgetGuard 规则 (task_dispatch_without_y_star)
+
+任何 task dispatch prompt 缺失 `Y*` field 时，ForgetGuard 触发 DENY + 提示补全 5-tuple。
+
+防止 agent 绕过 CIEU 任务格式，回到"印象驱动执行"。
+
+### 来源 (第十二条)
+
+Board 2026-04-15 Constitutional Directive (AGENTS.md Iron Rule 1.6 + Unified Work Protocol)。
+配套脚本：`knowledge/shared/unified_work_protocol_20260415.md`。
+ForgetGuard 规则：`ystar/governance/forget_guard_rules.yaml` 中 `task_dispatch_without_y_star`。
+
+---
+
 ## 团队角色卡 · 官方身份 · 2026-04-06确立
 
 | 职位 | 全名 | 性别 | 形象 |

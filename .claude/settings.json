@@ -31,6 +31,18 @@
           }
         ]
       }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_session_end.py",
+            "timeout": 5000
+          }
+        ]
+      }
     ]
   }
 }

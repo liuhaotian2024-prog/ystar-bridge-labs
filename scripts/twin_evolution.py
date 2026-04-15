@@ -197,12 +197,17 @@ def extract_board_values() -> dict:
             # Board confirmed a decision - extract the confirmation rationale
             try:
                 params = json.loads(params_json) if params_json else {}
-                principle = params.get("confirmation_reason") or params.get("rationale")
-                if not principle and result_json:
-                    result = json.loads(result_json)
-                    principle = result.get("rationale") or result.get("reason")
-                if not principle and task_desc:
-                    principle = task_desc
+                # Expanded fallback chain to cover all Board event metadata fields
+                principle = (
+                    params.get("confirmation_reason") or
+                    params.get("rationale") or
+                    (json.loads(result_json).get("rationale") if result_json else None) or
+                    (json.loads(result_json).get("reason") if result_json else None) or
+                    task_desc or
+                    params.get("notes") or  # Board INTENT_CONFIRMED typically uses notes field
+                    params.get("status") or
+                    params.get("decision")
+                )
             except json.JSONDecodeError:
                 pass
 

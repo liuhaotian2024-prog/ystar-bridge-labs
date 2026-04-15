@@ -13,6 +13,8 @@ Always exits 0 (fail-open), emits WIRE_BROKEN CIEU on mismatches
 import sys
 import json
 import subprocess
+import time
+import uuid
 from pathlib import Path
 from datetime import datetime
 
@@ -24,19 +26,39 @@ CIEU_DB = WORKSPACE_ROOT / ".ystar_cieu.db"
 
 
 def emit_cieu(event_type, details):
-    """Emit CIEU event to audit log"""
+    """Emit CIEU event to audit log using proper CIEU schema"""
     try:
         import sqlite3
+        import time
+        import uuid
+
         conn = sqlite3.connect(CIEU_DB)
         cursor = conn.cursor()
+
+        # Use proper CIEU schema (cieu_events table)
         cursor.execute("""
-            INSERT INTO cieu_events (timestamp, event_type, details)
-            VALUES (?, ?, ?)
-        """, (datetime.now().isoformat(), event_type, details))
+            INSERT INTO cieu_events (
+                event_id, seq_global, created_at, session_id, agent_id,
+                event_type, decision, passed, task_description
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            str(uuid.uuid4()),                      # event_id
+            int(time.time() * 1_000_000),           # seq_global (microseconds)
+            time.time(),                            # created_at (Unix timestamp)
+            "wire_integrity_cron",                  # session_id
+            "platform",                             # agent_id
+            event_type,                             # event_type
+            "escalate",                             # decision
+            0,                                      # passed (0=failed)
+            details                                 # task_description (JSON string)
+        ))
         conn.commit()
         conn.close()
-    except Exception:
-        pass  # Fail-open
+    except Exception as e:
+        # Fail-open but log to stderr for debugging
+        print(f"[CIEU EMIT FAILED] {e}", file=sys.stderr)
+        pass
 
 
 def check_hook_wiring():

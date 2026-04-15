@@ -140,6 +140,31 @@ def _append_working_memory_snapshot():
     return ''
 
 
+def _append_yml_memories():
+    """Load YML memories for agent (P0-B U2 - obligation-driven memory retrieval)."""
+    import subprocess
+
+    boot_script = REPO_ROOT / 'scripts' / 'session_boot_yml.py'
+    if not boot_script.exists():
+        return ''
+
+    try:
+        result = subprocess.run(
+            [sys.executable, str(boot_script)],
+            cwd=str(REPO_ROOT),
+            capture_output=True,
+            text=True,
+            timeout=15
+        )
+
+        if result.returncode == 0 and result.stdout.strip():
+            return '\n\n## YML Memory Retrieval\n' + result.stdout.strip()
+    except (subprocess.TimeoutExpired, subprocess.SubprocessError, OSError):
+        pass
+
+    return ''
+
+
 def _main():
     try:
         try: _ = json.loads(sys.stdin.read() or '{}')
@@ -161,6 +186,11 @@ def _main():
         snapshot = _append_working_memory_snapshot()
         if snapshot:
             text += '\n\n# Working Memory Snapshot' + snapshot
+
+        # YML Memory Retrieval (PRIORITY 2 - obligation-driven)
+        yml = _append_yml_memories()
+        if yml:
+            text += yml
 
         # Morning brief (lowest priority)
         morning = _append_morning_brief()

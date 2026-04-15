@@ -405,6 +405,23 @@ Permissions at each level are strictly less than or equal to the level above (Y*
 
 ---
 
+## Memory & Continuity Systems (P2-I, 2026-04-15)
+
+Agent working memory 分多层，**每层有独立职责不要混**。顺序 = Boot 时载入优先级。
+
+1. **`.czl_goal.json` / `priority_brief.md`** — Y\* 层：当前 campaign 的总目标 + 11 条 Y\*-criteria。48h stale → boot FAIL。
+2. **`.czl_subgoals.json`** — HiAgent 子目标树（2026-04-15 落地）：`current_subgoal` 权威锚点 + `completed[].summary` 压缩摘要 + `remaining[]` 下一步。替代 boot 时 obligations dump。
+3. **`.ystar_memory.db` (YML)** — 长期记忆：decision / gap / knowledge / lesson / obligation / task_context 六类，`session_boot_yml.py` 载 top-N。当前 292 lessons / 740 knowledge。
+4. **CIEU event log** — audit/因果链：不是 working memory，不为"记住"而记，为"可追溯"而记。ingest pipeline (U3 落) 自动桥到 YML 做消化。
+5. **LRS (Labs Role Schema)** — 角色定义层：`.claude/agents/*.md`，boot-only，session 中期改动不生效。
+6. **twin_evolution** — Board 价值观/指令 extract：`scripts/twin_evolution.py --mode extract-values` 从 CIEU INTENT 事件扫 `params_json.notes` 等字段生成 board_value lessons。
+7. **wisdom_package / working_memory_snapshot** — session end 产出的浓缩体；U3 已迁 YML，原件归 `memory/archive/`。
+
+**不许**：跳过第 2 层直接用 obligations list（source-of-truth drift 主因，见 IMMUTABLE-DRIFT-20260415-001 同日教训）。
+**不许**：把 CIEU 当 working memory 直接灌 context（超长任务 35min 后 agent 成功率雪崩的根因，Board 2026-04-15 catch）。
+
+---
+
 ## CIEU Liveness Check (Board Directive #024 — Constitutional)
 
 **Every agent session must verify CIEU is recording. Constitutional. Cannot be overridden.**
