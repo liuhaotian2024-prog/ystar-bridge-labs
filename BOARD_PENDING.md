@@ -46,3 +46,16 @@ Agent tool 调用的 persona (Sofia/Marco/Ryan/Zara 等) 必须在 `.claude/agen
 ---
 
 ## End
+
+---
+
+## 2026-04-15 新增 — K9 Daily Patrol 升级方案
+
+详见 `reports/k9_upgrade_daily_patrol_spec_20260415.md`. 
+
+**Board 需 approve**:
+- K9 自主权限边界 (见 spec §3): 可做 git restore / rm artifact / 只读扫; 禁 rm -rf / history rewrite / rsync --delete / 改 immutable paths
+- 每日巡逻 8 任务清单 (P1-P8)
+- CTO 升级派单 (Leo schema / Maya rule 6-10 / Jordan digest / Samantha cron / Ethan e2e)
+
+你同意即派 Ethan 领队升级.
