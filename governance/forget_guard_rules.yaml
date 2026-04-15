@@ -2,6 +2,10 @@
 # Institutional memory enforcement via warn-with-recipe pattern
 # Schema version: 1.0
 # Last updated: 2026-04-13
+#
+# ⚠️ DEPRECATED: Authoritative source is Y-star-gov/ystar/governance/forget_guard_rules.yaml
+# This file serves as ystar-company dogfood configuration only.
+# All new rules and schema changes must be added to Y-star-gov first.
 
 schema_version: "1.0"
 default_action: warn  # warn | deny (future)
