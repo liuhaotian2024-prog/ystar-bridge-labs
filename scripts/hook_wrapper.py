@@ -135,6 +135,32 @@ try:
             os._exit(1)  # Hard kill — do NOT let outer catch-all convert to allow
         sys.exit(0)
 
+    # ── Telegram event trigger (Board 2026-04-15, Secretary-owned) ───────
+    # Best-effort: never block on failure. Scans Bash git commits for
+    # MILESTONE_SHIPPED markers → push to @YstarBridgeLabs.
+    try:
+        if payload.get("tool_name") == "Bash":
+            cmd = (payload.get("tool_input") or {}).get("command", "") or ""
+            if "git commit" in cmd and "[L4 SHIPPED]" in cmd:
+                # fire-and-forget, do not await; do not block tool call
+                import subprocess
+                title = cmd.split("[L4 SHIPPED]", 1)[1][:120].strip().strip('"').strip("'")
+                subprocess.Popen(
+                    [
+                        "/usr/bin/python3",
+                        os.path.join(os.path.dirname(__file__), "telegram_notify.py"),
+                        "event",
+                        "MILESTONE_SHIPPED",
+                        title or "(no title)",
+                        "L4 ship detected via hook_wrapper",
+                    ],
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL,
+                    start_new_session=True,
+                )
+    except Exception as _tg_exc:
+        log(f"[TG-EVENT] skipped: {_tg_exc}")
+
     # Output ONLY valid JSON to stdout
     sys.stdout.write(json.dumps(result))
 

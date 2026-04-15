@@ -1,27 +1,17 @@
 #!/usr/bin/env python3
 """Secretary: Daily task reminder → Telegram.
-Runs via crontab at 8:50 Beijing time (0:50 UTC)."""
-import os, sys, json, urllib.request, urllib.parse, time
+Runs via crontab at 06:00 America/New_York (EST/EDT auto-adjust).
 
-def load_secrets():
-    with open(os.path.expanduser("~/.gov_mcp_secrets.env")) as f:
-        for line in f:
-            line = line.strip()
-            if line and not line.startswith("#") and "=" in line:
-                k, v = line.split("=", 1)
-                os.environ.setdefault(k.strip(), v.strip())
+Board 2026-04-15 directive: time target = 美东 06:00 (not 北京 08:50).
+Delivery path unified via scripts/telegram_notify.send_daily (3-channel module).
+"""
+import os, sys, time
 
-def send_telegram(text):
-    load_secrets()
-    token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
-    url = f"https://api.telegram.org/bot{token}/sendMessage"
-    data = urllib.parse.urlencode({"chat_id": "@YstarBridgeLabs", "text": text}).encode()
-    try:
-        req = urllib.request.Request(url, data=data)
-        with urllib.request.urlopen(req, timeout=10) as resp:
-            return json.loads(resp.read()).get("ok", False)
-    except:
-        return False
+# Make scripts/ importable when invoked from crontab
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_ROOT = os.path.dirname(_HERE)
+sys.path.insert(0, os.path.join(_ROOT, "scripts"))
+from telegram_notify import send_daily  # noqa: E402
 
 def read_tasks():
     tasks_file = os.path.expanduser(
@@ -49,12 +39,19 @@ def check_temp_laws():
 
 
 def main():
-    # Use ET timezone
+    # Use ET timezone (Board 2026-04-15: target send time = 06:00 America/New_York)
     os.environ['TZ'] = 'America/New_York'
     try:
         time.tzset()
     except AttributeError:
         pass  # Windows doesn't have tzset
+
+    # Gate: only send at 06:XX ET unless --force or --dry-run given.
+    # Cron runs this hourly; script self-gates → DST-safe without CRON_TZ.
+    et_hour = int(time.strftime("%H"))
+    if et_hour != 6 and "--force" not in sys.argv and "--dry-run" not in sys.argv:
+        print(f"[daily_reminder] skip: ET hour={et_hour} (target=6)")
+        return
 
     today = time.strftime("%Y-%m-%d %H:%M ET")
     day_num = (int(time.time()) - 1742961600) // 86400 + 1  # Day 1 = March 26 UTC
@@ -96,7 +93,8 @@ def main():
 
 — Secretary Agent · Y*gov"""
 
-    ok = send_telegram(msg)
+    dry = "--dry-run" in sys.argv
+    ok = send_daily(msg, dry_run=dry)
     print(f"{'Sent' if ok else 'Failed'}: {today}")
 
 if __name__ == "__main__":
