@@ -43,6 +43,37 @@
           }
         ]
       }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py",
+            "timeout": 3000
+          },
+          {
+            "type": "command",
+            "command": "python3 /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper_observe.py",
+            "timeout": 3000,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_prompt_gate.py",
+            "timeout": 3000,
+            "async": true
+          }
+        ]
+      }
     ]
   }
 }
