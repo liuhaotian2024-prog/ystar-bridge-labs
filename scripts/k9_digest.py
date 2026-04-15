@@ -18,11 +18,21 @@ Severity levels:
 
 import argparse
 import json
+import os
 import re
+import sys
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Tuple
+
+# [Gemma Phase 1] Import gemma_client for LLM-powered summarization
+sys.path.insert(0, str(Path(__file__).parent))
+try:
+    from gemma_client import generate as gemma_generate, fallback_to_claude
+except ImportError:
+    gemma_generate = None
+    fallback_to_claude = None
 
 
 # Severity classification rules
@@ -149,6 +159,67 @@ def summarize_top_violations(violations: List[Dict], limit: int = 5) -> List[Tup
     return top_items
 
 
+def _generate_gemma_summary(violations: List[Dict], cieu_events: List[Dict], date_str: str) -> str:
+    """
+    Generate executive summary via Gemma (first integration point for Gemma Phase 1).
+
+    Fallback to Claude if Gemma fails or unavailable.
+    Fallback to manual template if both LLMs fail.
+    """
+    if not gemma_generate:
+        return _fallback_manual_summary(violations, cieu_events)
+
+    # Build prompt for Gemma
+    by_severity = defaultdict(int)
+    for v in violations:
+        by_severity[v["severity"]] += 1
+
+    prompt = f"""Summarize this K9 daily patrol report in 2-3 sentences:
+
+Date: {date_str}
+Total violations: {len(violations)}
+Breakdown: P0={by_severity.get('P0', 0)}, P1={by_severity.get('P1', 0)}, P2={by_severity.get('P2', 0)}, P3={by_severity.get('P3', 0)}
+CIEU events: {len(cieu_events)}
+
+Write a concise executive summary focusing on actionable priorities. Start with "Today's K9 patrol..."
+"""
+
+    try:
+        result = gemma_generate(prompt, max_tokens=200)
+        if result.get("error") or not result.get("text"):
+            # Gemma failed, fallback to Claude
+            if fallback_to_claude:
+                claude_result = fallback_to_claude(prompt, max_tokens=200)
+                if not claude_result.get("error") and claude_result.get("text"):
+                    return claude_result["text"]
+            # Both failed, use manual template
+            return _fallback_manual_summary(violations, cieu_events)
+
+        return result["text"]
+    except Exception:
+        # Any exception, use manual template
+        return _fallback_manual_summary(violations, cieu_events)
+
+
+def _fallback_manual_summary(violations: List[Dict], cieu_events: List[Dict]) -> str:
+    """Manual template when LLMs unavailable."""
+    by_severity = defaultdict(int)
+    for v in violations:
+        by_severity[v["severity"]] += 1
+
+    p0 = by_severity.get('P0', 0)
+    p1 = by_severity.get('P1', 0)
+
+    if p0 > 0:
+        priority = f"CRITICAL: {p0} session-breaking risks detected"
+    elif p1 > 0:
+        priority = f"HIGH: {p1} data integrity issues detected"
+    else:
+        priority = "No critical issues"
+
+    return f"Today's K9 patrol found {len(violations)} violations across the codebase. {priority}. {len(cieu_events)} CIEU events recorded."
+
+
 def generate_digest(
     audit_path: Path,
     cieu_path: Path,
@@ -158,6 +229,9 @@ def generate_digest(
     """Generate daily K9 digest report."""
     violations = parse_repo_audit(audit_path)
     cieu_events = parse_cieu_log(cieu_path)
+
+    # [Gemma Phase 1 integration point] Generate executive summary via Gemma
+    executive_summary = _generate_gemma_summary(violations, cieu_events, date_str)
 
     # Summary stats
     total_violations = len(violations)
@@ -177,6 +251,11 @@ def generate_digest(
     with open(output_path, "w") as f:
         f.write(f"# K9 Daily Digest — {date_str}\n\n")
         f.write(f"**Generated**: {datetime.now().isoformat()}\n\n")
+
+        # [Gemma Phase 1] Executive summary (LLM-generated)
+        f.write("## Executive Summary\n\n")
+        f.write(f"{executive_summary}\n\n")
+        f.write("_(AI-generated via Gemma 4 / Claude fallback)_\n\n")
 
         f.write("## Summary\n\n")
         f.write(f"- **Total violations**: {total_violations}\n")

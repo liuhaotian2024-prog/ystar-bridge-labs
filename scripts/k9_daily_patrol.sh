@@ -4,11 +4,12 @@
 # Board approval: 2026-04-15 K9 v2 Task 4 (Samantha as Secretary)
 # Spec: reports/k9_upgrade_daily_patrol_spec_20260415.md
 #
-# 4 steps:
+# 5 steps:
 #   1) k9_cieu_export   — export last 24h CIEU events to K9 JSONL
 #   2) k9_repo_audit    — 3-repo residue scan (rule 1-5, rule 6-10 pending)
-#   3) k9_digest        — summarize top-5 actionable → reports/k9_daily/{YYYYMMDD}.md
-#   4) BOARD_PENDING push — append link under "K9 Daily Findings" section
+#   3) quality_compare  — Gemma A/B nightly (Samantha 871b1b9e)
+#   4) k9_digest        — summarize top-5 actionable → reports/k9_daily/{YYYYMMDD}.md
+#   5) BOARD_PENDING push — append link under "K9 Daily Findings" section
 #
 # Fail-policy: soft-fail per step (log + continue). Final digest path always written.
 
@@ -54,8 +55,18 @@ else
     log "  SKIP: k9_repo_audit.py missing at $K9_DIR"
 fi
 
-# Step 3: digest — synthesize top-5 actionable
-log "Step 3/4 — digest → $DIGEST"
+# Step 3: Gemma quality nightly (NEW - Samantha 871b1b9e)
+log "Step 3/5 — quality_compare.py (Gemma A/B nightly)"
+if [ -f "$YSTAR_DIR/scripts/quality_compare.py" ]; then
+    /usr/bin/python3 "$YSTAR_DIR/scripts/quality_compare.py" >> "$LOG" 2>&1 \
+        && log "  quality compare done" \
+        || log "  WARN: quality_compare failed (non-fatal)"
+else
+    log "  SKIP: quality_compare.py missing"
+fi
+
+# Step 4: digest — synthesize top-5 actionable
+log "Step 4/5 — digest → $DIGEST"
 {
     echo "# K9 Daily Patrol — $DATE"
     echo ""
@@ -99,8 +110,8 @@ log "Step 3/4 — digest → $DIGEST"
 } > "$DIGEST"
 log "  digest written ($(wc -l < "$DIGEST") lines)"
 
-# Step 4: BOARD_PENDING push
-log "Step 4/4 — BOARD_PENDING append"
+# Step 5: BOARD_PENDING push
+log "Step 5/5 — BOARD_PENDING append"
 if [ -f "$BOARD_PENDING" ]; then
     if ! grep -q "^## K9 Daily Findings" "$BOARD_PENDING"; then
         log "  section header missing — skipped (bootstrap handled out-of-band by Samantha)"
