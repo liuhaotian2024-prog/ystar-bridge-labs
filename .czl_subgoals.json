@@ -1,52 +1,120 @@
 {
-  "y_star_ref": "reports/cto/hiagent_czl_integration_design_20260415.md + U6 WIRE_BROKEN CIEU 9 issues",
-  "campaign": "Mission Control + v3 Guardian Audit (2026-04-15 Board授权双线)",
+  "y_star_ref": "\u987e\u95ee 2026-04-15 enforcement \u786c\u5316 spec + reports/cto/v3_guardian_ecosystem_audit_20260415.md",
+  "campaign": "Campaign v3 \u2014 Enforcement Hardening + Guardian Micro-Integration (2026-04-15 PM)",
   "y_star_criteria": [
-    "V1 scripts/czl_boot_inject.py ≤80 行存在 + 读 .czl_subgoals.json 输出 3 块",
-    "V2 governance_boot.sh 加 STEP 8.8 调 czl_boot_inject.py + 删 STEP 9 obligations dump",
-    "V3 _hook_daemon.py 加 _compress_subgoal_on_completion() 方法 + Haiku 压缩可 fail-open",
-    "V4 session_close_yml.py trigger compression",
-    "V5 czl_new_campaign.sh scaffolding (archive + stub 生成)",
-    "V6 HiAgent impl E2E: 造一个假 U → mark complete → 观察 .czl_subgoals.json summary 自动写入 + boot 注入精简",
-    "V7 hook_wrapper.py 在 settings.json 注册",
-    "V8 hook_wrapper_observe.py 在 settings.json 注册",
-    "V9 role_mandate.yaml 在 forget_guard_rules.yaml 引用",
-    "V10 inter_role_sop.yaml 在 forget_guard_rules.yaml 引用",
-    "V11 event_workflow.yaml 在 forget_guard_rules.yaml 引用",
-    "V12 escape_hatch.yaml 在 forget_guard_rules.yaml 引用",
-    "V13 project_procedure.yaml 在 forget_guard_rules.yaml 引用",
-    "V14 constitutional.yaml 在 forget_guard_rules.yaml 引用",
-    "V15 rapid_matrix.yaml 在 forget_guard_rules.yaml 引用",
-    "V16 wire_integrity_check.py 再跑 → WIRE_BROKEN event total_issues = 0"
-  ],
-  "current_subgoal": null,
-  "completed": [
     {
-      "id": "B1 (Ryan 9-wire)",
-      "goal": "V7-V16 hook/whitelist wire repair",
-      "summary": "settings.json PreToolUse 加 hook_wrapper.py + hook_wrapper_observe.py (async timeout 3000ms)；forget_guard_rules.yaml 加 whitelists 段列 7 个 stem (role_mandate/inter_role_sop/event_workflow/escape_hatch/project_procedure/constitutional/rapid_matrix)；wire_integrity_check.py re-run 输出 '[OK] All wires intact' total_issues=0。12 min vs 45min budget (73% 节约)，10/10 V 一次过 no V-N.1 补丁，0 Board 打扰 0 daemon 锁。[L3]",
-      "duration_min": 12
+      "id": "W1",
+      "desc": "forget_guard_rules.yaml 4 \u6761 rule action: warn \u2192 deny",
+      "artifact_persistence": [
+        "commit_to_origin",
+        "referenced_in_covenant"
+      ],
+      "freshness_policy": "never_deprecate",
+      "owner_after_rt1": "eng-platform"
     },
     {
-      "id": "A1 (Ethan HiAgent V1-V6)",
-      "goal": "HiAgent impl V1-V6 (≤3h)",
-      "summary": "czl_boot_inject.py (78 lines, 17-line output vs 80-line old dump); governance_boot.sh STEP 8.8 + 删 STEP 9 (492→472 lines); _hook_daemon.py _compress_subgoal_on_completion() + Haiku LLM压缩 + fail-open; session_close_yml.py trigger via socket; czl_new_campaign.sh scaffolder (archive + stub); E2E TEST_U 验证 completed[] 自动写入. 2 commits (dcdb3023 + Y*gov 02487312). 78% boot dump 精简. [L3-IMPL]",
-      "duration_min": 45
+      "id": "W2",
+      "desc": "hook_session_start.py \u52a0 Board \u5728\u7ebf\u68c0\u6d4b + \u8fdd\u89c4\u8ba1\u6570\u6ce8\u5165",
+      "artifact_persistence": [
+        "commit_to_origin",
+        "referenced_in_covenant"
+      ],
+      "freshness_policy": "never_deprecate",
+      "owner_after_rt1": "eng-platform"
     },
     {
-      "id": "A (Mission Control)",
-      "goal": "memory/WORLD_STATE.md auto-aggregate 5 tool outputs, crontab 30min, hook_session_start注入",
-      "summary": "generate_world_state.py (150行, 7段输出) + crontab entry '*/30 cd repo && python3 scripts/generate_world_state.py' + hook_session_start.py _append_world_state() PRIORITY 0注入. WORLD_STATE.md首版生成含10岗位状态+campaign进度+系统健康. 已知Rt: CIEU 24h query失败(表名不匹配), wire_integrity未输出total_issues到stdout, Board Pending过长需截断. E2E boot验证待下session. [L3-IMPL]",
-      "duration_min": 35
+      "id": "W3",
+      "desc": "hook_client_labs.sh forget_guard async \u2192 sync deny \u8def\u5f84",
+      "artifact_persistence": [
+        "commit_to_origin"
+      ],
+      "freshness_policy": "never_deprecate",
+      "owner_after_rt1": "eng-platform"
     },
     {
-      "id": "B (v3 Guardian审计)",
-      "goal": "3目标×(reuse vs新造) ratio + 结论是否上campaign",
-      "summary": "6组件摘要(metalearning/contract_lifecycle/forget_guard/narrative_coherence/residual_loop/retro_store) + 3目标映射: Y*Schema v2 85%复用(45新行), Hash Guard 64%(90行), Prompt Gate 81%(75行). 总ratio 22%新造 < 30%阈值 → 结论不上v3 campaign, 改3微积分派Leo/Maya/Ryan 5.5h完成. 报告800字8节. [L4-DECISION]",
-      "duration_min": 25
+      "id": "W4",
+      "desc": "forget_guard_stress_test.py 10 case \u5168\u8fc7 10/10",
+      "artifact_persistence": [
+        "commit_to_origin"
+      ],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "cto"
+    },
+    {
+      "id": "W5",
+      "desc": "Y* Schema v2 (artifact_persistence + freshness_policy + owner_after_rt1 \u5fc5\u586b)",
+      "artifact_persistence": [
+        "commit_to_origin",
+        "tagged_in_genesis"
+      ],
+      "freshness_policy": "never_deprecate",
+      "owner_after_rt1": "cto"
+    },
+    {
+      "id": "W6",
+      "desc": "Canonical Hash Guard (\u9a8c WORKING_STYLE \u00a711 \u00a712 + AGENTS.md Memory \u7ae0\u8282 hash)",
+      "artifact_persistence": [
+        "commit_to_origin",
+        "referenced_in_covenant"
+      ],
+      "freshness_policy": "never_deprecate",
+      "owner_after_rt1": "eng-platform"
+    },
+    {
+      "id": "W7",
+      "desc": "Prompt Gate \u6302 narrative_coherence_detector (check vs current_subgoal, warn \u7ea7)",
+      "artifact_persistence": [
+        "commit_to_origin"
+      ],
+      "freshness_policy": "never_deprecate",
+      "owner_after_rt1": "eng-governance"
     }
   ],
-  "remaining": [],
-  "rt1_status": "20/20 — Mission Control shipped + v3 Guardian 收手决策完成",
-  "boot_injection_spec": "沿用 v0.1 — Y* / current / completed summaries 三块"
+  "current_subgoal": {
+    "id": "Phase-2 W5 (Y* Schema v2)",
+    "goal": "contract_lifecycle.py \u6269\u5c55 + 12 unit tests + E2E + .czl_subgoals.json dogfood",
+    "owner": "Ethan-CTO",
+    "agent_id": "cto",
+    "started": "2026-04-15T17:20Z",
+    "rt1_predicate": "12/12 tests pass + .czl_subgoals.json \u6bcf\u4e2a W \u542b\u4e09\u5b57\u6bb5 + commit hash"
+  },
+  "completed": [
+    {
+      "id": "campaign_v3_w1",
+      "title": "W1 - forget_guard 4 rule warn\u2192deny",
+      "completed_at": "2026-04-15T16:08:36.079702",
+      "evidence": "Patch1\u5b8c\u6210\uff0c4 rule action=deny",
+      "maturity": "L3 TESTED"
+    },
+    {
+      "id": "campaign_v3_w2",
+      "title": "W2 - hook_session_start CEO\u884c\u4e3a\u7ea6\u675f\u6ce8\u5165",
+      "completed_at": "2026-04-15T16:08:36.079706",
+      "evidence": "Patch2\u5b8c\u6210\uff0c\u672c\u6708\u8fdd\u89c4\u6b21\u6570=16 \u663e\u793a",
+      "maturity": "L3 TESTED"
+    },
+    {
+      "id": "campaign_v3_w3",
+      "title": "W3 - hook_client_labs.sh async\u2192sync deny",
+      "completed_at": "2026-04-15T16:08:36.079706",
+      "evidence": "Patch3\u5b8c\u6210\uff0cforget_guard sync \u8c03\u7528\u751f\u6548",
+      "maturity": "L3 TESTED"
+    },
+    {
+      "id": "campaign_v3_w4",
+      "title": "W4 - stress test 10/10 pass",
+      "completed_at": "2026-04-15T16:08:36.079707",
+      "evidence": "10/10 (100%) \u5168\u90e8\u901a\u8fc7",
+      "maturity": "L3 TESTED"
+    }
+  ],
+  "remaining": [
+    {
+      "id": "Phase-2",
+      "owner": "Ethan-CTO",
+      "goal": "W5-W7 Guardian micro-integration (~5.5h)"
+    }
+  ],
+  "rt1_status": "4/7 \u2014 Phase 1 \u5b8c\u6210\uff0cPhase 2 W5 \u8fdb\u884c\u4e2d",
+  "boot_injection_spec": "\u6cbf\u7528 v0.1 \u2014 Y* / current / completed summaries \u4e09\u5757"
 }
