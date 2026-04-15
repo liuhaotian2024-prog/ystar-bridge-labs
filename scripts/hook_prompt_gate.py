@@ -31,12 +31,24 @@ def main():
         # For MVP: read from .ystar_last_board_msg as proxy (CEO writes there on each reply)
         last_msg_file = REPO_ROOT / "scripts" / ".ystar_last_board_msg"
         if not last_msg_file.exists():
-            log("No .ystar_last_board_msg — skipping check")
+            # Silent skip — this is expected, .ystar_last_board_msg only written on Board interaction
             sys.stdout.write(json.dumps({"action": "allow"}))
             sys.stdout.flush()
             sys.exit(0)
 
-        reply_text = last_msg_file.read_text(encoding="utf-8")
+        try:
+            reply_text = last_msg_file.read_text(encoding="utf-8")
+        except Exception:
+            # File exists but unreadable — skip silently
+            sys.stdout.write(json.dumps({"action": "allow"}))
+            sys.stdout.flush()
+            sys.exit(0)
+
+        # Skip if reply is empty or too short (likely not a real CEO reply)
+        if not reply_text or len(reply_text.strip()) < 50:
+            sys.stdout.write(json.dumps({"action": "allow"}))
+            sys.stdout.flush()
+            sys.exit(0)
 
         # Import Y*gov narrative detector
         sys.path.insert(0, str(REPO_ROOT.parent / "Y-star-gov"))
@@ -53,14 +65,18 @@ def main():
             # Emit CIEU event (warn only, not deny)
             try:
                 from ystar.adapters.cieu_writer import write_cieu_event
+                import json as json_lib
                 write_cieu_event(
                     event_type="PROMPT_SUBGOAL_DRIFT",
-                    metadata={
+                    decision="allow",  # Warn-only design
+                    agent_id="ceo",
+                    drift_detected=1,
+                    drift_details=json_lib.dumps({
                         "drift_score": drift_score,
                         "mismatched_keywords": result.get("mismatched_keywords", []),
                         "reply_preview": reply_text[:200]
-                    },
-                    agent_id="ceo"
+                    }),
+                    drift_category="narrative_coherence"
                 )
                 log(f"DRIFT detected: score={drift_score:.2f}, CIEU event emitted")
             except Exception as cieu_exc:
