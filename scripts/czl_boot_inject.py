@@ -98,6 +98,24 @@ def main():
     if not current and remaining:
         warnings.append(f"⚠️ No current_subgoal but {len(remaining)} tasks in remaining[] — CEO must push next")
 
+    # W5.1: Y* schema v2 validation (Campaign v3 Phase 3)
+    try:
+        sys.path.insert(0, str(ystar_company.parent / "Y-star-gov"))
+        from ystar.governance.contract_lifecycle import validate_y_star_schema_v2
+
+        validation_result = validate_y_star_schema_v2(data)
+        if not validation_result.get("valid", False):
+            errors = validation_result.get("errors", [])
+            warnings.append(f"⚠️ Y* schema v2 validation: {len(errors)} error(s) — fix y_star_criteria[] structure")
+            for err in errors[:3]:  # Show first 3 errors
+                warnings.append(f"   - {err}")
+        else:
+            # Success: report compliance
+            total_criteria = len(data.get("y_star_criteria", []))
+            print(f"[Y* Schema v2] {total_criteria}/{total_criteria} criteria valid")
+    except Exception as e:
+        warnings.append(f"⚠️ Y* schema v2 validation unavailable: {e}")
+
     if warnings:
         print("WARNINGS:")
         for w in warnings:

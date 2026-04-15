@@ -105,8 +105,11 @@ def extract_campaign_progress():
 
 
 def extract_system_health():
-    """Run wire_integrity_check.py and extract total_issues."""
+    """Run wire_integrity_check.py and extract total_issues + Y* schema v2 compliance."""
     import subprocess
+    result_dict = {}
+
+    # Wire integrity check
     try:
         result = subprocess.run(
             ["python3", str(REPO_ROOT / "scripts" / "wire_integrity_check.py")],
@@ -116,27 +119,45 @@ def extract_system_health():
 
         # Parse output: "[OK] All wires intact" = 0 issues
         if "[OK] All wires intact" in output:
-            return {"total_issues": 0}
-
-        # Parse "total_issues: X" pattern (if wire_integrity adds this)
-        if "total_issues" in output:
+            result_dict["total_issues"] = 0
+        elif "total_issues" in output:
             for line in output.split("\n"):
                 if "total_issues" in line.lower():
                     parts = line.split(":")
                     if len(parts) > 1:
                         try:
-                            return {"total_issues": int(parts[1].strip())}
+                            result_dict["total_issues"] = int(parts[1].strip())
                         except ValueError:
                             pass
-
-        # Fallback: count "[BROKEN]" lines
-        broken_count = output.count("[BROKEN]")
-        if broken_count > 0:
-            return {"total_issues": broken_count}
-
-        return {"total_issues": 0}  # Default: assume healthy if no explicit error
+        else:
+            # Fallback: count "[BROKEN]" lines
+            broken_count = output.count("[BROKEN]")
+            result_dict["total_issues"] = broken_count if broken_count > 0 else 0
     except Exception as e:
-        return {"total_issues": f"check_failed: {e}"}
+        result_dict["total_issues"] = f"check_failed: {e}"
+
+    # W5.1: Y* schema v2 compliance
+    try:
+        import sys
+        sys.path.insert(0, str(REPO_ROOT.parent / "Y-star-gov"))
+        from ystar.governance.contract_lifecycle import validate_y_star_schema_v2
+
+        czl_path = REPO_ROOT / ".czl_subgoals.json"
+        if czl_path.exists():
+            czl_data = json.loads(czl_path.read_text())
+            validation_result = validate_y_star_schema_v2(czl_data)
+            if validation_result.get("valid", False):
+                total_criteria = len(czl_data.get("y_star_criteria", []))
+                result_dict["y_star_schema_v2"] = f"{total_criteria}/{total_criteria} valid"
+            else:
+                error_count = len(validation_result.get("errors", []))
+                result_dict["y_star_schema_v2"] = f"INVALID ({error_count} errors)"
+        else:
+            result_dict["y_star_schema_v2"] = "no_campaign"
+    except Exception as e:
+        result_dict["y_star_schema_v2"] = f"check_unavailable: {e}"
+
+    return result_dict
 
 
 def extract_cieu_24h():
@@ -235,6 +256,7 @@ def generate_world_state():
 
 ## 4. System Health
 **Wire Integrity**: {health['total_issues']} issues
+**Y* Schema v2 Compliance**: {health.get('y_star_schema_v2', 'unknown')}
 **CIEU 24h Events**: {cieu['event_count_24h']}
 **Overdue Obligations**: {cieu['overdue_obligations']}
 

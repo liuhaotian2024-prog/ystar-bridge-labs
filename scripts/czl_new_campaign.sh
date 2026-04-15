@@ -60,6 +60,37 @@ echo "[CREATED] New campaign stub: $CZL_FILE"
 echo "Campaign: $CAMPAIGN_NAME"
 echo "Y* ref: $PRIORITY_BRIEF"
 echo ""
+
+# Step 3.1: Validate Y* Schema v2 (W5.1 — Campaign v3 Phase 3)
+echo "[W5.1] Validating Y* schema v2 compliance..."
+python3 -c "
+import sys
+import json
+sys.path.insert(0, '$YSTAR_DIR/../Y-star-gov')
+try:
+    from ystar.governance.contract_lifecycle import validate_y_star_schema_v2
+    with open('$CZL_FILE', 'r') as f:
+        czl = json.load(f)
+    result = validate_y_star_schema_v2(czl)
+    if not result.get('valid', False):
+        print('[ERROR] Y* schema v2 validation failed:')
+        for err in result.get('errors', []):
+            print(f'  - {err}')
+        sys.exit(1)
+    else:
+        print('[OK] Y* schema v2 valid (0 criteria = empty stub, expected)')
+except Exception as e:
+    print(f'[WARN] Y* schema validation unavailable: {e}', file=sys.stderr)
+"
+VALIDATE_EXIT=$?
+if [ $VALIDATE_EXIT -ne 0 ]; then
+  echo ""
+  echo "[BLOCKED] Campaign stub failed Y* schema v2 validation."
+  echo "Fix y_star_criteria[] structure before proceeding."
+  exit 1
+fi
+
+echo ""
 echo "Next steps:"
 echo "  1. CEO: populate y_star_criteria[] with measurable targets"
 echo "  2. CEO: populate remaining[] with subgoals (U1-UN)"
