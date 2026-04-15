@@ -1,0 +1,34 @@
+# Video/Audio Asset Registry
+# All binary media assets stored externally at ~/.openclaw/workspace/ystar-media/
+# This file maps logical content paths to physical storage locations
+
+# Offended AI Episode Series
+offended_ai:
+  build:
+    full_audio: ~/.openclaw/workspace/ystar-media/content/offended_ai/build/full_audio.wav
+  v6:
+    sofia_clean_despill: ~/.openclaw/workspace/ystar-media/content/offended_ai/v6/sofia_clean_despill.mov
+  v7:
+    episode_001_base: ~/.openclaw/workspace/ystar-media/content/offended_ai/v7/episode_001_v7_base.mp4
+    episode_001_synced: ~/.openclaw/workspace/ystar-media/content/offended_ai/v7/episode_001_v7_synced.mp4
+
+# Demo Videos
+demos:
+  micro_chain_samantha: ~/.openclaw/workspace/ystar-media/docs/micro_chain_full/samantha_oneshot_FINAL.mp4
+  segA_lipsync_final: ~/.openclaw/workspace/ystar-media/docs/segA_lipsync_FINAL.mov
+  segA_mov: ~/.openclaw/workspace/ystar-media/docs/segA_mov.mov
+
+# Legacy Tracked Binaries (deprecated, remain in git history)
+# These are flagged for reference only — DO NOT add new entries here
+# Use shallow clone (--depth 1) for size-optimized checkouts
+legacy_tracked:
+  - docs/cogvideo_long/*.mp4 (7 files)
+  - docs/cogvideo_long_quick/*.mp4 (7 files)
+  - docs/micro_chain_full/micro_*.mp4 (6 files)
+  note: "Total ~20 mp4 files remain in git history for backward compatibility. New contributors should use `git clone --depth 1` to avoid fetching full history."
+
+# Migration Policy (2026-04-14)
+# - All NEW video/audio binaries MUST go to ~/.openclaw/workspace/ystar-media/
+# - Update this registry when adding new assets
+# - No history rewrite; old binaries grandfathered in
+# - .gitignore blocks *.mp4/*.mov/*.wav/*.mp3 etc. from staging
