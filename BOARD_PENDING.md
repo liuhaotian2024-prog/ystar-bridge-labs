@@ -74,3 +74,27 @@ Each entry links to `reports/k9_daily/{YYYYMMDD}.md` digest. Board/CTO review at
 - digest: `reports/k9_daily/20260415.md`
 - findings: 11 repo-audit items
 - run: 2026-04-15T09:01:00-0400
+
+### 20260415 — K9 patrol digest
+
+- digest: `reports/k9_daily/20260415.md`
+- findings: 11 repo-audit items
+- run: 2026-04-15T09:35:38-0400
+
+---
+
+## 2026-04-15 新增 — CEO Dual-Mode State Machine (Iron Rule 1.7 candidate)
+
+Board 2026-04-15 问 "如何固化 Board 在线按 Board / 离线自主, 不回头忘". 
+设计见 `reports/ceo_dual_mode_state_machine_20260415.md`.
+
+**Iron Rule 1.7 candidate** — "CEO Dual-Mode State Machine (Constitutional, Board 2026-04-15)":
+
+1. CEO operates in BOARD_ONLINE (last Board msg < 5 min) OR AUTONOMOUS mode
+2. AUTONOMOUS: every reply must emit ≥ 1 tool_use. Poll Board for permission forbidden on items within own write scope.
+3. Mode switch automatic by hook, not self-switch
+4. Violation → CEO_AUTONOMOUS_IDLE_DRIFT CIEU event + tool_use block
+
+**5 层冗余实装**: Constitutional (AGENTS.md) / Hook / CIEU+K9 rule / Boot inject / role_definition git 备份.
+
+Board 审后派 Samantha 合入 AGENTS.md + Maya/Leo 落 hook + Samantha K9 rule 12.
