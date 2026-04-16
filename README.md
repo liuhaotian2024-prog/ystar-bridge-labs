@@ -8,6 +8,46 @@ This README, the company that ships the product, and the audit chain you can rep
 
 ---
 
+## CZL: Causal Zero Loop — Making Agents Prove They Worked
+
+**Y\* Bridge Labs 的核心方法论**，2026-04-15 创造。
+
+CZL 五元组：
+- **Y\***：人类定义的完成标准（不由 agent 自动生成）
+- **Xt**：当前状态快照
+- **U**：行动
+- **Yt+1**：实际结果
+- **Rt+1 = distance(Yt+1, Y\*)** — 量化的因果残差
+
+**Rt+1=0 才算真完成**。Rt+1≠0 继续执行，不飘逸。
+
+### 核心文档 (canonical locations)
+
+- `governance/WORKING_STYLE.md §第十二条` — CZL 任务工作法
+- `AGENTS.md §Session-Level Y* Doctrine` — Session-level 5 条硬约束
+- `AGENTS.md §Rule Verification Three-Layer Doctrine` — 规则写了/在跑/在拦三层
+- `governance/sub_agent_atomic_dispatch.md` — Atomic Dispatch (1 dispatch = 1 deliverable)
+- `knowledge/shared/methodology_assets_20260415.md` — 12 项方法论完整 lookup index
+- `scripts/k9_audit_v3.py` — 3-Layer audit (Liveness + Causal Chain + Invariant)
+- `.czl_subgoals.json` — HiAgent working memory 子目标树 (CEO dogfood live)
+
+### 2026-04-15 实证数据
+
+- 5 campaigns 全 Rt+1=0 ship
+- Architecture Fix Campaign: 72 tool_uses / 10 件 constitutional ship
+- Pre-atomic baseline: 47 tool_uses / 0 件 (60x 效率改善)
+- 100+ live CIEU events 作可审计证据链
+
+### 与其他框架对比
+
+CZL vs Cursor (自承 "periodic fresh starts to combat drift")
+CZL vs VeriMAP (EACL 2026, 子任务局部验证，无顶层 Y\*)
+CZL vs Ralph Loop (pass/fail 布尔，无方向性 Rt+1)
+
+详见 `reports/ceo/campaign_v7_business_pivot_plan_20260415.md`。
+
+---
+
 ## The deepest claim: governance covers the decider, not just the deed
 
 Most "AI governance" products watch what an agent **does**. They do not watch what a human **decides**. Y*gov watches both.
