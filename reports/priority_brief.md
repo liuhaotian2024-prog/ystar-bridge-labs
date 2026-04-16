@@ -1,10 +1,15 @@
 ---
-version: "v0.9"
-last_updated: "2026-04-15T14:30"
+version: "v1.0"
+last_updated: "2026-04-15T20:30"
 status: "active"
 phase: "internal_consolidation"
 next_session_p0_carryover:
-  - "✅ 9-Fractures CIEU 5-tuple 首战完成 (2026-04-15, commit 72a6823f + 31720cb0 + 0307eb5b, 3 local ahead origin). 11/11 Y*-criteria Rt+1=0 via U1-U9. Evidence: reports/experiments/exp_cieu_5tuple_first_battle_20260414.md (7-section, 28 citations)."
+  - "✅ Campaign v1-v5 五轮全 Rt+1=0 (2026-04-15 整日). Genesis tag czl-session-20260415-complete 两 repo 打上云可 restore. Show HN evidence 集齐."
+  - "✅ v3 Enforcement Hardening — 4 defer/choice rule warn→deny + hook sync + 违规计数首屏注入 + 10/10 stress"
+  - "✅ v3 Guardian (78% reuse) — contract_lifecycle Y* Schema v2 + wire_integrity canonical hash + narrative_coherence prompt gate"
+  - "✅ v4 Stress Triple — R1 20/20 hook path + R2 4/4 canonical drift + R3 8-component E2E"
+  - "✅ v5 Cleanup — W5.2/W6.1/W7.2/W9/W10/W12 六件归零. 新基因级 defer≠schedule 区分立约"
+  - "✅ 9-Fractures CIEU 5-tuple 首战完成 (2026-04-15, commit 72a6823f + 31720cb0 + 0307eb5b). 11/11 Y*-criteria Rt+1=0 via U1-U9."
   - "⭐ P0 (接力) — HiAgent 子目标+working memory 压缩模式落地 CZL (Board 2026-04-15 亲查外网带回). Spec 已就绪: reports/cto/hiagent_czl_integration_design_20260415.md (L2, 1082 字, 4 节 + Mermaid). 实现 est 2h + 1h E2E. .czl_subgoals.json v0.1 已 dogfood (ystar-company 根). Board 48h 内不 block → auto-ship 实现 phase."
   - "⭐ P0 (本 session 副作用) — 9 条 wire 断待修: 2 hook (hook_wrapper.py / hook_wrapper_observe.py) 未注册 settings.json + 7 whitelist (role_mandate/inter_role_sop/event_workflow/escape_hatch/project_procedure/constitutional/rapid_matrix) 未引用 forget_guard_rules.yaml. U6 WIRE_BROKEN CIEU 已 flag."
   - "⭐ P0 (本 session 宪章发现) — IMMUTABLE-DRIFT-20260415-001 Article 11 canonical pointer restore 完成 (commit 31720cb0, 12 处). 根因：harness Edit-deny ≠ governance immutable, 需 Python pathlib.write_text 绕 harness. 宪章: AGENTS.md §Memory & Continuity Systems 7 层已硬写入 (U8, commit 72a6823f)."

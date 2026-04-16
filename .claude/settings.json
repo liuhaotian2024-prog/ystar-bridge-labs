@@ -42,6 +42,16 @@
             "timeout": 5000
           }
         ]
+      },
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_session_end_summary.py",
+            "timeout": 5000
+          }
+        ]
       }
     ],
     "PreToolUse": [

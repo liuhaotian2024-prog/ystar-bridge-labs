@@ -268,6 +268,22 @@ def extract_gov_mcp_state():
     return f"**location**: `{govmcp}`\n**server.py LoC**: {loc}\n**ystar-company side health.py**: {'exists' if local_health.exists() else 'missing'}"
 
 
+def extract_today_commits():
+    """W-continuity: 24h git log aggregated across 2 repos."""
+    ystar_company = Path("/Users/haotianliu/.openclaw/workspace/ystar-company")
+    ygov = Path("/Users/haotianliu/.openclaw/workspace/Y-star-gov")
+    lines = []
+    for label, repo in [("ystar-company", ystar_company), ("Y*gov", ygov)]:
+        log = _run_git(["git", "log", "--since=24 hours ago", "--format=%h %ad %s", "--date=format:%H:%M"], repo)
+        if log:
+            lines.append(f"\n**{label}** ({len(log.split(chr(10)))} commits):")
+            for l in log.split("\n")[:20]:
+                lines.append(f"- {l[:120]}")
+        else:
+            lines.append(f"\n**{label}**: no commits")
+    return "\n".join(lines) if lines else "(empty)"
+
+
 def extract_k9audit_state():
     """W12 — K9Audit read-only reference."""
     import time
@@ -358,6 +374,12 @@ def generate_world_state():
 
 ## 10. Ecosystem — K9Audit (read-only reference)
 {extract_k9audit_state()}
+
+---
+
+## 11. Today's Commits (24h) — both repos
+
+{extract_today_commits()}
 """
     
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
