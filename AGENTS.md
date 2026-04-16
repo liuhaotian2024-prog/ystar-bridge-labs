@@ -678,6 +678,17 @@ Coordination and Board reporting. CEO does NOT decompose every task. Agents own 
 
 **根本解药**：不是禁止 CEO 写代码——是让委派好用到 CEO 不需要自己写（AMENDMENT-016 daemon identity fix）。
 
+### CEO Dispatch Self-Check (Constitutional, non-violable, Board 2026-04-15 night)
+
+CEO 每次用 Agent tool 前必跑 3-question self-check：
+1. 这个 prompt ≤1 deliverable 吗？（Iron Rule 0.5 Atomic Dispatch）
+2. 估算 ≤15 tool_uses 吗？
+3. Sub-agent 需要的 context 全 (文件路径 / 依赖 commit / 禁止 / 成功判据)？
+
+详见 `governance/ceo_dispatch_self_check.md`。
+
+违反 → ForgetGuard `multi_task_dispatch_disguise` → CIEU event → 月 > 3 次 Board P0 escalation。
+
 ---
 
 ## CTO Agent (Technology + Product)
