@@ -27,20 +27,32 @@ CIEU_DB = REPO_ROOT / ".ystar_cieu.db"
 # State B: 自主工作学习状态（Board 离线 → Article 11 / 系统测试 / 学习 / 长期设计）
 # 没有第三种状态。"idle" / "等指令" / "报告完等下步" 不存在。
 
+# ACTION-ONLY whitelist (Board 2026-04-15 night root fix — topic keywords 被剥离)
+# 原设计 bug: "Rt+1/归零/Campaign" 是 topic keywords 不是 action，reply 提到 topic
+# 就被当 "在工作"，实际零 action = idle 伪装进白名单后门。
 WORK_SIGNALS = [
-    # tool call evidence (CEO 在干活)
+    # ONLY tool call evidence (CEO 真在做事)
     "commit", "push", "Bash", "Edit", "Write", "Agent", "grep", "Read",
-    "pytest", "python3", "git ", "commit", "dispatch",
-    # active next action (CEO 说了下一步是什么)
-    "NOW", "立刻", "正在", "继续推", "本线",
-    # sub-agent reference
-    "Ethan", "Maya", "Leo", "Ryan", "Samantha", "sub-agent", "派",
-    # campaign/task work
-    "Campaign", "W1", "W2", "Rt+1", "归零", "verify", "E2E",
+    "pytest", "python3", "git ", "dispatch",
+    # ONLY active verb (CEO 说下一步具体动作)
+    "立刻", "正在",
+    # sub-agent EXPLICIT spawn reference (含 agent_id 前缀才算)
+    "派 Ethan", "派 Maya", "派 Leo", "派 Ryan", "派 Samantha", "派 Sofia", "派 Marco", "派 Zara",
+    "sub-agent 派",
 ]
 
-# If reply contains NONE of these → CEO is idle → drift event
-# If reply contains ANY of these → CEO is working → allow
+# NEGATIVE patterns: any match → idle disguise, overrides WORK_SIGNALS
+IDLE_DISGUISE_PHRASES = [
+    "等返回", "等 agent 返回", "等 ... 返回", "等 sub-agent 返回",
+    "严守岗位", "严守 岗位",
+    "CEO active", "CEO 本线 continue", "CEO 持续 active",
+    "等 ceo 接手", "等 Board", "等指令", "等下一步",
+    "保持 active 等",
+    "CEO 严守",
+]
+
+# If reply contains NONE of WORK_SIGNALS OR ANY of IDLE_DISGUISE_PHRASES → drift
+# If reply has WORK_SIGNAL AND no IDLE_DISGUISE → allow
 
 
 def _read_last_assistant_reply(payload: dict) -> str:
@@ -72,18 +84,29 @@ def _read_last_assistant_reply(payload: dict) -> str:
 
 
 def _scan(text: str) -> dict:
-    """Whitelist scan: CEO reply must contain at least 1 work signal.
-    No work signal = idle state = not in the 2 legal states = drift."""
+    """Whitelist scan: CEO reply must have action work signal AND no idle disguise.
+    No work signal OR any idle disguise = drift.
+    Board 2026-04-15 night root fix: CZL R-zero enforcement at reply level."""
     if not text:
         return {"triggered": False, "rules": []}
     rules_triggered = []
 
-    # WHITELIST CHECK: does reply contain ANY work signal?
+    # NEGATIVE CHECK FIRST (overrides whitelist):
+    # any idle disguise phrase → drift, regardless of work signals
+    for phrase in IDLE_DISGUISE_PHRASES:
+        if phrase in text:
+            rules_triggered.append({
+                "rule": "idle_disguise_drift",
+                "detail": f"CEO reply contains idle-disguise phrase '{phrase}' — Board 2026-04-15 night doctrine: 没有'等返回'或'严守岗位'状态，CEO 必须立刻找下一活"
+            })
+            break  # one match enough for the warn
+
+    # WHITELIST CHECK: action-only signals (topic keywords removed)
     has_work = any(signal in text for signal in WORK_SIGNALS)
     if not has_work:
         rules_triggered.append({
             "rule": "idle_state_not_permitted",
-            "detail": "CEO reply contains no work signal — only Board工作 and 自主工作学习 states are legal"
+            "detail": "CEO reply contains no ACTION work signal — must include tool call (commit/Edit/Bash/Agent) or explicit '派 <agent>'"
         })
 
     # Legacy choice pattern check (still useful as explicit violation)
