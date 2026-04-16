@@ -209,6 +209,7 @@ Distilled methodology assets. CEO/CMO/CSO/CFO/CTO knowledge bases + cross-role l
 - [knowledge/ceo/strategy_frameworks.md](../knowledge/ceo/strategy_frameworks.md)
 - [knowledge/ceo/team_dna.md](../knowledge/ceo/team_dna.md)
 - [knowledge/ceo/threat_landscape_2026_03.md](../knowledge/ceo/threat_landscape_2026_03.md)
+- [knowledge/ceo/strategy/STRAT-001_governance_moat_vs_bounty_speed_20260416.md](../knowledge/ceo/strategy/STRAT-001_governance_moat_vs_bounty_speed_20260416.md) — **[STRAT-001]** Governance Moat vs Bounty Speed (2026-04-16) — when CZL governance is competitive moat vs disadvantage, market positioning recommendations (trust-race over speed-race), governance-as-data secondary monetization
 
 ### 4.2 CFO Knowledge
 - [knowledge/cfo/burn_rate_calculation.md](../knowledge/cfo/burn_rate_calculation.md)
@@ -258,6 +259,7 @@ Distilled methodology assets. CEO/CMO/CSO/CFO/CTO knowledge bases + cross-role l
 Board-level decisions, archived per `agents/Secretary.md §决策记录流程`.
 
 ### 5.1 Decision Records (knowledge/decisions/)
+- [knowledge/decisions/2026_04_16/session_decisions_summary.md](../knowledge/decisions/2026_04_16/session_decisions_summary.md) — **2026-04-16 CZL session**: Campaign v6 close-out (W1-W11), Action Model v2 + Restart Preparation Model (constitutional), Reply Taxonomy blacklist-to-whitelist shift, Formal Methods 6-layer stack, trust ladder normalize + 9 engineer charter fix, 5 engineer gauntlets, 3-dimensional governance audit
 - [knowledge/decisions/2026_04_09_board_pending_history_archive.md](../knowledge/decisions/2026_04_09_board_pending_history_archive.md)
 - [knowledge/decisions/2026-04-05_discord_token.md](../knowledge/decisions/2026-04-05_discord_token.md)
 - [knowledge/decisions/30day_mining_plant_2026-04-15/](../knowledge/decisions/30day_mining_plant_2026-04-15)

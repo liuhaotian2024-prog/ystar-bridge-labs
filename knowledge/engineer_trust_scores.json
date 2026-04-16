@@ -1,0 +1,96 @@
+{
+  "$schema": "knowledge/schemas/engineer_trust_scores_v1.json",
+  "version": "1.2.0",
+  "last_updated": "2026-04-16T18:30:00Z",
+  "description": "Trust scores for all engineers. Starting trust=0 for new engineers (must pass onboarding gauntlet). Trust earned through atomic completion + 0 violations.",
+  "trust_scale": "0-100, 0=inactive, 30=training-wheels, 50=junior, 70=senior, 100=elder",
+  "engineers": [
+    {
+      "engineer_id": "eng-kernel",
+      "full_name": "Leo Chen (Kernel Engineer)",
+      "trust_score": 0,
+      "activation_status": "inactive",
+      "gauntlet_status": "pending",
+      "notes": "Created 2026-04-16. Pending #73 onboarding gauntlet."
+    },
+    {
+      "engineer_id": "eng-governance",
+      "full_name": "Maya Patel (Governance Engineer)",
+      "trust_score": 0.35,
+      "activation_status": "inactive",
+      "gauntlet_status": "pending",
+      "notes": "Created 2026-04-16. Pending #73 onboarding gauntlet."
+    },
+    {
+      "engineer_id": "eng-platform",
+      "full_name": "Ryan Park (Platform Engineer)",
+      "trust_score": 0,
+      "activation_status": "inactive",
+      "gauntlet_status": "pending",
+      "notes": "Created 2026-04-16. Pending #73 onboarding gauntlet."
+    },
+    {
+      "engineer_id": "eng-domains",
+      "full_name": "Jordan Lee (Domains Engineer)",
+      "trust_score": 0,
+      "activation_status": "inactive",
+      "gauntlet_status": "pending",
+      "notes": "Created 2026-04-16. Pending #73 onboarding gauntlet."
+    },
+    {
+      "engineer_id": "eng-data",
+      "full_name": "Dara Lin (Data Engineer)",
+      "trust_score": 30,
+      "activation_status": "training-wheels",
+      "gauntlet_status": "PASS",
+      "gauntlet_date": "2026-04-16",
+      "tests_passed": "4/4",
+      "methodology_complete": true,
+      "notes": "Gauntlet PASS 2026-04-16 (CZL-125). Methodology v1 shipped 1247 words. Trust normalized to 30 (training-wheels per #72 ladder, CZL-135 fix backfill of CZL-125 inconsistency vs CZL-130 eng-security). Next: 5 real atomics for trust 30\u219250 promotion."
+    },
+    {
+      "engineer_id": "eng-security",
+      "full_name": "Alex Kim (Security Engineer)",
+      "trust_score": 30,
+      "activation_status": "training-wheels",
+      "gauntlet_status": "PASS",
+      "gauntlet_date": "2026-04-16",
+      "tests_passed": "4/4",
+      "methodology_complete": true,
+      "notes": "Gauntlet PASS 2026-04-16 (CZL-130). Methodology v1 shipped 832 words (STRIDE + Defense-in-Depth + Zero Trust + OWASP Top 10). Trust 0\u219230 training-wheels tier. Next: 5 real atomics for trust 30\u219250 promotion."
+    },
+    {
+      "engineer_id": "eng-ml",
+      "full_name": "Priya Sharma (ML Engineer)",
+      "trust_score": 30,
+      "activation_status": "training-wheels",
+      "gauntlet_status": "PASS",
+      "gauntlet_date": "2026-04-16",
+      "tests_passed": "4/4",
+      "methodology_complete": true,
+      "notes": "Gauntlet PASS 2026-04-16 (CZL-140). Methodology v1 shipped 1031 words (MLOps Sculley + Bias-Variance + Cross-Validation + A/B Testing). Trust 0\u219230 training-wheels tier. Next: 5 real atomics for trust 30\u219250 promotion."
+    },
+    {
+      "engineer_id": "eng-perf",
+      "full_name": "Carlos Mendez (Performance Engineer)",
+      "trust_score": 30,
+      "activation_status": "training-wheels",
+      "gauntlet_status": "PASS",
+      "gauntlet_date": "2026-04-16",
+      "tests_passed": "4/4",
+      "methodology_complete": true,
+      "notes": "Gauntlet PASS 2026-04-16 (CZL-141). Methodology v1 shipped 1134 words (USE method + Latency Budget + Amdahl's Law + Little's Law). Trust 0→30 training-wheels tier. Next: 5 real atomics for trust 30→50 promotion."
+    },
+    {
+      "engineer_id": "eng-compliance",
+      "full_name": "Elena Chen (Compliance Engineer)",
+      "trust_score": 30,
+      "activation_status": "training-wheels",
+      "gauntlet_status": "PASS",
+      "gauntlet_date": "2026-04-16",
+      "tests_passed": "4/4",
+      "methodology_complete": true,
+      "notes": "Gauntlet PASS 2026-04-16 (CZL-146). Methodology v1 shipped 921 words (NIST CSF + GRC + SOC2 + GDPR Article 25). Trust 0→30 training-wheels tier. Next: 5 real atomics for trust 30→50 promotion."
+    }
+  ]
+}

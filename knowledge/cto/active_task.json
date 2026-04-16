@@ -1,82 +1,50 @@
 {
-  "task_id": "YSTAR_DEFUSE_MVP",
+  "task_id": "YSTAR_GOV_ENTERPRISE_READINESS",
   "actor": "cto",
-  "type": "Autonomous Mission",
+  "type": "Active Campaign",
   "status": "in_progress",
-  "created": "2026-04-11T09:38:00Z",
+  "created": "2026-04-16T18:00:00Z",
   "completed": null,
   "intent": {
-    "goal": "Build ystar-defuse MVP - AI bomb disposal product that defuses delayed injection attacks with 100% guarantee",
+    "goal": "Ensure Y*gov enterprise readiness: stability, documentation, installation reliability, test coverage, and ecosystem integration",
     "core_requirements": [
-      "Level 1 Hard Bottom Line: Block sensitive file access, data exfiltration, destructive commands, secret output, dangerous behavior combinations",
-      "Level 2 Auto-Learning Whitelist: 24h silent observation -> auto-generate whitelist -> lightweight confirmation",
-      "CIEU Lightweight: SQLite-based event recording compatible with Y*gov format",
-      "Cross-turn/cross-session behavior correlation",
-      "Zero-friction UX: 10s install, 24h auto-learn, 1 click confirm, zero maintenance"
+      "158/158 tests passing across all modules",
+      "One-command pip install success rate >95%",
+      "Claude Code skill integration stable on Mac/Windows/Linux",
+      "CIEU database reliability under concurrent write load",
+      "ForgetGuard rule accuracy >90% precision at warn enforcement level",
+      "K9 routing layer SNR >0.95 (false-positive rate <5%)",
+      "Agent identity registry canonical enforcement live",
+      "Platform hook stability (PreToolUse/PostToolUse) zero daemon crashes"
     ],
-    "technical_constraints": [
-      "Independent package (no Y*gov dependency)",
-      "Deterministic execution (no LLM, Iron Rule 1)",
-      "Default Deny + Intent Contract",
-      "Friction checklist: 10 items must all pass"
+    "active_workstreams": [
+      "Campaign v6 W1-W11 backlog drain (K9 routing, engineer activation, skill-trust, enforcement audit)",
+      "AMENDMENT-016 fcntl.flock state-file race resolution",
+      "Universal enforcement audit Q1-Q9 landing waves",
+      "Agent Capability Monitor integration with session watchdog",
+      "5 new engineer onboarding gauntlet (data/security/ml/perf/compliance)"
     ],
-    "deliverables": [
-      "Core engine with Level 1 + Level 2 protection",
-      "CIEU lightweight SQLite storage",
-      "Claude Code PreToolUse hook integration",
-      "CLI: start|stop|report|config",
-      "pip package + Claude Code Skill",
-      "20+ tests covering both protection levels",
-      "README for non-IT users"
+    "ownership": "cto + 4 core engineers (kernel/governance/platform/domains) + 5 new engineers"
+  },
+  "current_focus": {
+    "p0_blockers": [],
+    "p1_active": [
+      "Campaign v6 W3-W11 drain",
+      "Tool_uses metadata enforcement (W5)",
+      "Skill-trust 35-atomic remediation (W4)"
     ],
-    "status": "deprecated",
-    "deprecated_at": 1776329685.141335,
-    "deprecation_reason": "Stale >72h, not mentioned in recent session"
+    "p2_backlog": [
+      "Daemon concurrent-write investigation followup",
+      "Agent files Name-Role format migration",
+      "Meta-meta audit error pattern SOP"
+    ]
   },
-  "current_layer": 4,
-  "twelve_layer_progress": {
-    "0_INTENT_RECORDED": true,
-    "1_gemma_questions": true,
-    "2_vector_search": false,
-    "3_exec_plan": true,
-    "4_exec_start": true,
-    "5_mid_check": false,
-    "6_pivot": false,
-    "7_integration": false,
-    "8_exec_complete": false,
-    "9_human_review": false,
-    "10_self_eval": false,
-    "11_board_approval": false,
-    "12_knowledge_writeback": false,
-    "status": "deprecated",
-    "deprecated_at": 1776329685.145368,
-    "deprecation_reason": "Stale >72h, not mentioned in recent session"
-  },
-  "execution_plan": {
-    "day_1_2": "Core engine: Level 1 rules + CIEU SQLite + hook integration + basic CLI",
-    "day_2_3": "Auto-learning: observation mode + whitelist generation + Level 2 lightweight reminder + permission decay",
-    "day_3_4": "Productization: pip package + Claude Code Skill + report command + README + 20+ tests",
-    "status": "deprecated",
-    "deprecated_at": 1776329685.149143,
-    "deprecation_reason": "Stale >72h, not mentioned in recent session"
-  },
-  "deliverables": {
-    "repository": "/Users/haotianliu/.openclaw/workspace/ystar-defuse/",
-    "pip_package": "ystar-defuse",
-    "skill_package": "ystar-defuse.skill",
-    "tests": "tests/ with 20+ test cases",
-    "documentation": "README.md (non-IT user friendly)",
-    "status": "deprecated",
-    "deprecated_at": 1776329685.151828,
-    "deprecation_reason": "Stale >72h, not mentioned in recent session"
-  },
-  "key_design_decisions": {
-    "no_llm": "Deterministic rules only - cannot be injected",
-    "cieu_compatible": "Event format matches Y*gov for zero-migration upgrade path",
-    "cross_session_correlation": "session_seq enables behavior chain analysis",
-    "auto_whitelist_generation": "User never writes rules, only clicks confirm",
-    "status": "deprecated",
-    "deprecated_at": 1776329685.154617,
-    "deprecation_reason": "Stale >72h, not mentioned in recent session"
-  }
+  "deprecated_tasks": [
+    {
+      "task_id": "YSTAR_DEFUSE_MVP",
+      "archived_at": "2026-04-16T18:00:00Z",
+      "archive_location": "products/ystar-defuse/ARCHIVED.md",
+      "reason": "Superseded by Y*gov mainline; Board decision; no code written; design concepts absorbed into Y*gov Path A/B"
+    }
+  ]
 }
