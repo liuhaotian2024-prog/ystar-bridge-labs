@@ -93,6 +93,7 @@ def check_condition(condition: dict, payload: dict, context: dict) -> bool:
 
     elif cond_type == "content_contains":
         keywords = condition.get("keywords", [])
+        require_companion = condition.get("require_companion", [])
         content = ""
 
         # Extract content from various payload fields
@@ -106,11 +107,18 @@ def check_condition(condition: dict, payload: dict, context: dict) -> bool:
         if not content:
             return False
 
-        # Check if any keyword appears in content
-        for keyword in keywords:
-            if keyword in content:
-                return True
-        return False
+        # W10.1: Multi-keyword AND logic
+        # If require_companion is set, BOTH a keyword AND a companion must be present
+        if require_companion:
+            has_keyword = any(keyword in content for keyword in keywords)
+            has_companion = any(companion in content for companion in require_companion)
+            return has_keyword and has_companion
+        else:
+            # Original OR logic: any keyword triggers
+            for keyword in keywords:
+                if keyword in content:
+                    return True
+            return False
 
     elif cond_type == "content_missing":
         pattern = condition.get("pattern", "")
@@ -249,23 +257,32 @@ def emit_warning(rule_id: str, recipe: str):
 
 
 def main():
-    """Main entry point — read stdin, evaluate rules, emit warnings"""
+    """Main entry point — read stdin, evaluate rules, emit warnings + JSON action"""
     try:
         # Read payload from stdin
         payload_raw = sys.stdin.read()
         if not payload_raw.strip():
+            # Campaign v3: always output JSON
+            print(json.dumps({"action": "allow", "rules_triggered": []}))
             sys.exit(0)
 
         payload_input = json.loads(payload_raw)
 
-        # Normalize payload schema (support both flat and nested formats)
-        # Flat: {"tool": "Bash", "command": "..."} (real PreToolUse format)
-        # Nested: {"tool_input": {"command": "..."}} (legacy format)
+        # Normalize payload schema (support multiple formats)
+        # Format 1: PreToolUse flat {"tool": "Bash", "command": "..."}
+        # Format 2: Legacy nested {"tool_input": {"command": "..."}, "tool_name": "Bash"}
+        # Format 3: Stress test flat (same as Format 1)
         if "tool_input" in payload_input:
+            # Legacy nested format
             payload = payload_input["tool_input"]
             payload["tool"] = payload_input.get("tool_name", "unknown")
-        else:
+        elif "tool" in payload_input:
+            # PreToolUse flat format (most common)
             payload = payload_input
+        else:
+            # Unknown format — fail-open
+            print(json.dumps({"action": "allow", "rules_triggered": [], "reason": "unknown_format"}))
+            sys.exit(0)
 
         # Build context
         context = {
@@ -293,25 +310,44 @@ def main():
             rules_data = load_rules(rules_path)
 
         if not rules_data.get("global_enable", False):
+            print(json.dumps({"action": "allow", "rules_triggered": []}))
             sys.exit(0)
 
-        # Evaluate each rule
+        # Evaluate each rule — collect violations
+        triggered_rules = []
+        deny_action = False
+
         for rule in rules_data.get("rules", []):
             if evaluate_rule(rule, payload, context):
                 rule_id = rule.get("id", "unknown")
                 recipe = rule.get("recipe", "No recipe provided.")
                 cieu_event = rule.get("cieu_event", "UNKNOWN_DRIFT")
                 severity = rule.get("severity", "medium")
+                action = rule.get("action", "warn")
 
                 # Emit warning and CIEU event
                 emit_warning(rule_id, recipe)
                 emit_cieu_event(cieu_event, rule_id, severity, payload)
+
+                triggered_rules.append(rule_id)
+
+                # Campaign v3: action=deny → block execution
+                if action == "deny":
+                    deny_action = True
+
+        # Output JSON result (Campaign v3 sync protocol)
+        result = {
+            "action": "deny" if deny_action else "allow",
+            "rules_triggered": triggered_rules
+        }
+        print(json.dumps(result))
 
         sys.exit(0)
 
     except Exception as e:
         # Fail-open: don't block execution on ForgetGuard errors
         print(f"[FORGET_GUARD] Error (fail-open): {e}", file=sys.stderr)
+        print(json.dumps({"action": "allow", "rules_triggered": [], "error": str(e)}))
         sys.exit(0)
 
 
