@@ -1,7 +1,7 @@
 # ForgetGuard Rules — AMENDMENT-020
 # Institutional memory enforcement via warn-with-recipe pattern
 # Schema version: 1.1 (added logic: AND/OR per-rule)
-# Last updated: 2026-04-15
+# Last updated: 2026-04-16
 #
 # ⚠️ DEPRECATED: Authoritative source is Y-star-gov/ystar/governance/forget_guard_rules.yaml
 # This file serves as ystar-company dogfood configuration only.
@@ -13,6 +13,32 @@ global_enable: true
 default_logic: "OR"  # OR | AND (default for rules without explicit logic field)
 
 rules:
+  - id: enforcement_gap_persistent
+    enabled: true
+    description: "Meta-observer: same enforcement gap appears in ≥2 consecutive scans (Board 2026-04-16)"
+    last_reviewed: "2026-04-16"
+    reviewer: "eng-governance"
+
+    trigger:
+      tool: ["Bash"]
+      conditions:
+        - type: command_contains
+          keywords: ["enforcement_observer.py", "scan_pending_enforcement"]
+        - type: content_contains
+          keywords: ["rule_id"]
+
+    action: warn
+    recipe: |
+      Persistent enforcement gap detected: {rule_id} has Rt+1={score} across {N} scans.
+      CEO: review .claude/tasks/auto_enforce_{rule_id}.md or mark WONTFIX with reason.
+      This is a meta-observer warning — gap remains open until CEO dispatches fix or documents decision to skip.
+      See governance/auto_enforce_meta.md for decision tree.
+
+    cieu_event: ENFORCEMENT_GAP_PERSISTENT
+    severity: medium
+    logic: AND
+
+
   - id: missing_l_tag
     enabled: true
     description: "Detect completion claims without maturity level tags (Article 11 v2)"
@@ -630,3 +656,134 @@ whitelists:
 
     cieu_event: CEO_NO_MIDSTREAM_CHECKIN
     severity: medium
+
+  - id: czl_dispatch_missing_5tuple
+    enabled: true
+    description: "CZL Gate 1: Agent dispatch prompt lacks CIEU 5-tuple structure"
+    last_reviewed: "2026-04-16"
+    reviewer: "Leo Chen (eng-kernel) + Maya Patel (eng-governance)"
+
+    trigger:
+      tool: ["Agent"]
+      conditions:
+        - type: content_contains
+          keywords: ["subagent_type"]
+
+    validation:
+      - type: python_validator
+        module: "ystar.kernel.czl_protocol"
+        function: "validate_dispatch"
+        args: ["prompt"]
+        expect_empty_issues: true
+
+    action: deny
+    recipe: |
+      CZL Gate 1 FAILED: Your dispatch prompt lacks required 5-tuple structure.
+
+      CZL Unified Communication Protocol requires:
+      - **Y*** (ideal contract, verifiable predicate)
+      - **Xt** (pre-state, tool-measured NOT impression)
+      - **U** (actions list, ≤15 tool_uses for atomic dispatch)
+      - **Yt+1** (post-state, verification clause)
+      - **Rt+1** (gap target, must reach 0.0 for closure)
+
+      Missing sections: {validation_issues}
+
+      Fix before retry:
+      1. Read ystar/kernel/czl_protocol.py for CZLMessageEnvelope schema
+      2. Add missing sections to your Agent tool prompt
+      3. Call validate_dispatch() yourself before spawning:
+           from ystar.kernel.czl_protocol import validate_dispatch
+           issues = validate_dispatch(my_prompt)
+           if issues: fix_prompt()
+
+      Ref: CZL Unified Communication Protocol v1.0 (Board 2026-04-16 Constitutional)
+           knowledge/shared/unified_work_protocol_20260415.md
+           Y-star-gov/ystar/kernel/czl_protocol.py
+
+    cieu_event: CZL_GATE1_DISPATCH_INVALID
+    severity: high
+
+  - id: czl_receipt_rt_not_zero
+    enabled: true
+    description: "CZL Gate 2: Sub-agent receipt claims Rt+1=0 but empirical verification fails"
+    last_reviewed: "2026-04-16"
+    reviewer: "Leo Chen (eng-kernel) + Maya Patel (eng-governance)"
+
+    trigger:
+      tool: ["SendMessage"]
+      conditions:
+        - type: content_contains
+          keywords: ["receipt", "Rt+1", "5-tuple"]
+        - type: claimed_rt_equals
+          value: 0.0
+
+    validation:
+      - type: python_validator
+        module: "ystar.kernel.czl_protocol"
+        function: "validate_receipt"
+        args: ["receipt_text", "artifacts_expected"]
+        expect_valid: true
+
+    action: deny
+    recipe: |
+      CZL Gate 2 FAILED: Receipt claims Rt+1=0 but empirical verification failed.
+
+      Claimed Rt+1: {claimed_rt}
+      Actual gap: {empirical_gap}
+
+      Verification failures:
+      - Missing artifacts: {missing_artifacts}
+      - Test output not found: {missing_test_evidence}
+      - No bash verification paste: {missing_bash_output}
+
+      Sub-agent hallucinated success. DO NOT report this task as complete.
+
+      Required action:
+      (1) Re-dispatch with tighter validation prompt:
+          "Include bash verification output (ls -la, wc -l, pytest -q) in receipt"
+      (2) After receipt, call validate_receipt() yourself:
+          from ystar.kernel.czl_protocol import validate_receipt
+          is_valid, gap = validate_receipt(receipt, artifacts=[...])
+          if not is_valid: re_dispatch()
+
+      This prevents Ethan#CZL-1 class zero-tool hallucination.
+
+      Ref: CZL Unified Communication Protocol v1.0 (Board 2026-04-16 Constitutional)
+           Y-star-gov/tests/kernel/test_czl_protocol.py (16/16 PASS baseline)
+
+    cieu_event: CZL_GATE2_RECEIPT_INVALID
+    severity: high
+
+  - id: realtime_artifact_archival_sla
+    enabled: true
+    description: "New artifact in archival scope lacks ARCHIVE_INDEX entry (Secretary SLA ≤30 min)"
+    last_reviewed: "2026-04-16"
+    reviewer: "Ryan Park (eng-platform)"
+
+    trigger:
+      tool: ["Write", "Edit"]
+      conditions:
+        - type: path_match
+          pattern: "^(reports/|knowledge/|products/|content/|governance/)"
+          context: "file_path"
+
+    action: audit
+    recipe: |
+      New artifact created in archival scope. Secretary SLA enforcement:
+
+      Scope: reports/ knowledge/ products/ content/ governance/
+      SLA: Index in knowledge/ARCHIVE_INDEX.md ≤30 min + emit ARTIFACT_ARCHIVED
+
+      Automated enforcement:
+      - Cron job: scripts/archive_sla_scan.py runs every 15 min
+      - Emits ARTIFACT_UNARCHIVED_SLA_BREACH for violations
+      - Install cron: see scripts/archive_sla_cron.txt
+
+      Secretary duty: When cron emits breach, immediately index artifact + emit ARTIFACT_ARCHIVED.
+
+      Ref: agents/Secretary.md §CZL duties item 6 (real-time archival)
+           governance/forget_guard_rules.yaml realtime_artifact_archival_sla
+
+    cieu_event: ARTIFACT_ARCHIVAL_SCOPE_DETECTED
+    severity: low
