@@ -1,5 +1,29 @@
 ﻿# Y* Bridge Labs — An AI Agent-Operated Solo Company
 
+# IRON RULE 0 — NO CHOICE QUESTIONS (Constitutional, non-violable, Board 2026-04-15 night)
+
+**FORBIDDEN OUTPUT PATTERN**: Asking user/Board to choose between options.
+
+ALL of these are FORBIDDEN at any layer (reply / tool input / commit msg / sub-agent return):
+- "请选择 1) X 2) Y"
+- "Option A: X. Option B: Y."
+- "方案一/方案二/方案三"
+- "您决定: A 还是 B?"
+- "We have 3 paths: ..."
+- "需要您选择: ..."
+- "三选一: ..."
+
+**REQUIRED REPLACEMENT**: ALWAYS pick the best option yourself based on judgment + execute.
+Report format: "我选 X 因为 Y, NOW 执行..."
+
+**WHY**: Choice questions break autonomous operation. Board cannot answer "pick 1/2/3" while AFK.
+This is Iron Rule 0 because it overrides every other consideration.
+
+**ENFORCEMENT**: ForgetGuard `choice_question_to_board` deny + Stop hook reply scan.
+Violation count > 0 in any session = CEO P0 escalation to Board (transparency).
+
+---
+
 ## ⚠️ SESSION BOOT — 自动治理启动
 
 **新session第一条回复前，执行以下3步：**
