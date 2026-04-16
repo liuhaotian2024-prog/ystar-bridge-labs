@@ -487,4 +487,90 @@ else
     echo "MEMORY_DRIFT_PENDING_ACK=1" >> "$YSTAR_DIR/.ystar_session_flags"
 fi
 
+# STEP 11.5: Agent CZL duty mount (generic, all agents)
+echo ""
+echo "-- STEP 11.5: Agent CZL duty mount (generic) --"
+  cd "$YSTAR_DIR"
+  export YSTAR_DIR
+  export AGENT_ID
+  python3 - <<'PYEOF' 2>&1
+import re, sys, os
+sys.path.insert(0, "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts")
+try:
+    from _cieu_helpers import emit_cieu
+except ImportError:
+    emit_cieu = None
+
+agent_id = os.environ.get("AGENT_ID", "unknown")
+ystar_dir = os.environ.get("YSTAR_DIR", "/Users/haotianliu/.openclaw/workspace/ystar-company")
+
+# Map agent_id to charter file path (try both locations)
+CHARTER_MAP = {
+    "ceo": ["agents/CEO.md", ".claude/agents/ceo.md"],
+    "cto": ["agents/CTO.md", ".claude/agents/cto.md"],
+    "cmo": ["agents/CMO.md", ".claude/agents/cmo.md"],
+    "cso": ["agents/CSO.md", ".claude/agents/cso.md"],
+    "cfo": ["agents/CFO.md", ".claude/agents/cfo.md"],
+    "secretary": ["agents/Secretary.md", ".claude/agents/secretary.md"],
+    "eng-kernel": [".claude/agents/eng-kernel.md"],
+    "eng-governance": [".claude/agents/eng-governance.md"],
+    "eng-platform": [".claude/agents/eng-platform.md"],
+    "eng-domains": [".claude/agents/eng-domains.md"],
+}
+
+charter_candidates = CHARTER_MAP.get(agent_id, [])
+if not charter_candidates:
+    print(f"  INFO: No charter mapping for agent_id={agent_id}")
+    sys.exit(0)
+
+# Find first existing charter file
+charter_path = None
+for candidate in charter_candidates:
+    full_path = os.path.join(ystar_dir, candidate)
+    if os.path.exists(full_path):
+        charter_path = full_path
+        charter_rel = candidate
+        break
+
+if not charter_path:
+    print(f"  INFO: Charter file not found for agent_id={agent_id} (tried {charter_candidates})")
+    sys.exit(0)
+
+with open(charter_path, 'r') as f:
+    content = f.read()
+
+# Extract section "长期自主任务（CZL duties）" or "## CZL duties" — match until next ## section or EOF
+czl_section_match = re.search(r'###?\s+长期自主任务[^#]*?\n(.*?)(?=\n##\s|\Z)', content, re.DOTALL)
+if not czl_section_match:
+    czl_section_match = re.search(r'###?\s+CZL duties[^#]*?\n(.*?)(?=\n##\s|\Z)', content, re.DOTALL)
+
+if not czl_section_match:
+    print(f"  INFO: No CZL duties section in {charter_rel} (agent_id={agent_id})")
+    sys.exit(0)
+
+czl_text = czl_section_match.group(1)
+
+# Find duty entries: #### `duty_name` — description (Chinese or ASCII dash)
+duty_pattern = re.compile(r'####\s+`([^`]+)`\s+[—\-]\s+([^\n(（]+)', re.MULTILINE)
+duties = duty_pattern.findall(czl_text)
+
+if not duties:
+    print(f"  INFO: No CZL duties found in {charter_rel} (checked {len(czl_text)} chars)")
+    sys.exit(0)
+
+print(f"  Loaded {len(duties)} CZL duty/duties from {charter_rel}:")
+for duty_id, description in duties:
+    desc_clean = description.strip()
+    print(f"    DUTY_LOADED: {duty_id} (agent={agent_id})")
+    # Emit CIEU event
+    if emit_cieu:
+        emit_cieu(
+            event_type="DUTY_LOADED",
+            decision="info",
+            passed=1,
+            task_description=f"{agent_id} CZL duty: {desc_clean}",
+            params_json=f'{{"duty_id": "{duty_id}", "agent_id": "{agent_id}", "charter_path": "{charter_rel}"}}'
+        )
+PYEOF
+
 exit $FAILURES

@@ -1,0 +1,15 @@
+# Archive SLA Cron — Installation Hint for Board
+#
+# This file is NOT auto-installed (Board scope per AGENTS.md Article 14).
+# Board manually adds this entry to crontab via `crontab -e`.
+#
+# Suggested cron entry:
+# Run every 15 minutes, emit CIEU for artifacts unarchived >30 min
+# */15 * * * * cd /Users/haotianliu/.openclaw/workspace/ystar-company && python3 scripts/archive_sla_scan.py >> scripts/.logs/archive_sla_scan.log 2>&1
+#
+# Notes:
+#   - cd into repo before running (CIEU helpers require REPO_ROOT)
+#   - Logs to scripts/.logs/archive_sla_scan.log (create dir if needed: mkdir -p scripts/.logs)
+#   - Exit code 1 if breaches found, 0 if clean, 2 if error
+#   - To disable: comment out line in crontab
+#   - To test: python3 scripts/archive_sla_scan.py --dry-run

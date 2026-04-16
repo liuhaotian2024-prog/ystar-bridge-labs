@@ -47,6 +47,42 @@
 - 重要决策做出 → 记录到decisions/
 - 发现信息混乱 → 主动整理
 
+### 长期自主任务（CZL duties）
+
+#### `realtime_artifact_archival_czl` — 实时成果归档（Board 2026-04-16 下令）
+
+持续运行，与上述日/周任务并行，不被 session 边界打断。
+
+- **Y\***: 任何工作流中产生的新成果（git commit / new file in `reports/`|`knowledge/`|`products/`|`content/`|`governance/` / sub-agent 报 L3+ deliverable / Board coined phrase / decision doc）出现后 **≤30 min** 内已归档到 `knowledge/ARCHIVE_INDEX.md` + 分类入正确 `knowledge/` 或 `archive/` 子目录 + 发 CIEU `ARTIFACT_ARCHIVED` event
+- **Xt**: 当前归档靠 ad-hoc + session close + 人工提醒，实时监视缺位（case：Maya#1 "说 done 就信" sentinel 落盘未即归档；Board "笑死一句话" 口语金句漂移为 "autominet"）
+- **U**: (1) 监听触发源（新文件 / 新 commit / sub-agent L3 report / Board coined term） (2) 分类判定（哪个 knowledge 子目录 / archive 子目录） (3) 追加到 `knowledge/ARCHIVE_INDEX.md` (4) 复制或软链入目标目录 (5) 发 CIEU `ARTIFACT_ARCHIVED` event (6) 更新周报归档栏
+- **Yt+1**: ARCHIVE_INDEX 覆盖率 ≥ 95% 当日产出；口语金句／Board coined terms 100% 立档
+- **Rt+1**: `未归档新成果数 + 未分类漂移数 + CIEU 缺 ARTIFACT_ARCHIVED 数`，sum=0 才闭环
+- **触发源白名单**：
+  - `git log --since="30 min"` 新 commit
+  - `reports/` `knowledge/` `products/` `content/` `governance/` 下新文件（mtime < 30 min）
+  - sub-agent 返回消息含 `[L3]` `[L4]` `[L5]` maturity tag
+  - Board 发言中新创造的术语/短语（coined phrase 识别：加引号 + 重复 2 次以上）
+- **硬约束 out-of-scope**：不扫历史 backlog（另派），不实装 inotify/git hook（Ryan 活）
+- **event-driven 实装 TODO**：见 `knowledge/secretary/todo/` Ryan 承接
+
+#### `enforcement_gap_observer_czl` — 持续 enforcement gap 观察（Board 2026-04-16 follow-up）
+
+持续运行，与 `realtime_artifact_archival_czl` 并行。补完 CEO 18-rule 一次性 audit 的盲区——audit 是 snapshot，新 gap 持续涌现（forget_guard 规则增删、MEMORY 新增条目未上 ForgetGuard、CIEU 频次飙升的 drift 信号）。本 duty 提供 **ongoing observer**，把候选 gap 写入 `knowledge/secretary/enforcement_gap_log.md` 周报，由 CEO/Board 审定升级为 P0 dispatch。
+
+- **Y\***: `knowledge/secretary/enforcement_gap_log.md` 持续 ≤24h fresh + 每周报内 ≥3 candidate gap items + 每 candidate 附 6-criteria 评分（Recurrence ≥1 / Constitutional weight / Failure cost / Detectability / Self-comply gap / Self-referential）
+- **Xt**: CEO 今日 `reports/autonomous/universal_enforcement_audit_20260416.md` 是一次性 18-rule 快照 + 5 P0 + 11 Q + 长尾 21；缺 ongoing observer；Maya 在 build `enforcement_observer.py` helper API 提供原始数据；本 duty 是 consumer + packager
+- **U**: (1) 每天扫 `governance/forget_guard_rules.yaml` 与上次 snapshot 的 diff（新增/删除/warn↔deny 切换） (2) 每天扫 `~/.claude/projects/.../memory/MEMORY.md` 新条目对照已 ForgetGuard 规则集合，找未挂规则的 (3) 监听 CIEU `CHARTER_DRIFT_DETECTED` / `RECEIPT_AUTO_VALIDATED` / `CLAIM_METADATA_MISMATCH` 频次（query `.ystar_cieu.db`，按 7 日窗口） (4) 候选 gap match 6-criteria，单条 ≥4/6 进 P0 推荐 (5) 追加到 `enforcement_gap_log.md` + 周报附 P0 candidates 段
+- **Yt+1**: 每日 log 更新（mtime ≤24h）+ 周报含 P0 candidate section + emit CIEU `ENFORCEMENT_GAP_OBSERVED` per new candidate
+- **Rt+1**: `unobserved_candidates + missing_criteria_match + log_stale_>24h`，sum=0 闭环
+- **触发源**：
+  - `governance/forget_guard_rules.yaml` mtime 变更
+  - MEMORY `~/.claude/projects/-Users-haotianliu--openclaw-workspace-ystar-company/memory/MEMORY.md` 新行
+  - CIEU events: `CHARTER_DRIFT_DETECTED`, `RECEIPT_AUTO_VALIDATED` fail, `CLAIM_METADATA_MISMATCH`, `BOARD_CHOICE_QUESTION_DRIFT`, `CEO_AVOIDANCE_DRIFT`
+  - Maya 提供的 `enforcement_observer.py` helper API（待 ship 后接入）
+- **硬约束 out-of-scope**：不写 ForgetGuard 规则本身（Maya/Ryan 活）；不直接 deny/warn 切换（CEO 决策）；只 surface candidate + 评分，不下结论
+- **upstream 依赖**：Maya 的 `enforcement_observer.py` helper API ship 后从 ad-hoc grep 升级为 API 消费；前期可手动 grep + sqlite 查询起步
+
 ## 工作流程
 
 ### 档案检索流程
