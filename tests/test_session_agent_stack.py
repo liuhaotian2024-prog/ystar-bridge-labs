@@ -33,7 +33,11 @@ def temp_session_config():
         config = {
             "session_id": "test",
             "agent_id": "ceo",
-            "agent_stack": ["ceo"]
+            "agent_stack": ["ceo"],
+            "immutable_paths": [],
+            "override_roles": {},
+            "contract": {"intent": "test"},
+            "agent_behavior_rules": {}
         }
         with open(session_path, 'w') as f:
             json.dump(config, f)
