@@ -609,3 +609,24 @@ whitelists:
 
     cieu_event: SUBAGENT_NO_COMMIT_DRIFT
     severity: medium
+
+  - id: ceo_no_midstream_checkin
+    enabled: true
+    description: "CEO dispatched sub-agent >30min ago without SendMessage check-in"
+    last_reviewed: "2026-04-15"
+    reviewer: "Board 2026-04-15 night architecture fix W25"
+
+    trigger:
+      tool: ["Agent"]
+      conditions:
+        - type: content_contains
+          keywords: ["subagent_type"]
+
+    action: warn
+    recipe: |
+      New dispatch detected. Check if previous sub-agent (>30min ago) has returned.
+      If pending: SendMessage for status check first. Don't race.
+      Ref: governance/ceo_midstream_checkin_protocol.md
+
+    cieu_event: CEO_NO_MIDSTREAM_CHECKIN
+    severity: medium
