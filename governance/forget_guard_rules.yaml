@@ -582,3 +582,30 @@ whitelists:
   - project_procedure
   - constitutional
   - rapid_matrix
+
+  - id: subagent_no_commit_after_5_writes
+    enabled: true
+    description: "Sub-agent accumulates ≥5 Write/Edit without commit — risks losing all work on truncation"
+    last_reviewed: "2026-04-15"
+    reviewer: "Board 2026-04-15 night atomic dispatch architecture fix"
+
+    trigger:
+      tool: ["Write", "Edit"]
+      conditions:
+        - type: content_contains
+          keywords: ["write", "edit"]
+
+    action: warn
+    recipe: |
+      Sub-agent has accumulated ≥5 Write/Edit operations without git commit.
+      This pattern caused 8/11 sub-agent failures today (truncation lost all work).
+
+      MANDATORY: After every Write/Edit, run:
+        git add <file> && git commit -m "WIP: <description>"
+        git push origin main
+
+      Even if work is incomplete, WIP commit prevents total loss on truncation.
+      Ref: governance/sub_agent_atomic_dispatch.md
+
+    cieu_event: SUBAGENT_NO_COMMIT_DRIFT
+    severity: medium
