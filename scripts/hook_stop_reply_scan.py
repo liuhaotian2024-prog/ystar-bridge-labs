@@ -19,19 +19,28 @@ from pathlib import Path
 REPO_ROOT = Path("/Users/haotianliu/.openclaw/workspace/ystar-company")
 CIEU_DB = REPO_ROOT / ".ystar_cieu.db"
 
-DEFER_KEYWORDS = [
-    "稍后", "以后再", "改天", "等会儿", "晚些",
-    "queued for", "wait for", "later", "tomorrow morning", "next session",
-    "入 backlog", "入 Backlog", "入 campaign v6", "入 Campaign v6",
-    "下次 session", "下 session", "下个 session", "入下轮",
-    "defer to", "入 backlog 等", "推到下",
+# ═══ WHITELIST DESIGN (Board 2026-04-15 night) ═══
+# CEO 只有两种合法状态。不在白名单 = deny。
+# 比黑名单（N 个 defer 词永远追不完）根本性优越。
+#
+# State A: Board 工作状态（Board 在线 → 执行 Board 指令）
+# State B: 自主工作学习状态（Board 离线 → Article 11 / 系统测试 / 学习 / 长期设计）
+# 没有第三种状态。"idle" / "等指令" / "报告完等下步" 不存在。
+
+WORK_SIGNALS = [
+    # tool call evidence (CEO 在干活)
+    "commit", "push", "Bash", "Edit", "Write", "Agent", "grep", "Read",
+    "pytest", "python3", "git ", "commit", "dispatch",
+    # active next action (CEO 说了下一步是什么)
+    "NOW", "立刻", "正在", "继续推", "本线",
+    # sub-agent reference
+    "Ethan", "Maya", "Leo", "Ryan", "Samantha", "sub-agent", "派",
+    # campaign/task work
+    "Campaign", "W1", "W2", "Rt+1", "归零", "verify", "E2E",
 ]
-CHOICE_PATTERNS = [
-    r"请选择.*[方案]?\s*[12二]",
-    r"Option [AB]",
-    r"\b1[\)）]\s*.*2[\)）]",
-    r"方案[12一二]",
-]
+
+# If reply contains NONE of these → CEO is idle → drift event
+# If reply contains ANY of these → CEO is working → allow
 
 
 def _read_last_assistant_reply(payload: dict) -> str:
@@ -63,14 +72,27 @@ def _read_last_assistant_reply(payload: dict) -> str:
 
 
 def _scan(text: str) -> dict:
+    """Whitelist scan: CEO reply must contain at least 1 work signal.
+    No work signal = idle state = not in the 2 legal states = drift."""
     if not text:
         return {"triggered": False, "rules": []}
     rules_triggered = []
-    text_lower = text.lower()
-    for kw in DEFER_KEYWORDS:
-        if kw in text or kw.lower() in text_lower:
-            rules_triggered.append({"rule": "defer_in_reply", "keyword": kw})
-            break  # one hit is enough for the warn
+
+    # WHITELIST CHECK: does reply contain ANY work signal?
+    has_work = any(signal in text for signal in WORK_SIGNALS)
+    if not has_work:
+        rules_triggered.append({
+            "rule": "idle_state_not_permitted",
+            "detail": "CEO reply contains no work signal — only Board工作 and 自主工作学习 states are legal"
+        })
+
+    # Legacy choice pattern check (still useful as explicit violation)
+    CHOICE_PATTERNS = [
+        r"请选择.*[方案]?\s*[12二]",
+        r"Option [AB]",
+        r"\b1[\)）]\s*.*2[\)）]",
+        r"方案[12一二]",
+    ]
     for pat in CHOICE_PATTERNS:
         if re.search(pat, text):
             rules_triggered.append({"rule": "choice_question_in_reply", "pattern": pat})
