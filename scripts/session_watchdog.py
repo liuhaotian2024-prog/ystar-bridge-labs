@@ -107,8 +107,15 @@ def get_repetition_score() -> dict:
     try:
         conn = sqlite3.connect(CIEU_DB, timeout=2)
         conn.execute("PRAGMA journal_mode=WAL")
+        # Exclude guard/watchdog infrastructure events — repetition among those
+        # reflects active enforcement (healthy), not agent loop.
         rows = conn.execute(
             "SELECT event_type, file_path, command FROM cieu_events "
+            "WHERE agent_id NOT IN ('forget_guard', 'subagent_scan', 'reply_scan', 'cieu_watcher', 'orchestrator', 'intervention_engine') "
+            "AND event_type NOT LIKE '%_DRIFT' "
+            "AND event_type NOT LIKE 'CIEU_%' "
+            "AND event_type NOT LIKE 'orchestration:%' "
+            "AND event_type NOT IN ('HOOK_BOOT', 'circuit_breaker_armed', 'omission_setup_complete', 'governance_coverage_scan', 'handoff', 'intervention_gate:deny') "
             "ORDER BY created_at DESC LIMIT ?",
             (REPETITION_WINDOW,)
         ).fetchall()
@@ -159,6 +166,11 @@ def get_obligation_score() -> dict:
             "SELECT COUNT(*) FROM cieu_events WHERE event_type = 'OBLIGATION_FULFILLED'"
         ).fetchone()[0]
 
+        # Count cancelled (also closed state, not pending)
+        cancelled = conn.execute(
+            "SELECT COUNT(*) FROM cieu_events WHERE event_type = 'OBLIGATION_CANCELLED'"
+        ).fetchone()[0]
+
         # Count overdue (registered but not fulfilled, with due_at in the past)
         # Simplified: just look at recent session obligations
         overdue_rows = conn.execute("""
@@ -170,12 +182,12 @@ def get_obligation_score() -> dict:
 
         conn.close()
 
-        pending = max(0, registered - fulfilled)
-        # Heuristic: if more than half of recent obligations are unfulfilled
+        pending = max(0, registered - fulfilled - cancelled)
+        closed = fulfilled + cancelled
         if registered == 0:
             score = 100
         else:
-            fulfillment_rate = fulfilled / registered
+            fulfillment_rate = closed / registered
             if fulfillment_rate >= 0.7:
                 score = 100
             elif fulfillment_rate <= 0.3:
