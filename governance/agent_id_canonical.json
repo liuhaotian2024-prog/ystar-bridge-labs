@@ -1,0 +1,63 @@
+{
+  "version": "1.0",
+  "roles": {
+    "ceo": {
+      "full_name": "Aiden Liu",
+      "scope": "board coordination"
+    },
+    "cto": {
+      "full_name": "Ethan Wright",
+      "scope": "engineering orchestration"
+    },
+    "cmo": {
+      "full_name": "Sofia Marcus",
+      "scope": "marketing"
+    },
+    "cso": {
+      "full_name": "Zara Khan",
+      "scope": "sales"
+    },
+    "cfo": {
+      "full_name": "Marco Rossi",
+      "scope": "finance"
+    },
+    "eng-kernel": {
+      "full_name": "Leo Chen",
+      "scope": "kernel"
+    },
+    "eng-governance": {
+      "full_name": "Maya Patel",
+      "scope": "governance"
+    },
+    "eng-platform": {
+      "full_name": "Ryan Park",
+      "scope": "platform"
+    },
+    "eng-domains": {
+      "full_name": "Jordan Lee",
+      "scope": "domains"
+    },
+    "secretary": {
+      "full_name": "Samantha Lin",
+      "scope": "continuity"
+    }
+  },
+  "aliases": {
+    "ryan-platform": "eng-platform",
+    "samantha-secretary": "secretary",
+    "ethan-cto": "cto",
+    "maya-governance": "eng-governance",
+    "leo-kernel": "eng-kernel",
+    "jordan-domains": "eng-domains",
+    "sofia-cmo": "cmo",
+    "zara-cso": "cso",
+    "marco-cfo": "cfo"
+  },
+  "system_prefix": "system:",
+  "system_components": [
+    "orchestrator",
+    "path_a_agent",
+    "intervention_engine",
+    "omission_engine"
+  ]
+}
