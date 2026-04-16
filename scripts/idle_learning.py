@@ -27,13 +27,14 @@ Usage:
 
 import argparse
 import json
+import os
 import subprocess
 import sys
 import time
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-KNOWLEDGE_ROOT = REPO_ROOT / "knowledge"
+KNOWLEDGE_ROOT = Path(os.getenv("KNOWLEDGE_ROOT", REPO_ROOT / "knowledge"))
 
 # All 11 agents (6 executives + 4 engineers + Secretary)
 ROLES = {
@@ -554,7 +555,9 @@ def main():
     args = parser.parse_args()
 
     actor = canonical_actor(args.actor)
-    if actor not in ROLES:
+    # Allow unknown actors in test mode (when KNOWLEDGE_ROOT is overridden)
+    test_mode = os.getenv("KNOWLEDGE_ROOT") is not None
+    if actor not in ROLES and not test_mode:
         print(f"Error: Unknown actor '{args.actor}' (normalized: '{actor}')")
         print(f"Valid actors: {', '.join(sorted(ROLES))}")
         return 1
