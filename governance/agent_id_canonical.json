@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "roles": {
     "ceo": {
       "full_name": "Aiden Liu",
@@ -46,18 +46,28 @@
     "ryan-platform": "eng-platform",
     "samantha-secretary": "secretary",
     "ethan-cto": "cto",
+    "Ethan-CTO": "cto",
     "maya-governance": "eng-governance",
     "leo-kernel": "eng-kernel",
     "jordan-domains": "eng-domains",
     "sofia-cmo": "cmo",
     "zara-cso": "cso",
-    "marco-cfo": "cfo"
+    "marco-cfo": "cfo",
+    "governance": "eng-governance",
+    "platform": "eng-platform",
+    "test_agent": "system:test_infra",
+    "test-agent": "system:test_infra",
+    "coder_agent": "system:test_infra"
   },
   "system_prefix": "system:",
   "system_components": [
     "orchestrator",
     "path_a_agent",
     "intervention_engine",
-    "omission_engine"
+    "omission_engine",
+    "forget_guard",
+    "hook_pipeline",
+    "secretary_curate_pipeline",
+    "test_infra"
   ]
 }
