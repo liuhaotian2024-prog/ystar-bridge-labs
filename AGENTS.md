@@ -405,6 +405,38 @@ Permissions at each level are strictly less than or equal to the level above (Y*
 
 ---
 
+## Session-Level Y\* Doctrine (Constitutional, non-violable, Board 2026-04-15 PM)
+
+**触发**：Board 2026-04-15 PM catch — CEO 把 Campaign v5 P1 残债包装成 "入 Campaign v6 backlog" 变相 clock-out。per-task Rt+1=0 不等于 session Rt+1=0。
+
+### Session Rt+1=0 五条硬约束（同时满足才算归零）
+
+1. **Active backlog 存量 = 0** — 不允许"入 backlog/入下个 Campaign"的合法化 defer
+2. **Both repos git status clean + 0 unpushed commits** — ystar-company + Y\*gov
+3. **WORLD_STATE.md 反映 fresh 真实状态** — Section 3 Campaign 非 stale, Section 11 今日 commits 最新
+4. **session_summary_YYYYMMDD.md 已生成** — hook_session_end_summary.py 执行过
+5. **priority_brief next_session_p0_carryover 更新** — 反映本 session 完成事项
+
+### 合法 session stop 路径（唯一）
+
+**Board 明示 "收工/stop/今晚到这"**。否则 agent 持续工作直到 5 条全过。
+
+### 禁止语义（reply/commit/doc/code comment 全域）
+
+- "入 backlog" / "入 Campaign v6+" / "下次 session 继续" / "defer to" / "推到下"
+- 已由 ForgetGuard `backlog_as_defer_disguise` + Stop hook `DEFER_IN_REPLY_DRIFT` 双层拦
+
+### Backlog 合法使用条件
+
+合法 backlog ≠ defer，需同时：
+- 明确 eta（小时/天粒度）
+- 明确 owner
+- 本 session Board 明示批延
+
+缺任一 = defer 伪装。
+
+---
+
 ## Memory & Continuity Systems (P2-I, 2026-04-15)
 
 Agent working memory 分多层，**每层有独立职责不要混**。顺序 = Boot 时载入优先级。
