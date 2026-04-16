@@ -41,18 +41,35 @@ WORK_SIGNALS = [
     "sub-agent 派",
 ]
 
-# NEGATIVE patterns: any match → idle disguise, overrides WORK_SIGNALS
-IDLE_DISGUISE_PHRASES = [
-    "等返回", "等 agent 返回", "等 ... 返回", "等 sub-agent 返回",
-    "严守岗位", "严守 岗位",
-    "CEO active", "CEO 本线 continue", "CEO 持续 active",
-    "等 ceo 接手", "等 Board", "等指令", "等下一步",
-    "保持 active 等",
-    "CEO 严守",
+# ═══ STATE MACHINE WHITELIST (Board 2026-04-15 night 真根治) ═══
+# 黑名单永远列不完。CEO 只有 3 个合法 state，其他全 deny:
+#
+# STATE_BOARD_DIRECTIVE: 正在执行 Board 明确指令的任务
+# STATE_AUTONOMOUS_WORK: 既有 active campaign 未 Rt+1=0，继续推进
+# STATE_BOARD_STOP:      Board 明确指令停止 (唯一合法停止)
+#
+# Reply 必须含 ≥1 of these state-evidence patterns (whitelist):
+
+import re
+
+STATE_EVIDENCE_PATTERNS = [
+    # Pattern 1: commit hash evidence (CEO/sub-agent 真 ship 了)
+    re.compile(r'\b[0-9a-f]{7,40}\b'),  # git short/full hash
+    # Pattern 2: 显式 dispatch (派 + 任意 agent name OR sub-agent ID)
+    re.compile(r'派\s*(Ethan|Maya|Leo|Ryan|Samantha|Sofia|Marco|Zara|sub-agent)'),
+    re.compile(r'\b(a[0-9a-f]{16})\b'),  # sub-agent id pattern (today's format)
+    # Pattern 3: Board 直接引用 (含"老大"/"Board"+ 任务 quote)
+    re.compile(r'(老大|Board)[^\n]{0,80}["「『]'),
+    # Pattern 4: tool action evidence (commit/push/edit/agent 真发生)
+    re.compile(r'(commit|push|Edit|Write|Bash|Agent|Read|Grep)\s*\(?[^\s]'),
+    # Pattern 5: Rt+1 verify action (实际归零证据，非 topic mention)
+    re.compile(r'Rt\+1\s*=\s*0\s*[✓✅]'),
+    # Pattern 6: Board explicit stop quote
+    re.compile(r'Board\s*(明令停|说停|说收工|stop|今晚到这)'),
 ]
 
-# If reply contains NONE of WORK_SIGNALS OR ANY of IDLE_DISGUISE_PHRASES → drift
-# If reply has WORK_SIGNAL AND no IDLE_DISGUISE → allow
+# 任意 1 pattern match = STATE 在白名单 = allow
+# 0 pattern match = STATE_UNDEFINED = drift event
 
 
 def _read_last_assistant_reply(payload: dict) -> str:
@@ -84,29 +101,24 @@ def _read_last_assistant_reply(payload: dict) -> str:
 
 
 def _scan(text: str) -> dict:
-    """Whitelist scan: CEO reply must have action work signal AND no idle disguise.
-    No work signal OR any idle disguise = drift.
-    Board 2026-04-15 night root fix: CZL R-zero enforcement at reply level."""
+    """STATE MACHINE WHITELIST (Board 2026-04-15 night 真根治).
+    CEO 只有 3 合法 state. Reply 必须含 ≥1 STATE_EVIDENCE_PATTERN.
+    任何不在白名单的 state = STATE_UNDEFINED drift.
+    根本性优于黑名单（永远列不完）。"""
     if not text:
         return {"triggered": False, "rules": []}
     rules_triggered = []
 
-    # NEGATIVE CHECK FIRST (overrides whitelist):
-    # any idle disguise phrase → drift, regardless of work signals
-    for phrase in IDLE_DISGUISE_PHRASES:
-        if phrase in text:
-            rules_triggered.append({
-                "rule": "idle_disguise_drift",
-                "detail": f"CEO reply contains idle-disguise phrase '{phrase}' — Board 2026-04-15 night doctrine: 没有'等返回'或'严守岗位'状态，CEO 必须立刻找下一活"
-            })
-            break  # one match enough for the warn
+    # WHITELIST: 任意 1 pattern match = legal state
+    matched_patterns = []
+    for pattern in STATE_EVIDENCE_PATTERNS:
+        if pattern.search(text):
+            matched_patterns.append(pattern.pattern[:60])
 
-    # WHITELIST CHECK: action-only signals (topic keywords removed)
-    has_work = any(signal in text for signal in WORK_SIGNALS)
-    if not has_work:
+    if not matched_patterns:
         rules_triggered.append({
-            "rule": "idle_state_not_permitted",
-            "detail": "CEO reply contains no ACTION work signal — must include tool call (commit/Edit/Bash/Agent) or explicit '派 <agent>'"
+            "rule": "state_undefined_drift",
+            "detail": "CEO reply 不在合法 state 白名单 (BOARD_DIRECTIVE/AUTONOMOUS_WORK/BOARD_STOP). 缺 ≥1 of: commit hash / dispatch (派 <agent>) / Board quote / tool action / Rt+1=0✓ / Board explicit stop. 此 reply 等价 IDLE/UNDEFINED."
         })
 
     # Legacy choice pattern check (still useful as explicit violation)
