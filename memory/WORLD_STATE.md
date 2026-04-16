@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-15 20:22:06
+**Generated**: 2026-04-15 21:12:04
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -38,7 +38,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/0 valid
-**CIEU 24h Events**: 23840
+**CIEU 24h Events**: 25009
 **Overdue Obligations**: 0
 
 ---
@@ -86,10 +86,10 @@ ceo          | 3/3          | 24           | 17       | Never
 ---
 
 ## 8. Ecosystem — Y*gov Product Repo
-**HEAD**: `0d3cac5 fix(W7.2): hybrid fusion → max(keyword, tfidf) best-of-both [L3 TESTED]`
-**24h commits**: 21
+**HEAD**: `ea61265 feat(gov): W7.3 sentence-transformer embedding for narrative_coherence_detector [L3]`
+**24h commits**: 20
 **ahead origin**: 0
-**test files**: 90
+**test files**: 92
 **version**: 0.48.0
 
 ---
@@ -112,7 +112,16 @@ ceo          | 3/3          | 24           | 17       | Never
 ## 11. Today's Commits (24h) — both repos
 
 
-**ystar-company** (81 commits):
+**ystar-company** (86 commits):
+- 5adb5b81 21:11 doctrine(czl): 补录 Three-Layer + Defer≠Schedule 到 AGENTS.md [L4 CONSTITUTIONAL]
+- 98f74be0 21:02 fix(W14): event_fingerprint fallback to agent_id+task_desc on null params [L3 TESTED]
+- 0e9bc54d 20:56 fix(watchdog): HP measurement 2 bugs + orchestrator/intervention filter [L3 TESTED]
+- db271e6b 20:49 feat(evidence): evidence_aggregator.py — 7 CZL event types auto query [L3 TESTED]
+- 80836c0a 20:47 feat(forget-guard): W10.1 multi-keyword AND logic for defer detection [L3 TESTED]
+- 11e34933 20:45 feat(czl): W13 — sub-agent output layer (Layer 7 gap fix) [L3 TESTED]
+- bf96a937 20:43 doctrine(czl): Session-Level Y* 五条硬约束 constitutional [L4]
+- 80231077 20:42 doctrine(czl): Session-Level Y* + backlog_as_defer_disguise rule [L4 CONSTITUTIONAL]
+- b172e4b5 20:22 continuity(czl): P0 5-pack — tag/brief/subgoals/world_state/session_end [L4]
 - ab469d6f 20:16 fix(forget-guard): defer ≠ schedule 基因级区分 [L3 TESTED]
 - 9f0120e8 19:55 feat(czl): Campaign v5 W10 + W12 — reply prose monitor + 4-repo god-view [L3 TESTED]
 - 2fceb24b 19:49 feat(wire): W6.1 canonical taxonomy split — static_frozen vs live_tracked [L3 TESTED]
@@ -124,17 +133,10 @@ ceo          | 3/3          | 24           | 17       | Never
 - 9703e27d 19:09 dogfood(czl): Campaign v3 subgoals.json 10 criteria 补 Y* Schema v2 必填字段 [L3]
 - f8812130 18:51 chore(czl): W5.1 + W7.1 completion records
 - 8b7a3a0d 18:50 fix(w7.1): hook_prompt_gate CIEU schema + silent skip logic
-- 0dcf87c6 18:48 feat(governance): W7.1 — Prompt gate hooked into PostToolUse (Layer 2)
-- 0bc2a426 18:46 feat(governance): W5.1 — Y* schema v2 validator hooked into production (Layer 2)
-- 56af44b5 16:16 feat(guardian): Canonical Hash Guard — W6 Phase 2
-- b1dec64a 16:13 data(czl): dogfood Y* Schema v2 in .czl_subgoals.json [W5 Phase 2]
-- 169ab6dd 15:55 fix(cto): WORLD_STATE.md Rt+1 gaps归零 — DB path/column/wire parse [L4 Rt=0]
-- 60b1fbd0 15:52 feat(cto): Mission Control WORLD_STATE.md + v3 Guardian audit [L3 IMPL + L4 DECISION]
-- c3a21a39 15:25 covenant(czl): CZL 不朽契约 + genesis tag 立约
-- dcdb3023 14:57 feat(hiagent): V1-V6 CZL subgoal compression impl [L3]
-- 1eef8bde 14:13 docs(priority-brief): v0.6 → v0.9 — 9-Fractures campaign wrap + HiAgent carry [L4]
 
-**Y*gov** (21 commits):
+**Y*gov** (20 commits):
+- ea61265 20:59 feat(gov): W7.3 sentence-transformer embedding for narrative_coherence_detector [L3]
+- 0605df3 20:58 feat(governance): CausalChainAnalyzer for CIEU event tracing
 - 0d3cac5 20:01 fix(W7.2): hybrid fusion → max(keyword, tfidf) best-of-both [L3 TESTED]
 - 8c73a4b 19:58 fix(W7.2): hybrid drift algorithm with correct gradient + CIEU events
 - 5276766 19:45 feat(governance): sync 4 defer/choice rules to Y*gov from ystar-company [L2 IMPL]
@@ -153,5 +155,3 @@ ceo          | 3/3          | 24           | 17       | Never
 - ea95fbb 08:45 feat(gov): Maya K9 rules 6-10 module + hook CIEU marker check (truncated, CEO commit) [L3 IMPL]
 - 459a78b 07:32 feat(hook): Agent tool auto-set .ystar_active_agent from subagent_type
 - 006c399 21:27 fix(R18): hardcoded /Users/haotianliu/ → os.path.expanduser('~/...') [L4 SHIPPED]
-- 4997d6c 20:37 feat(gov): CEO_AVOIDANCE_DRIFT hook enforcement [L4 SHIPPED]
-- 88911b8 20:32 feat(kernel): commit Leo cieu.py shim + _whitelist_emit.py (4-01 灾害修复 + whitelist emit) [L4 PRESERVE]

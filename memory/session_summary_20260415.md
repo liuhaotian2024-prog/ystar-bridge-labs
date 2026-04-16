@@ -1,9 +1,18 @@
 # Session Summary 20260415
-**Generated**: 2026-04-15T20:22:06.389796
+**Generated**: 2026-04-15T21:12:04.973050
 
 ## Today's Commits (both repos)
 
 ### ystar-company
+- 5adb5b81 21:11 doctrine(czl): 补录 Three-Layer + Defer≠Schedule 到 AGENTS.md [L4 CONSTITUTIONAL]
+- 98f74be0 21:02 fix(W14): event_fingerprint fallback to agent_id+task_desc on null params [L3 TESTED]
+- 0e9bc54d 20:56 fix(watchdog): HP measurement 2 bugs + orchestrator/intervention filter [L3 TESTED]
+- db271e6b 20:49 feat(evidence): evidence_aggregator.py — 7 CZL event types auto query [L3 TESTED]
+- 80836c0a 20:47 feat(forget-guard): W10.1 multi-keyword AND logic for defer detection [L3 TESTED]
+- 11e34933 20:45 feat(czl): W13 — sub-agent output layer (Layer 7 gap fix) [L3 TESTED]
+- bf96a937 20:43 doctrine(czl): Session-Level Y* 五条硬约束 constitutional [L4]
+- 80231077 20:42 doctrine(czl): Session-Level Y* + backlog_as_defer_disguise rule [L4 CONSTITUTIONAL]
+- b172e4b5 20:22 continuity(czl): P0 5-pack — tag/brief/subgoals/world_state/session_end [L4]
 - ab469d6f 20:16 fix(forget-guard): defer ≠ schedule 基因级区分 [L3 TESTED]
 - 9f0120e8 19:55 feat(czl): Campaign v5 W10 + W12 — reply prose monitor + 4-repo god-view [L3 TESTED]
 - 2fceb24b 19:49 feat(wire): W6.1 canonical taxonomy split — static_frozen vs live_tracked [L3 TESTED]
@@ -81,12 +90,10 @@
 - 9076c6f9 21:27 fix(R18): hardcoded paths in scripts/agent_mode_manager.py [L4 SHIPPED]
 - f9fcbd8e 21:26 fix(R19/A1): convert ystar-company/ystar/ vendored copy to symlink → Y-gov [L4 SHIPPED]
 - f3885e09 21:25 fix(R3): disable hook_daemon launchd KeepAlive auto-respawn [L4 SHIPPED]
-- 7a614da2 20:53 fix(R5): apply Maya fail-closed edits to hook_wrapper.py [CTO]
-- d20d7fa8 20:44 audit v2: 35 risks across 3 repos (vs v1=15) [L4 SHIPPED]
-- 05080320 20:32 audit: 3-repo system audit — 15 risks classified P0/P1/P2 [L4 SHIPPED]
-- 9d3d73ac 20:25 handoff: apply_maya_fail_closed.sh + updated handoff with hook daemon respawn bug [L4 SHIPPED]
 
 ### Y*gov
+- ea61265 20:59 feat(gov): W7.3 sentence-transformer embedding for narrative_coherence_detector [L3]
+- 0605df3 20:58 feat(governance): CausalChainAnalyzer for CIEU event tracing
 - 0d3cac5 20:01 fix(W7.2): hybrid fusion → max(keyword, tfidf) best-of-both [L3 TESTED]
 - 8c73a4b 19:58 fix(W7.2): hybrid drift algorithm with correct gradient + CIEU events
 - 5276766 19:45 feat(governance): sync 4 defer/choice rules to Y*gov from ystar-company [L2 IMPL]
@@ -105,9 +112,6 @@
 - ea95fbb 08:45 feat(gov): Maya K9 rules 6-10 module + hook CIEU marker check (truncated, CEO commit) [L3 IMPL]
 - 459a78b 07:32 feat(hook): Agent tool auto-set .ystar_active_agent from subagent_type
 - 006c399 21:27 fix(R18): hardcoded /Users/haotianliu/ → os.path.expanduser('~/...') [L4 SHIPPED]
-- 4997d6c 20:37 feat(gov): CEO_AVOIDANCE_DRIFT hook enforcement [L4 SHIPPED]
-- 88911b8 20:32 feat(kernel): commit Leo cieu.py shim + _whitelist_emit.py (4-01 灾害修复 + whitelist emit) [L4 PRESERVE]
-- 1a227d7 20:22 [PATCH 2] session: schema guard — prevent silent acceptance of corrupted session.json
 
 
 ## Active Campaign
@@ -116,13 +120,13 @@
 
 
 ## CIEU 24h
-- Total events: 23840
+- Total events: 25009
 
-- HOOK_BOOT: 1763
-- external_observation: 1684
-- : 1643
-- orchestration:governance_loop_cycle: 1637
-- orchestration:path_a_cycle: 1637
-- orchestration:path_b_cycle: 1637
-- omission_setup_complete: 1635
-- circuit_breaker_armed: 1634
+- HOOK_BOOT: 1897
+- external_observation: 1794
+- : 1760
+- orchestration:governance_loop_cycle: 1754
+- orchestration:path_a_cycle: 1754
+- orchestration:path_b_cycle: 1754
+- omission_setup_complete: 1753
+- circuit_breaker_armed: 1751
