@@ -309,6 +309,7 @@ def main():
         # Format 1: PreToolUse flat {"tool": "Bash", "command": "..."}
         # Format 2: Legacy nested {"tool_input": {"command": "..."}, "tool_name": "Bash"}
         # Format 3: Stress test flat (same as Format 1)
+        # Format 4: Claude Code PreToolUse {"tool_name": "Bash", "command": "..."}
         if "tool_input" in payload_input:
             # Legacy nested format
             payload = payload_input["tool_input"]
@@ -316,6 +317,10 @@ def main():
         elif "tool" in payload_input:
             # PreToolUse flat format (most common)
             payload = payload_input
+        elif "tool_name" in payload_input:
+            # Claude Code PreToolUse format (tool_name at root level)
+            payload = payload_input
+            payload["tool"] = payload_input["tool_name"]
         else:
             # Unknown format — fail-open
             print(json.dumps({"action": "allow", "rules_triggered": [], "reason": "unknown_format"}))
