@@ -17,7 +17,7 @@ import sqlite3
 from pathlib import Path
 from datetime import datetime
 sys.path.insert(0, str(Path(__file__).parent))
-from _cieu_helpers import _get_current_agent
+from _cieu_helpers import _get_current_agent, emit_cieu
 
 try:
     import yaml
@@ -262,18 +262,20 @@ def emit_cieu_event(event_type: str, rule_id: str, severity: str, payload: dict)
             "command": payload.get("command"),
         })
 
-        # Insert event
-        c.execute('''
-            INSERT INTO cieu_events (
-                event_id, seq_global, created_at, session_id, agent_id, event_type,
-                decision, passed, drift_detected, drift_details, drift_category,
-                file_path, command, evidence_grade
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        ''', (
-            event_id, seq_global, created_at, session_id, agent_id, event_type,
-            "warn", 0, 1, drift_details, "institutional_memory",
-            payload.get("file_path"), payload.get("command"), "drift"
-        ))
+        # Insert event using emit_cieu helper
+        emit_cieu(
+            event_type=event_type,
+            decision="warn",
+            passed=0,
+            task_description=f"Rule {rule_id} violated (severity: {severity})",
+            session_id=session_id,
+            drift_detected=1,
+            drift_details=drift_details,
+            drift_category="institutional_memory",
+            file_path=payload.get("file_path"),
+            command=payload.get("command"),
+            evidence_grade="drift"
+        )
 
         conn.commit()
         conn.close()

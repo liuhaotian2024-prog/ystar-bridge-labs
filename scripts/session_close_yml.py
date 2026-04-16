@@ -332,29 +332,19 @@ def write_board_lessons(lessons: List[Dict], store: MemoryStore, cieu_db_path: P
 
         # Write CIEU audit for lesson creation (using existing schema)
         event_id = str(uuid.uuid4())
-        seq_global = int(time.time() * 1_000_000)
 
-        conn.execute("""
-            INSERT INTO cieu_events (
-                event_id, seq_global, created_at, session_id, agent_id, event_type,
-                decision, passed, task_description, params_json
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, (
-            event_id,
-            seq_global,
-            time.time(),
-            "session_close",
-            "ceo",
-            "BOARD_LESSON_LEARNED",
-            "allow",
-            1,
-            lesson_content,
-            json.dumps({
+        emit_cieu(
+            event_type="BOARD_LESSON_LEARNED",
+            decision="allow",
+            passed=1,
+            task_description=lesson_content,
+            session_id="session_close",
+            params_json=json.dumps({
                 "lesson": lesson_content,
                 "source_event": lesson_data["event_type"],
                 "source_cieu_id": lesson_data["cieu_id"]
             })
-        ))
+        )
 
         store.remember(mem, cieu_ref=event_id)
 

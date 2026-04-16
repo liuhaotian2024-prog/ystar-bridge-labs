@@ -251,28 +251,13 @@ def emit_cieu_health_check(company_root: Path, metrics: HealthMetrics):
         return
 
     try:
-        import uuid
-        conn = sqlite3.connect(str(cieu_db))
-
-        event_id = str(uuid.uuid4())
-        seq_global = int(time.time() * 1_000_000)
-
-        conn.execute("""
-            INSERT INTO cieu_events (
-                event_id, seq_global, created_at, session_id, agent_id, event_type,
-                decision, passed, task_description, params_json
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, (
-            event_id,
-            seq_global,
-            time.time(),
-            "watchdog",
-            "system",
-            "SESSION_HEALTH_CHECK",
-            "info" if not metrics.yellow_line_triggered else "yellow_line",
-            1,
-            metrics.reason if metrics.yellow_line_triggered else "Health OK",
-            json.dumps({
+        emit_cieu(
+            event_type="SESSION_HEALTH_CHECK",
+            decision="info" if not metrics.yellow_line_triggered else "yellow_line",
+            passed=1,
+            task_description=metrics.reason if metrics.yellow_line_triggered else "Health OK",
+            session_id="watchdog",
+            params_json=json.dumps({
                 "jsonl_mb": metrics.jsonl_size_mb,
                 "call_count": metrics.call_count,
                 "runtime_hours": metrics.runtime_hours,
@@ -281,10 +266,7 @@ def emit_cieu_health_check(company_root: Path, metrics: HealthMetrics):
                 "drift_count": metrics.drift_count,
                 "yellow_line": metrics.yellow_line_triggered
             })
-        ))
-
-        conn.commit()
-        conn.close()
+        )
     except Exception as e:
         print(f"[WATCHDOG] Warning: CIEU emit failed: {e}", file=sys.stderr)
 
