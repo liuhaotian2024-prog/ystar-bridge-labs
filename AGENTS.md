@@ -405,6 +405,66 @@ Permissions at each level are strictly less than or equal to the level above (Y*
 
 ---
 
+## Rule Verification Three-Layer Doctrine (Constitutional, non-violable, Board 2026-04-15)
+
+所有 CZL feature 验收必须三层分别 verify。一层一层独立，不允许"规则写了"被当作"规则在拦"。
+
+### 三层定义
+
+- **Layer 1 — Rule Written**：规则存在于 yaml / 代码 / 章程 — evidence: `grep -n <rule_id>`命中。**下限非达标**。
+- **Layer 2 — Rule Running**：production code 调用（不只 tests/） — evidence: `grep -rn` production paths 命中 + 真业务动作 log/CIEU 可见规则被 invoke。
+- **Layer 3 — Rule Enforcing**：deny 时真阻止 tool call / reject dispatch / block commit，非仅 warn 日志 — evidence: 端到端 stress test pass + 违规场景拦截确认。
+
+### 验收契约
+
+任何"规则 X 落地"交付必附：
+```
+rule_id: <id>
+layer_1_evidence: <grep 命中路径:行号>
+layer_2_evidence: <production 调用路径 + 一次真业务 log 证据>
+layer_3_evidence: <stress test N/N pass + 违规场景拦截确认>
+```
+缺任一 → **Rt+1≠0**，禁止 close。
+
+### Board 2026-04-15 语录
+
+> "CIEU 记录了违规 ≠ Y\* 达成。Y\* 永远是违规被拦截，不是违规被记录。"
+
+### 基因级教训
+
+Prose-claim 的根因 = 混淆三层。本 doctrine 写入本身就是 case-in-point：CEO 6h 前 reply 里 claim "三层 doctrine 钉入 AGENTS.md"，实际 Edit 失败没落盘。grep 查空才暴露。按三层契约，那次 claim **Layer 1 未过** = Rt+1 本就≠0。
+
+---
+
+## Defer ≠ Schedule Distinction (Constitutional, non-violable, Board 2026-04-15 PM)
+
+ForgetGuard 禁止的是**拖延推诿**（defer），**不是**时间规划（schedule）。两者必须区分。
+
+| 类别 | 例句 | 本质 | CZL 态度 |
+|---|---|---|---|
+| **Defer（禁）** | "明日继续" / "下周再说" / "稍后处理" / "queued for next session" | 逃避当下 + 推诿动词 | ForgetGuard deny |
+| **Schedule（要）** | "明天 6:00 晨报 cron" / "下周一 launch blog" / "EOD Friday 交付" | 主动规划 + 精确时间点 + 既定动作 | allow + **鼓励** |
+
+### 识别规则
+
+- ❌ 单纯 keyword "明日/明天/下周" 孤立不拦（schedule 合法）
+- ✅ 时间词 + 推诿动词共现才拦（W10.1 multi-keyword AND 逻辑已 ship）
+- ✅ 明确推诿短语"稍后再说/以后再/queued for"单独拦
+
+### 反向鼓励
+
+CEO 派工 / Campaign 声明 / Y\* criteria 必须带时间点（`eta_min` / `deadline` / `cron_slot`）。模糊表述如"有空时做/等能力到位/backlog 看时间"不合规。
+
+### 基因级教训
+
+混淆两者 = 两端崩坏：
+- 过度拦拦掉调度 → 失去运营节奏
+- 完全放放掉拖延 → prose-claim 老路
+
+今天 CEO 一度扩 keyword 加"明日/明天/明早"导致过度拦，Board 宪章级纠正后退回保守版 + 加 W10.1 AND 逻辑恢复精度。
+
+---
+
 ## Session-Level Y\* Doctrine (Constitutional, non-violable, Board 2026-04-15 PM)
 
 **触发**：Board 2026-04-15 PM catch — CEO 把 Campaign v5 P1 残债包装成 "入 Campaign v6 backlog" 变相 clock-out。per-task Rt+1=0 不等于 session Rt+1=0。
