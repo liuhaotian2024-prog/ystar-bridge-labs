@@ -411,6 +411,24 @@ python3 "$YSTAR_DIR/scripts/czl_boot_inject.py" "$AGENT_ID"
 
 echo "=== BEGIN AUTONOMOUS EXECUTION ==="
 
+# STEP 9.5: Daily learning digest (夜间产出接到启动报告)
+YESTERDAY=$(date -v-1d "+%Y-%m-%d" 2>/dev/null || date -d "yesterday" "+%Y-%m-%d" 2>/dev/null || date "+%Y-%m-%d")
+DAILY_TWIN="$YSTAR_DIR/reports/daily/${YESTERDAY}_twin_evolution.md"
+DAILY_WAKEUP="$YSTAR_DIR/reports/daily/wakeup.log"
+
+if [ -f "$DAILY_TWIN" ]; then
+  echo ""
+  echo "--- OVERNIGHT LEARNING (Twin Evolution) ---"
+  head -20 "$DAILY_TWIN"
+  echo ""
+fi
+
+if [ -f "$DAILY_WAKEUP" ]; then
+  echo "--- OVERNIGHT LEARNING (Idle Learning Summary) ---"
+  tail -30 "$DAILY_WAKEUP"
+  echo ""
+fi
+
 # STEP 10: Load continuation v2 (JSON machine-readable, 无缝衔接核心)
 if [ -f "$YSTAR_DIR/memory/continuation.json" ]; then
   echo ""
