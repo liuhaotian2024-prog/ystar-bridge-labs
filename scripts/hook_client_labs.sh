@@ -54,6 +54,9 @@ sys.stdout.write(d.decode())
 
     # If daemon returned a valid result, output it
     if [ -n "$RESULT" ]; then
+        # Emit HOOK_PRE_CALL (canonical event, k9_audit_v3 requirement)
+        python3.11 -c "import sys,time,uuid,json; from ystar.governance.cieu_store import CIEUStore; CIEUStore('.ystar_cieu.db').write_dict({'event_id':str(uuid.uuid4()),'session_id':'hook_chain','agent_id':'governance','event_type':'HOOK_PRE_CALL','decision':'info','evidence_grade':'ops','created_at':time.time(),'seq_global':time.time_ns()//1000,'params':{'hook':'PreToolUse','daemon_path':'$SOCK'},'violations':[],'drift_detected':False,'human_initiator':'system'})" 2>/dev/null &
+
         # AMENDMENT-018 sync A: emit WHITELIST event (async, fail-open)
         echo "$PAYLOAD" | python3.11 "$YSTAR_DIR/scripts/whitelist_emit.py" 2>/dev/null &
 
@@ -61,6 +64,9 @@ sys.stdout.write(d.decode())
         GUARD_OUT=$(echo "$PAYLOAD" | python3.11 "$YSTAR_DIR/scripts/forget_guard.py" 2>>/tmp/ystar_forget_guard.log)
         GUARD_ACTION=$(echo "$GUARD_OUT" | python3.11 -c "import sys,json;d=json.load(sys.stdin);print(d.get('action','allow'))" 2>/dev/null || echo "allow")
         if [ "$GUARD_ACTION" = "deny" ]; then echo "$GUARD_OUT"; exit 0; fi
+
+        # Emit HOOK_POST_CALL (canonical event, k9_audit_v3 requirement)
+        python3.11 -c "import sys,time,uuid,json; from ystar.governance.cieu_store import CIEUStore; CIEUStore('.ystar_cieu.db').write_dict({'event_id':str(uuid.uuid4()),'session_id':'hook_chain','agent_id':'governance','event_type':'HOOK_POST_CALL','decision':'info','evidence_grade':'ops','created_at':time.time(),'seq_global':time.time_ns()//1000,'params':{'hook':'PreToolUse','guard_action':'$GUARD_ACTION'},'violations':[],'drift_detected':False,'human_initiator':'system'})" 2>/dev/null &
 
         echo "$RESULT"
         exit 0

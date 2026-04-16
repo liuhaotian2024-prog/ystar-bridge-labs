@@ -326,6 +326,27 @@ def main() -> int:
         print("ERROR: CIEU write failed (duplicate event_id?)", file=sys.stderr)
         return 1
 
+    # Emit INTENT_DECLARED (canonical event, k9_audit_v3 requirement)
+    declared_event = {
+        "event_id": str(uuid.uuid4()),
+        "session_id": args.directive_id,
+        "agent_id": args.actor,
+        "event_type": "INTENT_DECLARED",
+        "decision": "info",
+        "evidence_grade": "intent",
+        "created_at": time.time(),
+        "seq_global": time.time_ns() // 1000,
+        "params": {
+            "intent_id": intent_id,
+            "directive_id": args.directive_id,
+            "level": args.level,
+        },
+        "violations": [],
+        "drift_detected": False,
+        "human_initiator": args.actor,
+    }
+    cieu.write_dict(declared_event)
+
     print(f"OK: intent recorded")
     print(f"    intent_id   : {intent_id}")
     print(f"    directive   : {args.directive_id}")

@@ -367,6 +367,29 @@ def review_intent(cieu: CIEUStore, recorded_rows: list, intent_id: str,
     if not ok:
         print("WARN: duplicate or write failed", file=sys.stderr)
         return 1
+
+    # Emit INTENT_FULFILLED (canonical event, k9_audit_v3 requirement) when decision=approve
+    if decision == "approve":
+        fulfilled_event = {
+            "event_id": str(uuid.uuid4()),
+            "session_id": rec.session_id,
+            "agent_id": by_canon,
+            "event_type": "INTENT_FULFILLED",
+            "decision": "info",
+            "evidence_grade": "intent",
+            "created_at": time.time(),
+            "seq_global": time.time_ns() // 1000,
+            "params": {
+                "intent_id": intent_id,
+                "directive_id": payload.get("directive_id"),
+                "reviewer": by_canon,
+            },
+            "violations": [],
+            "drift_detected": False,
+            "human_initiator": by_canon,
+        }
+        cieu.write_dict(fulfilled_event)
+
     print(f"OK: intent {intent_id} → {new_status}")
     print(f"    decision : {decision}")
     print(f"    by       : {by_canon}")
