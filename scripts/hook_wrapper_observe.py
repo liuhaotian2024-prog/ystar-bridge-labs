@@ -14,6 +14,9 @@ import sys
 import os
 import traceback
 
+# Y*gov module path fix (Board 2026-04-16 P0: ModuleNotFoundError emergency)
+sys.path.insert(0, "/Users/haotianliu/.openclaw/workspace/Y-star-gov")
+
 LOG = os.path.join(os.path.dirname(__file__), "hook_observe.log")
 
 def log(msg):

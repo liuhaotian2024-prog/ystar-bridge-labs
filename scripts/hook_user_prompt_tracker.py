@@ -16,6 +16,10 @@ import json
 import subprocess
 from pathlib import Path
 from datetime import datetime
+
+# Y*gov module path fix (Board 2026-04-16 P0: ModuleNotFoundError emergency)
+sys.path.insert(0, "/Users/haotianliu/.openclaw/workspace/Y-star-gov")
+
 sys.path.insert(0, str(Path(__file__).parent))
 from _cieu_helpers import _get_current_agent
 

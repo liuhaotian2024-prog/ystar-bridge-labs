@@ -218,6 +218,275 @@ def get_obligation_score() -> dict:
         return {"score": 100, "overdue": 0, "total": 0, "detail": "query error"}
 
 
+def get_daemon_liveness_score() -> dict:
+    """Score based on daemon process health. Full marks if 4/4 alive, zero if 0/4."""
+    daemon_names = [
+        "k9_routing_subscriber",
+        "k9_alarm_consumer",
+        "cto_dispatch_broker",
+        "engineer_task_subscriber"
+    ]
+    alive = 0
+    try:
+        import subprocess
+        for name in daemon_names:
+            result = subprocess.run(
+                ["pgrep", "-f", name],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE
+            )
+            if result.returncode == 0:
+                alive += 1
+    except Exception:
+        pass
+
+    total = len(daemon_names)
+    score = (alive / total) * 100 if total > 0 else 0
+    return {
+        "score": round(score, 1),
+        "alive": alive,
+        "total": total,
+        "detail": f"{alive}/{total} daemons alive"
+    }
+
+
+def get_subagent_receipt_accuracy_score() -> dict:
+    """Score based on sub-agent receipt tool_uses claim accuracy. Full marks if 100% match."""
+    if not CIEU_DB.exists():
+        return {"score": 100, "matches": 0, "total": 0, "detail": "no CIEU DB"}
+
+    try:
+        conn = sqlite3.connect(CIEU_DB, timeout=2)
+        rows = conn.execute(
+            "SELECT params_json FROM cieu_events "
+            "WHERE event_type = 'RECEIPT_AUTO_VALIDATED' "
+            "ORDER BY created_at DESC LIMIT 10"
+        ).fetchall()
+        conn.close()
+    except Exception:
+        return {"score": 100, "matches": 0, "total": 0, "detail": "query error"}
+
+    if not rows:
+        return {"score": 100, "matches": 0, "total": 0, "detail": "no receipts"}
+
+    matches = 0
+    total = 0
+    for row in rows:
+        try:
+            params = json.loads(row[0])
+            status = params.get("validation_status", "")
+            if status in ("passed", "no_artifacts_to_check"):
+                matches += 1
+            elif status == "rt_mismatch":
+                claimed = params.get("claimed_rt")
+                actual = params.get("actual_rt")
+                if claimed is not None and actual is not None and abs(float(claimed) - float(actual)) < 0.5:
+                    matches += 1
+            total += 1
+        except Exception:
+            continue
+
+    score = (matches / total) * 100 if total > 0 else 100
+    return {
+        "score": round(score, 1),
+        "matches": matches,
+        "total": total,
+        "detail": f"{matches}/{total} validated"
+    }
+
+
+def get_k9_signal_noise_ratio_score() -> dict:
+    """Score based on K9 signal quality. Full marks if 0% false positives."""
+    if not CIEU_DB.exists():
+        return {"score": 100, "fp_rate": 0, "total": 0, "detail": "no CIEU DB"}
+
+    try:
+        conn = sqlite3.connect(CIEU_DB, timeout=2)
+        rows = conn.execute(
+            "SELECT agent_id, event_type FROM cieu_events "
+            "WHERE event_type IN ('K9_VIOLATION_DETECTED', 'AGENT_REGISTRY_K9_WARN', 'HOOK_HEALTH_K9_ESCALATE') "
+            "ORDER BY created_at DESC LIMIT 200"
+        ).fetchall()
+        conn.close()
+    except Exception:
+        return {"score": 100, "fp_rate": 0, "total": 0, "detail": "query error"}
+
+    if not rows:
+        return {"score": 100, "fp_rate": 0, "total": 0, "detail": "no K9 events"}
+
+    # Load canonical aliases
+    alias_file = YSTAR_DIR / "governance" / "agent_id_canonical.json"
+    known_agents = set()
+    if alias_file.exists():
+        try:
+            data = json.loads(alias_file.read_text())
+            for entry in data:
+                known_agents.add(entry.get("canonical_id", ""))
+                known_agents.update(entry.get("aliases", []))
+        except Exception:
+            pass
+
+    false_positives = 0
+    signal = 0
+    total = len(rows)
+    for row in rows:
+        agent_id, evt = row[0], row[1]
+        # FP definition: AGENT_REGISTRY/HOOK_HEALTH warns about an agent_id NOT resolvable through canonical registry
+        # K9_VIOLATION_DETECTED is always signal (real behavioral audit hit)
+        if evt == "K9_VIOLATION_DETECTED":
+            signal += 1
+        elif agent_id in ("unknown", "UNKNOWN", "???", "agent") or (known_agents and agent_id not in known_agents):
+            false_positives += 1
+        else:
+            signal += 1
+
+    fp_rate = false_positives / total if total > 0 else 0
+    score = (1 - fp_rate) * 100
+    return {
+        "score": round(score, 1),
+        "fp_rate": round(fp_rate, 3),
+        "false_positives": false_positives,
+        "signal": signal,
+        "total": total,
+        "detail": f"{signal} signal / {false_positives} FP / {total} total"
+    }
+
+
+def get_api_health_score() -> dict:
+    """Score based on sub-agent dispatch API responsiveness. Full marks if 0% timeout."""
+    if not CIEU_DB.exists():
+        return {"score": 100, "timeout_rate": 0, "total": 0, "detail": "no CIEU DB"}
+
+    try:
+        conn = sqlite3.connect(CIEU_DB, timeout=2)
+        rows = conn.execute(
+            "SELECT params_json FROM cieu_events "
+            "WHERE event_type LIKE 'SUBAGENT_DISPATCH%' "
+            "ORDER BY created_at DESC LIMIT 10"
+        ).fetchall()
+        conn.close()
+    except Exception:
+        return {"score": 100, "timeout_rate": 0, "total": 0, "detail": "query error"}
+
+    if not rows:
+        return {"score": 100, "timeout_rate": 0, "total": 0, "detail": "no dispatches"}
+
+    timeouts = 0
+    total = 0
+    for row in rows:
+        try:
+            params = json.loads(row[0])
+            duration_ms = params.get("duration_ms", 0)
+            if duration_ms > 1500_000:  # 1.5x normal max
+                timeouts += 1
+            total += 1
+        except Exception:
+            continue
+
+    timeout_rate = timeouts / total if total > 0 else 0
+    score = (1 - timeout_rate) * 100
+    return {
+        "score": round(score, 1),
+        "timeout_rate": round(timeout_rate, 3),
+        "timeouts": timeouts,
+        "total": total,
+        "detail": f"{timeout_rate:.0%} timeout rate"
+    }
+
+
+def get_routing_compliance_score() -> dict:
+    """Score based on NEW-file Write events WITH preceding ROUTING_GATE_CHECK. Full marks if 100% compliance."""
+    if not CIEU_DB.exists():
+        return {"score": 100, "compliance": 0, "total": 0, "detail": "no CIEU DB"}
+
+    try:
+        conn = sqlite3.connect(CIEU_DB, timeout=2)
+        # Get last 50 NEW-file Write events (file_path not previously written)
+        # Heuristic: look for Write events in governance/ or ystar/governance/
+        rows = conn.execute(
+            "SELECT created_at, file_path FROM cieu_events "
+            "WHERE event_type = 'write' "
+            "AND (file_path LIKE '%governance/%' OR file_path LIKE '%ystar/governance/%') "
+            "ORDER BY created_at DESC LIMIT 50"
+        ).fetchall()
+        conn.close()
+    except Exception:
+        return {"score": 100, "compliance": 0, "total": 0, "detail": "query error"}
+
+    if not rows:
+        return {"score": 100, "compliance": 0, "total": 0, "detail": "no write events"}
+
+    compliance = 0
+    total = 0
+    for created_at, file_path in rows:
+        # Check if there's a ROUTING_GATE_CHECK event within 30s before this Write
+        try:
+            conn = sqlite3.connect(CIEU_DB, timeout=2)
+            gate_count = conn.execute(
+                "SELECT COUNT(*) FROM cieu_events "
+                "WHERE event_type = 'ROUTING_GATE_CHECK' "
+                "AND created_at BETWEEN ? AND ?",
+                (created_at - 30, created_at)
+            ).fetchone()[0]
+            conn.close()
+            if gate_count > 0:
+                compliance += 1
+            total += 1
+        except Exception:
+            continue
+
+    score = (compliance / total) * 100 if total > 0 else 100
+    return {
+        "score": round(score, 1),
+        "compliance": compliance,
+        "total": total,
+        "detail": f"{compliance}/{total} with precheck"
+    }
+
+
+def get_formal_section_compliance_score() -> dict:
+    """Score based on governance/*.md files having both ## Formal Definitions + ## Mathematical Model sections."""
+    governance_dir = YSTAR_DIR / "governance"
+    if not governance_dir.exists():
+        return {"score": 100, "compliance": 0, "total": 0, "detail": "no governance dir"}
+
+    try:
+        # Get all .md files modified in last 7 days
+        import time
+        now = time.time()
+        seven_days_ago = now - (7 * 86400)
+        files = []
+        for md_file in governance_dir.glob("*.md"):
+            if md_file.stat().st_mtime > seven_days_ago:
+                files.append(md_file)
+    except Exception:
+        return {"score": 100, "compliance": 0, "total": 0, "detail": "glob error"}
+
+    if not files:
+        return {"score": 100, "compliance": 0, "total": 0, "detail": "no recent files"}
+
+    compliance = 0
+    total = 0
+    for md_file in files:
+        try:
+            content = md_file.read_text(encoding="utf-8", errors="ignore")
+            has_formal = "## Formal Definitions" in content
+            has_math = "## Mathematical Model" in content
+            if has_formal and has_math:
+                compliance += 1
+            total += 1
+        except Exception:
+            continue
+
+    score = (compliance / total) * 100 if total > 0 else 100
+    return {
+        "score": round(score, 1),
+        "compliance": compliance,
+        "total": total,
+        "detail": f"{compliance}/{total} with formal sections"
+    }
+
+
 def get_call_count() -> int:
     """Read current tool call count from marker file."""
     try:
@@ -231,6 +500,92 @@ def increment_call_count() -> int:
     count = get_call_count() + 1
     CALL_COUNT_FILE.write_text(str(count))
     return count
+
+
+def compute_agent_capability_score() -> dict:
+    """Compute composite Agent Capability (AC) score from 6 signals.
+
+    Weights (rebalanced for 6 signals):
+        daemon_liveness: 17%
+        subagent_receipt_accuracy: 17%
+        k9_signal_noise_ratio: 17%
+        api_health: 17%
+        routing_compliance: 16%
+        formal_section_compliance: 16%
+    Total: 100%
+
+    Alarm: score < 75 emits CIEU event AGENT_CAPABILITY_DEGRADED.
+    """
+    signals = {
+        "daemon_liveness": get_daemon_liveness_score(),
+        "subagent_receipt_accuracy": get_subagent_receipt_accuracy_score(),
+        "k9_signal_noise_ratio": get_k9_signal_noise_ratio_score(),
+        "api_health": get_api_health_score(),
+        "routing_compliance": get_routing_compliance_score(),
+        "formal_section_compliance": get_formal_section_compliance_score(),
+    }
+
+    composite = (
+        0.17 * signals["daemon_liveness"]["score"]
+        + 0.17 * signals["subagent_receipt_accuracy"]["score"]
+        + 0.17 * signals["k9_signal_noise_ratio"]["score"]
+        + 0.17 * signals["api_health"]["score"]
+        + 0.16 * signals["routing_compliance"]["score"]
+        + 0.16 * signals["formal_section_compliance"]["score"]
+    )
+    score = round(composite, 1)
+
+    # Alarm if < 75
+    violations = []
+    if score < 75:
+        for name, sig in signals.items():
+            if sig["score"] < 75:
+                violations.append(f"{name}={sig['detail']}")
+
+    # Emit CIEU event if alarm triggered
+    if violations and CIEU_DB.exists():
+        try:
+            import uuid
+            conn = sqlite3.connect(CIEU_DB, timeout=2)
+            event_id = str(uuid.uuid4())
+            now = time.time()
+            params = json.dumps({
+                "score": score,
+                "violations": violations,
+                "recommendation": _get_ac_recommendation(violations)
+            })
+            conn.execute(
+                "INSERT INTO cieu_events (event_id, seq_global, created_at, session_id, agent_id, "
+                "event_type, decision, passed, params_json) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                (event_id, int(now * 1e6), now, "current", "session_watchdog",
+                 "AGENT_CAPABILITY_DEGRADED", "escalate", 0, params)
+            )
+            conn.commit()
+            conn.close()
+        except Exception:
+            pass
+
+    return {
+        "score": score,
+        "signals": signals,
+        "violations": violations,
+        "timestamp": time.time(),
+    }
+
+
+def _get_ac_recommendation(violations: list[str]) -> str:
+    """Generate recommendation based on AC violations."""
+    recommendations = []
+    for v in violations:
+        if "daemon_liveness" in v:
+            recommendations.append("Restart daemons: bash scripts/daemon_restart.sh")
+        elif "subagent_receipt_accuracy" in v:
+            recommendations.append("Investigate receipt hallucinations: check sub-agent logs")
+        elif "k9_signal_noise_ratio" in v:
+            recommendations.append("Update K9 registry: add missing agent_id aliases")
+        elif "api_health" in v:
+            recommendations.append("Check API latency: inspect SUBAGENT_DISPATCH durations")
+    return "; ".join(recommendations) if recommendations else "Review AC signal breakdown"
 
 
 def compute_health(context_pct: float | None = None) -> dict:
@@ -284,14 +639,39 @@ def compute_health(context_pct: float | None = None) -> dict:
     }
 
 
+def restart_dead_daemon(daemon_name: str) -> bool:
+    """Restart a dead daemon using canonical command from governance_boot.sh.
+
+    Returns True if restart attempted, False if daemon unknown or restart failed.
+    """
+    restart_map = {
+        "k9_routing_subscriber": "cd /Users/haotianliu/.openclaw/workspace/ystar-company && nohup python3 scripts/k9_routing_subscriber.py > /tmp/k9_routing_subscriber.log 2>&1 &",
+        "k9_alarm_consumer": "cd /Users/haotianliu/.openclaw/workspace/ystar-company && nohup python3 scripts/k9_alarm_consumer.py > /tmp/k9_alarm_consumer.log 2>&1 &",
+        "cto_dispatch_broker": "cd /Users/haotianliu/.openclaw/workspace/ystar-company && nohup python3 scripts/cto_dispatch_broker.py > /tmp/cto_dispatch_broker.log 2>&1 &",
+        "engineer_task_subscriber": "cd /Users/haotianliu/.openclaw/workspace/ystar-company && nohup python3 scripts/engineer_task_subscriber.py > /tmp/engineer_task_subscriber.log 2>&1 &",
+    }
+
+    command = restart_map.get(daemon_name)
+    if not command:
+        return False
+
+    try:
+        import subprocess
+        subprocess.run(command, shell=True, check=False, timeout=5)
+        return True
+    except Exception:
+        return False
+
+
 def main():
     import argparse
     parser = argparse.ArgumentParser(description="Session health watchdog")
     parser.add_argument("--quick", action="store_true", help="Quick check (for statusline)")
     parser.add_argument("--full", action="store_true", help="Full check with details")
     parser.add_argument("--increment", action="store_true", help="Increment call count before check")
-    parser.add_argument("--context-pct", type=float, default=None, help="Context window usage %")
+    parser.add_argument("--context-pct", type=float, default=None, help="Context window usage percentage")
     parser.add_argument("--statusline", action="store_true", help="Output for statusline (compact)")
+    parser.add_argument("--ac-monitor", action="store_true", help="AC monitor mode: check daemon liveness, emit CIEU if <75, auto-restart dead daemons")
     args = parser.parse_args()
 
     # Try reading context_pct from stdin if not provided
@@ -306,20 +686,51 @@ def main():
     if args.increment:
         increment_call_count()
 
+    # AC monitor mode: compute AC, emit CIEU if <75, auto-restart dead daemons
+    if args.ac_monitor:
+        ac_result = compute_agent_capability_score()
+        score = ac_result["score"]
+        violations = ac_result["violations"]
+
+        # Auto-restart dead daemons if daemon_liveness signal failed
+        daemon_liveness = ac_result["signals"]["daemon_liveness"]
+        if daemon_liveness["score"] < 100:
+            daemon_names = ["k9_routing_subscriber", "k9_alarm_consumer", "cto_dispatch_broker", "engineer_task_subscriber"]
+            import subprocess
+            for name in daemon_names:
+                result = subprocess.run(["pgrep", "-f", name], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                if result.returncode != 0:  # daemon dead
+                    restarted = restart_dead_daemon(name)
+                    print(f"[ac-monitor] {name} dead, restart={'OK' if restarted else 'FAILED'}", file=sys.stderr)
+
+        print(json.dumps({"score": score, "violations": violations}))
+        return
+
     result = compute_health(context_pct)
 
     if args.statusline:
-        # Compact output for statusline
-        score = result["score"]
-        status = result["status"]
-        if status == "OK":
-            color = "\033[0;32m"  # green
-        elif status == "WARNING":
-            color = "\033[1;33m"  # yellow
+        # Compact output for statusline: HP + AC scores
+        hp_score = result["score"]
+        hp_status = result["status"]
+        if hp_status == "OK":
+            hp_color = "\033[0;32m"  # green
+        elif hp_status == "WARNING":
+            hp_color = "\033[1;33m"  # yellow
         else:
-            color = "\033[1;31m"  # red
+            hp_color = "\033[1;31m"  # red
         reset = "\033[0m"
-        print(f"{color}HP:{score:.0f}{reset}", end="")
+
+        # Compute AC score
+        ac_result = compute_agent_capability_score()
+        ac_score = ac_result["score"]
+        if ac_score >= 75:
+            ac_color = "\033[0;32m"  # green
+        elif ac_score >= 50:
+            ac_color = "\033[1;33m"  # yellow
+        else:
+            ac_color = "\033[1;31m"  # red
+
+        print(f"{hp_color}HP:{hp_score:.0f}{reset} {ac_color}AC:{ac_score:.0f}{reset}", end="")
     elif args.quick:
         # Minimal JSON
         print(json.dumps({

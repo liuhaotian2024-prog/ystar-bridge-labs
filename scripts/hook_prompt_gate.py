@@ -11,6 +11,9 @@ import sys
 import os
 from pathlib import Path
 
+# Y*gov module path fix (Board 2026-04-16 P0: ModuleNotFoundError emergency)
+sys.path.insert(0, "/Users/haotianliu/.openclaw/workspace/Y-star-gov")
+
 REPO_ROOT = Path(__file__).parent.parent
 LOG = REPO_ROOT / "scripts" / "hook_debug.log"
 
@@ -25,6 +28,17 @@ def main():
         # Read hook payload (PostToolUse format)
         raw = sys.stdin.buffer.read().decode('utf-8-sig')
         payload = json.loads(raw.lstrip(chr(0xFEFF)))
+
+        # ═══ K9 Event-Driven Audit (Board 2026-04-16) ═══
+        try:
+            from k9_event_trigger import k9_audit_on_event
+            from _cieu_helpers import _get_current_agent
+
+            event_type = payload.get("tool_name", "HOOK_POST_CALL")
+            agent_id = _get_current_agent()
+            k9_audit_on_event(event_type, agent_id, payload)
+        except Exception as k9_exc:
+            log(f"K9 event audit failed (fail-open): {k9_exc}")
 
         # Extract assistant reply (PostToolUse provides tool_result, not assistant message)
         # Workaround: read last assistant reply from session transcript or .logs/
@@ -51,7 +65,6 @@ def main():
             sys.exit(0)
 
         # Import Y*gov narrative detector
-        sys.path.insert(0, str(REPO_ROOT.parent / "Y-star-gov"))
         from ystar.governance.narrative_coherence_detector import check_ceo_output_vs_subgoal
 
         # Run check

@@ -12,6 +12,9 @@ import os
 import traceback
 import time
 
+# Y*gov module path fix (Board 2026-04-16 P0: ModuleNotFoundError emergency)
+sys.path.insert(0, "/Users/haotianliu/.openclaw/workspace/Y-star-gov")
+
 LOG = os.path.join(os.path.dirname(__file__), "hook_debug.log")
 
 def log(msg):
@@ -64,6 +67,65 @@ try:
                         log(f"[CRITICAL] stdout.write failed in CEO deny path: {write_exc}")
                         os._exit(1)
                     sys.exit(0)
+
+        # ── CZL Gate 1: Dispatch 5-tuple validator (Board 2026-04-16) ──────
+        if tool == "Agent":
+            try:
+                from ystar.kernel.czl_protocol import validate_dispatch
+                prompt = tool_input.get("prompt", "")
+                missing_sections = validate_dispatch(prompt)
+                if missing_sections:
+                    # Inject warning into stdout (non-blocking, warn-only until 1776499200)
+                    warning_msg = f"⚠️ CZL Gate 1: dispatch missing sections {missing_sections}"
+                    # Do NOT block the tool call yet (dry_run mode), just log + emit CIEU
+                    log(f"[CZL-GATE1] {warning_msg}")
+
+                    # Emit CIEU event
+                    REPO_ROOT = os.path.dirname(os.path.dirname(__file__))
+                    SESSION_JSON = os.path.join(REPO_ROOT, ".ystar_session.json")
+                    sys.path.insert(0, REPO_ROOT)
+                    from ystar.governance.cieu_store import CIEUStore
+                    from ystar.governance.identity_detector import get_active_agent
+                    cieu_db = os.path.join(REPO_ROOT, ".ystar_cieu.db")
+                    try:
+                        with open(SESSION_JSON, "r") as f:
+                            session = json.load(f)
+                        cieu_db = session.get("cieu_db", cieu_db)
+                        active_agent = get_active_agent(session)
+                    except Exception:
+                        active_agent = "unknown"
+
+                    cieu = CIEUStore(db_path=cieu_db)
+                    import uuid
+                    gate1_event = {
+                        "event_id": str(uuid.uuid4()),
+                        "session_id": "hook_gate1",
+                        "agent_id": active_agent,
+                        "event_type": "CZL_DISPATCH_GATE1_VIOLATION",
+                        "action": "warn",
+                        "evidence_grade": "system",
+                        "created_at": time.time(),
+                        "seq_global": time.time_ns() // 1000,
+                        "params": {
+                            "missing_sections": missing_sections,
+                            "recipient": tool_input.get("agent", "unknown"),
+                            "dry_run_until": 1776499200,
+                            "source": "hook_wrapper.gate1",
+                        },
+                        "violations": ["czl_dispatch_incomplete"],
+                        "drift_detected": True,
+                        "human_initiator": "hook",
+                    }
+                    cieu.write_dict(gate1_event)
+
+                    # Inject warning to stdout via system-reminder (best-effort)
+                    # Note: OpenClaw hook output goes to logs, not directly to model
+                    # This is logged for transparency; actual enforcement via ForgetGuard
+                    sys.stderr.write(f"{warning_msg}\n")
+
+            except Exception as gate1_exc:
+                log(f"[CZL-GATE1] Failed to validate dispatch: {gate1_exc}")
+                # Do not block tool call on validator failure (fail-open for Gate 1)
 
         # ── Run check_hook (Policy compilation happens inside with caching) ──
         result = check_hook(payload)

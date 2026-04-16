@@ -15,6 +15,9 @@ import time
 import uuid
 from pathlib import Path
 
+# Y*gov module path fix (Board 2026-04-16 P0: ModuleNotFoundError emergency)
+sys.path.insert(0, "/Users/haotianliu/.openclaw/workspace/Y-star-gov")
+
 REPO_ROOT = Path("/Users/haotianliu/.openclaw/workspace/ystar-company")
 CIEU_DB = REPO_ROOT / ".ystar_cieu.db"
 

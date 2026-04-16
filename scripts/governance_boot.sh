@@ -146,6 +146,91 @@ else
   echo "[3/7] Memory boot: skipped (verify-only)"
 fi
 
+# 3.5. Start K9 routing subscriber daemon (AMENDMENT-027 Board 2026-04-16)
+if [ "$VERIFY_ONLY" = false ]; then
+  K9_SUBSCRIBER="$YGOV_DIR/ystar/governance/k9_routing_subscriber.py"
+  if [ -f "$K9_SUBSCRIBER" ]; then
+    # Check if already running
+    if [ -f /tmp/k9_subscriber.pid ]; then
+      K9_PID=$(cat /tmp/k9_subscriber.pid 2>/dev/null)
+      if kill -0 "$K9_PID" 2>/dev/null; then
+        echo "[3.5/7] K9 subscriber: ALREADY RUNNING (PID $K9_PID)"
+      else
+        # Stale PID file, restart
+        rm -f /tmp/k9_subscriber.pid
+        nohup python3 "$K9_SUBSCRIBER" start >/dev/null 2>&1 &
+        sleep 0.5
+        if [ -f /tmp/k9_subscriber.pid ]; then
+          echo "[3.5/7] K9 subscriber: STARTED (PID $(cat /tmp/k9_subscriber.pid))"
+        else
+          echo "[3.5/7] K9 subscriber: FAILED TO START"
+          FAILURES=$((FAILURES+1))
+        fi
+      fi
+    else
+      # Not running, start it
+      nohup python3 "$K9_SUBSCRIBER" start >/dev/null 2>&1 &
+      sleep 0.5
+      if [ -f /tmp/k9_subscriber.pid ]; then
+        echo "[3.5/7] K9 subscriber: STARTED (PID $(cat /tmp/k9_subscriber.pid))"
+      else
+        echo "[3.5/7] K9 subscriber: FAILED TO START"
+        FAILURES=$((FAILURES+1))
+      fi
+    fi
+  else
+    echo "[3.5/7] K9 subscriber: NOT FOUND (Y-star-gov may need rebuild)"
+    WARNINGS=$((WARNINGS+1))
+  fi
+else
+  echo "[3.5/7] K9 subscriber: SKIPPED (verify-only)"
+fi
+
+# 3.6. Start Engineer Task Subscriber daemon (CZL-68 Dispatch Board)
+if [ "$VERIFY_ONLY" = false ]; then
+  # Only start if agent is an engineer (eng-*)
+  if echo "$AGENT_ID" | grep -q "^eng-"; then
+    ENGINEER_SUBSCRIBER="$YSTAR_DIR/scripts/engineer_task_subscriber.py"
+    if [ -f "$ENGINEER_SUBSCRIBER" ]; then
+      # Check if already running
+      if [ -f "$YSTAR_DIR/scripts/.engineer_subscriber.pid" ]; then
+        ENG_PID=$(cat "$YSTAR_DIR/scripts/.engineer_subscriber.pid" 2>/dev/null)
+        if kill -0 "$ENG_PID" 2>/dev/null; then
+          echo "[3.6/7] Engineer subscriber: ALREADY RUNNING (PID $ENG_PID)"
+        else
+          # Stale PID file, restart
+          rm -f "$YSTAR_DIR/scripts/.engineer_subscriber.pid"
+          nohup python3 "$ENGINEER_SUBSCRIBER" start --engineer_id "$AGENT_ID" >/dev/null 2>&1 &
+          sleep 0.5
+          if [ -f "$YSTAR_DIR/scripts/.engineer_subscriber.pid" ]; then
+            echo "[3.6/7] Engineer subscriber: STARTED (PID $(cat $YSTAR_DIR/scripts/.engineer_subscriber.pid))"
+          else
+            echo "[3.6/7] Engineer subscriber: FAILED TO START"
+            WARNINGS=$((WARNINGS+1))
+          fi
+        fi
+      else
+        # Not running, start it
+        nohup python3 "$ENGINEER_SUBSCRIBER" start --engineer_id "$AGENT_ID" >/dev/null 2>&1 &
+        sleep 0.5
+        if [ -f "$YSTAR_DIR/scripts/.engineer_subscriber.pid" ]; then
+          echo "[3.6/7] Engineer subscriber: STARTED (PID $(cat $YSTAR_DIR/scripts/.engineer_subscriber.pid))"
+        else
+          echo "[3.6/7] Engineer subscriber: FAILED TO START"
+          WARNINGS=$((WARNINGS+1))
+        fi
+      fi
+    else
+      echo "[3.6/7] Engineer subscriber: NOT FOUND (expected for eng-* roles)"
+      WARNINGS=$((WARNINGS+1))
+    fi
+  else
+    echo "[3.6/7] Engineer subscriber: SKIPPED (not an eng-* role)"
+  fi
+else
+  echo "[3.6/7] Engineer subscriber: SKIPPED (verify-only)"
+fi
+
 # 4. 创建session标记 + 注入 agent_id 到 session config (E1 fix 2026-04-13)
 # 根因: Y*gov identity_detector 的 current_agent() 读 .ystar_session.json 的 agent_id 字段
 # 字段缺失 → fallback 到 "agent" → hook DENY 所有操作 → 3h session 死锁
@@ -516,6 +601,11 @@ CHARTER_MAP = {
     "eng-governance": [".claude/agents/eng-governance.md"],
     "eng-platform": [".claude/agents/eng-platform.md"],
     "eng-domains": [".claude/agents/eng-domains.md"],
+    "eng-data": [".claude/agents/eng-data.md"],
+    "eng-security": [".claude/agents/eng-security.md"],
+    "eng-ml": [".claude/agents/eng-ml.md"],
+    "eng-perf": [".claude/agents/eng-perf.md"],
+    "eng-compliance": [".claude/agents/eng-compliance.md"],
 }
 
 charter_candidates = CHARTER_MAP.get(agent_id, [])
@@ -572,5 +662,141 @@ for duty_id, description in duties:
             params_json=f'{{"duty_id": "{duty_id}", "agent_id": "{agent_id}", "charter_path": "{charter_rel}"}}'
         )
 PYEOF
+
+# STEP 11.6: Recent CEO Direct Dispatches (CZL-67 sync layer — CTO/engineer awareness)
+if [[ "$AGENT_ID" =~ ^(cto|ethan-cto|eng-) ]]; then
+  echo ""
+  echo "-- STEP 11.6: Recent CEO Direct Dispatches (sync layer) --"
+  if [ -f "$YSTAR_DIR/governance/active_dispatch_log.md" ]; then
+    python3 "$YSTAR_DIR/scripts/dispatch_sync.py" get_recent --window_hours 24 2>/dev/null || echo "  (no recent dispatches)"
+  else
+    echo "  (dispatch log not initialized)"
+  fi
+  echo ""
+fi
+
+# STEP 11.7: K9 Alarm Consumer Daemon (Layer 5 cascade remediation)
+if [ "$VERIFY_ONLY" = false ]; then
+  echo ""
+  echo "-- STEP 11.7: K9 Alarm Consumer (Layer 5 cascade) --"
+  K9_ALARM_CONSUMER="$YSTAR_DIR/scripts/k9_alarm_consumer.py"
+  if [ -f "$K9_ALARM_CONSUMER" ]; then
+    # Check if already running
+    K9_ALARM_PID=$(pgrep -f "k9_alarm_consumer.py start" 2>/dev/null || echo "")
+    if [ -n "$K9_ALARM_PID" ]; then
+      # Verify PID file matches running process
+      if [ -f "$YSTAR_DIR/scripts/.k9_alarm_consumer.pid" ]; then
+        STORED_PID=$(cat "$YSTAR_DIR/scripts/.k9_alarm_consumer.pid" 2>/dev/null)
+        if [ "$STORED_PID" = "$K9_ALARM_PID" ]; then
+          echo "  K9 alarm consumer: RUNNING (PID $K9_ALARM_PID)"
+        else
+          # Stale PID file, restart
+          rm -f "$YSTAR_DIR/scripts/.k9_alarm_consumer.pid"
+          nohup python3 "$K9_ALARM_CONSUMER" start --poll_interval 5 >/dev/null 2>&1 &
+          sleep 0.5
+          if [ -f "$YSTAR_DIR/scripts/.k9_alarm_consumer.pid" ]; then
+            echo "  K9 alarm consumer: RESTARTED (PID $(cat $YSTAR_DIR/scripts/.k9_alarm_consumer.pid))"
+          else
+            echo "  K9 alarm consumer: FAILED TO START"
+            WARNINGS=$((WARNINGS+1))
+          fi
+        fi
+      else
+        echo "  K9 alarm consumer: RUNNING (PID $K9_ALARM_PID, no PID file)"
+      fi
+    else
+      # Not running, start it
+      nohup python3 "$K9_ALARM_CONSUMER" start --poll_interval 5 >/dev/null 2>&1 &
+      sleep 0.5
+      if [ -f "$YSTAR_DIR/scripts/.k9_alarm_consumer.pid" ]; then
+        echo "  K9 alarm consumer: STARTED (PID $(cat $YSTAR_DIR/scripts/.k9_alarm_consumer.pid))"
+      else
+        echo "  K9 alarm consumer: FAILED TO START"
+        WARNINGS=$((WARNINGS+1))
+      fi
+    fi
+  else
+    echo "  K9 alarm consumer: NOT FOUND"
+    WARNINGS=$((WARNINGS+1))
+  fi
+else
+  echo ""
+  echo "-- STEP 11.7: K9 Alarm Consumer (verify-only mode) --"
+  if [ -f "$YSTAR_DIR/scripts/.k9_alarm_consumer.pid" ]; then
+    PID=$(cat "$YSTAR_DIR/scripts/.k9_alarm_consumer.pid" 2>/dev/null)
+    if ps -p "$PID" >/dev/null 2>&1; then
+      echo "  K9 alarm consumer: RUNNING (PID $PID)"
+    else
+      echo "  K9 alarm consumer: STALE PID $PID"
+    fi
+  else
+    echo "  K9 alarm consumer: NOT RUNNING"
+  fi
+fi
+
+# STEP 11.8: CTO Dispatch Broker Daemon (CZL-90, CTO routing automation)
+if [ "$VERIFY_ONLY" = false ]; then
+  echo ""
+  echo "-- STEP 11.8: CTO Dispatch Broker (CZL-90 routing automation) --"
+  CTO_BROKER="$YSTAR_DIR/scripts/cto_dispatch_broker.py"
+  if [ -f "$CTO_BROKER" ]; then
+    # Only start broker if agent is CTO or CEO (CEO needs broker for dispatch board)
+    if [ "$AGENT_ID" = "cto" ] || [ "$AGENT_ID" = "ceo" ]; then
+      # Check if already running
+      CTO_BROKER_PID=$(pgrep -f "cto_dispatch_broker.py start" 2>/dev/null || echo "")
+      if [ -n "$CTO_BROKER_PID" ]; then
+        # Verify PID file matches running process
+        if [ -f "$YSTAR_DIR/scripts/.cto_broker.pid" ]; then
+          STORED_PID=$(cat "$YSTAR_DIR/scripts/.cto_broker.pid" 2>/dev/null)
+          if [ "$STORED_PID" = "$CTO_BROKER_PID" ]; then
+            echo "  CTO dispatch broker: RUNNING (PID $CTO_BROKER_PID)"
+          else
+            # Stale PID file, restart
+            rm -f "$YSTAR_DIR/scripts/.cto_broker.pid"
+            nohup python3 "$CTO_BROKER" start >/dev/null 2>&1 &
+            sleep 0.5
+            if [ -f "$YSTAR_DIR/scripts/.cto_broker.pid" ]; then
+              echo "  CTO dispatch broker: RESTARTED (PID $(cat $YSTAR_DIR/scripts/.cto_broker.pid))"
+            else
+              echo "  CTO dispatch broker: FAILED TO START"
+              WARNINGS=$((WARNINGS+1))
+            fi
+          fi
+        else
+          echo "  CTO dispatch broker: RUNNING (PID $CTO_BROKER_PID, no PID file)"
+        fi
+      else
+        # Not running, start it
+        nohup python3 "$CTO_BROKER" start >/dev/null 2>&1 &
+        sleep 0.5
+        if [ -f "$YSTAR_DIR/scripts/.cto_broker.pid" ]; then
+          echo "  CTO dispatch broker: STARTED (PID $(cat $YSTAR_DIR/scripts/.cto_broker.pid))"
+        else
+          echo "  CTO dispatch broker: FAILED TO START"
+          WARNINGS=$((WARNINGS+1))
+        fi
+      fi
+    else
+      echo "  CTO dispatch broker: SKIPPED (not CTO/CEO agent)"
+    fi
+  else
+    echo "  CTO dispatch broker: NOT FOUND"
+    WARNINGS=$((WARNINGS+1))
+  fi
+else
+  echo ""
+  echo "-- STEP 11.8: CTO Dispatch Broker (verify-only mode) --"
+  if [ -f "$YSTAR_DIR/scripts/.cto_broker.pid" ]; then
+    PID=$(cat "$YSTAR_DIR/scripts/.cto_broker.pid" 2>/dev/null)
+    if ps -p "$PID" >/dev/null 2>&1; then
+      echo "  CTO dispatch broker: RUNNING (PID $PID)"
+    else
+      echo "  CTO dispatch broker: STALE PID $PID"
+    fi
+  else
+    echo "  CTO dispatch broker: NOT RUNNING"
+  fi
+fi
+echo ""
 
 exit $FAILURES

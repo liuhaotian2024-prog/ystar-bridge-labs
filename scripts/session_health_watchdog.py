@@ -342,6 +342,58 @@ def event_loop(company_root: Path):
             last_check_time = time.time()
             last_jsonl_size = current_size
 
+            # Auto-restart trigger integration (CZL-145 Ultimate tier)
+            # If HP < 28 AND no Board veto → check restart readiness + execute
+            hp = compute_hp(metrics)
+            if hp < 28 and not check_board_override():
+                print("[WATCHDOG] HP < 28 threshold — checking restart readiness...")
+
+                # Try restart_readiness_check.py (CZL-143) if available
+                readiness_script = company_root / "scripts/restart_readiness_check.py"
+                ready = False
+
+                if readiness_script.exists():
+                    result = subprocess.run(
+                        ["python3", str(readiness_script)],
+                        capture_output=True,
+                        text=True
+                    )
+                    ready = (result.returncode == 0)
+                else:
+                    # Fallback: simplified readiness = 4 daemons alive + AC ≥ 75
+                    daemons_ok = all([
+                        subprocess.run(["pgrep", "-f", d], capture_output=True).returncode == 0
+                        for d in ["k9_routing_subscriber", "k9_alarm_consumer",
+                                  "cto_dispatch_broker", "engineer_task_subscriber"]
+                    ])
+                    ac = compute_ac(company_root)
+                    ready = (daemons_ok and ac >= 75)
+
+                if ready:
+                    print("[WATCHDOG] Restart readiness: READY → triggering auto-restart")
+                    try:
+                        from ystar.governance.cieu import emit_cieu
+                        emit_cieu(
+                            "AUTO_RESTART_TRIGGERED",
+                            agent_id=_get_current_agent(),
+                            metadata={"hp": hp, "reason": "HP < 28 threshold"}
+                        )
+                    except:
+                        pass
+
+                    # Execute graceful restart
+                    subprocess.run([
+                        "python3",
+                        str(company_root / "scripts/session_close_yml.py"),
+                        _get_current_agent(),
+                        "auto-restart triggered by watchdog HP < 28"
+                    ])
+
+                    print("[WATCHDOG] Session closed. Run governance_boot.sh to restart.")
+                    break
+                else:
+                    print("[WATCHDOG] Restart readiness: NOT READY → deferring auto-restart")
+
             if triggered:
                 print("[WATCHDOG] Yellow line triggered. Watchdog exiting (wrapper will handle restart).")
                 break
