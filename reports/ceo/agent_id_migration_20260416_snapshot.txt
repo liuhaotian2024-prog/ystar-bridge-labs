@@ -1,0 +1,85 @@
+CIEU agent_id canonical migration snapshot
+Date: 2026-04-16
+Owner: eng-platform (Ryan Park)
+Board: P0 audit integrity F1+F4
+
+=== BEFORE ===
+Total events: 91,564
+Unknown_family (agent/unknown/''/ + system components): 58,983 (64.4%)
+
+Top fallback:
+  'agent'                  16,922 (18.5%)
+  'orchestrator'           13,422 (14.7%)
+  'unknown'                10,501 (11.5%)
+  ''                        9,004 ( 9.8%)
+
+Aliases:
+  'ryan-platform'           2,320
+  'samantha-secretary'        826
+
+=== MIGRATION ===
+11 UPDATE statements executed:
+  - ryan-platform → eng-platform (2,320)
+  - samantha-secretary → secretary (826)
+  - maya-governance → eng-governance (3)
+  - sofia-cmo → cmo (2)
+  - marco-cfo → cfo (1)
+  - orchestrator → system:orchestrator (13,422)
+  - path_a_agent → system:path_a_agent (4,937)
+  - intervention_engine → system:intervention_engine (4,197)
+  - agent → unidentified (16,922)
+  - unknown → unidentified (10,501)
+  - '' → unidentified (9,004)
+
+=== AFTER ===
+Total events: 91,564
+Unidentified: 36,427 (39.8%)
+
+Canonical roles (10):
+  ceo              7,988
+  eng-platform     5,393 (merged ryan-platform)
+  cto              3,175
+  eng-governance   3,174 (merged maya-governance)
+  secretary        2,683 (merged samantha-secretary)
+  eng-domains      1,774
+  eng-kernel         975
+  cmo                  2
+  cfo                  1
+  cso                  0
+
+System components (prefixed):
+  system:orchestrator              13,422
+  system:path_a_agent               4,937
+  system:intervention_engine        4,197
+
+=== DELTA ===
+Unknown_family reduction: 64.4% → 39.8% (Δ -24.6%)
+
+=== REMAINING ISSUES (batch 2) ===
+Top non-canonical agent_id after migration:
+  unidentified                36,427 (intentional fallback)
+  forget_guard                   815 (system component, not in v1.0)
+  test_agent                     732 (test harness)
+  -Users-haotianliu--...         380 (path-based ID, bug)
+  secretary_curate_pipeline      368 (system component)
+  hook_pipeline                  354 (system component)
+  governance                     307 (unclear, possibly old role ID)
+  test-agent                     285 (test harness variant)
+  platform                       179 (unclear)
+  coder_agent                    140 (unclear)
+  Ethan-CTO                       74 (alias missing in v1.0, case mismatch)
+
+=== NEXT STEPS ===
+1. Registry v1.1: add Ethan-CTO / forget_guard / hook_pipeline / secretary_curate_pipeline to aliases or system_components
+2. Path-based ID bug fix (emit-side, F2)
+3. Test harness agent_id standardization
+4. Re-run migration for batch 2
+
+=== BACKUP ===
+.ystar_cieu.db.bak_20260416 (60MB, before migration)
+
+=== Y* / Rt+1 ===
+Y*: registry file + migration script + unknown_family < 30%
+Xt: 64.4% unknown_family
+Yt+1: 39.8% unidentified (PARTIAL, target not met)
+Rt+1: 9.8% gap to 30% target → requires batch 2 (registry v1.1 + re-migration)
