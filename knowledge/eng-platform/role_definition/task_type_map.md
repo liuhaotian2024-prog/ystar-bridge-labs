@@ -87,3 +87,12 @@ Next: Refine after 10 tasks executed, add theory entries
 - **Criticality**: (To be determined)
 - **Theory status**: ⬜ Pending P2 learning
 
+
+## 12. New task type (from P3 simulation)
+
+### Emergency Response
+- **Description**: (Detected from counterfactual simulation)
+- **Frequency**: (To be determined)
+- **Criticality**: (To be determined)
+- **Theory status**: ⬜ Pending P2 learning
+

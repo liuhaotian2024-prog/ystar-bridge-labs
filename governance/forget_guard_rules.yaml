@@ -504,6 +504,74 @@ rules:
     cieu_event: CEO_ENGINEERING_OVERRIDE
     severity: high
 
+  - id: cto_hourly_patrol_missed
+    enabled: true
+    description: "CTO hourly health patrol missed (>75min since last run) — emit PATROL_MISSED event"
+    last_reviewed: "2026-04-15"
+    reviewer: "eng-platform"
+
+    trigger:
+      event_source: cron
+      conditions:
+        - type: time_since_last_event
+          event_type: "CTO_HOURLY_PATROL_COMPLETE"
+          threshold_minutes: 75
+
+    action: warn
+    recipe: |
+      CTO hourly patrol has not run in >75 minutes.
+      Expected cadence: every 60 minutes during autonomous operation.
+
+      Self-heal steps:
+      (1) Check crontab: crontab -l | grep cto_patrol
+      (2) Verify cto_patrol.py executable: ls -l scripts/cto_patrol.py
+      (3) Run manually: python3 scripts/cto_patrol.py
+      (4) Check last CIEU event: python3 -c "from ystar.governance.cieu_store import CIEUStore; db=CIEUStore(); print(db.query_latest('CTO_HOURLY_PATROL_COMPLETE'))"
+
+      If cron entry missing:
+        echo "0 * * * * cd /Users/haotianliu/.openclaw/workspace/ystar-company && python3 scripts/cto_patrol.py" | crontab -
+
+      Ref: AMENDMENT-020 ForgetGuard institutional memory framework
+           knowledge/cto/obligations/hourly_patrol.md
+
+    cieu_event: PATROL_MISSED
+    severity: high
+
+  - id: cmo_weekly_readme_audit_missed
+    enabled: true
+    description: "CMO weekly README audit missed (Sunday EOD deadline) — emit README_AUDIT_MISSED event"
+    last_reviewed: "2026-04-15"
+    reviewer: "eng-platform"
+
+    trigger:
+      event_source: cron
+      conditions:
+        - type: weekly_deadline
+          day_of_week: "sunday"
+          hour: 23
+          required_event: "CMO_README_AUDIT_COMPLETE"
+
+    action: warn
+    recipe: |
+      CMO weekly README audit missed Sunday EOD deadline.
+
+      This audit ensures:
+      - All repos have up-to-date README.md
+      - Installation instructions tested
+      - Marketing copy aligned with features
+
+      Self-heal steps:
+      (1) Run audit manually: python3 scripts/cmo_readme_audit.py
+      (2) Review output in reports/cmo/readme_audit_{date}.md
+      (3) Emit completion event: python3 -c "from scripts.cieu_recorder import emit; emit('CMO_README_AUDIT_COMPLETE', metadata={'repos_checked': N})"
+
+      If script missing, delegate to CMO:
+        "CMO: weekly README audit is due. Please create/run scripts/cmo_readme_audit.py"
+
+      Ref: knowledge/cmo/obligations/weekly_readme_audit.md
+
+    cieu_event: README_AUDIT_MISSED
+    severity: medium
 
 # Whitelists — Files exempt from ForgetGuard checks (referenced by stem)
 whitelists:
