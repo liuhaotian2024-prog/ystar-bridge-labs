@@ -1,0 +1,18 @@
+# K9-RT Sentinel — Cron Schedule Entry
+# 用途：每5分钟扫描CIEU DB中RT_MEASUREMENT事件，检测3D角色越权和5-tuple闭包缺口
+# 发射警告到 .ystar_warning_queue.json，由Ryan hook消费注入session
+#
+# 安装（Board手动执行 — crontab是系统级）：
+#   crontab -e
+#   添加以下行：
+#
+#   */5 * * * * /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/k9_rt_sentinel_run.sh >> /tmp/ystar_k9_rt.log 2>&1
+#
+# 验证：
+#   crontab -l | grep k9_rt_sentinel
+#   tail -f /tmp/ystar_k9_rt.log
+#
+# 停止：
+#   crontab -e (注释或删除此行)
+
+*/5 * * * * /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/k9_rt_sentinel_run.sh >> /tmp/ystar_k9_rt.log 2>&1
