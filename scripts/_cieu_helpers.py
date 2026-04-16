@@ -136,6 +136,68 @@ def _emit_unidentified_warning(agent_id: str, caller_context: dict):
         sys.stderr.write(f"[AGENT_ID_UNIDENTIFIED_EMIT] failed to emit: {e}\n")
 
 
+def emit_rt_measurement(
+    task_id: str,
+    y_star: str,
+    xt: str,
+    u: list,
+    yt_plus_1: str,
+    rt_plus_1: float,
+    producer: str = "",
+    executor: str = ""
+) -> bool:
+    """
+    Emit RT_MEASUREMENT event to production CIEU DB (events table).
+
+    Args:
+        task_id: Unique task identifier
+        y_star: Y* ideal predicate
+        xt: Current state
+        u: Action sequence
+        yt_plus_1: Predicted end state
+        rt_plus_1: Residual gap (0.0 = clean closure)
+        producer: Producer agent (e.g., "ceo", "cto")
+        executor: Executor agent (e.g., "eng-platform")
+
+    Returns:
+        bool: True if emission succeeded, False otherwise
+    """
+    try:
+        conn = sqlite3.connect(str(CIEU_DB_PATH))
+        cursor = conn.cursor()
+
+        agent_id = _get_canonical_agent()
+        timestamp = time.time()
+
+        metadata = {
+            "task_id": task_id,
+            "y_star": y_star,
+            "xt": xt,
+            "u": u,
+            "yt_plus_1": yt_plus_1,
+            "rt_plus_1": rt_plus_1,
+            "producer": producer or agent_id,
+            "executor": executor or agent_id,
+            "timestamp": timestamp
+        }
+
+        cursor.execute(
+            """
+            INSERT INTO events (timestamp, event_type, agent, metadata)
+            VALUES (?, ?, ?, ?)
+            """,
+            (timestamp, "RT_MEASUREMENT", agent_id, json.dumps(metadata))
+        )
+
+        conn.commit()
+        conn.close()
+        return True
+
+    except Exception as e:
+        sys.stderr.write(f"[RT_MEASUREMENT] emit failed: {e}\n")
+        return False
+
+
 def emit_cieu(
     event_type: str,
     decision: str = "info",

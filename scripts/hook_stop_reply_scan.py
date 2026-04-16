@@ -16,6 +16,20 @@ import time
 import uuid
 from pathlib import Path
 
+# ── Y-star-gov Adapter Imports (Board 2026-04-16: wire orphan injectors) ─────
+sys.path.insert(0, "/Users/haotianliu/.openclaw/workspace/Y-star-gov")
+try:
+    from ystar.adapters.hooks.stop_hook import (
+        inject_warnings_to_session,
+        inject_czl_corrections,
+        auto_validate_subagent_receipt,
+        inject_coordinator_audit_warning,
+    )
+    _YSTAR_ADAPTERS_AVAILABLE = True
+except ImportError as e:
+    _YSTAR_ADAPTERS_AVAILABLE = False
+    print(f"[W10] Y-star-gov adapters unavailable: {e}", file=sys.stderr)
+
 REPO_ROOT = Path("/Users/haotianliu/.openclaw/workspace/ystar-company")
 CIEU_DB = REPO_ROOT / ".ystar_cieu.db"
 
@@ -168,6 +182,41 @@ def main():
     if scan["triggered"]:
         for r in scan["rules"]:
             _emit_cieu("DEFER_IN_REPLY_DRIFT" if r["rule"] == "defer_in_reply" else "CHOICE_IN_REPLY_DRIFT", r)
+
+    # ── Y-star-gov Injector Calls (Board 2026-04-16: wire orphan code) ───────
+    if _YSTAR_ADAPTERS_AVAILABLE:
+        # 1. K9-RT warnings injection
+        try:
+            k9_warnings = inject_warnings_to_session()
+            if k9_warnings:
+                print(k9_warnings, file=sys.stdout)
+        except Exception as e:
+            print(f"[W10] K9-RT inject failed: {e}", file=sys.stderr)
+
+        # 2. CZL Gate 2 corrections (receipt validation)
+        try:
+            czl_correction = inject_czl_corrections(receipt_text=reply)
+            if czl_correction:
+                print(czl_correction, file=sys.stdout)
+        except Exception as e:
+            print(f"[W10] CZL inject failed: {e}", file=sys.stderr)
+
+        # 3. Auto-validate sub-agent receipt (E2)
+        try:
+            validation = auto_validate_subagent_receipt(receipt_text=reply)
+            if not validation.get("is_valid"):
+                print(f"[W10] Receipt validation failed: Rt={validation.get('actual_rt')}", file=sys.stderr)
+        except Exception as e:
+            print(f"[W10] Receipt auto-validate failed: {e}", file=sys.stderr)
+
+        # 4. Coordinator audit warning (meta-gate)
+        try:
+            coord_warning = inject_coordinator_audit_warning(reply_text=reply)
+            if coord_warning:
+                print(coord_warning, file=sys.stdout)
+        except Exception as e:
+            print(f"[W10] Coordinator audit inject failed: {e}", file=sys.stderr)
+
     # Stop hook: never block, always exit 0
     print(json.dumps({"action": "allow", "scanned": scan["triggered"]}))
     sys.exit(0)
