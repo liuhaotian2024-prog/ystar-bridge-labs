@@ -40,6 +40,26 @@
     "secretary": {
       "full_name": "Samantha Lin",
       "scope": "continuity"
+    },
+    "eng-data": {
+      "full_name": "Data Engineer",
+      "scope": "data infrastructure"
+    },
+    "eng-security": {
+      "full_name": "Alex Kim",
+      "scope": "security"
+    },
+    "eng-ml": {
+      "full_name": "Priya Sharma",
+      "scope": "machine learning"
+    },
+    "eng-perf": {
+      "full_name": "Carlos Mendez",
+      "scope": "performance"
+    },
+    "eng-compliance": {
+      "full_name": "Elena Chen",
+      "scope": "compliance"
     }
   },
   "aliases": {
@@ -55,6 +75,19 @@
     "marco-cfo": "cfo",
     "governance": "eng-governance",
     "platform": "eng-platform",
+    "Ryan-Platform": "eng-platform",
+    "Samantha-Secretary": "secretary",
+    "Maya-Governance": "eng-governance",
+    "Leo-Kernel": "eng-kernel",
+    "Jordan-Domains": "eng-domains",
+    "Sofia-CMO": "cmo",
+    "Zara-CSO": "cso",
+    "Marco-CFO": "cfo",
+    "Aiden-CEO": "ceo",
+    "Alex-Security": "eng-security",
+    "Priya-ML": "eng-ml",
+    "Carlos-Performance": "eng-perf",
+    "Elena-Compliance": "eng-compliance",
     "test_agent": "system:test_infra",
     "test-agent": "system:test_infra",
     "coder_agent": "system:test_infra"
