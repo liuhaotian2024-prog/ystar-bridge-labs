@@ -55,6 +55,7 @@ import datetime as _dt
 import hashlib
 import json
 import os
+import socket
 import sys
 import time
 import urllib.error
@@ -86,12 +87,10 @@ LEGACY_ACTOR_ALIASES = {
 
 DEFAULT_ENDPOINTS = [
     "http://localhost:11434",
-    "http://192.168.1.225:11434",
-    "http://192.168.1.228:11434",
 ]
 DEFAULT_MODEL = "ystar-gemma"
-PROBE_TIMEOUT = 2.0
-GENERATE_TIMEOUT = 60.0
+PROBE_TIMEOUT = 1.0
+GENERATE_TIMEOUT = 30.0
 
 
 # ────────────────────────── config + actor helpers ──────────────────────────
@@ -128,11 +127,17 @@ def load_config() -> dict:
 def probe_endpoint(url: str, timeout: float = PROBE_TIMEOUT) -> bool:
     """True if GET {url}/api/tags returns a valid JSON body. Never raises."""
     try:
-        req = urllib.request.Request(f"{url}/api/tags")
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            body = r.read().decode("utf-8")
-        json.loads(body)
-        return True
+        # Set global socket timeout to prevent urllib hang
+        old_timeout = socket.getdefaulttimeout()
+        socket.setdefaulttimeout(timeout)
+        try:
+            req = urllib.request.Request(f"{url}/api/tags")
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                body = r.read().decode("utf-8")
+            json.loads(body)
+            return True
+        finally:
+            socket.setdefaulttimeout(old_timeout)
     except (urllib.error.URLError, urllib.error.HTTPError,
             json.JSONDecodeError, TimeoutError, OSError):
         return False
@@ -149,20 +154,26 @@ def generate(endpoint: str, model: str, prompt: str,
              timeout: float = GENERATE_TIMEOUT) -> str:
     """Call Ollama /api/generate with stream=false. Raises on error so
     the caller can log and fail open at its own layer."""
-    payload = json.dumps({
-        "model": model,
-        "prompt": prompt,
-        "stream": False,
-        "options": {"temperature": 0.3},
-    }).encode("utf-8")
-    req = urllib.request.Request(
-        f"{endpoint}/api/generate",
-        data=payload,
-        headers={"Content-Type": "application/json"},
-    )
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        body = json.loads(r.read().decode("utf-8"))
-    return body.get("response", "")
+    # Set global socket timeout to prevent urllib hang
+    old_timeout = socket.getdefaulttimeout()
+    socket.setdefaulttimeout(timeout)
+    try:
+        payload = json.dumps({
+            "model": model,
+            "prompt": prompt,
+            "stream": False,
+            "options": {"temperature": 0.3},
+        }).encode("utf-8")
+        req = urllib.request.Request(
+            f"{endpoint}/api/generate",
+            data=payload,
+            headers={"Content-Type": "application/json"},
+        )
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            body = json.loads(r.read().decode("utf-8"))
+        return body.get("response", "")
+    finally:
+        socket.setdefaulttimeout(old_timeout)
 
 
 # ──────────────────────────── prompt templates ──────────────────────────────
