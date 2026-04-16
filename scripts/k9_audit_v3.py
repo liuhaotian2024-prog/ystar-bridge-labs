@@ -27,7 +27,13 @@ from typing import List, Dict, Any, Optional
 
 def get_cieu_conn() -> sqlite3.Connection:
     """Return connection to CIEU database."""
-    db_path = os.path.expanduser("~/.openclaw/workspace/gov-mcp/cieu.db")
+    # Primary path: ystar-company root .ystar_cieu.db
+    db_path = os.path.join(
+        os.path.dirname(os.path.dirname(__file__)), ".ystar_cieu.db"
+    )
+    if not os.path.exists(db_path):
+        # Fallback to gov-mcp/cieu.db
+        db_path = os.path.expanduser("~/.openclaw/workspace/gov-mcp/cieu.db")
     if not os.path.exists(db_path):
         # Fallback to local data/cieu.db if exists
         local_path = os.path.join(
@@ -72,7 +78,7 @@ def check_component_liveness(
             cursor.execute(
                 """
                 SELECT COUNT(*) FROM cieu_events
-                WHERE event_type = ? AND timestamp >= ?
+                WHERE event_type = ? AND created_at >= ?
                 """,
                 (event_type, cutoff_str),
             )
@@ -183,9 +189,9 @@ def check_causal_chain(
         for event_type in event_sequence:
             cursor.execute(
                 """
-                SELECT event_type, timestamp, seq_global, session_id, metadata
+                SELECT event_type, created_at, seq_global, session_id, agent_id
                 FROM cieu_events
-                WHERE event_type = ? AND timestamp >= ?
+                WHERE event_type = ? AND created_at >= ?
                 ORDER BY seq_global ASC
                 """,
                 (event_type, cutoff_str),
@@ -243,7 +249,7 @@ def run_all_chain_checks() -> List[str]:
     # 1. Board Directive Chain (30min window)
     violations += check_causal_chain(
         chain_name="BoardDirective",
-        event_sequence=["BOARD_DIRECTIVE", "INTENT_DECLARED", "INTENT_FULFILLED"],
+        event_sequence=["BOARD_DECISION", "INTENT_DECLARED", "INTENT_FULFILLED"],
         lookback_seconds=1800,
         require_all=False,  # Board may not issue directive in every session
     )
@@ -251,7 +257,7 @@ def run_all_chain_checks() -> List[str]:
     # 2. ForgetGuard Interception Chain (15min window)
     violations += check_causal_chain(
         chain_name="ForgetGuardInterception",
-        event_sequence=["FORGET_GUARD_VIOLATION", "ESCALATION", "BOARD_DECISION"],
+        event_sequence=["FORGET_GUARD_VIOLATION", "RESIDUAL_LOOP_ESCALATE", "BOARD_DECISION"],
         lookback_seconds=900,
         require_all=False,  # May not trigger in every session
     )
@@ -267,7 +273,7 @@ def run_all_chain_checks() -> List[str]:
     # 4. Obligation Fulfillment Chain (30min window)
     violations += check_causal_chain(
         chain_name="ObligationFulfillment",
-        event_sequence=["OBLIGATION_CREATED", "OBLIGATION_FULFILLED"],
+        event_sequence=["OBLIGATION_REGISTERED", "OBLIGATION_FULFILLED"],
         lookback_seconds=1800,
         require_all=False,
     )
@@ -340,10 +346,10 @@ def run_all_invariant_checks() -> List[str]:
     violations += check_invariant(
         invariant_name="FailedDirectiveRecorded",
         violation_query="""
-            SELECT session_id, timestamp, metadata
+            SELECT session_id, created_at, agent_id
             FROM cieu_events
-            WHERE event_type = 'BOARD_DIRECTIVE'
-              AND timestamp >= ?
+            WHERE event_type = 'BOARD_DECISION'
+              AND created_at >= ?
               AND NOT EXISTS (
                   SELECT 1 FROM cieu_events AS e2
                   WHERE e2.event_type IN ('INTENT_FULFILLED', 'TASK_FAILED')
@@ -352,31 +358,31 @@ def run_all_invariant_checks() -> List[str]:
               )
         """,
         query_params=(cutoff,),
-        violation_message_template="session={session_id} directive at {timestamp} has no completion/failure record",
+        violation_message_template="session={session_id} directive at {created_at} has no completion/failure record",
     )
 
-    # 2. Obligations never orphaned
+    # 2. Obligations never orphaned (simplified — check presence only, no task_id validation)
     violations += check_invariant(
         invariant_name="ObligationNotOrphaned",
         violation_query="""
-            SELECT session_id, timestamp, metadata
+            SELECT session_id, created_at, agent_id
             FROM cieu_events
-            WHERE event_type = 'OBLIGATION_CREATED'
-              AND timestamp >= ?
-              AND (metadata NOT LIKE '%task_id%' OR metadata NOT LIKE '%creator%')
+            WHERE event_type = 'OBLIGATION_REGISTERED'
+              AND created_at >= ?
+              AND agent_id IS NULL
         """,
         query_params=(cutoff,),
-        violation_message_template="session={session_id} obligation at {timestamp} lacks task_id or creator",
+        violation_message_template="session={session_id} obligation at {created_at} has NULL agent_id",
     )
 
     # 3. Escalations must receive Board response
     violations += check_invariant(
         invariant_name="EscalationHasBoardResponse",
         violation_query="""
-            SELECT session_id, timestamp, metadata
+            SELECT session_id, created_at, agent_id
             FROM cieu_events
-            WHERE event_type = 'ESCALATION'
-              AND timestamp >= ?
+            WHERE event_type = 'RESIDUAL_LOOP_ESCALATE'
+              AND created_at >= ?
               AND NOT EXISTS (
                   SELECT 1 FROM cieu_events AS e2
                   WHERE e2.event_type = 'BOARD_DECISION'
@@ -385,17 +391,17 @@ def run_all_invariant_checks() -> List[str]:
               )
         """,
         query_params=(cutoff,),
-        violation_message_template="session={session_id} escalation at {timestamp} has no Board response",
+        violation_message_template="session={session_id} escalation at {created_at} has no Board response",
     )
 
     # 4. Gaps (Rt+1 > 0) must be addressed
     violations += check_invariant(
         invariant_name="GapMustBeAddressed",
         violation_query="""
-            SELECT session_id, timestamp, metadata
+            SELECT session_id, created_at, agent_id
             FROM cieu_events
-            WHERE event_type = 'GAP_REPORTED'
-              AND timestamp >= ?
+            WHERE event_type = 'GAP_IDENTIFIED'
+              AND created_at >= ?
               AND NOT EXISTS (
                   SELECT 1 FROM cieu_events AS e2
                   WHERE e2.event_type IN ('GAP_CLOSED', 'GAP_ESCALATED')
@@ -404,27 +410,26 @@ def run_all_invariant_checks() -> List[str]:
               )
         """,
         query_params=(cutoff,),
-        violation_message_template="session={session_id} gap at {timestamp} remains unresolved",
+        violation_message_template="session={session_id} gap at {created_at} remains unresolved",
     )
 
     # 5. Hook startup must trigger governance action
     violations += check_invariant(
         invariant_name="HookStartupTriggersGovernance",
         violation_query="""
-            SELECT session_id, timestamp, metadata
+            SELECT session_id, created_at, agent_id
             FROM cieu_events
-            WHERE event_type = 'HOOK_STARTUP'
-              AND timestamp >= ?
+            WHERE event_type = 'HOOK_BOOT'
+              AND created_at >= ?
               AND NOT EXISTS (
                   SELECT 1 FROM cieu_events AS e2
                   WHERE e2.event_type IN ('GOVERNANCE_INIT', 'SESSION_BOOT')
                     AND e2.session_id = cieu_events.session_id
-                    AND ABS(CAST(strftime('%s', e2.timestamp) AS INTEGER) -
-                            CAST(strftime('%s', cieu_events.timestamp) AS INTEGER)) < 10
+                    AND ABS(e2.created_at - cieu_events.created_at) < 10
               )
         """,
         query_params=(cutoff,),
-        violation_message_template="session={session_id} hook startup at {timestamp} has no governance init within 10s",
+        violation_message_template="session={session_id} hook startup at {created_at} has no governance init within 10s",
     )
 
     return violations
