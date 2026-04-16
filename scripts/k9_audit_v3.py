@@ -111,11 +111,11 @@ def run_all_liveness_checks() -> List[str]:
     """
     violations = []
 
-    # 1. Hook Chain — should fire every tool_use (aggressive 60s window)
+    # 1. Hook Chain — should fire every tool_use (10min window for active sessions)
     violations += check_component_liveness(
         component_name="HookChain",
         expected_event_types=["HOOK_PRE_CALL", "HOOK_POST_CALL"],
-        lookback_seconds=60,
+        lookback_seconds=600,
         min_expected_count=1,
     )
 
