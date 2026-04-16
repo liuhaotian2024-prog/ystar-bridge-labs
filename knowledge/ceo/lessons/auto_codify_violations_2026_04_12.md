@@ -1,3 +1,7 @@
+---
+lesson_id: 91ee5054-4b34-46d2-a5ba-c85e97c2b4d6
+---
+
 # Lesson: auto_codify 违规累计记录 — 2026-04-12 session
 
 **发现日期**: 2026-04-12

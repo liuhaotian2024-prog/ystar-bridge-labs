@@ -57,6 +57,6 @@ Now run:
   k9log report --output case_004_evidence.html
 
 
-[K9] Session 结束  操作:171  ⚠ 119 次违规  审计日志: /Users/haotianliu/.k9log/logs/k9log.cieu.jsonl
+[K9] Session 结束  操作:183  ⚠ 119 次违规  审计日志: /Users/haotianliu/.k9log/logs/k9log.cieu.jsonl
 [K9] 下一步: k9log trace --last  # 查看违规详情
 

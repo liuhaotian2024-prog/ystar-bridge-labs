@@ -4,6 +4,7 @@ type: lesson / architecture-bug
 created: 2026-04-13
 severity: high
 trigger: A023 ship 后第一次真要求 CTO 分派 CMO，Ethan-CTO subagent 报 "No Agent tool in CTO toolset"
+lesson_id: eace160b-4c3d-4d50-97a7-74c9c3576b11
 ---
 
 # Bug 描述

@@ -5,6 +5,7 @@ created: 2026-04-13
 severity: critical
 trigger: Board 追问 Anthropic memo 后 CEO 写 correction 超 120s SLA → 硬锁
 resolved_by: Board 手动 emit DIRECTIVE_ACKNOWLEDGED CIEU + pkill daemon 重启
+lesson_id: abbfad67-df46-466e-9916-669a04ec29dd
 ---
 
 # 事件时间线

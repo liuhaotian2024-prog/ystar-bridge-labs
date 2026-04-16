@@ -1,3 +1,7 @@
+---
+lesson_id: 78e48f19-4c23-48ec-bc9e-a5038e8ca88e
+---
+
 # Lesson: Unified 3-Framework Injection Attempt — Harness-Layer Boundary Discovered
 
 **Date**: 2026-04-15

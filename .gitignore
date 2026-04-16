@@ -65,3 +65,5 @@ knowledge/*/active_task.json
 .env
 .envrc
 knowledge/secretary/secrets/*
+.github/
+ystar.egg-info/

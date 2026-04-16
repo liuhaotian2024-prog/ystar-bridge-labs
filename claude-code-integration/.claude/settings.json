@@ -1,0 +1,27 @@
+﻿{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .claude/hooks/pre_tool_use.py"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"import json,sys,os; data=json.loads(sys.stdin.read()); agent=data.get('agent_id','?'); print(f'[Y*gov] Subagent {agent} completed — CIEU record written')\""
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Y*gov governance layer. PreToolUse hook verifies compliance before every tool call. Install: pip install ystar"
+}

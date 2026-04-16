@@ -156,6 +156,59 @@ def _append_world_state():
     return ''
 
 
+
+def _detect_board_presence() -> bool:
+    try:
+        import sqlite3, time
+        db = REPO_ROOT / ".ystar_cieu.db"
+        if not db.exists(): return False
+        conn = sqlite3.connect(str(db))
+        row = conn.execute(
+            "SELECT COUNT(*) FROM cieu_events WHERE event_type='BOARD_MESSAGE' AND created_at>?",
+            (time.time()-1800,)).fetchone()
+        conn.close()
+        return bool(row and row[0] > 0)
+    except Exception: return False
+
+def _get_violation_count() -> str:
+    try:
+        import sqlite3
+        from datetime import datetime
+        db = REPO_ROOT / ".ystar_cieu.db"
+        if not db.exists(): return "（CIEU不可用）"
+        conn = sqlite3.connect(str(db))
+        month_start = datetime.now().replace(day=1,hour=0,minute=0,second=0).timestamp()
+        row = conn.execute(
+            "SELECT COUNT(*) FROM cieu_events WHERE event_type IN ('DEFER_LANGUAGE_DRIFT','DEFER_IN_COMMIT_DRIFT','DEFER_IN_BASH_DRIFT','BOARD_CHOICE_QUESTION_DRIFT','CEO_AVOIDANCE') AND created_at>?",
+            (month_start,)).fetchone()
+        conn.close()
+        return str(row[0]) if row else "0"
+    except Exception: return "（查询失败）"
+
+def _inject_behavioral_constraints() -> str:
+    mode = ("🟢 Board在线 — 按Board指示工作" if _detect_board_presence()
+            else "🔴 Board离线 — 自主模式，持续工作直到Board说停")
+    return f"""
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CEO行为约束 [CONSTITUTIONAL — 不可忽略]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+当前模式：{mode}
+
+Board离线时唯一正确行为：
+  自主学习 | 系统测试 | 长期任务设计 | Article 11并行执行
+  持续工作，直到Board明确说"收工"/"stop"
+
+BLOCK级违规（forget_guard直接拒绝tool call）：
+  ✗ 给Board出选择题（1)/2)/方案一/Option A）
+  ✗ 未经Board指示自行停止（明日/等Board回来/later）
+  ✗ prose-claim done（无CIEU落盘证据）
+  ✗ commit message含defer语义词
+
+本月违规次数：{_get_violation_count()}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"""
+
+
 def _append_yml_memories():
     """Load YML memories for agent (P0-B U2 - obligation-driven memory retrieval)."""
     import subprocess
@@ -197,6 +250,10 @@ def _main():
         world_state = _append_world_state()
         if world_state:
             text = world_state + '\n\n---\n\n' + text
+
+        # PRIORITY -1: Behavioral Constraints (Campaign v3)
+        constraints = _inject_behavioral_constraints()
+        text = constraints + '\n\n' + text
 
         # C7 Conversation Replay (PRIORITY 1) - verbatim transcript
         replay = _append_conversation_replay()

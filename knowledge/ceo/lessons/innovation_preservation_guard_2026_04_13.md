@@ -4,6 +4,7 @@ type: lesson / protection-rule
 created: 2026-04-13
 severity: critical
 trigger: Board 直接警告 "不要在引进技术的时候把我们之前最核心的真实创新给覆盖了"
+lesson_id: d9b98685-43b6-40d2-b427-bec3a35fae12
 ---
 
 # Y*gov 12 项核心创新（不可被外部库覆盖）

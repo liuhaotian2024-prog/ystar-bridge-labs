@@ -1,0 +1,357 @@
+"""
+Y*gov Quickstart API Guide
+===========================
+
+This file shows the 10 core symbols a new user needs to get started.
+Y*gov exports 481 symbols, but most users only need these core APIs.
+
+For complete documentation, see: https://github.com/liuhaotian2024-prog/Y-star-gov
+"""
+
+# ══════════════════════════════════════════════════════════════════════
+# 1. Core Contract Types
+# ══════════════════════════════════════════════════════════════════════
+
+from ystar import IntentContract, Policy
+
+# IntentContract: Define behavioral constraints for a function or agent
+contract = IntentContract(
+    deny=[".env", "/etc/"],              # Forbidden substrings
+    only_paths=["./workspace/"],          # Path whitelist
+    deny_commands=["rm -rf", "sudo"],     # Command blocklist
+    only_domains=["api.internal.com"],    # Domain whitelist
+    invariant=["amount > 0", "amount < 1000000"],  # Logic constraints
+    value_range={"amount": {"min": 0, "max": 1000000}}  # Numeric bounds
+)
+
+# Policy: Universal multi-entity constraint registry
+# Maps entity names to IntentContracts
+policy = Policy({
+    "agent": IntentContract(
+        deny=["production"],
+        only_paths=["./src/", "./tests/"]
+    )
+})
+
+
+# ══════════════════════════════════════════════════════════════════════
+# 2. Permission Checking
+# ══════════════════════════════════════════════════════════════════════
+
+from ystar import check, CheckResult
+
+# check(): Verify if a proposed action satisfies the contract
+result = check(
+    params={"file_path": "./workspace/data.txt", "amount": 500},
+    result={},
+    contract=contract
+)
+
+if result.passed:
+    print("ALLOW")
+    # Execute the action
+else:
+    print("DENY")
+    for violation in result.violations:
+        print(f"  - {violation.dimension}: {violation.message}")
+
+
+# ══════════════════════════════════════════════════════════════════════
+# 3. Full Governance Pipeline (Permission + Enforcement Modes)
+# ══════════════════════════════════════════════════════════════════════
+
+from ystar import enforce, EnforcementMode
+
+# enforce(): Complete governance pipeline with enforcement modes
+# Returns: EnforcementResult with check_result, action_taken, etc.
+
+result = enforce(
+    params={"file_path": "./workspace/output.csv"},
+    result={},
+    contract=contract,
+    mode=EnforcementMode.CHECK_AND_RETURN
+)
+
+if result.passed:
+    print("Action permitted")
+    # Execute the action
+else:
+    print("Action blocked")
+    for v in result.violations:
+        print(f"  {v.message}")
+
+
+# ══════════════════════════════════════════════════════════════════════
+# 4. Natural Language → Contract Translation
+# ══════════════════════════════════════════════════════════════════════
+
+from ystar.kernel.nl_to_contract import translate_to_contract
+
+# Translate plain English rules to IntentContract
+policy_text = """
+# Agent Rules
+- Never access /production or /staging
+- Only call: api.stripe.com, api.internal.com
+- Maximum transaction: $10,000
+- Never run rm, sudo, or git push --force
+"""
+
+contract_dict, method, confidence = translate_to_contract(policy_text)
+# method: "llm" (if ANTHROPIC_API_KEY set) or "regex" (fallback)
+# confidence: 0.90 (LLM) or 0.50 (regex)
+
+auto_contract = IntentContract(
+    deny=contract_dict.get("deny", []),
+    only_domains=contract_dict.get("only_domains", []),
+    deny_commands=contract_dict.get("deny_commands", []),
+    value_range=contract_dict.get("value_range", {})
+)
+
+
+# ══════════════════════════════════════════════════════════════════════
+# 5. Obligation Tracking (Omission Governance)
+# ══════════════════════════════════════════════════════════════════════
+
+"""
+OmissionEngine: Track and enforce obligations
+
+The obligation tracking system operates at the framework level and requires
+TrackedEntity and ObligationRules setup. For production usage patterns, see:
+  - tests/test_obligation_triggers.py
+  - ystar/governance/omission_engine.py
+
+Key concepts:
+  - TrackedEntity: Represents a session/agent/task that can have obligations
+  - ObligationRules: Defines when obligations are created and how they're enforced
+  - OmissionEngine.ingest_event(): Main entry point for processing events
+  - OmissionEngine.scan(): Check for expired obligations
+
+Example workflow (simplified):
+  from ystar.governance.omission_models import TrackedEntity, EntityStatus
+  from ystar.governance.omission_store import InMemoryOmissionStore
+  from ystar.governance.obligation_rules import ObligationRuleRegistry
+  from ystar import OmissionEngine
+
+  store = InMemoryOmissionStore()
+  registry = ObligationRuleRegistry()
+  engine = OmissionEngine(store=store, registry=registry)
+
+  # Register entity
+  entity = TrackedEntity(entity_id="session_001", entity_type="session",
+                         initiator_id="user", current_owner_id="agent",
+                         status=EntityStatus.ACTIVE)
+  engine.register_entity(entity)
+
+  # Process events to trigger/fulfill obligations
+  # (events are typically generated by the governance layer)
+"""
+
+
+# ══════════════════════════════════════════════════════════════════════
+# 6. Delegation Chain (Multi-Agent Permission Inheritance)
+# ══════════════════════════════════════════════════════════════════════
+
+from ystar import DelegationChain, DelegationContract
+
+# DelegationChain: Enforce monotonic authority across parent-child agents
+parent_contract = IntentContract(
+    deny=["/production"],
+    only_paths=["./workspace/"]
+)
+
+child_contract = IntentContract(
+    deny=["/production", "/staging"],  # Stricter than parent
+    only_paths=["./workspace/temp/"]    # Subset of parent
+)
+
+# Create delegation contracts
+manager_to_worker = DelegationContract(
+    principal="manager",
+    actor="worker",
+    contract=child_contract
+)
+
+chain = DelegationChain()
+chain.append(manager_to_worker)
+
+# Validate delegation chain
+errors = chain.validate()
+if not errors:
+    print("Delegation valid: child permissions are subset of parent")
+else:
+    print(f"Delegation validation errors: {errors}")
+
+
+# ══════════════════════════════════════════════════════════════════════
+# 7. OpenClaw Integration (Multi-Agent Framework)
+# ══════════════════════════════════════════════════════════════════════
+
+from ystar.domains.openclaw import (
+    OpenClawDomainPack,
+    make_openclaw_chain,
+)
+from ystar.domains.openclaw.adapter import (
+    make_session,
+    enforce as openclaw_enforce,
+    OpenClawEvent,
+    EventType
+)
+
+# Create domain pack with 6 role-based contracts
+pack = OpenClawDomainPack(
+    workspace_root="./workspace",
+    doc_domains=["docs.python.org", "github.com"]
+)
+
+# Build delegation chain: planner -> coder -> tester
+chain = make_openclaw_chain(
+    pack=pack,
+    allowed_paths=["./src", "./tests"],
+    allowed_domains=None,
+    include_release=False
+)
+
+# Create session
+session = make_session(
+    session_id="demo",
+    allowed_paths=["./src"],
+    pack=pack,
+    chain=chain,
+    strict=False
+)
+
+# Enforce governance on tool call
+event = OpenClawEvent(
+    event_type=EventType.FILE_WRITE,
+    agent_id="coder_agent",
+    session_id="demo",
+    file_path="./src/main.py",
+    patch_summary="Fix null pointer bug",
+    task_ticket_id="TASK-001"
+)
+
+decision, cieu_records = openclaw_enforce(event, session)
+# decision: EnforceDecision.ALLOW / DENY / ESCALATE
+
+
+# ══════════════════════════════════════════════════════════════════════
+# 8. CLI Commands
+# ══════════════════════════════════════════════════════════════════════
+
+"""
+Three-step integration with Claude Code:
+
+1. Initialize session config:
+   $ ystar setup
+
+2. Install governance hook:
+   $ ystar hook-install
+
+3. Create AGENTS.md with your rules:
+   # My Rules
+   - Never modify /production
+   - Only write to ./workspace/
+
+Common commands:
+  ystar doctor    - Health check (7 diagnostic tests)
+  ystar report    - Governance report (decisions, deny rate)
+  ystar verify    - Verify CIEU chain integrity
+  ystar simulate  - A/B comparison (with vs without Y*gov)
+  ystar audit     - Causal audit report
+"""
+
+
+# ══════════════════════════════════════════════════════════════════════
+# 9. CIEU Audit Records
+# ══════════════════════════════════════════════════════════════════════
+
+"""
+Every enforce() call writes a tamper-evident CIEU record:
+
+{
+  "seq_global": 1234,
+  "event_id": "uuid",
+  "agent_id": "worker_agent",
+  "event_type": "Write",
+  "decision": "allow",
+  "violations": [],
+  "contract_hash": "sha256:...",
+  "file_path": "./workspace/data.txt",
+  "prev_hash": "sha256:...",  # Links to previous record
+  "record_hash": "sha256:...", # Hash of this record
+  "created_at": 1234567890
+}
+
+Verify chain integrity:
+  $ ystar verify --session my_session
+"""
+
+
+# ══════════════════════════════════════════════════════════════════════
+# 10. Complete Example: Governed Agent
+# ══════════════════════════════════════════════════════════════════════
+
+from ystar import IntentContract, enforce
+
+def governed_agent_example():
+    """Complete example: agent with Y*gov governance"""
+
+    # 1. Define contract
+    contract = IntentContract(
+        deny=["/etc", "/root", "production"],
+        only_paths=["./workspace/"],
+        deny_commands=["rm -rf", "sudo", "git push --force"],
+        invariant=["amount > 0", "amount < 100000"]
+    )
+
+    # 2. Agent attempts an action
+    proposed_action = {
+        "file_path": "./workspace/results.json",
+        "amount": 5000
+    }
+
+    # 3. Check before execution
+    result = enforce(
+        params=proposed_action,
+        result={},
+        contract=contract
+    )
+
+    # 4. Execute only if allowed
+    if result.passed:
+        print("✓ Action allowed")
+        # Execute: write_file(proposed_action["file_path"], data)
+    else:
+        print("✗ Action denied")
+        for v in result.violations:
+            print(f"  Violation: {v.message}")
+
+    return result
+
+
+# ══════════════════════════════════════════════════════════════════════
+# Summary: The 10 Core Symbols
+# ══════════════════════════════════════════════════════════════════════
+
+"""
+1. IntentContract       - Define behavioral constraints
+2. check()              - Permission checking (0.042ms mean latency)
+3. enforce()            - Full pipeline (permission + CIEU + obligations)
+4. translate_to_contract() - Natural language → contract
+5. OmissionEngine       - Obligation tracking
+6. DelegationChain      - Multi-agent permission inheritance
+7. OpenClawDomainPack   - Pre-built role contracts for OpenClaw
+8. CLI: ystar setup/doctor/verify/report
+9. CIEU records         - Tamper-evident audit chain
+10. Complete example    - Governed agent pattern
+
+For complete API reference:
+  from ystar import *
+  help(IntentContract)
+  help(check)
+  help(enforce)
+"""
+
+if __name__ == "__main__":
+    # Run the complete example
+    governed_agent_example()

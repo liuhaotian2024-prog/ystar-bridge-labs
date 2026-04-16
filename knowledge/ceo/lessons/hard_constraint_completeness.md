@@ -3,6 +3,7 @@ name: 硬约束清单必须穷举核对
 type: feedback / lesson
 created: 2026-04-11
 trigger_incident: Board问"未来30天最重要任务/部署自主任务必须遵守什么"
+lesson_id: 6688f3f4-420e-4811-a052-b8eae885edbc
 ---
 
 # 规则

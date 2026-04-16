@@ -5,6 +5,7 @@ created: 2026-04-13
 severity: high
 trigger: Board 直接授权 "团队可自主操作 X，主动 follow 行业人和事件，发评论/再评论与真人互动学习"
 applies_to: ceo, cto, cmo, cso, cfo, secretary, eng-* (全员)
+lesson_id: b0413067-f3f6-4246-950e-ade1a6191453
 ---
 
 # 战略意图

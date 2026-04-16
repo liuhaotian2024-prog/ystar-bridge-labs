@@ -4,6 +4,7 @@ type: lesson / incident
 created: 2026-04-12
 severity: medium
 trigger_incident: Jordan (eng-domains) 在实装 omission_engine 时尝试修改 ystar/governance/omission_engine.py，被 hook DENY
+lesson_id: 25a41f85-99dd-4c0c-9f7a-498d3c02d210
 ---
 
 # 规则

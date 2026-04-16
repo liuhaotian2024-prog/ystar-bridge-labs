@@ -1,3 +1,7 @@
+---
+lesson_id: 60a6c93f-e980-4247-9aa5-db4a0cce57cd
+---
+
 # Company Formalization Audit — 2026-04-15
 
 **Author**: Samantha Lin (Secretary)

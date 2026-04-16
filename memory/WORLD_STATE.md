@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-15 21:12:04
+**Generated**: 2026-04-15 23:00:01
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -38,7 +38,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/0 valid
-**CIEU 24h Events**: 25009
+**CIEU 24h Events**: 31999
 **Overdue Obligations**: 0
 
 ---
@@ -86,8 +86,8 @@ ceo          | 3/3          | 24           | 17       | Never
 ---
 
 ## 8. Ecosystem — Y*gov Product Repo
-**HEAD**: `ea61265 feat(gov): W7.3 sentence-transformer embedding for narrative_coherence_detector [L3]`
-**24h commits**: 20
+**HEAD**: `af9e938 cleanup(W17+W18): delete check_wheel_contents.py + gov_mcp/ stale dir [L3]`
+**24h commits**: 23
 **ahead origin**: 0
 **test files**: 92
 **version**: 0.48.0
@@ -95,9 +95,7 @@ ceo          | 3/3          | 24           | 17       | Never
 ---
 
 ## 9. Ecosystem — gov-mcp (nested in Y*gov)
-**location**: `/Users/haotianliu/.openclaw/workspace/Y-star-gov/gov_mcp`
-**server.py LoC**: 1150
-**ystar-company side health.py**: exists
+**gov-mcp**: not found
 
 ---
 
@@ -112,7 +110,9 @@ ceo          | 3/3          | 24           | 17       | Never
 ## 11. Today's Commits (24h) — both repos
 
 
-**ystar-company** (86 commits):
+**ystar-company** (80 commits):
+- 503b7c75 22:23 fix(tests): skip AMENDMENT-015 auto-satisfy until impl [W16]
+- e5d506a6 21:12 continuity: regen WORLD_STATE + session_summary after Three-Layer doctrine补录 [L3]
 - 5adb5b81 21:11 doctrine(czl): 补录 Three-Layer + Defer≠Schedule 到 AGENTS.md [L4 CONSTITUTIONAL]
 - 98f74be0 21:02 fix(W14): event_fingerprint fallback to agent_id+task_desc on null params [L3 TESTED]
 - 0e9bc54d 20:56 fix(watchdog): HP measurement 2 bugs + orchestrator/intervention filter [L3 TESTED]
@@ -131,10 +131,12 @@ ceo          | 3/3          | 24           | 17       | Never
 - 79dd9b41 19:31 feat(stress): Campaign v4 三轮 CZL doctrine 压测 全 Rt+1=0 [L3]
 - a25e2b0b 19:27 test(czl): Campaign v4 R2 — Canonical Hash Guard 4/4 drift cycles ✅ [L3 TESTED]
 - 9703e27d 19:09 dogfood(czl): Campaign v3 subgoals.json 10 criteria 补 Y* Schema v2 必填字段 [L3]
-- f8812130 18:51 chore(czl): W5.1 + W7.1 completion records
-- 8b7a3a0d 18:50 fix(w7.1): hook_prompt_gate CIEU schema + silent skip logic
 
-**Y*gov** (20 commits):
+**Y*gov** (23 commits):
+- af9e938 22:34 cleanup(W17+W18): delete check_wheel_contents.py + gov_mcp/ stale dir [L3]
+- c8103a8 22:33 fix(W18): delete stale gov_mcp/ directory (canonical source: gov-mcp repo) [L3]
+- fbc6c9c 22:27 fix: add .claude/settings.json + remove setup.py (pyproject conflict) [Board scan]
+- e3dfb0e 22:23 fix(tests): skip AMENDMENT-015 auto-satisfy until impl [W16]
 - ea61265 20:59 feat(gov): W7.3 sentence-transformer embedding for narrative_coherence_detector [L3]
 - 0605df3 20:58 feat(governance): CausalChainAnalyzer for CIEU event tracing
 - 0d3cac5 20:01 fix(W7.2): hybrid fusion → max(keyword, tfidf) best-of-both [L3 TESTED]
@@ -151,7 +153,3 @@ ceo          | 3/3          | 24           | 17       | Never
 - f51d5b2 11:40 [K9 RULE 12] compliance_audit.py — Unified Protocol Compliance Self-Audit
 - f3fa8b7 11:29 feat(domains): Jordan pharma GxP domain pack v1 (JSONL recovery) [L3 IMPL]
 - 0797ce8 11:28 feat(hook): LESSON_READ CIEU emit (incremental Edit, 非 Write) [L3 IMPL]
-- 9cd8014 09:56 fix(P0): CEO_AVOIDANCE full path + boundary_enforcer typo (Ethan stress test 2026-04-15) [L4 SHIPPED]
-- ea95fbb 08:45 feat(gov): Maya K9 rules 6-10 module + hook CIEU marker check (truncated, CEO commit) [L3 IMPL]
-- 459a78b 07:32 feat(hook): Agent tool auto-set .ystar_active_agent from subagent_type
-- 006c399 21:27 fix(R18): hardcoded /Users/haotianliu/ → os.path.expanduser('~/...') [L4 SHIPPED]

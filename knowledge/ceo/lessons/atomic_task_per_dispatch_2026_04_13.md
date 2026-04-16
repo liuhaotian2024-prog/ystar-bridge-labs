@@ -5,6 +5,7 @@ created: 2026-04-13
 severity: medium-high
 trigger_session: 2026-04-12 夜 CEO autonomous session
 cieu_evidence: Ryan-Platform 被派 4 次同 session，每次半活
+lesson_id: 1eea8b02-af54-4a09-b1be-cf7454d837bf
 ---
 
 # 规则

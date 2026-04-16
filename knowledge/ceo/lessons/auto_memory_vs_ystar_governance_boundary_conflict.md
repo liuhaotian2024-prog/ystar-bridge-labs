@@ -1,3 +1,7 @@
+---
+lesson_id: 98d46e72-bf03-448e-ac99-392af3842a4d
+---
+
 # Lesson: auto-memory 系统与 Y*gov 治理的边界冲突
 
 **发现日期**: 2026-04-12

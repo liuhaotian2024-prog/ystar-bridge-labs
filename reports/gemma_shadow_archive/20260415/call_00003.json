@@ -1,0 +1,25 @@
+{
+  "call_id": "call_00003",
+  "timestamp": 1776268848.851552,
+  "prompt_hash": "94982f745d430546",
+  "prompt_snippet": "Summarize this K9 daily patrol report in 2-3 sentences:\n\nDate: 20260415\nTotal violations: 0\nBreakdown: P0=0, P1=0, P2=0, P3=0\nCIEU events: 192\n\nWrite a concise executive summary focusing on actionable",
+  "gemma": {
+    "provider": "ystar-gemma:latest",
+    "text": "",
+    "tokens": 200,
+    "latency_ms": 10166,
+    "error": null
+  },
+  "claude": {
+    "provider": "claude-sonnet-4.5",
+    "text": "",
+    "tokens": 0,
+    "latency_ms": 0,
+    "error": "ANTHROPIC_API_KEY not set"
+  },
+  "metrics": {
+    "similarity": 0.0,
+    "key_info_retention": 1.0,
+    "length_ratio": 0.0
+  }
+}

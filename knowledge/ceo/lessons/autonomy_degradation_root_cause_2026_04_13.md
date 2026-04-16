@@ -5,6 +5,7 @@ created: 2026-04-13
 severity: critical
 trigger: Board 2026-04-13 直接质询 "团队自驱力和自主性深度思考立刻行动的能力退化的严重"
 framework: AMENDMENT-007 第十一条 7 层
+lesson_id: 528a67ad-8025-4277-946f-aab2e369cbb7
 ---
 
 # 7 个真因（按因果深度）

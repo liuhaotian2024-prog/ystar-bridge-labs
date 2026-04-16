@@ -1,3 +1,7 @@
+---
+lesson_id: f41018a3-b068-4448-aa4a-f6a9a8379330
+---
+
 # CEO Write Scope Enforced (2026-04-14)
 Trigger Board "权限硬约束 + 立即同步".
 ## Hook 实测 enforced 写权

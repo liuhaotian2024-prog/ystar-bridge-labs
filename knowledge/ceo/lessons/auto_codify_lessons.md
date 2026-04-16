@@ -3,6 +3,7 @@ name: 根源经验自动入硬约束（meta-rule）
 type: hard_constraint / meta-rule
 created: 2026-04-11
 authority: Board直接授权，永久生效
+lesson_id: 9a014240-3f07-4d75-8ccf-9e1a579d5f56
 ---
 
 # 规则

@@ -1,3 +1,7 @@
+---
+lesson_id: 20c5d07e-e361-413e-8dc8-ed1a9f3bfba1
+---
+
 # Cross-Session Knowledge Continuity Audit — Permanent Non-Loss Protocol
 
 **Author**: Samantha Lin (Secretary)

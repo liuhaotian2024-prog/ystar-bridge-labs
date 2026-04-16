@@ -1,3 +1,7 @@
+---
+lesson_id: cf8b30f3-46e9-4078-a54f-bd2db3d05ed5
+---
+
 # Y*gov Test Coverage Gap Audit — 2026-04-14
 
 ## Executive Summary

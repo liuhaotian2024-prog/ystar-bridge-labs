@@ -1,3 +1,7 @@
+---
+lesson_id: d12ff49a-544a-4551-94c3-48a50a790456
+---
+
 # Lesson: 2026-04-13 Session — CEO 角色降级活体实证
 
 **类型**: lesson (Hermes 4 段格式)

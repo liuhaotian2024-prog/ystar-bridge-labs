@@ -57,8 +57,10 @@ sys.stdout.write(d.decode())
         # AMENDMENT-018 sync A: emit WHITELIST event (async, fail-open)
         echo "$PAYLOAD" | python3.11 "$YSTAR_DIR/scripts/whitelist_emit.py" 2>/dev/null &
 
-        # AMENDMENT-020: ForgetGuard drift detection (async, fail-open)
-        echo "$PAYLOAD" | python3.11 "$YSTAR_DIR/scripts/forget_guard.py" 2>&1 | tee -a /tmp/ystar_forget_guard.log >/dev/null &
+        # AMENDMENT-020 v2: ForgetGuard sync deny
+        GUARD_OUT=$(echo "$PAYLOAD" | python3.11 "$YSTAR_DIR/scripts/forget_guard.py" 2>>/tmp/ystar_forget_guard.log)
+        GUARD_ACTION=$(echo "$GUARD_OUT" | python3.11 -c "import sys,json;d=json.load(sys.stdin);print(d.get('action','allow'))" 2>/dev/null || echo "allow")
+        if [ "$GUARD_ACTION" = "deny" ]; then echo "$GUARD_OUT"; exit 0; fi
 
         echo "$RESULT"
         exit 0

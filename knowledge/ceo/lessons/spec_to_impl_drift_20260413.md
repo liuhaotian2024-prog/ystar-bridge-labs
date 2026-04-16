@@ -4,6 +4,7 @@ type: lesson
 created: 2026-04-13
 severity: medium
 trigger: A018 4 工程师并列写 7 YAML，schema 4 个版本互不兼容
+lesson_id: 78ed46b5-6ac1-4cef-a367-2f99d329eb99
 ---
 
 # 现场

@@ -75,3 +75,18 @@
 - **Criticality**: (To be determined)
 - **Theory status**: ⬜ Pending P2 learning
 
+
+## 2. New task type (from P3 simulation)
+
+### Deployment Planning
+- **Description**: (Detected from counterfactual simulation)
+- **Frequency**: (To be determined)
+- **Criticality**: (To be determined)
+- **Theory status**: ⬜ Pending P2 learning
+
+### System Integration
+- **Description**: (Detected from counterfactual simulation)
+- **Frequency**: (To be determined)
+- **Criticality**: (To be determined)
+- **Theory status**: ⬜ Pending P2 learning
+
