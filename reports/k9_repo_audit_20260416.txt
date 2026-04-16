@@ -1,0 +1,62 @@
+/Users/haotianliu/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+============================================================
+  K9 Audit — Case #004: Repository Residue Audit
+  Target: /Users/haotianliu/.openclaw/workspace/ystar-company/--path
+============================================================
+✅ Agent identity set: RepoAuditor (agent-58b86afc)
+
+[Setup] Agent identity set: RepoAuditor
+
+[Scan] 0 files found in repository
+
+[Rule 1] SUPERSEDED — *_fixed.py, *_v2.py, *_old.py, *_backup.py
+
+  ✅ No superseded files found
+
+[Rule 2] ORPHANED_TXT — .txt files not referenced in any .md
+
+  ✅ No orphaned .txt files found
+
+[Rule 3] ARTIFACT — Office temp files, .bak, .tmp
+
+  ✅ No artifact files found
+
+[Rule 4] ORPHANED_JSONL — .jsonl without corresponding .md
+
+  ✅ All .jsonl files have corresponding documentation
+
+[Rule 5] UNREFERENCED_SCRIPT — root-level .py not in README or imports
+
+  ✅ All root-level scripts are referenced
+
+[Bonus] ENCODING_ISSUE — filenames with URL-encoded characters
+
+  ✅ No encoding issues found
+
+[Bonus] DUPLICATE_CONFIG — multiple settings/config files at root
+
+  ✅ No duplicate config files found
+
+============================================================
+  Repository Residue Audit Complete
+  Total violations found: 0
+    Rule 1 SUPERSEDED:          0
+    Rule 2 ORPHANED_TXT:        0
+    Rule 3 ARTIFACT:            0
+    Rule 4 ORPHANED_JSONL:      0
+    Rule 5 UNREFERENCED_SCRIPT: 0
+    Bonus ENCODING_ISSUE:       0
+    Bonus DUPLICATE_CONFIG:     0
+============================================================
+
+Now run:
+  k9log verify-log
+  k9log stats
+  k9log report --output case_004_evidence.html
+
+
+[K9] Session 结束  操作:373  ⚠ 185 次违规  审计日志: /Users/haotianliu/.k9log/logs/k9log.cieu.jsonl
+[K9] 下一步: k9log trace --last  # 查看违规详情
+

@@ -30,7 +30,7 @@
       "README for non-IT users"
     ],
     "status": "deprecated",
-    "deprecated_at": 1776273154.599872,
+    "deprecated_at": 1776329685.141335,
     "deprecation_reason": "Stale >72h, not mentioned in recent session"
   },
   "current_layer": 4,
@@ -49,7 +49,7 @@
     "11_board_approval": false,
     "12_knowledge_writeback": false,
     "status": "deprecated",
-    "deprecated_at": 1776273154.603356,
+    "deprecated_at": 1776329685.145368,
     "deprecation_reason": "Stale >72h, not mentioned in recent session"
   },
   "execution_plan": {
@@ -57,7 +57,7 @@
     "day_2_3": "Auto-learning: observation mode + whitelist generation + Level 2 lightweight reminder + permission decay",
     "day_3_4": "Productization: pip package + Claude Code Skill + report command + README + 20+ tests",
     "status": "deprecated",
-    "deprecated_at": 1776273154.606184,
+    "deprecated_at": 1776329685.149143,
     "deprecation_reason": "Stale >72h, not mentioned in recent session"
   },
   "deliverables": {
@@ -67,7 +67,7 @@
     "tests": "tests/ with 20+ test cases",
     "documentation": "README.md (non-IT user friendly)",
     "status": "deprecated",
-    "deprecated_at": 1776273154.608651,
+    "deprecated_at": 1776329685.151828,
     "deprecation_reason": "Stale >72h, not mentioned in recent session"
   },
   "key_design_decisions": {
@@ -76,7 +76,7 @@
     "cross_session_correlation": "session_seq enables behavior chain analysis",
     "auto_whitelist_generation": "User never writes rules, only clicks confirm",
     "status": "deprecated",
-    "deprecated_at": 1776273154.611329,
+    "deprecated_at": 1776329685.154617,
     "deprecation_reason": "Stale >72h, not mentioned in recent session"
   }
 }
