@@ -432,6 +432,36 @@ rules:
 # - secretary_domain_write: Non-secretary agent writing to .claude/agents/
 # - forgotten_cieu_emit: High-risk action without manual CIEU event emission
 
+
+  - id: backlog_as_defer_disguise
+    enabled: true
+    description: "Packaging deferral as 'backlog' / 'next campaign' / '下次 session' bypassing no-clock-out"
+    last_reviewed: "2026-04-15"
+    reviewer: "Board 2026-04-15 PM catch"
+
+    trigger:
+      tool: ["Edit", "Write", "Bash"]
+      conditions:
+        - type: content_contains
+          keywords: ["入 backlog", "入 Backlog", "入 backlog", "入 Campaign v6", "入 campaign v6", "下次 session", "下 session", "next session", "defer to next", "下个 session", "入下轮"]
+
+    action: deny
+    recipe: |
+      Backlog-as-defer disguise detected. Board 2026-04-15 PM ruling:
+      
+      "Backlog" / "下次 session" / "入 Campaign v6" 只是 defer 的语义变种。
+      CZL session-level Y* = 所有活跃 Y*-criteria + backlog 存量 = 0 才算真停。
+      
+      修正路径：
+      (1) 立刻归零该 backlog 项（派 sub-agent 并行）
+      (2) OR Board 明示 "今晚就到这" (唯一合法 session stop)
+      禁止：commit / reply / doc 里用"入 backlog"作为变相收工
+      
+      Ref: Board 2026-04-15 PM session
+    cieu_event: BACKLOG_DISGUISE_DRIFT
+    severity: high
+
+
 # Whitelists — Files exempt from ForgetGuard checks (referenced by stem)
 whitelists:
   - role_mandate

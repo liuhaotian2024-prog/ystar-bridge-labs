@@ -20,9 +20,11 @@ REPO_ROOT = Path("/Users/haotianliu/.openclaw/workspace/ystar-company")
 CIEU_DB = REPO_ROOT / ".ystar_cieu.db"
 
 DEFER_KEYWORDS = [
-    "明日", "明天", "明早", "明晚", "下周", "稍后", "改天", "以后再", "晚些", "等会儿",
-    "tomorrow", "tomorrow morning", "next week", "next session", "queued for",
-    "wait for", "later",
+    "稍后", "以后再", "改天", "等会儿", "晚些",
+    "queued for", "wait for", "later", "tomorrow morning", "next session",
+    "入 backlog", "入 Backlog", "入 campaign v6", "入 Campaign v6",
+    "下次 session", "下 session", "下个 session", "入下轮",
+    "defer to", "入 backlog 等", "推到下",
 ]
 CHOICE_PATTERNS = [
     r"请选择.*[方案]?\s*[12二]",
