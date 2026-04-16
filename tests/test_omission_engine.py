@@ -16,6 +16,7 @@ from ystar.governance.cieu_store import NullCIEUStore, CIEUStore
 from ystar.governance.obligation_triggers import (
     ObligationTrigger, TriggerRegistry, reset_trigger_registry
 )
+from ystar.governance.omission_models import TrackedEntity, EntityStatus
 
 
 def make_obligation(overdue_secs=0, hard_overdue_secs=30.0,
@@ -43,7 +44,7 @@ def make_obligation(overdue_secs=0, hard_overdue_secs=30.0,
     return ob
 
 
-def make_engine(cieu_store=None) -> OmissionEngine:
+def make_engine(cieu_store=None, register_test_entity=True) -> OmissionEngine:
     store = InMemoryOmissionStore()
     registry = reset_registry()
     engine = OmissionEngine(
@@ -51,6 +52,20 @@ def make_engine(cieu_store=None) -> OmissionEngine:
         registry=registry,
         cieu_store=cieu_store or NullCIEUStore(),
     )
+    # Register test_entity with recent activity to pass _is_entity_active gate
+    if register_test_entity:
+        now = time.time()
+        test_entity = TrackedEntity(
+            entity_id="test_entity",
+            entity_type="test",
+            initiator_id="test_agent",
+            current_owner_id="test_agent",
+            status=EntityStatus.ACTIVE,
+            last_event_at=now,  # Recent activity
+            created_at=now - 600,
+            updated_at=now,
+        )
+        engine.store.upsert_entity(test_entity)
     return engine
 
 
@@ -499,7 +514,7 @@ class TestLiveReload:
         assert ob.obligation_type == OmissionType.KNOWLEDGE_UPDATE_REQUIRED
         assert ob.actor_id == "test_agent"
         assert ob.entity_id == "session_001"
-        assert ob.triggered_by_event_id == ev.event_id
+        assert ob.trigger_event_id == ev.event_id
 
     def test_live_reload_skips_deny_events(self):
         """Live-reload only creates obligations for ALLOW decisions, not DENY."""
