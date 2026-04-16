@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-16 00:30:00
+**Generated**: 2026-04-16 07:00:01
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -38,7 +38,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/0 valid
-**CIEU 24h Events**: 41864
+**CIEU 24h Events**: 52306
 **Overdue Obligations**: 0
 
 ---
@@ -72,7 +72,7 @@
 ### Amendment A-1: canonical-workspace-lock
 锁 `ystar-company` 为唯一 canonical workspace. 任何 sub-agent / script 写 bridge-labs 或其他镜像 = deny.
 
-... (155 more lines, see BOARD_PENDING.md)
+... (161 more lines, see BOARD_PENDING.md)
 
 ---
 
@@ -82,8 +82,8 @@
 ---
 
 ## 8. Ecosystem — Y*gov Product Repo
-**HEAD**: `567d4c1 feat(W42): Maya v2 — Path A↔RLE bridge minimum [L3 IMPL CEO-wrapped]`
-**24h commits**: 26
+**HEAD**: `6b529d3 fix(test): hook_bash_command_scan bypass session_start protocol enforcement [Maya W30.1 batc`
+**24h commits**: 35
 **ahead origin**: 0
 **test files**: 93
 **version**: 0.48.0
@@ -106,29 +106,38 @@
 ## 11. Today's Commits (24h) — both repos
 
 
-**ystar-company** (100 commits):
-- 939a8c47 00:22 report(cto): health_scan_20260415 — 4 scans complete, Rt+1=22 obstacles [L3 PARTIAL]
-- d574f8aa 00:18 fix(governance): forget_guard Format 4 — tool_name at root level [L3 TESTED]
-- 11ee68ba 00:17 fix(test): parse multi-line JSON in test_p3_to_p2_feedback_loop
-- dab004c7 00:14 constitutional(cto): Total Y* + 6-Step CZL Daily Loop + 4-Step Learning + Rt+1 escalation [L5 CONST]
-- 0cf683aa 00:13 fix(idle-learning): support KNOWLEDGE_ROOT env override for test mode
-- a19c156c 00:05 wrap(W16): Ryan partial — 2 new ForgetGuard rules + task_type_map [L3 IMPL]
-- 414564c5 23:54 fix(governance): Maya W16 — forget_guard.py AND logic + 3 E2E tests [L3 TESTED]
-- b0a8a2ed 23:53 fix(tests): OmissionEngine test fixture schema alignment
-- 63be4b37 23:46 task(W16): 3 engineer task cards — Leo omission / Maya amendment+governance / Ryan 8-file chaos
-- 823a0595 23:45 gov(constitutional): CTO hourly K9 patrol + CMO weekly README audit mandates [L4 GOV]
-- 067991bd 23:45 audit(czl): CEO meta-audit 全岗位绑死核查 — 章程✅/执行✅/审计⚠️40%身份缺失 [L3 AUDIT]
-- 41ce8899 23:41 chore(dna-log): secretary AGENTS.md dispatcher write-access patch audit [L3 SHIPPED]
-- e37f195d 23:40 fix(agents-md): add .claude/tasks/ to CTO/CMO/CSO/CFO Write Access [L3 SHIPPED]
-- 20f4018f 23:29 feat(forgetguard): CEO engineering boundary rule + agent_filter support [L3 IMPL]
-- f0f4fe8a 23:26 doctrine(czl): CEO Engineering Boundary — 紧急3条件 + break_glass 15min TTL [Board 批准]
-- 24a71ee8 23:19 fix(W16): session fixture + autonomy skip — 58→38 fail [CEO→CTO handoff]
-- eb25dae7 23:14 skip(tests): autonomy_driver_integration — factory not implemented [W16 -6]
-- ba8f6f9a 23:12 fix(tests): session_agent_stack fixtures add 4 required schema keys [W16 -12]
-- fa18623e 23:10 design(CRITICAL): Stop hook blacklist→whitelist 反转 [Board 2026-04-15 night]
-- f301fd28 23:07 fix(CRITICAL): forget_guard 2 root bugs — tool_name key + AND→OR conditions [L3 TESTED]
+**ystar-company** (146 commits):
+- dedf11d7 04:53 feat(k9): 3-dimensional governance audit — Producer/Executor/Governed baseline Rt+1
+- 7dfd8e1f 04:48 docs(cto): Day 4 E2E integration report
+- 2bc51fa9 04:47 docs(platform): F2 emit-side canonical validation pattern [L4 SHIPPED]
+- 447d969c 04:46 feat(platform): F2 emit-side canonical agent_id enforcement [L3 TESTED]
+- f9e6ca09 04:38 docs(compliance): Batch 2 migration report — registry v1.1 impact analysis
+- dab268be 04:38 feat(governance): registry v1.1 — system components + case aliases [Batch 2]
+- 83376be4 04:35 data(audit): F1+F4 migration snapshot — 64.4%→39.8% unidentified
+- 420fea8a 04:34 feat(scripts): F4 CIEU agent_id migration tool
+- e9e81987 04:34 feat(governance): F1 canonical agent_id registry v1.0
+- 46c4ae61 04:34 docs(cto): Day 2 plugin handlers report — 2 impl + 2 stub + mcpb blocker
+- 0d80de9d 04:23 feat(boot): inject overnight learning digest to boot report (Fix 2)
+- 1aa1c66a 04:23 fix(learning): local_learn.py timeout hardening (Priority 3 夜间失败修复)
+- e01b99ab 04:20 docs(cto): Day 1 plugin manifest init report (30-day mining plan)
+- b0b45403 01:47 research(cto): plugin packaging PoC — 8-tool subset + .mcpb entry point
+- df52da1f 01:46 archive(secretary): 30-day mining plant + 4 dept research + methodology assets [L3 ARCHIVED]
+- 668bd1c7 01:40 spec(ceo): 30-day 矿机方案 v1 — 4 部门一致 Plugin $49/mo MVP [L3 待Board批]
+- 684d96d0 01:39 fix(CRITICAL2): Stop hook 黑名单→白名单状态机 + Sofia CMO 30-day [Board 真根治]
+- d26aa9d8 01:37 research(platform): Ryan 30-day Plugin tech roadmap — MCP/deps/marketplace [P1 atomic]
+- 02dff4c2 01:36 spec(ceo): 30-day mining plant integration skeleton + 4 部门研究 status [L3]
+- 3e11a335 01:32 research(cfo): Marco 30-day monetization models — Plugin $49/mo wins [L3]
 
-**Y*gov** (26 commits):
+**Y*gov** (35 commits):
+- 6b529d3 01:48 fix(test): hook_bash_command_scan bypass session_start protocol enforcement [Maya W30.1 batch 2/3]
+- cec5862 01:45 fix(test): session_agent_stack fixture 补全必需键 (immutable_paths/override_roles/contract/agent_behavior_rules
+- 8531942 01:32 test: skip 4 pipeline E2E tests (omission/violation logic incomplete)
+- 95244f7 01:31 test: skip CLI docs test (safemode not yet documented)
+- a6ae6fd 01:30 test: skip completion_without_audit_warns (behavior rule now DENY not WARNING)
+- 75b13e2 01:30 test: skip 2 Layer3 tests (schema/implementation incomplete)
+- d5bd527 01:29 test: skip 6 autonomy_driver tests (missing create_autonomy_driver fixture after A014)
+- 316ed40 00:41 test(hook-daemon): W23 E2E — 5-identity rapid switch without cache lock
+- c028114 00:40 fix(hook-daemon): W23 stateless agent_id — read fresh on every hook call, no cache
 - 567d4c1 00:17 feat(W42): Maya v2 — Path A↔RLE bridge minimum [L3 IMPL CEO-wrapped]
 - 0341f3b 23:53 fix(omission): OmissionEngine schema alignment — triggered_by_event_id → trigger_event_id
 - bc5b4b4 23:34 fix(daemon): AMENDMENT-016 fresh agent_id on every hook call [L3 IMPL]
@@ -140,12 +149,3 @@
 - 0605df3 20:58 feat(governance): CausalChainAnalyzer for CIEU event tracing
 - 0d3cac5 20:01 fix(W7.2): hybrid fusion → max(keyword, tfidf) best-of-both [L3 TESTED]
 - 8c73a4b 19:58 fix(W7.2): hybrid drift algorithm with correct gradient + CIEU events
-- 5276766 19:45 feat(governance): sync 4 defer/choice rules to Y*gov from ystar-company [L2 IMPL]
-- 84ea68e 16:18 feat(guardian): Prompt Gate — W7 Phase 2
-- 70ce917 16:13 feat(governance): Y* Schema v2 — CZL persistence extension [W5 Phase 2]
-- a153132 15:32 feat(czl): Ryan 9-wire Task B — 7 whitelists reference + labs_router env-var [L3]
-- 0248731 14:57 feat(hook-daemon): HiAgent V3 _compress_subgoal_on_completion() [L3]
-- 2374ca7 13:19 feat(memory): P1-C CIEU→YML bridge — auto-ingest to .ystar_memory.db
-- 93cd6d7 12:11 fix(hook): 全 4 处 PolicyResult() 补 who/what 必需参数 [L3 IMPL]
-- aae004a 12:09 fix(hook): PolicyResult 缺 who/what 参数 — AVOIDANCE deny 实际无法构造 [L3 IMPL]
-- 867f21e 12:01 feat(hook): extend AVOIDANCE_PHRASES 14→29 (IR 1.8 candidate time concession phrases) [L3 IMPL]

@@ -172,3 +172,9 @@ Agent (包括 CEO) 禁止在工作进程推动中使用以下人类惰性概念:
 - "先到这里", "先停", "再说", "等会儿"
 
 待 Maya Edit hook.py AVOIDANCE_PHRASES list (9cd8014 + 4997d6c 同处 append).
+
+### 20260416 — K9 patrol digest
+
+- digest: `reports/k9_daily/20260416.md`
+- findings: 11 repo-audit items
+- run: 2026-04-16T06:00:00-0400

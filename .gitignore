@@ -67,3 +67,4 @@ knowledge/*/active_task.json
 knowledge/secretary/secrets/*
 .github/
 ystar.egg-info/
+.ystar_warning_queue.json
