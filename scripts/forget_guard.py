@@ -91,6 +91,22 @@ def check_condition(condition: dict, payload: dict, context: dict) -> bool:
                     return True
         return False
 
+    elif cond_type == "file_path_not_matches":
+        pattern = condition.get("pattern", "")
+        if "file_path" not in payload:
+            return False
+
+        file_path = payload["file_path"]
+
+        # Convert absolute path to relative path
+        if "ystar-company/" in file_path:
+            file_path = file_path.split("ystar-company/")[1]
+        elif "Y-star-gov/" in file_path:
+            file_path = file_path.split("Y-star-gov/")[1]
+
+        # Return True if pattern does NOT match (inverse of path_match)
+        return not re.search(pattern, file_path)
+
     elif cond_type == "content_contains":
         keywords = condition.get("keywords", [])
         require_companion = condition.get("require_companion", [])
@@ -167,6 +183,13 @@ def evaluate_rule(rule: dict, payload: dict, context: dict) -> bool:
         return False
 
     trigger = rule.get("trigger", {})
+
+    # Check agent_filter (if specified, rule only applies to those agents)
+    agent_filter = trigger.get("agent_filter", [])
+    if agent_filter:
+        current_agent = context.get("active_agent", "unknown")
+        if current_agent not in agent_filter:
+            return False
 
     # Check tool match (normalize: Claude Code sends "tool_name", yaml says "tool")
     allowed_tools = trigger.get("tool", [])

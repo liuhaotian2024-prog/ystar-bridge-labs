@@ -455,17 +455,51 @@ rules:
     action: deny
     recipe: |
       Backlog-as-defer disguise detected. Board 2026-04-15 PM ruling:
-      
+
       "Backlog" / "下次 session" / "入 Campaign v6" 只是 defer 的语义变种。
       CZL session-level Y* = 所有活跃 Y*-criteria + backlog 存量 = 0 才算真停。
-      
+
       修正路径：
       (1) 立刻归零该 backlog 项（派 sub-agent 并行）
       (2) OR Board 明示 "今晚就到这" (唯一合法 session stop)
       禁止：commit / reply / doc 里用"入 backlog"作为变相收工
-      
+
       Ref: Board 2026-04-15 PM session
     cieu_event: BACKLOG_DISGUISE_DRIFT
+    severity: high
+
+  - id: ceo_engineering_boundary
+    enabled: true
+    description: "CEO writing outside ./reports/ directory (engineering boundary violation)"
+    last_reviewed: "2026-04-15"
+    reviewer: "CTO"
+
+    trigger:
+      tool: ["Edit", "Write"]
+      agent_filter: ["ceo"]
+      conditions:
+        - type: file_path_not_matches
+          pattern: "^reports/"
+
+    action: deny
+    recipe: |
+      CEO Write Access is limited to ./reports/ directory only.
+
+      You are attempting to write to: {file_path}
+
+      Compliant paths:
+      (1) Delegate to CTO/engineers for code/config changes:
+          Use Agent tool with subagent_type=Ethan-CTO
+      (2) Break-glass mode (15min TTL) for emergency governance edits:
+          python3 scripts/ceo_mode_manager.py force_break_glass --trigger T1
+      (3) If this is a report file, save it to ./reports/ instead
+
+      Rationale: CEO does not write code (AGENTS.md role definition).
+      Engineering work must go through CTO task assignment.
+
+      Ref: knowledge/ceo/lessons/ceo_write_scope_enforcement_2026_04_14.md
+           AGENTS.md CEO role boundaries
+    cieu_event: CEO_ENGINEERING_OVERRIDE
     severity: high
 
 
