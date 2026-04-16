@@ -93,9 +93,21 @@ def get_context_score(context_pct: float | None) -> dict:
     return {"score": round(score, 1), "pct": round(context_pct, 1), "detail": f"{context_pct:.0f}% used"}
 
 
-def event_fingerprint(event_type: str, file_path: str | None, command: str | None) -> str:
-    """Stable semantic fingerprint for an action (matches gov_health algorithm)."""
+def event_fingerprint(event_type: str, file_path: str | None, command: str | None,
+                      agent_id: str | None = None, task_desc: str | None = None) -> str:
+    """Stable semantic fingerprint for an action (matches gov_health algorithm).
+
+    W14 fix: when file_path and command are both empty (common for
+    external_observation / cmd_exec events), fall back to agent_id +
+    task_description[:40] to distinguish actions. Without this fallback,
+    8+ events with different semantic content collide to the same fingerprint,
+    producing false-positive repetition signal.
+    """
     parts = [event_type or "", file_path or "", command or ""]
+    # Fallback: if primary params empty, distinguish by agent + task prefix
+    if not (file_path or command):
+        parts.append(agent_id or "")
+        parts.append((task_desc or "")[:40])
     return hashlib.sha256("|".join(parts).encode()).hexdigest()[:16]
 
 
@@ -110,7 +122,7 @@ def get_repetition_score() -> dict:
         # Exclude guard/watchdog infrastructure events — repetition among those
         # reflects active enforcement (healthy), not agent loop.
         rows = conn.execute(
-            "SELECT event_type, file_path, command FROM cieu_events "
+            "SELECT event_type, file_path, command, agent_id, task_description FROM cieu_events "
             "WHERE agent_id NOT IN ('forget_guard', 'subagent_scan', 'reply_scan', 'cieu_watcher', 'orchestrator', 'intervention_engine') "
             "AND event_type NOT LIKE '%_DRIFT' "
             "AND event_type NOT LIKE 'CIEU_%' "
@@ -126,7 +138,7 @@ def get_repetition_score() -> dict:
     if len(rows) < 5:
         return {"score": 100, "repetition_rate": 0, "detail": f"only {len(rows)} events"}
 
-    fps = [event_fingerprint(r[0], r[1], r[2]) for r in rows]
+    fps = [event_fingerprint(r[0], r[1], r[2], r[3] if len(r) > 3 else None, r[4] if len(r) > 4 else None) for r in rows]
     unique = len(set(fps))
     total = len(fps)
     repetition_rate = 1 - (unique / total) if total > 0 else 0
