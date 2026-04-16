@@ -168,18 +168,20 @@ def evaluate_rule(rule: dict, payload: dict, context: dict) -> bool:
 
     trigger = rule.get("trigger", {})
 
-    # Check tool match
+    # Check tool match (normalize: Claude Code sends "tool_name", yaml says "tool")
     allowed_tools = trigger.get("tool", [])
-    if allowed_tools and payload.get("tool") not in allowed_tools:
+    actual_tool = payload.get("tool_name") or payload.get("tool") or ""
+    if allowed_tools and actual_tool not in allowed_tools:
         return False
 
-    # Check all conditions (AND logic)
+    # Check conditions (OR logic: ANY condition match triggers the rule)
     conditions = trigger.get("conditions", [])
+    if not conditions:
+        return True
     for condition in conditions:
-        if not check_condition(condition, payload, context):
-            return False
-
-    return True
+        if check_condition(condition, payload, context):
+            return True
+    return False
 
 
 def emit_cieu_event(event_type: str, rule_id: str, severity: str, payload: dict):
