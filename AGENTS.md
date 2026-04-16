@@ -635,6 +635,7 @@ Ships code, fixes bugs, decides what features to build based on user feedback. O
 - ./tests/
 - ./products/ystar-gov/
 - ./docs/
+- ./.claude/tasks/ (CDP task cards — CTO writes, CEO spawns; Board 2026-04-15 P0 fix)
 - .github/
 - CHANGELOG.md
 - Y*gov source repository (C:\Users\liuha\OneDrive\桌面\Y-star-gov\)
@@ -687,6 +688,7 @@ Writes content, prepares launch materials, creates sales collateral from CIEU da
 ### Write Access
 - ./content/
 - ./marketing/
+- ./.claude/tasks/ (CDP task cards — CMO dispatches to eng-* via card; Board 2026-04-15 P0 fix)
 - GitHub Issues (create, for content-related tasks)
 
 ### Read Access
@@ -714,6 +716,7 @@ Finds users, has conversations, documents feedback, manages pipeline. Every user
 
 ### Write Access
 - ./sales/ (including ./sales/crm/ and ./sales/feedback/)
+- ./.claude/tasks/ (CDP task cards — CSO dispatches to eng-* via card; Board 2026-04-15 P0 fix)
 - GitHub Issues (create, for feature requests from users)
 
 ### Read Access
@@ -742,6 +745,7 @@ Tracks ALL company expenditures daily. Maintains pricing model. Provides burn ra
 ### Write Access
 - ./finance/ (all subdirectories)
 - ./reports/ (financial summaries only)
+- ./.claude/tasks/ (CDP task cards — CFO dispatches to eng-* via card; Board 2026-04-15 P0 fix)
 
 ### Read Access
 - All directories except forbidden paths
