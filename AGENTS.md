@@ -24,6 +24,12 @@ Violation count > 0 in any session = CEO P0 escalation to Board (transparency).
 
 ---
 
+## IRON RULE 0.5 — Atomic Dispatch (Constitutional, Board 2026-04-15 night)
+
+Sub-agent dispatch must be ≤1 deliverable. See `governance/sub_agent_atomic_dispatch.md`.
+
+---
+
 # Enforced by the Y*gov Runtime Governance Framework
 # Version: 2.4.0 | Updated: 2026-04-03
 # Owner: Haotian Liu (Board of Directors)
