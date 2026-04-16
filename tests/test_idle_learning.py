@@ -113,16 +113,18 @@ def test_p3_to_p2_feedback_loop():
 
     assert result.returncode == 0
 
-    # Parse output JSON
+    # Parse output JSON (multi-line with indent=2)
     output_lines = result.stdout.strip().split("\n")
-    summary_line = None
-    for line in output_lines:
+    json_start_idx = None
+    for i, line in enumerate(output_lines):
         if line.startswith("{"):
-            summary_line = line
+            json_start_idx = i
             break
 
-    if summary_line:
-        summary = json.loads(summary_line)
+    if json_start_idx is not None:
+        # Join all lines from { to end to get complete JSON
+        json_text = "\n".join(output_lines[json_start_idx:])
+        summary = json.loads(json_text)
         p3_result = summary.get("priority_3", {})
 
         # Check P3→P2 feedback happened
