@@ -1,12 +1,151 @@
 {
-  "y_star_ref": "priority_brief v1.0 — campaign v1-v5 all Rt+1=0. Idle state awaiting next campaign.",
-  "campaign": "IDLE — awaiting next campaign (Campaign v6 candidates in backlog)",
-  "campaign_status": "IDLE",
-  "current_subgoal": null,
-  "completed": [
-    {"id": "v1-v5 summary", "summary": "Today 2026-04-15: 5 campaigns + 3 phases + 3 stress rounds, all Rt+1=0. Six CZL self-exposure demos proving 3-layer doctrine works. Code: ~50 commits across 2 repos, 2 genesis tags, 292 YML lessons, 23k CIEU events, 4-repo god-view dashboard. Backlog: W7.3 embedding / W10.1 AND-logic / K9 causal migration / evidence aggregator / session_summary hook.", "maturity": "L4 SHIPPED"}
+  "y_star_ref": "reports/priority_brief.md + 2026-04-16 session backlog snapshot",
+  "campaign": "Campaign v6 — K9 Routing + Phase 2-3 Backlog Drain (2026-04-16)",
+  "campaign_status": "RUNNING",
+  "campaign_started_at": "2026-04-16T17:21Z",
+  "current_subgoal": "W3 — 5 engineer activation steps 3-5 (Ryan CZL-102 in flight)",
+  "rt1_status": "2/10 — W1 K9 healing + W2 FG subagent_boot_no_state_read closed Rt+1=0; W3-W10 in progress (W3+W6 in flight)",
+  "boot_injection_spec": "Sub-agent dispatch prompts must include BOOT CONTEXT block (read .czl_subgoals.json + git log -10) before task body. Per governance/sub_agent_boot_prompt_template.md.",
+  "y_star_criteria": [
+    {
+      "id": "W1",
+      "statement": "K9 routing chain noise eliminated — CROBA tool_name filter LIVE, registry aliases LIVE, daemon recycled, smoke-verified 0 false-positives in 5min window",
+      "artifact_persistence": ["scripts/k9_event_trigger.py", "governance/agent_id_canonical.json", "Y-star-gov/ystar/adapters/identity_detector.py"],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "platform",
+      "requires": []
+    },
+    {
+      "id": "W2",
+      "statement": "HiAgent BOOT CONTEXT enforcement — every CEO/CTO sub-agent dispatch prompt includes mandatory `Read .czl_subgoals.json + git log -10` block per sub_agent_boot_prompt_template.md; Maya FG rule subagent_boot_no_state_read shipped (W22.1 backlog drain)",
+      "artifact_persistence": ["governance/sub_agent_boot_prompt_template.md", "Y-star-gov/ystar/governance/forget_guard_rules.yaml"],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "ceo+governance",
+      "requires": []
+    },
+    {
+      "id": "W3",
+      "statement": "5 new engineer activation steps 3-6 complete — boot CHARTER_MAP entry / dispatch_board engineer field / trust_score init / methodology self-build x {eng-data, eng-security, eng-ml, eng-perf, eng-compliance}",
+      "artifact_persistence": ["scripts/governance_boot.sh", "scripts/dispatch_board.py", "knowledge/engineer_trust_scores.json", "knowledge/{eng}/methodology/{eng}_methodology_v1.md"],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "platform+engineers",
+      "requires": []
+    },
+    {
+      "id": "W4",
+      "statement": "Phase 2-3 skill-trust remediation per Ethan #74 — 35 atomics 6 phases drained (governance + onboarding + ecosystem + cascade + rollout)",
+      "artifact_persistence": ["governance/skill_trust_hybrid_v1.md", "governance/new_engineer_onboarding_gauntlet_v1.md"],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "ceo+ethan",
+      "requires": []
+    },
+    {
+      "id": "W5",
+      "statement": "Tool_uses claim/metadata mismatch detector live-fire enforce — E1 detector promote dry_run -> warn after baseline (currently dry_run; 3+ violations from Maya/Ryan today need surfacing)",
+      "artifact_persistence": ["Y-star-gov/ystar/governance/forget_guard_rules.yaml E1 rule", "scripts/governance_ci.py promote subcommand"],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "governance",
+      "requires": []
+    },
+    {
+      "id": "W6",
+      "statement": "Backlog cleanup — task #25 daemon concurrent-write investigation, #32 enforcement_observer threshold cross-validation, #49 meta-meta audit Maya audit, #62 6 per-rule hook detectors",
+      "artifact_persistence": ["reports/governance/", "tests/governance/"],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "governance+platform",
+      "requires": []
+    },
+    {
+      "id": "W7",
+      "statement": "Defuse archive — products/ystar-defuse formally archived + active_task.json flipped per task #9",
+      "artifact_persistence": ["products/ystar-defuse/ARCHIVED.md", "knowledge/cto/active_task.json"],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "cto",
+      "requires": []
+    },
+    {
+      "id": "W8",
+      "statement": "Agent files Name-Role format + cognitive preferences per task #8",
+      "artifact_persistence": [".claude/agents/*.md"],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "samantha",
+      "requires": []
+    },
+    {
+      "id": "W9",
+      "statement": "Universal enforcement audit Q1-Q9 landing waves close per task #16",
+      "artifact_persistence": ["reports/autonomous/universal_enforcement_audit_*.md"],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "ceo",
+      "requires": []
+    },
+    {
+      "id": "W10",
+      "statement": "Campaign v6 close-out: priority_brief v2 + session_summary 2026-04-16 + archive .czl_subgoals.json snapshot to memory/archive/",
+      "artifact_persistence": ["reports/priority_brief.md", "memory/session_summary_20260416.md", "memory/archive/czl_subgoals_v6_*.json"],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "ceo+samantha",
+      "requires": []
+    },
+    {
+      "id": "W11",
+      "statement": "Agent Capability Monitor — extend session_watchdog.py with 4 new signals (daemon liveness / receipt accuracy / K9 SNR / API health), compute composite AC score, <75 trigger CIEU AGENT_CAPABILITY_DEGRADED + auto root-cause stub, statusline shows AC alongside HP per Board 2026-04-16 directive (Ryan CZL-108 in flight)",
+      "artifact_persistence": ["scripts/session_watchdog.py", "tests/platform/test_agent_capability.py", "~/.claude/statusline-command.sh"],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "platform+ceo",
+      "requires": []
+    }
   ],
-  "y_star_criteria": [],
-  "remaining": [],
-  "rt1_status": "IDLE — all active campaigns closed. Next campaign scaffolding via scripts/czl_new_campaign.sh"
+  "completed": [
+    {
+      "id": "W1",
+      "summary": "K9 5 layers all LIVE (detect/emit/route/action/consume); CROBA Option B tool_name filter LIVE (CZL-100, 10/10 tests); registry aliases LIVE (CZL-92, 15 roles + 11 full-form aliases); daemon recycled to fresh PID; 5min smoke window 0 AGENT_REGISTRY_K9_WARN; 7 CROBA false-positives eliminated.",
+      "rt_plus_1": 0,
+      "closed_at": "2026-04-16T17:18Z",
+      "maturity": "L4 SHIPPED"
+    },
+    {
+      "id": "W2",
+      "summary": "FG rule subagent_boot_no_state_read LIVE (dry_run 48h auto-promote warn) + 78-line detector + 6/6 tests PASS + first fully-honest tool_uses claim (9=9 metadata). Prevents future state-blind sub-agent dispatches.",
+      "rt_plus_1": 0,
+      "closed_at": "2026-04-16T17:30Z",
+      "maturity": "L4 SHIPPED"
+    },
+    {
+      "id": "W3-partial",
+      "summary": "Steps 3-5 LIVE for 5 new engineers: governance_boot.sh CHARTER_MAP +5 / dispatch_board.py VALID_ENGINEERS whitelist +5 / engineer_trust_scores.json +5 entries (trust=0) / 3 tests PASS. Step 6 (methodology self-build) deferred to W4 phase pending #73 gauntlet PASS. Ryan tool_uses claim 12 vs metadata 18 — E1 violation (W5 trigger).",
+      "rt_plus_1": 1,
+      "closed_at": "2026-04-16T17:33Z",
+      "maturity": "L3-PARTIAL"
+    },
+    {
+      "id": "W6-partial-#32",
+      "summary": "Leo CZL-103: 24,682 violations 7-day corpus analyzed. 5 threshold issues: phantom_variable 98% FP / root_cause_fix_required 87% FP / omission_governance 474/day escalation flood / document_requires_execution_plan 59% FP / intervention_governance 0% deny (deprecate candidate). 6/15 rules 100% TP no-change. Leo tool_uses claim 9 vs metadata 11 (mild mismatch).",
+      "rt_plus_1": 0,
+      "closed_at": "2026-04-16T17:38Z",
+      "maturity": "L3 VALIDATED"
+    },
+    {
+      "id": "W6-partial-#25",
+      "summary": "Ethan CZL-105: 4 daemons + 6 shared resources audited. SQLite WAL working (0 CIEU write-errors). .ystar_active_agent identified as state-ownership race (not corruption). Recommendation: fcntl.flock Tier 1 P0 for .ystar_active_agent. AMENDMENT-016 planned not shipped. Ethan tool_uses claim 10 vs metadata 16 — E1 violation (W5 trigger #4: Ryan/Leo/Ethan all over-claim).",
+      "rt_plus_1": 0,
+      "closed_at": "2026-04-16T17:42Z",
+      "maturity": "L3 INVESTIGATED"
+    },
+    {
+      "id": "W6-partial-#49",
+      "summary": "Maya CZL-104 meta-meta audit: 20 deliverables re-verified, 75% accuracy (15/20), 5 errors documented (cron filename .sh→.txt, injector 5→3, RECEIPT count 18→68, schema date→created_at, shadow symlink correction). 7 SOP lessons. Maya self-caught E1 violation (claimed ≤14, actual 21) — meta-honesty. Took 3576s (12x normal — API lag).",
+      "rt_plus_1": 1,
+      "closed_at": "2026-04-16T17:48Z",
+      "maturity": "L3 SHIPPED-WITH-SELF-CATCH"
+    },
+    {
+      "id": "W6-partial-#32-followup",
+      "summary": "Maya CZL-106 threshold tuning: 3410s STREAM TIMEOUT mid-execution. Empirical verify: 5 yaml rules ARE tuned (phantom_variable / root_cause_fix_required / document_requires_execution_plan / omission_governance / intervention_governance all have Leo CZL-103 rationale stamps in forget_guard_rules.yaml). Test file test_threshold_tuning.py NOT created — partial close, queue test atomic.",
+      "rt_plus_1": 1,
+      "closed_at": "2026-04-16T17:46Z",
+      "maturity": "L3-PARTIAL"
+    }
+  ],
+  "remaining": ["W3", "W4", "W5", "W8", "W9", "W10"]
 }
