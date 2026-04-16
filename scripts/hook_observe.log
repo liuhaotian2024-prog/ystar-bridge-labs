@@ -2896,3 +2896,815 @@
 23:54:25 [OBSERVE] ERROR: No module named 'ystar'
 23:54:30 [OBSERVE] Tool: Bash
 23:54:30 [OBSERVE] ERROR: No module named 'ystar'
+23:54:46 [OBSERVE] Tool: Bash
+23:54:46 [OBSERVE] ERROR: No module named 'ystar'
+23:54:50 [OBSERVE] Tool: Bash
+23:54:50 [OBSERVE] ERROR: No module named 'ystar'
+23:56:00 [OBSERVE] Tool: Bash
+23:56:00 [OBSERVE] ERROR: No module named 'ystar'
+23:56:15 [OBSERVE] Tool: Agent
+23:56:15 [OBSERVE] ERROR: No module named 'ystar'
+23:56:26 [OBSERVE] Tool: Read
+23:56:26 [OBSERVE] ERROR: No module named 'ystar'
+23:56:40 [OBSERVE] Tool: TaskCreate
+23:56:40 [OBSERVE] ERROR: No module named 'ystar'
+23:56:43 [OBSERVE] Tool: TaskCreate
+23:56:43 [OBSERVE] ERROR: No module named 'ystar'
+23:56:44 [OBSERVE] Tool: Edit
+23:56:44 [OBSERVE] ERROR: No module named 'ystar'
+23:56:47 [OBSERVE] Tool: Read
+23:56:47 [OBSERVE] ERROR: No module named 'ystar'
+23:56:47 [OBSERVE] Tool: TaskCreate
+23:56:47 [OBSERVE] ERROR: No module named 'ystar'
+23:56:48 [OBSERVE] Tool: Bash
+23:56:48 [OBSERVE] ERROR: No module named 'ystar'
+23:56:49 [OBSERVE] Tool: Grep
+23:56:49 [OBSERVE] ERROR: No module named 'ystar'
+23:56:55 [OBSERVE] Tool: Read
+23:56:55 [OBSERVE] ERROR: No module named 'ystar'
+23:57:09 [OBSERVE] Tool: Bash
+23:57:09 [OBSERVE] ERROR: No module named 'ystar'
+23:57:10 [OBSERVE] Tool: Read
+23:57:10 [OBSERVE] ERROR: No module named 'ystar'
+23:57:11 [OBSERVE] Tool: Read
+23:57:11 [OBSERVE] ERROR: No module named 'ystar'
+23:57:12 [OBSERVE] Tool: Grep
+23:57:12 [OBSERVE] ERROR: No module named 'ystar'
+23:57:22 [OBSERVE] Tool: Bash
+23:57:22 [OBSERVE] ERROR: No module named 'ystar'
+23:57:25 [OBSERVE] Tool: Grep
+23:57:25 [OBSERVE] ERROR: No module named 'ystar'
+23:57:26 [OBSERVE] Tool: Grep
+23:57:26 [OBSERVE] ERROR: No module named 'ystar'
+23:57:38 [OBSERVE] Tool: Grep
+23:57:38 [OBSERVE] ERROR: No module named 'ystar'
+23:57:39 [OBSERVE] Tool: Read
+23:57:39 [OBSERVE] ERROR: No module named 'ystar'
+23:57:45 [OBSERVE] Tool: Bash
+23:57:45 [OBSERVE] ERROR: No module named 'ystar'
+23:57:51 [OBSERVE] Tool: Read
+23:57:51 [OBSERVE] ERROR: No module named 'ystar'
+23:57:52 [OBSERVE] Tool: Bash
+23:57:52 [OBSERVE] ERROR: No module named 'ystar'
+23:57:52 [OBSERVE] Tool: Grep
+23:57:52 [OBSERVE] ERROR: No module named 'ystar'
+23:58:00 [OBSERVE] Tool: Bash
+23:58:00 [OBSERVE] ERROR: No module named 'ystar'
+23:58:19 [OBSERVE] Tool: Read
+23:58:19 [OBSERVE] ERROR: No module named 'ystar'
+23:58:21 [OBSERVE] Tool: Read
+23:58:21 [OBSERVE] ERROR: No module named 'ystar'
+23:58:36 [OBSERVE] Tool: Glob
+23:58:36 [OBSERVE] ERROR: No module named 'ystar'
+23:58:37 [OBSERVE] Tool: Grep
+23:58:37 [OBSERVE] ERROR: No module named 'ystar'
+23:58:42 [OBSERVE] Tool: Read
+23:58:42 [OBSERVE] ERROR: No module named 'ystar'
+23:58:47 [OBSERVE] Tool: Grep
+23:58:47 [OBSERVE] ERROR: No module named 'ystar'
+23:59:00 [OBSERVE] Tool: Edit
+23:59:00 [OBSERVE] ERROR: No module named 'ystar'
+23:59:05 [OBSERVE] Tool: Edit
+23:59:05 [OBSERVE] ERROR: No module named 'ystar'
+23:59:07 [OBSERVE] Tool: Edit
+23:59:07 [OBSERVE] ERROR: No module named 'ystar'
+23:59:20 [OBSERVE] Tool: Grep
+23:59:20 [OBSERVE] ERROR: No module named 'ystar'
+23:59:21 [OBSERVE] Tool: Grep
+23:59:21 [OBSERVE] ERROR: No module named 'ystar'
+23:59:30 [OBSERVE] Tool: Edit
+23:59:30 [OBSERVE] ERROR: No module named 'ystar'
+23:59:31 [OBSERVE] Tool: Read
+23:59:31 [OBSERVE] ERROR: No module named 'ystar'
+23:59:32 [OBSERVE] Tool: Read
+23:59:32 [OBSERVE] ERROR: No module named 'ystar'
+23:59:44 [OBSERVE] Tool: Edit
+23:59:44 [OBSERVE] ERROR: No module named 'ystar'
+23:59:45 [OBSERVE] Tool: Edit
+23:59:45 [OBSERVE] ERROR: No module named 'ystar'
+23:59:49 [OBSERVE] Tool: Grep
+23:59:49 [OBSERVE] ERROR: No module named 'ystar'
+23:59:50 [OBSERVE] Tool: Edit
+23:59:50 [OBSERVE] ERROR: No module named 'ystar'
+00:00:03 [OBSERVE] Tool: Read
+00:00:03 [OBSERVE] ERROR: No module named 'ystar'
+00:00:04 [OBSERVE] Tool: Edit
+00:00:04 [OBSERVE] ERROR: No module named 'ystar'
+00:00:10 [OBSERVE] Tool: Read
+00:00:10 [OBSERVE] ERROR: No module named 'ystar'
+00:00:16 [OBSERVE] Tool: Edit
+00:00:16 [OBSERVE] ERROR: No module named 'ystar'
+00:00:27 [OBSERVE] Tool: Read
+00:00:27 [OBSERVE] ERROR: No module named 'ystar'
+00:00:29 [OBSERVE] Tool: Edit
+00:00:29 [OBSERVE] ERROR: No module named 'ystar'
+00:00:35 [OBSERVE] Tool: Grep
+00:00:35 [OBSERVE] ERROR: No module named 'ystar'
+00:00:41 [OBSERVE] Tool: Read
+00:00:41 [OBSERVE] ERROR: No module named 'ystar'
+00:00:45 [OBSERVE] Tool: Grep
+00:00:45 [OBSERVE] ERROR: No module named 'ystar'
+00:00:51 [OBSERVE] Tool: Grep
+00:00:51 [OBSERVE] ERROR: No module named 'ystar'
+00:00:54 [OBSERVE] Tool: Grep
+00:00:54 [OBSERVE] ERROR: No module named 'ystar'
+00:01:03 [OBSERVE] Tool: Edit
+00:01:03 [OBSERVE] ERROR: No module named 'ystar'
+00:01:07 [OBSERVE] Tool: Edit
+00:01:07 [OBSERVE] ERROR: No module named 'ystar'
+00:01:09 [OBSERVE] Tool: Edit
+00:01:09 [OBSERVE] ERROR: No module named 'ystar'
+00:01:14 [OBSERVE] Tool: Bash
+00:01:14 [OBSERVE] ERROR: No module named 'ystar'
+00:01:14 [OBSERVE] Tool: Edit
+00:01:14 [OBSERVE] ERROR: No module named 'ystar'
+00:01:22 [OBSERVE] Tool: Edit
+00:01:22 [OBSERVE] ERROR: No module named 'ystar'
+00:01:25 [OBSERVE] Tool: Bash
+00:01:25 [OBSERVE] ERROR: No module named 'ystar'
+00:01:35 [OBSERVE] Tool: Bash
+00:01:35 [OBSERVE] ERROR: No module named 'ystar'
+00:01:36 [OBSERVE] Tool: Bash
+00:01:36 [OBSERVE] ERROR: No module named 'ystar'
+00:01:47 [OBSERVE] Tool: Bash
+00:01:47 [OBSERVE] ERROR: No module named 'ystar'
+00:01:58 [OBSERVE] Tool: Bash
+00:01:58 [OBSERVE] ERROR: No module named 'ystar'
+00:02:11 [OBSERVE] Tool: Bash
+00:02:11 [OBSERVE] ERROR: No module named 'ystar'
+00:02:33 [OBSERVE] Tool: Read
+00:02:33 [OBSERVE] ERROR: No module named 'ystar'
+00:02:52 [OBSERVE] Tool: Write
+00:02:52 [OBSERVE] ERROR: No module named 'ystar'
+00:02:53 [OBSERVE] Tool: Bash
+00:02:53 [OBSERVE] ERROR: No module named 'ystar'
+00:03:02 [OBSERVE] Tool: Bash
+00:03:02 [OBSERVE] ERROR: No module named 'ystar'
+00:03:21 [OBSERVE] Tool: Edit
+00:03:21 [OBSERVE] ERROR: No module named 'ystar'
+00:03:33 [OBSERVE] Tool: Edit
+00:03:33 [OBSERVE] ERROR: No module named 'ystar'
+00:03:44 [OBSERVE] Tool: Bash
+00:03:44 [OBSERVE] ERROR: No module named 'ystar'
+00:05:03 [OBSERVE] Tool: Bash
+00:05:03 [OBSERVE] ERROR: No module named 'ystar'
+00:05:26 [OBSERVE] Tool: Bash
+00:05:26 [OBSERVE] ERROR: No module named 'ystar'
+00:05:41 [OBSERVE] Tool: Bash
+00:05:41 [OBSERVE] ERROR: No module named 'ystar'
+00:09:07 [OBSERVE] Tool: Agent
+00:09:07 [OBSERVE] ERROR: No module named 'ystar'
+00:09:13 [OBSERVE] Tool: Agent
+00:09:13 [OBSERVE] ERROR: No module named 'ystar'
+00:09:23 [OBSERVE] Tool: Read
+00:09:23 [OBSERVE] ERROR: No module named 'ystar'
+00:09:23 [OBSERVE] Tool: Read
+00:09:23 [OBSERVE] ERROR: No module named 'ystar'
+00:09:27 [OBSERVE] Tool: Bash
+00:09:27 [OBSERVE] ERROR: No module named 'ystar'
+00:09:29 [OBSERVE] Tool: TaskUpdate
+00:09:29 [OBSERVE] ERROR: No module named 'ystar'
+00:09:31 [OBSERVE] Tool: TaskUpdate
+00:09:31 [OBSERVE] ERROR: No module named 'ystar'
+00:09:34 [OBSERVE] Tool: TaskCreate
+00:09:34 [OBSERVE] ERROR: No module named 'ystar'
+00:09:35 [OBSERVE] Tool: Bash
+00:09:35 [OBSERVE] ERROR: No module named 'ystar'
+00:09:38 [OBSERVE] Tool: Grep
+00:09:38 [OBSERVE] ERROR: No module named 'ystar'
+00:09:39 [OBSERVE] Tool: Grep
+00:09:39 [OBSERVE] ERROR: No module named 'ystar'
+00:09:40 [OBSERVE] Tool: Grep
+00:09:40 [OBSERVE] ERROR: No module named 'ystar'
+00:09:42 [OBSERVE] Tool: Bash
+00:09:42 [OBSERVE] ERROR: No module named 'ystar'
+00:09:49 [OBSERVE] Tool: Bash
+00:09:49 [OBSERVE] ERROR: No module named 'ystar'
+00:09:54 [OBSERVE] Tool: Bash
+00:09:54 [OBSERVE] ERROR: No module named 'ystar'
+00:09:59 [OBSERVE] Tool: Read
+00:09:59 [OBSERVE] ERROR: No module named 'ystar'
+00:09:59 [OBSERVE] Tool: Bash
+00:09:59 [OBSERVE] ERROR: No module named 'ystar'
+00:10:07 [OBSERVE] Tool: Bash
+00:10:07 [OBSERVE] ERROR: No module named 'ystar'
+00:10:12 [OBSERVE] Tool: Read
+00:10:12 [OBSERVE] ERROR: No module named 'ystar'
+00:10:24 [OBSERVE] Tool: Read
+00:10:24 [OBSERVE] ERROR: No module named 'ystar'
+00:10:33 [OBSERVE] Tool: Read
+00:10:33 [OBSERVE] ERROR: No module named 'ystar'
+00:10:44 [OBSERVE] Tool: Grep
+00:10:44 [OBSERVE] ERROR: No module named 'ystar'
+00:10:55 [OBSERVE] Tool: Read
+00:10:55 [OBSERVE] ERROR: No module named 'ystar'
+00:10:57 [OBSERVE] Tool: Bash
+00:10:57 [OBSERVE] ERROR: No module named 'ystar'
+00:11:05 [OBSERVE] Tool: Bash
+00:11:05 [OBSERVE] ERROR: No module named 'ystar'
+00:11:07 [OBSERVE] Tool: Read
+00:11:07 [OBSERVE] ERROR: No module named 'ystar'
+00:11:20 [OBSERVE] Tool: Grep
+00:11:20 [OBSERVE] ERROR: No module named 'ystar'
+00:11:20 [OBSERVE] Tool: Read
+00:11:20 [OBSERVE] ERROR: No module named 'ystar'
+00:11:20 [OBSERVE] Tool: Read
+00:11:20 [OBSERVE] ERROR: No module named 'ystar'
+00:11:32 [OBSERVE] Tool: Grep
+00:11:32 [OBSERVE] ERROR: No module named 'ystar'
+00:11:35 [OBSERVE] Tool: Grep
+00:11:35 [OBSERVE] ERROR: No module named 'ystar'
+00:11:43 [OBSERVE] Tool: Grep
+00:11:43 [OBSERVE] ERROR: No module named 'ystar'
+00:11:45 [OBSERVE] Tool: Read
+00:11:45 [OBSERVE] ERROR: No module named 'ystar'
+00:11:56 [OBSERVE] Tool: Grep
+00:11:56 [OBSERVE] ERROR: No module named 'ystar'
+00:11:57 [OBSERVE] Tool: Edit
+00:11:57 [OBSERVE] ERROR: No module named 'ystar'
+00:12:09 [OBSERVE] Tool: Bash
+00:12:09 [OBSERVE] ERROR: No module named 'ystar'
+00:12:11 [OBSERVE] Tool: Read
+00:12:11 [OBSERVE] ERROR: No module named 'ystar'
+00:12:21 [OBSERVE] Tool: Grep
+00:12:21 [OBSERVE] ERROR: No module named 'ystar'
+00:12:24 [OBSERVE] Tool: Bash
+00:12:24 [OBSERVE] ERROR: No module named 'ystar'
+00:12:27 [OBSERVE] Tool: Write
+00:12:27 [OBSERVE] ERROR: No module named 'ystar'
+00:12:33 [OBSERVE] Tool: Read
+00:12:33 [OBSERVE] ERROR: No module named 'ystar'
+00:12:37 [OBSERVE] Tool: Read
+00:12:37 [OBSERVE] ERROR: No module named 'ystar'
+00:12:44 [OBSERVE] Tool: Grep
+00:12:44 [OBSERVE] ERROR: No module named 'ystar'
+00:12:44 [OBSERVE] Tool: Agent
+00:12:44 [OBSERVE] ERROR: No module named 'ystar'
+00:12:49 [OBSERVE] Tool: Read
+00:12:49 [OBSERVE] ERROR: No module named 'ystar'
+00:12:58 [OBSERVE] Tool: Read
+00:12:58 [OBSERVE] ERROR: No module named 'ystar'
+00:13:00 [OBSERVE] Tool: Bash
+00:13:00 [OBSERVE] ERROR: No module named 'ystar'
+00:13:01 [OBSERVE] Tool: Bash
+00:13:01 [OBSERVE] ERROR: No module named 'ystar'
+00:13:02 [OBSERVE] Tool: Agent
+00:13:02 [OBSERVE] ERROR: No module named 'ystar'
+00:13:04 [OBSERVE] Tool: Edit
+00:13:04 [OBSERVE] ERROR: No module named 'ystar'
+00:13:10 [OBSERVE] Tool: Edit
+00:13:10 [OBSERVE] ERROR: No module named 'ystar'
+00:13:10 [OBSERVE] Tool: Read
+00:13:10 [OBSERVE] ERROR: No module named 'ystar'
+00:13:14 [OBSERVE] Tool: Read
+00:13:14 [OBSERVE] ERROR: No module named 'ystar'
+00:13:15 [OBSERVE] Tool: Bash
+00:13:15 [OBSERVE] ERROR: No module named 'ystar'
+00:13:15 [OBSERVE] Tool: Bash
+00:13:15 [OBSERVE] ERROR: No module named 'ystar'
+00:13:18 [OBSERVE] Tool: Edit
+00:13:18 [OBSERVE] ERROR: No module named 'ystar'
+00:13:21 [OBSERVE] Tool: Bash
+00:13:21 [OBSERVE] ERROR: No module named 'ystar'
+00:13:30 [OBSERVE] Tool: Grep
+00:13:30 [OBSERVE] ERROR: No module named 'ystar'
+00:13:35 [OBSERVE] Tool: Bash
+00:13:35 [OBSERVE] ERROR: No module named 'ystar'
+00:13:35 [OBSERVE] Tool: Bash
+00:13:35 [OBSERVE] ERROR: No module named 'ystar'
+00:13:40 [OBSERVE] Tool: Read
+00:13:40 [OBSERVE] ERROR: No module named 'ystar'
+00:13:43 [OBSERVE] Tool: Edit
+00:13:43 [OBSERVE] ERROR: No module named 'ystar'
+00:13:43 [OBSERVE] Tool: Read
+00:13:43 [OBSERVE] ERROR: No module named 'ystar'
+00:13:47 [OBSERVE] Tool: Bash
+00:13:47 [OBSERVE] ERROR: No module named 'ystar'
+00:13:47 [OBSERVE] Tool: Bash
+00:13:47 [OBSERVE] ERROR: No module named 'ystar'
+00:13:55 [OBSERVE] Tool: Edit
+00:13:55 [OBSERVE] ERROR: No module named 'ystar'
+00:13:59 [OBSERVE] Tool: Bash
+00:13:59 [OBSERVE] ERROR: No module named 'ystar'
+00:14:00 [OBSERVE] Tool: Bash
+00:14:00 [OBSERVE] ERROR: No module named 'ystar'
+00:14:05 [OBSERVE] Tool: Read
+00:14:05 [OBSERVE] ERROR: No module named 'ystar'
+00:14:08 [OBSERVE] Tool: Bash
+00:14:08 [OBSERVE] ERROR: No module named 'ystar'
+00:14:08 [OBSERVE] Tool: Bash
+00:14:08 [OBSERVE] ERROR: No module named 'ystar'
+00:14:19 [OBSERVE] Tool: Bash
+00:14:19 [OBSERVE] ERROR: No module named 'ystar'
+00:14:21 [OBSERVE] Tool: Edit
+00:14:21 [OBSERVE] ERROR: No module named 'ystar'
+00:14:23 [OBSERVE] Tool: Read
+00:14:23 [OBSERVE] ERROR: No module named 'ystar'
+00:14:27 [OBSERVE] Tool: Bash
+00:14:27 [OBSERVE] ERROR: No module named 'ystar'
+00:14:35 [OBSERVE] Tool: Read
+00:14:35 [OBSERVE] ERROR: No module named 'ystar'
+00:14:45 [OBSERVE] Tool: Read
+00:14:45 [OBSERVE] ERROR: No module named 'ystar'
+00:14:55 [OBSERVE] Tool: Bash
+00:14:55 [OBSERVE] ERROR: No module named 'ystar'
+00:15:01 [OBSERVE] Tool: Write
+00:15:01 [OBSERVE] ERROR: No module named 'ystar'
+00:15:03 [OBSERVE] Tool: Read
+00:15:03 [OBSERVE] ERROR: No module named 'ystar'
+00:15:04 [OBSERVE] Tool: Read
+00:15:04 [OBSERVE] ERROR: No module named 'ystar'
+00:15:13 [OBSERVE] Tool: Bash
+00:15:13 [OBSERVE] ERROR: No module named 'ystar'
+00:15:17 [OBSERVE] Tool: Read
+00:15:17 [OBSERVE] ERROR: No module named 'ystar'
+00:15:18 [OBSERVE] Tool: Bash
+00:15:18 [OBSERVE] ERROR: No module named 'ystar'
+00:15:24 [OBSERVE] Tool: Bash
+00:15:24 [OBSERVE] ERROR: No module named 'ystar'
+00:15:29 [OBSERVE] Tool: Read
+00:15:29 [OBSERVE] ERROR: No module named 'ystar'
+00:15:30 [OBSERVE] Tool: Bash
+00:15:30 [OBSERVE] ERROR: No module named 'ystar'
+00:15:36 [OBSERVE] Tool: Bash
+00:15:36 [OBSERVE] ERROR: No module named 'ystar'
+00:15:41 [OBSERVE] Tool: Bash
+00:15:41 [OBSERVE] ERROR: No module named 'ystar'
+00:15:47 [OBSERVE] Tool: Bash
+00:15:47 [OBSERVE] ERROR: No module named 'ystar'
+00:15:54 [OBSERVE] Tool: Bash
+00:15:54 [OBSERVE] ERROR: No module named 'ystar'
+00:15:57 [OBSERVE] Tool: Read
+00:15:57 [OBSERVE] ERROR: No module named 'ystar'
+00:16:01 [OBSERVE] Tool: Bash
+00:16:01 [OBSERVE] ERROR: No module named 'ystar'
+00:16:04 [OBSERVE] Tool: Bash
+00:16:04 [OBSERVE] ERROR: No module named 'ystar'
+00:16:12 [OBSERVE] Tool: Edit
+00:16:12 [OBSERVE] ERROR: No module named 'ystar'
+00:16:15 [OBSERVE] Tool: Bash
+00:16:15 [OBSERVE] ERROR: No module named 'ystar'
+00:16:21 [OBSERVE] Tool: Bash
+00:16:21 [OBSERVE] ERROR: No module named 'ystar'
+00:16:22 [OBSERVE] Tool: Bash
+00:16:22 [OBSERVE] ERROR: No module named 'ystar'
+00:16:26 [OBSERVE] Tool: Bash
+00:16:26 [OBSERVE] ERROR: No module named 'ystar'
+00:16:30 [OBSERVE] Tool: Bash
+00:16:30 [OBSERVE] ERROR: No module named 'ystar'
+00:16:37 [OBSERVE] Tool: Read
+00:16:37 [OBSERVE] ERROR: No module named 'ystar'
+00:16:39 [OBSERVE] Tool: Grep
+00:16:39 [OBSERVE] ERROR: No module named 'ystar'
+00:16:51 [OBSERVE] Tool: Grep
+00:16:51 [OBSERVE] ERROR: No module named 'ystar'
+00:16:55 [OBSERVE] Tool: Edit
+00:16:55 [OBSERVE] ERROR: No module named 'ystar'
+00:16:56 [OBSERVE] Tool: Bash
+00:16:56 [OBSERVE] ERROR: No module named 'ystar'
+00:17:07 [OBSERVE] Tool: Bash
+00:17:07 [OBSERVE] ERROR: No module named 'ystar'
+00:17:15 [OBSERVE] Tool: Bash
+00:17:15 [OBSERVE] ERROR: No module named 'ystar'
+00:17:19 [OBSERVE] Tool: Bash
+00:17:19 [OBSERVE] ERROR: No module named 'ystar'
+00:17:23 [OBSERVE] Tool: Bash
+00:17:23 [OBSERVE] ERROR: No module named 'ystar'
+00:17:25 [OBSERVE] Tool: TaskUpdate
+00:17:25 [OBSERVE] ERROR: No module named 'ystar'
+00:17:30 [OBSERVE] Tool: Bash
+00:17:30 [OBSERVE] ERROR: No module named 'ystar'
+00:17:35 [OBSERVE] Tool: Read
+00:17:35 [OBSERVE] ERROR: No module named 'ystar'
+00:17:41 [OBSERVE] Tool: Bash
+00:17:41 [OBSERVE] ERROR: No module named 'ystar'
+00:17:49 [OBSERVE] Tool: Grep
+00:17:49 [OBSERVE] ERROR: No module named 'ystar'
+00:17:58 [OBSERVE] Tool: Read
+00:17:58 [OBSERVE] ERROR: No module named 'ystar'
+00:18:00 [OBSERVE] Tool: Bash
+00:18:00 [OBSERVE] ERROR: No module named 'ystar'
+00:18:12 [OBSERVE] Tool: Bash
+00:18:12 [OBSERVE] ERROR: No module named 'ystar'
+00:18:17 [OBSERVE] Tool: Bash
+00:18:17 [OBSERVE] ERROR: No module named 'ystar'
+00:18:20 [OBSERVE] Tool: Grep
+00:18:20 [OBSERVE] ERROR: No module named 'ystar'
+00:18:30 [OBSERVE] Tool: Read
+00:18:30 [OBSERVE] ERROR: No module named 'ystar'
+00:18:54 [OBSERVE] Tool: Edit
+00:18:54 [OBSERVE] ERROR: No module named 'ystar'
+00:19:23 [OBSERVE] Tool: Agent
+00:19:23 [OBSERVE] ERROR: No module named 'ystar'
+00:19:38 [OBSERVE] Tool: Bash
+00:19:38 [OBSERVE] ERROR: No module named 'ystar'
+00:20:30 [OBSERVE] Tool: Bash
+00:20:30 [OBSERVE] ERROR: No module named 'ystar'
+00:20:38 [OBSERVE] Tool: Bash
+00:20:38 [OBSERVE] ERROR: No module named 'ystar'
+00:20:54 [OBSERVE] Tool: Bash
+00:20:54 [OBSERVE] ERROR: No module named 'ystar'
+00:21:18 [OBSERVE] Tool: Bash
+00:21:18 [OBSERVE] ERROR: No module named 'ystar'
+00:21:24 [OBSERVE] Tool: Bash
+00:21:24 [OBSERVE] ERROR: No module named 'ystar'
+00:21:35 [OBSERVE] Tool: Bash
+00:21:35 [OBSERVE] ERROR: No module named 'ystar'
+00:22:13 [OBSERVE] Tool: Bash
+00:22:13 [OBSERVE] ERROR: No module named 'ystar'
+00:22:26 [OBSERVE] Tool: Write
+00:22:26 [OBSERVE] ERROR: No module named 'ystar'
+00:22:28 [OBSERVE] Tool: Agent
+00:22:28 [OBSERVE] ERROR: No module named 'ystar'
+00:22:45 [OBSERVE] Tool: Bash
+00:22:45 [OBSERVE] ERROR: No module named 'ystar'
+00:22:45 [OBSERVE] Tool: Read
+00:22:45 [OBSERVE] ERROR: No module named 'ystar'
+00:22:50 [OBSERVE] Tool: Bash
+00:22:50 [OBSERVE] ERROR: No module named 'ystar'
+00:23:01 [OBSERVE] Tool: Read
+00:23:01 [OBSERVE] ERROR: No module named 'ystar'
+00:23:06 [OBSERVE] Tool: Read
+00:23:06 [OBSERVE] ERROR: No module named 'ystar'
+00:23:16 [OBSERVE] Tool: Bash
+00:23:16 [OBSERVE] ERROR: No module named 'ystar'
+00:23:17 [OBSERVE] Tool: Grep
+00:23:17 [OBSERVE] ERROR: No module named 'ystar'
+00:23:18 [OBSERVE] Tool: ToolSearch
+00:23:18 [OBSERVE] ERROR: No module named 'ystar'
+00:23:33 [OBSERVE] Tool: Bash
+00:23:33 [OBSERVE] ERROR: No module named 'ystar'
+00:23:33 [OBSERVE] Tool: WebSearch
+00:23:33 [OBSERVE] ERROR: No module named 'ystar'
+00:23:33 [OBSERVE] Tool: WebSearch
+00:23:33 [OBSERVE] ERROR: No module named 'ystar'
+00:23:34 [OBSERVE] Tool: WebSearch
+00:23:34 [OBSERVE] ERROR: No module named 'ystar'
+00:23:50 [OBSERVE] Tool: Bash
+00:23:50 [OBSERVE] ERROR: No module named 'ystar'
+00:23:56 [OBSERVE] Tool: WebFetch
+00:23:56 [OBSERVE] ERROR: No module named 'ystar'
+00:23:58 [OBSERVE] Tool: WebFetch
+00:23:58 [OBSERVE] ERROR: No module named 'ystar'
+00:24:02 [OBSERVE] Tool: Bash
+00:24:02 [OBSERVE] ERROR: No module named 'ystar'
+00:24:15 [OBSERVE] Tool: Read
+00:24:15 [OBSERVE] ERROR: No module named 'ystar'
+00:24:21 [OBSERVE] Tool: Read
+00:24:21 [OBSERVE] ERROR: No module named 'ystar'
+00:24:22 [OBSERVE] Tool: Grep
+00:24:22 [OBSERVE] ERROR: No module named 'ystar'
+00:24:26 [OBSERVE] Tool: Bash
+00:24:26 [OBSERVE] ERROR: No module named 'ystar'
+00:24:37 [OBSERVE] Tool: Read
+00:24:37 [OBSERVE] ERROR: No module named 'ystar'
+00:24:45 [OBSERVE] Tool: Read
+00:24:45 [OBSERVE] ERROR: No module named 'ystar'
+00:24:48 [OBSERVE] Tool: Glob
+00:24:48 [OBSERVE] ERROR: No module named 'ystar'
+00:24:58 [OBSERVE] Tool: Read
+00:24:58 [OBSERVE] ERROR: No module named 'ystar'
+00:25:00 [OBSERVE] Tool: Edit
+00:25:00 [OBSERVE] ERROR: No module named 'ystar'
+00:25:14 [OBSERVE] Tool: Glob
+00:25:14 [OBSERVE] ERROR: No module named 'ystar'
+00:25:24 [OBSERVE] Tool: Read
+00:25:24 [OBSERVE] ERROR: No module named 'ystar'
+00:25:34 [OBSERVE] Tool: Edit
+00:25:34 [OBSERVE] ERROR: No module named 'ystar'
+00:25:40 [OBSERVE] Tool: Bash
+00:25:40 [OBSERVE] ERROR: No module named 'ystar'
+00:25:49 [OBSERVE] Tool: Write
+00:25:49 [OBSERVE] ERROR: No module named 'ystar'
+00:26:07 [OBSERVE] Tool: Write
+00:26:07 [OBSERVE] ERROR: No module named 'ystar'
+00:26:23 [OBSERVE] Tool: Write
+00:26:23 [OBSERVE] ERROR: No module named 'ystar'
+00:26:35 [OBSERVE] Tool: Write
+00:26:35 [OBSERVE] ERROR: No module named 'ystar'
+00:26:42 [OBSERVE] Tool: Write
+00:26:42 [OBSERVE] ERROR: No module named 'ystar'
+00:28:00 [OBSERVE] Tool: Write
+00:28:00 [OBSERVE] ERROR: No module named 'ystar'
+00:29:26 [OBSERVE] Tool: Write
+00:29:26 [OBSERVE] ERROR: No module named 'ystar'
+00:29:51 [OBSERVE] Tool: Write
+00:29:51 [OBSERVE] ERROR: No module named 'ystar'
+00:30:03 [OBSERVE] Tool: Grep
+00:30:03 [OBSERVE] ERROR: No module named 'ystar'
+00:30:04 [OBSERVE] Tool: Read
+00:30:04 [OBSERVE] ERROR: No module named 'ystar'
+00:30:16 [OBSERVE] Tool: Grep
+00:30:16 [OBSERVE] ERROR: No module named 'ystar'
+00:30:18 [OBSERVE] Tool: Agent
+00:30:18 [OBSERVE] ERROR: No module named 'ystar'
+00:30:29 [OBSERVE] Tool: Grep
+00:30:29 [OBSERVE] ERROR: No module named 'ystar'
+00:30:31 [OBSERVE] Tool: Write
+00:30:31 [OBSERVE] ERROR: No module named 'ystar'
+00:30:32 [OBSERVE] Tool: Read
+00:30:32 [OBSERVE] ERROR: No module named 'ystar'
+00:30:33 [OBSERVE] Tool: Read
+00:30:33 [OBSERVE] ERROR: No module named 'ystar'
+00:30:41 [OBSERVE] Tool: Grep
+00:30:41 [OBSERVE] ERROR: No module named 'ystar'
+00:30:50 [OBSERVE] Tool: Read
+00:30:50 [OBSERVE] ERROR: No module named 'ystar'
+00:30:53 [OBSERVE] Tool: Edit
+00:30:53 [OBSERVE] ERROR: No module named 'ystar'
+00:30:56 [OBSERVE] Tool: Bash
+00:30:56 [OBSERVE] ERROR: No module named 'ystar'
+00:31:09 [OBSERVE] Tool: Bash
+00:31:09 [OBSERVE] ERROR: No module named 'ystar'
+00:31:12 [OBSERVE] Tool: Edit
+00:31:12 [OBSERVE] ERROR: No module named 'ystar'
+00:31:15 [OBSERVE] Tool: Bash
+00:31:15 [OBSERVE] ERROR: No module named 'ystar'
+00:31:24 [OBSERVE] Tool: Grep
+00:31:24 [OBSERVE] ERROR: No module named 'ystar'
+00:31:49 [OBSERVE] Tool: Agent
+00:31:49 [OBSERVE] ERROR: No module named 'ystar'
+00:32:05 [OBSERVE] Tool: Bash
+00:32:05 [OBSERVE] ERROR: No module named 'ystar'
+00:32:07 [OBSERVE] Tool: Bash
+00:32:07 [OBSERVE] ERROR: No module named 'ystar'
+00:32:16 [OBSERVE] Tool: Bash
+00:32:16 [OBSERVE] ERROR: No module named 'ystar'
+00:32:25 [OBSERVE] Tool: Agent
+00:32:25 [OBSERVE] ERROR: No module named 'ystar'
+00:32:27 [OBSERVE] Tool: Bash
+00:32:27 [OBSERVE] ERROR: No module named 'ystar'
+00:32:41 [OBSERVE] Tool: Write
+00:32:41 [OBSERVE] ERROR: No module named 'ystar'
+00:32:45 [OBSERVE] Tool: Bash
+00:32:45 [OBSERVE] ERROR: No module named 'ystar'
+00:32:48 [OBSERVE] Tool: Read
+00:32:48 [OBSERVE] ERROR: No module named 'ystar'
+00:33:01 [OBSERVE] Tool: Edit
+00:33:01 [OBSERVE] ERROR: No module named 'ystar'
+00:33:06 [OBSERVE] Tool: Bash
+00:33:06 [OBSERVE] ERROR: No module named 'ystar'
+00:33:20 [OBSERVE] Tool: Bash
+00:33:20 [OBSERVE] ERROR: No module named 'ystar'
+00:33:30 [OBSERVE] Tool: Grep
+00:33:30 [OBSERVE] ERROR: No module named 'ystar'
+00:33:31 [OBSERVE] Tool: Bash
+00:33:31 [OBSERVE] ERROR: No module named 'ystar'
+00:34:15 [OBSERVE] Tool: Agent
+00:34:15 [OBSERVE] ERROR: No module named 'ystar'
+00:34:31 [OBSERVE] Tool: Read
+00:34:31 [OBSERVE] ERROR: No module named 'ystar'
+00:34:51 [OBSERVE] Tool: Edit
+00:34:51 [OBSERVE] ERROR: No module named 'ystar'
+00:35:02 [OBSERVE] Tool: Bash
+00:35:02 [OBSERVE] ERROR: No module named 'ystar'
+00:35:12 [OBSERVE] Tool: Bash
+00:35:12 [OBSERVE] ERROR: No module named 'ystar'
+00:35:23 [OBSERVE] Tool: Bash
+00:35:23 [OBSERVE] ERROR: No module named 'ystar'
+00:35:56 [OBSERVE] Tool: Agent
+00:35:56 [OBSERVE] ERROR: No module named 'ystar'
+00:36:26 [OBSERVE] Tool: Agent
+00:36:26 [OBSERVE] ERROR: No module named 'ystar'
+00:36:40 [OBSERVE] Tool: Bash
+00:36:40 [OBSERVE] ERROR: No module named 'ystar'
+00:36:41 [OBSERVE] Tool: Write
+00:36:41 [OBSERVE] ERROR: No module named 'ystar'
+00:36:53 [OBSERVE] Tool: Bash
+00:36:53 [OBSERVE] ERROR: No module named 'ystar'
+00:36:54 [OBSERVE] Tool: Bash
+00:36:54 [OBSERVE] ERROR: No module named 'ystar'
+00:37:05 [OBSERVE] Tool: Bash
+00:37:05 [OBSERVE] ERROR: No module named 'ystar'
+00:37:14 [OBSERVE] Tool: Bash
+00:37:14 [OBSERVE] ERROR: No module named 'ystar'
+00:37:23 [OBSERVE] Tool: Bash
+00:37:23 [OBSERVE] ERROR: No module named 'ystar'
+00:37:30 [OBSERVE] Tool: Agent
+00:37:30 [OBSERVE] ERROR: No module named 'ystar'
+00:37:44 [OBSERVE] Tool: Read
+00:37:44 [OBSERVE] ERROR: No module named 'ystar'
+00:38:05 [OBSERVE] Tool: Edit
+00:38:05 [OBSERVE] ERROR: No module named 'ystar'
+00:38:16 [OBSERVE] Tool: Edit
+00:38:16 [OBSERVE] ERROR: No module named 'ystar'
+00:38:27 [OBSERVE] Tool: Edit
+00:38:27 [OBSERVE] ERROR: No module named 'ystar'
+00:38:43 [OBSERVE] Tool: Edit
+00:38:43 [OBSERVE] ERROR: No module named 'ystar'
+00:38:54 [OBSERVE] Tool: Edit
+00:38:54 [OBSERVE] ERROR: No module named 'ystar'
+00:39:03 [OBSERVE] Tool: Edit
+00:39:03 [OBSERVE] ERROR: No module named 'ystar'
+00:39:14 [OBSERVE] Tool: Edit
+00:39:14 [OBSERVE] ERROR: No module named 'ystar'
+00:39:26 [OBSERVE] Tool: Edit
+00:39:26 [OBSERVE] ERROR: No module named 'ystar'
+00:39:35 [OBSERVE] Tool: Edit
+00:39:35 [OBSERVE] ERROR: No module named 'ystar'
+00:39:45 [OBSERVE] Tool: Edit
+00:39:45 [OBSERVE] ERROR: No module named 'ystar'
+00:39:51 [OBSERVE] Tool: Edit
+00:39:51 [OBSERVE] ERROR: No module named 'ystar'
+00:39:56 [OBSERVE] Tool: Bash
+00:39:56 [OBSERVE] ERROR: No module named 'ystar'
+00:40:06 [OBSERVE] Tool: Bash
+00:40:06 [OBSERVE] ERROR: No module named 'ystar'
+00:40:23 [OBSERVE] Tool: Bash
+00:40:23 [OBSERVE] ERROR: No module named 'ystar'
+00:40:55 [OBSERVE] Tool: Write
+00:40:55 [OBSERVE] ERROR: No module named 'ystar'
+00:41:04 [OBSERVE] Tool: Bash
+00:41:04 [OBSERVE] ERROR: No module named 'ystar'
+00:41:15 [OBSERVE] Tool: Bash
+00:41:15 [OBSERVE] ERROR: No module named 'ystar'
+00:41:25 [OBSERVE] Tool: Bash
+00:41:25 [OBSERVE] ERROR: No module named 'ystar'
+00:41:34 [OBSERVE] Tool: Bash
+00:41:34 [OBSERVE] ERROR: No module named 'ystar'
+00:41:40 [OBSERVE] Tool: Bash
+00:41:40 [OBSERVE] ERROR: No module named 'ystar'
+00:41:46 [OBSERVE] Tool: Bash
+00:41:46 [OBSERVE] ERROR: No module named 'ystar'
+00:41:54 [OBSERVE] Tool: Bash
+00:41:54 [OBSERVE] ERROR: No module named 'ystar'
+00:41:58 [OBSERVE] Tool: Bash
+00:41:58 [OBSERVE] ERROR: No module named 'ystar'
+00:42:03 [OBSERVE] Tool: Bash
+00:42:03 [OBSERVE] ERROR: No module named 'ystar'
+00:42:08 [OBSERVE] Tool: Bash
+00:42:08 [OBSERVE] ERROR: No module named 'ystar'
+00:42:20 [OBSERVE] Tool: TaskCreate
+00:42:20 [OBSERVE] ERROR: No module named 'ystar'
+00:42:22 [OBSERVE] Tool: TaskCreate
+00:42:22 [OBSERVE] ERROR: No module named 'ystar'
+00:42:24 [OBSERVE] Tool: TaskCreate
+00:42:24 [OBSERVE] ERROR: No module named 'ystar'
+00:42:27 [OBSERVE] Tool: TaskCreate
+00:42:27 [OBSERVE] ERROR: No module named 'ystar'
+00:42:30 [OBSERVE] Tool: TaskCreate
+00:42:30 [OBSERVE] ERROR: No module named 'ystar'
+00:42:33 [OBSERVE] Tool: TaskCreate
+00:42:33 [OBSERVE] ERROR: No module named 'ystar'
+00:42:36 [OBSERVE] Tool: TaskCreate
+00:42:36 [OBSERVE] ERROR: No module named 'ystar'
+00:42:38 [OBSERVE] Tool: TaskCreate
+00:42:38 [OBSERVE] ERROR: No module named 'ystar'
+00:43:04 [OBSERVE] Tool: Write
+00:43:04 [OBSERVE] ERROR: No module named 'ystar'
+00:43:36 [OBSERVE] Tool: Agent
+00:43:36 [OBSERVE] ERROR: No module named 'ystar'
+00:43:44 [OBSERVE] Tool: Grep
+00:43:44 [OBSERVE] ERROR: No module named 'ystar'
+00:44:00 [OBSERVE] Tool: Write
+00:44:00 [OBSERVE] ERROR: No module named 'ystar'
+00:44:08 [OBSERVE] Tool: Read
+00:44:08 [OBSERVE] ERROR: No module named 'ystar'
+00:44:12 [OBSERVE] Tool: Edit
+00:44:12 [OBSERVE] ERROR: No module named 'ystar'
+00:44:18 [OBSERVE] Tool: Bash
+00:44:18 [OBSERVE] ERROR: No module named 'ystar'
+00:44:56 [OBSERVE] Tool: Agent
+00:44:56 [OBSERVE] ERROR: No module named 'ystar'
+00:45:06 [OBSERVE] Tool: Bash
+00:45:06 [OBSERVE] ERROR: No module named 'ystar'
+00:45:06 [OBSERVE] Tool: Bash
+00:45:06 [OBSERVE] ERROR: No module named 'ystar'
+00:45:15 [OBSERVE] Tool: Write
+00:45:15 [OBSERVE] ERROR: No module named 'ystar'
+00:45:22 [OBSERVE] Tool: Bash
+00:45:22 [OBSERVE] ERROR: No module named 'ystar'
+00:45:30 [OBSERVE] Tool: Read
+00:45:30 [OBSERVE] ERROR: No module named 'ystar'
+00:45:33 [OBSERVE] Tool: Read
+00:45:33 [OBSERVE] ERROR: No module named 'ystar'
+00:45:38 [OBSERVE] Tool: Bash
+00:45:38 [OBSERVE] ERROR: No module named 'ystar'
+00:45:42 [OBSERVE] Tool: Read
+00:45:42 [OBSERVE] ERROR: No module named 'ystar'
+00:45:54 [OBSERVE] Tool: Edit
+00:45:54 [OBSERVE] ERROR: No module named 'ystar'
+00:46:03 [OBSERVE] Tool: Bash
+00:46:03 [OBSERVE] ERROR: No module named 'ystar'
+00:46:09 [OBSERVE] Tool: Bash
+00:46:09 [OBSERVE] ERROR: No module named 'ystar'
+00:46:15 [OBSERVE] Tool: Bash
+00:46:15 [OBSERVE] ERROR: No module named 'ystar'
+00:46:16 [OBSERVE] Tool: Bash
+00:46:16 [OBSERVE] ERROR: No module named 'ystar'
+00:46:19 [OBSERVE] Tool: Bash
+00:46:19 [OBSERVE] ERROR: No module named 'ystar'
+00:47:04 [OBSERVE] Tool: Agent
+00:47:04 [OBSERVE] ERROR: No module named 'ystar'
+00:47:15 [OBSERVE] Tool: Bash
+00:47:15 [OBSERVE] ERROR: No module named 'ystar'
+00:47:20 [OBSERVE] Tool: Bash
+00:47:20 [OBSERVE] ERROR: No module named 'ystar'
+00:47:26 [OBSERVE] Tool: Bash
+00:47:26 [OBSERVE] ERROR: No module named 'ystar'
+00:47:29 [OBSERVE] Tool: Bash
+00:47:29 [OBSERVE] ERROR: No module named 'ystar'
+00:47:35 [OBSERVE] Tool: Bash
+00:47:35 [OBSERVE] ERROR: No module named 'ystar'
+00:48:39 [OBSERVE] Tool: Write
+00:48:39 [OBSERVE] ERROR: No module named 'ystar'
+00:48:43 [OBSERVE] Tool: Bash
+00:48:43 [OBSERVE] ERROR: No module named 'ystar'
+00:48:46 [OBSERVE] Tool: Bash
+00:48:46 [OBSERVE] ERROR: No module named 'ystar'
+00:48:58 [OBSERVE] Tool: Bash
+00:48:58 [OBSERVE] ERROR: No module named 'ystar'
+00:49:02 [OBSERVE] Tool: Bash
+00:49:02 [OBSERVE] ERROR: No module named 'ystar'
+00:50:10 [OBSERVE] Tool: Agent
+00:50:10 [OBSERVE] ERROR: No module named 'ystar'
+00:50:20 [OBSERVE] Tool: Bash
+00:50:20 [OBSERVE] ERROR: No module named 'ystar'
+00:50:21 [OBSERVE] Tool: Bash
+00:50:21 [OBSERVE] ERROR: No module named 'ystar'
+00:50:27 [OBSERVE] Tool: Bash
+00:50:27 [OBSERVE] ERROR: No module named 'ystar'
+00:50:28 [OBSERVE] Tool: Grep
+00:50:28 [OBSERVE] ERROR: No module named 'ystar'
+00:50:34 [OBSERVE] Tool: Bash
+00:50:34 [OBSERVE] ERROR: No module named 'ystar'
+00:52:50 [OBSERVE] Tool: Write
+00:52:50 [OBSERVE] ERROR: No module named 'ystar'
+00:52:53 [OBSERVE] Tool: Bash
+00:52:53 [OBSERVE] ERROR: No module named 'ystar'
+00:53:01 [OBSERVE] Tool: Bash
+00:53:01 [OBSERVE] ERROR: No module named 'ystar'
+00:53:36 [OBSERVE] Tool: Agent
+00:53:36 [OBSERVE] ERROR: No module named 'ystar'
+00:53:49 [OBSERVE] Tool: Read
+00:53:49 [OBSERVE] ERROR: No module named 'ystar'
+00:53:50 [OBSERVE] Tool: Read
+00:53:50 [OBSERVE] ERROR: No module named 'ystar'
+00:53:51 [OBSERVE] Tool: Bash
+00:53:51 [OBSERVE] ERROR: No module named 'ystar'
+00:53:56 [OBSERVE] Tool: Glob
+00:53:56 [OBSERVE] ERROR: No module named 'ystar'
+00:53:57 [OBSERVE] Tool: Bash
+00:53:57 [OBSERVE] ERROR: No module named 'ystar'
+00:54:00 [OBSERVE] Tool: Read
+00:54:00 [OBSERVE] ERROR: No module named 'ystar'
+00:54:05 [OBSERVE] Tool: Read
+00:54:05 [OBSERVE] ERROR: No module named 'ystar'
+00:54:07 [OBSERVE] Tool: Read
+00:54:07 [OBSERVE] ERROR: No module named 'ystar'
+00:54:22 [OBSERVE] Tool: Edit
+00:54:22 [OBSERVE] ERROR: No module named 'ystar'
+00:54:25 [OBSERVE] Tool: Edit
+00:54:25 [OBSERVE] ERROR: No module named 'ystar'
+00:54:28 [OBSERVE] Tool: Edit
+00:54:28 [OBSERVE] ERROR: No module named 'ystar'
+00:54:30 [OBSERVE] Tool: Edit
+00:54:30 [OBSERVE] ERROR: No module named 'ystar'
+00:54:34 [OBSERVE] Tool: Edit
+00:54:34 [OBSERVE] ERROR: No module named 'ystar'
+00:54:37 [OBSERVE] Tool: Edit
+00:54:37 [OBSERVE] ERROR: No module named 'ystar'
+00:54:41 [OBSERVE] Tool: Edit
+00:54:41 [OBSERVE] ERROR: No module named 'ystar'
+00:54:45 [OBSERVE] Tool: Edit
+00:54:45 [OBSERVE] ERROR: No module named 'ystar'
+00:54:49 [OBSERVE] Tool: Edit
+00:54:49 [OBSERVE] ERROR: No module named 'ystar'
+00:54:57 [OBSERVE] Tool: Bash
+00:54:57 [OBSERVE] ERROR: No module named 'ystar'
+00:55:03 [OBSERVE] Tool: Bash
+00:55:03 [OBSERVE] ERROR: No module named 'ystar'
+00:55:04 [OBSERVE] Tool: Edit
+00:55:04 [OBSERVE] ERROR: No module named 'ystar'
+00:55:07 [OBSERVE] Tool: Bash
+00:55:07 [OBSERVE] ERROR: No module named 'ystar'
+00:55:19 [OBSERVE] Tool: Bash
+00:55:19 [OBSERVE] ERROR: No module named 'ystar'
+00:55:27 [OBSERVE] Tool: Edit
+00:55:27 [OBSERVE] ERROR: No module named 'ystar'
+00:55:31 [OBSERVE] Tool: Bash
+00:55:31 [OBSERVE] ERROR: No module named 'ystar'
+00:55:34 [OBSERVE] Tool: Bash
+00:55:34 [OBSERVE] ERROR: No module named 'ystar'
+00:55:38 [OBSERVE] Tool: Bash
+00:55:38 [OBSERVE] ERROR: No module named 'ystar'
+00:55:46 [OBSERVE] Tool: Edit
+00:55:46 [OBSERVE] ERROR: No module named 'ystar'
+00:55:53 [OBSERVE] Tool: Edit
+00:55:53 [OBSERVE] ERROR: No module named 'ystar'
+00:55:57 [OBSERVE] Tool: Edit
+00:55:57 [OBSERVE] ERROR: No module named 'ystar'
+00:56:02 [OBSERVE] Tool: Edit
+00:56:02 [OBSERVE] ERROR: No module named 'ystar'
+00:56:07 [OBSERVE] Tool: Edit
+00:56:07 [OBSERVE] ERROR: No module named 'ystar'
+00:56:13 [OBSERVE] Tool: Edit
+00:56:13 [OBSERVE] ERROR: No module named 'ystar'
+00:56:16 [OBSERVE] Tool: Bash
+00:56:16 [OBSERVE] ERROR: No module named 'ystar'
+00:56:27 [OBSERVE] Tool: Bash
+00:56:27 [OBSERVE] ERROR: No module named 'ystar'
+00:56:32 [OBSERVE] Tool: Bash
+00:56:32 [OBSERVE] ERROR: No module named 'ystar'
+00:56:40 [OBSERVE] Tool: Bash
+00:56:40 [OBSERVE] ERROR: No module named 'ystar'

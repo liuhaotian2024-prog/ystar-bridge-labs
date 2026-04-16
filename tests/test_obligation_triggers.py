@@ -552,7 +552,7 @@ def test_integration_obligation_expires_and_creates_violation():
     engine = OmissionEngine(store=store, registry=rule_registry, now_fn=lambda: now)
     adapter = OmissionAdapter(engine=engine)
 
-    # Register entity
+    # Register entity with recent activity (required for violation gate)
     from ystar.governance.omission_models import TrackedEntity, EntityStatus
     entity = TrackedEntity(
         entity_id="test_session",
@@ -560,6 +560,7 @@ def test_integration_obligation_expires_and_creates_violation():
         initiator_id="system",
         current_owner_id="TestAgent",
         status=EntityStatus.ACTIVE,
+        last_event_at=now,  # Entity has recent activity
     )
     store.upsert_entity(entity)
 

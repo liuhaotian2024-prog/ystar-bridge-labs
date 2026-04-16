@@ -45,6 +45,88 @@ def _emit(additional_context):
     sys.stdout.flush()
 
 
+def _register_article11_obligations():
+    """Register 3 Article 11 autonomous obligations (Board directive 2026-04-15).
+
+    Obligations:
+    1. Board offline 30min → CEO must activate autonomous_work_learning (10min due)
+    2. Task 30min without CIEU action → task must have progress (30min due)
+    3. Rt+1 stagnant 3 checkpoints → Rt+1 must converge (20min due)
+
+    Design: fail-silent (don't block session start on OmissionEngine errors).
+    """
+    try:
+        agent_id = _resolve_agent_id()
+        db_path = str(REPO_ROOT / '.ystar_cieu.db')
+
+        # Import register_obligation_programmatic from sibling script
+        sys.path.insert(0, str(REPO_ROOT / 'scripts'))
+        try:
+            from register_obligation import register_obligation_programmatic
+        finally:
+            sys.path.pop(0)
+
+        # Obligation 1: Board offline 30min → CEO autonomous mode
+        register_obligation_programmatic(
+            db_path=db_path,
+            entity_id='ARTICLE_11_BOARD_OFFLINE',
+            owner=agent_id,
+            rule_id='article_11_board_offline_30m',
+            rule_name='Article 11: Board offline 30min → CEO autonomous mode',
+            description='When Board (Haotian) is offline for 30min, CEO must activate autonomous_work_learning mode and continue work without waiting for instructions',
+            due_secs=600,  # 10min from now (check if Board offline ≥30min)
+            severity='high',
+            obligation_type='article_11_parallel_enforcement',
+            required_event='ceo_autonomous_mode_activated',
+            initiator='board_directive_20260415',
+            directive_ref='reports/board_pending/board_directive_20260415_cto_autonomous_maintenance.md',
+            verbose=False,
+        )
+
+        # Obligation 2: Task 30min without CIEU → must have progress
+        register_obligation_programmatic(
+            db_path=db_path,
+            entity_id='ARTICLE_11_TASK_STAGNATION',
+            owner=agent_id,
+            rule_id='article_11_task_30m_no_cieu',
+            rule_name='Article 11: Task 30min no CIEU → must have progress',
+            description='When a task runs for 30min without CIEU action events, agent must spawn sub-agent (Article 11 parallel) or emit tool_use evidence of progress',
+            due_secs=1800,  # 30min from now
+            severity='medium',
+            obligation_type='article_11_parallel_enforcement',
+            required_event='task_progress_cieu_emitted',
+            initiator='board_directive_20260415',
+            directive_ref='reports/board_pending/board_directive_20260415_cto_autonomous_maintenance.md',
+            verbose=False,
+        )
+
+        # Obligation 3: Rt+1 stagnant 3 checkpoints → must converge
+        register_obligation_programmatic(
+            db_path=db_path,
+            entity_id='ARTICLE_11_RT_STAGNATION',
+            owner=agent_id,
+            rule_id='article_11_rt_3_checkpoints_no_convergence',
+            rule_name='Article 11: Rt+1 stagnant 3 checkpoints → must converge',
+            description='When Rt+1 (honest gap) does not decrease for 3 consecutive checkpoints, agent must escalate to Board or spawn sub-agent to attack root cause',
+            due_secs=1200,  # 20min from now
+            severity='high',
+            obligation_type='article_11_parallel_enforcement',
+            required_event='rt_convergence_action_taken',
+            initiator='board_directive_20260415',
+            directive_ref='reports/board_pending/board_directive_20260415_cto_autonomous_maintenance.md',
+            verbose=False,
+        )
+    except Exception as e:
+        # Fail-silent: log error but don't block session start
+        log = REPO_ROOT / 'scripts' / 'hook_debug.log'
+        try:
+            with log.open('a', encoding='utf-8') as f:
+                f.write(f'[hook_session_start] OmissionEngine registration failed: {e}\n')
+                f.write(traceback.format_exc() + '\n')
+        except OSError:
+            pass
+
+
 def _append_morning_brief():
     """Load today's morning brief if exists."""
     from datetime import datetime
@@ -254,6 +336,10 @@ def _main():
         # PRIORITY -1: Behavioral Constraints (Campaign v3)
         constraints = _inject_behavioral_constraints()
         text = constraints + '\n\n' + text
+
+        # PRIORITY 0: OmissionEngine Article 11 Auto-Register
+        # Board directive 2026-04-15: 3 autonomous obligations
+        _register_article11_obligations()
 
         # C7 Conversation Replay (PRIORITY 1) - verbatim transcript
         replay = _append_conversation_replay()

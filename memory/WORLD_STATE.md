@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-15 23:30:01
+**Generated**: 2026-04-16 00:30:00
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -38,18 +38,14 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/0 valid
-**CIEU 24h Events**: 36465
+**CIEU 24h Events**: 41864
 **Overdue Obligations**: 0
 
 ---
 
 ## 5. External Signals (Today)
 ```
-=== Y* Bridge Labs Idle Learning Progress ===
-
-Role         | P1 Complete  | P2 Theories  | P3 Sims  | Last Learning
-----------------------------------------------------------------------
-ceo          | 3/3          | 24           | 17       | Never       
+[No morning report today]
 ```
 
 ---
@@ -86,10 +82,10 @@ ceo          | 3/3          | 24           | 17       | Never
 ---
 
 ## 8. Ecosystem — Y*gov Product Repo
-**HEAD**: `af9e938 cleanup(W17+W18): delete check_wheel_contents.py + gov_mcp/ stale dir [L3]`
-**24h commits**: 23
+**HEAD**: `567d4c1 feat(W42): Maya v2 — Path A↔RLE bridge minimum [L3 IMPL CEO-wrapped]`
+**24h commits**: 26
 **ahead origin**: 0
-**test files**: 92
+**test files**: 93
 **version**: 0.48.0
 
 ---
@@ -110,7 +106,20 @@ ceo          | 3/3          | 24           | 17       | Never
 ## 11. Today's Commits (24h) — both repos
 
 
-**ystar-company** (87 commits):
+**ystar-company** (100 commits):
+- 939a8c47 00:22 report(cto): health_scan_20260415 — 4 scans complete, Rt+1=22 obstacles [L3 PARTIAL]
+- d574f8aa 00:18 fix(governance): forget_guard Format 4 — tool_name at root level [L3 TESTED]
+- 11ee68ba 00:17 fix(test): parse multi-line JSON in test_p3_to_p2_feedback_loop
+- dab004c7 00:14 constitutional(cto): Total Y* + 6-Step CZL Daily Loop + 4-Step Learning + Rt+1 escalation [L5 CONST]
+- 0cf683aa 00:13 fix(idle-learning): support KNOWLEDGE_ROOT env override for test mode
+- a19c156c 00:05 wrap(W16): Ryan partial — 2 new ForgetGuard rules + task_type_map [L3 IMPL]
+- 414564c5 23:54 fix(governance): Maya W16 — forget_guard.py AND logic + 3 E2E tests [L3 TESTED]
+- b0a8a2ed 23:53 fix(tests): OmissionEngine test fixture schema alignment
+- 63be4b37 23:46 task(W16): 3 engineer task cards — Leo omission / Maya amendment+governance / Ryan 8-file chaos
+- 823a0595 23:45 gov(constitutional): CTO hourly K9 patrol + CMO weekly README audit mandates [L4 GOV]
+- 067991bd 23:45 audit(czl): CEO meta-audit 全岗位绑死核查 — 章程✅/执行✅/审计⚠️40%身份缺失 [L3 AUDIT]
+- 41ce8899 23:41 chore(dna-log): secretary AGENTS.md dispatcher write-access patch audit [L3 SHIPPED]
+- e37f195d 23:40 fix(agents-md): add .claude/tasks/ to CTO/CMO/CSO/CFO Write Access [L3 SHIPPED]
 - 20f4018f 23:29 feat(forgetguard): CEO engineering boundary rule + agent_filter support [L3 IMPL]
 - f0f4fe8a 23:26 doctrine(czl): CEO Engineering Boundary — 紧急3条件 + break_glass 15min TTL [Board 批准]
 - 24a71ee8 23:19 fix(W16): session fixture + autonomy skip — 58→38 fail [CEO→CTO handoff]
@@ -118,21 +127,11 @@ ceo          | 3/3          | 24           | 17       | Never
 - ba8f6f9a 23:12 fix(tests): session_agent_stack fixtures add 4 required schema keys [W16 -12]
 - fa18623e 23:10 design(CRITICAL): Stop hook blacklist→whitelist 反转 [Board 2026-04-15 night]
 - f301fd28 23:07 fix(CRITICAL): forget_guard 2 root bugs — tool_name key + AND→OR conditions [L3 TESTED]
-- 503b7c75 22:23 fix(tests): skip AMENDMENT-015 auto-satisfy until impl [W16]
-- e5d506a6 21:12 continuity: regen WORLD_STATE + session_summary after Three-Layer doctrine补录 [L3]
-- 5adb5b81 21:11 doctrine(czl): 补录 Three-Layer + Defer≠Schedule 到 AGENTS.md [L4 CONSTITUTIONAL]
-- 98f74be0 21:02 fix(W14): event_fingerprint fallback to agent_id+task_desc on null params [L3 TESTED]
-- 0e9bc54d 20:56 fix(watchdog): HP measurement 2 bugs + orchestrator/intervention filter [L3 TESTED]
-- db271e6b 20:49 feat(evidence): evidence_aggregator.py — 7 CZL event types auto query [L3 TESTED]
-- 80836c0a 20:47 feat(forget-guard): W10.1 multi-keyword AND logic for defer detection [L3 TESTED]
-- 11e34933 20:45 feat(czl): W13 — sub-agent output layer (Layer 7 gap fix) [L3 TESTED]
-- bf96a937 20:43 doctrine(czl): Session-Level Y* 五条硬约束 constitutional [L4]
-- 80231077 20:42 doctrine(czl): Session-Level Y* + backlog_as_defer_disguise rule [L4 CONSTITUTIONAL]
-- b172e4b5 20:22 continuity(czl): P0 5-pack — tag/brief/subgoals/world_state/session_end [L4]
-- ab469d6f 20:16 fix(forget-guard): defer ≠ schedule 基因级区分 [L3 TESTED]
-- 9f0120e8 19:55 feat(czl): Campaign v5 W10 + W12 — reply prose monitor + 4-repo god-view [L3 TESTED]
 
-**Y*gov** (23 commits):
+**Y*gov** (26 commits):
+- 567d4c1 00:17 feat(W42): Maya v2 — Path A↔RLE bridge minimum [L3 IMPL CEO-wrapped]
+- 0341f3b 23:53 fix(omission): OmissionEngine schema alignment — triggered_by_event_id → trigger_event_id
+- bc5b4b4 23:34 fix(daemon): AMENDMENT-016 fresh agent_id on every hook call [L3 IMPL]
 - af9e938 22:34 cleanup(W17+W18): delete check_wheel_contents.py + gov_mcp/ stale dir [L3]
 - c8103a8 22:33 fix(W18): delete stale gov_mcp/ directory (canonical source: gov-mcp repo) [L3]
 - fbc6c9c 22:27 fix: add .claude/settings.json + remove setup.py (pyproject conflict) [Board scan]
@@ -150,6 +149,3 @@ ceo          | 3/3          | 24           | 17       | Never
 - 93cd6d7 12:11 fix(hook): 全 4 处 PolicyResult() 补 who/what 必需参数 [L3 IMPL]
 - aae004a 12:09 fix(hook): PolicyResult 缺 who/what 参数 — AVOIDANCE deny 实际无法构造 [L3 IMPL]
 - 867f21e 12:01 feat(hook): extend AVOIDANCE_PHRASES 14→29 (IR 1.8 candidate time concession phrases) [L3 IMPL]
-- f51d5b2 11:40 [K9 RULE 12] compliance_audit.py — Unified Protocol Compliance Self-Audit
-- f3fa8b7 11:29 feat(domains): Jordan pharma GxP domain pack v1 (JSONL recovery) [L3 IMPL]
-- 0797ce8 11:28 feat(hook): LESSON_READ CIEU emit (incremental Edit, 非 Write) [L3 IMPL]
