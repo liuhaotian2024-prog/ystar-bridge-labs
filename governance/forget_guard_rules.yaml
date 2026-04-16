@@ -1,15 +1,16 @@
 # ForgetGuard Rules — AMENDMENT-020
 # Institutional memory enforcement via warn-with-recipe pattern
-# Schema version: 1.0
-# Last updated: 2026-04-13
+# Schema version: 1.1 (added logic: AND/OR per-rule)
+# Last updated: 2026-04-15
 #
 # ⚠️ DEPRECATED: Authoritative source is Y-star-gov/ystar/governance/forget_guard_rules.yaml
 # This file serves as ystar-company dogfood configuration only.
 # All new rules and schema changes must be added to Y-star-gov first.
 
-schema_version: "1.0"
+schema_version: "1.1"
 default_action: warn  # warn | deny (future)
 global_enable: true
+default_logic: "OR"  # OR | AND (default for rules without explicit logic field)
 
 rules:
   - id: missing_l_tag
@@ -47,11 +48,12 @@ rules:
   - id: immutable_no_break_glass
     enabled: true
     description: "CEO editing immutable files without break-glass mode or delegation"
-    last_reviewed: "2026-04-13"
-    reviewer: "CEO"
+    last_reviewed: "2026-04-15"
+    reviewer: "Maya"
 
     trigger:
       tool: ["Edit", "Write"]
+      logic: "AND"  # ALL conditions must match (not just one)
       conditions:
         - type: path_match
           pattern: "^(AGENTS\\.md|governance/WORKING_STYLE\\.md|governance/BOARD_CHARTER_AMENDMENTS\\.md)"

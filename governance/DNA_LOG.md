@@ -200,3 +200,10 @@ GOV-007 Step 2 不是反转 DNA #007 —— 它是 architectural refinement。�
 - **Verification**: ForgetGuard simulation CTO→.claude/tasks/leo_xxx.md returns action=allow
 - **Commit**: e37f195d (pushed to origin/main)
 - **Note**: CEO NOT granted .claude/tasks/ write — keeps engineering boundary tight; CEO only spawns from cards authored by dispatchers
+
+## 2026-04-15T23:45:54.823847 | secretary | AGENTS.md write
+- caller: ceo (Board P0 直令 2026-04-15 night)
+- action: 注入两段 Long-Running Autonomous Mandate (CTO hourly K9 patrol + CMO weekly README audit) 至 Constitutional 层
+- commit: 823a0595
+- justification: Board explicit directive, ready-to-paste diff, immutable_paths write authority per AMENDMENT-003
+- reason: 永久强制非可违反 mandate, 修复全生态技术问题/README 漂移两条长尾 gap

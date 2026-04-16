@@ -40,6 +40,13 @@ def temp_knowledge_dir(tmp_path):
     return tmp_path / "knowledge"
 
 
+@pytest.fixture
+def tmp_db(tmp_path):
+    """Fixture providing temporary CIEU database path for isolated tests."""
+    db_path = tmp_path / "test_cieu.db"
+    return str(db_path)
+
+
 # Marker definitions
 def pytest_configure(config):
     """Register custom markers."""

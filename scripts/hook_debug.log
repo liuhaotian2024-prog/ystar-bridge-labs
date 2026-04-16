@@ -5894,3 +5894,1753 @@ ModuleNotFoundError: No module named 'ystar'
 ModuleNotFoundError: No module named 'ystar'
 
 23:19:18 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:19:35 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:19:35 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:19:35 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:19:50 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:19:50 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:19:50 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:19:52 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:19:52 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:19:52 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:20:15 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:20:15 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:20:15 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:20:20 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:20:20 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:20:21 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:20:21 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:20:21 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:20:21 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:20:26 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:20:26 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:20:26 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:22:00 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:22:00 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:22:00 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:22:06 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:22:06 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:22:06 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:22:18 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:22:18 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:22:18 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:22:27 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:22:27 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:22:27 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:22:36 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:22:36 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:22:36 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:22:45 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:22:45 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:22:45 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:22:53 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:22:53 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:22:53 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:23:01 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:23:01 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:23:01 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:23:13 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:23:13 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:23:13 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:23:22 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:23:22 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:23:22 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:23:31 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:23:31 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:23:31 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:23:43 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:23:43 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:23:43 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:23:43 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:23:43 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:23:43 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:23:43 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:23:43 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:23:43 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:23:57 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:23:57 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:23:57 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:24:06 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:24:06 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:24:06 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:24:31 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:24:31 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:24:31 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:24:36 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:24:36 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:24:36 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:24:36 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:24:36 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:24:36 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:24:41 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:24:41 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:24:41 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:24:58 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:24:58 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:24:58 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:25:12 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:25:12 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:25:12 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:25:23 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:25:23 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:25:23 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:25:34 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:25:34 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:25:34 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:25:57 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:25:57 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:25:57 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:26:02 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:26:02 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:26:02 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:26:27 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:26:27 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:26:27 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:26:43 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:26:43 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:26:43 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:26:43 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:26:43 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:26:43 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:26:51 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:26:51 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:26:51 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:27:00 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:27:00 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:27:00 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:27:06 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:27:06 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:27:06 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:27:19 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:27:19 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:27:19 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:27:19 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:27:19 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:27:20 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:27:27 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:27:27 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:27:27 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:27:34 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:27:34 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:27:34 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:27:36 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:27:36 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:27:36 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:27:45 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:27:45 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:27:46 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:27:56 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:27:56 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:27:56 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:28:07 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:28:07 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:28:07 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:28:17 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:28:17 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:28:17 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:28:22 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:28:22 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:28:23 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:28:23 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:28:23 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:28:23 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:28:31 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:28:31 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:28:31 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:28:40 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:28:40 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:28:40 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:28:51 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:28:51 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:28:51 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:28:57 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:28:57 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:28:57 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:29:03 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:29:03 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:29:03 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:29:04 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:29:04 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:29:04 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:29:13 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:29:13 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:29:13 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:29:18 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:29:18 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:29:18 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:29:26 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:29:26 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:29:26 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:29:32 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:29:32 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:29:32 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:29:35 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:29:35 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:29:35 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:29:41 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:29:41 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:29:41 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:29:44 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:29:44 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:29:44 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:29:48 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:29:48 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:29:48 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:29:55 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:29:55 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:29:55 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:29:56 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:29:56 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:29:56 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:30:06 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:30:06 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:30:06 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:30:07 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:30:07 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:30:07 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:30:16 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:30:16 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:30:16 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:30:18 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:30:18 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:30:18 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:30:25 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:30:25 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:30:25 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:30:28 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:30:28 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:30:28 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:30:34 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:30:34 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:30:34 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:30:37 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:30:37 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:30:37 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:30:44 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:30:44 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:30:44 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:30:47 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:30:47 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:30:47 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:30:51 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:30:51 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:30:51 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:30:57 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:30:57 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:30:57 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:31:01 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:31:01 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:31:01 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:31:09 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:31:09 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:31:09 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:31:15 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:31:15 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:31:15 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:31:21 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:31:21 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:31:21 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:31:25 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:31:25 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:31:25 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:31:32 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:31:32 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:31:32 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:31:36 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:31:36 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:31:36 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:31:42 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:31:42 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:31:42 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:31:51 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:31:51 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:31:51 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:31:52 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:31:52 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:31:52 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:32:04 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:32:04 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:32:04 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:32:14 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:32:14 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:32:14 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:32:23 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:32:23 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:32:23 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:32:39 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:32:39 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:32:39 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:32:48 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:32:48 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:32:48 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:32:59 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:32:59 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:32:59 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:33:04 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:33:04 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:33:04 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:33:10 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:33:10 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:33:10 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:33:23 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:33:23 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:33:23 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:33:31 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:33:31 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:33:31 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:33:41 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:33:41 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:33:41 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:34:02 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:34:02 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:34:02 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:34:05 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:34:05 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:34:05 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:34:33 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:34:33 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:34:33 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:34:41 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:34:41 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:34:41 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:35:01 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:35:01 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:35:02 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:35:37 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:35:37 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:35:37 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:36:57 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:36:57 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:36:58 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:37:14 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:37:14 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:37:14 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:37:15 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:37:15 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:37:15 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:37:16 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:37:16 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:37:16 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:37:26 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:37:26 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:37:26 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:37:28 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:37:28 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:37:28 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:37:40 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:37:40 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:37:40 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:37:41 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:37:41 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:37:42 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:37:42 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:37:42 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:37:42 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:37:56 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:37:56 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:37:56 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:37:58 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:37:58 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:37:58 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:38:13 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:38:13 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:38:13 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:38:14 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:38:14 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:38:14 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:38:23 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:38:23 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:38:23 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:38:40 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:38:40 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:38:40 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:38:43 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:38:43 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:38:43 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:38:57 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:38:57 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:38:57 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:39:09 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:39:09 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:39:09 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:39:10 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:39:10 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:39:10 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:39:26 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:39:26 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:39:26 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:39:54 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:39:54 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:39:54 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:40:03 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:40:03 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:40:03 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:40:09 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:40:09 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:40:09 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:40:18 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:40:18 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:40:18 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:40:34 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:40:34 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:40:34 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:40:42 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:40:42 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:40:42 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:40:58 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:40:58 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:40:58 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:41:04 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:41:04 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:41:04 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:41:08 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:41:08 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:41:08 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:42:23 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:42:23 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:42:23 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:42:55 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:42:55 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:42:55 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:43:30 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:43:30 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:43:30 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:43:57 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:43:57 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:43:57 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:44:04 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:44:04 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:44:04 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:44:11 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:44:11 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:44:11 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:44:17 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:44:17 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:44:17 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:44:20 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:44:20 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:44:20 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:44:27 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:44:27 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:44:27 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:44:48 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:44:48 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:44:48 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:44:55 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:44:55 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:44:55 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:45:00 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:45:00 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:45:00 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:45:02 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:45:02 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:45:02 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:45:05 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:45:05 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:45:05 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:45:06 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:45:06 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:45:06 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:45:16 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:45:16 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:45:16 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:45:23 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:45:23 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:45:23 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:45:32 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:45:32 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:45:32 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:45:39 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:45:39 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:45:39 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:45:49 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:45:49 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:45:49 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:45:54 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:45:54 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:45:54 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:46:01 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:46:01 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:46:01 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:46:07 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:46:07 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:46:07 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:46:12 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:46:12 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:46:12 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:46:37 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:46:37 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:46:37 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:46:49 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:46:49 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:46:50 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:47:01 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:47:01 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:47:01 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:47:17 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:47:17 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:47:17 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:47:25 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:47:25 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:47:26 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:47:36 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:47:36 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:47:36 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:47:44 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:47:44 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:47:44 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:47:52 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:47:52 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:47:52 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:48:01 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:48:01 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:48:01 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:48:08 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:48:08 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:48:09 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:48:17 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:48:17 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:48:17 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:48:24 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:48:24 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:48:24 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:48:35 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:48:35 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:48:35 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:48:44 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:48:44 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:48:44 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:48:54 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:48:54 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:48:54 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:49:09 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:49:09 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:49:10 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:49:22 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:49:22 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:49:22 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:50:11 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:50:11 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:50:11 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:50:18 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:50:18 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:50:18 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:50:22 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:50:22 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:50:23 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:50:26 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:50:26 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:50:27 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:50:28 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:50:28 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:50:28 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:50:33 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:50:33 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:50:34 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:50:34 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:50:34 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:50:34 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:50:34 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:50:34 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:50:34 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:50:35 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:50:35 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:50:35 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:50:44 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:50:44 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:50:44 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:50:44 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:50:44 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:50:44 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:50:45 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:50:45 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:50:45 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:50:46 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:50:46 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:50:46 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:50:46 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:50:46 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:50:46 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:50:46 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:50:46 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:50:46 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:50:46 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:50:47 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:50:47 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:50:47 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:50:47 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:50:47 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:50:57 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:50:57 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:50:57 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:50:57 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:50:57 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:50:57 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:51:00 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:51:00 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:51:00 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:51:00 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:51:00 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:51:00 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:51:16 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:51:16 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:51:17 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:51:17 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:51:17 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:51:17 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:51:20 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:51:20 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:51:20 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:51:20 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:51:20 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:51:20 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:51:28 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:51:28 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:51:28 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:51:35 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:51:35 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:51:35 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:51:49 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:51:49 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:51:49 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:51:53 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:51:53 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:51:53 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:52:01 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:52:01 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:52:01 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:52:02 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:52:02 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:52:02 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:52:06 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:52:06 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:52:06 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:52:08 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:52:08 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:52:08 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:52:13 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:52:13 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:52:13 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:52:15 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:52:15 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:52:15 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:52:18 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:52:18 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:52:18 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:52:22 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:52:22 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:52:22 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:52:31 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:52:31 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:52:31 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:52:35 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:52:35 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:52:35 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:52:43 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:52:43 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:52:44 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:52:44 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:52:44 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:52:44 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:52:45 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:52:45 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:52:45 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:52:48 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:52:48 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:52:48 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:52:56 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:52:56 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:52:56 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:52:59 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:52:59 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:52:59 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:02 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:02 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:02 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:02 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:02 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:02 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:09 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:09 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:09 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:11 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:11 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:11 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:13 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:13 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:13 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:21 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:21 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:21 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:22 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:22 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:22 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:22 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:22 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:22 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:23 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:23 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:23 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:29 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:29 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:30 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:30 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:30 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:30 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:31 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:31 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:31 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:32 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:32 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:32 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:32 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:32 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:32 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:36 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:36 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:36 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:36 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:36 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:37 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:37 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:37 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:37 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:38 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:38 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:38 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:38 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:38 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:38 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:43 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:43 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:43 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:47 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:47 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:47 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:51 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:51 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:51 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:51 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:51 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:51 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:53:57 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:53:57 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:53:57 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:54:11 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:54:11 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:54:11 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:54:17 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:54:17 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:54:17 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:54:20 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:54:20 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:54:20 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:54:24 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:54:24 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:54:24 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:54:25 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:54:25 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:54:25 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'
+23:54:30 [FAIL-CLOSED] Core governance unavailable: No module named 'ystar'
+23:54:30 Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_wrapper.py", line 45, in <module>
+    from ystar.adapters.hook import check_hook
+ModuleNotFoundError: No module named 'ystar'
+
+23:54:30 [FAIL-CLOSED] Could not write CIEU deny event: No module named 'ystar.governance.identity_detector'

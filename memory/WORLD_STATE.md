@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-15 23:00:01
+**Generated**: 2026-04-15 23:30:01
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -38,7 +38,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/0 valid
-**CIEU 24h Events**: 31999
+**CIEU 24h Events**: 36465
 **Overdue Obligations**: 0
 
 ---
@@ -110,7 +110,14 @@ ceo          | 3/3          | 24           | 17       | Never
 ## 11. Today's Commits (24h) — both repos
 
 
-**ystar-company** (80 commits):
+**ystar-company** (87 commits):
+- 20f4018f 23:29 feat(forgetguard): CEO engineering boundary rule + agent_filter support [L3 IMPL]
+- f0f4fe8a 23:26 doctrine(czl): CEO Engineering Boundary — 紧急3条件 + break_glass 15min TTL [Board 批准]
+- 24a71ee8 23:19 fix(W16): session fixture + autonomy skip — 58→38 fail [CEO→CTO handoff]
+- eb25dae7 23:14 skip(tests): autonomy_driver_integration — factory not implemented [W16 -6]
+- ba8f6f9a 23:12 fix(tests): session_agent_stack fixtures add 4 required schema keys [W16 -12]
+- fa18623e 23:10 design(CRITICAL): Stop hook blacklist→whitelist 反转 [Board 2026-04-15 night]
+- f301fd28 23:07 fix(CRITICAL): forget_guard 2 root bugs — tool_name key + AND→OR conditions [L3 TESTED]
 - 503b7c75 22:23 fix(tests): skip AMENDMENT-015 auto-satisfy until impl [W16]
 - e5d506a6 21:12 continuity: regen WORLD_STATE + session_summary after Three-Layer doctrine补录 [L3]
 - 5adb5b81 21:11 doctrine(czl): 补录 Three-Layer + Defer≠Schedule 到 AGENTS.md [L4 CONSTITUTIONAL]
@@ -124,13 +131,6 @@ ceo          | 3/3          | 24           | 17       | Never
 - b172e4b5 20:22 continuity(czl): P0 5-pack — tag/brief/subgoals/world_state/session_end [L4]
 - ab469d6f 20:16 fix(forget-guard): defer ≠ schedule 基因级区分 [L3 TESTED]
 - 9f0120e8 19:55 feat(czl): Campaign v5 W10 + W12 — reply prose monitor + 4-repo god-view [L3 TESTED]
-- 2fceb24b 19:49 feat(wire): W6.1 canonical taxonomy split — static_frozen vs live_tracked [L3 TESTED]
-- 8fd91b68 19:47 fix(czl): W5.2 validator aggregate — iterate y_star_criteria not whole dict [L3 TESTED]
-- 26a2b2c5 19:45 docs(governance): mark ystar-company forget_guard yaml as DEPRECATED [L2 IMPL]
-- c4ad0abf 19:39 feat(forget-guard): 扩 defer_language keyword 覆盖 8 新词 [L3 TESTED]
-- 79dd9b41 19:31 feat(stress): Campaign v4 三轮 CZL doctrine 压测 全 Rt+1=0 [L3]
-- a25e2b0b 19:27 test(czl): Campaign v4 R2 — Canonical Hash Guard 4/4 drift cycles ✅ [L3 TESTED]
-- 9703e27d 19:09 dogfood(czl): Campaign v3 subgoals.json 10 criteria 补 Y* Schema v2 必填字段 [L3]
 
 **Y*gov** (23 commits):
 - af9e938 22:34 cleanup(W17+W18): delete check_wheel_contents.py + gov_mcp/ stale dir [L3]

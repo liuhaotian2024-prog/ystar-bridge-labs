@@ -197,14 +197,26 @@ def evaluate_rule(rule: dict, payload: dict, context: dict) -> bool:
     if allowed_tools and actual_tool not in allowed_tools:
         return False
 
-    # Check conditions (OR logic: ANY condition match triggers the rule)
+    # Check conditions (logic: OR or AND)
     conditions = trigger.get("conditions", [])
     if not conditions:
         return True
-    for condition in conditions:
-        if check_condition(condition, payload, context):
-            return True
-    return False
+
+    # Get logic mode (default to OR for backward compatibility)
+    logic_mode = trigger.get("logic", "OR").upper()
+
+    if logic_mode == "AND":
+        # AND logic: ALL conditions must match
+        for condition in conditions:
+            if not check_condition(condition, payload, context):
+                return False  # One fail → rule doesn't match
+        return True  # All passed → rule matches
+    else:
+        # OR logic (default): ANY condition match triggers the rule
+        for condition in conditions:
+            if check_condition(condition, payload, context):
+                return True
+        return False
 
 
 def emit_cieu_event(event_type: str, rule_id: str, severity: str, payload: dict):
