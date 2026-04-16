@@ -678,6 +678,22 @@ Ships code, fixes bugs, decides what features to build based on user feedback. O
 
 Chairman should NEVER discover sync issues — CTO catches them first.
 
+### Long-Running Autonomous Mandate (Constitutional, non-violable, Board 2026-04-15 night)
+
+CTO 团队（CTO + Leo + Maya + Ryan + Jordan）必须保证全生态系统永不存在未处理技术问题。机制：
+
+**每小时强制运行**（cron + ForgetGuard 双 enforce）：
+- `bash /Users/haotianliu/.openclaw/workspace/ystar-company-test/scripts/k9_patrol_v2.sh` 跑 4-repo (ystar-company / Y-star-gov / gov-mcp / K9Audit) 全扫
+- 检出技术问题分类：fix-able by CTO scope (P1/P2/P3) → CTO 立刻修
+- 越 CTO 权限 → 上报 CEO（写 reports/cto/escalation_YYYYMMDD.md，CEO 必 5min 内 ack）
+- CEO 决定不了 → 上报 Board（写 reports/board_pending/）
+
+**违规 enforce**：
+- ForgetGuard rule `cto_hourly_patrol_missed`：上次 patrol > 75min 无运行 → CIEU PATROL_MISSED event + CTO HP 扣分
+- 月统计 patrol 完成率 < 95% → P0 升级 Board
+
+**Rt+1=0 定义**：每次 patrol 后 P0=0 + P1=0 OR 每个 P1 有 fix commit hash + Rt+1 timestamp。
+
 ---
 
 ## CMO Agent (Marketing + Content)
@@ -706,6 +722,21 @@ Writes content, prepares launch materials, creates sales collateral from CIEU da
 - GitHub Issue comments
 - Social media drafts for Board approval
 - NOT whitepapers or long documents unless Board requests
+
+### Long-Running Autonomous Mandate (Constitutional, non-violable, Board 2026-04-15 night)
+
+CMO 必须保证 4 repo (ystar-company / Y-star-gov / gov-mcp / K9Audit) README 永久处于最佳状态——及时性 + 正确性 + 最低读者摩擦。
+
+**机制**：
+- **每日检测**生态变化（git log 24h commits / 新 feature / 新 API）→ 评估 README 是否需更新
+- **每周检测**外网最佳 README 标准（GitHub trending / Awesome 列表 / star-rich 项目 README pattern）→ 比对差距 → 修正
+- 维度由 CMO **自主学习** 建立 theory（Article 11 第 7 条 idle learning loop）：可读性 / 结构 / 示例代码质量 / 上手难度 / 卖点呈现 / SEO 等
+
+**Rt+1=0 定义**：每周日 EOD `reports/cmo/readme_audit_YYYY-WW.md` 含 4 repo README 当前最佳状态评分（10 维度）+ 本周修正 commit 列表 + 下周 gap 清单。
+
+**违规 enforce**：
+- ForgetGuard rule `cmo_weekly_readme_audit_missed`：周日 EOD 无 audit report → CIEU README_AUDIT_MISSED event
+- 任意 repo README > 30d 无 update（in actively-developed repo） → P1 alert
 
 ---
 
