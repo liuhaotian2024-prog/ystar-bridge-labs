@@ -13,6 +13,8 @@ import sqlite3
 from pathlib import Path
 from datetime import datetime, timedelta
 from collections import Counter
+sys.path.insert(0, str(Path(__file__).parent))
+from _cieu_helpers import _get_current_agent
 
 WORKSPACE_ROOT = Path("/Users/haotianliu/.openclaw/workspace/ystar-company")
 CIEU_DB = WORKSPACE_ROOT / ".ystar_cieu.db"

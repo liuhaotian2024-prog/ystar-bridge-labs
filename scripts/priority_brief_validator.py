@@ -18,6 +18,8 @@ import json
 import time
 import uuid
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+from _cieu_helpers import _get_current_agent
 
 
 def parse_frontmatter(content: str) -> dict:

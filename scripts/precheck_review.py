@@ -25,6 +25,8 @@ sys.path.insert(0, "/Users/haotianliu/.openclaw/workspace/Y-star-gov")
 
 from ystar.memory.store import MemoryStore
 from ystar.memory.models import Memory
+sys.path.insert(0, str(Path(__file__).parent))
+from _cieu_helpers import _get_current_agent
 
 COMPANY_ROOT = Path("/Users/haotianliu/.openclaw/workspace/ystar-company")
 CIEU_DB_PATH = COMPANY_ROOT / ".ystar_cieu.db"

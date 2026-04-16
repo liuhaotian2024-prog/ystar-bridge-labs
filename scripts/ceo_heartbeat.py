@@ -31,6 +31,9 @@ from pathlib import Path
 from typing import Optional
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT / "scripts"))
+
+from _cieu_helpers import _get_current_agent
 ACTIVE_AGENT_PATH = REPO_ROOT / ".ystar_active_agent"
 PRIORITY_BRIEF_PATH = REPO_ROOT / "reports" / "priority_brief.md"
 CIEU_DB_PATH = REPO_ROOT / ".ystar_cieu.db"  # Fixed: use .ystar_cieu.db not .ystar_memory.db
@@ -52,10 +55,8 @@ GEMMA_TIMEOUT = 5.0  # seconds
 
 
 def get_active_agent() -> str:
-    """Read current active agent from .ystar_active_agent."""
-    if not ACTIVE_AGENT_PATH.exists():
-        return "unknown"
-    return ACTIVE_AGENT_PATH.read_text().strip()
+    """Read current active agent from .ystar_active_agent. Use _get_current_agent() for CIEU emits."""
+    return _get_current_agent()  # Delegate to helper that returns "system" instead of "unknown"
 
 
 def parse_priority_brief_targets() -> dict:
@@ -165,7 +166,7 @@ def emit_cieu_event(event_type: str, description: str, metadata: dict = None, dr
         cursor.execute("""
             INSERT INTO cieu_events (timestamp, actor, event_type, description, metadata)
             VALUES (?, ?, ?, ?, ?)
-        """, (now, "ceo", event_type, description, metadata_json))
+        """, (now, _get_current_agent(), event_type, description, metadata_json))
 
         conn.commit()
         conn.close()

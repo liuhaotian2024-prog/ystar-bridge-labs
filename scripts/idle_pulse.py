@@ -11,6 +11,8 @@ import json
 import time
 from datetime import datetime
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+from _cieu_helpers import _get_current_agent
 
 COMPANY_ROOT = Path("/Users/haotianliu/.openclaw/workspace/ystar-company")
 CIEU_DB = COMPANY_ROOT / ".ystar_cieu.db"

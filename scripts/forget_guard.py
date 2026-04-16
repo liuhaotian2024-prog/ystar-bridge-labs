@@ -16,6 +16,8 @@ import os
 import sqlite3
 from pathlib import Path
 from datetime import datetime
+sys.path.insert(0, str(Path(__file__).parent))
+from _cieu_helpers import _get_current_agent
 
 try:
     import yaml

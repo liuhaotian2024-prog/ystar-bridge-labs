@@ -16,6 +16,8 @@ import json
 import subprocess
 from pathlib import Path
 from datetime import datetime
+sys.path.insert(0, str(Path(__file__).parent))
+from _cieu_helpers import _get_current_agent
 
 WORKSPACE_ROOT = Path("/Users/haotianliu/.openclaw/workspace/ystar-company")
 YGOV_ROOT = Path("/Users/haotianliu/.openclaw/workspace/Y-star-gov")

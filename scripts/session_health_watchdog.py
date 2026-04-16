@@ -30,6 +30,8 @@ from pathlib import Path
 from typing import Dict, Optional, Tuple
 import os
 import glob
+sys.path.insert(0, str(Path(__file__).parent))
+from _cieu_helpers import _get_current_agent
 
 
 # === Thresholds (Board-approved 2026-04-12) ===

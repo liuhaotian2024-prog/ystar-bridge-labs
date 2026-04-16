@@ -23,6 +23,8 @@ if YSTAR_GOV_PATH.exists():
     sys.path.insert(0, str(YSTAR_GOV_PATH))
 
 from ystar.memory import MemoryStore, Memory
+sys.path.insert(0, str(Path(__file__).parent))
+from _cieu_helpers import _get_current_agent
 
 
 def update_priority_brief(company_root: Path, session_start_ts: float):
@@ -316,7 +318,7 @@ def write_board_lessons(lessons: List[Dict], store: MemoryStore, cieu_db_path: P
 
         # Create lesson memory
         mem = Memory(
-            agent_id="ceo",  # Board lessons are CEO's responsibility to learn
+            agent_id=_get_current_agent(),  # Board lessons are CEO's responsibility to learn
             memory_type="lesson",
             content=lesson_content,
             initial_score=1.0,

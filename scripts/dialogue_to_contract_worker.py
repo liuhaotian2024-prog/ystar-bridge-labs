@@ -18,6 +18,9 @@ CIEU_DB = WORKSPACE_ROOT / ".ystar_cieu.db"
 
 # Add Y*gov to path
 sys.path.insert(0, str(YGOV_ROOT))
+sys.path.insert(0, str(WORKSPACE_ROOT / "scripts"))
+
+from _cieu_helpers import _get_current_agent
 
 def emit_cieu_event(event_type: str, details: dict):
     """Emit CIEU event to database using actual schema"""
@@ -40,7 +43,7 @@ def emit_cieu_event(event_type: str, details: dict):
             int(time.time() * 1_000_000),  # microsecond timestamp
             time.time(),
             "dialogue_worker",
-            "hook_pipeline",
+            _get_current_agent(),
             event_type,
             "allow",  # Informational event, not enforcement
             1,

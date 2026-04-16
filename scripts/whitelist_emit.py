@@ -21,6 +21,7 @@ from datetime import datetime
 try:
     sys.path.insert(0, str(Path(__file__).parent))
     from whitelist_match import WhitelistMatcher
+    from _cieu_helpers import _get_current_agent
 except ImportError:
     # Silent fail-open: if matcher not available, exit cleanly
     sys.exit(0)
@@ -47,7 +48,7 @@ def emit_cieu_event(db_path: Path, event_type: str, data: dict):
         """, (
             datetime.now().isoformat(),
             event_type,
-            data.get("agent_id", "unknown"),
+            _get_current_agent(),
             data.get("action", "whitelist_match"),
             json.dumps(data.get("context", {})),
             data.get("intent", ""),
@@ -90,7 +91,6 @@ def main():
                 db_path=cieu_db,
                 event_type="WHITELIST_MATCH",
                 data={
-                    "agent_id": payload.get("agent_id", "unknown"),
                     "action": "whitelist_match",
                     "context": {
                         "entry_id": result.entry_id,
@@ -113,7 +113,6 @@ def main():
                     db_path=cieu_db,
                     event_type="WHITELIST_DRIFT",
                     data={
-                        "agent_id": payload.get("agent_id", "unknown"),
                         "action": "whitelist_drift",
                         "context": {
                             "top_3": [

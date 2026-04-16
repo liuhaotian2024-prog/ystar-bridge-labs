@@ -38,6 +38,8 @@ import time
 import uuid
 from pathlib import Path
 from typing import List, Dict, Set
+sys.path.insert(0, str(Path(__file__).parent))
+from _cieu_helpers import _get_current_agent
 
 # Add Y-star-gov to path
 YSTAR_GOV_PATH = Path(__file__).parent.parent.parent / "Y-star-gov"
@@ -141,7 +143,7 @@ def get_existing_board_values() -> Set[str]:
         conn = sqlite3.connect(MEMORY_DB)
         cursor = conn.execute("""
             SELECT content FROM memories
-            WHERE agent_id = 'ceo'
+            WHERE agent_id=_get_current_agent()
             AND memory_type = 'lesson'
             AND context_tags LIKE '%board_value%'
         """)
@@ -272,7 +274,7 @@ def extract_board_values() -> dict:
 
             for lesson_data in lessons_to_write:
                 mem = Memory(
-                    agent_id="ceo",
+                    agent_id=_get_current_agent(),
                     memory_type="lesson",
                     content=lesson_data["principle"],
                     initial_score=1.0,
@@ -387,7 +389,7 @@ def compensation_check(lookback_days: int = 7) -> dict:
         WHERE agent_id IN ('eng-kernel', 'eng-governance', 'eng-platform', 'eng-domains')
         AND created_at >= ?
         AND session_id IN (
-            SELECT DISTINCT session_id FROM cieu_events WHERE agent_id = 'ceo'
+            SELECT DISTINCT session_id FROM cieu_events WHERE agent_id=_get_current_agent()
         )
         AND session_id NOT IN (
             SELECT DISTINCT session_id FROM cieu_events WHERE agent_id = 'cto'
@@ -400,7 +402,7 @@ def compensation_check(lookback_days: int = 7) -> dict:
     cursor = conn.execute("""
         SELECT event_id, session_id, created_at
         FROM cieu_events
-        WHERE agent_id = 'ceo'
+        WHERE agent_id=_get_current_agent()
         AND event_type = 'INTENT_DECLARED'
         AND created_at >= ?
     """, (cutoff_time,))
@@ -461,7 +463,7 @@ def compensation_check(lookback_days: int = 7) -> dict:
 
             for limitation in limitations_detected:
                 mem = Memory(
-                    agent_id="ceo",
+                    agent_id=_get_current_agent(),
                     memory_type="gap",
                     content=f"[Board Limitation Detected] {limitation}",
                     initial_score=1.0,
