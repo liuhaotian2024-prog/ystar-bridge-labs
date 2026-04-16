@@ -83,6 +83,16 @@
             "async": true
           }
         ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_subagent_output_scan.py",
+            "timeout": 3000
+          }
+        ]
       }
     ],
     "Stop": [
