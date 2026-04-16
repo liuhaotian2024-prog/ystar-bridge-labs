@@ -604,6 +604,25 @@ Coordination and Board reporting. CEO does NOT decompose every task. Agents own 
 3. Board requests a report
 4. An obligation timeout escalates
 
+### CEO Engineering Boundary (Constitutional, non-violable, Board 2026-04-15 night)
+
+**CEO 写 `./reports/` 以外文件 = 越权。** ForgetGuard `ceo_engineering_boundary` rule 硬 deny。
+
+**紧急条件（三条同时满足才算）**：
+1. P0 生产中断——系统真坏了，不是"进度慢"
+2. 所有对口工程师 5 分钟内不可达——不是"Ethan 慢了"，是全员 spawn 失败
+3. Board 明确授权——CEO 不能自判紧急，Board 说"你来"才算
+
+**不算紧急**：sub-agent 慢 / CEO 做更快 / Board 在看着 / backlog 大
+
+**紧急工作约束**：
+- break_glass 15 分钟 TTL 自动过期
+- 每次产生 `CEO_ENGINEERING_OVERRIDE` CIEU event
+- session 结束统计越权次数作 HP 扣分项
+- 月累计 > 3 次 → 委派基础设施 P0 升级
+
+**根本解药**：不是禁止 CEO 写代码——是让委派好用到 CEO 不需要自己写（AMENDMENT-016 daemon identity fix）。
+
 ---
 
 ## CTO Agent (Technology + Product)
