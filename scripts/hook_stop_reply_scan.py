@@ -231,6 +231,63 @@ def inject_reply_taxonomy_whitelist_audit(reply_text: str, agent_id: str) -> Non
         print(warning, file=sys.stdout)
 
 
+def auto_compare_tool_uses_claim(receipt_text: str, metadata_tool_uses: int, agent_id: str = "unknown") -> None:
+    """
+    7th injector (NEW — Maya CZL-152 P0): Auto tool_uses claim vs metadata comparison.
+
+    Context: CEO currently manually catches sub-agent over-claims (9/14 agents today).
+    This must be automated.
+
+    Extracts tool_uses claim from receipt text ("tool_uses: N" or "N tool_uses" pattern),
+    compares with task-notification metadata <tool_uses>N</tool_uses>,
+    emits CIEU TOOL_USES_CLAIM_MISMATCH if |claim - actual| > 2 (tolerance threshold).
+
+    Args:
+        receipt_text: Sub-agent receipt text (from <result> block)
+        metadata_tool_uses: Actual tool_uses count from <metadata> tag
+        agent_id: Agent ID for CIEU event attribution
+
+    Emits:
+        CIEU event TOOL_USES_CLAIM_MISMATCH if delta > 2
+        Warning injection to session if mismatch detected
+    """
+    # Extract claimed tool_uses from receipt text
+    claim_match = re.search(r'tool_uses.*?(\d+)', receipt_text, re.IGNORECASE)
+    if not claim_match:
+        # No claim in receipt — acceptable for conversational acks
+        return
+
+    claimed = int(claim_match.group(1))
+    actual = metadata_tool_uses
+    delta = abs(claimed - actual)
+
+    # Tolerance: ±2 tool_uses acceptable (small counting variations)
+    if delta <= 2:
+        return
+
+    # MISMATCH DETECTED — emit CIEU + inject warning
+    _emit_cieu(
+        event_type="TOOL_USES_CLAIM_MISMATCH",
+        metadata={
+            "agent_id": agent_id,
+            "claimed": claimed,
+            "actual": actual,
+            "delta": delta,
+            "severity": "high" if delta > 5 else "medium",
+            "receipt_excerpt": receipt_text[:200]
+        }
+    )
+
+    # Inject warning to session
+    warning = (
+        f"<system-reminder>⚠️ TOOL_USES_CLAIM_MISMATCH: {agent_id} claimed {claimed} tool_uses "
+        f"but metadata shows {actual} (delta={delta}, threshold=2). "
+        f"Over-claiming erodes trust_score. Honest receipt required per CZL framework. "
+        f"See feedback_subagent_receipt_empirical_verify.md.</system-reminder>"
+    )
+    print(warning, file=sys.stdout)
+
+
 def inject_coordinator_reply_5tuple_audit(reply_text: str) -> None:
     """
     5th injector: Coordinator reply 5-tuple compliance enforcement.
@@ -374,14 +431,29 @@ def main():
 
         # 4. TASK-NOTIFICATION extraction (Board 2026-04-16 Gate 2 fix)
         # Sub-agent receipts come through task-notification blocks, not CEO main-thread.
-        # Extract each <result>...</result>, validate separately.
+        # Extract each <result>...</result> + <metadata>, validate separately.
         try:
-            notification_pattern = re.compile(
-                r'<task-notification>.*?<result>(.*?)</result>.*?</task-notification>',
+            # NEW (Maya CZL-152): Extract full task-notification with metadata
+            notification_full_pattern = re.compile(
+                r'<task-notification>.*?<metadata>.*?<tool_uses>(\d+)</tool_uses>.*?</metadata>.*?<result>(.*?)</result>.*?</task-notification>',
                 re.DOTALL
             )
-            receipts = notification_pattern.findall(reply)
-            for receipt_text in receipts:
+            notification_matches = notification_full_pattern.finditer(reply)
+
+            for match in notification_matches:
+                metadata_tool_uses = int(match.group(1))
+                receipt_text = match.group(2)
+
+                # Extract agent_id from receipt if present (format: "## RECEIPT (AgentName #CZL-N)")
+                agent_id_match = re.search(r'##\s*RECEIPT\s*\(([^#\)]+)', receipt_text)
+                receipt_agent_id = agent_id_match.group(1).strip() if agent_id_match else "unknown"
+
+                # NEW INJECTOR #7 (Maya CZL-152): Auto tool_uses claim comparison
+                try:
+                    auto_compare_tool_uses_claim(receipt_text, metadata_tool_uses, receipt_agent_id)
+                except Exception as e:
+                    print(f"[W10] Tool_uses claim comparison failed: {e}", file=sys.stderr)
+
                 # Per-receipt CZL correction
                 try:
                     czl_receipt_correction = inject_czl_corrections(receipt_text=receipt_text)

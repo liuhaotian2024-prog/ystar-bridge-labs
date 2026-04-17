@@ -29,14 +29,14 @@ SCRIPT_DIR = Path(__file__).parent
 YSTAR_COMPANY = SCRIPT_DIR.parent
 YSTAR_GOV = YSTAR_COMPANY.parent / "Y-star-gov"
 K9_AUDIT = Path("/tmp/K9Audit")  # Standard K9Audit clone location
-OPENCLAW = Path.home() / ".openclaw"  # OpenClaw workspace adapter
+GOV_MCP = YSTAR_COMPANY.parent / "gov-mcp"  # gov-mcp server repo
 
-# Repo search paths
+# Repo search paths (ALL 4 repos)
 SEARCH_PATHS = [
-    (YSTAR_GOV, ["ystar/governance/*.py", "ystar/adapters/*.py", "ystar/domains/*.py"]),
     (YSTAR_COMPANY, ["scripts/*.py", "governance/*.md", "knowledge/**/*.md"]),
-    (K9_AUDIT, ["k9log/*.py", "tests/k9/*.py"]) if K9_AUDIT.exists() else None,
-    (OPENCLAW, ["adapters/*.py"]) if OPENCLAW.exists() else None,
+    (YSTAR_GOV, ["ystar/**/*.py", "docs/**/*.md", "tests/**/*.py"]),
+    (K9_AUDIT, ["k9log/*.py", "tests/**/*.py", "docs/**/*.md"]) if K9_AUDIT.exists() else None,
+    (GOV_MCP, ["src/**/*.py", "adapters/**/*.py"]) if GOV_MCP.exists() else None,
 ]
 SEARCH_PATHS = [p for p in SEARCH_PATHS if p is not None]
 
