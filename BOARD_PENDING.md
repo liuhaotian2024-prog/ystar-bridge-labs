@@ -178,3 +178,5 @@ Agent (包括 CEO) 禁止在工作进程推动中使用以下人类惰性概念:
 - digest: `reports/k9_daily/20260416.md`
 - findings: 11 repo-audit items
 - run: 2026-04-16T06:00:00-0400
+- [ ] TS3L paper: ready for external publish review
+- [ ] Case study draft: AI CEO 2-session case study for Medium/GitHub publish review
