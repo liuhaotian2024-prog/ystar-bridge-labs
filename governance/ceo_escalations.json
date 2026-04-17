@@ -1,0 +1,24 @@
+[
+  {
+    "timestamp": "2026-04-16T15:06:51.140245",
+    "event_type": "FORGET_GUARD_K9_DENY",
+    "agent_id": "ceo",
+    "violation_type": "choice_question_to_board",
+    "params": {
+      "violation_type": "choice_question_to_board",
+      "agent_id": "ceo"
+    },
+    "priority": "P0"
+  },
+  {
+    "timestamp": "2026-04-16T15:06:56.259918",
+    "event_type": "FORGET_GUARD_K9_DENY",
+    "agent_id": "ceo",
+    "violation_type": "test_unique_6",
+    "params": {
+      "violation_type": "test_unique_6",
+      "agent_id": "ceo"
+    },
+    "priority": "P0"
+  }
+]

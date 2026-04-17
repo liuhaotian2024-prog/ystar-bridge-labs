@@ -1,5 +1,5 @@
 # Tombstone Scan Report
-Generated: 2026-04-16T04:54:45.157265
+Generated: 2026-04-16T22:47:34.272381
 Session: ystar-company_0a84f3c6
 
 ## Files with Tombstone Headers
@@ -7,9 +7,6 @@ Session: ystar-company_0a84f3c6
 
 ## Tasks Marked as Deprecated
 - cto/intent
-- cto/twelve_layer_progress
-- cto/execution_plan
-- cto/deliverables
-- cto/key_design_decisions
+- cto/current_focus
 
-Total tombstones applied: 5
+Total tombstones applied: 2

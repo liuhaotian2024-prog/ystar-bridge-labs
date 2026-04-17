@@ -19,6 +19,9 @@ Author: Ethan Wright (CTO) - Y* Bridge Labs
 import json, os, sys, traceback
 from pathlib import Path
 
+# Y*gov module path fix (Board 2026-04-16 P0: ModuleNotFoundError emergency)
+sys.path.insert(0, "/Users/haotianliu/.openclaw/workspace/Y-star-gov")
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 

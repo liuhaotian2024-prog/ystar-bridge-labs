@@ -8,6 +8,9 @@ import json, subprocess, sys, time, sqlite3
 from pathlib import Path
 from datetime import datetime
 
+# Y*gov module path fix (Board 2026-04-16 P0: ModuleNotFoundError emergency)
+sys.path.insert(0, "/Users/haotianliu/.openclaw/workspace/Y-star-gov")
+
 REPO = Path("/Users/haotianliu/.openclaw/workspace/ystar-company")
 YGOV = Path("/Users/haotianliu/.openclaw/workspace/Y-star-gov")
 

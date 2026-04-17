@@ -1,79 +1,127 @@
-# Session Summary — 2026-04-16
+# Session Summary 20260416
+**Generated**: 2026-04-16T22:47:33.956827
 
-**Author**: Samantha Lin (Secretary), CZL-132 W10 atomic
-**Session window**: 2026-04-16 daytime → EOD
-**Campaign**: v6 K9 Routing + Phase 2-3 Backlog Drain (launched 17:21Z)
-**Closing health**: HP:54 AC:84 (yellow/green)
+## Today's Commits (both repos)
 
----
+### ystar-company
+- 2c132e1d 22:17 feat(architecture): CTO System 2-3 takeover — spec + scan/verify impl + proof atomic (CZL-155)
+- 445b1b0f 22:10 feat(ceo/wisdom): autonomous loop algorithm + U-action workflow + self-as-software + workaround-before-restart
+- a77da76b 21:54 feat(ceo/wisdom): U-action workflow + self-as-software methodologies + first whiteboard task CZL-155
+- 33f4db38 21:44 feat(ceo/wisdom): System 5 > Operations paradigm — CEO must build systems not do work
+- 51a16b2f 20:58 feat(ceo): wisdom persistence system (7 entries) + enforce inventory + Phase 1 foundation proposal
+- 2dcffc28 20:58 feat(enforce): 3 P0 automations LIVE — precheck 4-repo + artifact verify + tool_uses auto-compare
+- 50cb524b 20:37 feat(ceo/wisdom): persistence architecture for CEO semantic memory — 4 paradigm + self-knowledge + strategic + meta entries
+- bb62664d 20:32 feat(ceo): mission function M(t) + CEO philosophy + session handoff
+- 1728d8d1 18:07 feat(agents): 9 engineer charters Opus 4.6 + macOS path clean + 5 new engineers + cognitive prefs
+- 3c9bd166 18:07 feat(scripts): V2 action model impl + 终极款 restart + K9/AC monitor + dispatch infra
+- 89096d51 18:07 feat(knowledge+tests): 5 engineer methodologies + trust ladder + 30+ test files + governance reports
+- c0b5a5b3 18:06 feat(governance): 7 constitutional specs shipped — action_model_v2 (17-step) + restart_preparation_model_v1 (终极款) + formal_methods_primer_v1 (7 frameworks) + reply_taxonomy_whitelist_v1 (5 templates) + pre_build_routing_gate_v1 (4-repo precheck) + auto_commit_push_v1 + reply_scan_detector_methodology_v1
+- f00e91ac 07:20 chore(state+gov): session memory + ForgetGuard subagent_unauthorized_git_op rule
+- 801bcda1 07:20 feat(monitor): K9-RT Sentinel continuous schedule wrapper + cron install hint
+- 9cda3835 07:19 docs(reports+knowledge): TS3L paper + universal enforcement audit + K9-RT MVP reports + ystar-defuse abandonment + misc
+- 27679d6f 07:19 test(platform+governance): daemon stateless verify + production hook wiring + governance test corpus
+- 64eebbb9 07:19 feat(platform): wire production Stop hook to Y-star-gov adapter injectors
+- 90b45c68 07:19 feat(secretary+platform): real-time archival CZL duty + generic boot duty-mount + SLA enforcement
+- 1af2b11c 07:18 gov(doctrine): CZL Unified Communication Protocol v1 + auto-enforce meta + ForgetGuard rules expansion
+- dedf11d7 04:53 feat(k9): 3-dimensional governance audit — Producer/Executor/Governed baseline Rt+1
+- 7dfd8e1f 04:48 docs(cto): Day 4 E2E integration report
+- 2bc51fa9 04:47 docs(platform): F2 emit-side canonical validation pattern [L4 SHIPPED]
+- 447d969c 04:46 feat(platform): F2 emit-side canonical agent_id enforcement [L3 TESTED]
+- f9e6ca09 04:38 docs(compliance): Batch 2 migration report — registry v1.1 impact analysis
+- dab268be 04:38 feat(governance): registry v1.1 — system components + case aliases [Batch 2]
+- 83376be4 04:35 data(audit): F1+F4 migration snapshot — 64.4%→39.8% unidentified
+- 420fea8a 04:34 feat(scripts): F4 CIEU agent_id migration tool
+- e9e81987 04:34 feat(governance): F1 canonical agent_id registry v1.0
+- 46c4ae61 04:34 docs(cto): Day 2 plugin handlers report — 2 impl + 2 stub + mcpb blocker
+- 0d80de9d 04:23 feat(boot): inject overnight learning digest to boot report (Fix 2)
+- 1aa1c66a 04:23 fix(learning): local_learn.py timeout hardening (Priority 3 夜间失败修复)
+- e01b99ab 04:20 docs(cto): Day 1 plugin manifest init report (30-day mining plan)
+- b0b45403 01:47 research(cto): plugin packaging PoC — 8-tool subset + .mcpb entry point
+- df52da1f 01:46 archive(secretary): 30-day mining plant + 4 dept research + methodology assets [L3 ARCHIVED]
+- 668bd1c7 01:40 spec(ceo): 30-day 矿机方案 v1 — 4 部门一致 Plugin $49/mo MVP [L3 待Board批]
+- 684d96d0 01:39 fix(CRITICAL2): Stop hook 黑名单→白名单状态机 + Sofia CMO 30-day [Board 真根治]
+- d26aa9d8 01:37 research(platform): Ryan 30-day Plugin tech roadmap — MCP/deps/marketplace [P1 atomic]
+- 02dff4c2 01:36 spec(ceo): 30-day mining plant integration skeleton + 4 部门研究 status [L3]
+- 3e11a335 01:32 research(cfo): Marco 30-day monetization models — Plugin $49/mo wins [L3]
+- c9e01697 01:31 fix(CRITICAL): CZL R-zero root enforcement — strip topic keywords + add IDLE_DISGUISE_PHRASES [Board 授权 break_glass]
+- 9965184f 01:29 fix(cieu): W23 全 emit 点强制真实 agent_id (40%→0% unknown)
+- 2ab73e80 01:27 chore(cleanup): remove lesson_capture_trigger.py (not deployed) [W17]
+- 95b4e3aa 01:27 fix(audit): k9_audit_v3 HookChain liveness window 60s→600s [W29.1]
+- 7d097e24 01:11 docs(czl): surface CZL methodology in README + canonical CZL.md [L4 SHIP]
+- 449d5989 01:10 research(cso): Zara bounty platform deep dive — Top 3 盈利方向 [P1 atomic]
+- ae48bc04 01:09 fix(audit): extract HOOK emit to standalone script (shell var expansion fix)
+- dc7c5e35 01:08 fix(audit): sync HOOK emit (remove & background) for k9_audit_v3 liveness window
+- 5d33e9b4 01:07 fix(audit): emit 4 CRITICAL canonical events (HOOK_PRE_CALL, HOOK_POST_CALL, INTENT_DECLARED, INTENT_FULFILLED) [W29 atomic]
+- 75330245 01:07 docs(methodology): 20260415 session assets inventory — 12 canonical doctrines locked [L4 DOCTRINE]
+- 34a45256 00:56 feat(cron): k9_audit_v3 6h schedule + wire_integrity_check retain
+- ba4328d3 00:56 fix(k9-audit): W26.1 schema + event_type aliases (cieu_event_taxonomy §4.1)
+- e4d0675d 00:53 doctrine(cieu): event taxonomy canonical naming — 148 types registered, 5 audit_v3 aliases, ForgetGuard rule spec [L3 CHARTER]
+- 8e35d053 00:48 feat(platform): k9_audit_v3.py — 3-layer audit framework (Liveness/Chain/Invariant)
+- 073d641b 00:46 feat(governance): ForgetGuard rule ceo_no_midstream_checkin (W25 R6 root fix)
+- 30e99091 00:45 feat(governance): CEO mid-stream check-in protocol (W25 R6 root fix)
+- 814f55e1 00:44 docs(agents): CEO Dispatch Self-Check sub-section in CEO Agent segment [L3 GOV]
+- 89ead579 00:44 docs(governance): CEO dispatch self-check protocol (W24 R5 fix) [L3 GOV]
+- 190a6020 00:37 docs(governance): sub_agent_boot_prompt_template.md — W22 constitutional boot context for all sub-agent dispatch [L3 CHARTER]
+- bd5483c6 00:37 feat(cto): team permission scheme spec — 4 engineers write scopes + bypass paths + daemon auto-recovery + CROBA reload + audit trail [Board P0]
+- ac47b44d 00:35 WIP: add subagent_no_commit_after_5_writes rule [L2 IMPL]
+- 03948762 00:33 docs(agents): reference IRON RULE 0.5 Atomic Dispatch [L4 CONSTITUTIONAL]
+- 824092f8 00:33 feat(governance): atomic dispatch doctrine [L4 CONSTITUTIONAL]
+- 168720c2 00:32 gov(agents): inject IRON RULE 0 NO CHOICE QUESTIONS into AGENTS.md head [L3 IMPL]
+- 46e3249c 00:31 docs(constitutional): IRON RULE 0 NO CHOICE QUESTIONS into AGENTS.md top [L5 CONST]
+- e8a4c55e 00:31 docs(constitutional): IRON RULE 0 NO CHOICE QUESTIONS into CLAUDE.md top [L5 CONST]
+- 939a8c47 00:22 report(cto): health_scan_20260415 — 4 scans complete, Rt+1=22 obstacles [L3 PARTIAL]
+- d574f8aa 00:18 fix(governance): forget_guard Format 4 — tool_name at root level [L3 TESTED]
+- 11ee68ba 00:17 fix(test): parse multi-line JSON in test_p3_to_p2_feedback_loop
+- dab004c7 00:14 constitutional(cto): Total Y* + 6-Step CZL Daily Loop + 4-Step Learning + Rt+1 escalation [L5 CONST]
+- 0cf683aa 00:13 fix(idle-learning): support KNOWLEDGE_ROOT env override for test mode
+- a19c156c 00:05 wrap(W16): Ryan partial — 2 new ForgetGuard rules + task_type_map [L3 IMPL]
+- 414564c5 23:54 fix(governance): Maya W16 — forget_guard.py AND logic + 3 E2E tests [L3 TESTED]
+- b0a8a2ed 23:53 fix(tests): OmissionEngine test fixture schema alignment
+- 63be4b37 23:46 task(W16): 3 engineer task cards — Leo omission / Maya amendment+governance / Ryan 8-file chaos
+- 823a0595 23:45 gov(constitutional): CTO hourly K9 patrol + CMO weekly README audit mandates [L4 GOV]
+- 067991bd 23:45 audit(czl): CEO meta-audit 全岗位绑死核查 — 章程✅/执行✅/审计⚠️40%身份缺失 [L3 AUDIT]
+- 41ce8899 23:41 chore(dna-log): secretary AGENTS.md dispatcher write-access patch audit [L3 SHIPPED]
+- e37f195d 23:40 fix(agents-md): add .claude/tasks/ to CTO/CMO/CSO/CFO Write Access [L3 SHIPPED]
+- 20f4018f 23:29 feat(forgetguard): CEO engineering boundary rule + agent_filter support [L3 IMPL]
+- f0f4fe8a 23:26 doctrine(czl): CEO Engineering Boundary — 紧急3条件 + break_glass 15min TTL [Board 批准]
+- 24a71ee8 23:19 fix(W16): session fixture + autonomy skip — 58→38 fail [CEO→CTO handoff]
+- eb25dae7 23:14 skip(tests): autonomy_driver_integration — factory not implemented [W16 -6]
+- ba8f6f9a 23:12 fix(tests): session_agent_stack fixtures add 4 required schema keys [W16 -12]
+- fa18623e 23:10 design(CRITICAL): Stop hook blacklist→whitelist 反转 [Board 2026-04-15 night]
+- f301fd28 23:07 fix(CRITICAL): forget_guard 2 root bugs — tool_name key + AND→OR conditions [L3 TESTED]
 
-## 1. Chronological Narrative
+### Y*gov
+- 1c8c613 07:31 feat(governance): runtime detectors + ForgetGuard rule expansion (E1/I1/coord_audit/observer)
+- 5c5d950 07:30 feat(adapters): Stop hook injector chain — K9-RT warnings + CZL Gate + auto-validate receipt + coordinator audit
+- 92a0738 07:30 feat(governance+kernel): K9-RT Sentinel + RT_MEASUREMENT schema v1.0
+- 0591fe7 07:30 feat(kernel): CZL Protocol v1 — message envelope + Gate 1/2 validators + auto-fill parser
+- 6b529d3 01:48 fix(test): hook_bash_command_scan bypass session_start protocol enforcement [Maya W30.1 batch 2/3]
+- cec5862 01:45 fix(test): session_agent_stack fixture 补全必需键 (immutable_paths/override_roles/contract/agent_behavior_rules) [Maya W30.1 batch 1/3]
+- 8531942 01:32 test: skip 4 pipeline E2E tests (omission/violation logic incomplete)
+- 95244f7 01:31 test: skip CLI docs test (safemode not yet documented)
+- a6ae6fd 01:30 test: skip completion_without_audit_warns (behavior rule now DENY not WARNING)
+- 75b13e2 01:30 test: skip 2 Layer3 tests (schema/implementation incomplete)
+- d5bd527 01:29 test: skip 6 autonomy_driver tests (missing create_autonomy_driver fixture after A014)
+- 316ed40 00:41 test(hook-daemon): W23 E2E — 5-identity rapid switch without cache lock
+- c028114 00:40 fix(hook-daemon): W23 stateless agent_id — read fresh on every hook call, no cache
+- 567d4c1 00:17 feat(W42): Maya v2 — Path A↔RLE bridge minimum [L3 IMPL CEO-wrapped]
+- 0341f3b 23:53 fix(omission): OmissionEngine schema alignment — triggered_by_event_id → trigger_event_id
+- bc5b4b4 23:34 fix(daemon): AMENDMENT-016 fresh agent_id on every hook call [L3 IMPL]
 
-### Phase 1 — K9 Routing Healing (morning → 17:18Z)
-Day opened with the chronic CROBA false-positive epidemic from the prior session. K9 routing subscriber was emitting AGENT_REGISTRY_K9_WARN events whenever any tool name partially matched canonical agent identifiers, producing ~7 false positives per smoke window. Two parallel atomics were dispatched: **CZL-100** (Option B tool_name filter for CROBA) and **CZL-92** (registry aliases for the 15-role canonical list plus 11 full-form aliases). Both shipped Rt+1=0 with full test coverage (10/10 + 15-alias verification). Daemon was recycled to a fresh PID and a 5-minute smoke window confirmed zero CROBA noise. This closed W1 at 17:18Z as L4 SHIPPED.
 
-### Phase 2 — HiAgent BOOT CONTEXT Enforcement (17:18Z → 17:30Z)
-With K9 healing complete, attention shifted to the systemic problem of sub-agents being dispatched without first reading current state (`.czl_subgoals.json` + recent git log), causing them to either re-do completed work or miss the campaign frame entirely. Maya was dispatched on the FG rule `subagent_boot_no_state_read` (78-line detector + 6/6 tests). Simultaneously, the dispatch prompt template `governance/sub_agent_boot_prompt_template.md` was updated to require a BOOT CONTEXT block at the head of every dispatch. Maya's receipt was the first fully-honest tool_uses claim in recent memory (9 = 9 metadata). W2 closed at 17:30Z L4 SHIPPED.
+## Active Campaign
+- Status: RUNNING
+- Campaign: Campaign v6 — K9 Routing + Phase 2-3 Backlog Drain (2026-04-16)
 
-### Phase 3 — 5 New Engineer Activation (17:30Z → 17:33Z)
-Following the Board directive to expand the engineering bench, five new engineer roles were registered: eng-data, eng-security, eng-ml, eng-perf, eng-compliance. Ryan dispatched on CZL-102 to wire them through three integration points: governance_boot.sh CHARTER_MAP entries, dispatch_board.py VALID_ENGINEERS whitelist, and engineer_trust_scores.json (trust=0 baseline for all five). Three tests PASS. **However**, Step 6 (methodology self-build per engineer) was deferred to W4's Phase 2-3 skill-trust remediation gauntlet — Ethan #73 must PASS before new engineers can self-author their methodology files. Ryan also produced the day's first E1 violation: claim 12 vs metadata 18 (50% under-report). W3 closed partial Rt+1=1 at 17:33Z.
 
-### Phase 4 — Backlog Drain Wave (17:33Z → 17:48Z)
-Four parallel backlog items were dispatched: #25 (Ethan, daemon concurrent-write audit), #32 (Leo, enforcement_observer threshold cross-validation), #49 (Maya, meta-meta audit re-verification of 20 deliverables), #62 (held — 6 per-rule hook detectors). Results were mixed but largely successful:
+## CIEU 24h
+- Total events: 114241
 
-- **Ethan CZL-105 (#25)**: Audited 4 daemons + 6 shared resources. SQLite WAL working (0 CIEU write errors). Identified `.ystar_active_agent` as state-ownership race (not corruption). Recommended fcntl.flock Tier 1 P0, planned for AMENDMENT-016. E1 violation: claim 10 vs metadata 16.
-- **Leo CZL-103 (#32)**: Analyzed 24,682 violations across 7-day corpus. Surfaced 5 threshold issues with empirical false-positive rates: phantom_variable 98% FP, root_cause_fix_required 87% FP, omission_governance 474/day escalation flood, document_requires_execution_plan 59% FP, intervention_governance 0% deny (deprecate candidate). 6/15 rules at 100% TP — no change recommended. E1 violation: claim 9 vs metadata 11 (mild).
-- **Maya CZL-104 (#49)**: Re-verified 20 prior deliverables, 75% accuracy (15/20). Found and corrected 5 errors: cron filename .sh→.txt, injector count 5→3, RECEIPT count 18→68, schema field date→created_at, shadow symlink correction. Generated 7 SOP lessons. Took 3576s (12x normal — API lag). **Self-caught** her own E1 violation (claimed ≤14, actual 21) before CEO verify — exemplary meta-honesty.
-- **Maya CZL-106 (#32 followup threshold tuning)**: STREAM TIMEOUT at 3410s mid-execution. Empirical verify confirmed 5 yaml rules ARE tuned in forget_guard_rules.yaml with Leo's rationale stamps, but test_threshold_tuning.py was NOT created. Closed Rt+1=1 partial.
-
-W6 closed three sub-items (#25 Rt+1=0, #32 Rt+1=0, #49 Rt+1=1, #32-followup Rt+1=1) and #62 remains open.
-
-### Phase 5 — Defuse Archive (parallel)
-Task #9 long-pending: products/ystar-defuse was formally archived (ARCHIVED.md placed) and knowledge/cto/active_task.json was flipped to point at k9_routing_subscriber operational mode. W7 closed L4.
-
-### Phase 6 — Predicate ↔ Methodology ↔ Formal Merge (afternoon)
-Architectural integration work: the three previously-siloed governance dimensions (predicate logic for FG rules, methodology files per role, formal CIEU 5-tuple specification) were merged into a unified spec at `knowledge/governance/predicate_methodology_formal_merge.md`. This addressed the long-standing inconsistency where FG rules deny patterns the methodology files don't explicitly forbid, and CIEU tuples don't always cover predicate scope. Merge produced a single source of truth for "what counts as a violation" across all three layers.
-
-### Phase 7 — Whitelist Taxonomy v1 (afternoon)
-A persistent confusion across waves had been: what is the difference between an allowlist (positive permission), an exemption (negative override), a charter scope (default-allow boundary), and a pre-authorization (one-time grant)? Formalized as `knowledge/governance/whitelist_taxonomy_v1.md` with 4 categories, decision tree, and migration plan for existing rules to declare their category explicitly.
-
-### Phase 8 — 5 Silo → Pipeline Integration (afternoon)
-Five governance components had evolved in isolation: K9 routing, FG rules, CROBA filters, OmissionEngine, dispatch_board validation. Each had its own state, its own emit pattern, its own consumer logic. Documented unified pipeline at `knowledge/governance/silo_pipeline_integration.md` showing how a single tool_use event flows through all 5 in canonical order, what each layer can/cannot block, and where state hand-off happens. This is preparation for AMENDMENT-017 (single governance event bus).
-
-### Phase 9 — action_model_v2 Spec (late afternoon, Board approved)
-Board reviewed the morning's E1 violation pattern (4 of 5 sub-agents under-reporting tool_uses) and approved a v2 action model: every receipt must include PER-CALL tool_uses breakdown (not just total), with metadata cross-check happening at hook-level rather than receipt-parse level. Spec authored at `governance/action_model_v2.md`. Maya dispatched on **CZL-129** to wire the v2 enforcement (currently in flight, expected next session close).
-
-### Phase 10 — 30+ Atomics Dispatched, Tool_uses Honesty Epidemic Flagged
-Across the day, 30+ atomic tasks were dispatched. Roughly 4 produced E1 violations (Ryan, Leo, Ethan, Maya self-catch). Pattern is systemic enough to warrant the W5 promote (dry_run → warn) once a 24h baseline is established. Today's 6h window is insufficient — promote queued for next session morning.
-
-### Phase 11 — Campaign v6 Close-Out (THIS ATOMIC, EOD)
-W10 atomic CZL-132 (Samantha): produce priority_brief v2 + this session_summary + archive `.czl_subgoals.json` snapshot. Three deliverables intended for next-session boot to immediately pick up where today closed.
-
----
-
-## 2. Headline Numbers
-- **Atomics dispatched**: 30+
-- **W closed Rt+1=0**: 5 (W1, W2, W6#25, W6#32, W7)
-- **W closed Rt+1=1 partial**: 2 (W3-partial, W6#49, W6#32-followup)
-- **W remaining**: W3-step6, W4, W5, W8, W9, W10 (this), W11
-- **E1 violations observed**: 4 (Ryan, Leo, Ethan, Maya-self-catch)
-- **Test PASS counts**: CROBA 10/10, FG subagent_boot 6/6, engineer registration 3/3
-- **STREAM TIMEOUTs**: 2 (Maya CZL-104 12x duration, CZL-106 mid-execution)
-- **K9 false positives eliminated**: 7
-
----
-
-## 3. Lessons / Patterns
-
-1. **Self-catch is gold standard**: Maya CZL-104 catching her own E1 before CEO verify is the pattern to propagate. Receipt template should make self-audit a required field.
-2. **STREAM TIMEOUT is API-side, not sub-agent fault**: Maya's two timeouts today (3576s and 3410s) correlate with afternoon Anthropic API latency spikes, not sub-agent behavior. AC monitor should weight this signal.
-3. **Step 6 deferral pattern**: When a multi-step W has a downstream blocker (W3 step 6 blocked on W4), explicit deferral to a future W is cleaner than half-finishing in the current W. Adopt as SOP.
-4. **Threshold tuning needs empirical FP rate** (not gut-feel): Leo CZL-103's 24,682-event corpus produced actionable thresholds where prior gut-feel adjustments had failed.
-5. **Daemon recycle ≠ state corruption**: Ethan CZL-105 distinguished "state-ownership race" from "data corruption" — important for AMENDMENT-016 scope (lock-based ownership, not transactional commit).
-
----
-
-## 4. Next Session Open Loops (priority order)
-See `reports/priority_brief.md` v2 §2.
-
-End of session_summary_20260416.md.
+- K9_ROUTING_DISPATCHED: 9294
+- SESSION_JSON_SCHEMA_VIOLATION: 7186
+- external_observation: 5726
+- HOOK_BOOT: 5632
+- handoff: 5568
+- : 5566
+- orchestration:governance_loop_cycle: 5561
+- orchestration:path_a_cycle: 5561

@@ -489,6 +489,25 @@ def extract_knowledge_writeback(receipt_text: str, agent_id: str) -> Optional[Di
     else:
         knowledge_type = "reference"
 
+    # Wire to metalearning: feed receipt to Y*gov adapter (CTO CZL-150)
+    try:
+        from scripts.ystar_gov_adapter import task_to_call_record
+        task_receipt = {
+            "agent_id": agent_id,
+            "task_title": title,
+            "tool_uses_claimed": -1,  # not available in Phase C writeback context
+            "tool_uses_metadata": {"count": -1},
+            "rt_plus_1": -1,
+            "y_star": None,
+            "x_t": None,
+            "u": None,
+            "y_t_plus_1": body,
+        }
+        call_record = task_to_call_record(task_receipt)
+        # Store to metalearning history (placeholder — actual impl would write to DB)
+    except ImportError:
+        pass  # Adapter not available, skip metalearning integration
+
     return {
         "title": title,
         "body": body,

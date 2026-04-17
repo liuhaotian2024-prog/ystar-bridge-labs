@@ -1,0 +1,33 @@
+[
+  {
+    "timestamp": "2026-04-16T15:03:35.223944",
+    "violation_type": "dispatch_missing_5tuple",
+    "event_id": "f8ee4638-a0eb-4b0f-869f-2ed1da9b415c",
+    "params": {
+      "decision": "warn",
+      "passed": 0,
+      "violation_type": "dispatch_missing_5tuple",
+      "agent_id": "test_agent",
+      "drift_detected": 1,
+      "drift_category": "czl_protocol"
+    }
+  },
+  {
+    "timestamp": "2026-04-16T15:06:51.089912",
+    "violation_type": "dispatch_missing_5tuple",
+    "event_id": "63c7d410-d1a7-42ca-b449-fa988cf8a9a0",
+    "params": {
+      "violation_type": "dispatch_missing_5tuple",
+      "agent_id": "cto"
+    }
+  },
+  {
+    "timestamp": "2026-04-16T15:06:56.211202",
+    "violation_type": "test_unique_3",
+    "event_id": "be274947-d9cc-4d88-97b2-8379e7a303c0",
+    "params": {
+      "violation_type": "test_unique_3",
+      "agent_id": "cto"
+    }
+  }
+]

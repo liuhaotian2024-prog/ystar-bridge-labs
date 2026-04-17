@@ -1,0 +1,90 @@
+[
+  {
+    "type": "STOP_HOOK_K9_DENY",
+    "violation_type": "subagent_unauthorized_git_op",
+    "agent_id": "test_agent",
+    "command": "",
+    "timestamp": 1776350104.037141,
+    "processed_at": "2026-04-16T14:39:19.223029+00:00"
+  },
+  {
+    "type": "STOP_HOOK_K9_DENY",
+    "violation_type": "subagent_unauthorized_git_op",
+    "agent_id": "test_agent",
+    "command": "",
+    "timestamp": 1776350110.078756,
+    "processed_at": "2026-04-16T14:39:19.223029+00:00"
+  },
+  {
+    "type": "STOP_HOOK_K9_DENY",
+    "violation_type": "subagent_unauthorized_git_op",
+    "agent_id": "test_agent",
+    "command": "",
+    "timestamp": 1776350115.568994,
+    "processed_at": "2026-04-16T14:39:19.223029+00:00"
+  },
+  {
+    "type": "STOP_HOOK_K9_DENY",
+    "violation_type": "subagent_unauthorized_git_op",
+    "agent_id": "test_agent",
+    "command": "",
+    "timestamp": 1776350118.4975832,
+    "processed_at": "2026-04-16T14:39:19.223029+00:00"
+  },
+  {
+    "type": "STOP_HOOK_K9_DENY",
+    "violation_type": "subagent_unauthorized_git_op",
+    "agent_id": "test_agent",
+    "command": "",
+    "timestamp": 1776350120.3858051,
+    "processed_at": "2026-04-16T14:39:19.223029+00:00"
+  },
+  {
+    "type": "STOP_HOOK_K9_DENY",
+    "violation_type": "subagent_unauthorized_git_op",
+    "agent_id": "test_agent",
+    "command": "",
+    "timestamp": 1776350121.374078,
+    "processed_at": "2026-04-16T14:39:19.223029+00:00"
+  },
+  {
+    "type": "STOP_HOOK_K9_DENY",
+    "violation_type": "subagent_unauthorized_git_op",
+    "agent_id": "test_agent",
+    "command": "",
+    "timestamp": 1776350189.617583,
+    "processed_at": "2026-04-16T14:39:19.223029+00:00"
+  },
+  {
+    "type": "STOP_HOOK_K9_DENY",
+    "violation_type": "subagent_unauthorized_git_op",
+    "agent_id": "test_agent",
+    "command": "",
+    "timestamp": 1776394303.2317572,
+    "processed_at": "2026-04-17T02:53:01.652691+00:00"
+  },
+  {
+    "type": "STOP_HOOK_K9_DENY",
+    "violation_type": "subagent_unauthorized_git_op",
+    "agent_id": "test_agent",
+    "command": "",
+    "timestamp": 1776394424.336556,
+    "processed_at": "2026-04-17T02:54:39.993193+00:00"
+  },
+  {
+    "type": "STOP_HOOK_K9_DENY",
+    "violation_type": "subagent_unauthorized_git_op",
+    "agent_id": "test_agent",
+    "command": "",
+    "timestamp": 1776394425.89479,
+    "processed_at": "2026-04-17T02:54:39.993193+00:00"
+  },
+  {
+    "type": "STOP_HOOK_K9_DENY",
+    "violation_type": "subagent_unauthorized_git_op",
+    "agent_id": "test_agent",
+    "command": "",
+    "timestamp": 1776394440.2868211,
+    "processed_at": "2026-04-17T02:54:39.993193+00:00"
+  }
+]

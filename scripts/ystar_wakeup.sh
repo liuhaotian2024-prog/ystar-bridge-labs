@@ -20,7 +20,7 @@ case "$1" in
     # 轮换角色（基于小时数取模）
     HOUR=$(date +%H)
     ROLES=("cto" "cmo" "cfo" "cso" "secretary" "ceo")
-    IDX=$(( HOUR / 3 % 6 ))
+    IDX=$(( 10#$HOUR / 3 % 6 ))
     ROLE=${ROLES[$IDX]}
 
     echo "[$DATE $TIME] Starting idle learning for $ROLE" >> "$LOG_DIR/wakeup.log"

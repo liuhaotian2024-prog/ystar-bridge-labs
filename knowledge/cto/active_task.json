@@ -24,7 +24,10 @@
       "Agent Capability Monitor integration with session watchdog",
       "5 new engineer onboarding gauntlet (data/security/ml/perf/compliance)"
     ],
-    "ownership": "cto + 4 core engineers (kernel/governance/platform/domains) + 5 new engineers"
+    "ownership": "cto + 4 core engineers (kernel/governance/platform/domains) + 5 new engineers",
+    "status": "deprecated",
+    "deprecated_at": 1776394054.266742,
+    "deprecation_reason": "Stale >72h, not mentioned in recent session"
   },
   "current_focus": {
     "p0_blockers": [],
@@ -37,7 +40,10 @@
       "Daemon concurrent-write investigation followup",
       "Agent files Name-Role format migration",
       "Meta-meta audit error pattern SOP"
-    ]
+    ],
+    "status": "deprecated",
+    "deprecated_at": 1776394054.269823,
+    "deprecation_reason": "Stale >72h, not mentioned in recent session"
   },
   "deprecated_tasks": [
     {

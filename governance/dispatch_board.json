@@ -1,3 +1,31 @@
 {
-  "tasks": []
+  "tasks": [
+    {
+      "atomic_id": "CZL-155",
+      "scope": "governance/cto_system23_takeover.md,scripts/cto_dispatch_broker.py",
+      "description": "CTO \u72ec\u7acb\u63a5\u7ba1 System 2-3 engineering management: \u76d8\u70b9 CEO \u624b\u52a8\u5de5\u4f5c \u2192 \u8bbe\u8ba1\u63a5\u7ba1\u65b9\u6848 \u2192 \u5b9e\u65bd\u81ea\u52a8\u5316\u66ff\u4ee3 \u2192 \u8bc1\u660e CEO \u4e0d\u4ecb\u5165\u65f6\u5de5\u7a0b\u6b63\u5e38\u8fd0\u8f6c",
+      "urgency": "P0",
+      "estimated_tool_uses": 15,
+      "status": "claimed",
+      "posted_at": "2026-04-17T01:54:32.020958+00:00",
+      "claimed_by": "eng-platform",
+      "claimed_at": "2026-04-17T01:54:35.318495+00:00",
+      "completed_at": null,
+      "completion_receipt": null
+    },
+    {
+      "atomic_id": "CZL-156",
+      "scope": "tests/",
+      "description": "Test regression detected: 61 failed, 1299 passed, 16 skipped, 125 warnings in 69.71s (0:01:09)",
+      "urgency": "P0",
+      "estimated_tool_uses": 10,
+      "status": "claimed",
+      "posted_at": "2026-04-17T02:15:50.799995+00:00",
+      "posted_by": "cto-broker",
+      "claimed_by": "eng-platform",
+      "claimed_at": "2026-04-17T02:15:52.676818+00:00",
+      "completed_at": null,
+      "completion_receipt": null
+    }
+  ]
 }

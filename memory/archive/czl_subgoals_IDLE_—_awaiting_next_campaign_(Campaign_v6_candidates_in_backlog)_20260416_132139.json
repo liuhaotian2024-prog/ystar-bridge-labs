@@ -1,0 +1,12 @@
+{
+  "y_star_ref": "priority_brief v1.0 — campaign v1-v5 all Rt+1=0. Idle state awaiting next campaign.",
+  "campaign": "IDLE — awaiting next campaign (Campaign v6 candidates in backlog)",
+  "campaign_status": "IDLE",
+  "current_subgoal": null,
+  "completed": [
+    {"id": "v1-v5 summary", "summary": "Today 2026-04-15: 5 campaigns + 3 phases + 3 stress rounds, all Rt+1=0. Six CZL self-exposure demos proving 3-layer doctrine works. Code: ~50 commits across 2 repos, 2 genesis tags, 292 YML lessons, 23k CIEU events, 4-repo god-view dashboard. Backlog: W7.3 embedding / W10.1 AND-logic / K9 causal migration / evidence aggregator / session_summary hook.", "maturity": "L4 SHIPPED"}
+  ],
+  "y_star_criteria": [],
+  "remaining": [],
+  "rt1_status": "IDLE — all active campaigns closed. Next campaign scaffolding via scripts/czl_new_campaign.sh"
+}
