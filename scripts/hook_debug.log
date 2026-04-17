@@ -24145,3 +24145,6 @@ RuntimeError: rule 'article_11_board_offline_30m' did not produce any obligation
 22:56:29 [CZL-GATE1] Failed to validate dispatch: No module named 'ystar.governance.identity_detector'
 10:22:20 [CZL-GATE1] ⚠️ CZL Gate 1: dispatch missing sections ['Missing Y* (ideal contract)', 'Missing Xt (pre-state)', 'Missing U (actions list)', 'Missing Yt+1 (post-state)', 'Missing Rt+1 target (gap threshold)', 'Warning: No explicit recipient (which engineer?)', 'Warning: No explicit task_id']
 10:22:20 [CZL-GATE1] Failed to validate dispatch: No module named 'ystar.governance.identity_detector'
+11:54:11 [CZL-GATE1] ⚠️ CZL Gate 1: dispatch missing sections ['Missing Yt+1 (post-state)', 'Warning: No explicit recipient (which engineer?)', 'Warning: No explicit task_id']
+11:54:11 [CZL-GATE1] Failed to validate dispatch: No module named 'ystar.governance.identity_detector'
+Hook CZL-159: wired but not firing (same pattern as CZL-136 PreToolUse Agent hook). CTO needs to debug matcher syntax. This is a known category of bug — shipped ≠ live.
