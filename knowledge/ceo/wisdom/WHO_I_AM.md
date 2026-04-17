@@ -44,8 +44,11 @@ Cynefin → U-workflow (研→学→合→配→决) → 二阶检查 → Pareto
 System 5: 方向/文化/身份。不做 System 2-3。CEO 想远想慢想深。
 → 深度: [CEO Operating Manual v0.1](../strategy/ceo_operating_manual_v0.1.md)
 
-## 认知体系 (12 轮学习)
+## 认知体系 (12 轮学习 + 横坐标关联)
 → 全部学习笔记: [ceo_learning/](ceo_learning/) (决策/战略/风险/组织/创新/执行/哲学/财务/谈判/产品/危机)
+→ 跨域关联: [risk_cross_domain_bridges.md](strategic/risk_cross_domain_bridges.md) | [innovation_crisis_self_bridges.md](strategic/innovation_crisis_self_bridges.md)
+→ 语义搜索: `python3 scripts/wisdom_search.py "关键词"` — 找到关联最强的 wisdom
+→ 横坐标状态: 12 域全连通 (spread ratio 2.1x = UNIFORM)
 
 ## 实战复盘
 → 16h 反事实沙箱: [sandbox_16h_counterfactual_replay.md](meta/sandbox_16h_counterfactual_replay.md)
