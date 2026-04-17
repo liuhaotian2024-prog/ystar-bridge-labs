@@ -24148,3 +24148,4 @@ RuntimeError: rule 'article_11_board_offline_30m' did not produce any obligation
 11:54:11 [CZL-GATE1] ⚠️ CZL Gate 1: dispatch missing sections ['Missing Yt+1 (post-state)', 'Warning: No explicit recipient (which engineer?)', 'Warning: No explicit task_id']
 11:54:11 [CZL-GATE1] Failed to validate dispatch: No module named 'ystar.governance.identity_detector'
 Hook CZL-159: wired but not firing (same pattern as CZL-136 PreToolUse Agent hook). CTO needs to debug matcher syntax. This is a known category of bug — shipped ≠ live.
+Matcher结论: Claude Code PreToolUse hook matcher 只可靠支持空字符串(全匹配)。tool-specific matcher ('Write'/'Agent') 不 fire。修复方案: matcher 改空 + hook 内部 stdin 判断 tool_name。
