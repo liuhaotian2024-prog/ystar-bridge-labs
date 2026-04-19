@@ -183,10 +183,26 @@ try:
                 if not _synthesis: _missing.append("synthesis")
                 if not _audience: _missing.append("audience")
                 if _missing:
+                    # -- CZL-166: Append actionable header template to deny --
+                    try:
+                        from ystar.rules.auto_rewrite import czl159_header_autoinject_template
+                        _header_template = czl159_header_autoinject_template()
+                    except Exception:
+                        # Fallback: inline template (Leo Y-star-gov side not yet merged)
+                        _header_template = (
+                            "\n\n--- Copy this template into your document header before writing ---\n"
+                            "Audience: [who is the intended reader?]\n"
+                            "Research basis: [cite sources, data, or evidence]\n"
+                            "Synthesis: [what is the core insight / conclusion?]\n"
+                            "Purpose: [what decision or action should this enable?]\n"
+                            "---\n"
+                            "Fill in each bracket, then re-attempt the Write."
+                        )
                     _block_msg = (
                         f"[CZL-159 CEO PRE-OUTPUT BLOCK] Write to {_fp} missing "
                         f"U-workflow signals: {', '.join(_missing)}. "
                         f"Do research/synthesis/audience framing before writing."
+                        f"{_header_template}"
                     )
                     log(f"[CZL-159] BLOCKED: {_fp} missing {_missing}")
                     result = {

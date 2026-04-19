@@ -1,0 +1,45 @@
+Audience: consultant review + Board continuity + future Aiden sessions.
+Research basis: Board 2026-04-18 night autonomous directive + 2026-04-19 brain fusion insight + Maya Phase 1 implementation proof (activation_log 0→300).
+Synthesis: one commit capturing CZL-166 Labs-side wire + ARCH-17/18 specs + brain fusion findings + Exp 3 harness drafts.
+
+feat(labs+knowledge): CZL-166 Labs-side + ARCH-17/18 specs + brain LIVE proof
+
+Ships the guard+guide Labs companion + architecture specs + brain-fusion
+empirical evidence:
+
+- scripts/hook_wrapper.py: CZL-166 CZL-159 REWRITE wire — deny path
+  appends Audience/Research basis/Synthesis/Purpose template so CEO
+  gets actionable remediation instead of bare deny.
+
+- knowledge/cto/arch17_behavioral_governance_spec.md: ARCH-17 spec with
+  shelf-activation design (390 lines).
+
+- knowledge/cto/arch18_cieu_brain_corpus.md: ARCH-18 CIEU-as-Brain-Corpus
+  spec (555 lines) — Route D hybrid signal-routed, 6 industry refs.
+
+- docs/arch17_behavioral_governance_spec.md: original ARCH-17 spec.
+
+- knowledge/ceo/board_autonomous_directive_20260418_night.md: overnight
+  run sequencing + autonomy guardrails.
+
+- knowledge/ceo/cieu_brain_fusion_findings_20260419.md: empirical CIEU
+  and aiden_brain.db database state + fusion pipeline mandate.
+
+- aiden_brain.db + aiden_brain.db-shm + aiden_brain.db-wal: 6D brain
+  knowledge graph (146 nodes / 1638 edges / activation_log now LIVE
+  with first 300 firings via Maya Phase 1 ship).
+
+- reports/ceo/demonstrators/exp3_b1_enforce_rate.py + exp3_b2_lockdeath.py:
+  Experiment 3 multi-dim harness scripts (B1/B2).
+
+- reports/ceo/experiments/experiment3_multidim_harness.md: 8-axis
+  harness design doc.
+
+- reports/ceo/redteam_matrix/d8_redirect_verify.py: D8 empirical probe.
+
+- reports/ceo/research/claude_mem_scan_2026_04_19.md: community claude-mem
+  research — ADAPT patterns IGNORE product.
+
+- reports/ceo/commit_msgs/c_20260419_brain_live.txt: this message.
+
+Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
