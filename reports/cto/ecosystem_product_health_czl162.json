@@ -1,0 +1,158 @@
+{
+  "scan_metadata": {
+    "timestamp": "2026-04-17T14:43:00Z",
+    "scanned_by": "cto",
+    "task_id": "CZL-162",
+    "repo": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+    "purpose": "CEO ecosystem visibility — enable god-view before proposing new components"
+  },
+  "modules": {
+    "kernel": {
+      "files": 14,
+      "lines": 8176,
+      "tests": 0,
+      "test_pass_rate": "33/37 (kernel tests dispersed in tests/kernel/)",
+      "test_failures": 4,
+      "last_modified": "2026-04-16 07:30:49 -0400",
+      "docs": 0,
+      "health": "YELLOW",
+      "notes": "Core engine. 4 CZL protocol validation failures (czl_protocol.py). No dedicated kernel test files — tests scattered in tests/kernel/ subdirectory."
+    },
+    "governance": {
+      "files": 69,
+      "lines": 27337,
+      "tests": 3,
+      "test_pass_rate": "189/213 (24 failures)",
+      "test_failures": 24,
+      "last_modified": "2026-04-16 07:31:13 -0400",
+      "docs": 0,
+      "health": "RED",
+      "notes": "Largest module (69 files, 27K lines). 24 test failures concentrated in reply_taxonomy.py (query_too_long, ack_too_long assertions). Active development. Subgroups breakdown below.",
+      "submodules": {
+        "causal": {
+          "files": 5,
+          "components": ["causal_chain_analyzer", "causal_discovery", "causal_engine", "causal_feedback", "causal_graph"],
+          "focus": "Causal chain analysis and feedback loops"
+        },
+        "omission": {
+          "files": 7,
+          "components": ["omission_engine", "omission_models", "omission_rules", "omission_scanner", "omission_scheduler", "omission_store", "omission_summary"],
+          "focus": "Omission detection and scheduling"
+        },
+        "ml": {
+          "files": 6,
+          "components": ["ml_adaptive", "ml_core", "ml_discovery", "ml_loop", "ml_registry", "ml_semantic"],
+          "focus": "ML-based governance and adaptive rules"
+        },
+        "forget_guard": {
+          "files": 1,
+          "components": ["forget_guard"],
+          "focus": "Rule enforcement and violation blocking"
+        },
+        "k9": {
+          "files": 2,
+          "components": ["k9_routing_subscriber", "k9_rt_sentinel"],
+          "focus": "K9Audit integration and Rt sentinel"
+        },
+        "other": {
+          "files": 3,
+          "components": ["compliance_audit", "rules_6_10", "__init__"],
+          "focus": "Compliance and rule sets"
+        }
+      }
+    },
+    "adapters": {
+      "files": 15,
+      "lines": 9630,
+      "tests": 0,
+      "test_pass_rate": "48/53 (5 failures in identity tests)",
+      "test_failures": 5,
+      "last_modified": "2026-04-16 07:30:49 -0400",
+      "docs": 0,
+      "health": "YELLOW",
+      "notes": "Hook adapter layer. CZL-161 STATUS: 8 bare 'except Exception:' patterns REMAIN (lines 611, 654, 1056, 1329, 1334, 1388, 1461, 1592) — NOT RESOLVED as claimed. 5 identity canonical alias test failures."
+    },
+    "cli": {
+      "files": 11,
+      "lines": 3478,
+      "tests": 4,
+      "test_pass_rate": "39/39 (100%)",
+      "test_failures": 0,
+      "last_modified": "2026-04-14 21:27:11 -0400",
+      "docs": 0,
+      "health": "GREEN",
+      "notes": "CLI layer fully green. All 39 tests pass. User-facing installation commands stable."
+    },
+    "cieu": {
+      "files": 1,
+      "lines": 88,
+      "tests": 5,
+      "test_pass_rate": "67/70 (3 failures)",
+      "test_failures": 3,
+      "last_modified": "2026-04-12 15:10:02 -0400",
+      "docs": 0,
+      "health": "YELLOW",
+      "notes": "CIEU audit core minimal file count (1 file, 88 lines). 3 test failures in boundary_enforcer break_glass mode and chaos scan_pulse tests. 212098 events in production DB shows active usage."
+    }
+  },
+  "special_focus": {
+    "gov_mcp": {
+      "test_file": "tests/test_gov_mcp_delegation.py",
+      "test_status": "PASS (6/6)",
+      "setup_doc": "docs/gov_mcp_setup.md",
+      "doc_status": "exists (805B, references 192.168.1.228:7922 SSE endpoint)",
+      "health": "GREEN",
+      "notes": "Gov-MCP delegation tests 100% pass. Setup doc current but references deprecated dual-machine config (AMENDMENT-004 compliance needed)."
+    },
+    "czl_161_hook_adapter_bare_except": {
+      "status": "UNRESOLVED",
+      "file": "ystar/adapters/hook.py",
+      "issue": "Bare 'except Exception:' without logging context (Vogels violation)",
+      "current_state": "8 violations found (lines 611, 654, 1056, 1329, 1334, 1388, 1461, 1592)",
+      "health": "RED",
+      "vogels_principle": "Every except block must log context. Silent fallbacks are worse than crashes.",
+      "recommendation": "Platform engineer: wrap each with structured error path + CIEU event emission"
+    }
+  },
+  "overall_health": {
+    "total_files": 110,
+    "total_lines": 48809,
+    "total_test_files": 12,
+    "test_pass_rate": "376/412 (91.3%)",
+    "test_failures": 36,
+    "green_modules": 1,
+    "yellow_modules": 3,
+    "red_modules": 1,
+    "overall_status": "YELLOW",
+    "blocker_issues": [
+      "governance: 24 test failures (reply_taxonomy assertions)",
+      "adapters: 8 bare except patterns violate Vogels error-handling principle",
+      "adapters: 5 identity canonical alias test failures",
+      "kernel: 4 CZL protocol validation test failures",
+      "cieu: 3 break_glass + chaos test failures"
+    ],
+    "recommended_actions": [
+      "Platform (Ryan): Fix 8 bare except patterns in hook.py — add structured logging + CIEU emission (CZL-161 reopened)",
+      "Governance (Maya): Investigate 24 reply_taxonomy test failures — likely string length assertion tuning needed",
+      "Kernel (Leo): Fix 4 CZL protocol validation failures (atomic_limit, missing_recipient)",
+      "Platform (Ryan): Fix 5 identity canonical alias test failures",
+      "Governance (Maya): Fix 3 CIEU boundary_enforcer + scan_pulse chaos tests"
+    ]
+  },
+  "vogels_reliability_audit": {
+    "everything_fails_principle": "VIOLATED — 8 silent except blocks in adapters/hook.py",
+    "chaos_test_status": "PARTIAL — scan_pulse chaos test exists but failing",
+    "silent_fallback_count": 8,
+    "error_logging_coverage": "~60% (8 critical paths missing context logging)",
+    "operational_runbook": "docs/ has gov_mcp_setup.md but no failure mode runbook",
+    "structured_error_paths": "INCOMPLETE — adapters layer swallows exceptions without audit trail",
+    "notes": "Product violates Vogels core principle: silent failures are worse than crashes. CZL-161 must be P0 — every except block needs CIEU event + structured log before v0.42 ships."
+  },
+  "documentation_gap": {
+    "module_level_docs": 0,
+    "api_reference": "missing",
+    "architecture_diagram": "missing (especially governance 69-file structure)",
+    "failure_modes_runbook": "missing",
+    "recommendation": "CTO: before v0.42 release, write docs/architecture.md with governance submodule map + failure mode runbook"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "window_days": 7,
+  "total_cieu_events_7d": 310569,
+  "distinct_agents_7d": 392,
+  "distinct_event_types_7d": 194,
+  "tool_fires_7d": {
+    "Bash": 598,
+    "Edit": 160,
+    "Write": 292,
+    "Read": 585,
+    "Grep": 0,
+    "Glob": 0,
+    "Agent": 289,
+    "NotebookEdit": 0
+  },
+  "tool_coverage_pct": 62.5,
+  "daemon_heartbeats_7d": 1,
+  "cron_ticks_7d": 1,
+  "blind_spots": {
+    "daemon": "measured",
+    "cron": "measured",
+    "shell_bang_prefix": "unmeasured_always (Claude Code ! bypass)"
+  },
+  "goal_1_coverage_pct": 62.5
+}

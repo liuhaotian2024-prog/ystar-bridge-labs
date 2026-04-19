@@ -1,0 +1,6 @@
+Generated: 2026-04-18T20:40:28
+Agent: ceo
+
+NEXT: no open or claimed tasks for this agent.
+  Suggested: python3 scripts/learning_report.py --agent ceo
+  Rationale: idle window is ideal for meta-learning.

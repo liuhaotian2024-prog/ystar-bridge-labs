@@ -1,0 +1,9 @@
+# Audience: Board to install via `crontab -e` or `crontab < this_file`.
+# Research basis: standard cron 5-field format.
+# Synthesis: schedules daily governance dashboards. run_daily entry points from rule_lifecycle_observer and liveness_audit.
+
+# Daily 03:00 — rule lifecycle coverage report (Goal 3 dashboard)
+0 3 * * * cd /Users/haotianliu/.openclaw/workspace/ystar-company && /usr/bin/python3 -c "import sys; sys.path.insert(0, '/Users/haotianliu/.openclaw/workspace/Y-star-gov'); from ystar.governance.rule_lifecycle_observer import run_daily; run_daily()" >> /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/.logs/rule_lifecycle_cron.log 2>&1
+
+# Daily 03:05 — Y*gov module liveness audit (Goal 4 dashboard)
+5 3 * * * cd /Users/haotianliu/.openclaw/workspace/ystar-company && /usr/bin/python3 -c "import sys; sys.path.insert(0, '/Users/haotianliu/.openclaw/workspace/Y-star-gov'); from ystar.governance.liveness_audit import run_daily; run_daily()" >> /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/.logs/liveness_audit_cron.log 2>&1

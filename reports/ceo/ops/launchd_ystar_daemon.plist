@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Audience: Board to install via `launchctl load ~/Library/LaunchAgents/ystar.daemon.plist` after copying this file there.
+     Research basis: macOS launchd standard pattern for long-running user daemons.
+     Synthesis: keeps hook_daemon_wrapper alive with auto-restart; emits DAEMON_HEARTBEAT to CIEU every 60s. -->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>ystar.daemon.heartbeat</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+        <string>/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_daemon_wrapper.py</string>
+    </array>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/.logs/ystar_daemon.out</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/.logs/ystar_daemon.err</string>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/haotianliu/.openclaw/workspace/ystar-company</string>
+</dict>
+</plist>

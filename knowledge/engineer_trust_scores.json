@@ -79,7 +79,7 @@
       "gauntlet_date": "2026-04-16",
       "tests_passed": "4/4",
       "methodology_complete": true,
-      "notes": "Gauntlet PASS 2026-04-16 (CZL-141). Methodology v1 shipped 1134 words (USE method + Latency Budget + Amdahl's Law + Little's Law). Trust 0→30 training-wheels tier. Next: 5 real atomics for trust 30→50 promotion."
+      "notes": "Gauntlet PASS 2026-04-16 (CZL-141). Methodology v1 shipped 1134 words (USE method + Latency Budget + Amdahl's Law + Little's Law). Trust 0\u219230 training-wheels tier. Next: 5 real atomics for trust 30\u219250 promotion."
     },
     {
       "engineer_id": "eng-compliance",
@@ -90,7 +90,7 @@
       "gauntlet_date": "2026-04-16",
       "tests_passed": "4/4",
       "methodology_complete": true,
-      "notes": "Gauntlet PASS 2026-04-16 (CZL-146). Methodology v1 shipped 921 words (NIST CSF + GRC + SOC2 + GDPR Article 25). Trust 0→30 training-wheels tier. Next: 5 real atomics for trust 30→50 promotion."
+      "notes": "Gauntlet PASS 2026-04-16 (CZL-146). Methodology v1 shipped 921 words (NIST CSF + GRC + SOC2 + GDPR Article 25). Trust 0\u219230 training-wheels tier. Next: 5 real atomics for trust 30\u219250 promotion."
     }
   ]
 }

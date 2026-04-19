@@ -1,0 +1,68 @@
+{
+  "audience": "CEO (Aiden) for dispatch_board merge; Board for approval; engineers for claiming",
+  "research": "Based on full 3-repo source audit via Read/Grep/Glob. See ecosystem_architecture_survey_20260418.md for evidence. Per OS microkernel architecture principles (Liedtke L4) and Hexagonal Architecture (Cockburn 2005).",
+  "synthesis": "These 6 tasks are the Phase 1 implementation backlog derived from the ecosystem architecture master proposal. Each task addresses a specific problem identified in the survey. The assessment concludes that identity deadlock, reverse dependencies, dead code, and missing break-glass are the highest-priority structural fixes.",
+  "_note": "CTO ARCH tasks to be appended to governance/dispatch_board.json. CTO session blocked from writing dispatch_board.json due to identity misresolution (Problem P1 in survey). CEO or Secretary should merge these into the board.",
+  "tasks_to_append": [
+    {
+      "atomic_id": "CZL-ARCH-1",
+      "scope": "Y-star-gov/ystar/adapters/identity_detector.py",
+      "description": "Identity Resolution Hardening: Expand _AGENT_TYPE_MAP with ALL known name variants (Ethan-CTO, Aiden-CEO, Leo-Kernel, etc). Add case-insensitive fuzzy matching. Add 'guest' default with read-only perms instead of blocking on unknown identity. Add configurable alias map from .ystar_session.json agent_aliases field. AC: 15+ name formats resolve, unknown->guest not blocking, 5 new tests.",
+      "urgency": "P0",
+      "estimated_tool_uses": 40,
+      "status": "open",
+      "posted_at": "2026-04-18T18:00:00.000000+00:00",
+      "posted_by": "cto"
+    },
+    {
+      "atomic_id": "CZL-ARCH-2",
+      "scope": "Y-star-gov/ystar/adapters/hook.py",
+      "description": "Dead Code Cleanup: Remove 6+ duplicate unreachable return blocks in _result_to_response(). Function has 7 identical return statements after the first — all dead code. AC: exactly 1 return block for deny path, ~100 lines removed, 806+ tests pass, zero behavioral change.",
+      "urgency": "P0",
+      "estimated_tool_uses": 15,
+      "status": "open",
+      "posted_at": "2026-04-18T18:00:01.000000+00:00",
+      "posted_by": "cto"
+    },
+    {
+      "atomic_id": "CZL-ARCH-3",
+      "scope": "Y-star-gov/ystar/adapters/boundary_enforcer.py",
+      "description": "Remove Reverse Dependency: boundary_enforcer.py imports per_rule_detectors from ystar-company/scripts via sys.path.insert. This makes the product depend on the company repo. Remove all sys.path.insert to ystar-company. Make per_rule_detectors register via RouterRegistry instead. AC: zero imports from ystar-company, zero sys.path.insert to company, 806+ tests pass.",
+      "urgency": "P0",
+      "estimated_tool_uses": 60,
+      "status": "open",
+      "posted_at": "2026-04-18T18:00:02.000000+00:00",
+      "posted_by": "cto"
+    },
+    {
+      "atomic_id": "CZL-ARCH-4",
+      "scope": "Y-star-gov/ystar/governance/router_registry.py",
+      "description": "RouterRegistry Rules Loader: Add load_rules_dir(path) method. Add unregister_all() for clean restart. Add IngressRequest dataclass to normalize payloads from Claude Code/MCP/CLI to uniform format. AC: load_rules_dir works on test dir, unregister_all clears, IngressRequest normalizes 3 payload types, 5 new tests.",
+      "urgency": "P0",
+      "estimated_tool_uses": 45,
+      "status": "open",
+      "posted_at": "2026-04-18T18:00:03.000000+00:00",
+      "posted_by": "cto"
+    },
+    {
+      "atomic_id": "CZL-ARCH-5",
+      "scope": "Y-star-gov/ystar/rules/break_glass.py,Y-star-gov/ystar/adapters/hook.py",
+      "description": "Break-Glass Emergency Override: Create break_glass.py router rule at priority 2000. When YSTAR_BREAK_GLASS=1 env var set, all enforcement bypassed with CIEU BREAK_GLASS_ACTIVE event. Escape hatch for lock-death. AC: env var toggles bypass, every break-glass action writes CIEU, 3 new tests.",
+      "urgency": "P0",
+      "estimated_tool_uses": 35,
+      "status": "open",
+      "posted_at": "2026-04-18T18:00:04.000000+00:00",
+      "posted_by": "cto"
+    },
+    {
+      "atomic_id": "CZL-ARCH-6",
+      "scope": "ystar-company/hooks/pretool_v2.py,Y-star-gov/ystar/adapters/hook.py",
+      "description": "Thin Hook Adapter Prototype: Create under 20 line hook adapter replacing hook_wrapper.py. Feature-flagged via YSTAR_HOOK_V2=1. Depends on CZL-ARCH-4. AC: new adapter under 20 lines, with flag uses new, without flag uses old, 5 integration tests.",
+      "urgency": "P1",
+      "estimated_tool_uses": 80,
+      "status": "open",
+      "posted_at": "2026-04-18T18:00:05.000000+00:00",
+      "posted_by": "cto"
+    }
+  ]
+}

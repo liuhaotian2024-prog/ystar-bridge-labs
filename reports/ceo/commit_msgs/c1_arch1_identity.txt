@@ -1,0 +1,16 @@
+feat(adapters): CZL-ARCH-1 identity resolution hardening
+
+Audience: Board + CTO + future engineers.
+Research: OPA-style resolution chains; industry precedent scan lesson.
+Synthesis: close identity lock death by expanding map + adding guest fallback.
+
+_AGENT_TYPE_MAP expanded with team name variants (Aiden, Ethan, Leo,
+Ryan, Maya, Jordan, Sofia, Zara, Marco, Samantha) in full and short
+forms. _map_agent_type resolution: exact lookup, session alias override,
+normalized matching, difflib fuzzy (cutoff 0.75). _load_alias_map reads
+agent_aliases from .ystar_session with empty fallback on missing field.
+Priority 1 (payload.agent_id) passes through _map_agent_type so literal
+subagent names resolve to canonical roles. Final fallback changed from
+generic "agent" (blanket deny) to "guest" (read only). 8 new tests.
+
+Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>

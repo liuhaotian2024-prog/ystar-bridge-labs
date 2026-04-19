@@ -1,0 +1,43 @@
+Audience: git history + consultant reviewing today's commits
+Research basis: today's ARCH-1, ARCH-6, ARCH-11 family, ARCH-7, daemon fast path diagnosis
+Synthesis: single commit bundling company-side hook infrastructure updates
+
+feat(scripts+tests): hook chain hardening 2026-04-18
+
+Ships the company-side Labs hook infrastructure updates:
+
+- scripts/hook_wrapper.py: CEO code-write guard now agent_id aware; added
+  subagent context detection (stack depth, payload agent_type, marker
+  identity) so the CEO constitutional deny only fires for the actual CEO
+  caller and not for engineer subagents spawned from CEO sessions.
+  Feature-flag for ARCH-6 thin-adapter path via YSTAR_HOOK_V2=1.
+
+- scripts/pretool_v2.py: NEW 16-line thin adapter that delegates every
+  hook invocation to ystar.adapters.hook.handle_hook_event. Protocol
+  translation only. Feature-flagged via YSTAR_HOOK_V2 so default remains
+  the legacy 220-line wrapper.
+
+- scripts/hook_daemon_wrapper.py: NEW heartbeat daemon that emits a
+  DAEMON_HEARTBEAT CIEU event every 60 seconds.
+
+- scripts/cron_wrapper.py: NEW subprocess runner that emits CRON_TICK +
+  CRON_RESULT CIEU events around the wrapped command.
+
+- scripts/agent_stack.py: NEW file-locked push / pop / reset module for
+  the .ystar_active_agent marker so subagent spawns do not clobber CEO
+  identity.
+
+- scripts/hook_subagent_output_scan.py: pop agent_stack when a subagent
+  reports back.
+
+- scripts/hook_stop_reply_scan.py: import scan_action_promises from the
+  kernel and run it as an injector after coordinator audit.
+
+- scripts/hook_ceo_pre_output.py: CEO pre-output U-workflow check
+  integration.
+
+- tests/: new test suites for hook payload override, subagent push/pop,
+  governance lockdeath regression, CZL-ARCH sibling fixes, and
+  guidance-payload plumbing.
+
+Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>

@@ -1,0 +1,227 @@
+{
+  "timestamp": "2026-04-17T14:44:49",
+  "team": {
+    "ceo": {
+      "charter_lines": 519,
+      "has_principles": true,
+      "has_scope": true,
+      "czl_dispatches": 0,
+      "status": "ACTIVE",
+      "capability_evidence": "needs_assessment"
+    },
+    "cfo": {
+      "charter_lines": 303,
+      "has_principles": true,
+      "has_scope": true,
+      "czl_dispatches": 0,
+      "status": "DORMANT",
+      "capability_evidence": "needs_assessment"
+    },
+    "cmo": {
+      "charter_lines": 332,
+      "has_principles": true,
+      "has_scope": true,
+      "czl_dispatches": 0,
+      "status": "AVAILABLE",
+      "capability_evidence": "needs_assessment"
+    },
+    "cso": {
+      "charter_lines": 340,
+      "has_principles": true,
+      "has_scope": true,
+      "czl_dispatches": 0,
+      "status": "DORMANT",
+      "capability_evidence": "needs_assessment"
+    },
+    "cto": {
+      "charter_lines": 345,
+      "has_principles": true,
+      "has_scope": true,
+      "czl_dispatches": 0,
+      "status": "ACTIVE",
+      "capability_evidence": "needs_assessment"
+    },
+    "eng-compliance": {
+      "charter_lines": 51,
+      "has_principles": false,
+      "has_scope": true,
+      "czl_dispatches": 0,
+      "status": "AVAILABLE",
+      "capability_evidence": "needs_assessment"
+    },
+    "eng-data": {
+      "charter_lines": 61,
+      "has_principles": false,
+      "has_scope": true,
+      "czl_dispatches": 0,
+      "status": "AVAILABLE",
+      "capability_evidence": "needs_assessment"
+    },
+    "eng-domains": {
+      "charter_lines": 142,
+      "has_principles": false,
+      "has_scope": true,
+      "czl_dispatches": 0,
+      "status": "AVAILABLE",
+      "capability_evidence": "needs_assessment"
+    },
+    "eng-governance": {
+      "charter_lines": 144,
+      "has_principles": false,
+      "has_scope": true,
+      "czl_dispatches": 0,
+      "status": "ACTIVE",
+      "capability_evidence": "needs_assessment"
+    },
+    "eng-kernel": {
+      "charter_lines": 139,
+      "has_principles": false,
+      "has_scope": true,
+      "czl_dispatches": 0,
+      "status": "ACTIVE",
+      "capability_evidence": "needs_assessment"
+    },
+    "eng-ml": {
+      "charter_lines": 53,
+      "has_principles": true,
+      "has_scope": true,
+      "czl_dispatches": 0,
+      "status": "AVAILABLE",
+      "capability_evidence": "needs_assessment"
+    },
+    "eng-perf": {
+      "charter_lines": 50,
+      "has_principles": false,
+      "has_scope": true,
+      "czl_dispatches": 0,
+      "status": "AVAILABLE",
+      "capability_evidence": "needs_assessment"
+    },
+    "eng-platform": {
+      "charter_lines": 151,
+      "has_principles": false,
+      "has_scope": true,
+      "czl_dispatches": 0,
+      "status": "ACTIVE",
+      "capability_evidence": "needs_assessment"
+    },
+    "eng-security": {
+      "charter_lines": 51,
+      "has_principles": false,
+      "has_scope": true,
+      "czl_dispatches": 0,
+      "status": "AVAILABLE",
+      "capability_evidence": "needs_assessment"
+    },
+    "secretary": {
+      "charter_lines": 178,
+      "has_principles": false,
+      "has_scope": true,
+      "czl_dispatches": 0,
+      "status": "AVAILABLE",
+      "capability_evidence": "needs_assessment"
+    }
+  },
+  "infrastructure": {
+    "hook_daemon": {
+      "socket_exists": true,
+      "status": "RUNNING"
+    },
+    "cieu_db": {
+      "exists": true,
+      "size_kb": 139436,
+      "status": "LIVE"
+    },
+    "aiden_brain": {
+      "nodes": 52,
+      "edges": 652,
+      "hebbian_learned": 22,
+      "status": "LIVE"
+    },
+    "session": {
+      "constraints": 0,
+      "status": "LOADED"
+    },
+    "forget_guard": {
+      "rules": 34,
+      "status": "LOADED"
+    },
+    "hook_hook_client_labs": {
+      "exists": true,
+      "lines": 94
+    },
+    "hook_hook_wrapper": {
+      "exists": true,
+      "lines": 293
+    },
+    "hook_hook_ceo_pre_output": {
+      "exists": true,
+      "lines": 115
+    },
+    "hook_hook_pretool_agent_dispatch": {
+      "exists": true,
+      "lines": 114
+    },
+    "ceo_enforcement": {
+      "pre_output_hook": "LIVE (CZL-159/160, format fixed 2026-04-17)",
+      "code_write_block": "LIVE (constitutional, format fixed CZL-161)"
+    }
+  },
+  "products": {
+    "ygov": {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "source_files": 169,
+      "test_files": 105,
+      "status": "ACTIVE",
+      "pypi_published": false,
+      "local_install": true
+    },
+    "k9_audit": {
+      "path": "/tmp/K9Audit",
+      "exists": true,
+      "status": "READ_ONLY",
+      "license": "AGPL-3.0"
+    },
+    "ystar_defuse": {
+      "status": "ABANDONED",
+      "note": "Formally abandoned task #6, 2026-04-16"
+    },
+    "gov_mcp": {
+      "test_exists": true,
+      "doc_exists": true,
+      "status": "UNCLEAR — needs CTO assessment"
+    }
+  },
+  "entanglement_map": [
+    {
+      "team_gap": "CTO lacks cross-layer system thinking",
+      "product_gap": "No unified hook output spec/adapter",
+      "evidence": "CZL-160 fixed one layer but missed daemon path + output format",
+      "fix_yields": "CTO capability + hook architecture improvement"
+    },
+    {
+      "team_gap": "Sub-agents hallucinate receipts (tool_uses=0)",
+      "product_gap": "CIEU Gate 2 receipt validation partial",
+      "evidence": "CZL-114 (Ethan), CZL-134 (Ryan) hallucinated",
+      "fix_yields": "Trust system + automated verification"
+    },
+    {
+      "team_gap": "CEO skips U-workflow for writing",
+      "product_gap": "CEO enforcement hook was not LIVE",
+      "evidence": "Case study + TS3L paper written without research",
+      "fix_yields": "CEO discipline + hook enforcement pattern"
+    },
+    {
+      "team_gap": "Ryan scope overflow (53-file commit)",
+      "product_gap": "No pre-commit scope guard in product",
+      "evidence": "d2852174 swept unrelated files",
+      "fix_yields": "Scope discipline + scope enforcement feature"
+    },
+    {
+      "team_gap": "Maya claim/reality mismatch",
+      "product_gap": "Claim mismatch detector needs refinement",
+      "evidence": "CZL-83 non-actionable classification questioned",
+      "fix_yields": "Honest reporting culture + better detector"
+    }
+  ]
+}
