@@ -11,6 +11,7 @@ import sys
 import os
 import traceback
 import time
+import re
 
 # Y*gov module path fix (Board 2026-04-16 P0: ModuleNotFoundError emergency)
 sys.path.insert(0, "/Users/haotianliu/.openclaw/workspace/Y-star-gov")
@@ -22,6 +23,21 @@ def log(msg):
         f.write(f"{time.strftime('%H:%M:%S')} {msg}\n")
 
 try:
+    # ── ARCH-6: Feature-flagged v2 thin adapter ──────────────────────────
+    # When YSTAR_HOOK_V2=1, delegate entirely to the thin adapter path.
+    # The thin adapter uses handle_hook_event() which runs router rules
+    # (Layer 3) before check_hook (Layer 2+1).  All hook_wrapper logic
+    # (CEO guard, CZL-159, agent stack, dispatch gate) is bypassed — those
+    # must be registered as router rules for v2 to be fully equivalent.
+    if os.environ.get("YSTAR_HOOK_V2") == "1":
+        raw = sys.stdin.buffer.read().decode('utf-8-sig').lstrip(chr(0xFEFF))
+        payload = json.loads(raw)
+        from ystar.adapters.hook import handle_hook_event
+        rules_dir = os.environ.get("YSTAR_RULES_DIR", "")
+        result = handle_hook_event(payload, rules_dir=rules_dir or None)
+        sys.stdout.write(json.dumps(result))
+        sys.exit(0)
+
     # ── Session Boot Check ──────────────────────────────────────────────
     boot_flag = os.path.join(os.path.dirname(__file__), ".session_booted")
     call_counter = os.path.join(os.path.dirname(__file__), ".session_call_count")
@@ -40,6 +56,35 @@ try:
     raw = raw.lstrip(chr(0xFEFF))
     payload = json.loads(raw)
 
+    # ── CZL-P1-a: Payload agent_id override from .ystar_active_agent ──
+    # The identity_detector has multiple fallback priorities. When Claude Code
+    # sends payload with agent_id="" and agent_type="agent" (the default for
+    # the root process), identity_detector's priority 2 returns "agent" and
+    # short-circuits before reaching the .ystar_active_agent file marker.
+    # Fix: read the marker file here and inject into payload so priority 1
+    # (payload.agent_id) resolves correctly. Also clear agent_type to prevent
+    # the priority 1.5 short-circuit returning "agent".
+    #
+    # Sibling Bug #4 fix (2026-04-18): Save original payload values BEFORE
+    # marker override so CEO guard can detect subagent context even when
+    # the marker is stale "ceo" (e.g. push_agent failed or wasn't called).
+    _original_agent_id = payload.get("agent_id", "")
+    _original_agent_type = payload.get("agent_type", "")
+
+    _MARKER_PATH = "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/.ystar_active_agent"
+    try:
+        _marker_content = open(_MARKER_PATH, "r", encoding="utf-8").read().strip()
+        if _marker_content and _marker_content != "agent":
+            payload["agent_id"] = _marker_content
+            # Clear agent_type to prevent priority 1.5 from returning "agent"
+            if payload.get("agent_type") in ("", "agent", None):
+                payload.pop("agent_type", None)
+            log(f"[P1-a] Payload agent_id overridden to '{_marker_content}' from marker file")
+    except FileNotFoundError:
+        pass  # No marker file — identity_detector will use its own fallbacks
+    except Exception as _marker_exc:
+        log(f"[P1-a] Failed to read marker file: {_marker_exc}")
+
     # ── CORE GOVERNANCE PATH (FAIL-CLOSED) ────────────────────────────
     # If CIEU is unavailable or check_hook fails, DENY the tool call.
     # This is the governance gate — failures here mean the audit chain is broken.
@@ -48,16 +93,57 @@ try:
         from ystar.adapters.hook import check_hook
 
         # ── CEO Code-Write Prohibition (Constitutional) ────────────────────
+        # CZL-ARCH-1-followup (2026-04-18, Maya diagnosis): Added agent_id
+        # guard so this rule only denies CEO, not all agents. Previously it
+        # blocked every subagent (eng-kernel, eng-governance, eng-platform)
+        # from writing Y-star-gov/ystar/ which is their actual scope — the
+        # source of today's repeated Leo/Maya/Ryan lock-deaths.
+        #
+        # Sibling Bug #4 fix (2026-04-18, Ryan diagnosis): When CEO spawns
+        # a subagent, the marker may still be "ceo" if push_agent hasn't
+        # fired yet or failed. We detect subagent context via:
+        #   1. agent_stack depth > 0 (subagent was properly pushed)
+        #   2. Original payload agent_type is non-empty AND non-"agent"
+        #      (Claude Code sets specific agent_type for subagent contexts)
+        # If subagent context is detected, skip CEO guard entirely.
         tool = payload.get("tool_name", "")
         tool_input = payload.get("tool_input", {})
-        if tool in ("Write", "Edit", "NotebookEdit"):
+        _caller_id = payload.get("agent_id", "")
+        # Removed "" from _ceo_identities — empty string is ambiguous and
+        # should not be treated as CEO (it means "unknown", not "CEO").
+        _ceo_identities = ("ceo", "Aiden-CEO", "Aiden")
+
+        # Subagent context detection (Sibling Bug #4)
+        _is_subagent_context = False
+        try:
+            sys.path.insert(0, os.path.dirname(__file__))
+            from agent_stack import stack_depth as _stack_depth
+            if _stack_depth() > 0:
+                _is_subagent_context = True
+                log(f"[BUG4-FIX] Subagent detected via stack depth > 0, skipping CEO guard")
+        except Exception as _stack_exc:
+            log(f"[BUG4-FIX] stack_depth check failed: {_stack_exc}")
+        # Fallback: check if original payload indicates subagent context
+        # (agent_type set to something specific by Claude Code for subagents)
+        if not _is_subagent_context and _original_agent_type not in ("", "agent", None):
+            _is_subagent_context = True
+            log(f"[BUG4-FIX] Subagent detected via original agent_type='{_original_agent_type}'")
+        # Fallback 2: marker itself is an engineer identity (not CEO) — trust it
+        if not _is_subagent_context and _caller_id not in _ceo_identities and _caller_id != "":
+            _is_subagent_context = True
+            log(f"[BUG4-FIX] Subagent detected via marker identity='{_caller_id}' (not CEO)")
+
+        if tool in ("Write", "Edit", "NotebookEdit") and _caller_id in _ceo_identities and not _is_subagent_context:
             file_path = tool_input.get("file_path", "")
             ceo_deny = ["Y-star-gov/ystar/", "Y-star-gov\\\\ystar\\\\", "/src/ystar/"]
             for deny_pattern in ceo_deny:
                 if deny_pattern in file_path:
                     result = {
-                        "action": "block",
-                        "message": f"[Y*gov CONSTITUTIONAL] CEO禁止直接写代码。文件 {file_path} 属于CTO管辖范围。请派工程师执行。"
+                        "hookSpecificOutput": {
+                            "hookEventName": "PreToolUse",
+                            "permissionDecision": "deny",
+                            "permissionDecisionReason": f"[Y*gov CONSTITUTIONAL] CEO禁止直接写代码。文件 {file_path} 属于CTO管辖范围。请派工程师执行。"
+                        }
                     }
                     # Fail-closed output: if stdout.write fails, force-terminate process
                     try:
@@ -67,6 +153,68 @@ try:
                         log(f"[CRITICAL] stdout.write failed in CEO deny path: {write_exc}")
                         os._exit(1)
                     sys.exit(0)
+
+        # ── CZL-159: CEO Pre-Output U-Workflow Enforcement ────────────────
+        # Block CEO Write to external-facing paths without research/synthesis/audience evidence.
+        # Integrated here (not separate hook) because matcher-per-tool is unreliable (CZL-160).
+        if tool == "Write":
+            _enforced_prefixes = ("reports/", "content/", "knowledge/ceo/strategy/")
+            _fp = tool_input.get("file_path", "")
+            _is_enforced = any(pfx in _fp for pfx in _enforced_prefixes)
+            if _is_enforced:
+                _content = tool_input.get("content", "")
+                _research = bool(re.search(
+                    r"(source[s]?[:\s]|cite[ds]?[\s:]|per\s+\w|according\s+to|"
+                    r"search|found\s+that|reference[ds]?|evidence|data\s+show|"
+                    r"based\s+on|research|study|paper|article|empirical)",
+                    _content, re.IGNORECASE))
+                _synthesis = bool(re.search(
+                    r"(therefore|because|analysis|conclude[ds]?|lesson[s]?|"
+                    r"insight[s]?|implication|root\s+cause|pattern|takeaway|"
+                    r"diagnosis|framework|principle|synthesis|assessment)",
+                    _content, re.IGNORECASE))
+                _audience = bool(re.search(
+                    r"(audience|purpose|for\s+board|stakeholder|reader[s]?|"
+                    r"目标受众|目的|面向|intended\s+for|context\s+for|"
+                    r"decision\s+maker|consumer|recipient)",
+                    _content, re.IGNORECASE))
+                _missing = []
+                if not _research: _missing.append("research")
+                if not _synthesis: _missing.append("synthesis")
+                if not _audience: _missing.append("audience")
+                if _missing:
+                    _block_msg = (
+                        f"[CZL-159 CEO PRE-OUTPUT BLOCK] Write to {_fp} missing "
+                        f"U-workflow signals: {', '.join(_missing)}. "
+                        f"Do research/synthesis/audience framing before writing."
+                    )
+                    log(f"[CZL-159] BLOCKED: {_fp} missing {_missing}")
+                    result = {
+                        "hookSpecificOutput": {
+                            "hookEventName": "PreToolUse",
+                            "permissionDecision": "deny",
+                            "permissionDecisionReason": _block_msg
+                        }
+                    }
+                    try:
+                        sys.stdout.write(json.dumps(result))
+                        sys.stdout.flush()
+                    except Exception as write_exc:
+                        log(f"[CRITICAL] stdout.write failed in CZL-159 path: {write_exc}")
+                        os._exit(1)
+                    sys.exit(0)
+
+        # ── CZL-P1-e: Push current agent onto stack before subagent spawn ──
+        if tool == "Agent":
+            try:
+                sys.path.insert(0, os.path.dirname(__file__))
+                from agent_stack import push_agent as _push_agent
+                _subagent_name = tool_input.get("agent", "")
+                if _subagent_name:
+                    _prev = _push_agent(_subagent_name)
+                    log(f"[P1-e] Agent stack PUSH: {_prev} -> {_subagent_name}")
+            except Exception as _push_exc:
+                log(f"[P1-e] Agent stack push failed (non-fatal): {_push_exc}")
 
         # ── CZL Gate 1: Dispatch 5-tuple validator (Board 2026-04-16) ──────
         if tool == "Agent":
@@ -179,13 +327,16 @@ try:
 
         # DENY the tool call
         result = {
-            "action": "block",
-            "message": (
-                f"[Y*gov FAIL-CLOSED] Core governance unavailable. "
-                f"CIEU audit chain is broken — blocking tool call for safety.\\n\\n"
-                f"Error: {core_exc}\\n\\n"
-                f"Fix: Run \`ystar doctor\` to diagnose governance health."
-            )
+            "hookSpecificOutput": {
+                "hookEventName": "PreToolUse",
+                "permissionDecision": "deny",
+                "permissionDecisionReason": (
+                    f"[Y*gov FAIL-CLOSED] Core governance unavailable. "
+                    f"CIEU audit chain is broken — blocking tool call for safety.\\n\\n"
+                    f"Error: {core_exc}\\n\\n"
+                    f"Fix: Run \`ystar doctor\` to diagnose governance health."
+                )
+            }
         }
         # Fail-closed output: if stdout.write fails, force-terminate process
         # to prevent outer catch-all from converting DENY to allow

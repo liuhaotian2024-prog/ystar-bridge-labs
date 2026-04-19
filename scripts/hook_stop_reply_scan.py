@@ -27,6 +27,7 @@ try:
         inject_czl_corrections,
         auto_validate_subagent_receipt,
         inject_coordinator_audit_warning,
+        scan_action_promises,
     )
     _YSTAR_ADAPTERS_AVAILABLE = True
 except ImportError as e:
@@ -488,6 +489,14 @@ def main():
             inject_coordinator_reply_5tuple_audit(reply_text=reply)
         except Exception as e:
             print(f"[W10] Coordinator reply 5-tuple audit failed: {e}", file=sys.stderr)
+
+        # 7. ARCH-11c: Action promise vs tool_use scan (Leo core + Ryan wiring)
+        try:
+            _res = scan_action_promises(reply, len(payload.get("tool_uses", [])), agent_id)
+            if _res.get("warning"):
+                print(_res["warning"], file=sys.stdout)
+        except Exception as e:
+            print(f"[W10] ARCH-11c scan_action_promises failed: {e}", file=sys.stderr)
 
     # Stop hook: never block, always exit 0
     print(json.dumps({"action": "allow", "scanned": scan["triggered"]}))

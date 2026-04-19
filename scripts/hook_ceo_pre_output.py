@@ -15,8 +15,8 @@ If ANY signal missing -> block with actionable message.
 If all present -> allow.
 
 Called by: ~/.claude/settings.json hooks.PreToolUse[Write]
-Stdin: {"tool":"Write","input":{"file_path":"...","content":"..."}}
-Stdout: {"action":"allow"|"block","message":"..."}
+Stdin: {"tool_name":"Write","tool_input":{"file_path":"...","content":"..."}}
+Stdout: Claude Code hookSpecificOutput format (permissionDecision: allow|deny)
 """
 
 import sys
@@ -64,23 +64,36 @@ def check_compliance(content: str) -> dict:
     }
 
 
+def _cc_output(decision: str, reason: str = ""):
+    """Output in Claude Code hookSpecificOutput format."""
+    out = {
+        "hookSpecificOutput": {
+            "hookEventName": "PreToolUse",
+            "permissionDecision": decision,
+        }
+    }
+    if reason:
+        out["hookSpecificOutput"]["permissionDecisionReason"] = reason
+    print(json.dumps(out))
+
+
 def main():
     try:
         payload = json.load(sys.stdin)
     except (json.JSONDecodeError, EOFError):
-        print(json.dumps({"action": "allow"}))
+        print("{}")
         return
 
-    tool = payload.get("tool", "")
+    tool = payload.get("tool_name", "") or payload.get("tool", "")
     if tool != "Write":
-        print(json.dumps({"action": "allow"}))
+        print("{}")
         return
 
-    inp = payload.get("input", {})
+    inp = payload.get("tool_input", {}) or payload.get("input", {})
     file_path = inp.get("file_path", "")
 
     if not is_enforced_path(file_path):
-        print(json.dumps({"action": "allow"}))
+        print("{}")
         return
 
     content = inp.get("content", "")
@@ -89,13 +102,13 @@ def main():
 
     if missing:
         msg = (
-            f"CEO PRE-OUTPUT BLOCK: Write to {file_path} missing "
+            f"[CZL-159] CEO PRE-OUTPUT BLOCK: Write to {file_path} missing "
             f"U-workflow signals: {', '.join(missing)}. "
             f"Do research/synthesis/audience framing before writing."
         )
-        print(json.dumps({"action": "block", "message": msg}))
+        _cc_output("deny", msg)
     else:
-        print(json.dumps({"action": "allow", "message": "CEO U-workflow OK"}))
+        print("{}")
 
 
 if __name__ == "__main__":

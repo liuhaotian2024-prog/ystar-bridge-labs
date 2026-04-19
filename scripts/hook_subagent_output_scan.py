@@ -82,6 +82,19 @@ def _emit_cieu(event_type: str, metadata: str) -> None:
         pass
 
 
+def _pop_agent_stack() -> str:
+    """CZL-P1-e: Pop agent stack and restore previous agent identity."""
+    try:
+        sys.path.insert(0, str(REPO_ROOT / "scripts"))
+        from agent_stack import pop_agent
+        restored = pop_agent()
+        return restored
+    except Exception as e:
+        # Fail-open: do not crash the hook on stack errors
+        sys.stderr.write(f"[P1-e] Agent stack pop failed: {e}\n")
+        return ""
+
+
 def main():
     try:
         payload = json.loads(sys.stdin.read() or "{}")
@@ -93,6 +106,11 @@ def main():
     if tool_name != "Agent":
         print(json.dumps({"action": "allow", "scanned": False, "reason": "not Agent tool"}))
         sys.exit(0)
+
+    # ── CZL-P1-e: Pop agent stack on subagent completion ──
+    restored = _pop_agent_stack()
+    if restored:
+        _emit_cieu("AGENT_STACK_POP", f"restored={restored}")
 
     # Extract sub-agent text — multiple possible locations
     result_text = ""
@@ -109,7 +127,7 @@ def main():
     for event_type, meta in hits:
         _emit_cieu(event_type, meta)
 
-    print(json.dumps({"action": "allow", "scanned": True, "hits": len(hits)}))
+    print(json.dumps({"action": "allow", "scanned": True, "hits": len(hits), "restored_agent": restored}))
     sys.exit(0)
 
 

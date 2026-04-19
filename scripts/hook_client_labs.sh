@@ -65,6 +65,11 @@ sys.stdout.write(d.decode())
         GUARD_ACTION=$(echo "$GUARD_OUT" | python3.11 -c "import sys,json;d=json.load(sys.stdin);print(d.get('action','allow'))" 2>/dev/null || echo "allow")
         if [ "$GUARD_ACTION" = "deny" ]; then echo "$GUARD_OUT"; exit 0; fi
 
+        # CZL-159/160: CEO Pre-Output U-Workflow Enforcement (FAST PATH wire)
+        CEO_OUT=$(echo "$PAYLOAD" | python3.11 "$YSTAR_DIR/scripts/hook_ceo_pre_output.py" 2>/dev/null)
+        CEO_DECISION=$(echo "$CEO_OUT" | python3.11 -c "import sys,json;d=json.load(sys.stdin);print(d.get('hookSpecificOutput',{}).get('permissionDecision','allow'))" 2>/dev/null || echo "allow")
+        if [ "$CEO_DECISION" = "deny" ]; then echo "$CEO_OUT"; exit 0; fi
+
         # Emit HOOK_POST_CALL (canonical event, k9_audit_v3 requirement)
         python3.11 "$YSTAR_DIR/scripts/emit_hook_event.py" HOOK_POST_CALL "$SOCK" "$GUARD_ACTION" 2>/dev/null
 
@@ -86,4 +91,4 @@ fi
 # ── FALLBACK: fail-closed ──────────────────────────────────────────────
 # If neither daemon nor slow path produced a result, DENY the tool call.
 # This prevents silent governance bypass on infrastructure failure.
-echo '{"action":"block","message":"[Y*gov FAIL-CLOSED] Governance enforcement unavailable. Tool call denied for safety. Check hook daemon: ls /tmp/ystar_hook.sock"}'
+echo '{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"deny","permissionDecisionReason":"[Y*gov FAIL-CLOSED] Governance enforcement unavailable. Tool call denied for safety. Check hook daemon: ls /tmp/ystar_hook.sock"}}'
