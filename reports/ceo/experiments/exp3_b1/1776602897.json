@@ -1,0 +1,16 @@
+{
+  "axis": "B1_enforce_rate",
+  "timestamp": 1776602897,
+  "window_seconds": 7200,
+  "target_ratio": 0.95,
+  "fail_ratio": 0.9,
+  "metrics": {
+    "total_events_sampled": 100,
+    "classifiable_events": 0,
+    "correct_events": 0,
+    "unknown_skip": 100,
+    "correct_ratio": null,
+    "per_type": {}
+  },
+  "verdict": "inconclusive"
+}

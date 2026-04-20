@@ -1,0 +1,24 @@
+[cieu_to_brain] Reading last 353000 CIEU events from /Users/haotianliu/.openclaw/workspace/ystar-company/.ystar_cieu.db
+[cieu_to_brain] Loaded 353000 events
+[cieu_to_brain] activation_log rows BEFORE: 66300
+[cieu_to_brain] Parallel mode: 8 workers, 353000 events
+[cieu_to_brain] Cached 146 brain nodes for workers
+[cieu_to_brain] Partitions: [(0, 44125), (44125, 44125), (88250, 44125), (132375, 44125), (176500, 44125), (220625, 44125), (264750, 44125), (308875, 44125)]
+Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/Y-star-gov/scripts/cieu_to_brain_batch.py", line 481, in <module>
+    main()
+  File "/Users/haotianliu/.openclaw/workspace/Y-star-gov/scripts/cieu_to_brain_batch.py", line 441, in main
+    result = run_parallel(events, args)
+  File "/Users/haotianliu/.openclaw/workspace/Y-star-gov/scripts/cieu_to_brain_batch.py", line 348, in run_parallel
+    result_queue = multiprocessing.Queue(maxsize=total + num_workers + 10)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/multiprocessing/context.py", line 103, in Queue
+    return Queue(maxsize, ctx=self.get_context())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 49, in __init__
+    self._sem = ctx.BoundedSemaphore(maxsize)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/multiprocessing/context.py", line 88, in BoundedSemaphore
+    return BoundedSemaphore(value, ctx=self.get_context())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/multiprocessing/synchronize.py", line 145, in __init__
+    SemLock.__init__(self, SEMAPHORE, value, value, ctx=ctx)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/multiprocessing/synchronize.py", line 57, in __init__
+    sl = self._semlock = _multiprocessing.SemLock(
+OSError: [Errno 22] Invalid argument

@@ -1,0 +1,97 @@
+{
+  "axis": "B1_enforce_rate",
+  "timestamp": 1776603195,
+  "window_seconds": 7200,
+  "target_ratio": 0.95,
+  "fail_ratio": 0.9,
+  "metrics": {
+    "total_events_sampled": 100,
+    "classifiable_events": 90,
+    "correct_events": 37,
+    "unknown_skip": 10,
+    "correct_ratio": 0.4111111111111111,
+    "per_type": {
+      "SECRETARY_DUTY_ADDED": {
+        "count": 1,
+        "correct": 1
+      },
+      "external_observation": {
+        "count": 7,
+        "correct": 7
+      },
+      "orchestration:path_b_cycle": {
+        "count": 10,
+        "correct": 0
+      },
+      "orchestration:path_a_cycle": {
+        "count": 10,
+        "correct": 0
+      },
+      "handoff": {
+        "count": 10,
+        "correct": 10
+      },
+      "orchestration:governance_loop_cycle": {
+        "count": 10,
+        "correct": 0
+      },
+      "circuit_breaker_armed": {
+        "count": 10,
+        "correct": 10
+      },
+      "K9_VIOLATION_DETECTED": {
+        "count": 6,
+        "correct": 0
+      },
+      "K9_AUDIT_TRIGGERED": {
+        "count": 3,
+        "correct": 0
+      },
+      "CIEU_WATCHER_TICK": {
+        "count": 1,
+        "correct": 1
+      },
+      "cmd_exec": {
+        "count": 2,
+        "correct": 2
+      },
+      "omission_setup_complete": {
+        "count": 4,
+        "correct": 4
+      },
+      "DEFER_IN_BASH_DRIFT": {
+        "count": 1,
+        "correct": 0
+      },
+      "AGENT_ID_UNIDENTIFIED_EMIT": {
+        "count": 3,
+        "correct": 0
+      },
+      "MATURITY_TAG_MISSING": {
+        "count": 2,
+        "correct": 0
+      },
+      "HOOK_PRE_CALL": {
+        "count": 2,
+        "correct": 0
+      },
+      "HOOK_BOOT": {
+        "count": 4,
+        "correct": 0
+      },
+      "SESSION_JSON_SCHEMA_VIOLATION": {
+        "count": 1,
+        "correct": 0
+      },
+      "HOOK_POST_CALL": {
+        "count": 1,
+        "correct": 0
+      },
+      "file_write": {
+        "count": 2,
+        "correct": 2
+      }
+    }
+  },
+  "verdict": "fail"
+}

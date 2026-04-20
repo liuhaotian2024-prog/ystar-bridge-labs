@@ -373,3 +373,54 @@ Slogan 化把 "多路并列 sub-agent" 从 Article 11 的 **一个执行维度**
 2. Weekly audit by Secretary: grep `governance/WORKING_STYLE.md:783-884` canonical pointer presence in all 12 downstream files; any missing → restore + DNA_LOG entry.
 3. 考虑把 `.claude/agents/*.md` 的 harness write 限制单独记录到 `knowledge/secretary/lessons/harness_vs_governance_authority_layers_20260415.md`。
 
+---
+
+## AMENDMENT-020 — Engineering Agent Explicit Registration (eng-kernel / eng-governance / eng-platform / eng-domains)
+
+| 字段 | 内容 |
+|------|------|
+| 日期 | 2026-04-19 |
+| Level | 3（宪法层 · 新增 4 个正式 agent 角色，影响 write-scope policy、boot script、hook fallback） |
+| Board 授权 | 口头确认 via CEO session 2026-04-19, verbatim quote: "ack AMENDMENT-020" |
+| 起草人 | Ethan Wright (CTO) — prepared diff in `/Users/haotianliu/.openclaw/workspace/Y-star-gov/reports/cto/CZL-AGENTS-ENGREG-GAP-receipt.md` |
+| 执行人 | Samantha Lin (Secretary) |
+| 修改内容 | 在 `AGENTS.md` 的 CFO Agent block (§931 之后) 与 Escalation Matrix (§933 之前) 之间新增 4 个 eng-\* 角色 block：**eng-kernel** (Kernel Engineer), **eng-governance** (Governance Engineer), **eng-platform** (Platform Engineer), **eng-domains** (Domains Engineer)。每个 block 含 Role / Write Access / Read Access / Forbidden Access / Obligations 五项，按现有 CEO/CTO/CMO/CSO/CFO block 模板对齐。Write Access 白名单限定为各自 Y-star-gov 子系统目录 + `./reports/<role>/` + `./reports/receipts/`；Forbidden Access 统一含 `./finance/`, `./sales/`, `.env`；Obligations 含 test gate / CIEU-first debugging / source-first fixes / no git ops（eng-platform 额外含 cross-platform compat）。 |
+| 理由 | Ryan Park 在 CZL-BOOT-INJ-FIX 调查中发现：`Y-star-gov/ystar/adapters/hook.py` 第 496-499 行对任何 `eng-*` 角色使用 `who = "cto"` 作为 fallback（因为 eng-\* 未在 AGENTS.md policy 中显式注册）。这使所有 eng-\* sub-agent 的 receipt 被迫落入 cto 的 write scope，workaround 是写 `docs/receipts/` 而非 `reports/<role>/`。显式注册后 known eng-\* 角色按自己的 policy 匹配，unknown eng-\* 变种（e.g., eng-security, eng-ml 未来新增）仍保留 hook.py fallback 作为防御层，hook.py 无需改。 |
+| 提案原文 | `/Users/haotianliu/.openclaw/workspace/Y-star-gov/reports/cto/CZL-AGENTS-ENGREG-GAP-receipt.md` |
+| 执行状态 | **BLOCKED — 结构性 bug** — charter entry 已落（本文件），AGENTS.md edit 被 immutable-path hook 硬拒。根因：hook.py line 496-506 在 `_check_immutable_paths` **之前** 把 `who="secretary"` 重写为 `who="agent"`（因为 Secretary 未在 AGENTS.md 中显式注册为 Policy agent），导致 `override_roles=["secretary"]` 永远匹配不上。与 2026-04-09 AMENDMENT-003 历史 blocker **不同机制但同效果**（AMENDMENT-003 时根本无 override；本次有 override 但被 fallback 逻辑定义性绕开）。 |
+| 执行时间 | 2026-04-19（charter entry 落盘时间）|
+| 执行 commit hash | 待修 blocker 后 CEO review 提交 |
+| 执行 receipt | `reports/secretary/AMENDMENT-020-execution.md` |
+| 验证 | 待 AGENTS.md edit 能落地后执行：`python3 scripts/governance_boot.sh ceo` Step 5 输出 agent rule set 数量应从 10 增至 14（CEO + CTO + CMO + CSO + CFO + Secretary + 4 eng-\*）|
+
+### 执行说明 + 结构性 Blocker 根因
+
+- Secretary 通过 `scripts/agent_stack.push_agent("secretary")` 从 CEO session 成功切换为 secretary 活动身份（marker file + stack 已更新）。
+- hook_wrapper.py CZL-P1-a 逻辑正确把 payload agent_id 覆盖为 `secretary` — confirmed in `scripts/hook_debug.log` 13:37-13:40 ("Payload agent_id overridden to 'secretary' from marker file"). 
+- 但 `Y-star-gov/ystar/adapters/hook.py` line 496-506 的 policy fallback 逻辑把 `who` 从 `secretary` 重写成 `"agent"` **之前** 才调用 `_check_immutable_paths(..., who)` (line 510)。这使 `boundary_enforcer.py` line 257 的 `if who in override_roles` 永不命中。
+- 根因重述：`.ystar_session.json` 的 `immutable_paths.override_roles = ["secretary"]` 依赖 `who == "secretary"` 到达 check，但 Secretary 角色在 AGENTS.md 里从未注册为 Policy entry（`grep "^## Secretary Agent" AGENTS.md` → 0 hits），所以 fallback 触发 → 覆盖 secretary → override 死。
+- 此为 **chicken-and-egg**：要让 Secretary 能改 AGENTS.md，需要先在 AGENTS.md 里注册 Secretary → 但注册 Secretary 本身就要改 AGENTS.md → block。
+- **可执行解药（需 CTO 或 eng-governance scope 批准 + 修）**：
+  1. **Option K**：修 `hook.py` line 496-506 先跑 `_check_immutable_paths(..., original_who)` 再 fallback；即 override 判断用未 fallback 的 who。最小改动。
+  2. **Option L**：AMENDMENT-015 YSTAR_SAFEMODE Layer 4 Board shell override — Board 一次性 env var 放行本次 Edit。
+  3. **Option M**：显式注册 `## Secretary Agent` block 到 AGENTS.md —— 但必须先用 K 或 L 解开一次 write，才能做 M。所以 M 不能独立。
+- **推荐序列**：Option L（Board 一次性 safemode override）→ 完成本次 AGENTS.md edit（5 个 agent block：Secretary + 4 个 eng-\*） → Option K 做永久结构修（CTO 派 eng-kernel）。
+- 本条 Amendment 在 blocker 解除后由 Secretary 继续执行；charter entry 保持"BLOCKED"状态直到 Rt+1=0。
+
+### 关联
+
+- Ryan Park CZL-BOOT-INJ-FIX 调查报告（触发本 Amendment 的根因发现）
+- Ethan Wright CZL-AGENTS-ENGREG-GAP-receipt（预制 diff + hook.py fallback 语义验证）
+- 后续建议：CMO README audit 下次轮值时在 4 repo README 角色列表里同步 eng-\* 4 岗位（非 blocking）。
+
+
+
+---
+
+## AMENDMENT-020 CLOSURE NOTE (2026-04-19 18:38:02)
+
+**Status**: EXECUTED (pending CEO commit)
+
+Applied 2026-04-19 via Board shell (bypass agent-hook layer) after 8 Samantha attempts blocked by cascade: Leo Phase 1 immutable hoist + Phase 2 restricted hoist + Phase 3 per-session marker isolation + Path A agent_stack CLI + Path B Samantha aliases. The alias fix widened must_dispatch_via_cto block to include `Samantha-` prefix, locking all secretary spawns — resolved via Board shell as atomic escape hatch.
+
+5 new agent blocks landed in AGENTS.md (Secretary + eng-kernel/governance/platform/domains). Boot Step 5 will report 14+ agent rule sets (was 10).

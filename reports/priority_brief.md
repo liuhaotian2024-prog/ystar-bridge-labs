@@ -1,78 +1,71 @@
-# Y* Bridge Labs — Priority Brief v2
+# Y* Bridge Labs — Priority Brief v3
 
-**Last updated**: 2026-04-16 EOD (Campaign v6 close-out)
-**Author**: Samantha Lin (Secretary), CZL-132 W10 atomic
-**Supersedes**: priority_brief.md v1 (2026-04-15T20:30 internal_consolidation phase)
-**Next session boot reference**: this file + memory/session_summary_20260416.md
+**Audience**: next-session CEO boot reference; CTO Ethan for P2-resume pickup; consultants auditing 2026-04-18 → 04-19 P-wave close-out.
+**Research basis**: governance_boot.sh 2026-04-19T10:53Z output; dispatch_board.json (37 tasks, 5 new posted this session); Y-star-gov git log past 20h (5c24cde REWRITE / f0be66a aliases / 3c7c295 governance modules); ARCH-17 canonical spec at Y-star-gov/docs/arch/; empirical receipt verification of CZL-P1-b/c/g + CZL-P2-a (file mtime + commit correlation).
+**Synthesis**: P1 wave substantively closed; P2 pause release condition met in substance (ARCH-17 consolidated) but requires CTO Ethan to formalize via CZL-ARCH-close receipt; Board 2026-04-19 directive installs 3-component directive liveness model as persistent governance primitive (spec authored, impl card CZL-GOV-LIVE-EVAL posted).
+**Purpose**: (1) brief next session on where engineering work resumes; (2) make P2-unblock authority path explicit (CTO, not CEO); (3) record Board's smart-execution methodology as canonical reference.
 
----
-
-## 1. Campaign v6 Final State (2026-04-16T17:21Z → EOD)
-
-**Campaign status**: PARTIALLY CLOSED — 5 W closed Rt+1=0 / 2 W closed Rt+1=1 partial / 4 W remaining for next session.
-
-### Closed Rt+1=0 (L4 SHIPPED)
-- **W1 — K9 routing chain healing**: CROBA Option B tool_name filter LIVE (CZL-100, 10/10 tests) + registry aliases LIVE (CZL-92, 15 roles + 11 full-form aliases) + daemon recycled + 5min smoke 0 false positives. Eliminated 7 chronic CROBA noise events.
-- **W2 — HiAgent BOOT CONTEXT enforcement**: FG rule `subagent_boot_no_state_read` LIVE (Maya, 78-line detector + 6/6 tests) + dispatch template enforces `Read .czl_subgoals.json + git log -10` block. First fully-honest tool_uses claim recorded (Maya 9=9 metadata).
-- **W6 #25 — daemon concurrent-write audit**: Ethan CZL-105 audited 4 daemons + 6 shared resources. SQLite WAL working (0 write errors). `.ystar_active_agent` flagged as state-ownership race (not corruption) — fcntl.flock Tier 1 P0 for AMENDMENT-016.
-- **W6 #32 — enforcement_observer threshold cross-validation**: Leo CZL-103 analyzed 24,682 violations 7-day corpus. 5 threshold issues identified with empirical FP rates (phantom_variable 98% FP / root_cause_fix_required 87% FP / omission_governance 474/day flood / document_requires_execution_plan 59% FP / intervention_governance 0% deny — deprecate candidate). 6/15 rules 100% TP no-change.
-- **W7 — Defuse archive**: products/ystar-defuse formally archived per task #9, active_task.json flipped to k9_routing_subscriber operational mode.
-
-### Closed Rt+1=1 (partial — followup queued)
-- **W3 partial — engineer activation steps 3-5**: 5 new engineers (eng-data, eng-security, eng-ml, eng-perf, eng-compliance) integrated into governance_boot.sh CHARTER_MAP, dispatch_board.py VALID_ENGINEERS whitelist, engineer_trust_scores.json (trust=0 baseline), 3 tests PASS. **Step 6 (methodology self-build) deferred** to W4 phase pending Ethan #73 gauntlet PASS. Ryan E1 violation: claim 12 vs metadata 18.
-- **W6 #49 — meta-meta audit**: Maya CZL-104 re-verified 20 deliverables, 75% accuracy (15/20), 5 errors fixed (cron filename .sh→.txt, injector 5→3, RECEIPT count 18→68, schema field naming, shadow symlink). 7 SOP lessons captured. Maya self-caught E1 violation (claimed ≤14, actual 21) — meta-honesty exemplary. 12x normal duration (3576s API lag).
-- **W6 #32-followup — Maya threshold tuning**: 3410s STREAM TIMEOUT mid-execution. Empirical verify: 5 yaml rules ARE tuned in forget_guard_rules.yaml with Leo CZL-103 rationale stamps. Test file test_threshold_tuning.py NOT created — queue followup test atomic.
-
-### Remaining Open (carry-forward to next session)
-- **W3 step 6 — methodology self-build x 5 engineers**: blocked on Ethan #73 gauntlet PASS demonstrating new-engineer onboarding runs end-to-end through skill-trust hybrid v1.
-- **W4 — Phase 2-3 skill-trust remediation**: 35 atomics across 6 phases (governance + onboarding + ecosystem + cascade + rollout). Currently 4 atomics shipped, 4 in flight, 27 queued. Ethan #74 owner.
-- **W5 — Tool_uses claim/metadata mismatch detector E1**: dry_run currently. Baseline observed: 4 violations today (Ryan / Leo / Ethan / Maya). Promote to warn after 24h baseline window — PENDING.
-- **W8 — Agent files Name-Role format + cognitive preferences** (task #8): Samantha owner, deferred behind W10 close-out.
-- **W9 — Universal enforcement audit Q1-Q9 landing waves** (task #16): CEO owner, deferred.
-- **W10 — Campaign v6 close-out**: THIS ATOMIC (priority_brief v2 + session_summary + archive snapshot).
-- **W11 — Agent Capability Monitor**: Ryan CZL-108 in flight. session_watchdog.py extension with 4 new signals (daemon liveness / receipt accuracy / K9 SNR / API health), composite AC score, statusline AC alongside HP. Currently HP:54 AC:84 LIVE per statusline output.
+**Last updated**: 2026-04-19T15:05Z (CEO Aiden, post P-wave verification sweep)
+**Author**: CEO Aiden
+**Supersedes**: priority_brief.md v2 (2026-04-16 EOD, 65h stale at refresh time)
+**Status**: [L2] — ready for next-session boot reference
 
 ---
 
-## 2. Next Session Top Priorities (ordered)
+## 1. Current Campaign State
 
-1. **W3 step 6 unblock** — verify Ethan #73 gauntlet PASS, then dispatch 5x parallel sub-agents (one per new engineer) for methodology_v1.md self-build using their skill-trust onboarding flow. ~1 batch.
-2. **W5 E1 promote** — gather 24h baseline (current 6h baseline insufficient), if violation rate stable at 4-6/day promote dry_run → warn. Maya CZL owner.
-3. **W4 Phase 2-3 backlog drain** — 27 atomics queued. Ethan dispatches by priority (governance core first, then onboarding cascade, then rollout). Aim 10 atomics next session.
-4. **W8 Agent file Name-Role format** — Samantha rewrites .claude/agents/*.md headers to `# {FirstName} {LastName} — {Role}, Y* Bridge Labs` standard + adds cognitive_preferences YAML block per task #8 spec.
-5. **W11 AC monitor finalize** — Ryan CZL-108 finishes 4 signals + composite, ship to statusline.
-6. **W6 #62 6 per-rule hook detectors** — backlog item still open. Leo or Maya assignment.
-7. **AMENDMENT-016 fcntl.flock for `.ystar_active_agent`** — Ethan CZL-105 recommendation. Platform engineer assignment.
+**Campaign**: Enforce-as-Router Migration (CZL-P1/P2 waves) + Behavioral Governance architecture (ARCH-17/18)
 
----
+**Since 2026-04-18 night → 2026-04-19 today**:
 
-## 3. Honesty Watch — Tool_uses Mismatch Epidemic
+### Closed Rt+1=0 [L4 SHIPPED]
+- **CZL-P1-a/b/c/d/e/f** — Phase 1 lock-death fixes: YSTAR_REPO_ROOT absolute paths, REDIRECT enforce branch, identity_detector agent mapping, hook_wrapper FAIL-CLOSED, hook_subagent_output_scan, lockdeath test suite
+- **CZL-P2-a** — EnforceDecision expanded (INVOKE/INJECT/AUTO_POST), router_registry.py API skeleton landed
+- **CZL-P1-g** — hook_wrapper.py FAIL-CLOSED path fix (verified and closed by CEO 2026-04-19 from artifact + commit trail after terminal-freeze orphan)
+- **ARCH-17** — Behavioral Governance canonical spec consolidated by CTO Ethan 2026-04-19 at Y-star-gov/docs/arch/arch17_behavioral_governance_spec.md (three-fragment merge)
+- **ARCH-18** — CIEU-as-Brain-Corpus spec drafted (companion to ARCH-17)
+- **Guard→Guide REWRITE** — Board 2026-04-18 night catch ("治理的改写功能哪？") answered: 3 REWRITE transforms wired into live block paths (commit 5c24cde)
 
-Today's E1 violations (claim < metadata) indicate systemic under-reporting. Pattern observed across 4 of 5 active sub-agents in W6 phase. Root cause hypothesis: sub-agents collapsing parallel tool calls into a single mental "step" when tallying. Mitigation in flight via W5 promote + tool_uses_per_call mandatory in receipt template.
+### In-flight / claimed [L2-L3]
+- **CZL-P1-h-v2** — shadow ystar/ cleanup reposted after orphan; awaiting claim
+- **CZL-P1-h** (original) — orphaned claim by eng-kernel from 2026-04-18T16:19; kept as historical artifact, superseded by v2
+- **CZL-BOOT-INJ-FIX** — czl_boot_inject.py:49 AttributeError real bug (posted 2026-04-19)
+- **CZL-HOOK-DISPATCH-VIA-CTO** — constraint observed NOT ENFORCING at boot; re-check posted
 
-**Maya CZL-104 self-catch** (claimed ≤14, actual 21) is the gold standard — sub-agent caught own violation BEFORE CEO verify. This pattern must propagate.
+### Paused / decisioning
+- **CZL-P2-b/c/d/e** — previously Board-paused 2026-04-18 pending CZL-ARCH review. Release condition substantively met (ARCH-17 consolidated); formal unblock pending CTO receipt (CZL-ARCH-close card posted to Ethan 2026-04-19).
+- **CZL-GOV-LIVE-EVAL** — directive liveness evaluator Phase 1 (CEO spec authored; architectural review Q1-Q4 pending CTO before implementation)
 
----
+## 2. Top 3 Priorities Next Session
 
-## 4. Health Snapshot
+1. **CTO Ethan — CZL-ARCH-close receipt** — formalize P2 unblock or articulate residual concerns; company cannot resume P2 migration without this.
+2. **eng-governance (Maya) via CTO — CZL-GOV-LIVE-EVAL Phase 1** — this is the persistent smart-evaluation substrate Board directed 2026-04-19. Once shipped, future stale-directive questions resolve without Board in the loop.
+3. **eng-platform (Ryan) + eng-kernel (Leo)** — close CZL-BOOT-INJ-FIX + CZL-HOOK-DISPATCH-VIA-CTO + CZL-P1-h-v2 before Phase 2 starts (clean foundation).
 
-- **HP**: 54 (yellow zone — degraded; root cause: long session + 30+ atomics dispatched + 2 STREAM TIMEOUTs)
-- **AC**: 84 (green — all 4 signals nominal: daemon LIVE, receipt accuracy 75%+, K9 SNR clean post-W1, API health intermittent)
-- **K9 routing subscriber**: PID 75563 LIVE
-- **CIEU DB**: WAL mode, no write errors, .bak_20260416 snapshot present
-- **Active campaign**: v6 closing → next session opens v7 (likely "skill-trust onboarding cascade + AMENDMENT-016 ship")
+## 3. Governance Health Snapshot (CEO boot 2026-04-19T10:53Z)
 
----
+- Hook daemon: RUNNING
+- CIEU events: 392,830 cumulative
+- K9 subscriber: RUNNING (PID 93322)
+- CTO dispatch broker: RUNNING (PID 74909)
+- Memory bridge: 20 top memories loaded
+- Self-heal smoke test: PASS
 
-## 5. Cross-Reference
+**Boot failures noted**:
+1. Priority brief stale (now refreshed — this doc)
+2. must_dispatch_via_cto NOT ENFORCING (CZL-HOOK-DISPATCH-VIA-CTO posted to diagnose)
 
-- Full chronological narrative: `memory/session_summary_20260416.md`
-- Archived subgoals snapshot: `memory/archive/czl_subgoals_v6_close_*.json`
-- Action model v2 spec (Board approved, Maya CZL-129 wiring): `governance/action_model_v2.md`
-- Predicate ↔ methodology ↔ formal merge: `knowledge/governance/predicate_methodology_formal_merge.md`
-- Whitelist taxonomy: `knowledge/governance/whitelist_taxonomy_v1.md`
-- 5 silo→pipeline integration: `knowledge/governance/silo_pipeline_integration.md`
+## 4. Open Obligations
 
----
+Currently 0 pending per CROBA contract at boot.
 
-End of priority_brief.md v2. Next session boot MUST read this file before dispatching W11/W3-step-6/W5-promote.
+## 5. Board Decision Pending
+
+- None blocking execution; Board directive 2026-04-19 gave green-light for smart-execution approach (3-component directive liveness model + persistent codification).
+- Board approval needed only for: external release, code merge to main, actual payment. Dogfood/testing/internal refactor is CEO autonomous.
+
+## 6. Methodology Notes
+
+**3-component directive liveness model** (Board directive 2026-04-19) — every pause/ban carries (trigger | release | scope). Agents self-evaluate liveness from deterministic primitives; Board in loop only for `requires_human_ack` cases. Full spec: `reports/ceo/governance/directive_liveness_evaluator_v1.md`.
+
+**Next session opens with**: run `governance_boot.sh ceo` → read this brief → check whiteboard for CZL-ARCH-close receipt from Ethan → if present, confirm P2 resume → else nudge CTO; meanwhile drive CZL-GOV-LIVE-EVAL Phase 1 through Maya via Ethan.

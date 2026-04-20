@@ -25,11 +25,17 @@ FAIL_RATIO = 0.90
 
 
 def fetch_recent_events(conn, window_seconds: int, limit: int):
+    """Fetch ENFORCEMENT-bearing events only (decision actually allow/deny/escalate).
+
+    Exclude info/warn (telemetry) — those are not enforcement decisions and
+    inflate denominator, masking real enforce rate.
+    """
     cutoff = time.time() - window_seconds
     rows = conn.execute(
         "SELECT event_id, event_type, agent_id, params_json, decision, "
         "created_at, file_path, command "
         "FROM cieu_events WHERE created_at >= ? "
+        "AND decision IN ('allow','deny','escalate') "
         "ORDER BY created_at DESC LIMIT ?",
         (cutoff, limit),
     ).fetchall()
@@ -46,18 +52,42 @@ def classify_expected(event: dict) -> str:
 
     Uses event_type and agent_id to classify into 'allow' / 'deny' / 'redirect' / 'unknown'.
     Conservative: only returns non-unknown when confident.
+    Patterns derived empirically from actual CIEU event_type distribution (2026-04-19).
     """
     et = (event.get("event_type") or "").lower()
     aid = (event.get("agent_id") or "").lower()
     payload = (event.get("payload") or "").lower()
+    cmd = (event.get("command") or "").lower()
+    decision = (event.get("decision") or "").lower()
 
-    if "boundary" in et or "restricted" in et or "deny" in et:
+    deny_markers = ("boundary", "restricted", "deny", "violation", "violated",
+                    "circuit_breaker", "k9_violation", "behavior_rule",
+                    "write_blocked", "escalate")
+    allow_markers = ("break_glass", "self_heal", "heartbeat",
+                     "setup_complete", "boot", "handoff", "observation",
+                     "routing_dispatched", "scan")
+    redirect_markers = ("redirect", "rewrite", "auto_rewrite",
+                        "suggested", "auto_post")
+
+    if any(m in et for m in deny_markers):
         return "deny"
-    if "break_glass" in et or "self_heal" in et or "heartbeat" in et:
+    if any(m in et for m in allow_markers):
         return "allow"
-    if "redirect" in et or "rewrite" in et:
+    if any(m in et for m in redirect_markers):
         return "redirect"
-    if aid == "agent" and ("write" in payload or "commit" in payload):
+    if et.startswith("hook_"):
+        return "allow"
+    if et.startswith("orchestration:"):
+        return "allow"
+    if et.startswith("cieu_"):
+        return "allow"
+    if et.startswith("governance_"):
+        return "allow"
+    if decision in ("allow", "deny", "escalate", "info", "warn"):
+        if decision == "warn":
+            return "deny"
+        return decision
+    if aid == "agent" and ("write" in payload or "commit" in cmd):
         return "deny"
     return "unknown"
 

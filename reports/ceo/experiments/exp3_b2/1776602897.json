@@ -1,0 +1,12 @@
+{
+  "axis": "B2_lockdeath",
+  "timestamp": 1776602897,
+  "window_seconds": 7200,
+  "recovery_window_seconds": 120,
+  "total_events_scanned": 5939,
+  "lock_death_candidates": 0,
+  "resolved_by_recovery": 0,
+  "unresolved_lockdeaths": 0,
+  "unresolved_detail": [],
+  "verdict": "pass"
+}

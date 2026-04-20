@@ -1,0 +1,19 @@
+Audience: consultant reviewing task flow + CTO integration
+Research basis: today's 27+ task completions logged on dispatch_board
+Synthesis: single commit capturing board state and task-card artifacts
+
+chore(governance+tasks): dispatch board state + task cards 2026-04-18
+
+- governance/dispatch_board.json: reflects today's post / claim / complete
+  chain covering CZL-P1-{a,b,c,d,e,f}, CZL-P2-a, CZL-ARCH-{1,6,7,8,9,10,11a,
+  11b,11c,11d,14,4,PERF-1}, CZL-WIRE-{1,2}, CZL-WATCHDOG-STUCK,
+  CZL-INTEGRATION. Several task cards closed as invalid-premise
+  (CZL-ARCH-2, CZL-ARCH-3) after empirical verification found the survey
+  claims were inaccurate.
+
+- governance/enforce_status_dashboard.md: updated snapshot.
+
+- .claude/tasks/: historical task-card dumps (hooks, CZL campaign) for
+  archive continuity; referenced by receipts.
+
+Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>

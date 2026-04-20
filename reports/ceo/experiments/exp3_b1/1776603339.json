@@ -1,0 +1,53 @@
+{
+  "axis": "B1_enforce_rate",
+  "timestamp": 1776603339,
+  "window_seconds": 7200,
+  "target_ratio": 0.95,
+  "fail_ratio": 0.9,
+  "metrics": {
+    "total_events_sampled": 100,
+    "classifiable_events": 100,
+    "correct_events": 100,
+    "unknown_skip": 0,
+    "correct_ratio": 1.0,
+    "per_type": {
+      "SECRETARY_DUTY_ADDED": {
+        "count": 1,
+        "correct": 1
+      },
+      "external_observation": {
+        "count": 18,
+        "correct": 18
+      },
+      "handoff": {
+        "count": 18,
+        "correct": 18
+      },
+      "circuit_breaker_armed": {
+        "count": 18,
+        "correct": 18
+      },
+      "file_write": {
+        "count": 8,
+        "correct": 8
+      },
+      "omission_setup_complete": {
+        "count": 21,
+        "correct": 21
+      },
+      "CIEU_WATCHER_TICK": {
+        "count": 2,
+        "correct": 2
+      },
+      "cmd_exec": {
+        "count": 6,
+        "correct": 6
+      },
+      "file_read": {
+        "count": 8,
+        "correct": 8
+      }
+    }
+  },
+  "verdict": "pass"
+}

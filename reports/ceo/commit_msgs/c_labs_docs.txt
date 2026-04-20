@@ -1,0 +1,45 @@
+Audience: consultant + future CEO sessions + CTO Ethan
+Research basis: empirical evidence from today's ARCH wave + Board catches
+Synthesis: one commit bundling today's reports, receipts, lessons, demonstrators, ops, norms
+
+docs(reports+knowledge): 4-goals verification + receipts + lessons 2026-04-18
+
+- reports/cto/ecosystem_architecture_master_20260418.md: Ethan's 4-layer
+  architecture with 8 industry theories, 3-phase migration roadmap, and
+  Board-suggestion evaluation (Y*gov into hook enforce → ADOPT WITH
+  BOUNDARIES via Linux-kernel analogy).
+
+- reports/cto/ecosystem_architecture_survey_20260418.md: 16 ecosystem
+  problems identified via three-repo audit.
+
+- reports/cto/arch_14_15_rewrite_and_autospawn_20260418.md: detailed
+  design for REWRITE decision type and Auto-Spawn daemon.
+
+- reports/ceo/four_goals_verification_20260418.md: measured status of
+  Board's 4 governance goals with empirical metrics and gap-to-100
+  percent mapping.
+
+- reports/ceo/enforce_as_router_migration_plan_20260418.md: 850-file
+  Labs inventory, keep-vs-migrate classification, phase sequencing.
+
+- reports/ceo/demonstrators/: 4 runnable scripts producing empirical
+  metric evidence for each governance goal, plus their JSON and
+  markdown outputs.
+
+- reports/ceo/ops/: launchd plist, crontab snippet, install README, and
+  YSTAR_HOOK_V2 default-on env script — install artifacts for Board.
+
+- reports/ceo/receipts/: CZL-ARCH and CZL-P1 receipt trail for the full
+  day.
+
+- reports/ceo/commit_msgs/: the commit-message files for today's git
+  commits (this file among them).
+
+- knowledge/ceo/lessons/: three new CEO lessons — posted-not-executed
+  hallucination, industry-precedent-scan-first, and the performance
+  misdiagnosis post-mortem (daemon vs cache).
+
+- knowledge/shared/rules_first_team_norm_20260418.md: mandatory norm for
+  all agents to read rule docs before trying alternative workarounds.
+
+Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
