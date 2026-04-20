@@ -11,6 +11,7 @@ REPO_ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
 
+@pytest.mark.skip(reason="AMENDMENT-021: rule retired 2026-04-20")
 def test_backlog_as_defer_disguise_violation():
     """Smoke test: backlog_as_defer_disguise rule fires on trigger keyword."""
     # Mock context matching rule trigger
@@ -31,6 +32,7 @@ def test_backlog_as_defer_disguise_violation():
     assert True, "Smoke test template — implement real check_forget_violation call"
 
 
+@pytest.mark.skip(reason="AMENDMENT-021: rule retired 2026-04-20")
 def test_backlog_as_defer_disguise_no_violation():
     """Negative test: valid input should NOT trigger backlog_as_defer_disguise."""
     context = {

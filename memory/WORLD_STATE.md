@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-19 22:00:01
+**Generated**: 2026-04-20 11:30:00
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,7 +36,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/11 valid (0 errors)
-**CIEU 24h Events**: 189862
+**CIEU 24h Events**: 154278
 **Overdue Obligations**: 0
 
 ---
@@ -47,7 +47,7 @@
 
 Role         | P1 Complete  | P2 Theories  | P3 Sims  | Last Learning
 ----------------------------------------------------------------------
-ceo          | 3/3          | 24           | 35       | 2026-04-17  
+ceo          | 3/3          | 24           | 36       | 2026-04-19  
 ```
 
 ---
@@ -85,7 +85,7 @@ ceo          | 3/3          | 24           | 35       | 2026-04-17
 
 ## 8. Ecosystem — Y*gov Product Repo
 **HEAD**: `5c24cde Audience: git history + consultant review of guard+guide architecture. Research basis: Board`
-**24h commits**: 3
+**24h commits**: 0
 **ahead origin**: 0
 **test files**: 98
 **version**: 0.48.0
@@ -99,8 +99,8 @@ ceo          | 3/3          | 24           | 35       | 2026-04-17
 
 ## 10. Ecosystem — K9Audit (read-only reference)
 **local clone**: `/tmp/K9Audit`
-**HEAD**: `37911e1 fix: f-string syntax (cli.py) + dict-native CIEU writes (langchain_adapter.py)`
-**stale days**: 4
+**HEAD**: ``
+**stale days**: 0
 **migration queue**: CausalChainAnalyzer + Auditor + k9_repo_audit.py → CIEU (TODO)
 
 ---
@@ -108,13 +108,7 @@ ceo          | 3/3          | 24           | 35       | 2026-04-17
 ## 11. Today's Commits (24h) — both repos
 
 
-**ystar-company** (4 commits):
-- 978d4da4 08:00 Audience: consultant review + Board continuity + future Aiden sessions. Research basis: Board 2026-04-18 
-- e7b0127b 22:15 Audience: consultant reviewing task flow + CTO integration Research basis: today's 27+ task completions l
-- 6e17adfa 22:14 Audience: consultant + future CEO sessions + CTO Ethan Research basis: empirical evidence from today's AR
-- 2b0abd80 22:13 Audience: git history + consultant reviewing today's commits Research basis: today's ARCH-1, ARCH-6, ARCH
+**ystar-company** (1 commits):
+- 80257ebc 22:09 manual flush: unstale GitHub while grant-chain LIVE task runs. Bundles yesterday ships (8 Ethan rulings +
 
-**Y*gov** (3 commits):
-- 5c24cde 07:47 Audience: git history + consultant review of guard+guide architecture. Research basis: Board 2026-04-18 ni
-- f0be66a 22:31 refactor: remove Labs-specific names from product modules, move to session aliases
-- 3c7c295 22:11 feat: governance modules (router_registry, rules, rule_lifecycle, policy cache)
+**Y*gov**: no commits

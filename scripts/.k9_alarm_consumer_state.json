@@ -1,5 +1,5 @@
 {
-  "last_seq": 1776436861167952,
+  "last_seq": 1776698867721076,
   "dedup_history": [
     "AGENT_REGISTRY_K9_WARN::Ethan-CTO::agent_id_unidentified",
     "HOOK_HEALTH_K9_ESCALATE::Ethan-CTO::hook_chain_missing",
@@ -35,6 +35,17 @@
     "HOOK_HEALTH_K9_ESCALATE::system::test_unique_5",
     "FORGET_GUARD_K9_DENY::ceo::test_unique_6",
     "AGENT_REGISTRY_K9_WARN::Jordan-Domains::agent_id_unidentified",
-    "HOOK_HEALTH_K9_ESCALATE::Jordan-Domains::hook_chain_missing"
+    "HOOK_HEALTH_K9_ESCALATE::Jordan-Domains::hook_chain_missing",
+    "AGENT_REGISTRY_K9_WARN::claude-code-guide::agent_id_unidentified",
+    "HOOK_HEALTH_K9_ESCALATE::claude-code-guide::hook_chain_missing",
+    "AGENT_REGISTRY_K9_WARN::Explore::agent_id_unidentified",
+    "HOOK_HEALTH_K9_ESCALATE::Explore::hook_chain_missing",
+    "HOOK_HEALTH_K9_ESCALATE::eng-platform::hook_chain_missing",
+    "HOOK_HEALTH_K9_ESCALATE::eng-kernel::hook_chain_missing",
+    "AGENT_REGISTRY_K9_WARN::general-purpose::agent_id_unidentified",
+    "HOOK_HEALTH_K9_ESCALATE::general-purpose::hook_chain_missing",
+    "AGENT_REGISTRY_K9_WARN::Sofia-CMO::agent_id_unidentified",
+    "HOOK_HEALTH_K9_ESCALATE::Sofia-CMO::hook_chain_missing",
+    "HOOK_HEALTH_K9_ESCALATE::eng-governance::hook_chain_missing"
   ]
 }

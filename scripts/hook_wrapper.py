@@ -68,18 +68,65 @@ try:
     # Sibling Bug #4 fix (2026-04-18): Save original payload values BEFORE
     # marker override so CEO guard can detect subagent context even when
     # the marker is stale "ceo" (e.g. push_agent failed or wasn't called).
+    #
+    # CZL-MARKER-PER-SESSION-ISOLATION (2026-04-19): Fallback chain reads
+    # per-session marker first, then global marker. This prevents N concurrent
+    # sub-agents from clobbering each other's identity via the shared global
+    # marker file. Per-session marker uses CLAUDE_SESSION_ID or PPID suffix.
     _original_agent_id = payload.get("agent_id", "")
     _original_agent_type = payload.get("agent_type", "")
 
-    _MARKER_PATH = "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/.ystar_active_agent"
+    _MARKER_DIR = "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts"
+    _MARKER_GLOBAL = os.path.join(_MARKER_DIR, ".ystar_active_agent")
+    _marker_content = None
+
+    # Per-session marker fallback chain
+    def _read_session_marker():
+        """Read per-session marker first, then global marker."""
+        # 1. Per-session marker via CLAUDE_SESSION_ID
+        _sid = os.environ.get("CLAUDE_SESSION_ID", "").strip()
+        if _sid:
+            _sanitized = "".join(c for c in _sid if c.isalnum() or c in "-_")
+            if _sanitized:
+                _session_path = os.path.join(_MARKER_DIR, f".ystar_active_agent.{_sanitized}")
+                try:
+                    _content = open(_session_path, "r", encoding="utf-8").read().strip()
+                    if _content:
+                        log(f"[P1-a] Read per-session marker ({_sanitized}): '{_content}'")
+                        return _content
+                except FileNotFoundError:
+                    pass
+        # 2. Per-session marker via PPID
+        _ppid = os.environ.get("PPID", "")
+        if not _ppid:
+            try:
+                _ppid = str(os.getppid())
+            except Exception:
+                _ppid = ""
+        if _ppid and _ppid != "1":
+            _ppid_path = os.path.join(_MARKER_DIR, f".ystar_active_agent.ppid_{_ppid}")
+            try:
+                _content = open(_ppid_path, "r", encoding="utf-8").read().strip()
+                if _content:
+                    log(f"[P1-a] Read per-session marker (ppid_{_ppid}): '{_content}'")
+                    return _content
+            except FileNotFoundError:
+                pass
+        # 3. Global marker (backward compat)
+        try:
+            _content = open(_MARKER_GLOBAL, "r", encoding="utf-8").read().strip()
+            return _content
+        except FileNotFoundError:
+            return None
+
     try:
-        _marker_content = open(_MARKER_PATH, "r", encoding="utf-8").read().strip()
+        _marker_content = _read_session_marker()
         if _marker_content and _marker_content != "agent":
             payload["agent_id"] = _marker_content
             # Clear agent_type to prevent priority 1.5 from returning "agent"
             if payload.get("agent_type") in ("", "agent", None):
                 payload.pop("agent_type", None)
-            log(f"[P1-a] Payload agent_id overridden to '{_marker_content}' from marker file")
+            log(f"[P1-a] Payload agent_id overridden to '{_marker_content}' from marker fallback chain")
     except FileNotFoundError:
         pass  # No marker file — identity_detector will use its own fallbacks
     except Exception as _marker_exc:
@@ -293,6 +340,35 @@ try:
 
         # ── Run check_hook (Policy compilation happens inside with caching) ──
         result = check_hook(payload)
+
+        # ── Brain Context Injection (Board 2026-04-19: Layer 3 root cause fix) ──
+        # Query 6D brain for relevant wisdom nodes and inject into hook response.
+        # CEO-only, read-only, graceful degradation (empty on any failure).
+        _caller_for_brain = payload.get("agent_id", "")
+        if _caller_for_brain in _ceo_identities:
+            try:
+                from hook_ceo_pre_output_brain_query import (
+                    query_brain_for_context,
+                    format_brain_context_for_hook,
+                )
+                _brain_nodes = query_brain_for_context(payload, k=3)
+                if _brain_nodes:
+                    _brain_text = format_brain_context_for_hook(_brain_nodes)
+                    # Inject into result without overriding permission decision
+                    if isinstance(result, dict):
+                        result["brain_context"] = _brain_nodes
+                        # Also append to permissionDecisionReason if present
+                        _hso = result.get("hookSpecificOutput", {})
+                        _existing_reason = _hso.get("permissionDecisionReason", "")
+                        if _existing_reason:
+                            _hso["permissionDecisionReason"] = (
+                                _existing_reason + "\n\n" + _brain_text
+                            )
+                        log(f"[BRAIN] Injected {len(_brain_nodes)} wisdom nodes")
+                    else:
+                        log("[BRAIN] result is not dict, skipping injection")
+            except Exception as _brain_exc:
+                log(f"[BRAIN] Query failed (non-fatal): {_brain_exc}")
 
     except Exception as core_exc:
         # FAIL-CLOSED: Core governance path is broken.

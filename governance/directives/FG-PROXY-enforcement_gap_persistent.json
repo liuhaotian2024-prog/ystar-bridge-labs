@@ -1,0 +1,30 @@
+{
+  "directive_id": "FG-PROXY-enforcement_gap_persistent",
+  "issued_at": "2026-04-16T20:00:00Z",
+  "issued_by": "eng-governance",
+  "trigger": {
+    "statement": "Persistent enforcement gaps detected in >=2 consecutive observer scans",
+    "current_state": "present"
+  },
+  "release": {
+    "statement": "ForgetGuard rule dry_run_until expired (2026-04-18T08:00:00Z / ts 1776499200)",
+    "check": {
+      "type": "fg_rule_is_expired",
+      "rule_name": "enforcement_gap_persistent"
+    },
+    "current_state": "unmet"
+  },
+  "scope": {
+    "statement": "FG rule enforcement_gap_persistent dry_run period",
+    "covers": [
+      "enforcement_gap_persistent"
+    ],
+    "pattern": "enforcement_gap_persistent"
+  },
+  "evaluator": {
+    "last_run": null,
+    "verdict": "LIVE",
+    "evidence": [],
+    "requires_human_ack": false
+  }
+}

@@ -1,0 +1,3 @@
+/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/omission_engine.py:120: UserWarning: NullCIEUStore is active: CIEU events will NOT be persisted. Pass a real CIEUStore(db_path=...) to enable audit logging.
+  self.cieu_store = cieu_store if cieu_store is not None else NullCIEUStore()
+Y*gov hook daemon started (pid=72983, sock=/tmp/ystar_hook.sock)

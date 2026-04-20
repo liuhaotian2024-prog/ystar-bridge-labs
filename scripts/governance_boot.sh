@@ -102,7 +102,7 @@ if [ "$AGENT_ID" = "ceo" ] && [ "$VERIFY_ONLY" = false ]; then
     echo "ceo" > "$YSTAR_DIR/.ystar_active_agent"
     # CIEU fail-open
     export OLD_AGENT="$CURRENT_MARKER"
-    python3 - <<'PYEOF' 2>/dev/null
+    /opt/homebrew/bin/python3.11 - <<'PYEOF' 2>/dev/null
 import os, sys
 try:
     sys.path.insert(0, "/Users/haotianliu/.openclaw/workspace/Y-star-gov")
@@ -275,6 +275,49 @@ else
   FAILURES=$((FAILURES+1))
 fi
 
+# 6.5. Auto-revoke expired Board CEO override (CZL-HOOK-DISPATCH-VIA-CTO, 2026-04-19)
+# Root cause: board_ceo_override.sh grant sets must_dispatch_via_cto=false with expiry.
+# If override expired but was never revoked, the config stays stale forever.
+# Fix: detect expired override at boot and auto-revoke.
+python3 -c "
+import json, time, sys
+p = '$YSTAR_DIR/.ystar_session.json'
+try:
+    with open(p) as f:
+        d = json.load(f)
+except Exception:
+    sys.exit(0)
+
+ov = d.get('_ceo_board_override')
+if not ov:
+    sys.exit(0)
+
+now = int(time.time())
+expires = ov.get('expires_at', 0)
+if now <= expires:
+    # Override still active — do not revoke
+    remain = (expires - now) // 60
+    print(f'  [override] Board CEO override active, {remain}m remaining — must_dispatch_via_cto stays disabled')
+    sys.exit(0)
+
+# Override expired — auto-revoke
+expired_ago_h = (now - expires) / 3600
+rules = d.get('agent_behavior_rules', {}).get('ceo', {})
+old_val = rules.get('must_dispatch_via_cto')
+if old_val is False:
+    rules['must_dispatch_via_cto'] = True
+    d.pop('_ceo_board_override', None)
+    with open(p, 'w') as f:
+        json.dump(d, f, indent=2, ensure_ascii=False)
+    print(f'  [auto-revoke] Board CEO override expired {expired_ago_h:.0f}h ago — must_dispatch_via_cto restored to true')
+else:
+    # Already true somehow — just clean up stale marker
+    d.pop('_ceo_board_override', None)
+    with open(p, 'w') as f:
+        json.dump(d, f, indent=2, ensure_ascii=False)
+    print(f'  [cleanup] Stale override marker removed (must_dispatch_via_cto already {old_val})')
+" 2>/dev/null
+
 # 7. E2E硬约束验证（最关键）
 echo "[7/7] Hard constraint verification:"
 
@@ -282,7 +325,10 @@ ACTIVE_AGENT=$(cat "$YSTAR_DIR/.ystar_active_agent" 2>/dev/null || echo "$AGENT_
 
 if [ -S /tmp/ystar_hook.sock ]; then
   # Test CEO→engineer dispatch block (CEO-only constraint)
-  R1=$(echo '{"tool_name":"Agent","tool_input":{"subagent_type":"Leo-Kernel","prompt":"test"}}' | bash "$YSTAR_DIR/scripts/hook_client_labs.sh" 2>/dev/null)
+  # CZL-HOOK-DISPATCH-VIA-CTO: include agent_id=ceo in payload so identity_detector
+  # uses it (priority 1) instead of reading .ystar_active_agent (priority 4),
+  # which may still reflect a prior sub-agent session.
+  R1=$(echo '{"tool_name":"Agent","tool_input":{"subagent_type":"eng-kernel","prompt":"test"},"agent_id":"ceo"}' | bash "$YSTAR_DIR/scripts/hook_client_labs.sh" 2>/dev/null)
   if echo "$R1" | grep -qi "deny\|violation\|block"; then
     echo "  must_dispatch_via_cto: ENFORCING"
   else
@@ -362,7 +408,7 @@ if [ $FAILURES -eq 0 ]; then
 
   # Emit session_start CIEU event (Board 2026-04-11)
   export AGENT_ID
-  python3 - <<'PYEOF' 2>/dev/null
+  /opt/homebrew/bin/python3.11 - <<'PYEOF' 2>/dev/null
 import json, os, sys, time
 candidates = [
     os.path.expanduser("~/.openclaw/workspace/Y-star-gov"),
@@ -387,6 +433,18 @@ except Exception as e:
 PYEOF
 else
   echo "=== GOVERNANCE BOOT: $FAILURES FAILURES — INVESTIGATE ==="
+fi
+
+# STEP 7.5: Directive liveness report (CZL-GOV-LIVE-EVAL Phase 1)
+echo ""
+echo "[7.5/11] Directive Liveness Report:"
+if [ -d "$YSTAR_DIR/governance/directives" ]; then
+  python3 "$YSTAR_DIR/scripts/dispatch_board.py" evaluate_blocks 2>/dev/null
+  if [ $? -ne 0 ]; then
+    echo "  [WARN] directive liveness evaluation failed (non-blocking)"
+  fi
+else
+  echo "  [SKIP] No governance/directives/ directory found"
 fi
 
 # STEP 8: Load and display agent's execution model
@@ -456,7 +514,7 @@ else
 fi
 
 # Test 3: ForgetGuard rule check (M1 — CEO→engineer dispatch)
-if python3 -c "
+if PYTHONPATH="$YGOV_DIR:$PYTHONPATH" /opt/homebrew/bin/python3.11 -c "
 from ystar.governance.forget_guard import check_forget_violation
 ctx = {
     'agent_id': 'ceo',
@@ -493,6 +551,46 @@ fi
 # STEP 8.8: CZL subgoal injection (HiAgent campaign context)
 echo "[8.8/11] CZL subgoal injection..."
 python3 "$YSTAR_DIR/scripts/czl_boot_inject.py" "$AGENT_ID"
+
+# STEP 8.9: Pending Spawns Nag (CZL-DISPATCH-EXEC Pattern C)
+# Show un-spawned dispatch claims so CEO does not forget to Agent-spawn.
+echo "[8.9/11] Pending spawns check..."
+python3 "$YSTAR_DIR/scripts/dispatch_board.py" pending 2>/dev/null || echo "  (no pending spawns helper yet)"
+echo ""
+
+# STEP 8.9.5: Brain Auto-Ingest at boot boundary (CZL-BRAIN-BOUNDARY-HOOKS)
+# Ingests prior session work into aiden_brain.db via hash-based delta.
+# Failure is non-blocking (brain is advisory, not transactional).
+echo "[8.9.5/11] Brain auto-ingest (boot boundary)..."
+if [ "$VERIFY_ONLY" = false ]; then
+  BRAIN_LOG="$YSTAR_DIR/scripts/.logs/brain_ingest.log"
+  mkdir -p "$(dirname "$BRAIN_LOG")"
+  PYTHONPATH="$YGOV_DIR:$PYTHONPATH" /opt/homebrew/bin/python3.11 -c "
+import sys, json, time
+try:
+    from ystar.governance.brain_auto_ingest import extract_candidates, apply_ingest
+    candidates = extract_candidates()
+    result = apply_ingest(candidates)
+    ingested = result.get('ingested', 0)
+    skipped = result.get('skipped', 0)
+    errors = result.get('errors', 0)
+    print(f'  Brain ingest: +{ingested} nodes, {skipped} unchanged, {errors} errors')
+except ImportError:
+    # Gate: Leo#6 brain_auto_ingest module not yet ready
+    print('  [GATE] brain_auto_ingest module not ready -- skipped')
+    try:
+        sys.path.insert(0, '$YGOV_DIR')
+        from ystar.adapters.cieu_writer import _write_session_lifecycle
+        _write_session_lifecycle('BRAIN_INGEST_MODULE_NOT_READY', 'system', 'boot',
+                                 '$YSTAR_DIR/.ystar_cieu.db', {'boundary': 'boot'})
+    except Exception:
+        pass
+except Exception as e:
+    print(f'  [WARN] brain auto-ingest failed: {e}')
+" 2>>"$BRAIN_LOG"
+else
+  echo "  Brain auto-ingest: SKIPPED (verify-only)"
+fi
 
 echo "=== BEGIN AUTONOMOUS EXECUTION ==="
 

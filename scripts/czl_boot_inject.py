@@ -45,7 +45,7 @@ def main():
 
     # === Block 2: Current Subgoal ===
     current = data.get("current_subgoal")
-    if current:
+    if current and isinstance(current, dict):
         goal_id = current.get("id", "?")
         goal_text = current.get("goal", "")
         owner = current.get("owner", "unassigned")
@@ -57,6 +57,9 @@ def main():
         print(f"  Owner: {owner}")
         print(f"  Started: {started}")
         print(f"  Rt+1 Predicate: {rt1_predicate}")
+    elif current and isinstance(current, str):
+        print(f"CURRENT SUBGOAL (summary): {current}")
+        print(f"  [NOTE: current_subgoal is a plain string, not a structured dict — boot continues]")
     else:
         print("CURRENT SUBGOAL: None — CEO must push next from remaining[]")
     print()
@@ -66,10 +69,15 @@ def main():
     if completed:
         print(f"COMPLETED ({len(completed)} total, showing last 5):")
         for item in list(reversed(completed))[:5]:  # reverse to show newest first
-            item_id = item.get("id", "?")
-            summary = item.get("summary", "no summary")
-            duration = item.get("duration_min", "?")
-            print(f"  [{item_id}] {summary} ({duration} min)")
+            if isinstance(item, dict):
+                item_id = item.get("id", "?")
+                summary = item.get("summary", "no summary")
+                duration = item.get("duration_min", "?")
+                print(f"  [{item_id}] {summary} ({duration} min)")
+            elif isinstance(item, str):
+                print(f"  [?] {item}")
+            else:
+                print(f"  [?] (unrecognized format: {type(item).__name__})")
     else:
         print("COMPLETED: None yet — campaign just started")
     print()
@@ -79,17 +87,19 @@ def main():
 
     # Check for vague summaries
     for item in completed:
+        if not isinstance(item, dict):
+            continue
         summary = item.get("summary", "")
         if "[SUMMARY_VAGUE]" in summary or "[AI_COMPRESS_FAILED]" in summary:
-            warnings.append(f"⚠️ {item['id']} has degraded summary — CEO should review")
+            warnings.append(f"⚠️ {item.get('id', '?')} has degraded summary — CEO should review")
 
-    # Check for stale current_subgoal
-    if current and current.get("started"):
+    # Check for stale current_subgoal (only when current is a structured dict)
+    if current and isinstance(current, dict) and current.get("started"):
         try:
             started_dt = datetime.fromisoformat(current["started"].replace("Z", "+00:00"))
             age_hours = (datetime.now(timezone.utc) - started_dt).total_seconds() / 3600
             if age_hours > 24:
-                warnings.append(f"⚠️ Current subgoal {current['id']} running for {age_hours:.1f}h — consider split or escalate")
+                warnings.append(f"⚠️ Current subgoal {current.get('id', '?')} running for {age_hours:.1f}h — consider split or escalate")
         except:
             pass
 

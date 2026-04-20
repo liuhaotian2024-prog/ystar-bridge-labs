@@ -1,0 +1,39 @@
+{
+  "directive_id": "CZL-P2-PAUSE-20260418",
+  "issued_at": "2026-04-18T22:00:00Z",
+  "issued_by": "Board",
+  "trigger": {
+    "statement": "ARCH enforce-as-router design unclear; P2 migration risks wrong foundation",
+    "check": {
+      "type": "doc_exists",
+      "path": "docs/arch17_behavioral_governance_spec.md",
+      "min_status": "L1"
+    },
+    "current_state": "present"
+  },
+  "release": {
+    "statement": "CTO architecture review complete \u2014 ARCH-17 canonical at L1+, router_registry stable",
+    "check": {
+      "type": "doc_exists",
+      "path": "docs/arch17_behavioral_governance_spec.md",
+      "min_status": "L1"
+    },
+    "current_state": "unmet"
+  },
+  "scope": {
+    "statement": "all P2 migration work (P2-b/c/d/e)",
+    "covers": [
+      "CZL-P2-b",
+      "CZL-P2-c",
+      "CZL-P2-d",
+      "CZL-P2-e"
+    ],
+    "pattern": "^CZL-P2-[bcde]"
+  },
+  "evaluator": {
+    "last_run": null,
+    "verdict": "LIVE",
+    "evidence": [],
+    "requires_human_ack": true
+  }
+}

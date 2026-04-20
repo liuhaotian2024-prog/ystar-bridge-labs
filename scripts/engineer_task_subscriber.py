@@ -40,9 +40,25 @@ def start_daemon(engineer_id: str, poll_interval: int = 10):
 
             if result.returncode == 0:
                 # Successfully claimed task
-                print(f"Claimed task: {result.stdout.strip()}", file=sys.stderr)
-                # In production, would spawn execution here
-                # For now, daemon only auto-claims (engineer must manually complete)
+                claimed_id = result.stdout.strip()
+                print(f"Claimed task: {claimed_id}", file=sys.stderr)
+                # ARCH RULING CZL-DISPATCH-EXEC (2026-04-19):
+                # Subscriber CANNOT spawn Agent tool calls -- structural Claude Code boundary.
+                # Only the main Claude session's tool-use loop can originate Agent calls.
+                # A Python subprocess has no mechanism to inject Agent calls into the parent.
+                # Execution is CEO-session-owned. Subscriber role: claim reservation + CIEU audit only.
+                # See Y-star-gov/reports/cto/CZL-DISPATCH-EXEC-ruling.md
+                emit_cieu(
+                    "SUBSCRIBER_CLAIM_PENDING_SPAWN",
+                    decision="info",
+                    passed=1,
+                    task_description=f"Claim pending CEO spawn: {claimed_id} by {engineer_id}",
+                    params_json=json.dumps({
+                        "atomic_id": claimed_id,
+                        "engineer_id": engineer_id,
+                        "spawn_owner": "ceo-main-session",
+                    })
+                )
 
             time.sleep(poll_interval)
 

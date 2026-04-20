@@ -65,7 +65,7 @@ VIOLATION_ROUTING = {
 
     # ForgetGuard pattern violations
     "defer_language": ("forget_guard", "warn"),
-    "choice_question_to_board": ("forget_guard", "deny"),
+# retired AMENDMENT-021 2026-04-20:     # "choice_question_to_board": ("forget_guard", "deny"),  # retired per AMENDMENT-021 2026-04-20
     "state_undefined_drift": ("stop_hook_inject", "warn"),
 }
 

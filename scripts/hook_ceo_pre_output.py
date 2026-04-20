@@ -3,16 +3,12 @@
 PreToolUse Hook — CEO Pre-Output U-Workflow Enforcement
 
 Authority: CTO Ethan Wright, Board-authorized CZL-159 P0
-Purpose: Block CEO Write to external-facing paths without U-workflow evidence.
+Purpose: RETIRED per AMENDMENT-021 2026-04-20 (CTO ruling CZL-FG-RETIRE-PHASE1).
 
-Checks Write tool calls targeting reports/, content/, knowledge/ceo/strategy/.
-Scans the written content for 3 compliance signals:
-  1. Research evidence (source/cite/per/according/search/found)
-  2. Synthesis evidence (therefore/because/analysis/conclude/lesson/insight)
-  3. Audience/purpose framing (audience/purpose/for Board/stakeholder/reader)
-
-If ANY signal missing -> block with actionable message.
-If all present -> allow.
+Previously blocked CEO Write to external-facing paths without U-workflow evidence
+(Audience/Research basis/Synthesis/Purpose 4-word header). Now passes through all
+CEO output without blocking. Remaining boundary checks (permission scope, secret
+detection) preserved in other hooks.
 
 Called by: ~/.claude/settings.json hooks.PreToolUse[Write]
 Stdin: {"tool_name":"Write","tool_input":{"file_path":"...","content":"..."}}
@@ -21,94 +17,47 @@ Stdout: Claude Code hookSpecificOutput format (permissionDecision: allow|deny)
 
 import sys
 import json
-import re
-
-ENFORCED_PREFIXES = ("reports/", "content/", "knowledge/ceo/strategy/")
-
-RESEARCH_PATTERNS = re.compile(
-    r"(source[s]?[:\s]|cite[ds]?[\s:]|per\s+\w|according\s+to|"
-    r"search|found\s+that|reference[ds]?|evidence|data\s+show|"
-    r"based\s+on|research|study|paper|article|empirical)",
-    re.IGNORECASE,
-)
-
-SYNTHESIS_PATTERNS = re.compile(
-    r"(therefore|because|analysis|conclude[ds]?|lesson[s]?|"
-    r"insight[s]?|implication|root\s+cause|pattern|takeaway|"
-    r"diagnosis|framework|principle|synthesis|assessment)",
-    re.IGNORECASE,
-)
-
-AUDIENCE_PATTERNS = re.compile(
-    r"(audience|purpose|for\s+board|stakeholder|reader[s]?|"
-    r"目标受众|目的|面向|intended\s+for|context\s+for|"
-    r"decision\s+maker|consumer|recipient)",
-    re.IGNORECASE,
-)
+import os
 
 
-def is_enforced_path(file_path: str) -> bool:
-    """Check if path falls under CEO external-facing enforcement."""
-    for prefix in ENFORCED_PREFIXES:
-        if prefix in file_path:
-            return True
-    return False
-
-
-def check_compliance(content: str) -> dict:
-    """Return {signal: bool} for each U-workflow requirement."""
-    return {
-        "research": bool(RESEARCH_PATTERNS.search(content)),
-        "synthesis": bool(SYNTHESIS_PATTERNS.search(content)),
-        "audience": bool(AUDIENCE_PATTERNS.search(content)),
-    }
-
-
-def _cc_output(decision: str, reason: str = ""):
-    """Output in Claude Code hookSpecificOutput format."""
-    out = {
-        "hookSpecificOutput": {
-            "hookEventName": "PreToolUse",
-            "permissionDecision": decision,
-        }
-    }
-    if reason:
-        out["hookSpecificOutput"]["permissionDecisionReason"] = reason
-    print(json.dumps(out))
+def _emit_retirement_event():
+    """Emit CIEU event marking this enforcement as retired (once per session)."""
+    flag = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".ceo_pre_output_retired_emitted")
+    if os.path.exists(flag):
+        return
+    try:
+        import sqlite3
+        import uuid
+        import time as _time
+        db_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".ystar_cieu.db")
+        if not os.path.exists(db_path):
+            return
+        conn = sqlite3.connect(db_path, timeout=2.0)
+        cursor = conn.cursor()
+        cursor.execute("SELECT COALESCE(MAX(seq_global), 0) + 1 FROM cieu_events")
+        seq = cursor.fetchone()[0]
+        cursor.execute(
+            """INSERT INTO cieu_events (event_id, seq_global, created_at, session_id,
+               agent_id, event_type, decision, passed, task_description)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+            (str(uuid.uuid4()), seq, _time.time(), "system",
+             "cto", "ARTICLE11_HEADER_ENFORCEMENT_RETIRED", "allow", 1,
+             "CZL-FG-RETIRE-PHASE1: CEO pre-output 4-word header block retired per AMENDMENT-021")
+        )
+        conn.commit()
+        conn.close()
+        with open(flag, "w") as f:
+            f.write("1")
+    except Exception:
+        pass  # fail-open: retirement event is best-effort
 
 
 def main():
-    try:
-        payload = json.load(sys.stdin)
-    except (json.JSONDecodeError, EOFError):
-        print("{}")
-        return
-
-    tool = payload.get("tool_name", "") or payload.get("tool", "")
-    if tool != "Write":
-        print("{}")
-        return
-
-    inp = payload.get("tool_input", {}) or payload.get("input", {})
-    file_path = inp.get("file_path", "")
-
-    if not is_enforced_path(file_path):
-        print("{}")
-        return
-
-    content = inp.get("content", "")
-    signals = check_compliance(content)
-    missing = [k for k, v in signals.items() if not v]
-
-    if missing:
-        msg = (
-            f"[CZL-159] CEO PRE-OUTPUT BLOCK: Write to {file_path} missing "
-            f"U-workflow signals: {', '.join(missing)}. "
-            f"Do research/synthesis/audience framing before writing."
-        )
-        _cc_output("deny", msg)
-    else:
-        print("{}")
+    # RETIRED per AMENDMENT-021 2026-04-20 (CTO ruling CZL-FG-RETIRE-PHASE1)
+    # Pass through all writes — no content enforcement.
+    _emit_retirement_event()
+    print("{}")
+    return
 
 
 if __name__ == "__main__":

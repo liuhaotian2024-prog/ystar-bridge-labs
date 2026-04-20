@@ -40,9 +40,17 @@ def lockdeath_env(tmp_path, monkeypatch):
     stack_file.write_text("[]")
 
     # Patch agent_stack module to use tmp paths
+    # CZL-MARKER-PER-SESSION-ISOLATION: Also patch SCRIPTS_DIR so per-session
+    # file computation uses tmp_path. Clear session env vars to ensure these
+    # tests use the global marker path (testing pre-isolation behavior).
+    monkeypatch.setattr(agent_stack, "SCRIPTS_DIR", tmp_path)
     monkeypatch.setattr(agent_stack, "STACK_FILE", stack_file)
     monkeypatch.setattr(agent_stack, "MARKER_FILE", marker_file)
     monkeypatch.setattr(agent_stack, "LOCK_FILE", tmp_path / ".agent_stack.lock")
+    monkeypatch.delenv("CLAUDE_SESSION_ID", raising=False)
+    # Force _get_session_id to return None by making getppid return 1
+    monkeypatch.setattr(os, "getppid", lambda: 1)
+    monkeypatch.delenv("PPID", raising=False)
 
     def apply_override(payload: dict) -> dict:
         """

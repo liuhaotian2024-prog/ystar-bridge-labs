@@ -1,3 +1,4 @@
+import pytest
 """
 Test suite for ForgetGuard — AMENDMENT-020
 Validates 5 initial rules + 1 non-trigger case
@@ -71,6 +72,7 @@ def test_immutable_no_break_glass_trigger():
             active_agent_file.write_text(original_agent)
 
 
+@pytest.mark.skip(reason="AMENDMENT-021: rule retired 2026-04-20")
 def test_ceo_writes_code_trigger():
     """Rule: ceo_writes_code should trigger when CEO writes to scripts/"""
     active_agent_file = Path.cwd() / ".ystar_active_agent"
@@ -98,6 +100,7 @@ def test_ceo_writes_code_trigger():
             active_agent_file.write_text(original_agent)
 
 
+@pytest.mark.skip(reason="AMENDMENT-021: rule retired 2026-04-20")
 def test_defer_language_trigger():
     """Rule: defer_language should trigger on defer keywords"""
     payload = {
@@ -115,6 +118,7 @@ def test_defer_language_trigger():
     assert "DEFER_LANGUAGE_DRIFT" in stderr
 
 
+@pytest.mark.skip(reason="AMENDMENT-021: rule retired 2026-04-20")
 def test_choice_question_to_board_trigger():
     """Rule: choice_question_to_board should trigger on option menus"""
     payload = {

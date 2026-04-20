@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "description": "Dispatch Leo: fix Y-star-gov hook.py 5处格式错误 (CZL-161 unresolved)",
+    "source": "CTO CZL-162 report",
+    "created_at": 1776459686.351634,
+    "created_at_human": "2026-04-17 17:01",
+    "status": "resolved",
+    "urgency": 1.0,
+    "resolved_at": 1776466074.866613
+  },
+  {
+    "id": 2,
+    "description": "Dispatch Maya: fix 24 governance reply_taxonomy test failures",
+    "source": "CTO CZL-162 report",
+    "created_at": 1776459686.373733,
+    "created_at_human": "2026-04-17 17:01",
+    "status": "resolved",
+    "urgency": 1.0,
+    "resolved_at": 1776466074.889297
+  },
+  {
+    "id": 3,
+    "description": "Dispatch Leo: fix 4 kernel CZL protocol test failures",
+    "source": "CTO CZL-162 report",
+    "created_at": 1776459686.396183,
+    "created_at_human": "2026-04-17 17:01",
+    "status": "resolved",
+    "urgency": 1.0,
+    "resolved_at": 1776466074.912805
+  },
+  {
+    "id": 4,
+    "description": "纵轴学习: 形式逻辑+老庄+波普尔+贝叶斯 (Y轴肋骨)",
+    "source": "Board directive",
+    "created_at": 1776459686.4181771,
+    "created_at_human": "2026-04-17 17:01",
+    "status": "resolved",
+    "urgency": 1.0,
+    "resolved_at": 1776465244.836242
+  },
+  {
+    "id": 5,
+    "description": "横向泛化: Asimov 3 patterns 应用到团队/产品/ForgetGuard",
+    "source": "Board catch: 只纵向没横向",
+    "created_at": 1776459686.4400299,
+    "created_at_human": "2026-04-17 17:01",
+    "status": "resolved",
+    "urgency": 1.0,
+    "resolved_at": 1776465449.0244942
+  },
+  {
+    "id": 6,
+    "description": "Push Board审阅: case study + TS3L paper (Z轴不作为)",
+    "source": "Asimov L0 inaction audit",
+    "created_at": 1776459686.46151,
+    "created_at_human": "2026-04-17 17:01",
+    "status": "resolved",
+    "urgency": 1.0,
+    "resolved_at": 1776465449.0631108
+  },
+  {
+    "id": 7,
+    "description": "直派 Leo: fix hook.py 5处格式+8处bare except (不经CTO嵌套)",
+    "source": "CZL-163 nested sub-agent failure lesson",
+    "created_at": 1776466074.935331,
+    "created_at_human": "2026-04-17 18:47",
+    "status": "resolved",
+    "urgency": 1.0,
+    "resolved_at": 1776467697.828276
+  },
+  {
+    "id": 8,
+    "description": "直派 Maya: fix 24 reply_taxonomy test failures (不经CTO嵌套)",
+    "source": "CZL-163 lesson",
+    "created_at": 1776466074.9580271,
+    "created_at_human": "2026-04-17 18:47",
+    "status": "resolved",
+    "urgency": 1.0,
+    "resolved_at": 1776467591.9927092
+  },
+  {
+    "id": 9,
+    "description": "Board审批后发布 GitHub Discussion (Z轴第一步)",
+    "source": "M3 pending",
+    "created_at": 1776466074.9810061,
+    "created_at_human": "2026-04-17 18:47",
+    "status": "pending",
+    "urgency": 1.0
+  },
+  {
+    "id": 10,
+    "description": "实施 CTO CZL-164 的三层方案: Layer3验证服务先行",
+    "source": "CZL-164 hallucination fix",
+    "created_at": 1776466075.0036879,
+    "created_at_human": "2026-04-17 18:47",
+    "status": "resolved",
+    "urgency": 1.0,
+    "resolved_at": 1776467669.390357
+  },
+  {
+    "id": 11,
+    "description": "直派 Ryan(eng-platform): 执行 CZL-165 hook.py 13处修复 (task card at .claude/tasks/czl-165-hook-format-fix.md)",
+    "source": "Leo blocked by CEO code-write prohibition",
+    "created_at": 1776467697.804091,
+    "created_at_human": "2026-04-17 19:14",
+    "status": "pending",
+    "urgency": 1.0
+  }
+]

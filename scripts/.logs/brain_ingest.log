@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "<string>", line 6, in <module>
+  File "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/brain_auto_ingest.py", line 412, in apply_ingest
+    _record_co_activation_batch(node_ids, db)
+  File "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/brain_auto_ingest.py", line 553, in _record_co_activation_batch
+    conn.execute("""
+KeyboardInterrupt

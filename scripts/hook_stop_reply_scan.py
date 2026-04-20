@@ -141,6 +141,64 @@ def _read_last_assistant_reply(payload: dict) -> str:
     return ""
 
 
+# ═══ IRON RULE 0 — Choice Question Scanner (Board 2026-04-15 Constitutional) ═══
+# Standalone scanner used by Stop hook AND importable for unit tests.
+# Detects forbidden choice-question patterns in both Chinese and English.
+# Returns structured matches with pattern name, matched text, and position.
+
+_IRON_RULE_0_PATTERNS = [
+    # Chinese patterns
+    ("chinese_choose", re.compile(r"请选择")),
+    ("chinese_plan_abc", re.compile(r"方案[一二三四五六七八九十]")),
+    ("chinese_pick_one", re.compile(r"三选一")),
+    ("chinese_you_decide", re.compile(r"您决定.{0,10}(哪个|A.{0,3}还是.{0,3}B)")),
+    # English patterns
+    ("english_option_letter", re.compile(r"Option\s+[A-Z]:", re.IGNORECASE)),
+    ("english_option_number", re.compile(r"Option\s+\d:", re.IGNORECASE)),
+    ("english_n_paths", re.compile(r"We have \d+ paths", re.IGNORECASE)),
+    ("english_which_prefer", re.compile(r"Which.{0,20}prefer", re.IGNORECASE)),
+]
+
+
+def scan_for_choice_question(reply_text: str) -> list:
+    """Scan reply text for Iron Rule 0 forbidden choice-question patterns.
+
+    Returns a list of dicts: [{"pattern": str, "match": str, "position": int}, ...]
+    Empty list = no violations detected.
+    """
+    if not reply_text:
+        return []
+    results = []
+    for pattern_name, compiled in _IRON_RULE_0_PATTERNS:
+        m = compiled.search(reply_text)
+        if m:
+            results.append({
+                "pattern": pattern_name,
+                "match": m.group(),
+                "position": m.start(),
+            })
+    return results
+
+
+def inject_iron_rule_0_warning(reply_text: str, scan_results: list) -> str:
+    """Given scan results from scan_for_choice_question, return a warning string.
+
+    Returns empty string if no violations.
+    """
+    if not scan_results:
+        return ""
+    violations = "; ".join(
+        f"[{r['pattern']}] \"{r['match']}\" @pos={r['position']}"
+        for r in scan_results
+    )
+    return (
+        f"<system-reminder>IRON RULE 0 VIOLATION: Choice question detected in reply. "
+        f"Violations: {violations}. "
+        f"CEO must pick the best option and execute, never ask Board to choose. "
+        f"See CLAUDE.md Iron Rule 0.</system-reminder>"
+    )
+
+
 def _scan(text: str) -> dict:
     """STATE MACHINE WHITELIST (Board 2026-04-15 night 真根治).
     CEO 只有 3 合法 state. Reply 必须含 ≥1 STATE_EVIDENCE_PATTERN.

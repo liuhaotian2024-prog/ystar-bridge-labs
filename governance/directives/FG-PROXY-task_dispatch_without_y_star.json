@@ -1,0 +1,30 @@
+{
+  "directive_id": "FG-PROXY-task_dispatch_without_y_star",
+  "issued_at": "2026-04-15T14:00:00Z",
+  "issued_by": "eng-governance",
+  "trigger": {
+    "statement": "Task dispatch missing CIEU 5-tuple; 7-day grace period for ecosystem adaptation",
+    "current_state": "present"
+  },
+  "release": {
+    "statement": "ForgetGuard rule dry_run_until expired (2026-04-22T00:00:00Z / ts 1744750800)",
+    "check": {
+      "type": "fg_rule_is_expired",
+      "rule_name": "task_dispatch_without_y_star"
+    },
+    "current_state": "unmet"
+  },
+  "scope": {
+    "statement": "FG rule task_dispatch_without_y_star dry_run period",
+    "covers": [
+      "task_dispatch_without_y_star"
+    ],
+    "pattern": "task_dispatch_without_y_star"
+  },
+  "evaluator": {
+    "last_run": null,
+    "verdict": "LIVE",
+    "evidence": [],
+    "requires_human_ack": false
+  }
+}

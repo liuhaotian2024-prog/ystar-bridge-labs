@@ -1,0 +1,3 @@
+[2026-04-20 09:19:27] SKIP: active_agent='eng-platform' is not ceo/cto, no auto-commit
+[2026-04-20 09:20:14] DETECTED: 90 files changed in governance dirs (agent=ceo, hash=4215b7024241502a0630d052cb8423ecbd40d5a5b360f7dd4a1e6c519af0f2b2)
+[2026-04-20 09:20:14] DRY_RUN: would auto-commit 90 files (actual commit not yet implemented)

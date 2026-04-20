@@ -1,0 +1,31 @@
+{
+  "directive_id": "CZL-P2-b-DISPATCH-EXEC-20260418",
+  "issued_at": "2026-04-18T22:00:00Z",
+  "issued_by": "Board",
+  "trigger": {
+    "statement": "Dispatch-exec migration depends on stable router_registry API",
+    "current_state": "present"
+  },
+  "release": {
+    "statement": "ARCH-17 consolidated and router_registry at L3 with test coverage",
+    "check": {
+      "type": "doc_exists",
+      "path": "docs/arch17_behavioral_governance_spec.md",
+      "min_status": "L1"
+    },
+    "current_state": "unmet"
+  },
+  "scope": {
+    "statement": "P2-b dispatch-exec workflow migration",
+    "covers": [
+      "CZL-P2-b"
+    ],
+    "pattern": "^CZL-P2-b"
+  },
+  "evaluator": {
+    "last_run": null,
+    "verdict": "LIVE",
+    "evidence": [],
+    "requires_human_ack": true
+  }
+}

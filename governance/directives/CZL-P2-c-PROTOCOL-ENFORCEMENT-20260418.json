@@ -1,0 +1,31 @@
+{
+  "directive_id": "CZL-P2-c-PROTOCOL-ENFORCEMENT-20260418",
+  "issued_at": "2026-04-18T22:00:00Z",
+  "issued_by": "Board",
+  "trigger": {
+    "statement": "Protocol enforcement rule registration depends on router_registry pattern validation",
+    "current_state": "present"
+  },
+  "release": {
+    "statement": "Router registry has at least one rule registered and smoke-tested; ARCH-17 at L1+",
+    "check": {
+      "type": "doc_exists",
+      "path": "docs/arch17_behavioral_governance_spec.md",
+      "min_status": "L1"
+    },
+    "current_state": "unmet"
+  },
+  "scope": {
+    "statement": "P2-c protocol enforcement migration",
+    "covers": [
+      "CZL-P2-c"
+    ],
+    "pattern": "^CZL-P2-c"
+  },
+  "evaluator": {
+    "last_run": null,
+    "verdict": "LIVE",
+    "evidence": [],
+    "requires_human_ack": true
+  }
+}

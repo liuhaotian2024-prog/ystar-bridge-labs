@@ -47,7 +47,7 @@ def main():
         # Get last event timestamp
         cursor.execute("SELECT MAX(created_at) FROM cieu_events")
         last_ts = cursor.fetchone()[0]
-        last_age = int(time.time() - last_ts) if last_ts else -1
+        last_age = int(time.time() - float(last_ts)) if last_ts else -1
 
         conn.close()
     except sqlite3.Error as e:

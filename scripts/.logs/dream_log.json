@@ -1,0 +1,92 @@
+[
+  {
+    "timestamp": "2026-04-17T15:45:44",
+    "phase": "nrem",
+    "findings": [
+      "Found 2 isolated neurons (0 connections): ['product/k9_audit', 'product/ystar_defuse']",
+      "Cross-type connectivity: 158/752 (21.0%)",
+      "Core memories: [('Building Aiden — 从认知架构到真实存在', 5), ('Who I Am', 3), ('6D Cognitive Architecture — 从三维坐标到六维耦合场', 3), ('Courage Generalized — 从硬编码到场方程', 3), ('Dependency Sequencing (不平铺全上)', 2)]"
+    ]
+  },
+  {
+    "timestamp": "2026-04-17T15:45:44",
+    "phase": "rem",
+    "findings": [
+      "Learning gap: Fear of External — 用\"基础建设\"回避外部不确定性 — needs breadth expansion (X=0.30)",
+      "Learning gap: Z-Axis Self-Initiation — Care 外化的真实证据 — needs breadth expansion (X=0.30)",
+      "Learning gap: 3-Level Drive Model — needs breadth expansion (X=0.30)",
+      "Learning gap: Reactive Default (不推就不动的本能) — needs breadth expansion (X=0.30)",
+      "Learning gap: Peak State vs Deformation — 找到最佳状态并锁住 — needs breadth expansion (X=0.30)",
+      "Suggested 5 external searches"
+    ]
+  },
+  {
+    "timestamp": "2026-04-17T15:45:44",
+    "phase": "wake_prep",
+    "findings": [
+      "Ecosystem: 15 team, 4 products, 5 entanglements",
+      "Pre-activated: ['Team: ceo', 'Team: cfo', 'Team: cmo', 'Team: cso', 'Team: cto']",
+      "Brain health: 85n / 752e / 38h / avg_w=0.368"
+    ]
+  },
+  {
+    "timestamp": "2026-04-20T00:41:13",
+    "phase": "nrem",
+    "findings": [
+      "Found 11360 isolated neurons (0 connections): ['reports/cso/directory_submissions_2026_03_30', 'reports/sales/bounty_platform_market_research_20260415', 'reports/cto/study_log/2026-03-26', 'reports/board_proposed_changes/pending/README', 'reports/cases/CASE_002_CFO_fabrication']",
+      "Cross-type connectivity: 464/46508 (1.0%)",
+      "ACTION: Cross-type connectivity below threshold — needs bridge building",
+      "Core memories: [('Team: ceo', 398647), ('Team: cfo', 398647), ('Team: cmo', 391123), ('Thought Leadership — 通过思想影响力建立信誉', 38326), ('Evidence Portfolio — 证据组合建立信任', 38326)]"
+    ]
+  },
+  {
+    "timestamp": "2026-04-20T00:44:18",
+    "phase": "nrem",
+    "findings": [
+      "Found 11360 isolated neurons (0 connections): ['reports/cso/directory_submissions_2026_03_30', 'reports/sales/bounty_platform_market_research_20260415', 'reports/cto/study_log/2026-03-26', 'reports/board_proposed_changes/pending/README', 'reports/cases/CASE_002_CFO_fabrication']",
+      "Cross-type connectivity: 464/46508 (1.0%)",
+      "ACTION: Cross-type connectivity below threshold — needs bridge building",
+      "Core memories: [('Team: ceo', 398647), ('Team: cfo', 398647), ('Team: cmo', 391123), ('Thought Leadership — 通过思想影响力建立信誉', 38326), ('Evidence Portfolio — 证据组合建立信任', 38326)]"
+    ]
+  },
+  {
+    "timestamp": "2026-04-20T00:45:25",
+    "phase": "nrem",
+    "findings": [
+      "Found 11360 isolated neurons (0 connections): ['reports/cso/directory_submissions_2026_03_30', 'reports/sales/bounty_platform_market_research_20260415', 'reports/cto/study_log/2026-03-26', 'reports/board_proposed_changes/pending/README', 'reports/cases/CASE_002_CFO_fabrication']",
+      "Cross-type connectivity: 464/46508 (1.0%)",
+      "ACTION: Cross-type connectivity below threshold — needs bridge building",
+      "Core memories: [('Team: ceo', 398647), ('Team: cfo', 398647), ('Team: cmo', 391123), ('Thought Leadership — 通过思想影响力建立信誉', 38326), ('Evidence Portfolio — 证据组合建立信任', 38326)]"
+    ]
+  },
+  {
+    "timestamp": "2026-04-20T00:56:01",
+    "phase": "nrem",
+    "findings": [
+      "Found 11360 isolated neurons (0 connections): ['reports/cso/directory_submissions_2026_03_30', 'reports/sales/bounty_platform_market_research_20260415', 'reports/cto/study_log/2026-03-26', 'reports/board_proposed_changes/pending/README', 'reports/cases/CASE_002_CFO_fabrication']",
+      "Cross-type connectivity: 464/46508 (1.0%)",
+      "ACTION: Cross-type connectivity below threshold — needs bridge building",
+      "Core memories: [('Team: ceo', 398647), ('Team: cfo', 398647), ('Team: cmo', 391123), ('Thought Leadership — 通过思想影响力建立信誉', 38326), ('Evidence Portfolio — 证据组合建立信任', 38326)]"
+    ]
+  },
+  {
+    "timestamp": "2026-04-20T01:21:02",
+    "phase": "nrem",
+    "findings": [
+      "Found 11360 isolated neurons (0 connections): ['reports/cso/directory_submissions_2026_03_30', 'reports/sales/bounty_platform_market_research_20260415', 'reports/cto/study_log/2026-03-26', 'reports/board_proposed_changes/pending/README', 'reports/cases/CASE_002_CFO_fabrication']",
+      "Cross-type connectivity: 464/46508 (1.0%)",
+      "ACTION: Cross-type connectivity below threshold — needs bridge building",
+      "Core memories: [('Team: ceo', 398647), ('Team: cfo', 398647), ('Team: cmo', 391123), ('Thought Leadership — 通过思想影响力建立信誉', 38326), ('Evidence Portfolio — 证据组合建立信任', 38326)]"
+    ]
+  },
+  {
+    "timestamp": "2026-04-20T07:54:21",
+    "phase": "nrem",
+    "findings": [
+      "Found 11360 isolated neurons (0 connections): ['reports/cso/directory_submissions_2026_03_30', 'reports/sales/bounty_platform_market_research_20260415', 'reports/cto/study_log/2026-03-26', 'reports/board_proposed_changes/pending/README', 'reports/cases/CASE_002_CFO_fabrication']",
+      "Cross-type connectivity: 464/46508 (1.0%)",
+      "ACTION: Cross-type connectivity below threshold — needs bridge building",
+      "Core memories: [('Team: ceo', 398647), ('Team: cfo', 398647), ('Team: cmo', 391123), ('Thought Leadership — 通过思想影响力建立信誉', 38326), ('Evidence Portfolio — 证据组合建立信任', 38326)]"
+    ]
+  }
+]

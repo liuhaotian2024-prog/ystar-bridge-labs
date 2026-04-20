@@ -424,3 +424,30 @@ Slogan 化把 "多路并列 sub-agent" 从 Article 11 的 **一个执行维度**
 Applied 2026-04-19 via Board shell (bypass agent-hook layer) after 8 Samantha attempts blocked by cascade: Leo Phase 1 immutable hoist + Phase 2 restricted hoist + Phase 3 per-session marker isolation + Path A agent_stack CLI + Path B Samantha aliases. The alias fix widened must_dispatch_via_cto block to include `Samantha-` prefix, locking all secretary spawns — resolved via Board shell as atomic escape hatch.
 
 5 new agent blocks landed in AGENTS.md (Secretary + eng-kernel/governance/platform/domains). Boot Step 5 will report 14+ agent rule sets (was 10).
+---
+
+## AMENDMENT-021 (2026-04-20): ForgetGuard Keyword-Blacklist Retirement
+
+Proposer: Board verbal directive 2026-04-20
+Approver: Board (Haotian Liu) + CEO (Aiden)
+Status: APPROVED — Maya Phase 1 impl SHIPPED
+
+Background: AMENDMENT-020 established ForgetGuard. Board 2026-04-20 caught that 6 keyword-blacklist rules are silence-compliance (agent bypasses by changing words = Goodhart's law). Rule intent preserved, implementation migrates to Wave 5 as intent-based whitelist.
+
+Retired rules (see governance/forget_guard_rules.yaml status:retired field):
+- 3 time-postpone language variants (message / commit_msg / echo)
+- 1 backlog-bypass pattern
+- 1 choice-menu-to-Board rule (Iron Rule 0 intent preserved, Phase 2 migrates)
+- 1 ceo-writes-code keyword rule (replaced by path boundary)
+
+Article 11 (U-workflow header) NOT retired — principle preserved as proactive governance. Phase 2 migrates implementation from literal-word scan to intent-anchor detection.
+
+Scope boundary: Labs internal ForgetGuard only. Y*gov product-side regex engine unchanged. See Y-star-gov/reports/cto/FG-MIGRATION-SCOPE-BOUNDARY-20260420.md.
+
+Implementation: Maya yaml+engine+tests; Ryan via Board-shell for k9_event_trigger.py line 68; Samantha via Board-shell for this archival.
+
+Phase 2 (Wave 5): CZL-FG-BLACKLIST-TO-WHITELIST-MIGRATION migrates rule intents to positive-anchor whitelist. Includes Article 11 implementation migration. Gated on Aiden brain L2 LIVE + L3 guard rails + governance round-trip audit.
+
+Related: Precedes AMENDMENT-022 (Governance Dual Aspect Layer - restrictive + proactive balance). See Y-star-gov/reports/cto/GOVERNANCE-DUAL-ASPECT-AND-INSIGHT-RULE-PIPELINE-20260420.md.
+
+Rollback: If drift resurfaces via synonym bypass within 3 months, CTO may file ruling to reinstate rule with Phase 2 whitelist replacement.

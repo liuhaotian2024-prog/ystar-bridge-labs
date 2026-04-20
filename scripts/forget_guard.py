@@ -184,6 +184,10 @@ def evaluate_rule(rule: dict, payload: dict, context: dict) -> bool:
     if not rule.get("enabled", True):
         return False
 
+    # AMENDMENT-021: skip retired rules
+    if rule.get('status') == 'retired':
+        return False
+
     trigger = rule.get("trigger", {})
 
     # Check agent_filter (if specified, rule only applies to those agents)

@@ -7,7 +7,6 @@ import argparse
 import json
 import sys
 import time
-import fcntl
 import re
 from pathlib import Path
 from datetime import datetime, timezone
@@ -16,30 +15,22 @@ from datetime import datetime, timezone
 sys.path.insert(0, str(Path(__file__).parent))
 from _cieu_helpers import emit_cieu, _get_canonical_agent
 
-BOARD_PATH = Path("/Users/haotianliu/.openclaw/workspace/ystar-company/governance/dispatch_board.json")
+# Import safe board I/O from dispatch_board (CZL-WHITEBOARD-BROKER-SUB-SAMEFIX)
+# Uses separate lockfile + temp-file-then-rename + wipe protection sanity check.
+# Eliminates the local truncate-before-lock race condition (Bug 2 from WIPE-RCA).
+from dispatch_board import (
+    _acquire_lock,
+    _release_lock,
+    _read_board_locked,
+    _write_board_locked,
+    _read_board,
+    _write_board,
+    BOARD_PATH,
+)
+
 PID_FILE = Path("/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/.cto_broker.pid")
 TRUST_SCORES_PATH = Path("/Users/haotianliu/.openclaw/workspace/ystar-company/governance/trust_scores.json")
 POLL_TRIGGER_EVENTS = 10  # Poll dispatch_board every N CIEU events (no hardcoded time)
-
-
-def _read_board():
-    """Read dispatch board with advisory lock."""
-    if not BOARD_PATH.exists():
-        return {"tasks": []}
-    with open(BOARD_PATH, "r") as f:
-        fcntl.flock(f.fileno(), fcntl.LOCK_SH)
-        data = json.load(f)
-        fcntl.flock(f.fileno(), fcntl.LOCK_UN)
-    return data
-
-
-def _write_board(data):
-    """Write dispatch board with exclusive lock."""
-    BOARD_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with open(BOARD_PATH, "w") as f:
-        fcntl.flock(f.fileno(), fcntl.LOCK_EX)
-        json.dump(data, f, indent=2)
-        fcntl.flock(f.fileno(), fcntl.LOCK_UN)
 
 
 def count_recent_events(hours=1):
@@ -215,119 +206,139 @@ def validate_receipt(task, receipt_text):
 
 
 def poll_and_route():
-    """Poll dispatch_board, route tasks with CTO judgment."""
-    board = _read_board()
+    """Poll dispatch_board, route tasks with CTO judgment.
 
-    # Find tasks with status="open" and posted_by != broker (avoid loops)
-    open_tasks = [
-        t for t in board["tasks"]
-        if t["status"] == "open" and t.get("posted_by") != "cto-broker"
-    ]
+    Uses locked read-modify-write to prevent TOCTOU races
+    (CZL-WHITEBOARD-BROKER-SUB-SAMEFIX).
+    """
+    lock_fd = _acquire_lock()
+    try:
+        board = _read_board_locked()
+        prev_count = len(board["tasks"])
 
-    for task in open_tasks:
-        atomic_id = task["atomic_id"]
+        # Find tasks with status="open" and posted_by != broker (avoid loops)
+        open_tasks = [
+            t for t in board["tasks"]
+            if t["status"] == "open" and t.get("posted_by") != "cto-broker"
+        ]
 
-        # Step 1: Tier classify (T1/T2/T3)
-        tier = classify_tier(
-            task["description"],
-            task["scope"],
-            task.get("estimated_tool_uses", 0)
-        )
+        if not open_tasks:
+            return  # Nothing to route, skip write
 
-        emit_cieu(
-            "CTO_BROKER_TIER_CLASSIFIED",
-            decision="info",
-            passed=1,
-            task_description=f"{atomic_id} classified as {tier}",
-            params_json=json.dumps({
-                "atomic_id": atomic_id,
-                "tier": tier,
-                "scope": task["scope"],
-                "estimated_tool_uses": task.get("estimated_tool_uses", 0)
-            })
-        )
+        for task in open_tasks:
+            atomic_id = task["atomic_id"]
 
-        # Step 2: Routing decision
-        if tier == "T1":
-            # T1 → direct engineer assignment
-            engineer_id = select_engineer_for_t1(task["scope"])
+            # Step 1: Tier classify (T1/T2/T3)
+            tier = classify_tier(
+                task["description"],
+                task["scope"],
+                task.get("estimated_tool_uses", 0)
+            )
 
             emit_cieu(
-                "CTO_BROKER_ENGINEER_SELECTED",
-                decision="dispatch",
+                "CTO_BROKER_TIER_CLASSIFIED",
+                decision="info",
                 passed=1,
-                task_description=f"Dispatching {atomic_id} to {engineer_id}",
+                task_description=f"{atomic_id} classified as {tier}",
                 params_json=json.dumps({
                     "atomic_id": atomic_id,
-                    "engineer_id": engineer_id,
                     "tier": tier,
+                    "scope": task["scope"],
+                    "estimated_tool_uses": task.get("estimated_tool_uses", 0)
                 })
             )
 
-            # Mark task as broker_routing (claimed by broker)
-            task["status"] = "broker_routing"
-            task["claimed_by"] = "cto-broker"
-            task["claimed_at"] = datetime.now(timezone.utc).isoformat()
-            task["tier"] = tier
-            task["assigned_engineer"] = engineer_id
+            # Step 2: Routing decision
+            if tier == "T1":
+                # T1 → direct engineer assignment
+                engineer_id = select_engineer_for_t1(task["scope"])
 
-        elif tier == "T2":
-            # T2 → escalate to CTO for design
-            emit_cieu(
-                "CTO_BROKER_INTENT_RECEIVED",
-                decision="escalate",
-                passed=1,
-                task_description=f"{atomic_id} T2 escalated to CTO for design",
-                params_json=json.dumps({"atomic_id": atomic_id, "tier": "T2"})
-            )
+                emit_cieu(
+                    "CTO_BROKER_ENGINEER_SELECTED",
+                    decision="dispatch",
+                    passed=1,
+                    task_description=f"Dispatching {atomic_id} to {engineer_id}",
+                    params_json=json.dumps({
+                        "atomic_id": atomic_id,
+                        "engineer_id": engineer_id,
+                        "tier": tier,
+                    })
+                )
 
-            task["status"] = "broker_escalate_t2"
-            task["claimed_by"] = "cto-broker"
-            task["claimed_at"] = datetime.now(timezone.utc).isoformat()
-            task["tier"] = tier
+                # Mark task as broker_routing (claimed by broker)
+                task["status"] = "broker_routing"
+                task["claimed_by"] = "cto-broker"
+                task["claimed_at"] = datetime.now(timezone.utc).isoformat()
+                task["tier"] = tier
+                task["assigned_engineer"] = engineer_id
 
-        elif tier == "T3":
-            # T3 → escalate to Board (CEO drafts proposal)
-            emit_cieu(
-                "CTO_BROKER_INTENT_RECEIVED",
-                decision="escalate",
-                passed=1,
-                task_description=f"{atomic_id} T3 escalated to Board",
-                params_json=json.dumps({"atomic_id": atomic_id, "tier": "T3"})
-            )
+            elif tier == "T2":
+                # T2 → escalate to CTO for design
+                emit_cieu(
+                    "CTO_BROKER_INTENT_RECEIVED",
+                    decision="escalate",
+                    passed=1,
+                    task_description=f"{atomic_id} T2 escalated to CTO for design",
+                    params_json=json.dumps({"atomic_id": atomic_id, "tier": "T2"})
+                )
 
-            task["status"] = "broker_escalate_t3"
-            task["claimed_by"] = "cto-broker"
-            task["claimed_at"] = datetime.now(timezone.utc).isoformat()
-            task["tier"] = tier
+                task["status"] = "broker_escalate_t2"
+                task["claimed_by"] = "cto-broker"
+                task["claimed_at"] = datetime.now(timezone.utc).isoformat()
+                task["tier"] = tier
 
-    # Write updated board back
-    _write_board(board)
+            elif tier == "T3":
+                # T3 → escalate to Board (CEO drafts proposal)
+                emit_cieu(
+                    "CTO_BROKER_INTENT_RECEIVED",
+                    decision="escalate",
+                    passed=1,
+                    task_description=f"{atomic_id} T3 escalated to Board",
+                    params_json=json.dumps({"atomic_id": atomic_id, "tier": "T3"})
+                )
+
+                task["status"] = "broker_escalate_t3"
+                task["claimed_by"] = "cto-broker"
+                task["claimed_at"] = datetime.now(timezone.utc).isoformat()
+                task["tier"] = tier
+
+        # Write updated board back (atomic, with wipe protection)
+        _write_board_locked(board, prev_task_count=prev_count)
+    finally:
+        _release_lock(lock_fd)
 
 
 def validate_completed_tasks():
-    """Validate receipts for completed tasks assigned by broker."""
-    board = _read_board()
+    """Validate receipts for completed tasks assigned by broker.
 
-    # Find tasks with status="completed" and claimed_by="cto-broker" or assigned_engineer set
-    completed_tasks = [
-        t for t in board["tasks"]
-        if t["status"] == "completed" and (
-            t.get("claimed_by") == "cto-broker" or
-            t.get("assigned_engineer")
-        ) and t.get("completion_receipt") and not t.get("broker_validated")
-    ]
+    Uses locked read-modify-write (CZL-WHITEBOARD-BROKER-SUB-SAMEFIX).
+    """
+    lock_fd = _acquire_lock()
+    try:
+        board = _read_board_locked()
+        prev_count = len(board["tasks"])
 
-    for task in completed_tasks:
-        receipt_text = task["completion_receipt"]
-        is_valid = validate_receipt(task, receipt_text)
+        # Find tasks with status="completed" and claimed_by="cto-broker" or assigned_engineer set
+        completed_tasks = [
+            t for t in board["tasks"]
+            if t["status"] == "completed" and (
+                t.get("claimed_by") == "cto-broker" or
+                t.get("assigned_engineer")
+            ) and t.get("completion_receipt") and not t.get("broker_validated")
+        ]
 
-        task["broker_validated"] = True
-        task["broker_validation_result"] = "pass" if is_valid else "fail"
-        task["broker_validated_at"] = datetime.now(timezone.utc).isoformat()
+        for task in completed_tasks:
+            receipt_text = task["completion_receipt"]
+            is_valid = validate_receipt(task, receipt_text)
 
-    if completed_tasks:
-        _write_board(board)
+            task["broker_validated"] = True
+            task["broker_validation_result"] = "pass" if is_valid else "fail"
+            task["broker_validated_at"] = datetime.now(timezone.utc).isoformat()
+
+        if completed_tasks:
+            _write_board_locked(board, prev_task_count=prev_count)
+    finally:
+        _release_lock(lock_fd)
 
 
 def daemon_loop():
@@ -490,8 +501,12 @@ WORKSPACE = Path("/Users/haotianliu/.openclaw/workspace/ystar-company")
 YSTAR_GOV = Path("/Users/haotianliu/.openclaw/workspace/Y-star-gov")
 
 
-def _next_czl_id():
-    """Get next CZL ID from registry (auto-increment, no collision)."""
+def _next_czl_id_locked(board):
+    """Get next CZL ID from registry or board data (auto-increment, no collision).
+
+    Takes already-read board dict to avoid nested lock acquisition.
+    Called from within a locked critical section (CZL-WHITEBOARD-BROKER-SUB-SAMEFIX).
+    """
     if CZL_REGISTRY_PATH.exists():
         try:
             registry = json.loads(CZL_REGISTRY_PATH.read_text())
@@ -499,8 +514,7 @@ def _next_czl_id():
             return f"CZL-{max(ids) + 1}" if ids else "CZL-200"
         except Exception:
             pass
-    # Fallback: scan dispatch_board for highest ID
-    board = _read_board()
+    # Fallback: scan provided board data for highest ID
     ids = []
     for t in board.get("tasks", []):
         aid = t.get("atomic_id", "")
@@ -512,33 +526,48 @@ def _next_czl_id():
     return f"CZL-{max(ids) + 1}" if ids else "CZL-200"
 
 
-def _auto_post_task(description, scope, urgency="P1", estimated_tool_uses=8):
-    """CTO broker autonomously posts a discovered task to dispatch_board."""
-    atomic_id = _next_czl_id()
+def _next_czl_id():
+    """Get next CZL ID (convenience wrapper, acquires lock briefly)."""
     board = _read_board()
+    return _next_czl_id_locked(board)
 
-    # Deduplicate: skip if same description already open
-    for t in board.get("tasks", []):
-        if t["status"] == "open" and t["description"] == description:
-            print(f"SKIP: duplicate task already open: {description[:60]}", file=sys.stderr)
-            return None
 
-    task = {
-        "atomic_id": atomic_id,
-        "scope": scope,
-        "description": description,
-        "urgency": urgency,
-        "estimated_tool_uses": estimated_tool_uses,
-        "status": "open",
-        "posted_at": datetime.now(timezone.utc).isoformat(),
-        "posted_by": "cto-broker",
-        "claimed_by": None,
-        "claimed_at": None,
-        "completed_at": None,
-        "completion_receipt": None,
-    }
-    board["tasks"].append(task)
-    _write_board(board)
+def _auto_post_task(description, scope, urgency="P1", estimated_tool_uses=8):
+    """CTO broker autonomously posts a discovered task to dispatch_board.
+
+    Uses locked read-modify-write (CZL-WHITEBOARD-BROKER-SUB-SAMEFIX).
+    """
+    lock_fd = _acquire_lock()
+    try:
+        board = _read_board_locked()
+        prev_count = len(board["tasks"])
+
+        # Deduplicate: skip if same description already open
+        for t in board.get("tasks", []):
+            if t["status"] == "open" and t["description"] == description:
+                print(f"SKIP: duplicate task already open: {description[:60]}", file=sys.stderr)
+                return None
+
+        atomic_id = _next_czl_id_locked(board)
+
+        task = {
+            "atomic_id": atomic_id,
+            "scope": scope,
+            "description": description,
+            "urgency": urgency,
+            "estimated_tool_uses": estimated_tool_uses,
+            "status": "open",
+            "posted_at": datetime.now(timezone.utc).isoformat(),
+            "posted_by": "cto-broker",
+            "claimed_by": None,
+            "claimed_at": None,
+            "completed_at": None,
+            "completion_receipt": None,
+        }
+        board["tasks"].append(task)
+        _write_board_locked(board, prev_task_count=prev_count)
+    finally:
+        _release_lock(lock_fd)
 
     emit_cieu(
         "CTO_BROKER_SELF_POST",
@@ -689,21 +718,33 @@ def verify_task(atomic_id):
     """
     CTO auto-verify pipeline — 5-step receipt validation.
     Replaces CEO manual ls/wc/pytest cycle.
+
+    Uses locked read-modify-write (CZL-WHITEBOARD-BROKER-SUB-SAMEFIX).
     """
     import subprocess
     import os
 
-    board = _read_board()
-    task = next((t for t in board["tasks"] if t["atomic_id"] == atomic_id), None)
-    if not task:
-        print(f"ERROR: Task {atomic_id} not found on dispatch_board", file=sys.stderr)
-        return 1
+    # Phase 1: Read task + receipt under lock, then release for I/O-heavy steps
+    lock_fd = _acquire_lock()
+    try:
+        board = _read_board_locked()
+        task = next((t for t in board["tasks"] if t["atomic_id"] == atomic_id), None)
+        if not task:
+            print(f"ERROR: Task {atomic_id} not found on dispatch_board", file=sys.stderr)
+            return 1
 
-    receipt = task.get("completion_receipt", "")
-    if not receipt:
-        print(f"ERROR: Task {atomic_id} has no completion_receipt", file=sys.stderr)
-        return 1
+        receipt = task.get("completion_receipt", "")
+        if not receipt:
+            print(f"ERROR: Task {atomic_id} has no completion_receipt", file=sys.stderr)
+            return 1
 
+        # Snapshot task data for verification (release lock during slow I/O)
+        task_scope = task.get("scope", "")
+        task_snapshot = dict(task)
+    finally:
+        _release_lock(lock_fd)
+
+    # Phase 2: Verification steps (no lock held — these may be slow)
     results = {}
     overall_pass = True
 
@@ -711,9 +752,7 @@ def verify_task(atomic_id):
     claimed_files = re.findall(r"[\w_/.-]+\.(?:py|md|yaml|json|sh|txt)", receipt)
     missing = []
     for f in claimed_files:
-        # Try workspace path first, then Y-star-gov
         if not (WORKSPACE / f).exists() and not (YSTAR_GOV / f).exists():
-            # Also try as absolute path
             if not Path(f).exists():
                 missing.append(f)
     results["file_exists"] = "PASS" if not missing else f"FAIL: missing {missing}"
@@ -725,22 +764,20 @@ def verify_task(atomic_id):
     tu_match = re.search(r"tool_uses[:\s=]+(\d+)", receipt, re.IGNORECASE)
     if tu_match:
         claimed_tu = int(tu_match.group(1))
-        # We can only check the claim exists, metadata comparison requires hook data
         results["tool_uses"] = f"CLAIMED: {claimed_tu} (metadata cross-check requires hook)"
     else:
         results["tool_uses"] = "WARN: no tool_uses claim in receipt"
     print(f"  [2/5] TOOL_USES: {results['tool_uses']}")
 
     # ── Step 3: RT_CHECK ──
-    rt_valid = validate_receipt(task, receipt)
+    rt_valid = validate_receipt(task_snapshot, receipt)
     results["rt_check"] = "PASS" if rt_valid else "FAIL: Rt+1 > 0 or scope violation"
     if not rt_valid:
         overall_pass = False
     print(f"  [3/5] RT_CHECK: {results['rt_check']}")
 
     # ── Step 4: TEST_GATE ──
-    scope = task.get("scope", "")
-    if "test" in scope or ".py" in scope:
+    if "test" in task_scope or ".py" in task_scope:
         try:
             test_result = subprocess.run(
                 [sys.executable, "-m", "pytest", "--tb=line", "-q"],
@@ -760,16 +797,23 @@ def verify_task(atomic_id):
     print(f"  [4/5] TEST_GATE: {results['test_gate']}")
 
     # ── Step 5: SCOPE_COMPLIANCE ──
-    # Already checked in validate_receipt Step 3
     results["scope_compliance"] = "PASS (checked in RT_CHECK)"
     print(f"  [5/5] SCOPE_COMPLIANCE: {results['scope_compliance']}")
 
-    # ── Update board with verification result ──
-    task["broker_verified"] = True
-    task["broker_verify_result"] = "PASS" if overall_pass else "FAIL"
-    task["broker_verify_details"] = results
-    task["broker_verified_at"] = datetime.now(timezone.utc).isoformat()
-    _write_board(board)
+    # Phase 3: Write verification result back under lock
+    lock_fd = _acquire_lock()
+    try:
+        board = _read_board_locked()
+        prev_count = len(board["tasks"])
+        task = next((t for t in board["tasks"] if t["atomic_id"] == atomic_id), None)
+        if task:
+            task["broker_verified"] = True
+            task["broker_verify_result"] = "PASS" if overall_pass else "FAIL"
+            task["broker_verify_details"] = results
+            task["broker_verified_at"] = datetime.now(timezone.utc).isoformat()
+            _write_board_locked(board, prev_task_count=prev_count)
+    finally:
+        _release_lock(lock_fd)
 
     verdict = "PASS" if overall_pass else "FAIL"
     emit_cieu(

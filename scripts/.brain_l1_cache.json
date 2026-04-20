@@ -1,0 +1,24 @@
+{
+  "query_id": "ad096826-a539-4815-bb6c-6c0eb3fbf702",
+  "timestamp": 1776698982.048324,
+  "top_k": [
+    {
+      "node_id": "ceo_learning/philosophy_self_awareness",
+      "node_name": "CEO Philosophy & Self-Awareness — Stoicism + Systems Thinking + AI Identity (学习笔记 Round 7)",
+      "distance": "0.2958",
+      "hint": "---\nname: CEO Philosophy & Self-Awareness — Stoicism + Systems Thinking + AI Identity (学习笔记 Round 7)\ntype: ceo_learning\ndiscovered:..."
+    },
+    {
+      "node_id": "module/governance",
+      "node_name": "Y*gov Module: governance",
+      "distance": "0.3000",
+      "hint": "69 files 27K lines, 24 reply_taxonomy failures — LARGEST MODULE"
+    },
+    {
+      "node_id": "logic/bayesian",
+      "node_name": "Bayesian Inference — 用证据更新信念",
+      "distance": "0.3162",
+      "hint": "P(H|E)=P(E|H)*P(H)/P(E); 先验+证据→后验; 每次sub-agent返回结果=evidence更新我对其能力的belief"
+    }
+  ]
+}

@@ -5,8 +5,7 @@ default_logic: OR
 rules:
 - id: enforcement_gap_persistent
   enabled: true
-  description: 'Meta-observer: same enforcement gap appears in ≥2 consecutive scans
-    (Board 2026-04-16)'
+  description: 'Meta-observer: same enforcement gap appears in ≥2 consecutive scans (Board 2026-04-16)'
   last_reviewed: '2026-04-16'
   reviewer: eng-governance
   trigger:
@@ -21,13 +20,11 @@ rules:
       keywords:
       - rule_id
   action: warn
-  recipe: 'Persistent enforcement gap detected: {rule_id} has Rt+1={score} across
-    {N} scans.
+  recipe: 'Persistent enforcement gap detected: {rule_id} has Rt+1={score} across {N} scans.
 
     CEO: review .claude/tasks/auto_enforce_{rule_id}.md or mark WONTFIX with reason.
 
-    This is a meta-observer warning — gap remains open until CEO dispatches fix or
-    documents decision to skip.
+    This is a meta-observer warning — gap remains open until CEO dispatches fix or documents decision to skip.
 
     See governance/auto_enforce_meta.md for decision tree.
 
@@ -102,10 +99,9 @@ rules:
     - type: ceo_mode_not_equals
       value: break_glass
   action: warn
-  recipe: "You are CEO attempting to edit an immutable governance file.\nTwo compliant\
-    \ paths:\n\n(1) Break-glass mode (20min cap, full CIEU audit):\n    python3 scripts/ceo_mode_manager.py\
-    \ force_break_glass --trigger T1\n    Then retry your edit.\n\n(2) Delegate to\
-    \ Secretary (recommended for routine updates):\n    Use Agent tool with subagent_type=Samantha-Secretary\n\
+  recipe: "You are CEO attempting to edit an immutable governance file.\nTwo compliant paths:\n\n(1) Break-glass mode (20min\
+    \ cap, full CIEU audit):\n    python3 scripts/ceo_mode_manager.py force_break_glass --trigger T1\n    Then retry your\
+    \ edit.\n\n(2) Delegate to Secretary (recommended for routine updates):\n    Use Agent tool with subagent_type=Samantha-Secretary\n\
     \    Secretary has native write access to governance files.\n\nRef: knowledge/ceo/skills/board_ceo_override_or_delegate.md\n\
     AMENDMENT-013: governance/BOARD_CHARTER_AMENDMENTS.md\n"
   cieu_event: IMMUTABLE_FORGOT_BREAK_GLASS
@@ -152,10 +148,13 @@ rules:
     '
   cieu_event: CEO_CODE_WRITE_DRIFT
   severity: medium
+  status: retired
+  retired_date: '2026-04-20'
+  retired_by: AMENDMENT-021
+  retired_reason: Replaced by ceo_engineering_boundary (path-based)
 - id: defer_language
   enabled: true
-  description: 'Agent using defer language without explicit Board stop signal (W10.1:
-    time_word + defer_verb co-occurrence)'
+  description: 'Agent using defer language without explicit Board stop signal (W10.1: time_word + defer_verb co-occurrence)'
   last_reviewed: '2026-04-15'
   reviewer: CTO
   trigger:
@@ -193,8 +192,7 @@ rules:
       - next session
       - tomorrow morning
   action: deny
-  recipe: 'Defer language detected (W10.1: time_word + defer_verb co-occurrence).
-    Per feedback_no_clock_out memory:
+  recipe: 'Defer language detected (W10.1: time_word + defer_verb co-occurrence). Per feedback_no_clock_out memory:
 
 
     Only explicit Board "stop" / "收工" permits deferral.
@@ -226,6 +224,10 @@ rules:
     '
   cieu_event: DEFER_LANGUAGE_DRIFT
   severity: low
+  status: retired
+  retired_date: '2026-04-20'
+  retired_by: AMENDMENT-021
+  retired_reason: Keyword blacklist Goodhart bypass
 - id: choice_question_to_board
   enabled: true
   description: Agent offering Board a choice menu instead of making unilateral decision
@@ -249,15 +251,17 @@ rules:
     - type: addressee_context
       value: board
   action: deny
-  recipe: "Choice questions to Board are PROHIBITED (AGENTS.md hard constraint).\n\
-    \nCEO must make unilateral decisions and execute.\nBoard will override/stop you\
-    \ if the decision is wrong.\n\nHow to fix:\n1. Pick the best option based on your\
-    \ judgment\n2. Execute immediately\n3. Report: \"I chose X because Y, now executing.\"\
-    \n\nRationale: Choice questions block autonomous operation.\nUnattended systems\
-    \ cannot answer \"pick 1/2/3\" questions.\n\nRef: CLAUDE.md \"硬约束:禁止出选择题\"\n \
-    \    feedback_no_clock_out.md\n     AGENTS.md (CEO role definition)\n"
+  recipe: "Choice questions to Board are PROHIBITED (AGENTS.md hard constraint).\n\nCEO must make unilateral decisions and\
+    \ execute.\nBoard will override/stop you if the decision is wrong.\n\nHow to fix:\n1. Pick the best option based on your\
+    \ judgment\n2. Execute immediately\n3. Report: \"I chose X because Y, now executing.\"\n\nRationale: Choice questions\
+    \ block autonomous operation.\nUnattended systems cannot answer \"pick 1/2/3\" questions.\n\nRef: CLAUDE.md \"硬约束:禁止出选择题\"\
+    \n     feedback_no_clock_out.md\n     AGENTS.md (CEO role definition)\n"
   cieu_event: BOARD_CHOICE_QUESTION_DRIFT
   severity: high
+  status: retired
+  retired_date: '2026-04-20'
+  retired_by: AMENDMENT-021
+  retired_reason: Iron Rule 0 intent preserved; keyword detection Goodhart bypass
 - id: defer_language_in_commit_msg
   enabled: true
   description: Defer semantics in commit messages (禁止明日/tomorrow/queued等语义)
@@ -312,6 +316,10 @@ rules:
     '
   cieu_event: DEFER_IN_COMMIT_DRIFT
   severity: high
+  status: retired
+  retired_date: '2026-04-20'
+  retired_by: AMENDMENT-021
+  retired_reason: Variant of time-word rule; same Goodhart bypass
 - id: defer_language_in_echo
   enabled: true
   description: Echo defer language to Board-facing outputs
@@ -357,6 +365,10 @@ rules:
     '
   cieu_event: DEFER_IN_BASH_DRIFT
   severity: medium
+  status: retired
+  retired_date: '2026-04-20'
+  retired_by: AMENDMENT-021
+  retired_reason: Variant of time-word rule; same Goodhart bypass
 - id: dialogue_contract_drift
   enabled: true
   description: Dialogue contains constraints not in current whitelist (AMENDMENT-022)
@@ -375,22 +387,18 @@ rules:
       - only_domains
       whitelist_corpus: governance/whitelist/*.yaml
   action: warn
-  recipe: "Board dialogue contains governance constraints not in current whitelist.\n\
-    \nDetected contract fields from nl_to_contract translation:\n{contract_summary}\n\
-    \nThree compliant paths:\n\n(1) Add to whitelist (if legitimate new constraint):\n\
-    \    - Edit appropriate governance/whitelist/*.yaml file\n    - Commit with [L3]\
-    \ tag after verification\n\n(2) Refuse the promise to Board:\n    - Reply: \"\
-    I cannot promise X because it conflicts with Y\"\n    - Propose alternative approach\n\
-    \n(3) Emit ALLOW_EXCEPTION CIEU event (with justification):\n    - Document why\
-    \ this one-time deviation is necessary\n    - Record exception in CIEU for audit\
-    \ trail\n\nRef: AMENDMENT-022, nl_to_contract architecture\n     governance/whitelist/\
+  recipe: "Board dialogue contains governance constraints not in current whitelist.\n\nDetected contract fields from nl_to_contract\
+    \ translation:\n{contract_summary}\n\nThree compliant paths:\n\n(1) Add to whitelist (if legitimate new constraint):\n\
+    \    - Edit appropriate governance/whitelist/*.yaml file\n    - Commit with [L3] tag after verification\n\n(2) Refuse\
+    \ the promise to Board:\n    - Reply: \"I cannot promise X because it conflicts with Y\"\n    - Propose alternative approach\n\
+    \n(3) Emit ALLOW_EXCEPTION CIEU event (with justification):\n    - Document why this one-time deviation is necessary\n\
+    \    - Record exception in CIEU for audit trail\n\nRef: AMENDMENT-022, nl_to_contract architecture\n     governance/whitelist/\
     \ (7-corpus whitelist system)\n"
   cieu_event: DIALOGUE_DRIFT
   severity: medium
 - id: decision_without_article_11
   enabled: true
-  description: CEO wrote strategic decision content without Article 11 layer completion
-    events
+  description: CEO wrote strategic decision content without Article 11 layer completion events
   last_reviewed: '2026-04-13'
   reviewer: CTO
   trigger:
@@ -426,17 +434,14 @@ rules:
     time_window_seconds: 7200
     min_count_per_type: 1
   action: warn
-  recipe: "CEO is writing strategic decision without completing Article 11 7-layer\
-    \ discipline.\n\nBefore finalizing decision documents, you must walk all 7 layers:\n\
-    Layer 0: Y* (ideal contract) — What would Werner Vogels do?\nLayer 1: Pre-session\
-    \ context — Read memory/session_handoff.md\nLayer 2: Decision (counterfactual)\
-    \ — What if I choose X vs Y?\nLayer 3: Memory (session state) — Check .ystar_session.json\
-    \ + CIEU\nLayer 4: Execution (RAPID) — Who does what, when?\nLayer 5: Track (CIEU\
-    \ events) — Emit events as you go\nLayer 6: Learn (lessons) — What did this teach\
-    \ me?\n\nAfter completing each layer, emit event:\n  python3 scripts/article_11_tracker.py\
-    \ layer_complete --layer N --evidence \"...\"\n\nVerify compliance before finalizing:\n\
-    \  python3 scripts/article_11_tracker.py check_compliance --window_hours 2\n\n\
-    Ref: knowledge/ceo/working_style/WORKING_STYLE.md Article 11\n     reports/proposals/charter_amendment_023_article_11_into_ceo_os.md\n"
+  recipe: "CEO is writing strategic decision without completing Article 11 7-layer discipline.\n\nBefore finalizing decision\
+    \ documents, you must walk all 7 layers:\nLayer 0: Y* (ideal contract) — What would Werner Vogels do?\nLayer 1: Pre-session\
+    \ context — Read memory/session_handoff.md\nLayer 2: Decision (counterfactual) — What if I choose X vs Y?\nLayer 3: Memory\
+    \ (session state) — Check .ystar_session.json + CIEU\nLayer 4: Execution (RAPID) — Who does what, when?\nLayer 5: Track\
+    \ (CIEU events) — Emit events as you go\nLayer 6: Learn (lessons) — What did this teach me?\n\nAfter completing each layer,\
+    \ emit event:\n  python3 scripts/article_11_tracker.py layer_complete --layer N --evidence \"...\"\n\nVerify compliance\
+    \ before finalizing:\n  python3 scripts/article_11_tracker.py check_compliance --window_hours 2\n\nRef: knowledge/ceo/working_style/WORKING_STYLE.md\
+    \ Article 11\n     reports/proposals/charter_amendment_023_article_11_into_ceo_os.md\n"
   cieu_event: FORGET_GUARD_ARTICLE_11_BYPASS_WARNING
   severity: high
 - id: article_11_partial_walk
@@ -464,19 +469,16 @@ rules:
     time_window_seconds: 3600
     trigger_on: any_missing
   action: warn
-  recipe: "Article 11 partially completed. Missing layers: {missing_layers}\n\nYou\
-    \ started the 7-layer cognitive construction but did not complete all layers.\n\
-    This violates the discipline framework.\n\nComplete the missing layers now:\n\
-    \  python3 scripts/article_11_tracker.py layer_complete --layer N --evidence \"\
-    ...\"\n\nOr if you abandoned the decision, emit explicit DECISION_ABANDONED event:\n\
-    \  python3 scripts/article_11_tracker.py abandon_decision --reason \"...\"\n\n\
-    Ref: WORKING_STYLE.md Article 11\n"
+  recipe: "Article 11 partially completed. Missing layers: {missing_layers}\n\nYou started the 7-layer cognitive construction\
+    \ but did not complete all layers.\nThis violates the discipline framework.\n\nComplete the missing layers now:\n  python3\
+    \ scripts/article_11_tracker.py layer_complete --layer N --evidence \"...\"\n\nOr if you abandoned the decision, emit\
+    \ explicit DECISION_ABANDONED event:\n  python3 scripts/article_11_tracker.py abandon_decision --reason \"...\"\n\nRef:\
+    \ WORKING_STYLE.md Article 11\n"
   cieu_event: FORGET_GUARD_ARTICLE_11_PARTIAL_WALK
   severity: medium
 - id: article_11_post_decision_audit_failure
   enabled: true
-  description: Hourly audit detected decision keywords without Article 11 events (drift
-    spike)
+  description: Hourly audit detected decision keywords without Article 11 events (drift spike)
   last_reviewed: '2026-04-13'
   reviewer: CTO
   trigger:
@@ -485,8 +487,7 @@ rules:
     - type: event_type_equals
       value: ARTICLE_11_DRIFT_SPIKE
   action: warn
-  recipe: 'Post-decision audit FAILED: {drift_count} strategic decisions made without
-    Article 11 discipline.
+  recipe: 'Post-decision audit FAILED: {drift_count} strategic decisions made without Article 11 discipline.
 
 
     Hourly audit (scripts/forget_guard_summary.py) detected user messages containing
@@ -524,8 +525,7 @@ rules:
   - board
 - id: backlog_as_defer_disguise
   enabled: true
-  description: Packaging deferral as 'backlog' / 'next campaign' / '下次 session' bypassing
-    no-clock-out
+  description: Packaging deferral as 'backlog' / 'next campaign' / '下次 session' bypassing no-clock-out
   last_reviewed: '2026-04-15'
   reviewer: Board 2026-04-15 PM catch
   trigger:
@@ -570,6 +570,10 @@ rules:
     '
   cieu_event: BACKLOG_DISGUISE_DRIFT
   severity: high
+  status: retired
+  retired_date: '2026-04-20'
+  retired_by: AMENDMENT-021
+  retired_reason: Keyword synonym variant; same Goodhart bypass
 - id: ceo_engineering_boundary
   enabled: true
   description: CEO writing outside ./reports/ directory (engineering boundary violation)
@@ -585,21 +589,17 @@ rules:
     - type: file_path_not_matches
       pattern: ^reports/
   action: deny
-  recipe: "CEO Write Access is limited to ./reports/ directory only.\n\nYou are attempting\
-    \ to write to: {file_path}\n\nCompliant paths:\n(1) Delegate to CTO/engineers\
-    \ for code/config changes:\n    Use Agent tool with subagent_type=Ethan-CTO\n\
-    (2) Break-glass mode (15min TTL) for emergency governance edits:\n    python3\
-    \ scripts/ceo_mode_manager.py force_break_glass --trigger T1\n(3) If this is a\
-    \ report file, save it to ./reports/ instead\n\nRationale: CEO does not write\
-    \ code (AGENTS.md role definition).\nEngineering work must go through CTO task\
-    \ assignment.\n\nRef: knowledge/ceo/lessons/ceo_write_scope_enforcement_2026_04_14.md\n\
+  recipe: "CEO Write Access is limited to ./reports/ directory only.\n\nYou are attempting to write to: {file_path}\n\nCompliant\
+    \ paths:\n(1) Delegate to CTO/engineers for code/config changes:\n    Use Agent tool with subagent_type=Ethan-CTO\n(2)\
+    \ Break-glass mode (15min TTL) for emergency governance edits:\n    python3 scripts/ceo_mode_manager.py force_break_glass\
+    \ --trigger T1\n(3) If this is a report file, save it to ./reports/ instead\n\nRationale: CEO does not write code (AGENTS.md\
+    \ role definition).\nEngineering work must go through CTO task assignment.\n\nRef: knowledge/ceo/lessons/ceo_write_scope_enforcement_2026_04_14.md\n\
     \     AGENTS.md CEO role boundaries\n"
   cieu_event: CEO_ENGINEERING_OVERRIDE
   severity: high
 - id: cto_hourly_patrol_missed
   enabled: true
-  description: CTO hourly health patrol missed (>75min since last run) — emit PATROL_MISSED
-    event
+  description: CTO hourly health patrol missed (>75min since last run) — emit PATROL_MISSED event
   last_reviewed: '2026-04-15'
   reviewer: eng-platform
   trigger:
@@ -609,20 +609,17 @@ rules:
       event_type: CTO_HOURLY_PATROL_COMPLETE
       threshold_minutes: 75
   action: warn
-  recipe: "CTO hourly patrol has not run in >75 minutes.\nExpected cadence: every\
-    \ 60 minutes during autonomous operation.\n\nSelf-heal steps:\n(1) Check crontab:\
-    \ crontab -l | grep cto_patrol\n(2) Verify cto_patrol.py executable: ls -l scripts/cto_patrol.py\n\
-    (3) Run manually: python3 scripts/cto_patrol.py\n(4) Check last CIEU event: python3\
-    \ -c \"from ystar.governance.cieu_store import CIEUStore; db=CIEUStore(); print(db.query_latest('CTO_HOURLY_PATROL_COMPLETE'))\"\
-    \n\nIf cron entry missing:\n  echo \"0 * * * * cd /Users/haotianliu/.openclaw/workspace/ystar-company\
-    \ && python3 scripts/cto_patrol.py\" | crontab -\n\nRef: AMENDMENT-020 ForgetGuard\
-    \ institutional memory framework\n     knowledge/cto/obligations/hourly_patrol.md\n"
+  recipe: "CTO hourly patrol has not run in >75 minutes.\nExpected cadence: every 60 minutes during autonomous operation.\n\
+    \nSelf-heal steps:\n(1) Check crontab: crontab -l | grep cto_patrol\n(2) Verify cto_patrol.py executable: ls -l scripts/cto_patrol.py\n\
+    (3) Run manually: python3 scripts/cto_patrol.py\n(4) Check last CIEU event: python3 -c \"from ystar.governance.cieu_store\
+    \ import CIEUStore; db=CIEUStore(); print(db.query_latest('CTO_HOURLY_PATROL_COMPLETE'))\"\n\nIf cron entry missing:\n\
+    \  echo \"0 * * * * cd /Users/haotianliu/.openclaw/workspace/ystar-company && python3 scripts/cto_patrol.py\" | crontab\
+    \ -\n\nRef: AMENDMENT-020 ForgetGuard institutional memory framework\n     knowledge/cto/obligations/hourly_patrol.md\n"
   cieu_event: PATROL_MISSED
   severity: high
 - id: cmo_weekly_readme_audit_missed
   enabled: true
-  description: CMO weekly README audit missed (Sunday EOD deadline) — emit README_AUDIT_MISSED
-    event
+  description: CMO weekly README audit missed (Sunday EOD deadline) — emit README_AUDIT_MISSED event
   last_reviewed: '2026-04-15'
   reviewer: eng-platform
   trigger:
@@ -633,23 +630,19 @@ rules:
       hour: 23
       required_event: CMO_README_AUDIT_COMPLETE
   action: warn
-  recipe: "CMO weekly README audit missed Sunday EOD deadline.\n\nThis audit ensures:\n\
-    - All repos have up-to-date README.md\n- Installation instructions tested\n- Marketing\
-    \ copy aligned with features\n\nSelf-heal steps:\n(1) Run audit manually: python3\
-    \ scripts/cmo_readme_audit.py\n(2) Review output in reports/cmo/readme_audit_{date}.md\n\
-    (3) Emit completion event: python3 -c \"from scripts.cieu_recorder import emit;\
-    \ emit('CMO_README_AUDIT_COMPLETE', metadata={'repos_checked': N})\"\n\nIf script\
-    \ missing, delegate to CMO:\n  \"CMO: weekly README audit is due. Please create/run\
-    \ scripts/cmo_readme_audit.py\"\n\nRef: knowledge/cmo/obligations/weekly_readme_audit.md\n"
+  recipe: "CMO weekly README audit missed Sunday EOD deadline.\n\nThis audit ensures:\n- All repos have up-to-date README.md\n\
+    - Installation instructions tested\n- Marketing copy aligned with features\n\nSelf-heal steps:\n(1) Run audit manually:\
+    \ python3 scripts/cmo_readme_audit.py\n(2) Review output in reports/cmo/readme_audit_{date}.md\n(3) Emit completion event:\
+    \ python3 -c \"from scripts.cieu_recorder import emit; emit('CMO_README_AUDIT_COMPLETE', metadata={'repos_checked': N})\"\
+    \n\nIf script missing, delegate to CMO:\n  \"CMO: weekly README audit is due. Please create/run scripts/cmo_readme_audit.py\"\
+    \n\nRef: knowledge/cmo/obligations/weekly_readme_audit.md\n"
   cieu_event: README_AUDIT_MISSED
   severity: medium
 - id: session_age_concurrency_cap
   enabled: true
-  description: 'Session-age-aware concurrency cap for CEO sub-agent spawns. Rationale:
-    parent-session context accumulation over long sessions degrades stream I/O scheduling;
-    concurrent long sub-agents exceed watchdog idle timeout when parent is busy consuming
-    their streams. Empirical evidence: 2026-04-19 9h+ session, 4 concurrent spawns
-    all hit stream-idle-timeout.'
+  description: 'Session-age-aware concurrency cap for CEO sub-agent spawns. Rationale: parent-session context accumulation
+    over long sessions degrades stream I/O scheduling; concurrent long sub-agents exceed watchdog idle timeout when parent
+    is busy consuming their streams. Empirical evidence: 2026-04-19 9h+ session, 4 concurrent spawns all hit stream-idle-timeout.'
   last_reviewed: '2026-04-19'
   reviewer: Board
   trigger:
@@ -666,10 +659,9 @@ rules:
       - session_age_hours_gt: 8
         max_concurrent: 1
   action: warn
-  recipe: 'Session age exceeds threshold. Current concurrent sub-agents: {current_count}.
-    Cap at your session_age: {cap}. Either (a) wait for in-flight to complete before
-    spawning, (b) reduce scope of pending spawn to single-file + ≤8 tool_uses, (c)
-    use Board-shell ops script path (no sub-agent spawn needed).'
+  recipe: 'Session age exceeds threshold. Current concurrent sub-agents: {current_count}. Cap at your session_age: {cap}.
+    Either (a) wait for in-flight to complete before spawning, (b) reduce scope of pending spawn to single-file + ≤8 tool_uses,
+    (c) use Board-shell ops script path (no sub-agent spawn needed).'
   cieu_event: SESSION_AGE_CONCURRENCY_CAP_WARN
   severity: medium
   monitored_by: secretary
@@ -684,8 +676,7 @@ whitelists:
 - rapid_matrix
 - id: subagent_no_commit_after_5_writes
   enabled: true
-  description: Sub-agent accumulates ≥5 Write/Edit without commit — risks losing all
-    work on truncation
+  description: Sub-agent accumulates ≥5 Write/Edit without commit — risks losing all work on truncation
   last_reviewed: '2026-04-15'
   reviewer: Board 2026-04-15 night atomic dispatch architecture fix
   trigger:
@@ -698,11 +689,10 @@ whitelists:
       - write
       - edit
   action: warn
-  recipe: "Sub-agent has accumulated ≥5 Write/Edit operations without git commit.\n\
-    This pattern caused 8/11 sub-agent failures today (truncation lost all work).\n\
-    \nMANDATORY: After every Write/Edit, run:\n  git add <file> && git commit -m \"\
-    WIP: <description>\"\n  git push origin main\n\nEven if work is incomplete, WIP\
-    \ commit prevents total loss on truncation.\nRef: governance/sub_agent_atomic_dispatch.md\n"
+  recipe: "Sub-agent has accumulated ≥5 Write/Edit operations without git commit.\nThis pattern caused 8/11 sub-agent failures\
+    \ today (truncation lost all work).\n\nMANDATORY: After every Write/Edit, run:\n  git add <file> && git commit -m \"WIP:\
+    \ <description>\"\n  git push origin main\n\nEven if work is incomplete, WIP commit prevents total loss on truncation.\n\
+    Ref: governance/sub_agent_atomic_dispatch.md\n"
   cieu_event: SUBAGENT_NO_COMMIT_DRIFT
   severity: medium
 - id: ceo_no_midstream_checkin
@@ -747,24 +737,19 @@ whitelists:
     - prompt
     expect_empty_issues: true
   action: deny
-  recipe: "CZL Gate 1 FAILED: Your dispatch prompt lacks required 5-tuple structure.\n\
-    \nCZL Unified Communication Protocol requires:\n- **Y*** (ideal contract, verifiable\
-    \ predicate)\n- **Xt** (pre-state, tool-measured NOT impression)\n- **U** (actions\
-    \ list, ≤15 tool_uses for atomic dispatch)\n- **Yt+1** (post-state, verification\
-    \ clause)\n- **Rt+1** (gap target, must reach 0.0 for closure)\n\nMissing sections:\
-    \ {validation_issues}\n\nFix before retry:\n1. Read ystar/kernel/czl_protocol.py\
-    \ for CZLMessageEnvelope schema\n2. Add missing sections to your Agent tool prompt\n\
-    3. Call validate_dispatch() yourself before spawning:\n     from ystar.kernel.czl_protocol\
-    \ import validate_dispatch\n     issues = validate_dispatch(my_prompt)\n     if\
-    \ issues: fix_prompt()\n\nRef: CZL Unified Communication Protocol v1.0 (Board\
-    \ 2026-04-16 Constitutional)\n     knowledge/shared/unified_work_protocol_20260415.md\n\
-    \     Y-star-gov/ystar/kernel/czl_protocol.py\n"
+  recipe: "CZL Gate 1 FAILED: Your dispatch prompt lacks required 5-tuple structure.\n\nCZL Unified Communication Protocol\
+    \ requires:\n- **Y*** (ideal contract, verifiable predicate)\n- **Xt** (pre-state, tool-measured NOT impression)\n- **U**\
+    \ (actions list, ≤15 tool_uses for atomic dispatch)\n- **Yt+1** (post-state, verification clause)\n- **Rt+1** (gap target,\
+    \ must reach 0.0 for closure)\n\nMissing sections: {validation_issues}\n\nFix before retry:\n1. Read ystar/kernel/czl_protocol.py\
+    \ for CZLMessageEnvelope schema\n2. Add missing sections to your Agent tool prompt\n3. Call validate_dispatch() yourself\
+    \ before spawning:\n     from ystar.kernel.czl_protocol import validate_dispatch\n     issues = validate_dispatch(my_prompt)\n\
+    \     if issues: fix_prompt()\n\nRef: CZL Unified Communication Protocol v1.0 (Board 2026-04-16 Constitutional)\n    \
+    \ knowledge/shared/unified_work_protocol_20260415.md\n     Y-star-gov/ystar/kernel/czl_protocol.py\n"
   cieu_event: CZL_GATE1_DISPATCH_INVALID
   severity: high
 - id: czl_receipt_rt_not_zero
   enabled: true
-  description: 'CZL Gate 2: Sub-agent receipt claims Rt+1=0 but empirical verification
-    fails'
+  description: 'CZL Gate 2: Sub-agent receipt claims Rt+1=0 but empirical verification fails'
   last_reviewed: '2026-04-16'
   reviewer: Leo Chen (eng-kernel) + Maya Patel (eng-governance)
   trigger:
@@ -787,24 +772,19 @@ whitelists:
     - artifacts_expected
     expect_valid: true
   action: deny
-  recipe: "CZL Gate 2 FAILED: Receipt claims Rt+1=0 but empirical verification failed.\n\
-    \nClaimed Rt+1: {claimed_rt}\nActual gap: {empirical_gap}\n\nVerification failures:\n\
-    - Missing artifacts: {missing_artifacts}\n- Test output not found: {missing_test_evidence}\n\
-    - No bash verification paste: {missing_bash_output}\n\nSub-agent hallucinated\
-    \ success. DO NOT report this task as complete.\n\nRequired action:\n(1) Re-dispatch\
-    \ with tighter validation prompt:\n    \"Include bash verification output (ls\
-    \ -la, wc -l, pytest -q) in receipt\"\n(2) After receipt, call validate_receipt()\
-    \ yourself:\n    from ystar.kernel.czl_protocol import validate_receipt\n    is_valid,\
-    \ gap = validate_receipt(receipt, artifacts=[...])\n    if not is_valid: re_dispatch()\n\
-    \nThis prevents Ethan#CZL-1 class zero-tool hallucination.\n\nRef: CZL Unified\
-    \ Communication Protocol v1.0 (Board 2026-04-16 Constitutional)\n     Y-star-gov/tests/kernel/test_czl_protocol.py\
-    \ (16/16 PASS baseline)\n"
+  recipe: "CZL Gate 2 FAILED: Receipt claims Rt+1=0 but empirical verification failed.\n\nClaimed Rt+1: {claimed_rt}\nActual\
+    \ gap: {empirical_gap}\n\nVerification failures:\n- Missing artifacts: {missing_artifacts}\n- Test output not found: {missing_test_evidence}\n\
+    - No bash verification paste: {missing_bash_output}\n\nSub-agent hallucinated success. DO NOT report this task as complete.\n\
+    \nRequired action:\n(1) Re-dispatch with tighter validation prompt:\n    \"Include bash verification output (ls -la, wc\
+    \ -l, pytest -q) in receipt\"\n(2) After receipt, call validate_receipt() yourself:\n    from ystar.kernel.czl_protocol\
+    \ import validate_receipt\n    is_valid, gap = validate_receipt(receipt, artifacts=[...])\n    if not is_valid: re_dispatch()\n\
+    \nThis prevents Ethan#CZL-1 class zero-tool hallucination.\n\nRef: CZL Unified Communication Protocol v1.0 (Board 2026-04-16\
+    \ Constitutional)\n     Y-star-gov/tests/kernel/test_czl_protocol.py (16/16 PASS baseline)\n"
   cieu_event: CZL_GATE2_RECEIPT_INVALID
   severity: high
 - id: realtime_artifact_archival_sla
   enabled: true
-  description: New artifact in archival scope lacks ARCHIVE_INDEX entry (Secretary
-    SLA ≤30 min)
+  description: New artifact in archival scope lacks ARCHIVE_INDEX entry (Secretary SLA ≤30 min)
   last_reviewed: '2026-04-16'
   reviewer: Ryan Park (eng-platform)
   trigger:
@@ -816,13 +796,11 @@ whitelists:
       pattern: ^(reports/|knowledge/|products/|content/|governance/)
       context: file_path
   action: audit
-  recipe: "New artifact created in archival scope. Secretary SLA enforcement:\n\n\
-    Scope: reports/ knowledge/ products/ content/ governance/\nSLA: Index in knowledge/ARCHIVE_INDEX.md\
-    \ ≤30 min + emit ARTIFACT_ARCHIVED\n\nAutomated enforcement:\n- Cron job: scripts/archive_sla_scan.py\
-    \ runs every 15 min\n- Emits ARTIFACT_UNARCHIVED_SLA_BREACH for violations\n-\
-    \ Install cron: see scripts/archive_sla_cron.txt\n\nSecretary duty: When cron\
-    \ emits breach, immediately index artifact + emit ARTIFACT_ARCHIVED.\n\nRef: agents/Secretary.md\
-    \ §CZL duties item 6 (real-time archival)\n     governance/forget_guard_rules.yaml\
+  recipe: "New artifact created in archival scope. Secretary SLA enforcement:\n\nScope: reports/ knowledge/ products/ content/\
+    \ governance/\nSLA: Index in knowledge/ARCHIVE_INDEX.md ≤30 min + emit ARTIFACT_ARCHIVED\n\nAutomated enforcement:\n-\
+    \ Cron job: scripts/archive_sla_scan.py runs every 15 min\n- Emits ARTIFACT_UNARCHIVED_SLA_BREACH for violations\n- Install\
+    \ cron: see scripts/archive_sla_cron.txt\n\nSecretary duty: When cron emits breach, immediately index artifact + emit\
+    \ ARTIFACT_ARCHIVED.\n\nRef: agents/Secretary.md §CZL duties item 6 (real-time archival)\n     governance/forget_guard_rules.yaml\
     \ realtime_artifact_archival_sla\n"
   cieu_event: ARTIFACT_ARCHIVAL_SCOPE_DETECTED
   severity: low

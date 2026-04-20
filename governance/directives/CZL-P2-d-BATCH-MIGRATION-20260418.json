@@ -1,0 +1,31 @@
+{
+  "directive_id": "CZL-P2-d-BATCH-MIGRATION-20260418",
+  "issued_at": "2026-04-18T22:00:00Z",
+  "issued_by": "Board",
+  "trigger": {
+    "statement": "Batch migration of 40 governance protocols to router rules depends on P2-a stable",
+    "current_state": "present"
+  },
+  "release": {
+    "statement": "CTO review of first 3-rule batch complete; ARCH-17 canonical doc at L1+",
+    "check": {
+      "type": "doc_exists",
+      "path": "docs/arch17_behavioral_governance_spec.md",
+      "min_status": "L1"
+    },
+    "current_state": "unmet"
+  },
+  "scope": {
+    "statement": "P2-d batch governance protocol migration",
+    "covers": [
+      "CZL-P2-d"
+    ],
+    "pattern": "^CZL-P2-d"
+  },
+  "evaluator": {
+    "last_run": null,
+    "verdict": "LIVE",
+    "evidence": [],
+    "requires_human_ack": true
+  }
+}

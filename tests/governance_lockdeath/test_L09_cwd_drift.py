@@ -61,8 +61,12 @@ class TestL09CwdDrift:
 
     def test_real_hook_wrapper_marker_path_is_absolute(self):
         """
-        Verify that the MARKER_PATH constant in hook_wrapper.py is absolute.
+        Verify that the marker path constants in hook_wrapper.py are absolute.
         This is a static analysis check.
+
+        CZL-MARKER-PER-SESSION-ISOLATION: hook_wrapper now uses _MARKER_DIR
+        and _MARKER_GLOBAL instead of a single _MARKER_PATH. Both must resolve
+        to absolute paths.
         """
         import re
         hook_wrapper_path = os.path.join(
@@ -72,8 +76,15 @@ class TestL09CwdDrift:
         with open(hook_wrapper_path, "r") as f:
             content = f.read()
 
-        # Find the _MARKER_PATH assignment
-        match = re.search(r'_MARKER_PATH\s*=\s*"([^"]+)"', content)
-        assert match is not None, "_MARKER_PATH not found in hook_wrapper.py"
-        marker_path = match.group(1)
-        assert os.path.isabs(marker_path), f"_MARKER_PATH is not absolute: {marker_path}"
+        # Find the _MARKER_DIR or _MARKER_GLOBAL assignment
+        match = re.search(r'_MARKER_GLOBAL\s*=\s*os\.path\.join\(\s*_MARKER_DIR', content)
+        if match is None:
+            # Fallback: check for legacy _MARKER_PATH
+            match = re.search(r'_MARKER_PATH\s*=\s*"([^"]+)"', content)
+        assert match is not None, "_MARKER_GLOBAL (or legacy _MARKER_PATH) not found in hook_wrapper.py"
+
+        # Verify _MARKER_DIR is absolute
+        dir_match = re.search(r'_MARKER_DIR\s*=\s*"([^"]+)"', content)
+        if dir_match:
+            marker_dir = dir_match.group(1)
+            assert os.path.isabs(marker_dir), f"_MARKER_DIR is not absolute: {marker_dir}"

@@ -505,6 +505,32 @@ def main():
     except Exception as e:
         print(f"[warn] secretary_curate trigger failed: {e}", file=sys.stderr)
 
+    # CZL-BRAIN-BOUNDARY-HOOKS: Brain Auto-Ingest at close boundary
+    # Ingests this session's work into aiden_brain.db via hash-based delta.
+    # Failure is non-blocking (brain is advisory, not transactional).
+    try:
+        sys.path.insert(0, str(YSTAR_GOV_PATH))
+        from ystar.governance.brain_auto_ingest import extract_candidates, apply_ingest
+        candidates = extract_candidates()
+        result = apply_ingest(candidates)
+        ingested = result.get('ingested', 0)
+        skipped = result.get('skipped', 0)
+        errors = result.get('errors', 0)
+        print(f"[ok] Brain ingest (close): +{ingested} nodes, {skipped} unchanged, {errors} errors")
+    except ImportError:
+        # Gate: Leo#6 brain_auto_ingest module not yet ready
+        print("[GATE] brain_auto_ingest module not ready (Leo#6 in flight) -- skipped")
+        try:
+            from ystar.adapters.cieu_writer import _write_session_lifecycle
+            _write_session_lifecycle(
+                'BRAIN_INGEST_MODULE_NOT_READY', agent_id, 'close',
+                str(cieu_db_path), {'boundary': 'close'}
+            )
+        except Exception:
+            pass
+    except Exception as e:
+        print(f"[warn] brain auto-ingest (close) failed: {e}", file=sys.stderr)
+
     # NEW: active_agent home state cleanup (方案 C)
     try:
         marker_path = company_root / ".ystar_active_agent"
