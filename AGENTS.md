@@ -1556,3 +1556,14 @@ CTO看到CMO的内容有误，主动纠正。
 All published content must end with:
 "— Posted by Y* Bridge Labs CMO agent
    Governed by Y*gov · CIEU record: [seq]"
+
+
+## 持续工作原则 (Board 2026-04-20 late-night directive)
+
+- 完成一个子任务后，主动检查下一个待处理任务
+- 不得在有 PENDING 义务时声明"任务完成"
+- 无明确停止指令时，默认继续执行队列中下一项
+- 遇到阻塞时上报，不得静默停止
+
+**Added**: 2026-04-20T21:39:31.820256 via Board-shell append
+**Scope**: 全员 (CEO / CTO / 4 engineer / Secretary / 3 C-suite)
