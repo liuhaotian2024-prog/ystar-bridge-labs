@@ -47,7 +47,11 @@ def main():
         # Get last event timestamp
         cursor.execute("SELECT MAX(created_at) FROM cieu_events")
         last_ts = cursor.fetchone()[0]
-        last_age = int(time.time() - float(last_ts)) if last_ts else -1
+        try:
+            last_age = int(time.time() - float(last_ts)) if last_ts else -1
+        except (ValueError, TypeError):
+            from datetime import datetime as _dt
+            last_age = int(time.time() - _dt.fromisoformat(str(last_ts)).timestamp()) if last_ts else -1
 
         conn.close()
     except sqlite3.Error as e:

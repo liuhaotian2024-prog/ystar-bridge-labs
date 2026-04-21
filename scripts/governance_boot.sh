@@ -146,6 +146,21 @@ else
   echo "[3/7] Memory boot: skipped (verify-only)"
 fi
 
+# 3.1. WHO_I_AM system binding (CZL-WHO-I-AM-SYSTEM-BINDING)
+# Board directive: cat WHO_I_AM into stdout so it enters agent opening context unconditionally.
+if [ "$AGENT_ID" = "ceo" ]; then
+  WHO_I_AM="$YSTAR_DIR/knowledge/ceo/wisdom/WHO_I_AM.md"
+  if [ -f "$WHO_I_AM" ]; then
+    echo ""
+    echo "--- WHO_I_AM (system-level identity anchor) ---"
+    cat "$WHO_I_AM"
+    echo ""
+    echo "--- END WHO_I_AM ---"
+  else
+    echo "[3.1] WHO_I_AM: NOT FOUND at $WHO_I_AM (non-fatal)"
+  fi
+fi
+
 # 3.5. Start K9 routing subscriber daemon (AMENDMENT-027 Board 2026-04-16)
 if [ "$VERIFY_ONLY" = false ]; then
   K9_SUBSCRIBER="$YGOV_DIR/ystar/governance/k9_routing_subscriber.py"
@@ -431,6 +446,9 @@ try:
 except Exception as e:
     print(f"[warn] session_start emit failed: {e}", file=sys.stderr)
 PYEOF
+
+  # CZL-PARENT-REGISTER-BOOT-WIRE: register parent session obligations (Maya Phase 1)
+  /opt/homebrew/bin/python3.11 "$YGOV_DIR/scripts/boot_parent_session_register.py" 2>&1 | head -5
 else
   echo "=== GOVERNANCE BOOT: $FAILURES FAILURES — INVESTIGATE ==="
 fi

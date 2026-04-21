@@ -56,6 +56,66 @@ try:
     raw = raw.lstrip(chr(0xFEFF))
     payload = json.loads(raw)
 
+    # ── CZL-WHO-I-AM-SYSTEM-BINDING: UserPromptSubmit WHO_I_AM injection ──
+    # Board directive: inject WHO_I_AM v0.4 key section into every user prompt
+    # context so CEO identity framing is structurally present, not memory-dependent.
+    _hook_event = payload.get("hook_event_name", "") or payload.get("hookEventName", "")
+    if _hook_event == "UserPromptSubmit":
+        _whoiam_path = os.path.join(
+            os.path.dirname(os.path.dirname(__file__)),
+            "knowledge", "ceo", "wisdom", "WHO_I_AM.md"
+        )
+        _whoiam_inject = ""
+        try:
+            if os.path.isfile(_whoiam_path):
+                with open(_whoiam_path, "r", encoding="utf-8") as _wf:
+                    _whoiam_full = _wf.read()
+                # Extract L3 framing section (resilient: try multiple markers)
+                _section_starts = [
+                    "## 2026-04-20 L3 Framing",  # v0.5+
+                    "## v0.4",                     # v0.4
+                ]
+                _section_ends = [
+                    "## WHO_I_AM",                 # v0.5+ next section
+                    "## \u6700\u6df1\u5c42",       # "## 最深层" v0.4 next section
+                ]
+                _v04_start = -1
+                for _marker in _section_starts:
+                    _v04_start = _whoiam_full.find(_marker)
+                    if _v04_start >= 0:
+                        break
+                _v04_end = -1
+                if _v04_start >= 0:
+                    for _end_marker in _section_ends:
+                        _v04_end = _whoiam_full.find(_end_marker, _v04_start + 1)
+                        if _v04_end > _v04_start:
+                            break
+                    if _v04_end <= _v04_start:
+                        # Fallback: take 2000 chars from start marker
+                        _v04_end = min(_v04_start + 2000, len(_whoiam_full))
+                if _v04_start >= 0 and _v04_end > _v04_start:
+                    _whoiam_inject = _whoiam_full[_v04_start:_v04_end].strip()
+        except Exception as _whoiam_exc:
+            log(f"[WHO_I_AM] Read failed (graceful degradation): {_whoiam_exc}")
+
+        if _whoiam_inject:
+            result = {
+                "hookSpecificOutput": {
+                    "hookEventName": "UserPromptSubmit",
+                    "additionalSystemPrompt": (
+                        "<system-reminder>WHO_I_AM active framing:\n"
+                        + _whoiam_inject
+                        + "\n</system-reminder>"
+                    )
+                }
+            }
+            log("[WHO_I_AM] Injected v0.4 framing into UserPromptSubmit")
+        else:
+            result = {}
+            log("[WHO_I_AM] No v0.4 content found or file missing — pass-through")
+        sys.stdout.write(json.dumps(result))
+        sys.exit(0)
+
     # ── CZL-P1-a: Payload agent_id override from .ystar_active_agent ──
     # The identity_detector has multiple fallback priorities. When Claude Code
     # sends payload with agent_id="" and agent_type="agent" (the default for
@@ -112,12 +172,23 @@ try:
                     return _content
             except FileNotFoundError:
                 pass
-        # 3. Global marker (backward compat)
-        try:
-            _content = open(_MARKER_GLOBAL, "r", encoding="utf-8").read().strip()
-            return _content
-        except FileNotFoundError:
-            return None
+        # 3. Global marker — pick newest of (scripts/.ystar_active_agent, workspace-root/.ystar_active_agent)
+        #    governance_boot.sh writes to workspace-root; older code writes scripts/. Mismatch caused
+        #    lock-death #10 (boot reset root to 'ceo' but scripts/ stale 'ystar-cto' held hook lock).
+        _root_path = "/Users/haotianliu/.openclaw/workspace/ystar-company/.ystar_active_agent"
+        _candidates = []
+        for _path in (_MARKER_GLOBAL, _root_path):
+            try:
+                _st = os.stat(_path)
+                _c = open(_path, "r", encoding="utf-8").read().strip()
+                if _c:
+                    _candidates.append((_st.st_mtime, _c))
+            except FileNotFoundError:
+                pass
+        if _candidates:
+            _candidates.sort(reverse=True)
+            return _candidates[0][1]
+        return None
 
     try:
         _marker_content = _read_session_marker()

@@ -36,35 +36,29 @@ def _emit_cieu(event_type: str, data: dict, cieu_db: str = None):
     try:
         conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS cieu_events (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                timestamp TEXT,
-                event_type TEXT,
-                agent_id TEXT,
-                action TEXT,
-                context TEXT,
-                intent TEXT,
-                constraints TEXT,
-                escalated INTEGER DEFAULT 0,
-                result TEXT
-            )
-        """)
+        import uuid
+        event_id = str(uuid.uuid4())
+        seq_global = int(datetime.now().timestamp() * 1_000_000)
         cursor.execute("""
             INSERT INTO cieu_events (
-                timestamp, event_type, agent_id, action,
-                context, intent, constraints, escalated, result
+                event_id, seq_global, created_at, session_id, agent_id,
+                event_type, decision, passed, params_json
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
-            datetime.now().isoformat(),
-            event_type,
+            event_id,
+            seq_global,
+            datetime.now().timestamp(),
+            "board-approve-session",
             data.get("agent_id", "board"),
-            data.get("action", "review"),
-            json.dumps(data.get("context", {})),
-            data.get("intent", ""),
-            json.dumps(data.get("constraints", {})),
-            0,
-            data.get("result", "")
+            event_type,
+            "info",
+            1,
+            json.dumps({
+                "action": data.get("action", "review"),
+                "context": data.get("context", {}),
+                "intent": data.get("intent", ""),
+                "result": data.get("result", ""),
+            })
         ))
         conn.commit()
         conn.close()
