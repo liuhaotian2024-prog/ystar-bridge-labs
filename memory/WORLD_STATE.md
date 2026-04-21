@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-20 11:30:00
+**Generated**: 2026-04-21 08:30:00
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,18 +36,14 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/11 valid (0 errors)
-**CIEU 24h Events**: 154278
+**CIEU 24h Events**: 58928
 **Overdue Obligations**: 0
 
 ---
 
 ## 5. External Signals (Today)
 ```
-=== Y* Bridge Labs Idle Learning Progress ===
-
-Role         | P1 Complete  | P2 Theories  | P3 Sims  | Last Learning
-----------------------------------------------------------------------
-ceo          | 3/3          | 24           | 36       | 2026-04-19  
+[No morning report today]
 ```
 
 ---
@@ -87,7 +83,7 @@ ceo          | 3/3          | 24           | 36       | 2026-04-19
 **HEAD**: `5c24cde Audience: git history + consultant review of guard+guide architecture. Research basis: Board`
 **24h commits**: 0
 **ahead origin**: 0
-**test files**: 98
+**test files**: 99
 **version**: 0.48.0
 
 ---
@@ -100,7 +96,7 @@ ceo          | 3/3          | 24           | 36       | 2026-04-19
 ## 10. Ecosystem — K9Audit (read-only reference)
 **local clone**: `/tmp/K9Audit`
 **HEAD**: ``
-**stale days**: 0
+**stale days**: 1
 **migration queue**: CausalChainAnalyzer + Auditor + k9_repo_audit.py → CIEU (TODO)
 
 ---
@@ -109,6 +105,6 @@ ceo          | 3/3          | 24           | 36       | 2026-04-19
 
 
 **ystar-company** (1 commits):
-- 80257ebc 22:09 manual flush: unstale GitHub while grant-chain LIVE task runs. Bundles yesterday ships (8 Ethan rulings +
+- 89d49ef4 11:37 Wave 2a close: FG Phase 1 + brain L2 LIVE + self-education spec
 
 **Y*gov**: no commits
