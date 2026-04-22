@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-21 21:00:00
+**Generated**: 2026-04-21 22:00:01
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,7 +36,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/11 valid (0 errors)
-**CIEU 24h Events**: 48355
+**CIEU 24h Events**: 78990
 **Overdue Obligations**: 0
 
 ---
@@ -84,9 +84,9 @@ ceo          | 3/3          | 24           | 37       | 2026-04-20
 ---
 
 ## 8. Ecosystem — Y*gov Product Repo
-**HEAD**: `057c20d CTO rulings + architecture specs + reports — 2026-04-20 batch`
-**24h commits**: 2
-**ahead origin**: 0
+**HEAD**: `6f05680 [auto] WIP checkpoint 2026-04-21 21:35 -- 92 files changed`
+**24h commits**: 4
+**ahead origin**: 1
 **test files**: 99
 **version**: 0.48.0
 
@@ -108,11 +108,16 @@ ceo          | 3/3          | 24           | 37       | 2026-04-20
 ## 11. Today's Commits (24h) — both repos
 
 
-**ystar-company** (3 commits):
+**ystar-company** (6 commits):
+- 36d2721d 21:35 [auto] WIP checkpoint 2026-04-21 21:35 -- 5176 files changed
+- 97f9edda 21:10 Charter-level AMENDMENT-023/024 LIVE + WHO_I_AM v0.7 + 5-node refactor specs
+- 1d658cc7 21:10 12 milestones: local Gemma pivot + structural governance + 全员 brain
 - 9f5cfb9e 08:52 Governance state + memory snapshot — dispatch board + WORLD_STATE + dream log
 - 1b4bc4f1 08:48 Charter + knowledge sinks — WHO_I_AM v0.5, CTO wisdom folder, aiden management method
 - 15a11d68 08:42 CEO lock-death #10 self-patch + hook/boot/dream maintenance
 
-**Y*gov** (2 commits):
+**Y*gov** (4 commits):
+- 6f05680 21:35 [auto] WIP checkpoint 2026-04-21 21:35 -- 92 files changed
+- 50b0765 21:10 3 engine CIEU fail-closed + brain_auto_ingest line 553 hang fix + tests
 - 057c20d 08:50 CTO rulings + architecture specs + reports — 2026-04-20 batch
 - 888fb66 08:44 Engineer ships 2026-04-19/20 — Leo + Maya + Ryan work batch

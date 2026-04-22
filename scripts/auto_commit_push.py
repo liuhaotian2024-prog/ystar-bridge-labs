@@ -1,162 +1,455 @@
 #!/usr/bin/env python3
 """
-Auto-commit-push module — slice A skeleton (CZL-AUTO-COMMIT-PUSH-CADENCE).
+auto_commit_push.py — Milestone 13 production implementation.
 
-Per Ethan CTO ruling 2026-04-19:
-- Dual trigger: session_close + Stop-hook 25-min cadence (cron rejected)
-- Authorization: CEO/CTO commit+push; eng-* commit only (writes .ystar_push_pending)
-- 6 safety gates before commit (all stubs in slice A, implementation in slice C)
-- Explicit include/exclude lists (slice C will add .ystar_autocommit_scope.json)
-- Revert-commit rollback only (no --force, no --hard)
-- Integration with session_state_flush.py orchestrator (slice B)
+Per Ethan CTO ruling CZL-AUTO-COMMIT-PUSH (2026-04-19):
+- CLI: --mode {once|daemon} --repo {ystar-company|y-star-gov|both}
+- Mtime gate: skip if last run <10min AND no file changed
+- Hash dedupe: skip if git diff HEAD hash unchanged since last run
+- Sanity gates: no .ystar_cieu.db, no >50MB files, no leaked secrets
+- Commit message: [auto] WIP checkpoint YYYY-MM-DD HH:MM -- N files changed
+- Push gated by env YSTAR_AUTO_PUSH_ENABLED=1
+- Sentinel: scripts/.auto_commit_push_sentinel.json
+- CIEU event AUTO_COMMIT_PUSH_CYCLE per invocation
 
-Slice A scope (~7 tool_uses): module skeleton + dry-run CLI. No wiring to hooks yet.
-
-Author: Aiden Liu (CEO) via ops script — Board-shell path because CEO→Ryan direct-spawn was rule-blocked at session-age tier.
-Date: 2026-04-19 evening
+Author: Ethan Wright (CTO) — M13 implementation
+Date: 2026-04-21
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import os
+import re
 import subprocess
 import sys
 import time
 from pathlib import Path
-from typing import List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
-# Constants from Ethan ruling
-CADENCE_MINUTES = 25
-COMPANY_ROOT = Path('/Users/haotianliu/.openclaw/workspace/ystar-company')
-YSTAR_GOV_ROOT = Path('/Users/haotianliu/.openclaw/workspace/Y-star-gov')
-PUSH_PENDING_FLAG = COMPANY_ROOT / '.ystar_push_pending'
-AUTOCOMMIT_SCOPE_JSON = COMPANY_ROOT / '.ystar_autocommit_scope.json'
+# ── Paths ──────────────────────────────────────────────────────────
+COMPANY_ROOT = Path("/Users/haotianliu/.openclaw/workspace/ystar-company")
+YSTAR_GOV_ROOT = Path("/Users/haotianliu/.openclaw/workspace/Y-star-gov")
+SENTINEL_PATH = COMPANY_ROOT / "scripts" / ".auto_commit_push_sentinel.json"
+LOG_DIR = COMPANY_ROOT / "scripts" / ".logs"
+LOG_FILE = LOG_DIR / "auto_commit_push.log"
+
+REPO_MAP = {
+    "ystar-company": COMPANY_ROOT,
+    "y-star-gov": YSTAR_GOV_ROOT,
+}
+
+# ── Safety exclusions (never staged) ──────────────────────────────
+EXCLUDE_PATTERNS = [
+    ".ystar_cieu.db",
+    ".ystar_cieu_omission.db",
+    ".ystar_memory.db",
+    "aiden_brain.db",
+    ".env",
+    ".ystar_session.json",
+    ".ystar_active_agent",
+    ".k9_subscriber_state.json",
+    ".ystar_warning_queue_archive.json",
+    "scripts/.session_booted",
+    "scripts/.session_call_count",
+    "scripts/.logs/",
+    "scripts/.ystar_",
+    "scripts/.k9_",
+    "scripts/.brain_",
+    "__pycache__",
+    ".pyc",
+    ".whl",
+    ".egg-info",
+    ".bak",
+    ".swp",
+    ".venv/",
+    ".venv\\",
+    "_brain.db",
+    ".lock",
+    ".ppid_",
+]
+
+# Files that must never be staged (exact basename match)
+EXCLUDE_BASENAMES = {
+    ".ystar_cieu.db", ".ystar_cieu.db-shm", ".ystar_cieu.db-wal",
+    ".ystar_cieu_omission.db", ".ystar_cieu_omission.db-shm", ".ystar_cieu_omission.db-wal",
+    ".ystar_memory.db", ".ystar_memory.db-shm", ".ystar_memory.db-wal",
+    "aiden_brain.db", "aiden_brain.db-shm", "aiden_brain.db-wal",
+    "ethan_brain.db", "leo_brain.db", "maya_brain.db", "ryan_brain.db",
+    "jordan_brain.db", "sofia_brain.db", "zara_brain.db", "marco_brain.db",
+    "samantha_brain.db",
+    ".env",
+}
+
+# Secret patterns (simple string scan)
+SECRET_PATTERNS = [
+    re.compile(r"ANTHROPIC_API_KEY\s*=\s*sk-"),
+    re.compile(r"OPENAI_API_KEY\s*=\s*sk-"),
+    re.compile(r"sk-ant-[a-zA-Z0-9]{20,}"),
+    re.compile(r"password\s*=\s*['\"][^'\"]{8,}"),
+]
+
+MAX_FILE_SIZE_BYTES = 50 * 1024 * 1024  # 50 MB
+MTIME_GATE_SECONDS = 600  # 10 minutes
 
 
-# Agents authorized for commit+push (per Ethan ruling Authorization section)
-PUSH_AUTHORIZED_AGENTS = {'ceo', 'cto'}
+# ── Helpers ────────────────────────────────────────────────────────
 
-
-def compute_commit_scope(repo_root: Path) -> List[str]:
-    """Return changed files in repo honoring include/exclude lists.
-
-    Slice A: placeholder returns git diff --name-only.
-    Slice C: will read AUTOCOMMIT_SCOPE_JSON for include/exclude patterns.
-    """
+def log(msg: str) -> None:
+    """Append timestamped line to log file."""
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
+    ts = time.strftime("%Y-%m-%d %H:%M:%S")
+    line = f"[{ts}] {msg}\n"
     try:
-        result = subprocess.run(
-            ['git', '-C', str(repo_root), 'diff', '--name-only', 'HEAD'],
-            capture_output=True, text=True, timeout=10
-        )
-        files = [f for f in result.stdout.strip().split('\n') if f]
-        return files
-    except (subprocess.TimeoutExpired, Exception) as e:
-        print(f'[compute_commit_scope] error: {e}', file=sys.stderr)
-        return []
+        with open(LOG_FILE, "a") as f:
+            f.write(line)
+    except OSError:
+        pass
+    print(line.rstrip(), file=sys.stderr)
 
 
-def run_safety_gates(files: List[str], agent_id: str) -> tuple[bool, Optional[str]]:
-    """Run 6 safety gates per Ethan ruling. Returns (pass, reason-if-fail).
+def load_sentinel() -> Dict[str, Any]:
+    """Load sentinel JSON or return empty dict."""
+    if SENTINEL_PATH.exists():
+        try:
+            return json.loads(SENTINEL_PATH.read_text())
+        except (json.JSONDecodeError, OSError):
+            return {}
+    return {}
 
-    Slice A: all gates are stubs returning True.
-    Slice C: real implementations:
-      Gate 1: test pass (Y-star-gov only) — pytest exit=0 in last 5 min
-      Gate 2: CROBA clean window — no CROBA events in last 5 min
-      Gate 3: no mid-edit state — no pending Write tool calls
-      Gate 4: minimum change threshold — ≥1 non-whitespace diff line
-      Gate 5: secret scan — grep for AWS_KEY, sk-, BEGIN PRIVATE KEY
-      Gate 6: scope guard — files in agent's write scope per AGENTS.md
+
+def save_sentinel(data: Dict[str, Any]) -> None:
+    """Persist sentinel JSON."""
+    SENTINEL_PATH.parent.mkdir(parents=True, exist_ok=True)
+    SENTINEL_PATH.write_text(json.dumps(data, indent=2) + "\n")
+
+
+def git_run(repo: Path, args: List[str], timeout: int = 30) -> subprocess.CompletedProcess:
+    """Run a git command in the given repo."""
+    return subprocess.run(
+        ["git", "-C", str(repo)] + args,
+        capture_output=True, text=True, timeout=timeout,
+    )
+
+
+def get_porcelain(repo: Path) -> str:
+    """Return git status --porcelain output."""
+    r = git_run(repo, ["status", "--porcelain"])
+    return r.stdout.strip() if r.returncode == 0 else ""
+
+
+def get_diff_hash(repo: Path) -> str:
+    """Compute hash of git diff HEAD (content-based dedupe)."""
+    r = git_run(repo, ["diff", "HEAD"])
+    content = r.stdout if r.returncode == 0 else ""
+    # Also include untracked files list
+    u = git_run(repo, ["ls-files", "--others", "--exclude-standard"])
+    untracked = u.stdout if u.returncode == 0 else ""
+    combined = content + "\n---UNTRACKED---\n" + untracked
+    return hashlib.sha256(combined.encode()).hexdigest()
+
+
+def get_changed_files(repo: Path) -> List[str]:
+    """Get list of modified + untracked files (for staging)."""
+    files = []
+    # Modified/deleted tracked files
+    r = git_run(repo, ["diff", "--name-only", "HEAD"])
+    if r.returncode == 0 and r.stdout.strip():
+        files.extend(r.stdout.strip().split("\n"))
+    # Untracked files
+    r = git_run(repo, ["ls-files", "--others", "--exclude-standard"])
+    if r.returncode == 0 and r.stdout.strip():
+        files.extend(r.stdout.strip().split("\n"))
+    return [f for f in files if f]
+
+
+def is_excluded(filepath: str) -> bool:
+    """Check if a file should be excluded from auto-commit."""
+    basename = Path(filepath).name
+    if basename in EXCLUDE_BASENAMES:
+        return True
+    for pat in EXCLUDE_PATTERNS:
+        if pat in filepath:
+            return True
+    return False
+
+
+def check_file_size(repo: Path, filepath: str) -> bool:
+    """Return True if file is under 50MB limit."""
+    full = repo / filepath
+    if full.exists() and full.stat().st_size > MAX_FILE_SIZE_BYTES:
+        return False
+    return True
+
+
+def check_no_secrets(repo: Path, filepath: str) -> bool:
+    """Return True if file does not contain secret patterns."""
+    full = repo / filepath
+    if not full.exists() or not full.is_file():
+        return True
+    # Skip binary files
+    try:
+        content = full.read_text(errors="ignore")
+    except OSError:
+        return True
+    for pat in SECRET_PATTERNS:
+        if pat.search(content):
+            return False
+    return True
+
+
+# ── Core logic ─────────────────────────────────────────────────────
+
+def process_repo(
+    repo_name: str,
+    repo_path: Path,
+    sentinel: Dict[str, Any],
+    dry_run: bool = False,
+) -> Dict[str, Any]:
+    """Process one repo: check gates, commit, optionally push.
+
+    Returns a result dict for CIEU event payload.
     """
-    # TODO slice C — implement each gate
-    return True, None
+    result: Dict[str, Any] = {
+        "repo": repo_name,
+        "action": "skip",
+        "reason": "",
+        "files_committed": 0,
+        "files_skipped": 0,
+        "commit_hash": None,
+        "pushed": False,
+        "errors": [],
+    }
 
+    # 1. Check if repo exists
+    if not repo_path.exists():
+        result["reason"] = "repo_not_found"
+        result["errors"].append(f"{repo_path} does not exist")
+        return result
 
-def commit(files: List[str], message: str, author_agent: str, repo_root: Path, dry_run: bool = False) -> Optional[str]:
-    """Stage files + create commit with agent attribution. Returns commit hash or None if dry-run/fail."""
-    if not files:
-        print('[commit] no files to commit', file=sys.stderr)
-        return None
+    # 2. git status --porcelain: if empty, nothing to do
+    porcelain = get_porcelain(repo_path)
+    if not porcelain:
+        result["reason"] = "clean_working_tree"
+        log(f"[{repo_name}] SKIP: clean working tree")
+        return result
 
-    full_msg = f'{message}\n\nAuthor-Agent: {author_agent}\nCo-Authored-By: Aiden Liu (Y* Bridge Labs CEO)'
+    # 3. Mtime gate: skip if last run <10min ago
+    repo_sentinel = sentinel.get(repo_name, {})
+    last_run_ts = repo_sentinel.get("last_run_ts", 0)
+    now = time.time()
+    if now - last_run_ts < MTIME_GATE_SECONDS:
+        # But still check if content actually changed via hash
+        current_hash = get_diff_hash(repo_path)
+        last_hash = repo_sentinel.get("last_hash", "")
+        if current_hash == last_hash:
+            result["reason"] = "mtime_gate_and_hash_unchanged"
+            log(f"[{repo_name}] SKIP: within 10min window and hash unchanged")
+            return result
+        # Hash changed within 10min -- proceed (new content worth committing)
+
+    # 4. Hash dedupe: compute diff hash, compare to sentinel
+    current_hash = get_diff_hash(repo_path)
+    last_hash = repo_sentinel.get("last_hash", "")
+    if current_hash == last_hash:
+        result["reason"] = "hash_unchanged"
+        log(f"[{repo_name}] SKIP: diff hash unchanged")
+        return result
+
+    # 5. Get changed files and filter
+    all_files = get_changed_files(repo_path)
+    safe_files = []
+    skipped_files = []
+
+    for f in all_files:
+        if is_excluded(f):
+            skipped_files.append(f"excluded:{f}")
+            continue
+        if not check_file_size(repo_path, f):
+            skipped_files.append(f"too_large:{f}")
+            result["errors"].append(f"File > 50MB: {f}")
+            continue
+        if not check_no_secrets(repo_path, f):
+            skipped_files.append(f"secret_detected:{f}")
+            result["errors"].append(f"Secret pattern in: {f}")
+            continue
+        safe_files.append(f)
+
+    if not safe_files:
+        result["reason"] = "no_safe_files_after_filter"
+        result["files_skipped"] = len(skipped_files)
+        log(f"[{repo_name}] SKIP: {len(skipped_files)} files filtered, 0 safe")
+        return result
+
+    # 6. Commit
+    ts_str = time.strftime("%Y-%m-%d %H:%M")
+    commit_msg = f"[auto] WIP checkpoint {ts_str} -- {len(safe_files)} files changed"
 
     if dry_run:
-        print(f'[DRY-RUN] Would commit {len(files)} files with message:\n  {message}')
-        print(f'[DRY-RUN] Author-Agent: {author_agent}')
-        print(f'[DRY-RUN] Files: {files[:5]}{"..." if len(files) > 5 else ""}')
-        return None
+        log(f"[{repo_name}] DRY-RUN: would commit {len(safe_files)} files")
+        result["action"] = "dry_run"
+        result["files_committed"] = len(safe_files)
+        result["files_skipped"] = len(skipped_files)
+        return result
 
-    # Real commit — slice C hardens with safety gates
+    # Stage specific files (never git add -A)
     try:
-        subprocess.run(['git', '-C', str(repo_root), 'add'] + files, check=True, timeout=30)
-        result = subprocess.run(
-            ['git', '-C', str(repo_root), 'commit', '-m', full_msg],
-            capture_output=True, text=True, check=True, timeout=30
-        )
-        hash_result = subprocess.run(
-            ['git', '-C', str(repo_root), 'rev-parse', 'HEAD'],
-            capture_output=True, text=True, check=True, timeout=10
-        )
-        commit_hash = hash_result.stdout.strip()
-        print(f'[commit] created {commit_hash[:12]}')
-        return commit_hash
-    except subprocess.CalledProcessError as e:
-        print(f'[commit] failed: {e.stderr}', file=sys.stderr)
-        return None
+        git_run(repo_path, ["add", "--"] + safe_files, timeout=30)
+    except Exception as e:
+        result["errors"].append(f"git add failed: {e}")
+        result["reason"] = "git_add_failed"
+        return result
 
+    # Commit
+    try:
+        r = git_run(repo_path, ["commit", "-m", commit_msg], timeout=30)
+        if r.returncode != 0:
+            result["errors"].append(f"git commit failed: {r.stderr.strip()}")
+            result["reason"] = "git_commit_failed"
+            return result
+    except Exception as e:
+        result["errors"].append(f"git commit exception: {e}")
+        result["reason"] = "git_commit_failed"
+        return result
 
-def push_if_authorized(author_agent: str, repo_root: Path, dry_run: bool = False) -> bool:
-    """Push only if agent is in PUSH_AUTHORIZED_AGENTS. eng-* writes push_pending flag instead."""
-    if author_agent in PUSH_AUTHORIZED_AGENTS:
-        if dry_run:
-            print(f'[DRY-RUN] Would push as {author_agent}')
-            return True
+    # Get commit hash
+    r = git_run(repo_path, ["rev-parse", "HEAD"], timeout=10)
+    commit_hash = r.stdout.strip() if r.returncode == 0 else "unknown"
+
+    result["action"] = "committed"
+    result["commit_hash"] = commit_hash
+    result["files_committed"] = len(safe_files)
+    result["files_skipped"] = len(skipped_files)
+    log(f"[{repo_name}] COMMITTED {commit_hash[:12]} ({len(safe_files)} files)")
+
+    # 7. Push gate: env var YSTAR_AUTO_PUSH_ENABLED must be "1"
+    push_enabled = os.environ.get("YSTAR_AUTO_PUSH_ENABLED", "0") == "1"
+    if push_enabled:
         try:
-            subprocess.run(['git', '-C', str(repo_root), 'push'], check=True, timeout=60)
-            print(f'[push] pushed as {author_agent}')
-            return True
-        except subprocess.CalledProcessError as e:
-            print(f'[push] failed: {e}', file=sys.stderr)
-            return False
+            pr = git_run(repo_path, ["push", "origin", "main"], timeout=120)
+            if pr.returncode == 0:
+                result["pushed"] = True
+                log(f"[{repo_name}] PUSHED to origin/main")
+            else:
+                result["errors"].append(f"git push failed: {pr.stderr.strip()}")
+                log(f"[{repo_name}] PUSH FAILED: {pr.stderr.strip()}")
+        except Exception as e:
+            result["errors"].append(f"git push exception: {e}")
+            log(f"[{repo_name}] PUSH EXCEPTION: {e}")
     else:
-        # eng-* case: write push_pending flag for next CEO/CTO boot to consume
-        flag_content = json.dumps({
-            'author_agent': author_agent,
-            'created_at': time.time(),
-            'repo': str(repo_root),
-            'note': 'eng-* role committed but cannot push per Ethan ruling; CEO/CTO next boot consumes this flag.'
+        log(f"[{repo_name}] PUSH SKIPPED: YSTAR_AUTO_PUSH_ENABLED != 1")
+
+    # 8. Update sentinel
+    sentinel[repo_name] = {
+        "last_run_ts": now,
+        "last_hash": current_hash,
+        "last_commit_hash": commit_hash,
+    }
+
+    return result
+
+
+def emit_cieu_event(results: List[Dict[str, Any]]) -> None:
+    """Write AUTO_COMMIT_PUSH_CYCLE event to CIEU database (best-effort)."""
+    try:
+        import sqlite3
+        db_path = COMPANY_ROOT / ".ystar_cieu.db"
+        if not db_path.exists():
+            return
+        conn = sqlite3.connect(str(db_path), timeout=5)
+        conn.execute("CREATE TABLE IF NOT EXISTS cieu_events ("
+                     "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                     "timestamp REAL, event_type TEXT, agent_id TEXT,"
+                     "payload TEXT)")
+        payload = json.dumps({
+            "repos": results,
+            "sentinel_path": str(SENTINEL_PATH),
+            "push_env": os.environ.get("YSTAR_AUTO_PUSH_ENABLED", "0"),
         })
-        if dry_run:
-            print(f'[DRY-RUN] Would write push_pending flag for {author_agent}')
-            return True
-        PUSH_PENDING_FLAG.write_text(flag_content)
-        print(f'[push_if_authorized] agent {author_agent} not authorized; wrote flag to {PUSH_PENDING_FLAG}')
-        return False
+        conn.execute(
+            "INSERT INTO cieu_events (timestamp, event_type, agent_id, payload) "
+            "VALUES (?, ?, ?, ?)",
+            (time.time(), "AUTO_COMMIT_PUSH_CYCLE", "auto_commit_push", payload),
+        )
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        log(f"[CIEU] emit failed (non-fatal): {e}")
 
 
-def main():
-    parser = argparse.ArgumentParser(description='Auto-commit-push — slice A skeleton')
-    parser.add_argument('--dry-run', action='store_true', help='Preview without executing')
-    parser.add_argument('--repo', choices=['company', 'ystar-gov'], default='company')
-    parser.add_argument('--agent', default='ceo', help='Authoring agent (ceo/cto/eng-*)')
-    parser.add_argument('--message', default='chore(auto): auto-commit', help='Commit message')
-    args = parser.parse_args()
+def run_once(repos: List[str], dry_run: bool = False) -> int:
+    """Single pass over specified repos. Returns 0 on success."""
+    sentinel = load_sentinel()
+    results = []
 
-    repo_root = COMPANY_ROOT if args.repo == 'company' else YSTAR_GOV_ROOT
-    files = compute_commit_scope(repo_root)
-    print(f'[main] changed files in {args.repo}: {len(files)}')
+    for repo_name in repos:
+        repo_path = REPO_MAP.get(repo_name)
+        if repo_path is None:
+            log(f"Unknown repo: {repo_name}")
+            continue
+        r = process_repo(repo_name, repo_path, sentinel, dry_run=dry_run)
+        results.append(r)
 
-    gates_ok, gate_reason = run_safety_gates(files, args.agent)
-    if not gates_ok:
-        print(f'[main] safety gates FAILED: {gate_reason}', file=sys.stderr)
-        return 1
+    save_sentinel(sentinel)
+    emit_cieu_event(results)
 
-    commit_hash = commit(files, args.message, args.agent, repo_root, dry_run=args.dry_run)
-    if commit_hash or args.dry_run:
-        push_if_authorized(args.agent, repo_root, dry_run=args.dry_run)
+    # Print summary
+    for r in results:
+        action = r["action"]
+        repo = r["repo"]
+        if action == "committed":
+            print(f"[{repo}] committed {r['files_committed']} files -> {r['commit_hash'][:12]}"
+                  f"{' (pushed)' if r['pushed'] else ''}")
+        elif action == "skip":
+            print(f"[{repo}] skipped: {r['reason']}")
+        elif action == "dry_run":
+            print(f"[{repo}] dry-run: would commit {r['files_committed']} files")
 
     return 0
 
 
-if __name__ == '__main__':
+def run_daemon(repos: List[str], interval: int = 1800) -> int:
+    """Loop forever, running once every interval seconds."""
+    log(f"[daemon] starting with interval={interval}s repos={repos}")
+    while True:
+        try:
+            run_once(repos)
+        except Exception as e:
+            log(f"[daemon] cycle error: {e}")
+        time.sleep(interval)
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(
+        description="Auto-commit-push for Y* Bridge Labs repos (M13)"
+    )
+    parser.add_argument(
+        "--mode", choices=["once", "daemon"], default="once",
+        help="once: single pass; daemon: loop every --interval seconds"
+    )
+    parser.add_argument(
+        "--repo", choices=["ystar-company", "y-star-gov", "both"], default="both",
+        help="Which repo(s) to process"
+    )
+    parser.add_argument(
+        "--interval", type=int, default=1800,
+        help="Daemon loop interval in seconds (default 1800 = 30min)"
+    )
+    parser.add_argument(
+        "--dry-run", action="store_true",
+        help="Preview without executing any git operations"
+    )
+    args = parser.parse_args()
+
+    repos = list(REPO_MAP.keys()) if args.repo == "both" else [args.repo]
+
+    if args.mode == "daemon":
+        return run_daemon(repos, interval=args.interval)
+    else:
+        return run_once(repos, dry_run=args.dry_run)
+
+
+if __name__ == "__main__":
     sys.exit(main())

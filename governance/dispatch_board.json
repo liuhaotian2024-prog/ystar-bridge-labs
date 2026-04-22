@@ -1555,6 +1555,32 @@
       "claimed_at": "2026-04-22T00:24:13.157959+00:00",
       "completed_at": null,
       "completion_receipt": null
+    },
+    {
+      "atomic_id": "CZL-AUTO-COMMIT-PUSH-RESUSCITATE-M13",
+      "scope": "scripts/auto_commit_push.py,scripts/session_close_yml.py,scripts/wip_autocommit.sh,scripts/launchd/com.ystar.bridge.auto_commit_push.plist,Y-star-gov/reports/cto/CZL-AUTO-COMMIT-PUSH-ruling.md",
+      "description": "P0 Board 2026-04-21 catch \u665a 21:45: \u4eca\u5929 12 milestones / 20+ new scripts / 162 pytest / 4 launchd daemon \u5168\u90e8\u4eca\u65e9 09 am \u540e\u96f6 commit \u5230 GitHub \u76f4\u5230\u665a 21:50 CEO \u624b\u52a8 push. Auto-commit-push \u4e24\u767d\u677f P0 CZL-AUTO-COMMIT-PUSH-CADENCE plus CZL-WIP-AUTOCOMMIT-RESUSCITATE OVERDUE 40h plus \u672a claim. Root cause continuous_mirror \u6b7b plus wip_autocommit \u6b7b plus \u65e0 launchd schedule. Fix deliverable: a Ryan \u65b0 launchd plist com.ystar.bridge.auto_commit_push \u6bcf 30min \u8dd1 hash plus mtime compare plus \u975e\u7a7a diff \u624d commit plus cieu fail-open b sanity check gate: pytest PASS required plus no forget_guard violation in last N min before commit c push gate: Board approve list per .ystar_session.json \u4e4b\u5916 paths \u7981 auto-push plus commit msg prefix wip slash auto slash require explicit ceo or cto author for production commits d integrate session_close_yml trigger one commit plus push before session exit e fix wip_autocommit.sh path or \u5408\u5165 auto_commit_push.py subsume f empirical smoke launchd plist load plus 1 min \u5185 wip commit fired plus GitHub HEAD advance verify. M-tag M-3 product story dogfood \u6301\u7eed\u5916\u90e8\u53ef\u89c1 plus M-2b \u9632 CEO \u624b\u52a8\u5fd8\u63a8. Owner Ryan-Platform impl per Ethan 2026-04-19 CZL-AUTO-COMMIT-PUSH ruling at Y-star-gov reports cto. Budget 18 tool uses. No unsafe git force or no-verify.",
+      "urgency": "P0",
+      "estimated_tool_uses": 18,
+      "status": "claimed",
+      "posted_at": "2026-04-22T01:11:34.017227+00:00",
+      "claimed_by": "eng-governance",
+      "claimed_at": "2026-04-22T01:11:37.138067+00:00",
+      "completed_at": null,
+      "completion_receipt": null
+    },
+    {
+      "atomic_id": "CZL-GEMMA-SPEED-TUNING-M14",
+      "scope": "scripts/aiden_cluster_daemon.py,Y-star-gov/reports/cto/CZL-GEMMA-TUNING-ruling.md,scripts/tests/test_aiden_cluster_daemon_tuning.py",
+      "description": "P1 Board 2026-04-21 directive Gemma speed tuning per WebSearch research. CEO research findings in reports/ceo/strategic/gemma_speed_optimization_research_20260421.md (pending). Actionable tuning: 1 set OLLAMA_NUM_PARALLEL=4 or higher in daemon env (per-agent worker concurrent inference, 10x throughput for 10-agent cluster) 2 OLLAMA_KEEP_ALIVE=-1 keep model resident (avoid per-30min launchd cycle reload cost) 3 reduce per-agent system prompt WHO_I_AM from 2500 chars to ~500 chars focused on Section 2 M Triangle plus Section 5 Iron Rules only (less context = faster gen) 4 model-per-tier routing: e4b (5s) for NREM dream plus commitment scan plus non-critical bg tasks, ystar-gemma (21s) only for CEO decision plus CTO ruling 5 measure before-after latency p50 plus p95 per tier via empirical timing. NOT to do: flash attention (Gemma 4 hybrid attention 50 sliding plus 10 global has dual-dim bug issue 15368, hang risk) plus manual MLX tweak (auto already optimal). Deliverables: a Ethan ruling Y-star-gov reports cto CZL-GEMMA-TUNING-ruling.md b aiden_cluster_daemon patch add OLLAMA_NUM_PARALLEL plus keep-alive plus tier-model selection c test_aiden_cluster_daemon_tuning.py 3 plus pytest verify tier selection plus prompt length plus env setup d empirical latency benchmark before-after. M-tag M-1 (survival speed) plus M-3 (product story faster response). Owner Ethan implementation per P-12 \u5148\u67e5\u540e\u9020 already done via CEO WebSearch. Budget 15 tool uses. No unsafe flags.",
+      "urgency": "P1",
+      "estimated_tool_uses": 15,
+      "status": "claimed",
+      "posted_at": "2026-04-22T01:49:57.734494+00:00",
+      "claimed_by": "eng-platform",
+      "claimed_at": "2026-04-22T01:50:00.251121+00:00",
+      "completed_at": null,
+      "completion_receipt": null
     }
   ]
 }

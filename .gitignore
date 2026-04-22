@@ -68,3 +68,17 @@ knowledge/secretary/secrets/*
 .github/
 ystar.egg-info/
 .ystar_warning_queue.json
+
+# Python virtualenv (per Milestone 13b gitignore sweep)
+**/.venv/
+scripts/meeting_room/.venv/
+
+# Per-agent brain.db (large mutable, backup via S3 not git)
+*_brain.db
+*_brain.db-shm
+*_brain.db-wal
+
+# Runtime lock/pid files
+*.ppid_*
+*.lock
+scripts/.agent_stack.ppid_*

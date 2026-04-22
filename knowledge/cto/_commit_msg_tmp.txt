@@ -1,0 +1,9 @@
+Governance state + memory snapshot — dispatch board + WORLD_STATE + dream log
+
+dispatch_board.json: whiteboard state incl. 2 new P0s posted this session
+(CZL-ACTIVE-AGENT-PATH-MISMATCH + CZL-MUST-DISPATCH-REGRESSION-2026-04-21).
+enforce_status_dashboard: live enforcement state.
+WORLD_STATE / continuation: session-boundary snapshots.
+cto active_task: current CTO focus.
+
+Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>

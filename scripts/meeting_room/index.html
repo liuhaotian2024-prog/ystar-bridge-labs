@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Y* Bridge Labs Meeting Room</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0d1117; color: #c9d1d9;
+            font-family: 'SF Mono', 'Cascadia Code', 'JetBrains Mono', monospace;
+            height: 100vh; overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(90deg, #161b22, #1c2128);
+            border-bottom: 1px solid #30363d;
+            padding: 10px 20px; height: 48px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .header h1 { font-size: 15px; font-weight: 600; color: #58a6ff; }
+        .header .status { font-size: 11px; color: #8b949e; }
+        .header .dot {
+            display: inline-block; width: 7px; height: 7px;
+            border-radius: 50%; background: #3fb950; margin-right: 5px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.5;} }
+
+        /* 会议桌 3 列布局: left-side | center(table+board+aiden) | right-side */
+        .meeting-table {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr 1fr;
+            grid-template-rows: auto repeat(5, minmax(75px, 1fr)) auto;
+            gap: 6px;
+            padding: 12px;
+            height: calc(100vh - 48px);
+        }
+
+        /* 顶端 Board, 底端 Aiden — 会议桌两端主位 */
+        .seat-board { grid-column: 2 / 3; grid-row: 1 / 2; }
+        .seat-aiden { grid-column: 2 / 3; grid-row: 7 / 8; }
+
+        /* 左侧 engineer 5 个 */
+        .seat-ethan    { grid-column: 1 / 2; grid-row: 2 / 3; }
+        .seat-leo      { grid-column: 1 / 2; grid-row: 3 / 4; }
+        .seat-maya     { grid-column: 1 / 2; grid-row: 4 / 5; }
+        .seat-ryan     { grid-column: 1 / 2; grid-row: 5 / 6; }
+        .seat-jordan   { grid-column: 1 / 2; grid-row: 6 / 7; }
+
+        /* 右侧 Samantha + 3 C-suite (5 行, Samantha 占 row 2 独享) */
+        .seat-samantha { grid-column: 3 / 4; grid-row: 2 / 3; }
+        .seat-sofia    { grid-column: 3 / 4; grid-row: 3 / 4; }
+        .seat-zara     { grid-column: 3 / 4; grid-row: 4 / 5; }
+        .seat-marco    { grid-column: 3 / 4; grid-row: 5 / 6; }
+
+        /* 中间会议桌视觉 (占 row 2-6) */
+        .table-visual {
+            grid-column: 2 / 3;
+            grid-row: 2 / 7;
+            background: linear-gradient(135deg, #1c2128 0%, #161b22 50%, #1c2128 100%);
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            color: #484f58;
+            position: relative;
+        }
+        .table-visual::before {
+            content: "⬛";
+            font-size: 40px;
+            opacity: 0.15;
+        }
+        .table-visual .label {
+            font-size: 12px;
+            margin-top: 12px;
+            text-align: center;
+            max-width: 80%;
+        }
+
+        .member-window {
+            background: #161b22; border: 1px solid #30363d;
+            min-height: 75px;
+            border-radius: 8px;
+            display: flex; flex-direction: column;
+            overflow: hidden; min-height: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        .member-window:hover {
+            border-color: #58a6ff;
+            box-shadow: 0 0 10px rgba(88,166,255,0.15);
+        }
+        .window-header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 6px 10px; background: #1c2128;
+            border-bottom: 1px solid #30363d; flex-shrink: 0;
+        }
+        .window-header .name { font-size: 11px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+        .window-header .role { font-size: 9px; color: #8b949e; background: #21262d; padding: 2px 5px; border-radius: 3px; }
+        .window-header .indicator { width: 5px; height: 5px; border-radius: 50%; background: #8b949e; }
+        .window-header .indicator.active { background: #3fb950; }
+
+        .terminal-container { flex: 1; padding: 4px; overflow: hidden; min-height: 0; }
+
+        /* Role colors */
+        .seat-board .name { color: #f0883e; }
+        .seat-board .window-header { border-bottom-color: #f0883e; }
+        .seat-aiden .name { color: #58a6ff; }
+        .seat-aiden .window-header { border-bottom-color: #58a6ff; }
+        .seat-ethan .name { color: #bc8cff; }
+        .seat-ethan .window-header { border-bottom-color: #bc8cff; }
+        .seat-leo .name, .seat-maya .name, .seat-ryan .name, .seat-jordan .name { color: #39d353; }
+        .seat-leo .window-header, .seat-maya .window-header,
+        .seat-ryan .window-header, .seat-jordan .window-header { border-bottom-color: #39d353; }
+        .seat-samantha .name { color: #db61a2; }
+        .seat-samantha .window-header { border-bottom-color: #db61a2; }
+        .seat-sofia .name, .seat-zara .name, .seat-marco .name { color: #f8e3a1; }
+        .seat-sofia .window-header, .seat-zara .window-header,
+        .seat-marco .window-header { border-bottom-color: #f8e3a1; }
+
+        /* 1-on-1 focused view */
+        .member-window.focused {
+            position: fixed; top: 48px; left: 0; right: 0; bottom: 0;
+            z-index: 100; border-radius: 0; border: none;
+            animation: zoomIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        @keyframes zoomIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+
+        .member-window.focused .window-header { padding: 10px 18px; }
+        .member-window.focused .window-header .name { font-size: 14px; }
+        .member-window.focused .exit-btn { display: inline-block; }
+
+        .exit-btn {
+            display: none; font-size: 10px; color: #8b949e;
+            background: #21262d; border: 1px solid #30363d;
+            border-radius: 3px; padding: 3px 7px; cursor: pointer;
+        }
+        .exit-btn:hover { color: #c9d1d9; border-color: #58a6ff; }
+
+        .overlay { display: none; position: fixed; top: 48px; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 50; }
+        .overlay.active { display: block; }
+
+        .hint { position: fixed; bottom: 10px; right: 14px; font-size: 10px; color: #484f58; z-index: 200; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Y* Bridge Labs -- Meeting Room</h1>
+        <div class="status"><span class="dot"></span>Phase 0 MVP -- 10 seats / static welcome / terminal input 明日 wire</div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="meeting-table">
+        <!-- 顶端: Board (主位) -->
+        <div class="member-window seat-board" data-member="board" ondblclick="toggleFocus(this)">
+            <div class="window-header">
+                <span class="name"><span class="indicator active"></span>Board (Haotian)</span>
+                <span class="role">Director — 主位</span>
+                <button class="exit-btn" onclick="event.stopPropagation(); exitFocus()">ESC</button>
+            </div>
+            <div class="terminal-container" id="term-board"></div>
+        </div>
+
+        <!-- 左侧 engineer -->
+        <div class="member-window seat-ethan" data-member="ethan" ondblclick="toggleFocus(this)">
+            <div class="window-header"><span class="name"><span class="indicator"></span>Ethan (CTO)</span><span class="role">Architecture</span><button class="exit-btn" onclick="event.stopPropagation(); exitFocus()">ESC</button></div>
+            <div class="terminal-container" id="term-ethan"></div>
+        </div>
+        <div class="member-window seat-leo" data-member="leo" ondblclick="toggleFocus(this)">
+            <div class="window-header"><span class="name"><span class="indicator"></span>Leo (Kernel)</span><span class="role">Core Engine</span><button class="exit-btn" onclick="event.stopPropagation(); exitFocus()">ESC</button></div>
+            <div class="terminal-container" id="term-leo"></div>
+        </div>
+        <div class="member-window seat-maya" data-member="maya" ondblclick="toggleFocus(this)">
+            <div class="window-header"><span class="name"><span class="indicator"></span>Maya (Governance)</span><span class="role">CIEU/Path</span><button class="exit-btn" onclick="event.stopPropagation(); exitFocus()">ESC</button></div>
+            <div class="terminal-container" id="term-maya"></div>
+        </div>
+        <div class="member-window seat-ryan" data-member="ryan" ondblclick="toggleFocus(this)">
+            <div class="window-header"><span class="name"><span class="indicator"></span>Ryan (Platform)</span><span class="role">Hook/CLI</span><button class="exit-btn" onclick="event.stopPropagation(); exitFocus()">ESC</button></div>
+            <div class="terminal-container" id="term-ryan"></div>
+        </div>
+        <div class="member-window seat-jordan" data-member="jordan" ondblclick="toggleFocus(this)">
+            <div class="window-header"><span class="name"><span class="indicator"></span>Jordan (Domains)</span><span class="role">Templates</span><button class="exit-btn" onclick="event.stopPropagation(); exitFocus()">ESC</button></div>
+            <div class="terminal-container" id="term-jordan"></div>
+        </div>
+
+        <!-- 中间会议桌视觉 -->
+        <div class="table-visual">
+            <div class="label">会议桌<br><small>Phase 0 MVP · Phase 1 接真 Claude Code pty + Gemma classifier</small></div>
+        </div>
+
+        <!-- 右侧 Samantha + 3 C-suite -->
+        <div class="member-window seat-samantha" data-member="samantha" ondblclick="toggleFocus(this)">
+            <div class="window-header"><span class="name"><span class="indicator"></span>Samantha (Secretary)</span><span class="role">Archive</span><button class="exit-btn" onclick="event.stopPropagation(); exitFocus()">ESC</button></div>
+            <div class="terminal-container" id="term-samantha"></div>
+        </div>
+        <div class="member-window seat-sofia" data-member="sofia" ondblclick="toggleFocus(this)">
+            <div class="window-header"><span class="name"><span class="indicator"></span>Sofia (CMO)</span><span class="role">Marketing</span><button class="exit-btn" onclick="event.stopPropagation(); exitFocus()">ESC</button></div>
+            <div class="terminal-container" id="term-sofia"></div>
+        </div>
+        <div class="member-window seat-zara" data-member="zara" ondblclick="toggleFocus(this)">
+            <div class="window-header"><span class="name"><span class="indicator"></span>Zara (CSO)</span><span class="role">Sales</span><button class="exit-btn" onclick="event.stopPropagation(); exitFocus()">ESC</button></div>
+            <div class="terminal-container" id="term-zara"></div>
+        </div>
+        <div class="member-window seat-marco" data-member="marco" ondblclick="toggleFocus(this)">
+            <div class="window-header"><span class="name"><span class="indicator"></span>Marco (CFO)</span><span class="role">Finance</span><button class="exit-btn" onclick="event.stopPropagation(); exitFocus()">ESC</button></div>
+            <div class="terminal-container" id="term-marco"></div>
+        </div>
+
+        <!-- 底端: Aiden (主位) -->
+        <div class="member-window seat-aiden" data-member="aiden" ondblclick="toggleFocus(this)">
+            <div class="window-header">
+                <span class="name"><span class="indicator active"></span>Aiden (CEO)</span>
+                <span class="role">Chief Executive — 主位</span>
+                <button class="exit-btn" onclick="event.stopPropagation(); exitFocus()">ESC</button>
+            </div>
+            <div class="terminal-container" id="term-aiden"></div>
+        </div>
+    </div>
+
+    <div class="hint">双击窗口放大 · ESC 返回 · Phase 0: 静态欢迎 / 输入待 Phase 1 wire</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.8.0/lib/xterm-addon-fit.js"></script>
+    <script>
+        const members = ['board','aiden','ethan','leo','maya','ryan','jordan','samantha','sofia','zara','marco'];
+        const terminals = {};
+        const fitAddons = {};
+        let focusedWindow = null;
+
+        // Phase 0: 一次性欢迎消息, 不持续 scroll, 不 accept input
+        const welcomeMessages = {
+            board: '\x1b[33m[Board]\x1b[0m 主位. Phase 1 您可直接输入指令路由到 member.',
+            aiden: '\x1b[34m[Aiden CEO]\x1b[0m 主位. 战略对话 + 团队协调.',
+            ethan: '\x1b[35m[Ethan CTO]\x1b[0m System 4 架构 + ruling + engineer 监督.',
+            leo:   '\x1b[32m[Leo Kernel]\x1b[0m Core engine + compiler + contract.',
+            maya:  '\x1b[32m[Maya Gov]\x1b[0m CIEU + Path A/B + governance engine.',
+            ryan:  '\x1b[32m[Ryan Platform]\x1b[0m Hook + CLI + adapters + QA.',
+            jordan:'\x1b[32m[Jordan Domains]\x1b[0m Domain packs + policy templates.',
+            samantha:'\x1b[38;5;205m[Samantha Secretary]\x1b[0m Archive + charter + continuity.',
+            sofia: '\x1b[33m[Sofia CMO]\x1b[0m Marketing + thought leadership + content.',
+            zara:  '\x1b[33m[Zara CSO]\x1b[0m Sales + customer + pricing.',
+            marco: '\x1b[33m[Marco CFO]\x1b[0m Financial modeling + SaaS metrics.'
+        };
+
+        function initTerminals() {
+            members.forEach(m => {
+                const container = document.getElementById('term-' + m);
+                if (!container) return;
+                const term = new Terminal({
+                    theme: { background: '#161b22', foreground: '#c9d1d9', cursor: '#58a6ff' },
+                    fontSize: 10,
+                    fontFamily: "'SF Mono','Cascadia Code','JetBrains Mono',monospace",
+                    cursorBlink: false, cursorStyle: 'block', scrollback: 200, convertEol: true,
+                    disableStdin: true   // Phase 0 不接受键盘输入, 避免老大 confused
+                });
+                const fitAddon = new FitAddon.FitAddon();
+                term.loadAddon(fitAddon);
+                term.open(container);
+                fitAddon.fit();
+                terminals[m] = term;
+                fitAddons[m] = fitAddon;
+                // 一次性写 welcome, 不 setInterval scroll
+                term.writeln(welcomeMessages[m] || 'Standby.');
+                term.writeln('\x1b[90m-- Phase 0 静态. Phase 1 明日接 Claude Code pty --\x1b[0m');
+            });
+        }
+
+        function toggleFocus(el) {
+            if (focusedWindow === el) { exitFocus(); return; }
+            if (focusedWindow) focusedWindow.classList.remove('focused');
+            focusedWindow = el;
+            el.classList.add('focused');
+            document.getElementById('overlay').classList.add('active');
+            const m = el.dataset.member;
+            setTimeout(() => { if (fitAddons[m]) fitAddons[m].fit(); }, 350);
+        }
+
+        function exitFocus() {
+            if (focusedWindow) {
+                focusedWindow.classList.remove('focused');
+                focusedWindow = null;
+                document.getElementById('overlay').classList.remove('active');
+                setTimeout(() => Object.values(fitAddons).forEach(a => { try { a.fit(); } catch(e){} }), 350);
+            }
+        }
+
+        document.addEventListener('keydown', e => { if (e.key === 'Escape' && focusedWindow) exitFocus(); });
+        window.addEventListener('resize', () => Object.values(fitAddons).forEach(a => { try { a.fit(); } catch(e){} }));
+        document.addEventListener('DOMContentLoaded', initTerminals);
+        // Phase 0 不接 WebSocket mock heartbeat
+    </script>
+</body>
+</html>
