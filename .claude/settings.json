@@ -7,7 +7,9 @@
       "Edit(*)"
     ]
   },
-  "enabledMcpjsonServers": ["gov-mcp"],
+  "enabledMcpjsonServers": [
+    "gov-mcp"
+  ],
   "hooks": {
     "SessionStart": [
       {
@@ -48,6 +50,16 @@
           {
             "type": "command",
             "command": "python3.11 /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_who_i_am_staleness.py",
+            "timeout": 2000
+          }
+        ]
+      },
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3.11 /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_skill_retrieval_pre_query.py",
             "timeout": 2000
           }
         ]
