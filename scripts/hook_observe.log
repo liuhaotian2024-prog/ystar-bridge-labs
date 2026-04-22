@@ -30770,3 +30770,7 @@ Use specific agent identity (e.g., ystar-ceo, path_a
 08:44:10 [OBSERVE] ALLOW: Bash
 08:44:23 [OBSERVE] Tool: Bash
 08:44:55 [OBSERVE] ALLOW: Bash
+08:52:06 [OBSERVE] Tool: Write
+08:52:39 [OBSERVE] ALLOW: Write
+08:52:45 [OBSERVE] Tool: Bash
+08:53:18 [OBSERVE] ALLOW: Bash
