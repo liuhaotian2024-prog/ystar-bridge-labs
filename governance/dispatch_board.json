@@ -1803,6 +1803,19 @@
       "claimed_at": null,
       "completed_at": null,
       "completion_receipt": null
+    },
+    {
+      "atomic_id": "CZL-WAVE-5-RECEIPT-STRUCTURED-SCHEMA",
+      "scope": "Y-star-gov/ystar/adapters/hooks/stop_hook.py,Y-star-gov/ystar/kernel/czl_protocol.py,governance/sub_agent_boot_prompt_template.md,governance/forget_guard_rules.yaml,Y-star-gov/tests/adapters/hooks/test_auto_validate_receipt.py",
+      "description": "Wave-5 \u771f\u6cbb\u7406\u95ed\u73af \u2014 \u8001\u5927 2026-04-22 catch language mismatch (engineer receipt \u81ea\u7136\u8bed\u8a00 vs \u6cbb\u7406\u5c42\u673a\u5668\u8bed\u8a00, regex parse lossy). \u89e3: structured receipt YAML frontmatter schema + parser, NL \u2192 structured \u7ffb\u8bd1\u65ad\u70b9\u5904\u52a0 structured \u5165\u53e3. \n\nSub-tasks (~15 tu):\n\n1. Update governance/sub_agent_boot_prompt_template.md MANDATORY section: receipt \u5fc5\u542b YAML frontmatter (--- block) \u5934, \u542b fields:\n   - receipt_schema_version: 1.0\n   - tool_uses_claimed: int\n   - tool_breakdown: {bash, read, edit, write, grep, glob, agent}\n   - m_functor: str (e.g. M-2a)\n   - rt_plus_1: int\n   - artifacts: list[str]\n   - eight_module_activation: dict\n\n2. Upgrade Y-star-gov/ystar/adapters/hooks/stop_hook.py auto_validate_subagent_receipt:\n   - parse YAML frontmatter via yaml.safe_load (\u4e0d\u9760 NL regex)\n   - cross-check tool_uses_claimed vs metadata.usage.tool_uses (drift > 30% \u2192 emit E1_RECEIPT_REJECTED + system-reminder XML inject)\n   - missing frontmatter \u2192 CIEU RECEIPT_MISSING_STRUCTURED_HEADER warn (7d baseline)\n   - \u590d\u7528 _format_correction_xml mechanism inject CEO next prompt\n\n3. Add forget_guard rule receipt_missing_structured_frontmatter (warn after 7d \u2192 deny upgrade per Wave-N+1)\n\n4. Test: write Y-star-gov/tests/adapters/hooks/test_structured_receipt_schema.py \u2014 PASS case (frontmatter \u771f\u6709 + drift < 10%) + FAIL case (frontmatter \u7f3a / drift > 30%)\n\n5. Livefire: emit fake receipt with frontmatter tool_uses_claimed=5 vs declared metadata 50 \u2192 E1_RECEIPT_REJECTED CIEU \u771f emit\n\nSTRICT NO git commit/push/add. MANDATORY tool_uses self-count + breakdown (\u4f60\u81ea\u5df1 first-victim \u7528 new YAML frontmatter format demo). 5-tuple receipt.",
+      "urgency": "P0",
+      "estimated_tool_uses": 15,
+      "status": "open",
+      "posted_at": "2026-04-22T21:47:05.871286+00:00",
+      "claimed_by": null,
+      "claimed_at": null,
+      "completed_at": null,
+      "completion_receipt": null
     }
   ]
 }
