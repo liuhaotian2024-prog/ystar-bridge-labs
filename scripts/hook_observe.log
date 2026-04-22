@@ -30652,3 +30652,9 @@ Use specific agent identity (e.g., ystar-ceo, path_a
 07:14:50 [OBSERVE] ALLOW: Bash
 07:15:02 [OBSERVE] Tool: Bash
 07:15:37 [OBSERVE] ALLOW: Bash
+07:15:43 [OBSERVE] Tool: TaskUpdate
+07:15:44 [OBSERVE] Tool: TaskUpdate
+07:15:48 [OBSERVE] Tool: TaskCreate
+07:16:38 [OBSERVE] ALLOW: TaskUpdate
+07:16:38 [OBSERVE] ALLOW: TaskUpdate
+07:16:42 [OBSERVE] ALLOW: TaskCreate
