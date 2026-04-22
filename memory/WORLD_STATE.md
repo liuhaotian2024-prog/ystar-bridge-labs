@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-22 08:33:35
+**Generated**: 2026-04-22 09:00:00
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,14 +36,18 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/11 valid (0 errors)
-**CIEU 24h Events**: 59999
+**CIEU 24h Events**: 58468
 **Overdue Obligations**: 0
 
 ---
 
 ## 5. External Signals (Today)
 ```
-[No morning report today]
+=== Y* Bridge Labs Idle Learning Progress ===
+
+Role         | P1 Complete  | P2 Theories  | P3 Sims  | Last Learning
+----------------------------------------------------------------------
+ceo          | 3/3          | 24           | 37       | 2026-04-20  
 ```
 
 ---
@@ -81,7 +85,7 @@
 
 ## 8. Ecosystem — Y*gov Product Repo
 **HEAD**: `d1c5188 [auto] WIP checkpoint 2026-04-22 01:30 -- 1 files changed`
-**24h commits**: 5
+**24h commits**: 3
 **ahead origin**: 0
 **test files**: 99
 **version**: 0.48.0
@@ -105,6 +109,9 @@
 
 
 **ystar-company** (28 commits):
+- 9bfca59d 08:53 [auto] WIP checkpoint 2026-04-22 08:53 -- 10 files changed
+- 6e62570c 08:46 [auto] WIP checkpoint 2026-04-22 08:46 -- 3 files changed
+- 4ab16dae 08:44 [auto] WIP checkpoint 2026-04-22 08:44 -- 19 files changed
 - 5765653e 08:11 [auto] WIP checkpoint 2026-04-22 08:11 -- 23 files changed
 - 2f1a00d3 07:57 [auto] WIP checkpoint 2026-04-22 07:57 -- 3 files changed
 - c4fc6c71 07:56 [auto] WIP checkpoint 2026-04-22 07:56 -- 31 files changed
@@ -122,13 +129,8 @@
 - 41740195 02:30 [auto] WIP checkpoint 2026-04-22 02:30 -- 4 files changed
 - d4e59d35 02:00 [auto] WIP checkpoint 2026-04-22 02:00 -- 6 files changed
 - 26273bb6 01:57 [auto] WIP checkpoint 2026-04-22 01:57 -- 13 files changed
-- 7ea94d77 01:50 [auto] WIP checkpoint 2026-04-22 01:50 -- 15 files changed
-- 0601c072 01:30 [auto] WIP checkpoint 2026-04-22 01:30 -- 30 files changed
-- 127a5c1d 00:45 [auto] WIP checkpoint 2026-04-22 00:45 -- 115 files changed
 
-**Y*gov** (5 commits):
+**Y*gov** (3 commits):
 - d1c5188 01:30 [auto] WIP checkpoint 2026-04-22 01:30 -- 1 files changed
 - c1f38c9 22:36 [auto] WIP checkpoint 2026-04-21 22:36 -- 83 files changed
 - 50b0765 21:10 3 engine CIEU fail-closed + brain_auto_ingest line 553 hang fix + tests
-- 057c20d 08:50 CTO rulings + architecture specs + reports — 2026-04-20 batch
-- 888fb66 08:44 Engineer ships 2026-04-19/20 — Leo + Maya + Ryan work batch
