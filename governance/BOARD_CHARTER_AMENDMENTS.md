@@ -451,3 +451,85 @@ Phase 2 (Wave 5): CZL-FG-BLACKLIST-TO-WHITELIST-MIGRATION migrates rule intents 
 Related: Precedes AMENDMENT-022 (Governance Dual Aspect Layer - restrictive + proactive balance). See Y-star-gov/reports/cto/GOVERNANCE-DUAL-ASPECT-AND-INSIGHT-RULE-PIPELINE-20260420.md.
 
 Rollback: If drift resurfaces via synonym bypass within 3 months, CTO may file ruling to reinstate rule with Phase 2 whitelist replacement.
+
+---
+
+## AMENDMENT-023 — M Triangle 最高对齐目标写入 Charter
+
+| 字段 | 内容 |
+|---|---|
+| Level | 3 (宪法伴随文档, 架构变更影响所有 agent 对齐) |
+| 起草人 | Aiden (CEO) |
+| 起草日期 | 2026-04-21 |
+| Board 批准日期 | 2026-04-21 (全权放权语境批准) |
+| Board 裁决 | 批准 (三签字位 approved via Board 2026-04-21 "交给 Aiden 了, 按认为的合理流程逐步全部开始直到最终全部落实" + "全权放权" + "目标对齐是最高目标一切围绕这些目标展开") |
+| 执行人 | Samantha Lin (Secretary) + CEO Aiden (after Board-shell ppid unblock 2026-04-21 15:35) |
+| 执行日期 | 2026-04-21 |
+
+### 修订内容
+
+在 `CLAUDE.md` + `AGENTS.md` 顶部 (标题下, Iron Rule 0 之前) 插入 "M TRIANGLE — 最高对齐目标" section:
+
+- **M(t) = 证明 "AI agent 团队能自主运营一家真公司, 产生真价值"** 这件事是真的
+- **M-1 Survivability** (身份 + state 跨 session / 硬件 / API 持续)
+- **M-2 Governability** 双面 (M-2a 防做错 / M-2b 防不作为 / 防拖沓)
+- **M-3 Value Production** (真产品 + 真客户 + 真收入 + 真业界影响)
+- **铁律**: 一切 spec / ruling / change 必问三问 (推进哪面? 削弱哪面? 三角平衡吗?)
+- 完整定义: [knowledge/ceo/wisdom/M_TRIANGLE.md](../knowledge/ceo/wisdom/M_TRIANGLE.md)
+
+### 执行结果
+
+- CLAUDE.md 顶部 insert M Triangle section ✅ (2026-04-21 15:35 by CEO secretary 身份)
+- AGENTS.md 顶部 insert 同内容 ✅
+- knowledge/ceo/wisdom/M_TRIANGLE.md v1 落盘 ✅ (2026-04-21 11:10)
+- 3 existing WHO_I_AM (CEO Aiden v0.6 / CTO Ethan v0.3 / Secretary Samantha v0.2) 加 Section 0 引用 ✅
+- 7 缺失 agent WHO_I_AM (Leo / Maya / Ryan / Jordan / Sofia / Zara / Marco) 补齐 — 白板 P0 `CZL-MISSING-WHO-I-AM-7-AGENTS` 待处理
+
+### 交叉引用
+- [knowledge/ceo/wisdom/M_TRIANGLE.md](../knowledge/ceo/wisdom/M_TRIANGLE.md) v1 (上位完整文件)
+- [reports/ceo/strategic/AMENDMENT-023-draft-m-triangle-charter-entry.md](../reports/ceo/strategic/AMENDMENT-023-draft-m-triangle-charter-entry.md) (草案)
+- [reports/ceo/strategic/5_node_refactor_master_plan_20260421.md](../reports/ceo/strategic/5_node_refactor_master_plan_20260421.md) 节点 1
+
+---
+
+## AMENDMENT-024 — 工作方法论 (14 原则 + 2 checklist) 写入必看录
+
+| 字段 | 内容 |
+|---|---|
+| Level | 3 (宪法伴随文档, 影响全 agent 每次 task / reply / spec) |
+| 起草人 | Aiden (CEO) |
+| 起草日期 | 2026-04-21 |
+| Board 批准日期 | 2026-04-21 (同 AMENDMENT-023 全权放权批准) |
+| Board 裁决 | 批准 (三签字位 approved via Board "总结为工作方法论被进去必看录" + 全权放权) |
+| 执行人 | Samantha Lin (Secretary) + CEO Aiden (as secretary per Board-shell ppid unblock) |
+| 执行日期 | 2026-04-21 |
+
+### 修订内容
+
+在 `CLAUDE.md` + `AGENTS.md` 顶部 M Triangle section 之后, Iron Rule 0 之前, 插入 "WORK METHODOLOGY — 14 原则" section:
+
+14 原则: P-1 对齐 M Triangle · P-2 三问检查 · P-3 反事实推导 · P-4 真实测试 > hand-wave · P-5 IMPLICIT PASS/FAIL 也算数据 · P-6 独立复现 + 交叉验证 · P-7 目标传导链完整 · P-8 定量诚实 · P-9 plan ≠ done · P-10 U-workflow 4 元组 header 强制 · P-11 OODA 观察-搜索-分析-解决-验证-落实 · P-12 先查后造 · P-13 8-cascade ecosystem 检查 · P-14 诚实 > 掩饰
+
+每 task 前 8 问 checklist: M-tag / 反事实不做 / 反事实做错 / empirical data / peer review / 先例 Glob / 8-cascade / 完成标准
+
+每 reply 前 6 问 checklist: L-tag / 5-tuple / 定量诚实 / plan vs done / present tense / 无选择题
+
+完整定义: [knowledge/ceo/wisdom/WORK_METHODOLOGY.md](../knowledge/ceo/wisdom/WORK_METHODOLOGY.md)
+
+### 配套下游 (白板 P0, AMENDMENT-024 落地延伸)
+
+- `CZL-METHODOLOGY-BOOT-INTEGRATION` P0 — Ryan 改 governance_boot.sh 加 [3.7/7] Work Methodology Loaded 行 + Samantha 同步 BOARD_CHARTER_AMENDMENTS.md
+- `CZL-METHODOLOGY-FG-RULE` P1 — Maya 加 `work_methodology_violation` forget_guard rule 检 P-8 定量不诚实 + P-1 M-tag 缺失
+
+### 执行结果
+
+- CLAUDE.md 顶部 insert WORK METHODOLOGY section ✅
+- AGENTS.md 顶部 insert 同内容 ✅
+- knowledge/ceo/wisdom/WORK_METHODOLOGY.md v1 落盘 ✅ (2026-04-21 11:55)
+
+### 交叉引用
+- [knowledge/ceo/wisdom/WORK_METHODOLOGY.md](../knowledge/ceo/wisdom/WORK_METHODOLOGY.md) v1
+- [reports/ceo/strategic/AMENDMENT-024-draft-work-methodology-charter-entry.md](../reports/ceo/strategic/AMENDMENT-024-draft-work-methodology-charter-entry.md)
+- [reports/ceo/strategic/5_node_refactor_master_plan_20260421.md](../reports/ceo/strategic/5_node_refactor_master_plan_20260421.md) 节点 2
+
+---

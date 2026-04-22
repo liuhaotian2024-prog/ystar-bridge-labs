@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-21 08:30:00
+**Generated**: 2026-04-21 21:00:00
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,14 +36,18 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/11 valid (0 errors)
-**CIEU 24h Events**: 58928
+**CIEU 24h Events**: 48355
 **Overdue Obligations**: 0
 
 ---
 
 ## 5. External Signals (Today)
 ```
-[No morning report today]
+=== Y* Bridge Labs Idle Learning Progress ===
+
+Role         | P1 Complete  | P2 Theories  | P3 Sims  | Last Learning
+----------------------------------------------------------------------
+ceo          | 3/3          | 24           | 37       | 2026-04-20  
 ```
 
 ---
@@ -80,8 +84,8 @@
 ---
 
 ## 8. Ecosystem — Y*gov Product Repo
-**HEAD**: `5c24cde Audience: git history + consultant review of guard+guide architecture. Research basis: Board`
-**24h commits**: 0
+**HEAD**: `057c20d CTO rulings + architecture specs + reports — 2026-04-20 batch`
+**24h commits**: 2
 **ahead origin**: 0
 **test files**: 99
 **version**: 0.48.0
@@ -104,7 +108,11 @@
 ## 11. Today's Commits (24h) — both repos
 
 
-**ystar-company** (1 commits):
-- 89d49ef4 11:37 Wave 2a close: FG Phase 1 + brain L2 LIVE + self-education spec
+**ystar-company** (3 commits):
+- 9f5cfb9e 08:52 Governance state + memory snapshot — dispatch board + WORLD_STATE + dream log
+- 1b4bc4f1 08:48 Charter + knowledge sinks — WHO_I_AM v0.5, CTO wisdom folder, aiden management method
+- 15a11d68 08:42 CEO lock-death #10 self-patch + hook/boot/dream maintenance
 
-**Y*gov**: no commits
+**Y*gov** (2 commits):
+- 057c20d 08:50 CTO rulings + architecture specs + reports — 2026-04-20 batch
+- 888fb66 08:44 Engineer ships 2026-04-19/20 — Leo + Maya + Ryan work batch
