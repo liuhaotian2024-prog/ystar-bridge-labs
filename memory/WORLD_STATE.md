@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-22 06:00:01
+**Generated**: 2026-04-22 07:00:01
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,7 +36,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/11 valid (0 errors)
-**CIEU 24h Events**: 90316
+**CIEU 24h Events**: 90416
 **Overdue Obligations**: 0
 
 ---
@@ -70,7 +70,7 @@
 ### Amendment A-1: canonical-workspace-lock
 锁 `ystar-company` 为唯一 canonical workspace. 任何 sub-agent / script 写 bridge-labs 或其他镜像 = deny.
 
-... (163 more lines, see BOARD_PENDING.md)
+... (169 more lines, see BOARD_PENDING.md)
 
 ---
 
@@ -104,7 +104,9 @@
 ## 11. Today's Commits (24h) — both repos
 
 
-**ystar-company** (19 commits):
+**ystar-company** (21 commits):
+- f3011c93 06:50 [auto] WIP checkpoint 2026-04-22 06:50 -- 2 files changed
+- 11b24fc3 06:03 [auto] WIP checkpoint 2026-04-22 06:03 -- 7 files changed
 - 687eec30 05:33 [auto] WIP checkpoint 2026-04-22 05:33 -- 3 files changed
 - 64999395 04:46 [auto] WIP checkpoint 2026-04-22 04:46 -- 4 files changed
 - 81f904b0 04:16 [auto] WIP checkpoint 2026-04-22 04:16 -- 2 files changed
@@ -123,7 +125,6 @@
 - 1d658cc7 21:10 12 milestones: local Gemma pivot + structural governance + 全员 brain
 - 9f5cfb9e 08:52 Governance state + memory snapshot — dispatch board + WORLD_STATE + dream log
 - 1b4bc4f1 08:48 Charter + knowledge sinks — WHO_I_AM v0.5, CTO wisdom folder, aiden management method
-- 15a11d68 08:42 CEO lock-death #10 self-patch + hook/boot/dream maintenance
 
 **Y*gov** (5 commits):
 - d1c5188 01:30 [auto] WIP checkpoint 2026-04-22 01:30 -- 1 files changed
