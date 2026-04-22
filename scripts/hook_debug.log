@@ -45990,3 +45990,128 @@ RuntimeError: rule 'article_11_board_offline_30m' did not produce any obligation
 09:55:15 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
 09:55:49 [FORGET_GUARD] check failed (fail-open): 'NoneType' object has no attribute 'startswith'
 09:55:49 [BRAIN] Injected 3 wisdom nodes
+09:56:09 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:56:09 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:56:42 [FORGET_GUARD] check failed (fail-open): 'NoneType' object has no attribute 'startswith'
+09:56:42 [BRAIN] Injected 3 wisdom nodes
+09:57:05 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:57:05 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:57:42 [FORGET_GUARD] check failed (fail-open): 'NoneType' object has no attribute 'startswith'
+09:57:42 [BRAIN] Injected 3 wisdom nodes
+09:57:56 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:57:56 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:58:36 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:58:36 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:59:11 [FORGET_GUARD] check failed (fail-open): 'NoneType' object has no attribute 'startswith'
+09:59:11 [BRAIN] Injected 3 wisdom nodes
+09:59:11 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:59:11 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:59:12 [CZL-GATE1] ⚠️ CZL Gate 1: dispatch missing sections ['Missing Y* (ideal contract)', 'Missing Xt (pre-state)', 'Missing U (actions list)', 'Missing Yt+1 (post-state)', 'Missing Rt+1 target (gap threshold)', 'Warning: No explicit recipient (which engineer?)', 'Warning: No explicit task_id']
+09:59:12 [CZL-GATE1] Failed to validate dispatch: No module named 'ystar.governance.identity_detector'
+09:59:45 [FORGET_GUARD] check failed (fail-open): 'NoneType' object has no attribute 'startswith'
+09:59:45 [BRAIN] Injected 3 wisdom nodes
+09:59:51 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:59:51 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:59:51 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:00:25 [FORGET_GUARD] check failed (fail-open): 'NoneType' object has no attribute 'startswith'
+10:00:26 [BRAIN] Injected 3 wisdom nodes
+10:00:33 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:00:33 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:00:33 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:01:06 [FORGET_GUARD] check failed (fail-open): 'NoneType' object has no attribute 'startswith'
+10:01:07 [BRAIN] Injected 3 wisdom nodes
+10:01:16 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:01:16 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:01:17 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:01:50 [BRAIN] Injected 3 wisdom nodes
+10:01:57 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:01:57 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:01:57 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:02:31 [BRAIN] Injected 3 wisdom nodes
+10:02:37 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:02:37 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:02:37 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:03:06 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:03:06 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:03:12 [BRAIN] Injected 3 wisdom nodes
+10:03:16 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:03:16 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:03:16 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:03:47 [BRAIN] Injected 3 wisdom nodes
+10:03:56 [BRAIN] Injected 3 wisdom nodes
+10:04:04 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:04:04 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:04:04 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:04:38 [BRAIN] Injected 3 wisdom nodes
+10:04:45 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:04:45 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:04:45 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:05:20 [BRAIN] Injected 3 wisdom nodes
+10:05:51 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:05:51 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:06:26 [BRAIN] Injected 3 wisdom nodes
+10:07:08 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:07:08 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:07:43 [BRAIN] Injected 3 wisdom nodes
+10:07:43 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:07:43 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:07:43 [CZL-GATE1] ⚠️ CZL Gate 1: dispatch missing sections ['Missing Y* (ideal contract)', 'Missing Xt (pre-state)', 'Missing U (actions list)', 'Missing Yt+1 (post-state)', 'Missing Rt+1 target (gap threshold)', 'Warning: No explicit recipient (which engineer?)', 'Warning: No explicit task_id']
+10:07:43 [CZL-GATE1] Failed to validate dispatch: No module named 'ystar.governance.identity_detector'
+10:07:43 [BRAIN] Injected 3 wisdom nodes
+10:08:13 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:08:13 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:08:47 [BRAIN] Injected 3 wisdom nodes
+10:08:47 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:08:47 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:08:48 [CZL-GATE1] ⚠️ CZL Gate 1: dispatch missing sections ['Missing Y* (ideal contract)', 'Missing Xt (pre-state)', 'Missing U (actions list)', 'Missing Yt+1 (post-state)', 'Missing Rt+1 target (gap threshold)', 'Warning: No explicit recipient (which engineer?)', 'Warning: No explicit task_id']
+10:08:48 [CZL-GATE1] Failed to validate dispatch: No module named 'ystar.governance.identity_detector'
+10:09:21 [BRAIN] Injected 3 wisdom nodes
+10:09:29 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:09:29 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:09:30 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:10:05 [BRAIN] Injected 3 wisdom nodes
+10:10:27 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:10:27 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:10:27 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:11:01 [BRAIN] Injected 3 wisdom nodes
+10:11:08 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:11:08 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:11:08 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:11:41 [BRAIN] Injected 3 wisdom nodes
+10:11:47 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:11:47 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:11:47 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:12:20 [BRAIN] Injected 3 wisdom nodes
+10:12:31 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:12:31 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:12:31 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:13:06 [BRAIN] Injected 3 wisdom nodes
+10:13:16 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:13:16 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:13:16 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:13:29 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:13:29 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:13:30 [BRAIN] Injected 3 wisdom nodes
+10:13:39 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:13:39 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:13:56 [BRAIN] Injected 3 wisdom nodes
+10:14:04 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:14:04 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:14:04 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:14:24 [BRAIN] Injected 3 wisdom nodes
+10:14:43 [BRAIN] Injected 3 wisdom nodes
+10:15:10 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:15:10 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:15:44 [BRAIN] Injected 3 wisdom nodes
+10:16:08 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:16:08 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:16:42 [BRAIN] Injected 3 wisdom nodes
+10:16:52 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:16:52 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:17:27 [BRAIN] Injected 3 wisdom nodes
+10:17:45 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:17:45 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:18:23 [BRAIN] Injected 3 wisdom nodes
+10:18:31 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+10:18:31 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:19:07 [BRAIN] Injected 3 wisdom nodes
