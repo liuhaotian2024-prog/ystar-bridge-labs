@@ -77,6 +77,30 @@ def _resolve_ollama_url() -> str:
 OLLAMA_HOST = _resolve_ollama_url()
 DEFAULT_MODEL_CANDIDATES = ["ystar-gemma", "gemma4:e4b"]
 
+BG_SCAN_TASKS = {
+    "bounty_scan", "daily_report", "health_check",
+    "k9_patrol", "memory_compress", "document_analysis",
+    "dialogue_compression",
+}
+DECISION_TASKS = {
+    "ceo_reply", "cto_ruling", "engineer_impl",
+    "amendment_proposal", "reflection_generation",
+}
+
+
+def pick_tier(task_type: Optional[str] = None) -> str:
+    """Pick Gemma model by task tier. env YSTAR_TIER_DEFAULT overrides."""
+    override = os.environ.get("YSTAR_TIER_DEFAULT", "").lower()
+    if override == "bg_scan":
+        return "gemma4:e4b"
+    if override == "decision":
+        return "ystar-gemma"
+    if task_type in BG_SCAN_TASKS:
+        return "gemma4:e4b"
+    if task_type in DECISION_TASKS:
+        return "ystar-gemma"
+    return "ystar-gemma"
+
 
 @dataclass
 class AgentWorker:
@@ -141,6 +165,11 @@ class AgentWorker:
         data["_y_elapsed_sec"] = dur
         data["_y_agent_id"] = self.agent_id
         return data
+
+    def call_ollama_tiered(self, user_prompt: str, task_type: str = None, **kwargs) -> dict:
+        model = pick_tier(task_type)
+        self.model = model
+        return self.call_ollama(user_prompt, **kwargs)
 
 
 def pick_tier(task_type: str = None) -> str:
