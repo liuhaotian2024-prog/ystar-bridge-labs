@@ -45417,3 +45417,35 @@ RuntimeError: rule 'article_11_board_offline_30m' did not produce any obligation
 01:50:18 [P1-a] Read per-session marker (ppid_10664): 'ceo'
 01:50:18 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
 01:50:50 [BRAIN] Injected 3 wisdom nodes
+01:51:03 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+01:51:03 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+01:51:37 [BRAIN] Injected 3 wisdom nodes
+01:52:55 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+01:52:55 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+01:52:55 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+01:53:34 [BRAIN] Injected 3 wisdom nodes
+01:53:41 [BRAIN] Injected 3 wisdom nodes
+01:53:41 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+01:53:41 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+01:54:14 [BRAIN] Injected 3 wisdom nodes
+01:54:14 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+01:54:14 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+01:54:14 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+01:54:14 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+01:54:14 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+01:54:14 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+01:54:14 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+01:54:14 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+01:54:14 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+01:54:14 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+01:55:49 [BRAIN] Injected 3 wisdom nodes
+01:55:49 [BRAIN] Injected 3 wisdom nodes
+01:55:49 [BRAIN] Injected 3 wisdom nodes
+01:55:49 [BRAIN] Injected 3 wisdom nodes
+01:55:49 [BRAIN] Injected 3 wisdom nodes
+01:55:58 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+01:55:58 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+01:56:31 [BRAIN] Injected 3 wisdom nodes
+01:56:32 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+01:56:32 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+01:57:05 [BRAIN] Injected 3 wisdom nodes
