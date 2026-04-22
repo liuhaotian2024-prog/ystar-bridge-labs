@@ -44542,3 +44542,179 @@ RuntimeError: rule 'article_11_board_offline_30m' did not produce any obligation
 22:10:25 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
 22:10:25 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
 22:10:55 [BRAIN] Injected 3 wisdom nodes
+22:11:04 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:11:04 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:11:05 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:11:35 [BRAIN] Injected 3 wisdom nodes
+22:12:09 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:12:09 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:12:09 [BRAIN] Injected 3 wisdom nodes
+22:12:20 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:12:20 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:12:56 [BRAIN] Injected 3 wisdom nodes
+22:12:56 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:12:56 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:13:28 [BRAIN] Injected 3 wisdom nodes
+22:13:28 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:13:28 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:14:00 [BRAIN] Injected 3 wisdom nodes
+22:14:03 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:14:03 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:14:35 [BRAIN] Injected 3 wisdom nodes
+22:14:37 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:14:37 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:15:13 [BRAIN] Injected 3 wisdom nodes
+22:15:25 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:15:25 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:15:56 [BRAIN] Injected 3 wisdom nodes
+22:16:37 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:16:37 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:16:37 [CZL-GATE1] ⚠️ CZL Gate 1: dispatch missing sections ['Missing Y* (ideal contract)', 'Missing Xt (pre-state)', 'Missing U (actions list)', 'Missing Yt+1 (post-state)', 'Missing Rt+1 target (gap threshold)', 'Warning: No explicit recipient (which engineer?)', 'Warning: No explicit task_id']
+22:16:37 [CZL-GATE1] Failed to validate dispatch: No module named 'ystar.governance.identity_detector'
+22:17:08 [BRAIN] Injected 3 wisdom nodes
+22:17:17 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:17:17 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:17:17 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:17:48 [BRAIN] Injected 3 wisdom nodes
+22:17:49 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:17:49 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:17:49 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:17:49 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:17:49 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:17:49 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:18:30 [BRAIN] Injected 3 wisdom nodes
+22:18:30 [BRAIN] Injected 3 wisdom nodes
+22:18:36 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:18:36 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:18:36 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:19:08 [BRAIN] Injected 3 wisdom nodes
+22:19:08 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:19:08 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:19:08 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:19:40 [BRAIN] Injected 3 wisdom nodes
+22:19:40 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:19:40 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:19:41 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:20:12 [BRAIN] Injected 3 wisdom nodes
+22:20:16 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:20:16 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:20:16 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:20:46 [BRAIN] Injected 3 wisdom nodes
+22:20:53 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:20:53 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:20:53 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:21:24 [BRAIN] Injected 3 wisdom nodes
+22:21:24 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:21:24 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:21:24 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:21:55 [BRAIN] Injected 3 wisdom nodes
+22:22:09 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:22:09 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:22:09 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:22:40 [BRAIN] Injected 3 wisdom nodes
+22:22:45 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:22:45 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:22:45 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:23:17 [BRAIN] Injected 3 wisdom nodes
+22:23:23 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:23:23 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:23:23 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:23:23 [BRAIN] Injected 3 wisdom nodes
+22:23:30 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:23:30 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:23:30 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:23:30 [BRAIN] Injected 3 wisdom nodes
+22:23:38 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:23:38 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:23:38 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:23:40 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:23:40 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:23:40 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:24:25 [BRAIN] Injected 3 wisdom nodes
+22:24:27 [BRAIN] Injected 3 wisdom nodes
+22:24:32 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:24:32 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:24:32 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:25:03 [BRAIN] Injected 3 wisdom nodes
+22:25:07 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:25:07 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:25:07 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:25:07 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:25:07 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:25:08 [BRAIN] Injected 3 wisdom nodes
+22:25:42 [BRAIN] Injected 3 wisdom nodes
+22:25:48 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:25:48 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:25:48 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:26:19 [BRAIN] Injected 3 wisdom nodes
+22:26:23 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:26:23 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:26:24 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:26:54 [BRAIN] Injected 3 wisdom nodes
+22:27:02 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:27:02 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:27:02 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:27:33 [BRAIN] Injected 3 wisdom nodes
+22:27:39 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:27:39 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:27:39 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:28:10 [BRAIN] Injected 3 wisdom nodes
+22:28:21 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:28:21 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:28:21 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:28:52 [BRAIN] Injected 3 wisdom nodes
+22:29:05 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:29:05 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:29:05 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:29:36 [BRAIN] Injected 3 wisdom nodes
+22:29:40 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:29:40 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:29:40 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:29:43 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:29:43 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:29:43 [CZL-159] BLOCKED: /Users/haotianliu/.openclaw/workspace/ystar-company/reports/ceo/principle_behavior_governance_not_speech_2026_04_21.md missing ['synthesis', 'audience']
+22:30:02 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:30:02 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:30:20 [BRAIN] Injected 3 wisdom nodes
+22:30:27 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:30:27 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:30:27 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:30:44 [BRAIN] Injected 3 wisdom nodes
+22:31:02 [BRAIN] Injected 3 wisdom nodes
+22:31:08 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:31:08 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:31:08 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:31:39 [BRAIN] Injected 3 wisdom nodes
+22:31:42 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:31:42 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:31:42 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:32:14 [BRAIN] Injected 3 wisdom nodes
+22:32:16 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:32:16 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:32:17 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:32:17 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:32:17 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:32:56 [BRAIN] Injected 3 wisdom nodes
+22:32:58 [BRAIN] Injected 3 wisdom nodes
+22:33:05 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:33:05 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:33:05 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:33:36 [BRAIN] Injected 3 wisdom nodes
+22:33:40 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:33:40 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:33:42 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:33:42 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:33:42 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:34:21 [BRAIN] Injected 3 wisdom nodes
+22:34:22 [BRAIN] Injected 3 wisdom nodes
+22:34:31 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:34:31 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:34:31 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:35:02 [BRAIN] Injected 3 wisdom nodes
+22:35:09 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:35:09 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:35:09 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+22:35:40 [BRAIN] Injected 3 wisdom nodes
+22:35:46 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+22:35:46 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:35:46 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'

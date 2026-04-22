@@ -69,6 +69,9 @@ EXCLUDE_PATTERNS = [
     "_brain.db",
     ".lock",
     ".ppid_",
+    ".commit_msg",
+    ".commit_msgs/",
+    "bench_out",
 ]
 
 # Files that must never be staged (exact basename match)
