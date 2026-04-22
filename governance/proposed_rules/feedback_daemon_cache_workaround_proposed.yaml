@@ -1,0 +1,32 @@
+schema_version: '1.1'
+status: proposed
+source_file: memory/claude_code_memory_mirror/feedback_daemon_cache_workaround.md
+proposed_date: '2026-04-22'
+rules:
+- id: proposed_daemon_cache_workaround
+  enabled: false
+  status: proposed
+  description: sub-agent 跑完 hook daemon 缓存旧 active_agent 锁住 CEO；硬重启 daemon + 删 socket 才解
+  proposed_date: '2026-04-22'
+  source: feedback_daemon_cache_workaround.md
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - hook
+      - daemon
+      - 缓存身份
+      - workaround
+  action: info
+  recipe: "sub-agent 跑完 hook daemon 缓存旧 active_agent 锁住 CEO；硬重启 daemon + 删 socket 才解\n\nHow to apply:\n- sub-agent 跑完后，CEO\
+    \ 本线下一个 Bash/Write 撞锁时立刻跑：\n  ```bash\n  pkill -9 -f hook_daemon; pkill -9 -f hook_wrapper; sleep 2; rm -f /tmp/ystar_hook.sock\n\
+    \  ```\n- 然后重试原命令，应该 pass\n- 如果 `.ystar_active_agent` 文件本身也是 sub-agent 身份（被 sub-agent 写过），先请 Board 用 `!echo ceo > ...`\
+    \ 恢复（记忆 `feedback_board_shell_marker` 格式）\n\n\nWhy:\n2026-04-13 session AMENDMENT-016 派 Ethan 后实测 6 次。文件层 `.ystar_active_agent`\
+    \ = ceo，hook 仍报 \"current agent is 'eng-domains'\"。`pkill -f hook_daemon` 不够（auto-respawn 但仍读旧缓存或 socket 残留）。必须**硬杀 +\
+    \ 删 socket**，\n\nSource: memory/claude_code_memory_mirror/feedback_daemon_cache_workaround.md"
+  cieu_event: PROPOSED_PROPOSED_DAEMON_CACHE_WORKAROUND
+  severity: low

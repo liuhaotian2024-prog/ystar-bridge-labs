@@ -3,8 +3,8 @@
   "campaign": "Campaign v6 — K9 Routing + Phase 2-3 Backlog Drain (2026-04-16)",
   "campaign_status": "RUNNING",
   "campaign_started_at": "2026-04-16T17:21Z",
-  "current_subgoal": "W3 — 5 engineer activation steps 3-5 (Ryan CZL-102 in flight)",
-  "rt1_status": "2/10 — W1 K9 healing + W2 FG subagent_boot_no_state_read closed Rt+1=0; W3-W10 in progress (W3+W6 in flight)",
+  "current_subgoal": "W12 — Y* Field Theory Wave-2 implement (CIEU schema +m_functor / forget_guard rule / WORLD_STATE upgrade) — pending Wave-1 4-engineer V3 close (CZL-CEO-RULES-REGISTRY-V3-EXISTING-ASSETS-FIRST in flight)",
+  "rt1_status": "Campaign v6: 2/10 closed (W1+W2 Rt+1=0); v6 W3-W10 in progress. NEW Campaign v7 (2026-04-22): V3 Wave-1 in flight (Maya G3+G4 / Leo G1+G4 / Ryan G2 / Jordan G3+rubric, ~125 tu) + W12 Y* Field Wave-2 spec ready (~50-60 tu真 delta after Wave-1).",
   "boot_injection_spec": "Sub-agent dispatch prompts must include BOOT CONTEXT block (read .czl_subgoals.json + git log -10) before task body. Per governance/sub_agent_boot_prompt_template.md.",
   "y_star_criteria": [
     {
@@ -94,6 +94,27 @@
       "freshness_policy": "tied_to_campaign",
       "owner_after_rt1": "platform+ceo",
       "requires": []
+    },
+    {
+      "id": "W12",
+      "statement": "Y* Field Theory implement — CIEU schema 加 m_functor 列贯穿 5-tuple alignment chain; forget_guard rule y_star_no_m_functor (warn → deny 渐进); _cieu_helpers.emit_cieu kwargs path 已支持 backward compat 升级写入 schema column; generate_world_state.py 升级输出 ξ field state (m_functor 频率分布 + drift); validator y_star_field_validator.py 验 Φ^{-1}(Y*)≠∅ (rule + LLM judge hybrid). Mission alignment 从叙事级 post-hoc 升到结构级 prospective. Wave-2 派单时机: Wave-1 4 engineer 受理 receipt 后立刻 post.",
+      "artifact_persistence": [
+        "Y-star-gov/ystar/governance/cieu_store.py",
+        "scripts/_cieu_helpers.py",
+        "Y-star-gov/ystar/governance/forget_guard_rules.yaml",
+        "scripts/y_star_field_validator.py",
+        "scripts/y_star_field_visualizer.py",
+        "scripts/generate_world_state.py",
+        "reports/ceo/strategic/Y_STAR_FIELD_THEORY_SPEC.md"
+      ],
+      "freshness_policy": "tied_to_campaign",
+      "owner_after_rt1": "ceo+leo+maya+ryan",
+      "requires": ["W12-Wave-1-V3-close"],
+      "m_functor": "M-1+M-2",
+      "m_functor_rationale": "M-1 — alignment chain enforce 是 cross-session/agent mission identity 持续基础设施; M-2 — Y* field 是 governance 升级版 (从行为级 enforce 到 mission 级 enforce, 上位补 G1-G4)",
+      "y_star_field_position": "[M-1=0.6, M-2a=0.5, M-2b=0.7, M-3=0.3]",
+      "validator_pass": null,
+      "estimated_delta_tu": "50-60 (wire 现有 generate_world_state + .czl_subgoals + emit_cieu kwargs + 加 schema 列 + 1 forget_guard rule, 不重造)"
     }
   ],
   "completed": [
@@ -147,5 +168,5 @@
       "maturity": "L3-PARTIAL"
     }
   ],
-  "remaining": ["W3", "W4", "W5", "W8", "W9", "W10"]
+  "remaining": ["W3", "W4", "W5", "W8", "W9", "W10", "W11", "W12"]
 }

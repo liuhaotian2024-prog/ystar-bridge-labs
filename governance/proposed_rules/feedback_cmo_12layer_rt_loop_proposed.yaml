@@ -1,0 +1,48 @@
+schema_version: '1.1'
+status: proposed
+source_file: memory/claude_code_memory_mirror/feedback_cmo_12layer_rt_loop.md
+proposed_date: '2026-04-22'
+rules:
+- id: proposed_cmo_12layer_rt_loop
+  enabled: false
+  status: proposed
+  description: CMO (顶岗 or real subagent) 任何脱口秀/内容输出必走完 12 层框架 + 反事实 Rt 自检 + Layer 12 知识回写循环；不允许凭脑子蒙
+  proposed_date: '2026-04-22'
+  source: feedback_cmo_12layer_rt_loop.md
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - 自检循环
+  action: warn
+  recipe: 'CMO (顶岗 or real subagent) 任何脱口秀/内容输出必走完 12 层框架 + 反事实 Rt 自检 + Layer 12 知识回写循环；不允许凭脑子蒙
+
+
+    How to apply:
+
+    - CMO subagent prompt 必含 "走完 12 层 + emit ARTICLE_11_LAYER_X_COMPLETE 0-7 + 反事实 Rt 5 questions answered + Layer 12 ep_NEXT_notes
+    update"
+
+    - 顶岗 general-purpose CMO 同样适用
+
+    - Sofia 旧 comedy 知识库 (5 文件 in `knowledge/cmo/theory/` + `knowledge/cmo/gaps/`) 是 Layer 4 必须真读的 source
+
+    - ForgetGuard 应加 rule: CMO subag
+
+
+    Why:
+
+    Board 2026-04-13 EOD 直接命题:「CMO 一定要学会写真正的段子脚本，包括段子文字稿，配合的表情，动作，都去学各种脱口秀的知识，案例，模版，套路，怎么制造反差，反转这些，环境，舞台美工等等。她不是有十二框架的学习机制嘛，学好了，继续做，做完了，自己用反事实自己检查
+    Rt，如此循环才能进步。而不是凭着自己的不确定性随便弄。」
+
+
+    今晚 v1-v6 6 个版本 vs Board fe
+
+
+    Source: memory/claude_code_memory_mirror/feedback_cmo_12layer_rt_loop.md'
+  cieu_event: PROPOSED_PROPOSED_CMO_12LAYER_RT_LOOP
+  severity: high

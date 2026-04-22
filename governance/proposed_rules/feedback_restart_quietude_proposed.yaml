@@ -1,0 +1,32 @@
+schema_version: '1.1'
+status: proposed
+source_file: memory/claude_code_memory_mirror/feedback_restart_quietude.md
+proposed_date: '2026-04-22'
+rules:
+- id: proposed_restart_quietude
+  enabled: false
+  status: proposed
+  description: After boot, only say ALL SYSTEMS GO + one-line next action. Do not dump governance state, priority_brief, dispatches,...
+  proposed_date: '2026-04-22'
+  source: feedback_restart_quietude.md
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - restart
+      - default
+      - behavior
+      - quiet
+  action: info
+  recipe: "After boot, only say ALL SYSTEMS GO + one-line next action. Do not dump governance state, priority_brief, dispatches,...\n\
+    \nHow to apply:\n:\n- On restart: run boot, report one line, wait for Board to say what to work on\n- If continuation\
+    \ action queue says \"check_delivery\" / \"review_dispatch\" type items, do them silently and roll the result into the\
+    \ one-line next-action statement\n- If Board asks \"what's next\" then answer concretely. If \n\nWhy:\n: Board (Haotian,\
+    \ solo operator, non-engineer for governance internals) explicitly said the restart was overwhelming and 2000+ words of\
+    \ self-audit was me going down a rabbit hole, not protocol. Every \n\nSource: memory/claude_code_memory_mirror/feedback_restart_quietude.md"
+  cieu_event: PROPOSED_PROPOSED_RESTART_QUIETUDE
+  severity: low

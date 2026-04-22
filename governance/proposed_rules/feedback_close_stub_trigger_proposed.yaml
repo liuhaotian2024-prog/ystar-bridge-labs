@@ -1,0 +1,44 @@
+schema_version: '1.1'
+status: proposed
+source_file: memory/claude_code_memory_mirror/feedback_close_stub_trigger.md
+proposed_date: '2026-04-22'
+rules:
+- id: proposed_close_stub_trigger
+  enabled: false
+  status: proposed
+  description: CEO EOD close stub auto-drafts only after prolonged Board silence, never during board_session
+  proposed_date: '2026-04-22'
+  source: feedback_close_stub_trigger.md
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - close
+      - stub
+      - trigger
+      - condition
+  action: warn
+  recipe: 'CEO EOD close stub auto-drafts only after prolonged Board silence, never during board_session
+
+
+    How to apply:
+
+    - board_session 态（Board 任意消息后 X 分钟内）：只做对话响应 + 派工 + 即时汇报
+
+    - autonomous_work_learning 态（Board 无消息持续 ≥ 阈值）：才触发 close stub 起草、session_close_yml、twin_evolution 等离线流程
+
+    - 任何"准备给老大起床看"类提议出口前，先查当前态；态=board_session 则改口为"等你睡再写"或直接不提
+
+
+    Why:
+
+    Board 2026-04-13 纠正。Board 在线时写"给老大起床看"文档 = 把 Board 当不在场，违反 A1 两态硬约束（board_session / autonomous_work_learning）。Board 在线时的正确输出是对话响应和即时决策，不是"留给你起床看"的离线报告。
+
+
+    Source: memory/claude_code_memory_mirror/feedback_close_stub_trigger.md'
+  cieu_event: PROPOSED_PROPOSED_CLOSE_STUB_TRIGGER
+  severity: high

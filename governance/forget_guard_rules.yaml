@@ -804,3 +804,373 @@ whitelists:
     \ realtime_artifact_archival_sla\n"
   cieu_event: ARTIFACT_ARCHIVAL_SCOPE_DETECTED
   severity: low
+# ============================================================================
+# G4: Philosophy (P-1~P-14) + M-Triangle Binding (Section 11, CEO spec)
+# Added: 2026-04-22 by eng-governance (Maya Patel)
+# Task: CZL-CEO-RULES-REGISTRY-V3-MAYA
+# These 15 rules detect philosophy/methodology claims without evidence.
+# ============================================================================
+- id: ceo_p1_m_triangle_alignment_claim_no_evidence
+  enabled: true
+  description: "CEO claims 'P-1 aligned to M Triangle' but no M-1/M-2/M-3 face identification in reply"
+  last_reviewed: '2026-04-22'
+  reviewer: eng-governance
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - "过了 P-1"
+      - "P-1 对齐"
+      - "done P-1"
+      - "applied P-1"
+    - type: content_missing
+      pattern: "M-1[：:]|M-2[：:]|M-3[：:]|M-1 Survivability|M-2 Governability|M-3 Value"
+  action: warn
+  recipe: "你声称过了 P-1 对齐 M Triangle 但 reply 无 M-1/M-2/M-3 面具体识别.\n补三行:\n- M-1: ...\n- M-2: ...\n- M-3: ...\n(推哪面/削弱哪面/平衡吗)\n或撤回该 claim.\n\nRef: WORK_METHODOLOGY.md P-1\n"
+  cieu_event: PHILOSOPHY_CLAIM_NO_EVIDENCE
+  severity: medium
+  logic: AND
+- id: ceo_p2_three_question_claim_no_evidence
+  enabled: true
+  description: "CEO claims 'P-2 三问检查 done' but no Y*/Xt/U/Yt+1/Rt+1 5-tuple in reply"
+  last_reviewed: '2026-04-22'
+  reviewer: eng-governance
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - "过了 P-2"
+      - "done P-2"
+      - "P-2 三问"
+      - "applied P-2"
+    - type: content_missing
+      pattern: "Y\\*[：:].*Xt[：:].*U[：:].*Yt\\+1[：:].*Rt\\+1[：:]"
+  action: deny
+  recipe: "P-2 三问检查要求 reply 含 Y*/Xt/U/Yt+1/Rt+1 5-tuple.\n你声称过了但无 5-tuple. 补齐或撤回.\n\nRef: WORK_METHODOLOGY.md P-2\n"
+  cieu_event: PHILOSOPHY_CLAIM_NO_EVIDENCE
+  severity: high
+  logic: AND
+- id: ceo_p3_counterfactual_claim_no_evidence
+  enabled: true
+  description: "CEO claims 'P-3 counterfactual done' but no counterfactual reasoning in reply"
+  last_reviewed: '2026-04-22'
+  reviewer: eng-governance
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - "过了 P-3"
+      - "P-3 反事实"
+      - "done P-3"
+      - "applied P-3"
+    - type: content_missing
+      pattern: "如果不做.*会|if not.*then|if we had not|反事实[:：]|counterfactual[:：]"
+  action: warn
+  recipe: "你声称过了 P-3 反事实但 reply 无反事实推导.\n补 '如果不做X会Y' 显式段, 或撤回该 claim.\n\nRef: WORK_METHODOLOGY.md P-3\n"
+  cieu_event: PHILOSOPHY_CLAIM_NO_EVIDENCE
+  severity: medium
+  logic: AND
+- id: ceo_p4_real_testing_claim_no_evidence
+  enabled: true
+  description: "CEO claims 'P-4 real testing done' but no Bash tool test execution in same reply"
+  last_reviewed: '2026-04-22'
+  reviewer: eng-governance
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - "过了 P-4"
+      - "P-4 真实测试"
+      - "done P-4"
+      - "applied P-4"
+    - type: tool_not_called
+      required_tool: Bash
+      required_command_pattern: "pytest|python.*test|npm test|cargo test"
+  action: deny
+  recipe: "P-4 要求真实测试 > hand-wave. 你声称 P-4 但同 reply 无 Bash pytest/test 执行.\n跑真测试, 或撤回.\n\nRef: WORK_METHODOLOGY.md P-4\n"
+  cieu_event: PHILOSOPHY_CLAIM_NO_EVIDENCE
+  severity: high
+  logic: AND
+- id: ceo_p5_implicit_pass_fail_claim_no_evidence
+  enabled: true
+  description: "CEO claims 'P-5 implicit PASS/FAIL counted' but no quantitative PASS/FAIL count in reply"
+  last_reviewed: '2026-04-22'
+  reviewer: eng-governance
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - "过了 P-5"
+      - "P-5 IMPLICIT"
+      - "done P-5"
+      - "applied P-5"
+    - type: content_missing
+      pattern: "PASS|FAIL|\\d+/\\d+|\\d+ pass|\\d+ fail|通过率|pass rate"
+  action: warn
+  recipe: "P-5 要求隐式 PASS/FAIL 也算数据. 你声称 P-5 但无定量 PASS/FAIL count.\n补数字, 或撤回.\n\nRef: WORK_METHODOLOGY.md P-5\n"
+  cieu_event: PHILOSOPHY_CLAIM_NO_EVIDENCE
+  severity: medium
+  logic: AND
+- id: ceo_p6_cross_validation_claim_no_evidence
+  enabled: true
+  description: "CEO claims 'P-6 cross-validation done' but fewer than 2 independent verification tool calls"
+  last_reviewed: '2026-04-22'
+  reviewer: eng-governance
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - "过了 P-6"
+      - "P-6 独立复现"
+      - "done P-6"
+      - "applied P-6"
+      - "cross validated"
+      - "交叉验证"
+    - type: content_missing
+      pattern: "cross verified by|independently confirmed|二次验证|复现.*通过"
+  action: warn
+  recipe: "P-6 要求独立复现 + 交叉验证. 你声称 P-6 但无 2 个独立验证证据.\n补 'cross verified by...' 或 >= 2 独立 tool 调用同验, 或撤回.\n\nRef: WORK_METHODOLOGY.md P-6\n"
+  cieu_event: PHILOSOPHY_CLAIM_NO_EVIDENCE
+  severity: medium
+  logic: AND
+- id: ceo_p7_goal_chain_claim_no_evidence
+  enabled: true
+  description: "CEO claims 'P-7 goal transmission chain done' but no M->mid->U->action->result chain in reply"
+  last_reviewed: '2026-04-22'
+  reviewer: eng-governance
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - "过了 P-7"
+      - "P-7 目标传导"
+      - "done P-7"
+      - "applied P-7"
+    - type: content_missing
+      pattern: "M.*→.*U.*→.*action|M.*->.*U.*->.*result|目标.*→.*行动.*→.*结果"
+  action: warn
+  recipe: "P-7 要求目标传导链完整 (M -> 中间 -> U -> action -> result).\n你声称 P-7 但无四箭头链. 补链, 或撤回.\n\nRef: WORK_METHODOLOGY.md P-7\n"
+  cieu_event: PHILOSOPHY_CLAIM_NO_EVIDENCE
+  severity: medium
+  logic: AND
+- id: ceo_p8_quantitative_honesty_claim_no_evidence
+  enabled: true
+  description: "CEO claims 'P-8 quantitative honesty' but percentages/counts lack source path"
+  last_reviewed: '2026-04-22'
+  reviewer: eng-governance
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - "过了 P-8"
+      - "P-8 定量诚实"
+      - "done P-8"
+      - "applied P-8"
+    - type: content_missing
+      pattern: "source[:：]|file[:：]|SQL[:：]|line \\d+|path[:：]"
+  action: warn
+  recipe: "P-8 定量诚实: 任何 %/count 数字必带 source path/SQL/file:line.\n你声称 P-8 但数字无 source. 补来源, 或撤回.\n\nRef: WORK_METHODOLOGY.md P-8\n"
+  cieu_event: PHILOSOPHY_CLAIM_NO_EVIDENCE
+  severity: medium
+  logic: AND
+- id: ceo_p9_plan_not_done_claim_no_evidence
+  enabled: true
+  description: "CEO claims 'P-9 plan!=done' but uses done/shipped without [LX] maturity tag"
+  last_reviewed: '2026-04-22'
+  reviewer: eng-governance
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - "过了 P-9"
+      - "P-9 plan"
+      - "done P-9"
+      - "applied P-9"
+    - type: content_missing
+      pattern: "\\[L[0-5]\\]|L[0-5] (IDEA|SPEC|IMPL|TESTED|SHIPPED|ADOPTED)"
+  action: warn
+  recipe: "P-9 plan != done. 你声称 P-9 但 reply 含 done/shipped 无 [LX] 成熟度标签.\n加 [L0]-[L5] tag, 或撤回.\n\nRef: WORK_METHODOLOGY.md P-9\n"
+  cieu_event: PHILOSOPHY_CLAIM_NO_EVIDENCE
+  severity: medium
+  logic: AND
+- id: ceo_p10_u_workflow_header_claim_no_evidence
+  enabled: true
+  description: "CEO claims 'P-10 U-workflow header' but ruling/spec lacks Y*/Xt/U/Yt+1/Rt+1"
+  last_reviewed: '2026-04-22'
+  reviewer: eng-governance
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - "过了 P-10"
+      - "P-10 U-workflow"
+      - "done P-10"
+      - "applied P-10"
+    - type: content_missing
+      pattern: "Y\\*.*Xt.*U.*Yt\\+1.*Rt\\+1|Y\\*[:：]|Xt[:：]|Yt\\+1[:：]"
+  action: deny
+  recipe: "P-10 U-workflow header 强制: 任何 ruling/spec 必含 Y*/Xt/U/Yt+1/Rt+1.\n你声称 P-10 但无 header. 补齐, 或撤回.\n\nRef: WORK_METHODOLOGY.md P-10, CZL-159\n"
+  cieu_event: PHILOSOPHY_CLAIM_NO_EVIDENCE
+  severity: high
+  logic: AND
+- id: ceo_p11_ooda_claim_no_evidence
+  enabled: true
+  description: "CEO claims 'P-11 OODA done' but no 6-step list in reply"
+  last_reviewed: '2026-04-22'
+  reviewer: eng-governance
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - "过了 P-11"
+      - "P-11 OODA"
+      - "done P-11"
+      - "applied P-11"
+    - type: content_missing
+      pattern: "观察.*搜索.*分析.*解决|observe.*search.*analyze.*solve|OODA.*6"
+  action: warn
+  recipe: "P-11 OODA 6 步 (观察->搜索->分析->解决->验证->落实).\n你声称 P-11 但无 6 步 list. 补 list, 或撤回.\n\nRef: WORK_METHODOLOGY.md P-11\n"
+  cieu_event: PHILOSOPHY_CLAIM_NO_EVIDENCE
+  severity: medium
+  logic: AND
+- id: ceo_p12_search_before_build_claim_no_evidence
+  enabled: true
+  description: "CEO claims 'P-12 search before build' but no Glob/Grep/Read tool call in same reply"
+  last_reviewed: '2026-04-22'
+  reviewer: eng-governance
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - "过了 P-12"
+      - "P-12 先查后造"
+      - "done P-12"
+      - "applied P-12"
+    - type: tool_not_called
+      required_tool: Read
+  action: deny
+  recipe: "P-12 先查后造: 同 reply 内须有 >= 1 Glob/Grep/Read tool 真跑.\n你声称 P-12 但无查询 tool 调用. 先查, 或撤回.\n\nRef: WORK_METHODOLOGY.md P-12\n"
+  cieu_event: PHILOSOPHY_CLAIM_NO_EVIDENCE
+  severity: high
+  logic: AND
+- id: ceo_p13_8_cascade_claim_no_evidence
+  enabled: true
+  description: "CEO claims 'P-13 8-cascade check done' but no 8 sub-entity list in reply"
+  last_reviewed: '2026-04-22'
+  reviewer: eng-governance
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - "过了 P-13"
+      - "P-13 8-cascade"
+      - "done P-13"
+      - "applied P-13"
+    - type: content_missing
+      pattern: "charter.*registry.*boot.*dispatch|CIEU.*FG.*scope.*pre-auth|8.*cascade"
+  action: warn
+  recipe: "P-13 8-cascade: 新 entity 必列 8 标准 cascade (charter/registry/boot/dispatch/hook/CIEU/FG-scope/pre-auth).\n你声称 P-13 但无 8 子项. 补 list, 或撤回.\n\nRef: WORK_METHODOLOGY.md P-13\n"
+  cieu_event: PHILOSOPHY_CLAIM_NO_EVIDENCE
+  severity: medium
+  logic: AND
+- id: ceo_p14_honesty_over_cover_claim_no_evidence
+  enabled: true
+  description: "CEO claims 'P-14 honesty > cover-up' (informational — log only)"
+  last_reviewed: '2026-04-22'
+  reviewer: eng-governance
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - "过了 P-14"
+      - "P-14 诚实"
+      - "done P-14"
+      - "applied P-14"
+    - type: content_missing
+      pattern: "诚实承认|honest|诚实点|我承认|坦白|transparency"
+  action: info
+  recipe: "P-14 诚实 > 掩饰. 声称需配显式诚实 label.\n这是 info-level 记录, 不阻拦.\n\nRef: WORK_METHODOLOGY.md P-14\n"
+  cieu_event: PHILOSOPHY_CLAIM_NO_EVIDENCE
+  severity: low
+  logic: AND
+- id: ceo_m_triangle_three_question_claim_no_evidence
+  enabled: true
+  description: "CEO claims 'M Triangle 三问 done' but no three-line face identification in reply"
+  last_reviewed: '2026-04-22'
+  reviewer: eng-governance
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - "过了 M Triangle"
+      - "M Triangle 三问"
+      - "三问通过"
+      - "M-Triangle balanced"
+      - "done M Triangle"
+    - type: content_missing
+      pattern: "推进.*面|在推进|pushes.*M-|削弱.*面|可能削弱|weakens.*M-|三角平衡|triangle.*balanced"
+  action: deny
+  recipe: "M Triangle 三问: 必含三行:\n- 推进哪几面: M-? — ...\n- 削弱哪一面: M-? — ...\n- 三角平衡: 平衡/不平衡\n你声称三问通过但无上述三行. 补齐, 或撤回.\n\nRef: M_TRIANGLE.md, WORK_METHODOLOGY.md P-2\n"
+  cieu_event: PHILOSOPHY_CLAIM_NO_EVIDENCE
+  severity: high
+  logic: AND

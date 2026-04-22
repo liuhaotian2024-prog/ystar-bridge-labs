@@ -1,0 +1,34 @@
+schema_version: '1.1'
+status: proposed
+source_file: memory/claude_code_memory_mirror/feedback_status_maturity_taxonomy.md
+proposed_date: '2026-04-22'
+rules:
+- id: proposed_status_maturity_taxonomy
+  enabled: false
+  status: proposed
+  description: 任何 status / progress / report 必须给每条 work item 打 L0-L5 成熟度标签，禁用模糊词如"落盘/done/ship"
+  proposed_date: '2026-04-22'
+  source: feedback_status_maturity_taxonomy.md
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - SHIPPED
+      - (e464e14
+      - A018 done
+      - 落盘了"
+      - A018 ship 了
+      - '"A018'
+  action: warn
+  recipe: "任何 status / progress / report 必须给每条 work item 打 L0-L5 成熟度标签，禁用模糊词如\"落盘/done/ship\"\n\nHow to apply:\n1. **每条 status\
+    \ item 行首必含 L 标签**：\n   - ✅ \"AMENDMENT-016: L4 SHIPPED (b16b563, watcher 1.5s latency in prod)\"\n   - ✅ \"AMENDMENT-017:\
+    \ L1 SPEC (e464e14 6-pager only, 0% impl)\"\n   - ✅ \"AMENDMENT-018: L1 SPEC → L2 IMPL in flight (4 engineers parallel)\"\
+    \n   - ❌ \"A018 落盘了\" / \"A018 done\" / \"A018 ship 了\" — 一律视\n\nWhy:\n2026-04-13 老大第二次纠正\"misleading framing\"。CEO 把\
+    \ A018 的 6-pager commit (`705b45a`) 报成\"落盘\"，老大问\"那是不是该开始实验了\"——CEO 才意识到 6-pager ≠ impl。根因不是用词疏忽，是**认知模型缺成熟度颗粒度**：脑里只跟踪\
+    \ commit/artifact，不跟踪生命周期阶段。Software 行业有 TR\n\nSource: memory/claude_code_memory_mirror/feedback_status_maturity_taxonomy.md"
+  cieu_event: PROPOSED_PROPOSED_STATUS_MATURITY_TAXONOMY
+  severity: high

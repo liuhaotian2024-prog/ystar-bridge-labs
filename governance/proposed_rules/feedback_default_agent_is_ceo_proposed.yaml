@@ -1,0 +1,47 @@
+schema_version: '1.1'
+status: proposed
+source_file: memory/claude_code_memory_mirror/feedback_default_agent_is_ceo.md
+proposed_date: '2026-04-22'
+rules:
+- id: proposed_default_agent_is_ceo
+  enabled: false
+  status: proposed
+  description: When Board says "重启" or starts a new session, the default identity should be ceo (Aiden / 承远). Engineers (Ryan/Leo/Ma...
+  proposed_date: '2026-04-22'
+  source: feedback_default_agent_is_ceo.md
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - default
+      - agent
+      - restart
+      - aiden
+  action: warn
+  recipe: 'When Board says "重启" or starts a new session, the default identity should be ceo (Aiden / 承远). Engineers (Ryan/Leo/Ma...
+
+
+    How to apply:
+
+    :
+
+    - Default `AGENT_ID` for any boot invocation = `ceo` unless Board explicitly says "我要跟 Ryan/Leo/Maya/Jordan/Ethan/Sofia/Marco/Zara
+    说话"
+
+    - If marker is stuck on a non-CEO role and Board wants to force-reset without booting, tell them the one-liner: `echo
+    ceo > /Users/haotianliu/.openclaw/workspace/y
+
+
+    Why:
+
+    : Board is the single user of this system. They want to talk to the CEO persona (Aiden), not land inside a specific engineer
+    sub-agent session. Today (2026-04-13) the SessionStart hook defaulted to en
+
+
+    Source: memory/claude_code_memory_mirror/feedback_default_agent_is_ceo.md'
+  cieu_event: PROPOSED_PROPOSED_DEFAULT_AGENT_IS_CEO
+  severity: high

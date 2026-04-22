@@ -1,0 +1,28 @@
+schema_version: '1.1'
+status: proposed
+source_file: memory/claude_code_memory_mirror/feedback_no_static_image_for_video.md
+proposed_date: '2026-04-22'
+rules:
+- id: proposed_no_static_image_for_video
+  enabled: false
+  status: proposed
+  description: 任何"视频生成"任务必须真生成动态视频（数字人/talking head/lip sync），不允许 fallback 到静图+TTS 伪装
+  proposed_date: '2026-04-22'
+  source: feedback_no_static_image_for_video.md
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - 视频任务禁用静图替代
+  action: warn
+  recipe: "任何\"视频生成\"任务必须真生成动态视频（数字人/talking head/lip sync），不允许 fallback 到静图+TTS 伪装\n\nHow to apply:\n- 视频生成任务的 L4 SHIPPED\
+    \ 必须含：动态画面 (avatar/talking head 真动) + 真口型同步 + 多帧不同 + 有场景背景\n- 静图 slideshow 只能算 L0 IDEA 或 L1 SPEC，**绝不 L4**\n- 工具优先级:\n\
+    \  1. 已配置 API: HeyGen (有 key) / D-ID / Synthesia\n  2. 本地开源: Wav2Lip + SadTalker (要装) / CogVideoX (M4 慢)\n  3. 阿里 Tongyi\
+    \ Wanxiang (Board 提过但 Mac 未发现，待 Board 指路)\n- 任务 pro\n\nWhy:\n2026-04-13 顶岗 CMO 第一版用 sofia static PNG + macOS `say` TTS\
+    \ + ffmpeg 字幕做 60s slideshow，自称 [L4 SHIPPED]。Board 看到弹窗后说\"垃圾\"——只有 1 张照片+机器声+无背景，**完全不是视频**。这违反了任务定义本身。\n\nSource: memory/claude_code_memory_mirror/feedback_no_static_image_for_video.md"
+  cieu_event: PROPOSED_PROPOSED_NO_STATIC_IMAGE_FOR_VIDEO
+  severity: high

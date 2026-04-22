@@ -1,0 +1,50 @@
+schema_version: '1.1'
+status: proposed
+source_file: memory/claude_code_memory_mirror/feedback_no_defer_immediate_activation.md
+proposed_date: '2026-04-22'
+rules:
+- id: proposed_no_defer_immediate_activation
+  enabled: false
+  status: proposed
+  description: 任何治理/配置/规则改动完成后必须立即生效，不能等下次 session boot
+  proposed_date: '2026-04-22'
+  source: feedback_no_defer_immediate_activation.md
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - 无延迟激活
+      - 完成即生效，禁止"下次
+      - session
+      - 才生效"
+  action: warn
+  recipe: '任何治理/配置/规则改动完成后必须立即生效，不能等下次 session boot
+
+
+    How to apply:
+
+    ：
+
+    - `.ystar_session.json` 改了 → hook daemon 立即 reload（非缓存）
+
+    - 新 obligation type 注册 → OmissionEngine 立即 pickup（不等下轮 scan）
+
+    - skill / lesson 写入 knowledge/ → 当前 session 可立即激发（AMENDMENT-013 prime）
+
+    - behavior rule 加新条 → boundary_enforcer 立即 enforce
+
+    - `.claude/agents/` 改了 → 若 Claude Code 不支持热加载至少要 emit 显著 wa
+
+
+    Why:
+
+    : agent 时间尺度 ≠ 人时间尺度。"等下次 session" 在人看是几小时，在 agent 是数十轮工作机会丢失。改了规则没生效 = 没改。同时违反"内驱力"——内驱力意味着改完即生效即学习即迭代，不靠重启。
+
+
+    Source: memory/claude_code_memory_mirror/feedback_no_defer_immediate_activation.md'
+  cieu_event: PROPOSED_PROPOSED_NO_DEFER_IMMEDIATE_ACTIVATION
+  severity: medium

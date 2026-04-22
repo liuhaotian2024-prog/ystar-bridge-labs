@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.ystar.bridge.governance_regression</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/opt/homebrew/bin/python3.11</string>
+        <string>/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/governance_regression_runner.py</string>
+    </array>
+
+    <key>StartInterval</key>
+    <integer>21600</integer>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/haotianliu/.openclaw/workspace/ystar-company</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PYTHONPATH</key>
+        <string>/Users/haotianliu/.openclaw/workspace/Y-star-gov</string>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/.logs/governance_regression.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/.logs/governance_regression.err.log</string>
+
+    <key>AbandonProcessGroup</key>
+    <true/>
+</dict>
+</plist>

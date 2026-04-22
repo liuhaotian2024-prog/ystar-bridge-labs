@@ -1,0 +1,47 @@
+schema_version: '1.1'
+status: proposed
+source_file: memory/claude_code_memory_mirror/feedback_subagent_registry_boot_only.md
+proposed_date: '2026-04-22'
+rules:
+- id: proposed_subagent_registry_boot_only
+  enabled: false
+  status: proposed
+  description: Claude Code 在 session boot 时读 .claude/agents/，mid-session 改文件不会让新 subagent 出现；要么重启要么顶岗
+  proposed_date: '2026-04-22'
+  source: feedback_subagent_registry_boot_only.md
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - subagent
+      - boot-only
+  action: warn
+  recipe: 'Claude Code 在 session boot 时读 .claude/agents/，mid-session 改文件不会让新 subagent 出现；要么重启要么顶岗
+
+
+    How to apply:
+
+    - 修 `.claude/agents/*.md` 后**立刻告知 Board**：本 session 仍顶岗，下次 session boot 才真注册
+
+    - 不要假装新 agent 已可用
+
+    - 如果 mission 紧急且必须真 agent，告知 Board 唯一解 = 重启 (用 `bash scripts/aiden_continuity_guardian.sh ceo`)
+
+    - 顶岗 general-purpose 需在 prompt 内显式说 "你扮演 X，subagent 没注册"，让顶岗 agent 知道自己是临时
+
+    - **预防**：所有新写 agent file 必跑 BOM 检查
+
+
+    Why:
+
+    2026-04-13 session：Sofia-CMO 文件因 BOM 字节 frontmatter 解析失败，CEO 修了 BOM (`aa2ecd5`) 但 Sofia-CMO 在本 session 仍不在可派列表，需要 general-purpose
+    顶岗。Board 困惑"为什么还顶岗"。根因 = 平台限制不是疏忽。
+
+
+    Source: memory/claude_code_memory_mirror/feedback_subagent_registry_boot_only.md'
+  cieu_event: PROPOSED_PROPOSED_SUBAGENT_REGISTRY_BOOT_ONLY
+  severity: high

@@ -1,0 +1,50 @@
+schema_version: '1.1'
+status: proposed
+source_file: memory/claude_code_memory_mirror/feedback_ai_disclosure_mandatory.md
+proposed_date: '2026-04-22'
+rules:
+- id: proposed_ai_disclosure_mandatory
+  enabled: false
+  status: proposed
+  description: 所有对外 cold outreach (email/LinkedIn/social/blog) 必须披露 AI agent 作者身份 + 人类 reviewer + 提供 human-only opt-out
+  proposed_date: '2026-04-22'
+  source: feedback_ai_disclosure_mandatory.md
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - mandatory
+      - tail
+      - disclosure
+      - 标准段落已写进模板
+      - 模板：`sales/outreach/email_template_v1.md`
+  action: warn
+  recipe: '所有对外 cold outreach (email/LinkedIn/social/blog) 必须披露 AI agent 作者身份 + 人类 reviewer + 提供 human-only opt-out
+
+
+    How to apply:
+
+    - ✅ 模板：`sales/outreach/email_template_v1.md` 已含 disclosure 段
+
+    - ✅ 标准段落已写进模板 tail (4 mandatory items)
+
+    - 任何 CSO / CMO / 顶岗 sub-agent 起 outreach → 必先 reference 这个模板
+
+    - ForgetGuard 应加 rule: scan outgoing email/blog content lacking "AI" / "agent" / "Zara/Marco/Sofia" 关键字 → warn
+
+    - ⚠️ 适用范围：cold (从未沟通过的) outr
+
+
+    Why:
+
+    2026-04-13 Board 审批 Stripe Joe Camilleri outreach 时硬约束："发的时候一定要有 AI agent 试验性运作的声明，不要伪装成真人"。本质：合法 + 信任建立。Y\* Bridge Labs
+    卖点正是"AI agent team 用自己的治理产品治理自己"——伪装成真人 = 自我否定 USP + 法律风险 (CAN-SPAM, GDPR Art 1
+
+
+    Source: memory/claude_code_memory_mirror/feedback_ai_disclosure_mandatory.md'
+  cieu_event: PROPOSED_PROPOSED_AI_DISCLOSURE_MANDATORY
+  severity: high

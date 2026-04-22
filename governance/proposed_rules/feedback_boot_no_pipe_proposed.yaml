@@ -1,0 +1,32 @@
+schema_version: '1.1'
+status: proposed
+source_file: memory/claude_code_memory_mirror/feedback_boot_no_pipe.md
+proposed_date: '2026-04-22'
+rules:
+- id: proposed_boot_no_pipe
+  enabled: false
+  status: proposed
+  description: Execute `bash scripts/governance_boot.sh AGENT_ID` as a plain Bash call. Do NOT pipe through tail/head, do
+    NOT wrap i...
+  proposed_date: '2026-04-22'
+  source: feedback_boot_no_pipe.md
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - governance_boot.sh
+      - directly
+      - pipes
+  action: warn
+  recipe: "Execute `bash scripts/governance_boot.sh AGENT_ID` as a plain Bash call. Do NOT pipe through tail/head, do NOT\
+    \ wrap i...\n\nHow to apply:\n:\n- Boot script prints ~60 lines (obligations, lessons, continuation). That's fine — let\
+    \ it print.\n- If output is too noisy to summarize, read the final file `/tmp/boot.log` after-the-fact; don't filter at\
+    \ the pipe level\n- Timeout: give the Bash call at least 60000ms (script does 5 E2E hard constrai\n\nWhy:\n: 2026-04-13\
+    \ restart, I piped output through `tail -80` inside a background Bash task. The pipe buffered, task output file stayed\
+    \ 0 bytes, I thought boot was hung, killed the wrapper process, re-ran. \n\nSource: memory/claude_code_memory_mirror/feedback_boot_no_pipe.md"
+  cieu_event: PROPOSED_PROPOSED_BOOT_NO_PIPE
+  severity: high

@@ -185,6 +185,60 @@ ALTER TABLE cieu_events ADD COLUMN y_star_validator_pass INTEGER DEFAULT 0;
 - 同时 immediate small wins: 给 _cieu_helpers.py 的 emit_cieu 加 optional m_functor 参数 (不破坏现有调用), 让 V3 完成后的 CIEU emit 立刻能 carry m_functor — 增量铺路
 - CEO 自己每个 5-tuple 立即开始手标 m_functor (不等 schema 升级) — first-victim discipline 习惯先于 enforce 形成
 
+## 10. 自审 — "治理 + 行为统一" 的 5 失灵 mode + 防御层 (Board 2026-04-22 catch)
+
+老大 catch: "这种统一是否会造成治理失灵或者被吞噬?" — 直击 governance 设计核心. 当治理和被治理者使用同一组件 (m_functor schema 列), 5 种典型 failure mode:
+
+### 10.1 五失灵 mode
+
+| Mode | 现象 | 例 | 严重 |
+|---|---|---|---|
+| **F1 Goodhart's Law (规格游戏)** | agent 学会标完美 m_functor 应付治理, 行为漂走. 字段对内容不对. | Sofia 邮件标 M-3 但内容是 spam | high |
+| **F2 Self-Audit Paradox (裁判=球员)** | agent 同时是 m_functor writer + reader, 给自己打分, 治理失灵 | CEO 自标 m_functor=M-2 critical, 自己 enforce 自己 | critical |
+| **F3 Capture (治理被行为吞噬)** | 久之 validator 习惯 agent 反复 pattern, 该拒也放. 类比"监管被被监管者俘获" | LLM judge 见 "M-2 routine maintenance" 标注 100 次后倾向 PASS 即使空洞 | high |
+| **F4 Layer Collapse (单点故障)** | 治理 + 行为依赖同 schema. m_functor 列损坏 → 两边同时哑 | DB migration bug 或恶意改写 | medium |
+| **F5 Cognitive Capture (大脑被结构吞噬)** | agent 完全依赖 ∇ξ 决策, 失去 first-principles + 反事实能力. 类比导航 app 用多了忘了认路. | agent 沿 ξ 走 100 次, 第 101 次场错时无能力 catch | medium-high (老大命题反面) |
+
+### 10.2 两条架构原则 (防 governance 退化为"合一-必吞噬")
+
+**Principle A — Separation: writer ≠ judge ≠ enforcer (三方独立)**
+- agent = m_functor writer (写自己 5-tuple)
+- **独立 LLM judge** = Φ^{-1} 验证 (必须不同 inference instance, 最好不同 model family — 主 Opus / judge Haiku 或 GPT)
+- forget_guard rule engine = enforcer (rule-based, deterministic, 不参与 judge)
+- 任一被吞噬, 另两方能 catch (3-of-3 consensus 必)
+
+**Principle B — Adversarial co-evolution: red team ≥ blue team**
+- Petri-style adversarial daemon 主动 inject 已知错误 m_functor + 已知 wishful Y\* (例: 标 M-3 但内容无 customer/revenue link)
+- validator 抓住率 < 90% → CIEU alarm + 强制 Wave-N+1 升级
+- red team 必持续 evolve (新 attack pattern), 否则 validator 学会 pattern 后 capture
+
+### 10.3 落地修订 — Wave-2 加 L6 + L7 (原方案不够)
+
+| Layer | 内容 | 真 delta |
+|---|---|---|
+| L1-L5 (原方案) | schema + emit 入口 + rule + validator + visualizer | 55 tu |
+| **L6 Independent LLM Judge** (Separation) — y_star_field_validator.py 必须 spawn 独立 model instance, 不复用 caller context. 主流程 Claude Opus 时 judge 用 Sonnet/Haiku. judge disagreement ≥ 30% → escalate 二审 + CIEU JUDGE_DISAGREEMENT | +15 tu |
+| **L7 Petri Red Team for Field** (Adversarial) — 升级 Leo Wave-1 Petri daemon 加 m_functor injection test set (50+ adversarial patterns). 60s 一次 inject, validator 抓住率 < 90% → CIEU FIELD_VALIDATOR_CAPTURED + alarm | +10 tu (重用 Wave-1 daemon 框架) |
+| **L8 Field-Blind Sandbox** (Anti-cognitive-capture, F5 防御) — 周期性 force agent 在 ξ field 不可见的 context 下做决策, 测试是否仍能 first-principles 推回 M. 失败 = 大脑被结构吞噬 alarm | +10 tu |
+| **L9 Shadow Audit Log** (F4 防御) — m_functor 同时写 cieu_events + 独立 audit log file (immutable, 不可 ALTER). 任一损坏另一边可恢复 | +5 tu |
+
+**修订后真 delta**: 55 + 40 = **95 tu** (Wave-2 重定 95, 不是 55).
+
+### 10.4 残留风险 (诚实)
+
+即使 L1-L9 全落, 仍有 unresolvable:
+- **Adversarial co-evolution arms race**: red team 与 validator 持续进化, 永远存在新 attack 暂未 covered. 这是 P=NP-style 不可终结. 接受 + monitor 抓住率 baseline 即可.
+- **Independent LLM judge 也可能漂**: judge model 也是 LLM, 也有 CoT 不忠实问题 (Anthropic 2025-04). 缓解: judge 决策也写 m_functor + 治理 enforce judge 自己 (recursion, 但有限层). 实际取 2 层 (judge of judge) 即可避无穷递归.
+- **F5 (大脑被结构吞噬) 部分解**: L8 sandbox 只能 detect 不能 prevent. 要真防, agent 必须有 metacognitive layer 主动 question ξ — 这是更深 R&D, Wave-3+ 范畴.
+
+### 10.5 真 unification ≠ 合一
+
+老大命题"治理 + 行为统一" 必须解读为 **"结构层统一 (m_functor schema 列贯穿) + 决策层分离 (writer/judge/enforcer 三方独立) + 持续对抗 (red team)"**, 不是"合一 (writer=judge=enforcer)" — 后者必被吞噬.
+
+类比:
+- ❌ 合一 = 球员、裁判、规则制定者同一人 → 必腐败
+- ✅ 真 unification = 比赛规则书统一 (schema), 但球员/裁判/规则更新机构三方独立 + 反作弊系统持续 evolve
+
 ## 9. Sources / 启发
 
 - HiAgent (Bytedance) 子目标分拆模式 — 当前我们用的 hierarchical goal 结构源

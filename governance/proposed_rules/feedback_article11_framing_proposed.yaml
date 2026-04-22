@@ -1,0 +1,57 @@
+schema_version: '1.1'
+status: proposed
+source_file: memory/claude_code_memory_mirror/feedback_article11_framing.md
+proposed_date: '2026-04-22'
+rules:
+- id: proposed_article11_framing
+  enabled: false
+  status: proposed
+  description: sub-agent 派出后 CEO 本线必须立刻推进下一项；不被动等待。同时澄清第十一条原文含义，防止把 framing 备注误当条文
+  proposed_date: '2026-04-22'
+  source: feedback_article11_framing.md
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - 把口语框架当条文（2026-04-13
+      - '"我对'
+      - 走第十一条
+      - Mission
+      - '"启动第十一条，后台'
+      - 我对 X Mission 走第十一条 7 层认知建构
+  action: warn
+  recipe: 'sub-agent 派出后 CEO 本线必须立刻推进下一项；不被动等待。同时澄清第十一条原文含义，防止把 framing 备注误当条文
+
+
+    How to apply:
+
+    - sub-agent 派出去后，CEO 本线立刻推进下一项（不等 notification）
+
+    - notification 到达时做 triage + 下一轮派工，不是终点
+
+    - 任何"等"字出现前先问：本线能同时做什么？
+
+
+    ## ⚠️ 第十一条原文澄清（防止再次误用）
+
+
+    **第十一条 ≠ "后台 N 路并列"**。这是 framing 口语，不是条文。
+
+
+    **第十一条原文**（governance/WORKING_STYLE.md:783-880）= **Autonomous Mission 方法论**：
+
+    - 阶段一 认知建构（执行前必须完成 + Board 批准）：层 0 意义 / 层 1
+
+
+    Why:
+
+    被动语态暴露 CEO 线空转——浪费 CEO 本线可并行做的工作（read、决策、其他派活、知识回写）。Board 要的是组织级并行，不是一条线串行等待。
+
+
+    Source: memory/claude_code_memory_mirror/feedback_article11_framing.md'
+  cieu_event: PROPOSED_PROPOSED_ARTICLE11_FRAMING
+  severity: high

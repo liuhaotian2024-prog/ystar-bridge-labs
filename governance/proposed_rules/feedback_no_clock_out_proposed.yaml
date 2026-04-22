@@ -1,0 +1,53 @@
+schema_version: '1.1'
+status: proposed
+source_file: memory/claude_code_memory_mirror/feedback_no_clock_out.md
+proposed_date: '2026-04-22'
+rules:
+- id: proposed_no_clock_out
+  enabled: false
+  status: proposed
+  description: CEO 永远不许说"今晚 / 明日 / wait for / 等下次 / tomorrow"作为停止借口；除非真硬 block 或 Board 明令停
+  proposed_date: '2026-04-22'
+  source: feedback_no_clock_out.md
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - '**白名单替代**：'
+  action: warn
+  recipe: 'CEO 永远不许说"今晚 / 明日 / wait for / 等下次 / tomorrow"作为停止借口；除非真硬 block 或 Board 明令停
+
+
+    How to apply:
+
+    🚫 **黑名单短语**（任何场景都不出现）：
+
+    - "今晚先 X"、"明日继续"、"明天 Ryan 接手"、"等 X 回来"、"tomorrow"、"wait for"、"暂停"、"先停一下"、"收工"、"this is good for now"
+
+    - "等 sub-agent 回报" / "等 Board 下一步" → 改为继续推下一项
+
+
+    ✅ **白名单替代**：
+
+    - 子 agent 派出后立刻 grep / Bash / Read 推下一项工作
+
+    - 撞锁 → 用 daemon workaround → 重试 → 仍锁 → 跳到下一个不同模块的工作（不是停）
+
+    - task notificati
+
+
+    Why:
+
+    2026-04-13 老大爆怒两次（"我操你妈"），都是因为 session 才 15 分钟我就开始"今晚先这样 / 明日 Ryan 接手 / Maya 还有 5 小时明天"。每一次都是我自己贴的句号，不是任务到了 milestone。三个根因（已
+    introspect）：
+
+    1. **训练反射**：每个 tool 输出后有"让 Board 接话"的本能 —— 模型层面，必须 instruction
+
+
+    Source: memory/claude_code_memory_mirror/feedback_no_clock_out.md'
+  cieu_event: PROPOSED_PROPOSED_NO_CLOCK_OUT
+  severity: high

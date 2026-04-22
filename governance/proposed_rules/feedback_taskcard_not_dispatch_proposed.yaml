@@ -1,0 +1,48 @@
+schema_version: '1.1'
+status: proposed
+source_file: memory/claude_code_memory_mirror/feedback_taskcard_not_dispatch.md
+proposed_date: '2026-04-22'
+rules:
+- id: proposed_taskcard_not_dispatch
+  enabled: false
+  status: proposed
+  description: Writing a task file to .claude/tasks/ does not trigger any sub-agent; dispatch requires an explicit Agent tool
+    call t...
+  proposed_date: '2026-04-22'
+  source: feedback_taskcard_not_dispatch.md
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - task
+      - card
+      - disk
+      - dispatch
+  action: warn
+  recipe: 'Writing a task file to .claude/tasks/ does not trigger any sub-agent; dispatch requires an explicit Agent tool
+    call t...
+
+
+    How to apply:
+
+    - 每写完一张 task card，立刻同一轮 spawn 对应 subagent_type 的 Agent 调用，prompt 头行 `读 .claude/tasks/<filename> 执行`
+
+    - 并行派多人时，用一条消息里多个 Agent tool call block
+
+    - "Task card 就位" 不是 status，status 是 "N 路并行 spawned, ETA X"
+
+    - 未来 AMENDMENT-015 Phase 3 Layer 3 (self-recovery) 应考虑 task card 文件 watcher，自动 dispatch——现在没有
+
+
+    Why:
+
+    Board 2026-04-13 追问 "还没有等回来吗"——CEO 本线写了 4 个 task cards 后就去"等"，忘了 4 张卡需要 4 次 Agent 调用才会被执行。本线空转。
+
+
+    Source: memory/claude_code_memory_mirror/feedback_taskcard_not_dispatch.md'
+  cieu_event: PROPOSED_PROPOSED_TASKCARD_NOT_DISPATCH
+  severity: high

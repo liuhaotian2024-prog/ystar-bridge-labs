@@ -1,0 +1,56 @@
+schema_version: '1.1'
+status: proposed
+source_file: memory/claude_code_memory_mirror/feedback_board_shell_marker.md
+proposed_date: '2026-04-22'
+rules:
+- id: proposed_board_shell_marker
+  enabled: false
+  status: proposed
+  description: Any command CEO needs Board to run in shell must be prefixed with ❕ marker, visually prominent, with clear
+    return signal
+  proposed_date: '2026-04-22'
+  source: feedback_board_shell_marker.md
+  trigger:
+    tool:
+    - Edit
+    - Write
+    - Bash
+    conditions:
+    - type: content_contains
+      keywords:
+      - board
+      - shell
+      - command
+      - marker
+  action: warn
+  recipe: 'Any command CEO needs Board to run in shell must be prefixed with ❕ marker, visually prominent, with clear return
+    signal
+
+
+    How to apply:
+
+    - 所有 restricted-path 写操作（.ystar_active_agent / priority_brief.md / BOARD_PENDING.md）被 hook 拒后的 Board shell 请求
+
+    - 所有需要 CEO/CTO MCP grant 但当前身份不够的 gov_* 命令（gov_reset_breaker 等）
+
+    - 任何需要老大手动 override 身份锁的场景
+
+    - 一次对话里可多条，每条独立标 ❕
+
+    - 命令块后必须写一句"执行完回 X 即可"告诉 Board return signal
+
+    - 禁止把 shell 命令藏在段落文字里不标记
+
+
+    Why:
+
+    Board 2026-04-13 纠正。Claude Code 的对话框把 `!` 前缀当内联 bash，输出直接进对话。常规 `\`\`\`bash ... \`\`\`` 代码块只是展示，Board 要开终端才能跑——打断 session
+    flow。用 `!` 形式让 Board 一次回车搞定。
+
+
+    **Why:** Board 2026-04-13 指令。没有标记的命令容易被 Board 当成
+
+
+    Source: memory/claude_code_memory_mirror/feedback_board_shell_marker.md'
+  cieu_event: PROPOSED_PROPOSED_BOARD_SHELL_MARKER
+  severity: high
