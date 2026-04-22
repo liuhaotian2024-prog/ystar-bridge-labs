@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-22 15:00:00
+**Generated**: 2026-04-22 15:50:34
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,7 +36,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/12 valid (0 errors)
-**CIEU 24h Events**: 68933
+**CIEU 24h Events**: 72431
 **Overdue Obligations**: 0
 
 ---
@@ -83,7 +83,23 @@ ceo          | 3/3          | 24           | 37       | 2026-04-20
 
 ---
 
-## 8. Ecosystem — Y*gov Product Repo
+## 8. Y* Field State (xi) — Mission axis frequency + drift
+**Total CIEU events (24h)**: 72431
+
+| M-Axis | Description | 24h Count | 7d Avg/Day | Drift |
+|--------|-------------|-----------|------------|-------|
+| **M-1** | Survivability (session/boot/handoff/persist) | 9799 | 14343 | → |
+| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 524 | 2053 | ↓ |
+| **M-2b** | Omission prevention (omission/overdue/alarm) | 5292 | 6772 | → |
+| **M-3** | Value production (customer/revenue/dogfood/demo) | 0 | 0 | ↓ |
+
+**Classified coverage**: 15615/72431 (21.6%)
+**Unclassified**: 56816 events (routine ops / K9 routing)
+**Drift alert**: M-2a, M-3 trending DOWN vs 7d baseline
+
+---
+
+## 9. Ecosystem — Y*gov Product Repo
 **HEAD**: `3029504 [auto] WIP checkpoint 2026-04-22 14:57 -- 3 files changed`
 **24h commits**: 7
 **ahead origin**: 2
@@ -92,20 +108,21 @@ ceo          | 3/3          | 24           | 37       | 2026-04-20
 
 ---
 
-## 9. Ecosystem — gov-mcp (nested in Y*gov)
+## 10. Ecosystem — gov-mcp (nested in Y*gov)
 **gov-mcp**: not found
 
 ---
 
-## 10. Ecosystem — K9Audit (read-only reference)
+## 11. Ecosystem — K9Audit (read-only reference)
 **K9Audit**: not cloned locally (run: `git clone https://github.com/liuhaotian2024-prog/K9Audit /tmp/K9Audit`)
 
 ---
 
-## 11. Today's Commits (24h) — both repos
+## 12. Today's Commits (24h) — both repos
 
 
-**ystar-company** (41 commits):
+**ystar-company** (42 commits):
+- bc7c9d37 15:28 [auto] WIP checkpoint 2026-04-22 15:28 -- 14 files changed
 - 3b1110b8 14:57 [auto] WIP checkpoint 2026-04-22 14:57 -- 19 files changed
 - 64c1d990 14:27 [auto] WIP checkpoint 2026-04-22 14:27 -- 36 files changed
 - b697f3fa 13:57 [auto] WIP checkpoint 2026-04-22 13:57 -- 8 files changed
@@ -125,7 +142,6 @@ ceo          | 3/3          | 24           | 37       | 2026-04-20
 - 5765653e 08:11 [auto] WIP checkpoint 2026-04-22 08:11 -- 23 files changed
 - 2f1a00d3 07:57 [auto] WIP checkpoint 2026-04-22 07:57 -- 3 files changed
 - c4fc6c71 07:56 [auto] WIP checkpoint 2026-04-22 07:56 -- 31 files changed
-- 09001bc6 07:42 [auto] WIP checkpoint 2026-04-22 07:42 -- 29 files changed
 
 **Y*gov** (7 commits):
 - 3029504 14:57 [auto] WIP checkpoint 2026-04-22 14:57 -- 3 files changed

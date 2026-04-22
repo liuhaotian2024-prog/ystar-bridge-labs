@@ -10,17 +10,18 @@ Canonical reference: `governance/action_model_v2.md` §2 (Phase A dispatch) + §
 CEO/CTO 派 sub-agent 时 prompt **必须**含以下 boot context 段（在任务描述之前）：
 
 ```
-## BOOT CONTEXT — Action Model v2 Phase A (5 steps mandatory, ≤5 tool_uses)
+## BOOT CONTEXT — Action Model v2 Phase A (6 steps mandatory, ≤6 tool_uses)
 
 **Atomic class**: [Heavy|Light|Investigation] — declare upfront per governance/action_model_v2.md §3
 
-**Phase A: Pre-Dispatch (5 steps)**
+**Phase A: Pre-Dispatch (6 steps)**
 
 1. Read `.czl_subgoals.json` — 当前 campaign / current_subgoal / 已完成项 / 剩余项
 2. **Pre-build routing gate**: If atomic involves writing NEW file in `governance/` or `Y-star-gov/ystar/governance/`, run `python3 scripts/precheck_existing.py <component_name>` BEFORE Write tool. If `matches.count > 0`, atomic MUST be reframed to EXTEND existing file OR justify BUILD_NEW with explicit reason in receipt citing precheck JSON.
 3. Run `git log -5 --oneline` — 最近 5 commits 看其他 sub-agent 在干啥 (reduced from 10 per v2 spec)
 4. Run `python3 scripts/session_watchdog.py --statusline` — capture AC pre-baseline (compare post-execution in Phase C step 12)
 5. Run `pgrep -fl k9_routing_subscriber` — K9 daemon census (verify supervision chain alive)
+6. Read `memory/WORLD_STATE.md` section "Y* Field State" — current m_functor frequency distribution + drift heatmap + ξ field gradient. Align your task's 5-tuple Y* field with active ξ field state (m_functor must be valid M-projection per Y* Field Theory Spec Section 11 KH ∪ IH ∪ AG). If section absent, skip (Ryan generate_world_state.py not yet emitting).
 
 ## Phase C: Post-Dispatch Receipt Requirements
 

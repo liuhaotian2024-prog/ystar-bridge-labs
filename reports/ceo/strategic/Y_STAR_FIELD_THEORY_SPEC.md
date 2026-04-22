@@ -451,6 +451,63 @@ FAIL after max_iter → break_glass (ceo_mode_manager.force_break_glass 现 LIVE
 
 治理 ⊥ 运营 separation 严格保持. AccuKnox 2026 "deterministic enforcement only" 工业共识.
 
+## 14. Closed Loop Architecture — 3 phase × 2 dim (Board 2026-04-22 第 8/9 catch)
+
+老大 catch 双面: (a) 老大 8 catch — agent self_check + 治理 hook 形成双向闭环 (cognitive ⇆ governance). (b) 老大 9 catch — 我 phase 表述只列"漏做 omission", 漏列**"做错 commission"** 一面. 完整 architecture = 3 phase × 2 dim = 6 cell, 任一缺都不闭环.
+
+### 14.1 完整 6 cell 矩阵
+
+|              | 做错 (commission) | 漏做 (omission) |
+|---|---|---|
+| **Phase 1 pre-flight** | navigation 含不该做的事? `forget_guard` pre-check + `y_star_self_check.py` (Leo W12-3) | navigation 漏 critical step? M Triangle 三问 / 8-cascade 漏 axis |
+| **Phase 2 execute** | 实时: `forget_guard` PreToolUse deny (LIVE 22+ rule); 事后: claim≠tool / ritual 空 (`narrative_coherence_detector` + `observable_action_detector` + `claim_mismatch` LIVE) | 实时: agent in-flight 漏 BOOT/5-tuple (`czl_dispatch_missing_5tuple` + `subagent_boot_no_state_read` LIVE) |
+| **Phase 3 complete** | post-audit: K9 silent fire + claim_mismatch + `causal_chain_analyzer` + `counterfactual_engine` (LIVE) | `omission_engine` 8 RULE_* + `RULE_NAV_DECLARED_UNEXECUTED` (待加) |
+
+### 14.2 现 LIVE "做错" 检测 11 件 (P-12 已扫, 不重造)
+
+| # | Component | 维 | 状态 |
+|---|---|---|---|
+| 1 | `narrative_coherence_detector.py` | claim ≠ tool evidence | LIVE (Maya G4 加 P-X / 三问 binding) |
+| 2 | `observable_action_detector.py` | ritual claim 无 observable evidence | LIVE |
+| 3 | `claim_mismatch.py` | claim vs metadata mismatch (E1) | LIVE |
+| 4 | `causal_chain_analyzer.py` | causal chain effect ≠ intent | LIVE |
+| 5 | `counterfactual_engine.py` | 反事实 verify alternative outcome | LIVE |
+| 6 | `scripts/k9_silent_fire_audit.py` | atomic 后静默错误 audit | LIVE |
+| 7 | `scripts/unified_compliance_audit.py` | graded 5-tuple compliance | LIVE |
+| 8 | `scripts/amendment_coverage_audit.py` | coverage 漏检 | LIVE |
+| 9 | `enforcement_observer.py` | 持续 enforcement gap | LIVE |
+| 10 | `directive_evaluator.py` | directive evaluate | LIVE |
+| 11 | `metalearning.py` | meta-level pattern catch | LIVE |
+
+**11 件 "做错" 检测全已 LIVE**. 缺的不是新 enforce 是 **unified surface** — 11 sensor data 散在各 CIEU events, agent 不知 commission_error 全局 frequency / drift / per-actor 分布.
+
+### 14.3 真 architecture (老大正解)
+
+agent 行为完整 = (做对方向 ∧ 真做了 ∧ 完成完 ∧ 没做错) — **4 dim**, 任一缺都不算闭环.
+
+我之前 spec 漏 "没做错" dim. 现修. **闭环 = 6 cell 全 LIVE + dashboard 让 agent 看到 ξ field state + commission error heatmap 双视图**.
+
+### 14.4 Wave-3 真 delta (整合, 不重造) — 修订上调到 ~25 tu
+
+| # | 缺件 | owner | tu |
+|---|---|---|---|
+| 1 | `y_star_self_check.py` PreToolUse 集成 (Phase 1 pre-flight) — 在 `hook_pretool_agent_dispatch.py` 加 path | Maya | ~10 |
+| 2 | `omission_rules.py` 加 `RULE_NAV_DECLARED_UNEXECUTED` (Phase 3 omission 补) | Leo | ~5 |
+| 3 | **(新加, 老大 9 catch)** `scripts/governance_audit_unified.py` — 把 11 件 "做错" 检测 24h CIEU events 汇成单一 dashboard (commission_error_count / by_actor / by_axis / drift), 进 `generate_world_state.py` 第 9 source | Ryan | ~10 |
+
+**总 ~25 tu** Wave-3 闭环最后 wave. agent 一开局看到双视图 (ξ field state navigation + commission error heatmap), 4 dim 全 surface, 6 cell 全 LIVE.
+
+### 14.5 类比 (人话)
+
+agent 像在车上开:
+- ξ field 是导航 (该往哪走, Phase 1 自查)
+- forget_guard 是收费站 (不让做不该做的, Phase 2 commission deny)
+- omission engine 是仪表盘 (该做没做闪报, Phase 3 omission)
+- 11 "做错" 检测 = 行车记录仪 + 各种 sensor (post-execute audit, Phase 2/3 commission "做错")
+- **commission error heatmap dashboard** = 路况实况图 (这条路最近事故率, 你自然规避)
+
+之前 dashboard 缺位 = 你只看导航 + 收费站 + 仪表盘, 不知道哪段路最近事故密集. 加 dashboard 后, ξ navigation 自带 risk-aware (cognitive aid + risk avoidance 同源).
+
 ## 9. Sources / 启发
 
 - HiAgent (Bytedance) 子目标分拆模式 — 当前我们用的 hierarchical goal 结构源

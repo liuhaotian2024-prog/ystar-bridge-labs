@@ -2,18 +2,20 @@
 """
 Mission Control / WORLD_STATE Generator
 ========================================
-Auto-aggregate CEO's single wakeup context from 5 tool outputs.
+Auto-aggregate CEO's single wakeup context from multiple tool outputs.
 
 Data Sources:
 1. reports/priority_brief.md → company strategy (Y* + current phase)
 2. knowledge/{role}/active_task.json → each role's status
 3. .czl_subgoals.json → current campaign progress
 4. scripts/wire_integrity_check.py → system health
-5. .ystar_memory.db → CIEU 24h events + OVERDUE obligations
+5. .ystar_cieu.db → CIEU 24h events + OVERDUE obligations
 6. reports/daily/<today>_morning.md → external signals
 7. BOARD_PENDING.md → Board unanswered questions
+8. Y* Field State (ξ) → M-axis frequency from CIEU + 7d drift
+9-11. Ecosystem: Y*gov repo, gov-mcp, K9Audit, today's commits
 
-Output: memory/WORLD_STATE.md (single file, 7 sections)
+Output: memory/WORLD_STATE.md (single file, 12 sections)
 """
 import json
 import sqlite3
@@ -222,6 +224,142 @@ def extract_board_pending():
     return content
 
 
+def extract_y_star_field_state():
+    """8th source: Y* Field State (ξ) — Mission axis frequency + 7-day drift.
+
+    Classifies 24h CIEU events into M-axis buckets via keyword hierarchy (KH path)
+    from Y_STAR_FIELD_THEORY_SPEC.md Section 11:
+      M-1 Survivability:  handoff / boot / session / restore / persist
+      M-2a Commission:    forget_guard / deny / enforce / wire_broken
+      M-2b Omission:      omission / overdue / alarm / circuit_breaker
+      M-3  Value Prod:    customer / revenue / dogfood / demo / sale / pricing
+
+    Drift = today's axis share vs prior 7-day average axis share (↑/↓/→).
+    """
+    db_path = REPO_ROOT / ".ystar_cieu.db"
+    if not db_path.exists():
+        return {
+            "M-1": 0, "M-2a": 0, "M-2b": 0, "M-3": 0,
+            "total_24h": 0, "drift_24h": {}, "error": "cieu_db_missing"
+        }
+
+    # SQL for M-axis keyword classification across event_type + task_description
+    # Using LIKE patterns (case-insensitive in SQLite by default for ASCII)
+    axis_sql = """
+    SELECT
+      SUM(CASE WHEN event_type LIKE '%handoff%'
+               OR event_type LIKE '%HOOK_BOOT%'
+               OR event_type LIKE '%session%'
+               OR event_type LIKE '%boot%'
+               OR LOWER(task_description) LIKE '%restore%'
+               OR LOWER(task_description) LIKE '%persist%'
+               OR LOWER(task_description) LIKE '%handoff%'
+               OR LOWER(task_description) LIKE '%session%'
+           THEN 1 ELSE 0 END) as m1,
+      SUM(CASE WHEN event_type LIKE '%FORGET_GUARD%'
+               OR event_type LIKE '%deny%'
+               OR event_type LIKE '%enforce%'
+               OR event_type LIKE '%WIRE_BROKEN%'
+               OR LOWER(task_description) LIKE '%forget_guard%'
+               OR LOWER(task_description) LIKE '%deny%'
+               OR LOWER(task_description) LIKE '%enforce%'
+           THEN 1 ELSE 0 END) as m2a,
+      SUM(CASE WHEN event_type LIKE '%omission%'
+               OR event_type LIKE '%OVERDUE%'
+               OR event_type LIKE '%alarm%'
+               OR event_type LIKE '%circuit_breaker%'
+               OR LOWER(task_description) LIKE '%omission%'
+               OR LOWER(task_description) LIKE '%overdue%'
+               OR LOWER(task_description) LIKE '%alarm%'
+           THEN 1 ELSE 0 END) as m2b,
+      SUM(CASE WHEN event_type LIKE '%customer%'
+               OR event_type LIKE '%revenue%'
+               OR event_type LIKE '%dogfood%'
+               OR LOWER(task_description) LIKE '%customer%'
+               OR LOWER(task_description) LIKE '%revenue%'
+               OR LOWER(task_description) LIKE '%dogfood%'
+               OR LOWER(task_description) LIKE '%demo%'
+               OR LOWER(task_description) LIKE '%sale%'
+               OR LOWER(task_description) LIKE '%pricing%'
+           THEN 1 ELSE 0 END) as m3,
+      COUNT(*) as total
+    FROM cieu_events
+    WHERE created_at > ?
+    """
+
+    try:
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+
+        now_ts = datetime.now().timestamp()
+        day_ago = now_ts - 86400
+        week_ago = now_ts - 7 * 86400
+
+        # 24h counts
+        cursor.execute(axis_sql, (day_ago,))
+        row_24h = cursor.fetchone()
+        m1_24h = row_24h[0] or 0
+        m2a_24h = row_24h[1] or 0
+        m2b_24h = row_24h[2] or 0
+        m3_24h = row_24h[3] or 0
+        total_24h = row_24h[4] or 0
+
+        # 7-day counts (for drift baseline — compute daily average)
+        cursor.execute(axis_sql, (week_ago,))
+        row_7d = cursor.fetchone()
+        m1_7d = row_7d[0] or 0
+        m2a_7d = row_7d[1] or 0
+        m2b_7d = row_7d[2] or 0
+        m3_7d = row_7d[3] or 0
+        total_7d = row_7d[4] or 1  # avoid div/0
+
+        conn.close()
+
+        # Compute drift: compare 24h share vs 7-day average share
+        # share = axis_count / total_count for the period
+        def _drift_indicator(count_24h, total_24h_val, count_7d, total_7d_val):
+            """Return drift arrow: ↑ (>20% above baseline), ↓ (<20% below), → (stable)."""
+            if total_24h_val == 0 or total_7d_val == 0:
+                return "→"
+            share_24h = count_24h / total_24h_val
+            share_7d = count_7d / total_7d_val
+            if share_7d == 0:
+                return "↑" if share_24h > 0 else "→"
+            ratio = share_24h / share_7d
+            if ratio > 1.2:
+                return "↑"
+            elif ratio < 0.8:
+                return "↓"
+            return "→"
+
+        drift = {
+            "M-1": _drift_indicator(m1_24h, total_24h, m1_7d, total_7d),
+            "M-2a": _drift_indicator(m2a_24h, total_24h, m2a_7d, total_7d),
+            "M-2b": _drift_indicator(m2b_24h, total_24h, m2b_7d, total_7d),
+            "M-3": _drift_indicator(m3_24h, total_24h, m3_7d, total_7d),
+        }
+
+        # Compute 7d daily averages for context
+        avg_7d = {
+            "M-1": round(m1_7d / 7),
+            "M-2a": round(m2a_7d / 7),
+            "M-2b": round(m2b_7d / 7),
+            "M-3": round(m3_7d / 7),
+        }
+
+        return {
+            "M-1": m1_24h, "M-2a": m2a_24h, "M-2b": m2b_24h, "M-3": m3_24h,
+            "total_24h": total_24h,
+            "avg_7d": avg_7d,
+            "drift_24h": drift,
+        }
+    except Exception as e:
+        return {
+            "M-1": 0, "M-2a": 0, "M-2b": 0, "M-3": 0,
+            "total_24h": 0, "drift_24h": {}, "error": str(e)
+        }
+
+
 def _run_git(cmd, cwd):
     import subprocess
     try:
@@ -307,7 +445,48 @@ def generate_world_state():
     cieu = extract_cieu_24h()
     signals = extract_external_signals()
     pending = extract_board_pending()
-    
+    field = extract_y_star_field_state()
+
+    # Format ξ field state section
+    def _fmt_field_section(f):
+        if f.get("error"):
+            return f"**Error**: {f['error']}"
+        lines = []
+        lines.append(f"**Total CIEU events (24h)**: {f['total_24h']}")
+        lines.append("")
+        lines.append("| M-Axis | Description | 24h Count | 7d Avg/Day | Drift |")
+        lines.append("|--------|-------------|-----------|------------|-------|")
+        axis_labels = {
+            "M-1": "Survivability (session/boot/handoff/persist)",
+            "M-2a": "Commission prevention (forget_guard/deny/enforce)",
+            "M-2b": "Omission prevention (omission/overdue/alarm)",
+            "M-3": "Value production (customer/revenue/dogfood/demo)",
+        }
+        for axis in ["M-1", "M-2a", "M-2b", "M-3"]:
+            count = f.get(axis, 0)
+            avg = f.get("avg_7d", {}).get(axis, 0)
+            drift = f.get("drift_24h", {}).get(axis, "?")
+            label = axis_labels[axis]
+            lines.append(f"| **{axis}** | {label} | {count} | {avg} | {drift} |")
+
+        # Coverage ratio: what fraction of 24h events hit at least one axis
+        classified = f["M-1"] + f["M-2a"] + f["M-2b"] + f["M-3"]
+        coverage = round(classified / f["total_24h"] * 100, 1) if f["total_24h"] > 0 else 0
+        lines.append("")
+        lines.append(f"**Classified coverage**: {classified}/{f['total_24h']} ({coverage}%)")
+        lines.append(f"**Unclassified**: {f['total_24h'] - classified} events (routine ops / K9 routing)")
+        # Drift interpretation
+        drift_vals = f.get("drift_24h", {})
+        up_axes = [k for k, v in drift_vals.items() if v == "↑"]
+        down_axes = [k for k, v in drift_vals.items() if v == "↓"]
+        if up_axes:
+            lines.append(f"**Drift alert**: {', '.join(up_axes)} trending UP vs 7d baseline")
+        if down_axes:
+            lines.append(f"**Drift alert**: {', '.join(down_axes)} trending DOWN vs 7d baseline")
+        if not up_axes and not down_axes:
+            lines.append("**Drift**: all axes stable vs 7d baseline")
+        return "\n".join(lines)
+
     md_output = f"""# WORLD_STATE — Mission Control
 **Generated**: {timestamp}
 **Purpose**: Single file CEO reads on boot to restore full company context
@@ -325,7 +504,7 @@ def generate_world_state():
 """
     for role, status in roles.items():
         md_output += f"- **{role}**: {status}\n"
-    
+
     md_output += f"""
 ---
 
@@ -362,30 +541,37 @@ def generate_world_state():
 
 ---
 
-## 8. Ecosystem — Y*gov Product Repo
+## 8. Y* Field State (xi) — Mission axis frequency + drift
+{_fmt_field_section(field)}
+
+---
+
+## 9. Ecosystem — Y*gov Product Repo
 {extract_ystar_gov_state()}
 
 ---
 
-## 9. Ecosystem — gov-mcp (nested in Y*gov)
+## 10. Ecosystem — gov-mcp (nested in Y*gov)
 {extract_gov_mcp_state()}
 
 ---
 
-## 10. Ecosystem — K9Audit (read-only reference)
+## 11. Ecosystem — K9Audit (read-only reference)
 {extract_k9audit_state()}
 
 ---
 
-## 11. Today's Commits (24h) — both repos
+## 12. Today's Commits (24h) — both repos
 
 {extract_today_commits()}
 """
-    
+
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(md_output)
     print(f"✅ WORLD_STATE generated: {OUTPUT_PATH}")
-    print(f"   Sections: 7 | Roles: {len(roles)} | Campaign: {campaign['campaign']}")
+    print(f"   Sections: 12 | Roles: {len(roles)} | Campaign: {campaign['campaign']}")
+    # Print ξ field summary to stdout for livefire verification
+    print(f"   ξ Field: M-1={field.get('M-1',0)} M-2a={field.get('M-2a',0)} M-2b={field.get('M-2b',0)} M-3={field.get('M-3',0)} (total_24h={field.get('total_24h',0)})")
 
 
 if __name__ == "__main__":
