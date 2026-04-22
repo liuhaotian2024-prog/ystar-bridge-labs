@@ -46115,3 +46115,11 @@ RuntimeError: rule 'article_11_board_offline_30m' did not produce any obligation
 10:18:31 [P1-a] Read per-session marker (ppid_10664): 'ceo'
 10:18:31 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
 10:19:07 [BRAIN] Injected 3 wisdom nodes
+[hook_session_start] OmissionEngine registration failed: rule 'article_11_board_offline_30m' did not produce any obligation; check rule fields
+Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_session_start.py", line 73, in _register_article11_obligations
+    register_obligation_programmatic(
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/register_obligation.py", line 243, in register_obligation_programmatic
+    raise RuntimeError(
+RuntimeError: rule 'article_11_board_offline_30m' did not produce any obligation; check rule fields
+
