@@ -446,3 +446,41 @@ def test_dispatch_board_race_condition():
 **Yt+1**: 4-part spec shipped (CTO role v2 + dispatch board + hybrid model + event-driven ritual) + Ryan inline card CZL-68 + empirical time allocation pasted (Appendix A: today 50/40/5/0/5 → desired 40/0/25/15/10/10) + migration path 4 steps.
 
 **Rt+1**: `0` (spec complete, 4 parts present, 5 CTO responsibilities enumerated, dispatch board mechanism designed, hybrid decision tree specified, mentor rituals scheduled, Ryan card inline, receipt pasted with exact time % from today's activity)
+
+---
+
+## Appendix D — Wave-N+ Metadata Cross-Check Baseline (2026-04-22)
+
+**Added by**: eng-platform (V3 Wave-1.5 dispatch)
+**Governance ref**: `governance/sub_agent_boot_prompt_template.md` section "MANDATORY tool_uses self-count"
+
+### Problem
+
+Wave-1 V3 dispatches (4 engineers) produced systemic tool_uses under-claim:
+| Engineer | Claimed | Metadata | Ratio | E1 Triggered |
+|----------|---------|----------|-------|--------------|
+| Jordan   | ~45%    | actual   | 45%   | Yes          |
+| Leo      | ~33%    | actual   | 33%   | Yes          |
+| Maya     | ~54%    | actual   | 54%   | Yes          |
+| Ryan     | ~49%    | actual   | 49%   | Yes          |
+
+Mean claim-vs-metadata ratio: 45%. All 4/4 triggered `E1_TOOL_USES_CLAIM_MISMATCH`.
+
+### Root cause
+
+Prompt template lacked explicit self-count instruction. Engineers estimated rather than counted.
+
+### Fix
+
+`sub_agent_boot_prompt_template.md` now contains `## MANDATORY tool_uses self-count` section requiring:
+1. Exact integer total (no tildes, no approximation)
+2. Per-tool breakdown in parentheses: `(Bash N + Read M + Edit P + ...)`
+3. CEO metadata cross-check post-receipt
+
+### Wave-N+ requirement
+
+All future dispatch waves (Wave-2, Wave-3, etc.) MUST:
+1. Include the updated boot prompt template (with MANDATORY self-count section)
+2. CEO runs metadata cross-check baseline: compare receipt `tool_uses=N` claim vs actual tool_result count in conversation
+3. E1 drift threshold: >20% mismatch triggers CIEU `E1_TOOL_USES_CLAIM_MISMATCH` warn
+4. Trust score impact: honest count = +0.05; CEO-caught mismatch = -0.10 (per trust score protocol)

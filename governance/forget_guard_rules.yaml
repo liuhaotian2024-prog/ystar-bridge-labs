@@ -666,14 +666,6 @@ rules:
   severity: medium
   monitored_by: secretary
   authority: Board 2026-04-19 directive via consultant diagnosis
-whitelists:
-- role_mandate
-- inter_role_sop
-- event_workflow
-- escape_hatch
-- project_procedure
-- constitutional
-- rapid_matrix
 - id: subagent_no_commit_after_5_writes
   enabled: true
   description: Sub-agent accumulates ≥5 Write/Edit without commit — risks losing all work on truncation
@@ -1174,3 +1166,11 @@ whitelists:
   cieu_event: PHILOSOPHY_CLAIM_NO_EVIDENCE
   severity: high
   logic: AND
+whitelists:
+- role_mandate
+- inter_role_sop
+- event_workflow
+- escape_hatch
+- project_procedure
+- constitutional
+- rapid_matrix

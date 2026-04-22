@@ -92,6 +92,87 @@ def find_rule_by_id(rules: list, rule_id: str) -> tuple[int, dict | None]:
 
 
 # ────────────────────────────────────────────────────────────
+# M0 — Structural Integrity Gate (runs BEFORE mutations)
+# ────────────────────────────────────────────────────────────
+
+def m0_yaml_parser_integrity_check() -> bool:
+    """M0 structural integrity: verify grep rule count == yaml.safe_load rule count.
+
+    yaml.safe_load silently drops rules when YAML has duplicate keys or
+    structural issues that don't raise parse errors. This gate catches
+    the discrepancy BEFORE any mutation tests run.
+
+    Returns True if integrity passes, False if mismatch detected.
+    Emits CIEU YAML_INTEGRITY_VIOLATION on failure.
+    """
+    import subprocess
+
+    # Count via grep: lines matching "^- id:" in the YAML file
+    try:
+        result = subprocess.run(
+            ["grep", "-c", "^- id:", str(YAML_PATH)],
+            capture_output=True, text=True, timeout=10,
+        )
+        grep_count = int(result.stdout.strip())
+    except (subprocess.TimeoutExpired, ValueError) as e:
+        print(f"  [M0] CRITICAL: grep count failed: {e}", file=sys.stderr)
+        return False
+
+    # Count via yaml.safe_load
+    try:
+        with open(YAML_PATH) as f:
+            data = yaml.safe_load(f) or {}
+        parsed_count = len(data.get("rules", []))
+    except Exception as e:
+        print(f"  [M0] CRITICAL: yaml.safe_load failed: {e}", file=sys.stderr)
+        return False
+
+    print(f"  [M0] grep '- id:' count = {grep_count}")
+    print(f"  [M0] yaml.safe_load rules count = {parsed_count}")
+
+    if grep_count != parsed_count:
+        detail = (
+            f"YAML_INTEGRITY_VIOLATION: grep found {grep_count} rules but "
+            f"yaml.safe_load parsed only {parsed_count}. "
+            f"Delta={grep_count - parsed_count} rules silently dropped. "
+            f"Likely cause: duplicate YAML keys merging rule blocks."
+        )
+        print(f"  [M0] FAIL — {detail}")
+
+        # Emit CIEU event
+        event_id = str(uuid.uuid4())
+        now = time.time()
+        seq = int(now * 1_000_000)
+        session_id = os.environ.get("YSTAR_SESSION_ID", "mutation-harness")
+        try:
+            conn = sqlite3.connect(str(CIEU_DB), timeout=10)
+            conn.execute(
+                """INSERT INTO cieu_events
+                   (event_id, seq_global, created_at, session_id, agent_id,
+                    event_type, decision, passed, drift_details, task_description,
+                    params_json)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                (event_id, seq, now, session_id, "eng-platform",
+                 "YAML_INTEGRITY_VIOLATION",
+                 "deny", 0,
+                 detail,
+                 "M0 structural integrity check — grep vs yaml.safe_load rule count",
+                 json.dumps({"grep_count": grep_count, "parsed_count": parsed_count,
+                             "delta": grep_count - parsed_count})),
+            )
+            conn.commit()
+            conn.close()
+            print(f"  [M0] CIEU event emitted: {event_id}")
+        except Exception as e:
+            print(f"  [M0] WARN: CIEU emit failed: {e}", file=sys.stderr)
+
+        return False
+
+    print(f"  [M0] PASS — {grep_count} rules, grep == parsed")
+    return True
+
+
+# ────────────────────────────────────────────────────────────
 # Mutation Bank
 # ────────────────────────────────────────────────────────────
 
@@ -415,6 +496,19 @@ def main() -> int:
     if not YAML_PATH.exists():
         print(f"CRITICAL: YAML file not found: {YAML_PATH}", file=sys.stderr)
         return 2
+
+    # ── M0 Gate: structural integrity check ──
+    # Must pass BEFORE any mutation tests run.
+    # Catches yaml.safe_load silently dropping rules (e.g. duplicate keys).
+    print("\n--- M0: YAML Parser Integrity Gate ---")
+    m0_pass = m0_yaml_parser_integrity_check()
+    if not m0_pass:
+        print("\n  M0 FAILED — aborting mutation tests.")
+        print("  Fix the YAML structural issue first (likely duplicate keys).")
+        print(f"  Target: {YAML_PATH}")
+        return 1
+
+    print("  M0 PASSED — proceeding to mutation tests.\n")
 
     # Take pre-run hash
     pre_hash = file_hash(YAML_PATH)

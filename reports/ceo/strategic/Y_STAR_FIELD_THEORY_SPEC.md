@@ -382,6 +382,75 @@ formalize:
 
 **没有任何 LLM-judged 决策跨界**. 治理纯 symbolic, 运营纯 cognitive, 共享 schema 不共享判断.
 
+## 13. Architecture INTEGRATION — Ralph Loop wrap + 现有 recipe/redirect/rewrite reuse (Board 2026-04-22 第 7 catch)
+
+**Board catch**: "采用现有的成熟的短任务+验证 + 治理 deny 给正确路径 + rewrite — 不要重新造轮子或忘记已实现的".
+
+P-12 扫: forget_guard `recipe:` 37/37 rules 全 LIVE; `omission_engine` 已有 `redirect_id` + `ttl_actions`; `exp3_b3_rewrite_fire.py` + `cieu_decision_normalizer.py` LIVE. **3 件老大 mention 全已造**. 我之前 spec 完全没写整合, 等于重复 propose.
+
+外网权威 mapping:
+- **Ralph Loop** (Alibaba Cloud 2026): `_ralph_loop` wraps `_react_loop` with outer Verifier — task fail → structured feedback inject memory → ReAct re-run → loop. **工业 mature**.
+- **AgentForge** (arxiv 2604.13120): Tester-Debugger 闭环 + Docker sandbox verified execution.
+- **Constitutional AI** (Anthropic): supervised critique + revise loop.
+- **AccuKnox 2026**: "deterministic enforcement + policy-as-code + runtime prevention NOT detection-only".
+
+### 13.1 整合 architecture (Φ_t verify 失败时的完整 recipe-redirect-rewrite 闭环)
+
+```
+[agent] claim Y*_t with m_functor
+    ↓
+[治理端 Φ_t verify (Section 11 三 deterministic path: KH ∪ IH ∪ AG)]
+    ↓
+PASS → record CIEU + m_functor 持久化 → agent continue
+FAIL ↓
+    forget_guard rule fires deny + emit `recipe:` field (现 LIVE 37/37 rule)
+    + router_registry/intervention_engine emit redirect_id (现 LIVE)
+    + recipe 含具体 actionable path (例: "compliant path 1: break-glass mode; path 2: delegate Secretary")
+    ↓
+[运营端 Ralph Loop outer wrap]
+    rewrite agent Y*_t per recipe guidance
+    (复用 exp3_b3_rewrite_fire.py + cieu_decision_normalizer.py 现 LIVE)
+    ↓
+[Φ_t re-verify (Ralph Loop iteration)]
+    ↓
+PASS → record + continue
+FAIL after max_iter → break_glass (ceo_mode_manager.force_break_glass 现 LIVE T1 trigger)
+                     OR escalate Board (omission_engine RULE_ESCALATION 现 LIVE)
+```
+
+### 13.2 工程实现 (W12 Wave-2 修订 — 大幅 down)
+
+| Layer | 内容 | 状态 | 真 delta |
+|---|---|---|---|
+| L1 schema | ALTER cieu_events + m_functor 列 | 待造 | ~10 tu |
+| L2 emit 入口 | _cieu_helpers.emit_cieu kwargs path | **已 LIVE** (今 18:16 实证) | 0 tu |
+| L3 enforce rule | forget_guard `y_star_no_m_functor` (rule-based) | 待加 | ~5 tu |
+| L4 validator | y_star_field_validator.py (KH ∪ IH ∪ AG 三 deterministic path) | 待造 | ~15 tu |
+| L5 visualizer | generate_world_state ξ field 升级 | 待升级 (现 7-source) | ~10 tu |
+| **L6 Ralph Loop wrap** (新, 来自外网) | wrapper script 把 Φ_t verify + recipe + rewrite + re-verify 串成 closed loop | **大半 reuse** (recipe/redirect/rewrite 全 LIVE) | ~10 tu (仅 wrapper code) |
+| L7 Petri red team | Leo Wave-1 daemon 加 m_functor adversarial set | 待升级 | ~5 tu |
+| L8 metacognition layer | counterfactual probe + sensitivity check | 待造 | ~10 tu |
+| L9 shadow audit log | m_functor 同时写 cieu + immutable audit log | 待造 | ~5 tu |
+| L10 内容质量 open-source 集成 | 运营端 wrapper Lakera/NeMo/Garak | 待造 (advisory) | ~10 tu |
+
+**修订总 delta**: ~80 tu (vs 原 V2 285 → V3 95 → 现 80). reuse 现有 recipe/redirect/rewrite 省 ~15 tu.
+
+### 13.3 关键 insight — Ralph Loop 是把 Y\* "短任务" 化的工业 pattern
+
+老大说"任何大小的 Y\* 进 implementation 都走短任务+验证". Ralph Loop 是 LITERAL 实现:
+- 大 Y\* 拆 atomic Y\*_t (HiAgent 已做)
+- 每 atomic Y\*_t 进 Φ_t verify (Y\*gov 治理端 deterministic)
+- fail → recipe (现 LIVE) → rewrite (现 LIVE) → re-verify (Ralph 外环)
+- max_iter 退 break_glass / Board escalate (现 LIVE)
+
+这套是**纯 mature 整合**, 没一个 component 是重造. 把 4 件 mature 工业组件 + Y\*gov 现 4 件 LIVE 缝起来 = Y\*gov 真正 productize 的 governance frontier.
+
+### 13.4 老大坚持治理纯 symbolic 的工程意义 (再确认)
+
+我之前 propose L6 LLM judge 错. 现修订: **Φ_t verify 三 path (KH/IH/AG) 全 deterministic regex + table lookup, 0 LLM**. recipe field 是预写 actionable text (人维护), 不 LLM-generated. router_registry redirect_id 是预定 mapping, 不 LLM. rewrite 是 agent (运营端) 自己根据 recipe 重写 — agent 写是 LLM, 但治理端**不参与 rewrite content**, 只 verify rewrite 后 Φ_t 是否 PASS.
+
+治理 ⊥ 运营 separation 严格保持. AccuKnox 2026 "deterministic enforcement only" 工业共识.
+
 ## 9. Sources / 启发
 
 - HiAgent (Bytedance) 子目标分拆模式 — 当前我们用的 hierarchical goal 结构源

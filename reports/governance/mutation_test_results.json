@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-04-22T18:44:52.709782+00:00",
+  "timestamp": "2026-04-22T19:21:21.550528+00:00",
   "yaml_file": "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/forget_guard_rules.yaml",
-  "pre_hash": "022a2a1fad4e015ba98313d34684cb62d53bd1422cba56636d2083c5f05ad88d",
-  "post_hash": "022a2a1fad4e015ba98313d34684cb62d53bd1422cba56636d2083c5f05ad88d",
+  "pre_hash": "e8b1417b453948a3e9c5fc46b1c90c87b508a24b63735d58e614f477e6370376",
+  "post_hash": "e8b1417b453948a3e9c5fc46b1c90c87b508a24b63735d58e614f477e6370376",
   "hash_match": true,
   "mutations": [
     {
@@ -38,7 +38,7 @@
       "description": "Remove entire 'ceo_engineering_boundary' rule entry",
       "tests": "Rule count integrity",
       "status": "CAUGHT",
-      "detail": "removed ceo_engineering_boundary rule entirely (was at index 13) | governance checks caught: rule_count_changed: 17 -> 16; critical_rules_missing: {'ceo_engineering_boundary'}; keyword_count_changed: defer_language had 9 keywords, now 5; keyword_count_changed: defer_language_in_commit_msg had 10 keywords, now 1; keyword_count_changed: defer_language_in_echo had 10 keywords, now 1"
+      "detail": "removed ceo_engineering_boundary rule entirely (was at index 13) | governance checks caught: rule_count_changed: 37 -> 36; critical_rules_missing: {'ceo_engineering_boundary'}; keyword_count_changed: defer_language had 9 keywords, now 5; keyword_count_changed: defer_language_in_commit_msg had 10 keywords, now 1; keyword_count_changed: defer_language_in_echo had 10 keywords, now 1"
     }
   ],
   "caught": 5,
@@ -46,5 +46,5 @@
   "errors": 0,
   "total": 5,
   "survival_rate": 0.0,
-  "cieu_event_id": "c0c40a83-d8fc-4761-9618-23045d9923ff"
+  "cieu_event_id": "409462da-bb35-40e8-83bc-3dcf5be8f4bd"
 }
