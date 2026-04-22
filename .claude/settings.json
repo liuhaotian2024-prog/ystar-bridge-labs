@@ -103,6 +103,16 @@
             "async": true
           }
         ]
+      },
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3.11 /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/behavior_gov_engine.py",
+            "timeout": 3000
+          }
+        ]
       }
     ],
     "PostToolUse": [

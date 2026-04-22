@@ -1,0 +1,87 @@
+# Behavior Governance Rules — methodology-driven, config over code
+#
+# Each rule declares its type (handler), trigger condition, and action.
+# Adding a new governance requirement = add a yaml entry here.
+# No Python change unless a genuinely new check *type* is needed (rare).
+#
+# Board 2026-04-22 directive: behavior governance not speech suppression.
+# Every handler inspects state/events/deadlines only, never user/agent text.
+
+version: 1
+
+defaults:
+  enforced_agents: [ceo, cto, ethan, leo, maya, ryan, jordan, sofia, zara, marco, samantha]
+  tool_allowlist: [Read, Grep, Glob]
+  break_glass_override: true
+
+rules:
+
+  - rule_id: omission_overdue_block
+    description: >
+      Block tool call if agent has open obligations past hard_overdue deadline.
+      Core anti-laziness enforcement — Board 2026-04-22 directive.
+    type: DeadlineCheck
+    severity: deny
+    enabled: true
+    query:
+      db: .ystar_cieu_omission.db
+      table: obligations
+      actor_col: actor_id
+      deadline_col: due_at
+      grace_col: hard_overdue_secs
+      status_col: status
+      status_open_value: pending
+    message_template: >
+      OmissionEngine DENY: Agent {agent} has {count} overdue open obligation(s).
+      Oldest overdue by {oldest_min} min. Obligation ids: {ids}.
+      Close via: python3.11 scripts/omission_status.py --agent {agent}
+      Or emit close event (acknowledgement/decline/blocker_report).
+
+  - rule_id: goal_level_directive_untouched
+    description: >
+      Board directive has no progress events in time window — block stop.
+      Prevents wave-level declarations of done when goal-level incomplete.
+    type: FrequencyCheck
+    severity: deny
+    enabled: false  # pending CZL-DIRECTIVE-PROGRESS-TAXONOMY
+    query:
+      event_source: .ystar_cieu.db
+      event_table: cieu_events
+      required_event_types: [DIRECTIVE_PROGRESS, GOAL_ARTIFACT_CREATED]
+      since_event_type: DIRECTIVE_POSTED
+      min_count_required: 1
+      window_minutes: 30
+    message_template: >
+      Goal-Level DENY: Board directive has 0 progress events in {window_minutes} min.
+      Emit DIRECTIVE_PROGRESS event or close directive explicitly.
+
+  - rule_id: stop_after_short_session_moral_licensing
+    description: >
+      Block Stop if current session has only {value} distinct tool types.
+      Warning of "做了一点就想停" pattern.
+    type: StatePresenceCheck
+    severity: warn
+    enabled: false
+    query:
+      state_file: scripts/.session_tool_history.json
+      field: distinct_tool_types
+      min_value: 3
+    message_template: >
+      Warn: session has only {value} distinct tool types.
+
+  - rule_id: skill_retrieval_not_invoked_before_new_build
+    description: >
+      Before Write new .py: must have ≥1 Grep/Glob in last 10 tools.
+      Enforces P-12 "先查后造".
+    type: ToolCountCheck
+    severity: warn
+    enabled: false
+    query:
+      state_file: scripts/.session_tool_history.json
+      recent_window: 10
+      required_tools: [Grep, Glob]
+      required_min_count: 1
+    only_on:
+      tool_name: Write
+    message_template: >
+      Warn P-12: creating new .py but no Grep/Glob in last 10 calls.
