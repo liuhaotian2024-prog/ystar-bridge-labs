@@ -344,6 +344,74 @@ status: spec → CTO dispatch pending
 
 老大这一 catch 让 V3 砍掉 56% 工作量. **真补 4 gap 不是 285 tu 大手术, 是 125 tu wire-up + binding**. 我们 2026-04-12 (auto_codify) + 2026-04 (AMENDMENT-015 Layer 3.1/3.4) + Maya EXP-6 (wisdom_extractor v2) 早已造了主体, 只缺最后几英寸 wire.
 
+## Section 11 — CEO Binding Semantics (Maya G4 task input — CEO 必须自己写, 工程师不知 7 哲学语义)
+
+Maya 的 task 是把 `narrative_coherence_detector` + `observable_action_detector` 加 7 哲学 (P-1~P-7) + M 三角三问 specific binding. **detector 工程是 Maya 写, 但抓什么 claim / 要什么 evidence 是 CEO 必须 spec** — 工程师不知 P-3 反事实是什么, 也不知 M 三角三问长什么样.
+
+**Detector enforcement table** (pre-tool hook 用):
+
+| 触发 claim pattern (regex) | 要求 evidence pattern | 缺 evidence → action |
+|---|---|---|
+| `(?i)(我过了|过了\|done\|applied) P-1` 对齐 M Triangle | reply 文本中显式列出 "M-1: ..." + "M-2: ..." + "M-3: ..." 三行 (推哪面/削弱哪面/平衡吗) | warn → CIEU `philosophy_claim_no_evidence` |
+| `(?i)(过了\|done) P-2 三问` | reply 含 "Y\\*: ... Xt: ... U: ... Yt+1: ... Rt+1: ..." 5-tuple | deny → reply 重写 |
+| `(?i)(过了\|done) P-3 反事实` | reply 含 "如果不做X会..." OR "if not X then..." OR "反事实:" | warn → CIEU log |
+| `(?i)(过了\|done) P-4 真实测试` | 同 reply 内 ≥1 Bash tool 真跑 (非 echo, 非 ls) | deny → reply 重写 |
+| `(?i)(过了\|done) P-5 IMPLICIT PASS\\/FAIL` | reply 含定量 PASS / FAIL count | warn |
+| `(?i)(过了\|done) P-6 独立复现` | reply 含 "cross verified by..." OR ≥2 独立 tool 调用同验 | warn |
+| `(?i)(过了\|done) P-7 目标传导` | reply 含 "M → 中间 → U → action → result" 四箭头链 | warn |
+| `(?i)(过了\|done) P-8 定量诚实` | reply 任何 % / count 数字必带 source path / SQL / file:line | warn |
+| `(?i)(过了\|done) P-9 plan ≠ done` | reply 含 [LX] tag (L0-L5) 且 status 非 "done"/"shipped" 凭空写 | warn |
+| `(?i)(过了\|done) P-10 U-workflow header` | reply 任何 ruling/spec 含 Y\\*/Xt/U/Yt+1/Rt+1 header | deny |
+| `(?i)(过了\|done) P-11 OODA` | reply 含 6 步 (观察→搜索→分析→解决→验证→落实) 或同义 explicit list | warn |
+| `(?i)(过了\|done) P-12 先查后造` | reply 同一回合内 ≥1 Glob/Grep/Read tool 真跑 | deny |
+| `(?i)(过了\|done) P-13 8-cascade` | reply 含 8 子 entity (charter/registry/boot/dispatch/hook/CIEU/FG-scope/pre-auth) 每条 explicit | warn |
+| `(?i)(过了\|done) P-14 诚实 > 掩饰` | reply 含 "诚实承认" / "honest" / "诚实点" / "我承认" 显式 label | info |
+| `(?i)(过了\|done) M Triangle 三问` | reply 必含三行: "在推进...面" + "可能削弱...面" + "三角平衡:..." | deny → reply 重写 |
+| `(?i)(过了\|done) Iron Rule 0` | 同 reply 0 个 "请选择 1)" / "Option A:" / "三选一" pattern | already enforced via `choice_question_to_board` rule (Maya 不需重做) |
+
+**Decision logic**:
+- `deny` → tool call 立即 block, agent 必须重写 reply 含 evidence 才放行 (P-2 P-10 P-12 是核心闭环, 缺即 deny; M 三角三问 deny 是 M-tag check 强制)
+- `warn` → tool call 放行但 CIEU emit `philosophy_claim_no_evidence_warn`, 累计 ≥3 同 P-X warn → 升 deny
+- `info` → CIEU 仅 log, 不阻拦 (P-14 P-5 P-8)
+
+**Sample yaml entry (Maya 直接 adapt 进 forget_guard_rules.yaml)**:
+
+```yaml
+- id: ceo_p3_counterfactual_claim_no_evidence
+  enabled: true
+  description: "CEO claim 'P-3 反事实' but no counterfactual reasoning in reply"
+  trigger:
+    tool: [Edit, Write, Bash]
+    conditions:
+      - type: content_contains
+        keywords: ["过了 P-3", "P-3 反事实", "done P-3"]
+      - type: content_missing
+        pattern: "如果不做.*会|if not.*then|反事实:"
+  action: warn
+  cieu_event: PHILOSOPHY_CLAIM_NO_EVIDENCE
+  recipe: "CEO 你声称过了 P-3 反事实 但 reply 无反事实推导. 补 '如果不做X会Y' 显式段, 或撤回该 claim."
+  severity: medium
+  logic: AND
+```
+
+(Maya 用此模板生成 14 条 P-1~P-14 + 1 条 M 三角 yaml, 共 15 条新 entry.)
+
+**M 三角三问 evidence requirement (强制 deny pattern)**:
+
+任何 ruling / spec / AMENDMENT / 派单 / new entity propose 必含:
+
+```markdown
+## M Triangle 三问 (强制)
+- 推进哪几面: M-? — ...
+- 削弱哪一面: M-? — ... (写 "无削弱" 必给反事实证明)
+- 三角平衡: 平衡 / 不平衡 (不平衡必撤回)
+```
+
+缺此段 → deny pattern → 必撤回重写.
+
+**Self-enforce 第一波 (CEO 自己 first)**:
+本 spec 写完后 Maya 立即把以上 15 条 yaml 进 `governance/forget_guard_rules.yaml` + 进 ForgetGuard runtime + 注 narrative_coherence_detector + observable_action_detector custom binding. **第一个被治理的 actor**: `actor_id=ceo` (我), 不是 sub-agent. Sub-agent enforce 在第二波.
+
 ### 9.7 Sources
 
 - [AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents (ICSE'26)](https://cposkitt.github.io/files/publications/agentspec_llm_enforcement_icse26.pdf)
