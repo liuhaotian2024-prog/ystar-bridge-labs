@@ -1699,6 +1699,19 @@
       "claimed_at": null,
       "completed_at": null,
       "completion_receipt": null
+    },
+    {
+      "atomic_id": "CZL-CEO-RULES-REGISTRY-CLOSE-GAP",
+      "scope": "reports/ceo/governance/CEO_RULES_REGISTRY_AUDIT.md,governance/forget_guard_rules.yaml,scripts/behavior_gov_rules.yaml,Y-star-gov/ystar/governance/omission_rules.py,scripts/board_shell_full_registry_unification.py,governance/soft_advisory_rules.yaml",
+      "description": "Read reports/ceo/governance/CEO_RULES_REGISTRY_AUDIT.md (CEO drafted, L1 SPEC). M-2 root closure: 21 memory feedback rules currently advisory-only, 21 GAP\u5206\u7c7b 6 commission-able + 3 omission-able + 12 soft + 4 partial-upgrade + 2 self-check\u6269\u5c55 = 15 new/extended yaml entries. Ethan: split work to Maya (governance ~80 tu) + Leo (kernel ~35 tu) + Ryan (platform ~35 tu) + Jordan (domains ~15 tu) per spec Section 5. Each yaml entry MUST: (1) yaml schema written (2) ForgetGuard/omission_rules registration (3) livefire deliberate-violation \u2192 CIEU delta 0\u21921 verified (4) board_shell_full_registry_unification.py covers it. STRICT NO git commit/push/add \u2014 receipts only. Return 5-tuple receipt with engineer assignments + per-engineer ETA in tool_uses + livefire verification command. RT+1=0 only when full_registry_unification ALL PASS (14/15 deny + 1 info).",
+      "urgency": "P0",
+      "estimated_tool_uses": 165,
+      "status": "open",
+      "posted_at": "2026-04-22T15:26:09.613196+00:00",
+      "claimed_by": null,
+      "claimed_at": null,
+      "completed_at": null,
+      "completion_receipt": null
     }
   ]
 }
