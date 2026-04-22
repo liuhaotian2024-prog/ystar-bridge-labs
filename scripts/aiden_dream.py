@@ -64,14 +64,16 @@ def _emit_cieu(event_type: str, data: dict, cieu_db: str = None):
         now_iso = datetime.now().isoformat()
 
         if "created_at" in cols and "event_id" in cols:
-            # Production schema
+            # Production schema — seq_global is NOT NULL (2026-04-21 fix).
+            # Use epoch microseconds for monotonic ordering.
             cursor.execute("""
                 INSERT INTO cieu_events (
-                    event_id, created_at, event_type, agent_id,
+                    event_id, seq_global, created_at, event_type, agent_id,
                     decision, result_json, params_json, evidence_grade
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 str(uuid.uuid4()),
+                int(time.time() * 1_000_000),
                 time.time(),
                 event_type,
                 "eng-governance",

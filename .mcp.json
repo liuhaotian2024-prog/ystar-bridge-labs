@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "gov-mcp": {
+      "command": "/opt/homebrew/bin/python3.11",
+      "args": ["-m", "gov_mcp.server"],
+      "env": {
+        "YSTAR_CONTRACTS_DIR": "/Users/haotianliu/.openclaw/workspace/ystar-company/governance",
+        "YSTAR_CIEU_DB": "/Users/haotianliu/.openclaw/workspace/ystar-company/.ystar_cieu.db",
+        "PYTHONPATH": "/Users/haotianliu/.openclaw/workspace/gov-mcp"
+      }
+    }
+  }
+}

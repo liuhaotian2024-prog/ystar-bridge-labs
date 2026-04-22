@@ -7,6 +7,7 @@
       "Edit(*)"
     ]
   },
+  "enabledMcpjsonServers": ["gov-mcp"],
   "hooks": {
     "SessionStart": [
       {
@@ -28,6 +29,26 @@
             "type": "command",
             "command": "python3 /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_user_prompt_tracker.py",
             "timeout": 3000
+          }
+        ]
+      },
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_ceo_pre_output_brain_query.py",
+            "timeout": 500
+          }
+        ]
+      },
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3.11 /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_who_i_am_staleness.py",
+            "timeout": 2000
           }
         ]
       }
@@ -93,6 +114,17 @@
             "timeout": 3000
           }
         ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/brain_writeback_queue.py enqueue",
+            "timeout": 2000,
+            "async": true
+          }
+        ]
       }
     ],
     "Stop": [
@@ -101,8 +133,29 @@
         "hooks": [
           {
             "type": "command",
+            "command": "python3 /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/brain_writeback_queue.py drain",
+            "timeout": 5000
+          }
+        ]
+      },
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
             "command": "python3 /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_stop_reply_scan.py",
             "timeout": 3000
+          }
+        ]
+      },
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3.11 /Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_stop_czl_auto_publish.py",
+            "timeout": 3000,
+            "async": true
           }
         ]
       }

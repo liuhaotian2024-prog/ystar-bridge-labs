@@ -115,8 +115,69 @@ def _write_board(data):
         _release_lock(lock_fd)
 
 
+def _czl_reject_with_guide(violated_rule: str,
+                           violated_detail: str,
+                           atomic_id: str = "") -> str:
+    """Format REDIRECT-style reject using existing Y*gov schema
+    (boundary_enforcer.py `wrong_action` + `correct_steps[]` + `skill_ref`
+    + hook.py `[Y*] REDIRECT: ...` + `FIX_COMMAND: ...`).
+
+    P-12 先查后造: aligns key names with existing boundary_enforcer +
+    hook.py REDIRECT format, does NOT invent new schema. Board 2026-04-20
+    "governance = 门卫 + 导游" thesis was ALREADY implemented at runtime
+    layer (hook.py line 1260-1358); this helper brings dispatch_board CLI
+    layer into alignment.
+    """
+    example_cmd = (
+        f"python3 scripts/dispatch_board.py post \\\n"
+        f"    --atomic_id {atomic_id or 'CZL-EXAMPLE'} \\\n"
+        f"    --scope scripts/hook_wrapper.py,tests/ \\\n"
+        f"    --urgency P0 --estimated_tool_uses 8 \\\n"
+        f"    --description 'Fix hook_wrapper.py line X bug + add pytest + "
+        f"verify zero regression on existing 17 forget_guard rules'"
+    )
+    return (
+        f"\n[Y*] REDIRECT: {violated_rule} — {violated_detail}\n"
+        f"VIOLATED_M_TAG: M-2a\n"
+        f"WRONG_ACTION: dispatch_board.post(description={violated_detail!r})\n"
+        f"CORRECT_STEPS:\n"
+        f"  1. y_star (goal): define verifiable end state (>=20 chars)\n"
+        f"  2. x_t (pre-state): describe current observable state\n"
+        f"  3. u (actions): list concrete tool calls\n"
+        f"  4. y_t_plus_1 (post): predicted state after delivery\n"
+        f"  5. rt_value (target): 0.0 = closure\n"
+        f"FIX_COMMAND: re-run dispatch_board.post with concrete --description\n"
+        f"FIX_EXAMPLE:\n{example_cmd}\n"
+        f"SKILL_REF: governance/czl_unified_communication_protocol_v1.md\n"
+    )
+
+
 def post_task(args):
-    """Post a new T1 task to dispatch board."""
+    """Post a new T1 task to dispatch board.
+
+    2026-04-21 Milestone 9b: every post ALSO publishes a CZL envelope to
+    .czl_bus.jsonl so forget_guard + omission subscribers see it.
+    Enforcement: description field must contain a verifiable goal statement
+    (proxy for y_star) OR caller must provide --y-star / --goal. Empty or
+    generic description rejected (prevents content-less whiteboard posts).
+    """
+    # ── CZL Enforcement Gate (门卫 + 导游) ─────────────────────────────
+    # Board 2026-04-21 铁律: deny 时必给 fix_command + template + example.
+    # Violating "governance = 门卫 + 导游" thesis if we only raise ERROR.
+    desc = (args.description or "").strip()
+    y_star = getattr(args, "y_star", None) or desc
+    GENERIC_FILLERS = {"todo", "tbd", "fix", "do it", "see above", ""}
+    if len(y_star) < 20 or y_star.lower() in GENERIC_FILLERS:
+        reason = ("too short" if len(y_star) < 20
+                  else "generic filler (TBD/TODO/etc)")
+        print(_czl_reject_with_guide(
+            violated_rule="czl_minimum_goal_content",
+            violated_detail=(f"description/y_star {reason}, got "
+                             f"{len(y_star)} chars: {y_star!r}"),
+            atomic_id=args.atomic_id,
+        ), file=sys.stderr)
+        return 2
+
     lock_fd = _acquire_lock()
     try:
         board = _read_board_locked()
@@ -127,6 +188,7 @@ def post_task(args):
             print(f"ERROR: Task {args.atomic_id} already exists", file=sys.stderr)
             return 1
 
+        posted_at = datetime.now(timezone.utc).isoformat()
         task = {
             "atomic_id": args.atomic_id,
             "scope": args.scope,
@@ -134,7 +196,7 @@ def post_task(args):
             "urgency": args.urgency,
             "estimated_tool_uses": args.estimated_tool_uses,
             "status": "open",
-            "posted_at": datetime.now(timezone.utc).isoformat(),
+            "posted_at": posted_at,
             "claimed_by": None,
             "claimed_at": None,
             "completed_at": None,
@@ -145,6 +207,32 @@ def post_task(args):
         _write_board_locked(board, prev_task_count=prev_count)
     finally:
         _release_lock(lock_fd)
+
+    # ── CZL Bus Publish ───────────────────────────────────────────────
+    try:
+        import sys as _sys
+        _sys.path.insert(0, str(Path(__file__).parent))
+        from czl_bus import CZLMessageEnvelope, publish as czl_publish
+        import time as _time
+        urgency_to_deadline_sec = {"P0": 7200, "P1": 86400, "P2": 259200, "P3": 604800}
+        deadline_sec = urgency_to_deadline_sec.get(args.urgency, 259200)
+        env = CZLMessageEnvelope(
+            y_star=y_star,
+            x_t=f"posted at {posted_at}, scope={args.scope}",
+            u=[args.description],  # actions description (narrative; structured later)
+            y_t_plus_1=f"task {args.atomic_id} closed with Rt+1=0 receipt",
+            rt_value=1.0,  # open dispatch (not yet closed)
+            task_id=args.atomic_id,
+            sender="ceo",
+            recipient="whiteboard",
+            message_type="whiteboard_post",
+            deadline=_time.time() + deadline_sec,
+            urgency=args.urgency,
+        )
+        czl_publish(env)
+    except Exception as _czl_err:
+        # Non-fatal: bus publish failure must not block task post, but emit warn
+        print(f"[warn] czl_bus publish failed: {_czl_err}", file=sys.stderr)
 
     emit_cieu(
         "CEO_DISPATCH_BOARD_POST",

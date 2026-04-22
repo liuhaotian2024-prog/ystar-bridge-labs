@@ -1,6 +1,5 @@
 {
   "permissions": {
-    "defaultMode": "bypassPermissions",
     "allow": [
       "Bash(*)",
       "Read(*)",
@@ -11,7 +10,16 @@
       "Agent(*)",
       "Glob(*)",
       "Grep(*)",
-      "Skill(*)"
-    ]
+      "Skill(*)",
+      "Bash(cp .claude/settings.json.bak .claude/settings.json)",
+      "Bash(python3 scripts/dispatch_board.py status)",
+      "Bash(python3 scripts/dispatch_board.py complete --atomic_id CZL-ARCH-1 --receipt_file /Users/haotianliu/.openclaw/workspace/ystar-company/reports/receipts/CZL-ARCH-1.md)",
+      "Read(//Users/haotianliu/.openclaw/workspace/Y-star-gov/**)",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('ystar/adapters/hook.py'\\).read\\(\\)\\); print\\('SYNTAX OK'\\)\")",
+      "Bash(python3 -m pytest tests/adapters/test_identity_arch1.py tests/adapters/test_identity_detector_p1b.py tests/adapters/test_redirect_decision.py -q)",
+      "Bash(rm -f /Users/haotianliu/.openclaw/workspace/ystar-company/.git/index.lock)",
+      "Bash(git commit *)"
+    ],
+    "defaultMode": "bypassPermissions"
   }
 }
