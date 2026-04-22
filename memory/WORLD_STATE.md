@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-22 16:00:00
+**Generated**: 2026-04-22 16:46:06
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,7 +36,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/12 valid (0 errors)
-**CIEU 24h Events**: 73237
+**CIEU 24h Events**: 77622
 **Overdue Obligations**: 0
 
 ---
@@ -84,44 +84,98 @@ ceo          | 3/3          | 24           | 37       | 2026-04-20
 ---
 
 ## 8. Y* Field State (xi) — Mission axis frequency + drift
-**Total CIEU events (24h)**: 73237
+**Total CIEU events (24h)**: 77624
 
 | M-Axis | Description | 24h Count | 7d Avg/Day | Drift |
 |--------|-------------|-----------|------------|-------|
-| **M-1** | Survivability (session/boot/handoff/persist) | 10013 | 14372 | → |
-| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 527 | 2050 | ↓ |
-| **M-2b** | Omission prevention (omission/overdue/alarm) | 5428 | 6789 | → |
-| **M-3** | Value production (customer/revenue/dogfood/demo) | 0 | 0 | ↓ |
+| **M-1** | Survivability (session/boot/handoff/persist) | 11155 | 14500 | → |
+| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 546 | 2043 | ↓ |
+| **M-2b** | Omission prevention (omission/overdue/alarm) | 6112 | 6864 | → |
+| **M-3** | Value production (customer/revenue/dogfood/demo) | 2 | 0 | ↑ |
 
-**Classified coverage**: 15968/73237 (21.8%)
-**Unclassified**: 57269 events (routine ops / K9 routing)
-**Drift alert**: M-2a, M-3 trending DOWN vs 7d baseline
+**Classified coverage**: 17815/77624 (23.0%)
+**Unclassified**: 59809 events (routine ops / K9 routing)
+**Drift alert**: M-3 trending UP vs 7d baseline
+**Drift alert**: M-2a trending DOWN vs 7d baseline
 
 ---
 
-## 9. Ecosystem — Y*gov Product Repo
-**HEAD**: `7f6fd6b [auto] WIP checkpoint 2026-04-22 15:58 -- 1 files changed`
-**24h commits**: 8
-**ahead origin**: 3
+## 9. Commission Error Heatmap — 11-component unified dashboard
+**Total commission errors (24h)**: 5167
+
+**By M-Axis**:
+
+| Axis | Description | 24h Count |
+|------|-------------|-----------|
+| **M-1** | Survivability (schema/wire/config drift) | 806 |
+| **M-2a** | Commission prevention (core 11 detectors) | 3890 |
+| **M-3** | Value quality (maturity/off-target) | 471 |
+
+**By Detector (11 components + hook catches)**:
+
+| Detector | 24h Count | Drift vs 7d |
+|----------|-----------|-------------|
+| k9_silent_fire_audit | 3449 | = (avg 3913.0/d) |
+| amendment_coverage_audit | 765 | v (avg 2629.0/d) |
+| hook_commission_catch | 704 | v (avg 1353.6/d) |
+| metalearning | 99 | v (avg 249.9/d) |
+| observable_action_detector | 71 | = (avg 83.9/d) |
+| directive_evaluator | 40 | ^ (avg 16.7/d) |
+| unified_compliance_audit | 24 | = (avg 27.3/d) |
+| claim_mismatch | 9 | ^ (avg 2.4/d) |
+| enforcement_observer | 5 | ^ (avg 4.1/d) |
+| counterfactual_engine | 1 | ^ (avg 0.1/d) |
+
+**By Actor (top 10)**:
+
+| Actor | 24h Commission Errors |
+|-------|----------------------|
+| cto | 1380 |
+| unknown | 1241 |
+| eng-domains | 590 |
+| eng-platform | 566 |
+| eng-kernel | 502 |
+| ceo | 324 |
+| secretary | 239 |
+| test_agent | 221 |
+| platform | 82 |
+| ystar-cto | 22 |
+
+**Top 5 Event Types**:
+- `K9_VIOLATION_DETECTED`: 2284
+- `K9_AUDIT_TRIGGERED`: 1165
+- `SESSION_JSON_SCHEMA_VIOLATION`: 724
+- `MATURITY_TAG_MISSING`: 471
+- `FORGET_GUARD_K9_WARN`: 137
+
+**Overall drift**: v (24h=5167, 7d avg/day=8280.0)
+
+---
+
+## 10. Ecosystem — Y*gov Product Repo
+**HEAD**: `13af2c5 [auto] WIP checkpoint 2026-04-22 16:28 -- 2 files changed`
+**24h commits**: 9
+**ahead origin**: 4
 **test files**: 99
 **version**: 0.48.0
 
 ---
 
-## 10. Ecosystem — gov-mcp (nested in Y*gov)
+## 11. Ecosystem — gov-mcp (nested in Y*gov)
 **gov-mcp**: not found
 
 ---
 
-## 11. Ecosystem — K9Audit (read-only reference)
+## 12. Ecosystem — K9Audit (read-only reference)
 **K9Audit**: not cloned locally (run: `git clone https://github.com/liuhaotian2024-prog/K9Audit /tmp/K9Audit`)
 
 ---
 
-## 12. Today's Commits (24h) — both repos
+## 13. Today's Commits (24h) — both repos
 
 
-**ystar-company** (43 commits):
+**ystar-company** (44 commits):
+- 4fea9ddd 16:28 [auto] WIP checkpoint 2026-04-22 16:28 -- 11 files changed
 - 73477224 15:58 [auto] WIP checkpoint 2026-04-22 15:58 -- 9 files changed
 - bc7c9d37 15:28 [auto] WIP checkpoint 2026-04-22 15:28 -- 14 files changed
 - 3b1110b8 14:57 [auto] WIP checkpoint 2026-04-22 14:57 -- 19 files changed
@@ -141,9 +195,9 @@ ceo          | 3/3          | 24           | 37       | 2026-04-20
 - 6e62570c 08:46 [auto] WIP checkpoint 2026-04-22 08:46 -- 3 files changed
 - 4ab16dae 08:44 [auto] WIP checkpoint 2026-04-22 08:44 -- 19 files changed
 - 5765653e 08:11 [auto] WIP checkpoint 2026-04-22 08:11 -- 23 files changed
-- 2f1a00d3 07:57 [auto] WIP checkpoint 2026-04-22 07:57 -- 3 files changed
 
-**Y*gov** (8 commits):
+**Y*gov** (9 commits):
+- 13af2c5 16:28 [auto] WIP checkpoint 2026-04-22 16:28 -- 2 files changed
 - 7f6fd6b 15:58 [auto] WIP checkpoint 2026-04-22 15:58 -- 1 files changed
 - 3029504 14:57 [auto] WIP checkpoint 2026-04-22 14:57 -- 3 files changed
 - 409a7fb 10:32 [auto] WIP checkpoint 2026-04-22 10:32 -- 1 files changed

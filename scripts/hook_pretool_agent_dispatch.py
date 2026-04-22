@@ -144,59 +144,50 @@ def _run_ystar_preflight(prompt_text: str) -> dict:
 
 
 def main():
-    """PreToolUse hook for Agent tool calls."""
+    """PreToolUse hook for Agent tool calls.
+
+    Produces exactly ONE JSON line on stdout (Claude Code hook protocol).
+    Two gates evaluated in sequence; most restrictive result wins.
+    """
     try:
         payload = json.load(sys.stdin)
     except json.JSONDecodeError:
-        # Not valid JSON, allow (not an Agent call)
         print(json.dumps({"action": "allow", "message": "Not JSON, skip Agent validator"}))
         return 0
 
     tool_name = payload.get("tool", "")
 
-    # Only validate Agent tool calls
     if tool_name != "Agent":
         print(json.dumps({"action": "allow", "message": f"Tool {tool_name} not Agent, skip"}))
         return 0
 
-    # Extract task/prompt from Agent tool params
     params = payload.get("params", {})
     prompt_text = params.get("task", "") or params.get("prompt", "")
 
+    # Collect messages from both gates; emit single final decision
+    messages = []
+
     # --- Gate 1: Phase A validation (BOOT CONTEXT 5-step) ---
-    result = validate_dispatch_phase_a(prompt_text)
+    phase_a = validate_dispatch_phase_a(prompt_text)
+    event_type = "DISPATCH_BLOCKED_MISSING_PHASE_A" if not phase_a["allow"] else "DISPATCH_PHASE_A_CHECK"
+    emit_cieu(event_type, phase_a)
 
-    # Emit CIEU event for Phase A
-    event_type = "DISPATCH_BLOCKED_MISSING_PHASE_A" if not result["allow"] else "DISPATCH_PHASE_A_CHECK"
-    emit_cieu(event_type, result)
-
-    # Current mode: WARN only (not deny) per CZL-136 gradual rollout
-    if not result["allow"]:
-        # WARN mode: log violation but allow through
-        print(json.dumps({
-            "action": "allow",
-            "message": f"[WARN] {result['reason']} (bitmap: {result['phase_bitmap']})"
-        }))
-        # Still continue to Y* pre-flight even if Phase A warn
-        # (Phase A is warn-only; Y* pre-flight is deny-mode)
+    if phase_a["allow"]:
+        messages.append(f"Phase A complete: {phase_a['phase_bitmap']}")
+    else:
+        # Phase A WARN (not deny) per CZL-136 gradual rollout
+        messages.append(f"[WARN] {phase_a['reason']} (bitmap: {phase_a['phase_bitmap']})")
 
     # --- Gate 2: Y* pre-flight (Phase 1 cognitive-governance per Section 14.4-bis) ---
     preflight = _run_ystar_preflight(prompt_text)
 
     if preflight["preflight_ran"]:
         if preflight["passed"]:
-            # Y* pre-flight PASS
             emit_cieu_ystar("Y_STAR_PREFLIGHT_PASS", preflight["result"])
-            if result["allow"]:
-                print(json.dumps({
-                    "action": "allow",
-                    "message": (
-                        f"Phase A complete: {result['phase_bitmap']} | "
-                        f"Y* pre-flight PASS: m_functor={preflight['result']['input']['m_functor']}"
-                    ),
-                }))
+            m_functor = preflight["result"]["input"]["m_functor"]
+            messages.append(f"Y* pre-flight PASS: m_functor={m_functor}")
         else:
-            # Y* pre-flight FAIL → DENY with recipe
+            # Y* pre-flight FAIL → DENY with recipe (overrides Phase A allow/warn)
             emit_cieu_ystar("Y_STAR_PREFLIGHT_FAIL", preflight["result"])
             suggestion = preflight["result"].get("suggestion", "")
             m_functor = preflight["result"]["input"]["m_functor"]
@@ -206,19 +197,16 @@ def main():
                 "action": "deny",
                 "message": (
                     f"Y* pre-flight FAIL: claimed m_functor={m_functor} "
-                    f"inconsistent with KH={kh}, AG={ag}. "
-                    f"{suggestion}"
+                    f"inconsistent with KH={kh}, AG={ag}. {suggestion}"
                 ),
             }))
             return 0
-    else:
-        # No Y* markers → normal Phase A result already printed above
-        if result["allow"]:
-            print(json.dumps({
-                "action": "allow",
-                "message": f"Phase A complete: {result['phase_bitmap']}",
-            }))
 
+    # All gates passed (or warn-only) → single allow
+    print(json.dumps({
+        "action": "allow",
+        "message": " | ".join(messages),
+    }))
     return 0
 
 

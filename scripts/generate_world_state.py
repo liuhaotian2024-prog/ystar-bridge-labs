@@ -13,14 +13,27 @@ Data Sources:
 6. reports/daily/<today>_morning.md → external signals
 7. BOARD_PENDING.md → Board unanswered questions
 8. Y* Field State (ξ) → M-axis frequency from CIEU + 7d drift
-9-11. Ecosystem: Y*gov repo, gov-mcp, K9Audit, today's commits
+9. Commission Error Heatmap → 11-component unified dashboard (governance_audit_unified.py)
+10-12. Ecosystem: Y*gov repo, gov-mcp, K9Audit, today's commits
 
-Output: memory/WORLD_STATE.md (single file, 12 sections)
+Output: memory/WORLD_STATE.md (single file, 13 sections)
 """
 import json
 import sqlite3
 from datetime import datetime, timedelta
 from pathlib import Path
+
+# Local imports (fail-open if not available)
+try:
+    from governance_audit_unified import full_dashboard, format_dashboard_md
+except ImportError:
+    try:
+        import sys
+        sys.path.insert(0, str(Path(__file__).parent))
+        from governance_audit_unified import full_dashboard, format_dashboard_md
+    except ImportError:
+        full_dashboard = None  # type: ignore
+        format_dashboard_md = None  # type: ignore
 
 REPO_ROOT = Path(__file__).parent.parent
 OUTPUT_PATH = REPO_ROOT / "memory" / "WORLD_STATE.md"
@@ -360,6 +373,22 @@ def extract_y_star_field_state():
         }
 
 
+def extract_commission_error_dashboard():
+    """9th source: Commission Error Heatmap — 11-component unified dashboard.
+
+    Queries governance_audit_unified.py for 24h commission error aggregation
+    across all 11 LIVE detectors (per Y_STAR_FIELD_THEORY_SPEC.md Section 14.2).
+    Fail-open: returns placeholder if module unavailable.
+    """
+    if full_dashboard is None or format_dashboard_md is None:
+        return "(governance_audit_unified module not available — run `python3 scripts/governance_audit_unified.py` standalone)"
+    try:
+        dashboard = full_dashboard()
+        return format_dashboard_md(dashboard)
+    except Exception as e:
+        return f"(commission error dashboard failed: {e})"
+
+
 def _run_git(cmd, cwd):
     import subprocess
     try:
@@ -546,22 +575,27 @@ def generate_world_state():
 
 ---
 
-## 9. Ecosystem — Y*gov Product Repo
+## 9. Commission Error Heatmap — 11-component unified dashboard
+{extract_commission_error_dashboard()}
+
+---
+
+## 10. Ecosystem — Y*gov Product Repo
 {extract_ystar_gov_state()}
 
 ---
 
-## 10. Ecosystem — gov-mcp (nested in Y*gov)
+## 11. Ecosystem — gov-mcp (nested in Y*gov)
 {extract_gov_mcp_state()}
 
 ---
 
-## 11. Ecosystem — K9Audit (read-only reference)
+## 12. Ecosystem — K9Audit (read-only reference)
 {extract_k9audit_state()}
 
 ---
 
-## 12. Today's Commits (24h) — both repos
+## 13. Today's Commits (24h) — both repos
 
 {extract_today_commits()}
 """
@@ -569,7 +603,7 @@ def generate_world_state():
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(md_output)
     print(f"✅ WORLD_STATE generated: {OUTPUT_PATH}")
-    print(f"   Sections: 12 | Roles: {len(roles)} | Campaign: {campaign['campaign']}")
+    print(f"   Sections: 13 | Roles: {len(roles)} | Campaign: {campaign['campaign']}")
     # Print ξ field summary to stdout for livefire verification
     print(f"   ξ Field: M-1={field.get('M-1',0)} M-2a={field.get('M-2a',0)} M-2b={field.get('M-2b',0)} M-3={field.get('M-3',0)} (total_24h={field.get('total_24h',0)})")
 
