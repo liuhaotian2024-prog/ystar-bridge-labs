@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-22 07:00:01
+**Generated**: 2026-04-22 07:30:00
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,7 +36,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/11 valid (0 errors)
-**CIEU 24h Events**: 90416
+**CIEU 24h Events**: 84720
 **Overdue Obligations**: 0
 
 ---
@@ -104,7 +104,10 @@
 ## 11. Today's Commits (24h) — both repos
 
 
-**ystar-company** (21 commits):
+**ystar-company** (24 commits):
+- f9751947 07:27 [auto] WIP checkpoint 2026-04-22 07:27 -- 7 files changed
+- 2129b273 07:15 [auto] WIP checkpoint 2026-04-22 07:15 -- 10 files changed
+- d50572df 07:12 [auto] WIP checkpoint 2026-04-22 07:12 -- 24 files changed
 - f3011c93 06:50 [auto] WIP checkpoint 2026-04-22 06:50 -- 2 files changed
 - 11b24fc3 06:03 [auto] WIP checkpoint 2026-04-22 06:03 -- 7 files changed
 - 687eec30 05:33 [auto] WIP checkpoint 2026-04-22 05:33 -- 3 files changed
@@ -122,9 +125,6 @@
 - 750c7f02 22:36 [auto] WIP checkpoint 2026-04-21 22:36 -- 50 files changed
 - fe590315 22:10 [auto] WIP checkpoint 2026-04-21 22:10 -- 5538 files changed
 - 97f9edda 21:10 Charter-level AMENDMENT-023/024 LIVE + WHO_I_AM v0.7 + 5-node refactor specs
-- 1d658cc7 21:10 12 milestones: local Gemma pivot + structural governance + 全员 brain
-- 9f5cfb9e 08:52 Governance state + memory snapshot — dispatch board + WORLD_STATE + dream log
-- 1b4bc4f1 08:48 Charter + knowledge sinks — WHO_I_AM v0.5, CTO wisdom folder, aiden management method
 
 **Y*gov** (5 commits):
 - d1c5188 01:30 [auto] WIP checkpoint 2026-04-22 01:30 -- 1 files changed

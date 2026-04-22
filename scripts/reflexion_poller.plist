@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.ystar.reflexion_poller</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/opt/homebrew/bin/python3.11</string>
+        <string>/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/reflexion_omission_poller.py</string>
+    </array>
+    <key>StartInterval</key>
+    <integer>600</integer>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/tmp/reflexion_poller_stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/reflexion_poller_stderr.log</string>
+    <key>WorkingDirectory</key>
+    <string>/Users/haotianliu/.openclaw/workspace/ystar-company</string>
+    <key>AbandonProcessGroup</key>
+    <true/>
+</dict>
+</plist>
