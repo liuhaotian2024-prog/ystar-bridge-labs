@@ -1738,6 +1738,71 @@
       "claimed_at": null,
       "completed_at": null,
       "completion_receipt": null
+    },
+    {
+      "atomic_id": "CZL-BRAIN-FRONTIER-1-AIDEN-DREAM-PROMOTE",
+      "scope": "scripts/aiden_dream.py,scripts/launchd/com.ystar.bridge.aiden_dream_dryrun.plist,scripts/.logs/aiden_dream_dryrun.log",
+      "description": "Promote aiden_dream daemon from dryrun to production. \u73b0 dryrun mode \u5df2 emit 16582 BRAIN_DREAM_DIFF_GENERATED proposals (LIVE \u771f emit), \u4f46 dryrun \u4e0d commit reflection \u8fdb brain.db. \u4efb\u52a1: (1) verify ollama serve LIVE on localhost:11434 with ystar-gemma model (or fallback graceful when unreachable per local_learn.py docstring fail-open principle); (2) flip dryrun \u2192 live mode in scripts/launchd/com.ystar.bridge.aiden_dream_dryrun.plist (rename to com.ystar.bridge.aiden_dream.plist); (3) launchctl reload + monitor 1h emit pattern; (4) verify reflection diffs commit \u8fdb aiden_brain.db nodes. STRICT NO git commit/push/add. MANDATORY tool_uses self-count + breakdown. 5-tuple receipt.",
+      "urgency": "P1",
+      "estimated_tool_uses": 15,
+      "status": "open",
+      "posted_at": "2026-04-22T21:01:25.408774+00:00",
+      "claimed_by": null,
+      "claimed_at": null,
+      "completed_at": null,
+      "completion_receipt": null
+    },
+    {
+      "atomic_id": "CZL-BRAIN-FRONTIER-2-6D-COORD-POPULATE",
+      "scope": "Y-star-gov/ystar/governance/cieu_brain_bridge.py,scripts/wisdom_to_yaml_proposer.py,aiden_brain.db",
+      "description": "\u73b0 aiden_brain.db nodes \u8868 6 axis (dim_y/dim_x/dim_z/dim_t/dim_phi/dim_c) \u591a\u6570 default 0.5 \u5373\u65e0\u4fe1\u53f7. \u4efb\u52a1: (1) Read knowledge/ceo/wisdom/meta/6d_cognitive_architecture.md \u770b 6 axis \u771f\u5b9a\u4e49; (2) extend cieu_brain_bridge.py \u52a0 6 axis \u771f\u8ba1\u7b97 logic \u2014 \u501f Maya wisdom_extractor_v2 weighted formula (time \u00d7 Board \u00d7 role) + node_type \u2192 axis mapping (\u4f8b ceo_learning \u2192 high dim_phi metacog; self_knowledge \u2192 high dim_y identity; strategic \u2192 high dim_z impact); (3) backfill existing 18727 nodes (batch SQL UPDATE); (4) verify avg dim_X != 0.5 (\u4fe1\u53f7\u771f\u5b58\u5728). STRICT NO git commit/push/add. 5-tuple receipt.",
+      "urgency": "P1",
+      "estimated_tool_uses": 25,
+      "status": "open",
+      "posted_at": "2026-04-22T21:01:25.509114+00:00",
+      "claimed_by": null,
+      "claimed_at": null,
+      "completed_at": null,
+      "completion_receipt": null
+    },
+    {
+      "atomic_id": "CZL-BRAIN-FRONTIER-3-CROSS-ACTOR-BRAIN",
+      "scope": "Y-star-gov/ystar/governance/cieu_brain_bridge.py,Y-star-gov/ystar/governance/cieu_brain_streamer.py,aiden_brain.db",
+      "description": "\u73b0 aiden_brain.db nodes \u8868\u65e0 actor_or_owner \u5217, sub-agent \u53cd\u601d\u672a\u5206 actor track. \u4efb\u52a1: (1) ALTER TABLE nodes ADD COLUMN actor_or_owner TEXT (cieu_store ALTER \u6a21\u677f\u5df2 LIVE, \u4e0d\u91cd\u9020); (2) extend cieu_brain_bridge ingest \u65f6 populate actor_or_owner from CIEU agent_id field; (3) backfill historical nodes with most-likely actor (heuristic from file_path / event_type); (4) verify SELECT actor_or_owner, count(*) FROM nodes GROUP BY actor_or_owner \u771f\u6709 cto/maya/leo/ryan/jordan/ethan \u591a actor \u5206\u5e03. STRICT NO git commit/push/add. 5-tuple receipt.",
+      "urgency": "P1",
+      "estimated_tool_uses": 12,
+      "status": "open",
+      "posted_at": "2026-04-22T21:01:25.614919+00:00",
+      "claimed_by": null,
+      "claimed_at": null,
+      "completed_at": null,
+      "completion_receipt": null
+    },
+    {
+      "atomic_id": "CZL-BRAIN-FRONTIER-4-ARCHIVAL-SLEEPGATE",
+      "scope": "scripts/brain_archival_daemon.py,scripts/launchd/com.ystar.bridge.brain_archival.plist,backups/brain_archive/",
+      "description": "\u73b0 brain.db 296MB \u6301\u7eed\u6da8, \u65e0 active forgetting. \u501f SleepGate (arxiv 2603.14517) \u4e09\u673a\u5236 \u2014 synaptic downscaling + selective replay + active forgetting. \u4efb\u52a1: (1) write scripts/brain_archival_daemon.py \u2014 selective replay \u6309 access_count \u6392\u5e8f top 10% \u52a0\u6743; active forgetting \u6309 (1 - last_accessed_recency) \u00d7 (1 - access_count) score \u6392\u5e8f\u5e95 5% archive; synaptic downscaling base_activation \u00d7 0.95 \u5468\u671f decay; (2) launchd plist 24h cron schedule; (3) archive \u65e7 nodes \u8fdb backups/brain_archive/{timestamp}/, brain.db \u4e3b\u4f53\u4fdd active set; (4) verify brain.db size \u4e0d unbounded growth. STRICT NO git commit/push/add. 5-tuple receipt.",
+      "urgency": "P2",
+      "estimated_tool_uses": 20,
+      "status": "open",
+      "posted_at": "2026-04-22T21:01:25.727388+00:00",
+      "claimed_by": null,
+      "claimed_at": null,
+      "completed_at": null,
+      "completion_receipt": null
+    },
+    {
+      "atomic_id": "CZL-BRAIN-FRONTIER-5-DETECTOR-REGISTRY",
+      "scope": "governance/detector_registry.json,scripts/governance_audit_unified.py",
+      "description": "Ryan W3 9_REVIEW surface \u2014 governance_audit_unified.py \u73b0 hardcoded list 11 \u4e2a detector. \u65b0 detector \u52a0\u5165 \u4e0d\u4f1a\u81ea\u52a8\u5165 dashboard. \u4efb\u52a1: (1) write governance/detector_registry.json \u2014 \u6bcf detector entry \u542b name / module_path / cieu_event_types / m_axis_label / severity_level; (2) refactor governance_audit_unified.py auto-discover from registry \u66ff hardcoded; (3) verify run \u8f93\u51fa\u4e0e W3 dashboard \u6570\u636e\u4e00\u81f4 (no regression); (4) add CI check: \u4efb\u4f55 new module emit CIEU event_type \u4e0d\u5728 registry \u2192 warn (\u540e\u7eed forget_guard rule \u5347\u7ea7). STRICT NO git commit/push/add. 5-tuple receipt.",
+      "urgency": "P2",
+      "estimated_tool_uses": 15,
+      "status": "open",
+      "posted_at": "2026-04-22T21:01:25.835831+00:00",
+      "claimed_by": null,
+      "claimed_at": null,
+      "completed_at": null,
+      "completion_receipt": null
     }
   ]
 }

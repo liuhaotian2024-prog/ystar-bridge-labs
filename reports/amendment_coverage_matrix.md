@@ -1,48 +1,39 @@
 # Amendment Coverage Matrix Audit
 
-**Generated:** amendment_coverage_audit.py at Mon Apr 13 10:51:24 EDT 2026
+**Generated:** amendment_coverage_audit.py at Wed Apr 22 17:23:33 EDT 2026
 
 ## Summary
 
 | Metric | Count | % Coverage |
 |--------|-------|------------|
-| Total Rules | 51 | 100% |
-| Remediation Filled | 32 | 62% |
-| Has Fulfiller | 1 | 1% |
-| Has Test | 51 | 100% |
+| Total Rules | 42 | 100% |
+| Remediation Filled | 19 | 45% |
+| Has Fulfiller | 0 | 0% |
+| Has Test | 42 | 100% |
 
 ## Coverage Matrix
 
 | Rule Class | Rule Name | Remediation | Fulfiller | Test | Last Tested |
 |------------|-----------|-------------|-----------|------|-------------|
 | behavior_rule | `autonomous_mission_requires_article_11` | ✅ | ❌ | ✅ | 2026-04-13 |
-| behavior_rule | `board_approval_before_publish` | ✅ | ❌ | ✅ | 2026-04-13 |
-| behavior_rule | `completion_requires_cieu_audit` | ✅ | ❌ | ✅ | 2026-04-13 |
-| behavior_rule | `content_length_check` | ✅ | ❌ | ✅ | 2026-04-13 |
-| behavior_rule | `counterfactual_before_major_decision` | ✅ | ❌ | ✅ | 2026-04-13 |
-| behavior_rule | `directive_decompose_within_minutes` | ❌ | ❌ | ✅ | 2026-04-13 |
-| behavior_rule | `document_requires_execution_plan` | ✅ | ❌ | ✅ | 2026-04-13 |
-| behavior_rule | `extract_board_values_on_session_close` | ❌ | ❌ | ✅ | 2026-04-13 |
-| behavior_rule | `must_check_health_on_session_start` | ✅ | ❌ | ✅ | 2026-04-13 |
-| behavior_rule | `must_dispatch_via_cto` | ✅ | ❌ | ✅ | 2026-04-13 |
-| behavior_rule | `no_choice_questions` | ❌ | ❌ | ✅ | 2026-04-13 |
-| behavior_rule | `no_fabrication` | ✅ | ❌ | ✅ | 2026-04-13 |
-| behavior_rule | `pre_commit_requires_test` | ✅ | ❌ | ✅ | 2026-04-13 |
-| behavior_rule | `real_conversation_count_required` | ✅ | ❌ | ✅ | 2026-04-13 |
-| behavior_rule | `role_context` | ❌ | ❌ | ✅ | 2026-04-13 |
+| behavior_rule | `board_approval_before_publish` | ✅ | ❌ | ✅ | 2026-04-16 |
+| behavior_rule | `completion_requires_cieu_audit` | ✅ | ❌ | ✅ | 2026-04-16 |
+| behavior_rule | `content_length_check` | ✅ | ❌ | ✅ | 2026-04-16 |
+| behavior_rule | `counterfactual_before_major_decision` | ❌ | ❌ | ✅ | 2026-04-13 |
+| behavior_rule | `directive_decompose_within_minutes` | ❌ | ❌ | ✅ | 2026-04-16 |
+| behavior_rule | `document_requires_execution_plan` | ✅ | ❌ | ✅ | 2026-04-16 |
+| behavior_rule | `extract_board_values_on_session_close` | ❌ | ❌ | ✅ | 2026-04-16 |
+| behavior_rule | `must_check_health_on_session_start` | ✅ | ❌ | ✅ | 2026-04-16 |
+| behavior_rule | `must_dispatch_via_cto` | ✅ | ❌ | ✅ | 2026-04-16 |
+| behavior_rule | `no_choice_questions` | ❌ | ❌ | ✅ | 2026-04-16 |
+| behavior_rule | `no_fabrication` | ❌ | ❌ | ✅ | 2026-04-16 |
+| behavior_rule | `pre_commit_requires_test` | ✅ | ❌ | ✅ | 2026-04-16 |
+| behavior_rule | `real_conversation_count_required` | ❌ | ❌ | ✅ | 2026-04-16 |
+| behavior_rule | `role_context` | ❌ | ❌ | ✅ | 2026-04-16 |
 | behavior_rule | `root_cause_fix_required` | ✅ | ❌ | ✅ | 2026-04-13 |
-| behavior_rule | `session_close_required` | ❌ | ❌ | ✅ | 2026-04-13 |
-| behavior_rule | `source_first_fixes` | ✅ | ❌ | ✅ | 2026-04-13 |
-| behavior_rule | `verification_before_assertion` | ✅ | ❌ | ✅ | 2026-04-13 |
-| obligation | `autonomous_daily_report` | ✅ | ❌ | ✅ | 2026-04-04 |
-| obligation | `directive_acknowledgement` | ✅ | ❌ | ✅ | 2026-04-04 |
-| obligation | `gemma_session_daily` | ✅ | ❌ | ✅ | 2026-04-04 |
-| obligation | `intent_declaration` | ✅ | ❌ | ✅ | 2026-04-04 |
-| obligation | `knowledge_update` | ✅ | ✅ | ✅ | 2026-04-04 |
-| obligation | `progress_update` | ✅ | ❌ | ✅ | 2026-04-04 |
-| obligation | `task_completion_report` | ✅ | ❌ | ✅ | 2026-04-04 |
-| obligation | `theory_library_daily` | ✅ | ❌ | ✅ | 2026-04-04 |
-| obligation | `weekly_roadmap_audit` | ✅ | ❌ | ✅ | 2026-04-04 |
+| behavior_rule | `session_close_required` | ❌ | ❌ | ✅ | 2026-04-16 |
+| behavior_rule | `source_first_fixes` | ✅ | ❌ | ✅ | 2026-04-16 |
+| behavior_rule | `verification_before_assertion` | ❌ | ❌ | ✅ | 2026-04-16 |
 | write_boundary | `immutable:AGENTS.md` | ✅ | ❌ | ✅ | 2026-04-13 |
 | write_boundary | `immutable:.claude/agents/` | ✅ | ❌ | ✅ | 2026-04-13 |
 | write_boundary | `immutable:CLAUDE.md` | ✅ | ❌ | ✅ | 2026-04-13 |
@@ -69,11 +60,15 @@
 
 ## Gaps: Missing Remediation
 
+- ❌ `counterfactual_before_major_decision` (behavior_rule)
 - ❌ `directive_decompose_within_minutes` (behavior_rule)
 - ❌ `extract_board_values_on_session_close` (behavior_rule)
 - ❌ `no_choice_questions` (behavior_rule)
+- ❌ `no_fabrication` (behavior_rule)
+- ❌ `real_conversation_count_required` (behavior_rule)
 - ❌ `role_context` (behavior_rule)
 - ❌ `session_close_required` (behavior_rule)
+- ❌ `verification_before_assertion` (behavior_rule)
 - ❌ `restricted:DIRECTIVE_TRACKER.md` (write_boundary)
 - ❌ `restricted:memory/session_handoff.md` (write_boundary)
 - ❌ `restricted:.ystar_active_agent` (write_boundary)
@@ -110,14 +105,6 @@
 - ❌ `session_close_required` (behavior_rule)
 - ❌ `source_first_fixes` (behavior_rule)
 - ❌ `verification_before_assertion` (behavior_rule)
-- ❌ `autonomous_daily_report` (obligation)
-- ❌ `directive_acknowledgement` (obligation)
-- ❌ `gemma_session_daily` (obligation)
-- ❌ `intent_declaration` (obligation)
-- ❌ `progress_update` (obligation)
-- ❌ `task_completion_report` (obligation)
-- ❌ `theory_library_daily` (obligation)
-- ❌ `weekly_roadmap_audit` (obligation)
 - ❌ `immutable:AGENTS.md` (write_boundary)
 - ❌ `immutable:.claude/agents/` (write_boundary)
 - ❌ `immutable:CLAUDE.md` (write_boundary)
@@ -148,8 +135,8 @@
 
 ## Next Steps
 
-1. **Remediation Gaps (19)**: Add Remediation() to boundary_enforcer.py or obligation_remediation.py
-2. **Fulfiller Gaps (50)**: Add auto-fulfillment logic to obligation_triggers.py or boundary_enforcer.py
+1. **Remediation Gaps (23)**: Add Remediation() to boundary_enforcer.py or obligation_remediation.py
+2. **Fulfiller Gaps (42)**: Add auto-fulfillment logic to obligation_triggers.py or boundary_enforcer.py
 3. **Test Gaps (0)**: Add test cases to Y-star-gov/tests/test_*.py
 
 ## Notes
