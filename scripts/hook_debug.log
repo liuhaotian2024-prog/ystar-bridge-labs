@@ -45937,3 +45937,56 @@ RuntimeError: rule 'article_11_board_offline_30m' did not produce any obligation
 09:39:43 [P1-a] Read per-session marker (ppid_10664): 'ceo'
 09:39:43 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
 09:40:15 [BRAIN] Injected 3 wisdom nodes
+09:44:23 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:44:23 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:44:56 [BRAIN] Injected 3 wisdom nodes
+09:45:04 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:45:04 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:45:37 [BRAIN] Injected 3 wisdom nodes
+09:45:42 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:45:42 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:46:17 [BRAIN] Injected 3 wisdom nodes
+09:46:23 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:46:23 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:46:56 [BRAIN] Injected 3 wisdom nodes
+09:47:01 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:47:01 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:47:35 [BRAIN] Injected 3 wisdom nodes
+09:47:42 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:47:42 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:48:15 [BRAIN] Injected 3 wisdom nodes
+09:48:23 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:48:23 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:48:59 [BRAIN] Injected 3 wisdom nodes
+09:49:07 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:49:07 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:49:42 [BRAIN] Injected 3 wisdom nodes
+09:49:48 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:49:48 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:50:23 [BRAIN] Injected 3 wisdom nodes
+09:50:28 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:50:28 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:51:05 [BRAIN] Injected 3 wisdom nodes
+09:51:17 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:51:17 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:51:57 [BRAIN] Injected 3 wisdom nodes
+09:52:18 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:52:18 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:52:55 [BRAIN] Injected 3 wisdom nodes
+09:53:03 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:53:03 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:53:36 [FORGET_GUARD] check failed (fail-open): 'NoneType' object has no attribute 'startswith'
+09:53:36 [BRAIN] Injected 3 wisdom nodes
+09:53:36 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:53:36 [CZL-159] BLOCKED: reports/ceo/test_ft.md missing ['research', 'synthesis', 'audience']
+09:53:50 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:53:50 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:54:31 [FORGET_GUARD] check failed (fail-open): 'NoneType' object has no attribute 'startswith'
+09:54:31 [BRAIN] Injected 3 wisdom nodes
+09:54:31 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:55:03 [FORGET_GUARD] check failed (fail-open): 'NoneType' object has no attribute 'startswith'
+09:55:03 [BRAIN] Injected 3 wisdom nodes
+09:55:15 [P1-a] Read per-session marker (ppid_10664): 'ceo'
+09:55:15 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:55:49 [FORGET_GUARD] check failed (fail-open): 'NoneType' object has no attribute 'startswith'
+09:55:49 [BRAIN] Injected 3 wisdom nodes

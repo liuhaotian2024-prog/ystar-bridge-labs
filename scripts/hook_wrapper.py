@@ -412,6 +412,61 @@ try:
         # ── Run check_hook (Policy compilation happens inside with caching) ──
         result = check_hook(payload)
 
+        # ── ForgetGuard wire (Board 2026-04-22 catch: commission infra was装不接线) ──
+        # governance/forget_guard_rules.yaml has 32 YAML commission rules; prior to
+        # this wire they were dead (hook_wrapper had 0 references). Now invoked on
+        # every PreToolUse after boundary_enforcer via check_hook. If forget_guard
+        # returns a violation, override result to deny/warn.
+        if payload.get("hook_event_name") == "PreToolUse":
+            try:
+                REPO_ROOT = os.path.dirname(os.path.dirname(__file__))
+                sys.path.insert(0, REPO_ROOT)
+                from ystar.governance.forget_guard import check_forget_violation
+                _fg_context = {
+                    "tool": payload.get("tool_name", ""),
+                    "tool_input": payload.get("tool_input", {}),
+                    "agent_id": payload.get("agent_id", ""),
+                    "active_agent": payload.get("agent_id", ""),
+                    "file_path": payload.get("tool_input", {}).get("file_path", ""),
+                    "command": payload.get("tool_input", {}).get("command", ""),
+                    "content": payload.get("tool_input", {}).get("content", ""),
+                }
+                _fg_violation = check_forget_violation(_fg_context)
+                if _fg_violation:
+                    _fg_action = _fg_violation.get("action", "warn")
+                    _fg_recipe = _fg_violation.get("recipe", "")
+                    _fg_rule = _fg_violation.get("rule_id", "unknown")
+                    _fg_sev = _fg_violation.get("severity", "low")
+                    log(f"[FORGET_GUARD] rule={_fg_rule} action={_fg_action} sev={_fg_sev}")
+                    if _fg_action == "deny":
+                        # Only override if current result is not already a deny
+                        _hso = result.get("hookSpecificOutput", {}) if isinstance(result, dict) else {}
+                        if _hso.get("permissionDecision") != "deny":
+                            result = {
+                                "hookSpecificOutput": {
+                                    "hookEventName": "PreToolUse",
+                                    "permissionDecision": "deny",
+                                    "permissionDecisionReason": (
+                                        f"[ForgetGuard DENY rule={_fg_rule}] {_fg_recipe}"
+                                    )
+                                }
+                            }
+                    elif _fg_action == "warn":
+                        # Append warning to permissionDecisionReason (don't override decision)
+                        if isinstance(result, dict):
+                            _hso = result.get("hookSpecificOutput", {})
+                            _existing = _hso.get("permissionDecisionReason", "")
+                            _warn_text = f"\n\n[ForgetGuard WARN rule={_fg_rule}] {_fg_recipe}"
+                            if _existing:
+                                _hso["permissionDecisionReason"] = _existing + _warn_text
+                            else:
+                                # attach as new field even without deny
+                                _hso["permissionDecisionReason"] = _warn_text
+                                result["hookSpecificOutput"] = _hso
+            except Exception as _fg_exc:
+                # Fail-open: forget_guard failure must not brick tool calls
+                log(f"[FORGET_GUARD] check failed (fail-open): {_fg_exc}")
+
         # ── Brain Context Injection (Board 2026-04-19: Layer 3 root cause fix) ──
         # Query 6D brain for relevant wisdom nodes and inject into hook response.
         # CEO-only, read-only, graceful degradation (empty on any failure).
