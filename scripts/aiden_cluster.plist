@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.ystar.aiden_cluster</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/opt/homebrew/bin/python3.11</string>
+        <string>/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/aiden_cluster_daemon.py</string>
+        <string>--stats</string>
+    </array>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <dict>
+        <key>SuccessfulExit</key>
+        <false/>
+        <key>NetworkState</key>
+        <true/>
+    </dict>
+
+    <key>StartInterval</key>
+    <integer>900</integer>
+
+    <key>ThrottleInterval</key>
+    <integer>30</integer>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/aiden_cluster_stdout.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/aiden_cluster_stderr.log</string>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/haotianliu/.openclaw/workspace/ystar-company</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>OLLAMA_NUM_PARALLEL</key>
+        <string>4</string>
+        <key>OLLAMA_KEEP_ALIVE</key>
+        <string>-1</string>
+        <key>YSTAR_TIER_DEFAULT</key>
+        <string>decision</string>
+    </dict>
+
+    <key>AbandonProcessGroup</key>
+    <true/>
+</dict>
+</plist>

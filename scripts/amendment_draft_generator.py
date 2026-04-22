@@ -148,7 +148,7 @@ Purpose: Board review; accept / reject / request-change within 72h SLA.
         draft_title = title or gap.split("\n")[0][:80]
         created = time.time()
 
-        draft_path = self.reports_dir / f"amendment_draft_{int(created)}.md"
+        draft_path = self.reports_dir / f"amendment_draft_{int(created * 1_000_000)}.md"
 
         draft = AmendmentDraft(
             amendment_id=aid,
