@@ -279,7 +279,7 @@ def step_d_livefire():
         eid = f"livefire-{scenario['label']}-{uuid.uuid4().hex[:8]}"
         t0 = fake_now[0]
 
-        # Create tracked entity
+        # Create tracked entity with last_event_at set so _is_entity_active gate passes
         entity = TrackedEntity(
             entity_id=eid,
             entity_type=scenario["entity_type"],
@@ -288,6 +288,7 @@ def step_d_livefire():
             status=EntityStatus.CREATED,
             goal_summary=f"Livefire test for {scenario['label']}",
             created_at=t0,
+            last_event_at=t0,  # Required: engine _is_entity_active checks this
         )
         store.upsert_entity(entity)
 

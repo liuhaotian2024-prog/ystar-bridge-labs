@@ -18,9 +18,9 @@ rules:
     - type: content_contains
       keywords:
       - mandatory
+      - 标准段落已写进模板
       - tail
       - disclosure
-      - 标准段落已写进模板
       - 模板：`sales/outreach/email_template_v1.md`
   action: warn
   recipe: '所有对外 cold outreach (email/LinkedIn/social/blog) 必须披露 AI agent 作者身份 + 人类 reviewer + 提供 human-only opt-out

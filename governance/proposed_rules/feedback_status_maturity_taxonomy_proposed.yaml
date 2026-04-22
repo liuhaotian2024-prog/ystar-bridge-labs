@@ -17,12 +17,12 @@ rules:
     conditions:
     - type: content_contains
       keywords:
+      - '"AMENDMENT-018:'
       - SHIPPED
-      - (e464e14
-      - A018 done
+      - A018 落盘了
       - 落盘了"
-      - A018 ship 了
-      - '"A018'
+      - 'AMENDMENT-016: L4 SHIPPED (b16b563, watcher 1.5s latency in prod)'
+      - (e464e14
   action: warn
   recipe: "任何 status / progress / report 必须给每条 work item 打 L0-L5 成熟度标签，禁用模糊词如\"落盘/done/ship\"\n\nHow to apply:\n1. **每条 status\
     \ item 行首必含 L 标签**：\n   - ✅ \"AMENDMENT-016: L4 SHIPPED (b16b563, watcher 1.5s latency in prod)\"\n   - ✅ \"AMENDMENT-017:\

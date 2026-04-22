@@ -17,12 +17,12 @@ rules:
     conditions:
     - type: content_contains
       keywords:
-      - '"老大，收到"'
-      - '"Board'
-      - 老大，收到
-      - '"收到，Board"'
       - 老大批准了 AMENDMENT-016
+      - '"老大批准了'
       - AMENDMENT-016"
+      - '"老大，收到"'
+      - '"收到，Board"'
+      - '"Board'
   action: warn
   recipe: '与 Board (Haotian Liu) 对话必须以"老大"称呼，不是"Board"或省略
 

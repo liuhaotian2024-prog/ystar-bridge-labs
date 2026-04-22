@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-22 14:00:01
+**Generated**: 2026-04-22 14:30:00
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -27,16 +27,16 @@
 
 ## 3. Current Campaign
 **Campaign**: Campaign v6 — K9 Routing + Phase 2-3 Backlog Drain (2026-04-16)
-**Progress**: 7 completed, 6 remaining
-**Rt+1 Status**: 2/10 — W1 K9 healing + W2 FG subagent_boot_no_state_read closed Rt+1=0; W3-W10 in progress (W3+W6 in flight)
-**Current Subgoal**: W3 — 5 engineer activation steps 3-5 (Ryan CZL-102 in flight)
+**Progress**: 7 completed, 8 remaining
+**Rt+1 Status**: Campaign v6: 2/10 closed (W1+W2 Rt+1=0); v6 W3-W10 in progress. NEW Campaign v7 (2026-04-22): V3 Wave-1 in flight (Maya G3+G4 / Leo G1+G4 / Ryan G2 / Jordan G3+rubric, ~125 tu) + W12 Y* Field Wave-2 spec ready (~50-60 tu真 delta after Wave-1).
+**Current Subgoal**: W12 — Y* Field Theory Wave-2 implement (CIEU schema +m_functor / forget_guard rule / WORLD_STATE upgrade) — pending Wave-1 4-engineer V3 close (CZL-CEO-RULES-REGISTRY-V3-EXISTING-ASSETS-FIRST in flight)
 
 ---
 
 ## 4. System Health
 **Wire Integrity**: 0 issues
-**Y* Schema v2 Compliance**: 0/11 valid (0 errors)
-**CIEU 24h Events**: 63935
+**Y* Schema v2 Compliance**: 0/12 valid (0 errors)
+**CIEU 24h Events**: 67348
 **Overdue Obligations**: 0
 
 ---
@@ -105,7 +105,8 @@ ceo          | 3/3          | 24           | 37       | 2026-04-20
 ## 11. Today's Commits (24h) — both repos
 
 
-**ystar-company** (39 commits):
+**ystar-company** (40 commits):
+- 64c1d990 14:27 [auto] WIP checkpoint 2026-04-22 14:27 -- 36 files changed
 - b697f3fa 13:57 [auto] WIP checkpoint 2026-04-22 13:57 -- 8 files changed
 - 5718393e 13:27 [auto] WIP checkpoint 2026-04-22 13:27 -- 7 files changed
 - c416e329 12:31 [auto] WIP checkpoint 2026-04-22 12:31 -- 10 files changed
@@ -125,7 +126,6 @@ ceo          | 3/3          | 24           | 37       | 2026-04-20
 - c4fc6c71 07:56 [auto] WIP checkpoint 2026-04-22 07:56 -- 31 files changed
 - 09001bc6 07:42 [auto] WIP checkpoint 2026-04-22 07:42 -- 29 files changed
 - f9751947 07:27 [auto] WIP checkpoint 2026-04-22 07:27 -- 7 files changed
-- 2129b273 07:15 [auto] WIP checkpoint 2026-04-22 07:15 -- 10 files changed
 
 **Y*gov** (6 commits):
 - 409a7fb 10:32 [auto] WIP checkpoint 2026-04-22 10:32 -- 1 files changed

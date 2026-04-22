@@ -17,11 +17,11 @@ rules:
     conditions:
     - type: content_contains
       keywords:
-      - Maya（绕过
-      - 6-pager
-      - Ethan
       - 起 6-pager + 派 Maya 做实验
+      - Ethan
+      - 6-pager
       - Ethan，CEO
+      - Maya（绕过
       - ：CEO
   action: warn
   recipe: '跨工程师的工作必须先派 Ethan-CTO，由 CTO 分派给 Leo/Maya/Ryan/Jordan，不能 CEO 直派工程师

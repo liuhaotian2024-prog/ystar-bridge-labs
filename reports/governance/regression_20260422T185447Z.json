@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-04-22T18:54:47.318583+00:00",
+  "commission_result": {
+    "total": 4,
+    "pass": 4,
+    "fail": 0,
+    "skipped": false
+  },
+  "omission_result": {
+    "total": 12,
+    "pass": 12,
+    "fail": 0,
+    "skipped": false
+  },
+  "overall": "PASS",
+  "cieu_event_id": "003b3ed4-6d8b-4f66-b97f-10e4cc2d2a61"
+}

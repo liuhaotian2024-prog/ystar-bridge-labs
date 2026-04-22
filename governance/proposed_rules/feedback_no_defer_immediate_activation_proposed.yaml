@@ -21,7 +21,7 @@ rules:
       - 完成即生效，禁止"下次
       - session
       - 才生效"
-  action: warn
+  action: info
   recipe: '任何治理/配置/规则改动完成后必须立即生效，不能等下次 session boot
 
 
@@ -47,4 +47,4 @@ rules:
 
     Source: memory/claude_code_memory_mirror/feedback_no_defer_immediate_activation.md'
   cieu_event: PROPOSED_PROPOSED_NO_DEFER_IMMEDIATE_ACTIVATION
-  severity: medium
+  severity: low

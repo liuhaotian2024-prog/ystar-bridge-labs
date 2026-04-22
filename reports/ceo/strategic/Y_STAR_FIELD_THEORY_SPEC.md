@@ -239,6 +239,149 @@ ALTER TABLE cieu_events ADD COLUMN y_star_validator_pass INTEGER DEFAULT 0;
 - ❌ 合一 = 球员、裁判、规则制定者同一人 → 必腐败
 - ✅ 真 unification = 比赛规则书统一 (schema), 但球员/裁判/规则更新机构三方独立 + 反作弊系统持续 evolve
 
+## 11. ARCHITECTURE CORRECTION — Board 2026-04-22 后修订 (前 Section 10 错的部分)
+
+老大 catch 我之前 architecture 3 处错, 全部修订:
+
+### 11.1 删 L6 Independent LLM Judge — 与治理理念冲突
+
+**前错**: 我 propose L6 用独立 LLM 当 m_functor validator 裁判.
+**老大 catch**: "不主张你说的引入第三方的裁判, 因为 LLM 来裁判 LLM, 这本身就跟我们的治理理念相冲突."
+**修订**: **删 L6**. 治理端坚持 **pure symbolic, deterministic, rule-based**. 不引入任何 LLM-judged 治理决策. 任何 "LLM judge LLM" 在治理层都是反治理 (CoT 不忠实 + capture risk + non-deterministic).
+
+### 11.2 L4 Validator 改为纯 rule-based
+
+**前错**: validator 写"rule-based + LLM judge hybrid" 验 Φ^{-1}(Y\*).
+**修订**: validator 仅 rule-based:
+```python
+def validate_m_functor(m_functor: str, task_description: str) -> bool:
+    # Step 1: m_functor in whitelist {M-1, M-2a, M-2b, M-3, M-1+M-2, M-2+M-3, ...}
+    if m_functor not in M_FUNCTOR_WHITELIST:
+        return False
+    # Step 2: task_description 含对应 M-axis 关键词 (deterministic regex)
+    required_keywords = M_AXIS_KEYWORDS[m_functor]  # e.g. M-3 → {customer, revenue, dogfood, demo, sale}
+    return any(kw in task_description.lower() for kw in required_keywords)
+    # 100% deterministic, 0% LLM
+```
+治理层不做"内容是否真推进 M"的语义判断, 只做"形式合法吗"的 syntactic check. **语义判断是运营端的事, 不是治理.**
+
+### 11.3 治理 ⊥ 运营 — 共享 Y\*, 分担职责 (老大正解)
+
+老大原话: "我理解的统一是两侧同时共享一个 Y\*, 可是治理端负责 Y\* 的实现的**形式化行为验证**, 运营端负责去实现 Y\* 的**达成**."
+
+清晰映射:
+
+| 端 | 职责 | 工具 | 输出 |
+|---|---|---|---|
+| **治理端** (forget_guard / behavior_gov / omission_engine / cieu_store) | Y\* 形式化行为验证 — m_functor 字段标了吗? whitelist 吗? required keywords 含吗? deadline 满足吗? rule pattern 命中吗? | symbolic rule engine, regex, schema check | deny / warn / info — 100% deterministic |
+| **运营端** (agent decision making, generate_world_state, .czl_subgoals.json, ξ field navigation) | Y\* 达成 — 实际写 reply, 调 tool, 推 state 向 Y\*_t, 沿 ∇ξ 走, 反事实 evaluate | LLM cognition + ξ field gradient lookup + metacognition | 实际行动 + 5-tuple Y\*/Xt/U/Yt+1/Rt+1 |
+
+**共享接口**: m_functor schema 列. 治理 read 它做形式 verify; 运营 write 它做 record + ξ navigation. 同字段, 双向流, **职责完全分离**.
+
+**不是统一为合一** (writer=judge=enforcer). 是 **schema unify + duty separate**.
+
+### 11.4 内容质量 gap — Y\*gov 的 known limitation + open-source 解
+
+**老大正确指出**: Y\*gov 当前是纯形式化行为治理, 对 agent **内容生产** (content quality, factual accuracy, hallucination, prompt injection 防御) 无治理功能.
+
+**这不是 Y\*gov 的事**, 是 **运营端**的事. 已有成熟 open-source 工具直接 wire:
+- **Lakera Guard** — prompt injection 防御 + content moderation
+- **NeMo Guardrails** (NVIDIA) — content scope + topical guardrails
+- **Garak** (NVIDIA) — LLM red team test framework
+- **Promptfoo** — LLM eval + content quality test
+- **Constitutional AI guard** (Anthropic 自家) — content critique loop
+- **LLM-Guard** (Protect AI) — content sanitization
+
+落地: 运营端 wrapper 在 LLM call 前后 invoke 这些工具, 输出 advisory metric, 不进治理 enforce path. 维持治理纯粹性.
+
+### 11.5 反事实能力 vs 目标确定 — 数学不矛盾, 是互补 (老大问)
+
+老大问: "反事实能力是另外一种自主判断啊, 跟目标确定矛盾吗? 有数学依据吗?"
+
+**答: 不矛盾. 数学上是 first-order ⊥ second-order 互补**. 三个 well-known 数学框架支持:
+
+**A. Active Inference (Karl Friston, free energy principle)**
+agent 选 U 最小化 expected free energy:
+```
+F = E_q[log q(U|X) − log p(U|X, M)]
+```
+其中 q 是 actual 选择, p 是 mission-aligned 期望. **这本质 = 反事实** — 比较 candidate U 的 predicted outcome 与 actual M-aligned outcome. 反事实是 inference 的内核, 不与目标矛盾.
+
+**B. Bellman Equation (RL)**
+```
+V(s) = max_a [R(s,a) + γ V(s')]
+```
+**max_a 就是反事实** — 评估每个 alternative action 的未来 value. 不评估 = 不能选 max = 不能优化目标. 反事实是优化的 prerequisite, 不是对立.
+
+**C. Field Theory (本 spec)**
+- 一阶: ∇ξ — 局部 gradient 给"该往哪走" (目标确定)
+- 二阶: ∂²ξ/∂U² 或 ∂ξ/∂U_alt — sensitivity 给"如果选 U' 会怎样" (反事实)
+- **同 field 的 first-order + second-order**, 是同一数学对象的两个 derivative, 不是两个对立 system
+
+**数学结论**: ∇ξ ⊥ ∂ξ/∂U_alt 在向量空间里, 不互相 cancel. agent 可同时 max ∇ξ 沿 (目标 pursuit) + max ∂ξ/∂U_alt evaluate (反事实 metacognition). 两层独立 cognitive process, 同时 active.
+
+**F5 修订**: L8 Field-Blind Sandbox 改名 **L8 Metacognition Layer** — 不是"少用 ξ", 是"ξ 之外强制保留 metacognition layer 主动 question ξ". 实现:
+```python
+def metacognition_check(action_seq, X_t, m_functor):
+    # 反事实 probe: 如果 ξ(X_t) 错呢?
+    counterfactual_y = simulate_alt_field(X_t, perturbed_field)
+    if abs(actual_y - counterfactual_y) > threshold:
+        # ξ field 在此 X_t 局部敏感, 必触发 explicit reasoning fallback
+        emit_cieu("METACOGNITION_TRIGGERED", ...)
+        return require_first_principle_reasoning()
+    return ok
+```
+metacognition 是 enforced structural layer, 不依赖 agent 自觉.
+
+### 11.6 与现有 functions 的冲突分析 — 不冲突 (backward-compat)
+
+| 现有 component | 加 m_functor schema 列影响 | 冲突? |
+|---|---|---|
+| `cieu_events` 表 (existing rows) | ALTER ADD COLUMN m_functor TEXT NULL — 老 row 全 NULL | ❌ 不冲突 |
+| `_cieu_helpers.emit_cieu` | kwargs path 已支持, 列存在即写入, 不存在静默 drop (今 18:16 实证) | ❌ 不冲突 |
+| `forget_guard_rules.yaml` 22 rules | 新 rule `y_star_no_m_functor` 加入 list, 不改老 rules | ❌ 不冲突 |
+| `omission_engine` 8 RULE_* | 不动 — m_functor 是 commission-side schema | ❌ 不冲突 |
+| `narrative_coherence_detector` | 不动 — 它查 claim vs tool, 与 m_functor schema 正交 | ❌ 不冲突 |
+| `generate_world_state.py` (7-source aggregator) | 加 8th source: m_functor 频率分布 + drift heatmap. backward-compat (老 7 source 不动) | ❌ 不冲突 |
+| `.czl_subgoals.json` schema | y_star_criteria entry 加 optional m_functor 字段 (今已加 W12) | ❌ 不冲突 |
+| 运营端 LLM agent decision | 加 ξ field lookup 作为 cognitive aid, 不替代 reasoning | ❌ 不冲突 |
+| 历史 ruling/spec 不带 m_functor | warn period 7 天给 backfill, 不 deny 老 file | ❌ 不冲突 |
+
+**结论**: 全 backward-compatible 加法, 不破现有任何 function.
+
+### 11.7 修订后 Wave-2 真 delta
+
+| Layer | 内容 | 真 delta |
+|---|---|---|
+| L1 schema migration | ALTER TABLE cieu_events + .czl_subgoals.json schema | ~10 tu |
+| L2 emit 入口 | _cieu_helpers.emit_cieu kwargs → 列写入 | ~5 tu |
+| L3 enforce rule | forget_guard `y_star_no_m_functor` (rule-based, NOT LLM) | ~10 tu |
+| L4 validator (rule-based 不 LLM) | y_star_field_validator.py — whitelist + keyword check | ~10 tu (减半 vs hybrid) |
+| L5 visualizer | generate_world_state ξ field 升级 | ~15 tu |
+| L7 Petri red team (rule-based attack injection) | 升级 Leo Wave-1 daemon 加 m_functor adversarial set, NOT LLM judge | ~10 tu |
+| L8 Metacognition layer | counterfactual probe + sensitivity check, structural enforce | ~15 tu |
+| L9 Shadow audit log | m_functor 同时写 cieu + immutable audit log | ~5 tu |
+| **+ L10 内容质量开源工具集成** (运营端, advisory) | wrapper Lakera/NeMo/Garak/Promptfoo invoke + metric record. NOT 治理 enforce path. | ~15 tu |
+
+**修订总 delta**: ~95 tu (与之前一样, 但 LLM-judged 部分全删除, 重新分配给 metacognition + 内容质量 advisory)
+
+## 12. 老大正解 — 重新 stating "真 unification"
+
+> "两侧同时共享一个 Y\*, 治理端负责 Y\* 的实现的形式化行为验证, 运营端负责去实现 Y\* 的达成."
+
+formalize:
+- **共享对象**: Y\* (m_functor schema 列 — 数据层统一)
+- **治理职责**: V_governance: Y\* → {valid, invalid} (形式 verify, symbolic, deterministic)
+- **运营职责**: Π_operations: (X, Y\*) → U (Y\* 实际达成, LLM cognition + ξ field navigation)
+
+**两端契约 (interface)**:
+- 运营端 write Y\*_t (with m_functor) 到 5-tuple
+- 治理端 V_governance(Y\*_t) 检查形式合法
+- 不合法 → deny (运营端必修后 retry)
+- 合法 → 治理 PASS, 运营继续 Π_operations 推 R_{t+1}→0
+
+**没有任何 LLM-judged 决策跨界**. 治理纯 symbolic, 运营纯 cognitive, 共享 schema 不共享判断.
+
 ## 9. Sources / 启发
 
 - HiAgent (Bytedance) 子目标分拆模式 — 当前我们用的 hierarchical goal 结构源

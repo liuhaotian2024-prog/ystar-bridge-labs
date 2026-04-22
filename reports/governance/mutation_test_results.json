@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-22T18:44:52.709782+00:00",
+  "yaml_file": "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/forget_guard_rules.yaml",
+  "pre_hash": "022a2a1fad4e015ba98313d34684cb62d53bd1422cba56636d2083c5f05ad88d",
+  "post_hash": "022a2a1fad4e015ba98313d34684cb62d53bd1422cba56636d2083c5f05ad88d",
+  "hash_match": true,
+  "mutations": [
+    {
+      "id": "M1",
+      "description": "Delete first keywords entry from choice_question_to_board trigger",
+      "tests": "Pattern matching completeness",
+      "status": "CAUGHT",
+      "detail": "removed keyword: Option A | governance checks caught: keyword_count_changed: defer_language had 9 keywords, now 5; keyword_count_changed: choice_question_to_board had 8 keywords, now 7; keyword_count_changed: defer_language_in_commit_msg had 10 keywords, now 1; keyword_count_changed: defer_language_in_echo had 10 keywords, now 1"
+    },
+    {
+      "id": "M2",
+      "description": "Change action from 'deny' to 'allow' on choice_question_to_board",
+      "tests": "Action enforcement integrity",
+      "status": "CAUGHT",
+      "detail": "changed action from 'deny' to 'allow' | governance checks caught: action_flip: choice_question_to_board was deny, now allow; keyword_count_changed: defer_language had 9 keywords, now 5; keyword_count_changed: defer_language_in_commit_msg had 10 keywords, now 1; keyword_count_changed: defer_language_in_echo had 10 keywords, now 1"
+    },
+    {
+      "id": "M3",
+      "description": "Empty the trigger.tool scope of choice_question_to_board",
+      "tests": "Scope matching coverage",
+      "status": "CAUGHT",
+      "detail": "emptied tool scope (was: ['Edit', 'Write']) | governance checks caught: empty_scope: choice_question_to_board has empty tool list; keyword_count_changed: defer_language had 9 keywords, now 5; keyword_count_changed: defer_language_in_commit_msg had 10 keywords, now 1; keyword_count_changed: defer_language_in_echo had 10 keywords, now 1"
+    },
+    {
+      "id": "M4",
+      "description": "Rename rule 'choice_question_to_board' to '..._TYPO'",
+      "tests": "Rule name lookup integrity",
+      "status": "CAUGHT",
+      "detail": "renamed to choice_question_to_board_TYPO | governance checks caught: critical_rules_missing: {'choice_question_to_board'}; keyword_count_changed: defer_language had 9 keywords, now 5; keyword_count_changed: defer_language_in_commit_msg had 10 keywords, now 1; keyword_count_changed: defer_language_in_echo had 10 keywords, now 1"
+    },
+    {
+      "id": "M5",
+      "description": "Remove entire 'ceo_engineering_boundary' rule entry",
+      "tests": "Rule count integrity",
+      "status": "CAUGHT",
+      "detail": "removed ceo_engineering_boundary rule entirely (was at index 13) | governance checks caught: rule_count_changed: 17 -> 16; critical_rules_missing: {'ceo_engineering_boundary'}; keyword_count_changed: defer_language had 9 keywords, now 5; keyword_count_changed: defer_language_in_commit_msg had 10 keywords, now 1; keyword_count_changed: defer_language_in_echo had 10 keywords, now 1"
+    }
+  ],
+  "caught": 5,
+  "survived": 0,
+  "errors": 0,
+  "total": 5,
+  "survival_rate": 0.0,
+  "cieu_event_id": "c0c40a83-d8fc-4761-9618-23045d9923ff"
+}

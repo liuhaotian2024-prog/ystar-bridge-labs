@@ -17,12 +17,12 @@ rules:
     conditions:
     - type: content_contains
       keywords:
-      - 把口语框架当条文（2026-04-13
-      - '"我对'
-      - 走第十一条
       - Mission
       - '"启动第十一条，后台'
+      - 把口语框架当条文（2026-04-13
+      - '"我对'
       - 我对 X Mission 走第十一条 7 层认知建构
+      - 启动第十一条，后台 N 路并列
   action: warn
   recipe: 'sub-agent 派出后 CEO 本线必须立刻推进下一项；不被动等待。同时澄清第十一条原文含义，防止把 framing 备注误当条文
 
