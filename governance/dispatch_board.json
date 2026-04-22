@@ -1647,6 +1647,45 @@
       "claimed_at": "2026-04-22T13:10:10.536027+00:00",
       "completed_at": null,
       "completion_receipt": null
+    },
+    {
+      "atomic_id": "CZL-COMMISSION-UNIFY-STEP-1",
+      "scope": "scripts/hook_wrapper.py,Y-star-gov/ystar/governance/forget_guard.py",
+      "description": "Step 1 of commission unification per Ethan ruling 2026-04-22. Wire forget_guard engine into scripts/hook_wrapper.py PreToolUse path. Goal: 32 YAML rules in governance/forget_guard_rules.yaml go LIVE. Currently grep forget_guard hook_wrapper.py = 0, rules are dead code. Implementation: import forget_guard engine, invoke engine.evaluate() after boundary_enforcer in PreToolUse, map engine deny/warn actions to hook response JSON, emit CIEU events per rule. Live-fire acceptance: deliberately violate one of 32 rules (e.g. missing L-tag writing completion claim), verify hook_wrapper blocks or warns with recipe message. Owner: Ryan-Platform. Deadline: 2026-04-29. Reference: reports/ceo/commission_infra_root_cause_2026_04_22.md + Y-star-gov/reports/cto/ruling_commission_unification_2026_04_22.md. M-tag: M-2a commission prevention LIVE.",
+      "urgency": "P0",
+      "estimated_tool_uses": 25,
+      "status": "claimed",
+      "posted_at": "2026-04-22T13:39:33.942836+00:00",
+      "claimed_by": "eng-domains",
+      "claimed_at": "2026-04-22T13:39:39.007849+00:00",
+      "completed_at": null,
+      "completion_receipt": null
+    },
+    {
+      "atomic_id": "CZL-COMMISSION-UNIFY-STEP-2",
+      "scope": "governance/forget_guard_rules.yaml,scripts/behavior_gov_rules.yaml,scripts/behavior_gov_engine.py",
+      "description": "Step 2 of commission unification per Ethan ruling 2026-04-22. Unify scripts/behavior_gov_rules.yaml into governance/forget_guard_rules.yaml single schema 1.1. Migrate 4 rules from scripts YAML to governance YAML forget_guard syntax. Add G-1 G-2 G-3 G-4 Board-facing honesty guardrails as NEW YAML entries (per reports/ceo/principle_board_facing_honesty_constitutional_2026_04_22.md respec). Deprecate scripts/behavior_gov_engine.py with redirect comment and retirement marker. Acceptance: single forget_guard_rules.yaml contains 32 + 4 + 4 = 40 rules; scripts/behavior_gov_engine.py retired; pytest regression passes. Owner: Maya-Governance. Deadline: 2026-05-06. Depends on Step 1 wire. M-tag: M-2a unification.",
+      "urgency": "P1",
+      "estimated_tool_uses": 20,
+      "status": "claimed",
+      "posted_at": "2026-04-22T13:39:34.008588+00:00",
+      "claimed_by": "eng-platform",
+      "claimed_at": "2026-04-22T13:39:39.021525+00:00",
+      "completed_at": null,
+      "completion_receipt": null
+    },
+    {
+      "atomic_id": "CZL-COMMISSION-UNIFY-STEP-3",
+      "scope": "Y-star-gov/ystar/adapters/boundary_enforcer.py,governance/forget_guard_rules.yaml",
+      "description": "Step 3 of commission unification per Ethan ruling 2026-04-22. Incrementally migrate 25 Python hardcoded rules in Y-star-gov boundary_enforcer.py into forget_guard YAML where expressible. Expected 18-22 of 25 migratable. Remaining 3-7 keep as Python with documented rationale. Post-migration target: boundary_enforcer.py under 800 lines (from 2639 post-surgery). 0 pytest regression on tests adapters. Each migration = 1 YAML entry plus Python function deletion plus call site removal plus pytest regression verify rule still fires. Owner: Maya-Governance semantics plus Ryan-Platform integration. Deadline: 2026-05-20. Depends on Step 1 plus 2. M-tag: M-2a methodology config over code.",
+      "urgency": "P1",
+      "estimated_tool_uses": 60,
+      "status": "claimed",
+      "posted_at": "2026-04-22T13:39:34.068384+00:00",
+      "claimed_by": "eng-governance",
+      "claimed_at": "2026-04-22T13:39:39.035003+00:00",
+      "completed_at": null,
+      "completion_receipt": null
     }
   ]
 }
