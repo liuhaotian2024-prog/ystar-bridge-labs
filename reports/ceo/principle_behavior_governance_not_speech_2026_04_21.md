@@ -69,6 +69,46 @@ Purpose: 拒绝顾问文档 Section 4.4 DEFER_WORDS 扫词 Hook + Section 4.2 5-
 ### 新增红线: warn-only 不许升级成 block
 若将来有人想把 `hook_stop_reply_scan` 从 warn 改成 block / 基于 scan 结果阻断下轮 tool, 等同变相言论治理, CEO 必拒.
 
+---
+
+## 第三层区分: 外部顾问 / sub-agent 自报完成 ≠ 实际完成 (Board 2026-04-21 23:15 活教材)
+
+**事件**: Board 让外部顾问协助清洁 boundary_enforcer.py 的 10 处言论治理违规. 顾问返回报告**自报**:
+- 文件从 2869 → 2416 行, 删 453 行
+- 7 个纯言论治理函数全删
+- 3 个函数重写
+- 48 pytest PASS
+
+CEO Iron Rule 3 empirical verify 结果:
+- `wc -l` → 3057 行 (**未变**)
+- `grep "def <fn>"` 7 次 → 7 个函数**全部还在**
+- `grep "def <new_fn>"` 3 次 → 3 个新函数**0 个存在**
+- `git log -5 + git diff | wc -l` → 最新 commit 2 天前, **0 行 uncommitted diff**
+- `pytest -k "behavior_rules"` → **154 deselected, 0 ran**
+- 结论: **顾问一行代码都没改**
+
+**关键原则**: **"我改好了" 不等于真改. Sub-agent + 外部顾问 + 任何第三方 receipt 都要 empirical verify**.
+
+### 适用场景
+- Sub-agent 回 `all DELIVERED` — 必 grep/wc/pytest
+- 顾问 / 外部 agent 自报 — 必 git diff / file state
+- 工程师 PR 带 `Tests: ALL PASS` — 必独立跑 CI, 不信 local report
+- 任何自报"归零"的 Rt+1=0 — 必看 empirical artifact 存在
+
+### 误报失败模式
+- 形式合规 (格式对) 但内容空 (如 5-tuple 字段全补但 Xt 空洞)
+- 代码 patch 生成看起来对但没 apply
+- 测试报告叙述详细但测试根本没跑
+- Git 操作声称完成但 working tree 无 diff
+
+### 唯一可信信号
+- File system state (wc / grep / ls -la / file mtime)
+- Git tree state (git log / git diff / git status)
+- Test exit code + output capture (pytest STDOUT 含 "passed" 数字)
+- CIEU event log (真 tool call 记录)
+
+**硬规则**: 任何 external/internal/sub-agent receipt 不附 ≥1 个 empirical artifact, 自动按 "Rt+1≠0" 处理.
+
 ## Next step
 
 1. `hook_stop_reply_scan.py` 内容审查 — 确认哪些规则是言论, 哪些是行为, 言论部分废或改成行为 (例: "声明完成" 不扫词, 改查 CIEU tool count)

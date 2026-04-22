@@ -143,6 +143,25 @@ class AgentWorker:
         return data
 
 
+def pick_tier(task_type: str = None) -> str:
+    """Pick Gemma model by task tier. env YSTAR_TIER_DEFAULT overrides."""
+    BG_SCAN_TASKS = {"bounty_scan", "daily_report", "health_check",
+                     "k9_patrol", "memory_compress", "document_analysis",
+                     "dialogue_compression"}
+    DECISION_TASKS = {"ceo_reply", "cto_ruling", "engineer_impl",
+                      "amendment_proposal", "reflection_generation"}
+    override = os.environ.get("YSTAR_TIER_DEFAULT", "").lower()
+    if override == "bg_scan":
+        return "gemma4:e4b"
+    if override == "decision":
+        return "ystar-gemma"
+    if task_type in BG_SCAN_TASKS:
+        return "gemma4:e4b"
+    if task_type in DECISION_TASKS:
+        return "ystar-gemma"
+    return "ystar-gemma"  # default decision
+
+
 class AidenClusterMaster:
     """Coordinator: registers workers, dispatches prompts to target agent."""
 

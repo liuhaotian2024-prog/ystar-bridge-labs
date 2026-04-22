@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-21 23:00:00
+**Generated**: 2026-04-22 00:30:00
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,18 +36,14 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/11 valid (0 errors)
-**CIEU 24h Events**: 84425
+**CIEU 24h Events**: 88293
 **Overdue Obligations**: 0
 
 ---
 
 ## 5. External Signals (Today)
 ```
-=== Y* Bridge Labs Idle Learning Progress ===
-
-Role         | P1 Complete  | P2 Theories  | P3 Sims  | Last Learning
-----------------------------------------------------------------------
-ceo          | 3/3          | 24           | 37       | 2026-04-20  
+[No morning report today]
 ```
 
 ---
@@ -100,7 +96,7 @@ ceo          | 3/3          | 24           | 37       | 2026-04-20
 ## 10. Ecosystem — K9Audit (read-only reference)
 **local clone**: `/tmp/K9Audit`
 **HEAD**: ``
-**stale days**: 1
+**stale days**: 2
 **migration queue**: CausalChainAnalyzer + Auditor + k9_repo_audit.py → CIEU (TODO)
 
 ---
@@ -108,7 +104,8 @@ ceo          | 3/3          | 24           | 37       | 2026-04-20
 ## 11. Today's Commits (24h) — both repos
 
 
-**ystar-company** (7 commits):
+**ystar-company** (8 commits):
+- 74cf32cd 23:06 [auto] WIP checkpoint 2026-04-21 23:06 -- 57 files changed
 - 750c7f02 22:36 [auto] WIP checkpoint 2026-04-21 22:36 -- 50 files changed
 - fe590315 22:10 [auto] WIP checkpoint 2026-04-21 22:10 -- 5538 files changed
 - 97f9edda 21:10 Charter-level AMENDMENT-023/024 LIVE + WHO_I_AM v0.7 + 5-node refactor specs
