@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-22 07:30:00
+**Generated**: 2026-04-22 08:00:00
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,7 +36,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/11 valid (0 errors)
-**CIEU 24h Events**: 84720
+**CIEU 24h Events**: 61253
 **Overdue Obligations**: 0
 
 ---
@@ -104,7 +104,10 @@
 ## 11. Today's Commits (24h) — both repos
 
 
-**ystar-company** (24 commits):
+**ystar-company** (27 commits):
+- 2f1a00d3 07:57 [auto] WIP checkpoint 2026-04-22 07:57 -- 3 files changed
+- c4fc6c71 07:56 [auto] WIP checkpoint 2026-04-22 07:56 -- 31 files changed
+- 09001bc6 07:42 [auto] WIP checkpoint 2026-04-22 07:42 -- 29 files changed
 - f9751947 07:27 [auto] WIP checkpoint 2026-04-22 07:27 -- 7 files changed
 - 2129b273 07:15 [auto] WIP checkpoint 2026-04-22 07:15 -- 10 files changed
 - d50572df 07:12 [auto] WIP checkpoint 2026-04-22 07:12 -- 24 files changed
@@ -122,9 +125,6 @@
 - 0601c072 01:30 [auto] WIP checkpoint 2026-04-22 01:30 -- 30 files changed
 - 127a5c1d 00:45 [auto] WIP checkpoint 2026-04-22 00:45 -- 115 files changed
 - 74cf32cd 23:06 [auto] WIP checkpoint 2026-04-21 23:06 -- 57 files changed
-- 750c7f02 22:36 [auto] WIP checkpoint 2026-04-21 22:36 -- 50 files changed
-- fe590315 22:10 [auto] WIP checkpoint 2026-04-21 22:10 -- 5538 files changed
-- 97f9edda 21:10 Charter-level AMENDMENT-023/024 LIVE + WHO_I_AM v0.7 + 5-node refactor specs
 
 **Y*gov** (5 commits):
 - d1c5188 01:30 [auto] WIP checkpoint 2026-04-22 01:30 -- 1 files changed
