@@ -323,6 +323,7 @@ def batch_backfill(
         SELECT rowid, event_id, event_type, task_description, agent_id, m_functor
         FROM cieu_events
         WHERE (m_functor IS NULL OR m_functor = '')
+          AND y_star_validator_pass IS NULL
         ORDER BY rowid ASC
         LIMIT ?
         """,
