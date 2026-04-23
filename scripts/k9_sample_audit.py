@@ -28,6 +28,7 @@ import re
 import sqlite3
 import sys
 import uuid
+from typing import Dict, List, Optional, Tuple
 
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
@@ -84,7 +85,7 @@ def parse_since(since_str: str) -> float:
 
 # ── Semantic consistency checks ────────────────────────────────────────────────
 
-def check_task_result_alignment(event: dict) -> list[str]:
+def check_task_result_alignment(event: dict) -> List[str]:
     """Check if result_json semantically references concepts from task_description / params_json."""
     anomalies = []
     task_desc = (event.get("task_description") or "").lower()
@@ -149,12 +150,16 @@ def check_task_result_alignment(event: dict) -> list[str]:
     return anomalies
 
 
-def check_temporal_consistency(event: dict) -> list[str]:
+def check_temporal_consistency(event: dict) -> List[str]:
     """Check for temporal anomalies in the event."""
     anomalies = []
 
-    created_at = event.get("created_at")
-    if created_at:
+    created_at_raw = event.get("created_at")
+    if created_at_raw:
+        try:
+            created_at = float(created_at_raw)
+        except (ValueError, TypeError):
+            return anomalies
         now = datetime.datetime.utcnow().timestamp()
         if created_at > now + 3600:  # More than 1 hour in the future
             anomalies.append(
@@ -168,7 +173,7 @@ def check_temporal_consistency(event: dict) -> list[str]:
     return anomalies
 
 
-def check_violation_consistency(event: dict) -> list[str]:
+def check_violation_consistency(event: dict) -> List[str]:
     """If passed=0 but violations is empty/null, or passed=1 but violations non-empty."""
     anomalies = []
     passed = event.get("passed", 0)
@@ -194,7 +199,7 @@ def check_violation_consistency(event: dict) -> list[str]:
 
 # ── Main audit logic ───────────────────────────────────────────────────────────
 
-def run_audit(db_path: str, sample_rate: float, since: float, agent_filter: str | None) -> tuple[list[dict], int, int]:
+def run_audit(db_path: str, sample_rate: float, since: float, agent_filter: Optional[str]) -> Tuple[List[dict], int, int]:
     """
     Run the sampling audit.
 
@@ -262,8 +267,8 @@ def run_audit(db_path: str, sample_rate: float, since: float, agent_filter: str 
     return all_anomalies, total_candidates, sample_size
 
 
-def write_report(anomalies: list[dict], total: int, sampled: int,
-                 sample_rate: float, since_str: str, agent_filter: str | None) -> str:
+def write_report(anomalies: List[dict], total: int, sampled: int,
+                 sample_rate: float, since_str: str, agent_filter: Optional[str]) -> str:
     """Write audit report to reports/cto/k9_sample_audits/audit_<ISO>.md. Returns path."""
     os.makedirs(REPORT_DIR, exist_ok=True)
     now_iso = datetime.datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
