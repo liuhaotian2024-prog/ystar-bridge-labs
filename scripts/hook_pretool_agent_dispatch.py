@@ -211,63 +211,28 @@ def main():
 
 
 def emit_cieu(event_type: str, validation_result: dict):
-    """Emit CIEU event to sqlite database (Phase A validation)."""
+    """Emit CIEU event via central emit_cieu helper (Phase A validation)."""
     try:
-        import sqlite3
-        import uuid as uuid_lib
-        import time
-
-        db_path = Path.home() / ".openclaw/workspace/ystar-company/.ystar_cieu.db"
-        conn = sqlite3.connect(str(db_path), timeout=5.0)
-        cursor = conn.cursor()
-
-        event_id = str(uuid_lib.uuid4())
-        now = time.time()
-        seq_global = int(now * 1_000_000)
-
-        cursor.execute("""
-            INSERT INTO cieu_events (
-                event_id, seq_global, created_at, session_id, agent_id, event_type,
-                decision, passed, violations, drift_detected
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, (
-            event_id,
-            seq_global,
-            now,
-            "current",
-            "hook_pretool_agent_dispatch",
-            event_type,
-            "allow" if validation_result["allow"] else "warn",
-            1 if validation_result["allow"] else 0,
-            json.dumps(validation_result["missing_steps"]),
-            0
-        ))
-
-        conn.commit()
-        conn.close()
+        from _cieu_helpers import emit_cieu as _central_emit
+        _central_emit(
+            event_type=event_type,
+            decision="allow" if validation_result["allow"] else "warn",
+            passed=1 if validation_result["allow"] else 0,
+            task_description=f"Phase A dispatch check: bitmap={validation_result.get('phase_bitmap', '')}",
+            session_id="current",
+            params_json=json.dumps(validation_result.get("missing_steps", [])),
+        )
     except Exception as e:
-        # Fail-open for CIEU logging (don't block hook if DB error)
         sys.stderr.write(f"CIEU emit error: {e}\n")
 
 
 def emit_cieu_ystar(event_type: str, self_check_result: dict):
-    """Emit CIEU event for Y* pre-flight validation (Phase 1 cognitive-governance)."""
+    """Emit CIEU event for Y* pre-flight validation via central helper."""
     try:
-        import sqlite3
-        import uuid as uuid_lib
-        import time
-
-        db_path = Path.home() / ".openclaw/workspace/ystar-company/.ystar_cieu.db"
-        conn = sqlite3.connect(str(db_path), timeout=5.0)
-        cursor = conn.cursor()
-
-        event_id = str(uuid_lib.uuid4())
-        now = time.time()
-        seq_global = int(now * 1_000_000)
+        from _cieu_helpers import emit_cieu as _central_emit
 
         verdict = self_check_result.get("overall_verdict", "FAIL")
         m_functor = self_check_result.get("input", {}).get("m_functor", "unknown")
-        suggestion = self_check_result.get("suggestion", "")
 
         description = (
             f"Y* pre-flight {verdict}: m_functor={m_functor}, "
@@ -275,40 +240,15 @@ def emit_cieu_ystar(event_type: str, self_check_result: dict):
             f"AG={self_check_result.get('ag_check', {}).get('recovered', [])}"
         )
 
-        violations_data = []
-        if verdict == "FAIL":
-            violations_data.append({
-                "type": "m_functor_mismatch",
-                "claimed": m_functor,
-                "kh_recovered": self_check_result.get("kh_check", {}).get("recovered", []),
-                "ag_recovered": self_check_result.get("ag_check", {}).get("recovered", []),
-                "suggestion": suggestion,
-            })
-
-        cursor.execute("""
-            INSERT INTO cieu_events (
-                event_id, seq_global, created_at, session_id, agent_id, event_type,
-                decision, passed, violations, drift_detected,
-                task_description, params_json, result_json
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, (
-            event_id,
-            seq_global,
-            now,
-            "current",
-            "hook_pretool_ystar_preflight",
-            event_type,
-            "allow" if verdict == "PASS" else "deny",
-            1 if verdict == "PASS" else 0,
-            json.dumps(violations_data),
-            0,
-            description,
-            json.dumps({"m_functor": m_functor}),
-            json.dumps(self_check_result),
-        ))
-
-        conn.commit()
-        conn.close()
+        _central_emit(
+            event_type=event_type,
+            decision="allow" if verdict == "PASS" else "deny",
+            passed=1 if verdict == "PASS" else 0,
+            task_description=description,
+            m_functor=m_functor if m_functor != "unknown" else None,
+            session_id="current",
+            params_json=json.dumps({"m_functor": m_functor}),
+        )
     except Exception as e:
         sys.stderr.write(f"CIEU Y* preflight emit error: {e}\n")
 
