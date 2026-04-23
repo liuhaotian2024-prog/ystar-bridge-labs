@@ -45,6 +45,71 @@ M_AXIS_KEYWORDS: dict[str, set[str]] = {
 }
 
 
+# ---------------------------------------------------------------------------
+# Agent-ID → Role-ID normalization (Phase 2 signal quality fix)
+# ---------------------------------------------------------------------------
+# Canonical role_ids in ystar_role_scope: ceo, cto, cmo, secretary, platform,
+# governance, kernel.  CIEU agent_id values are free-form.  This map bridges.
+
+AGENT_ID_TO_ROLE_MAP = {
+    # Direct matches
+    "ceo": "ceo", "cto": "cto", "cmo": "cmo",
+    "cfo": "ceo",          # CFO rolls up to CEO role_scope (strategy/finance)
+    "cso": "cmo",          # CSO (sales) rolls up to CMO (market-facing)
+    "secretary": "secretary",
+    # Named-agent variants (case-insensitive prefix)
+    "aiden": "ceo", "ethan": "cto", "sofia": "cmo",
+    "samantha": "secretary", "marco": "ceo",   # CFO
+    "zara": "cmo",         # CSO
+    "leo": "kernel", "maya": "governance",
+    "ryan": "platform", "jordan": "platform",
+    # System-prefixed
+    "system:intervention_engine": "governance",
+    "system:orchestrator": "platform",
+    "system:path_a_agent": "platform",
+    "system:path_b_agent": "platform",
+    # Engineering role tags
+    "eng-kernel": "kernel", "eng-governance": "governance",
+    "eng-platform": "platform", "eng-domains": "platform",
+    # Board
+    "board": "ceo",
+    "doctor_agent": "platform",
+    # Catch-alls for common suffixes
+    "unidentified": None,
+}
+
+
+def normalize_agent_id_to_role(agent_id):
+    # type: (str) -> Optional[str]
+    """Map CIEU agent_id (free-form) to role_scope.role_id (canonical 7).
+
+    Resolution order:
+      1. Direct lookup (lowered, stripped).
+      2. Prefix match — e.g. "Maya-Governance" splits on '-'/'_'/':'.
+      3. First token of hyphen/underscore split.
+      4. None (caller falls back to 0.5 neutral).
+    """
+    if not agent_id:
+        return None
+    aid = agent_id.lower().strip()
+
+    # Direct match
+    if aid in AGENT_ID_TO_ROLE_MAP:
+        return AGENT_ID_TO_ROLE_MAP[aid]
+
+    # Prefix match (e.g. "maya-governance" → key "maya" via "maya-")
+    for key in AGENT_ID_TO_ROLE_MAP:
+        if aid.startswith(key + "-") or aid.startswith(key + "_") or aid.startswith(key + ":"):
+            return AGENT_ID_TO_ROLE_MAP[key]
+
+    # Hyphen/underscore split — check first token
+    parts = aid.replace("_", "-").split("-")
+    if parts[0] in AGENT_ID_TO_ROLE_MAP:
+        return AGENT_ID_TO_ROLE_MAP[parts[0]]
+
+    return None
+
+
 def validate_m_functor(m_functor: Optional[str], task_description: str) -> int:
     """
     Validate that an m_functor tag is semantically grounded.
@@ -360,14 +425,25 @@ def infer_role_alignment(
     if not search_text.strip():
         return (0.5, "neutral: no_signal")
 
-    # Find the role row that matches agent_id (exact or substring)
-    agent_lower = (agent_id or "").lower()
+    # Normalize agent_id to canonical role_id via the mapping table
+    resolved_role = normalize_agent_id_to_role(agent_id)
+
     matched_row = None
-    for r in rows:
-        role_lower = (r["role_id"] or "").lower()
-        if role_lower == agent_lower or agent_lower in role_lower or role_lower in agent_lower:
-            matched_row = r
-            break
+    if resolved_role:
+        for r in rows:
+            if (r["role_id"] or "").lower() == resolved_role:
+                matched_row = r
+                break
+
+    # Fallback: legacy substring match (covers any future role_scope rows
+    # that aren't in the static map yet)
+    if matched_row is None:
+        agent_lower = (agent_id or "").lower()
+        for r in rows:
+            role_lower = (r["role_id"] or "").lower()
+            if role_lower == agent_lower or agent_lower in role_lower or role_lower in agent_lower:
+                matched_row = r
+                break
 
     if matched_row is None:
         return (0.5, "neutral: agent_role_not_found")

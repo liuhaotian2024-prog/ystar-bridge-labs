@@ -1,0 +1,62 @@
+/* Y* Meeting Room — Name Badge + Overlay Styles */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { overflow: hidden; background: #1a1a1a; font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+canvas { display: block; }
+
+/* Overlay container for HTML name badges */
+#badge-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Individual name badge */
+.agent-badge {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.agent-badge-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.60);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.agent-badge-inner .badge-name {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.92);
+  white-space: nowrap;
+}
+
+.agent-badge-inner .badge-role {
+  font-size: 10px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+}
+
+/* Hover state — cyan accent */
+.agent-badge.hovered .agent-badge-inner {
+  border-color: rgba(0, 220, 255, 0.45);
+  background: rgba(0, 30, 40, 0.70);
+}
+
+/* Selected state — stronger cyan */
+.agent-badge.selected .agent-badge-inner {
+  border-color: rgba(0, 220, 255, 0.80);
+  background: rgba(0, 40, 55, 0.75);
+}

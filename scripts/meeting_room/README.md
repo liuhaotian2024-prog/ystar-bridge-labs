@@ -1,39 +1,44 @@
-# Y* Bridge Labs Meeting Room (Phase 0 MVP)
+# Y* Bridge Labs — Meeting Room (3D Scaffold)
+
+Three.js-based 3D meeting room for Y*gov agent visualization.
 
 ## Quick Start
 
 ```bash
-bash scripts/meeting_room/start.sh
+cd scripts/meeting_room
+python3 server.py
+# Open http://127.0.0.1:8765 in browser
 ```
 
-Then open http://localhost:8080 in your browser.
+## What You See (Scaffold Phase)
 
-## What You See
-
-- 10-seat meeting table layout (Board + 9 team members)
-- Each seat has an xterm.js terminal showing live output
-- Double-click any window to zoom into 1-on-1 focused view
-- Press ESC to return to full meeting table view
-- WebSocket heartbeats confirm connection liveness
+- Warm wood-tone floor plane
+- Terracotta back wall (exposed-brick texture placeholder)
+- Slowly rotating blue cube (avatar placeholder)
+- Directional + ambient + fill lighting with shadows
 
 ## Architecture
 
-```
-Browser (localhost:8080)
-    |-- WebSocket per member (/ws/<member_id>)
-    v
-FastAPI Broker (server.py)
-    |-- Phase 0: mock heartbeat output
-    |-- Phase 1: real Claude Code CLI pty proxy (Ryan)
-    |-- Phase 1: Gemma classifier routing (Leo)
-```
+**Scaffold (current):** Pure HTML + vanilla ES module JS.
+Three.js loaded via CDN importmap (r164). No build step.
 
-## Stop
+**Phase 2 (planned):**
+- Svelte 5 component wrapper for UI panels
+- RPM/VRM avatar import replacing the cube placeholder
+- Real exposed-brick PBR texture on wall
+- OrbitControls for camera interaction
+- gov_mcp SSE proxy at `/api/gov` for live governance events
+- Multi-agent seating grid with name tags
 
-Ctrl+C in the terminal running start.sh.
+## Files
 
-## Phase Roadmap
+| File | Purpose |
+|------|---------|
+| `public/index.html` | Entry point, loads Three.js via importmap |
+| `public/main.js` | Scene setup, camera, lights, floor, wall, cube, animation loop |
+| `server.py` | Static file server on port 8765 |
 
-- Phase 0 (tonight): Visual layout + WebSocket skeleton + mock output
-- Phase 1 (tomorrow): Real pty proxy + Gemma classifier + @mention routing
-- Phase 2 (later): Multi-process spawn mgmt + session replay + voice input
+## Dependencies
+
+- Python 3.8+ (stdlib only, no pip install)
+- Modern browser with ES module + importmap support
