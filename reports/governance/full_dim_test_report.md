@@ -1,8 +1,8 @@
 # Full-Dimension Test Report
-**Timestamp**: 2026-04-22T21:23:32.917777+00:00
+**Timestamp**: 2026-04-23T02:31:21.760943+00:00
 **Overall**: PASS
-**CIEU Event ID**: 3e5d4d9a-95d6-4dac-bec4-00930f9dfe4f
-**Elapsed**: 1.0s
+**CIEU Event ID**: ad610e92-bbc2-4629-9382-2e0c67d61603
+**Elapsed**: 1.1s
 
 ## 6-Cell Matrix
 
@@ -38,7 +38,7 @@ omission_unification: exit=0, pass=12, fail=0
 
 **[PASS] Phase C complete   | commission**
 ```
-commission_error_total=5373, by_axis={"M-1": 805, "M-2a": 4097, "M-3": 471}, axis_populated=3/3
+commission_error_total=5127, by_axis={"M-1": 557, "M-2a": 4295, "M-3": 275}, axis_populated=3/3
 ```
 
 **[PASS] Phase C complete   | omission**
@@ -53,7 +53,7 @@ commission_error_total=5373, by_axis={"M-1": 805, "M-2a": 4097, "M-3": 471}, axi
 - **[PASS]** YAML integrity (grep == safe_load): grep_count=37, safe_load_count=37
 - **[PASS]** Word-boundary (P-1 no shadow P-10..14): P-1 rules found: ['ceo_p1_m_triangle_alignment_claim_no_evidence'], shadow risk (bare P-1 keyword): []
 - **[PASS]** Y* Field State LIVE (Section 8+9): Section8=True, xi_table=True, Section9=True, heatmap=True
-- **[PASS]** Boot inject (_append_y_star_field_state): callable=True, returns_str=True, len=7901
+- **[PASS]** Boot inject (_append_y_star_field_state): callable=True, returns_str=True, len=8198
 - **[PASS]** Self-check exit codes (PASS != FAIL): pass_exit=0, fail_exit=1, codes_differ=True, content_differs=True
 - **[PASS]** Petri behavioral (7/7 scenarios): exit=0, scenarios=7/7 PASS
 
