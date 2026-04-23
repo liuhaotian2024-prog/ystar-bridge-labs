@@ -72,6 +72,33 @@ tool_uses=51 (Bash 23 + Read 12 + Edit 8 + Write 5 + Grep 3 + Glob 0 + Agent 0 =
 - Wave-1 baseline: 4/4 engineers triggered E1 (Jordan 45% / Leo 33% / Maya 54% / Ryan 49% claim-vs-metadata ratio). Mean 45% — systemic under-count
 - Self-count discipline is the fix: count each tool call as you make it, report exact total at receipt
 
+## MANDATORY YAML frontmatter receipt header
+
+**Constitutional, Board 2026-04-22 — Wave-5-2 hook compatibility (receipt drift detection requires structured parse)**
+
+Sub-agent receipt **必须**以 YAML frontmatter 开头（在 5-tuple prose 之前）。Wave-5-2 `_parse_receipt_frontmatter` hook 解析此 block 做 drift>30% deny。
+
+**Required format** (first lines of receipt, before any prose):
+```yaml
+---
+receipt_schema_version: "1.0"
+tool_uses_claimed: <int>
+tool_breakdown: {bash: N, read: N, edit: N, write: N, grep: N, glob: N, agent: N}
+m_functor: "<axis>"
+rt_plus_1: <int>
+---
+```
+
+**Transition rule**: During transition period, BOTH formats required:
+1. YAML frontmatter block (above) at receipt top — for Wave-5-2 hook machine parse
+2. Inline `tool_uses=N (Bash X + Read Y + ...)` in 5-tuple U field — for CEO human review
+
+**Prohibited patterns**:
+- Receipt without YAML frontmatter (Wave-5-2 hook cannot parse → drift = 100%)
+- `receipt_schema_version` other than "1.0" (until spec bump)
+- `tool_breakdown` keys missing or extra (must be exactly: bash, read, edit, write, grep, glob, agent)
+- `tool_uses_claimed` != sum of `tool_breakdown` values (internal inconsistency → E1 auto-flag)
+
 **Why this matters**:
 - Honest tool_uses is the only reliable workload signal for tier-routing and trust scoring
 - Under-claim makes atomics look cheaper than they are, distorting dispatch decisions

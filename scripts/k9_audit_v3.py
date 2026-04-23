@@ -103,7 +103,7 @@ def run_all_liveness_checks() -> List[str]:
     Run liveness checks for all 5 core components.
 
     Components:
-      1. Hook Chain (HOOK_PRE_CALL, HOOK_POST_CALL)
+      1. Hook Chain (HOOK_BOOT, HOOK_HEALTH_K9_ESCALATE)
       2. OmissionEngine (OMISSION_DETECTED, OMISSION_RESOLVED)
       3. ForgetGuard (FORGET_GUARD_SCAN, FORGET_GUARD_VIOLATION)
       4. Intent Tracker (INTENT_DECLARED, INTENT_FULFILLED)
@@ -111,10 +111,10 @@ def run_all_liveness_checks() -> List[str]:
     """
     violations = []
 
-    # 1. Hook Chain — should fire every tool_use (10min window for active sessions)
+    # 1. Hook Chain — HOOK_BOOT fires on daemon start, HOOK_HEALTH_K9_ESCALATE on health checks
     violations += check_component_liveness(
         component_name="HookChain",
-        expected_event_types=["HOOK_PRE_CALL", "HOOK_POST_CALL"],
+        expected_event_types=["HOOK_BOOT", "HOOK_HEALTH_K9_ESCALATE"],
         lookback_seconds=600,
         min_expected_count=1,
     )
