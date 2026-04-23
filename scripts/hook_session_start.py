@@ -339,6 +339,169 @@ Per Spec Section 11.3: governance verifies form, operations drives Y* attainment
         return ''
 
 
+def _append_phase2_dashboard():
+    """Phase 2 Field Dashboard — role alignment, goal progress, recommendation.
+
+    Uses phase2_goal_query.py functions (read-only).
+    Shows full dashboard if cieu_goal_contribution >= 50 rows, else warming-up msg.
+    Board Phase 2 Directive 2026-04-23: "CEO boot 可见".
+    """
+    import time as _time
+
+    db_path = str(REPO_ROOT / '.ystar_cieu.db')
+    if not os.path.exists(db_path):
+        return ''
+
+    try:
+        sys.path.insert(0, str(REPO_ROOT / 'scripts'))
+        try:
+            import phase2_goal_query as p2q
+        finally:
+            if str(REPO_ROOT / 'scripts') in sys.path:
+                sys.path.remove(str(REPO_ROOT / 'scripts'))
+
+        conn = p2q._connect_ro(db_path)
+        try:
+            # Check threshold
+            row_count = conn.execute(
+                "SELECT COUNT(*) FROM cieu_goal_contribution"
+            ).fetchone()[0]
+
+            if row_count < 50:
+                return (
+                    "\n\n===== Y* Field Phase 2 Dashboard =====\n"
+                    f"Phase 2 warming up -- {row_count} rows so far, "
+                    "backfill cron running, eta next tick\n"
+                    "=======================================\n"
+                )
+
+            since_24h = _time.time() - 86400
+            agent_id = _resolve_agent_id()
+
+            # --- Section 1: Role Alignment (top 3 active roles) ---
+            role_rows = conn.execute(
+                "SELECT g.owner_role, COUNT(*) as cnt, "
+                "SUM(CASE WHEN c.role_alignment_score >= 0.5 THEN 1 ELSE 0 END) as in_scope "
+                "FROM cieu_goal_contribution c "
+                "JOIN ystar_goal_tree g ON c.goal_id = g.goal_id "
+                "WHERE c.created_at >= ? "
+                "GROUP BY g.owner_role "
+                "ORDER BY cnt DESC LIMIT 3",
+                (since_24h,)
+            ).fetchall()
+
+            role_lines = []
+            for r in role_rows:
+                role = r[0] or 'unknown'
+                total = r[1]
+                in_scope = r[2]
+                pct = int(100 * in_scope / total) if total > 0 else 0
+                filled = pct // 10
+                bar = '■' * filled + '□' * (10 - filled)
+                role_lines.append(
+                    f"  {role:<14s}{bar} {pct}%  ({in_scope}/{total} actions in-scope)"
+                )
+
+            # --- Section 2: Active Goals (top-level + subgoals) ---
+            all_goals = p2q.list_goals(conn, active_only=True)
+            top_goals = [g for g in all_goals if '_' not in g.get('goal_id', 'x')[2:]]
+            total_goals = len(all_goals)
+
+            goal_lines = []
+            for g in top_goals[:3]:
+                gid = g['goal_id']
+                gtext = g.get('goal_text', gid) or gid
+                # Count subgoals advancing
+                sub_ids = [s['goal_id'] for s in all_goals
+                           if s['goal_id'].startswith(gid + '_')]
+                subs_advancing = 0
+                for sid in sub_ids:
+                    prog = p2q.goal_progress(conn, sid)
+                    if prog.get('contribution_count', 0) > 0:
+                        subs_advancing += 1
+                total_subs = max(len(sub_ids), 1)
+                pct = int(100 * subs_advancing / total_subs)
+                filled = pct // 10
+                bar = '▓' * filled + '░' * (10 - filled)
+                suffix = ' (near complete!)' if pct >= 80 else ''
+                goal_lines.append(
+                    f"  {gid} {gtext[:20]:<20s} {bar} {pct}% "
+                    f"({subs_advancing}/{total_subs} subgoals advancing){suffix}"
+                )
+
+            # --- Section 3: Top-advancing + recommendation ---
+            top_adv = p2q.top_advancing_goals(conn, since_24h, limit=1)
+            top_line = ''
+            if top_adv:
+                ta = top_adv[0]
+                ta_id = ta.get('goal_id', '?')
+                ta_text = ta.get('goal_text', ta_id) or ta_id
+                ta_events = ta.get('event_count', 0)
+                ta_score = ta.get('total_contribution', 0)
+                avg_s = round(ta_score / ta_events, 2) if ta_events > 0 else 0
+                top_line = (
+                    f"  {ta_id} {ta_text[:30]}  "
+                    f"(+{ta_events} contribution events, avg score {avg_s})"
+                )
+
+            # Recommendation: find agent's owned goal with least progress
+            owned = [g for g in all_goals if g.get('owner_role') == agent_id]
+            rec_line = ''
+            if owned:
+                least = None
+                least_cnt = float('inf')
+                for g in owned:
+                    prog = p2q.goal_progress(conn, g['goal_id'])
+                    cnt = prog.get('contribution_count', 0)
+                    if cnt < least_cnt:
+                        least_cnt = cnt
+                        least = g
+                if least:
+                    status = 'NOT started' if least_cnt == 0 else f'{least_cnt} contributions'
+                    rec_line = (
+                        f"  Recommended focus: {least['goal_id']} "
+                        f"{(least.get('goal_text','') or '')[:25]} "
+                        f"(owner={least.get('owner_role','?')}, {status})"
+                    )
+
+            # Agent scope summary
+            agent_align = p2q.role_alignment(conn, agent_id, since=since_24h)
+            a_total = agent_align.get('contribution_count', 0)
+            a_avg = agent_align.get('avg_role_alignment_score', 0)
+            in_scope_pct = int(a_avg * 100) if a_total > 0 else 0
+            off_scope_pct = max(0, 100 - in_scope_pct) if a_total > 0 else 0
+
+            output = "\n\n===== Y* Field Phase 2 Dashboard =====\n"
+            output += "\nRole Alignment (last 24h, top 3 active roles):\n"
+            output += '\n'.join(role_lines) if role_lines else '  (no role data in last 24h)'
+            output += f"\n\nActive Goals ({len(top_goals)} top-level, {total_goals} total):\n"
+            output += '\n'.join(goal_lines) if goal_lines else '  (no active goals)'
+            output += "\n\nTop-advancing goal (last 24h):\n"
+            output += top_line if top_line else '  (no contributions in last 24h)'
+            output += f"\n\nYour {agent_id} scope:\n"
+            if a_total > 0:
+                output += f"  In-scope: {in_scope_pct}%    Off-scope: {off_scope_pct}%\n"
+            else:
+                output += "  (no contributions yet for this role)\n"
+            if rec_line:
+                output += rec_line + '\n'
+            output += "\n=======================================\n"
+            return output
+
+        finally:
+            conn.close()
+    except Exception as e:
+        log = REPO_ROOT / 'scripts' / 'hook_debug.log'
+        try:
+            with log.open('a', encoding='utf-8') as f:
+                f.write(f'[hook_session_start] Phase 2 dashboard error: {e}\n')
+                import traceback as _tb
+                f.write(_tb.format_exc() + '\n')
+        except OSError:
+            pass
+        return ''
+
+
 def _append_yml_memories():
     """Load YML memories for agent (P0-B U2 - obligation-driven memory retrieval)."""
     import subprocess
@@ -403,6 +566,11 @@ def _main():
         snapshot = _append_working_memory_snapshot()
         if snapshot:
             text += '\n\n# Working Memory Snapshot' + snapshot
+
+        # Phase 2 Field Dashboard (Board Directive 2026-04-23)
+        phase2 = _append_phase2_dashboard()
+        if phase2:
+            text += phase2
 
         # YML Memory Retrieval (PRIORITY 2 - obligation-driven)
         yml = _append_yml_memories()

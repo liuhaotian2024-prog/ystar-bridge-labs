@@ -1,0 +1,25 @@
+{
+  "call_id": "call_00005",
+  "timestamp": 1776965593.9351969,
+  "prompt_hash": "2a0b04d5326ec558",
+  "prompt_snippet": "You are a goal decomposition engine. Given a top-level goal, break it into 4-6 actionable sub-goals.\n\nEach sub-goal must have:\n- \"text\": short description\n- \"y_star_definition\": verifiable completion ",
+  "gemma": {
+    "provider": "ystar-gemma:latest",
+    "text": "{\n  \"top_goal\": {\n    \"text\": \"\u8ba9 gov-mcp \u5728\u4e09\u4e2a\u6708\u5185\u83b7\u5f97100\u4e2a\u4ed8\u8d39\u7528\u6237\",\n    \"y_star_definition\": \"Revenue stream for gov-mcp shows 100 unique paying customer transactions within 90 days.\",\n    \"deadline\": \"3 months\"\n  },\n  \"subgoals\": [\n    {\n      \"text\": \"\u5b8c\u6210 v1.0 \u4ea7\u54c1\u529f\u80fd\u56fa\u5316\u4e0e\u7a33\u5b9a\u6027\u6d4b\u8bd5\",\n      \"y_star_definition\": \"gov-mcp build passes all stress tests (39000+ checks/second sustained) and has zero critical bugs reported in the last 2 weeks.\",\n      \"depends_on\": []\n    },\n    {\n      \"text\": \"\u5236\u5b9a\u4e09\u9636\u6bb5\u5e02\u573a\u8fdb\u5165\u548c\u589e\u957f\u8def\u7ebf\u56fe\",\n      \"y_star_definition\": \"CMO/CSO deliver a ratified marketing/sales plan covering Awareness (Month 1), Consideration (Month 2), Conversion (Month 3) stages, signed off by CEO.\",\n      \"depends_on\": []\n    },\n    {\n      \"text\": \"\u5efa\u7acb\u5b8c\u5584\u7684\u4ed8\u8d39\u7528\u6237\u5f15\u5bfc\u548c\u8f6c\u5316\u6d41\u7a0b\",\n      \"y_star_definition\": \"Sales/Platform team implements a fully tracked onboarding funnel in CRM, achieving a documented conversion rate (Trial->Paid) > 15%.\",\n      \"depends_on\": [\n        \"\u5b8c\u6210 v1.0 \u4ea7\u54c1\u529f\u80fd\u56fa\u5316\u4e0e\u7a33\u5b9a\u6027\u6d4b\u8bd5\"\n      ]\n    },\n    {\n      \"text\": \"\u83b7\u53d6\u5e76\u9a8c\u8bc1\u7b2c\u4e00\u6279\u79cd\u5b50\u7528\u6237\u53cd\u9988\u4e0e\u6848\u4f8b\",\n      \"y_star_definition\": \"CSO secures 5 reference customers who agree to provide testimonials and case studies detailing Y*gov's impact.\",\n      \"depends_on\": [\n        \"\u5236\u5b9a\u4e09\u9636\u6bb5\u5e02\u573a\u8fdb\u5165\u548c\u589e\u957f\u8def\u7ebf\u56fe\"\n      ]\n    },\n    {\n      \"text\": \"\u5b8c\u6210\u5b9a\u4ef7\u6a21\u578b\u548c\u652f\u4ed8\u6e20\u9053\u7684\u6700\u7ec8\u786e\u8ba4\",\n      \"y_star_definition\": \"CFO finalizes 3-tier pricing structure for gov-mcp and integrates Stripe/payment gateway API keys for live billing.\",\n      \"depends_on\": []\n    }\n  ]\n}",
+    "tokens": 479,
+    "latency_ms": 32826,
+    "error": null
+  },
+  "claude": {
+    "provider": "claude-sonnet-4.5",
+    "text": "",
+    "tokens": 0,
+    "latency_ms": 0,
+    "error": "ANTHROPIC_API_KEY not set"
+  },
+  "metrics": {
+    "similarity": 0.0,
+    "key_info_retention": 1.0,
+    "length_ratio": 0.0
+  }
+}

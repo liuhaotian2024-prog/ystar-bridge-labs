@@ -1,0 +1,25 @@
+{
+  "call_id": "call_00006",
+  "timestamp": 1776967918.721167,
+  "prompt_hash": "2a0b04d5326ec558",
+  "prompt_snippet": "You are a goal decomposition engine. Given a top-level goal, break it into 4-6 actionable sub-goals.\n\nEach sub-goal must have:\n- \"text\": short description\n- \"y_star_definition\": verifiable completion ",
+  "gemma": {
+    "provider": "ystar-gemma:latest",
+    "text": "{\n  \"top_goal\": {\n    \"text\": \"\u8ba9 gov-mcp \u5728\u4e09\u4e2a\u6708\u5185\u83b7\u5f97100\u4e2a\u4ed8\u8d39\u7528\u6237\",\n    \"y_star_definition\": \"Internal analytics shows 100 unique paying customer accounts for gov-mcp within 90 days.\",\n    \"deadline\": \"3 months\"\n  },\n  \"subgoals\": [\n    {\n      \"text\": \"\u5b8c\u5584\u4ea7\u54c1\u5e02\u573a\u5b9a\u4f4d\u4e0e\u4ef7\u503c\u4e3b\u5f20\",\n      \"y_star_definition\": \"CMO delivers a finalized 'gov-mcp Value Prop Deck' ratified by CEO, identifying 3 primary target personas (e.g., 'Enterprise AI Safety Lead').\",\n      \"depends_on\": []\n    },\n    {\n      \"text\": \"\u5b8c\u6210\u9500\u552e\u548c\u4ed8\u8d39\u6d41\u7a0b\u57fa\u7840\u8bbe\u65bd\u5efa\u8bbe\",\n      \"y_star_definition\": \"CSO confirms Stripe integration is live for gov-mcp, and a dedicated customer onboarding flow (including payment gateway confirmation) is documented and tested.\",\n      \"depends_on\": []\n    },\n    {\n      \"text\": \"\u5236\u5b9a\u5e76\u6267\u884c\u65e9\u671f\u7528\u6237\u83b7\u53d6\u6218\u5f79\",\n      \"y_star_definition\": \"CMO/CSO executes a minimum of 2 major content/outreach campaigns (e.g., 1 major blog series, 1 industry conference presence) targeting the defined personas.\",\n      \"depends_on\": [\n        \"\u5b8c\u5584\u4ea7\u54c1\u5e02\u573a\u5b9a\u4f4d\u4e0e\u4ef7\u503c\u4e3b\u5f20\"\n      ]\n    },\n    {\n      \"text\": \"\u4ea7\u54c1\u7a33\u5b9a\u6027\u4e0e\u53ef\u6269\u5c55\u6027\u9a8c\u8bc1\",\n      \"y_star_definition\": \"CTO completes load testing showing gov-mcp handles 500 concurrent simulated agents without degradation (EXP-002 metrics must be maintained).\",\n      \"depends_on\": []\n    },\n    {\n      \"text\": \"\u5236\u5b9a\u5206\u9636\u6bb5\u7684\u589e\u957f\u548c\u8f6c\u5316\u6a21\u578b\",\n      \"y_star_definition\": \"CFO delivers a '100-User Financial Model' projecting necessary pricing tiers, CAC, and LTV, ratified by CEO and Board.\",\n      \"depends_on\": [\n        \"\u5b8c\u5584\u4ea7\u54c1\u5e02\u573a\u5b9a\u4f4d\u4e0e\u4ef7\u503c\u4e3b\u5f20\"\n      ]\n    }\n  ]\n}",
+    "tokens": 479,
+    "latency_ms": 18048,
+    "error": null
+  },
+  "claude": {
+    "provider": "claude-sonnet-4.5",
+    "text": "",
+    "tokens": 0,
+    "latency_ms": 0,
+    "error": "ANTHROPIC_API_KEY not set"
+  },
+  "metrics": {
+    "similarity": 0.0,
+    "key_info_retention": 1.0,
+    "length_ratio": 0.0
+  }
+}

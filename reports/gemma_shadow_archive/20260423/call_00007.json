@@ -1,0 +1,25 @@
+{
+  "call_id": "call_00007",
+  "timestamp": 1776969036.9615722,
+  "prompt_hash": "2a0b04d5326ec558",
+  "prompt_snippet": "You are a goal decomposition engine. Given a top-level goal, break it into 4-6 actionable sub-goals.\n\nEach sub-goal must have:\n- \"text\": short description\n- \"y_star_definition\": verifiable completion ",
+  "gemma": {
+    "provider": "ystar-gemma:latest",
+    "text": "{\n  \"top_goal\": {\n    \"text\": \"\u8ba9 gov-mcp \u5728\u4e09\u4e2a\u6708\u5185\u83b7\u5f97100\u4e2a\u4ed8\u8d39\u7528\u6237\",\n    \"y_star_definition\": \"Database record of 100+ unique paying customers for gov-mcp within the next 90 days.\",\n    \"deadline\": \"T+90 Days\"\n  },\n  \"subgoals\": [\n    {\n      \"text\": \"\u5b8c\u5584\u5e02\u573a\u5b9a\u4f4d\u548c\u6838\u5fc3\u4ef7\u503c\u4e3b\u5f20\",\n      \"y_star_definition\": \"CMO finalizes and gains approval from CEO on a 1-page positioning document detailing gov-mcp's unique value proposition (focusing on deterministic pre-execution permission enforcement and low latency).\",\n      \"depends_on\": []\n    },\n    {\n      \"text\": \"\u6784\u5efa\u53ef\u9a8c\u8bc1\u7684\u9500\u552e\u548c\u8bd5\u7528\u6d41\u7a0b\",\n      \"y_star_definition\": \"CSO develops and documents a fully functional, measurable onboarding flow resulting in a measurable 'Trial Conversion' metric (e.g., successful API key generation for non-internal users).\",\n      \"depends_on\": []\n    },\n    {\n      \"text\": \"\u786e\u5b9a\u53ef\u6269\u5c55\u7684\u5b9a\u4ef7\u6a21\u578b\u548c\u652f\u4ed8\u96c6\u6210\",\n      \"y_star_definition\": \"CFO presents and receives Board approval for a scalable pricing structure (e.g., tiering based on agent count or governance checks) and successful integration test with Stripe/payment gateway.\",\n      \"depends_on\": []\n    },\n    {\n      \"text\": \"\u51c6\u5907\u548c\u53d1\u5e03\u6838\u5fc3\u5e02\u573a\u5185\u5bb9\u8d44\u4ea7\",\n      \"y_star_definition\": \"CMO publishes 3 pieces of high-quality, source-traced content (e.g., whitepaper, case study, blog) demonstrating gov-mcp's technical superiority over prompt-based guardrails, meeting the 'Content quality' ethics boundary.\",\n      \"depends_on\": []\n    },\n    {\n      \"text\": \"\u5b8c\u6210\u9996\u6279\u76ee\u6807\u5ba2\u6237\u7684POC\u8bd5\u70b9\u90e8\u7f72\",\n      \"y_star_definition\": \"CSO secures and deploys gov-mcp POC in 5 external, non-paying, high-potential target accounts, resulting in documented feedback and identifying 3 key pain points.\",\n      \"depends_on\": [\n        \"\u5b8c\u5584\u5e02\u573a\u5b9a\u4f4d\u548c\u6838\u5fc3\u4ef7\u503c\u4e3b\u5f20\",\n        \"\u6784\u5efa\u53ef\u9a8c\u8bc1\u7684\u9500\u552e\u548c\u8bd5\u7528\u6d41\u7a0b\"\n      ]\n    }\n  ]\n}",
+    "tokens": 527,
+    "latency_ms": 24096,
+    "error": null
+  },
+  "claude": {
+    "provider": "claude-sonnet-4.5",
+    "text": "",
+    "tokens": 0,
+    "latency_ms": 0,
+    "error": "ANTHROPIC_API_KEY not set"
+  },
+  "metrics": {
+    "similarity": 0.0,
+    "key_info_retention": 1.0,
+    "length_ratio": 0.0
+  }
+}
