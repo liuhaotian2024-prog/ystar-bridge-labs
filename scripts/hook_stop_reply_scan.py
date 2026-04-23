@@ -525,7 +525,8 @@ def main():
                 try:
                     receipt_validation = auto_validate_subagent_receipt(
                         receipt_text=receipt_text,
-                        declared_artifacts=None
+                        declared_artifacts=None,
+                        metadata_tool_uses=metadata_tool_uses,
                     )
                     if not receipt_validation.get("is_valid"):
                         print(f"[W10] Task-notification receipt validation failed: Rt={receipt_validation.get('actual_rt')}", file=sys.stderr)

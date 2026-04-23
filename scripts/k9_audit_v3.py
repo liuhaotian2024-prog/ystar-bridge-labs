@@ -70,17 +70,16 @@ def check_component_liveness(
     conn = get_cieu_conn()
     cursor = conn.cursor()
 
-    cutoff = datetime.now() - timedelta(seconds=lookback_seconds)
-    cutoff_str = cutoff.isoformat()
+    cutoff_epoch = (datetime.now() - timedelta(seconds=lookback_seconds)).timestamp()
 
     for event_type in expected_event_types:
         try:
             cursor.execute(
                 """
                 SELECT COUNT(*) FROM cieu_events
-                WHERE event_type = ? AND created_at >= ?
+                WHERE event_type = ? AND CAST(created_at AS REAL) >= ?
                 """,
-                (event_type, cutoff_str),
+                (event_type, cutoff_epoch),
             )
             count = cursor.fetchone()[0]
 
@@ -103,7 +102,7 @@ def run_all_liveness_checks() -> List[str]:
     Run liveness checks for all 5 core components.
 
     Components:
-      1. Hook Chain (HOOK_BOOT, HOOK_HEALTH_K9_ESCALATE)
+      1. Hook Chain (HOOK_BOOT required, HOOK_HEALTH_K9_ESCALATE event-driven)
       2. OmissionEngine (OMISSION_DETECTED, OMISSION_RESOLVED)
       3. ForgetGuard (FORGET_GUARD_SCAN, FORGET_GUARD_VIOLATION)
       4. Intent Tracker (INTENT_DECLARED, INTENT_FULFILLED)
@@ -111,12 +110,19 @@ def run_all_liveness_checks() -> List[str]:
     """
     violations = []
 
-    # 1. Hook Chain — HOOK_BOOT fires on daemon start, HOOK_HEALTH_K9_ESCALATE on health checks
+    # 1a. Hook Chain heartbeat — HOOK_BOOT fires on each hook invocation (must be active)
     violations += check_component_liveness(
         component_name="HookChain",
-        expected_event_types=["HOOK_BOOT", "HOOK_HEALTH_K9_ESCALATE"],
+        expected_event_types=["HOOK_BOOT"],
         lookback_seconds=600,
         min_expected_count=1,
+    )
+    # 1b. Hook escalation — event-driven, may legitimately be 0 if no health issues
+    violations += check_component_liveness(
+        component_name="HookEscalation",
+        expected_event_types=["HOOK_HEALTH_K9_ESCALATE"],
+        lookback_seconds=600,
+        min_expected_count=0,
     )
 
     # 2. OmissionEngine — passive detector, 5min window acceptable
@@ -180,8 +186,7 @@ def check_causal_chain(
     conn = get_cieu_conn()
     cursor = conn.cursor()
 
-    cutoff = datetime.now() - timedelta(seconds=lookback_seconds)
-    cutoff_str = cutoff.isoformat()
+    cutoff_epoch = (datetime.now() - timedelta(seconds=lookback_seconds)).timestamp()
 
     try:
         # Find all occurrences of each event in sequence, ordered by seq_global
@@ -191,10 +196,10 @@ def check_causal_chain(
                 """
                 SELECT event_type, created_at, seq_global, session_id, agent_id
                 FROM cieu_events
-                WHERE event_type = ? AND created_at >= ?
+                WHERE event_type = ? AND CAST(created_at AS REAL) >= ?
                 ORDER BY seq_global ASC
                 """,
-                (event_type, cutoff_str),
+                (event_type, cutoff_epoch),
             )
             rows = cursor.fetchall()
             found_events.append((event_type, rows))
@@ -340,7 +345,7 @@ def run_all_invariant_checks() -> List[str]:
       5. Hook startup must trigger governance action
     """
     violations = []
-    cutoff = (datetime.now() - timedelta(hours=24)).isoformat()
+    cutoff = (datetime.now() - timedelta(hours=24)).timestamp()
 
     # 1. Failed directives must be recorded
     violations += check_invariant(

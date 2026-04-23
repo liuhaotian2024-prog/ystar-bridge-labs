@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-22 21:00:00
+**Generated**: 2026-04-22 21:30:00
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,7 +36,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/12 valid (0 errors)
-**CIEU 24h Events**: 87053
+**CIEU 24h Events**: 79105
 **Overdue Obligations**: 0
 
 ---
@@ -84,44 +84,44 @@ ceo          | 3/3          | 24           | 37       | 2026-04-20
 ---
 
 ## 8. Y* Field State (xi) — Mission axis frequency + drift
-**Total CIEU events (24h)**: 87053
+**Total CIEU events (24h)**: 79104
 
 | M-Axis | Description | 24h Count | 7d Avg/Day | Drift |
 |--------|-------------|-----------|------------|-------|
-| **M-1** | Survivability (session/boot/handoff/persist) | 13445 | 14783 | → |
-| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 545 | 1999 | ↓ |
-| **M-2b** | Omission prevention (omission/overdue/alarm) | 7585 | 7028 | → |
+| **M-1** | Survivability (session/boot/handoff/persist) | 13555 | 14562 | → |
+| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 485 | 1994 | ↓ |
+| **M-2b** | Omission prevention (omission/overdue/alarm) | 7679 | 7043 | ↑ |
 | **M-3** | Value production (customer/revenue/dogfood/demo) | 2 | 0 | ↑ |
 
-**Classified coverage**: 21577/87053 (24.8%)
-**Unclassified**: 65476 events (routine ops / K9 routing)
-**Drift alert**: M-3 trending UP vs 7d baseline
+**Classified coverage**: 21721/79104 (27.5%)
+**Unclassified**: 57383 events (routine ops / K9 routing)
+**Drift alert**: M-2b, M-3 trending UP vs 7d baseline
 **Drift alert**: M-2a trending DOWN vs 7d baseline
 
 ---
 
 ## 9. Commission Error Heatmap — 11-component unified dashboard
-**Total commission errors (24h)**: 5544
+**Total commission errors (24h)**: 5482
 
 **By M-Axis**:
 
 | Axis | Description | 24h Count |
 |------|-------------|-----------|
-| **M-1** | Survivability (schema/wire/config drift) | 690 |
-| **M-2a** | Commission prevention (core 11 detectors) | 4484 |
-| **M-3** | Value quality (maturity/off-target) | 370 |
+| **M-1** | Survivability (schema/wire/config drift) | 657 |
+| **M-2a** | Commission prevention (core 11 detectors) | 4478 |
+| **M-3** | Value quality (maturity/off-target) | 347 |
 
 **By Detector (11 components + hook catches)**:
 
 | Detector | 24h Count | Drift vs 7d |
 |----------|-----------|-------------|
-| k9_silent_fire_audit | 4018 | = (avg 4042.3/d) |
-| amendment_coverage_audit | 646 | v (avg 2629.9/d) |
-| hook_commission_catch | 605 | v (avg 1346.1/d) |
-| observable_action_detector | 84 | = (avg 87.3/d) |
-| metalearning | 77 | v (avg 247.0/d) |
-| unified_compliance_audit | 54 | ^ (avg 31.6/d) |
-| directive_evaluator | 43 | ^ (avg 17.9/d) |
+| k9_silent_fire_audit | 4046 | = (avg 4056.4/d) |
+| amendment_coverage_audit | 613 | v (avg 2381.9/d) |
+| hook_commission_catch | 553 | v (avg 1345.6/d) |
+| observable_action_detector | 82 | = (avg 87.4/d) |
+| metalearning | 73 | v (avg 233.6/d) |
+| unified_compliance_audit | 56 | ^ (avg 31.9/d) |
+| directive_evaluator | 42 | ^ (avg 18.0/d) |
 | claim_mismatch | 11 | ^ (avg 2.7/d) |
 | enforcement_observer | 5 | ^ (avg 4.1/d) |
 | counterfactual_engine | 1 | ^ (avg 0.1/d) |
@@ -130,32 +130,32 @@ ceo          | 3/3          | 24           | 37       | 2026-04-20
 
 | Actor | 24h Commission Errors |
 |-------|----------------------|
-| cto | 1152 |
-| unknown | 1053 |
-| eng-platform | 945 |
+| cto | 1068 |
+| unknown | 1011 |
+| eng-platform | 1005 |
 | eng-kernel | 742 |
 | eng-domains | 590 |
-| ceo | 337 |
-| test_agent | 232 |
-| secretary | 217 |
-| eng-governance | 166 |
+| ceo | 328 |
+| secretary | 215 |
+| test_agent | 208 |
+| eng-governance | 205 |
 | platform | 88 |
 
 **Top 5 Event Types**:
-- `K9_VIOLATION_DETECTED`: 2667
-- `K9_AUDIT_TRIGGERED`: 1351
-- `SESSION_JSON_SCHEMA_VIOLATION`: 602
-- `MATURITY_TAG_MISSING`: 370
-- `FORGET_GUARD_K9_WARN`: 137
+- `K9_VIOLATION_DETECTED`: 2689
+- `K9_AUDIT_TRIGGERED`: 1357
+- `SESSION_JSON_SCHEMA_VIOLATION`: 569
+- `MATURITY_TAG_MISSING`: 347
+- `FORGET_GUARD_K9_WARN`: 112
 
-**Overall drift**: v (24h=5544, 7d avg/day=8409.0)
+**Overall drift**: v (24h=5482, 7d avg/day=8161.7)
 
 ---
 
 ## 10. Ecosystem — Y*gov Product Repo
-**HEAD**: `36d34f0 [auto] WIP checkpoint 2026-04-22 20:33 -- 1 files changed`
+**HEAD**: `541c52b [auto] WIP checkpoint 2026-04-22 21:04 -- 1 files changed`
 **24h commits**: 12
-**ahead origin**: 7
+**ahead origin**: 8
 **test files**: 99
 **version**: 0.48.0
 
@@ -174,7 +174,8 @@ ceo          | 3/3          | 24           | 37       | 2026-04-20
 ## 13. Today's Commits (24h) — both repos
 
 
-**ystar-company** (50 commits):
+**ystar-company** (49 commits):
+- 8eef34c4 21:04 [auto] WIP checkpoint 2026-04-22 21:04 -- 6 files changed
 - 6c7df7c2 20:33 [auto] WIP checkpoint 2026-04-22 20:33 -- 5 files changed
 - 8b28260c 19:57 [auto] WIP checkpoint 2026-04-22 19:57 -- 5 files changed
 - 37ae0183 18:34 [auto] WIP checkpoint 2026-04-22 18:34 -- 10 files changed
@@ -194,9 +195,9 @@ ceo          | 3/3          | 24           | 37       | 2026-04-20
 - ecd70014 10:32 [auto] WIP checkpoint 2026-04-22 10:32 -- 9 files changed
 - 0eb20ade 10:19 [auto] WIP checkpoint 2026-04-22 10:19 -- 38 files changed
 - 1743bdfb 09:56 [auto] WIP checkpoint 2026-04-22 09:56 -- 24 files changed
-- 9b189f84 09:40 [auto] WIP checkpoint 2026-04-22 09:40 -- 40 files changed
 
 **Y*gov** (12 commits):
+- 541c52b 21:04 [auto] WIP checkpoint 2026-04-22 21:04 -- 1 files changed
 - 36d34f0 20:33 [auto] WIP checkpoint 2026-04-22 20:33 -- 1 files changed
 - b2161da 19:57 [auto] WIP checkpoint 2026-04-22 19:57 -- 2 files changed
 - 81af25b 18:34 [auto] WIP checkpoint 2026-04-22 18:34 -- 3 files changed
@@ -208,4 +209,3 @@ ceo          | 3/3          | 24           | 37       | 2026-04-20
 - fdcdefe 09:40 [auto] WIP checkpoint 2026-04-22 09:40 -- 1 files changed
 - d1c5188 01:30 [auto] WIP checkpoint 2026-04-22 01:30 -- 1 files changed
 - c1f38c9 22:36 [auto] WIP checkpoint 2026-04-21 22:36 -- 83 files changed
-- 50b0765 21:10 3 engine CIEU fail-closed + brain_auto_ingest line 553 hang fix + tests
