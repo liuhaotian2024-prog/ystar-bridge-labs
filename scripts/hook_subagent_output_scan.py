@@ -97,19 +97,21 @@ def _scan(text: str) -> list:
 
 
 def _emit_cieu(event_type: str, metadata, decision: str = "warn") -> None:
-    """Emit CIEU event. metadata can be str or dict (auto-serialized)."""
+    """Emit CIEU event via central emit_cieu() helper (m_functor inference enabled)."""
     try:
         if isinstance(metadata, dict):
             metadata_str = json.dumps(metadata, ensure_ascii=False, default=str)[:500]
         else:
             metadata_str = str(metadata)[:500]
-        conn = sqlite3.connect(str(CIEU_DB), timeout=2.0)
-        conn.execute(
-            "INSERT INTO cieu_events (event_id, seq_global, created_at, session_id, agent_id, event_type, decision, passed, task_description) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
-            (str(uuid.uuid4()), 0, time.time(), "subagent_scan", "ceo", event_type, decision, 1, metadata_str),
+        sys.path.insert(0, str(Path(__file__).parent))
+        from _cieu_helpers import emit_cieu
+        emit_cieu(
+            event_type=event_type,
+            decision=decision,
+            passed=1,
+            task_description=metadata_str,
+            session_id="subagent_scan",
         )
-        conn.commit()
-        conn.close()
     except Exception:
         pass
 

@@ -8,6 +8,30 @@
 </head>
 <body>
   <div id="badge-overlay"></div>
+
+  <!-- Voice mode UI overlays -->
+  <div id="rtt-overlay" style="
+    position: fixed; bottom: 12px; right: 12px;
+    background: rgba(0,0,0,0.7); color: #0f0; font-family: monospace;
+    font-size: 13px; padding: 4px 10px; border-radius: 4px;
+    z-index: 100; opacity: 0; transition: opacity 0.3s;
+    pointer-events: none;
+  ">RTT: — ms</div>
+
+  <div id="mic-indicator" data-state="off" style="
+    position: fixed; bottom: 12px; left: 12px;
+    background: rgba(0,0,0,0.7); color: #888; font-family: monospace;
+    font-size: 13px; padding: 4px 10px; border-radius: 4px;
+    z-index: 100; pointer-events: none;
+  ">MIC OFF</div>
+
+  <style>
+    #mic-indicator[data-state='listening'] { color: #f44; animation: mic-pulse 1s infinite; }
+    #mic-indicator[data-state='processing'] { color: #ff0; }
+    #mic-indicator[data-state='unsupported'] { color: #666; }
+    @keyframes mic-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+  </style>
+
   <script type="importmap">
   {
     "imports": {

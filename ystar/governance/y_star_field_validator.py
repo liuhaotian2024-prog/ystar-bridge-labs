@@ -74,7 +74,14 @@ AGENT_ID_TO_ROLE_MAP = {
     # Board
     "board": "ceo",
     "doctor_agent": "platform",
-    # Catch-alls for common suffixes
+    # Bare system-component names (without "system:" prefix)
+    "orchestrator": "platform",
+    "path_a_agent": "platform",
+    "path_b_agent": "platform",
+    "intervention_engine": "governance",
+    "agent": "platform",      # generic "agent" → platform (orchestration)
+    "system": "platform",     # bare "system"
+    # Catch-alls
     "unidentified": None,
 }
 
@@ -427,6 +434,7 @@ def infer_role_alignment(
 
     # Normalize agent_id to canonical role_id via the mapping table
     resolved_role = normalize_agent_id_to_role(agent_id)
+    role_via_normalization = resolved_role is not None
 
     matched_row = None
     if resolved_role:
@@ -443,6 +451,7 @@ def infer_role_alignment(
             role_lower = (r["role_id"] or "").lower()
             if role_lower == agent_lower or agent_lower in role_lower or role_lower in agent_lower:
                 matched_row = r
+                role_via_normalization = True
                 break
 
     if matched_row is None:
@@ -472,6 +481,11 @@ def infer_role_alignment(
     for kw in scope_kws:
         if kw in search_text:
             return (0.9, "scope_match: {}".format(kw))
+
+    # If role was resolved via normalization map, mild positive (agent IS in
+    # its role, we just lack keyword signal in the sparse event content).
+    if role_via_normalization:
+        return (0.7, "role_resolved_no_content_signal: {}".format(resolved_role or matched_row["role_id"]))
 
     return (0.5, "neutral: no_signal")
 

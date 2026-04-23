@@ -112,36 +112,17 @@ def load_canonical_registry() -> set:
 
 
 def emit_cieu_event(event_type: str, metadata: dict) -> None:
-    """Emit CIEU event to database."""
+    """Emit CIEU event via central emit_cieu() helper (m_functor inference enabled)."""
     try:
-        conn = get_cieu_conn()
-        cursor = conn.cursor()
-
-        # Get next seq_global
-        cursor.execute("SELECT COALESCE(MAX(seq_global), 0) + 1 FROM cieu_events")
-        seq_global = cursor.fetchone()[0]
-
-        cursor.execute(
-            """
-            INSERT INTO cieu_events (
-                event_id, seq_global, created_at, session_id, agent_id,
-                event_type, decision, passed, task_description
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """,
-            (
-                str(uuid.uuid4()),
-                seq_global,
-                time.time(),
-                metadata.get("session_id", "k9_event"),
-                metadata.get("agent_id", get_active_agent()),
-                event_type,
-                metadata.get("decision", "warn"),
-                metadata.get("passed", 1),
-                json.dumps(metadata, ensure_ascii=False)[:1000],
-            ),
+        sys.path.insert(0, str(Path(__file__).parent))
+        from _cieu_helpers import emit_cieu
+        emit_cieu(
+            event_type=event_type,
+            decision=metadata.get("decision", "warn"),
+            passed=metadata.get("passed", 1),
+            task_description=json.dumps(metadata, ensure_ascii=False)[:1000],
+            session_id=metadata.get("session_id", "k9_event"),
         )
-        conn.commit()
-        conn.close()
     except Exception as e:
         # Fail-open: log to stderr but don't crash
         print(f"[K9_EVENT] CIEU emit failed: {e}", file=sys.stderr)

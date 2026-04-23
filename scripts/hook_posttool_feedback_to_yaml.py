@@ -40,28 +40,17 @@ FEEDBACK_FILE_PATTERN = re.compile(r"memory/feedback_[^/]+\.md$")
 
 
 def _emit_cieu(event_type: str, metadata: dict) -> None:
-    """Emit a CIEU event. Fail-open: never crashes on DB errors."""
+    """Emit a CIEU event via central emit_cieu() helper (m_functor inference enabled)."""
     try:
-        conn = sqlite3.connect(str(CIEU_DB), timeout=2.0)
-        conn.execute(
-            "INSERT INTO cieu_events "
-            "(event_id, seq_global, created_at, session_id, agent_id, "
-            "event_type, decision, passed, task_description) "
-            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
-            (
-                str(uuid.uuid4()),
-                0,
-                time.time(),
-                "feedback_to_yaml_hook",
-                "eng-domains",
-                event_type,
-                "info",
-                1,
-                json.dumps(metadata, ensure_ascii=False)[:500],
-            ),
+        sys.path.insert(0, str(Path(__file__).parent))
+        from _cieu_helpers import emit_cieu
+        emit_cieu(
+            event_type=event_type,
+            decision="info",
+            passed=1,
+            task_description=json.dumps(metadata, ensure_ascii=False)[:500],
+            session_id="feedback_to_yaml_hook",
         )
-        conn.commit()
-        conn.close()
     except Exception as e:
         print(f"[V3-Jordan] CIEU emit failed: {e}", file=sys.stderr)
 
