@@ -1,0 +1,25 @@
+{
+  "call_id": "call_00009",
+  "timestamp": 1776977892.250632,
+  "prompt_hash": "932f9ca7d9fc2a07",
+  "prompt_snippet": "You are a goal decomposition engine. Break a top-level goal into 4-6 actionable sub-goals.\n\nEach sub-goal JSON object must have:\n- \"text\": description that INCLUDES role-specific keywords so ownership",
+  "gemma": {
+    "provider": "ystar-gemma:latest",
+    "text": "{\n  \"top_goal\": {\n    \"text\": \"\u8ba9 gov-mcp \u5728\u4e09\u4e2a\u6708\u5185\u83b7\u5f97100\u4e2a\u4ed8\u8d39\u7528\u6237\",\n    \"y_star_definition\": \"100 verified, paying external users of gov-mcp within 90 days.\",\n    \"deadline\": \"3 months\"\n  },\n  \"subgoals\": [\n    {\n      \"text\": \"\u5b8c\u5584 gov-mcp \u7684\u5e02\u573a\u63a8\u5e7f\u5185\u5bb9\uff0c\u64b0\u5199\u767d\u76ae\u4e66\u548c\u535a\u5ba2\u6587\u7ae0\uff0c\u5438\u5f15\u76ee\u6807\u53d7\u4f17\u5173\u6ce8 [owner: cmo]\",\n      \"y_star_definition\": \"CMO delivers a technical whitepaper detailing gov-mcp's architecture and a minimum of 4 high-quality blog posts targeting multi-agent system governance challenges.\",\n      \"depends_on\": []\n    },\n    {\n      \"text\": \"\u5236\u5b9a\u8be6\u7ec6\u7684\u9500\u552e\u7b56\u7565\u548c\u5ba2\u6237\u83b7\u53d6\u6d41\u7a0b\uff0c\u5b9a\u4e49\u76ee\u6807\u5ba2\u6237\u753b\u50cf\u548c\u9500\u552e\u6750\u6599 [owner: cso]\",\n      \"y_star_definition\": \"CSO delivers a finalized sales playbook, including defined Ideal Customer Profile (ICP), pricing tiers, and a measurable sales pipeline process.\",\n      \"depends_on\": []\n    },\n    {\n      \"text\": \"\u4f18\u5316 gov-mcp \u7684\u6280\u672f\u90e8\u7f72\u548c\u7a33\u5b9a\u6027\uff0c\u786e\u4fdd\u9ad8\u53ef\u7528\u6027\u548c\u53ef\u6269\u5c55\u6027\uff0c\u5e76\u51c6\u5907 CI/CD \u6d41\u7a0b [owner: cto]\",\n      \"y_star_definition\": \"CTO updates the core code base to handle 100+ concurrent paid users, establishes a full CI/CD pipeline, and completes final performance testing (EXP-002 metrics adherence).\",\n      \"depends_on\": []\n    },\n    {\n      \"text\": \"\u786e\u5b9a\u6700\u7ec8\u7684\u5546\u4e1a\u5316\u548c\u5b9a\u4ef7\u6a21\u578b\uff0c\u5e76\u83b7\u5f97\u8463\u4e8b\u4f1a\u6279\u51c6\uff0c\u4e3a\u540e\u7eed\u7684\u8d44\u91d1\u548c\u6cd5\u5f8b\u6587\u4ef6\u51c6\u5907 [owner: cfo]\",\n      \"y_star_definition\": \"CFO presents the 3-month financial model, including cost analysis for 100 users, and secures initial approval from the CEO/Board for the proposed pricing structure.\",\n      \"depends_on\": [\n        \"\u5236\u5b9a\u8be6\u7ec6\u7684\u9500\u552e\u7b56\u7565\u548c\u5ba2\u6237\u83b7\u53d6\u6d41\u7a0b\uff0c\u5b9a\u4e49\u76ee\u6807\u5ba2\u6237\u753b\u50cf\u548c\u9500\u552e\u6750\u6599 [owner: cso]\"\n      ]\n    },\n    {\n      \"text\": \"\u5efa\u7acb\u7528\u6237\u4f7f\u7528\u548c\u5408\u89c4\u7684\u5ba1\u8ba1\u548c\u77e5\u8bc6\u7ba1\u7406\u6d41\u7a0b\uff0c\u8bb0\u5f55\u65e9\u671f\u7528\u6237\u7684\u4f7f\u7528\u6848\u4f8b\u548c\u6700\u4f73\u5b9e\u8df5 [owner: secretary]\",\n      \"y_star_definition\": \"Secretary creates a standardized 'Customer Success Story' template, archives the first 10 user onboarding journeys, and indexes key governance documentation.\",\n      \"depends_on\": [\n        \"\u4f18\u5316 gov-mcp \u7684\u6280\u672f\u90e8\u7f72\u548c\u7a33\u5b9a\u6027\uff0c\u786e\u4fdd\u9ad8\u53ef\u7528\u6027\u548c\u53ef\u6269\u5c55\u6027\uff0c\u5e76\u51c6\u5907 CI/CD \u6d41\u7a0b [owner: cto]\"\n      ]\n    }\n  ]\n}",
+    "tokens": 607,
+    "latency_ms": 39473,
+    "error": null
+  },
+  "claude": {
+    "provider": "claude-sonnet-4.5",
+    "text": "",
+    "tokens": 0,
+    "latency_ms": 0,
+    "error": "ANTHROPIC_API_KEY not set"
+  },
+  "metrics": {
+    "similarity": 0.0,
+    "key_info_retention": 1.0,
+    "length_ratio": 0.0
+  }
+}

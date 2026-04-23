@@ -1,0 +1,25 @@
+{
+  "call_id": "call_00010",
+  "timestamp": 1776978039.556198,
+  "prompt_hash": "932f9ca7d9fc2a07",
+  "prompt_snippet": "You are a goal decomposition engine. Break a top-level goal into 4-6 actionable sub-goals.\n\nEach sub-goal JSON object must have:\n- \"text\": description that INCLUDES role-specific keywords so ownership",
+  "gemma": {
+    "provider": "ystar-gemma:latest",
+    "text": "{\n  \"top_goal\": {\n    \"text\": \"\u8ba9 gov-mcp \u5728\u4e09\u4e2a\u6708\u5185\u83b7\u5f97100\u4e2a\u4ed8\u8d39\u7528\u6237\",\n    \"y_star_definition\": \"100 verifiable paying external users utilizing gov-mcp, tracked via subscription records and revenue reports.\",\n    \"deadline\": \"3 months from start date\"\n  },\n  \"subgoals\": [\n    {\n      \"text\": \"\u5b8c\u5584 gov-mcp \u7684\u5e02\u573a\u63a8\u5e7f\u5185\u5bb9\u548c\u7528\u6237\u6559\u80b2\u6750\u6599\uff0c\u7279\u522b\u662f\u5173\u4e8e\u5176 39000+ checks/second \u6027\u80fd\u548c 61.5% wall time reduction \u7684\u4f18\u52bf\uff0c\u7528\u4e8e\u64b0\u5199\u767d\u76ae\u4e66\u548c\u535a\u5ba2\u7cfb\u5217 [owner: cmo]\",\n      \"y_star_definition\": \"A minimum of 3 high-quality assets (1 whitepaper, 2 blog articles) published on the company blog detailing the performance gains and governance sovereignty.\",\n      \"depends_on\": []\n    },\n    {\n      \"text\": \"\u5b9a\u4e49\u5e76\u8bb0\u5f55\u83b7\u53d6 100 \u4e2a\u4ed8\u8d39\u7528\u6237\u7684\u5173\u952e\u91cc\u7a0b\u7891\u548c\u98ce\u9669\u70b9\uff0c\u5e76\u5411\u8463\u4e8b\u4f1a\u63d0\u4ea4\u521d\u6b65\u7684\u589e\u957f\u7b56\u7565\u62a5\u544a [owner: ceo]\",\n      \"y_star_definition\": \"A Board-ready '3-Month Acquisition Strategy' document detailing required marketing spend, sales targets, and risk mitigation plan.\",\n      \"depends_on\": []\n    },\n    {\n      \"text\": \"\u4f18\u5316\u548c\u5b8c\u5584 gov-mcp \u7684\u9500\u552e\u6d41\u7a0b\u548c\u6f14\u793a\u6750\u6599\uff0c\u786e\u4fdd\u80fd\u6e05\u6670\u4f20\u8fbe\u5176\u8fd0\u884c\u65f6\u6cbb\u7406\u5c42\u7ea7\uff08Level 0-3\uff09\u7684\u4ef7\u503c\uff0c\u5e76\u51c6\u5907\u597d\u5e94\u5bf9\u9996\u6b21\u4ed8\u8d39\u7528\u6237\u7684\u5408\u540c\u7b7e\u7f72\u6d41\u7a0b [owner: cso]\",\n      \"y_star_definition\": \"Sales playbook updated with 5 key objection handlers and a repeatable demo script demonstrating the 0.042ms pre-execution permission enforcement.\",\n      \"depends_on\": []\n    },\n    {\n      \"text\": \"\u6839\u636e\u5f53\u524d\u67b6\u6784\u548c\u6027\u80fd\u6307\u6807\uff0c\u90e8\u7f72\u7528\u4e8e\u8ddf\u8e2a 100 \u4e2a\u7528\u6237\u8ba2\u9605\u548c\u6536\u5165\u7684\u8ba1\u91cf\u5de5\u5177\uff08Metrics/Telemetry\uff09\u5230 MCP Server\uff0c\u5e76\u786e\u4fdd\u8ba1\u8d39\u903b\u8f91\u7684\u51c6\u786e\u6027 [owner: cto]\",\n      \"y_star_definition\": \"Integration of Stripe/Billing webhook handlers into the MCP Server, resulting in accurate, real-time tracking of paid user counts and revenue.\",\n      \"depends_on\": []\n    },\n    {\n      \"text\": \"\u5efa\u7acb\u5e76\u66f4\u65b0\u6240\u6709\u7528\u6237\u4ed8\u8d39\u884c\u4e3a\u7684\u5ba1\u8ba1\u548c\u5408\u89c4\u8bb0\u5f55\u673a\u5236\uff0c\u786e\u4fdd\u6bcf\u4e2a\u4ed8\u8d39\u7528\u6237\u548c\u5176\u4f7f\u7528\u884c\u4e3a\u90fd\u751f\u6210\u53ef\u8ffd\u6eaf\u7684 CIEU \u5ba1\u8ba1\u8bb0\u5f55\uff0c\u4ee5\u6ee1\u8db3\u672a\u6765\u6f5c\u5728\u7684\u5408\u89c4\u5ba1\u67e5 [owner: governance]\",\n      \"y_star_definition\": \"Implementation of a mandatory audit hook that generates a tamper-evident SHA-256 Merkle-chained CIEU record upon successful payment/activation.\",\n      \"depends_on\": [\n        \"cto: \u90e8\u7f72\u7528\u4e8e\u8ddf\u8e2a 100 \u4e2a\u7528\u6237\u8ba2\u9605\u548c\u6536\u5165\u7684\u8ba1\u91cf\u5de5\u5177\uff08Metrics/Telemetry\uff09\u5230 MCP Server\uff0c\u5e76\u786e\u4fdd\u8ba1\u8d39\u903b\u8f91\u7684\u51c6\u786e\u6027\"\n      ]\n    }\n  ]\n}",
+    "tokens": 660,
+    "latency_ms": 27186,
+    "error": null
+  },
+  "claude": {
+    "provider": "claude-sonnet-4.5",
+    "text": "",
+    "tokens": 0,
+    "latency_ms": 0,
+    "error": "ANTHROPIC_API_KEY not set"
+  },
+  "metrics": {
+    "similarity": 0.0,
+    "key_info_retention": 1.0,
+    "length_ratio": 0.0
+  }
+}

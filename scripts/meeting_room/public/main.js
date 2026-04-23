@@ -348,7 +348,137 @@ function startListening(agentName) {
   console.log(`[Y* Voice] Listening for speech to ${agentName}...`);
 }
 
-// Click — select agent + activate voice mode
+// ============================================================
+// CONVERSATION PANEL — slide-in dialogue UI
+// ============================================================
+
+const convPanel = document.getElementById('conv-panel');
+const convAgentName = document.getElementById('conv-agent-name');
+const convAgentRole = document.getElementById('conv-agent-role');
+const convTranscript = document.getElementById('conv-transcript');
+const convTextInput = document.getElementById('conv-text-input');
+const convSendBtn = document.getElementById('conv-send-btn');
+const convMicBtn = document.getElementById('conv-mic-btn');
+const convCloseBtn = document.getElementById('conv-close');
+
+let panelAgent = null;         // currently open agent name
+const transcripts = {};        // per-agent transcript history (last 10)
+const MAX_TRANSCRIPT = 10;
+
+function openPanel(agentName, agentRole) {
+  panelAgent = agentName;
+  convAgentName.textContent = agentName;
+  convAgentRole.textContent = agentRole;
+  convPanel.classList.add('open');
+  renderTranscript(agentName);
+  convTextInput.focus();
+}
+
+function closePanel() {
+  convPanel.classList.remove('open');
+  panelAgent = null;
+}
+
+function addBubble(agentName, sender, text) {
+  if (!transcripts[agentName]) transcripts[agentName] = [];
+  transcripts[agentName].push({ sender, text });
+  // Keep last MAX_TRANSCRIPT exchanges (each exchange = 2 entries)
+  if (transcripts[agentName].length > MAX_TRANSCRIPT * 2) {
+    transcripts[agentName] = transcripts[agentName].slice(-MAX_TRANSCRIPT * 2);
+  }
+  renderTranscript(agentName);
+}
+
+function renderTranscript(agentName) {
+  convTranscript.innerHTML = '';
+  const entries = transcripts[agentName] || [];
+  entries.forEach(({ sender, text }) => {
+    const bubble = document.createElement('div');
+    bubble.className = `conv-bubble ${sender}`;
+    bubble.textContent = text;
+    convTranscript.appendChild(bubble);
+  });
+  convTranscript.scrollTop = convTranscript.scrollHeight;
+}
+
+async function sendDialogue(agentName, text) {
+  if (!text.trim()) return;
+  addBubble(agentName, 'user', text);
+  try {
+    const resp = await fetch('/dialogue', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ agent: agentName.toLowerCase(), text }),
+    });
+    const data = await resp.json();
+    addBubble(agentName, 'agent', data.response);
+    // Also speak the response via TTS
+    speakToAgent(agentName, data.response);
+  } catch (err) {
+    console.error('[Y* Dialogue] request failed:', err);
+    addBubble(agentName, 'agent', '[Error: could not reach server]');
+  }
+}
+
+// Send button
+convSendBtn.addEventListener('click', () => {
+  if (!panelAgent) return;
+  const text = convTextInput.value;
+  convTextInput.value = '';
+  sendDialogue(panelAgent, text);
+});
+
+// Enter key sends
+convTextInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    convSendBtn.click();
+  }
+});
+
+// Mic button — voice input into panel
+convMicBtn.addEventListener('click', () => {
+  if (!panelAgent) return;
+  if (!sttSupported) {
+    const text = prompt(`Speech-to-text unavailable. Type your message to ${panelAgent}:`);
+    if (text) sendDialogue(panelAgent, text);
+    return;
+  }
+  if (voiceActive) return;
+  voiceActive = true;
+  convMicBtn.classList.add('listening');
+  setMicState('listening');
+
+  const rec = new SpeechRecognition();
+  rec.lang = 'en-US';
+  rec.interimResults = false;
+  rec.maxAlternatives = 1;
+  rec.continuous = false;
+
+  rec.onresult = (event) => {
+    const transcript = event.results[0][0].transcript;
+    voiceActive = false;
+    convMicBtn.classList.remove('listening');
+    setMicState('off');
+    sendDialogue(panelAgent, transcript);
+  };
+  rec.onerror = () => {
+    voiceActive = false;
+    convMicBtn.classList.remove('listening');
+    setMicState('off');
+  };
+  rec.onend = () => {
+    voiceActive = false;
+    convMicBtn.classList.remove('listening');
+    setMicState('off');
+  };
+  rec.start();
+});
+
+// Close button
+convCloseBtn.addEventListener('click', closePanel);
+
+// Click — select agent + open conversation panel
 renderer.domElement.addEventListener('click', (event) => {
   updatePointer(event);
   raycaster.setFromCamera(pointer, camera);
@@ -365,17 +495,18 @@ renderer.domElement.addEventListener('click', (event) => {
   if (intersects.length > 0) {
     const { agentName, agentRole } = intersects[0].object.userData;
     selectedAgent = agentName;
-    console.log(`[Y* Meeting Room] Clicked: ${agentName} (${agentRole}) — activating voice mode`);
+    console.log(`[Y* Meeting Room] Clicked: ${agentName} (${agentRole}) — opening conversation panel`);
 
     const badge = document.getElementById(`badge-${agentName.toLowerCase()}`);
     if (badge) badge.classList.add('selected');
     const entry = agentMeshes.find(e => e.agent.name === agentName);
     if (entry) setOutlineVisible(entry, true);
 
-    // Activate voice: start listening
-    startListening(agentName);
+    // Open conversation panel instead of direct voice
+    openPanel(agentName, agentRole);
   } else {
     selectedAgent = null;
+    closePanel();
   }
 });
 

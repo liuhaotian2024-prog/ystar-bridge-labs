@@ -70,82 +70,122 @@ FEW_SHOT_EXAMPLES = [
 ]
 
 # Template-based decomposition topics (used as fallback when Gemma unavailable)
+# Each template includes owner_role hint so role inference doesn't default to CEO
 TEMPLATE_TOPICS = {
     # Chinese and English topic keywords -> sub-goal templates
     "付费": [
-        {"text": "定价策略设计", "y_star_tpl": "pricing document ratified with tier definitions + payment SKUs"},
-        {"text": "支付集成", "y_star_tpl": "stripe/payment gateway integrated + test transaction successful"},
-        {"text": "用户获取渠道建立", "y_star_tpl": "3+ acquisition channels active (blog/SEO/social/referral) with tracking"},
-        {"text": "产品文档完善", "y_star_tpl": "docs/ directory has install guide + API reference + quickstart all sections filled"},
-        {"text": "用户支持流程", "y_star_tpl": "support channel (email/discord/github issues) live + response SLA defined"},
+        {"text": "CFO 定价策略设计与 pricing tier 建模 [owner: ceo]", "y_star_tpl": "pricing document ratified with tier definitions + payment SKUs"},
+        {"text": "CTO 支付集成 stripe API 对接与 deploy [owner: cto]", "y_star_tpl": "stripe/payment gateway integrated + test transaction successful"},
+        {"text": "CMO 用户获取渠道建立 marketing content 与 landing page [owner: cmo]", "y_star_tpl": "3+ acquisition channels active (blog/SEO/social/referral) with tracking"},
+        {"text": "CTO 产品 API 文档完善与 install guide [owner: cto]", "y_star_tpl": "docs/ directory has install guide + API reference + quickstart all sections filled"},
+        {"text": "Platform 用户支持流程 deploy 与监控 [owner: platform]", "y_star_tpl": "support channel (email/discord/github issues) live + response SLA defined"},
     ],
     "用户": [
-        {"text": "落地页上线", "y_star_tpl": "landing page deployed at public URL with value proposition + signup CTA"},
-        {"text": "用户注册流程", "y_star_tpl": "user registration endpoint live + email verification working"},
-        {"text": "用户获取策略", "y_star_tpl": "acquisition plan document with 3+ channels + target metrics per channel"},
-        {"text": "产品文档完善", "y_star_tpl": "docs/ has install guide + API reference + quickstart"},
-        {"text": "用户反馈收集", "y_star_tpl": "feedback mechanism (survey/NPS/in-app) deployed + first 10 responses collected"},
+        {"text": "CMO 落地页上线 landing page marketing content [owner: cmo]", "y_star_tpl": "landing page deployed at public URL with value proposition + signup CTA"},
+        {"text": "CTO 用户注册流程 API endpoint 实现 [owner: cto]", "y_star_tpl": "user registration endpoint live + email verification working"},
+        {"text": "CMO 用户获取策略 marketing campaign 设计 [owner: cmo]", "y_star_tpl": "acquisition plan document with 3+ channels + target metrics per channel"},
+        {"text": "CTO 产品 API 文档完善 install guide [owner: cto]", "y_star_tpl": "docs/ has install guide + API reference + quickstart"},
+        {"text": "CMO 用户反馈收集 blog content NPS [owner: cmo]", "y_star_tpl": "feedback mechanism (survey/NPS/in-app) deployed + first 10 responses collected"},
     ],
     "上线": [
-        {"text": "功能完整性验证", "y_star_tpl": "core feature checklist 100% passing in CI + manual smoke test by Board"},
-        {"text": "部署流程自动化", "y_star_tpl": "one-command deploy script working + rollback tested"},
-        {"text": "监控告警配置", "y_star_tpl": "health endpoint + error alerting + uptime monitor active"},
-        {"text": "文档与帮助", "y_star_tpl": "user-facing docs deployed + FAQ section with 10+ entries"},
+        {"text": "Kernel 功能完整性验证 test suite [owner: kernel]", "y_star_tpl": "core feature checklist 100% passing in CI + manual smoke test by Board"},
+        {"text": "Platform 部署流程自动化 deploy CI/CD [owner: platform]", "y_star_tpl": "one-command deploy script working + rollback tested"},
+        {"text": "Platform 监控告警配置 health endpoint [owner: platform]", "y_star_tpl": "health endpoint + error alerting + uptime monitor active"},
+        {"text": "CMO 文档与帮助 content landing page [owner: cmo]", "y_star_tpl": "user-facing docs deployed + FAQ section with 10+ entries"},
     ],
     "测试": [
-        {"text": "单元测试覆盖", "y_star_tpl": "pytest coverage >= 80% on core modules"},
-        {"text": "集成测试搭建", "y_star_tpl": "integration test suite with 5+ end-to-end scenarios passing"},
-        {"text": "CI 管道配置", "y_star_tpl": "CI pipeline runs on every PR + blocks merge on failure"},
+        {"text": "Kernel 单元测试覆盖 test suite [owner: kernel]", "y_star_tpl": "pytest coverage >= 80% on core modules"},
+        {"text": "Governance 集成测试搭建 hook enforcement [owner: governance]", "y_star_tpl": "integration test suite with 5+ end-to-end scenarios passing"},
+        {"text": "Platform CI 管道配置 deploy pipeline [owner: platform]", "y_star_tpl": "CI pipeline runs on every PR + blocks merge on failure"},
     ],
     "customer": [
-        {"text": "Landing page deployment", "y_star_tpl": "public landing page with value prop + signup form live"},
-        {"text": "Pricing strategy", "y_star_tpl": "pricing document with 3-tier model + payment integration ready"},
-        {"text": "User acquisition channels", "y_star_tpl": "3+ channels active with attribution tracking"},
-        {"text": "Documentation", "y_star_tpl": "install guide + API docs + quickstart tutorial complete"},
-        {"text": "Support process", "y_star_tpl": "support channel live + response SLA < 24h defined"},
+        {"text": "CMO landing page deployment marketing content [owner: cmo]", "y_star_tpl": "public landing page with value prop + signup form live"},
+        {"text": "CEO pricing strategy and tier modeling [owner: ceo]", "y_star_tpl": "pricing document with 3-tier model + payment integration ready"},
+        {"text": "CMO user acquisition channels marketing blog [owner: cmo]", "y_star_tpl": "3+ channels active with attribution tracking"},
+        {"text": "CTO API documentation and install guide [owner: cto]", "y_star_tpl": "install guide + API docs + quickstart tutorial complete"},
+        {"text": "Platform support process deploy monitoring [owner: platform]", "y_star_tpl": "support channel live + response SLA < 24h defined"},
     ],
     "deploy": [
-        {"text": "CI/CD pipeline", "y_star_tpl": "automated build + test + deploy pipeline passing"},
-        {"text": "Monitoring setup", "y_star_tpl": "health check endpoint + alerting + dashboard active"},
-        {"text": "Rollback mechanism", "y_star_tpl": "one-command rollback tested + documented"},
-        {"text": "Documentation", "y_star_tpl": "deploy runbook + architecture diagram available"},
+        {"text": "Platform CI/CD pipeline deploy automation [owner: platform]", "y_star_tpl": "automated build + test + deploy pipeline passing"},
+        {"text": "Platform monitoring setup health endpoint [owner: platform]", "y_star_tpl": "health check endpoint + alerting + dashboard active"},
+        {"text": "CTO rollback mechanism API safety [owner: cto]", "y_star_tpl": "one-command rollback tested + documented"},
+        {"text": "CMO documentation and content [owner: cmo]", "y_star_tpl": "deploy runbook + architecture diagram available"},
     ],
 }
 
-# Generic fallback when no topic matches
-GENERIC_SUBGOALS = [
-    {"text": "需求分析与规划", "y_star_tpl": "requirements document with acceptance criteria for each feature"},
-    {"text": "核心功能实现", "y_star_tpl": "core feature implemented + unit tests passing"},
-    {"text": "测试与验证", "y_star_tpl": "test suite covering critical paths + CI integration"},
-    {"text": "文档编写", "y_star_tpl": "user-facing documentation complete with examples"},
-    {"text": "发布准备", "y_star_tpl": "release checklist complete + Board approval obtained"},
+# Also update generic fallback with role hints
+GENERIC_SUBGOALS_WITH_ROLES = [
+    {"text": "CEO 需求分析与规划 [owner: ceo]", "y_star_tpl": "requirements document with acceptance criteria for each feature"},
+    {"text": "CTO 核心功能实现 API build [owner: cto]", "y_star_tpl": "core feature implemented + unit tests passing"},
+    {"text": "Kernel 测试与验证 test suite [owner: kernel]", "y_star_tpl": "test suite covering critical paths + CI integration"},
+    {"text": "CMO 文档编写 content landing page [owner: cmo]", "y_star_tpl": "user-facing documentation complete with examples"},
+    {"text": "Platform 发布准备 deploy CI/CD [owner: platform]", "y_star_tpl": "release checklist complete + Board approval obtained"},
 ]
 
 
-def _build_gemma_prompt(goal_text: str, role_list: List[str]) -> str:
-    """Build few-shot prompt for Gemma to decompose a goal."""
+
+def _build_gemma_prompt(
+    goal_text: str,
+    role_list: List[str],
+    role_scopes: Optional[Dict[str, List[str]]] = None,
+    retry_hint: Optional[str] = None,
+) -> str:
+    """Build few-shot prompt for Gemma to decompose a goal.
+
+    Args:
+        role_scopes: role_id -> keyword list; injected so Gemma can place keywords.
+        retry_hint: if set, appended as a corrective instruction (CEO-default retry).
+    """
     example = FEW_SHOT_EXAMPLES[0]
-    prompt = f"""You are a goal decomposition engine. Given a top-level goal, break it into 4-6 actionable sub-goals.
 
-Each sub-goal must have:
-- "text": short description
-- "y_star_definition": verifiable completion criterion (SQL-checkable or file-checkable)
-- "depends_on": list of other sub-goal texts this depends on (empty list if none)
+    # Build role-keyword context block for Gemma
+    role_ctx = ""
+    if role_scopes:
+        role_lines = []
+        for rid, kws in role_scopes.items():
+            if kws:
+                role_lines.append(f"  {rid}: {', '.join(kws[:8])}")
+        if role_lines:
+            role_ctx = "Role keyword reference (use these words in sub-goal text to indicate owner):\n" + "\n".join(role_lines) + "\n\n"
 
-Available owner roles: {json.dumps(role_list)}
+    retry_block = ""
+    if retry_hint:
+        retry_block = f"\nCORRECTION: {retry_hint}\n"
 
+    prompt = f"""You are a goal decomposition engine. Break a top-level goal into 4-6 actionable sub-goals.
+
+Each sub-goal JSON object must have:
+- "text": description that INCLUDES role-specific keywords so ownership is clear
+- "y_star_definition": verifiable completion criterion
+- "depends_on": list of dependency sub-goal texts (empty if none)
+
+IMPORTANT: Distribute sub-goals across different roles. End each "text" with [owner: ROLE] hint.
+
+Good sub-goal text examples:
+- "CMO ships landing page and marketing content for funnel acquisition [owner: cmo]"
+- "CTO builds API integration and deploys backend service [owner: cto]"
+- "Platform engineer configures deployment pipeline and monitoring [owner: platform]"
+Bad (no role signal): "Craft product positioning" or "Set up infrastructure"
+
+{role_ctx}Available roles: {json.dumps(role_list)}
+{retry_block}
 Example input: "{example['input']}"
 Example output:
 {json.dumps(example['output'], ensure_ascii=False, indent=2)}
 
-Now decompose this goal:
+Now decompose:
 Input: "{goal_text}"
 
-Output (valid JSON only, no markdown fences, no explanation):"""
+Output (valid JSON only, no markdown fences):"""
     return prompt
 
 
-def _try_gemma_decompose(goal_text: str, role_list: List[str]) -> Optional[Dict[str, Any]]:
+def _try_gemma_decompose(
+    goal_text: str,
+    role_list: List[str],
+    role_scopes: Optional[Dict[str, List[str]]] = None,
+    retry_hint: Optional[str] = None,
+) -> Optional[Dict[str, Any]]:
     """Attempt Stage 1 via Gemma local. Returns parsed dict or None on failure."""
     try:
         # Import gemma_client from same directory
@@ -154,7 +194,7 @@ def _try_gemma_decompose(goal_text: str, role_list: List[str]) -> Optional[Dict[
     except ImportError:
         return None
 
-    prompt = _build_gemma_prompt(goal_text, role_list)
+    prompt = _build_gemma_prompt(goal_text, role_list, role_scopes, retry_hint)
     result = gemma_generate(prompt, max_tokens=1000)
 
     if result.get("error"):
@@ -205,7 +245,7 @@ def _template_decompose(goal_text: str) -> Dict[str, Any]:
     if best_topic and best_score > 0:
         templates = TEMPLATE_TOPICS[best_topic]
     else:
-        templates = GENERIC_SUBGOALS
+        templates = GENERIC_SUBGOALS_WITH_ROLES
 
     # Extract deadline if present (e.g., "三个月内", "6 months", "by 2026-07")
     deadline = None
@@ -263,11 +303,22 @@ def _load_role_scopes(conn: sqlite3.Connection) -> Dict[str, List[str]]:
 def infer_owner_role(goal_text: str, role_scopes: Dict[str, List[str]]) -> Tuple[str, str]:
     """
     Infer the best owner role for a goal text based on keyword matching.
+    Also checks for explicit [owner: ROLE] hint from Gemma prompt output.
 
     Returns (role_id, inference_basis) where inference_basis is a human-readable
     explanation of why this role was chosen.
     """
     goal_lower = goal_text.lower()
+
+    # Check for explicit [owner: role] hint first (highest priority)
+    owner_hint = re.search(r'\[owner:\s*(\w+)\]', goal_lower)
+    if owner_hint:
+        hinted_role = owner_hint.group(1).strip()
+        # Validate hinted role exists in role_scopes (or known roles)
+        known_roles = set(role_scopes.keys()) | {"ceo", "cto", "cmo", "cso", "cfo", "secretary", "platform", "governance", "kernel"}
+        if hinted_role in known_roles:
+            return hinted_role, f"explicit [owner: {hinted_role}] hint"
+
     scores = {}
 
     for role_id, keywords in role_scopes.items():
@@ -454,7 +505,7 @@ def decompose_goal(
     gemma_used = False
     fallback_to_template = False
 
-    decomposed = _try_gemma_decompose(goal_text, role_list)
+    decomposed = _try_gemma_decompose(goal_text, role_list, role_scopes)
     if decomposed is not None:
         gemma_used = True
     else:
@@ -463,14 +514,42 @@ def decompose_goal(
         fallback_to_template = True
 
     # ── Stage 2: Owner-Role Inference ──
-    role_assignments = {}
-    # Infer for top goal
-    role_assignments[decomposed["top_goal"]["text"]] = infer_owner_role(
-        decomposed["top_goal"]["text"], role_scopes,
-    )
-    # Infer for each subgoal
-    for sg in decomposed["subgoals"]:
-        role_assignments[sg["text"]] = infer_owner_role(sg["text"], role_scopes)
+    def _infer_all(dec: Dict[str, Any]) -> Dict[str, Tuple[str, str]]:
+        """Run role inference on top goal + all subgoals."""
+        assignments = {}
+        assignments[dec["top_goal"]["text"]] = infer_owner_role(
+            dec["top_goal"]["text"], role_scopes,
+        )
+        for sg in dec["subgoals"]:
+            assignments[sg["text"]] = infer_owner_role(sg["text"], role_scopes)
+        return assignments
+
+    role_assignments = _infer_all(decomposed)
+
+    # ── Stage 2b: CEO-default saturation retry ──
+    # If Gemma was used but >3 subgoals defaulted to CEO, retry with corrective hint (max 2 retries)
+    if gemma_used and role_scopes:
+        max_retries = 2
+        for retry_i in range(max_retries):
+            ceo_count = sum(
+                1 for sg in decomposed["subgoals"]
+                if role_assignments.get(sg["text"], ("ceo", ""))[0] == "ceo"
+            )
+            if ceo_count <= 3:
+                break  # acceptable distribution
+            retry_hint = (
+                f"Your previous output assigned {ceo_count}/{len(decomposed['subgoals'])} "
+                f"sub-goals to ceo by default. That is wrong. Distribute roles: use keywords "
+                f"like 'CMO', 'CTO', 'platform', 'marketing', 'deploy', 'content', 'API', "
+                f"'landing page', 'blog' in sub-goal text so each maps to the right owner. "
+                f"Add [owner: role] hint at end of each sub-goal text."
+            )
+            retry_result = _try_gemma_decompose(goal_text, role_list, role_scopes, retry_hint)
+            if retry_result is not None:
+                decomposed = retry_result
+                role_assignments = _infer_all(decomposed)
+            else:
+                break  # Gemma failed on retry, accept current
 
     # ── Stage 3: ID generation + DB write ──
     next_n = _next_goal_id(conn)

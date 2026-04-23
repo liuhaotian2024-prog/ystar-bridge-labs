@@ -9,6 +9,21 @@
 <body>
   <div id="badge-overlay"></div>
 
+  <!-- Conversation Panel (slide-in from right) -->
+  <div id="conv-panel" class="conv-panel">
+    <div class="conv-header">
+      <span id="conv-agent-name">Agent</span>
+      <span id="conv-agent-role" class="conv-role"></span>
+      <button id="conv-close" class="conv-close-btn" aria-label="Close">&times;</button>
+    </div>
+    <div id="conv-transcript" class="conv-transcript"></div>
+    <div class="conv-input-row">
+      <input id="conv-text-input" type="text" placeholder="Type a message..." autocomplete="off" />
+      <button id="conv-send-btn" class="conv-send-btn">Send</button>
+      <button id="conv-mic-btn" class="conv-mic-btn" title="Voice input">&#127908;</button>
+    </div>
+  </div>
+
   <!-- Voice mode UI overlays -->
   <div id="rtt-overlay" style="
     position: fixed; bottom: 12px; right: 12px;

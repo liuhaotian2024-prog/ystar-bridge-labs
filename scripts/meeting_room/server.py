@@ -2,6 +2,8 @@
 Y* Bridge Labs — Meeting Room scaffold server.
 Serves static files from ./public on localhost:8765.
 POST /speak — TTS endpoint (ElevenLabs > macOS say > text fallback).
+POST /dialogue — MVP canned agent response endpoint.
+  Phase 2 TODO: real Y*gov sub-agent spawn + live LLM responses.
 """
 import http.server
 import json
@@ -151,6 +153,90 @@ def handle_speak(handler):
     )
 
 
+# ============================================================
+# /dialogue — MVP canned agent responses
+# Phase 2: replace with real Y*gov sub-agent spawn via Claude API.
+# ============================================================
+
+AGENT_CANNED = {
+    "aiden": {
+        "role": "CEO",
+        "responses": [
+            "I'm Aiden, CEO of Y* Bridge Labs. Our top priority is shipping Y*gov v0.42 and proving AI agents can run a real company.",
+            "Good question. Let me check with the team and get back to you with a concrete plan.",
+            "We operate by M Triangle: Survivability, Governability, Value Production. Everything aligns to that.",
+        ],
+    },
+    "sofia": {
+        "role": "CMO",
+        "responses": [
+            "Hi, I'm Sofia, CMO. I handle brand, content, and go-to-market strategy for Y*gov.",
+            "Our launch blog post is in progress. The key message: governance that governs itself.",
+            "I'm tracking three audience segments: AI-native startups, regulated enterprises, and open-source contributors.",
+        ],
+    },
+    "samantha": {
+        "role": "Secretary",
+        "responses": [
+            "I'm Samantha, executive secretary. I keep the team organized and meetings on track.",
+            "Let me pull up the latest status report for you.",
+            "The next board review is scheduled. I'll send the agenda shortly.",
+        ],
+    },
+    "ethan": {
+        "role": "CTO",
+        "responses": [
+            "Ethan here, CTO. I own all technical architecture decisions for Y*gov.",
+            "All 406 tests are green. The install path is solid on macOS and Linux.",
+            "I'm tracking three tech debt items this sprint. Reliability is the feature.",
+        ],
+    },
+}
+
+_dialogue_counter = {}
+
+
+def handle_dialogue(handler):
+    """Process POST /dialogue requests. Returns canned per-agent response."""
+    content_length = int(handler.headers.get("Content-Length", 0))
+    body = handler.rfile.read(content_length)
+    try:
+        data = json.loads(body)
+    except (json.JSONDecodeError, ValueError):
+        handler.send_response(400)
+        handler.send_header("Content-Type", "application/json")
+        handler.send_header("Access-Control-Allow-Origin", "*")
+        handler.end_headers()
+        handler.wfile.write(b'{"error":"invalid json"}')
+        return
+
+    agent = data.get("agent", "aiden").lower()
+    user_text = data.get("text", "")
+
+    agent_data = AGENT_CANNED.get(agent, AGENT_CANNED["aiden"])
+    # Round-robin through canned responses
+    idx = _dialogue_counter.get(agent, 0)
+    response_text = agent_data["responses"][idx % len(agent_data["responses"])]
+    _dialogue_counter[agent] = idx + 1
+
+    resp = json.dumps({
+        "agent": agent,
+        "role": agent_data["role"],
+        "response": response_text,
+        "user_text": user_text,
+        "source": "canned_mvp",
+    }).encode()
+
+    handler.send_response(200)
+    handler.send_header("Content-Type", "application/json")
+    handler.send_header("Content-Length", str(len(resp)))
+    handler.send_header("Access-Control-Allow-Origin", "*")
+    handler.end_headers()
+    handler.wfile.write(resp)
+
+    sys.stderr.write(f"[dialogue] agent={agent} user=\"{user_text[:40]}\" resp_idx={idx}\n")
+
+
 class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=DIRECTORY, **kwargs)
@@ -161,13 +247,15 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     def do_POST(self):
         if self.path == "/speak":
             handle_speak(self)
+        elif self.path == "/dialogue":
+            handle_dialogue(self)
         else:
             self.send_response(404)
             self.end_headers()
             self.wfile.write(b'{"error":"not found"}')
 
     def do_OPTIONS(self):
-        """Handle CORS preflight for /speak."""
+        """Handle CORS preflight for /speak and /dialogue."""
         self.send_response(204)
         self.send_header("Access-Control-Allow-Origin", "*")
         self.send_header("Access-Control-Allow-Methods", "POST, OPTIONS")
