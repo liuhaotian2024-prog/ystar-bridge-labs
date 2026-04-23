@@ -15,7 +15,7 @@ import os
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, PROJECT_ROOT)
 
-from ystar.governance.y_star_field_validator import batch_validate_recent, batch_backfill
+from ystar.governance.y_star_field_validator import batch_validate_recent, batch_backfill, batch_contribution_backfill
 
 
 def main():
@@ -49,7 +49,17 @@ def main():
         default=5000,
         help="Max rows to process per backfill run (default 5000)",
     )
+    parser.add_argument(
+        "--phase2-contribution",
+        action="store_true",
+        dest="phase2_contribution",
+        help="Phase 2: compute role_alignment + goal_contribution scores for CIEU events",
+    )
     args = parser.parse_args()
+
+    if args.phase2_contribution:
+        _run_phase2_contribution(args)
+        return
 
     if args.backfill:
         _run_backfill(args)
@@ -159,6 +169,72 @@ def _run_backfill(args):
         print("  Wishful:       {}".format(total_stats['wishful_count']))
         print("  Coverage:      {}/{} ({:.2f}%)".format(with_tag, total_rows, coverage_pct))
         print("  CIEU Event:    {}".format(event_id))
+
+
+def _run_phase2_contribution(args):
+    """Phase 2: role-alignment + goal-contribution backfill."""
+    db_path = args.db_path
+    limit = args.limit
+
+    stats = batch_contribution_backfill(db_path=db_path, limit=limit)
+
+    if args.json_output:
+        print(json.dumps(stats, indent=2))
+    else:
+        print("Y* Field Validator — Phase 2 Contribution Backfill")
+        print("  Status:              {}".format(stats.get("status", "?")))
+        if stats.get("missing_tables"):
+            print("  Missing tables:      {}".format(", ".join(stats["missing_tables"])))
+        print("  Processed:           {}".format(stats.get("processed", 0)))
+        print("  Skipped (existing):  {}".format(stats.get("skipped_existing", 0)))
+        print("  Contributions ins:   {}".format(stats.get("contributions_inserted", 0)))
+        print("  Role scores:         {}".format(stats.get("role_scores_computed", 0)))
+
+    # Emit CIEU summary event
+    _emit_phase2_event(stats, db_path, args.json_output)
+
+
+def _emit_phase2_event(stats, db_path, json_output=False):
+    # type: (dict, str, bool) -> str
+    """Emit WAVE2_PHASE2_CONTRIBUTION_INFERENCE_LANDED CIEU event."""
+    try:
+        from scripts._cieu_helpers import emit_cieu
+
+        blocked = stats.get("status") == "BLOCKED"
+        live_fire_status = "blocked_missing_tables" if blocked else "completed"
+
+        summary = {
+            "functions_added": [
+                "infer_role_alignment",
+                "infer_goal_contribution",
+                "batch_contribution_backfill",
+            ],
+            "phase2_cli_flag": "--phase2-contribution",
+            "live_fire_status": live_fire_status,
+            "blocked": blocked,
+            "processed": stats.get("processed", 0),
+            "contributions_inserted": stats.get("contributions_inserted", 0),
+        }
+
+        event_id = emit_cieu(
+            event_type="WAVE2_PHASE2_CONTRIBUTION_INFERENCE_LANDED",
+            decision="auto_approve",
+            passed=1,
+            task_description="Phase 2 role-alignment + goal-contribution inference backfill",
+            m_functor="M-2a",
+            m_weight=0.9,
+            file_path="ystar/governance/y_star_field_validator.py",
+            params_json=json.dumps(summary),
+        )
+        if json_output:
+            print(json.dumps({"cieu_event_id": event_id}, indent=2))
+        else:
+            print("  CIEU Event:          {}".format(event_id or "EMIT_FAILED"))
+        return event_id or "EMIT_FAILED"
+
+    except Exception as e:
+        sys.stderr.write("[PHASE2_LANDED] emit failed: {}\n".format(e))
+        return "EMIT_FAILED: {}".format(e)
 
 
 def _emit_backfill_event(stats, coverage_pct, db_path):

@@ -13,7 +13,7 @@ Wave-2 Step-1 L4 slice. Deterministic rules only (no LLM judge).
 import json
 import sqlite3
 import time
-from typing import Dict, Optional, Tuple
+from typing import Dict, List, Optional, Tuple
 
 # Canonical M-triangle axes from M_TRIANGLE.md (AMENDMENT-023)
 M_FUNCTOR_WHITELIST = {"M-1", "M-2a", "M-2b", "M-3"}
@@ -304,6 +304,276 @@ def batch_backfill(
     conn.commit()
     conn.close()
 
+    return stats
+
+
+# ---------------------------------------------------------------------------
+# Phase 2: Role-alignment + Goal-contribution inference
+# ---------------------------------------------------------------------------
+
+
+def _table_exists(conn, table_name):
+    # type: (sqlite3.Connection, str) -> bool
+    """Check if a table exists in sqlite_master."""
+    row = conn.execute(
+        "SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name=?",
+        (table_name,),
+    ).fetchone()
+    return row[0] > 0 if row else False
+
+
+def infer_role_alignment(
+    event_type,        # type: str
+    task_description,  # type: str
+    agent_id,          # type: str
+    db_path,           # type: str
+):
+    # type: (...) -> Tuple[float, str]
+    """Return (alignment_score 0-1, inference_basis).
+
+    Load role_scope_keywords + anti_scope_keywords for agent's role from
+    ystar_role_scope.  Fire anti_scope first -> 0.1 if matched (off-role).
+    Fire scope -> 0.9 if matched (in-role).  No match -> 0.5 (neutral).
+    """
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = sqlite3.Row
+
+    if not _table_exists(conn, "ystar_role_scope"):
+        conn.close()
+        return (0.5, "neutral: ystar_role_scope table missing")
+
+    # Resolve agent's role (agent_id may be "eng-governance", "ceo", etc.)
+    rows = conn.execute(
+        "SELECT role_id, scope_keywords, anti_scope_keywords FROM ystar_role_scope"
+    ).fetchall()
+    conn.close()
+
+    if not rows:
+        return (0.5, "neutral: no_role_scope_rows")
+
+    # Build a combined search text from event_type + task_description
+    search_text = " ".join([
+        (event_type or ""),
+        (task_description or ""),
+    ]).lower()
+
+    if not search_text.strip():
+        return (0.5, "neutral: no_signal")
+
+    # Find the role row that matches agent_id (exact or substring)
+    agent_lower = (agent_id or "").lower()
+    matched_row = None
+    for r in rows:
+        role_lower = (r["role_id"] or "").lower()
+        if role_lower == agent_lower or agent_lower in role_lower or role_lower in agent_lower:
+            matched_row = r
+            break
+
+    if matched_row is None:
+        return (0.5, "neutral: agent_role_not_found")
+
+    # Parse keywords — may be JSON array or comma-separated string
+    def _parse_kw_field(raw):
+        # type: (str) -> list
+        if not raw:
+            return []
+        raw = raw.strip()
+        if raw.startswith("["):
+            try:
+                return [k.lower().strip() for k in json.loads(raw) if isinstance(k, str) and k.strip()]
+            except (json.JSONDecodeError, ValueError):
+                pass
+        return [k.strip().lower() for k in raw.split(",") if k.strip()]
+
+    # Anti-scope check first
+    anti_kws = _parse_kw_field(matched_row["anti_scope_keywords"] or "")
+    for kw in anti_kws:
+        if kw in search_text:
+            return (0.1, "anti_match: {}".format(kw))
+
+    # Scope check
+    scope_kws = _parse_kw_field(matched_row["scope_keywords"] or "")
+    for kw in scope_kws:
+        if kw in search_text:
+            return (0.9, "scope_match: {}".format(kw))
+
+    return (0.5, "neutral: no_signal")
+
+
+def infer_goal_contribution(
+    event_type,        # type: str
+    task_description,  # type: str
+    file_path,         # type: str
+    db_path,           # type: str
+):
+    # type: (...) -> List[Tuple[str, float, str]]
+    """Return list of (goal_id, contribution_score 0-1, inference_basis).
+
+    Read all active goals from ystar_goal_tree. For each goal: keyword match
+    task_description + file_path against goal's y_star_definition keywords.
+    Score 0.8 if strong match, 0.3 if weak match, skip if no match.
+    """
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = sqlite3.Row
+
+    if not _table_exists(conn, "ystar_goal_tree"):
+        conn.close()
+        return []
+
+    goals = conn.execute(
+        "SELECT goal_id, y_star_definition, status FROM ystar_goal_tree "
+        "WHERE status IN ('active', 'ACTIVE', 'Active') OR status IS NULL"
+    ).fetchall()
+    conn.close()
+
+    if not goals:
+        return []
+
+    search_text = " ".join([
+        (event_type or ""),
+        (task_description or ""),
+        (file_path or ""),
+    ]).lower()
+
+    if not search_text.strip():
+        return []
+
+    results = []  # type: List[Tuple[str, float, str]]
+
+    for g in goals:
+        gid = g["goal_id"]
+        defn = (g["y_star_definition"] or "").lower()
+
+        if not defn:
+            continue
+
+        # Extract keywords from y_star_definition: split on common delimiters
+        keywords = [
+            w.strip() for w in defn.replace(",", " ").replace(";", " ").split()
+            if len(w.strip()) >= 3  # skip very short tokens
+        ]
+
+        if not keywords:
+            continue
+
+        match_count = sum(1 for kw in keywords if kw in search_text)
+
+        if match_count == 0:
+            continue
+        elif match_count >= 2:
+            results.append((gid, 0.8, "strong_match: {}_keywords".format(match_count)))
+        else:
+            results.append((gid, 0.3, "weak_match: 1_keyword"))
+
+    return results
+
+
+def batch_contribution_backfill(
+    db_path,    # type: str
+    limit=5000,  # type: int
+):
+    # type: (...) -> Dict
+    """Scan recent CIEU events, compute role_alignment + goal_contribution(s),
+    INSERT rows into cieu_goal_contribution.
+
+    Idempotent: skip events that already have rows in cieu_goal_contribution.
+    Returns stats dict.
+    """
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = sqlite3.Row
+
+    # Check dependency tables
+    missing = []  # type: List[str]
+    for tbl in ["ystar_role_scope", "ystar_goal_tree", "cieu_goal_contribution"]:
+        if not _table_exists(conn, tbl):
+            missing.append(tbl)
+
+    if missing:
+        conn.close()
+        return {
+            "status": "BLOCKED",
+            "missing_tables": missing,
+            "processed": 0,
+            "contributions_inserted": 0,
+            "role_scores_computed": 0,
+        }
+
+    # Get event_ids already processed
+    existing_ids_rows = conn.execute(
+        "SELECT DISTINCT event_id FROM cieu_goal_contribution"
+    ).fetchall()
+    existing_ids = {r["event_id"] for r in existing_ids_rows}
+
+    # Fetch recent events
+    rows = conn.execute(
+        """
+        SELECT event_id, event_type, task_description, agent_id, file_path
+        FROM cieu_events
+        ORDER BY rowid DESC
+        LIMIT ?
+        """,
+        (limit,),
+    ).fetchall()
+
+    stats = {
+        "status": "OK",
+        "missing_tables": [],
+        "processed": 0,
+        "skipped_existing": 0,
+        "contributions_inserted": 0,
+        "role_scores_computed": 0,
+    }
+
+    inserts = []  # type: list
+
+    for row in rows:
+        eid = row["event_id"]
+
+        if eid in existing_ids:
+            stats["skipped_existing"] += 1
+            continue
+
+        stats["processed"] += 1
+
+        et = row["event_type"] or ""
+        td = row["task_description"] or ""
+        aid = row["agent_id"] or ""
+        fp = row["file_path"] or ""
+
+        # Role alignment (computed per event but stored per contribution row)
+        role_score, role_basis = infer_role_alignment(et, td, aid, db_path)
+        stats["role_scores_computed"] += 1
+
+        # Goal contributions
+        contributions = infer_goal_contribution(et, td, fp, db_path)
+
+        now = time.time()
+        if contributions:
+            for gid, gscore, gbasis in contributions:
+                basis_combined = "role={:.1f}({}); goal={}".format(
+                    role_score, role_basis, gbasis
+                )
+                inserts.append((eid, gid, role_score, gscore, basis_combined, now))
+        else:
+            # Still record role alignment with NULL goal
+            inserts.append((eid, None, role_score, 0.0,
+                            "role={:.1f}({}); goal=no_match".format(role_score, role_basis), now))
+
+        stats["contributions_inserted"] += len(contributions) if contributions else 1
+
+    # Batch INSERT
+    if inserts:
+        conn.executemany(
+            """
+            INSERT INTO cieu_goal_contribution
+                (event_id, goal_id, role_alignment_score, goal_contribution_score, inference_basis, created_at)
+            VALUES (?, ?, ?, ?, ?, ?)
+            """,
+            inserts,
+        )
+        conn.commit()
+
+    conn.close()
     return stats
 
 
