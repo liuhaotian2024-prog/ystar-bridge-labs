@@ -42,106 +42,114 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).parent.parent
 CIEU_DB = REPO_ROOT / ".ystar_cieu.db"
+DETECTOR_REGISTRY = REPO_ROOT / "governance" / "detector_registry.json"
 
-# ── 11-detector event type mapping ──────────────────────────────────────────
-# Each detector maps to one or more CIEU event_type values.
-# The SQL query uses IN + LIKE to catch variants.
-COMMISSION_EVENT_TYPES = [
-    # 1. narrative_coherence_detector
-    "NARRATIVE_GAP",
-    "narrative_bias_detected",
-    # 2. observable_action_detector (fires via reply scan)
-    "REPLY_TEMPLATE_VIOLATION",
-    # 3. claim_mismatch
-    "E1_TOOL_USES_CLAIM_MISMATCH",
-    "TOOL_USES_CLAIM_MISMATCH",
-    "COORDINATOR_REPLY_MISSING_5TUPLE",
-    # 4. causal_chain_analyzer (fires into K9 pipeline)
-    # (no dedicated event_type — captured under K9_AUDIT_TRIGGERED)
-    # 5. counterfactual_engine
-    "CROBA_PHANTOM_VIOLATION_NOTE",
-    # 6. k9_silent_fire_audit
-    "K9_VIOLATION_DETECTED",
-    "K9_AUDIT_TRIGGERED",
-    # 7. unified_compliance_audit
-    "CZL_DISPATCH_MISSING_5TUPLE",
-    # 8. amendment_coverage_audit
-    "CANONICAL_HASH_DRIFT",
-    "SESSION_JSON_SCHEMA_VIOLATION",
-    # 9. enforcement_observer
-    "ENFORCEMENT_GAP_PERSISTENT",
-    # 10. directive_evaluator
-    "DIRECTIVE_LIVENESS_EVAL",
-    "DIRECTIVE_REJECTED",
-    # 11. metalearning / behavior rules
-    "BEHAVIOR_RULE_VIOLATION",
-    "BEHAVIOR_RULE_WARNING",
-    # Hook-level commission catches
-    "FORGET_GUARD",
-    "FORGET_GUARD_K9_WARN",
-    "FORGET_GUARD_K9_DENY",
-    "STOP_HOOK_K9_DENY",
-    "WIRE_BROKEN",
-    "MATURITY_TAG_MISSING",
-    "CEO_CODE_WRITE_DRIFT",
-    "CHOICE_IN_REPLY_DRIFT",
-    "DEFER_LANGUAGE_DRIFT",
-    "DEFER_IN_REPLY_DRIFT",
-    "DEFER_IN_BASH_DRIFT",
-    "DEFER_IN_COMMIT_DRIFT",
-    "OFF_TARGET_WARNING",
-    "WHITELIST_GAP",
-    "WHITELIST_DRIFT",
-]
 
-# Map event_types to their originating detector (1-11)
-DETECTOR_MAP = {
-    "NARRATIVE_GAP": "narrative_coherence_detector",
-    "narrative_bias_detected": "narrative_coherence_detector",
-    "REPLY_TEMPLATE_VIOLATION": "observable_action_detector",
-    "E1_TOOL_USES_CLAIM_MISMATCH": "claim_mismatch",
-    "TOOL_USES_CLAIM_MISMATCH": "claim_mismatch",
-    "COORDINATOR_REPLY_MISSING_5TUPLE": "claim_mismatch",
-    "CROBA_PHANTOM_VIOLATION_NOTE": "counterfactual_engine",
-    "K9_VIOLATION_DETECTED": "k9_silent_fire_audit",
-    "K9_AUDIT_TRIGGERED": "k9_silent_fire_audit",
-    "CZL_DISPATCH_MISSING_5TUPLE": "unified_compliance_audit",
-    "CANONICAL_HASH_DRIFT": "amendment_coverage_audit",
-    "SESSION_JSON_SCHEMA_VIOLATION": "amendment_coverage_audit",
-    "ENFORCEMENT_GAP_PERSISTENT": "enforcement_observer",
-    "DIRECTIVE_LIVENESS_EVAL": "directive_evaluator",
-    "DIRECTIVE_REJECTED": "directive_evaluator",
-    "BEHAVIOR_RULE_VIOLATION": "metalearning",
-    "BEHAVIOR_RULE_WARNING": "metalearning",
-    # Hook-level catches -> grouped under "hook_commission_catch"
-    "FORGET_GUARD": "hook_commission_catch",
-    "FORGET_GUARD_K9_WARN": "hook_commission_catch",
-    "FORGET_GUARD_K9_DENY": "hook_commission_catch",
-    "STOP_HOOK_K9_DENY": "hook_commission_catch",
-    "WIRE_BROKEN": "hook_commission_catch",
-    "MATURITY_TAG_MISSING": "hook_commission_catch",
-    "CEO_CODE_WRITE_DRIFT": "hook_commission_catch",
-    "CHOICE_IN_REPLY_DRIFT": "hook_commission_catch",
-    "DEFER_LANGUAGE_DRIFT": "hook_commission_catch",
-    "DEFER_IN_REPLY_DRIFT": "hook_commission_catch",
-    "DEFER_IN_BASH_DRIFT": "hook_commission_catch",
-    "DEFER_IN_COMMIT_DRIFT": "hook_commission_catch",
-    "OFF_TARGET_WARNING": "hook_commission_catch",
-    "WHITELIST_GAP": "hook_commission_catch",
-    "WHITELIST_DRIFT": "hook_commission_catch",
-}
+def _load_from_registry() -> tuple[list[str], dict[str, str], dict[str, str]]:
+    """Auto-discover detectors from governance/detector_registry.json.
 
-# M-Axis classification for commission errors
-M_AXIS_MAP = {
-    # M-1 Survivability: config/schema/wire integrity
-    "SESSION_JSON_SCHEMA_VIOLATION": "M-1",
-    "CANONICAL_HASH_DRIFT": "M-1",
-    "WIRE_BROKEN": "M-1",
-    # M-3 Value Production: quality/maturity impact
-    "OFF_TARGET_WARNING": "M-3",
-    "MATURITY_TAG_MISSING": "M-3",
-    # Everything else -> M-2a (commission prevention)
-}
+    Returns (event_types_list, detector_map, m_axis_map).
+    Falls back to hardcoded defaults if registry is missing or malformed.
+    """
+    try:
+        with open(DETECTOR_REGISTRY) as f:
+            reg = json.load(f)
+
+        event_types = []
+        detector_map = {}
+        m_axis_overrides = reg.get("m_axis_overrides", {})
+
+        for det in reg.get("detectors", []):
+            name = det["name"]
+            for et in det.get("cieu_event_types", []):
+                if et not in event_types:
+                    event_types.append(et)
+                detector_map[et] = name
+
+        # M-axis: default M-2a, override from registry
+        m_axis_map = dict(m_axis_overrides)
+
+        return event_types, detector_map, m_axis_map
+
+    except (FileNotFoundError, json.JSONDecodeError, KeyError):
+        # Fallback: return None to signal caller to use hardcoded
+        return None, None, None
+
+
+def _hardcoded_defaults() -> tuple[list[str], dict[str, str], dict[str, str]]:
+    """Hardcoded fallback — last known good from W3 ship."""
+    event_types = [
+        "NARRATIVE_GAP", "narrative_bias_detected",
+        "REPLY_TEMPLATE_VIOLATION",
+        "E1_TOOL_USES_CLAIM_MISMATCH", "TOOL_USES_CLAIM_MISMATCH",
+        "COORDINATOR_REPLY_MISSING_5TUPLE",
+        "CROBA_PHANTOM_VIOLATION_NOTE",
+        "K9_VIOLATION_DETECTED", "K9_AUDIT_TRIGGERED",
+        "CZL_DISPATCH_MISSING_5TUPLE",
+        "CANONICAL_HASH_DRIFT", "SESSION_JSON_SCHEMA_VIOLATION",
+        "ENFORCEMENT_GAP_PERSISTENT",
+        "DIRECTIVE_LIVENESS_EVAL", "DIRECTIVE_REJECTED",
+        "BEHAVIOR_RULE_VIOLATION", "BEHAVIOR_RULE_WARNING",
+        "FORGET_GUARD", "FORGET_GUARD_K9_WARN", "FORGET_GUARD_K9_DENY",
+        "STOP_HOOK_K9_DENY", "WIRE_BROKEN",
+        "MATURITY_TAG_MISSING",
+        "CEO_CODE_WRITE_DRIFT", "CHOICE_IN_REPLY_DRIFT",
+        "DEFER_LANGUAGE_DRIFT", "DEFER_IN_REPLY_DRIFT",
+        "DEFER_IN_BASH_DRIFT", "DEFER_IN_COMMIT_DRIFT",
+        "OFF_TARGET_WARNING", "WHITELIST_GAP", "WHITELIST_DRIFT",
+    ]
+    detector_map = {
+        "NARRATIVE_GAP": "narrative_coherence_detector",
+        "narrative_bias_detected": "narrative_coherence_detector",
+        "REPLY_TEMPLATE_VIOLATION": "observable_action_detector",
+        "E1_TOOL_USES_CLAIM_MISMATCH": "claim_mismatch",
+        "TOOL_USES_CLAIM_MISMATCH": "claim_mismatch",
+        "COORDINATOR_REPLY_MISSING_5TUPLE": "claim_mismatch",
+        "CROBA_PHANTOM_VIOLATION_NOTE": "counterfactual_engine",
+        "K9_VIOLATION_DETECTED": "k9_silent_fire_audit",
+        "K9_AUDIT_TRIGGERED": "k9_silent_fire_audit",
+        "CZL_DISPATCH_MISSING_5TUPLE": "unified_compliance_audit",
+        "CANONICAL_HASH_DRIFT": "amendment_coverage_audit",
+        "SESSION_JSON_SCHEMA_VIOLATION": "amendment_coverage_audit",
+        "ENFORCEMENT_GAP_PERSISTENT": "enforcement_observer",
+        "DIRECTIVE_LIVENESS_EVAL": "directive_evaluator",
+        "DIRECTIVE_REJECTED": "directive_evaluator",
+        "BEHAVIOR_RULE_VIOLATION": "metalearning",
+        "BEHAVIOR_RULE_WARNING": "metalearning",
+        "FORGET_GUARD": "hook_commission_catch",
+        "FORGET_GUARD_K9_WARN": "hook_commission_catch",
+        "FORGET_GUARD_K9_DENY": "hook_commission_catch",
+        "STOP_HOOK_K9_DENY": "hook_commission_catch",
+        "WIRE_BROKEN": "hook_commission_catch",
+        "MATURITY_TAG_MISSING": "hook_commission_catch",
+        "CEO_CODE_WRITE_DRIFT": "hook_commission_catch",
+        "CHOICE_IN_REPLY_DRIFT": "hook_commission_catch",
+        "DEFER_LANGUAGE_DRIFT": "hook_commission_catch",
+        "DEFER_IN_REPLY_DRIFT": "hook_commission_catch",
+        "DEFER_IN_BASH_DRIFT": "hook_commission_catch",
+        "DEFER_IN_COMMIT_DRIFT": "hook_commission_catch",
+        "OFF_TARGET_WARNING": "hook_commission_catch",
+        "WHITELIST_GAP": "hook_commission_catch",
+        "WHITELIST_DRIFT": "hook_commission_catch",
+    }
+    m_axis_map = {
+        "SESSION_JSON_SCHEMA_VIOLATION": "M-1",
+        "CANONICAL_HASH_DRIFT": "M-1",
+        "WIRE_BROKEN": "M-1",
+        "OFF_TARGET_WARNING": "M-3",
+        "MATURITY_TAG_MISSING": "M-3",
+    }
+    return event_types, detector_map, m_axis_map
+
+
+# ── Load detectors: registry-first, hardcoded fallback ─────────────────────
+_reg_result = _load_from_registry()
+if _reg_result[0] is not None:
+    COMMISSION_EVENT_TYPES, DETECTOR_MAP, M_AXIS_MAP = _reg_result
+    _REGISTRY_SOURCE = "detector_registry.json"
+else:
+    COMMISSION_EVENT_TYPES, DETECTOR_MAP, M_AXIS_MAP = _hardcoded_defaults()
+    _REGISTRY_SOURCE = "hardcoded_fallback"
 
 # Canonical actor normalization
 ACTOR_ALIASES = {
