@@ -65,11 +65,11 @@ approval_required: Board (Haotian) + Marco-CFO review + Stripe SKU setup
 
 ## 营收预测 (ARR 12 month)
 
-保守 baseline:
-- Tier 1 free: 500 accounts (acquisition)
-- Tier 2: 8 teams × 5 seat avg × $99 × 12 = **$47,520**
+保守 baseline (v1.1 per Marco adjustment):
+- Tier 1 free: 300 accounts cap (avoid funnel overflow)
+- Tier 2: 8 teams × 5 seat avg × **$129** × 12 = **$61,920** (+30% vs v1)
 - Tier 3: 2 enterprise × $8,000/mo avg × 12 = **$192,000**
-- **Year 1 ARR baseline: ~$240,000**
+- **Year 1 ARR baseline: ~$254,000**
 
 Stretch (如果 Pharma 单个成交):
 - +1 enterprise × $15,000/mo × 12 = +$180,000
@@ -79,7 +79,7 @@ Stretch (如果 Pharma 单个成交):
 
 ```
 ystar_dev_free            → Free product (gated feature flags)
-ystar_team_pro_seat       → $99/month recurring per seat, billed monthly
+ystar_team_pro_seat       → $129/month recurring per seat, billed monthly
 ystar_enterprise_base     → $2,500/month recurring (platform fee)
 ystar_enterprise_seat     → $500/month recurring per seat (add-on)
 ```
