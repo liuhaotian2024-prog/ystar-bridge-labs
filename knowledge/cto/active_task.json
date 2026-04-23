@@ -26,7 +26,7 @@
     ],
     "ownership": "cto + 4 core engineers (kernel/governance/platform/domains) + 5 new engineers",
     "status": "deprecated",
-    "deprecated_at": 1776888053.812243,
+    "deprecated_at": 1776941522.989849,
     "deprecation_reason": "Stale >72h, not mentioned in recent session"
   },
   "current_focus": {
@@ -42,7 +42,7 @@
       "Meta-meta audit error pattern SOP"
     ],
     "status": "deprecated",
-    "deprecated_at": 1776888053.819007,
+    "deprecated_at": 1776941522.991613,
     "deprecation_reason": "Stale >72h, not mentioned in recent session"
   },
   "deprecated_tasks": [
