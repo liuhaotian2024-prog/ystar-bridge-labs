@@ -24,7 +24,7 @@ if YSTAR_GOV_PATH.exists():
 
 from ystar.memory import MemoryStore, Memory
 sys.path.insert(0, str(Path(__file__).parent))
-from _cieu_helpers import _get_current_agent
+from _cieu_helpers import _get_current_agent, emit_cieu
 
 
 def update_priority_brief(company_root: Path, session_start_ts: float):
@@ -422,6 +422,44 @@ def main():
         print("[ok] session_close CIEU event emitted")
     except Exception as e:
         print(f"[warn] session_close emit failed: {e}", file=sys.stderr)
+
+    # ── Merkle sealing (Patent 63/981,777 Claim 1 wire-up) ────────────
+    # Idempotent: re-sealing an already-sealed session is a no-op in CIEUStore.
+    # Exception-safe: failure logs + emits SESSION_SEAL_FAILED but never blocks close.
+    try:
+        from ystar.governance.cieu_store import CIEUStore
+        _seal_store = CIEUStore(str(cieu_db_path))
+        _seal_result = _seal_store.seal_session(sid)
+        if _seal_result.get("event_count", 0) > 0:
+            emit_cieu(
+                event_type="SESSION_SEALED",
+                decision="allow",
+                passed=1,
+                session_id=sid,
+                task_description=f"Sealed session {sid}: merkle_root={_seal_result['merkle_root'][:16]}...",
+                params_json=json.dumps({
+                    "session_id": sid,
+                    "merkle_root": _seal_result["merkle_root"],
+                    "prev_root": _seal_result.get("prev_root"),
+                    "sealed_at": _seal_result["sealed_at"],
+                    "event_count": _seal_result["event_count"],
+                }),
+            )
+            print(f"[ok] session sealed: {_seal_result['event_count']} events, root={_seal_result['merkle_root'][:16]}...")
+        else:
+            print(f"[ok] session seal: no events for {sid} (or already sealed)")
+    except Exception as e:
+        print(f"[warn] session seal failed (non-blocking): {e}", file=sys.stderr)
+        try:
+            emit_cieu(
+                event_type="SESSION_SEAL_FAILED",
+                decision="warn",
+                passed=0,
+                session_id=sid,
+                task_description=f"seal_session failed for {sid}: {e}",
+            )
+        except Exception:
+            pass  # double-fault: give up silently
 
     # AMENDMENT-009 §2.3: update_priority_brief check
     try:
