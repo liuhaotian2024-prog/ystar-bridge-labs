@@ -10,7 +10,7 @@ import sys
 import time
 import uuid
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Tuple
 
 ACTIVE_AGENT_PATH = Path("/Users/haotianliu/.openclaw/workspace/ystar-company/.ystar_active_agent")
 CANONICAL_REGISTRY_PATH = Path("/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json")
@@ -198,6 +198,41 @@ def emit_rt_measurement(
         return False
 
 
+def _infer_m_functor(event_type: str, task_description: str = "", file_path: str = "", command: str = "") -> Tuple[Optional[str], Optional[float]]:
+    """Infer (m_functor, m_weight) from event_type prefix + context.
+    Explicit caller-supplied m_functor ALWAYS wins (this is fallback only).
+    """
+    et = (event_type or "").upper()
+    td = (task_description or "").lower() + " " + (file_path or "").lower() + " " + (command or "").lower()
+
+    # M-1 Survivability: session / identity / restart / brain / dream / handoff / seal / backup
+    if any(k in et for k in ['SESSION_SEALED', 'BACKFILL_MERKLE', 'SESSION_SEAL', 'BRAIN_DREAM', 'BRAIN_AUTO', 'HANDOFF', 'SESSION_CLOSE', 'CIEU_TO_BRAIN']):
+        return 'M-1', 0.7
+    if any(k in td for k in ['session close', 'brain', 'handoff', 'merkle', 'seal', 'backup', 'restart']):
+        return 'M-1', 0.5
+
+    # M-2a Commission: forget_guard / boundary / router / iron rule / enforce / deny / block
+    if any(k in et for k in ['FORGET_GUARD', 'BOUNDARY', 'ROUTER', 'K9_ROUTING', 'VIOLATION_DETECTED', 'DENY', 'BLOCK', 'PRETOOL', 'HOOK', 'INTERVENTION_GATE']):
+        return 'M-2a', 0.8
+
+    # M-2b Omission: tracked / overdue / P0 / alarm / timeout / escalate / scan
+    if any(k in et for k in ['OMISSION', 'OVERDUE', 'OBLIGATION', 'ESCALATE', 'ALARM', 'TIMEOUT', 'COVERAGE_SCAN', 'HOOK_HEALTH']):
+        return 'M-2b', 0.8
+
+    # M-3 Value: customer / revenue / demo / pipeline / product / ship / whitepaper / sale
+    if any(k in et for k in ['SHIPPED', 'LANDED', 'DEPLOY', 'RELEASE']):
+        return 'M-3', 0.6
+    if any(k in td for k in ['customer', 'revenue', 'demo', 'pipeline', 'whitepaper', 'sale', 'enterprise']):
+        return 'M-3', 0.7
+
+    # Governance infra (M-2a by default)
+    if any(k in et for k in ['GOVERNANCE', 'WAVE2', 'WAVE_', 'VALIDATOR', 'AUDIT', 'RECEIPT']):
+        return 'M-2a', 0.5
+
+    # Unknown — skip (let later taggers fix)
+    return None, None
+
+
 def emit_cieu(
     event_type: str,
     decision: str = "info",
@@ -246,6 +281,13 @@ def emit_cieu(
             passed,
             task_description
         ]
+
+        # Infer m_functor/m_weight when caller did not supply them
+        if m_functor is None:
+            inferred_f, inferred_w = _infer_m_functor(event_type=event_type, task_description=task_description, file_path=kwargs.get("file_path", ""), command=kwargs.get("command", ""))
+            m_functor = inferred_f
+            if m_weight is None:
+                m_weight = inferred_w
 
         # Add M-triangle fields if provided
         if m_functor is not None:
