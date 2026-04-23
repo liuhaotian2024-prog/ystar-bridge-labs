@@ -203,8 +203,10 @@ def emit_cieu(
     decision: str = "info",
     passed: int = 1,
     task_description: str = "",
+    m_functor: Optional[str] = None,
+    m_weight: Optional[float] = None,
     **kwargs
-) -> bool:
+) -> Optional[str]:
     """
     Central CIEU event emitter with canonical agent_id validation.
 
@@ -213,10 +215,12 @@ def emit_cieu(
         decision: Decision type ("allow"/"deny"/"warn"/"info")
         passed: 1=passed, 0=failed
         task_description: Human-readable description
+        m_functor: M-triangle functor tag (e.g., "M-1", "M-2a", "M-3")
+        m_weight: Weight/priority of this event's M-triangle contribution (0.0-1.0)
         **kwargs: Additional fields (params_json, drift_details, etc.)
 
     Returns:
-        bool: True if emission succeeded, False otherwise (fail-open)
+        str: event_id if emission succeeded, None otherwise (fail-open)
     """
     try:
         conn = sqlite3.connect(str(CIEU_DB_PATH))
@@ -243,6 +247,14 @@ def emit_cieu(
             task_description
         ]
 
+        # Add M-triangle fields if provided
+        if m_functor is not None:
+            columns.append("m_functor")
+            values.append(m_functor)
+        if m_weight is not None:
+            columns.append("m_weight")
+            values.append(m_weight)
+
         # Add optional fields if present
         optional_fields = [
             "params_json", "drift_detected", "drift_details", "drift_category",
@@ -263,9 +275,9 @@ def emit_cieu(
 
         conn.commit()
         conn.close()
-        return True
+        return event_id
 
     except Exception as e:
         # Fail-open
         sys.stderr.write(f"[CIEU_EMIT_ERROR] {event_type}: {e}\n")
-        return False
+        return None
