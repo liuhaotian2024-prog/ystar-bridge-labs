@@ -1,0 +1,111 @@
+{
+  "timestamp": "2026-04-23T22:54:10.323437",
+  "commission_error_total": 3605,
+  "by_actor": {
+    "unknown": 734,
+    "eng-platform": 634,
+    "eng-governance": 623,
+    "cto": 383,
+    "test_agent": 372,
+    "ceo": 234,
+    "eng-kernel": 228,
+    "general-purpose": 145,
+    "Sofia-CMO": 96,
+    "Marco-CFO": 90,
+    "platform": 66
+  },
+  "by_detector": {
+    "k9_silent_fire_audit": 2938,
+    "hook_commission_catch": 363,
+    "amendment_coverage_audit": 134,
+    "unified_compliance_audit": 76,
+    "observable_action_detector": 53,
+    "directive_evaluator": 36,
+    "metalearning": 5
+  },
+  "by_axis": {
+    "M-1": 167,
+    "M-2a": 3374,
+    "M-3": 64
+  },
+  "top_5_event_types": [
+    [
+      "K9_VIOLATION_DETECTED",
+      1977
+    ],
+    [
+      "K9_AUDIT_TRIGGERED",
+      961
+    ],
+    [
+      "FORGET_GUARD_K9_WARN",
+      207
+    ],
+    [
+      "SESSION_JSON_SCHEMA_VIOLATION",
+      101
+    ],
+    [
+      "CZL_DISPATCH_MISSING_5TUPLE",
+      76
+    ]
+  ],
+  "drift_24h_vs_7d": {
+    "amendment_coverage_audit": {
+      "24h": 134,
+      "7d_avg_daily": 915.7,
+      "direction": "v"
+    },
+    "claim_mismatch": {
+      "24h": 0,
+      "7d_avg_daily": 1.6,
+      "direction": "v"
+    },
+    "counterfactual_engine": {
+      "24h": 0,
+      "7d_avg_daily": 0.1,
+      "direction": "v"
+    },
+    "directive_evaluator": {
+      "24h": 36,
+      "7d_avg_daily": 23.4,
+      "direction": "^"
+    },
+    "enforcement_observer": {
+      "24h": 0,
+      "7d_avg_daily": 2.0,
+      "direction": "v"
+    },
+    "hook_commission_catch": {
+      "24h": 363,
+      "7d_avg_daily": 907.9,
+      "direction": "v"
+    },
+    "k9_silent_fire_audit": {
+      "24h": 2938,
+      "7d_avg_daily": 3661.3,
+      "direction": "="
+    },
+    "metalearning": {
+      "24h": 5,
+      "7d_avg_daily": 173.9,
+      "direction": "v"
+    },
+    "observable_action_detector": {
+      "24h": 53,
+      "7d_avg_daily": 86.3,
+      "direction": "v"
+    },
+    "unified_compliance_audit": {
+      "24h": 76,
+      "7d_avg_daily": 35.3,
+      "direction": "^"
+    },
+    "_total": {
+      "24h": 3605,
+      "7d_avg_daily": 5807.4,
+      "direction": "v"
+    }
+  },
+  "error": null
+}

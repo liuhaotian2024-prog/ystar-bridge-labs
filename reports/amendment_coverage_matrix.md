@@ -1,6 +1,6 @@
 # Amendment Coverage Matrix Audit
 
-**Generated:** amendment_coverage_audit.py at Wed Apr 22 22:31:22 EDT 2026
+**Generated:** amendment_coverage_audit.py at Thu Apr 23 23:02:21 EDT 2026
 
 ## Summary
 

@@ -1,0 +1,62 @@
+============================================================
+  Y* BRIDGE LABS — ECOSYSTEM SNAPSHOT
+  2026-04-23T22:54:54
+============================================================
+
+── TEAM ──
+  ● ceo                  [ACTIVE   ] CZL dispatches: 0
+  ○ cfo                  [DORMANT  ] CZL dispatches: 0
+  ◌ cmo                  [AVAILABLE] CZL dispatches: 0
+  ○ cso                  [DORMANT  ] CZL dispatches: 0
+  ● cto                  [ACTIVE   ] CZL dispatches: 0
+  ◌ eng-compliance       [AVAILABLE] CZL dispatches: 0
+  ◌ eng-data             [AVAILABLE] CZL dispatches: 0
+  ◌ eng-domains          [AVAILABLE] CZL dispatches: 0
+  ● eng-governance       [ACTIVE   ] CZL dispatches: 0
+  ● eng-kernel           [ACTIVE   ] CZL dispatches: 0
+  ◌ eng-ml               [AVAILABLE] CZL dispatches: 0
+  ◌ eng-perf             [AVAILABLE] CZL dispatches: 0
+  ● eng-platform         [ACTIVE   ] CZL dispatches: 0
+  ◌ eng-security         [AVAILABLE] CZL dispatches: 0
+  ◌ secretary            [AVAILABLE] CZL dispatches: 0
+
+── INFRASTRUCTURE ──
+  hook_daemon              : RUNNING
+  cieu_db                  : LIVE
+  aiden_brain              : LIVE (22992n/136786e/442h)
+  session                  : LOADED
+  forget_guard             : LOADED (37 rules)
+  ceo_enforcement          : UNKNOWN
+
+── PRODUCTS ──
+  ygov                : ACTIVE (200 src, 151 tests)
+  k9_audit            : READ_ONLY
+  ystar_defuse        : ABANDONED
+  gov_mcp             : UNCLEAR — needs CTO assessment
+
+── ENTANGLEMENT MAP (5 known pairs) ──
+  Team: CTO lacks cross-layer system thinking
+  Prod: No unified hook output spec/adapter
+  Fix→: CTO capability + hook architecture improvemen
+
+  Team: Sub-agents hallucinate receipts (tool_uses=0)
+  Prod: CIEU Gate 2 receipt validation partial
+  Fix→: Trust system + automated verification
+
+  Team: CEO skips U-workflow for writing
+  Prod: CEO enforcement hook was not LIVE
+  Fix→: CEO discipline + hook enforcement pattern
+
+  Team: Ryan scope overflow (53-file commit)
+  Prod: No pre-commit scope guard in product
+  Fix→: Scope discipline + scope enforcement feature
+
+  Team: Maya claim/reality mismatch
+  Prod: Claim mismatch detector needs refinement
+  Fix→: Honest reporting culture + better detector
+
+============================================================
+
+Imported 15 team + 4 product + 5 entanglement nodes into brain
+
+Snapshot saved to /Users/haotianliu/.openclaw/workspace/ystar-company/reports/ceo/ecosystem_snapshot_latest.json

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-17T14:44:49",
+  "timestamp": "2026-04-23T22:54:54",
   "team": {
     "ceo": {
       "charter_lines": 519,
@@ -129,13 +129,13 @@
     },
     "cieu_db": {
       "exists": true,
-      "size_kb": 139436,
+      "size_kb": 535660,
       "status": "LIVE"
     },
     "aiden_brain": {
-      "nodes": 52,
-      "edges": 652,
-      "hebbian_learned": 22,
+      "nodes": 22992,
+      "edges": 136786,
+      "hebbian_learned": 442,
       "status": "LIVE"
     },
     "session": {
@@ -143,7 +143,7 @@
       "status": "LOADED"
     },
     "forget_guard": {
-      "rules": 34,
+      "rules": 37,
       "status": "LOADED"
     },
     "hook_hook_client_labs": {
@@ -152,15 +152,15 @@
     },
     "hook_hook_wrapper": {
       "exists": true,
-      "lines": 293
+      "lines": 651
     },
     "hook_hook_ceo_pre_output": {
       "exists": true,
-      "lines": 115
+      "lines": 64
     },
     "hook_hook_pretool_agent_dispatch": {
       "exists": true,
-      "lines": 114
+      "lines": 257
     },
     "ceo_enforcement": {
       "pre_output_hook": "LIVE (CZL-159/160, format fixed 2026-04-17)",
@@ -170,15 +170,15 @@
   "products": {
     "ygov": {
       "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
-      "source_files": 169,
-      "test_files": 105,
+      "source_files": 200,
+      "test_files": 151,
       "status": "ACTIVE",
       "pypi_published": false,
       "local_install": true
     },
     "k9_audit": {
       "path": "/tmp/K9Audit",
-      "exists": true,
+      "exists": false,
       "status": "READ_ONLY",
       "license": "AGPL-3.0"
     },

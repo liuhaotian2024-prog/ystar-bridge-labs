@@ -282,6 +282,49 @@ Rt+1=0 定义 (empirical, 不装):
 
 ---
 
+## 1.5 Methodology Stack Binding (Board 2026-04-23 reminder: 全套方法论 + 8-module 认知 + 大脑 + 记忆 + 文化全用)
+
+**每 engineer 每 Wave 每 task 前必 self-check**:
+
+**8-问 (from WORK_METHODOLOGY P-1~P-14)**:
+1. M-tag (M-1 / M-2a / M-2b / M-3 align 哪面, 削弱哪面)
+2. 反事实不做 (若本 task skip 会发生什么)
+3. 反事实做错 (若 implementation wrong 最坏 blast radius)
+4. empirical data (有无 SQL/file/ps/log 证据, 还是仅推测)
+5. peer review (Ethan 主持 pass-check; CEO Aiden fact-verify)
+6. 先例 Glob (P-12: 自家是否已有 tool? 参考 §0.5 toolbox)
+7. 8-cascade (新 entity 要走 charter/registry/boot/dispatch/hook/CIEU/FG-scope/pre-auth)
+8. 完成标准 (Rt+1=0 empirical metric, 不 vibe)
+
+**6-问 (reply-time)**: L-tag / 5-tuple (Y*/Xt/U/Yt+1/Rt+1) / 定量诚实 / plan vs done / present tense / 无选择题 (Iron Rule 0).
+
+**8-module 认知 per task**:
+- **M1 反射** (Claude 底层 inference) — 必经但不够
+- **M2 记忆** — 调 aiden_brain.db + MEMORY.md + 6D brain context (每 Wave 先 query 相关 node)
+- **M3 资料** — §0.5 toolbox + ARCH-17/18 + external research doc (Dim F)
+- **M4 路径** — OODA loop (observe → search → analyze → solve → verify → land) 不跳
+- **M5 方法论** — 14 原则 checklist 过一遍
+- **M6 错误监控** — forget_guard live-fire + CIEU delta 验证 (不信 self-report)
+- **M7 主动行动** — 不等 Board 催, blocker 立 stop + 写 blocker statement
+- **M8 反思** — 每 Wave 收束后写 lesson / 更新 MEMORY.md feedback
+
+**团队文化 4-factor** (memory `feedback_engineer_culture_4_factor_design`): model × role × culture × prompt. CEO 派 subagent 前 self-check 4 因素齐 (high-stakes framing + role clarity + culture ref + MANDATORY tool_uses self-count).
+
+**Rt+1=0 纪律** (memory `feedback_ship_neq_done_rt1_zero_discipline`): ship ≠ done; 必跑 empirical SQL 验 current metric vs target threshold; 不达则报 "Rt+1: specific gap", 不装 0.
+
+---
+
+## 1.6 Pre-Wave Baseline Snapshot (2026-04-23 ran, 3 scanner 已出初值)
+
+已落盘到 `reports/ctos/audit_baseline_20260423/`:
+- `governance_audit_unified.txt` — 24h: 3605 deny (7d avg 5807.4, 方向↓); 11 detectors active; circuit_breaker 3031 / intervention_gate 415 / cmd_exec 212 主力
+- `ecosystem_scan.txt` — **`ceo_enforcement: UNKNOWN`** (Dim B 硬 gap, 机器不能验 CEO enforce); 5 entanglement pairs (CTO cross-layer / receipt hallucination / CEO U-workflow skip / Ryan scope overflow / Maya claim mismatch) 对齐 Dim B/C 根因; brain 22992n/136786e/442h
+- `wire_integrity.txt` — **11 WIRE_BROKEN**: 6 hooks 未注册 settings.json + 1 cron 不在 crontab + **4 canonical hash drift** 含 `[P0 AGENTS.md:408-423 hash drift]` ← 这条 比 deadlock 更严重 (constitutional 不可验), **Dim B 紧急补洞 Priority #1**
+
+**每 Wave 收束重跑 3 scanner, 与本 baseline diff** — `ceo_enforcement: UNKNOWN` 必改 `LIVE`; 11 WIRE_BROKEN 必降 0; 5 entanglement pairs 每对都有对应 Dim 修复路径 + test.
+
+---
+
 ## 2. Engineer Assignment Matrix
 
 | Dimension | Primary | Assist | External Research Lead |

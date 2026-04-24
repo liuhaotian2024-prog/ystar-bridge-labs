@@ -1,0 +1,10 @@
+Loading session config from /Users/haotianliu/.openclaw/workspace/ystar-company/.ystar_session.json...
+Auditing rule classes...
+Scanned 42 rules
+Generating report to /Users/haotianliu/.openclaw/workspace/ystar-company/reports/amendment_coverage_matrix.md...
+✅ Report written to /Users/haotianliu/.openclaw/workspace/ystar-company/reports/amendment_coverage_matrix.md
+
+Summary: 42 rules audited
+  Remediation: 19/42
+  Fulfiller:   0/42
+  Test:        42/42
