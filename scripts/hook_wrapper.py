@@ -34,7 +34,8 @@ def emit_cieu_or_fallback(event_dict, reason_tag):
     # Layer 1: CIEU
     try:
         REPO_ROOT = os.path.dirname(os.path.dirname(__file__))
-        sys.path.insert(0, REPO_ROOT)
+        # REMOVED: sys.path.insert(0, REPO_ROOT) — shadows Y-star-gov's ystar package
+        # when ystar-company/ is REPO_ROOT (Wave-1.5 Mission 3, shadow deep fix)
         from ystar.governance.cieu_store import CIEUStore
         SESSION_JSON = os.path.join(REPO_ROOT, ".ystar_session.json")
         cieu_db = os.path.join(REPO_ROOT, ".ystar_cieu.db")
@@ -463,12 +464,13 @@ try:
                     import uuid
                     try:
                         REPO_ROOT = os.path.dirname(os.path.dirname(__file__))
-                        SESSION_JSON = os.path.join(REPO_ROOT, ".ystar_session.json")
-                        sys.path.insert(0, REPO_ROOT)
-                        from ystar.adapters.identity_detector import get_active_agent
-                        with open(SESSION_JSON, "r") as f:
-                            session = json.load(f)
-                        active_agent = get_active_agent(session)
+                        # Read active agent from marker file (no ystar import needed)
+                        _agent_marker = os.path.join(REPO_ROOT, ".ystar_active_agent")
+                        if os.path.exists(_agent_marker):
+                            with open(_agent_marker, "r") as f:
+                                active_agent = f.read().strip() or "unknown"
+                        else:
+                            active_agent = "unknown"
                     except Exception:
                         active_agent = "unknown"
 
@@ -600,7 +602,7 @@ try:
             import uuid
             REPO_ROOT = os.path.dirname(os.path.dirname(__file__))
             SESSION_JSON = os.path.join(REPO_ROOT, ".ystar_session.json")
-            sys.path.insert(0, REPO_ROOT)
+            # REMOVED: sys.path.insert(0, REPO_ROOT) — shadow fix (Wave-1.5 M3)
             from ystar.adapters.identity_detector import get_active_agent
             try:
                 with open(SESSION_JSON, "r") as f:

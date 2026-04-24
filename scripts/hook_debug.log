@@ -48652,3 +48652,118 @@ RuntimeError: rule 'article_11_board_offline_30m' did not produce any obligation
 12:03:40 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
 12:04:17 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
 12:04:17 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+12:04:48 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:04:48 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:05:10 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+12:05:10 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+12:05:54 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:05:54 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:05:55 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:05:55 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:06:10 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+12:06:10 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+12:07:08 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:07:08 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:07:56 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+12:07:56 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+[hook_session_start] OmissionEngine registration failed: rule 'article_11_board_offline_30m' did not produce any obligation; check rule fields
+Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_session_start.py", line 73, in _register_article11_obligations
+    register_obligation_programmatic(
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/register_obligation.py", line 243, in register_obligation_programmatic
+    raise RuntimeError(
+RuntimeError: rule 'article_11_board_offline_30m' did not produce any obligation; check rule fields
+
+12:08:04 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+12:08:04 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+12:08:06 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:08:06 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:08:59 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:08:59 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:09:01 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+12:09:01 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+12:09:49 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:09:49 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:09:51 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+12:09:51 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+12:10:42 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:10:42 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:11:35 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:11:35 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:11:41 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+12:12:27 [BRAIN] Injected 3 wisdom nodes
+12:12:27 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:12:27 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:12:27 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+12:13:15 [BRAIN] Injected 3 wisdom nodes
+12:13:18 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:13:18 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:13:30 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+12:14:14 [BRAIN] Injected 3 wisdom nodes
+12:14:14 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:14:14 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:14:21 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+12:15:07 [BRAIN] Injected 3 wisdom nodes
+12:15:14 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:15:14 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:15:15 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+12:16:03 [BRAIN] Injected 3 wisdom nodes
+12:16:03 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+12:16:03 [CZL-GATE1] ⚠️ CZL Gate 1: dispatch missing sections ['Missing Y* (ideal contract)', 'Missing Xt (pre-state)', 'Missing U (actions list)', 'Missing Yt+1 (post-state)', 'Missing Rt+1 target (gap threshold)', 'Warning: No explicit recipient (which engineer?)', 'Warning: No explicit task_id']
+12:16:13 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:16:13 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:16:14 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:16:14 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:17:01 [BRAIN] Injected 3 wisdom nodes
+12:17:11 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+12:17:11 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+12:17:11 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+12:17:11 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+12:17:26 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:17:26 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:18:29 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:18:29 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:18:52 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+12:18:52 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+12:19:23 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:19:23 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:19:37 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+12:19:37 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+12:20:18 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:20:18 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:20:28 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:20:28 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:20:29 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+12:20:29 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+12:21:21 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:21:21 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:22:10 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:22:10 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:23:03 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:23:03 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:24:05 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:24:05 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:24:55 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:24:55 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:26:31 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:26:31 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:29:54 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:29:54 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:37:23 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:37:23 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:38:18 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:38:18 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:39:07 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:39:07 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:39:58 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:39:58 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:40:52 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:40:52 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:40:52 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:40:52 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:41:45 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:41:45 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:42:36 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:42:36 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:43:24 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:43:24 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'

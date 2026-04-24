@@ -1597,3 +1597,7 @@
 1777046594.667744 | WARN | ceo_engineering_boundary | agent=test_agent
 1777046595.130723 | WARN | test_violation | agent=test_agent
 1777046595.5939682 | WARN | smoke_test_violation | agent=test_agent
+1777046787.306605 | WARN | ceo_engineering_boundary | agent=test_agent
+1777046789.561763 | WARN | ceo_engineering_boundary | agent=test_agent
+1777046790.6202948 | WARN | test_violation | agent=test_agent
+1777046790.90366 | WARN | smoke_test_violation | agent=test_agent
