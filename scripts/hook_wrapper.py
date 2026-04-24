@@ -602,12 +602,14 @@ try:
             import uuid
             REPO_ROOT = os.path.dirname(os.path.dirname(__file__))
             SESSION_JSON = os.path.join(REPO_ROOT, ".ystar_session.json")
-            # REMOVED: sys.path.insert(0, REPO_ROOT) — shadow fix (Wave-1.5 M3)
-            from ystar.adapters.identity_detector import get_active_agent
+            # Read active agent from marker file (no ystar import needed)
             try:
-                with open(SESSION_JSON, "r") as f:
-                    session = json.load(f)
-                active_agent = get_active_agent(session)
+                _agent_marker = os.path.join(REPO_ROOT, ".ystar_active_agent")
+                if os.path.exists(_agent_marker):
+                    with open(_agent_marker, "r") as f:
+                        active_agent = f.read().strip() or "unknown"
+                else:
+                    active_agent = "unknown"
             except Exception:
                 active_agent = "unknown"
 

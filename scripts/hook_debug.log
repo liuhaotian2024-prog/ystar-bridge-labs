@@ -48767,3 +48767,68 @@ RuntimeError: rule 'article_11_board_offline_30m' did not produce any obligation
 12:42:36 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
 12:43:24 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
 12:43:24 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:44:12 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:44:12 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:44:58 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:44:58 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:45:44 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:45:44 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:46:39 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:46:39 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:47:27 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:47:27 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:48:13 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:48:13 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:50:58 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:50:58 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:51:51 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:51:51 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:52:36 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:52:36 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:53:00 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+12:53:00 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+12:53:31 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:53:31 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:53:43 [BRAIN] Injected 3 wisdom nodes
+12:54:46 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+12:54:46 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+12:55:07 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:55:07 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:55:07 [CZL-159] BLOCKED: /Users/haotianliu/.openclaw/workspace/ystar-company/reports/platform_wave1_livefire_20260424.md missing ['audience']
+12:55:28 [BRAIN] Injected 3 wisdom nodes
+12:55:29 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+12:55:29 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+12:55:45 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:55:45 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:56:14 [BRAIN] Injected 3 wisdom nodes
+12:56:14 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:56:14 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:57:11 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+12:57:11 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+12:58:42 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+12:58:42 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+12:59:26 [BRAIN] Injected 3 wisdom nodes
+12:59:26 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+12:59:26 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+13:00:12 [BRAIN] Injected 3 wisdom nodes
+13:02:21 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+13:02:21 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+13:02:21 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+13:02:21 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+13:03:12 [BRAIN] Injected 3 wisdom nodes
+13:03:13 [BRAIN] Injected 3 wisdom nodes
+13:03:39 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+13:03:39 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+13:04:24 [BRAIN] Injected 3 wisdom nodes
+13:06:33 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+13:06:33 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+13:07:14 [BRAIN] Injected 3 wisdom nodes
+13:07:20 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+13:07:20 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+13:08:06 [BRAIN] Injected 3 wisdom nodes
+13:08:11 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+13:08:11 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+13:08:53 [BRAIN] Injected 3 wisdom nodes
+13:11:28 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+13:11:28 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+13:12:19 [BRAIN] Injected 3 wisdom nodes
