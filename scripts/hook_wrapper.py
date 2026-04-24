@@ -470,8 +470,8 @@ try:
         # returns a violation, override result to deny/warn.
         if payload.get("hook_event_name") == "PreToolUse":
             try:
-                REPO_ROOT = os.path.dirname(os.path.dirname(__file__))
-                sys.path.insert(0, REPO_ROOT)
+                # REMOVED: sys.path.insert(0, REPO_ROOT) — redundant (line 37)
+                # and shadows Y-star-gov's ystar.governance (INC-2026-04-23 #5, Leo audit)
                 from ystar.governance.forget_guard import check_forget_violation
                 _fg_context = {
                     "tool": payload.get("tool_name", ""),
