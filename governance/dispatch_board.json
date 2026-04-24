@@ -1693,12 +1693,13 @@
       "description": "M-2b symmetric verification of M-2a commission unification (just PASS). Build scripts/board_shell_omission_unification.py mirroring board_shell_commission_unification.py 4-step pattern: (A) audit tracked-entity registry \u2014 schema unified, \u226550 entities tracked, idempotent re-run; (B) verify omission_rules.py covers \u226550 omission patterns (parallel to 52 commission rules); (C) confirm omission scheduler is event-driven (CIEU delta trigger) not pure cron polling \u2014 reframe any pure-polling rules; (D) LIVE-FIRE: create deliberately overdue tracked entity \u2192 omission_engine MUST emit P0 alarm + CIEU record within 60s. Script must print '=== OVERALL: PASS ===' on success. STRICT NO git commit / push / add \u2014 receipt only via Read + write artifacts under scripts/. Engineer MUST report 5-tuple (Y*/Xt/U/Yt+1/Rt+1) on completion.",
       "urgency": "P0",
       "estimated_tool_uses": 35,
-      "status": "open",
+      "status": "broker_escalate_t2",
       "posted_at": "2026-04-22T14:45:07.798366+00:00",
-      "claimed_by": null,
-      "claimed_at": null,
+      "claimed_by": "cto-broker",
+      "claimed_at": "2026-04-24T01:38:45.034595+00:00",
       "completed_at": null,
-      "completion_receipt": null
+      "completion_receipt": null,
+      "tier": "T2"
     },
     {
       "atomic_id": "CZL-CEO-RULES-REGISTRY-CLOSE-GAP",
@@ -1706,12 +1707,13 @@
       "description": "Read reports/ceo/governance/CEO_RULES_REGISTRY_AUDIT.md (CEO drafted, L1 SPEC). M-2 root closure: 21 memory feedback rules currently advisory-only, 21 GAP\u5206\u7c7b 6 commission-able + 3 omission-able + 12 soft + 4 partial-upgrade + 2 self-check\u6269\u5c55 = 15 new/extended yaml entries. Ethan: split work to Maya (governance ~80 tu) + Leo (kernel ~35 tu) + Ryan (platform ~35 tu) + Jordan (domains ~15 tu) per spec Section 5. Each yaml entry MUST: (1) yaml schema written (2) ForgetGuard/omission_rules registration (3) livefire deliberate-violation \u2192 CIEU delta 0\u21921 verified (4) board_shell_full_registry_unification.py covers it. STRICT NO git commit/push/add \u2014 receipts only. Return 5-tuple receipt with engineer assignments + per-engineer ETA in tool_uses + livefire verification command. RT+1=0 only when full_registry_unification ALL PASS (14/15 deny + 1 info).",
       "urgency": "P0",
       "estimated_tool_uses": 165,
-      "status": "open",
+      "status": "broker_escalate_t2",
       "posted_at": "2026-04-22T15:26:09.613196+00:00",
-      "claimed_by": null,
-      "claimed_at": null,
+      "claimed_by": "cto-broker",
+      "claimed_at": "2026-04-24T01:38:45.035609+00:00",
       "completed_at": null,
-      "completion_receipt": null
+      "completion_receipt": null,
+      "tier": "T2"
     },
     {
       "atomic_id": "CZL-CEO-RULES-REGISTRY-CLOSE-GAP-V2-FRONTIER-TECH",
@@ -1719,12 +1721,13 @@
       "description": "SUPERSEDES CZL-CEO-RULES-REGISTRY-CLOSE-GAP. Read reports/ceo/governance/CEO_RULES_REGISTRY_AUDIT.md Section 9 (CEO \u52a0 frontier-tech adoption mapping). 4 gap \u00d7 4 paper directly adopt: (a) AgentSpec ICSE'26 unified spec for dual commission+omission livefire, (b) OPA Conftest CI/CD + Anthropic Petri 2.0/A3 for regression\u9632\u6f02, (c) Policy-as-Prompt arxiv 2509.23994 pipeline for auto-extract memory feedback \u2192 yaml, (d) Constitutional AI + Petri-behavioral audit for thought-process enforce (NOT trust agent self-claim \u2014 CoT verbalization unreliable per Anthropic 2025-04). Engineer split (Section 9.5): Maya ~140 + Leo ~70 + Ryan ~50 + Jordan ~25 = 285 tu. Each new yaml/hook/script MUST have: (1) symbolic enforce path (2) livefire deliberate-violation CIEU 0\u21921 (3) mutation test (4) regression cron entry. STRICT NO git commit/push/add \u2014 receipts only. RT+1=0 only when board_shell_full_registry_unification + memory_to_yaml_synth roundtrip + constitutional_judge hook deliberate-bypass test ALL PASS. Return 5-tuple receipt with engineer-by-engineer ETA + paper-citation per task subset.",
       "urgency": "P0",
       "estimated_tool_uses": 285,
-      "status": "open",
+      "status": "broker_escalate_t2",
       "posted_at": "2026-04-22T16:16:58.004225+00:00",
-      "claimed_by": null,
-      "claimed_at": null,
+      "claimed_by": "cto-broker",
+      "claimed_at": "2026-04-24T01:38:45.036318+00:00",
       "completed_at": null,
-      "completion_receipt": null
+      "completion_receipt": null,
+      "tier": "T2"
     },
     {
       "atomic_id": "CZL-CEO-RULES-REGISTRY-V3-EXISTING-ASSETS-FIRST",
@@ -1732,12 +1735,13 @@
       "description": "SUPERSEDES V1+V2. Read reports/ceo/governance/CEO_RULES_REGISTRY_AUDIT.md Section 10. Board catch: 4 gap \u6211\u4eec 2026-04 \u5df2\u9020\u4e3b\u4f53 (AMENDMENT-015 Layer 3.1/3.4 narrative+observable detector + Maya EXP-6 wisdom_extractor_v2 + auto_codify meta-rule + behavior_gov_engine 4 unified handlers + k9_silent_fire_audit + unified_compliance_audit), \u771f delta 125 tu \u4e0d\u662f 285. Maya 55 (wire wisdom\u2192yaml propose + 7-\u54f2\u5b66/M-\u4e09\u89d2 binding to detectors), Leo 25 (omission_unification \u5bf9\u79f0 + Petri scenario daemon), Ryan 30 (6h cron commission+omission unification + yaml mutation harness), Jordan 15 (PostToolUse hook on memory/feedback Write + Layered Translation rubric reclassify). \u4f18\u5148\u7ea7: G2 + G4 binding \u540c wave \u5148, G1 omission_unification + G3 propose pipeline \u7b2c\u4e8c wave. \u6bcf\u6761\u65b0 wire MUST: (1) symbolic enforce path (2) livefire deliberate-violation CIEU 0\u21921 (3) cron entry. \u4e25\u683c NO git commit/push/add. Return 5-tuple receipt with wave-by-wave artifacts + livefire commands. RT+1=0 only when board_shell_full_registry_unification + memory_to_yaml roundtrip + constitutional_judge bypass test ALL PASS.",
       "urgency": "P0",
       "estimated_tool_uses": 125,
-      "status": "open",
+      "status": "broker_escalate_t3",
       "posted_at": "2026-04-22T16:30:00.320190+00:00",
-      "claimed_by": null,
-      "claimed_at": null,
+      "claimed_by": "cto-broker",
+      "claimed_at": "2026-04-24T01:38:45.036979+00:00",
       "completed_at": null,
-      "completion_receipt": null
+      "completion_receipt": null,
+      "tier": "T3"
     },
     {
       "atomic_id": "CZL-BRAIN-FRONTIER-1-AIDEN-DREAM-PROMOTE",
@@ -1745,12 +1749,14 @@
       "description": "Promote aiden_dream daemon from dryrun to production. \u73b0 dryrun mode \u5df2 emit 16582 BRAIN_DREAM_DIFF_GENERATED proposals (LIVE \u771f emit), \u4f46 dryrun \u4e0d commit reflection \u8fdb brain.db. \u4efb\u52a1: (1) verify ollama serve LIVE on localhost:11434 with ystar-gemma model (or fallback graceful when unreachable per local_learn.py docstring fail-open principle); (2) flip dryrun \u2192 live mode in scripts/launchd/com.ystar.bridge.aiden_dream_dryrun.plist (rename to com.ystar.bridge.aiden_dream.plist); (3) launchctl reload + monitor 1h emit pattern; (4) verify reflection diffs commit \u8fdb aiden_brain.db nodes. STRICT NO git commit/push/add. MANDATORY tool_uses self-count + breakdown. 5-tuple receipt.",
       "urgency": "P1",
       "estimated_tool_uses": 15,
-      "status": "open",
+      "status": "broker_routing",
       "posted_at": "2026-04-22T21:01:25.408774+00:00",
-      "claimed_by": null,
-      "claimed_at": null,
+      "claimed_by": "cto-broker",
+      "claimed_at": "2026-04-24T01:38:45.037678+00:00",
       "completed_at": null,
-      "completion_receipt": null
+      "completion_receipt": null,
+      "tier": "T1",
+      "assigned_engineer": "ryan-platform"
     },
     {
       "atomic_id": "CZL-BRAIN-FRONTIER-2-6D-COORD-POPULATE",
@@ -1758,12 +1764,13 @@
       "description": "\u73b0 aiden_brain.db nodes \u8868 6 axis (dim_y/dim_x/dim_z/dim_t/dim_phi/dim_c) \u591a\u6570 default 0.5 \u5373\u65e0\u4fe1\u53f7. \u4efb\u52a1: (1) Read knowledge/ceo/wisdom/meta/6d_cognitive_architecture.md \u770b 6 axis \u771f\u5b9a\u4e49; (2) extend cieu_brain_bridge.py \u52a0 6 axis \u771f\u8ba1\u7b97 logic \u2014 \u501f Maya wisdom_extractor_v2 weighted formula (time \u00d7 Board \u00d7 role) + node_type \u2192 axis mapping (\u4f8b ceo_learning \u2192 high dim_phi metacog; self_knowledge \u2192 high dim_y identity; strategic \u2192 high dim_z impact); (3) backfill existing 18727 nodes (batch SQL UPDATE); (4) verify avg dim_X != 0.5 (\u4fe1\u53f7\u771f\u5b58\u5728). STRICT NO git commit/push/add. 5-tuple receipt.",
       "urgency": "P1",
       "estimated_tool_uses": 25,
-      "status": "open",
+      "status": "broker_escalate_t2",
       "posted_at": "2026-04-22T21:01:25.509114+00:00",
-      "claimed_by": null,
-      "claimed_at": null,
+      "claimed_by": "cto-broker",
+      "claimed_at": "2026-04-24T01:38:45.041399+00:00",
       "completed_at": null,
-      "completion_receipt": null
+      "completion_receipt": null,
+      "tier": "T2"
     },
     {
       "atomic_id": "CZL-BRAIN-FRONTIER-3-CROSS-ACTOR-BRAIN",
@@ -1771,12 +1778,14 @@
       "description": "\u73b0 aiden_brain.db nodes \u8868\u65e0 actor_or_owner \u5217, sub-agent \u53cd\u601d\u672a\u5206 actor track. \u4efb\u52a1: (1) ALTER TABLE nodes ADD COLUMN actor_or_owner TEXT (cieu_store ALTER \u6a21\u677f\u5df2 LIVE, \u4e0d\u91cd\u9020); (2) extend cieu_brain_bridge ingest \u65f6 populate actor_or_owner from CIEU agent_id field; (3) backfill historical nodes with most-likely actor (heuristic from file_path / event_type); (4) verify SELECT actor_or_owner, count(*) FROM nodes GROUP BY actor_or_owner \u771f\u6709 cto/maya/leo/ryan/jordan/ethan \u591a actor \u5206\u5e03. STRICT NO git commit/push/add. 5-tuple receipt.",
       "urgency": "P1",
       "estimated_tool_uses": 12,
-      "status": "open",
+      "status": "broker_routing",
       "posted_at": "2026-04-22T21:01:25.614919+00:00",
-      "claimed_by": null,
-      "claimed_at": null,
+      "claimed_by": "cto-broker",
+      "claimed_at": "2026-04-24T01:38:45.042430+00:00",
       "completed_at": null,
-      "completion_receipt": null
+      "completion_receipt": null,
+      "tier": "T1",
+      "assigned_engineer": "maya-governance"
     },
     {
       "atomic_id": "CZL-BRAIN-FRONTIER-4-ARCHIVAL-SLEEPGATE",
@@ -1784,12 +1793,13 @@
       "description": "\u73b0 brain.db 296MB \u6301\u7eed\u6da8, \u65e0 active forgetting. \u501f SleepGate (arxiv 2603.14517) \u4e09\u673a\u5236 \u2014 synaptic downscaling + selective replay + active forgetting. \u4efb\u52a1: (1) write scripts/brain_archival_daemon.py \u2014 selective replay \u6309 access_count \u6392\u5e8f top 10% \u52a0\u6743; active forgetting \u6309 (1 - last_accessed_recency) \u00d7 (1 - access_count) score \u6392\u5e8f\u5e95 5% archive; synaptic downscaling base_activation \u00d7 0.95 \u5468\u671f decay; (2) launchd plist 24h cron schedule; (3) archive \u65e7 nodes \u8fdb backups/brain_archive/{timestamp}/, brain.db \u4e3b\u4f53\u4fdd active set; (4) verify brain.db size \u4e0d unbounded growth. STRICT NO git commit/push/add. 5-tuple receipt.",
       "urgency": "P2",
       "estimated_tool_uses": 20,
-      "status": "open",
+      "status": "broker_escalate_t2",
       "posted_at": "2026-04-22T21:01:25.727388+00:00",
-      "claimed_by": null,
-      "claimed_at": null,
+      "claimed_by": "cto-broker",
+      "claimed_at": "2026-04-24T01:38:45.043172+00:00",
       "completed_at": null,
-      "completion_receipt": null
+      "completion_receipt": null,
+      "tier": "T2"
     },
     {
       "atomic_id": "CZL-BRAIN-FRONTIER-5-DETECTOR-REGISTRY",
@@ -1797,12 +1807,13 @@
       "description": "Ryan W3 9_REVIEW surface \u2014 governance_audit_unified.py \u73b0 hardcoded list 11 \u4e2a detector. \u65b0 detector \u52a0\u5165 \u4e0d\u4f1a\u81ea\u52a8\u5165 dashboard. \u4efb\u52a1: (1) write governance/detector_registry.json \u2014 \u6bcf detector entry \u542b name / module_path / cieu_event_types / m_axis_label / severity_level; (2) refactor governance_audit_unified.py auto-discover from registry \u66ff hardcoded; (3) verify run \u8f93\u51fa\u4e0e W3 dashboard \u6570\u636e\u4e00\u81f4 (no regression); (4) add CI check: \u4efb\u4f55 new module emit CIEU event_type \u4e0d\u5728 registry \u2192 warn (\u540e\u7eed forget_guard rule \u5347\u7ea7). STRICT NO git commit/push/add. 5-tuple receipt.",
       "urgency": "P2",
       "estimated_tool_uses": 15,
-      "status": "open",
+      "status": "broker_escalate_t2",
       "posted_at": "2026-04-22T21:01:25.835831+00:00",
-      "claimed_by": null,
-      "claimed_at": null,
+      "claimed_by": "cto-broker",
+      "claimed_at": "2026-04-24T01:38:45.043824+00:00",
       "completed_at": null,
-      "completion_receipt": null
+      "completion_receipt": null,
+      "tier": "T2"
     },
     {
       "atomic_id": "CZL-WAVE-5-RECEIPT-STRUCTURED-SCHEMA",
@@ -1810,12 +1821,13 @@
       "description": "Wave-5 \u771f\u6cbb\u7406\u95ed\u73af \u2014 \u8001\u5927 2026-04-22 catch language mismatch (engineer receipt \u81ea\u7136\u8bed\u8a00 vs \u6cbb\u7406\u5c42\u673a\u5668\u8bed\u8a00, regex parse lossy). \u89e3: structured receipt YAML frontmatter schema + parser, NL \u2192 structured \u7ffb\u8bd1\u65ad\u70b9\u5904\u52a0 structured \u5165\u53e3. \n\nSub-tasks (~15 tu):\n\n1. Update governance/sub_agent_boot_prompt_template.md MANDATORY section: receipt \u5fc5\u542b YAML frontmatter (--- block) \u5934, \u542b fields:\n   - receipt_schema_version: 1.0\n   - tool_uses_claimed: int\n   - tool_breakdown: {bash, read, edit, write, grep, glob, agent}\n   - m_functor: str (e.g. M-2a)\n   - rt_plus_1: int\n   - artifacts: list[str]\n   - eight_module_activation: dict\n\n2. Upgrade Y-star-gov/ystar/adapters/hooks/stop_hook.py auto_validate_subagent_receipt:\n   - parse YAML frontmatter via yaml.safe_load (\u4e0d\u9760 NL regex)\n   - cross-check tool_uses_claimed vs metadata.usage.tool_uses (drift > 30% \u2192 emit E1_RECEIPT_REJECTED + system-reminder XML inject)\n   - missing frontmatter \u2192 CIEU RECEIPT_MISSING_STRUCTURED_HEADER warn (7d baseline)\n   - \u590d\u7528 _format_correction_xml mechanism inject CEO next prompt\n\n3. Add forget_guard rule receipt_missing_structured_frontmatter (warn after 7d \u2192 deny upgrade per Wave-N+1)\n\n4. Test: write Y-star-gov/tests/adapters/hooks/test_structured_receipt_schema.py \u2014 PASS case (frontmatter \u771f\u6709 + drift < 10%) + FAIL case (frontmatter \u7f3a / drift > 30%)\n\n5. Livefire: emit fake receipt with frontmatter tool_uses_claimed=5 vs declared metadata 50 \u2192 E1_RECEIPT_REJECTED CIEU \u771f emit\n\nSTRICT NO git commit/push/add. MANDATORY tool_uses self-count + breakdown (\u4f60\u81ea\u5df1 first-victim \u7528 new YAML frontmatter format demo). 5-tuple receipt.",
       "urgency": "P0",
       "estimated_tool_uses": 15,
-      "status": "open",
+      "status": "broker_escalate_t2",
       "posted_at": "2026-04-22T21:47:05.871286+00:00",
-      "claimed_by": null,
-      "claimed_at": null,
+      "claimed_by": "cto-broker",
+      "claimed_at": "2026-04-24T01:38:45.044490+00:00",
       "completed_at": null,
-      "completion_receipt": null
+      "completion_receipt": null,
+      "tier": "T2"
     }
   ]
 }

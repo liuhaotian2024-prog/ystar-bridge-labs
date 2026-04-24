@@ -1183,3 +1183,16 @@
 1776823282.2853959 | WARN | ceo_engineering_boundary | agent=test_agent
 1776823282.753193 | WARN | test_violation | agent=test_agent
 1776823282.9107578 | WARN | smoke_test_violation | agent=test_agent
+1776994720.2831628 | WARN | ceo_engineering_boundary | agent=ceo
+1776994720.951145 | WARN | ceo_engineering_boundary | agent=ceo
+1776994732.444444 | WARN | ceo_engineering_boundary | agent=ceo
+1776994732.934398 | WARN | ceo_engineering_boundary | agent=ceo
+1776994779.9619799 | WARN | smoke_test_violation | agent=test_agent
+1776994788.154239 | WARN | smoke_test_final | agent=test_agent
+1776994790.545125 | WARN | ceo_engineering_boundary | agent=test_agent
+1776994791.234091 | WARN | ceo_engineering_boundary | agent=test_agent
+1776994791.6076212 | WARN | test_violation | agent=test_agent
+1776994791.7313979 | WARN | smoke_test_violation | agent=test_agent
+1776994792.8660128 | WARN | ceo_engineering_boundary | agent=test_agent
+1776994793.2363 | WARN | smoke_test_violation | agent=test_agent
+1776994973.1425622 | WARN | ceo_engineering_boundary | agent=ceo
