@@ -48031,3 +48031,459 @@ RuntimeError: rule 'article_11_board_offline_30m' did not produce any obligation
 09:39:59 [P1-a] Read per-session marker (ppid_33403): 'ceo'
 09:39:59 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
 09:39:59 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+09:42:28 [BRAIN] Injected 3 wisdom nodes
+09:42:28 [BRAIN] Injected 3 wisdom nodes
+09:42:28 [BRAIN] Injected 3 wisdom nodes
+09:42:29 [BRAIN] Injected 3 wisdom nodes
+09:42:30 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+09:42:30 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:42:30 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+09:42:30 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:42:30 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+09:42:30 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:42:30 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+09:42:30 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+09:42:30 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+09:42:35 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+09:42:35 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:42:35 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+09:42:53 [BRAIN] Injected 3 wisdom nodes
+09:42:54 [BRAIN] Injected 3 wisdom nodes
+09:42:56 [BRAIN] Injected 3 wisdom nodes
+09:42:56 [BRAIN] Injected 3 wisdom nodes
+09:43:08 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+09:43:08 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:43:08 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+09:43:10 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+09:43:10 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:43:10 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+09:43:11 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+09:43:11 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:43:11 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:17:02 [BRAIN] Injected 3 wisdom nodes
+10:17:04 [BRAIN] Injected 3 wisdom nodes
+10:17:04 [BRAIN] Injected 3 wisdom nodes
+10:17:05 [BRAIN] Injected 3 wisdom nodes
+10:17:05 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:17:05 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:17:06 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+10:17:11 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:17:11 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:17:11 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:17:12 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:17:12 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:17:12 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:32:58 [BRAIN] Injected 3 wisdom nodes
+10:33:00 [BRAIN] Injected 3 wisdom nodes
+10:33:00 [BRAIN] Injected 3 wisdom nodes
+10:33:10 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:33:10 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:33:10 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:37:42 [BRAIN] Injected 3 wisdom nodes
+10:37:45 [BRAIN] Injected 3 wisdom nodes
+10:37:45 [BRAIN] Injected 3 wisdom nodes
+10:37:50 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:37:50 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:37:50 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:37:51 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:37:51 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:37:51 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:38:08 [BRAIN] Injected 3 wisdom nodes
+10:38:08 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:38:08 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:38:08 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:38:54 [BRAIN] Injected 3 wisdom nodes
+10:38:54 [BRAIN] Injected 3 wisdom nodes
+10:39:06 [BRAIN] Injected 3 wisdom nodes
+10:39:13 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:39:13 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:39:13 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:39:16 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:39:16 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:39:16 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:39:17 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:39:17 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:39:17 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:39:18 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:39:18 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:39:18 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+10:39:18 [CZL-159] BLOCKED: /Users/haotianliu/.openclaw/workspace/ystar-company/reports/secretary/dispatch_board_archive_20260424.md missing ['audience']
+10:40:30 [BRAIN] Injected 3 wisdom nodes
+10:40:30 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:40:30 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:40:31 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:40:38 [BRAIN] Injected 3 wisdom nodes
+10:40:39 [BRAIN] Injected 3 wisdom nodes
+10:40:44 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:40:44 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:40:44 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:40:59 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:40:59 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:40:59 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+10:41:22 [BRAIN] Injected 3 wisdom nodes
+10:41:29 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:41:29 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:41:30 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:41:40 [BRAIN] Injected 3 wisdom nodes
+10:41:46 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:41:46 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:41:46 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:41:55 [BRAIN] Injected 3 wisdom nodes
+10:42:21 [BRAIN] Injected 3 wisdom nodes
+10:42:24 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:42:24 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:42:24 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:42:32 [BRAIN] Injected 3 wisdom nodes
+10:42:58 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:42:58 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:42:58 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:43:06 [BRAIN] Injected 3 wisdom nodes
+10:43:11 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:43:11 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:43:11 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:43:44 [BRAIN] Injected 3 wisdom nodes
+10:43:46 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:43:46 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:43:46 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+10:43:54 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:43:54 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:43:54 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:43:58 [BRAIN] Injected 3 wisdom nodes
+10:44:08 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:44:08 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:44:08 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:44:08 [BRAIN] Injected 3 wisdom nodes
+10:44:15 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:44:15 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:44:15 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:44:47 [BRAIN] Injected 3 wisdom nodes
+10:44:54 [BRAIN] Injected 3 wisdom nodes
+10:45:14 [BRAIN] Injected 3 wisdom nodes
+10:45:17 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:45:17 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:45:17 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:45:17 [BRAIN] Injected 3 wisdom nodes
+10:45:19 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:45:19 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:45:19 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:45:27 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:45:27 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:45:27 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:45:27 [BRAIN] Injected 3 wisdom nodes
+10:45:35 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:45:35 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:45:36 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:46:13 [BRAIN] Injected 3 wisdom nodes
+10:46:18 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:46:18 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:46:18 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:46:18 [BRAIN] Injected 3 wisdom nodes
+10:46:29 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:46:29 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:46:29 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:46:33 [BRAIN] Injected 3 wisdom nodes
+10:46:38 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:46:38 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:46:38 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:47:21 [BRAIN] Injected 3 wisdom nodes
+10:47:26 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:47:26 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:47:26 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:47:30 [BRAIN] Injected 3 wisdom nodes
+10:48:02 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:48:02 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:48:02 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:48:10 [BRAIN] Injected 3 wisdom nodes
+10:48:45 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:48:45 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:48:45 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:48:49 [BRAIN] Injected 3 wisdom nodes
+10:49:06 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:49:06 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:49:06 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:49:34 [BRAIN] Injected 3 wisdom nodes
+10:49:40 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:49:40 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:49:41 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:49:58 [BRAIN] Injected 3 wisdom nodes
+10:50:03 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:50:03 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:50:03 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:50:37 [BRAIN] Injected 3 wisdom nodes
+10:50:45 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:50:45 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:50:46 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:51:01 [BRAIN] Injected 3 wisdom nodes
+10:51:13 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:51:13 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:51:13 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:51:41 [BRAIN] Injected 3 wisdom nodes
+10:51:58 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:51:58 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:51:58 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:52:05 [BRAIN] Injected 3 wisdom nodes
+10:52:26 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:52:26 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:52:26 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:52:26 [BRAIN] Injected 3 wisdom nodes
+10:52:46 [BRAIN] Injected 3 wisdom nodes
+10:52:46 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:52:46 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:52:47 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:52:47 [BRAIN] Injected 3 wisdom nodes
+10:52:49 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:52:49 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:52:49 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:53:18 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:53:18 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:53:18 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:53:36 [BRAIN] Injected 3 wisdom nodes
+10:53:41 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:53:41 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:53:42 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:54:07 [BRAIN] Injected 3 wisdom nodes
+10:54:13 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:54:13 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:54:13 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:54:33 [BRAIN] Injected 3 wisdom nodes
+10:54:40 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:54:40 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:54:40 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:55:04 [BRAIN] Injected 3 wisdom nodes
+10:55:15 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:55:15 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:55:16 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:55:31 [BRAIN] Injected 3 wisdom nodes
+10:55:36 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:55:36 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:55:36 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:56:12 [BRAIN] Injected 3 wisdom nodes
+10:56:21 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:56:21 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:56:21 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:56:32 [BRAIN] Injected 3 wisdom nodes
+10:56:37 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:56:37 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:56:37 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:57:19 [BRAIN] Injected 3 wisdom nodes
+10:57:30 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:57:30 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:57:30 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:57:35 [BRAIN] Injected 3 wisdom nodes
+10:57:39 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:57:39 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:57:39 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:58:30 [BRAIN] Injected 3 wisdom nodes
+10:58:33 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:58:33 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:58:33 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:58:40 [BRAIN] Injected 3 wisdom nodes
+10:58:50 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+10:58:50 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+10:58:50 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+10:59:32 [BRAIN] Injected 3 wisdom nodes
+10:59:36 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+10:59:36 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+10:59:36 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+10:59:48 [BRAIN] Injected 3 wisdom nodes
+10:59:50 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+10:59:50 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+10:59:50 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:00:40 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:00:40 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:00:40 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:01:00 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:01:00 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:01:00 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:02:03 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:02:03 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:02:03 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:02:14 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:02:14 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:02:14 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:03:10 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:03:10 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:03:10 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:03:32 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:03:32 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:03:32 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:04:14 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:04:14 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:04:14 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:04:42 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:04:42 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:04:42 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:04:54 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:04:54 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:04:54 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:05:24 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:05:24 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:05:24 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:06:02 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:06:02 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:06:02 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:06:35 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:06:35 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:06:35 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:07:04 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:07:04 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:07:04 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:07:35 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:07:35 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:07:35 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:08:07 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:08:07 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:08:07 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:08:38 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:08:38 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:08:38 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:09:06 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:09:06 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:09:06 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:09:40 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:09:40 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:09:40 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:10:12 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:10:12 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:10:12 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:10:41 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:10:41 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:10:41 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:11:13 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:11:13 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:11:13 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:11:55 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:11:55 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:11:55 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:12:13 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:12:13 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:12:13 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:12:20 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:12:20 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:12:20 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:13:28 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:13:28 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:13:28 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:14:02 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:14:02 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:14:02 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:14:17 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:14:17 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:14:17 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:15:06 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:15:06 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:15:06 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:15:24 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:15:24 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:15:24 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:16:09 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:16:09 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:16:09 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:16:26 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:16:26 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:16:26 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:17:20 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:17:20 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:17:20 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:17:31 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:17:31 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:17:31 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:18:25 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:18:25 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:18:25 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:18:36 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:18:36 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:18:36 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:19:23 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:19:23 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:19:23 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:19:40 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:19:40 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:19:40 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:20:17 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:20:17 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:20:17 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:20:35 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:20:35 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:20:35 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:21:12 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:21:12 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:21:12 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:21:33 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:21:33 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:21:33 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:22:18 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:22:18 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:22:18 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:23:23 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:23:23 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:23:23 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:24:16 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:24:16 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:24:16 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:24:34 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:24:34 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:24:34 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:25:17 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:25:17 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:25:17 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:25:46 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:25:46 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:25:46 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:25:46 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:25:46 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:25:46 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:26:22 [P1-a] Read per-session marker (ppid_33403): 'eng-kernel'
+11:26:22 [P1-a] Payload agent_id overridden to 'eng-kernel' from marker fallback chain
+11:26:22 [BUG4-FIX] Subagent detected via marker identity='eng-kernel' (not CEO)
+11:27:13 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:27:13 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:27:13 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:27:13 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:27:13 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:27:13 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:27:14 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:27:14 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:27:14 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:27:14 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:27:14 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:27:14 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:27:14 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:27:14 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:27:14 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:27:15 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:27:15 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:27:15 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:27:15 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:27:15 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:27:15 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:30:46 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:30:46 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:30:46 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:30:46 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:30:46 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:30:46 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:30:49 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:30:49 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:30:49 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:30:50 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:30:50 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:30:50 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+11:32:06 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:32:06 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:32:06 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:32:07 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:32:07 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:32:07 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:32:08 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:32:08 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:32:08 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:32:08 [PPID-FIX] Wrote child ppid marker ppid_24395 = 'eng-platform'
+11:32:08 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:32:08 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:32:08 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-platform'
+11:32:08 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override)
+11:32:08 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+11:33:01 [PPID-FIX] Wrote child ppid marker ppid_33403 = 'eng-kernel'
+11:33:01 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override)
+11:33:01 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
