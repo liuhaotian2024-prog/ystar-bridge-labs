@@ -527,7 +527,121 @@ def _append_yml_memories():
     return ''
 
 
+# ── Patch #1a: Startup import self-check ──────────────────────────────
+# Verifies critical hook-path imports resolve before governance logic runs.
+# On failure: emit LOUD visible warning to session, log full trace, then
+# exit 0 — session continues in naked mode, but user is explicitly alerted.
+# Prevents the 2026-04-23 deadlock class (silent import failure locks all
+# agents) AND the worse failure (user unknowingly running without governance).
+CRITICAL_IMPORTS = [
+    "ystar.adapters.identity_detector",
+    "ystar.adapters.hook",
+    "ystar.governance.cieu_store",
+    "ystar.kernel.czl_protocol",
+    "ystar.governance.forget_guard",
+]
+
+def _import_self_check():
+    import importlib
+    REPO_ROOT_CHECK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    if REPO_ROOT_CHECK not in sys.path:
+        sys.path.insert(0, REPO_ROOT_CHECK)
+    failures = []
+    for mod_name in CRITICAL_IMPORTS:
+        try:
+            importlib.import_module(mod_name)
+        except Exception as e:
+            failures.append((mod_name, f"{type(e).__name__}: {e}"))
+    return (len(failures) == 0, failures)
+
+
+def _write_import_check_log(failures):
+    try:
+        log_path = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            "hook_import_check.log"
+        )
+        ts = time.strftime("%Y-%m-%d %H:%M:%S")
+        with open(log_path, "a", encoding="utf-8") as f:
+            f.write(f"\n[{ts}] SessionStart import self-check FAILED:\n")
+            for mod, err in failures:
+                f.write(f"  - {mod}: {err}\n")
+        return log_path
+    except Exception:
+        return None
+
+
+def _build_naked_mode_warning(failures, log_path):
+    lines = [
+        "",
+        "=" * 70,
+        "⚠️  Y*GOV GOVERNANCE LAYER DOWN — OPERATING IN NAKED MODE  ⚠️",
+        "=" * 70,
+        "",
+        "The governance layer failed to initialize at session start.",
+        "Failed imports:",
+    ]
+    for mod, err in failures:
+        lines.append(f"  • {mod}")
+        lines.append(f"      {err}")
+    lines += [
+        "",
+        "WHAT THIS MEANS FOR THIS SESSION:",
+        "  • No CIEU audit chain recording",
+        "  • No CZL dispatch validation",
+        "  • No ForgetGuard / boundary enforcement",
+        "  • Agent dispatch may behave unpredictably",
+        "",
+        "DO NOT run production-sensitive tasks in this session.",
+        "",
+        "RECOVERY STEPS:",
+        f"  1. Full trace: {log_path or '(log write failed)'}",
+        "  2. Common cause: a file was moved/renamed but imports not updated.",
+        "     Grep for the missing module path and fix the reference.",
+        "  3. Clear pycache:",
+        "     find /Users/haotianliu/.openclaw/workspace -type d",
+        "       -name '__pycache__' -exec rm -rf {} +",
+        "  4. Restart Claude Code session after fixing.",
+        "",
+        "=" * 70,
+        "",
+    ]
+    return "\n".join(lines)
+
+
+def _emit_naked_mode_and_exit(failures):
+    log_path = _write_import_check_log(failures)
+    warning = _build_naked_mode_warning(failures, log_path)
+
+    # Channel 1: stderr (terminal visibility, survives stdout issues)
+    try:
+        sys.stderr.write(warning + "\n")
+    except Exception:
+        pass
+
+    # Channel 2: SessionStart hook JSON — makes warning visible INSIDE
+    # the Claude Code session (user + model both see it at session top).
+    try:
+        payload = {
+            "hookSpecificOutput": {
+                "hookEventName": "SessionStart",
+                "additionalContext": warning,
+            }
+        }
+        sys.stdout.write(json.dumps(payload))
+        sys.stdout.flush()
+    except Exception:
+        pass
+
+    sys.exit(0)
+
+
 def _main():
+    # Self-check FIRST — before any governance-dependent logic.
+    _ok, _failures = _import_self_check()
+    if not _ok:
+        _emit_naked_mode_and_exit(_failures)
+
     try:
         try: _ = json.loads(sys.stdin.read() or '{}')
         except Exception: pass

@@ -22,6 +22,54 @@ def log(msg):
     with open(LOG, "a", encoding="utf-8") as f:
         f.write(f"{time.strftime('%H:%M:%S')} {msg}\n")
 
+FAIL_CLOSED_LOG = os.path.join(os.path.dirname(__file__), "hook_fail_closed.jsonl")
+
+def emit_cieu_or_fallback(event_dict, reason_tag):
+    """
+    Three-tier degradation for fail-closed audit events.
+    Layer 1: CIEU chain (preferred, cryptographic audit)
+    Layer 2: Structured JSONL log (survives governance-layer crash)
+    Layer 3: stderr (survives everything short of OS failure)
+    """
+    # Layer 1: CIEU
+    try:
+        REPO_ROOT = os.path.dirname(os.path.dirname(__file__))
+        sys.path.insert(0, REPO_ROOT)
+        from ystar.governance.cieu_store import CIEUStore
+        SESSION_JSON = os.path.join(REPO_ROOT, ".ystar_session.json")
+        cieu_db = os.path.join(REPO_ROOT, ".ystar_cieu.db")
+        try:
+            with open(SESSION_JSON, "r") as f:
+                session = json.load(f)
+            cieu_db = session.get("cieu_db", cieu_db)
+        except Exception:
+            pass
+        CIEUStore(db_path=cieu_db).write_dict(event_dict)
+        return "cieu"
+    except Exception as cieu_exc:
+        # Layer 2: structured JSONL
+        try:
+            fallback_record = {
+                "ts": time.time(),
+                "tag": reason_tag,
+                "cieu_error": str(cieu_exc),
+                "event": event_dict,
+            }
+            with open(FAIL_CLOSED_LOG, "a", encoding="utf-8") as f:
+                f.write(json.dumps(fallback_record) + "\n")
+            log(f"[FAIL-CLOSED-L2] {reason_tag}: CIEU down, wrote to {FAIL_CLOSED_LOG}")
+            return "jsonl"
+        except Exception as file_exc:
+            # Layer 3: stderr
+            try:
+                sys.stderr.write(
+                    f"[FAIL-CLOSED-L3] {reason_tag}: CIEU+file both failed. "
+                    f"cieu_err={cieu_exc} file_err={file_exc}\n"
+                )
+            except Exception:
+                pass  # If even stderr fails, nothing we can do
+            return "stderr"
+
 try:
     # ── ARCH-6: Feature-flagged v2 thin adapter ──────────────────────────
     # When YSTAR_HOOK_V2=1, delegate entirely to the thin adapter path.
@@ -362,23 +410,19 @@ try:
                     # Do NOT block the tool call yet (dry_run mode), just log + emit CIEU
                     log(f"[CZL-GATE1] {warning_msg}")
 
-                    # Emit CIEU event
-                    REPO_ROOT = os.path.dirname(os.path.dirname(__file__))
-                    SESSION_JSON = os.path.join(REPO_ROOT, ".ystar_session.json")
-                    sys.path.insert(0, REPO_ROOT)
-                    from ystar.governance.cieu_store import CIEUStore
-                    from ystar.governance.identity_detector import get_active_agent
-                    cieu_db = os.path.join(REPO_ROOT, ".ystar_cieu.db")
+                    # Emit CIEU event (via 3-tier fallback: CIEU → JSONL → stderr)
+                    import uuid
                     try:
+                        REPO_ROOT = os.path.dirname(os.path.dirname(__file__))
+                        SESSION_JSON = os.path.join(REPO_ROOT, ".ystar_session.json")
+                        sys.path.insert(0, REPO_ROOT)
+                        from ystar.adapters.identity_detector import get_active_agent
                         with open(SESSION_JSON, "r") as f:
                             session = json.load(f)
-                        cieu_db = session.get("cieu_db", cieu_db)
                         active_agent = get_active_agent(session)
                     except Exception:
                         active_agent = "unknown"
 
-                    cieu = CIEUStore(db_path=cieu_db)
-                    import uuid
                     gate1_event = {
                         "event_id": str(uuid.uuid4()),
                         "session_id": "hook_gate1",
@@ -398,7 +442,7 @@ try:
                         "drift_detected": True,
                         "human_initiator": "hook",
                     }
-                    cieu.write_dict(gate1_event)
+                    emit_cieu_or_fallback(gate1_event, "GATE1_VIOLATION")
 
                     # Inject warning to stdout via system-reminder (best-effort)
                     # Note: OpenClaw hook output goes to logs, not directly to model
@@ -502,25 +546,20 @@ try:
         log(f"[FAIL-CLOSED] Core governance unavailable: {core_exc}")
         log(traceback.format_exc())
 
-        # Try to write CIEU event (best-effort, may also fail)
+        # Emit deny event via 3-tier fallback (CIEU → JSONL → stderr)
         try:
             import uuid
             REPO_ROOT = os.path.dirname(os.path.dirname(__file__))
             SESSION_JSON = os.path.join(REPO_ROOT, ".ystar_session.json")
             sys.path.insert(0, REPO_ROOT)
-            from ystar.governance.cieu_store import CIEUStore
-            from ystar.governance.identity_detector import get_active_agent
-            cieu_db = os.path.join(REPO_ROOT, ".ystar_cieu.db")
+            from ystar.adapters.identity_detector import get_active_agent
             try:
                 with open(SESSION_JSON, "r") as f:
                     session = json.load(f)
-                cieu_db = session.get("cieu_db", cieu_db)
                 active_agent = get_active_agent(session)
             except Exception:
                 active_agent = "unknown"
 
-            cieu = CIEUStore(db_path=cieu_db)
-            now = time.time()
             deny_event = {
                 "event_id": str(uuid.uuid4()),
                 "session_id": "hook_fail_closed",
@@ -528,7 +567,7 @@ try:
                 "event_type": "GOVERNANCE_FAIL_CLOSED",
                 "action": "deny",
                 "evidence_grade": "system",
-                "created_at": now,
+                "created_at": time.time(),
                 "seq_global": time.time_ns() // 1000,
                 "params": {
                     "tool": payload.get("tool_name", "unknown"),
@@ -539,9 +578,16 @@ try:
                 "drift_detected": True,
                 "human_initiator": "hook",
             }
-            cieu.write_dict(deny_event)
-        except Exception as cieu_exc:
-            log(f"[FAIL-CLOSED] Could not write CIEU deny event: {cieu_exc}")
+            emit_cieu_or_fallback(deny_event, "CORE_FAIL_CLOSED")
+        except Exception as build_exc:
+            # Even building the event failed — stderr is our last resort
+            try:
+                sys.stderr.write(
+                    f"[FAIL-CLOSED-L3] CORE_FAIL_CLOSED: event build failed. "
+                    f"build_err={build_exc} core_err={core_exc}\n"
+                )
+            except Exception:
+                pass
 
         # DENY the tool call
         result = {
