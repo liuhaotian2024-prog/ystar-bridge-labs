@@ -1,22 +1,18 @@
 # Enforcement Status Dashboard
 
-**Last Updated**: 2026-04-22T10:25:21.612859
+**Last Updated**: 2026-04-23T22:49:25.106717
 
 ## Alarm Rate by Type (Last Session)
 
 | Event Type | Count | Last Seen |
 |------------|-------|-----------|
-| HOOK_HEALTH_K9_ESCALATE | 16 | 2026-04-22T09:14:19.248392 |
-| AGENT_REGISTRY_K9_WARN | 13 | 2026-04-22T09:14:19.165727 |
-| CZL_K9_WARN | 3 | 2026-04-16T15:06:56.227305 |
-| FORGET_GUARD_K9_WARN | 3 | 2026-04-16T15:06:56.195039 |
-| STOP_HOOK_K9_DENY | 2 | 2026-04-16T15:06:56.211065 |
-| FORGET_GUARD_K9_DENY | 2 | 2026-04-16T15:06:56.276556 |
+| AGENT_REGISTRY_K9_WARN | 2 | 2026-04-23T22:32:57.032487 |
+| HOOK_HEALTH_K9_ESCALATE | 2 | 2026-04-23T22:32:57.160605 |
 
 ## Cascade Success Rate
 
-- **Total Alarms Processed**: 39
-- **Cascade Successes**: 39
+- **Total Alarms Processed**: 4
+- **Cascade Successes**: 4
 - **Cascade Failures**: 0
 - **Success Rate**: 100.0%
 

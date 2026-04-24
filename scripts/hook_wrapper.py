@@ -77,7 +77,7 @@ try:
     # (Layer 3) before check_hook (Layer 2+1).  All hook_wrapper logic
     # (CEO guard, CZL-159, agent stack, dispatch gate) is bypassed — those
     # must be registered as router rules for v2 to be fully equivalent.
-    if os.environ.get("YSTAR_HOOK_V2") == "1":
+    if False and os.environ.get("YSTAR_HOOK_V2") == "1":
         raw = sys.stdin.buffer.read().decode('utf-8-sig').lstrip(chr(0xFEFF))
         payload = json.loads(raw)
         from ystar.adapters.hook import handle_hook_event
