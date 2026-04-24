@@ -261,16 +261,16 @@ try:
             return _candidates[0][1]
         return None
 
-    # -- CZL-SPAWN-PPID-MARKER-FIX (2026-04-24): Subagent identity from payload --
+    # -- CZL-SPAWN-PPID-MARKER-FIX v2 (2026-04-24): Subagent identity from payload --
     # When Claude Code spawns a subagent, payload.agent_type is set to the
     # subagent definition name (e.g. "Leo-Kernel", "Samantha-Secretary").
-    # PREVIOUSLY: marker override below would clobber payload.agent_id with
-    # stale ppid marker content ("ceo") because the parent wrote ITS OWN ppid
-    # marker, not the child's. The child's ppid marker never existed.
     # FIX: If payload.agent_type is informative (non-empty, non-"agent"),
-    # map it to canonical governance ID and use that as agent_id. Also write
-    # the child's own ppid marker so subsequent hook calls within this
-    # subagent session resolve correctly. Skip stale marker override entirely.
+    # map it to canonical governance ID and use that as agent_id.
+    # IMPORTANT: Do NOT write to the shared ppid marker — multiple subagents
+    # share the same PPID within a Claude Code session, so writing here would
+    # clobber the root process (CEO) identity. The payload.agent_type field
+    # is the authoritative source for subagent identity; ppid markers are
+    # only for root-process fallback.
     _subagent_resolved_id = None
     if _original_agent_type and _original_agent_type not in ("", "agent", None):
         try:
@@ -279,27 +279,9 @@ try:
             if _resolved and _resolved not in ("agent", "guest"):
                 _subagent_resolved_id = _resolved
                 payload["agent_id"] = _resolved
-                # Write the child's own ppid marker so downstream reads
-                # within this subagent's hook invocations are consistent.
-                try:
-                    _child_ppid = os.environ.get("PPID", "")
-                    if not _child_ppid:
-                        _child_ppid = str(os.getppid())
-                    if _child_ppid and _child_ppid != "1":
-                        _child_marker = os.path.join(
-                            _MARKER_DIR,
-                            ".ystar_active_agent.ppid_" + _child_ppid,
-                        )
-                        with open(_child_marker, "w", encoding="utf-8") as _pf:
-                            _pf.write(_resolved)
-                        log("[PPID-FIX] Wrote child ppid marker ppid_"
-                            + _child_ppid + " = '" + _resolved + "'")
-                except Exception as _ppid_write_exc:
-                    log("[PPID-FIX] Failed to write child ppid marker: "
-                        + str(_ppid_write_exc))
                 log("[PPID-FIX] Subagent identity from payload.agent_type='"
                     + _original_agent_type + "' -> '" + _resolved
-                    + "' (skipping marker override)")
+                    + "' (skipping marker override, no ppid write)")
         except Exception as _map_exc:
             log("[PPID-FIX] Failed to map agent_type: " + str(_map_exc))
 
