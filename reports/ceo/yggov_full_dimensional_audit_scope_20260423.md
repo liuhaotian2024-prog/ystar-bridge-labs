@@ -314,6 +314,69 @@ Rt+1=0 定义 (empirical, 不装):
 
 ---
 
+## 1.55 External Competitive Research — Microsoft Agent Governance Toolkit (2026-04-24 discovery, Board directive)
+
+**Background**: 2026-04-02 Microsoft 开源 **Agent Governance Toolkit** (MIT license, pre-deny 亚毫秒, 7 组件). 直接 Y*gov 同 domain, 必 mapping audit.
+
+### Components side-by-side
+
+| Microsoft AGT 组件 | 作用 | Y*gov 对应 | Gap 方向 |
+|---|---|---|---|
+| **Agent OS** (policy engine) | 亚毫秒 pre-deny 决策 | `ystar.adapters.hook` + `boundary_enforcer` + forget_guard yaml rules | Y*gov 延迟慢 (hook 调用链长); MS 亚毫秒是 native runtime 优势 |
+| **Agent Mesh** (identity + trust) | agent 身份 + signed action chain | `.ystar_active_agent` + `identity_detector` + marker fallback chain | Y*gov 单机 marker 弱 (今夜 deadlock 就是 marker race); MS mesh-grade 成熟 |
+| **Agent Runtime** (execution rings) | 隔离 ring-level 权限 | boundary_enforcer allowlist | Y*gov 简单 path-allowlist; MS ring 级更细 |
+| **Agent SRE** (reliability) | health check / SLO | `gov_doctor` / `ecosystem_scan` / `wire_integrity_check` | Y*gov 基础有, 缺 SLO 定义 |
+| **Agent Compliance** (audit evidence) | EU AI Act / HIPAA / SOC2 自动 mapping | `amendment_coverage_audit.py` 部分 | Y*gov 有审计但无 compliance framework mapping ← **enterprise go-to-market gap** |
+| **Agent Marketplace** (plugin lifecycle) | 插件 sandbox | gov-mcp (未 deploy) | Y*gov 滞后 |
+| **Agent Lightning** (RL training gov) | training-time policy enforce + reward shape | 无 | **Y*gov 最大 gap — base model weight 层 bias 抑制**. 对应 "Opus 4.7 fine-tune feasibility" 路径 |
+
+### Y*gov unique advantages (empirical)
+
+| 维度 | Y*gov 有 | Microsoft AGT | 差异化评价 |
+|---|---|---|---|
+| **M-2b Omission governance** | 专长 (OmissionEngine + obligation track + tracked entity + overdue escalate) | **无明文覆盖** | **Decisive differentiator** — 企业真痛点是"agent 装死不做", 不只是"agent 做错" |
+| **Dogfood self-governance** | Labs 用 Y*gov 治理 CEO+9 engineer 自己 (本事故就是 case study) | 未提 | **最强 thought-leadership 信号** — 别人 demo, 我们真用 |
+| **8-module cognitive architecture** | Aiden 8 module Global Workspace (M1-M8) | 无 | 深度 — 上一代 policy 层 vs 我们 cognitive 层 |
+| **Causal audit (CIEU + Merkle seal)** | 659K sealed chain + K9 bridge | 无 (只 audit log) | 因果溯源 + 篡改抗性 |
+| **Physical escape (K9 Rescue Daemon)** | v1 今夜 ship 44/44 test pass | 无 | 治理层自救 底线 — 事故时独立 FIFO + whitelist 不依赖被治理方 |
+
+### Axis-A/B/C Guard+Guide Framework (Board 2026-04-24 approved, 替换 "Great Prune")
+
+**核心准则**: 不是删 rule 而是**每条 rule 必答 3 问**:
+
+1. **这条抑制哪种 LLM 训练偏好 bias?** (sycophancy / optimism / avoid-conflict / verbose / surface-pattern-matching)
+2. **这条防哪种 M-2a/M-2b harm?** (commission 误操作 / omission 该做未做)
+3. **触发时的 actionable REDIRECT 是什么具体命令?** (REDIRECT > pure DENY, 防 lock-death 放大)
+
+**分类 → 动作**:
+
+| Axis | 判据 | 动作 | 预估占比 |
+|---|---|---|---|
+| **A 反 LLM-bias** | Q1 YES | **KEEP + STRENGTHEN + 必补 REDIRECT** | ~30% |
+| **B M-aligned product core** | Q2 YES (M-2a or M-2b) | **KEEP + 每条 DENY 必配 REDIRECT actionable 命令** (产品差异化) | ~50% |
+| **C 纯行政 ghost** | Q1+Q2 都 NO | **DELETE** (无 M harm 防护 + 无 LLM bias 抑制 = 纯 bureaucracy) | ~20% |
+
+**Wave-2 Ethan 主修目标** (不再叫 Great Prune, 改 "Guard+Guide Refactor"):
+1. 枚举 全 37 forget_guard + 42 detector + 4 behavior + 17 Iron Rules + CZL-159 + boundary_enforcer 2639 LOC
+2. 每条过 3 问 + live-fire precision ≥90%
+3. Axis A+B 补 REDIRECT (引用 memory `project_governance_guard_plus_guide`)
+4. Axis C 删
+5. Target: rule **数量** 可能降 20%, rule **质量** 从"pure DENY 死锁源"变"guard+guide 导航员" — 质变不是量减
+
+### 立即 Wave-2 子任务 (新加, 源自本 AGT mapping)
+
+- **AGT-MAPPING-1** (Maya / Jordan): OWASP 10 agentic AI risks vs Y*gov 覆盖 matrix — 哪些 covered / partially / missing
+- **AGT-MAPPING-2** (Ethan / Ryan): Agent Lightning RL-level policy enforcement 研究 + Anthropic API 是否开放 Opus 4.7 custom fine-tune feasibility report
+- **AGT-MAPPING-3** (Marco / Sofia): EU AI Act / HIPAA / SOC2 compliance framework mapping 方案 — enterprise go-to-market前置
+- **AGT-MAPPING-4** (Ryan): Agent SRE SLO spec — `gov_doctor` 扩 SLO 定义 + `ecosystem_scan` 数字化
+- **AGT-MAPPING-5** (Sofia): 用 Microsoft AGT 发布作背景, 写 Y*gov "omission-first + dogfood-proof" 定位 blog
+
+### 战略判断 (本节 synthesis)
+
+Microsoft 巨头同周 ship 证方向正确 (pre-deny + hook + MIT). **Y*gov 不是 AGT 子集**: M-2b omission 独有 + dogfood + 8-module cognitive + K9 物理 escape + CIEU Merkle causal audit 是 4 条正交差异. Board 2026-04-21 立 M Triangle 双面设计**事后看是 decisive foresight** — 业界 policy-only 派现在看见 omission 但还没做, 我们已经把它 dogfood 了一整年.
+
+---
+
 ## 1.6 Pre-Wave Baseline Snapshot (2026-04-23 ran, 3 scanner 已出初值)
 
 已落盘到 `reports/ctos/audit_baseline_20260423/`:

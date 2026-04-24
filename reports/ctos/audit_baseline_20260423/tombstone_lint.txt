@@ -1,0 +1,20 @@
+[
+  {
+    "file": "BOARD_PENDING.md",
+    "exists": true,
+    "active": 0,
+    "deprecated": 0,
+    "resolved": 0,
+    "unmarked": 1,
+    "has_transition_header": false
+  },
+  {
+    "file": "DISPATCH.md",
+    "exists": true,
+    "active": 0,
+    "deprecated": 0,
+    "resolved": 0,
+    "unmarked": 6,
+    "has_transition_header": true
+  }
+]

@@ -1,0 +1,11 @@
+usage: knowledge_check.py [-h] [--file FILE] [--role ROLE] [--dir DIR]
+                          [--actor ACTOR]
+
+Gemma-driven knowledge contradiction detection (Path C)
+
+optional arguments:
+  -h, --help     show this help message and exit
+  --file FILE    Specific file to check against its directory
+  --role ROLE    Role to check (batch mode)
+  --dir DIR      Subdirectory within role (default: theory)
+  --actor ACTOR  Actor for CIEU events (defaults to role)

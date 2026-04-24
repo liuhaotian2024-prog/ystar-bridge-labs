@@ -1,0 +1,1 @@
+✓ No SLA breaches (scanned 0 fresh artifacts)
