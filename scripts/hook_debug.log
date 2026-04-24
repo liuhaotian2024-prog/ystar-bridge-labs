@@ -48838,3 +48838,313 @@ RuntimeError: rule 'article_11_board_offline_30m' did not produce any obligation
 13:18:24 [P1-a] Read per-session marker (ppid_33403): 'ceo'
 13:18:24 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
 13:19:11 [BRAIN] Injected 3 wisdom nodes
+15:23:07 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+15:23:49 [BRAIN] Injected 3 wisdom nodes
+15:24:36 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+15:25:18 [BRAIN] Injected 3 wisdom nodes
+15:25:18 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+15:25:18 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+15:25:18 [CZL-GATE1] ⚠️ CZL Gate 1: dispatch missing sections ['Missing Y* (ideal contract)', 'Missing Xt (pre-state)', 'Missing U (actions list)', 'Missing Yt+1 (post-state)', 'Missing Rt+1 target (gap threshold)', 'Warning: No explicit recipient (which engineer?)', 'Warning: No explicit task_id']
+15:25:33 [P1-a] Payload agent_id overridden to 'eng-governance' from marker fallback chain
+15:25:33 [BUG4-FIX] Subagent detected via marker identity='eng-governance' (not CEO)
+15:25:33 [CZL-GATE1] ⚠️ CZL Gate 1: dispatch missing sections ['Missing Y* (ideal contract)', 'Missing Xt (pre-state)', 'Missing U (actions list)', 'Missing Yt+1 (post-state)', 'Missing Rt+1 target (gap threshold)', 'Warning: No explicit recipient (which engineer?)', 'Warning: No explicit task_id']
+15:26:16 [BRAIN] Injected 3 wisdom nodes
+15:26:16 [BRAIN] Injected 3 wisdom nodes
+15:26:25 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:26:25 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:26:26 [PPID-FIX] Subagent identity from payload.agent_type='Ethan-CTO' -> 'cto' (skipping marker override, no ppid write)
+15:26:26 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+15:26:46 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:26:46 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:27:26 [PPID-FIX] Subagent identity from payload.agent_type='Ethan-CTO' -> 'cto' (skipping marker override, no ppid write)
+15:27:26 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+15:27:31 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:27:31 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:27:48 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:27:48 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+[hook_session_start] OmissionEngine registration failed: rule 'article_11_board_offline_30m' did not produce any obligation; check rule fields
+Traceback (most recent call last):
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/hook_session_start.py", line 73, in _register_article11_obligations
+    register_obligation_programmatic(
+  File "/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/register_obligation.py", line 243, in register_obligation_programmatic
+    raise RuntimeError(
+RuntimeError: rule 'article_11_board_offline_30m' did not produce any obligation; check rule fields
+
+15:28:34 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:28:34 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:28:47 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:28:47 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:28:47 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:28:47 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:29:38 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:29:38 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:29:38 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:29:38 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:30:07 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:30:07 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:30:08 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:30:08 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:30:08 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:30:08 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:30:09 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:30:09 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:31:18 [PPID-FIX] Subagent identity from payload.agent_type='Ethan-CTO' -> 'cto' (skipping marker override, no ppid write)
+15:31:18 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+15:31:20 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:31:20 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:31:20 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:31:20 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:32:14 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+15:32:14 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+15:32:15 [CZL-GATE1] ⚠️ CZL Gate 1: dispatch missing sections ['Missing Y* (ideal contract)', 'Missing Xt (pre-state)', 'Missing U (actions list)', 'Missing Yt+1 (post-state)', 'Missing Rt+1 target (gap threshold)', 'Warning: No explicit recipient (which engineer?)', 'Warning: No explicit task_id']
+15:32:36 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+15:32:36 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+15:32:36 [CZL-GATE1] ⚠️ CZL Gate 1: dispatch missing sections ['Missing Y* (ideal contract)', 'Missing Xt (pre-state)', 'Missing U (actions list)', 'Missing Yt+1 (post-state)', 'Missing Rt+1 target (gap threshold)', 'Warning: No explicit recipient (which engineer?)', 'Warning: No explicit task_id']
+15:34:30 [PPID-FIX] Subagent identity from payload.agent_type='Ethan-CTO' -> 'cto' (skipping marker override, no ppid write)
+15:34:30 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+15:34:36 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:34:36 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:34:38 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:34:38 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:34:39 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:34:39 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:34:40 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:34:40 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:34:40 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:34:40 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:34:51 [BRAIN] Injected 3 wisdom nodes
+15:34:58 [BRAIN] Injected 3 wisdom nodes
+15:35:02 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:35:02 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:35:03 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+15:35:03 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+15:38:12 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:38:12 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:38:12 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:38:12 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:38:28 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:38:28 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:38:28 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:38:28 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:38:29 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:38:29 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:38:34 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+15:38:34 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+15:38:35 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+15:38:35 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+15:38:35 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:38:35 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:38:36 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+15:38:36 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+15:38:36 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:38:36 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:38:37 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+15:38:37 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+15:38:37 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:38:37 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:38:38 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:38:38 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:38:39 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:38:39 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:42:56 [PPID-FIX] Subagent identity from payload.agent_type='Ethan-CTO' -> 'cto' (skipping marker override, no ppid write)
+15:42:56 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+15:43:09 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:43:09 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:43:10 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:43:10 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:43:10 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:43:10 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:44:36 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:44:36 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:44:36 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:44:36 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:44:57 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+15:44:57 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+15:44:58 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+15:44:58 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+15:44:59 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+15:44:59 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+15:45:00 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+15:45:00 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+15:45:08 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:45:08 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:45:08 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:45:08 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:45:09 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:45:09 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:48:12 [PPID-FIX] Subagent identity from payload.agent_type='Ethan-CTO' -> 'cto' (skipping marker override, no ppid write)
+15:48:12 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+15:48:18 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:48:18 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:48:19 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:48:19 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:48:20 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:48:20 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:49:41 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:49:41 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:50:29 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+15:50:29 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+15:50:30 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+15:50:30 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+15:50:31 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+15:50:31 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+15:50:32 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+15:50:32 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+15:50:37 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:50:37 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:50:39 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:50:39 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:50:39 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:50:39 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:52:49 [PPID-FIX] Subagent identity from payload.agent_type='Ethan-CTO' -> 'cto' (skipping marker override, no ppid write)
+15:52:49 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+15:53:07 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:53:07 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:53:07 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:53:07 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:54:04 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:54:04 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:54:05 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:54:05 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:55:37 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+15:55:37 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+15:55:39 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+15:55:39 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+15:55:39 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+15:55:39 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+15:55:41 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:55:42 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:55:42 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:55:42 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:57:01 [PPID-FIX] Subagent identity from payload.agent_type='Ethan-CTO' -> 'cto' (skipping marker override, no ppid write)
+15:57:01 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+15:57:02 [PPID-FIX] Subagent identity from payload.agent_type='Ethan-CTO' -> 'cto' (skipping marker override, no ppid write)
+15:57:02 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+15:57:24 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:57:24 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:57:26 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:57:26 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+15:58:17 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:58:17 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:58:18 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+15:58:18 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+15:59:09 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+15:59:09 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+15:59:09 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+15:59:09 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:01:36 [PPID-FIX] Subagent identity from payload.agent_type='Ethan-CTO' -> 'cto' (skipping marker override, no ppid write)
+16:01:36 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+16:01:48 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:01:48 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:01:49 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:01:49 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:02:12 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+16:02:12 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+16:02:13 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+16:02:13 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+16:02:29 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:02:29 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:02:29 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:02:29 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:02:30 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:02:30 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:02:35 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+16:02:35 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+16:02:36 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+16:02:36 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+16:02:37 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+16:02:37 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+16:02:38 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+16:02:38 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+16:06:04 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:06:04 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:06:04 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:06:04 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:06:16 [PPID-FIX] Subagent identity from payload.agent_type='Ethan-CTO' -> 'cto' (skipping marker override, no ppid write)
+16:06:16 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+16:06:43 [BRAIN] Injected 3 wisdom nodes
+16:06:58 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+16:06:58 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+16:07:35 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:07:35 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:07:35 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:07:35 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:07:36 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:07:36 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:07:39 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+16:07:39 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+16:09:21 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+16:09:21 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+16:09:52 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:09:52 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:09:52 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:09:52 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:10:00 [PPID-FIX] Subagent identity from payload.agent_type='Ethan-CTO' -> 'cto' (skipping marker override, no ppid write)
+16:10:00 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+16:10:30 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+16:10:30 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+16:11:28 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+16:11:28 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+16:11:29 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+16:11:29 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+16:11:31 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:11:31 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:11:31 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+16:11:31 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+16:11:33 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+16:11:33 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+16:11:33 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:11:33 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:11:33 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:11:33 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:12:46 [BRAIN] Injected 3 wisdom nodes
+16:13:33 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+16:13:33 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+16:13:50 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:13:50 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:14:23 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+16:14:23 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+16:16:07 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+16:16:07 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+16:16:07 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+16:16:07 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+16:16:08 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+16:16:08 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+16:16:08 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:16:08 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:16:09 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:16:09 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:16:34 [BRAIN] Injected 3 wisdom nodes
+16:16:34 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+16:16:34 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+16:16:37 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:16:37 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:16:57 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+16:16:57 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+16:18:55 [PPID-FIX] Subagent identity from payload.agent_type='Ethan-CTO' -> 'cto' (skipping marker override, no ppid write)
+16:18:55 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
+16:20:04 [FORGET_GUARD] check failed (fail-open): 'ForgetGuard' object has no attribute '_load_deny_history'
+16:20:05 [FORGET_GUARD] check failed (fail-open): 'ForgetGuard' object has no attribute '_load_deny_history'
+16:20:07 [FORGET_GUARD] check failed (fail-open): 'ForgetGuard' object has no attribute '_load_deny_history'
+16:20:07 [FORGET_GUARD] check failed (fail-open): 'ForgetGuard' object has no attribute '_load_deny_history'
+16:20:07 [FORGET_GUARD] check failed (fail-open): 'ForgetGuard' object has no attribute '_load_deny_history'
+16:20:09 [FORGET_GUARD] check failed (fail-open): 'ForgetGuard' object has no attribute '_load_deny_history'
+16:20:09 [FORGET_GUARD] check failed (fail-open): 'ForgetGuard' object has no attribute '_load_deny_history'
+16:20:09 [BRAIN] Injected 3 wisdom nodes
+16:20:11 [FORGET_GUARD] check failed (fail-open): 'ForgetGuard' object has no attribute '_load_deny_history'
+16:20:13 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:20:13 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:20:14 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+16:20:14 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+16:20:14 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:20:14 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:20:15 [PPID-FIX] Subagent identity from payload.agent_type='Ryan-Platform' -> 'eng-platform' (skipping marker override, no ppid write)
+16:20:15 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+16:20:17 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+16:20:17 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+16:20:21 [PPID-FIX] Subagent identity from payload.agent_type='Maya-Governance' -> 'eng-governance' (skipping marker override, no ppid write)
+16:20:21 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+16:20:22 [PPID-FIX] Subagent identity from payload.agent_type='Leo-Kernel' -> 'eng-kernel' (skipping marker override, no ppid write)
+16:20:22 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+16:21:38 [PPID-FIX] Subagent identity from payload.agent_type='Ethan-CTO' -> 'cto' (skipping marker override, no ppid write)
+16:21:38 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
