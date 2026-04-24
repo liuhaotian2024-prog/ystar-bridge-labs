@@ -1,0 +1,3 @@
+
+[2026-04-23 20:47:14] SessionStart import self-check FAILED:
+  - ystar.nonexistent.test_module_should_fail: ModuleNotFoundError: No module named 'ystar.nonexistent'

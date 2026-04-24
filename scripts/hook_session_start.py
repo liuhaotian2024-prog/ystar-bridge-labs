@@ -16,7 +16,7 @@ Fail-open: any error returns a minimal notice, never blocks session start.
 
 Author: Ethan Wright (CTO) - Y* Bridge Labs
 """
-import json, os, sys, traceback
+import json, os, sys, time, traceback
 from pathlib import Path
 
 # Y*gov module path fix (Board 2026-04-16 P0: ModuleNotFoundError emergency)
@@ -542,10 +542,11 @@ CRITICAL_IMPORTS = [
 ]
 
 def _import_self_check():
+    # Relies on the module-level sys.path.insert that puts
+    # /Users/haotianliu/.openclaw/workspace/Y-star-gov at position 0.
+    # Do NOT insert our own path here — doing so would place the wrong
+    # directory ahead of the correct one and cause all imports to fail.
     import importlib
-    REPO_ROOT_CHECK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    if REPO_ROOT_CHECK not in sys.path:
-        sys.path.insert(0, REPO_ROOT_CHECK)
     failures = []
     for mod_name in CRITICAL_IMPORTS:
         try:
