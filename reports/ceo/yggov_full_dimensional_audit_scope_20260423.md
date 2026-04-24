@@ -390,6 +390,42 @@ Rt+1=0 定义 (empirical, 不装):
 
 ---
 
+## 5.5 CRITICAL ARCHITECTURE FINDING — Spawn Deadlock (新, 2026-04-24 pre-Wave-2 discovery)
+
+**Empirical 取证**:
+1. `dispatch_board.py status`: 146 tasks total; `pending` subcommand shows **27 un-spawned items ALL [OVERDUE hard TTL exceeded]**
+2. Overdue 范围从 2026-04-20 (98h) 到本 session 刚 post 的 7 INC items (数十分钟内立刻 overdue)
+3. 含 P0 重磅: `CZL-SPAWN-PPID-MARKER-FIX` (57h, 与本次 deadlock 同 root cause), `CZL-COMMISSION-UNIFY-STEP-1~3` (40h, 核心产品 M-2a 化), `CZL-BOARD-HONESTY-G1/G2` (40h), `CZL-BRAIN-FRONTIER-1~5` (32h), `CZL-CEO-RULES-REGISTRY-V3` (36h), `CZL-WAVE-5-RECEIPT-STRUCTURED-SCHEMA` (31h)
+4. `scripts/engineer_task_subscriber.py:46-48` 源码认死: "Subscriber CANNOT spawn Agent tool calls -- structural Claude Code boundary. Only the main Claude session's tool-use loop can originate Agent calls."
+5. `scripts/cto_dispatch_broker.py` daemon 活着 (pid 30854), 但它只做 routing 不 spawn
+6. `must_dispatch_via_cto` forget_guard rule 禁 CEO→eng 直 spawn, redirect "Use gov_delegate" (而 gov-mcp `gov_delegate` tool 未 deployed per `CZL-GOV-MCP-ACTIVATE` overdue 60h)
+
+**真因**:
+Board 2026-04-18 directive "CEO 必须 dispatch_board.py post 让 broker+subscriber 自主领, 不可直接 Agent spawn" 在 **Claude Code 架构上结构性不可能**, 因为 Agent tool 只能从 main session 的 tool-use loop 原发, 不能从外部 Python subprocess 注入. 该架构设计 + `must_dispatch_via_cto` rule 叠加, 形成 **spawn deadlock**:
+- CEO 直 spawn → rule deny
+- dispatch_board post → broker → subscriber → 写 `.pending_spawns.jsonl`, CEO main session 不主动 poll 该文件 → 0 spawn
+- Ethan subagent 代 spawn → CDP nested sub-sub-agent block (Claude Code boundary)
+- 唯一 bypass: `ceo_mode_manager.py force_break_glass --trigger T1` (20min hard cap) 允许 CEO 直 spawn 20min 窗口
+
+**Dimension 映射**:
+- Dim A deadlock: 此为第 13 条 lock-death path (spawn-deadlock, 非 hook-deadlock 但同性质)
+- Dim B commission: `must_dispatch_via_cto` rule 是 false-positive — 初衷防 CEO 绕过 CTO 工程判断, 实际把 Ethan 已 author 的 task card + CEO 仅作 spawn executor 的 legitimate path 一并阻断
+- Dim C omission: 27 items stuck 是 M-2b 最大 omission sample; 7 items 今 session post 立刻 overdue = 每 post 都增 omission 而非减
+- Dim E audit: `.pending_spawns.jsonl` 写入 0 CIEU event (spawn 失败不 audit), dogfood 盲区
+
+**Wave-2 必修 (Ethan 主持)**:
+1. `must_dispatch_via_cto` rule 加 exception: "when dispatch prompt cites pre-existing CTO-authored task card file path" → 白名单允许 CEO 直 spawn
+2. OR 删 `must_dispatch_via_cto` (Enforce-as-Router 架构下该 rule 过时, 参见 `project_enforce_as_router_thesis`)
+3. dispatch_board 重构: main session `pending_spawns_consumer` hook 在 UserPromptSubmit 时自动 drain `.pending_spawns.jsonl` (让 CEO 主 session 做 spawn 动作自动化)
+4. 27 items 手工 triage: Ethan Wave-2 重审哪些仍 relevant, 哪些作废 archive
+5. `.pending_spawns.jsonl` 写入必 emit CIEU `SPAWN_QUEUED` event + spawn 执行时 emit `SPAWN_EXECUTED` event (闭环 M-2b 审计)
+
+**Wave-1 补救 (本 session)**:
+- break_glass 20min 窗口直 spawn Maya/Leo/Ryan 3 engineer, 覆盖 Items #1 #3 #4 #5 #6 #7 #9
+- break_glass 过期后新 spawn 继续 blocked 直到 Wave-2 结构 fix
+
+---
+
 ## 6. 诚实 gap 当前 (Rt+1 不装 0)
 
 - 本 scope 是 CEO 3 tool_use 草拟, 未 Ethan review

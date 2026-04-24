@@ -77,6 +77,13 @@ try:
     # (Layer 3) before check_hook (Layer 2+1).  All hook_wrapper logic
     # (CEO guard, CZL-159, agent stack, dispatch gate) is bypassed — those
     # must be registered as router rules for v2 to be fully equivalent.
+    # CZL-HOOK-V2-BYPASS 2026-04-23 — Board shell sed disabled v2 path after
+    # 3h fail-closed deadlock (see reports/incidents/2026-04-23-hook-fail-closed-deadlock.md
+    # and reports/ceo/iron_rule_incident_response_3channel_20260423.md).
+    # Pairs with Y-star-gov commit f6374ef (v2 adapter marker fallback symmetric fix).
+    # Re-enable ONLY after: (1) v2 adapter marker override symmetric with v1 verified;
+    # (2) YSTAR_HOOK_V2=1 removed from shell profile/launchd; (3) 10+ regression pass
+    # on concurrent subagent marker resolution.
     if False and os.environ.get("YSTAR_HOOK_V2") == "1":
         raw = sys.stdin.buffer.read().decode('utf-8-sig').lstrip(chr(0xFEFF))
         payload = json.loads(raw)

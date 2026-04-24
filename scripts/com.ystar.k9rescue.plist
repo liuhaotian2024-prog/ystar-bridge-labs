@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.ystar.k9rescue</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+        <string>/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/k9_rescue_daemon.py</string>
+    </array>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/ystar_k9_rescue_stderr.log</string>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/ystar_k9_rescue_stdout.log</string>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/haotianliu/.openclaw/workspace/ystar-company</string>
+
+    <!-- Environment: explicitly NO YSTAR_HOOK_V2 or governance vars -->
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PYTHONDONTWRITEBYTECODE</key>
+        <string>1</string>
+    </dict>
+
+    <!-- Restart throttle: wait 5 seconds between restarts -->
+    <key>ThrottleInterval</key>
+    <integer>5</integer>
+</dict>
+</plist>
