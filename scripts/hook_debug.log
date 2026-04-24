@@ -47151,3 +47151,287 @@ RuntimeError: rule 'article_11_board_offline_30m' did not produce any obligation
 07:13:07 [P1-a] Read per-session marker (ppid_33403): 'ceo'
 07:13:07 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
 07:13:07 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:14:51 [BRAIN] Injected 3 wisdom nodes
+07:14:51 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:14:51 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:14:51 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:14:51 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:14:52 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:14:52 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:16:48 [BRAIN] Injected 3 wisdom nodes
+07:16:53 [BRAIN] Injected 3 wisdom nodes
+07:16:57 [BRAIN] Injected 3 wisdom nodes
+07:16:58 [BRAIN] Injected 3 wisdom nodes
+07:16:58 [BRAIN] Injected 3 wisdom nodes
+07:17:01 [BRAIN] Injected 3 wisdom nodes
+07:17:02 [BRAIN] Injected 3 wisdom nodes
+07:17:02 [BRAIN] Injected 3 wisdom nodes
+07:17:06 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:17:06 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:17:06 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:17:07 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:17:07 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:17:07 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+07:17:30 [BRAIN] Injected 3 wisdom nodes
+07:17:30 [BRAIN] Injected 3 wisdom nodes
+07:17:37 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:17:37 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:17:38 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:17:40 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:17:40 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:17:40 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:17:41 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:17:41 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:17:41 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:18:47 [BRAIN] Injected 3 wisdom nodes
+07:18:47 [BRAIN] Injected 3 wisdom nodes
+07:18:48 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:18:48 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:18:48 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:18:49 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:18:49 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:18:49 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+07:18:52 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:18:52 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:18:52 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:20:11 [BRAIN] Injected 3 wisdom nodes
+07:20:12 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:20:12 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:20:12 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:20:13 [BRAIN] Injected 3 wisdom nodes
+07:20:15 [BRAIN] Injected 3 wisdom nodes
+07:20:17 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:20:17 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:20:17 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:20:25 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:20:25 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:20:25 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+07:21:08 [BRAIN] Injected 3 wisdom nodes
+07:21:14 [BRAIN] Injected 3 wisdom nodes
+07:21:15 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:21:15 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:21:15 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:21:16 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:21:16 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:21:16 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:21:23 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:21:23 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:21:23 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:21:24 [BRAIN] Injected 3 wisdom nodes
+07:21:24 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:21:24 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:21:24 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:21:34 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:21:34 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:21:34 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+07:23:21 [BRAIN] Injected 3 wisdom nodes
+07:23:22 [BRAIN] Injected 3 wisdom nodes
+07:23:22 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:23:22 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:23:22 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:23:31 [BRAIN] Injected 3 wisdom nodes
+07:23:32 [BRAIN] Injected 3 wisdom nodes
+07:23:35 [BRAIN] Injected 3 wisdom nodes
+07:23:35 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:23:35 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:23:36 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:23:36 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:23:36 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:23:36 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:23:40 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:23:40 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:23:41 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+07:24:46 [BRAIN] Injected 3 wisdom nodes
+07:24:51 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:24:51 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:24:51 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:25:08 [BRAIN] Injected 3 wisdom nodes
+07:25:10 [BRAIN] Injected 3 wisdom nodes
+07:25:12 [BRAIN] Injected 3 wisdom nodes
+07:25:24 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:25:24 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:25:24 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+07:25:34 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:25:34 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:25:34 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:25:35 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:25:35 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:25:35 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:25:47 [BRAIN] Injected 3 wisdom nodes
+07:25:48 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:25:48 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:25:48 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:26:44 [BRAIN] Injected 3 wisdom nodes
+07:26:49 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:26:49 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:26:49 [BUG4-FIX] Subagent detected via original agent_type='Ryan-Platform'
+07:27:05 [BRAIN] Injected 3 wisdom nodes
+07:27:05 [BRAIN] Injected 3 wisdom nodes
+07:27:09 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:27:09 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:27:09 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:27:12 [BRAIN] Injected 3 wisdom nodes
+07:27:13 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:27:13 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:27:13 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:27:50 [BRAIN] Injected 3 wisdom nodes
+07:27:57 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:27:57 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:27:57 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:28:06 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:28:06 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:28:06 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:28:43 [BRAIN] Injected 3 wisdom nodes
+07:28:43 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:28:43 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:28:43 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:28:44 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:28:44 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:28:52 [BRAIN] Injected 3 wisdom nodes
+07:28:56 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:28:56 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:28:56 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:29:44 [BRAIN] Injected 3 wisdom nodes
+07:29:44 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:29:44 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:29:44 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:29:45 [BRAIN] Injected 3 wisdom nodes
+07:29:45 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:29:45 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:29:57 [BRAIN] Injected 3 wisdom nodes
+07:30:00 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:30:00 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:30:00 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:30:44 [BRAIN] Injected 3 wisdom nodes
+07:30:45 [BRAIN] Injected 3 wisdom nodes
+07:30:46 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:30:46 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:30:48 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:30:48 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:30:48 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:30:49 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:30:49 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:30:49 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:30:49 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:30:49 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:30:49 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:31:03 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:31:03 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:31:04 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:32:57 [BRAIN] Injected 3 wisdom nodes
+07:32:57 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:32:57 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:33:05 [BRAIN] Injected 3 wisdom nodes
+07:33:06 [BRAIN] Injected 3 wisdom nodes
+07:33:06 [BRAIN] Injected 3 wisdom nodes
+07:33:10 [BRAIN] Injected 3 wisdom nodes
+07:33:15 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:33:15 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:33:15 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:33:16 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:33:16 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:33:16 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:33:16 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:33:16 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:33:16 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:34:19 [BRAIN] Injected 3 wisdom nodes
+07:34:43 [BRAIN] Injected 3 wisdom nodes
+07:34:44 [BRAIN] Injected 3 wisdom nodes
+07:34:44 [BRAIN] Injected 3 wisdom nodes
+07:34:47 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:34:47 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:34:49 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:34:49 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:34:49 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:34:53 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:34:53 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:34:53 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:34:54 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:34:54 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:34:54 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:36:20 [BRAIN] Injected 3 wisdom nodes
+07:36:23 [BRAIN] Injected 3 wisdom nodes
+07:36:27 [BRAIN] Injected 3 wisdom nodes
+07:36:28 [BRAIN] Injected 3 wisdom nodes
+07:36:34 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:36:34 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:36:34 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:36:34 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:36:38 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:36:38 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:36:38 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:36:39 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:36:39 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:36:39 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:38:11 [BRAIN] Injected 3 wisdom nodes
+07:38:11 [BRAIN] Injected 3 wisdom nodes
+07:38:14 [BRAIN] Injected 3 wisdom nodes
+07:38:14 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:38:14 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:38:14 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:38:15 [BRAIN] Injected 3 wisdom nodes
+07:38:21 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:38:21 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:38:21 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:38:40 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:38:40 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:38:40 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:38:40 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:39:18 [BRAIN] Injected 3 wisdom nodes
+07:39:28 [BRAIN] Injected 3 wisdom nodes
+07:39:30 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:39:30 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:39:30 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:39:36 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:39:36 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:39:36 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:40:05 [BRAIN] Injected 3 wisdom nodes
+07:40:05 [BRAIN] Injected 3 wisdom nodes
+07:40:33 [BRAIN] Injected 3 wisdom nodes
+07:40:36 [BRAIN] Injected 3 wisdom nodes
+07:40:42 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:40:42 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:40:42 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:40:44 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:40:44 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:40:44 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:41:30 [BRAIN] Injected 3 wisdom nodes
+07:41:31 [BRAIN] Injected 3 wisdom nodes
+07:41:34 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:41:34 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:41:35 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:41:41 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:41:41 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:41:41 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:41:41 [BRAIN] Injected 3 wisdom nodes
+07:41:48 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:41:48 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:41:48 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:42:23 [BRAIN] Injected 3 wisdom nodes
+07:42:35 [BRAIN] Injected 3 wisdom nodes
+07:42:35 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:42:35 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:42:35 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:42:39 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:42:39 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:42:39 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:42:39 [BRAIN] Injected 3 wisdom nodes
+07:42:49 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:42:49 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:42:49 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:42:56 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:42:56 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:42:56 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:43:41 [BRAIN] Injected 3 wisdom nodes
+07:43:46 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:43:46 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:43:47 [BUG4-FIX] Subagent detected via original agent_type='Maya-Governance'
+07:43:56 [BRAIN] Injected 3 wisdom nodes
+07:44:03 [BRAIN] Injected 3 wisdom nodes
+07:44:19 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:44:19 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:44:19 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
+07:44:20 [BRAIN] Injected 3 wisdom nodes
+07:44:26 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+07:44:26 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:44:26 [BUG4-FIX] Subagent detected via original agent_type='Leo-Kernel'
