@@ -448,6 +448,44 @@ try:
             except Exception as _push_exc:
                 log(f"[P1-e] Agent stack push failed (non-fatal): {_push_exc}")
 
+        # ── U_v2 Schema Inject (Experiment Phase 2) ──────────────────────
+        # When YSTAR_U_V2_EXPERIMENT=1 (env or session.json), prepend U_v2
+        # schema template to Agent tool prompt so sub-agents know the
+        # required receipt fields.  Default OFF for zero overhead.
+        if tool == "Agent":
+            _u_v2_enabled = os.environ.get("YSTAR_U_V2_EXPERIMENT") == "1"
+            if not _u_v2_enabled:
+                # Fallback: check .ystar_session.json
+                try:
+                    _sess_path = os.path.join(
+                        os.path.dirname(os.path.dirname(__file__)),
+                        ".ystar_session.json"
+                    )
+                    with open(_sess_path, "r") as _sf:
+                        _sess = json.load(_sf)
+                    _u_v2_enabled = _sess.get("u_v2_experiment") == True or _sess.get("u_v2_experiment") == "1"
+                except Exception:
+                    pass
+            if _u_v2_enabled:
+                _u_v2_template = (
+                    "\n\n--- U_v2 COGNITIVE SCHEMA (REQUIRED) ---\n"
+                    "Your receipt MUST include these 5 fields (missing = DENY):\n\n"
+                    "**m_tag**: [M-1|M-2a|M-2b|M-3] Which M Triangle axis this advances\n"
+                    "**empirical_basis**: At least 1 verifiable artifact ref "
+                    "(file_ref, sql_query, cieu_event_id, pytest, git_commit, log_line)\n"
+                    "**counterfactual**: >=30 chars blast radius if NOT done or done wrong (P-3)\n"
+                    "**preexisting_search**: glob_patterns searched + results_count (P-12 先查后造)\n"
+                    "**rt_plus_1_honest**: '0 -- metric X met per artifact Y' or "
+                    "'non-zero: specific gap ___'\n"
+                    "--- END U_v2 SCHEMA ---\n\n"
+                )
+                _existing_prompt = tool_input.get("prompt", "")
+                if _existing_prompt and "U_v2 COGNITIVE SCHEMA" not in _existing_prompt:
+                    payload["tool_input"]["prompt"] = _u_v2_template + _existing_prompt
+                    log("[U_V2] Schema template injected into Agent prompt")
+                else:
+                    log("[U_V2] Prompt already contains schema or is empty; skip inject")
+
         # ── CZL Gate 1: Dispatch 5-tuple validator (Board 2026-04-16) ──────
         if tool == "Agent":
             try:

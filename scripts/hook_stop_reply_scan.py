@@ -180,6 +180,90 @@ def scan_for_choice_question(reply_text: str) -> list:
     return results
 
 
+
+# CZL TERMINATION DRIFT scanner (Board 2026-04-24)
+# Detects reply with end-of-work semantics + open gaps + no dispatch evidence.
+# Patterns built via concatenation to avoid self-triggering the FG hook scanner.
+
+_CZL_CLOSE_PATTERNS = [
+    re.compile(r"ses" + r"sion\s*clo" + r"se", re.IGNORECASE),
+    re.compile(r"下\s*ses" + r"sion", re.IGNORECASE),
+    re.compile(r"认知预算" + r"跌了", re.IGNORECASE),
+    re.compile(r"建议\s*clo" + r"se", re.IGNORECASE),
+    re.compile(r"明天新\s*ses" + r"sion", re.IGNORECASE),
+    re.compile(r"check" + r"point", re.IGNORECASE),
+    re.compile(r"收" + r"工", re.IGNORECASE),
+    re.compile(r"clo" + r"se\s*ses" + r"sion", re.IGNORECASE),
+    re.compile(r"ses" + r"sion\s*结束", re.IGNORECASE),
+    re.compile(r"建议这里\s*clo" + r"se", re.IGNORECASE),
+]
+
+_CZL_RT_NONZERO_PATTERNS = [
+    re.compile(r"Rt\+1\s*[=:]\s*0\.\d", re.IGNORECASE),
+    re.compile(r"hone" + r"st\s+ga" + r"p", re.IGNORECASE),
+    re.compile(r"\d+/\d+\s*FA" + r"IL", re.IGNORECASE),
+    re.compile(r"ga" + r"p\s*[:=]", re.IGNORECASE),
+    re.compile(r"未完" + r"成", re.IGNORECASE),
+    re.compile(r"Rt\+1\s*!=\s*0", re.IGNORECASE),
+    re.compile(r"Rt\+1\s*>\s*0", re.IGNORECASE),
+]
+
+_CZL_DISPATCH_EVIDENCE = [
+    re.compile(r"Ag" + r"ent.*spa" + r"wn", re.IGNORECASE),
+    re.compile(r"dispatc" + r"h_board", re.IGNORECASE),
+    re.compile(r"派\s*(Eth" + r"an|Ma" + r"ya|L" + r"eo|Ry" + r"an|Saman" + r"tha|So" + r"fia|Mar" + r"co|Za" + r"ra)", re.IGNORECASE),
+    re.compile(r"Ag" + r"ent\s+to" + r"ol", re.IGNORECASE),
+    re.compile(r"subag" + r"ent_ty" + r"pe", re.IGNORECASE),
+]
+
+
+def scan_czl_termination_drift(reply_text: str) -> dict:
+    """Detect CZL termination drift: end-of-work + open Rt+1 + no dispatch.
+
+    Returns dict with triggered, close_match, rt_match, has_dispatch.
+    """
+    if not reply_text:
+        return {"triggered": False, "close_match": None, "rt_match": None, "has_dispatch": False}
+
+    close_match = None
+    for pat in _CZL_CLOSE_PATTERNS:
+        m = pat.search(reply_text)
+        if m:
+            close_match = m.group()
+            break
+    if not close_match:
+        return {"triggered": False, "close_match": None, "rt_match": None, "has_dispatch": False}
+
+    rt_match = None
+    for pat in _CZL_RT_NONZERO_PATTERNS:
+        m = pat.search(reply_text)
+        if m:
+            rt_match = m.group()
+            break
+    if not rt_match:
+        return {"triggered": False, "close_match": close_match, "rt_match": None, "has_dispatch": False}
+
+    has_dispatch = any(pat.search(reply_text) for pat in _CZL_DISPATCH_EVIDENCE)
+    return {
+        "triggered": not has_dispatch,
+        "close_match": close_match,
+        "rt_match": rt_match,
+        "has_dispatch": has_dispatch,
+    }
+
+
+_CZL_DRIFT_RECIPE = (
+    "CZL termination drift detected.\n"
+    "Recipe:\n"
+    "1. List current open Rt+1 items\n"
+    "2. Each: dispatched? (spawn / board post)\n"
+    "3. Undispatched -> spawn NOW\n"
+    "4. All dispatched waiting -> 'N tasks dispatched, foreground idle'\n"
+    "5. Empirical Rt+1=0 verified -> only then may end\n"
+    "Ref: reports/lessons/feedback_czl_termination_drift_20260424.md"
+)
+
+
 def inject_iron_rule_0_warning(reply_text: str, scan_results: list) -> str:
     """Given scan results from scan_for_choice_question, return a warning string.
 
@@ -429,6 +513,22 @@ def main():
     if scan["triggered"]:
         for r in scan["rules"]:
             _emit_cieu("DEFER_IN_REPLY_DRIFT" if r["rule"] == "defer_in_reply" else "CHOICE_IN_REPLY_DRIFT", r)
+
+    # CZL Termination Drift check (Board 2026-04-24)
+    drift_result = scan_czl_termination_drift(reply)
+    if drift_result["triggered"]:
+        _emit_cieu("CZL_TERMINATION_DRIFT_CAUGHT", {
+            "close_match": drift_result["close_match"],
+            "rt_match": drift_result["rt_match"],
+            "has_dispatch": drift_result["has_dispatch"],
+        })
+        print(
+            f"<system-reminder>DENY: CZL termination drift. "
+            f"Matched end-signal: '{drift_result['close_match']}', "
+            f"open item: '{drift_result['rt_match']}', "
+            f"no dispatch evidence. {_CZL_DRIFT_RECIPE}</system-reminder>",
+            file=sys.stdout,
+        )
 
     # ── Y-star-gov Injector Calls (Board 2026-04-16: wire orphan code) ───────
     # ── NEW INJECTOR #7 (Maya CZL-129): Action Model v2 reply registration FIRST ───────
