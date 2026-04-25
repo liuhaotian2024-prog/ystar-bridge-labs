@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-24 16:30:00
+**Generated**: 2026-04-24 18:00:00
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,7 +36,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/12 valid (0 errors)
-**CIEU 24h Events**: 138353
+**CIEU 24h Events**: 134464
 **Overdue Obligations**: 0
 
 ---
@@ -84,74 +84,74 @@ ceo          | 3/3          | 24           | 39       | 2026-04-23
 ---
 
 ## 8. Y* Field State (xi) — Mission axis frequency + drift
-**Total CIEU events (24h)**: 138353
+**Total CIEU events (24h)**: 134464
 
 | M-Axis | Description | 24h Count | 7d Avg/Day | Drift |
 |--------|-------------|-----------|------------|-------|
-| **M-1** | Survivability (session/boot/handoff/persist) | 9868 | 12429 | ↓ |
-| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 2557 | 1303 | ↑ |
-| **M-2b** | Omission prevention (omission/overdue/alarm) | 5125 | 6644 | ↓ |
+| **M-1** | Survivability (session/boot/handoff/persist) | 8885 | 12431 | ↓ |
+| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 2525 | 1294 | ↑ |
+| **M-2b** | Omission prevention (omission/overdue/alarm) | 4506 | 6641 | ↓ |
 | **M-3** | Value production (customer/revenue/dogfood/demo) | 0 | 0 | ↓ |
 
-**Classified coverage**: 17550/138353 (12.7%)
-**Unclassified**: 120803 events (routine ops / K9 routing)
+**Classified coverage**: 15916/134464 (11.8%)
+**Unclassified**: 118548 events (routine ops / K9 routing)
 **Drift alert**: M-2a trending UP vs 7d baseline
 **Drift alert**: M-1, M-2b, M-3 trending DOWN vs 7d baseline
 
 ---
 
 ## 9. Commission Error Heatmap — 11-component unified dashboard
-**Total commission errors (24h)**: 5172
+**Total commission errors (24h)**: 4962
 
 **By M-Axis**:
 
 | Axis | Description | 24h Count |
 |------|-------------|-----------|
-| **M-1** | Survivability (schema/wire/config drift) | 1074 |
-| **M-2a** | Commission prevention (core 11 detectors) | 3340 |
-| **M-3** | Value quality (maturity/off-target) | 758 |
+| **M-1** | Survivability (schema/wire/config drift) | 1128 |
+| **M-2a** | Commission prevention (core 11 detectors) | 3036 |
+| **M-3** | Value quality (maturity/off-target) | 798 |
 
 **By Detector (11 components + hook catches)**:
 
 | Detector | 24h Count | Drift vs 7d |
 |----------|-----------|-------------|
-| k9_silent_fire_audit | 2626 | v (avg 3771.0/d) |
-| hook_commission_catch | 1310 | ^ (avg 979.0/d) |
-| amendment_coverage_audit | 1046 | = (avg 981.0/d) |
-| metalearning | 95 | v (avg 186.7/d) |
-| observable_action_detector | 42 | v (avg 75.6/d) |
-| directive_evaluator | 30 | = (avg 26.0/d) |
-| unified_compliance_audit | 14 | v (avg 33.3/d) |
-| enforcement_observer | 9 | ^ (avg 3.3/d) |
+| k9_silent_fire_audit | 2323 | v (avg 3772.0/d) |
+| hook_commission_catch | 1346 | ^ (avg 984.6/d) |
+| amendment_coverage_audit | 1102 | = (avg 989.1/d) |
+| metalearning | 111 | v (avg 189.0/d) |
+| observable_action_detector | 33 | v (avg 74.1/d) |
+| directive_evaluator | 28 | = (avg 26.1/d) |
+| enforcement_observer | 12 | ^ (avg 3.7/d) |
+| unified_compliance_audit | 7 | v (avg 33.3/d) |
 
 **By Actor (top 10)**:
 
 | Actor | 24h Commission Errors |
 |-------|----------------------|
-| unknown | 2361 |
-| eng-platform | 1103 |
-| test_agent | 639 |
+| unknown | 2077 |
+| eng-platform | 1230 |
+| test_agent | 650 |
 | eng-kernel | 492 |
-| ceo | 263 |
+| ceo | 262 |
 | secretary | 167 |
-| cto | 91 |
-| platform | 56 |
+| platform | 52 |
+| cto | 32 |
 
 **Top 5 Event Types**:
-- `K9_VIOLATION_DETECTED`: 1571
-- `K9_AUDIT_TRIGGERED`: 1055
-- `SESSION_JSON_SCHEMA_VIOLATION`: 1018
-- `MATURITY_TAG_MISSING`: 758
+- `K9_VIOLATION_DETECTED`: 1359
+- `SESSION_JSON_SCHEMA_VIOLATION`: 1076
+- `K9_AUDIT_TRIGGERED`: 964
+- `MATURITY_TAG_MISSING`: 798
 - `FORGET_GUARD_K9_WARN`: 418
 
-**Overall drift**: = (24h=5172, 7d avg/day=6057.6)
+**Overall drift**: = (24h=4962, 7d avg/day=6073.7)
 
 ---
 
 ## 10. Ecosystem — Y*gov Product Repo
-**HEAD**: `2704c1d [auto] WIP checkpoint 2026-04-24 16:23 -- 2 files changed`
-**24h commits**: 9
-**ahead origin**: 21
+**HEAD**: `a538677 [auto] WIP checkpoint 2026-04-24 17:59 -- 6 files changed`
+**24h commits**: 10
+**ahead origin**: 22
 **test files**: 100
 **version**: 0.48.0
 
@@ -170,7 +170,8 @@ ceo          | 3/3          | 24           | 39       | 2026-04-23
 ## 13. Today's Commits (24h) — both repos
 
 
-**ystar-company** (25 commits):
+**ystar-company** (23 commits):
+- a31eae28 17:59 [auto] WIP checkpoint 2026-04-24 17:59 -- 8 files changed
 - 45f54060 16:22 [auto] WIP checkpoint 2026-04-24 16:22 -- 13 files changed
 - ff4ba68a 15:21 [auto] WIP checkpoint 2026-04-24 15:21 -- 6 files changed
 - 8f2d1041 13:14 [auto] WIP checkpoint 2026-04-24 13:14 -- 10 files changed
@@ -190,9 +191,9 @@ ceo          | 3/3          | 24           | 39       | 2026-04-23
 - db81b99b 21:15 [auto] WIP checkpoint 2026-04-23 21:15 -- 7 files changed
 - 95c10224 20:45 [auto] WIP checkpoint 2026-04-23 20:45 -- 5 files changed
 - 053fd958 20:15 [auto] WIP checkpoint 2026-04-23 20:15 -- 7 files changed
-- ad8c8fca 19:45 [auto] WIP checkpoint 2026-04-23 19:45 -- 3 files changed
 
-**Y*gov** (9 commits):
+**Y*gov** (10 commits):
+- a538677 17:59 [auto] WIP checkpoint 2026-04-24 17:59 -- 6 files changed
 - 2704c1d 16:23 [auto] WIP checkpoint 2026-04-24 16:23 -- 2 files changed
 - 9925205 13:14 [auto] WIP checkpoint 2026-04-24 13:14 -- 1 files changed
 - d7d5f2d 12:44 [auto] WIP checkpoint 2026-04-24 12:44 -- 1 files changed
