@@ -1,12 +1,12 @@
 {
   "ystar-company": {
-    "last_run_ts": 1777138188.095208,
-    "last_hash": "1a55fb754e2de49ad4f72ddb0fcfdd2ab6c496f0d065e50dda39a60aee3f8a86",
-    "last_commit_hash": "1be79bb09ce4f82611c2a126cfb08e5f5ca58ebd"
+    "last_run_ts": 1777139989.362987,
+    "last_hash": "5ef487a1f035e27ccfd1f968c244c343e470036b5ed152c9dfab5b5647a2306f",
+    "last_commit_hash": "576e02ece46882a1b606001e97153800bb146fa3"
   },
   "y-star-gov": {
-    "last_run_ts": 1777138189.1098628,
-    "last_hash": "3ab3661f376e281cbfd08014d7cd951dad6ce028b5b6d2ced92e2b5ee0118c81",
-    "last_commit_hash": "040374c99c6e141eac64462f8b0866516af5548a"
+    "last_run_ts": 1777139991.161022,
+    "last_hash": "2febadebf07354c808803a6ed7fc9ad08cfbefc2d05813551ab52a8d83e9a5b4",
+    "last_commit_hash": "7175ef6963b4023af55c76d61c5b6cbfc4901ec2"
   }
 }
