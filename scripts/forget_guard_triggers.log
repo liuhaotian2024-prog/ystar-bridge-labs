@@ -2439,3 +2439,11 @@
 1777148796.8832488 | WARN | ceo_engineering_boundary | agent=test_agent
 1777148800.488956 | WARN | test_violation | agent=test_agent
 1777148804.481041 | WARN | smoke_test_violation | agent=test_agent
+1777150199.4904919 | WARN | ceo_engineering_boundary | agent=test_agent
+1777150220.442629 | WARN | ceo_engineering_boundary | agent=test_agent
+1777150223.982584 | WARN | test_violation | agent=test_agent
+1777150227.986696 | WARN | smoke_test_violation | agent=test_agent
+1777150587.476342 | WARN | ceo_engineering_boundary | agent=test_agent
+1777150608.372843 | WARN | ceo_engineering_boundary | agent=test_agent
+1777150612.138169 | WARN | test_violation | agent=test_agent
+1777150616.100888 | WARN | smoke_test_violation | agent=test_agent
