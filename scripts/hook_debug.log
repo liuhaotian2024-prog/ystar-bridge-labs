@@ -49733,3 +49733,6 @@ RuntimeError: rule 'article_11_board_offline_30m' did not produce any obligation
 09:33:21 [P1-a] Read per-session marker (ppid_66203): 'ceo'
 09:33:21 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
 09:34:04 [BRAIN] Injected 3 wisdom nodes
+09:34:47 [P1-a] Read per-session marker (ppid_66203): 'ceo'
+09:34:47 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+09:35:20 [BRAIN] Injected 3 wisdom nodes

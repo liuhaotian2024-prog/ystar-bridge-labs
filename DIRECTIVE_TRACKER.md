@@ -18,7 +18,8 @@
 | FG-4 | 写 cross-session lesson "为什么 v0.42 keyword 黑名单是 anti-pattern" 进 knowledge/（**不**进 forget_guard yaml — lesson 是知识不是规则） | Samantha | ✅ [L4-shipped] 2026-04-25 | knowledge/ystar/lessons/forget_guard_keyword_antipattern_lesson_20260425.md (178 行) + ARCHIVE_INDEX §4.8 |
 | FG-5 | 写 post-mortem "team 在压力下为什么会写出 keyword 黑名单 + 怎么避免" | CEO | ✅ [L4-shipped] 2026-04-25 | knowledge/ceo/lessons/forget_guard_keyword_antipattern_postmortem_20260425.md |
 | FG-6 | 跑 dispatch 前用 dry_run_check 自查（已是新能力） | 全员 | ✅ 接口可用 | from ystar.governance.forget_guard import dry_run_check |
-| FG-7 | 删除 / refactor `scripts/forget_guard.py` 405 行 duplicate keyword 引擎 (Bridge Labs 一侧 pollution) | Ethan | 🟡 in_progress (background ad1cae4) | scripts/forget_guard.py |
+| FG-7 | 删除 / refactor `scripts/forget_guard.py` 405 行 duplicate keyword 引擎 (Bridge Labs 一侧 pollution) | Ethan | ✅ [SHIPPED] 2026-04-25 选 (b) 60 行 shim 替换 405 行；CEO 自验 AC1-AC5 全过；shim fail-open + sys.path 注入 + 0 regex/yaml/_matches_pattern | scripts/forget_guard.py |
+| FG-10 | hook_wrapper.py 自己 keyword-match "git commit" 子串拦 Python string literal — Ethan incidental find，speech-axis pollution INSIDE the hook | Ryan / Ethan | 🔴 BLOCKED (新发现，待派 — 同 spawn channel 限制) | scripts/hook_wrapper.py |
 | FG-8 | Y-star-gov 通用产品代码 dehardcode aiden/haotian/samantha/bridge.labs 字面 reference (≥6 files) — supersedes 已 OVERDUE 4.9 day 的 CZL-YSTAR-PRODUCT-BOUNDARY-DEHARDCODE | Ethan / Leo (待 Ethan FG-7 返回后派) | 🔴 BLOCKED on FG-7 完成 + spawn channel | 待启动 |
 | FG-9 | broker auto-claim ≠ spawn 系统性 gap 修 (28 OVERDUE pending, dispatch_board.py + cto_dispatch_broker.py + engineer_task_subscriber.py 链路) | Ryan | 🔴 BLOCKED — CEO 派 Ryan 也会被 hook 拦；需 Board 启 break-glass 或 hook 改 | 待 Board guidance |
 | FG-twin | 修 `scripts/twin_evolution.py` `_get_current_agent()` SQL UDF 误用 (3 处) | Ethan | ✅ [L4-shipped] 2026-04-25, empirically verified by CEO | scripts/twin_evolution.py |
