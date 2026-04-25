@@ -366,6 +366,7 @@ def compensation_check(lookback_days: int = 7) -> dict:
         }
 
     cutoff_time = time.time() - (lookback_days * 86400)
+    current_agent = _get_current_agent()
 
     conn = sqlite3.connect(CIEU_DB)
 
@@ -390,12 +391,12 @@ def compensation_check(lookback_days: int = 7) -> dict:
         WHERE agent_id IN ('eng-kernel', 'eng-governance', 'eng-platform', 'eng-domains')
         AND created_at >= ?
         AND session_id IN (
-            SELECT DISTINCT session_id FROM cieu_events WHERE agent_id=_get_current_agent()
+            SELECT DISTINCT session_id FROM cieu_events WHERE agent_id=?
         )
         AND session_id NOT IN (
             SELECT DISTINCT session_id FROM cieu_events WHERE agent_id = 'cto'
         )
-    """, (cutoff_time,))
+    """, (cutoff_time, current_agent))
 
     unauthorized_count = cursor.fetchone()[0]
 
@@ -403,10 +404,10 @@ def compensation_check(lookback_days: int = 7) -> dict:
     cursor = conn.execute("""
         SELECT event_id, session_id, created_at
         FROM cieu_events
-        WHERE agent_id=_get_current_agent()
+        WHERE agent_id=?
         AND event_type = 'INTENT_DECLARED'
         AND created_at >= ?
-    """, (cutoff_time,))
+    """, (current_agent, cutoff_time))
 
     intent_events = cursor.fetchall()
     missing_precheck_count = 0

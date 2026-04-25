@@ -1,5 +1,88 @@
 # Board Pending Items (待 Board 决策/批准)
 
+---
+
+## 🔴 P0 — Cross-Repo Pollution Audit Findings (CEO surface 2026-04-25 morning)
+
+**Trigger**: Board 2026-04-25 第 2 letter — "在创立办公室之前，我们先把这些问题处理好。我怕之前你们造成过污染"
+
+**CEO 主线快速 audit 已确认两方向污染**：
+
+### A. Bridge Labs 内有不该有的通用治理引擎 duplicate
+
+| 文件 | 体量 | 性质 | 状态 |
+|---|---|---|---|
+| `ystar-company/scripts/forget_guard.py` | 405 lines | **完全 duplicate v0.42 keyword-pattern 引擎** (与 Y-star-gov 老版同源) | yaml 被老大移走后 fail-open silently disabled，但**引擎代码还活着**，随时能被复活 |
+
+**风险**: Board 8195fc2 commit 物理删了 Y-star-gov 那份 `_matches_pattern()`，但 Bridge Labs 这份 405 行 keyword 引擎完整保留。**只要有人把 yaml 复活就立刻能跑 keyword 黑名单** — Board 的"机器 raise" 结构性堵塞**在 Bridge Labs 这一侧不存在**。
+
+### B. Y-star-gov 通用产品代码硬编码 Bridge Labs 公司具体名字
+
+至少 6 个文件含 `aiden / haotian / samantha / bridge.labs` 字面 reference:
+- `ystar/__init__.py`
+- `ystar/capabilities.py`
+- `ystar/session.py`
+- `ystar/template.py`
+- `ystar/cli/safemode_cmd.py`
+- `ystar/integrations/openclaw.py`
+
+**风险**: Y-star-gov 是要 pip install 给外部企业客户的开源产品。客户跑 `pip install ystar` 然后产品代码里出现 "aiden" / "haotian" / "Bridge Labs" 字样 = 严重 leakage + 不专业。也违反 Board 部署原则"Y-star-gov 不应该知道 CEO 应该怎么管理公司"。
+
+### 推荐行动 (待 Board 批 + Ethan 现行 task 完成后派)
+
+**Phase 1 — Bridge Labs duplicate engine 处理** (P0, ≤1h tool_uses):
+- (a) 删除 `ystar-company/scripts/forget_guard.py` 文件本身 (推荐) — 任何 Bridge Labs 代码用 forget_guard 改 import `ystar.governance.forget_guard`
+- (b) 或改为 thin wrapper that 强制 import Y-star-gov 版本，删除自有 `_matches_pattern` 函数
+
+**Phase 2 — Y-star-gov 公司名 leakage 清理** (P0, 多 file edit):
+- 所有 `aiden / haotian / samantha / bridge.labs` 字面替换为通用 placeholder (e.g. `{role_name}` `{owner_name}` `{org_name}`) 或抽到外部 config
+- 跑 `grep -r "aiden\|haotian\|samantha\|bridge.labs" ystar/` 验证 0 命中
+- 跑现有测试 86/86 仍 pass
+
+**Phase 3 — Audit 完闭环 + 决定是否 deploy Role Runtime** (待 Phase 1+2 done):
+- Maya 复审 Phase 1+2 cleanup commits
+- Board 批准后再开 Role Runtime / 办公室部署
+
+### Open questions for Board
+
+无（CEO 自决：先派 cleanup, 不并行启动 Role Runtime / 办公室部署）。本节 P0 ranking + 推荐行动 = CEO 既定立场，等 Board 否决信号 (silent = approve)。
+
+**对应文件**: 详细 finding 落 `reports/audit/cross_repo_pollution_finding_20260425.md`（待写）+ DIRECTIVE_TRACKER `Directive #FG-PURGE-V2 FG-7~FG-9 cleanup phases`（待加）
+
+### Update 2026-04-25 morning Phase 2: dispatch_board 进一步发现
+
+**(C) 老大今天的 pollution concern 5 天前已 ruled 未执行**:
+- `CZL-YSTAR-PRODUCT-BOUNDARY-DEHARDCODE` posted 2026-04-20T15:49 by Ethan ruling — **P0**, "Y\*gov product source + tests hardcode Labs workspace path. Pre-commit hook blocks push. Refactor to parameterize via env var or config."
+- Status: OVERDUE 422640s (≈ 4.9 days). un-spawned. claimed by broker → eng-cto-triage → never spawned
+- 这正是我今天 surface 的 (B) 项 — Y-star-gov 硬编码 aiden/haotian/samantha 名字
+
+**(D) `scripts/forget_guard.py` duplicate 也已 known-issue**:
+- `INC-2026-04-23-ITEM-3` "P0 FORGET_GUARD None.startswith 1-line fix" routed eng-cto-triage 2026-04-24T04:06 — OVERDUE 119206s
+- `INC-2026-04-23-ITEM-9` "P0 ForgetGuard CEO break-glass + ystar.governance.forget_guard ModuleNotFoundError same family as Item 5" — OVERDUE 117560s
+- 都是 `scripts/forget_guard.py` 那份 duplicate 引擎残留导致
+
+**(E) broker routing + spawn gap 系统性 M-2b 失效**:
+- dispatch_board 现存 28 个 pending un-spawned 任务，**全部 OVERDUE**（最早 469935s ≈ 5.4 天，最近也 633s）
+- broker "claim" 状态 ≠ 实际 spawn — broker 走 claim 流程但没有自动调起 Agent sub-agent
+- Maya FG-3 audit 今天 13:02 被 broker auto-claim by eng-platform (Ryan)，**不是 Maya** — routing bug + 即使 routed 也不 spawn
+
+**(F) CEO 直派工程师被 hook 硬拦但 broker 不能补位**:
+- CEO 试 `Agent` tool 直派 Maya-Governance → `feedback_dispatch_via_cto` 拦
+- CTO sub-agent 不能 nested-spawn (`feedback_cto_subagent_cannot_async_orchestrate`)
+- broker auto-claim 但不 spawn
+- 三个机制全失效 → 28 OVERDUE 是必然结果
+
+### CEO 现在能做的 (autonomous, 不需 Board 批):
+- 派 Ethan 处理 `scripts/forget_guard.py` 删除 (单 deliverable, CTO 自做不需 nested) — 即将执行
+- 等老大返回再讨论 broker spawn gap (这是结构问题，需 Ryan engineer 修，但 CEO 又没 spawn 权限给 Ryan)
+
+### CEO 不能做的 (待 Board 决):
+- Maya FG-3 audit 实际 spawn — 等老大用 Board-shell 直 Agent spawn 或修 hook
+- Y-star-gov 硬编码名字清理 (跨多文件 P0 deharcode) — 派单 Ethan 一人吃下还是分给多 engineer
+- broker spawn gap 修复 (Ryan 任务，但 CEO 派 Ryan 也会被 hook 拦)
+
+---
+
 ## Approved 2026-04-15 (Board 点头 同意 Samantha 4 问题)
 
 1. ✅ **删除 ystar-bridge-labs 克隆** (Samantha 工作已 cherry-pick 过来). 

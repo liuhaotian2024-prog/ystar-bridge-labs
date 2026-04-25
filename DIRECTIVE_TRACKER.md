@@ -14,10 +14,14 @@
 |---|--------|--------|------|--------|
 | FG-1 | 本 session 验证 Rules=3 + 备份 yaml 就位 | CEO | ✅ 完成 2026-04-25 | 本 session receipt |
 | FG-2 | axis 内化：言论钳制 vs 行动约束 不许再混淆 | 全员 | ✅ 本 session 起立即生效 | in-conversation acknowledgement |
-| FG-3 | 审计 commit 8195fc2（forget_guard.py 无 _matches_pattern + yaml 全 type:structured + 测试覆盖双向 false/true positive） | Maya | ⏸ 待排期 | audit receipt → CEO |
-| FG-4 | 写 cross-session lesson "为什么 v0.42 keyword 黑名单是 anti-pattern" 进 knowledge/（**不**进 forget_guard yaml — lesson 是知识不是规则） | Samantha | ⏸ 待排期 | knowledge/ystar/lessons/forget_guard_keyword_antipattern.md |
-| FG-5 | 写 post-mortem "team 在压力下为什么会写出 keyword 黑名单 + 怎么避免" | CEO | ⏸ 待排期 | reports/ceo/lessons/ |
+| FG-3 | 审计 commit 8195fc2（forget_guard.py 无 _matches_pattern + yaml 全 type:structured + 测试覆盖双向 false/true positive） | Maya | 🔴 BLOCKED — broker auto-claim by Ryan (eng-platform) 不是 Maya；CEO 直派 Maya 被 `feedback_dispatch_via_cto` hook 拦；CTO 不能 nested-spawn | dispatch_board CZL-FG-PURGE-AUDIT-MAYA queued |
+| FG-4 | 写 cross-session lesson "为什么 v0.42 keyword 黑名单是 anti-pattern" 进 knowledge/（**不**进 forget_guard yaml — lesson 是知识不是规则） | Samantha | ✅ [L4-shipped] 2026-04-25 | knowledge/ystar/lessons/forget_guard_keyword_antipattern_lesson_20260425.md (178 行) + ARCHIVE_INDEX §4.8 |
+| FG-5 | 写 post-mortem "team 在压力下为什么会写出 keyword 黑名单 + 怎么避免" | CEO | ✅ [L4-shipped] 2026-04-25 | knowledge/ceo/lessons/forget_guard_keyword_antipattern_postmortem_20260425.md |
 | FG-6 | 跑 dispatch 前用 dry_run_check 自查（已是新能力） | 全员 | ✅ 接口可用 | from ystar.governance.forget_guard import dry_run_check |
+| FG-7 | 删除 / refactor `scripts/forget_guard.py` 405 行 duplicate keyword 引擎 (Bridge Labs 一侧 pollution) | Ethan | 🟡 in_progress (background ad1cae4) | scripts/forget_guard.py |
+| FG-8 | Y-star-gov 通用产品代码 dehardcode aiden/haotian/samantha/bridge.labs 字面 reference (≥6 files) — supersedes 已 OVERDUE 4.9 day 的 CZL-YSTAR-PRODUCT-BOUNDARY-DEHARDCODE | Ethan / Leo (待 Ethan FG-7 返回后派) | 🔴 BLOCKED on FG-7 完成 + spawn channel | 待启动 |
+| FG-9 | broker auto-claim ≠ spawn 系统性 gap 修 (28 OVERDUE pending, dispatch_board.py + cto_dispatch_broker.py + engineer_task_subscriber.py 链路) | Ryan | 🔴 BLOCKED — CEO 派 Ryan 也会被 hook 拦；需 Board 启 break-glass 或 hook 改 | 待 Board guidance |
+| FG-twin | 修 `scripts/twin_evolution.py` `_get_current_agent()` SQL UDF 误用 (3 处) | Ethan | ✅ [L4-shipped] 2026-04-25, empirically verified by CEO | scripts/twin_evolution.py |
 
 **axis distinction（永不再混淆）**:
 - **言论钳制** = keyword 黑名单（pattern: "明日"/"task eng-"/"(?i).*"）= **退化 anti-pattern**，引擎已物理删除，schema raise 拒绝重生

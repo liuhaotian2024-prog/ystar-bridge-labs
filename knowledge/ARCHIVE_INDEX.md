@@ -252,6 +252,10 @@ Distilled methodology assets. CEO/CMO/CSO/CFO/CTO knowledge bases + cross-role l
 - [knowledge/secretary/](../knowledge/secretary) — Role definition, SOP, cases, gaps
 - [knowledge/shared/](../knowledge/shared) — Cross-role shared assets (e.g., unified_work_protocol_20260415.md)
 
+### 4.8 Cross-Session Lessons (knowledge/ystar/lessons/)
+Cross-role inheritable lessons every agent reads regardless of role. Curated by Secretary.
+- [knowledge/ystar/lessons/forget_guard_keyword_antipattern_lesson_20260425.md](../knowledge/ystar/lessons/forget_guard_keyword_antipattern_lesson_20260425.md) — **Speech-vs-behavior axis** for ForgetGuard rule design; per Board 2026-04-25 letter (FG-4); cross-ref CEO post-mortem [knowledge/ceo/lessons/forget_guard_keyword_antipattern_postmortem_20260425.md](../knowledge/ceo/lessons/forget_guard_keyword_antipattern_postmortem_20260425.md) + Y-star-gov commit `8195fc2`
+
 ---
 
 ## 5. Decisions

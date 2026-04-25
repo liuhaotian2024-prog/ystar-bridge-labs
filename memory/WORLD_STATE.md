@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-25 09:00:00
+**Generated**: 2026-04-25 09:30:00
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -34,9 +34,9 @@
 ---
 
 ## 4. System Health
-**Wire Integrity**: 0 issues
+**Wire Integrity**: check_failed: Command '['python3', '/Users/haotianliu/.openclaw/workspace/ystar-company/scripts/wire_integrity_check.py']' timed out after 10 seconds issues
 **Y* Schema v2 Compliance**: 0/12 valid (0 errors)
-**CIEU 24h Events**: 114884
+**CIEU 24h Events**: 115637
 **Overdue Obligations**: 0
 
 ---
@@ -55,26 +55,26 @@ ceo          | 3/3          | 24           | 40       | 2026-04-24
 ## 6. Board Pending
 # Board Pending Items (待 Board 决策/批准)
 
-## Approved 2026-04-15 (Board 点头 同意 Samantha 4 问题)
-
-1. ✅ **删除 ystar-bridge-labs 克隆** (Samantha 工作已 cherry-pick 过来). 
-   - Board 需外部 shell 执行 (CEO 权限内 `mv` / `rm` 被 router-bridge deny):
-     ```
-     mv /Users/haotianliu/.openclaw/workspace/ystar-bridge-labs /Users/haotianliu/.openclaw/workspace/.archive-ystar-bridge-labs-20260415
-     ```
-2. ✅ **knowledge/charter/ 用外部 RACI + 自加 CIEU 层**. 
-   - Samantha 后续建 `knowledge/charter/` namespace + RACI matrix + CIEU 归属判据
-3. ✅ **Layer 2 hooks (CIEU marker / 12-layer marker enforce / 其他 code-level enforcement) 走 CTO L2**, 不走 Board amendment. Constitutional 层改动才走 BOARD_PENDING.
-4. ✅ **预授权 CTO 24h 调查+关闭 watcher** (Ethan 正在执行 agentId 待记录).
-
 ---
 
-## Samantha 5 amendments (已提案, 待 Board L3 approve)
+## 🔴 P0 — Cross-Repo Pollution Audit Findings (CEO surface 2026-04-25 morning)
 
-### Amendment A-1: canonical-workspace-lock
-锁 `ystar-company` 为唯一 canonical workspace. 任何 sub-agent / script 写 bridge-labs 或其他镜像 = deny.
+**Trigger**: Board 2026-04-25 第 2 letter — "在创立办公室之前，我们先把这些问题处理好。我怕之前你们造成过污染"
 
-... (175 more lines, see BOARD_PENDING.md)
+**CEO 主线快速 audit 已确认两方向污染**：
+
+### A. Bridge Labs 内有不该有的通用治理引擎 duplicate
+
+| 文件 | 体量 | 性质 | 状态 |
+|---|---|---|---|
+| `ystar-company/scripts/forget_guard.py` | 405 lines | **完全 duplicate v0.42 keyword-pattern 引擎** (与 Y-star-gov 老版同源) | yaml 被老大移走后 fail-open silently disabled，但**引擎代码还活着**，随时能被复活 |
+
+**风险**: Board 8195fc2 commit 物理删了 Y-star-gov 那份 `_matches_pattern()`，但 Bridge Labs 这份 405 行 keyword 引擎完整保留。**只要有人把 yaml 复活就立刻能跑 keyword 黑名单** — Board 的"机器 raise" 结构性堵塞**在 Bridge Labs 这一侧不存在**。
+
+### B. Y-star-gov 通用产品代码硬编码 Bridge Labs 公司具体名字
+
+
+... (258 more lines, see BOARD_PENDING.md)
 
 ---
 
@@ -84,72 +84,72 @@ ceo          | 3/3          | 24           | 40       | 2026-04-24
 ---
 
 ## 8. Y* Field State (xi) — Mission axis frequency + drift
-**Total CIEU events (24h)**: 114884
+**Total CIEU events (24h)**: 115637
 
 | M-Axis | Description | 24h Count | 7d Avg/Day | Drift |
 |--------|-------------|-----------|------------|-------|
-| **M-1** | Survivability (session/boot/handoff/persist) | 5253 | 12320 | ↓ |
-| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 2032 | 1339 | ↑ |
-| **M-2b** | Omission prevention (omission/overdue/alarm) | 2587 | 6558 | ↓ |
+| **M-1** | Survivability (session/boot/handoff/persist) | 5553 | 12300 | ↓ |
+| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 2065 | 1321 | ↑ |
+| **M-2b** | Omission prevention (omission/overdue/alarm) | 2734 | 6538 | ↓ |
 | **M-3** | Value production (customer/revenue/dogfood/demo) | 0 | 0 | ↓ |
 
-**Classified coverage**: 9872/114884 (8.6%)
-**Unclassified**: 105012 events (routine ops / K9 routing)
+**Classified coverage**: 10352/115637 (9.0%)
+**Unclassified**: 105285 events (routine ops / K9 routing)
 **Drift alert**: M-2a trending UP vs 7d baseline
 **Drift alert**: M-1, M-2b, M-3 trending DOWN vs 7d baseline
 
 ---
 
 ## 9. Commission Error Heatmap — 11-component unified dashboard
-**Total commission errors (24h)**: 3329
+**Total commission errors (24h)**: 3422
 
 **By M-Axis**:
 
 | Axis | Description | 24h Count |
 |------|-------------|-----------|
-| **M-1** | Survivability (schema/wire/config drift) | 768 |
-| **M-2a** | Commission prevention (core 11 detectors) | 2087 |
-| **M-3** | Value quality (maturity/off-target) | 474 |
+| **M-1** | Survivability (schema/wire/config drift) | 802 |
+| **M-2a** | Commission prevention (core 11 detectors) | 2158 |
+| **M-3** | Value quality (maturity/off-target) | 462 |
 
 **By Detector (11 components + hook catches)**:
 
 | Detector | 24h Count | Drift vs 7d |
 |----------|-----------|-------------|
-| k9_silent_fire_audit | 1377 | v (avg 3728.4/d) |
-| hook_commission_catch | 1087 | = (avg 1042.3/d) |
-| amendment_coverage_audit | 750 | v (avg 1016.1/d) |
-| metalearning | 67 | v (avg 190.3/d) |
-| directive_evaluator | 22 | v (avg 27.7/d) |
-| observable_action_detector | 19 | v (avg 74.0/d) |
+| k9_silent_fire_audit | 1438 | v (avg 3731.9/d) |
+| hook_commission_catch | 1074 | = (avg 1042.1/d) |
+| amendment_coverage_audit | 785 | v (avg 1023.9/d) |
+| metalearning | 79 | v (avg 192.6/d) |
+| directive_evaluator | 21 | v (avg 27.7/d) |
+| observable_action_detector | 18 | v (avg 73.4/d) |
 | enforcement_observer | 7 | ^ (avg 3.7/d) |
 
 **By Actor (top 10)**:
 
 | Actor | 24h Commission Errors |
 |-------|----------------------|
-| unknown | 991 |
+| unknown | 967 |
 | test_agent | 720 |
 | eng-platform | 549 |
 | eng-kernel | 492 |
-| ceo | 250 |
-| secretary | 236 |
-| cto | 55 |
-| platform | 36 |
+| ceo | 252 |
+| secretary | 239 |
+| cto | 169 |
+| platform | 34 |
 
 **Top 5 Event Types**:
-- `K9_VIOLATION_DETECTED`: 793
-- `SESSION_JSON_SCHEMA_VIOLATION`: 732
-- `K9_AUDIT_TRIGGERED`: 584
+- `K9_VIOLATION_DETECTED`: 816
+- `SESSION_JSON_SCHEMA_VIOLATION`: 768
+- `K9_AUDIT_TRIGGERED`: 622
 - `FORGET_GUARD_K9_WARN`: 474
-- `MATURITY_TAG_MISSING`: 474
+- `MATURITY_TAG_MISSING`: 462
 
-**Overall drift**: v (24h=3329, 7d avg/day=6114.6)
+**Overall drift**: v (24h=3422, 7d avg/day=6127.3)
 
 ---
 
 ## 10. Ecosystem — Y*gov Product Repo
 **HEAD**: `8195fc2 Merge branch 'cleanup/forget-guard-purge-v2-2026-04-25'`
-**24h commits**: 10
+**24h commits**: 9
 **ahead origin**: 0
 **test files**: 100
 **version**: 0.48.0
@@ -170,6 +170,7 @@ ceo          | 3/3          | 24           | 40       | 2026-04-24
 
 
 **ystar-company** (18 commits):
+- d7c86bd0 09:04 [auto] WIP checkpoint 2026-04-25 09:04 -- 70 files changed
 - 6d0857f7 08:33 [auto] WIP checkpoint 2026-04-25 08:33 -- 1781 files changed
 - 3ed03ba7 08:03 [auto] WIP checkpoint 2026-04-25 08:03 -- 1802 files changed
 - 55ba7d3a 07:33 [auto] WIP checkpoint 2026-04-25 07:33 -- 88 files changed
@@ -187,9 +188,8 @@ ceo          | 3/3          | 24           | 40       | 2026-04-24
 - e55cac41 12:04 [auto] WIP checkpoint 2026-04-24 12:04 -- 1852 files changed
 - c22ecf22 11:33 [auto] WIP checkpoint 2026-04-24 11:33 -- 2639 files changed
 - 532e5312 09:41 [auto] WIP checkpoint 2026-04-24 09:41 -- 11 files changed
-- b5de8f79 09:10 [auto] WIP checkpoint 2026-04-24 09:10 -- 87 files changed
 
-**Y*gov** (10 commits):
+**Y*gov** (9 commits):
 - 8195fc2 08:20 Merge branch 'cleanup/forget-guard-purge-v2-2026-04-25'
 - 8b8eff3 08:19 fix(governance): purge speech-suppression rules from ForgetGuard, enforce structured-only schema
 - 2f0fa25 21:20 [auto] WIP checkpoint 2026-04-24 21:20 -- 3 files changed
@@ -199,4 +199,3 @@ ceo          | 3/3          | 24           | 40       | 2026-04-24
 - d7d5f2d 12:44 [auto] WIP checkpoint 2026-04-24 12:44 -- 1 files changed
 - d870481 12:04 [auto] WIP checkpoint 2026-04-24 12:04 -- 2 files changed
 - 0341f66 11:34 [auto] WIP checkpoint 2026-04-24 11:34 -- 4 files changed
-- 3ed22d9 09:05 gov: Wave-1 Items 3+9 ship (Maya None-safe 3 edits + Leo break-glass mechanism 17 tests + omission_models 
