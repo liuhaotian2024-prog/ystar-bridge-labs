@@ -1,6 +1,6 @@
 # Enforcement Status Dashboard
 
-**Last Updated**: 2026-04-25T14:59:56.742655
+**Last Updated**: 2026-04-25T15:29:59.618625
 
 ## Alarm Rate by Type (Last Session)
 
@@ -18,7 +18,7 @@
 
 ## Unconsumed Backlog
 
-- **Events in Queue**: 40
+- **Events in Queue**: 41
 
 ## Open Escalations (CEO Attention Required)
 
