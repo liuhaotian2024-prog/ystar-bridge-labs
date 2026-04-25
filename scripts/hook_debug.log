@@ -49446,3 +49446,65 @@ RuntimeError: rule 'article_11_board_offline_30m' did not produce any obligation
 23:15:38 [BRAIN] Injected 3 wisdom nodes
 23:15:38 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
 23:16:19 [BRAIN] Injected 3 wisdom nodes
+23:22:01 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+23:22:03 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+23:22:48 [BRAIN] Injected 3 wisdom nodes
+23:22:50 [BRAIN] Injected 3 wisdom nodes
+23:23:19 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+23:24:01 [BRAIN] Injected 3 wisdom nodes
+23:24:01 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+23:24:01 [CZL-GATE1] ⚠️ CZL Gate 1: dispatch missing sections ['Missing Y* (ideal contract)', 'Missing Xt (pre-state)', 'Missing U (actions list)', 'Missing Yt+1 (post-state)', 'Missing Rt+1 target (gap threshold)', 'Warning: No explicit recipient (which engineer?)', 'Warning: No explicit task_id']
+23:24:43 [FORGET_GUARD] rule=subagent_no_commit_after_5_writes action=warn sev=low
+23:24:43 [BRAIN] Injected 3 wisdom nodes
+23:24:51 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:24:51 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:24:51 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:24:51 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:26:08 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:26:08 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:26:50 [FORGET_GUARD] rule=ceo_direct_engineer_dispatch action=deny sev=high
+23:26:51 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:26:51 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:27:52 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:27:52 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:28:34 [FORGET_GUARD] rule=ceo_direct_engineer_dispatch action=deny sev=high
+23:28:39 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:28:39 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:29:32 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:29:32 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:30:13 [FORGET_GUARD] rule=ceo_direct_engineer_dispatch action=deny sev=high
+23:30:17 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:30:17 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:31:01 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:31:01 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:31:46 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:31:46 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:32:32 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:32:32 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:33:19 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:33:19 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:34:04 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:34:04 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:34:48 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:34:48 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:35:37 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:35:37 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:36:26 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:36:26 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:37:16 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:37:16 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:38:08 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:38:08 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:38:58 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:38:58 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:39:55 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:39:55 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:40:44 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:40:44 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:41:32 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:41:32 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+23:42:53 [PPID-FIX] Subagent identity from payload.agent_type='Samantha-Secretary' -> 'secretary' (skipping marker override, no ppid write)
+23:42:53 [BUG4-FIX] Subagent detected via original agent_type='Samantha-Secretary'
+00:16:02 [P1-a] Read per-session marker (ppid_33403): 'ceo'
+00:16:02 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+00:16:51 [BRAIN] Injected 3 wisdom nodes
