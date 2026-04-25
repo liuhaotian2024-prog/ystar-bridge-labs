@@ -49412,3 +49412,8 @@ RuntimeError: rule 'article_11_board_offline_30m' did not produce any obligation
 21:13:14 [BUG4-FIX] Subagent detected via original agent_type='Ethan-CTO'
 21:15:06 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
 21:15:48 [BRAIN] Injected 3 wisdom nodes
+22:48:46 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:49:28 [BRAIN] Injected 3 wisdom nodes
+22:49:28 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+22:50:10 [BRAIN] Injected 3 wisdom nodes
+22:50:19 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
