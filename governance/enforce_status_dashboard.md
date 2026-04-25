@@ -1,24 +1,24 @@
 # Enforcement Status Dashboard
 
-**Last Updated**: 2026-04-25T08:03:44.126694
+**Last Updated**: 2026-04-25T08:33:47.331084
 
 ## Alarm Rate by Type (Last Session)
 
 | Event Type | Count | Last Seen |
 |------------|-------|-----------|
+| HOOK_HEALTH_K9_ESCALATE | 3 | 2026-04-25T08:32:50.454937 |
 | AGENT_REGISTRY_K9_WARN | 2 | 2026-04-23T22:32:57.032487 |
-| HOOK_HEALTH_K9_ESCALATE | 2 | 2026-04-23T22:32:57.160605 |
 
 ## Cascade Success Rate
 
-- **Total Alarms Processed**: 4
-- **Cascade Successes**: 4
+- **Total Alarms Processed**: 5
+- **Cascade Successes**: 5
 - **Cascade Failures**: 0
 - **Success Rate**: 100.0%
 
 ## Unconsumed Backlog
 
-- **Events in Queue**: 31
+- **Events in Queue**: 27
 
 ## Open Escalations (CEO Attention Required)
 
