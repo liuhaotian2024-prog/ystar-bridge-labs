@@ -1919,6 +1919,19 @@
       "claimed_at": "2026-04-24T14:49:15.488930+00:00",
       "completed_at": null,
       "completion_receipt": null
+    },
+    {
+      "atomic_id": "CZL-FG-PURGE-AUDIT-MAYA",
+      "scope": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/forget_guard.py,/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/forget_guard_rules.yaml,/Users/haotianliu/.openclaw/workspace/Y-star-gov/tests/governance/test_czl_forget_guard.py,/Users/haotianliu/.openclaw/workspace/ystar-company/reports/audit/forget_guard_purge_v2_audit_20260425.md",
+      "description": "Audit ForgetGuard purge commit 8195fc2: verify _matches_pattern deleted, yaml all type:structured, tests cover both false/true positive. READ-ONLY. Board-authorized via 2026-04-25 letter section VII. See .claude/tasks/CZL-FG-PURGE-AUDIT-MAYA.md",
+      "urgency": "P1",
+      "estimated_tool_uses": 8,
+      "status": "claimed",
+      "posted_at": "2026-04-25T13:02:32.523796+00:00",
+      "claimed_by": "eng-platform",
+      "claimed_at": "2026-04-25T13:02:41.313194+00:00",
+      "completed_at": null,
+      "completion_receipt": null
     }
   ]
 }

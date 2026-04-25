@@ -7,6 +7,29 @@
 
 ## 活跃指令（Active — 有未完成子任务）
 
+### Directive #FG-PURGE-V2 ForgetGuard 言论钳制根除（Board 2026-04-25, commit 8195fc2）
+**Board 指令原文**: "读完本说明。在下一个 session 启动时验证 `Rules: 3`。后续派分（不要现在做，等优先级排期）"
+
+| # | 子任务 | 负责人 | 状态 | 交付物 |
+|---|--------|--------|------|--------|
+| FG-1 | 本 session 验证 Rules=3 + 备份 yaml 就位 | CEO | ✅ 完成 2026-04-25 | 本 session receipt |
+| FG-2 | axis 内化：言论钳制 vs 行动约束 不许再混淆 | 全员 | ✅ 本 session 起立即生效 | in-conversation acknowledgement |
+| FG-3 | 审计 commit 8195fc2（forget_guard.py 无 _matches_pattern + yaml 全 type:structured + 测试覆盖双向 false/true positive） | Maya | ⏸ 待排期 | audit receipt → CEO |
+| FG-4 | 写 cross-session lesson "为什么 v0.42 keyword 黑名单是 anti-pattern" 进 knowledge/（**不**进 forget_guard yaml — lesson 是知识不是规则） | Samantha | ⏸ 待排期 | knowledge/ystar/lessons/forget_guard_keyword_antipattern.md |
+| FG-5 | 写 post-mortem "team 在压力下为什么会写出 keyword 黑名单 + 怎么避免" | CEO | ⏸ 待排期 | reports/ceo/lessons/ |
+| FG-6 | 跑 dispatch 前用 dry_run_check 自查（已是新能力） | 全员 | ✅ 接口可用 | from ystar.governance.forget_guard import dry_run_check |
+
+**axis distinction（永不再混淆）**:
+- **言论钳制** = keyword 黑名单（pattern: "明日"/"task eng-"/"(?i).*"）= **退化 anti-pattern**，引擎已物理删除，schema raise 拒绝重生
+- **行动约束** = 工具/路径/结构化条件（git push subcommand / event_type+数字差距 / archival path 未索引）= 治理本意，保留
+
+**保留的 3 条结构化规则**:
+1. `unauthorized_git_write_via_tool` (deny) — bash + parsed `git <write-subcommand>`
+2. `subagent_receipt_tool_uses_mismatch` (warn) — sub_agent_return + 数字差距 ≥ 2
+3. `archival_artifact_not_indexed` (audit) — archival 路径 30min 未进 ARCHIVE_INDEX
+
+---
+
 ### Directive #018-020 建司指令（2026-03-28）
 | # | 子任务 | 负责人 | 状态 | 交付物 |
 |---|--------|--------|------|--------|

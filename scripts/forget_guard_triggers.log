@@ -1856,3 +1856,11 @@
 1777120421.857058 | WARN | ceo_engineering_boundary | agent=test_agent
 1777120422.408714 | WARN | test_violation | agent=test_agent
 1777120422.580392 | WARN | smoke_test_violation | agent=test_agent
+1777120431.672854 | WARN | ceo_engineering_boundary | agent=test_agent
+1777120433.2458649 | WARN | ceo_engineering_boundary | agent=test_agent
+1777120433.826445 | WARN | test_violation | agent=test_agent
+1777120434.254004 | WARN | smoke_test_violation | agent=test_agent
+1777120444.6256561 | WARN | ceo_engineering_boundary | agent=test_agent
+1777120445.502881 | WARN | ceo_engineering_boundary | agent=test_agent
+1777120445.980316 | WARN | test_violation | agent=test_agent
+1777120446.140548 | WARN | smoke_test_violation | agent=test_agent

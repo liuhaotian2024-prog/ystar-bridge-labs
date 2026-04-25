@@ -141,12 +141,13 @@ def get_existing_board_values() -> Set[str]:
 
         # Direct SQL query for efficiency
         conn = sqlite3.connect(MEMORY_DB)
+        current_agent = _get_current_agent()
         cursor = conn.execute("""
             SELECT content FROM memories
-            WHERE agent_id=_get_current_agent()
+            WHERE agent_id=?
             AND memory_type = 'lesson'
             AND context_tags LIKE '%board_value%'
-        """)
+        """, (current_agent,))
 
         for row in cursor.fetchall():
             # Normalize: lowercase, strip whitespace
