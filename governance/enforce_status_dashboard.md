@@ -1,6 +1,6 @@
 # Enforcement Status Dashboard
 
-**Last Updated**: 2026-04-25T11:59:37.800372
+**Last Updated**: 2026-04-25T12:29:43.514236
 
 ## Alarm Rate by Type (Last Session)
 
