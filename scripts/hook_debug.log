@@ -49520,3 +49520,13 @@ RuntimeError: rule 'article_11_board_offline_30m' did not produce any obligation
 07:31:40 [BRAIN] Injected 3 wisdom nodes
 07:31:40 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
 07:32:21 [BRAIN] Injected 3 wisdom nodes
+07:34:26 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:35:11 [BRAIN] Injected 3 wisdom nodes
+07:35:31 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:36:15 [BRAIN] Injected 3 wisdom nodes
+07:36:26 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:36:26 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:37:20 [FORGET_GUARD] rule=ceo_direct_engineer_dispatch action=deny sev=high
+07:37:20 [BRAIN] Injected 3 wisdom nodes
+07:37:25 [P1-a] Payload agent_id overridden to 'ceo' from marker fallback chain
+07:38:08 [BRAIN] Injected 3 wisdom nodes

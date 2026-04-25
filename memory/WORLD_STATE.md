@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-25 07:30:03
+**Generated**: 2026-04-25 08:00:00
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,7 +36,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/12 valid (0 errors)
-**CIEU 24h Events**: 75954
+**CIEU 24h Events**: 94090
 **Overdue Obligations**: 0
 
 ---
@@ -80,66 +80,66 @@
 ---
 
 ## 8. Y* Field State (xi) — Mission axis frequency + drift
-**Total CIEU events (24h)**: 75954
+**Total CIEU events (24h)**: 94091
 
 | M-Axis | Description | 24h Count | 7d Avg/Day | Drift |
 |--------|-------------|-----------|------------|-------|
-| **M-1** | Survivability (session/boot/handoff/persist) | 6164 | 12324 | ↓ |
-| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 1487 | 1251 | ↑ |
-| **M-2b** | Omission prevention (omission/overdue/alarm) | 3046 | 6566 | ↓ |
+| **M-1** | Survivability (session/boot/handoff/persist) | 5755 | 12335 | ↓ |
+| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 1731 | 1295 | ↑ |
+| **M-2b** | Omission prevention (omission/overdue/alarm) | 2837 | 6570 | ↓ |
 | **M-3** | Value production (customer/revenue/dogfood/demo) | 0 | 0 | ↓ |
 
-**Classified coverage**: 10697/75954 (14.1%)
-**Unclassified**: 65257 events (routine ops / K9 routing)
+**Classified coverage**: 10323/94091 (11.0%)
+**Unclassified**: 83768 events (routine ops / K9 routing)
 **Drift alert**: M-2a trending UP vs 7d baseline
 **Drift alert**: M-1, M-2b, M-3 trending DOWN vs 7d baseline
 
 ---
 
 ## 9. Commission Error Heatmap — 11-component unified dashboard
-**Total commission errors (24h)**: 3482
+**Total commission errors (24h)**: 3445
 
 **By M-Axis**:
 
 | Axis | Description | 24h Count |
 |------|-------------|-----------|
-| **M-1** | Survivability (schema/wire/config drift) | 863 |
-| **M-2a** | Commission prevention (core 11 detectors) | 2042 |
-| **M-3** | Value quality (maturity/off-target) | 577 |
+| **M-1** | Survivability (schema/wire/config drift) | 822 |
+| **M-2a** | Commission prevention (core 11 detectors) | 2074 |
+| **M-3** | Value quality (maturity/off-target) | 549 |
 
 **By Detector (11 components + hook catches)**:
 
 | Detector | 24h Count | Drift vs 7d |
 |----------|-----------|-------------|
-| k9_silent_fire_audit | 1644 | v (avg 3731.4/d) |
-| hook_commission_catch | 863 | = (avg 994.0/d) |
-| amendment_coverage_audit | 845 | = (avg 1007.9/d) |
-| metalearning | 79 | v (avg 189.6/d) |
-| directive_evaluator | 20 | v (avg 27.0/d) |
-| observable_action_detector | 19 | v (avg 74.3/d) |
+| k9_silent_fire_audit | 1540 | v (avg 3732.6/d) |
+| hook_commission_catch | 974 | = (avg 1015.4/d) |
+| amendment_coverage_audit | 804 | v (avg 1011.0/d) |
+| metalearning | 74 | v (avg 189.6/d) |
+| directive_evaluator | 22 | = (avg 27.4/d) |
+| observable_action_detector | 19 | v (avg 74.4/d) |
 | enforcement_observer | 12 | ^ (avg 3.7/d) |
 
 **By Actor (top 10)**:
 
 | Actor | 24h Commission Errors |
 |-------|----------------------|
-| unknown | 1219 |
-| eng-platform | 843 |
+| unknown | 1178 |
+| eng-platform | 691 |
+| test_agent | 544 |
 | eng-kernel | 492 |
-| test_agent | 410 |
+| ceo | 238 |
 | secretary | 236 |
-| ceo | 216 |
 | platform | 36 |
 | cto | 30 |
 
 **Top 5 Event Types**:
-- `K9_VIOLATION_DETECTED`: 948
-- `SESSION_JSON_SCHEMA_VIOLATION`: 827
-- `K9_AUDIT_TRIGGERED`: 696
-- `MATURITY_TAG_MISSING`: 577
-- `FORGET_GUARD_K9_WARN`: 211
+- `K9_VIOLATION_DETECTED`: 896
+- `SESSION_JSON_SCHEMA_VIOLATION`: 786
+- `K9_AUDIT_TRIGGERED`: 644
+- `MATURITY_TAG_MISSING`: 549
+- `FORGET_GUARD_K9_WARN`: 324
 
-**Overall drift**: v (24h=3482, 7d avg/day=6060.7)
+**Overall drift**: v (24h=3445, 7d avg/day=6087.0)
 
 ---
 
@@ -166,6 +166,7 @@
 
 
 **ystar-company** (18 commits):
+- 55ba7d3a 07:33 [auto] WIP checkpoint 2026-04-25 07:33 -- 88 files changed
 - aa5393bb 01:52 [auto] WIP checkpoint 2026-04-25 01:52 -- 6 files changed
 - 6e3f4d6b 23:20 [auto] WIP checkpoint 2026-04-24 23:20 -- 9 files changed
 - c380474c 22:50 [auto] WIP checkpoint 2026-04-24 22:50 -- 7 files changed
@@ -183,7 +184,6 @@
 - b5de8f79 09:10 [auto] WIP checkpoint 2026-04-24 09:10 -- 87 files changed
 - f060ba27 08:59 docs: hook_wrapper line 37 shadow audit + Samantha retry task card (INC-2026-04-23 M2+M3) Co-Authored-By:
 - 1b554c1b 08:54 fix(hook_wrapper): remove shadow sys.path.insert at ForgetGuard wire (ref reports/kernel_import_audit_202
-- 57682e42 07:44 [auto] WIP checkpoint 2026-04-24 07:44 -- 72 files changed
 
 **Y*gov** (8 commits):
 - 2f0fa25 21:20 [auto] WIP checkpoint 2026-04-24 21:20 -- 3 files changed
