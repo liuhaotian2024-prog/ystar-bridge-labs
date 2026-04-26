@@ -9,7 +9,8 @@
     "Ethan/Samantha base capsules",
     "Y-star-gov validator interface spec",
     "static read-model validation utility",
-    "static snapshot generator"
+    "static snapshot generator",
+    "snapshot-only team console CLI"
   ],
   "not_ready": [
     "runtime generator",
@@ -21,6 +22,7 @@
     "frontend console",
     "live team-state refresh",
     "CI wiring for validator/generator",
+    "CLI integration packaging",
     "semantic validation against live runtime"
   ],
   "recommended_next_steps": [

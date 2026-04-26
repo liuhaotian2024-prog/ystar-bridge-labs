@@ -10,6 +10,8 @@
 - Y-star-gov validator interface spec.
 - Static read-model validation utility.
 - Static snapshot generator.
+- Snapshot-only team console CLI.
+- Snapshot-only team console CLI.
 
 ## Not Ready
 
@@ -24,6 +26,7 @@
 - CI wiring for validator.
 - Semantic validation against live runtime remains unavailable.
 - CI wiring for snapshot generator.
+- CLI integration packaging.
 
 ## Recommended Next Steps
 

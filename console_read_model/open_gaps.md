@@ -1,6 +1,5 @@
 # Open Gaps
 
-- No static console loader.
 - No frontend UI.
 - No runtime generator.
 - No DB-safe adapter.
@@ -14,3 +13,4 @@
 - Validator does not inspect DBs or live runtime state.
 - Validator does not guarantee semantic correctness.
 - Static snapshot generator exists but has no frontend or live refresh.
+- CLI exists but remains snapshot-only and non-interactive.

@@ -232,7 +232,7 @@
     "reason": "Console must consume curated read models and manifests, not raw operational stores or mutable runtime state."
   },
   "open_gaps": [
-    "No static console loader.",
+    "Static console loader exists; no frontend UI yet.",
     "No frontend UI.",
     "No runtime generator.",
     "No DB-safe adapter.",
@@ -241,7 +241,8 @@
     "No validator implementation.",
     "No live team state refresh.",
     "No capsule static validator.",
-    "No multi-agent Pre-U packet generalization yet."
+    "No multi-agent Pre-U packet generalization yet.",
+    "Snapshot-only CLI exists; no interactive UI or live refresh yet."
   ],
   "warnings": [
     "Ethan execution channels are present as reference-only boundaries, not runtime launchers."

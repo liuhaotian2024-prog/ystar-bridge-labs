@@ -1,0 +1,26 @@
+# Team Console CLI
+
+`team_console.py` is a read-only CLI for the generated team console snapshot.
+
+It reads only:
+
+- `console_read_model/generated/team_console_snapshot.json`
+- `console_read_model/generated/agent_cards_compiled.json`
+- `console_read_model/generated/readiness_summary.json`
+- `console_read_model/generated/generation_manifest.json`
+
+It does not read DBs, logs, active-agent markers, daemon state, raw runtime
+reports, or live memory. It does not write files or run subprocesses.
+
+Example commands:
+
+```bash
+python3 console_read_model/cli/team_console.py summary
+python3 console_read_model/cli/team_console.py agents
+python3 console_read_model/cli/team_console.py agent Ethan-CTO
+python3 console_read_model/cli/team_console.py readiness
+python3 console_read_model/cli/team_console.py validate-local
+```
+
+This is the first user-facing operational entry point, but it remains strictly
+snapshot-based and read-only.

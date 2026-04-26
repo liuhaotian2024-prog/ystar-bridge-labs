@@ -150,6 +150,13 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "cieu_role": team_model.get("governance_interfaces", {}).get("cieu_role"),
     }
 
+    open_gaps = [
+        "Static console loader exists; no frontend UI yet." if gap == "No static console loader." else gap
+        for gap in team_model.get("open_gaps", [])
+    ]
+    if "Snapshot-only CLI exists; no interactive UI or live refresh yet." not in open_gaps:
+        open_gaps.append("Snapshot-only CLI exists; no interactive UI or live refresh yet.")
+
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
         "schema_version": "v0",
@@ -160,7 +167,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "readiness": readiness,
         "governance_summary": governance_summary,
         "data_safety": team_model.get("data_safety", {}),
-        "open_gaps": team_model.get("open_gaps", []),
+        "open_gaps": open_gaps,
         "warnings": warnings,
     }
 
@@ -195,6 +202,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "Y-star-gov validator interface spec",
             "static read-model validation utility",
             "static snapshot generator",
+            "snapshot-only team console CLI",
         ],
         "not_ready": [
             "runtime generator",
@@ -206,6 +214,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "frontend console",
             "live team-state refresh",
             "CI wiring for validator/generator",
+            "CLI integration packaging",
             "semantic validation against live runtime",
         ],
         "recommended_next_steps": [
@@ -264,7 +273,9 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "# Generated Console Snapshots\n\n"
         "These files are derived artifacts from curated read-model inputs only.\n"
         "They do not contain DB contents, raw logs, daemon state, active-agent state,\n"
-        "or live runtime observations.\n",
+        "or live runtime observations.\n\n"
+        "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
+        "only data source.\n",
         generated_files,
     )
     write_json("console_read_model/generated/team_console_snapshot.json", snapshot, generated_files)

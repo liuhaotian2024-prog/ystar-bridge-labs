@@ -46,6 +46,7 @@ Ready now:
 - Y-star-gov validator interface spec
 - static read-model validation utility
 - static snapshot generator
+- snapshot-only team console CLI
 
 Not ready:
 - runtime generator
@@ -57,6 +58,7 @@ Not ready:
 - frontend console
 - live team-state refresh
 - CI wiring for validator/generator
+- CLI integration packaging
 - semantic validation against live runtime
 
 ## Governance Boundary
@@ -78,7 +80,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 ## Warnings / Gaps
 
 - Ethan execution channels are present as reference-only boundaries, not runtime launchers.
-- No static console loader.
+- Static console loader exists; no frontend UI yet.
 - No frontend UI.
 - No runtime generator.
 - No DB-safe adapter.
@@ -88,3 +90,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - No live team state refresh.
 - No capsule static validator.
 - No multi-agent Pre-U packet generalization yet.
+- Snapshot-only CLI exists; no interactive UI or live refresh yet.

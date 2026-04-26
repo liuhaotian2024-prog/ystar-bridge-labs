@@ -23,6 +23,13 @@
     "console_read_model/loader/loader_policy.md",
     "console_read_model/loader/open_gaps.md"
   ],
+  "required_cli_files": [
+    "console_read_model/cli/README.md",
+    "console_read_model/cli/team_console.py",
+    "console_read_model/cli/cli_policy.md",
+    "console_read_model/cli/command_reference.md",
+    "console_read_model/cli/open_gaps.md"
+  ],
   "required_generated_files": [
     "console_read_model/generated/README.md",
     "console_read_model/generated/team_console_snapshot.json",

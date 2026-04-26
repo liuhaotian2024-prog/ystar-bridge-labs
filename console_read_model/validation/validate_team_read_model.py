@@ -89,6 +89,7 @@ def main() -> int:
 
     required_console_files = expected["required_console_files"]
     required_loader_files = expected.get("required_loader_files", [])
+    required_cli_files = expected.get("required_cli_files", [])
     required_generated_files = expected.get("required_generated_files", [])
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
@@ -104,6 +105,10 @@ def main() -> int:
     for rel in required_loader_files:
         path = ROOT / rel
         check_exists(path, report, "loader file")
+
+    for rel in required_cli_files:
+        path = ROOT / rel
+        check_exists(path, report, "CLI file")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:

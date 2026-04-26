@@ -21,3 +21,7 @@ files first and only use raw stores through later reviewed safe adapters.
 `console_read_model/loader/` contains a static snapshot generator that compiles
 these curated inputs into `console_read_model/generated/` for future UI/runtime
 consumers. The generated files are derived artifacts, not live runtime state.
+
+`console_read_model/cli/` contains a read-only command-line entry point that
+prints summaries from generated snapshots only. It does not read raw runtime
+state or call subprocesses.
