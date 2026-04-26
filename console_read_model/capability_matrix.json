@@ -1,0 +1,88 @@
+{
+  "schema_name": "ystar.console_read_model.capability_matrix.v0",
+  "schema_version": "v0",
+  "capabilities": [
+    "orchestration",
+    "technical_architecture",
+    "implementation_reasoning",
+    "memory_continuity",
+    "secretary_curation",
+    "pre_u_counterfactual_imagination",
+    "execution_channel_delegation",
+    "governance_boundary_awareness",
+    "cieu_nutrition_awareness",
+    "field_alignment_awareness",
+    "czl_residual_awareness",
+    "console_readiness"
+  ],
+  "agents": ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"],
+  "matrix": {
+    "orchestration": {
+      "Aiden-CEO": "primary",
+      "Ethan-CTO": "secondary",
+      "Samantha-Secretary": "referenced"
+    },
+    "technical_architecture": {
+      "Aiden-CEO": "referenced",
+      "Ethan-CTO": "primary",
+      "Samantha-Secretary": "not_present"
+    },
+    "implementation_reasoning": {
+      "Aiden-CEO": "referenced",
+      "Ethan-CTO": "primary",
+      "Samantha-Secretary": "not_present"
+    },
+    "memory_continuity": {
+      "Aiden-CEO": "referenced",
+      "Ethan-CTO": "referenced",
+      "Samantha-Secretary": "primary"
+    },
+    "secretary_curation": {
+      "Aiden-CEO": "not_present",
+      "Ethan-CTO": "not_present",
+      "Samantha-Secretary": "primary"
+    },
+    "pre_u_counterfactual_imagination": {
+      "Aiden-CEO": "primary",
+      "Ethan-CTO": "future",
+      "Samantha-Secretary": "future"
+    },
+    "execution_channel_delegation": {
+      "Aiden-CEO": "referenced",
+      "Ethan-CTO": "primary",
+      "Samantha-Secretary": "future"
+    },
+    "governance_boundary_awareness": {
+      "Aiden-CEO": "referenced",
+      "Ethan-CTO": "referenced",
+      "Samantha-Secretary": "referenced"
+    },
+    "cieu_nutrition_awareness": {
+      "Aiden-CEO": "referenced",
+      "Ethan-CTO": "referenced",
+      "Samantha-Secretary": "referenced"
+    },
+    "field_alignment_awareness": {
+      "Aiden-CEO": "referenced",
+      "Ethan-CTO": "referenced",
+      "Samantha-Secretary": "referenced"
+    },
+    "czl_residual_awareness": {
+      "Aiden-CEO": "referenced",
+      "Ethan-CTO": "referenced",
+      "Samantha-Secretary": "referenced"
+    },
+    "console_readiness": {
+      "Aiden-CEO": "primary",
+      "Ethan-CTO": "secondary",
+      "Samantha-Secretary": "secondary"
+    }
+  },
+  "notes": [
+    "primary means role-specific focus is directly evidenced in the capsule.",
+    "secondary means capability supports the role but is not the primary identity.",
+    "referenced means shared capsule/governance references exist.",
+    "future means planned but not yet instantiated.",
+    "not_present means no current capsule evidence claims the capability."
+  ]
+}

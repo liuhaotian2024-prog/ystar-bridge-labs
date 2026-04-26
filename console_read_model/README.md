@@ -1,23 +1,19 @@
 # Console Read Model
 
-Future CEO/team console work should read the index files created in this architecture recovery layer, not raw DBs, logs, or mutable runtime state.
+`console_read_model/` is the future safe read layer for UI/runtime consumers.
 
-Preferred inputs:
-- `actual_team_registry/agents.json`
-- `actual_team_registry/system_functions.json`
-- `brain_index/db_manifest.json`
-- `memory_index/memory_manifest.json`
-- `runtime_mechanism_inventory/mechanisms.json`
-- `governance_refs/boundaries.md`
-- `company_state/current_world_state_ref.md`
+It reads curated capsule, schema, and index files. It must not read DBs, logs,
+active-agent markers, daemon output, or mutable runtime state directly.
 
-Avoid direct console reads from:
-- `.ystar_cieu.db`
-- `.ystar_memory.db`
-- `*_brain.db`
-- `.ystar_session.json`
-- `.ystar_ceo_mode.json`
-- daemon logs
-- active-agent marker files
+This directory summarizes:
 
-Reason: those files are runtime state or evidence stores. The console should consume stable indexed state unless a future reviewed adapter is explicitly designed for safe access.
+- Agents and their role-brain capsules.
+- Team capabilities.
+- Runtime readiness.
+- Governance links.
+- Safe and unsafe data sources.
+- Known gaps.
+
+This is not a frontend, not runtime execution, not a validator implementation,
+and not DB ingestion. Future console work should consume these curated read-model
+files first and only use raw stores through later reviewed safe adapters.
