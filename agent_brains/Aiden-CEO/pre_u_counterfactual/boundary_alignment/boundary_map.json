@@ -1,0 +1,253 @@
+{
+  "schema_name": "ystar.agent_brain.aiden_ceo.pre_u_counterfactual.boundary_map",
+  "schema_version": "v0",
+  "agent_id": "Aiden-CEO",
+  "packet_layer_ref": "agent_brains/Aiden-CEO/pre_u_counterfactual",
+  "layers": [
+    {
+      "layer_id": "labs",
+      "owner": "ystar-company / labs",
+      "responsibilities": [
+        "Generate Pre-U packet",
+        "Imagine bounded candidate actions",
+        "Compare predicted residuals",
+        "Explain selected action rationale"
+      ],
+      "must_not_do": [
+        "Perform deterministic governance judgment",
+        "Bypass Y-star-gov validation",
+        "Treat packet prediction as actual outcome"
+      ],
+      "inputs": [
+        "task",
+        "Aiden Brain Capsule refs",
+        "memory refs",
+        "field refs",
+        "CZL refs"
+      ],
+      "outputs": [
+        "draft packet",
+        "ready_for_validation packet"
+      ],
+      "validation_or_feedback_role": "producer",
+      "future_implementation_location": "ystar-company future labs runtime",
+      "evidence_refs": [
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/packet_schema.json",
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/runtime_contract.md",
+        "agent_brains/Aiden-CEO/brain_profile.json"
+      ]
+    },
+    {
+      "layer_id": "aiden_brain_capsule",
+      "owner": "ystar-company / Aiden capsule",
+      "responsibilities": [
+        "Provide Aiden identity refs",
+        "Provide memory refs",
+        "Provide field/CZL/CIEU/governance refs"
+      ],
+      "must_not_do": [
+        "Open DB contents",
+        "Execute runtime behavior",
+        "Replace Y-star-gov kernel validation"
+      ],
+      "inputs": [
+        "committed capsule indexes",
+        "Aiden evidence refs"
+      ],
+      "outputs": [
+        "per-agent read model"
+      ],
+      "validation_or_feedback_role": "context_source",
+      "future_implementation_location": "agent_brains/Aiden-CEO",
+      "evidence_refs": [
+        "agent_brains/Aiden-CEO/brain_profile.json",
+        "agent_brains/Aiden-CEO/governance_refs.json"
+      ]
+    },
+    {
+      "layer_id": "pre_u_packet",
+      "owner": "Aiden labs-side cognitive runtime",
+      "responsibilities": [
+        "Structure Y*, Xt, candidate U actions, predicted Yt+1, predicted Rt+1",
+        "Select residual-minimizing action path",
+        "Expose governance expectations and CIEU link policy"
+      ],
+      "must_not_do": [
+        "Claim actual result before action",
+        "Embed DB/log/runtime mutation",
+        "Use unbounded free-form fantasy"
+      ],
+      "inputs": [
+        "task",
+        "Aiden capsule context",
+        "mission field grounding",
+        "CZL contract"
+      ],
+      "outputs": [
+        "Pre-U Counterfactual Packet"
+      ],
+      "validation_or_feedback_role": "artifact_for_validation",
+      "future_implementation_location": "agent_brains/Aiden-CEO/pre_u_counterfactual",
+      "evidence_refs": [
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/packet_schema.json",
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/integration_notes.md"
+      ]
+    },
+    {
+      "layer_id": "y_star_gov",
+      "owner": "Y-star-gov",
+      "responsibilities": [
+        "Validate schema",
+        "Validate Y* and m_functor grounding",
+        "Validate role scope and residual logic",
+        "Own governance law"
+      ],
+      "must_not_do": [
+        "Become subjective brain",
+        "Generate labs-side counterfactuals",
+        "Own company runtime state"
+      ],
+      "inputs": [
+        "packet",
+        "action request",
+        "governance rules"
+      ],
+      "outputs": [
+        "validation result",
+        "revision/escalation/deny signal"
+      ],
+      "validation_or_feedback_role": "deterministic_validator",
+      "future_implementation_location": "Y-star-gov future packet validator",
+      "evidence_refs": [
+        "governance_refs/boundaries.md",
+        "runtime_mechanism_inventory/mechanisms.json",
+        "agent_brain_capsule/czl_runtime_contract.md",
+        "agent_brain_capsule/field_runtime.md"
+      ]
+    },
+    {
+      "layer_id": "hook",
+      "owner": "hook layer",
+      "responsibilities": [
+        "Pre-action gate",
+        "Require packet by risk tier",
+        "Call Y-star-gov validator",
+        "Enforce allow/deny/escalate result"
+      ],
+      "must_not_do": [
+        "Generate counterfactuals",
+        "Do complex reasoning",
+        "Inspect DB contents"
+      ],
+      "inputs": [
+        "action request",
+        "risk tier",
+        "packet ref",
+        "validator result"
+      ],
+      "outputs": [
+        "gate decision",
+        "pre-action CIEU link"
+      ],
+      "validation_or_feedback_role": "enforcer",
+      "future_implementation_location": "future hook integration",
+      "evidence_refs": [
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/hook_gate_policy.md",
+        "governance_refs/boundaries.md"
+      ]
+    },
+    {
+      "layer_id": "cieu",
+      "owner": "CIEU",
+      "responsibilities": [
+        "Record actual outcome evidence",
+        "Compare predicted vs actual Yt+1",
+        "Compare predicted vs actual Rt+1",
+        "Produce learning signal"
+      ],
+      "must_not_do": [
+        "Treat prediction as actual evidence",
+        "Remain passive audit only",
+        "Update brain without outcome evidence"
+      ],
+      "inputs": [
+        "packet_id",
+        "selected prediction",
+        "actual event",
+        "actual outcome"
+      ],
+      "outputs": [
+        "prediction delta",
+        "residual delta",
+        "brain nutrition candidate"
+      ],
+      "validation_or_feedback_role": "recorder_and_teacher",
+      "future_implementation_location": "future CIEU event/store integration",
+      "evidence_refs": [
+        "agent_brain_capsule/cieu_nutrition.md",
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/cieu_feedback_contract.md"
+      ]
+    },
+    {
+      "layer_id": "brain_writeback",
+      "owner": "Aiden brain lifecycle",
+      "responsibilities": [
+        "Learn from packet plus actual outcome plus CIEU delta",
+        "Replay patterns and failures in L3 dream",
+        "Preserve evidence-weighted learning"
+      ],
+      "must_not_do": [
+        "Learn directly from unaudited fantasy",
+        "Mutate DB contents from reference docs",
+        "Promote governance rules from imagination alone"
+      ],
+      "inputs": [
+        "CIEU delta",
+        "packet prediction",
+        "actual outcome",
+        "dream/writeback guardrails"
+      ],
+      "outputs": [
+        "writeback candidate",
+        "dream replay candidate",
+        "governance insight candidate"
+      ],
+      "validation_or_feedback_role": "learner",
+      "future_implementation_location": "future L2/L3 brain lifecycle wiring",
+      "evidence_refs": [
+        "agent_brains/Aiden-CEO/lifecycle_refs.json",
+        "agent_brains/Aiden-CEO/cieu_nutrition_refs.json",
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/brain_learning_contract.md"
+      ]
+    },
+    {
+      "layer_id": "console_read_model",
+      "owner": "future console read model",
+      "responsibilities": [
+        "Display packet status",
+        "Display validation status",
+        "Display residual deltas",
+        "Display learning readiness"
+      ],
+      "must_not_do": [
+        "Mutate raw DB/log/runtime state",
+        "Enforce governance",
+        "Generate packet reasoning"
+      ],
+      "inputs": [
+        "capsule indexes",
+        "packet metadata",
+        "CIEU summaries"
+      ],
+      "outputs": [
+        "operator-facing read model"
+      ],
+      "validation_or_feedback_role": "observer",
+      "future_implementation_location": "console_read_model future app layer",
+      "evidence_refs": [
+        "console_read_model/README.md",
+        "agent_brain_capsule/runtime_layers.md"
+      ]
+    }
+  ]
+}
