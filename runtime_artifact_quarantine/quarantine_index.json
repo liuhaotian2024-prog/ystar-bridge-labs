@@ -1,0 +1,66 @@
+{
+  "schema_name": "ystar.runtime_artifact_quarantine.index",
+  "schema_version": "v0",
+  "framework_status": "path_inventory_only",
+  "current_mining_level": 0,
+  "artifact_classes": [
+    "DB_CORE",
+    "DB_SIDECARE",
+    "LOG_RUNTIME",
+    "ACTIVE_AGENT_MARKER",
+    "DAEMON_STATE",
+    "CACHE_SENTINEL",
+    "PYCACHE",
+    "DREAM_REPORT",
+    "ESCALATION_REPORT",
+    "DAILY_REPORT",
+    "DRIFT_REPORT",
+    "WHITELIST_REPORT",
+    "BACKUP_DB",
+    "UNKNOWN_RUNTIME_ARTIFACT",
+    "UNKNOWN_OR_NON_RUNTIME"
+  ],
+  "safe_mining_levels": [
+    "Level 0 path-only inventory",
+    "Level 1 metadata-only inspection",
+    "Level 2 bounded text sampling",
+    "Level 3 structured adapter extraction",
+    "Level 4 curated memory ingestion"
+  ],
+  "forbidden_direct_reads": [
+    "DB/WAL/SHM contents",
+    "scripts/.logs/*",
+    "active-agent markers",
+    "daemon pid/state files",
+    "__pycache__",
+    "raw runtime reports in bulk",
+    "backup DB contents"
+  ],
+  "future_adapters": [
+    "DB metadata adapter",
+    "CIEU readonly DB adapter",
+    "dream report bounded parser",
+    "escalation report parser",
+    "drift report parser",
+    "log summarizer with size/time bounds",
+    "active-agent marker summarizer",
+    "backup DB inventory adapter",
+    "quarantine-to-curated-memory review queue"
+  ],
+  "generated_manifest_ref": "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+  "console_integration_status": "future_summary_only_no_raw_content",
+  "brain_integration_status": "future_curated_cieu_backed_only",
+  "open_gaps": [
+    "No content mining yet",
+    "No DB adapter",
+    "No log parser",
+    "No report parser",
+    "No CIEU mapping",
+    "No brain writeback integration",
+    "No console quarantine panel",
+    "No cleanup policy",
+    "No archival policy",
+    "No retention policy",
+    "No CI check for dirty runtime artifacts"
+  ]
+}

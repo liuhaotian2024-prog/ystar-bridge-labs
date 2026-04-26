@@ -1,0 +1,1649 @@
+{
+  "schema_name": "ystar.runtime_artifact_quarantine.generated.manifest",
+  "schema_version": "v0",
+  "inventory_level": 0,
+  "content_opened": false,
+  "source": "git status --short plus os.stat metadata",
+  "artifacts_classified": 162,
+  "unsafe_artifacts_count": 155,
+  "classes_seen": {
+    "ACTIVE_AGENT_MARKER": 17,
+    "BACKUP_DB": 1,
+    "CACHE_SENTINEL": 5,
+    "DAEMON_STATE": 4,
+    "DAILY_REPORT": 3,
+    "DB_CORE": 1,
+    "DB_SIDECARE": 6,
+    "DREAM_REPORT": 18,
+    "DRIFT_REPORT": 4,
+    "ESCALATION_REPORT": 23,
+    "FRAMEWORK_FILE": 1,
+    "LOG_RUNTIME": 31,
+    "PYCACHE": 31,
+    "UNKNOWN_OR_NON_RUNTIME": 6,
+    "UNKNOWN_RUNTIME_ARTIFACT": 10,
+    "WHITELIST_REPORT": 1
+  },
+  "artifacts": [
+    {
+      "path": ".k9_subscriber_state.json",
+      "git_status_code": "D",
+      "artifact_class": "DAEMON_STATE",
+      "extension": ".json",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "daemon_state_metadata_adapter_future",
+      "notes": "Daemon state content forbidden."
+    },
+    {
+      "path": ".ystar_cieu.db-shm",
+      "git_status_code": "M",
+      "artifact_class": "DB_SIDECARE",
+      "extension": ".db-shm",
+      "size_bytes": 557056,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "none_or_metadata_only",
+      "notes": "DB sidecar; do not touch contents."
+    },
+    {
+      "path": ".ystar_cieu.db-wal",
+      "git_status_code": "M",
+      "artifact_class": "DB_SIDECARE",
+      "extension": ".db-wal",
+      "size_bytes": 279772752,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "none_or_metadata_only",
+      "notes": "DB sidecar; do not touch contents."
+    },
+    {
+      "path": ".ystar_cieu_omission.db-shm",
+      "git_status_code": "D",
+      "artifact_class": "DB_SIDECARE",
+      "extension": ".db-shm",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "none_or_metadata_only",
+      "notes": "DB sidecar; do not touch contents."
+    },
+    {
+      "path": ".ystar_cieu_omission.db-wal",
+      "git_status_code": "D",
+      "artifact_class": "DB_SIDECARE",
+      "extension": ".db-wal",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "none_or_metadata_only",
+      "notes": "DB sidecar; do not touch contents."
+    },
+    {
+      "path": ".ystar_session.json",
+      "git_status_code": "M",
+      "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
+      "extension": ".json",
+      "size_bytes": 54205,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "manual_triage_future",
+      "notes": "Runtime-like path needs classification."
+    },
+    {
+      "path": ".ystar_warning_queue_archive.json",
+      "git_status_code": "M",
+      "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
+      "extension": ".json",
+      "size_bytes": 98947,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "manual_triage_future",
+      "notes": "Runtime-like path needs classification."
+    },
+    {
+      "path": "aiden_brain.db",
+      "git_status_code": "M",
+      "artifact_class": "DB_CORE",
+      "extension": ".db",
+      "size_bytes": 546619392,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "readonly_db_adapter_future",
+      "notes": "DB content forbidden; metadata only."
+    },
+    {
+      "path": "aiden_brain.db-shm",
+      "git_status_code": "D",
+      "artifact_class": "DB_SIDECARE",
+      "extension": ".db-shm",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "none_or_metadata_only",
+      "notes": "DB sidecar; do not touch contents."
+    },
+    {
+      "path": "aiden_brain.db-wal",
+      "git_status_code": "D",
+      "artifact_class": "DB_SIDECARE",
+      "extension": ".db-wal",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "none_or_metadata_only",
+      "notes": "DB sidecar; do not touch contents."
+    },
+    {
+      "path": "governance/enforce_status_dashboard.md",
+      "git_status_code": "M",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": ".md",
+      "size_bytes": 797,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": "memory/WORLD_STATE.md",
+      "git_status_code": "M",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": ".md",
+      "size_bytes": 5828,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": "scripts/.auto_commit_push_sentinel.json",
+      "git_status_code": "M",
+      "artifact_class": "CACHE_SENTINEL",
+      "extension": ".json",
+      "size_bytes": 433,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "cache_sentinel_classifier_future",
+      "notes": "Ephemeral coordination state."
+    },
+    {
+      "path": "scripts/.brain_l1_cache.json",
+      "git_status_code": "M",
+      "artifact_class": "CACHE_SENTINEL",
+      "extension": ".json",
+      "size_bytes": 1139,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "cache_sentinel_classifier_future",
+      "notes": "Ephemeral coordination state."
+    },
+    {
+      "path": "scripts/.brain_writeback_last_drain",
+      "git_status_code": "M",
+      "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
+      "extension": "",
+      "size_bytes": 17,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "manual_triage_future",
+      "notes": "Runtime-like path needs classification."
+    },
+    {
+      "path": "scripts/.k9_alarm_consumer.pid",
+      "git_status_code": "M",
+      "artifact_class": "DAEMON_STATE",
+      "extension": ".pid",
+      "size_bytes": 5,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "daemon_state_metadata_adapter_future",
+      "notes": "Daemon state content forbidden."
+    },
+    {
+      "path": "scripts/.k9_alarm_consumer_state.json",
+      "git_status_code": "M",
+      "artifact_class": "DAEMON_STATE",
+      "extension": ".json",
+      "size_bytes": 3347,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "daemon_state_metadata_adapter_future",
+      "notes": "Daemon state content forbidden."
+    },
+    {
+      "path": "scripts/.logs/dialogue_contract.log",
+      "git_status_code": "M",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 208298,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/dream_log.json",
+      "git_status_code": "M",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".json",
+      "size_bytes": 16402,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/drift.log",
+      "git_status_code": "M",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 17106,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.session_call_count",
+      "git_status_code": "M",
+      "artifact_class": "CACHE_SENTINEL",
+      "extension": "",
+      "size_bytes": 4,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "cache_sentinel_classifier_future",
+      "notes": "Ephemeral coordination state."
+    },
+    {
+      "path": "scripts/.ystar_active_agent.ppid_11854",
+      "git_status_code": "D",
+      "artifact_class": "ACTIVE_AGENT_MARKER",
+      "extension": ".ppid_11854",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "active_agent_marker_summarizer_future",
+      "notes": "Marker content avoided."
+    },
+    {
+      "path": "scripts/.ystar_active_agent.ppid_38419",
+      "git_status_code": "D",
+      "artifact_class": "ACTIVE_AGENT_MARKER",
+      "extension": ".ppid_38419",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "active_agent_marker_summarizer_future",
+      "notes": "Marker content avoided."
+    },
+    {
+      "path": "scripts/.ystar_active_agent.ppid_72731",
+      "git_status_code": "D",
+      "artifact_class": "ACTIVE_AGENT_MARKER",
+      "extension": ".ppid_72731",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "active_agent_marker_summarizer_future",
+      "notes": "Marker content avoided."
+    },
+    {
+      "path": "scripts/.ystar_active_agent.ppid_76589",
+      "git_status_code": "D",
+      "artifact_class": "ACTIVE_AGENT_MARKER",
+      "extension": ".ppid_76589",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "active_agent_marker_summarizer_future",
+      "notes": "Marker content avoided."
+    },
+    {
+      "path": "scripts/.ystar_active_agent.ppid_77022",
+      "git_status_code": "D",
+      "artifact_class": "ACTIVE_AGENT_MARKER",
+      "extension": ".ppid_77022",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "active_agent_marker_summarizer_future",
+      "notes": "Marker content avoided."
+    },
+    {
+      "path": "scripts/.ystar_active_agent.ppid_91267",
+      "git_status_code": "D",
+      "artifact_class": "ACTIVE_AGENT_MARKER",
+      "extension": ".ppid_91267",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "active_agent_marker_summarizer_future",
+      "notes": "Marker content avoided."
+    },
+    {
+      "path": "scripts/.ystar_active_agent.ppid_987",
+      "git_status_code": "D",
+      "artifact_class": "ACTIVE_AGENT_MARKER",
+      "extension": ".ppid_987",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "active_agent_marker_summarizer_future",
+      "notes": "Marker content avoided."
+    },
+    {
+      "path": "scripts/.ystar_last_board_msg",
+      "git_status_code": "M",
+      "artifact_class": "CACHE_SENTINEL",
+      "extension": "",
+      "size_bytes": 17,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "cache_sentinel_classifier_future",
+      "notes": "Ephemeral coordination state."
+    },
+    {
+      "path": "scripts/__pycache__/_cieu_helpers.cpython-311.pyc",
+      "git_status_code": "M",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": 15374,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/__pycache__/agent_stack.cpython-311.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/__pycache__/aiden_brain.cpython-311.pyc",
+      "git_status_code": "M",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": 20952,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/__pycache__/aiden_dream.cpython-311.pyc",
+      "git_status_code": "M",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": 49722,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/__pycache__/brain_writeback_queue.cpython-311.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/__pycache__/dispatch_role_routing.cpython-311.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/__pycache__/forget_guard.cpython-311.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/__pycache__/hook_ceo_post_output_brain_writeback.cpython-311.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/__pycache__/hook_ceo_pre_output_brain_query.cpython-311.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/__pycache__/per_rule_detectors.cpython-311.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/forget_guard_triggers.log",
+      "git_status_code": "M",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 175583,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/tests/__pycache__/test_aiden_cluster_daemon.cpython-311-pytest-9.0.2.pyc",
+      "git_status_code": "D",
+      "artifact_class": "DAEMON_STATE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "daemon_state_metadata_adapter_future",
+      "notes": "Daemon state content forbidden."
+    },
+    {
+      "path": "scripts/tests/__pycache__/test_aiden_dream_cieu_emit.cpython-311-pytest-9.0.2.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/tests/__pycache__/test_czl_bus.cpython-311-pytest-9.0.2.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/tests/__pycache__/test_dialogue_to_brain_feeder.cpython-311-pytest-9.0.2.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/tests/__pycache__/test_dispatch_board_czl_enforcement.cpython-311-pytest-9.0.2.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/tests/__pycache__/test_dispatch_board_reject_guide.cpython-311-pytest-9.0.2.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/tests/__pycache__/test_ethan_brain.cpython-311-pytest-9.0.2.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/tests/__pycache__/test_gemma_local_smoke.cpython-311-pytest-9.0.2.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/tests/__pycache__/test_hook_stop_czl_auto_publish.cpython-311-pytest-9.0.2.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/tests/__pycache__/test_hook_who_i_am_staleness.cpython-311-pytest-9.0.2.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/tests/__pycache__/test_mint_agent_brain.cpython-311-pytest-9.0.2.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/tests/__pycache__/test_parent_session_commitment_tracker.cpython-311-pytest-9.0.2.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/__pycache__/__init__.cpython-311.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/__pycache__/conftest.cpython-311-pytest-9.0.2.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/governance/__pycache__/test_dream_manual_gate.cpython-311-pytest-9.0.2.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/hook/__pycache__/__init__.cpython-311.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/hook/__pycache__/test_brain_writeback_wiring.cpython-311-pytest-9.0.2.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/kernel/__pycache__/test_brain_writeback_semantic.cpython-311-pytest-9.0.2.pyc",
+      "git_status_code": "D",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": ".claude/settings.json.bak",
+      "git_status_code": "??",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": ".bak",
+      "size_bytes": 2747,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": ".claude/settings.json.bak2",
+      "git_status_code": "??",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": ".bak2",
+      "size_bytes": 2747,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": ".claude/settings.json.bak3",
+      "git_status_code": "??",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": ".bak3",
+      "size_bytes": 2747,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": ".claude/settings.json.bak4",
+      "git_status_code": "??",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": ".bak4",
+      "size_bytes": 2747,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": ".ystar_active_agent.subagent_Ethan-CTO",
+      "git_status_code": "??",
+      "artifact_class": "ACTIVE_AGENT_MARKER",
+      "extension": ".subagent_Ethan-CTO",
+      "size_bytes": 3,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "active_agent_marker_summarizer_future",
+      "notes": "Marker content avoided."
+    },
+    {
+      "path": ".ystar_active_agent.subagent_Leo-Kernel",
+      "git_status_code": "??",
+      "artifact_class": "ACTIVE_AGENT_MARKER",
+      "extension": ".subagent_Leo-Kernel",
+      "size_bytes": 10,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "active_agent_marker_summarizer_future",
+      "notes": "Marker content avoided."
+    },
+    {
+      "path": ".ystar_active_agent.subagent_Maya-Governance",
+      "git_status_code": "??",
+      "artifact_class": "ACTIVE_AGENT_MARKER",
+      "extension": ".subagent_Maya-Governance",
+      "size_bytes": 14,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "active_agent_marker_summarizer_future",
+      "notes": "Marker content avoided."
+    },
+    {
+      "path": ".ystar_active_agent.subagent_Ryan-Platform",
+      "git_status_code": "??",
+      "artifact_class": "ACTIVE_AGENT_MARKER",
+      "extension": ".subagent_Ryan-Platform",
+      "size_bytes": 12,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "active_agent_marker_summarizer_future",
+      "notes": "Marker content avoided."
+    },
+    {
+      "path": ".ystar_active_agent.subagent_Samantha-Secretary",
+      "git_status_code": "??",
+      "artifact_class": "ACTIVE_AGENT_MARKER",
+      "extension": ".subagent_Samantha-Secretary",
+      "size_bytes": 9,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "active_agent_marker_summarizer_future",
+      "notes": "Marker content avoided."
+    },
+    {
+      "path": "backups/brain_20260420_dream1_214137.db",
+      "git_status_code": "??",
+      "artifact_class": "BACKUP_DB",
+      "extension": ".db",
+      "size_bytes": 252686336,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "backup_db_inventory_adapter",
+      "notes": "Backup DB metadata only."
+    },
+    {
+      "path": "gov_mcp/__pycache__/server.cpython-311.pyc",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": 47400,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260425_172837_nrem.md",
+      "git_status_code": "??",
+      "artifact_class": "DREAM_REPORT",
+      "extension": ".md",
+      "size_bytes": 5769469,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "dream_report_bounded_parser_future",
+      "notes": "Dream report content not read."
+    },
+    {
+      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260425_185209_nrem.md",
+      "git_status_code": "??",
+      "artifact_class": "DREAM_REPORT",
+      "extension": ".md",
+      "size_bytes": 5769885,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "dream_report_bounded_parser_future",
+      "notes": "Dream report content not read."
+    },
+    {
+      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260425_200906_nrem.md",
+      "git_status_code": "??",
+      "artifact_class": "DREAM_REPORT",
+      "extension": ".md",
+      "size_bytes": 5770357,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "dream_report_bounded_parser_future",
+      "notes": "Dream report content not read."
+    },
+    {
+      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260425_211403_nrem.md",
+      "git_status_code": "??",
+      "artifact_class": "DREAM_REPORT",
+      "extension": ".md",
+      "size_bytes": 5771469,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "dream_report_bounded_parser_future",
+      "notes": "Dream report content not read."
+    },
+    {
+      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260425_221936_nrem.md",
+      "git_status_code": "??",
+      "artifact_class": "DREAM_REPORT",
+      "extension": ".md",
+      "size_bytes": 5772247,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "dream_report_bounded_parser_future",
+      "notes": "Dream report content not read."
+    },
+    {
+      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260425_232211_nrem.md",
+      "git_status_code": "??",
+      "artifact_class": "DREAM_REPORT",
+      "extension": ".md",
+      "size_bytes": 5773787,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "dream_report_bounded_parser_future",
+      "notes": "Dream report content not read."
+    },
+    {
+      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_012649_nrem.md",
+      "git_status_code": "??",
+      "artifact_class": "DREAM_REPORT",
+      "extension": ".md",
+      "size_bytes": 5775299,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "dream_report_bounded_parser_future",
+      "notes": "Dream report content not read."
+    },
+    {
+      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_031012_nrem.md",
+      "git_status_code": "??",
+      "artifact_class": "DREAM_REPORT",
+      "extension": ".md",
+      "size_bytes": 5775701,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "dream_report_bounded_parser_future",
+      "notes": "Dream report content not read."
+    },
+    {
+      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_045247_nrem.md",
+      "git_status_code": "??",
+      "artifact_class": "DREAM_REPORT",
+      "extension": ".md",
+      "size_bytes": 5776117,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "dream_report_bounded_parser_future",
+      "notes": "Dream report content not read."
+    },
+    {
+      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_064902_nrem.md",
+      "git_status_code": "??",
+      "artifact_class": "DREAM_REPORT",
+      "extension": ".md",
+      "size_bytes": 5776533,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "dream_report_bounded_parser_future",
+      "notes": "Dream report content not read."
+    },
+    {
+      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_082528_nrem.md",
+      "git_status_code": "??",
+      "artifact_class": "DREAM_REPORT",
+      "extension": ".md",
+      "size_bytes": 5776935,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "dream_report_bounded_parser_future",
+      "notes": "Dream report content not read."
+    },
+    {
+      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_092953_nrem.md",
+      "git_status_code": "??",
+      "artifact_class": "DREAM_REPORT",
+      "extension": ".md",
+      "size_bytes": 5778837,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "dream_report_bounded_parser_future",
+      "notes": "Dream report content not read."
+    },
+    {
+      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_110302_nrem.md",
+      "git_status_code": "??",
+      "artifact_class": "DREAM_REPORT",
+      "extension": ".md",
+      "size_bytes": 5779253,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "dream_report_bounded_parser_future",
+      "notes": "Dream report content not read."
+    },
+    {
+      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_123015_nrem.md",
+      "git_status_code": "??",
+      "artifact_class": "DREAM_REPORT",
+      "extension": ".md",
+      "size_bytes": 5779669,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "dream_report_bounded_parser_future",
+      "notes": "Dream report content not read."
+    },
+    {
+      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_135602_nrem.md",
+      "git_status_code": "??",
+      "artifact_class": "DREAM_REPORT",
+      "extension": ".md",
+      "size_bytes": 5780085,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "dream_report_bounded_parser_future",
+      "notes": "Dream report content not read."
+    },
+    {
+      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_151836_nrem.md",
+      "git_status_code": "??",
+      "artifact_class": "DREAM_REPORT",
+      "extension": ".md",
+      "size_bytes": 5780501,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "dream_report_bounded_parser_future",
+      "notes": "Dream report content not read."
+    },
+    {
+      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_165714_nrem.md",
+      "git_status_code": "??",
+      "artifact_class": "DREAM_REPORT",
+      "extension": ".md",
+      "size_bytes": 5780931,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "dream_report_bounded_parser_future",
+      "notes": "Dream report content not read."
+    },
+    {
+      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_182714_nrem.md",
+      "git_status_code": "??",
+      "artifact_class": "DREAM_REPORT",
+      "extension": ".md",
+      "size_bytes": 5781333,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "dream_report_bounded_parser_future",
+      "notes": "Dream report content not read."
+    },
+    {
+      "path": "reports/daily/2026-04-25_mission_report.md",
+      "git_status_code": "??",
+      "artifact_class": "DAILY_REPORT",
+      "extension": ".md",
+      "size_bytes": 1356,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "daily_report_parser_future",
+      "notes": "Daily report content not read."
+    },
+    {
+      "path": "reports/daily/2026-04-25_twin_evolution.md",
+      "git_status_code": "??",
+      "artifact_class": "DAILY_REPORT",
+      "extension": ".md",
+      "size_bytes": 409,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "daily_report_parser_future",
+      "notes": "Daily report content not read."
+    },
+    {
+      "path": "reports/daily/2026-04-26_morning.md",
+      "git_status_code": "??",
+      "artifact_class": "DAILY_REPORT",
+      "extension": ".md",
+      "size_bytes": 895,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "daily_report_parser_future",
+      "notes": "Daily report content not read."
+    },
+    {
+      "path": "reports/drift_hourly/20260425_2100.md",
+      "git_status_code": "??",
+      "artifact_class": "DRIFT_REPORT",
+      "extension": ".md",
+      "size_bytes": 368,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "drift_report_parser_future",
+      "notes": "Drift report content not read."
+    },
+    {
+      "path": "reports/drift_hourly/20260425_2200.md",
+      "git_status_code": "??",
+      "artifact_class": "DRIFT_REPORT",
+      "extension": ".md",
+      "size_bytes": 417,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "drift_report_parser_future",
+      "notes": "Drift report content not read."
+    },
+    {
+      "path": "reports/drift_hourly/20260425_2300.md",
+      "git_status_code": "??",
+      "artifact_class": "DRIFT_REPORT",
+      "extension": ".md",
+      "size_bytes": 368,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "drift_report_parser_future",
+      "notes": "Drift report content not read."
+    },
+    {
+      "path": "reports/drift_hourly/20260426_0900.md",
+      "git_status_code": "??",
+      "artifact_class": "DRIFT_REPORT",
+      "extension": ".md",
+      "size_bytes": 368,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "drift_report_parser_future",
+      "notes": "Drift report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777161992.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 590,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777163130.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 589,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777164079.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 589,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777164587.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 589,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777165127.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 589,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777166103.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 589,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777166104.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 589,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777166375.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 590,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777166672.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 589,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777167510.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 589,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777167511.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 589,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777167828.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 589,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777167829.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 589,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777168818.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 589,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777168819.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 589,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777169345.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 590,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777169907.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 589,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777170518.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 589,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777171319.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 589,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777206265.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 590,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777207243.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 588,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777207568.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 588,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/escalation/hook_health_1777208247.md",
+      "git_status_code": "??",
+      "artifact_class": "ESCALATION_REPORT",
+      "extension": ".md",
+      "size_bytes": 589,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "escalation_report_parser_future",
+      "notes": "Escalation report content not read."
+    },
+    {
+      "path": "reports/whitelist_daily/2026-04-26.md",
+      "git_status_code": "??",
+      "artifact_class": "WHITELIST_REPORT",
+      "extension": ".md",
+      "size_bytes": 101,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "whitelist_report_parser_future",
+      "notes": "Whitelist report content not read."
+    },
+    {
+      "path": "runtime_artifact_quarantine/",
+      "git_status_code": "??",
+      "artifact_class": "FRAMEWORK_FILE",
+      "extension": "",
+      "size_bytes": 480,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Exclude from mining; framework-owned file."
+    },
+    {
+      "path": "scripts/.brain_ingest_sentinel.json",
+      "git_status_code": "??",
+      "artifact_class": "CACHE_SENTINEL",
+      "extension": ".json",
+      "size_bytes": 2597329,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "cache_sentinel_classifier_future",
+      "notes": "Ephemeral coordination state."
+    },
+    {
+      "path": "scripts/.logs/aiden_dream.err.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 12744,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/aiden_dream.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 136888,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/aiden_dream_dryrun.err.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 1638,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/aiden_dream_dryrun.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 23772,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/amendment_deadlines.jsonl",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".jsonl",
+      "size_bytes": 1069,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/auto_commit_push.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 45567,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/auto_commit_push.stderr.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 140453,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/auto_commit_push.stdout.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 11122,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/brain_auto_ingest_daemon.err.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 0,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/brain_auto_ingest_daemon.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 35484,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/broker.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 187,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/cieu_brain_daemon.err.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 1380,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/cieu_brain_daemon.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 419882,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/dialogue_to_brain.err.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 0,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/dialogue_to_brain.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 241507,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/dream_auto_reviewer.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 1864,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/ethan_brain_daemon.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 41286,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/field_backfill.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 65821,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/jordan_brain_daemon.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 24683,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/leo_brain_daemon.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 41274,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/marco_brain_daemon.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 24718,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/maya_brain_daemon.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 41527,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/ryan_brain_daemon.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 49621,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/samantha_brain_daemon.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 215471,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/sofia_brain_daemon.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 24759,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/subscriber.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 146,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.logs/zara_brain_daemon.log",
+      "git_status_code": "??",
+      "artifact_class": "LOG_RUNTIME",
+      "extension": ".log",
+      "size_bytes": 16473,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "bounded_log_summarizer_future",
+      "notes": "Log content forbidden now."
+    },
+    {
+      "path": "scripts/.pending_spawns.jsonl.bak_20260422",
+      "git_status_code": "??",
+      "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
+      "extension": ".bak_20260422",
+      "size_bytes": 78676,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "manual_triage_future",
+      "notes": "Runtime-like path needs classification."
+    },
+    {
+      "path": "scripts/.ystar_active_agent.subagent_Ethan-CTO",
+      "git_status_code": "??",
+      "artifact_class": "ACTIVE_AGENT_MARKER",
+      "extension": ".subagent_Ethan-CTO",
+      "size_bytes": 3,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "active_agent_marker_summarizer_future",
+      "notes": "Marker content avoided."
+    },
+    {
+      "path": "scripts/.ystar_active_agent.subagent_Leo-Kernel",
+      "git_status_code": "??",
+      "artifact_class": "ACTIVE_AGENT_MARKER",
+      "extension": ".subagent_Leo-Kernel",
+      "size_bytes": 10,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "active_agent_marker_summarizer_future",
+      "notes": "Marker content avoided."
+    },
+    {
+      "path": "scripts/.ystar_active_agent.subagent_Maya-Governance",
+      "git_status_code": "??",
+      "artifact_class": "ACTIVE_AGENT_MARKER",
+      "extension": ".subagent_Maya-Governance",
+      "size_bytes": 14,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "active_agent_marker_summarizer_future",
+      "notes": "Marker content avoided."
+    },
+    {
+      "path": "scripts/.ystar_active_agent.subagent_Ryan-Platform",
+      "git_status_code": "??",
+      "artifact_class": "ACTIVE_AGENT_MARKER",
+      "extension": ".subagent_Ryan-Platform",
+      "size_bytes": 12,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "active_agent_marker_summarizer_future",
+      "notes": "Marker content avoided."
+    },
+    {
+      "path": "scripts/.ystar_active_agent.subagent_Samantha-Secretary",
+      "git_status_code": "??",
+      "artifact_class": "ACTIVE_AGENT_MARKER",
+      "extension": ".subagent_Samantha-Secretary",
+      "size_bytes": 9,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "active_agent_marker_summarizer_future",
+      "notes": "Marker content avoided."
+    },
+    {
+      "path": "scripts/.ystar_reply_count_ceo.json",
+      "git_status_code": "??",
+      "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
+      "extension": ".json",
+      "size_bytes": 109,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "manual_triage_future",
+      "notes": "Runtime-like path needs classification."
+    },
+    {
+      "path": "scripts/__pycache__/czl_bus.cpython-311.pyc",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": 11607,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/__pycache__/parent_session_commitment_tracker.cpython-311.pyc",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": 9822,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/__pycache__/skill_library.cpython-311.pyc",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": ".pyc",
+      "size_bytes": 6891,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "scripts/hook_session_start.py.bak_patch1a_20260423_204057",
+      "git_status_code": "??",
+      "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
+      "extension": ".bak_patch1a_20260423_204057",
+      "size_bytes": 23364,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "manual_triage_future",
+      "notes": "Runtime-like path needs classification."
+    },
+    {
+      "path": "scripts/hook_session_start.py.bak_patch1a_fix_20260423_204700",
+      "git_status_code": "??",
+      "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
+      "extension": ".bak_patch1a_fix_20260423_204700",
+      "size_bytes": 27311,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "manual_triage_future",
+      "notes": "Runtime-like path needs classification."
+    },
+    {
+      "path": "scripts/hook_wrapper.py.bak_20260424",
+      "git_status_code": "??",
+      "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
+      "extension": ".bak_20260424",
+      "size_bytes": 31526,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "manual_triage_future",
+      "notes": "Runtime-like path needs classification."
+    },
+    {
+      "path": "scripts/hook_wrapper.py.bak_patch2_20260423_202951",
+      "git_status_code": "??",
+      "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
+      "extension": ".bak_patch2_20260423_202951",
+      "size_bytes": 31522,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "manual_triage_future",
+      "notes": "Runtime-like path needs classification."
+    },
+    {
+      "path": "scripts/tests/test_auto_commit_push.py",
+      "git_status_code": "??",
+      "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
+      "extension": ".py",
+      "size_bytes": 10875,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "manual_triage_future",
+      "notes": "Runtime-like path needs classification."
+    }
+  ]
+}
