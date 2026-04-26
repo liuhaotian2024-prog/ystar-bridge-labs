@@ -8,3 +8,4 @@
 - Exact multi-agent generalization beyond Aiden needs a later pass. Current capsule uses Aiden as the evidenced center and references team/multi-agent assets without creating per-agent brain profiles.
 - `team_dna.md` is older and may conflict with newer actual team registry names.
 - Dream auto-commit status is not asserted. Guardrails are specified, but current operational status needs validation.
+- Shared capsule schema exists in `agent_brains/schema/`, but no static validator script exists yet.

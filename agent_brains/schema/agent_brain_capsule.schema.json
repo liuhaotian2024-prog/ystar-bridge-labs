@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ystar.agent_brains.schema.agent_brain_capsule.v0",
+  "title": "Per-Agent Brain Capsule Profile",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "agent_id",
+    "canonical_name",
+    "aliases",
+    "role_type",
+    "capsule_version",
+    "capsule_status",
+    "source_registry_refs",
+    "role_specific_focus",
+    "primary_layers",
+    "db_content_opened",
+    "scripts_run",
+    "evidence_paths",
+    "open_gaps"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string"
+    },
+    "agent_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "canonical_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "role_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "capsule_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "capsule_status": {
+      "type": "string",
+      "enum": [
+        "reference_only",
+        "draft_reference",
+        "deprecated_reference"
+      ]
+    },
+    "source_registry_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "registry_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "treatment": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "role_specific_focus": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "primary_layers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "dna",
+          "memory",
+          "cognitive_policy",
+          "mission_field",
+          "czl",
+          "cieu_nutrition",
+          "lifecycle",
+          "governance",
+          "execution_channels",
+          "pre_u_counterfactual"
+        ]
+      }
+    },
+    "db_content_opened": {
+      "type": "boolean",
+      "const": false
+    },
+    "scripts_run": {
+      "type": "boolean",
+      "const": false
+    },
+    "evidence_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "open_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "identity_persistence": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "execution_channel_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "delegated_execution_policy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "pre_u_packet_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "chain_review_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "validator_interface_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "console_read_model_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

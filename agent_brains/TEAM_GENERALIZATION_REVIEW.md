@@ -52,6 +52,16 @@ Execution results must return through CIEU, reports, commits, tests, or curated
 memory pathways before they can nourish Ethan's persistent brain. Tool logs and
 terminal history are evidence sources, not canonical memory.
 
+## Shared Capsule Schema
+
+The shared schema in `agent_brains/schema/` was extracted from Aiden, Ethan, and
+Samantha. It should guide future capsules and keep role-brain references
+consistent across agents.
+
+The schema is not enforced by runtime yet. It is a reference standard for static
+validation, required files, role specialization, and the boundary between
+persistent role-brain identity and execution tools.
+
 ## Team Expansion
 
 Next expansion could include governance, platform, finance, or marketing roles

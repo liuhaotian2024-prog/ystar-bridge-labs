@@ -16,3 +16,8 @@ The capsule goal is to connect the prior wheels:
 - Governance boundary: deterministic kernel checks remain separate from cognitive/operational achievement.
 
 This layer is intentionally reference-only. The source of truth remains in the indexed artifacts.
+
+Per-agent capsule instances should follow the shared schema/reference standard
+in `agent_brains/schema/`. That schema was extracted from the existing
+Aiden-CEO, Ethan-CTO, and Samantha-Secretary capsules and is meant to prevent
+future drift without implementing runtime behavior.

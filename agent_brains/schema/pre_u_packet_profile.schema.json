@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ystar.agent_brains.schema.pre_u_packet_profile.v0",
+  "title": "Per-Agent Pre-U Packet Profile",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "agent_id",
+    "has_pre_u_packet_layer",
+    "open_gaps"
+  ],
+  "properties": {
+    "schema_name": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "agent_id": {
+      "type": "string"
+    },
+    "has_pre_u_packet_layer": {
+      "type": "boolean",
+      "description": "Aiden currently has a Pre-U packet layer; Ethan and Samantha do not yet have per-agent variants."
+    },
+    "packet_schema_ref": {
+      "type": "string"
+    },
+    "boundary_alignment_ref": {
+      "type": "string"
+    },
+    "risk_tier_policy_ref": {
+      "type": "string"
+    },
+    "validator_interface_ref": {
+      "type": "string"
+    },
+    "cieu_feedback_ref": {
+      "type": "string"
+    },
+    "brain_learning_ref": {
+      "type": "string"
+    },
+    "open_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

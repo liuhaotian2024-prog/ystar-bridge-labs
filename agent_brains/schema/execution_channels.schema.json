@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ystar.agent_brains.schema.execution_channels.v0",
+  "title": "Agent Execution Channels",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "agent_id",
+    "identity_boundary",
+    "canonical_identity_location",
+    "execution_channels",
+    "delegation_requirements",
+    "evidence_return_policy",
+    "prohibited_interpretations",
+    "open_gaps"
+  ],
+  "properties": {
+    "schema_name": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "agent_id": {
+      "type": "string"
+    },
+    "identity_boundary": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "canonical_identity_location": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "execution_channels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "channel_id",
+          "channel_type",
+          "owns_identity",
+          "role",
+          "allowed_for",
+          "requires_task_packet",
+          "requires_governance_boundary",
+          "requires_cieu_or_report_return",
+          "risk_notes",
+          "not_allowed_for"
+        ],
+        "properties": {
+          "channel_id": {
+            "type": "string"
+          },
+          "channel_type": {
+            "type": "string"
+          },
+          "owns_identity": {
+            "type": "boolean",
+            "const": false,
+            "description": "Tool sessions must not own persistent identity, memory, or authority."
+          },
+          "role": {
+            "type": "string"
+          },
+          "allowed_for": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "requires_task_packet": {
+            "type": "boolean"
+          },
+          "requires_governance_boundary": {
+            "type": "boolean"
+          },
+          "requires_cieu_or_report_return": {
+            "type": "boolean"
+          },
+          "risk_notes": {
+            "type": "string"
+          },
+          "not_allowed_for": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "delegation_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_return_policy": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "prohibited_interpretations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "open_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

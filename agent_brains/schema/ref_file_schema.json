@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ystar.agent_brains.schema.ref_file.v0",
+  "title": "Per-Agent Reference File",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "agent_id"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string"
+    },
+    "agent_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ref_type": {
+      "type": "string",
+      "description": "Recommended future field naming the reference file type."
+    },
+    "refs": {
+      "$ref": "#/$defs/referenceArray"
+    },
+    "references": {
+      "$ref": "#/$defs/referenceArray"
+    },
+    "stages": {
+      "type": "array",
+      "description": "Allowed for lifecycle_refs.json, which is stage-based today.",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    }
+  },
+  "$defs": {
+    "referenceArray": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "layer": {
+            "type": "string"
+          },
+          "role_in_capsule": {
+            "type": "string"
+          },
+          "content_copied": {
+            "type": "boolean"
+          },
+          "content_inspected": {
+            "type": "boolean"
+          },
+          "content_opened_or_inspected": {
+            "type": "boolean"
+          },
+          "treatment": {
+            "type": "string"
+          },
+          "risk": {
+            "type": "string"
+          },
+          "locality": {
+            "type": "string"
+          },
+          "company_or_kernel": {
+            "type": "string"
+          },
+          "implementation_boundary": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  }
+}
