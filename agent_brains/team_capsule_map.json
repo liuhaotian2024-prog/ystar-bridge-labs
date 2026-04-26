@@ -1,0 +1,70 @@
+{
+  "schema_name": "ystar.agent_brains.team_capsule_map",
+  "schema_version": "v0",
+  "team_capsule_status": "reference_generalization_started",
+  "agents": [
+    {
+      "agent_id": "Aiden-CEO",
+      "capsule_path": "agent_brains/Aiden-CEO",
+      "role_type": "agent",
+      "focus": "orchestration, CEO strategy, mission framing, Pre-U counterfactual packet path",
+      "current_status": "committed_reference",
+      "has_pre_u_packet_layer": true,
+      "next_needed_action": "Use as reference pattern; avoid assuming Aiden-specific ontology generalizes."
+    },
+    {
+      "agent_id": "Ethan-CTO",
+      "capsule_path": "agent_brains/Ethan-CTO",
+      "role_type": "agent",
+      "focus": "technical architecture, implementation strategy, code/ruling interpretation, engineering delegation, runtime feasibility",
+      "current_status": "reference_only_v0",
+      "has_pre_u_packet_layer": false,
+      "next_needed_action": "Define Ethan-specific Pre-U packet variant after shared schema stabilizes."
+    },
+    {
+      "agent_id": "Samantha-Secretary",
+      "capsule_path": "agent_brains/Samantha-Secretary",
+      "role_type": "agent_function",
+      "focus": "memory continuity, curation, session context, handoff, secretary behavior, report/memory hygiene",
+      "current_status": "reference_only_v0",
+      "has_pre_u_packet_layer": false,
+      "next_needed_action": "Define secretary-specific continuity and handoff packet variant after shared schema stabilizes."
+    }
+  ],
+  "shared_layers": [
+    "DNA/Ontology",
+    "Memory",
+    "Cognitive Policy",
+    "Mission Field",
+    "CZL",
+    "CIEU Nutrition",
+    "Lifecycle",
+    "Governance"
+  ],
+  "role_specializations": {
+    "Aiden-CEO": [
+      "orchestration",
+      "mission strategy",
+      "Pre-U counterfactual action imagination"
+    ],
+    "Ethan-CTO": [
+      "technical architecture",
+      "implementation feasibility",
+      "engineering delegation"
+    ],
+    "Samantha-Secretary": [
+      "memory continuity",
+      "handoff hygiene",
+      "report and context curation"
+    ]
+  },
+  "open_gaps": [
+    "No shared per-agent capsule schema yet.",
+    "Ethan and Samantha do not yet have Pre-U packet layers.",
+    "No per-agent packet generator exists.",
+    "No DB contents inspected.",
+    "No live L2/L3 writeback validation.",
+    "No console read model for team capsules yet."
+  ],
+  "recommended_next_step": "Create a shared per-agent capsule schema, or create Y-star-gov validator implementation skeleton if governance path is prioritized."
+}

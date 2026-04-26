@@ -1,0 +1,48 @@
+{
+  "schema": "ystar.agent_brain.samantha_secretary.governance_refs.v0",
+  "agent_id": "Samantha-Secretary",
+  "refs": [
+    {
+      "path": "governance_refs/boundaries.md",
+      "governance_role": "cross_repo_boundary",
+      "company_or_kernel": "company",
+      "treatment": "boundary authority",
+      "boundary_note": "ystar-company references governance; Y-star-gov owns enforcement."
+    },
+    {
+      "path": "agent_brain_capsule/runtime_layers.md",
+      "governance_role": "layer_boundary",
+      "company_or_kernel": "company",
+      "treatment": "capsule layer reference",
+      "boundary_note": "defines capsule responsibilities"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/docs/pre_u_packet_validator",
+      "governance_role": "future_packet_validator_interface",
+      "company_or_kernel": "kernel",
+      "treatment": "external docs reference only",
+      "boundary_note": "Y-star-gov validates future packets; Samantha does not own validator."
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/adapters/boundary_enforcer.py",
+      "governance_role": "boundary_enforcement",
+      "company_or_kernel": "kernel",
+      "treatment": "external implementation reference only",
+      "boundary_note": "do not edit from capsule work"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/forget_guard.py",
+      "governance_role": "structured_forget_guard",
+      "company_or_kernel": "kernel",
+      "treatment": "external implementation reference only",
+      "boundary_note": "preserve structured-only doctrine"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/y_star_field_validator.py",
+      "governance_role": "field_validator",
+      "company_or_kernel": "kernel",
+      "treatment": "external implementation reference only",
+      "boundary_note": "kernel validates field claims deterministically"
+    }
+  ]
+}

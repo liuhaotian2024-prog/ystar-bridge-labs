@@ -1,0 +1,37 @@
+{
+  "schema": "ystar.agent_brain.ethan_cto.cognitive_policy_refs.v0",
+  "agent_id": "Ethan-CTO",
+  "refs": [
+    {
+      "path": "agent_brain_capsule/concept_map.md",
+      "cognitive_role": "runtime_layer",
+      "implementation_status": "reference",
+      "treatment": "shared concept map for capsule readers"
+    },
+    {
+      "path": "agent_brain_capsule/runtime_layers.md",
+      "cognitive_role": "runtime_layer",
+      "implementation_status": "reference",
+      "treatment": "shared runtime layer contract"
+    },
+    {
+      "path": ".claude/agents/cto.md",
+      "cognitive_role": "technical_reasoning_profile",
+      "implementation_status": "reference",
+      "treatment": "CTO-specific technical architecture and implementation reasoning profile"
+    },
+    {
+      "path": "agents/CTO.md",
+      "cognitive_role": "legacy_role_profile",
+      "implementation_status": "reference",
+      "treatment": "legacy profile reference"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/cieu_brain_bridge.py",
+      "cognitive_role": "cieu_brain_substrate",
+      "implementation_status": "implemented_external",
+      "treatment": "external kernel reference only"
+    }
+  ],
+  "role_specific_notes": "Ethan's cognitive policy should emphasize architecture/ruling interpretation, implementation feasibility, engineering delegation, and runtime risk."
+}

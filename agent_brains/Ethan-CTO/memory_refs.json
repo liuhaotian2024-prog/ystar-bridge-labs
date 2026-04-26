@@ -1,0 +1,60 @@
+{
+  "schema": "ystar.agent_brain.ethan_cto.memory_refs.v0",
+  "agent_id": "Ethan-CTO",
+  "refs": [
+    {
+      "path": "memory_index/memory_manifest.json",
+      "memory_type": "memory_manifest",
+      "locality": "canonical_host",
+      "content_opened_or_inspected": true,
+      "risk": "low",
+      "safe_handling": "manifest read only",
+      "treatment": "capsule memory source index"
+    },
+    {
+      "path": "memory/WORLD_STATE.md",
+      "memory_type": "working_memory_snapshot",
+      "locality": "canonical_host",
+      "content_opened_or_inspected": false,
+      "risk": "medium",
+      "safe_handling": "runtime-state reference; avoid casual mutation",
+      "treatment": "shared world state reference"
+    },
+    {
+      "path": "memory/session_handoff.md",
+      "memory_type": "session_handoff",
+      "locality": "canonical_host",
+      "content_opened_or_inspected": false,
+      "risk": "medium",
+      "safe_handling": "continuity reference; avoid casual mutation",
+      "treatment": "handoff context reference"
+    },
+    {
+      "path": "memory/boot_packages/cto.json",
+      "memory_type": "boot_package",
+      "locality": "canonical_host",
+      "content_opened_or_inspected": false,
+      "risk": "medium",
+      "safe_handling": "index only; do not rewrite from capsule",
+      "treatment": "CTO L0 boot reference"
+    },
+    {
+      "path": "brain_index/db_manifest.json",
+      "memory_type": "brain_db_manifest",
+      "locality": "canonical_host",
+      "content_opened_or_inspected": true,
+      "risk": "low",
+      "safe_handling": "metadata-only manifest; DB contents remain closed",
+      "treatment": "brain DB metadata authority"
+    },
+    {
+      "path": "ethan_brain.db",
+      "memory_type": "agent_brain_db",
+      "locality": "canonical_host_local_runtime",
+      "content_opened_or_inspected": false,
+      "risk": "high",
+      "safe_handling": "do not open or mutate",
+      "treatment": "metadata-only reference through brain_index/db_manifest.json"
+    }
+  ]
+}

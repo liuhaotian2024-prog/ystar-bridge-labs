@@ -1,0 +1,43 @@
+{
+  "schema": "ystar.agent_brain.samantha_secretary.cognitive_policy_refs.v0",
+  "agent_id": "Samantha-Secretary",
+  "refs": [
+    {
+      "path": "agent_brain_capsule/concept_map.md",
+      "cognitive_role": "runtime_layer",
+      "implementation_status": "reference",
+      "treatment": "shared concept map for capsule readers"
+    },
+    {
+      "path": "agent_brain_capsule/runtime_layers.md",
+      "cognitive_role": "runtime_layer",
+      "implementation_status": "reference",
+      "treatment": "shared runtime layer contract"
+    },
+    {
+      "path": ".claude/agents/secretary.md",
+      "cognitive_role": "memory_curation_profile",
+      "implementation_status": "reference",
+      "treatment": "secretary-specific continuity and curation profile"
+    },
+    {
+      "path": "agents/Secretary.md",
+      "cognitive_role": "legacy_role_profile",
+      "implementation_status": "reference",
+      "treatment": "legacy profile reference"
+    },
+    {
+      "path": "local_secretary_context/README.md",
+      "cognitive_role": "continuity_context",
+      "implementation_status": "reference",
+      "treatment": "local secretary continuity context"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/cieu_brain_bridge.py",
+      "cognitive_role": "cieu_brain_substrate",
+      "implementation_status": "implemented_external",
+      "treatment": "external kernel reference only"
+    }
+  ],
+  "role_specific_notes": "Samantha's cognitive policy should emphasize memory curation, continuity reasoning, context retrieval, handoff hygiene, and report/memory hygiene."
+}

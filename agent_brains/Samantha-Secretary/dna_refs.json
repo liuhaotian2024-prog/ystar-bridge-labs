@@ -1,0 +1,46 @@
+{
+  "schema": "ystar.agent_brain.samantha_secretary.dna_refs.v0",
+  "agent_id": "Samantha-Secretary",
+  "refs": [
+    {
+      "path": "actual_team_registry/agents.json",
+      "category": "team_registry",
+      "content_copied": false,
+      "content_inspected": true,
+      "role_in_capsule": "canonical identity source for Samantha",
+      "treatment": "registry authority"
+    },
+    {
+      "path": ".claude/agents/secretary.md",
+      "category": "claude_agent_profile",
+      "content_copied": false,
+      "content_inspected": false,
+      "role_in_capsule": "active secretary agent profile reference",
+      "treatment": "reference only; do not edit from capsule"
+    },
+    {
+      "path": "agents/Secretary.md",
+      "category": "legacy_role_profile",
+      "content_copied": false,
+      "content_inspected": false,
+      "role_in_capsule": "legacy secretary profile reference",
+      "treatment": "reference as historical role source"
+    },
+    {
+      "path": "memory/boot_packages/secretary.json",
+      "category": "boot_package",
+      "content_copied": false,
+      "content_inspected": false,
+      "role_in_capsule": "secretary boot/memory package reference",
+      "treatment": "index only"
+    },
+    {
+      "path": "local_secretary_context/README.md",
+      "category": "local_secretary_context",
+      "content_copied": false,
+      "content_inspected": false,
+      "role_in_capsule": "continuity and memory/report curation context",
+      "treatment": "canonical secretary-context reference"
+    }
+  ]
+}

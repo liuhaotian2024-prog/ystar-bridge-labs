@@ -1,0 +1,27 @@
+{
+  "schema": "ystar.agent_brain.samantha_secretary.field_refs.v0",
+  "agent_id": "Samantha-Secretary",
+  "refs": [
+    {
+      "path": "agent_brain_capsule/field_runtime.md",
+      "layer": "Mission Field",
+      "relation_to_agent": "Frames continuity and curation as mission-field alignment rather than passive note keeping.",
+      "treatment": "shared capsule reference",
+      "implementation_boundary": "company_reference"
+    },
+    {
+      "path": "reports/ceo/strategic/Y_STAR_FIELD_THEORY_SPEC.md",
+      "layer": "Mission Field",
+      "relation_to_agent": "Company-side Y* Field theory reference for continuity/curation alignment.",
+      "treatment": "reference if present",
+      "implementation_boundary": "company_reference"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/y_star_field_validator.py",
+      "layer": "Mission Field",
+      "relation_to_agent": "External kernel validator boundary for field claims.",
+      "treatment": "external reference only",
+      "implementation_boundary": "kernel_validator"
+    }
+  ]
+}

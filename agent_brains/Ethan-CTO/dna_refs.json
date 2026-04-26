@@ -1,0 +1,38 @@
+{
+  "schema": "ystar.agent_brain.ethan_cto.dna_refs.v0",
+  "agent_id": "Ethan-CTO",
+  "refs": [
+    {
+      "path": "actual_team_registry/agents.json",
+      "category": "team_registry",
+      "content_copied": false,
+      "content_inspected": true,
+      "role_in_capsule": "canonical identity source for Ethan",
+      "treatment": "registry authority"
+    },
+    {
+      "path": ".claude/agents/cto.md",
+      "category": "claude_agent_profile",
+      "content_copied": false,
+      "content_inspected": false,
+      "role_in_capsule": "active CTO agent profile reference",
+      "treatment": "reference only; do not edit from capsule"
+    },
+    {
+      "path": "agents/CTO.md",
+      "category": "legacy_role_profile",
+      "content_copied": false,
+      "content_inspected": false,
+      "role_in_capsule": "legacy CTO profile reference",
+      "treatment": "reference as historical role source"
+    },
+    {
+      "path": "memory/boot_packages/cto.json",
+      "category": "boot_package",
+      "content_copied": false,
+      "content_inspected": false,
+      "role_in_capsule": "CTO boot/memory package reference",
+      "treatment": "index only"
+    }
+  ]
+}

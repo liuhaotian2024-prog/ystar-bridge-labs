@@ -1,0 +1,50 @@
+{
+  "schema": "ystar.agent_brain.samantha_secretary.profile.v0",
+  "agent_id": "Samantha-Secretary",
+  "canonical_name": "Samantha Lin",
+  "aliases": ["Samantha-Secretary", "secretary", "Samantha"],
+  "role_type": "agent_function",
+  "capsule_version": "v0",
+  "capsule_status": "reference_only",
+  "source_registry_refs": [
+    {
+      "path": "actual_team_registry/agents.json",
+      "registry_id": "secretary",
+      "status": "active",
+      "treatment": "canonical team registry source"
+    }
+  ],
+  "role_specific_focus": [
+    "memory continuity",
+    "handoff",
+    "curation",
+    "session context",
+    "secretary behavior",
+    "local continuity",
+    "report and memory hygiene"
+  ],
+  "primary_layers": ["dna", "memory", "cognitive_policy", "mission_field", "czl", "cieu_nutrition", "lifecycle", "governance"],
+  "db_content_opened": false,
+  "scripts_run": false,
+  "evidence_paths": [
+    "actual_team_registry/agents.json",
+    ".claude/agents/secretary.md",
+    "agents/Secretary.md",
+    "memory/boot_packages/secretary.json",
+    "local_secretary_context/README.md",
+    "brain_index/db_manifest.json",
+    "memory_index/memory_manifest.json",
+    "agent_brain_capsule/runtime_layers.md",
+    "agent_brain_capsule/czl_runtime_contract.md",
+    "agent_brain_capsule/cieu_nutrition.md",
+    "agent_brain_capsule/field_runtime.md",
+    "governance_refs/boundaries.md"
+  ],
+  "open_gaps": [
+    "Secretary memory curation runtime was not validated.",
+    "Exact handoff lifecycle is not executable here.",
+    "Memory/report hygiene policy needs validation.",
+    "Samantha-specific Pre-U packet schema does not exist yet.",
+    "No DB/log inspection was performed."
+  ]
+}

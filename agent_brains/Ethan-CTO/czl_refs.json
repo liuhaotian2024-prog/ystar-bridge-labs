@@ -1,0 +1,34 @@
+{
+  "schema": "ystar.agent_brain.ethan_cto.czl_refs.v0",
+  "agent_id": "Ethan-CTO",
+  "refs": [
+    {
+      "path": "CZL.md",
+      "relation_to_czl": "Shared company-side CZL definition for engineering closure.",
+      "company_or_kernel": "company",
+      "treatment": "canonical reference",
+      "status": "reference"
+    },
+    {
+      "path": "agent_brain_capsule/czl_runtime_contract.md",
+      "relation_to_czl": "Runtime-facing CZL contract used to reason about implementation residuals.",
+      "company_or_kernel": "company",
+      "treatment": "capsule reference",
+      "status": "reference"
+    },
+    {
+      "path": "reports/proposals/charter_amendment_014_closed_loop_cieu_residual_engine.md",
+      "relation_to_czl": "Closed-loop CIEU residual reference if present.",
+      "company_or_kernel": "company",
+      "treatment": "governance design reference",
+      "status": "reference"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/docs/pre_u_packet_validator",
+      "relation_to_czl": "External future validator interface related to packet residual logic.",
+      "company_or_kernel": "kernel",
+      "treatment": "external docs reference only",
+      "status": "spec_only"
+    }
+  ]
+}

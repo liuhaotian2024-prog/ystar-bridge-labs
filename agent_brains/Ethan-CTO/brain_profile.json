@@ -1,0 +1,47 @@
+{
+  "schema": "ystar.agent_brain.ethan_cto.profile.v0",
+  "agent_id": "Ethan-CTO",
+  "canonical_name": "Ethan Wright",
+  "aliases": ["Ethan-CTO", "cto", "Ethan"],
+  "role_type": "agent",
+  "capsule_version": "v0",
+  "capsule_status": "reference_only",
+  "source_registry_refs": [
+    {
+      "path": "actual_team_registry/agents.json",
+      "registry_id": "cto",
+      "status": "active",
+      "treatment": "canonical team registry source"
+    }
+  ],
+  "role_specific_focus": [
+    "technical architecture",
+    "implementation strategy",
+    "code and ruling interpretation",
+    "engineering delegation",
+    "runtime feasibility"
+  ],
+  "primary_layers": ["dna", "memory", "cognitive_policy", "mission_field", "czl", "cieu_nutrition", "lifecycle", "governance"],
+  "db_content_opened": false,
+  "scripts_run": false,
+  "evidence_paths": [
+    "actual_team_registry/agents.json",
+    ".claude/agents/cto.md",
+    "agents/CTO.md",
+    "memory/boot_packages/cto.json",
+    "brain_index/db_manifest.json",
+    "memory_index/memory_manifest.json",
+    "agent_brain_capsule/runtime_layers.md",
+    "agent_brain_capsule/czl_runtime_contract.md",
+    "agent_brain_capsule/cieu_nutrition.md",
+    "agent_brain_capsule/field_runtime.md",
+    "governance_refs/boundaries.md"
+  ],
+  "open_gaps": [
+    "Ethan DB and brain state were not inspected.",
+    "Live implementation authority and handoff behavior need validation.",
+    "Exact coding/runtime handoff behavior needs validation.",
+    "Ethan-specific Pre-U packet schema does not exist yet.",
+    "No per-agent predictor or generator exists."
+  ]
+}

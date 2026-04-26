@@ -1,0 +1,36 @@
+{
+  "schema": "ystar.agent_brain.samantha_secretary.cieu_nutrition_refs.v0",
+  "agent_id": "Samantha-Secretary",
+  "refs": [
+    {
+      "path": "agent_brain_capsule/cieu_nutrition.md",
+      "role": "shared_cieu_nutrition_reference",
+      "content_opened": true,
+      "treatment": "shared capsule reference"
+    },
+    {
+      "path": "brain_index/db_manifest.json",
+      "role": "brain_db_metadata",
+      "content_opened": true,
+      "treatment": "metadata-only DB reference"
+    },
+    {
+      "path": "runtime_mechanism_inventory/mechanisms.json",
+      "role": "mechanism_inventory",
+      "content_opened": false,
+      "treatment": "reference for CIEU/brain mechanisms"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/cieu_brain_bridge.py",
+      "role": "brain_projection",
+      "content_opened": false,
+      "treatment": "external implementation reference only"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/cieu_brain_streamer.py",
+      "role": "streaming",
+      "content_opened": false,
+      "treatment": "external implementation reference only"
+    }
+  ]
+}
