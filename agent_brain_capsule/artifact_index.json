@@ -1,0 +1,173 @@
+{
+  "schema": "ystar.agent_brain_capsule.artifact_index.v1",
+  "purpose": "Reference-only index of existing Y* Agent Brain Capsule artifacts. No source content copied.",
+  "content_policy": {
+    "content_copied": false,
+    "db_contents_opened": false,
+    "new_theory_created": false
+  },
+  "artifacts": [
+    {
+      "id": "aiden_ontology",
+      "path": "/Users/haotianliu/.openclaw/workspace/ystar-company/knowledge/ceo/AIDEN_ONTOLOGY.md",
+      "category": "identity_and_cognition",
+      "canonical_status": "canonical",
+      "layer": "DNA",
+      "content_copied": false,
+      "treatment": "Use as company-side identity, first-principles, and counterfactual operating-system reference."
+    },
+    {
+      "id": "team_dna",
+      "path": "/Users/haotianliu/.openclaw/workspace/ystar-company/knowledge/ceo/team_dna.md",
+      "category": "team_operating_memory",
+      "canonical_status": "adjacent",
+      "layer": "DNA",
+      "content_copied": false,
+      "treatment": "Use as historical team/Board workflow context; reconcile with current registry before runtime use."
+    },
+    {
+      "id": "czl_definition",
+      "path": "/Users/haotianliu/.openclaw/workspace/ystar-company/CZL.md",
+      "category": "czl_definition",
+      "canonical_status": "canonical",
+      "layer": "CZL",
+      "content_copied": false,
+      "treatment": "Use as canonical concise CZL definition."
+    },
+    {
+      "id": "amendment_014_rle",
+      "path": "/Users/haotianliu/.openclaw/workspace/ystar-company/reports/proposals/charter_amendment_014_closed_loop_cieu_residual_engine.md",
+      "category": "residual_loop_design",
+      "canonical_status": "canonical",
+      "layer": "CZL",
+      "content_copied": false,
+      "treatment": "Use as residual-driven closed-loop design reference; implementation status needs validation."
+    },
+    {
+      "id": "y_star_field_theory_spec",
+      "path": "/Users/haotianliu/.openclaw/workspace/ystar-company/reports/ceo/strategic/Y_STAR_FIELD_THEORY_SPEC.md",
+      "category": "mission_field_spec",
+      "canonical_status": "canonical",
+      "layer": "Field",
+      "content_copied": false,
+      "treatment": "Use as company-side Y* Field theory spec; Section 11 correction is binding for governance/operations split."
+    },
+    {
+      "id": "y_star_field_validator",
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/y_star_field_validator.py",
+      "category": "field_validator_implementation",
+      "canonical_status": "implementation",
+      "layer": "Field",
+      "content_copied": false,
+      "treatment": "Keep kernel-side; reference deterministic m_functor validation and Goodhart guard."
+    },
+    {
+      "id": "czl_brain_3loop_final",
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/reports/cto/CZL-BRAIN-3LOOP-FINAL-ruling.md",
+      "category": "brain_architecture_ruling",
+      "canonical_status": "canonical",
+      "layer": "Lifecycle",
+      "content_copied": false,
+      "treatment": "Use as binding L1/L2/L3 brain architecture ruling."
+    },
+    {
+      "id": "czl_brain_bipartite_ruling",
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/reports/cto/CZL-BRAIN-BIPARTITE-ruling.md",
+      "category": "brain_learning_ruling",
+      "canonical_status": "canonical",
+      "layer": "CIEU Nutrition",
+      "content_copied": false,
+      "treatment": "Use as canonical separation of Hebbian associative memory and CIEU bipartite evaluative learning."
+    },
+    {
+      "id": "czl_brain_bipartite_p2_algo",
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/reports/cto/CZL-BRAIN-BIPARTITE-P2-ALGO-ruling.md",
+      "category": "brain_learning_algorithm_ruling",
+      "canonical_status": "canonical",
+      "layer": "CIEU Nutrition",
+      "content_copied": false,
+      "treatment": "Use as algorithmic constraints for contrastive/bipartite learning."
+    },
+    {
+      "id": "czl_brain_l3_guard_rails",
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/reports/cto/CZL-BRAIN-L3-GUARD-RAILS-ruling.md",
+      "category": "dream_guardrails_ruling",
+      "canonical_status": "canonical",
+      "layer": "Lifecycle",
+      "content_copied": false,
+      "treatment": "Use as L3 dream auto-mode safety and rollback reference."
+    },
+    {
+      "id": "cieu_brain_bridge",
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/cieu_brain_bridge.py",
+      "category": "brain_activation_implementation",
+      "canonical_status": "implementation",
+      "layer": "Cognitive Substrate",
+      "content_copied": false,
+      "treatment": "Keep kernel-side; reference 6D projection, activation insertion, and Hebbian co-firing."
+    },
+    {
+      "id": "cieu_brain_streamer",
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/cieu_brain_streamer.py",
+      "category": "cieu_to_brain_streaming",
+      "canonical_status": "implementation",
+      "layer": "CIEU Nutrition",
+      "content_copied": false,
+      "treatment": "Keep kernel-side; reference continuous CIEU-to-brain streaming."
+    },
+    {
+      "id": "cieu_brain_learning",
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/cieu_brain_learning.py",
+      "category": "brain_learning_implementation",
+      "canonical_status": "implementation",
+      "layer": "CIEU Nutrition",
+      "content_copied": false,
+      "treatment": "Keep kernel-side; reference centroid drift and learned event-type refinement."
+    },
+    {
+      "id": "brain_auto_ingest",
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/brain_auto_ingest.py",
+      "category": "memory_to_brain_ingest",
+      "canonical_status": "implementation",
+      "layer": "Memory",
+      "content_copied": false,
+      "treatment": "Keep kernel-side; reference boundary ingest from reports/knowledge/memory."
+    },
+    {
+      "id": "brain_dream_scheduler",
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/brain_dream_scheduler.py",
+      "category": "dream_consolidation_implementation",
+      "canonical_status": "implementation",
+      "layer": "Lifecycle",
+      "content_copied": false,
+      "treatment": "Keep kernel-side; reference L3 dream proposal generation."
+    },
+    {
+      "id": "memory_and_degradation_strategy",
+      "path": "/Users/haotianliu/.openclaw/workspace/ystar-company/reports/MEMORY_AND_DEGRADATION_STRATEGY.md",
+      "category": "memory_strategy",
+      "canonical_status": "adjacent",
+      "layer": "Memory",
+      "content_copied": false,
+      "treatment": "Use as memory/degradation strategy context; validate current implementation separately."
+    },
+    {
+      "id": "world_state",
+      "path": "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/WORLD_STATE.md",
+      "category": "working_state",
+      "canonical_status": "partial",
+      "layer": "Memory",
+      "content_copied": false,
+      "treatment": "Runtime-state reference only; do not rewrite from capsule."
+    },
+    {
+      "id": "session_handoff",
+      "path": "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/session_handoff.md",
+      "category": "handoff_memory",
+      "canonical_status": "partial",
+      "layer": "Lifecycle",
+      "content_copied": false,
+      "treatment": "Use as handoff/runtime status reference; validate freshness before use."
+    }
+  ]
+}
