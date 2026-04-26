@@ -8,6 +8,7 @@
 - Aiden capsule chain.
 - Ethan/Samantha base capsules.
 - Y-star-gov validator interface spec.
+- Static read-model validation utility.
 
 ## Not Ready
 
@@ -19,6 +20,8 @@
 - DB-safe query adapter.
 - Frontend console.
 - Live team-state refresh.
+- CI wiring for validator.
+- Semantic validation against live runtime remains unavailable.
 
 ## Recommended Next Steps
 

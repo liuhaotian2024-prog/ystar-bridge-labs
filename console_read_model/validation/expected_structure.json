@@ -1,0 +1,78 @@
+{
+  "schema_name": "ystar.console_read_model.validation.expected_structure",
+  "schema_version": "v0",
+  "required_agents": [
+    "Aiden-CEO",
+    "Ethan-CTO",
+    "Samantha-Secretary"
+  ],
+  "required_console_files": [
+    "console_read_model/README.md",
+    "console_read_model/team_brain_console.md",
+    "console_read_model/team_brain_read_model.json",
+    "console_read_model/agent_cards.json",
+    "console_read_model/capability_matrix.json",
+    "console_read_model/runtime_readiness.md",
+    "console_read_model/governance_links.md",
+    "console_read_model/data_sources.md",
+    "console_read_model/open_gaps.md"
+  ],
+  "required_shared_schema_files": [
+    "agent_brains/schema/README.md",
+    "agent_brains/schema/agent_brain_capsule.schema.json",
+    "agent_brains/schema/ref_file_schema.json",
+    "agent_brains/schema/execution_channels.schema.json",
+    "agent_brains/schema/pre_u_packet_profile.schema.json",
+    "agent_brains/schema/capsule_required_files.md",
+    "agent_brains/schema/capsule_validation_policy.md",
+    "agent_brains/schema/role_specialization_guide.md",
+    "agent_brains/schema/migration_notes.md",
+    "agent_brains/schema/open_gaps.md"
+  ],
+  "required_base_capsule_files": [
+    "README.md",
+    "brain_profile.json",
+    "dna_refs.json",
+    "memory_refs.json",
+    "field_refs.json",
+    "czl_refs.json",
+    "cognitive_policy_refs.json",
+    "cieu_nutrition_refs.json",
+    "lifecycle_refs.json",
+    "governance_refs.json",
+    "open_gaps.md"
+  ],
+  "required_aiden_extended_files": [
+    "CHAIN_REVIEW.md",
+    "chain_map.json",
+    "next_runtime_steps.md",
+    "pre_u_counterfactual/packet_schema.json",
+    "pre_u_counterfactual/boundary_alignment/boundary_map.json"
+  ],
+  "required_ethan_extended_files": [
+    "execution_channels.json",
+    "embodiment_boundary.md"
+  ],
+  "unsafe_direct_source_patterns": [
+    ".db",
+    ".db-wal",
+    ".db-shm",
+    "scripts/.logs",
+    "__pycache__",
+    "active-agent markers",
+    "pid/state runtime files"
+  ],
+  "expected_safe_model_files": [
+    "actual_team_registry/*.json",
+    "actual_team_registry/*.md",
+    "agent_brains/**/*.json",
+    "agent_brains/**/*.md",
+    "agent_brain_capsule/*.json",
+    "agent_brain_capsule/*.md",
+    "brain_index/db_manifest.json",
+    "memory_index/memory_manifest.json",
+    "governance_refs/boundaries.md",
+    "runtime_mechanism_inventory/mechanisms.json",
+    "company_state/current_world_state_ref.md"
+  ]
+}

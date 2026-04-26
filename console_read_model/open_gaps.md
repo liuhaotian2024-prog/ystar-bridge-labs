@@ -10,3 +10,6 @@
 - No live team state refresh.
 - No capsule static validator.
 - No multi-agent Pre-U packet generalization yet.
+- Static validator exists but is not yet wired into CI.
+- Validator does not inspect DBs or live runtime state.
+- Validator does not guarantee semantic correctness.
