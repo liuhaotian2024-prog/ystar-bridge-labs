@@ -13,3 +13,4 @@
 - Static validator exists but is not yet wired into CI.
 - Validator does not inspect DBs or live runtime state.
 - Validator does not guarantee semantic correctness.
+- Static snapshot generator exists but has no frontend or live refresh.

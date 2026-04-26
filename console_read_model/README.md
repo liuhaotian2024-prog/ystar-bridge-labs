@@ -17,3 +17,7 @@ This directory summarizes:
 This is not a frontend, not runtime execution, not a validator implementation,
 and not DB ingestion. Future console work should consume these curated read-model
 files first and only use raw stores through later reviewed safe adapters.
+
+`console_read_model/loader/` contains a static snapshot generator that compiles
+these curated inputs into `console_read_model/generated/` for future UI/runtime
+consumers. The generated files are derived artifacts, not live runtime state.

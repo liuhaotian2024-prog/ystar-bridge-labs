@@ -1,0 +1,249 @@
+{
+  "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
+  "schema_version": "v0",
+  "generated_by": "console_read_model/loader/build_team_console_snapshot.py",
+  "source_files": [
+    "console_read_model/team_brain_read_model.json",
+    "console_read_model/agent_cards.json",
+    "console_read_model/capability_matrix.json",
+    "agent_brains/team_capsule_map.json",
+    "agent_brains/Aiden-CEO/brain_profile.json",
+    "agent_brains/Ethan-CTO/brain_profile.json",
+    "agent_brains/Samantha-Secretary/brain_profile.json",
+    "agent_brains/Ethan-CTO/execution_channels.json"
+  ],
+  "agents": [
+    {
+      "agent_id": "Aiden-CEO",
+      "canonical_name": "Aiden Liu",
+      "role_type": "agent",
+      "capsule_path": "agent_brains/Aiden-CEO",
+      "readiness_level": "reference_ready",
+      "focus": "orchestration, CEO strategy, mission framing, Pre-U counterfactual packet path",
+      "card_status": "reference_ready",
+      "capabilities": [
+        "orchestration",
+        "mission framing",
+        "pre-U packet reference path",
+        "governance boundary awareness"
+      ],
+      "limitations": [
+        "not executable runtime",
+        "DB contents not inspected",
+        "packet generator not implemented"
+      ],
+      "next_actions": [
+        "Use as reference pattern",
+        "Avoid assuming Aiden-specific ontology generalizes"
+      ],
+      "has_pre_u_packet": true,
+      "has_chain_review": true,
+      "has_execution_channels": false
+    },
+    {
+      "agent_id": "Ethan-CTO",
+      "canonical_name": "Ethan Wright",
+      "role_type": "agent",
+      "capsule_path": "agent_brains/Ethan-CTO",
+      "readiness_level": "partial",
+      "focus": "technical architecture, implementation strategy, code/ruling interpretation, engineering delegation, runtime feasibility",
+      "card_status": "partial_reference_ready",
+      "capabilities": [
+        "technical architecture",
+        "implementation reasoning",
+        "delegated execution substrate awareness",
+        "governance boundary awareness"
+      ],
+      "limitations": [
+        "no Ethan-specific Pre-U packet layer",
+        "no executable delegation envelope",
+        "no automatic CIEU return path"
+      ],
+      "next_actions": [
+        "Define Ethan-specific Pre-U packet variant",
+        "Design execution-channel risk policy after interface boundaries stabilize"
+      ],
+      "has_pre_u_packet": false,
+      "has_chain_review": false,
+      "has_execution_channels": true
+    },
+    {
+      "agent_id": "Samantha-Secretary",
+      "canonical_name": "Samantha Lin",
+      "role_type": "agent_function",
+      "capsule_path": "agent_brains/Samantha-Secretary",
+      "readiness_level": "partial",
+      "focus": "memory continuity, curation, session context, handoff, secretary behavior, report/memory hygiene",
+      "card_status": "partial_reference_ready",
+      "capabilities": [
+        "memory continuity",
+        "secretary curation",
+        "handoff hygiene",
+        "governance boundary awareness"
+      ],
+      "limitations": [
+        "no Samantha-specific Pre-U packet layer",
+        "secretary curation runtime not validated",
+        "no DB/log inspection"
+      ],
+      "next_actions": [
+        "Define continuity/handoff packet variant",
+        "Validate memory/report hygiene policy in a later docs-first pass"
+      ],
+      "has_pre_u_packet": false,
+      "has_chain_review": false,
+      "has_execution_channels": false
+    }
+  ],
+  "capabilities": {
+    "schema_name": "ystar.console_read_model.capability_matrix.v0",
+    "schema_version": "v0",
+    "capabilities": [
+      "orchestration",
+      "technical_architecture",
+      "implementation_reasoning",
+      "memory_continuity",
+      "secretary_curation",
+      "pre_u_counterfactual_imagination",
+      "execution_channel_delegation",
+      "governance_boundary_awareness",
+      "cieu_nutrition_awareness",
+      "field_alignment_awareness",
+      "czl_residual_awareness",
+      "console_readiness"
+    ],
+    "agents": [
+      "Aiden-CEO",
+      "Ethan-CTO",
+      "Samantha-Secretary"
+    ],
+    "matrix": {
+      "orchestration": {
+        "Aiden-CEO": "primary",
+        "Ethan-CTO": "secondary",
+        "Samantha-Secretary": "referenced"
+      },
+      "technical_architecture": {
+        "Aiden-CEO": "referenced",
+        "Ethan-CTO": "primary",
+        "Samantha-Secretary": "not_present"
+      },
+      "implementation_reasoning": {
+        "Aiden-CEO": "referenced",
+        "Ethan-CTO": "primary",
+        "Samantha-Secretary": "not_present"
+      },
+      "memory_continuity": {
+        "Aiden-CEO": "referenced",
+        "Ethan-CTO": "referenced",
+        "Samantha-Secretary": "primary"
+      },
+      "secretary_curation": {
+        "Aiden-CEO": "not_present",
+        "Ethan-CTO": "not_present",
+        "Samantha-Secretary": "primary"
+      },
+      "pre_u_counterfactual_imagination": {
+        "Aiden-CEO": "primary",
+        "Ethan-CTO": "future",
+        "Samantha-Secretary": "future"
+      },
+      "execution_channel_delegation": {
+        "Aiden-CEO": "referenced",
+        "Ethan-CTO": "primary",
+        "Samantha-Secretary": "future"
+      },
+      "governance_boundary_awareness": {
+        "Aiden-CEO": "referenced",
+        "Ethan-CTO": "referenced",
+        "Samantha-Secretary": "referenced"
+      },
+      "cieu_nutrition_awareness": {
+        "Aiden-CEO": "referenced",
+        "Ethan-CTO": "referenced",
+        "Samantha-Secretary": "referenced"
+      },
+      "field_alignment_awareness": {
+        "Aiden-CEO": "referenced",
+        "Ethan-CTO": "referenced",
+        "Samantha-Secretary": "referenced"
+      },
+      "czl_residual_awareness": {
+        "Aiden-CEO": "referenced",
+        "Ethan-CTO": "referenced",
+        "Samantha-Secretary": "referenced"
+      },
+      "console_readiness": {
+        "Aiden-CEO": "primary",
+        "Ethan-CTO": "secondary",
+        "Samantha-Secretary": "secondary"
+      }
+    },
+    "notes": [
+      "primary means role-specific focus is directly evidenced in the capsule.",
+      "secondary means capability supports the role but is not the primary identity.",
+      "referenced means shared capsule/governance references exist.",
+      "future means planned but not yet instantiated.",
+      "not_present means no current capsule evidence claims the capability."
+    ]
+  },
+  "readiness": {
+    "reference_docs": "ready",
+    "team_read_model": "ready",
+    "capsule_schema": "ready",
+    "frontend_console": "not_ready",
+    "runtime_generator": "not_ready",
+    "validator_implementation": "not_ready",
+    "hook_enforcement": "not_ready",
+    "cieu_delta_schema": "not_ready",
+    "db_safe_adapter": "not_ready"
+  },
+  "governance_summary": {
+    "principle": "labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns",
+    "pre_u_packet_validator_spec": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/docs/pre_u_packet_validator/",
+    "boundary_docs": "governance_refs/boundaries.md",
+    "hook_role": "hook enforces validator/gate decisions but should not reason deeply",
+    "cieu_role": "CIEU records actual evidence and teaches through predicted-vs-actual deltas"
+  },
+  "data_safety": {
+    "safe_to_read": [
+      "actual_team_registry/*.json",
+      "actual_team_registry/*.md",
+      "agent_brains/**/*.json",
+      "agent_brains/**/*.md",
+      "agent_brain_capsule/*.json",
+      "agent_brain_capsule/*.md",
+      "brain_index/db_manifest.json",
+      "memory_index/memory_manifest.json",
+      "governance_refs/boundaries.md",
+      "runtime_mechanism_inventory/mechanisms.json",
+      "company_state/current_world_state_ref.md"
+    ],
+    "unsafe_to_read_directly": [
+      "*.db",
+      "*.db-wal",
+      "*.db-shm",
+      "scripts/.logs/*",
+      "active-agent markers",
+      "daemon pid/state files",
+      "__pycache__",
+      "raw runtime reports unless curated/indexed"
+    ],
+    "reason": "Console must consume curated read models and manifests, not raw operational stores or mutable runtime state."
+  },
+  "open_gaps": [
+    "No static console loader.",
+    "No frontend UI.",
+    "No runtime generator.",
+    "No DB-safe adapter.",
+    "No CIEU prediction-delta schema.",
+    "No hook enforcement.",
+    "No validator implementation.",
+    "No live team state refresh.",
+    "No capsule static validator.",
+    "No multi-agent Pre-U packet generalization yet."
+  ],
+  "warnings": [
+    "Ethan execution channels are present as reference-only boundaries, not runtime launchers."
+  ]
+}

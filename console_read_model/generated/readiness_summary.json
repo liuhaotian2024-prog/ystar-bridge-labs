@@ -1,0 +1,46 @@
+{
+  "schema_name": "ystar.console_read_model.generated.readiness_summary",
+  "schema_version": "v0",
+  "ready_now": [
+    "reference docs",
+    "team read model",
+    "capsule schema",
+    "Aiden capsule chain",
+    "Ethan/Samantha base capsules",
+    "Y-star-gov validator interface spec",
+    "static read-model validation utility",
+    "static snapshot generator"
+  ],
+  "not_ready": [
+    "runtime generator",
+    "hook enforcement",
+    "validator implementation",
+    "CIEU delta schema",
+    "brain writeback integration validation",
+    "DB-safe query adapter",
+    "frontend console",
+    "live team-state refresh",
+    "CI wiring for validator/generator",
+    "semantic validation against live runtime"
+  ],
+  "recommended_next_steps": [
+    "wire static validator and loader into CI",
+    "build a frontend that reads generated snapshots only",
+    "create Y-star-gov validator skeleton",
+    "define CIEU prediction-delta schema",
+    "add Ethan/Samantha Pre-U packet variants"
+  ],
+  "blockers": [
+    "no DB-safe adapter",
+    "no live validator implementation",
+    "no hook enforcement",
+    "no semantic runtime truth guarantee"
+  ],
+  "safety_boundaries": [
+    "no DB reads",
+    "no log reads",
+    "no daemon/runtime state reads",
+    "no hook/governance execution",
+    "curated read-model files only"
+  ]
+}

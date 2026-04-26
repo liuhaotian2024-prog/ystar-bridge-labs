@@ -88,6 +88,8 @@ def main() -> int:
         return 1
 
     required_console_files = expected["required_console_files"]
+    required_loader_files = expected.get("required_loader_files", [])
+    required_generated_files = expected.get("required_generated_files", [])
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -98,6 +100,17 @@ def main() -> int:
         check_exists(path, report, "console file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "console JSON")
+
+    for rel in required_loader_files:
+        path = ROOT / rel
+        check_exists(path, report, "loader file")
+
+    generated_json: dict[str, Any] = {}
+    for rel in required_generated_files:
+        path = ROOT / rel
+        check_exists(path, report, "generated file")
+        if path.suffix == ".json" and path.exists():
+            generated_json[rel] = check_json_file(path, report, "generated JSON")
 
     for rel in required_schema_files:
         path = ROOT / rel
@@ -174,6 +187,23 @@ def main() -> int:
                 report.pass_(f"team capsule map agent present: {agent_id}")
             else:
                 report.fail(f"team capsule map agent missing: {agent_id}")
+
+    snapshot = generated_json.get("console_read_model/generated/team_console_snapshot.json")
+    if snapshot:
+        agents = {a.get("agent_id") for a in snapshot.get("agents", [])}
+        for agent_id in required_agents:
+            if agent_id in agents:
+                report.pass_(f"generated snapshot agent present: {agent_id}")
+            else:
+                report.fail(f"generated snapshot agent missing: {agent_id}")
+
+    manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
+    if manifest:
+        for source in manifest.get("source_files", []):
+            match = contains_unsafe_pattern(str(source), unsafe_patterns)
+            if match:
+                report.fail(f"generated manifest lists unsafe source '{match}': {source}")
+        report.pass_("generated manifest source files checked for unsafe patterns")
 
     for agent_id in required_agents:
         capsule_dir = ROOT / "agent_brains" / agent_id

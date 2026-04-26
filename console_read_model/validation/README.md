@@ -19,3 +19,7 @@ python3 console_read_model/validation/validate_team_read_model.py
 
 The script prints a concise PASS/FAIL report and writes no output files by
 default.
+
+After `console_read_model/loader/build_team_console_snapshot.py` runs, the
+validator also checks generated snapshot files and confirms their manifest does
+not list unsafe DB/log/runtime sources.

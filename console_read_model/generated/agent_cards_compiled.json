@@ -1,0 +1,157 @@
+{
+  "schema_name": "ystar.console_read_model.generated.agent_cards_compiled",
+  "schema_version": "v0",
+  "source_files": [
+    "console_read_model/agent_cards.json",
+    "agent_brains/team_capsule_map.json"
+  ],
+  "cards": [
+    {
+      "card_id": "Aiden-CEO",
+      "display_name": "Aiden Liu",
+      "role": "CEO / orchestration brain",
+      "status": "reference_ready",
+      "short_description": "Core orchestrator with the most complete brain capsule chain and Pre-U counterfactual packet references.",
+      "primary_focus": [
+        "orchestration",
+        "mission alignment",
+        "Pre-U counterfactual imagination",
+        "chain review"
+      ],
+      "capsule_path": "agent_brains/Aiden-CEO",
+      "key_refs": [
+        "agent_brains/Aiden-CEO/brain_profile.json",
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/",
+        "agent_brains/Aiden-CEO/CHAIN_REVIEW.md"
+      ],
+      "capabilities": [
+        "orchestration",
+        "mission framing",
+        "pre-U packet reference path",
+        "governance boundary awareness"
+      ],
+      "limitations": [
+        "not executable runtime",
+        "DB contents not inspected",
+        "packet generator not implemented"
+      ],
+      "next_actions": [
+        "Use as reference pattern",
+        "Avoid assuming Aiden-specific ontology generalizes"
+      ],
+      "warnings": [
+        "Do not treat Aiden capsule as DB content or live brain runtime."
+      ],
+      "capsule_map_entry": {
+        "agent_id": "Aiden-CEO",
+        "capsule_path": "agent_brains/Aiden-CEO",
+        "role_type": "agent",
+        "focus": "orchestration, CEO strategy, mission framing, Pre-U counterfactual packet path",
+        "current_status": "committed_reference",
+        "schema_status": "conforms_by_design",
+        "has_pre_u_packet_layer": true,
+        "has_execution_channels": false,
+        "next_needed_action": "Use as reference pattern; avoid assuming Aiden-specific ontology generalizes."
+      }
+    },
+    {
+      "card_id": "Ethan-CTO",
+      "display_name": "Ethan Wright",
+      "role": "CTO / technical architecture brain",
+      "status": "partial_reference_ready",
+      "short_description": "Technical role-brain for architecture, implementation feasibility, engineering delegation, and execution-channel boundaries.",
+      "primary_focus": [
+        "technical architecture",
+        "implementation reasoning",
+        "runtime feasibility",
+        "execution channel delegation"
+      ],
+      "capsule_path": "agent_brains/Ethan-CTO",
+      "key_refs": [
+        "agent_brains/Ethan-CTO/brain_profile.json",
+        "agent_brains/Ethan-CTO/execution_channels.json",
+        "agent_brains/Ethan-CTO/embodiment_boundary.md"
+      ],
+      "capabilities": [
+        "technical architecture",
+        "implementation reasoning",
+        "delegated execution substrate awareness",
+        "governance boundary awareness"
+      ],
+      "limitations": [
+        "no Ethan-specific Pre-U packet layer",
+        "no executable delegation envelope",
+        "no automatic CIEU return path"
+      ],
+      "next_actions": [
+        "Define Ethan-specific Pre-U packet variant",
+        "Design execution-channel risk policy after interface boundaries stabilize"
+      ],
+      "warnings": [
+        "Codex and Claude Code are not Ethan; they are execution channels."
+      ],
+      "capsule_map_entry": {
+        "agent_id": "Ethan-CTO",
+        "capsule_path": "agent_brains/Ethan-CTO",
+        "role_type": "agent",
+        "focus": "technical architecture, implementation strategy, code/ruling interpretation, engineering delegation, runtime feasibility",
+        "current_status": "reference_only_v0",
+        "schema_status": "conforms_by_design",
+        "has_pre_u_packet_layer": false,
+        "has_execution_channels": true,
+        "execution_channel_ref": "agent_brains/Ethan-CTO/execution_channels.json",
+        "identity_boundary_ref": "agent_brains/Ethan-CTO/embodiment_boundary.md",
+        "next_needed_action": "Define Ethan-specific Pre-U packet variant after shared schema stabilizes."
+      }
+    },
+    {
+      "card_id": "Samantha-Secretary",
+      "display_name": "Samantha Lin",
+      "role": "Secretary / continuity and curation brain",
+      "status": "partial_reference_ready",
+      "short_description": "Continuity role-brain for memory curation, session handoff, secretary context, and report/memory hygiene.",
+      "primary_focus": [
+        "memory continuity",
+        "handoff",
+        "curation",
+        "session context",
+        "report hygiene"
+      ],
+      "capsule_path": "agent_brains/Samantha-Secretary",
+      "key_refs": [
+        "agent_brains/Samantha-Secretary/brain_profile.json",
+        "local_secretary_context/README.md",
+        "memory_index/memory_manifest.json"
+      ],
+      "capabilities": [
+        "memory continuity",
+        "secretary curation",
+        "handoff hygiene",
+        "governance boundary awareness"
+      ],
+      "limitations": [
+        "no Samantha-specific Pre-U packet layer",
+        "secretary curation runtime not validated",
+        "no DB/log inspection"
+      ],
+      "next_actions": [
+        "Define continuity/handoff packet variant",
+        "Validate memory/report hygiene policy in a later docs-first pass"
+      ],
+      "warnings": [
+        "Do not read raw logs or runtime state directly for continuity."
+      ],
+      "capsule_map_entry": {
+        "agent_id": "Samantha-Secretary",
+        "capsule_path": "agent_brains/Samantha-Secretary",
+        "role_type": "agent_function",
+        "focus": "memory continuity, curation, session context, handoff, secretary behavior, report/memory hygiene",
+        "current_status": "reference_only_v0",
+        "schema_status": "conforms_by_design",
+        "has_pre_u_packet_layer": false,
+        "has_execution_channels": false,
+        "next_needed_action": "Define secretary-specific continuity and handoff packet variant after shared schema stabilizes."
+      }
+    }
+  ]
+}

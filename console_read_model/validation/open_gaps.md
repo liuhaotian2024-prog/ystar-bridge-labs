@@ -8,3 +8,4 @@
 - No frontend.
 - No automatic report artifact.
 - No CI wiring yet.
+- Generated snapshots are static and not live runtime truth.

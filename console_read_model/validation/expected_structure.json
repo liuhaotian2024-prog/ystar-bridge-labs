@@ -17,6 +17,20 @@
     "console_read_model/data_sources.md",
     "console_read_model/open_gaps.md"
   ],
+  "required_loader_files": [
+    "console_read_model/loader/README.md",
+    "console_read_model/loader/build_team_console_snapshot.py",
+    "console_read_model/loader/loader_policy.md",
+    "console_read_model/loader/open_gaps.md"
+  ],
+  "required_generated_files": [
+    "console_read_model/generated/README.md",
+    "console_read_model/generated/team_console_snapshot.json",
+    "console_read_model/generated/team_console_snapshot.md",
+    "console_read_model/generated/agent_cards_compiled.json",
+    "console_read_model/generated/readiness_summary.json",
+    "console_read_model/generated/generation_manifest.json"
+  ],
   "required_shared_schema_files": [
     "agent_brains/schema/README.md",
     "agent_brains/schema/agent_brain_capsule.schema.json",

@@ -9,6 +9,7 @@
 - Ethan/Samantha base capsules.
 - Y-star-gov validator interface spec.
 - Static read-model validation utility.
+- Static snapshot generator.
 
 ## Not Ready
 
@@ -22,6 +23,7 @@
 - Live team-state refresh.
 - CI wiring for validator.
 - Semantic validation against live runtime remains unavailable.
+- CI wiring for snapshot generator.
 
 ## Recommended Next Steps
 
