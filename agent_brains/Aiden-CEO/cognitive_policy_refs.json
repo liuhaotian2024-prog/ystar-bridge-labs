@@ -1,0 +1,64 @@
+{
+  "schema": "ystar.agent_brain.aiden_ceo.cognitive_policy_refs.v0",
+  "agent_id": "Aiden-CEO",
+  "refs": [
+    {
+      "path": "knowledge/ceo/AIDEN_ONTOLOGY.md",
+      "cognitive_role": "ontology",
+      "implementation_status": "reference",
+      "treatment": "canonical Aiden cognitive identity source"
+    },
+    {
+      "path": "knowledge/ceo/AIDEN_ONTOLOGY.md",
+      "cognitive_role": "counterfactual_os",
+      "implementation_status": "reference",
+      "treatment": "reference for Aiden's counterfactual operating-system framing"
+    },
+    {
+      "path": "agent_brain_capsule/concept_map.md",
+      "cognitive_role": "runtime_layer",
+      "implementation_status": "reference",
+      "treatment": "generic capsule concept map instantiated by this Aiden capsule"
+    },
+    {
+      "path": "agent_brain_capsule/runtime_layers.md",
+      "cognitive_role": "runtime_layer",
+      "implementation_status": "reference",
+      "treatment": "runtime-facing layer contract for capsule readers"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/cieu_brain_bridge.py",
+      "cognitive_role": "6d_substrate",
+      "implementation_status": "implemented",
+      "treatment": "external kernel implementation reference only"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/reports/cto/CZL-BRAIN-3LOOP-FINAL-ruling.md",
+      "cognitive_role": "runtime_layer",
+      "implementation_status": "reference",
+      "treatment": "external ruling reference for three-loop brain architecture"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/reports/cto/CZL-BRAIN-BIPARTITE-ruling.md",
+      "cognitive_role": "weighted_learning",
+      "implementation_status": "reference",
+      "treatment": "external ruling reference for bipartite CIEU-brain architecture"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/reports/cto/CZL-BRAIN-BIPARTITE-P2-ALGO-ruling.md",
+      "cognitive_role": "weighted_learning",
+      "implementation_status": "reference",
+      "treatment": "external ruling reference for algorithmic learning/writeback details"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/reports/cto/CZL-BRAIN-L3-GUARD-RAILS-ruling.md",
+      "cognitive_role": "dream_guardrail",
+      "implementation_status": "reference",
+      "treatment": "external ruling reference for dream/consolidation guardrails"
+    }
+  ],
+  "explicit_non_claims": [
+    "No standalone LLM reflection calculator artifact is asserted here.",
+    "This file indexes cognitive-policy references; it does not implement reasoning."
+  ]
+}

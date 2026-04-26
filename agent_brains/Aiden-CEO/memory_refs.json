@@ -1,0 +1,69 @@
+{
+  "schema": "ystar.agent_brain.aiden_ceo.memory_refs.v0",
+  "agent_id": "Aiden-CEO",
+  "refs": [
+    {
+      "path": "memory/boot_packages/ceo.json",
+      "memory_type": "boot_package",
+      "locality": "canonical_host",
+      "content_opened_or_inspected": true,
+      "risk": "medium",
+      "safe_handling": "index and read selectively; do not rewrite from capsule",
+      "treatment": "L0 boot reference"
+    },
+    {
+      "path": "memory/WORLD_STATE.md",
+      "memory_type": "working_memory_snapshot",
+      "locality": "canonical_host",
+      "content_opened_or_inspected": false,
+      "risk": "medium",
+      "safe_handling": "runtime-state reference; avoid casual mutation",
+      "treatment": "working memory read-model seed"
+    },
+    {
+      "path": "memory/session_handoff.md",
+      "memory_type": "session_handoff",
+      "locality": "canonical_host",
+      "content_opened_or_inspected": false,
+      "risk": "medium",
+      "safe_handling": "continuity reference; avoid casual mutation",
+      "treatment": "session continuity reference"
+    },
+    {
+      "path": "memory_index/memory_manifest.json",
+      "memory_type": "memory_manifest",
+      "locality": "canonical_host",
+      "content_opened_or_inspected": true,
+      "risk": "low",
+      "safe_handling": "manifest read only",
+      "treatment": "capsule memory source index"
+    },
+    {
+      "path": "brain_index/db_manifest.json",
+      "memory_type": "brain_db_manifest",
+      "locality": "canonical_host",
+      "content_opened_or_inspected": true,
+      "risk": "low",
+      "safe_handling": "metadata-only manifest; DB contents remain closed",
+      "treatment": "brain and memory DB metadata authority"
+    },
+    {
+      "path": "aiden_brain.db",
+      "memory_type": "agent_brain_db",
+      "locality": "canonical_host_local_runtime",
+      "content_opened_or_inspected": false,
+      "risk": "high",
+      "safe_handling": "do not open or mutate; use metadata reference only",
+      "treatment": "reference through brain_index/db_manifest.json"
+    },
+    {
+      "path": ".ystar_memory.db",
+      "memory_type": "memory_db",
+      "locality": "canonical_host_local_runtime",
+      "content_opened_or_inspected": false,
+      "risk": "high",
+      "safe_handling": "do not open or mutate; backup before any future import",
+      "treatment": "metadata-only reference"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schema": "ystar.agent_brain.aiden_ceo.governance_refs.v0",
+  "agent_id": "Aiden-CEO",
+  "refs": [
+    {
+      "path": "governance_refs/boundaries.md",
+      "governance_role": "cross_repo_boundary",
+      "company_or_kernel": "company",
+      "treatment": "boundary authority for company vs kernel ownership",
+      "boundary_note": "ystar-company references governance; Y-star-gov owns deterministic enforcement."
+    },
+    {
+      "path": "agent_brain_capsule/runtime_layers.md",
+      "governance_role": "layer_boundary",
+      "company_or_kernel": "company",
+      "treatment": "capsule layer reference",
+      "boundary_note": "defines what capsule layers are and are not responsible for"
+    },
+    {
+      "path": "agent_brain_capsule/czl_runtime_contract.md",
+      "governance_role": "residual_closure_contract",
+      "company_or_kernel": "company",
+      "treatment": "runtime-facing CZL contract reference",
+      "boundary_note": "does not change canonical CZL semantics"
+    },
+    {
+      "path": "agent_brain_capsule/field_runtime.md",
+      "governance_role": "field_validation_boundary",
+      "company_or_kernel": "company",
+      "treatment": "company-side runtime field reference",
+      "boundary_note": "deterministic validation remains kernel-side"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/adapters/boundary_enforcer.py",
+      "governance_role": "boundary_enforcement",
+      "company_or_kernel": "kernel",
+      "treatment": "external implementation reference only",
+      "boundary_note": "do not edit from ystar-company capsule work"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/forget_guard.py",
+      "governance_role": "structured_forget_guard",
+      "company_or_kernel": "kernel",
+      "treatment": "external implementation reference only",
+      "boundary_note": "preserve structured-only doctrine"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/y_star_field_validator.py",
+      "governance_role": "field_validator",
+      "company_or_kernel": "kernel",
+      "treatment": "external implementation reference only",
+      "boundary_note": "kernel validates field claims deterministically"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/cieu_store.py",
+      "governance_role": "evidence_ledger",
+      "company_or_kernel": "kernel",
+      "treatment": "external implementation reference only",
+      "boundary_note": "CIEU persistence semantics are not modified by this capsule"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/omission_engine.py",
+      "governance_role": "omission_detection",
+      "company_or_kernel": "kernel",
+      "treatment": "external implementation reference only",
+      "boundary_note": "obligation/omission enforcement remains kernel-side"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/intervention_engine.py",
+      "governance_role": "intervention",
+      "company_or_kernel": "kernel",
+      "treatment": "external implementation reference only",
+      "boundary_note": "intervention pulse generation remains kernel-side"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/observation_stack.py",
+      "governance_role": "observation_stack_l0",
+      "company_or_kernel": "kernel",
+      "treatment": "external implementation reference only",
+      "boundary_note": "ObservationStack is referenced, not modified"
+    }
+  ]
+}

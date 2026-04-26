@@ -1,0 +1,62 @@
+{
+  "schema": "ystar.agent_brain.aiden_ceo.profile.v0",
+  "agent_id": "Aiden-CEO",
+  "canonical_name": "Aiden Liu",
+  "aliases": [
+    "Aiden-CEO",
+    "ceo",
+    "Aiden"
+  ],
+  "role_type": "agent",
+  "capsule_version": "v0",
+  "capsule_status": "reference_only",
+  "source_registry_refs": [
+    {
+      "path": "actual_team_registry/agents.json",
+      "registry_id": "ceo",
+      "status": "active",
+      "treatment": "canonical team registry source"
+    }
+  ],
+  "primary_layers": [
+    "dna",
+    "memory",
+    "cognitive_policy",
+    "mission_field",
+    "czl",
+    "cieu_nutrition",
+    "lifecycle",
+    "governance"
+  ],
+  "db_content_opened": false,
+  "scripts_run": false,
+  "evidence_paths": [
+    ".claude/agents/ceo.md",
+    "agents/CEO.md",
+    "knowledge/ceo/AIDEN_ONTOLOGY.md",
+    "knowledge/ceo/team_dna.md",
+    "memory/boot_packages/ceo.json",
+    "memory/WORLD_STATE.md",
+    "memory/session_handoff.md",
+    "brain_index/db_manifest.json",
+    "memory_index/memory_manifest.json",
+    "agent_brain_capsule/artifact_index.json",
+    "agent_brain_capsule/concept_map.md",
+    "agent_brain_capsule/runtime_layers.md",
+    "agent_brain_capsule/lifecycle.md",
+    "agent_brain_capsule/czl_runtime_contract.md",
+    "agent_brain_capsule/cieu_nutrition.md",
+    "agent_brain_capsule/field_runtime.md"
+  ],
+  "open_gaps": [
+    "DB contents were not inspected.",
+    "No single standalone LLM reflection calculator artifact has been confirmed.",
+    "L2 writeback hook wiring current live status needs validation.",
+    "RLE live implementation status remains unclear.",
+    "Field gradient and metacognition runtime appear partial.",
+    "Pre-U counterfactual imagination packet is not yet implemented as an executable capsule stage.",
+    "This capsule is reference-only, not executable runtime.",
+    "Multi-agent generalization should wait for Ethan/Samantha capsule passes."
+  ],
+  "notes": "Aiden is evidenced as CEO/core orchestrator, but the company runtime includes other agents and system functions."
+}

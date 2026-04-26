@@ -1,0 +1,54 @@
+{
+  "schema": "ystar.agent_brain.aiden_ceo.cieu_nutrition_refs.v0",
+  "agent_id": "Aiden-CEO",
+  "refs": [
+    {
+      "path": "agent_brain_capsule/cieu_nutrition.md",
+      "role": "evidence",
+      "content_opened": true,
+      "treatment": "capsule-level CIEU nutrition reference"
+    },
+    {
+      "path": "brain_index/db_manifest.json",
+      "role": "evidence",
+      "content_opened": true,
+      "treatment": "metadata-only DB and CIEU asset reference"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/cieu_brain_bridge.py",
+      "role": "brain_projection",
+      "content_opened": false,
+      "treatment": "external implementation reference only"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/cieu_brain_streamer.py",
+      "role": "residual_signal",
+      "content_opened": false,
+      "treatment": "external implementation reference only"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/cieu_brain_learning.py",
+      "role": "learning",
+      "content_opened": false,
+      "treatment": "external implementation reference only"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/brain_auto_ingest.py",
+      "role": "ingest",
+      "content_opened": false,
+      "treatment": "external implementation reference only"
+    },
+    {
+      "path": "aiden_brain.db",
+      "role": "writeback",
+      "content_opened": false,
+      "treatment": "metadata-only brain DB reference through brain_index/db_manifest.json"
+    },
+    {
+      "path": ".ystar_cieu.db",
+      "role": "evidence",
+      "content_opened": false,
+      "treatment": "metadata-only CIEU DB reference through existing indexes"
+    }
+  ]
+}

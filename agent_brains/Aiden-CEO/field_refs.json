@@ -1,0 +1,34 @@
+{
+  "schema": "ystar.agent_brain.aiden_ceo.field_refs.v0",
+  "agent_id": "Aiden-CEO",
+  "refs": [
+    {
+      "path": "reports/ceo/strategic/Y_STAR_FIELD_THEORY_SPEC.md",
+      "layer": "Mission Field",
+      "relation_to_aiden": "Defines the Y* Field / mission-field model used by Aiden's mission-oriented cognition.",
+      "treatment": "canonical company-side theory reference",
+      "implementation_boundary": "company_reference"
+    },
+    {
+      "path": ".czl_subgoals.json",
+      "layer": "Mission Field",
+      "relation_to_aiden": "Runtime-state reference for active subgoals connected to Aiden's mission field.",
+      "treatment": "reference only; do not mutate casually",
+      "implementation_boundary": "runtime_state"
+    },
+    {
+      "path": "agent_brain_capsule/field_runtime.md",
+      "layer": "Mission Field",
+      "relation_to_aiden": "Runtime-facing summary of M_space, Phi_t, local Y*, m_functor, and deterministic validation.",
+      "treatment": "capsule-level runtime reference",
+      "implementation_boundary": "company_reference"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/y_star_field_validator.py",
+      "layer": "Mission Field",
+      "relation_to_aiden": "Kernel-side deterministic validator boundary for Y* Field claims.",
+      "treatment": "external reference only; do not edit from ystar-company",
+      "implementation_boundary": "kernel_validator"
+    }
+  ]
+}

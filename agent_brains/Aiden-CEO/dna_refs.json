@@ -1,0 +1,46 @@
+{
+  "schema": "ystar.agent_brain.aiden_ceo.dna_refs.v0",
+  "agent_id": "Aiden-CEO",
+  "refs": [
+    {
+      "path": ".claude/agents/ceo.md",
+      "category": "claude_agent_profile",
+      "content_copied": false,
+      "content_inspected": true,
+      "role_in_capsule": "active Claude Code agent profile and boot policy reference",
+      "treatment": "reference as operational profile; do not edit from capsule"
+    },
+    {
+      "path": "agents/CEO.md",
+      "category": "legacy_role_profile",
+      "content_copied": false,
+      "content_inspected": true,
+      "role_in_capsule": "legacy CEO identity and CIEU framing reference",
+      "treatment": "reference as historical role source"
+    },
+    {
+      "path": "knowledge/ceo/AIDEN_ONTOLOGY.md",
+      "category": "ontology",
+      "content_copied": false,
+      "content_inspected": true,
+      "role_in_capsule": "primary Aiden identity, first-principles, and counterfactual operating-system reference",
+      "treatment": "canonical DNA reference"
+    },
+    {
+      "path": "knowledge/ceo/team_dna.md",
+      "category": "team_dna",
+      "content_copied": false,
+      "content_inspected": false,
+      "role_in_capsule": "team-level DNA reference for Aiden's operating context",
+      "treatment": "reference only; unresolved team-level naming/version issues are not resolved here"
+    },
+    {
+      "path": "actual_team_registry/agents.json",
+      "category": "team_registry",
+      "content_copied": false,
+      "content_inspected": true,
+      "role_in_capsule": "canonical agent identity registry source for Aiden",
+      "treatment": "reference as registry authority"
+    }
+  ]
+}

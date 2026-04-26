@@ -1,0 +1,65 @@
+{
+  "schema": "ystar.agent_brain.aiden_ceo.lifecycle_refs.v0",
+  "agent_id": "Aiden-CEO",
+  "stages": [
+    {
+      "stage_id": "L0",
+      "purpose": "Boot Aiden identity, registry, memory references, and session continuity before work.",
+      "references": [
+        "agent_brain_capsule/lifecycle.md",
+        "memory/boot_packages/ceo.json",
+        "memory/WORLD_STATE.md",
+        "memory/session_handoff.md",
+        ".claude/agents/ceo.md"
+      ],
+      "implementation_status": "partial",
+      "not_yet_validated": "This capsule did not run boot scripts or validate live boot behavior."
+    },
+    {
+      "stage_id": "L1",
+      "purpose": "Assemble pre-action cognitive context from ontology, field, CZL, and memory references.",
+      "references": [
+        "knowledge/ceo/AIDEN_ONTOLOGY.md",
+        "agent_brain_capsule/runtime_layers.md",
+        "agent_brain_capsule/field_runtime.md",
+        "agent_brain_capsule/czl_runtime_contract.md"
+      ],
+      "implementation_status": "reference",
+      "not_yet_validated": "No executable pre-action context assembler is claimed here."
+    },
+    {
+      "stage_id": "L2",
+      "purpose": "Use post-action CIEU/residual evidence as writeback-ready nutrition.",
+      "references": [
+        "agent_brain_capsule/cieu_nutrition.md",
+        "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/cieu_brain_streamer.py",
+        "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/cieu_brain_learning.py",
+        "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/brain_auto_ingest.py"
+      ],
+      "implementation_status": "partial",
+      "not_yet_validated": "Current live L2 hook/writeback wiring needs a separate validation pass."
+    },
+    {
+      "stage_id": "L3",
+      "purpose": "Offline dream/consolidation with guardrails before persistent learning.",
+      "references": [
+        "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/brain_dream_scheduler.py",
+        "/Users/haotianliu/.openclaw/workspace/Y-star-gov/reports/cto/CZL-BRAIN-3LOOP-FINAL-ruling.md",
+        "/Users/haotianliu/.openclaw/workspace/Y-star-gov/reports/cto/CZL-BRAIN-L3-GUARD-RAILS-ruling.md"
+      ],
+      "implementation_status": "partial",
+      "not_yet_validated": "Dream scheduler was not run; DB contents were not inspected."
+    },
+    {
+      "stage_id": "CZL_RESIDUAL_CORRECTION",
+      "purpose": "When residual remains open, retry, delegate, escalate, revise target, or record the gap.",
+      "references": [
+        "CZL.md",
+        "reports/proposals/charter_amendment_014_closed_loop_cieu_residual_engine.md",
+        "agent_brain_capsule/czl_runtime_contract.md"
+      ],
+      "implementation_status": "reference",
+      "not_yet_validated": "Live residual routing is not validated by this capsule."
+    }
+  ]
+}

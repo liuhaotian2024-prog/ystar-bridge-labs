@@ -1,0 +1,48 @@
+{
+  "schema": "ystar.agent_brain.aiden_ceo.czl_refs.v0",
+  "agent_id": "Aiden-CEO",
+  "refs": [
+    {
+      "path": "CZL.md",
+      "relation_to_czl": "Company-side CZL definition reference for residual closure semantics.",
+      "company_or_kernel": "company",
+      "treatment": "canonical CZL reference",
+      "status": "reference"
+    },
+    {
+      "path": "reports/proposals/charter_amendment_014_closed_loop_cieu_residual_engine.md",
+      "relation_to_czl": "Charter-level closed-loop CIEU residual engine reference.",
+      "company_or_kernel": "company",
+      "treatment": "governance design reference",
+      "status": "reference"
+    },
+    {
+      "path": "agent_brain_capsule/czl_runtime_contract.md",
+      "relation_to_czl": "Runtime-facing contract language for Y*, Xt, U, Yt+1, and Rt+1 closure.",
+      "company_or_kernel": "company",
+      "treatment": "capsule runtime contract reference",
+      "status": "reference"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/omission_engine.py",
+      "relation_to_czl": "Kernel-side omission/residual enforcement mechanism related to open-loop obligations.",
+      "company_or_kernel": "kernel",
+      "treatment": "external implementation reference only",
+      "status": "implemented"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/intervention_engine.py",
+      "relation_to_czl": "Kernel-side intervention mechanism for escalation/correction paths.",
+      "company_or_kernel": "kernel",
+      "treatment": "external implementation reference only",
+      "status": "implemented"
+    },
+    {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/cieu_store.py",
+      "relation_to_czl": "Kernel-side CIEU evidence store supporting residual/evidence persistence.",
+      "company_or_kernel": "kernel",
+      "treatment": "external implementation reference only",
+      "status": "implemented"
+    }
+  ]
+}
