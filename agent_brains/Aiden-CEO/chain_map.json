@@ -1,0 +1,348 @@
+{
+  "schema_name": "ystar.agent_brain.aiden_ceo.chain_map",
+  "schema_version": "v0",
+  "agent_id": "Aiden-CEO",
+  "chain_status": "reference_chain_complete_for_review_not_runtime",
+  "current_head_commit_note": "0fec4226 docs: align Aiden pre-U packet boundaries",
+  "layers": [
+    {
+      "layer_id": "runtime_architecture_index",
+      "current_status": "committed_reference",
+      "primary_files": [
+        "actual_team_registry/agents.json",
+        "brain_index/db_manifest.json",
+        "memory_index/memory_manifest.json",
+        "runtime_mechanism_inventory/mechanisms.json",
+        "governance_refs/boundaries.md"
+      ],
+      "owns": [
+        "labs runtime identity map",
+        "asset indexes",
+        "cross-repo boundary references"
+      ],
+      "must_not_own": [
+        "runtime execution",
+        "DB content migration"
+      ],
+      "inputs": [
+        "local audit evidence",
+        "existing repo artifacts"
+      ],
+      "outputs": [
+        "architecture index",
+        "boundary docs",
+        "asset manifests"
+      ],
+      "next_needed_action": "Keep as reference baseline for future capsule and validator work."
+    },
+    {
+      "layer_id": "generic_agent_brain_capsule",
+      "current_status": "committed_reference",
+      "primary_files": [
+        "agent_brain_capsule/README.md",
+        "agent_brain_capsule/artifact_index.json",
+        "agent_brain_capsule/concept_map.md",
+        "agent_brain_capsule/runtime_layers.md",
+        "agent_brain_capsule/czl_runtime_contract.md",
+        "agent_brain_capsule/cieu_nutrition.md",
+        "agent_brain_capsule/field_runtime.md",
+        "agent_brain_capsule/lifecycle.md",
+        "agent_brain_capsule/version_notes.md",
+        "agent_brain_capsule/open_gaps.md"
+      ],
+      "owns": [
+        "generic capsule reference layers",
+        "old-wheel runtime mapping"
+      ],
+      "must_not_own": [
+        "per-agent runtime execution",
+        "new theory invention"
+      ],
+      "inputs": [
+        "recovered ontology/CZL/field/brain/CIEU artifacts"
+      ],
+      "outputs": [
+        "generic brain capsule reference model"
+      ],
+      "next_needed_action": "Use as source pattern for additional per-agent capsules."
+    },
+    {
+      "layer_id": "aiden_brain_capsule",
+      "current_status": "committed_reference",
+      "primary_files": [
+        "agent_brains/Aiden-CEO/README.md",
+        "agent_brains/Aiden-CEO/brain_profile.json",
+        "agent_brains/Aiden-CEO/dna_refs.json",
+        "agent_brains/Aiden-CEO/memory_refs.json",
+        "agent_brains/Aiden-CEO/field_refs.json",
+        "agent_brains/Aiden-CEO/czl_refs.json",
+        "agent_brains/Aiden-CEO/cognitive_policy_refs.json",
+        "agent_brains/Aiden-CEO/cieu_nutrition_refs.json",
+        "agent_brains/Aiden-CEO/lifecycle_refs.json",
+        "agent_brains/Aiden-CEO/governance_refs.json",
+        "agent_brains/Aiden-CEO/open_gaps.md"
+      ],
+      "owns": [
+        "Aiden-specific brain references",
+        "Aiden read-model context"
+      ],
+      "must_not_own": [
+        "DB content access",
+        "hook enforcement",
+        "kernel validation"
+      ],
+      "inputs": [
+        "generic agent brain capsule",
+        "Aiden evidence refs"
+      ],
+      "outputs": [
+        "Aiden-CEO reference capsule"
+      ],
+      "next_needed_action": "Use as context source for packet generator and compare pattern against Ethan/Samantha."
+    },
+    {
+      "layer_id": "pre_u_counterfactual_packet",
+      "current_status": "committed_reference",
+      "primary_files": [
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/README.md",
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/packet_schema.json",
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/packet_examples.md",
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/runtime_contract.md",
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/integration_notes.md",
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/open_gaps.md"
+      ],
+      "owns": [
+        "packet shape",
+        "candidate U comparison",
+        "predicted residual minimization"
+      ],
+      "must_not_own": [
+        "runtime hook gating",
+        "governance judgment",
+        "actual outcome evidence"
+      ],
+      "inputs": [
+        "Aiden capsule context",
+        "task",
+        "Y*",
+        "Xt"
+      ],
+      "outputs": [
+        "future Pre-U packet"
+      ],
+      "next_needed_action": "Specify validator interface before implementation."
+    },
+    {
+      "layer_id": "boundary_alignment",
+      "current_status": "committed_reference",
+      "primary_files": [
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/README.md",
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/responsibility_matrix.md",
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/validation_contract.md",
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/hook_gate_policy.md",
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/cieu_feedback_contract.md",
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/brain_learning_contract.md",
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/boundary_map.json",
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/open_gaps.md"
+      ],
+      "owns": [
+        "cross-layer responsibility split",
+        "risk-tier reference policy",
+        "feedback/learning boundary"
+      ],
+      "must_not_own": [
+        "validator implementation",
+        "hook implementation",
+        "CIEU event implementation"
+      ],
+      "inputs": [
+        "packet schema",
+        "integration notes",
+        "governance boundaries"
+      ],
+      "outputs": [
+        "boundary map",
+        "validation contract",
+        "hook/CIEU/brain learning contracts"
+      ],
+      "next_needed_action": "Use as guardrail for future interface specs."
+    },
+    {
+      "layer_id": "future_y_star_gov_validator",
+      "current_status": "future_interface",
+      "primary_files": [
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/validation_contract.md",
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/packet_schema.json"
+      ],
+      "owns": [
+        "schema validation",
+        "Y* validation",
+        "m_functor grounding validation",
+        "scope and residual logic validation"
+      ],
+      "must_not_own": [
+        "subjective action imagination",
+        "brain learning"
+      ],
+      "inputs": [
+        "packet",
+        "action request",
+        "governance rules"
+      ],
+      "outputs": [
+        "validation result"
+      ],
+      "next_needed_action": "Create interface spec before writing validator code."
+    },
+    {
+      "layer_id": "future_hook_gate",
+      "current_status": "future_interface",
+      "primary_files": [
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/hook_gate_policy.md"
+      ],
+      "owns": [
+        "pre-action gate",
+        "risk-tier packet requirement",
+        "validator call",
+        "allow/deny/escalate enforcement"
+      ],
+      "must_not_own": [
+        "counterfactual generation",
+        "complex reasoning",
+        "DB inspection"
+      ],
+      "inputs": [
+        "action request",
+        "risk tier",
+        "packet ref",
+        "validator result"
+      ],
+      "outputs": [
+        "gate decision",
+        "pre-action CIEU link"
+      ],
+      "next_needed_action": "Design after validator interface is stable."
+    },
+    {
+      "layer_id": "future_cieu_feedback",
+      "current_status": "future_interface",
+      "primary_files": [
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/cieu_feedback_contract.md",
+        "agent_brain_capsule/cieu_nutrition.md"
+      ],
+      "owns": [
+        "actual outcome evidence",
+        "predicted-vs-actual delta",
+        "learning signal"
+      ],
+      "must_not_own": [
+        "treating prediction as fact",
+        "unaudited brain update"
+      ],
+      "inputs": [
+        "packet id",
+        "selected prediction",
+        "actual action outcome"
+      ],
+      "outputs": [
+        "prediction delta",
+        "residual delta",
+        "brain nutrition candidate"
+      ],
+      "next_needed_action": "Create prediction-delta event schema."
+    },
+    {
+      "layer_id": "future_brain_writeback",
+      "current_status": "future_runtime",
+      "primary_files": [
+        "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/brain_learning_contract.md",
+        "agent_brains/Aiden-CEO/lifecycle_refs.json",
+        "agent_brains/Aiden-CEO/cieu_nutrition_refs.json"
+      ],
+      "owns": [
+        "learning from evidence-backed deltas",
+        "dream replay candidates",
+        "future boot-context enrichment"
+      ],
+      "must_not_own": [
+        "learning from unaudited packet alone",
+        "DB mutation from reference docs"
+      ],
+      "inputs": [
+        "CIEU delta",
+        "actual outcome",
+        "packet prediction",
+        "guardrails"
+      ],
+      "outputs": [
+        "writeback candidate",
+        "dream candidate",
+        "future boot context"
+      ],
+      "next_needed_action": "Validate L2/L3 wiring only after CIEU delta schema exists."
+    }
+  ],
+  "handoff_edges": [
+    {
+      "from": "generic_agent_brain_capsule",
+      "to": "aiden_brain_capsule",
+      "handoff": "Generic reference layers become Aiden-specific references."
+    },
+    {
+      "from": "aiden_brain_capsule",
+      "to": "pre_u_counterfactual_packet",
+      "handoff": "Aiden read-model context feeds bounded Pre-U action imagination."
+    },
+    {
+      "from": "pre_u_counterfactual_packet",
+      "to": "future_y_star_gov_validator",
+      "handoff": "Packet becomes artifact for schema, field, scope, and residual validation."
+    },
+    {
+      "from": "future_y_star_gov_validator",
+      "to": "future_hook_gate",
+      "handoff": "Validator result becomes hook gate decision input."
+    },
+    {
+      "from": "action_result",
+      "to": "future_cieu_feedback",
+      "handoff": "Actual outcome becomes CIEU evidence for predicted-vs-actual comparison."
+    },
+    {
+      "from": "future_cieu_feedback",
+      "to": "future_brain_writeback",
+      "handoff": "CIEU delta becomes brain nutrition/writeback/dream candidate."
+    },
+    {
+      "from": "future_brain_writeback",
+      "to": "future_aiden_boot_context",
+      "handoff": "Evidence-backed learning can enrich future Aiden boot context."
+    }
+  ],
+  "protected_boundaries": [
+    "labs thinks",
+    "Y-star-gov judges",
+    "hook enforces",
+    "CIEU records/teaches",
+    "brain learns from evidence-backed deltas",
+    "DB contents are not opened by reference layer"
+  ],
+  "implementation_readiness": {
+    "reference_chain": "ready",
+    "validator_interface_spec": "needed_next_for_governance_path",
+    "team_generalization": "needed_next_for_multi_agent_path",
+    "hook_implementation": "not_ready_until_validator_interface_stable",
+    "cieu_delta_schema": "needed_before_brain_writeback",
+    "packet_generator": "not_ready_until interfaces are stable"
+  },
+  "open_gaps": [
+    "No packet validator exists.",
+    "Hook does not require Pre-U packets.",
+    "CIEU prediction-delta event schema is missing.",
+    "Brain writeback from packet deltas is not validated.",
+    "Aiden packet generator does not exist.",
+    "RLE live status remains unclear.",
+    "Ethan/Samantha generalization remains pending.",
+    "DB contents were not inspected."
+  ]
+}
