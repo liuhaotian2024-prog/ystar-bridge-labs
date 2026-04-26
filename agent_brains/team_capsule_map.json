@@ -19,6 +19,9 @@
       "focus": "technical architecture, implementation strategy, code/ruling interpretation, engineering delegation, runtime feasibility",
       "current_status": "reference_only_v0",
       "has_pre_u_packet_layer": false,
+      "has_execution_channels": true,
+      "execution_channel_ref": "agent_brains/Ethan-CTO/execution_channels.json",
+      "identity_boundary_ref": "agent_brains/Ethan-CTO/embodiment_boundary.md",
       "next_needed_action": "Define Ethan-specific Pre-U packet variant after shared schema stabilizes."
     },
     {
@@ -58,6 +61,9 @@
       "report and context curation"
     ]
   },
+  "shared_concepts": [
+    "persistent_role_brain_vs_ephemeral_executor"
+  ],
   "open_gaps": [
     "No shared per-agent capsule schema yet.",
     "Ethan and Samantha do not yet have Pre-U packet layers.",

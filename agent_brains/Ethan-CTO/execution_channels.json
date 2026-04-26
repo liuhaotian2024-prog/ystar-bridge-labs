@@ -1,0 +1,156 @@
+{
+  "schema_name": "ystar.agent_brain.ethan_cto.execution_channels",
+  "schema_version": "v0",
+  "agent_id": "Ethan-CTO",
+  "identity_boundary": {
+    "summary": "Ethan-CTO is a persistent role-brain in ystar-company. Codex and Claude Code are execution substrates. Tool sessions do not own Ethan's identity, memory, or authority.",
+    "persistent_role_brain": true,
+    "tool_sessions_are_identity_owner": false
+  },
+  "canonical_identity_location": [
+    "agent_brains/Ethan-CTO/brain_profile.json",
+    "actual_team_registry/agents.json",
+    "agent_brains/Ethan-CTO/dna_refs.json",
+    "agent_brains/Ethan-CTO/memory_refs.json",
+    "agent_brains/Ethan-CTO/cognitive_policy_refs.json",
+    "agent_brains/Ethan-CTO/governance_refs.json",
+    "agent_brains/Ethan-CTO/lifecycle_refs.json"
+  ],
+  "execution_channels": [
+    {
+      "channel_id": "codex",
+      "channel_type": "ai_coding_execution_substrate",
+      "owns_identity": false,
+      "role": "bounded delegated coding and analysis channel",
+      "allowed_for": [
+        "code inspection",
+        "patch proposal",
+        "static analysis",
+        "JSON/doc validation",
+        "test planning",
+        "commit preparation under user control"
+      ],
+      "requires_task_packet": true,
+      "requires_governance_boundary": true,
+      "requires_cieu_or_report_return": true,
+      "risk_notes": "Can act as Ethan's delegated execution instance only when scoped by Ethan brain refs, task packet, and governance boundary.",
+      "not_allowed_for": [
+        "owning Ethan identity",
+        "owning persistent memory",
+        "granting governance approval",
+        "writing directly to long-term brain without curation"
+      ]
+    },
+    {
+      "channel_id": "claude_code",
+      "channel_type": "interactive_local_code_execution_substrate",
+      "owns_identity": false,
+      "role": "bounded delegated local repo navigation and code-edit channel",
+      "allowed_for": [
+        "local repo navigation",
+        "interactive debugging",
+        "long-context code edits",
+        "local task execution under explicit instruction"
+      ],
+      "requires_task_packet": true,
+      "requires_governance_boundary": true,
+      "requires_cieu_or_report_return": true,
+      "risk_notes": "May instantiate Ethan's delegated work context, but does not become Ethan.",
+      "not_allowed_for": [
+        "owning persistent role authority",
+        "treating terminal context as canonical memory",
+        "bypassing governance"
+      ]
+    },
+    {
+      "channel_id": "local_terminal_shell",
+      "channel_type": "user_mediated_command_execution_substrate",
+      "owns_identity": false,
+      "role": "bounded local command execution channel",
+      "allowed_for": [
+        "user-mediated command execution",
+        "validation commands",
+        "git commands under explicit instruction"
+      ],
+      "requires_task_packet": false,
+      "requires_governance_boundary": true,
+      "requires_cieu_or_report_return": true,
+      "risk_notes": "Shell commands can mutate state; high-risk commands require explicit scope and review.",
+      "not_allowed_for": [
+        "owning identity",
+        "acting as memory",
+        "running high-risk commands without authorization"
+      ]
+    },
+    {
+      "channel_id": "github_repository_operations",
+      "channel_type": "repository_collaboration_substrate",
+      "owns_identity": false,
+      "role": "remote repository coordination and evidence channel",
+      "allowed_for": [
+        "repository sync",
+        "issue references",
+        "pull request references",
+        "release references if applicable",
+        "commit and review evidence under user control"
+      ],
+      "requires_task_packet": true,
+      "requires_governance_boundary": true,
+      "requires_cieu_or_report_return": true,
+      "risk_notes": "GitHub may carry evidence and collaboration artifacts but never owns Ethan's identity.",
+      "not_allowed_for": [
+        "identity ownership",
+        "memory ownership",
+        "governance approval by repository state alone"
+      ]
+    },
+    {
+      "channel_id": "future_openclaw_execution_substrate",
+      "channel_type": "future_local_execution_substrate",
+      "owns_identity": false,
+      "role": "future bounded OpenClaw execution substrate if validated by existing runtime indexes",
+      "allowed_for": [
+        "future delegated execution under explicit task and governance envelope"
+      ],
+      "requires_task_packet": true,
+      "requires_governance_boundary": true,
+      "requires_cieu_or_report_return": true,
+      "risk_notes": "Referenced as future substrate only; no runtime behavior is implemented here.",
+      "not_allowed_for": [
+        "identity ownership",
+        "persistent memory ownership",
+        "unbounded autonomous execution"
+      ]
+    }
+  ],
+  "delegation_requirements": [
+    "Ethan brain capsule refs",
+    "task_id",
+    "declared Y*",
+    "scope boundary",
+    "allowed files/commands",
+    "expected output",
+    "CIEU/report return path",
+    "human/operator approval for high-risk tasks"
+  ],
+  "evidence_return_policy": [
+    "Execution result must be summarized back into CIEU/report/memory pathway.",
+    "Failed execution should produce residual/open gap.",
+    "Successful execution should link commit/test evidence where available.",
+    "Tool session context should not become canonical memory without curation."
+  ],
+  "prohibited_interpretations": [
+    "Codex is Ethan",
+    "Claude Code is Ethan",
+    "terminal history is Ethan's memory",
+    "execution log equals governance approval",
+    "tool success equals CZL closure",
+    "unreviewed tool output can write directly into long-term brain"
+  ],
+  "open_gaps": [
+    "No executable delegation envelope yet.",
+    "No automatic CIEU return path from Codex or Claude Code yet.",
+    "No validated task packet launcher yet.",
+    "No execution-channel risk policy enforcement yet."
+  ]
+}

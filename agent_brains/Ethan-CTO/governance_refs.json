@@ -17,6 +17,20 @@
       "boundary_note": "defines capsule responsibilities"
     },
     {
+      "path": "agent_brains/Ethan-CTO/execution_channels.json",
+      "governance_role": "execution_delegation_boundary",
+      "company_or_kernel": "company",
+      "treatment": "company-side execution channel reference",
+      "boundary_note": "documents Codex/Claude Code as delegated execution substrates, not Y-star-gov legal rules."
+    },
+    {
+      "path": "agent_brains/Ethan-CTO/embodiment_boundary.md",
+      "governance_role": "identity_embodiment_boundary",
+      "company_or_kernel": "company",
+      "treatment": "company-side identity boundary reference",
+      "boundary_note": "clarifies Ethan's persistent role-brain versus ephemeral tool sessions."
+    },
+    {
       "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/docs/pre_u_packet_validator",
       "governance_role": "future_packet_validator_interface",
       "company_or_kernel": "kernel",

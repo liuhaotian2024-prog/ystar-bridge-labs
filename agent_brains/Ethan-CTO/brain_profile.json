@@ -21,6 +21,32 @@
     "engineering delegation",
     "runtime feasibility"
   ],
+  "identity_persistence": {
+    "canonical_identity_location": "ystar-company role-brain capsule",
+    "execution_substrates_are_identity_owner": false,
+    "summary": "Ethan-CTO persists as a role-brain in ystar-company; Codex and Claude Code are delegated execution channels only."
+  },
+  "execution_channel_refs": [
+    "agent_brains/Ethan-CTO/execution_channels.json",
+    "agent_brains/Ethan-CTO/embodiment_boundary.md"
+  ],
+  "delegated_execution_policy": {
+    "tool_sessions_may_act_as_ethan_when_scoped": true,
+    "required_context": [
+      "Ethan brain capsule refs",
+      "task_id",
+      "declared Y*",
+      "scope boundary",
+      "allowed files/commands",
+      "expected output",
+      "CIEU/report return path"
+    ],
+    "tool_sessions_must_not_own": [
+      "persistent identity",
+      "long-term memory",
+      "governance authority"
+    ]
+  },
   "primary_layers": ["dna", "memory", "cognitive_policy", "mission_field", "czl", "cieu_nutrition", "lifecycle", "governance"],
   "db_content_opened": false,
   "scripts_run": false,

@@ -38,6 +38,20 @@ opening DB contents.
 - Each role will need its own Pre-U packet variant only after shared schema and
   validator interfaces are stable.
 
+## Ethan-Specific Execution Embodiment Boundary
+
+Aiden is the orchestration/CEO brain. Ethan is the technical role-brain.
+Samantha is the continuity/secretary brain.
+
+Codex and Claude Code are not team members by themselves. They are execution
+substrates that can be delegated to by role-brains. A Codex or Claude Code
+session may act as Ethan's delegated execution instance only when scoped by
+Ethan's capsule references, task packet, and governance boundary.
+
+Execution results must return through CIEU, reports, commits, tests, or curated
+memory pathways before they can nourish Ethan's persistent brain. Tool logs and
+terminal history are evidence sources, not canonical memory.
+
 ## Team Expansion
 
 Next expansion could include governance, platform, finance, or marketing roles
