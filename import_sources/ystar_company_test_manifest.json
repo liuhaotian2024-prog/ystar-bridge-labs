@@ -1,0 +1,16 @@
+{
+  "schema": "ystar.labs.import_sources.ystar_company_test_manifest.v1",
+  "source_policy": "path-only import-source quarantine",
+  "assets": [
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company-test/aiden_brain.db", "asset_type": "brain_db", "content_inspected": false, "risk": "high", "recommended_treatment": "backup and index only; do not copy yet"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company-test/.ystar_memory.db", "asset_type": "memory_db", "content_inspected": false, "risk": "high", "recommended_treatment": "metadata only"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company-test/.ystar_cieu.db", "asset_type": "cieu_db", "content_inspected": false, "risk": "high", "recommended_treatment": "metadata only"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company-test/.ystar_omission.db", "asset_type": "omission_db", "content_inspected": false, "risk": "high", "recommended_treatment": "metadata only"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company-test/reports/", "asset_type": "reports_directory", "content_inspected": false, "risk": "medium", "recommended_treatment": "index filenames before selective import"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company-test/reports/brain_ingest_353k.log", "asset_type": "brain_ingest_log", "content_inspected": false, "risk": "medium", "recommended_treatment": "reference only until reviewed"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company-test/reports/gov_mcp.log", "asset_type": "gov_mcp_log", "content_inspected": false, "risk": "medium", "recommended_treatment": "reference only until reviewed"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company-test/scripts/", "asset_type": "local_scripts_directory", "content_inspected": false, "risk": "high", "recommended_treatment": "do not run; index path only"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company-test/scripts/k9_cieu_export.py", "asset_type": "k9_export_script", "content_inspected": false, "risk": "high", "recommended_treatment": "read-only code review in later pass"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company-test/memory/", "asset_type": "memory_directory_if_present", "content_inspected": false, "risk": "medium", "recommended_treatment": "path-only quarantine"}
+  ]
+}

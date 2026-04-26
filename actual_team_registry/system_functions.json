@@ -1,0 +1,109 @@
+{
+  "schema": "ystar.labs.actual_team_registry.system_functions.v1",
+  "source": "evidence-only architecture index",
+  "functions": [
+    {
+      "id": "orchestrator",
+      "function_name": "orchestrator",
+      "type": "system_function",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json",
+        "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/y_star_field_validator.py"
+      ],
+      "owning_repo_or_component": "ystar-company runtime identity / Y-star-gov role mapping",
+      "maturity": "implemented",
+      "recommended_treatment": "register as system function, not person",
+      "should_be_in_team_roster": false
+    },
+    {
+      "id": "path_a_agent",
+      "function_name": "path_a_agent",
+      "type": "system_function",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json"
+      ],
+      "owning_repo_or_component": "ystar-company runtime identity",
+      "maturity": "evidenced",
+      "recommended_treatment": "register as function until runtime owner is indexed",
+      "should_be_in_team_roster": false
+    },
+    {
+      "id": "intervention_engine",
+      "function_name": "intervention_engine",
+      "type": "system_function",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json",
+        "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/intervention_engine.py"
+      ],
+      "owning_repo_or_component": "Y-star-gov governance kernel",
+      "maturity": "implemented",
+      "recommended_treatment": "reference as kernel governance function",
+      "should_be_in_team_roster": false
+    },
+    {
+      "id": "omission_engine",
+      "function_name": "omission_engine",
+      "type": "system_function",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json",
+        "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/omission_engine.py"
+      ],
+      "owning_repo_or_component": "Y-star-gov governance kernel",
+      "maturity": "implemented",
+      "recommended_treatment": "reference as kernel governance function",
+      "should_be_in_team_roster": false
+    },
+    {
+      "id": "forget_guard",
+      "function_name": "forget_guard",
+      "type": "system_function",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json",
+        "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/forget_guard.py"
+      ],
+      "owning_repo_or_component": "Y-star-gov governance kernel",
+      "maturity": "implemented",
+      "recommended_treatment": "reference as structured-action guard",
+      "should_be_in_team_roster": false
+    },
+    {
+      "id": "hook_pipeline",
+      "function_name": "hook_pipeline",
+      "type": "system_function",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json",
+        "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/adapters/hook.py",
+        "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/adapters/boundary_enforcer.py"
+      ],
+      "owning_repo_or_component": "Y-star-gov adapter layer",
+      "maturity": "implemented",
+      "recommended_treatment": "reference as hook ingress function",
+      "should_be_in_team_roster": false
+    },
+    {
+      "id": "secretary_curate_pipeline",
+      "function_name": "secretary_curate_pipeline",
+      "type": "system_function",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/.claude/agents/secretary.md"
+      ],
+      "owning_repo_or_component": "ystar-company Secretary runtime",
+      "maturity": "evidenced",
+      "recommended_treatment": "reference as continuity/memory curation function",
+      "should_be_in_team_roster": false
+    },
+    {
+      "id": "test_infra",
+      "function_name": "test_infra",
+      "type": "system_function",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json"
+      ],
+      "owning_repo_or_component": "test support",
+      "maturity": "evidenced",
+      "recommended_treatment": "keep out of canonical human/agent team roster",
+      "should_be_in_team_roster": false
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "ystar.labs.import_sources.archive_manifest.v1",
+  "source_policy": "legacy reference/import source only",
+  "assets": [
+    {"path": "/Users/haotianliu/.openclaw/workspace/.archive-ystar-bridge-labs-20260415/.claude/agents/", "asset_type": "legacy_agent_profiles", "content_inspected": false, "risk": "medium", "recommended_treatment": "compare before importing"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/.archive-ystar-bridge-labs-20260415/knowledge/", "asset_type": "legacy_knowledge_directory", "content_inspected": false, "risk": "medium", "recommended_treatment": "index first"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/.archive-ystar-bridge-labs-20260415/reports/", "asset_type": "legacy_reports_directory", "content_inspected": false, "risk": "medium", "recommended_treatment": "index first"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/.archive-ystar-bridge-labs-20260415/scripts/", "asset_type": "legacy_scripts_directory", "content_inspected": false, "risk": "high", "recommended_treatment": "do not run; review source later"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/.archive-ystar-bridge-labs-20260415/scripts/agent_daemon.nohup.log", "asset_type": "legacy_daemon_log", "content_inspected": false, "risk": "high", "recommended_treatment": "preserve, metadata only"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/.archive-ystar-bridge-labs-20260415/scripts/hook_observe.log", "asset_type": "legacy_hook_log", "content_inspected": false, "risk": "high", "recommended_treatment": "preserve, metadata only"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/.archive-ystar-bridge-labs-20260415/scripts/hook_debug.log", "asset_type": "legacy_hook_log", "content_inspected": false, "risk": "high", "recommended_treatment": "preserve, metadata only"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/.archive-ystar-bridge-labs-20260415/.ystar_active_agent", "asset_type": "legacy_active_agent_state", "content_inspected": false, "risk": "high", "recommended_treatment": "do not mutate"}
+  ]
+}

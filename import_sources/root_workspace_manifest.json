@@ -1,0 +1,15 @@
+{
+  "schema": "ystar.labs.import_sources.root_workspace_manifest.v1",
+  "assets": [
+    {"path": "/Users/haotianliu/.openclaw/workspace/memory", "asset_type": "root_memory_directory", "locality": "external_root_workspace", "risk": "medium", "recommended_treatment": "index as external memory source"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/memory/2026-03-29.md", "asset_type": "root_memory_file", "locality": "external_root_workspace", "risk": "medium", "recommended_treatment": "reference only"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/memory/2026-04-01.md", "asset_type": "root_memory_file", "locality": "external_root_workspace", "risk": "medium", "recommended_treatment": "reference only"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/reports", "asset_type": "root_reports_directory", "locality": "external_root_workspace", "risk": "medium", "recommended_treatment": "index filenames first"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/scripts", "asset_type": "root_scripts_directory", "locality": "external_root_workspace", "risk": "high", "recommended_treatment": "do not run; source review only"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/scripts/agent_scheduler.py", "asset_type": "scheduler_script", "locality": "external_root_workspace", "risk": "high", "recommended_treatment": "do not run"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/scripts/stella.py", "asset_type": "local_assistant_script", "locality": "external_root_workspace", "risk": "medium", "recommended_treatment": "inspect later"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/.openclaw", "asset_type": "openclaw_workspace_state", "locality": "external_root_workspace", "risk": "medium", "recommended_treatment": "preserve as runtime ecosystem metadata"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/.clawhub", "asset_type": "openclaw_plugin_state", "locality": "external_root_workspace", "risk": "medium", "recommended_treatment": "preserve as runtime ecosystem metadata"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/.clawhub/lock.json", "asset_type": "openclaw_plugin_lock", "locality": "external_root_workspace", "risk": "medium", "recommended_treatment": "reference only"}
+  ]
+}

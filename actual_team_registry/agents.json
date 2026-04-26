@@ -1,0 +1,252 @@
+{
+  "schema": "ystar.labs.actual_team_registry.agents.v1",
+  "source": "evidence-only architecture index",
+  "generated_for": "Y* labs-side runtime recovery planning",
+  "policy": {
+    "no_invented_roles": true,
+    "name_conflicts_unresolved": true,
+    "db_contents_opened": false
+  },
+  "agents": [
+    {
+      "id": "ceo",
+      "canonical_name": "Aiden Liu",
+      "aliases": ["Aiden-CEO", "ceo", "Aiden"],
+      "type": "agent",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/.claude/agents/ceo.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/agents/CEO.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/boot_packages/ceo.json",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/WORLD_STATE.md"
+      ],
+      "assets": ["agent profile", "legacy role profile", "boot package", "brain database", "reports", "runtime state references"],
+      "status": "active",
+      "confidence": "high",
+      "recommended_treatment": "canonical core orchestrator",
+      "notes": "CEO is evidenced as core orchestrator, but not the whole labs-side runtime."
+    },
+    {
+      "id": "cto",
+      "canonical_name": "Ethan Wright",
+      "aliases": ["Ethan-CTO", "cto", "Ethan"],
+      "type": "agent",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/.claude/agents/cto.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/agents/CTO.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/boot_packages/cto.json"
+      ],
+      "assets": ["agent profile", "legacy role profile", "boot package", "brain database", "dispatch authority evidence"],
+      "status": "active",
+      "confidence": "high",
+      "recommended_treatment": "canonical technical lead",
+      "notes": "Evidence ties CTO to engineering delegation and architecture review."
+    },
+    {
+      "id": "cmo",
+      "canonical_name": "Sofia-CMO",
+      "aliases": ["Sofia-CMO", "cmo", "Sofia", "Sofia Blake", "Sofia Marcus"],
+      "type": "agent",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/.claude/agents/cmo.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/agents/CMO.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json"
+      ],
+      "assets": ["agent profile", "legacy role profile", "brain database"],
+      "status": "active_with_name_conflict",
+      "confidence": "medium",
+      "recommended_treatment": "keep role, resolve personal-name conflict later",
+      "notes": "Do not silently resolve Sofia Blake vs Sofia Marcus."
+    },
+    {
+      "id": "cso",
+      "canonical_name": "Zara-CSO",
+      "aliases": ["Zara-CSO", "cso", "Zara", "Zara Johnson", "Zara Khan"],
+      "type": "agent",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/.claude/agents/cso.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/agents/CSO.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json"
+      ],
+      "assets": ["agent profile", "legacy role profile", "brain database"],
+      "status": "active_with_name_conflict",
+      "confidence": "medium",
+      "recommended_treatment": "keep role, resolve personal-name conflict later",
+      "notes": "Do not silently resolve Zara Johnson vs Zara Khan."
+    },
+    {
+      "id": "cfo",
+      "canonical_name": "Marco-CFO",
+      "aliases": ["Marco-CFO", "cfo", "Marco", "Marco Rivera", "Marco Rossi"],
+      "type": "agent",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/.claude/agents/cfo.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/agents/CFO.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json"
+      ],
+      "assets": ["agent profile", "legacy role profile", "brain database"],
+      "status": "active_with_name_conflict",
+      "confidence": "medium",
+      "recommended_treatment": "keep role, resolve personal-name conflict later",
+      "notes": "Do not silently resolve Marco Rivera vs Marco Rossi."
+    },
+    {
+      "id": "secretary",
+      "canonical_name": "Samantha Lin",
+      "aliases": ["Samantha-Secretary", "secretary", "Samantha"],
+      "type": "agent_function",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/.claude/agents/secretary.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/agents/Secretary.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/boot_packages/secretary.json"
+      ],
+      "assets": ["agent profile", "legacy role profile", "boot package", "brain database", "memory curation evidence"],
+      "status": "active",
+      "confidence": "high",
+      "recommended_treatment": "canonical continuity and memory curation role",
+      "notes": "Secretary is both an agent identity and a continuity/report curation function."
+    },
+    {
+      "id": "eng-kernel",
+      "canonical_name": "Leo Chen",
+      "aliases": ["Leo-Kernel", "eng-kernel", "Leo"],
+      "type": "agent",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/.claude/agents/eng-kernel.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/boot_packages/eng-kernel.json"
+      ],
+      "assets": ["agent profile", "boot package", "brain database"],
+      "status": "active",
+      "confidence": "high",
+      "recommended_treatment": "canonical engineering agent",
+      "notes": "Engineering role evidenced under CTO dispatch structure."
+    },
+    {
+      "id": "eng-governance",
+      "canonical_name": "Maya Patel",
+      "aliases": ["Maya-Governance", "eng-governance", "Maya"],
+      "type": "agent",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/.claude/agents/eng-governance.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/boot_packages/eng-governance.json"
+      ],
+      "assets": ["agent profile", "boot package", "brain database"],
+      "status": "active",
+      "confidence": "high",
+      "recommended_treatment": "canonical engineering agent",
+      "notes": "Governance engineering identity is also linked to governance runtime work."
+    },
+    {
+      "id": "eng-platform",
+      "canonical_name": "Ryan Park",
+      "aliases": ["Ryan-Platform", "eng-platform", "Ryan"],
+      "type": "agent",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/.claude/agents/eng-platform.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/boot_packages/eng-platform.json",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/reports/ryan_secretary_impl_summary.md"
+      ],
+      "assets": ["agent profile", "boot package", "brain database", "implementation report"],
+      "status": "active",
+      "confidence": "high",
+      "recommended_treatment": "canonical platform engineering agent",
+      "notes": "Evidence includes direct implementation/report artifact."
+    },
+    {
+      "id": "eng-domains",
+      "canonical_name": "Jordan Lee",
+      "aliases": ["Jordan-Domains", "eng-domains", "Jordan"],
+      "type": "agent",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/.claude/agents/eng-domains.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/boot_packages/eng-domains.json"
+      ],
+      "assets": ["agent profile", "boot package", "brain database"],
+      "status": "active",
+      "confidence": "high",
+      "recommended_treatment": "canonical engineering agent",
+      "notes": "Domain engineering identity appears in current registry and boot assets."
+    },
+    {
+      "id": "eng-data",
+      "canonical_name": "Data Engineer",
+      "aliases": ["eng-data", "Dara-Data"],
+      "type": "agent",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/.claude/agents/eng-data.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json"
+      ],
+      "assets": ["agent profile", "registry entry"],
+      "status": "present_likely_specialist",
+      "confidence": "medium",
+      "recommended_treatment": "include as evidenced specialist agent",
+      "notes": "No DB asset was confirmed for this role in the current metadata pass."
+    },
+    {
+      "id": "eng-security",
+      "canonical_name": "Alex Kim",
+      "aliases": ["Alex-Security", "eng-security", "Alex"],
+      "type": "agent",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/.claude/agents/eng-security.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json"
+      ],
+      "assets": ["agent profile", "registry entry"],
+      "status": "present_likely_specialist",
+      "confidence": "high",
+      "recommended_treatment": "include as evidenced specialist agent",
+      "notes": "Security profile includes activation/specialist evidence."
+    },
+    {
+      "id": "eng-ml",
+      "canonical_name": "Priya Sharma",
+      "aliases": ["Priya-ML", "eng-ml", "Priya"],
+      "type": "agent",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/.claude/agents/eng-ml.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json"
+      ],
+      "assets": ["agent profile", "registry entry"],
+      "status": "present_likely_specialist",
+      "confidence": "medium",
+      "recommended_treatment": "include as evidenced specialist agent",
+      "notes": "Evidence supports existence; maturity should be inspected later."
+    },
+    {
+      "id": "eng-perf",
+      "canonical_name": "Carlos Mendez",
+      "aliases": ["Carlos-Performance", "eng-perf", "Carlos"],
+      "type": "agent",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/.claude/agents/eng-perf.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json"
+      ],
+      "assets": ["agent profile", "registry entry"],
+      "status": "present_likely_specialist",
+      "confidence": "medium",
+      "recommended_treatment": "include as evidenced specialist agent",
+      "notes": "Evidence supports existence; maturity should be inspected later."
+    },
+    {
+      "id": "eng-compliance",
+      "canonical_name": "Elena Chen",
+      "aliases": ["Elena-Compliance", "eng-compliance", "Elena"],
+      "type": "agent",
+      "evidence_paths": [
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/.claude/agents/eng-compliance.md",
+        "/Users/haotianliu/.openclaw/workspace/ystar-company/governance/agent_id_canonical.json"
+      ],
+      "assets": ["agent profile", "registry entry"],
+      "status": "present_likely_specialist",
+      "confidence": "high",
+      "recommended_treatment": "include as evidenced specialist agent",
+      "notes": "Compliance profile includes specialist/activation evidence."
+    }
+  ]
+}

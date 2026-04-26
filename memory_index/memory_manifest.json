@@ -1,0 +1,17 @@
+{
+  "schema": "ystar.labs.memory_index.memory_manifest.v1",
+  "assets": [
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/WORLD_STATE.md", "asset_type": "working_memory_snapshot", "role_or_function_if_known": "company_state", "locality": "canonical_host", "content_inspected": true, "recommended_treatment": "reference as current read model seed"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/session_handoff.md", "asset_type": "session_handoff", "role_or_function_if_known": "continuity", "locality": "canonical_host", "content_inspected": true, "recommended_treatment": "index as recovery context"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/boot_packages/ceo.json", "asset_type": "boot_package", "role_or_function_if_known": "ceo", "locality": "canonical_host", "content_inspected": true, "recommended_treatment": "index only"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/boot_packages/cto.json", "asset_type": "boot_package", "role_or_function_if_known": "cto", "locality": "canonical_host", "content_inspected": true, "recommended_treatment": "index only"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/boot_packages/secretary.json", "asset_type": "boot_package", "role_or_function_if_known": "secretary", "locality": "canonical_host", "content_inspected": true, "recommended_treatment": "index only"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/boot_packages/eng-kernel.json", "asset_type": "boot_package", "role_or_function_if_known": "eng-kernel", "locality": "canonical_host", "content_inspected": true, "recommended_treatment": "index only"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/boot_packages/eng-governance.json", "asset_type": "boot_package", "role_or_function_if_known": "eng-governance", "locality": "canonical_host", "content_inspected": true, "recommended_treatment": "index only"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/boot_packages/eng-platform.json", "asset_type": "boot_package", "role_or_function_if_known": "eng-platform", "locality": "canonical_host", "content_inspected": true, "recommended_treatment": "index only"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/boot_packages/eng-domains.json", "asset_type": "boot_package", "role_or_function_if_known": "eng-domains", "locality": "canonical_host", "content_inspected": true, "recommended_treatment": "index only"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/ystar-company/memory/claude_code_memory_mirror", "asset_type": "claude_code_memory_mirror", "role_or_function_if_known": "memory_mirror", "locality": "canonical_host", "content_inspected": false, "recommended_treatment": "index directory before selective import"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/memory/2026-03-29.md", "asset_type": "root_workspace_memory", "role_or_function_if_known": "external_memory_source", "locality": "external_root_workspace", "content_inspected": false, "recommended_treatment": "reference only"},
+    {"path": "/Users/haotianliu/.openclaw/workspace/memory/2026-04-01.md", "asset_type": "root_workspace_memory", "role_or_function_if_known": "external_memory_source", "locality": "external_root_workspace", "content_inspected": false, "recommended_treatment": "reference only"}
+  ]
+}
