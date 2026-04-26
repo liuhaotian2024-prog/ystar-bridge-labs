@@ -25,3 +25,8 @@ consumers. The generated files are derived artifacts, not live runtime state.
 `console_read_model/cli/` contains a read-only command-line entry point that
 prints summaries from generated snapshots only. It does not read raw runtime
 state or call subprocesses.
+
+The console snapshot also includes a runtime artifact quarantine summary derived
+from `runtime_artifact_quarantine/generated/runtime_artifact_manifest.json`.
+That summary is path-level only: it exposes classes and counts, not artifact
+contents, and it does not implement mining or ingestion.

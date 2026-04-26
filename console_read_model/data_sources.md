@@ -13,6 +13,9 @@
 - `governance_refs/boundaries.md`
 - `runtime_mechanism_inventory/mechanisms.json`
 - `company_state/current_world_state_ref.md`
+- `runtime_artifact_quarantine/quarantine_index.json`
+- `runtime_artifact_quarantine/generated/runtime_artifact_manifest.json`
+- `console_read_model/generated/quarantine_summary.json`
 
 ## Unsafe Direct Sources
 
@@ -32,3 +35,5 @@
 - Console must not mutate anything.
 - Console should never treat raw runtime state as canonical memory.
 - Console should prefer curated read models over direct operational stores.
+- Runtime artifact quarantine data may be displayed only as path-level
+  summaries/classes/counts until future safe adapters exist.

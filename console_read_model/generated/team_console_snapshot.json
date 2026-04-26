@@ -7,6 +7,8 @@
     "console_read_model/agent_cards.json",
     "console_read_model/capability_matrix.json",
     "agent_brains/team_capsule_map.json",
+    "runtime_artifact_quarantine/quarantine_index.json",
+    "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",
@@ -231,6 +233,57 @@
     ],
     "reason": "Console must consume curated read models and manifests, not raw operational stores or mutable runtime state."
   },
+  "quarantine_summary": {
+    "schema_name": "ystar.console_read_model.generated.quarantine_summary",
+    "schema_version": "v0",
+    "framework_status": "path_inventory_only",
+    "current_mining_level": 0,
+    "artifacts_classified": 180,
+    "unsafe_artifacts_count": 155,
+    "classes_seen": {
+      "ACTIVE_AGENT_MARKER": 17,
+      "BACKUP_DB": 1,
+      "CACHE_SENTINEL": 5,
+      "DAEMON_STATE": 4,
+      "DAILY_REPORT": 3,
+      "DB_CORE": 1,
+      "DB_SIDECARE": 6,
+      "DREAM_REPORT": 18,
+      "DRIFT_REPORT": 4,
+      "ESCALATION_REPORT": 23,
+      "LOG_RUNTIME": 31,
+      "PYCACHE": 31,
+      "UNKNOWN_OR_NON_RUNTIME": 25,
+      "UNKNOWN_RUNTIME_ARTIFACT": 10,
+      "WHITELIST_REPORT": 1
+    },
+    "generated_manifest_ref": "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+    "forbidden_direct_reads": [
+      "DB/WAL/SHM contents",
+      "scripts/.logs/*",
+      "active-agent markers",
+      "daemon pid/state files",
+      "__pycache__",
+      "raw runtime reports in bulk",
+      "backup DB contents"
+    ],
+    "future_adapter_candidates": [
+      "active_agent_marker_summarizer_future",
+      "backup_db_inventory_adapter",
+      "bounded_log_summarizer_future",
+      "cache_sentinel_classifier_future",
+      "daemon_state_metadata_adapter_future",
+      "daily_report_parser_future",
+      "dream_report_bounded_parser_future",
+      "drift_report_parser_future",
+      "escalation_report_parser_future",
+      "ignore_or_cleanup_policy_future",
+      "manual_triage_future",
+      "readonly_db_adapter_future",
+      "whitelist_report_parser_future"
+    ],
+    "safety_warning": "Console displays only curated path-level quarantine summary. No artifact contents were read."
+  },
   "open_gaps": [
     "Static console loader exists; no frontend UI yet.",
     "No frontend UI.",
@@ -242,7 +295,8 @@
     "No live team state refresh.",
     "No capsule static validator.",
     "No multi-agent Pre-U packet generalization yet.",
-    "Snapshot-only CLI exists; no interactive UI or live refresh yet."
+    "Snapshot-only CLI exists; no interactive UI or live refresh yet.",
+    "Runtime artifact quarantine is visible as a path-only summary; artifact mining is not implemented."
   ],
   "warnings": [
     "Ethan execution channels are present as reference-only boundaries, not runtime launchers."

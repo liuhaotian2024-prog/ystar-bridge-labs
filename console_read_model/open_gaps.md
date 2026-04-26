@@ -14,3 +14,4 @@
 - Validator does not guarantee semantic correctness.
 - Static snapshot generator exists but has no frontend or live refresh.
 - CLI exists but remains snapshot-only and non-interactive.
+- Runtime artifact quarantine summary is visible, but artifact mining is still not implemented.

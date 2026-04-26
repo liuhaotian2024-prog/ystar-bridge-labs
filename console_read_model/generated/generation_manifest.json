@@ -7,6 +7,7 @@
     "console_read_model/generated/team_console_snapshot.md",
     "console_read_model/generated/agent_cards_compiled.json",
     "console_read_model/generated/readiness_summary.json",
+    "console_read_model/generated/quarantine_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "source_files": [
@@ -14,6 +15,8 @@
     "console_read_model/agent_cards.json",
     "console_read_model/capability_matrix.json",
     "agent_brains/team_capsule_map.json",
+    "runtime_artifact_quarantine/quarantine_index.json",
+    "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",

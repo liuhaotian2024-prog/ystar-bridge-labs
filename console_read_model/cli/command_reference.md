@@ -18,6 +18,9 @@ python3 console_read_model/cli/team_console.py <command>
 - `capabilities`: Prints capability matrix summary.
 - `governance`: Prints the governance boundary: labs thinks, Y-star-gov judges,
   hook enforces, CIEU records/teaches, brain learns, console reads snapshots.
+- `quarantine`: Prints the generated runtime artifact quarantine summary:
+  framework status, mining level, class counts, forbidden direct reads, future
+  adapter candidates, and safety warning.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

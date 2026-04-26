@@ -23,3 +23,6 @@ default.
 After `console_read_model/loader/build_team_console_snapshot.py` runs, the
 validator also checks generated snapshot files and confirms their manifest does
 not list unsafe DB/log/runtime sources.
+
+It also checks that the generated quarantine summary exists and is attached to
+the team console snapshot, without following any runtime artifact paths.

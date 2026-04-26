@@ -15,6 +15,7 @@ SNAPSHOT = "console_read_model/generated/team_console_snapshot.json"
 CARDS = "console_read_model/generated/agent_cards_compiled.json"
 READINESS = "console_read_model/generated/readiness_summary.json"
 MANIFEST = "console_read_model/generated/generation_manifest.json"
+QUARANTINE = "console_read_model/generated/quarantine_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -34,7 +35,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -69,6 +70,7 @@ def load_all() -> dict[str, Any]:
         "cards": load_json(CARDS),
         "readiness": load_json(READINESS),
         "manifest": load_json(MANIFEST),
+        "quarantine": load_json(QUARANTINE),
     }
 
 
@@ -179,6 +181,29 @@ def cmd_governance(data: dict[str, Any]) -> None:
         print(f"- {key}: {value}")
 
 
+def cmd_quarantine(data: dict[str, Any]) -> None:
+    quarantine = data["quarantine"]
+    print("# Runtime Artifact Quarantine Summary")
+    print()
+    print(f"framework_status: {quarantine.get('framework_status')}")
+    print(f"current_mining_level: {quarantine.get('current_mining_level')}")
+    print(f"artifacts_classified: {quarantine.get('artifacts_classified')}")
+    print(f"unsafe_artifacts_count: {quarantine.get('unsafe_artifacts_count')}")
+    print()
+    print("classes_seen:")
+    for class_name, count in sorted(quarantine.get("classes_seen", {}).items()):
+        print(f"- {class_name}: {count}")
+    print()
+    print("forbidden_direct_reads:")
+    bullet_list(quarantine.get("forbidden_direct_reads", []))
+    print()
+    print("future_adapter_candidates:")
+    bullet_list(quarantine.get("future_adapter_candidates", []))
+    print()
+    print(f"generated_manifest_ref: {quarantine.get('generated_manifest_ref')}")
+    print(f"warning: {quarantine.get('safety_warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -195,6 +220,11 @@ def cmd_sources(data: dict[str, Any]) -> None:
     print()
     print("Unsafe sources not read:")
     bullet_list(manifest.get("unsafe_sources_not_read", []))
+    quarantine = data.get("quarantine", {})
+    if quarantine:
+        print()
+        print("Quarantine manifest:")
+        print(f"- {quarantine.get('generated_manifest_ref')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -218,7 +248,7 @@ def cmd_validate_local() -> int:
     failures: list[str] = []
     inspected: list[str] = []
     loaded: dict[str, Any] = {}
-    for rel in [SNAPSHOT, CARDS, READINESS, MANIFEST]:
+    for rel in [SNAPSHOT, CARDS, READINESS, MANIFEST, QUARANTINE]:
         try:
             loaded[rel] = load_json(rel)
             inspected.append(rel)
@@ -231,6 +261,8 @@ def cmd_validate_local() -> int:
         for agent_id in REQUIRED_AGENTS:
             if agent_id not in agents:
                 failures.append(f"required agent missing from snapshot: {agent_id}")
+        if "quarantine_summary" not in snapshot:
+            failures.append("quarantine_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -238,6 +270,23 @@ def cmd_validate_local() -> int:
             marker = source_has_unsafe_marker(str(source))
             if marker:
                 failures.append(f"unsafe source in manifest: {source} ({marker})")
+
+    quarantine = loaded.get(QUARANTINE)
+    if quarantine:
+        required_fields = [
+            "framework_status",
+            "current_mining_level",
+            "artifacts_classified",
+            "unsafe_artifacts_count",
+            "classes_seen",
+            "generated_manifest_ref",
+            "forbidden_direct_reads",
+            "future_adapter_candidates",
+            "safety_warning",
+        ]
+        for field in required_fields:
+            if field not in quarantine:
+                failures.append(f"quarantine summary missing field: {field}")
 
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
@@ -280,6 +329,8 @@ def main(argv: list[str]) -> int:
         cmd_capabilities(data)
     elif command == "governance":
         cmd_governance(data)
+    elif command == "quarantine":
+        cmd_quarantine(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

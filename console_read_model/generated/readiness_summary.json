@@ -10,7 +10,8 @@
     "Y-star-gov validator interface spec",
     "static read-model validation utility",
     "static snapshot generator",
-    "snapshot-only team console CLI"
+    "snapshot-only team console CLI",
+    "path-only runtime artifact quarantine summary"
   ],
   "not_ready": [
     "runtime generator",
@@ -23,14 +24,16 @@
     "live team-state refresh",
     "CI wiring for validator/generator",
     "CLI integration packaging",
-    "semantic validation against live runtime"
+    "semantic validation against live runtime",
+    "runtime artifact mining or curation adapters"
   ],
   "recommended_next_steps": [
     "wire static validator and loader into CI",
     "build a frontend that reads generated snapshots only",
     "create Y-star-gov validator skeleton",
     "define CIEU prediction-delta schema",
-    "add Ethan/Samantha Pre-U packet variants"
+    "add Ethan/Samantha Pre-U packet variants",
+    "design safe adapters for quarantine-to-CIEU review"
   ],
   "blockers": [
     "no DB-safe adapter",
@@ -43,6 +46,7 @@
     "no log reads",
     "no daemon/runtime state reads",
     "no hook/governance execution",
-    "curated read-model files only"
+    "curated read-model files only",
+    "quarantine summary is path-level only"
   ]
 }

@@ -201,6 +201,44 @@ def main() -> int:
                 report.pass_(f"generated snapshot agent present: {agent_id}")
             else:
                 report.fail(f"generated snapshot agent missing: {agent_id}")
+        quarantine_summary = snapshot.get("quarantine_summary")
+        if quarantine_summary:
+            report.pass_("generated snapshot contains quarantine_summary")
+            for field in [
+                "framework_status",
+                "current_mining_level",
+                "artifacts_classified",
+                "unsafe_artifacts_count",
+                "classes_seen",
+                "generated_manifest_ref",
+                "forbidden_direct_reads",
+                "future_adapter_candidates",
+                "safety_warning",
+            ]:
+                if field in quarantine_summary:
+                    report.pass_(f"snapshot quarantine_summary field present: {field}")
+                else:
+                    report.fail(f"snapshot quarantine_summary missing field: {field}")
+        else:
+            report.fail("generated snapshot missing quarantine_summary")
+
+    quarantine = generated_json.get("console_read_model/generated/quarantine_summary.json")
+    if quarantine:
+        for field in [
+            "framework_status",
+            "current_mining_level",
+            "artifacts_classified",
+            "unsafe_artifacts_count",
+            "classes_seen",
+            "generated_manifest_ref",
+            "forbidden_direct_reads",
+            "future_adapter_candidates",
+            "safety_warning",
+        ]:
+            if field in quarantine:
+                report.pass_(f"generated quarantine summary field present: {field}")
+            else:
+                report.fail(f"generated quarantine summary missing field: {field}")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

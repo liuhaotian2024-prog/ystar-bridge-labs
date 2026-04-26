@@ -11,7 +11,7 @@
 - Static read-model validation utility.
 - Static snapshot generator.
 - Snapshot-only team console CLI.
-- Snapshot-only team console CLI.
+- Path-only runtime artifact quarantine summary in generated console snapshots.
 
 ## Not Ready
 
@@ -27,6 +27,7 @@
 - Semantic validation against live runtime remains unavailable.
 - CI wiring for snapshot generator.
 - CLI integration packaging.
+- Runtime artifact mining or curation adapters.
 
 ## Recommended Next Steps
 
@@ -39,6 +40,8 @@ C. Team console UI.
 D. Ethan/Samantha Pre-U packet variants.
 
 E. CIEU prediction-delta schema.
+
+F. Safe quarantine-to-CIEU review adapters.
 
 The safest next step is either a static capsule validator or a read-only console
 prototype that consumes only the files in this directory and other curated

@@ -22,6 +22,8 @@ CURATED_SOURCES = [
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",
     "agent_brains/Ethan-CTO/execution_channels.json",
+    "runtime_artifact_quarantine/quarantine_index.json",
+    "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -91,6 +93,43 @@ def write_text(relative_path: str, text: str, generated_files: list[str]) -> Non
     generated_files.append(relative_path)
 
 
+def build_quarantine_summary(
+    quarantine_index: dict[str, Any],
+    quarantine_manifest: dict[str, Any],
+) -> dict[str, Any]:
+    artifacts = quarantine_manifest.get("artifacts", [])
+    future_adapter_candidates = sorted(
+        {
+            artifact.get("future_adapter_candidate")
+            for artifact in artifacts
+            if artifact.get("future_adapter_candidate")
+            and artifact.get("future_adapter_candidate") not in {"none", "none_or_metadata_only"}
+        }
+    )
+    if not future_adapter_candidates:
+        future_adapter_candidates = quarantine_index.get("future_adapters", [])
+
+    return {
+        "schema_name": "ystar.console_read_model.generated.quarantine_summary",
+        "schema_version": "v0",
+        "framework_status": quarantine_index.get("framework_status"),
+        "current_mining_level": quarantine_index.get("current_mining_level"),
+        "artifacts_classified": quarantine_manifest.get("artifacts_classified", 0),
+        "unsafe_artifacts_count": quarantine_manifest.get("unsafe_artifacts_count", 0),
+        "classes_seen": quarantine_manifest.get("classes_seen", {}),
+        "generated_manifest_ref": quarantine_index.get(
+            "generated_manifest_ref",
+            "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        ),
+        "forbidden_direct_reads": quarantine_index.get("forbidden_direct_reads", []),
+        "future_adapter_candidates": future_adapter_candidates,
+        "safety_warning": (
+            "Console displays only curated path-level quarantine summary. "
+            "No artifact contents were read."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -100,6 +139,12 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     agent_cards = load_json("console_read_model/agent_cards.json", files_read)
     capability_matrix = load_json("console_read_model/capability_matrix.json", files_read)
     team_capsules = load_json("agent_brains/team_capsule_map.json", files_read)
+    quarantine_index = load_json("runtime_artifact_quarantine/quarantine_index.json", files_read)
+    quarantine_manifest = load_json(
+        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        files_read,
+    )
+    quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -156,6 +201,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     ]
     if "Snapshot-only CLI exists; no interactive UI or live refresh yet." not in open_gaps:
         open_gaps.append("Snapshot-only CLI exists; no interactive UI or live refresh yet.")
+    if "Runtime artifact quarantine is visible as a path-only summary; artifact mining is not implemented." not in open_gaps:
+        open_gaps.append("Runtime artifact quarantine is visible as a path-only summary; artifact mining is not implemented.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -167,6 +214,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "readiness": readiness,
         "governance_summary": governance_summary,
         "data_safety": team_model.get("data_safety", {}),
+        "quarantine_summary": quarantine_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -203,6 +251,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "static read-model validation utility",
             "static snapshot generator",
             "snapshot-only team console CLI",
+            "path-only runtime artifact quarantine summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -216,6 +265,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "CI wiring for validator/generator",
             "CLI integration packaging",
             "semantic validation against live runtime",
+            "runtime artifact mining or curation adapters",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -223,6 +273,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "create Y-star-gov validator skeleton",
             "define CIEU prediction-delta schema",
             "add Ethan/Samantha Pre-U packet variants",
+            "design safe adapters for quarantine-to-CIEU review",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -236,6 +287,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "no daemon/runtime state reads",
             "no hook/governance execution",
             "curated read-model files only",
+            "quarantine summary is path-level only",
         ],
     }
 
@@ -248,6 +300,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/team_console_snapshot.md",
             "console_read_model/generated/agent_cards_compiled.json",
             "console_read_model/generated/readiness_summary.json",
+            "console_read_model/generated/quarantine_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -274,6 +327,9 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "These files are derived artifacts from curated read-model inputs only.\n"
         "They do not contain DB contents, raw logs, daemon state, active-agent state,\n"
         "or live runtime observations.\n\n"
+        "`quarantine_summary.json` is derived from the runtime artifact quarantine\n"
+        "path-only manifest. It summarizes classes/counts only and does not include\n"
+        "artifact contents.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -282,6 +338,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_text("console_read_model/generated/team_console_snapshot.md", snapshot_md, generated_files)
     write_json("console_read_model/generated/agent_cards_compiled.json", compiled_cards, generated_files)
     write_json("console_read_model/generated/readiness_summary.json", readiness_summary, generated_files)
+    write_json("console_read_model/generated/quarantine_summary.json", quarantine_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -325,6 +382,27 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     lines.extend([f"- {item}" for item in readiness["ready_now"]])
     lines.extend(["", "Not ready:"])
     lines.extend([f"- {item}" for item in readiness["not_ready"]])
+    quarantine = snapshot.get("quarantine_summary", {})
+    lines.extend(
+        [
+            "",
+            "## Runtime Artifact Quarantine Summary",
+            "",
+            f"- Framework status: {quarantine.get('framework_status')}",
+            f"- Current mining level: {quarantine.get('current_mining_level')}",
+            f"- Artifacts classified: {quarantine.get('artifacts_classified')}",
+            f"- Unsafe artifacts count: {quarantine.get('unsafe_artifacts_count')}",
+            "- Classes seen:",
+        ]
+    )
+    for class_name, count in sorted(quarantine.get("classes_seen", {}).items()):
+        lines.append(f"  - {class_name}: {count}")
+    lines.extend(
+        [
+            f"- Generated manifest ref: {quarantine.get('generated_manifest_ref')}",
+            f"- Warning: {quarantine.get('safety_warning')}",
+        ]
+    )
     lines.extend(
         [
             "",

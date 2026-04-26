@@ -47,6 +47,7 @@ Ready now:
 - static read-model validation utility
 - static snapshot generator
 - snapshot-only team console CLI
+- path-only runtime artifact quarantine summary
 
 Not ready:
 - runtime generator
@@ -60,6 +61,32 @@ Not ready:
 - CI wiring for validator/generator
 - CLI integration packaging
 - semantic validation against live runtime
+- runtime artifact mining or curation adapters
+
+## Runtime Artifact Quarantine Summary
+
+- Framework status: path_inventory_only
+- Current mining level: 0
+- Artifacts classified: 180
+- Unsafe artifacts count: 155
+- Classes seen:
+  - ACTIVE_AGENT_MARKER: 17
+  - BACKUP_DB: 1
+  - CACHE_SENTINEL: 5
+  - DAEMON_STATE: 4
+  - DAILY_REPORT: 3
+  - DB_CORE: 1
+  - DB_SIDECARE: 6
+  - DREAM_REPORT: 18
+  - DRIFT_REPORT: 4
+  - ESCALATION_REPORT: 23
+  - LOG_RUNTIME: 31
+  - PYCACHE: 31
+  - UNKNOWN_OR_NON_RUNTIME: 25
+  - UNKNOWN_RUNTIME_ARTIFACT: 10
+  - WHITELIST_REPORT: 1
+- Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
+- Warning: Console displays only curated path-level quarantine summary. No artifact contents were read.
 
 ## Governance Boundary
 
@@ -76,6 +103,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - create Y-star-gov validator skeleton
 - define CIEU prediction-delta schema
 - add Ethan/Samantha Pre-U packet variants
+- design safe adapters for quarantine-to-CIEU review
 
 ## Warnings / Gaps
 
@@ -91,3 +119,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - No capsule static validator.
 - No multi-agent Pre-U packet generalization yet.
 - Snapshot-only CLI exists; no interactive UI or live refresh yet.
+- Runtime artifact quarantine is visible as a path-only summary; artifact mining is not implemented.

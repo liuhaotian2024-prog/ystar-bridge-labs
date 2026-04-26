@@ -12,6 +12,8 @@ It checks:
 - Loader and generated snapshot file presence.
 - CLI file presence.
 - Generated JSON validity.
+- Generated quarantine summary presence and required fields.
+- Generated team snapshot contains `quarantine_summary`.
 - Generated snapshot coverage for Aiden, Ethan, and Samantha.
 - Generated manifest source safety.
 - Safety boundary between curated read model and unsafe runtime files.
@@ -30,6 +32,7 @@ It does not check:
 - Semantic truth of every Markdown claim.
 - Runtime freshness of generated snapshots.
 - CLI command behavior beyond static file presence.
+- Runtime artifact contents behind quarantine paths.
 
 The validator should remain read-only and standard-library-only until the schema
 stabilizes.
