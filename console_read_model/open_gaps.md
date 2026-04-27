@@ -15,3 +15,5 @@
 - Static snapshot generator exists but has no frontend or live refresh.
 - CLI exists but remains snapshot-only and non-interactive.
 - Runtime artifact quarantine summary is visible, but artifact mining is still not implemented.
+- Local safety check wrapper exists but is not wired into CI.
+- Local safety check wrapper does not replace runtime or governance tests.

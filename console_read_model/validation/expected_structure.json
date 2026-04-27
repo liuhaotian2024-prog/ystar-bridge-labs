@@ -30,6 +30,12 @@
     "console_read_model/cli/command_reference.md",
     "console_read_model/cli/open_gaps.md"
   ],
+  "required_check_files": [
+    "console_read_model/checks/README.md",
+    "console_read_model/checks/run_local_safety_checks.py",
+    "console_read_model/checks/check_policy.md",
+    "console_read_model/checks/open_gaps.md"
+  ],
   "required_generated_files": [
     "console_read_model/generated/README.md",
     "console_read_model/generated/team_console_snapshot.json",

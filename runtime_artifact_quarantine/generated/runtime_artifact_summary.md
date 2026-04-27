@@ -2,8 +2,8 @@
 
 Path-only inventory. No artifact contents were opened.
 
-- Artifacts classified: 180
-- Unsafe artifacts: 155
+- Artifacts classified: 172
+- Unsafe artifacts: 154
 
 ## Classes Seen
 
@@ -13,12 +13,13 @@ Path-only inventory. No artifact contents were opened.
 - DAEMON_STATE: 4
 - DAILY_REPORT: 3
 - DB_CORE: 1
-- DB_SIDECARE: 6
-- DREAM_REPORT: 18
+- DB_SIDECARE: 4
+- DREAM_REPORT: 19
 - DRIFT_REPORT: 4
 - ESCALATION_REPORT: 23
+- FRAMEWORK_FILE: 2
 - LOG_RUNTIME: 31
 - PYCACHE: 31
-- UNKNOWN_OR_NON_RUNTIME: 25
+- UNKNOWN_OR_NON_RUNTIME: 16
 - UNKNOWN_RUNTIME_ARTIFACT: 10
 - WHITELIST_REPORT: 1

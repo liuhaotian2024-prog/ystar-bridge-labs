@@ -1,0 +1,29 @@
+# Local Safety Checks
+
+`run_local_safety_checks.py` is a single safe local command for the Y* company
+read-model stack.
+
+It runs the existing curated-source checks:
+
+- runtime artifact path-only manifest builder
+- team console snapshot generator
+- generated JSON validity checks
+- static team read model validator
+- team console `validate-local`
+- read-only CLI smoke checks for quarantine and sources
+
+Run from the repository root:
+
+```bash
+python3 console_read_model/checks/run_local_safety_checks.py
+```
+
+This is not CI wiring, not runtime execution, not artifact mining, not cleanup,
+and not DB/log/report parsing. It is a local confidence pass for the safe
+read-model layer.
+
+Optional flags:
+
+- `--no-rebuild`: validate existing generated files without rebuilding them.
+- `--verbose`: print full command output.
+- `--continue-on-failure`: run every check before reporting failure.

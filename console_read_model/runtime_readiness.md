@@ -12,6 +12,7 @@
 - Static snapshot generator.
 - Snapshot-only team console CLI.
 - Path-only runtime artifact quarantine summary in generated console snapshots.
+- Local safety check wrapper for the curated read-model stack.
 
 ## Not Ready
 
@@ -28,6 +29,7 @@
 - CI wiring for snapshot generator.
 - CLI integration packaging.
 - Runtime artifact mining or curation adapters.
+- Runtime tests remain separate from local read-model safety checks.
 
 ## Recommended Next Steps
 

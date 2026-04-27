@@ -26,3 +26,6 @@ not list unsafe DB/log/runtime sources.
 
 It also checks that the generated quarantine summary exists and is attached to
 the team console snapshot, without following any runtime artifact paths.
+
+The validator checks that the local safety wrapper files exist, but it does not
+execute the wrapper. Execution remains an explicit local command.

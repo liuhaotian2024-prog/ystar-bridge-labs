@@ -67,8 +67,8 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 180
-- Unsafe artifacts count: 155
+- Artifacts classified: 172
+- Unsafe artifacts count: 154
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -76,13 +76,14 @@ Not ready:
   - DAEMON_STATE: 4
   - DAILY_REPORT: 3
   - DB_CORE: 1
-  - DB_SIDECARE: 6
-  - DREAM_REPORT: 18
+  - DB_SIDECARE: 4
+  - DREAM_REPORT: 19
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
+  - FRAMEWORK_FILE: 2
   - LOG_RUNTIME: 31
   - PYCACHE: 31
-  - UNKNOWN_OR_NON_RUNTIME: 25
+  - UNKNOWN_OR_NON_RUNTIME: 16
   - UNKNOWN_RUNTIME_ARTIFACT: 10
   - WHITELIST_REPORT: 1
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json

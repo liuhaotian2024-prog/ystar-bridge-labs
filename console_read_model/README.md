@@ -26,6 +26,10 @@ consumers. The generated files are derived artifacts, not live runtime state.
 prints summaries from generated snapshots only. It does not read raw runtime
 state or call subprocesses.
 
+`console_read_model/checks/` contains a local safety wrapper that runs the safe
+manifest, snapshot, JSON, validator, and CLI smoke checks in one command. It is
+not CI and does not inspect dirty runtime artifacts directly.
+
 The console snapshot also includes a runtime artifact quarantine summary derived
 from `runtime_artifact_quarantine/generated/runtime_artifact_manifest.json`.
 That summary is path-level only: it exposes classes and counts, not artifact
