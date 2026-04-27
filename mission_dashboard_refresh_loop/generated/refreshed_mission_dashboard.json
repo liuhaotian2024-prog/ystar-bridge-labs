@@ -1,0 +1,86 @@
+{
+  "schema_name": "ystar.mission_dashboard_refresh_loop.generated.refreshed_mission_dashboard",
+  "schema_version": "v0",
+  "dashboard_id": "refreshed-mission-dashboard-001",
+  "refresh_loop_id": "mission_dashboard_refresh_loop_v0",
+  "mission_id": "mission-commercial-agent-company-v0",
+  "mission_summary": "Build a commercial AI agent self-governed company runtime that can observe business-relevant resources, understand constraints, select or build tools, act through governed channels, record outcomes, and improve through curated CIEU deltas.",
+  "current_phase": "L4.7 deterministic mission dashboard refresh",
+  "latest_committed_milestone": "L4.6 Agent Team Work Proposal to Governed Tool Invocation v0",
+  "company_operating_state": "mission_bounded_local_readonly_dry_run",
+  "mission_bounded_autonomy_state": {
+    "supported": true,
+    "founder_sets_mission_agent_team_drives": true,
+    "step_by_step_human_prompting_required": false
+  },
+  "observation_capability_state": {
+    "governed_observation_loop_defined": true,
+    "current_observation_source": "agent_team_work_proposal/generated/bridged_tool_result_ref.json",
+    "safe_findings": [
+      "L4.6 generated an agent-team work proposal from mission and observation context.",
+      "The selected proposal used the governed read-only observation tool through the L4.5 bridge.",
+      "The bridged tool result read 8 curated generated sources."
+    ]
+  },
+  "governed_tooling_state": {
+    "first_governed_readonly_tool_exists": true,
+    "local_readonly_dry_run_callable": true,
+    "pre_u_bridge_invocation_chain_exists": true,
+    "tool_invoked_through_bridge": true
+  },
+  "agent_team_work_state": {
+    "agent_team_generated_work_proposal": true,
+    "agent_team_selected_governed_tool": true,
+    "work_proposal_routed_to_bridge": true
+  },
+  "legacy_asset_absorption_state": {
+    "assets_scored": 900,
+    "blind_absorption_allowed": false,
+    "blanket_rewrite_allowed": false
+  },
+  "cieu_learning_state": {
+    "dry_run_events_only": true,
+    "persistence_enabled": false,
+    "curation_required": true
+  },
+  "live_readiness_state": {
+    "live_action_enabled": false,
+    "external_action_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false
+  },
+  "blocked_actions": [
+    "scheduler remains disabled",
+    "daemon remains disabled",
+    "live and external actions remain disabled",
+    "CIEU persistence, brain writeback, and memory ingestion remain disabled"
+  ],
+  "top_risks": [
+    "scheduler and daemon remain disabled",
+    "live and external actions remain blocked",
+    "CIEU persistence and writeback remain disabled"
+  ],
+  "top_opportunities": [
+    "define a governed recurring observation loop contract",
+    "turn refreshed dashboard evidence into a recurring loop fixture",
+    "prepare dashboard refresh review before any scheduler exists"
+  ],
+  "next_recommended_milestone": "L4.8 Governed Recurring Observation Loop Contract v0",
+  "evidence_refs": [
+    "governed_observation_loop/generated/mission_dashboard_snapshot.json",
+    "governed_observation_loop/generated/company_state_digest.json",
+    "agent_team_work_proposal/generated/mission_context_snapshot.json",
+    "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
+    "console_read_model/generated/team_console_snapshot.json",
+    "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
+    "agent_team_work_proposal/generated/next_agent_work_recommendations.json",
+    "agent_team_work_proposal/generated/bridged_tool_result_ref.json",
+    "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json",
+    "governed_readonly_observation_tool/generated/tool_readiness_summary.json",
+    "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
+    "governed_observation_loop/generated/governed_observation_loop_summary.json",
+    "console_read_model/generated/team_console_snapshot.json"
+  ],
+  "refreshed_at": "stable_refresh_001"
+}

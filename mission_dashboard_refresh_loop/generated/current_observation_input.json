@@ -1,0 +1,84 @@
+{
+  "schema_name": "ystar.mission_dashboard_refresh_loop.generated.current_observation_input",
+  "schema_version": "v0",
+  "observation_input_id": "current-observation-input-001",
+  "source_refs": [
+    "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
+    "agent_team_work_proposal/generated/next_agent_work_recommendations.json",
+    "agent_team_work_proposal/generated/bridged_tool_result_ref.json",
+    "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json",
+    "governed_readonly_observation_tool/generated/tool_readiness_summary.json",
+    "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
+    "governed_observation_loop/generated/governed_observation_loop_summary.json",
+    "console_read_model/generated/team_console_snapshot.json"
+  ],
+  "latest_agent_team_work_status": {
+    "agent_team_generated_the_work": true,
+    "agent_team_selected_governed_tool": true,
+    "work_proposal_routed_to_bridge": true,
+    "direct_tool_invocation_used": false
+  },
+  "latest_bridge_status": {
+    "tool_invoked_through_bridge": true,
+    "first_governed_tool_invocation_chain_created": true,
+    "direct_tool_invocation_rejected": true
+  },
+  "latest_readonly_tool_status": {
+    "first_governed_tool_wrapper_created": true,
+    "local_readonly_dry_run_callable": true,
+    "unsafe_invocation_rejected": true
+  },
+  "latest_triage_status": {
+    "assets_scored": 900,
+    "top_absorption_candidate_count": 7,
+    "blind_absorption_allowed": false,
+    "blanket_rewrite_allowed": false
+  },
+  "latest_observation_loop_status": {
+    "read_only_observation_loop_defined": true,
+    "observation_tick_generated": true,
+    "mission_dashboard_snapshot_defined": true
+  },
+  "safe_new_findings": [
+    "L4.6 generated an agent-team work proposal from mission and observation context.",
+    "The selected proposal used the governed read-only observation tool through the L4.5 bridge.",
+    "The bridged tool result read 8 curated generated sources."
+  ],
+  "blocked_risks": [
+    "scheduler remains disabled",
+    "daemon remains disabled",
+    "live and external actions remain disabled",
+    "CIEU persistence, brain writeback, and memory ingestion remain disabled"
+  ],
+  "candidate_next_work": [
+    "L4.7 First Mission Dashboard Refresh Loop v0",
+    "Define governed proposal scoring review fixture v0",
+    "Prepare wrapper plan for the top legacy triage candidate"
+  ],
+  "current_governed_observation": {
+    "result_status": "success",
+    "read_source_count": 8,
+    "next_work_candidates": [
+      {
+        "candidate_id": "next-tool-bridge-001",
+        "title": "Route governed read-only tool invocation through Pre-U bridge",
+        "next_required_milestone": "L4.5 Governed Tool Invocation Through Pre-U Bridge v0",
+        "live_enabled": false
+      },
+      {
+        "candidate_id": "next-observation-loop-002",
+        "title": "Add recurring read-only observation loop fixture without scheduler activation",
+        "live_enabled": false
+      }
+    ],
+    "normalized_observation_keys": [
+      "mission_state",
+      "request_type",
+      "safety_state",
+      "source_summaries",
+      "summary_level"
+    ]
+  },
+  "real_action_executed": false,
+  "external_action_executed": false
+}

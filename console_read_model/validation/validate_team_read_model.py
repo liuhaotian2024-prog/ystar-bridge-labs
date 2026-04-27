@@ -346,6 +346,9 @@ def main() -> int:
         "required_governed_tool_invocation_bridge_files", []
     )
     required_agent_team_work_proposal_files = expected.get("required_agent_team_work_proposal_files", [])
+    required_mission_dashboard_refresh_loop_files = expected.get(
+        "required_mission_dashboard_refresh_loop_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -464,6 +467,12 @@ def main() -> int:
         check_exists(path, report, "agent team work proposal file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "agent team work proposal JSON")
+
+    for rel in required_mission_dashboard_refresh_loop_files:
+        path = ROOT / rel
+        check_exists(path, report, "mission dashboard refresh loop file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "mission dashboard refresh loop JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -2245,6 +2254,90 @@ def main() -> int:
                 report.fail(f"generated work proposal summary must keep {field}=false")
         if work_proposal.get("next_required_milestone") != "L4.7 First Mission Dashboard Refresh Loop v0":
             report.fail("generated work proposal summary must point to L4.7 mission dashboard milestone")
+
+    dashboard_refresh = generated_json.get("console_read_model/generated/dashboard_refresh_summary.json")
+    if dashboard_refresh:
+        for field in [
+            "mission_dashboard_refresh_loop_defined",
+            "refresh_loop_contract_defined",
+            "previous_dashboard_snapshot_defined",
+            "current_observation_input_defined",
+            "refreshed_mission_dashboard_defined",
+            "company_state_delta_defined",
+            "refreshed_autonomous_backlog_defined",
+            "refresh_loop_trace_defined",
+            "refresh_cieu_event_defined",
+            "refresh_residual_delta_defined",
+            "next_loop_recommendations_defined",
+            "mission_bounded_autonomy_supported",
+            "founder_sets_mission_agent_team_drives",
+            "step_by_step_human_prompting_required",
+            "dashboard_refresh_loop_ran",
+            "scheduler_used",
+            "daemon_used",
+            "manual_local_run_only",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "network_enabled",
+            "git_push_enabled",
+            "daemon_control_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "email_or_external_communication_enabled",
+            "next_required_milestone",
+            "generated_summary",
+            "generated_contract",
+            "generated_refreshed_dashboard",
+            "generated_company_state_delta",
+            "generated_cieu_event",
+            "warning",
+        ]:
+            if field in dashboard_refresh:
+                report.pass_(f"generated dashboard refresh summary field present: {field}")
+            else:
+                report.fail(f"generated dashboard refresh summary missing field: {field}")
+        for field in [
+            "mission_dashboard_refresh_loop_defined",
+            "refresh_loop_contract_defined",
+            "previous_dashboard_snapshot_defined",
+            "current_observation_input_defined",
+            "refreshed_mission_dashboard_defined",
+            "company_state_delta_defined",
+            "refreshed_autonomous_backlog_defined",
+            "refresh_loop_trace_defined",
+            "refresh_cieu_event_defined",
+            "refresh_residual_delta_defined",
+            "next_loop_recommendations_defined",
+            "mission_bounded_autonomy_supported",
+            "founder_sets_mission_agent_team_drives",
+            "dashboard_refresh_loop_ran",
+            "manual_local_run_only",
+        ]:
+            if dashboard_refresh.get(field) is not True:
+                report.fail(f"generated dashboard refresh summary must keep {field}=true")
+        for field in [
+            "step_by_step_human_prompting_required",
+            "scheduler_used",
+            "daemon_used",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "network_enabled",
+            "git_push_enabled",
+            "daemon_control_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "email_or_external_communication_enabled",
+        ]:
+            if dashboard_refresh.get(field) is not False:
+                report.fail(f"generated dashboard refresh summary must keep {field}=false")
+        if dashboard_refresh.get("next_required_milestone") != (
+            "L4.8 Governed Recurring Observation Loop Contract v0"
+        ):
+            report.fail("generated dashboard refresh summary must point to L4.8 recurring loop milestone")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

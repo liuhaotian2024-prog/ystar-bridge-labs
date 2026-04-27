@@ -1,0 +1,43 @@
+{
+  "schema_name": "ystar.mission_dashboard_refresh_loop.generated.refresh_cieu_event",
+  "schema_version": "v0",
+  "event_id": "refresh-cieu-event-001",
+  "dry_run_only": true,
+  "persistence_enabled": false,
+  "refresh_loop_id": "mission_dashboard_refresh_loop_v0",
+  "Xt": {
+    "previous_dashboard_snapshot_ref": "mission_dashboard_refresh_loop/generated/previous_dashboard_snapshot.json",
+    "current_observation_input_ref": "mission_dashboard_refresh_loop/generated/current_observation_input.json",
+    "latest_committed_milestone": "L4.6 Agent Team Work Proposal to Governed Tool Invocation v0"
+  },
+  "U": "manual local deterministic mission dashboard refresh",
+  "Y_star": "Refresh mission dashboard and backlog from governed read-only evidence without live execution.",
+  "predicted_Y_t1": "Dashboard reflects L4.6 agent-team proposal bridge and recommends L4.8 recurring loop contract.",
+  "predicted_R_t1": "Residual risk remains bounded by manual local execution and disabled scheduler, daemon, persistence, and writeback.",
+  "actual_Y_t1": "Refreshed dashboard produced with top backlog item: L4.8 Governed Recurring Observation Loop Contract v0.",
+  "actual_R_t1": "No real action, external action, scheduler, daemon, persistence, brain writeback, or memory ingestion occurred.",
+  "residual_delta": {
+    "status": "dry_run_refresh_delta_only",
+    "state_change_level": "meaningful",
+    "review_required": true
+  },
+  "evidence_refs": [
+    "mission_dashboard_refresh_loop/generated/refresh_loop_contract.json",
+    "mission_dashboard_refresh_loop/generated/previous_dashboard_snapshot.json",
+    "mission_dashboard_refresh_loop/generated/current_observation_input.json",
+    "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json",
+    "mission_dashboard_refresh_loop/generated/company_state_delta.json",
+    "mission_dashboard_refresh_loop/generated/refreshed_autonomous_backlog.json"
+  ],
+  "write_policy": {
+    "persistence_allowed": false,
+    "cieu_write_allowed": false,
+    "brain_writeback_allowed": false,
+    "memory_ingestion_allowed": false
+  },
+  "learning_eligibility": false,
+  "curation_required": true,
+  "direct_brain_writeback_allowed": false,
+  "direct_memory_ingestion_allowed": false,
+  "raw_artifact_ingestion_allowed": false
+}

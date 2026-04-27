@@ -1,0 +1,26 @@
+{
+  "schema_name": "ystar.mission_dashboard_refresh_loop.refresh_cieu_event_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "event_id",
+    "dry_run_only",
+    "persistence_enabled",
+    "Xt",
+    "U",
+    "Y_star",
+    "predicted_Y_t1",
+    "predicted_R_t1",
+    "actual_Y_t1",
+    "actual_R_t1",
+    "residual_delta",
+    "evidence_refs",
+    "write_policy",
+    "learning_eligibility",
+    "curation_required",
+    "direct_brain_writeback_allowed",
+    "direct_memory_ingestion_allowed",
+    "raw_artifact_ingestion_allowed"
+  ]
+}
+

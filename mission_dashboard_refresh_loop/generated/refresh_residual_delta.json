@@ -1,0 +1,22 @@
+{
+  "schema_name": "ystar.mission_dashboard_refresh_loop.generated.refresh_residual_delta",
+  "schema_version": "v0",
+  "delta_id": "refresh-residual-delta-001",
+  "event_id": "refresh-cieu-event-001",
+  "predicted_vs_actual_summary": {
+    "predicted": "Dashboard reflects L4.6 agent-team proposal bridge and recommends L4.8 recurring loop contract.",
+    "actual": "Refreshed dashboard produced with top backlog item: L4.8 Governed Recurring Observation Loop Contract v0.",
+    "residual": "No real action, external action, scheduler, daemon, persistence, brain writeback, or memory ingestion occurred."
+  },
+  "residual_delta": {
+    "status": "dry_run_refresh_delta_only",
+    "state_change_level": "meaningful",
+    "review_required": true
+  },
+  "learning_eligibility": false,
+  "curation_required": true,
+  "direct_brain_writeback_allowed": false,
+  "direct_memory_ingestion_allowed": false,
+  "next_review_required": true,
+  "notes": "Refresh delta is a dry-run fixture and requires curation before any future learning path."
+}

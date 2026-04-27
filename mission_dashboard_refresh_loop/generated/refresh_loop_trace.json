@@ -1,0 +1,17 @@
+{
+  "schema_name": "ystar.mission_dashboard_refresh_loop.generated.refresh_loop_trace",
+  "schema_version": "v0",
+  "trace_id": "refresh-loop-trace-001",
+  "refresh_loop_contract_ref": "mission_dashboard_refresh_loop/generated/refresh_loop_contract.json",
+  "previous_dashboard_snapshot_ref": "mission_dashboard_refresh_loop/generated/previous_dashboard_snapshot.json",
+  "current_observation_input_ref": "mission_dashboard_refresh_loop/generated/current_observation_input.json",
+  "refreshed_dashboard_ref": "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json",
+  "company_state_delta_ref": "mission_dashboard_refresh_loop/generated/company_state_delta.json",
+  "refreshed_backlog_ref": "mission_dashboard_refresh_loop/generated/refreshed_autonomous_backlog.json",
+  "runner_used": true,
+  "scheduler_used": false,
+  "daemon_used": false,
+  "real_action_executed": false,
+  "external_action_executed": false,
+  "notes": "Manual local refresh transformed generated evidence into dashboard, delta, and backlog artifacts."
+}

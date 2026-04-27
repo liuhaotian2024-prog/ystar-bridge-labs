@@ -1,0 +1,30 @@
+{
+  "schema_name": "ystar.mission_dashboard_refresh_loop.company_state_delta_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "delta_id",
+    "previous_snapshot_ref",
+    "current_observation_ref",
+    "new_capabilities_detected",
+    "new_risks_detected",
+    "resolved_or_reduced_risks",
+    "new_work_candidates",
+    "mission_progress_summary",
+    "state_change_level",
+    "requires_review",
+    "direct_brain_writeback_allowed",
+    "direct_memory_ingestion_allowed"
+  ],
+  "properties": {
+    "state_change_level": {
+      "enum": [
+        "none",
+        "minor",
+        "meaningful",
+        "major"
+      ]
+    }
+  }
+}
+

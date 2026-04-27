@@ -76,6 +76,10 @@ python3 console_read_model/cli/team_console.py <command>
   mission context, observation input, autonomous proposals, role review, tool
   need, generated tool request, bridge routing, CIEU fixture, disabled live
   flags, and the L4.7 recommendation.
+- `dashboard-refresh`: Prints the generated mission dashboard refresh loop
+  summary: previous dashboard snapshot, current observation input, refreshed
+  dashboard, company state delta, refreshed backlog, CIEU fixture, disabled
+  scheduler/live/persistence flags, and the L4.8 recommendation.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

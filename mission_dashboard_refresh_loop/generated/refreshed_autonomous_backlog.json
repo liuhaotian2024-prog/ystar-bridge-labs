@@ -1,0 +1,127 @@
+{
+  "schema_name": "ystar.mission_dashboard_refresh_loop.generated.refreshed_autonomous_backlog",
+  "schema_version": "v0",
+  "dashboard_ref": "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json",
+  "company_state_delta_ref": "mission_dashboard_refresh_loop/generated/company_state_delta.json",
+  "backlog_count": 5,
+  "items": [
+    {
+      "backlog_item_id": "refresh-backlog-001",
+      "title": "L4.8 Governed Recurring Observation Loop Contract v0",
+      "description": "Define the contract for a governed recurring observation loop without enabling a scheduler.",
+      "recommended_owner_agent": "Ryan-Platform",
+      "supporting_agents": [
+        "Samantha-Secretary",
+        "Maya-Governance",
+        "Leo-Kernel"
+      ],
+      "mission_relevance": "Moves the company from manual refresh toward governed recurrence while preserving disabled live behavior.",
+      "source_evidence_refs": [
+        "mission_dashboard_refresh_loop/generated/company_state_delta.json",
+        "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json"
+      ],
+      "risk_tier": "low",
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "requires_live_action": false,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "priority": 1,
+      "selection_reason": "It is the smallest safe next step after a manual dashboard refresh loop."
+    },
+    {
+      "backlog_item_id": "refresh-backlog-002",
+      "title": "Add dashboard refresh review packet fixture v0",
+      "description": "Create a Pre-U review packet fixture for recurring dashboard refresh proposals.",
+      "recommended_owner_agent": "Maya-Governance",
+      "supporting_agents": [
+        "Aiden-CEO"
+      ],
+      "mission_relevance": "Keeps future recurring refresh decisions explainable and governed.",
+      "source_evidence_refs": [
+        "mission_dashboard_refresh_loop/generated/refresh_loop_trace.json"
+      ],
+      "risk_tier": "low",
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "requires_live_action": false,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "priority": 2,
+      "selection_reason": "Review packets can harden the next recurring-loop contract."
+    },
+    {
+      "backlog_item_id": "refresh-backlog-003",
+      "title": "Create mission dashboard staleness indicator v0",
+      "description": "Define a deterministic read-model field that marks whether generated dashboard evidence is stale.",
+      "recommended_owner_agent": "Samantha-Secretary",
+      "supporting_agents": [
+        "Ryan-Platform"
+      ],
+      "mission_relevance": "Improves autonomous situational awareness without external actions.",
+      "source_evidence_refs": [
+        "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json"
+      ],
+      "risk_tier": "low",
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "requires_live_action": false,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "priority": 3,
+      "selection_reason": "A staleness indicator helps the team know when refresh is needed."
+    },
+    {
+      "backlog_item_id": "refresh-backlog-004",
+      "title": "Plan governed wrapper for dashboard read-only refresh command",
+      "description": "Design a future wrapper contract for invoking refresh through governance, not as an autonomous daemon.",
+      "recommended_owner_agent": "Ethan-CTO",
+      "supporting_agents": [
+        "Leo-Kernel",
+        "Maya-Governance"
+      ],
+      "mission_relevance": "Moves toward tool-mediated company operation while preserving architecture boundaries.",
+      "source_evidence_refs": [
+        "mission_dashboard_refresh_loop/generated/refreshed_autonomous_backlog.json"
+      ],
+      "risk_tier": "medium",
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "requires_live_action": false,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "priority": 4,
+      "selection_reason": "Useful after the recurring-loop contract defines allowed invocation boundaries."
+    },
+    {
+      "backlog_item_id": "refresh-backlog-005",
+      "title": "Prepare first operator-reviewed recurrence candidate",
+      "description": "Draft a future candidate for operator-reviewed recurring refresh without scheduling or executing it.",
+      "recommended_owner_agent": "Aiden-CEO",
+      "supporting_agents": [
+        "Maya-Governance",
+        "Ryan-Platform"
+      ],
+      "mission_relevance": "Reduces founder prompting while keeping human-controlled enablement explicit.",
+      "source_evidence_refs": [
+        "mission_dashboard_refresh_loop/generated/company_state_delta.json"
+      ],
+      "risk_tier": "medium",
+      "requires_y_star_gov": true,
+      "requires_operator_approval": true,
+      "requires_cieu_event": true,
+      "requires_live_action": false,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "priority": 5,
+      "selection_reason": "Operator review belongs after the contract exists, not in L4.7."
+    }
+  ],
+  "top_item": "L4.8 Governed Recurring Observation Loop Contract v0",
+  "live_enabled": false,
+  "external_action_enabled": false
+}

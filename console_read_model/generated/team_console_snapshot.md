@@ -66,6 +66,7 @@ Ready now:
 - first governed read-only observation tool wrapper summary
 - governed tool invocation bridge summary
 - agent-team work proposal to governed tool invocation summary
+- mission dashboard refresh loop summary
 
 Not ready:
 - runtime generator
@@ -94,16 +95,14 @@ Not ready:
 - enabled live-boundary harness
 - enabled CIEU runtime event persistence
 - approved governed action registry
-- Pre-U bridge invocation for governed read-only observation tool
-- agent team work proposal routing into governed tool invocation
-- mission dashboard refresh loop from agent-team generated bridge results
+- governed recurring observation loop contract
 
 ## Runtime Artifact Quarantine Summary
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 222
-- Unsafe artifacts count: 172
+- Artifacts classified: 223
+- Unsafe artifacts count: 175
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -111,14 +110,14 @@ Not ready:
   - DAEMON_STATE: 4
   - DAILY_REPORT: 6
   - DB_CORE: 1
-  - DB_SIDECARE: 4
-  - DREAM_REPORT: 34
+  - DB_SIDECARE: 6
+  - DREAM_REPORT: 35
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
   - FRAMEWORK_FILE: 5
   - LOG_RUNTIME: 31
   - PYCACHE: 31
-  - UNKNOWN_OR_NON_RUNTIME: 45
+  - UNKNOWN_OR_NON_RUNTIME: 43
   - UNKNOWN_RUNTIME_ARTIFACT: 10
   - WHITELIST_REPORT: 1
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
@@ -156,23 +155,23 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 222
-- Artifacts with disposition: 222
+- Total artifacts: 223
+- Artifacts with disposition: 223
 - Safe-mined to review queue: 20
-- Forbidden direct read count: 104
+- Forbidden direct read count: 106
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
-  - deferred_markdown_report_not_selected: 48
+  - deferred_markdown_report_not_selected: 49
   - deferred_requires_bounded_log_adapter: 31
   - deferred_requires_classification: 10
   - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
-  - deferred_sidecar_or_transaction_file: 4
+  - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 31
-  - ignored_or_non_runtime: 50
+  - ignored_or_non_runtime: 48
   - safe_mined_to_review_queue: 20
 - Evidence scoring status:
-  - not_started: 222
+  - not_started: 223
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -468,6 +467,30 @@ Not ready:
 - next_required_milestone: L4.7 First Mission Dashboard Refresh Loop v0
 - Warning: Agent-team work proposal is dry-run only and routes tool use through the L4.5 bridge.
 
+## Mission Dashboard Refresh Loop
+
+- refresh_loop_contract_defined: True
+- previous_dashboard_snapshot_defined: True
+- current_observation_input_defined: True
+- refreshed_mission_dashboard_defined: True
+- company_state_delta_defined: True
+- refreshed_autonomous_backlog_defined: True
+- refresh_loop_trace_defined: True
+- refresh_cieu_event_defined: True
+- refresh_residual_delta_defined: True
+- dashboard_refresh_loop_ran: True
+- scheduler_used: False
+- daemon_used: False
+- manual_local_run_only: True
+- real_action_executed: False
+- external_action_executed: False
+- live_action_enabled: False
+- cieu_persistence_enabled: False
+- brain_writeback_enabled: False
+- memory_ingestion_enabled: False
+- next_required_milestone: L4.8 Governed Recurring Observation Loop Contract v0
+- Warning: Mission dashboard refresh loop is manual, local, read-only, and dry-run only. Scheduler and daemon use remain disabled.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -499,7 +522,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - build L4.4 first governed read-only observation tool wrapper
 - route the governed read-only observation tool through the Pre-U bridge
 - build L4.6 agent team work proposal to governed tool invocation
-- build L4.7 first mission dashboard refresh loop
+- define L4.8 governed recurring observation loop contract
 
 ## Warnings / Gaps
 
@@ -531,6 +554,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Autonomous work cycle exists as a simulator only; no real action execution is implemented.
 - Legacy asset triage exists, but no absorption or wrapper application workflow exists.
 - Governed observation loop exists as one read-only tick; recurring wrapper execution is not implemented.
-- Governed read-only observation tool exists for local dry-run calls only; Pre-U bridge invocation is not wired yet.
-- Governed tool invocation bridge exists for local dry-run only; agent work proposal routing is not implemented yet.
-- Agent-team work proposal routing exists for dry-run tool invocation only; mission dashboard refresh loop is not implemented yet.
+- Governed read-only observation tool exists for local dry-run calls only; all invocations remain bridge-gated.
+- Governed tool invocation bridge exists for local dry-run only; agent work proposal routing remains dry-run only.
+- Agent-team work proposal routing feeds a manual dashboard refresh only; recurrence is not implemented yet.
+- Mission dashboard refresh loop exists as manual local dry-run only; governed recurrence is not implemented yet.

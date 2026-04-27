@@ -1,0 +1,53 @@
+{
+  "schema_name": "ystar.mission_dashboard_refresh_loop.generated.next_loop_recommendations",
+  "schema_version": "v0",
+  "recommendation_count": 3,
+  "recommendations": [
+    {
+      "recommendation_id": "next-loop-001",
+      "title": "L4.8 Governed Recurring Observation Loop Contract v0",
+      "recommended_owner_agent": "Ryan-Platform",
+      "risk_tier": "low",
+      "depends_on": [
+        "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json",
+        "mission_dashboard_refresh_loop/generated/refresh_loop_trace.json"
+      ],
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "rationale": "Define recurrence boundaries before any scheduler or daemon can exist."
+    },
+    {
+      "recommendation_id": "next-loop-002",
+      "title": "Dashboard refresh review packet fixture v0",
+      "recommended_owner_agent": "Maya-Governance",
+      "risk_tier": "low",
+      "depends_on": [
+        "mission_dashboard_refresh_loop/generated/refresh_cieu_event.json"
+      ],
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "rationale": "Prepares the governance review shape for future recurring refresh proposals."
+    },
+    {
+      "recommendation_id": "next-loop-003",
+      "title": "Mission dashboard staleness indicator v0",
+      "recommended_owner_agent": "Samantha-Secretary",
+      "risk_tier": "low",
+      "depends_on": [
+        "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json"
+      ],
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "rationale": "Helps the agent team know when a future governed refresh is warranted."
+    }
+  ]
+}

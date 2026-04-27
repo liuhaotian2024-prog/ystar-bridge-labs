@@ -34,6 +34,7 @@ OBSERVATION_LOOP = "console_read_model/generated/observation_loop_summary.json"
 READONLY_TOOL = "console_read_model/generated/readonly_tool_summary.json"
 TOOL_BRIDGE = "console_read_model/generated/tool_bridge_summary.json"
 WORK_PROPOSAL = "console_read_model/generated/work_proposal_summary.json"
+DASHBOARD_REFRESH = "console_read_model/generated/dashboard_refresh_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -53,7 +54,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -107,6 +108,7 @@ def load_all() -> dict[str, Any]:
         "readonly_tool": load_json(READONLY_TOOL),
         "tool_bridge": load_json(TOOL_BRIDGE),
         "work_proposal": load_json(WORK_PROPOSAL),
+        "dashboard_refresh": load_json(DASHBOARD_REFRESH),
     }
 
 
@@ -679,6 +681,36 @@ def cmd_work_proposal(data: dict[str, Any]) -> None:
     print(f"generated_tool_request: {proposal.get('generated_tool_request')}")
     print(f"generated_bridge_trace: {proposal.get('generated_bridge_trace')}")
     print(f"warning: {proposal.get('warning')}")
+
+
+def cmd_dashboard_refresh(data: dict[str, Any]) -> None:
+    refresh = data["dashboard_refresh"]
+    print("# Mission Dashboard Refresh Loop")
+    print()
+    print(f"refresh loop contract defined: {refresh.get('refresh_loop_contract_defined')}")
+    print(f"previous dashboard snapshot defined: {refresh.get('previous_dashboard_snapshot_defined')}")
+    print(f"current observation input defined: {refresh.get('current_observation_input_defined')}")
+    print(f"refreshed mission dashboard defined: {refresh.get('refreshed_mission_dashboard_defined')}")
+    print(f"company state delta defined: {refresh.get('company_state_delta_defined')}")
+    print(f"refreshed autonomous backlog defined: {refresh.get('refreshed_autonomous_backlog_defined')}")
+    print(f"refresh loop trace defined: {refresh.get('refresh_loop_trace_defined')}")
+    print(f"refresh CIEU event defined: {refresh.get('refresh_cieu_event_defined')}")
+    print(f"refresh residual delta defined: {refresh.get('refresh_residual_delta_defined')}")
+    print(f"dashboard refresh loop ran: {refresh.get('dashboard_refresh_loop_ran')}")
+    print(f"scheduler used: {refresh.get('scheduler_used')}")
+    print(f"daemon used: {refresh.get('daemon_used')}")
+    print(f"manual local run only: {refresh.get('manual_local_run_only')}")
+    print(f"real action executed: {refresh.get('real_action_executed')}")
+    print(f"live action enabled: {refresh.get('live_action_enabled')}")
+    print(f"external action executed: {refresh.get('external_action_executed')}")
+    print(f"CIEU persistence enabled: {refresh.get('cieu_persistence_enabled')}")
+    print(f"brain writeback enabled: {refresh.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {refresh.get('memory_ingestion_enabled')}")
+    print(f"next required milestone: {refresh.get('next_required_milestone')}")
+    print(f"generated_summary: {refresh.get('generated_summary')}")
+    print(f"generated_refreshed_dashboard: {refresh.get('generated_refreshed_dashboard')}")
+    print(f"generated_company_state_delta: {refresh.get('generated_company_state_delta')}")
+    print(f"warning: {refresh.get('warning')}")
 
 
 def cmd_gaps(data: dict[str, Any]) -> None:
@@ -1762,6 +1794,8 @@ def main(argv: list[str]) -> int:
         cmd_tool_bridge(data)
     elif command == "work-proposal":
         cmd_work_proposal(data)
+    elif command == "dashboard-refresh":
+        cmd_dashboard_refresh(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

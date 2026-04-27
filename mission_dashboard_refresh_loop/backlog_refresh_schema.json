@@ -1,0 +1,19 @@
+{
+  "schema_name": "ystar.mission_dashboard_refresh_loop.backlog_refresh_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "backlog_count",
+    "items"
+  ],
+  "properties": {
+    "backlog_count": {
+      "type": "integer",
+      "minimum": 5
+    },
+    "items": {
+      "type": "array"
+    }
+  }
+}
+

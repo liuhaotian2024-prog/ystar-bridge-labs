@@ -1,0 +1,49 @@
+{
+  "schema_name": "ystar.mission_dashboard_refresh_loop.generated.company_state_delta",
+  "schema_version": "v0",
+  "delta_id": "company-state-delta-001",
+  "previous_snapshot_ref": "mission_dashboard_refresh_loop/generated/previous_dashboard_snapshot.json",
+  "current_observation_ref": "mission_dashboard_refresh_loop/generated/current_observation_input.json",
+  "new_capabilities_detected": [
+    "agent-team generated work proposal routed to governed tool bridge",
+    "mission dashboard can now be refreshed from governed read-only observation evidence",
+    "company state delta can be emitted as a dry-run CIEU-compatible fixture"
+  ],
+  "new_risks_detected": [
+    "recurring operation needs a future scheduler-disabled contract before automation"
+  ],
+  "resolved_or_reduced_risks": [
+    "manual tool request dependency reduced by agent-team generated proposal flow",
+    "dashboard staleness reduced by deterministic refresh artifact"
+  ],
+  "new_work_candidates": [
+    "L4.7 First Mission Dashboard Refresh Loop v0",
+    "Define governed proposal scoring review fixture v0",
+    "Prepare wrapper plan for the top legacy triage candidate"
+  ],
+  "mission_progress_summary": "The company now has a deterministic local refresh loop that converts L4.6 governed observation evidence into a refreshed mission dashboard and backlog.",
+  "state_change_level": "meaningful",
+  "requires_review": true,
+  "direct_brain_writeback_allowed": false,
+  "direct_memory_ingestion_allowed": false,
+  "evidence_refs": [
+    "governed_observation_loop/generated/mission_dashboard_snapshot.json",
+    "governed_observation_loop/generated/company_state_digest.json",
+    "agent_team_work_proposal/generated/mission_context_snapshot.json",
+    "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
+    "console_read_model/generated/team_console_snapshot.json",
+    "governed_observation_loop/generated/mission_dashboard_snapshot.json",
+    "governed_observation_loop/generated/company_state_digest.json",
+    "agent_team_work_proposal/generated/mission_context_snapshot.json",
+    "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
+    "console_read_model/generated/team_console_snapshot.json",
+    "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
+    "agent_team_work_proposal/generated/next_agent_work_recommendations.json",
+    "agent_team_work_proposal/generated/bridged_tool_result_ref.json",
+    "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json",
+    "governed_readonly_observation_tool/generated/tool_readiness_summary.json",
+    "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
+    "governed_observation_loop/generated/governed_observation_loop_summary.json",
+    "console_read_model/generated/team_console_snapshot.json"
+  ]
+}

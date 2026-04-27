@@ -1,0 +1,42 @@
+{
+  "schema_name": "ystar.mission_dashboard_refresh_loop.refresh_loop_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "refresh_loop_id",
+    "mission_bounded_autonomy_supported",
+    "uses_generated_read_model_only",
+    "manual_local_run_only",
+    "scheduler_enabled",
+    "daemon_enabled",
+    "real_action_executed",
+    "live_action_enabled"
+  ],
+  "properties": {
+    "refresh_loop_id": {
+      "type": "string"
+    },
+    "mission_bounded_autonomy_supported": {
+      "type": "boolean"
+    },
+    "uses_generated_read_model_only": {
+      "type": "boolean"
+    },
+    "manual_local_run_only": {
+      "type": "boolean"
+    },
+    "scheduler_enabled": {
+      "type": "boolean"
+    },
+    "daemon_enabled": {
+      "type": "boolean"
+    },
+    "real_action_executed": {
+      "type": "boolean"
+    },
+    "live_action_enabled": {
+      "type": "boolean"
+    }
+  }
+}
+

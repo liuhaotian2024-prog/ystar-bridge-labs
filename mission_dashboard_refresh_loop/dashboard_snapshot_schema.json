@@ -1,0 +1,46 @@
+{
+  "schema_name": "ystar.mission_dashboard_refresh_loop.dashboard_snapshot_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "dashboard_id",
+    "mission_id",
+    "mission_summary",
+    "company_operating_state",
+    "blocked_actions",
+    "top_risks",
+    "top_opportunities",
+    "next_recommended_milestone",
+    "evidence_refs"
+  ],
+  "properties": {
+    "dashboard_id": {
+      "type": "string"
+    },
+    "mission_id": {
+      "type": "string"
+    },
+    "mission_summary": {
+      "type": "string"
+    },
+    "company_operating_state": {
+      "type": "string"
+    },
+    "blocked_actions": {
+      "type": "array"
+    },
+    "top_risks": {
+      "type": "array"
+    },
+    "top_opportunities": {
+      "type": "array"
+    },
+    "next_recommended_milestone": {
+      "type": "string"
+    },
+    "evidence_refs": {
+      "type": "array"
+    }
+  }
+}
+

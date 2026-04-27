@@ -29,7 +29,8 @@
     "governed read-only observation loop summary",
     "first governed read-only observation tool wrapper summary",
     "governed tool invocation bridge summary",
-    "agent-team work proposal to governed tool invocation summary"
+    "agent-team work proposal to governed tool invocation summary",
+    "mission dashboard refresh loop summary"
   ],
   "not_ready": [
     "runtime generator",
@@ -58,9 +59,7 @@
     "enabled live-boundary harness",
     "enabled CIEU runtime event persistence",
     "approved governed action registry",
-    "Pre-U bridge invocation for governed read-only observation tool",
-    "agent team work proposal routing into governed tool invocation",
-    "mission dashboard refresh loop from agent-team generated bridge results"
+    "governed recurring observation loop contract"
   ],
   "recommended_next_steps": [
     "wire static validator and loader into CI",
@@ -84,7 +83,7 @@
     "build L4.4 first governed read-only observation tool wrapper",
     "route the governed read-only observation tool through the Pre-U bridge",
     "build L4.6 agent team work proposal to governed tool invocation",
-    "build L4.7 first mission dashboard refresh loop"
+    "define L4.8 governed recurring observation loop contract"
   ],
   "blockers": [
     "no DB-safe adapter",
@@ -102,9 +101,7 @@
     "autonomous cycle is simulated only and cannot execute real work",
     "legacy assets are triaged but not absorbed",
     "observation loop is read-only and not recurring",
-    "governed read-only observation tool is local dry-run only and not routed through Pre-U yet",
-    "governed tool invocation bridge is local dry-run only and not connected to autonomous proposals yet",
-    "agent-team work proposal bridge is dry-run only and does not refresh the mission dashboard yet"
+    "mission dashboard refresh loop is manual local dry-run only and has no recurrence contract yet"
   ],
   "safety_boundaries": [
     "no DB reads",
@@ -130,6 +127,7 @@
     "governed observation loop reads generated summaries only and executes no actions",
     "governed read-only observation tool reads allowed generated summaries only and executes no actions",
     "governed tool invocation bridge requires Pre-U/decision/authorization before local tool calls",
-    "agent-team work proposal routing starts from generated observations and remains local read-only dry-run only"
+    "agent-team work proposal routing starts from generated observations and remains local read-only dry-run only",
+    "mission dashboard refresh loop is manual local dry-run only and uses generated/read-model evidence only"
   ]
 }

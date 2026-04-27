@@ -1,0 +1,45 @@
+{
+  "schema_name": "ystar.mission_dashboard_refresh_loop.generated.previous_dashboard_snapshot",
+  "schema_version": "v0",
+  "snapshot_id": "previous-dashboard-snapshot-001",
+  "source_refs": [
+    "governed_observation_loop/generated/mission_dashboard_snapshot.json",
+    "governed_observation_loop/generated/company_state_digest.json",
+    "agent_team_work_proposal/generated/mission_context_snapshot.json",
+    "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
+    "console_read_model/generated/team_console_snapshot.json"
+  ],
+  "mission_id": "mission-commercial-agent-company-v0",
+  "mission_summary": "Build a commercial AI agent self-governed company runtime that can observe business-relevant resources, understand constraints, select or build tools, act through governed channels, record outcomes, and improve through curated CIEU deltas.",
+  "milestone_chain": [
+    "L4.1 capability inventory",
+    "L4.2 autonomous work cycle simulator",
+    "L4.3 legacy triage and read-only observation loop"
+  ],
+  "known_capabilities": [
+    "generate read-only observation ticks",
+    "recommend next work candidates",
+    "prepare wrapper specs without executing tools"
+  ],
+  "known_blocked_actions": [
+    "live action execution remains disabled",
+    "external communication remains disabled",
+    "CIEU persistence remains disabled",
+    "brain and memory writeback remain disabled"
+  ],
+  "known_risks": [
+    "live action execution remains disabled",
+    "external communication remains disabled",
+    "CIEU persistence remains disabled",
+    "brain and memory writeback remain disabled"
+  ],
+  "known_opportunities": [
+    "use generated summaries as a recurring observation surface",
+    "turn top triage candidates into governed read-only wrappers",
+    "produce next work recommendations without executing actions"
+  ],
+  "known_next_recommendations": [
+    "L4.7 First Mission Dashboard Refresh Loop v0",
+    "L4.4 First Governed Read-Only Observation Tool Wrapper v0"
+  ]
+}

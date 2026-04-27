@@ -128,7 +128,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after agent team work proposal",
+        "Build mission dashboard refresh loop",
+        ["python3", "mission_dashboard_refresh_loop/tools/build_mission_dashboard_refresh_loop.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after mission dashboard refresh loop",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -612,6 +617,64 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json"],
     ),
     Check(
+        "Compile mission dashboard refresh loop tools",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "mission_dashboard_refresh_loop/tools/build_mission_dashboard_refresh_loop.py",
+            "mission_dashboard_refresh_loop/tools/run_dashboard_refresh_loop.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: dashboard_refresh_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/dashboard_refresh_summary.json"],
+    ),
+    Check(
+        "Validate JSON: refresh_loop_contract.json",
+        ["python3", "-m", "json.tool", "mission_dashboard_refresh_loop/generated/refresh_loop_contract.json"],
+    ),
+    Check(
+        "Validate JSON: previous_dashboard_snapshot.json",
+        ["python3", "-m", "json.tool", "mission_dashboard_refresh_loop/generated/previous_dashboard_snapshot.json"],
+    ),
+    Check(
+        "Validate JSON: current_observation_input.json",
+        ["python3", "-m", "json.tool", "mission_dashboard_refresh_loop/generated/current_observation_input.json"],
+    ),
+    Check(
+        "Validate JSON: refreshed_mission_dashboard.json",
+        ["python3", "-m", "json.tool", "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json"],
+    ),
+    Check(
+        "Validate JSON: company_state_delta.json",
+        ["python3", "-m", "json.tool", "mission_dashboard_refresh_loop/generated/company_state_delta.json"],
+    ),
+    Check(
+        "Validate JSON: refreshed_autonomous_backlog.json",
+        ["python3", "-m", "json.tool", "mission_dashboard_refresh_loop/generated/refreshed_autonomous_backlog.json"],
+    ),
+    Check(
+        "Validate JSON: refresh_loop_trace.json",
+        ["python3", "-m", "json.tool", "mission_dashboard_refresh_loop/generated/refresh_loop_trace.json"],
+    ),
+    Check(
+        "Validate JSON: refresh_cieu_event.json",
+        ["python3", "-m", "json.tool", "mission_dashboard_refresh_loop/generated/refresh_cieu_event.json"],
+    ),
+    Check(
+        "Validate JSON: refresh_residual_delta.json",
+        ["python3", "-m", "json.tool", "mission_dashboard_refresh_loop/generated/refresh_residual_delta.json"],
+    ),
+    Check(
+        "Validate JSON: next_loop_recommendations.json",
+        ["python3", "-m", "json.tool", "mission_dashboard_refresh_loop/generated/next_loop_recommendations.json"],
+    ),
+    Check(
+        "Validate JSON: refresh_loop_readiness_summary.json",
+        ["python3", "-m", "json.tool", "mission_dashboard_refresh_loop/generated/refresh_loop_readiness_summary.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -774,6 +837,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: work-proposal",
         ["python3", "console_read_model/cli/team_console.py", "work-proposal"],
+    ),
+    Check(
+        "CLI smoke: dashboard-refresh",
+        ["python3", "console_read_model/cli/team_console.py", "dashboard-refresh"],
     ),
     Check(
         "CLI smoke: sources",

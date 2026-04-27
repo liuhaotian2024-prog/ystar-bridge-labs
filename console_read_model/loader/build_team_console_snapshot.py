@@ -44,6 +44,7 @@ CURATED_SOURCES = [
     "governed_readonly_observation_tool/generated/tool_readiness_summary.json",
     "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json",
     "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
+    "mission_dashboard_refresh_loop/generated/refresh_loop_readiness_summary.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -1078,6 +1079,112 @@ def build_work_proposal_summary(work_summary: dict[str, Any] | None) -> dict[str
     }
 
 
+def build_dashboard_refresh_summary(refresh_summary: dict[str, Any] | None) -> dict[str, Any]:
+    if not refresh_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.dashboard_refresh_summary",
+            "schema_version": "v0",
+            "mission_dashboard_refresh_loop_defined": False,
+            "refresh_loop_contract_defined": False,
+            "previous_dashboard_snapshot_defined": False,
+            "current_observation_input_defined": False,
+            "refreshed_mission_dashboard_defined": False,
+            "company_state_delta_defined": False,
+            "refreshed_autonomous_backlog_defined": False,
+            "refresh_loop_trace_defined": False,
+            "refresh_cieu_event_defined": False,
+            "refresh_residual_delta_defined": False,
+            "dashboard_refresh_loop_ran": False,
+            "scheduler_used": False,
+            "daemon_used": False,
+            "manual_local_run_only": False,
+            "real_action_executed": False,
+            "external_action_executed": False,
+            "live_action_enabled": False,
+            "cieu_persistence_enabled": False,
+            "brain_writeback_enabled": False,
+            "memory_ingestion_enabled": False,
+            "next_required_milestone": "L4.8 Governed Recurring Observation Loop Contract v0",
+            "generated_summary": "mission_dashboard_refresh_loop/generated/refresh_loop_readiness_summary.json",
+            "warning": "Mission dashboard refresh loop has not been generated yet.",
+        }
+    return {
+        "schema_name": "ystar.console_read_model.generated.dashboard_refresh_summary",
+        "schema_version": "v0",
+        "mission_dashboard_refresh_loop_defined": refresh_summary.get(
+            "mission_dashboard_refresh_loop_defined"
+        ),
+        "refresh_loop_contract_defined": refresh_summary.get("refresh_loop_contract_defined"),
+        "previous_dashboard_snapshot_defined": refresh_summary.get(
+            "previous_dashboard_snapshot_defined"
+        ),
+        "current_observation_input_defined": refresh_summary.get("current_observation_input_defined"),
+        "refreshed_mission_dashboard_defined": refresh_summary.get(
+            "refreshed_mission_dashboard_defined"
+        ),
+        "company_state_delta_defined": refresh_summary.get("company_state_delta_defined"),
+        "refreshed_autonomous_backlog_defined": refresh_summary.get(
+            "refreshed_autonomous_backlog_defined"
+        ),
+        "refresh_loop_trace_defined": refresh_summary.get("refresh_loop_trace_defined"),
+        "refresh_cieu_event_defined": refresh_summary.get("refresh_cieu_event_defined"),
+        "refresh_residual_delta_defined": refresh_summary.get("refresh_residual_delta_defined"),
+        "next_loop_recommendations_defined": refresh_summary.get(
+            "next_loop_recommendations_defined"
+        ),
+        "mission_bounded_autonomy_supported": refresh_summary.get(
+            "mission_bounded_autonomy_supported"
+        ),
+        "founder_sets_mission_agent_team_drives": refresh_summary.get(
+            "founder_sets_mission_agent_team_drives"
+        ),
+        "step_by_step_human_prompting_required": refresh_summary.get(
+            "step_by_step_human_prompting_required"
+        ),
+        "dashboard_refresh_loop_ran": refresh_summary.get("dashboard_refresh_loop_ran"),
+        "scheduler_used": refresh_summary.get("scheduler_used"),
+        "daemon_used": refresh_summary.get("daemon_used"),
+        "manual_local_run_only": refresh_summary.get("manual_local_run_only"),
+        "real_action_executed": refresh_summary.get("real_action_executed"),
+        "external_action_executed": refresh_summary.get("external_action_executed"),
+        "live_action_enabled": refresh_summary.get("live_action_enabled"),
+        "network_enabled": refresh_summary.get("network_enabled"),
+        "git_push_enabled": refresh_summary.get("git_push_enabled"),
+        "daemon_control_enabled": refresh_summary.get("daemon_control_enabled"),
+        "cieu_persistence_enabled": refresh_summary.get("cieu_persistence_enabled"),
+        "brain_writeback_enabled": refresh_summary.get("brain_writeback_enabled"),
+        "memory_ingestion_enabled": refresh_summary.get("memory_ingestion_enabled"),
+        "email_or_external_communication_enabled": refresh_summary.get(
+            "email_or_external_communication_enabled"
+        ),
+        "next_required_milestone": refresh_summary.get("next_required_milestone"),
+        "generated_summary": refresh_summary.get(
+            "generated_summary",
+            "mission_dashboard_refresh_loop/generated/refresh_loop_readiness_summary.json",
+        ),
+        "generated_contract": refresh_summary.get(
+            "generated_contract",
+            "mission_dashboard_refresh_loop/generated/refresh_loop_contract.json",
+        ),
+        "generated_refreshed_dashboard": refresh_summary.get(
+            "generated_refreshed_dashboard",
+            "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json",
+        ),
+        "generated_company_state_delta": refresh_summary.get(
+            "generated_company_state_delta",
+            "mission_dashboard_refresh_loop/generated/company_state_delta.json",
+        ),
+        "generated_cieu_event": refresh_summary.get(
+            "generated_cieu_event",
+            "mission_dashboard_refresh_loop/generated/refresh_cieu_event.json",
+        ),
+        "warning": refresh_summary.get(
+            "warning",
+            "Mission dashboard refresh loop is manual local dry-run only.",
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -1172,6 +1279,10 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
         files_read,
     )
+    dashboard_refresh_generated_summary = load_optional_json(
+        "mission_dashboard_refresh_loop/generated/refresh_loop_readiness_summary.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -1191,6 +1302,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     readonly_tool_summary = build_readonly_tool_summary(readonly_tool_generated_summary)
     tool_bridge_summary = build_tool_bridge_summary(tool_bridge_generated_summary)
     work_proposal_summary = build_work_proposal_summary(work_proposal_generated_summary)
+    dashboard_refresh_summary = build_dashboard_refresh_summary(dashboard_refresh_generated_summary)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -1279,12 +1391,14 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Legacy asset triage exists, but no absorption or wrapper application workflow exists.")
     if "Governed observation loop exists as one read-only tick; recurring wrapper execution is not implemented." not in open_gaps:
         open_gaps.append("Governed observation loop exists as one read-only tick; recurring wrapper execution is not implemented.")
-    if "Governed read-only observation tool exists for local dry-run calls only; Pre-U bridge invocation is not wired yet." not in open_gaps:
-        open_gaps.append("Governed read-only observation tool exists for local dry-run calls only; Pre-U bridge invocation is not wired yet.")
-    if "Governed tool invocation bridge exists for local dry-run only; agent work proposal routing is not implemented yet." not in open_gaps:
-        open_gaps.append("Governed tool invocation bridge exists for local dry-run only; agent work proposal routing is not implemented yet.")
-    if "Agent-team work proposal routing exists for dry-run tool invocation only; mission dashboard refresh loop is not implemented yet." not in open_gaps:
-        open_gaps.append("Agent-team work proposal routing exists for dry-run tool invocation only; mission dashboard refresh loop is not implemented yet.")
+    if "Governed read-only observation tool exists for local dry-run calls only; all invocations remain bridge-gated." not in open_gaps:
+        open_gaps.append("Governed read-only observation tool exists for local dry-run calls only; all invocations remain bridge-gated.")
+    if "Governed tool invocation bridge exists for local dry-run only; agent work proposal routing remains dry-run only." not in open_gaps:
+        open_gaps.append("Governed tool invocation bridge exists for local dry-run only; agent work proposal routing remains dry-run only.")
+    if "Agent-team work proposal routing feeds a manual dashboard refresh only; recurrence is not implemented yet." not in open_gaps:
+        open_gaps.append("Agent-team work proposal routing feeds a manual dashboard refresh only; recurrence is not implemented yet.")
+    if "Mission dashboard refresh loop exists as manual local dry-run only; governed recurrence is not implemented yet." not in open_gaps:
+        open_gaps.append("Mission dashboard refresh loop exists as manual local dry-run only; governed recurrence is not implemented yet.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -1315,6 +1429,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "readonly_tool_summary": readonly_tool_summary,
         "tool_bridge_summary": tool_bridge_summary,
         "work_proposal_summary": work_proposal_summary,
+        "dashboard_refresh_summary": dashboard_refresh_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -1370,6 +1485,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "first governed read-only observation tool wrapper summary",
             "governed tool invocation bridge summary",
             "agent-team work proposal to governed tool invocation summary",
+            "mission dashboard refresh loop summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -1398,9 +1514,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "enabled live-boundary harness",
             "enabled CIEU runtime event persistence",
             "approved governed action registry",
-            "Pre-U bridge invocation for governed read-only observation tool",
-            "agent team work proposal routing into governed tool invocation",
-            "mission dashboard refresh loop from agent-team generated bridge results",
+            "governed recurring observation loop contract",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -1424,7 +1538,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "build L4.4 first governed read-only observation tool wrapper",
             "route the governed read-only observation tool through the Pre-U bridge",
             "build L4.6 agent team work proposal to governed tool invocation",
-            "build L4.7 first mission dashboard refresh loop",
+            "define L4.8 governed recurring observation loop contract",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -1442,9 +1556,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "autonomous cycle is simulated only and cannot execute real work",
             "legacy assets are triaged but not absorbed",
             "observation loop is read-only and not recurring",
-            "governed read-only observation tool is local dry-run only and not routed through Pre-U yet",
-            "governed tool invocation bridge is local dry-run only and not connected to autonomous proposals yet",
-            "agent-team work proposal bridge is dry-run only and does not refresh the mission dashboard yet",
+            "mission dashboard refresh loop is manual local dry-run only and has no recurrence contract yet",
         ],
         "safety_boundaries": [
             "no DB reads",
@@ -1471,6 +1583,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "governed read-only observation tool reads allowed generated summaries only and executes no actions",
             "governed tool invocation bridge requires Pre-U/decision/authorization before local tool calls",
             "agent-team work proposal routing starts from generated observations and remains local read-only dry-run only",
+            "mission dashboard refresh loop is manual local dry-run only and uses generated/read-model evidence only",
         ],
     }
 
@@ -1502,6 +1615,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/readonly_tool_summary.json",
             "console_read_model/generated/tool_bridge_summary.json",
             "console_read_model/generated/work_proposal_summary.json",
+            "console_read_model/generated/dashboard_refresh_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -1568,6 +1682,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "invocation bridge outputs. It confirms the read-only tool is called only after Pre-U packet, decision, and bridge authorization.\n\n"
         "`work_proposal_summary.json` is derived from generated agent-team work\n"
         "proposal outputs. It confirms mission/observation evidence produced a governed tool request routed through the L4.5 bridge.\n\n"
+        "`dashboard_refresh_summary.json` is derived from generated mission dashboard\n"
+        "refresh loop outputs. It confirms a manual local refresh loop produced a refreshed dashboard without scheduler or daemon use.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -1595,6 +1711,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/readonly_tool_summary.json", readonly_tool_summary, generated_files)
     write_json("console_read_model/generated/tool_bridge_summary.json", tool_bridge_summary, generated_files)
     write_json("console_read_model/generated/work_proposal_summary.json", work_proposal_summary, generated_files)
+    write_json("console_read_model/generated/dashboard_refresh_summary.json", dashboard_refresh_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -1657,6 +1774,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     readonly_tool = snapshot.get("readonly_tool_summary", {})
     tool_bridge = snapshot.get("tool_bridge_summary", {})
     work_proposal = snapshot.get("work_proposal_summary", {})
+    dashboard_refresh = snapshot.get("dashboard_refresh_summary", {})
     lines.extend(
         [
             "",
@@ -2078,6 +2196,34 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- memory_ingestion_enabled: {work_proposal.get('memory_ingestion_enabled')}",
             f"- next_required_milestone: {work_proposal.get('next_required_milestone')}",
             f"- Warning: {work_proposal.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Mission Dashboard Refresh Loop",
+            "",
+            f"- refresh_loop_contract_defined: {dashboard_refresh.get('refresh_loop_contract_defined')}",
+            f"- previous_dashboard_snapshot_defined: {dashboard_refresh.get('previous_dashboard_snapshot_defined')}",
+            f"- current_observation_input_defined: {dashboard_refresh.get('current_observation_input_defined')}",
+            f"- refreshed_mission_dashboard_defined: {dashboard_refresh.get('refreshed_mission_dashboard_defined')}",
+            f"- company_state_delta_defined: {dashboard_refresh.get('company_state_delta_defined')}",
+            f"- refreshed_autonomous_backlog_defined: {dashboard_refresh.get('refreshed_autonomous_backlog_defined')}",
+            f"- refresh_loop_trace_defined: {dashboard_refresh.get('refresh_loop_trace_defined')}",
+            f"- refresh_cieu_event_defined: {dashboard_refresh.get('refresh_cieu_event_defined')}",
+            f"- refresh_residual_delta_defined: {dashboard_refresh.get('refresh_residual_delta_defined')}",
+            f"- dashboard_refresh_loop_ran: {dashboard_refresh.get('dashboard_refresh_loop_ran')}",
+            f"- scheduler_used: {dashboard_refresh.get('scheduler_used')}",
+            f"- daemon_used: {dashboard_refresh.get('daemon_used')}",
+            f"- manual_local_run_only: {dashboard_refresh.get('manual_local_run_only')}",
+            f"- real_action_executed: {dashboard_refresh.get('real_action_executed')}",
+            f"- external_action_executed: {dashboard_refresh.get('external_action_executed')}",
+            f"- live_action_enabled: {dashboard_refresh.get('live_action_enabled')}",
+            f"- cieu_persistence_enabled: {dashboard_refresh.get('cieu_persistence_enabled')}",
+            f"- brain_writeback_enabled: {dashboard_refresh.get('brain_writeback_enabled')}",
+            f"- memory_ingestion_enabled: {dashboard_refresh.get('memory_ingestion_enabled')}",
+            f"- next_required_milestone: {dashboard_refresh.get('next_required_milestone')}",
+            f"- Warning: {dashboard_refresh.get('warning')}",
         ]
     )
     lines.extend(
