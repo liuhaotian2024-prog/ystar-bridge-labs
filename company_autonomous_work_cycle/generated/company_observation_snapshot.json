@@ -1,0 +1,74 @@
+{
+  "schema_name": "ystar.company_autonomous_work_cycle.generated.company_observation_snapshot",
+  "schema_version": "v0",
+  "committed_milestone_chain": [
+    "L3.8 live-readiness gate",
+    "L3.9 live-boundary harness",
+    "L4.0 CIEU runtime event boundary",
+    "L4.1 company autonomy inventory"
+  ],
+  "live_readiness_status": {
+    "dry_run_governance_ready": null,
+    "minimal_live_loop_ready": null
+  },
+  "live_boundary_status": {
+    "live_boundary_defined": true,
+    "live_action_execution_enabled": false
+  },
+  "cieu_boundary_status": {
+    "cieu_runtime_boundary_defined": true,
+    "persistence_enabled": false
+  },
+  "autonomy_inventory_status": {
+    "repo_archaeology_completed": true,
+    "governance_only_runtime": false,
+    "size_guard_safe": true
+  },
+  "observation_capability_counts": {
+    "candidate": 7,
+    "existing": 5
+  },
+  "resource_sensing_count": 11,
+  "action_capability_counts": {
+    "blocked": 7,
+    "candidate_disabled": 13
+  },
+  "governed_tool_candidate_counts": {
+    "blocked": 1,
+    "candidate": 4,
+    "needs_schema": 1,
+    "needs_tests": 1,
+    "needs_wrapper": 2
+  },
+  "key_gaps": [
+    "governed read-only observation loop not yet implemented",
+    "tool registry candidates are not approved or live-enabled",
+    "CIEU persistence remains disabled",
+    "external action surfaces remain blocked"
+  ],
+  "key_blocked_actions": [
+    "local_file_generation",
+    "docs_update",
+    "schema_generation",
+    "test_execution",
+    "safe_repo_scan",
+    "git_commit",
+    "git_push",
+    "github_issue",
+    "github_pr",
+    "shell_command",
+    "mcp_call",
+    "codex_execution",
+    "claude_code_execution",
+    "brain_writeback",
+    "memory_ingestion",
+    "cieu_write",
+    "daemon_start_stop",
+    "external_web_action",
+    "market_research",
+    "email_or_communication"
+  ],
+  "strongest_near_term_safe_action_surface": "generated read-model observation and mission dashboard simulation",
+  "live_external_observation_performed": false,
+  "network_used": false
+}

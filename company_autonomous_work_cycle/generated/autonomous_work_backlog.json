@@ -1,0 +1,132 @@
+{
+  "schema_name": "ystar.company_autonomous_work_cycle.generated.autonomous_work_backlog",
+  "schema_version": "v0",
+  "work_items": [
+    {
+      "work_item_id": "work-001",
+      "title": "Create governed read-only mission dashboard from generated read-models",
+      "description": "Mission-bounded simulator work item: Create governed read-only mission dashboard from generated read-models.",
+      "mission_relevance": "advances self-directed company operation without live execution",
+      "proposing_agent": "Aiden-CEO",
+      "recommended_owner_agent": "Ethan-CTO",
+      "supporting_agents": [
+        "Samantha-Secretary",
+        "Ryan-Platform",
+        "Maya-Governance"
+      ],
+      "risk_tier": "low",
+      "requires_y_star_gov": false,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "requires_live_action": false,
+      "live_enabled": false,
+      "expected_outcome": "a safer next dry-run autonomy capability",
+      "selection_score": 96,
+      "selection_reason": "prioritizes mission progress while keeping all live/external/writeback behavior disabled"
+    },
+    {
+      "work_item_id": "work-002",
+      "title": "Define autonomous observation loop from generated company summaries",
+      "description": "Mission-bounded simulator work item: Define autonomous observation loop from generated company summaries.",
+      "mission_relevance": "advances self-directed company operation without live execution",
+      "proposing_agent": "Aiden-CEO",
+      "recommended_owner_agent": "Ryan-Platform",
+      "supporting_agents": [
+        "Ethan-CTO",
+        "Maya-Governance"
+      ],
+      "risk_tier": "medium",
+      "requires_y_star_gov": true,
+      "requires_operator_approval": true,
+      "requires_cieu_event": true,
+      "requires_live_action": false,
+      "live_enabled": false,
+      "expected_outcome": "a safer next dry-run autonomy capability",
+      "selection_score": 91,
+      "selection_reason": "prioritizes mission progress while keeping all live/external/writeback behavior disabled"
+    },
+    {
+      "work_item_id": "work-003",
+      "title": "Wrap compact inventory into a governed read-only tool contract",
+      "description": "Mission-bounded simulator work item: Wrap compact inventory into a governed read-only tool contract.",
+      "mission_relevance": "advances self-directed company operation without live execution",
+      "proposing_agent": "Ethan-CTO",
+      "recommended_owner_agent": "Ryan-Platform",
+      "supporting_agents": [
+        "Maya-Governance",
+        "Leo-Kernel"
+      ],
+      "risk_tier": "medium",
+      "requires_y_star_gov": true,
+      "requires_operator_approval": true,
+      "requires_cieu_event": true,
+      "requires_live_action": false,
+      "live_enabled": false,
+      "expected_outcome": "a safer next dry-run autonomy capability",
+      "selection_score": 88,
+      "selection_reason": "prioritizes mission progress while keeping all live/external/writeback behavior disabled"
+    },
+    {
+      "work_item_id": "work-004",
+      "title": "Create tool registry wrapper contract for disabled action candidates",
+      "description": "Mission-bounded simulator work item: Create tool registry wrapper contract for disabled action candidates.",
+      "mission_relevance": "advances self-directed company operation without live execution",
+      "proposing_agent": "Maya-Governance",
+      "recommended_owner_agent": "Leo-Kernel",
+      "supporting_agents": [
+        "Ryan-Platform",
+        "Ethan-CTO"
+      ],
+      "risk_tier": "medium",
+      "requires_y_star_gov": true,
+      "requires_operator_approval": true,
+      "requires_cieu_event": true,
+      "requires_live_action": false,
+      "live_enabled": false,
+      "expected_outcome": "a safer next dry-run autonomy capability",
+      "selection_score": 84,
+      "selection_reason": "prioritizes mission progress while keeping all live/external/writeback behavior disabled"
+    },
+    {
+      "work_item_id": "work-005",
+      "title": "Prepare controlled real business task candidate without enabling execution",
+      "description": "Mission-bounded simulator work item: Prepare controlled real business task candidate without enabling execution.",
+      "mission_relevance": "advances self-directed company operation without live execution",
+      "proposing_agent": "Aiden-CEO",
+      "recommended_owner_agent": "Samantha-Secretary",
+      "supporting_agents": [
+        "Maya-Governance"
+      ],
+      "risk_tier": "medium",
+      "requires_y_star_gov": true,
+      "requires_operator_approval": true,
+      "requires_cieu_event": true,
+      "requires_live_action": false,
+      "live_enabled": false,
+      "expected_outcome": "a safer next dry-run autonomy capability",
+      "selection_score": 76,
+      "selection_reason": "prioritizes mission progress while keeping all live/external/writeback behavior disabled"
+    },
+    {
+      "work_item_id": "work-006",
+      "title": "Simulate first company task lifecycle through Pre-U and CIEU fixture",
+      "description": "Mission-bounded simulator work item: Simulate first company task lifecycle through Pre-U and CIEU fixture.",
+      "mission_relevance": "advances self-directed company operation without live execution",
+      "proposing_agent": "Aiden-CEO",
+      "recommended_owner_agent": "Ethan-CTO",
+      "supporting_agents": [
+        "Leo-Kernel",
+        "Maya-Governance"
+      ],
+      "risk_tier": "low",
+      "requires_y_star_gov": false,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "requires_live_action": false,
+      "live_enabled": false,
+      "expected_outcome": "a safer next dry-run autonomy capability",
+      "selection_score": 82,
+      "selection_reason": "prioritizes mission progress while keeping all live/external/writeback behavior disabled"
+    }
+  ]
+}

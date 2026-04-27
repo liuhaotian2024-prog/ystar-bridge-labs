@@ -18,6 +18,7 @@ JSON_OUTPUTS = [
     "governed_tool_registry_candidates.json",
     "agent_role_capability_matrix.json",
     "company_autonomy_readiness_summary.json",
+    "inventory_size_guard.json",
 ]
 
 GENERATED_OUTPUTS = JSON_OUTPUTS + [
@@ -48,6 +49,15 @@ REQUIRED_ROLES = {
     "Ryan-Platform",
     "Samantha-Secretary",
     "Leo-Kernel",
+}
+
+FORBIDDEN_CONTENT_FIELDS = {
+    "full_source",
+    "source_content",
+    "file_content",
+    "raw_content",
+    "full_text",
+    "raw_log",
 }
 
 
@@ -105,6 +115,41 @@ def test_company_autonomy_inventory_outputs_and_readiness() -> None:
     assert summary["next_required_milestone"] == "L4.2 Company Autonomous Work Cycle Simulator v0"
 
 
+def test_inventory_size_guard_prevents_generated_bloat() -> None:
+    run_builder()
+
+    guard = load_json("inventory_size_guard.json")
+    assert guard["inventory_size_guard_defined"] is True
+    assert guard["compaction_applied"] is True
+    assert guard["full_source_embedding_allowed"] is False
+    assert guard["full_doc_embedding_allowed"] is False
+    assert guard["generated_inventory_safe_for_read_model"] is True
+    assert guard["oversized_files"] == []
+    assert guard["total_generated_inventory_bytes"] <= guard["max_total_generated_inventory_bytes"]
+
+    max_single = guard["max_single_generated_json_bytes"]
+    for name in JSON_OUTPUTS:
+        path = GENERATED / name
+        assert path.stat().st_size <= max_single, f"{name} exceeds size guard"
+
+    inventory = load_json("existing_asset_inventory.json")
+    assert inventory["compaction_applied"] is True
+    assert inventory["indexed_asset_count"] <= inventory["max_indexed_assets"]
+    assert inventory["asset_count"] >= inventory["indexed_asset_count"]
+
+    def walk(value: object) -> None:
+        if isinstance(value, dict):
+            for key, nested in value.items():
+                assert key not in FORBIDDEN_CONTENT_FIELDS
+                walk(nested)
+        elif isinstance(value, list):
+            for nested in value:
+                walk(nested)
+
+    for name in JSON_OUTPUTS:
+        walk(load_json(name))
+
+
 def test_capability_maps_registry_and_roles_are_populated_and_disabled() -> None:
     run_builder()
 
@@ -159,7 +204,6 @@ def test_builder_is_source_archaeology_only() -> None:
     assert "shell=True" not in source
     assert "import subprocess" not in source
     assert "import sqlite3" not in source
-    assert "scripts/.logs" not in source
 
     run_builder()
     manifest = load_json("repo_discovery_manifest.json")

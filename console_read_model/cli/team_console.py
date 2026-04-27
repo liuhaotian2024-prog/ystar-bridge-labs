@@ -28,6 +28,7 @@ LIVE_READINESS = "console_read_model/generated/live_readiness_summary.json"
 LIVE_BOUNDARY = "console_read_model/generated/live_boundary_summary.json"
 CIEU_BOUNDARY = "console_read_model/generated/cieu_boundary_summary.json"
 AUTONOMY_INVENTORY = "console_read_model/generated/autonomy_inventory_summary.json"
+AUTONOMOUS_CYCLE = "console_read_model/generated/autonomous_cycle_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -47,7 +48,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -95,6 +96,7 @@ def load_all() -> dict[str, Any]:
         "live_boundary": load_json(LIVE_BOUNDARY),
         "cieu_boundary": load_json(CIEU_BOUNDARY),
         "autonomy_inventory": load_json(AUTONOMY_INVENTORY),
+        "autonomous_cycle": load_json(AUTONOMOUS_CYCLE),
     }
 
 
@@ -508,6 +510,35 @@ def cmd_autonomy_inventory(data: dict[str, Any]) -> None:
     print(f"warning: {inventory.get('warning')}")
 
 
+def cmd_autonomous_cycle(data: dict[str, Any]) -> None:
+    cycle = data["autonomous_cycle"]
+    print("# Company Autonomous Work Cycle")
+    print()
+    print(f"mission-bounded autonomy defined: {cycle.get('mission_bounded_autonomy_defined')}")
+    print(f"founder sets mission, agent team drives: {cycle.get('founder_sets_mission_agent_team_drives')}")
+    print(f"step-by-step human prompting required: {cycle.get('step_by_step_human_prompting_required')}")
+    print(f"observation snapshot defined: {cycle.get('observation_snapshot_defined')}")
+    print(f"autonomous work backlog defined: {cycle.get('autonomous_work_backlog_defined')}")
+    print(f"selected work item defined: {cycle.get('selected_work_item_defined')}")
+    print(f"role delegation defined: {cycle.get('role_delegation_defined')}")
+    print(f"governed tool selection defined: {cycle.get('governed_tool_selection_defined')}")
+    print(f"Pre-U packet simulated: {cycle.get('pre_u_packet_simulated')}")
+    print(f"governance decision simulated: {cycle.get('governance_decision_simulated')}")
+    print(f"action plan simulated: {cycle.get('action_plan_simulated')}")
+    print(f"CIEU event simulated: {cycle.get('cieu_event_simulated')}")
+    print(f"residual delta simulated: {cycle.get('residual_delta_simulated')}")
+    print(f"real action executed: {cycle.get('real_action_executed')}")
+    print(f"live action enabled: {cycle.get('live_action_enabled')}")
+    print(f"external action executed: {cycle.get('external_action_executed')}")
+    print(f"CIEU persistence enabled: {cycle.get('cieu_persistence_enabled')}")
+    print(f"brain writeback enabled: {cycle.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {cycle.get('memory_ingestion_enabled')}")
+    print(f"next required milestone: {cycle.get('next_required_milestone')}")
+    print(f"generated_summary: {cycle.get('generated_summary')}")
+    print(f"generated_report: {cycle.get('generated_report')}")
+    print(f"warning: {cycle.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -595,6 +626,12 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print("Company autonomy inventory:")
         print(f"- {autonomy_inventory.get('generated_summary')}")
         print(f"- {autonomy_inventory.get('generated_report')}")
+    autonomous_cycle = data.get("autonomous_cycle", {})
+    if autonomous_cycle:
+        print()
+        print("Company autonomous work cycle:")
+        print(f"- {autonomous_cycle.get('generated_summary')}")
+        print(f"- {autonomous_cycle.get('generated_report')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -636,6 +673,7 @@ def cmd_validate_local() -> int:
         LIVE_BOUNDARY,
         CIEU_BOUNDARY,
         AUTONOMY_INVENTORY,
+        AUTONOMOUS_CYCLE,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -675,6 +713,8 @@ def cmd_validate_local() -> int:
             failures.append("cieu_boundary_summary missing from team console snapshot")
         if "autonomy_inventory_summary" not in snapshot:
             failures.append("autonomy_inventory_summary missing from team console snapshot")
+        if "autonomous_cycle_summary" not in snapshot:
+            failures.append("autonomous_cycle_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -1119,6 +1159,78 @@ def cmd_validate_local() -> int:
         if autonomy_inventory.get("next_required_milestone") != "L4.2 Company Autonomous Work Cycle Simulator v0":
             failures.append("autonomy inventory summary must point to L4.2 simulator milestone")
 
+    autonomous_cycle = loaded.get(AUTONOMOUS_CYCLE)
+    if autonomous_cycle:
+        required_fields = [
+            "autonomous_work_cycle_defined",
+            "mission_bounded_autonomy_defined",
+            "founder_sets_mission_agent_team_drives",
+            "step_by_step_human_prompting_required",
+            "observation_snapshot_defined",
+            "autonomous_work_backlog_defined",
+            "selected_work_item_defined",
+            "role_delegation_defined",
+            "governed_tool_selection_defined",
+            "pre_u_packet_simulated",
+            "governance_decision_simulated",
+            "action_plan_simulated",
+            "cieu_event_simulated",
+            "residual_delta_simulated",
+            "next_task_recommendations_defined",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "git_push_enabled",
+            "daemon_control_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "email_or_external_communication_enabled",
+            "requires_manual_enablement_for_live",
+            "next_required_milestone",
+            "generated_summary",
+            "generated_report",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in autonomous_cycle:
+                failures.append(f"autonomous cycle summary missing field: {field}")
+        for field in [
+            "autonomous_work_cycle_defined",
+            "mission_bounded_autonomy_defined",
+            "founder_sets_mission_agent_team_drives",
+            "observation_snapshot_defined",
+            "autonomous_work_backlog_defined",
+            "selected_work_item_defined",
+            "role_delegation_defined",
+            "governed_tool_selection_defined",
+            "pre_u_packet_simulated",
+            "governance_decision_simulated",
+            "action_plan_simulated",
+            "cieu_event_simulated",
+            "residual_delta_simulated",
+            "next_task_recommendations_defined",
+            "requires_manual_enablement_for_live",
+        ]:
+            if autonomous_cycle.get(field) is not True:
+                failures.append(f"autonomous cycle summary must keep {field}=true")
+        for field in [
+            "step_by_step_human_prompting_required",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "git_push_enabled",
+            "daemon_control_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "email_or_external_communication_enabled",
+        ]:
+            if autonomous_cycle.get(field) is not False:
+                failures.append(f"autonomous cycle summary must keep {field}=false")
+        if autonomous_cycle.get("next_required_milestone") != "L4.3 Governed Read-Only Observation Loop v0":
+            failures.append("autonomous cycle summary must point to L4.3 observation-loop milestone")
+
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
     print(f"Required agents: {', '.join(REQUIRED_AGENTS)}")
@@ -1186,6 +1298,8 @@ def main(argv: list[str]) -> int:
         cmd_cieu_boundary(data)
     elif command == "autonomy-inventory":
         cmd_autonomy_inventory(data)
+    elif command == "autonomous-cycle":
+        cmd_autonomous_cycle(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

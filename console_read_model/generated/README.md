@@ -45,5 +45,8 @@ boundary manifest. It confirms event fixtures are dry-run only and persistence i
 `autonomy_inventory_summary.json` is derived from the generated company
 autonomy inventory. It confirms capability maps and tool candidates exist while live actions remain disabled.
 
+`autonomous_cycle_summary.json` is derived from the mission-bounded
+autonomous work cycle simulator. It confirms a full simulated company cycle exists while real actions remain disabled.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

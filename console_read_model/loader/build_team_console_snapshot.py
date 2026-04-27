@@ -38,6 +38,7 @@ CURATED_SOURCES = [
     "labs_live_boundary/generated/live_boundary_summary.json",
     "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_summary.json",
     "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
+    "company_autonomous_work_cycle/generated/autonomous_work_cycle_summary.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -642,6 +643,76 @@ def build_autonomy_inventory_summary(autonomy_summary: dict[str, Any] | None) ->
     }
 
 
+def build_autonomous_cycle_summary(cycle_summary: dict[str, Any] | None) -> dict[str, Any]:
+    if not cycle_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.autonomous_cycle_summary",
+            "schema_version": "v0",
+            "autonomous_work_cycle_defined": False,
+            "mission_bounded_autonomy_defined": False,
+            "founder_sets_mission_agent_team_drives": False,
+            "step_by_step_human_prompting_required": True,
+            "observation_snapshot_defined": False,
+            "autonomous_work_backlog_defined": False,
+            "selected_work_item_defined": False,
+            "role_delegation_defined": False,
+            "governed_tool_selection_defined": False,
+            "pre_u_packet_simulated": False,
+            "governance_decision_simulated": False,
+            "action_plan_simulated": False,
+            "cieu_event_simulated": False,
+            "residual_delta_simulated": False,
+            "real_action_executed": False,
+            "external_action_executed": False,
+            "live_action_enabled": False,
+            "cieu_persistence_enabled": False,
+            "brain_writeback_enabled": False,
+            "memory_ingestion_enabled": False,
+            "next_required_milestone": "L4.3 Governed Read-Only Observation Loop v0",
+            "generated_summary": "company_autonomous_work_cycle/generated/autonomous_work_cycle_summary.json",
+            "warning": "Autonomous work cycle simulator has not been generated yet.",
+        }
+    return {
+        "schema_name": "ystar.console_read_model.generated.autonomous_cycle_summary",
+        "schema_version": "v0",
+        "autonomous_work_cycle_defined": cycle_summary.get("autonomous_work_cycle_defined"),
+        "mission_bounded_autonomy_defined": cycle_summary.get("mission_bounded_autonomy_defined"),
+        "founder_sets_mission_agent_team_drives": cycle_summary.get("founder_sets_mission_agent_team_drives"),
+        "step_by_step_human_prompting_required": cycle_summary.get("step_by_step_human_prompting_required"),
+        "observation_snapshot_defined": cycle_summary.get("observation_snapshot_defined"),
+        "autonomous_work_backlog_defined": cycle_summary.get("autonomous_work_backlog_defined"),
+        "selected_work_item_defined": cycle_summary.get("selected_work_item_defined"),
+        "role_delegation_defined": cycle_summary.get("role_delegation_defined"),
+        "governed_tool_selection_defined": cycle_summary.get("governed_tool_selection_defined"),
+        "pre_u_packet_simulated": cycle_summary.get("pre_u_packet_simulated"),
+        "governance_decision_simulated": cycle_summary.get("governance_decision_simulated"),
+        "action_plan_simulated": cycle_summary.get("action_plan_simulated"),
+        "cieu_event_simulated": cycle_summary.get("cieu_event_simulated"),
+        "residual_delta_simulated": cycle_summary.get("residual_delta_simulated"),
+        "next_task_recommendations_defined": cycle_summary.get("next_task_recommendations_defined"),
+        "real_action_executed": cycle_summary.get("real_action_executed"),
+        "external_action_executed": cycle_summary.get("external_action_executed"),
+        "live_action_enabled": cycle_summary.get("live_action_enabled"),
+        "git_push_enabled": cycle_summary.get("git_push_enabled"),
+        "daemon_control_enabled": cycle_summary.get("daemon_control_enabled"),
+        "cieu_persistence_enabled": cycle_summary.get("cieu_persistence_enabled"),
+        "brain_writeback_enabled": cycle_summary.get("brain_writeback_enabled"),
+        "memory_ingestion_enabled": cycle_summary.get("memory_ingestion_enabled"),
+        "email_or_external_communication_enabled": cycle_summary.get("email_or_external_communication_enabled"),
+        "requires_manual_enablement_for_live": cycle_summary.get("requires_manual_enablement_for_live"),
+        "next_required_milestone": cycle_summary.get("next_required_milestone"),
+        "generated_summary": "company_autonomous_work_cycle/generated/autonomous_work_cycle_summary.json",
+        "generated_report": cycle_summary.get(
+            "generated_report",
+            "company_autonomous_work_cycle/generated/autonomous_work_cycle_report.md",
+        ),
+        "warning": cycle_summary.get(
+            "warning",
+            "Autonomous work cycle is simulated only; no real action occurred.",
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -712,6 +783,10 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
         files_read,
     )
+    autonomous_cycle_generated_summary = load_optional_json(
+        "company_autonomous_work_cycle/generated/autonomous_work_cycle_summary.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -725,6 +800,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     live_boundary_summary = build_live_boundary_summary(live_boundary_generated_summary)
     cieu_boundary_summary = build_cieu_boundary_summary(cieu_boundary_generated_summary)
     autonomy_inventory_summary = build_autonomy_inventory_summary(autonomy_generated_summary)
+    autonomous_cycle_summary = build_autonomous_cycle_summary(autonomous_cycle_generated_summary)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -807,6 +883,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("CIEU runtime boundary exists as disabled event fixtures only; no CIEU persistence is enabled.")
     if "Company autonomy inventory exists, but governed action registry candidates are not live-enabled." not in open_gaps:
         open_gaps.append("Company autonomy inventory exists, but governed action registry candidates are not live-enabled.")
+    if "Autonomous work cycle exists as a simulator only; governed read-only observation loop is not implemented." not in open_gaps:
+        open_gaps.append("Autonomous work cycle exists as a simulator only; governed read-only observation loop is not implemented.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -831,6 +909,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "live_boundary_summary": live_boundary_summary,
         "cieu_boundary_summary": cieu_boundary_summary,
         "autonomy_inventory_summary": autonomy_inventory_summary,
+        "autonomous_cycle_summary": autonomous_cycle_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -880,6 +959,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "disabled live-boundary harness summary",
             "disabled CIEU runtime event boundary summary",
             "company autonomy inventory summary",
+            "mission-bounded autonomous work cycle simulator summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -908,6 +988,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "enabled live-boundary harness",
             "enabled CIEU runtime event persistence",
             "approved governed action registry",
+            "governed read-only observation loop",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -928,6 +1009,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "implement live boundary gates without enabling runtime execution",
             "define CIEU runtime event writer verification without enabling persistence",
             "simulate a company autonomous work cycle without enabling live actions",
+            "build L4.3 governed read-only observation loop from simulator outputs",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -942,6 +1024,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "live boundary gates are defined but disabled",
             "CIEU runtime event boundary is defined but persistence is disabled",
             "governed action registry candidates are mapped but disabled",
+            "autonomous cycle is simulated only and cannot execute real work",
         ],
         "safety_boundaries": [
             "no DB reads",
@@ -962,6 +1045,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "live-boundary harness is disabled and requires manual enablement",
             "CIEU runtime event boundary is disabled and forbids persistence",
             "company autonomy inventory is discovery-only and live actions remain disabled",
+            "autonomous work cycle is simulated only and performs no external action",
         ],
     }
 
@@ -987,6 +1071,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/live_boundary_summary.json",
             "console_read_model/generated/cieu_boundary_summary.json",
             "console_read_model/generated/autonomy_inventory_summary.json",
+            "console_read_model/generated/autonomous_cycle_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -1041,6 +1126,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "boundary manifest. It confirms event fixtures are dry-run only and persistence is disabled.\n\n"
         "`autonomy_inventory_summary.json` is derived from the generated company\n"
         "autonomy inventory. It confirms capability maps and tool candidates exist while live actions remain disabled.\n\n"
+        "`autonomous_cycle_summary.json` is derived from the mission-bounded\n"
+        "autonomous work cycle simulator. It confirms a full simulated company cycle exists while real actions remain disabled.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -1062,6 +1149,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/live_boundary_summary.json", live_boundary_summary, generated_files)
     write_json("console_read_model/generated/cieu_boundary_summary.json", cieu_boundary_summary, generated_files)
     write_json("console_read_model/generated/autonomy_inventory_summary.json", autonomy_inventory_summary, generated_files)
+    write_json("console_read_model/generated/autonomous_cycle_summary.json", autonomous_cycle_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -1118,6 +1206,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     live_boundary = snapshot.get("live_boundary_summary", {})
     cieu_boundary = snapshot.get("cieu_boundary_summary", {})
     autonomy_inventory = snapshot.get("autonomy_inventory_summary", {})
+    autonomous_cycle = snapshot.get("autonomous_cycle_summary", {})
     lines.extend(
         [
             "",
@@ -1390,6 +1479,34 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- cieu_persistence_enabled: {autonomy_inventory.get('cieu_persistence_enabled')}",
             f"- next_required_milestone: {autonomy_inventory.get('next_required_milestone')}",
             f"- Warning: {autonomy_inventory.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Company Autonomous Work Cycle",
+            "",
+            f"- mission_bounded_autonomy_defined: {autonomous_cycle.get('mission_bounded_autonomy_defined')}",
+            f"- founder_sets_mission_agent_team_drives: {autonomous_cycle.get('founder_sets_mission_agent_team_drives')}",
+            f"- step_by_step_human_prompting_required: {autonomous_cycle.get('step_by_step_human_prompting_required')}",
+            f"- observation_snapshot_defined: {autonomous_cycle.get('observation_snapshot_defined')}",
+            f"- autonomous_work_backlog_defined: {autonomous_cycle.get('autonomous_work_backlog_defined')}",
+            f"- selected_work_item_defined: {autonomous_cycle.get('selected_work_item_defined')}",
+            f"- role_delegation_defined: {autonomous_cycle.get('role_delegation_defined')}",
+            f"- governed_tool_selection_defined: {autonomous_cycle.get('governed_tool_selection_defined')}",
+            f"- pre_u_packet_simulated: {autonomous_cycle.get('pre_u_packet_simulated')}",
+            f"- governance_decision_simulated: {autonomous_cycle.get('governance_decision_simulated')}",
+            f"- action_plan_simulated: {autonomous_cycle.get('action_plan_simulated')}",
+            f"- cieu_event_simulated: {autonomous_cycle.get('cieu_event_simulated')}",
+            f"- residual_delta_simulated: {autonomous_cycle.get('residual_delta_simulated')}",
+            f"- real_action_executed: {autonomous_cycle.get('real_action_executed')}",
+            f"- external_action_executed: {autonomous_cycle.get('external_action_executed')}",
+            f"- live_action_enabled: {autonomous_cycle.get('live_action_enabled')}",
+            f"- cieu_persistence_enabled: {autonomous_cycle.get('cieu_persistence_enabled')}",
+            f"- brain_writeback_enabled: {autonomous_cycle.get('brain_writeback_enabled')}",
+            f"- memory_ingestion_enabled: {autonomous_cycle.get('memory_ingestion_enabled')}",
+            f"- next_required_milestone: {autonomous_cycle.get('next_required_milestone')}",
+            f"- Warning: {autonomous_cycle.get('warning')}",
         ]
     )
     lines.extend(

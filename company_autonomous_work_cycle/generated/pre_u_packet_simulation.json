@@ -1,0 +1,41 @@
+{
+  "schema_name": "ystar.company_autonomous_work_cycle.generated.pre_u_packet_simulation",
+  "schema_version": "v0",
+  "packet_id": "pre-u-sim-company-cycle-001",
+  "agent_id": "Ethan-CTO",
+  "work_item_id": "work-001",
+  "Xt": "Dry-run company autonomy stack has generated inventory, boundaries, and read-model summaries.",
+  "Y_star": "Mission-bounded autonomous observation loop advances without live execution.",
+  "candidate_U": [
+    {
+      "candidate_u_id": "U1",
+      "summary": "Generate a read-only mission dashboard design from generated summaries.",
+      "simulated_only": true,
+      "live_enabled": false
+    },
+    {
+      "candidate_u_id": "U2",
+      "summary": "Create a governed tool wrapper contract without enabling invocation.",
+      "simulated_only": true,
+      "live_enabled": false
+    },
+    {
+      "candidate_u_id": "U3",
+      "summary": "Defer all work until live boundary gates are implemented.",
+      "simulated_only": true,
+      "live_enabled": false
+    }
+  ],
+  "predicted_Y_t1": "A concrete next read-only observation-loop milestone is selected.",
+  "predicted_R_t1": "Residual risk remains around future live enablement and tool wrapper approval.",
+  "selected_U": "U1",
+  "why_min_residual": "U1 improves autonomous company motion while keeping all live and external effects disabled.",
+  "risk_tier": "low",
+  "governance_expectations": [
+    "simulation only",
+    "no external action",
+    "no CIEU persistence",
+    "no brain or memory writeback"
+  ],
+  "cieu_link_policy": "dry_run_fixture_only"
+}

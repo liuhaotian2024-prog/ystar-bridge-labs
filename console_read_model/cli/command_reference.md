@@ -53,6 +53,11 @@ python3 console_read_model/cli/team_console.py <command>
   summary: repo archaeology status, observation/resource/action maps, governed
   tool candidates, agent role matrix, disabled live/external actions, and the
   next required autonomy simulator milestone.
+- `autonomous-cycle`: Prints the generated mission-bounded autonomous work
+  cycle summary: mission-bounded autonomy, observation, backlog, selected work,
+  role delegation, governed tool selection, Pre-U simulation, governance
+  decision simulation, CIEU fixture, residual delta, disabled live flags, and
+  the L4.3 recommendation.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

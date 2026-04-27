@@ -98,3 +98,10 @@ This maps existing observation, resource-sensing, action, tool-registry, and
 role-capability assets for future autonomy work. It is discovery-only: live
 actions, external actions, CIEU persistence, memory ingestion, brain writeback,
 daemon control, and push remain disabled.
+
+The snapshot can expose a mission-bounded autonomous work cycle summary derived
+from `company_autonomous_work_cycle/generated/autonomous_work_cycle_summary.json`.
+This is a simulator that demonstrates mission, observation, proposed work,
+delegation, governed tool selection, Pre-U, governance, simulated action, CIEU
+fixture, residual delta, and next-task recommendation without executing real
+work or enabling live action.

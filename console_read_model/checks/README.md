@@ -59,6 +59,11 @@ capability maps and tool-registry candidates, and exposes an
 live actions, external actions, push, daemon control, CIEU persistence, memory
 ingestion, or brain writeback.
 
+The wrapper builds the mission-bounded autonomous work cycle simulator,
+validates its generated mission/backlog/delegation/Pre-U/governance/CIEU
+fixtures, and exposes an `autonomous-cycle` CLI smoke check. This remains a
+simulator and performs no real action or external effect.
+
 Optional flags:
 
 - `--no-rebuild`: validate existing generated files without rebuilding them.

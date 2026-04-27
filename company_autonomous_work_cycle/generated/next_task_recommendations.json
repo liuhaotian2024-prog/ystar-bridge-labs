@@ -1,0 +1,48 @@
+{
+  "schema_name": "ystar.company_autonomous_work_cycle.generated.next_task_recommendations",
+  "schema_version": "v0",
+  "recommendations": [
+    {
+      "next_task_id": "next-001",
+      "title": "L4.3 Governed Read-Only Observation Loop v0",
+      "recommended_owner_agent": "Ryan-Platform",
+      "risk_tier": "medium",
+      "depends_on": [
+        "company_autonomous_work_cycle/generated/autonomous_work_cycle_summary.json"
+      ],
+      "requires_y_star_gov": true,
+      "requires_operator_approval": true,
+      "requires_cieu_event": true,
+      "live_enabled": false,
+      "rationale": "turn the simulator observation step into a governed read-only loop"
+    },
+    {
+      "next_task_id": "next-002",
+      "title": "Mission dashboard read-model contract",
+      "recommended_owner_agent": "Samantha-Secretary",
+      "risk_tier": "low",
+      "depends_on": [
+        "company_autonomous_work_cycle/generated/selected_work_item.json"
+      ],
+      "requires_y_star_gov": false,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "live_enabled": false,
+      "rationale": "make mission progress legible without live execution"
+    },
+    {
+      "next_task_id": "next-003",
+      "title": "Governed tool wrapper input-output contract pack",
+      "recommended_owner_agent": "Ethan-CTO",
+      "risk_tier": "medium",
+      "depends_on": [
+        "company_autonomy_inventory/generated/governed_tool_registry_candidates.json"
+      ],
+      "requires_y_star_gov": true,
+      "requires_operator_approval": true,
+      "requires_cieu_event": true,
+      "live_enabled": false,
+      "rationale": "prepare disabled candidates for future approval gates"
+    }
+  ]
+}

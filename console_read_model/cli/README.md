@@ -20,6 +20,7 @@ It reads only:
 - `console_read_model/generated/live_boundary_summary.json`
 - `console_read_model/generated/cieu_boundary_summary.json`
 - `console_read_model/generated/autonomy_inventory_summary.json`
+- `console_read_model/generated/autonomous_cycle_summary.json`
 - `console_read_model/generated/generation_manifest.json`
 
 It does not read DBs, logs, active-agent markers, daemon state, raw runtime
@@ -45,6 +46,7 @@ python3 console_read_model/cli/team_console.py live-readiness
 python3 console_read_model/cli/team_console.py live-boundary
 python3 console_read_model/cli/team_console.py cieu-boundary
 python3 console_read_model/cli/team_console.py autonomy-inventory
+python3 console_read_model/cli/team_console.py autonomous-cycle
 python3 console_read_model/cli/team_console.py validate-local
 ```
 
@@ -98,3 +100,8 @@ The `autonomy-inventory` command displays only the generated company autonomy
 inventory summary. It confirms repository archaeology, observation maps,
 resource-sensing maps, action maps, governed tool candidates, and role matrices
 exist while live/external actions and writeback paths remain disabled.
+
+The `autonomous-cycle` command displays only the generated mission-bounded
+autonomous work cycle summary. It confirms the company can simulate a
+self-directed work cycle while real action, external effects, CIEU persistence,
+brain writeback, and memory ingestion remain disabled.

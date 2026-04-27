@@ -1,0 +1,22 @@
+{
+  "schema_name": "ystar.company_autonomous_work_cycle.generated.simulated_action_plan",
+  "schema_version": "v0",
+  "action_plan_id": "sim-action-company-cycle-001",
+  "selected_work_item_id": "work-001",
+  "selected_U": "U1",
+  "simulated_steps": [
+    "Read generated console and autonomy summaries.",
+    "Sketch mission dashboard sections.",
+    "Route role responsibilities for future implementation.",
+    "Record dry-run CIEU event fixture."
+  ],
+  "real_execution_performed": false,
+  "files_would_create_or_update": [
+    "future/company_mission_dashboard.md",
+    "future/governed_read_only_observation_loop.json"
+  ],
+  "external_effects": [],
+  "rollback_policy_ref": "labs_live_boundary/rollback_policy.md",
+  "risk_tier": "low",
+  "notes": "no file modifications are performed beyond this L4.2 generated simulator pack"
+}

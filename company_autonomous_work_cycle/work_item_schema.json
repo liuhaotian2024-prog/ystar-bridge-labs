@@ -1,0 +1,24 @@
+{
+  "schema_name": "ystar.company_autonomous_work_cycle.work_item_schema",
+  "schema_version": "v0",
+  "required_fields": [
+    "work_item_id",
+    "title",
+    "description",
+    "mission_relevance",
+    "proposing_agent",
+    "recommended_owner_agent",
+    "supporting_agents",
+    "risk_tier",
+    "requires_y_star_gov",
+    "requires_operator_approval",
+    "requires_cieu_event",
+    "requires_live_action",
+    "live_enabled",
+    "expected_outcome",
+    "selection_score",
+    "selection_reason"
+  ],
+  "live_enabled_required_value": false
+}
+

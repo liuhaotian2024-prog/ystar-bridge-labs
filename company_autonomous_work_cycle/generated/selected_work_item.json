@@ -1,0 +1,35 @@
+{
+  "schema_name": "ystar.company_autonomous_work_cycle.generated.selected_work_item",
+  "schema_version": "v0",
+  "selected_work_item": {
+    "work_item_id": "work-001",
+    "title": "Create governed read-only mission dashboard from generated read-models",
+    "description": "Mission-bounded simulator work item: Create governed read-only mission dashboard from generated read-models.",
+    "mission_relevance": "advances self-directed company operation without live execution",
+    "proposing_agent": "Aiden-CEO",
+    "recommended_owner_agent": "Ethan-CTO",
+    "supporting_agents": [
+      "Samantha-Secretary",
+      "Ryan-Platform",
+      "Maya-Governance"
+    ],
+    "risk_tier": "low",
+    "requires_y_star_gov": false,
+    "requires_operator_approval": false,
+    "requires_cieu_event": true,
+    "requires_live_action": false,
+    "live_enabled": false,
+    "expected_outcome": "a safer next dry-run autonomy capability",
+    "selection_score": 96,
+    "selection_reason": "prioritizes mission progress while keeping all live/external/writeback behavior disabled"
+  },
+  "selection_method": "highest deterministic mission relevance score with live action disabled",
+  "rejected_high_risk_actions": [
+    "Git push",
+    "daemon control",
+    "external communication",
+    "brain writeback",
+    "memory ingestion",
+    "CIEU persistence"
+  ]
+}

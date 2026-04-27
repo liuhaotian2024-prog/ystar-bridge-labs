@@ -1,0 +1,14 @@
+{
+  "schema_name": "ystar.company_autonomous_work_cycle.role_delegation_schema",
+  "schema_version": "v0",
+  "required_roles": [
+    "Aiden-CEO",
+    "Ethan-CTO",
+    "Maya-Governance",
+    "Ryan-Platform",
+    "Samantha-Secretary",
+    "Leo-Kernel"
+  ],
+  "live_execution_allowed": false
+}
+

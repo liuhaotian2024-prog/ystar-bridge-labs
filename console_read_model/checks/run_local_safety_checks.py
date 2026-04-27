@@ -98,7 +98,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after company autonomy inventory",
+        "Build autonomous work cycle simulator",
+        ["python3", "company_autonomous_work_cycle/tools/build_autonomous_work_cycle.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after autonomous work cycle",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -280,6 +285,70 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json"],
     ),
     Check(
+        "Validate JSON: inventory_size_guard.json",
+        ["python3", "-m", "json.tool", "company_autonomy_inventory/generated/inventory_size_guard.json"],
+    ),
+    Check(
+        "Compile autonomous work cycle builder",
+        ["python3", "-m", "py_compile", "company_autonomous_work_cycle/tools/build_autonomous_work_cycle.py"],
+    ),
+    Check(
+        "Validate JSON: autonomous_cycle_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/autonomous_cycle_summary.json"],
+    ),
+    Check(
+        "Validate JSON: mission_profile.json",
+        ["python3", "-m", "json.tool", "company_autonomous_work_cycle/generated/mission_profile.json"],
+    ),
+    Check(
+        "Validate JSON: company_observation_snapshot.json",
+        ["python3", "-m", "json.tool", "company_autonomous_work_cycle/generated/company_observation_snapshot.json"],
+    ),
+    Check(
+        "Validate JSON: autonomous_work_backlog.json",
+        ["python3", "-m", "json.tool", "company_autonomous_work_cycle/generated/autonomous_work_backlog.json"],
+    ),
+    Check(
+        "Validate JSON: selected_work_item.json",
+        ["python3", "-m", "json.tool", "company_autonomous_work_cycle/generated/selected_work_item.json"],
+    ),
+    Check(
+        "Validate JSON: role_delegation_plan.json",
+        ["python3", "-m", "json.tool", "company_autonomous_work_cycle/generated/role_delegation_plan.json"],
+    ),
+    Check(
+        "Validate JSON: governed_tool_selection.json",
+        ["python3", "-m", "json.tool", "company_autonomous_work_cycle/generated/governed_tool_selection.json"],
+    ),
+    Check(
+        "Validate JSON: pre_u_packet_simulation.json",
+        ["python3", "-m", "json.tool", "company_autonomous_work_cycle/generated/pre_u_packet_simulation.json"],
+    ),
+    Check(
+        "Validate JSON: governance_decision_simulation.json",
+        ["python3", "-m", "json.tool", "company_autonomous_work_cycle/generated/governance_decision_simulation.json"],
+    ),
+    Check(
+        "Validate JSON: simulated_action_plan.json",
+        ["python3", "-m", "json.tool", "company_autonomous_work_cycle/generated/simulated_action_plan.json"],
+    ),
+    Check(
+        "Validate JSON: simulated_cieu_event.json",
+        ["python3", "-m", "json.tool", "company_autonomous_work_cycle/generated/simulated_cieu_event.json"],
+    ),
+    Check(
+        "Validate JSON: residual_delta_simulation.json",
+        ["python3", "-m", "json.tool", "company_autonomous_work_cycle/generated/residual_delta_simulation.json"],
+    ),
+    Check(
+        "Validate JSON: next_task_recommendations.json",
+        ["python3", "-m", "json.tool", "company_autonomous_work_cycle/generated/next_task_recommendations.json"],
+    ),
+    Check(
+        "Validate JSON: autonomous_work_cycle_summary.json",
+        ["python3", "-m", "json.tool", "company_autonomous_work_cycle/generated/autonomous_work_cycle_summary.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -418,6 +487,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: autonomy-inventory",
         ["python3", "console_read_model/cli/team_console.py", "autonomy-inventory"],
+    ),
+    Check(
+        "CLI smoke: autonomous-cycle",
+        ["python3", "console_read_model/cli/team_console.py", "autonomous-cycle"],
     ),
     Check(
         "CLI smoke: sources",

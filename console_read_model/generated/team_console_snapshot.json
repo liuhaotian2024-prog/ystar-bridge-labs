@@ -23,6 +23,7 @@
     "labs_live_boundary/generated/live_boundary_summary.json",
     "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_summary.json",
     "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
+    "company_autonomous_work_cycle/generated/autonomous_work_cycle_summary.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",
@@ -252,8 +253,8 @@
     "schema_version": "v0",
     "framework_status": "path_inventory_only",
     "current_mining_level": 0,
-    "artifacts_classified": 211,
-    "unsafe_artifacts_count": 172,
+    "artifacts_classified": 222,
+    "unsafe_artifacts_count": 173,
     "classes_seen": {
       "ACTIVE_AGENT_MARKER": 17,
       "BACKUP_DB": 1,
@@ -262,13 +263,13 @@
       "DAILY_REPORT": 6,
       "DB_CORE": 1,
       "DB_SIDECARE": 6,
-      "DREAM_REPORT": 32,
+      "DREAM_REPORT": 33,
       "DRIFT_REPORT": 4,
       "ESCALATION_REPORT": 23,
       "FRAMEWORK_FILE": 5,
       "LOG_RUNTIME": 31,
       "PYCACHE": 31,
-      "UNKNOWN_OR_NON_RUNTIME": 34,
+      "UNKNOWN_OR_NON_RUNTIME": 44,
       "UNKNOWN_RUNTIME_ARTIFACT": 10,
       "WHITELIST_REPORT": 1
     },
@@ -370,24 +371,24 @@
   "artifact_disposition_summary": {
     "schema_name": "ystar.console_read_model.generated.artifact_disposition_summary",
     "schema_version": "v0",
-    "total_artifacts": 211,
-    "artifacts_with_disposition": 211,
+    "total_artifacts": 222,
+    "artifacts_with_disposition": 222,
     "dispositions": {
       "deferred_requires_marker_metadata_adapter": 26,
       "deferred_sidecar_or_transaction_file": 6,
       "deferred_requires_classification": 10,
-      "ignored_or_non_runtime": 39,
+      "ignored_or_non_runtime": 49,
       "deferred_requires_readonly_db_adapter": 2,
       "deferred_requires_bounded_log_adapter": 31,
       "ignored_generated_cache": 31,
       "safe_mined_to_review_queue": 20,
-      "deferred_markdown_report_not_selected": 46
+      "deferred_markdown_report_not_selected": 47
     },
     "artifact_classes": {
       "DAEMON_STATE": 4,
       "DB_SIDECARE": 6,
       "UNKNOWN_RUNTIME_ARTIFACT": 10,
-      "UNKNOWN_OR_NON_RUNTIME": 34,
+      "UNKNOWN_OR_NON_RUNTIME": 44,
       "DB_CORE": 1,
       "FRAMEWORK_FILE": 5,
       "CACHE_SENTINEL": 5,
@@ -395,7 +396,7 @@
       "ACTIVE_AGENT_MARKER": 17,
       "PYCACHE": 31,
       "BACKUP_DB": 1,
-      "DREAM_REPORT": 32,
+      "DREAM_REPORT": 33,
       "DAILY_REPORT": 6,
       "DRIFT_REPORT": 4,
       "ESCALATION_REPORT": 23,
@@ -408,12 +409,12 @@
       "deferred_requires_classification": 10,
       "deferred_requires_readonly_db_adapter": 2,
       "deferred_requires_bounded_log_adapter": 31,
-      "deferred_markdown_report_not_selected": 46
+      "deferred_markdown_report_not_selected": 47
     },
     "ignored_generated_cache": 31,
     "forbidden_direct_read_count": 106,
     "evidence_scoring_status": {
-      "not_started": 211
+      "not_started": 222
     },
     "generated_disposition_index": "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
     "warning": "Disposition is not ingestion. No brain/memory/CIEU writes are allowed."
@@ -676,6 +677,39 @@
     "generated_report": "company_autonomy_inventory/generated/company_autonomy_report.md",
     "warning": "Company autonomy inventory is discovery-only; all live actions remain disabled."
   },
+  "autonomous_cycle_summary": {
+    "schema_name": "ystar.console_read_model.generated.autonomous_cycle_summary",
+    "schema_version": "v0",
+    "autonomous_work_cycle_defined": true,
+    "mission_bounded_autonomy_defined": true,
+    "founder_sets_mission_agent_team_drives": true,
+    "step_by_step_human_prompting_required": false,
+    "observation_snapshot_defined": true,
+    "autonomous_work_backlog_defined": true,
+    "selected_work_item_defined": true,
+    "role_delegation_defined": true,
+    "governed_tool_selection_defined": true,
+    "pre_u_packet_simulated": true,
+    "governance_decision_simulated": true,
+    "action_plan_simulated": true,
+    "cieu_event_simulated": true,
+    "residual_delta_simulated": true,
+    "next_task_recommendations_defined": true,
+    "real_action_executed": false,
+    "external_action_executed": false,
+    "live_action_enabled": false,
+    "git_push_enabled": false,
+    "daemon_control_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "email_or_external_communication_enabled": false,
+    "requires_manual_enablement_for_live": true,
+    "next_required_milestone": "L4.3 Governed Read-Only Observation Loop v0",
+    "generated_summary": "company_autonomous_work_cycle/generated/autonomous_work_cycle_summary.json",
+    "generated_report": "company_autonomous_work_cycle/generated/autonomous_work_cycle_report.md",
+    "warning": "simulator only; no real action, external effect, CIEU persistence, or writeback occurred"
+  },
   "open_gaps": [
     "Static console loader exists; no frontend UI yet.",
     "No frontend UI.",
@@ -700,7 +734,8 @@
     "Live readiness gate exists, but minimal live loop remains blocked until required gates exist.",
     "Live boundary harness exists as defined-disabled contracts only; no live execution is enabled.",
     "CIEU runtime boundary exists as disabled event fixtures only; no CIEU persistence is enabled.",
-    "Company autonomy inventory exists, but governed action registry candidates are not live-enabled."
+    "Company autonomy inventory exists, but governed action registry candidates are not live-enabled.",
+    "Autonomous work cycle exists as a simulator only; governed read-only observation loop is not implemented."
   ],
   "warnings": [
     "Ethan execution channels are present as reference-only boundaries, not runtime launchers."

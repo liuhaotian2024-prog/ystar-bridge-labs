@@ -1,0 +1,61 @@
+{
+  "schema_name": "ystar.company_autonomous_work_cycle.generated.governed_tool_selection",
+  "schema_version": "v0",
+  "selection_id": "tool-selection-mission-dashboard-v0",
+  "selected_tool_candidates": [
+    {
+      "tool_id": "console-read-model-tools",
+      "tool_name": "Console read model tools",
+      "readiness": "candidate",
+      "live_enabled": false
+    },
+    {
+      "tool_id": "repo-scan-tools",
+      "tool_name": "Safe repository scan tools",
+      "readiness": "candidate",
+      "live_enabled": false
+    },
+    {
+      "tool_id": "local-validation-tools",
+      "tool_name": "Local validation and test tools",
+      "readiness": "candidate",
+      "live_enabled": false
+    },
+    {
+      "tool_id": "docs-report-tools",
+      "tool_name": "Docs and report generation tools",
+      "readiness": "candidate",
+      "live_enabled": false
+    }
+  ],
+  "rejected_tool_candidates": [
+    {
+      "tool_id": "governance-dry-run-tools",
+      "reason": "not selected for this low-risk read-only simulator cycle"
+    },
+    {
+      "tool_id": "live-boundary-tools",
+      "reason": "not selected for this low-risk read-only simulator cycle"
+    },
+    {
+      "tool_id": "cieu-boundary-tools",
+      "reason": "not selected for this low-risk read-only simulator cycle"
+    },
+    {
+      "tool_id": "github-pr-issue-tools",
+      "reason": "not selected for this low-risk read-only simulator cycle"
+    },
+    {
+      "tool_id": "mcp-interface-tools",
+      "reason": "not selected for this low-risk read-only simulator cycle"
+    }
+  ],
+  "selection_reason": "selected read-only generated/read-model and validation candidates only",
+  "risk_tier": "low",
+  "requires_y_star_gov": false,
+  "requires_operator_approval": false,
+  "requires_cieu_event": true,
+  "live_enabled": false,
+  "external_action_enabled": false,
+  "notes": "no real tool invocation is performed"
+}

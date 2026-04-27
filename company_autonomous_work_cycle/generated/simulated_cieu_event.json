@@ -1,0 +1,26 @@
+{
+  "schema_name": "ystar.company_autonomous_work_cycle.generated.simulated_cieu_event",
+  "schema_version": "v0",
+  "event_id": "cieu-sim-company-cycle-001",
+  "dry_run_only": true,
+  "persistence_enabled": false,
+  "Xt": "Dry-run company autonomy stack has generated inventory, boundaries, and read-model summaries.",
+  "U": "U1",
+  "Y_star": "Mission-bounded autonomous observation loop advances without live execution.",
+  "predicted_Y_t1": "A concrete next read-only observation-loop milestone is selected.",
+  "predicted_R_t1": "Residual risk remains around future live enablement and tool wrapper approval.",
+  "actual_Y_t1": "Simulator generated a selected work item, role plan, tool selection, and next task recommendation.",
+  "actual_R_t1": "No live execution occurred; future work remains gated.",
+  "residual_delta": "residual_reduced_for_planning_only",
+  "evidence_refs": [
+    "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
+    "company_autonomous_work_cycle/generated/governance_decision_simulation.json"
+  ],
+  "governance_decision_ref": "gov-sim-company-cycle-001",
+  "write_policy": "dry_run_no_persistence",
+  "learning_eligibility": false,
+  "curation_required": true,
+  "direct_brain_writeback_allowed": false,
+  "direct_memory_ingestion_allowed": false,
+  "raw_artifact_ingestion_allowed": false
+}

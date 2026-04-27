@@ -1,0 +1,21 @@
+{
+  "schema_name": "ystar.company_autonomous_work_cycle.schema",
+  "schema_version": "v0",
+  "required_generated_outputs": [
+    "mission_profile",
+    "company_observation_snapshot",
+    "autonomous_work_backlog",
+    "selected_work_item",
+    "role_delegation_plan",
+    "governed_tool_selection",
+    "pre_u_packet_simulation",
+    "governance_decision_simulation",
+    "simulated_action_plan",
+    "simulated_cieu_event",
+    "residual_delta_simulation",
+    "next_task_recommendations",
+    "autonomous_work_cycle_summary"
+  ],
+  "live_execution_allowed": false
+}
+

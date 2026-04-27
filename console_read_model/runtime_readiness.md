@@ -25,6 +25,8 @@
 - Disabled CIEU runtime event boundary summary in generated console snapshots.
 - Company autonomy capability inventory and governed tool candidate summary in
   generated console snapshots.
+- Mission-bounded autonomous work cycle simulator summary in generated console
+  snapshots.
 - Local safety check wrapper for the curated read-model stack.
 - Lightweight static capsule schema-alignment checks.
 
@@ -56,6 +58,8 @@
 - CIEU runtime event fixtures are defined, but persistence remains disabled.
 - Company autonomy inventory exists, but governed action registry candidates are
   not approved or live-enabled.
+- Autonomous work cycle exists as a simulator only; governed read-only
+  observation loop is not implemented.
 - Runtime tests remain separate from local read-model safety checks.
 - Full JSON Schema enforcement through a dedicated schema engine.
 
@@ -91,6 +95,8 @@ N. Define verified CIEU runtime writer interfaces without enabling persistence.
 
 O. Simulate a company autonomous work cycle using only mapped, disabled
 governed tool candidates.
+
+P. Implement L4.3 Governed Read-Only Observation Loop v0.
 
 The safest next step is either a static capsule validator or a read-only console
 prototype that consumes only the files in this directory and other curated

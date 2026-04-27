@@ -1,0 +1,109 @@
+{
+  "schema_name": "ystar.company_autonomous_work_cycle.generated.role_delegation_plan",
+  "schema_version": "v0",
+  "work_item_id": "work-001",
+  "delegations": [
+    {
+      "agent_id": "Aiden-CEO",
+      "assigned_responsibility": "Own mission framing and priority selection for the simulated work cycle.",
+      "input_refs": [
+        "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
+        "company_autonomous_work_cycle/generated/selected_work_item.json"
+      ],
+      "expected_output": "dry-run analysis contribution only",
+      "forbidden_actions": [
+        "real action execution",
+        "external communication",
+        "CIEU persistence",
+        "brain writeback",
+        "memory ingestion"
+      ],
+      "governance_notes": "role responsibility is simulated and requires future governance before live execution"
+    },
+    {
+      "agent_id": "Ethan-CTO",
+      "assigned_responsibility": "Assess technical feasibility of generated read-model dashboard surfaces.",
+      "input_refs": [
+        "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
+        "company_autonomous_work_cycle/generated/selected_work_item.json"
+      ],
+      "expected_output": "dry-run analysis contribution only",
+      "forbidden_actions": [
+        "real action execution",
+        "external communication",
+        "CIEU persistence",
+        "brain writeback",
+        "memory ingestion"
+      ],
+      "governance_notes": "role responsibility is simulated and requires future governance before live execution"
+    },
+    {
+      "agent_id": "Maya-Governance",
+      "assigned_responsibility": "Review boundaries and ensure no live/external/writeback path is enabled.",
+      "input_refs": [
+        "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
+        "company_autonomous_work_cycle/generated/selected_work_item.json"
+      ],
+      "expected_output": "dry-run analysis contribution only",
+      "forbidden_actions": [
+        "real action execution",
+        "external communication",
+        "CIEU persistence",
+        "brain writeback",
+        "memory ingestion"
+      ],
+      "governance_notes": "role responsibility is simulated and requires future governance before live execution"
+    },
+    {
+      "agent_id": "Ryan-Platform",
+      "assigned_responsibility": "Map disabled governed tool candidates to future read-only wrappers.",
+      "input_refs": [
+        "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
+        "company_autonomous_work_cycle/generated/selected_work_item.json"
+      ],
+      "expected_output": "dry-run analysis contribution only",
+      "forbidden_actions": [
+        "real action execution",
+        "external communication",
+        "CIEU persistence",
+        "brain writeback",
+        "memory ingestion"
+      ],
+      "governance_notes": "role responsibility is simulated and requires future governance before live execution"
+    },
+    {
+      "agent_id": "Samantha-Secretary",
+      "assigned_responsibility": "Prepare continuity summary and report/read-model handoff shape.",
+      "input_refs": [
+        "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
+        "company_autonomous_work_cycle/generated/selected_work_item.json"
+      ],
+      "expected_output": "dry-run analysis contribution only",
+      "forbidden_actions": [
+        "real action execution",
+        "external communication",
+        "CIEU persistence",
+        "brain writeback",
+        "memory ingestion"
+      ],
+      "governance_notes": "role responsibility is simulated and requires future governance before live execution"
+    },
+    {
+      "agent_id": "Leo-Kernel",
+      "assigned_responsibility": "Review runtime and kernel integrity implications of the simulated loop.",
+      "input_refs": [
+        "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
+        "company_autonomous_work_cycle/generated/selected_work_item.json"
+      ],
+      "expected_output": "dry-run analysis contribution only",
+      "forbidden_actions": [
+        "real action execution",
+        "external communication",
+        "CIEU persistence",
+        "brain writeback",
+        "memory ingestion"
+      ],
+      "governance_notes": "role responsibility is simulated and requires future governance before live execution"
+    }
+  ]
+}

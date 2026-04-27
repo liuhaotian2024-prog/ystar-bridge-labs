@@ -1,0 +1,14 @@
+{
+  "schema_name": "ystar.company_autonomous_work_cycle.generated.residual_delta_simulation",
+  "schema_version": "v0",
+  "delta_id": "residual-delta-company-cycle-001",
+  "event_id": "cieu-sim-company-cycle-001",
+  "predicted_vs_actual_summary": "Predicted planning progress occurred as a simulator artifact only.",
+  "residual_delta": "residual_reduced_for_planning_only",
+  "learning_eligibility": false,
+  "curation_required": true,
+  "direct_brain_writeback_allowed": false,
+  "direct_memory_ingestion_allowed": false,
+  "next_review_required": true,
+  "notes": "requires future human or validator review before any learning use"
+}

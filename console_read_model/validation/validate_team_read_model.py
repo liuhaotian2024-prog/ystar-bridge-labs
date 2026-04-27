@@ -336,6 +336,7 @@ def main() -> int:
     required_labs_live_boundary_files = expected.get("required_labs_live_boundary_files", [])
     required_labs_cieu_runtime_boundary_files = expected.get("required_labs_cieu_runtime_boundary_files", [])
     required_company_autonomy_inventory_files = expected.get("required_company_autonomy_inventory_files", [])
+    required_company_autonomous_work_cycle_files = expected.get("required_company_autonomous_work_cycle_files", [])
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -418,6 +419,12 @@ def main() -> int:
         check_exists(path, report, "company autonomy inventory file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "company autonomy inventory JSON")
+
+    for rel in required_company_autonomous_work_cycle_files:
+        path = ROOT / rel
+        check_exists(path, report, "company autonomous work cycle file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "company autonomous work cycle JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -989,6 +996,82 @@ def main() -> int:
         else:
             report.fail("generated snapshot missing autonomy_inventory_summary")
 
+        autonomous_cycle_summary = snapshot.get("autonomous_cycle_summary")
+        if autonomous_cycle_summary:
+            report.pass_("generated snapshot contains autonomous_cycle_summary")
+            for field in [
+                "autonomous_work_cycle_defined",
+                "mission_bounded_autonomy_defined",
+                "founder_sets_mission_agent_team_drives",
+                "step_by_step_human_prompting_required",
+                "observation_snapshot_defined",
+                "autonomous_work_backlog_defined",
+                "selected_work_item_defined",
+                "role_delegation_defined",
+                "governed_tool_selection_defined",
+                "pre_u_packet_simulated",
+                "governance_decision_simulated",
+                "action_plan_simulated",
+                "cieu_event_simulated",
+                "residual_delta_simulated",
+                "next_task_recommendations_defined",
+                "real_action_executed",
+                "external_action_executed",
+                "live_action_enabled",
+                "git_push_enabled",
+                "daemon_control_enabled",
+                "cieu_persistence_enabled",
+                "brain_writeback_enabled",
+                "memory_ingestion_enabled",
+                "email_or_external_communication_enabled",
+                "requires_manual_enablement_for_live",
+                "next_required_milestone",
+                "generated_summary",
+                "generated_report",
+                "warning",
+            ]:
+                if field in autonomous_cycle_summary:
+                    report.pass_(f"snapshot autonomous_cycle_summary field present: {field}")
+                else:
+                    report.fail(f"snapshot autonomous_cycle_summary missing field: {field}")
+            for field in [
+                "autonomous_work_cycle_defined",
+                "mission_bounded_autonomy_defined",
+                "founder_sets_mission_agent_team_drives",
+                "observation_snapshot_defined",
+                "autonomous_work_backlog_defined",
+                "selected_work_item_defined",
+                "role_delegation_defined",
+                "governed_tool_selection_defined",
+                "pre_u_packet_simulated",
+                "governance_decision_simulated",
+                "action_plan_simulated",
+                "cieu_event_simulated",
+                "residual_delta_simulated",
+                "next_task_recommendations_defined",
+                "requires_manual_enablement_for_live",
+            ]:
+                if autonomous_cycle_summary.get(field) is not True:
+                    report.fail(f"snapshot autonomous_cycle_summary must keep {field}=true")
+            for field in [
+                "step_by_step_human_prompting_required",
+                "real_action_executed",
+                "external_action_executed",
+                "live_action_enabled",
+                "git_push_enabled",
+                "daemon_control_enabled",
+                "cieu_persistence_enabled",
+                "brain_writeback_enabled",
+                "memory_ingestion_enabled",
+                "email_or_external_communication_enabled",
+            ]:
+                if autonomous_cycle_summary.get(field) is not False:
+                    report.fail(f"snapshot autonomous_cycle_summary must keep {field}=false")
+            if autonomous_cycle_summary.get("next_required_milestone") != "L4.3 Governed Read-Only Observation Loop v0":
+                report.fail("snapshot autonomous_cycle_summary must point to L4.3 observation-loop milestone")
+        else:
+            report.fail("generated snapshot missing autonomous_cycle_summary")
+
     quarantine = generated_json.get("console_read_model/generated/quarantine_summary.json")
     if quarantine:
         for field in [
@@ -1431,6 +1514,79 @@ def main() -> int:
                 report.fail(f"generated autonomy inventory summary must keep {field}=false")
         if autonomy_inventory.get("next_required_milestone") != "L4.2 Company Autonomous Work Cycle Simulator v0":
             report.fail("generated autonomy inventory summary must point to L4.2 simulator milestone")
+
+    autonomous_cycle = generated_json.get("console_read_model/generated/autonomous_cycle_summary.json")
+    if autonomous_cycle:
+        for field in [
+            "autonomous_work_cycle_defined",
+            "mission_bounded_autonomy_defined",
+            "founder_sets_mission_agent_team_drives",
+            "step_by_step_human_prompting_required",
+            "observation_snapshot_defined",
+            "autonomous_work_backlog_defined",
+            "selected_work_item_defined",
+            "role_delegation_defined",
+            "governed_tool_selection_defined",
+            "pre_u_packet_simulated",
+            "governance_decision_simulated",
+            "action_plan_simulated",
+            "cieu_event_simulated",
+            "residual_delta_simulated",
+            "next_task_recommendations_defined",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "git_push_enabled",
+            "daemon_control_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "email_or_external_communication_enabled",
+            "requires_manual_enablement_for_live",
+            "next_required_milestone",
+            "generated_summary",
+            "generated_report",
+            "warning",
+        ]:
+            if field in autonomous_cycle:
+                report.pass_(f"generated autonomous cycle summary field present: {field}")
+            else:
+                report.fail(f"generated autonomous cycle summary missing field: {field}")
+        for field in [
+            "autonomous_work_cycle_defined",
+            "mission_bounded_autonomy_defined",
+            "founder_sets_mission_agent_team_drives",
+            "observation_snapshot_defined",
+            "autonomous_work_backlog_defined",
+            "selected_work_item_defined",
+            "role_delegation_defined",
+            "governed_tool_selection_defined",
+            "pre_u_packet_simulated",
+            "governance_decision_simulated",
+            "action_plan_simulated",
+            "cieu_event_simulated",
+            "residual_delta_simulated",
+            "next_task_recommendations_defined",
+            "requires_manual_enablement_for_live",
+        ]:
+            if autonomous_cycle.get(field) is not True:
+                report.fail(f"generated autonomous cycle summary must keep {field}=true")
+        for field in [
+            "step_by_step_human_prompting_required",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "git_push_enabled",
+            "daemon_control_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "email_or_external_communication_enabled",
+        ]:
+            if autonomous_cycle.get(field) is not False:
+                report.fail(f"generated autonomous cycle summary must keep {field}=false")
+        if autonomous_cycle.get("next_required_milestone") != "L4.3 Governed Read-Only Observation Loop v0":
+            report.fail("generated autonomous cycle summary must point to L4.3 observation-loop milestone")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

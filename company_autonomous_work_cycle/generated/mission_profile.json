@@ -1,0 +1,36 @@
+{
+  "schema_name": "ystar.company_autonomous_work_cycle.generated.mission_profile",
+  "schema_version": "v0",
+  "mission_id": "mission-commercial-agent-company-v0",
+  "mission_name": "Commercial AI Agent Self-Governed Company Runtime",
+  "founder_defined_mission": "Build a commercial AI agent self-governed company runtime that can observe business-relevant resources, understand constraints, select or build tools, act through governed channels, record outcomes, and improve through curated CIEU deltas.",
+  "mission_constraints": [
+    "preserve architecture boundaries",
+    "use governed channels for risky actions",
+    "keep live execution disabled in this simulator",
+    "record learning only through curated CIEU deltas"
+  ],
+  "mission_priorities": [
+    "preserve architecture boundaries",
+    "strengthen autonomous observation",
+    "strengthen governed action capability",
+    "avoid uncontrolled live execution",
+    "produce evidence-backed progress",
+    "reduce founder step-by-step operational burden"
+  ],
+  "forbidden_actions": [
+    "uncontrolled live execution",
+    "external communication without approval",
+    "Git push without approval",
+    "direct brain writeback",
+    "direct memory ingestion",
+    "raw runtime artifact ingestion",
+    "CIEU DB persistence without boundary enablement",
+    "daemon start/stop without approval"
+  ],
+  "mission_bounded_autonomy": true,
+  "step_by_step_human_prompting_required": false,
+  "human_sets_mission_agent_team_drives_execution": true,
+  "governance_required_for_risky_actions": true,
+  "cieu_required_for_learning": true
+}

@@ -1,0 +1,8 @@
+{
+  "schema_name": "ystar.company_autonomous_work_cycle.governed_tool_selection_schema",
+  "schema_version": "v0",
+  "selection_source": "company_autonomy_inventory/generated/governed_tool_registry_candidates.json",
+  "live_enabled_required_value": false,
+  "external_action_enabled_required_value": false
+}
+

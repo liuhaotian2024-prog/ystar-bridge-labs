@@ -1,0 +1,16 @@
+{
+  "schema_name": "ystar.company_autonomous_work_cycle.generated.governance_decision_simulation",
+  "schema_version": "v0",
+  "decision_id": "gov-sim-company-cycle-001",
+  "packet_id": "pre-u-sim-company-cycle-001",
+  "decision": "allow_simulation",
+  "decision_reason": "all selected actions are simulated or read-only generated-output actions with live effects disabled",
+  "allowed_only_as_simulation": true,
+  "live_action_allowed": false,
+  "external_action_allowed": false,
+  "cieu_persistence_allowed": false,
+  "brain_writeback_allowed": false,
+  "memory_ingestion_allowed": false,
+  "operator_approval_required_for_live": true,
+  "notes": "not a Y-star-gov live decision and not hook enforcement"
+}

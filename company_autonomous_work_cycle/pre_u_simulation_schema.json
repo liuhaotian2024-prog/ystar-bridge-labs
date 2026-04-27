@@ -1,0 +1,8 @@
+{
+  "schema_name": "ystar.company_autonomous_work_cycle.pre_u_simulation_schema",
+  "schema_version": "v0",
+  "minimum_candidate_actions": 3,
+  "simulation_only": true,
+  "live_execution_allowed": false
+}
+

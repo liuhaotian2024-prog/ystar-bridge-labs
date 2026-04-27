@@ -54,6 +54,20 @@
 - `company_autonomy_inventory/generated/governed_tool_registry_candidates.json`
 - `company_autonomy_inventory/generated/agent_role_capability_matrix.json`
 - `company_autonomy_inventory/generated/company_autonomy_readiness_summary.json`
+- `company_autonomy_inventory/generated/inventory_size_guard.json`
+- `company_autonomous_work_cycle/generated/mission_profile.json`
+- `company_autonomous_work_cycle/generated/company_observation_snapshot.json`
+- `company_autonomous_work_cycle/generated/autonomous_work_backlog.json`
+- `company_autonomous_work_cycle/generated/selected_work_item.json`
+- `company_autonomous_work_cycle/generated/role_delegation_plan.json`
+- `company_autonomous_work_cycle/generated/governed_tool_selection.json`
+- `company_autonomous_work_cycle/generated/pre_u_packet_simulation.json`
+- `company_autonomous_work_cycle/generated/governance_decision_simulation.json`
+- `company_autonomous_work_cycle/generated/simulated_action_plan.json`
+- `company_autonomous_work_cycle/generated/simulated_cieu_event.json`
+- `company_autonomous_work_cycle/generated/residual_delta_simulation.json`
+- `company_autonomous_work_cycle/generated/next_task_recommendations.json`
+- `company_autonomous_work_cycle/generated/autonomous_work_cycle_summary.json`
 - `console_read_model/generated/quarantine_summary.json`
 - `console_read_model/generated/safe_mining_summary.json`
 - `console_read_model/generated/review_queue_summary.json`
@@ -67,6 +81,7 @@
 - `console_read_model/generated/live_boundary_summary.json`
 - `console_read_model/generated/cieu_boundary_summary.json`
 - `console_read_model/generated/autonomy_inventory_summary.json`
+- `console_read_model/generated/autonomous_cycle_summary.json`
 
 ## Unsafe Direct Sources
 
@@ -115,3 +130,6 @@
   maps and summaries; governed tool candidates remain disabled and require
   future wrappers, approval, Y-star-gov checks, rollback policy, and CIEU events
   before any live action.
+- Autonomous work cycle data may be displayed only from generated simulator
+  outputs; it is not live execution, tool invocation, CIEU persistence, memory
+  ingestion, or brain writeback.

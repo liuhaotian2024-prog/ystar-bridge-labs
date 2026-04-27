@@ -12,6 +12,9 @@
     ".yaml",
     ".yml"
   ],
+  "read_char_limit": 1200,
+  "snippet_char_limit": 240,
+  "max_indexed_assets": 900,
   "scanned_roots": [
     {
       "repo_name": "ystar-company",
@@ -50,7 +53,11 @@
       "write_performed": false
     }
   ],
-  "assets_discovered": 3766,
+  "assets_discovered": 3795,
   "forbidden_runtime_content_read": false,
-  "external_roots_read_only": true
+  "external_roots_read_only": true,
+  "compaction_applied": true,
+  "full_source_embedding_allowed": false,
+  "full_doc_embedding_allowed": false,
+  "assets_indexed": 900
 }

@@ -60,6 +60,7 @@ Ready now:
 - disabled live-boundary harness summary
 - disabled CIEU runtime event boundary summary
 - company autonomy inventory summary
+- mission-bounded autonomous work cycle simulator summary
 
 Not ready:
 - runtime generator
@@ -88,13 +89,14 @@ Not ready:
 - enabled live-boundary harness
 - enabled CIEU runtime event persistence
 - approved governed action registry
+- governed read-only observation loop
 
 ## Runtime Artifact Quarantine Summary
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 211
-- Unsafe artifacts count: 172
+- Artifacts classified: 222
+- Unsafe artifacts count: 173
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -103,13 +105,13 @@ Not ready:
   - DAILY_REPORT: 6
   - DB_CORE: 1
   - DB_SIDECARE: 6
-  - DREAM_REPORT: 32
+  - DREAM_REPORT: 33
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
   - FRAMEWORK_FILE: 5
   - LOG_RUNTIME: 31
   - PYCACHE: 31
-  - UNKNOWN_OR_NON_RUNTIME: 34
+  - UNKNOWN_OR_NON_RUNTIME: 44
   - UNKNOWN_RUNTIME_ARTIFACT: 10
   - WHITELIST_REPORT: 1
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
@@ -147,23 +149,23 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 211
-- Artifacts with disposition: 211
+- Total artifacts: 222
+- Artifacts with disposition: 222
 - Safe-mined to review queue: 20
 - Forbidden direct read count: 106
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
-  - deferred_markdown_report_not_selected: 46
+  - deferred_markdown_report_not_selected: 47
   - deferred_requires_bounded_log_adapter: 31
   - deferred_requires_classification: 10
   - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 31
-  - ignored_or_non_runtime: 39
+  - ignored_or_non_runtime: 49
   - safe_mined_to_review_queue: 20
 - Evidence scoring status:
-  - not_started: 211
+  - not_started: 222
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -331,6 +333,30 @@ Not ready:
 - next_required_milestone: L4.2 Company Autonomous Work Cycle Simulator v0
 - Warning: Company autonomy inventory is discovery-only; all live actions remain disabled.
 
+## Company Autonomous Work Cycle
+
+- mission_bounded_autonomy_defined: True
+- founder_sets_mission_agent_team_drives: True
+- step_by_step_human_prompting_required: False
+- observation_snapshot_defined: True
+- autonomous_work_backlog_defined: True
+- selected_work_item_defined: True
+- role_delegation_defined: True
+- governed_tool_selection_defined: True
+- pre_u_packet_simulated: True
+- governance_decision_simulated: True
+- action_plan_simulated: True
+- cieu_event_simulated: True
+- residual_delta_simulated: True
+- real_action_executed: False
+- external_action_executed: False
+- live_action_enabled: False
+- cieu_persistence_enabled: False
+- brain_writeback_enabled: False
+- memory_ingestion_enabled: False
+- next_required_milestone: L4.3 Governed Read-Only Observation Loop v0
+- Warning: simulator only; no real action, external effect, CIEU persistence, or writeback occurred
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -359,6 +385,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - implement live boundary gates without enabling runtime execution
 - define CIEU runtime event writer verification without enabling persistence
 - simulate a company autonomous work cycle without enabling live actions
+- build L4.3 governed read-only observation loop from simulator outputs
 
 ## Warnings / Gaps
 
@@ -387,3 +414,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Live boundary harness exists as defined-disabled contracts only; no live execution is enabled.
 - CIEU runtime boundary exists as disabled event fixtures only; no CIEU persistence is enabled.
 - Company autonomy inventory exists, but governed action registry candidates are not live-enabled.
+- Autonomous work cycle exists as a simulator only; governed read-only observation loop is not implemented.

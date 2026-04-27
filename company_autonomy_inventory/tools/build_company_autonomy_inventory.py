@@ -13,6 +13,12 @@ WORKSPACE = ROOT.parent
 GENERATED = ROOT / "company_autonomy_inventory" / "generated"
 
 ALLOWED_EXTENSIONS = {".py", ".md", ".json", ".toml", ".yaml", ".yml", ".txt"}
+SNIPPET_CHAR_LIMIT = 240
+READ_CHAR_LIMIT = 1200
+EVIDENCE_TERM_LIMIT = 8
+MAX_INDEXED_ASSETS = 900
+MAX_SINGLE_GENERATED_JSON_BYTES = 2_000_000
+MAX_TOTAL_GENERATED_INVENTORY_BYTES = 8_000_000
 SKIP_DIRS = {
     ".git",
     ".logs",
@@ -39,6 +45,20 @@ SKIP_SUFFIXES = {
     "." + "log",
 }
 ACTIVE_MARKER_TERMS = {"active_agent", "active-agent"}
+GENERATED_SNIPPET_DENY_TERMS = {
+    "." + "db",
+    "." + "db-wal",
+    "." + "db-shm",
+    "." + "sqlite",
+    "." + "sqlite3",
+    "scripts/.logs",
+    "reports/ceo/brain_dream_diffs",
+    "reports/escalation",
+    "reports/daily",
+    "reports/drift_hourly",
+    "active_agent",
+    ".ystar_active_agent",
+}
 
 CAPABILITY_CLASSES = [
     "brain_and_memory",
@@ -137,9 +157,19 @@ def iter_safe_files(repo_root: Path) -> list[Path]:
 
 def read_bounded_text(path: Path) -> str:
     try:
-        return path.read_text(encoding="utf-8", errors="ignore")[:2000]
+        return path.read_text(encoding="utf-8", errors="ignore")[:READ_CHAR_LIMIT]
     except OSError:
         return ""
+
+
+def compact_snippet(snippet: str) -> str | None:
+    compact = " ".join(snippet.split())[:SNIPPET_CHAR_LIMIT].strip()
+    if not compact:
+        return None
+    lowered = compact.lower()
+    if any(term in lowered for term in GENERATED_SNIPPET_DENY_TERMS):
+        return None
+    return compact
 
 
 def classify_asset(relative_path: str, snippet: str) -> tuple[list[str], list[str]]:
@@ -200,6 +230,71 @@ def risk_tier(classes: list[str], relative_path: str) -> str:
     return "low"
 
 
+def asset_score(asset: dict[str, Any]) -> int:
+    actionability_score = {
+        "source_available": 35,
+        "test_available": 30,
+        "generated_summary": 28,
+        "runtime_candidate_disabled": 24,
+        "documentation_only": 12,
+    }
+    repo_score = {
+        "ystar-company": 40,
+        "Y-star-gov": 32,
+        "gov-mcp": 24,
+        "K9Audit": 12,
+        "k9log-core": 10,
+        "riverbed": 10,
+    }
+    risk_score = {"high": 16, "medium": 12, "low": 8, "blocked": 4}
+    path = asset["relative_path"]
+    bonus = 0
+    for term in [
+        "company_autonomy",
+        "company_autonomous",
+        "labs_cieu",
+        "labs_live",
+        "labs_runtime",
+        "cross_repo",
+        "console_read_model",
+        "governance",
+        "pre_u",
+        "schema",
+        "README",
+        "test_",
+    ]:
+        if term.lower() in path.lower():
+            bonus += 4
+    return (
+        repo_score.get(asset["repo_name"], 0)
+        + actionability_score.get(asset["actionability_level"], 0)
+        + risk_score.get(asset["risk_tier"], 0)
+        + len(asset["capability_classes"]) * 3
+        + min(len(asset["evidence_terms"]), EVIDENCE_TERM_LIMIT)
+        + bonus
+    )
+
+
+def compact_assets(assets: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    ranked = sorted(
+        assets,
+        key=lambda asset: (-asset_score(asset), asset["repo_name"], asset["relative_path"]),
+    )
+    selected: dict[str, dict[str, Any]] = {}
+
+    for class_name in CAPABILITY_CLASSES:
+        class_assets = [asset for asset in ranked if class_name in asset["capability_classes"]]
+        for asset in class_assets[:25]:
+            selected[asset["asset_id"]] = asset
+
+    for asset in ranked:
+        if len(selected) >= MAX_INDEXED_ASSETS:
+            break
+        selected[asset["asset_id"]] = asset
+
+    return sorted(selected.values(), key=lambda asset: asset["asset_id"])
+
+
 def discover_assets() -> tuple[list[dict[str, Any]], dict[str, Any]]:
     assets: list[dict[str, Any]] = []
     roots: list[dict[str, Any]] = []
@@ -237,23 +332,27 @@ def discover_assets() -> tuple[list[dict[str, Any]], dict[str, Any]]:
                 level in {"source_available", "test_available", "generated_summary", "runtime_candidate_disabled"}
                 and risk != "blocked"
             )
-            assets.append(
-                {
-                    "asset_id": f"asset-{asset_index:04d}",
-                    "repo_name": repo_name,
-                    "repo_root": str(repo_root),
-                    "relative_path": relative_path,
-                    "file_type": path.suffix.lower().lstrip(".") or "text",
-                    "capability_classes": classes,
-                    "likely_owner_agent_candidates": owners,
-                    "actionability_level": level,
-                    "risk_tier": risk,
-                    "governance_required": governance_required,
-                    "can_be_tool_registry_candidate": can_candidate,
-                    "reason": "classified by deterministic path/name/bounded-snippet lexical evidence",
-                    "evidence_terms": evidence_terms[:12],
-                }
-            )
+            stat = path.stat()
+            bounded_snippet = compact_snippet(snippet)
+            compact_asset: dict[str, Any] = {
+                "asset_id": f"asset-{asset_index:04d}",
+                "repo_name": repo_name,
+                "relative_path": relative_path,
+                "file_type": path.suffix.lower().lstrip(".") or "text",
+                "capability_classes": classes,
+                "likely_owner_agent_candidates": owners,
+                "actionability_level": level,
+                "risk_tier": risk,
+                "governance_required": governance_required,
+                "can_be_tool_registry_candidate": can_candidate,
+                "size_bytes": stat.st_size,
+                "line_count_estimate": snippet.count("\n") + 1 if snippet else 0,
+                "compact_reason": "metadata and bounded lexical evidence only; full source/doc content excluded",
+                "evidence_terms": evidence_terms[:EVIDENCE_TERM_LIMIT],
+            }
+            if bounded_snippet:
+                compact_asset["bounded_snippet"] = bounded_snippet
+            assets.append(compact_asset)
             asset_index += 1
     manifest = {
         "schema_name": "ystar.company_autonomy_inventory.generated.repo_discovery_manifest",
@@ -261,10 +360,16 @@ def discover_assets() -> tuple[list[dict[str, Any]], dict[str, Any]]:
         "repo_archaeology_completed": True,
         "classification_method": "deterministic_lexical_path_name_and_bounded_snippet",
         "allowed_file_extensions": sorted(ALLOWED_EXTENSIONS),
+        "read_char_limit": READ_CHAR_LIMIT,
+        "snippet_char_limit": SNIPPET_CHAR_LIMIT,
+        "max_indexed_assets": MAX_INDEXED_ASSETS,
         "scanned_roots": roots,
         "assets_discovered": len(assets),
         "forbidden_runtime_content_read": False,
         "external_roots_read_only": True,
+        "compaction_applied": True,
+        "full_source_embedding_allowed": False,
+        "full_doc_embedding_allowed": False,
     }
     return assets, manifest
 
@@ -273,20 +378,25 @@ def assets_by_class(assets: list[dict[str, Any]], class_name: str) -> list[str]:
     return [asset["asset_id"] for asset in assets if class_name in asset["capability_classes"]][:20]
 
 
-def build_existing_asset_inventory(assets: list[dict[str, Any]]) -> dict[str, Any]:
+def build_existing_asset_inventory(all_assets: list[dict[str, Any]], indexed_assets: list[dict[str, Any]]) -> dict[str, Any]:
     classes: dict[str, int] = {class_name: 0 for class_name in CAPABILITY_CLASSES}
     repos: dict[str, int] = {}
-    for asset in assets:
+    for asset in all_assets:
         repos[asset["repo_name"]] = repos.get(asset["repo_name"], 0) + 1
         for class_name in asset["capability_classes"]:
             classes[class_name] = classes.get(class_name, 0) + 1
     return {
         "schema_name": "ystar.company_autonomy_inventory.generated.existing_asset_inventory",
         "schema_version": "v0",
-        "asset_count": len(assets),
+        "asset_count": len(all_assets),
+        "indexed_asset_count": len(indexed_assets),
+        "max_indexed_assets": MAX_INDEXED_ASSETS,
+        "compaction_applied": True,
+        "full_source_embedding_allowed": False,
+        "full_doc_embedding_allowed": False,
         "repo_counts": repos,
         "capability_class_counts": classes,
-        "assets": assets,
+        "assets": indexed_assets,
     }
 
 
@@ -660,13 +770,66 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+def generated_inventory_files() -> list[Path]:
+    names = [
+        "repo_discovery_manifest.json",
+        "existing_asset_inventory.json",
+        "observation_capability_map.json",
+        "resource_sensing_map.json",
+        "action_capability_map.json",
+        "governed_tool_registry_candidates.json",
+        "agent_role_capability_matrix.json",
+        "company_autonomy_readiness_summary.json",
+        "dormant_asset_report.md",
+        "autonomy_gap_report.md",
+        "company_autonomy_report.md",
+        "inventory_size_guard.json",
+    ]
+    return [GENERATED / name for name in names if (GENERATED / name).exists()]
+
+
+def write_inventory_size_guard() -> dict[str, Any]:
+    def build_payload() -> dict[str, Any]:
+        files = generated_inventory_files()
+        sizes = {path.name: path.stat().st_size for path in files}
+        oversized = [
+            {"file": name, "size_bytes": size}
+            for name, size in sorted(sizes.items())
+            if name.endswith(".json") and size > MAX_SINGLE_GENERATED_JSON_BYTES
+        ]
+        return {
+            "schema_name": "ystar.company_autonomy_inventory.generated.inventory_size_guard",
+            "schema_version": "v0",
+            "inventory_size_guard_defined": True,
+            "max_single_generated_json_bytes": MAX_SINGLE_GENERATED_JSON_BYTES,
+            "max_total_generated_inventory_bytes": MAX_TOTAL_GENERATED_INVENTORY_BYTES,
+            "oversized_files": oversized,
+            "total_generated_inventory_bytes": sum(sizes.values()),
+            "generated_file_sizes": sizes,
+            "compaction_applied": True,
+            "max_indexed_assets": MAX_INDEXED_ASSETS,
+            "full_source_embedding_allowed": False,
+            "full_doc_embedding_allowed": False,
+            "generated_inventory_safe_for_read_model": not oversized
+            and sum(sizes.values()) <= MAX_TOTAL_GENERATED_INVENTORY_BYTES,
+        }
+
+    guard_path = GENERATED / "inventory_size_guard.json"
+    write_json(guard_path, build_payload())
+    payload = build_payload()
+    write_json(guard_path, payload)
+    return payload
+
+
 def main() -> int:
     assets, discovery_manifest = discover_assets()
-    asset_inventory = build_existing_asset_inventory(assets)
-    observation = build_observation_map(assets)
-    resources = build_resource_sensing_map(assets)
-    actions = build_action_map(assets)
-    tools = build_tool_registry(assets)
+    indexed_assets = compact_assets(assets)
+    discovery_manifest["assets_indexed"] = len(indexed_assets)
+    asset_inventory = build_existing_asset_inventory(assets, indexed_assets)
+    observation = build_observation_map(indexed_assets)
+    resources = build_resource_sensing_map(indexed_assets)
+    actions = build_action_map(indexed_assets)
+    tools = build_tool_registry(indexed_assets)
     agent_matrix = build_agent_matrix(observation, resources, actions, tools)
     readiness = build_readiness_summary()
     dormant_report, gap_report, autonomy_report = render_reports(asset_inventory, actions, tools, readiness)
@@ -683,9 +846,12 @@ def main() -> int:
     (GENERATED / "dormant_asset_report.md").write_text(dormant_report, encoding="utf-8")
     (GENERATED / "autonomy_gap_report.md").write_text(gap_report, encoding="utf-8")
     (GENERATED / "company_autonomy_report.md").write_text(autonomy_report, encoding="utf-8")
+    size_guard = write_inventory_size_guard()
 
     print("Company Autonomy Inventory Builder: PASS")
     print(f"assets_discovered: {discovery_manifest['assets_discovered']}")
+    print(f"assets_indexed: {discovery_manifest['assets_indexed']}")
+    print(f"total_generated_inventory_bytes: {size_guard['total_generated_inventory_bytes']}")
     print(f"repo_archaeology_completed: {readiness['repo_archaeology_completed']}")
     print(f"governance_only_runtime: {readiness['governance_only_runtime']}")
     print(f"live_actions_enabled: {readiness['live_actions_enabled']}")
