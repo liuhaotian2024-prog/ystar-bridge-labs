@@ -3,7 +3,7 @@
   "schema_version": "v0",
   "framework_status": "path_inventory_only",
   "current_mining_level": 0,
-  "artifacts_classified": 172,
+  "artifacts_classified": 176,
   "unsafe_artifacts_count": 154,
   "classes_seen": {
     "ACTIVE_AGENT_MARKER": 17,
@@ -19,7 +19,7 @@
     "FRAMEWORK_FILE": 2,
     "LOG_RUNTIME": 31,
     "PYCACHE": 31,
-    "UNKNOWN_OR_NON_RUNTIME": 16,
+    "UNKNOWN_OR_NON_RUNTIME": 20,
     "UNKNOWN_RUNTIME_ARTIFACT": 10,
     "WHITELIST_REPORT": 1
   },

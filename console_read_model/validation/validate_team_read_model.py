@@ -24,6 +24,13 @@ class Report:
         self.failed: list[str] = []
         self.warnings: list[str] = []
         self.files_inspected: set[str] = set()
+        self.schema_alignment = {
+            "agent_brain_capsules_checked": 0,
+            "brain_profiles_checked": 0,
+            "ref_files_checked": 0,
+            "execution_channel_files_checked": 0,
+            "pre_u_packet_schemas_checked": 0,
+        }
 
     def pass_(self, message: str) -> None:
         self.passed.append(message)
@@ -66,6 +73,233 @@ def check_json_file(path: Path, report: Report, label: str) -> Any:
     if data is not None:
         report.pass_(f"{label} JSON valid: {path.relative_to(ROOT)}")
     return data
+
+
+def is_non_empty(value: Any) -> bool:
+    if value is None:
+        return False
+    if isinstance(value, str):
+        return bool(value.strip())
+    if isinstance(value, (list, dict)):
+        return bool(value)
+    return True
+
+
+def fail_field(report: Report, rel: str, field: str, message: str) -> None:
+    report.fail(f"{rel}: {field}: {message}")
+
+
+def warn_field(report: Report, rel: str, field: str, message: str) -> None:
+    report.warn(f"{rel}: {field}: {message}")
+
+
+def check_brain_profile_alignment(agent_id: str, path: Path, data: Any, report: Report) -> None:
+    rel = str(path.relative_to(ROOT))
+    report.schema_alignment["brain_profiles_checked"] += 1
+
+    if not isinstance(data, dict):
+        report.fail(f"{rel}: brain_profile top-level must be object")
+        return
+
+    required_fields = [
+        "agent_id",
+        "canonical_name",
+        "aliases",
+        "role_type",
+        "capsule_version",
+        "capsule_status",
+        "source_registry_refs",
+        "primary_layers",
+        "db_content_opened",
+        "scripts_run",
+        "evidence_paths",
+        "open_gaps",
+    ]
+    for field in required_fields:
+        if field not in data:
+            fail_field(report, rel, field, "missing required profile field")
+        elif not is_non_empty(data[field]) and field not in {"db_content_opened", "scripts_run"}:
+            fail_field(report, rel, field, "critical profile field is empty")
+
+    if data.get("agent_id") != agent_id:
+        fail_field(report, rel, "agent_id", f"expected {agent_id}, got {data.get('agent_id')}")
+
+    if data.get("capsule_status") != "reference_only":
+        fail_field(report, rel, "capsule_status", "reference capsules should remain reference_only")
+
+    if data.get("db_content_opened") is not False:
+        fail_field(report, rel, "db_content_opened", "must be false for reference capsules")
+
+    if data.get("scripts_run") is not False:
+        fail_field(report, rel, "scripts_run", "must be false for reference capsules")
+
+    if not isinstance(data.get("aliases"), list):
+        fail_field(report, rel, "aliases", "must be an array")
+
+    if not isinstance(data.get("primary_layers"), list):
+        fail_field(report, rel, "primary_layers", "must be an array")
+
+    if "role_specific_focus" not in data:
+        warn_field(
+            report,
+            rel,
+            "role_specific_focus",
+            "missing recommended shared-schema field; allowed for older Aiden v0 profile until migration",
+        )
+    elif not is_non_empty(data.get("role_specific_focus")):
+        fail_field(report, rel, "role_specific_focus", "present but empty")
+
+    report.pass_(f"brain profile schema-aligned: {rel}")
+
+
+def check_ref_file_alignment(agent_id: str, path: Path, data: Any, report: Report) -> None:
+    rel = str(path.relative_to(ROOT))
+    report.schema_alignment["ref_files_checked"] += 1
+
+    if not isinstance(data, (dict, list)):
+        report.fail(f"{rel}: ref file top-level must be object or array")
+        return
+
+    if isinstance(data, list):
+        if not data:
+            report.fail(f"{rel}: ref file array must not be empty")
+        report.pass_(f"ref file schema-aligned: {rel}")
+        return
+
+    if not data:
+        report.fail(f"{rel}: ref file object must not be empty")
+        return
+
+    if data.get("agent_id") != agent_id:
+        fail_field(report, rel, "agent_id", f"expected {agent_id}, got {data.get('agent_id')}")
+
+    reference_arrays = [key for key in ("refs", "references", "stages") if key in data]
+    if not reference_arrays:
+        report.fail(f"{rel}: expected one of refs, references, or stages")
+        return
+
+    for key in reference_arrays:
+        value = data.get(key)
+        if not isinstance(value, list) or not value:
+            fail_field(report, rel, key, "must be a non-empty array")
+            continue
+        for index, item in enumerate(value):
+            if not isinstance(item, dict):
+                fail_field(report, rel, f"{key}[{index}]", "must be an object")
+                continue
+            if key in {"refs", "references"} and not is_non_empty(item.get("path")):
+                fail_field(report, rel, f"{key}[{index}].path", "reference entry must include a path")
+            if key == "stages" and not is_non_empty(item.get("references")):
+                fail_field(report, rel, f"{key}[{index}].references", "stage entry must include references")
+
+    report.pass_(f"ref file schema-aligned: {rel}")
+
+
+def check_execution_channels_alignment(agent_id: str, path: Path, data: Any, report: Report) -> None:
+    rel = str(path.relative_to(ROOT))
+    report.schema_alignment["execution_channel_files_checked"] += 1
+
+    if not isinstance(data, dict):
+        report.fail(f"{rel}: execution channels top-level must be object")
+        return
+
+    for field in [
+        "agent_id",
+        "identity_boundary",
+        "canonical_identity_location",
+        "execution_channels",
+        "delegation_requirements",
+        "evidence_return_policy",
+        "prohibited_interpretations",
+        "open_gaps",
+    ]:
+        if not is_non_empty(data.get(field)):
+            fail_field(report, rel, field, "missing or empty execution-channel field")
+
+    if data.get("agent_id") != agent_id:
+        fail_field(report, rel, "agent_id", f"expected {agent_id}, got {data.get('agent_id')}")
+
+    for index, channel in enumerate(data.get("execution_channels", [])):
+        if not isinstance(channel, dict):
+            fail_field(report, rel, f"execution_channels[{index}]", "must be object")
+            continue
+        if channel.get("owns_identity") is not False:
+            fail_field(report, rel, f"execution_channels[{index}].owns_identity", "execution substrates must not own identity")
+
+    report.pass_(f"execution channels schema-aligned: {rel}")
+
+
+def check_pre_u_packet_schema_alignment(path: Path, data: Any, report: Report) -> None:
+    rel = str(path.relative_to(ROOT))
+    report.schema_alignment["pre_u_packet_schemas_checked"] += 1
+
+    if not isinstance(data, dict):
+        report.fail(f"{rel}: Pre-U packet schema top-level must be object")
+        return
+
+    required = set(data.get("required", []))
+    properties = data.get("properties", {})
+    concepts = {
+        "Y*": "y_star",
+        "Xt": "x_t_summary",
+        "m_functor": "m_functor",
+        "candidate_U": "candidate_actions",
+        "selected_U": "selected_action",
+        "why_min_residual": "residual_minimization_rationale",
+        "CIEU link policy": "cieu_link_policy",
+    }
+    for concept, field in concepts.items():
+        if field not in required or field not in properties:
+            fail_field(report, rel, concept, f"expected schema field {field}")
+
+    candidate = properties.get("candidate_actions", {}).get("items", {})
+    candidate_required = set(candidate.get("required", []))
+    for concept, field in {
+        "predicted_Yt+1": "predicted_y_t1",
+        "predicted_Rt+1": "predicted_r_t1",
+        "candidate_U_summary": "u_summary",
+    }.items():
+        if field not in candidate_required:
+            fail_field(report, rel, concept, f"expected candidate action field {field}")
+
+    selected = properties.get("selected_action", {})
+    selected_required = set(selected.get("required", []))
+    if "why_selected" not in selected_required:
+        fail_field(report, rel, "selected_action.why_selected", "selected action should explain residual-minimizing choice")
+
+    report.pass_(f"Pre-U packet schema-aligned: {rel}")
+
+
+def check_capsule_schema_alignment(expected: dict[str, Any], report: Report) -> None:
+    required_agents = expected["required_agents"]
+    base_files = expected["required_base_capsule_files"]
+
+    for agent_id in required_agents:
+        capsule_dir = ROOT / "agent_brains" / agent_id
+        report.schema_alignment["agent_brain_capsules_checked"] += 1
+        check_exists(capsule_dir, report, "schema alignment capsule directory")
+
+        profile_path = capsule_dir / "brain_profile.json"
+        profile = check_json_file(profile_path, report, f"{agent_id} schema profile")
+        if profile is not None:
+            check_brain_profile_alignment(agent_id, profile_path, profile, report)
+
+        for filename in base_files:
+            if filename.endswith("_refs.json"):
+                ref_path = capsule_dir / filename
+                ref_data = check_json_file(ref_path, report, f"{agent_id} schema ref")
+                if ref_data is not None:
+                    check_ref_file_alignment(agent_id, ref_path, ref_data, report)
+
+    execution_path = ROOT / "agent_brains" / "Ethan-CTO" / "execution_channels.json"
+    execution = check_json_file(execution_path, report, "Ethan execution channels schema")
+    if execution is not None:
+        check_execution_channels_alignment("Ethan-CTO", execution_path, execution, report)
+
+    pre_u_path = ROOT / "agent_brains" / "Aiden-CEO" / "pre_u_counterfactual" / "packet_schema.json"
+    pre_u = check_json_file(pre_u_path, report, "Aiden Pre-U packet schema")
+    if pre_u is not None:
+        check_pre_u_packet_schema_alignment(pre_u_path, pre_u, report)
 
 
 def contains_unsafe_pattern(value: str, unsafe_patterns: list[str]) -> str | None:
@@ -273,6 +507,8 @@ def main() -> int:
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "Ethan extended JSON")
 
+    check_capsule_schema_alignment(expected, report)
+
     print_report(report)
     return 0 if not report.failed else 1
 
@@ -284,6 +520,12 @@ def print_report(report: Report) -> None:
     print(f"Checks failed: {len(report.failed)}")
     print(f"Warnings: {len(report.warnings)}")
     print(f"Files inspected: {len(report.files_inspected)}")
+    print("Schema alignment:")
+    print(f"- agent brain capsules checked: {report.schema_alignment['agent_brain_capsules_checked']}")
+    print(f"- brain profiles checked: {report.schema_alignment['brain_profiles_checked']}")
+    print(f"- ref files checked: {report.schema_alignment['ref_files_checked']}")
+    print(f"- execution channel files checked: {report.schema_alignment['execution_channel_files_checked']}")
+    print(f"- pre-U packet schemas checked: {report.schema_alignment['pre_u_packet_schemas_checked']}")
 
     if report.failed:
         print("\nFailures:")

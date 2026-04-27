@@ -14,6 +14,9 @@ Minimum checks for future static validation:
   intentionally summarizes content.
 - Every capsule distinguishes persistent identity from execution tools.
 - Every capsule defines open gaps.
+- Current L2.7 static validation performs lightweight alignment checks for
+  brain profiles, reference files, execution channels, and Aiden's Pre-U packet
+  schema concepts without using third-party JSON Schema libraries.
 
 No runtime validation, DB inspection, hook behavior, CIEU writes, or brain
 writeback occurs under this policy.

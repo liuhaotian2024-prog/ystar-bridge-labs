@@ -67,7 +67,7 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 172
+- Artifacts classified: 176
 - Unsafe artifacts count: 154
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
@@ -83,7 +83,7 @@ Not ready:
   - FRAMEWORK_FILE: 2
   - LOG_RUNTIME: 31
   - PYCACHE: 31
-  - UNKNOWN_OR_NON_RUNTIME: 16
+  - UNKNOWN_OR_NON_RUNTIME: 20
   - UNKNOWN_RUNTIME_ARTIFACT: 10
   - WHITELIST_REPORT: 1
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json

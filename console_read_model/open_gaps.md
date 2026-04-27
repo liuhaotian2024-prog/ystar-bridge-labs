@@ -17,3 +17,5 @@
 - Runtime artifact quarantine summary is visible, but artifact mining is still not implemented.
 - Local safety check wrapper exists but is not wired into CI.
 - Local safety check wrapper does not replace runtime or governance tests.
+- Capsule schema alignment is lightweight and does not validate executable cognition.
+- Aiden's older v0 profile should eventually add the shared `role_specific_focus` field.

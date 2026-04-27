@@ -29,3 +29,10 @@ the team console snapshot, without following any runtime artifact paths.
 
 The validator checks that the local safety wrapper files exist, but it does not
 execute the wrapper. Execution remains an explicit local command.
+
+L2.7 adds lightweight capsule schema-alignment checks for Aiden, Ethan, and
+Samantha role-brain capsules. These checks use Python standard library only and
+validate persistent capsule structure, ref-file shape, Ethan execution-channel
+identity boundaries, and Aiden Pre-U packet schema concepts. They do not perform
+full JSON Schema validation through `jsonschema` and do not validate runtime
+cognition.

@@ -9,6 +9,7 @@ It runs the existing curated-source checks:
 - team console snapshot generator
 - generated JSON validity checks
 - static team read model validator
+- lightweight capsule schema-alignment checks through the static validator
 - team console `validate-local`
 - read-only CLI smoke checks for quarantine and sources
 

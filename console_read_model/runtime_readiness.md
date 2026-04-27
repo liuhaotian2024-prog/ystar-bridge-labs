@@ -13,6 +13,7 @@
 - Snapshot-only team console CLI.
 - Path-only runtime artifact quarantine summary in generated console snapshots.
 - Local safety check wrapper for the curated read-model stack.
+- Lightweight static capsule schema-alignment checks.
 
 ## Not Ready
 
@@ -30,6 +31,7 @@
 - CLI integration packaging.
 - Runtime artifact mining or curation adapters.
 - Runtime tests remain separate from local read-model safety checks.
+- Full JSON Schema enforcement through a dedicated schema engine.
 
 ## Recommended Next Steps
 

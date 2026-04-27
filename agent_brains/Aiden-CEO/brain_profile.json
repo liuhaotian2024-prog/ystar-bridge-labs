@@ -18,6 +18,13 @@
       "treatment": "canonical team registry source"
     }
   ],
+  "role_specific_focus": [
+    "company orchestration",
+    "mission alignment",
+    "strategic decision framing",
+    "CZL residual closure",
+    "cross-agent coordination"
+  ],
   "primary_layers": [
     "dna",
     "memory",

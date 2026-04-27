@@ -81,6 +81,22 @@
     "execution_channels.json",
     "embodiment_boundary.md"
   ],
+  "schema_alignment_expectations": {
+    "brain_profile_schema_ref": "agent_brains/schema/agent_brain_capsule.schema.json",
+    "ref_file_schema_ref": "agent_brains/schema/ref_file_schema.json",
+    "execution_channels_schema_ref": "agent_brains/schema/execution_channels.schema.json",
+    "pre_u_packet_profile_schema_ref": "agent_brains/schema/pre_u_packet_profile.schema.json",
+    "capsule_required_files_source": "required_base_capsule_files",
+    "pre_u_packet_required_files": [
+      "agent_brains/Aiden-CEO/pre_u_counterfactual/packet_schema.json",
+      "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/boundary_map.json"
+    ],
+    "known_role_brains": [
+      "Aiden-CEO",
+      "Ethan-CTO",
+      "Samantha-Secretary"
+    ]
+  },
   "unsafe_direct_source_patterns": [
     ".db",
     ".db-wal",
