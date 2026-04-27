@@ -1,0 +1,26 @@
+{
+  "schema_name": "ystar.labs_cieu_runtime_boundary.prediction_delta_fixture_schema",
+  "schema_version": "v0",
+  "required_fields": [
+    "prediction_id",
+    "event_id",
+    "predicted_Y_t1",
+    "actual_Y_t1",
+    "predicted_R_t1",
+    "actual_R_t1",
+    "residual_delta",
+    "learning_eligibility",
+    "writeback_policy",
+    "curation_required",
+    "direct_brain_writeback_allowed",
+    "direct_memory_ingestion_allowed",
+    "raw_artifact_ingestion_allowed"
+  ],
+  "required_disabled_values": {
+    "learning_eligibility": false,
+    "curation_required": true,
+    "direct_brain_writeback_allowed": false,
+    "direct_memory_ingestion_allowed": false,
+    "raw_artifact_ingestion_allowed": false
+  }
+}

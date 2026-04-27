@@ -1,0 +1,23 @@
+{
+  "schema_name": "ystar.console_read_model.generated.cieu_boundary_summary",
+  "schema_version": "v0",
+  "cieu_runtime_boundary_defined": true,
+  "cieu_runtime_event_schema_defined": true,
+  "prediction_delta_fixture_defined": true,
+  "cieu_writer_policy_defined": true,
+  "dry_run_only": true,
+  "persistence_enabled": false,
+  "live_action_execution_enabled": false,
+  "cieu_write_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false,
+  "candidate_auto_approval_enabled": false,
+  "raw_artifact_ingestion_enabled": false,
+  "requires_manual_enablement": true,
+  "minimal_live_loop_ready": false,
+  "blocked_reason": "cieu_runtime_boundary_defined_but_persistence_disabled",
+  "generated_manifest": "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_manifest.json",
+  "generated_sample_event": "labs_cieu_runtime_boundary/generated/sample_cieu_runtime_event.json",
+  "generated_prediction_delta_fixture": "labs_cieu_runtime_boundary/generated/sample_prediction_delta_fixture.json",
+  "warning": "CIEU runtime boundary is defined but persistence is disabled. It does not execute actions, write CIEU, write brain or memory, approve candidates, or ingest raw artifacts."
+}

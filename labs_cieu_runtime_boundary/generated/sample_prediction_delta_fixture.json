@@ -1,0 +1,24 @@
+{
+  "prediction_id": "prediction-delta-fixture-001",
+  "event_id": "cieu-runtime-event-sample-001",
+  "predicted_Y_t1": "A future runtime event can be shaped without persistence.",
+  "actual_Y_t1": "Boundary fixture generated locally only.",
+  "predicted_R_t1": "Persistence and writeback remain disabled.",
+  "actual_R_t1": "No CIEU write, action execution, brain writeback, or memory ingestion occurred.",
+  "residual_delta": {
+    "status": "structural_fixture_only",
+    "semantic_truth_status": "not_evaluated",
+    "delta_summary": "No live outcome measured; fixture exists to validate envelope shape."
+  },
+  "learning_eligibility": false,
+  "writeback_policy": {
+    "status": "disabled_requires_future_curation",
+    "cieu_write_allowed": false,
+    "brain_writeback_allowed": false,
+    "memory_ingestion_allowed": false
+  },
+  "curation_required": true,
+  "direct_brain_writeback_allowed": false,
+  "direct_memory_ingestion_allowed": false,
+  "raw_artifact_ingestion_allowed": false
+}

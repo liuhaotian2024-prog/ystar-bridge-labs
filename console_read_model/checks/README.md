@@ -49,6 +49,10 @@ JSON, and exposes a `live-boundary` CLI smoke check. This remains disabled by
 default and does not activate hooks, execute actions, write CIEU, or mutate
 brain/memory.
 
+The wrapper builds the CIEU runtime boundary manifest, validates its generated
+event and prediction-delta fixtures, and exposes a `cieu-boundary` CLI smoke
+check. This does not enable CIEU persistence or write any database/store.
+
 Optional flags:
 
 - `--no-rebuild`: validate existing generated files without rebuilding them.

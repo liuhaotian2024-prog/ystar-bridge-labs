@@ -26,6 +26,7 @@ LABS_ACCEPTANCE = "console_read_model/generated/labs_acceptance_summary.json"
 CROSS_REPO_ALIGNMENT = "console_read_model/generated/cross_repo_alignment_summary.json"
 LIVE_READINESS = "console_read_model/generated/live_readiness_summary.json"
 LIVE_BOUNDARY = "console_read_model/generated/live_boundary_summary.json"
+CIEU_BOUNDARY = "console_read_model/generated/cieu_boundary_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -45,7 +46,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -91,6 +92,7 @@ def load_all() -> dict[str, Any]:
         "cross_repo_alignment": load_json(CROSS_REPO_ALIGNMENT),
         "live_readiness": load_json(LIVE_READINESS),
         "live_boundary": load_json(LIVE_BOUNDARY),
+        "cieu_boundary": load_json(CIEU_BOUNDARY),
     }
 
 
@@ -453,6 +455,31 @@ def cmd_live_boundary(data: dict[str, Any]) -> None:
     print(f"warning: {boundary.get('warning')}")
 
 
+def cmd_cieu_boundary(data: dict[str, Any]) -> None:
+    boundary = data["cieu_boundary"]
+    print("# Labs CIEU Runtime Boundary")
+    print()
+    print(f"CIEU runtime boundary defined: {boundary.get('cieu_runtime_boundary_defined')}")
+    print(f"CIEU runtime event schema defined: {boundary.get('cieu_runtime_event_schema_defined')}")
+    print(f"prediction delta fixture defined: {boundary.get('prediction_delta_fixture_defined')}")
+    print(f"CIEU writer policy defined: {boundary.get('cieu_writer_policy_defined')}")
+    print(f"dry run only: {boundary.get('dry_run_only')}")
+    print(f"persistence enabled: {boundary.get('persistence_enabled')}")
+    print(f"live action execution enabled: {boundary.get('live_action_execution_enabled')}")
+    print(f"CIEU write enabled: {boundary.get('cieu_write_enabled')}")
+    print(f"brain writeback enabled: {boundary.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {boundary.get('memory_ingestion_enabled')}")
+    print(f"candidate auto approval enabled: {boundary.get('candidate_auto_approval_enabled')}")
+    print(f"raw artifact ingestion enabled: {boundary.get('raw_artifact_ingestion_enabled')}")
+    print(f"minimal live loop ready: {boundary.get('minimal_live_loop_ready')}")
+    print(f"required manual enablement: {boundary.get('requires_manual_enablement')}")
+    print(f"blocked reason: {boundary.get('blocked_reason')}")
+    print(f"generated_manifest: {boundary.get('generated_manifest')}")
+    print(f"generated_sample_event: {boundary.get('generated_sample_event')}")
+    print(f"generated_prediction_delta_fixture: {boundary.get('generated_prediction_delta_fixture')}")
+    print(f"warning: {boundary.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -527,6 +554,13 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print("Live boundary manifest:")
         print(f"- {live_boundary.get('generated_manifest')}")
         print(f"- {live_boundary.get('generated_checklist')}")
+    cieu_boundary = data.get("cieu_boundary", {})
+    if cieu_boundary:
+        print()
+        print("CIEU runtime boundary manifest and fixtures:")
+        print(f"- {cieu_boundary.get('generated_manifest')}")
+        print(f"- {cieu_boundary.get('generated_sample_event')}")
+        print(f"- {cieu_boundary.get('generated_prediction_delta_fixture')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -566,6 +600,7 @@ def cmd_validate_local() -> int:
         CROSS_REPO_ALIGNMENT,
         LIVE_READINESS,
         LIVE_BOUNDARY,
+        CIEU_BOUNDARY,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -601,6 +636,8 @@ def cmd_validate_local() -> int:
             failures.append("live_readiness_summary missing from team console snapshot")
         if "live_boundary_summary" not in snapshot:
             failures.append("live_boundary_summary missing from team console snapshot")
+        if "cieu_boundary_summary" not in snapshot:
+            failures.append("cieu_boundary_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -936,6 +973,57 @@ def cmd_validate_local() -> int:
         if live_boundary.get("ready_or_enabled_checklist_items") != 0:
             failures.append("live boundary checklist must not contain ready/enabled items")
 
+    cieu_boundary = loaded.get(CIEU_BOUNDARY)
+    if cieu_boundary:
+        required_fields = [
+            "cieu_runtime_boundary_defined",
+            "cieu_runtime_event_schema_defined",
+            "prediction_delta_fixture_defined",
+            "cieu_writer_policy_defined",
+            "dry_run_only",
+            "persistence_enabled",
+            "live_action_execution_enabled",
+            "cieu_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+            "raw_artifact_ingestion_enabled",
+            "requires_manual_enablement",
+            "minimal_live_loop_ready",
+            "blocked_reason",
+            "generated_manifest",
+            "generated_sample_event",
+            "generated_prediction_delta_fixture",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in cieu_boundary:
+                failures.append(f"CIEU boundary summary missing field: {field}")
+        for field in [
+            "cieu_runtime_boundary_defined",
+            "cieu_runtime_event_schema_defined",
+            "prediction_delta_fixture_defined",
+            "cieu_writer_policy_defined",
+            "dry_run_only",
+            "requires_manual_enablement",
+        ]:
+            if cieu_boundary.get(field) is not True:
+                failures.append(f"CIEU boundary summary must keep {field}=true")
+        for field in [
+            "persistence_enabled",
+            "live_action_execution_enabled",
+            "cieu_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+            "raw_artifact_ingestion_enabled",
+            "minimal_live_loop_ready",
+        ]:
+            if cieu_boundary.get(field) is not False:
+                failures.append(f"CIEU boundary summary must keep {field}=false")
+        if cieu_boundary.get("blocked_reason") != "cieu_runtime_boundary_defined_but_persistence_disabled":
+            failures.append("CIEU boundary summary blocked reason must remain persistence disabled")
+
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
     print(f"Required agents: {', '.join(REQUIRED_AGENTS)}")
@@ -999,6 +1087,8 @@ def main(argv: list[str]) -> int:
         cmd_live_readiness(data)
     elif command == "live-boundary":
         cmd_live_boundary(data)
+    elif command == "cieu-boundary":
+        cmd_cieu_boundary(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

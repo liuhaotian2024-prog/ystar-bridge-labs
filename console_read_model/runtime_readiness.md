@@ -22,6 +22,7 @@
 - Dry-run cross-repo governance alignment summary in generated console snapshots.
 - Live-readiness gate summary in generated console snapshots.
 - Defined-disabled live boundary harness summary in generated console snapshots.
+- Disabled CIEU runtime event boundary summary in generated console snapshots.
 - Local safety check wrapper for the curated read-model stack.
 - Lightweight static capsule schema-alignment checks.
 
@@ -50,6 +51,7 @@
 - Real cross-repo hook enforcement beyond dry-run alignment.
 - Minimal live governed loop remains blocked until required gates exist.
 - Live boundary contracts are defined, but all live capabilities remain disabled.
+- CIEU runtime event fixtures are defined, but persistence remains disabled.
 - Runtime tests remain separate from local read-model safety checks.
 - Full JSON Schema enforcement through a dedicated schema engine.
 
@@ -80,6 +82,8 @@ K. Real hook integration after dry-run bridge behavior stays stable.
 L. Reviewed CIEU prediction-delta examples from dry-run Pre-U snapshots.
 
 M. Implement live boundary gates without enabling runtime execution.
+
+N. Define verified CIEU runtime writer interfaces without enabling persistence.
 
 The safest next step is either a static capsule validator or a read-only console
 prototype that consumes only the files in this directory and other curated

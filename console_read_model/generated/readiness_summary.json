@@ -21,7 +21,8 @@
     "dry-run labs runtime governance acceptance summary",
     "dry-run cross-repo governance alignment summary",
     "live-readiness gate summary that keeps live execution blocked",
-    "disabled live-boundary harness summary"
+    "disabled live-boundary harness summary",
+    "disabled CIEU runtime event boundary summary"
   ],
   "not_ready": [
     "runtime generator",
@@ -47,7 +48,8 @@
     "real runtime acceptance beyond dry-run checks",
     "real cross-repo hook enforcement beyond dry-run alignment",
     "minimal live governed loop",
-    "enabled live-boundary harness"
+    "enabled live-boundary harness",
+    "enabled CIEU runtime event persistence"
   ],
   "recommended_next_steps": [
     "wire static validator and loader into CI",
@@ -65,7 +67,8 @@
     "define real hook enforcement handoff after dry-run acceptance remains stable",
     "define CI handoff after cross-repo dry-run alignment remains stable",
     "build live boundary harness before any runtime execution",
-    "implement live boundary gates without enabling runtime execution"
+    "implement live boundary gates without enabling runtime execution",
+    "define CIEU runtime event writer verification without enabling persistence"
   ],
   "blockers": [
     "no DB-safe adapter",
@@ -77,7 +80,8 @@
     "no real action/CIEU/brain write path from acceptance reports",
     "no real cross-repo hook enforcement path",
     "no live boundary harness or operator approval gate",
-    "live boundary gates are defined but disabled"
+    "live boundary gates are defined but disabled",
+    "CIEU runtime event boundary is defined but persistence is disabled"
   ],
   "safety_boundaries": [
     "no DB reads",
@@ -95,6 +99,7 @@
     "labs runtime acceptance is dry-run only and not runtime execution",
     "cross-repo alignment is dry-run only and not CI or hook execution",
     "live-readiness gate forbids action/CIEU/brain/memory writes",
-    "live-boundary harness is disabled and requires manual enablement"
+    "live-boundary harness is disabled and requires manual enablement",
+    "CIEU runtime event boundary is disabled and forbids persistence"
   ]
 }

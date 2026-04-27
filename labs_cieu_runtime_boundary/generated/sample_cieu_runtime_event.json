@@ -1,0 +1,56 @@
+{
+  "event_id": "cieu-runtime-event-sample-001",
+  "event_version": "v0",
+  "created_at": "deterministic_no_timestamp",
+  "source": {
+    "system": "ystar-company",
+    "component": "labs_cieu_runtime_boundary",
+    "mode": "dry_run_boundary_fixture"
+  },
+  "dry_run_only": true,
+  "persistence_enabled": false,
+  "live_action_execution_enabled": false,
+  "cieu_write_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false,
+  "candidate_auto_approval_enabled": false,
+  "raw_artifact_ingestion_enabled": false,
+  "Xt": {
+    "task_state": "sample_pre_u_governance_dry_run",
+    "readiness_ref": "labs_live_readiness/generated/live_readiness_report.json"
+  },
+  "U": {
+    "action_id": "sample-noop-action",
+    "action_type": "dry_run_boundary_fixture",
+    "action_executed": false
+  },
+  "Y_star": "Preserve governance boundaries while preparing future CIEU event recording.",
+  "predicted_Y_t1": "A future runtime event can be shaped without persistence.",
+  "predicted_R_t1": "Persistence and writeback remain disabled.",
+  "actual_Y_t1": "Boundary fixture generated locally only.",
+  "actual_R_t1": "No CIEU write, action execution, brain writeback, or memory ingestion occurred.",
+  "residual_delta": {
+    "status": "structural_fixture_only",
+    "semantic_truth_status": "not_evaluated",
+    "delta_summary": "No live outcome measured; fixture exists to validate envelope shape."
+  },
+  "evidence_refs": [
+    "labs_live_boundary/generated/live_boundary_manifest.json",
+    "labs_live_readiness/generated/live_readiness_report.json"
+  ],
+  "governance_decision_ref": "labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json",
+  "live_boundary_ref": "labs_live_boundary/generated/live_boundary_manifest.json",
+  "write_policy": {
+    "persistence_allowed": false,
+    "requires_manual_enablement": true,
+    "cieu_writer_boundary": "defined_disabled",
+    "brain_writeback_allowed": false,
+    "memory_ingestion_allowed": false
+  },
+  "validation_status": "boundary_defined_disabled",
+  "blocked_reason": "cieu_runtime_boundary_defined_but_persistence_disabled",
+  "dependency_status": {
+    "live_boundary_defined": true,
+    "minimal_live_loop_ready": false
+  }
+}

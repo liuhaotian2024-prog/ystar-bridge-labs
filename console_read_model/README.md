@@ -85,3 +85,9 @@ The snapshot can expose a live-boundary summary derived from
 `labs_live_boundary/generated/live_boundary_summary.json`. This confirms the
 operator approval, sandbox, rollback, CIEU writer, and no-writeback boundaries
 are defined but disabled. It is not hook activation or live execution.
+
+The snapshot can expose a CIEU runtime boundary summary derived from
+`labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_summary.json`. This
+confirms future CIEU event envelopes and prediction-delta fixtures are defined
+while persistence, CIEU writes, brain writeback, and memory ingestion remain
+disabled.

@@ -42,6 +42,10 @@
 - `labs_live_boundary/generated/live_boundary_manifest.json`
 - `labs_live_boundary/generated/live_boundary_summary.json`
 - `labs_live_boundary/generated/live_transition_checklist.json`
+- `labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_manifest.json`
+- `labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_summary.json`
+- `labs_cieu_runtime_boundary/generated/sample_cieu_runtime_event.json`
+- `labs_cieu_runtime_boundary/generated/sample_prediction_delta_fixture.json`
 - `console_read_model/generated/quarantine_summary.json`
 - `console_read_model/generated/safe_mining_summary.json`
 - `console_read_model/generated/review_queue_summary.json`
@@ -53,6 +57,7 @@
 - `console_read_model/generated/cross_repo_alignment_summary.json`
 - `console_read_model/generated/live_readiness_summary.json`
 - `console_read_model/generated/live_boundary_summary.json`
+- `console_read_model/generated/cieu_boundary_summary.json`
 
 ## Unsafe Direct Sources
 
@@ -95,3 +100,5 @@
   forbidden.
 - Live-boundary data may be displayed only from generated boundary summaries;
   boundary contracts are defined but disabled and require manual enablement.
+- CIEU runtime boundary data may be displayed only from generated boundary
+  summaries and fixtures; persistence and writeback remain disabled.

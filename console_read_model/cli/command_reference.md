@@ -46,6 +46,9 @@ python3 console_read_model/cli/team_console.py <command>
 - `live-boundary`: Prints the generated live-boundary harness summary:
   boundary contracts, disabled live execution flags, manual enablement, and
   transition checklist counts.
+- `cieu-boundary`: Prints the generated CIEU runtime boundary summary:
+  runtime event schema status, prediction-delta fixture status, persistence
+  disabled flags, and required manual enablement.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

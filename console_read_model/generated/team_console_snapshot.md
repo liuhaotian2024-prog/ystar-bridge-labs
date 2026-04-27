@@ -58,6 +58,7 @@ Ready now:
 - dry-run cross-repo governance alignment summary
 - live-readiness gate summary that keeps live execution blocked
 - disabled live-boundary harness summary
+- disabled CIEU runtime event boundary summary
 
 Not ready:
 - runtime generator
@@ -84,13 +85,14 @@ Not ready:
 - real cross-repo hook enforcement beyond dry-run alignment
 - minimal live governed loop
 - enabled live-boundary harness
+- enabled CIEU runtime event persistence
 
 ## Runtime Artifact Quarantine Summary
 
 - Framework status: path_inventory_only
 - Current mining level: 0
 - Artifacts classified: 216
-- Unsafe artifacts count: 171
+- Unsafe artifacts count: 172
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -99,10 +101,10 @@ Not ready:
   - DAILY_REPORT: 6
   - DB_CORE: 1
   - DB_SIDECARE: 6
-  - DREAM_REPORT: 31
+  - DREAM_REPORT: 32
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
-  - FRAMEWORK_FILE: 5
+  - FRAMEWORK_FILE: 4
   - LOG_RUNTIME: 31
   - PYCACHE: 31
   - UNKNOWN_OR_NON_RUNTIME: 40
@@ -149,14 +151,14 @@ Not ready:
 - Forbidden direct read count: 106
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
-  - deferred_markdown_report_not_selected: 45
+  - deferred_markdown_report_not_selected: 46
   - deferred_requires_bounded_log_adapter: 31
   - deferred_requires_classification: 10
   - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 31
-  - ignored_or_non_runtime: 45
+  - ignored_or_non_runtime: 44
   - safe_mined_to_review_queue: 20
 - Evidence scoring status:
   - not_started: 216
@@ -290,6 +292,25 @@ Not ready:
   - not_started: 3
 - Warning: Live boundary harness is defined but disabled. It does not execute actions, write CIEU, write brain or memory, approve candidates, or ingest raw artifacts.
 
+## Labs CIEU Runtime Boundary
+
+- cieu_runtime_boundary_defined: True
+- cieu_runtime_event_schema_defined: True
+- prediction_delta_fixture_defined: True
+- cieu_writer_policy_defined: True
+- dry_run_only: True
+- persistence_enabled: False
+- live_action_execution_enabled: False
+- cieu_write_enabled: False
+- brain_writeback_enabled: False
+- memory_ingestion_enabled: False
+- minimal_live_loop_ready: False
+- requires_manual_enablement: True
+- blocked_reason: cieu_runtime_boundary_defined_but_persistence_disabled
+- generated_sample_event: labs_cieu_runtime_boundary/generated/sample_cieu_runtime_event.json
+- generated_prediction_delta_fixture: labs_cieu_runtime_boundary/generated/sample_prediction_delta_fixture.json
+- Warning: CIEU runtime boundary is defined but persistence is disabled. It does not execute actions, write CIEU, write brain or memory, approve candidates, or ingest raw artifacts.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -316,6 +337,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - define CI handoff after cross-repo dry-run alignment remains stable
 - build live boundary harness before any runtime execution
 - implement live boundary gates without enabling runtime execution
+- define CIEU runtime event writer verification without enabling persistence
 
 ## Warnings / Gaps
 
@@ -342,3 +364,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Cross-repo alignment exists for dry-run compatibility only; no CI or real hook enforcement exists.
 - Live readiness gate exists, but minimal live loop remains blocked until required gates exist.
 - Live boundary harness exists as defined-disabled contracts only; no live execution is enabled.
+- CIEU runtime boundary exists as disabled event fixtures only; no CIEU persistence is enabled.

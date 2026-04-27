@@ -1,0 +1,48 @@
+{
+  "schema_name": "ystar.labs_cieu_runtime_boundary.generated.cieu_runtime_boundary_manifest",
+  "schema_version": "v0",
+  "generated_at_policy": "deterministic_no_timestamp",
+  "cieu_runtime_boundary_defined": true,
+  "cieu_runtime_event_schema_defined": true,
+  "prediction_delta_fixture_defined": true,
+  "cieu_writer_policy_defined": true,
+  "dry_run_only": true,
+  "persistence_enabled": false,
+  "live_action_execution_enabled": false,
+  "cieu_write_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false,
+  "candidate_auto_approval_enabled": false,
+  "raw_artifact_ingestion_enabled": false,
+  "requires_manual_enablement": true,
+  "minimal_live_loop_ready": false,
+  "blocked_reason": "cieu_runtime_boundary_defined_but_persistence_disabled",
+  "depends_on": [
+    "labs_live_boundary",
+    "live_readiness_report",
+    "labs_runtime_acceptance",
+    "cross_repo_alignment"
+  ],
+  "dependency_status": {
+    "live_boundary_defined": true,
+    "live_boundary_cieu_writer_defined": true,
+    "dry_run_governance_ready": true,
+    "labs_runtime_acceptance_accepted": true,
+    "cross_repo_alignment_accepted": true
+  },
+  "generated_refs": {
+    "summary": "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_summary.json",
+    "report": "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_report.md",
+    "sample_event": "labs_cieu_runtime_boundary/generated/sample_cieu_runtime_event.json",
+    "prediction_delta_fixture": "labs_cieu_runtime_boundary/generated/sample_prediction_delta_fixture.json"
+  },
+  "source_refs": {
+    "labs_live_boundary": "labs_live_boundary/generated/live_boundary_manifest.json",
+    "live_boundary_summary": "labs_live_boundary/generated/live_boundary_summary.json",
+    "live_readiness_report": "labs_live_readiness/generated/live_readiness_report.json",
+    "labs_runtime_acceptance": "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json",
+    "cross_repo_alignment": "cross_repo_alignment/generated/cross_repo_status_manifest.json",
+    "console_snapshot": "console_read_model/generated/team_console_snapshot.json"
+  },
+  "safety_note": "CIEU runtime boundary is defined but persistence is disabled. It does not execute actions, write CIEU, write brain or memory, approve candidates, or ingest raw artifacts."
+}

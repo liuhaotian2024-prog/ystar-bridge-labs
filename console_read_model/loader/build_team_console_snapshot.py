@@ -36,6 +36,7 @@ CURATED_SOURCES = [
     "cross_repo_alignment/generated/cross_repo_alignment_summary.json",
     "labs_live_readiness/generated/live_readiness_report.json",
     "labs_live_boundary/generated/live_boundary_summary.json",
+    "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_summary.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -517,6 +518,70 @@ def build_live_boundary_summary(live_boundary_summary: dict[str, Any] | None) ->
     }
 
 
+def build_cieu_boundary_summary(cieu_boundary_summary: dict[str, Any] | None) -> dict[str, Any]:
+    if not cieu_boundary_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.cieu_boundary_summary",
+            "schema_version": "v0",
+            "cieu_runtime_boundary_defined": False,
+            "cieu_runtime_event_schema_defined": False,
+            "prediction_delta_fixture_defined": False,
+            "cieu_writer_policy_defined": False,
+            "dry_run_only": True,
+            "persistence_enabled": False,
+            "live_action_execution_enabled": False,
+            "cieu_write_enabled": False,
+            "brain_writeback_enabled": False,
+            "memory_ingestion_enabled": False,
+            "candidate_auto_approval_enabled": False,
+            "raw_artifact_ingestion_enabled": False,
+            "requires_manual_enablement": True,
+            "minimal_live_loop_ready": False,
+            "blocked_reason": "cieu_runtime_boundary_manifest_not_generated",
+            "generated_manifest": "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_manifest.json",
+            "generated_sample_event": "labs_cieu_runtime_boundary/generated/sample_cieu_runtime_event.json",
+            "generated_prediction_delta_fixture": (
+                "labs_cieu_runtime_boundary/generated/sample_prediction_delta_fixture.json"
+            ),
+            "warning": "CIEU runtime boundary manifest has not been generated yet.",
+        }
+    return {
+        "schema_name": "ystar.console_read_model.generated.cieu_boundary_summary",
+        "schema_version": "v0",
+        "cieu_runtime_boundary_defined": cieu_boundary_summary.get("cieu_runtime_boundary_defined"),
+        "cieu_runtime_event_schema_defined": cieu_boundary_summary.get("cieu_runtime_event_schema_defined"),
+        "prediction_delta_fixture_defined": cieu_boundary_summary.get("prediction_delta_fixture_defined"),
+        "cieu_writer_policy_defined": cieu_boundary_summary.get("cieu_writer_policy_defined"),
+        "dry_run_only": cieu_boundary_summary.get("dry_run_only"),
+        "persistence_enabled": cieu_boundary_summary.get("persistence_enabled"),
+        "live_action_execution_enabled": cieu_boundary_summary.get("live_action_execution_enabled"),
+        "cieu_write_enabled": cieu_boundary_summary.get("cieu_write_enabled"),
+        "brain_writeback_enabled": cieu_boundary_summary.get("brain_writeback_enabled"),
+        "memory_ingestion_enabled": cieu_boundary_summary.get("memory_ingestion_enabled"),
+        "candidate_auto_approval_enabled": cieu_boundary_summary.get("candidate_auto_approval_enabled"),
+        "raw_artifact_ingestion_enabled": cieu_boundary_summary.get("raw_artifact_ingestion_enabled"),
+        "requires_manual_enablement": cieu_boundary_summary.get("requires_manual_enablement"),
+        "minimal_live_loop_ready": cieu_boundary_summary.get("minimal_live_loop_ready"),
+        "blocked_reason": cieu_boundary_summary.get("blocked_reason"),
+        "generated_manifest": cieu_boundary_summary.get(
+            "generated_manifest",
+            "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_manifest.json",
+        ),
+        "generated_sample_event": cieu_boundary_summary.get(
+            "generated_sample_event",
+            "labs_cieu_runtime_boundary/generated/sample_cieu_runtime_event.json",
+        ),
+        "generated_prediction_delta_fixture": cieu_boundary_summary.get(
+            "generated_prediction_delta_fixture",
+            "labs_cieu_runtime_boundary/generated/sample_prediction_delta_fixture.json",
+        ),
+        "warning": cieu_boundary_summary.get(
+            "warning",
+            "CIEU runtime boundary is defined but persistence is disabled.",
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -579,6 +644,10 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "labs_live_boundary/generated/live_boundary_summary.json",
         files_read,
     )
+    cieu_boundary_generated_summary = load_optional_json(
+        "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_summary.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -590,6 +659,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     cross_repo_alignment_summary = build_cross_repo_alignment_summary(cross_repo_generated_summary)
     live_readiness_summary = build_live_readiness_summary(live_readiness_report)
     live_boundary_summary = build_live_boundary_summary(live_boundary_generated_summary)
+    cieu_boundary_summary = build_cieu_boundary_summary(cieu_boundary_generated_summary)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -668,6 +738,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Live readiness gate exists, but minimal live loop remains blocked until required gates exist.")
     if "Live boundary harness exists as defined-disabled contracts only; no live execution is enabled." not in open_gaps:
         open_gaps.append("Live boundary harness exists as defined-disabled contracts only; no live execution is enabled.")
+    if "CIEU runtime boundary exists as disabled event fixtures only; no CIEU persistence is enabled." not in open_gaps:
+        open_gaps.append("CIEU runtime boundary exists as disabled event fixtures only; no CIEU persistence is enabled.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -690,6 +762,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "cross_repo_alignment_summary": cross_repo_alignment_summary,
         "live_readiness_summary": live_readiness_summary,
         "live_boundary_summary": live_boundary_summary,
+        "cieu_boundary_summary": cieu_boundary_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -737,6 +810,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "dry-run cross-repo governance alignment summary",
             "live-readiness gate summary that keeps live execution blocked",
             "disabled live-boundary harness summary",
+            "disabled CIEU runtime event boundary summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -763,6 +837,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "real cross-repo hook enforcement beyond dry-run alignment",
             "minimal live governed loop",
             "enabled live-boundary harness",
+            "enabled CIEU runtime event persistence",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -781,6 +856,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "define CI handoff after cross-repo dry-run alignment remains stable",
             "build live boundary harness before any runtime execution",
             "implement live boundary gates without enabling runtime execution",
+            "define CIEU runtime event writer verification without enabling persistence",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -793,6 +869,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "no real cross-repo hook enforcement path",
             "no live boundary harness or operator approval gate",
             "live boundary gates are defined but disabled",
+            "CIEU runtime event boundary is defined but persistence is disabled",
         ],
         "safety_boundaries": [
             "no DB reads",
@@ -811,6 +888,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "cross-repo alignment is dry-run only and not CI or hook execution",
             "live-readiness gate forbids action/CIEU/brain/memory writes",
             "live-boundary harness is disabled and requires manual enablement",
+            "CIEU runtime event boundary is disabled and forbids persistence",
         ],
     }
 
@@ -834,6 +912,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/cross_repo_alignment_summary.json",
             "console_read_model/generated/live_readiness_summary.json",
             "console_read_model/generated/live_boundary_summary.json",
+            "console_read_model/generated/cieu_boundary_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -884,6 +963,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "report. It identifies blockers and keeps live execution disabled.\n\n"
         "`live_boundary_summary.json` is derived from the generated live-boundary\n"
         "manifest. It confirms boundary definitions remain disabled.\n\n"
+        "`cieu_boundary_summary.json` is derived from the generated CIEU runtime\n"
+        "boundary manifest. It confirms event fixtures are dry-run only and persistence is disabled.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -903,6 +984,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/cross_repo_alignment_summary.json", cross_repo_alignment_summary, generated_files)
     write_json("console_read_model/generated/live_readiness_summary.json", live_readiness_summary, generated_files)
     write_json("console_read_model/generated/live_boundary_summary.json", live_boundary_summary, generated_files)
+    write_json("console_read_model/generated/cieu_boundary_summary.json", cieu_boundary_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -957,6 +1039,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     cross_repo = snapshot.get("cross_repo_alignment_summary", {})
     live_readiness = snapshot.get("live_readiness_summary", {})
     live_boundary = snapshot.get("live_boundary_summary", {})
+    cieu_boundary = snapshot.get("cieu_boundary_summary", {})
     lines.extend(
         [
             "",
@@ -1186,6 +1269,29 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     for status, count in sorted(live_boundary.get("checklist_status_counts", {}).items()):
         lines.append(f"  - {status}: {count}")
     lines.append(f"- Warning: {live_boundary.get('warning')}")
+    lines.extend(
+        [
+            "",
+            "## Labs CIEU Runtime Boundary",
+            "",
+            f"- cieu_runtime_boundary_defined: {cieu_boundary.get('cieu_runtime_boundary_defined')}",
+            f"- cieu_runtime_event_schema_defined: {cieu_boundary.get('cieu_runtime_event_schema_defined')}",
+            f"- prediction_delta_fixture_defined: {cieu_boundary.get('prediction_delta_fixture_defined')}",
+            f"- cieu_writer_policy_defined: {cieu_boundary.get('cieu_writer_policy_defined')}",
+            f"- dry_run_only: {cieu_boundary.get('dry_run_only')}",
+            f"- persistence_enabled: {cieu_boundary.get('persistence_enabled')}",
+            f"- live_action_execution_enabled: {cieu_boundary.get('live_action_execution_enabled')}",
+            f"- cieu_write_enabled: {cieu_boundary.get('cieu_write_enabled')}",
+            f"- brain_writeback_enabled: {cieu_boundary.get('brain_writeback_enabled')}",
+            f"- memory_ingestion_enabled: {cieu_boundary.get('memory_ingestion_enabled')}",
+            f"- minimal_live_loop_ready: {cieu_boundary.get('minimal_live_loop_ready')}",
+            f"- requires_manual_enablement: {cieu_boundary.get('requires_manual_enablement')}",
+            f"- blocked_reason: {cieu_boundary.get('blocked_reason')}",
+            f"- generated_sample_event: {cieu_boundary.get('generated_sample_event')}",
+            f"- generated_prediction_delta_fixture: {cieu_boundary.get('generated_prediction_delta_fixture')}",
+            f"- Warning: {cieu_boundary.get('warning')}",
+        ]
+    )
     lines.extend(
         [
             "",

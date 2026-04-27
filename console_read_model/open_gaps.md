@@ -29,6 +29,8 @@
   sandbox, CIEU, rollback, operator approval, and writeback gates exist.
 - Live boundary harness exists, but it is defined-disabled and requires manual
   enablement plus future implementation before any live loop.
+- CIEU runtime event boundary exists, but it is fixture/schema only and does not
+  persist events.
 - Local safety check wrapper exists but is not wired into CI.
 - Local safety check wrapper does not replace runtime or governance tests.
 - Capsule schema alignment is lightweight and does not validate executable cognition.

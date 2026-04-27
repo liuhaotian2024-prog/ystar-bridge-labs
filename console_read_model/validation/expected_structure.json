@@ -53,7 +53,23 @@
     "console_read_model/generated/cross_repo_alignment_summary.json",
     "console_read_model/generated/live_readiness_summary.json",
     "console_read_model/generated/live_boundary_summary.json",
+    "console_read_model/generated/cieu_boundary_summary.json",
     "console_read_model/generated/generation_manifest.json"
+  ],
+  "required_labs_cieu_runtime_boundary_files": [
+    "labs_cieu_runtime_boundary/README.md",
+    "labs_cieu_runtime_boundary/cieu_runtime_event_policy.md",
+    "labs_cieu_runtime_boundary/cieu_runtime_event_schema.json",
+    "labs_cieu_runtime_boundary/prediction_delta_fixture_schema.json",
+    "labs_cieu_runtime_boundary/cieu_writer_disabled_policy.md",
+    "labs_cieu_runtime_boundary/open_gaps.md",
+    "labs_cieu_runtime_boundary/tools/build_cieu_runtime_boundary.py",
+    "labs_cieu_runtime_boundary/generated/README.md",
+    "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_manifest.json",
+    "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_summary.json",
+    "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_report.md",
+    "labs_cieu_runtime_boundary/generated/sample_cieu_runtime_event.json",
+    "labs_cieu_runtime_boundary/generated/sample_prediction_delta_fixture.json"
   ],
   "required_labs_live_readiness_files": [
     "labs_live_readiness/README.md",

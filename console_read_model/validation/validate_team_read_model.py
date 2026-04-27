@@ -334,6 +334,7 @@ def main() -> int:
     required_cross_repo_alignment_files = expected.get("required_cross_repo_alignment_files", [])
     required_labs_live_readiness_files = expected.get("required_labs_live_readiness_files", [])
     required_labs_live_boundary_files = expected.get("required_labs_live_boundary_files", [])
+    required_labs_cieu_runtime_boundary_files = expected.get("required_labs_cieu_runtime_boundary_files", [])
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -404,6 +405,12 @@ def main() -> int:
         check_exists(path, report, "labs live boundary file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "labs live boundary JSON")
+
+    for rel in required_labs_cieu_runtime_boundary_files:
+        path = ROOT / rel
+        check_exists(path, report, "labs CIEU runtime boundary file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "labs CIEU runtime boundary JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -855,6 +862,61 @@ def main() -> int:
         else:
             report.fail("generated snapshot missing live_boundary_summary")
 
+        cieu_boundary_summary = snapshot.get("cieu_boundary_summary")
+        if cieu_boundary_summary:
+            report.pass_("generated snapshot contains cieu_boundary_summary")
+            for field in [
+                "cieu_runtime_boundary_defined",
+                "cieu_runtime_event_schema_defined",
+                "prediction_delta_fixture_defined",
+                "cieu_writer_policy_defined",
+                "dry_run_only",
+                "persistence_enabled",
+                "live_action_execution_enabled",
+                "cieu_write_enabled",
+                "brain_writeback_enabled",
+                "memory_ingestion_enabled",
+                "candidate_auto_approval_enabled",
+                "raw_artifact_ingestion_enabled",
+                "requires_manual_enablement",
+                "minimal_live_loop_ready",
+                "blocked_reason",
+                "generated_manifest",
+                "generated_sample_event",
+                "generated_prediction_delta_fixture",
+                "warning",
+            ]:
+                if field in cieu_boundary_summary:
+                    report.pass_(f"snapshot cieu_boundary_summary field present: {field}")
+                else:
+                    report.fail(f"snapshot cieu_boundary_summary missing field: {field}")
+            for field in [
+                "cieu_runtime_boundary_defined",
+                "cieu_runtime_event_schema_defined",
+                "prediction_delta_fixture_defined",
+                "cieu_writer_policy_defined",
+                "dry_run_only",
+                "requires_manual_enablement",
+            ]:
+                if cieu_boundary_summary.get(field) is not True:
+                    report.fail(f"snapshot cieu_boundary_summary must keep {field}=true")
+            for field in [
+                "persistence_enabled",
+                "live_action_execution_enabled",
+                "cieu_write_enabled",
+                "brain_writeback_enabled",
+                "memory_ingestion_enabled",
+                "candidate_auto_approval_enabled",
+                "raw_artifact_ingestion_enabled",
+                "minimal_live_loop_ready",
+            ]:
+                if cieu_boundary_summary.get(field) is not False:
+                    report.fail(f"snapshot cieu_boundary_summary must keep {field}=false")
+            if cieu_boundary_summary.get("blocked_reason") != "cieu_runtime_boundary_defined_but_persistence_disabled":
+                report.fail("snapshot cieu_boundary_summary must keep persistence disabled")
+        else:
+            report.fail("generated snapshot missing cieu_boundary_summary")
+
     quarantine = generated_json.get("console_read_model/generated/quarantine_summary.json")
     if quarantine:
         for field in [
@@ -1186,6 +1248,58 @@ def main() -> int:
             report.fail("generated live boundary summary must keep live boundary blocked")
         if live_boundary.get("ready_or_enabled_checklist_items") != 0:
             report.fail("generated live boundary summary must not include ready/enabled checklist items")
+
+    cieu_boundary = generated_json.get("console_read_model/generated/cieu_boundary_summary.json")
+    if cieu_boundary:
+        for field in [
+            "cieu_runtime_boundary_defined",
+            "cieu_runtime_event_schema_defined",
+            "prediction_delta_fixture_defined",
+            "cieu_writer_policy_defined",
+            "dry_run_only",
+            "persistence_enabled",
+            "live_action_execution_enabled",
+            "cieu_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+            "raw_artifact_ingestion_enabled",
+            "requires_manual_enablement",
+            "minimal_live_loop_ready",
+            "blocked_reason",
+            "generated_manifest",
+            "generated_sample_event",
+            "generated_prediction_delta_fixture",
+            "warning",
+        ]:
+            if field in cieu_boundary:
+                report.pass_(f"generated CIEU boundary summary field present: {field}")
+            else:
+                report.fail(f"generated CIEU boundary summary missing field: {field}")
+        for field in [
+            "cieu_runtime_boundary_defined",
+            "cieu_runtime_event_schema_defined",
+            "prediction_delta_fixture_defined",
+            "cieu_writer_policy_defined",
+            "dry_run_only",
+            "requires_manual_enablement",
+        ]:
+            if cieu_boundary.get(field) is not True:
+                report.fail(f"generated CIEU boundary summary must keep {field}=true")
+        for field in [
+            "persistence_enabled",
+            "live_action_execution_enabled",
+            "cieu_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+            "raw_artifact_ingestion_enabled",
+            "minimal_live_loop_ready",
+        ]:
+            if cieu_boundary.get(field) is not False:
+                report.fail(f"generated CIEU boundary summary must keep {field}=false")
+        if cieu_boundary.get("blocked_reason") != "cieu_runtime_boundary_defined_but_persistence_disabled":
+            report.fail("generated CIEU boundary summary must keep persistence disabled")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

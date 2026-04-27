@@ -39,5 +39,8 @@ report. It identifies blockers and keeps live execution disabled.
 `live_boundary_summary.json` is derived from the generated live-boundary
 manifest. It confirms boundary definitions remain disabled.
 
+`cieu_boundary_summary.json` is derived from the generated CIEU runtime
+boundary manifest. It confirms event fixtures are dry-run only and persistence is disabled.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

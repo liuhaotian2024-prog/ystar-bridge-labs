@@ -88,7 +88,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after live boundary",
+        "Build CIEU runtime boundary",
+        ["python3", "labs_cieu_runtime_boundary/tools/build_cieu_runtime_boundary.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after CIEU boundary",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -204,6 +209,30 @@ VALIDATION_CHECKS = [
     Check(
         "Validate JSON: live_transition_checklist.json",
         ["python3", "-m", "json.tool", "labs_live_boundary/generated/live_transition_checklist.json"],
+    ),
+    Check(
+        "Compile labs CIEU runtime boundary builder",
+        ["python3", "-m", "py_compile", "labs_cieu_runtime_boundary/tools/build_cieu_runtime_boundary.py"],
+    ),
+    Check(
+        "Validate JSON: cieu_boundary_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/cieu_boundary_summary.json"],
+    ),
+    Check(
+        "Validate JSON: cieu_runtime_boundary_manifest.json",
+        ["python3", "-m", "json.tool", "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_manifest.json"],
+    ),
+    Check(
+        "Validate JSON: cieu_runtime_boundary_summary generated",
+        ["python3", "-m", "json.tool", "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_summary.json"],
+    ),
+    Check(
+        "Validate JSON: sample_cieu_runtime_event.json",
+        ["python3", "-m", "json.tool", "labs_cieu_runtime_boundary/generated/sample_cieu_runtime_event.json"],
+    ),
+    Check(
+        "Validate JSON: sample_prediction_delta_fixture.json",
+        ["python3", "-m", "json.tool", "labs_cieu_runtime_boundary/generated/sample_prediction_delta_fixture.json"],
     ),
     Check(
         "Validate JSON: markdown_report_candidates.json",
@@ -336,6 +365,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: live-boundary",
         ["python3", "console_read_model/cli/team_console.py", "live-boundary"],
+    ),
+    Check(
+        "CLI smoke: cieu-boundary",
+        ["python3", "console_read_model/cli/team_console.py", "cieu-boundary"],
     ),
     Check(
         "CLI smoke: sources",
