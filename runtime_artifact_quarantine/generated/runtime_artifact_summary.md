@@ -2,7 +2,7 @@
 
 Path-only inventory. No artifact contents were opened.
 
-- Artifacts classified: 203
+- Artifacts classified: 206
 - Unsafe artifacts: 168
 
 ## Classes Seen
@@ -17,9 +17,9 @@ Path-only inventory. No artifact contents were opened.
 - DREAM_REPORT: 28
 - DRIFT_REPORT: 4
 - ESCALATION_REPORT: 23
-- FRAMEWORK_FILE: 7
+- FRAMEWORK_FILE: 9
 - LOG_RUNTIME: 31
 - PYCACHE: 31
-- UNKNOWN_OR_NON_RUNTIME: 28
+- UNKNOWN_OR_NON_RUNTIME: 29
 - UNKNOWN_RUNTIME_ARTIFACT: 10
 - WHITELIST_REPORT: 1

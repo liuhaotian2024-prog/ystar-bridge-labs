@@ -49,3 +49,8 @@ The snapshot can expose a backlog disposition summary derived from
 `runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json`.
 This covers the dirty artifact backlog as routing metadata only; it does not
 perform truth scoring, adapter extraction, or ingestion.
+
+The snapshot can expose an evidence review summary derived from
+`runtime_artifact_quarantine/evidence_review/generated/evidence_scores.json` and
+related generated indexes. This summarizes structural readiness only. It is not
+truth validation, approval, memory ingestion, CIEU writing, or brain writeback.

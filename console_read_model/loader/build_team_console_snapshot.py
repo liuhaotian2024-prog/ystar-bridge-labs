@@ -27,6 +27,9 @@ CURATED_SOURCES = [
     "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
     "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json",
     "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
+    "runtime_artifact_quarantine/evidence_review/generated/evidence_scores.json",
+    "runtime_artifact_quarantine/evidence_review/generated/review_decision_stub.json",
+    "runtime_artifact_quarantine/evidence_review/generated/hint_routing_index.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -205,6 +208,36 @@ def build_disposition_summary(disposition_index: dict[str, Any]) -> dict[str, An
     }
 
 
+def build_evidence_review_summary(
+    evidence_scores: dict[str, Any],
+    decision_stub: dict[str, Any],
+    hint_routing: dict[str, Any],
+) -> dict[str, Any]:
+    summary = evidence_scores.get("summary", {})
+    return {
+        "schema_name": "ystar.console_read_model.generated.evidence_review_summary",
+        "schema_version": "v0",
+        "candidates_scored": summary.get("candidates_scored", 0),
+        "decision_stubs_created": decision_stub.get("decision_stubs_created", 0),
+        "routes_created": hint_routing.get("routes_created", 0),
+        "reuse_readiness": summary.get("reuse_readiness", {}),
+        "confidence": summary.get("confidence", {}),
+        "route_counts": hint_routing.get("route_counts", {}),
+        "semantic_truth_status": summary.get("semantic_truth_status", {}),
+        "automatic_approvals": summary.get("automatic_approvals", 0),
+        "brain_writeback_allowed": summary.get("brain_writeback_allowed", 0),
+        "memory_ingestion_allowed": summary.get("memory_ingestion_allowed", 0),
+        "cieu_write_allowed": summary.get("cieu_write_allowed", 0),
+        "generated_evidence_scores": "runtime_artifact_quarantine/evidence_review/generated/evidence_scores.json",
+        "generated_review_decisions": "runtime_artifact_quarantine/evidence_review/generated/review_decision_stub.json",
+        "generated_hint_routing": "runtime_artifact_quarantine/evidence_review/generated/hint_routing_index.json",
+        "warning": summary.get(
+            "warning",
+            "Evidence scoring is structural only. It is not truth validation and not memory ingestion.",
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -231,10 +264,23 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
         files_read,
     )
+    evidence_scores = load_json(
+        "runtime_artifact_quarantine/evidence_review/generated/evidence_scores.json",
+        files_read,
+    )
+    decision_stub = load_json(
+        "runtime_artifact_quarantine/evidence_review/generated/review_decision_stub.json",
+        files_read,
+    )
+    hint_routing = load_json(
+        "runtime_artifact_quarantine/evidence_review/generated/hint_routing_index.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
     disposition_summary = build_disposition_summary(disposition_index)
+    evidence_review_summary = build_evidence_review_summary(evidence_scores, decision_stub, hint_routing)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -299,6 +345,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Candidate review queue exists, but no approval workflow or ingestion path exists.")
     if "Backlog disposition index exists, but evidence scoring and adapter extraction are not implemented." not in open_gaps:
         open_gaps.append("Backlog disposition index exists, but evidence scoring and adapter extraction are not implemented.")
+    if "Evidence review pack exists, but semantic truth validation and decision application are not implemented." not in open_gaps:
+        open_gaps.append("Evidence review pack exists, but semantic truth validation and decision application are not implemented.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -314,6 +362,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "safe_mining_summary": safe_mining_summary,
         "review_queue_summary": review_queue_summary,
         "artifact_disposition_summary": disposition_summary,
+        "evidence_review_summary": evidence_review_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -354,6 +403,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "bounded Markdown safe-mining candidate index",
             "candidate review queue summary",
             "runtime artifact backlog disposition summary",
+            "structural evidence review summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -372,6 +422,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "review approval workflow for candidate queue entries",
             "evidence scoring for disposition records",
             "DB/log/marker metadata adapters",
+            "semantic truth validation for evidence records",
+            "review decision application workflow",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -383,6 +435,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "add human review queue for safe-mining candidates",
             "define signed review decisions for candidate queue entries",
             "create evidence scoring schema for disposition records",
+            "define manual decision application for evidence review stubs",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -400,6 +453,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "safe-mining candidates are bounded Markdown snippets only",
             "review queue entries are pending and not ingested",
             "disposition records are routing metadata, not ingestion",
+            "evidence scoring is structural only and does not approve ingestion",
         ],
     }
 
@@ -416,6 +470,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/safe_mining_summary.json",
             "console_read_model/generated/review_queue_summary.json",
             "console_read_model/generated/artifact_disposition_summary.json",
+            "console_read_model/generated/evidence_review_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -452,6 +507,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "It summarizes pending review state only; entries are not approved or ingested.\n\n"
         "`artifact_disposition_summary.json` is derived from generated backlog\n"
         "disposition indexes. It summarizes routing/disposition only; it is not ingestion.\n\n"
+        "`evidence_review_summary.json` is derived from generated evidence review\n"
+        "indexes. It summarizes structural readiness only; it is not approval.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -464,6 +521,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/safe_mining_summary.json", safe_mining_summary, generated_files)
     write_json("console_read_model/generated/review_queue_summary.json", review_queue_summary, generated_files)
     write_json("console_read_model/generated/artifact_disposition_summary.json", disposition_summary, generated_files)
+    write_json("console_read_model/generated/evidence_review_summary.json", evidence_review_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -511,6 +569,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     safe_mining = snapshot.get("safe_mining_summary", {})
     review_queue = snapshot.get("review_queue_summary", {})
     disposition = snapshot.get("artifact_disposition_summary", {})
+    evidence_review = snapshot.get("evidence_review_summary", {})
     lines.extend(
         [
             "",
@@ -587,6 +646,27 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     for status, count in sorted(disposition.get("evidence_scoring_status", {}).items()):
         lines.append(f"  - {status}: {count}")
     lines.append(f"- Warning: {disposition.get('warning')}")
+    lines.extend(
+        [
+            "",
+            "## Runtime Artifact Evidence Review",
+            "",
+            f"- Candidates scored: {evidence_review.get('candidates_scored')}",
+            f"- Decision stubs created: {evidence_review.get('decision_stubs_created')}",
+            f"- Routes created: {evidence_review.get('routes_created')}",
+            f"- Automatic approvals: {evidence_review.get('automatic_approvals')}",
+            "- Reuse readiness:",
+        ]
+    )
+    for readiness_name, count in sorted(evidence_review.get("reuse_readiness", {}).items()):
+        lines.append(f"  - {readiness_name}: {count}")
+    lines.append("- Route counts:")
+    for route, count in sorted(evidence_review.get("route_counts", {}).items()):
+        lines.append(f"  - {route}: {count}")
+    lines.append("- Semantic truth status:")
+    for status, count in sorted(evidence_review.get("semantic_truth_status", {}).items()):
+        lines.append(f"  - {status}: {count}")
+    lines.append(f"- Warning: {evidence_review.get('warning')}")
     lines.extend(
         [
             "",

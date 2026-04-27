@@ -1,0 +1,30 @@
+{
+  "schema_name": "ystar.runtime_artifact_quarantine.evidence_review.hint_routing_schema",
+  "schema_version": "v0",
+  "routes": [
+    "memory_continuity_hint_queue",
+    "governance_gap_hint_queue",
+    "role_brain_capsule_hint_queue",
+    "pre_u_packet_hint_queue",
+    "cieu_prediction_delta_hint_queue",
+    "deferred_needs_more_context",
+    "rejected_or_low_value",
+    "deferred_adapter_required"
+  ],
+  "route_entry_required_fields": [
+    "route",
+    "candidate_id",
+    "review_id",
+    "evidence_id",
+    "readiness",
+    "status",
+    "ingestion_status",
+    "allowed_next_step",
+    "forbidden_next_step"
+  ],
+  "required_values": {
+    "status": "not_approved",
+    "ingestion_status": "not_ingested",
+    "forbidden_next_step": "direct_brain_writeback"
+  }
+}

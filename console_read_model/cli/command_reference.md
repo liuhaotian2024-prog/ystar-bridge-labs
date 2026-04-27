@@ -29,6 +29,9 @@ python3 console_read_model/cli/team_console.py <command>
 - `artifact-disposition`: Prints the generated backlog disposition summary:
   total artifact coverage, disposition counts, deferred adapter counts,
   forbidden direct-read count, and evidence-scoring status.
+- `evidence-review`: Prints the generated evidence review summary: candidates
+  scored, decision stubs, route counts, automatic approvals, semantic truth
+  status, and structural-only warning.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

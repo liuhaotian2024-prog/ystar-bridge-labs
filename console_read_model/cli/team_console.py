@@ -19,6 +19,7 @@ QUARANTINE = "console_read_model/generated/quarantine_summary.json"
 MINING = "console_read_model/generated/safe_mining_summary.json"
 REVIEW_QUEUE = "console_read_model/generated/review_queue_summary.json"
 DISPOSITION = "console_read_model/generated/artifact_disposition_summary.json"
+EVIDENCE_REVIEW = "console_read_model/generated/evidence_review_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -38,7 +39,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -77,6 +78,7 @@ def load_all() -> dict[str, Any]:
         "mining": load_json(MINING),
         "review_queue": load_json(REVIEW_QUEUE),
         "disposition": load_json(DISPOSITION),
+        "evidence_review": load_json(EVIDENCE_REVIEW),
     }
 
 
@@ -271,6 +273,29 @@ def cmd_artifact_disposition(data: dict[str, Any]) -> None:
     print(f"warning: {disposition.get('warning')}")
 
 
+def cmd_evidence_review(data: dict[str, Any]) -> None:
+    evidence = data["evidence_review"]
+    print("# Runtime Artifact Evidence Review")
+    print()
+    print(f"candidates_scored: {evidence.get('candidates_scored')}")
+    print(f"decision_stubs_created: {evidence.get('decision_stubs_created')}")
+    print(f"routes_created: {evidence.get('routes_created')}")
+    print(f"automatic_approvals: {evidence.get('automatic_approvals')}")
+    print("semantic_truth_status:")
+    for status, count in sorted(evidence.get("semantic_truth_status", {}).items()):
+        print(f"- {status}: {count}")
+    print()
+    print("reuse_readiness:")
+    for readiness, count in sorted(evidence.get("reuse_readiness", {}).items()):
+        print(f"- {readiness}: {count}")
+    print()
+    print("route_counts:")
+    for route, count in sorted(evidence.get("route_counts", {}).items()):
+        print(f"- {route}: {count}")
+    print()
+    print(f"warning: {evidence.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -307,6 +332,12 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print()
         print("Artifact disposition index:")
         print(f"- {disposition.get('generated_disposition_index')}")
+    evidence = data.get("evidence_review", {})
+    if evidence:
+        print()
+        print("Evidence review indexes:")
+        print(f"- {evidence.get('generated_evidence_scores')}")
+        print(f"- {evidence.get('generated_hint_routing')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -330,7 +361,7 @@ def cmd_validate_local() -> int:
     failures: list[str] = []
     inspected: list[str] = []
     loaded: dict[str, Any] = {}
-    for rel in [SNAPSHOT, CARDS, READINESS, MANIFEST, QUARANTINE, MINING, REVIEW_QUEUE, DISPOSITION]:
+    for rel in [SNAPSHOT, CARDS, READINESS, MANIFEST, QUARANTINE, MINING, REVIEW_QUEUE, DISPOSITION, EVIDENCE_REVIEW]:
         try:
             loaded[rel] = load_json(rel)
             inspected.append(rel)
@@ -351,6 +382,8 @@ def cmd_validate_local() -> int:
             failures.append("review_queue_summary missing from team console snapshot")
         if "artifact_disposition_summary" not in snapshot:
             failures.append("artifact_disposition_summary missing from team console snapshot")
+        if "evidence_review_summary" not in snapshot:
+            failures.append("evidence_review_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -442,6 +475,33 @@ def cmd_validate_local() -> int:
         if evidence and evidence != {"not_started"}:
             failures.append("artifact disposition evidence scoring must remain not_started")
 
+    evidence_review = loaded.get(EVIDENCE_REVIEW)
+    if evidence_review:
+        required_fields = [
+            "candidates_scored",
+            "decision_stubs_created",
+            "routes_created",
+            "reuse_readiness",
+            "route_counts",
+            "semantic_truth_status",
+            "automatic_approvals",
+            "brain_writeback_allowed",
+            "memory_ingestion_allowed",
+            "cieu_write_allowed",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in evidence_review:
+                failures.append(f"evidence review summary missing field: {field}")
+        if evidence_review.get("automatic_approvals") != 0:
+            failures.append("evidence review must not create automatic approvals")
+        for field in ["brain_writeback_allowed", "memory_ingestion_allowed", "cieu_write_allowed"]:
+            if evidence_review.get(field) != 0:
+                failures.append(f"evidence review must not allow {field}")
+        semantic = set(evidence_review.get("semantic_truth_status", {}))
+        if semantic and semantic != {"not_evaluated"}:
+            failures.append("evidence review semantic truth status must remain not_evaluated")
+
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
     print(f"Required agents: {', '.join(REQUIRED_AGENTS)}")
@@ -491,6 +551,8 @@ def main(argv: list[str]) -> int:
         cmd_review_queue(data)
     elif command == "artifact-disposition":
         cmd_artifact_disposition(data)
+    elif command == "evidence-review":
+        cmd_evidence_review(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

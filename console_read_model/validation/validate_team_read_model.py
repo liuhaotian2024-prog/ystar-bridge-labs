@@ -328,6 +328,7 @@ def main() -> int:
     required_generated_files = expected.get("required_generated_files", [])
     required_safe_mining_files = expected.get("required_safe_mining_files", [])
     required_backlog_disposition_files = expected.get("required_backlog_disposition_files", [])
+    required_evidence_review_files = expected.get("required_evidence_review_files", [])
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -362,6 +363,12 @@ def main() -> int:
         check_exists(path, report, "backlog disposition file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "backlog disposition JSON")
+
+    for rel in required_evidence_review_files:
+        path = ROOT / rel
+        check_exists(path, report, "evidence review file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "evidence review JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -549,6 +556,37 @@ def main() -> int:
         else:
             report.fail("generated snapshot missing artifact_disposition_summary")
 
+        evidence_review_summary = snapshot.get("evidence_review_summary")
+        if evidence_review_summary:
+            report.pass_("generated snapshot contains evidence_review_summary")
+            for field in [
+                "candidates_scored",
+                "decision_stubs_created",
+                "routes_created",
+                "reuse_readiness",
+                "route_counts",
+                "semantic_truth_status",
+                "automatic_approvals",
+                "brain_writeback_allowed",
+                "memory_ingestion_allowed",
+                "cieu_write_allowed",
+                "warning",
+            ]:
+                if field in evidence_review_summary:
+                    report.pass_(f"snapshot evidence_review_summary field present: {field}")
+                else:
+                    report.fail(f"snapshot evidence_review_summary missing field: {field}")
+            if evidence_review_summary.get("automatic_approvals") != 0:
+                report.fail("snapshot evidence_review_summary must not contain automatic approvals")
+            for field in ["brain_writeback_allowed", "memory_ingestion_allowed", "cieu_write_allowed"]:
+                if evidence_review_summary.get(field) != 0:
+                    report.fail(f"snapshot evidence_review_summary must not allow {field}")
+            semantic = set(evidence_review_summary.get("semantic_truth_status", {}))
+            if semantic and semantic != {"not_evaluated"}:
+                report.fail("snapshot evidence_review_summary semantic truth status must remain not_evaluated")
+        else:
+            report.fail("generated snapshot missing evidence_review_summary")
+
     quarantine = generated_json.get("console_read_model/generated/quarantine_summary.json")
     if quarantine:
         for field in [
@@ -637,6 +675,34 @@ def main() -> int:
         evidence = set(disposition.get("evidence_scoring_status", {}))
         if evidence and evidence != {"not_started"}:
             report.fail("generated artifact disposition evidence scoring must remain not_started")
+
+    evidence_review = generated_json.get("console_read_model/generated/evidence_review_summary.json")
+    if evidence_review:
+        for field in [
+            "candidates_scored",
+            "decision_stubs_created",
+            "routes_created",
+            "reuse_readiness",
+            "route_counts",
+            "semantic_truth_status",
+            "automatic_approvals",
+            "brain_writeback_allowed",
+            "memory_ingestion_allowed",
+            "cieu_write_allowed",
+            "warning",
+        ]:
+            if field in evidence_review:
+                report.pass_(f"generated evidence review summary field present: {field}")
+            else:
+                report.fail(f"generated evidence review summary missing field: {field}")
+        if evidence_review.get("automatic_approvals") != 0:
+            report.fail("generated evidence review summary must not contain automatic approvals")
+        for field in ["brain_writeback_allowed", "memory_ingestion_allowed", "cieu_write_allowed"]:
+            if evidence_review.get(field) != 0:
+                report.fail(f"generated evidence review summary must not allow {field}")
+        semantic = set(evidence_review.get("semantic_truth_status", {}))
+        if semantic and semantic != {"not_evaluated"}:
+            report.fail("generated evidence review semantic truth status must remain not_evaluated")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

@@ -1,0 +1,28 @@
+{
+  "schema_name": "ystar.runtime_artifact_quarantine.evidence_review.review_decision_schema",
+  "schema_version": "v0",
+  "record_required_fields": [
+    "decision_id",
+    "review_id",
+    "candidate_id",
+    "decision_status",
+    "reviewer",
+    "decision",
+    "approved_use_scope",
+    "rejected_reason",
+    "required_additional_evidence",
+    "brain_writeback_allowed",
+    "memory_ingestion_allowed",
+    "cieu_write_allowed",
+    "decision_notes"
+  ],
+  "default_values": {
+    "decision_status": "undecided",
+    "reviewer": "unset",
+    "decision": "none",
+    "approved_use_scope": [],
+    "brain_writeback_allowed": false,
+    "memory_ingestion_allowed": false,
+    "cieu_write_allowed": false
+  }
+}

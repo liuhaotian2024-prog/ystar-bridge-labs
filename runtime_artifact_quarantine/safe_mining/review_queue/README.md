@@ -11,3 +11,7 @@ The queue builder reads only:
 It does not reopen source reports, DBs, logs, active-agent markers, daemon state, or runtime files. Every generated entry starts as `pending_review` with `ingestion_status: not_ingested`.
 
 The backlog disposition layer consumes the generated queue as one of its curated inputs and keeps every linked entry `not_ingested`.
+
+The evidence review layer consumes the generated queue to create structural
+scores, undecided decision stubs, and not-approved hint routes. Queue entries
+remain pending and not ingested.

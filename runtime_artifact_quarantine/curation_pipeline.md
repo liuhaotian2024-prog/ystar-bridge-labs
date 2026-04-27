@@ -10,6 +10,9 @@ runtime artifact
 → adapter eligibility
 → bounded extraction candidate
 → pending review queue entry
+→ structural evidence scoring
+→ undecided review decision stub
+→ not-approved hint routing
 → human/reviewer inspection
 → CIEU evidence envelope
 → human/reviewer acceptance
@@ -32,3 +35,7 @@ not approve, ingest, or write anything to memory, brain, or CIEU.
 Backlog disposition v0 covers the whole dirty artifact manifest with routing
 metadata only. It prepares future adapter/evidence-scoring fields but does not
 perform semantic truth scoring or ingestion.
+
+Evidence review v0 estimates structural reuse readiness and creates undecided
+decision stubs plus not-approved hint routes. It does not validate truth,
+approve candidates, write CIEU records, migrate memory, or write brain state.

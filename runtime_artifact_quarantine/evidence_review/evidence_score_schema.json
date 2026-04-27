@@ -1,0 +1,45 @@
+{
+  "schema_name": "ystar.runtime_artifact_quarantine.evidence_review.evidence_score_schema",
+  "schema_version": "v0",
+  "record_required_fields": [
+    "evidence_id",
+    "candidate_id",
+    "review_id",
+    "source_path",
+    "artifact_class",
+    "disposition",
+    "review_status",
+    "ingestion_status",
+    "structural_score",
+    "source_quality_level",
+    "reuse_readiness",
+    "confidence_level",
+    "contradiction_status",
+    "semantic_truth_status",
+    "evidence_basis",
+    "missing_evidence",
+    "allowed_next_step",
+    "forbidden_next_steps",
+    "brain_writeback_allowed",
+    "memory_ingestion_allowed",
+    "cieu_write_allowed"
+  ],
+  "allowed_reuse_readiness": [
+    "hint_only",
+    "needs_more_context",
+    "defer_adapter_required",
+    "reject_low_value"
+  ],
+  "allowed_confidence_levels": [
+    "low",
+    "medium",
+    "structural_only"
+  ],
+  "required_status_values": {
+    "contradiction_status": "not_checked",
+    "semantic_truth_status": "not_evaluated",
+    "brain_writeback_allowed": false,
+    "memory_ingestion_allowed": false,
+    "cieu_write_allowed": false
+  }
+}

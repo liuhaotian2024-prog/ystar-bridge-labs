@@ -51,6 +51,7 @@ Ready now:
 - bounded Markdown safe-mining candidate index
 - candidate review queue summary
 - runtime artifact backlog disposition summary
+- structural evidence review summary
 
 Not ready:
 - runtime generator
@@ -69,12 +70,14 @@ Not ready:
 - review approval workflow for candidate queue entries
 - evidence scoring for disposition records
 - DB/log/marker metadata adapters
+- semantic truth validation for evidence records
+- review decision application workflow
 
 ## Runtime Artifact Quarantine Summary
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 203
+- Artifacts classified: 206
 - Unsafe artifacts count: 168
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
@@ -87,10 +90,10 @@ Not ready:
   - DREAM_REPORT: 28
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
-  - FRAMEWORK_FILE: 7
+  - FRAMEWORK_FILE: 9
   - LOG_RUNTIME: 31
   - PYCACHE: 31
-  - UNKNOWN_OR_NON_RUNTIME: 28
+  - UNKNOWN_OR_NON_RUNTIME: 29
   - UNKNOWN_RUNTIME_ARTIFACT: 10
   - WHITELIST_REPORT: 1
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
@@ -128,8 +131,8 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 203
-- Artifacts with disposition: 203
+- Total artifacts: 206
+- Artifacts with disposition: 206
 - Safe-mined to review queue: 20
 - Forbidden direct read count: 106
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
@@ -141,11 +144,29 @@ Not ready:
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 31
-  - ignored_or_non_runtime: 35
+  - ignored_or_non_runtime: 38
   - safe_mined_to_review_queue: 20
 - Evidence scoring status:
-  - not_started: 203
+  - not_started: 206
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
+
+## Runtime Artifact Evidence Review
+
+- Candidates scored: 20
+- Decision stubs created: 20
+- Routes created: 40
+- Automatic approvals: 0
+- Reuse readiness:
+  - hint_only: 20
+- Route counts:
+  - cieu_prediction_delta_hint_queue: 9
+  - governance_gap_hint_queue: 10
+  - memory_continuity_hint_queue: 10
+  - pre_u_packet_hint_queue: 1
+  - role_brain_capsule_hint_queue: 10
+- Semantic truth status:
+  - not_evaluated: 20
+- Warning: Evidence scoring is structural only. It is not truth validation and not memory ingestion.
 
 ## Governance Boundary
 
@@ -166,6 +187,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - add human review queue for safe-mining candidates
 - define signed review decisions for candidate queue entries
 - create evidence scoring schema for disposition records
+- define manual decision application for evidence review stubs
 
 ## Warnings / Gaps
 
@@ -185,3 +207,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Safe mining v0 produces candidate-only Markdown report snippets; no brain or CIEU ingestion exists.
 - Candidate review queue exists, but no approval workflow or ingestion path exists.
 - Backlog disposition index exists, but evidence scoring and adapter extraction are not implemented.
+- Evidence review pack exists, but semantic truth validation and decision application are not implemented.

@@ -14,7 +14,8 @@
     "path-only runtime artifact quarantine summary",
     "bounded Markdown safe-mining candidate index",
     "candidate review queue summary",
-    "runtime artifact backlog disposition summary"
+    "runtime artifact backlog disposition summary",
+    "structural evidence review summary"
   ],
   "not_ready": [
     "runtime generator",
@@ -32,7 +33,9 @@
     "brain/CIEU ingestion from safe-mining candidates",
     "review approval workflow for candidate queue entries",
     "evidence scoring for disposition records",
-    "DB/log/marker metadata adapters"
+    "DB/log/marker metadata adapters",
+    "semantic truth validation for evidence records",
+    "review decision application workflow"
   ],
   "recommended_next_steps": [
     "wire static validator and loader into CI",
@@ -43,7 +46,8 @@
     "design safe adapters for quarantine-to-CIEU review",
     "add human review queue for safe-mining candidates",
     "define signed review decisions for candidate queue entries",
-    "create evidence scoring schema for disposition records"
+    "create evidence scoring schema for disposition records",
+    "define manual decision application for evidence review stubs"
   ],
   "blockers": [
     "no DB-safe adapter",
@@ -60,6 +64,7 @@
     "quarantine summary is path-level only",
     "safe-mining candidates are bounded Markdown snippets only",
     "review queue entries are pending and not ingested",
-    "disposition records are routing metadata, not ingestion"
+    "disposition records are routing metadata, not ingestion",
+    "evidence scoring is structural only and does not approve ingestion"
   ]
 }

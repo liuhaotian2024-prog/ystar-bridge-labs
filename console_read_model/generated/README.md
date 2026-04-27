@@ -18,5 +18,8 @@ It summarizes pending review state only; entries are not approved or ingested.
 `artifact_disposition_summary.json` is derived from generated backlog
 disposition indexes. It summarizes routing/disposition only; it is not ingestion.
 
+`evidence_review_summary.json` is derived from generated evidence review
+indexes. It summarizes structural readiness only; it is not approval.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

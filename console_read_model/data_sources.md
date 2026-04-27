@@ -21,10 +21,15 @@
 - `runtime_artifact_quarantine/safe_mining/review_queue/generated/review_queue_manifest.json`
 - `runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json`
 - `runtime_artifact_quarantine/backlog_disposition/generated/disposition_manifest.json`
+- `runtime_artifact_quarantine/evidence_review/generated/evidence_scores.json`
+- `runtime_artifact_quarantine/evidence_review/generated/review_decision_stub.json`
+- `runtime_artifact_quarantine/evidence_review/generated/hint_routing_index.json`
+- `runtime_artifact_quarantine/evidence_review/generated/evidence_review_manifest.json`
 - `console_read_model/generated/quarantine_summary.json`
 - `console_read_model/generated/safe_mining_summary.json`
 - `console_read_model/generated/review_queue_summary.json`
 - `console_read_model/generated/artifact_disposition_summary.json`
+- `console_read_model/generated/evidence_review_summary.json`
 
 ## Unsafe Direct Sources
 
@@ -52,3 +57,5 @@
   are pending decisions, not approvals or ingestion.
 - Backlog disposition data may be displayed only from generated disposition
   indexes; disposition is routing metadata, not evidence scoring or ingestion.
+- Evidence review data may be displayed only from generated evidence indexes;
+  scoring is structural only and decisions remain undecided.
