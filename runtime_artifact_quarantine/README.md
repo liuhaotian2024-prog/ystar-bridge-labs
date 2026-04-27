@@ -18,6 +18,11 @@ manifest, opens only approved Markdown report classes with strict caps, and
 generates candidate-only review assets. Those candidates are not canonical
 memory and are not approved for direct brain, memory, or CIEU use.
 
+`backlog_disposition/` classifies every artifact in the quarantine manifest into
+a routing disposition. It identifies safe-mined/reviewed items, deferred adapter
+needs, generated cache, unknown classes, and forbidden direct-read groups without
+opening raw artifact contents.
+
 Relationship:
 
 - `console_read_model/` consumes curated snapshots, not raw artifacts.

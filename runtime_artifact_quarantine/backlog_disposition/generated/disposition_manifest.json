@@ -1,0 +1,17 @@
+{
+  "schema_name": "ystar.runtime_artifact_quarantine.backlog_disposition.manifest",
+  "schema_version": "v0",
+  "source_files": [
+    "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+    "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+    "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+  ],
+  "generated_files": [
+    "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
+    "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_summary.md",
+    "runtime_artifact_quarantine/backlog_disposition/generated/disposition_manifest.json"
+  ],
+  "total_artifacts": 203,
+  "artifacts_with_disposition": 203,
+  "safety_note": "Disposition is not ingestion. No brain/memory/CIEU writes are allowed."
+}

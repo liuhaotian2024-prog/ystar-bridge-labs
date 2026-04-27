@@ -50,6 +50,7 @@ Ready now:
 - path-only runtime artifact quarantine summary
 - bounded Markdown safe-mining candidate index
 - candidate review queue summary
+- runtime artifact backlog disposition summary
 
 Not ready:
 - runtime generator
@@ -66,13 +67,15 @@ Not ready:
 - full runtime artifact mining or curation adapters
 - brain/CIEU ingestion from safe-mining candidates
 - review approval workflow for candidate queue entries
+- evidence scoring for disposition records
+- DB/log/marker metadata adapters
 
 ## Runtime Artifact Quarantine Summary
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 197
-- Unsafe artifacts count: 165
+- Artifacts classified: 203
+- Unsafe artifacts count: 168
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -80,14 +83,14 @@ Not ready:
   - DAEMON_STATE: 4
   - DAILY_REPORT: 6
   - DB_CORE: 1
-  - DB_SIDECARE: 4
-  - DREAM_REPORT: 27
+  - DB_SIDECARE: 6
+  - DREAM_REPORT: 28
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
-  - FRAMEWORK_FILE: 5
+  - FRAMEWORK_FILE: 7
   - LOG_RUNTIME: 31
   - PYCACHE: 31
-  - UNKNOWN_OR_NON_RUNTIME: 27
+  - UNKNOWN_OR_NON_RUNTIME: 28
   - UNKNOWN_RUNTIME_ARTIFACT: 10
   - WHITELIST_REPORT: 1
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
@@ -123,6 +126,27 @@ Not ready:
   - role_brain_capsule_hint: 10
 - Warning: Review queue entries are not brain memory and require explicit approval before any future CIEU, memory, or capsule use.
 
+## Runtime Artifact Backlog Disposition
+
+- Total artifacts: 203
+- Artifacts with disposition: 203
+- Safe-mined to review queue: 20
+- Forbidden direct read count: 106
+- Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
+- Dispositions:
+  - deferred_markdown_report_not_selected: 42
+  - deferred_requires_bounded_log_adapter: 31
+  - deferred_requires_classification: 10
+  - deferred_requires_marker_metadata_adapter: 26
+  - deferred_requires_readonly_db_adapter: 2
+  - deferred_sidecar_or_transaction_file: 6
+  - ignored_generated_cache: 31
+  - ignored_or_non_runtime: 35
+  - safe_mined_to_review_queue: 20
+- Evidence scoring status:
+  - not_started: 203
+- Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -141,6 +165,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - design safe adapters for quarantine-to-CIEU review
 - add human review queue for safe-mining candidates
 - define signed review decisions for candidate queue entries
+- create evidence scoring schema for disposition records
 
 ## Warnings / Gaps
 
@@ -159,3 +184,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Runtime artifact quarantine is visible as a path-only summary; full artifact mining is not implemented.
 - Safe mining v0 produces candidate-only Markdown report snippets; no brain or CIEU ingestion exists.
 - Candidate review queue exists, but no approval workflow or ingestion path exists.
+- Backlog disposition index exists, but evidence scoring and adapter extraction are not implemented.

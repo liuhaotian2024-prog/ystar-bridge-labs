@@ -26,6 +26,9 @@ python3 console_read_model/cli/team_console.py <command>
   candidate index, and review/writeback warning.
 - `review-queue`: Prints the generated candidate review queue summary: review
   count, statuses, intended-use counts, generated queue path, and warning.
+- `artifact-disposition`: Prints the generated backlog disposition summary:
+  total artifact coverage, disposition counts, deferred adapter counts,
+  forbidden direct-read count, and evidence-scoring status.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

@@ -17,6 +17,7 @@
 - Runtime artifact quarantine summary is visible, and safe-mining v0 produces bounded Markdown candidates only.
 - Safe-mining candidates are not connected to a human review queue, CIEU, memory, or brain writeback.
 - Candidate review queue exists, but entries cannot yet be approved, signed, or routed into CIEU/memory workflows.
+- Backlog disposition index exists, but evidence scoring, adapter extraction, and approval routing remain future work.
 - Local safety check wrapper exists but is not wired into CI.
 - Local safety check wrapper does not replace runtime or governance tests.
 - Capsule schema alignment is lightweight and does not validate executable cognition.

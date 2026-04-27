@@ -12,3 +12,5 @@
 - No retention policy.
 - No CI check for dirty runtime artifacts.
 - No review queue for safe-mining candidates.
+- Backlog disposition exists, but evidence scoring is not implemented.
+- Backlog disposition exists, but DB/log/marker adapters are not implemented.

@@ -44,3 +44,8 @@ The snapshot can expose a candidate review queue summary derived from
 `runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json`.
 This summarizes pending review state only. Queue entries are not approved,
 ingested, or canonical.
+
+The snapshot can expose a backlog disposition summary derived from
+`runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json`.
+This covers the dirty artifact backlog as routing metadata only; it does not
+perform truth scoring, adapter extraction, or ingestion.

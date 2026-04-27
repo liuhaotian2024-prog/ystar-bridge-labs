@@ -6,6 +6,7 @@ Future pipeline:
 runtime artifact
 → quarantine manifest
 → class/risk assignment
+→ backlog disposition routing
 → adapter eligibility
 → bounded extraction candidate
 → pending review queue entry
@@ -27,3 +28,7 @@ reports. It does not create CIEU evidence envelopes or memory/writeback records.
 
 Review queue v0 converts candidates into `pending_review` entries only. It does
 not approve, ingest, or write anything to memory, brain, or CIEU.
+
+Backlog disposition v0 covers the whole dirty artifact manifest with routing
+metadata only. It prepares future adapter/evidence-scoring fields but does not
+perform semantic truth scoring or ingestion.

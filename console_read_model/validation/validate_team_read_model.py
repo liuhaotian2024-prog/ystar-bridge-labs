@@ -327,6 +327,7 @@ def main() -> int:
     required_check_files = expected.get("required_check_files", [])
     required_generated_files = expected.get("required_generated_files", [])
     required_safe_mining_files = expected.get("required_safe_mining_files", [])
+    required_backlog_disposition_files = expected.get("required_backlog_disposition_files", [])
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -355,6 +356,12 @@ def main() -> int:
         check_exists(path, report, "safe mining file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "safe mining JSON")
+
+    for rel in required_backlog_disposition_files:
+        path = ROOT / rel
+        check_exists(path, report, "backlog disposition file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "backlog disposition JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -516,6 +523,32 @@ def main() -> int:
         else:
             report.fail("generated snapshot missing review_queue_summary")
 
+        disposition_summary = snapshot.get("artifact_disposition_summary")
+        if disposition_summary:
+            report.pass_("generated snapshot contains artifact_disposition_summary")
+            for field in [
+                "total_artifacts",
+                "artifacts_with_disposition",
+                "dispositions",
+                "safe_mined_to_review_queue",
+                "deferred_adapter_counts",
+                "forbidden_direct_read_count",
+                "evidence_scoring_status",
+                "generated_disposition_index",
+                "warning",
+            ]:
+                if field in disposition_summary:
+                    report.pass_(f"snapshot artifact_disposition_summary field present: {field}")
+                else:
+                    report.fail(f"snapshot artifact_disposition_summary missing field: {field}")
+            if disposition_summary.get("total_artifacts") != disposition_summary.get("artifacts_with_disposition"):
+                report.fail("snapshot artifact_disposition_summary must cover every manifest artifact")
+            evidence = set(disposition_summary.get("evidence_scoring_status", {}))
+            if evidence and evidence != {"not_started"}:
+                report.fail("snapshot artifact_disposition_summary evidence scoring must remain not_started")
+        else:
+            report.fail("generated snapshot missing artifact_disposition_summary")
+
     quarantine = generated_json.get("console_read_model/generated/quarantine_summary.json")
     if quarantine:
         for field in [
@@ -581,6 +614,29 @@ def main() -> int:
                 report.pass_(f"generated review queue forbids action: {action}")
             else:
                 report.fail(f"generated review queue missing forbidden action: {action}")
+
+    disposition = generated_json.get("console_read_model/generated/artifact_disposition_summary.json")
+    if disposition:
+        for field in [
+            "total_artifacts",
+            "artifacts_with_disposition",
+            "dispositions",
+            "safe_mined_to_review_queue",
+            "deferred_adapter_counts",
+            "forbidden_direct_read_count",
+            "evidence_scoring_status",
+            "generated_disposition_index",
+            "warning",
+        ]:
+            if field in disposition:
+                report.pass_(f"generated artifact disposition summary field present: {field}")
+            else:
+                report.fail(f"generated artifact disposition summary missing field: {field}")
+        if disposition.get("total_artifacts") != disposition.get("artifacts_with_disposition"):
+            report.fail("generated artifact disposition summary must cover every manifest artifact")
+        evidence = set(disposition.get("evidence_scoring_status", {}))
+        if evidence and evidence != {"not_started"}:
+            report.fail("generated artifact disposition evidence scoring must remain not_started")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

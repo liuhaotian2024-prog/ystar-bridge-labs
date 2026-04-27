@@ -14,6 +14,7 @@
 - Path-only runtime artifact quarantine summary in generated console snapshots.
 - Bounded Markdown safe-mining candidate summary in generated console snapshots.
 - Pending candidate review queue summary in generated console snapshots.
+- Runtime artifact backlog disposition summary in generated console snapshots.
 - Local safety check wrapper for the curated read-model stack.
 - Lightweight static capsule schema-alignment checks.
 
@@ -34,6 +35,7 @@
 - Full runtime artifact mining or curation adapters.
 - Brain/CIEU ingestion from safe-mining candidates.
 - Signed review decision workflow for candidate queue entries.
+- Evidence scoring and adapter extraction for disposition records.
 - Runtime tests remain separate from local read-model safety checks.
 - Full JSON Schema enforcement through a dedicated schema engine.
 
@@ -54,6 +56,8 @@ F. Safe quarantine-to-CIEU review adapters.
 G. Human review queue for safe-mining candidates.
 
 H. Signed review decisions for queue entries.
+
+I. Evidence scoring schema for disposition records.
 
 The safest next step is either a static capsule validator or a read-only console
 prototype that consumes only the files in this directory and other curated

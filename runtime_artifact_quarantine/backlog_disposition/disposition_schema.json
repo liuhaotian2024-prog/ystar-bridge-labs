@@ -1,0 +1,54 @@
+{
+  "schema_name": "ystar.runtime_artifact_quarantine.backlog_disposition.schema",
+  "schema_version": "v0",
+  "description": "Reference schema for path-level runtime artifact disposition records.",
+  "record_required_fields": [
+    "disposition_id",
+    "artifact_path",
+    "artifact_class",
+    "disposition",
+    "source_in_quarantine_manifest",
+    "safe_mining_candidate_id",
+    "review_id",
+    "review_status",
+    "ingestion_status",
+    "evidence_scoring_status",
+    "allowed_next_step",
+    "forbidden_next_steps",
+    "direct_read_allowed",
+    "brain_writeback_allowed",
+    "memory_ingestion_allowed",
+    "cieu_write_allowed",
+    "rationale",
+    "generated_from_refs"
+  ],
+  "allowed_dispositions": [
+    "safe_mined_to_review_queue",
+    "safe_mined_candidate_only",
+    "deferred_requires_readonly_db_adapter",
+    "deferred_sidecar_or_transaction_file",
+    "deferred_requires_bounded_log_adapter",
+    "deferred_requires_marker_metadata_adapter",
+    "ignored_generated_cache",
+    "deferred_requires_classification",
+    "ignored_or_non_runtime",
+    "deferred_markdown_report_not_selected"
+  ],
+  "required_safety_values": {
+    "ingestion_status": "not_ingested",
+    "evidence_scoring_status": "not_started",
+    "brain_writeback_allowed": false,
+    "memory_ingestion_allowed": false,
+    "cieu_write_allowed": false
+  },
+  "non_goals": [
+    "semantic truth scoring",
+    "candidate approval",
+    "DB reading",
+    "log parsing",
+    "brain writeback",
+    "memory ingestion",
+    "CIEU writing",
+    "artifact cleanup"
+  ]
+}

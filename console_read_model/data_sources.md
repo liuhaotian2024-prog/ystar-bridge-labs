@@ -19,9 +19,12 @@
 - `runtime_artifact_quarantine/safe_mining/generated/mining_manifest.json`
 - `runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json`
 - `runtime_artifact_quarantine/safe_mining/review_queue/generated/review_queue_manifest.json`
+- `runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json`
+- `runtime_artifact_quarantine/backlog_disposition/generated/disposition_manifest.json`
 - `console_read_model/generated/quarantine_summary.json`
 - `console_read_model/generated/safe_mining_summary.json`
 - `console_read_model/generated/review_queue_summary.json`
+- `console_read_model/generated/artifact_disposition_summary.json`
 
 ## Unsafe Direct Sources
 
@@ -47,3 +50,5 @@
   indexes; candidates are not canonical memory and require review.
 - Review queue data may be displayed only from generated queue indexes; entries
   are pending decisions, not approvals or ingestion.
+- Backlog disposition data may be displayed only from generated disposition
+  indexes; disposition is routing metadata, not evidence scoring or ingestion.

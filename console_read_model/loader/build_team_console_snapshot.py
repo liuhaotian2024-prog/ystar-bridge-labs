@@ -26,6 +26,7 @@ CURATED_SOURCES = [
     "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
     "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
     "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json",
+    "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -180,6 +181,30 @@ def build_review_queue_summary(review_queue: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def build_disposition_summary(disposition_index: dict[str, Any]) -> dict[str, Any]:
+    summary = disposition_index.get("summary", {})
+    return {
+        "schema_name": "ystar.console_read_model.generated.artifact_disposition_summary",
+        "schema_version": "v0",
+        "total_artifacts": summary.get("total_artifacts", 0),
+        "artifacts_with_disposition": summary.get("artifacts_with_disposition", 0),
+        "dispositions": summary.get("dispositions", {}),
+        "artifact_classes": summary.get("artifact_classes", {}),
+        "safe_mined_to_review_queue": summary.get("safe_mined_to_review_queue", 0),
+        "deferred_adapter_counts": summary.get("deferred_adapter_counts", {}),
+        "ignored_generated_cache": summary.get("ignored_generated_cache", 0),
+        "forbidden_direct_read_count": summary.get("forbidden_direct_read_count", 0),
+        "evidence_scoring_status": summary.get("evidence_scoring_status", {}),
+        "generated_disposition_index": (
+            "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json"
+        ),
+        "warning": summary.get(
+            "warning",
+            "Disposition is not ingestion. No brain/memory/CIEU writes are allowed.",
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -202,9 +227,14 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json",
         files_read,
     )
+    disposition_index = load_json(
+        "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
+    disposition_summary = build_disposition_summary(disposition_index)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -267,6 +297,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Safe mining v0 produces candidate-only Markdown report snippets; no brain or CIEU ingestion exists.")
     if "Candidate review queue exists, but no approval workflow or ingestion path exists." not in open_gaps:
         open_gaps.append("Candidate review queue exists, but no approval workflow or ingestion path exists.")
+    if "Backlog disposition index exists, but evidence scoring and adapter extraction are not implemented." not in open_gaps:
+        open_gaps.append("Backlog disposition index exists, but evidence scoring and adapter extraction are not implemented.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -281,6 +313,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "quarantine_summary": quarantine_summary,
         "safe_mining_summary": safe_mining_summary,
         "review_queue_summary": review_queue_summary,
+        "artifact_disposition_summary": disposition_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -320,6 +353,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "path-only runtime artifact quarantine summary",
             "bounded Markdown safe-mining candidate index",
             "candidate review queue summary",
+            "runtime artifact backlog disposition summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -336,6 +370,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "full runtime artifact mining or curation adapters",
             "brain/CIEU ingestion from safe-mining candidates",
             "review approval workflow for candidate queue entries",
+            "evidence scoring for disposition records",
+            "DB/log/marker metadata adapters",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -346,6 +382,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "design safe adapters for quarantine-to-CIEU review",
             "add human review queue for safe-mining candidates",
             "define signed review decisions for candidate queue entries",
+            "create evidence scoring schema for disposition records",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -362,6 +399,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "quarantine summary is path-level only",
             "safe-mining candidates are bounded Markdown snippets only",
             "review queue entries are pending and not ingested",
+            "disposition records are routing metadata, not ingestion",
         ],
     }
 
@@ -377,6 +415,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/quarantine_summary.json",
             "console_read_model/generated/safe_mining_summary.json",
             "console_read_model/generated/review_queue_summary.json",
+            "console_read_model/generated/artifact_disposition_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -411,6 +450,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "review assets, not brain memory.\n\n"
         "`review_queue_summary.json` is derived from generated review queue files.\n"
         "It summarizes pending review state only; entries are not approved or ingested.\n\n"
+        "`artifact_disposition_summary.json` is derived from generated backlog\n"
+        "disposition indexes. It summarizes routing/disposition only; it is not ingestion.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -422,6 +463,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/quarantine_summary.json", quarantine_summary, generated_files)
     write_json("console_read_model/generated/safe_mining_summary.json", safe_mining_summary, generated_files)
     write_json("console_read_model/generated/review_queue_summary.json", review_queue_summary, generated_files)
+    write_json("console_read_model/generated/artifact_disposition_summary.json", disposition_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -468,6 +510,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     quarantine = snapshot.get("quarantine_summary", {})
     safe_mining = snapshot.get("safe_mining_summary", {})
     review_queue = snapshot.get("review_queue_summary", {})
+    disposition = snapshot.get("artifact_disposition_summary", {})
     lines.extend(
         [
             "",
@@ -525,6 +568,25 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     for use, count in sorted(review_queue.get("intended_use_summary", {}).items()):
         lines.append(f"  - {use}: {count}")
     lines.append(f"- Warning: {review_queue.get('warning')}")
+    lines.extend(
+        [
+            "",
+            "## Runtime Artifact Backlog Disposition",
+            "",
+            f"- Total artifacts: {disposition.get('total_artifacts')}",
+            f"- Artifacts with disposition: {disposition.get('artifacts_with_disposition')}",
+            f"- Safe-mined to review queue: {disposition.get('safe_mined_to_review_queue')}",
+            f"- Forbidden direct read count: {disposition.get('forbidden_direct_read_count')}",
+            f"- Generated disposition index: {disposition.get('generated_disposition_index')}",
+            "- Dispositions:",
+        ]
+    )
+    for disposition_name, count in sorted(disposition.get("dispositions", {}).items()):
+        lines.append(f"  - {disposition_name}: {count}")
+    lines.append("- Evidence scoring status:")
+    for status, count in sorted(disposition.get("evidence_scoring_status", {}).items()):
+        lines.append(f"  - {status}: {count}")
+    lines.append(f"- Warning: {disposition.get('warning')}")
     lines.extend(
         [
             "",

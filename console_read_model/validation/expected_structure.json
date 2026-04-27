@@ -45,6 +45,7 @@
     "console_read_model/generated/quarantine_summary.json",
     "console_read_model/generated/safe_mining_summary.json",
     "console_read_model/generated/review_queue_summary.json",
+    "console_read_model/generated/artifact_disposition_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "required_safe_mining_files": [
@@ -64,6 +65,16 @@
     "runtime_artifact_quarantine/safe_mining/review_queue/generated/README.md",
     "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json",
     "runtime_artifact_quarantine/safe_mining/review_queue/generated/review_queue_manifest.json"
+  ],
+  "required_backlog_disposition_files": [
+    "runtime_artifact_quarantine/backlog_disposition/README.md",
+    "runtime_artifact_quarantine/backlog_disposition/disposition_policy.md",
+    "runtime_artifact_quarantine/backlog_disposition/disposition_schema.json",
+    "runtime_artifact_quarantine/backlog_disposition/open_gaps.md",
+    "runtime_artifact_quarantine/backlog_disposition/tools/build_artifact_disposition_index.py",
+    "runtime_artifact_quarantine/backlog_disposition/generated/README.md",
+    "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
+    "runtime_artifact_quarantine/backlog_disposition/generated/disposition_manifest.json"
   ],
   "required_shared_schema_files": [
     "agent_brains/schema/README.md",

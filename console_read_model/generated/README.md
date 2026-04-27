@@ -15,5 +15,8 @@ review assets, not brain memory.
 `review_queue_summary.json` is derived from generated review queue files.
 It summarizes pending review state only; entries are not approved or ingested.
 
+`artifact_disposition_summary.json` is derived from generated backlog
+disposition indexes. It summarizes routing/disposition only; it is not ingestion.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

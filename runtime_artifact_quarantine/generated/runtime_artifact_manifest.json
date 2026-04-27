@@ -4,8 +4,8 @@
   "inventory_level": 0,
   "content_opened": false,
   "source": "git status --short plus os.stat metadata",
-  "artifacts_classified": 197,
-  "unsafe_artifacts_count": 165,
+  "artifacts_classified": 203,
+  "unsafe_artifacts_count": 168,
   "classes_seen": {
     "ACTIVE_AGENT_MARKER": 17,
     "BACKUP_DB": 1,
@@ -13,14 +13,14 @@
     "DAEMON_STATE": 4,
     "DAILY_REPORT": 6,
     "DB_CORE": 1,
-    "DB_SIDECARE": 4,
-    "DREAM_REPORT": 27,
+    "DB_SIDECARE": 6,
+    "DREAM_REPORT": 28,
     "DRIFT_REPORT": 4,
     "ESCALATION_REPORT": 23,
-    "FRAMEWORK_FILE": 5,
+    "FRAMEWORK_FILE": 7,
     "LOG_RUNTIME": 31,
     "PYCACHE": 31,
-    "UNKNOWN_OR_NON_RUNTIME": 27,
+    "UNKNOWN_OR_NON_RUNTIME": 28,
     "UNKNOWN_RUNTIME_ARTIFACT": 10,
     "WHITELIST_REPORT": 1
   },
@@ -50,7 +50,7 @@
       "git_status_code": "M",
       "artifact_class": "DB_SIDECARE",
       "extension": ".db-wal",
-      "size_bytes": 373819992,
+      "size_bytes": 377783432,
       "direct_read_allowed": false,
       "future_adapter_candidate": "none_or_metadata_only",
       "notes": "DB sidecar; do not touch contents."
@@ -110,17 +110,37 @@
       "git_status_code": "M",
       "artifact_class": "DB_CORE",
       "extension": ".db",
-      "size_bytes": 546996224,
+      "size_bytes": 547012608,
       "direct_read_allowed": false,
       "future_adapter_candidate": "readonly_db_adapter_future",
       "notes": "DB content forbidden; metadata only."
+    },
+    {
+      "path": "aiden_brain.db-shm",
+      "git_status_code": "D",
+      "artifact_class": "DB_SIDECARE",
+      "extension": ".db-shm",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "none_or_metadata_only",
+      "notes": "DB sidecar; do not touch contents."
+    },
+    {
+      "path": "aiden_brain.db-wal",
+      "git_status_code": "D",
+      "artifact_class": "DB_SIDECARE",
+      "extension": ".db-wal",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "none_or_metadata_only",
+      "notes": "DB sidecar; do not touch contents."
     },
     {
       "path": "console_read_model/README.md",
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".md",
-      "size_bytes": 2186,
+      "size_bytes": 2481,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -130,7 +150,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".py",
-      "size_bytes": 6244,
+      "size_bytes": 7196,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -140,7 +160,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".md",
-      "size_bytes": 1816,
+      "size_bytes": 2092,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -150,7 +170,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".md",
-      "size_bytes": 1653,
+      "size_bytes": 1861,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -160,7 +180,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".py",
-      "size_bytes": 15396,
+      "size_bytes": 18144,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -170,7 +190,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".md",
-      "size_bytes": 1960,
+      "size_bytes": 2364,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -180,7 +200,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".md",
-      "size_bytes": 813,
+      "size_bytes": 966,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -190,7 +210,17 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".json",
-      "size_bytes": 1837,
+      "size_bytes": 2004,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": "console_read_model/generated/quarantine_summary.json",
+      "git_status_code": "M",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": ".json",
+      "size_bytes": 1631,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -200,7 +230,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".json",
-      "size_bytes": 2065,
+      "size_bytes": 2329,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -210,7 +240,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".json",
-      "size_bytes": 13537,
+      "size_bytes": 15606,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -220,7 +250,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".md",
-      "size_bytes": 5140,
+      "size_bytes": 6226,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -230,7 +260,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".py",
-      "size_bytes": 25048,
+      "size_bytes": 28701,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -240,7 +270,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".md",
-      "size_bytes": 1215,
+      "size_bytes": 1334,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -250,7 +280,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".md",
-      "size_bytes": 1821,
+      "size_bytes": 2020,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -260,7 +290,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".json",
-      "size_bytes": 5781,
+      "size_bytes": 6546,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -270,7 +300,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".py",
-      "size_bytes": 26439,
+      "size_bytes": 29385,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -296,41 +326,61 @@
       "notes": "Likely normal repo change or unclassified non-runtime path."
     },
     {
+      "path": "runtime_artifact_quarantine/README.md",
+      "git_status_code": "M",
+      "artifact_class": "FRAMEWORK_FILE",
+      "extension": ".md",
+      "size_bytes": 1556,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Exclude from mining; framework-owned file."
+    },
+    {
       "path": "runtime_artifact_quarantine/curation_pipeline.md",
       "git_status_code": "M",
       "artifact_class": "FRAMEWORK_FILE",
       "extension": ".md",
-      "size_bytes": 904,
+      "size_bytes": 1138,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Exclude from mining; framework-owned file."
     },
     {
-      "path": "runtime_artifact_quarantine/safe_mining/README.md",
+      "path": "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
       "git_status_code": "M",
       "artifact_class": "FRAMEWORK_FILE",
-      "extension": ".md",
-      "size_bytes": 1201,
+      "extension": ".json",
+      "size_bytes": 73399,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Exclude from mining; framework-owned file."
     },
     {
-      "path": "runtime_artifact_quarantine/safe_mining/open_gaps.md",
+      "path": "runtime_artifact_quarantine/generated/runtime_artifact_summary.md",
       "git_status_code": "M",
       "artifact_class": "FRAMEWORK_FILE",
       "extension": ".md",
-      "size_bytes": 479,
+      "size_bytes": 476,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Exclude from mining; framework-owned file."
     },
     {
-      "path": "runtime_artifact_quarantine/safe_mining/safe_mining_policy.md",
+      "path": "runtime_artifact_quarantine/open_gaps.md",
       "git_status_code": "M",
       "artifact_class": "FRAMEWORK_FILE",
       "extension": ".md",
-      "size_bytes": 1229,
+      "size_bytes": 573,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Exclude from mining; framework-owned file."
+    },
+    {
+      "path": "runtime_artifact_quarantine/safe_mining/review_queue/README.md",
+      "git_status_code": "M",
+      "artifact_class": "FRAMEWORK_FILE",
+      "extension": ".md",
+      "size_bytes": 826,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Exclude from mining; framework-owned file."
@@ -896,11 +946,11 @@
       "notes": "Backup DB metadata only."
     },
     {
-      "path": "console_read_model/generated/review_queue_summary.json",
+      "path": "console_read_model/generated/artifact_disposition_summary.json",
       "git_status_code": "??",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".json",
-      "size_bytes": 1245,
+      "size_bytes": 1731,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -1181,6 +1231,16 @@
       "artifact_class": "DREAM_REPORT",
       "extension": ".md",
       "size_bytes": 5786165,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "dream_report_bounded_parser_future",
+      "notes": "Dream report content not read."
+    },
+    {
+      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260427_094132_nrem.md",
+      "git_status_code": "??",
+      "artifact_class": "DREAM_REPORT",
+      "extension": ".md",
+      "size_bytes": 5786939,
       "direct_read_allowed": false,
       "future_adapter_candidate": "dream_report_bounded_parser_future",
       "notes": "Dream report content not read."
@@ -1546,7 +1606,7 @@
       "notes": "Whitelist report content not read."
     },
     {
-      "path": "runtime_artifact_quarantine/safe_mining/review_queue/",
+      "path": "runtime_artifact_quarantine/backlog_disposition/",
       "git_status_code": "??",
       "artifact_class": "FRAMEWORK_FILE",
       "extension": "",
@@ -1570,7 +1630,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 14688,
+      "size_bytes": 14904,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -1580,7 +1640,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 157975,
+      "size_bytes": 160318,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -1630,7 +1690,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 186912,
+      "size_bytes": 189236,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -1660,7 +1720,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 37806,
+      "size_bytes": 37892,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -1690,7 +1750,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 444565,
+      "size_bytes": 452797,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -1710,7 +1770,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 269584,
+      "size_bytes": 270760,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -1740,7 +1800,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 79429,
+      "size_bytes": 80077,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -1800,7 +1860,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 249041,
+      "size_bytes": 249101,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -1986,11 +2046,11 @@
       "notes": "Runtime-like path needs classification."
     },
     {
-      "path": "tests/runtime_artifact_quarantine/test_candidate_review_queue.py",
+      "path": "tests/runtime_artifact_quarantine/test_artifact_disposition_index.py",
       "git_status_code": "??",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".py",
-      "size_bytes": 2902,
+      "size_bytes": 4039,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."

@@ -37,6 +37,11 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
+        "Build artifact disposition index",
+        ["python3", "runtime_artifact_quarantine/backlog_disposition/tools/build_artifact_disposition_index.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
         "Build team console snapshot",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
@@ -61,6 +66,10 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "console_read_model/generated/review_queue_summary.json"],
     ),
     Check(
+        "Validate JSON: artifact_disposition_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/artifact_disposition_summary.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -75,6 +84,14 @@ VALIDATION_CHECKS = [
     Check(
         "Validate JSON: review_queue_manifest.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/review_queue/generated/review_queue_manifest.json"],
+    ),
+    Check(
+        "Validate JSON: artifact_disposition_index.json",
+        ["python3", "-m", "json.tool", "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json"],
+    ),
+    Check(
+        "Validate JSON: disposition_manifest.json",
+        ["python3", "-m", "json.tool", "runtime_artifact_quarantine/backlog_disposition/generated/disposition_manifest.json"],
     ),
     Check(
         "Validate JSON: generation_manifest.json",
@@ -103,6 +120,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: review-queue",
         ["python3", "console_read_model/cli/team_console.py", "review-queue"],
+    ),
+    Check(
+        "CLI smoke: artifact-disposition",
+        ["python3", "console_read_model/cli/team_console.py", "artifact-disposition"],
     ),
     Check(
         "CLI smoke: sources",
