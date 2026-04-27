@@ -19,6 +19,7 @@ It reads only:
 - `console_read_model/generated/live_readiness_summary.json`
 - `console_read_model/generated/live_boundary_summary.json`
 - `console_read_model/generated/cieu_boundary_summary.json`
+- `console_read_model/generated/autonomy_inventory_summary.json`
 - `console_read_model/generated/generation_manifest.json`
 
 It does not read DBs, logs, active-agent markers, daemon state, raw runtime
@@ -43,6 +44,7 @@ python3 console_read_model/cli/team_console.py cross-repo-alignment
 python3 console_read_model/cli/team_console.py live-readiness
 python3 console_read_model/cli/team_console.py live-boundary
 python3 console_read_model/cli/team_console.py cieu-boundary
+python3 console_read_model/cli/team_console.py autonomy-inventory
 python3 console_read_model/cli/team_console.py validate-local
 ```
 
@@ -91,3 +93,8 @@ disabled and require manual enablement before any future live loop.
 The `cieu-boundary` command displays only the generated CIEU runtime boundary
 summary. It confirms event fixtures are dry-run only and CIEU persistence is
 disabled.
+
+The `autonomy-inventory` command displays only the generated company autonomy
+inventory summary. It confirms repository archaeology, observation maps,
+resource-sensing maps, action maps, governed tool candidates, and role matrices
+exist while live/external actions and writeback paths remain disabled.

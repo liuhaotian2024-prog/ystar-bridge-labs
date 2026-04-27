@@ -31,6 +31,8 @@
   enablement plus future implementation before any live loop.
 - CIEU runtime event boundary exists, but it is fixture/schema only and does not
   persist events.
+- Company autonomy inventory exists, but governed tool registry candidates are
+  discovery-only and all live/external actions remain disabled.
 - Local safety check wrapper exists but is not wired into CI.
 - Local safety check wrapper does not replace runtime or governance tests.
 - Capsule schema alignment is lightweight and does not validate executable cognition.

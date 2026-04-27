@@ -37,6 +37,7 @@ CURATED_SOURCES = [
     "labs_live_readiness/generated/live_readiness_report.json",
     "labs_live_boundary/generated/live_boundary_summary.json",
     "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_summary.json",
+    "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -582,6 +583,65 @@ def build_cieu_boundary_summary(cieu_boundary_summary: dict[str, Any] | None) ->
     }
 
 
+def build_autonomy_inventory_summary(autonomy_summary: dict[str, Any] | None) -> dict[str, Any]:
+    if not autonomy_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.autonomy_inventory_summary",
+            "schema_version": "v0",
+            "company_autonomy_inventory_defined": False,
+            "repo_archaeology_completed": False,
+            "observation_capability_map_defined": False,
+            "resource_sensing_map_defined": False,
+            "action_capability_map_defined": False,
+            "governed_tool_registry_candidates_defined": False,
+            "agent_role_capability_matrix_defined": False,
+            "commercial_agent_company_goal_aligned": False,
+            "governance_only_runtime": False,
+            "live_actions_enabled": False,
+            "external_actions_enabled": False,
+            "brain_writeback_enabled": False,
+            "memory_ingestion_enabled": False,
+            "cieu_persistence_enabled": False,
+            "git_push_enabled": False,
+            "daemon_control_enabled": False,
+            "email_or_external_communication_enabled": False,
+            "requires_manual_enablement": True,
+            "next_required_milestone": "L4.2 Company Autonomous Work Cycle Simulator v0",
+            "generated_summary": "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
+            "warning": "Company autonomy inventory has not been generated yet.",
+        }
+    return {
+        "schema_name": "ystar.console_read_model.generated.autonomy_inventory_summary",
+        "schema_version": "v0",
+        "company_autonomy_inventory_defined": autonomy_summary.get("company_autonomy_inventory_defined"),
+        "repo_archaeology_completed": autonomy_summary.get("repo_archaeology_completed"),
+        "observation_capability_map_defined": autonomy_summary.get("observation_capability_map_defined"),
+        "resource_sensing_map_defined": autonomy_summary.get("resource_sensing_map_defined"),
+        "action_capability_map_defined": autonomy_summary.get("action_capability_map_defined"),
+        "governed_tool_registry_candidates_defined": autonomy_summary.get(
+            "governed_tool_registry_candidates_defined"
+        ),
+        "agent_role_capability_matrix_defined": autonomy_summary.get("agent_role_capability_matrix_defined"),
+        "commercial_agent_company_goal_aligned": autonomy_summary.get("commercial_agent_company_goal_aligned"),
+        "governance_only_runtime": autonomy_summary.get("governance_only_runtime"),
+        "live_actions_enabled": autonomy_summary.get("live_actions_enabled"),
+        "external_actions_enabled": autonomy_summary.get("external_actions_enabled"),
+        "brain_writeback_enabled": autonomy_summary.get("brain_writeback_enabled"),
+        "memory_ingestion_enabled": autonomy_summary.get("memory_ingestion_enabled"),
+        "cieu_persistence_enabled": autonomy_summary.get("cieu_persistence_enabled"),
+        "git_push_enabled": autonomy_summary.get("git_push_enabled"),
+        "daemon_control_enabled": autonomy_summary.get("daemon_control_enabled"),
+        "email_or_external_communication_enabled": autonomy_summary.get(
+            "email_or_external_communication_enabled"
+        ),
+        "requires_manual_enablement": autonomy_summary.get("requires_manual_enablement"),
+        "next_required_milestone": autonomy_summary.get("next_required_milestone"),
+        "generated_summary": "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
+        "generated_report": "company_autonomy_inventory/generated/company_autonomy_report.md",
+        "warning": "Company autonomy inventory is discovery-only; all live actions remain disabled.",
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -648,6 +708,10 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_summary.json",
         files_read,
     )
+    autonomy_generated_summary = load_optional_json(
+        "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -660,6 +724,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     live_readiness_summary = build_live_readiness_summary(live_readiness_report)
     live_boundary_summary = build_live_boundary_summary(live_boundary_generated_summary)
     cieu_boundary_summary = build_cieu_boundary_summary(cieu_boundary_generated_summary)
+    autonomy_inventory_summary = build_autonomy_inventory_summary(autonomy_generated_summary)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -740,6 +805,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Live boundary harness exists as defined-disabled contracts only; no live execution is enabled.")
     if "CIEU runtime boundary exists as disabled event fixtures only; no CIEU persistence is enabled." not in open_gaps:
         open_gaps.append("CIEU runtime boundary exists as disabled event fixtures only; no CIEU persistence is enabled.")
+    if "Company autonomy inventory exists, but governed action registry candidates are not live-enabled." not in open_gaps:
+        open_gaps.append("Company autonomy inventory exists, but governed action registry candidates are not live-enabled.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -763,6 +830,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "live_readiness_summary": live_readiness_summary,
         "live_boundary_summary": live_boundary_summary,
         "cieu_boundary_summary": cieu_boundary_summary,
+        "autonomy_inventory_summary": autonomy_inventory_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -811,6 +879,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "live-readiness gate summary that keeps live execution blocked",
             "disabled live-boundary harness summary",
             "disabled CIEU runtime event boundary summary",
+            "company autonomy inventory summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -838,6 +907,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "minimal live governed loop",
             "enabled live-boundary harness",
             "enabled CIEU runtime event persistence",
+            "approved governed action registry",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -857,6 +927,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "build live boundary harness before any runtime execution",
             "implement live boundary gates without enabling runtime execution",
             "define CIEU runtime event writer verification without enabling persistence",
+            "simulate a company autonomous work cycle without enabling live actions",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -870,6 +941,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "no live boundary harness or operator approval gate",
             "live boundary gates are defined but disabled",
             "CIEU runtime event boundary is defined but persistence is disabled",
+            "governed action registry candidates are mapped but disabled",
         ],
         "safety_boundaries": [
             "no DB reads",
@@ -889,6 +961,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "live-readiness gate forbids action/CIEU/brain/memory writes",
             "live-boundary harness is disabled and requires manual enablement",
             "CIEU runtime event boundary is disabled and forbids persistence",
+            "company autonomy inventory is discovery-only and live actions remain disabled",
         ],
     }
 
@@ -913,6 +986,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/live_readiness_summary.json",
             "console_read_model/generated/live_boundary_summary.json",
             "console_read_model/generated/cieu_boundary_summary.json",
+            "console_read_model/generated/autonomy_inventory_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -965,6 +1039,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "manifest. It confirms boundary definitions remain disabled.\n\n"
         "`cieu_boundary_summary.json` is derived from the generated CIEU runtime\n"
         "boundary manifest. It confirms event fixtures are dry-run only and persistence is disabled.\n\n"
+        "`autonomy_inventory_summary.json` is derived from the generated company\n"
+        "autonomy inventory. It confirms capability maps and tool candidates exist while live actions remain disabled.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -985,6 +1061,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/live_readiness_summary.json", live_readiness_summary, generated_files)
     write_json("console_read_model/generated/live_boundary_summary.json", live_boundary_summary, generated_files)
     write_json("console_read_model/generated/cieu_boundary_summary.json", cieu_boundary_summary, generated_files)
+    write_json("console_read_model/generated/autonomy_inventory_summary.json", autonomy_inventory_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -1040,6 +1117,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     live_readiness = snapshot.get("live_readiness_summary", {})
     live_boundary = snapshot.get("live_boundary_summary", {})
     cieu_boundary = snapshot.get("cieu_boundary_summary", {})
+    autonomy_inventory = snapshot.get("autonomy_inventory_summary", {})
     lines.extend(
         [
             "",
@@ -1290,6 +1368,28 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- generated_sample_event: {cieu_boundary.get('generated_sample_event')}",
             f"- generated_prediction_delta_fixture: {cieu_boundary.get('generated_prediction_delta_fixture')}",
             f"- Warning: {cieu_boundary.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Company Autonomy Inventory",
+            "",
+            f"- repo_archaeology_completed: {autonomy_inventory.get('repo_archaeology_completed')}",
+            f"- observation_capability_map_defined: {autonomy_inventory.get('observation_capability_map_defined')}",
+            f"- resource_sensing_map_defined: {autonomy_inventory.get('resource_sensing_map_defined')}",
+            f"- action_capability_map_defined: {autonomy_inventory.get('action_capability_map_defined')}",
+            f"- governed_tool_registry_candidates_defined: {autonomy_inventory.get('governed_tool_registry_candidates_defined')}",
+            f"- agent_role_capability_matrix_defined: {autonomy_inventory.get('agent_role_capability_matrix_defined')}",
+            f"- commercial_agent_company_goal_aligned: {autonomy_inventory.get('commercial_agent_company_goal_aligned')}",
+            f"- governance_only_runtime: {autonomy_inventory.get('governance_only_runtime')}",
+            f"- live_actions_enabled: {autonomy_inventory.get('live_actions_enabled')}",
+            f"- external_actions_enabled: {autonomy_inventory.get('external_actions_enabled')}",
+            f"- brain_writeback_enabled: {autonomy_inventory.get('brain_writeback_enabled')}",
+            f"- memory_ingestion_enabled: {autonomy_inventory.get('memory_ingestion_enabled')}",
+            f"- cieu_persistence_enabled: {autonomy_inventory.get('cieu_persistence_enabled')}",
+            f"- next_required_milestone: {autonomy_inventory.get('next_required_milestone')}",
+            f"- Warning: {autonomy_inventory.get('warning')}",
         ]
     )
     lines.extend(

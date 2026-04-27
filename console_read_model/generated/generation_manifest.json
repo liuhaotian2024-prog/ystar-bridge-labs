@@ -19,6 +19,7 @@
     "console_read_model/generated/live_readiness_summary.json",
     "console_read_model/generated/live_boundary_summary.json",
     "console_read_model/generated/cieu_boundary_summary.json",
+    "console_read_model/generated/autonomy_inventory_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "source_files": [
@@ -41,6 +42,7 @@
     "labs_live_readiness/generated/live_readiness_report.json",
     "labs_live_boundary/generated/live_boundary_summary.json",
     "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_summary.json",
+    "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",

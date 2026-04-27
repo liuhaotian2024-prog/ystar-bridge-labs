@@ -1,0 +1,485 @@
+{
+  "schema_name": "ystar.company_autonomy_inventory.generated.agent_role_capability_matrix",
+  "schema_version": "v0",
+  "agents": [
+    {
+      "agent_id": "Aiden-CEO",
+      "role_focus": "company orchestration, goal tracking, priority setting, task delegation, business loop review",
+      "observation_channels": [
+        "codebase_observation",
+        "git_status_observation",
+        "test_result_observation",
+        "generated_report_observation",
+        "console_read_model_observation",
+        "cieu_event_observation",
+        "governance_decision_observation",
+        "runtime_readiness_observation",
+        "resource_tool_inventory_observation",
+        "market_web_observation",
+        "github_issue_pr_observation",
+        "mcp_interface_observation"
+      ],
+      "resource_sensing_channels": [
+        "repositories",
+        "cli_tools",
+        "generated_reports",
+        "test_harnesses",
+        "governance_endpoints",
+        "console_summaries",
+        "agent_brains_capsules",
+        "action_scripts",
+        "mcp_interfaces",
+        "external_tools",
+        "dirty_runtime_artifacts"
+      ],
+      "action_categories": [
+        "local_file_generation",
+        "docs_update",
+        "schema_generation",
+        "test_execution",
+        "safe_repo_scan",
+        "git_commit",
+        "git_push",
+        "github_issue",
+        "github_pr",
+        "shell_command",
+        "mcp_call",
+        "codex_execution",
+        "claude_code_execution",
+        "brain_writeback",
+        "memory_ingestion",
+        "cieu_write",
+        "daemon_start_stop",
+        "external_web_action",
+        "market_research",
+        "email_or_communication"
+      ],
+      "governed_tool_candidates": [
+        "console-read-model-tools",
+        "governance-dry-run-tools",
+        "live-boundary-tools",
+        "cieu-boundary-tools",
+        "repo-scan-tools",
+        "local-validation-tools",
+        "docs-report-tools",
+        "github-pr-issue-tools",
+        "mcp-interface-tools"
+      ],
+      "forbidden_actions": [
+        "git_push",
+        "daemon_start_stop",
+        "brain_writeback",
+        "memory_ingestion",
+        "cieu_write"
+      ],
+      "requires_governance_for": [
+        "medium_risk_actions",
+        "high_risk_actions",
+        "external_interfaces",
+        "persistence"
+      ],
+      "self_drive_scope": "set priorities and delegate governed work without direct high-risk execution",
+      "gaps": [
+        "live actions disabled",
+        "tool registry candidates not approved"
+      ]
+    },
+    {
+      "agent_id": "Ethan-CTO",
+      "role_focus": "codebase understanding, tool building, technical implementation, test validation",
+      "observation_channels": [
+        "codebase_observation",
+        "git_status_observation",
+        "test_result_observation",
+        "generated_report_observation",
+        "console_read_model_observation",
+        "cieu_event_observation",
+        "governance_decision_observation",
+        "runtime_readiness_observation",
+        "resource_tool_inventory_observation",
+        "market_web_observation",
+        "github_issue_pr_observation",
+        "mcp_interface_observation"
+      ],
+      "resource_sensing_channels": [
+        "repositories",
+        "cli_tools",
+        "generated_reports",
+        "test_harnesses",
+        "governance_endpoints",
+        "console_summaries",
+        "agent_brains_capsules",
+        "action_scripts",
+        "mcp_interfaces",
+        "external_tools",
+        "dirty_runtime_artifacts"
+      ],
+      "action_categories": [
+        "local_file_generation",
+        "docs_update",
+        "schema_generation",
+        "test_execution",
+        "safe_repo_scan",
+        "git_commit",
+        "git_push",
+        "github_issue",
+        "github_pr",
+        "shell_command",
+        "mcp_call",
+        "codex_execution",
+        "claude_code_execution",
+        "brain_writeback",
+        "memory_ingestion",
+        "cieu_write",
+        "daemon_start_stop",
+        "external_web_action",
+        "market_research",
+        "email_or_communication"
+      ],
+      "governed_tool_candidates": [
+        "console-read-model-tools",
+        "governance-dry-run-tools",
+        "live-boundary-tools",
+        "cieu-boundary-tools",
+        "repo-scan-tools",
+        "local-validation-tools",
+        "docs-report-tools",
+        "github-pr-issue-tools",
+        "mcp-interface-tools"
+      ],
+      "forbidden_actions": [
+        "bypass_governance",
+        "git_push",
+        "daemon_start_stop"
+      ],
+      "requires_governance_for": [
+        "medium_risk_actions",
+        "high_risk_actions",
+        "external_interfaces",
+        "persistence"
+      ],
+      "self_drive_scope": "build and validate tools inside governance boundaries",
+      "gaps": [
+        "live actions disabled",
+        "tool registry candidates not approved"
+      ]
+    },
+    {
+      "agent_id": "Maya-Governance",
+      "role_focus": "risk review, policy boundaries, Y-star-gov alignment, live gate readiness",
+      "observation_channels": [
+        "codebase_observation",
+        "git_status_observation",
+        "test_result_observation",
+        "generated_report_observation",
+        "console_read_model_observation",
+        "cieu_event_observation",
+        "governance_decision_observation",
+        "runtime_readiness_observation",
+        "resource_tool_inventory_observation",
+        "market_web_observation",
+        "github_issue_pr_observation",
+        "mcp_interface_observation"
+      ],
+      "resource_sensing_channels": [
+        "repositories",
+        "cli_tools",
+        "generated_reports",
+        "test_harnesses",
+        "governance_endpoints",
+        "console_summaries",
+        "agent_brains_capsules",
+        "action_scripts",
+        "mcp_interfaces",
+        "external_tools",
+        "dirty_runtime_artifacts"
+      ],
+      "action_categories": [
+        "local_file_generation",
+        "docs_update",
+        "schema_generation",
+        "test_execution",
+        "safe_repo_scan",
+        "git_commit",
+        "git_push",
+        "github_issue",
+        "github_pr",
+        "shell_command",
+        "mcp_call",
+        "codex_execution",
+        "claude_code_execution",
+        "brain_writeback",
+        "memory_ingestion",
+        "cieu_write",
+        "daemon_start_stop",
+        "external_web_action",
+        "market_research",
+        "email_or_communication"
+      ],
+      "governed_tool_candidates": [
+        "console-read-model-tools",
+        "governance-dry-run-tools",
+        "live-boundary-tools",
+        "cieu-boundary-tools",
+        "repo-scan-tools",
+        "local-validation-tools",
+        "docs-report-tools",
+        "github-pr-issue-tools",
+        "mcp-interface-tools"
+      ],
+      "forbidden_actions": [
+        "business_action_execution",
+        "candidate_auto_approval"
+      ],
+      "requires_governance_for": [
+        "medium_risk_actions",
+        "high_risk_actions",
+        "external_interfaces",
+        "persistence"
+      ],
+      "self_drive_scope": "evaluate boundaries and readiness without executing business actions",
+      "gaps": [
+        "live actions disabled",
+        "tool registry candidates not approved"
+      ]
+    },
+    {
+      "agent_id": "Ryan-Platform",
+      "role_focus": "CLI/MCP/platform integration, execution substrate mapping, automation plumbing",
+      "observation_channels": [
+        "codebase_observation",
+        "git_status_observation",
+        "test_result_observation",
+        "generated_report_observation",
+        "console_read_model_observation",
+        "cieu_event_observation",
+        "governance_decision_observation",
+        "runtime_readiness_observation",
+        "resource_tool_inventory_observation",
+        "market_web_observation",
+        "github_issue_pr_observation",
+        "mcp_interface_observation"
+      ],
+      "resource_sensing_channels": [
+        "repositories",
+        "cli_tools",
+        "generated_reports",
+        "test_harnesses",
+        "governance_endpoints",
+        "console_summaries",
+        "agent_brains_capsules",
+        "action_scripts",
+        "mcp_interfaces",
+        "external_tools",
+        "dirty_runtime_artifacts"
+      ],
+      "action_categories": [
+        "local_file_generation",
+        "docs_update",
+        "schema_generation",
+        "test_execution",
+        "safe_repo_scan",
+        "git_commit",
+        "git_push",
+        "github_issue",
+        "github_pr",
+        "shell_command",
+        "mcp_call",
+        "codex_execution",
+        "claude_code_execution",
+        "brain_writeback",
+        "memory_ingestion",
+        "cieu_write",
+        "daemon_start_stop",
+        "external_web_action",
+        "market_research",
+        "email_or_communication"
+      ],
+      "governed_tool_candidates": [
+        "console-read-model-tools",
+        "governance-dry-run-tools",
+        "live-boundary-tools",
+        "cieu-boundary-tools",
+        "repo-scan-tools",
+        "local-validation-tools",
+        "docs-report-tools",
+        "github-pr-issue-tools",
+        "mcp-interface-tools"
+      ],
+      "forbidden_actions": [
+        "enable_live_actions_without_governance",
+        "external_action_execution"
+      ],
+      "requires_governance_for": [
+        "medium_risk_actions",
+        "high_risk_actions",
+        "external_interfaces",
+        "persistence"
+      ],
+      "self_drive_scope": "map and wrap platform capabilities without enabling live action",
+      "gaps": [
+        "live actions disabled",
+        "tool registry candidates not approved"
+      ]
+    },
+    {
+      "agent_id": "Samantha-Secretary",
+      "role_focus": "memory/doc/report coordination, communication drafts, schedule/status/read-model support",
+      "observation_channels": [
+        "codebase_observation",
+        "git_status_observation",
+        "test_result_observation",
+        "generated_report_observation",
+        "console_read_model_observation",
+        "cieu_event_observation",
+        "governance_decision_observation",
+        "runtime_readiness_observation",
+        "resource_tool_inventory_observation",
+        "market_web_observation",
+        "github_issue_pr_observation",
+        "mcp_interface_observation"
+      ],
+      "resource_sensing_channels": [
+        "repositories",
+        "cli_tools",
+        "generated_reports",
+        "test_harnesses",
+        "governance_endpoints",
+        "console_summaries",
+        "agent_brains_capsules",
+        "action_scripts",
+        "mcp_interfaces",
+        "external_tools",
+        "dirty_runtime_artifacts"
+      ],
+      "action_categories": [
+        "local_file_generation",
+        "docs_update",
+        "schema_generation",
+        "test_execution",
+        "safe_repo_scan",
+        "git_commit",
+        "git_push",
+        "github_issue",
+        "github_pr",
+        "shell_command",
+        "mcp_call",
+        "codex_execution",
+        "claude_code_execution",
+        "brain_writeback",
+        "memory_ingestion",
+        "cieu_write",
+        "daemon_start_stop",
+        "external_web_action",
+        "market_research",
+        "email_or_communication"
+      ],
+      "governed_tool_candidates": [
+        "console-read-model-tools",
+        "governance-dry-run-tools",
+        "live-boundary-tools",
+        "cieu-boundary-tools",
+        "repo-scan-tools",
+        "local-validation-tools",
+        "docs-report-tools",
+        "github-pr-issue-tools",
+        "mcp-interface-tools"
+      ],
+      "forbidden_actions": [
+        "send_external_communication_without_approval",
+        "memory_ingestion"
+      ],
+      "requires_governance_for": [
+        "medium_risk_actions",
+        "high_risk_actions",
+        "external_interfaces",
+        "persistence"
+      ],
+      "self_drive_scope": "prepare summaries and handoffs without sending external communications",
+      "gaps": [
+        "live actions disabled",
+        "tool registry candidates not approved"
+      ]
+    },
+    {
+      "agent_id": "Leo-Kernel",
+      "role_focus": "kernel/runtime integrity, contract and boundary logic",
+      "observation_channels": [
+        "codebase_observation",
+        "git_status_observation",
+        "test_result_observation",
+        "generated_report_observation",
+        "console_read_model_observation",
+        "cieu_event_observation",
+        "governance_decision_observation",
+        "runtime_readiness_observation",
+        "resource_tool_inventory_observation",
+        "market_web_observation",
+        "github_issue_pr_observation",
+        "mcp_interface_observation"
+      ],
+      "resource_sensing_channels": [
+        "repositories",
+        "cli_tools",
+        "generated_reports",
+        "test_harnesses",
+        "governance_endpoints",
+        "console_summaries",
+        "agent_brains_capsules",
+        "action_scripts",
+        "mcp_interfaces",
+        "external_tools",
+        "dirty_runtime_artifacts"
+      ],
+      "action_categories": [
+        "local_file_generation",
+        "docs_update",
+        "schema_generation",
+        "test_execution",
+        "safe_repo_scan",
+        "git_commit",
+        "git_push",
+        "github_issue",
+        "github_pr",
+        "shell_command",
+        "mcp_call",
+        "codex_execution",
+        "claude_code_execution",
+        "brain_writeback",
+        "memory_ingestion",
+        "cieu_write",
+        "daemon_start_stop",
+        "external_web_action",
+        "market_research",
+        "email_or_communication"
+      ],
+      "governed_tool_candidates": [
+        "console-read-model-tools",
+        "governance-dry-run-tools",
+        "live-boundary-tools",
+        "cieu-boundary-tools",
+        "repo-scan-tools",
+        "local-validation-tools",
+        "docs-report-tools",
+        "github-pr-issue-tools",
+        "mcp-interface-tools"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "bypass_cieu_policy"
+      ],
+      "requires_governance_for": [
+        "medium_risk_actions",
+        "high_risk_actions",
+        "external_interfaces",
+        "persistence"
+      ],
+      "self_drive_scope": "reason about runtime contracts without direct writeback",
+      "gaps": [
+        "live actions disabled",
+        "tool registry candidates not approved"
+      ]
+    }
+  ]
+}

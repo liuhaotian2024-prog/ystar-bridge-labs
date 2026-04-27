@@ -1,0 +1,56 @@
+{
+  "schema_name": "ystar.company_autonomy_inventory.generated.repo_discovery_manifest",
+  "schema_version": "v0",
+  "repo_archaeology_completed": true,
+  "classification_method": "deterministic_lexical_path_name_and_bounded_snippet",
+  "allowed_file_extensions": [
+    ".json",
+    ".md",
+    ".py",
+    ".toml",
+    ".txt",
+    ".yaml",
+    ".yml"
+  ],
+  "scanned_roots": [
+    {
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "exists": true,
+      "write_performed": false
+    },
+    {
+      "repo_name": "Y-star-gov",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "exists": true,
+      "write_performed": false
+    },
+    {
+      "repo_name": "gov-mcp",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "exists": true,
+      "write_performed": false
+    },
+    {
+      "repo_name": "riverbed",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/riverbed",
+      "exists": false,
+      "write_performed": false
+    },
+    {
+      "repo_name": "k9log-core",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/k9log-core",
+      "exists": false,
+      "write_performed": false
+    },
+    {
+      "repo_name": "K9Audit",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/K9Audit",
+      "exists": true,
+      "write_performed": false
+    }
+  ],
+  "assets_discovered": 3766,
+  "forbidden_runtime_content_read": false,
+  "external_roots_read_only": true
+}

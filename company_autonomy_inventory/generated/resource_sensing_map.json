@@ -1,0 +1,127 @@
+{
+  "schema_name": "ystar.company_autonomy_inventory.generated.resource_sensing_map",
+  "schema_version": "v0",
+  "resources": [
+    {
+      "resource_id": "repositories",
+      "resource_type": "repository",
+      "source": "repo_discovery_manifest",
+      "sensing_method": "bounded_source_archaeology",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_review": false,
+      "governance_boundary": "source/docs/schema inventory only",
+      "notes": "resource is mapped for autonomy planning, not executed"
+    },
+    {
+      "resource_id": "cli_tools",
+      "resource_type": "cli_tool",
+      "source": "cli_or_terminal_tool assets",
+      "sensing_method": "source_inventory",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_review": false,
+      "governance_boundary": "source/docs/schema inventory only",
+      "notes": "resource is mapped for autonomy planning, not executed"
+    },
+    {
+      "resource_id": "generated_reports",
+      "resource_type": "generated_report",
+      "source": "console and generated summaries",
+      "sensing_method": "generated_json_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_review": false,
+      "governance_boundary": "source/docs/schema inventory only",
+      "notes": "resource is mapped for autonomy planning, not executed"
+    },
+    {
+      "resource_id": "test_harnesses",
+      "resource_type": "test_harness",
+      "source": "testing_or_validation assets",
+      "sensing_method": "source_inventory",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_review": false,
+      "governance_boundary": "source/docs/schema inventory only",
+      "notes": "resource is mapped for autonomy planning, not executed"
+    },
+    {
+      "resource_id": "governance_endpoints",
+      "resource_type": "governance_endpoint",
+      "source": "governance_bridge assets",
+      "sensing_method": "source_inventory",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_review": false,
+      "governance_boundary": "source/docs/schema inventory only",
+      "notes": "resource is mapped for autonomy planning, not executed"
+    },
+    {
+      "resource_id": "console_summaries",
+      "resource_type": "console_summary",
+      "source": "console_read_model/generated",
+      "sensing_method": "generated_json_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_review": false,
+      "governance_boundary": "source/docs/schema inventory only",
+      "notes": "resource is mapped for autonomy planning, not executed"
+    },
+    {
+      "resource_id": "agent_brains_capsules",
+      "resource_type": "agent_capsule",
+      "source": "agent_brains",
+      "sensing_method": "curated_capsule_files",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_review": false,
+      "governance_boundary": "source/docs/schema inventory only",
+      "notes": "resource is mapped for autonomy planning, not executed"
+    },
+    {
+      "resource_id": "action_scripts",
+      "resource_type": "action_script",
+      "source": "action_execution assets",
+      "sensing_method": "source_inventory_disabled",
+      "safe_to_read_now": false,
+      "raw_runtime_artifact": false,
+      "requires_review": true,
+      "governance_boundary": "source/docs/schema inventory only",
+      "notes": "resource is mapped for autonomy planning, not executed"
+    },
+    {
+      "resource_id": "mcp_interfaces",
+      "resource_type": "mcp_interface",
+      "source": "mcp_or_external_interface assets",
+      "sensing_method": "source_inventory",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_review": false,
+      "governance_boundary": "source/docs/schema inventory only",
+      "notes": "resource is mapped for autonomy planning, not executed"
+    },
+    {
+      "resource_id": "external_tools",
+      "resource_type": "external_tool",
+      "source": "external interface docs",
+      "sensing_method": "candidate_inventory",
+      "safe_to_read_now": false,
+      "raw_runtime_artifact": false,
+      "requires_review": true,
+      "governance_boundary": "source/docs/schema inventory only",
+      "notes": "resource is mapped for autonomy planning, not executed"
+    },
+    {
+      "resource_id": "dirty_runtime_artifacts",
+      "resource_type": "untrusted_evidence_ore",
+      "source": "quarantine summaries",
+      "sensing_method": "path_level_generated_summary",
+      "safe_to_read_now": false,
+      "raw_runtime_artifact": true,
+      "requires_review": true,
+      "governance_boundary": "generated summaries only",
+      "notes": "resource is mapped for autonomy planning, not executed"
+    }
+  ]
+}

@@ -46,6 +46,14 @@
 - `labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_summary.json`
 - `labs_cieu_runtime_boundary/generated/sample_cieu_runtime_event.json`
 - `labs_cieu_runtime_boundary/generated/sample_prediction_delta_fixture.json`
+- `company_autonomy_inventory/generated/repo_discovery_manifest.json`
+- `company_autonomy_inventory/generated/existing_asset_inventory.json`
+- `company_autonomy_inventory/generated/observation_capability_map.json`
+- `company_autonomy_inventory/generated/resource_sensing_map.json`
+- `company_autonomy_inventory/generated/action_capability_map.json`
+- `company_autonomy_inventory/generated/governed_tool_registry_candidates.json`
+- `company_autonomy_inventory/generated/agent_role_capability_matrix.json`
+- `company_autonomy_inventory/generated/company_autonomy_readiness_summary.json`
 - `console_read_model/generated/quarantine_summary.json`
 - `console_read_model/generated/safe_mining_summary.json`
 - `console_read_model/generated/review_queue_summary.json`
@@ -58,6 +66,7 @@
 - `console_read_model/generated/live_readiness_summary.json`
 - `console_read_model/generated/live_boundary_summary.json`
 - `console_read_model/generated/cieu_boundary_summary.json`
+- `console_read_model/generated/autonomy_inventory_summary.json`
 
 ## Unsafe Direct Sources
 
@@ -102,3 +111,7 @@
   boundary contracts are defined but disabled and require manual enablement.
 - CIEU runtime boundary data may be displayed only from generated boundary
   summaries and fixtures; persistence and writeback remain disabled.
+- Company autonomy inventory data may be displayed only from generated inventory
+  maps and summaries; governed tool candidates remain disabled and require
+  future wrappers, approval, Y-star-gov checks, rollback policy, and CIEU events
+  before any live action.

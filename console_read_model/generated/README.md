@@ -42,5 +42,8 @@ manifest. It confirms boundary definitions remain disabled.
 `cieu_boundary_summary.json` is derived from the generated CIEU runtime
 boundary manifest. It confirms event fixtures are dry-run only and persistence is disabled.
 
+`autonomy_inventory_summary.json` is derived from the generated company
+autonomy inventory. It confirms capability maps and tool candidates exist while live actions remain disabled.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

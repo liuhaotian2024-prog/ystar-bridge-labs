@@ -335,6 +335,7 @@ def main() -> int:
     required_labs_live_readiness_files = expected.get("required_labs_live_readiness_files", [])
     required_labs_live_boundary_files = expected.get("required_labs_live_boundary_files", [])
     required_labs_cieu_runtime_boundary_files = expected.get("required_labs_cieu_runtime_boundary_files", [])
+    required_company_autonomy_inventory_files = expected.get("required_company_autonomy_inventory_files", [])
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -411,6 +412,12 @@ def main() -> int:
         check_exists(path, report, "labs CIEU runtime boundary file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "labs CIEU runtime boundary JSON")
+
+    for rel in required_company_autonomy_inventory_files:
+        path = ROOT / rel
+        check_exists(path, report, "company autonomy inventory file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "company autonomy inventory JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -917,6 +924,71 @@ def main() -> int:
         else:
             report.fail("generated snapshot missing cieu_boundary_summary")
 
+        autonomy_inventory_summary = snapshot.get("autonomy_inventory_summary")
+        if autonomy_inventory_summary:
+            report.pass_("generated snapshot contains autonomy_inventory_summary")
+            for field in [
+                "company_autonomy_inventory_defined",
+                "repo_archaeology_completed",
+                "observation_capability_map_defined",
+                "resource_sensing_map_defined",
+                "action_capability_map_defined",
+                "governed_tool_registry_candidates_defined",
+                "agent_role_capability_matrix_defined",
+                "commercial_agent_company_goal_aligned",
+                "governance_only_runtime",
+                "live_actions_enabled",
+                "external_actions_enabled",
+                "brain_writeback_enabled",
+                "memory_ingestion_enabled",
+                "cieu_persistence_enabled",
+                "git_push_enabled",
+                "daemon_control_enabled",
+                "email_or_external_communication_enabled",
+                "requires_manual_enablement",
+                "next_required_milestone",
+                "generated_summary",
+                "generated_report",
+                "warning",
+            ]:
+                if field in autonomy_inventory_summary:
+                    report.pass_(f"snapshot autonomy_inventory_summary field present: {field}")
+                else:
+                    report.fail(f"snapshot autonomy_inventory_summary missing field: {field}")
+            for field in [
+                "company_autonomy_inventory_defined",
+                "repo_archaeology_completed",
+                "observation_capability_map_defined",
+                "resource_sensing_map_defined",
+                "action_capability_map_defined",
+                "governed_tool_registry_candidates_defined",
+                "agent_role_capability_matrix_defined",
+                "commercial_agent_company_goal_aligned",
+                "requires_manual_enablement",
+            ]:
+                if autonomy_inventory_summary.get(field) is not True:
+                    report.fail(f"snapshot autonomy_inventory_summary must keep {field}=true")
+            for field in [
+                "governance_only_runtime",
+                "live_actions_enabled",
+                "external_actions_enabled",
+                "brain_writeback_enabled",
+                "memory_ingestion_enabled",
+                "cieu_persistence_enabled",
+                "git_push_enabled",
+                "daemon_control_enabled",
+                "email_or_external_communication_enabled",
+            ]:
+                if autonomy_inventory_summary.get(field) is not False:
+                    report.fail(f"snapshot autonomy_inventory_summary must keep {field}=false")
+            if (
+                autonomy_inventory_summary.get("next_required_milestone")
+                != "L4.2 Company Autonomous Work Cycle Simulator v0"
+            ):
+                report.fail("snapshot autonomy_inventory_summary must point to L4.2 simulator milestone")
+        else:
+            report.fail("generated snapshot missing autonomy_inventory_summary")
+
     quarantine = generated_json.get("console_read_model/generated/quarantine_summary.json")
     if quarantine:
         for field in [
@@ -1300,6 +1372,65 @@ def main() -> int:
                 report.fail(f"generated CIEU boundary summary must keep {field}=false")
         if cieu_boundary.get("blocked_reason") != "cieu_runtime_boundary_defined_but_persistence_disabled":
             report.fail("generated CIEU boundary summary must keep persistence disabled")
+
+    autonomy_inventory = generated_json.get("console_read_model/generated/autonomy_inventory_summary.json")
+    if autonomy_inventory:
+        for field in [
+            "company_autonomy_inventory_defined",
+            "repo_archaeology_completed",
+            "observation_capability_map_defined",
+            "resource_sensing_map_defined",
+            "action_capability_map_defined",
+            "governed_tool_registry_candidates_defined",
+            "agent_role_capability_matrix_defined",
+            "commercial_agent_company_goal_aligned",
+            "governance_only_runtime",
+            "live_actions_enabled",
+            "external_actions_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "cieu_persistence_enabled",
+            "git_push_enabled",
+            "daemon_control_enabled",
+            "email_or_external_communication_enabled",
+            "requires_manual_enablement",
+            "next_required_milestone",
+            "generated_summary",
+            "generated_report",
+            "warning",
+        ]:
+            if field in autonomy_inventory:
+                report.pass_(f"generated autonomy inventory summary field present: {field}")
+            else:
+                report.fail(f"generated autonomy inventory summary missing field: {field}")
+        for field in [
+            "company_autonomy_inventory_defined",
+            "repo_archaeology_completed",
+            "observation_capability_map_defined",
+            "resource_sensing_map_defined",
+            "action_capability_map_defined",
+            "governed_tool_registry_candidates_defined",
+            "agent_role_capability_matrix_defined",
+            "commercial_agent_company_goal_aligned",
+            "requires_manual_enablement",
+        ]:
+            if autonomy_inventory.get(field) is not True:
+                report.fail(f"generated autonomy inventory summary must keep {field}=true")
+        for field in [
+            "governance_only_runtime",
+            "live_actions_enabled",
+            "external_actions_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "cieu_persistence_enabled",
+            "git_push_enabled",
+            "daemon_control_enabled",
+            "email_or_external_communication_enabled",
+        ]:
+            if autonomy_inventory.get(field) is not False:
+                report.fail(f"generated autonomy inventory summary must keep {field}=false")
+        if autonomy_inventory.get("next_required_milestone") != "L4.2 Company Autonomous Work Cycle Simulator v0":
+            report.fail("generated autonomy inventory summary must point to L4.2 simulator milestone")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

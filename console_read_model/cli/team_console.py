@@ -27,6 +27,7 @@ CROSS_REPO_ALIGNMENT = "console_read_model/generated/cross_repo_alignment_summar
 LIVE_READINESS = "console_read_model/generated/live_readiness_summary.json"
 LIVE_BOUNDARY = "console_read_model/generated/live_boundary_summary.json"
 CIEU_BOUNDARY = "console_read_model/generated/cieu_boundary_summary.json"
+AUTONOMY_INVENTORY = "console_read_model/generated/autonomy_inventory_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -46,7 +47,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -93,6 +94,7 @@ def load_all() -> dict[str, Any]:
         "live_readiness": load_json(LIVE_READINESS),
         "live_boundary": load_json(LIVE_BOUNDARY),
         "cieu_boundary": load_json(CIEU_BOUNDARY),
+        "autonomy_inventory": load_json(AUTONOMY_INVENTORY),
     }
 
 
@@ -480,6 +482,32 @@ def cmd_cieu_boundary(data: dict[str, Any]) -> None:
     print(f"warning: {boundary.get('warning')}")
 
 
+def cmd_autonomy_inventory(data: dict[str, Any]) -> None:
+    inventory = data["autonomy_inventory"]
+    print("# Company Autonomy Inventory")
+    print()
+    print(f"repo archaeology completed: {inventory.get('repo_archaeology_completed')}")
+    print(f"observation map defined: {inventory.get('observation_capability_map_defined')}")
+    print(f"resource sensing map defined: {inventory.get('resource_sensing_map_defined')}")
+    print(f"action map defined: {inventory.get('action_capability_map_defined')}")
+    print(f"governed tool candidates defined: {inventory.get('governed_tool_registry_candidates_defined')}")
+    print(f"agent role capability matrix defined: {inventory.get('agent_role_capability_matrix_defined')}")
+    print(f"commercial agent company goal aligned: {inventory.get('commercial_agent_company_goal_aligned')}")
+    print(f"governance-only runtime: {inventory.get('governance_only_runtime')}")
+    print(f"live actions enabled: {inventory.get('live_actions_enabled')}")
+    print(f"external actions enabled: {inventory.get('external_actions_enabled')}")
+    print(f"brain writeback enabled: {inventory.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {inventory.get('memory_ingestion_enabled')}")
+    print(f"CIEU persistence enabled: {inventory.get('cieu_persistence_enabled')}")
+    print(f"git push enabled: {inventory.get('git_push_enabled')}")
+    print(f"daemon control enabled: {inventory.get('daemon_control_enabled')}")
+    print(f"email or external communication enabled: {inventory.get('email_or_external_communication_enabled')}")
+    print(f"next required milestone: {inventory.get('next_required_milestone')}")
+    print(f"generated_summary: {inventory.get('generated_summary')}")
+    print(f"generated_report: {inventory.get('generated_report')}")
+    print(f"warning: {inventory.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -561,6 +589,12 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print(f"- {cieu_boundary.get('generated_manifest')}")
         print(f"- {cieu_boundary.get('generated_sample_event')}")
         print(f"- {cieu_boundary.get('generated_prediction_delta_fixture')}")
+    autonomy_inventory = data.get("autonomy_inventory", {})
+    if autonomy_inventory:
+        print()
+        print("Company autonomy inventory:")
+        print(f"- {autonomy_inventory.get('generated_summary')}")
+        print(f"- {autonomy_inventory.get('generated_report')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -601,6 +635,7 @@ def cmd_validate_local() -> int:
         LIVE_READINESS,
         LIVE_BOUNDARY,
         CIEU_BOUNDARY,
+        AUTONOMY_INVENTORY,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -638,6 +673,8 @@ def cmd_validate_local() -> int:
             failures.append("live_boundary_summary missing from team console snapshot")
         if "cieu_boundary_summary" not in snapshot:
             failures.append("cieu_boundary_summary missing from team console snapshot")
+        if "autonomy_inventory_summary" not in snapshot:
+            failures.append("autonomy_inventory_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -1024,6 +1061,64 @@ def cmd_validate_local() -> int:
         if cieu_boundary.get("blocked_reason") != "cieu_runtime_boundary_defined_but_persistence_disabled":
             failures.append("CIEU boundary summary blocked reason must remain persistence disabled")
 
+    autonomy_inventory = loaded.get(AUTONOMY_INVENTORY)
+    if autonomy_inventory:
+        required_fields = [
+            "company_autonomy_inventory_defined",
+            "repo_archaeology_completed",
+            "observation_capability_map_defined",
+            "resource_sensing_map_defined",
+            "action_capability_map_defined",
+            "governed_tool_registry_candidates_defined",
+            "agent_role_capability_matrix_defined",
+            "commercial_agent_company_goal_aligned",
+            "governance_only_runtime",
+            "live_actions_enabled",
+            "external_actions_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "cieu_persistence_enabled",
+            "git_push_enabled",
+            "daemon_control_enabled",
+            "email_or_external_communication_enabled",
+            "requires_manual_enablement",
+            "next_required_milestone",
+            "generated_summary",
+            "generated_report",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in autonomy_inventory:
+                failures.append(f"autonomy inventory summary missing field: {field}")
+        for field in [
+            "company_autonomy_inventory_defined",
+            "repo_archaeology_completed",
+            "observation_capability_map_defined",
+            "resource_sensing_map_defined",
+            "action_capability_map_defined",
+            "governed_tool_registry_candidates_defined",
+            "agent_role_capability_matrix_defined",
+            "commercial_agent_company_goal_aligned",
+            "requires_manual_enablement",
+        ]:
+            if autonomy_inventory.get(field) is not True:
+                failures.append(f"autonomy inventory summary must keep {field}=true")
+        for field in [
+            "governance_only_runtime",
+            "live_actions_enabled",
+            "external_actions_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "cieu_persistence_enabled",
+            "git_push_enabled",
+            "daemon_control_enabled",
+            "email_or_external_communication_enabled",
+        ]:
+            if autonomy_inventory.get(field) is not False:
+                failures.append(f"autonomy inventory summary must keep {field}=false")
+        if autonomy_inventory.get("next_required_milestone") != "L4.2 Company Autonomous Work Cycle Simulator v0":
+            failures.append("autonomy inventory summary must point to L4.2 simulator milestone")
+
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
     print(f"Required agents: {', '.join(REQUIRED_AGENTS)}")
@@ -1089,6 +1184,8 @@ def main(argv: list[str]) -> int:
         cmd_live_boundary(data)
     elif command == "cieu-boundary":
         cmd_cieu_boundary(data)
+    elif command == "autonomy-inventory":
+        cmd_autonomy_inventory(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

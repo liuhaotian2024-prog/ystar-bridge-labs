@@ -53,6 +53,12 @@ The wrapper builds the CIEU runtime boundary manifest, validates its generated
 event and prediction-delta fixtures, and exposes a `cieu-boundary` CLI smoke
 check. This does not enable CIEU persistence or write any database/store.
 
+The wrapper builds the company autonomy inventory, validates its generated
+capability maps and tool-registry candidates, and exposes an
+`autonomy-inventory` CLI smoke check. This is discovery-only and does not enable
+live actions, external actions, push, daemon control, CIEU persistence, memory
+ingestion, or brain writeback.
+
 Optional flags:
 
 - `--no-rebuild`: validate existing generated files without rebuilding them.

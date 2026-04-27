@@ -93,7 +93,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after CIEU boundary",
+        "Build company autonomy inventory",
+        ["python3", "company_autonomy_inventory/tools/build_company_autonomy_inventory.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after company autonomy inventory",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -235,6 +240,46 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "labs_cieu_runtime_boundary/generated/sample_prediction_delta_fixture.json"],
     ),
     Check(
+        "Compile company autonomy inventory builder",
+        ["python3", "-m", "py_compile", "company_autonomy_inventory/tools/build_company_autonomy_inventory.py"],
+    ),
+    Check(
+        "Validate JSON: autonomy_inventory_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/autonomy_inventory_summary.json"],
+    ),
+    Check(
+        "Validate JSON: repo_discovery_manifest.json",
+        ["python3", "-m", "json.tool", "company_autonomy_inventory/generated/repo_discovery_manifest.json"],
+    ),
+    Check(
+        "Validate JSON: existing_asset_inventory.json",
+        ["python3", "-m", "json.tool", "company_autonomy_inventory/generated/existing_asset_inventory.json"],
+    ),
+    Check(
+        "Validate JSON: observation_capability_map.json",
+        ["python3", "-m", "json.tool", "company_autonomy_inventory/generated/observation_capability_map.json"],
+    ),
+    Check(
+        "Validate JSON: resource_sensing_map.json",
+        ["python3", "-m", "json.tool", "company_autonomy_inventory/generated/resource_sensing_map.json"],
+    ),
+    Check(
+        "Validate JSON: action_capability_map.json",
+        ["python3", "-m", "json.tool", "company_autonomy_inventory/generated/action_capability_map.json"],
+    ),
+    Check(
+        "Validate JSON: governed_tool_registry_candidates.json",
+        ["python3", "-m", "json.tool", "company_autonomy_inventory/generated/governed_tool_registry_candidates.json"],
+    ),
+    Check(
+        "Validate JSON: agent_role_capability_matrix.json",
+        ["python3", "-m", "json.tool", "company_autonomy_inventory/generated/agent_role_capability_matrix.json"],
+    ),
+    Check(
+        "Validate JSON: company_autonomy_readiness_summary.json",
+        ["python3", "-m", "json.tool", "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -369,6 +414,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: cieu-boundary",
         ["python3", "console_read_model/cli/team_console.py", "cieu-boundary"],
+    ),
+    Check(
+        "CLI smoke: autonomy-inventory",
+        ["python3", "console_read_model/cli/team_console.py", "autonomy-inventory"],
     ),
     Check(
         "CLI smoke: sources",

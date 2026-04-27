@@ -1,0 +1,23 @@
+{
+  "schema_name": "ystar.company_autonomy_inventory.generated.company_autonomy_readiness_summary",
+  "schema_version": "v0",
+  "company_autonomy_inventory_defined": true,
+  "repo_archaeology_completed": true,
+  "observation_capability_map_defined": true,
+  "resource_sensing_map_defined": true,
+  "action_capability_map_defined": true,
+  "governed_tool_registry_candidates_defined": true,
+  "agent_role_capability_matrix_defined": true,
+  "commercial_agent_company_goal_aligned": true,
+  "governance_only_runtime": false,
+  "live_actions_enabled": false,
+  "external_actions_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false,
+  "cieu_persistence_enabled": false,
+  "git_push_enabled": false,
+  "daemon_control_enabled": false,
+  "email_or_external_communication_enabled": false,
+  "requires_manual_enablement": true,
+  "next_required_milestone": "L4.2 Company Autonomous Work Cycle Simulator v0"
+}

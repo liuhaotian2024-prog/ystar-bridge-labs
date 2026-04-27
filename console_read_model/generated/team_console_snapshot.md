@@ -59,6 +59,7 @@ Ready now:
 - live-readiness gate summary that keeps live execution blocked
 - disabled live-boundary harness summary
 - disabled CIEU runtime event boundary summary
+- company autonomy inventory summary
 
 Not ready:
 - runtime generator
@@ -86,12 +87,13 @@ Not ready:
 - minimal live governed loop
 - enabled live-boundary harness
 - enabled CIEU runtime event persistence
+- approved governed action registry
 
 ## Runtime Artifact Quarantine Summary
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 216
+- Artifacts classified: 211
 - Unsafe artifacts count: 172
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
@@ -104,10 +106,10 @@ Not ready:
   - DREAM_REPORT: 32
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
-  - FRAMEWORK_FILE: 4
+  - FRAMEWORK_FILE: 5
   - LOG_RUNTIME: 31
   - PYCACHE: 31
-  - UNKNOWN_OR_NON_RUNTIME: 40
+  - UNKNOWN_OR_NON_RUNTIME: 34
   - UNKNOWN_RUNTIME_ARTIFACT: 10
   - WHITELIST_REPORT: 1
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
@@ -145,8 +147,8 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 216
-- Artifacts with disposition: 216
+- Total artifacts: 211
+- Artifacts with disposition: 211
 - Safe-mined to review queue: 20
 - Forbidden direct read count: 106
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
@@ -158,10 +160,10 @@ Not ready:
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 31
-  - ignored_or_non_runtime: 44
+  - ignored_or_non_runtime: 39
   - safe_mined_to_review_queue: 20
 - Evidence scoring status:
-  - not_started: 216
+  - not_started: 211
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -217,9 +219,9 @@ Not ready:
 
 ## Labs Runtime Governance Acceptance
 
-- accepted: True
-- checks_passed: 12
-- checks_total: 12
+- accepted: False
+- checks_passed: 10
+- checks_total: 10
 - roles_covered: Aiden-CEO, Ethan-CTO, Samantha-Secretary
 - decision_counts:
   - allow: 3
@@ -251,7 +253,7 @@ Not ready:
 
 ## Labs Live Readiness
 
-- dry_run_governance_ready: True
+- dry_run_governance_ready: False
 - minimal_live_loop_ready: False
 - minimal_live_loop_status: blocked_until_required_gates_exist
 - recommended_next_phase: build_live_boundary_harness_not_runtime_execution
@@ -311,6 +313,24 @@ Not ready:
 - generated_prediction_delta_fixture: labs_cieu_runtime_boundary/generated/sample_prediction_delta_fixture.json
 - Warning: CIEU runtime boundary is defined but persistence is disabled. It does not execute actions, write CIEU, write brain or memory, approve candidates, or ingest raw artifacts.
 
+## Company Autonomy Inventory
+
+- repo_archaeology_completed: True
+- observation_capability_map_defined: True
+- resource_sensing_map_defined: True
+- action_capability_map_defined: True
+- governed_tool_registry_candidates_defined: True
+- agent_role_capability_matrix_defined: True
+- commercial_agent_company_goal_aligned: True
+- governance_only_runtime: False
+- live_actions_enabled: False
+- external_actions_enabled: False
+- brain_writeback_enabled: False
+- memory_ingestion_enabled: False
+- cieu_persistence_enabled: False
+- next_required_milestone: L4.2 Company Autonomous Work Cycle Simulator v0
+- Warning: Company autonomy inventory is discovery-only; all live actions remain disabled.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -338,6 +358,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - build live boundary harness before any runtime execution
 - implement live boundary gates without enabling runtime execution
 - define CIEU runtime event writer verification without enabling persistence
+- simulate a company autonomous work cycle without enabling live actions
 
 ## Warnings / Gaps
 
@@ -365,3 +386,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Live readiness gate exists, but minimal live loop remains blocked until required gates exist.
 - Live boundary harness exists as defined-disabled contracts only; no live execution is enabled.
 - CIEU runtime boundary exists as disabled event fixtures only; no CIEU persistence is enabled.
+- Company autonomy inventory exists, but governed action registry candidates are not live-enabled.

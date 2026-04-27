@@ -1,0 +1,26 @@
+{
+  "schema_name": "ystar.company_autonomy_inventory.governed_tool_registry_schema",
+  "schema_version": "v0",
+  "required_fields": [
+    "tool_id",
+    "tool_name",
+    "source_asset_ids",
+    "owner_agent_candidate",
+    "tool_category",
+    "input_contract_required",
+    "output_contract_required",
+    "risk_tier",
+    "allowed_paths",
+    "denied_paths",
+    "requires_network",
+    "requires_credentials",
+    "requires_operator_approval",
+    "requires_y_star_gov",
+    "requires_cieu_event",
+    "requires_rollback_policy",
+    "live_enabled",
+    "readiness",
+    "notes"
+  ],
+  "hard_rule": "live_enabled must be false for every v0 candidate"
+}

@@ -91,3 +91,10 @@ The snapshot can expose a CIEU runtime boundary summary derived from
 confirms future CIEU event envelopes and prediction-delta fixtures are defined
 while persistence, CIEU writes, brain writeback, and memory ingestion remain
 disabled.
+
+The snapshot can expose a company autonomy inventory summary derived from
+`company_autonomy_inventory/generated/company_autonomy_readiness_summary.json`.
+This maps existing observation, resource-sensing, action, tool-registry, and
+role-capability assets for future autonomy work. It is discovery-only: live
+actions, external actions, CIEU persistence, memory ingestion, brain writeback,
+daemon control, and push remain disabled.

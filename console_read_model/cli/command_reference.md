@@ -49,6 +49,10 @@ python3 console_read_model/cli/team_console.py <command>
 - `cieu-boundary`: Prints the generated CIEU runtime boundary summary:
   runtime event schema status, prediction-delta fixture status, persistence
   disabled flags, and required manual enablement.
+- `autonomy-inventory`: Prints the generated company autonomy inventory
+  summary: repo archaeology status, observation/resource/action maps, governed
+  tool candidates, agent role matrix, disabled live/external actions, and the
+  next required autonomy simulator milestone.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

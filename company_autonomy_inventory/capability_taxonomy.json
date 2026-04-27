@@ -1,0 +1,27 @@
+{
+  "schema_name": "ystar.company_autonomy_inventory.capability_taxonomy",
+  "schema_version": "v0",
+  "capability_classes": [
+    "brain_and_memory",
+    "agent_identity",
+    "console_and_read_model",
+    "governance_bridge",
+    "pre_u_counterfactual",
+    "cieu_event_boundary",
+    "cieu_helpers_or_audit",
+    "hook_or_gate",
+    "cli_or_terminal_tool",
+    "mcp_or_external_interface",
+    "resource_sensing",
+    "market_or_web_observation",
+    "repo_or_code_observation",
+    "scheduler_or_daemon",
+    "skill_library_or_tooling",
+    "action_execution",
+    "auto_commit_or_git_action",
+    "testing_or_validation",
+    "reporting_or_status",
+    "safety_or_quarantine"
+  ],
+  "classification_method": "deterministic_lexical_path_name_and_bounded_snippet"
+}
