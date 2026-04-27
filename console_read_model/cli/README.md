@@ -9,6 +9,7 @@ It reads only:
 - `console_read_model/generated/readiness_summary.json`
 - `console_read_model/generated/quarantine_summary.json`
 - `console_read_model/generated/safe_mining_summary.json`
+- `console_read_model/generated/review_queue_summary.json`
 - `console_read_model/generated/generation_manifest.json`
 
 It does not read DBs, logs, active-agent markers, daemon state, raw runtime
@@ -23,6 +24,7 @@ python3 console_read_model/cli/team_console.py agent Ethan-CTO
 python3 console_read_model/cli/team_console.py readiness
 python3 console_read_model/cli/team_console.py quarantine
 python3 console_read_model/cli/team_console.py mining-candidates
+python3 console_read_model/cli/team_console.py review-queue
 python3 console_read_model/cli/team_console.py validate-local
 ```
 
@@ -36,3 +38,6 @@ daemon state directly.
 The `mining-candidates` command displays only the generated safe-mining summary.
 It does not open raw reports. Candidate snippets remain review assets and are
 not brain memory, CIEU records, or writeback approval.
+
+The `review-queue` command displays only the generated candidate review queue
+summary. Entries remain pending review and not ingested.

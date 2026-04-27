@@ -1,0 +1,37 @@
+{
+  "schema_name": "ystar.console_read_model.generated.review_queue_summary",
+  "schema_version": "v0",
+  "review_count": 20,
+  "statuses": {
+    "pending_review": 20
+  },
+  "ingestion_statuses": {
+    "not_ingested": 20
+  },
+  "intended_use_summary": {
+    "memory_continuity_hint": 10,
+    "role_brain_capsule_hint": 10,
+    "governance_gap_hint": 10,
+    "cieu_prediction_delta_hint": 9,
+    "pre_u_packet_hint": 1
+  },
+  "generated_queue_path": "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json",
+  "review_queue_manifest_ref": "runtime_artifact_quarantine/safe_mining/review_queue/generated/review_queue_manifest.json",
+  "default_review_status": "pending_review",
+  "default_ingestion_status": "not_ingested",
+  "allowed_review_actions": [
+    "approve_for_capsule_hint",
+    "approve_for_governance_gap_hint",
+    "approve_for_packet_hint",
+    "approve_for_cieu_delta_hint",
+    "reject",
+    "needs_more_context"
+  ],
+  "forbidden_actions": [
+    "direct_brain_writeback",
+    "direct_memory_ingestion",
+    "direct_cieu_write",
+    "runtime_recovery"
+  ],
+  "warning": "Review queue entries are not brain memory and require explicit approval before any future CIEU, memory, or capsule use."
+}

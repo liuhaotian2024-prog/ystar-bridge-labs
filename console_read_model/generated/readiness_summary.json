@@ -12,7 +12,8 @@
     "static snapshot generator",
     "snapshot-only team console CLI",
     "path-only runtime artifact quarantine summary",
-    "bounded Markdown safe-mining candidate index"
+    "bounded Markdown safe-mining candidate index",
+    "candidate review queue summary"
   ],
   "not_ready": [
     "runtime generator",
@@ -27,7 +28,8 @@
     "CLI integration packaging",
     "semantic validation against live runtime",
     "full runtime artifact mining or curation adapters",
-    "brain/CIEU ingestion from safe-mining candidates"
+    "brain/CIEU ingestion from safe-mining candidates",
+    "review approval workflow for candidate queue entries"
   ],
   "recommended_next_steps": [
     "wire static validator and loader into CI",
@@ -36,7 +38,8 @@
     "define CIEU prediction-delta schema",
     "add Ethan/Samantha Pre-U packet variants",
     "design safe adapters for quarantine-to-CIEU review",
-    "add human review queue for safe-mining candidates"
+    "add human review queue for safe-mining candidates",
+    "define signed review decisions for candidate queue entries"
   ],
   "blockers": [
     "no DB-safe adapter",
@@ -51,6 +54,7 @@
     "no hook/governance execution",
     "curated read-model files only",
     "quarantine summary is path-level only",
-    "safe-mining candidates are bounded Markdown snippets only"
+    "safe-mining candidates are bounded Markdown snippets only",
+    "review queue entries are pending and not ingested"
   ]
 }

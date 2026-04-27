@@ -15,3 +15,5 @@ Allowed source classes for this adapter:
 The adapter refuses DB/WAL/SHM files, logs, active-agent markers, daemon state, pycache, backups, unknown runtime artifacts, and any non-Markdown source. It caps files, lines, and characters so report inspection remains bounded.
 
 Generated files under `generated/` are candidate assets only. They may be shown by the console read model, but they still require review before any memory, CIEU, or brain pathway can use them.
+
+`review_queue/` adds the next boundary: generated candidate records become pending review entries with explicit intended-use hints and forbidden direct-ingestion actions. Review queue entries are not approvals and are not canonical memory.

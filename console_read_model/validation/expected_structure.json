@@ -44,6 +44,7 @@
     "console_read_model/generated/readiness_summary.json",
     "console_read_model/generated/quarantine_summary.json",
     "console_read_model/generated/safe_mining_summary.json",
+    "console_read_model/generated/review_queue_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "required_safe_mining_files": [
@@ -54,7 +55,15 @@
     "runtime_artifact_quarantine/safe_mining/tools/build_markdown_report_candidates.py",
     "runtime_artifact_quarantine/safe_mining/generated/README.md",
     "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
-    "runtime_artifact_quarantine/safe_mining/generated/mining_manifest.json"
+    "runtime_artifact_quarantine/safe_mining/generated/mining_manifest.json",
+    "runtime_artifact_quarantine/safe_mining/review_queue/README.md",
+    "runtime_artifact_quarantine/safe_mining/review_queue/review_policy.md",
+    "runtime_artifact_quarantine/safe_mining/review_queue/review_schema.json",
+    "runtime_artifact_quarantine/safe_mining/review_queue/open_gaps.md",
+    "runtime_artifact_quarantine/safe_mining/review_queue/tools/build_candidate_review_queue.py",
+    "runtime_artifact_quarantine/safe_mining/review_queue/generated/README.md",
+    "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json",
+    "runtime_artifact_quarantine/safe_mining/review_queue/generated/review_queue_manifest.json"
   ],
   "required_shared_schema_files": [
     "agent_brains/schema/README.md",

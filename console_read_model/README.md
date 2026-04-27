@@ -39,3 +39,8 @@ The snapshot can also expose a safe-mining candidate summary derived from
 `runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json`.
 This is still a curated generated source: the console does not open raw reports,
 and candidates remain review assets rather than brain memory or CIEU records.
+
+The snapshot can expose a candidate review queue summary derived from
+`runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json`.
+This summarizes pending review state only. Queue entries are not approved,
+ingested, or canonical.

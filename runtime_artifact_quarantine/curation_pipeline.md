@@ -8,6 +8,7 @@ runtime artifact
 → class/risk assignment
 → adapter eligibility
 → bounded extraction candidate
+→ pending review queue entry
 → human/reviewer inspection
 → CIEU evidence envelope
 → human/reviewer acceptance
@@ -23,3 +24,6 @@ brain writeback input until curated through an explicit adapter and review path.
 
 Safe mining v0 stops at bounded extraction candidates for approved Markdown
 reports. It does not create CIEU evidence envelopes or memory/writeback records.
+
+Review queue v0 converts candidates into `pending_review` entries only. It does
+not approve, ingest, or write anything to memory, brain, or CIEU.

@@ -10,6 +10,7 @@
     "runtime_artifact_quarantine/quarantine_index.json",
     "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
     "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+    "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",
@@ -239,8 +240,8 @@
     "schema_version": "v0",
     "framework_status": "path_inventory_only",
     "current_mining_level": 0,
-    "artifacts_classified": 201,
-    "unsafe_artifacts_count": 167,
+    "artifacts_classified": 197,
+    "unsafe_artifacts_count": 165,
     "classes_seen": {
       "ACTIVE_AGENT_MARKER": 17,
       "BACKUP_DB": 1,
@@ -248,14 +249,14 @@
       "DAEMON_STATE": 4,
       "DAILY_REPORT": 6,
       "DB_CORE": 1,
-      "DB_SIDECARE": 6,
+      "DB_SIDECARE": 4,
       "DREAM_REPORT": 27,
       "DRIFT_REPORT": 4,
       "ESCALATION_REPORT": 23,
-      "FRAMEWORK_FILE": 6,
+      "FRAMEWORK_FILE": 5,
       "LOG_RUNTIME": 31,
       "PYCACHE": 31,
-      "UNKNOWN_OR_NON_RUNTIME": 28,
+      "UNKNOWN_OR_NON_RUNTIME": 27,
       "UNKNOWN_RUNTIME_ARTIFACT": 10,
       "WHITELIST_REPORT": 1
     },
@@ -317,6 +318,43 @@
     },
     "warning": "Safe mining candidates are bounded review assets only. They are not brain memory, CIEU records, or approved writeback."
   },
+  "review_queue_summary": {
+    "schema_name": "ystar.console_read_model.generated.review_queue_summary",
+    "schema_version": "v0",
+    "review_count": 20,
+    "statuses": {
+      "pending_review": 20
+    },
+    "ingestion_statuses": {
+      "not_ingested": 20
+    },
+    "intended_use_summary": {
+      "memory_continuity_hint": 10,
+      "role_brain_capsule_hint": 10,
+      "governance_gap_hint": 10,
+      "cieu_prediction_delta_hint": 9,
+      "pre_u_packet_hint": 1
+    },
+    "generated_queue_path": "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json",
+    "review_queue_manifest_ref": "runtime_artifact_quarantine/safe_mining/review_queue/generated/review_queue_manifest.json",
+    "default_review_status": "pending_review",
+    "default_ingestion_status": "not_ingested",
+    "allowed_review_actions": [
+      "approve_for_capsule_hint",
+      "approve_for_governance_gap_hint",
+      "approve_for_packet_hint",
+      "approve_for_cieu_delta_hint",
+      "reject",
+      "needs_more_context"
+    ],
+    "forbidden_actions": [
+      "direct_brain_writeback",
+      "direct_memory_ingestion",
+      "direct_cieu_write",
+      "runtime_recovery"
+    ],
+    "warning": "Review queue entries are not brain memory and require explicit approval before any future CIEU, memory, or capsule use."
+  },
   "open_gaps": [
     "Static console loader exists; no frontend UI yet.",
     "No frontend UI.",
@@ -330,7 +368,8 @@
     "No multi-agent Pre-U packet generalization yet.",
     "Snapshot-only CLI exists; no interactive UI or live refresh yet.",
     "Runtime artifact quarantine is visible as a path-only summary; full artifact mining is not implemented.",
-    "Safe mining v0 produces candidate-only Markdown report snippets; no brain or CIEU ingestion exists."
+    "Safe mining v0 produces candidate-only Markdown report snippets; no brain or CIEU ingestion exists.",
+    "Candidate review queue exists, but no approval workflow or ingestion path exists."
   ],
   "warnings": [
     "Ethan execution channels are present as reference-only boundaries, not runtime launchers."

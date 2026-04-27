@@ -492,6 +492,30 @@ def main() -> int:
         else:
             report.fail("generated snapshot missing safe_mining_summary")
 
+        review_queue_summary = snapshot.get("review_queue_summary")
+        if review_queue_summary:
+            report.pass_("generated snapshot contains review_queue_summary")
+            for field in [
+                "review_count",
+                "statuses",
+                "intended_use_summary",
+                "generated_queue_path",
+                "default_review_status",
+                "default_ingestion_status",
+                "forbidden_actions",
+                "warning",
+            ]:
+                if field in review_queue_summary:
+                    report.pass_(f"snapshot review_queue_summary field present: {field}")
+                else:
+                    report.fail(f"snapshot review_queue_summary missing field: {field}")
+            if review_queue_summary.get("default_review_status") != "pending_review":
+                report.fail("snapshot review_queue_summary must remain pending_review")
+            if review_queue_summary.get("default_ingestion_status") != "not_ingested":
+                report.fail("snapshot review_queue_summary must remain not_ingested")
+        else:
+            report.fail("generated snapshot missing review_queue_summary")
+
     quarantine = generated_json.get("console_read_model/generated/quarantine_summary.json")
     if quarantine:
         for field in [
@@ -530,6 +554,33 @@ def main() -> int:
             report.fail("generated safe mining summary must remain candidate_only")
         if safe_mining.get("forbidden_next_step") != "direct_brain_writeback":
             report.fail("generated safe mining summary must forbid direct brain writeback")
+
+    review_queue = generated_json.get("console_read_model/generated/review_queue_summary.json")
+    if review_queue:
+        for field in [
+            "review_count",
+            "statuses",
+            "intended_use_summary",
+            "generated_queue_path",
+            "default_review_status",
+            "default_ingestion_status",
+            "forbidden_actions",
+            "warning",
+        ]:
+            if field in review_queue:
+                report.pass_(f"generated review queue summary field present: {field}")
+            else:
+                report.fail(f"generated review queue summary missing field: {field}")
+        if review_queue.get("default_review_status") != "pending_review":
+            report.fail("generated review queue summary must remain pending_review")
+        if review_queue.get("default_ingestion_status") != "not_ingested":
+            report.fail("generated review queue summary must remain not_ingested")
+        forbidden_actions = set(review_queue.get("forbidden_actions", []))
+        for action in ["direct_brain_writeback", "direct_memory_ingestion", "direct_cieu_write"]:
+            if action in forbidden_actions:
+                report.pass_(f"generated review queue forbids action: {action}")
+            else:
+                report.fail(f"generated review queue missing forbidden action: {action}")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

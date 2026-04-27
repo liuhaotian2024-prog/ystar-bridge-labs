@@ -12,5 +12,8 @@ artifact contents.
 indexes. It summarizes candidate counts/classes only; candidates remain
 review assets, not brain memory.
 
+`review_queue_summary.json` is derived from generated review queue files.
+It summarizes pending review state only; entries are not approved or ingested.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

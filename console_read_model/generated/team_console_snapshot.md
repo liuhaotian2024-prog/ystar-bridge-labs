@@ -49,6 +49,7 @@ Ready now:
 - snapshot-only team console CLI
 - path-only runtime artifact quarantine summary
 - bounded Markdown safe-mining candidate index
+- candidate review queue summary
 
 Not ready:
 - runtime generator
@@ -64,13 +65,14 @@ Not ready:
 - semantic validation against live runtime
 - full runtime artifact mining or curation adapters
 - brain/CIEU ingestion from safe-mining candidates
+- review approval workflow for candidate queue entries
 
 ## Runtime Artifact Quarantine Summary
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 201
-- Unsafe artifacts count: 167
+- Artifacts classified: 197
+- Unsafe artifacts count: 165
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -78,14 +80,14 @@ Not ready:
   - DAEMON_STATE: 4
   - DAILY_REPORT: 6
   - DB_CORE: 1
-  - DB_SIDECARE: 6
+  - DB_SIDECARE: 4
   - DREAM_REPORT: 27
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
-  - FRAMEWORK_FILE: 6
+  - FRAMEWORK_FILE: 5
   - LOG_RUNTIME: 31
   - PYCACHE: 31
-  - UNKNOWN_OR_NON_RUNTIME: 28
+  - UNKNOWN_OR_NON_RUNTIME: 27
   - UNKNOWN_RUNTIME_ARTIFACT: 10
   - WHITELIST_REPORT: 1
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
@@ -105,6 +107,22 @@ Not ready:
   - WHITELIST_REPORT: 1
 - Warning: Safe mining candidates are bounded review assets only. They are not brain memory, CIEU records, or approved writeback.
 
+## Runtime Artifact Candidate Review Queue
+
+- Review count: 20
+- Default review status: pending_review
+- Default ingestion status: not_ingested
+- Generated queue path: runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json
+- Statuses:
+  - pending_review: 20
+- Intended use summary:
+  - cieu_prediction_delta_hint: 9
+  - governance_gap_hint: 10
+  - memory_continuity_hint: 10
+  - pre_u_packet_hint: 1
+  - role_brain_capsule_hint: 10
+- Warning: Review queue entries are not brain memory and require explicit approval before any future CIEU, memory, or capsule use.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -122,6 +140,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - add Ethan/Samantha Pre-U packet variants
 - design safe adapters for quarantine-to-CIEU review
 - add human review queue for safe-mining candidates
+- define signed review decisions for candidate queue entries
 
 ## Warnings / Gaps
 
@@ -139,3 +158,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Snapshot-only CLI exists; no interactive UI or live refresh yet.
 - Runtime artifact quarantine is visible as a path-only summary; full artifact mining is not implemented.
 - Safe mining v0 produces candidate-only Markdown report snippets; no brain or CIEU ingestion exists.
+- Candidate review queue exists, but no approval workflow or ingestion path exists.

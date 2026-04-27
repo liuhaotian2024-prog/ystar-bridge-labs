@@ -1,0 +1,20 @@
+{
+  "schema_name": "ystar.runtime_artifact_quarantine.safe_mining.review_queue.manifest",
+  "schema_version": "v0",
+  "source_files": [
+    "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+  ],
+  "generated_files": [
+    "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json",
+    "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.md",
+    "runtime_artifact_quarantine/safe_mining/review_queue/generated/review_queue_manifest.json"
+  ],
+  "review_count": 20,
+  "statuses": {
+    "pending_review": 20
+  },
+  "ingestion_statuses": {
+    "not_ingested": 20
+  },
+  "safety_note": "Review queue generation reads only the safe-mining candidate index. It does not reopen raw artifacts and does not approve ingestion."
+}

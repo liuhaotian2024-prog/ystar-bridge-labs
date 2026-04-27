@@ -17,8 +17,11 @@
 - `runtime_artifact_quarantine/generated/runtime_artifact_manifest.json`
 - `runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json`
 - `runtime_artifact_quarantine/safe_mining/generated/mining_manifest.json`
+- `runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json`
+- `runtime_artifact_quarantine/safe_mining/review_queue/generated/review_queue_manifest.json`
 - `console_read_model/generated/quarantine_summary.json`
 - `console_read_model/generated/safe_mining_summary.json`
+- `console_read_model/generated/review_queue_summary.json`
 
 ## Unsafe Direct Sources
 
@@ -42,3 +45,5 @@
   summaries/classes/counts until future safe adapters exist.
 - Safe-mining candidate data may be displayed only from generated candidate
   indexes; candidates are not canonical memory and require review.
+- Review queue data may be displayed only from generated queue indexes; entries
+  are pending decisions, not approvals or ingestion.

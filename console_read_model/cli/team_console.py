@@ -17,6 +17,7 @@ READINESS = "console_read_model/generated/readiness_summary.json"
 MANIFEST = "console_read_model/generated/generation_manifest.json"
 QUARANTINE = "console_read_model/generated/quarantine_summary.json"
 MINING = "console_read_model/generated/safe_mining_summary.json"
+REVIEW_QUEUE = "console_read_model/generated/review_queue_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -36,7 +37,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -73,6 +74,7 @@ def load_all() -> dict[str, Any]:
         "manifest": load_json(MANIFEST),
         "quarantine": load_json(QUARANTINE),
         "mining": load_json(MINING),
+        "review_queue": load_json(REVIEW_QUEUE),
     }
 
 
@@ -224,6 +226,25 @@ def cmd_mining_candidates(data: dict[str, Any]) -> None:
     print(f"warning: {mining.get('warning')}")
 
 
+def cmd_review_queue(data: dict[str, Any]) -> None:
+    queue = data["review_queue"]
+    print("# Runtime Artifact Candidate Review Queue")
+    print()
+    print(f"review_count: {queue.get('review_count')}")
+    print(f"generated_queue_path: {queue.get('generated_queue_path')}")
+    print(f"ingestion_status: {queue.get('default_ingestion_status')}")
+    print()
+    print("statuses:")
+    for status, count in sorted(queue.get("statuses", {}).items()):
+        print(f"- {status}: {count}")
+    print()
+    print("intended_use_summary:")
+    for use, count in sorted(queue.get("intended_use_summary", {}).items()):
+        print(f"- {use}: {count}")
+    print()
+    print(f"warning: {queue.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -250,6 +271,11 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print()
         print("Safe mining candidate index:")
         print(f"- {mining.get('generated_candidate_index')}")
+    review_queue = data.get("review_queue", {})
+    if review_queue:
+        print()
+        print("Candidate review queue:")
+        print(f"- {review_queue.get('generated_queue_path')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -273,7 +299,7 @@ def cmd_validate_local() -> int:
     failures: list[str] = []
     inspected: list[str] = []
     loaded: dict[str, Any] = {}
-    for rel in [SNAPSHOT, CARDS, READINESS, MANIFEST, QUARANTINE, MINING]:
+    for rel in [SNAPSHOT, CARDS, READINESS, MANIFEST, QUARANTINE, MINING, REVIEW_QUEUE]:
         try:
             loaded[rel] = load_json(rel)
             inspected.append(rel)
@@ -290,6 +316,8 @@ def cmd_validate_local() -> int:
             failures.append("quarantine_summary missing from team console snapshot")
         if "safe_mining_summary" not in snapshot:
             failures.append("safe_mining_summary missing from team console snapshot")
+        if "review_queue_summary" not in snapshot:
+            failures.append("review_queue_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -334,6 +362,30 @@ def cmd_validate_local() -> int:
             failures.append("safe mining summary must remain candidate_only")
         if mining.get("forbidden_next_step") != "direct_brain_writeback":
             failures.append("safe mining summary must forbid direct brain writeback")
+
+    review_queue = loaded.get(REVIEW_QUEUE)
+    if review_queue:
+        required_fields = [
+            "review_count",
+            "statuses",
+            "intended_use_summary",
+            "generated_queue_path",
+            "default_review_status",
+            "default_ingestion_status",
+            "forbidden_actions",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in review_queue:
+                failures.append(f"review queue summary missing field: {field}")
+        if review_queue.get("default_review_status") != "pending_review":
+            failures.append("review queue summary must remain pending_review")
+        if review_queue.get("default_ingestion_status") != "not_ingested":
+            failures.append("review queue summary must remain not_ingested")
+        forbidden = set(review_queue.get("forbidden_actions", []))
+        for action in ["direct_brain_writeback", "direct_memory_ingestion", "direct_cieu_write"]:
+            if action not in forbidden:
+                failures.append(f"review queue summary missing forbidden action: {action}")
 
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
@@ -380,6 +432,8 @@ def main(argv: list[str]) -> int:
         cmd_quarantine(data)
     elif command == "mining-candidates":
         cmd_mining_candidates(data)
+    elif command == "review-queue":
+        cmd_review_queue(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

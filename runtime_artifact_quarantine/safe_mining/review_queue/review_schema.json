@@ -1,0 +1,45 @@
+{
+  "schema_name": "ystar.runtime_artifact_quarantine.safe_mining.review_queue.schema",
+  "schema_version": "v0",
+  "description": "Reference schema for candidate review queue entries generated from safe-mined Markdown candidates.",
+  "entry_required_fields": [
+    "review_id",
+    "candidate_id",
+    "source_path",
+    "artifact_class",
+    "candidate_safety_level",
+    "review_status",
+    "ingestion_status",
+    "default_intended_use",
+    "allowed_review_actions",
+    "forbidden_actions",
+    "snippet_preview",
+    "generated_from_candidate_index_ref"
+  ],
+  "required_values": {
+    "review_status": "pending_review",
+    "ingestion_status": "not_ingested"
+  },
+  "allowed_review_actions": [
+    "approve_for_capsule_hint",
+    "approve_for_governance_gap_hint",
+    "approve_for_packet_hint",
+    "approve_for_cieu_delta_hint",
+    "reject",
+    "needs_more_context"
+  ],
+  "forbidden_actions": [
+    "direct_brain_writeback",
+    "direct_memory_ingestion",
+    "direct_cieu_write",
+    "runtime_recovery"
+  ],
+  "non_goals": [
+    "automatic approval",
+    "brain writeback",
+    "memory ingestion",
+    "CIEU writing",
+    "runtime recovery",
+    "raw artifact reading"
+  ]
+}

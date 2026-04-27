@@ -1,0 +1,626 @@
+{
+  "schema_name": "ystar.runtime_artifact_quarantine.safe_mining.review_queue",
+  "schema_version": "v0",
+  "builder": "runtime_artifact_quarantine/safe_mining/review_queue/tools/build_candidate_review_queue.py",
+  "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+  "review_count": 20,
+  "statuses": {
+    "pending_review": 20
+  },
+  "ingestion_statuses": {
+    "not_ingested": 20
+  },
+  "artifact_classes": {
+    "DREAM_REPORT": 5,
+    "DAILY_REPORT": 5,
+    "DRIFT_REPORT": 4,
+    "ESCALATION_REPORT": 5,
+    "WHITELIST_REPORT": 1
+  },
+  "intended_use_summary": {
+    "memory_continuity_hint": 10,
+    "role_brain_capsule_hint": 10,
+    "governance_gap_hint": 10,
+    "cieu_prediction_delta_hint": 9,
+    "pre_u_packet_hint": 1
+  },
+  "allowed_review_actions": [
+    "approve_for_capsule_hint",
+    "approve_for_governance_gap_hint",
+    "approve_for_packet_hint",
+    "approve_for_cieu_delta_hint",
+    "reject",
+    "needs_more_context"
+  ],
+  "forbidden_actions": [
+    "direct_brain_writeback",
+    "direct_memory_ingestion",
+    "direct_cieu_write",
+    "runtime_recovery"
+  ],
+  "default_review_status": "pending_review",
+  "default_ingestion_status": "not_ingested",
+  "entries": [
+    {
+      "review_id": "review-001",
+      "candidate_id": "mdcand-001",
+      "source_path": "reports/ceo/brain_dream_diffs/dream_diff_20260425_172837_nrem.md",
+      "artifact_class": "DREAM_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "memory_continuity_hint",
+        "role_brain_capsule_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "# Brain Dream Diff Report\nTimestamp: 2026-04-25T17:28:37\nMode: DRY-RUN (no changes applied)\nActivation log rows scanned: 2708624\n\n## Proposed New Edges (Pattern A + B)\n| Source | Target | Proposed Weight | Co-activation Count | Pattern | Rationale |\n|--------|--------|-----------------|---------------------|---------|-----------|\n| blind_spot/cieu_event:b84f8ba5-a01a-43ba-8548-cc747b0d5624 | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:39ed0b06-5f7e-4777-a331-e8eb0269fa51 | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:031649e5-e5d0-4d2e-aadb-cdaabbd4c5cd | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:0e84f053-1218-4498-a25a-94ee8d",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-002",
+      "candidate_id": "mdcand-002",
+      "source_path": "reports/ceo/brain_dream_diffs/dream_diff_20260425_185209_nrem.md",
+      "artifact_class": "DREAM_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "memory_continuity_hint",
+        "role_brain_capsule_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "# Brain Dream Diff Report\nTimestamp: 2026-04-25T18:52:09\nMode: DRY-RUN (no changes applied)\nActivation log rows scanned: 2708882\n\n## Proposed New Edges (Pattern A + B)\n| Source | Target | Proposed Weight | Co-activation Count | Pattern | Rationale |\n|--------|--------|-----------------|---------------------|---------|-----------|\n| blind_spot/cieu_event:b84f8ba5-a01a-43ba-8548-cc747b0d5624 | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:39ed0b06-5f7e-4777-a331-e8eb0269fa51 | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:031649e5-e5d0-4d2e-aadb-cdaabbd4c5cd | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:0e84f053-1218-4498-a25a-94ee8d",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-003",
+      "candidate_id": "mdcand-003",
+      "source_path": "reports/ceo/brain_dream_diffs/dream_diff_20260425_200906_nrem.md",
+      "artifact_class": "DREAM_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "memory_continuity_hint",
+        "role_brain_capsule_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "# Brain Dream Diff Report\nTimestamp: 2026-04-25T20:09:06\nMode: DRY-RUN (no changes applied)\nActivation log rows scanned: 2709177\n\n## Proposed New Edges (Pattern A + B)\n| Source | Target | Proposed Weight | Co-activation Count | Pattern | Rationale |\n|--------|--------|-----------------|---------------------|---------|-----------|\n| blind_spot/cieu_event:b84f8ba5-a01a-43ba-8548-cc747b0d5624 | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:39ed0b06-5f7e-4777-a331-e8eb0269fa51 | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:031649e5-e5d0-4d2e-aadb-cdaabbd4c5cd | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:0e84f053-1218-4498-a25a-94ee8d",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-004",
+      "candidate_id": "mdcand-004",
+      "source_path": "reports/ceo/brain_dream_diffs/dream_diff_20260425_211403_nrem.md",
+      "artifact_class": "DREAM_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "memory_continuity_hint",
+        "role_brain_capsule_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "# Brain Dream Diff Report\nTimestamp: 2026-04-25T21:14:03\nMode: DRY-RUN (no changes applied)\nActivation log rows scanned: 2710447\n\n## Proposed New Edges (Pattern A + B)\n| Source | Target | Proposed Weight | Co-activation Count | Pattern | Rationale |\n|--------|--------|-----------------|---------------------|---------|-----------|\n| blind_spot/cieu_event:b84f8ba5-a01a-43ba-8548-cc747b0d5624 | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:39ed0b06-5f7e-4777-a331-e8eb0269fa51 | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:031649e5-e5d0-4d2e-aadb-cdaabbd4c5cd | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:0e84f053-1218-4498-a25a-94ee8d",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-005",
+      "candidate_id": "mdcand-005",
+      "source_path": "reports/ceo/brain_dream_diffs/dream_diff_20260425_221936_nrem.md",
+      "artifact_class": "DREAM_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "memory_continuity_hint",
+        "role_brain_capsule_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "# Brain Dream Diff Report\nTimestamp: 2026-04-25T22:19:36\nMode: DRY-RUN (no changes applied)\nActivation log rows scanned: 2712222\n\n## Proposed New Edges (Pattern A + B)\n| Source | Target | Proposed Weight | Co-activation Count | Pattern | Rationale |\n|--------|--------|-----------------|---------------------|---------|-----------|\n| blind_spot/cieu_event:b84f8ba5-a01a-43ba-8548-cc747b0d5624 | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:39ed0b06-5f7e-4777-a331-e8eb0269fa51 | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:031649e5-e5d0-4d2e-aadb-cdaabbd4c5cd | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:0e84f053-1218-4498-a25a-94ee8d",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-006",
+      "candidate_id": "mdcand-006",
+      "source_path": "reports/daily/2026-04-25_mission_report.md",
+      "artifact_class": "DAILY_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "memory_continuity_hint",
+        "role_brain_capsule_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "# Y* Bridge Labs 每日任务进程报告\n**日期**: 2026-04-25\n**生成**: CEO Aiden (自动)\n\n## 一、今日计划 vs 实际完成\n（由CEO在每日结束时填写）\n\n## 二、各产品线进度\n### ystar-defuse\n- MVP状态：\n- 测试通过率：\n- 距离PyPI发布：\n\n### 冒犯了AI脱口秀\n- Episode进度：\n- 视频生成状态：\n\n### Y*gov核心\n- behavior rules：\n- 测试总数：\n\n## 三、明日计划\n\n## 四、需要Board关注的事项\n\n## 五、团队健康度\n=== Y* Bridge Labs Idle Learning Progress ===\n\nRole         | P1 Complete  | P2 Theories  | P3 Sims  | Last Learning\n----------------------------------------------------------------------\nceo          | 3/3          | 24           | 41       | 2026-04-25  \ncto          | 3/3          | 13           | 42       | 2026-04-23  \ncmo          | 3/3          | 9            | 14       | 2026-04-25  \ncso          | 3/3          | 3            | 13       | 2026-04-25  \ncfo          | 3/3          | 3            | 4        | ",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-007",
+      "candidate_id": "mdcand-007",
+      "source_path": "reports/daily/2026-04-25_twin_evolution.md",
+      "artifact_class": "DAILY_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "memory_continuity_hint",
+        "role_brain_capsule_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "=== Digital Twin Evolution Report ===\n\nBoard价值观已提取: 46条 (YML中tag=board_value的lesson)\nCEO能力覆盖率: 24/8 theory files (300%)\n\n局限补偿状态 (最近7天):\n  情绪波动检测: 0次异常 / 阈值 3\n  越权指挥检测: 0次 / 阈值 0\n  无预检决策: 0次 / 阈值 2\n\n总体评估:\n  ✓ CEO运行状态良好 - 未检测到Board的已知局限\n\n最后进化日期: 2026-04-25",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-008",
+      "candidate_id": "mdcand-008",
+      "source_path": "reports/daily/2026-04-26_mission_report.md",
+      "artifact_class": "DAILY_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "memory_continuity_hint",
+        "role_brain_capsule_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "# Y* Bridge Labs 每日任务进程报告\n**日期**: 2026-04-26\n**生成**: CEO Aiden (自动)\n\n## 一、今日计划 vs 实际完成\n（由CEO在每日结束时填写）\n\n## 二、各产品线进度\n### ystar-defuse\n- MVP状态：\n- 测试通过率：\n- 距离PyPI发布：\n\n### 冒犯了AI脱口秀\n- Episode进度：\n- 视频生成状态：\n\n### Y*gov核心\n- behavior rules：\n- 测试总数：\n\n## 三、明日计划\n\n## 四、需要Board关注的事项\n\n## 五、团队健康度\n=== Y* Bridge Labs Idle Learning Progress ===\n\nRole         | P1 Complete  | P2 Theories  | P3 Sims  | Last Learning\n----------------------------------------------------------------------\nceo          | 3/3          | 24           | 41       | 2026-04-26  \ncto          | 3/3          | 13           | 42       | 2026-04-26  \ncmo          | 3/3          | 9            | 14       | 2026-04-26  \ncso          | 3/3          | 3            | 13       | 2026-04-26  \ncfo          | 3/3          | 3            | 4        | ",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-009",
+      "candidate_id": "mdcand-009",
+      "source_path": "reports/daily/2026-04-26_morning.md",
+      "artifact_class": "DAILY_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "memory_continuity_hint",
+        "role_brain_capsule_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "=== Y* Bridge Labs Idle Learning Progress ===\n\nRole         | P1 Complete  | P2 Theories  | P3 Sims  | Last Learning\n----------------------------------------------------------------------\nceo          | 3/3          | 24           | 41       | 2026-04-25  \ncto          | 3/3          | 13           | 42       | 2026-04-23  \ncmo          | 3/3          | 9            | 14       | 2026-04-26  \ncso          | 3/3          | 3            | 13       | 2026-04-25  \ncfo          | 3/3          | 3            | 4        | 2026-04-18  \nsecretary    | 3/3          | 10           | 17       | 2026-04-25  \n\n=== Definitions ===\nP1 Complete: world_class_standard.md + role_heroes.md + task_type_map.md\nP2 Theories: Number of theory/*.md entries\nP3 Sims:     Number of counterfactual simulations in gaps/\n\nR",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-010",
+      "candidate_id": "mdcand-010",
+      "source_path": "reports/daily/2026-04-26_twin_evolution.md",
+      "artifact_class": "DAILY_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "memory_continuity_hint",
+        "role_brain_capsule_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "=== Digital Twin Evolution Report ===\n\nBoard价值观已提取: 46条 (YML中tag=board_value的lesson)\nCEO能力覆盖率: 24/8 theory files (300%)\n\n局限补偿状态 (最近7天):\n  情绪波动检测: 0次异常 / 阈值 3\n  越权指挥检测: 0次 / 阈值 0\n  无预检决策: 0次 / 阈值 2\n\n总体评估:\n  ✓ CEO运行状态良好 - 未检测到Board的已知局限\n\n最后进化日期: 2026-04-26",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-011",
+      "candidate_id": "mdcand-011",
+      "source_path": "reports/drift_hourly/20260425_2100.md",
+      "artifact_class": "DRIFT_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "governance_gap_hint",
+        "cieu_prediction_delta_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "# Drift Hourly Summary\nGenerated: 2026-04-25T21:03:33.885277\nPeriod: Last 1 hour\n\n## Summary\n\nTotal drift events: 39\n\n## By Rule Category\n\n- `FORGET_GUARD_K9_WARN`: 39 events\n\n## Time Distribution\n\n### 2026-04-25 20:00\n- `FORGET_GUARD_K9_WARN`: 39\n\n## Spike Detection\n\n**DRIFT_SPIKE detected**: 1 categories exceeded 3/h threshold\n\n- `FORGET_GUARD_K9_WARN`: 39 events",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-012",
+      "candidate_id": "mdcand-012",
+      "source_path": "reports/drift_hourly/20260425_2200.md",
+      "artifact_class": "DRIFT_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "governance_gap_hint",
+        "cieu_prediction_delta_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "# Drift Hourly Summary\nGenerated: 2026-04-25T22:06:59.263560\nPeriod: Last 1 hour\n\n## Summary\n\nTotal drift events: 48\n\n## By Rule Category\n\n- `FORGET_GUARD_K9_WARN`: 48 events\n\n## Time Distribution\n\n### 2026-04-25 21:00\n- `FORGET_GUARD_K9_WARN`: 42\n### 2026-04-25 22:00\n- `FORGET_GUARD_K9_WARN`: 6\n\n## Spike Detection\n\n**DRIFT_SPIKE detected**: 1 categories exceeded 3/h threshold\n\n- `FORGET_GUARD_K9_WARN`: 48 events",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-013",
+      "candidate_id": "mdcand-013",
+      "source_path": "reports/drift_hourly/20260425_2300.md",
+      "artifact_class": "DRIFT_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "governance_gap_hint",
+        "cieu_prediction_delta_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "# Drift Hourly Summary\nGenerated: 2026-04-25T23:05:28.441363\nPeriod: Last 1 hour\n\n## Summary\n\nTotal drift events: 32\n\n## By Rule Category\n\n- `FORGET_GUARD_K9_WARN`: 32 events\n\n## Time Distribution\n\n### 2026-04-25 22:00\n- `FORGET_GUARD_K9_WARN`: 32\n\n## Spike Detection\n\n**DRIFT_SPIKE detected**: 1 categories exceeded 3/h threshold\n\n- `FORGET_GUARD_K9_WARN`: 32 events",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-014",
+      "candidate_id": "mdcand-014",
+      "source_path": "reports/drift_hourly/20260426_0900.md",
+      "artifact_class": "DRIFT_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "governance_gap_hint",
+        "cieu_prediction_delta_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "# Drift Hourly Summary\nGenerated: 2026-04-26T09:05:34.612642\nPeriod: Last 1 hour\n\n## Summary\n\nTotal drift events: 32\n\n## By Rule Category\n\n- `FORGET_GUARD_K9_WARN`: 32 events\n\n## Time Distribution\n\n### 2026-04-26 08:00\n- `FORGET_GUARD_K9_WARN`: 32\n\n## Spike Detection\n\n**DRIFT_SPIKE detected**: 1 categories exceeded 3/h threshold\n\n- `FORGET_GUARD_K9_WARN`: 32 events",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-015",
+      "candidate_id": "mdcand-015",
+      "source_path": "reports/escalation/hook_health_1777161992.md",
+      "artifact_class": "ESCALATION_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "governance_gap_hint",
+        "cieu_prediction_delta_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "# Hook Health K9 Escalation\n\n**Violation Type**: hook_chain_missing\n**Agent ID**: test_agent\n**Timestamp**: 1777161992.4264572\n\n## Issue\nHook chain appears dead or stale (no HOOK_PRE_CALL/HOOK_POST_CALL events in 10min window).\n\n## Recommended Actions\n1. Check if gov-mcp [redacted_unsafe_reference] is running: `ps aux | grep gov-mcp`\n2. Restart hook [redacted_unsafe_reference]: `pkill -9 -f gov-mcp && cd ~/.openclaw/workspace/gov-mcp && ./start.sh`\n3. Verify hook chain: run any tool call and check for HOOK_PRE_CALL event in CIEU DB\n\n## CIEU Evidence\nEvent ID: cfb18fab-f31e-4847-bcc7-c6aeebcbd88e\nSeq Global: 1777161987161340",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-016",
+      "candidate_id": "mdcand-016",
+      "source_path": "reports/escalation/hook_health_1777163130.md",
+      "artifact_class": "ESCALATION_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "governance_gap_hint",
+        "cieu_prediction_delta_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "# Hook Health K9 Escalation\n\n**Violation Type**: hook_chain_missing\n**Agent ID**: test_agent\n**Timestamp**: 1777163130.955075\n\n## Issue\nHook chain appears dead or stale (no HOOK_PRE_CALL/HOOK_POST_CALL events in 10min window).\n\n## Recommended Actions\n1. Check if gov-mcp [redacted_unsafe_reference] is running: `ps aux | grep gov-mcp`\n2. Restart hook [redacted_unsafe_reference]: `pkill -9 -f gov-mcp && cd ~/.openclaw/workspace/gov-mcp && ./start.sh`\n3. Verify hook chain: run any tool call and check for HOOK_PRE_CALL event in CIEU DB\n\n## CIEU Evidence\nEvent ID: 4f3cad91-a5f6-4eeb-8dc8-37eeca65c4cb\nSeq Global: 1777163107607055",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-017",
+      "candidate_id": "mdcand-017",
+      "source_path": "reports/escalation/hook_health_1777164079.md",
+      "artifact_class": "ESCALATION_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "governance_gap_hint",
+        "cieu_prediction_delta_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "# Hook Health K9 Escalation\n\n**Violation Type**: hook_chain_missing\n**Agent ID**: test_agent\n**Timestamp**: 1777164079.252016\n\n## Issue\nHook chain appears dead or stale (no HOOK_PRE_CALL/HOOK_POST_CALL events in 10min window).\n\n## Recommended Actions\n1. Check if gov-mcp [redacted_unsafe_reference] is running: `ps aux | grep gov-mcp`\n2. Restart hook [redacted_unsafe_reference]: `pkill -9 -f gov-mcp && cd ~/.openclaw/workspace/gov-mcp && ./start.sh`\n3. Verify hook chain: run any tool call and check for HOOK_PRE_CALL event in CIEU DB\n\n## CIEU Evidence\nEvent ID: 0fb24427-2c84-478c-9586-1e1c827429dd\nSeq Global: 1777164024743952",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-018",
+      "candidate_id": "mdcand-018",
+      "source_path": "reports/escalation/hook_health_1777164587.md",
+      "artifact_class": "ESCALATION_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "governance_gap_hint",
+        "cieu_prediction_delta_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "# Hook Health K9 Escalation\n\n**Violation Type**: hook_chain_missing\n**Agent ID**: test_agent\n**Timestamp**: 1777164587.921738\n\n## Issue\nHook chain appears dead or stale (no HOOK_PRE_CALL/HOOK_POST_CALL events in 10min window).\n\n## Recommended Actions\n1. Check if gov-mcp [redacted_unsafe_reference] is running: `ps aux | grep gov-mcp`\n2. Restart hook [redacted_unsafe_reference]: `pkill -9 -f gov-mcp && cd ~/.openclaw/workspace/gov-mcp && ./start.sh`\n3. Verify hook chain: run any tool call and check for HOOK_PRE_CALL event in CIEU DB\n\n## CIEU Evidence\nEvent ID: deb94e82-0488-4533-91a5-a46356a43ddb\nSeq Global: 1777164566409749",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-019",
+      "candidate_id": "mdcand-019",
+      "source_path": "reports/escalation/hook_health_1777165127.md",
+      "artifact_class": "ESCALATION_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "governance_gap_hint",
+        "cieu_prediction_delta_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "# Hook Health K9 Escalation\n\n**Violation Type**: hook_chain_missing\n**Agent ID**: test_agent\n**Timestamp**: 1777165127.800935\n\n## Issue\nHook chain appears dead or stale (no HOOK_PRE_CALL/HOOK_POST_CALL events in 10min window).\n\n## Recommended Actions\n1. Check if gov-mcp [redacted_unsafe_reference] is running: `ps aux | grep gov-mcp`\n2. Restart hook [redacted_unsafe_reference]: `pkill -9 -f gov-mcp && cd ~/.openclaw/workspace/gov-mcp && ./start.sh`\n3. Verify hook chain: run any tool call and check for HOOK_PRE_CALL event in CIEU DB\n\n## CIEU Evidence\nEvent ID: 97b3069a-721b-4295-b401-fcf3c0a8861e\nSeq Global: 1777165113093282",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-020",
+      "candidate_id": "mdcand-020",
+      "source_path": "reports/whitelist_daily/2026-04-26.md",
+      "artifact_class": "WHITELIST_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "governance_gap_hint",
+        "pre_u_packet_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "[2026-04-26 04:38:47 UTC] Running whitelist coverage for 2026-04-25T04:21:43 → 2026-04-26T04:21:11",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    }
+  ],
+  "warning": "Review queue entries are not brain memory, CIEU records, or writeback approval. They require explicit future review."
+}

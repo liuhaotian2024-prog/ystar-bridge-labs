@@ -25,3 +25,5 @@ Forbidden behavior:
 - Cleaning, moving, deleting, archiving, or staging raw runtime artifacts.
 
 Candidate records are safe only as review inputs. The next allowed step is human review or a future curated queue. Direct brain writeback is explicitly forbidden.
+
+The review queue consumes only generated candidate JSON. It does not reopen raw reports. Every queue entry starts as `pending_review` and `not_ingested`.

@@ -24,6 +24,8 @@ python3 console_read_model/cli/team_console.py <command>
 - `mining-candidates`: Prints the generated safe-mining candidate summary:
   candidate count, report classes, safety level, ingestion status, generated
   candidate index, and review/writeback warning.
+- `review-queue`: Prints the generated candidate review queue summary: review
+  count, statuses, intended-use counts, generated queue path, and warning.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

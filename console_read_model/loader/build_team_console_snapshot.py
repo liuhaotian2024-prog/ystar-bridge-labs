@@ -25,6 +25,7 @@ CURATED_SOURCES = [
     "runtime_artifact_quarantine/quarantine_index.json",
     "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
     "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+    "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -154,6 +155,31 @@ def build_safe_mining_summary(candidate_index: dict[str, Any]) -> dict[str, Any]
     }
 
 
+def build_review_queue_summary(review_queue: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "schema_name": "ystar.console_read_model.generated.review_queue_summary",
+        "schema_version": "v0",
+        "review_count": review_queue.get("review_count", 0),
+        "statuses": review_queue.get("statuses", {}),
+        "ingestion_statuses": review_queue.get("ingestion_statuses", {}),
+        "intended_use_summary": review_queue.get("intended_use_summary", {}),
+        "generated_queue_path": (
+            "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+        ),
+        "review_queue_manifest_ref": (
+            "runtime_artifact_quarantine/safe_mining/review_queue/generated/review_queue_manifest.json"
+        ),
+        "default_review_status": review_queue.get("default_review_status", "pending_review"),
+        "default_ingestion_status": review_queue.get("default_ingestion_status", "not_ingested"),
+        "allowed_review_actions": review_queue.get("allowed_review_actions", []),
+        "forbidden_actions": review_queue.get("forbidden_actions", []),
+        "warning": (
+            "Review queue entries are not brain memory and require explicit approval "
+            "before any future CIEU, memory, or capsule use."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -172,8 +198,13 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
         files_read,
     )
+    review_queue = load_json(
+        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
+    review_queue_summary = build_review_queue_summary(review_queue)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -234,6 +265,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Runtime artifact quarantine is visible as a path-only summary; full artifact mining is not implemented.")
     if "Safe mining v0 produces candidate-only Markdown report snippets; no brain or CIEU ingestion exists." not in open_gaps:
         open_gaps.append("Safe mining v0 produces candidate-only Markdown report snippets; no brain or CIEU ingestion exists.")
+    if "Candidate review queue exists, but no approval workflow or ingestion path exists." not in open_gaps:
+        open_gaps.append("Candidate review queue exists, but no approval workflow or ingestion path exists.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -247,6 +280,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "data_safety": team_model.get("data_safety", {}),
         "quarantine_summary": quarantine_summary,
         "safe_mining_summary": safe_mining_summary,
+        "review_queue_summary": review_queue_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -285,6 +319,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "snapshot-only team console CLI",
             "path-only runtime artifact quarantine summary",
             "bounded Markdown safe-mining candidate index",
+            "candidate review queue summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -300,6 +335,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "semantic validation against live runtime",
             "full runtime artifact mining or curation adapters",
             "brain/CIEU ingestion from safe-mining candidates",
+            "review approval workflow for candidate queue entries",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -309,6 +345,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "add Ethan/Samantha Pre-U packet variants",
             "design safe adapters for quarantine-to-CIEU review",
             "add human review queue for safe-mining candidates",
+            "define signed review decisions for candidate queue entries",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -324,6 +361,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "curated read-model files only",
             "quarantine summary is path-level only",
             "safe-mining candidates are bounded Markdown snippets only",
+            "review queue entries are pending and not ingested",
         ],
     }
 
@@ -338,6 +376,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/readiness_summary.json",
             "console_read_model/generated/quarantine_summary.json",
             "console_read_model/generated/safe_mining_summary.json",
+            "console_read_model/generated/review_queue_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -370,6 +409,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "`safe_mining_summary.json` is derived from bounded Markdown report candidate\n"
         "indexes. It summarizes candidate counts/classes only; candidates remain\n"
         "review assets, not brain memory.\n\n"
+        "`review_queue_summary.json` is derived from generated review queue files.\n"
+        "It summarizes pending review state only; entries are not approved or ingested.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -380,6 +421,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/readiness_summary.json", readiness_summary, generated_files)
     write_json("console_read_model/generated/quarantine_summary.json", quarantine_summary, generated_files)
     write_json("console_read_model/generated/safe_mining_summary.json", safe_mining_summary, generated_files)
+    write_json("console_read_model/generated/review_queue_summary.json", review_queue_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -425,6 +467,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     lines.extend([f"- {item}" for item in readiness["not_ready"]])
     quarantine = snapshot.get("quarantine_summary", {})
     safe_mining = snapshot.get("safe_mining_summary", {})
+    review_queue = snapshot.get("review_queue_summary", {})
     lines.extend(
         [
             "",
@@ -464,6 +507,24 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- Warning: {safe_mining.get('warning')}",
         ]
     )
+    lines.extend(
+        [
+            "",
+            "## Runtime Artifact Candidate Review Queue",
+            "",
+            f"- Review count: {review_queue.get('review_count')}",
+            f"- Default review status: {review_queue.get('default_review_status')}",
+            f"- Default ingestion status: {review_queue.get('default_ingestion_status')}",
+            f"- Generated queue path: {review_queue.get('generated_queue_path')}",
+            "- Statuses:",
+        ]
+    )
+    for status, count in sorted(review_queue.get("statuses", {}).items()):
+        lines.append(f"  - {status}: {count}")
+    lines.append("- Intended use summary:")
+    for use, count in sorted(review_queue.get("intended_use_summary", {}).items()):
+        lines.append(f"  - {use}: {count}")
+    lines.append(f"- Warning: {review_queue.get('warning')}")
     lines.extend(
         [
             "",
