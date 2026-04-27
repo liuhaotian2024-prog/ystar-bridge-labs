@@ -333,6 +333,7 @@ def main() -> int:
     required_labs_runtime_acceptance_files = expected.get("required_labs_runtime_acceptance_files", [])
     required_cross_repo_alignment_files = expected.get("required_cross_repo_alignment_files", [])
     required_labs_live_readiness_files = expected.get("required_labs_live_readiness_files", [])
+    required_labs_live_boundary_files = expected.get("required_labs_live_boundary_files", [])
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -397,6 +398,12 @@ def main() -> int:
         check_exists(path, report, "labs live readiness file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "labs live readiness JSON")
+
+    for rel in required_labs_live_boundary_files:
+        path = ROOT / rel
+        check_exists(path, report, "labs live boundary file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "labs live boundary JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -792,6 +799,62 @@ def main() -> int:
         else:
             report.fail("generated snapshot missing live_readiness_summary")
 
+        live_boundary_summary = snapshot.get("live_boundary_summary")
+        if live_boundary_summary:
+            report.pass_("generated snapshot contains live_boundary_summary")
+            for field in [
+                "live_boundary_defined",
+                "operator_approval_gate_defined",
+                "action_sandbox_contract_defined",
+                "rollback_policy_defined",
+                "cieu_writer_boundary_defined",
+                "live_action_execution_enabled",
+                "cieu_write_enabled",
+                "brain_writeback_enabled",
+                "memory_ingestion_enabled",
+                "candidate_auto_approval_enabled",
+                "raw_artifact_ingestion_enabled",
+                "requires_manual_enablement",
+                "minimal_live_loop_ready",
+                "blocked_reason",
+                "checklist_status_counts",
+                "ready_or_enabled_checklist_items",
+                "generated_manifest",
+                "generated_checklist",
+                "warning",
+            ]:
+                if field in live_boundary_summary:
+                    report.pass_(f"snapshot live_boundary_summary field present: {field}")
+                else:
+                    report.fail(f"snapshot live_boundary_summary missing field: {field}")
+            for field in [
+                "live_boundary_defined",
+                "operator_approval_gate_defined",
+                "action_sandbox_contract_defined",
+                "rollback_policy_defined",
+                "cieu_writer_boundary_defined",
+                "requires_manual_enablement",
+            ]:
+                if live_boundary_summary.get(field) is not True:
+                    report.fail(f"snapshot live_boundary_summary must keep {field}=true")
+            for field in [
+                "live_action_execution_enabled",
+                "cieu_write_enabled",
+                "brain_writeback_enabled",
+                "memory_ingestion_enabled",
+                "candidate_auto_approval_enabled",
+                "raw_artifact_ingestion_enabled",
+                "minimal_live_loop_ready",
+            ]:
+                if live_boundary_summary.get(field) is not False:
+                    report.fail(f"snapshot live_boundary_summary must keep {field}=false")
+            if live_boundary_summary.get("blocked_reason") != "required_live_gates_defined_but_disabled":
+                report.fail("snapshot live_boundary_summary must keep live boundary blocked")
+            if live_boundary_summary.get("ready_or_enabled_checklist_items") != 0:
+                report.fail("snapshot live_boundary_summary must not include ready/enabled checklist items")
+        else:
+            report.fail("generated snapshot missing live_boundary_summary")
+
     quarantine = generated_json.get("console_read_model/generated/quarantine_summary.json")
     if quarantine:
         for field in [
@@ -1070,6 +1133,59 @@ def main() -> int:
         ]:
             if live_readiness.get(field) is not False:
                 report.fail(f"generated live readiness summary must keep {field}=false")
+
+    live_boundary = generated_json.get("console_read_model/generated/live_boundary_summary.json")
+    if live_boundary:
+        for field in [
+            "live_boundary_defined",
+            "operator_approval_gate_defined",
+            "action_sandbox_contract_defined",
+            "rollback_policy_defined",
+            "cieu_writer_boundary_defined",
+            "live_action_execution_enabled",
+            "cieu_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+            "raw_artifact_ingestion_enabled",
+            "requires_manual_enablement",
+            "minimal_live_loop_ready",
+            "blocked_reason",
+            "checklist_status_counts",
+            "ready_or_enabled_checklist_items",
+            "generated_manifest",
+            "generated_checklist",
+            "warning",
+        ]:
+            if field in live_boundary:
+                report.pass_(f"generated live boundary summary field present: {field}")
+            else:
+                report.fail(f"generated live boundary summary missing field: {field}")
+        for field in [
+            "live_boundary_defined",
+            "operator_approval_gate_defined",
+            "action_sandbox_contract_defined",
+            "rollback_policy_defined",
+            "cieu_writer_boundary_defined",
+            "requires_manual_enablement",
+        ]:
+            if live_boundary.get(field) is not True:
+                report.fail(f"generated live boundary summary must keep {field}=true")
+        for field in [
+            "live_action_execution_enabled",
+            "cieu_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+            "raw_artifact_ingestion_enabled",
+            "minimal_live_loop_ready",
+        ]:
+            if live_boundary.get(field) is not False:
+                report.fail(f"generated live boundary summary must keep {field}=false")
+        if live_boundary.get("blocked_reason") != "required_live_gates_defined_but_disabled":
+            report.fail("generated live boundary summary must keep live boundary blocked")
+        if live_boundary.get("ready_or_enabled_checklist_items") != 0:
+            report.fail("generated live boundary summary must not include ready/enabled checklist items")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

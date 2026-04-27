@@ -27,6 +27,8 @@
   replace CI, push, or real hook enforcement.
 - Live readiness gate exists, but minimal live loop remains blocked until hook,
   sandbox, CIEU, rollback, operator approval, and writeback gates exist.
+- Live boundary harness exists, but it is defined-disabled and requires manual
+  enablement plus future implementation before any live loop.
 - Local safety check wrapper exists but is not wired into CI.
 - Local safety check wrapper does not replace runtime or governance tests.
 - Capsule schema alignment is lightweight and does not validate executable cognition.

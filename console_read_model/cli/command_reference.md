@@ -43,6 +43,9 @@ python3 console_read_model/cli/team_console.py <command>
 - `live-readiness`: Prints the generated live-readiness gate summary: dry-run
   readiness, live blockers, transition backlog count, and disabled live-write
   flags.
+- `live-boundary`: Prints the generated live-boundary harness summary:
+  boundary contracts, disabled live execution flags, manual enablement, and
+  transition checklist counts.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

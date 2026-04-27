@@ -52,6 +52,7 @@
     "console_read_model/generated/labs_acceptance_summary.json",
     "console_read_model/generated/cross_repo_alignment_summary.json",
     "console_read_model/generated/live_readiness_summary.json",
+    "console_read_model/generated/live_boundary_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "required_labs_live_readiness_files": [
@@ -66,6 +67,22 @@
     "labs_live_readiness/generated/live_readiness_report.md",
     "labs_live_readiness/generated/transition_backlog.json",
     "labs_live_readiness/generated/live_readiness_manifest.json"
+  ],
+  "required_labs_live_boundary_files": [
+    "labs_live_boundary/README.md",
+    "labs_live_boundary/live_boundary_policy.md",
+    "labs_live_boundary/live_boundary_schema.json",
+    "labs_live_boundary/operator_approval_gate_schema.json",
+    "labs_live_boundary/action_sandbox_contract.json",
+    "labs_live_boundary/rollback_policy.md",
+    "labs_live_boundary/cieu_writer_boundary.md",
+    "labs_live_boundary/open_gaps.md",
+    "labs_live_boundary/tools/build_live_boundary_manifest.py",
+    "labs_live_boundary/generated/README.md",
+    "labs_live_boundary/generated/live_boundary_manifest.json",
+    "labs_live_boundary/generated/live_boundary_summary.json",
+    "labs_live_boundary/generated/live_boundary_report.md",
+    "labs_live_boundary/generated/live_transition_checklist.json"
   ],
   "required_cross_repo_alignment_files": [
     "cross_repo_alignment/README.md",

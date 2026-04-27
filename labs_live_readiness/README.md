@@ -23,3 +23,7 @@ The answer for this milestone is intentionally conservative:
 This pack does not enable runtime execution. It creates a transition backlog for
 future live boundary harness work.
 
+L3.9 adds that first live boundary harness as a defined-disabled contract layer
+under `labs_live_boundary/`. The boundary harness documents operator approval,
+action sandbox, rollback, CIEU writer, and no-writeback requirements, but it
+still keeps all live capabilities disabled.

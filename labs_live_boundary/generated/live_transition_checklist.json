@@ -1,0 +1,82 @@
+{
+  "schema_name": "ystar.labs_live_boundary.generated.live_transition_checklist",
+  "schema_version": "v0",
+  "allowed_statuses": [
+    "not_started",
+    "defined_disabled"
+  ],
+  "items": [
+    {
+      "item_id": "live-transition-001",
+      "title": "operator approval gate implementation",
+      "status": "defined_disabled",
+      "allowed_next_step": "design_and_validate_boundary_without_enabling_live_behavior",
+      "forbidden_shortcut": "mark_live_ready_or_execute_action"
+    },
+    {
+      "item_id": "live-transition-002",
+      "title": "action sandbox implementation",
+      "status": "defined_disabled",
+      "allowed_next_step": "design_and_validate_boundary_without_enabling_live_behavior",
+      "forbidden_shortcut": "mark_live_ready_or_execute_action"
+    },
+    {
+      "item_id": "live-transition-003",
+      "title": "rollback/abort implementation",
+      "status": "defined_disabled",
+      "allowed_next_step": "design_and_validate_boundary_without_enabling_live_behavior",
+      "forbidden_shortcut": "mark_live_ready_or_execute_action"
+    },
+    {
+      "item_id": "live-transition-004",
+      "title": "CIEU writer implementation",
+      "status": "defined_disabled",
+      "allowed_next_step": "design_and_validate_boundary_without_enabling_live_behavior",
+      "forbidden_shortcut": "mark_live_ready_or_execute_action"
+    },
+    {
+      "item_id": "live-transition-005",
+      "title": "CIEU verification implementation",
+      "status": "not_started",
+      "allowed_next_step": "design_and_validate_boundary_without_enabling_live_behavior",
+      "forbidden_shortcut": "mark_live_ready_or_execute_action"
+    },
+    {
+      "item_id": "live-transition-006",
+      "title": "no-direct-brain-writeback enforcement",
+      "status": "defined_disabled",
+      "allowed_next_step": "design_and_validate_boundary_without_enabling_live_behavior",
+      "forbidden_shortcut": "mark_live_ready_or_execute_action"
+    },
+    {
+      "item_id": "live-transition-007",
+      "title": "memory ingestion approval policy",
+      "status": "defined_disabled",
+      "allowed_next_step": "design_and_validate_boundary_without_enabling_live_behavior",
+      "forbidden_shortcut": "mark_live_ready_or_execute_action"
+    },
+    {
+      "item_id": "live-transition-008",
+      "title": "live hook adapter test fixture",
+      "status": "not_started",
+      "allowed_next_step": "design_and_validate_boundary_without_enabling_live_behavior",
+      "forbidden_shortcut": "mark_live_ready_or_execute_action"
+    },
+    {
+      "item_id": "live-transition-009",
+      "title": "live acceptance test fixture",
+      "status": "not_started",
+      "allowed_next_step": "design_and_validate_boundary_without_enabling_live_behavior",
+      "forbidden_shortcut": "mark_live_ready_or_execute_action"
+    }
+  ],
+  "summary": {
+    "items_total": 9,
+    "status_counts": {
+      "defined_disabled": 6,
+      "not_started": 3
+    },
+    "ready_or_enabled_items": 0
+  },
+  "warning": "Checklist items are not live, accepted, approved, completed, or enabled."
+}

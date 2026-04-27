@@ -35,6 +35,7 @@ CURATED_SOURCES = [
     "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json",
     "cross_repo_alignment/generated/cross_repo_alignment_summary.json",
     "labs_live_readiness/generated/live_readiness_report.json",
+    "labs_live_boundary/generated/live_boundary_summary.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -457,6 +458,65 @@ def build_live_readiness_summary(live_readiness_report: dict[str, Any] | None) -
     }
 
 
+def build_live_boundary_summary(live_boundary_summary: dict[str, Any] | None) -> dict[str, Any]:
+    if not live_boundary_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.live_boundary_summary",
+            "schema_version": "v0",
+            "live_boundary_defined": False,
+            "operator_approval_gate_defined": False,
+            "action_sandbox_contract_defined": False,
+            "rollback_policy_defined": False,
+            "cieu_writer_boundary_defined": False,
+            "live_action_execution_enabled": False,
+            "cieu_write_enabled": False,
+            "brain_writeback_enabled": False,
+            "memory_ingestion_enabled": False,
+            "candidate_auto_approval_enabled": False,
+            "raw_artifact_ingestion_enabled": False,
+            "requires_manual_enablement": True,
+            "minimal_live_loop_ready": False,
+            "blocked_reason": "live_boundary_manifest_not_generated",
+            "checklist_status_counts": {},
+            "ready_or_enabled_checklist_items": 0,
+            "generated_manifest": "labs_live_boundary/generated/live_boundary_manifest.json",
+            "generated_checklist": "labs_live_boundary/generated/live_transition_checklist.json",
+            "warning": "Live boundary manifest has not been generated yet.",
+        }
+    return {
+        "schema_name": "ystar.console_read_model.generated.live_boundary_summary",
+        "schema_version": "v0",
+        "live_boundary_defined": live_boundary_summary.get("live_boundary_defined"),
+        "operator_approval_gate_defined": live_boundary_summary.get("operator_approval_gate_defined"),
+        "action_sandbox_contract_defined": live_boundary_summary.get("action_sandbox_contract_defined"),
+        "rollback_policy_defined": live_boundary_summary.get("rollback_policy_defined"),
+        "cieu_writer_boundary_defined": live_boundary_summary.get("cieu_writer_boundary_defined"),
+        "live_action_execution_enabled": live_boundary_summary.get("live_action_execution_enabled"),
+        "cieu_write_enabled": live_boundary_summary.get("cieu_write_enabled"),
+        "brain_writeback_enabled": live_boundary_summary.get("brain_writeback_enabled"),
+        "memory_ingestion_enabled": live_boundary_summary.get("memory_ingestion_enabled"),
+        "candidate_auto_approval_enabled": live_boundary_summary.get("candidate_auto_approval_enabled"),
+        "raw_artifact_ingestion_enabled": live_boundary_summary.get("raw_artifact_ingestion_enabled"),
+        "requires_manual_enablement": live_boundary_summary.get("requires_manual_enablement"),
+        "minimal_live_loop_ready": live_boundary_summary.get("minimal_live_loop_ready"),
+        "blocked_reason": live_boundary_summary.get("blocked_reason"),
+        "checklist_status_counts": live_boundary_summary.get("checklist_status_counts", {}),
+        "ready_or_enabled_checklist_items": live_boundary_summary.get("ready_or_enabled_checklist_items", 0),
+        "generated_manifest": live_boundary_summary.get(
+            "generated_manifest",
+            "labs_live_boundary/generated/live_boundary_manifest.json",
+        ),
+        "generated_checklist": live_boundary_summary.get(
+            "generated_checklist",
+            "labs_live_boundary/generated/live_transition_checklist.json",
+        ),
+        "warning": live_boundary_summary.get(
+            "warning",
+            "Live boundary harness is defined but disabled.",
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -515,6 +575,10 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "labs_live_readiness/generated/live_readiness_report.json",
         files_read,
     )
+    live_boundary_generated_summary = load_optional_json(
+        "labs_live_boundary/generated/live_boundary_summary.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -525,6 +589,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     labs_acceptance_summary = build_labs_acceptance_summary(labs_acceptance_report)
     cross_repo_alignment_summary = build_cross_repo_alignment_summary(cross_repo_generated_summary)
     live_readiness_summary = build_live_readiness_summary(live_readiness_report)
+    live_boundary_summary = build_live_boundary_summary(live_boundary_generated_summary)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -601,6 +666,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Cross-repo alignment exists for dry-run compatibility only; no CI or real hook enforcement exists.")
     if "Live readiness gate exists, but minimal live loop remains blocked until required gates exist." not in open_gaps:
         open_gaps.append("Live readiness gate exists, but minimal live loop remains blocked until required gates exist.")
+    if "Live boundary harness exists as defined-disabled contracts only; no live execution is enabled." not in open_gaps:
+        open_gaps.append("Live boundary harness exists as defined-disabled contracts only; no live execution is enabled.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -622,6 +689,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "labs_acceptance_summary": labs_acceptance_summary,
         "cross_repo_alignment_summary": cross_repo_alignment_summary,
         "live_readiness_summary": live_readiness_summary,
+        "live_boundary_summary": live_boundary_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -668,6 +736,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "dry-run labs runtime governance acceptance summary",
             "dry-run cross-repo governance alignment summary",
             "live-readiness gate summary that keeps live execution blocked",
+            "disabled live-boundary harness summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -693,6 +762,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "real runtime acceptance beyond dry-run checks",
             "real cross-repo hook enforcement beyond dry-run alignment",
             "minimal live governed loop",
+            "enabled live-boundary harness",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -710,6 +780,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "define real hook enforcement handoff after dry-run acceptance remains stable",
             "define CI handoff after cross-repo dry-run alignment remains stable",
             "build live boundary harness before any runtime execution",
+            "implement live boundary gates without enabling runtime execution",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -721,6 +792,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "no real action/CIEU/brain write path from acceptance reports",
             "no real cross-repo hook enforcement path",
             "no live boundary harness or operator approval gate",
+            "live boundary gates are defined but disabled",
         ],
         "safety_boundaries": [
             "no DB reads",
@@ -738,6 +810,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "labs runtime acceptance is dry-run only and not runtime execution",
             "cross-repo alignment is dry-run only and not CI or hook execution",
             "live-readiness gate forbids action/CIEU/brain/memory writes",
+            "live-boundary harness is disabled and requires manual enablement",
         ],
     }
 
@@ -760,6 +833,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/labs_acceptance_summary.json",
             "console_read_model/generated/cross_repo_alignment_summary.json",
             "console_read_model/generated/live_readiness_summary.json",
+            "console_read_model/generated/live_boundary_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -808,6 +882,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "alignment manifest. It is dry-run compatibility only, not CI or hook execution.\n\n"
         "`live_readiness_summary.json` is derived from the generated live-readiness\n"
         "report. It identifies blockers and keeps live execution disabled.\n\n"
+        "`live_boundary_summary.json` is derived from the generated live-boundary\n"
+        "manifest. It confirms boundary definitions remain disabled.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -826,6 +902,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/labs_acceptance_summary.json", labs_acceptance_summary, generated_files)
     write_json("console_read_model/generated/cross_repo_alignment_summary.json", cross_repo_alignment_summary, generated_files)
     write_json("console_read_model/generated/live_readiness_summary.json", live_readiness_summary, generated_files)
+    write_json("console_read_model/generated/live_boundary_summary.json", live_boundary_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -879,6 +956,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     labs_acceptance = snapshot.get("labs_acceptance_summary", {})
     cross_repo = snapshot.get("cross_repo_alignment_summary", {})
     live_readiness = snapshot.get("live_readiness_summary", {})
+    live_boundary = snapshot.get("live_boundary_summary", {})
     lines.extend(
         [
             "",
@@ -1085,6 +1163,29 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     for blocker in live_readiness.get("blockers", []):
         lines.append(f"  - {blocker}")
     lines.append(f"- Warning: {live_readiness.get('warning')}")
+    lines.extend(
+        [
+            "",
+            "## Labs Live Boundary",
+            "",
+            f"- live_boundary_defined: {live_boundary.get('live_boundary_defined')}",
+            f"- operator_approval_gate_defined: {live_boundary.get('operator_approval_gate_defined')}",
+            f"- action_sandbox_contract_defined: {live_boundary.get('action_sandbox_contract_defined')}",
+            f"- rollback_policy_defined: {live_boundary.get('rollback_policy_defined')}",
+            f"- cieu_writer_boundary_defined: {live_boundary.get('cieu_writer_boundary_defined')}",
+            f"- live_action_execution_enabled: {live_boundary.get('live_action_execution_enabled')}",
+            f"- cieu_write_enabled: {live_boundary.get('cieu_write_enabled')}",
+            f"- brain_writeback_enabled: {live_boundary.get('brain_writeback_enabled')}",
+            f"- memory_ingestion_enabled: {live_boundary.get('memory_ingestion_enabled')}",
+            f"- minimal_live_loop_ready: {live_boundary.get('minimal_live_loop_ready')}",
+            f"- requires_manual_enablement: {live_boundary.get('requires_manual_enablement')}",
+            f"- blocked_reason: {live_boundary.get('blocked_reason')}",
+            "- checklist_status_counts:",
+        ]
+    )
+    for status, count in sorted(live_boundary.get("checklist_status_counts", {}).items()):
+        lines.append(f"  - {status}: {count}")
+    lines.append(f"- Warning: {live_boundary.get('warning')}")
     lines.extend(
         [
             "",

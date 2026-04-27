@@ -20,7 +20,8 @@
     "multi-role dry-run Pre-U governance summary",
     "dry-run labs runtime governance acceptance summary",
     "dry-run cross-repo governance alignment summary",
-    "live-readiness gate summary that keeps live execution blocked"
+    "live-readiness gate summary that keeps live execution blocked",
+    "disabled live-boundary harness summary"
   ],
   "not_ready": [
     "runtime generator",
@@ -45,7 +46,8 @@
     "runtime Pre-U packet execution",
     "real runtime acceptance beyond dry-run checks",
     "real cross-repo hook enforcement beyond dry-run alignment",
-    "minimal live governed loop"
+    "minimal live governed loop",
+    "enabled live-boundary harness"
   ],
   "recommended_next_steps": [
     "wire static validator and loader into CI",
@@ -62,7 +64,8 @@
     "define a reviewed path from Pre-U dry-run snapshots to future CIEU prediction-delta examples",
     "define real hook enforcement handoff after dry-run acceptance remains stable",
     "define CI handoff after cross-repo dry-run alignment remains stable",
-    "build live boundary harness before any runtime execution"
+    "build live boundary harness before any runtime execution",
+    "implement live boundary gates without enabling runtime execution"
   ],
   "blockers": [
     "no DB-safe adapter",
@@ -73,7 +76,8 @@
     "no runtime Pre-U execution path",
     "no real action/CIEU/brain write path from acceptance reports",
     "no real cross-repo hook enforcement path",
-    "no live boundary harness or operator approval gate"
+    "no live boundary harness or operator approval gate",
+    "live boundary gates are defined but disabled"
   ],
   "safety_boundaries": [
     "no DB reads",
@@ -90,6 +94,7 @@
     "generated Pre-U packets are dry-run only and not runtime actions",
     "labs runtime acceptance is dry-run only and not runtime execution",
     "cross-repo alignment is dry-run only and not CI or hook execution",
-    "live-readiness gate forbids action/CIEU/brain/memory writes"
+    "live-readiness gate forbids action/CIEU/brain/memory writes",
+    "live-boundary harness is disabled and requires manual enablement"
   ]
 }

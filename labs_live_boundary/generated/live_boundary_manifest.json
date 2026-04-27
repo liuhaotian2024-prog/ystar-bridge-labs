@@ -1,0 +1,51 @@
+{
+  "schema_name": "ystar.labs_live_boundary.generated.live_boundary_manifest",
+  "schema_version": "v0",
+  "generated_at_policy": "deterministic_no_timestamp",
+  "live_boundary_defined": true,
+  "operator_approval_gate_defined": true,
+  "action_sandbox_contract_defined": true,
+  "rollback_policy_defined": true,
+  "cieu_writer_boundary_defined": true,
+  "no_brain_memory_writeback_rule_defined": true,
+  "live_transition_guard_defined": true,
+  "live_action_execution_enabled": false,
+  "cieu_write_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false,
+  "candidate_auto_approval_enabled": false,
+  "raw_artifact_ingestion_enabled": false,
+  "requires_manual_enablement": true,
+  "minimal_live_loop_ready": false,
+  "blocked_reason": "required_live_gates_defined_but_disabled",
+  "depends_on": [
+    "live_readiness_report",
+    "labs_runtime_acceptance",
+    "cross_repo_alignment",
+    "multi_role_pre_u_governance"
+  ],
+  "dependency_status": {
+    "dry_run_governance_ready": true,
+    "labs_runtime_acceptance_accepted": true,
+    "cross_repo_alignment_accepted": true,
+    "multi_role_pre_u_governance_ready": true
+  },
+  "transition_checklist_ref": "labs_live_boundary/generated/live_transition_checklist.json",
+  "source_refs": {
+    "live_readiness_report": "labs_live_readiness/generated/live_readiness_report.json",
+    "live_readiness_manifest": "labs_live_readiness/generated/live_readiness_manifest.json",
+    "labs_runtime_acceptance": "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json",
+    "cross_repo_alignment": "cross_repo_alignment/generated/cross_repo_status_manifest.json",
+    "multi_role_pre_u_governance": "labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json",
+    "console_snapshot": "console_read_model/generated/team_console_snapshot.json"
+  },
+  "safety_note": "Live boundary harness is defined but disabled. It does not execute actions, write CIEU, write brain or memory, approve candidates, or ingest raw artifacts.",
+  "checklist_summary": {
+    "items_total": 9,
+    "status_counts": {
+      "defined_disabled": 6,
+      "not_started": 3
+    },
+    "ready_or_enabled_items": 0
+  }
+}

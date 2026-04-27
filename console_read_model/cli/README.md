@@ -17,6 +17,7 @@ It reads only:
 - `console_read_model/generated/labs_acceptance_summary.json`
 - `console_read_model/generated/cross_repo_alignment_summary.json`
 - `console_read_model/generated/live_readiness_summary.json`
+- `console_read_model/generated/live_boundary_summary.json`
 - `console_read_model/generated/generation_manifest.json`
 
 It does not read DBs, logs, active-agent markers, daemon state, raw runtime
@@ -39,6 +40,7 @@ python3 console_read_model/cli/team_console.py pre-u-governance
 python3 console_read_model/cli/team_console.py labs-acceptance
 python3 console_read_model/cli/team_console.py cross-repo-alignment
 python3 console_read_model/cli/team_console.py live-readiness
+python3 console_read_model/cli/team_console.py live-boundary
 python3 console_read_model/cli/team_console.py validate-local
 ```
 
@@ -79,3 +81,7 @@ or hook enforcement.
 The `live-readiness` command displays only the generated live-readiness gate
 summary. It reports dry-run readiness and blockers while confirming live action,
 CIEU, memory, and brain writeback behavior remains disabled.
+
+The `live-boundary` command displays only the generated live-boundary harness
+summary. It confirms the required live boundary contracts are defined but
+disabled and require manual enablement before any future live loop.

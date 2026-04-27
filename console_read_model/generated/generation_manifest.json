@@ -17,6 +17,7 @@
     "console_read_model/generated/labs_acceptance_summary.json",
     "console_read_model/generated/cross_repo_alignment_summary.json",
     "console_read_model/generated/live_readiness_summary.json",
+    "console_read_model/generated/live_boundary_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "source_files": [
@@ -37,6 +38,7 @@
     "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json",
     "cross_repo_alignment/generated/cross_repo_alignment_summary.json",
     "labs_live_readiness/generated/live_readiness_report.json",
+    "labs_live_boundary/generated/live_boundary_summary.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",

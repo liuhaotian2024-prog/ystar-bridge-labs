@@ -1,0 +1,29 @@
+{
+  "schema_name": "ystar.labs_live_boundary.schema.live_boundary_manifest",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "live_boundary_defined",
+    "operator_approval_gate_defined",
+    "action_sandbox_contract_defined",
+    "rollback_policy_defined",
+    "cieu_writer_boundary_defined",
+    "live_action_execution_enabled",
+    "cieu_write_enabled",
+    "brain_writeback_enabled",
+    "memory_ingestion_enabled",
+    "candidate_auto_approval_enabled",
+    "raw_artifact_ingestion_enabled",
+    "requires_manual_enablement",
+    "minimal_live_loop_ready",
+    "blocked_reason",
+    "depends_on"
+  ],
+  "properties": {
+    "live_boundary_defined": {"type": "boolean"},
+    "requires_manual_enablement": {"type": "boolean"},
+    "minimal_live_loop_ready": {"type": "boolean"},
+    "blocked_reason": {"type": "string"},
+    "depends_on": {"type": "array", "items": {"type": "string"}}
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema_name": "ystar.labs_live_boundary.contract.action_sandbox",
+  "schema_version": "v0",
+  "contract_status": "defined_disabled",
+  "live_action_execution_enabled": false,
+  "required_controls": [
+    "filesystem_scope",
+    "tool_allowlist",
+    "tool_denylist",
+    "secret_access_policy",
+    "rollback_or_abort_hook",
+    "operator_approval_ref"
+  ],
+  "forbidden_shortcut": "execute_action_without_sandbox_and_operator_gate"
+}

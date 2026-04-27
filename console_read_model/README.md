@@ -80,3 +80,8 @@ The snapshot can expose a live-readiness summary derived from
 `labs_live_readiness/generated/live_readiness_report.json`. This confirms
 dry-run governance readiness while keeping live action execution, CIEU writes,
 memory ingestion, and brain writeback disabled.
+
+The snapshot can expose a live-boundary summary derived from
+`labs_live_boundary/generated/live_boundary_summary.json`. This confirms the
+operator approval, sandbox, rollback, CIEU writer, and no-writeback boundaries
+are defined but disabled. It is not hook activation or live execution.

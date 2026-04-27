@@ -83,7 +83,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after live readiness",
+        "Build live boundary manifest",
+        ["python3", "labs_live_boundary/tools/build_live_boundary_manifest.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after live boundary",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -179,6 +184,26 @@ VALIDATION_CHECKS = [
     Check(
         "Validate JSON: live_readiness_manifest.json",
         ["python3", "-m", "json.tool", "labs_live_readiness/generated/live_readiness_manifest.json"],
+    ),
+    Check(
+        "Compile labs live boundary builder",
+        ["python3", "-m", "py_compile", "labs_live_boundary/tools/build_live_boundary_manifest.py"],
+    ),
+    Check(
+        "Validate JSON: live_boundary_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/live_boundary_summary.json"],
+    ),
+    Check(
+        "Validate JSON: live_boundary_manifest.json",
+        ["python3", "-m", "json.tool", "labs_live_boundary/generated/live_boundary_manifest.json"],
+    ),
+    Check(
+        "Validate JSON: live_boundary_summary generated",
+        ["python3", "-m", "json.tool", "labs_live_boundary/generated/live_boundary_summary.json"],
+    ),
+    Check(
+        "Validate JSON: live_transition_checklist.json",
+        ["python3", "-m", "json.tool", "labs_live_boundary/generated/live_transition_checklist.json"],
     ),
     Check(
         "Validate JSON: markdown_report_candidates.json",
@@ -307,6 +332,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: live-readiness",
         ["python3", "console_read_model/cli/team_console.py", "live-readiness"],
+    ),
+    Check(
+        "CLI smoke: live-boundary",
+        ["python3", "console_read_model/cli/team_console.py", "live-boundary"],
     ),
     Check(
         "CLI smoke: sources",

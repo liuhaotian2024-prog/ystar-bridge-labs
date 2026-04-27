@@ -39,6 +39,9 @@
 - `labs_live_readiness/generated/live_readiness_report.json`
 - `labs_live_readiness/generated/transition_backlog.json`
 - `labs_live_readiness/generated/live_readiness_manifest.json`
+- `labs_live_boundary/generated/live_boundary_manifest.json`
+- `labs_live_boundary/generated/live_boundary_summary.json`
+- `labs_live_boundary/generated/live_transition_checklist.json`
 - `console_read_model/generated/quarantine_summary.json`
 - `console_read_model/generated/safe_mining_summary.json`
 - `console_read_model/generated/review_queue_summary.json`
@@ -49,6 +52,7 @@
 - `console_read_model/generated/labs_acceptance_summary.json`
 - `console_read_model/generated/cross_repo_alignment_summary.json`
 - `console_read_model/generated/live_readiness_summary.json`
+- `console_read_model/generated/live_boundary_summary.json`
 
 ## Unsafe Direct Sources
 
@@ -89,3 +93,5 @@
 - Live-readiness data may be displayed only from generated gate reports; live
   action execution, CIEU writes, memory ingestion, and brain writeback remain
   forbidden.
+- Live-boundary data may be displayed only from generated boundary summaries;
+  boundary contracts are defined but disabled and require manual enablement.

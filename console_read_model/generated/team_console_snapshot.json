@@ -20,6 +20,7 @@
     "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json",
     "cross_repo_alignment/generated/cross_repo_alignment_summary.json",
     "labs_live_readiness/generated/live_readiness_report.json",
+    "labs_live_boundary/generated/live_boundary_summary.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",
@@ -249,8 +250,8 @@
     "schema_version": "v0",
     "framework_status": "path_inventory_only",
     "current_mining_level": 0,
-    "artifacts_classified": 215,
-    "unsafe_artifacts_count": 168,
+    "artifacts_classified": 216,
+    "unsafe_artifacts_count": 171,
     "classes_seen": {
       "ACTIVE_AGENT_MARKER": 17,
       "BACKUP_DB": 1,
@@ -258,14 +259,14 @@
       "DAEMON_STATE": 4,
       "DAILY_REPORT": 6,
       "DB_CORE": 1,
-      "DB_SIDECARE": 4,
-      "DREAM_REPORT": 30,
+      "DB_SIDECARE": 6,
+      "DREAM_REPORT": 31,
       "DRIFT_REPORT": 4,
       "ESCALATION_REPORT": 23,
       "FRAMEWORK_FILE": 5,
       "LOG_RUNTIME": 31,
       "PYCACHE": 31,
-      "UNKNOWN_OR_NON_RUNTIME": 42,
+      "UNKNOWN_OR_NON_RUNTIME": 40,
       "UNKNOWN_RUNTIME_ARTIFACT": 10,
       "WHITELIST_REPORT": 1
     },
@@ -367,24 +368,24 @@
   "artifact_disposition_summary": {
     "schema_name": "ystar.console_read_model.generated.artifact_disposition_summary",
     "schema_version": "v0",
-    "total_artifacts": 215,
-    "artifacts_with_disposition": 215,
+    "total_artifacts": 216,
+    "artifacts_with_disposition": 216,
     "dispositions": {
       "deferred_requires_marker_metadata_adapter": 26,
-      "deferred_sidecar_or_transaction_file": 4,
+      "deferred_sidecar_or_transaction_file": 6,
       "deferred_requires_classification": 10,
-      "ignored_or_non_runtime": 47,
+      "ignored_or_non_runtime": 45,
       "deferred_requires_readonly_db_adapter": 2,
       "deferred_requires_bounded_log_adapter": 31,
       "ignored_generated_cache": 31,
       "safe_mined_to_review_queue": 20,
-      "deferred_markdown_report_not_selected": 44
+      "deferred_markdown_report_not_selected": 45
     },
     "artifact_classes": {
       "DAEMON_STATE": 4,
-      "DB_SIDECARE": 4,
+      "DB_SIDECARE": 6,
       "UNKNOWN_RUNTIME_ARTIFACT": 10,
-      "UNKNOWN_OR_NON_RUNTIME": 42,
+      "UNKNOWN_OR_NON_RUNTIME": 40,
       "DB_CORE": 1,
       "FRAMEWORK_FILE": 5,
       "CACHE_SENTINEL": 5,
@@ -392,7 +393,7 @@
       "ACTIVE_AGENT_MARKER": 17,
       "PYCACHE": 31,
       "BACKUP_DB": 1,
-      "DREAM_REPORT": 30,
+      "DREAM_REPORT": 31,
       "DAILY_REPORT": 6,
       "DRIFT_REPORT": 4,
       "ESCALATION_REPORT": 23,
@@ -401,16 +402,16 @@
     "safe_mined_to_review_queue": 20,
     "deferred_adapter_counts": {
       "deferred_requires_marker_metadata_adapter": 26,
-      "deferred_sidecar_or_transaction_file": 4,
+      "deferred_sidecar_or_transaction_file": 6,
       "deferred_requires_classification": 10,
       "deferred_requires_readonly_db_adapter": 2,
       "deferred_requires_bounded_log_adapter": 31,
-      "deferred_markdown_report_not_selected": 44
+      "deferred_markdown_report_not_selected": 45
     },
     "ignored_generated_cache": 31,
-    "forbidden_direct_read_count": 104,
+    "forbidden_direct_read_count": 106,
     "evidence_scoring_status": {
-      "not_started": 215
+      "not_started": 216
     },
     "generated_disposition_index": "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
     "warning": "Disposition is not ingestion. No brain/memory/CIEU writes are allowed."
@@ -598,6 +599,32 @@
     "generated_transition_backlog": "labs_live_readiness/generated/transition_backlog.json",
     "warning": "Dry-run governance ready is not live runtime readiness; live execution remains blocked."
   },
+  "live_boundary_summary": {
+    "schema_name": "ystar.console_read_model.generated.live_boundary_summary",
+    "schema_version": "v0",
+    "live_boundary_defined": true,
+    "operator_approval_gate_defined": true,
+    "action_sandbox_contract_defined": true,
+    "rollback_policy_defined": true,
+    "cieu_writer_boundary_defined": true,
+    "live_action_execution_enabled": false,
+    "cieu_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "raw_artifact_ingestion_enabled": false,
+    "requires_manual_enablement": true,
+    "minimal_live_loop_ready": false,
+    "blocked_reason": "required_live_gates_defined_but_disabled",
+    "checklist_status_counts": {
+      "defined_disabled": 6,
+      "not_started": 3
+    },
+    "ready_or_enabled_checklist_items": 0,
+    "generated_manifest": "labs_live_boundary/generated/live_boundary_manifest.json",
+    "generated_checklist": "labs_live_boundary/generated/live_transition_checklist.json",
+    "warning": "Live boundary harness is defined but disabled. It does not execute actions, write CIEU, write brain or memory, approve candidates, or ingest raw artifacts."
+  },
   "open_gaps": [
     "Static console loader exists; no frontend UI yet.",
     "No frontend UI.",
@@ -619,7 +646,8 @@
     "Pre-U generator exists for dry-run governance only; no runtime packet execution exists.",
     "Labs runtime acceptance exists for dry-run checks only; no real runtime execution is accepted.",
     "Cross-repo alignment exists for dry-run compatibility only; no CI or real hook enforcement exists.",
-    "Live readiness gate exists, but minimal live loop remains blocked until required gates exist."
+    "Live readiness gate exists, but minimal live loop remains blocked until required gates exist.",
+    "Live boundary harness exists as defined-disabled contracts only; no live execution is enabled."
   ],
   "warnings": [
     "Ethan execution channels are present as reference-only boundaries, not runtime launchers."

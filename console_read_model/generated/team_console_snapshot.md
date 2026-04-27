@@ -57,6 +57,7 @@ Ready now:
 - dry-run labs runtime governance acceptance summary
 - dry-run cross-repo governance alignment summary
 - live-readiness gate summary that keeps live execution blocked
+- disabled live-boundary harness summary
 
 Not ready:
 - runtime generator
@@ -82,13 +83,14 @@ Not ready:
 - real runtime acceptance beyond dry-run checks
 - real cross-repo hook enforcement beyond dry-run alignment
 - minimal live governed loop
+- enabled live-boundary harness
 
 ## Runtime Artifact Quarantine Summary
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 215
-- Unsafe artifacts count: 168
+- Artifacts classified: 216
+- Unsafe artifacts count: 171
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -96,14 +98,14 @@ Not ready:
   - DAEMON_STATE: 4
   - DAILY_REPORT: 6
   - DB_CORE: 1
-  - DB_SIDECARE: 4
-  - DREAM_REPORT: 30
+  - DB_SIDECARE: 6
+  - DREAM_REPORT: 31
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
   - FRAMEWORK_FILE: 5
   - LOG_RUNTIME: 31
   - PYCACHE: 31
-  - UNKNOWN_OR_NON_RUNTIME: 42
+  - UNKNOWN_OR_NON_RUNTIME: 40
   - UNKNOWN_RUNTIME_ARTIFACT: 10
   - WHITELIST_REPORT: 1
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
@@ -141,23 +143,23 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 215
-- Artifacts with disposition: 215
+- Total artifacts: 216
+- Artifacts with disposition: 216
 - Safe-mined to review queue: 20
-- Forbidden direct read count: 104
+- Forbidden direct read count: 106
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
-  - deferred_markdown_report_not_selected: 44
+  - deferred_markdown_report_not_selected: 45
   - deferred_requires_bounded_log_adapter: 31
   - deferred_requires_classification: 10
   - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
-  - deferred_sidecar_or_transaction_file: 4
+  - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 31
-  - ignored_or_non_runtime: 47
+  - ignored_or_non_runtime: 45
   - safe_mined_to_review_queue: 20
 - Evidence scoring status:
-  - not_started: 215
+  - not_started: 216
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -269,6 +271,25 @@ Not ready:
   - dirty_runtime_artifacts_not_canonical
 - Warning: Dry-run governance ready is not live runtime readiness; live execution remains blocked.
 
+## Labs Live Boundary
+
+- live_boundary_defined: True
+- operator_approval_gate_defined: True
+- action_sandbox_contract_defined: True
+- rollback_policy_defined: True
+- cieu_writer_boundary_defined: True
+- live_action_execution_enabled: False
+- cieu_write_enabled: False
+- brain_writeback_enabled: False
+- memory_ingestion_enabled: False
+- minimal_live_loop_ready: False
+- requires_manual_enablement: True
+- blocked_reason: required_live_gates_defined_but_disabled
+- checklist_status_counts:
+  - defined_disabled: 6
+  - not_started: 3
+- Warning: Live boundary harness is defined but disabled. It does not execute actions, write CIEU, write brain or memory, approve candidates, or ingest raw artifacts.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -294,6 +315,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - define real hook enforcement handoff after dry-run acceptance remains stable
 - define CI handoff after cross-repo dry-run alignment remains stable
 - build live boundary harness before any runtime execution
+- implement live boundary gates without enabling runtime execution
 
 ## Warnings / Gaps
 
@@ -319,3 +341,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Labs runtime acceptance exists for dry-run checks only; no real runtime execution is accepted.
 - Cross-repo alignment exists for dry-run compatibility only; no CI or real hook enforcement exists.
 - Live readiness gate exists, but minimal live loop remains blocked until required gates exist.
+- Live boundary harness exists as defined-disabled contracts only; no live execution is enabled.

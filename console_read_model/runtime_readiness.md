@@ -21,6 +21,7 @@
 - Dry-run labs runtime governance acceptance summary in generated console snapshots.
 - Dry-run cross-repo governance alignment summary in generated console snapshots.
 - Live-readiness gate summary in generated console snapshots.
+- Defined-disabled live boundary harness summary in generated console snapshots.
 - Local safety check wrapper for the curated read-model stack.
 - Lightweight static capsule schema-alignment checks.
 
@@ -48,6 +49,7 @@
 - Real runtime acceptance beyond dry-run checks.
 - Real cross-repo hook enforcement beyond dry-run alignment.
 - Minimal live governed loop remains blocked until required gates exist.
+- Live boundary contracts are defined, but all live capabilities remain disabled.
 - Runtime tests remain separate from local read-model safety checks.
 - Full JSON Schema enforcement through a dedicated schema engine.
 
@@ -76,6 +78,8 @@ J. Manual decision application for evidence review stubs.
 K. Real hook integration after dry-run bridge behavior stays stable.
 
 L. Reviewed CIEU prediction-delta examples from dry-run Pre-U snapshots.
+
+M. Implement live boundary gates without enabling runtime execution.
 
 The safest next step is either a static capsule validator or a read-only console
 prototype that consumes only the files in this directory and other curated

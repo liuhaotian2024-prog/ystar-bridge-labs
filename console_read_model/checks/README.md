@@ -44,6 +44,11 @@ The wrapper builds the live-readiness gate report, validates its generated
 JSON, and exposes a `live-readiness` CLI smoke check. This is deliberately
 non-recursive and does not enable live execution.
 
+The wrapper builds the live-boundary harness manifest, validates its generated
+JSON, and exposes a `live-boundary` CLI smoke check. This remains disabled by
+default and does not activate hooks, execute actions, write CIEU, or mutate
+brain/memory.
+
 Optional flags:
 
 - `--no-rebuild`: validate existing generated files without rebuilding them.

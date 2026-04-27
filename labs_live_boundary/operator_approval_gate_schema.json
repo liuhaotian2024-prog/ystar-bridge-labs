@@ -1,0 +1,22 @@
+{
+  "schema_name": "ystar.labs_live_boundary.schema.operator_approval_gate",
+  "schema_version": "v0",
+  "gate_status": "defined_disabled",
+  "required_fields": [
+    "approval_request_id",
+    "operator_id",
+    "scope",
+    "decision",
+    "decision_reason",
+    "expires_after_policy"
+  ],
+  "allowed_decisions": [
+    "pending",
+    "approve_dry_run_only",
+    "reject",
+    "needs_more_context"
+  ],
+  "forbidden_decisions": [
+    "approve_live_execution_without_boundary_harness"
+  ]
+}
