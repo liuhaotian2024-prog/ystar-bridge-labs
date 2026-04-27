@@ -58,6 +58,12 @@ python3 console_read_model/cli/team_console.py <command>
   role delegation, governed tool selection, Pre-U simulation, governance
   decision simulation, CIEU fixture, residual delta, disabled live flags, and
   the L4.3 recommendation.
+- `legacy-triage`: Prints the generated legacy asset triage summary: assets
+  scored, absorption buckets, top candidates, governed backlog, disabled live
+  flags, and the L4.4 recommendation.
+- `observation-loop`: Prints the generated governed observation loop summary:
+  read-only source registry, observation tick, mission dashboard, company
+  digest, work candidates, disabled live flags, and the L4.4 recommendation.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

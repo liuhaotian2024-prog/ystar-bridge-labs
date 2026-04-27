@@ -29,6 +29,8 @@ LIVE_BOUNDARY = "console_read_model/generated/live_boundary_summary.json"
 CIEU_BOUNDARY = "console_read_model/generated/cieu_boundary_summary.json"
 AUTONOMY_INVENTORY = "console_read_model/generated/autonomy_inventory_summary.json"
 AUTONOMOUS_CYCLE = "console_read_model/generated/autonomous_cycle_summary.json"
+LEGACY_TRIAGE = "console_read_model/generated/legacy_triage_summary.json"
+OBSERVATION_LOOP = "console_read_model/generated/observation_loop_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -48,7 +50,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -97,6 +99,8 @@ def load_all() -> dict[str, Any]:
         "cieu_boundary": load_json(CIEU_BOUNDARY),
         "autonomy_inventory": load_json(AUTONOMY_INVENTORY),
         "autonomous_cycle": load_json(AUTONOMOUS_CYCLE),
+        "legacy_triage": load_json(LEGACY_TRIAGE),
+        "observation_loop": load_json(OBSERVATION_LOOP),
     }
 
 
@@ -539,6 +543,50 @@ def cmd_autonomous_cycle(data: dict[str, Any]) -> None:
     print(f"warning: {cycle.get('warning')}")
 
 
+def cmd_legacy_triage(data: dict[str, Any]) -> None:
+    triage = data["legacy_triage"]
+    print("# Legacy Asset Triage")
+    print()
+    print(f"assets scored: {triage.get('assets_scored')}")
+    print(f"absorption buckets defined: {triage.get('absorption_buckets_defined')}")
+    print(f"top absorption candidates defined: {triage.get('top_absorption_candidates_defined')}")
+    print(f"governed absorption backlog defined: {triage.get('governed_absorption_backlog_defined')}")
+    print(f"blind absorption allowed: {triage.get('blind_absorption_allowed')}")
+    print(f"blanket rewrite allowed: {triage.get('blanket_rewrite_allowed')}")
+    print(f"live actions enabled: {triage.get('live_actions_enabled')}")
+    print("bucket counts:")
+    for bucket, count in sorted(triage.get("bucket_counts", {}).items()):
+        print(f"- {bucket}: {count}")
+    print(f"next required milestone: {triage.get('next_required_milestone')}")
+    print(f"generated_summary: {triage.get('generated_summary')}")
+    print(f"generated_report: {triage.get('generated_report')}")
+    print(f"warning: {triage.get('warning')}")
+
+
+def cmd_observation_loop(data: dict[str, Any]) -> None:
+    loop = data["observation_loop"]
+    print("# Governed Observation Loop")
+    print()
+    print(f"read-only observation loop defined: {loop.get('read_only_observation_loop_defined')}")
+    print(f"observation source registry defined: {loop.get('observation_source_registry_defined')}")
+    print(f"observation tick generated: {loop.get('observation_tick_generated')}")
+    print(f"mission dashboard snapshot defined: {loop.get('mission_dashboard_snapshot_defined')}")
+    print(f"company state digest defined: {loop.get('company_state_digest_defined')}")
+    print(f"observation-to-work candidates defined: {loop.get('observation_to_work_item_candidates_defined')}")
+    print(f"mission-bounded autonomy supported: {loop.get('mission_bounded_autonomy_supported')}")
+    print(f"step-by-step human prompting reduced: {loop.get('step_by_step_human_prompting_reduced')}")
+    print(f"real action executed: {loop.get('real_action_executed')}")
+    print(f"live action enabled: {loop.get('live_action_enabled')}")
+    print(f"external action executed: {loop.get('external_action_executed')}")
+    print(f"CIEU persistence enabled: {loop.get('cieu_persistence_enabled')}")
+    print(f"brain writeback enabled: {loop.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {loop.get('memory_ingestion_enabled')}")
+    print(f"next required milestone: {loop.get('next_required_milestone')}")
+    print(f"generated_summary: {loop.get('generated_summary')}")
+    print(f"generated_report: {loop.get('generated_report')}")
+    print(f"warning: {loop.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -632,6 +680,18 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print("Company autonomous work cycle:")
         print(f"- {autonomous_cycle.get('generated_summary')}")
         print(f"- {autonomous_cycle.get('generated_report')}")
+    legacy_triage = data.get("legacy_triage", {})
+    if legacy_triage:
+        print()
+        print("Legacy asset triage:")
+        print(f"- {legacy_triage.get('generated_summary')}")
+        print(f"- {legacy_triage.get('generated_report')}")
+    observation_loop = data.get("observation_loop", {})
+    if observation_loop:
+        print()
+        print("Governed observation loop:")
+        print(f"- {observation_loop.get('generated_summary')}")
+        print(f"- {observation_loop.get('generated_report')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -674,6 +734,8 @@ def cmd_validate_local() -> int:
         CIEU_BOUNDARY,
         AUTONOMY_INVENTORY,
         AUTONOMOUS_CYCLE,
+        LEGACY_TRIAGE,
+        OBSERVATION_LOOP,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -715,6 +777,10 @@ def cmd_validate_local() -> int:
             failures.append("autonomy_inventory_summary missing from team console snapshot")
         if "autonomous_cycle_summary" not in snapshot:
             failures.append("autonomous_cycle_summary missing from team console snapshot")
+        if "legacy_triage_summary" not in snapshot:
+            failures.append("legacy_triage_summary missing from team console snapshot")
+        if "observation_loop_summary" not in snapshot:
+            failures.append("observation_loop_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -1231,6 +1297,94 @@ def cmd_validate_local() -> int:
         if autonomous_cycle.get("next_required_milestone") != "L4.3 Governed Read-Only Observation Loop v0":
             failures.append("autonomous cycle summary must point to L4.3 observation-loop milestone")
 
+    legacy_triage = loaded.get(LEGACY_TRIAGE)
+    if legacy_triage:
+        required_fields = [
+            "legacy_asset_triage_defined",
+            "assets_scored",
+            "absorption_buckets_defined",
+            "bucket_counts",
+            "top_absorption_candidates_defined",
+            "governed_absorption_backlog_defined",
+            "blind_absorption_allowed",
+            "blanket_rewrite_allowed",
+            "live_actions_enabled",
+            "next_required_milestone",
+            "generated_summary",
+            "generated_report",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in legacy_triage:
+                failures.append(f"legacy triage summary missing field: {field}")
+        for field in [
+            "legacy_asset_triage_defined",
+            "absorption_buckets_defined",
+            "top_absorption_candidates_defined",
+            "governed_absorption_backlog_defined",
+        ]:
+            if legacy_triage.get(field) is not True:
+                failures.append(f"legacy triage summary must keep {field}=true")
+        for field in ["blind_absorption_allowed", "blanket_rewrite_allowed", "live_actions_enabled"]:
+            if legacy_triage.get(field) is not False:
+                failures.append(f"legacy triage summary must keep {field}=false")
+        if not legacy_triage.get("assets_scored", 0) > 0:
+            failures.append("legacy triage summary must score assets")
+        if legacy_triage.get("next_required_milestone") != "L4.4 First Governed Read-Only Observation Tool Wrapper v0":
+            failures.append("legacy triage summary must point to L4.4 wrapper milestone")
+
+    observation_loop = loaded.get(OBSERVATION_LOOP)
+    if observation_loop:
+        required_fields = [
+            "governed_observation_loop_defined",
+            "read_only_observation_loop_defined",
+            "observation_source_registry_defined",
+            "observation_tick_generated",
+            "mission_dashboard_snapshot_defined",
+            "company_state_digest_defined",
+            "observation_to_work_item_candidates_defined",
+            "mission_bounded_autonomy_supported",
+            "step_by_step_human_prompting_reduced",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "next_required_milestone",
+            "generated_summary",
+            "generated_report",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in observation_loop:
+                failures.append(f"observation loop summary missing field: {field}")
+        for field in [
+            "governed_observation_loop_defined",
+            "read_only_observation_loop_defined",
+            "observation_source_registry_defined",
+            "observation_tick_generated",
+            "mission_dashboard_snapshot_defined",
+            "company_state_digest_defined",
+            "observation_to_work_item_candidates_defined",
+            "mission_bounded_autonomy_supported",
+            "step_by_step_human_prompting_reduced",
+        ]:
+            if observation_loop.get(field) is not True:
+                failures.append(f"observation loop summary must keep {field}=true")
+        for field in [
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+        ]:
+            if observation_loop.get(field) is not False:
+                failures.append(f"observation loop summary must keep {field}=false")
+        if observation_loop.get("next_required_milestone") != "L4.4 First Governed Read-Only Observation Tool Wrapper v0":
+            failures.append("observation loop summary must point to L4.4 wrapper milestone")
+
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
     print(f"Required agents: {', '.join(REQUIRED_AGENTS)}")
@@ -1300,6 +1454,10 @@ def main(argv: list[str]) -> int:
         cmd_autonomy_inventory(data)
     elif command == "autonomous-cycle":
         cmd_autonomous_cycle(data)
+    elif command == "legacy-triage":
+        cmd_legacy_triage(data)
+    elif command == "observation-loop":
+        cmd_observation_loop(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

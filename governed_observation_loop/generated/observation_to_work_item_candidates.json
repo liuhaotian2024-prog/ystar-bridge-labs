@@ -1,0 +1,40 @@
+{
+  "schema_name": "ystar.governed_observation_loop.generated.observation_to_work_item_candidates",
+  "schema_version": "v0",
+  "candidate_count": 3,
+  "candidates": [
+    {
+      "candidate_id": "obs-work-001",
+      "title": "Wrap the read-only observation loop as a governed tool",
+      "recommended_owner_agent": "Ryan-Platform",
+      "risk_tier": "low",
+      "live_enabled": false,
+      "requires_y_star_gov": false,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "rationale": "derived from read-only observation tick"
+    },
+    {
+      "candidate_id": "obs-work-002",
+      "title": "Create a mission dashboard from generated summaries",
+      "recommended_owner_agent": "Samantha-Secretary",
+      "risk_tier": "low",
+      "live_enabled": false,
+      "requires_y_star_gov": false,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "rationale": "derived from read-only observation tick"
+    },
+    {
+      "candidate_id": "obs-work-003",
+      "title": "Prepare governed wrapper specs for top triaged assets",
+      "recommended_owner_agent": "Maya-Governance",
+      "risk_tier": "medium",
+      "live_enabled": false,
+      "requires_y_star_gov": true,
+      "requires_operator_approval": true,
+      "requires_cieu_event": true,
+      "rationale": "derived from read-only observation tick"
+    }
+  ]
+}

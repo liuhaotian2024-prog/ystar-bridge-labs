@@ -39,6 +39,8 @@ CURATED_SOURCES = [
     "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_summary.json",
     "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
     "company_autonomous_work_cycle/generated/autonomous_work_cycle_summary.json",
+    "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
+    "governed_observation_loop/generated/governed_observation_loop_summary.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -713,6 +715,107 @@ def build_autonomous_cycle_summary(cycle_summary: dict[str, Any] | None) -> dict
     }
 
 
+def build_legacy_triage_summary(triage_summary: dict[str, Any] | None) -> dict[str, Any]:
+    if not triage_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.legacy_triage_summary",
+            "schema_version": "v0",
+            "legacy_asset_triage_defined": False,
+            "assets_scored": 0,
+            "absorption_buckets_defined": False,
+            "bucket_counts": {},
+            "top_absorption_candidates_defined": False,
+            "top_absorption_candidate_count": 0,
+            "governed_absorption_backlog_defined": False,
+            "governed_absorption_backlog_count": 0,
+            "blind_absorption_allowed": False,
+            "blanket_rewrite_allowed": False,
+            "live_actions_enabled": False,
+            "next_required_milestone": "L4.4 First Governed Read-Only Observation Tool Wrapper v0",
+            "generated_summary": "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
+            "warning": "Legacy asset triage has not been generated yet.",
+        }
+    return {
+        "schema_name": "ystar.console_read_model.generated.legacy_triage_summary",
+        "schema_version": "v0",
+        "legacy_asset_triage_defined": triage_summary.get("legacy_asset_triage_defined"),
+        "assets_scored": triage_summary.get("assets_scored"),
+        "absorption_buckets_defined": triage_summary.get("absorption_buckets_defined"),
+        "bucket_counts": triage_summary.get("bucket_counts", {}),
+        "top_absorption_candidates_defined": triage_summary.get("top_absorption_candidates_defined"),
+        "top_absorption_candidate_count": triage_summary.get("top_absorption_candidate_count"),
+        "governed_absorption_backlog_defined": triage_summary.get("governed_absorption_backlog_defined"),
+        "governed_absorption_backlog_count": triage_summary.get("governed_absorption_backlog_count"),
+        "blind_absorption_allowed": triage_summary.get("blind_absorption_allowed"),
+        "blanket_rewrite_allowed": triage_summary.get("blanket_rewrite_allowed"),
+        "live_actions_enabled": triage_summary.get("live_actions_enabled"),
+        "external_actions_enabled": triage_summary.get("external_actions_enabled"),
+        "brain_writeback_enabled": triage_summary.get("brain_writeback_enabled"),
+        "memory_ingestion_enabled": triage_summary.get("memory_ingestion_enabled"),
+        "cieu_persistence_enabled": triage_summary.get("cieu_persistence_enabled"),
+        "next_required_milestone": triage_summary.get("next_required_milestone"),
+        "generated_summary": "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
+        "generated_report": "legacy_asset_triage/generated/legacy_asset_triage_report.md",
+        "warning": triage_summary.get("warning", "Legacy assets are triaged only; no absorption is executed."),
+    }
+
+
+def build_observation_loop_summary(observation_summary: dict[str, Any] | None) -> dict[str, Any]:
+    if not observation_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.observation_loop_summary",
+            "schema_version": "v0",
+            "governed_observation_loop_defined": False,
+            "read_only_observation_loop_defined": False,
+            "observation_source_registry_defined": False,
+            "observation_tick_generated": False,
+            "mission_dashboard_snapshot_defined": False,
+            "company_state_digest_defined": False,
+            "observation_to_work_item_candidates_defined": False,
+            "mission_bounded_autonomy_supported": False,
+            "step_by_step_human_prompting_reduced": False,
+            "real_action_executed": False,
+            "external_action_executed": False,
+            "live_action_enabled": False,
+            "next_required_milestone": "L4.4 First Governed Read-Only Observation Tool Wrapper v0",
+            "generated_summary": "governed_observation_loop/generated/governed_observation_loop_summary.json",
+            "warning": "Governed observation loop has not been generated yet.",
+        }
+    return {
+        "schema_name": "ystar.console_read_model.generated.observation_loop_summary",
+        "schema_version": "v0",
+        "governed_observation_loop_defined": observation_summary.get("governed_observation_loop_defined"),
+        "read_only_observation_loop_defined": observation_summary.get("read_only_observation_loop_defined"),
+        "observation_source_registry_defined": observation_summary.get("observation_source_registry_defined"),
+        "observation_tick_generated": observation_summary.get("observation_tick_generated"),
+        "mission_dashboard_snapshot_defined": observation_summary.get("mission_dashboard_snapshot_defined"),
+        "company_state_digest_defined": observation_summary.get("company_state_digest_defined"),
+        "observation_to_work_item_candidates_defined": observation_summary.get(
+            "observation_to_work_item_candidates_defined"
+        ),
+        "observation_to_work_item_candidate_count": observation_summary.get(
+            "observation_to_work_item_candidate_count"
+        ),
+        "mission_bounded_autonomy_supported": observation_summary.get("mission_bounded_autonomy_supported"),
+        "step_by_step_human_prompting_reduced": observation_summary.get("step_by_step_human_prompting_reduced"),
+        "real_action_executed": observation_summary.get("real_action_executed"),
+        "external_action_executed": observation_summary.get("external_action_executed"),
+        "live_action_enabled": observation_summary.get("live_action_enabled"),
+        "git_push_enabled": observation_summary.get("git_push_enabled"),
+        "daemon_control_enabled": observation_summary.get("daemon_control_enabled"),
+        "cieu_persistence_enabled": observation_summary.get("cieu_persistence_enabled"),
+        "brain_writeback_enabled": observation_summary.get("brain_writeback_enabled"),
+        "memory_ingestion_enabled": observation_summary.get("memory_ingestion_enabled"),
+        "email_or_external_communication_enabled": observation_summary.get(
+            "email_or_external_communication_enabled"
+        ),
+        "next_required_milestone": observation_summary.get("next_required_milestone"),
+        "generated_summary": "governed_observation_loop/generated/governed_observation_loop_summary.json",
+        "generated_report": "governed_observation_loop/generated/governed_observation_loop_report.md",
+        "warning": observation_summary.get("warning", "Observation loop is read-only and executes no actions."),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -787,6 +890,14 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "company_autonomous_work_cycle/generated/autonomous_work_cycle_summary.json",
         files_read,
     )
+    legacy_triage_generated_summary = load_optional_json(
+        "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
+        files_read,
+    )
+    observation_loop_generated_summary = load_optional_json(
+        "governed_observation_loop/generated/governed_observation_loop_summary.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -801,6 +912,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     cieu_boundary_summary = build_cieu_boundary_summary(cieu_boundary_generated_summary)
     autonomy_inventory_summary = build_autonomy_inventory_summary(autonomy_generated_summary)
     autonomous_cycle_summary = build_autonomous_cycle_summary(autonomous_cycle_generated_summary)
+    legacy_triage_summary = build_legacy_triage_summary(legacy_triage_generated_summary)
+    observation_loop_summary = build_observation_loop_summary(observation_loop_generated_summary)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -883,8 +996,12 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("CIEU runtime boundary exists as disabled event fixtures only; no CIEU persistence is enabled.")
     if "Company autonomy inventory exists, but governed action registry candidates are not live-enabled." not in open_gaps:
         open_gaps.append("Company autonomy inventory exists, but governed action registry candidates are not live-enabled.")
-    if "Autonomous work cycle exists as a simulator only; governed read-only observation loop is not implemented." not in open_gaps:
-        open_gaps.append("Autonomous work cycle exists as a simulator only; governed read-only observation loop is not implemented.")
+    if "Autonomous work cycle exists as a simulator only; no real action execution is implemented." not in open_gaps:
+        open_gaps.append("Autonomous work cycle exists as a simulator only; no real action execution is implemented.")
+    if "Legacy asset triage exists, but no absorption or wrapper application workflow exists." not in open_gaps:
+        open_gaps.append("Legacy asset triage exists, but no absorption or wrapper application workflow exists.")
+    if "Governed observation loop exists as one read-only tick; recurring wrapper execution is not implemented." not in open_gaps:
+        open_gaps.append("Governed observation loop exists as one read-only tick; recurring wrapper execution is not implemented.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -910,6 +1027,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "cieu_boundary_summary": cieu_boundary_summary,
         "autonomy_inventory_summary": autonomy_inventory_summary,
         "autonomous_cycle_summary": autonomous_cycle_summary,
+        "legacy_triage_summary": legacy_triage_summary,
+        "observation_loop_summary": observation_loop_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -960,6 +1079,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "disabled CIEU runtime event boundary summary",
             "company autonomy inventory summary",
             "mission-bounded autonomous work cycle simulator summary",
+            "legacy asset triage summary",
+            "governed read-only observation loop summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -988,7 +1109,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "enabled live-boundary harness",
             "enabled CIEU runtime event persistence",
             "approved governed action registry",
-            "governed read-only observation loop",
+            "first governed read-only observation tool wrapper",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -1009,7 +1130,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "implement live boundary gates without enabling runtime execution",
             "define CIEU runtime event writer verification without enabling persistence",
             "simulate a company autonomous work cycle without enabling live actions",
-            "build L4.3 governed read-only observation loop from simulator outputs",
+            "build L4.4 first governed read-only observation tool wrapper",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -1025,6 +1146,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "CIEU runtime event boundary is defined but persistence is disabled",
             "governed action registry candidates are mapped but disabled",
             "autonomous cycle is simulated only and cannot execute real work",
+            "legacy assets are triaged but not absorbed",
+            "observation loop is read-only and not recurring",
         ],
         "safety_boundaries": [
             "no DB reads",
@@ -1046,6 +1169,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "CIEU runtime event boundary is disabled and forbids persistence",
             "company autonomy inventory is discovery-only and live actions remain disabled",
             "autonomous work cycle is simulated only and performs no external action",
+            "legacy asset triage is classification-only and does not absorb assets",
+            "governed observation loop reads generated summaries only and executes no actions",
         ],
     }
 
@@ -1072,6 +1197,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/cieu_boundary_summary.json",
             "console_read_model/generated/autonomy_inventory_summary.json",
             "console_read_model/generated/autonomous_cycle_summary.json",
+            "console_read_model/generated/legacy_triage_summary.json",
+            "console_read_model/generated/observation_loop_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -1128,6 +1255,10 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "autonomy inventory. It confirms capability maps and tool candidates exist while live actions remain disabled.\n\n"
         "`autonomous_cycle_summary.json` is derived from the mission-bounded\n"
         "autonomous work cycle simulator. It confirms a full simulated company cycle exists while real actions remain disabled.\n\n"
+        "`legacy_triage_summary.json` is derived from generated legacy asset\n"
+        "triage outputs. It classifies assets before absorption and enables no actions.\n\n"
+        "`observation_loop_summary.json` is derived from generated governed\n"
+        "observation loop outputs. It summarizes a read-only tick from safe generated sources.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -1150,6 +1281,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/cieu_boundary_summary.json", cieu_boundary_summary, generated_files)
     write_json("console_read_model/generated/autonomy_inventory_summary.json", autonomy_inventory_summary, generated_files)
     write_json("console_read_model/generated/autonomous_cycle_summary.json", autonomous_cycle_summary, generated_files)
+    write_json("console_read_model/generated/legacy_triage_summary.json", legacy_triage_summary, generated_files)
+    write_json("console_read_model/generated/observation_loop_summary.json", observation_loop_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -1207,6 +1340,8 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     cieu_boundary = snapshot.get("cieu_boundary_summary", {})
     autonomy_inventory = snapshot.get("autonomy_inventory_summary", {})
     autonomous_cycle = snapshot.get("autonomous_cycle_summary", {})
+    legacy_triage = snapshot.get("legacy_triage_summary", {})
+    observation_loop = snapshot.get("observation_loop_summary", {})
     lines.extend(
         [
             "",
@@ -1507,6 +1642,48 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- memory_ingestion_enabled: {autonomous_cycle.get('memory_ingestion_enabled')}",
             f"- next_required_milestone: {autonomous_cycle.get('next_required_milestone')}",
             f"- Warning: {autonomous_cycle.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Legacy Asset Triage",
+            "",
+            f"- assets_scored: {legacy_triage.get('assets_scored')}",
+            f"- absorption_buckets_defined: {legacy_triage.get('absorption_buckets_defined')}",
+            f"- top_absorption_candidates_defined: {legacy_triage.get('top_absorption_candidates_defined')}",
+            f"- governed_absorption_backlog_defined: {legacy_triage.get('governed_absorption_backlog_defined')}",
+            f"- blind_absorption_allowed: {legacy_triage.get('blind_absorption_allowed')}",
+            f"- blanket_rewrite_allowed: {legacy_triage.get('blanket_rewrite_allowed')}",
+            f"- live_actions_enabled: {legacy_triage.get('live_actions_enabled')}",
+            f"- next_required_milestone: {legacy_triage.get('next_required_milestone')}",
+            "- bucket_counts:",
+        ]
+    )
+    for bucket, count in sorted(legacy_triage.get("bucket_counts", {}).items()):
+        lines.append(f"  - {bucket}: {count}")
+    lines.append(f"- Warning: {legacy_triage.get('warning')}")
+    lines.extend(
+        [
+            "",
+            "## Governed Observation Loop",
+            "",
+            f"- read_only_observation_loop_defined: {observation_loop.get('read_only_observation_loop_defined')}",
+            f"- observation_source_registry_defined: {observation_loop.get('observation_source_registry_defined')}",
+            f"- observation_tick_generated: {observation_loop.get('observation_tick_generated')}",
+            f"- mission_dashboard_snapshot_defined: {observation_loop.get('mission_dashboard_snapshot_defined')}",
+            f"- company_state_digest_defined: {observation_loop.get('company_state_digest_defined')}",
+            f"- observation_to_work_item_candidates_defined: {observation_loop.get('observation_to_work_item_candidates_defined')}",
+            f"- mission_bounded_autonomy_supported: {observation_loop.get('mission_bounded_autonomy_supported')}",
+            f"- step_by_step_human_prompting_reduced: {observation_loop.get('step_by_step_human_prompting_reduced')}",
+            f"- real_action_executed: {observation_loop.get('real_action_executed')}",
+            f"- external_action_executed: {observation_loop.get('external_action_executed')}",
+            f"- live_action_enabled: {observation_loop.get('live_action_enabled')}",
+            f"- cieu_persistence_enabled: {observation_loop.get('cieu_persistence_enabled')}",
+            f"- brain_writeback_enabled: {observation_loop.get('brain_writeback_enabled')}",
+            f"- memory_ingestion_enabled: {observation_loop.get('memory_ingestion_enabled')}",
+            f"- next_required_milestone: {observation_loop.get('next_required_milestone')}",
+            f"- Warning: {observation_loop.get('warning')}",
         ]
     )
     lines.extend(

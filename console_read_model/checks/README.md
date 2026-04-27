@@ -64,6 +64,11 @@ validates its generated mission/backlog/delegation/Pre-U/governance/CIEU
 fixtures, and exposes an `autonomous-cycle` CLI smoke check. This remains a
 simulator and performs no real action or external effect.
 
+The wrapper builds legacy asset triage and the governed read-only observation
+loop, validates their generated JSON, and exposes `legacy-triage` and
+`observation-loop` CLI smoke checks. These checks classify and observe only;
+they do not absorb assets or execute actions.
+
 Optional flags:
 
 - `--no-rebuild`: validate existing generated files without rebuilding them.

@@ -337,6 +337,8 @@ def main() -> int:
     required_labs_cieu_runtime_boundary_files = expected.get("required_labs_cieu_runtime_boundary_files", [])
     required_company_autonomy_inventory_files = expected.get("required_company_autonomy_inventory_files", [])
     required_company_autonomous_work_cycle_files = expected.get("required_company_autonomous_work_cycle_files", [])
+    required_legacy_asset_triage_files = expected.get("required_legacy_asset_triage_files", [])
+    required_governed_observation_loop_files = expected.get("required_governed_observation_loop_files", [])
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -425,6 +427,18 @@ def main() -> int:
         check_exists(path, report, "company autonomous work cycle file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "company autonomous work cycle JSON")
+
+    for rel in required_legacy_asset_triage_files:
+        path = ROOT / rel
+        check_exists(path, report, "legacy asset triage file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "legacy asset triage JSON")
+
+    for rel in required_governed_observation_loop_files:
+        path = ROOT / rel
+        check_exists(path, report, "governed observation loop file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "governed observation loop JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -1072,6 +1086,102 @@ def main() -> int:
         else:
             report.fail("generated snapshot missing autonomous_cycle_summary")
 
+        legacy_triage_summary = snapshot.get("legacy_triage_summary")
+        if legacy_triage_summary:
+            report.pass_("generated snapshot contains legacy_triage_summary")
+            for field in [
+                "legacy_asset_triage_defined",
+                "assets_scored",
+                "absorption_buckets_defined",
+                "bucket_counts",
+                "top_absorption_candidates_defined",
+                "governed_absorption_backlog_defined",
+                "blind_absorption_allowed",
+                "blanket_rewrite_allowed",
+                "live_actions_enabled",
+                "next_required_milestone",
+                "generated_summary",
+                "generated_report",
+                "warning",
+            ]:
+                if field in legacy_triage_summary:
+                    report.pass_(f"snapshot legacy_triage_summary field present: {field}")
+                else:
+                    report.fail(f"snapshot legacy_triage_summary missing field: {field}")
+            for field in [
+                "legacy_asset_triage_defined",
+                "absorption_buckets_defined",
+                "top_absorption_candidates_defined",
+                "governed_absorption_backlog_defined",
+            ]:
+                if legacy_triage_summary.get(field) is not True:
+                    report.fail(f"snapshot legacy_triage_summary must keep {field}=true")
+            for field in ["blind_absorption_allowed", "blanket_rewrite_allowed", "live_actions_enabled"]:
+                if legacy_triage_summary.get(field) is not False:
+                    report.fail(f"snapshot legacy_triage_summary must keep {field}=false")
+            if not legacy_triage_summary.get("assets_scored", 0) > 0:
+                report.fail("snapshot legacy_triage_summary must score assets")
+            if legacy_triage_summary.get("next_required_milestone") != "L4.4 First Governed Read-Only Observation Tool Wrapper v0":
+                report.fail("snapshot legacy_triage_summary must point to L4.4 wrapper milestone")
+        else:
+            report.fail("generated snapshot missing legacy_triage_summary")
+
+        observation_loop_summary = snapshot.get("observation_loop_summary")
+        if observation_loop_summary:
+            report.pass_("generated snapshot contains observation_loop_summary")
+            for field in [
+                "governed_observation_loop_defined",
+                "read_only_observation_loop_defined",
+                "observation_source_registry_defined",
+                "observation_tick_generated",
+                "mission_dashboard_snapshot_defined",
+                "company_state_digest_defined",
+                "observation_to_work_item_candidates_defined",
+                "mission_bounded_autonomy_supported",
+                "step_by_step_human_prompting_reduced",
+                "real_action_executed",
+                "external_action_executed",
+                "live_action_enabled",
+                "cieu_persistence_enabled",
+                "brain_writeback_enabled",
+                "memory_ingestion_enabled",
+                "next_required_milestone",
+                "generated_summary",
+                "generated_report",
+                "warning",
+            ]:
+                if field in observation_loop_summary:
+                    report.pass_(f"snapshot observation_loop_summary field present: {field}")
+                else:
+                    report.fail(f"snapshot observation_loop_summary missing field: {field}")
+            for field in [
+                "governed_observation_loop_defined",
+                "read_only_observation_loop_defined",
+                "observation_source_registry_defined",
+                "observation_tick_generated",
+                "mission_dashboard_snapshot_defined",
+                "company_state_digest_defined",
+                "observation_to_work_item_candidates_defined",
+                "mission_bounded_autonomy_supported",
+                "step_by_step_human_prompting_reduced",
+            ]:
+                if observation_loop_summary.get(field) is not True:
+                    report.fail(f"snapshot observation_loop_summary must keep {field}=true")
+            for field in [
+                "real_action_executed",
+                "external_action_executed",
+                "live_action_enabled",
+                "cieu_persistence_enabled",
+                "brain_writeback_enabled",
+                "memory_ingestion_enabled",
+            ]:
+                if observation_loop_summary.get(field) is not False:
+                    report.fail(f"snapshot observation_loop_summary must keep {field}=false")
+            if observation_loop_summary.get("next_required_milestone") != "L4.4 First Governed Read-Only Observation Tool Wrapper v0":
+                report.fail("snapshot observation_loop_summary must point to L4.4 wrapper milestone")
+        else:
+            report.fail("generated snapshot missing observation_loop_summary")
+
     quarantine = generated_json.get("console_read_model/generated/quarantine_summary.json")
     if quarantine:
         for field in [
@@ -1587,6 +1697,96 @@ def main() -> int:
                 report.fail(f"generated autonomous cycle summary must keep {field}=false")
         if autonomous_cycle.get("next_required_milestone") != "L4.3 Governed Read-Only Observation Loop v0":
             report.fail("generated autonomous cycle summary must point to L4.3 observation-loop milestone")
+
+    legacy_triage = generated_json.get("console_read_model/generated/legacy_triage_summary.json")
+    if legacy_triage:
+        for field in [
+            "legacy_asset_triage_defined",
+            "assets_scored",
+            "absorption_buckets_defined",
+            "bucket_counts",
+            "top_absorption_candidates_defined",
+            "governed_absorption_backlog_defined",
+            "blind_absorption_allowed",
+            "blanket_rewrite_allowed",
+            "live_actions_enabled",
+            "next_required_milestone",
+            "generated_summary",
+            "generated_report",
+            "warning",
+        ]:
+            if field in legacy_triage:
+                report.pass_(f"generated legacy triage summary field present: {field}")
+            else:
+                report.fail(f"generated legacy triage summary missing field: {field}")
+        for field in [
+            "legacy_asset_triage_defined",
+            "absorption_buckets_defined",
+            "top_absorption_candidates_defined",
+            "governed_absorption_backlog_defined",
+        ]:
+            if legacy_triage.get(field) is not True:
+                report.fail(f"generated legacy triage summary must keep {field}=true")
+        for field in ["blind_absorption_allowed", "blanket_rewrite_allowed", "live_actions_enabled"]:
+            if legacy_triage.get(field) is not False:
+                report.fail(f"generated legacy triage summary must keep {field}=false")
+        if not legacy_triage.get("assets_scored", 0) > 0:
+            report.fail("generated legacy triage summary must score assets")
+        if legacy_triage.get("next_required_milestone") != "L4.4 First Governed Read-Only Observation Tool Wrapper v0":
+            report.fail("generated legacy triage summary must point to L4.4 wrapper milestone")
+
+    observation_loop = generated_json.get("console_read_model/generated/observation_loop_summary.json")
+    if observation_loop:
+        for field in [
+            "governed_observation_loop_defined",
+            "read_only_observation_loop_defined",
+            "observation_source_registry_defined",
+            "observation_tick_generated",
+            "mission_dashboard_snapshot_defined",
+            "company_state_digest_defined",
+            "observation_to_work_item_candidates_defined",
+            "mission_bounded_autonomy_supported",
+            "step_by_step_human_prompting_reduced",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "next_required_milestone",
+            "generated_summary",
+            "generated_report",
+            "warning",
+        ]:
+            if field in observation_loop:
+                report.pass_(f"generated observation loop summary field present: {field}")
+            else:
+                report.fail(f"generated observation loop summary missing field: {field}")
+        for field in [
+            "governed_observation_loop_defined",
+            "read_only_observation_loop_defined",
+            "observation_source_registry_defined",
+            "observation_tick_generated",
+            "mission_dashboard_snapshot_defined",
+            "company_state_digest_defined",
+            "observation_to_work_item_candidates_defined",
+            "mission_bounded_autonomy_supported",
+            "step_by_step_human_prompting_reduced",
+        ]:
+            if observation_loop.get(field) is not True:
+                report.fail(f"generated observation loop summary must keep {field}=true")
+        for field in [
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+        ]:
+            if observation_loop.get(field) is not False:
+                report.fail(f"generated observation loop summary must keep {field}=false")
+        if observation_loop.get("next_required_milestone") != "L4.4 First Governed Read-Only Observation Tool Wrapper v0":
+            report.fail("generated observation loop summary must point to L4.4 wrapper milestone")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

@@ -66,6 +66,11 @@
 - `company_autonomous_work_cycle/generated/simulated_action_plan.json`
 - `company_autonomous_work_cycle/generated/simulated_cieu_event.json`
 - `company_autonomous_work_cycle/generated/residual_delta_simulation.json`
+- `legacy_asset_triage/generated/legacy_asset_triage_summary.json`
+- `legacy_asset_triage/generated/asset_absorption_buckets.json`
+- `governed_observation_loop/generated/governed_observation_loop_summary.json`
+- `governed_observation_loop/generated/observation_source_registry.json`
+- `governed_observation_loop/generated/observation_tick_001.json`
 - `company_autonomous_work_cycle/generated/next_task_recommendations.json`
 - `company_autonomous_work_cycle/generated/autonomous_work_cycle_summary.json`
 - `console_read_model/generated/quarantine_summary.json`

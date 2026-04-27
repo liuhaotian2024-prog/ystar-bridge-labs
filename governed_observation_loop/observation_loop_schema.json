@@ -1,0 +1,8 @@
+{
+  "schema_name": "ystar.governed_observation_loop.observation_loop_schema",
+  "schema_version": "v0",
+  "read_only_observation_loop_defined": true,
+  "real_action_executed": false,
+  "external_action_executed": false,
+  "live_action_enabled": false
+}

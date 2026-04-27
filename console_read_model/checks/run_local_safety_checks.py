@@ -103,7 +103,17 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after autonomous work cycle",
+        "Build legacy asset triage",
+        ["python3", "legacy_asset_triage/tools/build_legacy_asset_triage.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Build governed observation loop",
+        ["python3", "governed_observation_loop/tools/build_governed_observation_loop.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after observation loop",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -349,6 +359,70 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "company_autonomous_work_cycle/generated/autonomous_work_cycle_summary.json"],
     ),
     Check(
+        "Compile legacy asset triage builder",
+        ["python3", "-m", "py_compile", "legacy_asset_triage/tools/build_legacy_asset_triage.py"],
+    ),
+    Check(
+        "Validate JSON: legacy_triage_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/legacy_triage_summary.json"],
+    ),
+    Check(
+        "Validate JSON: legacy_asset_triage_manifest.json",
+        ["python3", "-m", "json.tool", "legacy_asset_triage/generated/legacy_asset_triage_manifest.json"],
+    ),
+    Check(
+        "Validate JSON: asset_value_risk_matrix.json",
+        ["python3", "-m", "json.tool", "legacy_asset_triage/generated/asset_value_risk_matrix.json"],
+    ),
+    Check(
+        "Validate JSON: asset_absorption_buckets.json",
+        ["python3", "-m", "json.tool", "legacy_asset_triage/generated/asset_absorption_buckets.json"],
+    ),
+    Check(
+        "Validate JSON: governed_absorption_backlog.json",
+        ["python3", "-m", "json.tool", "legacy_asset_triage/generated/governed_absorption_backlog.json"],
+    ),
+    Check(
+        "Validate JSON: top_absorption_candidates.json",
+        ["python3", "-m", "json.tool", "legacy_asset_triage/generated/top_absorption_candidates.json"],
+    ),
+    Check(
+        "Validate JSON: legacy_asset_triage_summary.json",
+        ["python3", "-m", "json.tool", "legacy_asset_triage/generated/legacy_asset_triage_summary.json"],
+    ),
+    Check(
+        "Compile governed observation loop builder",
+        ["python3", "-m", "py_compile", "governed_observation_loop/tools/build_governed_observation_loop.py"],
+    ),
+    Check(
+        "Validate JSON: observation_loop_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/observation_loop_summary.json"],
+    ),
+    Check(
+        "Validate JSON: observation_source_registry.json",
+        ["python3", "-m", "json.tool", "governed_observation_loop/generated/observation_source_registry.json"],
+    ),
+    Check(
+        "Validate JSON: observation_tick_001.json",
+        ["python3", "-m", "json.tool", "governed_observation_loop/generated/observation_tick_001.json"],
+    ),
+    Check(
+        "Validate JSON: mission_dashboard_snapshot.json",
+        ["python3", "-m", "json.tool", "governed_observation_loop/generated/mission_dashboard_snapshot.json"],
+    ),
+    Check(
+        "Validate JSON: company_state_digest.json",
+        ["python3", "-m", "json.tool", "governed_observation_loop/generated/company_state_digest.json"],
+    ),
+    Check(
+        "Validate JSON: observation_to_work_item_candidates.json",
+        ["python3", "-m", "json.tool", "governed_observation_loop/generated/observation_to_work_item_candidates.json"],
+    ),
+    Check(
+        "Validate JSON: governed_observation_loop_summary.json",
+        ["python3", "-m", "json.tool", "governed_observation_loop/generated/governed_observation_loop_summary.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -491,6 +565,14 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: autonomous-cycle",
         ["python3", "console_read_model/cli/team_console.py", "autonomous-cycle"],
+    ),
+    Check(
+        "CLI smoke: legacy-triage",
+        ["python3", "console_read_model/cli/team_console.py", "legacy-triage"],
+    ),
+    Check(
+        "CLI smoke: observation-loop",
+        ["python3", "console_read_model/cli/team_console.py", "observation-loop"],
     ),
     Check(
         "CLI smoke: sources",

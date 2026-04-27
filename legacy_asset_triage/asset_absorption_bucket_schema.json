@@ -1,0 +1,13 @@
+{
+  "schema_name": "ystar.legacy_asset_triage.asset_absorption_bucket_schema",
+  "schema_version": "v0",
+  "allowed_buckets": [
+    "A_adopt_now_read_only",
+    "B_wrap_as_governed_tool",
+    "C_rewrite_from_design",
+    "D_quarantine_as_evidence_ore",
+    "E_retire_do_not_use"
+  ],
+  "live_enabled": false,
+  "blind_absorption_allowed": false
+}

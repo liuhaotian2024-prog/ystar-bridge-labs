@@ -1,0 +1,97 @@
+{
+  "schema_name": "ystar.governed_observation_loop.generated.observation_source_registry",
+  "schema_version": "v0",
+  "source_count": 9,
+  "sources": [
+    {
+      "source_id": "console-readiness-summary",
+      "source_path": "console_read_model/generated/readiness_summary.json",
+      "source_type": "console_read_model_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "governance_notes": "generated console readiness summary"
+    },
+    {
+      "source_id": "console-team-snapshot",
+      "source_path": "console_read_model/generated/team_console_snapshot.json",
+      "source_type": "console_read_model_snapshot",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "governance_notes": "generated team console snapshot"
+    },
+    {
+      "source_id": "live-readiness-summary",
+      "source_path": "console_read_model/generated/live_readiness_summary.json",
+      "source_type": "live_readiness_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "governance_notes": "generated live readiness summary"
+    },
+    {
+      "source_id": "live-boundary-summary",
+      "source_path": "console_read_model/generated/live_boundary_summary.json",
+      "source_type": "live_boundary_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "governance_notes": "generated live boundary summary"
+    },
+    {
+      "source_id": "cieu-boundary-summary",
+      "source_path": "console_read_model/generated/cieu_boundary_summary.json",
+      "source_type": "cieu_boundary_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "governance_notes": "generated CIEU boundary summary"
+    },
+    {
+      "source_id": "autonomy-inventory-summary",
+      "source_path": "console_read_model/generated/autonomy_inventory_summary.json",
+      "source_type": "autonomy_inventory_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "governance_notes": "generated company autonomy inventory summary"
+    },
+    {
+      "source_id": "autonomous-cycle-summary",
+      "source_path": "console_read_model/generated/autonomous_cycle_summary.json",
+      "source_type": "autonomous_cycle_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "governance_notes": "generated autonomous work cycle summary"
+    },
+    {
+      "source_id": "legacy-triage-summary",
+      "source_path": "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
+      "source_type": "legacy_asset_triage_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "governance_notes": "generated legacy triage summary"
+    },
+    {
+      "source_id": "triage-adoptable-01",
+      "source_path": "console_read_model/cli/team_console.py",
+      "source_type": "triaged_read_only_asset",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "governance_notes": "A bucket asset referenced read-only; not executed or absorbed"
+    }
+  ]
+}

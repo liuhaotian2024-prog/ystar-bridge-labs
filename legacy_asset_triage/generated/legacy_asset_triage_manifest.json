@@ -1,0 +1,28 @@
+{
+  "schema_name": "ystar.legacy_asset_triage.generated.legacy_asset_triage_manifest",
+  "schema_version": "v0",
+  "generated_by": "legacy_asset_triage/tools/build_legacy_asset_triage.py",
+  "inputs": [
+    "company_autonomy_inventory/generated/existing_asset_inventory.json",
+    "company_autonomy_inventory/generated/governed_tool_registry_candidates.json",
+    "company_autonomy_inventory/generated/action_capability_map.json",
+    "company_autonomy_inventory/generated/observation_capability_map.json",
+    "company_autonomy_inventory/generated/resource_sensing_map.json",
+    "company_autonomy_inventory/generated/agent_role_capability_matrix.json",
+    "company_autonomous_work_cycle/generated/autonomous_work_cycle_summary.json",
+    "company_autonomous_work_cycle/generated/next_task_recommendations.json"
+  ],
+  "generated_files": [
+    "legacy_asset_triage/generated/asset_value_risk_matrix.json",
+    "legacy_asset_triage/generated/asset_absorption_buckets.json",
+    "legacy_asset_triage/generated/governed_absorption_backlog.json",
+    "legacy_asset_triage/generated/top_absorption_candidates.json",
+    "legacy_asset_triage/generated/retired_or_quarantined_assets.json",
+    "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
+    "legacy_asset_triage/generated/legacy_asset_triage_report.md"
+  ],
+  "assets_scored": 900,
+  "live_actions_enabled": false,
+  "raw_runtime_artifacts_read": false,
+  "semantic_truth_scoring_performed": false
+}

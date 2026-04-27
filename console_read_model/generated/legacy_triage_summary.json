@@ -1,0 +1,29 @@
+{
+  "schema_name": "ystar.console_read_model.generated.legacy_triage_summary",
+  "schema_version": "v0",
+  "legacy_asset_triage_defined": true,
+  "assets_scored": 900,
+  "absorption_buckets_defined": true,
+  "bucket_counts": {
+    "A_adopt_now_read_only": 1,
+    "B_wrap_as_governed_tool": 881,
+    "C_rewrite_from_design": 10,
+    "D_quarantine_as_evidence_ore": 8,
+    "E_retire_do_not_use": 0
+  },
+  "top_absorption_candidates_defined": true,
+  "top_absorption_candidate_count": 7,
+  "governed_absorption_backlog_defined": true,
+  "governed_absorption_backlog_count": 5,
+  "blind_absorption_allowed": false,
+  "blanket_rewrite_allowed": false,
+  "live_actions_enabled": false,
+  "external_actions_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false,
+  "cieu_persistence_enabled": false,
+  "next_required_milestone": "L4.4 First Governed Read-Only Observation Tool Wrapper v0",
+  "generated_summary": "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
+  "generated_report": "legacy_asset_triage/generated/legacy_asset_triage_report.md",
+  "warning": "Triage is classification only; no asset is absorbed or enabled."
+}

@@ -1,0 +1,18 @@
+{
+  "schema_name": "ystar.legacy_asset_triage.asset_scoring_schema",
+  "schema_version": "v0",
+  "required_fields": [
+    "asset_id",
+    "source_path",
+    "mission_value_score",
+    "evidence_strength_score",
+    "action_power_score",
+    "safety_risk_score",
+    "governance_fit_score",
+    "reuse_cost_score",
+    "architecture_alignment_score",
+    "absorption_bucket"
+  ],
+  "score_range": [0, 5],
+  "scoring_method": "deterministic lexical metadata scoring only"
+}

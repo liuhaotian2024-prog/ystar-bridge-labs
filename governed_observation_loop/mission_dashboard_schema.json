@@ -1,0 +1,18 @@
+{
+  "schema_name": "ystar.governed_observation_loop.mission_dashboard_schema",
+  "schema_version": "v0",
+  "required_sections": [
+    "mission",
+    "current_milestone_chain",
+    "live_readiness",
+    "live_boundary",
+    "cieu_boundary",
+    "autonomy_inventory",
+    "autonomous_work_cycle",
+    "legacy_asset_triage",
+    "observation_loop_status",
+    "top_risks",
+    "top_opportunities",
+    "next_recommended_work"
+  ]
+}

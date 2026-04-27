@@ -1,0 +1,19 @@
+{
+  "schema_name": "ystar.legacy_asset_triage.governed_absorption_backlog_schema",
+  "schema_version": "v0",
+  "required_fields": [
+    "backlog_id",
+    "title",
+    "asset_refs",
+    "target_bucket",
+    "recommended_owner_agent",
+    "risk_tier",
+    "requires_y_star_gov",
+    "requires_operator_approval",
+    "requires_cieu_event",
+    "live_enabled",
+    "acceptance_criteria",
+    "notes"
+  ],
+  "live_enabled": false
+}

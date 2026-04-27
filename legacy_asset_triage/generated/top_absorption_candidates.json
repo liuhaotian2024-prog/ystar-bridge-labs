@@ -1,0 +1,84 @@
+{
+  "schema_name": "ystar.legacy_asset_triage.generated.top_absorption_candidates",
+  "schema_version": "v0",
+  "candidate_count": 7,
+  "candidates": [
+    {
+      "asset_id": "asset-0271",
+      "source_path": "console_read_model/cli/team_console.py",
+      "bucket": "A_adopt_now_read_only",
+      "why_valuable": "high mission value with deterministic evidence from compact inventory",
+      "risk_notes": "must remain read-only or wrapped; no live execution is enabled",
+      "required_governance_wrapper": "read_only_source_reference",
+      "recommended_owner_agent": "Maya-Governance",
+      "recommended_next_step": "review as governed observation or wrapper candidate",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "asset-0294",
+      "source_path": "console_read_model/generated/team_console_snapshot.md",
+      "bucket": "B_wrap_as_governed_tool",
+      "why_valuable": "high mission value with deterministic evidence from compact inventory",
+      "risk_notes": "must remain read-only or wrapped; no live execution is enabled",
+      "required_governance_wrapper": "disabled_governed_tool_wrapper",
+      "recommended_owner_agent": "Aiden-CEO",
+      "recommended_next_step": "review as governed observation or wrapper candidate",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "asset-0553",
+      "source_path": "gov_mcp/server.py",
+      "bucket": "B_wrap_as_governed_tool",
+      "why_valuable": "high mission value with deterministic evidence from compact inventory",
+      "risk_notes": "must remain read-only or wrapped; no live execution is enabled",
+      "required_governance_wrapper": "disabled_governed_tool_wrapper",
+      "recommended_owner_agent": "Ethan-CTO",
+      "recommended_next_step": "review as governed observation or wrapper candidate",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "asset-2412",
+      "source_path": "scripts/build_rag_index.py",
+      "bucket": "B_wrap_as_governed_tool",
+      "why_valuable": "high mission value with deterministic evidence from compact inventory",
+      "risk_notes": "must remain read-only or wrapped; no live execution is enabled",
+      "required_governance_wrapper": "disabled_governed_tool_wrapper",
+      "recommended_owner_agent": "Ethan-CTO",
+      "recommended_next_step": "review as governed observation or wrapper candidate",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "asset-2558",
+      "source_path": "scripts/restart_handoff_verifier.py",
+      "bucket": "B_wrap_as_governed_tool",
+      "why_valuable": "high mission value with deterministic evidence from compact inventory",
+      "risk_notes": "must remain read-only or wrapped; no live execution is enabled",
+      "required_governance_wrapper": "disabled_governed_tool_wrapper",
+      "recommended_owner_agent": "Ethan-CTO",
+      "recommended_next_step": "review as governed observation or wrapper candidate",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "asset-2572",
+      "source_path": "scripts/skill_lifecycle_manager.py",
+      "bucket": "B_wrap_as_governed_tool",
+      "why_valuable": "high mission value with deterministic evidence from compact inventory",
+      "risk_notes": "must remain read-only or wrapped; no live execution is enabled",
+      "required_governance_wrapper": "disabled_governed_tool_wrapper",
+      "recommended_owner_agent": "Aiden-CEO",
+      "recommended_next_step": "review as governed observation or wrapper candidate",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "asset-2948",
+      "source_path": "ystar.bak.20260415_again/cli/impact_cmd.py",
+      "bucket": "B_wrap_as_governed_tool",
+      "why_valuable": "high mission value with deterministic evidence from compact inventory",
+      "risk_notes": "must remain read-only or wrapped; no live execution is enabled",
+      "required_governance_wrapper": "disabled_governed_tool_wrapper",
+      "recommended_owner_agent": "Maya-Governance",
+      "recommended_next_step": "review as governed observation or wrapper candidate",
+      "live_enabled": false
+    }
+  ]
+}

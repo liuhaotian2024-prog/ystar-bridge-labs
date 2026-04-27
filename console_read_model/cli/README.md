@@ -105,3 +105,11 @@ The `autonomous-cycle` command displays only the generated mission-bounded
 autonomous work cycle summary. It confirms the company can simulate a
 self-directed work cycle while real action, external effects, CIEU persistence,
 brain writeback, and memory ingestion remain disabled.
+
+The `legacy-triage` command displays only the generated legacy asset triage
+summary. It confirms assets are classified before absorption and that blind
+absorption, blanket rewrite, and live action remain disabled.
+
+The `observation-loop` command displays only the generated governed observation
+loop summary. It confirms the loop uses read-only generated sources and produces
+work candidates without action execution.

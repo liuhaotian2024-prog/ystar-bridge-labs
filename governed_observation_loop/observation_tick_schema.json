@@ -1,0 +1,17 @@
+{
+  "schema_name": "ystar.governed_observation_loop.observation_tick_schema",
+  "schema_version": "v0",
+  "required_fields": [
+    "tick_id",
+    "created_at",
+    "mission_id",
+    "observation_sources_used",
+    "observed_state",
+    "detected_changes_or_findings",
+    "blocked_risks",
+    "safe_opportunities",
+    "work_item_candidates",
+    "real_action_executed",
+    "external_action_executed"
+  ]
+}

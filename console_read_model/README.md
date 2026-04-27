@@ -105,3 +105,13 @@ This is a simulator that demonstrates mission, observation, proposed work,
 delegation, governed tool selection, Pre-U, governance, simulated action, CIEU
 fixture, residual delta, and next-task recommendation without executing real
 work or enabling live action.
+
+The snapshot can expose a legacy asset triage summary derived from
+`legacy_asset_triage/generated/legacy_asset_triage_summary.json`. This
+classifies historical assets into adopt, wrap, rewrite, quarantine, and retire
+buckets before any absorption. It enables no live action.
+
+The snapshot can expose a governed observation loop summary derived from
+`governed_observation_loop/generated/governed_observation_loop_summary.json`.
+This records a deterministic read-only observation tick from generated sources
+and converts findings into future work candidates without executing actions.

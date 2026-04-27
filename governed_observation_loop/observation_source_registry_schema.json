@@ -1,0 +1,14 @@
+{
+  "schema_name": "ystar.governed_observation_loop.observation_source_registry_schema",
+  "schema_version": "v0",
+  "required_fields": [
+    "source_id",
+    "source_path",
+    "source_type",
+    "safe_to_read_now",
+    "raw_runtime_artifact",
+    "requires_network",
+    "requires_credentials",
+    "governance_notes"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_name": "ystar.governed_observation_loop.generated.mission_dashboard_snapshot",
+  "schema_version": "v0",
+  "mission": "Build a commercial AI agent self-governed company runtime that can observe business-relevant resources, understand constraints, select or build tools, act through governed channels, record outcomes, and improve through curated CIEU deltas.",
+  "current_milestone_chain": [
+    "L4.1 capability inventory",
+    "L4.2 autonomous work cycle simulator",
+    "L4.3 legacy triage and read-only observation loop"
+  ],
+  "live_readiness": {
+    "dry_run_governance_ready": null,
+    "minimal_live_loop_ready": null
+  },
+  "live_boundary": {
+    "defined": true,
+    "enabled": false
+  },
+  "cieu_boundary": {
+    "defined": true,
+    "persistence_enabled": false
+  },
+  "autonomy_inventory": {
+    "defined": true,
+    "channels": 12
+  },
+  "autonomous_work_cycle": {
+    "defined": true,
+    "next_required_milestone": "L4.3 Governed Read-Only Observation Loop v0"
+  },
+  "legacy_asset_triage": {
+    "defined": true,
+    "assets_scored": 900,
+    "bucket_counts": {
+      "A_adopt_now_read_only": 1,
+      "B_wrap_as_governed_tool": 881,
+      "C_rewrite_from_design": 10,
+      "D_quarantine_as_evidence_ore": 8,
+      "E_retire_do_not_use": 0
+    }
+  },
+  "observation_loop_status": {
+    "read_only_observation_loop_defined": true,
+    "tick_id": "observation-tick-001",
+    "real_action_executed": false
+  },
+  "top_risks": [
+    "live action execution remains disabled",
+    "external communication remains disabled",
+    "CIEU persistence remains disabled",
+    "brain and memory writeback remain disabled"
+  ],
+  "top_opportunities": [
+    "use generated summaries as a recurring observation surface",
+    "turn top triage candidates into governed read-only wrappers",
+    "produce next work recommendations without executing actions"
+  ],
+  "next_recommended_work": "L4.4 First Governed Read-Only Observation Tool Wrapper v0"
+}

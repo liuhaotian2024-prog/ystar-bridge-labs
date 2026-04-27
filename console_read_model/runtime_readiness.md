@@ -58,8 +58,11 @@
 - CIEU runtime event fixtures are defined, but persistence remains disabled.
 - Company autonomy inventory exists, but governed action registry candidates are
   not approved or live-enabled.
-- Autonomous work cycle exists as a simulator only; governed read-only
-  observation loop is not implemented.
+- Autonomous work cycle exists as a simulator only; real action execution is not
+  implemented.
+- Legacy asset triage classifies historical assets before any absorption.
+- Governed observation loop exists as one read-only tick from generated
+  summaries only.
 - Runtime tests remain separate from local read-model safety checks.
 - Full JSON Schema enforcement through a dedicated schema engine.
 
@@ -96,7 +99,7 @@ N. Define verified CIEU runtime writer interfaces without enabling persistence.
 O. Simulate a company autonomous work cycle using only mapped, disabled
 governed tool candidates.
 
-P. Implement L4.3 Governed Read-Only Observation Loop v0.
+P. Implement L4.4 First Governed Read-Only Observation Tool Wrapper v0.
 
 The safest next step is either a static capsule validator or a read-only console
 prototype that consumes only the files in this directory and other curated

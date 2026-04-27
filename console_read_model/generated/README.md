@@ -48,5 +48,11 @@ autonomy inventory. It confirms capability maps and tool candidates exist while 
 `autonomous_cycle_summary.json` is derived from the mission-bounded
 autonomous work cycle simulator. It confirms a full simulated company cycle exists while real actions remain disabled.
 
+`legacy_triage_summary.json` is derived from generated legacy asset
+triage outputs. It classifies assets before absorption and enables no actions.
+
+`observation_loop_summary.json` is derived from generated governed
+observation loop outputs. It summarizes a read-only tick from safe generated sources.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

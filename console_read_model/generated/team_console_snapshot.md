@@ -61,6 +61,8 @@ Ready now:
 - disabled CIEU runtime event boundary summary
 - company autonomy inventory summary
 - mission-bounded autonomous work cycle simulator summary
+- legacy asset triage summary
+- governed read-only observation loop summary
 
 Not ready:
 - runtime generator
@@ -89,13 +91,13 @@ Not ready:
 - enabled live-boundary harness
 - enabled CIEU runtime event persistence
 - approved governed action registry
-- governed read-only observation loop
+- first governed read-only observation tool wrapper
 
 ## Runtime Artifact Quarantine Summary
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 222
+- Artifacts classified: 223
 - Unsafe artifacts count: 173
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
@@ -111,7 +113,7 @@ Not ready:
   - FRAMEWORK_FILE: 5
   - LOG_RUNTIME: 31
   - PYCACHE: 31
-  - UNKNOWN_OR_NON_RUNTIME: 44
+  - UNKNOWN_OR_NON_RUNTIME: 45
   - UNKNOWN_RUNTIME_ARTIFACT: 10
   - WHITELIST_REPORT: 1
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
@@ -149,8 +151,8 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 222
-- Artifacts with disposition: 222
+- Total artifacts: 223
+- Artifacts with disposition: 223
 - Safe-mined to review queue: 20
 - Forbidden direct read count: 106
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
@@ -162,10 +164,10 @@ Not ready:
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 31
-  - ignored_or_non_runtime: 49
+  - ignored_or_non_runtime: 50
   - safe_mined_to_review_queue: 20
 - Evidence scoring status:
-  - not_started: 222
+  - not_started: 223
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -357,6 +359,43 @@ Not ready:
 - next_required_milestone: L4.3 Governed Read-Only Observation Loop v0
 - Warning: simulator only; no real action, external effect, CIEU persistence, or writeback occurred
 
+## Legacy Asset Triage
+
+- assets_scored: 900
+- absorption_buckets_defined: True
+- top_absorption_candidates_defined: True
+- governed_absorption_backlog_defined: True
+- blind_absorption_allowed: False
+- blanket_rewrite_allowed: False
+- live_actions_enabled: False
+- next_required_milestone: L4.4 First Governed Read-Only Observation Tool Wrapper v0
+- bucket_counts:
+  - A_adopt_now_read_only: 1
+  - B_wrap_as_governed_tool: 881
+  - C_rewrite_from_design: 10
+  - D_quarantine_as_evidence_ore: 8
+  - E_retire_do_not_use: 0
+- Warning: Triage is classification only; no asset is absorbed or enabled.
+
+## Governed Observation Loop
+
+- read_only_observation_loop_defined: True
+- observation_source_registry_defined: True
+- observation_tick_generated: True
+- mission_dashboard_snapshot_defined: True
+- company_state_digest_defined: True
+- observation_to_work_item_candidates_defined: True
+- mission_bounded_autonomy_supported: True
+- step_by_step_human_prompting_reduced: True
+- real_action_executed: False
+- external_action_executed: False
+- live_action_enabled: False
+- cieu_persistence_enabled: False
+- brain_writeback_enabled: False
+- memory_ingestion_enabled: False
+- next_required_milestone: L4.4 First Governed Read-Only Observation Tool Wrapper v0
+- Warning: Observation loop is read-only and executes no actions.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -385,7 +424,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - implement live boundary gates without enabling runtime execution
 - define CIEU runtime event writer verification without enabling persistence
 - simulate a company autonomous work cycle without enabling live actions
-- build L4.3 governed read-only observation loop from simulator outputs
+- build L4.4 first governed read-only observation tool wrapper
 
 ## Warnings / Gaps
 
@@ -414,4 +453,6 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Live boundary harness exists as defined-disabled contracts only; no live execution is enabled.
 - CIEU runtime boundary exists as disabled event fixtures only; no CIEU persistence is enabled.
 - Company autonomy inventory exists, but governed action registry candidates are not live-enabled.
-- Autonomous work cycle exists as a simulator only; governed read-only observation loop is not implemented.
+- Autonomous work cycle exists as a simulator only; no real action execution is implemented.
+- Legacy asset triage exists, but no absorption or wrapper application workflow exists.
+- Governed observation loop exists as one read-only tick; recurring wrapper execution is not implemented.

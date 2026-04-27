@@ -1,0 +1,34 @@
+{
+  "schema_name": "ystar.governed_observation_loop.generated.company_state_digest",
+  "schema_version": "v0",
+  "what_the_company_knows_now": [
+    "dry-run governance stack exists",
+    "legacy assets are triaged before absorption",
+    "generated summaries can be observed safely"
+  ],
+  "what_it_can_safely_observe": [
+    "console read-model summaries",
+    "live readiness and boundary summaries",
+    "CIEU boundary summaries",
+    "autonomy inventory and work-cycle summaries",
+    "legacy triage summaries"
+  ],
+  "what_it_can_safely_do_now": [
+    "generate read-only observation ticks",
+    "recommend next work candidates",
+    "prepare wrapper specs without executing tools"
+  ],
+  "what_remains_blocked": [
+    "live action execution remains disabled",
+    "external communication remains disabled",
+    "CIEU persistence remains disabled",
+    "brain and memory writeback remain disabled"
+  ],
+  "what_should_be_wrapped_next": [
+    "read-only observation loop",
+    "mission dashboard generator",
+    "top legacy triage candidates"
+  ],
+  "live_enabled": false,
+  "network_used": false
+}
