@@ -129,3 +129,9 @@ This confirms the read-only wrapper is invoked only after an agent request is
 converted into a Pre-U packet, locally decided, and authorized by the bridge.
 Direct tool calls, unsafe bridge requests, live execution, persistence, and
 writeback remain disabled.
+
+The snapshot can expose an agent-team work proposal summary derived from
+`agent_team_work_proposal/generated/agent_team_work_proposal_summary.json`.
+This confirms mission and observation evidence can produce an agent-selected
+work proposal, role review, tool need, generated tool request, and bridge-routed
+read-only result without direct tool invocation or live behavior.

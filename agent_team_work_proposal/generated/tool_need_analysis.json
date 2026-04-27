@@ -1,0 +1,19 @@
+{
+  "schema_name": "ystar.agent_team_work_proposal.generated.tool_need_analysis",
+  "schema_version": "v0",
+  "analysis_id": "tool-need-analysis-001",
+  "selected_proposal_id": "agent-work-proposal-001",
+  "tool_needed": true,
+  "tool_id": "governed_readonly_observation_tool_v0",
+  "bridge_required": true,
+  "bridge_id": "governed_tool_invocation_bridge_v0",
+  "why_tool_needed": "The selected work requires a normalized company-state observation from safe generated summaries.",
+  "why_direct_invocation_disallowed": "Agent requests must be converted into Pre-U bridge decisions before any tool call.",
+  "expected_tool_output": "Normalized observation with read sources and next work candidates.",
+  "risk_tier": "low",
+  "requires_y_star_gov": true,
+  "requires_cieu_event": true,
+  "operator_approval_required": false,
+  "live_enabled": false,
+  "external_action_enabled": false
+}

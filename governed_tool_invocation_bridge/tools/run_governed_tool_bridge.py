@@ -568,7 +568,7 @@ def build_trace(
     }
 
 
-def run_bridge(request: dict[str, Any], output_dir: Path) -> dict[str, dict[str, Any]]:
+def run_bridge_payloads(request: dict[str, Any]) -> dict[str, dict[str, Any]]:
     contract = build_bridge_contract()
     readonly_contract = readonly_tool.load_contract()
     registry = readonly_tool.load_registry()
@@ -608,6 +608,11 @@ def run_bridge(request: dict[str, Any], output_dir: Path) -> dict[str, dict[str,
         "rejected_unsafe_bridge_request": unsafe_rejection,
         "bridge_invocation_trace": trace,
     }
+    return payloads
+
+
+def run_bridge(request: dict[str, Any], output_dir: Path) -> dict[str, dict[str, Any]]:
+    payloads = run_bridge_payloads(request)
     file_names = {
         "bridge_contract": "bridge_contract.json",
         "agent_tool_request": "agent_tool_request.json",
@@ -653,4 +658,3 @@ def main(argv: list[str]) -> int:
 
 if __name__ == "__main__":
     sys.exit(main(sys.argv[1:]))
-

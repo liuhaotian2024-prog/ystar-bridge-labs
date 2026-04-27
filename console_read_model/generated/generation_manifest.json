@@ -25,6 +25,7 @@
     "console_read_model/generated/observation_loop_summary.json",
     "console_read_model/generated/readonly_tool_summary.json",
     "console_read_model/generated/tool_bridge_summary.json",
+    "console_read_model/generated/work_proposal_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "source_files": [
@@ -53,6 +54,7 @@
     "governed_observation_loop/generated/governed_observation_loop_summary.json",
     "governed_readonly_observation_tool/generated/tool_readiness_summary.json",
     "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json",
+    "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",

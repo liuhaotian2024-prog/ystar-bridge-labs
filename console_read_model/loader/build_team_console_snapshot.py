@@ -43,6 +43,7 @@ CURATED_SOURCES = [
     "governed_observation_loop/generated/governed_observation_loop_summary.json",
     "governed_readonly_observation_tool/generated/tool_readiness_summary.json",
     "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json",
+    "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -980,6 +981,103 @@ def build_tool_bridge_summary(bridge_summary: dict[str, Any] | None) -> dict[str
     }
 
 
+def build_work_proposal_summary(work_summary: dict[str, Any] | None) -> dict[str, Any]:
+    if not work_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.work_proposal_summary",
+            "schema_version": "v0",
+            "agent_team_work_proposal_defined": False,
+            "mission_context_snapshot_defined": False,
+            "agent_team_observation_input_defined": False,
+            "autonomous_work_proposals_defined": False,
+            "selected_work_proposal_defined": False,
+            "role_review_board_defined": False,
+            "tool_need_analysis_defined": False,
+            "generated_tool_request_defined": False,
+            "work_proposal_routed_to_bridge": False,
+            "direct_tool_invocation_used": False,
+            "bridged_tool_result_ref_defined": False,
+            "work_proposal_cieu_event_defined": False,
+            "work_proposal_residual_delta_defined": False,
+            "agent_team_generated_the_work": False,
+            "agent_team_selected_governed_tool": False,
+            "pre_u_bridge_required": False,
+            "pre_u_bridge_satisfied": False,
+            "real_action_executed": False,
+            "external_action_executed": False,
+            "live_action_enabled": False,
+            "cieu_persistence_enabled": False,
+            "brain_writeback_enabled": False,
+            "memory_ingestion_enabled": False,
+            "next_required_milestone": "L4.7 First Mission Dashboard Refresh Loop v0",
+            "generated_summary": "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
+            "warning": "Agent team work proposal pack has not been generated yet.",
+        }
+    return {
+        "schema_name": "ystar.console_read_model.generated.work_proposal_summary",
+        "schema_version": "v0",
+        "agent_team_work_proposal_defined": work_summary.get("agent_team_work_proposal_defined"),
+        "mission_context_snapshot_defined": work_summary.get("mission_context_snapshot_defined"),
+        "agent_team_observation_input_defined": work_summary.get("agent_team_observation_input_defined"),
+        "autonomous_work_proposals_defined": work_summary.get("autonomous_work_proposals_defined"),
+        "selected_work_proposal_defined": work_summary.get("selected_work_proposal_defined"),
+        "role_review_board_defined": work_summary.get("role_review_board_defined"),
+        "tool_need_analysis_defined": work_summary.get("tool_need_analysis_defined"),
+        "generated_tool_request_defined": work_summary.get("generated_tool_request_defined"),
+        "work_proposal_routed_to_bridge": work_summary.get("work_proposal_routed_to_bridge"),
+        "bridge_runner_used": work_summary.get("bridge_runner_used"),
+        "direct_tool_invocation_used": work_summary.get("direct_tool_invocation_used"),
+        "bridged_tool_result_ref_defined": work_summary.get("bridged_tool_result_ref_defined"),
+        "work_proposal_cieu_event_defined": work_summary.get("work_proposal_cieu_event_defined"),
+        "work_proposal_residual_delta_defined": work_summary.get("work_proposal_residual_delta_defined"),
+        "next_agent_work_recommendations_defined": work_summary.get("next_agent_work_recommendations_defined"),
+        "mission_bounded_autonomy_supported": work_summary.get("mission_bounded_autonomy_supported"),
+        "founder_sets_mission_agent_team_drives": work_summary.get("founder_sets_mission_agent_team_drives"),
+        "step_by_step_human_prompting_required": work_summary.get("step_by_step_human_prompting_required"),
+        "agent_team_generated_the_work": work_summary.get("agent_team_generated_the_work"),
+        "agent_team_selected_governed_tool": work_summary.get("agent_team_selected_governed_tool"),
+        "pre_u_bridge_required": work_summary.get("pre_u_bridge_required"),
+        "pre_u_bridge_satisfied": work_summary.get("pre_u_bridge_satisfied"),
+        "real_action_executed": work_summary.get("real_action_executed"),
+        "external_action_executed": work_summary.get("external_action_executed"),
+        "live_action_enabled": work_summary.get("live_action_enabled"),
+        "network_enabled": work_summary.get("network_enabled"),
+        "git_push_enabled": work_summary.get("git_push_enabled"),
+        "daemon_control_enabled": work_summary.get("daemon_control_enabled"),
+        "cieu_persistence_enabled": work_summary.get("cieu_persistence_enabled"),
+        "brain_writeback_enabled": work_summary.get("brain_writeback_enabled"),
+        "memory_ingestion_enabled": work_summary.get("memory_ingestion_enabled"),
+        "email_or_external_communication_enabled": work_summary.get(
+            "email_or_external_communication_enabled"
+        ),
+        "next_required_milestone": work_summary.get("next_required_milestone"),
+        "generated_summary": work_summary.get(
+            "generated_summary",
+            "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
+        ),
+        "generated_tool_request": work_summary.get(
+            "generated_tool_request",
+            "agent_team_work_proposal/generated/generated_tool_request.json",
+        ),
+        "generated_bridge_trace": work_summary.get(
+            "generated_bridge_trace",
+            "agent_team_work_proposal/generated/work_proposal_to_bridge_trace.json",
+        ),
+        "generated_bridged_result_ref": work_summary.get(
+            "generated_bridged_result_ref",
+            "agent_team_work_proposal/generated/bridged_tool_result_ref.json",
+        ),
+        "generated_cieu_event": work_summary.get(
+            "generated_cieu_event",
+            "agent_team_work_proposal/generated/work_proposal_cieu_event.json",
+        ),
+        "warning": work_summary.get(
+            "warning",
+            "Agent-team work proposal routes generated work through the governed bridge only.",
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -1070,6 +1168,10 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json",
         files_read,
     )
+    work_proposal_generated_summary = load_optional_json(
+        "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -1088,6 +1190,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     observation_loop_summary = build_observation_loop_summary(observation_loop_generated_summary)
     readonly_tool_summary = build_readonly_tool_summary(readonly_tool_generated_summary)
     tool_bridge_summary = build_tool_bridge_summary(tool_bridge_generated_summary)
+    work_proposal_summary = build_work_proposal_summary(work_proposal_generated_summary)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -1180,6 +1283,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Governed read-only observation tool exists for local dry-run calls only; Pre-U bridge invocation is not wired yet.")
     if "Governed tool invocation bridge exists for local dry-run only; agent work proposal routing is not implemented yet." not in open_gaps:
         open_gaps.append("Governed tool invocation bridge exists for local dry-run only; agent work proposal routing is not implemented yet.")
+    if "Agent-team work proposal routing exists for dry-run tool invocation only; mission dashboard refresh loop is not implemented yet." not in open_gaps:
+        open_gaps.append("Agent-team work proposal routing exists for dry-run tool invocation only; mission dashboard refresh loop is not implemented yet.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -1209,6 +1314,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "observation_loop_summary": observation_loop_summary,
         "readonly_tool_summary": readonly_tool_summary,
         "tool_bridge_summary": tool_bridge_summary,
+        "work_proposal_summary": work_proposal_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -1263,6 +1369,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "governed read-only observation loop summary",
             "first governed read-only observation tool wrapper summary",
             "governed tool invocation bridge summary",
+            "agent-team work proposal to governed tool invocation summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -1293,6 +1400,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "approved governed action registry",
             "Pre-U bridge invocation for governed read-only observation tool",
             "agent team work proposal routing into governed tool invocation",
+            "mission dashboard refresh loop from agent-team generated bridge results",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -1316,6 +1424,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "build L4.4 first governed read-only observation tool wrapper",
             "route the governed read-only observation tool through the Pre-U bridge",
             "build L4.6 agent team work proposal to governed tool invocation",
+            "build L4.7 first mission dashboard refresh loop",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -1335,6 +1444,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "observation loop is read-only and not recurring",
             "governed read-only observation tool is local dry-run only and not routed through Pre-U yet",
             "governed tool invocation bridge is local dry-run only and not connected to autonomous proposals yet",
+            "agent-team work proposal bridge is dry-run only and does not refresh the mission dashboard yet",
         ],
         "safety_boundaries": [
             "no DB reads",
@@ -1360,6 +1470,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "governed observation loop reads generated summaries only and executes no actions",
             "governed read-only observation tool reads allowed generated summaries only and executes no actions",
             "governed tool invocation bridge requires Pre-U/decision/authorization before local tool calls",
+            "agent-team work proposal routing starts from generated observations and remains local read-only dry-run only",
         ],
     }
 
@@ -1390,6 +1501,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/observation_loop_summary.json",
             "console_read_model/generated/readonly_tool_summary.json",
             "console_read_model/generated/tool_bridge_summary.json",
+            "console_read_model/generated/work_proposal_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -1454,6 +1566,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "observation tool outputs. It confirms the first local read-only wrapper is callable while live action remains disabled.\n\n"
         "`tool_bridge_summary.json` is derived from generated governed tool\n"
         "invocation bridge outputs. It confirms the read-only tool is called only after Pre-U packet, decision, and bridge authorization.\n\n"
+        "`work_proposal_summary.json` is derived from generated agent-team work\n"
+        "proposal outputs. It confirms mission/observation evidence produced a governed tool request routed through the L4.5 bridge.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -1480,6 +1594,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/observation_loop_summary.json", observation_loop_summary, generated_files)
     write_json("console_read_model/generated/readonly_tool_summary.json", readonly_tool_summary, generated_files)
     write_json("console_read_model/generated/tool_bridge_summary.json", tool_bridge_summary, generated_files)
+    write_json("console_read_model/generated/work_proposal_summary.json", work_proposal_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -1541,6 +1656,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     observation_loop = snapshot.get("observation_loop_summary", {})
     readonly_tool = snapshot.get("readonly_tool_summary", {})
     tool_bridge = snapshot.get("tool_bridge_summary", {})
+    work_proposal = snapshot.get("work_proposal_summary", {})
     lines.extend(
         [
             "",
@@ -1931,6 +2047,37 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- memory_ingestion_enabled: {tool_bridge.get('memory_ingestion_enabled')}",
             f"- next_required_milestone: {tool_bridge.get('next_required_milestone')}",
             f"- Warning: {tool_bridge.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Agent Team Work Proposal",
+            "",
+            f"- mission_context_snapshot_defined: {work_proposal.get('mission_context_snapshot_defined')}",
+            f"- agent_team_observation_input_defined: {work_proposal.get('agent_team_observation_input_defined')}",
+            f"- autonomous_work_proposals_defined: {work_proposal.get('autonomous_work_proposals_defined')}",
+            f"- selected_work_proposal_defined: {work_proposal.get('selected_work_proposal_defined')}",
+            f"- role_review_board_defined: {work_proposal.get('role_review_board_defined')}",
+            f"- tool_need_analysis_defined: {work_proposal.get('tool_need_analysis_defined')}",
+            f"- generated_tool_request_defined: {work_proposal.get('generated_tool_request_defined')}",
+            f"- work_proposal_routed_to_bridge: {work_proposal.get('work_proposal_routed_to_bridge')}",
+            f"- direct_tool_invocation_used: {work_proposal.get('direct_tool_invocation_used')}",
+            f"- bridged_tool_result_ref_defined: {work_proposal.get('bridged_tool_result_ref_defined')}",
+            f"- work_proposal_cieu_event_defined: {work_proposal.get('work_proposal_cieu_event_defined')}",
+            f"- work_proposal_residual_delta_defined: {work_proposal.get('work_proposal_residual_delta_defined')}",
+            f"- agent_team_generated_the_work: {work_proposal.get('agent_team_generated_the_work')}",
+            f"- agent_team_selected_governed_tool: {work_proposal.get('agent_team_selected_governed_tool')}",
+            f"- pre_u_bridge_required: {work_proposal.get('pre_u_bridge_required')}",
+            f"- pre_u_bridge_satisfied: {work_proposal.get('pre_u_bridge_satisfied')}",
+            f"- real_action_executed: {work_proposal.get('real_action_executed')}",
+            f"- external_action_executed: {work_proposal.get('external_action_executed')}",
+            f"- live_action_enabled: {work_proposal.get('live_action_enabled')}",
+            f"- cieu_persistence_enabled: {work_proposal.get('cieu_persistence_enabled')}",
+            f"- brain_writeback_enabled: {work_proposal.get('brain_writeback_enabled')}",
+            f"- memory_ingestion_enabled: {work_proposal.get('memory_ingestion_enabled')}",
+            f"- next_required_milestone: {work_proposal.get('next_required_milestone')}",
+            f"- Warning: {work_proposal.get('warning')}",
         ]
     )
     lines.extend(

@@ -1,0 +1,46 @@
+{
+  "schema_name": "ystar.agent_team_work_proposal.generated.work_proposal_cieu_event",
+  "schema_version": "v0",
+  "event_id": "work-proposal-cieu-event-001",
+  "dry_run_only": true,
+  "persistence_enabled": false,
+  "proposal_id": "agent-work-proposal-001",
+  "tool_id": "governed_readonly_observation_tool_v0",
+  "bridge_id": "governed_tool_invocation_bridge_v0",
+  "request_id": "agent-team-generated-tool-request-001",
+  "Xt": {
+    "selected_proposal_ref": "agent_team_work_proposal/generated/selected_agent_work_proposal.json",
+    "role_review_ref": "agent_team_work_proposal/generated/role_review_board.json",
+    "tool_need_analysis_ref": "agent_team_work_proposal/generated/tool_need_analysis.json",
+    "request_type": "company_state_observation"
+  },
+  "U": "route agent-team generated tool request through governed Pre-U bridge",
+  "Y_star": "Agent team converts mission observation into governed read-only tool invocation without live action.",
+  "predicted_Y_t1": "Bridge returns normalized company-state observation for next work recommendation.",
+  "predicted_R_t1": "Residual risk remains bounded by Pre-U bridge, read-only tool contract, and disabled persistence.",
+  "actual_Y_t1": "Bridge result status: success; read sources: 8.",
+  "actual_R_t1": "Invocation remained local read-only with no live, external, CIEU persistence, brain, or memory action.",
+  "residual_delta": {
+    "status": "dry_run_work_proposal_delta_only",
+    "bridge_delta_ref": "governed_tool_invocation_bridge/generated/bridge_residual_delta.json",
+    "delta_summary": "Agent-team work proposal successfully reached governed read-only tool result."
+  },
+  "evidence_refs": [
+    "agent_team_work_proposal/generated/selected_agent_work_proposal.json",
+    "agent_team_work_proposal/generated/role_review_board.json",
+    "agent_team_work_proposal/generated/tool_need_analysis.json",
+    "agent_team_work_proposal/generated/generated_tool_request.json",
+    "agent_team_work_proposal/generated/bridged_tool_result_ref.json"
+  ],
+  "write_policy": {
+    "persistence_allowed": false,
+    "cieu_write_allowed": false,
+    "brain_writeback_allowed": false,
+    "memory_ingestion_allowed": false
+  },
+  "learning_eligibility": false,
+  "curation_required": true,
+  "direct_brain_writeback_allowed": false,
+  "direct_memory_ingestion_allowed": false,
+  "raw_artifact_ingestion_allowed": false
+}

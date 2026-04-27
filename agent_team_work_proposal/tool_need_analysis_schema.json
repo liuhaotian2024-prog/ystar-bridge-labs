@@ -1,0 +1,22 @@
+{
+  "schema_name": "ystar.agent_team_work_proposal.tool_need_analysis_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "analysis_id",
+    "selected_proposal_id",
+    "tool_needed",
+    "tool_id",
+    "bridge_required",
+    "bridge_id",
+    "why_tool_needed",
+    "why_direct_invocation_disallowed",
+    "expected_tool_output",
+    "risk_tier",
+    "requires_y_star_gov",
+    "requires_cieu_event",
+    "operator_approval_required",
+    "live_enabled",
+    "external_action_enabled"
+  ]
+}

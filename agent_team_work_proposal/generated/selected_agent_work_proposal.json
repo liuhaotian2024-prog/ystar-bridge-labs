@@ -1,0 +1,14 @@
+{
+  "schema_name": "ystar.agent_team_work_proposal.generated.selected_agent_work_proposal",
+  "schema_version": "v0",
+  "selected_proposal_id": "agent-work-proposal-001",
+  "selected_proposal_title": "Refresh company state through governed read-only bridge",
+  "selection_reason": "Best advances autonomy while staying local, read-only, and bridge-gated.",
+  "selected_by_agent": "Aiden-CEO",
+  "requires_tool_invocation": true,
+  "selected_tool_id": "governed_readonly_observation_tool_v0",
+  "selected_bridge_id": "governed_tool_invocation_bridge_v0",
+  "live_enabled": false,
+  "external_action_enabled": false,
+  "expected_outcome": "Creates the first agent-team generated route from observation to governed tool result."
+}

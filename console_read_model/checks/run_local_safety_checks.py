@@ -123,7 +123,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after governed tool bridge",
+        "Build agent team work proposal",
+        ["python3", "agent_team_work_proposal/tools/build_agent_team_work_proposal.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after agent team work proposal",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -541,6 +546,72 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json"],
     ),
     Check(
+        "Compile agent team work proposal tools",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "agent_team_work_proposal/tools/build_agent_team_work_proposal.py",
+            "agent_team_work_proposal/tools/run_work_proposal_to_bridge.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: work_proposal_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/work_proposal_summary.json"],
+    ),
+    Check(
+        "Validate JSON: mission_context_snapshot.json",
+        ["python3", "-m", "json.tool", "agent_team_work_proposal/generated/mission_context_snapshot.json"],
+    ),
+    Check(
+        "Validate JSON: agent_team_observation_input.json",
+        ["python3", "-m", "json.tool", "agent_team_work_proposal/generated/agent_team_observation_input.json"],
+    ),
+    Check(
+        "Validate JSON: autonomous_work_proposals.json",
+        ["python3", "-m", "json.tool", "agent_team_work_proposal/generated/autonomous_work_proposals.json"],
+    ),
+    Check(
+        "Validate JSON: selected_agent_work_proposal.json",
+        ["python3", "-m", "json.tool", "agent_team_work_proposal/generated/selected_agent_work_proposal.json"],
+    ),
+    Check(
+        "Validate JSON: role_review_board.json",
+        ["python3", "-m", "json.tool", "agent_team_work_proposal/generated/role_review_board.json"],
+    ),
+    Check(
+        "Validate JSON: tool_need_analysis.json",
+        ["python3", "-m", "json.tool", "agent_team_work_proposal/generated/tool_need_analysis.json"],
+    ),
+    Check(
+        "Validate JSON: generated_tool_request.json",
+        ["python3", "-m", "json.tool", "agent_team_work_proposal/generated/generated_tool_request.json"],
+    ),
+    Check(
+        "Validate JSON: work_proposal_to_bridge_trace.json",
+        ["python3", "-m", "json.tool", "agent_team_work_proposal/generated/work_proposal_to_bridge_trace.json"],
+    ),
+    Check(
+        "Validate JSON: bridged_tool_result_ref.json",
+        ["python3", "-m", "json.tool", "agent_team_work_proposal/generated/bridged_tool_result_ref.json"],
+    ),
+    Check(
+        "Validate JSON: work_proposal_cieu_event.json",
+        ["python3", "-m", "json.tool", "agent_team_work_proposal/generated/work_proposal_cieu_event.json"],
+    ),
+    Check(
+        "Validate JSON: work_proposal_residual_delta.json",
+        ["python3", "-m", "json.tool", "agent_team_work_proposal/generated/work_proposal_residual_delta.json"],
+    ),
+    Check(
+        "Validate JSON: next_agent_work_recommendations.json",
+        ["python3", "-m", "json.tool", "agent_team_work_proposal/generated/next_agent_work_recommendations.json"],
+    ),
+    Check(
+        "Validate JSON: agent_team_work_proposal_summary.json",
+        ["python3", "-m", "json.tool", "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -699,6 +770,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: tool-bridge",
         ["python3", "console_read_model/cli/team_console.py", "tool-bridge"],
+    ),
+    Check(
+        "CLI smoke: work-proposal",
+        ["python3", "console_read_model/cli/team_console.py", "work-proposal"],
     ),
     Check(
         "CLI smoke: sources",

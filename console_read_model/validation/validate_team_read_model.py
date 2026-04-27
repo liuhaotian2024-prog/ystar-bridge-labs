@@ -345,6 +345,7 @@ def main() -> int:
     required_governed_tool_invocation_bridge_files = expected.get(
         "required_governed_tool_invocation_bridge_files", []
     )
+    required_agent_team_work_proposal_files = expected.get("required_agent_team_work_proposal_files", [])
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -457,6 +458,12 @@ def main() -> int:
         check_exists(path, report, "governed tool invocation bridge file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "governed tool invocation bridge JSON")
+
+    for rel in required_agent_team_work_proposal_files:
+        path = ROOT / rel
+        check_exists(path, report, "agent team work proposal file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "agent team work proposal JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -1334,6 +1341,93 @@ def main() -> int:
         else:
             report.fail("generated snapshot missing tool_bridge_summary")
 
+        work_proposal_summary = snapshot.get("work_proposal_summary")
+        if work_proposal_summary:
+            report.pass_("generated snapshot contains work_proposal_summary")
+            for field in [
+                "agent_team_work_proposal_defined",
+                "mission_context_snapshot_defined",
+                "agent_team_observation_input_defined",
+                "autonomous_work_proposals_defined",
+                "selected_work_proposal_defined",
+                "role_review_board_defined",
+                "tool_need_analysis_defined",
+                "generated_tool_request_defined",
+                "work_proposal_routed_to_bridge",
+                "bridge_runner_used",
+                "direct_tool_invocation_used",
+                "bridged_tool_result_ref_defined",
+                "work_proposal_cieu_event_defined",
+                "work_proposal_residual_delta_defined",
+                "next_agent_work_recommendations_defined",
+                "agent_team_generated_the_work",
+                "agent_team_selected_governed_tool",
+                "pre_u_bridge_required",
+                "pre_u_bridge_satisfied",
+                "real_action_executed",
+                "external_action_executed",
+                "live_action_enabled",
+                "network_enabled",
+                "git_push_enabled",
+                "daemon_control_enabled",
+                "cieu_persistence_enabled",
+                "brain_writeback_enabled",
+                "memory_ingestion_enabled",
+                "email_or_external_communication_enabled",
+                "next_required_milestone",
+                "generated_summary",
+                "generated_tool_request",
+                "generated_bridge_trace",
+                "generated_bridged_result_ref",
+                "generated_cieu_event",
+                "warning",
+            ]:
+                if field in work_proposal_summary:
+                    report.pass_(f"snapshot work_proposal_summary field present: {field}")
+                else:
+                    report.fail(f"snapshot work_proposal_summary missing field: {field}")
+            for field in [
+                "agent_team_work_proposal_defined",
+                "mission_context_snapshot_defined",
+                "agent_team_observation_input_defined",
+                "autonomous_work_proposals_defined",
+                "selected_work_proposal_defined",
+                "role_review_board_defined",
+                "tool_need_analysis_defined",
+                "generated_tool_request_defined",
+                "work_proposal_routed_to_bridge",
+                "bridge_runner_used",
+                "bridged_tool_result_ref_defined",
+                "work_proposal_cieu_event_defined",
+                "work_proposal_residual_delta_defined",
+                "next_agent_work_recommendations_defined",
+                "agent_team_generated_the_work",
+                "agent_team_selected_governed_tool",
+                "pre_u_bridge_required",
+                "pre_u_bridge_satisfied",
+            ]:
+                if work_proposal_summary.get(field) is not True:
+                    report.fail(f"snapshot work_proposal_summary must keep {field}=true")
+            for field in [
+                "direct_tool_invocation_used",
+                "real_action_executed",
+                "external_action_executed",
+                "live_action_enabled",
+                "network_enabled",
+                "git_push_enabled",
+                "daemon_control_enabled",
+                "cieu_persistence_enabled",
+                "brain_writeback_enabled",
+                "memory_ingestion_enabled",
+                "email_or_external_communication_enabled",
+            ]:
+                if work_proposal_summary.get(field) is not False:
+                    report.fail(f"snapshot work_proposal_summary must keep {field}=false")
+            if work_proposal_summary.get("next_required_milestone") != "L4.7 First Mission Dashboard Refresh Loop v0":
+                report.fail("snapshot work_proposal_summary must point to L4.7 mission dashboard milestone")
+        else:
+            report.fail("generated snapshot missing work_proposal_summary")
+
     quarantine = generated_json.get("console_read_model/generated/quarantine_summary.json")
     if quarantine:
         for field in [
@@ -2067,6 +2161,90 @@ def main() -> int:
                 report.fail(f"generated tool bridge summary must keep {field}=false")
         if tool_bridge.get("next_required_milestone") != "L4.6 Agent Team Work Proposal to Governed Tool Invocation v0":
             report.fail("generated tool bridge summary must point to L4.6 agent proposal bridge milestone")
+
+    work_proposal = generated_json.get("console_read_model/generated/work_proposal_summary.json")
+    if work_proposal:
+        for field in [
+            "agent_team_work_proposal_defined",
+            "mission_context_snapshot_defined",
+            "agent_team_observation_input_defined",
+            "autonomous_work_proposals_defined",
+            "selected_work_proposal_defined",
+            "role_review_board_defined",
+            "tool_need_analysis_defined",
+            "generated_tool_request_defined",
+            "work_proposal_routed_to_bridge",
+            "bridge_runner_used",
+            "direct_tool_invocation_used",
+            "bridged_tool_result_ref_defined",
+            "work_proposal_cieu_event_defined",
+            "work_proposal_residual_delta_defined",
+            "next_agent_work_recommendations_defined",
+            "agent_team_generated_the_work",
+            "agent_team_selected_governed_tool",
+            "pre_u_bridge_required",
+            "pre_u_bridge_satisfied",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "network_enabled",
+            "git_push_enabled",
+            "daemon_control_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "email_or_external_communication_enabled",
+            "next_required_milestone",
+            "generated_summary",
+            "generated_tool_request",
+            "generated_bridge_trace",
+            "generated_bridged_result_ref",
+            "generated_cieu_event",
+            "warning",
+        ]:
+            if field in work_proposal:
+                report.pass_(f"generated work proposal summary field present: {field}")
+            else:
+                report.fail(f"generated work proposal summary missing field: {field}")
+        for field in [
+            "agent_team_work_proposal_defined",
+            "mission_context_snapshot_defined",
+            "agent_team_observation_input_defined",
+            "autonomous_work_proposals_defined",
+            "selected_work_proposal_defined",
+            "role_review_board_defined",
+            "tool_need_analysis_defined",
+            "generated_tool_request_defined",
+            "work_proposal_routed_to_bridge",
+            "bridge_runner_used",
+            "bridged_tool_result_ref_defined",
+            "work_proposal_cieu_event_defined",
+            "work_proposal_residual_delta_defined",
+            "next_agent_work_recommendations_defined",
+            "agent_team_generated_the_work",
+            "agent_team_selected_governed_tool",
+            "pre_u_bridge_required",
+            "pre_u_bridge_satisfied",
+        ]:
+            if work_proposal.get(field) is not True:
+                report.fail(f"generated work proposal summary must keep {field}=true")
+        for field in [
+            "direct_tool_invocation_used",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "network_enabled",
+            "git_push_enabled",
+            "daemon_control_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "email_or_external_communication_enabled",
+        ]:
+            if work_proposal.get(field) is not False:
+                report.fail(f"generated work proposal summary must keep {field}=false")
+        if work_proposal.get("next_required_milestone") != "L4.7 First Mission Dashboard Refresh Loop v0":
+            report.fail("generated work proposal summary must point to L4.7 mission dashboard milestone")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

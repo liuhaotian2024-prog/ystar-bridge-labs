@@ -1,0 +1,22 @@
+{
+  "schema_name": "ystar.agent_team_work_proposal.generated.work_proposal_residual_delta",
+  "schema_version": "v0",
+  "delta_id": "work-proposal-residual-delta-001",
+  "event_id": "work-proposal-cieu-event-001",
+  "predicted_vs_actual_summary": {
+    "predicted": "Bridge returns normalized company-state observation for next work recommendation.",
+    "actual": "Bridge result status: success; read sources: 8.",
+    "residual": "Invocation remained local read-only with no live, external, CIEU persistence, brain, or memory action."
+  },
+  "residual_delta": {
+    "status": "dry_run_work_proposal_delta_only",
+    "bridge_delta_ref": "governed_tool_invocation_bridge/generated/bridge_residual_delta.json",
+    "delta_summary": "Agent-team work proposal successfully reached governed read-only tool result."
+  },
+  "learning_eligibility": false,
+  "curation_required": true,
+  "direct_brain_writeback_allowed": false,
+  "direct_memory_ingestion_allowed": false,
+  "next_review_required": true,
+  "notes": "Residual delta is dry-run only and must not be written to brain or memory."
+}

@@ -1,0 +1,23 @@
+{
+  "schema_name": "ystar.agent_team_work_proposal.role_review_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "agent_id",
+    "review_focus",
+    "support_or_concern",
+    "required_constraints",
+    "approved_for_local_readonly_dry_run",
+    "forbidden_actions",
+    "notes"
+  ],
+  "properties": {
+    "agent_id": {"type": "string"},
+    "review_focus": {"type": "string"},
+    "support_or_concern": {"type": "string"},
+    "required_constraints": {"type": "array"},
+    "approved_for_local_readonly_dry_run": {"type": "boolean"},
+    "forbidden_actions": {"type": "array"},
+    "notes": {"type": "string"}
+  }
+}

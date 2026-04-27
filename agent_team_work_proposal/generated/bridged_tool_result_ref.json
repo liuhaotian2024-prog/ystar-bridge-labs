@@ -1,0 +1,441 @@
+{
+  "schema_name": "ystar.agent_team_work_proposal.generated.bridged_tool_result_ref",
+  "schema_version": "v0",
+  "bridge_id": "governed_tool_invocation_bridge_v0",
+  "tool_id": "governed_readonly_observation_tool_v0",
+  "result_status": "success",
+  "bridged_tool_result_source": "in_memory_l4_5_bridge_payload",
+  "pre_u_packet_ref": "governed_tool_invocation_bridge/generated/pre_u_tool_packet.json",
+  "governance_decision_ref": "governed_tool_invocation_bridge/generated/governance_decision_envelope.json",
+  "read_source_count": 8,
+  "read_sources": [
+    {
+      "source_id": "mission-dashboard",
+      "source_path": "governed_observation_loop/generated/mission_dashboard_snapshot.json",
+      "read_mode": "json_summary"
+    },
+    {
+      "source_id": "company-state-digest",
+      "source_path": "governed_observation_loop/generated/company_state_digest.json",
+      "read_mode": "json_summary"
+    },
+    {
+      "source_id": "observation-loop-summary",
+      "source_path": "governed_observation_loop/generated/governed_observation_loop_summary.json",
+      "read_mode": "json_summary"
+    },
+    {
+      "source_id": "legacy-triage-summary",
+      "source_path": "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
+      "read_mode": "json_summary"
+    },
+    {
+      "source_id": "autonomous-cycle-summary",
+      "source_path": "company_autonomous_work_cycle/generated/autonomous_work_cycle_summary.json",
+      "read_mode": "json_summary"
+    },
+    {
+      "source_id": "autonomy-inventory-summary",
+      "source_path": "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
+      "read_mode": "json_summary"
+    },
+    {
+      "source_id": "live-boundary-summary",
+      "source_path": "labs_live_boundary/generated/live_boundary_summary.json",
+      "read_mode": "json_summary"
+    },
+    {
+      "source_id": "cieu-boundary-summary",
+      "source_path": "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_summary.json",
+      "read_mode": "json_summary"
+    }
+  ],
+  "normalized_observation": {
+    "request_type": "company_state_observation",
+    "summary_level": "executive",
+    "source_summaries": {
+      "mission-dashboard": {
+        "source_type": "mission_dashboard",
+        "source_path": "governed_observation_loop/generated/mission_dashboard_snapshot.json",
+        "summary": {
+          "top_level_type": "object",
+          "top_level_key_count": 14,
+          "top_level_keys": [
+            "autonomous_work_cycle",
+            "autonomy_inventory",
+            "cieu_boundary",
+            "current_milestone_chain",
+            "legacy_asset_triage",
+            "live_boundary",
+            "live_readiness",
+            "mission",
+            "next_recommended_work",
+            "observation_loop_status",
+            "schema_name",
+            "schema_version",
+            "top_opportunities",
+            "top_risks"
+          ],
+          "selected_fields": {
+            "schema_name": "ystar.governed_observation_loop.generated.mission_dashboard_snapshot",
+            "schema_version": "v0"
+          }
+        }
+      },
+      "company-state-digest": {
+        "source_type": "company_state_digest",
+        "source_path": "governed_observation_loop/generated/company_state_digest.json",
+        "summary": {
+          "top_level_type": "object",
+          "top_level_key_count": 9,
+          "top_level_keys": [
+            "live_enabled",
+            "network_used",
+            "schema_name",
+            "schema_version",
+            "what_it_can_safely_do_now",
+            "what_it_can_safely_observe",
+            "what_remains_blocked",
+            "what_should_be_wrapped_next",
+            "what_the_company_knows_now"
+          ],
+          "selected_fields": {
+            "schema_name": "ystar.governed_observation_loop.generated.company_state_digest",
+            "schema_version": "v0",
+            "live_enabled": false,
+            "network_used": false
+          }
+        }
+      },
+      "observation-loop-summary": {
+        "source_type": "observation_loop_summary",
+        "source_path": "governed_observation_loop/generated/governed_observation_loop_summary.json",
+        "summary": {
+          "top_level_type": "object",
+          "top_level_key_count": 27,
+          "top_level_keys": [
+            "brain_writeback_enabled",
+            "cieu_persistence_enabled",
+            "company_state_digest_defined",
+            "daemon_control_enabled",
+            "email_or_external_communication_enabled",
+            "external_action_executed",
+            "generated_dashboard",
+            "generated_digest",
+            "generated_registry",
+            "generated_tick",
+            "git_push_enabled",
+            "governed_observation_loop_defined",
+            "live_action_enabled",
+            "memory_ingestion_enabled",
+            "mission_bounded_autonomy_supported",
+            "mission_dashboard_snapshot_defined"
+          ],
+          "selected_fields": {
+            "schema_name": "ystar.governed_observation_loop.generated.governed_observation_loop_summary",
+            "schema_version": "v0",
+            "governed_observation_loop_defined": true,
+            "read_only_observation_loop_defined": true,
+            "observation_source_registry_defined": true,
+            "observation_tick_generated": true,
+            "mission_dashboard_snapshot_defined": true,
+            "company_state_digest_defined": true,
+            "observation_to_work_item_candidates_defined": true,
+            "observation_to_work_item_candidate_count": "3",
+            "mission_bounded_autonomy_supported": true,
+            "step_by_step_human_prompting_reduced": true,
+            "real_action_executed": false,
+            "external_action_executed": false,
+            "live_action_enabled": false,
+            "git_push_enabled": false,
+            "daemon_control_enabled": false,
+            "cieu_persistence_enabled": false,
+            "brain_writeback_enabled": false,
+            "memory_ingestion_enabled": false,
+            "email_or_external_communication_enabled": false,
+            "next_required_milestone": "L4.4 First Governed Read-Only Observation Tool Wrapper v0",
+            "warning": "Observation loop is read-only and executes no actions."
+          }
+        }
+      },
+      "legacy-triage-summary": {
+        "source_type": "legacy_triage_summary",
+        "source_path": "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
+        "summary": {
+          "top_level_type": "object",
+          "top_level_key_count": 23,
+          "top_level_keys": [
+            "absorption_buckets_defined",
+            "assets_scored",
+            "blanket_rewrite_allowed",
+            "blind_absorption_allowed",
+            "brain_writeback_enabled",
+            "bucket_counts",
+            "cieu_persistence_enabled",
+            "external_actions_enabled",
+            "generated_backlog",
+            "generated_buckets",
+            "generated_matrix",
+            "generated_top_candidates",
+            "governed_absorption_backlog_count",
+            "governed_absorption_backlog_defined",
+            "legacy_asset_triage_defined",
+            "live_actions_enabled"
+          ],
+          "selected_fields": {
+            "schema_name": "ystar.legacy_asset_triage.generated.legacy_asset_triage_summary",
+            "schema_version": "v0",
+            "legacy_asset_triage_defined": true,
+            "absorption_buckets_defined": true,
+            "bucket_counts": {
+              "object_key_count": 5,
+              "keys": [
+                "A_adopt_now_read_only",
+                "B_wrap_as_governed_tool",
+                "C_rewrite_from_design",
+                "D_quarantine_as_evidence_ore",
+                "E_retire_do_not_use"
+              ]
+            },
+            "top_absorption_candidates_defined": true,
+            "top_absorption_candidate_count": "7",
+            "governed_absorption_backlog_defined": true,
+            "governed_absorption_backlog_count": "5",
+            "blind_absorption_allowed": false,
+            "blanket_rewrite_allowed": false,
+            "live_actions_enabled": false,
+            "external_actions_enabled": false,
+            "brain_writeback_enabled": false,
+            "memory_ingestion_enabled": false,
+            "cieu_persistence_enabled": false,
+            "next_required_milestone": "L4.4 First Governed Read-Only Observation Tool Wrapper v0",
+            "warning": "Triage is classification only; no asset is absorbed or enabled."
+          }
+        }
+      },
+      "autonomous-cycle-summary": {
+        "source_type": "autonomous_cycle_summary",
+        "source_path": "company_autonomous_work_cycle/generated/autonomous_work_cycle_summary.json",
+        "summary": {
+          "top_level_type": "object",
+          "top_level_key_count": 30,
+          "top_level_keys": [
+            "action_plan_simulated",
+            "autonomous_work_backlog_defined",
+            "autonomous_work_cycle_defined",
+            "brain_writeback_enabled",
+            "cieu_event_simulated",
+            "cieu_persistence_enabled",
+            "daemon_control_enabled",
+            "email_or_external_communication_enabled",
+            "external_action_executed",
+            "founder_sets_mission_agent_team_drives",
+            "generated_report",
+            "git_push_enabled",
+            "governance_decision_simulated",
+            "governed_tool_selection_defined",
+            "live_action_enabled",
+            "memory_ingestion_enabled"
+          ],
+          "selected_fields": {
+            "schema_name": "ystar.company_autonomous_work_cycle.generated.autonomous_work_cycle_summary",
+            "schema_version": "v0",
+            "autonomous_work_cycle_defined": true,
+            "mission_bounded_autonomy_defined": true,
+            "founder_sets_mission_agent_team_drives": true,
+            "step_by_step_human_prompting_required": false,
+            "observation_snapshot_defined": true,
+            "autonomous_work_backlog_defined": true,
+            "selected_work_item_defined": true,
+            "role_delegation_defined": true,
+            "governed_tool_selection_defined": true,
+            "pre_u_packet_simulated": true,
+            "governance_decision_simulated": true,
+            "action_plan_simulated": true,
+            "cieu_event_simulated": true,
+            "residual_delta_simulated": true,
+            "next_task_recommendations_defined": true,
+            "real_action_executed": false,
+            "external_action_executed": false,
+            "live_action_enabled": false,
+            "git_push_enabled": false,
+            "daemon_control_enabled": false,
+            "cieu_persistence_enabled": false,
+            "brain_writeback_enabled": false,
+            "memory_ingestion_enabled": false,
+            "email_or_external_communication_enabled": false,
+            "requires_manual_enablement_for_live": true,
+            "next_required_milestone": "L4.3 Governed Read-Only Observation Loop v0",
+            "warning": "simulator only; no real action, external effect, CIEU persistence, or writeback occurred"
+          }
+        }
+      },
+      "autonomy-inventory-summary": {
+        "source_type": "autonomy_inventory_summary",
+        "source_path": "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
+        "summary": {
+          "top_level_type": "object",
+          "top_level_key_count": 21,
+          "top_level_keys": [
+            "action_capability_map_defined",
+            "agent_role_capability_matrix_defined",
+            "brain_writeback_enabled",
+            "cieu_persistence_enabled",
+            "commercial_agent_company_goal_aligned",
+            "company_autonomy_inventory_defined",
+            "daemon_control_enabled",
+            "email_or_external_communication_enabled",
+            "external_actions_enabled",
+            "git_push_enabled",
+            "governance_only_runtime",
+            "governed_tool_registry_candidates_defined",
+            "live_actions_enabled",
+            "memory_ingestion_enabled",
+            "next_required_milestone",
+            "observation_capability_map_defined"
+          ],
+          "selected_fields": {
+            "schema_name": "ystar.company_autonomy_inventory.generated.company_autonomy_readiness_summary",
+            "schema_version": "v0",
+            "company_autonomy_inventory_defined": true,
+            "repo_archaeology_completed": true,
+            "observation_capability_map_defined": true,
+            "resource_sensing_map_defined": true,
+            "action_capability_map_defined": true,
+            "governed_tool_registry_candidates_defined": true,
+            "agent_role_capability_matrix_defined": true,
+            "commercial_agent_company_goal_aligned": true,
+            "governance_only_runtime": false,
+            "live_actions_enabled": false,
+            "external_actions_enabled": false,
+            "brain_writeback_enabled": false,
+            "memory_ingestion_enabled": false,
+            "cieu_persistence_enabled": false,
+            "git_push_enabled": false,
+            "daemon_control_enabled": false,
+            "email_or_external_communication_enabled": false,
+            "requires_manual_enablement": true,
+            "next_required_milestone": "L4.2 Company Autonomous Work Cycle Simulator v0"
+          }
+        }
+      },
+      "live-boundary-summary": {
+        "source_type": "live_boundary_summary",
+        "source_path": "labs_live_boundary/generated/live_boundary_summary.json",
+        "summary": {
+          "top_level_type": "object",
+          "top_level_key_count": 22,
+          "top_level_keys": [
+            "action_sandbox_contract_defined",
+            "blocked_reason",
+            "brain_writeback_enabled",
+            "candidate_auto_approval_enabled",
+            "checklist_status_counts",
+            "cieu_write_enabled",
+            "cieu_writer_boundary_defined",
+            "depends_on",
+            "generated_checklist",
+            "generated_manifest",
+            "live_action_execution_enabled",
+            "live_boundary_defined",
+            "memory_ingestion_enabled",
+            "minimal_live_loop_ready",
+            "operator_approval_gate_defined",
+            "raw_artifact_ingestion_enabled"
+          ],
+          "selected_fields": {
+            "schema_name": "ystar.labs_live_boundary.generated.live_boundary_summary",
+            "schema_version": "v0",
+            "live_boundary_defined": true,
+            "operator_approval_gate_defined": true,
+            "action_sandbox_contract_defined": true,
+            "rollback_policy_defined": true,
+            "cieu_writer_boundary_defined": true,
+            "live_action_execution_enabled": false,
+            "cieu_write_enabled": false,
+            "brain_writeback_enabled": false,
+            "memory_ingestion_enabled": false,
+            "candidate_auto_approval_enabled": false,
+            "raw_artifact_ingestion_enabled": false,
+            "requires_manual_enablement": true,
+            "minimal_live_loop_ready": false,
+            "checklist_status_counts": {
+              "object_key_count": 2,
+              "keys": [
+                "defined_disabled",
+                "not_started"
+              ]
+            },
+            "warning": "Live boundary harness is defined but disabled. It does not execute actions, write CIEU, write brain or memory, approve candidates, or ingest raw artifacts."
+          }
+        }
+      },
+      "cieu-boundary-summary": {
+        "source_type": "cieu_boundary_summary",
+        "source_path": "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_summary.json",
+        "summary": {
+          "top_level_type": "object",
+          "top_level_key_count": 21,
+          "top_level_keys": [
+            "blocked_reason",
+            "brain_writeback_enabled",
+            "candidate_auto_approval_enabled",
+            "cieu_runtime_boundary_defined",
+            "cieu_runtime_event_schema_defined",
+            "cieu_write_enabled",
+            "cieu_writer_policy_defined",
+            "dry_run_only",
+            "generated_manifest",
+            "generated_prediction_delta_fixture",
+            "generated_sample_event",
+            "live_action_execution_enabled",
+            "memory_ingestion_enabled",
+            "minimal_live_loop_ready",
+            "persistence_enabled",
+            "prediction_delta_fixture_defined"
+          ],
+          "selected_fields": {
+            "schema_name": "ystar.labs_cieu_runtime_boundary.generated.cieu_runtime_boundary_summary",
+            "schema_version": "v0",
+            "cieu_runtime_boundary_defined": true,
+            "cieu_runtime_event_schema_defined": true,
+            "prediction_delta_fixture_defined": true,
+            "cieu_writer_policy_defined": true,
+            "dry_run_only": true,
+            "persistence_enabled": false,
+            "live_action_execution_enabled": false,
+            "cieu_write_enabled": false,
+            "brain_writeback_enabled": false,
+            "memory_ingestion_enabled": false,
+            "candidate_auto_approval_enabled": false,
+            "raw_artifact_ingestion_enabled": false,
+            "requires_manual_enablement": true,
+            "minimal_live_loop_ready": false,
+            "warning": "CIEU runtime boundary is defined but persistence is disabled. It does not execute actions, write CIEU, write brain or memory, approve candidates, or ingest raw artifacts."
+          }
+        }
+      }
+    },
+    "mission_state": "mission-bounded autonomy can use generated read-model summaries safely",
+    "safety_state": "no live, external, persistence, brain, or memory action enabled"
+  },
+  "next_work_candidates": [
+    {
+      "candidate_id": "next-tool-bridge-001",
+      "title": "Route governed read-only tool invocation through Pre-U bridge",
+      "next_required_milestone": "L4.5 Governed Tool Invocation Through Pre-U Bridge v0",
+      "live_enabled": false
+    },
+    {
+      "candidate_id": "next-observation-loop-002",
+      "title": "Add recurring read-only observation loop fixture without scheduler activation",
+      "live_enabled": false
+    }
+  ],
+  "real_action_executed": false,
+  "external_action_executed": false,
+  "live_action_enabled": false,
+  "cieu_persistence_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false
+}

@@ -1,0 +1,21 @@
+{
+  "schema_name": "ystar.agent_team_work_proposal.work_proposal_to_bridge_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "trace_id",
+    "selected_proposal_ref",
+    "role_review_ref",
+    "tool_need_analysis_ref",
+    "generated_tool_request_ref",
+    "bridge_runner_used",
+    "bridge_invocation_ref",
+    "bridged_tool_result_ref",
+    "direct_tool_invocation_used",
+    "pre_u_bridge_required",
+    "pre_u_bridge_satisfied",
+    "real_action_executed",
+    "external_action_executed",
+    "notes"
+  ]
+}

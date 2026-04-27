@@ -1,0 +1,32 @@
+{
+  "schema_name": "ystar.agent_team_work_proposal.generated.generated_tool_request",
+  "schema_version": "v0",
+  "request_id": "agent-team-generated-tool-request-001",
+  "requesting_agent": "Aiden-CEO",
+  "supporting_agent": "Samantha-Secretary",
+  "mission_id": "mission-commercial-agent-company-v0",
+  "tool_id": "governed_readonly_observation_tool_v0",
+  "request_type": "company_state_observation",
+  "business_reason": "Selected agent-team work proposal needs a fresh governed observation before next work selection.",
+  "declared_intent": "Refresh company state through the governed read-only observation tool via Pre-U bridge.",
+  "requested_summary_level": "executive",
+  "requested_sources": [
+    "mission-dashboard",
+    "company-state-digest",
+    "observation-loop-summary",
+    "legacy-triage-summary",
+    "autonomous-cycle-summary",
+    "autonomy-inventory-summary",
+    "live-boundary-summary",
+    "cieu-boundary-summary"
+  ],
+  "risk_tier": "low",
+  "source_work_proposal_ref": "agent_team_work_proposal/generated/selected_agent_work_proposal.json",
+  "role_review_ref": "agent_team_work_proposal/generated/role_review_board.json",
+  "tool_need_analysis_ref": "agent_team_work_proposal/generated/tool_need_analysis.json",
+  "live_action_requested": false,
+  "external_action_requested": false,
+  "brain_writeback_requested": false,
+  "memory_ingestion_requested": false,
+  "cieu_persistence_requested": false
+}

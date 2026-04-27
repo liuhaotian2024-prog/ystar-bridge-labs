@@ -72,6 +72,10 @@ python3 console_read_model/cli/team_console.py <command>
   Pre-U packet, governance decision, bridge authorization, bridged read-only
   tool result, rejection fixtures, disabled live/persistence flags, and the
   L4.6 recommendation.
+- `work-proposal`: Prints the generated agent-team work proposal summary:
+  mission context, observation input, autonomous proposals, role review, tool
+  need, generated tool request, bridge routing, CIEU fixture, disabled live
+  flags, and the L4.7 recommendation.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

@@ -1,0 +1,24 @@
+{
+  "schema_name": "ystar.agent_team_work_proposal.generated.work_proposal_to_bridge_trace",
+  "schema_version": "v0",
+  "trace_id": "work-proposal-to-bridge-trace-001",
+  "selected_proposal_ref": "agent_team_work_proposal/generated/selected_agent_work_proposal.json",
+  "selected_proposal_id": "agent-work-proposal-001",
+  "role_review_ref": "agent_team_work_proposal/generated/role_review_board.json",
+  "tool_need_analysis_ref": "agent_team_work_proposal/generated/tool_need_analysis.json",
+  "generated_tool_request_ref": "agent_team_work_proposal/generated/generated_tool_request.json",
+  "bridge_runner_used": true,
+  "bridge_invocation_ref": "governed_tool_invocation_bridge/tools/run_governed_tool_bridge.py::run_bridge_payloads",
+  "bridged_tool_result_ref": "agent_team_work_proposal/generated/bridged_tool_result_ref.json",
+  "bridge_trace_summary": {
+    "tool_invoked_through_bridge": true,
+    "direct_tool_invocation_rejected": true,
+    "unsafe_bridge_request_rejected": true
+  },
+  "direct_tool_invocation_used": false,
+  "pre_u_bridge_required": true,
+  "pre_u_bridge_satisfied": true,
+  "real_action_executed": false,
+  "external_action_executed": false,
+  "notes": "Agent-team generated request was routed through the L4.5 bridge in memory."
+}

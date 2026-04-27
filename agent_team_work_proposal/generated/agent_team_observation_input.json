@@ -1,0 +1,119 @@
+{
+  "schema_name": "ystar.agent_team_work_proposal.generated.agent_team_observation_input",
+  "schema_version": "v0",
+  "mission": "Build a commercial AI agent self-governed company runtime that can observe business-relevant resources, understand constraints, select or build tools, act through governed channels, record outcomes, and improve through curated CIEU deltas.",
+  "current_milestone_chain": [
+    "L4.1 capability inventory",
+    "L4.2 autonomous work cycle simulator",
+    "L4.3 legacy triage and read-only observation loop"
+  ],
+  "latest_observation_tick": {
+    "tick_id": "observation-tick-001",
+    "safe_opportunities": [
+      "use generated summaries as a recurring observation surface",
+      "turn top triage candidates into governed read-only wrappers",
+      "produce next work recommendations without executing actions"
+    ],
+    "blocked_risks": [
+      "live action execution remains disabled",
+      "external communication remains disabled",
+      "CIEU persistence remains disabled",
+      "brain and memory writeback remain disabled"
+    ],
+    "work_item_candidates": [
+      {
+        "candidate_id": "obs-work-001",
+        "title": "Wrap the read-only observation loop as a governed tool",
+        "recommended_owner_agent": "Ryan-Platform",
+        "risk_tier": "low",
+        "live_enabled": false
+      },
+      {
+        "candidate_id": "obs-work-002",
+        "title": "Create a mission dashboard from generated summaries",
+        "recommended_owner_agent": "Samantha-Secretary",
+        "risk_tier": "low",
+        "live_enabled": false
+      },
+      {
+        "candidate_id": "obs-work-003",
+        "title": "Prepare governed wrapper specs for top triaged assets",
+        "recommended_owner_agent": "Maya-Governance",
+        "risk_tier": "medium",
+        "live_enabled": false
+      }
+    ]
+  },
+  "mission_dashboard": {
+    "next_recommended_work": "L4.4 First Governed Read-Only Observation Tool Wrapper v0",
+    "top_opportunities": [
+      "use generated summaries as a recurring observation surface",
+      "turn top triage candidates into governed read-only wrappers",
+      "produce next work recommendations without executing actions"
+    ],
+    "top_risks": [
+      "live action execution remains disabled",
+      "external communication remains disabled",
+      "CIEU persistence remains disabled",
+      "brain and memory writeback remain disabled"
+    ]
+  },
+  "company_state_digest": {
+    "what_the_company_knows_now": [
+      "dry-run governance stack exists",
+      "legacy assets are triaged before absorption",
+      "generated summaries can be observed safely"
+    ],
+    "what_it_can_safely_observe": [
+      "console read-model summaries",
+      "live readiness and boundary summaries",
+      "CIEU boundary summaries",
+      "autonomy inventory and work-cycle summaries",
+      "legacy triage summaries"
+    ],
+    "what_it_can_safely_do_now": [
+      "generate read-only observation ticks",
+      "recommend next work candidates",
+      "prepare wrapper specs without executing tools"
+    ],
+    "what_remains_blocked": [
+      "live action execution remains disabled",
+      "external communication remains disabled",
+      "CIEU persistence remains disabled",
+      "brain and memory writeback remain disabled"
+    ]
+  },
+  "existing_governed_readonly_tool": {
+    "defined": true,
+    "callable": true,
+    "next_required_milestone": "L4.5 Governed Tool Invocation Through Pre-U Bridge v0"
+  },
+  "existing_tool_bridge": {
+    "defined": true,
+    "tool_invoked_through_bridge": true,
+    "next_required_milestone": "L4.6 Agent Team Work Proposal to Governed Tool Invocation v0"
+  },
+  "legacy_asset_triage_summary": {
+    "assets_scored": 900,
+    "bucket_counts": {
+      "A_adopt_now_read_only": 1,
+      "B_wrap_as_governed_tool": 881,
+      "C_rewrite_from_design": 10,
+      "D_quarantine_as_evidence_ore": 8,
+      "E_retire_do_not_use": 0
+    },
+    "top_absorption_candidate_count": 7
+  },
+  "safe_opportunities": [
+    "use generated summaries as a recurring observation surface",
+    "turn top triage candidates into governed read-only wrappers",
+    "produce next work recommendations without executing actions"
+  ],
+  "blocked_risks": [
+    "live action execution remains disabled",
+    "external communication remains disabled",
+    "CIEU persistence remains disabled",
+    "brain and memory writeback remain disabled"
+  ],
+  "input_policy": "generated_read_model_only"
+}

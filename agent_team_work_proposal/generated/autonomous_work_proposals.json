@@ -1,0 +1,137 @@
+{
+  "schema_name": "ystar.agent_team_work_proposal.generated.autonomous_work_proposals",
+  "schema_version": "v0",
+  "proposal_count": 5,
+  "proposals": [
+    {
+      "proposal_id": "agent-work-proposal-001",
+      "title": "Refresh company state through governed read-only bridge",
+      "description": "Use the existing L4.5 bridge to request a fresh normalized company-state observation.",
+      "proposing_agent": "Aiden-CEO",
+      "recommended_owner_agent": "Samantha-Secretary",
+      "supporting_agents": [
+        "Maya-Governance",
+        "Ryan-Platform"
+      ],
+      "mission_relevance": "Reduces founder step-by-step prompting by letting the agent team refresh mission context safely.",
+      "evidence_refs": [
+        "governed_observation_loop/generated/mission_dashboard_snapshot.json",
+        "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json"
+      ],
+      "tool_need": "governed_readonly_observation_tool_v0 via governed_tool_invocation_bridge_v0",
+      "expected_business_value": "Creates the first agent-team generated route from observation to governed tool result.",
+      "risk_tier": "low",
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "requires_live_action": false,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "selection_score": 95,
+      "selection_reason": "Best advances autonomy while staying local, read-only, and bridge-gated."
+    },
+    {
+      "proposal_id": "agent-work-proposal-002",
+      "title": "Convert top legacy triage candidate into wrapper plan",
+      "description": "Turn a high-value legacy asset into a governed wrapper design without absorbing code.",
+      "proposing_agent": "Ethan-CTO",
+      "recommended_owner_agent": "Ethan-CTO",
+      "supporting_agents": [
+        "Maya-Governance",
+        "Leo-Kernel"
+      ],
+      "mission_relevance": "Improves governed tool coverage while preserving triage-before-absorption.",
+      "evidence_refs": [
+        "legacy_asset_triage/generated/top_absorption_candidates.json"
+      ],
+      "tool_need": "read-only observation to inspect current triage summary",
+      "expected_business_value": "Prepares future wrappers for dormant useful assets.",
+      "risk_tier": "medium",
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "requires_live_action": false,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "selection_score": 82,
+      "selection_reason": "Valuable but less immediate than proving proposal-to-bridge routing."
+    },
+    {
+      "proposal_id": "agent-work-proposal-003",
+      "title": "Create mission progress dashboard candidate",
+      "description": "Summarize autonomy milestones and blocked live capabilities into a dashboard fixture.",
+      "proposing_agent": "Samantha-Secretary",
+      "recommended_owner_agent": "Samantha-Secretary",
+      "supporting_agents": [
+        "Aiden-CEO"
+      ],
+      "mission_relevance": "Makes company progress easier for the agent team and founder to inspect.",
+      "evidence_refs": [
+        "console_read_model/generated/team_console_snapshot.json"
+      ],
+      "tool_need": "read-only console summary access",
+      "expected_business_value": "Improves continuity and reduces operational prompting.",
+      "risk_tier": "low",
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "requires_live_action": false,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "selection_score": 86,
+      "selection_reason": "Strong next step after proposal-to-bridge is proven."
+    },
+    {
+      "proposal_id": "agent-work-proposal-004",
+      "title": "Prepare first low-risk real business task candidate",
+      "description": "Draft a future candidate for live business work without executing or contacting anyone.",
+      "proposing_agent": "Aiden-CEO",
+      "recommended_owner_agent": "Maya-Governance",
+      "supporting_agents": [
+        "Ryan-Platform",
+        "Leo-Kernel"
+      ],
+      "mission_relevance": "Moves toward commercial action while keeping live gates blocked.",
+      "evidence_refs": [
+        "labs_live_readiness/generated/live_readiness_report.json"
+      ],
+      "tool_need": "read-only readiness and boundary summaries",
+      "expected_business_value": "Clarifies what must be true before future business work.",
+      "risk_tier": "medium",
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "requires_live_action": false,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "selection_score": 74,
+      "selection_reason": "Useful but should wait until dashboard refresh loop exists."
+    },
+    {
+      "proposal_id": "agent-work-proposal-005",
+      "title": "Create observation-to-work backlog refinement",
+      "description": "Refine observation-derived work candidates into scored governed proposals.",
+      "proposing_agent": "Ryan-Platform",
+      "recommended_owner_agent": "Ryan-Platform",
+      "supporting_agents": [
+        "Samantha-Secretary",
+        "Maya-Governance"
+      ],
+      "mission_relevance": "Improves the recurring loop from observation to prioritized work.",
+      "evidence_refs": [
+        "governed_observation_loop/generated/observation_to_work_item_candidates.json"
+      ],
+      "tool_need": "read-only generated candidate observation",
+      "expected_business_value": "Turns observation ticks into a stronger autonomous work queue.",
+      "risk_tier": "low",
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "requires_live_action": false,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "selection_score": 84,
+      "selection_reason": "Good follow-on once first proposal-to-bridge path is stable."
+    }
+  ]
+}

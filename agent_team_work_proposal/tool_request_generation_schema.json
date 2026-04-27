@@ -1,0 +1,25 @@
+{
+  "schema_name": "ystar.agent_team_work_proposal.tool_request_generation_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "request_id",
+    "requesting_agent",
+    "supporting_agent",
+    "mission_id",
+    "tool_id",
+    "request_type",
+    "business_reason",
+    "declared_intent",
+    "requested_summary_level",
+    "risk_tier",
+    "source_work_proposal_ref",
+    "role_review_ref",
+    "tool_need_analysis_ref",
+    "live_action_requested",
+    "external_action_requested",
+    "brain_writeback_requested",
+    "memory_ingestion_requested",
+    "cieu_persistence_requested"
+  ]
+}

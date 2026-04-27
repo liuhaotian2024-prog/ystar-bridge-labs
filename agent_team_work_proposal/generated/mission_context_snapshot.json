@@ -1,0 +1,63 @@
+{
+  "schema_name": "ystar.agent_team_work_proposal.generated.mission_context_snapshot",
+  "schema_version": "v0",
+  "mission_id": "mission-commercial-agent-company-v0",
+  "founder_defined_mission": "Build a commercial AI agent self-governed company runtime that can observe business-relevant resources, understand constraints, select or build tools, act through governed channels, record outcomes, and improve through curated CIEU deltas.",
+  "mission_bounded_autonomy": true,
+  "founder_sets_mission_agent_team_drives": true,
+  "step_by_step_human_prompting_required": false,
+  "current_capability_state": {
+    "governed_readonly_tool_ready": true,
+    "tool_bridge_ready": true,
+    "legacy_assets_scored": 900,
+    "console_agents": [
+      "Aiden-CEO",
+      "Ethan-CTO",
+      "Samantha-Secretary"
+    ]
+  },
+  "current_safe_observation_sources": [
+    "console-readiness-summary",
+    "console-team-snapshot",
+    "live-readiness-summary",
+    "live-boundary-summary",
+    "cieu-boundary-summary",
+    "autonomy-inventory-summary",
+    "autonomous-cycle-summary",
+    "legacy-triage-summary",
+    "triage-adoptable-01"
+  ],
+  "current_governed_tools": [
+    {
+      "tool_id": "governed_readonly_observation_tool_v0",
+      "status": "callable_for_local_readonly_dry_run",
+      "bridge_required": true
+    }
+  ],
+  "current_blocked_actions": [
+    "live action execution remains disabled",
+    "external communication remains disabled",
+    "CIEU persistence remains disabled",
+    "brain and memory writeback remain disabled"
+  ],
+  "current_top_risks": [
+    "live action execution remains disabled",
+    "external communication remains disabled",
+    "CIEU persistence remains disabled",
+    "brain and memory writeback remain disabled"
+  ],
+  "current_top_opportunities": [
+    "use generated summaries as a recurring observation surface",
+    "turn top triage candidates into governed read-only wrappers",
+    "produce next work recommendations without executing actions"
+  ],
+  "evidence_refs": [
+    "company_autonomous_work_cycle/generated/mission_profile.json",
+    "governed_observation_loop/generated/mission_dashboard_snapshot.json",
+    "governed_observation_loop/generated/company_state_digest.json",
+    "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json",
+    "governed_readonly_observation_tool/generated/tool_readiness_summary.json",
+    "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
+    "console_read_model/generated/team_console_snapshot.json"
+  ]
+}

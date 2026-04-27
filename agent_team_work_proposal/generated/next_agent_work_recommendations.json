@@ -1,0 +1,53 @@
+{
+  "schema_name": "ystar.agent_team_work_proposal.generated.next_agent_work_recommendations",
+  "schema_version": "v0",
+  "recommendation_count": 3,
+  "recommendations": [
+    {
+      "recommendation_id": "next-agent-work-001",
+      "title": "L4.7 First Mission Dashboard Refresh Loop v0",
+      "recommended_owner_agent": "Samantha-Secretary",
+      "risk_tier": "low",
+      "depends_on": [
+        "agent-work-proposal-001",
+        "agent_team_work_proposal/generated/work_proposal_to_bridge_trace.json"
+      ],
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "rationale": "Refresh the mission dashboard from the first agent-team generated governed observation path."
+    },
+    {
+      "recommendation_id": "next-agent-work-002",
+      "title": "Define governed proposal scoring review fixture v0",
+      "recommended_owner_agent": "Maya-Governance",
+      "risk_tier": "low",
+      "depends_on": [
+        "agent_team_work_proposal/generated/role_review_board.json"
+      ],
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "rationale": "Keep future agent-selected work explainable before any tool request is generated."
+    },
+    {
+      "recommendation_id": "next-agent-work-003",
+      "title": "Prepare wrapper plan for the top legacy triage candidate",
+      "recommended_owner_agent": "Ethan-CTO",
+      "risk_tier": "medium",
+      "depends_on": [
+        "legacy_asset_triage/generated/top_absorption_candidates.json"
+      ],
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "rationale": "Turn triage evidence into a governed wrapper plan without absorbing or executing legacy code."
+    }
+  ]
+}
