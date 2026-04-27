@@ -20,3 +20,6 @@ It proves, locally and deterministically, that:
 
 This is not CI, not push, not real hook integration, and not runtime execution.
 
+`labs_live_readiness/` consumes this dry-run alignment status as one input to
+the live-readiness gate. Alignment accepted does not enable live execution; it
+only proves the dry-run labs and governance endpoints remain compatible.

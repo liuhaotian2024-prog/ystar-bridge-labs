@@ -19,6 +19,7 @@
     "labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json",
     "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json",
     "cross_repo_alignment/generated/cross_repo_alignment_summary.json",
+    "labs_live_readiness/generated/live_readiness_report.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",
@@ -248,8 +249,8 @@
     "schema_version": "v0",
     "framework_status": "path_inventory_only",
     "current_mining_level": 0,
-    "artifacts_classified": 208,
-    "unsafe_artifacts_count": 169,
+    "artifacts_classified": 215,
+    "unsafe_artifacts_count": 168,
     "classes_seen": {
       "ACTIVE_AGENT_MARKER": 17,
       "BACKUP_DB": 1,
@@ -257,14 +258,14 @@
       "DAEMON_STATE": 4,
       "DAILY_REPORT": 6,
       "DB_CORE": 1,
-      "DB_SIDECARE": 6,
-      "DREAM_REPORT": 29,
+      "DB_SIDECARE": 4,
+      "DREAM_REPORT": 30,
       "DRIFT_REPORT": 4,
       "ESCALATION_REPORT": 23,
       "FRAMEWORK_FILE": 5,
       "LOG_RUNTIME": 31,
       "PYCACHE": 31,
-      "UNKNOWN_OR_NON_RUNTIME": 34,
+      "UNKNOWN_OR_NON_RUNTIME": 42,
       "UNKNOWN_RUNTIME_ARTIFACT": 10,
       "WHITELIST_REPORT": 1
     },
@@ -366,24 +367,24 @@
   "artifact_disposition_summary": {
     "schema_name": "ystar.console_read_model.generated.artifact_disposition_summary",
     "schema_version": "v0",
-    "total_artifacts": 208,
-    "artifacts_with_disposition": 208,
+    "total_artifacts": 215,
+    "artifacts_with_disposition": 215,
     "dispositions": {
       "deferred_requires_marker_metadata_adapter": 26,
-      "deferred_sidecar_or_transaction_file": 6,
+      "deferred_sidecar_or_transaction_file": 4,
       "deferred_requires_classification": 10,
-      "ignored_or_non_runtime": 39,
+      "ignored_or_non_runtime": 47,
       "deferred_requires_readonly_db_adapter": 2,
       "deferred_requires_bounded_log_adapter": 31,
       "ignored_generated_cache": 31,
       "safe_mined_to_review_queue": 20,
-      "deferred_markdown_report_not_selected": 43
+      "deferred_markdown_report_not_selected": 44
     },
     "artifact_classes": {
       "DAEMON_STATE": 4,
-      "DB_SIDECARE": 6,
+      "DB_SIDECARE": 4,
       "UNKNOWN_RUNTIME_ARTIFACT": 10,
-      "UNKNOWN_OR_NON_RUNTIME": 34,
+      "UNKNOWN_OR_NON_RUNTIME": 42,
       "DB_CORE": 1,
       "FRAMEWORK_FILE": 5,
       "CACHE_SENTINEL": 5,
@@ -391,7 +392,7 @@
       "ACTIVE_AGENT_MARKER": 17,
       "PYCACHE": 31,
       "BACKUP_DB": 1,
-      "DREAM_REPORT": 29,
+      "DREAM_REPORT": 30,
       "DAILY_REPORT": 6,
       "DRIFT_REPORT": 4,
       "ESCALATION_REPORT": 23,
@@ -400,16 +401,16 @@
     "safe_mined_to_review_queue": 20,
     "deferred_adapter_counts": {
       "deferred_requires_marker_metadata_adapter": 26,
-      "deferred_sidecar_or_transaction_file": 6,
+      "deferred_sidecar_or_transaction_file": 4,
       "deferred_requires_classification": 10,
       "deferred_requires_readonly_db_adapter": 2,
       "deferred_requires_bounded_log_adapter": 31,
-      "deferred_markdown_report_not_selected": 43
+      "deferred_markdown_report_not_selected": 44
     },
     "ignored_generated_cache": 31,
-    "forbidden_direct_read_count": 106,
+    "forbidden_direct_read_count": 104,
     "evidence_scoring_status": {
-      "not_started": 208
+      "not_started": 215
     },
     "generated_disposition_index": "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
     "warning": "Disposition is not ingestion. No brain/memory/CIEU writes are allowed."
@@ -542,8 +543,8 @@
     "schema_name": "ystar.console_read_model.generated.cross_repo_alignment_summary",
     "schema_version": "v0",
     "alignment_accepted": true,
-    "ystar_company_head": "3ccf40584f17a436ed810f0941a277d525f45e6d",
-    "ystar_company_head_summary": "3ccf4058 tools: add labs runtime governance acceptance runner",
+    "ystar_company_head": "ddf5c749bec3cb6f9c750eedcbb77a2e0b9fc664",
+    "ystar_company_head_summary": "ddf5c749 tools: add cross-repo governance alignment manifest",
     "ystar_gov_head": "9c4aee339b02abd210fb70a919669c4a4a7739ad",
     "ystar_gov_head_summary": "9c4aee3 tools: add governance endpoint acceptance runner",
     "ystar_gov_endpoint_accepted": true,
@@ -567,6 +568,36 @@
     "generated_manifest": "cross_repo_alignment/generated/cross_repo_status_manifest.json",
     "warning": "Cross-repo alignment is dry-run only and does not execute actions or write CIEU."
   },
+  "live_readiness_summary": {
+    "schema_name": "ystar.console_read_model.generated.live_readiness_summary",
+    "schema_version": "v0",
+    "dry_run_governance_ready": true,
+    "minimal_live_loop_ready": false,
+    "minimal_live_loop_status": "blocked_until_required_gates_exist",
+    "recommended_next_phase": "build_live_boundary_harness_not_runtime_execution",
+    "live_action_execution_allowed": false,
+    "live_cieu_write_allowed": false,
+    "live_brain_writeback_allowed": false,
+    "live_memory_ingestion_allowed": false,
+    "candidate_auto_approval_allowed": false,
+    "raw_artifact_ingestion_allowed": false,
+    "blockers": [
+      "no_real_hook_gate",
+      "no_action_sandbox",
+      "no_CIEU_writer",
+      "no_CIEU_prediction_delta_runtime_recording",
+      "no_brain_writeback_review_application",
+      "no_memory_ingestion_policy_application",
+      "no_runtime_rollback_boundary",
+      "no_live_operator_approval_gate",
+      "no_secret_policy_for_live_tools",
+      "dirty_runtime_artifacts_not_canonical"
+    ],
+    "transition_backlog_items": 21,
+    "generated_report": "labs_live_readiness/generated/live_readiness_report.json",
+    "generated_transition_backlog": "labs_live_readiness/generated/transition_backlog.json",
+    "warning": "Dry-run governance ready is not live runtime readiness; live execution remains blocked."
+  },
   "open_gaps": [
     "Static console loader exists; no frontend UI yet.",
     "No frontend UI.",
@@ -587,7 +618,8 @@
     "Labs-Gov bridge exists as a dry-run snapshot only; no real hook integration exists.",
     "Pre-U generator exists for dry-run governance only; no runtime packet execution exists.",
     "Labs runtime acceptance exists for dry-run checks only; no real runtime execution is accepted.",
-    "Cross-repo alignment exists for dry-run compatibility only; no CI or real hook enforcement exists."
+    "Cross-repo alignment exists for dry-run compatibility only; no CI or real hook enforcement exists.",
+    "Live readiness gate exists, but minimal live loop remains blocked until required gates exist."
   ],
   "warnings": [
     "Ethan execution channels are present as reference-only boundaries, not runtime launchers."

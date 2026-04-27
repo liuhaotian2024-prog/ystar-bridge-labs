@@ -33,5 +33,8 @@ acceptance report. It is dry-run acceptance only, not runtime execution.
 `cross_repo_alignment_summary.json` is derived from the generated cross-repo
 alignment manifest. It is dry-run compatibility only, not CI or hook execution.
 
+`live_readiness_summary.json` is derived from the generated live-readiness
+report. It identifies blockers and keeps live execution disabled.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

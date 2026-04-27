@@ -1,0 +1,25 @@
+{
+  "schema_name": "ystar.labs_live_readiness.transition_backlog_schema",
+  "schema_version": "v0",
+  "required_entry_fields": [
+    "item_id",
+    "phase",
+    "title",
+    "required_before_live",
+    "status",
+    "risk_if_missing",
+    "allowed_next_step",
+    "forbidden_shortcut"
+  ],
+  "allowed_statuses": [
+    "not_started"
+  ],
+  "allowed_phases": [
+    "live_boundary_harness",
+    "cieu_runtime_event_bridge",
+    "memory_brain_writeback_governance",
+    "external_executor_adapter",
+    "minimal_live_governed_loop_acceptance"
+  ]
+}
+

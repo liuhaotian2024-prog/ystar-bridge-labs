@@ -24,6 +24,7 @@ GOVERNANCE_BRIDGE = "console_read_model/generated/governance_bridge_summary.json
 PRE_U_GOVERNANCE = "console_read_model/generated/pre_u_governance_summary.json"
 LABS_ACCEPTANCE = "console_read_model/generated/labs_acceptance_summary.json"
 CROSS_REPO_ALIGNMENT = "console_read_model/generated/cross_repo_alignment_summary.json"
+LIVE_READINESS = "console_read_model/generated/live_readiness_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -43,7 +44,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -87,6 +88,7 @@ def load_all() -> dict[str, Any]:
         "pre_u_governance": load_json(PRE_U_GOVERNANCE),
         "labs_acceptance": load_json(LABS_ACCEPTANCE),
         "cross_repo_alignment": load_json(CROSS_REPO_ALIGNMENT),
+        "live_readiness": load_json(LIVE_READINESS),
     }
 
 
@@ -398,6 +400,30 @@ def cmd_cross_repo_alignment(data: dict[str, Any]) -> None:
     print(f"warning: {alignment.get('warning')}")
 
 
+def cmd_live_readiness(data: dict[str, Any]) -> None:
+    readiness = data["live_readiness"]
+    print("# Labs Live Readiness")
+    print()
+    print(f"dry_run_governance_ready: {readiness.get('dry_run_governance_ready')}")
+    print(f"minimal_live_loop_ready: {readiness.get('minimal_live_loop_ready')}")
+    print(f"minimal_live_loop_status: {readiness.get('minimal_live_loop_status')}")
+    print(f"recommended_next_phase: {readiness.get('recommended_next_phase')}")
+    print(f"live_action_execution_allowed: {readiness.get('live_action_execution_allowed')}")
+    print(f"live_cieu_write_allowed: {readiness.get('live_cieu_write_allowed')}")
+    print(f"live_brain_writeback_allowed: {readiness.get('live_brain_writeback_allowed')}")
+    print(f"live_memory_ingestion_allowed: {readiness.get('live_memory_ingestion_allowed')}")
+    print(f"candidate_auto_approval_allowed: {readiness.get('candidate_auto_approval_allowed')}")
+    print(f"raw_artifact_ingestion_allowed: {readiness.get('raw_artifact_ingestion_allowed')}")
+    print(f"transition_backlog_items: {readiness.get('transition_backlog_items')}")
+    print()
+    print("blockers:")
+    bullet_list(readiness.get("blockers", []))
+    print()
+    print(f"generated_report: {readiness.get('generated_report')}")
+    print(f"generated_transition_backlog: {readiness.get('generated_transition_backlog')}")
+    print(f"warning: {readiness.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -460,6 +486,12 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print()
         print("Cross-repo alignment manifest:")
         print(f"- {alignment.get('generated_manifest')}")
+    live_readiness = data.get("live_readiness", {})
+    if live_readiness:
+        print()
+        print("Live readiness report:")
+        print(f"- {live_readiness.get('generated_report')}")
+        print(f"- {live_readiness.get('generated_transition_backlog')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -497,6 +529,7 @@ def cmd_validate_local() -> int:
         PRE_U_GOVERNANCE,
         LABS_ACCEPTANCE,
         CROSS_REPO_ALIGNMENT,
+        LIVE_READINESS,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -528,6 +561,8 @@ def cmd_validate_local() -> int:
             failures.append("labs_acceptance_summary missing from team console snapshot")
         if "cross_repo_alignment_summary" not in snapshot:
             failures.append("cross_repo_alignment_summary missing from team console snapshot")
+        if "live_readiness_summary" not in snapshot:
+            failures.append("live_readiness_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -774,6 +809,43 @@ def cmd_validate_local() -> int:
             if value is not True:
                 failures.append(f"cross-repo alignment safety assertion must be true: {name}")
 
+    live_readiness = loaded.get(LIVE_READINESS)
+    if live_readiness:
+        required_fields = [
+            "dry_run_governance_ready",
+            "minimal_live_loop_ready",
+            "minimal_live_loop_status",
+            "recommended_next_phase",
+            "live_action_execution_allowed",
+            "live_cieu_write_allowed",
+            "live_brain_writeback_allowed",
+            "live_memory_ingestion_allowed",
+            "candidate_auto_approval_allowed",
+            "raw_artifact_ingestion_allowed",
+            "blockers",
+            "transition_backlog_items",
+            "generated_report",
+            "generated_transition_backlog",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in live_readiness:
+                failures.append(f"live readiness summary missing field: {field}")
+        if live_readiness.get("minimal_live_loop_ready") is not False:
+            failures.append("live readiness summary must keep minimal_live_loop_ready=false")
+        if live_readiness.get("minimal_live_loop_status") != "blocked_until_required_gates_exist":
+            failures.append("live readiness summary must keep minimal live loop blocked")
+        for field in [
+            "live_action_execution_allowed",
+            "live_cieu_write_allowed",
+            "live_brain_writeback_allowed",
+            "live_memory_ingestion_allowed",
+            "candidate_auto_approval_allowed",
+            "raw_artifact_ingestion_allowed",
+        ]:
+            if live_readiness.get(field) is not False:
+                failures.append(f"live readiness summary must keep {field}=false")
+
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
     print(f"Required agents: {', '.join(REQUIRED_AGENTS)}")
@@ -833,6 +905,8 @@ def main(argv: list[str]) -> int:
         cmd_labs_acceptance(data)
     elif command == "cross-repo-alignment":
         cmd_cross_repo_alignment(data)
+    elif command == "live-readiness":
+        cmd_live_readiness(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

@@ -20,6 +20,7 @@
 - Multi-role dry-run Pre-U governance summary in generated console snapshots.
 - Dry-run labs runtime governance acceptance summary in generated console snapshots.
 - Dry-run cross-repo governance alignment summary in generated console snapshots.
+- Live-readiness gate summary in generated console snapshots.
 - Local safety check wrapper for the curated read-model stack.
 - Lightweight static capsule schema-alignment checks.
 
@@ -46,6 +47,7 @@
 - Runtime Pre-U packet execution.
 - Real runtime acceptance beyond dry-run checks.
 - Real cross-repo hook enforcement beyond dry-run alignment.
+- Minimal live governed loop remains blocked until required gates exist.
 - Runtime tests remain separate from local read-model safety checks.
 - Full JSON Schema enforcement through a dedicated schema engine.
 

@@ -19,7 +19,8 @@
     "dry-run Labs-Gov alignment bridge snapshot",
     "multi-role dry-run Pre-U governance summary",
     "dry-run labs runtime governance acceptance summary",
-    "dry-run cross-repo governance alignment summary"
+    "dry-run cross-repo governance alignment summary",
+    "live-readiness gate summary that keeps live execution blocked"
   ],
   "not_ready": [
     "runtime generator",
@@ -43,7 +44,8 @@
     "real hook integration for Labs-Gov bridge",
     "runtime Pre-U packet execution",
     "real runtime acceptance beyond dry-run checks",
-    "real cross-repo hook enforcement beyond dry-run alignment"
+    "real cross-repo hook enforcement beyond dry-run alignment",
+    "minimal live governed loop"
   ],
   "recommended_next_steps": [
     "wire static validator and loader into CI",
@@ -59,7 +61,8 @@
     "connect bridge decisions to future Pre-U/CIEU dry-run examples without executing actions",
     "define a reviewed path from Pre-U dry-run snapshots to future CIEU prediction-delta examples",
     "define real hook enforcement handoff after dry-run acceptance remains stable",
-    "define CI handoff after cross-repo dry-run alignment remains stable"
+    "define CI handoff after cross-repo dry-run alignment remains stable",
+    "build live boundary harness before any runtime execution"
   ],
   "blockers": [
     "no DB-safe adapter",
@@ -69,7 +72,8 @@
     "no real Labs-Gov hook enforcement path",
     "no runtime Pre-U execution path",
     "no real action/CIEU/brain write path from acceptance reports",
-    "no real cross-repo hook enforcement path"
+    "no real cross-repo hook enforcement path",
+    "no live boundary harness or operator approval gate"
   ],
   "safety_boundaries": [
     "no DB reads",
@@ -85,6 +89,7 @@
     "Labs-Gov bridge is dry-run only and does not execute actions",
     "generated Pre-U packets are dry-run only and not runtime actions",
     "labs runtime acceptance is dry-run only and not runtime execution",
-    "cross-repo alignment is dry-run only and not CI or hook execution"
+    "cross-repo alignment is dry-run only and not CI or hook execution",
+    "live-readiness gate forbids action/CIEU/brain/memory writes"
   ]
 }

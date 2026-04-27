@@ -36,6 +36,9 @@
 - `labs_runtime_acceptance/generated/labs_runtime_acceptance_manifest.json`
 - `cross_repo_alignment/generated/cross_repo_status_manifest.json`
 - `cross_repo_alignment/generated/cross_repo_alignment_summary.json`
+- `labs_live_readiness/generated/live_readiness_report.json`
+- `labs_live_readiness/generated/transition_backlog.json`
+- `labs_live_readiness/generated/live_readiness_manifest.json`
 - `console_read_model/generated/quarantine_summary.json`
 - `console_read_model/generated/safe_mining_summary.json`
 - `console_read_model/generated/review_queue_summary.json`
@@ -45,6 +48,7 @@
 - `console_read_model/generated/pre_u_governance_summary.json`
 - `console_read_model/generated/labs_acceptance_summary.json`
 - `console_read_model/generated/cross_repo_alignment_summary.json`
+- `console_read_model/generated/live_readiness_summary.json`
 
 ## Unsafe Direct Sources
 
@@ -82,3 +86,6 @@
   reports; acceptance is dry-run only and not runtime execution.
 - Cross-repo alignment data may be displayed only from generated alignment
   manifests; alignment is dry-run compatibility only and not CI or hook execution.
+- Live-readiness data may be displayed only from generated gate reports; live
+  action execution, CIEU writes, memory ingestion, and brain writeback remain
+  forbidden.

@@ -40,6 +40,10 @@ The wrapper also validates generated cross-repo alignment reports and exposes a
 `cross-repo-alignment` CLI smoke check. It does not call the full cross-repo
 alignment acceptance runner, which avoids long recursive cross-repo checks.
 
+The wrapper builds the live-readiness gate report, validates its generated
+JSON, and exposes a `live-readiness` CLI smoke check. This is deliberately
+non-recursive and does not enable live execution.
+
 Optional flags:
 
 - `--no-rebuild`: validate existing generated files without rebuilding them.

@@ -25,6 +25,8 @@
   real runtime execution.
 - Cross-repo alignment exists, but it is dry-run compatibility only and does not
   replace CI, push, or real hook enforcement.
+- Live readiness gate exists, but minimal live loop remains blocked until hook,
+  sandbox, CIEU, rollback, operator approval, and writeback gates exist.
 - Local safety check wrapper exists but is not wired into CI.
 - Local safety check wrapper does not replace runtime or governance tests.
 - Capsule schema alignment is lightweight and does not validate executable cognition.

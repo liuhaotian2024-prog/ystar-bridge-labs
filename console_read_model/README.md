@@ -75,3 +75,8 @@ The snapshot can expose a cross-repo governance alignment summary derived from
 `cross_repo_alignment/generated/cross_repo_status_manifest.json`. This shows
 dry-run compatibility between ystar-company and Y-star-gov. It is not CI, push,
 hook enforcement, or runtime execution.
+
+The snapshot can expose a live-readiness summary derived from
+`labs_live_readiness/generated/live_readiness_report.json`. This confirms
+dry-run governance readiness while keeping live action execution, CIEU writes,
+memory ingestion, and brain writeback disabled.

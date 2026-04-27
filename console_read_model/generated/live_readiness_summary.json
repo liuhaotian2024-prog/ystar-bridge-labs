@@ -1,0 +1,30 @@
+{
+  "schema_name": "ystar.console_read_model.generated.live_readiness_summary",
+  "schema_version": "v0",
+  "dry_run_governance_ready": true,
+  "minimal_live_loop_ready": false,
+  "minimal_live_loop_status": "blocked_until_required_gates_exist",
+  "recommended_next_phase": "build_live_boundary_harness_not_runtime_execution",
+  "live_action_execution_allowed": false,
+  "live_cieu_write_allowed": false,
+  "live_brain_writeback_allowed": false,
+  "live_memory_ingestion_allowed": false,
+  "candidate_auto_approval_allowed": false,
+  "raw_artifact_ingestion_allowed": false,
+  "blockers": [
+    "no_real_hook_gate",
+    "no_action_sandbox",
+    "no_CIEU_writer",
+    "no_CIEU_prediction_delta_runtime_recording",
+    "no_brain_writeback_review_application",
+    "no_memory_ingestion_policy_application",
+    "no_runtime_rollback_boundary",
+    "no_live_operator_approval_gate",
+    "no_secret_policy_for_live_tools",
+    "dirty_runtime_artifacts_not_canonical"
+  ],
+  "transition_backlog_items": 21,
+  "generated_report": "labs_live_readiness/generated/live_readiness_report.json",
+  "generated_transition_backlog": "labs_live_readiness/generated/transition_backlog.json",
+  "warning": "Dry-run governance ready is not live runtime readiness; live execution remains blocked."
+}

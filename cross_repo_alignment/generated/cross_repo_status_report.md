@@ -5,7 +5,7 @@ reason: both repositories accepted dry-run governance alignment
 
 ## Repositories
 
-- ystar-company: 3ccf4058 tools: add labs runtime governance acceptance runner
+- ystar-company: ddf5c749 tools: add cross-repo governance alignment manifest
 - Y-star-gov: 9c4aee3 tools: add governance endpoint acceptance runner
 
 ## Acceptance

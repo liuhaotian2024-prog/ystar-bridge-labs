@@ -56,6 +56,7 @@ Ready now:
 - multi-role dry-run Pre-U governance summary
 - dry-run labs runtime governance acceptance summary
 - dry-run cross-repo governance alignment summary
+- live-readiness gate summary that keeps live execution blocked
 
 Not ready:
 - runtime generator
@@ -80,13 +81,14 @@ Not ready:
 - runtime Pre-U packet execution
 - real runtime acceptance beyond dry-run checks
 - real cross-repo hook enforcement beyond dry-run alignment
+- minimal live governed loop
 
 ## Runtime Artifact Quarantine Summary
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 208
-- Unsafe artifacts count: 169
+- Artifacts classified: 215
+- Unsafe artifacts count: 168
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -94,14 +96,14 @@ Not ready:
   - DAEMON_STATE: 4
   - DAILY_REPORT: 6
   - DB_CORE: 1
-  - DB_SIDECARE: 6
-  - DREAM_REPORT: 29
+  - DB_SIDECARE: 4
+  - DREAM_REPORT: 30
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
   - FRAMEWORK_FILE: 5
   - LOG_RUNTIME: 31
   - PYCACHE: 31
-  - UNKNOWN_OR_NON_RUNTIME: 34
+  - UNKNOWN_OR_NON_RUNTIME: 42
   - UNKNOWN_RUNTIME_ARTIFACT: 10
   - WHITELIST_REPORT: 1
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
@@ -139,23 +141,23 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 208
-- Artifacts with disposition: 208
+- Total artifacts: 215
+- Artifacts with disposition: 215
 - Safe-mined to review queue: 20
-- Forbidden direct read count: 106
+- Forbidden direct read count: 104
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
-  - deferred_markdown_report_not_selected: 43
+  - deferred_markdown_report_not_selected: 44
   - deferred_requires_bounded_log_adapter: 31
   - deferred_requires_classification: 10
   - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
-  - deferred_sidecar_or_transaction_file: 6
+  - deferred_sidecar_or_transaction_file: 4
   - ignored_generated_cache: 31
-  - ignored_or_non_runtime: 39
+  - ignored_or_non_runtime: 47
   - safe_mined_to_review_queue: 20
 - Evidence scoring status:
-  - not_started: 208
+  - not_started: 215
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -227,7 +229,7 @@ Not ready:
 ## Cross-Repo Governance Alignment
 
 - alignment_accepted: True
-- ystar-company HEAD: 3ccf4058 tools: add labs runtime governance acceptance runner
+- ystar-company HEAD: ddf5c749 tools: add cross-repo governance alignment manifest
 - Y-star-gov HEAD: 9c4aee3 tools: add governance endpoint acceptance runner
 - Y-star-gov endpoint accepted: True
 - labs runtime accepted: True
@@ -242,6 +244,30 @@ Not ready:
   - no_raw_artifact_ingestion: True
   - ystar_gov_not_modified: True
 - Warning: Cross-repo alignment is dry-run only and does not execute actions or write CIEU.
+
+## Labs Live Readiness
+
+- dry_run_governance_ready: True
+- minimal_live_loop_ready: False
+- minimal_live_loop_status: blocked_until_required_gates_exist
+- recommended_next_phase: build_live_boundary_harness_not_runtime_execution
+- live_action_execution_allowed: False
+- live_cieu_write_allowed: False
+- live_brain_writeback_allowed: False
+- live_memory_ingestion_allowed: False
+- transition_backlog_items: 21
+- blockers:
+  - no_real_hook_gate
+  - no_action_sandbox
+  - no_CIEU_writer
+  - no_CIEU_prediction_delta_runtime_recording
+  - no_brain_writeback_review_application
+  - no_memory_ingestion_policy_application
+  - no_runtime_rollback_boundary
+  - no_live_operator_approval_gate
+  - no_secret_policy_for_live_tools
+  - dirty_runtime_artifacts_not_canonical
+- Warning: Dry-run governance ready is not live runtime readiness; live execution remains blocked.
 
 ## Governance Boundary
 
@@ -267,6 +293,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - define a reviewed path from Pre-U dry-run snapshots to future CIEU prediction-delta examples
 - define real hook enforcement handoff after dry-run acceptance remains stable
 - define CI handoff after cross-repo dry-run alignment remains stable
+- build live boundary harness before any runtime execution
 
 ## Warnings / Gaps
 
@@ -291,3 +318,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Pre-U generator exists for dry-run governance only; no runtime packet execution exists.
 - Labs runtime acceptance exists for dry-run checks only; no real runtime execution is accepted.
 - Cross-repo alignment exists for dry-run compatibility only; no CI or real hook enforcement exists.
+- Live readiness gate exists, but minimal live loop remains blocked until required gates exist.

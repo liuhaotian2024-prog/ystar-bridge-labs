@@ -51,7 +51,21 @@
     "console_read_model/generated/pre_u_governance_summary.json",
     "console_read_model/generated/labs_acceptance_summary.json",
     "console_read_model/generated/cross_repo_alignment_summary.json",
+    "console_read_model/generated/live_readiness_summary.json",
     "console_read_model/generated/generation_manifest.json"
+  ],
+  "required_labs_live_readiness_files": [
+    "labs_live_readiness/README.md",
+    "labs_live_readiness/live_readiness_policy.md",
+    "labs_live_readiness/live_readiness_schema.json",
+    "labs_live_readiness/transition_backlog_schema.json",
+    "labs_live_readiness/open_gaps.md",
+    "labs_live_readiness/tools/build_live_readiness_report.py",
+    "labs_live_readiness/generated/README.md",
+    "labs_live_readiness/generated/live_readiness_report.json",
+    "labs_live_readiness/generated/live_readiness_report.md",
+    "labs_live_readiness/generated/transition_backlog.json",
+    "labs_live_readiness/generated/live_readiness_manifest.json"
   ],
   "required_cross_repo_alignment_files": [
     "cross_repo_alignment/README.md",

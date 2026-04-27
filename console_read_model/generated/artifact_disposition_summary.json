@@ -1,24 +1,24 @@
 {
   "schema_name": "ystar.console_read_model.generated.artifact_disposition_summary",
   "schema_version": "v0",
-  "total_artifacts": 208,
-  "artifacts_with_disposition": 208,
+  "total_artifacts": 215,
+  "artifacts_with_disposition": 215,
   "dispositions": {
     "deferred_requires_marker_metadata_adapter": 26,
-    "deferred_sidecar_or_transaction_file": 6,
+    "deferred_sidecar_or_transaction_file": 4,
     "deferred_requires_classification": 10,
-    "ignored_or_non_runtime": 39,
+    "ignored_or_non_runtime": 47,
     "deferred_requires_readonly_db_adapter": 2,
     "deferred_requires_bounded_log_adapter": 31,
     "ignored_generated_cache": 31,
     "safe_mined_to_review_queue": 20,
-    "deferred_markdown_report_not_selected": 43
+    "deferred_markdown_report_not_selected": 44
   },
   "artifact_classes": {
     "DAEMON_STATE": 4,
-    "DB_SIDECARE": 6,
+    "DB_SIDECARE": 4,
     "UNKNOWN_RUNTIME_ARTIFACT": 10,
-    "UNKNOWN_OR_NON_RUNTIME": 34,
+    "UNKNOWN_OR_NON_RUNTIME": 42,
     "DB_CORE": 1,
     "FRAMEWORK_FILE": 5,
     "CACHE_SENTINEL": 5,
@@ -26,7 +26,7 @@
     "ACTIVE_AGENT_MARKER": 17,
     "PYCACHE": 31,
     "BACKUP_DB": 1,
-    "DREAM_REPORT": 29,
+    "DREAM_REPORT": 30,
     "DAILY_REPORT": 6,
     "DRIFT_REPORT": 4,
     "ESCALATION_REPORT": 23,
@@ -35,16 +35,16 @@
   "safe_mined_to_review_queue": 20,
   "deferred_adapter_counts": {
     "deferred_requires_marker_metadata_adapter": 26,
-    "deferred_sidecar_or_transaction_file": 6,
+    "deferred_sidecar_or_transaction_file": 4,
     "deferred_requires_classification": 10,
     "deferred_requires_readonly_db_adapter": 2,
     "deferred_requires_bounded_log_adapter": 31,
-    "deferred_markdown_report_not_selected": 43
+    "deferred_markdown_report_not_selected": 44
   },
   "ignored_generated_cache": 31,
-  "forbidden_direct_read_count": 106,
+  "forbidden_direct_read_count": 104,
   "evidence_scoring_status": {
-    "not_started": 208
+    "not_started": 215
   },
   "generated_disposition_index": "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
   "warning": "Disposition is not ingestion. No brain/memory/CIEU writes are allowed."

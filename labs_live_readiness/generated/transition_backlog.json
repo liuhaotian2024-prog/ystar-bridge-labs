@@ -1,0 +1,228 @@
+{
+  "schema_name": "ystar.labs_live_readiness.generated.transition_backlog",
+  "schema_version": "v0",
+  "items": [
+    {
+      "item_id": "live-boundary-001",
+      "phase": "live_boundary_harness",
+      "title": "real hook boundary contract",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "hook ambiguity can bypass Y-star-gov judgment",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "live-boundary-002",
+      "phase": "live_boundary_harness",
+      "title": "action sandbox dry-run-to-live switch guard",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "dry-run packets could be mistaken for executable actions",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "live-boundary-003",
+      "phase": "live_boundary_harness",
+      "title": "operator approval gate",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "live actions could start without human authorization",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "live-boundary-004",
+      "phase": "live_boundary_harness",
+      "title": "rollback/abort policy",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "failed live actions may not have a controlled stop path",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "cieu-runtime-001",
+      "phase": "cieu_runtime_event_bridge",
+      "title": "CIEU event writer interface",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "outcomes cannot be recorded through a governed writer",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "cieu-runtime-002",
+      "phase": "cieu_runtime_event_bridge",
+      "title": "prediction_delta runtime event schema",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "predicted-vs-actual evidence may be malformed",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "cieu-runtime-003",
+      "phase": "cieu_runtime_event_bridge",
+      "title": "CIEU log verification",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "records may be unverifiable or incomplete",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "cieu-runtime-004",
+      "phase": "cieu_runtime_event_bridge",
+      "title": "no direct brain writeback rule",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "runtime evidence could bypass review",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "writeback-gov-001",
+      "phase": "memory_brain_writeback_governance",
+      "title": "review decision application",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "candidate hints could be applied without a signed decision",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "writeback-gov-002",
+      "phase": "memory_brain_writeback_governance",
+      "title": "approved hint migration candidate",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "weak hints could become canonical memory",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "writeback-gov-003",
+      "phase": "memory_brain_writeback_governance",
+      "title": "schema validation before memory/capsule update",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "brain capsules could drift structurally",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "writeback-gov-004",
+      "phase": "memory_brain_writeback_governance",
+      "title": "manual approval requirement",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "automation could approve its own memory writes",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "executor-adapter-001",
+      "phase": "external_executor_adapter",
+      "title": "Codex/Claude/OpenClaw adapter boundary",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "external execution channels could be overbroad",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "executor-adapter-002",
+      "phase": "external_executor_adapter",
+      "title": "tool allowlist/denylist",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "unsafe tools could be invoked",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "executor-adapter-003",
+      "phase": "external_executor_adapter",
+      "title": "filesystem scope",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "live actions could touch unapproved paths",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "executor-adapter-004",
+      "phase": "external_executor_adapter",
+      "title": "secret policy",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "live tools could access credentials without policy",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "live-loop-001",
+      "phase": "minimal_live_governed_loop_acceptance",
+      "title": "live task fixture",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "no deterministic live acceptance input exists",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "live-loop-002",
+      "phase": "minimal_live_governed_loop_acceptance",
+      "title": "hook gate enforced",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "actions could bypass governance",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "live-loop-003",
+      "phase": "minimal_live_governed_loop_acceptance",
+      "title": "action sandbox enforced",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "live side effects could exceed scope",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "live-loop-004",
+      "phase": "minimal_live_governed_loop_acceptance",
+      "title": "CIEU event recorded",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "outcome evidence may not exist",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    },
+    {
+      "item_id": "live-loop-005",
+      "phase": "minimal_live_governed_loop_acceptance",
+      "title": "no brain writeback without review",
+      "required_before_live": true,
+      "status": "not_started",
+      "risk_if_missing": "learning could bypass evidence-backed deltas",
+      "allowed_next_step": "design_and_dry_run_boundary_contract",
+      "forbidden_shortcut": "enable_live_runtime_behavior_before_gate_exists"
+    }
+  ],
+  "summary": {
+    "items_total": 21,
+    "required_before_live": 21,
+    "not_started": 21,
+    "phases": {
+      "live_boundary_harness": 4,
+      "cieu_runtime_event_bridge": 4,
+      "memory_brain_writeback_governance": 4,
+      "external_executor_adapter": 4,
+      "minimal_live_governed_loop_acceptance": 5
+    }
+  }
+}

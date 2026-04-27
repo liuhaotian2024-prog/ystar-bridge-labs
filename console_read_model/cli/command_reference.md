@@ -40,6 +40,9 @@ python3 console_read_model/cli/team_console.py <command>
   summary: accepted status, check counts, decisions, and dry-run safety flags.
 - `cross-repo-alignment`: Prints the generated cross-repo governance alignment
   summary: repo heads, acceptance states, decisions, and safety assertions.
+- `live-readiness`: Prints the generated live-readiness gate summary: dry-run
+  readiness, live blockers, transition backlog count, and disabled live-write
+  flags.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

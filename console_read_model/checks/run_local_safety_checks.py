@@ -77,6 +77,16 @@ REBUILD_CHECKS = [
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
+    Check(
+        "Build live readiness report",
+        ["python3", "labs_live_readiness/tools/build_live_readiness_report.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after live readiness",
+        ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
+        mutates_generated_files=True,
+    ),
 ]
 
 VALIDATION_CHECKS = [
@@ -149,6 +159,26 @@ VALIDATION_CHECKS = [
     Check(
         "Validate JSON: cross_repo_alignment_summary generated",
         ["python3", "-m", "json.tool", "cross_repo_alignment/generated/cross_repo_alignment_summary.json"],
+    ),
+    Check(
+        "Compile labs live readiness builder",
+        ["python3", "-m", "py_compile", "labs_live_readiness/tools/build_live_readiness_report.py"],
+    ),
+    Check(
+        "Validate JSON: live_readiness_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/live_readiness_summary.json"],
+    ),
+    Check(
+        "Validate JSON: live_readiness_report.json",
+        ["python3", "-m", "json.tool", "labs_live_readiness/generated/live_readiness_report.json"],
+    ),
+    Check(
+        "Validate JSON: transition_backlog.json",
+        ["python3", "-m", "json.tool", "labs_live_readiness/generated/transition_backlog.json"],
+    ),
+    Check(
+        "Validate JSON: live_readiness_manifest.json",
+        ["python3", "-m", "json.tool", "labs_live_readiness/generated/live_readiness_manifest.json"],
     ),
     Check(
         "Validate JSON: markdown_report_candidates.json",
@@ -273,6 +303,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: cross-repo-alignment",
         ["python3", "console_read_model/cli/team_console.py", "cross-repo-alignment"],
+    ),
+    Check(
+        "CLI smoke: live-readiness",
+        ["python3", "console_read_model/cli/team_console.py", "live-readiness"],
     ),
     Check(
         "CLI smoke: sources",

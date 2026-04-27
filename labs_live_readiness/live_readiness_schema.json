@@ -1,0 +1,23 @@
+{
+  "schema_name": "ystar.labs_live_readiness.live_readiness_schema",
+  "schema_version": "v0",
+  "required_fields": [
+    "schema_name",
+    "schema_version",
+    "dry_run_readiness",
+    "live_execution_blockers",
+    "safety_booleans",
+    "overall_status",
+    "generated_refs"
+  ],
+  "required_false_fields": [
+    "live_action_execution_allowed",
+    "live_cieu_write_allowed",
+    "live_brain_writeback_allowed",
+    "live_memory_ingestion_allowed",
+    "candidate_auto_approval_allowed",
+    "raw_artifact_ingestion_allowed"
+  ],
+  "minimal_live_loop_status": "blocked_until_required_gates_exist"
+}
+

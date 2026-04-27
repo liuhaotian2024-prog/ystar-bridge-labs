@@ -30,3 +30,8 @@ console, and local-check stack in dry-run mode only.
 
 `cross_repo_alignment/` pairs the labs acceptance result with Y-star-gov
 endpoint acceptance and records a deterministic dry-run compatibility manifest.
+
+`labs_live_readiness/` turns the current dry-run bridge, acceptance, and
+alignment artifacts into a live-readiness report. That report is intentionally
+blocking: it identifies the smallest future live-loop path without enabling
+execution, CIEU writes, memory ingestion, or brain writeback.

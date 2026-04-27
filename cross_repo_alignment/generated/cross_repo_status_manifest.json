@@ -2,8 +2,8 @@
   "schema_name": "ystar.cross_repo_alignment.generated.status_manifest",
   "schema_version": "v0",
   "generated_at_policy": "deterministic_no_timestamp",
-  "ystar_company_head": "3ccf40584f17a436ed810f0941a277d525f45e6d",
-  "ystar_company_head_summary": "3ccf4058 tools: add labs runtime governance acceptance runner",
+  "ystar_company_head": "ddf5c749bec3cb6f9c750eedcbb77a2e0b9fc664",
+  "ystar_company_head_summary": "ddf5c749 tools: add cross-repo governance alignment manifest",
   "ystar_gov_head": "9c4aee339b02abd210fb70a919669c4a4a7739ad",
   "ystar_gov_head_summary": "9c4aee3 tools: add governance endpoint acceptance runner",
   "ystar_gov_endpoint_acceptance": {

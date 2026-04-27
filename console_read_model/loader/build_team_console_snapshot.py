@@ -34,6 +34,7 @@ CURATED_SOURCES = [
     "labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json",
     "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json",
     "cross_repo_alignment/generated/cross_repo_alignment_summary.json",
+    "labs_live_readiness/generated/live_readiness_report.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -406,6 +407,56 @@ def build_cross_repo_alignment_summary(cross_repo_summary: dict[str, Any] | None
     }
 
 
+def build_live_readiness_summary(live_readiness_report: dict[str, Any] | None) -> dict[str, Any]:
+    if not live_readiness_report:
+        return {
+            "schema_name": "ystar.console_read_model.generated.live_readiness_summary",
+            "schema_version": "v0",
+            "dry_run_governance_ready": False,
+            "minimal_live_loop_ready": False,
+            "minimal_live_loop_status": "not_evaluated",
+            "recommended_next_phase": "build_live_readiness_report",
+            "live_action_execution_allowed": False,
+            "live_cieu_write_allowed": False,
+            "live_brain_writeback_allowed": False,
+            "live_memory_ingestion_allowed": False,
+            "candidate_auto_approval_allowed": False,
+            "raw_artifact_ingestion_allowed": False,
+            "blockers": [],
+            "transition_backlog_items": 0,
+            "generated_report": "labs_live_readiness/generated/live_readiness_report.json",
+            "generated_transition_backlog": "labs_live_readiness/generated/transition_backlog.json",
+            "warning": "Live readiness report has not been generated yet.",
+        }
+
+    safety = live_readiness_report.get("safety_booleans", {})
+    blockers = live_readiness_report.get("live_execution_blockers", [])
+    overall = live_readiness_report.get("overall_status", {})
+    transition = live_readiness_report.get("transition_backlog_summary", {})
+    return {
+        "schema_name": "ystar.console_read_model.generated.live_readiness_summary",
+        "schema_version": "v0",
+        "dry_run_governance_ready": overall.get("dry_run_governance_ready"),
+        "minimal_live_loop_ready": overall.get("minimal_live_loop_ready"),
+        "minimal_live_loop_status": overall.get("minimal_live_loop_status"),
+        "recommended_next_phase": overall.get("recommended_next_phase"),
+        "live_action_execution_allowed": safety.get("live_action_execution_allowed"),
+        "live_cieu_write_allowed": safety.get("live_cieu_write_allowed"),
+        "live_brain_writeback_allowed": safety.get("live_brain_writeback_allowed"),
+        "live_memory_ingestion_allowed": safety.get("live_memory_ingestion_allowed"),
+        "candidate_auto_approval_allowed": safety.get("candidate_auto_approval_allowed"),
+        "raw_artifact_ingestion_allowed": safety.get("raw_artifact_ingestion_allowed"),
+        "blockers": blockers,
+        "transition_backlog_items": transition.get("items_total", 0),
+        "generated_report": "labs_live_readiness/generated/live_readiness_report.json",
+        "generated_transition_backlog": "labs_live_readiness/generated/transition_backlog.json",
+        "warning": live_readiness_report.get(
+            "warning",
+            "Live-readiness gate is not live runtime and keeps action/CIEU/brain/memory writes blocked.",
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -460,6 +511,10 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "cross_repo_alignment/generated/cross_repo_alignment_summary.json",
         files_read,
     )
+    live_readiness_report = load_optional_json(
+        "labs_live_readiness/generated/live_readiness_report.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -469,6 +524,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     pre_u_governance_summary = build_pre_u_governance_summary(pre_u_governance_decisions)
     labs_acceptance_summary = build_labs_acceptance_summary(labs_acceptance_report)
     cross_repo_alignment_summary = build_cross_repo_alignment_summary(cross_repo_generated_summary)
+    live_readiness_summary = build_live_readiness_summary(live_readiness_report)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -543,6 +599,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Labs runtime acceptance exists for dry-run checks only; no real runtime execution is accepted.")
     if "Cross-repo alignment exists for dry-run compatibility only; no CI or real hook enforcement exists." not in open_gaps:
         open_gaps.append("Cross-repo alignment exists for dry-run compatibility only; no CI or real hook enforcement exists.")
+    if "Live readiness gate exists, but minimal live loop remains blocked until required gates exist." not in open_gaps:
+        open_gaps.append("Live readiness gate exists, but minimal live loop remains blocked until required gates exist.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -563,6 +621,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "pre_u_governance_summary": pre_u_governance_summary,
         "labs_acceptance_summary": labs_acceptance_summary,
         "cross_repo_alignment_summary": cross_repo_alignment_summary,
+        "live_readiness_summary": live_readiness_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -608,6 +667,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "multi-role dry-run Pre-U governance summary",
             "dry-run labs runtime governance acceptance summary",
             "dry-run cross-repo governance alignment summary",
+            "live-readiness gate summary that keeps live execution blocked",
         ],
         "not_ready": [
             "runtime generator",
@@ -632,6 +692,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "runtime Pre-U packet execution",
             "real runtime acceptance beyond dry-run checks",
             "real cross-repo hook enforcement beyond dry-run alignment",
+            "minimal live governed loop",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -648,6 +709,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "define a reviewed path from Pre-U dry-run snapshots to future CIEU prediction-delta examples",
             "define real hook enforcement handoff after dry-run acceptance remains stable",
             "define CI handoff after cross-repo dry-run alignment remains stable",
+            "build live boundary harness before any runtime execution",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -658,6 +720,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "no runtime Pre-U execution path",
             "no real action/CIEU/brain write path from acceptance reports",
             "no real cross-repo hook enforcement path",
+            "no live boundary harness or operator approval gate",
         ],
         "safety_boundaries": [
             "no DB reads",
@@ -674,6 +737,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "generated Pre-U packets are dry-run only and not runtime actions",
             "labs runtime acceptance is dry-run only and not runtime execution",
             "cross-repo alignment is dry-run only and not CI or hook execution",
+            "live-readiness gate forbids action/CIEU/brain/memory writes",
         ],
     }
 
@@ -695,6 +759,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/pre_u_governance_summary.json",
             "console_read_model/generated/labs_acceptance_summary.json",
             "console_read_model/generated/cross_repo_alignment_summary.json",
+            "console_read_model/generated/live_readiness_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -741,6 +806,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "acceptance report. It is dry-run acceptance only, not runtime execution.\n\n"
         "`cross_repo_alignment_summary.json` is derived from the generated cross-repo\n"
         "alignment manifest. It is dry-run compatibility only, not CI or hook execution.\n\n"
+        "`live_readiness_summary.json` is derived from the generated live-readiness\n"
+        "report. It identifies blockers and keeps live execution disabled.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -758,6 +825,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/pre_u_governance_summary.json", pre_u_governance_summary, generated_files)
     write_json("console_read_model/generated/labs_acceptance_summary.json", labs_acceptance_summary, generated_files)
     write_json("console_read_model/generated/cross_repo_alignment_summary.json", cross_repo_alignment_summary, generated_files)
+    write_json("console_read_model/generated/live_readiness_summary.json", live_readiness_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -810,6 +878,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     pre_u_governance = snapshot.get("pre_u_governance_summary", {})
     labs_acceptance = snapshot.get("labs_acceptance_summary", {})
     cross_repo = snapshot.get("cross_repo_alignment_summary", {})
+    live_readiness = snapshot.get("live_readiness_summary", {})
     lines.extend(
         [
             "",
@@ -996,6 +1065,26 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     for key, value in sorted(cross_repo.get("safety_assertions", {}).items()):
         lines.append(f"  - {key}: {value}")
     lines.append(f"- Warning: {cross_repo.get('warning')}")
+    lines.extend(
+        [
+            "",
+            "## Labs Live Readiness",
+            "",
+            f"- dry_run_governance_ready: {live_readiness.get('dry_run_governance_ready')}",
+            f"- minimal_live_loop_ready: {live_readiness.get('minimal_live_loop_ready')}",
+            f"- minimal_live_loop_status: {live_readiness.get('minimal_live_loop_status')}",
+            f"- recommended_next_phase: {live_readiness.get('recommended_next_phase')}",
+            f"- live_action_execution_allowed: {live_readiness.get('live_action_execution_allowed')}",
+            f"- live_cieu_write_allowed: {live_readiness.get('live_cieu_write_allowed')}",
+            f"- live_brain_writeback_allowed: {live_readiness.get('live_brain_writeback_allowed')}",
+            f"- live_memory_ingestion_allowed: {live_readiness.get('live_memory_ingestion_allowed')}",
+            f"- transition_backlog_items: {live_readiness.get('transition_backlog_items')}",
+            "- blockers:",
+        ]
+    )
+    for blocker in live_readiness.get("blockers", []):
+        lines.append(f"  - {blocker}")
+    lines.append(f"- Warning: {live_readiness.get('warning')}")
     lines.extend(
         [
             "",

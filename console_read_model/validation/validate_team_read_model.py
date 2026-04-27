@@ -332,6 +332,7 @@ def main() -> int:
     required_labs_governance_bridge_files = expected.get("required_labs_governance_bridge_files", [])
     required_labs_runtime_acceptance_files = expected.get("required_labs_runtime_acceptance_files", [])
     required_cross_repo_alignment_files = expected.get("required_cross_repo_alignment_files", [])
+    required_labs_live_readiness_files = expected.get("required_labs_live_readiness_files", [])
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -390,6 +391,12 @@ def main() -> int:
         check_exists(path, report, "cross-repo alignment file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "cross-repo alignment JSON")
+
+    for rel in required_labs_live_readiness_files:
+        path = ROOT / rel
+        check_exists(path, report, "labs live readiness file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "labs live readiness JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -744,6 +751,47 @@ def main() -> int:
         else:
             report.fail("generated snapshot missing cross_repo_alignment_summary")
 
+        live_readiness_summary = snapshot.get("live_readiness_summary")
+        if live_readiness_summary:
+            report.pass_("generated snapshot contains live_readiness_summary")
+            for field in [
+                "dry_run_governance_ready",
+                "minimal_live_loop_ready",
+                "minimal_live_loop_status",
+                "recommended_next_phase",
+                "live_action_execution_allowed",
+                "live_cieu_write_allowed",
+                "live_brain_writeback_allowed",
+                "live_memory_ingestion_allowed",
+                "candidate_auto_approval_allowed",
+                "raw_artifact_ingestion_allowed",
+                "blockers",
+                "transition_backlog_items",
+                "generated_report",
+                "generated_transition_backlog",
+                "warning",
+            ]:
+                if field in live_readiness_summary:
+                    report.pass_(f"snapshot live_readiness_summary field present: {field}")
+                else:
+                    report.fail(f"snapshot live_readiness_summary missing field: {field}")
+            if live_readiness_summary.get("minimal_live_loop_ready") is not False:
+                report.fail("snapshot live_readiness_summary must keep minimal_live_loop_ready=false")
+            if live_readiness_summary.get("minimal_live_loop_status") != "blocked_until_required_gates_exist":
+                report.fail("snapshot live_readiness_summary must keep minimal live loop blocked")
+            for field in [
+                "live_action_execution_allowed",
+                "live_cieu_write_allowed",
+                "live_brain_writeback_allowed",
+                "live_memory_ingestion_allowed",
+                "candidate_auto_approval_allowed",
+                "raw_artifact_ingestion_allowed",
+            ]:
+                if live_readiness_summary.get(field) is not False:
+                    report.fail(f"snapshot live_readiness_summary must keep {field}=false")
+        else:
+            report.fail("generated snapshot missing live_readiness_summary")
+
     quarantine = generated_json.get("console_read_model/generated/quarantine_summary.json")
     if quarantine:
         for field in [
@@ -984,6 +1032,44 @@ def main() -> int:
         for name, value in cross_repo_alignment.get("safety_assertions", {}).items():
             if value is not True:
                 report.fail(f"generated cross-repo alignment safety assertion must be true: {name}")
+
+    live_readiness = generated_json.get("console_read_model/generated/live_readiness_summary.json")
+    if live_readiness:
+        for field in [
+            "dry_run_governance_ready",
+            "minimal_live_loop_ready",
+            "minimal_live_loop_status",
+            "recommended_next_phase",
+            "live_action_execution_allowed",
+            "live_cieu_write_allowed",
+            "live_brain_writeback_allowed",
+            "live_memory_ingestion_allowed",
+            "candidate_auto_approval_allowed",
+            "raw_artifact_ingestion_allowed",
+            "blockers",
+            "transition_backlog_items",
+            "generated_report",
+            "generated_transition_backlog",
+            "warning",
+        ]:
+            if field in live_readiness:
+                report.pass_(f"generated live readiness summary field present: {field}")
+            else:
+                report.fail(f"generated live readiness summary missing field: {field}")
+        if live_readiness.get("minimal_live_loop_ready") is not False:
+            report.fail("generated live readiness summary must keep minimal_live_loop_ready=false")
+        if live_readiness.get("minimal_live_loop_status") != "blocked_until_required_gates_exist":
+            report.fail("generated live readiness summary must keep minimal live loop blocked")
+        for field in [
+            "live_action_execution_allowed",
+            "live_cieu_write_allowed",
+            "live_brain_writeback_allowed",
+            "live_memory_ingestion_allowed",
+            "candidate_auto_approval_allowed",
+            "raw_artifact_ingestion_allowed",
+        ]:
+            if live_readiness.get(field) is not False:
+                report.fail(f"generated live readiness summary must keep {field}=false")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:
