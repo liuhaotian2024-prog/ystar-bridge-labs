@@ -18,6 +18,7 @@
 - Structural evidence review summary in generated console snapshots.
 - Dry-run Labs-Gov alignment bridge summary in generated console snapshots.
 - Multi-role dry-run Pre-U governance summary in generated console snapshots.
+- Dry-run labs runtime governance acceptance summary in generated console snapshots.
 - Local safety check wrapper for the curated read-model stack.
 - Lightweight static capsule schema-alignment checks.
 
@@ -42,6 +43,7 @@
 - Semantic truth validation and decision application for evidence records.
 - Real Labs-Gov hook integration and enforcement.
 - Runtime Pre-U packet execution.
+- Real runtime acceptance beyond dry-run checks.
 - Runtime tests remain separate from local read-model safety checks.
 - Full JSON Schema enforcement through a dedicated schema engine.
 

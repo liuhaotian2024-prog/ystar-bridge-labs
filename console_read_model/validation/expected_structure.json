@@ -49,7 +49,18 @@
     "console_read_model/generated/evidence_review_summary.json",
     "console_read_model/generated/governance_bridge_summary.json",
     "console_read_model/generated/pre_u_governance_summary.json",
+    "console_read_model/generated/labs_acceptance_summary.json",
     "console_read_model/generated/generation_manifest.json"
+  ],
+  "required_labs_runtime_acceptance_files": [
+    "labs_runtime_acceptance/README.md",
+    "labs_runtime_acceptance/acceptance_policy.md",
+    "labs_runtime_acceptance/acceptance_manifest_schema.json",
+    "labs_runtime_acceptance/open_gaps.md",
+    "labs_runtime_acceptance/tools/run_labs_runtime_acceptance.py",
+    "labs_runtime_acceptance/generated/README.md",
+    "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json",
+    "labs_runtime_acceptance/generated/labs_runtime_acceptance_manifest.json"
   ],
   "required_safe_mining_files": [
     "runtime_artifact_quarantine/safe_mining/README.md",

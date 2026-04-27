@@ -65,3 +65,8 @@ The snapshot can expose a multi-role Pre-U governance summary derived from
 `labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json`.
 This covers Aiden, Ethan, and Samantha dry-run packets only. It is not runtime
 packet execution or hook enforcement.
+
+The snapshot can expose a labs runtime acceptance summary derived from
+`labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json`. This
+is dry-run acceptance only and does not execute actions, write CIEU, or mutate
+brain/memory.

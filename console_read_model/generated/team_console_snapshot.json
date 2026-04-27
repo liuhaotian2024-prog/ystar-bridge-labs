@@ -17,6 +17,7 @@
     "runtime_artifact_quarantine/evidence_review/generated/hint_routing_index.json",
     "labs_governance_bridge/generated/governance_decision_snapshot.json",
     "labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json",
+    "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",
@@ -514,6 +515,28 @@
     "generated_decision_snapshots": "labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json",
     "warning": "Generated Pre-U governance decisions are dry-run only and are not runtime actions."
   },
+  "labs_acceptance_summary": {
+    "schema_name": "ystar.console_read_model.generated.labs_acceptance_summary",
+    "schema_version": "v0",
+    "accepted": false,
+    "checks_passed": 10,
+    "checks_total": 10,
+    "roles_covered": [
+      "Aiden-CEO",
+      "Ethan-CTO",
+      "Samantha-Secretary"
+    ],
+    "decision_counts": {
+      "allow": 3
+    },
+    "action_executed": false,
+    "cieu_written": false,
+    "brain_writeback_performed": false,
+    "memory_ingestion_performed": false,
+    "raw_runtime_artifacts_ingested": false,
+    "generated_acceptance_report": "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json",
+    "warning": "Dry-run only; no action execution, no CIEU write, no brain/memory mutation, and no raw runtime artifact ingestion."
+  },
   "open_gaps": [
     "Static console loader exists; no frontend UI yet.",
     "No frontend UI.",
@@ -532,7 +555,8 @@
     "Backlog disposition index exists, but evidence scoring and adapter extraction are not implemented.",
     "Evidence review pack exists, but semantic truth validation and decision application are not implemented.",
     "Labs-Gov bridge exists as a dry-run snapshot only; no real hook integration exists.",
-    "Pre-U generator exists for dry-run governance only; no runtime packet execution exists."
+    "Pre-U generator exists for dry-run governance only; no runtime packet execution exists.",
+    "Labs runtime acceptance exists for dry-run checks only; no real runtime execution is accepted."
   ],
   "warnings": [
     "Ethan execution channels are present as reference-only boundaries, not runtime launchers."

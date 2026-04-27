@@ -54,6 +54,7 @@ Ready now:
 - structural evidence review summary
 - dry-run Labs-Gov alignment bridge snapshot
 - multi-role dry-run Pre-U governance summary
+- dry-run labs runtime governance acceptance summary
 
 Not ready:
 - runtime generator
@@ -76,6 +77,7 @@ Not ready:
 - review decision application workflow
 - real hook integration for Labs-Gov bridge
 - runtime Pre-U packet execution
+- real runtime acceptance beyond dry-run checks
 
 ## Runtime Artifact Quarantine Summary
 
@@ -205,6 +207,21 @@ Not ready:
 - brain_writeback_performed: False
 - Warning: Generated Pre-U governance decisions are dry-run only and are not runtime actions.
 
+## Labs Runtime Governance Acceptance
+
+- accepted: False
+- checks_passed: 10
+- checks_total: 10
+- roles_covered: Aiden-CEO, Ethan-CTO, Samantha-Secretary
+- decision_counts:
+  - allow: 3
+- action_executed: False
+- cieu_written: False
+- brain_writeback_performed: False
+- memory_ingestion_performed: False
+- raw_runtime_artifacts_ingested: False
+- Warning: Dry-run only; no action execution, no CIEU write, no brain/memory mutation, and no raw runtime artifact ingestion.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -227,6 +244,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - define manual decision application for evidence review stubs
 - connect bridge decisions to future Pre-U/CIEU dry-run examples without executing actions
 - define a reviewed path from Pre-U dry-run snapshots to future CIEU prediction-delta examples
+- define real hook enforcement handoff after dry-run acceptance remains stable
 
 ## Warnings / Gaps
 
@@ -249,3 +267,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Evidence review pack exists, but semantic truth validation and decision application are not implemented.
 - Labs-Gov bridge exists as a dry-run snapshot only; no real hook integration exists.
 - Pre-U generator exists for dry-run governance only; no runtime packet execution exists.
+- Labs runtime acceptance exists for dry-run checks only; no real runtime execution is accepted.

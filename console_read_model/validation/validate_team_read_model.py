@@ -330,6 +330,7 @@ def main() -> int:
     required_backlog_disposition_files = expected.get("required_backlog_disposition_files", [])
     required_evidence_review_files = expected.get("required_evidence_review_files", [])
     required_labs_governance_bridge_files = expected.get("required_labs_governance_bridge_files", [])
+    required_labs_runtime_acceptance_files = expected.get("required_labs_runtime_acceptance_files", [])
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -376,6 +377,12 @@ def main() -> int:
         check_exists(path, report, "labs-governance bridge file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "labs-governance bridge JSON")
+
+    for rel in required_labs_runtime_acceptance_files:
+        path = ROOT / rel
+        check_exists(path, report, "labs runtime acceptance file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "labs runtime acceptance JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -666,6 +673,41 @@ def main() -> int:
         else:
             report.fail("generated snapshot missing pre_u_governance_summary")
 
+        labs_acceptance_summary = snapshot.get("labs_acceptance_summary")
+        if labs_acceptance_summary:
+            report.pass_("generated snapshot contains labs_acceptance_summary")
+            for field in [
+                "accepted",
+                "checks_passed",
+                "checks_total",
+                "roles_covered",
+                "decision_counts",
+                "action_executed",
+                "cieu_written",
+                "brain_writeback_performed",
+                "memory_ingestion_performed",
+                "raw_runtime_artifacts_ingested",
+                "warning",
+            ]:
+                if field in labs_acceptance_summary:
+                    report.pass_(f"snapshot labs_acceptance_summary field present: {field}")
+                else:
+                    report.fail(f"snapshot labs_acceptance_summary missing field: {field}")
+            roles = set(labs_acceptance_summary.get("roles_covered", []))
+            if roles and roles != set(required_agents):
+                report.fail("snapshot labs_acceptance_summary must cover required agents when roles are present")
+            for field in [
+                "action_executed",
+                "cieu_written",
+                "brain_writeback_performed",
+                "memory_ingestion_performed",
+                "raw_runtime_artifacts_ingested",
+            ]:
+                if labs_acceptance_summary.get(field) is not False:
+                    report.fail(f"snapshot labs_acceptance_summary must keep {field}=false")
+        else:
+            report.fail("generated snapshot missing labs_acceptance_summary")
+
     quarantine = generated_json.get("console_read_model/generated/quarantine_summary.json")
     if quarantine:
         for field in [
@@ -848,6 +890,38 @@ def main() -> int:
         for field in ["action_executed", "cieu_written", "brain_writeback_performed", "memory_ingestion_performed"]:
             if pre_u_governance.get(field) is not False:
                 report.fail(f"generated Pre-U governance summary must keep {field}=false")
+
+    labs_acceptance = generated_json.get("console_read_model/generated/labs_acceptance_summary.json")
+    if labs_acceptance:
+        for field in [
+            "accepted",
+            "checks_passed",
+            "checks_total",
+            "roles_covered",
+            "decision_counts",
+            "action_executed",
+            "cieu_written",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "raw_runtime_artifacts_ingested",
+            "warning",
+        ]:
+            if field in labs_acceptance:
+                report.pass_(f"generated labs acceptance summary field present: {field}")
+            else:
+                report.fail(f"generated labs acceptance summary missing field: {field}")
+        roles = set(labs_acceptance.get("roles_covered", []))
+        if roles and roles != set(required_agents):
+            report.fail("generated labs acceptance summary must cover required agents when roles are present")
+        for field in [
+            "action_executed",
+            "cieu_written",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "raw_runtime_artifacts_ingested",
+        ]:
+            if labs_acceptance.get(field) is not False:
+                report.fail(f"generated labs acceptance summary must keep {field}=false")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

@@ -22,6 +22,7 @@ DISPOSITION = "console_read_model/generated/artifact_disposition_summary.json"
 EVIDENCE_REVIEW = "console_read_model/generated/evidence_review_summary.json"
 GOVERNANCE_BRIDGE = "console_read_model/generated/governance_bridge_summary.json"
 PRE_U_GOVERNANCE = "console_read_model/generated/pre_u_governance_summary.json"
+LABS_ACCEPTANCE = "console_read_model/generated/labs_acceptance_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -41,7 +42,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -83,6 +84,7 @@ def load_all() -> dict[str, Any]:
         "evidence_review": load_json(EVIDENCE_REVIEW),
         "governance_bridge": load_json(GOVERNANCE_BRIDGE),
         "pre_u_governance": load_json(PRE_U_GOVERNANCE),
+        "labs_acceptance": load_json(LABS_ACCEPTANCE),
     }
 
 
@@ -348,6 +350,29 @@ def cmd_pre_u_governance(data: dict[str, Any]) -> None:
     print(f"warning: {pre_u.get('warning')}")
 
 
+def cmd_labs_acceptance(data: dict[str, Any]) -> None:
+    acceptance = data["labs_acceptance"]
+    print("# Labs Runtime Governance Acceptance")
+    print()
+    print(f"accepted: {acceptance.get('accepted')}")
+    print(f"checks_passed: {acceptance.get('checks_passed')}")
+    print(f"checks_total: {acceptance.get('checks_total')}")
+    print("roles_covered:")
+    bullet_list(acceptance.get("roles_covered", []))
+    print()
+    print("decision_counts:")
+    for decision, count in sorted(acceptance.get("decision_counts", {}).items()):
+        print(f"- {decision}: {count}")
+    print()
+    print(f"action_executed: {acceptance.get('action_executed')}")
+    print(f"cieu_written: {acceptance.get('cieu_written')}")
+    print(f"brain_writeback_performed: {acceptance.get('brain_writeback_performed')}")
+    print(f"memory_ingestion_performed: {acceptance.get('memory_ingestion_performed')}")
+    print(f"raw_runtime_artifacts_ingested: {acceptance.get('raw_runtime_artifacts_ingested')}")
+    print(f"generated_acceptance_report: {acceptance.get('generated_acceptance_report')}")
+    print(f"warning: {acceptance.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -400,6 +425,11 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print()
         print("Pre-U governance decision snapshots:")
         print(f"- {pre_u.get('generated_decision_snapshots')}")
+    acceptance = data.get("labs_acceptance", {})
+    if acceptance:
+        print()
+        print("Labs runtime acceptance report:")
+        print(f"- {acceptance.get('generated_acceptance_report')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -435,6 +465,7 @@ def cmd_validate_local() -> int:
         EVIDENCE_REVIEW,
         GOVERNANCE_BRIDGE,
         PRE_U_GOVERNANCE,
+        LABS_ACCEPTANCE,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -462,6 +493,8 @@ def cmd_validate_local() -> int:
             failures.append("governance_bridge_summary missing from team console snapshot")
         if "pre_u_governance_summary" not in snapshot:
             failures.append("pre_u_governance_summary missing from team console snapshot")
+        if "labs_acceptance_summary" not in snapshot:
+            failures.append("labs_acceptance_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -651,6 +684,37 @@ def cmd_validate_local() -> int:
             if pre_u_governance.get(field) is not False:
                 failures.append(f"Pre-U governance summary must keep {field}=false")
 
+    labs_acceptance = loaded.get(LABS_ACCEPTANCE)
+    if labs_acceptance:
+        required_fields = [
+            "accepted",
+            "checks_passed",
+            "checks_total",
+            "roles_covered",
+            "decision_counts",
+            "action_executed",
+            "cieu_written",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "raw_runtime_artifacts_ingested",
+            "generated_acceptance_report",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in labs_acceptance:
+                failures.append(f"labs acceptance summary missing field: {field}")
+        if set(labs_acceptance.get("roles_covered", [])) and set(labs_acceptance.get("roles_covered", [])) != set(REQUIRED_AGENTS):
+            failures.append("labs acceptance summary must cover required agents when roles are present")
+        for field in [
+            "action_executed",
+            "cieu_written",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "raw_runtime_artifacts_ingested",
+        ]:
+            if labs_acceptance.get(field) is not False:
+                failures.append(f"labs acceptance summary must keep {field}=false")
+
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
     print(f"Required agents: {', '.join(REQUIRED_AGENTS)}")
@@ -706,6 +770,8 @@ def main(argv: list[str]) -> int:
         cmd_governance_bridge(data)
     elif command == "pre-u-governance":
         cmd_pre_u_governance(data)
+    elif command == "labs-acceptance":
+        cmd_labs_acceptance(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

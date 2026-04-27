@@ -1,0 +1,22 @@
+{
+  "schema_name": "ystar.console_read_model.generated.labs_acceptance_summary",
+  "schema_version": "v0",
+  "accepted": false,
+  "checks_passed": 10,
+  "checks_total": 10,
+  "roles_covered": [
+    "Aiden-CEO",
+    "Ethan-CTO",
+    "Samantha-Secretary"
+  ],
+  "decision_counts": {
+    "allow": 3
+  },
+  "action_executed": false,
+  "cieu_written": false,
+  "brain_writeback_performed": false,
+  "memory_ingestion_performed": false,
+  "raw_runtime_artifacts_ingested": false,
+  "generated_acceptance_report": "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json",
+  "warning": "Dry-run only; no action execution, no CIEU write, no brain/memory mutation, and no raw runtime artifact ingestion."
+}

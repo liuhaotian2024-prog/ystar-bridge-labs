@@ -17,7 +17,8 @@
     "runtime artifact backlog disposition summary",
     "structural evidence review summary",
     "dry-run Labs-Gov alignment bridge snapshot",
-    "multi-role dry-run Pre-U governance summary"
+    "multi-role dry-run Pre-U governance summary",
+    "dry-run labs runtime governance acceptance summary"
   ],
   "not_ready": [
     "runtime generator",
@@ -39,7 +40,8 @@
     "semantic truth validation for evidence records",
     "review decision application workflow",
     "real hook integration for Labs-Gov bridge",
-    "runtime Pre-U packet execution"
+    "runtime Pre-U packet execution",
+    "real runtime acceptance beyond dry-run checks"
   ],
   "recommended_next_steps": [
     "wire static validator and loader into CI",
@@ -53,7 +55,8 @@
     "create evidence scoring schema for disposition records",
     "define manual decision application for evidence review stubs",
     "connect bridge decisions to future Pre-U/CIEU dry-run examples without executing actions",
-    "define a reviewed path from Pre-U dry-run snapshots to future CIEU prediction-delta examples"
+    "define a reviewed path from Pre-U dry-run snapshots to future CIEU prediction-delta examples",
+    "define real hook enforcement handoff after dry-run acceptance remains stable"
   ],
   "blockers": [
     "no DB-safe adapter",
@@ -61,7 +64,8 @@
     "no hook enforcement",
     "no semantic runtime truth guarantee",
     "no real Labs-Gov hook enforcement path",
-    "no runtime Pre-U execution path"
+    "no runtime Pre-U execution path",
+    "no real action/CIEU/brain write path from acceptance reports"
   ],
   "safety_boundaries": [
     "no DB reads",
@@ -75,6 +79,7 @@
     "disposition records are routing metadata, not ingestion",
     "evidence scoring is structural only and does not approve ingestion",
     "Labs-Gov bridge is dry-run only and does not execute actions",
-    "generated Pre-U packets are dry-run only and not runtime actions"
+    "generated Pre-U packets are dry-run only and not runtime actions",
+    "labs runtime acceptance is dry-run only and not runtime execution"
   ]
 }

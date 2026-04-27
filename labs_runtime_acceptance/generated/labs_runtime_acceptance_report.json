@@ -1,0 +1,169 @@
+{
+  "schema_name": "ystar.labs_runtime_acceptance.generated.report",
+  "schema_version": "v0",
+  "tool": "labs_runtime_acceptance",
+  "accepted": true,
+  "generated_at_policy": "deterministic_no_timestamp",
+  "run_label": "labs_runtime_governance_acceptance_v0",
+  "checks": [
+    {
+      "label": "Build quarantine manifest",
+      "command": [
+        "python3",
+        "runtime_artifact_quarantine/tools/build_runtime_artifact_manifest.py"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "Build safe mining candidates",
+      "command": [
+        "python3",
+        "runtime_artifact_quarantine/safe_mining/tools/build_markdown_report_candidates.py"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "Build candidate review queue",
+      "command": [
+        "python3",
+        "runtime_artifact_quarantine/safe_mining/review_queue/tools/build_candidate_review_queue.py"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "Build backlog disposition",
+      "command": [
+        "python3",
+        "runtime_artifact_quarantine/backlog_disposition/tools/build_artifact_disposition_index.py"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "Build evidence review pack",
+      "command": [
+        "python3",
+        "runtime_artifact_quarantine/evidence_review/tools/build_evidence_review_pack.py"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "Build multi-role Pre-U packets",
+      "command": [
+        "python3",
+        "labs_governance_bridge/pre_u_generator/tools/build_pre_u_packets.py"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "Build hook envelopes",
+      "command": [
+        "python3",
+        "labs_governance_bridge/pre_u_generator/tools/build_hook_envelopes_from_packets.py"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "Run multi-role governance dry-run",
+      "command": [
+        "python3",
+        "labs_governance_bridge/pre_u_generator/tools/run_pre_u_governance_dry_run.py"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "Build console snapshot",
+      "command": [
+        "python3",
+        "console_read_model/loader/build_team_console_snapshot.py"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "Static validator",
+      "command": [
+        "python3",
+        "console_read_model/validation/validate_team_read_model.py"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "Local safety wrapper",
+      "command": [
+        "python3",
+        "console_read_model/checks/run_local_safety_checks.py"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "Targeted acceptance tests",
+      "command": [
+        "python3",
+        "-m",
+        "pytest",
+        "tests/runtime_artifact_quarantine/test_markdown_report_candidates.py",
+        "tests/runtime_artifact_quarantine/test_candidate_review_queue.py",
+        "tests/runtime_artifact_quarantine/test_artifact_disposition_index.py",
+        "tests/runtime_artifact_quarantine/test_evidence_review_pack.py",
+        "tests/labs_governance_bridge/test_labs_gov_bridge.py",
+        "tests/labs_governance_bridge/test_pre_u_generator.py",
+        "-q"
+      ],
+      "status": "PASS"
+    }
+  ],
+  "quarantine_summary_ref": "console_read_model/generated/quarantine_summary.json",
+  "safe_mining_summary_ref": "console_read_model/generated/safe_mining_summary.json",
+  "review_queue_summary_ref": "console_read_model/generated/review_queue_summary.json",
+  "disposition_summary_ref": "console_read_model/generated/artifact_disposition_summary.json",
+  "evidence_review_summary_ref": "console_read_model/generated/evidence_review_summary.json",
+  "pre_u_governance_summary_ref": "console_read_model/generated/pre_u_governance_summary.json",
+  "governance_bridge_summary_ref": "console_read_model/generated/governance_bridge_summary.json",
+  "console_snapshot_ref": "console_read_model/generated/team_console_snapshot.json",
+  "decision_summary": {
+    "roles_covered": [
+      "Aiden-CEO",
+      "Ethan-CTO",
+      "Samantha-Secretary"
+    ],
+    "decision_counts": {
+      "allow": 3
+    },
+    "decisions_by_role": {
+      "Aiden-CEO": {
+        "packet_id": "preu-preu-aiden-labs-planning-001",
+        "decision": "allow",
+        "exit_code": 0,
+        "allow_execution": true,
+        "require_revision": false,
+        "deny": false,
+        "escalate": false
+      },
+      "Ethan-CTO": {
+        "packet_id": "preu-preu-ethan-safe-adapter-001",
+        "decision": "allow",
+        "exit_code": 0,
+        "allow_execution": true,
+        "require_revision": false,
+        "deny": false,
+        "escalate": false
+      },
+      "Samantha-Secretary": {
+        "packet_id": "preu-preu-samantha-handoff-001",
+        "decision": "allow",
+        "exit_code": 0,
+        "allow_execution": true,
+        "require_revision": false,
+        "deny": false,
+        "escalate": false
+      }
+    }
+  },
+  "safety_assertions": {
+    "action_executed": false,
+    "cieu_written": false,
+    "brain_writeback_performed": false,
+    "memory_ingestion_performed": false,
+    "raw_runtime_artifacts_ingested": false
+  },
+  "safety_note": "Dry-run only; no action execution, no CIEU write, no brain/memory mutation, and no raw runtime artifact ingestion."
+}

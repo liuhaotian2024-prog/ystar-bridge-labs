@@ -32,6 +32,7 @@ CURATED_SOURCES = [
     "runtime_artifact_quarantine/evidence_review/generated/hint_routing_index.json",
     "labs_governance_bridge/generated/governance_decision_snapshot.json",
     "labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json",
+    "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -78,6 +79,17 @@ def load_json(relative_path: str, files_read: list[str]) -> Any:
     assert_safe_source(path)
     if not path.exists():
         raise BuildError(f"Missing curated source: {relative_path}")
+    with path.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+    files_read.append(relative_path)
+    return data
+
+
+def load_optional_json(relative_path: str, files_read: list[str]) -> Any | None:
+    path = ROOT / relative_path
+    assert_safe_source(path)
+    if not path.exists():
+        return None
     with path.open("r", encoding="utf-8") as f:
         data = json.load(f)
     files_read.append(relative_path)
@@ -307,6 +319,50 @@ def build_pre_u_governance_summary(decision_snapshots: dict[str, Any]) -> dict[s
     }
 
 
+def build_labs_acceptance_summary(acceptance_report: dict[str, Any] | None) -> dict[str, Any]:
+    if not acceptance_report:
+        return {
+            "schema_name": "ystar.console_read_model.generated.labs_acceptance_summary",
+            "schema_version": "v0",
+            "accepted": False,
+            "checks_passed": 0,
+            "checks_total": 0,
+            "roles_covered": [],
+            "decision_counts": {},
+            "action_executed": False,
+            "cieu_written": False,
+            "brain_writeback_performed": False,
+            "memory_ingestion_performed": False,
+            "raw_runtime_artifacts_ingested": False,
+            "generated_acceptance_report": "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json",
+            "warning": "Labs runtime acceptance report has not been generated yet.",
+        }
+
+    checks = acceptance_report.get("checks", [])
+    passed = sum(1 for check in checks if check.get("status") == "PASS")
+    safety = acceptance_report.get("safety_assertions", {})
+    decision_summary = acceptance_report.get("decision_summary", {})
+    return {
+        "schema_name": "ystar.console_read_model.generated.labs_acceptance_summary",
+        "schema_version": "v0",
+        "accepted": acceptance_report.get("accepted"),
+        "checks_passed": passed,
+        "checks_total": len(checks),
+        "roles_covered": decision_summary.get("roles_covered", []),
+        "decision_counts": decision_summary.get("decision_counts", {}),
+        "action_executed": safety.get("action_executed"),
+        "cieu_written": safety.get("cieu_written"),
+        "brain_writeback_performed": safety.get("brain_writeback_performed"),
+        "memory_ingestion_performed": safety.get("memory_ingestion_performed"),
+        "raw_runtime_artifacts_ingested": safety.get("raw_runtime_artifacts_ingested"),
+        "generated_acceptance_report": "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json",
+        "warning": acceptance_report.get(
+            "safety_note",
+            "Labs runtime acceptance is dry-run only.",
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -353,6 +409,10 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json",
         files_read,
     )
+    labs_acceptance_report = load_optional_json(
+        "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -360,6 +420,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     evidence_review_summary = build_evidence_review_summary(evidence_scores, decision_stub, hint_routing)
     governance_bridge_summary = build_governance_bridge_summary(governance_decision_snapshot)
     pre_u_governance_summary = build_pre_u_governance_summary(pre_u_governance_decisions)
+    labs_acceptance_summary = build_labs_acceptance_summary(labs_acceptance_report)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -430,6 +491,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Labs-Gov bridge exists as a dry-run snapshot only; no real hook integration exists.")
     if "Pre-U generator exists for dry-run governance only; no runtime packet execution exists." not in open_gaps:
         open_gaps.append("Pre-U generator exists for dry-run governance only; no runtime packet execution exists.")
+    if "Labs runtime acceptance exists for dry-run checks only; no real runtime execution is accepted." not in open_gaps:
+        open_gaps.append("Labs runtime acceptance exists for dry-run checks only; no real runtime execution is accepted.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -448,6 +511,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "evidence_review_summary": evidence_review_summary,
         "governance_bridge_summary": governance_bridge_summary,
         "pre_u_governance_summary": pre_u_governance_summary,
+        "labs_acceptance_summary": labs_acceptance_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -491,6 +555,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "structural evidence review summary",
             "dry-run Labs-Gov alignment bridge snapshot",
             "multi-role dry-run Pre-U governance summary",
+            "dry-run labs runtime governance acceptance summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -513,6 +578,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "review decision application workflow",
             "real hook integration for Labs-Gov bridge",
             "runtime Pre-U packet execution",
+            "real runtime acceptance beyond dry-run checks",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -527,6 +593,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "define manual decision application for evidence review stubs",
             "connect bridge decisions to future Pre-U/CIEU dry-run examples without executing actions",
             "define a reviewed path from Pre-U dry-run snapshots to future CIEU prediction-delta examples",
+            "define real hook enforcement handoff after dry-run acceptance remains stable",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -535,6 +602,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "no semantic runtime truth guarantee",
             "no real Labs-Gov hook enforcement path",
             "no runtime Pre-U execution path",
+            "no real action/CIEU/brain write path from acceptance reports",
         ],
         "safety_boundaries": [
             "no DB reads",
@@ -549,6 +617,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "evidence scoring is structural only and does not approve ingestion",
             "Labs-Gov bridge is dry-run only and does not execute actions",
             "generated Pre-U packets are dry-run only and not runtime actions",
+            "labs runtime acceptance is dry-run only and not runtime execution",
         ],
     }
 
@@ -568,6 +637,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/evidence_review_summary.json",
             "console_read_model/generated/governance_bridge_summary.json",
             "console_read_model/generated/pre_u_governance_summary.json",
+            "console_read_model/generated/labs_acceptance_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -610,6 +680,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "dry-run decision snapshot. It is not hook execution or CIEU writeback.\n\n"
         "`pre_u_governance_summary.json` is derived from generated multi-role\n"
         "Pre-U dry-run decisions. It is not runtime packet execution.\n\n"
+        "`labs_acceptance_summary.json` is derived from the generated labs runtime\n"
+        "acceptance report. It is dry-run acceptance only, not runtime execution.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -625,6 +697,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/evidence_review_summary.json", evidence_review_summary, generated_files)
     write_json("console_read_model/generated/governance_bridge_summary.json", governance_bridge_summary, generated_files)
     write_json("console_read_model/generated/pre_u_governance_summary.json", pre_u_governance_summary, generated_files)
+    write_json("console_read_model/generated/labs_acceptance_summary.json", labs_acceptance_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -675,6 +748,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     evidence_review = snapshot.get("evidence_review_summary", {})
     governance_bridge = snapshot.get("governance_bridge_summary", {})
     pre_u_governance = snapshot.get("pre_u_governance_summary", {})
+    labs_acceptance = snapshot.get("labs_acceptance_summary", {})
     lines.extend(
         [
             "",
@@ -815,6 +889,30 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- cieu_written: {pre_u_governance.get('cieu_written')}",
             f"- brain_writeback_performed: {pre_u_governance.get('brain_writeback_performed')}",
             f"- Warning: {pre_u_governance.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Labs Runtime Governance Acceptance",
+            "",
+            f"- accepted: {labs_acceptance.get('accepted')}",
+            f"- checks_passed: {labs_acceptance.get('checks_passed')}",
+            f"- checks_total: {labs_acceptance.get('checks_total')}",
+            f"- roles_covered: {', '.join(labs_acceptance.get('roles_covered', []))}",
+            "- decision_counts:",
+        ]
+    )
+    for decision, count in sorted(labs_acceptance.get("decision_counts", {}).items()):
+        lines.append(f"  - {decision}: {count}")
+    lines.extend(
+        [
+            f"- action_executed: {labs_acceptance.get('action_executed')}",
+            f"- cieu_written: {labs_acceptance.get('cieu_written')}",
+            f"- brain_writeback_performed: {labs_acceptance.get('brain_writeback_performed')}",
+            f"- memory_ingestion_performed: {labs_acceptance.get('memory_ingestion_performed')}",
+            f"- raw_runtime_artifacts_ingested: {labs_acceptance.get('raw_runtime_artifacts_ingested')}",
+            f"- Warning: {labs_acceptance.get('warning')}",
         ]
     )
     lines.extend(

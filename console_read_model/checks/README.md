@@ -32,6 +32,10 @@ The wrapper also runs the multi-role Pre-U generator flow. That flow generates
 dry-run packets for Aiden, Ethan, and Samantha, converts them to hook envelopes,
 and calls Y-star-gov dry-run judgment without executing actions.
 
+The wrapper validates generated labs runtime acceptance reports and exposes a
+`labs-acceptance` CLI smoke check. It does not call the full acceptance runner,
+which avoids recursive acceptance-wrapper execution.
+
 Optional flags:
 
 - `--no-rebuild`: validate existing generated files without rebuilding them.

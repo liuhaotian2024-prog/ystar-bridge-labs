@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import subprocess
 import sys
 from dataclasses import dataclass
@@ -110,6 +111,22 @@ VALIDATION_CHECKS = [
     Check(
         "Validate JSON: pre_u_governance_summary.json",
         ["python3", "-m", "json.tool", "console_read_model/generated/pre_u_governance_summary.json"],
+    ),
+    Check(
+        "Compile labs runtime acceptance runner",
+        ["python3", "-m", "py_compile", "labs_runtime_acceptance/tools/run_labs_runtime_acceptance.py"],
+    ),
+    Check(
+        "Validate JSON: labs_acceptance_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/labs_acceptance_summary.json"],
+    ),
+    Check(
+        "Validate JSON: labs_runtime_acceptance_report.json",
+        ["python3", "-m", "json.tool", "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json"],
+    ),
+    Check(
+        "Validate JSON: labs_runtime_acceptance_manifest.json",
+        ["python3", "-m", "json.tool", "labs_runtime_acceptance/generated/labs_runtime_acceptance_manifest.json"],
     ),
     Check(
         "Validate JSON: markdown_report_candidates.json",
@@ -228,6 +245,10 @@ VALIDATION_CHECKS = [
         ["python3", "console_read_model/cli/team_console.py", "pre-u-governance"],
     ),
     Check(
+        "CLI smoke: labs-acceptance",
+        ["python3", "console_read_model/cli/team_console.py", "labs-acceptance"],
+    ),
+    Check(
         "CLI smoke: sources",
         ["python3", "console_read_model/cli/team_console.py", "sources"],
     ),
@@ -257,9 +278,12 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
 
 
 def run_check(check: Check, verbose: bool) -> tuple[bool, str]:
+    env = os.environ.copy()
+    env.setdefault("PYTHONPYCACHEPREFIX", "/tmp/ystar_company_pycache")
     result = subprocess.run(
         check.command,
         cwd=ROOT,
+        env=env,
         text=True,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,

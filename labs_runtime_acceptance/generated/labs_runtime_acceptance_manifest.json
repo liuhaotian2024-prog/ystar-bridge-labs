@@ -1,0 +1,30 @@
+{
+  "schema_name": "ystar.labs_runtime_acceptance.generated.manifest",
+  "schema_version": "v0",
+  "accepted": true,
+  "generated_reports": [
+    "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json",
+    "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.md",
+    "labs_runtime_acceptance/generated/labs_runtime_acceptance_manifest.json"
+  ],
+  "source_summary_refs": [
+    "console_read_model/generated/quarantine_summary.json",
+    "console_read_model/generated/safe_mining_summary.json",
+    "console_read_model/generated/review_queue_summary.json",
+    "console_read_model/generated/artifact_disposition_summary.json",
+    "console_read_model/generated/evidence_review_summary.json",
+    "console_read_model/generated/pre_u_governance_summary.json",
+    "console_read_model/generated/governance_bridge_summary.json",
+    "console_read_model/generated/team_console_snapshot.json"
+  ],
+  "checks_count": 12,
+  "checks_passed": 12,
+  "generated_at_policy": "deterministic_no_timestamp",
+  "safety_assertions": {
+    "action_executed": false,
+    "cieu_written": false,
+    "brain_writeback_performed": false,
+    "memory_ingestion_performed": false,
+    "raw_runtime_artifacts_ingested": false
+  }
+}

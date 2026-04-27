@@ -1,0 +1,24 @@
+{
+  "schema_name": "ystar.labs_runtime_acceptance.acceptance_manifest_schema",
+  "schema_version": "v0",
+  "required_fields": [
+    "schema_name",
+    "schema_version",
+    "accepted",
+    "checks",
+    "generated_reports",
+    "safety_assertions"
+  ],
+  "decision_values": [
+    "accepted",
+    "failed"
+  ],
+  "safety_assertions_required_false": [
+    "action_executed",
+    "cieu_written",
+    "brain_writeback_performed",
+    "memory_ingestion_performed",
+    "raw_runtime_artifacts_ingested"
+  ]
+}
+

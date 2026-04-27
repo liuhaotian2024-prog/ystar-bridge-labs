@@ -23,3 +23,7 @@ team console to display as dry-run governance alignment status.
 generation for Aiden-CEO, Ethan-CTO, and Samantha-Secretary. It creates dry-run
 packets, converts them to hook envelopes, calls the same Y-star-gov dry-run CLI,
 and records decision snapshots without executing actions.
+
+`labs_runtime_acceptance/` is the labs-side acceptance pack that proves the
+current quarantine, safe-mining, review, disposition, evidence, Pre-U, bridge,
+console, and local-check stack in dry-run mode only.

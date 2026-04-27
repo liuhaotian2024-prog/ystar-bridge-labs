@@ -32,6 +32,8 @@
 - `labs_governance_bridge/pre_u_generator/generated/hook_envelope_manifest.json`
 - `labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json`
 - `labs_governance_bridge/pre_u_generator/generated/pre_u_governance_run_manifest.json`
+- `labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json`
+- `labs_runtime_acceptance/generated/labs_runtime_acceptance_manifest.json`
 - `console_read_model/generated/quarantine_summary.json`
 - `console_read_model/generated/safe_mining_summary.json`
 - `console_read_model/generated/review_queue_summary.json`
@@ -39,6 +41,7 @@
 - `console_read_model/generated/evidence_review_summary.json`
 - `console_read_model/generated/governance_bridge_summary.json`
 - `console_read_model/generated/pre_u_governance_summary.json`
+- `console_read_model/generated/labs_acceptance_summary.json`
 
 ## Unsafe Direct Sources
 
@@ -72,3 +75,5 @@
   bridge decisions are dry-run only and must not execute actions or write CIEU.
 - Pre-U governance data may be displayed only from generated dry-run packet
   decision snapshots; generated packets are not runtime actions.
+- Labs runtime acceptance data may be displayed only from generated acceptance
+  reports; acceptance is dry-run only and not runtime execution.
