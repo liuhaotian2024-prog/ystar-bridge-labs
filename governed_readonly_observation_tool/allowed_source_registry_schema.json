@@ -1,0 +1,35 @@
+{
+  "schema_name": "ystar.governed_readonly_observation_tool.allowed_source_registry_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "schema_name",
+    "schema_version",
+    "source_count",
+    "sources"
+  ],
+  "properties": {
+    "schema_name": {"type": "string"},
+    "schema_version": {"type": "string"},
+    "source_count": {"type": "integer"},
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "source_path",
+          "source_type",
+          "safe_to_read_now",
+          "raw_runtime_artifact",
+          "requires_network",
+          "requires_credentials",
+          "read_mode",
+          "max_bytes",
+          "governance_notes"
+        ]
+      }
+    }
+  }
+}
+

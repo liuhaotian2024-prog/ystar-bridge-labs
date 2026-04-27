@@ -1,0 +1,23 @@
+{
+  "schema_name": "ystar.governed_readonly_observation_tool.generated.tool_invocation_trace",
+  "schema_version": "v0",
+  "trace_id": "readonly-observation-tool-trace-001",
+  "entries": [
+    {
+      "invocation_id": "readonly-observation-invocation-001",
+      "status": "success",
+      "read_source_count": 8,
+      "blocked_source_count": 0,
+      "real_action_executed": false,
+      "external_action_executed": false
+    },
+    {
+      "invocation_id": "readonly-observation-rejected-001",
+      "status": "rejected",
+      "read_source_count": 0,
+      "blocked_source_count": 1,
+      "real_action_executed": false,
+      "external_action_executed": false
+    }
+  ]
+}

@@ -26,7 +26,8 @@
     "company autonomy inventory summary",
     "mission-bounded autonomous work cycle simulator summary",
     "legacy asset triage summary",
-    "governed read-only observation loop summary"
+    "governed read-only observation loop summary",
+    "first governed read-only observation tool wrapper summary"
   ],
   "not_ready": [
     "runtime generator",
@@ -55,7 +56,7 @@
     "enabled live-boundary harness",
     "enabled CIEU runtime event persistence",
     "approved governed action registry",
-    "first governed read-only observation tool wrapper"
+    "Pre-U bridge invocation for governed read-only observation tool"
   ],
   "recommended_next_steps": [
     "wire static validator and loader into CI",
@@ -76,7 +77,8 @@
     "implement live boundary gates without enabling runtime execution",
     "define CIEU runtime event writer verification without enabling persistence",
     "simulate a company autonomous work cycle without enabling live actions",
-    "build L4.4 first governed read-only observation tool wrapper"
+    "build L4.4 first governed read-only observation tool wrapper",
+    "route the governed read-only observation tool through the Pre-U bridge"
   ],
   "blockers": [
     "no DB-safe adapter",
@@ -93,7 +95,8 @@
     "governed action registry candidates are mapped but disabled",
     "autonomous cycle is simulated only and cannot execute real work",
     "legacy assets are triaged but not absorbed",
-    "observation loop is read-only and not recurring"
+    "observation loop is read-only and not recurring",
+    "governed read-only observation tool is local dry-run only and not routed through Pre-U yet"
   ],
   "safety_boundaries": [
     "no DB reads",
@@ -116,6 +119,7 @@
     "company autonomy inventory is discovery-only and live actions remain disabled",
     "autonomous work cycle is simulated only and performs no external action",
     "legacy asset triage is classification-only and does not absorb assets",
-    "governed observation loop reads generated summaries only and executes no actions"
+    "governed observation loop reads generated summaries only and executes no actions",
+    "governed read-only observation tool reads allowed generated summaries only and executes no actions"
   ]
 }

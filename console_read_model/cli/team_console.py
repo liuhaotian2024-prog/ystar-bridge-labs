@@ -31,6 +31,7 @@ AUTONOMY_INVENTORY = "console_read_model/generated/autonomy_inventory_summary.js
 AUTONOMOUS_CYCLE = "console_read_model/generated/autonomous_cycle_summary.json"
 LEGACY_TRIAGE = "console_read_model/generated/legacy_triage_summary.json"
 OBSERVATION_LOOP = "console_read_model/generated/observation_loop_summary.json"
+READONLY_TOOL = "console_read_model/generated/readonly_tool_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -50,7 +51,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -101,6 +102,7 @@ def load_all() -> dict[str, Any]:
         "autonomous_cycle": load_json(AUTONOMOUS_CYCLE),
         "legacy_triage": load_json(LEGACY_TRIAGE),
         "observation_loop": load_json(OBSERVATION_LOOP),
+        "readonly_tool": load_json(READONLY_TOOL),
     }
 
 
@@ -587,6 +589,30 @@ def cmd_observation_loop(data: dict[str, Any]) -> None:
     print(f"warning: {loop.get('warning')}")
 
 
+def cmd_readonly_tool(data: dict[str, Any]) -> None:
+    tool = data["readonly_tool"]
+    print("# Governed Read-Only Observation Tool")
+    print()
+    print(f"tool contract defined: {tool.get('tool_contract_defined')}")
+    print(f"allowed source registry defined: {tool.get('allowed_source_registry_defined')}")
+    print(f"sample invocation defined: {tool.get('sample_invocation_defined')}")
+    print(f"sample result defined: {tool.get('sample_result_defined')}")
+    print(f"unsafe invocation rejected: {tool.get('unsafe_invocation_rejected')}")
+    print(f"local read-only dry-run callable: {tool.get('local_readonly_dry_run_callable')}")
+    print(f"first governed tool wrapper created: {tool.get('first_governed_tool_wrapper_created')}")
+    print(f"real action executed: {tool.get('real_action_executed')}")
+    print(f"live action enabled: {tool.get('live_action_enabled')}")
+    print(f"external action executed: {tool.get('external_action_executed')}")
+    print(f"CIEU persistence enabled: {tool.get('cieu_persistence_enabled')}")
+    print(f"brain writeback enabled: {tool.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {tool.get('memory_ingestion_enabled')}")
+    print(f"next required milestone: {tool.get('next_required_milestone')}")
+    print(f"generated_summary: {tool.get('generated_summary')}")
+    print(f"generated_contract: {tool.get('generated_contract')}")
+    print(f"generated_registry: {tool.get('generated_registry')}")
+    print(f"warning: {tool.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -692,6 +718,13 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print("Governed observation loop:")
         print(f"- {observation_loop.get('generated_summary')}")
         print(f"- {observation_loop.get('generated_report')}")
+    readonly_tool = data.get("readonly_tool", {})
+    if readonly_tool:
+        print()
+        print("Governed read-only observation tool:")
+        print(f"- {readonly_tool.get('generated_summary')}")
+        print(f"- {readonly_tool.get('generated_contract')}")
+        print(f"- {readonly_tool.get('generated_registry')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -736,6 +769,7 @@ def cmd_validate_local() -> int:
         AUTONOMOUS_CYCLE,
         LEGACY_TRIAGE,
         OBSERVATION_LOOP,
+        READONLY_TOOL,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -781,6 +815,8 @@ def cmd_validate_local() -> int:
             failures.append("legacy_triage_summary missing from team console snapshot")
         if "observation_loop_summary" not in snapshot:
             failures.append("observation_loop_summary missing from team console snapshot")
+        if "readonly_tool_summary" not in snapshot:
+            failures.append("readonly_tool_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -1385,6 +1421,56 @@ def cmd_validate_local() -> int:
         if observation_loop.get("next_required_milestone") != "L4.4 First Governed Read-Only Observation Tool Wrapper v0":
             failures.append("observation loop summary must point to L4.4 wrapper milestone")
 
+    readonly_tool = loaded.get(READONLY_TOOL)
+    if readonly_tool:
+        required_fields = [
+            "governed_readonly_observation_tool_defined",
+            "tool_contract_defined",
+            "allowed_source_registry_defined",
+            "sample_invocation_defined",
+            "sample_result_defined",
+            "unsafe_invocation_rejected",
+            "tool_cieu_event_defined",
+            "local_readonly_dry_run_callable",
+            "first_governed_tool_wrapper_created",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "next_required_milestone",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in readonly_tool:
+                failures.append(f"readonly tool summary missing field: {field}")
+        for field in [
+            "governed_readonly_observation_tool_defined",
+            "tool_contract_defined",
+            "allowed_source_registry_defined",
+            "sample_invocation_defined",
+            "sample_result_defined",
+            "unsafe_invocation_rejected",
+            "tool_cieu_event_defined",
+            "local_readonly_dry_run_callable",
+            "first_governed_tool_wrapper_created",
+        ]:
+            if readonly_tool.get(field) is not True:
+                failures.append(f"readonly tool summary must keep {field}=true")
+        for field in [
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+        ]:
+            if readonly_tool.get(field) is not False:
+                failures.append(f"readonly tool summary must keep {field}=false")
+        if readonly_tool.get("next_required_milestone") != "L4.5 Governed Tool Invocation Through Pre-U Bridge v0":
+            failures.append("readonly tool summary must point to L4.5 Pre-U bridge milestone")
+
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
     print(f"Required agents: {', '.join(REQUIRED_AGENTS)}")
@@ -1458,6 +1544,8 @@ def main(argv: list[str]) -> int:
         cmd_legacy_triage(data)
     elif command == "observation-loop":
         cmd_observation_loop(data)
+    elif command == "readonly-tool":
+        cmd_readonly_tool(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

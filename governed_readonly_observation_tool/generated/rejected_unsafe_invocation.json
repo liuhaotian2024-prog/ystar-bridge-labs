@@ -1,0 +1,22 @@
+{
+  "schema_name": "ystar.governed_readonly_observation_tool.generated.rejected_unsafe_invocation",
+  "schema_version": "v0",
+  "invocation_id": "readonly-observation-rejected-001",
+  "tool_id": "governed_readonly_observation_tool_v0",
+  "requesting_agent": "Aiden-CEO",
+  "mission_id": "mission-commercial-agent-company-v0",
+  "request_type": "company_state_observation",
+  "requested_sources": [
+    "forbidden-raw-runtime-source"
+  ],
+  "requested_summary_level": "executive",
+  "declared_Y_star": "Attempt to read a source outside the allowed registry.",
+  "risk_tier": "high",
+  "requires_y_star_gov": true,
+  "requires_cieu_event": true,
+  "live_action_requested": false,
+  "external_action_requested": false,
+  "brain_writeback_requested": false,
+  "memory_ingestion_requested": false,
+  "cieu_persistence_requested": false
+}

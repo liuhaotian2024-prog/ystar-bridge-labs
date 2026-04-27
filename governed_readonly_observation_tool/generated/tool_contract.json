@@ -1,0 +1,63 @@
+{
+  "schema_name": "ystar.governed_readonly_observation_tool.generated.tool_contract",
+  "schema_version": "v0",
+  "tool_id": "governed_readonly_observation_tool_v0",
+  "tool_name": "Governed Read-Only Observation Tool",
+  "tool_version": "v0",
+  "owner_agent_candidates": [
+    "Samantha-Secretary",
+    "Aiden-CEO",
+    "Maya-Governance",
+    "Ryan-Platform"
+  ],
+  "primary_owner_agent": "Samantha-Secretary",
+  "supporting_agents": [
+    "Aiden-CEO",
+    "Maya-Governance",
+    "Ryan-Platform"
+  ],
+  "tool_category": "read_only_observation",
+  "input_contract_required": true,
+  "output_contract_required": true,
+  "requires_y_star_gov": true,
+  "requires_operator_approval": false,
+  "requires_cieu_event": true,
+  "requires_rollback_policy": false,
+  "live_enabled": false,
+  "external_action_enabled": false,
+  "network_enabled": false,
+  "git_push_enabled": false,
+  "daemon_control_enabled": false,
+  "cieu_persistence_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false,
+  "email_or_external_communication_enabled": false,
+  "allowed_operations": [
+    "read_generated_summary",
+    "read_mission_dashboard",
+    "read_company_state_digest",
+    "read_legacy_triage_summary",
+    "read_autonomy_summary",
+    "produce_normalized_observation"
+  ],
+  "denied_operations": [
+    "read_db",
+    "read_log",
+    "read_raw_runtime_artifact",
+    "read_active_agent_marker",
+    "write_brain",
+    "write_memory",
+    "write_cieu_db",
+    "start_daemon",
+    "stop_daemon",
+    "git_push",
+    "create_github_issue",
+    "create_github_pr",
+    "send_external_communication",
+    "network_call"
+  ],
+  "allowed_source_registry_ref": "governed_readonly_observation_tool/generated/allowed_source_registry.json",
+  "output_schema_ref": "governed_readonly_observation_tool/tool_result_schema.json",
+  "risk_tier": "low",
+  "status": "defined_disabled_for_live_but_callable_for_local_readonly_dry_run"
+}

@@ -115,3 +115,10 @@ The snapshot can expose a governed observation loop summary derived from
 `governed_observation_loop/generated/governed_observation_loop_summary.json`.
 This records a deterministic read-only observation tick from generated sources
 and converts findings into future work candidates without executing actions.
+
+The snapshot can expose a governed read-only observation tool summary derived
+from `governed_readonly_observation_tool/generated/tool_readiness_summary.json`.
+This confirms the first callable local wrapper can read only allowed generated
+summaries, reject unsafe requests, and emit a dry-run CIEU-compatible event
+without live execution, external actions, CIEU persistence, brain writeback, or
+memory ingestion.

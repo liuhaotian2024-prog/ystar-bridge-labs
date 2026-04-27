@@ -1,0 +1,42 @@
+{
+  "schema_name": "ystar.governed_readonly_observation_tool.tool_result_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "result_id",
+    "invocation_id",
+    "tool_id",
+    "status",
+    "read_sources",
+    "normalized_observation",
+    "blocked_sources",
+    "policy_decision",
+    "real_action_executed",
+    "external_action_executed",
+    "live_action_enabled",
+    "cieu_persistence_enabled",
+    "brain_writeback_enabled",
+    "memory_ingestion_enabled",
+    "next_work_candidates",
+    "notes"
+  ],
+  "properties": {
+    "result_id": {"type": "string"},
+    "invocation_id": {"type": "string"},
+    "tool_id": {"type": "string"},
+    "status": {"type": "string"},
+    "read_sources": {"type": "array"},
+    "normalized_observation": {"type": "object"},
+    "blocked_sources": {"type": "array"},
+    "policy_decision": {"type": "object"},
+    "real_action_executed": {"type": "boolean"},
+    "external_action_executed": {"type": "boolean"},
+    "live_action_enabled": {"type": "boolean"},
+    "cieu_persistence_enabled": {"type": "boolean"},
+    "brain_writeback_enabled": {"type": "boolean"},
+    "memory_ingestion_enabled": {"type": "boolean"},
+    "next_work_candidates": {"type": "array"},
+    "notes": {"type": "string"}
+  }
+}
+

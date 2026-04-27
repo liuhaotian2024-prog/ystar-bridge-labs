@@ -1,0 +1,42 @@
+{
+  "schema_name": "ystar.governed_readonly_observation_tool.tool_invocation_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "invocation_id",
+    "tool_id",
+    "requesting_agent",
+    "mission_id",
+    "request_type",
+    "requested_sources",
+    "requested_summary_level",
+    "declared_Y_star",
+    "risk_tier",
+    "requires_y_star_gov",
+    "requires_cieu_event",
+    "live_action_requested",
+    "external_action_requested",
+    "brain_writeback_requested",
+    "memory_ingestion_requested",
+    "cieu_persistence_requested"
+  ],
+  "properties": {
+    "invocation_id": {"type": "string"},
+    "tool_id": {"type": "string"},
+    "requesting_agent": {"type": "string"},
+    "mission_id": {"type": "string"},
+    "request_type": {"type": "string"},
+    "requested_sources": {"type": "array"},
+    "requested_summary_level": {"type": "string"},
+    "declared_Y_star": {"type": "string"},
+    "risk_tier": {"type": "string"},
+    "requires_y_star_gov": {"type": "boolean"},
+    "requires_cieu_event": {"type": "boolean"},
+    "live_action_requested": {"type": "boolean"},
+    "external_action_requested": {"type": "boolean"},
+    "brain_writeback_requested": {"type": "boolean"},
+    "memory_ingestion_requested": {"type": "boolean"},
+    "cieu_persistence_requested": {"type": "boolean"}
+  }
+}
+

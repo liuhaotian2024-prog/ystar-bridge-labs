@@ -113,7 +113,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after observation loop",
+        "Build governed read-only observation tool artifacts",
+        ["python3", "governed_readonly_observation_tool/tools/build_readonly_observation_tool_artifacts.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after read-only tool",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -423,6 +428,52 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "governed_observation_loop/generated/governed_observation_loop_summary.json"],
     ),
     Check(
+        "Compile governed read-only observation tool",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "governed_readonly_observation_tool/tools/build_readonly_observation_tool_artifacts.py",
+            "governed_readonly_observation_tool/tools/run_readonly_observation_tool.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: readonly_tool_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/readonly_tool_summary.json"],
+    ),
+    Check(
+        "Validate JSON: tool_contract.json",
+        ["python3", "-m", "json.tool", "governed_readonly_observation_tool/generated/tool_contract.json"],
+    ),
+    Check(
+        "Validate JSON: allowed_source_registry.json",
+        ["python3", "-m", "json.tool", "governed_readonly_observation_tool/generated/allowed_source_registry.json"],
+    ),
+    Check(
+        "Validate JSON: sample_tool_invocation.json",
+        ["python3", "-m", "json.tool", "governed_readonly_observation_tool/generated/sample_tool_invocation.json"],
+    ),
+    Check(
+        "Validate JSON: sample_tool_result.json",
+        ["python3", "-m", "json.tool", "governed_readonly_observation_tool/generated/sample_tool_result.json"],
+    ),
+    Check(
+        "Validate JSON: rejected_unsafe_invocation.json",
+        ["python3", "-m", "json.tool", "governed_readonly_observation_tool/generated/rejected_unsafe_invocation.json"],
+    ),
+    Check(
+        "Validate JSON: tool_invocation_trace.json",
+        ["python3", "-m", "json.tool", "governed_readonly_observation_tool/generated/tool_invocation_trace.json"],
+    ),
+    Check(
+        "Validate JSON: tool_cieu_event.json",
+        ["python3", "-m", "json.tool", "governed_readonly_observation_tool/generated/tool_cieu_event.json"],
+    ),
+    Check(
+        "Validate JSON: tool_readiness_summary.json",
+        ["python3", "-m", "json.tool", "governed_readonly_observation_tool/generated/tool_readiness_summary.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -573,6 +624,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: observation-loop",
         ["python3", "console_read_model/cli/team_console.py", "observation-loop"],
+    ),
+    Check(
+        "CLI smoke: readonly-tool",
+        ["python3", "console_read_model/cli/team_console.py", "readonly-tool"],
     ),
     Check(
         "CLI smoke: sources",

@@ -64,6 +64,10 @@ python3 console_read_model/cli/team_console.py <command>
 - `observation-loop`: Prints the generated governed observation loop summary:
   read-only source registry, observation tick, mission dashboard, company
   digest, work candidates, disabled live flags, and the L4.4 recommendation.
+- `readonly-tool`: Prints the generated governed read-only observation tool
+  summary: contract, allowed source registry, sample invocation/result,
+  unsafe request rejection, disabled live/persistence flags, and the L4.5
+  recommendation.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

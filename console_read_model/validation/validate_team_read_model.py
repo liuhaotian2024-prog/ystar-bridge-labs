@@ -339,6 +339,9 @@ def main() -> int:
     required_company_autonomous_work_cycle_files = expected.get("required_company_autonomous_work_cycle_files", [])
     required_legacy_asset_triage_files = expected.get("required_legacy_asset_triage_files", [])
     required_governed_observation_loop_files = expected.get("required_governed_observation_loop_files", [])
+    required_governed_readonly_observation_tool_files = expected.get(
+        "required_governed_readonly_observation_tool_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -439,6 +442,12 @@ def main() -> int:
         check_exists(path, report, "governed observation loop file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "governed observation loop JSON")
+
+    for rel in required_governed_readonly_observation_tool_files:
+        path = ROOT / rel
+        check_exists(path, report, "governed read-only observation tool file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "governed read-only observation tool JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -1182,6 +1191,63 @@ def main() -> int:
         else:
             report.fail("generated snapshot missing observation_loop_summary")
 
+        readonly_tool_summary = snapshot.get("readonly_tool_summary")
+        if readonly_tool_summary:
+            report.pass_("generated snapshot contains readonly_tool_summary")
+            for field in [
+                "governed_readonly_observation_tool_defined",
+                "tool_contract_defined",
+                "allowed_source_registry_defined",
+                "sample_invocation_defined",
+                "sample_result_defined",
+                "unsafe_invocation_rejected",
+                "tool_cieu_event_defined",
+                "local_readonly_dry_run_callable",
+                "first_governed_tool_wrapper_created",
+                "real_action_executed",
+                "external_action_executed",
+                "live_action_enabled",
+                "cieu_persistence_enabled",
+                "brain_writeback_enabled",
+                "memory_ingestion_enabled",
+                "next_required_milestone",
+                "generated_summary",
+                "generated_contract",
+                "generated_registry",
+                "warning",
+            ]:
+                if field in readonly_tool_summary:
+                    report.pass_(f"snapshot readonly_tool_summary field present: {field}")
+                else:
+                    report.fail(f"snapshot readonly_tool_summary missing field: {field}")
+            for field in [
+                "governed_readonly_observation_tool_defined",
+                "tool_contract_defined",
+                "allowed_source_registry_defined",
+                "sample_invocation_defined",
+                "sample_result_defined",
+                "unsafe_invocation_rejected",
+                "tool_cieu_event_defined",
+                "local_readonly_dry_run_callable",
+                "first_governed_tool_wrapper_created",
+            ]:
+                if readonly_tool_summary.get(field) is not True:
+                    report.fail(f"snapshot readonly_tool_summary must keep {field}=true")
+            for field in [
+                "real_action_executed",
+                "external_action_executed",
+                "live_action_enabled",
+                "cieu_persistence_enabled",
+                "brain_writeback_enabled",
+                "memory_ingestion_enabled",
+            ]:
+                if readonly_tool_summary.get(field) is not False:
+                    report.fail(f"snapshot readonly_tool_summary must keep {field}=false")
+            if readonly_tool_summary.get("next_required_milestone") != "L4.5 Governed Tool Invocation Through Pre-U Bridge v0":
+                report.fail("snapshot readonly_tool_summary must point to L4.5 Pre-U bridge milestone")
+        else:
+            report.fail("generated snapshot missing readonly_tool_summary")
+
     quarantine = generated_json.get("console_read_model/generated/quarantine_summary.json")
     if quarantine:
         for field in [
@@ -1787,6 +1853,60 @@ def main() -> int:
                 report.fail(f"generated observation loop summary must keep {field}=false")
         if observation_loop.get("next_required_milestone") != "L4.4 First Governed Read-Only Observation Tool Wrapper v0":
             report.fail("generated observation loop summary must point to L4.4 wrapper milestone")
+
+    readonly_tool = generated_json.get("console_read_model/generated/readonly_tool_summary.json")
+    if readonly_tool:
+        for field in [
+            "governed_readonly_observation_tool_defined",
+            "tool_contract_defined",
+            "allowed_source_registry_defined",
+            "sample_invocation_defined",
+            "sample_result_defined",
+            "unsafe_invocation_rejected",
+            "tool_cieu_event_defined",
+            "local_readonly_dry_run_callable",
+            "first_governed_tool_wrapper_created",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "next_required_milestone",
+            "generated_summary",
+            "generated_contract",
+            "generated_registry",
+            "warning",
+        ]:
+            if field in readonly_tool:
+                report.pass_(f"generated readonly tool summary field present: {field}")
+            else:
+                report.fail(f"generated readonly tool summary missing field: {field}")
+        for field in [
+            "governed_readonly_observation_tool_defined",
+            "tool_contract_defined",
+            "allowed_source_registry_defined",
+            "sample_invocation_defined",
+            "sample_result_defined",
+            "unsafe_invocation_rejected",
+            "tool_cieu_event_defined",
+            "local_readonly_dry_run_callable",
+            "first_governed_tool_wrapper_created",
+        ]:
+            if readonly_tool.get(field) is not True:
+                report.fail(f"generated readonly tool summary must keep {field}=true")
+        for field in [
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+        ]:
+            if readonly_tool.get(field) is not False:
+                report.fail(f"generated readonly tool summary must keep {field}=false")
+        if readonly_tool.get("next_required_milestone") != "L4.5 Governed Tool Invocation Through Pre-U Bridge v0":
+            report.fail("generated readonly tool summary must point to L4.5 Pre-U bridge milestone")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

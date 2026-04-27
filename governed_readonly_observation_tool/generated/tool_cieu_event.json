@@ -1,0 +1,59 @@
+{
+  "schema_name": "ystar.governed_readonly_observation_tool.generated.tool_cieu_event",
+  "schema_version": "v0",
+  "event_id": "readonly-observation-tool-cieu-event-001",
+  "dry_run_only": true,
+  "persistence_enabled": false,
+  "tool_id": "governed_readonly_observation_tool_v0",
+  "invocation_id": "readonly-observation-invocation-001",
+  "Xt": {
+    "request_type": "company_state_observation",
+    "requested_sources": [
+      "mission-dashboard",
+      "company-state-digest",
+      "observation-loop-summary",
+      "legacy-triage-summary",
+      "autonomous-cycle-summary",
+      "autonomy-inventory-summary",
+      "live-boundary-summary",
+      "cieu-boundary-summary"
+    ],
+    "summary_level": "executive"
+  },
+  "U": {
+    "operation": "produce_normalized_observation",
+    "real_action_executed": false,
+    "external_action_executed": false
+  },
+  "Y_star": "Observe safe generated company state summaries and identify the next governed autonomy step without live or external action.",
+  "predicted_Y_t1": "A normalized observation result is produced from allowed generated summaries.",
+  "predicted_R_t1": "All live, external, persistence, brain, and memory behaviors remain disabled.",
+  "actual_Y_t1": "Tool result status: success; sources read: 8.",
+  "actual_R_t1": "No live action, external action, CIEU persistence, brain writeback, or memory ingestion occurred.",
+  "residual_delta": {
+    "status": "dry_run_observation_delta_only",
+    "semantic_truth_status": "not_evaluated",
+    "delta_summary": "Wrapper produced the expected local read-only observation result."
+  },
+  "evidence_refs": [
+    "governed_observation_loop/generated/mission_dashboard_snapshot.json",
+    "governed_observation_loop/generated/company_state_digest.json",
+    "governed_observation_loop/generated/governed_observation_loop_summary.json",
+    "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
+    "company_autonomous_work_cycle/generated/autonomous_work_cycle_summary.json",
+    "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
+    "labs_live_boundary/generated/live_boundary_summary.json",
+    "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_summary.json"
+  ],
+  "write_policy": {
+    "persistence_allowed": false,
+    "cieu_write_allowed": false,
+    "brain_writeback_allowed": false,
+    "memory_ingestion_allowed": false
+  },
+  "learning_eligibility": false,
+  "curation_required": true,
+  "direct_brain_writeback_allowed": false,
+  "direct_memory_ingestion_allowed": false,
+  "raw_artifact_ingestion_allowed": false
+}

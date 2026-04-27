@@ -1,0 +1,29 @@
+{
+  "schema_name": "ystar.governed_readonly_observation_tool.generated.tool_invocation",
+  "schema_version": "v0",
+  "invocation_id": "readonly-observation-invocation-001",
+  "tool_id": "governed_readonly_observation_tool_v0",
+  "requesting_agent": "Aiden-CEO",
+  "mission_id": "mission-commercial-agent-company-v0",
+  "request_type": "company_state_observation",
+  "requested_sources": [
+    "mission-dashboard",
+    "company-state-digest",
+    "observation-loop-summary",
+    "legacy-triage-summary",
+    "autonomous-cycle-summary",
+    "autonomy-inventory-summary",
+    "live-boundary-summary",
+    "cieu-boundary-summary"
+  ],
+  "requested_summary_level": "executive",
+  "declared_Y_star": "Observe safe generated company state summaries and identify the next governed autonomy step without live or external action.",
+  "risk_tier": "low",
+  "requires_y_star_gov": true,
+  "requires_cieu_event": true,
+  "live_action_requested": false,
+  "external_action_requested": false,
+  "brain_writeback_requested": false,
+  "memory_ingestion_requested": false,
+  "cieu_persistence_requested": false
+}

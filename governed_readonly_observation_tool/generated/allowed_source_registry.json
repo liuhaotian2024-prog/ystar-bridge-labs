@@ -1,0 +1,139 @@
+{
+  "schema_name": "ystar.governed_readonly_observation_tool.generated.allowed_source_registry",
+  "schema_version": "v0",
+  "source_count": 11,
+  "sources": [
+    {
+      "source_id": "mission-dashboard",
+      "source_path": "governed_observation_loop/generated/mission_dashboard_snapshot.json",
+      "source_type": "mission_dashboard",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "read_mode": "json_summary",
+      "max_bytes": 200000,
+      "governance_notes": "generated mission dashboard snapshot from the read-only observation loop"
+    },
+    {
+      "source_id": "company-state-digest",
+      "source_path": "governed_observation_loop/generated/company_state_digest.json",
+      "source_type": "company_state_digest",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "read_mode": "json_summary",
+      "max_bytes": 200000,
+      "governance_notes": "generated concise company state digest"
+    },
+    {
+      "source_id": "observation-loop-summary",
+      "source_path": "governed_observation_loop/generated/governed_observation_loop_summary.json",
+      "source_type": "observation_loop_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "read_mode": "json_summary",
+      "max_bytes": 200000,
+      "governance_notes": "generated governed observation loop summary"
+    },
+    {
+      "source_id": "legacy-triage-summary",
+      "source_path": "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
+      "source_type": "legacy_triage_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "read_mode": "json_summary",
+      "max_bytes": 200000,
+      "governance_notes": "generated legacy asset triage summary"
+    },
+    {
+      "source_id": "top-absorption-candidates",
+      "source_path": "legacy_asset_triage/generated/top_absorption_candidates.json",
+      "source_type": "legacy_triage_candidates",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "read_mode": "json_summary",
+      "max_bytes": 200000,
+      "governance_notes": "generated top absorption candidates from triage"
+    },
+    {
+      "source_id": "autonomous-cycle-summary",
+      "source_path": "company_autonomous_work_cycle/generated/autonomous_work_cycle_summary.json",
+      "source_type": "autonomous_cycle_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "read_mode": "json_summary",
+      "max_bytes": 200000,
+      "governance_notes": "generated mission-bounded autonomous work cycle summary"
+    },
+    {
+      "source_id": "autonomy-inventory-summary",
+      "source_path": "company_autonomy_inventory/generated/company_autonomy_readiness_summary.json",
+      "source_type": "autonomy_inventory_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "read_mode": "json_summary",
+      "max_bytes": 200000,
+      "governance_notes": "generated company autonomy inventory readiness summary"
+    },
+    {
+      "source_id": "live-readiness-report",
+      "source_path": "labs_live_readiness/generated/live_readiness_report.json",
+      "source_type": "live_readiness_report",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "read_mode": "json_summary",
+      "max_bytes": 200000,
+      "governance_notes": "generated live readiness report"
+    },
+    {
+      "source_id": "live-boundary-summary",
+      "source_path": "labs_live_boundary/generated/live_boundary_summary.json",
+      "source_type": "live_boundary_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "read_mode": "json_summary",
+      "max_bytes": 200000,
+      "governance_notes": "generated disabled live boundary summary"
+    },
+    {
+      "source_id": "cieu-boundary-summary",
+      "source_path": "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_summary.json",
+      "source_type": "cieu_boundary_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "read_mode": "json_summary",
+      "max_bytes": 200000,
+      "governance_notes": "generated disabled CIEU runtime boundary summary"
+    },
+    {
+      "source_id": "team-console-snapshot",
+      "source_path": "console_read_model/generated/team_console_snapshot.json",
+      "source_type": "team_console_snapshot",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "read_mode": "json_summary",
+      "max_bytes": 200000,
+      "governance_notes": "generated team console snapshot"
+    }
+  ]
+}
