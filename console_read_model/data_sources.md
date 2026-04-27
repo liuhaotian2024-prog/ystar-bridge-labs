@@ -25,11 +25,15 @@
 - `runtime_artifact_quarantine/evidence_review/generated/review_decision_stub.json`
 - `runtime_artifact_quarantine/evidence_review/generated/hint_routing_index.json`
 - `runtime_artifact_quarantine/evidence_review/generated/evidence_review_manifest.json`
+- `labs_governance_bridge/generated/sample_hook_envelope.json`
+- `labs_governance_bridge/generated/governance_decision_snapshot.json`
+- `labs_governance_bridge/generated/bridge_run_manifest.json`
 - `console_read_model/generated/quarantine_summary.json`
 - `console_read_model/generated/safe_mining_summary.json`
 - `console_read_model/generated/review_queue_summary.json`
 - `console_read_model/generated/artifact_disposition_summary.json`
 - `console_read_model/generated/evidence_review_summary.json`
+- `console_read_model/generated/governance_bridge_summary.json`
 
 ## Unsafe Direct Sources
 
@@ -59,3 +63,5 @@
   indexes; disposition is routing metadata, not evidence scoring or ingestion.
 - Evidence review data may be displayed only from generated evidence indexes;
   scoring is structural only and decisions remain undecided.
+- Labs-Gov bridge data may be displayed only from generated bridge snapshots;
+  bridge decisions are dry-run only and must not execute actions or write CIEU.

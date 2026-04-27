@@ -1,0 +1,20 @@
+{
+  "action_execution_allowed": false,
+  "brain_writeback_allowed": false,
+  "cieu_write_allowed": false,
+  "dry_run_only": true,
+  "generated_files": [
+    "labs_governance_bridge/generated/governance_decision_snapshot.json",
+    "labs_governance_bridge/generated/governance_decision_snapshot.md",
+    "labs_governance_bridge/generated/bridge_run_manifest.json"
+  ],
+  "memory_ingestion_allowed": false,
+  "schema_name": "ystar.labs_governance_bridge.bridge_run_manifest",
+  "schema_version": "v0",
+  "source_files": [
+    "labs_governance_bridge/generated/sample_hook_envelope.json"
+  ],
+  "ystar_gov_cli_path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/tools/run_hook_contract_dry_run.py",
+  "ystar_gov_decision": "allow",
+  "ystar_gov_exit_code": 0
+}

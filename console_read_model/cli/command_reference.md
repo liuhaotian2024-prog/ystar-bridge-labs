@@ -32,6 +32,8 @@ python3 console_read_model/cli/team_console.py <command>
 - `evidence-review`: Prints the generated evidence review summary: candidates
   scored, decision stubs, route counts, automatic approvals, semantic truth
   status, and structural-only warning.
+- `governance-bridge`: Prints the generated Labs-Gov bridge summary:
+  Y-star-gov dry-run decision, execution booleans, and non-execution warning.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

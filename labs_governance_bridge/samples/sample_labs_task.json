@@ -1,0 +1,43 @@
+{
+  "task_id": "labs-gov-sample-task-001",
+  "agent_id": "Aiden-CEO",
+  "role": "CEO orchestration and mission alignment",
+  "declared_objective": {
+    "summary": "Dry-run a governance-ready labs planning action without executing it"
+  },
+  "context": {
+    "summary": "Labs has structural evidence hints and wants Y-star-gov to judge a proposed non-executing planning envelope.",
+    "source_layer": "curated_read_model"
+  },
+  "candidate_actions": [
+    {
+      "id": "u1",
+      "action_type": "create_governance_aligned_plan_snapshot",
+      "description": "Prepare a read-only planning snapshot from curated evidence review summaries.",
+      "predicted_Yt_plus_1": "A dry-run bridge decision is available for labs console review.",
+      "predicted_Rt_plus_1": {
+        "summary": "Residual decreases by confirming the envelope is structurally acceptable to Y-star-gov."
+      }
+    }
+  ],
+  "selected_action_id": "u1",
+  "predicted_outcome": "A dry-run governance decision snapshot is generated.",
+  "predicted_residual": {
+    "summary": "Remaining risk is limited to future real hook integration and semantic validation."
+  },
+  "risk_tier": "normal",
+  "why_min_residual": "u1 is the lowest residual path because it asks Y-star-gov to judge structure without executing an action.",
+  "governance_expectations": {
+    "requires_y_star_validation": true,
+    "requires_m_functor_validation": true,
+    "requires_scope_validation": true,
+    "requires_high_risk_review": false
+  },
+  "cieu_link_policy": {
+    "should_emit_pre_action_event": false,
+    "should_emit_post_action_event": false,
+    "compare_predicted_vs_actual": true,
+    "dry_run_no_cieu_write": true
+  },
+  "evidence_hint_refs": []
+}

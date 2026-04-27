@@ -11,3 +11,7 @@ Generated outputs include:
 - not-approved hint routing indexes
 
 This layer does not approve candidates, ingest memory, write CIEU records, or write brain state.
+
+Hint routing records may inform future Labs-Gov bridge packets as curated
+references. They remain structural hints only and are not truth, memory, or
+approval.

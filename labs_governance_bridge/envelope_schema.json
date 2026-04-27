@@ -1,0 +1,31 @@
+{
+  "schema_name": "ystar.labs_governance_bridge.hook_envelope_schema",
+  "schema_version": "v0",
+  "required_fields": [
+    "hook_event_id",
+    "agent_id",
+    "packet_id",
+    "risk_tier",
+    "declared_Y_star",
+    "Xt",
+    "m_functor",
+    "candidate_U",
+    "selected_U_id",
+    "why_min_residual",
+    "governance_expectations",
+    "cieu_link_policy"
+  ],
+  "optional_fields": [
+    "task_id",
+    "agent_capsule_ref",
+    "evidence_hint_refs",
+    "mock_outcome"
+  ],
+  "safety_contract": {
+    "dry_run_only": true,
+    "action_execution_allowed": false,
+    "cieu_write_allowed": false,
+    "brain_writeback_allowed": false,
+    "memory_ingestion_allowed": false
+  }
+}

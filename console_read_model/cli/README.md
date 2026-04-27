@@ -12,6 +12,7 @@ It reads only:
 - `console_read_model/generated/review_queue_summary.json`
 - `console_read_model/generated/artifact_disposition_summary.json`
 - `console_read_model/generated/evidence_review_summary.json`
+- `console_read_model/generated/governance_bridge_summary.json`
 - `console_read_model/generated/generation_manifest.json`
 
 It does not read DBs, logs, active-agent markers, daemon state, raw runtime
@@ -29,6 +30,7 @@ python3 console_read_model/cli/team_console.py mining-candidates
 python3 console_read_model/cli/team_console.py review-queue
 python3 console_read_model/cli/team_console.py artifact-disposition
 python3 console_read_model/cli/team_console.py evidence-review
+python3 console_read_model/cli/team_console.py governance-bridge
 python3 console_read_model/cli/team_console.py validate-local
 ```
 
@@ -51,3 +53,7 @@ disposition summary. Disposition is routing metadata, not ingestion.
 
 The `evidence-review` command displays only the generated evidence review
 summary. Evidence scoring is structural only and does not approve candidates.
+
+The `governance-bridge` command displays only the generated Labs-Gov bridge
+summary. The bridge calls Y-star-gov dry-run judgment upstream, but the console
+itself remains read-only and does not execute actions.

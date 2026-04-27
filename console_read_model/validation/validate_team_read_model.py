@@ -329,6 +329,7 @@ def main() -> int:
     required_safe_mining_files = expected.get("required_safe_mining_files", [])
     required_backlog_disposition_files = expected.get("required_backlog_disposition_files", [])
     required_evidence_review_files = expected.get("required_evidence_review_files", [])
+    required_labs_governance_bridge_files = expected.get("required_labs_governance_bridge_files", [])
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -369,6 +370,12 @@ def main() -> int:
         check_exists(path, report, "evidence review file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "evidence review JSON")
+
+    for rel in required_labs_governance_bridge_files:
+        path = ROOT / rel
+        check_exists(path, report, "labs-governance bridge file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "labs-governance bridge JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -587,6 +594,47 @@ def main() -> int:
         else:
             report.fail("generated snapshot missing evidence_review_summary")
 
+        governance_bridge_summary = snapshot.get("governance_bridge_summary")
+        if governance_bridge_summary:
+            report.pass_("generated snapshot contains governance_bridge_summary")
+            for field in [
+                "latest_bridge_run_id",
+                "source_task_id",
+                "agent_id",
+                "ystar_gov_cli_path",
+                "ystar_gov_exit_code",
+                "ystar_gov_decision",
+                "allow_execution",
+                "require_revision",
+                "deny",
+                "escalate",
+                "dry_run_only",
+                "non_execution_confirmation",
+                "action_executed",
+                "cieu_written",
+                "brain_writeback_performed",
+                "memory_ingestion_performed",
+                "warning",
+            ]:
+                if field in governance_bridge_summary:
+                    report.pass_(f"snapshot governance_bridge_summary field present: {field}")
+                else:
+                    report.fail(f"snapshot governance_bridge_summary missing field: {field}")
+            if governance_bridge_summary.get("dry_run_only") is not True:
+                report.fail("snapshot governance_bridge_summary must remain dry_run_only")
+            if governance_bridge_summary.get("non_execution_confirmation") is not True:
+                report.fail("snapshot governance_bridge_summary must confirm non-execution")
+            for field in [
+                "action_executed",
+                "cieu_written",
+                "brain_writeback_performed",
+                "memory_ingestion_performed",
+            ]:
+                if governance_bridge_summary.get(field) is not False:
+                    report.fail(f"snapshot governance_bridge_summary must keep {field}=false")
+        else:
+            report.fail("generated snapshot missing governance_bridge_summary")
+
     quarantine = generated_json.get("console_read_model/generated/quarantine_summary.json")
     if quarantine:
         for field in [
@@ -703,6 +751,44 @@ def main() -> int:
         semantic = set(evidence_review.get("semantic_truth_status", {}))
         if semantic and semantic != {"not_evaluated"}:
             report.fail("generated evidence review semantic truth status must remain not_evaluated")
+
+    governance_bridge = generated_json.get("console_read_model/generated/governance_bridge_summary.json")
+    if governance_bridge:
+        for field in [
+            "latest_bridge_run_id",
+            "source_task_id",
+            "agent_id",
+            "ystar_gov_cli_path",
+            "ystar_gov_exit_code",
+            "ystar_gov_decision",
+            "allow_execution",
+            "require_revision",
+            "deny",
+            "escalate",
+            "dry_run_only",
+            "non_execution_confirmation",
+            "action_executed",
+            "cieu_written",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "warning",
+        ]:
+            if field in governance_bridge:
+                report.pass_(f"generated governance bridge summary field present: {field}")
+            else:
+                report.fail(f"generated governance bridge summary missing field: {field}")
+        if governance_bridge.get("dry_run_only") is not True:
+            report.fail("generated governance bridge summary must remain dry_run_only")
+        if governance_bridge.get("non_execution_confirmation") is not True:
+            report.fail("generated governance bridge summary must confirm non-execution")
+        for field in [
+            "action_executed",
+            "cieu_written",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+        ]:
+            if governance_bridge.get(field) is not False:
+                report.fail(f"generated governance bridge summary must keep {field}=false")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

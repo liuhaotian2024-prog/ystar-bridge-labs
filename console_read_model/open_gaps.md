@@ -19,6 +19,7 @@
 - Candidate review queue exists, but entries cannot yet be approved, signed, or routed into CIEU/memory workflows.
 - Backlog disposition index exists, but evidence scoring, adapter extraction, and approval routing remain future work.
 - Evidence review pack exists, but semantic truth validation and decision application remain future work.
+- Labs-Gov bridge exists, but it is dry-run only and does not enforce real hooks.
 - Local safety check wrapper exists but is not wired into CI.
 - Local safety check wrapper does not replace runtime or governance tests.
 - Capsule schema alignment is lightweight and does not validate executable cognition.

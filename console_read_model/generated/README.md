@@ -21,5 +21,8 @@ disposition indexes. It summarizes routing/disposition only; it is not ingestion
 `evidence_review_summary.json` is derived from generated evidence review
 indexes. It summarizes structural readiness only; it is not approval.
 
+`governance_bridge_summary.json` is derived from the generated Labs-Gov
+dry-run decision snapshot. It is not hook execution or CIEU writeback.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

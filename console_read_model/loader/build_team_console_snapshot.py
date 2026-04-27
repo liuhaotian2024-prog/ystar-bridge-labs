@@ -30,6 +30,7 @@ CURATED_SOURCES = [
     "runtime_artifact_quarantine/evidence_review/generated/evidence_scores.json",
     "runtime_artifact_quarantine/evidence_review/generated/review_decision_stub.json",
     "runtime_artifact_quarantine/evidence_review/generated/hint_routing_index.json",
+    "labs_governance_bridge/generated/governance_decision_snapshot.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -238,6 +239,36 @@ def build_evidence_review_summary(
     }
 
 
+def build_governance_bridge_summary(decision_snapshot: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "schema_name": "ystar.console_read_model.generated.governance_bridge_summary",
+        "schema_version": "v0",
+        "latest_bridge_run_id": decision_snapshot.get("bridge_run_id"),
+        "source_task_id": decision_snapshot.get("source_task_id"),
+        "agent_id": decision_snapshot.get("agent_id"),
+        "ystar_gov_cli_path": decision_snapshot.get("ystar_gov_cli_path"),
+        "ystar_gov_exit_code": decision_snapshot.get("ystar_gov_exit_code"),
+        "ystar_gov_decision": decision_snapshot.get("ystar_gov_decision"),
+        "allow_execution": decision_snapshot.get("allow_execution"),
+        "require_revision": decision_snapshot.get("require_revision"),
+        "deny": decision_snapshot.get("deny"),
+        "escalate": decision_snapshot.get("escalate"),
+        "dry_run_only": decision_snapshot.get("dry_run_only"),
+        "non_execution_confirmation": decision_snapshot.get("non_execution_confirmation"),
+        "action_executed": decision_snapshot.get("action_executed"),
+        "cieu_written": decision_snapshot.get("cieu_written"),
+        "brain_writeback_performed": decision_snapshot.get("brain_writeback_performed"),
+        "memory_ingestion_performed": decision_snapshot.get("memory_ingestion_performed"),
+        "generated_decision_snapshot": (
+            "labs_governance_bridge/generated/governance_decision_snapshot.json"
+        ),
+        "warning": decision_snapshot.get(
+            "warning",
+            "Bridge is dry-run only and does not execute actions or write CIEU.",
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -276,11 +307,16 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "runtime_artifact_quarantine/evidence_review/generated/hint_routing_index.json",
         files_read,
     )
+    governance_decision_snapshot = load_json(
+        "labs_governance_bridge/generated/governance_decision_snapshot.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
     disposition_summary = build_disposition_summary(disposition_index)
     evidence_review_summary = build_evidence_review_summary(evidence_scores, decision_stub, hint_routing)
+    governance_bridge_summary = build_governance_bridge_summary(governance_decision_snapshot)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -347,6 +383,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Backlog disposition index exists, but evidence scoring and adapter extraction are not implemented.")
     if "Evidence review pack exists, but semantic truth validation and decision application are not implemented." not in open_gaps:
         open_gaps.append("Evidence review pack exists, but semantic truth validation and decision application are not implemented.")
+    if "Labs-Gov bridge exists as a dry-run snapshot only; no real hook integration exists." not in open_gaps:
+        open_gaps.append("Labs-Gov bridge exists as a dry-run snapshot only; no real hook integration exists.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -363,6 +401,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "review_queue_summary": review_queue_summary,
         "artifact_disposition_summary": disposition_summary,
         "evidence_review_summary": evidence_review_summary,
+        "governance_bridge_summary": governance_bridge_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -404,6 +443,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "candidate review queue summary",
             "runtime artifact backlog disposition summary",
             "structural evidence review summary",
+            "dry-run Labs-Gov alignment bridge snapshot",
         ],
         "not_ready": [
             "runtime generator",
@@ -424,6 +464,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "DB/log/marker metadata adapters",
             "semantic truth validation for evidence records",
             "review decision application workflow",
+            "real hook integration for Labs-Gov bridge",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -436,12 +477,14 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "define signed review decisions for candidate queue entries",
             "create evidence scoring schema for disposition records",
             "define manual decision application for evidence review stubs",
+            "connect bridge decisions to future Pre-U/CIEU dry-run examples without executing actions",
         ],
         "blockers": [
             "no DB-safe adapter",
             "no live validator implementation",
             "no hook enforcement",
             "no semantic runtime truth guarantee",
+            "no real Labs-Gov hook enforcement path",
         ],
         "safety_boundaries": [
             "no DB reads",
@@ -454,6 +497,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "review queue entries are pending and not ingested",
             "disposition records are routing metadata, not ingestion",
             "evidence scoring is structural only and does not approve ingestion",
+            "Labs-Gov bridge is dry-run only and does not execute actions",
         ],
     }
 
@@ -471,6 +515,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/review_queue_summary.json",
             "console_read_model/generated/artifact_disposition_summary.json",
             "console_read_model/generated/evidence_review_summary.json",
+            "console_read_model/generated/governance_bridge_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -509,6 +554,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "disposition indexes. It summarizes routing/disposition only; it is not ingestion.\n\n"
         "`evidence_review_summary.json` is derived from generated evidence review\n"
         "indexes. It summarizes structural readiness only; it is not approval.\n\n"
+        "`governance_bridge_summary.json` is derived from the generated Labs-Gov\n"
+        "dry-run decision snapshot. It is not hook execution or CIEU writeback.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -522,6 +569,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/review_queue_summary.json", review_queue_summary, generated_files)
     write_json("console_read_model/generated/artifact_disposition_summary.json", disposition_summary, generated_files)
     write_json("console_read_model/generated/evidence_review_summary.json", evidence_review_summary, generated_files)
+    write_json("console_read_model/generated/governance_bridge_summary.json", governance_bridge_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -570,6 +618,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     review_queue = snapshot.get("review_queue_summary", {})
     disposition = snapshot.get("artifact_disposition_summary", {})
     evidence_review = snapshot.get("evidence_review_summary", {})
+    governance_bridge = snapshot.get("governance_bridge_summary", {})
     lines.extend(
         [
             "",
@@ -667,6 +716,27 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     for status, count in sorted(evidence_review.get("semantic_truth_status", {}).items()):
         lines.append(f"  - {status}: {count}")
     lines.append(f"- Warning: {evidence_review.get('warning')}")
+    lines.extend(
+        [
+            "",
+            "## Labs-Gov Alignment Bridge",
+            "",
+            f"- Bridge run id: {governance_bridge.get('latest_bridge_run_id')}",
+            f"- Source task id: {governance_bridge.get('source_task_id')}",
+            f"- Agent id: {governance_bridge.get('agent_id')}",
+            f"- Y-star-gov decision: {governance_bridge.get('ystar_gov_decision')}",
+            f"- Y-star-gov exit code: {governance_bridge.get('ystar_gov_exit_code')}",
+            f"- allow_execution: {governance_bridge.get('allow_execution')}",
+            f"- require_revision: {governance_bridge.get('require_revision')}",
+            f"- deny: {governance_bridge.get('deny')}",
+            f"- escalate: {governance_bridge.get('escalate')}",
+            f"- dry_run_only: {governance_bridge.get('dry_run_only')}",
+            f"- action_executed: {governance_bridge.get('action_executed')}",
+            f"- cieu_written: {governance_bridge.get('cieu_written')}",
+            f"- brain_writeback_performed: {governance_bridge.get('brain_writeback_performed')}",
+            f"- Warning: {governance_bridge.get('warning')}",
+        ]
+    )
     lines.extend(
         [
             "",

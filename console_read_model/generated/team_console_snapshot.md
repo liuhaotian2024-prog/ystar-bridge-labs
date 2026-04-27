@@ -52,6 +52,7 @@ Ready now:
 - candidate review queue summary
 - runtime artifact backlog disposition summary
 - structural evidence review summary
+- dry-run Labs-Gov alignment bridge snapshot
 
 Not ready:
 - runtime generator
@@ -72,12 +73,13 @@ Not ready:
 - DB/log/marker metadata adapters
 - semantic truth validation for evidence records
 - review decision application workflow
+- real hook integration for Labs-Gov bridge
 
 ## Runtime Artifact Quarantine Summary
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 206
+- Artifacts classified: 198
 - Unsafe artifacts count: 168
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
@@ -90,7 +92,7 @@ Not ready:
   - DREAM_REPORT: 28
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
-  - FRAMEWORK_FILE: 9
+  - FRAMEWORK_FILE: 1
   - LOG_RUNTIME: 31
   - PYCACHE: 31
   - UNKNOWN_OR_NON_RUNTIME: 29
@@ -131,8 +133,8 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 206
-- Artifacts with disposition: 206
+- Total artifacts: 198
+- Artifacts with disposition: 198
 - Safe-mined to review queue: 20
 - Forbidden direct read count: 106
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
@@ -144,10 +146,10 @@ Not ready:
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 31
-  - ignored_or_non_runtime: 38
+  - ignored_or_non_runtime: 30
   - safe_mined_to_review_queue: 20
 - Evidence scoring status:
-  - not_started: 206
+  - not_started: 198
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -167,6 +169,23 @@ Not ready:
 - Semantic truth status:
   - not_evaluated: 20
 - Warning: Evidence scoring is structural only. It is not truth validation and not memory ingestion.
+
+## Labs-Gov Alignment Bridge
+
+- Bridge run id: labs-gov-bridge-run-001
+- Source task id: labs-gov-sample-task-001
+- Agent id: Aiden-CEO
+- Y-star-gov decision: allow
+- Y-star-gov exit code: 0
+- allow_execution: True
+- require_revision: False
+- deny: False
+- escalate: False
+- dry_run_only: True
+- action_executed: False
+- cieu_written: False
+- brain_writeback_performed: False
+- Warning: Bridge decision snapshot is dry-run only and is not a CIEU record.
 
 ## Governance Boundary
 
@@ -188,6 +207,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - define signed review decisions for candidate queue entries
 - create evidence scoring schema for disposition records
 - define manual decision application for evidence review stubs
+- connect bridge decisions to future Pre-U/CIEU dry-run examples without executing actions
 
 ## Warnings / Gaps
 
@@ -208,3 +228,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Candidate review queue exists, but no approval workflow or ingestion path exists.
 - Backlog disposition index exists, but evidence scoring and adapter extraction are not implemented.
 - Evidence review pack exists, but semantic truth validation and decision application are not implemented.
+- Labs-Gov bridge exists as a dry-run snapshot only; no real hook integration exists.

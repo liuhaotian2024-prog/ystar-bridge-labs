@@ -11,7 +11,8 @@ It runs the existing curated-source checks:
 - static team read model validator
 - lightweight capsule schema-alignment checks through the static validator
 - team console `validate-local`
-- read-only CLI smoke checks for quarantine and sources
+- read-only CLI smoke checks for quarantine, evidence review, governance bridge,
+  and sources
 
 Run from the repository root:
 
@@ -22,6 +23,10 @@ python3 console_read_model/checks/run_local_safety_checks.py
 This is not CI wiring, not runtime execution, not artifact mining, not cleanup,
 and not DB/log/report parsing. It is a local confidence pass for the safe
 read-model layer.
+
+The wrapper also runs the Labs-Gov dry-run bridge. That bridge calls only the
+Y-star-gov hook contract dry-run CLI and records a generated decision snapshot;
+it does not execute actions or write CIEU.
 
 Optional flags:
 

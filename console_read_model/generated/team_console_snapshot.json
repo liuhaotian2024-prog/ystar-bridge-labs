@@ -15,6 +15,7 @@
     "runtime_artifact_quarantine/evidence_review/generated/evidence_scores.json",
     "runtime_artifact_quarantine/evidence_review/generated/review_decision_stub.json",
     "runtime_artifact_quarantine/evidence_review/generated/hint_routing_index.json",
+    "labs_governance_bridge/generated/governance_decision_snapshot.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",
@@ -244,7 +245,7 @@
     "schema_version": "v0",
     "framework_status": "path_inventory_only",
     "current_mining_level": 0,
-    "artifacts_classified": 206,
+    "artifacts_classified": 198,
     "unsafe_artifacts_count": 168,
     "classes_seen": {
       "ACTIVE_AGENT_MARKER": 17,
@@ -257,7 +258,7 @@
       "DREAM_REPORT": 28,
       "DRIFT_REPORT": 4,
       "ESCALATION_REPORT": 23,
-      "FRAMEWORK_FILE": 9,
+      "FRAMEWORK_FILE": 1,
       "LOG_RUNTIME": 31,
       "PYCACHE": 31,
       "UNKNOWN_OR_NON_RUNTIME": 29,
@@ -362,13 +363,13 @@
   "artifact_disposition_summary": {
     "schema_name": "ystar.console_read_model.generated.artifact_disposition_summary",
     "schema_version": "v0",
-    "total_artifacts": 206,
-    "artifacts_with_disposition": 206,
+    "total_artifacts": 198,
+    "artifacts_with_disposition": 198,
     "dispositions": {
       "deferred_requires_marker_metadata_adapter": 26,
       "deferred_sidecar_or_transaction_file": 6,
       "deferred_requires_classification": 10,
-      "ignored_or_non_runtime": 38,
+      "ignored_or_non_runtime": 30,
       "deferred_requires_readonly_db_adapter": 2,
       "deferred_requires_bounded_log_adapter": 31,
       "ignored_generated_cache": 31,
@@ -381,7 +382,7 @@
       "UNKNOWN_RUNTIME_ARTIFACT": 10,
       "UNKNOWN_OR_NON_RUNTIME": 29,
       "DB_CORE": 1,
-      "FRAMEWORK_FILE": 9,
+      "FRAMEWORK_FILE": 1,
       "CACHE_SENTINEL": 5,
       "LOG_RUNTIME": 31,
       "ACTIVE_AGENT_MARKER": 17,
@@ -405,7 +406,7 @@
     "ignored_generated_cache": 31,
     "forbidden_direct_read_count": 106,
     "evidence_scoring_status": {
-      "not_started": 206
+      "not_started": 198
     },
     "generated_disposition_index": "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
     "warning": "Disposition is not ingestion. No brain/memory/CIEU writes are allowed."
@@ -441,6 +442,28 @@
     "generated_hint_routing": "runtime_artifact_quarantine/evidence_review/generated/hint_routing_index.json",
     "warning": "Evidence scoring is structural only. It is not truth validation and not memory ingestion."
   },
+  "governance_bridge_summary": {
+    "schema_name": "ystar.console_read_model.generated.governance_bridge_summary",
+    "schema_version": "v0",
+    "latest_bridge_run_id": "labs-gov-bridge-run-001",
+    "source_task_id": "labs-gov-sample-task-001",
+    "agent_id": "Aiden-CEO",
+    "ystar_gov_cli_path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/tools/run_hook_contract_dry_run.py",
+    "ystar_gov_exit_code": 0,
+    "ystar_gov_decision": "allow",
+    "allow_execution": true,
+    "require_revision": false,
+    "deny": false,
+    "escalate": false,
+    "dry_run_only": true,
+    "non_execution_confirmation": true,
+    "action_executed": false,
+    "cieu_written": false,
+    "brain_writeback_performed": false,
+    "memory_ingestion_performed": false,
+    "generated_decision_snapshot": "labs_governance_bridge/generated/governance_decision_snapshot.json",
+    "warning": "Bridge decision snapshot is dry-run only and is not a CIEU record."
+  },
   "open_gaps": [
     "Static console loader exists; no frontend UI yet.",
     "No frontend UI.",
@@ -457,7 +480,8 @@
     "Safe mining v0 produces candidate-only Markdown report snippets; no brain or CIEU ingestion exists.",
     "Candidate review queue exists, but no approval workflow or ingestion path exists.",
     "Backlog disposition index exists, but evidence scoring and adapter extraction are not implemented.",
-    "Evidence review pack exists, but semantic truth validation and decision application are not implemented."
+    "Evidence review pack exists, but semantic truth validation and decision application are not implemented.",
+    "Labs-Gov bridge exists as a dry-run snapshot only; no real hook integration exists."
   ],
   "warnings": [
     "Ethan execution channels are present as reference-only boundaries, not runtime launchers."

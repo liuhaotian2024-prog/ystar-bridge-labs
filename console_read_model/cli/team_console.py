@@ -20,6 +20,7 @@ MINING = "console_read_model/generated/safe_mining_summary.json"
 REVIEW_QUEUE = "console_read_model/generated/review_queue_summary.json"
 DISPOSITION = "console_read_model/generated/artifact_disposition_summary.json"
 EVIDENCE_REVIEW = "console_read_model/generated/evidence_review_summary.json"
+GOVERNANCE_BRIDGE = "console_read_model/generated/governance_bridge_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -39,7 +40,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -79,6 +80,7 @@ def load_all() -> dict[str, Any]:
         "review_queue": load_json(REVIEW_QUEUE),
         "disposition": load_json(DISPOSITION),
         "evidence_review": load_json(EVIDENCE_REVIEW),
+        "governance_bridge": load_json(GOVERNANCE_BRIDGE),
     }
 
 
@@ -296,6 +298,29 @@ def cmd_evidence_review(data: dict[str, Any]) -> None:
     print(f"warning: {evidence.get('warning')}")
 
 
+def cmd_governance_bridge(data: dict[str, Any]) -> None:
+    bridge = data["governance_bridge"]
+    print("# Labs-Gov Alignment Bridge")
+    print()
+    print(f"latest_bridge_run_id: {bridge.get('latest_bridge_run_id')}")
+    print(f"source_task_id: {bridge.get('source_task_id')}")
+    print(f"agent_id: {bridge.get('agent_id')}")
+    print(f"ystar_gov_decision: {bridge.get('ystar_gov_decision')}")
+    print(f"ystar_gov_exit_code: {bridge.get('ystar_gov_exit_code')}")
+    print(f"allow_execution: {bridge.get('allow_execution')}")
+    print(f"require_revision: {bridge.get('require_revision')}")
+    print(f"deny: {bridge.get('deny')}")
+    print(f"escalate: {bridge.get('escalate')}")
+    print(f"dry_run_only: {bridge.get('dry_run_only')}")
+    print(f"non_execution_confirmation: {bridge.get('non_execution_confirmation')}")
+    print(f"action_executed: {bridge.get('action_executed')}")
+    print(f"cieu_written: {bridge.get('cieu_written')}")
+    print(f"brain_writeback_performed: {bridge.get('brain_writeback_performed')}")
+    print(f"memory_ingestion_performed: {bridge.get('memory_ingestion_performed')}")
+    print(f"generated_decision_snapshot: {bridge.get('generated_decision_snapshot')}")
+    print(f"warning: {bridge.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -338,6 +363,11 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print("Evidence review indexes:")
         print(f"- {evidence.get('generated_evidence_scores')}")
         print(f"- {evidence.get('generated_hint_routing')}")
+    bridge = data.get("governance_bridge", {})
+    if bridge:
+        print()
+        print("Labs-Gov bridge decision snapshot:")
+        print(f"- {bridge.get('generated_decision_snapshot')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -361,7 +391,18 @@ def cmd_validate_local() -> int:
     failures: list[str] = []
     inspected: list[str] = []
     loaded: dict[str, Any] = {}
-    for rel in [SNAPSHOT, CARDS, READINESS, MANIFEST, QUARANTINE, MINING, REVIEW_QUEUE, DISPOSITION, EVIDENCE_REVIEW]:
+    for rel in [
+        SNAPSHOT,
+        CARDS,
+        READINESS,
+        MANIFEST,
+        QUARANTINE,
+        MINING,
+        REVIEW_QUEUE,
+        DISPOSITION,
+        EVIDENCE_REVIEW,
+        GOVERNANCE_BRIDGE,
+    ]:
         try:
             loaded[rel] = load_json(rel)
             inspected.append(rel)
@@ -384,6 +425,8 @@ def cmd_validate_local() -> int:
             failures.append("artifact_disposition_summary missing from team console snapshot")
         if "evidence_review_summary" not in snapshot:
             failures.append("evidence_review_summary missing from team console snapshot")
+        if "governance_bridge_summary" not in snapshot:
+            failures.append("governance_bridge_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -502,6 +545,44 @@ def cmd_validate_local() -> int:
         if semantic and semantic != {"not_evaluated"}:
             failures.append("evidence review semantic truth status must remain not_evaluated")
 
+    governance_bridge = loaded.get(GOVERNANCE_BRIDGE)
+    if governance_bridge:
+        required_fields = [
+            "latest_bridge_run_id",
+            "source_task_id",
+            "agent_id",
+            "ystar_gov_cli_path",
+            "ystar_gov_exit_code",
+            "ystar_gov_decision",
+            "allow_execution",
+            "require_revision",
+            "deny",
+            "escalate",
+            "dry_run_only",
+            "non_execution_confirmation",
+            "action_executed",
+            "cieu_written",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "generated_decision_snapshot",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in governance_bridge:
+                failures.append(f"governance bridge summary missing field: {field}")
+        if governance_bridge.get("dry_run_only") is not True:
+            failures.append("governance bridge must remain dry_run_only")
+        if governance_bridge.get("non_execution_confirmation") is not True:
+            failures.append("governance bridge must confirm non-execution")
+        for field in [
+            "action_executed",
+            "cieu_written",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+        ]:
+            if governance_bridge.get(field) is not False:
+                failures.append(f"governance bridge must keep {field}=false")
+
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
     print(f"Required agents: {', '.join(REQUIRED_AGENTS)}")
@@ -553,6 +634,8 @@ def main(argv: list[str]) -> int:
         cmd_artifact_disposition(data)
     elif command == "evidence-review":
         cmd_evidence_review(data)
+    elif command == "governance-bridge":
+        cmd_governance_bridge(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

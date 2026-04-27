@@ -54,3 +54,9 @@ The snapshot can expose an evidence review summary derived from
 `runtime_artifact_quarantine/evidence_review/generated/evidence_scores.json` and
 related generated indexes. This summarizes structural readiness only. It is not
 truth validation, approval, memory ingestion, CIEU writing, or brain writeback.
+
+The snapshot can expose a Labs-Gov alignment bridge summary derived from
+`labs_governance_bridge/generated/governance_decision_snapshot.json`. This
+shows a Y-star-gov dry-run decision for a curated sample labs task. It is not
+real hook integration, action execution, CIEU writing, memory ingestion, or
+brain writeback.

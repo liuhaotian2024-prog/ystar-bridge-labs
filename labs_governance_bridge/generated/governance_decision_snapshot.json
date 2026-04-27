@@ -1,0 +1,46 @@
+{
+  "action_executed": false,
+  "agent_id": "Aiden-CEO",
+  "allow_execution": true,
+  "brain_writeback_performed": false,
+  "bridge_run_id": "labs-gov-bridge-run-001",
+  "cieu_written": false,
+  "decision_envelope": {
+    "agent_id": "Aiden-CEO",
+    "allow_execution": true,
+    "decision": "allow",
+    "deny": false,
+    "dry_run_only": true,
+    "escalate": false,
+    "governance_result_summary": {
+      "delta_validation_status": "valid",
+      "dry_run_decision": "pass",
+      "pre_u_validation_status": "valid"
+    },
+    "hook_event_id": "labs-gov-bridge-labs-gov-sample-task-001",
+    "issues": [],
+    "non_execution_confirmation": true,
+    "packet_id": "preu-labs-gov-sample-task-001",
+    "require_revision": false,
+    "safety_notes": [
+      "Hook adapter dry-run only: no real hook is called.",
+      "Selected_U is never executed, even when the decision envelope says allow_execution=true.",
+      "No CIEU write, DB/log/runtime read, brain/memory mutation, or external tool call occurs."
+    ],
+    "tool": "hook_contract_dry_run"
+  },
+  "deny": false,
+  "dry_run_only": true,
+  "escalate": false,
+  "generated_from_envelope_ref": "labs_governance_bridge/generated/sample_hook_envelope.json",
+  "memory_ingestion_performed": false,
+  "non_execution_confirmation": true,
+  "require_revision": false,
+  "schema_name": "ystar.labs_governance_bridge.governance_decision_snapshot",
+  "schema_version": "v0",
+  "source_task_id": "labs-gov-sample-task-001",
+  "warning": "Bridge decision snapshot is dry-run only and is not a CIEU record.",
+  "ystar_gov_cli_path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/tools/run_hook_contract_dry_run.py",
+  "ystar_gov_decision": "allow",
+  "ystar_gov_exit_code": 0
+}

@@ -15,7 +15,8 @@
     "bounded Markdown safe-mining candidate index",
     "candidate review queue summary",
     "runtime artifact backlog disposition summary",
-    "structural evidence review summary"
+    "structural evidence review summary",
+    "dry-run Labs-Gov alignment bridge snapshot"
   ],
   "not_ready": [
     "runtime generator",
@@ -35,7 +36,8 @@
     "evidence scoring for disposition records",
     "DB/log/marker metadata adapters",
     "semantic truth validation for evidence records",
-    "review decision application workflow"
+    "review decision application workflow",
+    "real hook integration for Labs-Gov bridge"
   ],
   "recommended_next_steps": [
     "wire static validator and loader into CI",
@@ -47,13 +49,15 @@
     "add human review queue for safe-mining candidates",
     "define signed review decisions for candidate queue entries",
     "create evidence scoring schema for disposition records",
-    "define manual decision application for evidence review stubs"
+    "define manual decision application for evidence review stubs",
+    "connect bridge decisions to future Pre-U/CIEU dry-run examples without executing actions"
   ],
   "blockers": [
     "no DB-safe adapter",
     "no live validator implementation",
     "no hook enforcement",
-    "no semantic runtime truth guarantee"
+    "no semantic runtime truth guarantee",
+    "no real Labs-Gov hook enforcement path"
   ],
   "safety_boundaries": [
     "no DB reads",
@@ -65,6 +69,7 @@
     "safe-mining candidates are bounded Markdown snippets only",
     "review queue entries are pending and not ingested",
     "disposition records are routing metadata, not ingestion",
-    "evidence scoring is structural only and does not approve ingestion"
+    "evidence scoring is structural only and does not approve ingestion",
+    "Labs-Gov bridge is dry-run only and does not execute actions"
   ]
 }

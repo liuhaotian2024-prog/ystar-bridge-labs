@@ -47,6 +47,16 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
+        "Build Labs-Gov hook envelope",
+        ["python3", "labs_governance_bridge/tools/build_labs_hook_envelope.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Run Labs-Gov dry-run bridge",
+        ["python3", "labs_governance_bridge/tools/run_labs_gov_dry_run.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
         "Build team console snapshot",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
@@ -77,6 +87,10 @@ VALIDATION_CHECKS = [
     Check(
         "Validate JSON: evidence_review_summary.json",
         ["python3", "-m", "json.tool", "console_read_model/generated/evidence_review_summary.json"],
+    ),
+    Check(
+        "Validate JSON: governance_bridge_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/governance_bridge_summary.json"],
     ),
     Check(
         "Validate JSON: markdown_report_candidates.json",
@@ -119,6 +133,22 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/evidence_review/generated/evidence_review_manifest.json"],
     ),
     Check(
+        "Validate JSON: sample_hook_envelope.json",
+        ["python3", "-m", "json.tool", "labs_governance_bridge/generated/sample_hook_envelope.json"],
+    ),
+    Check(
+        "Validate JSON: envelope_manifest.json",
+        ["python3", "-m", "json.tool", "labs_governance_bridge/generated/envelope_manifest.json"],
+    ),
+    Check(
+        "Validate JSON: governance_decision_snapshot.json",
+        ["python3", "-m", "json.tool", "labs_governance_bridge/generated/governance_decision_snapshot.json"],
+    ),
+    Check(
+        "Validate JSON: bridge_run_manifest.json",
+        ["python3", "-m", "json.tool", "labs_governance_bridge/generated/bridge_run_manifest.json"],
+    ),
+    Check(
         "Validate JSON: generation_manifest.json",
         ["python3", "-m", "json.tool", "console_read_model/generated/generation_manifest.json"],
     ),
@@ -153,6 +183,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: evidence-review",
         ["python3", "console_read_model/cli/team_console.py", "evidence-review"],
+    ),
+    Check(
+        "CLI smoke: governance-bridge",
+        ["python3", "console_read_model/cli/team_console.py", "governance-bridge"],
     ),
     Check(
         "CLI smoke: sources",

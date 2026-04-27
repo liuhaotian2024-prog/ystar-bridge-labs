@@ -1,0 +1,22 @@
+{
+  "schema_name": "ystar.console_read_model.generated.governance_bridge_summary",
+  "schema_version": "v0",
+  "latest_bridge_run_id": "labs-gov-bridge-run-001",
+  "source_task_id": "labs-gov-sample-task-001",
+  "agent_id": "Aiden-CEO",
+  "ystar_gov_cli_path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/tools/run_hook_contract_dry_run.py",
+  "ystar_gov_exit_code": 0,
+  "ystar_gov_decision": "allow",
+  "allow_execution": true,
+  "require_revision": false,
+  "deny": false,
+  "escalate": false,
+  "dry_run_only": true,
+  "non_execution_confirmation": true,
+  "action_executed": false,
+  "cieu_written": false,
+  "brain_writeback_performed": false,
+  "memory_ingestion_performed": false,
+  "generated_decision_snapshot": "labs_governance_bridge/generated/governance_decision_snapshot.json",
+  "warning": "Bridge decision snapshot is dry-run only and is not a CIEU record."
+}
