@@ -1,0 +1,47 @@
+{
+  "schema_name": "ystar.governed_tool_invocation_bridge.generated.bridge_invocation_trace",
+  "schema_version": "v0",
+  "trace_id": "bridge-invocation-trace-001",
+  "bridge_id": "governed_tool_invocation_bridge_v0",
+  "steps": [
+    {
+      "step": "agent_tool_request",
+      "status": "accepted_for_pre_u",
+      "ref": "governed_tool_invocation_bridge/generated/agent_tool_request.json"
+    },
+    {
+      "step": "pre_u_tool_packet",
+      "status": "built",
+      "packet_id": "pre-u-tool-packet-001"
+    },
+    {
+      "step": "governance_decision",
+      "status": "allow_local_readonly_tool_invocation",
+      "decision_id": "governance-decision-tool-bridge-001"
+    },
+    {
+      "step": "bridge_authorization",
+      "status": "authorized"
+    },
+    {
+      "step": "tool_invocation",
+      "status": "success",
+      "tool_id": "governed_readonly_observation_tool_v0"
+    },
+    {
+      "step": "direct_invocation_rejection",
+      "status": "rejected"
+    },
+    {
+      "step": "unsafe_request_rejection",
+      "status": "rejected"
+    }
+  ],
+  "request_id": "agent-tool-request-001",
+  "tool_invoked_through_bridge": true,
+  "direct_tool_invocation_rejected": true,
+  "unsafe_bridge_request_rejected": true,
+  "real_action_executed": false,
+  "external_action_executed": false,
+  "live_action_enabled": false
+}

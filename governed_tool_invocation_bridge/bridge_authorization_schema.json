@@ -1,0 +1,17 @@
+{
+  "schema_name": "ystar.governed_tool_invocation_bridge.bridge_authorization_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "authorization_id",
+    "packet_id",
+    "decision_id",
+    "tool_id",
+    "authorized",
+    "authorized_only_for_local_readonly_dry_run",
+    "agent_direct_tool_invocation_allowed",
+    "allowed_sources",
+    "denied_sources"
+  ]
+}
+

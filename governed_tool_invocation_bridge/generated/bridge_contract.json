@@ -1,0 +1,42 @@
+{
+  "schema_name": "ystar.governed_tool_invocation_bridge.generated.bridge_contract",
+  "schema_version": "v0",
+  "bridge_id": "governed_tool_invocation_bridge_v0",
+  "bridge_name": "Governed Tool Invocation Through Pre-U Bridge",
+  "bridge_version": "v0",
+  "supported_tool_id": "governed_readonly_observation_tool_v0",
+  "agent_direct_tool_invocation_allowed": false,
+  "pre_u_packet_required": true,
+  "governance_decision_required": true,
+  "bridge_authorization_required": true,
+  "cieu_event_required": true,
+  "residual_delta_required": true,
+  "requires_y_star_gov": true,
+  "requires_operator_approval_for_local_readonly": false,
+  "requires_operator_approval_for_live": true,
+  "live_enabled": false,
+  "external_action_enabled": false,
+  "network_enabled": false,
+  "git_push_enabled": false,
+  "daemon_control_enabled": false,
+  "cieu_persistence_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false,
+  "email_or_external_communication_enabled": false,
+  "allowed_decisions": [
+    "allow_local_readonly_tool_invocation",
+    "require_revision",
+    "deny"
+  ],
+  "denied_paths_policy": [
+    "no DB/WAL/SHM",
+    "no logs",
+    "no active-agent markers",
+    "no raw runtime artifacts",
+    "no memory/WORLD_STATE.md",
+    "no BOARD_PENDING.md",
+    "no external network",
+    "no external communication"
+  ],
+  "status": "defined_disabled_for_live_but_callable_for_local_readonly_dry_run"
+}

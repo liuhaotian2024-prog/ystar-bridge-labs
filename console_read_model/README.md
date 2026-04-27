@@ -122,3 +122,10 @@ This confirms the first callable local wrapper can read only allowed generated
 summaries, reject unsafe requests, and emit a dry-run CIEU-compatible event
 without live execution, external actions, CIEU persistence, brain writeback, or
 memory ingestion.
+
+The snapshot can expose a governed tool invocation bridge summary derived from
+`governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json`.
+This confirms the read-only wrapper is invoked only after an agent request is
+converted into a Pre-U packet, locally decided, and authorized by the bridge.
+Direct tool calls, unsafe bridge requests, live execution, persistence, and
+writeback remain disabled.

@@ -118,7 +118,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after read-only tool",
+        "Build governed tool invocation bridge",
+        ["python3", "governed_tool_invocation_bridge/tools/build_tool_invocation_bridge.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after governed tool bridge",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -474,6 +479,68 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "governed_readonly_observation_tool/generated/tool_readiness_summary.json"],
     ),
     Check(
+        "Compile governed tool invocation bridge",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "governed_tool_invocation_bridge/tools/build_tool_invocation_bridge.py",
+            "governed_tool_invocation_bridge/tools/run_governed_tool_bridge.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: tool_bridge_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/tool_bridge_summary.json"],
+    ),
+    Check(
+        "Validate JSON: bridge_contract.json",
+        ["python3", "-m", "json.tool", "governed_tool_invocation_bridge/generated/bridge_contract.json"],
+    ),
+    Check(
+        "Validate JSON: agent_tool_request.json",
+        ["python3", "-m", "json.tool", "governed_tool_invocation_bridge/generated/agent_tool_request.json"],
+    ),
+    Check(
+        "Validate JSON: pre_u_tool_packet.json",
+        ["python3", "-m", "json.tool", "governed_tool_invocation_bridge/generated/pre_u_tool_packet.json"],
+    ),
+    Check(
+        "Validate JSON: governance_decision_envelope.json",
+        ["python3", "-m", "json.tool", "governed_tool_invocation_bridge/generated/governance_decision_envelope.json"],
+    ),
+    Check(
+        "Validate JSON: bridge_authorization.json",
+        ["python3", "-m", "json.tool", "governed_tool_invocation_bridge/generated/bridge_authorization.json"],
+    ),
+    Check(
+        "Validate JSON: bridge_invocation_trace.json",
+        ["python3", "-m", "json.tool", "governed_tool_invocation_bridge/generated/bridge_invocation_trace.json"],
+    ),
+    Check(
+        "Validate JSON: bridged_tool_result.json",
+        ["python3", "-m", "json.tool", "governed_tool_invocation_bridge/generated/bridged_tool_result.json"],
+    ),
+    Check(
+        "Validate JSON: bridge_cieu_event.json",
+        ["python3", "-m", "json.tool", "governed_tool_invocation_bridge/generated/bridge_cieu_event.json"],
+    ),
+    Check(
+        "Validate JSON: bridge_residual_delta.json",
+        ["python3", "-m", "json.tool", "governed_tool_invocation_bridge/generated/bridge_residual_delta.json"],
+    ),
+    Check(
+        "Validate JSON: rejected_direct_tool_invocation.json",
+        ["python3", "-m", "json.tool", "governed_tool_invocation_bridge/generated/rejected_direct_tool_invocation.json"],
+    ),
+    Check(
+        "Validate JSON: rejected_unsafe_bridge_request.json",
+        ["python3", "-m", "json.tool", "governed_tool_invocation_bridge/generated/rejected_unsafe_bridge_request.json"],
+    ),
+    Check(
+        "Validate JSON: tool_bridge_readiness_summary.json",
+        ["python3", "-m", "json.tool", "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -628,6 +695,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: readonly-tool",
         ["python3", "console_read_model/cli/team_console.py", "readonly-tool"],
+    ),
+    Check(
+        "CLI smoke: tool-bridge",
+        ["python3", "console_read_model/cli/team_console.py", "tool-bridge"],
     ),
     Check(
         "CLI smoke: sources",

@@ -57,5 +57,8 @@ observation loop outputs. It summarizes a read-only tick from safe generated sou
 `readonly_tool_summary.json` is derived from generated governed read-only
 observation tool outputs. It confirms the first local read-only wrapper is callable while live action remains disabled.
 
+`tool_bridge_summary.json` is derived from generated governed tool
+invocation bridge outputs. It confirms the read-only tool is called only after Pre-U packet, decision, and bridge authorization.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

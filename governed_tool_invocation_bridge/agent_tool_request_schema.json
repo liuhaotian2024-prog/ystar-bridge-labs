@@ -1,0 +1,30 @@
+{
+  "schema_name": "ystar.governed_tool_invocation_bridge.agent_tool_request_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "request_id",
+    "requesting_agent",
+    "supporting_agent",
+    "mission_id",
+    "tool_id",
+    "request_type",
+    "business_reason",
+    "declared_intent",
+    "requested_summary_level",
+    "risk_tier"
+  ],
+  "properties": {
+    "request_id": {"type": "string"},
+    "requesting_agent": {"type": "string"},
+    "supporting_agent": {"type": "string"},
+    "mission_id": {"type": "string"},
+    "tool_id": {"type": "string"},
+    "request_type": {"type": "string"},
+    "business_reason": {"type": "string"},
+    "declared_intent": {"type": "string"},
+    "requested_summary_level": {"type": "string"},
+    "risk_tier": {"type": "string"}
+  }
+}
+

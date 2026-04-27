@@ -342,6 +342,9 @@ def main() -> int:
     required_governed_readonly_observation_tool_files = expected.get(
         "required_governed_readonly_observation_tool_files", []
     )
+    required_governed_tool_invocation_bridge_files = expected.get(
+        "required_governed_tool_invocation_bridge_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -448,6 +451,12 @@ def main() -> int:
         check_exists(path, report, "governed read-only observation tool file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "governed read-only observation tool JSON")
+
+    for rel in required_governed_tool_invocation_bridge_files:
+        path = ROOT / rel
+        check_exists(path, report, "governed tool invocation bridge file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "governed tool invocation bridge JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -1248,6 +1257,83 @@ def main() -> int:
         else:
             report.fail("generated snapshot missing readonly_tool_summary")
 
+        tool_bridge_summary = snapshot.get("tool_bridge_summary")
+        if tool_bridge_summary:
+            report.pass_("generated snapshot contains tool_bridge_summary")
+            for field in [
+                "governed_tool_invocation_bridge_defined",
+                "bridge_contract_defined",
+                "agent_tool_request_defined",
+                "pre_u_tool_packet_defined",
+                "governance_decision_defined",
+                "bridge_authorization_defined",
+                "tool_invoked_through_bridge",
+                "direct_tool_invocation_rejected",
+                "unsafe_bridge_request_rejected",
+                "bridge_cieu_event_defined",
+                "bridge_residual_delta_defined",
+                "mission_bounded_autonomy_supported",
+                "step_by_step_human_prompting_reduced",
+                "first_governed_tool_invocation_chain_created",
+                "real_action_executed",
+                "external_action_executed",
+                "live_action_enabled",
+                "network_enabled",
+                "git_push_enabled",
+                "daemon_control_enabled",
+                "cieu_persistence_enabled",
+                "brain_writeback_enabled",
+                "memory_ingestion_enabled",
+                "email_or_external_communication_enabled",
+                "next_required_milestone",
+                "generated_summary",
+                "generated_contract",
+                "generated_pre_u_packet",
+                "generated_bridged_result",
+                "generated_cieu_event",
+                "warning",
+            ]:
+                if field in tool_bridge_summary:
+                    report.pass_(f"snapshot tool_bridge_summary field present: {field}")
+                else:
+                    report.fail(f"snapshot tool_bridge_summary missing field: {field}")
+            for field in [
+                "governed_tool_invocation_bridge_defined",
+                "bridge_contract_defined",
+                "agent_tool_request_defined",
+                "pre_u_tool_packet_defined",
+                "governance_decision_defined",
+                "bridge_authorization_defined",
+                "tool_invoked_through_bridge",
+                "direct_tool_invocation_rejected",
+                "unsafe_bridge_request_rejected",
+                "bridge_cieu_event_defined",
+                "bridge_residual_delta_defined",
+                "mission_bounded_autonomy_supported",
+                "step_by_step_human_prompting_reduced",
+                "first_governed_tool_invocation_chain_created",
+            ]:
+                if tool_bridge_summary.get(field) is not True:
+                    report.fail(f"snapshot tool_bridge_summary must keep {field}=true")
+            for field in [
+                "real_action_executed",
+                "external_action_executed",
+                "live_action_enabled",
+                "network_enabled",
+                "git_push_enabled",
+                "daemon_control_enabled",
+                "cieu_persistence_enabled",
+                "brain_writeback_enabled",
+                "memory_ingestion_enabled",
+                "email_or_external_communication_enabled",
+            ]:
+                if tool_bridge_summary.get(field) is not False:
+                    report.fail(f"snapshot tool_bridge_summary must keep {field}=false")
+            if tool_bridge_summary.get("next_required_milestone") != "L4.6 Agent Team Work Proposal to Governed Tool Invocation v0":
+                report.fail("snapshot tool_bridge_summary must point to L4.6 agent proposal bridge milestone")
+        else:
+            report.fail("generated snapshot missing tool_bridge_summary")
+
     quarantine = generated_json.get("console_read_model/generated/quarantine_summary.json")
     if quarantine:
         for field in [
@@ -1907,6 +1993,80 @@ def main() -> int:
                 report.fail(f"generated readonly tool summary must keep {field}=false")
         if readonly_tool.get("next_required_milestone") != "L4.5 Governed Tool Invocation Through Pre-U Bridge v0":
             report.fail("generated readonly tool summary must point to L4.5 Pre-U bridge milestone")
+
+    tool_bridge = generated_json.get("console_read_model/generated/tool_bridge_summary.json")
+    if tool_bridge:
+        for field in [
+            "governed_tool_invocation_bridge_defined",
+            "bridge_contract_defined",
+            "agent_tool_request_defined",
+            "pre_u_tool_packet_defined",
+            "governance_decision_defined",
+            "bridge_authorization_defined",
+            "tool_invoked_through_bridge",
+            "direct_tool_invocation_rejected",
+            "unsafe_bridge_request_rejected",
+            "bridge_cieu_event_defined",
+            "bridge_residual_delta_defined",
+            "mission_bounded_autonomy_supported",
+            "step_by_step_human_prompting_reduced",
+            "first_governed_tool_invocation_chain_created",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "network_enabled",
+            "git_push_enabled",
+            "daemon_control_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "email_or_external_communication_enabled",
+            "next_required_milestone",
+            "generated_summary",
+            "generated_contract",
+            "generated_pre_u_packet",
+            "generated_bridged_result",
+            "generated_cieu_event",
+            "warning",
+        ]:
+            if field in tool_bridge:
+                report.pass_(f"generated tool bridge summary field present: {field}")
+            else:
+                report.fail(f"generated tool bridge summary missing field: {field}")
+        for field in [
+            "governed_tool_invocation_bridge_defined",
+            "bridge_contract_defined",
+            "agent_tool_request_defined",
+            "pre_u_tool_packet_defined",
+            "governance_decision_defined",
+            "bridge_authorization_defined",
+            "tool_invoked_through_bridge",
+            "direct_tool_invocation_rejected",
+            "unsafe_bridge_request_rejected",
+            "bridge_cieu_event_defined",
+            "bridge_residual_delta_defined",
+            "mission_bounded_autonomy_supported",
+            "step_by_step_human_prompting_reduced",
+            "first_governed_tool_invocation_chain_created",
+        ]:
+            if tool_bridge.get(field) is not True:
+                report.fail(f"generated tool bridge summary must keep {field}=true")
+        for field in [
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "network_enabled",
+            "git_push_enabled",
+            "daemon_control_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "email_or_external_communication_enabled",
+        ]:
+            if tool_bridge.get(field) is not False:
+                report.fail(f"generated tool bridge summary must keep {field}=false")
+        if tool_bridge.get("next_required_milestone") != "L4.6 Agent Team Work Proposal to Governed Tool Invocation v0":
+            report.fail("generated tool bridge summary must point to L4.6 agent proposal bridge milestone")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

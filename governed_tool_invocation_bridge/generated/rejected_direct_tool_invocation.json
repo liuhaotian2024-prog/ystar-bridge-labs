@@ -1,0 +1,17 @@
+{
+  "schema_name": "ystar.governed_tool_invocation_bridge.generated.rejected_direct_tool_invocation",
+  "schema_version": "v0",
+  "rejection_id": "rejected-direct-tool-invocation-001",
+  "status": "rejected",
+  "reason": "agent_direct_tool_invocation_disallowed_pre_u_bridge_required",
+  "agent_direct_tool_invocation_allowed": false,
+  "pre_u_packet_required": true,
+  "governance_decision_required": true,
+  "tool_invoked": false,
+  "real_action_executed": false,
+  "external_action_executed": false,
+  "live_action_enabled": false,
+  "cieu_persistence_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false
+}

@@ -32,6 +32,7 @@ AUTONOMOUS_CYCLE = "console_read_model/generated/autonomous_cycle_summary.json"
 LEGACY_TRIAGE = "console_read_model/generated/legacy_triage_summary.json"
 OBSERVATION_LOOP = "console_read_model/generated/observation_loop_summary.json"
 READONLY_TOOL = "console_read_model/generated/readonly_tool_summary.json"
+TOOL_BRIDGE = "console_read_model/generated/tool_bridge_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -51,7 +52,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -103,6 +104,7 @@ def load_all() -> dict[str, Any]:
         "legacy_triage": load_json(LEGACY_TRIAGE),
         "observation_loop": load_json(OBSERVATION_LOOP),
         "readonly_tool": load_json(READONLY_TOOL),
+        "tool_bridge": load_json(TOOL_BRIDGE),
     }
 
 
@@ -613,6 +615,37 @@ def cmd_readonly_tool(data: dict[str, Any]) -> None:
     print(f"warning: {tool.get('warning')}")
 
 
+def cmd_tool_bridge(data: dict[str, Any]) -> None:
+    bridge = data["tool_bridge"]
+    print("# Governed Tool Invocation Bridge")
+    print()
+    print(f"bridge contract defined: {bridge.get('bridge_contract_defined')}")
+    print(f"agent tool request defined: {bridge.get('agent_tool_request_defined')}")
+    print(f"Pre-U tool packet defined: {bridge.get('pre_u_tool_packet_defined')}")
+    print(f"governance decision defined: {bridge.get('governance_decision_defined')}")
+    print(f"bridge authorization defined: {bridge.get('bridge_authorization_defined')}")
+    print(f"tool invoked through bridge: {bridge.get('tool_invoked_through_bridge')}")
+    print(f"direct tool invocation rejected: {bridge.get('direct_tool_invocation_rejected')}")
+    print(f"unsafe bridge request rejected: {bridge.get('unsafe_bridge_request_rejected')}")
+    print(f"bridge CIEU event defined: {bridge.get('bridge_cieu_event_defined')}")
+    print(f"bridge residual delta defined: {bridge.get('bridge_residual_delta_defined')}")
+    print(
+        "first governed tool invocation chain created: "
+        f"{bridge.get('first_governed_tool_invocation_chain_created')}"
+    )
+    print(f"real action executed: {bridge.get('real_action_executed')}")
+    print(f"live action enabled: {bridge.get('live_action_enabled')}")
+    print(f"external action executed: {bridge.get('external_action_executed')}")
+    print(f"CIEU persistence enabled: {bridge.get('cieu_persistence_enabled')}")
+    print(f"brain writeback enabled: {bridge.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {bridge.get('memory_ingestion_enabled')}")
+    print(f"next required milestone: {bridge.get('next_required_milestone')}")
+    print(f"generated_summary: {bridge.get('generated_summary')}")
+    print(f"generated_pre_u_packet: {bridge.get('generated_pre_u_packet')}")
+    print(f"generated_bridged_result: {bridge.get('generated_bridged_result')}")
+    print(f"warning: {bridge.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -725,6 +758,14 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print(f"- {readonly_tool.get('generated_summary')}")
         print(f"- {readonly_tool.get('generated_contract')}")
         print(f"- {readonly_tool.get('generated_registry')}")
+    tool_bridge = data.get("tool_bridge", {})
+    if tool_bridge:
+        print()
+        print("Governed tool invocation bridge:")
+        print(f"- {tool_bridge.get('generated_summary')}")
+        print(f"- {tool_bridge.get('generated_contract')}")
+        print(f"- {tool_bridge.get('generated_pre_u_packet')}")
+        print(f"- {tool_bridge.get('generated_bridged_result')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -770,6 +811,7 @@ def cmd_validate_local() -> int:
         LEGACY_TRIAGE,
         OBSERVATION_LOOP,
         READONLY_TOOL,
+        TOOL_BRIDGE,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -817,6 +859,8 @@ def cmd_validate_local() -> int:
             failures.append("observation_loop_summary missing from team console snapshot")
         if "readonly_tool_summary" not in snapshot:
             failures.append("readonly_tool_summary missing from team console snapshot")
+        if "tool_bridge_summary" not in snapshot:
+            failures.append("tool_bridge_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -1471,6 +1515,62 @@ def cmd_validate_local() -> int:
         if readonly_tool.get("next_required_milestone") != "L4.5 Governed Tool Invocation Through Pre-U Bridge v0":
             failures.append("readonly tool summary must point to L4.5 Pre-U bridge milestone")
 
+    tool_bridge = loaded.get(TOOL_BRIDGE)
+    if tool_bridge:
+        required_fields = [
+            "governed_tool_invocation_bridge_defined",
+            "bridge_contract_defined",
+            "agent_tool_request_defined",
+            "pre_u_tool_packet_defined",
+            "governance_decision_defined",
+            "bridge_authorization_defined",
+            "tool_invoked_through_bridge",
+            "direct_tool_invocation_rejected",
+            "unsafe_bridge_request_rejected",
+            "bridge_cieu_event_defined",
+            "bridge_residual_delta_defined",
+            "first_governed_tool_invocation_chain_created",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "next_required_milestone",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in tool_bridge:
+                failures.append(f"tool bridge summary missing field: {field}")
+        for field in [
+            "governed_tool_invocation_bridge_defined",
+            "bridge_contract_defined",
+            "agent_tool_request_defined",
+            "pre_u_tool_packet_defined",
+            "governance_decision_defined",
+            "bridge_authorization_defined",
+            "tool_invoked_through_bridge",
+            "direct_tool_invocation_rejected",
+            "unsafe_bridge_request_rejected",
+            "bridge_cieu_event_defined",
+            "bridge_residual_delta_defined",
+            "first_governed_tool_invocation_chain_created",
+        ]:
+            if tool_bridge.get(field) is not True:
+                failures.append(f"tool bridge summary must keep {field}=true")
+        for field in [
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+        ]:
+            if tool_bridge.get(field) is not False:
+                failures.append(f"tool bridge summary must keep {field}=false")
+        if tool_bridge.get("next_required_milestone") != "L4.6 Agent Team Work Proposal to Governed Tool Invocation v0":
+            failures.append("tool bridge summary must point to L4.6 agent proposal bridge milestone")
+
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
     print(f"Required agents: {', '.join(REQUIRED_AGENTS)}")
@@ -1546,6 +1646,8 @@ def main(argv: list[str]) -> int:
         cmd_observation_loop(data)
     elif command == "readonly-tool":
         cmd_readonly_tool(data)
+    elif command == "tool-bridge":
+        cmd_tool_bridge(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

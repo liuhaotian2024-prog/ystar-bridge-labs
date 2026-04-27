@@ -68,6 +68,10 @@ python3 console_read_model/cli/team_console.py <command>
   summary: contract, allowed source registry, sample invocation/result,
   unsafe request rejection, disabled live/persistence flags, and the L4.5
   recommendation.
+- `tool-bridge`: Prints the generated governed tool invocation bridge summary:
+  Pre-U packet, governance decision, bridge authorization, bridged read-only
+  tool result, rejection fixtures, disabled live/persistence flags, and the
+  L4.6 recommendation.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

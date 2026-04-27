@@ -1,0 +1,14 @@
+{
+  "schema_name": "ystar.governed_tool_invocation_bridge.bridge_execution_trace_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "trace_id",
+    "bridge_id",
+    "steps",
+    "tool_invoked_through_bridge",
+    "direct_tool_invocation_rejected",
+    "unsafe_bridge_request_rejected"
+  ]
+}
+

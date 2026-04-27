@@ -59,6 +59,7 @@
     "console_read_model/generated/legacy_triage_summary.json",
     "console_read_model/generated/observation_loop_summary.json",
     "console_read_model/generated/readonly_tool_summary.json",
+    "console_read_model/generated/tool_bridge_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "required_governed_readonly_observation_tool_files": [
@@ -83,6 +84,34 @@
     "governed_readonly_observation_tool/generated/tool_cieu_event.json",
     "governed_readonly_observation_tool/generated/tool_readiness_summary.json",
     "governed_readonly_observation_tool/generated/tool_wrapper_report.md"
+  ],
+  "required_governed_tool_invocation_bridge_files": [
+    "governed_tool_invocation_bridge/README.md",
+    "governed_tool_invocation_bridge/bridge_policy.md",
+    "governed_tool_invocation_bridge/agent_tool_request_schema.json",
+    "governed_tool_invocation_bridge/pre_u_tool_packet_schema.json",
+    "governed_tool_invocation_bridge/governance_decision_schema.json",
+    "governed_tool_invocation_bridge/bridge_authorization_schema.json",
+    "governed_tool_invocation_bridge/bridge_execution_trace_schema.json",
+    "governed_tool_invocation_bridge/residual_delta_schema.json",
+    "governed_tool_invocation_bridge/rejected_invocation_policy.md",
+    "governed_tool_invocation_bridge/open_gaps.md",
+    "governed_tool_invocation_bridge/tools/build_tool_invocation_bridge.py",
+    "governed_tool_invocation_bridge/tools/run_governed_tool_bridge.py",
+    "governed_tool_invocation_bridge/generated/README.md",
+    "governed_tool_invocation_bridge/generated/bridge_contract.json",
+    "governed_tool_invocation_bridge/generated/agent_tool_request.json",
+    "governed_tool_invocation_bridge/generated/pre_u_tool_packet.json",
+    "governed_tool_invocation_bridge/generated/governance_decision_envelope.json",
+    "governed_tool_invocation_bridge/generated/bridge_authorization.json",
+    "governed_tool_invocation_bridge/generated/bridge_invocation_trace.json",
+    "governed_tool_invocation_bridge/generated/bridged_tool_result.json",
+    "governed_tool_invocation_bridge/generated/bridge_cieu_event.json",
+    "governed_tool_invocation_bridge/generated/bridge_residual_delta.json",
+    "governed_tool_invocation_bridge/generated/rejected_direct_tool_invocation.json",
+    "governed_tool_invocation_bridge/generated/rejected_unsafe_bridge_request.json",
+    "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json",
+    "governed_tool_invocation_bridge/generated/tool_bridge_report.md"
   ],
   "required_legacy_asset_triage_files": [
     "legacy_asset_triage/README.md",

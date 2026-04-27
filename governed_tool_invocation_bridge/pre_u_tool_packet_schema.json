@@ -1,0 +1,29 @@
+{
+  "schema_name": "ystar.governed_tool_invocation_bridge.pre_u_tool_packet_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "packet_id",
+    "agent_id",
+    "tool_id",
+    "request_id",
+    "Xt",
+    "Y_star",
+    "candidate_U",
+    "predicted_Y_t1",
+    "predicted_R_t1",
+    "selected_U",
+    "why_min_residual",
+    "risk_tier",
+    "governance_expectations",
+    "cieu_link_policy",
+    "tool_contract_ref",
+    "allowed_source_registry_ref"
+  ],
+  "properties": {
+    "packet_id": {"type": "string"},
+    "candidate_U": {"type": "array"},
+    "selected_U": {"type": "object"}
+  }
+}
+

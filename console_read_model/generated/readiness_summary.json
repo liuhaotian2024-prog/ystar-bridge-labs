@@ -27,7 +27,8 @@
     "mission-bounded autonomous work cycle simulator summary",
     "legacy asset triage summary",
     "governed read-only observation loop summary",
-    "first governed read-only observation tool wrapper summary"
+    "first governed read-only observation tool wrapper summary",
+    "governed tool invocation bridge summary"
   ],
   "not_ready": [
     "runtime generator",
@@ -56,7 +57,8 @@
     "enabled live-boundary harness",
     "enabled CIEU runtime event persistence",
     "approved governed action registry",
-    "Pre-U bridge invocation for governed read-only observation tool"
+    "Pre-U bridge invocation for governed read-only observation tool",
+    "agent team work proposal routing into governed tool invocation"
   ],
   "recommended_next_steps": [
     "wire static validator and loader into CI",
@@ -78,7 +80,8 @@
     "define CIEU runtime event writer verification without enabling persistence",
     "simulate a company autonomous work cycle without enabling live actions",
     "build L4.4 first governed read-only observation tool wrapper",
-    "route the governed read-only observation tool through the Pre-U bridge"
+    "route the governed read-only observation tool through the Pre-U bridge",
+    "build L4.6 agent team work proposal to governed tool invocation"
   ],
   "blockers": [
     "no DB-safe adapter",
@@ -96,7 +99,8 @@
     "autonomous cycle is simulated only and cannot execute real work",
     "legacy assets are triaged but not absorbed",
     "observation loop is read-only and not recurring",
-    "governed read-only observation tool is local dry-run only and not routed through Pre-U yet"
+    "governed read-only observation tool is local dry-run only and not routed through Pre-U yet",
+    "governed tool invocation bridge is local dry-run only and not connected to autonomous proposals yet"
   ],
   "safety_boundaries": [
     "no DB reads",
@@ -120,6 +124,7 @@
     "autonomous work cycle is simulated only and performs no external action",
     "legacy asset triage is classification-only and does not absorb assets",
     "governed observation loop reads generated summaries only and executes no actions",
-    "governed read-only observation tool reads allowed generated summaries only and executes no actions"
+    "governed read-only observation tool reads allowed generated summaries only and executes no actions",
+    "governed tool invocation bridge requires Pre-U/decision/authorization before local tool calls"
   ]
 }

@@ -1,0 +1,17 @@
+{
+  "schema_name": "ystar.governed_tool_invocation_bridge.generated.governance_decision_envelope",
+  "schema_version": "v0",
+  "decision_id": "governance-decision-tool-bridge-001",
+  "packet_id": "pre-u-tool-packet-001",
+  "decision": "allow_local_readonly_tool_invocation",
+  "decision_reason": "Local deterministic bridge decision allows only the safe read-only tool path.",
+  "allowed_only_as_local_readonly_dry_run": true,
+  "agent_direct_tool_invocation_allowed": false,
+  "live_action_allowed": false,
+  "external_action_allowed": false,
+  "cieu_persistence_allowed": false,
+  "brain_writeback_allowed": false,
+  "memory_ingestion_allowed": false,
+  "operator_approval_required_for_live": true,
+  "notes": "This L4.5 decision envelope is deterministic and local. It references existing dry-run governance posture but does not edit or invoke external repositories."
+}

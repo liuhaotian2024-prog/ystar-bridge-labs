@@ -42,6 +42,7 @@ CURATED_SOURCES = [
     "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
     "governed_observation_loop/generated/governed_observation_loop_summary.json",
     "governed_readonly_observation_tool/generated/tool_readiness_summary.json",
+    "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -894,6 +895,91 @@ def build_readonly_tool_summary(tool_summary: dict[str, Any] | None) -> dict[str
     }
 
 
+def build_tool_bridge_summary(bridge_summary: dict[str, Any] | None) -> dict[str, Any]:
+    if not bridge_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.tool_bridge_summary",
+            "schema_version": "v0",
+            "governed_tool_invocation_bridge_defined": False,
+            "bridge_contract_defined": False,
+            "agent_tool_request_defined": False,
+            "pre_u_tool_packet_defined": False,
+            "governance_decision_defined": False,
+            "bridge_authorization_defined": False,
+            "tool_invoked_through_bridge": False,
+            "direct_tool_invocation_rejected": False,
+            "unsafe_bridge_request_rejected": False,
+            "bridge_cieu_event_defined": False,
+            "bridge_residual_delta_defined": False,
+            "first_governed_tool_invocation_chain_created": False,
+            "real_action_executed": False,
+            "external_action_executed": False,
+            "live_action_enabled": False,
+            "cieu_persistence_enabled": False,
+            "brain_writeback_enabled": False,
+            "memory_ingestion_enabled": False,
+            "next_required_milestone": "L4.6 Agent Team Work Proposal to Governed Tool Invocation v0",
+            "generated_summary": "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json",
+            "warning": "Governed tool invocation bridge has not been generated yet.",
+        }
+    return {
+        "schema_name": "ystar.console_read_model.generated.tool_bridge_summary",
+        "schema_version": "v0",
+        "governed_tool_invocation_bridge_defined": bridge_summary.get(
+            "governed_tool_invocation_bridge_defined"
+        ),
+        "bridge_contract_defined": bridge_summary.get("bridge_contract_defined"),
+        "agent_tool_request_defined": bridge_summary.get("agent_tool_request_defined"),
+        "pre_u_tool_packet_defined": bridge_summary.get("pre_u_tool_packet_defined"),
+        "governance_decision_defined": bridge_summary.get("governance_decision_defined"),
+        "bridge_authorization_defined": bridge_summary.get("bridge_authorization_defined"),
+        "tool_invoked_through_bridge": bridge_summary.get("tool_invoked_through_bridge"),
+        "direct_tool_invocation_rejected": bridge_summary.get("direct_tool_invocation_rejected"),
+        "unsafe_bridge_request_rejected": bridge_summary.get("unsafe_bridge_request_rejected"),
+        "bridge_cieu_event_defined": bridge_summary.get("bridge_cieu_event_defined"),
+        "bridge_residual_delta_defined": bridge_summary.get("bridge_residual_delta_defined"),
+        "mission_bounded_autonomy_supported": bridge_summary.get("mission_bounded_autonomy_supported"),
+        "step_by_step_human_prompting_reduced": bridge_summary.get("step_by_step_human_prompting_reduced"),
+        "first_governed_tool_invocation_chain_created": bridge_summary.get(
+            "first_governed_tool_invocation_chain_created"
+        ),
+        "real_action_executed": bridge_summary.get("real_action_executed"),
+        "external_action_executed": bridge_summary.get("external_action_executed"),
+        "live_action_enabled": bridge_summary.get("live_action_enabled"),
+        "network_enabled": bridge_summary.get("network_enabled"),
+        "git_push_enabled": bridge_summary.get("git_push_enabled"),
+        "daemon_control_enabled": bridge_summary.get("daemon_control_enabled"),
+        "cieu_persistence_enabled": bridge_summary.get("cieu_persistence_enabled"),
+        "brain_writeback_enabled": bridge_summary.get("brain_writeback_enabled"),
+        "memory_ingestion_enabled": bridge_summary.get("memory_ingestion_enabled"),
+        "email_or_external_communication_enabled": bridge_summary.get(
+            "email_or_external_communication_enabled"
+        ),
+        "next_required_milestone": bridge_summary.get("next_required_milestone"),
+        "generated_summary": "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json",
+        "generated_contract": bridge_summary.get(
+            "generated_contract",
+            "governed_tool_invocation_bridge/generated/bridge_contract.json",
+        ),
+        "generated_pre_u_packet": bridge_summary.get(
+            "generated_pre_u_packet",
+            "governed_tool_invocation_bridge/generated/pre_u_tool_packet.json",
+        ),
+        "generated_bridged_result": bridge_summary.get(
+            "generated_bridged_result",
+            "governed_tool_invocation_bridge/generated/bridged_tool_result.json",
+        ),
+        "generated_cieu_event": bridge_summary.get(
+            "generated_cieu_event",
+            "governed_tool_invocation_bridge/generated/bridge_cieu_event.json",
+        ),
+        "warning": bridge_summary.get(
+            "warning",
+            "Tool invocation is routed through a Pre-U bridge for local read-only dry-run only.",
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -980,6 +1066,10 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "governed_readonly_observation_tool/generated/tool_readiness_summary.json",
         files_read,
     )
+    tool_bridge_generated_summary = load_optional_json(
+        "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -997,6 +1087,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     legacy_triage_summary = build_legacy_triage_summary(legacy_triage_generated_summary)
     observation_loop_summary = build_observation_loop_summary(observation_loop_generated_summary)
     readonly_tool_summary = build_readonly_tool_summary(readonly_tool_generated_summary)
+    tool_bridge_summary = build_tool_bridge_summary(tool_bridge_generated_summary)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -1087,6 +1178,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Governed observation loop exists as one read-only tick; recurring wrapper execution is not implemented.")
     if "Governed read-only observation tool exists for local dry-run calls only; Pre-U bridge invocation is not wired yet." not in open_gaps:
         open_gaps.append("Governed read-only observation tool exists for local dry-run calls only; Pre-U bridge invocation is not wired yet.")
+    if "Governed tool invocation bridge exists for local dry-run only; agent work proposal routing is not implemented yet." not in open_gaps:
+        open_gaps.append("Governed tool invocation bridge exists for local dry-run only; agent work proposal routing is not implemented yet.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -1115,6 +1208,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "legacy_triage_summary": legacy_triage_summary,
         "observation_loop_summary": observation_loop_summary,
         "readonly_tool_summary": readonly_tool_summary,
+        "tool_bridge_summary": tool_bridge_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -1168,6 +1262,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "legacy asset triage summary",
             "governed read-only observation loop summary",
             "first governed read-only observation tool wrapper summary",
+            "governed tool invocation bridge summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -1197,6 +1292,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "enabled CIEU runtime event persistence",
             "approved governed action registry",
             "Pre-U bridge invocation for governed read-only observation tool",
+            "agent team work proposal routing into governed tool invocation",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -1219,6 +1315,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "simulate a company autonomous work cycle without enabling live actions",
             "build L4.4 first governed read-only observation tool wrapper",
             "route the governed read-only observation tool through the Pre-U bridge",
+            "build L4.6 agent team work proposal to governed tool invocation",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -1237,6 +1334,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "legacy assets are triaged but not absorbed",
             "observation loop is read-only and not recurring",
             "governed read-only observation tool is local dry-run only and not routed through Pre-U yet",
+            "governed tool invocation bridge is local dry-run only and not connected to autonomous proposals yet",
         ],
         "safety_boundaries": [
             "no DB reads",
@@ -1261,6 +1359,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "legacy asset triage is classification-only and does not absorb assets",
             "governed observation loop reads generated summaries only and executes no actions",
             "governed read-only observation tool reads allowed generated summaries only and executes no actions",
+            "governed tool invocation bridge requires Pre-U/decision/authorization before local tool calls",
         ],
     }
 
@@ -1290,6 +1389,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/legacy_triage_summary.json",
             "console_read_model/generated/observation_loop_summary.json",
             "console_read_model/generated/readonly_tool_summary.json",
+            "console_read_model/generated/tool_bridge_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -1352,6 +1452,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "observation loop outputs. It summarizes a read-only tick from safe generated sources.\n\n"
         "`readonly_tool_summary.json` is derived from generated governed read-only\n"
         "observation tool outputs. It confirms the first local read-only wrapper is callable while live action remains disabled.\n\n"
+        "`tool_bridge_summary.json` is derived from generated governed tool\n"
+        "invocation bridge outputs. It confirms the read-only tool is called only after Pre-U packet, decision, and bridge authorization.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -1377,6 +1479,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/legacy_triage_summary.json", legacy_triage_summary, generated_files)
     write_json("console_read_model/generated/observation_loop_summary.json", observation_loop_summary, generated_files)
     write_json("console_read_model/generated/readonly_tool_summary.json", readonly_tool_summary, generated_files)
+    write_json("console_read_model/generated/tool_bridge_summary.json", tool_bridge_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -1437,6 +1540,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     legacy_triage = snapshot.get("legacy_triage_summary", {})
     observation_loop = snapshot.get("observation_loop_summary", {})
     readonly_tool = snapshot.get("readonly_tool_summary", {})
+    tool_bridge = snapshot.get("tool_bridge_summary", {})
     lines.extend(
         [
             "",
@@ -1801,6 +1905,32 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- memory_ingestion_enabled: {readonly_tool.get('memory_ingestion_enabled')}",
             f"- next_required_milestone: {readonly_tool.get('next_required_milestone')}",
             f"- Warning: {readonly_tool.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Governed Tool Invocation Bridge",
+            "",
+            f"- bridge_contract_defined: {tool_bridge.get('bridge_contract_defined')}",
+            f"- agent_tool_request_defined: {tool_bridge.get('agent_tool_request_defined')}",
+            f"- pre_u_tool_packet_defined: {tool_bridge.get('pre_u_tool_packet_defined')}",
+            f"- governance_decision_defined: {tool_bridge.get('governance_decision_defined')}",
+            f"- bridge_authorization_defined: {tool_bridge.get('bridge_authorization_defined')}",
+            f"- tool_invoked_through_bridge: {tool_bridge.get('tool_invoked_through_bridge')}",
+            f"- direct_tool_invocation_rejected: {tool_bridge.get('direct_tool_invocation_rejected')}",
+            f"- unsafe_bridge_request_rejected: {tool_bridge.get('unsafe_bridge_request_rejected')}",
+            f"- bridge_cieu_event_defined: {tool_bridge.get('bridge_cieu_event_defined')}",
+            f"- bridge_residual_delta_defined: {tool_bridge.get('bridge_residual_delta_defined')}",
+            f"- first_governed_tool_invocation_chain_created: {tool_bridge.get('first_governed_tool_invocation_chain_created')}",
+            f"- real_action_executed: {tool_bridge.get('real_action_executed')}",
+            f"- external_action_executed: {tool_bridge.get('external_action_executed')}",
+            f"- live_action_enabled: {tool_bridge.get('live_action_enabled')}",
+            f"- cieu_persistence_enabled: {tool_bridge.get('cieu_persistence_enabled')}",
+            f"- brain_writeback_enabled: {tool_bridge.get('brain_writeback_enabled')}",
+            f"- memory_ingestion_enabled: {tool_bridge.get('memory_ingestion_enabled')}",
+            f"- next_required_milestone: {tool_bridge.get('next_required_milestone')}",
+            f"- Warning: {tool_bridge.get('warning')}",
         ]
     )
     lines.extend(

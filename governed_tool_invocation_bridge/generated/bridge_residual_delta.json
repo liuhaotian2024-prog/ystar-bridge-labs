@@ -1,0 +1,22 @@
+{
+  "schema_name": "ystar.governed_tool_invocation_bridge.generated.bridge_residual_delta",
+  "schema_version": "v0",
+  "delta_id": "bridge-residual-delta-001",
+  "event_id": "bridge-cieu-event-001",
+  "predicted_vs_actual_summary": {
+    "predicted": "A normalized company-state observation is available for next work selection.",
+    "actual": "Bridge invoked tool with status success.",
+    "residual": "Invocation remained local read-only with no live, external, CIEU persistence, brain, or memory action."
+  },
+  "residual_delta": {
+    "status": "dry_run_bridge_delta_only",
+    "semantic_truth_status": "not_evaluated",
+    "delta_summary": "Pre-U bridge successfully constrained and invoked the read-only tool."
+  },
+  "learning_eligibility": false,
+  "curation_required": true,
+  "direct_brain_writeback_allowed": false,
+  "direct_memory_ingestion_allowed": false,
+  "next_review_required": true,
+  "notes": "Residual delta is a dry-run simulation only and is not eligible for direct writeback."
+}

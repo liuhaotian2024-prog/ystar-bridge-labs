@@ -1,0 +1,19 @@
+{
+  "schema_name": "ystar.governed_tool_invocation_bridge.governance_decision_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "packet_id",
+    "decision",
+    "decision_reason",
+    "allowed_only_as_local_readonly_dry_run",
+    "agent_direct_tool_invocation_allowed",
+    "live_action_allowed",
+    "external_action_allowed",
+    "cieu_persistence_allowed",
+    "brain_writeback_allowed",
+    "memory_ingestion_allowed"
+  ]
+}
+

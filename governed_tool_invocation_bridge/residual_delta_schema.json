@@ -1,0 +1,17 @@
+{
+  "schema_name": "ystar.governed_tool_invocation_bridge.residual_delta_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "delta_id",
+    "event_id",
+    "predicted_vs_actual_summary",
+    "residual_delta",
+    "learning_eligibility",
+    "curation_required",
+    "direct_brain_writeback_allowed",
+    "direct_memory_ingestion_allowed",
+    "next_review_required"
+  ]
+}
+

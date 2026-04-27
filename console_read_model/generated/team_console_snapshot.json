@@ -27,6 +27,7 @@
     "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
     "governed_observation_loop/generated/governed_observation_loop_summary.json",
     "governed_readonly_observation_tool/generated/tool_readiness_summary.json",
+    "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",
@@ -256,8 +257,8 @@
     "schema_version": "v0",
     "framework_status": "path_inventory_only",
     "current_mining_level": 0,
-    "artifacts_classified": 222,
-    "unsafe_artifacts_count": 173,
+    "artifacts_classified": 223,
+    "unsafe_artifacts_count": 174,
     "classes_seen": {
       "ACTIVE_AGENT_MARKER": 17,
       "BACKUP_DB": 1,
@@ -266,7 +267,7 @@
       "DAILY_REPORT": 6,
       "DB_CORE": 1,
       "DB_SIDECARE": 6,
-      "DREAM_REPORT": 33,
+      "DREAM_REPORT": 34,
       "DRIFT_REPORT": 4,
       "ESCALATION_REPORT": 23,
       "FRAMEWORK_FILE": 5,
@@ -374,8 +375,8 @@
   "artifact_disposition_summary": {
     "schema_name": "ystar.console_read_model.generated.artifact_disposition_summary",
     "schema_version": "v0",
-    "total_artifacts": 222,
-    "artifacts_with_disposition": 222,
+    "total_artifacts": 223,
+    "artifacts_with_disposition": 223,
     "dispositions": {
       "deferred_requires_marker_metadata_adapter": 26,
       "deferred_sidecar_or_transaction_file": 6,
@@ -385,7 +386,7 @@
       "deferred_requires_bounded_log_adapter": 31,
       "ignored_generated_cache": 31,
       "safe_mined_to_review_queue": 20,
-      "deferred_markdown_report_not_selected": 47
+      "deferred_markdown_report_not_selected": 48
     },
     "artifact_classes": {
       "DAEMON_STATE": 4,
@@ -399,7 +400,7 @@
       "ACTIVE_AGENT_MARKER": 17,
       "PYCACHE": 31,
       "BACKUP_DB": 1,
-      "DREAM_REPORT": 33,
+      "DREAM_REPORT": 34,
       "DAILY_REPORT": 6,
       "DRIFT_REPORT": 4,
       "ESCALATION_REPORT": 23,
@@ -412,12 +413,12 @@
       "deferred_requires_classification": 10,
       "deferred_requires_readonly_db_adapter": 2,
       "deferred_requires_bounded_log_adapter": 31,
-      "deferred_markdown_report_not_selected": 47
+      "deferred_markdown_report_not_selected": 48
     },
     "ignored_generated_cache": 31,
     "forbidden_direct_read_count": 106,
     "evidence_scoring_status": {
-      "not_started": 222
+      "not_started": 223
     },
     "generated_disposition_index": "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
     "warning": "Disposition is not ingestion. No brain/memory/CIEU writes are allowed."
@@ -801,6 +802,41 @@
     "generated_cieu_event": "governed_readonly_observation_tool/generated/tool_cieu_event.json",
     "warning": "Read-only wrapper is callable locally, but live execution and persistence remain disabled."
   },
+  "tool_bridge_summary": {
+    "schema_name": "ystar.console_read_model.generated.tool_bridge_summary",
+    "schema_version": "v0",
+    "governed_tool_invocation_bridge_defined": true,
+    "bridge_contract_defined": true,
+    "agent_tool_request_defined": true,
+    "pre_u_tool_packet_defined": true,
+    "governance_decision_defined": true,
+    "bridge_authorization_defined": true,
+    "tool_invoked_through_bridge": true,
+    "direct_tool_invocation_rejected": true,
+    "unsafe_bridge_request_rejected": true,
+    "bridge_cieu_event_defined": true,
+    "bridge_residual_delta_defined": true,
+    "mission_bounded_autonomy_supported": true,
+    "step_by_step_human_prompting_reduced": true,
+    "first_governed_tool_invocation_chain_created": true,
+    "real_action_executed": false,
+    "external_action_executed": false,
+    "live_action_enabled": false,
+    "network_enabled": false,
+    "git_push_enabled": false,
+    "daemon_control_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "email_or_external_communication_enabled": false,
+    "next_required_milestone": "L4.6 Agent Team Work Proposal to Governed Tool Invocation v0",
+    "generated_summary": "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json",
+    "generated_contract": "governed_tool_invocation_bridge/generated/bridge_contract.json",
+    "generated_pre_u_packet": "governed_tool_invocation_bridge/generated/pre_u_tool_packet.json",
+    "generated_bridged_result": "governed_tool_invocation_bridge/generated/bridged_tool_result.json",
+    "generated_cieu_event": "governed_tool_invocation_bridge/generated/bridge_cieu_event.json",
+    "warning": "Tool invocation is routed through a Pre-U bridge for local read-only dry-run only. Live execution and persistence remain disabled."
+  },
   "open_gaps": [
     "Static console loader exists; no frontend UI yet.",
     "No frontend UI.",
@@ -829,7 +865,8 @@
     "Autonomous work cycle exists as a simulator only; no real action execution is implemented.",
     "Legacy asset triage exists, but no absorption or wrapper application workflow exists.",
     "Governed observation loop exists as one read-only tick; recurring wrapper execution is not implemented.",
-    "Governed read-only observation tool exists for local dry-run calls only; Pre-U bridge invocation is not wired yet."
+    "Governed read-only observation tool exists for local dry-run calls only; Pre-U bridge invocation is not wired yet.",
+    "Governed tool invocation bridge exists for local dry-run only; agent work proposal routing is not implemented yet."
   ],
   "warnings": [
     "Ethan execution channels are present as reference-only boundaries, not runtime launchers."

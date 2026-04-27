@@ -1,0 +1,70 @@
+{
+  "schema_name": "ystar.governed_tool_invocation_bridge.generated.pre_u_tool_packet",
+  "schema_version": "v0",
+  "packet_id": "pre-u-tool-packet-001",
+  "agent_id": "Aiden-CEO",
+  "tool_id": "governed_readonly_observation_tool_v0",
+  "request_id": "agent-tool-request-001",
+  "Xt": {
+    "request_type": "company_state_observation",
+    "supporting_agent": "Samantha-Secretary",
+    "requested_summary_level": "executive",
+    "requested_sources": [
+      "mission-dashboard",
+      "company-state-digest",
+      "observation-loop-summary",
+      "legacy-triage-summary",
+      "autonomous-cycle-summary",
+      "autonomy-inventory-summary",
+      "live-boundary-summary",
+      "cieu-boundary-summary"
+    ]
+  },
+  "Y_star": "Use governed local read-only observation to reduce uncertainty without live or external action.",
+  "candidate_U": [
+    {
+      "u_id": "U1",
+      "summary": "invoke governed read-only observation tool through bridge",
+      "local_readonly": true,
+      "live_enabled": false,
+      "expected_residual": "lowest_when_request_is_safe"
+    },
+    {
+      "u_id": "U2",
+      "summary": "defer invocation and request revision",
+      "local_readonly": true,
+      "live_enabled": false,
+      "expected_residual": "medium_when_more_context_is_needed"
+    },
+    {
+      "u_id": "U3",
+      "summary": "deny invocation due to unsafe request",
+      "local_readonly": false,
+      "live_enabled": false,
+      "expected_residual": "lowest_when_request_is_unsafe"
+    }
+  ],
+  "predicted_Y_t1": "A normalized company-state observation is available for next work selection.",
+  "predicted_R_t1": "Residual risk remains bounded because all live and writeback paths are disabled.",
+  "selected_U": {
+    "u_id": "U1",
+    "summary": "invoke governed read-only observation tool through bridge",
+    "local_readonly": true,
+    "live_enabled": false,
+    "expected_residual": "lowest_when_request_is_safe"
+  },
+  "why_min_residual": "Selected local read-only invocation because request is low-risk and forbids live/external/writeback behavior.",
+  "risk_tier": "low",
+  "governance_expectations": {
+    "requires_y_star_gov": true,
+    "requires_bridge_authorization": true,
+    "agent_direct_tool_invocation_allowed": false
+  },
+  "cieu_link_policy": {
+    "cieu_event_required": true,
+    "persistence_enabled": false,
+    "curation_required": true
+  },
+  "tool_contract_ref": "governed_readonly_observation_tool/generated/tool_contract.json",
+  "allowed_source_registry_ref": "governed_readonly_observation_tool/generated/allowed_source_registry.json"
+}

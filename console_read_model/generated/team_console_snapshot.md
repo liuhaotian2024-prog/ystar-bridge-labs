@@ -64,6 +64,7 @@ Ready now:
 - legacy asset triage summary
 - governed read-only observation loop summary
 - first governed read-only observation tool wrapper summary
+- governed tool invocation bridge summary
 
 Not ready:
 - runtime generator
@@ -93,13 +94,14 @@ Not ready:
 - enabled CIEU runtime event persistence
 - approved governed action registry
 - Pre-U bridge invocation for governed read-only observation tool
+- agent team work proposal routing into governed tool invocation
 
 ## Runtime Artifact Quarantine Summary
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 222
-- Unsafe artifacts count: 173
+- Artifacts classified: 223
+- Unsafe artifacts count: 174
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -108,7 +110,7 @@ Not ready:
   - DAILY_REPORT: 6
   - DB_CORE: 1
   - DB_SIDECARE: 6
-  - DREAM_REPORT: 33
+  - DREAM_REPORT: 34
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
   - FRAMEWORK_FILE: 5
@@ -152,13 +154,13 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 222
-- Artifacts with disposition: 222
+- Total artifacts: 223
+- Artifacts with disposition: 223
 - Safe-mined to review queue: 20
 - Forbidden direct read count: 106
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
-  - deferred_markdown_report_not_selected: 47
+  - deferred_markdown_report_not_selected: 48
   - deferred_requires_bounded_log_adapter: 31
   - deferred_requires_classification: 10
   - deferred_requires_marker_metadata_adapter: 26
@@ -168,7 +170,7 @@ Not ready:
   - ignored_or_non_runtime: 49
   - safe_mined_to_review_queue: 20
 - Evidence scoring status:
-  - not_started: 222
+  - not_started: 223
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -415,6 +417,28 @@ Not ready:
 - next_required_milestone: L4.5 Governed Tool Invocation Through Pre-U Bridge v0
 - Warning: Read-only wrapper is callable locally, but live execution and persistence remain disabled.
 
+## Governed Tool Invocation Bridge
+
+- bridge_contract_defined: True
+- agent_tool_request_defined: True
+- pre_u_tool_packet_defined: True
+- governance_decision_defined: True
+- bridge_authorization_defined: True
+- tool_invoked_through_bridge: True
+- direct_tool_invocation_rejected: True
+- unsafe_bridge_request_rejected: True
+- bridge_cieu_event_defined: True
+- bridge_residual_delta_defined: True
+- first_governed_tool_invocation_chain_created: True
+- real_action_executed: False
+- external_action_executed: False
+- live_action_enabled: False
+- cieu_persistence_enabled: False
+- brain_writeback_enabled: False
+- memory_ingestion_enabled: False
+- next_required_milestone: L4.6 Agent Team Work Proposal to Governed Tool Invocation v0
+- Warning: Tool invocation is routed through a Pre-U bridge for local read-only dry-run only. Live execution and persistence remain disabled.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -445,6 +469,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - simulate a company autonomous work cycle without enabling live actions
 - build L4.4 first governed read-only observation tool wrapper
 - route the governed read-only observation tool through the Pre-U bridge
+- build L4.6 agent team work proposal to governed tool invocation
 
 ## Warnings / Gaps
 
@@ -477,3 +502,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Legacy asset triage exists, but no absorption or wrapper application workflow exists.
 - Governed observation loop exists as one read-only tick; recurring wrapper execution is not implemented.
 - Governed read-only observation tool exists for local dry-run calls only; Pre-U bridge invocation is not wired yet.
+- Governed tool invocation bridge exists for local dry-run only; agent work proposal routing is not implemented yet.

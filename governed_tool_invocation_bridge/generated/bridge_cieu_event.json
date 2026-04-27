@@ -1,0 +1,62 @@
+{
+  "schema_name": "ystar.governed_tool_invocation_bridge.generated.bridge_cieu_event",
+  "schema_version": "v0",
+  "event_id": "bridge-cieu-event-001",
+  "dry_run_only": true,
+  "persistence_enabled": false,
+  "bridge_id": "governed_tool_invocation_bridge_v0",
+  "tool_id": "governed_readonly_observation_tool_v0",
+  "request_id": "agent-tool-request-001",
+  "packet_id": "pre-u-tool-packet-001",
+  "decision_id": "governance-decision-tool-bridge-001",
+  "Xt": {
+    "request_type": "company_state_observation",
+    "supporting_agent": "Samantha-Secretary",
+    "requested_summary_level": "executive",
+    "requested_sources": [
+      "mission-dashboard",
+      "company-state-digest",
+      "observation-loop-summary",
+      "legacy-triage-summary",
+      "autonomous-cycle-summary",
+      "autonomy-inventory-summary",
+      "live-boundary-summary",
+      "cieu-boundary-summary"
+    ]
+  },
+  "U": {
+    "u_id": "U1",
+    "summary": "invoke governed read-only observation tool through bridge",
+    "local_readonly": true,
+    "live_enabled": false,
+    "expected_residual": "lowest_when_request_is_safe"
+  },
+  "Y_star": "Use governed local read-only observation to reduce uncertainty without live or external action.",
+  "predicted_Y_t1": "A normalized company-state observation is available for next work selection.",
+  "predicted_R_t1": "Residual risk remains bounded because all live and writeback paths are disabled.",
+  "actual_Y_t1": "Bridge invoked tool with status success.",
+  "actual_R_t1": "Invocation remained local read-only with no live, external, CIEU persistence, brain, or memory action.",
+  "residual_delta": {
+    "status": "dry_run_bridge_delta_only",
+    "semantic_truth_status": "not_evaluated",
+    "delta_summary": "Pre-U bridge successfully constrained and invoked the read-only tool."
+  },
+  "evidence_refs": [
+    "governed_tool_invocation_bridge/generated/bridge_contract.json",
+    "governed_tool_invocation_bridge/generated/pre_u_tool_packet.json",
+    "governed_tool_invocation_bridge/generated/governance_decision_envelope.json",
+    "governed_tool_invocation_bridge/generated/bridge_authorization.json",
+    "governed_tool_invocation_bridge/generated/bridged_tool_result.json"
+  ],
+  "write_policy": {
+    "persistence_allowed": false,
+    "cieu_write_allowed": false,
+    "brain_writeback_allowed": false,
+    "memory_ingestion_allowed": false
+  },
+  "learning_eligibility": false,
+  "curation_required": true,
+  "direct_brain_writeback_allowed": false,
+  "direct_memory_ingestion_allowed": false,
+  "raw_artifact_ingestion_allowed": false
+}

@@ -1,0 +1,31 @@
+{
+  "schema_name": "ystar.governed_tool_invocation_bridge.generated.rejected_unsafe_bridge_request",
+  "schema_version": "v0",
+  "rejection_id": "rejected-unsafe-bridge-request-001",
+  "status": "rejected",
+  "reason": "unsafe_requested_source_or_operation_rejected_before_tool_invocation",
+  "request": {
+    "request_id": "unsafe-agent-tool-request-001",
+    "tool_id": "governed_readonly_observation_tool_v0",
+    "requested_sources": [
+      "unsafe-unregistered-source"
+    ],
+    "live_action_requested": true,
+    "external_action_requested": false,
+    "brain_writeback_requested": false,
+    "memory_ingestion_requested": false,
+    "cieu_persistence_requested": false
+  },
+  "blocked_reasons": [
+    "source_not_in_allowed_registry",
+    "live_action_requested_forbidden"
+  ],
+  "tool_invoked": false,
+  "read_sources": [],
+  "real_action_executed": false,
+  "external_action_executed": false,
+  "live_action_enabled": false,
+  "cieu_persistence_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false
+}
