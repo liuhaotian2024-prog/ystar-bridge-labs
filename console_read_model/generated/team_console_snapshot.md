@@ -53,6 +53,7 @@ Ready now:
 - runtime artifact backlog disposition summary
 - structural evidence review summary
 - dry-run Labs-Gov alignment bridge snapshot
+- multi-role dry-run Pre-U governance summary
 
 Not ready:
 - runtime generator
@@ -74,13 +75,14 @@ Not ready:
 - semantic truth validation for evidence records
 - review decision application workflow
 - real hook integration for Labs-Gov bridge
+- runtime Pre-U packet execution
 
 ## Runtime Artifact Quarantine Summary
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 198
-- Unsafe artifacts count: 168
+- Artifacts classified: 206
+- Unsafe artifacts count: 169
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -89,13 +91,13 @@ Not ready:
   - DAILY_REPORT: 6
   - DB_CORE: 1
   - DB_SIDECARE: 6
-  - DREAM_REPORT: 28
+  - DREAM_REPORT: 29
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
-  - FRAMEWORK_FILE: 1
+  - FRAMEWORK_FILE: 5
   - LOG_RUNTIME: 31
   - PYCACHE: 31
-  - UNKNOWN_OR_NON_RUNTIME: 29
+  - UNKNOWN_OR_NON_RUNTIME: 32
   - UNKNOWN_RUNTIME_ARTIFACT: 10
   - WHITELIST_REPORT: 1
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
@@ -133,23 +135,23 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 198
-- Artifacts with disposition: 198
+- Total artifacts: 206
+- Artifacts with disposition: 206
 - Safe-mined to review queue: 20
 - Forbidden direct read count: 106
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
-  - deferred_markdown_report_not_selected: 42
+  - deferred_markdown_report_not_selected: 43
   - deferred_requires_bounded_log_adapter: 31
   - deferred_requires_classification: 10
   - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 31
-  - ignored_or_non_runtime: 30
+  - ignored_or_non_runtime: 37
   - safe_mined_to_review_queue: 20
 - Evidence scoring status:
-  - not_started: 198
+  - not_started: 206
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -187,6 +189,22 @@ Not ready:
 - brain_writeback_performed: False
 - Warning: Bridge decision snapshot is dry-run only and is not a CIEU record.
 
+## Labs Pre-U Governance Dry Run
+
+- Packets generated: 3
+- Roles covered: Aiden-CEO, Ethan-CTO, Samantha-Secretary
+- Decision counts:
+  - allow: 3
+- Decisions by role:
+  - Aiden-CEO: allow (exit 0)
+  - Ethan-CTO: allow (exit 0)
+  - Samantha-Secretary: allow (exit 0)
+- dry_run_only: True
+- action_executed: False
+- cieu_written: False
+- brain_writeback_performed: False
+- Warning: Generated Pre-U governance decisions are dry-run only and are not runtime actions.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -208,6 +226,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - create evidence scoring schema for disposition records
 - define manual decision application for evidence review stubs
 - connect bridge decisions to future Pre-U/CIEU dry-run examples without executing actions
+- define a reviewed path from Pre-U dry-run snapshots to future CIEU prediction-delta examples
 
 ## Warnings / Gaps
 
@@ -229,3 +248,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Backlog disposition index exists, but evidence scoring and adapter extraction are not implemented.
 - Evidence review pack exists, but semantic truth validation and decision application are not implemented.
 - Labs-Gov bridge exists as a dry-run snapshot only; no real hook integration exists.
+- Pre-U generator exists for dry-run governance only; no runtime packet execution exists.

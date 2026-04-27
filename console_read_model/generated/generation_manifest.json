@@ -13,6 +13,7 @@
     "console_read_model/generated/artifact_disposition_summary.json",
     "console_read_model/generated/evidence_review_summary.json",
     "console_read_model/generated/governance_bridge_summary.json",
+    "console_read_model/generated/pre_u_governance_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "source_files": [
@@ -29,6 +30,7 @@
     "runtime_artifact_quarantine/evidence_review/generated/review_decision_stub.json",
     "runtime_artifact_quarantine/evidence_review/generated/hint_routing_index.json",
     "labs_governance_bridge/generated/governance_decision_snapshot.json",
+    "labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",

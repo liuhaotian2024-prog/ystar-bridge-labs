@@ -635,6 +635,37 @@ def main() -> int:
         else:
             report.fail("generated snapshot missing governance_bridge_summary")
 
+        pre_u_governance_summary = snapshot.get("pre_u_governance_summary")
+        if pre_u_governance_summary:
+            report.pass_("generated snapshot contains pre_u_governance_summary")
+            for field in [
+                "packets_generated",
+                "roles_covered",
+                "decision_counts",
+                "decisions_by_role",
+                "dry_run_only",
+                "action_executed",
+                "cieu_written",
+                "brain_writeback_performed",
+                "memory_ingestion_performed",
+                "warning",
+            ]:
+                if field in pre_u_governance_summary:
+                    report.pass_(f"snapshot pre_u_governance_summary field present: {field}")
+                else:
+                    report.fail(f"snapshot pre_u_governance_summary missing field: {field}")
+            if set(pre_u_governance_summary.get("roles_covered", [])) != set(required_agents):
+                report.fail("snapshot pre_u_governance_summary must cover required agents")
+            if pre_u_governance_summary.get("packets_generated") != len(required_agents):
+                report.fail("snapshot pre_u_governance_summary must include three generated packets")
+            if pre_u_governance_summary.get("dry_run_only") is not True:
+                report.fail("snapshot pre_u_governance_summary must remain dry_run_only")
+            for field in ["action_executed", "cieu_written", "brain_writeback_performed", "memory_ingestion_performed"]:
+                if pre_u_governance_summary.get(field) is not False:
+                    report.fail(f"snapshot pre_u_governance_summary must keep {field}=false")
+        else:
+            report.fail("generated snapshot missing pre_u_governance_summary")
+
     quarantine = generated_json.get("console_read_model/generated/quarantine_summary.json")
     if quarantine:
         for field in [
@@ -789,6 +820,34 @@ def main() -> int:
         ]:
             if governance_bridge.get(field) is not False:
                 report.fail(f"generated governance bridge summary must keep {field}=false")
+
+    pre_u_governance = generated_json.get("console_read_model/generated/pre_u_governance_summary.json")
+    if pre_u_governance:
+        for field in [
+            "packets_generated",
+            "roles_covered",
+            "decision_counts",
+            "decisions_by_role",
+            "dry_run_only",
+            "action_executed",
+            "cieu_written",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "warning",
+        ]:
+            if field in pre_u_governance:
+                report.pass_(f"generated Pre-U governance summary field present: {field}")
+            else:
+                report.fail(f"generated Pre-U governance summary missing field: {field}")
+        if set(pre_u_governance.get("roles_covered", [])) != set(required_agents):
+            report.fail("generated Pre-U governance summary must cover required agents")
+        if pre_u_governance.get("packets_generated") != len(required_agents):
+            report.fail("generated Pre-U governance summary must include three generated packets")
+        if pre_u_governance.get("dry_run_only") is not True:
+            report.fail("generated Pre-U governance summary must remain dry_run_only")
+        for field in ["action_executed", "cieu_written", "brain_writeback_performed", "memory_ingestion_performed"]:
+            if pre_u_governance.get(field) is not False:
+                report.fail(f"generated Pre-U governance summary must keep {field}=false")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

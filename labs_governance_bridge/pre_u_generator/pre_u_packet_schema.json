@@ -1,0 +1,34 @@
+{
+  "schema_name": "ystar.labs_governance_bridge.pre_u_packet_schema",
+  "schema_version": "v0",
+  "required_fields": [
+    "packet_id",
+    "task_id",
+    "agent_id",
+    "role",
+    "declared_Y_star",
+    "Xt",
+    "m_functor",
+    "candidate_U",
+    "selected_U",
+    "predicted_Yt_plus_1",
+    "predicted_Rt_plus_1",
+    "why_min_residual",
+    "risk_tier",
+    "governance_expectations",
+    "cieu_link_policy",
+    "evidence_hint_refs",
+    "packet_status",
+    "action_executed",
+    "brain_writeback_allowed",
+    "memory_ingestion_allowed",
+    "cieu_write_allowed"
+  ],
+  "safety_contract": {
+    "packet_status": "generated_dry_run_only",
+    "action_executed": false,
+    "brain_writeback_allowed": false,
+    "memory_ingestion_allowed": false,
+    "cieu_write_allowed": false
+  }
+}

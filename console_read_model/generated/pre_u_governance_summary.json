@@ -1,0 +1,49 @@
+{
+  "schema_name": "ystar.console_read_model.generated.pre_u_governance_summary",
+  "schema_version": "v0",
+  "packets_generated": 3,
+  "roles_covered": [
+    "Aiden-CEO",
+    "Ethan-CTO",
+    "Samantha-Secretary"
+  ],
+  "decision_counts": {
+    "allow": 3
+  },
+  "decisions_by_role": {
+    "Aiden-CEO": {
+      "packet_id": "preu-preu-aiden-labs-planning-001",
+      "decision": "allow",
+      "exit_code": 0,
+      "allow_execution": true,
+      "require_revision": false,
+      "deny": false,
+      "escalate": false
+    },
+    "Ethan-CTO": {
+      "packet_id": "preu-preu-ethan-safe-adapter-001",
+      "decision": "allow",
+      "exit_code": 0,
+      "allow_execution": true,
+      "require_revision": false,
+      "deny": false,
+      "escalate": false
+    },
+    "Samantha-Secretary": {
+      "packet_id": "preu-preu-samantha-handoff-001",
+      "decision": "allow",
+      "exit_code": 0,
+      "allow_execution": true,
+      "require_revision": false,
+      "deny": false,
+      "escalate": false
+    }
+  },
+  "dry_run_only": true,
+  "action_executed": false,
+  "cieu_written": false,
+  "brain_writeback_performed": false,
+  "memory_ingestion_performed": false,
+  "generated_decision_snapshots": "labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json",
+  "warning": "Generated Pre-U governance decisions are dry-run only and are not runtime actions."
+}

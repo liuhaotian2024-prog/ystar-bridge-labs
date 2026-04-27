@@ -57,6 +57,21 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
+        "Build multi-role Pre-U packets",
+        ["python3", "labs_governance_bridge/pre_u_generator/tools/build_pre_u_packets.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Build Pre-U hook envelopes",
+        ["python3", "labs_governance_bridge/pre_u_generator/tools/build_hook_envelopes_from_packets.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Run multi-role Pre-U governance dry-run",
+        ["python3", "labs_governance_bridge/pre_u_generator/tools/run_pre_u_governance_dry_run.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
         "Build team console snapshot",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
@@ -91,6 +106,10 @@ VALIDATION_CHECKS = [
     Check(
         "Validate JSON: governance_bridge_summary.json",
         ["python3", "-m", "json.tool", "console_read_model/generated/governance_bridge_summary.json"],
+    ),
+    Check(
+        "Validate JSON: pre_u_governance_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/pre_u_governance_summary.json"],
     ),
     Check(
         "Validate JSON: markdown_report_candidates.json",
@@ -149,6 +168,22 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "labs_governance_bridge/generated/bridge_run_manifest.json"],
     ),
     Check(
+        "Validate JSON: pre_u_packet_manifest.json",
+        ["python3", "-m", "json.tool", "labs_governance_bridge/pre_u_generator/generated/pre_u_packet_manifest.json"],
+    ),
+    Check(
+        "Validate JSON: hook_envelope_manifest.json",
+        ["python3", "-m", "json.tool", "labs_governance_bridge/pre_u_generator/generated/hook_envelope_manifest.json"],
+    ),
+    Check(
+        "Validate JSON: governance_decision_snapshots.json",
+        ["python3", "-m", "json.tool", "labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json"],
+    ),
+    Check(
+        "Validate JSON: pre_u_governance_run_manifest.json",
+        ["python3", "-m", "json.tool", "labs_governance_bridge/pre_u_generator/generated/pre_u_governance_run_manifest.json"],
+    ),
+    Check(
         "Validate JSON: generation_manifest.json",
         ["python3", "-m", "json.tool", "console_read_model/generated/generation_manifest.json"],
     ),
@@ -187,6 +222,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: governance-bridge",
         ["python3", "console_read_model/cli/team_console.py", "governance-bridge"],
+    ),
+    Check(
+        "CLI smoke: pre-u-governance",
+        ["python3", "console_read_model/cli/team_console.py", "pre-u-governance"],
     ),
     Check(
         "CLI smoke: sources",

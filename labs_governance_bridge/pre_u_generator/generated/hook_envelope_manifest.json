@@ -1,0 +1,26 @@
+{
+  "action_execution_allowed": false,
+  "brain_writeback_allowed": false,
+  "cieu_write_allowed": false,
+  "dry_run_only": true,
+  "envelopes_generated": 3,
+  "generated_envelopes": [
+    "labs_governance_bridge/pre_u_generator/generated/aiden_hook_envelope.json",
+    "labs_governance_bridge/pre_u_generator/generated/ethan_hook_envelope.json",
+    "labs_governance_bridge/pre_u_generator/generated/samantha_hook_envelope.json"
+  ],
+  "memory_ingestion_allowed": false,
+  "roles_covered": [
+    "Aiden-CEO",
+    "Ethan-CTO",
+    "Samantha-Secretary"
+  ],
+  "schema_name": "ystar.labs_governance_bridge.hook_envelope_manifest",
+  "schema_version": "v0",
+  "source_packets": [
+    "labs_governance_bridge/pre_u_generator/generated/aiden_pre_u_packet.json",
+    "labs_governance_bridge/pre_u_generator/generated/ethan_pre_u_packet.json",
+    "labs_governance_bridge/pre_u_generator/generated/samantha_pre_u_packet.json"
+  ],
+  "warning": "Hook envelopes are for Y-star-gov dry-run judgment only."
+}

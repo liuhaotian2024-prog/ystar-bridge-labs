@@ -7,4 +7,5 @@
 - No semantic truth validation.
 - No automatic candidate approval.
 - No live runtime task adapter.
-- No multi-agent bridge packet generation.
+- Multi-role Pre-U packet generation exists, but it is still dry-run only.
+- No runtime Pre-U packet execution.

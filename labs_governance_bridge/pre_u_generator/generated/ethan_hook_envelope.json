@@ -1,0 +1,106 @@
+{
+  "Xt": {
+    "context": {
+      "source_layer": "curated_read_model",
+      "summary": "Ethan frames a technical plan candidate from curated read-model constraints."
+    },
+    "evidence_hint_refs": [
+      {
+        "agent_scope": "Ethan-CTO",
+        "candidate_id": "mdcand-001",
+        "evidence_id": "evidence-001",
+        "ingestion_status": "not_ingested",
+        "readiness": "hint_only",
+        "review_id": "review-001",
+        "route": "memory_continuity_hint_queue",
+        "status": "not_approved"
+      },
+      {
+        "agent_scope": "Ethan-CTO",
+        "candidate_id": "mdcand-001",
+        "evidence_id": "evidence-001",
+        "ingestion_status": "not_ingested",
+        "readiness": "hint_only",
+        "review_id": "review-001",
+        "route": "role_brain_capsule_hint_queue",
+        "status": "not_approved"
+      },
+      {
+        "agent_scope": "Ethan-CTO",
+        "candidate_id": "mdcand-002",
+        "evidence_id": "evidence-002",
+        "ingestion_status": "not_ingested",
+        "readiness": "hint_only",
+        "review_id": "review-002",
+        "route": "memory_continuity_hint_queue",
+        "status": "not_approved"
+      },
+      {
+        "agent_scope": "Ethan-CTO",
+        "candidate_id": "mdcand-002",
+        "evidence_id": "evidence-002",
+        "ingestion_status": "not_ingested",
+        "readiness": "hint_only",
+        "review_id": "review-002",
+        "route": "role_brain_capsule_hint_queue",
+        "status": "not_approved"
+      },
+      {
+        "agent_scope": "Ethan-CTO",
+        "candidate_id": "mdcand-003",
+        "evidence_id": "evidence-003",
+        "ingestion_status": "not_ingested",
+        "readiness": "hint_only",
+        "review_id": "review-003",
+        "route": "memory_continuity_hint_queue",
+        "status": "not_approved"
+      }
+    ],
+    "role_specific_focus": [
+      "technical architecture",
+      "implementation strategy",
+      "code and ruling interpretation",
+      "engineering delegation",
+      "runtime feasibility"
+    ]
+  },
+  "agent_capsule_ref": "agent_brains/Ethan-CTO/brain_profile.json",
+  "agent_id": "Ethan-CTO",
+  "candidate_U": [
+    {
+      "action_type": "draft_safe_adapter_design",
+      "description": "Prepare a non-executing adapter design outline for later governance review.",
+      "id": "ethan-u1",
+      "predicted_Rt_plus_1": {
+        "summary": "Residual decreases by identifying adapter boundaries before implementation."
+      },
+      "predicted_Yt_plus_1": "A safe adapter design candidate exists without touching runtime stores."
+    }
+  ],
+  "cieu_link_policy": {
+    "compare_predicted_vs_actual": true,
+    "dry_run_no_cieu_write": true,
+    "should_emit_post_action_event": false,
+    "should_emit_pre_action_event": false
+  },
+  "declared_Y_star": {
+    "summary": "Propose an implementation plan for a future safe adapter without running it"
+  },
+  "governance_expectations": {
+    "requires_high_risk_review": false,
+    "requires_m_functor_validation": true,
+    "requires_scope_validation": true,
+    "requires_y_star_validation": true
+  },
+  "hook_event_id": "preu-governance-preu-ethan-safe-adapter-001",
+  "m_functor": {
+    "non_execution_boundary": true,
+    "source": "labs_governance_bridge/pre_u_generator",
+    "summary": "Map Ethan-CTO curated task envelope into dry-run governance packet."
+  },
+  "packet_id": "preu-preu-ethan-safe-adapter-001",
+  "risk_tier": "normal",
+  "selected_U_id": "ethan-u1",
+  "task_id": "preu-ethan-safe-adapter-001",
+  "why_min_residual": "ethan-u1 is lowest residual because it designs before executing or reading unsafe stores."
+}

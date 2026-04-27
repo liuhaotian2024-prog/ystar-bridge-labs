@@ -1,0 +1,43 @@
+{
+  "task_id": "preu-aiden-labs-planning-001",
+  "agent_id": "Aiden-CEO",
+  "role": "CEO orchestration and mission alignment",
+  "declared_objective": {
+    "summary": "Coordinate the next labs milestone plan using curated read-model evidence only"
+  },
+  "context": {
+    "summary": "Aiden frames a non-executing governance-ready planning packet for the labs roadmap.",
+    "source_layer": "curated_read_model"
+  },
+  "candidate_actions": [
+    {
+      "id": "aiden-u1",
+      "action_type": "draft_milestone_alignment_plan",
+      "description": "Create a dry-run planning snapshot for future human review.",
+      "predicted_Yt_plus_1": "Labs has a governance-aligned plan candidate without executing runtime actions.",
+      "predicted_Rt_plus_1": {
+        "summary": "Residual decreases by aligning mission, evidence hints, and governance constraints."
+      }
+    }
+  ],
+  "selected_action_id": "aiden-u1",
+  "predicted_outcome": "A dry-run planning packet is available for Y-star-gov judgment.",
+  "predicted_residual": {
+    "summary": "Remaining risk is future real hook integration and semantic review."
+  },
+  "risk_tier": "normal",
+  "why_min_residual": "aiden-u1 is lowest residual because it preserves planning context without executing actions.",
+  "governance_expectations": {
+    "requires_y_star_validation": true,
+    "requires_m_functor_validation": true,
+    "requires_scope_validation": true,
+    "requires_high_risk_review": false
+  },
+  "cieu_link_policy": {
+    "should_emit_pre_action_event": false,
+    "should_emit_post_action_event": false,
+    "compare_predicted_vs_actual": true,
+    "dry_run_no_cieu_write": true
+  },
+  "evidence_hint_refs": []
+}

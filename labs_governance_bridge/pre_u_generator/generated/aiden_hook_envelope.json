@@ -1,0 +1,106 @@
+{
+  "Xt": {
+    "context": {
+      "source_layer": "curated_read_model",
+      "summary": "Aiden frames a non-executing governance-ready planning packet for the labs roadmap."
+    },
+    "evidence_hint_refs": [
+      {
+        "agent_scope": "Aiden-CEO",
+        "candidate_id": "mdcand-001",
+        "evidence_id": "evidence-001",
+        "ingestion_status": "not_ingested",
+        "readiness": "hint_only",
+        "review_id": "review-001",
+        "route": "memory_continuity_hint_queue",
+        "status": "not_approved"
+      },
+      {
+        "agent_scope": "Aiden-CEO",
+        "candidate_id": "mdcand-001",
+        "evidence_id": "evidence-001",
+        "ingestion_status": "not_ingested",
+        "readiness": "hint_only",
+        "review_id": "review-001",
+        "route": "role_brain_capsule_hint_queue",
+        "status": "not_approved"
+      },
+      {
+        "agent_scope": "Aiden-CEO",
+        "candidate_id": "mdcand-002",
+        "evidence_id": "evidence-002",
+        "ingestion_status": "not_ingested",
+        "readiness": "hint_only",
+        "review_id": "review-002",
+        "route": "memory_continuity_hint_queue",
+        "status": "not_approved"
+      },
+      {
+        "agent_scope": "Aiden-CEO",
+        "candidate_id": "mdcand-002",
+        "evidence_id": "evidence-002",
+        "ingestion_status": "not_ingested",
+        "readiness": "hint_only",
+        "review_id": "review-002",
+        "route": "role_brain_capsule_hint_queue",
+        "status": "not_approved"
+      },
+      {
+        "agent_scope": "Aiden-CEO",
+        "candidate_id": "mdcand-003",
+        "evidence_id": "evidence-003",
+        "ingestion_status": "not_ingested",
+        "readiness": "hint_only",
+        "review_id": "review-003",
+        "route": "memory_continuity_hint_queue",
+        "status": "not_approved"
+      }
+    ],
+    "role_specific_focus": [
+      "company orchestration",
+      "mission alignment",
+      "strategic decision framing",
+      "CZL residual closure",
+      "cross-agent coordination"
+    ]
+  },
+  "agent_capsule_ref": "agent_brains/Aiden-CEO/brain_profile.json",
+  "agent_id": "Aiden-CEO",
+  "candidate_U": [
+    {
+      "action_type": "draft_milestone_alignment_plan",
+      "description": "Create a dry-run planning snapshot for future human review.",
+      "id": "aiden-u1",
+      "predicted_Rt_plus_1": {
+        "summary": "Residual decreases by aligning mission, evidence hints, and governance constraints."
+      },
+      "predicted_Yt_plus_1": "Labs has a governance-aligned plan candidate without executing runtime actions."
+    }
+  ],
+  "cieu_link_policy": {
+    "compare_predicted_vs_actual": true,
+    "dry_run_no_cieu_write": true,
+    "should_emit_post_action_event": false,
+    "should_emit_pre_action_event": false
+  },
+  "declared_Y_star": {
+    "summary": "Coordinate the next labs milestone plan using curated read-model evidence only"
+  },
+  "governance_expectations": {
+    "requires_high_risk_review": false,
+    "requires_m_functor_validation": true,
+    "requires_scope_validation": true,
+    "requires_y_star_validation": true
+  },
+  "hook_event_id": "preu-governance-preu-aiden-labs-planning-001",
+  "m_functor": {
+    "non_execution_boundary": true,
+    "source": "labs_governance_bridge/pre_u_generator",
+    "summary": "Map Aiden-CEO curated task envelope into dry-run governance packet."
+  },
+  "packet_id": "preu-preu-aiden-labs-planning-001",
+  "risk_tier": "normal",
+  "selected_U_id": "aiden-u1",
+  "task_id": "preu-aiden-labs-planning-001",
+  "why_min_residual": "aiden-u1 is lowest residual because it preserves planning context without executing actions."
+}

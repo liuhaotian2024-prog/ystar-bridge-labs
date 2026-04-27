@@ -21,6 +21,7 @@ REVIEW_QUEUE = "console_read_model/generated/review_queue_summary.json"
 DISPOSITION = "console_read_model/generated/artifact_disposition_summary.json"
 EVIDENCE_REVIEW = "console_read_model/generated/evidence_review_summary.json"
 GOVERNANCE_BRIDGE = "console_read_model/generated/governance_bridge_summary.json"
+PRE_U_GOVERNANCE = "console_read_model/generated/pre_u_governance_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -40,7 +41,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -81,6 +82,7 @@ def load_all() -> dict[str, Any]:
         "disposition": load_json(DISPOSITION),
         "evidence_review": load_json(EVIDENCE_REVIEW),
         "governance_bridge": load_json(GOVERNANCE_BRIDGE),
+        "pre_u_governance": load_json(PRE_U_GOVERNANCE),
     }
 
 
@@ -321,6 +323,31 @@ def cmd_governance_bridge(data: dict[str, Any]) -> None:
     print(f"warning: {bridge.get('warning')}")
 
 
+def cmd_pre_u_governance(data: dict[str, Any]) -> None:
+    pre_u = data["pre_u_governance"]
+    print("# Labs Pre-U Governance Dry Run")
+    print()
+    print(f"packets_generated: {pre_u.get('packets_generated')}")
+    print("roles_covered:")
+    bullet_list(pre_u.get("roles_covered", []))
+    print()
+    print("decision_counts:")
+    for decision, count in sorted(pre_u.get("decision_counts", {}).items()):
+        print(f"- {decision}: {count}")
+    print()
+    print("decisions_by_role:")
+    for agent_id, decision in sorted(pre_u.get("decisions_by_role", {}).items()):
+        print(f"- {agent_id}: {decision.get('decision')} (exit {decision.get('exit_code')})")
+    print()
+    print(f"dry_run_only: {pre_u.get('dry_run_only')}")
+    print(f"action_executed: {pre_u.get('action_executed')}")
+    print(f"cieu_written: {pre_u.get('cieu_written')}")
+    print(f"brain_writeback_performed: {pre_u.get('brain_writeback_performed')}")
+    print(f"memory_ingestion_performed: {pre_u.get('memory_ingestion_performed')}")
+    print(f"generated_decision_snapshots: {pre_u.get('generated_decision_snapshots')}")
+    print(f"warning: {pre_u.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -368,6 +395,11 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print()
         print("Labs-Gov bridge decision snapshot:")
         print(f"- {bridge.get('generated_decision_snapshot')}")
+    pre_u = data.get("pre_u_governance", {})
+    if pre_u:
+        print()
+        print("Pre-U governance decision snapshots:")
+        print(f"- {pre_u.get('generated_decision_snapshots')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -402,6 +434,7 @@ def cmd_validate_local() -> int:
         DISPOSITION,
         EVIDENCE_REVIEW,
         GOVERNANCE_BRIDGE,
+        PRE_U_GOVERNANCE,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -427,6 +460,8 @@ def cmd_validate_local() -> int:
             failures.append("evidence_review_summary missing from team console snapshot")
         if "governance_bridge_summary" not in snapshot:
             failures.append("governance_bridge_summary missing from team console snapshot")
+        if "pre_u_governance_summary" not in snapshot:
+            failures.append("pre_u_governance_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -583,6 +618,39 @@ def cmd_validate_local() -> int:
             if governance_bridge.get(field) is not False:
                 failures.append(f"governance bridge must keep {field}=false")
 
+    pre_u_governance = loaded.get(PRE_U_GOVERNANCE)
+    if pre_u_governance:
+        required_fields = [
+            "packets_generated",
+            "roles_covered",
+            "decision_counts",
+            "decisions_by_role",
+            "dry_run_only",
+            "action_executed",
+            "cieu_written",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "generated_decision_snapshots",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in pre_u_governance:
+                failures.append(f"Pre-U governance summary missing field: {field}")
+        if set(pre_u_governance.get("roles_covered", [])) != set(REQUIRED_AGENTS):
+            failures.append("Pre-U governance summary must cover required agents")
+        if pre_u_governance.get("packets_generated") != len(REQUIRED_AGENTS):
+            failures.append("Pre-U governance summary must include three generated packets")
+        if pre_u_governance.get("dry_run_only") is not True:
+            failures.append("Pre-U governance summary must remain dry_run_only")
+        for field in [
+            "action_executed",
+            "cieu_written",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+        ]:
+            if pre_u_governance.get(field) is not False:
+                failures.append(f"Pre-U governance summary must keep {field}=false")
+
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
     print(f"Required agents: {', '.join(REQUIRED_AGENTS)}")
@@ -636,6 +704,8 @@ def main(argv: list[str]) -> int:
         cmd_evidence_review(data)
     elif command == "governance-bridge":
         cmd_governance_bridge(data)
+    elif command == "pre-u-governance":
+        cmd_pre_u_governance(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

@@ -60,3 +60,8 @@ The snapshot can expose a Labs-Gov alignment bridge summary derived from
 shows a Y-star-gov dry-run decision for a curated sample labs task. It is not
 real hook integration, action execution, CIEU writing, memory ingestion, or
 brain writeback.
+
+The snapshot can expose a multi-role Pre-U governance summary derived from
+`labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json`.
+This covers Aiden, Ethan, and Samantha dry-run packets only. It is not runtime
+packet execution or hook enforcement.

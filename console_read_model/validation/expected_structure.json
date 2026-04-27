@@ -48,6 +48,7 @@
     "console_read_model/generated/artifact_disposition_summary.json",
     "console_read_model/generated/evidence_review_summary.json",
     "console_read_model/generated/governance_bridge_summary.json",
+    "console_read_model/generated/pre_u_governance_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "required_safe_mining_files": [
@@ -105,7 +106,29 @@
     "labs_governance_bridge/generated/sample_hook_envelope.json",
     "labs_governance_bridge/generated/envelope_manifest.json",
     "labs_governance_bridge/generated/governance_decision_snapshot.json",
-    "labs_governance_bridge/generated/bridge_run_manifest.json"
+    "labs_governance_bridge/generated/bridge_run_manifest.json",
+    "labs_governance_bridge/pre_u_generator/README.md",
+    "labs_governance_bridge/pre_u_generator/generator_policy.md",
+    "labs_governance_bridge/pre_u_generator/pre_u_packet_schema.json",
+    "labs_governance_bridge/pre_u_generator/role_task_envelope_schema.json",
+    "labs_governance_bridge/pre_u_generator/open_gaps.md",
+    "labs_governance_bridge/pre_u_generator/samples/aiden_task_envelope.json",
+    "labs_governance_bridge/pre_u_generator/samples/ethan_task_envelope.json",
+    "labs_governance_bridge/pre_u_generator/samples/samantha_task_envelope.json",
+    "labs_governance_bridge/pre_u_generator/tools/build_pre_u_packets.py",
+    "labs_governance_bridge/pre_u_generator/tools/build_hook_envelopes_from_packets.py",
+    "labs_governance_bridge/pre_u_generator/tools/run_pre_u_governance_dry_run.py",
+    "labs_governance_bridge/pre_u_generator/generated/README.md",
+    "labs_governance_bridge/pre_u_generator/generated/aiden_pre_u_packet.json",
+    "labs_governance_bridge/pre_u_generator/generated/ethan_pre_u_packet.json",
+    "labs_governance_bridge/pre_u_generator/generated/samantha_pre_u_packet.json",
+    "labs_governance_bridge/pre_u_generator/generated/pre_u_packet_manifest.json",
+    "labs_governance_bridge/pre_u_generator/generated/aiden_hook_envelope.json",
+    "labs_governance_bridge/pre_u_generator/generated/ethan_hook_envelope.json",
+    "labs_governance_bridge/pre_u_generator/generated/samantha_hook_envelope.json",
+    "labs_governance_bridge/pre_u_generator/generated/hook_envelope_manifest.json",
+    "labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json",
+    "labs_governance_bridge/pre_u_generator/generated/pre_u_governance_run_manifest.json"
   ],
   "required_shared_schema_files": [
     "agent_brains/schema/README.md",

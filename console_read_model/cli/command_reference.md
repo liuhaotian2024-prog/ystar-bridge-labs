@@ -34,6 +34,8 @@ python3 console_read_model/cli/team_console.py <command>
   status, and structural-only warning.
 - `governance-bridge`: Prints the generated Labs-Gov bridge summary:
   Y-star-gov dry-run decision, execution booleans, and non-execution warning.
+- `pre-u-governance`: Prints the generated multi-role Pre-U governance summary:
+  packets generated, roles covered, decisions by role, and dry-run safety flags.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

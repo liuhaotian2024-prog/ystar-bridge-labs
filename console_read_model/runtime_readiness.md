@@ -17,6 +17,7 @@
 - Runtime artifact backlog disposition summary in generated console snapshots.
 - Structural evidence review summary in generated console snapshots.
 - Dry-run Labs-Gov alignment bridge summary in generated console snapshots.
+- Multi-role dry-run Pre-U governance summary in generated console snapshots.
 - Local safety check wrapper for the curated read-model stack.
 - Lightweight static capsule schema-alignment checks.
 
@@ -40,6 +41,7 @@
 - Evidence review remains structural only; semantic truth validation is not ready.
 - Semantic truth validation and decision application for evidence records.
 - Real Labs-Gov hook integration and enforcement.
+- Runtime Pre-U packet execution.
 - Runtime tests remain separate from local read-model safety checks.
 - Full JSON Schema enforcement through a dedicated schema engine.
 
@@ -66,6 +68,8 @@ I. Evidence scoring schema for disposition records.
 J. Manual decision application for evidence review stubs.
 
 K. Real hook integration after dry-run bridge behavior stays stable.
+
+L. Reviewed CIEU prediction-delta examples from dry-run Pre-U snapshots.
 
 The safest next step is either a static capsule validator or a read-only console
 prototype that consumes only the files in this directory and other curated

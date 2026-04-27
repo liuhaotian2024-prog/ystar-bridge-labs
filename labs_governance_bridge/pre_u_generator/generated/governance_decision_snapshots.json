@@ -1,0 +1,161 @@
+{
+  "schema_name": "ystar.labs_governance_bridge.pre_u_governance_decision_snapshots",
+  "schema_version": "v0",
+  "snapshots": [
+    {
+      "action_executed": false,
+      "agent_id": "Aiden-CEO",
+      "allow_execution": true,
+      "brain_writeback_performed": false,
+      "bridge_run_id": "preu-governance-aiden-001",
+      "cieu_written": false,
+      "decision_envelope": {
+        "agent_id": "Aiden-CEO",
+        "allow_execution": true,
+        "decision": "allow",
+        "deny": false,
+        "dry_run_only": true,
+        "escalate": false,
+        "governance_result_summary": {
+          "delta_validation_status": "valid",
+          "dry_run_decision": "pass",
+          "pre_u_validation_status": "valid"
+        },
+        "hook_event_id": "preu-governance-preu-aiden-labs-planning-001",
+        "issues": [],
+        "non_execution_confirmation": true,
+        "packet_id": "preu-preu-aiden-labs-planning-001",
+        "require_revision": false,
+        "safety_notes": [
+          "Hook adapter dry-run only: no real hook is called.",
+          "Selected_U is never executed, even when the decision envelope says allow_execution=true.",
+          "No CIEU write, DB/log/runtime read, brain/memory mutation, or external tool call occurs."
+        ],
+        "tool": "hook_contract_dry_run"
+      },
+      "deny": false,
+      "dry_run_only": true,
+      "escalate": false,
+      "generated_from_envelope_ref": "labs_governance_bridge/pre_u_generator/generated/aiden_hook_envelope.json",
+      "generated_from_packet_ref": "labs_governance_bridge/pre_u_generator/generated/aiden_pre_u_packet.json",
+      "memory_ingestion_performed": false,
+      "non_execution_confirmation": true,
+      "packet_id": "preu-preu-aiden-labs-planning-001",
+      "require_revision": false,
+      "role": "CEO orchestration and mission alignment",
+      "task_id": "preu-aiden-labs-planning-001",
+      "ystar_gov_cli_path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/tools/run_hook_contract_dry_run.py",
+      "ystar_gov_decision": "allow",
+      "ystar_gov_exit_code": 0
+    },
+    {
+      "action_executed": false,
+      "agent_id": "Ethan-CTO",
+      "allow_execution": true,
+      "brain_writeback_performed": false,
+      "bridge_run_id": "preu-governance-ethan-001",
+      "cieu_written": false,
+      "decision_envelope": {
+        "agent_id": "Ethan-CTO",
+        "allow_execution": true,
+        "decision": "allow",
+        "deny": false,
+        "dry_run_only": true,
+        "escalate": false,
+        "governance_result_summary": {
+          "delta_validation_status": "valid",
+          "dry_run_decision": "pass",
+          "pre_u_validation_status": "valid"
+        },
+        "hook_event_id": "preu-governance-preu-ethan-safe-adapter-001",
+        "issues": [],
+        "non_execution_confirmation": true,
+        "packet_id": "preu-preu-ethan-safe-adapter-001",
+        "require_revision": false,
+        "safety_notes": [
+          "Hook adapter dry-run only: no real hook is called.",
+          "Selected_U is never executed, even when the decision envelope says allow_execution=true.",
+          "No CIEU write, DB/log/runtime read, brain/memory mutation, or external tool call occurs."
+        ],
+        "tool": "hook_contract_dry_run"
+      },
+      "deny": false,
+      "dry_run_only": true,
+      "escalate": false,
+      "generated_from_envelope_ref": "labs_governance_bridge/pre_u_generator/generated/ethan_hook_envelope.json",
+      "generated_from_packet_ref": "labs_governance_bridge/pre_u_generator/generated/ethan_pre_u_packet.json",
+      "memory_ingestion_performed": false,
+      "non_execution_confirmation": true,
+      "packet_id": "preu-preu-ethan-safe-adapter-001",
+      "require_revision": false,
+      "role": "CTO implementation planning and execution-boundary design",
+      "task_id": "preu-ethan-safe-adapter-001",
+      "ystar_gov_cli_path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/tools/run_hook_contract_dry_run.py",
+      "ystar_gov_decision": "allow",
+      "ystar_gov_exit_code": 0
+    },
+    {
+      "action_executed": false,
+      "agent_id": "Samantha-Secretary",
+      "allow_execution": true,
+      "brain_writeback_performed": false,
+      "bridge_run_id": "preu-governance-samantha-001",
+      "cieu_written": false,
+      "decision_envelope": {
+        "agent_id": "Samantha-Secretary",
+        "allow_execution": true,
+        "decision": "allow",
+        "deny": false,
+        "dry_run_only": true,
+        "escalate": false,
+        "governance_result_summary": {
+          "delta_validation_status": "valid",
+          "dry_run_decision": "pass",
+          "pre_u_validation_status": "valid"
+        },
+        "hook_event_id": "preu-governance-preu-samantha-handoff-001",
+        "issues": [],
+        "non_execution_confirmation": true,
+        "packet_id": "preu-preu-samantha-handoff-001",
+        "require_revision": false,
+        "safety_notes": [
+          "Hook adapter dry-run only: no real hook is called.",
+          "Selected_U is never executed, even when the decision envelope says allow_execution=true.",
+          "No CIEU write, DB/log/runtime read, brain/memory mutation, or external tool call occurs."
+        ],
+        "tool": "hook_contract_dry_run"
+      },
+      "deny": false,
+      "dry_run_only": true,
+      "escalate": false,
+      "generated_from_envelope_ref": "labs_governance_bridge/pre_u_generator/generated/samantha_hook_envelope.json",
+      "generated_from_packet_ref": "labs_governance_bridge/pre_u_generator/generated/samantha_pre_u_packet.json",
+      "memory_ingestion_performed": false,
+      "non_execution_confirmation": true,
+      "packet_id": "preu-preu-samantha-handoff-001",
+      "require_revision": false,
+      "role": "Secretary continuity, handoff, and coordination support",
+      "task_id": "preu-samantha-handoff-001",
+      "ystar_gov_cli_path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/tools/run_hook_contract_dry_run.py",
+      "ystar_gov_decision": "allow",
+      "ystar_gov_exit_code": 0
+    }
+  ],
+  "summary": {
+    "action_executed": false,
+    "brain_writeback_performed": false,
+    "cieu_written": false,
+    "decision_counts": {
+      "allow": 3
+    },
+    "dry_run_only": true,
+    "memory_ingestion_performed": false,
+    "roles_covered": [
+      "Aiden-CEO",
+      "Ethan-CTO",
+      "Samantha-Secretary"
+    ],
+    "snapshots_created": 3,
+    "warning": "Generated Pre-U governance decisions are dry-run only and are not runtime actions."
+  }
+}

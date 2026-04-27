@@ -28,12 +28,17 @@
 - `labs_governance_bridge/generated/sample_hook_envelope.json`
 - `labs_governance_bridge/generated/governance_decision_snapshot.json`
 - `labs_governance_bridge/generated/bridge_run_manifest.json`
+- `labs_governance_bridge/pre_u_generator/generated/pre_u_packet_manifest.json`
+- `labs_governance_bridge/pre_u_generator/generated/hook_envelope_manifest.json`
+- `labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json`
+- `labs_governance_bridge/pre_u_generator/generated/pre_u_governance_run_manifest.json`
 - `console_read_model/generated/quarantine_summary.json`
 - `console_read_model/generated/safe_mining_summary.json`
 - `console_read_model/generated/review_queue_summary.json`
 - `console_read_model/generated/artifact_disposition_summary.json`
 - `console_read_model/generated/evidence_review_summary.json`
 - `console_read_model/generated/governance_bridge_summary.json`
+- `console_read_model/generated/pre_u_governance_summary.json`
 
 ## Unsafe Direct Sources
 
@@ -65,3 +70,5 @@
   scoring is structural only and decisions remain undecided.
 - Labs-Gov bridge data may be displayed only from generated bridge snapshots;
   bridge decisions are dry-run only and must not execute actions or write CIEU.
+- Pre-U governance data may be displayed only from generated dry-run packet
+  decision snapshots; generated packets are not runtime actions.

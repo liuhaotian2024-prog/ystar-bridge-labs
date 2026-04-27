@@ -18,3 +18,8 @@ It is intentionally narrow:
 
 Generated bridge outputs are read-model artifacts only. They are safe for the
 team console to display as dry-run governance alignment status.
+
+`pre_u_generator/` generalizes the sample bridge into multi-role Pre-U packet
+generation for Aiden-CEO, Ethan-CTO, and Samantha-Secretary. It creates dry-run
+packets, converts them to hook envelopes, calls the same Y-star-gov dry-run CLI,
+and records decision snapshots without executing actions.

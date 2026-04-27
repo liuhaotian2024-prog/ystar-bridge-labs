@@ -12,7 +12,7 @@ It runs the existing curated-source checks:
 - lightweight capsule schema-alignment checks through the static validator
 - team console `validate-local`
 - read-only CLI smoke checks for quarantine, evidence review, governance bridge,
-  and sources
+  Pre-U governance, and sources
 
 Run from the repository root:
 
@@ -27,6 +27,10 @@ read-model layer.
 The wrapper also runs the Labs-Gov dry-run bridge. That bridge calls only the
 Y-star-gov hook contract dry-run CLI and records a generated decision snapshot;
 it does not execute actions or write CIEU.
+
+The wrapper also runs the multi-role Pre-U generator flow. That flow generates
+dry-run packets for Aiden, Ethan, and Samantha, converts them to hook envelopes,
+and calls Y-star-gov dry-run judgment without executing actions.
 
 Optional flags:
 

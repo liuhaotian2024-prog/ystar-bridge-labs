@@ -1,0 +1,182 @@
+{
+  "Xt": {
+    "context": {
+      "source_layer": "curated_read_model",
+      "summary": "Samantha frames a non-executing continuity note candidate for review."
+    },
+    "evidence_hint_refs": [
+      {
+        "agent_scope": "Samantha-Secretary",
+        "candidate_id": "mdcand-001",
+        "evidence_id": "evidence-001",
+        "ingestion_status": "not_ingested",
+        "readiness": "hint_only",
+        "review_id": "review-001",
+        "route": "memory_continuity_hint_queue",
+        "status": "not_approved"
+      },
+      {
+        "agent_scope": "Samantha-Secretary",
+        "candidate_id": "mdcand-001",
+        "evidence_id": "evidence-001",
+        "ingestion_status": "not_ingested",
+        "readiness": "hint_only",
+        "review_id": "review-001",
+        "route": "role_brain_capsule_hint_queue",
+        "status": "not_approved"
+      },
+      {
+        "agent_scope": "Samantha-Secretary",
+        "candidate_id": "mdcand-002",
+        "evidence_id": "evidence-002",
+        "ingestion_status": "not_ingested",
+        "readiness": "hint_only",
+        "review_id": "review-002",
+        "route": "memory_continuity_hint_queue",
+        "status": "not_approved"
+      },
+      {
+        "agent_scope": "Samantha-Secretary",
+        "candidate_id": "mdcand-002",
+        "evidence_id": "evidence-002",
+        "ingestion_status": "not_ingested",
+        "readiness": "hint_only",
+        "review_id": "review-002",
+        "route": "role_brain_capsule_hint_queue",
+        "status": "not_approved"
+      },
+      {
+        "agent_scope": "Samantha-Secretary",
+        "candidate_id": "mdcand-003",
+        "evidence_id": "evidence-003",
+        "ingestion_status": "not_ingested",
+        "readiness": "hint_only",
+        "review_id": "review-003",
+        "route": "memory_continuity_hint_queue",
+        "status": "not_approved"
+      }
+    ],
+    "role_specific_focus": [
+      "memory continuity",
+      "handoff",
+      "curation",
+      "session context",
+      "secretary behavior",
+      "local continuity",
+      "report and memory hygiene"
+    ]
+  },
+  "action_executed": false,
+  "agent_capsule_ref": "agent_brains/Samantha-Secretary/brain_profile.json",
+  "agent_id": "Samantha-Secretary",
+  "brain_writeback_allowed": false,
+  "candidate_U": [
+    {
+      "action_type": "draft_continuity_handoff_note",
+      "description": "Prepare a dry-run continuity note based on generated bridge and evidence summaries.",
+      "id": "samantha-u1",
+      "predicted_Rt_plus_1": {
+        "summary": "Residual decreases by preserving handoff context while avoiding canonical memory changes."
+      },
+      "predicted_Yt_plus_1": "A continuity note candidate is ready for review without memory ingestion."
+    }
+  ],
+  "cieu_link_policy": {
+    "compare_predicted_vs_actual": true,
+    "dry_run_no_cieu_write": true,
+    "should_emit_post_action_event": false,
+    "should_emit_pre_action_event": false
+  },
+  "cieu_write_allowed": false,
+  "declared_Y_star": {
+    "summary": "Prepare a continuity handoff note from generated summaries without ingesting memory"
+  },
+  "evidence_hint_refs": [
+    {
+      "agent_scope": "Samantha-Secretary",
+      "candidate_id": "mdcand-001",
+      "evidence_id": "evidence-001",
+      "ingestion_status": "not_ingested",
+      "readiness": "hint_only",
+      "review_id": "review-001",
+      "route": "memory_continuity_hint_queue",
+      "status": "not_approved"
+    },
+    {
+      "agent_scope": "Samantha-Secretary",
+      "candidate_id": "mdcand-001",
+      "evidence_id": "evidence-001",
+      "ingestion_status": "not_ingested",
+      "readiness": "hint_only",
+      "review_id": "review-001",
+      "route": "role_brain_capsule_hint_queue",
+      "status": "not_approved"
+    },
+    {
+      "agent_scope": "Samantha-Secretary",
+      "candidate_id": "mdcand-002",
+      "evidence_id": "evidence-002",
+      "ingestion_status": "not_ingested",
+      "readiness": "hint_only",
+      "review_id": "review-002",
+      "route": "memory_continuity_hint_queue",
+      "status": "not_approved"
+    },
+    {
+      "agent_scope": "Samantha-Secretary",
+      "candidate_id": "mdcand-002",
+      "evidence_id": "evidence-002",
+      "ingestion_status": "not_ingested",
+      "readiness": "hint_only",
+      "review_id": "review-002",
+      "route": "role_brain_capsule_hint_queue",
+      "status": "not_approved"
+    },
+    {
+      "agent_scope": "Samantha-Secretary",
+      "candidate_id": "mdcand-003",
+      "evidence_id": "evidence-003",
+      "ingestion_status": "not_ingested",
+      "readiness": "hint_only",
+      "review_id": "review-003",
+      "route": "memory_continuity_hint_queue",
+      "status": "not_approved"
+    }
+  ],
+  "governance_expectations": {
+    "requires_high_risk_review": false,
+    "requires_m_functor_validation": true,
+    "requires_scope_validation": true,
+    "requires_y_star_validation": true
+  },
+  "m_functor": {
+    "non_execution_boundary": true,
+    "source": "labs_governance_bridge/pre_u_generator",
+    "summary": "Map Samantha-Secretary curated task envelope into dry-run governance packet."
+  },
+  "memory_ingestion_allowed": false,
+  "packet_id": "preu-preu-samantha-handoff-001",
+  "packet_status": "generated_dry_run_only",
+  "predicted_Rt_plus_1": {
+    "summary": "Residual decreases by preserving handoff context while avoiding canonical memory changes."
+  },
+  "predicted_Yt_plus_1": "A continuity note candidate is ready for review without memory ingestion.",
+  "risk_tier": "normal",
+  "role": "Secretary continuity, handoff, and coordination support",
+  "schema_name": "ystar.labs_governance_bridge.pre_u_packet",
+  "schema_version": "v0",
+  "selected_U": {
+    "selected_action": {
+      "action_type": "draft_continuity_handoff_note",
+      "description": "Prepare a dry-run continuity note based on generated bridge and evidence summaries.",
+      "id": "samantha-u1",
+      "predicted_Rt_plus_1": {
+        "summary": "Residual decreases by preserving handoff context while avoiding canonical memory changes."
+      },
+      "predicted_Yt_plus_1": "A continuity note candidate is ready for review without memory ingestion."
+    },
+    "selected_candidate_id": "samantha-u1"
+  },
+  "task_id": "preu-samantha-handoff-001",
+  "why_min_residual": "samantha-u1 is lowest residual because it preserves continuity without writing memory."
+}

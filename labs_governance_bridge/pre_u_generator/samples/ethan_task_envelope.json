@@ -1,0 +1,43 @@
+{
+  "task_id": "preu-ethan-safe-adapter-001",
+  "agent_id": "Ethan-CTO",
+  "role": "CTO implementation planning and execution-boundary design",
+  "declared_objective": {
+    "summary": "Propose an implementation plan for a future safe adapter without running it"
+  },
+  "context": {
+    "summary": "Ethan frames a technical plan candidate from curated read-model constraints.",
+    "source_layer": "curated_read_model"
+  },
+  "candidate_actions": [
+    {
+      "id": "ethan-u1",
+      "action_type": "draft_safe_adapter_design",
+      "description": "Prepare a non-executing adapter design outline for later governance review.",
+      "predicted_Yt_plus_1": "A safe adapter design candidate exists without touching runtime stores.",
+      "predicted_Rt_plus_1": {
+        "summary": "Residual decreases by identifying adapter boundaries before implementation."
+      }
+    }
+  ],
+  "selected_action_id": "ethan-u1",
+  "predicted_outcome": "A dry-run technical packet is available for Y-star-gov judgment.",
+  "predicted_residual": {
+    "summary": "Remaining risk is bounded adapter implementation and future validation."
+  },
+  "risk_tier": "normal",
+  "why_min_residual": "ethan-u1 is lowest residual because it designs before executing or reading unsafe stores.",
+  "governance_expectations": {
+    "requires_y_star_validation": true,
+    "requires_m_functor_validation": true,
+    "requires_scope_validation": true,
+    "requires_high_risk_review": false
+  },
+  "cieu_link_policy": {
+    "should_emit_pre_action_event": false,
+    "should_emit_post_action_event": false,
+    "compare_predicted_vs_actual": true,
+    "dry_run_no_cieu_write": true
+  },
+  "evidence_hint_refs": []
+}

@@ -16,7 +16,8 @@
     "candidate review queue summary",
     "runtime artifact backlog disposition summary",
     "structural evidence review summary",
-    "dry-run Labs-Gov alignment bridge snapshot"
+    "dry-run Labs-Gov alignment bridge snapshot",
+    "multi-role dry-run Pre-U governance summary"
   ],
   "not_ready": [
     "runtime generator",
@@ -37,7 +38,8 @@
     "DB/log/marker metadata adapters",
     "semantic truth validation for evidence records",
     "review decision application workflow",
-    "real hook integration for Labs-Gov bridge"
+    "real hook integration for Labs-Gov bridge",
+    "runtime Pre-U packet execution"
   ],
   "recommended_next_steps": [
     "wire static validator and loader into CI",
@@ -50,14 +52,16 @@
     "define signed review decisions for candidate queue entries",
     "create evidence scoring schema for disposition records",
     "define manual decision application for evidence review stubs",
-    "connect bridge decisions to future Pre-U/CIEU dry-run examples without executing actions"
+    "connect bridge decisions to future Pre-U/CIEU dry-run examples without executing actions",
+    "define a reviewed path from Pre-U dry-run snapshots to future CIEU prediction-delta examples"
   ],
   "blockers": [
     "no DB-safe adapter",
     "no live validator implementation",
     "no hook enforcement",
     "no semantic runtime truth guarantee",
-    "no real Labs-Gov hook enforcement path"
+    "no real Labs-Gov hook enforcement path",
+    "no runtime Pre-U execution path"
   ],
   "safety_boundaries": [
     "no DB reads",
@@ -70,6 +74,7 @@
     "review queue entries are pending and not ingested",
     "disposition records are routing metadata, not ingestion",
     "evidence scoring is structural only and does not approve ingestion",
-    "Labs-Gov bridge is dry-run only and does not execute actions"
+    "Labs-Gov bridge is dry-run only and does not execute actions",
+    "generated Pre-U packets are dry-run only and not runtime actions"
   ]
 }

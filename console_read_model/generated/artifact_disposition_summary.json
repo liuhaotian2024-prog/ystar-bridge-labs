@@ -1,32 +1,32 @@
 {
   "schema_name": "ystar.console_read_model.generated.artifact_disposition_summary",
   "schema_version": "v0",
-  "total_artifacts": 198,
-  "artifacts_with_disposition": 198,
+  "total_artifacts": 206,
+  "artifacts_with_disposition": 206,
   "dispositions": {
     "deferred_requires_marker_metadata_adapter": 26,
     "deferred_sidecar_or_transaction_file": 6,
     "deferred_requires_classification": 10,
-    "ignored_or_non_runtime": 30,
+    "ignored_or_non_runtime": 37,
     "deferred_requires_readonly_db_adapter": 2,
     "deferred_requires_bounded_log_adapter": 31,
     "ignored_generated_cache": 31,
     "safe_mined_to_review_queue": 20,
-    "deferred_markdown_report_not_selected": 42
+    "deferred_markdown_report_not_selected": 43
   },
   "artifact_classes": {
     "DAEMON_STATE": 4,
     "DB_SIDECARE": 6,
     "UNKNOWN_RUNTIME_ARTIFACT": 10,
-    "UNKNOWN_OR_NON_RUNTIME": 29,
+    "UNKNOWN_OR_NON_RUNTIME": 32,
     "DB_CORE": 1,
-    "FRAMEWORK_FILE": 1,
+    "FRAMEWORK_FILE": 5,
     "CACHE_SENTINEL": 5,
     "LOG_RUNTIME": 31,
     "ACTIVE_AGENT_MARKER": 17,
     "PYCACHE": 31,
     "BACKUP_DB": 1,
-    "DREAM_REPORT": 28,
+    "DREAM_REPORT": 29,
     "DAILY_REPORT": 6,
     "DRIFT_REPORT": 4,
     "ESCALATION_REPORT": 23,
@@ -39,12 +39,12 @@
     "deferred_requires_classification": 10,
     "deferred_requires_readonly_db_adapter": 2,
     "deferred_requires_bounded_log_adapter": 31,
-    "deferred_markdown_report_not_selected": 42
+    "deferred_markdown_report_not_selected": 43
   },
   "ignored_generated_cache": 31,
   "forbidden_direct_read_count": 106,
   "evidence_scoring_status": {
-    "not_started": 198
+    "not_started": 206
   },
   "generated_disposition_index": "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
   "warning": "Disposition is not ingestion. No brain/memory/CIEU writes are allowed."

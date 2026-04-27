@@ -31,6 +31,7 @@ CURATED_SOURCES = [
     "runtime_artifact_quarantine/evidence_review/generated/review_decision_stub.json",
     "runtime_artifact_quarantine/evidence_review/generated/hint_routing_index.json",
     "labs_governance_bridge/generated/governance_decision_snapshot.json",
+    "labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -269,6 +270,43 @@ def build_governance_bridge_summary(decision_snapshot: dict[str, Any]) -> dict[s
     }
 
 
+def build_pre_u_governance_summary(decision_snapshots: dict[str, Any]) -> dict[str, Any]:
+    summary = decision_snapshots.get("summary", {})
+    snapshots = decision_snapshots.get("snapshots", [])
+    decisions_by_role = {
+        snapshot.get("agent_id"): {
+            "packet_id": snapshot.get("packet_id"),
+            "decision": snapshot.get("ystar_gov_decision"),
+            "exit_code": snapshot.get("ystar_gov_exit_code"),
+            "allow_execution": snapshot.get("allow_execution"),
+            "require_revision": snapshot.get("require_revision"),
+            "deny": snapshot.get("deny"),
+            "escalate": snapshot.get("escalate"),
+        }
+        for snapshot in snapshots
+    }
+    return {
+        "schema_name": "ystar.console_read_model.generated.pre_u_governance_summary",
+        "schema_version": "v0",
+        "packets_generated": summary.get("snapshots_created", 0),
+        "roles_covered": summary.get("roles_covered", []),
+        "decision_counts": summary.get("decision_counts", {}),
+        "decisions_by_role": decisions_by_role,
+        "dry_run_only": summary.get("dry_run_only"),
+        "action_executed": summary.get("action_executed"),
+        "cieu_written": summary.get("cieu_written"),
+        "brain_writeback_performed": summary.get("brain_writeback_performed"),
+        "memory_ingestion_performed": summary.get("memory_ingestion_performed"),
+        "generated_decision_snapshots": (
+            "labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json"
+        ),
+        "warning": summary.get(
+            "warning",
+            "Generated Pre-U governance decisions are dry-run only and are not runtime actions.",
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -311,12 +349,17 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "labs_governance_bridge/generated/governance_decision_snapshot.json",
         files_read,
     )
+    pre_u_governance_decisions = load_json(
+        "labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
     disposition_summary = build_disposition_summary(disposition_index)
     evidence_review_summary = build_evidence_review_summary(evidence_scores, decision_stub, hint_routing)
     governance_bridge_summary = build_governance_bridge_summary(governance_decision_snapshot)
+    pre_u_governance_summary = build_pre_u_governance_summary(pre_u_governance_decisions)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -385,6 +428,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Evidence review pack exists, but semantic truth validation and decision application are not implemented.")
     if "Labs-Gov bridge exists as a dry-run snapshot only; no real hook integration exists." not in open_gaps:
         open_gaps.append("Labs-Gov bridge exists as a dry-run snapshot only; no real hook integration exists.")
+    if "Pre-U generator exists for dry-run governance only; no runtime packet execution exists." not in open_gaps:
+        open_gaps.append("Pre-U generator exists for dry-run governance only; no runtime packet execution exists.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -402,6 +447,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "artifact_disposition_summary": disposition_summary,
         "evidence_review_summary": evidence_review_summary,
         "governance_bridge_summary": governance_bridge_summary,
+        "pre_u_governance_summary": pre_u_governance_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -444,6 +490,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "runtime artifact backlog disposition summary",
             "structural evidence review summary",
             "dry-run Labs-Gov alignment bridge snapshot",
+            "multi-role dry-run Pre-U governance summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -465,6 +512,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "semantic truth validation for evidence records",
             "review decision application workflow",
             "real hook integration for Labs-Gov bridge",
+            "runtime Pre-U packet execution",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -478,6 +526,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "create evidence scoring schema for disposition records",
             "define manual decision application for evidence review stubs",
             "connect bridge decisions to future Pre-U/CIEU dry-run examples without executing actions",
+            "define a reviewed path from Pre-U dry-run snapshots to future CIEU prediction-delta examples",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -485,6 +534,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "no hook enforcement",
             "no semantic runtime truth guarantee",
             "no real Labs-Gov hook enforcement path",
+            "no runtime Pre-U execution path",
         ],
         "safety_boundaries": [
             "no DB reads",
@@ -498,6 +548,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "disposition records are routing metadata, not ingestion",
             "evidence scoring is structural only and does not approve ingestion",
             "Labs-Gov bridge is dry-run only and does not execute actions",
+            "generated Pre-U packets are dry-run only and not runtime actions",
         ],
     }
 
@@ -516,6 +567,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/artifact_disposition_summary.json",
             "console_read_model/generated/evidence_review_summary.json",
             "console_read_model/generated/governance_bridge_summary.json",
+            "console_read_model/generated/pre_u_governance_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -556,6 +608,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "indexes. It summarizes structural readiness only; it is not approval.\n\n"
         "`governance_bridge_summary.json` is derived from the generated Labs-Gov\n"
         "dry-run decision snapshot. It is not hook execution or CIEU writeback.\n\n"
+        "`pre_u_governance_summary.json` is derived from generated multi-role\n"
+        "Pre-U dry-run decisions. It is not runtime packet execution.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -570,6 +624,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/artifact_disposition_summary.json", disposition_summary, generated_files)
     write_json("console_read_model/generated/evidence_review_summary.json", evidence_review_summary, generated_files)
     write_json("console_read_model/generated/governance_bridge_summary.json", governance_bridge_summary, generated_files)
+    write_json("console_read_model/generated/pre_u_governance_summary.json", pre_u_governance_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -619,6 +674,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     disposition = snapshot.get("artifact_disposition_summary", {})
     evidence_review = snapshot.get("evidence_review_summary", {})
     governance_bridge = snapshot.get("governance_bridge_summary", {})
+    pre_u_governance = snapshot.get("pre_u_governance_summary", {})
     lines.extend(
         [
             "",
@@ -735,6 +791,30 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- cieu_written: {governance_bridge.get('cieu_written')}",
             f"- brain_writeback_performed: {governance_bridge.get('brain_writeback_performed')}",
             f"- Warning: {governance_bridge.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Labs Pre-U Governance Dry Run",
+            "",
+            f"- Packets generated: {pre_u_governance.get('packets_generated')}",
+            f"- Roles covered: {', '.join(pre_u_governance.get('roles_covered', []))}",
+            "- Decision counts:",
+        ]
+    )
+    for decision, count in sorted(pre_u_governance.get("decision_counts", {}).items()):
+        lines.append(f"  - {decision}: {count}")
+    lines.append("- Decisions by role:")
+    for agent_id, decision in sorted(pre_u_governance.get("decisions_by_role", {}).items()):
+        lines.append(f"  - {agent_id}: {decision.get('decision')} (exit {decision.get('exit_code')})")
+    lines.extend(
+        [
+            f"- dry_run_only: {pre_u_governance.get('dry_run_only')}",
+            f"- action_executed: {pre_u_governance.get('action_executed')}",
+            f"- cieu_written: {pre_u_governance.get('cieu_written')}",
+            f"- brain_writeback_performed: {pre_u_governance.get('brain_writeback_performed')}",
+            f"- Warning: {pre_u_governance.get('warning')}",
         ]
     )
     lines.extend(
