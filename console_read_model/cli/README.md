@@ -8,6 +8,7 @@ It reads only:
 - `console_read_model/generated/agent_cards_compiled.json`
 - `console_read_model/generated/readiness_summary.json`
 - `console_read_model/generated/quarantine_summary.json`
+- `console_read_model/generated/safe_mining_summary.json`
 - `console_read_model/generated/generation_manifest.json`
 
 It does not read DBs, logs, active-agent markers, daemon state, raw runtime
@@ -21,6 +22,7 @@ python3 console_read_model/cli/team_console.py agents
 python3 console_read_model/cli/team_console.py agent Ethan-CTO
 python3 console_read_model/cli/team_console.py readiness
 python3 console_read_model/cli/team_console.py quarantine
+python3 console_read_model/cli/team_console.py mining-candidates
 python3 console_read_model/cli/team_console.py validate-local
 ```
 
@@ -30,3 +32,7 @@ snapshot-based and read-only.
 The `quarantine` command displays only the generated path-level quarantine
 summary. It does not read runtime artifacts, logs, DBs, active-agent markers, or
 daemon state directly.
+
+The `mining-candidates` command displays only the generated safe-mining summary.
+It does not open raw reports. Candidate snippets remain review assets and are
+not brain memory, CIEU records, or writeback approval.

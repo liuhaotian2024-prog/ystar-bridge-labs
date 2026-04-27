@@ -1,0 +1,31 @@
+{
+  "schema_name": "ystar.console_read_model.generated.safe_mining_summary",
+  "schema_version": "v0",
+  "candidate_count": 20,
+  "classes_seen": {
+    "DREAM_REPORT": 5,
+    "DAILY_REPORT": 5,
+    "DRIFT_REPORT": 4,
+    "ESCALATION_REPORT": 5,
+    "WHITELIST_REPORT": 1
+  },
+  "generated_candidate_index": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+  "mining_manifest_ref": "runtime_artifact_quarantine/safe_mining/generated/mining_manifest.json",
+  "safety_level": "bounded_markdown_candidate",
+  "ingestion_status": "candidate_only",
+  "allowed_next_step": "human_review_or_curated_queue",
+  "forbidden_next_step": "direct_brain_writeback",
+  "allowed_artifact_classes": [
+    "DAILY_REPORT",
+    "DREAM_REPORT",
+    "DRIFT_REPORT",
+    "ESCALATION_REPORT",
+    "WHITELIST_REPORT"
+  ],
+  "bounds": {
+    "max_files_per_class": 5,
+    "max_lines_per_file": 40,
+    "max_chars_per_file": 4000
+  },
+  "warning": "Safe mining candidates are bounded review assets only. They are not brain memory, CIEU records, or approved writeback."
+}

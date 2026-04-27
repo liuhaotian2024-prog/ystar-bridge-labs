@@ -1,0 +1,43 @@
+{
+  "schema_name": "ystar.runtime_artifact_quarantine.safe_mining.mining_manifest",
+  "schema_version": "v0",
+  "source_manifest_ref": "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+  "generated_files": [
+    "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+    "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.md",
+    "runtime_artifact_quarantine/safe_mining/generated/mining_manifest.json"
+  ],
+  "allowed_artifact_classes": [
+    "DAILY_REPORT",
+    "DREAM_REPORT",
+    "DRIFT_REPORT",
+    "ESCALATION_REPORT",
+    "WHITELIST_REPORT"
+  ],
+  "refused_artifact_classes": [
+    "ACTIVE_AGENT_MARKER",
+    "BACKUP_DB",
+    "CACHE_SENTINEL",
+    "DAEMON_STATE",
+    "DB_CORE",
+    "DB_SIDECARE",
+    "LOG_RUNTIME",
+    "PYCACHE",
+    "UNKNOWN_RUNTIME_ARTIFACT"
+  ],
+  "files_considered": 20,
+  "files_selected": 20,
+  "classes_seen": {
+    "DREAM_REPORT": 5,
+    "DAILY_REPORT": 5,
+    "DRIFT_REPORT": 4,
+    "ESCALATION_REPORT": 5,
+    "WHITELIST_REPORT": 1
+  },
+  "bounds": {
+    "max_files_per_class": 5,
+    "max_lines_per_file": 40,
+    "max_chars_per_file": 4000
+  },
+  "safety_note": "Safe mining v0 reads only bounded Markdown report snippets and produces candidate-only review assets. It does not write brain, memory, or CIEU records."
+}

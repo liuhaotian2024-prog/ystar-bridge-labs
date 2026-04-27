@@ -24,6 +24,7 @@ CURATED_SOURCES = [
     "agent_brains/Ethan-CTO/execution_channels.json",
     "runtime_artifact_quarantine/quarantine_index.json",
     "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+    "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -130,6 +131,29 @@ def build_quarantine_summary(
     }
 
 
+def build_safe_mining_summary(candidate_index: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "schema_name": "ystar.console_read_model.generated.safe_mining_summary",
+        "schema_version": "v0",
+        "candidate_count": candidate_index.get("candidate_count", 0),
+        "classes_seen": candidate_index.get("classes_seen", {}),
+        "generated_candidate_index": (
+            "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+        ),
+        "mining_manifest_ref": "runtime_artifact_quarantine/safe_mining/generated/mining_manifest.json",
+        "safety_level": candidate_index.get("safety_level", "bounded_markdown_candidate"),
+        "ingestion_status": candidate_index.get("ingestion_status", "candidate_only"),
+        "allowed_next_step": candidate_index.get("allowed_next_step", "human_review_or_curated_queue"),
+        "forbidden_next_step": candidate_index.get("forbidden_next_step", "direct_brain_writeback"),
+        "allowed_artifact_classes": candidate_index.get("allowed_artifact_classes", []),
+        "bounds": candidate_index.get("bounds", {}),
+        "warning": (
+            "Safe mining candidates are bounded review assets only. They are not brain memory, "
+            "CIEU records, or approved writeback."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -144,7 +168,12 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
         files_read,
     )
+    safe_mining_candidates = load_json(
+        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
+    safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -201,8 +230,10 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     ]
     if "Snapshot-only CLI exists; no interactive UI or live refresh yet." not in open_gaps:
         open_gaps.append("Snapshot-only CLI exists; no interactive UI or live refresh yet.")
-    if "Runtime artifact quarantine is visible as a path-only summary; artifact mining is not implemented." not in open_gaps:
-        open_gaps.append("Runtime artifact quarantine is visible as a path-only summary; artifact mining is not implemented.")
+    if "Runtime artifact quarantine is visible as a path-only summary; full artifact mining is not implemented." not in open_gaps:
+        open_gaps.append("Runtime artifact quarantine is visible as a path-only summary; full artifact mining is not implemented.")
+    if "Safe mining v0 produces candidate-only Markdown report snippets; no brain or CIEU ingestion exists." not in open_gaps:
+        open_gaps.append("Safe mining v0 produces candidate-only Markdown report snippets; no brain or CIEU ingestion exists.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -215,6 +246,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "governance_summary": governance_summary,
         "data_safety": team_model.get("data_safety", {}),
         "quarantine_summary": quarantine_summary,
+        "safe_mining_summary": safe_mining_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -252,6 +284,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "static snapshot generator",
             "snapshot-only team console CLI",
             "path-only runtime artifact quarantine summary",
+            "bounded Markdown safe-mining candidate index",
         ],
         "not_ready": [
             "runtime generator",
@@ -265,7 +298,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "CI wiring for validator/generator",
             "CLI integration packaging",
             "semantic validation against live runtime",
-            "runtime artifact mining or curation adapters",
+            "full runtime artifact mining or curation adapters",
+            "brain/CIEU ingestion from safe-mining candidates",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -274,6 +308,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "define CIEU prediction-delta schema",
             "add Ethan/Samantha Pre-U packet variants",
             "design safe adapters for quarantine-to-CIEU review",
+            "add human review queue for safe-mining candidates",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -288,6 +323,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "no hook/governance execution",
             "curated read-model files only",
             "quarantine summary is path-level only",
+            "safe-mining candidates are bounded Markdown snippets only",
         ],
     }
 
@@ -301,6 +337,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/agent_cards_compiled.json",
             "console_read_model/generated/readiness_summary.json",
             "console_read_model/generated/quarantine_summary.json",
+            "console_read_model/generated/safe_mining_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -330,6 +367,9 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "`quarantine_summary.json` is derived from the runtime artifact quarantine\n"
         "path-only manifest. It summarizes classes/counts only and does not include\n"
         "artifact contents.\n\n"
+        "`safe_mining_summary.json` is derived from bounded Markdown report candidate\n"
+        "indexes. It summarizes candidate counts/classes only; candidates remain\n"
+        "review assets, not brain memory.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -339,6 +379,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/agent_cards_compiled.json", compiled_cards, generated_files)
     write_json("console_read_model/generated/readiness_summary.json", readiness_summary, generated_files)
     write_json("console_read_model/generated/quarantine_summary.json", quarantine_summary, generated_files)
+    write_json("console_read_model/generated/safe_mining_summary.json", safe_mining_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -383,6 +424,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     lines.extend(["", "Not ready:"])
     lines.extend([f"- {item}" for item in readiness["not_ready"]])
     quarantine = snapshot.get("quarantine_summary", {})
+    safe_mining = snapshot.get("safe_mining_summary", {})
     lines.extend(
         [
             "",
@@ -401,6 +443,25 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
         [
             f"- Generated manifest ref: {quarantine.get('generated_manifest_ref')}",
             f"- Warning: {quarantine.get('safety_warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Runtime Artifact Safe Mining Candidates",
+            "",
+            f"- Candidate count: {safe_mining.get('candidate_count')}",
+            f"- Safety level: {safe_mining.get('safety_level')}",
+            f"- Ingestion status: {safe_mining.get('ingestion_status')}",
+            f"- Generated candidate index: {safe_mining.get('generated_candidate_index')}",
+            "- Classes seen:",
+        ]
+    )
+    for class_name, count in sorted(safe_mining.get("classes_seen", {}).items()):
+        lines.append(f"  - {class_name}: {count}")
+    lines.extend(
+        [
+            f"- Warning: {safe_mining.get('warning')}",
         ]
     )
     lines.extend(

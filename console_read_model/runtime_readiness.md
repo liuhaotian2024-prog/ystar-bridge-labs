@@ -12,6 +12,7 @@
 - Static snapshot generator.
 - Snapshot-only team console CLI.
 - Path-only runtime artifact quarantine summary in generated console snapshots.
+- Bounded Markdown safe-mining candidate summary in generated console snapshots.
 - Local safety check wrapper for the curated read-model stack.
 - Lightweight static capsule schema-alignment checks.
 
@@ -29,7 +30,8 @@
 - Semantic validation against live runtime remains unavailable.
 - CI wiring for snapshot generator.
 - CLI integration packaging.
-- Runtime artifact mining or curation adapters.
+- Full runtime artifact mining or curation adapters.
+- Brain/CIEU ingestion from safe-mining candidates.
 - Runtime tests remain separate from local read-model safety checks.
 - Full JSON Schema enforcement through a dedicated schema engine.
 
@@ -46,6 +48,8 @@ D. Ethan/Samantha Pre-U packet variants.
 E. CIEU prediction-delta schema.
 
 F. Safe quarantine-to-CIEU review adapters.
+
+G. Human review queue for safe-mining candidates.
 
 The safest next step is either a static capsule validator or a read-only console
 prototype that consumes only the files in this directory and other curated

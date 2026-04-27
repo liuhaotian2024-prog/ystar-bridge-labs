@@ -11,7 +11,8 @@
     "static read-model validation utility",
     "static snapshot generator",
     "snapshot-only team console CLI",
-    "path-only runtime artifact quarantine summary"
+    "path-only runtime artifact quarantine summary",
+    "bounded Markdown safe-mining candidate index"
   ],
   "not_ready": [
     "runtime generator",
@@ -25,7 +26,8 @@
     "CI wiring for validator/generator",
     "CLI integration packaging",
     "semantic validation against live runtime",
-    "runtime artifact mining or curation adapters"
+    "full runtime artifact mining or curation adapters",
+    "brain/CIEU ingestion from safe-mining candidates"
   ],
   "recommended_next_steps": [
     "wire static validator and loader into CI",
@@ -33,7 +35,8 @@
     "create Y-star-gov validator skeleton",
     "define CIEU prediction-delta schema",
     "add Ethan/Samantha Pre-U packet variants",
-    "design safe adapters for quarantine-to-CIEU review"
+    "design safe adapters for quarantine-to-CIEU review",
+    "add human review queue for safe-mining candidates"
   ],
   "blockers": [
     "no DB-safe adapter",
@@ -47,6 +50,7 @@
     "no daemon/runtime state reads",
     "no hook/governance execution",
     "curated read-model files only",
-    "quarantine summary is path-level only"
+    "quarantine summary is path-level only",
+    "safe-mining candidates are bounded Markdown snippets only"
   ]
 }

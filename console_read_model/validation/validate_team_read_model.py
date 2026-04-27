@@ -326,6 +326,7 @@ def main() -> int:
     required_cli_files = expected.get("required_cli_files", [])
     required_check_files = expected.get("required_check_files", [])
     required_generated_files = expected.get("required_generated_files", [])
+    required_safe_mining_files = expected.get("required_safe_mining_files", [])
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -348,6 +349,12 @@ def main() -> int:
     for rel in required_check_files:
         path = ROOT / rel
         check_exists(path, report, "local check file")
+
+    for rel in required_safe_mining_files:
+        path = ROOT / rel
+        check_exists(path, report, "safe mining file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "safe mining JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -461,6 +468,30 @@ def main() -> int:
         else:
             report.fail("generated snapshot missing quarantine_summary")
 
+        safe_mining_summary = snapshot.get("safe_mining_summary")
+        if safe_mining_summary:
+            report.pass_("generated snapshot contains safe_mining_summary")
+            for field in [
+                "candidate_count",
+                "classes_seen",
+                "generated_candidate_index",
+                "safety_level",
+                "ingestion_status",
+                "allowed_next_step",
+                "forbidden_next_step",
+                "warning",
+            ]:
+                if field in safe_mining_summary:
+                    report.pass_(f"snapshot safe_mining_summary field present: {field}")
+                else:
+                    report.fail(f"snapshot safe_mining_summary missing field: {field}")
+            if safe_mining_summary.get("ingestion_status") != "candidate_only":
+                report.fail("snapshot safe_mining_summary must remain candidate_only")
+            if safe_mining_summary.get("forbidden_next_step") != "direct_brain_writeback":
+                report.fail("snapshot safe_mining_summary must forbid direct brain writeback")
+        else:
+            report.fail("generated snapshot missing safe_mining_summary")
+
     quarantine = generated_json.get("console_read_model/generated/quarantine_summary.json")
     if quarantine:
         for field in [
@@ -478,6 +509,27 @@ def main() -> int:
                 report.pass_(f"generated quarantine summary field present: {field}")
             else:
                 report.fail(f"generated quarantine summary missing field: {field}")
+
+    safe_mining = generated_json.get("console_read_model/generated/safe_mining_summary.json")
+    if safe_mining:
+        for field in [
+            "candidate_count",
+            "classes_seen",
+            "generated_candidate_index",
+            "safety_level",
+            "ingestion_status",
+            "allowed_next_step",
+            "forbidden_next_step",
+            "warning",
+        ]:
+            if field in safe_mining:
+                report.pass_(f"generated safe mining summary field present: {field}")
+            else:
+                report.fail(f"generated safe mining summary missing field: {field}")
+        if safe_mining.get("ingestion_status") != "candidate_only":
+            report.fail("generated safe mining summary must remain candidate_only")
+        if safe_mining.get("forbidden_next_step") != "direct_brain_writeback":
+            report.fail("generated safe mining summary must forbid direct brain writeback")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

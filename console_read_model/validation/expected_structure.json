@@ -43,7 +43,18 @@
     "console_read_model/generated/agent_cards_compiled.json",
     "console_read_model/generated/readiness_summary.json",
     "console_read_model/generated/quarantine_summary.json",
+    "console_read_model/generated/safe_mining_summary.json",
     "console_read_model/generated/generation_manifest.json"
+  ],
+  "required_safe_mining_files": [
+    "runtime_artifact_quarantine/safe_mining/README.md",
+    "runtime_artifact_quarantine/safe_mining/safe_mining_policy.md",
+    "runtime_artifact_quarantine/safe_mining/candidate_schema.json",
+    "runtime_artifact_quarantine/safe_mining/open_gaps.md",
+    "runtime_artifact_quarantine/safe_mining/tools/build_markdown_report_candidates.py",
+    "runtime_artifact_quarantine/safe_mining/generated/README.md",
+    "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+    "runtime_artifact_quarantine/safe_mining/generated/mining_manifest.json"
   ],
   "required_shared_schema_files": [
     "agent_brains/schema/README.md",

@@ -27,6 +27,11 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
+        "Build Markdown report safe-mining candidates",
+        ["python3", "runtime_artifact_quarantine/safe_mining/tools/build_markdown_report_candidates.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
         "Build team console snapshot",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
@@ -41,6 +46,18 @@ VALIDATION_CHECKS = [
     Check(
         "Validate JSON: quarantine_summary.json",
         ["python3", "-m", "json.tool", "console_read_model/generated/quarantine_summary.json"],
+    ),
+    Check(
+        "Validate JSON: safe_mining_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/safe_mining_summary.json"],
+    ),
+    Check(
+        "Validate JSON: markdown_report_candidates.json",
+        ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
+    ),
+    Check(
+        "Validate JSON: mining_manifest.json",
+        ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/mining_manifest.json"],
     ),
     Check(
         "Validate JSON: generation_manifest.json",
@@ -61,6 +78,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: quarantine",
         ["python3", "console_read_model/cli/team_console.py", "quarantine"],
+    ),
+    Check(
+        "CLI smoke: mining-candidates",
+        ["python3", "console_read_model/cli/team_console.py", "mining-candidates"],
     ),
     Check(
         "CLI smoke: sources",

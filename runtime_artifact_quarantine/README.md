@@ -10,8 +10,13 @@ This framework classifies runtime artifacts without reading unsafe contents. It
 supports future safe mining adapters while preserving the boundary between raw
 runtime evidence and curated memory.
 
-This milestone does not clean, ingest, migrate, archive, delete, or move
-anything. It creates a path-level inventory framework only.
+This framework does not clean, ingest, migrate, archive, delete, or move
+anything. The base quarantine inventory is path-level only.
+
+`safe_mining/` adds the first bounded adapter layer. It reads the path-level
+manifest, opens only approved Markdown report classes with strict caps, and
+generates candidate-only review assets. Those candidates are not canonical
+memory and are not approved for direct brain, memory, or CIEU use.
 
 Relationship:
 

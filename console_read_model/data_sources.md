@@ -15,7 +15,10 @@
 - `company_state/current_world_state_ref.md`
 - `runtime_artifact_quarantine/quarantine_index.json`
 - `runtime_artifact_quarantine/generated/runtime_artifact_manifest.json`
+- `runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json`
+- `runtime_artifact_quarantine/safe_mining/generated/mining_manifest.json`
 - `console_read_model/generated/quarantine_summary.json`
+- `console_read_model/generated/safe_mining_summary.json`
 
 ## Unsafe Direct Sources
 
@@ -37,3 +40,5 @@
 - Console should prefer curated read models over direct operational stores.
 - Runtime artifact quarantine data may be displayed only as path-level
   summaries/classes/counts until future safe adapters exist.
+- Safe-mining candidate data may be displayed only from generated candidate
+  indexes; candidates are not canonical memory and require review.

@@ -9,6 +9,7 @@
     "agent_brains/team_capsule_map.json",
     "runtime_artifact_quarantine/quarantine_index.json",
     "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+    "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",
@@ -238,23 +239,23 @@
     "schema_version": "v0",
     "framework_status": "path_inventory_only",
     "current_mining_level": 0,
-    "artifacts_classified": 176,
-    "unsafe_artifacts_count": 154,
+    "artifacts_classified": 201,
+    "unsafe_artifacts_count": 167,
     "classes_seen": {
       "ACTIVE_AGENT_MARKER": 17,
       "BACKUP_DB": 1,
       "CACHE_SENTINEL": 5,
       "DAEMON_STATE": 4,
-      "DAILY_REPORT": 3,
+      "DAILY_REPORT": 6,
       "DB_CORE": 1,
-      "DB_SIDECARE": 4,
-      "DREAM_REPORT": 19,
+      "DB_SIDECARE": 6,
+      "DREAM_REPORT": 27,
       "DRIFT_REPORT": 4,
       "ESCALATION_REPORT": 23,
-      "FRAMEWORK_FILE": 2,
+      "FRAMEWORK_FILE": 6,
       "LOG_RUNTIME": 31,
       "PYCACHE": 31,
-      "UNKNOWN_OR_NON_RUNTIME": 20,
+      "UNKNOWN_OR_NON_RUNTIME": 28,
       "UNKNOWN_RUNTIME_ARTIFACT": 10,
       "WHITELIST_REPORT": 1
     },
@@ -285,6 +286,37 @@
     ],
     "safety_warning": "Console displays only curated path-level quarantine summary. No artifact contents were read."
   },
+  "safe_mining_summary": {
+    "schema_name": "ystar.console_read_model.generated.safe_mining_summary",
+    "schema_version": "v0",
+    "candidate_count": 20,
+    "classes_seen": {
+      "DREAM_REPORT": 5,
+      "DAILY_REPORT": 5,
+      "DRIFT_REPORT": 4,
+      "ESCALATION_REPORT": 5,
+      "WHITELIST_REPORT": 1
+    },
+    "generated_candidate_index": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+    "mining_manifest_ref": "runtime_artifact_quarantine/safe_mining/generated/mining_manifest.json",
+    "safety_level": "bounded_markdown_candidate",
+    "ingestion_status": "candidate_only",
+    "allowed_next_step": "human_review_or_curated_queue",
+    "forbidden_next_step": "direct_brain_writeback",
+    "allowed_artifact_classes": [
+      "DAILY_REPORT",
+      "DREAM_REPORT",
+      "DRIFT_REPORT",
+      "ESCALATION_REPORT",
+      "WHITELIST_REPORT"
+    ],
+    "bounds": {
+      "max_files_per_class": 5,
+      "max_lines_per_file": 40,
+      "max_chars_per_file": 4000
+    },
+    "warning": "Safe mining candidates are bounded review assets only. They are not brain memory, CIEU records, or approved writeback."
+  },
   "open_gaps": [
     "Static console loader exists; no frontend UI yet.",
     "No frontend UI.",
@@ -297,7 +329,8 @@
     "No capsule static validator.",
     "No multi-agent Pre-U packet generalization yet.",
     "Snapshot-only CLI exists; no interactive UI or live refresh yet.",
-    "Runtime artifact quarantine is visible as a path-only summary; artifact mining is not implemented."
+    "Runtime artifact quarantine is visible as a path-only summary; full artifact mining is not implemented.",
+    "Safe mining v0 produces candidate-only Markdown report snippets; no brain or CIEU ingestion exists."
   ],
   "warnings": [
     "Ethan execution channels are present as reference-only boundaries, not runtime launchers."

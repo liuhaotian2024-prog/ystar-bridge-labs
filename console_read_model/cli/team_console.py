@@ -16,6 +16,7 @@ CARDS = "console_read_model/generated/agent_cards_compiled.json"
 READINESS = "console_read_model/generated/readiness_summary.json"
 MANIFEST = "console_read_model/generated/generation_manifest.json"
 QUARANTINE = "console_read_model/generated/quarantine_summary.json"
+MINING = "console_read_model/generated/safe_mining_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -35,7 +36,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -71,6 +72,7 @@ def load_all() -> dict[str, Any]:
         "readiness": load_json(READINESS),
         "manifest": load_json(MANIFEST),
         "quarantine": load_json(QUARANTINE),
+        "mining": load_json(MINING),
     }
 
 
@@ -204,6 +206,24 @@ def cmd_quarantine(data: dict[str, Any]) -> None:
     print(f"warning: {quarantine.get('safety_warning')}")
 
 
+def cmd_mining_candidates(data: dict[str, Any]) -> None:
+    mining = data["mining"]
+    print("# Runtime Artifact Safe Mining Candidates")
+    print()
+    print(f"candidate_count: {mining.get('candidate_count')}")
+    print(f"safety_level: {mining.get('safety_level')}")
+    print(f"ingestion_status: {mining.get('ingestion_status')}")
+    print(f"generated_candidate_index: {mining.get('generated_candidate_index')}")
+    print()
+    print("classes_seen:")
+    for class_name, count in sorted(mining.get("classes_seen", {}).items()):
+        print(f"- {class_name}: {count}")
+    print()
+    print(f"allowed_next_step: {mining.get('allowed_next_step')}")
+    print(f"forbidden_next_step: {mining.get('forbidden_next_step')}")
+    print(f"warning: {mining.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -225,6 +245,11 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print()
         print("Quarantine manifest:")
         print(f"- {quarantine.get('generated_manifest_ref')}")
+    mining = data.get("mining", {})
+    if mining:
+        print()
+        print("Safe mining candidate index:")
+        print(f"- {mining.get('generated_candidate_index')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -248,7 +273,7 @@ def cmd_validate_local() -> int:
     failures: list[str] = []
     inspected: list[str] = []
     loaded: dict[str, Any] = {}
-    for rel in [SNAPSHOT, CARDS, READINESS, MANIFEST, QUARANTINE]:
+    for rel in [SNAPSHOT, CARDS, READINESS, MANIFEST, QUARANTINE, MINING]:
         try:
             loaded[rel] = load_json(rel)
             inspected.append(rel)
@@ -263,6 +288,8 @@ def cmd_validate_local() -> int:
                 failures.append(f"required agent missing from snapshot: {agent_id}")
         if "quarantine_summary" not in snapshot:
             failures.append("quarantine_summary missing from team console snapshot")
+        if "safe_mining_summary" not in snapshot:
+            failures.append("safe_mining_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -287,6 +314,26 @@ def cmd_validate_local() -> int:
         for field in required_fields:
             if field not in quarantine:
                 failures.append(f"quarantine summary missing field: {field}")
+
+    mining = loaded.get(MINING)
+    if mining:
+        required_fields = [
+            "candidate_count",
+            "classes_seen",
+            "generated_candidate_index",
+            "safety_level",
+            "ingestion_status",
+            "allowed_next_step",
+            "forbidden_next_step",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in mining:
+                failures.append(f"safe mining summary missing field: {field}")
+        if mining.get("ingestion_status") != "candidate_only":
+            failures.append("safe mining summary must remain candidate_only")
+        if mining.get("forbidden_next_step") != "direct_brain_writeback":
+            failures.append("safe mining summary must forbid direct brain writeback")
 
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
@@ -331,6 +378,8 @@ def main(argv: list[str]) -> int:
         cmd_governance(data)
     elif command == "quarantine":
         cmd_quarantine(data)
+    elif command == "mining-candidates":
+        cmd_mining_candidates(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

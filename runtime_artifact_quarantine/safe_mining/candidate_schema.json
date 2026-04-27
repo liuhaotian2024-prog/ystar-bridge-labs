@@ -1,0 +1,45 @@
+{
+  "schema_name": "ystar.runtime_artifact_quarantine.safe_mining.candidate_schema",
+  "schema_version": "v0",
+  "description": "Reference schema for bounded Markdown report mining candidates.",
+  "candidate_required_fields": [
+    "candidate_id",
+    "source_path",
+    "artifact_class",
+    "source_size_bytes",
+    "selected_reason",
+    "headings",
+    "snippet",
+    "safety_level",
+    "ingestion_status",
+    "allowed_next_step",
+    "forbidden_next_step",
+    "generated_from_manifest_ref"
+  ],
+  "allowed_artifact_classes": [
+    "DREAM_REPORT",
+    "DAILY_REPORT",
+    "DRIFT_REPORT",
+    "ESCALATION_REPORT",
+    "WHITELIST_REPORT"
+  ],
+  "required_safety_values": {
+    "safety_level": "bounded_markdown_candidate",
+    "ingestion_status": "candidate_only",
+    "allowed_next_step": "human_review_or_curated_queue",
+    "forbidden_next_step": "direct_brain_writeback"
+  },
+  "bounds": {
+    "max_files_per_class": 5,
+    "max_lines_per_file": 40,
+    "max_chars_per_file": 4000
+  },
+  "non_goals": [
+    "DB reading",
+    "log parsing",
+    "brain writeback",
+    "memory ingestion",
+    "CIEU writing",
+    "runtime recovery"
+  ]
+}

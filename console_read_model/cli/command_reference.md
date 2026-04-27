@@ -21,6 +21,9 @@ python3 console_read_model/cli/team_console.py <command>
 - `quarantine`: Prints the generated runtime artifact quarantine summary:
   framework status, mining level, class counts, forbidden direct reads, future
   adapter candidates, and safety warning.
+- `mining-candidates`: Prints the generated safe-mining candidate summary:
+  candidate count, report classes, safety level, ingestion status, generated
+  candidate index, and review/writeback warning.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

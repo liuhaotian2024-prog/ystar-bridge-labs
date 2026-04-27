@@ -34,3 +34,8 @@ The console snapshot also includes a runtime artifact quarantine summary derived
 from `runtime_artifact_quarantine/generated/runtime_artifact_manifest.json`.
 That summary is path-level only: it exposes classes and counts, not artifact
 contents, and it does not implement mining or ingestion.
+
+The snapshot can also expose a safe-mining candidate summary derived from
+`runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json`.
+This is still a curated generated source: the console does not open raw reports,
+and candidates remain review assets rather than brain memory or CIEU records.

@@ -8,5 +8,9 @@ or live runtime observations.
 path-only manifest. It summarizes classes/counts only and does not include
 artifact contents.
 
+`safe_mining_summary.json` is derived from bounded Markdown report candidate
+indexes. It summarizes candidate counts/classes only; candidates remain
+review assets, not brain memory.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.
