@@ -70,3 +70,8 @@ The snapshot can expose a labs runtime acceptance summary derived from
 `labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json`. This
 is dry-run acceptance only and does not execute actions, write CIEU, or mutate
 brain/memory.
+
+The snapshot can expose a cross-repo governance alignment summary derived from
+`cross_repo_alignment/generated/cross_repo_status_manifest.json`. This shows
+dry-run compatibility between ystar-company and Y-star-gov. It is not CI, push,
+hook enforcement, or runtime execution.

@@ -50,7 +50,19 @@
     "console_read_model/generated/governance_bridge_summary.json",
     "console_read_model/generated/pre_u_governance_summary.json",
     "console_read_model/generated/labs_acceptance_summary.json",
+    "console_read_model/generated/cross_repo_alignment_summary.json",
     "console_read_model/generated/generation_manifest.json"
+  ],
+  "required_cross_repo_alignment_files": [
+    "cross_repo_alignment/README.md",
+    "cross_repo_alignment/alignment_policy.md",
+    "cross_repo_alignment/cross_repo_status_schema.json",
+    "cross_repo_alignment/open_gaps.md",
+    "cross_repo_alignment/tools/build_cross_repo_status_manifest.py",
+    "cross_repo_alignment/tools/run_cross_repo_alignment_acceptance.py",
+    "cross_repo_alignment/generated/README.md",
+    "cross_repo_alignment/generated/cross_repo_status_manifest.json",
+    "cross_repo_alignment/generated/cross_repo_alignment_summary.json"
   ],
   "required_labs_runtime_acceptance_files": [
     "labs_runtime_acceptance/README.md",

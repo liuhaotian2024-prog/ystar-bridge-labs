@@ -23,6 +23,8 @@
 - Pre-U generator exists, but packets are dry-run only and do not execute.
 - Labs runtime acceptance exists, but it is dry-run only and does not accept
   real runtime execution.
+- Cross-repo alignment exists, but it is dry-run compatibility only and does not
+  replace CI, push, or real hook enforcement.
 - Local safety check wrapper exists but is not wired into CI.
 - Local safety check wrapper does not replace runtime or governance tests.
 - Capsule schema alignment is lightweight and does not validate executable cognition.

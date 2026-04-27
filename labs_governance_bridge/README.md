@@ -27,3 +27,6 @@ and records decision snapshots without executing actions.
 `labs_runtime_acceptance/` is the labs-side acceptance pack that proves the
 current quarantine, safe-mining, review, disposition, evidence, Pre-U, bridge,
 console, and local-check stack in dry-run mode only.
+
+`cross_repo_alignment/` pairs the labs acceptance result with Y-star-gov
+endpoint acceptance and records a deterministic dry-run compatibility manifest.

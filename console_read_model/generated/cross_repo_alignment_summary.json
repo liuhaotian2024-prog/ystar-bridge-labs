@@ -1,0 +1,29 @@
+{
+  "schema_name": "ystar.console_read_model.generated.cross_repo_alignment_summary",
+  "schema_version": "v0",
+  "alignment_accepted": true,
+  "ystar_company_head": "3ccf40584f17a436ed810f0941a277d525f45e6d",
+  "ystar_company_head_summary": "3ccf4058 tools: add labs runtime governance acceptance runner",
+  "ystar_gov_head": "9c4aee339b02abd210fb70a919669c4a4a7739ad",
+  "ystar_gov_head_summary": "9c4aee3 tools: add governance endpoint acceptance runner",
+  "ystar_gov_endpoint_accepted": true,
+  "labs_runtime_accepted": true,
+  "roles_covered": [
+    "Aiden-CEO",
+    "Ethan-CTO",
+    "Samantha-Secretary"
+  ],
+  "decision_counts": {
+    "allow": 3
+  },
+  "safety_assertions": {
+    "no_action_execution": true,
+    "no_cieu_write": true,
+    "no_brain_writeback": true,
+    "no_memory_ingestion": true,
+    "no_raw_artifact_ingestion": true,
+    "ystar_gov_not_modified": true
+  },
+  "generated_manifest": "cross_repo_alignment/generated/cross_repo_status_manifest.json",
+  "warning": "Cross-repo alignment is dry-run only and does not execute actions or write CIEU."
+}

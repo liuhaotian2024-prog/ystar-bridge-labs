@@ -331,6 +331,7 @@ def main() -> int:
     required_evidence_review_files = expected.get("required_evidence_review_files", [])
     required_labs_governance_bridge_files = expected.get("required_labs_governance_bridge_files", [])
     required_labs_runtime_acceptance_files = expected.get("required_labs_runtime_acceptance_files", [])
+    required_cross_repo_alignment_files = expected.get("required_cross_repo_alignment_files", [])
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -383,6 +384,12 @@ def main() -> int:
         check_exists(path, report, "labs runtime acceptance file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "labs runtime acceptance JSON")
+
+    for rel in required_cross_repo_alignment_files:
+        path = ROOT / rel
+        check_exists(path, report, "cross-repo alignment file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "cross-repo alignment JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -708,6 +715,35 @@ def main() -> int:
         else:
             report.fail("generated snapshot missing labs_acceptance_summary")
 
+        cross_repo_alignment_summary = snapshot.get("cross_repo_alignment_summary")
+        if cross_repo_alignment_summary:
+            report.pass_("generated snapshot contains cross_repo_alignment_summary")
+            for field in [
+                "alignment_accepted",
+                "ystar_company_head",
+                "ystar_company_head_summary",
+                "ystar_gov_head",
+                "ystar_gov_head_summary",
+                "ystar_gov_endpoint_accepted",
+                "labs_runtime_accepted",
+                "roles_covered",
+                "decision_counts",
+                "safety_assertions",
+                "warning",
+            ]:
+                if field in cross_repo_alignment_summary:
+                    report.pass_(f"snapshot cross_repo_alignment_summary field present: {field}")
+                else:
+                    report.fail(f"snapshot cross_repo_alignment_summary missing field: {field}")
+            roles = set(cross_repo_alignment_summary.get("roles_covered", []))
+            if roles and roles != set(required_agents):
+                report.fail("snapshot cross_repo_alignment_summary must cover required agents when roles are present")
+            for name, value in cross_repo_alignment_summary.get("safety_assertions", {}).items():
+                if value is not True:
+                    report.fail(f"snapshot cross_repo_alignment_summary safety assertion must be true: {name}")
+        else:
+            report.fail("generated snapshot missing cross_repo_alignment_summary")
+
     quarantine = generated_json.get("console_read_model/generated/quarantine_summary.json")
     if quarantine:
         for field in [
@@ -922,6 +958,32 @@ def main() -> int:
         ]:
             if labs_acceptance.get(field) is not False:
                 report.fail(f"generated labs acceptance summary must keep {field}=false")
+
+    cross_repo_alignment = generated_json.get("console_read_model/generated/cross_repo_alignment_summary.json")
+    if cross_repo_alignment:
+        for field in [
+            "alignment_accepted",
+            "ystar_company_head",
+            "ystar_company_head_summary",
+            "ystar_gov_head",
+            "ystar_gov_head_summary",
+            "ystar_gov_endpoint_accepted",
+            "labs_runtime_accepted",
+            "roles_covered",
+            "decision_counts",
+            "safety_assertions",
+            "warning",
+        ]:
+            if field in cross_repo_alignment:
+                report.pass_(f"generated cross-repo alignment summary field present: {field}")
+            else:
+                report.fail(f"generated cross-repo alignment summary missing field: {field}")
+        roles = set(cross_repo_alignment.get("roles_covered", []))
+        if roles and roles != set(required_agents):
+            report.fail("generated cross-repo alignment summary must cover required agents when roles are present")
+        for name, value in cross_repo_alignment.get("safety_assertions", {}).items():
+            if value is not True:
+                report.fail(f"generated cross-repo alignment safety assertion must be true: {name}")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

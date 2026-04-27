@@ -1,9 +1,9 @@
 {
   "schema_name": "ystar.console_read_model.generated.labs_acceptance_summary",
   "schema_version": "v0",
-  "accepted": false,
-  "checks_passed": 10,
-  "checks_total": 10,
+  "accepted": true,
+  "checks_passed": 12,
+  "checks_total": 12,
   "roles_covered": [
     "Aiden-CEO",
     "Ethan-CTO",

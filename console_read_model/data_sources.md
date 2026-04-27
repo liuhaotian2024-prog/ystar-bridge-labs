@@ -34,6 +34,8 @@
 - `labs_governance_bridge/pre_u_generator/generated/pre_u_governance_run_manifest.json`
 - `labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json`
 - `labs_runtime_acceptance/generated/labs_runtime_acceptance_manifest.json`
+- `cross_repo_alignment/generated/cross_repo_status_manifest.json`
+- `cross_repo_alignment/generated/cross_repo_alignment_summary.json`
 - `console_read_model/generated/quarantine_summary.json`
 - `console_read_model/generated/safe_mining_summary.json`
 - `console_read_model/generated/review_queue_summary.json`
@@ -42,6 +44,7 @@
 - `console_read_model/generated/governance_bridge_summary.json`
 - `console_read_model/generated/pre_u_governance_summary.json`
 - `console_read_model/generated/labs_acceptance_summary.json`
+- `console_read_model/generated/cross_repo_alignment_summary.json`
 
 ## Unsafe Direct Sources
 
@@ -77,3 +80,5 @@
   decision snapshots; generated packets are not runtime actions.
 - Labs runtime acceptance data may be displayed only from generated acceptance
   reports; acceptance is dry-run only and not runtime execution.
+- Cross-repo alignment data may be displayed only from generated alignment
+  manifests; alignment is dry-run compatibility only and not CI or hook execution.

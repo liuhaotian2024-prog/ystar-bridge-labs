@@ -55,6 +55,7 @@ Ready now:
 - dry-run Labs-Gov alignment bridge snapshot
 - multi-role dry-run Pre-U governance summary
 - dry-run labs runtime governance acceptance summary
+- dry-run cross-repo governance alignment summary
 
 Not ready:
 - runtime generator
@@ -78,12 +79,13 @@ Not ready:
 - real hook integration for Labs-Gov bridge
 - runtime Pre-U packet execution
 - real runtime acceptance beyond dry-run checks
+- real cross-repo hook enforcement beyond dry-run alignment
 
 ## Runtime Artifact Quarantine Summary
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 206
+- Artifacts classified: 208
 - Unsafe artifacts count: 169
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
@@ -99,7 +101,7 @@ Not ready:
   - FRAMEWORK_FILE: 5
   - LOG_RUNTIME: 31
   - PYCACHE: 31
-  - UNKNOWN_OR_NON_RUNTIME: 32
+  - UNKNOWN_OR_NON_RUNTIME: 34
   - UNKNOWN_RUNTIME_ARTIFACT: 10
   - WHITELIST_REPORT: 1
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
@@ -137,8 +139,8 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 206
-- Artifacts with disposition: 206
+- Total artifacts: 208
+- Artifacts with disposition: 208
 - Safe-mined to review queue: 20
 - Forbidden direct read count: 106
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
@@ -150,10 +152,10 @@ Not ready:
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 31
-  - ignored_or_non_runtime: 37
+  - ignored_or_non_runtime: 39
   - safe_mined_to_review_queue: 20
 - Evidence scoring status:
-  - not_started: 206
+  - not_started: 208
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -209,9 +211,9 @@ Not ready:
 
 ## Labs Runtime Governance Acceptance
 
-- accepted: False
-- checks_passed: 10
-- checks_total: 10
+- accepted: True
+- checks_passed: 12
+- checks_total: 12
 - roles_covered: Aiden-CEO, Ethan-CTO, Samantha-Secretary
 - decision_counts:
   - allow: 3
@@ -221,6 +223,25 @@ Not ready:
 - memory_ingestion_performed: False
 - raw_runtime_artifacts_ingested: False
 - Warning: Dry-run only; no action execution, no CIEU write, no brain/memory mutation, and no raw runtime artifact ingestion.
+
+## Cross-Repo Governance Alignment
+
+- alignment_accepted: True
+- ystar-company HEAD: 3ccf4058 tools: add labs runtime governance acceptance runner
+- Y-star-gov HEAD: 9c4aee3 tools: add governance endpoint acceptance runner
+- Y-star-gov endpoint accepted: True
+- labs runtime accepted: True
+- roles_covered: Aiden-CEO, Ethan-CTO, Samantha-Secretary
+- decision_counts:
+  - allow: 3
+- safety_assertions:
+  - no_action_execution: True
+  - no_brain_writeback: True
+  - no_cieu_write: True
+  - no_memory_ingestion: True
+  - no_raw_artifact_ingestion: True
+  - ystar_gov_not_modified: True
+- Warning: Cross-repo alignment is dry-run only and does not execute actions or write CIEU.
 
 ## Governance Boundary
 
@@ -245,6 +266,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - connect bridge decisions to future Pre-U/CIEU dry-run examples without executing actions
 - define a reviewed path from Pre-U dry-run snapshots to future CIEU prediction-delta examples
 - define real hook enforcement handoff after dry-run acceptance remains stable
+- define CI handoff after cross-repo dry-run alignment remains stable
 
 ## Warnings / Gaps
 
@@ -268,3 +290,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Labs-Gov bridge exists as a dry-run snapshot only; no real hook integration exists.
 - Pre-U generator exists for dry-run governance only; no runtime packet execution exists.
 - Labs runtime acceptance exists for dry-run checks only; no real runtime execution is accepted.
+- Cross-repo alignment exists for dry-run compatibility only; no CI or real hook enforcement exists.

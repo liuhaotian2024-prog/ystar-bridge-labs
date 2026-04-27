@@ -38,6 +38,8 @@ python3 console_read_model/cli/team_console.py <command>
   packets generated, roles covered, decisions by role, and dry-run safety flags.
 - `labs-acceptance`: Prints the generated labs runtime governance acceptance
   summary: accepted status, check counts, decisions, and dry-run safety flags.
+- `cross-repo-alignment`: Prints the generated cross-repo governance alignment
+  summary: repo heads, acceptance states, decisions, and safety assertions.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

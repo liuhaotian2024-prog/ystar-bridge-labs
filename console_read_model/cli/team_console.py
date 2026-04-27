@@ -23,6 +23,7 @@ EVIDENCE_REVIEW = "console_read_model/generated/evidence_review_summary.json"
 GOVERNANCE_BRIDGE = "console_read_model/generated/governance_bridge_summary.json"
 PRE_U_GOVERNANCE = "console_read_model/generated/pre_u_governance_summary.json"
 LABS_ACCEPTANCE = "console_read_model/generated/labs_acceptance_summary.json"
+CROSS_REPO_ALIGNMENT = "console_read_model/generated/cross_repo_alignment_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -42,7 +43,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -85,6 +86,7 @@ def load_all() -> dict[str, Any]:
         "governance_bridge": load_json(GOVERNANCE_BRIDGE),
         "pre_u_governance": load_json(PRE_U_GOVERNANCE),
         "labs_acceptance": load_json(LABS_ACCEPTANCE),
+        "cross_repo_alignment": load_json(CROSS_REPO_ALIGNMENT),
     }
 
 
@@ -373,6 +375,29 @@ def cmd_labs_acceptance(data: dict[str, Any]) -> None:
     print(f"warning: {acceptance.get('warning')}")
 
 
+def cmd_cross_repo_alignment(data: dict[str, Any]) -> None:
+    alignment = data["cross_repo_alignment"]
+    print("# Cross-Repo Governance Alignment")
+    print()
+    print(f"alignment accepted: {alignment.get('alignment_accepted')}")
+    print(f"ystar-company HEAD: {alignment.get('ystar_company_head_summary')}")
+    print(f"Y-star-gov HEAD: {alignment.get('ystar_gov_head_summary')}")
+    print(f"Y-star-gov endpoint acceptance: {alignment.get('ystar_gov_endpoint_accepted')}")
+    print(f"labs runtime acceptance: {alignment.get('labs_runtime_accepted')}")
+    print("roles_covered:")
+    bullet_list(alignment.get("roles_covered", []))
+    print()
+    print("decision_counts:")
+    for decision, count in sorted(alignment.get("decision_counts", {}).items()):
+        print(f"- {decision}: {count}")
+    print()
+    print("safety_assertions:")
+    for name, value in sorted(alignment.get("safety_assertions", {}).items()):
+        print(f"- {name}: {value}")
+    print(f"generated_manifest: {alignment.get('generated_manifest')}")
+    print(f"warning: {alignment.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -430,6 +455,11 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print()
         print("Labs runtime acceptance report:")
         print(f"- {acceptance.get('generated_acceptance_report')}")
+    alignment = data.get("cross_repo_alignment", {})
+    if alignment:
+        print()
+        print("Cross-repo alignment manifest:")
+        print(f"- {alignment.get('generated_manifest')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -466,6 +496,7 @@ def cmd_validate_local() -> int:
         GOVERNANCE_BRIDGE,
         PRE_U_GOVERNANCE,
         LABS_ACCEPTANCE,
+        CROSS_REPO_ALIGNMENT,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -495,6 +526,8 @@ def cmd_validate_local() -> int:
             failures.append("pre_u_governance_summary missing from team console snapshot")
         if "labs_acceptance_summary" not in snapshot:
             failures.append("labs_acceptance_summary missing from team console snapshot")
+        if "cross_repo_alignment_summary" not in snapshot:
+            failures.append("cross_repo_alignment_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -715,6 +748,32 @@ def cmd_validate_local() -> int:
             if labs_acceptance.get(field) is not False:
                 failures.append(f"labs acceptance summary must keep {field}=false")
 
+    cross_repo_alignment = loaded.get(CROSS_REPO_ALIGNMENT)
+    if cross_repo_alignment:
+        required_fields = [
+            "alignment_accepted",
+            "ystar_company_head",
+            "ystar_company_head_summary",
+            "ystar_gov_head",
+            "ystar_gov_head_summary",
+            "ystar_gov_endpoint_accepted",
+            "labs_runtime_accepted",
+            "roles_covered",
+            "decision_counts",
+            "safety_assertions",
+            "generated_manifest",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in cross_repo_alignment:
+                failures.append(f"cross-repo alignment summary missing field: {field}")
+        roles = set(cross_repo_alignment.get("roles_covered", []))
+        if roles and roles != set(REQUIRED_AGENTS):
+            failures.append("cross-repo alignment summary must cover required agents when roles are present")
+        for name, value in cross_repo_alignment.get("safety_assertions", {}).items():
+            if value is not True:
+                failures.append(f"cross-repo alignment safety assertion must be true: {name}")
+
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
     print(f"Required agents: {', '.join(REQUIRED_AGENTS)}")
@@ -772,6 +831,8 @@ def main(argv: list[str]) -> int:
         cmd_pre_u_governance(data)
     elif command == "labs-acceptance":
         cmd_labs_acceptance(data)
+    elif command == "cross-repo-alignment":
+        cmd_cross_repo_alignment(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

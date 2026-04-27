@@ -33,6 +33,7 @@ CURATED_SOURCES = [
     "labs_governance_bridge/generated/governance_decision_snapshot.json",
     "labs_governance_bridge/pre_u_generator/generated/governance_decision_snapshots.json",
     "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json",
+    "cross_repo_alignment/generated/cross_repo_alignment_summary.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -363,6 +364,48 @@ def build_labs_acceptance_summary(acceptance_report: dict[str, Any] | None) -> d
     }
 
 
+def build_cross_repo_alignment_summary(cross_repo_summary: dict[str, Any] | None) -> dict[str, Any]:
+    if not cross_repo_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.cross_repo_alignment_summary",
+            "schema_version": "v0",
+            "alignment_accepted": False,
+            "ystar_company_head": None,
+            "ystar_company_head_summary": None,
+            "ystar_gov_head": None,
+            "ystar_gov_head_summary": None,
+            "ystar_gov_endpoint_accepted": False,
+            "labs_runtime_accepted": False,
+            "roles_covered": [],
+            "decision_counts": {},
+            "safety_assertions": {},
+            "generated_manifest": "cross_repo_alignment/generated/cross_repo_status_manifest.json",
+            "warning": "Cross-repo alignment report has not been generated yet.",
+        }
+    return {
+        "schema_name": "ystar.console_read_model.generated.cross_repo_alignment_summary",
+        "schema_version": "v0",
+        "alignment_accepted": cross_repo_summary.get("alignment_accepted"),
+        "ystar_company_head": cross_repo_summary.get("ystar_company_head"),
+        "ystar_company_head_summary": cross_repo_summary.get("ystar_company_head_summary"),
+        "ystar_gov_head": cross_repo_summary.get("ystar_gov_head"),
+        "ystar_gov_head_summary": cross_repo_summary.get("ystar_gov_head_summary"),
+        "ystar_gov_endpoint_accepted": cross_repo_summary.get("ystar_gov_endpoint_accepted"),
+        "labs_runtime_accepted": cross_repo_summary.get("labs_runtime_accepted"),
+        "roles_covered": cross_repo_summary.get("roles_covered", []),
+        "decision_counts": cross_repo_summary.get("decision_counts", {}),
+        "safety_assertions": cross_repo_summary.get("safety_assertions", {}),
+        "generated_manifest": cross_repo_summary.get(
+            "generated_manifest",
+            "cross_repo_alignment/generated/cross_repo_status_manifest.json",
+        ),
+        "warning": cross_repo_summary.get(
+            "warning",
+            "Cross-repo alignment is dry-run only and does not execute actions or write CIEU.",
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -413,6 +456,10 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json",
         files_read,
     )
+    cross_repo_generated_summary = load_optional_json(
+        "cross_repo_alignment/generated/cross_repo_alignment_summary.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -421,6 +468,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     governance_bridge_summary = build_governance_bridge_summary(governance_decision_snapshot)
     pre_u_governance_summary = build_pre_u_governance_summary(pre_u_governance_decisions)
     labs_acceptance_summary = build_labs_acceptance_summary(labs_acceptance_report)
+    cross_repo_alignment_summary = build_cross_repo_alignment_summary(cross_repo_generated_summary)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -493,6 +541,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Pre-U generator exists for dry-run governance only; no runtime packet execution exists.")
     if "Labs runtime acceptance exists for dry-run checks only; no real runtime execution is accepted." not in open_gaps:
         open_gaps.append("Labs runtime acceptance exists for dry-run checks only; no real runtime execution is accepted.")
+    if "Cross-repo alignment exists for dry-run compatibility only; no CI or real hook enforcement exists." not in open_gaps:
+        open_gaps.append("Cross-repo alignment exists for dry-run compatibility only; no CI or real hook enforcement exists.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -512,6 +562,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "governance_bridge_summary": governance_bridge_summary,
         "pre_u_governance_summary": pre_u_governance_summary,
         "labs_acceptance_summary": labs_acceptance_summary,
+        "cross_repo_alignment_summary": cross_repo_alignment_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -556,6 +607,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "dry-run Labs-Gov alignment bridge snapshot",
             "multi-role dry-run Pre-U governance summary",
             "dry-run labs runtime governance acceptance summary",
+            "dry-run cross-repo governance alignment summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -579,6 +631,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "real hook integration for Labs-Gov bridge",
             "runtime Pre-U packet execution",
             "real runtime acceptance beyond dry-run checks",
+            "real cross-repo hook enforcement beyond dry-run alignment",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -594,6 +647,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "connect bridge decisions to future Pre-U/CIEU dry-run examples without executing actions",
             "define a reviewed path from Pre-U dry-run snapshots to future CIEU prediction-delta examples",
             "define real hook enforcement handoff after dry-run acceptance remains stable",
+            "define CI handoff after cross-repo dry-run alignment remains stable",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -603,6 +657,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "no real Labs-Gov hook enforcement path",
             "no runtime Pre-U execution path",
             "no real action/CIEU/brain write path from acceptance reports",
+            "no real cross-repo hook enforcement path",
         ],
         "safety_boundaries": [
             "no DB reads",
@@ -618,6 +673,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "Labs-Gov bridge is dry-run only and does not execute actions",
             "generated Pre-U packets are dry-run only and not runtime actions",
             "labs runtime acceptance is dry-run only and not runtime execution",
+            "cross-repo alignment is dry-run only and not CI or hook execution",
         ],
     }
 
@@ -638,6 +694,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/governance_bridge_summary.json",
             "console_read_model/generated/pre_u_governance_summary.json",
             "console_read_model/generated/labs_acceptance_summary.json",
+            "console_read_model/generated/cross_repo_alignment_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -682,6 +739,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "Pre-U dry-run decisions. It is not runtime packet execution.\n\n"
         "`labs_acceptance_summary.json` is derived from the generated labs runtime\n"
         "acceptance report. It is dry-run acceptance only, not runtime execution.\n\n"
+        "`cross_repo_alignment_summary.json` is derived from the generated cross-repo\n"
+        "alignment manifest. It is dry-run compatibility only, not CI or hook execution.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -698,6 +757,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/governance_bridge_summary.json", governance_bridge_summary, generated_files)
     write_json("console_read_model/generated/pre_u_governance_summary.json", pre_u_governance_summary, generated_files)
     write_json("console_read_model/generated/labs_acceptance_summary.json", labs_acceptance_summary, generated_files)
+    write_json("console_read_model/generated/cross_repo_alignment_summary.json", cross_repo_alignment_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -749,6 +809,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     governance_bridge = snapshot.get("governance_bridge_summary", {})
     pre_u_governance = snapshot.get("pre_u_governance_summary", {})
     labs_acceptance = snapshot.get("labs_acceptance_summary", {})
+    cross_repo = snapshot.get("cross_repo_alignment_summary", {})
     lines.extend(
         [
             "",
@@ -915,6 +976,26 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- Warning: {labs_acceptance.get('warning')}",
         ]
     )
+    lines.extend(
+        [
+            "",
+            "## Cross-Repo Governance Alignment",
+            "",
+            f"- alignment_accepted: {cross_repo.get('alignment_accepted')}",
+            f"- ystar-company HEAD: {cross_repo.get('ystar_company_head_summary')}",
+            f"- Y-star-gov HEAD: {cross_repo.get('ystar_gov_head_summary')}",
+            f"- Y-star-gov endpoint accepted: {cross_repo.get('ystar_gov_endpoint_accepted')}",
+            f"- labs runtime accepted: {cross_repo.get('labs_runtime_accepted')}",
+            f"- roles_covered: {', '.join(cross_repo.get('roles_covered', []))}",
+            "- decision_counts:",
+        ]
+    )
+    for decision, count in sorted(cross_repo.get("decision_counts", {}).items()):
+        lines.append(f"  - {decision}: {count}")
+    lines.append("- safety_assertions:")
+    for key, value in sorted(cross_repo.get("safety_assertions", {}).items()):
+        lines.append(f"  - {key}: {value}")
+    lines.append(f"- Warning: {cross_repo.get('warning')}")
     lines.extend(
         [
             "",

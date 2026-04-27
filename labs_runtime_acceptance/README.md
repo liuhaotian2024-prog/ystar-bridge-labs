@@ -30,3 +30,6 @@ The acceptance pack does not execute actions, write CIEU records, mutate brain
 or memory, approve candidates, read DB/log/runtime contents, or ingest raw
 runtime artifacts.
 
+L3.7 pairs this labs acceptance result with the independent Y-star-gov endpoint
+acceptance result through `cross_repo_alignment/`. That pairing remains dry-run
+only.

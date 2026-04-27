@@ -1,0 +1,54 @@
+{
+  "schema_name": "ystar.cross_repo_alignment.generated.status_manifest",
+  "schema_version": "v0",
+  "generated_at_policy": "deterministic_no_timestamp",
+  "ystar_company_head": "3ccf40584f17a436ed810f0941a277d525f45e6d",
+  "ystar_company_head_summary": "3ccf4058 tools: add labs runtime governance acceptance runner",
+  "ystar_gov_head": "9c4aee339b02abd210fb70a919669c4a4a7739ad",
+  "ystar_gov_head_summary": "9c4aee3 tools: add governance endpoint acceptance runner",
+  "ystar_gov_endpoint_acceptance": {
+    "accepted": true,
+    "exit_code": 0,
+    "source": "/Users/haotianliu/.openclaw/workspace/Y-star-gov/tools/run_governance_endpoint_acceptance.py"
+  },
+  "labs_runtime_acceptance": {
+    "accepted": true,
+    "exit_code": 0,
+    "source": "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json"
+  },
+  "labs_governance_bridge": {
+    "latest_decision": "allow",
+    "allow_execution": true,
+    "dry_run_only": true,
+    "action_executed": false,
+    "cieu_written": false,
+    "brain_writeback_performed": false
+  },
+  "multi_role_pre_u_governance": {
+    "roles_covered": [
+      "Aiden-CEO",
+      "Ethan-CTO",
+      "Samantha-Secretary"
+    ],
+    "decision_counts": {
+      "allow": 3
+    },
+    "all_dry_run_only": true,
+    "action_executed": false,
+    "cieu_written": false,
+    "brain_writeback_performed": false
+  },
+  "alignment_status": {
+    "accepted": true,
+    "reason": "both repositories accepted dry-run governance alignment"
+  },
+  "safety_assertions": {
+    "no_action_execution": true,
+    "no_cieu_write": true,
+    "no_brain_writeback": true,
+    "no_memory_ingestion": true,
+    "no_raw_artifact_ingestion": true,
+    "ystar_gov_not_modified": true
+  },
+  "warning": "Cross-repo alignment is dry-run only and does not execute actions or write CIEU."
+}

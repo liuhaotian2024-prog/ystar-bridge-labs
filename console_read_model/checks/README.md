@@ -36,6 +36,10 @@ The wrapper validates generated labs runtime acceptance reports and exposes a
 `labs-acceptance` CLI smoke check. It does not call the full acceptance runner,
 which avoids recursive acceptance-wrapper execution.
 
+The wrapper also validates generated cross-repo alignment reports and exposes a
+`cross-repo-alignment` CLI smoke check. It does not call the full cross-repo
+alignment acceptance runner, which avoids long recursive cross-repo checks.
+
 Optional flags:
 
 - `--no-rebuild`: validate existing generated files without rebuilding them.

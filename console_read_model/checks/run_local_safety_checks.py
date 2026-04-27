@@ -129,6 +129,28 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "labs_runtime_acceptance/generated/labs_runtime_acceptance_manifest.json"],
     ),
     Check(
+        "Compile cross-repo alignment tools",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "cross_repo_alignment/tools/build_cross_repo_status_manifest.py",
+            "cross_repo_alignment/tools/run_cross_repo_alignment_acceptance.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: cross_repo_alignment_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/cross_repo_alignment_summary.json"],
+    ),
+    Check(
+        "Validate JSON: cross_repo_status_manifest.json",
+        ["python3", "-m", "json.tool", "cross_repo_alignment/generated/cross_repo_status_manifest.json"],
+    ),
+    Check(
+        "Validate JSON: cross_repo_alignment_summary generated",
+        ["python3", "-m", "json.tool", "cross_repo_alignment/generated/cross_repo_alignment_summary.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -247,6 +269,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: labs-acceptance",
         ["python3", "console_read_model/cli/team_console.py", "labs-acceptance"],
+    ),
+    Check(
+        "CLI smoke: cross-repo-alignment",
+        ["python3", "console_read_model/cli/team_console.py", "cross-repo-alignment"],
     ),
     Check(
         "CLI smoke: sources",

@@ -1,0 +1,27 @@
+{
+  "schema_name": "ystar.cross_repo_alignment.status_schema",
+  "schema_version": "v0",
+  "required_fields": [
+    "schema_name",
+    "schema_version",
+    "ystar_company_head",
+    "ystar_company_head_summary",
+    "ystar_gov_head",
+    "ystar_gov_head_summary",
+    "ystar_gov_endpoint_acceptance",
+    "labs_runtime_acceptance",
+    "labs_governance_bridge",
+    "multi_role_pre_u_governance",
+    "alignment_status",
+    "safety_assertions"
+  ],
+  "safety_assertions_required_true": [
+    "no_action_execution",
+    "no_cieu_write",
+    "no_brain_writeback",
+    "no_memory_ingestion",
+    "no_raw_artifact_ingestion",
+    "ystar_gov_not_modified"
+  ]
+}
+
