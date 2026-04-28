@@ -203,7 +203,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after controlled real release preflight",
+        "Build real release simulation sandbox",
+        ["python3", "real_release_simulation_sandbox/tools/build_real_release_simulation_sandbox.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after real release simulation sandbox",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -1741,6 +1746,59 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "controlled_real_release_preflight_readiness/controlled_real_release_preflight_readiness.json"],
     ),
     Check(
+        "Compile real release simulation sandbox builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "real_release_simulation_sandbox/tools/build_real_release_simulation_sandbox.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: real_release_simulation_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/real_release_simulation_summary.json"],
+    ),
+    Check(
+        "Validate JSON: real_release_simulation_sandbox_contract.json",
+        ["python3", "-m", "json.tool", "real_release_simulation_sandbox/real_release_simulation_sandbox_contract.json"],
+    ),
+    Check(
+        "Validate JSON: sandbox_release_authority_fixture.json",
+        ["python3", "-m", "json.tool", "sandbox_release_authority_fixture/sandbox_release_authority_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: simulated_durable_approval_record.json",
+        ["python3", "-m", "json.tool", "simulated_durable_approval_record/simulated_durable_approval_record.json"],
+    ),
+    Check(
+        "Validate JSON: sandbox_release_snapshot_manifest.json",
+        ["python3", "-m", "json.tool", "sandbox_release_snapshot/sandbox_release_snapshot_manifest.json"],
+    ),
+    Check(
+        "Validate JSON: sandbox_release_execution_result.json",
+        ["python3", "-m", "json.tool", "sandbox_release_execution_result/sandbox_release_execution_result.json"],
+    ),
+    Check(
+        "Validate JSON: sandbox_post_release_validation_result.json",
+        ["python3", "-m", "json.tool", "sandbox_post_release_validation/sandbox_post_release_validation_result.json"],
+    ),
+    Check(
+        "Validate JSON: sandbox_post_release_behavior_y_star.json",
+        ["python3", "-m", "json.tool", "sandbox_release_projection_and_mcp_preview/sandbox_post_release_behavior_y_star.json"],
+    ),
+    Check(
+        "Validate JSON: sandbox_release_rollback_result.json",
+        ["python3", "-m", "json.tool", "sandbox_release_rollback_drill/sandbox_release_rollback_result.json"],
+    ),
+    Check(
+        "Validate JSON: release_simulation_cieu_event_fixture.json",
+        ["python3", "-m", "json.tool", "release_simulation_cieu_residual/release_simulation_cieu_event_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: real_release_simulation_readiness.json",
+        ["python3", "-m", "json.tool", "real_release_simulation_readiness/real_release_simulation_readiness.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -1963,6 +2021,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: real-release-preflight",
         ["python3", "console_read_model/cli/team_console.py", "real-release-preflight"],
+    ),
+    Check(
+        "CLI smoke: release-simulation-sandbox",
+        ["python3", "console_read_model/cli/team_console.py", "release-simulation-sandbox"],
     ),
     Check(
         "CLI smoke: sources",

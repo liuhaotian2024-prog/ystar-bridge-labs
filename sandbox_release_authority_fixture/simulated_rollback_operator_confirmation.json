@@ -1,0 +1,12 @@
+{
+  "schema_name": "ystar.sandbox_release.rollback_operator_confirmation",
+  "schema_version": "v0",
+  "confirmation_id": "simulated-rollback-operator-confirmation-v0",
+  "operator_role_ref": "rollback_operator",
+  "confirmation_mode": "sandbox_only",
+  "confirmed_for_sandbox_rollback_drill": true,
+  "confirmed_for_real_rollback": false,
+  "evidence_refs": [
+    "release_operator_handoff_packet/release_operator_handoff_packet.json"
+  ]
+}

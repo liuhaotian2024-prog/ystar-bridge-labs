@@ -391,6 +391,9 @@ def main() -> int:
     required_controlled_real_release_preflight_files = expected.get(
         "required_controlled_real_release_preflight_files", []
     )
+    required_real_release_simulation_sandbox_files = expected.get(
+        "required_real_release_simulation_sandbox_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -599,6 +602,12 @@ def main() -> int:
         check_exists(path, report, "controlled real release preflight file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "controlled real release preflight JSON")
+
+    for rel in required_real_release_simulation_sandbox_files:
+        path = ROOT / rel
+        check_exists(path, report, "real release simulation sandbox file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "real release simulation sandbox JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -3950,6 +3959,166 @@ def main() -> int:
             "L5.12 Real Release Simulation Sandbox v0"
         ):
             report.fail("generated controlled real release preflight summary must point to L5.12")
+
+    real_release_simulation = generated_json.get(
+        "console_read_model/generated/real_release_simulation_summary.json"
+    )
+    if real_release_simulation:
+        for field in [
+            "l5_12_real_release_simulation_sandbox_defined",
+            "sandbox_release_authority_fixture_generated",
+            "simulated_durable_approval_record_generated",
+            "sandbox_snapshot_generated",
+            "simulated_release_operator_confirmed",
+            "simulated_rollback_operator_confirmed",
+            "sandbox_release_execution_plan_generated",
+            "sandbox_release_execution_generated",
+            "sandbox_release_executed",
+            "real_canonical_state_unchanged",
+            "sandbox_post_release_validation_generated",
+            "sandbox_post_release_validation_status",
+            "sandbox_post_release_projection_generated",
+            "sandbox_mcp_preview_generated",
+            "sandbox_rollback_drill_generated",
+            "rollback_restored_baseline",
+            "original_release_rollback_comparison_generated",
+            "release_simulation_cieu_like_fixture_generated",
+            "release_simulation_residual_delta_generated",
+            "real_approval_granted",
+            "real_release_authorized",
+            "real_release_performed",
+            "durable_approval_record_written",
+            "canonical_policy_mutation_performed",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "direct_y_star_mutation_performed",
+            "real_release_still_blocked",
+            "real_approval_still_blocked",
+            "durable_persistence_still_blocked",
+            "real_canonical_application_still_blocked",
+            "brain_writeback_still_blocked",
+            "memory_ingestion_still_blocked",
+            "y_star_direct_mutation_still_blocked",
+            "mcp_execution_still_blocked",
+            "y_star_gov_unmodified",
+            "gov_mcp_unmodified",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "mcp_server_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "cieu_persistence_enabled",
+            "durable_approval_persistence_enabled",
+            "real_approval_record_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "strategy_mutation_enabled",
+            "candidate_auto_approval_enabled",
+            "real_candidate_approval_enabled",
+            "real_canonical_policy_mutation_enabled",
+            "real_canonical_update_application_enabled",
+            "real_release_execution_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "ready_for_l5_13_live_boundary_no_go_decision_framework",
+            "ready_for_l6_revenue_opportunity_discovery",
+            "next_required_milestone",
+            "generated_simulation_summary",
+            "generated_authority_summary",
+            "generated_simulated_record_summary",
+            "generated_snapshot_summary",
+            "generated_plan_summary",
+            "generated_result_summary",
+            "generated_validation_summary",
+            "generated_projection_mcp_summary",
+            "generated_rollback_summary",
+            "generated_comparison_summary",
+            "generated_cieu_summary",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in real_release_simulation:
+                report.pass_(f"generated real release simulation summary field present: {field}")
+            else:
+                report.fail(f"generated real release simulation summary missing field: {field}")
+        for field in [
+            "l5_12_real_release_simulation_sandbox_defined",
+            "sandbox_release_authority_fixture_generated",
+            "simulated_durable_approval_record_generated",
+            "sandbox_snapshot_generated",
+            "simulated_release_operator_confirmed",
+            "simulated_rollback_operator_confirmed",
+            "sandbox_release_execution_plan_generated",
+            "sandbox_release_execution_generated",
+            "sandbox_release_executed",
+            "real_canonical_state_unchanged",
+            "sandbox_post_release_validation_generated",
+            "sandbox_post_release_projection_generated",
+            "sandbox_mcp_preview_generated",
+            "sandbox_rollback_drill_generated",
+            "rollback_restored_baseline",
+            "original_release_rollback_comparison_generated",
+            "release_simulation_cieu_like_fixture_generated",
+            "release_simulation_residual_delta_generated",
+            "real_release_still_blocked",
+            "real_approval_still_blocked",
+            "durable_persistence_still_blocked",
+            "real_canonical_application_still_blocked",
+            "brain_writeback_still_blocked",
+            "memory_ingestion_still_blocked",
+            "y_star_direct_mutation_still_blocked",
+            "mcp_execution_still_blocked",
+            "y_star_gov_unmodified",
+            "gov_mcp_unmodified",
+            "ready_for_l5_13_live_boundary_no_go_decision_framework",
+        ]:
+            if real_release_simulation.get(field) is not True:
+                report.fail(f"generated real release simulation summary must keep {field}=true")
+        for field in [
+            "real_approval_granted",
+            "real_release_authorized",
+            "real_release_performed",
+            "durable_approval_record_written",
+            "canonical_policy_mutation_performed",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "direct_y_star_mutation_performed",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "mcp_server_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "cieu_persistence_enabled",
+            "durable_approval_persistence_enabled",
+            "real_approval_record_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "strategy_mutation_enabled",
+            "candidate_auto_approval_enabled",
+            "real_candidate_approval_enabled",
+            "real_canonical_policy_mutation_enabled",
+            "real_canonical_update_application_enabled",
+            "real_release_execution_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "ready_for_l6_revenue_opportunity_discovery",
+        ]:
+            if real_release_simulation.get(field) is not False:
+                report.fail(f"generated real release simulation summary must keep {field}=false")
+        if real_release_simulation.get("next_required_milestone") != (
+            "L5.13 Live Boundary / No-Go Decision Framework v0"
+        ):
+            report.fail("generated real release simulation summary must point to L5.13")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

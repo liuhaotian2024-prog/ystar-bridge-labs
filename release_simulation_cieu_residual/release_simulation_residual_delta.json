@@ -1,0 +1,98 @@
+{
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  },
+  "simulation_flags": {
+    "sandbox_release_authority_fixture_created": true,
+    "simulated_durable_record_created": true,
+    "sandbox_snapshot_created": true,
+    "simulated_release_operator_confirmed": true,
+    "simulated_rollback_operator_confirmed": true,
+    "sandbox_release_executed": true,
+    "sandbox_post_validation_performed": true,
+    "sandbox_rollback_drill_performed": true
+  },
+  "schema_name": "ystar.release_simulation.residual_delta",
+  "schema_version": "v0",
+  "residual_delta_id": "release-simulation-residual-delta-v0",
+  "source_predicted_outcome_id": "release-simulation-predicted-outcome-v0",
+  "source_mock_actual_outcome_id": "release-simulation-mock-actual-outcome-v0",
+  "residual_classes": [
+    {
+      "class": "simulated_authority_residual",
+      "status": "satisfied_or_blocked_in_sandbox_simulation",
+      "structural_delta": "sandbox release simulation completed while real release remains blocked"
+    },
+    {
+      "class": "simulated_approval_record_residual",
+      "status": "satisfied_or_blocked_in_sandbox_simulation",
+      "structural_delta": "sandbox release simulation completed while real release remains blocked"
+    },
+    {
+      "class": "sandbox_snapshot_residual",
+      "status": "satisfied_or_blocked_in_sandbox_simulation",
+      "structural_delta": "sandbox release simulation completed while real release remains blocked"
+    },
+    {
+      "class": "sandbox_release_execution_residual",
+      "status": "satisfied_or_blocked_in_sandbox_simulation",
+      "structural_delta": "sandbox release simulation completed while real release remains blocked"
+    },
+    {
+      "class": "y_star_invariant_residual",
+      "status": "satisfied_or_blocked_in_sandbox_simulation",
+      "structural_delta": "sandbox release simulation completed while real release remains blocked"
+    },
+    {
+      "class": "mcp_non_bypass_residual",
+      "status": "satisfied_or_blocked_in_sandbox_simulation",
+      "structural_delta": "sandbox release simulation completed while real release remains blocked"
+    },
+    {
+      "class": "post_release_validation_residual",
+      "status": "satisfied_or_blocked_in_sandbox_simulation",
+      "structural_delta": "sandbox release simulation completed while real release remains blocked"
+    },
+    {
+      "class": "rollback_residual",
+      "status": "satisfied_or_blocked_in_sandbox_simulation",
+      "structural_delta": "sandbox release simulation completed while real release remains blocked"
+    },
+    {
+      "class": "real_state_unchanged_residual",
+      "status": "satisfied_or_blocked_in_sandbox_simulation",
+      "structural_delta": "sandbox release simulation completed while real release remains blocked"
+    },
+    {
+      "class": "real_release_blocker_residual",
+      "status": "satisfied_or_blocked_in_sandbox_simulation",
+      "structural_delta": "sandbox release simulation completed while real release remains blocked"
+    }
+  ],
+  "residual_summary": "Sandbox release, validation, MCP preview, and rollback drill were represented only as generated artifacts. Real approval, durable persistence, and real release remain blocked.",
+  "semantic_truth_scoring_enabled": false
+}

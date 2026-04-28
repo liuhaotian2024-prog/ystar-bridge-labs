@@ -1,0 +1,74 @@
+{
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  },
+  "simulation_flags": {
+    "sandbox_release_authority_fixture_created": true,
+    "simulated_durable_record_created": true,
+    "sandbox_snapshot_created": true,
+    "simulated_release_operator_confirmed": true,
+    "simulated_rollback_operator_confirmed": true,
+    "sandbox_release_executed": true,
+    "sandbox_post_validation_performed": true,
+    "sandbox_rollback_drill_performed": true
+  },
+  "schema_name": "ystar.sandbox_post_release.behavior_y_star",
+  "schema_version": "v0",
+  "post_release_behavior_y_star_id": "sandbox-post-release-behavior-y-star-v0",
+  "source_mission_y_star_id": "mission-y-star-input-v0",
+  "source_sandbox_released_policy_snapshot_id": "sandbox-released-projection-policy-snapshot-v0",
+  "projected_behavior_y_star": {
+    "projection_target": "future behavior-level Y* remains mission-derived",
+    "sandbox_release_effect": "policy-mediated boundary and evidence tightening",
+    "execution_boundary": "dry-run sandbox preview only"
+  },
+  "changed_fields_from_pre_release": [
+    "projection trace linkage",
+    "Pre-U mapping evidence requirement",
+    "MCP non-bypass evidence requirement",
+    "residual classification labels"
+  ],
+  "unchanged_fields_from_pre_release": [
+    "mission-level Y*",
+    "behavior execution authorization",
+    "MCP execution authorization",
+    "brain/memory writeback authorization"
+  ],
+  "inherited_constraints_preserved": true,
+  "forbidden_boundaries_preserved": true,
+  "pre_u_validation_still_required": true,
+  "live_behavior_authorized": false,
+  "behavior_execution_enabled": false,
+  "applied_to_real_canonical_policy": false,
+  "applied_to_brain": false,
+  "applied_to_memory": false,
+  "direct_y_star_mutation_performed": false,
+  "evidence_refs": [
+    "sandbox_release_execution_result/sandbox_released_projection_policy_snapshot.json",
+    "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json"
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "schema_name": "ystar.real_release_simulation.input_fixture",
+  "schema_version": "v0",
+  "input_refs": {
+    "release_candidate_package": "release_candidate_package/release_candidate_package.json",
+    "release_candidate_scope": "release_candidate_package/release_candidate_scope.json",
+    "release_scope_validation_result": "release_scope_validation/release_scope_validation_result.json",
+    "approval_record_preflight_validation_result": "approval_record_preflight_validation/approval_record_preflight_validation_result.json",
+    "snapshot_preflight_validation_result": "snapshot_and_rollback_preflight/snapshot_preflight_validation_result.json",
+    "rollback_preflight_validation_result": "snapshot_and_rollback_preflight/rollback_preflight_validation_result.json",
+    "y_star_non_mutation_preflight_result": "invariant_preflight_validation/y_star_non_mutation_preflight_result.json",
+    "mcp_non_bypass_preflight_result": "invariant_preflight_validation/mcp_non_bypass_preflight_result.json",
+    "post_release_validation_matrix": "post_release_validation_matrix/post_release_validation_matrix.json",
+    "release_operator_handoff_packet": "release_operator_handoff_packet/release_operator_handoff_packet.json",
+    "release_blocker_decision": "release_blocker_decision/release_blocker_decision.json",
+    "controlled_real_release_preflight_readiness": "controlled_real_release_preflight_readiness/controlled_real_release_preflight_readiness.json",
+    "canonical_update_package_candidate": "canonical_update_package_candidate/canonical_update_package_candidate.json",
+    "versioned_canonical_patch_plan": "versioned_canonical_patch_plan/versioned_canonical_patch_plan.json",
+    "y_star_non_mutation_invariant": "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+    "controlled_approval_record_readiness": "controlled_approval_record_readiness/controlled_approval_record_readiness.json"
+  },
+  "optional_input_refs": {
+    "sandbox_approval_record_instance": "sandbox_approval_record_instance/sandbox_approval_record_instance.json",
+    "mission_y_star_input": "mission_to_behavior_y_star_projection/mission_y_star_input.json",
+    "behavior_level_y_star_candidate": "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+    "field_projection_operator_policy": "field_functional_auto_projection_core/field_projection_operator_policy.json"
+  },
+  "input_statuses": [
+    {
+      "source_key": "release_candidate_package",
+      "path": "release_candidate_package/release_candidate_package.json",
+      "status": "present"
+    },
+    {
+      "source_key": "release_candidate_scope",
+      "path": "release_candidate_package/release_candidate_scope.json",
+      "status": "present"
+    },
+    {
+      "source_key": "release_scope_validation_result",
+      "path": "release_scope_validation/release_scope_validation_result.json",
+      "status": "present"
+    },
+    {
+      "source_key": "approval_record_preflight_validation_result",
+      "path": "approval_record_preflight_validation/approval_record_preflight_validation_result.json",
+      "status": "present"
+    },
+    {
+      "source_key": "snapshot_preflight_validation_result",
+      "path": "snapshot_and_rollback_preflight/snapshot_preflight_validation_result.json",
+      "status": "present"
+    },
+    {
+      "source_key": "rollback_preflight_validation_result",
+      "path": "snapshot_and_rollback_preflight/rollback_preflight_validation_result.json",
+      "status": "present"
+    },
+    {
+      "source_key": "y_star_non_mutation_preflight_result",
+      "path": "invariant_preflight_validation/y_star_non_mutation_preflight_result.json",
+      "status": "present"
+    },
+    {
+      "source_key": "mcp_non_bypass_preflight_result",
+      "path": "invariant_preflight_validation/mcp_non_bypass_preflight_result.json",
+      "status": "present"
+    },
+    {
+      "source_key": "post_release_validation_matrix",
+      "path": "post_release_validation_matrix/post_release_validation_matrix.json",
+      "status": "present"
+    },
+    {
+      "source_key": "release_operator_handoff_packet",
+      "path": "release_operator_handoff_packet/release_operator_handoff_packet.json",
+      "status": "present"
+    },
+    {
+      "source_key": "release_blocker_decision",
+      "path": "release_blocker_decision/release_blocker_decision.json",
+      "status": "present"
+    },
+    {
+      "source_key": "controlled_real_release_preflight_readiness",
+      "path": "controlled_real_release_preflight_readiness/controlled_real_release_preflight_readiness.json",
+      "status": "present"
+    },
+    {
+      "source_key": "canonical_update_package_candidate",
+      "path": "canonical_update_package_candidate/canonical_update_package_candidate.json",
+      "status": "present"
+    },
+    {
+      "source_key": "versioned_canonical_patch_plan",
+      "path": "versioned_canonical_patch_plan/versioned_canonical_patch_plan.json",
+      "status": "present"
+    },
+    {
+      "source_key": "y_star_non_mutation_invariant",
+      "path": "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+      "status": "present"
+    },
+    {
+      "source_key": "controlled_approval_record_readiness",
+      "path": "controlled_approval_record_readiness/controlled_approval_record_readiness.json",
+      "status": "present"
+    },
+    {
+      "source_key": "sandbox_approval_record_instance",
+      "path": "sandbox_approval_record_instance/sandbox_approval_record_instance.json",
+      "status": "present"
+    },
+    {
+      "source_key": "mission_y_star_input",
+      "path": "mission_to_behavior_y_star_projection/mission_y_star_input.json",
+      "status": "present"
+    },
+    {
+      "source_key": "behavior_level_y_star_candidate",
+      "path": "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+      "status": "present"
+    },
+    {
+      "source_key": "field_projection_operator_policy",
+      "path": "field_functional_auto_projection_core/field_projection_operator_policy.json",
+      "status": "present"
+    }
+  ],
+  "missing_sources": [],
+  "gap_handling": "missing optional sources are recorded and do not trigger destructive failure",
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  },
+  "simulation_flags": {
+    "sandbox_release_authority_fixture_created": true,
+    "simulated_durable_record_created": true,
+    "sandbox_snapshot_created": true,
+    "simulated_release_operator_confirmed": true,
+    "simulated_rollback_operator_confirmed": true,
+    "sandbox_release_executed": true,
+    "sandbox_post_validation_performed": true,
+    "sandbox_rollback_drill_performed": true
+  }
+}

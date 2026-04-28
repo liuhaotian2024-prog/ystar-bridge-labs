@@ -1,0 +1,13 @@
+{
+  "schema_name": "ystar.sandbox_release.release_operator_confirmation",
+  "schema_version": "v0",
+  "confirmation_id": "simulated-release-operator-confirmation-v0",
+  "operator_role_ref": "release_operator",
+  "confirmation_mode": "sandbox_only",
+  "confirmed_for_sandbox_release_simulation": true,
+  "confirmed_for_real_release": false,
+  "release_execution_allowed_now": false,
+  "evidence_refs": [
+    "release_operator_handoff_packet/release_operator_handoff_packet.json"
+  ]
+}

@@ -147,6 +147,11 @@ python3 console_read_model/cli/team_console.py <command>
   non-bypass checks, post-release validation matrix, handoff packet, release
   blocker decision, CIEU-like residual, and blocked real release/application/
   durable-persistence/writeback/direct-Y*/MCP state.
+- `release-simulation-sandbox`: Prints the generated L5.12 real release
+  simulation sandbox summary: sandbox authority, simulated approval record,
+  sandbox snapshot, sandbox release execution, post-release validation,
+  projection/MCP preview, rollback drill, CIEU-like residual, and blocked real
+  release/application/durable-persistence/writeback/direct-Y*/MCP state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

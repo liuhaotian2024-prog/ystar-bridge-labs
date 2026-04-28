@@ -108,5 +108,8 @@ approval record sandbox. It confirms sandbox approval record creation, integrity
 `real_release_preflight_summary.json` is derived from the L5.11 controlled
 real release preflight. It confirms release candidate assembly, scope validation, approval-record preflight, snapshot/rollback checks, invariants, handoff, blocker decision, and CIEU-like residuals while real release, durable persistence, real approval, and canonical application remain blocked.
 
+`real_release_simulation_summary.json` is derived from the L5.12 real release
+simulation sandbox. It confirms sandbox authority, simulated approval record, sandbox snapshot, sandbox release execution, post-release validation, MCP preview, rollback drill, comparison, and CIEU-like residuals while real release, durable persistence, real approval, and canonical application remain blocked.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.
