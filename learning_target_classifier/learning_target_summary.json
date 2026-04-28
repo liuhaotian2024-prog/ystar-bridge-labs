@@ -1,0 +1,19 @@
+{
+  "schema_name": "ystar.learning_target_classifier.summary",
+  "schema_version": "v0",
+  "learning_target_classification_generated": true,
+  "targets_classified": [
+    "projection_policy",
+    "behavior_y_star_generation",
+    "pre_u_mapping",
+    "work_proposal_alignment",
+    "residual_classification",
+    "evidence_collection_policy",
+    "live_blocker_tracking",
+    "writeback_boundary_tracking"
+  ],
+  "allowed_shadow_learning": true,
+  "denied_canonical_policy_mutation": true,
+  "denied_brain_writeback": true,
+  "denied_memory_ingestion": true
+}

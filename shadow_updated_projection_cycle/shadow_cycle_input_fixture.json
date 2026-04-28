@@ -1,0 +1,26 @@
+{
+  "schema_name": "ystar.shadow_updated_projection_cycle.input_fixture",
+  "schema_version": "v0",
+  "fixture_id": "shadow-cycle-input-fixture-001",
+  "shadow_behavior_y_star_preview_ref": "shadow_reprojection_preview/shadow_reprojected_behavior_y_star_preview.json",
+  "next_cycle_projection_input_candidate_ref": "shadow_reprojection_preview/next_cycle_projection_input_candidate.json",
+  "shadow_patch_ref": "shadow_projection_policy_patch/shadow_projection_policy_patch.json",
+  "dry_run_only": true,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

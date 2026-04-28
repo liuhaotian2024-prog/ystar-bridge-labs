@@ -1,0 +1,12 @@
+{
+  "schema_name": "ystar.integrated_learning_cycle_cieu_fixture.summary",
+  "schema_version": "v0",
+  "integrated_learning_cycle_cieu_fixture_generated": true,
+  "event_mode": "integrated_review_gated_shadow_cycle_fixture",
+  "persistence_enabled": false,
+  "db_write_performed": false,
+  "semantic_truth_scoring_used": false,
+  "shadow_patch_generated": true,
+  "shadow_behavior_y_star_preview_generated": true,
+  "original_vs_shadow_comparison_generated": true
+}

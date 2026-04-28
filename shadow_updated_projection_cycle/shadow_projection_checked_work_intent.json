@@ -1,0 +1,26 @@
+{
+  "schema_name": "ystar.shadow_updated_projection_cycle.work_intent",
+  "schema_version": "v0",
+  "shadow_work_intent_id": "shadow-projection-checked-work-intent-001",
+  "source_shadow_behavior_y_star_preview_id": "shadow-behavior-y-star-preview-001",
+  "declared_work_intent": "refresh mission dashboard using shadow-updated behavior-level Y* context",
+  "required_shadow_behavior_y_star_alignment": "Prepare a projection-checked autonomous work-cycle candidate for future Pre-U validation. Shadow preview adds explicit residual-review obligations, no-execution residual labeling, and evidence sufficiency checks before any future canonical learning design.",
+  "expected_safe_result": "A shadow dry-run work result and comparison artifact only.",
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

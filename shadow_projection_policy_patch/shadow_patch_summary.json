@@ -1,0 +1,11 @@
+{
+  "schema_name": "ystar.shadow_projection_policy_patch.summary",
+  "schema_version": "v0",
+  "shadow_projection_policy_patch_generated": true,
+  "preview_only": true,
+  "canonical_policy_mutation": false,
+  "brain_writeback": false,
+  "memory_ingestion": false,
+  "live_application": false,
+  "shadow_cycle_preview_allowed": true
+}

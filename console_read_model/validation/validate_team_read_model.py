@@ -367,6 +367,9 @@ def main() -> int:
     required_projection_checked_autonomous_work_cycle_files = expected.get(
         "required_projection_checked_autonomous_work_cycle_files", []
     )
+    required_review_gated_shadow_projection_cycle_files = expected.get(
+        "required_review_gated_shadow_projection_cycle_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -527,6 +530,12 @@ def main() -> int:
         check_exists(path, report, "projection-checked autonomous cycle file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "projection-checked autonomous cycle JSON")
+
+    for rel in required_review_gated_shadow_projection_cycle_files:
+        path = ROOT / rel
+        check_exists(path, report, "review-gated shadow projection cycle file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "review-gated shadow projection cycle JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -2887,6 +2896,114 @@ def main() -> int:
                 report.fail(f"generated projection cycle summary must keep {field}=false")
         if projection_cycle.get("next_required_milestone") != "L5.4 Review-Gated Learning Loop v0":
             report.fail("generated projection cycle summary must point to L5.4 review-gated learning loop")
+
+    shadow_learning_cycle = generated_json.get(
+        "console_read_model/generated/shadow_learning_cycle_summary.json"
+    )
+    if shadow_learning_cycle:
+        for field in [
+            "integrated_review_gated_shadow_learning_cycle_defined",
+            "l5_3_residual_consumed",
+            "deterministic_review_gate_decision_generated",
+            "review_gate_decision",
+            "learning_target_classification_generated",
+            "projection_policy_update_candidate_generated",
+            "shadow_projection_policy_patch_generated",
+            "shadow_behavior_y_star_preview_generated",
+            "shadow_updated_projection_cycle_generated",
+            "shadow_cycle_cieu_fixture_generated",
+            "original_vs_shadow_cycle_comparison_generated",
+            "integrated_cieu_like_fixture_generated",
+            "candidate_approved",
+            "candidate_applied",
+            "canonical_policy_mutation_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "previous_residual_influenced_shadow_projection",
+            "ready_for_controlled_canonical_learning_design",
+            "ready_for_l6_revenue_opportunity_discovery",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "cieu_persistence_enabled",
+            "candidate_auto_approval_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "shadow_patch_live_application_enabled",
+            "shadow_patch_preview_only",
+            "shadow_cycle_real_execution_performed",
+            "shadow_cycle_db_write_performed",
+            "integrated_cieu_db_write_performed",
+            "next_required_milestone",
+            "generated_loop_summary",
+            "generated_review_summary",
+            "generated_target_summary",
+            "generated_update_summary",
+            "generated_shadow_patch_summary",
+            "generated_reprojection_summary",
+            "generated_shadow_cycle_summary",
+            "generated_shadow_residual_summary",
+            "generated_integrated_cieu_summary",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in shadow_learning_cycle:
+                report.pass_(f"generated shadow learning cycle summary field present: {field}")
+            else:
+                report.fail(f"generated shadow learning cycle summary missing field: {field}")
+        for field in [
+            "integrated_review_gated_shadow_learning_cycle_defined",
+            "l5_3_residual_consumed",
+            "deterministic_review_gate_decision_generated",
+            "learning_target_classification_generated",
+            "projection_policy_update_candidate_generated",
+            "shadow_projection_policy_patch_generated",
+            "shadow_behavior_y_star_preview_generated",
+            "shadow_updated_projection_cycle_generated",
+            "shadow_cycle_cieu_fixture_generated",
+            "original_vs_shadow_cycle_comparison_generated",
+            "integrated_cieu_like_fixture_generated",
+            "previous_residual_influenced_shadow_projection",
+            "ready_for_controlled_canonical_learning_design",
+            "shadow_patch_preview_only",
+        ]:
+            if shadow_learning_cycle.get(field) is not True:
+                report.fail(f"generated shadow learning cycle summary must keep {field}=true")
+        for field in [
+            "candidate_approved",
+            "candidate_applied",
+            "canonical_policy_mutation_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "ready_for_l6_revenue_opportunity_discovery",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "cieu_persistence_enabled",
+            "candidate_auto_approval_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "shadow_patch_live_application_enabled",
+            "shadow_cycle_real_execution_performed",
+            "shadow_cycle_db_write_performed",
+            "integrated_cieu_db_write_performed",
+        ]:
+            if shadow_learning_cycle.get(field) is not False:
+                report.fail(f"generated shadow learning cycle summary must keep {field}=false")
+        if shadow_learning_cycle.get("review_gate_decision") != "eligible_for_shadow_update_candidate":
+            report.fail("generated shadow learning cycle review gate must allow shadow update only")
+        if shadow_learning_cycle.get("next_required_milestone") != (
+            "Controlled Canonical Learning Architecture v0"
+        ):
+            report.fail("generated shadow learning cycle summary must point to controlled canonical learning")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

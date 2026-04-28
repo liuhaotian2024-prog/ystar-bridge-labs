@@ -35,7 +35,9 @@
     "manual recurring observation tick runner summary",
     "field functional archaeology and merge plan summary",
     "mission field functional projection harness summary",
-    "field functional auto-projection core summary"
+    "field functional auto-projection core summary",
+    "projection-checked autonomous work cycle summary",
+    "review-gated shadow learning cycle summary"
   ],
   "not_ready": [
     "runtime generator",
@@ -64,8 +66,8 @@
     "enabled live-boundary harness",
     "enabled CIEU runtime event persistence",
     "approved governed action registry",
-    "review-gated learning candidate queue",
-    "L5.3 projection-checked autonomous work cycle"
+    "controlled canonical learning architecture",
+    "L6 revenue opportunity discovery"
   ],
   "recommended_next_steps": [
     "wire static validator and loader into CI",
@@ -92,7 +94,7 @@
     "define L4.8 governed recurring observation loop contract",
     "build L5.0 review-gated learning candidate queue",
     "build L5.1 mission field functional projection harness from archaeology merge plan",
-    "build L5.3 projection-checked autonomous work cycle from behavior-level Y*"
+    "build controlled canonical learning architecture from L5.4 shadow learning proof"
   ],
   "blockers": [
     "no DB-safe adapter",
@@ -111,9 +113,8 @@
     "legacy assets are triaged but not absorbed",
     "observation loop is read-only and not recurring",
     "recurring observation loop contract is defined but not enabled",
-    "review-gated learning candidate queue is not implemented yet",
-    "mission field functional projection harness is not implemented yet",
-    "projection-checked autonomous work cycle is not implemented yet"
+    "controlled canonical learning architecture is not implemented yet",
+    "L6 revenue opportunity discovery remains blocked until canonical learning controls exist"
   ],
   "safety_boundaries": [
     "no DB reads",
@@ -144,6 +145,8 @@
     "recurring observation loop contract simulates one manual local tick and does not enable recurrence",
     "manual recurring observation tick runner executes one manual local tick only and does not enable recurrence",
     "field functional archaeology is merge-plan-only and does not execute old code or absorb runtime assets",
-    "field functional auto-projection core is dry-run only and does not execute behavior"
+    "field functional auto-projection core is dry-run only and does not execute behavior",
+    "projection-checked autonomous work cycle is dry-run only and does not execute behavior",
+    "review-gated shadow learning cycle previews policy changes only and does not mutate canonical policy"
   ]
 }

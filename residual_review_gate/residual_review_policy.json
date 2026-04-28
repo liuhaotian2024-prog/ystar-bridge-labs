@@ -1,0 +1,61 @@
+{
+  "schema_name": "ystar.residual_review_gate.policy",
+  "schema_version": "v0",
+  "policy_id": "residual-review-policy-v0",
+  "deterministic_review_only": true,
+  "semantic_truth_scoring_enabled": false,
+  "rules": {
+    "projection_policy_update_candidate": [
+      "projection_policy_gap",
+      "work_alignment_gap"
+    ],
+    "behavior_y_star_generation_update_candidate": [
+      "behavior_y_star_generation_gap",
+      "projection_policy_gap"
+    ],
+    "pre_u_mapping_update_candidate": [
+      "pre_u_mapping_gap"
+    ],
+    "work_alignment_update_candidate": [
+      "work_alignment_gap"
+    ],
+    "residual_classification_update_candidate": [
+      "residual_classification_gap"
+    ],
+    "context_only": [
+      "blocked_live_gap",
+      "writeback_boundary_tracking"
+    ],
+    "blocked": [
+      "live_execution_request",
+      "canonical_policy_mutation_request"
+    ],
+    "requires_human_or_governance_review": [
+      "projection_policy",
+      "behavior_y_star_generation",
+      "pre_u_mapping",
+      "work_proposal_alignment",
+      "residual_classification",
+      "evidence_collection_policy",
+      "live_blocker_tracking",
+      "writeback_boundary_tracking"
+    ]
+  },
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

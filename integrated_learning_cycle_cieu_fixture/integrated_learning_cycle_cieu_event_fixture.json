@@ -1,0 +1,43 @@
+{
+  "schema_name": "ystar.integrated_learning_cycle_cieu_fixture.event",
+  "schema_version": "v0",
+  "event_id": "integrated-learning-cycle-cieu-event-fixture-001",
+  "X_t": {
+    "residual_ref": "projection_checked_cieu_residual_cycle/projection_checked_residual_delta.json",
+    "learning_candidate_ref": "projection_checked_learning_review_queue/projection_checked_learning_candidate.json"
+  },
+  "U_t": {
+    "operation": "integrated review-gated learning plus shadow-updated cycle preview",
+    "review_decision_ref": "residual_review_gate/residual_review_gate_decision.json",
+    "shadow_patch_ref": "shadow_projection_policy_patch/shadow_projection_policy_patch.json"
+  },
+  "Y_star_t": "convert L5.3 residual into a non-applied shadow projection update and run one shadow-updated dry-run cycle preview",
+  "Y_t_plus_1": {
+    "integrated_mock_actual_ref": "integrated_learning_cycle_cieu_fixture/integrated_learning_cycle_mock_actual_outcome.json",
+    "no_canonical_writeback": true
+  },
+  "R_t_plus_1": {
+    "residual_mode": "deterministic_structural_residual",
+    "semantic_truth_scoring_used": false
+  },
+  "event_mode": "integrated_review_gated_shadow_cycle_fixture",
+  "persistence_enabled": false,
+  "db_write_performed": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

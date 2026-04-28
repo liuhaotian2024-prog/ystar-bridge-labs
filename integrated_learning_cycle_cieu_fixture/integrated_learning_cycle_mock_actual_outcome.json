@@ -1,0 +1,30 @@
+{
+  "schema_name": "ystar.integrated_learning_cycle_cieu_fixture.mock_actual_outcome",
+  "schema_version": "v0",
+  "mock_actual_outcome_id": "integrated-learning-cycle-mock-actual-outcome-001",
+  "review_decision_packet_generated": true,
+  "learning_target_classification_generated": true,
+  "update_candidate_generated": true,
+  "shadow_patch_generated": true,
+  "shadow_behavior_level_y_star_preview_generated": true,
+  "shadow_projection_checked_cycle_generated": true,
+  "original_vs_shadow_comparison_generated": true,
+  "no_canonical_writeback": true,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

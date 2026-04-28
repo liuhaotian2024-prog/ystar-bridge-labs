@@ -106,6 +106,11 @@ python3 console_read_model/cli/team_console.py <command>
   packet candidate, dry-run result, CIEU-like fixture, residual delta, review
   learning candidate, and disabled live/writeback/persistence/behavior-execution
   flags.
+- `shadow-learning-cycle`: Prints the generated L5.4 integrated review-gated
+  shadow learning cycle summary: L5.3 residual consumption, deterministic
+  review gate, learning target classification, shadow policy patch, shadow
+  behavior-level Y* preview, shadow cycle, original-vs-shadow comparison, and
+  disabled live/writeback/persistence/canonical-mutation flags.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

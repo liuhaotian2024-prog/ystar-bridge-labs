@@ -1,0 +1,11 @@
+{
+  "schema_name": "ystar.shadow_reprojection_preview.summary",
+  "schema_version": "v0",
+  "next_cycle_projection_input_candidate_generated": true,
+  "shadow_behavior_y_star_preview_generated": true,
+  "original_vs_shadow_behavior_y_star_comparison_generated": true,
+  "previous_residual_influenced_shadow_projection": true,
+  "live_behavior_authorized": false,
+  "behavior_execution_enabled": false,
+  "applied_to_canonical_policy": false
+}

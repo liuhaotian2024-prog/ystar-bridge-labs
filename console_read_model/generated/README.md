@@ -84,5 +84,8 @@ auto-projection core. It confirms mission-to-behavior Y* projection, a behavior-
 `projection_cycle_summary.json` is derived from the L5.3 projection-checked
 autonomous work cycle. It confirms behavior-level Y* is consumed as a gate before dry-run work proposal, Pre-U candidate, residual, and review-only learning artifacts.
 
+`shadow_learning_cycle_summary.json` is derived from the L5.4 integrated
+review-gated shadow learning cycle. It confirms an L5.3 residual can influence a shadow behavior-level Y* preview and shadow cycle without canonical policy mutation or writeback.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

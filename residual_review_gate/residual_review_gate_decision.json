@@ -1,0 +1,53 @@
+{
+  "schema_name": "ystar.residual_review_gate.decision",
+  "schema_version": "v0",
+  "decision_id": "residual-review-gate-decision-001",
+  "gate_name": "deterministic_residual_review_gate_v0",
+  "decision": "eligible_for_shadow_update_candidate",
+  "allowed_learning_scope": [
+    "projection_policy",
+    "behavior_y_star_generation",
+    "pre_u_mapping",
+    "work_proposal_alignment",
+    "residual_classification",
+    "evidence_collection_policy"
+  ],
+  "denied_learning_scope": [
+    "live application",
+    "brain writeback",
+    "memory ingestion",
+    "canonical policy mutation",
+    "candidate auto-approval",
+    "external action",
+    "revenue opportunity discovery"
+  ],
+  "required_human_or_governance_review": true,
+  "approved_for_live_application": false,
+  "approved_for_brain_writeback": false,
+  "approved_for_memory_ingestion": false,
+  "approved_for_canonical_policy_mutation": false,
+  "eligible_for_shadow_update_candidate": true,
+  "eligible_for_shadow_cycle_preview": true,
+  "evidence_refs": [
+    "projection_checked_cieu_residual_cycle/projection_checked_residual_delta.json",
+    "projection_checked_learning_review_queue/projection_checked_learning_candidate.json",
+    "projection_checked_autonomous_work_cycle/projection_checked_cycle_run.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

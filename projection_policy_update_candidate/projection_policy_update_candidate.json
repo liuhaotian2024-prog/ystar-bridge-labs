@@ -1,0 +1,53 @@
+{
+  "schema_name": "ystar.projection_policy_update_candidate.projection-policy-update-candidate",
+  "schema_version": "v0",
+  "update_candidate_id": "projection-policy-update-candidate-001",
+  "source_review_decision_id": "residual-review-gate-decision-001",
+  "source_learning_target_classification_id": "learning-target-classification-001",
+  "proposed_update_scope": "projection_policy",
+  "proposed_update_description": "Tighten projection trace linkage and require explicit no-execution residual handling before a dry-run gate passes.",
+  "affected_projection_layers": [
+    "mission",
+    "company",
+    "milestone",
+    "session",
+    "task",
+    "behavior"
+  ],
+  "expected_effect_on_future_projection": "Future behavior Y* previews should carry clearer trace and no-execution residual obligations.",
+  "denied_effects": [
+    "canonical policy mutation",
+    "brain writeback",
+    "memory ingestion",
+    "live behavior execution",
+    "candidate approval"
+  ],
+  "evidence_refs": [
+    "residual_review_gate/residual_review_gate_decision.json",
+    "learning_target_classifier/learning_target_classification.json"
+  ],
+  "approval_status": "not_approved",
+  "applied_to_canonical_policy": false,
+  "applied_to_brain": false,
+  "applied_to_memory": false,
+  "eligible_for_shadow_patch": true,
+  "eligible_for_shadow_cycle_preview": true,
+  "requires_human_or_governance_review_before_application": true,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

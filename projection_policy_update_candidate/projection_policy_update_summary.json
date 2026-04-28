@@ -1,0 +1,14 @@
+{
+  "schema_name": "ystar.projection_policy_update_candidate.summary",
+  "schema_version": "v0",
+  "projection_policy_update_candidate_generated": true,
+  "behavior_y_star_generation_update_candidate_generated": true,
+  "pre_u_mapping_update_candidate_generated": true,
+  "work_alignment_update_candidate_generated": true,
+  "residual_classification_update_candidate_generated": true,
+  "evidence_collection_update_candidate_generated": true,
+  "approval_status": "not_approved",
+  "applied_to_canonical_policy": false,
+  "applied_to_brain": false,
+  "applied_to_memory": false
+}

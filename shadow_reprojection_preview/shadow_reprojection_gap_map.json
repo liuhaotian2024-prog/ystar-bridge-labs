@@ -1,0 +1,34 @@
+{
+  "schema_name": "ystar.shadow_reprojection_preview.gap_map",
+  "schema_version": "v0",
+  "gap_map_id": "shadow-reprojection-gap-map-001",
+  "gaps": [
+    {
+      "gap_id": "shadow-not-canonical",
+      "description": "Shadow behavior Y* preview cannot replace canonical behavior Y*.",
+      "blocks_live_use": true
+    },
+    {
+      "gap_id": "controlled-learning-needed",
+      "description": "Controlled canonical learning architecture is required before applying policy updates.",
+      "blocks_live_use": true
+    }
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

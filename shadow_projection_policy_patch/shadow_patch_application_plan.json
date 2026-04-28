@@ -1,0 +1,33 @@
+{
+  "schema_name": "ystar.shadow_projection_policy_patch.application_plan",
+  "schema_version": "v0",
+  "plan_id": "shadow-patch-application-plan-001",
+  "source_shadow_patch_id": "shadow-projection-policy-patch-001",
+  "application_mode": "preview_and_shadow_cycle_only",
+  "canonical_projection_policy_modified": false,
+  "generated_shadow_artifacts_only": true,
+  "steps": [
+    "load non-applied update candidates",
+    "construct shadow patch object",
+    "generate shadow behavior-level Y* preview",
+    "run shadow dry-run cycle artifacts",
+    "compare original and shadow outputs"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

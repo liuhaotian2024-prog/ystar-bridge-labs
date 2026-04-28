@@ -1,0 +1,120 @@
+{
+  "schema_version": "v0",
+  "loop_name": "Integrated Review-Gated Shadow Learning Cycle",
+  "loop_id": "review_gated_shadow_learning_cycle_v0",
+  "purpose": "Convert an L5.3 dry-run residual into review-gated shadow update artifacts, preview a shadow behavior-level Y*, run a shadow dry-run cycle, and compare original versus shadow without applying learning.",
+  "required_inputs": [
+    "projection_checked_cieu_residual_cycle/projection_checked_residual_delta.json",
+    "projection_checked_learning_review_queue/projection_checked_learning_candidate.json",
+    "projection_checked_learning_review_queue/projection_checked_review_queue_entry.json",
+    "projection_checked_autonomous_work_cycle/projection_checked_cycle_run.json",
+    "projection_checked_cycle_readiness/projection_checked_cycle_readiness.json",
+    "mission_to_behavior_y_star_projection/mission_y_star_input.json",
+    "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+    "mission_to_behavior_y_star_projection/mission_to_behavior_projection_trace.json",
+    "field_functional_auto_projection_core/field_projection_operator_policy.json",
+    "behavior_y_star_to_pre_u_candidate/pre_u_packet_candidate_from_behavior_y_star.json"
+  ],
+  "loop_stages": [
+    "load_l5_3_projection_checked_residual_delta",
+    "load_l5_3_learning_candidate",
+    "normalize_residual_for_review",
+    "classify_learning_target",
+    "run_deterministic_review_gate",
+    "produce_review_decision_packet",
+    "generate_projection_policy_update_candidate",
+    "generate_shadow_projection_policy_patch",
+    "generate_next_cycle_projection_input_candidate",
+    "generate_shadow_behavior_y_star_preview",
+    "run_shadow_updated_projection_checked_cycle",
+    "generate_shadow_cycle_cieu_like_fixture",
+    "compute_shadow_cycle_residual_delta",
+    "compare_original_vs_shadow_behavior_y_star",
+    "compare_original_vs_shadow_cycle",
+    "emit_integrated_learning_cycle_cieu_like_fixture",
+    "produce_final_l5_4_readiness"
+  ],
+  "required_outputs": [
+    "normalized_projection_residual",
+    "residual_review_gate_decision",
+    "learning_target_classification",
+    "projection_policy_update_candidate",
+    "shadow_projection_policy_patch",
+    "shadow_reprojected_behavior_y_star_preview",
+    "shadow_updated_projection_cycle_run",
+    "shadow_cycle_residual_delta",
+    "original_vs_shadow_cycle_comparison",
+    "integrated_learning_cycle_cieu_event_fixture",
+    "integrated_shadow_learning_readiness"
+  ],
+  "review_gate_requirements": [
+    "review must be deterministic and structural",
+    "source residual must be dry-run and evidence-backed",
+    "review gate may allow only shadow update candidates"
+  ],
+  "learning_scope_requirements": [
+    "learning targets are projection policy, behavior Y* generation, Pre-U mapping, work alignment, residual classification, and evidence policy",
+    "learning cannot write brain, memory, canonical policy, Y-star-gov, or CIEU storage",
+    "learning candidate remains not approved and not applied"
+  ],
+  "shadow_update_requirements": [
+    "shadow patch must be preview-only",
+    "shadow patch must not mutate canonical projection policy",
+    "shadow patch can generate only separate L5.4 preview artifacts"
+  ],
+  "shadow_cycle_requirements": [
+    "shadow cycle consumes the shadow behavior-level Y* preview",
+    "shadow cycle remains dry-run only",
+    "shadow cycle cannot execute behavior or tools"
+  ],
+  "comparison_requirements": [
+    "compare original and shadow behavior-level Y*",
+    "compare original and shadow cycle gate decisions and residual classes",
+    "state whether the residual produced a visible shadow-only effect"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  },
+  "forbidden_operations": [
+    "reading raw DB/WAL/SHM/log contents",
+    "reading active-agent marker contents",
+    "running live hooks",
+    "running daemon/scheduler/runtime scripts",
+    "external network/API calls",
+    "GitHub issue/PR creation",
+    "git push",
+    "CIEU DB writes",
+    "brain writeback",
+    "memory ingestion",
+    "candidate approval",
+    "canonical policy mutation",
+    "L6 revenue opportunity discovery",
+    "semantic truth scoring",
+    "direct behavior execution"
+  ],
+  "non_goals": [
+    "not live learning",
+    "not canonical policy mutation",
+    "not brain writeback",
+    "not memory ingestion",
+    "not candidate auto-approval",
+    "not real behavior execution",
+    "not scheduler or daemon activation",
+    "not network-enabled",
+    "not L6 revenue opportunity discovery"
+  ]
+}

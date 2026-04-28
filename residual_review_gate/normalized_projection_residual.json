@@ -1,0 +1,46 @@
+{
+  "schema_name": "ystar.residual_review_gate.normalized_projection_residual",
+  "schema_version": "v0",
+  "normalized_residual_id": "normalized-projection-residual-001",
+  "source_residual_delta_id": "projection-checked-residual-delta-001",
+  "residual_classes": [
+    "projection_policy_gap",
+    "behavior_y_star_generation_gap",
+    "pre_u_mapping_gap",
+    "work_alignment_gap",
+    "residual_classification_gap",
+    "evidence_collection_gap",
+    "blocked_live_gap"
+  ],
+  "residual_severity_structural": "projection_policy_gap",
+  "affected_projection_stage": "projection_checked_autonomous_cycle",
+  "affected_y_star_layer": "behavior",
+  "affected_cycle_stage": "projection_gate_and_pre_u_mapping",
+  "evidence_refs": [
+    "projection_checked_cieu_residual_cycle/projection_checked_residual_delta.json",
+    "projection_checked_learning_review_queue/projection_checked_learning_candidate.json",
+    "projection_checked_autonomous_work_cycle/projection_checked_cycle_run.json"
+  ],
+  "unresolved_gaps": [
+    "real behavior outcome is unavailable by design",
+    "production Y-star-gov validation is future work",
+    "deep Xt evidence model remains future work"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

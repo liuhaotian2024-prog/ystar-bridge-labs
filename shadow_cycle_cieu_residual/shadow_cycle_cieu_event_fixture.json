@@ -1,0 +1,44 @@
+{
+  "schema_name": "ystar.shadow_cycle_cieu_residual.event_fixture",
+  "schema_version": "v0",
+  "event_id": "shadow-cycle-cieu-event-fixture-001",
+  "X_t": {
+    "shadow_input_ref": "shadow_reprojection_preview/next_cycle_projection_input_candidate.json"
+  },
+  "U_t": {
+    "shadow_work_proposal_ref": "shadow_updated_projection_cycle/shadow_autonomous_work_proposal_candidate.json",
+    "shadow_pre_u_candidate_ref": "shadow_updated_projection_cycle/shadow_cycle_pre_u_packet_candidate.json"
+  },
+  "Y_star_t": {
+    "shadow_behavior_y_star_preview_ref": "shadow_reprojection_preview/shadow_reprojected_behavior_y_star_preview.json",
+    "preview_behavior_y_star": "Prepare a projection-checked autonomous work-cycle candidate for future Pre-U validation. Shadow preview adds explicit residual-review obligations, no-execution residual labeling, and evidence sufficiency checks before any future canonical learning design."
+  },
+  "Y_t_plus_1": {
+    "shadow_mock_actual_ref": "shadow_cycle_cieu_residual/shadow_cycle_mock_actual_outcome.json",
+    "dry_run_mock_only": true
+  },
+  "R_t_plus_1": {
+    "residual_mode": "deterministic_structural_residual",
+    "semantic_truth_scoring_used": false
+  },
+  "event_mode": "shadow_dry_run_fixture",
+  "persistence_enabled": false,
+  "db_write_performed": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

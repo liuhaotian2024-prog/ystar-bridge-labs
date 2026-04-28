@@ -1,0 +1,11 @@
+{
+  "schema_name": "ystar.residual_review_gate.summary",
+  "schema_version": "v0",
+  "residual_normalized": true,
+  "review_gate_decision_generated": true,
+  "decision": "eligible_for_shadow_update_candidate",
+  "eligible_for_shadow_update_candidate": true,
+  "eligible_for_shadow_cycle_preview": true,
+  "approved_for_live_application": false,
+  "approved_for_canonical_policy_mutation": false
+}

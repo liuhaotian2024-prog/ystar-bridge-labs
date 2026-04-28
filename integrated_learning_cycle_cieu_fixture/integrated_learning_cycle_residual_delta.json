@@ -1,0 +1,29 @@
+{
+  "schema_name": "ystar.integrated_learning_cycle_cieu_fixture.residual_delta",
+  "schema_version": "v0",
+  "residual_delta_id": "integrated-learning-cycle-residual-delta-001",
+  "event_id": "integrated-learning-cycle-cieu-event-fixture-001",
+  "review_gate_residual": "review gate allows shadow update candidate only",
+  "shadow_patch_residual": "shadow patch generated but not applied canonically",
+  "shadow_cycle_residual": "shadow cycle generated with no execution",
+  "canonical_learning_blocker_residual": "controlled canonical learning design remains future milestone",
+  "l6_blocker_residual": "L6 revenue discovery remains blocked",
+  "semantic_truth_scoring_used": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

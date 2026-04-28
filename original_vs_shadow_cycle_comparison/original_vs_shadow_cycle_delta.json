@@ -1,0 +1,28 @@
+{
+  "schema_name": "ystar.original_vs_shadow_cycle_comparison.delta",
+  "schema_version": "v0",
+  "delta_id": "original-vs-shadow-cycle-delta-001",
+  "y_star_projection_delta": "shadow preview adds residual-review obligations and evidence sufficiency language",
+  "work_alignment_delta": "shadow work intent cites shadow behavior Y* preview",
+  "pre_u_mapping_delta": "shadow Pre-U candidate carries residual-driven governance expectations",
+  "residual_classification_delta": "shadow residual separates canonical mutation blocker from writeback blocker",
+  "evidence_requirement_delta": "shadow preview requires explicit evidence sufficiency before canonical application",
+  "safety_boundary_delta": "no safety boundary relaxed",
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

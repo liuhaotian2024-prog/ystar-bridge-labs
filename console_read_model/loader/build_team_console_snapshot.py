@@ -61,6 +61,17 @@ CURATED_SOURCES = [
     "projection_checked_cieu_residual_cycle/projection_checked_residual_summary.json",
     "projection_checked_learning_review_queue/projection_learning_review_summary.json",
     "projection_checked_cycle_readiness/projection_checked_cycle_readiness.json",
+    "review_gated_shadow_learning_cycle/review_gated_shadow_learning_summary.json",
+    "residual_review_gate/residual_review_summary.json",
+    "learning_target_classifier/learning_target_summary.json",
+    "projection_policy_update_candidate/projection_policy_update_summary.json",
+    "shadow_projection_policy_patch/shadow_patch_summary.json",
+    "shadow_reprojection_preview/shadow_reprojection_summary.json",
+    "shadow_updated_projection_cycle/shadow_updated_projection_cycle_summary.json",
+    "shadow_cycle_cieu_residual/shadow_cycle_residual_summary.json",
+    "original_vs_shadow_cycle_comparison/shadow_learning_effect_summary.json",
+    "integrated_learning_cycle_cieu_fixture/integrated_learning_cycle_cieu_summary.json",
+    "integrated_shadow_learning_readiness/integrated_shadow_learning_readiness.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -1830,6 +1841,139 @@ def build_projection_cycle_summary(
     }
 
 
+def build_shadow_learning_cycle_summary(
+    loop_summary: dict[str, Any] | None,
+    review_summary: dict[str, Any] | None,
+    target_summary: dict[str, Any] | None,
+    update_summary: dict[str, Any] | None,
+    patch_summary: dict[str, Any] | None,
+    reprojection_summary: dict[str, Any] | None,
+    shadow_cycle_summary: dict[str, Any] | None,
+    shadow_residual_summary: dict[str, Any] | None,
+    effect_summary: dict[str, Any] | None,
+    integrated_cieu_summary: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.shadow_learning_cycle_summary",
+            "schema_version": "v0",
+            "integrated_review_gated_shadow_learning_cycle_defined": False,
+            "l5_3_residual_consumed": False,
+            "review_gate_decision_generated": False,
+            "learning_target_classification_generated": False,
+            "projection_policy_update_candidate_generated": False,
+            "shadow_projection_policy_patch_generated": False,
+            "shadow_behavior_y_star_preview_generated": False,
+            "shadow_updated_projection_cycle_generated": False,
+            "original_vs_shadow_cycle_comparison_generated": False,
+            "integrated_cieu_like_fixture_generated": False,
+            "ready_for_controlled_canonical_learning_design": False,
+            "ready_for_l6_revenue_opportunity_discovery": False,
+            "warning": "Integrated shadow learning cycle has not been generated yet.",
+        }
+    loop_summary = loop_summary or {}
+    review_summary = review_summary or {}
+    target_summary = target_summary or {}
+    update_summary = update_summary or {}
+    patch_summary = patch_summary or {}
+    reprojection_summary = reprojection_summary or {}
+    shadow_cycle_summary = shadow_cycle_summary or {}
+    shadow_residual_summary = shadow_residual_summary or {}
+    effect_summary = effect_summary or {}
+    integrated_cieu_summary = integrated_cieu_summary or {}
+    return {
+        "schema_name": "ystar.console_read_model.generated.shadow_learning_cycle_summary",
+        "schema_version": "v0",
+        "integrated_review_gated_shadow_learning_cycle_defined": loop_summary.get(
+            "integrated_review_gated_shadow_learning_cycle_defined"
+        ),
+        "l5_3_residual_consumed": readiness_summary.get("l5_3_residual_consumed"),
+        "deterministic_review_gate_decision_generated": readiness_summary.get(
+            "review_gate_decision_generated"
+        ),
+        "review_gate_decision": review_summary.get("decision"),
+        "learning_target_classification_generated": readiness_summary.get(
+            "learning_target_classified"
+        ),
+        "projection_policy_update_candidate_generated": readiness_summary.get(
+            "projection_policy_update_candidate_generated"
+        ),
+        "shadow_projection_policy_patch_generated": readiness_summary.get(
+            "shadow_projection_policy_patch_generated"
+        ),
+        "shadow_behavior_y_star_preview_generated": readiness_summary.get(
+            "shadow_behavior_y_star_preview_generated"
+        ),
+        "shadow_updated_projection_cycle_generated": readiness_summary.get(
+            "shadow_updated_projection_cycle_generated"
+        ),
+        "shadow_cycle_cieu_fixture_generated": readiness_summary.get(
+            "shadow_cycle_cieu_fixture_generated"
+        ),
+        "original_vs_shadow_cycle_comparison_generated": readiness_summary.get(
+            "original_vs_shadow_cycle_comparison_generated"
+        ),
+        "integrated_cieu_like_fixture_generated": readiness_summary.get(
+            "integrated_learning_cycle_cieu_fixture_generated"
+        ),
+        "candidate_approved": loop_summary.get("candidate_approved"),
+        "candidate_applied": loop_summary.get("candidate_applied"),
+        "canonical_policy_mutation_enabled": readiness_summary.get(
+            "canonical_policy_mutation_enabled"
+        ),
+        "brain_writeback_enabled": readiness_summary.get("brain_writeback_enabled"),
+        "memory_ingestion_enabled": readiness_summary.get("memory_ingestion_enabled"),
+        "previous_residual_influenced_shadow_projection": readiness_summary.get(
+            "previous_residual_influenced_shadow_projection"
+        ),
+        "shadow_learning_effect_class": effect_summary.get("effect_class"),
+        "ready_for_controlled_canonical_learning_design": readiness_summary.get(
+            "ready_for_controlled_canonical_learning_design"
+        ),
+        "ready_for_l6_revenue_opportunity_discovery": readiness_summary.get(
+            "ready_for_l6_revenue_opportunity_discovery"
+        ),
+        "live_execution_enabled": readiness_summary.get("live_execution_enabled"),
+        "behavior_execution_enabled": readiness_summary.get("behavior_execution_enabled"),
+        "external_action_enabled": readiness_summary.get("external_action_enabled"),
+        "network_enabled": readiness_summary.get("network_enabled"),
+        "scheduler_enabled": readiness_summary.get("scheduler_enabled"),
+        "daemon_enabled": readiness_summary.get("daemon_enabled"),
+        "cieu_persistence_enabled": readiness_summary.get("cieu_persistence_enabled"),
+        "candidate_auto_approval_enabled": readiness_summary.get("candidate_auto_approval_enabled"),
+        "semantic_truth_scoring_enabled": readiness_summary.get("semantic_truth_scoring_enabled"),
+        "raw_runtime_artifact_reading_enabled": readiness_summary.get(
+            "raw_runtime_artifact_reading_enabled"
+        ),
+        "revenue_opportunity_discovery_enabled": readiness_summary.get(
+            "revenue_opportunity_discovery_enabled"
+        ),
+        "shadow_patch_live_application_enabled": readiness_summary.get(
+            "shadow_patch_live_application_enabled"
+        ),
+        "shadow_patch_preview_only": patch_summary.get("preview_only"),
+        "shadow_cycle_real_execution_performed": shadow_cycle_summary.get("real_execution_performed"),
+        "shadow_cycle_db_write_performed": shadow_residual_summary.get("db_write_performed"),
+        "integrated_cieu_db_write_performed": integrated_cieu_summary.get("db_write_performed"),
+        "next_required_milestone": readiness_summary.get("next_required_milestone"),
+        "generated_loop_summary": "review_gated_shadow_learning_cycle/review_gated_shadow_learning_summary.json",
+        "generated_review_summary": "residual_review_gate/residual_review_summary.json",
+        "generated_target_summary": "learning_target_classifier/learning_target_summary.json",
+        "generated_update_summary": "projection_policy_update_candidate/projection_policy_update_summary.json",
+        "generated_shadow_patch_summary": "shadow_projection_policy_patch/shadow_patch_summary.json",
+        "generated_reprojection_summary": "shadow_reprojection_preview/shadow_reprojection_summary.json",
+        "generated_shadow_cycle_summary": "shadow_updated_projection_cycle/shadow_updated_projection_cycle_summary.json",
+        "generated_shadow_residual_summary": "shadow_cycle_cieu_residual/shadow_cycle_residual_summary.json",
+        "generated_integrated_cieu_summary": "integrated_learning_cycle_cieu_fixture/integrated_learning_cycle_cieu_summary.json",
+        "generated_readiness": "integrated_shadow_learning_readiness/integrated_shadow_learning_readiness.json",
+        "warning": (
+            "L5.4 is shadow-only. Residuals influence a preview Y* and shadow cycle, "
+            "but no canonical policy, brain, memory, CIEU store, or live system is changed."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -1992,6 +2136,50 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "projection_checked_cycle_readiness/projection_checked_cycle_readiness.json",
         files_read,
     )
+    shadow_learning_loop_summary = load_optional_json(
+        "review_gated_shadow_learning_cycle/review_gated_shadow_learning_summary.json",
+        files_read,
+    )
+    shadow_learning_review_summary = load_optional_json(
+        "residual_review_gate/residual_review_summary.json",
+        files_read,
+    )
+    shadow_learning_target_summary = load_optional_json(
+        "learning_target_classifier/learning_target_summary.json",
+        files_read,
+    )
+    shadow_learning_update_summary = load_optional_json(
+        "projection_policy_update_candidate/projection_policy_update_summary.json",
+        files_read,
+    )
+    shadow_learning_patch_summary = load_optional_json(
+        "shadow_projection_policy_patch/shadow_patch_summary.json",
+        files_read,
+    )
+    shadow_learning_reprojection_summary = load_optional_json(
+        "shadow_reprojection_preview/shadow_reprojection_summary.json",
+        files_read,
+    )
+    shadow_learning_shadow_cycle_summary = load_optional_json(
+        "shadow_updated_projection_cycle/shadow_updated_projection_cycle_summary.json",
+        files_read,
+    )
+    shadow_learning_shadow_residual_summary = load_optional_json(
+        "shadow_cycle_cieu_residual/shadow_cycle_residual_summary.json",
+        files_read,
+    )
+    shadow_learning_effect_summary = load_optional_json(
+        "original_vs_shadow_cycle_comparison/shadow_learning_effect_summary.json",
+        files_read,
+    )
+    shadow_learning_integrated_cieu_summary = load_optional_json(
+        "integrated_learning_cycle_cieu_fixture/integrated_learning_cycle_cieu_summary.json",
+        files_read,
+    )
+    shadow_learning_readiness_summary = load_optional_json(
+        "integrated_shadow_learning_readiness/integrated_shadow_learning_readiness.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -2033,6 +2221,19 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         projection_cycle_residual_summary,
         projection_cycle_learning_summary,
         projection_cycle_readiness_summary,
+    )
+    shadow_learning_cycle_summary = build_shadow_learning_cycle_summary(
+        shadow_learning_loop_summary,
+        shadow_learning_review_summary,
+        shadow_learning_target_summary,
+        shadow_learning_update_summary,
+        shadow_learning_patch_summary,
+        shadow_learning_reprojection_summary,
+        shadow_learning_shadow_cycle_summary,
+        shadow_learning_shadow_residual_summary,
+        shadow_learning_effect_summary,
+        shadow_learning_integrated_cieu_summary,
+        shadow_learning_readiness_summary,
     )
 
     profiles = {
@@ -2138,8 +2339,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Field functional archaeology exists as a merge plan only; L5 projection harness is not implemented yet.")
     if "Field functional auto-projection core exists as a dry-run projection core only; behavior execution remains disabled." not in open_gaps:
         open_gaps.append("Field functional auto-projection core exists as a dry-run projection core only; behavior execution remains disabled.")
-    if "Projection-checked autonomous work cycle exists as dry-run fixtures only; review-gated learning loop is not implemented yet." not in open_gaps:
-        open_gaps.append("Projection-checked autonomous work cycle exists as dry-run fixtures only; review-gated learning loop is not implemented yet.")
+    if "Integrated review-gated shadow learning cycle exists as shadow-only artifacts; controlled canonical learning is not implemented yet." not in open_gaps:
+        open_gaps.append("Integrated review-gated shadow learning cycle exists as shadow-only artifacts; controlled canonical learning is not implemented yet.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -2177,6 +2378,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "mission_projection_summary": mission_projection_summary,
         "field_projection_summary": field_projection_summary,
         "projection_cycle_summary": projection_cycle_summary,
+        "shadow_learning_cycle_summary": shadow_learning_cycle_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -2238,6 +2440,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "field functional archaeology and merge plan summary",
             "mission field functional projection harness summary",
             "field functional auto-projection core summary",
+            "projection-checked autonomous work cycle summary",
+            "review-gated shadow learning cycle summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -2266,8 +2470,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "enabled live-boundary harness",
             "enabled CIEU runtime event persistence",
             "approved governed action registry",
-            "review-gated learning candidate queue",
-            "L5.3 projection-checked autonomous work cycle",
+            "controlled canonical learning architecture",
+            "L6 revenue opportunity discovery",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -2294,7 +2498,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "define L4.8 governed recurring observation loop contract",
             "build L5.0 review-gated learning candidate queue",
             "build L5.1 mission field functional projection harness from archaeology merge plan",
-            "build L5.3 projection-checked autonomous work cycle from behavior-level Y*",
+            "build controlled canonical learning architecture from L5.4 shadow learning proof",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -2313,9 +2517,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "legacy assets are triaged but not absorbed",
             "observation loop is read-only and not recurring",
             "recurring observation loop contract is defined but not enabled",
-            "review-gated learning candidate queue is not implemented yet",
-            "mission field functional projection harness is not implemented yet",
-            "projection-checked autonomous work cycle is not implemented yet",
+            "controlled canonical learning architecture is not implemented yet",
+            "L6 revenue opportunity discovery remains blocked until canonical learning controls exist",
         ],
         "safety_boundaries": [
             "no DB reads",
@@ -2347,6 +2550,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "manual recurring observation tick runner executes one manual local tick only and does not enable recurrence",
             "field functional archaeology is merge-plan-only and does not execute old code or absorb runtime assets",
             "field functional auto-projection core is dry-run only and does not execute behavior",
+            "projection-checked autonomous work cycle is dry-run only and does not execute behavior",
+            "review-gated shadow learning cycle previews policy changes only and does not mutate canonical policy",
         ],
     }
 
@@ -2385,6 +2590,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/mission_projection_summary.json",
             "console_read_model/generated/field_projection_summary.json",
             "console_read_model/generated/projection_cycle_summary.json",
+            "console_read_model/generated/shadow_learning_cycle_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -2465,6 +2671,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "auto-projection core. It confirms mission-to-behavior Y* projection, a behavior-level Pre-U candidate, and a residual loop fixture exist while behavior execution remains disabled.\n\n"
         "`projection_cycle_summary.json` is derived from the L5.3 projection-checked\n"
         "autonomous work cycle. It confirms behavior-level Y* is consumed as a gate before dry-run work proposal, Pre-U candidate, residual, and review-only learning artifacts.\n\n"
+        "`shadow_learning_cycle_summary.json` is derived from the L5.4 integrated\n"
+        "review-gated shadow learning cycle. It confirms an L5.3 residual can influence a shadow behavior-level Y* preview and shadow cycle without canonical policy mutation or writeback.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -2499,6 +2707,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/mission_projection_summary.json", mission_projection_summary, generated_files)
     write_json("console_read_model/generated/field_projection_summary.json", field_projection_summary, generated_files)
     write_json("console_read_model/generated/projection_cycle_summary.json", projection_cycle_summary, generated_files)
+    write_json("console_read_model/generated/shadow_learning_cycle_summary.json", shadow_learning_cycle_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -2568,6 +2777,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     mission_projection = snapshot.get("mission_projection_summary", {})
     field_projection = snapshot.get("field_projection_summary", {})
     projection_cycle = snapshot.get("projection_cycle_summary", {})
+    shadow_learning_cycle = snapshot.get("shadow_learning_cycle_summary", {})
     lines.extend(
         [
             "",
@@ -3189,6 +3399,41 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- ready_for_l5_4_review_gated_learning_loop: {projection_cycle.get('ready_for_l5_4_review_gated_learning_loop')}",
             f"- next_required_milestone: {projection_cycle.get('next_required_milestone')}",
             f"- Warning: {projection_cycle.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Integrated Review-Gated Shadow Learning Cycle",
+            "",
+            f"- integrated_review_gated_shadow_learning_cycle_defined: {shadow_learning_cycle.get('integrated_review_gated_shadow_learning_cycle_defined')}",
+            f"- l5_3_residual_consumed: {shadow_learning_cycle.get('l5_3_residual_consumed')}",
+            f"- deterministic_review_gate_decision_generated: {shadow_learning_cycle.get('deterministic_review_gate_decision_generated')}",
+            f"- review_gate_decision: {shadow_learning_cycle.get('review_gate_decision')}",
+            f"- learning_target_classification_generated: {shadow_learning_cycle.get('learning_target_classification_generated')}",
+            f"- projection_policy_update_candidate_generated: {shadow_learning_cycle.get('projection_policy_update_candidate_generated')}",
+            f"- shadow_projection_policy_patch_generated: {shadow_learning_cycle.get('shadow_projection_policy_patch_generated')}",
+            f"- shadow_behavior_y_star_preview_generated: {shadow_learning_cycle.get('shadow_behavior_y_star_preview_generated')}",
+            f"- shadow_updated_projection_cycle_generated: {shadow_learning_cycle.get('shadow_updated_projection_cycle_generated')}",
+            f"- original_vs_shadow_cycle_comparison_generated: {shadow_learning_cycle.get('original_vs_shadow_cycle_comparison_generated')}",
+            f"- integrated_cieu_like_fixture_generated: {shadow_learning_cycle.get('integrated_cieu_like_fixture_generated')}",
+            f"- candidate_approved: {shadow_learning_cycle.get('candidate_approved')}",
+            f"- candidate_applied: {shadow_learning_cycle.get('candidate_applied')}",
+            f"- canonical_policy_mutation_enabled: {shadow_learning_cycle.get('canonical_policy_mutation_enabled')}",
+            f"- brain_writeback_enabled: {shadow_learning_cycle.get('brain_writeback_enabled')}",
+            f"- memory_ingestion_enabled: {shadow_learning_cycle.get('memory_ingestion_enabled')}",
+            f"- live_execution_enabled: {shadow_learning_cycle.get('live_execution_enabled')}",
+            f"- behavior_execution_enabled: {shadow_learning_cycle.get('behavior_execution_enabled')}",
+            f"- external_action_enabled: {shadow_learning_cycle.get('external_action_enabled')}",
+            f"- network_enabled: {shadow_learning_cycle.get('network_enabled')}",
+            f"- scheduler_enabled: {shadow_learning_cycle.get('scheduler_enabled')}",
+            f"- daemon_enabled: {shadow_learning_cycle.get('daemon_enabled')}",
+            f"- cieu_persistence_enabled: {shadow_learning_cycle.get('cieu_persistence_enabled')}",
+            f"- previous_residual_influenced_shadow_projection: {shadow_learning_cycle.get('previous_residual_influenced_shadow_projection')}",
+            f"- ready_for_controlled_canonical_learning_design: {shadow_learning_cycle.get('ready_for_controlled_canonical_learning_design')}",
+            f"- ready_for_l6_revenue_opportunity_discovery: {shadow_learning_cycle.get('ready_for_l6_revenue_opportunity_discovery')}",
+            f"- next_required_milestone: {shadow_learning_cycle.get('next_required_milestone')}",
+            f"- Warning: {shadow_learning_cycle.get('warning')}",
         ]
     )
     lines.extend(

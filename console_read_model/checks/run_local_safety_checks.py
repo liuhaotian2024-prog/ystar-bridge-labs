@@ -163,7 +163,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after projection cycle",
+        "Build review-gated shadow learning cycle",
+        ["python3", "review_gated_shadow_learning_cycle/tools/build_review_gated_shadow_learning_cycle.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after shadow learning cycle",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -1189,6 +1194,127 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "projection_checked_cycle_readiness/l5_4_recommended_next_step.json"],
     ),
     Check(
+        "Compile review-gated shadow learning cycle builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "review_gated_shadow_learning_cycle/tools/build_review_gated_shadow_learning_cycle.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: shadow_learning_cycle_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/shadow_learning_cycle_summary.json"],
+    ),
+    Check(
+        "Validate JSON: review_gated_shadow_learning_contract.json",
+        ["python3", "-m", "json.tool", "review_gated_shadow_learning_cycle/review_gated_shadow_learning_contract.json"],
+    ),
+    Check(
+        "Validate JSON: review_gated_shadow_learning_input_fixture.json",
+        ["python3", "-m", "json.tool", "review_gated_shadow_learning_cycle/review_gated_shadow_learning_input_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: review_gated_shadow_learning_run.json",
+        ["python3", "-m", "json.tool", "review_gated_shadow_learning_cycle/review_gated_shadow_learning_run.json"],
+    ),
+    Check(
+        "Validate JSON: normalized_projection_residual.json",
+        ["python3", "-m", "json.tool", "residual_review_gate/normalized_projection_residual.json"],
+    ),
+    Check(
+        "Validate JSON: residual_review_gate_decision.json",
+        ["python3", "-m", "json.tool", "residual_review_gate/residual_review_gate_decision.json"],
+    ),
+    Check(
+        "Validate JSON: residual_review_decision_packet.json",
+        ["python3", "-m", "json.tool", "residual_review_gate/residual_review_decision_packet.json"],
+    ),
+    Check(
+        "Validate JSON: learning_target_classification.json",
+        ["python3", "-m", "json.tool", "learning_target_classifier/learning_target_classification.json"],
+    ),
+    Check(
+        "Validate JSON: learning_scope_matrix.json",
+        ["python3", "-m", "json.tool", "learning_target_classifier/learning_scope_matrix.json"],
+    ),
+    Check(
+        "Validate JSON: projection_policy_update_candidate.json",
+        ["python3", "-m", "json.tool", "projection_policy_update_candidate/projection_policy_update_candidate.json"],
+    ),
+    Check(
+        "Validate JSON: behavior_y_star_generation_update_candidate.json",
+        ["python3", "-m", "json.tool", "projection_policy_update_candidate/behavior_y_star_generation_update_candidate.json"],
+    ),
+    Check(
+        "Validate JSON: shadow_projection_policy_patch.json",
+        ["python3", "-m", "json.tool", "shadow_projection_policy_patch/shadow_projection_policy_patch.json"],
+    ),
+    Check(
+        "Validate JSON: shadow_patch_denied_operations.json",
+        ["python3", "-m", "json.tool", "shadow_projection_policy_patch/shadow_patch_denied_operations.json"],
+    ),
+    Check(
+        "Validate JSON: next_cycle_projection_input_candidate.json",
+        ["python3", "-m", "json.tool", "shadow_reprojection_preview/next_cycle_projection_input_candidate.json"],
+    ),
+    Check(
+        "Validate JSON: shadow_reprojected_behavior_y_star_preview.json",
+        ["python3", "-m", "json.tool", "shadow_reprojection_preview/shadow_reprojected_behavior_y_star_preview.json"],
+    ),
+    Check(
+        "Validate JSON: original_vs_shadow_behavior_y_star_comparison.json",
+        ["python3", "-m", "json.tool", "shadow_reprojection_preview/original_vs_shadow_behavior_y_star_comparison.json"],
+    ),
+    Check(
+        "Validate JSON: shadow_cycle_contract.json",
+        ["python3", "-m", "json.tool", "shadow_updated_projection_cycle/shadow_cycle_contract.json"],
+    ),
+    Check(
+        "Validate JSON: shadow_cycle_pre_u_packet_candidate.json",
+        ["python3", "-m", "json.tool", "shadow_updated_projection_cycle/shadow_cycle_pre_u_packet_candidate.json"],
+    ),
+    Check(
+        "Validate JSON: shadow_cycle_pre_u_gate_decision.json",
+        ["python3", "-m", "json.tool", "shadow_updated_projection_cycle/shadow_cycle_pre_u_gate_decision.json"],
+    ),
+    Check(
+        "Validate JSON: shadow_dry_run_work_result.json",
+        ["python3", "-m", "json.tool", "shadow_updated_projection_cycle/shadow_dry_run_work_result.json"],
+    ),
+    Check(
+        "Validate JSON: shadow_dry_run_work_receipt.json",
+        ["python3", "-m", "json.tool", "shadow_updated_projection_cycle/shadow_dry_run_work_receipt.json"],
+    ),
+    Check(
+        "Validate JSON: shadow_cycle_cieu_event_fixture.json",
+        ["python3", "-m", "json.tool", "shadow_cycle_cieu_residual/shadow_cycle_cieu_event_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: shadow_cycle_residual_delta.json",
+        ["python3", "-m", "json.tool", "shadow_cycle_cieu_residual/shadow_cycle_residual_delta.json"],
+    ),
+    Check(
+        "Validate JSON: original_vs_shadow_cycle_comparison.json",
+        ["python3", "-m", "json.tool", "original_vs_shadow_cycle_comparison/original_vs_shadow_cycle_comparison.json"],
+    ),
+    Check(
+        "Validate JSON: shadow_learning_effect_summary.json",
+        ["python3", "-m", "json.tool", "original_vs_shadow_cycle_comparison/shadow_learning_effect_summary.json"],
+    ),
+    Check(
+        "Validate JSON: integrated_learning_cycle_cieu_event_fixture.json",
+        ["python3", "-m", "json.tool", "integrated_learning_cycle_cieu_fixture/integrated_learning_cycle_cieu_event_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: integrated_learning_cycle_residual_delta.json",
+        ["python3", "-m", "json.tool", "integrated_learning_cycle_cieu_fixture/integrated_learning_cycle_residual_delta.json"],
+    ),
+    Check(
+        "Validate JSON: integrated_shadow_learning_readiness.json",
+        ["python3", "-m", "json.tool", "integrated_shadow_learning_readiness/integrated_shadow_learning_readiness.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -1379,6 +1505,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: projection-cycle",
         ["python3", "console_read_model/cli/team_console.py", "projection-cycle"],
+    ),
+    Check(
+        "CLI smoke: shadow-learning-cycle",
+        ["python3", "console_read_model/cli/team_console.py", "shadow-learning-cycle"],
     ),
     Check(
         "CLI smoke: sources",

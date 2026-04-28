@@ -1,0 +1,101 @@
+{
+  "schema_name": "ystar.review_gated_shadow_learning_cycle.run",
+  "schema_version": "v0",
+  "run_id": "review-gated-shadow-learning-run-001",
+  "loop_id": "review_gated_shadow_learning_cycle_v0",
+  "loop_stages": [
+    {
+      "stage": "load_l5_3_projection_checked_residual_delta",
+      "status": "completed_shadow_dry_run"
+    },
+    {
+      "stage": "load_l5_3_learning_candidate",
+      "status": "completed_shadow_dry_run"
+    },
+    {
+      "stage": "normalize_residual_for_review",
+      "status": "completed_shadow_dry_run"
+    },
+    {
+      "stage": "classify_learning_target",
+      "status": "completed_shadow_dry_run"
+    },
+    {
+      "stage": "run_deterministic_review_gate",
+      "status": "completed_shadow_dry_run"
+    },
+    {
+      "stage": "produce_review_decision_packet",
+      "status": "completed_shadow_dry_run"
+    },
+    {
+      "stage": "generate_projection_policy_update_candidate",
+      "status": "completed_shadow_dry_run"
+    },
+    {
+      "stage": "generate_shadow_projection_policy_patch",
+      "status": "completed_shadow_dry_run"
+    },
+    {
+      "stage": "generate_next_cycle_projection_input_candidate",
+      "status": "completed_shadow_dry_run"
+    },
+    {
+      "stage": "generate_shadow_behavior_y_star_preview",
+      "status": "completed_shadow_dry_run"
+    },
+    {
+      "stage": "run_shadow_updated_projection_checked_cycle",
+      "status": "completed_shadow_dry_run"
+    },
+    {
+      "stage": "generate_shadow_cycle_cieu_like_fixture",
+      "status": "completed_shadow_dry_run"
+    },
+    {
+      "stage": "compute_shadow_cycle_residual_delta",
+      "status": "completed_shadow_dry_run"
+    },
+    {
+      "stage": "compare_original_vs_shadow_behavior_y_star",
+      "status": "completed_shadow_dry_run"
+    },
+    {
+      "stage": "compare_original_vs_shadow_cycle",
+      "status": "completed_shadow_dry_run"
+    },
+    {
+      "stage": "emit_integrated_learning_cycle_cieu_like_fixture",
+      "status": "completed_shadow_dry_run"
+    },
+    {
+      "stage": "produce_final_l5_4_readiness",
+      "status": "completed_shadow_dry_run"
+    }
+  ],
+  "source_l5_3_residual_ref": "projection_checked_cieu_residual_cycle/projection_checked_residual_delta.json",
+  "review_decision_ref": "residual_review_gate/residual_review_gate_decision.json",
+  "shadow_patch_ref": "shadow_projection_policy_patch/shadow_projection_policy_patch.json",
+  "shadow_behavior_y_star_preview_ref": "shadow_reprojection_preview/shadow_reprojected_behavior_y_star_preview.json",
+  "shadow_cycle_run_ref": "shadow_updated_projection_cycle/shadow_updated_projection_cycle_run.json",
+  "original_vs_shadow_comparison_ref": "original_vs_shadow_cycle_comparison/original_vs_shadow_cycle_comparison.json",
+  "integrated_cieu_fixture_ref": "integrated_learning_cycle_cieu_fixture/integrated_learning_cycle_cieu_event_fixture.json",
+  "readiness_ref": "integrated_shadow_learning_readiness/integrated_shadow_learning_readiness.json",
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_name": "ystar.integrated_shadow_learning_readiness.next_step",
+  "schema_version": "v0",
+  "recommendation_id": "controlled-canonical-learning-architecture",
+  "title": "Controlled Canonical Learning Architecture v0",
+  "rationale": "L5.4 proves residuals can affect future Y* through shadow artifacts; the next step is controlled canonical learning design.",
+  "ready_for_l6_revenue_opportunity_discovery": false,
+  "live_execution_enabled": false,
+  "canonical_policy_mutation_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false
+}

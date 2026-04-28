@@ -1,0 +1,27 @@
+{
+  "schema_name": "ystar.original_vs_shadow_cycle_comparison.learning_effect_summary",
+  "schema_version": "v0",
+  "effect_summary_id": "shadow-learning-effect-summary-001",
+  "effect_class": "behavior_y_star_shadow_effect",
+  "previous_residual_visibly_influenced_shadow_projection": true,
+  "visible_shadow_effect": "Shadow behavior-level Y* preview adds residual-review obligations, no-execution residual labeling, and evidence sufficiency requirements.",
+  "canonical_system_changed": false,
+  "brain_memory_changed": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

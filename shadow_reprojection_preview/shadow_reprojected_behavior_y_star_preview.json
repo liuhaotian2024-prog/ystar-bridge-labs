@@ -1,0 +1,77 @@
+{
+  "schema_name": "ystar.shadow_reprojection_preview.behavior_y_star_preview",
+  "schema_version": "v0",
+  "preview_id": "shadow-behavior-y-star-preview-001",
+  "source_shadow_patch_id": "shadow-projection-policy-patch-001",
+  "source_original_behavior_y_star_id": "behavior-y-star-projection-checked-cycle-v0",
+  "preview_behavior_y_star": "Prepare a projection-checked autonomous work-cycle candidate for future Pre-U validation. Shadow preview adds explicit residual-review obligations, no-execution residual labeling, and evidence sufficiency checks before any future canonical learning design.",
+  "changed_fields": [
+    "declared_behavior_y_star",
+    "candidate_u_summary",
+    "unresolved_gaps",
+    "evidence_refs"
+  ],
+  "unchanged_fields": [
+    "source_mission_y_star_id",
+    "required_pre_u_validation",
+    "allowed_behavior_boundary",
+    "forbidden_behavior_boundary",
+    "execution_status"
+  ],
+  "inherited_constraints_preserved": true,
+  "forbidden_boundaries_preserved": true,
+  "pre_u_validation_still_required": true,
+  "live_behavior_authorized": false,
+  "behavior_execution_enabled": false,
+  "applied_to_canonical_policy": false,
+  "applied_to_brain": false,
+  "applied_to_memory": false,
+  "allowed_behavior_boundary": [
+    "local dry-run artifact generation",
+    "read-model observation",
+    "Pre-U packet candidate preparation",
+    "review-queue-only learning stub"
+  ],
+  "forbidden_behavior_boundary": [
+    "live behavior execution",
+    "external communication",
+    "network access",
+    "scheduler or daemon activation",
+    "brain or memory writeback",
+    "CIEU persistence",
+    "candidate auto-approval",
+    "direct behavior execution"
+  ],
+  "candidate_u_summary": {
+    "candidate_u_id": "candidate-u-shadow-projection-cycle-v0",
+    "candidate_u": "route shadow behavior Y* preview into a shadow dry-run projection-checked cycle",
+    "execution_mode": "shadow_projection_only"
+  },
+  "evidence_refs": [
+    "shadow_projection_policy_patch/shadow_projection_policy_patch.json",
+    "projection_policy_update_candidate/projection_policy_update_candidate.json",
+    "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+    "mission_to_behavior_y_star_projection/mission_y_star_input.json"
+  ],
+  "unresolved_gaps": [
+    "shadow preview is not canonical",
+    "future controlled canonical learning design is required before application"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

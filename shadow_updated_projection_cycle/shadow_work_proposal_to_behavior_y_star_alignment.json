@@ -1,0 +1,27 @@
+{
+  "schema_name": "ystar.shadow_updated_projection_cycle.alignment",
+  "schema_version": "v0",
+  "alignment_id": "shadow-work-proposal-alignment-001",
+  "shadow_behavior_y_star_preview_id": "shadow-behavior-y-star-preview-001",
+  "proposal_id": "shadow-autonomous-work-proposal-001",
+  "inherited_constraints_preserved": true,
+  "forbidden_boundary_check_passed": true,
+  "decision": "shadow_projection_gate_passed_for_dry_run",
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schema_name": "ystar.shadow_updated_projection_cycle.work_result",
+  "schema_version": "v0",
+  "result_id": "shadow-dry-run-work-result-001",
+  "execution_mode": "shadow_dry_run_static_fixture",
+  "real_execution_performed": false,
+  "live_tool_called": false,
+  "external_action_performed": false,
+  "network_called": false,
+  "db_log_runtime_content_read": false,
+  "canonical_policy_mutated": false,
+  "brain_writeback_performed": false,
+  "memory_ingestion_performed": false,
+  "generated_outputs": [
+    "shadow behavior-level Y* preview",
+    "shadow Pre-U packet candidate",
+    "shadow CIEU-like fixture",
+    "original-vs-shadow comparison"
+  ],
+  "evidence_refs": [
+    "shadow_reprojection_preview/shadow_reprojected_behavior_y_star_preview.json",
+    "shadow_updated_projection_cycle/shadow_cycle_pre_u_packet_candidate.json"
+  ],
+  "unresolved_gaps": [
+    "shadow cycle cannot prove live behavior outcome",
+    "canonical policy remains unchanged"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

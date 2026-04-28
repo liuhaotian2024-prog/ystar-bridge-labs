@@ -1,0 +1,33 @@
+{
+  "schema_name": "ystar.shadow_cycle_cieu_residual.delta",
+  "schema_version": "v0",
+  "residual_delta_id": "shadow-cycle-residual-delta-001",
+  "event_id": "shadow-cycle-cieu-event-fixture-001",
+  "shadow_projection_alignment_residual": "shadow proposal aligns with preview but remains noncanonical",
+  "shadow_pre_u_gate_residual": "shadow gate allows dry-run only",
+  "shadow_dry_run_execution_residual": "no real shadow execution occurred",
+  "behavior_boundary_residual": "behavior boundaries preserved",
+  "evidence_gap_residual": "production evidence still absent",
+  "learning_queue_residual": "learning remains review-gated",
+  "live_blocker_residual": "live remains blocked",
+  "writeback_blocker_residual": "writeback remains blocked",
+  "canonical_policy_mutation_blocker_residual": "canonical policy mutation remains blocked",
+  "semantic_truth_scoring_used": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

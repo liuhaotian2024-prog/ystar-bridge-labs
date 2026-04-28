@@ -1,0 +1,43 @@
+{
+  "schema_name": "ystar.learning_target_classifier.trace",
+  "schema_version": "v0",
+  "trace_id": "learning-target-trace-001",
+  "source_residual_classes": [
+    "projection_policy_gap",
+    "behavior_y_star_generation_gap",
+    "pre_u_mapping_gap",
+    "work_alignment_gap",
+    "residual_classification_gap",
+    "evidence_collection_gap",
+    "blocked_live_gap"
+  ],
+  "classified_targets": [
+    "projection_policy",
+    "behavior_y_star_generation",
+    "pre_u_mapping",
+    "work_proposal_alignment",
+    "residual_classification",
+    "evidence_collection_policy",
+    "live_blocker_tracking",
+    "writeback_boundary_tracking"
+  ],
+  "classification_rule": "deterministic class-to-target mapping",
+  "semantic_truth_scoring_used": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

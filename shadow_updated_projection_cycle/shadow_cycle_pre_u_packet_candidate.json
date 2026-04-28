@@ -1,0 +1,72 @@
+{
+  "schema_name": "ystar.shadow_updated_projection_cycle.pre_u_packet_candidate",
+  "schema_version": "v0",
+  "packet_candidate_id": "shadow-cycle-pre-u-packet-candidate-001",
+  "declared_Y_star": "Prepare a projection-checked autonomous work-cycle candidate for future Pre-U validation. Shadow preview adds explicit residual-review obligations, no-execution residual labeling, and evidence sufficiency checks before any future canonical learning design.",
+  "candidate_U": {
+    "shadow_work_intent": "refresh mission dashboard using shadow-updated behavior-level Y* context",
+    "execution_mode": "shadow_dry_run_static_fixture"
+  },
+  "Xt": {
+    "next_cycle_projection_input_candidate_ref": "shadow_reprojection_preview/next_cycle_projection_input_candidate.json",
+    "shadow_patch_ref": "shadow_projection_policy_patch/shadow_projection_policy_patch.json"
+  },
+  "deny_or_boundary_constraints": [
+    "live behavior execution",
+    "external communication",
+    "network access",
+    "scheduler or daemon activation",
+    "brain or memory writeback",
+    "CIEU persistence",
+    "candidate auto-approval",
+    "direct behavior execution"
+  ],
+  "trace_refs": [
+    "mission_to_behavior_y_star_projection/mission_to_behavior_projection_trace.json",
+    "shadow_reprojection_preview/original_vs_shadow_behavior_y_star_comparison.json"
+  ],
+  "governance_expectations": {
+    "shadow_work_proposal_gate_decision": "shadow_projection_gate_passed_for_dry_run",
+    "allow_only_shadow_dry_run": true
+  },
+  "execution_boundary": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  },
+  "dry_run_only": true,
+  "production_ready": false,
+  "requires_y_star_gov_validation_before_execution": true,
+  "live_execution_authorized": false,
+  "behavior_execution_authorized": false,
+  "external_action_authorized": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

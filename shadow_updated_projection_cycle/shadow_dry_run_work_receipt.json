@@ -1,0 +1,31 @@
+{
+  "schema_name": "ystar.shadow_updated_projection_cycle.work_receipt",
+  "schema_version": "v0",
+  "receipt_id": "shadow-dry-run-work-receipt-001",
+  "no_live_behavior_execution": true,
+  "no_external_action": true,
+  "no_network": true,
+  "no_scheduler_or_daemon": true,
+  "no_cieu_persistence": true,
+  "no_canonical_policy_mutation": true,
+  "no_brain_writeback": true,
+  "no_memory_ingestion": true,
+  "no_candidate_approval": true,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

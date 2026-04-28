@@ -1,0 +1,27 @@
+{
+  "schema_name": "ystar.shadow_updated_projection_cycle.work_gate",
+  "schema_version": "v0",
+  "gate_decision_id": "shadow-work-proposal-gate-decision-001",
+  "decision": "shadow_projection_gate_passed_for_dry_run",
+  "dry_run_only": true,
+  "live_execution_authorized": false,
+  "behavior_execution_authorized": false,
+  "canonical_policy_mutation_authorized": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema_name": "ystar.shadow_reprojection_preview.behavior_comparison",
+  "schema_version": "v0",
+  "comparison_id": "original-vs-shadow-behavior-y-star-comparison-001",
+  "original_behavior_intent": "prepare next autonomous work cycle candidate through field-functional projection and Pre-U validation",
+  "original_declared_behavior_y_star": "Prepare a projection-checked autonomous work-cycle candidate for future Pre-U validation.",
+  "shadow_preview_behavior_y_star": "Prepare a projection-checked autonomous work-cycle candidate for future Pre-U validation. Shadow preview adds explicit residual-review obligations, no-execution residual labeling, and evidence sufficiency checks before any future canonical learning design.",
+  "inherited_obligations_preserved": true,
+  "contracted_obligations_changed": [
+    "added no-execution residual handling",
+    "added evidence sufficiency checks"
+  ],
+  "context_bound_obligations_changed": [
+    "residual review gate context is now bound into the preview",
+    "shadow patch reference is included"
+  ],
+  "safety_boundaries_preserved": true,
+  "new_unresolved_gaps": [
+    "shadow preview is not canonical",
+    "future controlled canonical learning design is required before application"
+  ],
+  "acceptable_for_shadow_cycle_dry_run_consumption": true,
+  "canonical_system_changed": false,
+  "brain_memory_changed": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "schema_name": "ystar.learning_target_classifier.classification",
+  "schema_version": "v0",
+  "classification_id": "learning-target-classification-001",
+  "source_normalized_residual_id": "normalized-projection-residual-001",
+  "targets": [
+    {
+      "target_name": "projection_policy",
+      "source_residual_refs": [
+        "residual_review_gate/normalized_projection_residual.json"
+      ],
+      "allowed_update_type": "shadow_patch_candidate",
+      "denied_update_type": [
+        "canonical_policy_mutation",
+        "brain_writeback",
+        "memory_ingestion",
+        "candidate_auto_approval",
+        "live_application"
+      ],
+      "can_generate_shadow_patch": true,
+      "can_apply_to_canonical_policy_now": false,
+      "can_write_to_brain_now": false,
+      "can_write_to_memory_now": false,
+      "requires_review_before_application": true,
+      "evidence_refs": [
+        "projection_checked_cieu_residual_cycle/projection_checked_residual_delta.json",
+        "projection_checked_learning_review_queue/projection_checked_learning_candidate.json",
+        "projection_checked_autonomous_work_cycle/projection_checked_cycle_run.json"
+      ]
+    },
+    {
+      "target_name": "behavior_y_star_generation",
+      "source_residual_refs": [
+        "residual_review_gate/normalized_projection_residual.json"
+      ],
+      "allowed_update_type": "shadow_patch_candidate",
+      "denied_update_type": [
+        "canonical_policy_mutation",
+        "brain_writeback",
+        "memory_ingestion",
+        "candidate_auto_approval",
+        "live_application"
+      ],
+      "can_generate_shadow_patch": true,
+      "can_apply_to_canonical_policy_now": false,
+      "can_write_to_brain_now": false,
+      "can_write_to_memory_now": false,
+      "requires_review_before_application": true,
+      "evidence_refs": [
+        "projection_checked_cieu_residual_cycle/projection_checked_residual_delta.json",
+        "projection_checked_learning_review_queue/projection_checked_learning_candidate.json",
+        "projection_checked_autonomous_work_cycle/projection_checked_cycle_run.json"
+      ]
+    },
+    {
+      "target_name": "pre_u_mapping",
+      "source_residual_refs": [
+        "residual_review_gate/normalized_projection_residual.json"
+      ],
+      "allowed_update_type": "shadow_patch_candidate",
+      "denied_update_type": [
+        "canonical_policy_mutation",
+        "brain_writeback",
+        "memory_ingestion",
+        "candidate_auto_approval",
+        "live_application"
+      ],
+      "can_generate_shadow_patch": true,
+      "can_apply_to_canonical_policy_now": false,
+      "can_write_to_brain_now": false,
+      "can_write_to_memory_now": false,
+      "requires_review_before_application": true,
+      "evidence_refs": [
+        "projection_checked_cieu_residual_cycle/projection_checked_residual_delta.json",
+        "projection_checked_learning_review_queue/projection_checked_learning_candidate.json",
+        "projection_checked_autonomous_work_cycle/projection_checked_cycle_run.json"
+      ]
+    },
+    {
+      "target_name": "work_proposal_alignment",
+      "source_residual_refs": [
+        "residual_review_gate/normalized_projection_residual.json"
+      ],
+      "allowed_update_type": "shadow_patch_candidate",
+      "denied_update_type": [
+        "canonical_policy_mutation",
+        "brain_writeback",
+        "memory_ingestion",
+        "candidate_auto_approval",
+        "live_application"
+      ],
+      "can_generate_shadow_patch": true,
+      "can_apply_to_canonical_policy_now": false,
+      "can_write_to_brain_now": false,
+      "can_write_to_memory_now": false,
+      "requires_review_before_application": true,
+      "evidence_refs": [
+        "projection_checked_cieu_residual_cycle/projection_checked_residual_delta.json",
+        "projection_checked_learning_review_queue/projection_checked_learning_candidate.json",
+        "projection_checked_autonomous_work_cycle/projection_checked_cycle_run.json"
+      ]
+    },
+    {
+      "target_name": "residual_classification",
+      "source_residual_refs": [
+        "residual_review_gate/normalized_projection_residual.json"
+      ],
+      "allowed_update_type": "shadow_patch_candidate",
+      "denied_update_type": [
+        "canonical_policy_mutation",
+        "brain_writeback",
+        "memory_ingestion",
+        "candidate_auto_approval",
+        "live_application"
+      ],
+      "can_generate_shadow_patch": true,
+      "can_apply_to_canonical_policy_now": false,
+      "can_write_to_brain_now": false,
+      "can_write_to_memory_now": false,
+      "requires_review_before_application": true,
+      "evidence_refs": [
+        "projection_checked_cieu_residual_cycle/projection_checked_residual_delta.json",
+        "projection_checked_learning_review_queue/projection_checked_learning_candidate.json",
+        "projection_checked_autonomous_work_cycle/projection_checked_cycle_run.json"
+      ]
+    },
+    {
+      "target_name": "evidence_collection_policy",
+      "source_residual_refs": [
+        "residual_review_gate/normalized_projection_residual.json"
+      ],
+      "allowed_update_type": "shadow_patch_candidate",
+      "denied_update_type": [
+        "canonical_policy_mutation",
+        "brain_writeback",
+        "memory_ingestion",
+        "candidate_auto_approval",
+        "live_application"
+      ],
+      "can_generate_shadow_patch": true,
+      "can_apply_to_canonical_policy_now": false,
+      "can_write_to_brain_now": false,
+      "can_write_to_memory_now": false,
+      "requires_review_before_application": true,
+      "evidence_refs": [
+        "projection_checked_cieu_residual_cycle/projection_checked_residual_delta.json",
+        "projection_checked_learning_review_queue/projection_checked_learning_candidate.json",
+        "projection_checked_autonomous_work_cycle/projection_checked_cycle_run.json"
+      ]
+    },
+    {
+      "target_name": "live_blocker_tracking",
+      "source_residual_refs": [
+        "residual_review_gate/normalized_projection_residual.json"
+      ],
+      "allowed_update_type": "context_tracking_only",
+      "denied_update_type": [
+        "canonical_policy_mutation",
+        "brain_writeback",
+        "memory_ingestion",
+        "candidate_auto_approval",
+        "live_application"
+      ],
+      "can_generate_shadow_patch": false,
+      "can_apply_to_canonical_policy_now": false,
+      "can_write_to_brain_now": false,
+      "can_write_to_memory_now": false,
+      "requires_review_before_application": true,
+      "evidence_refs": [
+        "projection_checked_cieu_residual_cycle/projection_checked_residual_delta.json",
+        "projection_checked_learning_review_queue/projection_checked_learning_candidate.json",
+        "projection_checked_autonomous_work_cycle/projection_checked_cycle_run.json"
+      ]
+    },
+    {
+      "target_name": "writeback_boundary_tracking",
+      "source_residual_refs": [
+        "residual_review_gate/normalized_projection_residual.json"
+      ],
+      "allowed_update_type": "context_tracking_only",
+      "denied_update_type": [
+        "canonical_policy_mutation",
+        "brain_writeback",
+        "memory_ingestion",
+        "candidate_auto_approval",
+        "live_application"
+      ],
+      "can_generate_shadow_patch": false,
+      "can_apply_to_canonical_policy_now": false,
+      "can_write_to_brain_now": false,
+      "can_write_to_memory_now": false,
+      "requires_review_before_application": true,
+      "evidence_refs": [
+        "projection_checked_cieu_residual_cycle/projection_checked_residual_delta.json",
+        "projection_checked_learning_review_queue/projection_checked_learning_candidate.json",
+        "projection_checked_autonomous_work_cycle/projection_checked_cycle_run.json"
+      ]
+    }
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

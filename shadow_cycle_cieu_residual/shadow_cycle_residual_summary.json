@@ -1,0 +1,10 @@
+{
+  "schema_name": "ystar.shadow_cycle_cieu_residual.summary",
+  "schema_version": "v0",
+  "shadow_cycle_cieu_fixture_generated": true,
+  "shadow_cycle_residual_delta_generated": true,
+  "event_mode": "shadow_dry_run_fixture",
+  "persistence_enabled": false,
+  "db_write_performed": false,
+  "semantic_truth_scoring_used": false
+}

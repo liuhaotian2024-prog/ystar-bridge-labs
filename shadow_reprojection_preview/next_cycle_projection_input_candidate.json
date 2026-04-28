@@ -1,0 +1,27 @@
+{
+  "schema_name": "ystar.shadow_reprojection_preview.input_candidate",
+  "schema_version": "v0",
+  "input_candidate_id": "next-cycle-projection-input-candidate-001",
+  "original_mission_y_star_ref": "mission_to_behavior_y_star_projection/mission_y_star_input.json",
+  "original_behavior_y_star_ref": "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+  "review_gated_residual_learning_candidate_ref": "projection_checked_learning_review_queue/projection_checked_learning_candidate.json",
+  "projection_policy_update_candidate_ref": "projection_policy_update_candidate/projection_policy_update_candidate.json",
+  "shadow_patch_ref": "shadow_projection_policy_patch/shadow_projection_policy_patch.json",
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

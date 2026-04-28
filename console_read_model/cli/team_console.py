@@ -41,6 +41,7 @@ FIELD_FUNCTIONAL = "console_read_model/generated/field_functional_summary.json"
 MISSION_PROJECTION = "console_read_model/generated/mission_projection_summary.json"
 FIELD_PROJECTION = "console_read_model/generated/field_projection_summary.json"
 PROJECTION_CYCLE = "console_read_model/generated/projection_cycle_summary.json"
+SHADOW_LEARNING_CYCLE = "console_read_model/generated/shadow_learning_cycle_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -60,7 +61,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -121,6 +122,7 @@ def load_all() -> dict[str, Any]:
         "mission_projection": load_json(MISSION_PROJECTION),
         "field_projection": load_json(FIELD_PROJECTION),
         "projection_cycle": load_json(PROJECTION_CYCLE),
+        "shadow_learning_cycle": load_json(SHADOW_LEARNING_CYCLE),
     }
 
 
@@ -977,6 +979,81 @@ def cmd_projection_cycle(data: dict[str, Any]) -> None:
     print(f"warning: {cycle.get('warning')}")
 
 
+def cmd_shadow_learning_cycle(data: dict[str, Any]) -> None:
+    cycle = data["shadow_learning_cycle"]
+    print("# Integrated Review-Gated Shadow Learning Cycle")
+    print()
+    print(
+        "L5.4 integrated review-gated shadow learning cycle defined: "
+        f"{cycle.get('integrated_review_gated_shadow_learning_cycle_defined')}"
+    )
+    print(f"L5.3 residual consumed: {cycle.get('l5_3_residual_consumed')}")
+    print(
+        "deterministic review gate decision generated: "
+        f"{cycle.get('deterministic_review_gate_decision_generated')}"
+    )
+    print(f"review gate decision: {cycle.get('review_gate_decision')}")
+    print(
+        "learning target classification generated: "
+        f"{cycle.get('learning_target_classification_generated')}"
+    )
+    print(
+        "projection policy update candidate generated: "
+        f"{cycle.get('projection_policy_update_candidate_generated')}"
+    )
+    print(
+        "shadow projection policy patch generated: "
+        f"{cycle.get('shadow_projection_policy_patch_generated')}"
+    )
+    print(
+        "shadow behavior-level Y* preview generated: "
+        f"{cycle.get('shadow_behavior_y_star_preview_generated')}"
+    )
+    print(
+        "shadow-updated projection-checked cycle generated: "
+        f"{cycle.get('shadow_updated_projection_cycle_generated')}"
+    )
+    print(
+        "original-vs-shadow cycle comparison generated: "
+        f"{cycle.get('original_vs_shadow_cycle_comparison_generated')}"
+    )
+    print(
+        "integrated CIEU-like fixture generated: "
+        f"{cycle.get('integrated_cieu_like_fixture_generated')}"
+    )
+    print(f"no candidate approved: {cycle.get('candidate_approved') is False}")
+    print(f"no candidate applied: {cycle.get('candidate_applied') is False}")
+    print(f"canonical policy mutation enabled: {cycle.get('canonical_policy_mutation_enabled')}")
+    print(f"brain writeback enabled: {cycle.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {cycle.get('memory_ingestion_enabled')}")
+    print(f"live execution enabled: {cycle.get('live_execution_enabled')}")
+    print(f"behavior execution enabled: {cycle.get('behavior_execution_enabled')}")
+    print(f"external action enabled: {cycle.get('external_action_enabled')}")
+    print(f"network enabled: {cycle.get('network_enabled')}")
+    print(f"scheduler enabled: {cycle.get('scheduler_enabled')}")
+    print(f"daemon enabled: {cycle.get('daemon_enabled')}")
+    print(f"CIEU persistence enabled: {cycle.get('cieu_persistence_enabled')}")
+    print(
+        "previous residual influenced shadow projection: "
+        f"{cycle.get('previous_residual_influenced_shadow_projection')}"
+    )
+    print(f"shadow learning effect class: {cycle.get('shadow_learning_effect_class')}")
+    print(
+        "ready for controlled canonical learning design: "
+        f"{cycle.get('ready_for_controlled_canonical_learning_design')}"
+    )
+    print(
+        "ready for L6 revenue opportunity discovery: "
+        f"{cycle.get('ready_for_l6_revenue_opportunity_discovery')}"
+    )
+    print(f"next required milestone: {cycle.get('next_required_milestone')}")
+    print(f"generated_loop_summary: {cycle.get('generated_loop_summary')}")
+    print(f"generated_review_summary: {cycle.get('generated_review_summary')}")
+    print(f"generated_shadow_patch_summary: {cycle.get('generated_shadow_patch_summary')}")
+    print(f"generated_readiness: {cycle.get('generated_readiness')}")
+    print(f"warning: {cycle.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -1163,6 +1240,19 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print(f"- {projection_cycle.get('generated_residual_summary')}")
         print(f"- {projection_cycle.get('generated_learning_summary')}")
         print(f"- {projection_cycle.get('generated_readiness')}")
+    shadow_learning_cycle = data.get("shadow_learning_cycle", {})
+    if shadow_learning_cycle:
+        print()
+        print("Integrated review-gated shadow learning cycle:")
+        print(f"- {shadow_learning_cycle.get('generated_loop_summary')}")
+        print(f"- {shadow_learning_cycle.get('generated_review_summary')}")
+        print(f"- {shadow_learning_cycle.get('generated_target_summary')}")
+        print(f"- {shadow_learning_cycle.get('generated_update_summary')}")
+        print(f"- {shadow_learning_cycle.get('generated_shadow_patch_summary')}")
+        print(f"- {shadow_learning_cycle.get('generated_reprojection_summary')}")
+        print(f"- {shadow_learning_cycle.get('generated_shadow_cycle_summary')}")
+        print(f"- {shadow_learning_cycle.get('generated_integrated_cieu_summary')}")
+        print(f"- {shadow_learning_cycle.get('generated_readiness')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -1217,6 +1307,7 @@ def cmd_validate_local() -> int:
         MISSION_PROJECTION,
         FIELD_PROJECTION,
         PROJECTION_CYCLE,
+        SHADOW_LEARNING_CYCLE,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -1282,6 +1373,8 @@ def cmd_validate_local() -> int:
             failures.append("field_projection_summary missing from team console snapshot")
         if "projection_cycle_summary" not in snapshot:
             failures.append("projection_cycle_summary missing from team console snapshot")
+        if "shadow_learning_cycle_summary" not in snapshot:
+            failures.append("shadow_learning_cycle_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -2461,6 +2554,101 @@ def cmd_validate_local() -> int:
         if projection_cycle.get("next_required_milestone") != "L5.4 Review-Gated Learning Loop v0":
             failures.append("projection cycle summary must point to L5.4 review-gated learning loop")
 
+    shadow_learning_cycle = loaded.get(SHADOW_LEARNING_CYCLE)
+    if shadow_learning_cycle:
+        required_fields = [
+            "integrated_review_gated_shadow_learning_cycle_defined",
+            "l5_3_residual_consumed",
+            "deterministic_review_gate_decision_generated",
+            "review_gate_decision",
+            "learning_target_classification_generated",
+            "projection_policy_update_candidate_generated",
+            "shadow_projection_policy_patch_generated",
+            "shadow_behavior_y_star_preview_generated",
+            "shadow_updated_projection_cycle_generated",
+            "shadow_cycle_cieu_fixture_generated",
+            "original_vs_shadow_cycle_comparison_generated",
+            "integrated_cieu_like_fixture_generated",
+            "candidate_approved",
+            "candidate_applied",
+            "canonical_policy_mutation_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "previous_residual_influenced_shadow_projection",
+            "ready_for_controlled_canonical_learning_design",
+            "ready_for_l6_revenue_opportunity_discovery",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "cieu_persistence_enabled",
+            "candidate_auto_approval_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "shadow_patch_live_application_enabled",
+            "shadow_patch_preview_only",
+            "shadow_cycle_real_execution_performed",
+            "shadow_cycle_db_write_performed",
+            "integrated_cieu_db_write_performed",
+            "next_required_milestone",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in shadow_learning_cycle:
+                failures.append(f"shadow learning cycle summary missing field: {field}")
+        for field in [
+            "integrated_review_gated_shadow_learning_cycle_defined",
+            "l5_3_residual_consumed",
+            "deterministic_review_gate_decision_generated",
+            "learning_target_classification_generated",
+            "projection_policy_update_candidate_generated",
+            "shadow_projection_policy_patch_generated",
+            "shadow_behavior_y_star_preview_generated",
+            "shadow_updated_projection_cycle_generated",
+            "shadow_cycle_cieu_fixture_generated",
+            "original_vs_shadow_cycle_comparison_generated",
+            "integrated_cieu_like_fixture_generated",
+            "previous_residual_influenced_shadow_projection",
+            "ready_for_controlled_canonical_learning_design",
+            "shadow_patch_preview_only",
+        ]:
+            if shadow_learning_cycle.get(field) is not True:
+                failures.append(f"shadow learning cycle summary must keep {field}=true")
+        for field in [
+            "candidate_approved",
+            "candidate_applied",
+            "canonical_policy_mutation_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "ready_for_l6_revenue_opportunity_discovery",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "cieu_persistence_enabled",
+            "candidate_auto_approval_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "shadow_patch_live_application_enabled",
+            "shadow_cycle_real_execution_performed",
+            "shadow_cycle_db_write_performed",
+            "integrated_cieu_db_write_performed",
+        ]:
+            if shadow_learning_cycle.get(field) is not False:
+                failures.append(f"shadow learning cycle summary must keep {field}=false")
+        if shadow_learning_cycle.get("review_gate_decision") != "eligible_for_shadow_update_candidate":
+            failures.append("shadow learning cycle review gate must allow shadow update candidate only")
+        if shadow_learning_cycle.get("next_required_milestone") != (
+            "Controlled Canonical Learning Architecture v0"
+        ):
+            failures.append("shadow learning cycle summary must point to controlled canonical learning")
+
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
     print(f"Required agents: {', '.join(REQUIRED_AGENTS)}")
@@ -2554,6 +2742,8 @@ def main(argv: list[str]) -> int:
         cmd_field_projection(data)
     elif command == "projection-cycle":
         cmd_projection_cycle(data)
+    elif command == "shadow-learning-cycle":
+        cmd_shadow_learning_cycle(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

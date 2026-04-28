@@ -1,0 +1,59 @@
+{
+  "schema_name": "ystar.shadow_projection_policy_patch.patch",
+  "schema_version": "v0",
+  "shadow_patch_id": "shadow-projection-policy-patch-001",
+  "source_update_candidate_ids": [
+    "projection-policy-update-candidate-001",
+    "behavior-y-star-generation-update-candidate-001",
+    "pre-u-mapping-update-candidate-001",
+    "work-alignment-update-candidate-001",
+    "residual-classification-update-candidate-001",
+    "evidence-collection-update-candidate-001"
+  ],
+  "patch_scope": [
+    "projection trace linkage",
+    "behavior boundary inheritance",
+    "Pre-U residual context mapping",
+    "work proposal alignment checks",
+    "residual class labeling",
+    "evidence sufficiency notes"
+  ],
+  "patch_operations": [
+    "add shadow-only residual context to behavior Y* preview",
+    "add explicit no-execution residual obligations",
+    "carry residual class refs into shadow Pre-U governance expectations",
+    "preserve all forbidden behavior boundaries"
+  ],
+  "affected_noncanonical_artifacts": [
+    "shadow_reprojection_preview/shadow_reprojected_behavior_y_star_preview.json",
+    "shadow_updated_projection_cycle/shadow_cycle_pre_u_packet_candidate.json",
+    "shadow_cycle_cieu_residual/shadow_cycle_residual_delta.json"
+  ],
+  "canonical_policy_mutation": false,
+  "brain_writeback": false,
+  "memory_ingestion": false,
+  "live_application": false,
+  "preview_only": true,
+  "shadow_cycle_preview_allowed": true,
+  "rollback_required_before_live": true,
+  "evidence_refs": [
+    "projection_policy_update_candidate/projection_policy_update_candidate.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}

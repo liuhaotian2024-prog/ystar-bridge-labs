@@ -72,6 +72,8 @@ Ready now:
 - field functional archaeology and merge plan summary
 - mission field functional projection harness summary
 - field functional auto-projection core summary
+- projection-checked autonomous work cycle summary
+- review-gated shadow learning cycle summary
 
 Not ready:
 - runtime generator
@@ -100,8 +102,8 @@ Not ready:
 - enabled live-boundary harness
 - enabled CIEU runtime event persistence
 - approved governed action registry
-- review-gated learning candidate queue
-- L5.3 projection-checked autonomous work cycle
+- controlled canonical learning architecture
+- L6 revenue opportunity discovery
 
 ## Runtime Artifact Quarantine Summary
 
@@ -645,6 +647,37 @@ Not ready:
 - next_required_milestone: L5.4 Review-Gated Learning Loop v0
 - Warning: L5.3 is a projection-checked dry-run cycle. It consumes behavior-level Y* as a gate but does not execute behavior or apply learning.
 
+## Integrated Review-Gated Shadow Learning Cycle
+
+- integrated_review_gated_shadow_learning_cycle_defined: True
+- l5_3_residual_consumed: True
+- deterministic_review_gate_decision_generated: True
+- review_gate_decision: eligible_for_shadow_update_candidate
+- learning_target_classification_generated: True
+- projection_policy_update_candidate_generated: True
+- shadow_projection_policy_patch_generated: True
+- shadow_behavior_y_star_preview_generated: True
+- shadow_updated_projection_cycle_generated: True
+- original_vs_shadow_cycle_comparison_generated: True
+- integrated_cieu_like_fixture_generated: True
+- candidate_approved: False
+- candidate_applied: False
+- canonical_policy_mutation_enabled: False
+- brain_writeback_enabled: False
+- memory_ingestion_enabled: False
+- live_execution_enabled: False
+- behavior_execution_enabled: False
+- external_action_enabled: False
+- network_enabled: False
+- scheduler_enabled: False
+- daemon_enabled: False
+- cieu_persistence_enabled: False
+- previous_residual_influenced_shadow_projection: True
+- ready_for_controlled_canonical_learning_design: True
+- ready_for_l6_revenue_opportunity_discovery: False
+- next_required_milestone: Controlled Canonical Learning Architecture v0
+- Warning: L5.4 is shadow-only. Residuals influence a preview Y* and shadow cycle, but no canonical policy, brain, memory, CIEU store, or live system is changed.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -679,7 +712,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - define L4.8 governed recurring observation loop contract
 - build L5.0 review-gated learning candidate queue
 - build L5.1 mission field functional projection harness from archaeology merge plan
-- build L5.3 projection-checked autonomous work cycle from behavior-level Y*
+- build controlled canonical learning architecture from L5.4 shadow learning proof
 
 ## Warnings / Gaps
 
@@ -719,4 +752,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Manual recurring observation tick runner exists for one-shot local ticks only; no scheduler, daemon, or recurrence is enabled.
 - Field functional archaeology exists as a merge plan only; L5 projection harness is not implemented yet.
 - Field functional auto-projection core exists as a dry-run projection core only; behavior execution remains disabled.
-- Projection-checked autonomous work cycle exists as dry-run fixtures only; review-gated learning loop is not implemented yet.
+- Integrated review-gated shadow learning cycle exists as shadow-only artifacts; controlled canonical learning is not implemented yet.

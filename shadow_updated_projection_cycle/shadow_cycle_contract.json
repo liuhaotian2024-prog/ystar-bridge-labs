@@ -1,0 +1,32 @@
+{
+  "schema_name": "ystar.shadow_updated_projection_cycle.contract",
+  "schema_version": "v0",
+  "shadow_cycle_id": "shadow-updated-projection-cycle-v0",
+  "shadow_cycle_only": true,
+  "canonical_policy_mutation": false,
+  "real_execution_performed": false,
+  "live_behavior_authorized": false,
+  "behavior_execution_enabled": false,
+  "external_action_authorized": false,
+  "network_enabled": false,
+  "cieu_persistence_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "shadow_patch_live_application_enabled": false
+  }
+}
