@@ -49,6 +49,7 @@ CONTROLLED_CANONICAL_LEARNING = (
 )
 APPROVED_SANDBOX_UPDATE = "console_read_model/generated/approved_sandbox_update_summary.json"
 REAL_APPROVAL_WORKFLOW = "console_read_model/generated/real_approval_workflow_summary.json"
+APPROVAL_RECORD_SANDBOX = "console_read_model/generated/approval_record_sandbox_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -68,7 +69,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -135,6 +136,7 @@ def load_all() -> dict[str, Any]:
         "controlled_canonical_learning": load_json(CONTROLLED_CANONICAL_LEARNING),
         "approved_sandbox_update": load_json(APPROVED_SANDBOX_UPDATE),
         "real_approval_workflow": load_json(REAL_APPROVAL_WORKFLOW),
+        "approval_record_sandbox": load_json(APPROVAL_RECORD_SANDBOX),
     }
 
 
@@ -1399,6 +1401,80 @@ def cmd_real_approval_workflow(data: dict[str, Any]) -> None:
     print(f"warning: {approval.get('warning')}")
 
 
+def cmd_approval_record_sandbox(data: dict[str, Any]) -> None:
+    record = data["approval_record_sandbox"]
+    print("# Controlled Approval Record Sandbox")
+    print()
+    print(
+        "L5.10 controlled approval record sandbox defined: "
+        f"{record.get('l5_10_controlled_approval_record_sandbox_defined')}"
+    )
+    print(
+        "sandbox approval record instance generated: "
+        f"{record.get('sandbox_approval_record_instance_generated')}"
+    )
+    print(f"integrity validation generated: {record.get('integrity_validation_generated')}")
+    print(
+        "validity state machine replay generated: "
+        f"{record.get('validity_state_machine_replay_generated')}"
+    )
+    print(
+        "expired/revoked/tampered/wrong-scope/missing-evidence variants generated and blocked: "
+        f"{record.get('expired_revoked_tampered_wrong_scope_missing_evidence_blocked')}"
+    )
+    print(
+        "valid sandbox record gate replay generated: "
+        f"{record.get('valid_sandbox_record_gate_replay_generated')}"
+    )
+    print(
+        "invalid record gate blocking generated: "
+        f"{record.get('invalid_record_gate_blocking_generated')}"
+    )
+    print(f"audit lineage generated: {record.get('audit_lineage_generated')}")
+    print(
+        "approval record CIEU-like fixture generated: "
+        f"{record.get('approval_record_cieu_like_fixture_generated')}"
+    )
+    print(f"no real approval granted: {not record.get('real_approval_granted')}")
+    print(
+        "no durable approval record written: "
+        f"{not record.get('durable_approval_record_written')}"
+    )
+    print(f"no real application authorized: {not record.get('real_application_authorized')}")
+    print(
+        "no canonical policy mutation: "
+        f"{not record.get('canonical_policy_mutation_performed')}"
+    )
+    print(f"no brain writeback: {not record.get('brain_writeback_performed')}")
+    print(f"no memory ingestion: {not record.get('memory_ingestion_performed')}")
+    print(f"no direct Y* mutation: {not record.get('direct_y_star_mutation_performed')}")
+    print(f"Y-star-gov unmodified: {record.get('y_star_gov_unmodified')}")
+    print(f"gov-mcp unmodified: {record.get('gov_mcp_unmodified')}")
+    print(f"live execution enabled: {record.get('live_execution_enabled')}")
+    print(f"external action enabled: {record.get('external_action_enabled')}")
+    print(f"network enabled: {record.get('network_enabled')}")
+    print(f"scheduler enabled: {record.get('scheduler_enabled')}")
+    print(f"daemon enabled: {record.get('daemon_enabled')}")
+    print(f"MCP server execution enabled: {record.get('mcp_server_execution_enabled')}")
+    print(f"MCP tool execution enabled: {record.get('mcp_tool_execution_enabled')}")
+    print(f"CIEU persistence enabled: {record.get('cieu_persistence_enabled')}")
+    print(
+        "durable approval persistence enabled: "
+        f"{record.get('durable_approval_persistence_enabled')}"
+    )
+    print(
+        "ready for L5.11 controlled real release preflight: "
+        f"{record.get('ready_for_l5_11_controlled_real_release_preflight')}"
+    )
+    print(
+        "ready for L6 revenue opportunity discovery: "
+        f"{record.get('ready_for_l6_revenue_opportunity_discovery')}"
+    )
+    print(f"next required milestone: {record.get('next_required_milestone')}")
+    print(f"generated_readiness: {record.get('generated_readiness')}")
+    print(f"warning: {record.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -1667,6 +1743,19 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print(f"- {real_approval_workflow.get('generated_runbook_summary')}")
         print(f"- {real_approval_workflow.get('generated_audit_summary')}")
         print(f"- {real_approval_workflow.get('generated_readiness')}")
+    approval_record_sandbox = data.get("approval_record_sandbox", {})
+    if approval_record_sandbox:
+        print()
+        print("Controlled approval record sandbox:")
+        print(f"- {approval_record_sandbox.get('generated_sandbox_summary')}")
+        print(f"- {approval_record_sandbox.get('generated_record_summary')}")
+        print(f"- {approval_record_sandbox.get('generated_integrity_summary')}")
+        print(f"- {approval_record_sandbox.get('generated_state_machine_summary')}")
+        print(f"- {approval_record_sandbox.get('generated_revocation_summary')}")
+        print(f"- {approval_record_sandbox.get('generated_gate_summary')}")
+        print(f"- {approval_record_sandbox.get('generated_audit_summary')}")
+        print(f"- {approval_record_sandbox.get('generated_cieu_summary')}")
+        print(f"- {approval_record_sandbox.get('generated_readiness')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -1727,6 +1816,7 @@ def cmd_validate_local() -> int:
         CONTROLLED_CANONICAL_LEARNING,
         APPROVED_SANDBOX_UPDATE,
         REAL_APPROVAL_WORKFLOW,
+        APPROVAL_RECORD_SANDBOX,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -1804,6 +1894,8 @@ def cmd_validate_local() -> int:
             failures.append("approved_sandbox_update_summary missing from team console snapshot")
         if "real_approval_workflow_summary" not in snapshot:
             failures.append("real_approval_workflow_summary missing from team console snapshot")
+        if "controlled_approval_record_summary" not in snapshot:
+            failures.append("controlled_approval_record_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -3265,6 +3357,8 @@ def main(argv: list[str]) -> int:
         cmd_approved_sandbox_update(data)
     elif command == "real-approval-boundary":
         cmd_real_approval_workflow(data)
+    elif command == "approval-record-sandbox":
+        cmd_approval_record_sandbox(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

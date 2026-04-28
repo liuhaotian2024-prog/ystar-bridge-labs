@@ -77,6 +77,7 @@ Ready now:
 - cross-repo governance contract proof summary
 - governed MCP dry-run adapter summary
 - controlled canonical learning design summary
+- controlled approval record sandbox summary
 
 Not ready:
 - runtime generator
@@ -112,8 +113,8 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 290
-- Unsafe artifacts count: 191
+- Artifacts classified: 289
+- Unsafe artifacts count: 201
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -122,13 +123,13 @@ Not ready:
   - DAILY_REPORT: 9
   - DB_CORE: 1
   - DB_SIDECARE: 6
-  - DREAM_REPORT: 47
+  - DREAM_REPORT: 49
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
   - FRAMEWORK_FILE: 16
   - LOG_RUNTIME: 31
-  - PYCACHE: 31
-  - UNKNOWN_OR_NON_RUNTIME: 83
+  - PYCACHE: 39
+  - UNKNOWN_OR_NON_RUNTIME: 72
   - UNKNOWN_RUNTIME_ARTIFACT: 10
   - WHITELIST_REPORT: 2
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
@@ -166,23 +167,23 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 290
-- Artifacts with disposition: 290
+- Total artifacts: 289
+- Artifacts with disposition: 289
 - Safe-mined to review queue: 21
-- Forbidden direct read count: 106
+- Forbidden direct read count: 114
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
-  - deferred_markdown_report_not_selected: 64
+  - deferred_markdown_report_not_selected: 66
   - deferred_requires_bounded_log_adapter: 31
   - deferred_requires_classification: 10
   - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
-  - ignored_generated_cache: 31
-  - ignored_or_non_runtime: 99
+  - ignored_generated_cache: 39
+  - ignored_or_non_runtime: 88
   - safe_mined_to_review_queue: 21
 - Evidence scoring status:
-  - not_started: 290
+  - not_started: 289
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -254,7 +255,7 @@ Not ready:
 ## Cross-Repo Governance Alignment
 
 - alignment_accepted: True
-- ystar-company HEAD: 3996a107 tools: add controlled canonical learning design
+- ystar-company HEAD: 743af561 tools: add approved canonical update sandbox
 - Y-star-gov HEAD: 9c4aee3 tools: add governance endpoint acceptance runner
 - Y-star-gov endpoint accepted: True
 - labs runtime accepted: True
@@ -563,7 +564,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 4394
+- assets_scanned: 4518
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -806,6 +807,30 @@ Not ready:
 - next_required_milestone: L5.10 Controlled Approval Record Sandbox v0
 - Warning: L5.9 defines the real approval workflow boundary only. No real approval is granted, no durable approval record is written, and no real canonical update application is authorized.
 
+## Controlled Approval Record Sandbox
+
+- l5_10_controlled_approval_record_sandbox_defined: True
+- sandbox_approval_record_instance_generated: True
+- integrity_validation_generated: True
+- validity_state_machine_replay_generated: True
+- invalid_record_variants_generated_and_blocked: True
+- valid_sandbox_record_gate_replay_generated: True
+- invalid_record_gate_blocking_generated: True
+- audit_lineage_generated: True
+- approval_record_cieu_like_fixture_generated: True
+- real_approval_granted: False
+- durable_approval_record_written: False
+- real_application_authorized: False
+- brain_writeback_performed: False
+- memory_ingestion_performed: False
+- direct_y_star_mutation_performed: False
+- y_star_gov_unmodified: True
+- gov_mcp_unmodified: True
+- ready_for_l5_11_controlled_real_release_preflight: True
+- ready_for_l6_revenue_opportunity_discovery: False
+- next_required_milestone: L5.11 Controlled Real Release Preflight v0
+- Warning: L5.10 creates a sandbox approval record lifecycle only. No real approval is granted, no durable approval record is written, and no real canonical update application is authorized.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -841,6 +866,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - build L5.0 review-gated learning candidate queue
 - build L5.1 mission field functional projection harness from archaeology merge plan
 - build L5.8 approved canonical update sandbox from L5.7 promotion design
+- build L5.11 controlled real release preflight from L5.10 approval record sandbox
 
 ## Warnings / Gaps
 
@@ -883,4 +909,5 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Integrated review-gated shadow learning cycle exists as shadow-only artifacts; controlled canonical learning is not implemented yet.
 - Cross-repo governance contract proof exists as read-only boundary alignment; governed MCP dry-run adapter is implemented as dry-run only.
 - Controlled canonical learning design exists as a promotion dry-run only; approved canonical update sandbox now remains sandbox-only.
-- Approved canonical update sandbox exists as generated sandbox-only artifacts; real approval workflow boundary is defined but no durable approval record sandbox exists yet.
+- Approved canonical update sandbox exists as generated sandbox-only artifacts; real approval workflow boundary is defined but real approval remains blocked.
+- Controlled approval record sandbox exists as generated lifecycle artifacts; real durable approval persistence and real application remain blocked.

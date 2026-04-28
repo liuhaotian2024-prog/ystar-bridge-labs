@@ -37,7 +37,11 @@
     "mission field functional projection harness summary",
     "field functional auto-projection core summary",
     "projection-checked autonomous work cycle summary",
-    "review-gated shadow learning cycle summary"
+    "review-gated shadow learning cycle summary",
+    "cross-repo governance contract proof summary",
+    "governed MCP dry-run adapter summary",
+    "controlled canonical learning design summary",
+    "controlled approval record sandbox summary"
   ],
   "not_ready": [
     "runtime generator",
@@ -66,7 +70,7 @@
     "enabled live-boundary harness",
     "enabled CIEU runtime event persistence",
     "approved governed action registry",
-    "controlled canonical learning architecture",
+    "approved canonical update sandbox",
     "L6 revenue opportunity discovery"
   ],
   "recommended_next_steps": [
@@ -94,7 +98,8 @@
     "define L4.8 governed recurring observation loop contract",
     "build L5.0 review-gated learning candidate queue",
     "build L5.1 mission field functional projection harness from archaeology merge plan",
-    "build controlled canonical learning architecture from L5.4 shadow learning proof"
+    "build L5.8 approved canonical update sandbox from L5.7 promotion design",
+    "build L5.11 controlled real release preflight from L5.10 approval record sandbox"
   ],
   "blockers": [
     "no DB-safe adapter",
@@ -113,7 +118,9 @@
     "legacy assets are triaged but not absorbed",
     "observation loop is read-only and not recurring",
     "recurring observation loop contract is defined but not enabled",
-    "controlled canonical learning architecture is not implemented yet",
+    "approved canonical update sandbox is not implemented yet",
+    "real durable approval persistence remains blocked",
+    "real canonical update application remains blocked",
     "L6 revenue opportunity discovery remains blocked until canonical learning controls exist"
   ],
   "safety_boundaries": [
@@ -147,6 +154,10 @@
     "field functional archaeology is merge-plan-only and does not execute old code or absorb runtime assets",
     "field functional auto-projection core is dry-run only and does not execute behavior",
     "projection-checked autonomous work cycle is dry-run only and does not execute behavior",
-    "review-gated shadow learning cycle previews policy changes only and does not mutate canonical policy"
+    "review-gated shadow learning cycle previews policy changes only and does not mutate canonical policy",
+    "cross-repo governance proof keeps ystar-company as labs/runtime and not a governance kernel",
+    "governed MCP dry-run adapter blocks real MCP server/tool/resource execution and mutation",
+    "controlled canonical learning design creates promotion packages only and blocks approval, application, writeback, and direct Y* mutation",
+    "controlled approval record sandbox creates generated record lifecycle fixtures only and blocks real approval, durable persistence, real application, writeback, direct Y* mutation, and MCP execution"
   ]
 }

@@ -1,0 +1,62 @@
+{
+  "schema_name": "ystar.sandbox_approval_record.state_replay",
+  "schema_version": "v0",
+  "state_replay_id": "sandbox-approval-record-state-replay-v0",
+  "source_record_id": "sandbox-approval-record-instance-v0",
+  "replayed_transitions": [
+    {
+      "from": "draft",
+      "to": "pending_review",
+      "result": "allowed_in_sandbox"
+    },
+    {
+      "from": "pending_review",
+      "to": "sandbox_valid_for_gate_replay",
+      "result": "allowed_in_sandbox"
+    }
+  ],
+  "transitions_not_taken": [
+    "sandbox_valid_for_gate_replay -> real_approved",
+    "sandbox_valid_for_gate_replay -> consumed_by_application",
+    "real_approval_required -> consumed_by_application"
+  ],
+  "transitioned_to_real_approved": false,
+  "transitioned_to_real_consumed_by_application": false,
+  "current_sandbox_state": "sandbox_valid_for_gate_replay",
+  "evidence_refs": [
+    "approval_record_validity_state_machine/approval_record_state_machine.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  },
+  "sandbox_flags": {
+    "sandbox_approval_record_created": true,
+    "sandbox_integrity_validation_performed": true,
+    "sandbox_state_machine_replayed": true,
+    "sandbox_gate_replay_performed": true,
+    "sandbox_invalid_record_tests_generated": true
+  }
+}

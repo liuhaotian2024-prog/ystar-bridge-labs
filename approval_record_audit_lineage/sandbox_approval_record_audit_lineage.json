@@ -1,0 +1,82 @@
+{
+  "schema_name": "ystar.sandbox_approval_record.audit_lineage",
+  "schema_version": "v0",
+  "audit_lineage_id": "sandbox-approval-record-audit-lineage-v0",
+  "source_approval_record_id": "sandbox-approval-record-instance-v0",
+  "source_package_id": "canonical-update-package-candidate-v0",
+  "source_evidence_dossier_id": "approval-evidence-dossier-v0",
+  "source_invariant_check_ids": [
+    "y-star-non-mutation-invariant-v0",
+    "sandbox-mcp-non-bypass-check-v0"
+  ],
+  "source_preflight_plan_id": "post-approval-preflight-validation-plan-v0",
+  "source_rollback_plan_id": "canonical-learning-rollback-plan-v0",
+  "generated_record_variants": [
+    "sandbox-expired_record-variant-v0",
+    "sandbox-revoked_record-variant-v0",
+    "sandbox-tampered_record-variant-v0",
+    "sandbox-wrong_scope_record-variant-v0",
+    "sandbox-missing_evidence_record-variant-v0"
+  ],
+  "gate_replay_results": [
+    "valid-record-gate-replay-result-v0",
+    "invalid-record-gate-replay-matrix-v0"
+  ],
+  "integrity_validation_result_id": "approval-record-integrity-validation-result-v0",
+  "state_replay_result_id": "sandbox-approval-record-state-replay-v0",
+  "cieu_event_refs": [
+    "approval_record_cieu_residual/approval_record_cieu_event_fixture.json"
+  ],
+  "durable_persistence_performed": false,
+  "real_approval_granted": false,
+  "real_application_performed": false,
+  "evidence_refs": [
+    "durable_approval_record_contract/durable_approval_record_contract.json",
+    "durable_approval_record_contract/approval_record_schema_v0.json",
+    "durable_approval_record_contract/approval_record_integrity_requirements.json",
+    "durable_approval_record_contract/approval_record_storage_policy.json",
+    "real_approval_decision_packet_fixture/real_approval_decision_packet_fixture.json",
+    "approval_validity_revocation_policy/approval_validity_policy.json",
+    "approval_validity_revocation_policy/approval_expiration_policy.json",
+    "approval_validity_revocation_policy/approval_revocation_policy.json",
+    "approval_validity_revocation_policy/approval_invalidation_triggers.json",
+    "approval_evidence_dossier/approval_evidence_dossier.json",
+    "approval_evidence_dossier/approval_invariant_check_index.json",
+    "real_application_boundary_gate/real_application_boundary_gate_contract.json",
+    "real_application_boundary_gate/real_application_blocker.json",
+    "post_approval_preflight_validation/post_approval_preflight_validation_plan.json",
+    "manual_approval_runbook/approval_operator_checklist.json",
+    "real_approval_workflow_readiness/real_approval_workflow_readiness.json",
+    "approved_sandbox_update_readiness/approved_sandbox_update_readiness.json",
+    "canonical_update_package_candidate/canonical_update_package_candidate.json",
+    "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+    "versioned_canonical_patch_plan/versioned_canonical_patch_plan.json",
+    "rollback_and_audit_lineage/rollback_plan.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "schema_name": "ystar.sandbox_approval_record.invalid_variant",
+  "schema_version": "v0",
+  "variant_id": "sandbox-missing_evidence_record-variant-v0",
+  "variant_type": "missing_evidence_record",
+  "source_valid_record_id": "sandbox-approval-record-instance-v0",
+  "changed_or_missing_fields": [
+    "evidence_dossier_id",
+    "audit_lineage_refs"
+  ],
+  "expected_gate_result": "blocked",
+  "valid_for_sandbox_gate_replay": false,
+  "valid_for_real_application": false,
+  "deterministic_reason_codes": [
+    "evidence_missing"
+  ],
+  "evidence_refs": [
+    "approval_validity_revocation_policy/approval_invalidation_triggers.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

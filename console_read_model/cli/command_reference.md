@@ -136,6 +136,11 @@ python3 console_read_model/cli/team_console.py <command>
   application gate, preflight plan, manual runbook, approval audit fixture, and
   blocked real approval/application/durable-persistence/writeback/direct-Y*
   state.
+- `approval-record-sandbox`: Prints the generated L5.10 controlled approval
+  record sandbox summary: sandbox record instance, integrity validation,
+  validity state replay, invalid-record blocking, valid gate replay, audit
+  lineage, CIEU-like residual, and blocked real approval/application/durable
+  persistence/writeback/direct-Y*/MCP state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

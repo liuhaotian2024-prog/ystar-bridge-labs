@@ -1,0 +1,183 @@
+{
+  "schema_name": "ystar.sandbox_approval_record.field_map",
+  "schema_version": "v0",
+  "source_schema_ref": "durable_approval_record_contract/approval_record_schema_v0.json",
+  "source_schema_required_fields": [
+    "approval_record_id",
+    "approval_subject_package_id",
+    "approval_scope",
+    "denied_scope",
+    "approval_decision",
+    "approval_mode",
+    "approver_role_refs",
+    "proposer_ref",
+    "reviewer_ref",
+    "release_operator_ref",
+    "rollback_operator_ref",
+    "evidence_dossier_id",
+    "y_star_invariant_check_id",
+    "mcp_non_bypass_check_id",
+    "post_validation_plan_id",
+    "rollback_plan_id",
+    "approval_timestamp_placeholder",
+    "expiration_policy_ref",
+    "revocation_policy_ref",
+    "integrity_hash_placeholder",
+    "parent_record_ref",
+    "audit_lineage_refs",
+    "application_status",
+    "safety_flags"
+  ],
+  "sandbox_record_ref": "sandbox_approval_record_instance/sandbox_approval_record_instance.json",
+  "field_map": {
+    "approval_record_id": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "str"
+    },
+    "approval_subject_package_id": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "str"
+    },
+    "approval_scope": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "dict"
+    },
+    "denied_scope": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "list"
+    },
+    "approval_decision": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "str"
+    },
+    "approval_mode": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "str"
+    },
+    "approver_role_refs": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "list"
+    },
+    "proposer_ref": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "str"
+    },
+    "reviewer_ref": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "str"
+    },
+    "release_operator_ref": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "str"
+    },
+    "rollback_operator_ref": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "str"
+    },
+    "evidence_dossier_id": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "str"
+    },
+    "y_star_invariant_check_id": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "str"
+    },
+    "mcp_non_bypass_check_id": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "str"
+    },
+    "post_validation_plan_id": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "str"
+    },
+    "rollback_plan_id": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "str"
+    },
+    "approval_timestamp_placeholder": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "str"
+    },
+    "expiration_policy_ref": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "str"
+    },
+    "revocation_policy_ref": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "str"
+    },
+    "integrity_hash_placeholder": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "str"
+    },
+    "parent_record_ref": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "str"
+    },
+    "audit_lineage_refs": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "list"
+    },
+    "application_status": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "str"
+    },
+    "safety_flags": {
+      "present": true,
+      "source": "L5.9 schema field",
+      "sandbox_value_class": "dict"
+    }
+  },
+  "all_required_schema_fields_mapped": true,
+  "durable_persistence_performed": false,
+  "real_approval_granted": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

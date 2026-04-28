@@ -193,7 +193,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after real approval workflow boundary",
+        "Build controlled approval record sandbox",
+        ["python3", "controlled_approval_record_sandbox/tools/build_controlled_approval_record_sandbox.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after controlled approval record sandbox",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -1625,6 +1630,55 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "real_approval_workflow_readiness/real_approval_workflow_readiness.json"],
     ),
     Check(
+        "Compile controlled approval record sandbox builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "controlled_approval_record_sandbox/tools/build_controlled_approval_record_sandbox.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: approval_record_sandbox_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/approval_record_sandbox_summary.json"],
+    ),
+    Check(
+        "Validate JSON: controlled_approval_record_sandbox_contract.json",
+        ["python3", "-m", "json.tool", "controlled_approval_record_sandbox/controlled_approval_record_sandbox_contract.json"],
+    ),
+    Check(
+        "Validate JSON: sandbox_approval_record_instance.json",
+        ["python3", "-m", "json.tool", "sandbox_approval_record_instance/sandbox_approval_record_instance.json"],
+    ),
+    Check(
+        "Validate JSON: approval_record_integrity_validation_result.json",
+        ["python3", "-m", "json.tool", "approval_record_integrity_validation/approval_record_integrity_validation_result.json"],
+    ),
+    Check(
+        "Validate JSON: approval_record_validity_result.json",
+        ["python3", "-m", "json.tool", "approval_record_validity_state_machine/approval_record_validity_result.json"],
+    ),
+    Check(
+        "Validate JSON: invalid_record_gate_results.json",
+        ["python3", "-m", "json.tool", "expiration_revocation_replay/invalid_record_gate_results.json"],
+    ),
+    Check(
+        "Validate JSON: valid_record_gate_replay_result.json",
+        ["python3", "-m", "json.tool", "approval_record_pre_application_gate_replay/valid_record_gate_replay_result.json"],
+    ),
+    Check(
+        "Validate JSON: sandbox_approval_record_audit_lineage.json",
+        ["python3", "-m", "json.tool", "approval_record_audit_lineage/sandbox_approval_record_audit_lineage.json"],
+    ),
+    Check(
+        "Validate JSON: approval_record_cieu_event_fixture.json",
+        ["python3", "-m", "json.tool", "approval_record_cieu_residual/approval_record_cieu_event_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: controlled_approval_record_readiness.json",
+        ["python3", "-m", "json.tool", "controlled_approval_record_readiness/controlled_approval_record_readiness.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -1839,6 +1893,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: real-approval-boundary",
         ["python3", "console_read_model/cli/team_console.py", "real-approval-boundary"],
+    ),
+    Check(
+        "CLI smoke: approval-record-sandbox",
+        ["python3", "console_read_model/cli/team_console.py", "approval-record-sandbox"],
     ),
     Check(
         "CLI smoke: sources",

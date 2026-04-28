@@ -1,0 +1,158 @@
+{
+  "schema_name": "ystar.controlled_approval_record_sandbox.contract",
+  "schema_version": "v0",
+  "sandbox_name": "L5.10 Controlled Approval Record Sandbox + Validity / Revocation Replay v0",
+  "purpose": "Generate a sandbox-only approval record lifecycle from the L5.9 durable approval record contract, then validate integrity, scope, evidence binding, expiration/revocation, state replay, valid gate replay, and invalid record blocking.",
+  "required_inputs": [
+    "durable_approval_record_contract/durable_approval_record_contract.json",
+    "durable_approval_record_contract/approval_record_schema_v0.json",
+    "durable_approval_record_contract/approval_record_integrity_requirements.json",
+    "durable_approval_record_contract/approval_record_storage_policy.json",
+    "real_approval_decision_packet_fixture/real_approval_decision_packet_fixture.json",
+    "approval_validity_revocation_policy/approval_validity_policy.json",
+    "approval_validity_revocation_policy/approval_expiration_policy.json",
+    "approval_validity_revocation_policy/approval_revocation_policy.json",
+    "approval_validity_revocation_policy/approval_invalidation_triggers.json",
+    "approval_evidence_dossier/approval_evidence_dossier.json",
+    "approval_evidence_dossier/approval_invariant_check_index.json",
+    "real_application_boundary_gate/real_application_boundary_gate_contract.json",
+    "real_application_boundary_gate/real_application_blocker.json",
+    "post_approval_preflight_validation/post_approval_preflight_validation_plan.json",
+    "manual_approval_runbook/approval_operator_checklist.json",
+    "real_approval_workflow_readiness/real_approval_workflow_readiness.json",
+    "approved_sandbox_update_readiness/approved_sandbox_update_readiness.json",
+    "canonical_update_package_candidate/canonical_update_package_candidate.json",
+    "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json"
+  ],
+  "optional_inputs": [
+    "versioned_canonical_patch_plan/versioned_canonical_patch_plan.json",
+    "rollback_and_audit_lineage/rollback_plan.json"
+  ],
+  "sandbox_stages": [
+    "load_l5_9_approval_record_contract",
+    "load_l5_9_approval_workflow_boundary",
+    "load_l5_9_evidence_dossier",
+    "create_sandbox_approval_record_instance",
+    "generate_sandbox_integrity_hash_placeholder",
+    "validate_approval_record_integrity",
+    "validate_approval_record_scope",
+    "validate_evidence_bindings",
+    "validate_y_star_non_mutation_binding",
+    "validate_mcp_non_bypass_binding",
+    "validate_expiration_policy",
+    "validate_revocation_policy",
+    "replay_approval_record_state_machine",
+    "generate_invalid_record_variants",
+    "replay_pre_application_gate_for_valid_record",
+    "replay_pre_application_gate_for_invalid_records",
+    "emit_approval_record_cieu_like_fixture",
+    "compute_approval_record_residual_delta",
+    "produce_l5_11_recommendation"
+  ],
+  "required_outputs": [
+    "sandbox approval record instance",
+    "integrity validation",
+    "validity state machine replay",
+    "invalid record variants",
+    "valid and invalid pre-application gate replay",
+    "audit lineage",
+    "approval record CIEU-like fixture",
+    "readiness"
+  ],
+  "approval_record_lifecycle_requirements": [
+    "record is sandbox_only",
+    "state replay cannot transition to real approved",
+    "state replay cannot transition to consumed by real application"
+  ],
+  "integrity_validation_requirements": [
+    "required fields present",
+    "scope and denied scope present",
+    "evidence, rollback, post-validation, expiration, revocation, and integrity bindings present"
+  ],
+  "validity_validation_requirements": [
+    "valid for sandbox gate replay only",
+    "invalid for real application",
+    "real approval and durable record required before real application"
+  ],
+  "revocation_validation_requirements": [
+    "expired, revoked, tampered, wrong-scope, and missing-evidence records are blocked",
+    "approval cannot override Y* non-mutation or MCP non-bypass invariants"
+  ],
+  "pre_application_gate_replay_requirements": [
+    "valid sandbox record may pass sandbox replay only",
+    "real application remains blocked",
+    "invalid variants are deterministically blocked"
+  ],
+  "audit_lineage_requirements": [
+    "record creation, integrity validation, state replay, invalid variants, gate replay, and CIEU fixture are indexed",
+    "durable persistence remains false"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  },
+  "sandbox_flags": {
+    "sandbox_approval_record_created": true,
+    "sandbox_integrity_validation_performed": true,
+    "sandbox_state_machine_replayed": true,
+    "sandbox_gate_replay_performed": true,
+    "sandbox_invalid_record_tests_generated": true
+  },
+  "forbidden_operations": [
+    "writing durable approval DB records",
+    "granting real approval",
+    "applying real canonical update",
+    "modifying real canonical projection policy",
+    "modifying real brain",
+    "modifying real memory",
+    "mutating real strategy",
+    "direct Y* mutation",
+    "modifying Y-star-gov",
+    "modifying gov-mcp",
+    "running Y-star-gov live hooks",
+    "running gov-mcp server",
+    "executing MCP tools",
+    "mutating MCP resources",
+    "reading raw DB/WAL/SHM/log contents",
+    "reading active-agent marker contents",
+    "running daemon/scheduler/runtime scripts",
+    "external network/API calls",
+    "GitHub issue/PR creation",
+    "git push",
+    "CIEU DB writes",
+    "candidate auto-approval",
+    "L6 revenue opportunity discovery",
+    "semantic truth scoring",
+    "direct behavior execution"
+  ],
+  "non_goals": [
+    "real approval",
+    "durable approval persistence",
+    "real canonical update application",
+    "brain or memory writeback",
+    "MCP execution",
+    "L6 revenue opportunity discovery"
+  ]
+}

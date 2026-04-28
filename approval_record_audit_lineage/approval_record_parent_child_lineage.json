@@ -1,0 +1,39 @@
+{
+  "schema_name": "ystar.approval_record.parent_child_lineage",
+  "schema_version": "v0",
+  "lineage_id": "approval-record-parent-child-lineage-v0",
+  "parent_record_ref": "real_approval_decision_packet_fixture/real_approval_decision_packet_fixture.json",
+  "child_record_id": "sandbox-approval-record-instance-v0",
+  "child_record_mode": "sandbox_only",
+  "real_durable_child_record_created": false,
+  "lineage_notes": [
+    "L5.9 decision packet fixture remains not_granted.",
+    "L5.10 sandbox record is generated from contract shape only."
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

@@ -102,5 +102,8 @@ canonical update sandbox. It confirms sandbox approval/application, sandbox repr
 `real_approval_workflow_summary.json` is derived from the L5.9 real approval
 workflow boundary. It confirms authority, evidence, durable approval record contract, validity/revocation, snapshot, real application gate, preflight, runbook, and audit fixture exist while real approval, durable approval persistence, and real application remain blocked.
 
+`approval_record_sandbox_summary.json` is derived from the L5.10 controlled
+approval record sandbox. It confirms sandbox approval record creation, integrity validation, validity/state replay, invalid-record blocking, gate replay, audit lineage, and CIEU-like residuals while real approval, durable persistence, and real application remain blocked.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

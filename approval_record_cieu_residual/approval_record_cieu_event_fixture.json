@@ -1,0 +1,124 @@
+{
+  "schema_name": "ystar.approval_record.cieu_event_fixture",
+  "schema_version": "v0",
+  "event_id": "approval-record-cieu-event-fixture-v0",
+  "event_mode": "approval_record_sandbox_fixture",
+  "X_t": {
+    "source_contract": "durable_approval_record_contract/durable_approval_record_contract.json",
+    "source_schema": "durable_approval_record_contract/approval_record_schema_v0.json",
+    "source_evidence_dossier": "approval_evidence_dossier/approval_evidence_dossier.json"
+  },
+  "U_t": {
+    "operation": "controlled approval record sandbox lifecycle",
+    "record_id": "sandbox-approval-record-instance-v0",
+    "gate_replay_id": "valid-record-gate-replay-result-v0"
+  },
+  "Y_star_t": {
+    "declared_target": "Create and validate a sandbox approval record lifecycle without granting real approval or durable persistence.",
+    "y_star_non_mutation_required": true,
+    "mcp_non_bypass_required": true
+  },
+  "Y_t_plus_1": {
+    "schema_name": "ystar.approval_record.mock_actual_outcome",
+    "schema_version": "v0",
+    "mock_actual_outcome_id": "approval-record-mock-actual-outcome-v0",
+    "actual_results": [
+      "sandbox approval record created",
+      "integrity validated",
+      "state machine replayed",
+      "invalid variants generated and blocked",
+      "pre-application gate replayed",
+      "no real approval",
+      "no durable record write",
+      "no real application"
+    ],
+    "real_approval_granted": false,
+    "durable_approval_record_written": false,
+    "real_application_authorized": false,
+    "real_application_performed": false,
+    "safety_flags": {
+      "live_execution_enabled": false,
+      "behavior_execution_enabled": false,
+      "external_action_enabled": false,
+      "network_enabled": false,
+      "scheduler_enabled": false,
+      "daemon_enabled": false,
+      "mcp_server_execution_enabled": false,
+      "mcp_tool_execution_enabled": false,
+      "cieu_persistence_enabled": false,
+      "durable_approval_persistence_enabled": false,
+      "real_approval_record_write_enabled": false,
+      "brain_writeback_enabled": false,
+      "memory_ingestion_enabled": false,
+      "strategy_mutation_enabled": false,
+      "candidate_auto_approval_enabled": false,
+      "real_candidate_approval_enabled": false,
+      "real_canonical_policy_mutation_enabled": false,
+      "real_canonical_update_application_enabled": false,
+      "real_y_star_direct_mutation_enabled": false,
+      "y_star_gov_modification_enabled": false,
+      "gov_mcp_modification_enabled": false,
+      "semantic_truth_scoring_enabled": false,
+      "raw_runtime_artifact_reading_enabled": false,
+      "revenue_opportunity_discovery_enabled": false
+    },
+    "sandbox_flags": {
+      "sandbox_approval_record_created": true,
+      "sandbox_integrity_validation_performed": true,
+      "sandbox_state_machine_replayed": true,
+      "sandbox_gate_replay_performed": true,
+      "sandbox_invalid_record_tests_generated": true
+    }
+  },
+  "R_t_plus_1": {
+    "residual_delta_id": "approval-record-residual-delta-v0",
+    "residual_classes": [
+      "approval_record_integrity_residual",
+      "approval_record_scope_residual",
+      "evidence_binding_residual",
+      "expiration_revocation_residual",
+      "state_machine_residual",
+      "pre_application_gate_residual",
+      "audit_lineage_residual",
+      "durable_persistence_blocker_residual",
+      "real_approval_blocker_residual",
+      "real_application_blocker_residual"
+    ]
+  },
+  "persistence_enabled": false,
+  "db_write_performed": false,
+  "durable_approval_record_written": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  },
+  "sandbox_flags": {
+    "sandbox_approval_record_created": true,
+    "sandbox_integrity_validation_performed": true,
+    "sandbox_state_machine_replayed": true,
+    "sandbox_gate_replay_performed": true,
+    "sandbox_invalid_record_tests_generated": true
+  }
+}

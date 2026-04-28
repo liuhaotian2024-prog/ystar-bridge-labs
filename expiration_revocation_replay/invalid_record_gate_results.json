@@ -1,0 +1,80 @@
+{
+  "schema_name": "ystar.approval_record.invalid_gate_results",
+  "schema_version": "v0",
+  "result_id": "invalid-record-gate-results-v0",
+  "source_valid_record_id": "sandbox-approval-record-instance-v0",
+  "gate_results": {
+    "expired_record": {
+      "variant_id": "sandbox-expired_record-variant-v0",
+      "gate_result": "blocked",
+      "valid_for_sandbox_gate_replay": false,
+      "valid_for_real_application": false,
+      "reason_codes": [
+        "expired"
+      ]
+    },
+    "revoked_record": {
+      "variant_id": "sandbox-revoked_record-variant-v0",
+      "gate_result": "blocked",
+      "valid_for_sandbox_gate_replay": false,
+      "valid_for_real_application": false,
+      "reason_codes": [
+        "revoked"
+      ]
+    },
+    "tampered_record": {
+      "variant_id": "sandbox-tampered_record-variant-v0",
+      "gate_result": "blocked",
+      "valid_for_sandbox_gate_replay": false,
+      "valid_for_real_application": false,
+      "reason_codes": [
+        "tampered_integrity"
+      ]
+    },
+    "wrong_scope_record": {
+      "variant_id": "sandbox-wrong_scope_record-variant-v0",
+      "gate_result": "blocked",
+      "valid_for_sandbox_gate_replay": false,
+      "valid_for_real_application": false,
+      "reason_codes": [
+        "scope_mismatch"
+      ]
+    },
+    "missing_evidence_record": {
+      "variant_id": "sandbox-missing_evidence_record-variant-v0",
+      "gate_result": "blocked",
+      "valid_for_sandbox_gate_replay": false,
+      "valid_for_real_application": false,
+      "reason_codes": [
+        "evidence_missing"
+      ]
+    }
+  },
+  "all_invalid_variants_blocked": true,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

@@ -385,6 +385,9 @@ def main() -> int:
     required_real_approval_workflow_boundary_files = expected.get(
         "required_real_approval_workflow_boundary_files", []
     )
+    required_controlled_approval_record_sandbox_files = expected.get(
+        "required_controlled_approval_record_sandbox_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -581,6 +584,12 @@ def main() -> int:
         check_exists(path, report, "real approval workflow boundary file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "real approval workflow boundary JSON")
+
+    for rel in required_controlled_approval_record_sandbox_files:
+        path = ROOT / rel
+        check_exists(path, report, "controlled approval record sandbox file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "controlled approval record sandbox JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -3640,6 +3649,143 @@ def main() -> int:
             "L5.10 Controlled Approval Record Sandbox v0"
         ):
             report.fail("generated real approval workflow summary must point to L5.10")
+
+    controlled_approval_record = generated_json.get(
+        "console_read_model/generated/approval_record_sandbox_summary.json"
+    )
+    if controlled_approval_record:
+        for field in [
+            "l5_10_controlled_approval_record_sandbox_defined",
+            "sandbox_approval_record_instance_generated",
+            "integrity_validation_generated",
+            "integrity_validation_status",
+            "validity_state_machine_replay_generated",
+            "current_sandbox_state",
+            "expired_revoked_tampered_wrong_scope_missing_evidence_blocked",
+            "valid_sandbox_record_gate_replay_generated",
+            "valid_record_gate_result",
+            "invalid_record_gate_blocking_generated",
+            "audit_lineage_generated",
+            "approval_record_cieu_like_fixture_generated",
+            "approval_record_residual_delta_generated",
+            "real_approval_granted",
+            "durable_approval_record_written",
+            "real_application_authorized",
+            "canonical_policy_mutation_performed",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "direct_y_star_mutation_performed",
+            "durable_persistence_still_blocked",
+            "real_approval_still_blocked",
+            "real_application_still_blocked",
+            "brain_writeback_still_blocked",
+            "memory_ingestion_still_blocked",
+            "y_star_direct_mutation_still_blocked",
+            "mcp_execution_still_blocked",
+            "y_star_gov_unmodified",
+            "gov_mcp_unmodified",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "mcp_server_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "cieu_persistence_enabled",
+            "durable_approval_persistence_enabled",
+            "real_approval_record_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "strategy_mutation_enabled",
+            "candidate_auto_approval_enabled",
+            "real_candidate_approval_enabled",
+            "real_canonical_policy_mutation_enabled",
+            "real_canonical_update_application_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "ready_for_l5_11_controlled_real_release_preflight",
+            "ready_for_l6_revenue_opportunity_discovery",
+            "next_required_milestone",
+            "generated_sandbox_summary",
+            "generated_record_summary",
+            "generated_integrity_summary",
+            "generated_state_machine_summary",
+            "generated_revocation_summary",
+            "generated_gate_summary",
+            "generated_audit_summary",
+            "generated_cieu_summary",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in controlled_approval_record:
+                report.pass_(f"generated controlled approval record summary field present: {field}")
+            else:
+                report.fail(f"generated controlled approval record summary missing field: {field}")
+        for field in [
+            "l5_10_controlled_approval_record_sandbox_defined",
+            "sandbox_approval_record_instance_generated",
+            "integrity_validation_generated",
+            "validity_state_machine_replay_generated",
+            "expired_revoked_tampered_wrong_scope_missing_evidence_blocked",
+            "valid_sandbox_record_gate_replay_generated",
+            "invalid_record_gate_blocking_generated",
+            "audit_lineage_generated",
+            "approval_record_cieu_like_fixture_generated",
+            "approval_record_residual_delta_generated",
+            "durable_persistence_still_blocked",
+            "real_approval_still_blocked",
+            "real_application_still_blocked",
+            "brain_writeback_still_blocked",
+            "memory_ingestion_still_blocked",
+            "y_star_direct_mutation_still_blocked",
+            "mcp_execution_still_blocked",
+            "y_star_gov_unmodified",
+            "gov_mcp_unmodified",
+            "ready_for_l5_11_controlled_real_release_preflight",
+        ]:
+            if controlled_approval_record.get(field) is not True:
+                report.fail(f"generated controlled approval record summary must keep {field}=true")
+        for field in [
+            "real_approval_granted",
+            "durable_approval_record_written",
+            "real_application_authorized",
+            "canonical_policy_mutation_performed",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "direct_y_star_mutation_performed",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "mcp_server_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "cieu_persistence_enabled",
+            "durable_approval_persistence_enabled",
+            "real_approval_record_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "strategy_mutation_enabled",
+            "candidate_auto_approval_enabled",
+            "real_candidate_approval_enabled",
+            "real_canonical_policy_mutation_enabled",
+            "real_canonical_update_application_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "ready_for_l6_revenue_opportunity_discovery",
+        ]:
+            if controlled_approval_record.get(field) is not False:
+                report.fail(f"generated controlled approval record summary must keep {field}=false")
+        if controlled_approval_record.get("next_required_milestone") != (
+            "L5.11 Controlled Real Release Preflight v0"
+        ):
+            report.fail("generated controlled approval record summary must point to L5.11")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

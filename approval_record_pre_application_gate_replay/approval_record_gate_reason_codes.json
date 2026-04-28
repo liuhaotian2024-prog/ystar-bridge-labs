@@ -1,0 +1,85 @@
+{
+  "schema_name": "ystar.approval_record.gate_reason_codes",
+  "schema_version": "v0",
+  "reason_code_set_id": "approval-record-gate-reason-codes-v0",
+  "reason_codes": {
+    "missing_required_field": {
+      "code": "missing_required_field",
+      "deterministic_meaning": "missing required field"
+    },
+    "scope_mismatch": {
+      "code": "scope_mismatch",
+      "deterministic_meaning": "scope mismatch"
+    },
+    "denied_scope_missing": {
+      "code": "denied_scope_missing",
+      "deterministic_meaning": "denied scope missing"
+    },
+    "evidence_missing": {
+      "code": "evidence_missing",
+      "deterministic_meaning": "evidence missing"
+    },
+    "expired": {
+      "code": "expired",
+      "deterministic_meaning": "expired"
+    },
+    "revoked": {
+      "code": "revoked",
+      "deterministic_meaning": "revoked"
+    },
+    "tampered_integrity": {
+      "code": "tampered_integrity",
+      "deterministic_meaning": "tampered integrity"
+    },
+    "invariant_missing": {
+      "code": "invariant_missing",
+      "deterministic_meaning": "invariant missing"
+    },
+    "rollback_missing": {
+      "code": "rollback_missing",
+      "deterministic_meaning": "rollback missing"
+    },
+    "post_validation_missing": {
+      "code": "post_validation_missing",
+      "deterministic_meaning": "post validation missing"
+    },
+    "durable_record_missing_for_real_application": {
+      "code": "durable_record_missing_for_real_application",
+      "deterministic_meaning": "durable record missing for real application"
+    },
+    "real_approval_not_granted": {
+      "code": "real_approval_not_granted",
+      "deterministic_meaning": "real approval not granted"
+    },
+    "real_application_blocked_by_milestone_boundary": {
+      "code": "real_application_blocked_by_milestone_boundary",
+      "deterministic_meaning": "real application blocked by milestone boundary"
+    }
+  },
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

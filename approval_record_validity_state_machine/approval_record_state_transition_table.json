@@ -1,0 +1,110 @@
+{
+  "schema_name": "ystar.approval_record.state_transition_table",
+  "schema_version": "v0",
+  "state_machine_id": "approval-record-state-machine-v0",
+  "states": [
+    "draft",
+    "pending_review",
+    "sandbox_valid_for_gate_replay",
+    "real_approval_required",
+    "expired",
+    "revoked",
+    "invalidated",
+    "consumed_by_application",
+    "superseded"
+  ],
+  "transition_rows": [
+    {
+      "from": "draft",
+      "to": "pending_review",
+      "requires": "complete record fields"
+    },
+    {
+      "from": "pending_review",
+      "to": "sandbox_valid_for_gate_replay",
+      "requires": "sandbox fixture validation only"
+    },
+    {
+      "from": "sandbox_valid_for_gate_replay",
+      "to": "real_approval_required",
+      "requires": "future durable record and explicit approval workflow"
+    },
+    {
+      "from": "pending_review",
+      "to": "expired",
+      "requires": "expiration policy"
+    },
+    {
+      "from": "pending_review",
+      "to": "revoked",
+      "requires": "revocation policy"
+    },
+    {
+      "from": "pending_review",
+      "to": "invalidated",
+      "requires": "invalidation trigger"
+    },
+    {
+      "from": "real_approval_required",
+      "to": "consumed_by_application",
+      "requires": "future real approval and application; forbidden in L5.10"
+    },
+    {
+      "from": "sandbox_valid_for_gate_replay",
+      "to": "superseded",
+      "requires": "newer package"
+    },
+    {
+      "from": "sandbox_valid_for_gate_replay",
+      "to": "consumed_by_application"
+    },
+    {
+      "from": "sandbox_valid_for_gate_replay",
+      "to": "real_approved"
+    },
+    {
+      "from": "draft",
+      "to": "consumed_by_application"
+    },
+    {
+      "from": "expired",
+      "to": "sandbox_valid_for_gate_replay"
+    },
+    {
+      "from": "revoked",
+      "to": "sandbox_valid_for_gate_replay"
+    },
+    {
+      "from": "invalidated",
+      "to": "sandbox_valid_for_gate_replay"
+    }
+  ],
+  "real_approved_state_defined_for_l5_10": false,
+  "real_consumed_transition_allowed_for_l5_10": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

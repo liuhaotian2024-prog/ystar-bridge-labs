@@ -1,0 +1,164 @@
+{
+  "schema_name": "ystar.controlled_approval_record_sandbox.input_fixture",
+  "schema_version": "v0",
+  "input_refs": {
+    "durable_approval_record_contract": "durable_approval_record_contract/durable_approval_record_contract.json",
+    "approval_record_schema": "durable_approval_record_contract/approval_record_schema_v0.json",
+    "approval_record_integrity_requirements": "durable_approval_record_contract/approval_record_integrity_requirements.json",
+    "approval_record_storage_policy": "durable_approval_record_contract/approval_record_storage_policy.json",
+    "real_approval_decision_packet_fixture": "real_approval_decision_packet_fixture/real_approval_decision_packet_fixture.json",
+    "approval_validity_policy": "approval_validity_revocation_policy/approval_validity_policy.json",
+    "approval_expiration_policy": "approval_validity_revocation_policy/approval_expiration_policy.json",
+    "approval_revocation_policy": "approval_validity_revocation_policy/approval_revocation_policy.json",
+    "approval_invalidation_triggers": "approval_validity_revocation_policy/approval_invalidation_triggers.json",
+    "approval_evidence_dossier": "approval_evidence_dossier/approval_evidence_dossier.json",
+    "approval_invariant_check_index": "approval_evidence_dossier/approval_invariant_check_index.json",
+    "real_application_boundary_gate_contract": "real_application_boundary_gate/real_application_boundary_gate_contract.json",
+    "real_application_blocker": "real_application_boundary_gate/real_application_blocker.json",
+    "post_approval_preflight_validation_plan": "post_approval_preflight_validation/post_approval_preflight_validation_plan.json",
+    "approval_operator_checklist": "manual_approval_runbook/approval_operator_checklist.json",
+    "real_approval_workflow_readiness": "real_approval_workflow_readiness/real_approval_workflow_readiness.json",
+    "approved_sandbox_update_readiness": "approved_sandbox_update_readiness/approved_sandbox_update_readiness.json",
+    "canonical_update_package_candidate": "canonical_update_package_candidate/canonical_update_package_candidate.json",
+    "y_star_non_mutation_invariant": "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json"
+  },
+  "optional_input_refs": {
+    "versioned_patch_plan": "versioned_canonical_patch_plan/versioned_canonical_patch_plan.json",
+    "rollback_plan": "rollback_and_audit_lineage/rollback_plan.json"
+  },
+  "input_statuses": [
+    {
+      "source_key": "durable_approval_record_contract",
+      "path": "durable_approval_record_contract/durable_approval_record_contract.json",
+      "status": "present"
+    },
+    {
+      "source_key": "approval_record_schema",
+      "path": "durable_approval_record_contract/approval_record_schema_v0.json",
+      "status": "present"
+    },
+    {
+      "source_key": "approval_record_integrity_requirements",
+      "path": "durable_approval_record_contract/approval_record_integrity_requirements.json",
+      "status": "present"
+    },
+    {
+      "source_key": "approval_record_storage_policy",
+      "path": "durable_approval_record_contract/approval_record_storage_policy.json",
+      "status": "present"
+    },
+    {
+      "source_key": "real_approval_decision_packet_fixture",
+      "path": "real_approval_decision_packet_fixture/real_approval_decision_packet_fixture.json",
+      "status": "present"
+    },
+    {
+      "source_key": "approval_validity_policy",
+      "path": "approval_validity_revocation_policy/approval_validity_policy.json",
+      "status": "present"
+    },
+    {
+      "source_key": "approval_expiration_policy",
+      "path": "approval_validity_revocation_policy/approval_expiration_policy.json",
+      "status": "present"
+    },
+    {
+      "source_key": "approval_revocation_policy",
+      "path": "approval_validity_revocation_policy/approval_revocation_policy.json",
+      "status": "present"
+    },
+    {
+      "source_key": "approval_invalidation_triggers",
+      "path": "approval_validity_revocation_policy/approval_invalidation_triggers.json",
+      "status": "present"
+    },
+    {
+      "source_key": "approval_evidence_dossier",
+      "path": "approval_evidence_dossier/approval_evidence_dossier.json",
+      "status": "present"
+    },
+    {
+      "source_key": "approval_invariant_check_index",
+      "path": "approval_evidence_dossier/approval_invariant_check_index.json",
+      "status": "present"
+    },
+    {
+      "source_key": "real_application_boundary_gate_contract",
+      "path": "real_application_boundary_gate/real_application_boundary_gate_contract.json",
+      "status": "present"
+    },
+    {
+      "source_key": "real_application_blocker",
+      "path": "real_application_boundary_gate/real_application_blocker.json",
+      "status": "present"
+    },
+    {
+      "source_key": "post_approval_preflight_validation_plan",
+      "path": "post_approval_preflight_validation/post_approval_preflight_validation_plan.json",
+      "status": "present"
+    },
+    {
+      "source_key": "approval_operator_checklist",
+      "path": "manual_approval_runbook/approval_operator_checklist.json",
+      "status": "present"
+    },
+    {
+      "source_key": "real_approval_workflow_readiness",
+      "path": "real_approval_workflow_readiness/real_approval_workflow_readiness.json",
+      "status": "present"
+    },
+    {
+      "source_key": "approved_sandbox_update_readiness",
+      "path": "approved_sandbox_update_readiness/approved_sandbox_update_readiness.json",
+      "status": "present"
+    },
+    {
+      "source_key": "canonical_update_package_candidate",
+      "path": "canonical_update_package_candidate/canonical_update_package_candidate.json",
+      "status": "present"
+    },
+    {
+      "source_key": "y_star_non_mutation_invariant",
+      "path": "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+      "status": "present"
+    },
+    {
+      "source_key": "versioned_patch_plan",
+      "path": "versioned_canonical_patch_plan/versioned_canonical_patch_plan.json",
+      "status": "present"
+    },
+    {
+      "source_key": "rollback_plan",
+      "path": "rollback_and_audit_lineage/rollback_plan.json",
+      "status": "present"
+    }
+  ],
+  "missing_sources": [],
+  "gap_handling": "missing optional sources are recorded and do not trigger destructive failure",
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}
