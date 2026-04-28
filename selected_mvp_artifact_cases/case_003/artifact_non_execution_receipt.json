@@ -1,0 +1,18 @@
+{
+  "case_id": "case_003",
+  "artifact_generated": true,
+  "artifact_mode": "sandbox_internal_only",
+  "network_used": false,
+  "external_observation_executed": false,
+  "publication_performed": false,
+  "outreach_performed": false,
+  "payment_performed": false,
+  "revenue_execution_performed": false,
+  "mcp_execution_performed": false,
+  "live_behavior_executed": false,
+  "canonical_update_performed": false,
+  "brain_writeback_performed": false,
+  "memory_ingestion_performed": false,
+  "direct_y_star_mutation_performed": false,
+  "externalization_status": "blocked"
+}

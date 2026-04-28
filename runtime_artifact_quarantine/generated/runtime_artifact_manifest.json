@@ -4,25 +4,19 @@
   "inventory_level": 0,
   "content_opened": false,
   "source": "git status --short plus os.stat metadata",
-  "artifacts_classified": 301,
-  "unsafe_artifacts_count": 204,
+  "artifacts_classified": 143,
+  "unsafe_artifacts_count": 115,
   "classes_seen": {
     "ACTIVE_AGENT_MARKER": 17,
     "BACKUP_DB": 1,
     "CACHE_SENTINEL": 5,
     "DAEMON_STATE": 4,
-    "DAILY_REPORT": 9,
     "DB_CORE": 1,
     "DB_SIDECARE": 6,
-    "DREAM_REPORT": 51,
-    "DRIFT_REPORT": 4,
-    "ESCALATION_REPORT": 23,
-    "FRAMEWORK_FILE": 16,
-    "LOG_RUNTIME": 31,
-    "PYCACHE": 40,
-    "UNKNOWN_OR_NON_RUNTIME": 81,
-    "UNKNOWN_RUNTIME_ARTIFACT": 10,
-    "WHITELIST_REPORT": 2
+    "LOG_RUNTIME": 30,
+    "PYCACHE": 41,
+    "UNKNOWN_OR_NON_RUNTIME": 28,
+    "UNKNOWN_RUNTIME_ARTIFACT": 10
   },
   "artifacts": [
     {
@@ -96,31 +90,11 @@
       "notes": "Runtime-like path needs classification."
     },
     {
-      "path": "BOARD_PENDING.md",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".md",
-      "size_bytes": 14190,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "agent_team_work_proposal/generated/agent_team_observation_input.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 4461,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
       "path": "aiden_brain.db",
       "git_status_code": "M",
       "artifact_class": "DB_CORE",
       "extension": ".db",
-      "size_bytes": 547745792,
+      "size_bytes": 547770368,
       "direct_read_allowed": false,
       "future_adapter_candidate": "readonly_db_adapter_future",
       "notes": "DB content forbidden; metadata only."
@@ -146,81 +120,11 @@
       "notes": "DB sidecar; do not touch contents."
     },
     {
-      "path": "company_autonomy_inventory/generated/action_capability_map.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 16931,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "company_autonomy_inventory/generated/dormant_asset_report.md",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".md",
-      "size_bytes": 1095,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "company_autonomy_inventory/generated/existing_asset_inventory.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1433545,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "company_autonomy_inventory/generated/governed_tool_registry_candidates.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 11546,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "company_autonomy_inventory/generated/inventory_size_guard.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1060,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "company_autonomy_inventory/generated/observation_capability_map.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 10642,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "company_autonomy_inventory/generated/repo_discovery_manifest.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1722,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
       "path": "console_read_model/checks/run_local_safety_checks.py",
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".py",
-      "size_bytes": 94475,
+      "size_bytes": 97659,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -230,7 +134,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".md",
-      "size_bytes": 10702,
+      "size_bytes": 11133,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -240,7 +144,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".py",
-      "size_bytes": 178430,
+      "size_bytes": 181374,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -250,47 +154,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".md",
-      "size_bytes": 8204,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "console_read_model/generated/artifact_disposition_summary.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1732,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "console_read_model/generated/cross_repo_alignment_summary.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1069,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "console_read_model/generated/evidence_review_summary.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1124,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "console_read_model/generated/field_functional_summary.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1238,
+      "size_bytes": 8564,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -300,67 +164,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".json",
-      "size_bytes": 14539,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "console_read_model/generated/labs_acceptance_summary.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 712,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "console_read_model/generated/legacy_triage_summary.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1171,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "console_read_model/generated/live_readiness_summary.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1279,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "console_read_model/generated/quarantine_summary.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1632,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "console_read_model/generated/review_queue_summary.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1245,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "console_read_model/generated/safe_mining_summary.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1077,
+      "size_bytes": 15422,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -370,7 +174,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".json",
-      "size_bytes": 103041,
+      "size_bytes": 108164,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -380,7 +184,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".md",
-      "size_bytes": 41531,
+      "size_bytes": 42532,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -390,7 +194,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".py",
-      "size_bytes": 345984,
+      "size_bytes": 362780,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -400,7 +204,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".json",
-      "size_bytes": 87778,
+      "size_bytes": 93184,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -410,137 +214,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".py",
-      "size_bytes": 200884,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "cross_repo_alignment/generated/cross_repo_alignment_summary.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1050,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "cross_repo_alignment/generated/cross_repo_status_manifest.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1802,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "cross_repo_alignment/generated/cross_repo_status_report.md",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".md",
-      "size_bytes": 777,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "field_functional_archaeology/generated/field_functional_archaeology_report.md",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".md",
-      "size_bytes": 2691,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1114,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "field_functional_archaeology/generated/field_functional_asset_inventory.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 247766,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "field_functional_archaeology/generated/field_functional_concept_map.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 7168,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "field_functional_archaeology/generated/merge_decision_matrix.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 18266,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "field_functional_archaeology/generated/mission_projection_merge_plan.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 31817,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "field_functional_archaeology/generated/old_to_new_architecture_alignment.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 32243,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "field_functional_archaeology/generated/reuse_candidates.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 49042,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "field_functional_archaeology/generated/rewrite_candidates.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 26378,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "field_functional_archaeology/generated/search_manifest.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 2139,
+      "size_bytes": 208611,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -554,356 +228,6 @@
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "governed_observation_loop/generated/mission_dashboard_snapshot.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1960,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "labs_cieu_runtime_boundary/generated/cieu_runtime_boundary_manifest.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 2324,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "labs_live_boundary/generated/live_boundary_manifest.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 2211,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "labs_live_readiness/generated/live_readiness_manifest.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1476,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "labs_live_readiness/generated/live_readiness_report.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 3010,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "labs_live_readiness/generated/live_readiness_report.md",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".md",
-      "size_bytes": 1210,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "labs_runtime_acceptance/generated/labs_runtime_acceptance_manifest.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1236,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 4467,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "labs_runtime_acceptance/generated/labs_runtime_acceptance_report.md",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".md",
-      "size_bytes": 887,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "layered_y_star_projection_trace/field_source_map.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 5784,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "legacy_asset_triage/generated/asset_absorption_buckets.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 291157,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "legacy_asset_triage/generated/asset_value_risk_matrix.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1293703,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "legacy_asset_triage/generated/governed_absorption_backlog.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 3917,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "legacy_asset_triage/generated/legacy_asset_triage_report.md",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".md",
-      "size_bytes": 1045,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 1357,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "legacy_asset_triage/generated/retired_or_quarantined_assets.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 737,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "legacy_asset_triage/generated/top_absorption_candidates.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 4117,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "memory/WORLD_STATE.md",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".md",
-      "size_bytes": 6505,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "recurring_observation_loop_contract/generated/allowed_observation_sources.json",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".json",
-      "size_bytes": 4198,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
-      "git_status_code": "M",
-      "artifact_class": "FRAMEWORK_FILE",
-      "extension": ".json",
-      "size_bytes": 413666,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Exclude from mining; framework-owned file."
-    },
-    {
-      "path": "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_summary.md",
-      "git_status_code": "M",
-      "artifact_class": "FRAMEWORK_FILE",
-      "extension": ".md",
-      "size_bytes": 992,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Exclude from mining; framework-owned file."
-    },
-    {
-      "path": "runtime_artifact_quarantine/backlog_disposition/generated/disposition_manifest.json",
-      "git_status_code": "M",
-      "artifact_class": "FRAMEWORK_FILE",
-      "extension": ".json",
-      "size_bytes": 865,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Exclude from mining; framework-owned file."
-    },
-    {
-      "path": "runtime_artifact_quarantine/evidence_review/generated/evidence_review_manifest.json",
-      "git_status_code": "M",
-      "artifact_class": "FRAMEWORK_FILE",
-      "extension": ".json",
-      "size_bytes": 1626,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Exclude from mining; framework-owned file."
-    },
-    {
-      "path": "runtime_artifact_quarantine/evidence_review/generated/evidence_review_summary.md",
-      "git_status_code": "M",
-      "artifact_class": "FRAMEWORK_FILE",
-      "extension": ".md",
-      "size_bytes": 539,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Exclude from mining; framework-owned file."
-    },
-    {
-      "path": "runtime_artifact_quarantine/evidence_review/generated/evidence_scores.json",
-      "git_status_code": "M",
-      "artifact_class": "FRAMEWORK_FILE",
-      "extension": ".json",
-      "size_bytes": 30332,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Exclude from mining; framework-owned file."
-    },
-    {
-      "path": "runtime_artifact_quarantine/evidence_review/generated/hint_routing_index.json",
-      "git_status_code": "M",
-      "artifact_class": "FRAMEWORK_FILE",
-      "extension": ".json",
-      "size_bytes": 17078,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Exclude from mining; framework-owned file."
-    },
-    {
-      "path": "runtime_artifact_quarantine/evidence_review/generated/review_decision_stub.json",
-      "git_status_code": "M",
-      "artifact_class": "FRAMEWORK_FILE",
-      "extension": ".json",
-      "size_bytes": 10716,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Exclude from mining; framework-owned file."
-    },
-    {
-      "path": "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
-      "git_status_code": "M",
-      "artifact_class": "FRAMEWORK_FILE",
-      "extension": ".json",
-      "size_bytes": 110200,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Exclude from mining; framework-owned file."
-    },
-    {
-      "path": "runtime_artifact_quarantine/generated/runtime_artifact_summary.md",
-      "git_status_code": "M",
-      "artifact_class": "FRAMEWORK_FILE",
-      "extension": ".md",
-      "size_bytes": 477,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Exclude from mining; framework-owned file."
-    },
-    {
-      "path": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
-      "git_status_code": "M",
-      "artifact_class": "FRAMEWORK_FILE",
-      "extension": ".json",
-      "size_bytes": 46164,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Exclude from mining; framework-owned file."
-    },
-    {
-      "path": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.md",
-      "git_status_code": "M",
-      "artifact_class": "FRAMEWORK_FILE",
-      "extension": ".md",
-      "size_bytes": 35754,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Exclude from mining; framework-owned file."
-    },
-    {
-      "path": "runtime_artifact_quarantine/safe_mining/generated/mining_manifest.json",
-      "git_status_code": "M",
-      "artifact_class": "FRAMEWORK_FILE",
-      "extension": ".json",
-      "size_bytes": 1336,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Exclude from mining; framework-owned file."
-    },
-    {
-      "path": "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json",
-      "git_status_code": "M",
-      "artifact_class": "FRAMEWORK_FILE",
-      "extension": ".json",
-      "size_bytes": 35455,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Exclude from mining; framework-owned file."
-    },
-    {
-      "path": "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.md",
-      "git_status_code": "M",
-      "artifact_class": "FRAMEWORK_FILE",
-      "extension": ".md",
-      "size_bytes": 8052,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Exclude from mining; framework-owned file."
-    },
-    {
-      "path": "runtime_artifact_quarantine/safe_mining/review_queue/generated/review_queue_manifest.json",
-      "git_status_code": "M",
-      "artifact_class": "FRAMEWORK_FILE",
-      "extension": ".json",
-      "size_bytes": 823,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Exclude from mining; framework-owned file."
     },
     {
       "path": "scripts/.auto_commit_push_sentinel.json",
@@ -980,7 +304,7 @@
       "git_status_code": "M",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 18132,
+      "size_bytes": 18159,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -1174,16 +498,6 @@
       "direct_read_allowed": false,
       "future_adapter_candidate": "ignore_or_cleanup_policy_future",
       "notes": "No semantic mining value expected."
-    },
-    {
-      "path": "scripts/forget_guard_triggers.log",
-      "git_status_code": "M",
-      "artifact_class": "LOG_RUNTIME",
-      "extension": ".log",
-      "size_bytes": 175583,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "bounded_log_summarizer_future",
-      "notes": "Log content forbidden now."
     },
     {
       "path": "scripts/tests/__pycache__/test_aiden_cluster_daemon.cpython-311-pytest-9.0.2.pyc",
@@ -1446,11 +760,11 @@
       "notes": "Backup DB metadata only."
     },
     {
-      "path": "console_read_model/generated/live_boundary_no_go_summary.json",
+      "path": "console_read_model/generated/l6_meta_development_summary.json",
       "git_status_code": "??",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".json",
-      "size_bytes": 3892,
+      "size_bytes": 4120,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -1466,27 +780,7 @@
       "notes": "No semantic mining value expected."
     },
     {
-      "path": "l6_meta_development_entry_gate/",
-      "git_status_code": "??",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": "",
-      "size_bytes": 288,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "live_blocker_risk_register/",
-      "git_status_code": "??",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": "",
-      "size_bytes": 224,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "live_boundary_cieu_residual/",
+      "path": "governed_meta_development_experiment_portfolio/",
       "git_status_code": "??",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": "",
@@ -1496,17 +790,7 @@
       "notes": "Likely normal repo change or unclassified non-runtime path."
     },
     {
-      "path": "live_boundary_no_go_framework/",
-      "git_status_code": "??",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": "",
-      "size_bytes": 288,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "live_boundary_readiness/",
+      "path": "l6_meta_development_design_readiness/",
       "git_status_code": "??",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": "",
@@ -1516,7 +800,17 @@
       "notes": "Likely normal repo change or unclassified non-runtime path."
     },
     {
-      "path": "live_capability_domain_registry/",
+      "path": "l6_meta_development_generative_selection_engine/",
+      "git_status_code": "??",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": "",
+      "size_bytes": 288,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": "minimum_viable_proof_designer/",
       "git_status_code": "??",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": "",
@@ -1526,7 +820,17 @@
       "notes": "Likely normal repo change or unclassified non-runtime path."
     },
     {
-      "path": "live_readiness_evidence_index/",
+      "path": "open_value_hypothesis_generator/",
+      "git_status_code": "??",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": "",
+      "size_bytes": 288,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": "redeemability_selection_engine/",
       "git_status_code": "??",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": "",
@@ -1534,953 +838,13 @@
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "no_go_invariant_matrix/",
-      "git_status_code": "??",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": "",
-      "size_bytes": 224,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260425_172837_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5769469,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260425_185209_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5769885,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260425_200906_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5770357,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260425_211403_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5771469,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260425_221936_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5772247,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260425_232211_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5773787,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_012649_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5775299,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_031012_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5775701,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_045247_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5776117,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_064902_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5776533,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_082528_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5776935,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_092953_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5778837,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_110302_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5779253,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_123015_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5779669,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_135602_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5780085,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_151836_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5780501,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_165714_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5780931,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_182714_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5781333,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_193333_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5781749,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_212057_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5782179,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_222645_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5782581,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260426_235014_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5783755,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260427_020231_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5784171,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260427_033839_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5784587,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260427_051352_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5784989,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260427_071300_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5785391,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260427_083539_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5786165,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260427_094132_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5786939,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260427_104527_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5787341,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260427_115234_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5787757,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260427_130252_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5788187,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260427_150514_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5788603,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260427_161016_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5789019,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260427_171445_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5789435,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260427_182001_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5789851,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260427_194155_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5790295,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260427_210422_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5790697,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260427_220853_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5791113,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260427_231334_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5791901,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260428_010823_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5793037,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260428_032421_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5793467,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260428_045050_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5793869,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260428_061906_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5794299,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260428_074024_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5794715,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260428_085426_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5795475,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260428_101303_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5796221,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260428_112855_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5796651,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260428_123341_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5797053,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260428_140934_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5797469,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260428_154553_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5797955,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260428_164845_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5798315,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
-    },
-    {
-      "path": "reports/daily/2026-04-25_mission_report.md",
-      "git_status_code": "??",
-      "artifact_class": "DAILY_REPORT",
-      "extension": ".md",
-      "size_bytes": 1356,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "daily_report_parser_future",
-      "notes": "Daily report content not read."
-    },
-    {
-      "path": "reports/daily/2026-04-25_twin_evolution.md",
-      "git_status_code": "??",
-      "artifact_class": "DAILY_REPORT",
-      "extension": ".md",
-      "size_bytes": 409,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "daily_report_parser_future",
-      "notes": "Daily report content not read."
-    },
-    {
-      "path": "reports/daily/2026-04-26_mission_report.md",
-      "git_status_code": "??",
-      "artifact_class": "DAILY_REPORT",
-      "extension": ".md",
-      "size_bytes": 1356,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "daily_report_parser_future",
-      "notes": "Daily report content not read."
-    },
-    {
-      "path": "reports/daily/2026-04-26_morning.md",
-      "git_status_code": "??",
-      "artifact_class": "DAILY_REPORT",
-      "extension": ".md",
-      "size_bytes": 895,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "daily_report_parser_future",
-      "notes": "Daily report content not read."
-    },
-    {
-      "path": "reports/daily/2026-04-26_twin_evolution.md",
-      "git_status_code": "??",
-      "artifact_class": "DAILY_REPORT",
-      "extension": ".md",
-      "size_bytes": 409,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "daily_report_parser_future",
-      "notes": "Daily report content not read."
-    },
-    {
-      "path": "reports/daily/2026-04-27_mission_report.md",
-      "git_status_code": "??",
-      "artifact_class": "DAILY_REPORT",
-      "extension": ".md",
-      "size_bytes": 1356,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "daily_report_parser_future",
-      "notes": "Daily report content not read."
-    },
-    {
-      "path": "reports/daily/2026-04-27_morning.md",
-      "git_status_code": "??",
-      "artifact_class": "DAILY_REPORT",
-      "extension": ".md",
-      "size_bytes": 894,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "daily_report_parser_future",
-      "notes": "Daily report content not read."
-    },
-    {
-      "path": "reports/daily/2026-04-27_twin_evolution.md",
-      "git_status_code": "??",
-      "artifact_class": "DAILY_REPORT",
-      "extension": ".md",
-      "size_bytes": 409,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "daily_report_parser_future",
-      "notes": "Daily report content not read."
-    },
-    {
-      "path": "reports/daily/2026-04-28_morning.md",
-      "git_status_code": "??",
-      "artifact_class": "DAILY_REPORT",
-      "extension": ".md",
-      "size_bytes": 894,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "daily_report_parser_future",
-      "notes": "Daily report content not read."
-    },
-    {
-      "path": "reports/drift_hourly/20260425_2100.md",
-      "git_status_code": "??",
-      "artifact_class": "DRIFT_REPORT",
-      "extension": ".md",
-      "size_bytes": 368,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "drift_report_parser_future",
-      "notes": "Drift report content not read."
-    },
-    {
-      "path": "reports/drift_hourly/20260425_2200.md",
-      "git_status_code": "??",
-      "artifact_class": "DRIFT_REPORT",
-      "extension": ".md",
-      "size_bytes": 417,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "drift_report_parser_future",
-      "notes": "Drift report content not read."
-    },
-    {
-      "path": "reports/drift_hourly/20260425_2300.md",
-      "git_status_code": "??",
-      "artifact_class": "DRIFT_REPORT",
-      "extension": ".md",
-      "size_bytes": 368,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "drift_report_parser_future",
-      "notes": "Drift report content not read."
-    },
-    {
-      "path": "reports/drift_hourly/20260426_0900.md",
-      "git_status_code": "??",
-      "artifact_class": "DRIFT_REPORT",
-      "extension": ".md",
-      "size_bytes": 368,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "drift_report_parser_future",
-      "notes": "Drift report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777161992.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 590,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777163130.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 589,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777164079.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 589,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777164587.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 589,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777165127.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 589,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777166103.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 589,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777166104.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 589,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777166375.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 590,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777166672.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 589,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777167510.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 589,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777167511.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 589,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777167828.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 589,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777167829.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 589,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777168818.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 589,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777168819.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 589,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777169345.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 590,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777169907.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 589,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777170518.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 589,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777171319.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 589,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777206265.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 590,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777207243.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 588,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777207568.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 588,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/escalation/hook_health_1777208247.md",
-      "git_status_code": "??",
-      "artifact_class": "ESCALATION_REPORT",
-      "extension": ".md",
-      "size_bytes": 589,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "escalation_report_parser_future",
-      "notes": "Escalation report content not read."
-    },
-    {
-      "path": "reports/k9_daily/20260427.md",
-      "git_status_code": "??",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".md",
-      "size_bytes": 1864,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "reports/k9_daily/20260428.md",
-      "git_status_code": "??",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".md",
-      "size_bytes": 1864,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "reports/k9_repo_audit_20260427.txt",
-      "git_status_code": "??",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".txt",
-      "size_bytes": 2067,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "reports/k9_repo_audit_20260428.txt",
-      "git_status_code": "??",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".txt",
-      "size_bytes": 2067,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "reports/whitelist_daily/2026-04-26.md",
-      "git_status_code": "??",
-      "artifact_class": "WHITELIST_REPORT",
-      "extension": ".md",
-      "size_bytes": 101,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "whitelist_report_parser_future",
-      "notes": "Whitelist report content not read."
-    },
-    {
-      "path": "reports/whitelist_daily/2026-04-28.md",
-      "git_status_code": "??",
-      "artifact_class": "WHITELIST_REPORT",
-      "extension": ".md",
-      "size_bytes": 101,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "whitelist_report_parser_future",
-      "notes": "Whitelist report content not read."
     },
     {
       "path": "scripts/.brain_ingest_sentinel.json",
       "git_status_code": "??",
       "artifact_class": "CACHE_SENTINEL",
       "extension": ".json",
-      "size_bytes": 2600948,
+      "size_bytes": 2601041,
       "direct_read_allowed": false,
       "future_adapter_candidate": "cache_sentinel_classifier_future",
       "notes": "Ephemeral coordination state."
@@ -2490,7 +854,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 19872,
+      "size_bytes": 20088,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -2500,7 +864,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 214207,
+      "size_bytes": 216550,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -2540,7 +904,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 45567,
+      "size_bytes": 45883,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -2550,7 +914,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 307760,
+      "size_bytes": 308076,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -2560,7 +924,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 11122,
+      "size_bytes": 11215,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -2580,7 +944,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 44686,
+      "size_bytes": 44944,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -2610,7 +974,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 510439,
+      "size_bytes": 518677,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -2630,7 +994,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 342251,
+      "size_bytes": 343966,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -2660,7 +1024,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 113773,
+      "size_bytes": 114745,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -2720,7 +1084,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 301470,
+      "size_bytes": 309726,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -2906,11 +1270,21 @@
       "notes": "Runtime-like path needs classification."
     },
     {
-      "path": "system_no_go_decision_packet/",
+      "path": "self_model_and_unique_asset_field/",
       "git_status_code": "??",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": "",
-      "size_bytes": 192,
+      "size_bytes": 256,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": "strategic_residual_meta_learning_loop/",
+      "git_status_code": "??",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": "",
+      "size_bytes": 320,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -2986,14 +1360,24 @@
       "notes": "No semantic mining value expected."
     },
     {
-      "path": "tests/live_boundary_no_go_framework/",
+      "path": "tests/l6_meta_development_generative_selection_engine/",
       "git_status_code": "??",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": "",
-      "size_bytes": 96,
+      "size_bytes": 128,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": "tests/live_boundary_no_go_framework/__pycache__/",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": "",
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
     },
     {
       "path": "tests/mission_field_projection_contract/__pycache__/",
@@ -3034,6 +1418,36 @@
       "direct_read_allowed": false,
       "future_adapter_candidate": "ignore_or_cleanup_policy_future",
       "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "value_conversion_operator_library/",
+      "git_status_code": "??",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": "",
+      "size_bytes": 320,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": "value_conversion_physics/",
+      "git_status_code": "??",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": "",
+      "size_bytes": 288,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": "world_value_field_model/",
+      "git_status_code": "??",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": "",
+      "size_bytes": 256,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
     }
   ]
 }

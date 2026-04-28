@@ -4,53 +4,7 @@
       "source_layer": "curated_read_model",
       "summary": "Labs has structural evidence hints and wants Y-star-gov to judge a proposed non-executing planning envelope."
     },
-    "evidence_hint_refs": [
-      {
-        "candidate_id": "mdcand-001",
-        "evidence_id": "evidence-001",
-        "ingestion_status": "not_ingested",
-        "readiness": "hint_only",
-        "review_id": "review-001",
-        "route": "memory_continuity_hint_queue",
-        "status": "not_approved"
-      },
-      {
-        "candidate_id": "mdcand-001",
-        "evidence_id": "evidence-001",
-        "ingestion_status": "not_ingested",
-        "readiness": "hint_only",
-        "review_id": "review-001",
-        "route": "role_brain_capsule_hint_queue",
-        "status": "not_approved"
-      },
-      {
-        "candidate_id": "mdcand-002",
-        "evidence_id": "evidence-002",
-        "ingestion_status": "not_ingested",
-        "readiness": "hint_only",
-        "review_id": "review-002",
-        "route": "memory_continuity_hint_queue",
-        "status": "not_approved"
-      },
-      {
-        "candidate_id": "mdcand-002",
-        "evidence_id": "evidence-002",
-        "ingestion_status": "not_ingested",
-        "readiness": "hint_only",
-        "review_id": "review-002",
-        "route": "role_brain_capsule_hint_queue",
-        "status": "not_approved"
-      },
-      {
-        "candidate_id": "mdcand-003",
-        "evidence_id": "evidence-003",
-        "ingestion_status": "not_ingested",
-        "readiness": "hint_only",
-        "review_id": "review-003",
-        "route": "memory_continuity_hint_queue",
-        "status": "not_approved"
-      }
-    ],
+    "evidence_hint_refs": [],
     "role": "CEO orchestration and mission alignment"
   },
   "agent_capsule_ref": "agent_brains/Aiden-CEO/brain_profile.json",

@@ -218,7 +218,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after L6 meta-development design",
+        "Build L6.1 MVP artifact sandbox",
+        ["python3", "l6_meta_development_mvp_artifact_sandbox/tools/build_l6_meta_development_mvp_artifact_sandbox.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after L6.1 MVP artifact sandbox",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -1919,6 +1924,47 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "l6_meta_development_design_readiness/l6_meta_development_design_readiness.json"],
     ),
     Check(
+        "Compile L6.1 MVP artifact sandbox builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "l6_meta_development_mvp_artifact_sandbox/tools/build_l6_meta_development_mvp_artifact_sandbox.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: l6_mvp_artifact_sandbox_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_mvp_artifact_sandbox_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_1_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_meta_development_mvp_artifact_sandbox/l6_1_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: selected_hypotheses_for_mvp_artifacts.json",
+        ["python3", "-m", "json.tool", "l6_mvp_artifact_input_selector/selected_hypotheses_for_mvp_artifacts.json"],
+    ),
+    Check(
+        "Validate JSON: selected_case_index.json",
+        ["python3", "-m", "json.tool", "selected_mvp_artifact_cases/selected_case_index.json"],
+    ),
+    Check(
+        "Validate JSON: mvp_artifact_validation_matrix.json",
+        ["python3", "-m", "json.tool", "mvp_artifact_evidence_validation/mvp_artifact_validation_matrix.json"],
+    ),
+    Check(
+        "Validate JSON: review_gate_contract.json",
+        ["python3", "-m", "json.tool", "mvp_artifact_review_gate/review_gate_contract.json"],
+    ),
+    Check(
+        "Validate JSON: externalization_blocker.json",
+        ["python3", "-m", "json.tool", "mvp_artifact_externalization_boundary/externalization_blocker.json"],
+    ),
+    Check(
+        "Validate JSON: l6_1_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "l6_mvp_artifact_sandbox_readiness/l6_1_readiness_assessment.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -2153,6 +2199,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: meta-development-design",
         ["python3", "console_read_model/cli/team_console.py", "meta-development-design"],
+    ),
+    Check(
+        "CLI smoke: meta-development-mvp-artifact-sandbox",
+        ["python3", "console_read_model/cli/team_console.py", "meta-development-mvp-artifact-sandbox"],
     ),
     Check(
         "CLI smoke: sources",

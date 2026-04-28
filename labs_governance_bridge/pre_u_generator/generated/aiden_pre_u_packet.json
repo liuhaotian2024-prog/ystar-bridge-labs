@@ -4,58 +4,7 @@
       "source_layer": "curated_read_model",
       "summary": "Aiden frames a non-executing governance-ready planning packet for the labs roadmap."
     },
-    "evidence_hint_refs": [
-      {
-        "agent_scope": "Aiden-CEO",
-        "candidate_id": "mdcand-001",
-        "evidence_id": "evidence-001",
-        "ingestion_status": "not_ingested",
-        "readiness": "hint_only",
-        "review_id": "review-001",
-        "route": "memory_continuity_hint_queue",
-        "status": "not_approved"
-      },
-      {
-        "agent_scope": "Aiden-CEO",
-        "candidate_id": "mdcand-001",
-        "evidence_id": "evidence-001",
-        "ingestion_status": "not_ingested",
-        "readiness": "hint_only",
-        "review_id": "review-001",
-        "route": "role_brain_capsule_hint_queue",
-        "status": "not_approved"
-      },
-      {
-        "agent_scope": "Aiden-CEO",
-        "candidate_id": "mdcand-002",
-        "evidence_id": "evidence-002",
-        "ingestion_status": "not_ingested",
-        "readiness": "hint_only",
-        "review_id": "review-002",
-        "route": "memory_continuity_hint_queue",
-        "status": "not_approved"
-      },
-      {
-        "agent_scope": "Aiden-CEO",
-        "candidate_id": "mdcand-002",
-        "evidence_id": "evidence-002",
-        "ingestion_status": "not_ingested",
-        "readiness": "hint_only",
-        "review_id": "review-002",
-        "route": "role_brain_capsule_hint_queue",
-        "status": "not_approved"
-      },
-      {
-        "agent_scope": "Aiden-CEO",
-        "candidate_id": "mdcand-003",
-        "evidence_id": "evidence-003",
-        "ingestion_status": "not_ingested",
-        "readiness": "hint_only",
-        "review_id": "review-003",
-        "route": "memory_continuity_hint_queue",
-        "status": "not_approved"
-      }
-    ],
+    "evidence_hint_refs": [],
     "role_specific_focus": [
       "company orchestration",
       "mission alignment",
@@ -89,58 +38,7 @@
   "declared_Y_star": {
     "summary": "Coordinate the next labs milestone plan using curated read-model evidence only"
   },
-  "evidence_hint_refs": [
-    {
-      "agent_scope": "Aiden-CEO",
-      "candidate_id": "mdcand-001",
-      "evidence_id": "evidence-001",
-      "ingestion_status": "not_ingested",
-      "readiness": "hint_only",
-      "review_id": "review-001",
-      "route": "memory_continuity_hint_queue",
-      "status": "not_approved"
-    },
-    {
-      "agent_scope": "Aiden-CEO",
-      "candidate_id": "mdcand-001",
-      "evidence_id": "evidence-001",
-      "ingestion_status": "not_ingested",
-      "readiness": "hint_only",
-      "review_id": "review-001",
-      "route": "role_brain_capsule_hint_queue",
-      "status": "not_approved"
-    },
-    {
-      "agent_scope": "Aiden-CEO",
-      "candidate_id": "mdcand-002",
-      "evidence_id": "evidence-002",
-      "ingestion_status": "not_ingested",
-      "readiness": "hint_only",
-      "review_id": "review-002",
-      "route": "memory_continuity_hint_queue",
-      "status": "not_approved"
-    },
-    {
-      "agent_scope": "Aiden-CEO",
-      "candidate_id": "mdcand-002",
-      "evidence_id": "evidence-002",
-      "ingestion_status": "not_ingested",
-      "readiness": "hint_only",
-      "review_id": "review-002",
-      "route": "role_brain_capsule_hint_queue",
-      "status": "not_approved"
-    },
-    {
-      "agent_scope": "Aiden-CEO",
-      "candidate_id": "mdcand-003",
-      "evidence_id": "evidence-003",
-      "ingestion_status": "not_ingested",
-      "readiness": "hint_only",
-      "review_id": "review-003",
-      "route": "memory_continuity_hint_queue",
-      "status": "not_approved"
-    }
-  ],
+  "evidence_hint_refs": [],
   "governance_expectations": {
     "requires_high_risk_review": false,
     "requires_m_functor_validation": true,

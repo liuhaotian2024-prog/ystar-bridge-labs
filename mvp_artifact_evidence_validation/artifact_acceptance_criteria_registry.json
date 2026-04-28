@@ -1,0 +1,88 @@
+{
+  "acceptance_criteria_registry": [
+    {
+      "case_id": "case_001",
+      "acceptance_criteria": [
+        "sandbox-only header is present",
+        "source hypothesis trace is present",
+        "source assets and operators are listed",
+        "claim boundary is explicit",
+        "missing evidence is disclosed",
+        "review gate is present",
+        "externalization status is blocked",
+        "no publication/outreach/payment/revenue/MCP authorization is present"
+      ]
+    },
+    {
+      "case_id": "case_002",
+      "acceptance_criteria": [
+        "sandbox-only header is present",
+        "source hypothesis trace is present",
+        "source assets and operators are listed",
+        "claim boundary is explicit",
+        "missing evidence is disclosed",
+        "review gate is present",
+        "externalization status is blocked",
+        "no publication/outreach/payment/revenue/MCP authorization is present"
+      ]
+    },
+    {
+      "case_id": "case_003",
+      "acceptance_criteria": [
+        "sandbox-only header is present",
+        "source hypothesis trace is present",
+        "source assets and operators are listed",
+        "claim boundary is explicit",
+        "missing evidence is disclosed",
+        "review gate is present",
+        "externalization status is blocked",
+        "no publication/outreach/payment/revenue/MCP authorization is present"
+      ]
+    }
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "revenue_execution_enabled": false,
+    "external_market_scan_enabled": false,
+    "public_content_publication_enabled": false,
+    "payment_enabled": false,
+    "external_observation_execution_enabled": false,
+    "publication_enabled": false,
+    "outreach_enabled": false
+  },
+  "l6_1_flags": {
+    "l6_1_sandbox_only": true,
+    "l6_1_internal_artifact_generation_enabled": true,
+    "l6_1_artifact_review_gate_required": true,
+    "l6_1_external_execution_enabled": false,
+    "l6_1_network_enabled": false,
+    "l6_1_publication_enabled": false,
+    "l6_1_outreach_enabled": false,
+    "l6_1_payment_enabled": false,
+    "l6_1_revenue_execution_enabled": false
+  }
+}

@@ -54,6 +54,9 @@ REAL_RELEASE_PREFLIGHT = "console_read_model/generated/real_release_preflight_su
 REAL_RELEASE_SIMULATION = "console_read_model/generated/real_release_simulation_summary.json"
 LIVE_BOUNDARY_NO_GO = "console_read_model/generated/live_boundary_no_go_summary.json"
 L6_META_DEVELOPMENT = "console_read_model/generated/l6_meta_development_summary.json"
+L6_MVP_ARTIFACT_SANDBOX = (
+    "console_read_model/generated/l6_mvp_artifact_sandbox_summary.json"
+)
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -73,7 +76,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -145,6 +148,7 @@ def load_all() -> dict[str, Any]:
         "real_release_simulation": load_json(REAL_RELEASE_SIMULATION),
         "live_boundary_no_go": load_json(LIVE_BOUNDARY_NO_GO),
         "l6_meta_development": load_json(L6_META_DEVELOPMENT),
+        "l6_mvp_artifact_sandbox": load_json(L6_MVP_ARTIFACT_SANDBOX),
     }
 
 
@@ -1787,6 +1791,51 @@ def cmd_meta_development_design(data: dict[str, Any]) -> None:
     print(f"next required milestone: {meta.get('next_required_milestone')}")
     print(f"generated_readiness: {meta.get('generated_readiness')}")
     print(f"warning: {meta.get('warning')}")
+
+
+def cmd_meta_development_mvp_artifact_sandbox(data: dict[str, Any]) -> None:
+    sandbox = data["l6_mvp_artifact_sandbox"]
+    print("# L6.1 Meta-Development MVP Artifact Sandbox")
+    print()
+    print(
+        "L6.1 MVP artifact sandbox defined: "
+        f"{sandbox.get('l6_1_mvp_artifact_sandbox_defined')}"
+    )
+    print(f"selected hypotheses: {sandbox.get('selected_hypotheses_count')}")
+    print(f"generated artifact cases: {sandbox.get('generated_case_count')}")
+    print(f"internal artifacts generated: {sandbox.get('internal_artifacts_generated')}")
+    print(f"artifact generation authorized: {sandbox.get('artifact_generation_authorized')}")
+    print(f"review gate generated: {sandbox.get('review_gate_generated')}")
+    print(
+        "externalization boundary generated: "
+        f"{sandbox.get('externalization_boundary_generated')}"
+    )
+    print(
+        "strategic residual loop generated: "
+        f"{sandbox.get('strategic_residual_loop_generated')}"
+    )
+    print(f"network enabled: {sandbox.get('network_enabled')}")
+    print(f"external action enabled: {sandbox.get('external_action_enabled')}")
+    print(f"publication enabled: {sandbox.get('publication_enabled')}")
+    print(f"outreach enabled: {sandbox.get('outreach_enabled')}")
+    print(f"payment enabled: {sandbox.get('payment_enabled')}")
+    print(f"revenue execution enabled: {sandbox.get('revenue_execution_enabled')}")
+    print(f"MCP tool execution enabled: {sandbox.get('mcp_tool_execution_enabled')}")
+    print(f"brain writeback enabled: {sandbox.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {sandbox.get('memory_ingestion_enabled')}")
+    print(
+        "ready for L6.2 external observation boundary design: "
+        f"{sandbox.get('ready_for_l6_2_external_observation_boundary_design')}"
+    )
+    print(f"ready for external execution: {sandbox.get('ready_for_external_execution')}")
+    print(f"ready for publication: {sandbox.get('ready_for_publication')}")
+    print(f"ready for outreach: {sandbox.get('ready_for_outreach')}")
+    print(f"ready for payment: {sandbox.get('ready_for_payment')}")
+    print(f"ready for revenue execution: {sandbox.get('ready_for_revenue_execution')}")
+    print(f"next recommended milestone: {sandbox.get('next_recommended_milestone')}")
+    print(f"generated_case_index: {sandbox.get('generated_case_index')}")
+    print(f"generated_readiness: {sandbox.get('generated_readiness')}")
+    print(f"warning: {sandbox.get('warning')}")
 
 
 def cmd_gaps(data: dict[str, Any]) -> None:
@@ -3735,6 +3784,8 @@ def main(argv: list[str]) -> int:
         cmd_live_boundary_no_go(data)
     elif command == "meta-development-design":
         cmd_meta_development_design(data)
+    elif command == "meta-development-mvp-artifact-sandbox":
+        cmd_meta_development_mvp_artifact_sandbox(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

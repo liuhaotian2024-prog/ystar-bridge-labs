@@ -1,0 +1,23 @@
+{
+  "schema_name": "ystar.l6_1.input_reference_map",
+  "schema_version": "v0",
+  "input_milestone": "L6.0",
+  "input_refs": {
+    "l6_design_readiness": "l6_meta_development_design_readiness/l6_meta_development_design_readiness.json",
+    "generated_value_hypotheses": "open_value_hypothesis_generator/generated_value_hypotheses.json",
+    "hypothesis_selection_ranking": "redeemability_selection_engine/hypothesis_selection_ranking.json",
+    "hypothesis_redeemability_matrix": "redeemability_selection_engine/hypothesis_redeemability_matrix.json",
+    "selected_hypothesis_mvp_plans": "minimum_viable_proof_designer/selected_hypothesis_mvp_plans.json",
+    "governed_experiment_portfolio": "governed_meta_development_experiment_portfolio/governed_experiment_portfolio.json",
+    "conversion_physics_schema": "value_conversion_physics/value_conversion_physics_schema.json",
+    "conversion_time_horizon_model": "value_conversion_physics/conversion_time_horizon_model.json",
+    "strategic_residual_delta": "strategic_residual_meta_learning_loop/strategic_residual_delta.json",
+    "meta_learning_update_candidate": "strategic_residual_meta_learning_loop/meta_learning_update_candidate.json",
+    "live_boundary_readiness": "live_boundary_readiness/live_boundary_readiness.json",
+    "system_no_go_decision_packet": "system_no_go_decision_packet/system_no_go_decision_packet.json"
+  },
+  "missing_required_inputs": [],
+  "fail_closed": false,
+  "network_used": false,
+  "external_observation_executed": false
+}

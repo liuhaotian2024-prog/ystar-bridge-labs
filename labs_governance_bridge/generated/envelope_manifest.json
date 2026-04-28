@@ -4,7 +4,7 @@
   "cieu_write_allowed": false,
   "dry_run_only": true,
   "generated_envelope": "labs_governance_bridge/generated/sample_hook_envelope.json",
-  "hint_refs_included": 5,
+  "hint_refs_included": 0,
   "memory_ingestion_allowed": false,
   "schema_name": "ystar.labs_governance_bridge.envelope_manifest",
   "schema_version": "v0",

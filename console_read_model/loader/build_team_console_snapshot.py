@@ -173,6 +173,14 @@ CURATED_SOURCES = [
     "governed_meta_development_experiment_portfolio/experiment_portfolio_summary.json",
     "strategic_residual_meta_learning_loop/strategic_residual_summary.json",
     "l6_meta_development_design_readiness/l6_meta_development_design_readiness.json",
+    "l6_meta_development_mvp_artifact_sandbox/l6_1_summary.json",
+    "l6_mvp_artifact_input_selector/selected_hypotheses_for_mvp_artifacts.json",
+    "selected_mvp_artifact_cases/selected_case_index.json",
+    "mvp_artifact_evidence_validation/mvp_artifact_validation_matrix.json",
+    "mvp_artifact_review_gate/review_gate_contract.json",
+    "mvp_artifact_externalization_boundary/externalization_blocker.json",
+    "l6_mvp_artifact_strategic_residual_loop/l6_1_strategic_residual_delta.json",
+    "l6_mvp_artifact_sandbox_readiness/l6_1_readiness_assessment.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -3647,6 +3655,151 @@ def build_l6_meta_development_summary(
     }
 
 
+def build_l6_mvp_artifact_sandbox_summary(
+    milestone_summary: dict[str, Any] | None,
+    selected_hypotheses: dict[str, Any] | None,
+    case_index: dict[str, Any] | None,
+    validation_matrix: dict[str, Any] | None,
+    review_gate: dict[str, Any] | None,
+    externalization_blocker: dict[str, Any] | None,
+    residual_delta: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.l6_mvp_artifact_sandbox_summary",
+            "schema_version": "v0",
+            "l6_1_mvp_artifact_sandbox_defined": False,
+            "ready_for_l6_2_external_observation_boundary_design": False,
+            "ready_for_external_execution": False,
+            "warning": "L6.1 MVP artifact sandbox has not been generated yet.",
+        }
+
+    milestone_summary = milestone_summary or {}
+    selected_hypotheses = selected_hypotheses or {}
+    case_index = case_index or {}
+    validation_matrix = validation_matrix or {}
+    review_gate = review_gate or {}
+    externalization_blocker = externalization_blocker or {}
+    residual_delta = residual_delta or {}
+
+    def safety_flag(field: str) -> Any:
+        return readiness_summary.get(field, readiness_summary.get("safety_flags", {}).get(field))
+
+    def l6_1_flag(field: str) -> Any:
+        return readiness_summary.get(field, readiness_summary.get("l6_1_flags", {}).get(field))
+
+    return {
+        "schema_name": "ystar.console_read_model.generated.l6_mvp_artifact_sandbox_summary",
+        "schema_version": "v0",
+        "milestone_id": milestone_summary.get("milestone_id", "L6.1"),
+        "milestone_name": milestone_summary.get(
+            "milestone_name", "Meta-Development MVP Artifact Sandbox v0"
+        ),
+        "l6_1_mvp_artifact_sandbox_defined": milestone_summary.get(
+            "l6_1_mvp_artifact_sandbox_defined",
+            readiness_summary.get("l6_1_artifact_sandbox_complete"),
+        ),
+        "selected_hypotheses_count": selected_hypotheses.get(
+            "selected_count", milestone_summary.get("selected_hypotheses_count")
+        ),
+        "generated_case_count": case_index.get(
+            "case_count", milestone_summary.get("generated_case_count")
+        ),
+        "internal_artifacts_generated": milestone_summary.get(
+            "internal_artifacts_generated",
+            readiness_summary.get("l6_1_artifact_sandbox_complete"),
+        ),
+        "artifact_generation_authorized": milestone_summary.get(
+            "artifact_generation_authorized",
+            readiness_summary.get("artifact_generation_authorized"),
+        ),
+        "review_gate_generated": readiness_summary.get(
+            "review_gate_generated", bool(review_gate)
+        ),
+        "externalization_boundary_generated": readiness_summary.get(
+            "externalization_boundary_generated", bool(externalization_blocker)
+        ),
+        "strategic_residual_loop_generated": readiness_summary.get(
+            "strategic_residual_loop_generated", bool(residual_delta)
+        ),
+        "structural_validation_only": validation_matrix.get(
+            "validation_mode"
+        ) == "structural_review_only",
+        "semantic_truth_scoring_enabled": safety_flag("semantic_truth_scoring_enabled"),
+        "network_enabled": safety_flag("network_enabled"),
+        "external_action_enabled": safety_flag("external_action_enabled"),
+        "publication_enabled": safety_flag("publication_enabled"),
+        "outreach_enabled": safety_flag("outreach_enabled"),
+        "payment_enabled": safety_flag("payment_enabled"),
+        "revenue_execution_enabled": safety_flag("revenue_execution_enabled"),
+        "mcp_tool_execution_enabled": safety_flag("mcp_tool_execution_enabled"),
+        "live_execution_enabled": safety_flag("live_execution_enabled"),
+        "brain_writeback_enabled": safety_flag("brain_writeback_enabled"),
+        "memory_ingestion_enabled": safety_flag("memory_ingestion_enabled"),
+        "real_canonical_update_application_enabled": safety_flag(
+            "real_canonical_update_application_enabled"
+        ),
+        "real_y_star_direct_mutation_enabled": safety_flag(
+            "real_y_star_direct_mutation_enabled"
+        ),
+        "raw_runtime_artifact_reading_enabled": safety_flag(
+            "raw_runtime_artifact_reading_enabled"
+        ),
+        "l6_1_sandbox_only": l6_1_flag("l6_1_sandbox_only"),
+        "l6_1_internal_artifact_generation_enabled": l6_1_flag(
+            "l6_1_internal_artifact_generation_enabled"
+        ),
+        "l6_1_artifact_review_gate_required": l6_1_flag(
+            "l6_1_artifact_review_gate_required"
+        ),
+        "l6_1_external_execution_enabled": l6_1_flag(
+            "l6_1_external_execution_enabled"
+        ),
+        "l6_1_network_enabled": l6_1_flag("l6_1_network_enabled"),
+        "l6_1_publication_enabled": l6_1_flag("l6_1_publication_enabled"),
+        "l6_1_outreach_enabled": l6_1_flag("l6_1_outreach_enabled"),
+        "l6_1_payment_enabled": l6_1_flag("l6_1_payment_enabled"),
+        "l6_1_revenue_execution_enabled": l6_1_flag(
+            "l6_1_revenue_execution_enabled"
+        ),
+        "ready_for_l6_2_external_observation_boundary_design": readiness_summary.get(
+            "ready_for_l6_2_external_observation_boundary_design"
+        ),
+        "ready_for_external_execution": readiness_summary.get("ready_for_external_execution"),
+        "ready_for_publication": readiness_summary.get("ready_for_publication"),
+        "ready_for_outreach": readiness_summary.get("ready_for_outreach"),
+        "ready_for_payment": readiness_summary.get("ready_for_payment"),
+        "ready_for_revenue_execution": readiness_summary.get("ready_for_revenue_execution"),
+        "ready_for_mcp_execution": readiness_summary.get("ready_for_mcp_execution"),
+        "ready_for_canonical_update": readiness_summary.get("ready_for_canonical_update"),
+        "ready_for_brain_memory_writeback": readiness_summary.get(
+            "ready_for_brain_memory_writeback"
+        ),
+        "next_recommended_milestone": readiness_summary.get(
+            "next_recommended_milestone"
+        ),
+        "generated_milestone_summary": "l6_meta_development_mvp_artifact_sandbox/l6_1_summary.json",
+        "generated_selected_hypotheses": (
+            "l6_mvp_artifact_input_selector/selected_hypotheses_for_mvp_artifacts.json"
+        ),
+        "generated_case_index": "selected_mvp_artifact_cases/selected_case_index.json",
+        "generated_validation_matrix": (
+            "mvp_artifact_evidence_validation/mvp_artifact_validation_matrix.json"
+        ),
+        "generated_review_gate": "mvp_artifact_review_gate/review_gate_contract.json",
+        "generated_externalization_blocker": (
+            "mvp_artifact_externalization_boundary/externalization_blocker.json"
+        ),
+        "generated_readiness": "l6_mvp_artifact_sandbox_readiness/l6_1_readiness_assessment.json",
+        "warning": (
+            "L6.1 generated internal MVP proof artifacts only. Publication, "
+            "outreach, payment, network, revenue, MCP, canonical mutation, "
+            "writeback, and direct Y* mutation remain blocked."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -4257,6 +4410,38 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_meta_development_design_readiness/l6_meta_development_design_readiness.json",
         files_read,
     )
+    l6_mvp_artifact_milestone_summary = load_optional_json(
+        "l6_meta_development_mvp_artifact_sandbox/l6_1_summary.json",
+        files_read,
+    )
+    l6_mvp_artifact_selected_hypotheses = load_optional_json(
+        "l6_mvp_artifact_input_selector/selected_hypotheses_for_mvp_artifacts.json",
+        files_read,
+    )
+    l6_mvp_artifact_case_index = load_optional_json(
+        "selected_mvp_artifact_cases/selected_case_index.json",
+        files_read,
+    )
+    l6_mvp_artifact_validation_matrix = load_optional_json(
+        "mvp_artifact_evidence_validation/mvp_artifact_validation_matrix.json",
+        files_read,
+    )
+    l6_mvp_artifact_review_gate = load_optional_json(
+        "mvp_artifact_review_gate/review_gate_contract.json",
+        files_read,
+    )
+    l6_mvp_artifact_externalization_blocker = load_optional_json(
+        "mvp_artifact_externalization_boundary/externalization_blocker.json",
+        files_read,
+    )
+    l6_mvp_artifact_residual_delta = load_optional_json(
+        "l6_mvp_artifact_strategic_residual_loop/l6_1_strategic_residual_delta.json",
+        files_read,
+    )
+    l6_mvp_artifact_readiness_summary = load_optional_json(
+        "l6_mvp_artifact_sandbox_readiness/l6_1_readiness_assessment.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -4433,6 +4618,16 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         l6_meta_development_residual_summary,
         l6_meta_development_readiness_summary,
     )
+    l6_mvp_artifact_sandbox_summary = build_l6_mvp_artifact_sandbox_summary(
+        l6_mvp_artifact_milestone_summary,
+        l6_mvp_artifact_selected_hypotheses,
+        l6_mvp_artifact_case_index,
+        l6_mvp_artifact_validation_matrix,
+        l6_mvp_artifact_review_gate,
+        l6_mvp_artifact_externalization_blocker,
+        l6_mvp_artifact_residual_delta,
+        l6_mvp_artifact_readiness_summary,
+    )
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -4597,6 +4792,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "real_release_simulation_summary": real_release_simulation_summary,
         "live_boundary_no_go_summary": live_boundary_no_go_summary,
         "l6_meta_development_summary": l6_meta_development_summary,
+        "l6_mvp_artifact_sandbox_summary": l6_mvp_artifact_sandbox_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -4830,6 +5026,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/real_release_simulation_summary.json",
             "console_read_model/generated/live_boundary_no_go_summary.json",
             "console_read_model/generated/l6_meta_development_summary.json",
+            "console_read_model/generated/l6_mvp_artifact_sandbox_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -4932,6 +5129,9 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "no-go framework. It confirms live domains, no-go invariants, L5 evidence, blockers, L6 design-only entry, and system no-go decisions while live, external, revenue, persistence, MCP, release, and writeback execution remain blocked.\n\n"
         "`l6_meta_development_summary.json` is derived from the L6.0 meta-development\n"
         "generative selection engine design. It confirms self-modeling, asset-field, world-value, conversion-operator, hypothesis, conversion-physics, MVP proof, portfolio, and strategic residual artifacts while external, network, publication, payment, and revenue execution remain blocked.\n\n"
+        "`l6_mvp_artifact_sandbox_summary.json` is derived from the L6.1 MVP\n"
+        "artifact sandbox. It confirms selected internal proof artifacts, review gates,\n"
+        "validation criteria, externalization blockers, and residual artifacts while publication, outreach, payment, network, revenue, MCP, canonical mutation, and writeback remain blocked.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -4977,6 +5177,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/real_release_simulation_summary.json", real_release_simulation_summary, generated_files)
     write_json("console_read_model/generated/live_boundary_no_go_summary.json", live_boundary_no_go_summary, generated_files)
     write_json("console_read_model/generated/l6_meta_development_summary.json", l6_meta_development_summary, generated_files)
+    write_json("console_read_model/generated/l6_mvp_artifact_sandbox_summary.json", l6_mvp_artifact_sandbox_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -5057,6 +5258,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     real_release_simulation = snapshot.get("real_release_simulation_summary", {})
     live_boundary_no_go = snapshot.get("live_boundary_no_go_summary", {})
     l6_meta_development = snapshot.get("l6_meta_development_summary", {})
+    l6_mvp_artifact_sandbox = snapshot.get("l6_mvp_artifact_sandbox_summary", {})
     lines.extend(
         [
             "",
@@ -6004,6 +6206,28 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- ready_for_l6_revenue_opportunity_execution: {l6_meta_development.get('ready_for_l6_revenue_opportunity_execution')}",
             f"- next_required_milestone: {l6_meta_development.get('next_required_milestone')}",
             f"- Warning: {l6_meta_development.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## L6.1 MVP Artifact Sandbox",
+            "",
+            f"- l6_1_mvp_artifact_sandbox_defined: {l6_mvp_artifact_sandbox.get('l6_1_mvp_artifact_sandbox_defined')}",
+            f"- selected_hypotheses_count: {l6_mvp_artifact_sandbox.get('selected_hypotheses_count')}",
+            f"- generated_case_count: {l6_mvp_artifact_sandbox.get('generated_case_count')}",
+            f"- internal_artifacts_generated: {l6_mvp_artifact_sandbox.get('internal_artifacts_generated')}",
+            f"- review_gate_generated: {l6_mvp_artifact_sandbox.get('review_gate_generated')}",
+            f"- externalization_boundary_generated: {l6_mvp_artifact_sandbox.get('externalization_boundary_generated')}",
+            f"- strategic_residual_loop_generated: {l6_mvp_artifact_sandbox.get('strategic_residual_loop_generated')}",
+            f"- ready_for_l6_2_external_observation_boundary_design: {l6_mvp_artifact_sandbox.get('ready_for_l6_2_external_observation_boundary_design')}",
+            f"- ready_for_external_execution: {l6_mvp_artifact_sandbox.get('ready_for_external_execution')}",
+            f"- ready_for_publication: {l6_mvp_artifact_sandbox.get('ready_for_publication')}",
+            f"- ready_for_outreach: {l6_mvp_artifact_sandbox.get('ready_for_outreach')}",
+            f"- ready_for_payment: {l6_mvp_artifact_sandbox.get('ready_for_payment')}",
+            f"- ready_for_revenue_execution: {l6_mvp_artifact_sandbox.get('ready_for_revenue_execution')}",
+            f"- next_recommended_milestone: {l6_mvp_artifact_sandbox.get('next_recommended_milestone')}",
+            f"- Warning: {l6_mvp_artifact_sandbox.get('warning')}",
         ]
     )
     lines.extend(

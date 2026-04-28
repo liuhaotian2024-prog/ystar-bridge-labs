@@ -1,0 +1,15 @@
+{
+  "case_id": "case_001",
+  "acceptance_criteria": [
+    "sandbox-only header is present",
+    "source hypothesis trace is present",
+    "source assets and operators are listed",
+    "claim boundary is explicit",
+    "missing evidence is disclosed",
+    "review gate is present",
+    "externalization status is blocked",
+    "no publication/outreach/payment/revenue/MCP authorization is present"
+  ],
+  "structural_validation_only": true,
+  "semantic_truth_scoring_used": false
+}

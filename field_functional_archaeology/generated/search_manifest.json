@@ -80,9 +80,9 @@
     "contract",
     "invariant"
   ],
-  "assets_scanned": 4707,
-  "files_skipped_by_policy": 50427,
-  "raw_matching_files": 3945,
+  "assets_scanned": 4779,
+  "files_skipped_by_policy": 50707,
+  "raw_matching_files": 4002,
   "significant_assets_recorded": 200,
   "bounded_snippet_max_chars": 240,
   "source_execution_performed": false,

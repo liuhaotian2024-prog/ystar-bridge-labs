@@ -1,0 +1,27 @@
+{
+  "case_id": "case_002",
+  "review_packet_id": "review-packet-case_002",
+  "review_status": "pending_internal_review",
+  "review_required_before_externalization": true,
+  "approval_required_before_execution": true,
+  "review_questions": [
+    "Is the source trace complete?",
+    "Are unsupported claims clearly blocked?",
+    "Is the artifact useful for internal minimum viable proof review?",
+    "What evidence gap should be resolved next?",
+    "Would any future externalization require a separate milestone?"
+  ],
+  "execution_authorized": false,
+  "external_observation_authorized": false,
+  "external_execution_authorized": false,
+  "publication_authorized": false,
+  "outreach_authorized": false,
+  "payment_authorized": false,
+  "network_authorized": false,
+  "revenue_execution_authorized": false,
+  "mcp_execution_authorized": false,
+  "canonical_update_authorized": false,
+  "direct_y_star_mutation_authorized": false,
+  "brain_writeback_authorized": false,
+  "memory_ingestion_authorized": false
+}

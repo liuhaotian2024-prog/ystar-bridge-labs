@@ -1,25 +1,13 @@
 {
   "schema_name": "ystar.console_read_model.generated.evidence_review_summary",
   "schema_version": "v0",
-  "candidates_scored": 21,
-  "decision_stubs_created": 21,
-  "routes_created": 42,
-  "reuse_readiness": {
-    "hint_only": 21
-  },
-  "confidence": {
-    "structural_only": 21
-  },
-  "route_counts": {
-    "memory_continuity_hint_queue": 10,
-    "role_brain_capsule_hint_queue": 10,
-    "governance_gap_hint_queue": 11,
-    "cieu_prediction_delta_hint_queue": 9,
-    "pre_u_packet_hint_queue": 2
-  },
-  "semantic_truth_status": {
-    "not_evaluated": 21
-  },
+  "candidates_scored": 0,
+  "decision_stubs_created": 0,
+  "routes_created": 0,
+  "reuse_readiness": {},
+  "confidence": {},
+  "route_counts": {},
+  "semantic_truth_status": {},
   "automatic_approvals": 0,
   "brain_writeback_allowed": 0,
   "memory_ingestion_allowed": 0,

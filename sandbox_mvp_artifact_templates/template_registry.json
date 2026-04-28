@@ -1,0 +1,49 @@
+{
+  "schema_name": "ystar.l6_1.template_registry",
+  "schema_version": "v0",
+  "templates_are_strategy_categories": false,
+  "templates": [
+    {
+      "template_file": "narrative_artifact_template.md",
+      "template_name": "Narrative Artifact Template",
+      "example_only": true,
+      "not_exhaustive": true,
+      "not_authorized_for_external_use": true
+    },
+    {
+      "template_file": "governance_assurance_artifact_template.md",
+      "template_name": "Governance Assurance Artifact Template",
+      "example_only": true,
+      "not_exhaustive": true,
+      "not_authorized_for_external_use": true
+    },
+    {
+      "template_file": "methodology_artifact_template.md",
+      "template_name": "Methodology Artifact Template",
+      "example_only": true,
+      "not_exhaustive": true,
+      "not_authorized_for_external_use": true
+    },
+    {
+      "template_file": "tool_assurance_artifact_template.md",
+      "template_name": "Tool Assurance Artifact Template",
+      "example_only": true,
+      "not_exhaustive": true,
+      "not_authorized_for_external_use": true
+    },
+    {
+      "template_file": "grant_or_rfp_skeleton_template.md",
+      "template_name": "Grant or RFP Skeleton Template",
+      "example_only": true,
+      "not_exhaustive": true,
+      "not_authorized_for_external_use": true
+    },
+    {
+      "template_file": "internal_diagnostic_report_template.md",
+      "template_name": "Internal Diagnostic Report Template",
+      "example_only": true,
+      "not_exhaustive": true,
+      "not_authorized_for_external_use": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "case_id": "case_003",
+  "claim_boundaries": [
+    "may describe internal artifact lineage",
+    "may describe hypothesized value surface",
+    "must not claim market demand",
+    "must not claim customer acceptance",
+    "must not claim compliance certification",
+    "must not imply production readiness",
+    "must not present as public marketing copy"
+  ],
+  "forbidden_claims": [
+    "proven market need",
+    "guaranteed revenue",
+    "legal/compliance certification",
+    "customer commitment",
+    "production safety guarantee"
+  ]
+}

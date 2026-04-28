@@ -400,6 +400,9 @@ def main() -> int:
     required_l6_meta_development_generative_selection_engine_files = expected.get(
         "required_l6_meta_development_generative_selection_engine_files", []
     )
+    required_l6_meta_development_mvp_artifact_sandbox_files = expected.get(
+        "required_l6_meta_development_mvp_artifact_sandbox_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -626,6 +629,12 @@ def main() -> int:
         check_exists(path, report, "L6 meta-development file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "L6 meta-development JSON")
+
+    for rel in required_l6_meta_development_mvp_artifact_sandbox_files:
+        path = ROOT / rel
+        check_exists(path, report, "L6.1 MVP artifact sandbox file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "L6.1 MVP artifact sandbox JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -4466,6 +4475,124 @@ def main() -> int:
             "L6.1 Meta-Development MVP Artifact Sandbox v0"
         ):
             report.fail("generated L6 meta-development summary must point to L6.1")
+
+    l6_mvp_artifact_sandbox = generated_json.get(
+        "console_read_model/generated/l6_mvp_artifact_sandbox_summary.json"
+    )
+    if l6_mvp_artifact_sandbox:
+        for field in [
+            "l6_1_mvp_artifact_sandbox_defined",
+            "selected_hypotheses_count",
+            "generated_case_count",
+            "internal_artifacts_generated",
+            "artifact_generation_authorized",
+            "review_gate_generated",
+            "externalization_boundary_generated",
+            "strategic_residual_loop_generated",
+            "structural_validation_only",
+            "semantic_truth_scoring_enabled",
+            "network_enabled",
+            "external_action_enabled",
+            "publication_enabled",
+            "outreach_enabled",
+            "payment_enabled",
+            "revenue_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "live_execution_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "real_canonical_update_application_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "l6_1_sandbox_only",
+            "l6_1_internal_artifact_generation_enabled",
+            "l6_1_artifact_review_gate_required",
+            "l6_1_external_execution_enabled",
+            "l6_1_network_enabled",
+            "l6_1_publication_enabled",
+            "l6_1_outreach_enabled",
+            "l6_1_payment_enabled",
+            "l6_1_revenue_execution_enabled",
+            "ready_for_l6_2_external_observation_boundary_design",
+            "ready_for_external_execution",
+            "ready_for_publication",
+            "ready_for_outreach",
+            "ready_for_payment",
+            "ready_for_revenue_execution",
+            "ready_for_mcp_execution",
+            "ready_for_canonical_update",
+            "ready_for_brain_memory_writeback",
+            "next_recommended_milestone",
+            "generated_milestone_summary",
+            "generated_selected_hypotheses",
+            "generated_case_index",
+            "generated_validation_matrix",
+            "generated_review_gate",
+            "generated_externalization_blocker",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in l6_mvp_artifact_sandbox:
+                report.pass_(f"generated L6.1 MVP artifact sandbox summary field present: {field}")
+            else:
+                report.fail(f"generated L6.1 MVP artifact sandbox summary missing field: {field}")
+        for field in [
+            "l6_1_mvp_artifact_sandbox_defined",
+            "internal_artifacts_generated",
+            "artifact_generation_authorized",
+            "review_gate_generated",
+            "externalization_boundary_generated",
+            "strategic_residual_loop_generated",
+            "structural_validation_only",
+            "l6_1_sandbox_only",
+            "l6_1_internal_artifact_generation_enabled",
+            "l6_1_artifact_review_gate_required",
+            "ready_for_l6_2_external_observation_boundary_design",
+        ]:
+            if l6_mvp_artifact_sandbox.get(field) is not True:
+                report.fail(f"generated L6.1 MVP artifact sandbox summary must keep {field}=true")
+        for field in [
+            "semantic_truth_scoring_enabled",
+            "network_enabled",
+            "external_action_enabled",
+            "publication_enabled",
+            "outreach_enabled",
+            "payment_enabled",
+            "revenue_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "live_execution_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "real_canonical_update_application_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "l6_1_external_execution_enabled",
+            "l6_1_network_enabled",
+            "l6_1_publication_enabled",
+            "l6_1_outreach_enabled",
+            "l6_1_payment_enabled",
+            "l6_1_revenue_execution_enabled",
+            "ready_for_external_execution",
+            "ready_for_publication",
+            "ready_for_outreach",
+            "ready_for_payment",
+            "ready_for_revenue_execution",
+            "ready_for_mcp_execution",
+            "ready_for_canonical_update",
+            "ready_for_brain_memory_writeback",
+        ]:
+            if l6_mvp_artifact_sandbox.get(field) is not False:
+                report.fail(f"generated L6.1 MVP artifact sandbox summary must keep {field}=false")
+        if not 1 <= l6_mvp_artifact_sandbox.get("selected_hypotheses_count", 0) <= 3:
+            report.fail("generated L6.1 summary must select between 1 and 3 hypotheses")
+        if l6_mvp_artifact_sandbox.get("generated_case_count") != (
+            l6_mvp_artifact_sandbox.get("selected_hypotheses_count")
+        ):
+            report.fail("generated L6.1 summary case count must match selected count")
+        if l6_mvp_artifact_sandbox.get("next_recommended_milestone") != (
+            "L6.2 Governed External Observation Boundary v0"
+        ):
+            report.fail("generated L6.1 summary must point to L6.2 boundary design")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

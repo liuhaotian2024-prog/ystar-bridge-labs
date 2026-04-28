@@ -3,25 +3,19 @@
   "schema_version": "v0",
   "framework_status": "path_inventory_only",
   "current_mining_level": 0,
-  "artifacts_classified": 301,
-  "unsafe_artifacts_count": 204,
+  "artifacts_classified": 143,
+  "unsafe_artifacts_count": 115,
   "classes_seen": {
     "ACTIVE_AGENT_MARKER": 17,
     "BACKUP_DB": 1,
     "CACHE_SENTINEL": 5,
     "DAEMON_STATE": 4,
-    "DAILY_REPORT": 9,
     "DB_CORE": 1,
     "DB_SIDECARE": 6,
-    "DREAM_REPORT": 51,
-    "DRIFT_REPORT": 4,
-    "ESCALATION_REPORT": 23,
-    "FRAMEWORK_FILE": 16,
-    "LOG_RUNTIME": 31,
-    "PYCACHE": 40,
-    "UNKNOWN_OR_NON_RUNTIME": 81,
-    "UNKNOWN_RUNTIME_ARTIFACT": 10,
-    "WHITELIST_REPORT": 2
+    "LOG_RUNTIME": 30,
+    "PYCACHE": 41,
+    "UNKNOWN_OR_NON_RUNTIME": 28,
+    "UNKNOWN_RUNTIME_ARTIFACT": 10
   },
   "generated_manifest_ref": "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
   "forbidden_direct_reads": [
@@ -39,14 +33,9 @@
     "bounded_log_summarizer_future",
     "cache_sentinel_classifier_future",
     "daemon_state_metadata_adapter_future",
-    "daily_report_parser_future",
-    "dream_report_bounded_parser_future",
-    "drift_report_parser_future",
-    "escalation_report_parser_future",
     "ignore_or_cleanup_policy_future",
     "manual_triage_future",
-    "readonly_db_adapter_future",
-    "whitelist_report_parser_future"
+    "readonly_db_adapter_future"
   ],
   "safety_warning": "Console displays only curated path-level quarantine summary. No artifact contents were read."
 }

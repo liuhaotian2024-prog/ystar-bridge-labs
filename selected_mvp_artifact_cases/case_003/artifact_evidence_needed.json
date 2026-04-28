@@ -1,0 +1,16 @@
+{
+  "case_id": "case_003",
+  "evidence_needed": [
+    "reviewer confirms source trace matches L6.0 artifacts",
+    "reviewer confirms artifact is internally coherent",
+    "reviewer identifies any unsupported claims",
+    "future external observation boundary if any market signal is desired",
+    "future publication/outreach/payment approval before external use"
+  ],
+  "missing_evidence": [
+    "external recipient validation",
+    "market demand evidence",
+    "payer acceptance evidence",
+    "publication performance evidence"
+  ]
+}

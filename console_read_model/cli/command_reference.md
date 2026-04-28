@@ -163,6 +163,12 @@ python3 console_read_model/cli/team_console.py <command>
   physics, redeemability selection, MVP proof plans, governed experiment
   portfolio, strategic residual loop, hardcoding-forbidden policy, and blocked
   external/network/publication/payment/revenue execution state.
+- `meta-development-mvp-artifact-sandbox`: Prints the generated L6.1 MVP
+  artifact sandbox summary: selected hypotheses, internal artifact cases,
+  artifact generation scope, review gate, structural validation, externalization
+  blockers, strategic residual loop, readiness for L6.2 boundary design, and
+  blocked external/network/publication/outreach/payment/revenue/MCP/writeback
+  execution state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.
