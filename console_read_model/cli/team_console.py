@@ -44,6 +44,9 @@ PROJECTION_CYCLE = "console_read_model/generated/projection_cycle_summary.json"
 SHADOW_LEARNING_CYCLE = "console_read_model/generated/shadow_learning_cycle_summary.json"
 CROSS_REPO_GOVERNANCE = "console_read_model/generated/cross_repo_governance_summary.json"
 GOVERNED_MCP_ADAPTER = "console_read_model/generated/governed_mcp_adapter_summary.json"
+CONTROLLED_CANONICAL_LEARNING = (
+    "console_read_model/generated/controlled_canonical_learning_summary.json"
+)
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -63,7 +66,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -127,6 +130,7 @@ def load_all() -> dict[str, Any]:
         "shadow_learning_cycle": load_json(SHADOW_LEARNING_CYCLE),
         "cross_repo_governance": load_json(CROSS_REPO_GOVERNANCE),
         "governed_mcp_adapter": load_json(GOVERNED_MCP_ADAPTER),
+        "controlled_canonical_learning": load_json(CONTROLLED_CANONICAL_LEARNING),
     }
 
 
@@ -1172,6 +1176,72 @@ def cmd_governed_mcp_adapter(data: dict[str, Any]) -> None:
     print(f"warning: {adapter.get('warning')}")
 
 
+def cmd_controlled_canonical_learning(data: dict[str, Any]) -> None:
+    learning = data["controlled_canonical_learning"]
+    print("# Controlled Canonical Learning Design")
+    print()
+    print(
+        "L5.7 controlled canonical learning design defined: "
+        f"{learning.get('l5_7_controlled_canonical_learning_design_defined')}"
+    )
+    print(
+        "Y* non-mutation invariant defined: "
+        f"{learning.get('y_star_non_mutation_invariant_defined')}"
+    )
+    print(
+        "canonical learning target registry generated: "
+        f"{learning.get('canonical_learning_target_registry_generated')}"
+    )
+    print(f"promotion evidence bundle generated: {learning.get('promotion_evidence_bundle_generated')}")
+    print(f"promotion eligibility gate generated: {learning.get('promotion_eligibility_gate_generated')}")
+    print(
+        "canonical update package candidate generated: "
+        f"{learning.get('canonical_update_package_candidate_generated')}"
+    )
+    print(f"versioned patch plan generated: {learning.get('versioned_patch_plan_generated')}")
+    print(f"rollback/audit plan generated: {learning.get('rollback_audit_plan_generated')}")
+    print(
+        "post-promotion validation plan generated: "
+        f"{learning.get('post_promotion_validation_plan_generated')}"
+    )
+    print(f"dry-run promotion fixture generated: {learning.get('dry_run_promotion_fixture_generated')}")
+    print(f"no candidate approved: {not learning.get('candidate_approved')}")
+    print(f"no candidate applied: {not learning.get('candidate_applied')}")
+    print(f"no canonical policy mutation: {not learning.get('canonical_policy_mutation_performed')}")
+    print(f"no canonical update application: {not learning.get('canonical_update_application_performed')}")
+    print(f"no brain writeback: {not learning.get('brain_writeback_performed')}")
+    print(f"no memory ingestion: {not learning.get('memory_ingestion_performed')}")
+    print(f"no strategy mutation: {not learning.get('strategy_mutation_performed')}")
+    print(f"no Y* direct mutation: {not learning.get('y_star_direct_mutation_performed')}")
+    print(f"Y-star-gov unmodified: {learning.get('y_star_gov_unmodified')}")
+    print(f"gov-mcp unmodified: {learning.get('gov_mcp_unmodified')}")
+    print(f"live execution enabled: {learning.get('live_execution_enabled')}")
+    print(f"behavior execution enabled: {learning.get('behavior_execution_enabled')}")
+    print(f"external action enabled: {learning.get('external_action_enabled')}")
+    print(f"network enabled: {learning.get('network_enabled')}")
+    print(f"scheduler enabled: {learning.get('scheduler_enabled')}")
+    print(f"daemon enabled: {learning.get('daemon_enabled')}")
+    print(f"MCP server execution enabled: {learning.get('mcp_server_execution_enabled')}")
+    print(f"MCP tool execution enabled: {learning.get('mcp_tool_execution_enabled')}")
+    print(f"CIEU persistence enabled: {learning.get('cieu_persistence_enabled')}")
+    print(
+        "canonical update application enabled: "
+        f"{learning.get('canonical_update_application_enabled')}"
+    )
+    print(f"Y* direct mutation enabled: {learning.get('y_star_direct_mutation_enabled')}")
+    print(
+        "ready for L5.8 approved canonical update sandbox: "
+        f"{learning.get('ready_for_l5_8_approved_canonical_update_sandbox')}"
+    )
+    print(
+        "ready for L6 revenue opportunity discovery: "
+        f"{learning.get('ready_for_l6_revenue_opportunity_discovery')}"
+    )
+    print(f"next required milestone: {learning.get('next_required_milestone')}")
+    print(f"generated_readiness: {learning.get('generated_readiness')}")
+    print(f"warning: {learning.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -1395,6 +1465,21 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print(f"- {governed_mcp_adapter.get('generated_receipt_summary')}")
         print(f"- {governed_mcp_adapter.get('generated_residual_summary')}")
         print(f"- {governed_mcp_adapter.get('generated_readiness')}")
+    controlled_canonical_learning = data.get("controlled_canonical_learning", {})
+    if controlled_canonical_learning:
+        print()
+        print("Controlled canonical learning design:")
+        print(f"- {controlled_canonical_learning.get('generated_design_summary')}")
+        print(f"- {controlled_canonical_learning.get('generated_invariant_summary')}")
+        print(f"- {controlled_canonical_learning.get('generated_target_summary')}")
+        print(f"- {controlled_canonical_learning.get('generated_evidence_summary')}")
+        print(f"- {controlled_canonical_learning.get('generated_gate_summary')}")
+        print(f"- {controlled_canonical_learning.get('generated_package_summary')}")
+        print(f"- {controlled_canonical_learning.get('generated_patch_summary')}")
+        print(f"- {controlled_canonical_learning.get('generated_rollback_summary')}")
+        print(f"- {controlled_canonical_learning.get('generated_validation_summary')}")
+        print(f"- {controlled_canonical_learning.get('generated_promotion_summary')}")
+        print(f"- {controlled_canonical_learning.get('generated_readiness')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -1451,6 +1536,8 @@ def cmd_validate_local() -> int:
         PROJECTION_CYCLE,
         SHADOW_LEARNING_CYCLE,
         CROSS_REPO_GOVERNANCE,
+        GOVERNED_MCP_ADAPTER,
+        CONTROLLED_CANONICAL_LEARNING,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -1522,6 +1609,8 @@ def cmd_validate_local() -> int:
             failures.append("cross_repo_governance_summary missing from team console snapshot")
         if "governed_mcp_adapter_summary" not in snapshot:
             failures.append("governed_mcp_adapter_summary missing from team console snapshot")
+        if "controlled_canonical_learning_summary" not in snapshot:
+            failures.append("controlled_canonical_learning_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -2977,6 +3066,8 @@ def main(argv: list[str]) -> int:
         cmd_cross_repo_governance(data)
     elif command == "governed-mcp-adapter":
         cmd_governed_mcp_adapter(data)
+    elif command == "controlled-canonical-learning":
+        cmd_controlled_canonical_learning(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

@@ -1,0 +1,264 @@
+{
+  "schema_name": "ystar.y_star_non_mutation_invariant.residual_boundary",
+  "schema_version": "v0",
+  "boundary_id": "residual-to-projection-policy-boundary-v0",
+  "allowed_learning_surfaces": [
+    "projection_policy",
+    "behavior_y_star_generation_rule",
+    "pre_u_mapping_rule",
+    "work_alignment_rule",
+    "residual_classification_rule",
+    "evidence_requirement_rule",
+    "safety_boundary_rule"
+  ],
+  "denied_mutation_surfaces": [
+    "mission_y_star_direct_mutation",
+    "behavior_y_star_direct_overwrite",
+    "brain_direct_writeback",
+    "memory_direct_ingestion",
+    "canonical_policy_direct_mutation",
+    "strategy_direct_mutation"
+  ],
+  "residual_boundary_map": [
+    {
+      "residual_class": "projection_alignment_residual",
+      "allowed_learning_surface": "projection_policy",
+      "denied_mutation_surface": [
+        "mission_y_star_direct_mutation",
+        "behavior_y_star_direct_overwrite",
+        "brain_direct_writeback",
+        "memory_direct_ingestion",
+        "canonical_policy_direct_mutation",
+        "strategy_direct_mutation"
+      ],
+      "required_review": "human_or_governance_review",
+      "required_evidence": [
+        "source residual",
+        "source learning candidate",
+        "shadow effect or dry-run evidence",
+        "non-bypass invariant evidence"
+      ],
+      "approval_requirement": "explicit approval required before canonical application",
+      "allowed_shadow_effect": "preview projection or mapping rule change",
+      "allowed_canonical_candidate_effect": "non-applied package candidate only",
+      "forbidden_direct_effect": [
+        "residual directly becoming new Y*",
+        "direct mission Y* rewrite",
+        "direct behavior Y* overwrite",
+        "brain writeback",
+        "memory ingestion",
+        "canonical direct mutation",
+        "strategy direct mutation"
+      ]
+    },
+    {
+      "residual_class": "behavior_y_star_generation_gap",
+      "allowed_learning_surface": "behavior_y_star_generation_rule",
+      "denied_mutation_surface": [
+        "mission_y_star_direct_mutation",
+        "behavior_y_star_direct_overwrite",
+        "brain_direct_writeback",
+        "memory_direct_ingestion",
+        "canonical_policy_direct_mutation",
+        "strategy_direct_mutation"
+      ],
+      "required_review": "human_or_governance_review",
+      "required_evidence": [
+        "source residual",
+        "source learning candidate",
+        "shadow effect or dry-run evidence",
+        "non-bypass invariant evidence"
+      ],
+      "approval_requirement": "explicit approval required before canonical application",
+      "allowed_shadow_effect": "preview projection or mapping rule change",
+      "allowed_canonical_candidate_effect": "non-applied package candidate only",
+      "forbidden_direct_effect": [
+        "residual directly becoming new Y*",
+        "direct mission Y* rewrite",
+        "direct behavior Y* overwrite",
+        "brain writeback",
+        "memory ingestion",
+        "canonical direct mutation",
+        "strategy direct mutation"
+      ]
+    },
+    {
+      "residual_class": "pre_u_mapping_residual",
+      "allowed_learning_surface": "pre_u_mapping_rule",
+      "denied_mutation_surface": [
+        "mission_y_star_direct_mutation",
+        "behavior_y_star_direct_overwrite",
+        "brain_direct_writeback",
+        "memory_direct_ingestion",
+        "canonical_policy_direct_mutation",
+        "strategy_direct_mutation"
+      ],
+      "required_review": "human_or_governance_review",
+      "required_evidence": [
+        "source residual",
+        "source learning candidate",
+        "shadow effect or dry-run evidence",
+        "non-bypass invariant evidence"
+      ],
+      "approval_requirement": "explicit approval required before canonical application",
+      "allowed_shadow_effect": "preview projection or mapping rule change",
+      "allowed_canonical_candidate_effect": "non-applied package candidate only",
+      "forbidden_direct_effect": [
+        "residual directly becoming new Y*",
+        "direct mission Y* rewrite",
+        "direct behavior Y* overwrite",
+        "brain writeback",
+        "memory ingestion",
+        "canonical direct mutation",
+        "strategy direct mutation"
+      ]
+    },
+    {
+      "residual_class": "work_alignment_gap",
+      "allowed_learning_surface": "work_alignment_rule",
+      "denied_mutation_surface": [
+        "mission_y_star_direct_mutation",
+        "behavior_y_star_direct_overwrite",
+        "brain_direct_writeback",
+        "memory_direct_ingestion",
+        "canonical_policy_direct_mutation",
+        "strategy_direct_mutation"
+      ],
+      "required_review": "human_or_governance_review",
+      "required_evidence": [
+        "source residual",
+        "source learning candidate",
+        "shadow effect or dry-run evidence",
+        "non-bypass invariant evidence"
+      ],
+      "approval_requirement": "explicit approval required before canonical application",
+      "allowed_shadow_effect": "preview projection or mapping rule change",
+      "allowed_canonical_candidate_effect": "non-applied package candidate only",
+      "forbidden_direct_effect": [
+        "residual directly becoming new Y*",
+        "direct mission Y* rewrite",
+        "direct behavior Y* overwrite",
+        "brain writeback",
+        "memory ingestion",
+        "canonical direct mutation",
+        "strategy direct mutation"
+      ]
+    },
+    {
+      "residual_class": "residual_classification_gap",
+      "allowed_learning_surface": "residual_classification_rule",
+      "denied_mutation_surface": [
+        "mission_y_star_direct_mutation",
+        "behavior_y_star_direct_overwrite",
+        "brain_direct_writeback",
+        "memory_direct_ingestion",
+        "canonical_policy_direct_mutation",
+        "strategy_direct_mutation"
+      ],
+      "required_review": "human_or_governance_review",
+      "required_evidence": [
+        "source residual",
+        "source learning candidate",
+        "shadow effect or dry-run evidence",
+        "non-bypass invariant evidence"
+      ],
+      "approval_requirement": "explicit approval required before canonical application",
+      "allowed_shadow_effect": "preview projection or mapping rule change",
+      "allowed_canonical_candidate_effect": "non-applied package candidate only",
+      "forbidden_direct_effect": [
+        "residual directly becoming new Y*",
+        "direct mission Y* rewrite",
+        "direct behavior Y* overwrite",
+        "brain writeback",
+        "memory ingestion",
+        "canonical direct mutation",
+        "strategy direct mutation"
+      ]
+    },
+    {
+      "residual_class": "evidence_gap_residual",
+      "allowed_learning_surface": "evidence_requirement_rule",
+      "denied_mutation_surface": [
+        "mission_y_star_direct_mutation",
+        "behavior_y_star_direct_overwrite",
+        "brain_direct_writeback",
+        "memory_direct_ingestion",
+        "canonical_policy_direct_mutation",
+        "strategy_direct_mutation"
+      ],
+      "required_review": "human_or_governance_review",
+      "required_evidence": [
+        "source residual",
+        "source learning candidate",
+        "shadow effect or dry-run evidence",
+        "non-bypass invariant evidence"
+      ],
+      "approval_requirement": "explicit approval required before canonical application",
+      "allowed_shadow_effect": "preview projection or mapping rule change",
+      "allowed_canonical_candidate_effect": "non-applied package candidate only",
+      "forbidden_direct_effect": [
+        "residual directly becoming new Y*",
+        "direct mission Y* rewrite",
+        "direct behavior Y* overwrite",
+        "brain writeback",
+        "memory ingestion",
+        "canonical direct mutation",
+        "strategy direct mutation"
+      ]
+    },
+    {
+      "residual_class": "live_or_writeback_blocker_residual",
+      "allowed_learning_surface": "safety_boundary_rule",
+      "denied_mutation_surface": [
+        "mission_y_star_direct_mutation",
+        "behavior_y_star_direct_overwrite",
+        "brain_direct_writeback",
+        "memory_direct_ingestion",
+        "canonical_policy_direct_mutation",
+        "strategy_direct_mutation"
+      ],
+      "required_review": "human_or_governance_review",
+      "required_evidence": [
+        "source residual",
+        "source learning candidate",
+        "shadow effect or dry-run evidence",
+        "non-bypass invariant evidence"
+      ],
+      "approval_requirement": "explicit approval required before canonical application",
+      "allowed_shadow_effect": "preview projection or mapping rule change",
+      "allowed_canonical_candidate_effect": "non-applied package candidate only",
+      "forbidden_direct_effect": [
+        "residual directly becoming new Y*",
+        "direct mission Y* rewrite",
+        "direct behavior Y* overwrite",
+        "brain writeback",
+        "memory ingestion",
+        "canonical direct mutation",
+        "strategy direct mutation"
+      ]
+    }
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "canonical_update_application_enabled": false,
+    "y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

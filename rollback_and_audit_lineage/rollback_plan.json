@@ -1,0 +1,61 @@
+{
+  "schema_name": "ystar.rollback_and_audit_lineage.rollback_plan",
+  "schema_version": "v0",
+  "rollback_plan_id": "canonical-learning-rollback-plan-v0",
+  "source_patch_plan_id": "versioned-canonical-patch-plan-v0",
+  "rollback_scope": [
+    "projection_policy",
+    "behavior_y_star_generation_rule",
+    "pre_u_mapping_rule",
+    "mcp_interface_contract",
+    "residual_classification_policy",
+    "evidence_collection_policy",
+    "learning_eligibility_policy"
+  ],
+  "rollback_preconditions": [
+    "future canonical application occurred",
+    "snapshot or parent version is available",
+    "rollback approval gate is satisfied"
+  ],
+  "rollback_steps": [
+    "pause affected live path",
+    "restore parent canonical artifact version",
+    "rerun invariant checks",
+    "rerun post-promotion validation subset",
+    "emit rollback audit record"
+  ],
+  "rollback_validation_checks": [
+    "Y* lineage preserved",
+    "MCP non-bypass preserved",
+    "no brain/memory direct writeback",
+    "safety flags remain blocked"
+  ],
+  "rollback_owner_or_gate": "human_or_governance_review_gate",
+  "rollback_required_before_live": true,
+  "evidence_refs": [
+    "versioned_canonical_patch_plan/versioned_canonical_patch_plan.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "canonical_update_application_enabled": false,
+    "y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

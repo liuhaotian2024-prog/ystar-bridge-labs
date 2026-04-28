@@ -1,0 +1,66 @@
+{
+  "schema_name": "ystar.versioned_canonical_patch_plan.plan",
+  "schema_version": "v0",
+  "patch_plan_id": "versioned-canonical-patch-plan-v0",
+  "source_package_id": "canonical-update-package-candidate-v0",
+  "target_version_family": "controlled_projection_learning_policy",
+  "proposed_new_version": "v0.shadow-candidate-plus-1",
+  "affected_canonical_artifact_classes": [
+    "projection_policy",
+    "behavior_y_star_generation_rule",
+    "pre_u_mapping_rule",
+    "mcp_interface_contract",
+    "residual_classification_policy",
+    "evidence_collection_policy",
+    "learning_eligibility_policy"
+  ],
+  "proposed_patch_operations": [
+    "add trace completeness rule",
+    "add Y* non-mutation invariant check",
+    "tighten Pre-U mapping denied-scope requirements",
+    "add MCP non-bypass evidence requirement",
+    "add no-execution residual classification rule"
+  ],
+  "required_pre_application_checks": [
+    "approval record present",
+    "rollback plan present",
+    "post-promotion validation plan present",
+    "Y* non-mutation invariant passes",
+    "MCP non-bypass invariant passes"
+  ],
+  "required_approval_records": [
+    "human_or_governance_approval_record"
+  ],
+  "required_backup_or_snapshot": "canonical_policy_snapshot_required_before_application",
+  "required_rollback_plan": "rollback_and_audit_lineage/rollback_plan.json",
+  "required_post_application_validation": "post_promotion_validation_plan/post_promotion_validation_plan.json",
+  "application_mode": "blocked_dry_run_plan_only",
+  "applied_now": false,
+  "canonical_policy_mutation_performed": false,
+  "evidence_refs": [
+    "canonical_update_package_candidate/canonical_update_package_candidate.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "canonical_update_application_enabled": false,
+    "y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schema_name": "ystar.rollback_and_audit_lineage.audit_record",
+  "schema_version": "v0",
+  "audit_record_id": "canonical-learning-audit-lineage-record-v0",
+  "source_residual_ids": [
+    "residual-review-gate-decision-001",
+    "mcp-residual-delta-v0"
+  ],
+  "source_learning_candidate_ids": [
+    "projection-policy-update-candidate-001",
+    "mcp-review-only-learning-candidate-v0"
+  ],
+  "source_shadow_patch_ids": [
+    "shadow-projection-policy-patch-001"
+  ],
+  "source_promotion_decision_id": "canonical-promotion-eligibility-decision-v0",
+  "source_update_package_id": "canonical-update-package-candidate-v0",
+  "source_patch_plan_id": "versioned-canonical-patch-plan-v0",
+  "approval_status": "not_approved",
+  "application_status": "not_applied",
+  "canonical_mutation_performed": false,
+  "brain_memory_mutation_performed": false,
+  "evidence_refs": [
+    "canonical_promotion_evidence_bundle/canonical_promotion_evidence_bundle.json",
+    "canonical_update_package_candidate/canonical_update_package_candidate.json",
+    "versioned_canonical_patch_plan/versioned_canonical_patch_plan.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "canonical_update_application_enabled": false,
+    "y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

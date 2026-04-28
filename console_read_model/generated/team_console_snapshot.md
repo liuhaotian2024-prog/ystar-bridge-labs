@@ -76,6 +76,7 @@ Ready now:
 - review-gated shadow learning cycle summary
 - cross-repo governance contract proof summary
 - governed MCP dry-run adapter summary
+- controlled canonical learning design summary
 
 Not ready:
 - runtime generator
@@ -104,15 +105,15 @@ Not ready:
 - enabled live-boundary harness
 - enabled CIEU runtime event persistence
 - approved governed action registry
-- controlled canonical learning architecture
+- approved canonical update sandbox
 - L6 revenue opportunity discovery
 
 ## Runtime Artifact Quarantine Summary
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 286
-- Unsafe artifacts count: 189
+- Artifacts classified: 289
+- Unsafe artifacts count: 190
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -121,13 +122,13 @@ Not ready:
   - DAILY_REPORT: 9
   - DB_CORE: 1
   - DB_SIDECARE: 6
-  - DREAM_REPORT: 45
+  - DREAM_REPORT: 46
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
   - FRAMEWORK_FILE: 16
   - LOG_RUNTIME: 31
   - PYCACHE: 31
-  - UNKNOWN_OR_NON_RUNTIME: 81
+  - UNKNOWN_OR_NON_RUNTIME: 83
   - UNKNOWN_RUNTIME_ARTIFACT: 10
   - WHITELIST_REPORT: 2
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
@@ -165,23 +166,23 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 286
-- Artifacts with disposition: 286
+- Total artifacts: 289
+- Artifacts with disposition: 289
 - Safe-mined to review queue: 21
 - Forbidden direct read count: 106
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
-  - deferred_markdown_report_not_selected: 62
+  - deferred_markdown_report_not_selected: 63
   - deferred_requires_bounded_log_adapter: 31
   - deferred_requires_classification: 10
   - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 31
-  - ignored_or_non_runtime: 97
+  - ignored_or_non_runtime: 99
   - safe_mined_to_review_queue: 21
 - Evidence scoring status:
-  - not_started: 286
+  - not_started: 289
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -253,7 +254,7 @@ Not ready:
 ## Cross-Repo Governance Alignment
 
 - alignment_accepted: False
-- ystar-company HEAD: 8c2f11ad tools: add cross repo governance contract proof
+- ystar-company HEAD: eb0f4c23 tools: add governed mcp dry run adapter
 - Y-star-gov HEAD: 9c4aee3 tools: add governance endpoint acceptance runner
 - Y-star-gov endpoint accepted: False
 - labs runtime accepted: False
@@ -385,9 +386,9 @@ Not ready:
 - next_required_milestone: L4.4 First Governed Read-Only Observation Tool Wrapper v0
 - bucket_counts:
   - A_adopt_now_read_only: 1
-  - B_wrap_as_governed_tool: 885
+  - B_wrap_as_governed_tool: 886
   - C_rewrite_from_design: 8
-  - D_quarantine_as_evidence_ore: 6
+  - D_quarantine_as_evidence_ore: 5
   - E_retire_do_not_use: 0
 - Warning: Triage is classification only; no asset is absorbed or enabled.
 
@@ -562,7 +563,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 4258
+- assets_scanned: 4325
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -722,6 +723,33 @@ Not ready:
 - next_required_milestone: L5.7 Controlled Canonical Learning Design v0
 - Warning: L5.6 proves a governed MCP dry-run adapter boundary only. gov-mcp was not run, MCP tools/resources were not executed or mutated, and Y-star-gov/gov-mcp remain unmodified.
 
+## Controlled Canonical Learning Design
+
+- l5_7_controlled_canonical_learning_design_defined: True
+- y_star_non_mutation_invariant_defined: True
+- canonical_learning_target_registry_generated: True
+- promotion_evidence_bundle_generated: True
+- promotion_eligibility_gate_generated: True
+- canonical_update_package_candidate_generated: True
+- versioned_patch_plan_generated: True
+- rollback_audit_plan_generated: True
+- post_promotion_validation_plan_generated: True
+- dry_run_promotion_fixture_generated: True
+- candidate_approved: False
+- candidate_applied: False
+- canonical_policy_mutation_performed: False
+- canonical_update_application_performed: False
+- brain_writeback_performed: False
+- memory_ingestion_performed: False
+- strategy_mutation_performed: False
+- y_star_direct_mutation_performed: False
+- y_star_gov_unmodified: True
+- gov_mcp_unmodified: True
+- ready_for_l5_8_approved_canonical_update_sandbox: True
+- ready_for_l6_revenue_opportunity_discovery: False
+- next_required_milestone: L5.8 Approved Canonical Update Sandbox v0
+- Warning: L5.7 defines controlled canonical learning promotion architecture only. Candidates remain unapproved and unapplied; canonical policy, brain, memory, strategy, Y*, Y-star-gov, and gov-mcp remain unmodified.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -756,7 +784,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - define L4.8 governed recurring observation loop contract
 - build L5.0 review-gated learning candidate queue
 - build L5.1 mission field functional projection harness from archaeology merge plan
-- build controlled canonical learning architecture from L5.4 shadow learning proof
+- build L5.8 approved canonical update sandbox from L5.7 promotion design
 
 ## Warnings / Gaps
 
@@ -797,4 +825,5 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Field functional archaeology exists as a merge plan only; L5 projection harness is not implemented yet.
 - Field functional auto-projection core exists as a dry-run projection core only; behavior execution remains disabled.
 - Integrated review-gated shadow learning cycle exists as shadow-only artifacts; controlled canonical learning is not implemented yet.
-- Cross-repo governance contract proof exists as read-only boundary alignment; governed MCP dry-run adapter is not implemented yet.
+- Cross-repo governance contract proof exists as read-only boundary alignment; governed MCP dry-run adapter is implemented as dry-run only.
+- Controlled canonical learning design exists as a promotion dry-run only; approved canonical update sandbox is not implemented yet.

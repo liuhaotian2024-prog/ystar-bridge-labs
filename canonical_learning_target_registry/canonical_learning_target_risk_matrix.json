@@ -1,0 +1,128 @@
+{
+  "schema_name": "ystar.canonical_learning_target_registry.risk_matrix",
+  "schema_version": "v0",
+  "risk_matrix_id": "canonical-learning-target-risk-matrix-v0",
+  "risk_classes": [
+    "low_artifact_policy",
+    "medium_projection_policy",
+    "high_brain_memory_boundary",
+    "high_strategy_boundary",
+    "critical_y_star_boundary",
+    "critical_live_execution_boundary"
+  ],
+  "target_risks": [
+    {
+      "target_name": "projection_policy",
+      "risk_class": "medium_projection_policy",
+      "requires_human_review": true,
+      "requires_governance_review": true
+    },
+    {
+      "target_name": "projection_operator_version",
+      "risk_class": "medium_projection_policy",
+      "requires_human_review": true,
+      "requires_governance_review": true
+    },
+    {
+      "target_name": "behavior_y_star_generation_rule",
+      "risk_class": "critical_y_star_boundary",
+      "requires_human_review": true,
+      "requires_governance_review": true
+    },
+    {
+      "target_name": "pre_u_mapping_rule",
+      "risk_class": "medium_projection_policy",
+      "requires_human_review": true,
+      "requires_governance_review": true
+    },
+    {
+      "target_name": "governance_expectation_mapping",
+      "risk_class": "medium_projection_policy",
+      "requires_human_review": true,
+      "requires_governance_review": true
+    },
+    {
+      "target_name": "bridge_receipt_requirement",
+      "risk_class": "low_artifact_policy",
+      "requires_human_review": true,
+      "requires_governance_review": true
+    },
+    {
+      "target_name": "mcp_interface_contract",
+      "risk_class": "medium_projection_policy",
+      "requires_human_review": true,
+      "requires_governance_review": true
+    },
+    {
+      "target_name": "cieu_receipt_requirement",
+      "risk_class": "low_artifact_policy",
+      "requires_human_review": true,
+      "requires_governance_review": true
+    },
+    {
+      "target_name": "residual_classification_policy",
+      "risk_class": "medium_projection_policy",
+      "requires_human_review": true,
+      "requires_governance_review": true
+    },
+    {
+      "target_name": "evidence_collection_policy",
+      "risk_class": "low_artifact_policy",
+      "requires_human_review": true,
+      "requires_governance_review": true
+    },
+    {
+      "target_name": "review_gate_policy",
+      "risk_class": "medium_projection_policy",
+      "requires_human_review": true,
+      "requires_governance_review": true
+    },
+    {
+      "target_name": "learning_eligibility_policy",
+      "risk_class": "medium_projection_policy",
+      "requires_human_review": true,
+      "requires_governance_review": true
+    },
+    {
+      "target_name": "brain_update_policy",
+      "risk_class": "high_brain_memory_boundary",
+      "requires_human_review": true,
+      "requires_governance_review": true
+    },
+    {
+      "target_name": "memory_ingestion_policy",
+      "risk_class": "high_brain_memory_boundary",
+      "requires_human_review": true,
+      "requires_governance_review": true
+    },
+    {
+      "target_name": "strategy_update_policy",
+      "risk_class": "high_strategy_boundary",
+      "requires_human_review": true,
+      "requires_governance_review": true
+    }
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "canonical_update_application_enabled": false,
+    "y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

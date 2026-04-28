@@ -1,0 +1,82 @@
+{
+  "schema_name": "ystar.post_promotion_validation_plan.matrix",
+  "schema_version": "v0",
+  "matrix_id": "post-promotion-validation-matrix-v0",
+  "validation_matrix": [
+    {
+      "validation_target": "py_compile",
+      "required_before_application": true
+    },
+    {
+      "validation_target": "JSON validation",
+      "required_before_application": true
+    },
+    {
+      "validation_target": "static read-model validator",
+      "required_before_application": true
+    },
+    {
+      "validation_target": "local safety wrapper",
+      "required_before_application": true
+    },
+    {
+      "validation_target": "L5.0-L5.6 targeted pytest",
+      "required_before_application": true
+    },
+    {
+      "validation_target": "new canonical learning tests",
+      "required_before_application": true
+    },
+    {
+      "validation_target": "console/read-model smoke",
+      "required_before_application": true
+    },
+    {
+      "validation_target": "Y* non-mutation invariant check",
+      "required_before_application": true
+    },
+    {
+      "validation_target": "MCP non-bypass invariant check",
+      "required_before_application": true
+    },
+    {
+      "validation_target": "no direct writeback invariant check",
+      "required_before_application": true
+    },
+    {
+      "validation_target": "rollback plan check",
+      "required_before_application": true
+    },
+    {
+      "validation_target": "version lineage check",
+      "required_before_application": true
+    },
+    {
+      "validation_target": "post-application residual sanity check",
+      "required_before_application": true
+    }
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "canonical_update_application_enabled": false,
+    "y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

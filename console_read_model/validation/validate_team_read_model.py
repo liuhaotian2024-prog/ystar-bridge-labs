@@ -376,6 +376,9 @@ def main() -> int:
     required_governed_mcp_dry_run_adapter_files = expected.get(
         "required_governed_mcp_dry_run_adapter_files", []
     )
+    required_controlled_canonical_learning_design_files = expected.get(
+        "required_controlled_canonical_learning_design_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -554,6 +557,12 @@ def main() -> int:
         check_exists(path, report, "governed MCP dry-run adapter file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "governed MCP dry-run adapter JSON")
+
+    for rel in required_controlled_canonical_learning_design_files:
+        path = ROOT / rel
+        check_exists(path, report, "controlled canonical learning design file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "controlled canonical learning design JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -3217,6 +3226,129 @@ def main() -> int:
             "L5.7 Controlled Canonical Learning Design v0"
         ):
             report.fail("generated governed MCP adapter summary must point to L5.7")
+
+    controlled_canonical_learning = generated_json.get(
+        "console_read_model/generated/controlled_canonical_learning_summary.json"
+    )
+    if controlled_canonical_learning:
+        for field in [
+            "l5_7_controlled_canonical_learning_design_defined",
+            "y_star_non_mutation_invariant_defined",
+            "canonical_learning_target_registry_generated",
+            "promotion_evidence_bundle_generated",
+            "promotion_eligibility_gate_generated",
+            "canonical_update_package_candidate_generated",
+            "versioned_patch_plan_generated",
+            "rollback_audit_plan_generated",
+            "post_promotion_validation_plan_generated",
+            "dry_run_promotion_fixture_generated",
+            "candidate_approved",
+            "candidate_applied",
+            "canonical_policy_mutation_performed",
+            "canonical_update_application_performed",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "strategy_mutation_performed",
+            "y_star_direct_mutation_performed",
+            "actual_canonical_application_blocked",
+            "candidate_approval_blocked",
+            "brain_writeback_blocked",
+            "memory_ingestion_blocked",
+            "y_star_direct_mutation_blocked",
+            "y_star_gov_unmodified",
+            "gov_mcp_unmodified",
+            "ready_for_l5_8_approved_canonical_update_sandbox",
+            "ready_for_l6_revenue_opportunity_discovery",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "mcp_server_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "strategy_mutation_enabled",
+            "candidate_auto_approval_enabled",
+            "canonical_policy_mutation_enabled",
+            "canonical_update_application_enabled",
+            "y_star_direct_mutation_enabled",
+            "y_star_gov_modification_enabled",
+            "gov_mcp_modification_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "next_required_milestone",
+            "generated_design_summary",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in controlled_canonical_learning:
+                report.pass_(f"generated controlled canonical learning summary field present: {field}")
+            else:
+                report.fail(f"generated controlled canonical learning summary missing field: {field}")
+        for field in [
+            "l5_7_controlled_canonical_learning_design_defined",
+            "y_star_non_mutation_invariant_defined",
+            "canonical_learning_target_registry_generated",
+            "promotion_evidence_bundle_generated",
+            "promotion_eligibility_gate_generated",
+            "canonical_update_package_candidate_generated",
+            "versioned_patch_plan_generated",
+            "rollback_audit_plan_generated",
+            "post_promotion_validation_plan_generated",
+            "dry_run_promotion_fixture_generated",
+            "actual_canonical_application_blocked",
+            "candidate_approval_blocked",
+            "brain_writeback_blocked",
+            "memory_ingestion_blocked",
+            "y_star_direct_mutation_blocked",
+            "y_star_gov_unmodified",
+            "gov_mcp_unmodified",
+            "ready_for_l5_8_approved_canonical_update_sandbox",
+        ]:
+            if controlled_canonical_learning.get(field) is not True:
+                report.fail(f"generated controlled canonical learning summary must keep {field}=true")
+        for field in [
+            "candidate_approved",
+            "candidate_applied",
+            "canonical_policy_mutation_performed",
+            "canonical_update_application_performed",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "strategy_mutation_performed",
+            "y_star_direct_mutation_performed",
+            "ready_for_l6_revenue_opportunity_discovery",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "mcp_server_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "strategy_mutation_enabled",
+            "candidate_auto_approval_enabled",
+            "canonical_policy_mutation_enabled",
+            "canonical_update_application_enabled",
+            "y_star_direct_mutation_enabled",
+            "y_star_gov_modification_enabled",
+            "gov_mcp_modification_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+        ]:
+            if controlled_canonical_learning.get(field) is not False:
+                report.fail(f"generated controlled canonical learning summary must keep {field}=false")
+        if controlled_canonical_learning.get("next_required_milestone") != (
+            "L5.8 Approved Canonical Update Sandbox v0"
+        ):
+            report.fail("generated controlled canonical learning summary must point to L5.8")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

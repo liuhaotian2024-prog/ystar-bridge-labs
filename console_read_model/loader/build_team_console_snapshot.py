@@ -88,6 +88,17 @@ CURATED_SOURCES = [
     "mcp_dry_run_receipt_and_cieu/mcp_receipt_cieu_summary.json",
     "mcp_residual_and_learning_candidate/mcp_residual_learning_summary.json",
     "governed_mcp_adapter_readiness/governed_mcp_adapter_readiness.json",
+    "controlled_canonical_learning_design/controlled_canonical_learning_summary.json",
+    "y_star_non_mutation_invariant/y_star_non_mutation_summary.json",
+    "canonical_learning_target_registry/canonical_learning_target_summary.json",
+    "canonical_promotion_evidence_bundle/evidence_bundle_summary.json",
+    "canonical_promotion_eligibility_gate/canonical_promotion_gate_summary.json",
+    "canonical_update_package_candidate/canonical_update_package_summary.json",
+    "versioned_canonical_patch_plan/versioned_patch_plan_summary.json",
+    "rollback_and_audit_lineage/rollback_audit_summary.json",
+    "post_promotion_validation_plan/post_promotion_validation_summary.json",
+    "dry_run_promotion_decision_fixture/dry_run_promotion_summary.json",
+    "controlled_canonical_learning_readiness/controlled_canonical_learning_readiness.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -2209,6 +2220,148 @@ def build_governed_mcp_adapter_summary(
     }
 
 
+def build_controlled_canonical_learning_summary(
+    design_summary: dict[str, Any] | None,
+    invariant_summary: dict[str, Any] | None,
+    target_summary: dict[str, Any] | None,
+    evidence_summary: dict[str, Any] | None,
+    gate_summary: dict[str, Any] | None,
+    package_summary: dict[str, Any] | None,
+    patch_summary: dict[str, Any] | None,
+    rollback_summary: dict[str, Any] | None,
+    validation_summary: dict[str, Any] | None,
+    promotion_summary: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.controlled_canonical_learning_summary",
+            "schema_version": "v0",
+            "l5_7_controlled_canonical_learning_design_defined": False,
+            "ready_for_l5_8_approved_canonical_update_sandbox": False,
+            "ready_for_l6_revenue_opportunity_discovery": False,
+            "warning": "Controlled canonical learning design has not been generated yet.",
+        }
+    design_summary = design_summary or {}
+    invariant_summary = invariant_summary or {}
+    target_summary = target_summary or {}
+    evidence_summary = evidence_summary or {}
+    gate_summary = gate_summary or {}
+    package_summary = package_summary or {}
+    patch_summary = patch_summary or {}
+    rollback_summary = rollback_summary or {}
+    validation_summary = validation_summary or {}
+    promotion_summary = promotion_summary or {}
+    return {
+        "schema_name": "ystar.console_read_model.generated.controlled_canonical_learning_summary",
+        "schema_version": "v0",
+        "l5_7_controlled_canonical_learning_design_defined": design_summary.get(
+            "l5_7_controlled_canonical_learning_design_defined"
+        ),
+        "y_star_non_mutation_invariant_defined": invariant_summary.get(
+            "y_star_non_mutation_invariant_defined"
+        ),
+        "canonical_learning_target_registry_generated": target_summary.get(
+            "canonical_learning_target_registry_generated"
+        ),
+        "promotion_evidence_bundle_generated": evidence_summary.get(
+            "promotion_evidence_bundle_generated"
+        ),
+        "promotion_eligibility_gate_generated": gate_summary.get(
+            "promotion_eligibility_gate_generated"
+        ),
+        "canonical_update_package_candidate_generated": package_summary.get(
+            "canonical_update_package_candidate_generated"
+        ),
+        "versioned_patch_plan_generated": patch_summary.get("versioned_patch_plan_generated"),
+        "rollback_audit_plan_generated": rollback_summary.get("rollback_plan_generated")
+        and rollback_summary.get("audit_lineage_record_generated"),
+        "post_promotion_validation_plan_generated": validation_summary.get(
+            "post_promotion_validation_plan_generated"
+        ),
+        "dry_run_promotion_fixture_generated": promotion_summary.get(
+            "dry_run_promotion_fixture_generated"
+        ),
+        "candidate_approved": readiness_summary.get("candidate_approved"),
+        "candidate_applied": readiness_summary.get("candidate_applied"),
+        "canonical_policy_mutation_performed": readiness_summary.get(
+            "canonical_policy_mutation_performed"
+        ),
+        "canonical_update_application_performed": readiness_summary.get(
+            "canonical_update_application_performed"
+        ),
+        "brain_writeback_performed": readiness_summary.get("brain_writeback_performed"),
+        "memory_ingestion_performed": readiness_summary.get("memory_ingestion_performed"),
+        "strategy_mutation_performed": readiness_summary.get("strategy_mutation_performed"),
+        "y_star_direct_mutation_performed": readiness_summary.get(
+            "y_star_direct_mutation_performed"
+        ),
+        "actual_canonical_application_blocked": readiness_summary.get(
+            "actual_canonical_application_blocked"
+        ),
+        "candidate_approval_blocked": readiness_summary.get("candidate_approval_blocked"),
+        "brain_writeback_blocked": readiness_summary.get("brain_writeback_blocked"),
+        "memory_ingestion_blocked": readiness_summary.get("memory_ingestion_blocked"),
+        "y_star_direct_mutation_blocked": readiness_summary.get("y_star_direct_mutation_blocked"),
+        "y_star_gov_unmodified": readiness_summary.get("y_star_gov_unmodified"),
+        "gov_mcp_unmodified": readiness_summary.get("gov_mcp_unmodified"),
+        "ready_for_l5_8_approved_canonical_update_sandbox": readiness_summary.get(
+            "ready_for_l5_8_approved_canonical_update_sandbox"
+        ),
+        "ready_for_l6_revenue_opportunity_discovery": readiness_summary.get(
+            "ready_for_l6_revenue_opportunity_discovery"
+        ),
+        "live_execution_enabled": readiness_summary.get("live_execution_enabled"),
+        "behavior_execution_enabled": readiness_summary.get("behavior_execution_enabled"),
+        "external_action_enabled": readiness_summary.get("external_action_enabled"),
+        "network_enabled": readiness_summary.get("network_enabled"),
+        "scheduler_enabled": readiness_summary.get("scheduler_enabled"),
+        "daemon_enabled": readiness_summary.get("daemon_enabled"),
+        "mcp_server_execution_enabled": readiness_summary.get("mcp_server_execution_enabled"),
+        "mcp_tool_execution_enabled": readiness_summary.get("mcp_tool_execution_enabled"),
+        "cieu_persistence_enabled": readiness_summary.get("cieu_persistence_enabled"),
+        "brain_writeback_enabled": readiness_summary.get("brain_writeback_enabled"),
+        "memory_ingestion_enabled": readiness_summary.get("memory_ingestion_enabled"),
+        "strategy_mutation_enabled": readiness_summary.get("strategy_mutation_enabled"),
+        "candidate_auto_approval_enabled": readiness_summary.get("candidate_auto_approval_enabled"),
+        "canonical_policy_mutation_enabled": readiness_summary.get(
+            "canonical_policy_mutation_enabled"
+        ),
+        "canonical_update_application_enabled": readiness_summary.get(
+            "canonical_update_application_enabled"
+        ),
+        "y_star_direct_mutation_enabled": readiness_summary.get(
+            "y_star_direct_mutation_enabled"
+        ),
+        "y_star_gov_modification_enabled": readiness_summary.get("y_star_gov_modification_enabled"),
+        "gov_mcp_modification_enabled": readiness_summary.get("gov_mcp_modification_enabled"),
+        "semantic_truth_scoring_enabled": readiness_summary.get("semantic_truth_scoring_enabled"),
+        "raw_runtime_artifact_reading_enabled": readiness_summary.get(
+            "raw_runtime_artifact_reading_enabled"
+        ),
+        "revenue_opportunity_discovery_enabled": readiness_summary.get(
+            "revenue_opportunity_discovery_enabled"
+        ),
+        "next_required_milestone": readiness_summary.get("next_required_milestone"),
+        "generated_design_summary": "controlled_canonical_learning_design/controlled_canonical_learning_summary.json",
+        "generated_invariant_summary": "y_star_non_mutation_invariant/y_star_non_mutation_summary.json",
+        "generated_target_summary": "canonical_learning_target_registry/canonical_learning_target_summary.json",
+        "generated_evidence_summary": "canonical_promotion_evidence_bundle/evidence_bundle_summary.json",
+        "generated_gate_summary": "canonical_promotion_eligibility_gate/canonical_promotion_gate_summary.json",
+        "generated_package_summary": "canonical_update_package_candidate/canonical_update_package_summary.json",
+        "generated_patch_summary": "versioned_canonical_patch_plan/versioned_patch_plan_summary.json",
+        "generated_rollback_summary": "rollback_and_audit_lineage/rollback_audit_summary.json",
+        "generated_validation_summary": "post_promotion_validation_plan/post_promotion_validation_summary.json",
+        "generated_promotion_summary": "dry_run_promotion_decision_fixture/dry_run_promotion_summary.json",
+        "generated_readiness": "controlled_canonical_learning_readiness/controlled_canonical_learning_readiness.json",
+        "warning": (
+            "L5.7 defines controlled canonical learning promotion architecture only. "
+            "Candidates remain unapproved and unapplied; canonical policy, brain, memory, "
+            "strategy, Y*, Y-star-gov, and gov-mcp remain unmodified."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -2479,6 +2632,50 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "governed_mcp_adapter_readiness/governed_mcp_adapter_readiness.json",
         files_read,
     )
+    controlled_canonical_learning_design_summary = load_optional_json(
+        "controlled_canonical_learning_design/controlled_canonical_learning_summary.json",
+        files_read,
+    )
+    controlled_canonical_learning_invariant_summary = load_optional_json(
+        "y_star_non_mutation_invariant/y_star_non_mutation_summary.json",
+        files_read,
+    )
+    controlled_canonical_learning_target_summary = load_optional_json(
+        "canonical_learning_target_registry/canonical_learning_target_summary.json",
+        files_read,
+    )
+    controlled_canonical_learning_evidence_summary = load_optional_json(
+        "canonical_promotion_evidence_bundle/evidence_bundle_summary.json",
+        files_read,
+    )
+    controlled_canonical_learning_gate_summary = load_optional_json(
+        "canonical_promotion_eligibility_gate/canonical_promotion_gate_summary.json",
+        files_read,
+    )
+    controlled_canonical_learning_package_summary = load_optional_json(
+        "canonical_update_package_candidate/canonical_update_package_summary.json",
+        files_read,
+    )
+    controlled_canonical_learning_patch_summary = load_optional_json(
+        "versioned_canonical_patch_plan/versioned_patch_plan_summary.json",
+        files_read,
+    )
+    controlled_canonical_learning_rollback_summary = load_optional_json(
+        "rollback_and_audit_lineage/rollback_audit_summary.json",
+        files_read,
+    )
+    controlled_canonical_learning_validation_summary = load_optional_json(
+        "post_promotion_validation_plan/post_promotion_validation_summary.json",
+        files_read,
+    )
+    controlled_canonical_learning_promotion_summary = load_optional_json(
+        "dry_run_promotion_decision_fixture/dry_run_promotion_summary.json",
+        files_read,
+    )
+    controlled_canonical_learning_readiness_summary = load_optional_json(
+        "controlled_canonical_learning_readiness/controlled_canonical_learning_readiness.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -2553,6 +2750,19 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         governed_mcp_adapter_receipt_summary,
         governed_mcp_adapter_residual_summary,
         governed_mcp_adapter_readiness_summary,
+    )
+    controlled_canonical_learning_summary = build_controlled_canonical_learning_summary(
+        controlled_canonical_learning_design_summary,
+        controlled_canonical_learning_invariant_summary,
+        controlled_canonical_learning_target_summary,
+        controlled_canonical_learning_evidence_summary,
+        controlled_canonical_learning_gate_summary,
+        controlled_canonical_learning_package_summary,
+        controlled_canonical_learning_patch_summary,
+        controlled_canonical_learning_rollback_summary,
+        controlled_canonical_learning_validation_summary,
+        controlled_canonical_learning_promotion_summary,
+        controlled_canonical_learning_readiness_summary,
     )
 
     profiles = {
@@ -2660,8 +2870,10 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Field functional auto-projection core exists as a dry-run projection core only; behavior execution remains disabled.")
     if "Integrated review-gated shadow learning cycle exists as shadow-only artifacts; controlled canonical learning is not implemented yet." not in open_gaps:
         open_gaps.append("Integrated review-gated shadow learning cycle exists as shadow-only artifacts; controlled canonical learning is not implemented yet.")
-    if "Cross-repo governance contract proof exists as read-only boundary alignment; governed MCP dry-run adapter is not implemented yet." not in open_gaps:
-        open_gaps.append("Cross-repo governance contract proof exists as read-only boundary alignment; governed MCP dry-run adapter is not implemented yet.")
+    if "Cross-repo governance contract proof exists as read-only boundary alignment; governed MCP dry-run adapter is implemented as dry-run only." not in open_gaps:
+        open_gaps.append("Cross-repo governance contract proof exists as read-only boundary alignment; governed MCP dry-run adapter is implemented as dry-run only.")
+    if "Controlled canonical learning design exists as a promotion dry-run only; approved canonical update sandbox is not implemented yet." not in open_gaps:
+        open_gaps.append("Controlled canonical learning design exists as a promotion dry-run only; approved canonical update sandbox is not implemented yet.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -2702,6 +2914,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "shadow_learning_cycle_summary": shadow_learning_cycle_summary,
         "cross_repo_governance_summary": cross_repo_governance_summary,
         "governed_mcp_adapter_summary": governed_mcp_adapter_summary,
+        "controlled_canonical_learning_summary": controlled_canonical_learning_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -2767,6 +2980,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "review-gated shadow learning cycle summary",
             "cross-repo governance contract proof summary",
             "governed MCP dry-run adapter summary",
+            "controlled canonical learning design summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -2795,7 +3009,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "enabled live-boundary harness",
             "enabled CIEU runtime event persistence",
             "approved governed action registry",
-            "controlled canonical learning architecture",
+            "approved canonical update sandbox",
             "L6 revenue opportunity discovery",
         ],
         "recommended_next_steps": [
@@ -2823,7 +3037,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "define L4.8 governed recurring observation loop contract",
             "build L5.0 review-gated learning candidate queue",
             "build L5.1 mission field functional projection harness from archaeology merge plan",
-            "build controlled canonical learning architecture from L5.4 shadow learning proof",
+            "build L5.8 approved canonical update sandbox from L5.7 promotion design",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -2842,7 +3056,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "legacy assets are triaged but not absorbed",
             "observation loop is read-only and not recurring",
             "recurring observation loop contract is defined but not enabled",
-            "controlled canonical learning architecture is not implemented yet",
+            "approved canonical update sandbox is not implemented yet",
             "L6 revenue opportunity discovery remains blocked until canonical learning controls exist",
         ],
         "safety_boundaries": [
@@ -2879,6 +3093,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "review-gated shadow learning cycle previews policy changes only and does not mutate canonical policy",
             "cross-repo governance proof keeps ystar-company as labs/runtime and not a governance kernel",
             "governed MCP dry-run adapter blocks real MCP server/tool/resource execution and mutation",
+            "controlled canonical learning design creates promotion packages only and blocks approval, application, writeback, and direct Y* mutation",
         ],
     }
 
@@ -2920,6 +3135,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/shadow_learning_cycle_summary.json",
             "console_read_model/generated/cross_repo_governance_summary.json",
             "console_read_model/generated/governed_mcp_adapter_summary.json",
+            "console_read_model/generated/controlled_canonical_learning_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -3006,6 +3222,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "governance contract proof. It confirms ystar-company remains labs/runtime, Y-star-gov remains the intended governance kernel, and gov-mcp remains a governed interface boundary.\n\n"
         "`governed_mcp_adapter_summary.json` is derived from the L5.6 governed MCP\n"
         "dry-run adapter proof. It confirms a future MCP call candidate is downstream of behavior-level Y*, Pre-U, governance expectation, bridge receipt, CIEU-like receipt, residual delta, and review-only learning gates while real MCP execution remains blocked.\n\n"
+        "`controlled_canonical_learning_summary.json` is derived from the L5.7 controlled\n"
+        "canonical learning design. It confirms review-only and shadow candidates can become non-applied canonical update package candidates while approval, application, writeback, strategy mutation, and direct Y* mutation remain blocked.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -3043,6 +3261,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/shadow_learning_cycle_summary.json", shadow_learning_cycle_summary, generated_files)
     write_json("console_read_model/generated/cross_repo_governance_summary.json", cross_repo_governance_summary, generated_files)
     write_json("console_read_model/generated/governed_mcp_adapter_summary.json", governed_mcp_adapter_summary, generated_files)
+    write_json("console_read_model/generated/controlled_canonical_learning_summary.json", controlled_canonical_learning_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -3115,6 +3334,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     shadow_learning_cycle = snapshot.get("shadow_learning_cycle_summary", {})
     cross_repo_governance = snapshot.get("cross_repo_governance_summary", {})
     governed_mcp_adapter = snapshot.get("governed_mcp_adapter_summary", {})
+    controlled_canonical_learning = snapshot.get("controlled_canonical_learning_summary", {})
     lines.extend(
         [
             "",
@@ -3821,6 +4041,37 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- ready_for_l6_revenue_opportunity_discovery: {governed_mcp_adapter.get('ready_for_l6_revenue_opportunity_discovery')}",
             f"- next_required_milestone: {governed_mcp_adapter.get('next_required_milestone')}",
             f"- Warning: {governed_mcp_adapter.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Controlled Canonical Learning Design",
+            "",
+            f"- l5_7_controlled_canonical_learning_design_defined: {controlled_canonical_learning.get('l5_7_controlled_canonical_learning_design_defined')}",
+            f"- y_star_non_mutation_invariant_defined: {controlled_canonical_learning.get('y_star_non_mutation_invariant_defined')}",
+            f"- canonical_learning_target_registry_generated: {controlled_canonical_learning.get('canonical_learning_target_registry_generated')}",
+            f"- promotion_evidence_bundle_generated: {controlled_canonical_learning.get('promotion_evidence_bundle_generated')}",
+            f"- promotion_eligibility_gate_generated: {controlled_canonical_learning.get('promotion_eligibility_gate_generated')}",
+            f"- canonical_update_package_candidate_generated: {controlled_canonical_learning.get('canonical_update_package_candidate_generated')}",
+            f"- versioned_patch_plan_generated: {controlled_canonical_learning.get('versioned_patch_plan_generated')}",
+            f"- rollback_audit_plan_generated: {controlled_canonical_learning.get('rollback_audit_plan_generated')}",
+            f"- post_promotion_validation_plan_generated: {controlled_canonical_learning.get('post_promotion_validation_plan_generated')}",
+            f"- dry_run_promotion_fixture_generated: {controlled_canonical_learning.get('dry_run_promotion_fixture_generated')}",
+            f"- candidate_approved: {controlled_canonical_learning.get('candidate_approved')}",
+            f"- candidate_applied: {controlled_canonical_learning.get('candidate_applied')}",
+            f"- canonical_policy_mutation_performed: {controlled_canonical_learning.get('canonical_policy_mutation_performed')}",
+            f"- canonical_update_application_performed: {controlled_canonical_learning.get('canonical_update_application_performed')}",
+            f"- brain_writeback_performed: {controlled_canonical_learning.get('brain_writeback_performed')}",
+            f"- memory_ingestion_performed: {controlled_canonical_learning.get('memory_ingestion_performed')}",
+            f"- strategy_mutation_performed: {controlled_canonical_learning.get('strategy_mutation_performed')}",
+            f"- y_star_direct_mutation_performed: {controlled_canonical_learning.get('y_star_direct_mutation_performed')}",
+            f"- y_star_gov_unmodified: {controlled_canonical_learning.get('y_star_gov_unmodified')}",
+            f"- gov_mcp_unmodified: {controlled_canonical_learning.get('gov_mcp_unmodified')}",
+            f"- ready_for_l5_8_approved_canonical_update_sandbox: {controlled_canonical_learning.get('ready_for_l5_8_approved_canonical_update_sandbox')}",
+            f"- ready_for_l6_revenue_opportunity_discovery: {controlled_canonical_learning.get('ready_for_l6_revenue_opportunity_discovery')}",
+            f"- next_required_milestone: {controlled_canonical_learning.get('next_required_milestone')}",
+            f"- Warning: {controlled_canonical_learning.get('warning')}",
         ]
     )
     lines.extend(

@@ -93,5 +93,8 @@ governance contract proof. It confirms ystar-company remains labs/runtime, Y-sta
 `governed_mcp_adapter_summary.json` is derived from the L5.6 governed MCP
 dry-run adapter proof. It confirms a future MCP call candidate is downstream of behavior-level Y*, Pre-U, governance expectation, bridge receipt, CIEU-like receipt, residual delta, and review-only learning gates while real MCP execution remains blocked.
 
+`controlled_canonical_learning_summary.json` is derived from the L5.7 controlled
+canonical learning design. It confirms review-only and shadow candidates can become non-applied canonical update package candidates while approval, application, writeback, strategy mutation, and direct Y* mutation remain blocked.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

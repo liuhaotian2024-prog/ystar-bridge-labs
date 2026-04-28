@@ -1,0 +1,180 @@
+{
+  "schema_name": "ystar.canonical_learning_target_registry.scope_matrix",
+  "schema_version": "v0",
+  "matrix_id": "canonical-learning-target-scope-matrix-v0",
+  "targets": [
+    {
+      "target_name": "projection_policy",
+      "allowed_shadow_learning": true,
+      "allowed_canonical_candidate": true,
+      "denied_auto_application": true,
+      "denied_direct_y_star_mutation": true,
+      "denied_brain_writeback_now": true,
+      "denied_memory_ingestion_now": true,
+      "requires_review_before_application": true
+    },
+    {
+      "target_name": "projection_operator_version",
+      "allowed_shadow_learning": true,
+      "allowed_canonical_candidate": true,
+      "denied_auto_application": true,
+      "denied_direct_y_star_mutation": true,
+      "denied_brain_writeback_now": true,
+      "denied_memory_ingestion_now": true,
+      "requires_review_before_application": true
+    },
+    {
+      "target_name": "behavior_y_star_generation_rule",
+      "allowed_shadow_learning": true,
+      "allowed_canonical_candidate": true,
+      "denied_auto_application": true,
+      "denied_direct_y_star_mutation": true,
+      "denied_brain_writeback_now": true,
+      "denied_memory_ingestion_now": true,
+      "requires_review_before_application": true
+    },
+    {
+      "target_name": "pre_u_mapping_rule",
+      "allowed_shadow_learning": true,
+      "allowed_canonical_candidate": true,
+      "denied_auto_application": true,
+      "denied_direct_y_star_mutation": true,
+      "denied_brain_writeback_now": true,
+      "denied_memory_ingestion_now": true,
+      "requires_review_before_application": true
+    },
+    {
+      "target_name": "governance_expectation_mapping",
+      "allowed_shadow_learning": true,
+      "allowed_canonical_candidate": true,
+      "denied_auto_application": true,
+      "denied_direct_y_star_mutation": true,
+      "denied_brain_writeback_now": true,
+      "denied_memory_ingestion_now": true,
+      "requires_review_before_application": true
+    },
+    {
+      "target_name": "bridge_receipt_requirement",
+      "allowed_shadow_learning": true,
+      "allowed_canonical_candidate": true,
+      "denied_auto_application": true,
+      "denied_direct_y_star_mutation": true,
+      "denied_brain_writeback_now": true,
+      "denied_memory_ingestion_now": true,
+      "requires_review_before_application": true
+    },
+    {
+      "target_name": "mcp_interface_contract",
+      "allowed_shadow_learning": true,
+      "allowed_canonical_candidate": true,
+      "denied_auto_application": true,
+      "denied_direct_y_star_mutation": true,
+      "denied_brain_writeback_now": true,
+      "denied_memory_ingestion_now": true,
+      "requires_review_before_application": true
+    },
+    {
+      "target_name": "cieu_receipt_requirement",
+      "allowed_shadow_learning": true,
+      "allowed_canonical_candidate": true,
+      "denied_auto_application": true,
+      "denied_direct_y_star_mutation": true,
+      "denied_brain_writeback_now": true,
+      "denied_memory_ingestion_now": true,
+      "requires_review_before_application": true
+    },
+    {
+      "target_name": "residual_classification_policy",
+      "allowed_shadow_learning": true,
+      "allowed_canonical_candidate": true,
+      "denied_auto_application": true,
+      "denied_direct_y_star_mutation": true,
+      "denied_brain_writeback_now": true,
+      "denied_memory_ingestion_now": true,
+      "requires_review_before_application": true
+    },
+    {
+      "target_name": "evidence_collection_policy",
+      "allowed_shadow_learning": true,
+      "allowed_canonical_candidate": true,
+      "denied_auto_application": true,
+      "denied_direct_y_star_mutation": true,
+      "denied_brain_writeback_now": true,
+      "denied_memory_ingestion_now": true,
+      "requires_review_before_application": true
+    },
+    {
+      "target_name": "review_gate_policy",
+      "allowed_shadow_learning": true,
+      "allowed_canonical_candidate": true,
+      "denied_auto_application": true,
+      "denied_direct_y_star_mutation": true,
+      "denied_brain_writeback_now": true,
+      "denied_memory_ingestion_now": true,
+      "requires_review_before_application": true
+    },
+    {
+      "target_name": "learning_eligibility_policy",
+      "allowed_shadow_learning": true,
+      "allowed_canonical_candidate": true,
+      "denied_auto_application": true,
+      "denied_direct_y_star_mutation": true,
+      "denied_brain_writeback_now": true,
+      "denied_memory_ingestion_now": true,
+      "requires_review_before_application": true
+    },
+    {
+      "target_name": "brain_update_policy",
+      "allowed_shadow_learning": false,
+      "allowed_canonical_candidate": true,
+      "denied_auto_application": true,
+      "denied_direct_y_star_mutation": true,
+      "denied_brain_writeback_now": true,
+      "denied_memory_ingestion_now": true,
+      "requires_review_before_application": true
+    },
+    {
+      "target_name": "memory_ingestion_policy",
+      "allowed_shadow_learning": false,
+      "allowed_canonical_candidate": true,
+      "denied_auto_application": true,
+      "denied_direct_y_star_mutation": true,
+      "denied_brain_writeback_now": true,
+      "denied_memory_ingestion_now": true,
+      "requires_review_before_application": true
+    },
+    {
+      "target_name": "strategy_update_policy",
+      "allowed_shadow_learning": false,
+      "allowed_canonical_candidate": true,
+      "denied_auto_application": true,
+      "denied_direct_y_star_mutation": true,
+      "denied_brain_writeback_now": true,
+      "denied_memory_ingestion_now": true,
+      "requires_review_before_application": true
+    }
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "canonical_update_application_enabled": false,
+    "y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schema_name": "ystar.versioned_canonical_patch_plan.diff_preview",
+  "schema_version": "v0",
+  "diff_preview_id": "canonical-patch-diff-preview-v0",
+  "structured_diff_preview_only": true,
+  "intended_diffs": [
+    {
+      "target_class": "projection_policy",
+      "operation": "add_rule",
+      "description": "Require Y* non-mutation invariant check before promotion."
+    },
+    {
+      "target_class": "mcp_interface_contract",
+      "operation": "tighten_boundary",
+      "description": "Require bridge receipt, CIEU receipt, and residual refs before any MCP path."
+    },
+    {
+      "target_class": "residual_classification_policy",
+      "operation": "add_label",
+      "description": "Classify no-execution blocker residual separately from evidence gaps."
+    }
+  ],
+  "canonical_target_files_modified": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "canonical_update_application_enabled": false,
+    "y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

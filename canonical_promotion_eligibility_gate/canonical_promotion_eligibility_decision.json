@@ -1,0 +1,54 @@
+{
+  "schema_name": "ystar.canonical_promotion_eligibility_gate.decision",
+  "schema_version": "v0",
+  "decision_id": "canonical-promotion-eligibility-decision-v0",
+  "source_evidence_bundle_id": "canonical-promotion-evidence-bundle-v0",
+  "decision": "eligible_for_canonical_update_package_candidate",
+  "allowed_promotion_scope": [
+    "canonical update package candidate generation",
+    "versioned dry-run patch planning",
+    "rollback and audit planning",
+    "post-promotion validation planning"
+  ],
+  "denied_promotion_scope": [
+    "actual canonical application now",
+    "candidate approval",
+    "brain writeback",
+    "memory ingestion",
+    "strategy mutation",
+    "direct Y* mutation",
+    "MCP execution",
+    "live execution"
+  ],
+  "allowed_next_artifact": "canonical_update_package_candidate",
+  "required_approval_before_application": true,
+  "eligible_for_canonical_update_package_candidate": true,
+  "approved_for_application": false,
+  "applied": false,
+  "evidence_refs": [
+    "canonical_promotion_evidence_bundle/canonical_promotion_evidence_bundle.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "canonical_update_application_enabled": false,
+    "y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

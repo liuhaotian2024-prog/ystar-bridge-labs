@@ -1,0 +1,615 @@
+{
+  "schema_name": "ystar.canonical_learning_target_registry.registry",
+  "schema_version": "v0",
+  "registry_id": "canonical-learning-target-registry-v0",
+  "target_classes": [
+    {
+      "target_id": "canonical-learning-target-projection_policy",
+      "target_name": "projection_policy",
+      "description": "Controlled learning target for projection policy.",
+      "source_candidate_types": [
+        "review_only_learning_candidate",
+        "shadow_update_candidate",
+        "mcp_review_only_learning_candidate"
+      ],
+      "allowed_update_mode": [
+        "shadow_preview",
+        "canonical_update_package_candidate",
+        "future_approved_versioned_patch"
+      ],
+      "denied_update_mode": [
+        "auto_apply",
+        "direct_writeback",
+        "direct_y_star_mutation",
+        "silent_canonical_mutation"
+      ],
+      "requires_human_review": true,
+      "requires_governance_review": true,
+      "requires_versioning": true,
+      "requires_rollback_plan": true,
+      "requires_post_update_validation": true,
+      "can_be_shadow_updated": true,
+      "can_be_canonical_candidate": true,
+      "can_be_auto_applied_now": false,
+      "can_mutate_y_star_directly": false,
+      "evidence_requirements": [
+        "source residual",
+        "source learning candidate",
+        "review decision",
+        "non-mutation invariant check",
+        "rollback plan",
+        "post-update validation plan"
+      ],
+      "risk_class": "medium_projection_policy"
+    },
+    {
+      "target_id": "canonical-learning-target-projection_operator_version",
+      "target_name": "projection_operator_version",
+      "description": "Controlled learning target for projection operator version.",
+      "source_candidate_types": [
+        "review_only_learning_candidate",
+        "shadow_update_candidate",
+        "mcp_review_only_learning_candidate"
+      ],
+      "allowed_update_mode": [
+        "shadow_preview",
+        "canonical_update_package_candidate",
+        "future_approved_versioned_patch"
+      ],
+      "denied_update_mode": [
+        "auto_apply",
+        "direct_writeback",
+        "direct_y_star_mutation",
+        "silent_canonical_mutation"
+      ],
+      "requires_human_review": true,
+      "requires_governance_review": true,
+      "requires_versioning": true,
+      "requires_rollback_plan": true,
+      "requires_post_update_validation": true,
+      "can_be_shadow_updated": true,
+      "can_be_canonical_candidate": true,
+      "can_be_auto_applied_now": false,
+      "can_mutate_y_star_directly": false,
+      "evidence_requirements": [
+        "source residual",
+        "source learning candidate",
+        "review decision",
+        "non-mutation invariant check",
+        "rollback plan",
+        "post-update validation plan"
+      ],
+      "risk_class": "medium_projection_policy"
+    },
+    {
+      "target_id": "canonical-learning-target-behavior_y_star_generation_rule",
+      "target_name": "behavior_y_star_generation_rule",
+      "description": "Controlled learning target for behavior y star generation rule.",
+      "source_candidate_types": [
+        "review_only_learning_candidate",
+        "shadow_update_candidate",
+        "mcp_review_only_learning_candidate"
+      ],
+      "allowed_update_mode": [
+        "shadow_preview",
+        "canonical_update_package_candidate",
+        "future_approved_versioned_patch"
+      ],
+      "denied_update_mode": [
+        "auto_apply",
+        "direct_writeback",
+        "direct_y_star_mutation",
+        "silent_canonical_mutation"
+      ],
+      "requires_human_review": true,
+      "requires_governance_review": true,
+      "requires_versioning": true,
+      "requires_rollback_plan": true,
+      "requires_post_update_validation": true,
+      "can_be_shadow_updated": true,
+      "can_be_canonical_candidate": true,
+      "can_be_auto_applied_now": false,
+      "can_mutate_y_star_directly": false,
+      "evidence_requirements": [
+        "source residual",
+        "source learning candidate",
+        "review decision",
+        "non-mutation invariant check",
+        "rollback plan",
+        "post-update validation plan"
+      ],
+      "risk_class": "critical_y_star_boundary"
+    },
+    {
+      "target_id": "canonical-learning-target-pre_u_mapping_rule",
+      "target_name": "pre_u_mapping_rule",
+      "description": "Controlled learning target for pre u mapping rule.",
+      "source_candidate_types": [
+        "review_only_learning_candidate",
+        "shadow_update_candidate",
+        "mcp_review_only_learning_candidate"
+      ],
+      "allowed_update_mode": [
+        "shadow_preview",
+        "canonical_update_package_candidate",
+        "future_approved_versioned_patch"
+      ],
+      "denied_update_mode": [
+        "auto_apply",
+        "direct_writeback",
+        "direct_y_star_mutation",
+        "silent_canonical_mutation"
+      ],
+      "requires_human_review": true,
+      "requires_governance_review": true,
+      "requires_versioning": true,
+      "requires_rollback_plan": true,
+      "requires_post_update_validation": true,
+      "can_be_shadow_updated": true,
+      "can_be_canonical_candidate": true,
+      "can_be_auto_applied_now": false,
+      "can_mutate_y_star_directly": false,
+      "evidence_requirements": [
+        "source residual",
+        "source learning candidate",
+        "review decision",
+        "non-mutation invariant check",
+        "rollback plan",
+        "post-update validation plan"
+      ],
+      "risk_class": "medium_projection_policy"
+    },
+    {
+      "target_id": "canonical-learning-target-governance_expectation_mapping",
+      "target_name": "governance_expectation_mapping",
+      "description": "Controlled learning target for governance expectation mapping.",
+      "source_candidate_types": [
+        "review_only_learning_candidate",
+        "shadow_update_candidate",
+        "mcp_review_only_learning_candidate"
+      ],
+      "allowed_update_mode": [
+        "shadow_preview",
+        "canonical_update_package_candidate",
+        "future_approved_versioned_patch"
+      ],
+      "denied_update_mode": [
+        "auto_apply",
+        "direct_writeback",
+        "direct_y_star_mutation",
+        "silent_canonical_mutation"
+      ],
+      "requires_human_review": true,
+      "requires_governance_review": true,
+      "requires_versioning": true,
+      "requires_rollback_plan": true,
+      "requires_post_update_validation": true,
+      "can_be_shadow_updated": true,
+      "can_be_canonical_candidate": true,
+      "can_be_auto_applied_now": false,
+      "can_mutate_y_star_directly": false,
+      "evidence_requirements": [
+        "source residual",
+        "source learning candidate",
+        "review decision",
+        "non-mutation invariant check",
+        "rollback plan",
+        "post-update validation plan"
+      ],
+      "risk_class": "medium_projection_policy"
+    },
+    {
+      "target_id": "canonical-learning-target-bridge_receipt_requirement",
+      "target_name": "bridge_receipt_requirement",
+      "description": "Controlled learning target for bridge receipt requirement.",
+      "source_candidate_types": [
+        "review_only_learning_candidate",
+        "shadow_update_candidate",
+        "mcp_review_only_learning_candidate"
+      ],
+      "allowed_update_mode": [
+        "shadow_preview",
+        "canonical_update_package_candidate",
+        "future_approved_versioned_patch"
+      ],
+      "denied_update_mode": [
+        "auto_apply",
+        "direct_writeback",
+        "direct_y_star_mutation",
+        "silent_canonical_mutation"
+      ],
+      "requires_human_review": true,
+      "requires_governance_review": true,
+      "requires_versioning": true,
+      "requires_rollback_plan": true,
+      "requires_post_update_validation": true,
+      "can_be_shadow_updated": true,
+      "can_be_canonical_candidate": true,
+      "can_be_auto_applied_now": false,
+      "can_mutate_y_star_directly": false,
+      "evidence_requirements": [
+        "source residual",
+        "source learning candidate",
+        "review decision",
+        "non-mutation invariant check",
+        "rollback plan",
+        "post-update validation plan"
+      ],
+      "risk_class": "low_artifact_policy"
+    },
+    {
+      "target_id": "canonical-learning-target-mcp_interface_contract",
+      "target_name": "mcp_interface_contract",
+      "description": "Controlled learning target for mcp interface contract.",
+      "source_candidate_types": [
+        "review_only_learning_candidate",
+        "shadow_update_candidate",
+        "mcp_review_only_learning_candidate"
+      ],
+      "allowed_update_mode": [
+        "shadow_preview",
+        "canonical_update_package_candidate",
+        "future_approved_versioned_patch"
+      ],
+      "denied_update_mode": [
+        "auto_apply",
+        "direct_writeback",
+        "direct_y_star_mutation",
+        "silent_canonical_mutation"
+      ],
+      "requires_human_review": true,
+      "requires_governance_review": true,
+      "requires_versioning": true,
+      "requires_rollback_plan": true,
+      "requires_post_update_validation": true,
+      "can_be_shadow_updated": true,
+      "can_be_canonical_candidate": true,
+      "can_be_auto_applied_now": false,
+      "can_mutate_y_star_directly": false,
+      "evidence_requirements": [
+        "source residual",
+        "source learning candidate",
+        "review decision",
+        "non-mutation invariant check",
+        "rollback plan",
+        "post-update validation plan"
+      ],
+      "risk_class": "medium_projection_policy"
+    },
+    {
+      "target_id": "canonical-learning-target-cieu_receipt_requirement",
+      "target_name": "cieu_receipt_requirement",
+      "description": "Controlled learning target for cieu receipt requirement.",
+      "source_candidate_types": [
+        "review_only_learning_candidate",
+        "shadow_update_candidate",
+        "mcp_review_only_learning_candidate"
+      ],
+      "allowed_update_mode": [
+        "shadow_preview",
+        "canonical_update_package_candidate",
+        "future_approved_versioned_patch"
+      ],
+      "denied_update_mode": [
+        "auto_apply",
+        "direct_writeback",
+        "direct_y_star_mutation",
+        "silent_canonical_mutation"
+      ],
+      "requires_human_review": true,
+      "requires_governance_review": true,
+      "requires_versioning": true,
+      "requires_rollback_plan": true,
+      "requires_post_update_validation": true,
+      "can_be_shadow_updated": true,
+      "can_be_canonical_candidate": true,
+      "can_be_auto_applied_now": false,
+      "can_mutate_y_star_directly": false,
+      "evidence_requirements": [
+        "source residual",
+        "source learning candidate",
+        "review decision",
+        "non-mutation invariant check",
+        "rollback plan",
+        "post-update validation plan"
+      ],
+      "risk_class": "low_artifact_policy"
+    },
+    {
+      "target_id": "canonical-learning-target-residual_classification_policy",
+      "target_name": "residual_classification_policy",
+      "description": "Controlled learning target for residual classification policy.",
+      "source_candidate_types": [
+        "review_only_learning_candidate",
+        "shadow_update_candidate",
+        "mcp_review_only_learning_candidate"
+      ],
+      "allowed_update_mode": [
+        "shadow_preview",
+        "canonical_update_package_candidate",
+        "future_approved_versioned_patch"
+      ],
+      "denied_update_mode": [
+        "auto_apply",
+        "direct_writeback",
+        "direct_y_star_mutation",
+        "silent_canonical_mutation"
+      ],
+      "requires_human_review": true,
+      "requires_governance_review": true,
+      "requires_versioning": true,
+      "requires_rollback_plan": true,
+      "requires_post_update_validation": true,
+      "can_be_shadow_updated": true,
+      "can_be_canonical_candidate": true,
+      "can_be_auto_applied_now": false,
+      "can_mutate_y_star_directly": false,
+      "evidence_requirements": [
+        "source residual",
+        "source learning candidate",
+        "review decision",
+        "non-mutation invariant check",
+        "rollback plan",
+        "post-update validation plan"
+      ],
+      "risk_class": "medium_projection_policy"
+    },
+    {
+      "target_id": "canonical-learning-target-evidence_collection_policy",
+      "target_name": "evidence_collection_policy",
+      "description": "Controlled learning target for evidence collection policy.",
+      "source_candidate_types": [
+        "review_only_learning_candidate",
+        "shadow_update_candidate",
+        "mcp_review_only_learning_candidate"
+      ],
+      "allowed_update_mode": [
+        "shadow_preview",
+        "canonical_update_package_candidate",
+        "future_approved_versioned_patch"
+      ],
+      "denied_update_mode": [
+        "auto_apply",
+        "direct_writeback",
+        "direct_y_star_mutation",
+        "silent_canonical_mutation"
+      ],
+      "requires_human_review": true,
+      "requires_governance_review": true,
+      "requires_versioning": true,
+      "requires_rollback_plan": true,
+      "requires_post_update_validation": true,
+      "can_be_shadow_updated": true,
+      "can_be_canonical_candidate": true,
+      "can_be_auto_applied_now": false,
+      "can_mutate_y_star_directly": false,
+      "evidence_requirements": [
+        "source residual",
+        "source learning candidate",
+        "review decision",
+        "non-mutation invariant check",
+        "rollback plan",
+        "post-update validation plan"
+      ],
+      "risk_class": "low_artifact_policy"
+    },
+    {
+      "target_id": "canonical-learning-target-review_gate_policy",
+      "target_name": "review_gate_policy",
+      "description": "Controlled learning target for review gate policy.",
+      "source_candidate_types": [
+        "review_only_learning_candidate",
+        "shadow_update_candidate",
+        "mcp_review_only_learning_candidate"
+      ],
+      "allowed_update_mode": [
+        "shadow_preview",
+        "canonical_update_package_candidate",
+        "future_approved_versioned_patch"
+      ],
+      "denied_update_mode": [
+        "auto_apply",
+        "direct_writeback",
+        "direct_y_star_mutation",
+        "silent_canonical_mutation"
+      ],
+      "requires_human_review": true,
+      "requires_governance_review": true,
+      "requires_versioning": true,
+      "requires_rollback_plan": true,
+      "requires_post_update_validation": true,
+      "can_be_shadow_updated": true,
+      "can_be_canonical_candidate": true,
+      "can_be_auto_applied_now": false,
+      "can_mutate_y_star_directly": false,
+      "evidence_requirements": [
+        "source residual",
+        "source learning candidate",
+        "review decision",
+        "non-mutation invariant check",
+        "rollback plan",
+        "post-update validation plan"
+      ],
+      "risk_class": "medium_projection_policy"
+    },
+    {
+      "target_id": "canonical-learning-target-learning_eligibility_policy",
+      "target_name": "learning_eligibility_policy",
+      "description": "Controlled learning target for learning eligibility policy.",
+      "source_candidate_types": [
+        "review_only_learning_candidate",
+        "shadow_update_candidate",
+        "mcp_review_only_learning_candidate"
+      ],
+      "allowed_update_mode": [
+        "shadow_preview",
+        "canonical_update_package_candidate",
+        "future_approved_versioned_patch"
+      ],
+      "denied_update_mode": [
+        "auto_apply",
+        "direct_writeback",
+        "direct_y_star_mutation",
+        "silent_canonical_mutation"
+      ],
+      "requires_human_review": true,
+      "requires_governance_review": true,
+      "requires_versioning": true,
+      "requires_rollback_plan": true,
+      "requires_post_update_validation": true,
+      "can_be_shadow_updated": true,
+      "can_be_canonical_candidate": true,
+      "can_be_auto_applied_now": false,
+      "can_mutate_y_star_directly": false,
+      "evidence_requirements": [
+        "source residual",
+        "source learning candidate",
+        "review decision",
+        "non-mutation invariant check",
+        "rollback plan",
+        "post-update validation plan"
+      ],
+      "risk_class": "medium_projection_policy"
+    },
+    {
+      "target_id": "canonical-learning-target-brain_update_policy",
+      "target_name": "brain_update_policy",
+      "description": "Controlled learning target for brain update policy.",
+      "source_candidate_types": [
+        "review_only_learning_candidate",
+        "shadow_update_candidate",
+        "mcp_review_only_learning_candidate"
+      ],
+      "allowed_update_mode": [
+        "shadow_preview",
+        "canonical_update_package_candidate",
+        "future_approved_versioned_patch"
+      ],
+      "denied_update_mode": [
+        "auto_apply",
+        "direct_writeback",
+        "direct_y_star_mutation",
+        "silent_canonical_mutation"
+      ],
+      "requires_human_review": true,
+      "requires_governance_review": true,
+      "requires_versioning": true,
+      "requires_rollback_plan": true,
+      "requires_post_update_validation": true,
+      "can_be_shadow_updated": false,
+      "can_be_canonical_candidate": true,
+      "can_be_auto_applied_now": false,
+      "can_mutate_y_star_directly": false,
+      "evidence_requirements": [
+        "source residual",
+        "source learning candidate",
+        "review decision",
+        "non-mutation invariant check",
+        "rollback plan",
+        "post-update validation plan"
+      ],
+      "risk_class": "high_brain_memory_boundary"
+    },
+    {
+      "target_id": "canonical-learning-target-memory_ingestion_policy",
+      "target_name": "memory_ingestion_policy",
+      "description": "Controlled learning target for memory ingestion policy.",
+      "source_candidate_types": [
+        "review_only_learning_candidate",
+        "shadow_update_candidate",
+        "mcp_review_only_learning_candidate"
+      ],
+      "allowed_update_mode": [
+        "shadow_preview",
+        "canonical_update_package_candidate",
+        "future_approved_versioned_patch"
+      ],
+      "denied_update_mode": [
+        "auto_apply",
+        "direct_writeback",
+        "direct_y_star_mutation",
+        "silent_canonical_mutation"
+      ],
+      "requires_human_review": true,
+      "requires_governance_review": true,
+      "requires_versioning": true,
+      "requires_rollback_plan": true,
+      "requires_post_update_validation": true,
+      "can_be_shadow_updated": false,
+      "can_be_canonical_candidate": true,
+      "can_be_auto_applied_now": false,
+      "can_mutate_y_star_directly": false,
+      "evidence_requirements": [
+        "source residual",
+        "source learning candidate",
+        "review decision",
+        "non-mutation invariant check",
+        "rollback plan",
+        "post-update validation plan"
+      ],
+      "risk_class": "high_brain_memory_boundary"
+    },
+    {
+      "target_id": "canonical-learning-target-strategy_update_policy",
+      "target_name": "strategy_update_policy",
+      "description": "Controlled learning target for strategy update policy.",
+      "source_candidate_types": [
+        "review_only_learning_candidate",
+        "shadow_update_candidate",
+        "mcp_review_only_learning_candidate"
+      ],
+      "allowed_update_mode": [
+        "shadow_preview",
+        "canonical_update_package_candidate",
+        "future_approved_versioned_patch"
+      ],
+      "denied_update_mode": [
+        "auto_apply",
+        "direct_writeback",
+        "direct_y_star_mutation",
+        "silent_canonical_mutation"
+      ],
+      "requires_human_review": true,
+      "requires_governance_review": true,
+      "requires_versioning": true,
+      "requires_rollback_plan": true,
+      "requires_post_update_validation": true,
+      "can_be_shadow_updated": false,
+      "can_be_canonical_candidate": true,
+      "can_be_auto_applied_now": false,
+      "can_mutate_y_star_directly": false,
+      "evidence_requirements": [
+        "source residual",
+        "source learning candidate",
+        "review decision",
+        "non-mutation invariant check",
+        "rollback plan",
+        "post-update validation plan"
+      ],
+      "risk_class": "high_strategy_boundary"
+    }
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "canonical_update_application_enabled": false,
+    "y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

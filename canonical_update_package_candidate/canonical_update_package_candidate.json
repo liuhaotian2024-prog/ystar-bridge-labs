@@ -1,0 +1,79 @@
+{
+  "schema_name": "ystar.canonical_update_package_candidate.package",
+  "schema_version": "v0",
+  "package_id": "canonical-update-package-candidate-v0",
+  "source_promotion_decision_id": "canonical-promotion-eligibility-decision-v0",
+  "package_type": "mixed_canonical_update_candidate",
+  "target_classes": [
+    "projection_policy",
+    "behavior_y_star_generation_rule",
+    "pre_u_mapping_rule",
+    "mcp_interface_contract",
+    "residual_classification_policy",
+    "evidence_collection_policy",
+    "learning_eligibility_policy"
+  ],
+  "proposed_canonical_changes": [
+    "tighten projection trace linkage requirements",
+    "clarify behavior boundary inheritance rules",
+    "improve Pre-U mapping from behavior Y* to candidate_U",
+    "improve governed MCP boundary evidence requirements",
+    "improve residual labels for no-execution dry-run cycles",
+    "require explicit evidence sufficiency before promotion gates pass"
+  ],
+  "non_canonical_preview_sources": [
+    "shadow_projection_policy_patch/shadow_projection_policy_patch.json",
+    "shadow_reprojection_preview/shadow_reprojected_behavior_y_star_preview.json",
+    "mcp_residual_and_learning_candidate/mcp_learning_candidate.json"
+  ],
+  "expected_effect_on_future_projection": "Future projected behavior-level Y* should be derived through stricter trace, evidence, and boundary contraction rules.",
+  "expected_effect_on_future_pre_u_mapping": "Future Pre-U candidates should preserve behavior Y* lineage and expose denied scope.",
+  "expected_effect_on_future_mcp_boundary": "Future governed MCP adapter candidates should retain non-bypass receipts and blockers.",
+  "expected_effect_on_future_residual_classification": "Residual classes should distinguish no-execution blockers from evidence gaps.",
+  "explicit_non_effects": [
+    "does not mutate mission Y*",
+    "does not directly overwrite behavior Y*",
+    "does not apply canonical policy now",
+    "does not write brain or memory",
+    "does not mutate strategy",
+    "does not enable live execution"
+  ],
+  "evidence_refs": [
+    "canonical_promotion_evidence_bundle/canonical_promotion_evidence_bundle.json",
+    "canonical_promotion_eligibility_gate/canonical_promotion_eligibility_decision.json"
+  ],
+  "approval_status": "not_approved",
+  "application_status": "not_applied",
+  "canonical_policy_mutation_performed": false,
+  "brain_writeback_performed": false,
+  "memory_ingestion_performed": false,
+  "strategy_mutation_performed": false,
+  "y_star_direct_mutation_performed": false,
+  "requires_human_or_governance_approval_before_application": true,
+  "requires_versioning_before_application": true,
+  "requires_rollback_plan_before_application": true,
+  "requires_post_update_validation_before_application": true,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "canonical_update_application_enabled": false,
+    "y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

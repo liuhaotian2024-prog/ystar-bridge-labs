@@ -178,7 +178,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after governed MCP dry-run adapter",
+        "Build controlled canonical learning design",
+        ["python3", "controlled_canonical_learning_design/tools/build_controlled_canonical_learning_design.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after controlled canonical learning design",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -1451,6 +1456,63 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "governed_mcp_adapter_readiness/governed_mcp_adapter_readiness.json"],
     ),
     Check(
+        "Py compile: build_controlled_canonical_learning_design.py",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "controlled_canonical_learning_design/tools/build_controlled_canonical_learning_design.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: controlled_canonical_learning_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/controlled_canonical_learning_summary.json"],
+    ),
+    Check(
+        "Validate JSON: controlled_canonical_learning_contract.json",
+        ["python3", "-m", "json.tool", "controlled_canonical_learning_design/controlled_canonical_learning_contract.json"],
+    ),
+    Check(
+        "Validate JSON: y_star_non_mutation_invariant.json",
+        ["python3", "-m", "json.tool", "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json"],
+    ),
+    Check(
+        "Validate JSON: canonical_learning_target_registry.json",
+        ["python3", "-m", "json.tool", "canonical_learning_target_registry/canonical_learning_target_registry.json"],
+    ),
+    Check(
+        "Validate JSON: canonical_promotion_evidence_bundle.json",
+        ["python3", "-m", "json.tool", "canonical_promotion_evidence_bundle/canonical_promotion_evidence_bundle.json"],
+    ),
+    Check(
+        "Validate JSON: canonical_promotion_eligibility_decision.json",
+        ["python3", "-m", "json.tool", "canonical_promotion_eligibility_gate/canonical_promotion_eligibility_decision.json"],
+    ),
+    Check(
+        "Validate JSON: canonical_update_package_candidate.json",
+        ["python3", "-m", "json.tool", "canonical_update_package_candidate/canonical_update_package_candidate.json"],
+    ),
+    Check(
+        "Validate JSON: versioned_canonical_patch_plan.json",
+        ["python3", "-m", "json.tool", "versioned_canonical_patch_plan/versioned_canonical_patch_plan.json"],
+    ),
+    Check(
+        "Validate JSON: rollback_plan.json",
+        ["python3", "-m", "json.tool", "rollback_and_audit_lineage/rollback_plan.json"],
+    ),
+    Check(
+        "Validate JSON: post_promotion_validation_plan.json",
+        ["python3", "-m", "json.tool", "post_promotion_validation_plan/post_promotion_validation_plan.json"],
+    ),
+    Check(
+        "Validate JSON: dry_run_promotion_decision_fixture.json",
+        ["python3", "-m", "json.tool", "dry_run_promotion_decision_fixture/dry_run_promotion_decision_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: controlled_canonical_learning_readiness.json",
+        ["python3", "-m", "json.tool", "controlled_canonical_learning_readiness/controlled_canonical_learning_readiness.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -1653,6 +1715,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: governed-mcp-adapter",
         ["python3", "console_read_model/cli/team_console.py", "governed-mcp-adapter"],
+    ),
+    Check(
+        "CLI smoke: controlled-canonical-learning",
+        ["python3", "console_read_model/cli/team_console.py", "controlled-canonical-learning"],
     ),
     Check(
         "CLI smoke: sources",

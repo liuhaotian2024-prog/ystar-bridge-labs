@@ -1,0 +1,43 @@
+{
+  "schema_name": "ystar.dry_run_promotion_decision_fixture.fixture",
+  "schema_version": "v0",
+  "fixture_id": "dry-run-promotion-decision-fixture-v0",
+  "source_promotion_decision_id": "canonical-promotion-eligibility-decision-v0",
+  "source_update_package_id": "canonical-update-package-candidate-v0",
+  "decision_mode": "dry_run_promotion_design_only",
+  "candidate_approved": false,
+  "candidate_applied": false,
+  "canonical_policy_mutation_performed": false,
+  "brain_writeback_performed": false,
+  "memory_ingestion_performed": false,
+  "strategy_mutation_performed": false,
+  "y_star_direct_mutation_performed": false,
+  "ready_for_future_approval_workflow": true,
+  "evidence_refs": [
+    "canonical_promotion_eligibility_gate/canonical_promotion_eligibility_decision.json",
+    "canonical_update_package_candidate/canonical_update_package_candidate.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "canonical_update_application_enabled": false,
+    "y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

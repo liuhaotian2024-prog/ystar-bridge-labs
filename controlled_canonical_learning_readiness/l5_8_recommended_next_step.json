@@ -1,0 +1,42 @@
+{
+  "schema_name": "ystar.controlled_canonical_learning_readiness.next_step",
+  "schema_version": "v0",
+  "recommendation_id": "l5-8-recommended-next-step-v0",
+  "recommended_next_milestone": "L5.8 Approved Canonical Update Sandbox v0",
+  "recommended_scope": [
+    "approved canonical update sandbox design",
+    "approval record fixture",
+    "versioned application sandbox",
+    "rollback validation dry-run"
+  ],
+  "blocked_scope": [
+    "L6 revenue opportunity discovery",
+    "live execution",
+    "brain/memory writeback",
+    "automatic candidate approval"
+  ],
+  "ready_for_l6_revenue_opportunity_discovery": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "canonical_update_application_enabled": false,
+    "y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

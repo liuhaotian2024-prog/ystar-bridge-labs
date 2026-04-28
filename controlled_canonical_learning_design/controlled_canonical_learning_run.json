@@ -1,0 +1,116 @@
+{
+  "schema_name": "ystar.controlled_canonical_learning_design.run",
+  "schema_version": "v0",
+  "run_id": "controlled-canonical-learning-design-run-v0",
+  "contract_ref": "controlled_canonical_learning_design/controlled_canonical_learning_contract.json",
+  "input_fixture_ref": "controlled_canonical_learning_design/controlled_canonical_learning_input_fixture.json",
+  "design_stages": [
+    {
+      "stage": "load_shadow_learning_sources",
+      "status": "completed_dry_run",
+      "live_or_canonical_mutation_performed": false
+    },
+    {
+      "stage": "load_review_only_learning_candidates",
+      "status": "completed_dry_run",
+      "live_or_canonical_mutation_performed": false
+    },
+    {
+      "stage": "normalize_learning_candidates",
+      "status": "completed_dry_run",
+      "live_or_canonical_mutation_performed": false
+    },
+    {
+      "stage": "enforce_y_star_non_mutation_invariant",
+      "status": "completed_dry_run",
+      "live_or_canonical_mutation_performed": false
+    },
+    {
+      "stage": "classify_canonical_learning_targets",
+      "status": "completed_dry_run",
+      "live_or_canonical_mutation_performed": false
+    },
+    {
+      "stage": "build_evidence_bundle",
+      "status": "completed_dry_run",
+      "live_or_canonical_mutation_performed": false
+    },
+    {
+      "stage": "run_promotion_eligibility_gate",
+      "status": "completed_dry_run",
+      "live_or_canonical_mutation_performed": false
+    },
+    {
+      "stage": "produce_approval_protocol",
+      "status": "completed_dry_run",
+      "live_or_canonical_mutation_performed": false
+    },
+    {
+      "stage": "generate_canonical_update_package_candidate",
+      "status": "completed_dry_run",
+      "live_or_canonical_mutation_performed": false
+    },
+    {
+      "stage": "generate_versioned_patch_plan",
+      "status": "completed_dry_run",
+      "live_or_canonical_mutation_performed": false
+    },
+    {
+      "stage": "generate_rollback_plan",
+      "status": "completed_dry_run",
+      "live_or_canonical_mutation_performed": false
+    },
+    {
+      "stage": "generate_audit_lineage_record",
+      "status": "completed_dry_run",
+      "live_or_canonical_mutation_performed": false
+    },
+    {
+      "stage": "generate_post_promotion_validation_plan",
+      "status": "completed_dry_run",
+      "live_or_canonical_mutation_performed": false
+    },
+    {
+      "stage": "generate_dry_run_promotion_decision_packet",
+      "status": "completed_dry_run",
+      "live_or_canonical_mutation_performed": false
+    },
+    {
+      "stage": "block_actual_canonical_application",
+      "status": "completed_dry_run",
+      "live_or_canonical_mutation_performed": false
+    },
+    {
+      "stage": "produce_l5_8_recommendation",
+      "status": "completed_dry_run",
+      "live_or_canonical_mutation_performed": false
+    }
+  ],
+  "missing_sources": [],
+  "actual_canonical_application_blocked": true,
+  "candidate_approval_blocked": true,
+  "dry_run_only": true,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "canonical_update_application_enabled": false,
+    "y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}
