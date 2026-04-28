@@ -214,7 +214,8 @@ def test_console_read_model_integration_passes() -> None:
 
     summary = load_json("console_read_model/generated/mission_projection_summary.json")
     assert summary["l5_1_projection_contract_defined"] is True
-    assert summary["ready_for_L5_2_deep_xt_observation_model"] is True
+    assert summary["ready_for_L5_2_field_functional_auto_projection_core"] is True
+    assert summary["deep_xt_model_is_not_l5_2_main_milestone"] is True
     assert summary["network_enabled"] is False
 
     validator = run_command(["python3", "console_read_model/validation/validate_team_read_model.py"])

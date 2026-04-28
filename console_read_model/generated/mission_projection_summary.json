@@ -16,7 +16,8 @@
   ],
   "action_layer_projection_only": true,
   "action_field_execution_implemented": false,
-  "ready_for_L5_2_deep_xt_observation_model": true,
+  "ready_for_L5_2_field_functional_auto_projection_core": true,
+  "deep_xt_model_is_not_l5_2_main_milestone": true,
   "live_execution_enabled": false,
   "external_action_enabled": false,
   "network_enabled": false,
@@ -26,11 +27,11 @@
   "brain_writeback_enabled": false,
   "memory_ingestion_enabled": false,
   "candidate_auto_approval_enabled": false,
-  "next_required_milestone": "L5.2 Deep Xt Observation Model v0",
+  "next_required_milestone": "L5.2 Field Functional Auto-Projection Core v0",
   "generated_summary": "mission_field_projection_contract/projection_contract_summary.json",
   "generated_contract": "mission_field_projection_contract/projection_contract_v0.json",
   "generated_trace": "layered_y_star_projection_trace/layered_projection_trace.json",
   "generated_pre_u_candidate": "projection_to_pre_u_packet_adapter/pre_u_packet_candidate.json",
   "generated_residual_delta": "projection_residual_delta_fixture/projection_residual_delta_fixture.json",
-  "warning": "L5.1 is a dry-run projection harness; action-field execution and production Pre-U validation remain future work."
+  "warning": "L5.1 is a dry-run projection harness; L5.2 should upgrade auto-projection before any future deep Xt expansion."
 }

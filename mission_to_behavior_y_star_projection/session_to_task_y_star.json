@@ -1,0 +1,71 @@
+{
+  "layer_name": "task",
+  "parent_layer": "session",
+  "parent_y_star_ref": "mission_to_behavior_y_star_projection/milestone_to_session_y_star.json",
+  "projected_y_star": {
+    "y_star_id": "task-y-star-l5-2-artifacts-v0",
+    "declared_y_star": "Task should emit operator, projection, Pre-U candidate, residual loop, readiness, console, and test artifacts.",
+    "normative_target_state": "all L5.2 artifacts exist, parse, and preserve blocked safety boundaries."
+  },
+  "inherited_obligations": [
+    "layered Y* projection exists from mission through behavior",
+    "behavior-level Y* can become a Pre-U packet candidate",
+    "residual learning remains review-gated",
+    "no live behavior execution",
+    "no external action",
+    "no network",
+    "no scheduler or daemon",
+    "no brain or memory writeback",
+    "no CIEU persistence",
+    "company scope is limited to ystar-company architecture and generated/read-model evidence",
+    "milestone must end at behavior layer, not action layer",
+    "session scope is one local deterministic build, not recurring execution"
+  ],
+  "contracted_obligations": [
+    "task completion is measured by deterministic artifacts and validators"
+  ],
+  "context_bound_obligations": [
+    "task_context",
+    "validation_context_summary"
+  ],
+  "explicit_non_goals": [
+    "semantic truth scoring",
+    "probabilistic scoring",
+    "runtime artifact reads"
+  ],
+  "forbidden_behaviors": [
+    "live behavior execution",
+    "external communication",
+    "network access",
+    "scheduler or daemon activation",
+    "brain or memory writeback",
+    "CIEU persistence",
+    "candidate auto-approval"
+  ],
+  "required_validation_before_execution": [
+    "new L5.2 tests",
+    "existing L5.0/L5.1 tests"
+  ],
+  "unresolved_gaps": [
+    "production validator integration remains unresolved"
+  ],
+  "evidence_refs": [
+    "field_functional_archaeology/generated/mission_projection_merge_plan.json",
+    "layered_y_star_projection_trace/unresolved_gap_map.json"
+  ],
+  "structural_confidence_class": "policy_constrained_projection",
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "behavior_execution_enabled": false
+  }
+}

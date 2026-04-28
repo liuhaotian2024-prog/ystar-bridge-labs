@@ -1,0 +1,109 @@
+{
+  "schema_name": "ystar.mission_to_behavior_y_star_projection.inheritance_map",
+  "schema_version": "v0",
+  "map_id": "y-star-inheritance-map-l5-2",
+  "inheritance_edges": [
+    {
+      "parent_layer": "mission",
+      "child_layer": "company",
+      "parent_ref": "mission_to_behavior_y_star_projection/mission_y_star_input.json",
+      "child_ref": "mission_to_behavior_y_star_projection/mission_to_company_y_star.json",
+      "inherited_obligations": [
+        "mission success constraints",
+        "mission safety constraints"
+      ]
+    },
+    {
+      "parent_layer": "company",
+      "child_layer": "milestone",
+      "parent_ref": "mission_to_behavior_y_star_projection/mission_to_company_y_star.json",
+      "child_ref": "mission_to_behavior_y_star_projection/company_to_milestone_y_star.json",
+      "inherited_obligations": [
+        "layered Y* projection exists from mission through behavior",
+        "behavior-level Y* can become a Pre-U packet candidate",
+        "residual learning remains review-gated",
+        "no live behavior execution",
+        "no external action",
+        "no network",
+        "no scheduler or daemon",
+        "no brain or memory writeback",
+        "no CIEU persistence",
+        "company scope is limited to ystar-company architecture and generated/read-model evidence"
+      ]
+    },
+    {
+      "parent_layer": "milestone",
+      "child_layer": "session",
+      "parent_ref": "mission_to_behavior_y_star_projection/company_to_milestone_y_star.json",
+      "child_ref": "mission_to_behavior_y_star_projection/milestone_to_session_y_star.json",
+      "inherited_obligations": [
+        "layered Y* projection exists from mission through behavior",
+        "behavior-level Y* can become a Pre-U packet candidate",
+        "residual learning remains review-gated",
+        "no live behavior execution",
+        "no external action",
+        "no network",
+        "no scheduler or daemon",
+        "no brain or memory writeback",
+        "no CIEU persistence",
+        "company scope is limited to ystar-company architecture and generated/read-model evidence",
+        "milestone must end at behavior layer, not action layer"
+      ]
+    },
+    {
+      "parent_layer": "session",
+      "child_layer": "task",
+      "parent_ref": "mission_to_behavior_y_star_projection/milestone_to_session_y_star.json",
+      "child_ref": "mission_to_behavior_y_star_projection/session_to_task_y_star.json",
+      "inherited_obligations": [
+        "layered Y* projection exists from mission through behavior",
+        "behavior-level Y* can become a Pre-U packet candidate",
+        "residual learning remains review-gated",
+        "no live behavior execution",
+        "no external action",
+        "no network",
+        "no scheduler or daemon",
+        "no brain or memory writeback",
+        "no CIEU persistence",
+        "company scope is limited to ystar-company architecture and generated/read-model evidence",
+        "milestone must end at behavior layer, not action layer",
+        "session scope is one local deterministic build, not recurring execution"
+      ]
+    },
+    {
+      "parent_layer": "task",
+      "child_layer": "behavior",
+      "parent_ref": "mission_to_behavior_y_star_projection/session_to_task_y_star.json",
+      "child_ref": "mission_to_behavior_y_star_projection/task_to_behavior_y_star.json",
+      "inherited_obligations": [
+        "layered Y* projection exists from mission through behavior",
+        "behavior-level Y* can become a Pre-U packet candidate",
+        "residual learning remains review-gated",
+        "no live behavior execution",
+        "no external action",
+        "no network",
+        "no scheduler or daemon",
+        "no brain or memory writeback",
+        "no CIEU persistence",
+        "company scope is limited to ystar-company architecture and generated/read-model evidence",
+        "milestone must end at behavior layer, not action layer",
+        "session scope is one local deterministic build, not recurring execution",
+        "task completion is measured by deterministic artifacts and validators"
+      ]
+    }
+  ],
+  "safety_flags_inherited_without_relaxation": {
+    "live_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "behavior_execution_enabled": false
+  }
+}

@@ -132,7 +132,7 @@ def build_contract() -> dict[str, Any]:
         "requires_y_star_gov_for_future_validation": True,
         "calls_y_star_gov_now": False,
         "uses_generated_read_model_only": True,
-        "next_required_milestone": "L5.2 Deep Xt Observation Model v0",
+        "next_required_milestone": "L5.2 Field Functional Auto-Projection Core v0",
     }
 
 
@@ -463,7 +463,7 @@ def build_unresolved_gap_map() -> dict[str, Any]:
             "gap_id": "gap-deep-xt-model",
             "gap_type": "projection_gap",
             "description": "Xt is still a generated summary, not a deep observation model.",
-            "blocked_until": "L5.2 Deep Xt Observation Model v0",
+            "blocked_until": "future deep Xt input-model milestone after auto-projection core",
             "blocks_live_execution": False,
         },
         {
@@ -637,13 +637,14 @@ def build_summary(
         "projection_layers": contract["supported_projection_layers"],
         "action_layer_projection_only": True,
         "action_field_execution_implemented": False,
-        "ready_for_L5_2_deep_xt_observation_model": True,
-        "next_required_milestone": "L5.2 Deep Xt Observation Model v0",
+        "ready_for_L5_2_field_functional_auto_projection_core": True,
+        "deep_xt_model_is_not_l5_2_main_milestone": True,
+        "next_required_milestone": "L5.2 Field Functional Auto-Projection Core v0",
         "generated_contract": rel(CONTRACT_PACK / "projection_contract_v0.json"),
         "generated_trace": rel(TRACE_PACK / "layered_projection_trace.json"),
         "generated_pre_u_candidate": rel(ADAPTER_PACK / "pre_u_packet_candidate.json"),
         "generated_residual_delta": rel(RESIDUAL_PACK / "projection_residual_delta_fixture.json"),
-        "warning": "L5.1 is a dry-run projection harness; action-field execution and production Pre-U validation remain future work.",
+        "warning": "L5.1 is a dry-run projection harness; L5.2 should upgrade auto-projection before any future deep Xt expansion.",
         **SAFETY_FLAGS,
     }
 
@@ -692,7 +693,7 @@ def build() -> None:
                 "- Allowed inputs: " + ", ".join(contract["allowed_input_fields"]),
                 "- Forbidden inputs include raw runtime contents, network results, and live hook output.",
                 "- All live, persistence, scheduler, daemon, writeback, and approval flags remain false.",
-                "- Next milestone: L5.2 Deep Xt Observation Model v0.",
+                "- Next milestone: L5.2 Field Functional Auto-Projection Core v0.",
             ],
         ),
     )

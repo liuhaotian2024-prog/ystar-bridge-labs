@@ -1,0 +1,50 @@
+{
+  "schema_name": "ystar.behavior_y_star_to_pre_u_candidate.mapping",
+  "schema_version": "v0",
+  "mapping_id": "behavior-y-star-to-pre-u-mapping-l5-2",
+  "field_mappings": [
+    {
+      "from": "behavior_level_y_star_candidate.declared_behavior_y_star",
+      "to": "declared_Y_star",
+      "status": "mapped"
+    },
+    {
+      "from": "projection_context_field_fixture",
+      "to": "Xt",
+      "status": "mapped"
+    },
+    {
+      "from": "behavior_level_y_star_candidate.candidate_u_summary",
+      "to": "candidate_U",
+      "status": "mapped"
+    },
+    {
+      "from": "governance_boundary_context",
+      "to": "governance_expectations",
+      "status": "mapped"
+    },
+    {
+      "from": "y_star_inheritance_map / contraction_map",
+      "to": "projection_trace_refs",
+      "status": "mapped"
+    },
+    {
+      "from": "forbidden_behavior_boundary",
+      "to": "deny / boundary constraints",
+      "status": "mapped"
+    },
+    {
+      "from": "required_pre_u_validation",
+      "to": "validation_required",
+      "status": "mapped"
+    },
+    {
+      "from": "safety_flags",
+      "to": "execution_boundary",
+      "status": "mapped"
+    }
+  ],
+  "y_star_gov_imported": false,
+  "y_star_gov_modified": false,
+  "live_hooks_called": false
+}

@@ -1,0 +1,63 @@
+{
+  "schema_name": "ystar.mission_to_behavior_y_star_projection.context_binding_map",
+  "schema_version": "v0",
+  "map_id": "context-binding-map-l5-2",
+  "bindings": [
+    {
+      "context_field": "architecture_stage_context",
+      "bound_to_projection": true,
+      "source_kind": "generated_fixture"
+    },
+    {
+      "context_field": "current_milestone_context",
+      "bound_to_projection": true,
+      "source_kind": "generated_fixture"
+    },
+    {
+      "context_field": "agent_role_context",
+      "bound_to_projection": true,
+      "source_kind": "generated_fixture"
+    },
+    {
+      "context_field": "repo_context_summary",
+      "bound_to_projection": true,
+      "source_kind": "generated_fixture"
+    },
+    {
+      "context_field": "validation_context_summary",
+      "bound_to_projection": true,
+      "source_kind": "generated_fixture"
+    },
+    {
+      "context_field": "governance_boundary_context",
+      "bound_to_projection": true,
+      "source_kind": "generated_fixture"
+    },
+    {
+      "context_field": "tool_context_summary",
+      "bound_to_projection": true,
+      "source_kind": "generated_fixture"
+    },
+    {
+      "context_field": "residual_history_summary",
+      "bound_to_projection": true,
+      "source_kind": "generated_fixture"
+    },
+    {
+      "context_field": "blocked_live_capability_summary",
+      "bound_to_projection": true,
+      "source_kind": "generated_fixture"
+    },
+    {
+      "context_field": "future_meta_development_context",
+      "bound_to_projection": true,
+      "source_kind": "generated_fixture"
+    },
+    {
+      "context_field": "future_revenue_opportunity_context_disabled",
+      "bound_to_projection": true,
+      "source_kind": "generated_fixture"
+    }
+  ],
+  "future_revenue_opportunity_context_enabled": false
+}

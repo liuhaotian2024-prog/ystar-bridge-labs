@@ -1,0 +1,128 @@
+{
+  "schema_name": "ystar.field_functional_auto_projection_core.input_fixture",
+  "schema_version": "v0",
+  "fixture_id": "field-projection-operator-input-001",
+  "mission_y_star": {
+    "schema_name": "ystar.mission_to_behavior_y_star_projection.mission_y_star_input",
+    "schema_version": "v0",
+    "mission_id": "mission-commercial-agent-company-v0",
+    "declared_mission_y_star": "Build a commercial AI agent self-governed company runtime that can observe business-relevant resources, understand constraints, select or build tools, act through governed channels, record outcomes, and improve through curated CIEU deltas.",
+    "normative_target_state": "A mission-bounded self-governed AI agent company architecture that can project Y* down to behavior candidates before any governed execution.",
+    "success_constraints": [
+      "layered Y* projection exists from mission through behavior",
+      "behavior-level Y* can become a Pre-U packet candidate",
+      "residual learning remains review-gated"
+    ],
+    "safety_constraints": [
+      "no live behavior execution",
+      "no external action",
+      "no network",
+      "no scheduler or daemon",
+      "no brain or memory writeback",
+      "no CIEU persistence"
+    ],
+    "governance_constraints": [
+      "Pre-U validation required before any behavior execution",
+      "Y-star-gov remains unmodified",
+      "operator approval required before future live enablement"
+    ],
+    "non_goals": [
+      "revenue execution",
+      "revenue opportunity discovery",
+      "raw runtime artifact reading",
+      "semantic truth scoring"
+    ],
+    "evidence_refs": [
+      "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
+      "field_functional_archaeology/generated/mission_projection_merge_plan.json",
+      "mission_field_projection_contract/projection_contract_v0.json",
+      "layered_y_star_projection_trace/layered_projection_trace.json"
+    ]
+  },
+  "company_context": {
+    "canonical_repo": "ystar-company",
+    "non_company_repos_modified": false,
+    "read_model_only": true
+  },
+  "milestone_context": {
+    "milestone": "L5.2 Field Functional Auto-Projection Core v0",
+    "purpose": "upgrade structural harness into deterministic auto-projection core"
+  },
+  "session_context": {
+    "session_purpose": "generate deterministic L5.2 field projection artifacts",
+    "manual_local_dry_run_only": true
+  },
+  "task_context": {
+    "task_purpose": "produce mission-to-behavior Y* and downstream dry-run fixtures",
+    "testable_artifacts_required": true
+  },
+  "behavior_context": {
+    "behavior_intent": "prepare a projection-checked autonomous work-cycle candidate",
+    "behavior_execution_enabled": false
+  },
+  "xt_context_field": {
+    "source_kind": "minimal_safe_generated_context_fixture",
+    "deep_xt_model_implemented": false,
+    "summary": "L5.2 uses bounded generated context only; deep Xt remains future input work."
+  },
+  "agent_role_field": {
+    "primary_agent": "Aiden-CEO",
+    "supporting_agents": [
+      "Maya-Governance",
+      "Ryan-Platform",
+      "Samantha-Secretary"
+    ],
+    "role_field": "mission alignment and governance-bounded projection"
+  },
+  "tool_context_field": {
+    "pre_u_packet_candidate_supported": true,
+    "tool_call_downstream_of_behavior_y_star": true,
+    "tool_execution_enabled": false
+  },
+  "governance_boundary_field": {
+    "pre_u_required_before_behavior_execution": true,
+    "y_star_gov_import_or_modification_allowed_now": false,
+    "live_hook_output_allowed": false,
+    "operator_review_required_for_live": true
+  },
+  "risk_field": {
+    "live_execution": "blocked",
+    "external_action": "blocked",
+    "scheduler": "blocked",
+    "daemon": "blocked",
+    "network": "blocked",
+    "brain_memory_writeback": "blocked",
+    "cieu_persistence": "blocked"
+  },
+  "residual_history_field": {
+    "l5_1_residual_fixture_available": true,
+    "residuals_are_dry_run_only": true,
+    "direct_learning_allowed": false
+  },
+  "archaeology_evidence_refs": [
+    "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
+    "field_functional_archaeology/generated/mission_projection_merge_plan.json",
+    "field_functional_archaeology/generated/field_functional_concept_map.json",
+    "field_functional_archaeology/generated/old_to_new_architecture_alignment.json"
+  ],
+  "l5_1_projection_contract_refs": [
+    "mission_field_projection_contract/projection_contract_v0.json",
+    "mission_field_projection_contract/projection_contract_summary.json",
+    "layered_y_star_projection_trace/layered_projection_trace.json",
+    "layered_y_star_projection_trace/unresolved_gap_map.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "behavior_execution_enabled": false
+  }
+}

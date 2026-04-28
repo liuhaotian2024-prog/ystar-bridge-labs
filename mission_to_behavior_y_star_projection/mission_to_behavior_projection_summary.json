@@ -1,0 +1,29 @@
+{
+  "schema_name": "ystar.mission_to_behavior_y_star_projection.summary",
+  "schema_version": "v0",
+  "mission_y_star_defined": true,
+  "projection_context_field_fixture_defined": true,
+  "mission_to_behavior_trace_generated": true,
+  "projection_layers": [
+    "mission",
+    "company",
+    "milestone",
+    "session",
+    "task",
+    "behavior"
+  ],
+  "behavior_level_y_star_candidate_generated": true,
+  "future_revenue_opportunity_context_disabled": true,
+  "semantic_truth_scoring_enabled": false,
+  "behavior_execution_enabled": false,
+  "live_execution_enabled": false,
+  "external_action_enabled": false,
+  "network_enabled": false,
+  "scheduler_enabled": false,
+  "daemon_enabled": false,
+  "cieu_persistence_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false,
+  "candidate_auto_approval_enabled": false,
+  "raw_runtime_artifact_reading_enabled": false
+}

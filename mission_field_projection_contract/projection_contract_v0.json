@@ -67,5 +67,5 @@
   "requires_y_star_gov_for_future_validation": true,
   "calls_y_star_gov_now": false,
   "uses_generated_read_model_only": true,
-  "next_required_milestone": "L5.2 Deep Xt Observation Model v0"
+  "next_required_milestone": "L5.2 Field Functional Auto-Projection Core v0"
 }

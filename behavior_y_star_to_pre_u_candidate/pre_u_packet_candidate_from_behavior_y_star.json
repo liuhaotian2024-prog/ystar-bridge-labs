@@ -1,0 +1,143 @@
+{
+  "schema_name": "ystar.behavior_y_star_to_pre_u_candidate.packet_candidate",
+  "schema_version": "v0",
+  "packet_id": "pre-u-candidate-from-behavior-y-star-l5-2",
+  "dry_run_only": true,
+  "production_ready": false,
+  "requires_y_star_gov_validation_before_execution": true,
+  "live_execution_authorized": false,
+  "external_action_authorized": false,
+  "declared_Y_star": "Prepare a projection-checked autonomous work-cycle candidate for future Pre-U validation.",
+  "Xt": {
+    "schema_name": "ystar.mission_to_behavior_y_star_projection.context_field_fixture",
+    "schema_version": "v0",
+    "context_fixture_id": "field-projection-context-field-001",
+    "architecture_stage_context": {
+      "current_stage": "L5.2 field functional auto-projection core",
+      "prior_chain": [
+        "L5.0 field functional archaeology",
+        "L5.1 mission field projection harness"
+      ],
+      "field_functional_assets_found": 200
+    },
+    "current_milestone_context": {
+      "milestone": "L5.2 Field Functional Auto-Projection Core v0",
+      "purpose": "upgrade structural harness into deterministic auto-projection core"
+    },
+    "agent_role_context": {
+      "primary_agent": "Aiden-CEO",
+      "supporting_agents": [
+        "Maya-Governance",
+        "Ryan-Platform",
+        "Samantha-Secretary"
+      ],
+      "role_field": "mission alignment and governance-bounded projection"
+    },
+    "repo_context_summary": {
+      "canonical_repo": "ystar-company",
+      "non_company_repos_modified": false,
+      "read_model_only": true
+    },
+    "validation_context_summary": {
+      "l5_1_projection_harness_defined": true,
+      "l5_1_action_layer_projection_only": true,
+      "l5_1_action_field_execution_implemented": false
+    },
+    "governance_boundary_context": {
+      "pre_u_required_before_behavior_execution": true,
+      "y_star_gov_import_or_modification_allowed_now": false,
+      "live_hook_output_allowed": false,
+      "operator_review_required_for_live": true
+    },
+    "tool_context_summary": {
+      "pre_u_packet_candidate_supported": true,
+      "tool_call_downstream_of_behavior_y_star": true,
+      "tool_execution_enabled": false
+    },
+    "residual_history_summary": {
+      "l5_1_residual_fixture_available": true,
+      "residuals_are_dry_run_only": true,
+      "direct_learning_allowed": false
+    },
+    "blocked_live_capability_summary": {
+      "live_execution": "blocked",
+      "external_action": "blocked",
+      "scheduler": "blocked",
+      "daemon": "blocked",
+      "network": "blocked",
+      "brain_memory_writeback": "blocked",
+      "cieu_persistence": "blocked"
+    },
+    "future_meta_development_context": {
+      "next_recommended_milestone": "L5.3 Projection-Checked Autonomous Work Cycle v0",
+      "deep_xt_model_is_future_input_enhancement": true
+    },
+    "future_revenue_opportunity_context_disabled": {
+      "reserved_for_future": true,
+      "enabled": false,
+      "network_scans_enabled": false,
+      "bounty_rfp_grant_market_source_scans_enabled": false,
+      "reason": "L5.2 is architecture projection only, not L6 opportunity discovery."
+    },
+    "safety_flags": {
+      "live_execution_enabled": false,
+      "external_action_enabled": false,
+      "network_enabled": false,
+      "scheduler_enabled": false,
+      "daemon_enabled": false,
+      "cieu_persistence_enabled": false,
+      "brain_writeback_enabled": false,
+      "memory_ingestion_enabled": false,
+      "candidate_auto_approval_enabled": false,
+      "semantic_truth_scoring_enabled": false,
+      "raw_runtime_artifact_reading_enabled": false,
+      "behavior_execution_enabled": false
+    },
+    "evidence_refs": [
+      "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json",
+      "mission_field_projection_contract/projection_contract_summary.json",
+      "field_functional_archaeology/generated/field_functional_archaeology_summary.json"
+    ]
+  },
+  "candidate_U": {
+    "candidate_u_id": "candidate-u-projection-checked-cycle-v0",
+    "candidate_u": "route projected behavior Y* into a dry-run Pre-U packet candidate",
+    "execution_mode": "projection_only"
+  },
+  "governance_expectations": {
+    "pre_u_required_before_behavior_execution": true,
+    "y_star_gov_import_or_modification_allowed_now": false,
+    "live_hook_output_allowed": false,
+    "operator_review_required_for_live": true
+  },
+  "projection_trace_refs": [
+    "mission_to_behavior_y_star_projection/mission_to_behavior_projection_trace.json",
+    "mission_to_behavior_y_star_projection/y_star_inheritance_map.json",
+    "mission_to_behavior_y_star_projection/y_star_contraction_map.json"
+  ],
+  "deny_boundary_constraints": [
+    "live behavior execution",
+    "external communication",
+    "network access",
+    "scheduler or daemon activation",
+    "brain or memory writeback",
+    "CIEU persistence",
+    "candidate auto-approval",
+    "direct behavior execution"
+  ],
+  "validation_required": true,
+  "execution_boundary": {
+    "live_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "behavior_execution_enabled": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "schema_name": "ystar.projection_behavior_residual_loop_fixture.residual_delta",
+  "schema_version": "v0",
+  "delta_id": "behavior-projection-residual-delta-l5-2",
+  "no_execution_residual": "Actual Y cannot be measured because no behavior execution occurred.",
+  "projection_gap": [
+    "behavior Y* is deterministic but not validated by production governance"
+  ],
+  "context_gap": [
+    "Xt is minimal safe fixture, not deep observation model"
+  ],
+  "pre_u_gap": [
+    "packet candidate was not sent to Y-star-gov"
+  ],
+  "behavior_boundary_gap": [
+    "behavior execution remains disabled"
+  ],
+  "evidence_gap": [
+    "action-field direct execution evidence remains weak from L5.0"
+  ],
+  "learning_gap": [
+    "learning candidate is stub-only until review queue milestone"
+  ],
+  "real_behavior_executed": false,
+  "cieu_persistence_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false
+}

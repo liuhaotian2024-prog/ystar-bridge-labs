@@ -14,7 +14,7 @@
       "gap_id": "gap-deep-xt-model",
       "gap_type": "projection_gap",
       "description": "Xt is still a generated summary, not a deep observation model.",
-      "blocked_until": "L5.2 Deep Xt Observation Model v0",
+      "blocked_until": "future deep Xt input-model milestone after auto-projection core",
       "blocks_live_execution": false
     },
     {

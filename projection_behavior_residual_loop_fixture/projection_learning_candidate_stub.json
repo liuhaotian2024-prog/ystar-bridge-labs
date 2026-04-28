@@ -1,0 +1,18 @@
+{
+  "schema_name": "ystar.projection_behavior_residual_loop_fixture.learning_candidate_stub",
+  "schema_version": "v0",
+  "learning_candidate_id": "projection-learning-candidate-stub-l5-2",
+  "eligible_for_review_queue": true,
+  "eligible_for_direct_brain_writeback": false,
+  "eligible_for_direct_memory_ingestion": false,
+  "eligible_for_candidate_auto_approval": false,
+  "requires_human_or_governance_review": true,
+  "learning_target": "projection_policy_only",
+  "live_learning_enabled": false,
+  "approved": false,
+  "evidence_refs": [
+    "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+    "behavior_y_star_to_pre_u_candidate/pre_u_packet_candidate_from_behavior_y_star.json",
+    "projection_behavior_residual_loop_fixture/behavior_projection_residual_delta.json"
+  ]
+}

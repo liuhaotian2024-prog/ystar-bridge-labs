@@ -1,0 +1,103 @@
+{
+  "schema_version": "v0",
+  "operator_name": "Field Functional Auto-Projection Core",
+  "operator_id": "field_functional_auto_projection_core_v0",
+  "purpose": "Deterministically project mission-level Y* through company, milestone, session, task, and behavior layers for dry-run governed preparation.",
+  "y_star_definition": "Y* is the declared ideal/normative target state before action/behavior execution. It is not merely a prompt, not merely a plan, not merely an output summary, and not actual Y.",
+  "projection_layers": [
+    "mission",
+    "company",
+    "milestone",
+    "session",
+    "task",
+    "behavior"
+  ],
+  "input_fields": [
+    "mission_y_star",
+    "company_context",
+    "milestone_context",
+    "session_context",
+    "task_context",
+    "behavior_context",
+    "xt_context_field",
+    "agent_role_field",
+    "tool_context_field",
+    "governance_boundary_field",
+    "risk_field",
+    "residual_history_field",
+    "archaeology_evidence_refs",
+    "l5_1_projection_contract_refs"
+  ],
+  "output_fields": [
+    "layered_y_star_projection",
+    "mission_to_behavior_projection_trace",
+    "y_star_inheritance_map",
+    "y_star_contraction_map",
+    "context_binding_map",
+    "unresolved_projection_gap_map",
+    "behavior_level_y_star_candidate",
+    "pre_u_packet_candidate",
+    "projection_residual_delta_fixture"
+  ],
+  "inheritance_rules": [
+    "Every child layer inherits parent Y* obligations unless explicitly narrowed by policy.",
+    "Safety constraints are invariant and cannot be removed by lower layers.",
+    "Founder mission remains the controlling parent obligation for all layers."
+  ],
+  "contraction_rules": [
+    "A child layer may narrow scope, owner, acceptance shape, and context binding.",
+    "A child layer may not authorize live behavior, external action, network, scheduler, daemon, persistence, or writeback.",
+    "Unresolved or weak evidence must be emitted as a gap instead of filled by guesswork."
+  ],
+  "context_binding_rules": [
+    "Bind only generated/read-model evidence and committed schema/docs.",
+    "Bind agent role, tool context, governance boundary, risk, and residual history as constraints.",
+    "Treat Xt as a minimal safe context fixture in L5.2, not a full deep observation model."
+  ],
+  "forbidden_projection_sources": [
+    "raw_db_contents",
+    "raw_wal_contents",
+    "raw_shm_contents",
+    "raw_log_contents",
+    "active_agent_marker_contents",
+    "unreviewed_brain_writeback",
+    "unreviewed_memory_writeback",
+    "live_hook_output",
+    "network_fetch_result",
+    "scheduler_output",
+    "daemon_output",
+    "raw_external_credentials",
+    "raw_secrets",
+    "untrusted_runtime_dump",
+    "semantic_truth_scoring"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "behavior_execution_enabled": false
+  },
+  "non_goals": [
+    "not an LLM planner",
+    "not a live executor",
+    "not a scheduler",
+    "not network-enabled",
+    "not revenue opportunity discovery",
+    "not brain writeback",
+    "not CIEU persistence"
+  ],
+  "action_alias_policy": {
+    "canonical_final_layer": "behavior",
+    "action_alias_allowed_only_as_downstream_reference": true,
+    "action_or_tool_call_requires_future_pre_u_validation": true
+  },
+  "next_required_milestone": "L5.3 Projection-Checked Autonomous Work Cycle v0"
+}

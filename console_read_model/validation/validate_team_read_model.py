@@ -361,6 +361,9 @@ def main() -> int:
     required_mission_field_projection_files = expected.get(
         "required_mission_field_projection_files", []
     )
+    required_field_functional_auto_projection_core_files = expected.get(
+        "required_field_functional_auto_projection_core_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -509,6 +512,12 @@ def main() -> int:
         check_exists(path, report, "mission field projection file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "mission field projection JSON")
+
+    for rel in required_field_functional_auto_projection_core_files:
+        path = ROOT / rel
+        check_exists(path, report, "field functional auto-projection file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "field functional auto-projection JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -2632,7 +2641,8 @@ def main() -> int:
             "residual_delta_fixture_generated",
             "action_layer_projection_only",
             "action_field_execution_implemented",
-            "ready_for_L5_2_deep_xt_observation_model",
+            "ready_for_L5_2_field_functional_auto_projection_core",
+            "deep_xt_model_is_not_l5_2_main_milestone",
             "live_execution_enabled",
             "external_action_enabled",
             "network_enabled",
@@ -2661,7 +2671,8 @@ def main() -> int:
             "pre_u_adapter_candidate_generated",
             "residual_delta_fixture_generated",
             "action_layer_projection_only",
-            "ready_for_L5_2_deep_xt_observation_model",
+            "ready_for_L5_2_field_functional_auto_projection_core",
+            "deep_xt_model_is_not_l5_2_main_milestone",
         ]:
             if mission_projection.get(field) is not True:
                 report.fail(f"generated mission projection summary must keep {field}=true")
@@ -2679,8 +2690,103 @@ def main() -> int:
         ]:
             if mission_projection.get(field) is not False:
                 report.fail(f"generated mission projection summary must keep {field}=false")
-        if mission_projection.get("next_required_milestone") != "L5.2 Deep Xt Observation Model v0":
-            report.fail("generated mission projection summary must point to L5.2 deep Xt milestone")
+        if mission_projection.get("next_required_milestone") != (
+            "L5.2 Field Functional Auto-Projection Core v0"
+        ):
+            report.fail("generated mission projection summary must point to L5.2 auto-projection core milestone")
+
+    field_projection = generated_json.get("console_read_model/generated/field_projection_summary.json")
+    if field_projection:
+        for field in [
+            "field_functional_auto_projection_core_defined",
+            "projection_operator_defined",
+            "mission_level_y_star_input_defined",
+            "mission_to_behavior_projection_generated",
+            "projection_layers",
+            "behavior_level_y_star_candidate_generated",
+            "pre_u_packet_candidate_from_behavior_y_star_generated",
+            "residual_delta_loop_fixture_generated",
+            "learning_candidate_stub_generated_but_not_approved",
+            "live_execution_still_blocked",
+            "writeback_still_blocked",
+            "external_action_still_blocked",
+            "ready_for_l5_3_projection_checked_autonomous_cycle",
+            "l6_revenue_opportunity_discovery_enabled",
+            "dry_run_only",
+            "pre_u_production_ready",
+            "live_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "behavior_execution_enabled",
+            "next_required_milestone",
+            "generated_operator_summary",
+            "generated_projection_summary",
+            "generated_behavior_candidate",
+            "generated_pre_u_candidate",
+            "generated_residual_loop_summary",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in field_projection:
+                report.pass_(f"generated field projection summary field present: {field}")
+            else:
+                report.fail(f"generated field projection summary missing field: {field}")
+        for field in [
+            "field_functional_auto_projection_core_defined",
+            "projection_operator_defined",
+            "mission_level_y_star_input_defined",
+            "mission_to_behavior_projection_generated",
+            "behavior_level_y_star_candidate_generated",
+            "pre_u_packet_candidate_from_behavior_y_star_generated",
+            "residual_delta_loop_fixture_generated",
+            "learning_candidate_stub_generated_but_not_approved",
+            "live_execution_still_blocked",
+            "writeback_still_blocked",
+            "external_action_still_blocked",
+            "ready_for_l5_3_projection_checked_autonomous_cycle",
+            "dry_run_only",
+        ]:
+            if field_projection.get(field) is not True:
+                report.fail(f"generated field projection summary must keep {field}=true")
+        if field_projection.get("projection_layers") != [
+            "mission",
+            "company",
+            "milestone",
+            "session",
+            "task",
+            "behavior",
+        ]:
+            report.fail("generated field projection summary must use mission/company/milestone/session/task/behavior layers")
+        for field in [
+            "l6_revenue_opportunity_discovery_enabled",
+            "pre_u_production_ready",
+            "live_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "behavior_execution_enabled",
+        ]:
+            if field_projection.get(field) is not False:
+                report.fail(f"generated field projection summary must keep {field}=false")
+        if field_projection.get("next_required_milestone") != (
+            "L5.3 Projection-Checked Autonomous Work Cycle v0"
+        ):
+            report.fail("generated field projection summary must point to L5.3 projection-checked cycle milestone")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

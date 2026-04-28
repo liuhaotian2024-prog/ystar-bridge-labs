@@ -1,0 +1,70 @@
+{
+  "layer_name": "company",
+  "parent_layer": "mission",
+  "parent_y_star_ref": "mission_to_behavior_y_star_projection/mission_y_star_input.json",
+  "projected_y_star": {
+    "y_star_id": "company-y-star-field-projection-v0",
+    "declared_y_star": "Company should advance field-functional projection capability through governed dry-run artifacts.",
+    "normative_target_state": "ystar-company can project mission Y* into behavior Y* without live execution."
+  },
+  "inherited_obligations": [
+    "layered Y* projection exists from mission through behavior",
+    "behavior-level Y* can become a Pre-U packet candidate",
+    "residual learning remains review-gated",
+    "no live behavior execution",
+    "no external action",
+    "no network",
+    "no scheduler or daemon",
+    "no brain or memory writeback",
+    "no CIEU persistence"
+  ],
+  "contracted_obligations": [
+    "company scope is limited to ystar-company architecture and generated/read-model evidence"
+  ],
+  "context_bound_obligations": [
+    "repo_context_summary",
+    "governance_boundary_context"
+  ],
+  "explicit_non_goals": [
+    "revenue execution",
+    "revenue opportunity discovery",
+    "raw runtime artifact reading",
+    "semantic truth scoring"
+  ],
+  "forbidden_behaviors": [
+    "live behavior execution",
+    "external communication",
+    "network access",
+    "scheduler or daemon activation",
+    "brain or memory writeback",
+    "CIEU persistence",
+    "candidate auto-approval"
+  ],
+  "required_validation_before_execution": [
+    "static validator",
+    "local safety wrapper",
+    "pytest"
+  ],
+  "unresolved_gaps": [
+    "deep Xt remains future input model"
+  ],
+  "evidence_refs": [
+    "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
+    "mission_field_projection_contract/projection_contract_summary.json"
+  ],
+  "structural_confidence_class": "archaeology_supported_projection",
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "behavior_execution_enabled": false
+  }
+}

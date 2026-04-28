@@ -31,6 +31,7 @@
     "console_read_model/generated/manual_tick_summary.json",
     "console_read_model/generated/field_functional_summary.json",
     "console_read_model/generated/mission_projection_summary.json",
+    "console_read_model/generated/field_projection_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "source_files": [
@@ -65,6 +66,11 @@
     "manual_recurring_observation_tick_runner/generated/manual_tick_runner_readiness_summary.json",
     "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
     "mission_field_projection_contract/projection_contract_summary.json",
+    "field_functional_auto_projection_core/field_projection_operator_summary.json",
+    "mission_to_behavior_y_star_projection/mission_to_behavior_projection_summary.json",
+    "behavior_y_star_to_pre_u_candidate/pre_u_candidate_summary.json",
+    "projection_behavior_residual_loop_fixture/projection_residual_loop_summary.json",
+    "field_projection_cycle_readiness/field_projection_cycle_readiness.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",

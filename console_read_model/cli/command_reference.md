@@ -97,6 +97,10 @@ python3 console_read_model/cli/team_console.py <command>
   harness summary: projection contract, layered trace, Pre-U adapter candidate,
   residual delta fixture, disabled live/writeback/persistence flags, and the
   L5.2 recommendation.
+- `field-projection`: Prints the generated L5.2 field functional
+  auto-projection core summary: mission-to-behavior Y* projection, behavior Y*
+  candidate, Pre-U packet candidate, residual loop fixture, learning stub, and
+  disabled live/writeback/persistence/behavior-execution flags.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

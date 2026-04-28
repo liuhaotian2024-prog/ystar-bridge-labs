@@ -153,7 +153,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after mission projection harness",
+        "Build field functional auto-projection core",
+        ["python3", "field_functional_auto_projection_core/tools/build_field_functional_auto_projection_core.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after field projection core",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -961,6 +966,131 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "projection_residual_delta_fixture/projection_residual_delta_summary.json"],
     ),
     Check(
+        "Compile field functional auto-projection core builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "field_functional_auto_projection_core/tools/build_field_functional_auto_projection_core.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: field_projection_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/field_projection_summary.json"],
+    ),
+    Check(
+        "Validate JSON: field_projection_operator_contract.json",
+        ["python3", "-m", "json.tool", "field_functional_auto_projection_core/field_projection_operator_contract.json"],
+    ),
+    Check(
+        "Validate JSON: field_projection_operator_policy.json",
+        ["python3", "-m", "json.tool", "field_functional_auto_projection_core/field_projection_operator_policy.json"],
+    ),
+    Check(
+        "Validate JSON: field_projection_input_fixture.json",
+        ["python3", "-m", "json.tool", "field_functional_auto_projection_core/field_projection_input_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: field_projection_operator_summary.json",
+        ["python3", "-m", "json.tool", "field_functional_auto_projection_core/field_projection_operator_summary.json"],
+    ),
+    Check(
+        "Validate JSON: mission_y_star_input.json",
+        ["python3", "-m", "json.tool", "mission_to_behavior_y_star_projection/mission_y_star_input.json"],
+    ),
+    Check(
+        "Validate JSON: projection_context_field_fixture.json",
+        ["python3", "-m", "json.tool", "mission_to_behavior_y_star_projection/projection_context_field_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: mission_to_company_y_star.json",
+        ["python3", "-m", "json.tool", "mission_to_behavior_y_star_projection/mission_to_company_y_star.json"],
+    ),
+    Check(
+        "Validate JSON: company_to_milestone_y_star.json",
+        ["python3", "-m", "json.tool", "mission_to_behavior_y_star_projection/company_to_milestone_y_star.json"],
+    ),
+    Check(
+        "Validate JSON: milestone_to_session_y_star.json",
+        ["python3", "-m", "json.tool", "mission_to_behavior_y_star_projection/milestone_to_session_y_star.json"],
+    ),
+    Check(
+        "Validate JSON: session_to_task_y_star.json",
+        ["python3", "-m", "json.tool", "mission_to_behavior_y_star_projection/session_to_task_y_star.json"],
+    ),
+    Check(
+        "Validate JSON: task_to_behavior_y_star.json",
+        ["python3", "-m", "json.tool", "mission_to_behavior_y_star_projection/task_to_behavior_y_star.json"],
+    ),
+    Check(
+        "Validate JSON: mission_to_behavior_projection_trace.json",
+        ["python3", "-m", "json.tool", "mission_to_behavior_y_star_projection/mission_to_behavior_projection_trace.json"],
+    ),
+    Check(
+        "Validate JSON: y_star_inheritance_map.json",
+        ["python3", "-m", "json.tool", "mission_to_behavior_y_star_projection/y_star_inheritance_map.json"],
+    ),
+    Check(
+        "Validate JSON: y_star_contraction_map.json",
+        ["python3", "-m", "json.tool", "mission_to_behavior_y_star_projection/y_star_contraction_map.json"],
+    ),
+    Check(
+        "Validate JSON: context_binding_map.json",
+        ["python3", "-m", "json.tool", "mission_to_behavior_y_star_projection/context_binding_map.json"],
+    ),
+    Check(
+        "Validate JSON: unresolved_projection_gap_map.json",
+        ["python3", "-m", "json.tool", "mission_to_behavior_y_star_projection/unresolved_projection_gap_map.json"],
+    ),
+    Check(
+        "Validate JSON: behavior_level_y_star_candidate.json",
+        ["python3", "-m", "json.tool", "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json"],
+    ),
+    Check(
+        "Validate JSON: mission_to_behavior_projection_summary.json",
+        ["python3", "-m", "json.tool", "mission_to_behavior_y_star_projection/mission_to_behavior_projection_summary.json"],
+    ),
+    Check(
+        "Validate JSON: behavior_to_pre_u_mapping.json",
+        ["python3", "-m", "json.tool", "behavior_y_star_to_pre_u_candidate/behavior_to_pre_u_mapping.json"],
+    ),
+    Check(
+        "Validate JSON: pre_u_packet_candidate_from_behavior_y_star.json",
+        ["python3", "-m", "json.tool", "behavior_y_star_to_pre_u_candidate/pre_u_packet_candidate_from_behavior_y_star.json"],
+    ),
+    Check(
+        "Validate JSON: pre_u_candidate_summary.json",
+        ["python3", "-m", "json.tool", "behavior_y_star_to_pre_u_candidate/pre_u_candidate_summary.json"],
+    ),
+    Check(
+        "Validate JSON: projected_behavior_expected_outcome.json",
+        ["python3", "-m", "json.tool", "projection_behavior_residual_loop_fixture/projected_behavior_expected_outcome.json"],
+    ),
+    Check(
+        "Validate JSON: mock_behavior_actual_outcome.json",
+        ["python3", "-m", "json.tool", "projection_behavior_residual_loop_fixture/mock_behavior_actual_outcome.json"],
+    ),
+    Check(
+        "Validate JSON: behavior_projection_residual_delta.json",
+        ["python3", "-m", "json.tool", "projection_behavior_residual_loop_fixture/behavior_projection_residual_delta.json"],
+    ),
+    Check(
+        "Validate JSON: projection_learning_candidate_stub.json",
+        ["python3", "-m", "json.tool", "projection_behavior_residual_loop_fixture/projection_learning_candidate_stub.json"],
+    ),
+    Check(
+        "Validate JSON: projection_residual_loop_summary.json",
+        ["python3", "-m", "json.tool", "projection_behavior_residual_loop_fixture/projection_residual_loop_summary.json"],
+    ),
+    Check(
+        "Validate JSON: field_projection_cycle_readiness.json",
+        ["python3", "-m", "json.tool", "field_projection_cycle_readiness/field_projection_cycle_readiness.json"],
+    ),
+    Check(
+        "Validate JSON: l5_3_recommended_next_step.json",
+        ["python3", "-m", "json.tool", "field_projection_cycle_readiness/l5_3_recommended_next_step.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -1143,6 +1273,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: mission-projection",
         ["python3", "console_read_model/cli/team_console.py", "mission-projection"],
+    ),
+    Check(
+        "CLI smoke: field-projection",
+        ["python3", "console_read_model/cli/team_console.py", "field-projection"],
     ),
     Check(
         "CLI smoke: sources",

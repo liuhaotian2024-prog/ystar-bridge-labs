@@ -1,0 +1,71 @@
+{
+  "layer_name": "session",
+  "parent_layer": "milestone",
+  "parent_y_star_ref": "mission_to_behavior_y_star_projection/company_to_milestone_y_star.json",
+  "projected_y_star": {
+    "y_star_id": "session-y-star-l5-2-build-v0",
+    "declared_y_star": "This build session should create deterministic L5.2 artifacts and tests only.",
+    "normative_target_state": "session output is inspectable, schema-like, and dry-run safe."
+  },
+  "inherited_obligations": [
+    "layered Y* projection exists from mission through behavior",
+    "behavior-level Y* can become a Pre-U packet candidate",
+    "residual learning remains review-gated",
+    "no live behavior execution",
+    "no external action",
+    "no network",
+    "no scheduler or daemon",
+    "no brain or memory writeback",
+    "no CIEU persistence",
+    "company scope is limited to ystar-company architecture and generated/read-model evidence",
+    "milestone must end at behavior layer, not action layer"
+  ],
+  "contracted_obligations": [
+    "session scope is one local deterministic build, not recurring execution"
+  ],
+  "context_bound_obligations": [
+    "session_context",
+    "agent_role_context"
+  ],
+  "explicit_non_goals": [
+    "daemon use",
+    "scheduler use",
+    "network use"
+  ],
+  "forbidden_behaviors": [
+    "live behavior execution",
+    "external communication",
+    "network access",
+    "scheduler or daemon activation",
+    "brain or memory writeback",
+    "CIEU persistence",
+    "candidate auto-approval"
+  ],
+  "required_validation_before_execution": [
+    "py_compile",
+    "JSON validation",
+    "targeted pytest"
+  ],
+  "unresolved_gaps": [
+    "full deep Xt not implemented in this session"
+  ],
+  "evidence_refs": [
+    "manual_recurring_observation_tick_runner/generated/manual_tick_runner_readiness_summary.json",
+    "mission_field_projection_contract/projection_contract_summary.json"
+  ],
+  "structural_confidence_class": "context_bound_projection",
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "behavior_execution_enabled": false
+  }
+}

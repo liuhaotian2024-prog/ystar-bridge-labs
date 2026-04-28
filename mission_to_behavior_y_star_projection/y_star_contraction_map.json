@@ -1,0 +1,47 @@
+{
+  "schema_name": "ystar.mission_to_behavior_y_star_projection.contraction_map",
+  "schema_version": "v0",
+  "map_id": "y-star-contraction-map-l5-2",
+  "contractions": [
+    {
+      "layer": "company",
+      "artifact_ref": "mission_to_behavior_y_star_projection/mission_to_company_y_star.json",
+      "contracted_obligations": [
+        "company scope is limited to ystar-company architecture and generated/read-model evidence"
+      ],
+      "contraction_rule": "narrow scope without relaxing safety flags"
+    },
+    {
+      "layer": "milestone",
+      "artifact_ref": "mission_to_behavior_y_star_projection/company_to_milestone_y_star.json",
+      "contracted_obligations": [
+        "milestone must end at behavior layer, not action layer"
+      ],
+      "contraction_rule": "narrow scope without relaxing safety flags"
+    },
+    {
+      "layer": "session",
+      "artifact_ref": "mission_to_behavior_y_star_projection/milestone_to_session_y_star.json",
+      "contracted_obligations": [
+        "session scope is one local deterministic build, not recurring execution"
+      ],
+      "contraction_rule": "narrow scope without relaxing safety flags"
+    },
+    {
+      "layer": "task",
+      "artifact_ref": "mission_to_behavior_y_star_projection/session_to_task_y_star.json",
+      "contracted_obligations": [
+        "task completion is measured by deterministic artifacts and validators"
+      ],
+      "contraction_rule": "narrow scope without relaxing safety flags"
+    },
+    {
+      "layer": "behavior",
+      "artifact_ref": "mission_to_behavior_y_star_projection/task_to_behavior_y_star.json",
+      "contracted_obligations": [
+        "behavior is projection-only and cannot execute directly"
+      ],
+      "contraction_rule": "narrow scope without relaxing safety flags"
+    }
+  ]
+}

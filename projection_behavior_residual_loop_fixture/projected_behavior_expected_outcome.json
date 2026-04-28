@@ -1,0 +1,21 @@
+{
+  "schema_name": "ystar.projection_behavior_residual_loop_fixture.expected_outcome",
+  "schema_version": "v0",
+  "expected_outcome_id": "projected-behavior-expected-outcome-l5-2",
+  "derived_from_behavior_y_star_ref": "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+  "expected_behavior_result": "Pre-U packet candidate is generated from behavior Y* and remains blocked from execution.",
+  "expected_safety_state": {
+    "live_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "behavior_execution_enabled": false
+  }
+}

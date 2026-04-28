@@ -1,0 +1,37 @@
+{
+  "schema_name": "ystar.mission_to_behavior_y_star_projection.mission_y_star_input",
+  "schema_version": "v0",
+  "mission_id": "mission-commercial-agent-company-v0",
+  "declared_mission_y_star": "Build a commercial AI agent self-governed company runtime that can observe business-relevant resources, understand constraints, select or build tools, act through governed channels, record outcomes, and improve through curated CIEU deltas.",
+  "normative_target_state": "A mission-bounded self-governed AI agent company architecture that can project Y* down to behavior candidates before any governed execution.",
+  "success_constraints": [
+    "layered Y* projection exists from mission through behavior",
+    "behavior-level Y* can become a Pre-U packet candidate",
+    "residual learning remains review-gated"
+  ],
+  "safety_constraints": [
+    "no live behavior execution",
+    "no external action",
+    "no network",
+    "no scheduler or daemon",
+    "no brain or memory writeback",
+    "no CIEU persistence"
+  ],
+  "governance_constraints": [
+    "Pre-U validation required before any behavior execution",
+    "Y-star-gov remains unmodified",
+    "operator approval required before future live enablement"
+  ],
+  "non_goals": [
+    "revenue execution",
+    "revenue opportunity discovery",
+    "raw runtime artifact reading",
+    "semantic truth scoring"
+  ],
+  "evidence_refs": [
+    "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
+    "field_functional_archaeology/generated/mission_projection_merge_plan.json",
+    "mission_field_projection_contract/projection_contract_v0.json",
+    "layered_y_star_projection_trace/layered_projection_trace.json"
+  ]
+}

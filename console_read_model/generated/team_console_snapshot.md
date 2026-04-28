@@ -70,6 +70,8 @@ Ready now:
 - governed recurring observation loop contract summary
 - manual recurring observation tick runner summary
 - field functional archaeology and merge plan summary
+- mission field functional projection harness summary
+- field functional auto-projection core summary
 
 Not ready:
 - runtime generator
@@ -99,7 +101,7 @@ Not ready:
 - enabled CIEU runtime event persistence
 - approved governed action registry
 - review-gated learning candidate queue
-- L5.1 mission field functional projection harness
+- L5.3 projection-checked autonomous work cycle
 
 ## Runtime Artifact Quarantine Summary
 
@@ -582,7 +584,8 @@ Not ready:
 - residual_delta_fixture_generated: True
 - action_layer_projection_only: True
 - action_field_execution_implemented: False
-- ready_for_L5_2_deep_xt_observation_model: True
+- ready_for_L5_2_field_functional_auto_projection_core: True
+- deep_xt_model_is_not_l5_2_main_milestone: True
 - live_execution_enabled: False
 - external_action_enabled: False
 - network_enabled: False
@@ -591,8 +594,32 @@ Not ready:
 - cieu_persistence_enabled: False
 - brain_writeback_enabled: False
 - memory_ingestion_enabled: False
-- next_required_milestone: L5.2 Deep Xt Observation Model v0
-- Warning: L5.1 is a dry-run projection harness; action-field execution and production Pre-U validation remain future work.
+- next_required_milestone: L5.2 Field Functional Auto-Projection Core v0
+- Warning: L5.1 is a dry-run projection harness; L5.2 should upgrade auto-projection before any future deep Xt expansion.
+
+## Field Functional Auto-Projection Core
+
+- field_functional_auto_projection_core_defined: True
+- mission_level_y_star_input_defined: True
+- mission_to_behavior_projection_generated: True
+- projection_layers: mission, company, milestone, session, task, behavior
+- behavior_level_y_star_candidate_generated: True
+- pre_u_packet_candidate_from_behavior_y_star_generated: True
+- residual_delta_loop_fixture_generated: True
+- learning_candidate_stub_generated_but_not_approved: True
+- live_execution_enabled: False
+- external_action_enabled: False
+- network_enabled: False
+- scheduler_enabled: False
+- daemon_enabled: False
+- cieu_persistence_enabled: False
+- brain_writeback_enabled: False
+- memory_ingestion_enabled: False
+- behavior_execution_enabled: False
+- l6_revenue_opportunity_discovery_enabled: False
+- ready_for_l5_3_projection_checked_autonomous_cycle: True
+- next_required_milestone: L5.3 Projection-Checked Autonomous Work Cycle v0
+- Warning: L5.2 is a dry-run field projection core. It does not execute behavior, discover revenue opportunities, or write learning to memory.
 
 ## Governance Boundary
 
@@ -628,6 +655,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - define L4.8 governed recurring observation loop contract
 - build L5.0 review-gated learning candidate queue
 - build L5.1 mission field functional projection harness from archaeology merge plan
+- build L5.3 projection-checked autonomous work cycle from behavior-level Y*
 
 ## Warnings / Gaps
 
@@ -666,3 +694,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Recurring observation loop contract exists but recurrence, scheduler, daemon, and auto-run remain disabled.
 - Manual recurring observation tick runner exists for one-shot local ticks only; no scheduler, daemon, or recurrence is enabled.
 - Field functional archaeology exists as a merge plan only; L5 projection harness is not implemented yet.
+- Field functional auto-projection core exists as a dry-run projection core only; behavior execution remains disabled.

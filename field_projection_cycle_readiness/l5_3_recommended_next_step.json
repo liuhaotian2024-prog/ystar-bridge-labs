@@ -1,0 +1,18 @@
+{
+  "schema_name": "ystar.field_projection_cycle_readiness.l5_3_recommended_next_step",
+  "schema_version": "v0",
+  "recommended_next_step_id": "l5-3-projection-checked-autonomous-work-cycle",
+  "title": "L5.3 Projection-Checked Autonomous Work Cycle v0",
+  "reason": "L5.2 can project mission Y* to behavior Y* and produce dry-run Pre-U and residual fixtures.",
+  "requires_y_star_gov": true,
+  "requires_operator_approval": false,
+  "live_enabled": false,
+  "external_action_enabled": false,
+  "network_enabled": false,
+  "depends_on": [
+    "field_functional_auto_projection_core/field_projection_operator_contract.json",
+    "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+    "behavior_y_star_to_pre_u_candidate/pre_u_packet_candidate_from_behavior_y_star.json",
+    "field_projection_cycle_readiness/field_projection_cycle_readiness.json"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_name": "ystar.field_functional_auto_projection_core.operator_policy",
+  "schema_version": "v0",
+  "policy_id": "field-projection-operator-policy-v0",
+  "deterministic_only": true,
+  "llm_planning_enabled": false,
+  "mathematical_optimality_claimed": false,
+  "semantic_truth_scoring_enabled": false,
+  "probabilistic_scoring_enabled": false,
+  "projection_layers": [
+    "mission",
+    "company",
+    "milestone",
+    "session",
+    "task",
+    "behavior"
+  ],
+  "structural_confidence_classes": [
+    "direct_contract_inheritance",
+    "context_bound_projection",
+    "archaeology_supported_projection",
+    "l5_1_harness_supported_projection",
+    "policy_constrained_projection",
+    "unresolved_gap"
+  ],
+  "forbidden_projection_sources": [
+    "raw_db_contents",
+    "raw_wal_contents",
+    "raw_shm_contents",
+    "raw_log_contents",
+    "active_agent_marker_contents",
+    "unreviewed_brain_writeback",
+    "unreviewed_memory_writeback",
+    "live_hook_output",
+    "network_fetch_result",
+    "scheduler_output",
+    "daemon_output",
+    "raw_external_credentials",
+    "raw_secrets",
+    "untrusted_runtime_dump",
+    "semantic_truth_scoring"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "behavior_execution_enabled": false
+  },
+  "behavior_layer_requires_pre_u_before_execution": true,
+  "future_revenue_opportunity_discovery_enabled": false
+}

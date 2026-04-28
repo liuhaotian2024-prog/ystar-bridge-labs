@@ -1,0 +1,33 @@
+{
+  "schema_name": "ystar.field_functional_auto_projection_core.operator_summary",
+  "schema_version": "v0",
+  "field_functional_auto_projection_core_defined": true,
+  "projection_operator_defined": true,
+  "field_projection_operator_contract_defined": true,
+  "field_projection_input_fixture_defined": true,
+  "field_projection_algorithm_defined": true,
+  "projection_layers": [
+    "mission",
+    "company",
+    "milestone",
+    "session",
+    "task",
+    "behavior"
+  ],
+  "behavior_final_layer_used": true,
+  "action_layer_canonical": false,
+  "l6_revenue_opportunity_discovery_enabled": false,
+  "next_required_milestone": "L5.3 Projection-Checked Autonomous Work Cycle v0",
+  "live_execution_enabled": false,
+  "external_action_enabled": false,
+  "network_enabled": false,
+  "scheduler_enabled": false,
+  "daemon_enabled": false,
+  "cieu_persistence_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false,
+  "candidate_auto_approval_enabled": false,
+  "semantic_truth_scoring_enabled": false,
+  "raw_runtime_artifact_reading_enabled": false,
+  "behavior_execution_enabled": false
+}

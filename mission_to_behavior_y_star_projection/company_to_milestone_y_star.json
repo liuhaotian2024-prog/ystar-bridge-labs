@@ -1,0 +1,69 @@
+{
+  "layer_name": "milestone",
+  "parent_layer": "company",
+  "parent_y_star_ref": "mission_to_behavior_y_star_projection/mission_to_company_y_star.json",
+  "projected_y_star": {
+    "y_star_id": "milestone-y-star-l5-2-v0",
+    "declared_y_star": "L5.2 should define the deterministic auto-projection operator and generate behavior-level Y*.",
+    "normative_target_state": "field functional moves from structural harness to deterministic projection core."
+  },
+  "inherited_obligations": [
+    "layered Y* projection exists from mission through behavior",
+    "behavior-level Y* can become a Pre-U packet candidate",
+    "residual learning remains review-gated",
+    "no live behavior execution",
+    "no external action",
+    "no network",
+    "no scheduler or daemon",
+    "no brain or memory writeback",
+    "no CIEU persistence",
+    "company scope is limited to ystar-company architecture and generated/read-model evidence"
+  ],
+  "contracted_obligations": [
+    "milestone must end at behavior layer, not action layer"
+  ],
+  "context_bound_obligations": [
+    "current_milestone_context",
+    "L5.1 projection contract refs"
+  ],
+  "explicit_non_goals": [
+    "production Pre-U adapter",
+    "live behavior execution",
+    "L6 revenue discovery"
+  ],
+  "forbidden_behaviors": [
+    "live behavior execution",
+    "external communication",
+    "network access",
+    "scheduler or daemon activation",
+    "brain or memory writeback",
+    "CIEU persistence",
+    "candidate auto-approval"
+  ],
+  "required_validation_before_execution": [
+    "L5.2 artifact tests",
+    "read-model integration"
+  ],
+  "unresolved_gaps": [
+    "behavior execution remains future work"
+  ],
+  "evidence_refs": [
+    "mission_field_projection_contract/projection_contract_v0.json",
+    "layered_y_star_projection_trace/layered_projection_trace.json"
+  ],
+  "structural_confidence_class": "l5_1_harness_supported_projection",
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "behavior_execution_enabled": false
+  }
+}

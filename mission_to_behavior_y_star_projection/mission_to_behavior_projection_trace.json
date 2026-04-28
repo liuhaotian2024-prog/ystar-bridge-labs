@@ -1,0 +1,78 @@
+{
+  "schema_name": "ystar.mission_to_behavior_y_star_projection.trace",
+  "schema_version": "v0",
+  "trace_id": "mission-to-behavior-projection-trace-l5-2",
+  "projection_layers": [
+    "mission",
+    "company",
+    "milestone",
+    "session",
+    "task",
+    "behavior"
+  ],
+  "transitions": [
+    {
+      "from_layer": "mission",
+      "to_layer": "company",
+      "parent_ref": "mission_to_behavior_y_star_projection/mission_y_star_input.json",
+      "child_ref": "mission_to_behavior_y_star_projection/mission_to_company_y_star.json",
+      "derivation_rule": "inherit parent Y*, contract to child context, bind constraints, preserve forbidden boundaries, emit gaps",
+      "structural_confidence_class": "archaeology_supported_projection",
+      "evidence_refs": [
+        "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
+        "mission_field_projection_contract/projection_contract_summary.json"
+      ]
+    },
+    {
+      "from_layer": "company",
+      "to_layer": "milestone",
+      "parent_ref": "mission_to_behavior_y_star_projection/mission_to_company_y_star.json",
+      "child_ref": "mission_to_behavior_y_star_projection/company_to_milestone_y_star.json",
+      "derivation_rule": "inherit parent Y*, contract to child context, bind constraints, preserve forbidden boundaries, emit gaps",
+      "structural_confidence_class": "l5_1_harness_supported_projection",
+      "evidence_refs": [
+        "mission_field_projection_contract/projection_contract_v0.json",
+        "layered_y_star_projection_trace/layered_projection_trace.json"
+      ]
+    },
+    {
+      "from_layer": "milestone",
+      "to_layer": "session",
+      "parent_ref": "mission_to_behavior_y_star_projection/company_to_milestone_y_star.json",
+      "child_ref": "mission_to_behavior_y_star_projection/milestone_to_session_y_star.json",
+      "derivation_rule": "inherit parent Y*, contract to child context, bind constraints, preserve forbidden boundaries, emit gaps",
+      "structural_confidence_class": "context_bound_projection",
+      "evidence_refs": [
+        "manual_recurring_observation_tick_runner/generated/manual_tick_runner_readiness_summary.json",
+        "mission_field_projection_contract/projection_contract_summary.json"
+      ]
+    },
+    {
+      "from_layer": "session",
+      "to_layer": "task",
+      "parent_ref": "mission_to_behavior_y_star_projection/milestone_to_session_y_star.json",
+      "child_ref": "mission_to_behavior_y_star_projection/session_to_task_y_star.json",
+      "derivation_rule": "inherit parent Y*, contract to child context, bind constraints, preserve forbidden boundaries, emit gaps",
+      "structural_confidence_class": "policy_constrained_projection",
+      "evidence_refs": [
+        "field_functional_archaeology/generated/mission_projection_merge_plan.json",
+        "layered_y_star_projection_trace/unresolved_gap_map.json"
+      ]
+    },
+    {
+      "from_layer": "task",
+      "to_layer": "behavior",
+      "parent_ref": "mission_to_behavior_y_star_projection/session_to_task_y_star.json",
+      "child_ref": "mission_to_behavior_y_star_projection/task_to_behavior_y_star.json",
+      "derivation_rule": "inherit parent Y*, contract to child context, bind constraints, preserve forbidden boundaries, emit gaps",
+      "structural_confidence_class": "policy_constrained_projection",
+      "evidence_refs": [
+        "projection_to_pre_u_packet_adapter/pre_u_packet_candidate.json",
+        "projection_residual_delta_fixture/projection_residual_delta_fixture.json"
+      ]
+    }
+  ],
+  "semantic_truth_scoring_enabled": false,
+  "probabilistic_scoring_enabled": false,
+  "behavior_execution_enabled": false
+}

@@ -78,5 +78,8 @@ functional archaeology outputs. It confirms old field-functional work was search
 `mission_projection_summary.json` is derived from the L5.1 mission field
 projection harness. It confirms layered Y* projection, a Pre-U packet candidate, and a residual fixture exist while action execution remains disabled.
 
+`field_projection_summary.json` is derived from the L5.2 field functional
+auto-projection core. It confirms mission-to-behavior Y* projection, a behavior-level Pre-U candidate, and a residual loop fixture exist while behavior execution remains disabled.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

@@ -1,0 +1,45 @@
+{
+  "schema_name": "ystar.mission_to_behavior_y_star_projection.unresolved_gap_map",
+  "schema_version": "v0",
+  "gap_map_id": "unresolved-projection-gap-map-l5-2",
+  "gaps": [
+    {
+      "gap_id": "gap-deep-xt-input-model",
+      "gap_type": "context_gap",
+      "description": "Xt is still a minimal safe fixture, not a deep observation model.",
+      "blocks_l5_2_completion": false
+    },
+    {
+      "gap_id": "gap-production-pre-u-validation",
+      "gap_type": "pre_u_gap",
+      "description": "Pre-U packet is candidate-only and not sent to Y-star-gov.",
+      "blocks_l5_2_completion": false
+    },
+    {
+      "gap_id": "gap-behavior-execution",
+      "gap_type": "behavior_boundary_gap",
+      "description": "Behavior execution is disabled and no live action executor is implemented.",
+      "blocks_l5_2_completion": false
+    },
+    {
+      "gap_id": "gap-review-gated-learning-queue",
+      "gap_type": "learning_gap",
+      "description": "Learning candidate is a stub only and requires future review workflow.",
+      "blocks_l5_2_completion": false
+    }
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "behavior_execution_enabled": false
+  }
+}
