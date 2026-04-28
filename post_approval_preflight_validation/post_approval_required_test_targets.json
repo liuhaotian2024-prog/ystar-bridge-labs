@@ -1,0 +1,49 @@
+{
+  "schema_name": "ystar.post_approval_preflight.required_test_targets",
+  "schema_version": "v0",
+  "test_targets_id": "post-approval-required-test-targets-v0",
+  "l5_0_to_l5_9_targeted_pytest": [
+    "tests/field_functional_archaeology/test_field_functional_archaeology.py",
+    "tests/mission_field_projection_contract/test_mission_field_projection_contract.py",
+    "tests/field_functional_auto_projection_core/test_field_functional_auto_projection_core.py",
+    "tests/projection_checked_autonomous_work_cycle/test_projection_checked_autonomous_work_cycle.py",
+    "tests/review_gated_shadow_projection_cycle/test_review_gated_shadow_projection_cycle.py",
+    "tests/cross_repo_governance_contract_proof/test_cross_repo_governance_contract_proof.py",
+    "tests/governed_mcp_dry_run_adapter/test_governed_mcp_dry_run_adapter.py",
+    "tests/controlled_canonical_learning_design/test_controlled_canonical_learning_design.py",
+    "tests/approved_canonical_update_sandbox/test_approved_canonical_update_sandbox.py",
+    "tests/real_approval_workflow_boundary/test_real_approval_workflow_boundary.py"
+  ],
+  "known_unrelated_full_pytest_collection_issue": {
+    "test": "tests/platform/test_coordinator_reply_5tuple_wire.py",
+    "issue": "imports governance.coordinator_audit",
+    "context_only": true,
+    "approval_blocker_for_artifact_only_milestone": false,
+    "recommendation": "separate CI hygiene milestone"
+  },
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

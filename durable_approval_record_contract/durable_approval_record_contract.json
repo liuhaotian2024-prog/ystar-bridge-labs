@@ -1,0 +1,97 @@
+{
+  "schema_name": "ystar.durable_approval_record.contract",
+  "schema_version": "v0",
+  "contract_id": "durable-approval-record-contract-v0",
+  "purpose": "Define future durable approval record shape without writing a durable record now.",
+  "required_record_fields": [
+    "approval_record_id",
+    "approval_subject_package_id",
+    "approval_scope",
+    "denied_scope",
+    "approval_decision",
+    "approval_mode",
+    "approver_role_refs",
+    "proposer_ref",
+    "reviewer_ref",
+    "release_operator_ref",
+    "rollback_operator_ref",
+    "evidence_dossier_id",
+    "y_star_invariant_check_id",
+    "mcp_non_bypass_check_id",
+    "post_validation_plan_id",
+    "rollback_plan_id",
+    "approval_timestamp_placeholder",
+    "expiration_policy_ref",
+    "revocation_policy_ref",
+    "integrity_hash_placeholder",
+    "parent_record_ref",
+    "audit_lineage_refs",
+    "application_status",
+    "safety_flags"
+  ],
+  "integrity_requirements": [
+    "content hash or future signature placeholder",
+    "immutable append-only record semantics",
+    "no silent overwrite",
+    "record references evidence, rollback, validation, expiration, revocation, and audit lineage"
+  ],
+  "storage_requirements": [
+    "future storage only",
+    "explicit milestone required before persistence",
+    "no DB write in L5.9"
+  ],
+  "immutability_requirements": [
+    "append-only",
+    "parent record ref required for supersession",
+    "revocation record required instead of deletion"
+  ],
+  "revocation_requirements": [
+    "revocation policy ref required",
+    "revocation must be auditable"
+  ],
+  "expiration_requirements": [
+    "expiration policy ref required",
+    "approval cannot be indefinite"
+  ],
+  "audit_requirements": [
+    "source evidence refs",
+    "approval decision refs",
+    "application status"
+  ],
+  "forbidden_record_shortcuts": [
+    "approval without evidence dossier",
+    "approval without rollback plan",
+    "approval without post-validation plan",
+    "approval without explicit scope",
+    "approval without denied scope",
+    "approval without expiration/revocation policy",
+    "silent overwrite"
+  ],
+  "persistence_enabled_now": false,
+  "durable_db_write_performed": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

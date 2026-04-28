@@ -48,6 +48,7 @@ CONTROLLED_CANONICAL_LEARNING = (
     "console_read_model/generated/controlled_canonical_learning_summary.json"
 )
 APPROVED_SANDBOX_UPDATE = "console_read_model/generated/approved_sandbox_update_summary.json"
+REAL_APPROVAL_WORKFLOW = "console_read_model/generated/real_approval_workflow_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -67,7 +68,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -133,6 +134,7 @@ def load_all() -> dict[str, Any]:
         "governed_mcp_adapter": load_json(GOVERNED_MCP_ADAPTER),
         "controlled_canonical_learning": load_json(CONTROLLED_CANONICAL_LEARNING),
         "approved_sandbox_update": load_json(APPROVED_SANDBOX_UPDATE),
+        "real_approval_workflow": load_json(REAL_APPROVAL_WORKFLOW),
     }
 
 
@@ -1321,6 +1323,82 @@ def cmd_approved_sandbox_update(data: dict[str, Any]) -> None:
     print(f"warning: {sandbox.get('warning')}")
 
 
+def cmd_real_approval_workflow(data: dict[str, Any]) -> None:
+    approval = data["real_approval_workflow"]
+    print("# Real Approval Workflow Boundary")
+    print()
+    print(
+        "L5.9 real approval workflow boundary defined: "
+        f"{approval.get('l5_9_real_approval_workflow_boundary_defined')}"
+    )
+    print(f"approval authority model generated: {approval.get('approval_authority_model_generated')}")
+    print(f"approval evidence dossier generated: {approval.get('approval_evidence_dossier_generated')}")
+    print(
+        "durable approval record contract generated: "
+        f"{approval.get('durable_approval_record_contract_generated')}"
+    )
+    print(
+        "approval decision packet fixture generated: "
+        f"{approval.get('approval_decision_packet_fixture_generated')}"
+    )
+    print(f"validity/revocation policy generated: {approval.get('validity_revocation_policy_generated')}")
+    print(
+        "pre-application snapshot policy generated: "
+        f"{approval.get('pre_application_snapshot_policy_generated')}"
+    )
+    print(
+        "real application boundary gate generated: "
+        f"{approval.get('real_application_boundary_gate_generated')}"
+    )
+    print(
+        "post-approval preflight validation plan generated: "
+        f"{approval.get('post_approval_preflight_validation_plan_generated')}"
+    )
+    print(f"manual approval runbook generated: {approval.get('manual_approval_runbook_generated')}")
+    print(
+        "approval workflow CIEU-like fixture generated: "
+        f"{approval.get('approval_workflow_cieu_like_fixture_generated')}"
+    )
+    print(f"no real approval granted: {not approval.get('real_approval_granted')}")
+    print(f"no real application authorized: {not approval.get('real_application_authorized')}")
+    print(
+        "no durable approval record written: "
+        f"{not approval.get('durable_approval_record_written')}"
+    )
+    print(
+        "no canonical policy mutation: "
+        f"{not approval.get('real_canonical_policy_mutation_performed')}"
+    )
+    print(f"no brain writeback: {not approval.get('brain_writeback_performed')}")
+    print(f"no memory ingestion: {not approval.get('memory_ingestion_performed')}")
+    print(f"no direct Y* mutation: {not approval.get('direct_y_star_mutation_performed')}")
+    print(f"Y-star-gov unmodified: {approval.get('y_star_gov_unmodified')}")
+    print(f"gov-mcp unmodified: {approval.get('gov_mcp_unmodified')}")
+    print(f"live execution enabled: {approval.get('live_execution_enabled')}")
+    print(f"external action enabled: {approval.get('external_action_enabled')}")
+    print(f"network enabled: {approval.get('network_enabled')}")
+    print(f"scheduler enabled: {approval.get('scheduler_enabled')}")
+    print(f"daemon enabled: {approval.get('daemon_enabled')}")
+    print(f"MCP server execution enabled: {approval.get('mcp_server_execution_enabled')}")
+    print(f"MCP tool execution enabled: {approval.get('mcp_tool_execution_enabled')}")
+    print(f"CIEU persistence enabled: {approval.get('cieu_persistence_enabled')}")
+    print(
+        "durable approval persistence enabled: "
+        f"{approval.get('durable_approval_persistence_enabled')}"
+    )
+    print(
+        "ready for L5.10 controlled approval record sandbox: "
+        f"{approval.get('ready_for_l5_10_controlled_approval_record_sandbox')}"
+    )
+    print(
+        "ready for L6 revenue opportunity discovery: "
+        f"{approval.get('ready_for_l6_revenue_opportunity_discovery')}"
+    )
+    print(f"next required milestone: {approval.get('next_required_milestone')}")
+    print(f"generated_readiness: {approval.get('generated_readiness')}")
+    print(f"warning: {approval.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -1573,6 +1651,22 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print(f"- {approved_sandbox_update.get('generated_rollback_summary')}")
         print(f"- {approved_sandbox_update.get('generated_effect_summary')}")
         print(f"- {approved_sandbox_update.get('generated_readiness')}")
+    real_approval_workflow = data.get("real_approval_workflow", {})
+    if real_approval_workflow:
+        print()
+        print("Real approval workflow boundary:")
+        print(f"- {real_approval_workflow.get('generated_workflow_summary')}")
+        print(f"- {real_approval_workflow.get('generated_authority_summary')}")
+        print(f"- {real_approval_workflow.get('generated_evidence_summary')}")
+        print(f"- {real_approval_workflow.get('generated_record_summary')}")
+        print(f"- {real_approval_workflow.get('generated_decision_summary')}")
+        print(f"- {real_approval_workflow.get('generated_validity_summary')}")
+        print(f"- {real_approval_workflow.get('generated_snapshot_summary')}")
+        print(f"- {real_approval_workflow.get('generated_boundary_summary')}")
+        print(f"- {real_approval_workflow.get('generated_preflight_summary')}")
+        print(f"- {real_approval_workflow.get('generated_runbook_summary')}")
+        print(f"- {real_approval_workflow.get('generated_audit_summary')}")
+        print(f"- {real_approval_workflow.get('generated_readiness')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -1631,6 +1725,8 @@ def cmd_validate_local() -> int:
         CROSS_REPO_GOVERNANCE,
         GOVERNED_MCP_ADAPTER,
         CONTROLLED_CANONICAL_LEARNING,
+        APPROVED_SANDBOX_UPDATE,
+        REAL_APPROVAL_WORKFLOW,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -1706,6 +1802,8 @@ def cmd_validate_local() -> int:
             failures.append("controlled_canonical_learning_summary missing from team console snapshot")
         if "approved_sandbox_update_summary" not in snapshot:
             failures.append("approved_sandbox_update_summary missing from team console snapshot")
+        if "real_approval_workflow_summary" not in snapshot:
+            failures.append("real_approval_workflow_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -3165,6 +3263,8 @@ def main(argv: list[str]) -> int:
         cmd_controlled_canonical_learning(data)
     elif command == "approved-sandbox-update":
         cmd_approved_sandbox_update(data)
+    elif command == "real-approval-boundary":
+        cmd_real_approval_workflow(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

@@ -188,7 +188,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after approved canonical update sandbox",
+        "Build real approval workflow boundary",
+        ["python3", "real_approval_workflow_boundary/tools/build_real_approval_workflow_boundary.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after real approval workflow boundary",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -1563,6 +1568,63 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "approved_sandbox_update_readiness/approved_sandbox_update_readiness.json"],
     ),
     Check(
+        "Py compile: build_real_approval_workflow_boundary.py",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "real_approval_workflow_boundary/tools/build_real_approval_workflow_boundary.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: real_approval_workflow_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/real_approval_workflow_summary.json"],
+    ),
+    Check(
+        "Validate JSON: real_approval_workflow_boundary_contract.json",
+        ["python3", "-m", "json.tool", "real_approval_workflow_boundary/real_approval_workflow_boundary_contract.json"],
+    ),
+    Check(
+        "Validate JSON: approval_authority_model.json",
+        ["python3", "-m", "json.tool", "approval_authority_model/approval_authority_model.json"],
+    ),
+    Check(
+        "Validate JSON: approval_evidence_dossier.json",
+        ["python3", "-m", "json.tool", "approval_evidence_dossier/approval_evidence_dossier.json"],
+    ),
+    Check(
+        "Validate JSON: durable_approval_record_contract.json",
+        ["python3", "-m", "json.tool", "durable_approval_record_contract/durable_approval_record_contract.json"],
+    ),
+    Check(
+        "Validate JSON: real_approval_decision_packet_fixture.json",
+        ["python3", "-m", "json.tool", "real_approval_decision_packet_fixture/real_approval_decision_packet_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: approval_validity_policy.json",
+        ["python3", "-m", "json.tool", "approval_validity_revocation_policy/approval_validity_policy.json"],
+    ),
+    Check(
+        "Validate JSON: pre_application_snapshot_policy.json",
+        ["python3", "-m", "json.tool", "pre_application_snapshot_policy/pre_application_snapshot_policy.json"],
+    ),
+    Check(
+        "Validate JSON: real_application_blocker.json",
+        ["python3", "-m", "json.tool", "real_application_boundary_gate/real_application_blocker.json"],
+    ),
+    Check(
+        "Validate JSON: post_approval_preflight_validation_plan.json",
+        ["python3", "-m", "json.tool", "post_approval_preflight_validation/post_approval_preflight_validation_plan.json"],
+    ),
+    Check(
+        "Validate JSON: approval_workflow_cieu_event_fixture.json",
+        ["python3", "-m", "json.tool", "approval_workflow_cieu_audit_fixture/approval_workflow_cieu_event_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: real_approval_workflow_readiness.json",
+        ["python3", "-m", "json.tool", "real_approval_workflow_readiness/real_approval_workflow_readiness.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -1773,6 +1835,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: approved-sandbox-update",
         ["python3", "console_read_model/cli/team_console.py", "approved-sandbox-update"],
+    ),
+    Check(
+        "CLI smoke: real-approval-boundary",
+        ["python3", "console_read_model/cli/team_console.py", "real-approval-boundary"],
     ),
     Check(
         "CLI smoke: sources",

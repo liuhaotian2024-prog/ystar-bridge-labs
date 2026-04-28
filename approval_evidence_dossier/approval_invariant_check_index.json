@@ -1,0 +1,82 @@
+{
+  "schema_name": "ystar.approval_evidence.invariant_check_index",
+  "schema_version": "v0",
+  "index_id": "approval-invariant-check-index-v0",
+  "checks": [
+    {
+      "check_name": "Y* non-mutation check",
+      "source_ref": "sandbox_post_update_validation/sandbox_y_star_non_mutation_check.json",
+      "required_before_approval": true
+    },
+    {
+      "check_name": "mission Y* lineage check",
+      "source_ref": "sandbox_post_update_validation/sandbox_y_star_non_mutation_check.json",
+      "required_before_approval": true
+    },
+    {
+      "check_name": "behavior Y* projection-derived check",
+      "source_ref": "sandbox_post_update_validation/sandbox_y_star_non_mutation_check.json",
+      "required_before_approval": true
+    },
+    {
+      "check_name": "residual did not directly mutate Y* check",
+      "source_ref": "sandbox_post_update_validation/sandbox_y_star_non_mutation_check.json",
+      "required_before_approval": true
+    },
+    {
+      "check_name": "MCP non-bypass check",
+      "source_ref": "sandbox_post_update_validation/sandbox_mcp_non_bypass_check.json",
+      "required_before_approval": true
+    },
+    {
+      "check_name": "Pre-U required check",
+      "source_ref": "sandbox_post_update_validation/sandbox_mcp_non_bypass_check.json",
+      "required_before_approval": true
+    },
+    {
+      "check_name": "bridge receipt required check",
+      "source_ref": "sandbox_post_update_validation/sandbox_mcp_non_bypass_check.json",
+      "required_before_approval": true
+    },
+    {
+      "check_name": "CIEU receipt required check",
+      "source_ref": "sandbox_post_update_validation/sandbox_mcp_non_bypass_check.json",
+      "required_before_approval": true
+    },
+    {
+      "check_name": "rollback available check",
+      "source_ref": "sandbox_rollback_validation/sandbox_rollback_result.json",
+      "required_before_approval": true
+    },
+    {
+      "check_name": "real canonical unchanged in sandbox check",
+      "source_ref": "sandbox_post_update_validation/sandbox_post_update_validation_result.json",
+      "required_before_approval": true
+    }
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

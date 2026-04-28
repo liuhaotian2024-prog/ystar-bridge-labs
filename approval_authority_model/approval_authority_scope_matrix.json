@@ -1,0 +1,95 @@
+{
+  "schema_name": "ystar.approval_authority.scope_matrix",
+  "schema_version": "v0",
+  "scope_matrix_id": "approval-authority-scope-matrix-v0",
+  "allowed_scope_by_authority_class": {
+    "human_owner": [
+      "future explicit approval after full dossier review"
+    ],
+    "designated_governance_reviewer": [
+      "governance invariant review"
+    ],
+    "designated_safety_reviewer": [
+      "safety and rollback readiness review"
+    ],
+    "future_versioned_governance_approval_service": [
+      "future adapter-gated approval record production"
+    ]
+  },
+  "denied_scope_by_authority_class": {
+    "autonomous_agent_self_approval": [
+      "auto-approval",
+      "approval without evidence",
+      "approval without rollback",
+      "direct Y* mutation",
+      "approval for L6 revenue execution"
+    ],
+    "tool_output_approval": [
+      "auto-approval",
+      "approval without evidence",
+      "approval without rollback",
+      "direct Y* mutation",
+      "approval for L6 revenue execution"
+    ],
+    "residual_auto_approval": [
+      "auto-approval",
+      "approval without evidence",
+      "approval without rollback",
+      "direct Y* mutation",
+      "approval for L6 revenue execution"
+    ],
+    "shadow_patch_auto_approval": [
+      "auto-approval",
+      "approval without evidence",
+      "approval without rollback",
+      "direct Y* mutation",
+      "approval for L6 revenue execution"
+    ],
+    "mcp_resource_approval": [
+      "auto-approval",
+      "approval without evidence",
+      "approval without rollback",
+      "direct Y* mutation",
+      "approval for L6 revenue execution"
+    ],
+    "unverified_external_actor": [
+      "auto-approval",
+      "approval without evidence",
+      "approval without rollback",
+      "direct Y* mutation",
+      "approval for L6 revenue execution"
+    ],
+    "unreviewed_memory_state": [
+      "auto-approval",
+      "approval without evidence",
+      "approval without rollback",
+      "direct Y* mutation",
+      "approval for L6 revenue execution"
+    ]
+  },
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

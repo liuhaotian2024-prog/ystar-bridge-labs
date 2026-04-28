@@ -1,0 +1,92 @@
+{
+  "schema_name": "ystar.real_application_boundary.precondition_matrix",
+  "schema_version": "v0",
+  "matrix_id": "real-application-precondition-matrix-v0",
+  "preconditions": [
+    {
+      "precondition": "durable approval record exists",
+      "required": true,
+      "satisfied_now": false
+    },
+    {
+      "precondition": "approval is valid and unexpired",
+      "required": true,
+      "satisfied_now": false
+    },
+    {
+      "precondition": "approval scope matches package scope",
+      "required": true,
+      "satisfied_now": false
+    },
+    {
+      "precondition": "evidence dossier complete",
+      "required": true,
+      "satisfied_now": true
+    },
+    {
+      "precondition": "pre-application snapshot exists",
+      "required": true,
+      "satisfied_now": false
+    },
+    {
+      "precondition": "rollback plan exists",
+      "required": true,
+      "satisfied_now": true
+    },
+    {
+      "precondition": "post-approval preflight validation passed",
+      "required": true,
+      "satisfied_now": false
+    },
+    {
+      "precondition": "Y* non-mutation invariant passed",
+      "required": true,
+      "satisfied_now": true
+    },
+    {
+      "precondition": "MCP non-bypass invariant passed",
+      "required": true,
+      "satisfied_now": true
+    },
+    {
+      "precondition": "no safety flag regression",
+      "required": true,
+      "satisfied_now": true
+    },
+    {
+      "precondition": "release operator assigned",
+      "required": true,
+      "satisfied_now": false
+    },
+    {
+      "precondition": "rollback operator assigned",
+      "required": true,
+      "satisfied_now": false
+    }
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

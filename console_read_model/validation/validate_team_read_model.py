@@ -382,6 +382,9 @@ def main() -> int:
     required_approved_canonical_update_sandbox_files = expected.get(
         "required_approved_canonical_update_sandbox_files", []
     )
+    required_real_approval_workflow_boundary_files = expected.get(
+        "required_real_approval_workflow_boundary_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -572,6 +575,12 @@ def main() -> int:
         check_exists(path, report, "approved canonical update sandbox file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "approved canonical update sandbox JSON")
+
+    for rel in required_real_approval_workflow_boundary_files:
+        path = ROOT / rel
+        check_exists(path, report, "real approval workflow boundary file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "real approval workflow boundary JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -3486,6 +3495,151 @@ def main() -> int:
             "L5.9 Real Approval Workflow Boundary v0"
         ):
             report.fail("generated approved sandbox update summary must point to L5.9")
+
+    real_approval_workflow = generated_json.get(
+        "console_read_model/generated/real_approval_workflow_summary.json"
+    )
+    if real_approval_workflow:
+        for field in [
+            "l5_9_real_approval_workflow_boundary_defined",
+            "approval_authority_model_generated",
+            "approval_evidence_dossier_generated",
+            "durable_approval_record_contract_generated",
+            "approval_decision_packet_fixture_generated",
+            "validity_revocation_policy_generated",
+            "pre_application_snapshot_policy_generated",
+            "real_application_boundary_gate_generated",
+            "post_approval_preflight_validation_plan_generated",
+            "manual_approval_runbook_generated",
+            "approval_workflow_cieu_like_fixture_generated",
+            "real_approval_granted",
+            "real_application_authorized",
+            "approval_record_created_as_durable_record",
+            "durable_approval_record_written",
+            "durable_db_write_performed",
+            "real_canonical_policy_mutation_performed",
+            "real_canonical_update_application_performed",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "strategy_mutation_performed",
+            "direct_y_star_mutation_performed",
+            "real_approval_still_blocked",
+            "real_application_still_blocked",
+            "durable_approval_persistence_still_blocked",
+            "brain_writeback_still_blocked",
+            "memory_ingestion_still_blocked",
+            "y_star_direct_mutation_still_blocked",
+            "mcp_execution_still_blocked",
+            "y_star_gov_unmodified",
+            "gov_mcp_unmodified",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "mcp_server_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "cieu_persistence_enabled",
+            "durable_approval_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "strategy_mutation_enabled",
+            "candidate_auto_approval_enabled",
+            "real_candidate_approval_enabled",
+            "real_canonical_policy_mutation_enabled",
+            "real_canonical_update_application_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "ready_for_l5_10_controlled_approval_record_sandbox",
+            "ready_for_l6_revenue_opportunity_discovery",
+            "next_required_milestone",
+            "generated_workflow_summary",
+            "generated_authority_summary",
+            "generated_evidence_summary",
+            "generated_record_summary",
+            "generated_decision_summary",
+            "generated_validity_summary",
+            "generated_snapshot_summary",
+            "generated_boundary_summary",
+            "generated_preflight_summary",
+            "generated_runbook_summary",
+            "generated_audit_summary",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in real_approval_workflow:
+                report.pass_(f"generated real approval workflow summary field present: {field}")
+            else:
+                report.fail(f"generated real approval workflow summary missing field: {field}")
+        for field in [
+            "l5_9_real_approval_workflow_boundary_defined",
+            "approval_authority_model_generated",
+            "approval_evidence_dossier_generated",
+            "durable_approval_record_contract_generated",
+            "approval_decision_packet_fixture_generated",
+            "validity_revocation_policy_generated",
+            "pre_application_snapshot_policy_generated",
+            "real_application_boundary_gate_generated",
+            "post_approval_preflight_validation_plan_generated",
+            "manual_approval_runbook_generated",
+            "approval_workflow_cieu_like_fixture_generated",
+            "real_approval_still_blocked",
+            "real_application_still_blocked",
+            "durable_approval_persistence_still_blocked",
+            "brain_writeback_still_blocked",
+            "memory_ingestion_still_blocked",
+            "y_star_direct_mutation_still_blocked",
+            "mcp_execution_still_blocked",
+            "y_star_gov_unmodified",
+            "gov_mcp_unmodified",
+            "ready_for_l5_10_controlled_approval_record_sandbox",
+        ]:
+            if real_approval_workflow.get(field) is not True:
+                report.fail(f"generated real approval workflow summary must keep {field}=true")
+        for field in [
+            "real_approval_granted",
+            "real_application_authorized",
+            "approval_record_created_as_durable_record",
+            "durable_approval_record_written",
+            "durable_db_write_performed",
+            "real_canonical_policy_mutation_performed",
+            "real_canonical_update_application_performed",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "strategy_mutation_performed",
+            "direct_y_star_mutation_performed",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "mcp_server_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "cieu_persistence_enabled",
+            "durable_approval_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "strategy_mutation_enabled",
+            "candidate_auto_approval_enabled",
+            "real_candidate_approval_enabled",
+            "real_canonical_policy_mutation_enabled",
+            "real_canonical_update_application_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "ready_for_l6_revenue_opportunity_discovery",
+        ]:
+            if real_approval_workflow.get(field) is not False:
+                report.fail(f"generated real approval workflow summary must keep {field}=false")
+        if real_approval_workflow.get("next_required_milestone") != (
+            "L5.10 Controlled Approval Record Sandbox v0"
+        ):
+            report.fail("generated real approval workflow summary must point to L5.10")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

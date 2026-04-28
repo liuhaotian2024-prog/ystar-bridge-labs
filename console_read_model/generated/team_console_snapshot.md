@@ -778,6 +778,34 @@ Not ready:
 - next_required_milestone: L5.9 Real Approval Workflow Boundary v0
 - Warning: L5.8 is sandbox-only. Sandbox approval and patch application are generated artifacts only; real candidate approval, real canonical mutation, writeback, direct Y* mutation, MCP execution, and live execution remain blocked.
 
+## Real Approval Workflow Boundary
+
+- l5_9_real_approval_workflow_boundary_defined: True
+- approval_authority_model_generated: True
+- approval_evidence_dossier_generated: True
+- durable_approval_record_contract_generated: True
+- approval_decision_packet_fixture_generated: True
+- validity_revocation_policy_generated: True
+- pre_application_snapshot_policy_generated: True
+- real_application_boundary_gate_generated: True
+- post_approval_preflight_validation_plan_generated: True
+- manual_approval_runbook_generated: True
+- approval_workflow_cieu_like_fixture_generated: True
+- real_approval_granted: False
+- real_application_authorized: False
+- durable_approval_record_written: False
+- real_canonical_policy_mutation_performed: False
+- real_canonical_update_application_performed: False
+- brain_writeback_performed: False
+- memory_ingestion_performed: False
+- direct_y_star_mutation_performed: False
+- y_star_gov_unmodified: True
+- gov_mcp_unmodified: True
+- ready_for_l5_10_controlled_approval_record_sandbox: True
+- ready_for_l6_revenue_opportunity_discovery: False
+- next_required_milestone: L5.10 Controlled Approval Record Sandbox v0
+- Warning: L5.9 defines the real approval workflow boundary only. No real approval is granted, no durable approval record is written, and no real canonical update application is authorized.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -855,4 +883,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Integrated review-gated shadow learning cycle exists as shadow-only artifacts; controlled canonical learning is not implemented yet.
 - Cross-repo governance contract proof exists as read-only boundary alignment; governed MCP dry-run adapter is implemented as dry-run only.
 - Controlled canonical learning design exists as a promotion dry-run only; approved canonical update sandbox now remains sandbox-only.
-- Approved canonical update sandbox exists as generated sandbox-only artifacts; real approval workflow boundary is not implemented yet.
+- Approved canonical update sandbox exists as generated sandbox-only artifacts; real approval workflow boundary is defined but no durable approval record sandbox exists yet.

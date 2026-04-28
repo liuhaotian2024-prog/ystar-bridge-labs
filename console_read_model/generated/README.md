@@ -99,5 +99,8 @@ canonical learning design. It confirms review-only and shadow candidates can bec
 `approved_sandbox_update_summary.json` is derived from the L5.8 approved
 canonical update sandbox. It confirms sandbox approval/application, sandbox reprojection, MCP preview, CIEU-like residual, and rollback validation exist while real approval, real canonical mutation, writeback, direct Y* mutation, MCP execution, and live execution remain blocked.
 
+`real_approval_workflow_summary.json` is derived from the L5.9 real approval
+workflow boundary. It confirms authority, evidence, durable approval record contract, validity/revocation, snapshot, real application gate, preflight, runbook, and audit fixture exist while real approval, durable approval persistence, and real application remain blocked.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

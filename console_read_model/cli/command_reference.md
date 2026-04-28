@@ -130,6 +130,12 @@ python3 console_read_model/cli/team_console.py <command>
   application, post-update validation, behavior-level Y* reprojection, governed
   MCP preview, CIEU-like residual, rollback validation, comparison, and blocked
   real approval/application/writeback/direct-Y*/MCP/live state.
+- `real-approval-boundary`: Prints the generated L5.9 real approval workflow
+  boundary summary: authority model, evidence dossier, durable approval record
+  contract, decision packet fixture, validity/revocation, snapshot policy, real
+  application gate, preflight plan, manual runbook, approval audit fixture, and
+  blocked real approval/application/durable-persistence/writeback/direct-Y*
+  state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

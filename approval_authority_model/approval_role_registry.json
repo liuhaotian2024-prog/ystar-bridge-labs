@@ -1,0 +1,71 @@
+{
+  "schema_name": "ystar.approval_authority.role_registry",
+  "schema_version": "v0",
+  "registry_id": "approval-role-registry-v0",
+  "roles": [
+    {
+      "role_id": "owner_or_founder",
+      "descriptor_only": true,
+      "secret_material_included": false,
+      "credential_material_included": false,
+      "responsibility": "final business owner review authority descriptor"
+    },
+    {
+      "role_id": "governance_reviewer",
+      "descriptor_only": true,
+      "secret_material_included": false,
+      "credential_material_included": false,
+      "responsibility": "checks Y* lineage, Pre-U, bridge, CIEU, and residual chain"
+    },
+    {
+      "role_id": "safety_reviewer",
+      "descriptor_only": true,
+      "secret_material_included": false,
+      "credential_material_included": false,
+      "responsibility": "checks safety flags, forbidden scopes, and rollback readiness"
+    },
+    {
+      "role_id": "release_operator",
+      "descriptor_only": true,
+      "secret_material_included": false,
+      "credential_material_included": false,
+      "responsibility": "future operator who may execute only after valid approval"
+    },
+    {
+      "role_id": "rollback_operator",
+      "descriptor_only": true,
+      "secret_material_included": false,
+      "credential_material_included": false,
+      "responsibility": "future operator assigned before application to restore baseline"
+    }
+  ],
+  "contains_secrets": false,
+  "contains_credentials": false,
+  "contains_private_keys": false,
+  "contains_tokens": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

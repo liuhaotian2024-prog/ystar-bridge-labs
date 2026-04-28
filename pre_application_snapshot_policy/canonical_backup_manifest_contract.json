@@ -1,0 +1,52 @@
+{
+  "schema_name": "ystar.pre_application_snapshot.backup_manifest_contract",
+  "schema_version": "v0",
+  "backup_manifest_id": "canonical-backup-manifest-contract-v0",
+  "source_package_id": "canonical-update-package-candidate-v0",
+  "target_version": "v0.shadow-candidate-plus-1",
+  "captured_artifact_refs": [
+    "canonical projection policy snapshot ref placeholder",
+    "learning policy snapshot ref placeholder",
+    "MCP boundary policy snapshot ref placeholder",
+    "read-model structure snapshot ref placeholder",
+    "brain/memory boundary metadata snapshot ref placeholder"
+  ],
+  "excluded_sensitive_sources": [
+    "raw DB contents",
+    "WAL/SHM contents",
+    "raw logs",
+    "active-agent markers",
+    "secrets",
+    "credentials"
+  ],
+  "integrity_hashes_placeholder": "future-integrity-hashes-required-before-application",
+  "rollback_ref": "canonical-learning-rollback-plan-v0",
+  "created_by_role_ref": "release_operator",
+  "validation_status": "contract_only_not_captured",
+  "persistence_enabled_now": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}
