@@ -1,0 +1,66 @@
+{
+  "schema_name": "ystar.recurring_observation_loop_contract.recurring_loop_contract_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "recurring_loop_id",
+    "recurrence_defined",
+    "recurrence_enabled",
+    "scheduler_enabled",
+    "daemon_enabled",
+    "auto_run_enabled",
+    "manual_local_simulation_only",
+    "tick_requires_governance_gate",
+    "tick_requires_cieu_event",
+    "tick_requires_residual_delta",
+    "tick_requires_dashboard_refresh",
+    "tick_requires_work_candidate_generation",
+    "tick_requires_stop_abort_check",
+    "tick_requires_escalation_check"
+  ],
+  "properties": {
+    "recurring_loop_id": {
+      "type": "string"
+    },
+    "recurrence_defined": {
+      "type": "boolean"
+    },
+    "recurrence_enabled": {
+      "type": "boolean"
+    },
+    "scheduler_enabled": {
+      "type": "boolean"
+    },
+    "daemon_enabled": {
+      "type": "boolean"
+    },
+    "auto_run_enabled": {
+      "type": "boolean"
+    },
+    "manual_local_simulation_only": {
+      "type": "boolean"
+    },
+    "tick_requires_governance_gate": {
+      "type": "boolean"
+    },
+    "tick_requires_cieu_event": {
+      "type": "boolean"
+    },
+    "tick_requires_residual_delta": {
+      "type": "boolean"
+    },
+    "tick_requires_dashboard_refresh": {
+      "type": "boolean"
+    },
+    "tick_requires_work_candidate_generation": {
+      "type": "boolean"
+    },
+    "tick_requires_stop_abort_check": {
+      "type": "boolean"
+    },
+    "tick_requires_escalation_check": {
+      "type": "boolean"
+    }
+  }
+}
+

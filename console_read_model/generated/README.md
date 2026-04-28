@@ -66,5 +66,8 @@ proposal outputs. It confirms mission/observation evidence produced a governed t
 `dashboard_refresh_summary.json` is derived from generated mission dashboard
 refresh loop outputs. It confirms a manual local refresh loop produced a refreshed dashboard without scheduler or daemon use.
 
+`recurring_loop_summary.json` is derived from generated recurring observation
+loop contract outputs. It confirms recurrence is defined but disabled and only one manual local simulated tick exists.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

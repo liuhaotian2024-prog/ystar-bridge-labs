@@ -30,7 +30,8 @@
     "first governed read-only observation tool wrapper summary",
     "governed tool invocation bridge summary",
     "agent-team work proposal to governed tool invocation summary",
-    "mission dashboard refresh loop summary"
+    "mission dashboard refresh loop summary",
+    "governed recurring observation loop contract summary"
   ],
   "not_ready": [
     "runtime generator",
@@ -59,7 +60,7 @@
     "enabled live-boundary harness",
     "enabled CIEU runtime event persistence",
     "approved governed action registry",
-    "governed recurring observation loop contract"
+    "manual recurring observation tick runner"
   ],
   "recommended_next_steps": [
     "wire static validator and loader into CI",
@@ -83,7 +84,8 @@
     "build L4.4 first governed read-only observation tool wrapper",
     "route the governed read-only observation tool through the Pre-U bridge",
     "build L4.6 agent team work proposal to governed tool invocation",
-    "define L4.8 governed recurring observation loop contract"
+    "define L4.8 governed recurring observation loop contract",
+    "build L4.9 manual recurring observation tick runner"
   ],
   "blockers": [
     "no DB-safe adapter",
@@ -101,7 +103,8 @@
     "autonomous cycle is simulated only and cannot execute real work",
     "legacy assets are triaged but not absorbed",
     "observation loop is read-only and not recurring",
-    "mission dashboard refresh loop is manual local dry-run only and has no recurrence contract yet"
+    "recurring observation loop contract is defined but not enabled",
+    "manual recurring observation tick runner is not implemented yet"
   ],
   "safety_boundaries": [
     "no DB reads",
@@ -128,6 +131,7 @@
     "governed read-only observation tool reads allowed generated summaries only and executes no actions",
     "governed tool invocation bridge requires Pre-U/decision/authorization before local tool calls",
     "agent-team work proposal routing starts from generated observations and remains local read-only dry-run only",
-    "mission dashboard refresh loop is manual local dry-run only and uses generated/read-model evidence only"
+    "mission dashboard refresh loop is manual local dry-run only and uses generated/read-model evidence only",
+    "recurring observation loop contract simulates one manual local tick and does not enable recurrence"
   ]
 }

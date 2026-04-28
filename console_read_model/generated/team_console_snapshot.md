@@ -67,6 +67,7 @@ Ready now:
 - governed tool invocation bridge summary
 - agent-team work proposal to governed tool invocation summary
 - mission dashboard refresh loop summary
+- governed recurring observation loop contract summary
 
 Not ready:
 - runtime generator
@@ -95,7 +96,7 @@ Not ready:
 - enabled live-boundary harness
 - enabled CIEU runtime event persistence
 - approved governed action registry
-- governed recurring observation loop contract
+- manual recurring observation tick runner
 
 ## Runtime Artifact Quarantine Summary
 
@@ -491,6 +492,32 @@ Not ready:
 - next_required_milestone: L4.8 Governed Recurring Observation Loop Contract v0
 - Warning: Mission dashboard refresh loop is manual, local, read-only, and dry-run only. Scheduler and daemon use remain disabled.
 
+## Governed Recurring Observation Loop Contract
+
+- recurring_observation_loop_contract_defined: True
+- recurrence_policy_defined: True
+- recurrence_enabled: False
+- scheduler_enabled: False
+- daemon_enabled: False
+- auto_run_enabled: False
+- manual_local_simulation_only: True
+- allowed_observation_sources_defined: True
+- tick_governance_gate_defined: True
+- simulated_observation_tick_defined: True
+- simulated_tick_cieu_event_defined: True
+- simulated_tick_residual_delta_defined: True
+- stop_abort_conditions_defined: True
+- escalation_conditions_defined: True
+- manual_enablement_checklist_defined: True
+- real_action_executed: False
+- external_action_executed: False
+- live_action_enabled: False
+- cieu_persistence_enabled: False
+- brain_writeback_enabled: False
+- memory_ingestion_enabled: False
+- next_required_milestone: L4.9 Manual Recurring Observation Tick Runner v0
+- Warning: Recurring observation is contract-only; scheduler, daemon, auto-run, live action, and persistence remain disabled.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -523,6 +550,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - route the governed read-only observation tool through the Pre-U bridge
 - build L4.6 agent team work proposal to governed tool invocation
 - define L4.8 governed recurring observation loop contract
+- build L4.9 manual recurring observation tick runner
 
 ## Warnings / Gaps
 
@@ -558,3 +586,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Governed tool invocation bridge exists for local dry-run only; agent work proposal routing remains dry-run only.
 - Agent-team work proposal routing feeds a manual dashboard refresh only; recurrence is not implemented yet.
 - Mission dashboard refresh loop exists as manual local dry-run only; governed recurrence is not implemented yet.
+- Recurring observation loop contract exists but recurrence, scheduler, daemon, and auto-run remain disabled.

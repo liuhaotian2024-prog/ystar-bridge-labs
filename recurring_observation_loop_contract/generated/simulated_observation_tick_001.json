@@ -1,0 +1,47 @@
+{
+  "schema_name": "ystar.recurring_observation_loop_contract.generated.simulated_observation_tick",
+  "schema_version": "v0",
+  "tick_id": "simulated-observation-tick-001",
+  "recurring_loop_id": "governed_recurring_observation_loop_contract_v0",
+  "tick_number": 1,
+  "manual_local_simulation_only": true,
+  "recurrence_enabled": false,
+  "scheduler_used": false,
+  "daemon_used": false,
+  "observation_sources_used": [
+    "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json",
+    "mission_dashboard_refresh_loop/generated/company_state_delta.json",
+    "mission_dashboard_refresh_loop/generated/refreshed_autonomous_backlog.json",
+    "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
+    "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json",
+    "governed_readonly_observation_tool/generated/tool_readiness_summary.json",
+    "governed_observation_loop/generated/governed_observation_loop_summary.json",
+    "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
+    "console_read_model/generated/team_console_snapshot.json"
+  ],
+  "observed_dashboard_state": {},
+  "observed_state_delta": {
+    "state_change_level": "meaningful"
+  },
+  "observed_backlog_state": {},
+  "detected_findings": [
+    "L4.7 manual dashboard refresh loop exists and remains non-recurring.",
+    "L4.6 agent-team proposal bridge evidence is available in generated summaries.",
+    "A recurring observation contract can be defined while scheduler and daemon remain disabled."
+  ],
+  "safe_opportunities": [
+    "L4.9 Manual Recurring Observation Tick Runner v0",
+    "Add manual tick runner validation before any recurring enablement.",
+    "Strengthen source registry checks for every future tick."
+  ],
+  "blocked_risks": [
+    "recurrence is disabled",
+    "scheduler is disabled",
+    "daemon is disabled",
+    "live action and external action remain disabled",
+    "persistence and writeback remain disabled"
+  ],
+  "real_action_executed": false,
+  "external_action_executed": false,
+  "live_action_enabled": false
+}

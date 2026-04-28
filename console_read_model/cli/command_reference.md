@@ -80,6 +80,11 @@ python3 console_read_model/cli/team_console.py <command>
   summary: previous dashboard snapshot, current observation input, refreshed
   dashboard, company state delta, refreshed backlog, CIEU fixture, disabled
   scheduler/live/persistence flags, and the L4.8 recommendation.
+- `recurring-loop`: Prints the generated governed recurring observation loop
+  contract summary: recurrence policy, allowed sources, tick governance gate,
+  simulated tick, CIEU fixture, residual delta, stop/abort and escalation
+  conditions, disabled scheduler/live/persistence flags, and the L4.9
+  recommendation.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

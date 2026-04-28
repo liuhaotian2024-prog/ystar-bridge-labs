@@ -1,0 +1,70 @@
+{
+  "schema_name": "ystar.recurring_observation_loop_contract.generated.simulated_tick_work_candidates",
+  "schema_version": "v0",
+  "tick_id": "simulated-observation-tick-001",
+  "candidate_count": 3,
+  "candidates": [
+    {
+      "candidate_id": "tick-work-001",
+      "title": "L4.9 Manual Recurring Observation Tick Runner v0",
+      "recommended_owner_agent": "Ryan-Platform",
+      "supporting_agents": [
+        "Samantha-Secretary",
+        "Maya-Governance",
+        "Leo-Kernel"
+      ],
+      "risk_tier": "low",
+      "source_evidence_refs": [
+        "recurring_observation_loop_contract/generated/simulated_observation_tick_001.json",
+        "recurring_observation_loop_contract/generated/tick_governance_gate.json",
+        "recurring_observation_loop_contract/generated/allowed_observation_sources.json"
+      ],
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "rationale": "A manual tick runner is the next safe step after defining the recurring contract."
+    },
+    {
+      "candidate_id": "tick-work-002",
+      "title": "Add recurring tick source-registry validator fixture v0",
+      "recommended_owner_agent": "Maya-Governance",
+      "supporting_agents": [
+        "Ryan-Platform"
+      ],
+      "risk_tier": "low",
+      "source_evidence_refs": [
+        "recurring_observation_loop_contract/generated/allowed_observation_sources.json"
+      ],
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "rationale": "Every future tick needs a fail-closed source registry check."
+    },
+    {
+      "candidate_id": "tick-work-003",
+      "title": "Draft operator-reviewed recurrence enablement packet v0",
+      "recommended_owner_agent": "Aiden-CEO",
+      "supporting_agents": [
+        "Maya-Governance",
+        "Ryan-Platform"
+      ],
+      "risk_tier": "medium",
+      "source_evidence_refs": [
+        "recurring_observation_loop_contract/generated/simulated_tick_dashboard_delta.json"
+      ],
+      "requires_y_star_gov": true,
+      "requires_operator_approval": true,
+      "requires_cieu_event": true,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "rationale": "Enablement should be designed as a reviewed packet, not as an active scheduler."
+    }
+  ],
+  "top_candidate": "L4.9 Manual Recurring Observation Tick Runner v0",
+  "live_enabled": false,
+  "external_action_enabled": false
+}

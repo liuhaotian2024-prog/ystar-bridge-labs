@@ -1,0 +1,18 @@
+{
+  "schema_name": "ystar.recurring_observation_loop_contract.generated.simulated_tick_dashboard_delta",
+  "schema_version": "v0",
+  "delta_id": "simulated-tick-dashboard-delta-001",
+  "tick_id": "simulated-observation-tick-001",
+  "previous_dashboard_ref": "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json",
+  "current_dashboard_ref": "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json",
+  "detected_changes": [
+    "recurring contract requirements are now represented as a disabled design artifact",
+    "manual local tick governance is explicit",
+    "future scheduler and daemon enablement require checklist review"
+  ],
+  "mission_progress_summary": "The company can now describe how recurring observation should work while keeping the actual recurrence path disabled.",
+  "state_change_level": "meaningful",
+  "requires_review": true,
+  "direct_brain_writeback_allowed": false,
+  "direct_memory_ingestion_allowed": false
+}

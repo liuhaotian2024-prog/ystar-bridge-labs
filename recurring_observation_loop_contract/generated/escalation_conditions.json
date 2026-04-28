@@ -1,0 +1,63 @@
+{
+  "schema_name": "ystar.recurring_observation_loop_contract.generated.escalation_conditions",
+  "schema_version": "v0",
+  "conditions": [
+    {
+      "condition_id": "escalate-001",
+      "description": "live enablement requested",
+      "severity": "critical",
+      "escalation_target_agent": "Maya-Governance",
+      "requires_operator_review": true
+    },
+    {
+      "condition_id": "escalate-002",
+      "description": "external action requested",
+      "severity": "critical",
+      "escalation_target_agent": "Aiden-CEO",
+      "requires_operator_review": true
+    },
+    {
+      "condition_id": "escalate-003",
+      "description": "asset absorption requested",
+      "severity": "high",
+      "escalation_target_agent": "Maya-Governance",
+      "requires_operator_review": true
+    },
+    {
+      "condition_id": "escalate-004",
+      "description": "brain or memory update requested",
+      "severity": "critical",
+      "escalation_target_agent": "Leo-Kernel",
+      "requires_operator_review": true
+    },
+    {
+      "condition_id": "escalate-005",
+      "description": "repeated failed ticks",
+      "severity": "medium",
+      "escalation_target_agent": "Ryan-Platform",
+      "requires_operator_review": true
+    },
+    {
+      "condition_id": "escalate-006",
+      "description": "major mission drift detected",
+      "severity": "high",
+      "escalation_target_agent": "Aiden-CEO",
+      "requires_operator_review": true
+    },
+    {
+      "condition_id": "escalate-007",
+      "description": "governance contract mismatch",
+      "severity": "high",
+      "escalation_target_agent": "Maya-Governance",
+      "requires_operator_review": true
+    },
+    {
+      "condition_id": "escalate-008",
+      "description": "unusual generated artifact growth",
+      "severity": "medium",
+      "escalation_target_agent": "Ryan-Platform",
+      "requires_operator_review": true
+    }
+  ],
+  "condition_count": 8
+}

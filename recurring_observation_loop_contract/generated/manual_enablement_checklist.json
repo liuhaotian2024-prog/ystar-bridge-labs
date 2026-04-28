@@ -1,0 +1,83 @@
+{
+  "schema_name": "ystar.recurring_observation_loop_contract.generated.manual_enablement_checklist",
+  "schema_version": "v0",
+  "checklist_items": [
+    {
+      "item_id": "enablement-001",
+      "description": "recurring loop contract reviewed",
+      "status": "defined_disabled"
+    },
+    {
+      "item_id": "enablement-002",
+      "description": "allowed source registry reviewed",
+      "status": "defined_disabled"
+    },
+    {
+      "item_id": "enablement-003",
+      "description": "tick governance gate reviewed",
+      "status": "defined_disabled"
+    },
+    {
+      "item_id": "enablement-004",
+      "description": "CIEU tick event policy reviewed",
+      "status": "defined_disabled"
+    },
+    {
+      "item_id": "enablement-005",
+      "description": "residual delta review policy reviewed",
+      "status": "defined_disabled"
+    },
+    {
+      "item_id": "enablement-006",
+      "description": "stop/abort policy reviewed",
+      "status": "defined_disabled"
+    },
+    {
+      "item_id": "enablement-007",
+      "description": "escalation policy reviewed",
+      "status": "defined_disabled"
+    },
+    {
+      "item_id": "enablement-008",
+      "description": "scheduler sandbox designed",
+      "status": "not_started"
+    },
+    {
+      "item_id": "enablement-009",
+      "description": "daemon lifecycle policy designed",
+      "status": "not_started"
+    },
+    {
+      "item_id": "enablement-010",
+      "description": "operator approval gate implemented",
+      "status": "not_started"
+    },
+    {
+      "item_id": "enablement-011",
+      "description": "generated artifact size guard implemented",
+      "status": "defined_disabled"
+    },
+    {
+      "item_id": "enablement-012",
+      "description": "live disable flags verified",
+      "status": "defined_disabled"
+    },
+    {
+      "item_id": "enablement-013",
+      "description": "rollback plan defined",
+      "status": "not_started"
+    }
+  ],
+  "allowed_statuses": [
+    "not_started",
+    "defined_disabled"
+  ],
+  "disallowed_statuses": [
+    "enabled",
+    "approved",
+    "complete",
+    "live",
+    "active"
+  ],
+  "manual_enablement_required": true
+}

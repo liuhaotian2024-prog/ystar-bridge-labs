@@ -133,7 +133,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after mission dashboard refresh loop",
+        "Build recurring observation loop contract",
+        ["python3", "recurring_observation_loop_contract/tools/build_recurring_observation_contract.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after recurring observation loop contract",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -675,6 +680,72 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "mission_dashboard_refresh_loop/generated/refresh_loop_readiness_summary.json"],
     ),
     Check(
+        "Compile recurring observation loop contract tools",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "recurring_observation_loop_contract/tools/build_recurring_observation_contract.py",
+            "recurring_observation_loop_contract/tools/simulate_recurring_observation_tick.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: recurring_loop_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/recurring_loop_summary.json"],
+    ),
+    Check(
+        "Validate JSON: recurring_loop_contract.json",
+        ["python3", "-m", "json.tool", "recurring_observation_loop_contract/generated/recurring_loop_contract.json"],
+    ),
+    Check(
+        "Validate JSON: recurrence_schedule_draft.json",
+        ["python3", "-m", "json.tool", "recurring_observation_loop_contract/generated/recurrence_schedule_draft.json"],
+    ),
+    Check(
+        "Validate JSON: allowed_observation_sources.json",
+        ["python3", "-m", "json.tool", "recurring_observation_loop_contract/generated/allowed_observation_sources.json"],
+    ),
+    Check(
+        "Validate JSON: tick_governance_gate.json",
+        ["python3", "-m", "json.tool", "recurring_observation_loop_contract/generated/tick_governance_gate.json"],
+    ),
+    Check(
+        "Validate JSON: simulated_observation_tick_001.json",
+        ["python3", "-m", "json.tool", "recurring_observation_loop_contract/generated/simulated_observation_tick_001.json"],
+    ),
+    Check(
+        "Validate JSON: simulated_tick_dashboard_delta.json",
+        ["python3", "-m", "json.tool", "recurring_observation_loop_contract/generated/simulated_tick_dashboard_delta.json"],
+    ),
+    Check(
+        "Validate JSON: simulated_tick_work_candidates.json",
+        ["python3", "-m", "json.tool", "recurring_observation_loop_contract/generated/simulated_tick_work_candidates.json"],
+    ),
+    Check(
+        "Validate JSON: simulated_tick_cieu_event.json",
+        ["python3", "-m", "json.tool", "recurring_observation_loop_contract/generated/simulated_tick_cieu_event.json"],
+    ),
+    Check(
+        "Validate JSON: simulated_tick_residual_delta.json",
+        ["python3", "-m", "json.tool", "recurring_observation_loop_contract/generated/simulated_tick_residual_delta.json"],
+    ),
+    Check(
+        "Validate JSON: stop_abort_conditions.json",
+        ["python3", "-m", "json.tool", "recurring_observation_loop_contract/generated/stop_abort_conditions.json"],
+    ),
+    Check(
+        "Validate JSON: escalation_conditions.json",
+        ["python3", "-m", "json.tool", "recurring_observation_loop_contract/generated/escalation_conditions.json"],
+    ),
+    Check(
+        "Validate JSON: manual_enablement_checklist.json",
+        ["python3", "-m", "json.tool", "recurring_observation_loop_contract/generated/manual_enablement_checklist.json"],
+    ),
+    Check(
+        "Validate JSON: recurring_loop_readiness_summary.json",
+        ["python3", "-m", "json.tool", "recurring_observation_loop_contract/generated/recurring_loop_readiness_summary.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -841,6 +912,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: dashboard-refresh",
         ["python3", "console_read_model/cli/team_console.py", "dashboard-refresh"],
+    ),
+    Check(
+        "CLI smoke: recurring-loop",
+        ["python3", "console_read_model/cli/team_console.py", "recurring-loop"],
     ),
     Check(
         "CLI smoke: sources",

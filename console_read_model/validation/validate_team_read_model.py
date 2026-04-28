@@ -349,6 +349,9 @@ def main() -> int:
     required_mission_dashboard_refresh_loop_files = expected.get(
         "required_mission_dashboard_refresh_loop_files", []
     )
+    required_recurring_observation_loop_contract_files = expected.get(
+        "required_recurring_observation_loop_contract_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -473,6 +476,12 @@ def main() -> int:
         check_exists(path, report, "mission dashboard refresh loop file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "mission dashboard refresh loop JSON")
+
+    for rel in required_recurring_observation_loop_contract_files:
+        path = ROOT / rel
+        check_exists(path, report, "recurring observation loop contract file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "recurring observation loop contract JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -2338,6 +2347,95 @@ def main() -> int:
             "L4.8 Governed Recurring Observation Loop Contract v0"
         ):
             report.fail("generated dashboard refresh summary must point to L4.8 recurring loop milestone")
+
+    recurring_loop = generated_json.get("console_read_model/generated/recurring_loop_summary.json")
+    if recurring_loop:
+        for field in [
+            "recurring_observation_loop_contract_defined",
+            "recurrence_policy_defined",
+            "recurrence_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "auto_run_enabled",
+            "manual_local_simulation_only",
+            "allowed_observation_sources_defined",
+            "tick_governance_gate_defined",
+            "simulated_observation_tick_defined",
+            "simulated_tick_dashboard_delta_defined",
+            "simulated_tick_work_candidates_defined",
+            "simulated_tick_cieu_event_defined",
+            "simulated_tick_residual_delta_defined",
+            "stop_abort_conditions_defined",
+            "escalation_conditions_defined",
+            "manual_enablement_checklist_defined",
+            "mission_bounded_autonomy_supported",
+            "founder_sets_mission_agent_team_drives",
+            "step_by_step_human_prompting_required",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "network_enabled",
+            "git_push_enabled",
+            "daemon_control_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "email_or_external_communication_enabled",
+            "next_required_milestone",
+            "generated_summary",
+            "generated_contract",
+            "generated_allowed_sources",
+            "generated_tick",
+            "generated_cieu_event",
+            "generated_residual_delta",
+            "warning",
+        ]:
+            if field in recurring_loop:
+                report.pass_(f"generated recurring loop summary field present: {field}")
+            else:
+                report.fail(f"generated recurring loop summary missing field: {field}")
+        for field in [
+            "recurring_observation_loop_contract_defined",
+            "recurrence_policy_defined",
+            "manual_local_simulation_only",
+            "allowed_observation_sources_defined",
+            "tick_governance_gate_defined",
+            "simulated_observation_tick_defined",
+            "simulated_tick_dashboard_delta_defined",
+            "simulated_tick_work_candidates_defined",
+            "simulated_tick_cieu_event_defined",
+            "simulated_tick_residual_delta_defined",
+            "stop_abort_conditions_defined",
+            "escalation_conditions_defined",
+            "manual_enablement_checklist_defined",
+            "mission_bounded_autonomy_supported",
+            "founder_sets_mission_agent_team_drives",
+        ]:
+            if recurring_loop.get(field) is not True:
+                report.fail(f"generated recurring loop summary must keep {field}=true")
+        for field in [
+            "recurrence_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "auto_run_enabled",
+            "step_by_step_human_prompting_required",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "network_enabled",
+            "git_push_enabled",
+            "daemon_control_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "email_or_external_communication_enabled",
+        ]:
+            if recurring_loop.get(field) is not False:
+                report.fail(f"generated recurring loop summary must keep {field}=false")
+        if recurring_loop.get("next_required_milestone") != (
+            "L4.9 Manual Recurring Observation Tick Runner v0"
+        ):
+            report.fail("generated recurring loop summary must point to L4.9 manual tick runner milestone")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

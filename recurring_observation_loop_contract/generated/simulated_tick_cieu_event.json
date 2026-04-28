@@ -1,0 +1,60 @@
+{
+  "schema_name": "ystar.recurring_observation_loop_contract.generated.simulated_tick_cieu_event",
+  "schema_version": "v0",
+  "event_id": "simulated-tick-cieu-event-001",
+  "dry_run_only": true,
+  "persistence_enabled": false,
+  "recurring_loop_id": "governed_recurring_observation_loop_contract_v0",
+  "tick_id": "simulated-observation-tick-001",
+  "Xt": {
+    "contract_ref": "recurring_observation_loop_contract/generated/recurring_loop_contract.json",
+    "allowed_sources_ref": "recurring_observation_loop_contract/generated/allowed_observation_sources.json",
+    "tick_number": 1
+  },
+  "U": "manual local simulated recurring observation tick",
+  "Y_star": "mission-bounded autonomous company observes generated evidence under governance",
+  "predicted_Y_t1": {
+    "recurring_contract_defined": true,
+    "manual_tick_simulated": true,
+    "scheduler_enabled": false,
+    "daemon_enabled": false
+  },
+  "predicted_R_t1": {
+    "risk_tier": "low",
+    "requires_curation": true,
+    "live_action_enabled": false
+  },
+  "actual_Y_t1": {
+    "simulated_tick_defined": true,
+    "dashboard_delta_defined": true,
+    "work_candidates_defined": true
+  },
+  "actual_R_t1": {
+    "real_action_executed": false,
+    "external_action_executed": false,
+    "persistence_enabled": false
+  },
+  "residual_delta": {
+    "summary": "Prediction matched simulated local-only contract behavior.",
+    "state_change_level": "meaningful",
+    "unresolved_items": [
+      "future manual tick runner remains to be built"
+    ]
+  },
+  "evidence_refs": [
+    "recurring_observation_loop_contract/generated/recurring_loop_contract.json",
+    "recurring_observation_loop_contract/generated/allowed_observation_sources.json",
+    "recurring_observation_loop_contract/generated/tick_governance_gate.json",
+    "recurring_observation_loop_contract/generated/simulated_observation_tick_001.json",
+    "recurring_observation_loop_contract/generated/simulated_tick_dashboard_delta.json"
+  ],
+  "write_policy": {
+    "generated_artifact_only": true,
+    "persistent_store_write_allowed": false
+  },
+  "learning_eligibility": false,
+  "curation_required": true,
+  "direct_brain_writeback_allowed": false,
+  "direct_memory_ingestion_allowed": false,
+  "raw_artifact_ingestion_allowed": false
+}

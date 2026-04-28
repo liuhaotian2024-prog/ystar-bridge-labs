@@ -1,0 +1,18 @@
+{
+  "schema_name": "ystar.recurring_observation_loop_contract.generated.recurrence_schedule_draft",
+  "schema_version": "v0",
+  "schedule_id": "recurrence-schedule-draft-001",
+  "schedule_type": "draft_only",
+  "recurrence_enabled": false,
+  "scheduler_enabled": false,
+  "daemon_enabled": false,
+  "manual_local_simulation_only": true,
+  "proposed_frequency": "manual_or_hourly_when_enabled_later",
+  "minimum_interval_seconds": 3600,
+  "jitter_policy": "none_until_scheduler_contract_exists",
+  "max_ticks_per_day": 0,
+  "quiet_hours_policy": "not_applicable_until_manual_enablement",
+  "operator_enablement_required": true,
+  "governance_precondition": "Each tick requires a governance gate, allowed source registry validation, CIEU dry-run event, residual delta, stop/abort check, and escalation check.",
+  "notes": "Draft schedule only; no recurrence, scheduler, daemon, or auto-run is enabled."
+}

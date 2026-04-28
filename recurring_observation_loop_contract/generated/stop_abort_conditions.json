@@ -1,0 +1,91 @@
+{
+  "schema_name": "ystar.recurring_observation_loop_contract.generated.stop_abort_conditions",
+  "schema_version": "v0",
+  "conditions": [
+    {
+      "condition_id": "stop-001",
+      "description": "unsafe source requested",
+      "severity": "high",
+      "action": "stop_or_abort",
+      "requires_operator_review": true
+    },
+    {
+      "condition_id": "stop-002",
+      "description": "database, sidecar, runtime, or text-run artifact requested",
+      "severity": "high",
+      "action": "stop_or_abort",
+      "requires_operator_review": true
+    },
+    {
+      "condition_id": "stop-003",
+      "description": "scheduler unexpectedly enabled",
+      "severity": "critical",
+      "action": "stop_or_abort",
+      "requires_operator_review": true
+    },
+    {
+      "condition_id": "stop-004",
+      "description": "daemon unexpectedly enabled",
+      "severity": "critical",
+      "action": "stop_or_abort",
+      "requires_operator_review": true
+    },
+    {
+      "condition_id": "stop-005",
+      "description": "external network requested",
+      "severity": "critical",
+      "action": "stop_or_abort",
+      "requires_operator_review": true
+    },
+    {
+      "condition_id": "stop-006",
+      "description": "live action requested",
+      "severity": "critical",
+      "action": "stop_or_abort",
+      "requires_operator_review": true
+    },
+    {
+      "condition_id": "stop-007",
+      "description": "CIEU persistence requested",
+      "severity": "critical",
+      "action": "stop_or_abort",
+      "requires_operator_review": true
+    },
+    {
+      "condition_id": "stop-008",
+      "description": "brain or memory writeback requested",
+      "severity": "critical",
+      "action": "stop_or_abort",
+      "requires_operator_review": true
+    },
+    {
+      "condition_id": "stop-009",
+      "description": "source registry validation failure",
+      "severity": "high",
+      "action": "stop_or_abort",
+      "requires_operator_review": true
+    },
+    {
+      "condition_id": "stop-010",
+      "description": "governance gate denies tick",
+      "severity": "high",
+      "action": "stop_or_abort",
+      "requires_operator_review": true
+    },
+    {
+      "condition_id": "stop-011",
+      "description": "repeated residual delta unresolved",
+      "severity": "medium",
+      "action": "stop_or_abort",
+      "requires_operator_review": true
+    },
+    {
+      "condition_id": "stop-012",
+      "description": "generated artifact size guard failure",
+      "severity": "medium",
+      "action": "stop_or_abort",
+      "requires_operator_review": true
+    }
+  ],
+  "condition_count": 12
+}

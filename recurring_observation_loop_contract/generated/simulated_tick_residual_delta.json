@@ -1,0 +1,20 @@
+{
+  "schema_name": "ystar.recurring_observation_loop_contract.generated.simulated_tick_residual_delta",
+  "schema_version": "v0",
+  "delta_id": "simulated-tick-residual-delta-001",
+  "event_id": "simulated-tick-cieu-event-001",
+  "predicted_vs_actual_summary": "Manual local simulated tick produced expected disabled-recurring artifacts.",
+  "residual_delta": {
+    "summary": "Prediction matched simulated local-only contract behavior.",
+    "state_change_level": "meaningful",
+    "unresolved_items": [
+      "future manual tick runner remains to be built"
+    ]
+  },
+  "learning_eligibility": false,
+  "curation_required": true,
+  "direct_brain_writeback_allowed": false,
+  "direct_memory_ingestion_allowed": false,
+  "next_review_required": true,
+  "notes": "Residual is review-only and cannot update memory or brain state directly."
+}

@@ -1,0 +1,19 @@
+{
+  "schema_name": "ystar.recurring_observation_loop_contract.generated.tick_governance_gate",
+  "schema_version": "v0",
+  "gate_id": "tick-governance-gate-001",
+  "tick_type": "recurring_observation_tick",
+  "decision": "allow_manual_local_simulated_tick",
+  "decision_reason": "The tick is local, deterministic, read-only, generated-source only, and all recurrence/live/writeback/persistence flags are disabled.",
+  "allowed_only_as_manual_local_simulation": true,
+  "recurrence_enabled": false,
+  "scheduler_enabled": false,
+  "daemon_enabled": false,
+  "live_action_allowed": false,
+  "external_action_allowed": false,
+  "cieu_persistence_allowed": false,
+  "brain_writeback_allowed": false,
+  "memory_ingestion_allowed": false,
+  "operator_approval_required_for_enablement": true,
+  "notes": "This gate does not authorize recurring execution."
+}

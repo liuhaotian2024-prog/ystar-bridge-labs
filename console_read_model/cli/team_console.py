@@ -35,6 +35,7 @@ READONLY_TOOL = "console_read_model/generated/readonly_tool_summary.json"
 TOOL_BRIDGE = "console_read_model/generated/tool_bridge_summary.json"
 WORK_PROPOSAL = "console_read_model/generated/work_proposal_summary.json"
 DASHBOARD_REFRESH = "console_read_model/generated/dashboard_refresh_summary.json"
+RECURRING_LOOP = "console_read_model/generated/recurring_loop_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -54,7 +55,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -109,6 +110,7 @@ def load_all() -> dict[str, Any]:
         "tool_bridge": load_json(TOOL_BRIDGE),
         "work_proposal": load_json(WORK_PROPOSAL),
         "dashboard_refresh": load_json(DASHBOARD_REFRESH),
+        "recurring_loop": load_json(RECURRING_LOOP),
     }
 
 
@@ -713,6 +715,37 @@ def cmd_dashboard_refresh(data: dict[str, Any]) -> None:
     print(f"warning: {refresh.get('warning')}")
 
 
+def cmd_recurring_loop(data: dict[str, Any]) -> None:
+    loop = data["recurring_loop"]
+    print("# Governed Recurring Observation Loop Contract")
+    print()
+    print(f"recurring observation loop contract defined: {loop.get('recurring_observation_loop_contract_defined')}")
+    print(f"recurrence policy defined: {loop.get('recurrence_policy_defined')}")
+    print(f"recurrence enabled: {loop.get('recurrence_enabled')}")
+    print(f"scheduler enabled: {loop.get('scheduler_enabled')}")
+    print(f"daemon enabled: {loop.get('daemon_enabled')}")
+    print(f"auto-run enabled: {loop.get('auto_run_enabled')}")
+    print(f"manual local simulation only: {loop.get('manual_local_simulation_only')}")
+    print(f"allowed observation sources defined: {loop.get('allowed_observation_sources_defined')}")
+    print(f"tick governance gate defined: {loop.get('tick_governance_gate_defined')}")
+    print(f"simulated observation tick defined: {loop.get('simulated_observation_tick_defined')}")
+    print(f"CIEU tick event defined: {loop.get('simulated_tick_cieu_event_defined')}")
+    print(f"residual delta defined: {loop.get('simulated_tick_residual_delta_defined')}")
+    print(f"stop/abort conditions defined: {loop.get('stop_abort_conditions_defined')}")
+    print(f"escalation conditions defined: {loop.get('escalation_conditions_defined')}")
+    print(f"manual enablement checklist defined: {loop.get('manual_enablement_checklist_defined')}")
+    print(f"real action executed: {loop.get('real_action_executed')}")
+    print(f"live action enabled: {loop.get('live_action_enabled')}")
+    print(f"external action executed: {loop.get('external_action_executed')}")
+    print(f"CIEU persistence enabled: {loop.get('cieu_persistence_enabled')}")
+    print(f"brain writeback enabled: {loop.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {loop.get('memory_ingestion_enabled')}")
+    print(f"next required milestone: {loop.get('next_required_milestone')}")
+    print(f"generated_summary: {loop.get('generated_summary')}")
+    print(f"generated_tick: {loop.get('generated_tick')}")
+    print(f"warning: {loop.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -841,6 +874,20 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print(f"- {work_proposal.get('generated_tool_request')}")
         print(f"- {work_proposal.get('generated_bridge_trace')}")
         print(f"- {work_proposal.get('generated_bridged_result_ref')}")
+    dashboard_refresh = data.get("dashboard_refresh", {})
+    if dashboard_refresh:
+        print()
+        print("Mission dashboard refresh loop:")
+        print(f"- {dashboard_refresh.get('generated_summary')}")
+        print(f"- {dashboard_refresh.get('generated_refreshed_dashboard')}")
+        print(f"- {dashboard_refresh.get('generated_company_state_delta')}")
+    recurring_loop = data.get("recurring_loop", {})
+    if recurring_loop:
+        print()
+        print("Governed recurring observation loop contract:")
+        print(f"- {recurring_loop.get('generated_summary')}")
+        print(f"- {recurring_loop.get('generated_contract')}")
+        print(f"- {recurring_loop.get('generated_tick')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -888,6 +935,8 @@ def cmd_validate_local() -> int:
         READONLY_TOOL,
         TOOL_BRIDGE,
         WORK_PROPOSAL,
+        DASHBOARD_REFRESH,
+        RECURRING_LOOP,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -939,6 +988,10 @@ def cmd_validate_local() -> int:
             failures.append("tool_bridge_summary missing from team console snapshot")
         if "work_proposal_summary" not in snapshot:
             failures.append("work_proposal_summary missing from team console snapshot")
+        if "dashboard_refresh_summary" not in snapshot:
+            failures.append("dashboard_refresh_summary missing from team console snapshot")
+        if "recurring_loop_summary" not in snapshot:
+            failures.append("recurring_loop_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -1715,6 +1768,68 @@ def cmd_validate_local() -> int:
         if work_proposal.get("next_required_milestone") != "L4.7 First Mission Dashboard Refresh Loop v0":
             failures.append("work proposal summary must point to L4.7 mission dashboard refresh milestone")
 
+    recurring_loop = loaded.get(RECURRING_LOOP)
+    if recurring_loop:
+        required_fields = [
+            "recurring_observation_loop_contract_defined",
+            "recurrence_policy_defined",
+            "recurrence_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "auto_run_enabled",
+            "manual_local_simulation_only",
+            "allowed_observation_sources_defined",
+            "tick_governance_gate_defined",
+            "simulated_observation_tick_defined",
+            "simulated_tick_cieu_event_defined",
+            "simulated_tick_residual_delta_defined",
+            "stop_abort_conditions_defined",
+            "escalation_conditions_defined",
+            "manual_enablement_checklist_defined",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "next_required_milestone",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in recurring_loop:
+                failures.append(f"recurring loop summary missing field: {field}")
+        for field in [
+            "recurring_observation_loop_contract_defined",
+            "recurrence_policy_defined",
+            "manual_local_simulation_only",
+            "allowed_observation_sources_defined",
+            "tick_governance_gate_defined",
+            "simulated_observation_tick_defined",
+            "simulated_tick_cieu_event_defined",
+            "simulated_tick_residual_delta_defined",
+            "stop_abort_conditions_defined",
+            "escalation_conditions_defined",
+            "manual_enablement_checklist_defined",
+        ]:
+            if recurring_loop.get(field) is not True:
+                failures.append(f"recurring loop summary must keep {field}=true")
+        for field in [
+            "recurrence_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "auto_run_enabled",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+        ]:
+            if recurring_loop.get(field) is not False:
+                failures.append(f"recurring loop summary must keep {field}=false")
+        if recurring_loop.get("next_required_milestone") != "L4.9 Manual Recurring Observation Tick Runner v0":
+            failures.append("recurring loop summary must point to L4.9 manual tick runner milestone")
+
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
     print(f"Required agents: {', '.join(REQUIRED_AGENTS)}")
@@ -1796,6 +1911,8 @@ def main(argv: list[str]) -> int:
         cmd_work_proposal(data)
     elif command == "dashboard-refresh":
         cmd_dashboard_refresh(data)
+    elif command == "recurring-loop":
+        cmd_recurring_loop(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

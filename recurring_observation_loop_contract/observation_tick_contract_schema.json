@@ -1,0 +1,54 @@
+{
+  "schema_name": "ystar.recurring_observation_loop_contract.observation_tick_contract_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "tick_id",
+    "recurring_loop_id",
+    "tick_number",
+    "manual_local_simulation_only",
+    "recurrence_enabled",
+    "scheduler_used",
+    "daemon_used",
+    "observation_sources_used",
+    "real_action_executed",
+    "external_action_executed",
+    "live_action_enabled"
+  ],
+  "properties": {
+    "tick_id": {
+      "type": "string"
+    },
+    "recurring_loop_id": {
+      "type": "string"
+    },
+    "tick_number": {
+      "type": "integer"
+    },
+    "manual_local_simulation_only": {
+      "type": "boolean"
+    },
+    "recurrence_enabled": {
+      "type": "boolean"
+    },
+    "scheduler_used": {
+      "type": "boolean"
+    },
+    "daemon_used": {
+      "type": "boolean"
+    },
+    "observation_sources_used": {
+      "type": "array"
+    },
+    "real_action_executed": {
+      "type": "boolean"
+    },
+    "external_action_executed": {
+      "type": "boolean"
+    },
+    "live_action_enabled": {
+      "type": "boolean"
+    }
+  }
+}
+

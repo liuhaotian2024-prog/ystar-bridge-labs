@@ -62,6 +62,7 @@
     "console_read_model/generated/tool_bridge_summary.json",
     "console_read_model/generated/work_proposal_summary.json",
     "console_read_model/generated/dashboard_refresh_summary.json",
+    "console_read_model/generated/recurring_loop_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "required_mission_dashboard_refresh_loop_files": [
@@ -89,6 +90,35 @@
     "mission_dashboard_refresh_loop/generated/next_loop_recommendations.json",
     "mission_dashboard_refresh_loop/generated/refresh_loop_readiness_summary.json",
     "mission_dashboard_refresh_loop/generated/refresh_loop_report.md"
+  ],
+  "required_recurring_observation_loop_contract_files": [
+    "recurring_observation_loop_contract/README.md",
+    "recurring_observation_loop_contract/recurrence_policy.md",
+    "recurring_observation_loop_contract/observation_tick_contract_schema.json",
+    "recurring_observation_loop_contract/recurring_loop_contract_schema.json",
+    "recurring_observation_loop_contract/governance_gate_policy.md",
+    "recurring_observation_loop_contract/cieu_tick_event_policy.md",
+    "recurring_observation_loop_contract/stop_abort_policy.md",
+    "recurring_observation_loop_contract/escalation_policy.md",
+    "recurring_observation_loop_contract/manual_enablement_policy.md",
+    "recurring_observation_loop_contract/open_gaps.md",
+    "recurring_observation_loop_contract/tools/build_recurring_observation_contract.py",
+    "recurring_observation_loop_contract/tools/simulate_recurring_observation_tick.py",
+    "recurring_observation_loop_contract/generated/README.md",
+    "recurring_observation_loop_contract/generated/recurring_loop_contract.json",
+    "recurring_observation_loop_contract/generated/recurrence_schedule_draft.json",
+    "recurring_observation_loop_contract/generated/allowed_observation_sources.json",
+    "recurring_observation_loop_contract/generated/tick_governance_gate.json",
+    "recurring_observation_loop_contract/generated/simulated_observation_tick_001.json",
+    "recurring_observation_loop_contract/generated/simulated_tick_dashboard_delta.json",
+    "recurring_observation_loop_contract/generated/simulated_tick_work_candidates.json",
+    "recurring_observation_loop_contract/generated/simulated_tick_cieu_event.json",
+    "recurring_observation_loop_contract/generated/simulated_tick_residual_delta.json",
+    "recurring_observation_loop_contract/generated/stop_abort_conditions.json",
+    "recurring_observation_loop_contract/generated/escalation_conditions.json",
+    "recurring_observation_loop_contract/generated/manual_enablement_checklist.json",
+    "recurring_observation_loop_contract/generated/recurring_loop_readiness_summary.json",
+    "recurring_observation_loop_contract/generated/recurring_loop_report.md"
   ],
   "required_agent_team_work_proposal_files": [
     "agent_team_work_proposal/README.md",

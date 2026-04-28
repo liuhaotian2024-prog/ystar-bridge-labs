@@ -1,0 +1,109 @@
+{
+  "schema_name": "ystar.recurring_observation_loop_contract.generated.allowed_observation_sources",
+  "schema_version": "v0",
+  "allowed_source_registry_defined": true,
+  "source_count": 9,
+  "sources": [
+    {
+      "source_id": "mission-dashboard-refresh",
+      "source_path": "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json",
+      "source_type": "mission_dashboard",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "max_bytes": 32768,
+      "governance_notes": "Refreshed L4.7 mission dashboard summary."
+    },
+    {
+      "source_id": "mission-dashboard-delta",
+      "source_path": "mission_dashboard_refresh_loop/generated/company_state_delta.json",
+      "source_type": "company_state_delta",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "max_bytes": 32768,
+      "governance_notes": "L4.7 generated company state delta."
+    },
+    {
+      "source_id": "mission-dashboard-backlog",
+      "source_path": "mission_dashboard_refresh_loop/generated/refreshed_autonomous_backlog.json",
+      "source_type": "autonomous_backlog",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "max_bytes": 32768,
+      "governance_notes": "L4.7 refreshed autonomous backlog."
+    },
+    {
+      "source_id": "agent-team-work-proposal-summary",
+      "source_path": "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
+      "source_type": "agent_team_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "max_bytes": 32768,
+      "governance_notes": "L4.6 agent-team generated work proposal summary."
+    },
+    {
+      "source_id": "tool-bridge-readiness-summary",
+      "source_path": "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json",
+      "source_type": "tool_bridge_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "max_bytes": 32768,
+      "governance_notes": "L4.5 governed bridge readiness summary."
+    },
+    {
+      "source_id": "readonly-tool-readiness-summary",
+      "source_path": "governed_readonly_observation_tool/generated/tool_readiness_summary.json",
+      "source_type": "readonly_tool_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "max_bytes": 32768,
+      "governance_notes": "L4.4 governed read-only tool readiness summary."
+    },
+    {
+      "source_id": "governed-observation-loop-summary",
+      "source_path": "governed_observation_loop/generated/governed_observation_loop_summary.json",
+      "source_type": "observation_loop_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "max_bytes": 32768,
+      "governance_notes": "L4.3 governed observation loop summary."
+    },
+    {
+      "source_id": "legacy-triage-summary",
+      "source_path": "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
+      "source_type": "legacy_triage_summary",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "max_bytes": 32768,
+      "governance_notes": "L4.3 legacy asset triage summary."
+    },
+    {
+      "source_id": "team-console-snapshot",
+      "source_path": "console_read_model/generated/team_console_snapshot.json",
+      "source_type": "console_read_model",
+      "safe_to_read_now": true,
+      "raw_runtime_artifact": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "max_bytes": 48050,
+      "governance_notes": "Generated team console snapshot."
+    }
+  ],
+  "raw_runtime_artifacts_allowed": false,
+  "external_network_allowed": false
+}
