@@ -1,0 +1,68 @@
+{
+  "schema_name": "ystar.sandbox_reprojection.behavior_y_star",
+  "schema_version": "v0",
+  "sandbox_behavior_y_star_id": "sandbox-behavior-y-star-policy-mediated-preview-v0",
+  "source_mission_y_star_id": "mission-commercial-agent-company-v0",
+  "source_sandbox_policy_snapshot_id": "sandbox-updated-projection-policy-v0",
+  "projected_behavior_y_star": "Refresh the internal mission dashboard through a sandbox-updated projection policy that preserves mission lineage, tightens evidence requirements, and keeps all live or MCP execution blocked.",
+  "changed_fields_from_baseline": [
+    "declared_behavior_y_star includes explicit sandbox evidence requirements",
+    "allowed_behavior_boundary requires MCP non-bypass proof references",
+    "candidate_u_summary narrows to sandbox dry-run preview only"
+  ],
+  "unchanged_fields_from_baseline": [
+    "source mission-level Y*",
+    "Pre-U validation requirement",
+    "live behavior authorization remains false",
+    "brain and memory writeback remain false"
+  ],
+  "inherited_constraints_preserved": true,
+  "forbidden_boundaries_preserved": true,
+  "pre_u_validation_still_required": true,
+  "live_behavior_authorized": false,
+  "behavior_execution_enabled": false,
+  "applied_to_real_canonical_policy": false,
+  "applied_to_brain": false,
+  "applied_to_memory": false,
+  "direct_y_star_mutation_performed": false,
+  "evidence_refs": [
+    "canonical_update_package_candidate/canonical_update_package_candidate.json",
+    "versioned_canonical_patch_plan/versioned_canonical_patch_plan.json",
+    "rollback_and_audit_lineage/rollback_plan.json",
+    "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+    "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+    "governed_mcp_adapter_readiness/governed_mcp_adapter_readiness.json",
+    "/Users/haotianliu/.openclaw/workspace/ystar-company/sandbox_patch_application/sandbox_updated_projection_policy_snapshot.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  },
+  "sandbox_flags": {
+    "sandbox_approval_fixture_created": true,
+    "sandbox_patch_application_performed": true,
+    "sandbox_projection_preview_generated": true,
+    "sandbox_mcp_dry_run_preview_generated": true,
+    "sandbox_rollback_performed": true
+  }
+}

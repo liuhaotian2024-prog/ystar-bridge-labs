@@ -99,6 +99,16 @@ CURATED_SOURCES = [
     "post_promotion_validation_plan/post_promotion_validation_summary.json",
     "dry_run_promotion_decision_fixture/dry_run_promotion_summary.json",
     "controlled_canonical_learning_readiness/controlled_canonical_learning_readiness.json",
+    "approved_canonical_update_sandbox/approved_canonical_update_sandbox_summary.json",
+    "sandbox_approval_fixture/sandbox_approval_summary.json",
+    "sandbox_canonical_state_baseline/sandbox_baseline_summary.json",
+    "sandbox_patch_application/sandbox_patch_application_summary.json",
+    "sandbox_post_update_validation/sandbox_post_update_validation_summary.json",
+    "sandbox_reprojection_and_mcp_preview/sandbox_reprojection_mcp_summary.json",
+    "sandbox_update_cieu_residual/sandbox_update_cieu_summary.json",
+    "sandbox_rollback_validation/sandbox_rollback_summary.json",
+    "original_sandbox_rollback_comparison/sandbox_update_effect_summary.json",
+    "approved_sandbox_update_readiness/approved_sandbox_update_readiness.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -2362,6 +2372,159 @@ def build_controlled_canonical_learning_summary(
     }
 
 
+def build_approved_sandbox_update_summary(
+    sandbox_summary: dict[str, Any] | None,
+    approval_summary: dict[str, Any] | None,
+    baseline_summary: dict[str, Any] | None,
+    patch_summary: dict[str, Any] | None,
+    validation_summary: dict[str, Any] | None,
+    reprojection_summary: dict[str, Any] | None,
+    cieu_summary: dict[str, Any] | None,
+    rollback_summary: dict[str, Any] | None,
+    effect_summary: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.approved_sandbox_update_summary",
+            "schema_version": "v0",
+            "l5_8_approved_canonical_update_sandbox_defined": False,
+            "ready_for_l5_9_real_approval_workflow_boundary": False,
+            "ready_for_l6_revenue_opportunity_discovery": False,
+            "warning": "Approved canonical update sandbox has not been generated yet.",
+        }
+    sandbox_summary = sandbox_summary or {}
+    approval_summary = approval_summary or {}
+    baseline_summary = baseline_summary or {}
+    patch_summary = patch_summary or {}
+    validation_summary = validation_summary or {}
+    reprojection_summary = reprojection_summary or {}
+    cieu_summary = cieu_summary or {}
+    rollback_summary = rollback_summary or {}
+    effect_summary = effect_summary or {}
+    return {
+        "schema_name": "ystar.console_read_model.generated.approved_sandbox_update_summary",
+        "schema_version": "v0",
+        "l5_8_approved_canonical_update_sandbox_defined": sandbox_summary.get(
+            "l5_8_approved_canonical_update_sandbox_defined"
+        ),
+        "sandbox_approval_fixture_generated": approval_summary.get(
+            "sandbox_approval_fixture_generated"
+        ),
+        "sandbox_application_approved": approval_summary.get("sandbox_application_approved"),
+        "real_application_approved": approval_summary.get("real_application_approved"),
+        "candidate_real_approved": approval_summary.get("candidate_real_approved"),
+        "sandbox_baseline_generated": baseline_summary.get(
+            "sandbox_canonical_baseline_generated"
+        ),
+        "sandbox_patch_applied": patch_summary.get("sandbox_patch_applied"),
+        "real_canonical_state_unchanged": readiness_summary.get(
+            "real_canonical_state_unchanged"
+        ),
+        "y_star_non_mutation_invariant_preserved": readiness_summary.get(
+            "y_star_non_mutation_invariant_preserved"
+        ),
+        "sandbox_post_update_validation_generated": validation_summary.get(
+            "sandbox_post_update_validation_generated"
+        ),
+        "sandbox_post_update_validation_passed": validation_summary.get(
+            "sandbox_post_update_validation_passed"
+        ),
+        "sandbox_behavior_y_star_reprojection_generated": reprojection_summary.get(
+            "sandbox_behavior_y_star_reprojection_generated"
+        ),
+        "sandbox_governed_mcp_preview_generated": reprojection_summary.get(
+            "sandbox_governed_mcp_preview_generated"
+        ),
+        "sandbox_update_cieu_like_fixture_generated": cieu_summary.get(
+            "sandbox_update_cieu_like_fixture_generated"
+        ),
+        "sandbox_update_residual_delta_generated": cieu_summary.get(
+            "sandbox_update_residual_delta_generated"
+        ),
+        "sandbox_rollback_validation_generated": rollback_summary.get(
+            "sandbox_rollback_performed"
+        ),
+        "rollback_restored_baseline": rollback_summary.get("rollback_restored_baseline"),
+        "original_vs_sandbox_vs_rollback_comparison_generated": readiness_summary.get(
+            "original_sandbox_rollback_comparison_generated"
+        ),
+        "sandbox_update_effect_class": effect_summary.get("effect_class"),
+        "previous_residual_influenced_sandbox_projection": effect_summary.get(
+            "previous_residual_influenced_sandbox_projection"
+        ),
+        "real_candidate_approved": readiness_summary.get("real_candidate_approved"),
+        "real_candidate_applied": readiness_summary.get("real_candidate_applied"),
+        "real_canonical_policy_mutation_performed": readiness_summary.get(
+            "real_canonical_policy_mutation_performed"
+        ),
+        "real_canonical_update_application_performed": readiness_summary.get(
+            "real_canonical_update_application_performed"
+        ),
+        "brain_writeback_performed": readiness_summary.get("brain_writeback_performed"),
+        "memory_ingestion_performed": readiness_summary.get("memory_ingestion_performed"),
+        "strategy_mutation_performed": readiness_summary.get("strategy_mutation_performed"),
+        "direct_y_star_mutation_performed": readiness_summary.get(
+            "direct_y_star_mutation_performed"
+        ),
+        "y_star_gov_unmodified": readiness_summary.get("y_star_gov_unmodified"),
+        "gov_mcp_unmodified": readiness_summary.get("gov_mcp_unmodified"),
+        "live_execution_enabled": readiness_summary.get("live_execution_enabled"),
+        "behavior_execution_enabled": readiness_summary.get("behavior_execution_enabled"),
+        "external_action_enabled": readiness_summary.get("external_action_enabled"),
+        "network_enabled": readiness_summary.get("network_enabled"),
+        "scheduler_enabled": readiness_summary.get("scheduler_enabled"),
+        "daemon_enabled": readiness_summary.get("daemon_enabled"),
+        "mcp_server_execution_enabled": readiness_summary.get("mcp_server_execution_enabled"),
+        "mcp_tool_execution_enabled": readiness_summary.get("mcp_tool_execution_enabled"),
+        "cieu_persistence_enabled": readiness_summary.get("cieu_persistence_enabled"),
+        "brain_writeback_enabled": readiness_summary.get("brain_writeback_enabled"),
+        "memory_ingestion_enabled": readiness_summary.get("memory_ingestion_enabled"),
+        "strategy_mutation_enabled": readiness_summary.get("strategy_mutation_enabled"),
+        "real_candidate_approval_enabled": readiness_summary.get(
+            "real_candidate_approval_enabled"
+        ),
+        "real_canonical_policy_mutation_enabled": readiness_summary.get(
+            "real_canonical_policy_mutation_enabled"
+        ),
+        "real_canonical_update_application_enabled": readiness_summary.get(
+            "real_canonical_update_application_enabled"
+        ),
+        "real_y_star_direct_mutation_enabled": readiness_summary.get(
+            "real_y_star_direct_mutation_enabled"
+        ),
+        "semantic_truth_scoring_enabled": readiness_summary.get("semantic_truth_scoring_enabled"),
+        "raw_runtime_artifact_reading_enabled": readiness_summary.get(
+            "raw_runtime_artifact_reading_enabled"
+        ),
+        "revenue_opportunity_discovery_enabled": readiness_summary.get(
+            "revenue_opportunity_discovery_enabled"
+        ),
+        "ready_for_l5_9_real_approval_workflow_boundary": readiness_summary.get(
+            "ready_for_l5_9_real_approval_workflow_boundary"
+        ),
+        "ready_for_l6_revenue_opportunity_discovery": readiness_summary.get(
+            "ready_for_l6_revenue_opportunity_discovery"
+        ),
+        "next_required_milestone": readiness_summary.get("next_required_milestone"),
+        "generated_sandbox_summary": "approved_canonical_update_sandbox/approved_canonical_update_sandbox_summary.json",
+        "generated_approval_summary": "sandbox_approval_fixture/sandbox_approval_summary.json",
+        "generated_baseline_summary": "sandbox_canonical_state_baseline/sandbox_baseline_summary.json",
+        "generated_patch_summary": "sandbox_patch_application/sandbox_patch_application_summary.json",
+        "generated_validation_summary": "sandbox_post_update_validation/sandbox_post_update_validation_summary.json",
+        "generated_reprojection_summary": "sandbox_reprojection_and_mcp_preview/sandbox_reprojection_mcp_summary.json",
+        "generated_cieu_summary": "sandbox_update_cieu_residual/sandbox_update_cieu_summary.json",
+        "generated_rollback_summary": "sandbox_rollback_validation/sandbox_rollback_summary.json",
+        "generated_effect_summary": "original_sandbox_rollback_comparison/sandbox_update_effect_summary.json",
+        "generated_readiness": "approved_sandbox_update_readiness/approved_sandbox_update_readiness.json",
+        "warning": (
+            "L5.8 is sandbox-only. Sandbox approval and patch application are generated "
+            "artifacts only; real candidate approval, real canonical mutation, writeback, "
+            "direct Y* mutation, MCP execution, and live execution remain blocked."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -2676,6 +2839,46 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "controlled_canonical_learning_readiness/controlled_canonical_learning_readiness.json",
         files_read,
     )
+    approved_sandbox_update_sandbox_summary = load_optional_json(
+        "approved_canonical_update_sandbox/approved_canonical_update_sandbox_summary.json",
+        files_read,
+    )
+    approved_sandbox_update_approval_summary = load_optional_json(
+        "sandbox_approval_fixture/sandbox_approval_summary.json",
+        files_read,
+    )
+    approved_sandbox_update_baseline_summary = load_optional_json(
+        "sandbox_canonical_state_baseline/sandbox_baseline_summary.json",
+        files_read,
+    )
+    approved_sandbox_update_patch_summary = load_optional_json(
+        "sandbox_patch_application/sandbox_patch_application_summary.json",
+        files_read,
+    )
+    approved_sandbox_update_validation_summary = load_optional_json(
+        "sandbox_post_update_validation/sandbox_post_update_validation_summary.json",
+        files_read,
+    )
+    approved_sandbox_update_reprojection_summary = load_optional_json(
+        "sandbox_reprojection_and_mcp_preview/sandbox_reprojection_mcp_summary.json",
+        files_read,
+    )
+    approved_sandbox_update_cieu_summary = load_optional_json(
+        "sandbox_update_cieu_residual/sandbox_update_cieu_summary.json",
+        files_read,
+    )
+    approved_sandbox_update_rollback_summary = load_optional_json(
+        "sandbox_rollback_validation/sandbox_rollback_summary.json",
+        files_read,
+    )
+    approved_sandbox_update_effect_summary = load_optional_json(
+        "original_sandbox_rollback_comparison/sandbox_update_effect_summary.json",
+        files_read,
+    )
+    approved_sandbox_update_readiness_summary = load_optional_json(
+        "approved_sandbox_update_readiness/approved_sandbox_update_readiness.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -2763,6 +2966,18 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         controlled_canonical_learning_validation_summary,
         controlled_canonical_learning_promotion_summary,
         controlled_canonical_learning_readiness_summary,
+    )
+    approved_sandbox_update_summary = build_approved_sandbox_update_summary(
+        approved_sandbox_update_sandbox_summary,
+        approved_sandbox_update_approval_summary,
+        approved_sandbox_update_baseline_summary,
+        approved_sandbox_update_patch_summary,
+        approved_sandbox_update_validation_summary,
+        approved_sandbox_update_reprojection_summary,
+        approved_sandbox_update_cieu_summary,
+        approved_sandbox_update_rollback_summary,
+        approved_sandbox_update_effect_summary,
+        approved_sandbox_update_readiness_summary,
     )
 
     profiles = {
@@ -2872,8 +3087,10 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Integrated review-gated shadow learning cycle exists as shadow-only artifacts; controlled canonical learning is not implemented yet.")
     if "Cross-repo governance contract proof exists as read-only boundary alignment; governed MCP dry-run adapter is implemented as dry-run only." not in open_gaps:
         open_gaps.append("Cross-repo governance contract proof exists as read-only boundary alignment; governed MCP dry-run adapter is implemented as dry-run only.")
-    if "Controlled canonical learning design exists as a promotion dry-run only; approved canonical update sandbox is not implemented yet." not in open_gaps:
-        open_gaps.append("Controlled canonical learning design exists as a promotion dry-run only; approved canonical update sandbox is not implemented yet.")
+    if "Controlled canonical learning design exists as a promotion dry-run only; approved canonical update sandbox now remains sandbox-only." not in open_gaps:
+        open_gaps.append("Controlled canonical learning design exists as a promotion dry-run only; approved canonical update sandbox now remains sandbox-only.")
+    if "Approved canonical update sandbox exists as generated sandbox-only artifacts; real approval workflow boundary is not implemented yet." not in open_gaps:
+        open_gaps.append("Approved canonical update sandbox exists as generated sandbox-only artifacts; real approval workflow boundary is not implemented yet.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -2915,6 +3132,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "cross_repo_governance_summary": cross_repo_governance_summary,
         "governed_mcp_adapter_summary": governed_mcp_adapter_summary,
         "controlled_canonical_learning_summary": controlled_canonical_learning_summary,
+        "approved_sandbox_update_summary": approved_sandbox_update_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -3136,6 +3354,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/cross_repo_governance_summary.json",
             "console_read_model/generated/governed_mcp_adapter_summary.json",
             "console_read_model/generated/controlled_canonical_learning_summary.json",
+            "console_read_model/generated/approved_sandbox_update_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -3224,6 +3443,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "dry-run adapter proof. It confirms a future MCP call candidate is downstream of behavior-level Y*, Pre-U, governance expectation, bridge receipt, CIEU-like receipt, residual delta, and review-only learning gates while real MCP execution remains blocked.\n\n"
         "`controlled_canonical_learning_summary.json` is derived from the L5.7 controlled\n"
         "canonical learning design. It confirms review-only and shadow candidates can become non-applied canonical update package candidates while approval, application, writeback, strategy mutation, and direct Y* mutation remain blocked.\n\n"
+        "`approved_sandbox_update_summary.json` is derived from the L5.8 approved\n"
+        "canonical update sandbox. It confirms sandbox approval/application, sandbox reprojection, MCP preview, CIEU-like residual, and rollback validation exist while real approval, real canonical mutation, writeback, direct Y* mutation, MCP execution, and live execution remain blocked.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -3262,6 +3483,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/cross_repo_governance_summary.json", cross_repo_governance_summary, generated_files)
     write_json("console_read_model/generated/governed_mcp_adapter_summary.json", governed_mcp_adapter_summary, generated_files)
     write_json("console_read_model/generated/controlled_canonical_learning_summary.json", controlled_canonical_learning_summary, generated_files)
+    write_json("console_read_model/generated/approved_sandbox_update_summary.json", approved_sandbox_update_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -3335,6 +3557,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     cross_repo_governance = snapshot.get("cross_repo_governance_summary", {})
     governed_mcp_adapter = snapshot.get("governed_mcp_adapter_summary", {})
     controlled_canonical_learning = snapshot.get("controlled_canonical_learning_summary", {})
+    approved_sandbox_update = snapshot.get("approved_sandbox_update_summary", {})
     lines.extend(
         [
             "",
@@ -4072,6 +4295,38 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- ready_for_l6_revenue_opportunity_discovery: {controlled_canonical_learning.get('ready_for_l6_revenue_opportunity_discovery')}",
             f"- next_required_milestone: {controlled_canonical_learning.get('next_required_milestone')}",
             f"- Warning: {controlled_canonical_learning.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Approved Canonical Update Sandbox",
+            "",
+            f"- l5_8_approved_canonical_update_sandbox_defined: {approved_sandbox_update.get('l5_8_approved_canonical_update_sandbox_defined')}",
+            f"- sandbox_approval_fixture_generated: {approved_sandbox_update.get('sandbox_approval_fixture_generated')}",
+            f"- sandbox_baseline_generated: {approved_sandbox_update.get('sandbox_baseline_generated')}",
+            f"- sandbox_patch_applied: {approved_sandbox_update.get('sandbox_patch_applied')}",
+            f"- real_canonical_state_unchanged: {approved_sandbox_update.get('real_canonical_state_unchanged')}",
+            f"- y_star_non_mutation_invariant_preserved: {approved_sandbox_update.get('y_star_non_mutation_invariant_preserved')}",
+            f"- sandbox_post_update_validation_generated: {approved_sandbox_update.get('sandbox_post_update_validation_generated')}",
+            f"- sandbox_behavior_y_star_reprojection_generated: {approved_sandbox_update.get('sandbox_behavior_y_star_reprojection_generated')}",
+            f"- sandbox_governed_mcp_preview_generated: {approved_sandbox_update.get('sandbox_governed_mcp_preview_generated')}",
+            f"- sandbox_update_cieu_like_fixture_generated: {approved_sandbox_update.get('sandbox_update_cieu_like_fixture_generated')}",
+            f"- sandbox_rollback_validation_generated: {approved_sandbox_update.get('sandbox_rollback_validation_generated')}",
+            f"- original_vs_sandbox_vs_rollback_comparison_generated: {approved_sandbox_update.get('original_vs_sandbox_vs_rollback_comparison_generated')}",
+            f"- real_candidate_approved: {approved_sandbox_update.get('real_candidate_approved')}",
+            f"- real_candidate_applied: {approved_sandbox_update.get('real_candidate_applied')}",
+            f"- real_canonical_policy_mutation_performed: {approved_sandbox_update.get('real_canonical_policy_mutation_performed')}",
+            f"- real_canonical_update_application_performed: {approved_sandbox_update.get('real_canonical_update_application_performed')}",
+            f"- brain_writeback_performed: {approved_sandbox_update.get('brain_writeback_performed')}",
+            f"- memory_ingestion_performed: {approved_sandbox_update.get('memory_ingestion_performed')}",
+            f"- direct_y_star_mutation_performed: {approved_sandbox_update.get('direct_y_star_mutation_performed')}",
+            f"- y_star_gov_unmodified: {approved_sandbox_update.get('y_star_gov_unmodified')}",
+            f"- gov_mcp_unmodified: {approved_sandbox_update.get('gov_mcp_unmodified')}",
+            f"- ready_for_l5_9_real_approval_workflow_boundary: {approved_sandbox_update.get('ready_for_l5_9_real_approval_workflow_boundary')}",
+            f"- ready_for_l6_revenue_opportunity_discovery: {approved_sandbox_update.get('ready_for_l6_revenue_opportunity_discovery')}",
+            f"- next_required_milestone: {approved_sandbox_update.get('next_required_milestone')}",
+            f"- Warning: {approved_sandbox_update.get('warning')}",
         ]
     )
     lines.extend(

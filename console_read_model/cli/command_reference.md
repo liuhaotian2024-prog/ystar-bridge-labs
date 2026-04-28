@@ -125,6 +125,11 @@ python3 console_read_model/cli/team_console.py <command>
   registry, promotion evidence, promotion gate, canonical update package
   candidate, versioned patch plan, rollback/audit plan, validation plan, dry-run
   promotion fixture, and blocked approval/application/writeback/direct-Y* state.
+- `approved-sandbox-update`: Prints the generated L5.8 approved canonical
+  update sandbox summary: sandbox approval, sandbox baseline, sandbox patch
+  application, post-update validation, behavior-level Y* reprojection, governed
+  MCP preview, CIEU-like residual, rollback validation, comparison, and blocked
+  real approval/application/writeback/direct-Y*/MCP/live state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

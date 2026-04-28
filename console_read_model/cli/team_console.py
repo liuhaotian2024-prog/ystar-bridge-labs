@@ -47,6 +47,7 @@ GOVERNED_MCP_ADAPTER = "console_read_model/generated/governed_mcp_adapter_summar
 CONTROLLED_CANONICAL_LEARNING = (
     "console_read_model/generated/controlled_canonical_learning_summary.json"
 )
+APPROVED_SANDBOX_UPDATE = "console_read_model/generated/approved_sandbox_update_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -66,7 +67,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -131,6 +132,7 @@ def load_all() -> dict[str, Any]:
         "cross_repo_governance": load_json(CROSS_REPO_GOVERNANCE),
         "governed_mcp_adapter": load_json(GOVERNED_MCP_ADAPTER),
         "controlled_canonical_learning": load_json(CONTROLLED_CANONICAL_LEARNING),
+        "approved_sandbox_update": load_json(APPROVED_SANDBOX_UPDATE),
     }
 
 
@@ -1242,6 +1244,83 @@ def cmd_controlled_canonical_learning(data: dict[str, Any]) -> None:
     print(f"warning: {learning.get('warning')}")
 
 
+def cmd_approved_sandbox_update(data: dict[str, Any]) -> None:
+    sandbox = data["approved_sandbox_update"]
+    print("# Approved Canonical Update Sandbox")
+    print()
+    print(
+        "L5.8 approved canonical update sandbox defined: "
+        f"{sandbox.get('l5_8_approved_canonical_update_sandbox_defined')}"
+    )
+    print(f"sandbox approval fixture generated: {sandbox.get('sandbox_approval_fixture_generated')}")
+    print(f"sandbox baseline generated: {sandbox.get('sandbox_baseline_generated')}")
+    print(f"sandbox patch applied: {sandbox.get('sandbox_patch_applied')}")
+    print(f"real canonical state unchanged: {sandbox.get('real_canonical_state_unchanged')}")
+    print(
+        "Y* non-mutation invariant preserved: "
+        f"{sandbox.get('y_star_non_mutation_invariant_preserved')}"
+    )
+    print(
+        "sandbox post-update validation generated: "
+        f"{sandbox.get('sandbox_post_update_validation_generated')}"
+    )
+    print(
+        "sandbox behavior-level Y* reprojection generated: "
+        f"{sandbox.get('sandbox_behavior_y_star_reprojection_generated')}"
+    )
+    print(
+        "sandbox governed MCP preview generated: "
+        f"{sandbox.get('sandbox_governed_mcp_preview_generated')}"
+    )
+    print(
+        "sandbox update CIEU-like fixture generated: "
+        f"{sandbox.get('sandbox_update_cieu_like_fixture_generated')}"
+    )
+    print(
+        "sandbox rollback validation generated: "
+        f"{sandbox.get('sandbox_rollback_validation_generated')}"
+    )
+    print(
+        "original-vs-sandbox-vs-rollback comparison generated: "
+        f"{sandbox.get('original_vs_sandbox_vs_rollback_comparison_generated')}"
+    )
+    print(f"no real candidate approval: {not sandbox.get('real_candidate_approved')}")
+    print(f"no real candidate application: {not sandbox.get('real_candidate_applied')}")
+    print(
+        "no real canonical policy mutation: "
+        f"{not sandbox.get('real_canonical_policy_mutation_performed')}"
+    )
+    print(
+        "no real canonical update application: "
+        f"{not sandbox.get('real_canonical_update_application_performed')}"
+    )
+    print(f"no brain writeback: {not sandbox.get('brain_writeback_performed')}")
+    print(f"no memory ingestion: {not sandbox.get('memory_ingestion_performed')}")
+    print(f"no direct Y* mutation: {not sandbox.get('direct_y_star_mutation_performed')}")
+    print(f"Y-star-gov unmodified: {sandbox.get('y_star_gov_unmodified')}")
+    print(f"gov-mcp unmodified: {sandbox.get('gov_mcp_unmodified')}")
+    print(f"live execution enabled: {sandbox.get('live_execution_enabled')}")
+    print(f"behavior execution enabled: {sandbox.get('behavior_execution_enabled')}")
+    print(f"external action enabled: {sandbox.get('external_action_enabled')}")
+    print(f"network enabled: {sandbox.get('network_enabled')}")
+    print(f"scheduler enabled: {sandbox.get('scheduler_enabled')}")
+    print(f"daemon enabled: {sandbox.get('daemon_enabled')}")
+    print(f"MCP server execution enabled: {sandbox.get('mcp_server_execution_enabled')}")
+    print(f"MCP tool execution enabled: {sandbox.get('mcp_tool_execution_enabled')}")
+    print(f"CIEU persistence enabled: {sandbox.get('cieu_persistence_enabled')}")
+    print(
+        "ready for L5.9 real approval workflow boundary: "
+        f"{sandbox.get('ready_for_l5_9_real_approval_workflow_boundary')}"
+    )
+    print(
+        "ready for L6 revenue opportunity discovery: "
+        f"{sandbox.get('ready_for_l6_revenue_opportunity_discovery')}"
+    )
+    print(f"next required milestone: {sandbox.get('next_required_milestone')}")
+    print(f"generated_readiness: {sandbox.get('generated_readiness')}")
+    print(f"warning: {sandbox.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -1480,6 +1559,20 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print(f"- {controlled_canonical_learning.get('generated_validation_summary')}")
         print(f"- {controlled_canonical_learning.get('generated_promotion_summary')}")
         print(f"- {controlled_canonical_learning.get('generated_readiness')}")
+    approved_sandbox_update = data.get("approved_sandbox_update", {})
+    if approved_sandbox_update:
+        print()
+        print("Approved canonical update sandbox:")
+        print(f"- {approved_sandbox_update.get('generated_sandbox_summary')}")
+        print(f"- {approved_sandbox_update.get('generated_approval_summary')}")
+        print(f"- {approved_sandbox_update.get('generated_baseline_summary')}")
+        print(f"- {approved_sandbox_update.get('generated_patch_summary')}")
+        print(f"- {approved_sandbox_update.get('generated_validation_summary')}")
+        print(f"- {approved_sandbox_update.get('generated_reprojection_summary')}")
+        print(f"- {approved_sandbox_update.get('generated_cieu_summary')}")
+        print(f"- {approved_sandbox_update.get('generated_rollback_summary')}")
+        print(f"- {approved_sandbox_update.get('generated_effect_summary')}")
+        print(f"- {approved_sandbox_update.get('generated_readiness')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -1611,6 +1704,8 @@ def cmd_validate_local() -> int:
             failures.append("governed_mcp_adapter_summary missing from team console snapshot")
         if "controlled_canonical_learning_summary" not in snapshot:
             failures.append("controlled_canonical_learning_summary missing from team console snapshot")
+        if "approved_sandbox_update_summary" not in snapshot:
+            failures.append("approved_sandbox_update_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -3068,6 +3163,8 @@ def main(argv: list[str]) -> int:
         cmd_governed_mcp_adapter(data)
     elif command == "controlled-canonical-learning":
         cmd_controlled_canonical_learning(data)
+    elif command == "approved-sandbox-update":
+        cmd_approved_sandbox_update(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

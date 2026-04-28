@@ -96,5 +96,8 @@ dry-run adapter proof. It confirms a future MCP call candidate is downstream of 
 `controlled_canonical_learning_summary.json` is derived from the L5.7 controlled
 canonical learning design. It confirms review-only and shadow candidates can become non-applied canonical update package candidates while approval, application, writeback, strategy mutation, and direct Y* mutation remain blocked.
 
+`approved_sandbox_update_summary.json` is derived from the L5.8 approved
+canonical update sandbox. It confirms sandbox approval/application, sandbox reprojection, MCP preview, CIEU-like residual, and rollback validation exist while real approval, real canonical mutation, writeback, direct Y* mutation, MCP execution, and live execution remain blocked.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

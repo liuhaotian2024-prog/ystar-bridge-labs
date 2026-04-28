@@ -1,0 +1,56 @@
+{
+  "schema_name": "ystar.sandbox_canonical_state.baseline_manifest",
+  "schema_version": "v0",
+  "baseline_id": "sandbox-canonical-baseline-v0",
+  "baseline_mode": "generated_sandbox_copy",
+  "source_canonical_refs": [
+    "field_functional_auto_projection_core/field_projection_operator_policy.json",
+    "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+    "governed_mcp_adapter_readiness/governed_mcp_adapter_readiness.json"
+  ],
+  "copied_into_sandbox_only": true,
+  "real_canonical_files_modified": false,
+  "brain_files_modified": false,
+  "memory_files_modified": false,
+  "y_star_gov_modified": false,
+  "gov_mcp_modified": false,
+  "evidence_refs": [
+    "canonical_update_package_candidate/canonical_update_package_candidate.json",
+    "versioned_canonical_patch_plan/versioned_canonical_patch_plan.json",
+    "rollback_and_audit_lineage/rollback_plan.json",
+    "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+    "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+    "governed_mcp_adapter_readiness/governed_mcp_adapter_readiness.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  },
+  "sandbox_flags": {
+    "sandbox_approval_fixture_created": true,
+    "sandbox_patch_application_performed": true,
+    "sandbox_projection_preview_generated": true,
+    "sandbox_mcp_dry_run_preview_generated": true,
+    "sandbox_rollback_performed": true
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "schema_name": "ystar.sandbox_mcp_preview.request_intent",
+  "schema_version": "v0",
+  "preview_request_intent_id": "sandbox-mcp-request-intent-preview-v0",
+  "source_sandbox_behavior_y_star_id": "sandbox-behavior-y-star-policy-mediated-preview-v0",
+  "declared_request_intent": "Preview retrieval of a safe generated console summary through a future governed MCP boundary, without starting a server or calling a tool.",
+  "internal_only": true,
+  "dry_run_only": true,
+  "no_real_mcp_server": true,
+  "no_real_tool_execution": true,
+  "no_external_action": true,
+  "forbidden_request_patterns": [
+    "external network",
+    "filesystem mutation",
+    "DB/log/raw runtime artifact read",
+    "brain writeback",
+    "memory ingestion",
+    "revenue opportunity discovery",
+    "live MCP tool execution"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  },
+  "sandbox_flags": {
+    "sandbox_approval_fixture_created": true,
+    "sandbox_patch_application_performed": true,
+    "sandbox_projection_preview_generated": true,
+    "sandbox_mcp_dry_run_preview_generated": true,
+    "sandbox_rollback_performed": true
+  }
+}

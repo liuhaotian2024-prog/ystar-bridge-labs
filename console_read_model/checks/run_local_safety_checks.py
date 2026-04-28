@@ -183,7 +183,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after controlled canonical learning design",
+        "Build approved canonical update sandbox",
+        ["python3", "approved_canonical_update_sandbox/tools/build_approved_canonical_update_sandbox.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after approved canonical update sandbox",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -1513,6 +1518,51 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "controlled_canonical_learning_readiness/controlled_canonical_learning_readiness.json"],
     ),
     Check(
+        "Py compile: build_approved_canonical_update_sandbox.py",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "approved_canonical_update_sandbox/tools/build_approved_canonical_update_sandbox.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: approved_sandbox_update_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/approved_sandbox_update_summary.json"],
+    ),
+    Check(
+        "Validate JSON: approved_canonical_update_sandbox_contract.json",
+        ["python3", "-m", "json.tool", "approved_canonical_update_sandbox/approved_canonical_update_sandbox_contract.json"],
+    ),
+    Check(
+        "Validate JSON: sandbox_approval_decision_fixture.json",
+        ["python3", "-m", "json.tool", "sandbox_approval_fixture/sandbox_approval_decision_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: sandbox_patch_application_result.json",
+        ["python3", "-m", "json.tool", "sandbox_patch_application/sandbox_patch_application_result.json"],
+    ),
+    Check(
+        "Validate JSON: sandbox_post_update_validation_result.json",
+        ["python3", "-m", "json.tool", "sandbox_post_update_validation/sandbox_post_update_validation_result.json"],
+    ),
+    Check(
+        "Validate JSON: sandbox_reprojected_behavior_y_star.json",
+        ["python3", "-m", "json.tool", "sandbox_reprojection_and_mcp_preview/sandbox_reprojected_behavior_y_star.json"],
+    ),
+    Check(
+        "Validate JSON: sandbox_update_cieu_event_fixture.json",
+        ["python3", "-m", "json.tool", "sandbox_update_cieu_residual/sandbox_update_cieu_event_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: sandbox_rollback_result.json",
+        ["python3", "-m", "json.tool", "sandbox_rollback_validation/sandbox_rollback_result.json"],
+    ),
+    Check(
+        "Validate JSON: approved_sandbox_update_readiness.json",
+        ["python3", "-m", "json.tool", "approved_sandbox_update_readiness/approved_sandbox_update_readiness.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -1719,6 +1769,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: controlled-canonical-learning",
         ["python3", "console_read_model/cli/team_console.py", "controlled-canonical-learning"],
+    ),
+    Check(
+        "CLI smoke: approved-sandbox-update",
+        ["python3", "console_read_model/cli/team_console.py", "approved-sandbox-update"],
     ),
     Check(
         "CLI smoke: sources",

@@ -1,0 +1,53 @@
+{
+  "schema_name": "ystar.sandbox_update_cieu.summary",
+  "schema_version": "v0",
+  "sandbox_update_cieu_like_fixture_generated": true,
+  "sandbox_update_residual_delta_generated": true,
+  "sandbox_update_learning_candidate_preview_generated": true,
+  "candidate_approved": false,
+  "candidate_applied": false,
+  "persistence_enabled": false,
+  "db_write_performed": false,
+  "residual_classes": [
+    "sandbox_patch_application_residual",
+    "y_star_lineage_residual",
+    "projection_policy_delta_residual",
+    "mcp_non_bypass_residual",
+    "post_update_validation_residual",
+    "rollback_residual",
+    "evidence_gap_residual",
+    "live_blocker_residual",
+    "real_application_blocker_residual"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  },
+  "sandbox_flags": {
+    "sandbox_approval_fixture_created": true,
+    "sandbox_patch_application_performed": true,
+    "sandbox_projection_preview_generated": true,
+    "sandbox_mcp_dry_run_preview_generated": true,
+    "sandbox_rollback_performed": true
+  }
+}

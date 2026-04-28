@@ -1,0 +1,72 @@
+{
+  "schema_name": "ystar.sandbox_approval.decision_fixture",
+  "schema_version": "v0",
+  "sandbox_approval_id": "sandbox-approval-fixture-v0",
+  "source_canonical_update_package_id": "canonical-update-package-candidate-v0",
+  "source_promotion_decision_id": "canonical-promotion-eligibility-decision-v0",
+  "approval_mode": "sandbox_only",
+  "sandbox_application_approved": true,
+  "real_application_approved": false,
+  "candidate_real_approved": false,
+  "allowed_scope": [
+    "generate sandbox canonical baseline",
+    "apply patch semantics to sandbox policy snapshots",
+    "run sandbox validation",
+    "run sandbox reprojection and MCP dry-run preview",
+    "run sandbox rollback validation"
+  ],
+  "denied_scope": [
+    "real canonical policy mutation",
+    "real canonical update application",
+    "brain writeback",
+    "memory ingestion",
+    "strategy mutation",
+    "direct Y* mutation",
+    "live execution",
+    "MCP execution",
+    "external action",
+    "network",
+    "candidate auto-approval"
+  ],
+  "required_post_sandbox_validation": true,
+  "required_rollback_validation": true,
+  "evidence_refs": [
+    "canonical_update_package_candidate/canonical_update_package_candidate.json",
+    "versioned_canonical_patch_plan/versioned_canonical_patch_plan.json",
+    "rollback_and_audit_lineage/rollback_plan.json",
+    "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+    "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+    "governed_mcp_adapter_readiness/governed_mcp_adapter_readiness.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  },
+  "sandbox_flags": {
+    "sandbox_approval_fixture_created": true,
+    "sandbox_patch_application_performed": true,
+    "sandbox_projection_preview_generated": true,
+    "sandbox_mcp_dry_run_preview_generated": true,
+    "sandbox_rollback_performed": true
+  }
+}

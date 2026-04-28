@@ -1,0 +1,73 @@
+{
+  "schema_name": "ystar.original_sandbox_rollback.comparison",
+  "schema_version": "v0",
+  "comparison_id": "original-vs-sandbox-vs-rollback-comparison-v0",
+  "original_behavior_y_star": {
+    "behavior_y_star_id": "behavior-y-star-projection-checked-cycle-v0",
+    "declared_behavior_y_star": "Prepare a projection-checked autonomous work-cycle candidate for future Pre-U validation."
+  },
+  "sandbox_reprojected_behavior_y_star": {
+    "sandbox_behavior_y_star_id": "sandbox-behavior-y-star-policy-mediated-preview-v0",
+    "projected_behavior_y_star": "Refresh the internal mission dashboard through a sandbox-updated projection policy that preserves mission lineage, tightens evidence requirements, and keeps all live or MCP execution blocked."
+  },
+  "post_rollback_behavior_y_star_or_policy_snapshot": {
+    "post_rollback_policy_snapshot_id": "sandbox-post-rollback-projection-policy-v0",
+    "baseline_restored": true
+  },
+  "original_projection_policy_summary": {
+    "deterministic_only": true,
+    "semantic_truth_scoring_enabled": false,
+    "behavior_layer_requires_pre_u_before_execution": true
+  },
+  "sandbox_projection_policy_summary": {
+    "sandbox_only_policy_changes": [
+      "tighten projection trace linkage",
+      "clarify behavior boundary inheritance",
+      "improve Pre-U mapping expectation",
+      "improve MCP non-bypass evidence requirements",
+      "improve residual classification labels",
+      "improve evidence completeness requirements"
+    ],
+    "real_policy_modified": false
+  },
+  "post_rollback_projection_policy_summary": {
+    "sandbox_patch_removed_or_neutralized": true,
+    "baseline_restored": true
+  },
+  "y_star_lineage_preserved": true,
+  "safety_boundaries_preserved": true,
+  "real_canonical_system_changed": false,
+  "brain_memory_changed": false,
+  "gov_repos_changed": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  },
+  "sandbox_flags": {
+    "sandbox_approval_fixture_created": true,
+    "sandbox_patch_application_performed": true,
+    "sandbox_projection_preview_generated": true,
+    "sandbox_mcp_dry_run_preview_generated": true,
+    "sandbox_rollback_performed": true
+  }
+}

@@ -112,8 +112,8 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 289
-- Unsafe artifacts count: 190
+- Artifacts classified: 290
+- Unsafe artifacts count: 191
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -122,7 +122,7 @@ Not ready:
   - DAILY_REPORT: 9
   - DB_CORE: 1
   - DB_SIDECARE: 6
-  - DREAM_REPORT: 46
+  - DREAM_REPORT: 47
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
   - FRAMEWORK_FILE: 16
@@ -166,13 +166,13 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 289
-- Artifacts with disposition: 289
+- Total artifacts: 290
+- Artifacts with disposition: 290
 - Safe-mined to review queue: 21
 - Forbidden direct read count: 106
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
-  - deferred_markdown_report_not_selected: 63
+  - deferred_markdown_report_not_selected: 64
   - deferred_requires_bounded_log_adapter: 31
   - deferred_requires_classification: 10
   - deferred_requires_marker_metadata_adapter: 26
@@ -182,7 +182,7 @@ Not ready:
   - ignored_or_non_runtime: 99
   - safe_mined_to_review_queue: 21
 - Evidence scoring status:
-  - not_started: 289
+  - not_started: 290
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -238,9 +238,9 @@ Not ready:
 
 ## Labs Runtime Governance Acceptance
 
-- accepted: False
-- checks_passed: 10
-- checks_total: 10
+- accepted: True
+- checks_passed: 12
+- checks_total: 12
 - roles_covered: Aiden-CEO, Ethan-CTO, Samantha-Secretary
 - decision_counts:
   - allow: 3
@@ -253,11 +253,11 @@ Not ready:
 
 ## Cross-Repo Governance Alignment
 
-- alignment_accepted: False
-- ystar-company HEAD: eb0f4c23 tools: add governed mcp dry run adapter
+- alignment_accepted: True
+- ystar-company HEAD: 3996a107 tools: add controlled canonical learning design
 - Y-star-gov HEAD: 9c4aee3 tools: add governance endpoint acceptance runner
-- Y-star-gov endpoint accepted: False
-- labs runtime accepted: False
+- Y-star-gov endpoint accepted: True
+- labs runtime accepted: True
 - roles_covered: Aiden-CEO, Ethan-CTO, Samantha-Secretary
 - decision_counts:
   - allow: 3
@@ -272,7 +272,7 @@ Not ready:
 
 ## Labs Live Readiness
 
-- dry_run_governance_ready: False
+- dry_run_governance_ready: True
 - minimal_live_loop_ready: False
 - minimal_live_loop_status: blocked_until_required_gates_exist
 - recommended_next_phase: build_live_boundary_harness_not_runtime_execution
@@ -563,7 +563,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 4325
+- assets_scanned: 4394
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -750,6 +750,34 @@ Not ready:
 - next_required_milestone: L5.8 Approved Canonical Update Sandbox v0
 - Warning: L5.7 defines controlled canonical learning promotion architecture only. Candidates remain unapproved and unapplied; canonical policy, brain, memory, strategy, Y*, Y-star-gov, and gov-mcp remain unmodified.
 
+## Approved Canonical Update Sandbox
+
+- l5_8_approved_canonical_update_sandbox_defined: True
+- sandbox_approval_fixture_generated: True
+- sandbox_baseline_generated: True
+- sandbox_patch_applied: True
+- real_canonical_state_unchanged: True
+- y_star_non_mutation_invariant_preserved: True
+- sandbox_post_update_validation_generated: True
+- sandbox_behavior_y_star_reprojection_generated: True
+- sandbox_governed_mcp_preview_generated: True
+- sandbox_update_cieu_like_fixture_generated: True
+- sandbox_rollback_validation_generated: True
+- original_vs_sandbox_vs_rollback_comparison_generated: True
+- real_candidate_approved: False
+- real_candidate_applied: False
+- real_canonical_policy_mutation_performed: False
+- real_canonical_update_application_performed: False
+- brain_writeback_performed: False
+- memory_ingestion_performed: False
+- direct_y_star_mutation_performed: False
+- y_star_gov_unmodified: True
+- gov_mcp_unmodified: True
+- ready_for_l5_9_real_approval_workflow_boundary: True
+- ready_for_l6_revenue_opportunity_discovery: False
+- next_required_milestone: L5.9 Real Approval Workflow Boundary v0
+- Warning: L5.8 is sandbox-only. Sandbox approval and patch application are generated artifacts only; real candidate approval, real canonical mutation, writeback, direct Y* mutation, MCP execution, and live execution remain blocked.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -826,4 +854,5 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Field functional auto-projection core exists as a dry-run projection core only; behavior execution remains disabled.
 - Integrated review-gated shadow learning cycle exists as shadow-only artifacts; controlled canonical learning is not implemented yet.
 - Cross-repo governance contract proof exists as read-only boundary alignment; governed MCP dry-run adapter is implemented as dry-run only.
-- Controlled canonical learning design exists as a promotion dry-run only; approved canonical update sandbox is not implemented yet.
+- Controlled canonical learning design exists as a promotion dry-run only; approved canonical update sandbox now remains sandbox-only.
+- Approved canonical update sandbox exists as generated sandbox-only artifacts; real approval workflow boundary is not implemented yet.

@@ -379,6 +379,9 @@ def main() -> int:
     required_controlled_canonical_learning_design_files = expected.get(
         "required_controlled_canonical_learning_design_files", []
     )
+    required_approved_canonical_update_sandbox_files = expected.get(
+        "required_approved_canonical_update_sandbox_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -563,6 +566,12 @@ def main() -> int:
         check_exists(path, report, "controlled canonical learning design file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "controlled canonical learning design JSON")
+
+    for rel in required_approved_canonical_update_sandbox_files:
+        path = ROOT / rel
+        check_exists(path, report, "approved canonical update sandbox file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "approved canonical update sandbox JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -3349,6 +3358,134 @@ def main() -> int:
             "L5.8 Approved Canonical Update Sandbox v0"
         ):
             report.fail("generated controlled canonical learning summary must point to L5.8")
+
+    approved_sandbox_update = generated_json.get(
+        "console_read_model/generated/approved_sandbox_update_summary.json"
+    )
+    if approved_sandbox_update:
+        for field in [
+            "l5_8_approved_canonical_update_sandbox_defined",
+            "sandbox_approval_fixture_generated",
+            "sandbox_application_approved",
+            "real_application_approved",
+            "candidate_real_approved",
+            "sandbox_baseline_generated",
+            "sandbox_patch_applied",
+            "real_canonical_state_unchanged",
+            "y_star_non_mutation_invariant_preserved",
+            "sandbox_post_update_validation_generated",
+            "sandbox_post_update_validation_passed",
+            "sandbox_behavior_y_star_reprojection_generated",
+            "sandbox_governed_mcp_preview_generated",
+            "sandbox_update_cieu_like_fixture_generated",
+            "sandbox_update_residual_delta_generated",
+            "sandbox_rollback_validation_generated",
+            "rollback_restored_baseline",
+            "original_vs_sandbox_vs_rollback_comparison_generated",
+            "sandbox_update_effect_class",
+            "previous_residual_influenced_sandbox_projection",
+            "real_candidate_approved",
+            "real_candidate_applied",
+            "real_canonical_policy_mutation_performed",
+            "real_canonical_update_application_performed",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "strategy_mutation_performed",
+            "direct_y_star_mutation_performed",
+            "y_star_gov_unmodified",
+            "gov_mcp_unmodified",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "mcp_server_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "strategy_mutation_enabled",
+            "real_candidate_approval_enabled",
+            "real_canonical_policy_mutation_enabled",
+            "real_canonical_update_application_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "ready_for_l5_9_real_approval_workflow_boundary",
+            "ready_for_l6_revenue_opportunity_discovery",
+            "next_required_milestone",
+            "generated_sandbox_summary",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in approved_sandbox_update:
+                report.pass_(f"generated approved sandbox update summary field present: {field}")
+            else:
+                report.fail(f"generated approved sandbox update summary missing field: {field}")
+        for field in [
+            "l5_8_approved_canonical_update_sandbox_defined",
+            "sandbox_approval_fixture_generated",
+            "sandbox_application_approved",
+            "sandbox_baseline_generated",
+            "sandbox_patch_applied",
+            "real_canonical_state_unchanged",
+            "y_star_non_mutation_invariant_preserved",
+            "sandbox_post_update_validation_generated",
+            "sandbox_post_update_validation_passed",
+            "sandbox_behavior_y_star_reprojection_generated",
+            "sandbox_governed_mcp_preview_generated",
+            "sandbox_update_cieu_like_fixture_generated",
+            "sandbox_update_residual_delta_generated",
+            "sandbox_rollback_validation_generated",
+            "rollback_restored_baseline",
+            "original_vs_sandbox_vs_rollback_comparison_generated",
+            "previous_residual_influenced_sandbox_projection",
+            "y_star_gov_unmodified",
+            "gov_mcp_unmodified",
+            "ready_for_l5_9_real_approval_workflow_boundary",
+        ]:
+            if approved_sandbox_update.get(field) is not True:
+                report.fail(f"generated approved sandbox update summary must keep {field}=true")
+        for field in [
+            "real_application_approved",
+            "candidate_real_approved",
+            "real_candidate_approved",
+            "real_candidate_applied",
+            "real_canonical_policy_mutation_performed",
+            "real_canonical_update_application_performed",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "strategy_mutation_performed",
+            "direct_y_star_mutation_performed",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "mcp_server_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "strategy_mutation_enabled",
+            "real_candidate_approval_enabled",
+            "real_canonical_policy_mutation_enabled",
+            "real_canonical_update_application_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "ready_for_l6_revenue_opportunity_discovery",
+        ]:
+            if approved_sandbox_update.get(field) is not False:
+                report.fail(f"generated approved sandbox update summary must keep {field}=false")
+        if approved_sandbox_update.get("next_required_milestone") != (
+            "L5.9 Real Approval Workflow Boundary v0"
+        ):
+            report.fail("generated approved sandbox update summary must point to L5.9")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:
