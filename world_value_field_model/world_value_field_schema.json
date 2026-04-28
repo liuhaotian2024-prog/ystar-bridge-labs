@@ -1,0 +1,148 @@
+{
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "revenue_execution_enabled": false,
+    "external_market_scan_enabled": false,
+    "public_content_publication_enabled": false,
+    "payment_enabled": false
+  },
+  "l6_flags": {
+    "l6_design_only_enabled": true,
+    "l6_hypothesis_generation_enabled": true,
+    "l6_selection_design_enabled": true,
+    "l6_sandbox_experiment_design_enabled": true,
+    "l6_external_execution_enabled": false,
+    "l6_network_enabled": false,
+    "l6_publication_enabled": false,
+    "l6_payment_enabled": false,
+    "l6_revenue_execution_enabled": false
+  },
+  "schema_name": "ystar.l6.world_value_field_schema",
+  "schema_version": "v0",
+  "schema_id": "world-value-field-schema-v0",
+  "value_surfaces": [
+    "attention_value",
+    "trust_value",
+    "operational_efficiency_value",
+    "risk_reduction_value",
+    "compliance_value",
+    "education_value",
+    "entertainment_value",
+    "evidence_generation_value",
+    "governance_assurance_value",
+    "tooling_value",
+    "community_value",
+    "strategic_option_value",
+    "direct_cash_value",
+    "indirect_lead_value",
+    "brand_value",
+    "methodology_value"
+  ],
+  "surface_type": "abstract_value_surface_not_fixed_opportunity_category",
+  "surfaces": {
+    "attention_value": {
+      "description": "attention value",
+      "not_a_market_claim": true,
+      "requires_future_external_observation": false
+    },
+    "trust_value": {
+      "description": "trust value",
+      "not_a_market_claim": true,
+      "requires_future_external_observation": false
+    },
+    "operational_efficiency_value": {
+      "description": "operational efficiency value",
+      "not_a_market_claim": true,
+      "requires_future_external_observation": false
+    },
+    "risk_reduction_value": {
+      "description": "risk reduction value",
+      "not_a_market_claim": true,
+      "requires_future_external_observation": false
+    },
+    "compliance_value": {
+      "description": "compliance value",
+      "not_a_market_claim": true,
+      "requires_future_external_observation": false
+    },
+    "education_value": {
+      "description": "education value",
+      "not_a_market_claim": true,
+      "requires_future_external_observation": false
+    },
+    "entertainment_value": {
+      "description": "entertainment value",
+      "not_a_market_claim": true,
+      "requires_future_external_observation": false
+    },
+    "evidence_generation_value": {
+      "description": "evidence generation value",
+      "not_a_market_claim": true,
+      "requires_future_external_observation": false
+    },
+    "governance_assurance_value": {
+      "description": "governance assurance value",
+      "not_a_market_claim": true,
+      "requires_future_external_observation": false
+    },
+    "tooling_value": {
+      "description": "tooling value",
+      "not_a_market_claim": true,
+      "requires_future_external_observation": false
+    },
+    "community_value": {
+      "description": "community value",
+      "not_a_market_claim": true,
+      "requires_future_external_observation": false
+    },
+    "strategic_option_value": {
+      "description": "strategic option value",
+      "not_a_market_claim": true,
+      "requires_future_external_observation": false
+    },
+    "direct_cash_value": {
+      "description": "direct cash value",
+      "not_a_market_claim": true,
+      "requires_future_external_observation": true
+    },
+    "indirect_lead_value": {
+      "description": "indirect lead value",
+      "not_a_market_claim": true,
+      "requires_future_external_observation": true
+    },
+    "brand_value": {
+      "description": "brand value",
+      "not_a_market_claim": true,
+      "requires_future_external_observation": true
+    },
+    "methodology_value": {
+      "description": "methodology value",
+      "not_a_market_claim": true,
+      "requires_future_external_observation": false
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "revenue_execution_enabled": false,
+    "external_market_scan_enabled": false,
+    "public_content_publication_enabled": false,
+    "payment_enabled": false
+  },
+  "l6_flags": {
+    "l6_design_only_enabled": true,
+    "l6_hypothesis_generation_enabled": true,
+    "l6_selection_design_enabled": true,
+    "l6_sandbox_experiment_design_enabled": true,
+    "l6_external_execution_enabled": false,
+    "l6_network_enabled": false,
+    "l6_publication_enabled": false,
+    "l6_payment_enabled": false,
+    "l6_revenue_execution_enabled": false
+  },
+  "operator": {
+    "operator_id": "evidence_chain_to_trust_value",
+    "source_asset_types": [
+      "evidence_chain_asset"
+    ],
+    "possible_value_surfaces": [
+      "trust_value",
+      "methodology_value"
+    ],
+    "conversion_mechanism": "Translate an internal governed asset into a reviewable artifact shape, then evaluate its proof requirements before any external use.",
+    "evidence_needed": [
+      "internal artifact lineage",
+      "reviewed acceptance criteria",
+      "future external observation only after approval"
+    ],
+    "short_path_potential": "short",
+    "compounding_potential": "high",
+    "risks": [
+      "overclaiming external need",
+      "mistaking examples for strategy",
+      "external action dependency"
+    ],
+    "non_execution_boundary": [
+      "no network",
+      "no publication",
+      "no outreach",
+      "no payment",
+      "no market scraping"
+    ],
+    "example_downstream_forms": [
+      {
+        "form": "audit pack",
+        "example_only": true,
+        "not_exhaustive": true,
+        "not_authorized_for_execution": true
+      },
+      {
+        "form": "education artifact",
+        "example_only": true,
+        "not_exhaustive": true,
+        "not_authorized_for_execution": true
+      },
+      {
+        "form": "tool checklist",
+        "example_only": true,
+        "not_exhaustive": true,
+        "not_authorized_for_execution": true
+      }
+    ]
+  }
+}

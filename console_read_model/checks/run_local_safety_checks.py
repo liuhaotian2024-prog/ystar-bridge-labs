@@ -213,7 +213,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after live boundary no-go framework",
+        "Build L6 meta-development generative selection engine",
+        ["python3", "l6_meta_development_generative_selection_engine/tools/build_l6_meta_development_generative_selection_engine.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after L6 meta-development design",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -1853,6 +1858,67 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "live_boundary_readiness/live_boundary_readiness.json"],
     ),
     Check(
+        "Compile L6 meta-development generative selection engine builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "l6_meta_development_generative_selection_engine/tools/build_l6_meta_development_generative_selection_engine.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: l6_meta_development_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_meta_development_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_generative_selection_engine_contract.json",
+        ["python3", "-m", "json.tool", "l6_meta_development_generative_selection_engine/l6_generative_selection_engine_contract.json"],
+    ),
+    Check(
+        "Validate JSON: self_model_v0.json",
+        ["python3", "-m", "json.tool", "self_model_and_unique_asset_field/self_model_v0.json"],
+    ),
+    Check(
+        "Validate JSON: unique_asset_field.json",
+        ["python3", "-m", "json.tool", "self_model_and_unique_asset_field/unique_asset_field.json"],
+    ),
+    Check(
+        "Validate JSON: world_value_field_schema.json",
+        ["python3", "-m", "json.tool", "world_value_field_model/world_value_field_schema.json"],
+    ),
+    Check(
+        "Validate JSON: value_conversion_operator_library.json",
+        ["python3", "-m", "json.tool", "value_conversion_operator_library/value_conversion_operator_library.json"],
+    ),
+    Check(
+        "Validate JSON: generated_value_hypotheses.json",
+        ["python3", "-m", "json.tool", "open_value_hypothesis_generator/generated_value_hypotheses.json"],
+    ),
+    Check(
+        "Validate JSON: value_conversion_physics_schema.json",
+        ["python3", "-m", "json.tool", "value_conversion_physics/value_conversion_physics_schema.json"],
+    ),
+    Check(
+        "Validate JSON: redeemability_selection_policy.json",
+        ["python3", "-m", "json.tool", "redeemability_selection_engine/redeemability_selection_policy.json"],
+    ),
+    Check(
+        "Validate JSON: selected_hypothesis_mvp_plans.json",
+        ["python3", "-m", "json.tool", "minimum_viable_proof_designer/selected_hypothesis_mvp_plans.json"],
+    ),
+    Check(
+        "Validate JSON: governed_experiment_portfolio.json",
+        ["python3", "-m", "json.tool", "governed_meta_development_experiment_portfolio/governed_experiment_portfolio.json"],
+    ),
+    Check(
+        "Validate JSON: meta_development_cieu_event_fixture.json",
+        ["python3", "-m", "json.tool", "strategic_residual_meta_learning_loop/meta_development_cieu_event_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: l6_meta_development_design_readiness.json",
+        ["python3", "-m", "json.tool", "l6_meta_development_design_readiness/l6_meta_development_design_readiness.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -2083,6 +2149,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: live-boundary-no-go",
         ["python3", "console_read_model/cli/team_console.py", "live-boundary-no-go"],
+    ),
+    Check(
+        "CLI smoke: meta-development-design",
+        ["python3", "console_read_model/cli/team_console.py", "meta-development-design"],
     ),
     Check(
         "CLI smoke: sources",

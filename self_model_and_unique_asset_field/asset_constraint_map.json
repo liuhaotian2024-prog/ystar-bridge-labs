@@ -1,0 +1,439 @@
+{
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "revenue_execution_enabled": false,
+    "external_market_scan_enabled": false,
+    "public_content_publication_enabled": false,
+    "payment_enabled": false
+  },
+  "l6_flags": {
+    "l6_design_only_enabled": true,
+    "l6_hypothesis_generation_enabled": true,
+    "l6_selection_design_enabled": true,
+    "l6_sandbox_experiment_design_enabled": true,
+    "l6_external_execution_enabled": false,
+    "l6_network_enabled": false,
+    "l6_publication_enabled": false,
+    "l6_payment_enabled": false,
+    "l6_revenue_execution_enabled": false
+  },
+  "schema_name": "ystar.l6.asset_constraint_map",
+  "schema_version": "v0",
+  "constraint_map_id": "asset-constraint-map-v0",
+  "asset_constraints": {
+    "normative_architecture_asset": {
+      "what_it_can_support": [
+        "design-only hypothesis generation",
+        "internal proof artifact design",
+        "future review-gated experiment planning"
+      ],
+      "what_it_cannot_claim_yet": [
+        "market demand",
+        "payer acceptance",
+        "live safety",
+        "revenue conversion"
+      ],
+      "what_would_require_future_proof": [
+        "external observation boundary",
+        "publication review",
+        "revenue compliance review",
+        "explicit future approval"
+      ],
+      "what_external_use_is_blocked_now": [
+        "publication",
+        "outreach",
+        "scraping",
+        "payment",
+        "customer contact"
+      ]
+    },
+    "y_star_projection_asset": {
+      "what_it_can_support": [
+        "design-only hypothesis generation",
+        "internal proof artifact design",
+        "future review-gated experiment planning"
+      ],
+      "what_it_cannot_claim_yet": [
+        "market demand",
+        "payer acceptance",
+        "live safety",
+        "revenue conversion"
+      ],
+      "what_would_require_future_proof": [
+        "external observation boundary",
+        "publication review",
+        "revenue compliance review",
+        "explicit future approval"
+      ],
+      "what_external_use_is_blocked_now": [
+        "publication",
+        "outreach",
+        "scraping",
+        "payment",
+        "customer contact"
+      ]
+    },
+    "governance_boundary_asset": {
+      "what_it_can_support": [
+        "design-only hypothesis generation",
+        "internal proof artifact design",
+        "future review-gated experiment planning"
+      ],
+      "what_it_cannot_claim_yet": [
+        "market demand",
+        "payer acceptance",
+        "live safety",
+        "revenue conversion"
+      ],
+      "what_would_require_future_proof": [
+        "external observation boundary",
+        "publication review",
+        "revenue compliance review",
+        "explicit future approval"
+      ],
+      "what_external_use_is_blocked_now": [
+        "publication",
+        "outreach",
+        "scraping",
+        "payment",
+        "customer contact"
+      ]
+    },
+    "cieu_residual_learning_asset": {
+      "what_it_can_support": [
+        "design-only hypothesis generation",
+        "internal proof artifact design",
+        "future review-gated experiment planning"
+      ],
+      "what_it_cannot_claim_yet": [
+        "market demand",
+        "payer acceptance",
+        "live safety",
+        "revenue conversion"
+      ],
+      "what_would_require_future_proof": [
+        "external observation boundary",
+        "publication review",
+        "revenue compliance review",
+        "explicit future approval"
+      ],
+      "what_external_use_is_blocked_now": [
+        "publication",
+        "outreach",
+        "scraping",
+        "payment",
+        "customer contact"
+      ]
+    },
+    "approval_release_sandbox_asset": {
+      "what_it_can_support": [
+        "design-only hypothesis generation",
+        "internal proof artifact design",
+        "future review-gated experiment planning"
+      ],
+      "what_it_cannot_claim_yet": [
+        "market demand",
+        "payer acceptance",
+        "live safety",
+        "revenue conversion"
+      ],
+      "what_would_require_future_proof": [
+        "external observation boundary",
+        "publication review",
+        "revenue compliance review",
+        "explicit future approval"
+      ],
+      "what_external_use_is_blocked_now": [
+        "publication",
+        "outreach",
+        "scraping",
+        "payment",
+        "customer contact"
+      ]
+    },
+    "mcp_non_bypass_asset": {
+      "what_it_can_support": [
+        "design-only hypothesis generation",
+        "internal proof artifact design",
+        "future review-gated experiment planning"
+      ],
+      "what_it_cannot_claim_yet": [
+        "market demand",
+        "payer acceptance",
+        "live safety",
+        "revenue conversion"
+      ],
+      "what_would_require_future_proof": [
+        "external observation boundary",
+        "publication review",
+        "revenue compliance review",
+        "explicit future approval"
+      ],
+      "what_external_use_is_blocked_now": [
+        "publication",
+        "outreach",
+        "scraping",
+        "payment",
+        "customer contact"
+      ]
+    },
+    "process_history_asset": {
+      "what_it_can_support": [
+        "design-only hypothesis generation",
+        "internal proof artifact design",
+        "future review-gated experiment planning"
+      ],
+      "what_it_cannot_claim_yet": [
+        "market demand",
+        "payer acceptance",
+        "live safety",
+        "revenue conversion"
+      ],
+      "what_would_require_future_proof": [
+        "external observation boundary",
+        "publication review",
+        "revenue compliance review",
+        "explicit future approval"
+      ],
+      "what_external_use_is_blocked_now": [
+        "publication",
+        "outreach",
+        "scraping",
+        "payment",
+        "customer contact"
+      ]
+    },
+    "failure_residual_asset": {
+      "what_it_can_support": [
+        "design-only hypothesis generation",
+        "internal proof artifact design",
+        "future review-gated experiment planning"
+      ],
+      "what_it_cannot_claim_yet": [
+        "market demand",
+        "payer acceptance",
+        "live safety",
+        "revenue conversion"
+      ],
+      "what_would_require_future_proof": [
+        "external observation boundary",
+        "publication review",
+        "revenue compliance review",
+        "explicit future approval"
+      ],
+      "what_external_use_is_blocked_now": [
+        "publication",
+        "outreach",
+        "scraping",
+        "payment",
+        "customer contact"
+      ]
+    },
+    "ai_identity_asset": {
+      "what_it_can_support": [
+        "design-only hypothesis generation",
+        "internal proof artifact design",
+        "future review-gated experiment planning"
+      ],
+      "what_it_cannot_claim_yet": [
+        "market demand",
+        "payer acceptance",
+        "live safety",
+        "revenue conversion"
+      ],
+      "what_would_require_future_proof": [
+        "external observation boundary",
+        "publication review",
+        "revenue compliance review",
+        "explicit future approval"
+      ],
+      "what_external_use_is_blocked_now": [
+        "publication",
+        "outreach",
+        "scraping",
+        "payment",
+        "customer contact"
+      ]
+    },
+    "founder_ai_coevolution_asset": {
+      "what_it_can_support": [
+        "design-only hypothesis generation",
+        "internal proof artifact design",
+        "future review-gated experiment planning"
+      ],
+      "what_it_cannot_claim_yet": [
+        "market demand",
+        "payer acceptance",
+        "live safety",
+        "revenue conversion"
+      ],
+      "what_would_require_future_proof": [
+        "external observation boundary",
+        "publication review",
+        "revenue compliance review",
+        "explicit future approval"
+      ],
+      "what_external_use_is_blocked_now": [
+        "publication",
+        "outreach",
+        "scraping",
+        "payment",
+        "customer contact"
+      ]
+    },
+    "evidence_chain_asset": {
+      "what_it_can_support": [
+        "design-only hypothesis generation",
+        "internal proof artifact design",
+        "future review-gated experiment planning"
+      ],
+      "what_it_cannot_claim_yet": [
+        "market demand",
+        "payer acceptance",
+        "live safety",
+        "revenue conversion"
+      ],
+      "what_would_require_future_proof": [
+        "external observation boundary",
+        "publication review",
+        "revenue compliance review",
+        "explicit future approval"
+      ],
+      "what_external_use_is_blocked_now": [
+        "publication",
+        "outreach",
+        "scraping",
+        "payment",
+        "customer contact"
+      ]
+    },
+    "trust_signal_asset": {
+      "what_it_can_support": [
+        "design-only hypothesis generation",
+        "internal proof artifact design",
+        "future review-gated experiment planning"
+      ],
+      "what_it_cannot_claim_yet": [
+        "market demand",
+        "payer acceptance",
+        "live safety",
+        "revenue conversion"
+      ],
+      "what_would_require_future_proof": [
+        "external observation boundary",
+        "publication review",
+        "revenue compliance review",
+        "explicit future approval"
+      ],
+      "what_external_use_is_blocked_now": [
+        "publication",
+        "outreach",
+        "scraping",
+        "payment",
+        "customer contact"
+      ]
+    },
+    "methodology_asset": {
+      "what_it_can_support": [
+        "design-only hypothesis generation",
+        "internal proof artifact design",
+        "future review-gated experiment planning"
+      ],
+      "what_it_cannot_claim_yet": [
+        "market demand",
+        "payer acceptance",
+        "live safety",
+        "revenue conversion"
+      ],
+      "what_would_require_future_proof": [
+        "external observation boundary",
+        "publication review",
+        "revenue compliance review",
+        "explicit future approval"
+      ],
+      "what_external_use_is_blocked_now": [
+        "publication",
+        "outreach",
+        "scraping",
+        "payment",
+        "customer contact"
+      ]
+    },
+    "narrative_asset": {
+      "what_it_can_support": [
+        "design-only hypothesis generation",
+        "internal proof artifact design",
+        "future review-gated experiment planning"
+      ],
+      "what_it_cannot_claim_yet": [
+        "market demand",
+        "payer acceptance",
+        "live safety",
+        "revenue conversion"
+      ],
+      "what_would_require_future_proof": [
+        "external observation boundary",
+        "publication review",
+        "revenue compliance review",
+        "explicit future approval"
+      ],
+      "what_external_use_is_blocked_now": [
+        "publication",
+        "outreach",
+        "scraping",
+        "payment",
+        "customer contact"
+      ]
+    },
+    "experiment_system_asset": {
+      "what_it_can_support": [
+        "design-only hypothesis generation",
+        "internal proof artifact design",
+        "future review-gated experiment planning"
+      ],
+      "what_it_cannot_claim_yet": [
+        "market demand",
+        "payer acceptance",
+        "live safety",
+        "revenue conversion"
+      ],
+      "what_would_require_future_proof": [
+        "external observation boundary",
+        "publication review",
+        "revenue compliance review",
+        "explicit future approval"
+      ],
+      "what_external_use_is_blocked_now": [
+        "publication",
+        "outreach",
+        "scraping",
+        "payment",
+        "customer contact"
+      ]
+    }
+  }
+}

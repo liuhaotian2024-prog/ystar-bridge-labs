@@ -157,6 +157,12 @@ python3 console_read_model/cli/team_console.py <command>
   index, live blockers, L6 design-only entry gate, non-execution boundary,
   hardcoding-forbidden policy, system no-go decisions, and blocked live/
   external/network/revenue/persistence/writeback/MCP/release execution state.
+- `meta-development-design`: Prints the generated L6.0 meta-development
+  generative selection engine summary: self model, unique asset field,
+  world-value field, conversion operators, value hypotheses, conversion
+  physics, redeemability selection, MVP proof plans, governed experiment
+  portfolio, strategic residual loop, hardcoding-forbidden policy, and blocked
+  external/network/publication/payment/revenue execution state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

@@ -114,5 +114,8 @@ simulation sandbox. It confirms sandbox authority, simulated approval record, sa
 `live_boundary_no_go_summary.json` is derived from the L5.13 live boundary
 no-go framework. It confirms live domains, no-go invariants, L5 evidence, blockers, L6 design-only entry, and system no-go decisions while live, external, revenue, persistence, MCP, release, and writeback execution remain blocked.
 
+`l6_meta_development_summary.json` is derived from the L6.0 meta-development
+generative selection engine design. It confirms self-modeling, asset-field, world-value, conversion-operator, hypothesis, conversion-physics, MVP proof, portfolio, and strategic residual artifacts while external, network, publication, payment, and revenue execution remain blocked.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

@@ -53,6 +53,7 @@ APPROVAL_RECORD_SANDBOX = "console_read_model/generated/approval_record_sandbox_
 REAL_RELEASE_PREFLIGHT = "console_read_model/generated/real_release_preflight_summary.json"
 REAL_RELEASE_SIMULATION = "console_read_model/generated/real_release_simulation_summary.json"
 LIVE_BOUNDARY_NO_GO = "console_read_model/generated/live_boundary_no_go_summary.json"
+L6_META_DEVELOPMENT = "console_read_model/generated/l6_meta_development_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -72,7 +73,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -143,6 +144,7 @@ def load_all() -> dict[str, Any]:
         "real_release_preflight": load_json(REAL_RELEASE_PREFLIGHT),
         "real_release_simulation": load_json(REAL_RELEASE_SIMULATION),
         "live_boundary_no_go": load_json(LIVE_BOUNDARY_NO_GO),
+        "l6_meta_development": load_json(L6_META_DEVELOPMENT),
     }
 
 
@@ -1721,6 +1723,70 @@ def cmd_live_boundary_no_go(data: dict[str, Any]) -> None:
     )
     print(f"generated_readiness: {boundary.get('generated_readiness')}")
     print(f"warning: {boundary.get('warning')}")
+
+
+def cmd_meta_development_design(data: dict[str, Any]) -> None:
+    meta = data["l6_meta_development"]
+    print("# L6.0 Meta-Development Generative Selection Engine")
+    print()
+    print(
+        "L6.0 meta-development generative selection engine defined: "
+        f"{meta.get('l6_0_meta_development_generative_selection_engine_defined')}"
+    )
+    print(f"self model generated: {meta.get('self_model_generated')}")
+    print(f"unique asset field generated: {meta.get('unique_asset_field_generated')}")
+    print(f"world-value field generated: {meta.get('world_value_field_generated')}")
+    print(
+        "conversion operators generated: "
+        f"{meta.get('conversion_operator_library_generated')}"
+    )
+    print(f"value hypotheses generated: {meta.get('value_hypotheses_generated')}")
+    print(f"conversion physics defined: {meta.get('conversion_physics_defined')}")
+    print(
+        "redeemability selection generated: "
+        f"{meta.get('redeemability_selection_generated')}"
+    )
+    print(
+        "MVP proof plans generated: "
+        f"{meta.get('minimum_viable_proof_plans_generated')}"
+    )
+    print(
+        "governed experiment portfolio generated: "
+        f"{meta.get('governed_experiment_portfolio_generated')}"
+    )
+    print(
+        "strategic residual loop generated: "
+        f"{meta.get('strategic_residual_loop_generated')}"
+    )
+    print(f"L6 is design-only: {meta.get('l6_design_only')}")
+    print(f"network enabled: {meta.get('network_enabled')}")
+    print(f"external action enabled: {meta.get('external_action_enabled')}")
+    print(
+        "public content publication enabled: "
+        f"{meta.get('public_content_publication_enabled')}"
+    )
+    print(f"payment enabled: {meta.get('payment_enabled')}")
+    print(f"revenue execution enabled: {meta.get('revenue_execution_enabled')}")
+    print(
+        "hardcoded opportunity categories forbidden: "
+        f"{meta.get('hardcoded_opportunity_categories_forbidden')}"
+    )
+    print(f"examples marked non-exhaustive: {meta.get('seed_examples_non_exhaustive')}")
+    print(
+        "examples not authorized for execution: "
+        f"{meta.get('seed_examples_not_authorized_for_execution')}"
+    )
+    print(
+        "ready for L6.1 MVP artifact sandbox: "
+        f"{meta.get('ready_for_l6_1_meta_development_mvp_artifact_sandbox')}"
+    )
+    print(
+        "ready for L6 revenue opportunity execution: "
+        f"{meta.get('ready_for_l6_revenue_opportunity_execution')}"
+    )
+    print(f"next required milestone: {meta.get('next_required_milestone')}")
+    print(f"generated_readiness: {meta.get('generated_readiness')}")
+    print(f"warning: {meta.get('warning')}")
 
 
 def cmd_gaps(data: dict[str, Any]) -> None:
@@ -3667,6 +3733,8 @@ def main(argv: list[str]) -> int:
         cmd_release_simulation_sandbox(data)
     elif command == "live-boundary-no-go":
         cmd_live_boundary_no_go(data)
+    elif command == "meta-development-design":
+        cmd_meta_development_design(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

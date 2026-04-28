@@ -113,95 +113,69 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 301
-- Unsafe artifacts count: 204
+- Artifacts classified: 143
+- Unsafe artifacts count: 115
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
   - CACHE_SENTINEL: 5
   - DAEMON_STATE: 4
-  - DAILY_REPORT: 9
   - DB_CORE: 1
   - DB_SIDECARE: 6
-  - DREAM_REPORT: 51
-  - DRIFT_REPORT: 4
-  - ESCALATION_REPORT: 23
-  - FRAMEWORK_FILE: 16
-  - LOG_RUNTIME: 31
-  - PYCACHE: 40
-  - UNKNOWN_OR_NON_RUNTIME: 81
+  - LOG_RUNTIME: 30
+  - PYCACHE: 41
+  - UNKNOWN_OR_NON_RUNTIME: 28
   - UNKNOWN_RUNTIME_ARTIFACT: 10
-  - WHITELIST_REPORT: 2
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
 - Warning: Console displays only curated path-level quarantine summary. No artifact contents were read.
 
 ## Runtime Artifact Safe Mining Candidates
 
-- Candidate count: 21
+- Candidate count: 0
 - Safety level: bounded_markdown_candidate
 - Ingestion status: candidate_only
 - Generated candidate index: runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json
 - Classes seen:
-  - DAILY_REPORT: 5
-  - DREAM_REPORT: 5
-  - DRIFT_REPORT: 4
-  - ESCALATION_REPORT: 5
-  - WHITELIST_REPORT: 2
 - Warning: Safe mining candidates are bounded review assets only. They are not brain memory, CIEU records, or approved writeback.
 
 ## Runtime Artifact Candidate Review Queue
 
-- Review count: 21
+- Review count: 0
 - Default review status: pending_review
 - Default ingestion status: not_ingested
 - Generated queue path: runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json
 - Statuses:
-  - pending_review: 21
 - Intended use summary:
-  - cieu_prediction_delta_hint: 9
-  - governance_gap_hint: 11
-  - memory_continuity_hint: 10
-  - pre_u_packet_hint: 2
-  - role_brain_capsule_hint: 10
 - Warning: Review queue entries are not brain memory and require explicit approval before any future CIEU, memory, or capsule use.
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 301
-- Artifacts with disposition: 301
-- Safe-mined to review queue: 21
+- Total artifacts: 143
+- Artifacts with disposition: 143
+- Safe-mined to review queue: 0
 - Forbidden direct read count: 115
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
-  - deferred_markdown_report_not_selected: 68
-  - deferred_requires_bounded_log_adapter: 31
+  - deferred_requires_bounded_log_adapter: 30
   - deferred_requires_classification: 10
   - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
-  - ignored_generated_cache: 40
-  - ignored_or_non_runtime: 97
-  - safe_mined_to_review_queue: 21
+  - ignored_generated_cache: 41
+  - ignored_or_non_runtime: 28
 - Evidence scoring status:
-  - not_started: 301
+  - not_started: 143
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
 
-- Candidates scored: 21
-- Decision stubs created: 21
-- Routes created: 42
+- Candidates scored: 0
+- Decision stubs created: 0
+- Routes created: 0
 - Automatic approvals: 0
 - Reuse readiness:
-  - hint_only: 21
 - Route counts:
-  - cieu_prediction_delta_hint_queue: 9
-  - governance_gap_hint_queue: 11
-  - memory_continuity_hint_queue: 10
-  - pre_u_packet_hint_queue: 2
-  - role_brain_capsule_hint_queue: 10
 - Semantic truth status:
-  - not_evaluated: 21
 - Warning: Evidence scoring is structural only. It is not truth validation and not memory ingestion.
 
 ## Labs-Gov Alignment Bridge
@@ -564,7 +538,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 4707
+- assets_scanned: 4779
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -911,6 +885,27 @@ Not ready:
 - ready_for_l6_revenue_opportunity_execution: False
 - next_required_milestone: L6 Meta-Development Generative Engine Design v0
 - Warning: L5.13 is a no-go framework. Live execution, real MCP execution, real release, durable persistence, writeback, network/external action, and L6 revenue execution remain blocked. L6 is design-only.
+
+## L6 Meta-Development Generative Selection Engine
+
+- l6_0_meta_development_generative_selection_engine_defined: True
+- self_model_generated: True
+- unique_asset_field_generated: True
+- world_value_field_generated: True
+- conversion_operator_library_generated: True
+- value_hypotheses_generated: True
+- conversion_physics_defined: True
+- redeemability_selection_generated: True
+- minimum_viable_proof_plans_generated: True
+- governed_experiment_portfolio_generated: True
+- strategic_residual_loop_generated: True
+- l6_design_only: True
+- hardcoded_opportunity_categories_forbidden: True
+- seed_examples_non_exhaustive: True
+- ready_for_l6_1_meta_development_mvp_artifact_sandbox: True
+- ready_for_l6_revenue_opportunity_execution: False
+- next_required_milestone: L6.1 Meta-Development MVP Artifact Sandbox v0
+- Warning: L6.0 is design-only. External observation, network, publication, payment, revenue execution, MCP execution, persistence, writeback, and hard-coded opportunity catalogs remain blocked.
 
 ## Governance Boundary
 

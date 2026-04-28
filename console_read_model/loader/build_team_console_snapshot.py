@@ -162,6 +162,17 @@ CURATED_SOURCES = [
     "system_no_go_decision_packet/system_live_boundary_decision_summary.json",
     "live_boundary_cieu_residual/live_boundary_cieu_summary.json",
     "live_boundary_readiness/live_boundary_readiness.json",
+    "l6_meta_development_generative_selection_engine/l6_generative_selection_engine_summary.json",
+    "self_model_and_unique_asset_field/self_asset_summary.json",
+    "world_value_field_model/world_value_field_summary.json",
+    "value_conversion_operator_library/operator_library_summary.json",
+    "open_value_hypothesis_generator/hypothesis_generator_summary.json",
+    "value_conversion_physics/conversion_physics_summary.json",
+    "redeemability_selection_engine/selection_engine_summary.json",
+    "minimum_viable_proof_designer/mvp_design_summary.json",
+    "governed_meta_development_experiment_portfolio/experiment_portfolio_summary.json",
+    "strategic_residual_meta_learning_loop/strategic_residual_summary.json",
+    "l6_meta_development_design_readiness/l6_meta_development_design_readiness.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -3435,6 +3446,207 @@ def build_live_boundary_no_go_summary(
     }
 
 
+def build_l6_meta_development_summary(
+    engine_summary: dict[str, Any] | None,
+    self_asset_summary: dict[str, Any] | None,
+    world_value_summary: dict[str, Any] | None,
+    operator_summary: dict[str, Any] | None,
+    hypothesis_summary: dict[str, Any] | None,
+    physics_summary: dict[str, Any] | None,
+    selection_summary: dict[str, Any] | None,
+    mvp_summary: dict[str, Any] | None,
+    portfolio_summary: dict[str, Any] | None,
+    residual_summary: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.l6_meta_development_summary",
+            "schema_version": "v0",
+            "l6_0_meta_development_generative_selection_engine_defined": False,
+            "ready_for_l6_1_meta_development_mvp_artifact_sandbox": False,
+            "ready_for_l6_revenue_opportunity_execution": False,
+            "warning": "L6.0 meta-development generative selection engine has not been generated yet.",
+        }
+    engine_summary = engine_summary or {}
+    self_asset_summary = self_asset_summary or {}
+    world_value_summary = world_value_summary or {}
+    operator_summary = operator_summary or {}
+    hypothesis_summary = hypothesis_summary or {}
+    physics_summary = physics_summary or {}
+    selection_summary = selection_summary or {}
+    mvp_summary = mvp_summary or {}
+    portfolio_summary = portfolio_summary or {}
+    residual_summary = residual_summary or {}
+
+    def safety_flag(field: str) -> Any:
+        return readiness_summary.get(field, readiness_summary.get("safety_flags", {}).get(field))
+
+    def l6_flag(field: str) -> Any:
+        return readiness_summary.get(field, readiness_summary.get("l6_flags", {}).get(field))
+
+    return {
+        "schema_name": "ystar.console_read_model.generated.l6_meta_development_summary",
+        "schema_version": "v0",
+        "l6_0_meta_development_generative_selection_engine_defined": engine_summary.get(
+            "l6_0_meta_development_generative_selection_engine_defined"
+        ),
+        "self_model_generated": self_asset_summary.get(
+            "self_model_generated", readiness_summary.get("self_model_generated")
+        ),
+        "unique_asset_field_generated": self_asset_summary.get(
+            "unique_asset_field_generated",
+            readiness_summary.get("unique_asset_field_generated"),
+        ),
+        "world_value_field_generated": world_value_summary.get(
+            "world_value_field_generated", readiness_summary.get("world_value_field_generated")
+        ),
+        "conversion_operator_library_generated": operator_summary.get(
+            "conversion_operator_library_generated",
+            readiness_summary.get("conversion_operator_library_generated"),
+        ),
+        "value_hypotheses_generated": hypothesis_summary.get(
+            "value_hypotheses_generated", readiness_summary.get("value_hypotheses_generated")
+        ),
+        "non_hardcoding_check_generated": readiness_summary.get(
+            "non_hardcoding_check_generated"
+        ),
+        "conversion_physics_defined": physics_summary.get(
+            "conversion_physics_defined", readiness_summary.get("conversion_physics_defined")
+        ),
+        "redeemability_selection_generated": selection_summary.get(
+            "redeemability_selection_generated",
+            readiness_summary.get("redeemability_selection_generated"),
+        ),
+        "minimum_viable_proof_plans_generated": mvp_summary.get(
+            "minimum_viable_proof_plans_generated",
+            readiness_summary.get("minimum_viable_proof_plans_generated"),
+        ),
+        "governed_experiment_portfolio_generated": portfolio_summary.get(
+            "governed_experiment_portfolio_generated",
+            readiness_summary.get("governed_experiment_portfolio_generated"),
+        ),
+        "strategic_residual_loop_generated": residual_summary.get(
+            "strategic_residual_loop_generated",
+            readiness_summary.get("strategic_residual_loop_generated"),
+        ),
+        "l6_design_only": engine_summary.get("l6_design_only", True),
+        "hardcoded_opportunity_categories_forbidden": engine_summary.get(
+            "hardcoded_opportunity_categories_forbidden", True
+        ),
+        "seed_examples_non_exhaustive": engine_summary.get(
+            "seed_examples_non_exhaustive", True
+        ),
+        "seed_examples_not_authorized_for_execution": engine_summary.get(
+            "seed_examples_not_authorized_for_execution", True
+        ),
+        "hypothesis_count": hypothesis_summary.get("hypothesis_count"),
+        "selected_for_sandbox_design_count": selection_summary.get(
+            "selected_for_sandbox_design_count"
+        ),
+        "mvp_plan_count": mvp_summary.get("mvp_plan_count"),
+        "experiment_count": portfolio_summary.get("experiment_count"),
+        "live_execution_enabled": safety_flag("live_execution_enabled"),
+        "behavior_execution_enabled": safety_flag("behavior_execution_enabled"),
+        "external_action_enabled": safety_flag("external_action_enabled"),
+        "network_enabled": safety_flag("network_enabled"),
+        "scheduler_enabled": safety_flag("scheduler_enabled"),
+        "daemon_enabled": safety_flag("daemon_enabled"),
+        "mcp_server_execution_enabled": safety_flag("mcp_server_execution_enabled"),
+        "mcp_tool_execution_enabled": safety_flag("mcp_tool_execution_enabled"),
+        "cieu_persistence_enabled": safety_flag("cieu_persistence_enabled"),
+        "durable_approval_persistence_enabled": safety_flag(
+            "durable_approval_persistence_enabled"
+        ),
+        "real_approval_record_write_enabled": safety_flag(
+            "real_approval_record_write_enabled"
+        ),
+        "brain_writeback_enabled": safety_flag("brain_writeback_enabled"),
+        "memory_ingestion_enabled": safety_flag("memory_ingestion_enabled"),
+        "strategy_mutation_enabled": safety_flag("strategy_mutation_enabled"),
+        "candidate_auto_approval_enabled": safety_flag("candidate_auto_approval_enabled"),
+        "real_candidate_approval_enabled": safety_flag("real_candidate_approval_enabled"),
+        "real_canonical_policy_mutation_enabled": safety_flag(
+            "real_canonical_policy_mutation_enabled"
+        ),
+        "real_canonical_update_application_enabled": safety_flag(
+            "real_canonical_update_application_enabled"
+        ),
+        "real_release_execution_enabled": safety_flag("real_release_execution_enabled"),
+        "real_y_star_direct_mutation_enabled": safety_flag(
+            "real_y_star_direct_mutation_enabled"
+        ),
+        "semantic_truth_scoring_enabled": safety_flag("semantic_truth_scoring_enabled"),
+        "raw_runtime_artifact_reading_enabled": safety_flag(
+            "raw_runtime_artifact_reading_enabled"
+        ),
+        "revenue_opportunity_discovery_enabled": safety_flag(
+            "revenue_opportunity_discovery_enabled"
+        ),
+        "revenue_execution_enabled": safety_flag("revenue_execution_enabled"),
+        "external_market_scan_enabled": safety_flag("external_market_scan_enabled"),
+        "public_content_publication_enabled": safety_flag(
+            "public_content_publication_enabled"
+        ),
+        "payment_enabled": safety_flag("payment_enabled"),
+        "l6_design_only_enabled": l6_flag("l6_design_only_enabled"),
+        "l6_hypothesis_generation_enabled": l6_flag("l6_hypothesis_generation_enabled"),
+        "l6_selection_design_enabled": l6_flag("l6_selection_design_enabled"),
+        "l6_sandbox_experiment_design_enabled": l6_flag(
+            "l6_sandbox_experiment_design_enabled"
+        ),
+        "l6_external_execution_enabled": l6_flag("l6_external_execution_enabled"),
+        "l6_network_enabled": l6_flag("l6_network_enabled"),
+        "l6_publication_enabled": l6_flag("l6_publication_enabled"),
+        "l6_payment_enabled": l6_flag("l6_payment_enabled"),
+        "l6_revenue_execution_enabled": l6_flag("l6_revenue_execution_enabled"),
+        "l6_execution_still_blocked": readiness_summary.get("l6_execution_still_blocked"),
+        "external_action_still_blocked": readiness_summary.get(
+            "external_action_still_blocked"
+        ),
+        "network_still_blocked": readiness_summary.get("network_still_blocked"),
+        "publication_still_blocked": readiness_summary.get("publication_still_blocked"),
+        "payment_still_blocked": readiness_summary.get("payment_still_blocked"),
+        "revenue_execution_still_blocked": readiness_summary.get(
+            "revenue_execution_still_blocked"
+        ),
+        "ready_for_l6_1_meta_development_mvp_artifact_sandbox": readiness_summary.get(
+            "ready_for_l6_1_meta_development_mvp_artifact_sandbox"
+        ),
+        "ready_for_l6_revenue_opportunity_execution": readiness_summary.get(
+            "ready_for_l6_revenue_opportunity_execution"
+        ),
+        "next_required_milestone": readiness_summary.get("next_required_milestone"),
+        "generated_engine_summary": (
+            "l6_meta_development_generative_selection_engine/"
+            "l6_generative_selection_engine_summary.json"
+        ),
+        "generated_self_asset_summary": "self_model_and_unique_asset_field/self_asset_summary.json",
+        "generated_world_value_summary": "world_value_field_model/world_value_field_summary.json",
+        "generated_operator_summary": "value_conversion_operator_library/operator_library_summary.json",
+        "generated_hypothesis_summary": "open_value_hypothesis_generator/hypothesis_generator_summary.json",
+        "generated_physics_summary": "value_conversion_physics/conversion_physics_summary.json",
+        "generated_selection_summary": "redeemability_selection_engine/selection_engine_summary.json",
+        "generated_mvp_summary": "minimum_viable_proof_designer/mvp_design_summary.json",
+        "generated_portfolio_summary": (
+            "governed_meta_development_experiment_portfolio/"
+            "experiment_portfolio_summary.json"
+        ),
+        "generated_residual_summary": (
+            "strategic_residual_meta_learning_loop/strategic_residual_summary.json"
+        ),
+        "generated_readiness": (
+            "l6_meta_development_design_readiness/"
+            "l6_meta_development_design_readiness.json"
+        ),
+        "warning": (
+            "L6.0 is design-only. External observation, network, publication, "
+            "payment, revenue execution, MCP execution, persistence, writeback, "
+            "and hard-coded opportunity catalogs remain blocked."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -4001,6 +4213,50 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "live_boundary_readiness/live_boundary_readiness.json",
         files_read,
     )
+    l6_meta_development_engine_summary = load_optional_json(
+        "l6_meta_development_generative_selection_engine/l6_generative_selection_engine_summary.json",
+        files_read,
+    )
+    l6_meta_development_self_asset_summary = load_optional_json(
+        "self_model_and_unique_asset_field/self_asset_summary.json",
+        files_read,
+    )
+    l6_meta_development_world_value_summary = load_optional_json(
+        "world_value_field_model/world_value_field_summary.json",
+        files_read,
+    )
+    l6_meta_development_operator_summary = load_optional_json(
+        "value_conversion_operator_library/operator_library_summary.json",
+        files_read,
+    )
+    l6_meta_development_hypothesis_summary = load_optional_json(
+        "open_value_hypothesis_generator/hypothesis_generator_summary.json",
+        files_read,
+    )
+    l6_meta_development_physics_summary = load_optional_json(
+        "value_conversion_physics/conversion_physics_summary.json",
+        files_read,
+    )
+    l6_meta_development_selection_summary = load_optional_json(
+        "redeemability_selection_engine/selection_engine_summary.json",
+        files_read,
+    )
+    l6_meta_development_mvp_summary = load_optional_json(
+        "minimum_viable_proof_designer/mvp_design_summary.json",
+        files_read,
+    )
+    l6_meta_development_portfolio_summary = load_optional_json(
+        "governed_meta_development_experiment_portfolio/experiment_portfolio_summary.json",
+        files_read,
+    )
+    l6_meta_development_residual_summary = load_optional_json(
+        "strategic_residual_meta_learning_loop/strategic_residual_summary.json",
+        files_read,
+    )
+    l6_meta_development_readiness_summary = load_optional_json(
+        "l6_meta_development_design_readiness/l6_meta_development_design_readiness.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -4163,6 +4419,19 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         live_boundary_decision_summary,
         live_boundary_cieu_summary,
         live_boundary_readiness_summary,
+    )
+    l6_meta_development_summary = build_l6_meta_development_summary(
+        l6_meta_development_engine_summary,
+        l6_meta_development_self_asset_summary,
+        l6_meta_development_world_value_summary,
+        l6_meta_development_operator_summary,
+        l6_meta_development_hypothesis_summary,
+        l6_meta_development_physics_summary,
+        l6_meta_development_selection_summary,
+        l6_meta_development_mvp_summary,
+        l6_meta_development_portfolio_summary,
+        l6_meta_development_residual_summary,
+        l6_meta_development_readiness_summary,
     )
 
     profiles = {
@@ -4327,6 +4596,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "controlled_real_release_preflight_summary": controlled_real_release_preflight_summary,
         "real_release_simulation_summary": real_release_simulation_summary,
         "live_boundary_no_go_summary": live_boundary_no_go_summary,
+        "l6_meta_development_summary": l6_meta_development_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -4559,6 +4829,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/real_release_preflight_summary.json",
             "console_read_model/generated/real_release_simulation_summary.json",
             "console_read_model/generated/live_boundary_no_go_summary.json",
+            "console_read_model/generated/l6_meta_development_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -4659,6 +4930,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "simulation sandbox. It confirms sandbox authority, simulated approval record, sandbox snapshot, sandbox release execution, post-release validation, MCP preview, rollback drill, comparison, and CIEU-like residuals while real release, durable persistence, real approval, and canonical application remain blocked.\n\n"
         "`live_boundary_no_go_summary.json` is derived from the L5.13 live boundary\n"
         "no-go framework. It confirms live domains, no-go invariants, L5 evidence, blockers, L6 design-only entry, and system no-go decisions while live, external, revenue, persistence, MCP, release, and writeback execution remain blocked.\n\n"
+        "`l6_meta_development_summary.json` is derived from the L6.0 meta-development\n"
+        "generative selection engine design. It confirms self-modeling, asset-field, world-value, conversion-operator, hypothesis, conversion-physics, MVP proof, portfolio, and strategic residual artifacts while external, network, publication, payment, and revenue execution remain blocked.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -4703,6 +4976,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/real_release_preflight_summary.json", controlled_real_release_preflight_summary, generated_files)
     write_json("console_read_model/generated/real_release_simulation_summary.json", real_release_simulation_summary, generated_files)
     write_json("console_read_model/generated/live_boundary_no_go_summary.json", live_boundary_no_go_summary, generated_files)
+    write_json("console_read_model/generated/l6_meta_development_summary.json", l6_meta_development_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -4782,6 +5056,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     controlled_real_release_preflight = snapshot.get("controlled_real_release_preflight_summary", {})
     real_release_simulation = snapshot.get("real_release_simulation_summary", {})
     live_boundary_no_go = snapshot.get("live_boundary_no_go_summary", {})
+    l6_meta_development = snapshot.get("l6_meta_development_summary", {})
     lines.extend(
         [
             "",
@@ -5704,6 +5979,31 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- ready_for_l6_revenue_opportunity_execution: {live_boundary_no_go.get('ready_for_l6_revenue_opportunity_execution')}",
             f"- next_required_milestone: {live_boundary_no_go.get('next_required_milestone')}",
             f"- Warning: {live_boundary_no_go.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## L6 Meta-Development Generative Selection Engine",
+            "",
+            f"- l6_0_meta_development_generative_selection_engine_defined: {l6_meta_development.get('l6_0_meta_development_generative_selection_engine_defined')}",
+            f"- self_model_generated: {l6_meta_development.get('self_model_generated')}",
+            f"- unique_asset_field_generated: {l6_meta_development.get('unique_asset_field_generated')}",
+            f"- world_value_field_generated: {l6_meta_development.get('world_value_field_generated')}",
+            f"- conversion_operator_library_generated: {l6_meta_development.get('conversion_operator_library_generated')}",
+            f"- value_hypotheses_generated: {l6_meta_development.get('value_hypotheses_generated')}",
+            f"- conversion_physics_defined: {l6_meta_development.get('conversion_physics_defined')}",
+            f"- redeemability_selection_generated: {l6_meta_development.get('redeemability_selection_generated')}",
+            f"- minimum_viable_proof_plans_generated: {l6_meta_development.get('minimum_viable_proof_plans_generated')}",
+            f"- governed_experiment_portfolio_generated: {l6_meta_development.get('governed_experiment_portfolio_generated')}",
+            f"- strategic_residual_loop_generated: {l6_meta_development.get('strategic_residual_loop_generated')}",
+            f"- l6_design_only: {l6_meta_development.get('l6_design_only')}",
+            f"- hardcoded_opportunity_categories_forbidden: {l6_meta_development.get('hardcoded_opportunity_categories_forbidden')}",
+            f"- seed_examples_non_exhaustive: {l6_meta_development.get('seed_examples_non_exhaustive')}",
+            f"- ready_for_l6_1_meta_development_mvp_artifact_sandbox: {l6_meta_development.get('ready_for_l6_1_meta_development_mvp_artifact_sandbox')}",
+            f"- ready_for_l6_revenue_opportunity_execution: {l6_meta_development.get('ready_for_l6_revenue_opportunity_execution')}",
+            f"- next_required_milestone: {l6_meta_development.get('next_required_milestone')}",
+            f"- Warning: {l6_meta_development.get('warning')}",
         ]
     )
     lines.extend(

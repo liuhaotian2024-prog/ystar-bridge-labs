@@ -1,0 +1,353 @@
+{
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "revenue_execution_enabled": false,
+    "external_market_scan_enabled": false,
+    "public_content_publication_enabled": false,
+    "payment_enabled": false
+  },
+  "l6_flags": {
+    "l6_design_only_enabled": true,
+    "l6_hypothesis_generation_enabled": true,
+    "l6_selection_design_enabled": true,
+    "l6_sandbox_experiment_design_enabled": true,
+    "l6_external_execution_enabled": false,
+    "l6_network_enabled": false,
+    "l6_publication_enabled": false,
+    "l6_payment_enabled": false,
+    "l6_revenue_execution_enabled": false
+  },
+  "schema_name": "ystar.l6.value_conversion_physics_schema",
+  "schema_version": "v0",
+  "physics_schema_id": "value-conversion-physics-schema-v0",
+  "variables": [
+    "conversion_path_length",
+    "time_to_first_signal",
+    "time_to_first_cash",
+    "payer_clarity",
+    "acceptance_criteria_clarity",
+    "evidence_clarity",
+    "distribution_friction",
+    "execution_complexity",
+    "competitive_pressure",
+    "advantage_fit",
+    "certainty_of_acceptance",
+    "stability_of_demand",
+    "repeatability",
+    "compounding_value",
+    "downside_risk",
+    "option_value",
+    "strategic_stability",
+    "learning_value",
+    "reversibility",
+    "governance_complexity"
+  ],
+  "variable_definitions": {
+    "conversion_path_length": {
+      "description": "conversion path length",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    },
+    "time_to_first_signal": {
+      "description": "time to first signal",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    },
+    "time_to_first_cash": {
+      "description": "time to first cash",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    },
+    "payer_clarity": {
+      "description": "payer clarity",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    },
+    "acceptance_criteria_clarity": {
+      "description": "acceptance criteria clarity",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    },
+    "evidence_clarity": {
+      "description": "evidence clarity",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    },
+    "distribution_friction": {
+      "description": "distribution friction",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    },
+    "execution_complexity": {
+      "description": "execution complexity",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    },
+    "competitive_pressure": {
+      "description": "competitive pressure",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    },
+    "advantage_fit": {
+      "description": "advantage fit",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    },
+    "certainty_of_acceptance": {
+      "description": "certainty of acceptance",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    },
+    "stability_of_demand": {
+      "description": "stability of demand",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    },
+    "repeatability": {
+      "description": "repeatability",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    },
+    "compounding_value": {
+      "description": "compounding value",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    },
+    "downside_risk": {
+      "description": "downside risk",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    },
+    "option_value": {
+      "description": "option value",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    },
+    "strategic_stability": {
+      "description": "strategic stability",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    },
+    "learning_value": {
+      "description": "learning value",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    },
+    "reversibility": {
+      "description": "reversibility",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    },
+    "governance_complexity": {
+      "description": "governance complexity",
+      "allowed_classes": [
+        "very_short",
+        "short",
+        "medium",
+        "long",
+        "unknown",
+        "high",
+        "low",
+        "blocked"
+      ],
+      "deterministic_structural_only": true
+    }
+  },
+  "probabilistic_scoring_used": false,
+  "semantic_truth_scoring_used": false
+}

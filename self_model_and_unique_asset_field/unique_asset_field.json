@@ -1,0 +1,533 @@
+{
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "revenue_execution_enabled": false,
+    "external_market_scan_enabled": false,
+    "public_content_publication_enabled": false,
+    "payment_enabled": false
+  },
+  "l6_flags": {
+    "l6_design_only_enabled": true,
+    "l6_hypothesis_generation_enabled": true,
+    "l6_selection_design_enabled": true,
+    "l6_sandbox_experiment_design_enabled": true,
+    "l6_external_execution_enabled": false,
+    "l6_network_enabled": false,
+    "l6_publication_enabled": false,
+    "l6_payment_enabled": false,
+    "l6_revenue_execution_enabled": false
+  },
+  "schema_name": "ystar.l6.unique_asset_field",
+  "schema_version": "v0",
+  "asset_field_id": "unique-asset-field-v0",
+  "asset_dimensions": [
+    "normative_architecture_asset",
+    "y_star_projection_asset",
+    "governance_boundary_asset",
+    "cieu_residual_learning_asset",
+    "approval_release_sandbox_asset",
+    "mcp_non_bypass_asset",
+    "process_history_asset",
+    "failure_residual_asset",
+    "ai_identity_asset",
+    "founder_ai_coevolution_asset",
+    "evidence_chain_asset",
+    "trust_signal_asset",
+    "methodology_asset",
+    "narrative_asset",
+    "experiment_system_asset"
+  ],
+  "assets": [
+    {
+      "asset_id": "normative_architecture_asset",
+      "asset_description": "normative architecture asset",
+      "source_evidence": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ],
+      "uniqueness_reason": "Derived from a continuous governed Y* projection, approval, release, rollback, and no-go artifact chain rather than a generic market claim.",
+      "potential_value_surfaces": [
+        "trust_value",
+        "governance_assurance_value",
+        "methodology_value",
+        "strategic_option_value"
+      ],
+      "constraints": [
+        "design-only",
+        "no external execution",
+        "no unverified market claim",
+        "no revenue execution"
+      ],
+      "forbidden_overclaims": [
+        "market demand proven",
+        "customer willingness to pay proven",
+        "live system safety proven",
+        "external execution authorized"
+      ],
+      "evidence_refs": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ]
+    },
+    {
+      "asset_id": "y_star_projection_asset",
+      "asset_description": "y star projection asset",
+      "source_evidence": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ],
+      "uniqueness_reason": "Derived from a continuous governed Y* projection, approval, release, rollback, and no-go artifact chain rather than a generic market claim.",
+      "potential_value_surfaces": [
+        "trust_value",
+        "governance_assurance_value",
+        "methodology_value",
+        "strategic_option_value"
+      ],
+      "constraints": [
+        "design-only",
+        "no external execution",
+        "no unverified market claim",
+        "no revenue execution"
+      ],
+      "forbidden_overclaims": [
+        "market demand proven",
+        "customer willingness to pay proven",
+        "live system safety proven",
+        "external execution authorized"
+      ],
+      "evidence_refs": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ]
+    },
+    {
+      "asset_id": "governance_boundary_asset",
+      "asset_description": "governance boundary asset",
+      "source_evidence": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ],
+      "uniqueness_reason": "Derived from a continuous governed Y* projection, approval, release, rollback, and no-go artifact chain rather than a generic market claim.",
+      "potential_value_surfaces": [
+        "trust_value",
+        "governance_assurance_value",
+        "methodology_value",
+        "strategic_option_value"
+      ],
+      "constraints": [
+        "design-only",
+        "no external execution",
+        "no unverified market claim",
+        "no revenue execution"
+      ],
+      "forbidden_overclaims": [
+        "market demand proven",
+        "customer willingness to pay proven",
+        "live system safety proven",
+        "external execution authorized"
+      ],
+      "evidence_refs": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ]
+    },
+    {
+      "asset_id": "cieu_residual_learning_asset",
+      "asset_description": "cieu residual learning asset",
+      "source_evidence": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ],
+      "uniqueness_reason": "Derived from a continuous governed Y* projection, approval, release, rollback, and no-go artifact chain rather than a generic market claim.",
+      "potential_value_surfaces": [
+        "trust_value",
+        "governance_assurance_value",
+        "methodology_value",
+        "strategic_option_value"
+      ],
+      "constraints": [
+        "design-only",
+        "no external execution",
+        "no unverified market claim",
+        "no revenue execution"
+      ],
+      "forbidden_overclaims": [
+        "market demand proven",
+        "customer willingness to pay proven",
+        "live system safety proven",
+        "external execution authorized"
+      ],
+      "evidence_refs": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ]
+    },
+    {
+      "asset_id": "approval_release_sandbox_asset",
+      "asset_description": "approval release sandbox asset",
+      "source_evidence": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ],
+      "uniqueness_reason": "Derived from a continuous governed Y* projection, approval, release, rollback, and no-go artifact chain rather than a generic market claim.",
+      "potential_value_surfaces": [
+        "trust_value",
+        "governance_assurance_value",
+        "methodology_value",
+        "strategic_option_value"
+      ],
+      "constraints": [
+        "design-only",
+        "no external execution",
+        "no unverified market claim",
+        "no revenue execution"
+      ],
+      "forbidden_overclaims": [
+        "market demand proven",
+        "customer willingness to pay proven",
+        "live system safety proven",
+        "external execution authorized"
+      ],
+      "evidence_refs": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ]
+    },
+    {
+      "asset_id": "mcp_non_bypass_asset",
+      "asset_description": "mcp non bypass asset",
+      "source_evidence": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ],
+      "uniqueness_reason": "Derived from a continuous governed Y* projection, approval, release, rollback, and no-go artifact chain rather than a generic market claim.",
+      "potential_value_surfaces": [
+        "trust_value",
+        "governance_assurance_value",
+        "methodology_value",
+        "strategic_option_value"
+      ],
+      "constraints": [
+        "design-only",
+        "no external execution",
+        "no unverified market claim",
+        "no revenue execution"
+      ],
+      "forbidden_overclaims": [
+        "market demand proven",
+        "customer willingness to pay proven",
+        "live system safety proven",
+        "external execution authorized"
+      ],
+      "evidence_refs": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ]
+    },
+    {
+      "asset_id": "process_history_asset",
+      "asset_description": "process history asset",
+      "source_evidence": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ],
+      "uniqueness_reason": "Derived from a continuous governed Y* projection, approval, release, rollback, and no-go artifact chain rather than a generic market claim.",
+      "potential_value_surfaces": [
+        "trust_value",
+        "governance_assurance_value",
+        "methodology_value",
+        "strategic_option_value"
+      ],
+      "constraints": [
+        "design-only",
+        "no external execution",
+        "no unverified market claim",
+        "no revenue execution"
+      ],
+      "forbidden_overclaims": [
+        "market demand proven",
+        "customer willingness to pay proven",
+        "live system safety proven",
+        "external execution authorized"
+      ],
+      "evidence_refs": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ]
+    },
+    {
+      "asset_id": "failure_residual_asset",
+      "asset_description": "failure residual asset",
+      "source_evidence": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ],
+      "uniqueness_reason": "Derived from a continuous governed Y* projection, approval, release, rollback, and no-go artifact chain rather than a generic market claim.",
+      "potential_value_surfaces": [
+        "trust_value",
+        "governance_assurance_value",
+        "methodology_value",
+        "strategic_option_value"
+      ],
+      "constraints": [
+        "design-only",
+        "no external execution",
+        "no unverified market claim",
+        "no revenue execution"
+      ],
+      "forbidden_overclaims": [
+        "market demand proven",
+        "customer willingness to pay proven",
+        "live system safety proven",
+        "external execution authorized"
+      ],
+      "evidence_refs": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ]
+    },
+    {
+      "asset_id": "ai_identity_asset",
+      "asset_description": "ai identity asset",
+      "source_evidence": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ],
+      "uniqueness_reason": "Derived from a continuous governed Y* projection, approval, release, rollback, and no-go artifact chain rather than a generic market claim.",
+      "potential_value_surfaces": [
+        "trust_value",
+        "governance_assurance_value",
+        "methodology_value",
+        "strategic_option_value"
+      ],
+      "constraints": [
+        "design-only",
+        "no external execution",
+        "no unverified market claim",
+        "no revenue execution"
+      ],
+      "forbidden_overclaims": [
+        "market demand proven",
+        "customer willingness to pay proven",
+        "live system safety proven",
+        "external execution authorized"
+      ],
+      "evidence_refs": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ]
+    },
+    {
+      "asset_id": "founder_ai_coevolution_asset",
+      "asset_description": "founder ai coevolution asset",
+      "source_evidence": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ],
+      "uniqueness_reason": "Derived from a continuous governed Y* projection, approval, release, rollback, and no-go artifact chain rather than a generic market claim.",
+      "potential_value_surfaces": [
+        "trust_value",
+        "governance_assurance_value",
+        "methodology_value",
+        "strategic_option_value"
+      ],
+      "constraints": [
+        "design-only",
+        "no external execution",
+        "no unverified market claim",
+        "no revenue execution"
+      ],
+      "forbidden_overclaims": [
+        "market demand proven",
+        "customer willingness to pay proven",
+        "live system safety proven",
+        "external execution authorized"
+      ],
+      "evidence_refs": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ]
+    },
+    {
+      "asset_id": "evidence_chain_asset",
+      "asset_description": "evidence chain asset",
+      "source_evidence": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ],
+      "uniqueness_reason": "Derived from a continuous governed Y* projection, approval, release, rollback, and no-go artifact chain rather than a generic market claim.",
+      "potential_value_surfaces": [
+        "trust_value",
+        "governance_assurance_value",
+        "methodology_value",
+        "strategic_option_value"
+      ],
+      "constraints": [
+        "design-only",
+        "no external execution",
+        "no unverified market claim",
+        "no revenue execution"
+      ],
+      "forbidden_overclaims": [
+        "market demand proven",
+        "customer willingness to pay proven",
+        "live system safety proven",
+        "external execution authorized"
+      ],
+      "evidence_refs": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ]
+    },
+    {
+      "asset_id": "trust_signal_asset",
+      "asset_description": "trust signal asset",
+      "source_evidence": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ],
+      "uniqueness_reason": "Derived from a continuous governed Y* projection, approval, release, rollback, and no-go artifact chain rather than a generic market claim.",
+      "potential_value_surfaces": [
+        "trust_value",
+        "governance_assurance_value",
+        "methodology_value",
+        "strategic_option_value"
+      ],
+      "constraints": [
+        "design-only",
+        "no external execution",
+        "no unverified market claim",
+        "no revenue execution"
+      ],
+      "forbidden_overclaims": [
+        "market demand proven",
+        "customer willingness to pay proven",
+        "live system safety proven",
+        "external execution authorized"
+      ],
+      "evidence_refs": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ]
+    },
+    {
+      "asset_id": "methodology_asset",
+      "asset_description": "methodology asset",
+      "source_evidence": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ],
+      "uniqueness_reason": "Derived from a continuous governed Y* projection, approval, release, rollback, and no-go artifact chain rather than a generic market claim.",
+      "potential_value_surfaces": [
+        "trust_value",
+        "governance_assurance_value",
+        "methodology_value",
+        "strategic_option_value"
+      ],
+      "constraints": [
+        "design-only",
+        "no external execution",
+        "no unverified market claim",
+        "no revenue execution"
+      ],
+      "forbidden_overclaims": [
+        "market demand proven",
+        "customer willingness to pay proven",
+        "live system safety proven",
+        "external execution authorized"
+      ],
+      "evidence_refs": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ]
+    },
+    {
+      "asset_id": "narrative_asset",
+      "asset_description": "narrative asset",
+      "source_evidence": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ],
+      "uniqueness_reason": "Derived from a continuous governed Y* projection, approval, release, rollback, and no-go artifact chain rather than a generic market claim.",
+      "potential_value_surfaces": [
+        "trust_value",
+        "governance_assurance_value",
+        "methodology_value",
+        "strategic_option_value"
+      ],
+      "constraints": [
+        "design-only",
+        "no external execution",
+        "no unverified market claim",
+        "no revenue execution"
+      ],
+      "forbidden_overclaims": [
+        "market demand proven",
+        "customer willingness to pay proven",
+        "live system safety proven",
+        "external execution authorized"
+      ],
+      "evidence_refs": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ]
+    },
+    {
+      "asset_id": "experiment_system_asset",
+      "asset_description": "experiment system asset",
+      "source_evidence": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ],
+      "uniqueness_reason": "Derived from a continuous governed Y* projection, approval, release, rollback, and no-go artifact chain rather than a generic market claim.",
+      "potential_value_surfaces": [
+        "trust_value",
+        "governance_assurance_value",
+        "methodology_value",
+        "strategic_option_value"
+      ],
+      "constraints": [
+        "design-only",
+        "no external execution",
+        "no unverified market claim",
+        "no revenue execution"
+      ],
+      "forbidden_overclaims": [
+        "market demand proven",
+        "customer willingness to pay proven",
+        "live system safety proven",
+        "external execution authorized"
+      ],
+      "evidence_refs": [
+        "live_readiness_evidence_index/l5_chain_evidence_map.json",
+        "live_boundary_readiness/live_boundary_readiness.json"
+      ]
+    }
+  ],
+  "not_fixed_products": true,
+  "external_use_blocked_now": true
+}

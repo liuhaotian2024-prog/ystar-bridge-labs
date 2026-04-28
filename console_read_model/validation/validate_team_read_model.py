@@ -397,6 +397,9 @@ def main() -> int:
     required_live_boundary_no_go_framework_files = expected.get(
         "required_live_boundary_no_go_framework_files", []
     )
+    required_l6_meta_development_generative_selection_engine_files = expected.get(
+        "required_l6_meta_development_generative_selection_engine_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -617,6 +620,12 @@ def main() -> int:
         check_exists(path, report, "live boundary no-go framework file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "live boundary no-go framework JSON")
+
+    for rel in required_l6_meta_development_generative_selection_engine_files:
+        path = ROOT / rel
+        check_exists(path, report, "L6 meta-development file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "L6 meta-development JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -4295,6 +4304,168 @@ def main() -> int:
             "L6 Meta-Development Generative Engine Design v0"
         ):
             report.fail("generated live boundary no-go summary must point to L6 design")
+
+    l6_meta_development = generated_json.get(
+        "console_read_model/generated/l6_meta_development_summary.json"
+    )
+    if l6_meta_development:
+        for field in [
+            "l6_0_meta_development_generative_selection_engine_defined",
+            "self_model_generated",
+            "unique_asset_field_generated",
+            "world_value_field_generated",
+            "conversion_operator_library_generated",
+            "value_hypotheses_generated",
+            "non_hardcoding_check_generated",
+            "conversion_physics_defined",
+            "redeemability_selection_generated",
+            "minimum_viable_proof_plans_generated",
+            "governed_experiment_portfolio_generated",
+            "strategic_residual_loop_generated",
+            "l6_design_only",
+            "hardcoded_opportunity_categories_forbidden",
+            "seed_examples_non_exhaustive",
+            "seed_examples_not_authorized_for_execution",
+            "hypothesis_count",
+            "selected_for_sandbox_design_count",
+            "mvp_plan_count",
+            "experiment_count",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "mcp_server_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "cieu_persistence_enabled",
+            "durable_approval_persistence_enabled",
+            "real_approval_record_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "strategy_mutation_enabled",
+            "candidate_auto_approval_enabled",
+            "real_candidate_approval_enabled",
+            "real_canonical_policy_mutation_enabled",
+            "real_canonical_update_application_enabled",
+            "real_release_execution_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "revenue_execution_enabled",
+            "external_market_scan_enabled",
+            "public_content_publication_enabled",
+            "payment_enabled",
+            "l6_design_only_enabled",
+            "l6_hypothesis_generation_enabled",
+            "l6_selection_design_enabled",
+            "l6_sandbox_experiment_design_enabled",
+            "l6_external_execution_enabled",
+            "l6_network_enabled",
+            "l6_publication_enabled",
+            "l6_payment_enabled",
+            "l6_revenue_execution_enabled",
+            "l6_execution_still_blocked",
+            "external_action_still_blocked",
+            "network_still_blocked",
+            "publication_still_blocked",
+            "payment_still_blocked",
+            "revenue_execution_still_blocked",
+            "ready_for_l6_1_meta_development_mvp_artifact_sandbox",
+            "ready_for_l6_revenue_opportunity_execution",
+            "next_required_milestone",
+            "generated_engine_summary",
+            "generated_self_asset_summary",
+            "generated_world_value_summary",
+            "generated_operator_summary",
+            "generated_hypothesis_summary",
+            "generated_physics_summary",
+            "generated_selection_summary",
+            "generated_mvp_summary",
+            "generated_portfolio_summary",
+            "generated_residual_summary",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in l6_meta_development:
+                report.pass_(f"generated L6 meta-development summary field present: {field}")
+            else:
+                report.fail(f"generated L6 meta-development summary missing field: {field}")
+        for field in [
+            "l6_0_meta_development_generative_selection_engine_defined",
+            "self_model_generated",
+            "unique_asset_field_generated",
+            "world_value_field_generated",
+            "conversion_operator_library_generated",
+            "value_hypotheses_generated",
+            "non_hardcoding_check_generated",
+            "conversion_physics_defined",
+            "redeemability_selection_generated",
+            "minimum_viable_proof_plans_generated",
+            "governed_experiment_portfolio_generated",
+            "strategic_residual_loop_generated",
+            "l6_design_only",
+            "hardcoded_opportunity_categories_forbidden",
+            "seed_examples_non_exhaustive",
+            "seed_examples_not_authorized_for_execution",
+            "l6_design_only_enabled",
+            "l6_hypothesis_generation_enabled",
+            "l6_selection_design_enabled",
+            "l6_sandbox_experiment_design_enabled",
+            "l6_execution_still_blocked",
+            "external_action_still_blocked",
+            "network_still_blocked",
+            "publication_still_blocked",
+            "payment_still_blocked",
+            "revenue_execution_still_blocked",
+            "ready_for_l6_1_meta_development_mvp_artifact_sandbox",
+        ]:
+            if l6_meta_development.get(field) is not True:
+                report.fail(f"generated L6 meta-development summary must keep {field}=true")
+        for field in [
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "mcp_server_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "cieu_persistence_enabled",
+            "durable_approval_persistence_enabled",
+            "real_approval_record_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "strategy_mutation_enabled",
+            "candidate_auto_approval_enabled",
+            "real_candidate_approval_enabled",
+            "real_canonical_policy_mutation_enabled",
+            "real_canonical_update_application_enabled",
+            "real_release_execution_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "revenue_execution_enabled",
+            "external_market_scan_enabled",
+            "public_content_publication_enabled",
+            "payment_enabled",
+            "l6_external_execution_enabled",
+            "l6_network_enabled",
+            "l6_publication_enabled",
+            "l6_payment_enabled",
+            "l6_revenue_execution_enabled",
+            "ready_for_l6_revenue_opportunity_execution",
+        ]:
+            if l6_meta_development.get(field) is not False:
+                report.fail(f"generated L6 meta-development summary must keep {field}=false")
+        if l6_meta_development.get("hypothesis_count", 0) < 12:
+            report.fail("generated L6 meta-development summary must include at least 12 hypotheses")
+        if l6_meta_development.get("next_required_milestone") != (
+            "L6.1 Meta-Development MVP Artifact Sandbox v0"
+        ):
+            report.fail("generated L6 meta-development summary must point to L6.1")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

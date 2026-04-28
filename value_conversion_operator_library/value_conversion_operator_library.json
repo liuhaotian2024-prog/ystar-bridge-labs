@@ -1,0 +1,672 @@
+{
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "revenue_execution_enabled": false,
+    "external_market_scan_enabled": false,
+    "public_content_publication_enabled": false,
+    "payment_enabled": false
+  },
+  "l6_flags": {
+    "l6_design_only_enabled": true,
+    "l6_hypothesis_generation_enabled": true,
+    "l6_selection_design_enabled": true,
+    "l6_sandbox_experiment_design_enabled": true,
+    "l6_external_execution_enabled": false,
+    "l6_network_enabled": false,
+    "l6_publication_enabled": false,
+    "l6_payment_enabled": false,
+    "l6_revenue_execution_enabled": false
+  },
+  "schema_name": "ystar.l6.value_conversion_operator_library",
+  "schema_version": "v0",
+  "operator_library_id": "value-conversion-operator-library-v0",
+  "operator_ids": [
+    "residual_to_story_value",
+    "process_to_methodology_value",
+    "evidence_chain_to_trust_value",
+    "governance_boundary_to_risk_reduction_value",
+    "mcp_non_bypass_to_tooling_assurance_value",
+    "y_star_projection_to_operational_alignment_value",
+    "approval_sandbox_to_compliance_value",
+    "ai_identity_to_differentiation_value",
+    "founder_ai_coevolution_to_narrative_value",
+    "experiment_system_to_learning_value",
+    "failure_history_to_authenticity_value",
+    "artifact_chain_to_audit_value"
+  ],
+  "operators": [
+    {
+      "operator_id": "residual_to_story_value",
+      "source_asset_types": [
+        "evidence_chain_asset",
+        "methodology_asset"
+      ],
+      "possible_value_surfaces": [
+        "trust_value",
+        "methodology_value"
+      ],
+      "conversion_mechanism": "Translate an internal governed asset into a reviewable artifact shape, then evaluate its proof requirements before any external use.",
+      "evidence_needed": [
+        "internal artifact lineage",
+        "reviewed acceptance criteria",
+        "future external observation only after approval"
+      ],
+      "short_path_potential": "medium",
+      "compounding_potential": "high",
+      "risks": [
+        "overclaiming external need",
+        "mistaking examples for strategy",
+        "external action dependency"
+      ],
+      "non_execution_boundary": [
+        "no network",
+        "no publication",
+        "no outreach",
+        "no payment",
+        "no market scraping"
+      ],
+      "example_downstream_forms": [
+        {
+          "form": "audit pack",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "education artifact",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "tool checklist",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        }
+      ]
+    },
+    {
+      "operator_id": "process_to_methodology_value",
+      "source_asset_types": [
+        "methodology_asset"
+      ],
+      "possible_value_surfaces": [
+        "trust_value",
+        "methodology_value"
+      ],
+      "conversion_mechanism": "Translate an internal governed asset into a reviewable artifact shape, then evaluate its proof requirements before any external use.",
+      "evidence_needed": [
+        "internal artifact lineage",
+        "reviewed acceptance criteria",
+        "future external observation only after approval"
+      ],
+      "short_path_potential": "medium",
+      "compounding_potential": "high",
+      "risks": [
+        "overclaiming external need",
+        "mistaking examples for strategy",
+        "external action dependency"
+      ],
+      "non_execution_boundary": [
+        "no network",
+        "no publication",
+        "no outreach",
+        "no payment",
+        "no market scraping"
+      ],
+      "example_downstream_forms": [
+        {
+          "form": "audit pack",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "education artifact",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "tool checklist",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        }
+      ]
+    },
+    {
+      "operator_id": "evidence_chain_to_trust_value",
+      "source_asset_types": [
+        "evidence_chain_asset"
+      ],
+      "possible_value_surfaces": [
+        "trust_value",
+        "methodology_value"
+      ],
+      "conversion_mechanism": "Translate an internal governed asset into a reviewable artifact shape, then evaluate its proof requirements before any external use.",
+      "evidence_needed": [
+        "internal artifact lineage",
+        "reviewed acceptance criteria",
+        "future external observation only after approval"
+      ],
+      "short_path_potential": "short",
+      "compounding_potential": "high",
+      "risks": [
+        "overclaiming external need",
+        "mistaking examples for strategy",
+        "external action dependency"
+      ],
+      "non_execution_boundary": [
+        "no network",
+        "no publication",
+        "no outreach",
+        "no payment",
+        "no market scraping"
+      ],
+      "example_downstream_forms": [
+        {
+          "form": "audit pack",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "education artifact",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "tool checklist",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        }
+      ]
+    },
+    {
+      "operator_id": "governance_boundary_to_risk_reduction_value",
+      "source_asset_types": [
+        "governance_boundary_asset"
+      ],
+      "possible_value_surfaces": [
+        "trust_value",
+        "risk_reduction_value",
+        "methodology_value"
+      ],
+      "conversion_mechanism": "Translate an internal governed asset into a reviewable artifact shape, then evaluate its proof requirements before any external use.",
+      "evidence_needed": [
+        "internal artifact lineage",
+        "reviewed acceptance criteria",
+        "future external observation only after approval"
+      ],
+      "short_path_potential": "medium",
+      "compounding_potential": "high",
+      "risks": [
+        "overclaiming external need",
+        "mistaking examples for strategy",
+        "external action dependency"
+      ],
+      "non_execution_boundary": [
+        "no network",
+        "no publication",
+        "no outreach",
+        "no payment",
+        "no market scraping"
+      ],
+      "example_downstream_forms": [
+        {
+          "form": "audit pack",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "education artifact",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "tool checklist",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        }
+      ]
+    },
+    {
+      "operator_id": "mcp_non_bypass_to_tooling_assurance_value",
+      "source_asset_types": [
+        "mcp_non_bypass_asset"
+      ],
+      "possible_value_surfaces": [
+        "trust_value",
+        "tooling_value",
+        "methodology_value"
+      ],
+      "conversion_mechanism": "Translate an internal governed asset into a reviewable artifact shape, then evaluate its proof requirements before any external use.",
+      "evidence_needed": [
+        "internal artifact lineage",
+        "reviewed acceptance criteria",
+        "future external observation only after approval"
+      ],
+      "short_path_potential": "short",
+      "compounding_potential": "high",
+      "risks": [
+        "overclaiming external need",
+        "mistaking examples for strategy",
+        "external action dependency"
+      ],
+      "non_execution_boundary": [
+        "no network",
+        "no publication",
+        "no outreach",
+        "no payment",
+        "no market scraping"
+      ],
+      "example_downstream_forms": [
+        {
+          "form": "audit pack",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "education artifact",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "tool checklist",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        }
+      ]
+    },
+    {
+      "operator_id": "y_star_projection_to_operational_alignment_value",
+      "source_asset_types": [
+        "y_star_projection_asset"
+      ],
+      "possible_value_surfaces": [
+        "trust_value",
+        "methodology_value"
+      ],
+      "conversion_mechanism": "Translate an internal governed asset into a reviewable artifact shape, then evaluate its proof requirements before any external use.",
+      "evidence_needed": [
+        "internal artifact lineage",
+        "reviewed acceptance criteria",
+        "future external observation only after approval"
+      ],
+      "short_path_potential": "medium",
+      "compounding_potential": "high",
+      "risks": [
+        "overclaiming external need",
+        "mistaking examples for strategy",
+        "external action dependency"
+      ],
+      "non_execution_boundary": [
+        "no network",
+        "no publication",
+        "no outreach",
+        "no payment",
+        "no market scraping"
+      ],
+      "example_downstream_forms": [
+        {
+          "form": "audit pack",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "education artifact",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "tool checklist",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        }
+      ]
+    },
+    {
+      "operator_id": "approval_sandbox_to_compliance_value",
+      "source_asset_types": [
+        "evidence_chain_asset",
+        "methodology_asset"
+      ],
+      "possible_value_surfaces": [
+        "trust_value",
+        "compliance_value",
+        "methodology_value"
+      ],
+      "conversion_mechanism": "Translate an internal governed asset into a reviewable artifact shape, then evaluate its proof requirements before any external use.",
+      "evidence_needed": [
+        "internal artifact lineage",
+        "reviewed acceptance criteria",
+        "future external observation only after approval"
+      ],
+      "short_path_potential": "medium",
+      "compounding_potential": "high",
+      "risks": [
+        "overclaiming external need",
+        "mistaking examples for strategy",
+        "external action dependency"
+      ],
+      "non_execution_boundary": [
+        "no network",
+        "no publication",
+        "no outreach",
+        "no payment",
+        "no market scraping"
+      ],
+      "example_downstream_forms": [
+        {
+          "form": "audit pack",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "education artifact",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "tool checklist",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        }
+      ]
+    },
+    {
+      "operator_id": "ai_identity_to_differentiation_value",
+      "source_asset_types": [
+        "ai_identity_asset"
+      ],
+      "possible_value_surfaces": [
+        "trust_value",
+        "methodology_value"
+      ],
+      "conversion_mechanism": "Translate an internal governed asset into a reviewable artifact shape, then evaluate its proof requirements before any external use.",
+      "evidence_needed": [
+        "internal artifact lineage",
+        "reviewed acceptance criteria",
+        "future external observation only after approval"
+      ],
+      "short_path_potential": "medium",
+      "compounding_potential": "high",
+      "risks": [
+        "overclaiming external need",
+        "mistaking examples for strategy",
+        "external action dependency"
+      ],
+      "non_execution_boundary": [
+        "no network",
+        "no publication",
+        "no outreach",
+        "no payment",
+        "no market scraping"
+      ],
+      "example_downstream_forms": [
+        {
+          "form": "audit pack",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "education artifact",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "tool checklist",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        }
+      ]
+    },
+    {
+      "operator_id": "founder_ai_coevolution_to_narrative_value",
+      "source_asset_types": [
+        "founder_ai_coevolution_asset",
+        "narrative_asset"
+      ],
+      "possible_value_surfaces": [
+        "trust_value",
+        "methodology_value"
+      ],
+      "conversion_mechanism": "Translate an internal governed asset into a reviewable artifact shape, then evaluate its proof requirements before any external use.",
+      "evidence_needed": [
+        "internal artifact lineage",
+        "reviewed acceptance criteria",
+        "future external observation only after approval"
+      ],
+      "short_path_potential": "medium",
+      "compounding_potential": "high",
+      "risks": [
+        "overclaiming external need",
+        "mistaking examples for strategy",
+        "external action dependency"
+      ],
+      "non_execution_boundary": [
+        "no network",
+        "no publication",
+        "no outreach",
+        "no payment",
+        "no market scraping"
+      ],
+      "example_downstream_forms": [
+        {
+          "form": "audit pack",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "education artifact",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "tool checklist",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        }
+      ]
+    },
+    {
+      "operator_id": "experiment_system_to_learning_value",
+      "source_asset_types": [
+        "experiment_system_asset"
+      ],
+      "possible_value_surfaces": [
+        "trust_value",
+        "methodology_value"
+      ],
+      "conversion_mechanism": "Translate an internal governed asset into a reviewable artifact shape, then evaluate its proof requirements before any external use.",
+      "evidence_needed": [
+        "internal artifact lineage",
+        "reviewed acceptance criteria",
+        "future external observation only after approval"
+      ],
+      "short_path_potential": "medium",
+      "compounding_potential": "high",
+      "risks": [
+        "overclaiming external need",
+        "mistaking examples for strategy",
+        "external action dependency"
+      ],
+      "non_execution_boundary": [
+        "no network",
+        "no publication",
+        "no outreach",
+        "no payment",
+        "no market scraping"
+      ],
+      "example_downstream_forms": [
+        {
+          "form": "audit pack",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "education artifact",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "tool checklist",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        }
+      ]
+    },
+    {
+      "operator_id": "failure_history_to_authenticity_value",
+      "source_asset_types": [
+        "evidence_chain_asset",
+        "methodology_asset"
+      ],
+      "possible_value_surfaces": [
+        "trust_value",
+        "methodology_value"
+      ],
+      "conversion_mechanism": "Translate an internal governed asset into a reviewable artifact shape, then evaluate its proof requirements before any external use.",
+      "evidence_needed": [
+        "internal artifact lineage",
+        "reviewed acceptance criteria",
+        "future external observation only after approval"
+      ],
+      "short_path_potential": "medium",
+      "compounding_potential": "high",
+      "risks": [
+        "overclaiming external need",
+        "mistaking examples for strategy",
+        "external action dependency"
+      ],
+      "non_execution_boundary": [
+        "no network",
+        "no publication",
+        "no outreach",
+        "no payment",
+        "no market scraping"
+      ],
+      "example_downstream_forms": [
+        {
+          "form": "audit pack",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "education artifact",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "tool checklist",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        }
+      ]
+    },
+    {
+      "operator_id": "artifact_chain_to_audit_value",
+      "source_asset_types": [
+        "evidence_chain_asset",
+        "methodology_asset"
+      ],
+      "possible_value_surfaces": [
+        "trust_value",
+        "methodology_value"
+      ],
+      "conversion_mechanism": "Translate an internal governed asset into a reviewable artifact shape, then evaluate its proof requirements before any external use.",
+      "evidence_needed": [
+        "internal artifact lineage",
+        "reviewed acceptance criteria",
+        "future external observation only after approval"
+      ],
+      "short_path_potential": "medium",
+      "compounding_potential": "high",
+      "risks": [
+        "overclaiming external need",
+        "mistaking examples for strategy",
+        "external action dependency"
+      ],
+      "non_execution_boundary": [
+        "no network",
+        "no publication",
+        "no outreach",
+        "no payment",
+        "no market scraping"
+      ],
+      "example_downstream_forms": [
+        {
+          "form": "audit pack",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "education artifact",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        },
+        {
+          "form": "tool checklist",
+          "example_only": true,
+          "not_exhaustive": true,
+          "not_authorized_for_execution": true
+        }
+      ]
+    }
+  ],
+  "operators_are_not_opportunity_types": true
+}

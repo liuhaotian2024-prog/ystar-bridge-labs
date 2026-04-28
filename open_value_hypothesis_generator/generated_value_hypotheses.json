@@ -1,0 +1,1287 @@
+{
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "revenue_execution_enabled": false,
+    "external_market_scan_enabled": false,
+    "public_content_publication_enabled": false,
+    "payment_enabled": false
+  },
+  "l6_flags": {
+    "l6_design_only_enabled": true,
+    "l6_hypothesis_generation_enabled": true,
+    "l6_selection_design_enabled": true,
+    "l6_sandbox_experiment_design_enabled": true,
+    "l6_external_execution_enabled": false,
+    "l6_network_enabled": false,
+    "l6_publication_enabled": false,
+    "l6_payment_enabled": false,
+    "l6_revenue_execution_enabled": false
+  },
+  "schema_name": "ystar.l6.generated_value_hypotheses",
+  "schema_version": "v0",
+  "hypotheses": [
+    {
+      "safety_flags": {
+        "live_execution_enabled": false,
+        "behavior_execution_enabled": false,
+        "external_action_enabled": false,
+        "network_enabled": false,
+        "scheduler_enabled": false,
+        "daemon_enabled": false,
+        "mcp_server_execution_enabled": false,
+        "mcp_tool_execution_enabled": false,
+        "cieu_persistence_enabled": false,
+        "durable_approval_persistence_enabled": false,
+        "real_approval_record_write_enabled": false,
+        "brain_writeback_enabled": false,
+        "memory_ingestion_enabled": false,
+        "strategy_mutation_enabled": false,
+        "candidate_auto_approval_enabled": false,
+        "real_candidate_approval_enabled": false,
+        "real_canonical_policy_mutation_enabled": false,
+        "real_canonical_update_application_enabled": false,
+        "real_release_execution_enabled": false,
+        "real_y_star_direct_mutation_enabled": false,
+        "y_star_gov_modification_enabled": false,
+        "gov_mcp_modification_enabled": false,
+        "semantic_truth_scoring_enabled": false,
+        "raw_runtime_artifact_reading_enabled": false,
+        "revenue_opportunity_discovery_enabled": false,
+        "revenue_execution_enabled": false,
+        "external_market_scan_enabled": false,
+        "public_content_publication_enabled": false,
+        "payment_enabled": false
+      },
+      "l6_flags": {
+        "l6_design_only_enabled": true,
+        "l6_hypothesis_generation_enabled": true,
+        "l6_selection_design_enabled": true,
+        "l6_sandbox_experiment_design_enabled": true,
+        "l6_external_execution_enabled": false,
+        "l6_network_enabled": false,
+        "l6_publication_enabled": false,
+        "l6_payment_enabled": false,
+        "l6_revenue_execution_enabled": false
+      },
+      "hypothesis_id": "hypothesis-governance-audit-artifact",
+      "source_assets": [
+        "governance_boundary_asset",
+        "evidence_chain_asset"
+      ],
+      "conversion_operators": [
+        "governance_boundary_to_risk_reduction_value",
+        "artifact_chain_to_audit_value"
+      ],
+      "hypothesized_value_surface": "governance_assurance_value",
+      "hypothesized_recipient_archetype": "governance-sensitive organizations",
+      "possible_value_form": "reviewable governance assurance artifact",
+      "conversion_path": [
+        "internal asset",
+        "design-only artifact",
+        "reviewed minimum viable proof",
+        "future governed external gate if ever considered"
+      ],
+      "minimum_viable_proof": "Generate a local, review-only reviewable governance assurance artifact and score its evidence gaps.",
+      "evidence_needed": [
+        "asset lineage",
+        "acceptance criteria",
+        "risk boundary",
+        "future external evidence if execution is ever requested"
+      ],
+      "uncertainty_class": "known_internal_asset",
+      "non_execution_boundary": [
+        "no external publication",
+        "no outreach",
+        "no network",
+        "no payment",
+        "no revenue execution"
+      ],
+      "example_only_fields": {
+        "possible_value_form_is_example_only": true,
+        "not_exhaustive": true
+      },
+      "why_this_hypothesis_exists": "It converts an internally proven governance or identity asset into a testable design artifact without claiming live demand.",
+      "what_asset_it_converts": [
+        "governance_boundary_asset",
+        "evidence_chain_asset"
+      ],
+      "what_value_surface_it_targets": "governance_assurance_value",
+      "what_proof_would_be_needed": [
+        "local artifact coherence",
+        "reviewed evidence sufficiency",
+        "future approved external signal if any execution is proposed"
+      ],
+      "what_cannot_be_claimed_yet": [
+        "market demand",
+        "payer acceptance",
+        "customer outcome",
+        "publication performance"
+      ],
+      "why_execution_is_not_authorized": "L6.0 is design-only and the L5.13 no-go boundary keeps external, network, revenue, publication, and payment execution disabled.",
+      "path_class": "short",
+      "advantage_fit": "strong_fit",
+      "external_execution_required_now": false,
+      "authorized_for_execution": false
+    },
+    {
+      "safety_flags": {
+        "live_execution_enabled": false,
+        "behavior_execution_enabled": false,
+        "external_action_enabled": false,
+        "network_enabled": false,
+        "scheduler_enabled": false,
+        "daemon_enabled": false,
+        "mcp_server_execution_enabled": false,
+        "mcp_tool_execution_enabled": false,
+        "cieu_persistence_enabled": false,
+        "durable_approval_persistence_enabled": false,
+        "real_approval_record_write_enabled": false,
+        "brain_writeback_enabled": false,
+        "memory_ingestion_enabled": false,
+        "strategy_mutation_enabled": false,
+        "candidate_auto_approval_enabled": false,
+        "real_candidate_approval_enabled": false,
+        "real_canonical_policy_mutation_enabled": false,
+        "real_canonical_update_application_enabled": false,
+        "real_release_execution_enabled": false,
+        "real_y_star_direct_mutation_enabled": false,
+        "y_star_gov_modification_enabled": false,
+        "gov_mcp_modification_enabled": false,
+        "semantic_truth_scoring_enabled": false,
+        "raw_runtime_artifact_reading_enabled": false,
+        "revenue_opportunity_discovery_enabled": false,
+        "revenue_execution_enabled": false,
+        "external_market_scan_enabled": false,
+        "public_content_publication_enabled": false,
+        "payment_enabled": false
+      },
+      "l6_flags": {
+        "l6_design_only_enabled": true,
+        "l6_hypothesis_generation_enabled": true,
+        "l6_selection_design_enabled": true,
+        "l6_sandbox_experiment_design_enabled": true,
+        "l6_external_execution_enabled": false,
+        "l6_network_enabled": false,
+        "l6_publication_enabled": false,
+        "l6_payment_enabled": false,
+        "l6_revenue_execution_enabled": false
+      },
+      "hypothesis_id": "hypothesis-mcp-assurance-artifact",
+      "source_assets": [
+        "mcp_non_bypass_asset",
+        "evidence_chain_asset"
+      ],
+      "conversion_operators": [
+        "mcp_non_bypass_to_tooling_assurance_value",
+        "evidence_chain_to_trust_value"
+      ],
+      "hypothesized_value_surface": "tooling_value",
+      "hypothesized_recipient_archetype": "tool/platform teams",
+      "possible_value_form": "non-bypass assurance checklist or fixture pack",
+      "conversion_path": [
+        "internal asset",
+        "design-only artifact",
+        "reviewed minimum viable proof",
+        "future governed external gate if ever considered"
+      ],
+      "minimum_viable_proof": "Generate a local, review-only non-bypass assurance checklist or fixture pack and score its evidence gaps.",
+      "evidence_needed": [
+        "asset lineage",
+        "acceptance criteria",
+        "risk boundary",
+        "future external evidence if execution is ever requested"
+      ],
+      "uncertainty_class": "known_internal_asset",
+      "non_execution_boundary": [
+        "no external publication",
+        "no outreach",
+        "no network",
+        "no payment",
+        "no revenue execution"
+      ],
+      "example_only_fields": {
+        "possible_value_form_is_example_only": true,
+        "not_exhaustive": true
+      },
+      "why_this_hypothesis_exists": "It converts an internally proven governance or identity asset into a testable design artifact without claiming live demand.",
+      "what_asset_it_converts": [
+        "mcp_non_bypass_asset",
+        "evidence_chain_asset"
+      ],
+      "what_value_surface_it_targets": "tooling_value",
+      "what_proof_would_be_needed": [
+        "local artifact coherence",
+        "reviewed evidence sufficiency",
+        "future approved external signal if any execution is proposed"
+      ],
+      "what_cannot_be_claimed_yet": [
+        "market demand",
+        "payer acceptance",
+        "customer outcome",
+        "publication performance"
+      ],
+      "why_execution_is_not_authorized": "L6.0 is design-only and the L5.13 no-go boundary keeps external, network, revenue, publication, and payment execution disabled.",
+      "path_class": "short",
+      "advantage_fit": "strong_fit",
+      "external_execution_required_now": false,
+      "authorized_for_execution": false
+    },
+    {
+      "safety_flags": {
+        "live_execution_enabled": false,
+        "behavior_execution_enabled": false,
+        "external_action_enabled": false,
+        "network_enabled": false,
+        "scheduler_enabled": false,
+        "daemon_enabled": false,
+        "mcp_server_execution_enabled": false,
+        "mcp_tool_execution_enabled": false,
+        "cieu_persistence_enabled": false,
+        "durable_approval_persistence_enabled": false,
+        "real_approval_record_write_enabled": false,
+        "brain_writeback_enabled": false,
+        "memory_ingestion_enabled": false,
+        "strategy_mutation_enabled": false,
+        "candidate_auto_approval_enabled": false,
+        "real_candidate_approval_enabled": false,
+        "real_canonical_policy_mutation_enabled": false,
+        "real_canonical_update_application_enabled": false,
+        "real_release_execution_enabled": false,
+        "real_y_star_direct_mutation_enabled": false,
+        "y_star_gov_modification_enabled": false,
+        "gov_mcp_modification_enabled": false,
+        "semantic_truth_scoring_enabled": false,
+        "raw_runtime_artifact_reading_enabled": false,
+        "revenue_opportunity_discovery_enabled": false,
+        "revenue_execution_enabled": false,
+        "external_market_scan_enabled": false,
+        "public_content_publication_enabled": false,
+        "payment_enabled": false
+      },
+      "l6_flags": {
+        "l6_design_only_enabled": true,
+        "l6_hypothesis_generation_enabled": true,
+        "l6_selection_design_enabled": true,
+        "l6_sandbox_experiment_design_enabled": true,
+        "l6_external_execution_enabled": false,
+        "l6_network_enabled": false,
+        "l6_publication_enabled": false,
+        "l6_payment_enabled": false,
+        "l6_revenue_execution_enabled": false
+      },
+      "hypothesis_id": "hypothesis-y-star-methodology-guide",
+      "source_assets": [
+        "y_star_projection_asset",
+        "methodology_asset"
+      ],
+      "conversion_operators": [
+        "y_star_projection_to_operational_alignment_value",
+        "process_to_methodology_value"
+      ],
+      "hypothesized_value_surface": "methodology_value",
+      "hypothesized_recipient_archetype": "builders",
+      "possible_value_form": "design-only methodology guide",
+      "conversion_path": [
+        "internal asset",
+        "design-only artifact",
+        "reviewed minimum viable proof",
+        "future governed external gate if ever considered"
+      ],
+      "minimum_viable_proof": "Generate a local, review-only design-only methodology guide and score its evidence gaps.",
+      "evidence_needed": [
+        "asset lineage",
+        "acceptance criteria",
+        "risk boundary",
+        "future external evidence if execution is ever requested"
+      ],
+      "uncertainty_class": "known_internal_asset",
+      "non_execution_boundary": [
+        "no external publication",
+        "no outreach",
+        "no network",
+        "no payment",
+        "no revenue execution"
+      ],
+      "example_only_fields": {
+        "possible_value_form_is_example_only": true,
+        "not_exhaustive": true
+      },
+      "why_this_hypothesis_exists": "It converts an internally proven governance or identity asset into a testable design artifact without claiming live demand.",
+      "what_asset_it_converts": [
+        "y_star_projection_asset",
+        "methodology_asset"
+      ],
+      "what_value_surface_it_targets": "methodology_value",
+      "what_proof_would_be_needed": [
+        "local artifact coherence",
+        "reviewed evidence sufficiency",
+        "future approved external signal if any execution is proposed"
+      ],
+      "what_cannot_be_claimed_yet": [
+        "market demand",
+        "payer acceptance",
+        "customer outcome",
+        "publication performance"
+      ],
+      "why_execution_is_not_authorized": "L6.0 is design-only and the L5.13 no-go boundary keeps external, network, revenue, publication, and payment execution disabled.",
+      "path_class": "short",
+      "advantage_fit": "strong_fit",
+      "external_execution_required_now": false,
+      "authorized_for_execution": false
+    },
+    {
+      "safety_flags": {
+        "live_execution_enabled": false,
+        "behavior_execution_enabled": false,
+        "external_action_enabled": false,
+        "network_enabled": false,
+        "scheduler_enabled": false,
+        "daemon_enabled": false,
+        "mcp_server_execution_enabled": false,
+        "mcp_tool_execution_enabled": false,
+        "cieu_persistence_enabled": false,
+        "durable_approval_persistence_enabled": false,
+        "real_approval_record_write_enabled": false,
+        "brain_writeback_enabled": false,
+        "memory_ingestion_enabled": false,
+        "strategy_mutation_enabled": false,
+        "candidate_auto_approval_enabled": false,
+        "real_candidate_approval_enabled": false,
+        "real_canonical_policy_mutation_enabled": false,
+        "real_canonical_update_application_enabled": false,
+        "real_release_execution_enabled": false,
+        "real_y_star_direct_mutation_enabled": false,
+        "y_star_gov_modification_enabled": false,
+        "gov_mcp_modification_enabled": false,
+        "semantic_truth_scoring_enabled": false,
+        "raw_runtime_artifact_reading_enabled": false,
+        "revenue_opportunity_discovery_enabled": false,
+        "revenue_execution_enabled": false,
+        "external_market_scan_enabled": false,
+        "public_content_publication_enabled": false,
+        "payment_enabled": false
+      },
+      "l6_flags": {
+        "l6_design_only_enabled": true,
+        "l6_hypothesis_generation_enabled": true,
+        "l6_selection_design_enabled": true,
+        "l6_sandbox_experiment_design_enabled": true,
+        "l6_external_execution_enabled": false,
+        "l6_network_enabled": false,
+        "l6_publication_enabled": false,
+        "l6_payment_enabled": false,
+        "l6_revenue_execution_enabled": false
+      },
+      "hypothesis_id": "hypothesis-cieu-residual-education",
+      "source_assets": [
+        "cieu_residual_learning_asset",
+        "failure_residual_asset"
+      ],
+      "conversion_operators": [
+        "residual_to_story_value",
+        "experiment_system_to_learning_value"
+      ],
+      "hypothesized_value_surface": "education_value",
+      "hypothesized_recipient_archetype": "learners",
+      "possible_value_form": "residual-learning explainer artifact",
+      "conversion_path": [
+        "internal asset",
+        "design-only artifact",
+        "reviewed minimum viable proof",
+        "future governed external gate if ever considered"
+      ],
+      "minimum_viable_proof": "Generate a local, review-only residual-learning explainer artifact and score its evidence gaps.",
+      "evidence_needed": [
+        "asset lineage",
+        "acceptance criteria",
+        "risk boundary",
+        "future external evidence if execution is ever requested"
+      ],
+      "uncertainty_class": "known_internal_asset",
+      "non_execution_boundary": [
+        "no external publication",
+        "no outreach",
+        "no network",
+        "no payment",
+        "no revenue execution"
+      ],
+      "example_only_fields": {
+        "possible_value_form_is_example_only": true,
+        "not_exhaustive": true
+      },
+      "why_this_hypothesis_exists": "It converts an internally proven governance or identity asset into a testable design artifact without claiming live demand.",
+      "what_asset_it_converts": [
+        "cieu_residual_learning_asset",
+        "failure_residual_asset"
+      ],
+      "what_value_surface_it_targets": "education_value",
+      "what_proof_would_be_needed": [
+        "local artifact coherence",
+        "reviewed evidence sufficiency",
+        "future approved external signal if any execution is proposed"
+      ],
+      "what_cannot_be_claimed_yet": [
+        "market demand",
+        "payer acceptance",
+        "customer outcome",
+        "publication performance"
+      ],
+      "why_execution_is_not_authorized": "L6.0 is design-only and the L5.13 no-go boundary keeps external, network, revenue, publication, and payment execution disabled.",
+      "path_class": "short",
+      "advantage_fit": "partial_fit",
+      "external_execution_required_now": false,
+      "authorized_for_execution": false
+    },
+    {
+      "safety_flags": {
+        "live_execution_enabled": false,
+        "behavior_execution_enabled": false,
+        "external_action_enabled": false,
+        "network_enabled": false,
+        "scheduler_enabled": false,
+        "daemon_enabled": false,
+        "mcp_server_execution_enabled": false,
+        "mcp_tool_execution_enabled": false,
+        "cieu_persistence_enabled": false,
+        "durable_approval_persistence_enabled": false,
+        "real_approval_record_write_enabled": false,
+        "brain_writeback_enabled": false,
+        "memory_ingestion_enabled": false,
+        "strategy_mutation_enabled": false,
+        "candidate_auto_approval_enabled": false,
+        "real_candidate_approval_enabled": false,
+        "real_canonical_policy_mutation_enabled": false,
+        "real_canonical_update_application_enabled": false,
+        "real_release_execution_enabled": false,
+        "real_y_star_direct_mutation_enabled": false,
+        "y_star_gov_modification_enabled": false,
+        "gov_mcp_modification_enabled": false,
+        "semantic_truth_scoring_enabled": false,
+        "raw_runtime_artifact_reading_enabled": false,
+        "revenue_opportunity_discovery_enabled": false,
+        "revenue_execution_enabled": false,
+        "external_market_scan_enabled": false,
+        "public_content_publication_enabled": false,
+        "payment_enabled": false
+      },
+      "l6_flags": {
+        "l6_design_only_enabled": true,
+        "l6_hypothesis_generation_enabled": true,
+        "l6_selection_design_enabled": true,
+        "l6_sandbox_experiment_design_enabled": true,
+        "l6_external_execution_enabled": false,
+        "l6_network_enabled": false,
+        "l6_publication_enabled": false,
+        "l6_payment_enabled": false,
+        "l6_revenue_execution_enabled": false
+      },
+      "hypothesis_id": "hypothesis-approval-release-sandbox-template",
+      "source_assets": [
+        "approval_release_sandbox_asset",
+        "evidence_chain_asset"
+      ],
+      "conversion_operators": [
+        "approval_sandbox_to_compliance_value",
+        "artifact_chain_to_audit_value"
+      ],
+      "hypothesized_value_surface": "compliance_value",
+      "hypothesized_recipient_archetype": "reviewers",
+      "possible_value_form": "release sandbox checklist template",
+      "conversion_path": [
+        "internal asset",
+        "design-only artifact",
+        "reviewed minimum viable proof",
+        "future governed external gate if ever considered"
+      ],
+      "minimum_viable_proof": "Generate a local, review-only release sandbox checklist template and score its evidence gaps.",
+      "evidence_needed": [
+        "asset lineage",
+        "acceptance criteria",
+        "risk boundary",
+        "future external evidence if execution is ever requested"
+      ],
+      "uncertainty_class": "known_internal_asset",
+      "non_execution_boundary": [
+        "no external publication",
+        "no outreach",
+        "no network",
+        "no payment",
+        "no revenue execution"
+      ],
+      "example_only_fields": {
+        "possible_value_form_is_example_only": true,
+        "not_exhaustive": true
+      },
+      "why_this_hypothesis_exists": "It converts an internally proven governance or identity asset into a testable design artifact without claiming live demand.",
+      "what_asset_it_converts": [
+        "approval_release_sandbox_asset",
+        "evidence_chain_asset"
+      ],
+      "what_value_surface_it_targets": "compliance_value",
+      "what_proof_would_be_needed": [
+        "local artifact coherence",
+        "reviewed evidence sufficiency",
+        "future approved external signal if any execution is proposed"
+      ],
+      "what_cannot_be_claimed_yet": [
+        "market demand",
+        "payer acceptance",
+        "customer outcome",
+        "publication performance"
+      ],
+      "why_execution_is_not_authorized": "L6.0 is design-only and the L5.13 no-go boundary keeps external, network, revenue, publication, and payment execution disabled.",
+      "path_class": "short",
+      "advantage_fit": "strong_fit",
+      "external_execution_required_now": false,
+      "authorized_for_execution": false
+    },
+    {
+      "safety_flags": {
+        "live_execution_enabled": false,
+        "behavior_execution_enabled": false,
+        "external_action_enabled": false,
+        "network_enabled": false,
+        "scheduler_enabled": false,
+        "daemon_enabled": false,
+        "mcp_server_execution_enabled": false,
+        "mcp_tool_execution_enabled": false,
+        "cieu_persistence_enabled": false,
+        "durable_approval_persistence_enabled": false,
+        "real_approval_record_write_enabled": false,
+        "brain_writeback_enabled": false,
+        "memory_ingestion_enabled": false,
+        "strategy_mutation_enabled": false,
+        "candidate_auto_approval_enabled": false,
+        "real_candidate_approval_enabled": false,
+        "real_canonical_policy_mutation_enabled": false,
+        "real_canonical_update_application_enabled": false,
+        "real_release_execution_enabled": false,
+        "real_y_star_direct_mutation_enabled": false,
+        "y_star_gov_modification_enabled": false,
+        "gov_mcp_modification_enabled": false,
+        "semantic_truth_scoring_enabled": false,
+        "raw_runtime_artifact_reading_enabled": false,
+        "revenue_opportunity_discovery_enabled": false,
+        "revenue_execution_enabled": false,
+        "external_market_scan_enabled": false,
+        "public_content_publication_enabled": false,
+        "payment_enabled": false
+      },
+      "l6_flags": {
+        "l6_design_only_enabled": true,
+        "l6_hypothesis_generation_enabled": true,
+        "l6_selection_design_enabled": true,
+        "l6_sandbox_experiment_design_enabled": true,
+        "l6_external_execution_enabled": false,
+        "l6_network_enabled": false,
+        "l6_publication_enabled": false,
+        "l6_payment_enabled": false,
+        "l6_revenue_execution_enabled": false
+      },
+      "hypothesis_id": "hypothesis-ai-identity-narrative",
+      "source_assets": [
+        "ai_identity_asset",
+        "narrative_asset"
+      ],
+      "conversion_operators": [
+        "ai_identity_to_differentiation_value",
+        "residual_to_story_value"
+      ],
+      "hypothesized_value_surface": "attention_value",
+      "hypothesized_recipient_archetype": "audiences",
+      "possible_value_form": "identity narrative proof-of-shape",
+      "conversion_path": [
+        "internal asset",
+        "design-only artifact",
+        "reviewed minimum viable proof",
+        "future governed external gate if ever considered"
+      ],
+      "minimum_viable_proof": "Generate a local, review-only identity narrative proof-of-shape and score its evidence gaps.",
+      "evidence_needed": [
+        "asset lineage",
+        "acceptance criteria",
+        "risk boundary",
+        "future external evidence if execution is ever requested"
+      ],
+      "uncertainty_class": "design_only_placeholder",
+      "non_execution_boundary": [
+        "no external publication",
+        "no outreach",
+        "no network",
+        "no payment",
+        "no revenue execution"
+      ],
+      "example_only_fields": {
+        "possible_value_form_is_example_only": true,
+        "not_exhaustive": true
+      },
+      "why_this_hypothesis_exists": "It converts an internally proven governance or identity asset into a testable design artifact without claiming live demand.",
+      "what_asset_it_converts": [
+        "ai_identity_asset",
+        "narrative_asset"
+      ],
+      "what_value_surface_it_targets": "attention_value",
+      "what_proof_would_be_needed": [
+        "local artifact coherence",
+        "reviewed evidence sufficiency",
+        "future approved external signal if any execution is proposed"
+      ],
+      "what_cannot_be_claimed_yet": [
+        "market demand",
+        "payer acceptance",
+        "customer outcome",
+        "publication performance"
+      ],
+      "why_execution_is_not_authorized": "L6.0 is design-only and the L5.13 no-go boundary keeps external, network, revenue, publication, and payment execution disabled.",
+      "path_class": "medium",
+      "advantage_fit": "partial_fit",
+      "external_execution_required_now": false,
+      "authorized_for_execution": false
+    },
+    {
+      "safety_flags": {
+        "live_execution_enabled": false,
+        "behavior_execution_enabled": false,
+        "external_action_enabled": false,
+        "network_enabled": false,
+        "scheduler_enabled": false,
+        "daemon_enabled": false,
+        "mcp_server_execution_enabled": false,
+        "mcp_tool_execution_enabled": false,
+        "cieu_persistence_enabled": false,
+        "durable_approval_persistence_enabled": false,
+        "real_approval_record_write_enabled": false,
+        "brain_writeback_enabled": false,
+        "memory_ingestion_enabled": false,
+        "strategy_mutation_enabled": false,
+        "candidate_auto_approval_enabled": false,
+        "real_candidate_approval_enabled": false,
+        "real_canonical_policy_mutation_enabled": false,
+        "real_canonical_update_application_enabled": false,
+        "real_release_execution_enabled": false,
+        "real_y_star_direct_mutation_enabled": false,
+        "y_star_gov_modification_enabled": false,
+        "gov_mcp_modification_enabled": false,
+        "semantic_truth_scoring_enabled": false,
+        "raw_runtime_artifact_reading_enabled": false,
+        "revenue_opportunity_discovery_enabled": false,
+        "revenue_execution_enabled": false,
+        "external_market_scan_enabled": false,
+        "public_content_publication_enabled": false,
+        "payment_enabled": false
+      },
+      "l6_flags": {
+        "l6_design_only_enabled": true,
+        "l6_hypothesis_generation_enabled": true,
+        "l6_selection_design_enabled": true,
+        "l6_sandbox_experiment_design_enabled": true,
+        "l6_external_execution_enabled": false,
+        "l6_network_enabled": false,
+        "l6_publication_enabled": false,
+        "l6_payment_enabled": false,
+        "l6_revenue_execution_enabled": false
+      },
+      "hypothesis_id": "hypothesis-founder-ai-coevolution-study",
+      "source_assets": [
+        "founder_ai_coevolution_asset",
+        "process_history_asset"
+      ],
+      "conversion_operators": [
+        "founder_ai_coevolution_to_narrative_value",
+        "process_to_methodology_value"
+      ],
+      "hypothesized_value_surface": "brand_value",
+      "hypothesized_recipient_archetype": "founders",
+      "possible_value_form": "co-evolution case-study outline",
+      "conversion_path": [
+        "internal asset",
+        "design-only artifact",
+        "reviewed minimum viable proof",
+        "future governed external gate if ever considered"
+      ],
+      "minimum_viable_proof": "Generate a local, review-only co-evolution case-study outline and score its evidence gaps.",
+      "evidence_needed": [
+        "asset lineage",
+        "acceptance criteria",
+        "risk boundary",
+        "future external evidence if execution is ever requested"
+      ],
+      "uncertainty_class": "design_only_placeholder",
+      "non_execution_boundary": [
+        "no external publication",
+        "no outreach",
+        "no network",
+        "no payment",
+        "no revenue execution"
+      ],
+      "example_only_fields": {
+        "possible_value_form_is_example_only": true,
+        "not_exhaustive": true
+      },
+      "why_this_hypothesis_exists": "It converts an internally proven governance or identity asset into a testable design artifact without claiming live demand.",
+      "what_asset_it_converts": [
+        "founder_ai_coevolution_asset",
+        "process_history_asset"
+      ],
+      "what_value_surface_it_targets": "brand_value",
+      "what_proof_would_be_needed": [
+        "local artifact coherence",
+        "reviewed evidence sufficiency",
+        "future approved external signal if any execution is proposed"
+      ],
+      "what_cannot_be_claimed_yet": [
+        "market demand",
+        "payer acceptance",
+        "customer outcome",
+        "publication performance"
+      ],
+      "why_execution_is_not_authorized": "L6.0 is design-only and the L5.13 no-go boundary keeps external, network, revenue, publication, and payment execution disabled.",
+      "path_class": "medium",
+      "advantage_fit": "partial_fit",
+      "external_execution_required_now": false,
+      "authorized_for_execution": false
+    },
+    {
+      "safety_flags": {
+        "live_execution_enabled": false,
+        "behavior_execution_enabled": false,
+        "external_action_enabled": false,
+        "network_enabled": false,
+        "scheduler_enabled": false,
+        "daemon_enabled": false,
+        "mcp_server_execution_enabled": false,
+        "mcp_tool_execution_enabled": false,
+        "cieu_persistence_enabled": false,
+        "durable_approval_persistence_enabled": false,
+        "real_approval_record_write_enabled": false,
+        "brain_writeback_enabled": false,
+        "memory_ingestion_enabled": false,
+        "strategy_mutation_enabled": false,
+        "candidate_auto_approval_enabled": false,
+        "real_candidate_approval_enabled": false,
+        "real_canonical_policy_mutation_enabled": false,
+        "real_canonical_update_application_enabled": false,
+        "real_release_execution_enabled": false,
+        "real_y_star_direct_mutation_enabled": false,
+        "y_star_gov_modification_enabled": false,
+        "gov_mcp_modification_enabled": false,
+        "semantic_truth_scoring_enabled": false,
+        "raw_runtime_artifact_reading_enabled": false,
+        "revenue_opportunity_discovery_enabled": false,
+        "revenue_execution_enabled": false,
+        "external_market_scan_enabled": false,
+        "public_content_publication_enabled": false,
+        "payment_enabled": false
+      },
+      "l6_flags": {
+        "l6_design_only_enabled": true,
+        "l6_hypothesis_generation_enabled": true,
+        "l6_selection_design_enabled": true,
+        "l6_sandbox_experiment_design_enabled": true,
+        "l6_external_execution_enabled": false,
+        "l6_network_enabled": false,
+        "l6_publication_enabled": false,
+        "l6_payment_enabled": false,
+        "l6_revenue_execution_enabled": false
+      },
+      "hypothesis_id": "hypothesis-process-history-report",
+      "source_assets": [
+        "process_history_asset",
+        "methodology_asset"
+      ],
+      "conversion_operators": [
+        "process_to_methodology_value",
+        "failure_history_to_authenticity_value"
+      ],
+      "hypothesized_value_surface": "trust_value",
+      "hypothesized_recipient_archetype": "builders",
+      "possible_value_form": "process-history learning report",
+      "conversion_path": [
+        "internal asset",
+        "design-only artifact",
+        "reviewed minimum viable proof",
+        "future governed external gate if ever considered"
+      ],
+      "minimum_viable_proof": "Generate a local, review-only process-history learning report and score its evidence gaps.",
+      "evidence_needed": [
+        "asset lineage",
+        "acceptance criteria",
+        "risk boundary",
+        "future external evidence if execution is ever requested"
+      ],
+      "uncertainty_class": "design_only_placeholder",
+      "non_execution_boundary": [
+        "no external publication",
+        "no outreach",
+        "no network",
+        "no payment",
+        "no revenue execution"
+      ],
+      "example_only_fields": {
+        "possible_value_form_is_example_only": true,
+        "not_exhaustive": true
+      },
+      "why_this_hypothesis_exists": "It converts an internally proven governance or identity asset into a testable design artifact without claiming live demand.",
+      "what_asset_it_converts": [
+        "process_history_asset",
+        "methodology_asset"
+      ],
+      "what_value_surface_it_targets": "trust_value",
+      "what_proof_would_be_needed": [
+        "local artifact coherence",
+        "reviewed evidence sufficiency",
+        "future approved external signal if any execution is proposed"
+      ],
+      "what_cannot_be_claimed_yet": [
+        "market demand",
+        "payer acceptance",
+        "customer outcome",
+        "publication performance"
+      ],
+      "why_execution_is_not_authorized": "L6.0 is design-only and the L5.13 no-go boundary keeps external, network, revenue, publication, and payment execution disabled.",
+      "path_class": "short",
+      "advantage_fit": "strong_fit",
+      "external_execution_required_now": false,
+      "authorized_for_execution": false
+    },
+    {
+      "safety_flags": {
+        "live_execution_enabled": false,
+        "behavior_execution_enabled": false,
+        "external_action_enabled": false,
+        "network_enabled": false,
+        "scheduler_enabled": false,
+        "daemon_enabled": false,
+        "mcp_server_execution_enabled": false,
+        "mcp_tool_execution_enabled": false,
+        "cieu_persistence_enabled": false,
+        "durable_approval_persistence_enabled": false,
+        "real_approval_record_write_enabled": false,
+        "brain_writeback_enabled": false,
+        "memory_ingestion_enabled": false,
+        "strategy_mutation_enabled": false,
+        "candidate_auto_approval_enabled": false,
+        "real_candidate_approval_enabled": false,
+        "real_canonical_policy_mutation_enabled": false,
+        "real_canonical_update_application_enabled": false,
+        "real_release_execution_enabled": false,
+        "real_y_star_direct_mutation_enabled": false,
+        "y_star_gov_modification_enabled": false,
+        "gov_mcp_modification_enabled": false,
+        "semantic_truth_scoring_enabled": false,
+        "raw_runtime_artifact_reading_enabled": false,
+        "revenue_opportunity_discovery_enabled": false,
+        "revenue_execution_enabled": false,
+        "external_market_scan_enabled": false,
+        "public_content_publication_enabled": false,
+        "payment_enabled": false
+      },
+      "l6_flags": {
+        "l6_design_only_enabled": true,
+        "l6_hypothesis_generation_enabled": true,
+        "l6_selection_design_enabled": true,
+        "l6_sandbox_experiment_design_enabled": true,
+        "l6_external_execution_enabled": false,
+        "l6_network_enabled": false,
+        "l6_publication_enabled": false,
+        "l6_payment_enabled": false,
+        "l6_revenue_execution_enabled": false
+      },
+      "hypothesis_id": "hypothesis-evidence-chain-trust-signal",
+      "source_assets": [
+        "evidence_chain_asset",
+        "trust_signal_asset"
+      ],
+      "conversion_operators": [
+        "evidence_chain_to_trust_value",
+        "artifact_chain_to_audit_value"
+      ],
+      "hypothesized_value_surface": "trust_value",
+      "hypothesized_recipient_archetype": "sponsors",
+      "possible_value_form": "evidence-chain trust signal artifact",
+      "conversion_path": [
+        "internal asset",
+        "design-only artifact",
+        "reviewed minimum viable proof",
+        "future governed external gate if ever considered"
+      ],
+      "minimum_viable_proof": "Generate a local, review-only evidence-chain trust signal artifact and score its evidence gaps.",
+      "evidence_needed": [
+        "asset lineage",
+        "acceptance criteria",
+        "risk boundary",
+        "future external evidence if execution is ever requested"
+      ],
+      "uncertainty_class": "design_only_placeholder",
+      "non_execution_boundary": [
+        "no external publication",
+        "no outreach",
+        "no network",
+        "no payment",
+        "no revenue execution"
+      ],
+      "example_only_fields": {
+        "possible_value_form_is_example_only": true,
+        "not_exhaustive": true
+      },
+      "why_this_hypothesis_exists": "It converts an internally proven governance or identity asset into a testable design artifact without claiming live demand.",
+      "what_asset_it_converts": [
+        "evidence_chain_asset",
+        "trust_signal_asset"
+      ],
+      "what_value_surface_it_targets": "trust_value",
+      "what_proof_would_be_needed": [
+        "local artifact coherence",
+        "reviewed evidence sufficiency",
+        "future approved external signal if any execution is proposed"
+      ],
+      "what_cannot_be_claimed_yet": [
+        "market demand",
+        "payer acceptance",
+        "customer outcome",
+        "publication performance"
+      ],
+      "why_execution_is_not_authorized": "L6.0 is design-only and the L5.13 no-go boundary keeps external, network, revenue, publication, and payment execution disabled.",
+      "path_class": "short",
+      "advantage_fit": "strong_fit",
+      "external_execution_required_now": false,
+      "authorized_for_execution": false
+    },
+    {
+      "safety_flags": {
+        "live_execution_enabled": false,
+        "behavior_execution_enabled": false,
+        "external_action_enabled": false,
+        "network_enabled": false,
+        "scheduler_enabled": false,
+        "daemon_enabled": false,
+        "mcp_server_execution_enabled": false,
+        "mcp_tool_execution_enabled": false,
+        "cieu_persistence_enabled": false,
+        "durable_approval_persistence_enabled": false,
+        "real_approval_record_write_enabled": false,
+        "brain_writeback_enabled": false,
+        "memory_ingestion_enabled": false,
+        "strategy_mutation_enabled": false,
+        "candidate_auto_approval_enabled": false,
+        "real_candidate_approval_enabled": false,
+        "real_canonical_policy_mutation_enabled": false,
+        "real_canonical_update_application_enabled": false,
+        "real_release_execution_enabled": false,
+        "real_y_star_direct_mutation_enabled": false,
+        "y_star_gov_modification_enabled": false,
+        "gov_mcp_modification_enabled": false,
+        "semantic_truth_scoring_enabled": false,
+        "raw_runtime_artifact_reading_enabled": false,
+        "revenue_opportunity_discovery_enabled": false,
+        "revenue_execution_enabled": false,
+        "external_market_scan_enabled": false,
+        "public_content_publication_enabled": false,
+        "payment_enabled": false
+      },
+      "l6_flags": {
+        "l6_design_only_enabled": true,
+        "l6_hypothesis_generation_enabled": true,
+        "l6_selection_design_enabled": true,
+        "l6_sandbox_experiment_design_enabled": true,
+        "l6_external_execution_enabled": false,
+        "l6_network_enabled": false,
+        "l6_publication_enabled": false,
+        "l6_payment_enabled": false,
+        "l6_revenue_execution_enabled": false
+      },
+      "hypothesis_id": "hypothesis-experiment-system-playbook",
+      "source_assets": [
+        "experiment_system_asset",
+        "methodology_asset"
+      ],
+      "conversion_operators": [
+        "experiment_system_to_learning_value",
+        "process_to_methodology_value"
+      ],
+      "hypothesized_value_surface": "operational_efficiency_value",
+      "hypothesized_recipient_archetype": "AI workflow operators",
+      "possible_value_form": "governed experiment playbook",
+      "conversion_path": [
+        "internal asset",
+        "design-only artifact",
+        "reviewed minimum viable proof",
+        "future governed external gate if ever considered"
+      ],
+      "minimum_viable_proof": "Generate a local, review-only governed experiment playbook and score its evidence gaps.",
+      "evidence_needed": [
+        "asset lineage",
+        "acceptance criteria",
+        "risk boundary",
+        "future external evidence if execution is ever requested"
+      ],
+      "uncertainty_class": "design_only_placeholder",
+      "non_execution_boundary": [
+        "no external publication",
+        "no outreach",
+        "no network",
+        "no payment",
+        "no revenue execution"
+      ],
+      "example_only_fields": {
+        "possible_value_form_is_example_only": true,
+        "not_exhaustive": true
+      },
+      "why_this_hypothesis_exists": "It converts an internally proven governance or identity asset into a testable design artifact without claiming live demand.",
+      "what_asset_it_converts": [
+        "experiment_system_asset",
+        "methodology_asset"
+      ],
+      "what_value_surface_it_targets": "operational_efficiency_value",
+      "what_proof_would_be_needed": [
+        "local artifact coherence",
+        "reviewed evidence sufficiency",
+        "future approved external signal if any execution is proposed"
+      ],
+      "what_cannot_be_claimed_yet": [
+        "market demand",
+        "payer acceptance",
+        "customer outcome",
+        "publication performance"
+      ],
+      "why_execution_is_not_authorized": "L6.0 is design-only and the L5.13 no-go boundary keeps external, network, revenue, publication, and payment execution disabled.",
+      "path_class": "medium",
+      "advantage_fit": "strong_fit",
+      "external_execution_required_now": false,
+      "authorized_for_execution": false
+    },
+    {
+      "safety_flags": {
+        "live_execution_enabled": false,
+        "behavior_execution_enabled": false,
+        "external_action_enabled": false,
+        "network_enabled": false,
+        "scheduler_enabled": false,
+        "daemon_enabled": false,
+        "mcp_server_execution_enabled": false,
+        "mcp_tool_execution_enabled": false,
+        "cieu_persistence_enabled": false,
+        "durable_approval_persistence_enabled": false,
+        "real_approval_record_write_enabled": false,
+        "brain_writeback_enabled": false,
+        "memory_ingestion_enabled": false,
+        "strategy_mutation_enabled": false,
+        "candidate_auto_approval_enabled": false,
+        "real_candidate_approval_enabled": false,
+        "real_canonical_policy_mutation_enabled": false,
+        "real_canonical_update_application_enabled": false,
+        "real_release_execution_enabled": false,
+        "real_y_star_direct_mutation_enabled": false,
+        "y_star_gov_modification_enabled": false,
+        "gov_mcp_modification_enabled": false,
+        "semantic_truth_scoring_enabled": false,
+        "raw_runtime_artifact_reading_enabled": false,
+        "revenue_opportunity_discovery_enabled": false,
+        "revenue_execution_enabled": false,
+        "external_market_scan_enabled": false,
+        "public_content_publication_enabled": false,
+        "payment_enabled": false
+      },
+      "l6_flags": {
+        "l6_design_only_enabled": true,
+        "l6_hypothesis_generation_enabled": true,
+        "l6_selection_design_enabled": true,
+        "l6_sandbox_experiment_design_enabled": true,
+        "l6_external_execution_enabled": false,
+        "l6_network_enabled": false,
+        "l6_publication_enabled": false,
+        "l6_payment_enabled": false,
+        "l6_revenue_execution_enabled": false
+      },
+      "hypothesis_id": "hypothesis-failure-residual-story",
+      "source_assets": [
+        "failure_residual_asset",
+        "narrative_asset"
+      ],
+      "conversion_operators": [
+        "failure_history_to_authenticity_value",
+        "residual_to_story_value"
+      ],
+      "hypothesized_value_surface": "entertainment_value",
+      "hypothesized_recipient_archetype": "audiences",
+      "possible_value_form": "failure-to-residual story artifact",
+      "conversion_path": [
+        "internal asset",
+        "design-only artifact",
+        "reviewed minimum viable proof",
+        "future governed external gate if ever considered"
+      ],
+      "minimum_viable_proof": "Generate a local, review-only failure-to-residual story artifact and score its evidence gaps.",
+      "evidence_needed": [
+        "asset lineage",
+        "acceptance criteria",
+        "risk boundary",
+        "future external evidence if execution is ever requested"
+      ],
+      "uncertainty_class": "design_only_placeholder",
+      "non_execution_boundary": [
+        "no external publication",
+        "no outreach",
+        "no network",
+        "no payment",
+        "no revenue execution"
+      ],
+      "example_only_fields": {
+        "possible_value_form_is_example_only": true,
+        "not_exhaustive": true
+      },
+      "why_this_hypothesis_exists": "It converts an internally proven governance or identity asset into a testable design artifact without claiming live demand.",
+      "what_asset_it_converts": [
+        "failure_residual_asset",
+        "narrative_asset"
+      ],
+      "what_value_surface_it_targets": "entertainment_value",
+      "what_proof_would_be_needed": [
+        "local artifact coherence",
+        "reviewed evidence sufficiency",
+        "future approved external signal if any execution is proposed"
+      ],
+      "what_cannot_be_claimed_yet": [
+        "market demand",
+        "payer acceptance",
+        "customer outcome",
+        "publication performance"
+      ],
+      "why_execution_is_not_authorized": "L6.0 is design-only and the L5.13 no-go boundary keeps external, network, revenue, publication, and payment execution disabled.",
+      "path_class": "medium",
+      "advantage_fit": "partial_fit",
+      "external_execution_required_now": false,
+      "authorized_for_execution": false
+    },
+    {
+      "safety_flags": {
+        "live_execution_enabled": false,
+        "behavior_execution_enabled": false,
+        "external_action_enabled": false,
+        "network_enabled": false,
+        "scheduler_enabled": false,
+        "daemon_enabled": false,
+        "mcp_server_execution_enabled": false,
+        "mcp_tool_execution_enabled": false,
+        "cieu_persistence_enabled": false,
+        "durable_approval_persistence_enabled": false,
+        "real_approval_record_write_enabled": false,
+        "brain_writeback_enabled": false,
+        "memory_ingestion_enabled": false,
+        "strategy_mutation_enabled": false,
+        "candidate_auto_approval_enabled": false,
+        "real_candidate_approval_enabled": false,
+        "real_canonical_policy_mutation_enabled": false,
+        "real_canonical_update_application_enabled": false,
+        "real_release_execution_enabled": false,
+        "real_y_star_direct_mutation_enabled": false,
+        "y_star_gov_modification_enabled": false,
+        "gov_mcp_modification_enabled": false,
+        "semantic_truth_scoring_enabled": false,
+        "raw_runtime_artifact_reading_enabled": false,
+        "revenue_opportunity_discovery_enabled": false,
+        "revenue_execution_enabled": false,
+        "external_market_scan_enabled": false,
+        "public_content_publication_enabled": false,
+        "payment_enabled": false
+      },
+      "l6_flags": {
+        "l6_design_only_enabled": true,
+        "l6_hypothesis_generation_enabled": true,
+        "l6_selection_design_enabled": true,
+        "l6_sandbox_experiment_design_enabled": true,
+        "l6_external_execution_enabled": false,
+        "l6_network_enabled": false,
+        "l6_publication_enabled": false,
+        "l6_payment_enabled": false,
+        "l6_revenue_execution_enabled": false
+      },
+      "hypothesis_id": "hypothesis-governed-tooling-checklist",
+      "source_assets": [
+        "governance_boundary_asset",
+        "mcp_non_bypass_asset",
+        "experiment_system_asset"
+      ],
+      "conversion_operators": [
+        "governance_boundary_to_risk_reduction_value",
+        "mcp_non_bypass_to_tooling_assurance_value"
+      ],
+      "hypothesized_value_surface": "risk_reduction_value",
+      "hypothesized_recipient_archetype": "tool/platform teams",
+      "possible_value_form": "governed tooling checklist",
+      "conversion_path": [
+        "internal asset",
+        "design-only artifact",
+        "reviewed minimum viable proof",
+        "future governed external gate if ever considered"
+      ],
+      "minimum_viable_proof": "Generate a local, review-only governed tooling checklist and score its evidence gaps.",
+      "evidence_needed": [
+        "asset lineage",
+        "acceptance criteria",
+        "risk boundary",
+        "future external evidence if execution is ever requested"
+      ],
+      "uncertainty_class": "design_only_placeholder",
+      "non_execution_boundary": [
+        "no external publication",
+        "no outreach",
+        "no network",
+        "no payment",
+        "no revenue execution"
+      ],
+      "example_only_fields": {
+        "possible_value_form_is_example_only": true,
+        "not_exhaustive": true
+      },
+      "why_this_hypothesis_exists": "It converts an internally proven governance or identity asset into a testable design artifact without claiming live demand.",
+      "what_asset_it_converts": [
+        "governance_boundary_asset",
+        "mcp_non_bypass_asset",
+        "experiment_system_asset"
+      ],
+      "what_value_surface_it_targets": "risk_reduction_value",
+      "what_proof_would_be_needed": [
+        "local artifact coherence",
+        "reviewed evidence sufficiency",
+        "future approved external signal if any execution is proposed"
+      ],
+      "what_cannot_be_claimed_yet": [
+        "market demand",
+        "payer acceptance",
+        "customer outcome",
+        "publication performance"
+      ],
+      "why_execution_is_not_authorized": "L6.0 is design-only and the L5.13 no-go boundary keeps external, network, revenue, publication, and payment execution disabled.",
+      "path_class": "short",
+      "advantage_fit": "strong_fit",
+      "external_execution_required_now": false,
+      "authorized_for_execution": false
+    }
+  ],
+  "hypothesis_count": 12
+}

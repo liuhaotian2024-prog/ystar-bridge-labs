@@ -1,0 +1,107 @@
+{
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "revenue_execution_enabled": false,
+    "external_market_scan_enabled": false,
+    "public_content_publication_enabled": false,
+    "payment_enabled": false
+  },
+  "l6_flags": {
+    "l6_design_only_enabled": true,
+    "l6_hypothesis_generation_enabled": true,
+    "l6_selection_design_enabled": true,
+    "l6_sandbox_experiment_design_enabled": true,
+    "l6_external_execution_enabled": false,
+    "l6_network_enabled": false,
+    "l6_publication_enabled": false,
+    "l6_payment_enabled": false,
+    "l6_revenue_execution_enabled": false
+  },
+  "schema_name": "ystar.l6.meta_development.input_fixture",
+  "schema_version": "v0",
+  "input_refs": [
+    {
+      "source_key": "live_boundary_readiness",
+      "path": "live_boundary_readiness/live_boundary_readiness.json",
+      "status": "present"
+    },
+    {
+      "source_key": "l6_meta_development_entry_gate",
+      "path": "l6_meta_development_entry_gate/l6_meta_development_entry_gate.json",
+      "status": "present"
+    },
+    {
+      "source_key": "l6_generative_principles",
+      "path": "l6_meta_development_entry_gate/l6_generative_principles.json",
+      "status": "present"
+    },
+    {
+      "source_key": "l6_forbidden_hardcoding_policy",
+      "path": "l6_meta_development_entry_gate/l6_forbidden_hardcoding_policy.json",
+      "status": "present"
+    },
+    {
+      "source_key": "system_no_go_decision_packet",
+      "path": "system_no_go_decision_packet/system_no_go_decision_packet.json",
+      "status": "present"
+    },
+    {
+      "source_key": "live_blocker_risk_register",
+      "path": "live_blocker_risk_register/live_blocker_risk_register.json",
+      "status": "present"
+    },
+    {
+      "source_key": "l5_chain_evidence_map",
+      "path": "live_readiness_evidence_index/l5_chain_evidence_map.json",
+      "status": "present"
+    },
+    {
+      "source_key": "no_go_invariant_matrix",
+      "path": "no_go_invariant_matrix/no_go_invariant_matrix.json",
+      "status": "present"
+    },
+    {
+      "source_key": "mission_y_star_input",
+      "path": "mission_to_behavior_y_star_projection/mission_y_star_input.json",
+      "status": "present"
+    },
+    {
+      "source_key": "controlled_real_release_preflight_readiness",
+      "path": "controlled_real_release_preflight_readiness/controlled_real_release_preflight_readiness.json",
+      "status": "present"
+    },
+    {
+      "source_key": "real_release_simulation_readiness",
+      "path": "real_release_simulation_readiness/real_release_simulation_readiness.json",
+      "status": "present"
+    }
+  ],
+  "missing_optional_or_gap_refs": [],
+  "gap_aware_readiness": true,
+  "safe_to_continue": true,
+  "l6_entry_decision": "allow_l6_design_only"
+}
