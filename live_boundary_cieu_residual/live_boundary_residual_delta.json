@@ -1,0 +1,100 @@
+{
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "revenue_execution_enabled": false
+  },
+  "l6_flags": {
+    "l6_design_entry_allowed": true,
+    "l6_revenue_execution_allowed": false,
+    "l6_external_observation_allowed": false,
+    "l6_external_action_allowed": false,
+    "l6_network_enabled": false,
+    "l6_publication_enabled": false,
+    "l6_payment_enabled": false
+  },
+  "schema_name": "ystar.live_boundary.residual_delta",
+  "schema_version": "v0",
+  "residual_delta_id": "live-boundary-residual-delta-v0",
+  "residual_classes": [
+    "live_readiness_residual",
+    "evidence_gap_residual",
+    "blocker_residual",
+    "l6_entry_residual",
+    "hardcoding_policy_residual",
+    "non_execution_boundary_residual",
+    "persistence_blocker_residual",
+    "external_action_blocker_residual",
+    "revenue_execution_blocker_residual"
+  ],
+  "residuals": [
+    {
+      "residual_class": "live_readiness_residual",
+      "classification": "deterministic_structural_residual",
+      "requires_live_execution": false
+    },
+    {
+      "residual_class": "evidence_gap_residual",
+      "classification": "deterministic_structural_residual",
+      "requires_live_execution": false
+    },
+    {
+      "residual_class": "blocker_residual",
+      "classification": "deterministic_structural_residual",
+      "requires_live_execution": false
+    },
+    {
+      "residual_class": "l6_entry_residual",
+      "classification": "deterministic_structural_residual",
+      "requires_live_execution": false
+    },
+    {
+      "residual_class": "hardcoding_policy_residual",
+      "classification": "deterministic_structural_residual",
+      "requires_live_execution": false
+    },
+    {
+      "residual_class": "non_execution_boundary_residual",
+      "classification": "deterministic_structural_residual",
+      "requires_live_execution": false
+    },
+    {
+      "residual_class": "persistence_blocker_residual",
+      "classification": "deterministic_structural_residual",
+      "requires_live_execution": false
+    },
+    {
+      "residual_class": "external_action_blocker_residual",
+      "classification": "deterministic_structural_residual",
+      "requires_live_execution": false
+    },
+    {
+      "residual_class": "revenue_execution_blocker_residual",
+      "classification": "deterministic_structural_residual",
+      "requires_live_execution": false
+    }
+  ]
+}

@@ -394,6 +394,9 @@ def main() -> int:
     required_real_release_simulation_sandbox_files = expected.get(
         "required_real_release_simulation_sandbox_files", []
     )
+    required_live_boundary_no_go_framework_files = expected.get(
+        "required_live_boundary_no_go_framework_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -608,6 +611,12 @@ def main() -> int:
         check_exists(path, report, "real release simulation sandbox file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "real release simulation sandbox JSON")
+
+    for rel in required_live_boundary_no_go_framework_files:
+        path = ROOT / rel
+        check_exists(path, report, "live boundary no-go framework file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "live boundary no-go framework JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -4119,6 +4128,173 @@ def main() -> int:
             "L5.13 Live Boundary / No-Go Decision Framework v0"
         ):
             report.fail("generated real release simulation summary must point to L5.13")
+
+    live_boundary_no_go = generated_json.get(
+        "console_read_model/generated/live_boundary_no_go_summary.json"
+    )
+    if live_boundary_no_go:
+        for field in [
+            "l5_13_live_boundary_no_go_framework_defined",
+            "live_capability_domains_classified",
+            "no_go_invariants_defined",
+            "l5_0_to_l5_12_evidence_indexed",
+            "l5_evidence_index_generated",
+            "live_blockers_identified",
+            "l6_design_entry_gate_generated",
+            "l6_non_execution_boundary_defined",
+            "l6_forbidden_hardcoding_policy_defined",
+            "system_no_go_decision_packet_generated",
+            "live_boundary_cieu_like_fixture_generated",
+            "live_execution_decision",
+            "real_mcp_execution_decision",
+            "real_canonical_update_decision",
+            "brain_memory_writeback_decision",
+            "durable_persistence_decision",
+            "real_release_decision",
+            "l6_design_entry_decision",
+            "l6_execution_decision",
+            "revenue_execution_decision",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "mcp_server_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "cieu_persistence_enabled",
+            "durable_approval_persistence_enabled",
+            "real_approval_record_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "strategy_mutation_enabled",
+            "candidate_auto_approval_enabled",
+            "real_candidate_approval_enabled",
+            "real_canonical_policy_mutation_enabled",
+            "real_canonical_update_application_enabled",
+            "real_release_execution_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "revenue_execution_enabled",
+            "l6_design_entry_allowed",
+            "l6_revenue_execution_allowed",
+            "l6_external_observation_allowed",
+            "l6_external_action_allowed",
+            "l6_network_enabled",
+            "l6_publication_enabled",
+            "l6_payment_enabled",
+            "live_execution_still_blocked",
+            "real_mcp_execution_still_blocked",
+            "real_canonical_update_still_blocked",
+            "brain_writeback_still_blocked",
+            "memory_ingestion_still_blocked",
+            "durable_persistence_still_blocked",
+            "real_release_still_blocked",
+            "revenue_execution_still_blocked",
+            "external_action_still_blocked",
+            "network_still_blocked",
+            "ready_for_l6_meta_development_generative_engine_design",
+            "ready_for_l6_revenue_opportunity_execution",
+            "next_required_milestone",
+            "generated_framework_summary",
+            "generated_capability_summary",
+            "generated_invariant_summary",
+            "generated_evidence_summary",
+            "generated_blocker_summary",
+            "generated_l6_entry_summary",
+            "generated_decision_summary",
+            "generated_cieu_summary",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in live_boundary_no_go:
+                report.pass_(f"generated live boundary no-go summary field present: {field}")
+            else:
+                report.fail(f"generated live boundary no-go summary missing field: {field}")
+        for field in [
+            "l5_13_live_boundary_no_go_framework_defined",
+            "live_capability_domains_classified",
+            "no_go_invariants_defined",
+            "l5_0_to_l5_12_evidence_indexed",
+            "l5_evidence_index_generated",
+            "live_blockers_identified",
+            "l6_design_entry_gate_generated",
+            "l6_non_execution_boundary_defined",
+            "l6_forbidden_hardcoding_policy_defined",
+            "system_no_go_decision_packet_generated",
+            "live_boundary_cieu_like_fixture_generated",
+            "l6_design_entry_allowed",
+            "live_execution_still_blocked",
+            "real_mcp_execution_still_blocked",
+            "real_canonical_update_still_blocked",
+            "brain_writeback_still_blocked",
+            "memory_ingestion_still_blocked",
+            "durable_persistence_still_blocked",
+            "real_release_still_blocked",
+            "revenue_execution_still_blocked",
+            "external_action_still_blocked",
+            "network_still_blocked",
+            "ready_for_l6_meta_development_generative_engine_design",
+        ]:
+            if live_boundary_no_go.get(field) is not True:
+                report.fail(f"generated live boundary no-go summary must keep {field}=true")
+        for field in [
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "mcp_server_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "cieu_persistence_enabled",
+            "durable_approval_persistence_enabled",
+            "real_approval_record_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "strategy_mutation_enabled",
+            "candidate_auto_approval_enabled",
+            "real_candidate_approval_enabled",
+            "real_canonical_policy_mutation_enabled",
+            "real_canonical_update_application_enabled",
+            "real_release_execution_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "revenue_execution_enabled",
+            "l6_revenue_execution_allowed",
+            "l6_external_observation_allowed",
+            "l6_external_action_allowed",
+            "l6_network_enabled",
+            "l6_publication_enabled",
+            "l6_payment_enabled",
+            "ready_for_l6_revenue_opportunity_execution",
+        ]:
+            if live_boundary_no_go.get(field) is not False:
+                report.fail(f"generated live boundary no-go summary must keep {field}=false")
+        expected_decisions = {
+            "live_execution_decision": "no_go",
+            "real_mcp_execution_decision": "no_go",
+            "real_canonical_update_decision": "no_go",
+            "brain_memory_writeback_decision": "no_go",
+            "durable_persistence_decision": "no_go",
+            "real_release_decision": "no_go",
+            "l6_design_entry_decision": "design_only_go",
+            "l6_execution_decision": "no_go",
+            "revenue_execution_decision": "no_go",
+        }
+        for field, expected_value in expected_decisions.items():
+            if live_boundary_no_go.get(field) != expected_value:
+                report.fail(
+                    f"generated live boundary no-go summary expected {field}={expected_value}"
+                )
+        if live_boundary_no_go.get("next_required_milestone") != (
+            "L6 Meta-Development Generative Engine Design v0"
+        ):
+            report.fail("generated live boundary no-go summary must point to L6 design")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

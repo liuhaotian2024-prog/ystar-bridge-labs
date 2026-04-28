@@ -111,5 +111,8 @@ real release preflight. It confirms release candidate assembly, scope validation
 `real_release_simulation_summary.json` is derived from the L5.12 real release
 simulation sandbox. It confirms sandbox authority, simulated approval record, sandbox snapshot, sandbox release execution, post-release validation, MCP preview, rollback drill, comparison, and CIEU-like residuals while real release, durable persistence, real approval, and canonical application remain blocked.
 
+`live_boundary_no_go_summary.json` is derived from the L5.13 live boundary
+no-go framework. It confirms live domains, no-go invariants, L5 evidence, blockers, L6 design-only entry, and system no-go decisions while live, external, revenue, persistence, MCP, release, and writeback execution remain blocked.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

@@ -1,0 +1,255 @@
+{
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "revenue_execution_enabled": false
+  },
+  "l6_flags": {
+    "l6_design_entry_allowed": true,
+    "l6_revenue_execution_allowed": false,
+    "l6_external_observation_allowed": false,
+    "l6_external_action_allowed": false,
+    "l6_network_enabled": false,
+    "l6_publication_enabled": false,
+    "l6_payment_enabled": false
+  },
+  "schema_name": "ystar.live_readiness.evidence_index",
+  "schema_version": "v0",
+  "evidence_index_id": "live-readiness-evidence-index-v0",
+  "source_milestones": [
+    {
+      "milestone": "L5.0 archaeology",
+      "commit_ref": "unknown_or_prior_context",
+      "proof_contribution": "field-functional inventory and merge-plan proof",
+      "readiness_contribution": "structural artifact proof; live execution remains blocked",
+      "still_blocked_capabilities": [
+        "live execution",
+        "real MCP execution",
+        "real canonical update",
+        "brain/memory writeback",
+        "revenue execution"
+      ],
+      "evidence_refs": [
+        "field_functional_archaeology/generated/field_functional_archaeology_summary.json"
+      ]
+    },
+    {
+      "milestone": "L5.1 projection harness",
+      "commit_ref": "unknown_or_prior_context",
+      "proof_contribution": "mission field projection harness contract proof",
+      "readiness_contribution": "structural artifact proof; live execution remains blocked",
+      "still_blocked_capabilities": [
+        "live execution",
+        "real MCP execution",
+        "real canonical update",
+        "brain/memory writeback",
+        "revenue execution"
+      ],
+      "evidence_refs": [
+        "mission_field_projection_contract/projection_contract_summary.json"
+      ]
+    },
+    {
+      "milestone": "L5.2 auto-projection core",
+      "commit_ref": "unknown_or_prior_context",
+      "proof_contribution": "automatic projection core dry-run proof",
+      "readiness_contribution": "structural artifact proof; live execution remains blocked",
+      "still_blocked_capabilities": [
+        "live execution",
+        "real MCP execution",
+        "real canonical update",
+        "brain/memory writeback",
+        "revenue execution"
+      ],
+      "evidence_refs": [
+        "field_projection_cycle_readiness/field_projection_cycle_readiness.json"
+      ]
+    },
+    {
+      "milestone": "L5.3 projection-checked cycle",
+      "commit_ref": "unknown_or_prior_context",
+      "proof_contribution": "projection-checked autonomous work cycle dry-run proof",
+      "readiness_contribution": "structural artifact proof; live execution remains blocked",
+      "still_blocked_capabilities": [
+        "live execution",
+        "real MCP execution",
+        "real canonical update",
+        "brain/memory writeback",
+        "revenue execution"
+      ],
+      "evidence_refs": [
+        "projection_checked_cycle_readiness/projection_checked_cycle_readiness.json"
+      ]
+    },
+    {
+      "milestone": "L5.4 shadow learning cycle",
+      "commit_ref": "9667642b",
+      "proof_contribution": "review-gated shadow learning proof",
+      "readiness_contribution": "structural artifact proof; live execution remains blocked",
+      "still_blocked_capabilities": [
+        "live execution",
+        "real MCP execution",
+        "real canonical update",
+        "brain/memory writeback",
+        "revenue execution"
+      ],
+      "evidence_refs": [
+        "integrated_shadow_learning_readiness/integrated_shadow_learning_readiness.json"
+      ]
+    },
+    {
+      "milestone": "L5.5 cross-repo governance proof",
+      "commit_ref": "8c2f11ad",
+      "proof_contribution": "cross-repo non-bypass governance boundary proof",
+      "readiness_contribution": "structural artifact proof; live execution remains blocked",
+      "still_blocked_capabilities": [
+        "live execution",
+        "real MCP execution",
+        "real canonical update",
+        "brain/memory writeback",
+        "revenue execution"
+      ],
+      "evidence_refs": [
+        "cross_repo_gap_and_readiness/cross_repo_governance_readiness.json"
+      ]
+    },
+    {
+      "milestone": "L5.6 governed MCP dry-run adapter",
+      "commit_ref": "eb0f4c23",
+      "proof_contribution": "governed MCP dry-run adapter proof with no MCP execution",
+      "readiness_contribution": "structural artifact proof; live execution remains blocked",
+      "still_blocked_capabilities": [
+        "live execution",
+        "real MCP execution",
+        "real canonical update",
+        "brain/memory writeback",
+        "revenue execution"
+      ],
+      "evidence_refs": [
+        "governed_mcp_adapter_readiness/governed_mcp_adapter_readiness.json"
+      ]
+    },
+    {
+      "milestone": "L5.7 controlled canonical learning design",
+      "commit_ref": "3996a107",
+      "proof_contribution": "controlled canonical learning package and non-mutation proof",
+      "readiness_contribution": "structural artifact proof; live execution remains blocked",
+      "still_blocked_capabilities": [
+        "live execution",
+        "real MCP execution",
+        "real canonical update",
+        "brain/memory writeback",
+        "revenue execution"
+      ],
+      "evidence_refs": [
+        "controlled_canonical_learning_readiness/controlled_canonical_learning_readiness.json"
+      ]
+    },
+    {
+      "milestone": "L5.8 approved sandbox update",
+      "commit_ref": "743af561",
+      "proof_contribution": "sandbox-only approval/application/rollback proof",
+      "readiness_contribution": "structural artifact proof; live execution remains blocked",
+      "still_blocked_capabilities": [
+        "live execution",
+        "real MCP execution",
+        "real canonical update",
+        "brain/memory writeback",
+        "revenue execution"
+      ],
+      "evidence_refs": [
+        "approved_sandbox_update_readiness/approved_sandbox_update_readiness.json"
+      ]
+    },
+    {
+      "milestone": "L5.9 real approval workflow boundary",
+      "commit_ref": "c8b2efed",
+      "proof_contribution": "real approval workflow boundary contract proof",
+      "readiness_contribution": "structural artifact proof; live execution remains blocked",
+      "still_blocked_capabilities": [
+        "live execution",
+        "real MCP execution",
+        "real canonical update",
+        "brain/memory writeback",
+        "revenue execution"
+      ],
+      "evidence_refs": [
+        "real_approval_workflow_readiness/real_approval_workflow_readiness.json"
+      ]
+    },
+    {
+      "milestone": "L5.10 approval record sandbox",
+      "commit_ref": "2a0cc560",
+      "proof_contribution": "sandbox approval record lifecycle proof",
+      "readiness_contribution": "structural artifact proof; live execution remains blocked",
+      "still_blocked_capabilities": [
+        "live execution",
+        "real MCP execution",
+        "real canonical update",
+        "brain/memory writeback",
+        "revenue execution"
+      ],
+      "evidence_refs": [
+        "controlled_approval_record_readiness/controlled_approval_record_readiness.json"
+      ]
+    },
+    {
+      "milestone": "L5.11 real release preflight",
+      "commit_ref": "b3b9e2c3",
+      "proof_contribution": "controlled real release preflight blocker proof",
+      "readiness_contribution": "structural artifact proof; live execution remains blocked",
+      "still_blocked_capabilities": [
+        "live execution",
+        "real MCP execution",
+        "real canonical update",
+        "brain/memory writeback",
+        "revenue execution"
+      ],
+      "evidence_refs": [
+        "controlled_real_release_preflight_readiness/controlled_real_release_preflight_readiness.json"
+      ]
+    },
+    {
+      "milestone": "L5.12 release simulation sandbox",
+      "commit_ref": "17aadbec",
+      "proof_contribution": "sandbox release simulation and rollback proof",
+      "readiness_contribution": "structural artifact proof; live execution remains blocked",
+      "still_blocked_capabilities": [
+        "live execution",
+        "real MCP execution",
+        "real canonical update",
+        "brain/memory writeback",
+        "revenue execution"
+      ],
+      "evidence_refs": [
+        "real_release_simulation_readiness/real_release_simulation_readiness.json"
+      ]
+    }
+  ],
+  "release_simulation_ready_for_l5_13": true,
+  "release_blocker_decision": "blocked_real_release_preflight_only",
+  "semantic_truth_scoring_used": false
+}

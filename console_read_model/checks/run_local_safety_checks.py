@@ -208,7 +208,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after real release simulation sandbox",
+        "Build live boundary no-go framework",
+        ["python3", "live_boundary_no_go_framework/tools/build_live_boundary_no_go_framework.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after live boundary no-go framework",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -1799,6 +1804,55 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "real_release_simulation_readiness/real_release_simulation_readiness.json"],
     ),
     Check(
+        "Compile live boundary no-go framework builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "live_boundary_no_go_framework/tools/build_live_boundary_no_go_framework.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: live_boundary_no_go_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/live_boundary_no_go_summary.json"],
+    ),
+    Check(
+        "Validate JSON: live_boundary_no_go_contract.json",
+        ["python3", "-m", "json.tool", "live_boundary_no_go_framework/live_boundary_no_go_contract.json"],
+    ),
+    Check(
+        "Validate JSON: live_capability_domain_registry.json",
+        ["python3", "-m", "json.tool", "live_capability_domain_registry/live_capability_domain_registry.json"],
+    ),
+    Check(
+        "Validate JSON: no_go_invariant_matrix.json",
+        ["python3", "-m", "json.tool", "no_go_invariant_matrix/no_go_invariant_matrix.json"],
+    ),
+    Check(
+        "Validate JSON: l5_chain_evidence_map.json",
+        ["python3", "-m", "json.tool", "live_readiness_evidence_index/l5_chain_evidence_map.json"],
+    ),
+    Check(
+        "Validate JSON: live_blocker_risk_register.json",
+        ["python3", "-m", "json.tool", "live_blocker_risk_register/live_blocker_risk_register.json"],
+    ),
+    Check(
+        "Validate JSON: l6_meta_development_entry_gate.json",
+        ["python3", "-m", "json.tool", "l6_meta_development_entry_gate/l6_meta_development_entry_gate.json"],
+    ),
+    Check(
+        "Validate JSON: system_no_go_decision_packet.json",
+        ["python3", "-m", "json.tool", "system_no_go_decision_packet/system_no_go_decision_packet.json"],
+    ),
+    Check(
+        "Validate JSON: live_boundary_cieu_event_fixture.json",
+        ["python3", "-m", "json.tool", "live_boundary_cieu_residual/live_boundary_cieu_event_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: live_boundary_readiness.json",
+        ["python3", "-m", "json.tool", "live_boundary_readiness/live_boundary_readiness.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -2025,6 +2079,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: release-simulation-sandbox",
         ["python3", "console_read_model/cli/team_console.py", "release-simulation-sandbox"],
+    ),
+    Check(
+        "CLI smoke: live-boundary-no-go",
+        ["python3", "console_read_model/cli/team_console.py", "live-boundary-no-go"],
     ),
     Check(
         "CLI smoke: sources",

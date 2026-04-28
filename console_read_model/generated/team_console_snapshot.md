@@ -113,7 +113,7 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 294
+- Artifacts classified: 301
 - Unsafe artifacts count: 204
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
@@ -129,7 +129,7 @@ Not ready:
   - FRAMEWORK_FILE: 16
   - LOG_RUNTIME: 31
   - PYCACHE: 40
-  - UNKNOWN_OR_NON_RUNTIME: 74
+  - UNKNOWN_OR_NON_RUNTIME: 81
   - UNKNOWN_RUNTIME_ARTIFACT: 10
   - WHITELIST_REPORT: 2
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
@@ -167,8 +167,8 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 294
-- Artifacts with disposition: 294
+- Total artifacts: 301
+- Artifacts with disposition: 301
 - Safe-mined to review queue: 21
 - Forbidden direct read count: 115
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
@@ -180,10 +180,10 @@ Not ready:
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 40
-  - ignored_or_non_runtime: 90
+  - ignored_or_non_runtime: 97
   - safe_mined_to_review_queue: 21
 - Evidence scoring status:
-  - not_started: 294
+  - not_started: 301
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -255,7 +255,7 @@ Not ready:
 ## Cross-Repo Governance Alignment
 
 - alignment_accepted: True
-- ystar-company HEAD: 743af561 tools: add approved canonical update sandbox
+- ystar-company HEAD: 17aadbec tools: add real release simulation sandbox
 - Y-star-gov HEAD: 9c4aee3 tools: add governance endpoint acceptance runner
 - Y-star-gov endpoint accepted: True
 - labs runtime accepted: True
@@ -564,7 +564,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 4656
+- assets_scanned: 4707
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -886,6 +886,31 @@ Not ready:
 - ready_for_l6_revenue_opportunity_discovery: False
 - next_required_milestone: L5.13 Live Boundary / No-Go Decision Framework v0
 - Warning: L5.12 simulates a release only in generated sandbox artifacts. No real approval is granted, no durable approval record is written, no real release is authorized, and no canonical update is applied.
+
+## Live Boundary No-Go Framework
+
+- l5_13_live_boundary_no_go_framework_defined: True
+- live_capability_domains_classified: True
+- no_go_invariants_defined: True
+- l5_0_to_l5_12_evidence_indexed: True
+- live_blockers_identified: True
+- l6_design_entry_gate_generated: True
+- l6_non_execution_boundary_defined: True
+- l6_forbidden_hardcoding_policy_defined: True
+- system_no_go_decision_packet_generated: True
+- live_boundary_cieu_like_fixture_generated: True
+- live_execution_decision: no_go
+- real_mcp_execution_decision: no_go
+- real_canonical_update_decision: no_go
+- brain_memory_writeback_decision: no_go
+- durable_persistence_decision: no_go
+- real_release_decision: no_go
+- l6_design_entry_decision: design_only_go
+- l6_execution_decision: no_go
+- ready_for_l6_meta_development_generative_engine_design: True
+- ready_for_l6_revenue_opportunity_execution: False
+- next_required_milestone: L6 Meta-Development Generative Engine Design v0
+- Warning: L5.13 is a no-go framework. Live execution, real MCP execution, real release, durable persistence, writeback, network/external action, and L6 revenue execution remain blocked. L6 is design-only.
 
 ## Governance Boundary
 

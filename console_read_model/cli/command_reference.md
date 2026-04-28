@@ -152,6 +152,11 @@ python3 console_read_model/cli/team_console.py <command>
   sandbox snapshot, sandbox release execution, post-release validation,
   projection/MCP preview, rollback drill, CIEU-like residual, and blocked real
   release/application/durable-persistence/writeback/direct-Y*/MCP state.
+- `live-boundary-no-go`: Prints the generated L5.13 live boundary no-go
+  framework summary: live capability domains, no-go invariants, L5 evidence
+  index, live blockers, L6 design-only entry gate, non-execution boundary,
+  hardcoding-forbidden policy, system no-go decisions, and blocked live/
+  external/network/revenue/persistence/writeback/MCP/release execution state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

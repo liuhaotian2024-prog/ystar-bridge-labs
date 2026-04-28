@@ -1,0 +1,188 @@
+{
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "revenue_execution_enabled": false
+  },
+  "l6_flags": {
+    "l6_design_entry_allowed": true,
+    "l6_revenue_execution_allowed": false,
+    "l6_external_observation_allowed": false,
+    "l6_external_action_allowed": false,
+    "l6_network_enabled": false,
+    "l6_publication_enabled": false,
+    "l6_payment_enabled": false
+  },
+  "schema_name": "ystar.no_go.permanent_invariant_registry",
+  "schema_version": "v0",
+  "registry_id": "permanent-invariant-registry-v0",
+  "permanent_invariants": [
+    {
+      "invariant_id": "residual_cannot_directly_mutate_y_star",
+      "classification": "permanent",
+      "can_be_overridden_by_l6": false,
+      "evidence_refs": [
+        "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+        "cross_repo_non_bypass_proof/cross_repo_non_bypass_invariant_map.json"
+      ]
+    },
+    {
+      "invariant_id": "actual_y_cannot_become_y_star",
+      "classification": "permanent",
+      "can_be_overridden_by_l6": false,
+      "evidence_refs": [
+        "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+        "cross_repo_non_bypass_proof/cross_repo_non_bypass_invariant_map.json"
+      ]
+    },
+    {
+      "invariant_id": "mission_y_star_lineage_must_be_preserved",
+      "classification": "permanent",
+      "can_be_overridden_by_l6": false,
+      "evidence_refs": [
+        "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+        "cross_repo_non_bypass_proof/cross_repo_non_bypass_invariant_map.json"
+      ]
+    },
+    {
+      "invariant_id": "behavior_y_star_must_be_projection_derived",
+      "classification": "permanent",
+      "can_be_overridden_by_l6": false,
+      "evidence_refs": [
+        "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+        "cross_repo_non_bypass_proof/cross_repo_non_bypass_invariant_map.json"
+      ]
+    },
+    {
+      "invariant_id": "no_mcp_call_without_behavior_y_star",
+      "classification": "permanent",
+      "can_be_overridden_by_l6": false,
+      "evidence_refs": [
+        "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+        "cross_repo_non_bypass_proof/cross_repo_non_bypass_invariant_map.json"
+      ]
+    },
+    {
+      "invariant_id": "no_mcp_call_without_pre_u",
+      "classification": "permanent",
+      "can_be_overridden_by_l6": false,
+      "evidence_refs": [
+        "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+        "cross_repo_non_bypass_proof/cross_repo_non_bypass_invariant_map.json"
+      ]
+    },
+    {
+      "invariant_id": "no_mcp_call_without_governance_decision",
+      "classification": "permanent",
+      "can_be_overridden_by_l6": false,
+      "evidence_refs": [
+        "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+        "cross_repo_non_bypass_proof/cross_repo_non_bypass_invariant_map.json"
+      ]
+    },
+    {
+      "invariant_id": "no_mcp_call_without_bridge_receipt",
+      "classification": "permanent",
+      "can_be_overridden_by_l6": false,
+      "evidence_refs": [
+        "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+        "cross_repo_non_bypass_proof/cross_repo_non_bypass_invariant_map.json"
+      ]
+    },
+    {
+      "invariant_id": "no_mcp_call_without_cieu_receipt",
+      "classification": "permanent",
+      "can_be_overridden_by_l6": false,
+      "evidence_refs": [
+        "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+        "cross_repo_non_bypass_proof/cross_repo_non_bypass_invariant_map.json"
+      ]
+    },
+    {
+      "invariant_id": "no_mcp_call_without_residual_delta",
+      "classification": "permanent",
+      "can_be_overridden_by_l6": false,
+      "evidence_refs": [
+        "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+        "cross_repo_non_bypass_proof/cross_repo_non_bypass_invariant_map.json"
+      ]
+    },
+    {
+      "invariant_id": "no_brain_writeback_without_review_and_approval",
+      "classification": "permanent",
+      "can_be_overridden_by_l6": false,
+      "evidence_refs": [
+        "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+        "cross_repo_non_bypass_proof/cross_repo_non_bypass_invariant_map.json"
+      ]
+    },
+    {
+      "invariant_id": "no_memory_ingestion_without_review_and_approval",
+      "classification": "permanent",
+      "can_be_overridden_by_l6": false,
+      "evidence_refs": [
+        "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+        "cross_repo_non_bypass_proof/cross_repo_non_bypass_invariant_map.json"
+      ]
+    },
+    {
+      "invariant_id": "no_external_action_without_explicit_authorization",
+      "classification": "permanent",
+      "can_be_overridden_by_l6": false,
+      "evidence_refs": [
+        "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+        "cross_repo_non_bypass_proof/cross_repo_non_bypass_invariant_map.json"
+      ]
+    },
+    {
+      "invariant_id": "no_revenue_execution_without_separate_governed_release_path",
+      "classification": "permanent",
+      "can_be_overridden_by_l6": false,
+      "evidence_refs": [
+        "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+        "cross_repo_non_bypass_proof/cross_repo_non_bypass_invariant_map.json"
+      ]
+    },
+    {
+      "invariant_id": "no_publication_without_review_and_approval",
+      "classification": "permanent",
+      "can_be_overridden_by_l6": false,
+      "evidence_refs": [
+        "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+        "cross_repo_non_bypass_proof/cross_repo_non_bypass_invariant_map.json"
+      ]
+    },
+    {
+      "invariant_id": "no_payment_action_without_explicit_approval_and_compliance_review",
+      "classification": "permanent",
+      "can_be_overridden_by_l6": false,
+      "evidence_refs": [
+        "y_star_non_mutation_invariant/y_star_non_mutation_invariant.json",
+        "cross_repo_non_bypass_proof/cross_repo_non_bypass_invariant_map.json"
+      ]
+    }
+  ]
+}

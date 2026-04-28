@@ -153,6 +153,15 @@ CURATED_SOURCES = [
     "original_release_rollback_comparison/sandbox_release_safety_summary.json",
     "release_simulation_cieu_residual/release_simulation_cieu_summary.json",
     "real_release_simulation_readiness/real_release_simulation_readiness.json",
+    "live_boundary_no_go_framework/live_boundary_no_go_summary.json",
+    "live_capability_domain_registry/live_capability_summary.json",
+    "no_go_invariant_matrix/no_go_invariant_summary.json",
+    "live_readiness_evidence_index/live_readiness_evidence_summary.json",
+    "live_blocker_risk_register/live_blocker_summary.json",
+    "l6_meta_development_entry_gate/l6_entry_gate_summary.json",
+    "system_no_go_decision_packet/system_live_boundary_decision_summary.json",
+    "live_boundary_cieu_residual/live_boundary_cieu_summary.json",
+    "live_boundary_readiness/live_boundary_readiness.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -3260,6 +3269,172 @@ def build_real_release_simulation_summary(
     }
 
 
+def build_live_boundary_no_go_summary(
+    framework_summary: dict[str, Any] | None,
+    capability_summary: dict[str, Any] | None,
+    invariant_summary: dict[str, Any] | None,
+    evidence_summary: dict[str, Any] | None,
+    blocker_summary: dict[str, Any] | None,
+    l6_summary: dict[str, Any] | None,
+    decision_summary: dict[str, Any] | None,
+    cieu_summary: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.live_boundary_no_go_summary",
+            "schema_version": "v0",
+            "l5_13_live_boundary_no_go_framework_defined": False,
+            "ready_for_l6_meta_development_generative_engine_design": False,
+            "ready_for_l6_revenue_opportunity_execution": False,
+            "warning": "Live boundary no-go framework has not been generated yet.",
+        }
+    framework_summary = framework_summary or {}
+    capability_summary = capability_summary or {}
+    invariant_summary = invariant_summary or {}
+    evidence_summary = evidence_summary or {}
+    blocker_summary = blocker_summary or {}
+    l6_summary = l6_summary or {}
+    decision_summary = decision_summary or {}
+    cieu_summary = cieu_summary or {}
+
+    def safety_flag(field: str) -> Any:
+        return readiness_summary.get(field, readiness_summary.get("safety_flags", {}).get(field))
+
+    def l6_flag(field: str) -> Any:
+        return readiness_summary.get(field, readiness_summary.get("l6_flags", {}).get(field))
+
+    return {
+        "schema_name": "ystar.console_read_model.generated.live_boundary_no_go_summary",
+        "schema_version": "v0",
+        "l5_13_live_boundary_no_go_framework_defined": framework_summary.get(
+            "l5_13_live_boundary_no_go_framework_defined"
+        ),
+        "live_capability_domains_classified": capability_summary.get(
+            "live_capability_domains_classified"
+        ),
+        "no_go_invariants_defined": invariant_summary.get("no_go_invariants_defined"),
+        "l5_0_to_l5_12_evidence_indexed": framework_summary.get(
+            "l5_0_to_l5_12_evidence_indexed",
+            evidence_summary.get("l5_0_to_l5_12_indexed"),
+        ),
+        "l5_evidence_index_generated": readiness_summary.get("l5_evidence_index_generated"),
+        "live_blockers_identified": blocker_summary.get("live_blockers_identified"),
+        "l6_design_entry_gate_generated": l6_summary.get("l6_design_entry_gate_generated"),
+        "l6_non_execution_boundary_defined": l6_summary.get("l6_non_execution_boundary_defined"),
+        "l6_forbidden_hardcoding_policy_defined": l6_summary.get(
+            "l6_forbidden_hardcoding_policy_defined"
+        ),
+        "system_no_go_decision_packet_generated": decision_summary.get(
+            "system_no_go_decision_packet_generated"
+        ),
+        "live_boundary_cieu_like_fixture_generated": cieu_summary.get(
+            "live_boundary_cieu_like_fixture_generated"
+        ),
+        "live_execution_decision": decision_summary.get("live_execution_decision"),
+        "real_mcp_execution_decision": decision_summary.get("real_mcp_execution_decision"),
+        "real_canonical_update_decision": decision_summary.get(
+            "real_canonical_update_decision"
+        ),
+        "brain_memory_writeback_decision": decision_summary.get(
+            "brain_memory_writeback_decision"
+        ),
+        "durable_persistence_decision": decision_summary.get("durable_persistence_decision"),
+        "real_release_decision": decision_summary.get("real_release_decision"),
+        "l6_design_entry_decision": decision_summary.get("l6_design_entry_decision"),
+        "l6_execution_decision": decision_summary.get("l6_execution_decision"),
+        "revenue_execution_decision": capability_summary.get("revenue_execution_decision"),
+        "live_execution_enabled": safety_flag("live_execution_enabled"),
+        "behavior_execution_enabled": safety_flag("behavior_execution_enabled"),
+        "external_action_enabled": safety_flag("external_action_enabled"),
+        "network_enabled": safety_flag("network_enabled"),
+        "scheduler_enabled": safety_flag("scheduler_enabled"),
+        "daemon_enabled": safety_flag("daemon_enabled"),
+        "mcp_server_execution_enabled": safety_flag("mcp_server_execution_enabled"),
+        "mcp_tool_execution_enabled": safety_flag("mcp_tool_execution_enabled"),
+        "cieu_persistence_enabled": safety_flag("cieu_persistence_enabled"),
+        "durable_approval_persistence_enabled": safety_flag(
+            "durable_approval_persistence_enabled"
+        ),
+        "real_approval_record_write_enabled": safety_flag(
+            "real_approval_record_write_enabled"
+        ),
+        "brain_writeback_enabled": safety_flag("brain_writeback_enabled"),
+        "memory_ingestion_enabled": safety_flag("memory_ingestion_enabled"),
+        "strategy_mutation_enabled": safety_flag("strategy_mutation_enabled"),
+        "candidate_auto_approval_enabled": safety_flag("candidate_auto_approval_enabled"),
+        "real_candidate_approval_enabled": safety_flag("real_candidate_approval_enabled"),
+        "real_canonical_policy_mutation_enabled": safety_flag(
+            "real_canonical_policy_mutation_enabled"
+        ),
+        "real_canonical_update_application_enabled": safety_flag(
+            "real_canonical_update_application_enabled"
+        ),
+        "real_release_execution_enabled": safety_flag("real_release_execution_enabled"),
+        "real_y_star_direct_mutation_enabled": safety_flag(
+            "real_y_star_direct_mutation_enabled"
+        ),
+        "semantic_truth_scoring_enabled": safety_flag("semantic_truth_scoring_enabled"),
+        "raw_runtime_artifact_reading_enabled": safety_flag(
+            "raw_runtime_artifact_reading_enabled"
+        ),
+        "revenue_opportunity_discovery_enabled": safety_flag(
+            "revenue_opportunity_discovery_enabled"
+        ),
+        "revenue_execution_enabled": safety_flag("revenue_execution_enabled"),
+        "l6_design_entry_allowed": l6_flag("l6_design_entry_allowed"),
+        "l6_revenue_execution_allowed": l6_flag("l6_revenue_execution_allowed"),
+        "l6_external_observation_allowed": l6_flag("l6_external_observation_allowed"),
+        "l6_external_action_allowed": l6_flag("l6_external_action_allowed"),
+        "l6_network_enabled": l6_flag("l6_network_enabled"),
+        "l6_publication_enabled": l6_flag("l6_publication_enabled"),
+        "l6_payment_enabled": l6_flag("l6_payment_enabled"),
+        "live_execution_still_blocked": readiness_summary.get("live_execution_still_blocked"),
+        "real_mcp_execution_still_blocked": readiness_summary.get(
+            "real_mcp_execution_still_blocked"
+        ),
+        "real_canonical_update_still_blocked": readiness_summary.get(
+            "real_canonical_update_still_blocked"
+        ),
+        "brain_writeback_still_blocked": readiness_summary.get("brain_writeback_still_blocked"),
+        "memory_ingestion_still_blocked": readiness_summary.get(
+            "memory_ingestion_still_blocked"
+        ),
+        "durable_persistence_still_blocked": readiness_summary.get(
+            "durable_persistence_still_blocked"
+        ),
+        "real_release_still_blocked": readiness_summary.get("real_release_still_blocked"),
+        "revenue_execution_still_blocked": readiness_summary.get(
+            "revenue_execution_still_blocked"
+        ),
+        "external_action_still_blocked": readiness_summary.get(
+            "external_action_still_blocked"
+        ),
+        "network_still_blocked": readiness_summary.get("network_still_blocked"),
+        "ready_for_l6_meta_development_generative_engine_design": readiness_summary.get(
+            "ready_for_l6_meta_development_generative_engine_design"
+        ),
+        "ready_for_l6_revenue_opportunity_execution": readiness_summary.get(
+            "ready_for_l6_revenue_opportunity_execution"
+        ),
+        "next_required_milestone": readiness_summary.get("next_required_milestone"),
+        "generated_framework_summary": "live_boundary_no_go_framework/live_boundary_no_go_summary.json",
+        "generated_capability_summary": "live_capability_domain_registry/live_capability_summary.json",
+        "generated_invariant_summary": "no_go_invariant_matrix/no_go_invariant_summary.json",
+        "generated_evidence_summary": "live_readiness_evidence_index/live_readiness_evidence_summary.json",
+        "generated_blocker_summary": "live_blocker_risk_register/live_blocker_summary.json",
+        "generated_l6_entry_summary": "l6_meta_development_entry_gate/l6_entry_gate_summary.json",
+        "generated_decision_summary": "system_no_go_decision_packet/system_live_boundary_decision_summary.json",
+        "generated_cieu_summary": "live_boundary_cieu_residual/live_boundary_cieu_summary.json",
+        "generated_readiness": "live_boundary_readiness/live_boundary_readiness.json",
+        "warning": (
+            "L5.13 is a no-go framework. Live execution, real MCP execution, real "
+            "release, durable persistence, writeback, network/external action, and "
+            "L6 revenue execution remain blocked. L6 is design-only."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -3790,6 +3965,42 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "real_release_simulation_readiness/real_release_simulation_readiness.json",
         files_read,
     )
+    live_boundary_framework_summary = load_optional_json(
+        "live_boundary_no_go_framework/live_boundary_no_go_summary.json",
+        files_read,
+    )
+    live_boundary_capability_summary = load_optional_json(
+        "live_capability_domain_registry/live_capability_summary.json",
+        files_read,
+    )
+    live_boundary_invariant_summary = load_optional_json(
+        "no_go_invariant_matrix/no_go_invariant_summary.json",
+        files_read,
+    )
+    live_boundary_evidence_summary = load_optional_json(
+        "live_readiness_evidence_index/live_readiness_evidence_summary.json",
+        files_read,
+    )
+    live_boundary_blocker_summary = load_optional_json(
+        "live_blocker_risk_register/live_blocker_summary.json",
+        files_read,
+    )
+    live_boundary_l6_entry_summary = load_optional_json(
+        "l6_meta_development_entry_gate/l6_entry_gate_summary.json",
+        files_read,
+    )
+    live_boundary_decision_summary = load_optional_json(
+        "system_no_go_decision_packet/system_live_boundary_decision_summary.json",
+        files_read,
+    )
+    live_boundary_cieu_summary = load_optional_json(
+        "live_boundary_cieu_residual/live_boundary_cieu_summary.json",
+        files_read,
+    )
+    live_boundary_readiness_summary = load_optional_json(
+        "live_boundary_readiness/live_boundary_readiness.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -3941,6 +4152,17 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         real_release_simulation_safety_summary,
         real_release_simulation_cieu_summary,
         real_release_simulation_readiness_summary,
+    )
+    live_boundary_no_go_summary = build_live_boundary_no_go_summary(
+        live_boundary_framework_summary,
+        live_boundary_capability_summary,
+        live_boundary_invariant_summary,
+        live_boundary_evidence_summary,
+        live_boundary_blocker_summary,
+        live_boundary_l6_entry_summary,
+        live_boundary_decision_summary,
+        live_boundary_cieu_summary,
+        live_boundary_readiness_summary,
     )
 
     profiles = {
@@ -4104,6 +4326,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "controlled_approval_record_summary": controlled_approval_record_summary,
         "controlled_real_release_preflight_summary": controlled_real_release_preflight_summary,
         "real_release_simulation_summary": real_release_simulation_summary,
+        "live_boundary_no_go_summary": live_boundary_no_go_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -4335,6 +4558,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/approval_record_sandbox_summary.json",
             "console_read_model/generated/real_release_preflight_summary.json",
             "console_read_model/generated/real_release_simulation_summary.json",
+            "console_read_model/generated/live_boundary_no_go_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -4433,6 +4657,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "real release preflight. It confirms release candidate assembly, scope validation, approval-record preflight, snapshot/rollback checks, invariants, handoff, blocker decision, and CIEU-like residuals while real release, durable persistence, real approval, and canonical application remain blocked.\n\n"
         "`real_release_simulation_summary.json` is derived from the L5.12 real release\n"
         "simulation sandbox. It confirms sandbox authority, simulated approval record, sandbox snapshot, sandbox release execution, post-release validation, MCP preview, rollback drill, comparison, and CIEU-like residuals while real release, durable persistence, real approval, and canonical application remain blocked.\n\n"
+        "`live_boundary_no_go_summary.json` is derived from the L5.13 live boundary\n"
+        "no-go framework. It confirms live domains, no-go invariants, L5 evidence, blockers, L6 design-only entry, and system no-go decisions while live, external, revenue, persistence, MCP, release, and writeback execution remain blocked.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -4476,6 +4702,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/approval_record_sandbox_summary.json", controlled_approval_record_summary, generated_files)
     write_json("console_read_model/generated/real_release_preflight_summary.json", controlled_real_release_preflight_summary, generated_files)
     write_json("console_read_model/generated/real_release_simulation_summary.json", real_release_simulation_summary, generated_files)
+    write_json("console_read_model/generated/live_boundary_no_go_summary.json", live_boundary_no_go_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -4554,6 +4781,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     controlled_approval_record = snapshot.get("controlled_approval_record_summary", {})
     controlled_real_release_preflight = snapshot.get("controlled_real_release_preflight_summary", {})
     real_release_simulation = snapshot.get("real_release_simulation_summary", {})
+    live_boundary_no_go = snapshot.get("live_boundary_no_go_summary", {})
     lines.extend(
         [
             "",
@@ -5447,6 +5675,35 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- ready_for_l6_revenue_opportunity_discovery: {real_release_simulation.get('ready_for_l6_revenue_opportunity_discovery')}",
             f"- next_required_milestone: {real_release_simulation.get('next_required_milestone')}",
             f"- Warning: {real_release_simulation.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Live Boundary No-Go Framework",
+            "",
+            f"- l5_13_live_boundary_no_go_framework_defined: {live_boundary_no_go.get('l5_13_live_boundary_no_go_framework_defined')}",
+            f"- live_capability_domains_classified: {live_boundary_no_go.get('live_capability_domains_classified')}",
+            f"- no_go_invariants_defined: {live_boundary_no_go.get('no_go_invariants_defined')}",
+            f"- l5_0_to_l5_12_evidence_indexed: {live_boundary_no_go.get('l5_0_to_l5_12_evidence_indexed')}",
+            f"- live_blockers_identified: {live_boundary_no_go.get('live_blockers_identified')}",
+            f"- l6_design_entry_gate_generated: {live_boundary_no_go.get('l6_design_entry_gate_generated')}",
+            f"- l6_non_execution_boundary_defined: {live_boundary_no_go.get('l6_non_execution_boundary_defined')}",
+            f"- l6_forbidden_hardcoding_policy_defined: {live_boundary_no_go.get('l6_forbidden_hardcoding_policy_defined')}",
+            f"- system_no_go_decision_packet_generated: {live_boundary_no_go.get('system_no_go_decision_packet_generated')}",
+            f"- live_boundary_cieu_like_fixture_generated: {live_boundary_no_go.get('live_boundary_cieu_like_fixture_generated')}",
+            f"- live_execution_decision: {live_boundary_no_go.get('live_execution_decision')}",
+            f"- real_mcp_execution_decision: {live_boundary_no_go.get('real_mcp_execution_decision')}",
+            f"- real_canonical_update_decision: {live_boundary_no_go.get('real_canonical_update_decision')}",
+            f"- brain_memory_writeback_decision: {live_boundary_no_go.get('brain_memory_writeback_decision')}",
+            f"- durable_persistence_decision: {live_boundary_no_go.get('durable_persistence_decision')}",
+            f"- real_release_decision: {live_boundary_no_go.get('real_release_decision')}",
+            f"- l6_design_entry_decision: {live_boundary_no_go.get('l6_design_entry_decision')}",
+            f"- l6_execution_decision: {live_boundary_no_go.get('l6_execution_decision')}",
+            f"- ready_for_l6_meta_development_generative_engine_design: {live_boundary_no_go.get('ready_for_l6_meta_development_generative_engine_design')}",
+            f"- ready_for_l6_revenue_opportunity_execution: {live_boundary_no_go.get('ready_for_l6_revenue_opportunity_execution')}",
+            f"- next_required_milestone: {live_boundary_no_go.get('next_required_milestone')}",
+            f"- Warning: {live_boundary_no_go.get('warning')}",
         ]
     )
     lines.extend(

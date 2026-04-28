@@ -42,6 +42,7 @@
     "console_read_model/generated/approval_record_sandbox_summary.json",
     "console_read_model/generated/real_release_preflight_summary.json",
     "console_read_model/generated/real_release_simulation_summary.json",
+    "console_read_model/generated/live_boundary_no_go_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "source_files": [
@@ -180,6 +181,15 @@
     "original_release_rollback_comparison/sandbox_release_safety_summary.json",
     "release_simulation_cieu_residual/release_simulation_cieu_summary.json",
     "real_release_simulation_readiness/real_release_simulation_readiness.json",
+    "live_boundary_no_go_framework/live_boundary_no_go_summary.json",
+    "live_capability_domain_registry/live_capability_summary.json",
+    "no_go_invariant_matrix/no_go_invariant_summary.json",
+    "live_readiness_evidence_index/live_readiness_evidence_summary.json",
+    "live_blocker_risk_register/live_blocker_summary.json",
+    "l6_meta_development_entry_gate/l6_entry_gate_summary.json",
+    "system_no_go_decision_packet/system_live_boundary_decision_summary.json",
+    "live_boundary_cieu_residual/live_boundary_cieu_summary.json",
+    "live_boundary_readiness/live_boundary_readiness.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",

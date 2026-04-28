@@ -52,6 +52,7 @@ REAL_APPROVAL_WORKFLOW = "console_read_model/generated/real_approval_workflow_su
 APPROVAL_RECORD_SANDBOX = "console_read_model/generated/approval_record_sandbox_summary.json"
 REAL_RELEASE_PREFLIGHT = "console_read_model/generated/real_release_preflight_summary.json"
 REAL_RELEASE_SIMULATION = "console_read_model/generated/real_release_simulation_summary.json"
+LIVE_BOUNDARY_NO_GO = "console_read_model/generated/live_boundary_no_go_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -71,7 +72,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -141,6 +142,7 @@ def load_all() -> dict[str, Any]:
         "approval_record_sandbox": load_json(APPROVAL_RECORD_SANDBOX),
         "real_release_preflight": load_json(REAL_RELEASE_PREFLIGHT),
         "real_release_simulation": load_json(REAL_RELEASE_SIMULATION),
+        "live_boundary_no_go": load_json(LIVE_BOUNDARY_NO_GO),
     }
 
 
@@ -1650,6 +1652,77 @@ def cmd_release_simulation_sandbox(data: dict[str, Any]) -> None:
     print(f"warning: {release.get('warning')}")
 
 
+def cmd_live_boundary_no_go(data: dict[str, Any]) -> None:
+    boundary = data["live_boundary_no_go"]
+    print("# Live Boundary No-Go Framework")
+    print()
+    print(
+        "L5.13 live boundary no-go framework defined: "
+        f"{boundary.get('l5_13_live_boundary_no_go_framework_defined')}"
+    )
+    print(
+        "live capability domains classified: "
+        f"{boundary.get('live_capability_domains_classified')}"
+    )
+    print(f"no-go invariants defined: {boundary.get('no_go_invariants_defined')}")
+    print(
+        "L5.0-L5.12 evidence indexed: "
+        f"{boundary.get('l5_0_to_l5_12_evidence_indexed')}"
+    )
+    print(f"live blockers identified: {boundary.get('live_blockers_identified')}")
+    print(
+        "L6 design entry gate generated: "
+        f"{boundary.get('l6_design_entry_gate_generated')}"
+    )
+    print(
+        "L6 non-execution boundary defined: "
+        f"{boundary.get('l6_non_execution_boundary_defined')}"
+    )
+    print(
+        "L6 forbidden hardcoding policy defined: "
+        f"{boundary.get('l6_forbidden_hardcoding_policy_defined')}"
+    )
+    print(
+        "system no-go decision packet generated: "
+        f"{boundary.get('system_no_go_decision_packet_generated')}"
+    )
+    print(
+        "live boundary CIEU-like fixture generated: "
+        f"{boundary.get('live_boundary_cieu_like_fixture_generated')}"
+    )
+    print(f"live execution: {boundary.get('live_execution_decision')}")
+    print(f"real MCP execution: {boundary.get('real_mcp_execution_decision')}")
+    print(f"real canonical update: {boundary.get('real_canonical_update_decision')}")
+    print(f"brain/memory writeback: {boundary.get('brain_memory_writeback_decision')}")
+    print(f"durable persistence: {boundary.get('durable_persistence_decision')}")
+    print(f"real release: {boundary.get('real_release_decision')}")
+    print(f"L6 design entry: {boundary.get('l6_design_entry_decision')}")
+    print(f"L6 revenue execution: {boundary.get('l6_execution_decision')}")
+    print(f"live execution enabled: {boundary.get('live_execution_enabled')}")
+    print(f"external action enabled: {boundary.get('external_action_enabled')}")
+    print(f"network enabled: {boundary.get('network_enabled')}")
+    print(f"scheduler enabled: {boundary.get('scheduler_enabled')}")
+    print(f"daemon enabled: {boundary.get('daemon_enabled')}")
+    print(f"MCP server execution enabled: {boundary.get('mcp_server_execution_enabled')}")
+    print(f"MCP tool execution enabled: {boundary.get('mcp_tool_execution_enabled')}")
+    print(f"CIEU persistence enabled: {boundary.get('cieu_persistence_enabled')}")
+    print(
+        "durable approval persistence enabled: "
+        f"{boundary.get('durable_approval_persistence_enabled')}"
+    )
+    print(f"revenue execution enabled: {boundary.get('revenue_execution_enabled')}")
+    print(
+        "ready for L6 Meta-Development Generative Engine Design v0: "
+        f"{boundary.get('ready_for_l6_meta_development_generative_engine_design')}"
+    )
+    print(
+        "ready for L6 revenue opportunity execution: "
+        f"{boundary.get('ready_for_l6_revenue_opportunity_execution')}"
+    )
+    print(f"generated_readiness: {boundary.get('generated_readiness')}")
+    print(f"warning: {boundary.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -1962,6 +2035,19 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print(f"- {real_release_simulation.get('generated_comparison_summary')}")
         print(f"- {real_release_simulation.get('generated_cieu_summary')}")
         print(f"- {real_release_simulation.get('generated_readiness')}")
+    live_boundary_no_go = data.get("live_boundary_no_go", {})
+    if live_boundary_no_go:
+        print()
+        print("Live boundary no-go framework:")
+        print(f"- {live_boundary_no_go.get('generated_framework_summary')}")
+        print(f"- {live_boundary_no_go.get('generated_capability_summary')}")
+        print(f"- {live_boundary_no_go.get('generated_invariant_summary')}")
+        print(f"- {live_boundary_no_go.get('generated_evidence_summary')}")
+        print(f"- {live_boundary_no_go.get('generated_blocker_summary')}")
+        print(f"- {live_boundary_no_go.get('generated_l6_entry_summary')}")
+        print(f"- {live_boundary_no_go.get('generated_decision_summary')}")
+        print(f"- {live_boundary_no_go.get('generated_cieu_summary')}")
+        print(f"- {live_boundary_no_go.get('generated_readiness')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -2110,6 +2196,8 @@ def cmd_validate_local() -> int:
             )
         if "real_release_simulation_summary" not in snapshot:
             failures.append("real_release_simulation_summary missing from team console snapshot")
+        if "live_boundary_no_go_summary" not in snapshot:
+            failures.append("live_boundary_no_go_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -3577,6 +3665,8 @@ def main(argv: list[str]) -> int:
         cmd_real_release_preflight(data)
     elif command == "release-simulation-sandbox":
         cmd_release_simulation_sandbox(data)
+    elif command == "live-boundary-no-go":
+        cmd_live_boundary_no_go(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":
