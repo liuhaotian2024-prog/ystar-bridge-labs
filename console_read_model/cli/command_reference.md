@@ -89,6 +89,10 @@ python3 console_read_model/cli/team_console.py <command>
   summary: one manual tick request, preflight, source validation, governance
   decision, tick result, receipt, history index, disabled scheduler/live flags,
   and the L5.0 recommendation.
+- `field-functional`: Prints the generated field functional archaeology
+  summary: repositories/assets scanned, merge decision counts, mission
+  projection merge-plan status, disabled live/persistence flags, and the L5.1
+  recommendation.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

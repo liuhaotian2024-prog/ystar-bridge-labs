@@ -32,6 +32,7 @@
     "mission_dashboard_refresh_loop/generated/refresh_loop_readiness_summary.json",
     "recurring_observation_loop_contract/generated/recurring_loop_readiness_summary.json",
     "manual_recurring_observation_tick_runner/generated/manual_tick_runner_readiness_summary.json",
+    "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",
@@ -261,8 +262,8 @@
     "schema_version": "v0",
     "framework_status": "path_inventory_only",
     "current_mining_level": 0,
-    "artifacts_classified": 225,
-    "unsafe_artifacts_count": 176,
+    "artifacts_classified": 227,
+    "unsafe_artifacts_count": 177,
     "classes_seen": {
       "ACTIVE_AGENT_MARKER": 17,
       "BACKUP_DB": 1,
@@ -271,13 +272,13 @@
       "DAILY_REPORT": 6,
       "DB_CORE": 1,
       "DB_SIDECARE": 6,
-      "DREAM_REPORT": 36,
+      "DREAM_REPORT": 37,
       "DRIFT_REPORT": 4,
       "ESCALATION_REPORT": 23,
       "FRAMEWORK_FILE": 5,
       "LOG_RUNTIME": 31,
       "PYCACHE": 31,
-      "UNKNOWN_OR_NON_RUNTIME": 44,
+      "UNKNOWN_OR_NON_RUNTIME": 45,
       "UNKNOWN_RUNTIME_ARTIFACT": 10,
       "WHITELIST_REPORT": 1
     },
@@ -379,24 +380,24 @@
   "artifact_disposition_summary": {
     "schema_name": "ystar.console_read_model.generated.artifact_disposition_summary",
     "schema_version": "v0",
-    "total_artifacts": 225,
-    "artifacts_with_disposition": 225,
+    "total_artifacts": 227,
+    "artifacts_with_disposition": 227,
     "dispositions": {
       "deferred_requires_marker_metadata_adapter": 26,
       "deferred_sidecar_or_transaction_file": 6,
       "deferred_requires_classification": 10,
-      "ignored_or_non_runtime": 49,
+      "ignored_or_non_runtime": 50,
       "deferred_requires_readonly_db_adapter": 2,
       "deferred_requires_bounded_log_adapter": 31,
       "ignored_generated_cache": 31,
       "safe_mined_to_review_queue": 20,
-      "deferred_markdown_report_not_selected": 50
+      "deferred_markdown_report_not_selected": 51
     },
     "artifact_classes": {
       "DAEMON_STATE": 4,
       "DB_SIDECARE": 6,
       "UNKNOWN_RUNTIME_ARTIFACT": 10,
-      "UNKNOWN_OR_NON_RUNTIME": 44,
+      "UNKNOWN_OR_NON_RUNTIME": 45,
       "DB_CORE": 1,
       "FRAMEWORK_FILE": 5,
       "CACHE_SENTINEL": 5,
@@ -404,7 +405,7 @@
       "ACTIVE_AGENT_MARKER": 17,
       "PYCACHE": 31,
       "BACKUP_DB": 1,
-      "DREAM_REPORT": 36,
+      "DREAM_REPORT": 37,
       "DAILY_REPORT": 6,
       "DRIFT_REPORT": 4,
       "ESCALATION_REPORT": 23,
@@ -417,12 +418,12 @@
       "deferred_requires_classification": 10,
       "deferred_requires_readonly_db_adapter": 2,
       "deferred_requires_bounded_log_adapter": 31,
-      "deferred_markdown_report_not_selected": 50
+      "deferred_markdown_report_not_selected": 51
     },
     "ignored_generated_cache": 31,
     "forbidden_direct_read_count": 106,
     "evidence_scoring_status": {
-      "not_started": 225
+      "not_started": 227
     },
     "generated_disposition_index": "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
     "warning": "Disposition is not ingestion. No brain/memory/CIEU writes are allowed."
@@ -532,9 +533,9 @@
   "labs_acceptance_summary": {
     "schema_name": "ystar.console_read_model.generated.labs_acceptance_summary",
     "schema_version": "v0",
-    "accepted": false,
-    "checks_passed": 10,
-    "checks_total": 10,
+    "accepted": true,
+    "checks_passed": 12,
+    "checks_total": 12,
     "roles_covered": [
       "Aiden-CEO",
       "Ethan-CTO",
@@ -583,7 +584,7 @@
   "live_readiness_summary": {
     "schema_name": "ystar.console_read_model.generated.live_readiness_summary",
     "schema_version": "v0",
-    "dry_run_governance_ready": false,
+    "dry_run_governance_ready": true,
     "minimal_live_loop_ready": false,
     "minimal_live_loop_status": "blocked_until_required_gates_exist",
     "recommended_next_phase": "build_live_boundary_harness_not_runtime_execution",
@@ -726,8 +727,8 @@
     "absorption_buckets_defined": true,
     "bucket_counts": {
       "A_adopt_now_read_only": 1,
-      "B_wrap_as_governed_tool": 881,
-      "C_rewrite_from_design": 10,
+      "B_wrap_as_governed_tool": 880,
+      "C_rewrite_from_design": 11,
       "D_quarantine_as_evidence_ore": 8,
       "E_retire_do_not_use": 0
     },
@@ -1014,6 +1015,33 @@
     "generated_residual_delta": "manual_recurring_observation_tick_runner/generated/manual_tick_residual_delta.json",
     "warning": "Manual tick runner executes exactly one local dry-run tick and does not enable recurrence."
   },
+  "field_functional_summary": {
+    "schema_name": "ystar.console_read_model.generated.field_functional_summary",
+    "schema_version": "v0",
+    "field_functional_archaeology_defined": true,
+    "repos_scanned": 4,
+    "assets_scanned": 3989,
+    "field_functional_assets_found": 200,
+    "reuse_candidates_count": 20,
+    "wrap_candidates_count": 20,
+    "rewrite_candidates_count": 20,
+    "concept_reference_count": 120,
+    "do_not_absorb_count": 20,
+    "old_field_functional_work_found": true,
+    "mission_projection_merge_plan_defined": true,
+    "ready_for_L5_projection_harness": true,
+    "live_action_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "next_required_milestone": "L5.1 Mission Field Functional Projection Harness v0",
+    "generated_summary": "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
+    "generated_inventory": "field_functional_archaeology/generated/field_functional_asset_inventory.json",
+    "generated_merge_plan": "field_functional_archaeology/generated/mission_projection_merge_plan.json",
+    "warning": "Archaeology produces a merge plan only; no old code is executed or absorbed."
+  },
   "open_gaps": [
     "Static console loader exists; no frontend UI yet.",
     "No frontend UI.",
@@ -1047,7 +1075,8 @@
     "Agent-team work proposal routing feeds a manual dashboard refresh only; recurrence is not implemented yet.",
     "Mission dashboard refresh loop exists as manual local dry-run only; governed recurrence is not implemented yet.",
     "Recurring observation loop contract exists but recurrence, scheduler, daemon, and auto-run remain disabled.",
-    "Manual recurring observation tick runner exists for one-shot local ticks only; no scheduler, daemon, or recurrence is enabled."
+    "Manual recurring observation tick runner exists for one-shot local ticks only; no scheduler, daemon, or recurrence is enabled.",
+    "Field functional archaeology exists as a merge plan only; L5 projection harness is not implemented yet."
   ],
   "warnings": [
     "Ethan execution channels are present as reference-only boundaries, not runtime launchers."

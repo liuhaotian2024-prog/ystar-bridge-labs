@@ -32,7 +32,8 @@
     "agent-team work proposal to governed tool invocation summary",
     "mission dashboard refresh loop summary",
     "governed recurring observation loop contract summary",
-    "manual recurring observation tick runner summary"
+    "manual recurring observation tick runner summary",
+    "field functional archaeology and merge plan summary"
   ],
   "not_ready": [
     "runtime generator",
@@ -61,7 +62,8 @@
     "enabled live-boundary harness",
     "enabled CIEU runtime event persistence",
     "approved governed action registry",
-    "review-gated learning candidate queue"
+    "review-gated learning candidate queue",
+    "L5.1 mission field functional projection harness"
   ],
   "recommended_next_steps": [
     "wire static validator and loader into CI",
@@ -86,7 +88,8 @@
     "route the governed read-only observation tool through the Pre-U bridge",
     "build L4.6 agent team work proposal to governed tool invocation",
     "define L4.8 governed recurring observation loop contract",
-    "build L5.0 review-gated learning candidate queue"
+    "build L5.0 review-gated learning candidate queue",
+    "build L5.1 mission field functional projection harness from archaeology merge plan"
   ],
   "blockers": [
     "no DB-safe adapter",
@@ -105,7 +108,8 @@
     "legacy assets are triaged but not absorbed",
     "observation loop is read-only and not recurring",
     "recurring observation loop contract is defined but not enabled",
-    "review-gated learning candidate queue is not implemented yet"
+    "review-gated learning candidate queue is not implemented yet",
+    "mission field functional projection harness is not implemented yet"
   ],
   "safety_boundaries": [
     "no DB reads",
@@ -134,6 +138,7 @@
     "agent-team work proposal routing starts from generated observations and remains local read-only dry-run only",
     "mission dashboard refresh loop is manual local dry-run only and uses generated/read-model evidence only",
     "recurring observation loop contract simulates one manual local tick and does not enable recurrence",
-    "manual recurring observation tick runner executes one manual local tick only and does not enable recurrence"
+    "manual recurring observation tick runner executes one manual local tick only and does not enable recurrence",
+    "field functional archaeology is merge-plan-only and does not execute old code or absorb runtime assets"
   ]
 }

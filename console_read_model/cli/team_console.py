@@ -37,6 +37,7 @@ WORK_PROPOSAL = "console_read_model/generated/work_proposal_summary.json"
 DASHBOARD_REFRESH = "console_read_model/generated/dashboard_refresh_summary.json"
 RECURRING_LOOP = "console_read_model/generated/recurring_loop_summary.json"
 MANUAL_TICK = "console_read_model/generated/manual_tick_summary.json"
+FIELD_FUNCTIONAL = "console_read_model/generated/field_functional_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -56,7 +57,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -113,6 +114,7 @@ def load_all() -> dict[str, Any]:
         "dashboard_refresh": load_json(DASHBOARD_REFRESH),
         "recurring_loop": load_json(RECURRING_LOOP),
         "manual_tick": load_json(MANUAL_TICK),
+        "field_functional": load_json(FIELD_FUNCTIONAL),
     }
 
 
@@ -785,6 +787,32 @@ def cmd_manual_tick(data: dict[str, Any]) -> None:
     print(f"warning: {tick.get('warning')}")
 
 
+def cmd_field_functional(data: dict[str, Any]) -> None:
+    field = data["field_functional"]
+    print("# Field Functional Archaeology")
+    print()
+    print(f"field functional archaeology defined: {field.get('field_functional_archaeology_defined')}")
+    print(f"repos scanned: {field.get('repos_scanned')}")
+    print(f"assets scanned: {field.get('assets_scanned')}")
+    print(f"field functional assets found: {field.get('field_functional_assets_found')}")
+    print(f"reuse candidates: {field.get('reuse_candidates_count')}")
+    print(f"wrap candidates: {field.get('wrap_candidates_count')}")
+    print(f"rewrite candidates: {field.get('rewrite_candidates_count')}")
+    print(f"concept references: {field.get('concept_reference_count')}")
+    print(f"do-not-absorb candidates: {field.get('do_not_absorb_count')}")
+    print(f"mission projection merge plan defined: {field.get('mission_projection_merge_plan_defined')}")
+    print(f"ready for L5 projection harness: {field.get('ready_for_L5_projection_harness')}")
+    print(f"live action enabled: {field.get('live_action_enabled')}")
+    print(f"external action enabled: {field.get('external_action_enabled')}")
+    print(f"CIEU persistence enabled: {field.get('cieu_persistence_enabled')}")
+    print(f"brain writeback enabled: {field.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {field.get('memory_ingestion_enabled')}")
+    print(f"next required milestone: {field.get('next_required_milestone')}")
+    print(f"generated_summary: {field.get('generated_summary')}")
+    print(f"generated_merge_plan: {field.get('generated_merge_plan')}")
+    print(f"warning: {field.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -935,6 +963,13 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print(f"- {manual_tick.get('generated_contract')}")
         print(f"- {manual_tick.get('generated_result')}")
         print(f"- {manual_tick.get('generated_receipt')}")
+    field = data.get("field_functional", {})
+    if field:
+        print()
+        print("Field functional archaeology:")
+        print(f"- {field.get('generated_summary')}")
+        print(f"- {field.get('generated_inventory')}")
+        print(f"- {field.get('generated_merge_plan')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -985,6 +1020,7 @@ def cmd_validate_local() -> int:
         DASHBOARD_REFRESH,
         RECURRING_LOOP,
         MANUAL_TICK,
+        FIELD_FUNCTIONAL,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -1042,6 +1078,8 @@ def cmd_validate_local() -> int:
             failures.append("recurring_loop_summary missing from team console snapshot")
         if "manual_tick_summary" not in snapshot:
             failures.append("manual_tick_summary missing from team console snapshot")
+        if "field_functional_summary" not in snapshot:
+            failures.append("field_functional_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -1957,6 +1995,56 @@ def cmd_validate_local() -> int:
         if manual_tick.get("next_required_milestone") != "L5.0 Review-Gated Learning Candidate Queue v0":
             failures.append("manual tick summary must point to L5.0 review-gated learning milestone")
 
+    field_functional = loaded.get(FIELD_FUNCTIONAL)
+    if field_functional:
+        required_fields = [
+            "field_functional_archaeology_defined",
+            "repos_scanned",
+            "assets_scanned",
+            "field_functional_assets_found",
+            "reuse_candidates_count",
+            "wrap_candidates_count",
+            "rewrite_candidates_count",
+            "concept_reference_count",
+            "do_not_absorb_count",
+            "old_field_functional_work_found",
+            "mission_projection_merge_plan_defined",
+            "ready_for_L5_projection_harness",
+            "live_action_enabled",
+            "external_action_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "next_required_milestone",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in field_functional:
+                failures.append(f"field functional summary missing field: {field}")
+        for field in [
+            "field_functional_archaeology_defined",
+            "old_field_functional_work_found",
+            "mission_projection_merge_plan_defined",
+            "ready_for_L5_projection_harness",
+        ]:
+            if field_functional.get(field) is not True:
+                failures.append(f"field functional summary must keep {field}=true")
+        for field in [
+            "live_action_enabled",
+            "external_action_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+        ]:
+            if field_functional.get(field) is not False:
+                failures.append(f"field functional summary must keep {field}=false")
+        if field_functional.get("field_functional_assets_found", 0) <= 0:
+            failures.append("field functional summary must find at least one asset")
+        if field_functional.get("next_required_milestone") != (
+            "L5.1 Mission Field Functional Projection Harness v0"
+        ):
+            failures.append("field functional summary must point to L5.1 projection harness milestone")
+
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
     print(f"Required agents: {', '.join(REQUIRED_AGENTS)}")
@@ -2042,6 +2130,8 @@ def main(argv: list[str]) -> int:
         cmd_recurring_loop(data)
     elif command == "manual-tick":
         cmd_manual_tick(data)
+    elif command == "field-functional":
+        cmd_field_functional(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

@@ -1,0 +1,39 @@
+{
+  "schema_name": "ystar.field_functional_archaeology.field_functional_taxonomy",
+  "schema_version": "v0",
+  "concepts": [
+    "field_alignment",
+    "mission_field",
+    "role_field",
+    "observation_field",
+    "action_field",
+    "Y_star_projection",
+    "contract_projection",
+    "residual_feedback",
+    "CZL_alignment",
+    "scope_control",
+    "counterfactual_pre_u",
+    "learning_feedback"
+  ],
+  "architecture_layers": [
+    "deep_xt_observation",
+    "mission_level_y_star",
+    "milestone_y_star_projection",
+    "session_y_star_projection",
+    "task_y_star_projection",
+    "action_y_star_projection",
+    "pre_u_packet_generation",
+    "governance_validation",
+    "residual_delta_feedback",
+    "review_gated_learning",
+    "brain_memory_policy_update"
+  ],
+  "merge_decisions": [
+    "reuse_directly",
+    "wrap_before_reuse",
+    "rewrite_from_design",
+    "preserve_as_concept_reference",
+    "do_not_absorb"
+  ]
+}
+

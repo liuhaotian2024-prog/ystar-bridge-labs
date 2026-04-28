@@ -69,6 +69,7 @@ Ready now:
 - mission dashboard refresh loop summary
 - governed recurring observation loop contract summary
 - manual recurring observation tick runner summary
+- field functional archaeology and merge plan summary
 
 Not ready:
 - runtime generator
@@ -98,13 +99,14 @@ Not ready:
 - enabled CIEU runtime event persistence
 - approved governed action registry
 - review-gated learning candidate queue
+- L5.1 mission field functional projection harness
 
 ## Runtime Artifact Quarantine Summary
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 225
-- Unsafe artifacts count: 176
+- Artifacts classified: 227
+- Unsafe artifacts count: 177
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -113,13 +115,13 @@ Not ready:
   - DAILY_REPORT: 6
   - DB_CORE: 1
   - DB_SIDECARE: 6
-  - DREAM_REPORT: 36
+  - DREAM_REPORT: 37
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
   - FRAMEWORK_FILE: 5
   - LOG_RUNTIME: 31
   - PYCACHE: 31
-  - UNKNOWN_OR_NON_RUNTIME: 44
+  - UNKNOWN_OR_NON_RUNTIME: 45
   - UNKNOWN_RUNTIME_ARTIFACT: 10
   - WHITELIST_REPORT: 1
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
@@ -157,23 +159,23 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 225
-- Artifacts with disposition: 225
+- Total artifacts: 227
+- Artifacts with disposition: 227
 - Safe-mined to review queue: 20
 - Forbidden direct read count: 106
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
-  - deferred_markdown_report_not_selected: 50
+  - deferred_markdown_report_not_selected: 51
   - deferred_requires_bounded_log_adapter: 31
   - deferred_requires_classification: 10
   - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 31
-  - ignored_or_non_runtime: 49
+  - ignored_or_non_runtime: 50
   - safe_mined_to_review_queue: 20
 - Evidence scoring status:
-  - not_started: 225
+  - not_started: 227
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -229,9 +231,9 @@ Not ready:
 
 ## Labs Runtime Governance Acceptance
 
-- accepted: False
-- checks_passed: 10
-- checks_total: 10
+- accepted: True
+- checks_passed: 12
+- checks_total: 12
 - roles_covered: Aiden-CEO, Ethan-CTO, Samantha-Secretary
 - decision_counts:
   - allow: 3
@@ -263,7 +265,7 @@ Not ready:
 
 ## Labs Live Readiness
 
-- dry_run_governance_ready: False
+- dry_run_governance_ready: True
 - minimal_live_loop_ready: False
 - minimal_live_loop_status: blocked_until_required_gates_exist
 - recommended_next_phase: build_live_boundary_harness_not_runtime_execution
@@ -377,8 +379,8 @@ Not ready:
 - next_required_milestone: L4.4 First Governed Read-Only Observation Tool Wrapper v0
 - bucket_counts:
   - A_adopt_now_read_only: 1
-  - B_wrap_as_governed_tool: 881
-  - C_rewrite_from_design: 10
+  - B_wrap_as_governed_tool: 880
+  - C_rewrite_from_design: 11
   - D_quarantine_as_evidence_ore: 8
   - E_retire_do_not_use: 0
 - Warning: Triage is classification only; no asset is absorbed or enabled.
@@ -550,6 +552,27 @@ Not ready:
 - next_required_milestone: L5.0 Review-Gated Learning Candidate Queue v0
 - Warning: Manual tick runner executes exactly one local dry-run tick and does not enable recurrence.
 
+## Field Functional Archaeology
+
+- field_functional_archaeology_defined: True
+- repos_scanned: 4
+- assets_scanned: 3989
+- field_functional_assets_found: 200
+- reuse_candidates_count: 20
+- wrap_candidates_count: 20
+- rewrite_candidates_count: 20
+- concept_reference_count: 120
+- do_not_absorb_count: 20
+- mission_projection_merge_plan_defined: True
+- ready_for_L5_projection_harness: True
+- live_action_enabled: False
+- external_action_enabled: False
+- cieu_persistence_enabled: False
+- brain_writeback_enabled: False
+- memory_ingestion_enabled: False
+- next_required_milestone: L5.1 Mission Field Functional Projection Harness v0
+- Warning: Archaeology produces a merge plan only; no old code is executed or absorbed.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -583,6 +606,7 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - build L4.6 agent team work proposal to governed tool invocation
 - define L4.8 governed recurring observation loop contract
 - build L5.0 review-gated learning candidate queue
+- build L5.1 mission field functional projection harness from archaeology merge plan
 
 ## Warnings / Gaps
 
@@ -620,3 +644,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Mission dashboard refresh loop exists as manual local dry-run only; governed recurrence is not implemented yet.
 - Recurring observation loop contract exists but recurrence, scheduler, daemon, and auto-run remain disabled.
 - Manual recurring observation tick runner exists for one-shot local ticks only; no scheduler, daemon, or recurrence is enabled.
+- Field functional archaeology exists as a merge plan only; L5 projection harness is not implemented yet.

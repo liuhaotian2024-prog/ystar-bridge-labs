@@ -1,0 +1,14 @@
+{
+  "schema_name": "ystar.field_functional_archaeology.projection_concept_schema",
+  "schema_version": "v0",
+  "required_fields": [
+    "concept_id",
+    "discovered_terms",
+    "source_assets",
+    "current_status",
+    "should_merge_into_L5",
+    "merge_notes"
+  ],
+  "notes": "Concept map entries are archaeology summaries, not runtime projection implementation."
+}
+

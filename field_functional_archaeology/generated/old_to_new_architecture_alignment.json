@@ -1,0 +1,1039 @@
+{
+  "schema_name": "ystar.field_functional_archaeology.old_to_new_architecture_alignment",
+  "schema_version": "v0",
+  "chain": [
+    "deep Xt observation",
+    "mission Y*",
+    "milestone/session/task/action Y*",
+    "Pre-U packet",
+    "Y-star-gov decision",
+    "governed tool/action",
+    "CIEU event",
+    "residual delta",
+    "review-gated learning candidate",
+    "brain/memory/policy update candidate"
+  ],
+  "mappings": [
+    {
+      "old_asset_or_concept": "field_alignment",
+      "new_layer": "mission_level_y_star",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "mission Y* contract",
+        "founder mission binding"
+      ],
+      "recommended_merge_action": "preserve_as_concept_reference"
+    },
+    {
+      "old_asset_or_concept": "field_alignment",
+      "new_layer": "task_y_star_projection",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "task-level Y* contract",
+        "acceptance criteria projection"
+      ],
+      "recommended_merge_action": "preserve_as_concept_reference"
+    },
+    {
+      "old_asset_or_concept": "mission_field",
+      "new_layer": "mission_level_y_star",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "mission Y* contract",
+        "founder mission binding"
+      ],
+      "recommended_merge_action": "preserve_as_concept_reference"
+    },
+    {
+      "old_asset_or_concept": "role_field",
+      "new_layer": "session_y_star_projection",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "session scope projection",
+        "role review linkage"
+      ],
+      "recommended_merge_action": "preserve_as_concept_reference"
+    },
+    {
+      "old_asset_or_concept": "role_field",
+      "new_layer": "task_y_star_projection",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "task-level Y* contract",
+        "acceptance criteria projection"
+      ],
+      "recommended_merge_action": "preserve_as_concept_reference"
+    },
+    {
+      "old_asset_or_concept": "observation_field",
+      "new_layer": "deep_xt_observation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "bounded source registry",
+        "deep observation digest schema"
+      ],
+      "recommended_merge_action": "preserve_as_concept_reference"
+    },
+    {
+      "old_asset_or_concept": "action_field",
+      "new_layer": "action_y_star_projection",
+      "alignment_strength": "weak",
+      "missing_parts": [
+        "action Y* contract",
+        "governed action wrapper"
+      ],
+      "recommended_merge_action": "preserve_as_concept_reference"
+    },
+    {
+      "old_asset_or_concept": "Y_star_projection",
+      "new_layer": "mission_level_y_star",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "mission Y* contract",
+        "founder mission binding"
+      ],
+      "recommended_merge_action": "preserve_as_concept_reference"
+    },
+    {
+      "old_asset_or_concept": "Y_star_projection",
+      "new_layer": "milestone_y_star_projection",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "milestone projection schema",
+        "projection trace"
+      ],
+      "recommended_merge_action": "preserve_as_concept_reference"
+    },
+    {
+      "old_asset_or_concept": "Y_star_projection",
+      "new_layer": "session_y_star_projection",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "session scope projection",
+        "role review linkage"
+      ],
+      "recommended_merge_action": "preserve_as_concept_reference"
+    },
+    {
+      "old_asset_or_concept": "Y_star_projection",
+      "new_layer": "task_y_star_projection",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "task-level Y* contract",
+        "acceptance criteria projection"
+      ],
+      "recommended_merge_action": "preserve_as_concept_reference"
+    },
+    {
+      "old_asset_or_concept": "Y_star_projection",
+      "new_layer": "action_y_star_projection",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "action Y* contract",
+        "governed action wrapper"
+      ],
+      "recommended_merge_action": "preserve_as_concept_reference"
+    },
+    {
+      "old_asset_or_concept": "contract_projection",
+      "new_layer": "task_y_star_projection",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "task-level Y* contract",
+        "acceptance criteria projection"
+      ],
+      "recommended_merge_action": "preserve_as_concept_reference"
+    },
+    {
+      "old_asset_or_concept": "contract_projection",
+      "new_layer": "action_y_star_projection",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "action Y* contract",
+        "governed action wrapper"
+      ],
+      "recommended_merge_action": "preserve_as_concept_reference"
+    },
+    {
+      "old_asset_or_concept": "residual_feedback",
+      "new_layer": "residual_delta_feedback",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection residual schema",
+        "CIEU-compatible dry-run event"
+      ],
+      "recommended_merge_action": "preserve_as_concept_reference"
+    },
+    {
+      "old_asset_or_concept": "CZL_alignment",
+      "new_layer": "pre_u_packet_generation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection-to-Pre-U adapter",
+        "candidate_U rationale"
+      ],
+      "recommended_merge_action": "preserve_as_concept_reference"
+    },
+    {
+      "old_asset_or_concept": "CZL_alignment",
+      "new_layer": "residual_delta_feedback",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection residual schema",
+        "CIEU-compatible dry-run event"
+      ],
+      "recommended_merge_action": "preserve_as_concept_reference"
+    },
+    {
+      "old_asset_or_concept": "scope_control",
+      "new_layer": "governance_validation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "preserve_as_concept_reference"
+    },
+    {
+      "old_asset_or_concept": "counterfactual_pre_u",
+      "new_layer": "pre_u_packet_generation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection-to-Pre-U adapter",
+        "candidate_U rationale"
+      ],
+      "recommended_merge_action": "preserve_as_concept_reference"
+    },
+    {
+      "old_asset_or_concept": "learning_feedback",
+      "new_layer": "review_gated_learning",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "learning candidate queue",
+        "review decision policy"
+      ],
+      "recommended_merge_action": "rewrite_from_design"
+    },
+    {
+      "old_asset_or_concept": "learning_feedback",
+      "new_layer": "brain_memory_policy_update",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "operator approval gate",
+        "future writeback policy"
+      ],
+      "recommended_merge_action": "rewrite_from_design"
+    },
+    {
+      "old_asset_or_concept": "ffa-0001",
+      "new_layer": "mission_level_y_star",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "mission Y* contract",
+        "founder mission binding"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0001",
+      "new_layer": "milestone_y_star_projection",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "milestone projection schema",
+        "projection trace"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0001",
+      "new_layer": "task_y_star_projection",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "task-level Y* contract",
+        "acceptance criteria projection"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0001",
+      "new_layer": "brain_memory_policy_update",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "operator approval gate",
+        "future writeback policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0002",
+      "new_layer": "pre_u_packet_generation",
+      "alignment_strength": "medium",
+      "missing_parts": [
+        "projection-to-Pre-U adapter",
+        "candidate_U rationale"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0002",
+      "new_layer": "governance_validation",
+      "alignment_strength": "medium",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0003",
+      "new_layer": "deep_xt_observation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "bounded source registry",
+        "deep observation digest schema"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0003",
+      "new_layer": "task_y_star_projection",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "task-level Y* contract",
+        "acceptance criteria projection"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0003",
+      "new_layer": "pre_u_packet_generation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection-to-Pre-U adapter",
+        "candidate_U rationale"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0003",
+      "new_layer": "governance_validation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0003",
+      "new_layer": "residual_delta_feedback",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection residual schema",
+        "CIEU-compatible dry-run event"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0004",
+      "new_layer": "pre_u_packet_generation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection-to-Pre-U adapter",
+        "candidate_U rationale"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0004",
+      "new_layer": "governance_validation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0004",
+      "new_layer": "residual_delta_feedback",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection residual schema",
+        "CIEU-compatible dry-run event"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0004",
+      "new_layer": "review_gated_learning",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "learning candidate queue",
+        "review decision policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0004",
+      "new_layer": "brain_memory_policy_update",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "operator approval gate",
+        "future writeback policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0005",
+      "new_layer": "session_y_star_projection",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "session scope projection",
+        "role review linkage"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0005",
+      "new_layer": "task_y_star_projection",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "task-level Y* contract",
+        "acceptance criteria projection"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0005",
+      "new_layer": "pre_u_packet_generation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection-to-Pre-U adapter",
+        "candidate_U rationale"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0005",
+      "new_layer": "governance_validation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0006",
+      "new_layer": "mission_level_y_star",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "mission Y* contract",
+        "founder mission binding"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0006",
+      "new_layer": "pre_u_packet_generation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection-to-Pre-U adapter",
+        "candidate_U rationale"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0006",
+      "new_layer": "governance_validation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0006",
+      "new_layer": "residual_delta_feedback",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection residual schema",
+        "CIEU-compatible dry-run event"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0007",
+      "new_layer": "pre_u_packet_generation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection-to-Pre-U adapter",
+        "candidate_U rationale"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0007",
+      "new_layer": "governance_validation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0007",
+      "new_layer": "brain_memory_policy_update",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "operator approval gate",
+        "future writeback policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0008",
+      "new_layer": "mission_level_y_star",
+      "alignment_strength": "medium",
+      "missing_parts": [
+        "mission Y* contract",
+        "founder mission binding"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0008",
+      "new_layer": "governance_validation",
+      "alignment_strength": "medium",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0009",
+      "new_layer": "mission_level_y_star",
+      "alignment_strength": "medium",
+      "missing_parts": [
+        "mission Y* contract",
+        "founder mission binding"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0009",
+      "new_layer": "governance_validation",
+      "alignment_strength": "medium",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0010",
+      "new_layer": "pre_u_packet_generation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection-to-Pre-U adapter",
+        "candidate_U rationale"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0010",
+      "new_layer": "governance_validation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0010",
+      "new_layer": "residual_delta_feedback",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection residual schema",
+        "CIEU-compatible dry-run event"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0010",
+      "new_layer": "brain_memory_policy_update",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "operator approval gate",
+        "future writeback policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0011",
+      "new_layer": "session_y_star_projection",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "session scope projection",
+        "role review linkage"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0011",
+      "new_layer": "pre_u_packet_generation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection-to-Pre-U adapter",
+        "candidate_U rationale"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0011",
+      "new_layer": "governance_validation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0011",
+      "new_layer": "review_gated_learning",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "learning candidate queue",
+        "review decision policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0011",
+      "new_layer": "brain_memory_policy_update",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "operator approval gate",
+        "future writeback policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0012",
+      "new_layer": "pre_u_packet_generation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection-to-Pre-U adapter",
+        "candidate_U rationale"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0012",
+      "new_layer": "governance_validation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0012",
+      "new_layer": "residual_delta_feedback",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection residual schema",
+        "CIEU-compatible dry-run event"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0012",
+      "new_layer": "review_gated_learning",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "learning candidate queue",
+        "review decision policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0012",
+      "new_layer": "brain_memory_policy_update",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "operator approval gate",
+        "future writeback policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0013",
+      "new_layer": "mission_level_y_star",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "mission Y* contract",
+        "founder mission binding"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0013",
+      "new_layer": "governance_validation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0013",
+      "new_layer": "review_gated_learning",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "learning candidate queue",
+        "review decision policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0013",
+      "new_layer": "brain_memory_policy_update",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "operator approval gate",
+        "future writeback policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0014",
+      "new_layer": "mission_level_y_star",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "mission Y* contract",
+        "founder mission binding"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0014",
+      "new_layer": "pre_u_packet_generation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection-to-Pre-U adapter",
+        "candidate_U rationale"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0014",
+      "new_layer": "governance_validation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0014",
+      "new_layer": "brain_memory_policy_update",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "operator approval gate",
+        "future writeback policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0015",
+      "new_layer": "pre_u_packet_generation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection-to-Pre-U adapter",
+        "candidate_U rationale"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0015",
+      "new_layer": "governance_validation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0015",
+      "new_layer": "review_gated_learning",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "learning candidate queue",
+        "review decision policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0015",
+      "new_layer": "brain_memory_policy_update",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "operator approval gate",
+        "future writeback policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0016",
+      "new_layer": "session_y_star_projection",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "session scope projection",
+        "role review linkage"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0016",
+      "new_layer": "pre_u_packet_generation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection-to-Pre-U adapter",
+        "candidate_U rationale"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0016",
+      "new_layer": "governance_validation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0016",
+      "new_layer": "review_gated_learning",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "learning candidate queue",
+        "review decision policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0016",
+      "new_layer": "brain_memory_policy_update",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "operator approval gate",
+        "future writeback policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0017",
+      "new_layer": "mission_level_y_star",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "mission Y* contract",
+        "founder mission binding"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0017",
+      "new_layer": "task_y_star_projection",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "task-level Y* contract",
+        "acceptance criteria projection"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0017",
+      "new_layer": "pre_u_packet_generation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection-to-Pre-U adapter",
+        "candidate_U rationale"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0017",
+      "new_layer": "governance_validation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0017",
+      "new_layer": "residual_delta_feedback",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection residual schema",
+        "CIEU-compatible dry-run event"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0017",
+      "new_layer": "brain_memory_policy_update",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "operator approval gate",
+        "future writeback policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0018",
+      "new_layer": "mission_level_y_star",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "mission Y* contract",
+        "founder mission binding"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0018",
+      "new_layer": "task_y_star_projection",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "task-level Y* contract",
+        "acceptance criteria projection"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0018",
+      "new_layer": "pre_u_packet_generation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection-to-Pre-U adapter",
+        "candidate_U rationale"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0018",
+      "new_layer": "governance_validation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0018",
+      "new_layer": "residual_delta_feedback",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "projection residual schema",
+        "CIEU-compatible dry-run event"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0018",
+      "new_layer": "review_gated_learning",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "learning candidate queue",
+        "review decision policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0018",
+      "new_layer": "brain_memory_policy_update",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "operator approval gate",
+        "future writeback policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0019",
+      "new_layer": "mission_level_y_star",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "mission Y* contract",
+        "founder mission binding"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0019",
+      "new_layer": "governance_validation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0019",
+      "new_layer": "brain_memory_policy_update",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "operator approval gate",
+        "future writeback policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0020",
+      "new_layer": "mission_level_y_star",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "mission Y* contract",
+        "founder mission binding"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0020",
+      "new_layer": "governance_validation",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "local dry-run validation harness",
+        "Y-star-gov handoff contract"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    },
+    {
+      "old_asset_or_concept": "ffa-0020",
+      "new_layer": "brain_memory_policy_update",
+      "alignment_strength": "strong",
+      "missing_parts": [
+        "operator approval gate",
+        "future writeback policy"
+      ],
+      "recommended_merge_action": "reuse_directly"
+    }
+  ],
+  "live_enabled": false
+}

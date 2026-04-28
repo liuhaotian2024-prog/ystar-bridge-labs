@@ -72,5 +72,8 @@ loop contract outputs. It confirms recurrence is defined but disabled and only o
 `manual_tick_summary.json` is derived from generated manual recurring
 observation tick runner outputs. It confirms one manual local tick ran with a receipt while scheduler, daemon, and recurrence stay disabled.
 
+`field_functional_summary.json` is derived from generated field
+functional archaeology outputs. It confirms old field-functional work was searched and mapped into a merge plan without executing old code.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

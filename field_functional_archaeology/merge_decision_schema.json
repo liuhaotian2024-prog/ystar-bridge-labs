@@ -1,0 +1,20 @@
+{
+  "schema_name": "ystar.field_functional_archaeology.merge_decision_schema",
+  "schema_version": "v0",
+  "required_fields": [
+    "asset_id",
+    "asset_kind",
+    "current_architecture_mapping",
+    "mission_value_score",
+    "evidence_strength_score",
+    "implementation_readiness_score",
+    "architecture_alignment_score",
+    "safety_risk_score",
+    "merge_decision",
+    "reason",
+    "live_enabled"
+  ],
+  "score_range": [0, 5],
+  "live_enabled_required": false
+}
+

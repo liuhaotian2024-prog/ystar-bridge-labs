@@ -1,0 +1,600 @@
+{
+  "schema_name": "ystar.field_functional_archaeology.rewrite_candidates",
+  "schema_version": "v0",
+  "candidate_count": 20,
+  "candidates": [
+    {
+      "asset_id": "ffa-0041",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/y_star_field_validator_run.py",
+      "file_type": "py",
+      "matched_terms": [
+        "y_star",
+        "ystar",
+        "Y_star",
+        "YStar",
+        "y_star_field",
+        "Y_STAR_FIELD",
+        "m_functor",
+        "M_FUNCTOR"
+      ],
+      "bounded_snippet": "events and emit a WAVE2_STEP1_VALIDATOR_LANDED summary event. Usage: python3 scripts/y_star_field_validator_run.py [--since \"1 hour ago\"] [--db-path .ystar_cieu[database-suffix]] [--json] \"\"\" import argparse import json import sys import...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "mission_level_y_star",
+        "task_y_star_projection",
+        "governance_validation"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 4,
+      "implementation_readiness_score": 1,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 4,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Runtime-adjacent implementation is conceptually valuable but unsafe to absorb directly.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0042",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/field_coverage_dashboard.py",
+      "file_type": "py",
+      "matched_terms": [
+        "field functional",
+        "ystar",
+        "YStar",
+        "m_functor",
+        "M_FUNCTOR"
+      ],
+      "bounded_snippet": "#!/usr/bin/env python3 \"\"\" Y* Field Functional Coverage Dashboard --------------------------------------- One-shot CLI that prints m_functor coverage statistics from the CIEU database. Usage: pyt",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "deep_xt_observation"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 3,
+      "implementation_readiness_score": 1,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 4,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Runtime-adjacent implementation is conceptually valuable but unsafe to absorb directly.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0043",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/hook_session_start.py",
+      "file_type": "py",
+      "matched_terms": [
+        "自主",
+        "mission field",
+        "CZL",
+        "role alignment",
+        "y_star",
+        "ystar",
+        "Y_star",
+        "YStar",
+        "y_star_field",
+        "Y_STAR_FIELD",
+        "m_functor",
+        "M_FUNCTOR",
+        "goal_tree",
+        "scope"
+      ],
+      "bounded_snippet": "- which Claude Code prepends to the LLM's first context frame. Agent ID resolution: 1. YSTAR_AGENT_ID env var (set by shell) 2. `.ystar_active_agent` marker file in repo root 3. default 'ceo' Fail-open: any error returns a minimal notice...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "mission_level_y_star",
+        "session_y_star_projection",
+        "task_y_star_projection",
+        "governance_validation",
+        "brain_memory_policy_update"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 4,
+      "implementation_readiness_score": 1,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 5,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Runtime-adjacent implementation is conceptually valuable but unsafe to absorb directly.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0044",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/phase2_role_scope_seed.py",
+      "file_type": "py",
+      "matched_terms": [
+        "场",
+        "role alignment",
+        "ystar",
+        "YStar",
+        "role_scope",
+        "scope",
+        "contract"
+      ],
+      "bounded_snippet": "#!/usr/bin/env python3 \"\"\" Phase 2 Role Scope Seed — populate ystar_role_scope table. Board 2026-04-23 directive: field-functional role-scope alignment. Each role has scope_keywords (in-scope lexemes) and anti",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "session_y_star_projection",
+        "governance_validation"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 4,
+      "implementation_readiness_score": 1,
+      "architecture_alignment_score": 3,
+      "safety_risk_score": 5,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Runtime-adjacent implementation is conceptually valuable but unsafe to absorb directly.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0045",
+      "repo_name": "Y-star-gov",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "relative_path": "docs/examples/hook_cli_contract/input_allow_envelope.json",
+      "file_type": "json",
+      "matched_terms": [
+        "y_star",
+        "Y_star",
+        "m_functor",
+        "M_FUNCTOR",
+        "scope",
+        "contract"
+      ],
+      "bounded_snippet": "\"Example-Agent\", \"packet_id\": \"compat-preu-allow\", \"risk_tier\": \"normal\", \"declared_Y_star\": { \"summary\": \"Allow a generic compatible dry-run envelope\" }, \"Xt\": { \"summary\": \"External system produced a compatible envelope\" }, \"m_functor\":",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "mission_level_y_star",
+        "pre_u_packet_generation",
+        "governance_validation",
+        "residual_delta_feedback",
+        "review_gated_learning"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 5,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 3,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0046",
+      "repo_name": "Y-star-gov",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "relative_path": "docs/examples/hook_cli_contract/input_escalate_envelope.json",
+      "file_type": "json",
+      "matched_terms": [
+        "y_star",
+        "Y_star",
+        "m_functor",
+        "M_FUNCTOR",
+        "scope",
+        "contract"
+      ],
+      "bounded_snippet": "d\": \"Example-Agent\", \"packet_id\": \"compat-preu-escalate\", \"risk_tier\": 3, \"declared_Y_star\": { \"summary\": \"Escalate a high-risk generic envelope\" }, \"Xt\": { \"summary\": \"External compatible envelope marks high risk\" }, \"m_functor\": { \"",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "mission_level_y_star",
+        "pre_u_packet_generation",
+        "governance_validation",
+        "residual_delta_feedback",
+        "review_gated_learning"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 5,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 3,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0047",
+      "repo_name": "Y-star-gov",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "relative_path": "docs/examples/hook_cli_contract/input_require_revision_envelope.json",
+      "file_type": "json",
+      "matched_terms": [
+        "y_star",
+        "Y_star",
+        "m_functor",
+        "M_FUNCTOR",
+        "scope",
+        "contract"
+      ],
+      "bounded_snippet": "tier\": \"normal\", \"Xt\": { \"summary\": \"External envelope intentionally omits declared_Y_star\" }, \"m_functor\": { \"summary\": \"Generic incomplete envelope\" }, \"candidate_U\": [ { \"id\": \"u1\", \"action_type\": \"generic_safe_update\",",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "mission_level_y_star",
+        "pre_u_packet_generation",
+        "governance_validation",
+        "residual_delta_feedback",
+        "review_gated_learning"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 5,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 3,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0048",
+      "repo_name": "Y-star-gov",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "relative_path": "examples/external_adapter_sdk/sample_external_request.json",
+      "file_type": "json",
+      "matched_terms": [
+        "y_star",
+        "Y_star",
+        "m_functor",
+        "M_FUNCTOR",
+        "scope"
+      ],
+      "bounded_snippet": "idual reduced\" }, \"risk_tier\": \"normal\", \"governance_expectations\": { \"requires_y_star_validation\": true, \"requires_m_functor_validation\": true, \"requires_scope_validation\": true, \"requires_high_risk_review\": false }, \"cieu_link_polic",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "mission_level_y_star",
+        "governance_validation",
+        "residual_delta_feedback",
+        "review_gated_learning"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 4,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 3,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0049",
+      "repo_name": "Y-star-gov",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "relative_path": "docs/pre_u_packet_validator/interface_index.json",
+      "file_type": "json",
+      "matched_terms": [
+        "ystar",
+        "YStar",
+        "m_functor",
+        "M_FUNCTOR",
+        "pre_u",
+        "pre-U",
+        "counterfactual",
+        "contract"
+      ],
+      "bounded_snippet": "{ \"schema_name\": \"ystar.gov.pre_u_packet_validator.interface_index\", \"schema_version\": \"v0\", \"interface_name\": \"Pre-U Counterfactual Packet Validator Interface\", \"interface_status\":",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "task_y_star_projection",
+        "pre_u_packet_generation",
+        "governance_validation",
+        "residual_delta_feedback",
+        "review_gated_learning",
+        "brain_memory_policy_update"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 5,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 4,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0050",
+      "repo_name": "Y-star-gov",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "relative_path": "examples/external_adapter_sdk/sample_normalized_envelope.json",
+      "file_type": "json",
+      "matched_terms": [
+        "y_star",
+        "Y_star",
+        "m_functor",
+        "M_FUNCTOR",
+        "scope"
+      ],
+      "bounded_snippet": "r://generic-agent\", \"task_id\": \"example-action-1\", \"risk_tier\": \"normal\", \"declared_Y_star\": { \"summary\": \"Validate a generic external adapter request\" }, \"Xt\": { \"summary\": \"An external system wants a governance dry-run before a safe ac...",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "mission_level_y_star",
+        "task_y_star_projection",
+        "pre_u_packet_generation",
+        "governance_validation",
+        "residual_delta_feedback",
+        "review_gated_learning"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 4,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 4,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0051",
+      "repo_name": "Y-star-gov",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "relative_path": "ystar/governance/hook_contract_adapter.py",
+      "file_type": "py",
+      "matched_terms": [
+        "y_star",
+        "ystar",
+        "Y_star",
+        "YStar",
+        "m_functor",
+        "M_FUNCTOR",
+        "pre_u",
+        "pre-U",
+        "contract"
+      ],
+      "bounded_snippet": "\"\"\"Deterministic dry-run adapter for future hook contract envelopes. This module models the future hook boundary without connecting to a real hook. It normalizes a hook-like envelope into a Pre-U packet, runs the local",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "mission_level_y_star",
+        "task_y_star_projection",
+        "pre_u_packet_generation",
+        "governance_validation",
+        "residual_delta_feedback",
+        "brain_memory_policy_update"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 4,
+      "implementation_readiness_score": 1,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 4,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Runtime-adjacent implementation is conceptually valuable but unsafe to absorb directly.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0052",
+      "repo_name": "Y-star-gov",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "relative_path": "docs/examples/hook_cli_contract/input_deny_envelope.json",
+      "file_type": "json",
+      "matched_terms": [
+        "y_star",
+        "Y_star",
+        "m_functor",
+        "M_FUNCTOR",
+        "residual_delta",
+        "scope",
+        "contract"
+      ],
+      "bounded_snippet": "\"Example-Agent\", \"packet_id\": \"compat-preu-deny\", \"risk_tier\": \"normal\", \"declared_Y_star\": { \"summary\": \"Deny unsafe uncurated writeback in a generic envelope\" }, \"Xt\": { \"summary\": \"External compatible envelope with unsafe mock outcome\"",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "mission_level_y_star",
+        "pre_u_packet_generation",
+        "governance_validation",
+        "residual_delta_feedback",
+        "review_gated_learning",
+        "brain_memory_policy_update"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 5,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 5,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0053",
+      "repo_name": "Y-star-gov",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "relative_path": "examples/external_adapter_sdk/sample_adapter_config.json",
+      "file_type": "json",
+      "matched_terms": [
+        "m_functor",
+        "M_FUNCTOR",
+        "scope"
+      ],
+      "bounded_snippet": "\"external-adapter\", \"default_agent_capsule_ref\": \"external-adapter://generic-agent\", \"m_functor_template\": { \"summary\": \"External request remains inside declared objective and governance scope\" }, \"packet_status\": \"ready_for_validation\" }",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "governance_validation"
+      ],
+      "mission_value_score": 4,
+      "evidence_strength_score": 4,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 1,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0054",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "reports/governance/mutation_test_results.json",
+      "file_type": "json",
+      "matched_terms": [
+        "ystar",
+        "YStar",
+        "scope"
+      ],
+      "bounded_snippet": "\"2026-04-22T19:21:21.550528+00:00\", \"yaml_file\": \"/Users/haotianliu/.openclaw/workspace/ystar-company/governance/forget_guard_rules.yaml\", \"pre_hash\": \"e8b1417b453948a3e9c5fc46b1c90c87b508a24b63735d58e614f477e6370376\", \"post_hash\": \"e8b1...",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "governance_validation"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 4,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 0,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0055",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "knowledge/ceo/wisdom/.ystar_coverage.json",
+      "file_type": "json",
+      "matched_terms": [
+        "ystar",
+        "YStar"
+      ],
+      "bounded_snippet": "\"hook_covered\": true, \"cieu_seen_agents\": [ \"-Users-haotianliu--openclaw-workspace-ystar-company\", \"governance\", \"orchestrator\" ], \"initial_coverage_rate\": 0.0, \"scanned_at\": 1776448662.389749, \"schema_version\": 1 }",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "governance_validation"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 3,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 1,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0056",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "knowledge/engineer_trust_scores.json",
+      "file_type": "json",
+      "matched_terms": [
+        "CZL"
+      ],
+      "bounded_snippet": "ed\": \"4/4\", \"methodology_complete\": true, \"notes\": \"Gauntlet PASS 2026-04-16 (CZL-125). Methodology v1 shipped 1247 words. Trust normalized to 30 (training-wheels per #72 ladder, CZL-135 fix backfill of CZL-125 inconsistency vs CZL-130 e...",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "governance_validation"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 3,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 1,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0057",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "knowledge/cto/shield_feasibility_2026_04_10.json",
+      "file_type": "json",
+      "matched_terms": [
+        "ystar",
+        "YStar",
+        "scope"
+      ],
+      "bounded_snippet": "p\": 1775909558.918587, \"agent\": \"Ethan-CTO\", \"domain\": \"market_research\", \"topic\": \"ystar-shield feasibility\", \"learned\": { \"competitive_landscape\": { \"rebuff_archived\": \"May 2025 (Protect AI acquired by Palo Alto Networks)\", \"lakera_ac",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "brain_memory_policy_update"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 4,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 2,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0058",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "knowledge/cto/active_task.json",
+      "file_type": "json",
+      "matched_terms": [
+        "ystar",
+        "YStar"
+      ],
+      "bounded_snippet": "{ \"task_id\": \"YSTAR_GOV_ENTERPRISE_READINESS\", \"actor\": \"cto\", \"type\": \"Active Campaign\", \"status\": \"in_progress\", \"created\": \"2026-04-16T18:00:00Z\", \"completed\": null, \"in",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "session_y_star_projection",
+        "task_y_star_projection",
+        "governance_validation"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 3,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 4,
+      "safety_risk_score": 4,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0059",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "agent_team_work_proposal/tool_need_analysis_schema.json",
+      "file_type": "json",
+      "matched_terms": [
+        "y_star",
+        "ystar",
+        "Y_star",
+        "YStar"
+      ],
+      "bounded_snippet": "{ \"schema_name\": \"ystar.agent_team_work_proposal.tool_need_analysis_schema\", \"schema_version\": \"v0\", \"type\": \"object\", \"required\": [ \"analysis_id\", \"selected_proposal_id\",",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "mission_level_y_star"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 4,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 0,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0060",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "agent_team_work_proposal/work_proposal_schema.json",
+      "file_type": "json",
+      "matched_terms": [
+        "y_star",
+        "ystar",
+        "Y_star",
+        "YStar"
+      ],
+      "bounded_snippet": "{ \"schema_name\": \"ystar.agent_team_work_proposal.work_proposal_schema\", \"schema_version\": \"v0\", \"type\": \"object\", \"required\": [ \"proposal_id\", \"title\", \"description\",",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "mission_level_y_star"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 4,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 0,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    }
+  ],
+  "live_enabled": false
+}

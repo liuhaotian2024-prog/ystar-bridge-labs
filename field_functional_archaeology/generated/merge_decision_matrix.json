@@ -1,0 +1,542 @@
+{
+  "schema_name": "ystar.field_functional_archaeology.merge_decision_matrix",
+  "schema_version": "v0",
+  "decisions": {
+    "reuse_directly": {
+      "count": 20,
+      "asset_ids": [
+        "ffa-0001",
+        "ffa-0002",
+        "ffa-0003",
+        "ffa-0004",
+        "ffa-0005",
+        "ffa-0006",
+        "ffa-0007",
+        "ffa-0008",
+        "ffa-0009",
+        "ffa-0010",
+        "ffa-0011",
+        "ffa-0012",
+        "ffa-0013",
+        "ffa-0014",
+        "ffa-0015",
+        "ffa-0016",
+        "ffa-0017",
+        "ffa-0018",
+        "ffa-0019",
+        "ffa-0020"
+      ],
+      "top_assets": [
+        {
+          "asset_id": "ffa-0001",
+          "repo_name": "ystar-company",
+          "relative_path": "console_read_model/generated/field_functional_summary.json",
+          "reason": "Generated read-model evidence can be reused as current-chain context only."
+        },
+        {
+          "asset_id": "ffa-0002",
+          "repo_name": "ystar-company",
+          "relative_path": "reports/governance/petri_behavioral_results.json",
+          "reason": "Schema-like asset is safe to reuse as a contract reference."
+        },
+        {
+          "asset_id": "ffa-0003",
+          "repo_name": "ystar-company",
+          "relative_path": "company_autonomous_work_cycle/autonomous_work_cycle_schema.json",
+          "reason": "Schema-like asset is safe to reuse as a contract reference."
+        },
+        {
+          "asset_id": "ffa-0004",
+          "repo_name": "ystar-company",
+          "relative_path": "console_read_model/capability_matrix.json",
+          "reason": "Schema-like asset is safe to reuse as a contract reference."
+        },
+        {
+          "asset_id": "ffa-0005",
+          "repo_name": "ystar-company",
+          "relative_path": "governance/whitelist/inter_role_sop.yaml",
+          "reason": "Schema-like asset is safe to reuse as a contract reference."
+        },
+        {
+          "asset_id": "ffa-0006",
+          "repo_name": "ystar-company",
+          "relative_path": "governed_tool_invocation_bridge/pre_u_tool_packet_schema.json",
+          "reason": "Schema-like asset is safe to reuse as a contract reference."
+        },
+        {
+          "asset_id": "ffa-0007",
+          "repo_name": "ystar-company",
+          "relative_path": "agent_brains/schema/pre_u_packet_profile.schema.json",
+          "reason": "Schema-like asset is safe to reuse as a contract reference."
+        },
+        {
+          "asset_id": "ffa-0008",
+          "repo_name": "ystar-company",
+          "relative_path": "company_autonomy_inventory/governed_tool_registry_schema.json",
+          "reason": "Schema-like asset is safe to reuse as a contract reference."
+        },
+        {
+          "asset_id": "ffa-0009",
+          "repo_name": "ystar-company",
+          "relative_path": "legacy_asset_triage/governed_absorption_backlog_schema.json",
+          "reason": "Schema-like asset is safe to reuse as a contract reference."
+        },
+        {
+          "asset_id": "ffa-0010",
+          "repo_name": "ystar-company",
+          "relative_path": "agent_brains/Ethan-CTO/czl_refs.json",
+          "reason": "Schema-like asset is safe to reuse as a contract reference."
+        }
+      ]
+    },
+    "wrap_before_reuse": {
+      "count": 20,
+      "asset_ids": [
+        "ffa-0021",
+        "ffa-0022",
+        "ffa-0023",
+        "ffa-0024",
+        "ffa-0025",
+        "ffa-0026",
+        "ffa-0027",
+        "ffa-0028",
+        "ffa-0029",
+        "ffa-0030",
+        "ffa-0031",
+        "ffa-0032",
+        "ffa-0033",
+        "ffa-0034",
+        "ffa-0035",
+        "ffa-0036",
+        "ffa-0037",
+        "ffa-0038",
+        "ffa-0039",
+        "ffa-0040"
+      ],
+      "top_assets": [
+        {
+          "asset_id": "ffa-0021",
+          "repo_name": "Y-star-gov",
+          "relative_path": "ystar/governance/y_star_field_validator.py",
+          "reason": "Implemented validator behavior is valuable but must remain behind a governed wrapper."
+        },
+        {
+          "asset_id": "ffa-0022",
+          "repo_name": "Y-star-gov",
+          "relative_path": "examples/external_adapter_sdk/external_request_to_envelope.py",
+          "reason": "Implemented validator behavior is valuable but must remain behind a governed wrapper."
+        },
+        {
+          "asset_id": "ffa-0023",
+          "repo_name": "Y-star-gov",
+          "relative_path": "ystar/governance/omission_rules.py",
+          "reason": "Implemented validator behavior is valuable but must remain behind a governed wrapper."
+        },
+        {
+          "asset_id": "ffa-0024",
+          "repo_name": "Y-star-gov",
+          "relative_path": "ystar/governance/omission_models.py",
+          "reason": "Implemented validator behavior is valuable but must remain behind a governed wrapper."
+        },
+        {
+          "asset_id": "ffa-0025",
+          "repo_name": "Y-star-gov",
+          "relative_path": "ystar/governance/pre_u_packet_validator.py",
+          "reason": "Implemented validator behavior is valuable but must remain behind a governed wrapper."
+        },
+        {
+          "asset_id": "ffa-0026",
+          "repo_name": "Y-star-gov",
+          "relative_path": "ystar/governance/cieu_store.py",
+          "reason": "Implemented validator behavior is valuable but must remain behind a governed wrapper."
+        },
+        {
+          "asset_id": "ffa-0027",
+          "repo_name": "ystar-company",
+          "relative_path": "ystar.bak.20260415_again/path_b/external_governance_loop.py",
+          "reason": "Implemented code may be reusable only through a governed local wrapper."
+        },
+        {
+          "asset_id": "ffa-0028",
+          "repo_name": "ystar-company",
+          "relative_path": "ystar.bak.20260415_again/governance/ml/loop.py",
+          "reason": "Implemented code may be reusable only through a governed local wrapper."
+        },
+        {
+          "asset_id": "ffa-0029",
+          "repo_name": "ystar-company",
+          "relative_path": "ystar.bak.20260415_again/governance/ml/records.py",
+          "reason": "Implemented code may be reusable only through a governed local wrapper."
+        },
+        {
+          "asset_id": "ffa-0030",
+          "repo_name": "Y-star-gov",
+          "relative_path": "ystar/governance/observation_stack.py",
+          "reason": "Implemented validator behavior is valuable but must remain behind a governed wrapper."
+        }
+      ]
+    },
+    "rewrite_from_design": {
+      "count": 20,
+      "asset_ids": [
+        "ffa-0041",
+        "ffa-0042",
+        "ffa-0043",
+        "ffa-0044",
+        "ffa-0045",
+        "ffa-0046",
+        "ffa-0047",
+        "ffa-0048",
+        "ffa-0049",
+        "ffa-0050",
+        "ffa-0051",
+        "ffa-0052",
+        "ffa-0053",
+        "ffa-0054",
+        "ffa-0055",
+        "ffa-0056",
+        "ffa-0057",
+        "ffa-0058",
+        "ffa-0059",
+        "ffa-0060"
+      ],
+      "top_assets": [
+        {
+          "asset_id": "ffa-0041",
+          "repo_name": "ystar-company",
+          "relative_path": "scripts/y_star_field_validator_run.py",
+          "reason": "Runtime-adjacent implementation is conceptually valuable but unsafe to absorb directly."
+        },
+        {
+          "asset_id": "ffa-0042",
+          "repo_name": "ystar-company",
+          "relative_path": "scripts/field_coverage_dashboard.py",
+          "reason": "Runtime-adjacent implementation is conceptually valuable but unsafe to absorb directly."
+        },
+        {
+          "asset_id": "ffa-0043",
+          "repo_name": "ystar-company",
+          "relative_path": "scripts/hook_session_start.py",
+          "reason": "Runtime-adjacent implementation is conceptually valuable but unsafe to absorb directly."
+        },
+        {
+          "asset_id": "ffa-0044",
+          "repo_name": "ystar-company",
+          "relative_path": "scripts/phase2_role_scope_seed.py",
+          "reason": "Runtime-adjacent implementation is conceptually valuable but unsafe to absorb directly."
+        },
+        {
+          "asset_id": "ffa-0045",
+          "repo_name": "Y-star-gov",
+          "relative_path": "docs/examples/hook_cli_contract/input_allow_envelope.json",
+          "reason": "Schema concept is useful but needs alignment with the L5 projection harness."
+        },
+        {
+          "asset_id": "ffa-0046",
+          "repo_name": "Y-star-gov",
+          "relative_path": "docs/examples/hook_cli_contract/input_escalate_envelope.json",
+          "reason": "Schema concept is useful but needs alignment with the L5 projection harness."
+        },
+        {
+          "asset_id": "ffa-0047",
+          "repo_name": "Y-star-gov",
+          "relative_path": "docs/examples/hook_cli_contract/input_require_revision_envelope.json",
+          "reason": "Schema concept is useful but needs alignment with the L5 projection harness."
+        },
+        {
+          "asset_id": "ffa-0048",
+          "repo_name": "Y-star-gov",
+          "relative_path": "examples/external_adapter_sdk/sample_external_request.json",
+          "reason": "Schema concept is useful but needs alignment with the L5 projection harness."
+        },
+        {
+          "asset_id": "ffa-0049",
+          "repo_name": "Y-star-gov",
+          "relative_path": "docs/pre_u_packet_validator/interface_index.json",
+          "reason": "Schema concept is useful but needs alignment with the L5 projection harness."
+        },
+        {
+          "asset_id": "ffa-0050",
+          "repo_name": "Y-star-gov",
+          "relative_path": "examples/external_adapter_sdk/sample_normalized_envelope.json",
+          "reason": "Schema concept is useful but needs alignment with the L5 projection harness."
+        }
+      ]
+    },
+    "preserve_as_concept_reference": {
+      "count": 120,
+      "asset_ids": [
+        "ffa-0061",
+        "ffa-0062",
+        "ffa-0063",
+        "ffa-0064",
+        "ffa-0065",
+        "ffa-0066",
+        "ffa-0067",
+        "ffa-0068",
+        "ffa-0069",
+        "ffa-0070",
+        "ffa-0071",
+        "ffa-0072",
+        "ffa-0073",
+        "ffa-0074",
+        "ffa-0075",
+        "ffa-0076",
+        "ffa-0077",
+        "ffa-0078",
+        "ffa-0079",
+        "ffa-0080",
+        "ffa-0101",
+        "ffa-0102",
+        "ffa-0103",
+        "ffa-0104",
+        "ffa-0105",
+        "ffa-0106",
+        "ffa-0107",
+        "ffa-0108",
+        "ffa-0109",
+        "ffa-0110",
+        "ffa-0111",
+        "ffa-0112",
+        "ffa-0113",
+        "ffa-0114",
+        "ffa-0115",
+        "ffa-0116",
+        "ffa-0117",
+        "ffa-0118",
+        "ffa-0119",
+        "ffa-0120",
+        "ffa-0121",
+        "ffa-0122",
+        "ffa-0123",
+        "ffa-0124",
+        "ffa-0125",
+        "ffa-0126",
+        "ffa-0127",
+        "ffa-0128",
+        "ffa-0129",
+        "ffa-0130",
+        "ffa-0131",
+        "ffa-0132",
+        "ffa-0133",
+        "ffa-0134",
+        "ffa-0135",
+        "ffa-0136",
+        "ffa-0137",
+        "ffa-0138",
+        "ffa-0139",
+        "ffa-0140",
+        "ffa-0141",
+        "ffa-0142",
+        "ffa-0143",
+        "ffa-0144",
+        "ffa-0145",
+        "ffa-0146",
+        "ffa-0147",
+        "ffa-0148",
+        "ffa-0149",
+        "ffa-0150",
+        "ffa-0151",
+        "ffa-0152",
+        "ffa-0153",
+        "ffa-0154",
+        "ffa-0155",
+        "ffa-0156",
+        "ffa-0157",
+        "ffa-0158",
+        "ffa-0159",
+        "ffa-0160",
+        "ffa-0161",
+        "ffa-0162",
+        "ffa-0163",
+        "ffa-0164",
+        "ffa-0165",
+        "ffa-0166",
+        "ffa-0167",
+        "ffa-0168",
+        "ffa-0169",
+        "ffa-0170",
+        "ffa-0171",
+        "ffa-0172",
+        "ffa-0173",
+        "ffa-0174",
+        "ffa-0175",
+        "ffa-0176",
+        "ffa-0177",
+        "ffa-0178",
+        "ffa-0179",
+        "ffa-0180",
+        "ffa-0181",
+        "ffa-0182",
+        "ffa-0183",
+        "ffa-0184",
+        "ffa-0185",
+        "ffa-0186",
+        "ffa-0187",
+        "ffa-0188",
+        "ffa-0189",
+        "ffa-0190",
+        "ffa-0191",
+        "ffa-0192",
+        "ffa-0193",
+        "ffa-0194",
+        "ffa-0195",
+        "ffa-0196",
+        "ffa-0197",
+        "ffa-0198",
+        "ffa-0199",
+        "ffa-0200"
+      ],
+      "top_assets": [
+        {
+          "asset_id": "ffa-0061",
+          "repo_name": "ystar-company",
+          "relative_path": "tests/test_field_validator.py",
+          "reason": "Test evidence can preserve intent without absorbing runtime behavior."
+        },
+        {
+          "asset_id": "ffa-0062",
+          "repo_name": "ystar-company",
+          "relative_path": "reports/ceo/strategic/field_functional_claims_audit_20260423.md",
+          "reason": "Documented field-functional design should be preserved before implementation."
+        },
+        {
+          "asset_id": "ffa-0063",
+          "repo_name": "ystar-company",
+          "relative_path": "reports/kernel/field_functional_audit_20260423.md",
+          "reason": "Documented field-functional design should be preserved before implementation."
+        },
+        {
+          "asset_id": "ffa-0064",
+          "repo_name": "ystar-company",
+          "relative_path": "reports/governance/field_functional_runtime_audit_20260423.md",
+          "reason": "Documented field-functional design should be preserved before implementation."
+        },
+        {
+          "asset_id": "ffa-0065",
+          "repo_name": "ystar-company",
+          "relative_path": "reports/ceo/strategic/Y_STAR_FIELD_THEORY_SPEC.md",
+          "reason": "Documented field-functional design should be preserved before implementation."
+        },
+        {
+          "asset_id": "ffa-0066",
+          "repo_name": "ystar-company",
+          "relative_path": "reports/governance/field_functional_wave2_step1_roadmap_20260423.md",
+          "reason": "Documented field-functional design should be preserved before implementation."
+        },
+        {
+          "asset_id": "ffa-0067",
+          "repo_name": "ystar-company",
+          "relative_path": "tests/field_functional_archaeology/test_field_functional_archaeology.py",
+          "reason": "Test evidence can preserve intent without absorbing runtime behavior."
+        },
+        {
+          "asset_id": "ffa-0068",
+          "repo_name": "ystar-company",
+          "relative_path": "knowledge/ceo/wisdom/meta/field_thought_experiments.md",
+          "reason": "Documented field-functional design should be preserved before implementation."
+        },
+        {
+          "asset_id": "ffa-0069",
+          "repo_name": "ystar-company",
+          "relative_path": "knowledge/ceo/wisdom/meta/field_vs_structure_duality.md",
+          "reason": "Documented field-functional design should be preserved before implementation."
+        },
+        {
+          "asset_id": "ffa-0070",
+          "repo_name": "ystar-company",
+          "relative_path": "reports/governance/full_dim_test_report.md",
+          "reason": "Documented field-functional design should be preserved before implementation."
+        }
+      ]
+    },
+    "do_not_absorb": {
+      "count": 20,
+      "asset_ids": [
+        "ffa-0081",
+        "ffa-0082",
+        "ffa-0083",
+        "ffa-0084",
+        "ffa-0085",
+        "ffa-0086",
+        "ffa-0087",
+        "ffa-0088",
+        "ffa-0089",
+        "ffa-0090",
+        "ffa-0091",
+        "ffa-0092",
+        "ffa-0093",
+        "ffa-0094",
+        "ffa-0095",
+        "ffa-0096",
+        "ffa-0097",
+        "ffa-0098",
+        "ffa-0099",
+        "ffa-0100"
+      ],
+      "top_assets": [
+        {
+          "asset_id": "ffa-0081",
+          "repo_name": "ystar-company",
+          "relative_path": "scripts/session_boot_yml.py",
+          "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed."
+        },
+        {
+          "asset_id": "ffa-0082",
+          "repo_name": "ystar-company",
+          "relative_path": "scripts/learning_report.py",
+          "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed."
+        },
+        {
+          "asset_id": "ffa-0083",
+          "repo_name": "ystar-company",
+          "relative_path": "scripts/jinjin_examples.py",
+          "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed."
+        },
+        {
+          "asset_id": "ffa-0084",
+          "repo_name": "ystar-company",
+          "relative_path": "scripts/k9_phase4_baseline.py",
+          "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed."
+        },
+        {
+          "asset_id": "ffa-0085",
+          "repo_name": "ystar-company",
+          "relative_path": "scripts/k9_reinstall.py",
+          "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed."
+        },
+        {
+          "asset_id": "ffa-0086",
+          "repo_name": "ystar-company",
+          "relative_path": "scripts/offended_ai_make_subs.py",
+          "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed."
+        },
+        {
+          "asset_id": "ffa-0087",
+          "repo_name": "ystar-company",
+          "relative_path": "scripts/check_wheel_contents.py",
+          "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed."
+        },
+        {
+          "asset_id": "ffa-0088",
+          "repo_name": "ystar-company",
+          "relative_path": "scripts/conversation_replay.py",
+          "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed."
+        },
+        {
+          "asset_id": "ffa-0089",
+          "repo_name": "ystar-company",
+          "relative_path": "scripts/k9.py",
+          "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed."
+        },
+        {
+          "asset_id": "ffa-0090",
+          "repo_name": "ystar-company",
+          "relative_path": "scripts/k9_phase1.py",
+          "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed."
+        }
+      ]
+    }
+  },
+  "live_enabled": false
+}

@@ -1,0 +1,300 @@
+{
+  "schema_name": "ystar.field_functional_archaeology.field_functional_concept_map",
+  "schema_version": "v0",
+  "concepts": [
+    {
+      "concept_id": "field_alignment",
+      "discovered_terms": [
+        "field alignment",
+        "field_alignment",
+        "field_functional",
+        "场",
+        "场泛函",
+        "约束场"
+      ],
+      "source_assets": [
+        "ffa-0001",
+        "ffa-0003",
+        "ffa-0004",
+        "ffa-0005",
+        "ffa-0006",
+        "ffa-0008",
+        "ffa-0009",
+        "ffa-0013",
+        "ffa-0014",
+        "ffa-0017",
+        "ffa-0018",
+        "ffa-0019"
+      ],
+      "current_status": "discovered",
+      "should_merge_into_L5": true,
+      "merge_notes": "Merge as deterministic alignment metadata, not semantic truth scoring."
+    },
+    {
+      "concept_id": "mission_field",
+      "discovered_terms": [
+        "mission field",
+        "使命",
+        "场"
+      ],
+      "source_assets": [
+        "ffa-0001",
+        "ffa-0006",
+        "ffa-0008",
+        "ffa-0009",
+        "ffa-0013",
+        "ffa-0014",
+        "ffa-0017",
+        "ffa-0018",
+        "ffa-0019",
+        "ffa-0020",
+        "ffa-0021",
+        "ffa-0022"
+      ],
+      "current_status": "discovered",
+      "should_merge_into_L5": true,
+      "merge_notes": "Use old mission-field language to define mission-level Y* projection contracts."
+    },
+    {
+      "concept_id": "role_field",
+      "discovered_terms": [
+        "YStar",
+        "role alignment",
+        "role_scope",
+        "scope",
+        "ystar"
+      ],
+      "source_assets": [
+        "ffa-0001",
+        "ffa-0003",
+        "ffa-0005",
+        "ffa-0011",
+        "ffa-0016",
+        "ffa-0017",
+        "ffa-0018",
+        "ffa-0021",
+        "ffa-0022",
+        "ffa-0023",
+        "ffa-0024",
+        "ffa-0025"
+      ],
+      "current_status": "discovered",
+      "should_merge_into_L5": true,
+      "merge_notes": "Preserve role-scope alignment ideas, but rewrite any DB-backed seeders."
+    },
+    {
+      "concept_id": "observation_field",
+      "discovered_terms": [
+        "Xt observation",
+        "场"
+      ],
+      "source_assets": [
+        "ffa-0003",
+        "ffa-0027",
+        "ffa-0028",
+        "ffa-0030",
+        "ffa-0032",
+        "ffa-0033",
+        "ffa-0036",
+        "ffa-0038",
+        "ffa-0042",
+        "ffa-0069",
+        "ffa-0087",
+        "ffa-0092"
+      ],
+      "current_status": "discovered",
+      "should_merge_into_L5": true,
+      "merge_notes": "Connect to deep Xt observation through generated/read-model evidence only."
+    },
+    {
+      "concept_id": "action_field",
+      "discovered_terms": [
+        "projection",
+        "场"
+      ],
+      "source_assets": [],
+      "current_status": "not_found",
+      "should_merge_into_L5": false,
+      "merge_notes": "No direct archaeology evidence found; keep as an L5 design gap."
+    },
+    {
+      "concept_id": "Y_star_projection",
+      "discovered_terms": [
+        "Phi_t",
+        "Y* projection",
+        "Y_star",
+        "projection",
+        "xi(",
+        "y_star",
+        "投射",
+        "映射"
+      ],
+      "source_assets": [
+        "ffa-0001",
+        "ffa-0003",
+        "ffa-0005",
+        "ffa-0006",
+        "ffa-0008",
+        "ffa-0009",
+        "ffa-0011",
+        "ffa-0013",
+        "ffa-0014",
+        "ffa-0016",
+        "ffa-0017",
+        "ffa-0018"
+      ],
+      "current_status": "discovered",
+      "should_merge_into_L5": true,
+      "merge_notes": "Promote layered mission-to-action Y* projection as the core L5 harness."
+    },
+    {
+      "concept_id": "contract_projection",
+      "discovered_terms": [
+        "contract",
+        "projection",
+        "scope"
+      ],
+      "source_assets": [
+        "ffa-0001",
+        "ffa-0003",
+        "ffa-0005",
+        "ffa-0006",
+        "ffa-0008",
+        "ffa-0010",
+        "ffa-0011",
+        "ffa-0012",
+        "ffa-0017",
+        "ffa-0018",
+        "ffa-0021",
+        "ffa-0022"
+      ],
+      "current_status": "discovered",
+      "should_merge_into_L5": true,
+      "merge_notes": "Convert scope/contract ideas into explicit projection contracts."
+    },
+    {
+      "concept_id": "residual_feedback",
+      "discovered_terms": [
+        "M_FUNCTOR",
+        "m_functor",
+        "residual_delta",
+        "残差"
+      ],
+      "source_assets": [
+        "ffa-0003",
+        "ffa-0004",
+        "ffa-0006",
+        "ffa-0010",
+        "ffa-0012",
+        "ffa-0017",
+        "ffa-0018",
+        "ffa-0019",
+        "ffa-0021",
+        "ffa-0022",
+        "ffa-0023",
+        "ffa-0024"
+      ],
+      "current_status": "discovered",
+      "should_merge_into_L5": true,
+      "merge_notes": "Reuse residual delta concepts only through dry-run CIEU-compatible events."
+    },
+    {
+      "concept_id": "CZL_alignment",
+      "discovered_terms": [
+        "CZL",
+        "causal"
+      ],
+      "source_assets": [
+        "ffa-0002",
+        "ffa-0003",
+        "ffa-0004",
+        "ffa-0005",
+        "ffa-0006",
+        "ffa-0007",
+        "ffa-0010",
+        "ffa-0011",
+        "ffa-0012",
+        "ffa-0014",
+        "ffa-0015",
+        "ffa-0016"
+      ],
+      "current_status": "discovered",
+      "should_merge_into_L5": true,
+      "merge_notes": "Preserve causal residual ideas as review evidence, not automatic learning."
+    },
+    {
+      "concept_id": "scope_control",
+      "discovered_terms": [
+        "invariant",
+        "role_scope",
+        "scope",
+        "场",
+        "约束场"
+      ],
+      "source_assets": [
+        "ffa-0002",
+        "ffa-0003",
+        "ffa-0004",
+        "ffa-0005",
+        "ffa-0006",
+        "ffa-0007",
+        "ffa-0008",
+        "ffa-0009",
+        "ffa-0010",
+        "ffa-0011",
+        "ffa-0012",
+        "ffa-0013"
+      ],
+      "current_status": "discovered",
+      "should_merge_into_L5": true,
+      "merge_notes": "Use scope and invariant terms as governance validation checks."
+    },
+    {
+      "concept_id": "counterfactual_pre_u",
+      "discovered_terms": [
+        "counterfactual",
+        "pre-U",
+        "pre_u"
+      ],
+      "source_assets": [
+        "ffa-0002",
+        "ffa-0003",
+        "ffa-0004",
+        "ffa-0005",
+        "ffa-0006",
+        "ffa-0007",
+        "ffa-0010",
+        "ffa-0011",
+        "ffa-0012",
+        "ffa-0014",
+        "ffa-0015",
+        "ffa-0016"
+      ],
+      "current_status": "discovered",
+      "should_merge_into_L5": true,
+      "merge_notes": "Route projections into candidate_U and selected_U packet fields."
+    },
+    {
+      "concept_id": "learning_feedback",
+      "discovered_terms": [],
+      "source_assets": [
+        "ffa-0001",
+        "ffa-0004",
+        "ffa-0007",
+        "ffa-0010",
+        "ffa-0011",
+        "ffa-0012",
+        "ffa-0013",
+        "ffa-0014",
+        "ffa-0015",
+        "ffa-0016",
+        "ffa-0017",
+        "ffa-0018"
+      ],
+      "current_status": "discovered",
+      "should_merge_into_L5": true,
+      "merge_notes": "Keep as review-gated learning candidate design; no brain or memory writeback."
+    }
+  ],
+  "live_enabled": false
+}

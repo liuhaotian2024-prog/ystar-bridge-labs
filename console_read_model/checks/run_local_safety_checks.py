@@ -143,7 +143,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after manual recurring observation tick runner",
+        "Build field functional archaeology",
+        ["python3", "field_functional_archaeology/tools/build_field_functional_archaeology.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after field functional archaeology",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -821,6 +826,59 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "manual_recurring_observation_tick_runner/generated/manual_tick_runner_readiness_summary.json"],
     ),
     Check(
+        "Compile field functional archaeology builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "field_functional_archaeology/tools/build_field_functional_archaeology.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: field_functional_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/field_functional_summary.json"],
+    ),
+    Check(
+        "Validate JSON: search_manifest.json",
+        ["python3", "-m", "json.tool", "field_functional_archaeology/generated/search_manifest.json"],
+    ),
+    Check(
+        "Validate JSON: field_functional_asset_inventory.json",
+        ["python3", "-m", "json.tool", "field_functional_archaeology/generated/field_functional_asset_inventory.json"],
+    ),
+    Check(
+        "Validate JSON: field_functional_concept_map.json",
+        ["python3", "-m", "json.tool", "field_functional_archaeology/generated/field_functional_concept_map.json"],
+    ),
+    Check(
+        "Validate JSON: old_to_new_architecture_alignment.json",
+        ["python3", "-m", "json.tool", "field_functional_archaeology/generated/old_to_new_architecture_alignment.json"],
+    ),
+    Check(
+        "Validate JSON: merge_decision_matrix.json",
+        ["python3", "-m", "json.tool", "field_functional_archaeology/generated/merge_decision_matrix.json"],
+    ),
+    Check(
+        "Validate JSON: reuse_candidates.json",
+        ["python3", "-m", "json.tool", "field_functional_archaeology/generated/reuse_candidates.json"],
+    ),
+    Check(
+        "Validate JSON: rewrite_candidates.json",
+        ["python3", "-m", "json.tool", "field_functional_archaeology/generated/rewrite_candidates.json"],
+    ),
+    Check(
+        "Validate JSON: do_not_absorb_candidates.json",
+        ["python3", "-m", "json.tool", "field_functional_archaeology/generated/do_not_absorb_candidates.json"],
+    ),
+    Check(
+        "Validate JSON: mission_projection_merge_plan.json",
+        ["python3", "-m", "json.tool", "field_functional_archaeology/generated/mission_projection_merge_plan.json"],
+    ),
+    Check(
+        "Validate JSON: field_functional_archaeology_summary.json",
+        ["python3", "-m", "json.tool", "field_functional_archaeology/generated/field_functional_archaeology_summary.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -995,6 +1053,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: manual-tick",
         ["python3", "console_read_model/cli/team_console.py", "manual-tick"],
+    ),
+    Check(
+        "CLI smoke: field-functional",
+        ["python3", "console_read_model/cli/team_console.py", "field-functional"],
     ),
     Check(
         "CLI smoke: sources",

@@ -355,6 +355,9 @@ def main() -> int:
     required_manual_recurring_observation_tick_runner_files = expected.get(
         "required_manual_recurring_observation_tick_runner_files", []
     )
+    required_field_functional_archaeology_files = expected.get(
+        "required_field_functional_archaeology_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -491,6 +494,12 @@ def main() -> int:
         check_exists(path, report, "manual recurring observation tick runner file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "manual recurring observation tick runner JSON")
+
+    for rel in required_field_functional_archaeology_files:
+        path = ROOT / rel
+        check_exists(path, report, "field functional archaeology file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "field functional archaeology JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -2547,6 +2556,62 @@ def main() -> int:
             "L5.0 Review-Gated Learning Candidate Queue v0"
         ):
             report.fail("generated manual tick summary must point to L5.0 review-gated learning milestone")
+
+    field_functional = generated_json.get("console_read_model/generated/field_functional_summary.json")
+    if field_functional:
+        for field in [
+            "field_functional_archaeology_defined",
+            "repos_scanned",
+            "assets_scanned",
+            "field_functional_assets_found",
+            "reuse_candidates_count",
+            "wrap_candidates_count",
+            "rewrite_candidates_count",
+            "concept_reference_count",
+            "do_not_absorb_count",
+            "old_field_functional_work_found",
+            "mission_projection_merge_plan_defined",
+            "ready_for_L5_projection_harness",
+            "live_action_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "next_required_milestone",
+            "generated_summary",
+            "generated_inventory",
+            "generated_merge_plan",
+            "warning",
+        ]:
+            if field in field_functional:
+                report.pass_(f"generated field functional summary field present: {field}")
+            else:
+                report.fail(f"generated field functional summary missing field: {field}")
+        for field in [
+            "field_functional_archaeology_defined",
+            "old_field_functional_work_found",
+            "mission_projection_merge_plan_defined",
+            "ready_for_L5_projection_harness",
+        ]:
+            if field_functional.get(field) is not True:
+                report.fail(f"generated field functional summary must keep {field}=true")
+        for field in [
+            "live_action_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+        ]:
+            if field_functional.get(field) is not False:
+                report.fail(f"generated field functional summary must keep {field}=false")
+        if field_functional.get("field_functional_assets_found", 0) <= 0:
+            report.fail("generated field functional summary must find at least one asset")
+        if field_functional.get("next_required_milestone") != (
+            "L5.1 Mission Field Functional Projection Harness v0"
+        ):
+            report.fail("generated field functional summary must point to L5.1 projection harness milestone")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

@@ -1,0 +1,512 @@
+{
+  "schema_name": "ystar.field_functional_archaeology.do_not_absorb_candidates",
+  "schema_version": "v0",
+  "candidate_count": 20,
+  "candidates": [
+    {
+      "asset_id": "ffa-0081",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/session_boot_yml.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar"
+      ],
+      "bounded_snippet": "\". \"\"\" import os import sys from pathlib import Path # Add Y-star-gov to path if needed YSTAR_GOV_PATH = Path(__file__).parent.parent.parent / \"Y-star-gov\" if YSTAR_GOV_PATH.exists(): sys.path.insert(0, str(YSTAR_GOV_PATH)) from ystar.me...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "session_y_star_projection",
+        "governance_validation",
+        "review_gated_learning",
+        "brain_memory_policy_update"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 2,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 1,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0082",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/learning_report.py",
+      "file_type": "py",
+      "matched_terms": [
+        "counterfactual"
+      ],
+      "bounded_snippet": "en(list(theory_dir.glob(\"*.md\"))) def check_priority_3(actor: str) -> int: \"\"\"Count counterfactual simulations. Returns: Number of simulation_*.md files in gaps/ directory \"\"\" gaps_dir = KNOWLEDGE_ROOT / actor / \"gaps\" if not gap",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "session_y_star_projection",
+        "task_y_star_projection",
+        "pre_u_packet_generation"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 2,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 4,
+      "safety_risk_score": 1,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0083",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/jinjin_examples.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar",
+        "scope"
+      ],
+      "bounded_snippet": "= client.ask(f\"\"\" 请分析最近的CIEU日志文件： {log_files} 识别： 1. 最常见的操作类型 2. 是否有scope violations 3. 是否有未授权的外部操作 \"\"\") print(f\"CIEU Analysis:\\n{result['text']}\") def example_6_health_monitoring(): \"\"\"Example 6: Health check and monit",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "session_y_star_projection",
+        "task_y_star_projection"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 3,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 3,
+      "safety_risk_score": 1,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0084",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/k9_phase4_baseline.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar",
+        "contract"
+      ],
+      "bounded_snippet": "mport asyncio from telethon import TelegramClient SESSION = r\"C:\\Users\\liuha\\OneDrive\\桌面\\ystar_mac_bridge\" async def send_wait(client, me, text, timeout=120): msg = await client.send_message(\"K9newclaw_bot\", text) for i in range(timeout)...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "session_y_star_projection",
+        "governance_validation"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 3,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 3,
+      "safety_risk_score": 1,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0085",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/k9_reinstall.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar"
+      ],
+      "bounded_snippet": "mport asyncio from telethon import TelegramClient SESSION = r\"C:\\Users\\liuha\\OneDrive\\桌面\\ystar_mac_bridge\" async def send_wait(client, me, text, timeout=120): msg = await client.send_message(\"K9newclaw_bot\", text) for i in range(timeout)...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "session_y_star_projection",
+        "governance_validation"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 2,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 3,
+      "safety_risk_score": 1,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0086",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/offended_ai_make_subs.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar",
+        "contract"
+      ],
+      "bounded_snippet": "rom PIL import Image, ImageDraw, ImageFont ROOT = \"/Users/haotianliu/.openclaw/workspace/ystar-company\" OUT = f\"{ROOT}/content/offended_ai/build/subpng\" os.makedirs(OUT, exist_ok=True) W, H = 1280, 720 # Try common macOS fonts FONT_CANDI...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "task_y_star_projection",
+        "governance_validation"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 3,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 3,
+      "safety_risk_score": 1,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0087",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/check_wheel_contents.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar"
+      ],
+      "bounded_snippet": "return 1 # Verify expected files are present expected_patterns = ['ystar/', '__init__.py'] found = {p: any(p in f for f in files) for p in expected_patterns} if not all(found.values()): print(f\"\\n⚠️ WARNING",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "deep_xt_observation"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 2,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 1,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0088",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/conversation_replay.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar"
+      ],
+      "bounded_snippet": "type=str, default='~/.claude/projects/-Users-haotianliu--openclaw-workspace-ystar-company', help='Path to Claude Code projects directory' ) parser.add_argument( '--lookback-hours', type=int, default=24,",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "session_y_star_projection"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 2,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 1,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0089",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/k9.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar"
+      ],
+      "bounded_snippet": "sys from telethon import TelegramClient SESSION = \"/Users/haotianliu/.openclaw/workspace/ystar-company/ystar_telegram_session\" API_ID = 31953230 API_HASH = \"85981cc76a909256eff111c544e0c363\" PHONE = \"+17033422330\" async def k9(command, t...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "session_y_star_projection"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 2,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 1,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0090",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/k9_phase1.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar",
+        "contract",
+        "invariant"
+      ],
+      "bounded_snippet": "mport asyncio from telethon import TelegramClient SESSION = r\"C:\\Users\\liuha\\OneDrive\\桌面\\ystar_mac_bridge\" async def send_wait(client, me, text, timeout=90): msg = await client.send_message(\"K9newclaw_bot\", text) for i in range(timeout):...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "session_y_star_projection"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 3,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 1,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0091",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/k9_watch.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar"
+      ],
+      "bounded_snippet": "yncio from telethon import TelegramClient, events SESSION = r\"C:\\Users\\liuha\\OneDrive\\桌面\\ystar_mac_bridge\" API_ID = 31953230 API_HASH = \"85981cc76a909256eff111c544e0c363\" PHONE = \"+17033422330\" BOT_USERNAME = \"K9newclaw_bot\" async def ma...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "session_y_star_projection"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 2,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 1,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0092",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/labs_atlas_query.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar"
+      ],
+      "bounded_snippet": "py dead \"\"\" import sys import re from pathlib import Path from typing import List, Dict YSTAR_COMPANY = Path(\"/Users/haotianliu/.openclaw/workspace/ystar-company\") INDEX_PATH = YSTAR_COMPANY / \"SUBSYSTEM_INDEX.md\" def parse_index() -> Di...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "deep_xt_observation"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 2,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 1,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0093",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/mac_command.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar"
+      ],
+      "bounded_snippet": "\" # Use the session file created during login SESSION_FILE = r\"C:\\Users\\liuha\\OneDrive\\桌面\\ystar_mac_bridge\" async def send_and_wait(command, wait_secs=30): client = TelegramClient(SESSION_FILE, API_ID, API_HASH) await client.start(phone=...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "session_y_star_projection"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 2,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 1,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0094",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/telegram_bridge.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar"
+      ],
+      "bounded_snippet": "_HASH = \"85981cc76a909256eff111c544e0c363\" BOT_USERNAME = \"K9newclaw_bot\" SESSION_FILE = \"ystar_telegram_session\" async def main(): client = TelegramClient(SESSION_FILE, API_ID, API_HASH) await client.start(phone=\"+17033422330\") print(\"L...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "session_y_star_projection"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 2,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 1,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0095",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/verify_twin_evolution.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar"
+      ],
+      "bounded_snippet": "e & 0o111 != 0)) # 2. Wakeup script integration wakeup_script = REPO_ROOT / 'scripts' / 'ystar_wakeup.sh' wakeup_content = wakeup_script.read_text() checks.append(('ystar_wakeup.sh has twin mode', 'twin)' in wakeup_content)) checks.appen...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "session_y_star_projection"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 2,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 1,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0096",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/wisdom_search.py",
+      "file_type": "py",
+      "matched_terms": [
+        "CZL"
+      ],
+      "bounded_snippet": "python3 scripts/wisdom_search.py --top 5 \"structure vs discipline\" Design decision (CTO CZL-157): TF-IDF with character n-grams (2,4) chosen over: - Simple grep: no synonym/semantic proximity handling - Embedding vectors: requires extern...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "review_gated_learning"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 2,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 1,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0097",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/post_ep01.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar"
+      ],
+      "bounded_snippet": "3230 API_HASH = \"85981cc76a909256eff111c544e0c363\" SESSION = r\"C:\\Users\\liuha\\OneDrive\\桌面\\ystar_mac_bridge\" PHONE = \"+17033422330\" CHANNEL = \"YstarBridgeLabs\" EP01 = \"\"\"**REPLAY EP01 — \"Our AI Agent Fabricated a Compliance Record\"** On D...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "session_y_star_projection",
+        "task_y_star_projection",
+        "governance_validation",
+        "review_gated_learning"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 2,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 2,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0098",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/post_episodes.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar"
+      ],
+      "bounded_snippet": "3230 API_HASH = \"85981cc76a909256eff111c544e0c363\" SESSION = r\"C:\\Users\\liuha\\OneDrive\\桌面\\ystar_mac_bridge\" PHONE = \"+17033422330\" CHANNEL = \"YstarBridgeLabs\" EP02 = \"\"\"**REPLAY EP02 — \"Our CFO Fabricated an Entire Cost Model\"** Board as...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "session_y_star_projection",
+        "task_y_star_projection",
+        "governance_validation",
+        "review_gated_learning"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 2,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 2,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0099",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/redteam_secretary.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar"
+      ],
+      "bounded_snippet": "re__ import annotations import argparse import json import sys from pathlib import Path YSTAR_DIR = Path(\"/Users/haotianliu/.openclaw/workspace/ystar-company\") SESSION_JSON = YSTAR_DIR / \".ystar_session.json\" CIEU_DB = YSTAR_DIR / \".ysta...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "session_y_star_projection",
+        "governance_validation",
+        "review_gated_learning",
+        "brain_memory_policy_update"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 2,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 2,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0100",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "scripts/twin_report.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar"
+      ],
+      "bounded_snippet": "esolve().parent.parent KNOWLEDGE_ROOT = REPO_ROOT / \"knowledge\" MEMORY_DB = REPO_ROOT / \".ystar_memory[database-suffix]\" CIEU_DB = REPO_ROOT / \".ystar_cieu[database-suffix]\" GEMMA_LOG = KNOWLEDGE_ROOT / \"ceo\" / \"gaps\" / \"gemma_sessions[l...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "session_y_star_projection",
+        "task_y_star_projection",
+        "governance_validation",
+        "brain_memory_policy_update"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 2,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 2,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    }
+  ],
+  "live_enabled": false
+}

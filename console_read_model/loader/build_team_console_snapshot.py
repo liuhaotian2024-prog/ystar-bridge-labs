@@ -47,6 +47,7 @@ CURATED_SOURCES = [
     "mission_dashboard_refresh_loop/generated/refresh_loop_readiness_summary.json",
     "recurring_observation_loop_contract/generated/recurring_loop_readiness_summary.json",
     "manual_recurring_observation_tick_runner/generated/manual_tick_runner_readiness_summary.json",
+    "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -1451,6 +1452,80 @@ def build_manual_tick_summary(manual_summary: dict[str, Any] | None) -> dict[str
     }
 
 
+def build_field_functional_summary(field_summary: dict[str, Any] | None) -> dict[str, Any]:
+    if not field_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.field_functional_summary",
+            "schema_version": "v0",
+            "field_functional_archaeology_defined": False,
+            "repos_scanned": 0,
+            "assets_scanned": 0,
+            "field_functional_assets_found": 0,
+            "reuse_candidates_count": 0,
+            "wrap_candidates_count": 0,
+            "rewrite_candidates_count": 0,
+            "concept_reference_count": 0,
+            "do_not_absorb_count": 0,
+            "old_field_functional_work_found": False,
+            "mission_projection_merge_plan_defined": False,
+            "ready_for_L5_projection_harness": False,
+            "live_action_enabled": False,
+            "external_action_enabled": False,
+            "network_enabled": False,
+            "cieu_persistence_enabled": False,
+            "brain_writeback_enabled": False,
+            "memory_ingestion_enabled": False,
+            "next_required_milestone": "L5.1 Mission Field Functional Projection Harness v0",
+            "generated_summary": (
+                "field_functional_archaeology/generated/field_functional_archaeology_summary.json"
+            ),
+            "warning": "Field functional archaeology has not been generated yet.",
+        }
+    return {
+        "schema_name": "ystar.console_read_model.generated.field_functional_summary",
+        "schema_version": "v0",
+        "field_functional_archaeology_defined": field_summary.get(
+            "field_functional_archaeology_defined"
+        ),
+        "repos_scanned": field_summary.get("repos_scanned"),
+        "assets_scanned": field_summary.get("assets_scanned"),
+        "field_functional_assets_found": field_summary.get("field_functional_assets_found"),
+        "reuse_candidates_count": field_summary.get("reuse_candidates_count"),
+        "wrap_candidates_count": field_summary.get("wrap_candidates_count"),
+        "rewrite_candidates_count": field_summary.get("rewrite_candidates_count"),
+        "concept_reference_count": field_summary.get("concept_reference_count"),
+        "do_not_absorb_count": field_summary.get("do_not_absorb_count"),
+        "old_field_functional_work_found": field_summary.get("old_field_functional_work_found"),
+        "mission_projection_merge_plan_defined": field_summary.get(
+            "mission_projection_merge_plan_defined"
+        ),
+        "ready_for_L5_projection_harness": field_summary.get("ready_for_L5_projection_harness"),
+        "live_action_enabled": field_summary.get("live_action_enabled"),
+        "external_action_enabled": field_summary.get("external_action_enabled"),
+        "network_enabled": field_summary.get("network_enabled"),
+        "cieu_persistence_enabled": field_summary.get("cieu_persistence_enabled"),
+        "brain_writeback_enabled": field_summary.get("brain_writeback_enabled"),
+        "memory_ingestion_enabled": field_summary.get("memory_ingestion_enabled"),
+        "next_required_milestone": field_summary.get("next_required_milestone"),
+        "generated_summary": field_summary.get(
+            "generated_summary",
+            "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
+        ),
+        "generated_inventory": field_summary.get(
+            "generated_inventory",
+            "field_functional_archaeology/generated/field_functional_asset_inventory.json",
+        ),
+        "generated_merge_plan": field_summary.get(
+            "generated_merge_plan",
+            "field_functional_archaeology/generated/mission_projection_merge_plan.json",
+        ),
+        "warning": field_summary.get(
+            "warning",
+            "Field functional archaeology produces a merge plan only and enables no live action.",
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -1557,6 +1632,10 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "manual_recurring_observation_tick_runner/generated/manual_tick_runner_readiness_summary.json",
         files_read,
     )
+    field_functional_generated_summary = load_optional_json(
+        "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -1579,6 +1658,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     dashboard_refresh_summary = build_dashboard_refresh_summary(dashboard_refresh_generated_summary)
     recurring_loop_summary = build_recurring_loop_summary(recurring_loop_generated_summary)
     manual_tick_summary = build_manual_tick_summary(manual_tick_generated_summary)
+    field_functional_summary = build_field_functional_summary(field_functional_generated_summary)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -1679,6 +1759,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Recurring observation loop contract exists but recurrence, scheduler, daemon, and auto-run remain disabled.")
     if "Manual recurring observation tick runner exists for one-shot local ticks only; no scheduler, daemon, or recurrence is enabled." not in open_gaps:
         open_gaps.append("Manual recurring observation tick runner exists for one-shot local ticks only; no scheduler, daemon, or recurrence is enabled.")
+    if "Field functional archaeology exists as a merge plan only; L5 projection harness is not implemented yet." not in open_gaps:
+        open_gaps.append("Field functional archaeology exists as a merge plan only; L5 projection harness is not implemented yet.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -1712,6 +1794,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "dashboard_refresh_summary": dashboard_refresh_summary,
         "recurring_loop_summary": recurring_loop_summary,
         "manual_tick_summary": manual_tick_summary,
+        "field_functional_summary": field_functional_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -1770,6 +1853,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "mission dashboard refresh loop summary",
             "governed recurring observation loop contract summary",
             "manual recurring observation tick runner summary",
+            "field functional archaeology and merge plan summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -1799,6 +1883,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "enabled CIEU runtime event persistence",
             "approved governed action registry",
             "review-gated learning candidate queue",
+            "L5.1 mission field functional projection harness",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -1824,6 +1909,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "build L4.6 agent team work proposal to governed tool invocation",
             "define L4.8 governed recurring observation loop contract",
             "build L5.0 review-gated learning candidate queue",
+            "build L5.1 mission field functional projection harness from archaeology merge plan",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -1843,6 +1929,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "observation loop is read-only and not recurring",
             "recurring observation loop contract is defined but not enabled",
             "review-gated learning candidate queue is not implemented yet",
+            "mission field functional projection harness is not implemented yet",
         ],
         "safety_boundaries": [
             "no DB reads",
@@ -1872,6 +1959,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "mission dashboard refresh loop is manual local dry-run only and uses generated/read-model evidence only",
             "recurring observation loop contract simulates one manual local tick and does not enable recurrence",
             "manual recurring observation tick runner executes one manual local tick only and does not enable recurrence",
+            "field functional archaeology is merge-plan-only and does not execute old code or absorb runtime assets",
         ],
     }
 
@@ -1906,6 +1994,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/dashboard_refresh_summary.json",
             "console_read_model/generated/recurring_loop_summary.json",
             "console_read_model/generated/manual_tick_summary.json",
+            "console_read_model/generated/field_functional_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -1978,6 +2067,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "loop contract outputs. It confirms recurrence is defined but disabled and only one manual local simulated tick exists.\n\n"
         "`manual_tick_summary.json` is derived from generated manual recurring\n"
         "observation tick runner outputs. It confirms one manual local tick ran with a receipt while scheduler, daemon, and recurrence stay disabled.\n\n"
+        "`field_functional_summary.json` is derived from generated field\n"
+        "functional archaeology outputs. It confirms old field-functional work was searched and mapped into a merge plan without executing old code.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -2008,6 +2099,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/dashboard_refresh_summary.json", dashboard_refresh_summary, generated_files)
     write_json("console_read_model/generated/recurring_loop_summary.json", recurring_loop_summary, generated_files)
     write_json("console_read_model/generated/manual_tick_summary.json", manual_tick_summary, generated_files)
+    write_json("console_read_model/generated/field_functional_summary.json", field_functional_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -2073,6 +2165,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     dashboard_refresh = snapshot.get("dashboard_refresh_summary", {})
     recurring_loop = snapshot.get("recurring_loop_summary", {})
     manual_tick = snapshot.get("manual_tick_summary", {})
+    field_functional = snapshot.get("field_functional_summary", {})
     lines.extend(
         [
             "",
@@ -2587,6 +2680,31 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- memory_ingestion_enabled: {manual_tick.get('memory_ingestion_enabled')}",
             f"- next_required_milestone: {manual_tick.get('next_required_milestone')}",
             f"- Warning: {manual_tick.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Field Functional Archaeology",
+            "",
+            f"- field_functional_archaeology_defined: {field_functional.get('field_functional_archaeology_defined')}",
+            f"- repos_scanned: {field_functional.get('repos_scanned')}",
+            f"- assets_scanned: {field_functional.get('assets_scanned')}",
+            f"- field_functional_assets_found: {field_functional.get('field_functional_assets_found')}",
+            f"- reuse_candidates_count: {field_functional.get('reuse_candidates_count')}",
+            f"- wrap_candidates_count: {field_functional.get('wrap_candidates_count')}",
+            f"- rewrite_candidates_count: {field_functional.get('rewrite_candidates_count')}",
+            f"- concept_reference_count: {field_functional.get('concept_reference_count')}",
+            f"- do_not_absorb_count: {field_functional.get('do_not_absorb_count')}",
+            f"- mission_projection_merge_plan_defined: {field_functional.get('mission_projection_merge_plan_defined')}",
+            f"- ready_for_L5_projection_harness: {field_functional.get('ready_for_L5_projection_harness')}",
+            f"- live_action_enabled: {field_functional.get('live_action_enabled')}",
+            f"- external_action_enabled: {field_functional.get('external_action_enabled')}",
+            f"- cieu_persistence_enabled: {field_functional.get('cieu_persistence_enabled')}",
+            f"- brain_writeback_enabled: {field_functional.get('brain_writeback_enabled')}",
+            f"- memory_ingestion_enabled: {field_functional.get('memory_ingestion_enabled')}",
+            f"- next_required_milestone: {field_functional.get('next_required_milestone')}",
+            f"- Warning: {field_functional.get('warning')}",
         ]
     )
     lines.extend(
