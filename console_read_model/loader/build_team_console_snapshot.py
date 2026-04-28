@@ -79,6 +79,15 @@ CURATED_SOURCES = [
     "governed_mcp_interface_contract/governed_mcp_interface_summary.json",
     "cross_repo_non_bypass_proof/cross_repo_non_bypass_summary.json",
     "cross_repo_gap_and_readiness/cross_repo_governance_readiness.json",
+    "governed_mcp_dry_run_adapter/governed_mcp_dry_run_adapter_summary.json",
+    "mcp_request_intent_projection/mcp_request_intent_summary.json",
+    "mcp_pre_u_packet_candidate/mcp_pre_u_summary.json",
+    "mcp_governance_decision_envelope/mcp_governance_decision_summary.json",
+    "mcp_bridge_authorization_receipt/mcp_bridge_receipt_summary.json",
+    "governed_mcp_call_candidate/governed_mcp_call_summary.json",
+    "mcp_dry_run_receipt_and_cieu/mcp_receipt_cieu_summary.json",
+    "mcp_residual_and_learning_candidate/mcp_residual_learning_summary.json",
+    "governed_mcp_adapter_readiness/governed_mcp_adapter_readiness.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -2094,6 +2103,112 @@ def build_cross_repo_governance_summary(
     }
 
 
+def build_governed_mcp_adapter_summary(
+    adapter_summary: dict[str, Any] | None,
+    intent_summary: dict[str, Any] | None,
+    pre_u_summary: dict[str, Any] | None,
+    decision_summary: dict[str, Any] | None,
+    bridge_summary: dict[str, Any] | None,
+    call_summary: dict[str, Any] | None,
+    receipt_summary: dict[str, Any] | None,
+    residual_summary: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.governed_mcp_adapter_summary",
+            "schema_version": "v0",
+            "l5_6_governed_mcp_dry_run_adapter_defined": False,
+            "ready_for_l5_7_controlled_canonical_learning_design": False,
+            "ready_for_l6_revenue_opportunity_discovery": False,
+            "warning": "Governed MCP dry-run adapter has not been generated yet.",
+        }
+    adapter_summary = adapter_summary or {}
+    intent_summary = intent_summary or {}
+    pre_u_summary = pre_u_summary or {}
+    decision_summary = decision_summary or {}
+    bridge_summary = bridge_summary or {}
+    call_summary = call_summary or {}
+    receipt_summary = receipt_summary or {}
+    residual_summary = residual_summary or {}
+    return {
+        "schema_name": "ystar.console_read_model.generated.governed_mcp_adapter_summary",
+        "schema_version": "v0",
+        "l5_6_governed_mcp_dry_run_adapter_defined": adapter_summary.get(
+            "l5_6_governed_mcp_dry_run_adapter_defined"
+        ),
+        "behavior_y_star_loaded": readiness_summary.get("behavior_y_star_loaded"),
+        "mcp_request_intent_generated": intent_summary.get("mcp_request_intent_generated"),
+        "mcp_pre_u_packet_candidate_generated": pre_u_summary.get(
+            "mcp_pre_u_packet_candidate_generated"
+        ),
+        "dry_run_governance_decision_envelope_generated": decision_summary.get(
+            "governance_decision_envelope_generated"
+        ),
+        "bridge_authorization_receipt_generated": bridge_summary.get("bridge_receipt_generated"),
+        "governed_mcp_call_candidate_generated": call_summary.get(
+            "governed_mcp_call_candidate_generated"
+        ),
+        "real_mcp_execution_blocked": readiness_summary.get("real_mcp_execution_blocked"),
+        "mcp_dry_run_receipt_generated": receipt_summary.get("mcp_dry_run_receipt_generated"),
+        "mcp_cieu_like_event_generated": receipt_summary.get("mcp_cieu_event_fixture_generated"),
+        "mcp_residual_delta_generated": residual_summary.get("mcp_residual_delta_generated"),
+        "review_only_mcp_learning_candidate_generated": residual_summary.get(
+            "mcp_learning_candidate_generated"
+        ),
+        "y_star_gov_unmodified": readiness_summary.get("y_star_gov_unmodified"),
+        "gov_mcp_unmodified": readiness_summary.get("gov_mcp_unmodified"),
+        "mcp_server_not_started": readiness_summary.get("mcp_server_not_started"),
+        "mcp_tool_not_executed": readiness_summary.get("mcp_tool_not_executed"),
+        "mcp_resource_not_mutated": readiness_summary.get("mcp_resource_not_mutated"),
+        "ready_for_l5_7_controlled_canonical_learning_design": readiness_summary.get(
+            "ready_for_l5_7_controlled_canonical_learning_design"
+        ),
+        "ready_for_l6_revenue_opportunity_discovery": readiness_summary.get(
+            "ready_for_l6_revenue_opportunity_discovery"
+        ),
+        "live_execution_enabled": readiness_summary.get("live_execution_enabled"),
+        "behavior_execution_enabled": readiness_summary.get("behavior_execution_enabled"),
+        "external_action_enabled": readiness_summary.get("external_action_enabled"),
+        "network_enabled": readiness_summary.get("network_enabled"),
+        "scheduler_enabled": readiness_summary.get("scheduler_enabled"),
+        "daemon_enabled": readiness_summary.get("daemon_enabled"),
+        "cieu_persistence_enabled": readiness_summary.get("cieu_persistence_enabled"),
+        "brain_writeback_enabled": readiness_summary.get("brain_writeback_enabled"),
+        "memory_ingestion_enabled": readiness_summary.get("memory_ingestion_enabled"),
+        "candidate_auto_approval_enabled": readiness_summary.get("candidate_auto_approval_enabled"),
+        "canonical_policy_mutation_enabled": readiness_summary.get(
+            "canonical_policy_mutation_enabled"
+        ),
+        "y_star_gov_modification_enabled": readiness_summary.get("y_star_gov_modification_enabled"),
+        "gov_mcp_modification_enabled": readiness_summary.get("gov_mcp_modification_enabled"),
+        "mcp_server_execution_enabled": readiness_summary.get("mcp_server_execution_enabled"),
+        "mcp_tool_execution_enabled": readiness_summary.get("mcp_tool_execution_enabled"),
+        "mcp_resource_mutation_enabled": readiness_summary.get("mcp_resource_mutation_enabled"),
+        "semantic_truth_scoring_enabled": readiness_summary.get("semantic_truth_scoring_enabled"),
+        "raw_runtime_artifact_reading_enabled": readiness_summary.get(
+            "raw_runtime_artifact_reading_enabled"
+        ),
+        "revenue_opportunity_discovery_enabled": readiness_summary.get(
+            "revenue_opportunity_discovery_enabled"
+        ),
+        "next_required_milestone": readiness_summary.get("next_required_milestone"),
+        "generated_adapter_summary": "governed_mcp_dry_run_adapter/governed_mcp_dry_run_adapter_summary.json",
+        "generated_intent_summary": "mcp_request_intent_projection/mcp_request_intent_summary.json",
+        "generated_pre_u_summary": "mcp_pre_u_packet_candidate/mcp_pre_u_summary.json",
+        "generated_decision_summary": "mcp_governance_decision_envelope/mcp_governance_decision_summary.json",
+        "generated_bridge_summary": "mcp_bridge_authorization_receipt/mcp_bridge_receipt_summary.json",
+        "generated_call_summary": "governed_mcp_call_candidate/governed_mcp_call_summary.json",
+        "generated_receipt_summary": "mcp_dry_run_receipt_and_cieu/mcp_receipt_cieu_summary.json",
+        "generated_residual_summary": "mcp_residual_and_learning_candidate/mcp_residual_learning_summary.json",
+        "generated_readiness": "governed_mcp_adapter_readiness/governed_mcp_adapter_readiness.json",
+        "warning": (
+            "L5.6 proves a governed MCP dry-run adapter boundary only. gov-mcp was not run, "
+            "MCP tools/resources were not executed or mutated, and Y-star-gov/gov-mcp remain unmodified."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -2328,6 +2443,42 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "cross_repo_gap_and_readiness/cross_repo_governance_readiness.json",
         files_read,
     )
+    governed_mcp_adapter_generated_summary = load_optional_json(
+        "governed_mcp_dry_run_adapter/governed_mcp_dry_run_adapter_summary.json",
+        files_read,
+    )
+    governed_mcp_adapter_intent_summary = load_optional_json(
+        "mcp_request_intent_projection/mcp_request_intent_summary.json",
+        files_read,
+    )
+    governed_mcp_adapter_pre_u_summary = load_optional_json(
+        "mcp_pre_u_packet_candidate/mcp_pre_u_summary.json",
+        files_read,
+    )
+    governed_mcp_adapter_decision_summary = load_optional_json(
+        "mcp_governance_decision_envelope/mcp_governance_decision_summary.json",
+        files_read,
+    )
+    governed_mcp_adapter_bridge_summary = load_optional_json(
+        "mcp_bridge_authorization_receipt/mcp_bridge_receipt_summary.json",
+        files_read,
+    )
+    governed_mcp_adapter_call_summary = load_optional_json(
+        "governed_mcp_call_candidate/governed_mcp_call_summary.json",
+        files_read,
+    )
+    governed_mcp_adapter_receipt_summary = load_optional_json(
+        "mcp_dry_run_receipt_and_cieu/mcp_receipt_cieu_summary.json",
+        files_read,
+    )
+    governed_mcp_adapter_residual_summary = load_optional_json(
+        "mcp_residual_and_learning_candidate/mcp_residual_learning_summary.json",
+        files_read,
+    )
+    governed_mcp_adapter_readiness_summary = load_optional_json(
+        "governed_mcp_adapter_readiness/governed_mcp_adapter_readiness.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -2391,6 +2542,17 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         cross_repo_governance_interface_summary,
         cross_repo_governance_non_bypass_summary,
         cross_repo_governance_readiness_summary,
+    )
+    governed_mcp_adapter_summary = build_governed_mcp_adapter_summary(
+        governed_mcp_adapter_generated_summary,
+        governed_mcp_adapter_intent_summary,
+        governed_mcp_adapter_pre_u_summary,
+        governed_mcp_adapter_decision_summary,
+        governed_mcp_adapter_bridge_summary,
+        governed_mcp_adapter_call_summary,
+        governed_mcp_adapter_receipt_summary,
+        governed_mcp_adapter_residual_summary,
+        governed_mcp_adapter_readiness_summary,
     )
 
     profiles = {
@@ -2539,6 +2701,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "projection_cycle_summary": projection_cycle_summary,
         "shadow_learning_cycle_summary": shadow_learning_cycle_summary,
         "cross_repo_governance_summary": cross_repo_governance_summary,
+        "governed_mcp_adapter_summary": governed_mcp_adapter_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -2602,6 +2765,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "field functional auto-projection core summary",
             "projection-checked autonomous work cycle summary",
             "review-gated shadow learning cycle summary",
+            "cross-repo governance contract proof summary",
+            "governed MCP dry-run adapter summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -2712,6 +2877,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "field functional auto-projection core is dry-run only and does not execute behavior",
             "projection-checked autonomous work cycle is dry-run only and does not execute behavior",
             "review-gated shadow learning cycle previews policy changes only and does not mutate canonical policy",
+            "cross-repo governance proof keeps ystar-company as labs/runtime and not a governance kernel",
+            "governed MCP dry-run adapter blocks real MCP server/tool/resource execution and mutation",
         ],
     }
 
@@ -2752,6 +2919,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/projection_cycle_summary.json",
             "console_read_model/generated/shadow_learning_cycle_summary.json",
             "console_read_model/generated/cross_repo_governance_summary.json",
+            "console_read_model/generated/governed_mcp_adapter_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -2836,6 +3004,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "review-gated shadow learning cycle. It confirms an L5.3 residual can influence a shadow behavior-level Y* preview and shadow cycle without canonical policy mutation or writeback.\n\n"
         "`cross_repo_governance_summary.json` is derived from the L5.5 cross-repo\n"
         "governance contract proof. It confirms ystar-company remains labs/runtime, Y-star-gov remains the intended governance kernel, and gov-mcp remains a governed interface boundary.\n\n"
+        "`governed_mcp_adapter_summary.json` is derived from the L5.6 governed MCP\n"
+        "dry-run adapter proof. It confirms a future MCP call candidate is downstream of behavior-level Y*, Pre-U, governance expectation, bridge receipt, CIEU-like receipt, residual delta, and review-only learning gates while real MCP execution remains blocked.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -2872,6 +3042,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/projection_cycle_summary.json", projection_cycle_summary, generated_files)
     write_json("console_read_model/generated/shadow_learning_cycle_summary.json", shadow_learning_cycle_summary, generated_files)
     write_json("console_read_model/generated/cross_repo_governance_summary.json", cross_repo_governance_summary, generated_files)
+    write_json("console_read_model/generated/governed_mcp_adapter_summary.json", governed_mcp_adapter_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -2943,6 +3114,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     projection_cycle = snapshot.get("projection_cycle_summary", {})
     shadow_learning_cycle = snapshot.get("shadow_learning_cycle_summary", {})
     cross_repo_governance = snapshot.get("cross_repo_governance_summary", {})
+    governed_mcp_adapter = snapshot.get("governed_mcp_adapter_summary", {})
     lines.extend(
         [
             "",
@@ -3621,6 +3793,34 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- ready_for_l6_revenue_opportunity_discovery: {cross_repo_governance.get('ready_for_l6_revenue_opportunity_discovery')}",
             f"- next_required_milestone: {cross_repo_governance.get('next_required_milestone')}",
             f"- Warning: {cross_repo_governance.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Governed MCP Dry-Run Adapter",
+            "",
+            f"- l5_6_governed_mcp_dry_run_adapter_defined: {governed_mcp_adapter.get('l5_6_governed_mcp_dry_run_adapter_defined')}",
+            f"- behavior_y_star_loaded: {governed_mcp_adapter.get('behavior_y_star_loaded')}",
+            f"- mcp_request_intent_generated: {governed_mcp_adapter.get('mcp_request_intent_generated')}",
+            f"- mcp_pre_u_packet_candidate_generated: {governed_mcp_adapter.get('mcp_pre_u_packet_candidate_generated')}",
+            f"- dry_run_governance_decision_envelope_generated: {governed_mcp_adapter.get('dry_run_governance_decision_envelope_generated')}",
+            f"- bridge_authorization_receipt_generated: {governed_mcp_adapter.get('bridge_authorization_receipt_generated')}",
+            f"- governed_mcp_call_candidate_generated: {governed_mcp_adapter.get('governed_mcp_call_candidate_generated')}",
+            f"- real_mcp_execution_blocked: {governed_mcp_adapter.get('real_mcp_execution_blocked')}",
+            f"- mcp_dry_run_receipt_generated: {governed_mcp_adapter.get('mcp_dry_run_receipt_generated')}",
+            f"- mcp_cieu_like_event_generated: {governed_mcp_adapter.get('mcp_cieu_like_event_generated')}",
+            f"- mcp_residual_delta_generated: {governed_mcp_adapter.get('mcp_residual_delta_generated')}",
+            f"- review_only_mcp_learning_candidate_generated: {governed_mcp_adapter.get('review_only_mcp_learning_candidate_generated')}",
+            f"- y_star_gov_unmodified: {governed_mcp_adapter.get('y_star_gov_unmodified')}",
+            f"- gov_mcp_unmodified: {governed_mcp_adapter.get('gov_mcp_unmodified')}",
+            f"- mcp_server_not_started: {governed_mcp_adapter.get('mcp_server_not_started')}",
+            f"- mcp_tool_not_executed: {governed_mcp_adapter.get('mcp_tool_not_executed')}",
+            f"- mcp_resource_not_mutated: {governed_mcp_adapter.get('mcp_resource_not_mutated')}",
+            f"- ready_for_l5_7_controlled_canonical_learning_design: {governed_mcp_adapter.get('ready_for_l5_7_controlled_canonical_learning_design')}",
+            f"- ready_for_l6_revenue_opportunity_discovery: {governed_mcp_adapter.get('ready_for_l6_revenue_opportunity_discovery')}",
+            f"- next_required_milestone: {governed_mcp_adapter.get('next_required_milestone')}",
+            f"- Warning: {governed_mcp_adapter.get('warning')}",
         ]
     )
     lines.extend(

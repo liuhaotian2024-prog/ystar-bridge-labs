@@ -1,0 +1,113 @@
+{
+  "schema_name": "ystar.governed_mcp_dry_run_adapter.input_fixture",
+  "schema_version": "v0",
+  "fixture_id": "governed-mcp-dry-run-input-fixture-v0",
+  "input_refs": {
+    "behavior_y_star": "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+    "behavior_pre_u": "behavior_y_star_to_pre_u_candidate/pre_u_packet_candidate_from_behavior_y_star.json",
+    "projection_cycle_run": "projection_checked_autonomous_work_cycle/projection_checked_cycle_run.json",
+    "governed_mcp_interface_contract": "governed_mcp_interface_contract/governed_mcp_interface_contract.json",
+    "mcp_call_pre_u_boundary_contract": "governed_mcp_interface_contract/mcp_call_pre_u_boundary_contract.json",
+    "mcp_call_cieu_receipt_contract": "governed_mcp_interface_contract/mcp_call_cieu_receipt_contract.json",
+    "required_gate_sequence": "cross_repo_non_bypass_proof/required_gate_sequence.json",
+    "forbidden_bypass_path_matrix": "cross_repo_non_bypass_proof/forbidden_bypass_path_matrix.json",
+    "cross_repo_governance_readiness": "cross_repo_gap_and_readiness/cross_repo_governance_readiness.json",
+    "pre_u_to_y_star_gov_expectation_map": "ystar_company_to_y_star_gov_alignment/pre_u_candidate_to_validator_expectation_map.json",
+    "gov_mcp_bypass_risk_inventory": "gov_mcp_boundary_inventory/gov_mcp_bypass_risk_inventory.json"
+  },
+  "loaded_inputs": {
+    "behavior_y_star": {
+      "source_path": "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+      "loaded": true,
+      "schema_name": "ystar.mission_to_behavior_y_star_projection.behavior_candidate",
+      "safe_generated_or_contract_source": true
+    },
+    "behavior_pre_u": {
+      "source_path": "behavior_y_star_to_pre_u_candidate/pre_u_packet_candidate_from_behavior_y_star.json",
+      "loaded": true,
+      "schema_name": "ystar.behavior_y_star_to_pre_u_candidate.packet_candidate",
+      "safe_generated_or_contract_source": true
+    },
+    "projection_cycle_run": {
+      "source_path": "projection_checked_autonomous_work_cycle/projection_checked_cycle_run.json",
+      "loaded": true,
+      "schema_name": "ystar.projection_checked_autonomous_work_cycle.run",
+      "safe_generated_or_contract_source": true
+    },
+    "governed_mcp_interface_contract": {
+      "source_path": "governed_mcp_interface_contract/governed_mcp_interface_contract.json",
+      "loaded": true,
+      "schema_name": "ystar.governed_mcp_interface.contract",
+      "safe_generated_or_contract_source": true
+    },
+    "mcp_call_pre_u_boundary_contract": {
+      "source_path": "governed_mcp_interface_contract/mcp_call_pre_u_boundary_contract.json",
+      "loaded": true,
+      "schema_name": "ystar.governed_mcp_interface.pre_u_boundary_contract",
+      "safe_generated_or_contract_source": true
+    },
+    "mcp_call_cieu_receipt_contract": {
+      "source_path": "governed_mcp_interface_contract/mcp_call_cieu_receipt_contract.json",
+      "loaded": true,
+      "schema_name": "ystar.governed_mcp_interface.cieu_receipt_contract",
+      "safe_generated_or_contract_source": true
+    },
+    "required_gate_sequence": {
+      "source_path": "cross_repo_non_bypass_proof/required_gate_sequence.json",
+      "loaded": true,
+      "schema_name": "ystar.cross_repo_non_bypass.required_gate_sequence",
+      "safe_generated_or_contract_source": true
+    },
+    "forbidden_bypass_path_matrix": {
+      "source_path": "cross_repo_non_bypass_proof/forbidden_bypass_path_matrix.json",
+      "loaded": true,
+      "schema_name": "ystar.cross_repo_non_bypass.forbidden_bypass_path_matrix",
+      "safe_generated_or_contract_source": true
+    },
+    "cross_repo_governance_readiness": {
+      "source_path": "cross_repo_gap_and_readiness/cross_repo_governance_readiness.json",
+      "loaded": true,
+      "schema_name": "ystar.cross_repo_gap_and_readiness.governance_readiness",
+      "safe_generated_or_contract_source": true
+    },
+    "pre_u_to_y_star_gov_expectation_map": {
+      "source_path": "ystar_company_to_y_star_gov_alignment/pre_u_candidate_to_validator_expectation_map.json",
+      "loaded": true,
+      "schema_name": "ystar.alignment.pre_u_candidate_to_validator_expectation_map",
+      "safe_generated_or_contract_source": true
+    },
+    "gov_mcp_bypass_risk_inventory": {
+      "source_path": "gov_mcp_boundary_inventory/gov_mcp_bypass_risk_inventory.json",
+      "loaded": true,
+      "schema_name": "ystar.gov_mcp.bypass_risk_inventory",
+      "safe_generated_or_contract_source": true
+    }
+  },
+  "read_only_reference_repos": [
+    "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+    "/Users/haotianliu/.openclaw/workspace/gov-mcp"
+  ],
+  "reference_repo_modification_performed": false,
+  "mcp_server_or_tool_executed": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "mcp_resource_mutation_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

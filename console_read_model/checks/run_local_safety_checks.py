@@ -173,7 +173,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after cross-repo governance proof",
+        "Build governed MCP dry-run adapter",
+        ["python3", "governed_mcp_dry_run_adapter/tools/build_governed_mcp_dry_run_adapter.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after governed MCP dry-run adapter",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -1385,6 +1390,67 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "cross_repo_gap_and_readiness/cross_repo_governance_readiness.json"],
     ),
     Check(
+        "Py compile: build_governed_mcp_dry_run_adapter.py",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "governed_mcp_dry_run_adapter/tools/build_governed_mcp_dry_run_adapter.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: governed_mcp_adapter_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/governed_mcp_adapter_summary.json"],
+    ),
+    Check(
+        "Validate JSON: governed_mcp_dry_run_adapter_contract.json",
+        ["python3", "-m", "json.tool", "governed_mcp_dry_run_adapter/governed_mcp_dry_run_adapter_contract.json"],
+    ),
+    Check(
+        "Validate JSON: governed_mcp_dry_run_input_fixture.json",
+        ["python3", "-m", "json.tool", "governed_mcp_dry_run_adapter/governed_mcp_dry_run_input_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: mcp_request_intent.json",
+        ["python3", "-m", "json.tool", "mcp_request_intent_projection/mcp_request_intent.json"],
+    ),
+    Check(
+        "Validate JSON: mcp_call_pre_u_packet_candidate.json",
+        ["python3", "-m", "json.tool", "mcp_pre_u_packet_candidate/mcp_call_pre_u_packet_candidate.json"],
+    ),
+    Check(
+        "Validate JSON: mcp_governance_decision_envelope.json",
+        ["python3", "-m", "json.tool", "mcp_governance_decision_envelope/mcp_governance_decision_envelope.json"],
+    ),
+    Check(
+        "Validate JSON: mcp_bridge_authorization_receipt.json",
+        ["python3", "-m", "json.tool", "mcp_bridge_authorization_receipt/mcp_bridge_authorization_receipt.json"],
+    ),
+    Check(
+        "Validate JSON: governed_mcp_call_candidate.json",
+        ["python3", "-m", "json.tool", "governed_mcp_call_candidate/governed_mcp_call_candidate.json"],
+    ),
+    Check(
+        "Validate JSON: mcp_dry_run_receipt.json",
+        ["python3", "-m", "json.tool", "mcp_dry_run_receipt_and_cieu/mcp_dry_run_receipt.json"],
+    ),
+    Check(
+        "Validate JSON: mcp_cieu_event_fixture.json",
+        ["python3", "-m", "json.tool", "mcp_dry_run_receipt_and_cieu/mcp_cieu_event_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: mcp_residual_delta.json",
+        ["python3", "-m", "json.tool", "mcp_residual_and_learning_candidate/mcp_residual_delta.json"],
+    ),
+    Check(
+        "Validate JSON: mcp_learning_candidate.json",
+        ["python3", "-m", "json.tool", "mcp_residual_and_learning_candidate/mcp_learning_candidate.json"],
+    ),
+    Check(
+        "Validate JSON: governed_mcp_adapter_readiness.json",
+        ["python3", "-m", "json.tool", "governed_mcp_adapter_readiness/governed_mcp_adapter_readiness.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -1583,6 +1649,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: cross-repo-governance",
         ["python3", "console_read_model/cli/team_console.py", "cross-repo-governance"],
+    ),
+    Check(
+        "CLI smoke: governed-mcp-adapter",
+        ["python3", "console_read_model/cli/team_console.py", "governed-mcp-adapter"],
     ),
     Check(
         "CLI smoke: sources",

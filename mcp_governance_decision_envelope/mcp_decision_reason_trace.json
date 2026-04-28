@@ -1,0 +1,50 @@
+{
+  "schema_name": "ystar.mcp_governance_decision_envelope.reason_trace",
+  "schema_version": "v0",
+  "trace_id": "mcp-decision-reason-trace-v0",
+  "source_decision_id": "mcp-governance-decision-envelope-dry-run-v0",
+  "structural_checks": [
+    {
+      "check": "behavior Y* loaded",
+      "result": "pass"
+    },
+    {
+      "check": "Pre-U candidate generated",
+      "result": "pass"
+    },
+    {
+      "check": "future MCP operation is internal dry-run",
+      "result": "pass"
+    },
+    {
+      "check": "real MCP execution requested",
+      "result": "blocked_false"
+    },
+    {
+      "check": "Y-star-gov live validation performed",
+      "result": "not_performed_required_before_live"
+    }
+  ],
+  "semantic_truth_scoring_performed": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "mcp_resource_mutation_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

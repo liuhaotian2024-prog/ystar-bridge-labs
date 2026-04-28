@@ -1,0 +1,53 @@
+{
+  "schema_name": "ystar.mcp_request_intent_projection.operation_boundary",
+  "schema_version": "v0",
+  "operation_boundary_id": "mcp-requested-operation-boundary-v0",
+  "requested_operation": "read_safe_generated_summary_resource_dry_run",
+  "allowed_operations": [
+    "local dry-run adapter fixture generation",
+    "safe generated/read-model summary reference",
+    "governance expectation mapping",
+    "bridge receipt fixture generation",
+    "CIEU-like fixture generation without persistence",
+    "review-only learning candidate generation"
+  ],
+  "forbidden_operations": [
+    "real MCP server startup",
+    "MCP tool execution",
+    "MCP resource mutation",
+    "external action",
+    "network/API call",
+    "DB/log/raw runtime artifact read",
+    "brain writeback",
+    "memory ingestion",
+    "canonical policy mutation",
+    "candidate approval",
+    "L6 revenue opportunity discovery"
+  ],
+  "external_network_forbidden": true,
+  "raw_runtime_artifact_reads_forbidden": true,
+  "brain_memory_writeback_forbidden": true,
+  "revenue_discovery_forbidden": true,
+  "mcp_execution_forbidden_now": true,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "mcp_resource_mutation_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

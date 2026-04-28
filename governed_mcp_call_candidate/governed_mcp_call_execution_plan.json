@@ -1,0 +1,57 @@
+{
+  "schema_name": "ystar.governed_mcp_call_candidate.execution_plan",
+  "schema_version": "v0",
+  "execution_plan_id": "governed-mcp-call-execution-plan-dry-run-v0",
+  "source_mcp_call_candidate_id": "governed-mcp-call-candidate-read-safe-summary-v0",
+  "plan_mode": "dry_run_plan_only",
+  "planned_steps": [
+    "confirm bridge receipt",
+    "confirm real MCP execution is blocked",
+    "construct dry-run receipt fixture",
+    "construct CIEU-like fixture",
+    "construct residual delta"
+  ],
+  "allowed_operations": [
+    "local dry-run adapter fixture generation",
+    "safe generated/read-model summary reference",
+    "governance expectation mapping",
+    "bridge receipt fixture generation",
+    "CIEU-like fixture generation without persistence",
+    "review-only learning candidate generation"
+  ],
+  "forbidden_operations": [
+    "real MCP server startup",
+    "MCP tool execution",
+    "MCP resource mutation",
+    "external action",
+    "network/API call",
+    "DB/log/raw runtime artifact read",
+    "brain writeback",
+    "memory ingestion",
+    "canonical policy mutation",
+    "candidate approval",
+    "L6 revenue opportunity discovery"
+  ],
+  "real_execution_performed": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "mcp_resource_mutation_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

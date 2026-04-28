@@ -1,0 +1,60 @@
+{
+  "schema_name": "ystar.governed_mcp_call_candidate.candidate",
+  "schema_version": "v0",
+  "mcp_call_candidate_id": "governed-mcp-call-candidate-read-safe-summary-v0",
+  "source_bridge_receipt_id": "mcp-bridge-authorization-receipt-dry-run-v0",
+  "source_pre_u_packet_id": "mcp-pre-u-packet-candidate-read-safe-summary-v0",
+  "mcp_tool_or_resource_id": "future-gov-mcp-resource:console-read-model-summary",
+  "requested_operation": "read_safe_generated_summary_resource_dry_run",
+  "requested_U": {
+    "candidate_u_id": "candidate-u-governed-mcp-read-summary-dry-run-v0",
+    "candidate_u": "request a safe generated console/read-model summary through a future governed MCP resource boundary",
+    "execution_mode": "dry_run_adapter_fixture",
+    "real_mcp_execution": false
+  },
+  "allowed_U": "produce dry-run adapter receipt for safe generated summary request",
+  "denied_U": [
+    "real MCP server startup",
+    "MCP tool execution",
+    "MCP resource mutation",
+    "external action",
+    "network/API call",
+    "DB/log/raw runtime artifact read",
+    "brain writeback",
+    "memory ingestion",
+    "canonical policy mutation",
+    "candidate approval",
+    "L6 revenue opportunity discovery"
+  ],
+  "dry_run_only": true,
+  "real_execution_performed": false,
+  "mcp_server_started": false,
+  "mcp_tool_called": false,
+  "mcp_resource_mutated": false,
+  "network_called": false,
+  "evidence_refs": [
+    "mcp_bridge_authorization_receipt/mcp_bridge_authorization_receipt.json",
+    "mcp_pre_u_packet_candidate/mcp_call_pre_u_packet_candidate.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "mcp_resource_mutation_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schema_name": "ystar.mcp_dry_run_receipt_and_cieu.mock_actual_outcome",
+  "schema_version": "v0",
+  "mock_actual_outcome_id": "mcp-mock-actual-outcome-v0",
+  "synthetic_dry_run_only": true,
+  "Y_t_plus_1": {
+    "result_mode": "mock_dry_run_summary",
+    "safe_resource_ref": "console_read_model/generated/cross_repo_governance_summary.json",
+    "observed_effect": "No MCP server was started; receipt records only the intended safe resource boundary."
+  },
+  "real_execution_performed": false,
+  "mcp_server_started": false,
+  "mcp_tool_called": false,
+  "mcp_resource_mutated": false,
+  "network_called": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "mcp_resource_mutation_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "schema_name": "ystar.mcp_dry_run_receipt_and_cieu.cieu_event_fixture",
+  "schema_version": "v0",
+  "event_id": "mcp-cieu-like-event-fixture-v0",
+  "X_t": {
+    "schema_name": "ystar.mcp_request_intent_projection.context_fixture",
+    "schema_version": "v0",
+    "context_fixture_id": "mcp-request-context-safe-summary-v0",
+    "internal_only": true,
+    "dry_run_only": true,
+    "safe_resource_class": "tracked_generated_console_read_model_summary",
+    "requested_safe_resource_ref": "console_read_model/generated/cross_repo_governance_summary.json",
+    "no_real_mcp_server": true,
+    "no_real_tool_execution": true,
+    "no_external_action": true,
+    "no_resource_mutation": true,
+    "no_network": true,
+    "no_db_log_runtime_content_read": true,
+    "safety_flags": {
+      "live_execution_enabled": false,
+      "behavior_execution_enabled": false,
+      "external_action_enabled": false,
+      "network_enabled": false,
+      "scheduler_enabled": false,
+      "daemon_enabled": false,
+      "mcp_server_execution_enabled": false,
+      "mcp_tool_execution_enabled": false,
+      "mcp_resource_mutation_enabled": false,
+      "cieu_persistence_enabled": false,
+      "brain_writeback_enabled": false,
+      "memory_ingestion_enabled": false,
+      "candidate_auto_approval_enabled": false,
+      "canonical_policy_mutation_enabled": false,
+      "y_star_gov_modification_enabled": false,
+      "gov_mcp_modification_enabled": false,
+      "semantic_truth_scoring_enabled": false,
+      "raw_runtime_artifact_reading_enabled": false,
+      "revenue_opportunity_discovery_enabled": false
+    }
+  },
+  "U_t": {
+    "source_mcp_call_candidate_id": "governed-mcp-call-candidate-read-safe-summary-v0",
+    "requested_U": {
+      "candidate_u_id": "candidate-u-governed-mcp-read-summary-dry-run-v0",
+      "candidate_u": "request a safe generated console/read-model summary through a future governed MCP resource boundary",
+      "execution_mode": "dry_run_adapter_fixture",
+      "real_mcp_execution": false
+    },
+    "allowed_U": "produce dry-run adapter receipt for safe generated summary request"
+  },
+  "Y_star_t": {
+    "source_behavior_y_star_id": "behavior-y-star-projection-checked-cycle-v0",
+    "declared_Y_star": "Prepare a projection-checked autonomous work-cycle candidate for future Pre-U validation.",
+    "source_pre_u_packet_id": "mcp-pre-u-packet-candidate-read-safe-summary-v0"
+  },
+  "Y_t_plus_1": {
+    "result_mode": "mock_dry_run_summary",
+    "safe_resource_ref": "console_read_model/generated/cross_repo_governance_summary.json",
+    "observed_effect": "No MCP server was started; receipt records only the intended safe resource boundary."
+  },
+  "R_t_plus_1": {
+    "residual_mode": "deterministic_structural_residual",
+    "real_execution_absent": true,
+    "missing_live_validation": true,
+    "mcp_execution_blocked": true
+  },
+  "event_mode": "mcp_dry_run_fixture",
+  "persistence_enabled": false,
+  "db_write_performed": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "mcp_resource_mutation_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

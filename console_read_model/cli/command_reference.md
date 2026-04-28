@@ -115,6 +115,11 @@ python3 console_read_model/cli/team_console.py <command>
   contract proof summary: Y-star-gov and gov-mcp read-only inventories,
   ystar-company to governance-kernel alignment, governed MCP boundary
   invariants, bypass risks, and disabled live/MCP/writeback/persistence flags.
+- `governed-mcp-adapter`: Prints the generated L5.6 governed MCP dry-run
+  adapter summary: behavior-level Y* consumption, MCP request intent, MCP
+  Pre-U packet candidate, dry-run governance decision, bridge receipt, blocked
+  real MCP execution, CIEU-like fixture, residual delta, review-only learning
+  candidate, and disabled live/MCP/writeback/persistence flags.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

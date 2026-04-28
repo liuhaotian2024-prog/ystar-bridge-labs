@@ -74,6 +74,8 @@ Ready now:
 - field functional auto-projection core summary
 - projection-checked autonomous work cycle summary
 - review-gated shadow learning cycle summary
+- cross-repo governance contract proof summary
+- governed MCP dry-run adapter summary
 
 Not ready:
 - runtime generator
@@ -109,23 +111,23 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 278
-- Unsafe artifacts count: 187
+- Artifacts classified: 286
+- Unsafe artifacts count: 189
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
   - CACHE_SENTINEL: 5
   - DAEMON_STATE: 4
-  - DAILY_REPORT: 8
+  - DAILY_REPORT: 9
   - DB_CORE: 1
   - DB_SIDECARE: 6
-  - DREAM_REPORT: 44
+  - DREAM_REPORT: 45
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
   - FRAMEWORK_FILE: 16
   - LOG_RUNTIME: 31
   - PYCACHE: 31
-  - UNKNOWN_OR_NON_RUNTIME: 75
+  - UNKNOWN_OR_NON_RUNTIME: 81
   - UNKNOWN_RUNTIME_ARTIFACT: 10
   - WHITELIST_REPORT: 2
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
@@ -163,23 +165,23 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 278
-- Artifacts with disposition: 278
+- Total artifacts: 286
+- Artifacts with disposition: 286
 - Safe-mined to review queue: 21
 - Forbidden direct read count: 106
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
-  - deferred_markdown_report_not_selected: 60
+  - deferred_markdown_report_not_selected: 62
   - deferred_requires_bounded_log_adapter: 31
   - deferred_requires_classification: 10
   - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 31
-  - ignored_or_non_runtime: 91
+  - ignored_or_non_runtime: 97
   - safe_mined_to_review_queue: 21
 - Evidence scoring status:
-  - not_started: 278
+  - not_started: 286
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -235,9 +237,9 @@ Not ready:
 
 ## Labs Runtime Governance Acceptance
 
-- accepted: True
-- checks_passed: 12
-- checks_total: 12
+- accepted: False
+- checks_passed: 10
+- checks_total: 10
 - roles_covered: Aiden-CEO, Ethan-CTO, Samantha-Secretary
 - decision_counts:
   - allow: 3
@@ -250,11 +252,11 @@ Not ready:
 
 ## Cross-Repo Governance Alignment
 
-- alignment_accepted: True
-- ystar-company HEAD: 9667642b tools: add review gated shadow projection cycle
+- alignment_accepted: False
+- ystar-company HEAD: 8c2f11ad tools: add cross repo governance contract proof
 - Y-star-gov HEAD: 9c4aee3 tools: add governance endpoint acceptance runner
-- Y-star-gov endpoint accepted: True
-- labs runtime accepted: True
+- Y-star-gov endpoint accepted: False
+- labs runtime accepted: False
 - roles_covered: Aiden-CEO, Ethan-CTO, Samantha-Secretary
 - decision_counts:
   - allow: 3
@@ -269,7 +271,7 @@ Not ready:
 
 ## Labs Live Readiness
 
-- dry_run_governance_ready: True
+- dry_run_governance_ready: False
 - minimal_live_loop_ready: False
 - minimal_live_loop_status: blocked_until_required_gates_exist
 - recommended_next_phase: build_live_boundary_harness_not_runtime_execution
@@ -383,9 +385,9 @@ Not ready:
 - next_required_milestone: L4.4 First Governed Read-Only Observation Tool Wrapper v0
 - bucket_counts:
   - A_adopt_now_read_only: 1
-  - B_wrap_as_governed_tool: 883
+  - B_wrap_as_governed_tool: 885
   - C_rewrite_from_design: 8
-  - D_quarantine_as_evidence_ore: 8
+  - D_quarantine_as_evidence_ore: 6
   - E_retire_do_not_use: 0
 - Warning: Triage is classification only; no asset is absorbed or enabled.
 
@@ -560,7 +562,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 4212
+- assets_scanned: 4258
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -695,6 +697,30 @@ Not ready:
 - ready_for_l6_revenue_opportunity_discovery: False
 - next_required_milestone: L5.6 Governed MCP Dry-Run Adapter v0
 - Warning: L5.5 is a read-only boundary proof. ystar-company is not a governance kernel, Y-star-gov and gov-mcp were not modified, and MCP tools were not executed.
+
+## Governed MCP Dry-Run Adapter
+
+- l5_6_governed_mcp_dry_run_adapter_defined: True
+- behavior_y_star_loaded: True
+- mcp_request_intent_generated: True
+- mcp_pre_u_packet_candidate_generated: True
+- dry_run_governance_decision_envelope_generated: True
+- bridge_authorization_receipt_generated: True
+- governed_mcp_call_candidate_generated: True
+- real_mcp_execution_blocked: True
+- mcp_dry_run_receipt_generated: True
+- mcp_cieu_like_event_generated: True
+- mcp_residual_delta_generated: True
+- review_only_mcp_learning_candidate_generated: True
+- y_star_gov_unmodified: True
+- gov_mcp_unmodified: True
+- mcp_server_not_started: True
+- mcp_tool_not_executed: True
+- mcp_resource_not_mutated: True
+- ready_for_l5_7_controlled_canonical_learning_design: True
+- ready_for_l6_revenue_opportunity_discovery: False
+- next_required_milestone: L5.7 Controlled Canonical Learning Design v0
+- Warning: L5.6 proves a governed MCP dry-run adapter boundary only. gov-mcp was not run, MCP tools/resources were not executed or mutated, and Y-star-gov/gov-mcp remain unmodified.
 
 ## Governance Boundary
 

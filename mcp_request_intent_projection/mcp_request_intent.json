@@ -1,0 +1,71 @@
+{
+  "schema_name": "ystar.mcp_request_intent_projection.intent",
+  "schema_version": "v0",
+  "request_intent_id": "mcp-request-intent-read-safe-summary-v0",
+  "source_behavior_y_star_id": "behavior-y-star-projection-checked-cycle-v0",
+  "declared_request_intent": "retrieve a safe console/read-model summary through a future governed MCP resource adapter",
+  "requested_mcp_surface_type": "resource",
+  "requested_operation_class": "read_safe_generated_summary_dry_run",
+  "candidate_U_summary": {
+    "candidate_u_id": "candidate-u-governed-mcp-read-summary-dry-run-v0",
+    "candidate_u": "request a safe generated console/read-model summary through a future governed MCP resource boundary",
+    "execution_mode": "dry_run_adapter_fixture",
+    "real_mcp_execution": false
+  },
+  "candidate_u_summary": {
+    "candidate_u_id": "candidate-u-governed-mcp-read-summary-dry-run-v0",
+    "candidate_u": "request a safe generated console/read-model summary through a future governed MCP resource boundary",
+    "execution_mode": "dry_run_adapter_fixture",
+    "real_mcp_execution": false
+  },
+  "expected_safe_result": "A dry-run receipt summarizing what a future governed MCP resource read would return without starting a server or reading raw runtime artifacts.",
+  "explicit_non_goals": [
+    "do not execute MCP",
+    "do not start gov-mcp",
+    "do not mutate files or resources",
+    "do not call network",
+    "do not read DB/log/raw runtime artifacts",
+    "do not write brain or memory"
+  ],
+  "forbidden_request_patterns": [
+    "real MCP server startup",
+    "MCP tool execution",
+    "MCP resource mutation",
+    "external action",
+    "network/API call",
+    "DB/log/raw runtime artifact read",
+    "brain writeback",
+    "memory ingestion",
+    "canonical policy mutation",
+    "candidate approval",
+    "L6 revenue opportunity discovery"
+  ],
+  "internal_only": true,
+  "dry_run_only": true,
+  "evidence_refs": [
+    "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+    "governed_mcp_interface_contract/governed_mcp_interface_contract.json",
+    "cross_repo_non_bypass_proof/required_gate_sequence.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "mcp_resource_mutation_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

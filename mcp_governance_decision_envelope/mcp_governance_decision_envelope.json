@@ -1,0 +1,69 @@
+{
+  "schema_name": "ystar.mcp_governance_decision_envelope.envelope",
+  "schema_version": "v0",
+  "decision_id": "mcp-governance-decision-envelope-dry-run-v0",
+  "source_pre_u_packet_id": "mcp-pre-u-packet-candidate-read-safe-summary-v0",
+  "decision": "allow_mcp_dry_run_only",
+  "decision_scope": "internal deterministic adapter fixture only",
+  "allowed_scope": [
+    "local dry-run adapter fixture generation",
+    "safe generated/read-model summary reference",
+    "governance expectation mapping",
+    "bridge receipt fixture generation",
+    "CIEU-like fixture generation without persistence",
+    "review-only learning candidate generation"
+  ],
+  "denied_scope": [
+    "real MCP server startup",
+    "MCP tool execution",
+    "MCP resource mutation",
+    "external action",
+    "network/API call",
+    "DB/log/raw runtime artifact read",
+    "brain writeback",
+    "memory ingestion",
+    "canonical policy mutation",
+    "candidate approval",
+    "L6 revenue opportunity discovery"
+  ],
+  "required_next_gate": "bridge_authorization_receipt",
+  "reason_codes": [
+    "behavior_y_star_present",
+    "pre_u_candidate_present",
+    "operation_internal_dry_run_only",
+    "real_mcp_execution_blocked",
+    "no_external_network_or_writeback_requested"
+  ],
+  "evidence_refs": [
+    "mcp_pre_u_packet_candidate/mcp_call_pre_u_packet_candidate.json",
+    "cross_repo_non_bypass_proof/required_gate_sequence.json",
+    "cross_repo_non_bypass_proof/forbidden_bypass_path_matrix.json"
+  ],
+  "dry_run_only": true,
+  "canonical_y_star_gov_validation_performed": false,
+  "y_star_gov_validation_required_before_live": true,
+  "live_execution_authorized": false,
+  "mcp_tool_execution_authorized": false,
+  "external_action_authorized": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "mcp_resource_mutation_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

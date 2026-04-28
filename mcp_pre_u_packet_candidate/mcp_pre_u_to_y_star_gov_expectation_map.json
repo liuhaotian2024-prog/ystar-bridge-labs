@@ -1,0 +1,53 @@
+{
+  "schema_name": "ystar.mcp_pre_u_packet_candidate.y_star_gov_expectation_map",
+  "schema_version": "v0",
+  "map_id": "mcp-pre-u-to-y-star-gov-expectation-map-v0",
+  "source_pre_u_packet_id": "mcp-pre-u-packet-candidate-read-safe-summary-v0",
+  "source_expectation_map_ref": "ystar_company_to_y_star_gov_alignment/pre_u_candidate_to_validator_expectation_map.json",
+  "mapped_fields": [
+    {
+      "mcp_pre_u_field": "declared_Y_star",
+      "y_star_gov_expectation": "declared_Y_star"
+    },
+    {
+      "mcp_pre_u_field": "X_t / Xt",
+      "y_star_gov_expectation": "X_t / Xt"
+    },
+    {
+      "mcp_pre_u_field": "candidate_U",
+      "y_star_gov_expectation": "candidate_U"
+    },
+    {
+      "mcp_pre_u_field": "execution_boundary",
+      "y_star_gov_expectation": "safety and denied-scope validation"
+    },
+    {
+      "mcp_pre_u_field": "trace_refs",
+      "y_star_gov_expectation": "audit trace references"
+    }
+  ],
+  "expectation_source_status": "requires_future_Y_star_gov_or_versioned_adapter_validation",
+  "canonical_y_star_gov_validation_performed": false,
+  "y_star_gov_validation_required_before_live": true,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "mcp_resource_mutation_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

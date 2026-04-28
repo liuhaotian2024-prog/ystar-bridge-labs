@@ -43,6 +43,7 @@ FIELD_PROJECTION = "console_read_model/generated/field_projection_summary.json"
 PROJECTION_CYCLE = "console_read_model/generated/projection_cycle_summary.json"
 SHADOW_LEARNING_CYCLE = "console_read_model/generated/shadow_learning_cycle_summary.json"
 CROSS_REPO_GOVERNANCE = "console_read_model/generated/cross_repo_governance_summary.json"
+GOVERNED_MCP_ADAPTER = "console_read_model/generated/governed_mcp_adapter_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -62,7 +63,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -125,6 +126,7 @@ def load_all() -> dict[str, Any]:
         "projection_cycle": load_json(PROJECTION_CYCLE),
         "shadow_learning_cycle": load_json(SHADOW_LEARNING_CYCLE),
         "cross_repo_governance": load_json(CROSS_REPO_GOVERNANCE),
+        "governed_mcp_adapter": load_json(GOVERNED_MCP_ADAPTER),
     }
 
 
@@ -1115,6 +1117,61 @@ def cmd_cross_repo_governance(data: dict[str, Any]) -> None:
     print(f"warning: {proof.get('warning')}")
 
 
+def cmd_governed_mcp_adapter(data: dict[str, Any]) -> None:
+    adapter = data["governed_mcp_adapter"]
+    print("# Governed MCP Dry-Run Adapter")
+    print()
+    print(
+        "L5.6 governed MCP dry-run adapter defined: "
+        f"{adapter.get('l5_6_governed_mcp_dry_run_adapter_defined')}"
+    )
+    print(f"behavior-level Y* loaded: {adapter.get('behavior_y_star_loaded')}")
+    print(f"MCP request intent generated: {adapter.get('mcp_request_intent_generated')}")
+    print(f"MCP Pre-U packet candidate generated: {adapter.get('mcp_pre_u_packet_candidate_generated')}")
+    print(
+        "dry-run governance decision envelope generated: "
+        f"{adapter.get('dry_run_governance_decision_envelope_generated')}"
+    )
+    print(f"bridge authorization receipt generated: {adapter.get('bridge_authorization_receipt_generated')}")
+    print(f"governed MCP call candidate generated: {adapter.get('governed_mcp_call_candidate_generated')}")
+    print(f"real MCP execution blocked: {adapter.get('real_mcp_execution_blocked')}")
+    print(f"MCP dry-run receipt generated: {adapter.get('mcp_dry_run_receipt_generated')}")
+    print(f"MCP CIEU-like event generated: {adapter.get('mcp_cieu_like_event_generated')}")
+    print(f"MCP residual delta generated: {adapter.get('mcp_residual_delta_generated')}")
+    print(
+        "review-only MCP learning candidate generated: "
+        f"{adapter.get('review_only_mcp_learning_candidate_generated')}"
+    )
+    print(f"Y-star-gov unmodified: {adapter.get('y_star_gov_unmodified')}")
+    print(f"gov-mcp unmodified: {adapter.get('gov_mcp_unmodified')}")
+    print(f"no MCP server/tool executed: {adapter.get('mcp_server_not_started') and adapter.get('mcp_tool_not_executed')}")
+    print(f"MCP resource mutated: {not adapter.get('mcp_resource_not_mutated')}")
+    print(f"live execution enabled: {adapter.get('live_execution_enabled')}")
+    print(f"behavior execution enabled: {adapter.get('behavior_execution_enabled')}")
+    print(f"external action enabled: {adapter.get('external_action_enabled')}")
+    print(f"network enabled: {adapter.get('network_enabled')}")
+    print(f"scheduler enabled: {adapter.get('scheduler_enabled')}")
+    print(f"daemon enabled: {adapter.get('daemon_enabled')}")
+    print(f"CIEU persistence enabled: {adapter.get('cieu_persistence_enabled')}")
+    print(f"brain writeback enabled: {adapter.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {adapter.get('memory_ingestion_enabled')}")
+    print(f"canonical policy mutation enabled: {adapter.get('canonical_policy_mutation_enabled')}")
+    print(f"MCP server execution enabled: {adapter.get('mcp_server_execution_enabled')}")
+    print(f"MCP tool execution enabled: {adapter.get('mcp_tool_execution_enabled')}")
+    print(f"MCP resource mutation enabled: {adapter.get('mcp_resource_mutation_enabled')}")
+    print(
+        "ready for L5.7 controlled canonical learning design: "
+        f"{adapter.get('ready_for_l5_7_controlled_canonical_learning_design')}"
+    )
+    print(
+        "ready for L6 revenue opportunity discovery: "
+        f"{adapter.get('ready_for_l6_revenue_opportunity_discovery')}"
+    )
+    print(f"next required milestone: {adapter.get('next_required_milestone')}")
+    print(f"generated_readiness: {adapter.get('generated_readiness')}")
+    print(f"warning: {adapter.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -1325,6 +1382,19 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print(f"- {cross_repo_governance.get('generated_governed_mcp_interface_summary')}")
         print(f"- {cross_repo_governance.get('generated_non_bypass_summary')}")
         print(f"- {cross_repo_governance.get('generated_readiness')}")
+    governed_mcp_adapter = data.get("governed_mcp_adapter", {})
+    if governed_mcp_adapter:
+        print()
+        print("Governed MCP dry-run adapter:")
+        print(f"- {governed_mcp_adapter.get('generated_adapter_summary')}")
+        print(f"- {governed_mcp_adapter.get('generated_intent_summary')}")
+        print(f"- {governed_mcp_adapter.get('generated_pre_u_summary')}")
+        print(f"- {governed_mcp_adapter.get('generated_decision_summary')}")
+        print(f"- {governed_mcp_adapter.get('generated_bridge_summary')}")
+        print(f"- {governed_mcp_adapter.get('generated_call_summary')}")
+        print(f"- {governed_mcp_adapter.get('generated_receipt_summary')}")
+        print(f"- {governed_mcp_adapter.get('generated_residual_summary')}")
+        print(f"- {governed_mcp_adapter.get('generated_readiness')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -1450,6 +1520,8 @@ def cmd_validate_local() -> int:
             failures.append("shadow_learning_cycle_summary missing from team console snapshot")
         if "cross_repo_governance_summary" not in snapshot:
             failures.append("cross_repo_governance_summary missing from team console snapshot")
+        if "governed_mcp_adapter_summary" not in snapshot:
+            failures.append("governed_mcp_adapter_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -2903,6 +2975,8 @@ def main(argv: list[str]) -> int:
         cmd_shadow_learning_cycle(data)
     elif command == "cross-repo-governance":
         cmd_cross_repo_governance(data)
+    elif command == "governed-mcp-adapter":
+        cmd_governed_mcp_adapter(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

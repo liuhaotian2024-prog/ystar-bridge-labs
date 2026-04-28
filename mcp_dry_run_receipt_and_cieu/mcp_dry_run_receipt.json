@@ -1,0 +1,53 @@
+{
+  "schema_name": "ystar.mcp_dry_run_receipt_and_cieu.receipt",
+  "schema_version": "v0",
+  "mcp_call_id": "mcp-dry-run-receipt-read-safe-summary-v0",
+  "source_pre_u_packet_id": "mcp-pre-u-packet-candidate-read-safe-summary-v0",
+  "source_decision_envelope_id": "mcp-governance-decision-envelope-dry-run-v0",
+  "source_bridge_receipt_id": "mcp-bridge-authorization-receipt-dry-run-v0",
+  "tool_or_resource_id": "future-gov-mcp-resource:console-read-model-summary",
+  "requested_U": {
+    "candidate_u_id": "candidate-u-governed-mcp-read-summary-dry-run-v0",
+    "candidate_u": "request a safe generated console/read-model summary through a future governed MCP resource boundary",
+    "execution_mode": "dry_run_adapter_fixture",
+    "real_mcp_execution": false
+  },
+  "allowed_U": "produce dry-run adapter receipt for safe generated summary request",
+  "actual_result_summary": {
+    "result_mode": "mock_dry_run_summary",
+    "safe_resource_ref": "console_read_model/generated/cross_repo_governance_summary.json",
+    "observed_effect": "No MCP server was started; receipt records only the intended safe resource boundary."
+  },
+  "execution_mode": "dry_run_adapter_fixture",
+  "real_execution_performed": false,
+  "mcp_server_started": false,
+  "mcp_tool_called": false,
+  "mcp_resource_mutated": false,
+  "network_called": false,
+  "persistence_mode": "none",
+  "evidence_refs": [
+    "governed_mcp_call_candidate/governed_mcp_call_candidate.json",
+    "mcp_bridge_authorization_receipt/mcp_bridge_authorization_receipt.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "mcp_resource_mutation_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

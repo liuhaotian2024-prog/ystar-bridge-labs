@@ -1,0 +1,54 @@
+{
+  "schema_name": "ystar.mcp_residual_and_learning_candidate.classification",
+  "schema_version": "v0",
+  "classification_id": "mcp-residual-classification-v0",
+  "source_mcp_residual_delta_id": "mcp-residual-delta-v0",
+  "residual_class_names": [
+    "mcp_projection_alignment_residual",
+    "mcp_pre_u_mapping_residual",
+    "governance_decision_residual",
+    "bridge_receipt_residual",
+    "mcp_execution_blocker_residual",
+    "cieu_receipt_residual",
+    "evidence_gap_residual",
+    "learning_queue_residual",
+    "live_blocker_residual",
+    "writeback_blocker_residual"
+  ],
+  "allowed_learning_targets": [
+    "governed_mcp_interface_contract",
+    "mcp_pre_u_mapping",
+    "bridge_receipt_requirements",
+    "cieu_receipt_requirements",
+    "non_bypass_invariants",
+    "residual_classification"
+  ],
+  "denied_learning_effects": [
+    "direct brain writeback",
+    "direct memory ingestion",
+    "candidate auto-approval",
+    "canonical policy mutation",
+    "live MCP execution"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "mcp_resource_mutation_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

@@ -90,5 +90,8 @@ review-gated shadow learning cycle. It confirms an L5.3 residual can influence a
 `cross_repo_governance_summary.json` is derived from the L5.5 cross-repo
 governance contract proof. It confirms ystar-company remains labs/runtime, Y-star-gov remains the intended governance kernel, and gov-mcp remains a governed interface boundary.
 
+`governed_mcp_adapter_summary.json` is derived from the L5.6 governed MCP
+dry-run adapter proof. It confirms a future MCP call candidate is downstream of behavior-level Y*, Pre-U, governance expectation, bridge receipt, CIEU-like receipt, residual delta, and review-only learning gates while real MCP execution remains blocked.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.
