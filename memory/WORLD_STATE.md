@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-25 17:00:00
+**Generated**: 2026-04-28 18:00:00
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,7 +36,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/12 valid (0 errors)
-**CIEU 24h Events**: 143736
+**CIEU 24h Events**: 1925
 **Overdue Obligations**: 0
 
 ---
@@ -47,7 +47,7 @@
 
 Role         | P1 Complete  | P2 Theories  | P3 Sims  | Last Learning
 ----------------------------------------------------------------------
-ceo          | 3/3          | 24           | 40       | 2026-04-24  
+ceo          | 3/3          | 24           | 41       | 2026-04-27  
 ```
 
 ---
@@ -74,7 +74,7 @@ ceo          | 3/3          | 24           | 40       | 2026-04-24
 ### B. Y-star-gov 通用产品代码硬编码 Bridge Labs 公司具体名字
 
 
-... (258 more lines, see BOARD_PENDING.md)
+... (270 more lines, see BOARD_PENDING.md)
 
 ---
 
@@ -84,72 +84,65 @@ ceo          | 3/3          | 24           | 40       | 2026-04-24
 ---
 
 ## 8. Y* Field State (xi) — Mission axis frequency + drift
-**Total CIEU events (24h)**: 143736
+**Total CIEU events (24h)**: 1925
 
 | M-Axis | Description | 24h Count | 7d Avg/Day | Drift |
 |--------|-------------|-----------|------------|-------|
-| **M-1** | Survivability (session/boot/handoff/persist) | 1904 | 11199 | ↓ |
-| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 2513 | 1291 | ↑ |
-| **M-2b** | Omission prevention (omission/overdue/alarm) | 882 | 6022 | ↓ |
+| **M-1** | Survivability (session/boot/handoff/persist) | 231 | 5083 | ↑ |
+| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 3 | 893 | ↓ |
+| **M-2b** | Omission prevention (omission/overdue/alarm) | 2 | 2752 | ↓ |
 | **M-3** | Value production (customer/revenue/dogfood/demo) | 0 | 0 | ↓ |
 
-**Classified coverage**: 5299/143736 (3.7%)
-**Unclassified**: 138437 events (routine ops / K9 routing)
-**Drift alert**: M-2a trending UP vs 7d baseline
-**Drift alert**: M-1, M-2b, M-3 trending DOWN vs 7d baseline
+**Classified coverage**: 236/1925 (12.3%)
+**Unclassified**: 1689 events (routine ops / K9 routing)
+**Drift alert**: M-1 trending UP vs 7d baseline
+**Drift alert**: M-2a, M-2b, M-3 trending DOWN vs 7d baseline
 
 ---
 
 ## 9. Commission Error Heatmap — 11-component unified dashboard
-**Total commission errors (24h)**: 2187
+**Total commission errors (24h)**: 276
 
 **By M-Axis**:
 
 | Axis | Description | 24h Count |
 |------|-------------|-----------|
-| **M-1** | Survivability (schema/wire/config drift) | 407 |
-| **M-2a** | Commission prevention (core 11 detectors) | 1684 |
-| **M-3** | Value quality (maturity/off-target) | 96 |
+| **M-1** | Survivability (schema/wire/config drift) | 235 |
+| **M-2a** | Commission prevention (core 11 detectors) | 41 |
+| **M-3** | Value quality (maturity/off-target) | 0 |
 
 **By Detector (11 components + hook catches)**:
 
 | Detector | 24h Count | Drift vs 7d |
 |----------|-----------|-------------|
-| hook_commission_catch | 1173 | = (avg 1025.7/d) |
-| k9_silent_fire_audit | 557 | v (avg 3314.7/d) |
-| amendment_coverage_audit | 384 | v (avg 864.9/d) |
-| metalearning | 33 | v (avg 186.9/d) |
-| directive_evaluator | 25 | = (avg 29.6/d) |
-| observable_action_detector | 13 | v (avg 65.6/d) |
-| enforcement_observer | 2 | v (avg 3.3/d) |
+| amendment_coverage_audit | 233 | v (avg 421.3/d) |
+| directive_evaluator | 40 | = (avg 34.0/d) |
+| hook_commission_catch | 3 | v (avg 491.4/d) |
 
 **By Actor (top 10)**:
 
 | Actor | 24h Commission Errors |
 |-------|----------------------|
-| test_agent | 1204 |
-| unknown | 361 |
-| ceo | 239 |
-| cto | 167 |
-| eng-platform | 98 |
-| secretary | 72 |
-| platform | 46 |
+| unknown | 231 |
+| cto | 40 |
+| platform | 4 |
+| eng-platform | 1 |
 
 **Top 5 Event Types**:
-- `FORGET_GUARD_K9_WARN`: 846
-- `K9_VIOLATION_DETECTED`: 364
-- `SESSION_JSON_SCHEMA_VIOLATION`: 361
-- `STOP_HOOK_K9_DENY`: 202
-- `K9_AUDIT_TRIGGERED`: 193
+- `SESSION_JSON_SCHEMA_VIOLATION`: 231
+- `DIRECTIVE_LIVENESS_EVAL`: 40
+- `CANONICAL_HASH_DRIFT`: 2
+- `WIRE_BROKEN`: 2
+- `WHITELIST_GAP`: 1
 
-**Overall drift**: v (24h=2187, 7d avg/day=5512.6)
+**Overall drift**: v (24h=276, 7d avg/day=2508.0)
 
 ---
 
 ## 10. Ecosystem — Y*gov Product Repo
-**HEAD**: `92ffac5 [auto] WIP checkpoint 2026-04-25 16:30 -- 4 files changed`
-**24h commits**: 11
-**ahead origin**: 5
+**HEAD**: `9c4aee3 tools: add governance endpoint acceptance runner`
+**24h commits**: 0
+**ahead origin**: 20
 **test files**: 100
 **version**: 0.48.0
 
@@ -168,37 +161,23 @@ ceo          | 3/3          | 24           | 40       | 2026-04-24
 ## 13. Today's Commits (24h) — both repos
 
 
-**ystar-company** (24 commits):
-- 8f2b6d07 16:30 [auto] WIP checkpoint 2026-04-25 16:30 -- 11 files changed
-- 4f2261cf 16:00 [auto] WIP checkpoint 2026-04-25 16:00 -- 512 files changed
-- bfed4f1c 15:30 [auto] WIP checkpoint 2026-04-25 15:29 -- 1776 files changed
-- 37ce2072 14:59 [auto] WIP checkpoint 2026-04-25 14:59 -- 1806 files changed
-- 8ee8e609 14:29 [auto] WIP checkpoint 2026-04-25 14:29 -- 1383 files changed
-- 576e02ec 13:59 [auto] WIP checkpoint 2026-04-25 13:59 -- 3 files changed
-- 1be79bb0 13:29 [auto] WIP checkpoint 2026-04-25 13:29 -- 4 files changed
-- fea77d8e 12:59 [auto] WIP checkpoint 2026-04-25 12:59 -- 3 files changed
-- 108a4c50 12:29 [auto] WIP checkpoint 2026-04-25 12:29 -- 6 files changed
-- 88f68f4b 11:59 [auto] WIP checkpoint 2026-04-25 11:59 -- 3 files changed
-- 13fdbd61 11:29 [auto] WIP checkpoint 2026-04-25 11:29 -- 4 files changed
-- aa9b01ff 10:59 [auto] WIP checkpoint 2026-04-25 10:59 -- 6 files changed
-- 3c33c7a3 09:34 [auto] WIP checkpoint 2026-04-25 09:34 -- 61 files changed
-- d7c86bd0 09:04 [auto] WIP checkpoint 2026-04-25 09:04 -- 70 files changed
-- 6d0857f7 08:33 [auto] WIP checkpoint 2026-04-25 08:33 -- 1781 files changed
-- 3ed03ba7 08:03 [auto] WIP checkpoint 2026-04-25 08:03 -- 1802 files changed
-- 55ba7d3a 07:33 [auto] WIP checkpoint 2026-04-25 07:33 -- 88 files changed
-- aa5393bb 01:52 [auto] WIP checkpoint 2026-04-25 01:52 -- 6 files changed
-- 6e3f4d6b 23:20 [auto] WIP checkpoint 2026-04-24 23:20 -- 9 files changed
-- c380474c 22:50 [auto] WIP checkpoint 2026-04-24 22:50 -- 7 files changed
+**ystar-company** (17 commits):
+- 1b0131d0 17:44 tools: add live boundary no go framework
+- 17aadbec 17:14 tools: add real release simulation sandbox
+- b3b9e2c3 16:38 tools: add controlled real release preflight
+- 2a0cc560 16:04 tools: add controlled approval record sandbox
+- c8b2efed 13:02 tools: add real approval workflow boundary
+- 743af561 11:41 tools: add approved canonical update sandbox
+- 3996a107 10:57 tools: add controlled canonical learning design
+- eb0f4c23 10:03 tools: add governed mcp dry run adapter
+- 8c2f11ad 08:48 tools: add cross repo governance contract proof
+- 9667642b 07:36 tools: add review gated shadow projection cycle
+- 6bfde3c3 23:48 tools: add projection checked autonomous cycle
+- 13ba0f22 23:10 tools: add field functional auto projection core
+- e8848862 22:29 tools: add mission field projection harness
+- 4e9680eb 21:19 tools: add field functional archaeology
+- daee9754 20:42 tools: add manual recurring observation tick runner
+- bff89a6b 20:08 tools: add recurring observation loop contract
+- 51d90a04 18:27 tools: add mission dashboard refresh loop
 
-**Y*gov** (11 commits):
-- 92ffac5 16:30 [auto] WIP checkpoint 2026-04-25 16:30 -- 4 files changed
-- 334614b 16:00 [auto] WIP checkpoint 2026-04-25 16:00 -- 3 files changed
-- e8b6e49 14:29 [auto] WIP checkpoint 2026-04-25 14:29 -- 2 files changed
-- 7175ef6 13:59 [auto] WIP checkpoint 2026-04-25 13:59 -- 5 files changed
-- 040374c 13:29 [auto] WIP checkpoint 2026-04-25 13:29 -- 7 files changed
-- 0908057 12:55 feat: add L0 observation stack
-- bec5d85 12:04 docs: map counterfactual CZL runtime assets
-- 8195fc2 08:20 Merge branch 'cleanup/forget-guard-purge-v2-2026-04-25'
-- 8b8eff3 08:19 fix(governance): purge speech-suppression rules from ForgetGuard, enforce structured-only schema
-- 2f0fa25 21:20 [auto] WIP checkpoint 2026-04-24 21:20 -- 3 files changed
-- a538677 17:59 [auto] WIP checkpoint 2026-04-24 17:59 -- 6 files changed
+**Y*gov**: no commits

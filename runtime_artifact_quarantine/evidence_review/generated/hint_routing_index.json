@@ -8,11 +8,11 @@
   "route_counts": {
     "memory_continuity_hint_queue": 10,
     "role_brain_capsule_hint_queue": 10,
-    "governance_gap_hint_queue": 10,
+    "governance_gap_hint_queue": 11,
     "cieu_prediction_delta_hint_queue": 9,
-    "pre_u_packet_hint_queue": 1
+    "pre_u_packet_hint_queue": 2
   },
-  "routes_created": 40,
+  "routes_created": 42,
   "routes": [
     {
       "route": "memory_continuity_hint_queue",
@@ -448,6 +448,28 @@
       "candidate_id": "mdcand-020",
       "review_id": "review-020",
       "evidence_id": "evidence-020",
+      "readiness": "hint_only",
+      "status": "not_approved",
+      "ingestion_status": "not_ingested",
+      "allowed_next_step": "evidence_review_or_manual_decision",
+      "forbidden_next_step": "direct_brain_writeback"
+    },
+    {
+      "route": "governance_gap_hint_queue",
+      "candidate_id": "mdcand-021",
+      "review_id": "review-021",
+      "evidence_id": "evidence-021",
+      "readiness": "hint_only",
+      "status": "not_approved",
+      "ingestion_status": "not_ingested",
+      "allowed_next_step": "evidence_review_or_manual_decision",
+      "forbidden_next_step": "direct_brain_writeback"
+    },
+    {
+      "route": "pre_u_packet_hint_queue",
+      "candidate_id": "mdcand-021",
+      "review_id": "review-021",
+      "evidence_id": "evidence-021",
       "readiness": "hint_only",
       "status": "not_approved",
       "ingestion_status": "not_ingested",

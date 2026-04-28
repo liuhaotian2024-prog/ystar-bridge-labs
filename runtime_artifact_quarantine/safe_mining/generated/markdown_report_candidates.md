@@ -2,7 +2,7 @@
 
 These candidates were produced from allowed Markdown report classes with strict bounds.
 
-- Candidate count: 20
+- Candidate count: 21
 - Ingestion status: candidate_only
 - Safety level: bounded_markdown_candidate
 - Classes seen:
@@ -10,7 +10,7 @@ These candidates were produced from allowed Markdown report classes with strict 
   - DREAM_REPORT: 5
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 5
-  - WHITELIST_REPORT: 1
+  - WHITELIST_REPORT: 2
 
 ## Candidates
 
@@ -851,4 +851,20 @@ Snippet:
 
 ```text
 [2026-04-26 04:38:47 UTC] Running whitelist coverage for 2026-04-25T04:21:43 → 2026-04-26T04:21:11
+```
+
+### mdcand-021
+
+- Source: `reports/whitelist_daily/2026-04-28.md`
+- Class: `WHITELIST_REPORT`
+- Status: `candidate_only`
+- Forbidden next step: `direct_brain_writeback`
+
+Headings:
+- none captured
+
+Snippet:
+
+```text
+[2026-04-28 04:22:40 UTC] Running whitelist coverage for 2026-04-27T04:21:55 → 2026-04-28T04:21:31
 ```

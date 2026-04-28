@@ -275,3 +275,15 @@ Agent (包括 CEO) 禁止在工作进程推动中使用以下人类惰性概念:
 - digest: `reports/k9_daily/20260423.md`
 - findings: 11 repo-audit items
 - run: 2026-04-23T06:00:01-0400
+
+### 20260427 — K9 patrol digest
+
+- digest: `reports/k9_daily/20260427.md`
+- findings: 11 repo-audit items
+- run: 2026-04-27T06:08:18-0400
+
+### 20260428 — K9 patrol digest
+
+- digest: `reports/k9_daily/20260428.md`
+- findings: 11 repo-audit items
+- run: 2026-04-28T06:13:43-0400

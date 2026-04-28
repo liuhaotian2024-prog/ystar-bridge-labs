@@ -62,6 +62,37 @@
       "asset_id": "ffa-0003",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "behavior_projection_pre_u_cycle_gate/cycle_pre_u_gate_summary.json",
+      "file_type": "json",
+      "matched_terms": [
+        "projection",
+        "y_star",
+        "ystar",
+        "Y_star",
+        "YStar",
+        "pre_u"
+      ],
+      "bounded_snippet": "{ \"schema_name\": \"ystar.behavior_projection_pre_u_cycle_gate.summary\", \"schema_version\": \"v0\", \"cycle_pre_u_packet_candidate_generated\": true, \"cycle_pre_u_mapping_generated\": true,",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "mission_level_y_star",
+        "milestone_y_star_projection",
+        "task_y_star_projection",
+        "pre_u_packet_generation"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 5,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 0,
+      "merge_decision": "reuse_directly",
+      "reason": "Schema-like asset is safe to reuse as a contract reference.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0004",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "company_autonomous_work_cycle/autonomous_work_cycle_schema.json",
       "file_type": "json",
       "matched_terms": [
@@ -89,7 +120,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0004",
+      "asset_id": "ffa-0005",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "console_read_model/capability_matrix.json",
@@ -121,7 +152,42 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0005",
+      "asset_id": "ffa-0006",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "field_projection_cycle_readiness/l5_3_recommended_next_step.json",
+      "file_type": "json",
+      "matched_terms": [
+        "projection",
+        "y_star",
+        "ystar",
+        "Y_star",
+        "YStar",
+        "field_functional",
+        "pre_u",
+        "pre-U",
+        "contract"
+      ],
+      "bounded_snippet": "{ \"schema_name\": \"ystar.field_projection_cycle_readiness.l5_3_recommended_next_step\", \"schema_version\": \"v0\", \"recommended_next_step_id\": \"l5-3-projection-checked-autonomous-work-cycle",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "mission_level_y_star",
+        "milestone_y_star_projection",
+        "task_y_star_projection",
+        "pre_u_packet_generation",
+        "residual_delta_feedback"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 5,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 0,
+      "merge_decision": "reuse_directly",
+      "reason": "Schema-like asset is safe to reuse as a contract reference.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0007",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "governance/whitelist/inter_role_sop.yaml",
@@ -153,7 +219,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0006",
+      "asset_id": "ffa-0008",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "governed_tool_invocation_bridge/pre_u_tool_packet_schema.json",
@@ -184,7 +250,178 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0007",
+      "asset_id": "ffa-0009",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "mission_to_behavior_y_star_projection/context_binding_map.json",
+      "file_type": "json",
+      "matched_terms": [
+        "projection",
+        "y_star",
+        "ystar",
+        "Y_star",
+        "YStar"
+      ],
+      "bounded_snippet": "{ \"schema_name\": \"ystar.mission_to_behavior_y_star_projection.context_binding_map\", \"schema_version\": \"v0\", \"map_id\": \"context-binding-map-l5-2\", \"bindings\": [ { \"context_f",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "mission_level_y_star",
+        "milestone_y_star_projection",
+        "task_y_star_projection",
+        "governance_validation",
+        "residual_delta_feedback"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 4,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 0,
+      "merge_decision": "reuse_directly",
+      "reason": "Schema-like asset is safe to reuse as a contract reference.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0010",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "mission_to_behavior_y_star_projection/mission_to_behavior_projection_trace.json",
+      "file_type": "json",
+      "matched_terms": [
+        "projection",
+        "y_star",
+        "ystar",
+        "Y_star",
+        "YStar",
+        "mission_y",
+        "session_y",
+        "projection_trace",
+        "field_functional",
+        "residual_delta",
+        "pre_u",
+        "contract"
+      ],
+      "bounded_snippet": "{ \"schema_name\": \"ystar.mission_to_behavior_y_star_projection.trace\", \"schema_version\": \"v0\", \"trace_id\": \"mission-to-behavior-projection-trace-l5-2\", \"projection_layers\": [ \"mis",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "deep_xt_observation",
+        "mission_level_y_star",
+        "milestone_y_star_projection",
+        "session_y_star_projection",
+        "task_y_star_projection",
+        "pre_u_packet_generation",
+        "residual_delta_feedback"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 5,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 0,
+      "merge_decision": "reuse_directly",
+      "reason": "Schema-like asset is safe to reuse as a contract reference.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0011",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "mission_to_behavior_y_star_projection/y_star_contraction_map.json",
+      "file_type": "json",
+      "matched_terms": [
+        "projection",
+        "y_star",
+        "ystar",
+        "Y_star",
+        "YStar",
+        "session_y",
+        "scope",
+        "contract"
+      ],
+      "bounded_snippet": "{ \"schema_name\": \"ystar.mission_to_behavior_y_star_projection.contraction_map\", \"schema_version\": \"v0\", \"map_id\": \"y-star-contraction-map-l5-2\", \"contractions\": [ { \"layer\"",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "mission_level_y_star",
+        "milestone_y_star_projection",
+        "session_y_star_projection",
+        "task_y_star_projection",
+        "governance_validation"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 5,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 0,
+      "merge_decision": "reuse_directly",
+      "reason": "Schema-like asset is safe to reuse as a contract reference.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0012",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "projection_to_pre_u_packet_adapter/pre_u_adapter_mapping.json",
+      "file_type": "json",
+      "matched_terms": [
+        "projection",
+        "y_star",
+        "ystar",
+        "Y_star",
+        "YStar",
+        "projection_trace",
+        "pre_u",
+        "pre-U"
+      ],
+      "bounded_snippet": "{ \"schema_name\": \"ystar.projection_to_pre_u_packet_adapter.pre_u_adapter_mapping\", \"schema_version\": \"v0\", \"mapping_id\": \"pre-u-adapter-mapping-001\", \"mappings\": [ { \"from\"",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "deep_xt_observation",
+        "mission_level_y_star",
+        "milestone_y_star_projection",
+        "task_y_star_projection",
+        "pre_u_packet_generation",
+        "governance_validation"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 5,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 0,
+      "merge_decision": "reuse_directly",
+      "reason": "Schema-like asset is safe to reuse as a contract reference.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0013",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "shadow_reprojection_preview/shadow_reprojection_summary.json",
+      "file_type": "json",
+      "matched_terms": [
+        "projection",
+        "y_star",
+        "ystar",
+        "Y_star",
+        "YStar"
+      ],
+      "bounded_snippet": "{ \"schema_name\": \"ystar.shadow_reprojection_preview.summary\", \"schema_version\": \"v0\", \"next_cycle_projection_input_candidate_generated\": true, \"shadow_behavior_y_star_preview_generat",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "mission_level_y_star",
+        "milestone_y_star_projection",
+        "task_y_star_projection",
+        "residual_delta_feedback",
+        "review_gated_learning"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 4,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 0,
+      "merge_decision": "reuse_directly",
+      "reason": "Schema-like asset is safe to reuse as a contract reference.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0014",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "agent_brains/schema/pre_u_packet_profile.schema.json",
@@ -212,7 +449,36 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0008",
+      "asset_id": "ffa-0015",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "projection_checked_work_proposal/projection_checked_work_proposal_summary.json",
+      "file_type": "json",
+      "matched_terms": [
+        "projection",
+        "y_star",
+        "ystar",
+        "Y_star",
+        "YStar"
+      ],
+      "bounded_snippet": "{ \"schema_name\": \"ystar.projection_checked_work_proposal.summary\", \"schema_version\": \"v0\", \"projection_checked_work_intent_defined\": true, \"autonomous_work_proposal_candidate_defined",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "mission_level_y_star",
+        "milestone_y_star_projection",
+        "task_y_star_projection"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 4,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 4,
+      "safety_risk_score": 0,
+      "merge_decision": "reuse_directly",
+      "reason": "Schema-like asset is safe to reuse as a contract reference.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0016",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "company_autonomy_inventory/governed_tool_registry_schema.json",
@@ -240,7 +506,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0009",
+      "asset_id": "ffa-0017",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "legacy_asset_triage/governed_absorption_backlog_schema.json",
@@ -267,7 +533,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0010",
+      "asset_id": "ffa-0018",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "agent_brains/Ethan-CTO/czl_refs.json",
@@ -297,7 +563,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0011",
+      "asset_id": "ffa-0019",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "agent_brains/Samantha-Secretary/brain_profile.json",
@@ -328,7 +594,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0012",
+      "asset_id": "ffa-0020",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "agent_brains/Samantha-Secretary/czl_refs.json",
@@ -353,267 +619,6 @@
       "evidence_strength_score": 4,
       "implementation_readiness_score": 3,
       "architecture_alignment_score": 5,
-      "safety_risk_score": 1,
-      "merge_decision": "reuse_directly",
-      "reason": "Schema-like asset is safe to reuse as a contract reference.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0013",
-      "repo_name": "ystar-company",
-      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
-      "relative_path": "agent_brains/Samantha-Secretary/field_refs.json",
-      "file_type": "json",
-      "matched_terms": [
-        "mission field",
-        "field alignment",
-        "y_star",
-        "ystar",
-        "Y_star",
-        "YStar",
-        "y_star_field",
-        "Y_STAR_FIELD"
-      ],
-      "bounded_snippet": "{ \"schema\": \"ystar.agent_brain.samantha_secretary.field_refs.v0\", \"agent_id\": \"Samantha-Secretary\", \"refs\": [ { \"path\": \"agent_brain_capsule/field_runtime.md\", \"la",
-      "asset_kind": "partial_schema",
-      "current_architecture_mapping": [
-        "mission_level_y_star",
-        "governance_validation",
-        "review_gated_learning",
-        "brain_memory_policy_update"
-      ],
-      "mission_value_score": 5,
-      "evidence_strength_score": 5,
-      "implementation_readiness_score": 3,
-      "architecture_alignment_score": 5,
-      "safety_risk_score": 1,
-      "merge_decision": "reuse_directly",
-      "reason": "Schema-like asset is safe to reuse as a contract reference.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0014",
-      "repo_name": "ystar-company",
-      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
-      "relative_path": "agent_brains/Samantha-Secretary/governance_refs.json",
-      "file_type": "json",
-      "matched_terms": [
-        "y_star",
-        "ystar",
-        "Y_star",
-        "YStar",
-        "y_star_field",
-        "Y_STAR_FIELD",
-        "pre_u"
-      ],
-      "bounded_snippet": "{ \"schema\": \"ystar.agent_brain.samantha_secretary.governance_refs.v0\", \"agent_id\": \"Samantha-Secretary\", \"refs\": [ { \"path\": \"governance_refs/boundaries.md\", \"gove",
-      "asset_kind": "partial_schema",
-      "current_architecture_mapping": [
-        "mission_level_y_star",
-        "pre_u_packet_generation",
-        "governance_validation",
-        "brain_memory_policy_update"
-      ],
-      "mission_value_score": 5,
-      "evidence_strength_score": 5,
-      "implementation_readiness_score": 3,
-      "architecture_alignment_score": 5,
-      "safety_risk_score": 1,
-      "merge_decision": "reuse_directly",
-      "reason": "Schema-like asset is safe to reuse as a contract reference.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0015",
-      "repo_name": "ystar-company",
-      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
-      "relative_path": "agent_brains/schema/agent_brain_capsule.schema.json",
-      "file_type": "json",
-      "matched_terms": [
-        "CZL",
-        "ystar",
-        "YStar",
-        "pre_u",
-        "counterfactual"
-      ],
-      "bounded_snippet": "{ \"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"$id\": \"ystar.agent_brains.schema.agent_brain_capsule.v0\", \"title\": \"Per-Agent Brain Capsule Profile\", \"type\": \"object\", \"additionalProperties\": true, \"required\": [ \"",
-      "asset_kind": "partial_schema",
-      "current_architecture_mapping": [
-        "pre_u_packet_generation",
-        "governance_validation",
-        "review_gated_learning",
-        "brain_memory_policy_update"
-      ],
-      "mission_value_score": 5,
-      "evidence_strength_score": 4,
-      "implementation_readiness_score": 3,
-      "architecture_alignment_score": 5,
-      "safety_risk_score": 1,
-      "merge_decision": "reuse_directly",
-      "reason": "Schema-like asset is safe to reuse as a contract reference.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0016",
-      "repo_name": "ystar-company",
-      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
-      "relative_path": "console_read_model/agent_cards.json",
-      "file_type": "json",
-      "matched_terms": [
-        "ystar",
-        "YStar",
-        "pre_u",
-        "pre-U",
-        "counterfactual"
-      ],
-      "bounded_snippet": "{ \"schema_name\": \"ystar.console_read_model.agent_cards.v0\", \"schema_version\": \"v0\", \"cards\": [ { \"card_id\": \"Aiden-CEO\", \"display_name\": \"Aiden Liu\", \"role\": \"CEO",
-      "asset_kind": "partial_schema",
-      "current_architecture_mapping": [
-        "session_y_star_projection",
-        "pre_u_packet_generation",
-        "governance_validation",
-        "review_gated_learning",
-        "brain_memory_policy_update"
-      ],
-      "mission_value_score": 5,
-      "evidence_strength_score": 4,
-      "implementation_readiness_score": 3,
-      "architecture_alignment_score": 5,
-      "safety_risk_score": 1,
-      "merge_decision": "reuse_directly",
-      "reason": "Schema-like asset is safe to reuse as a contract reference.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0017",
-      "repo_name": "ystar-company",
-      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
-      "relative_path": "labs_governance_bridge/pre_u_generator/pre_u_packet_schema.json",
-      "file_type": "json",
-      "matched_terms": [
-        "y_star",
-        "ystar",
-        "Y_star",
-        "YStar",
-        "m_functor",
-        "M_FUNCTOR",
-        "pre_u",
-        "contract"
-      ],
-      "bounded_snippet": "{ \"schema_name\": \"ystar.labs_governance_bridge.pre_u_packet_schema\", \"schema_version\": \"v0\", \"required_fields\": [ \"packet_id\", \"task_id\", \"agent_id\", \"role\", \"decla",
-      "asset_kind": "partial_schema",
-      "current_architecture_mapping": [
-        "mission_level_y_star",
-        "task_y_star_projection",
-        "pre_u_packet_generation",
-        "governance_validation",
-        "residual_delta_feedback",
-        "brain_memory_policy_update"
-      ],
-      "mission_value_score": 5,
-      "evidence_strength_score": 5,
-      "implementation_readiness_score": 3,
-      "architecture_alignment_score": 5,
-      "safety_risk_score": 1,
-      "merge_decision": "reuse_directly",
-      "reason": "Schema-like asset is safe to reuse as a contract reference.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0018",
-      "repo_name": "ystar-company",
-      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
-      "relative_path": "labs_governance_bridge/pre_u_generator/samples/samantha_task_envelope.json",
-      "file_type": "json",
-      "matched_terms": [
-        "y_star",
-        "Y_star",
-        "m_functor",
-        "M_FUNCTOR",
-        "pre_u",
-        "scope"
-      ],
-      "bounded_snippet": "eserves continuity without writing memory.\", \"governance_expectations\": { \"requires_y_star_validation\": true, \"requires_m_functor_validation\": true, \"requires_scope_validation\": true, \"requires_high_risk_review\": false }, \"cieu_link_polic",
-      "asset_kind": "partial_schema",
-      "current_architecture_mapping": [
-        "mission_level_y_star",
-        "task_y_star_projection",
-        "pre_u_packet_generation",
-        "governance_validation",
-        "residual_delta_feedback",
-        "review_gated_learning",
-        "brain_memory_policy_update"
-      ],
-      "mission_value_score": 5,
-      "evidence_strength_score": 5,
-      "implementation_readiness_score": 3,
-      "architecture_alignment_score": 5,
-      "safety_risk_score": 1,
-      "merge_decision": "reuse_directly",
-      "reason": "Schema-like asset is safe to reuse as a contract reference.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0019",
-      "repo_name": "ystar-company",
-      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
-      "relative_path": "agent_brains/Aiden-CEO/field_refs.json",
-      "file_type": "json",
-      "matched_terms": [
-        "mission field",
-        "CZL",
-        "y_star",
-        "ystar",
-        "Y_star",
-        "YStar",
-        "y_star_field",
-        "Y_STAR_FIELD",
-        "m_functor",
-        "M_FUNCTOR",
-        "Phi_t"
-      ],
-      "bounded_snippet": "{ \"schema\": \"ystar.agent_brain.aiden_ceo.field_refs.v0\", \"agent_id\": \"Aiden-CEO\", \"refs\": [ { \"path\": \"reports/ceo/strategic/Y_STAR_FIELD_THEORY_SPEC.md\", \"layer\":",
-      "asset_kind": "partial_schema",
-      "current_architecture_mapping": [
-        "mission_level_y_star",
-        "governance_validation",
-        "brain_memory_policy_update"
-      ],
-      "mission_value_score": 5,
-      "evidence_strength_score": 5,
-      "implementation_readiness_score": 3,
-      "architecture_alignment_score": 4,
-      "safety_risk_score": 1,
-      "merge_decision": "reuse_directly",
-      "reason": "Schema-like asset is safe to reuse as a contract reference.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0020",
-      "repo_name": "ystar-company",
-      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
-      "relative_path": "agent_brains/Ethan-CTO/field_refs.json",
-      "file_type": "json",
-      "matched_terms": [
-        "mission field",
-        "y_star",
-        "ystar",
-        "Y_star",
-        "YStar",
-        "y_star_field",
-        "Y_STAR_FIELD"
-      ],
-      "bounded_snippet": "{ \"schema\": \"ystar.agent_brain.ethan_cto.field_refs.v0\", \"agent_id\": \"Ethan-CTO\", \"refs\": [ { \"path\": \"agent_brain_capsule/field_runtime.md\", \"layer\": \"Mission Fie",
-      "asset_kind": "partial_schema",
-      "current_architecture_mapping": [
-        "mission_level_y_star",
-        "governance_validation",
-        "brain_memory_policy_update"
-      ],
-      "mission_value_score": 5,
-      "evidence_strength_score": 5,
-      "implementation_readiness_score": 3,
-      "architecture_alignment_score": 4,
       "safety_risk_score": 1,
       "merge_decision": "reuse_directly",
       "reason": "Schema-like asset is safe to reuse as a contract reference.",

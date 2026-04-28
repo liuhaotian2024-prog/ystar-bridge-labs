@@ -21,7 +21,7 @@
     {
       "asset_id": "ffa-0003",
       "repo_name": "ystar-company",
-      "relative_path": "company_autonomous_work_cycle/autonomous_work_cycle_schema.json",
+      "relative_path": "behavior_projection_pre_u_cycle_gate/cycle_pre_u_gate_summary.json",
       "asset_kind": "partial_schema",
       "reason": "Schema-like asset is safe to reuse as a contract reference.",
       "live_enabled": false
@@ -29,7 +29,7 @@
     {
       "asset_id": "ffa-0004",
       "repo_name": "ystar-company",
-      "relative_path": "console_read_model/capability_matrix.json",
+      "relative_path": "company_autonomous_work_cycle/autonomous_work_cycle_schema.json",
       "asset_kind": "partial_schema",
       "reason": "Schema-like asset is safe to reuse as a contract reference.",
       "live_enabled": false
@@ -37,7 +37,7 @@
     {
       "asset_id": "ffa-0005",
       "repo_name": "ystar-company",
-      "relative_path": "governance/whitelist/inter_role_sop.yaml",
+      "relative_path": "console_read_model/capability_matrix.json",
       "asset_kind": "partial_schema",
       "reason": "Schema-like asset is safe to reuse as a contract reference.",
       "live_enabled": false
@@ -45,7 +45,7 @@
     {
       "asset_id": "ffa-0006",
       "repo_name": "ystar-company",
-      "relative_path": "governed_tool_invocation_bridge/pre_u_tool_packet_schema.json",
+      "relative_path": "field_projection_cycle_readiness/l5_3_recommended_next_step.json",
       "asset_kind": "partial_schema",
       "reason": "Schema-like asset is safe to reuse as a contract reference.",
       "live_enabled": false
@@ -53,7 +53,7 @@
     {
       "asset_id": "ffa-0007",
       "repo_name": "ystar-company",
-      "relative_path": "agent_brains/schema/pre_u_packet_profile.schema.json",
+      "relative_path": "governance/whitelist/inter_role_sop.yaml",
       "asset_kind": "partial_schema",
       "reason": "Schema-like asset is safe to reuse as a contract reference.",
       "live_enabled": false
@@ -61,7 +61,7 @@
     {
       "asset_id": "ffa-0008",
       "repo_name": "ystar-company",
-      "relative_path": "company_autonomy_inventory/governed_tool_registry_schema.json",
+      "relative_path": "governed_tool_invocation_bridge/pre_u_tool_packet_schema.json",
       "asset_kind": "partial_schema",
       "reason": "Schema-like asset is safe to reuse as a contract reference.",
       "live_enabled": false
@@ -69,7 +69,7 @@
     {
       "asset_id": "ffa-0009",
       "repo_name": "ystar-company",
-      "relative_path": "legacy_asset_triage/governed_absorption_backlog_schema.json",
+      "relative_path": "mission_to_behavior_y_star_projection/context_binding_map.json",
       "asset_kind": "partial_schema",
       "reason": "Schema-like asset is safe to reuse as a contract reference.",
       "live_enabled": false
@@ -77,7 +77,7 @@
     {
       "asset_id": "ffa-0010",
       "repo_name": "ystar-company",
-      "relative_path": "agent_brains/Ethan-CTO/czl_refs.json",
+      "relative_path": "mission_to_behavior_y_star_projection/mission_to_behavior_projection_trace.json",
       "asset_kind": "partial_schema",
       "reason": "Schema-like asset is safe to reuse as a contract reference.",
       "live_enabled": false
@@ -85,7 +85,7 @@
     {
       "asset_id": "ffa-0011",
       "repo_name": "ystar-company",
-      "relative_path": "agent_brains/Samantha-Secretary/brain_profile.json",
+      "relative_path": "mission_to_behavior_y_star_projection/y_star_contraction_map.json",
       "asset_kind": "partial_schema",
       "reason": "Schema-like asset is safe to reuse as a contract reference.",
       "live_enabled": false
@@ -93,7 +93,7 @@
     {
       "asset_id": "ffa-0012",
       "repo_name": "ystar-company",
-      "relative_path": "agent_brains/Samantha-Secretary/czl_refs.json",
+      "relative_path": "projection_to_pre_u_packet_adapter/pre_u_adapter_mapping.json",
       "asset_kind": "partial_schema",
       "reason": "Schema-like asset is safe to reuse as a contract reference.",
       "live_enabled": false
@@ -101,7 +101,7 @@
     {
       "asset_id": "ffa-0013",
       "repo_name": "ystar-company",
-      "relative_path": "agent_brains/Samantha-Secretary/field_refs.json",
+      "relative_path": "shadow_reprojection_preview/shadow_reprojection_summary.json",
       "asset_kind": "partial_schema",
       "reason": "Schema-like asset is safe to reuse as a contract reference.",
       "live_enabled": false
@@ -109,7 +109,7 @@
     {
       "asset_id": "ffa-0014",
       "repo_name": "ystar-company",
-      "relative_path": "agent_brains/Samantha-Secretary/governance_refs.json",
+      "relative_path": "agent_brains/schema/pre_u_packet_profile.schema.json",
       "asset_kind": "partial_schema",
       "reason": "Schema-like asset is safe to reuse as a contract reference.",
       "live_enabled": false
@@ -117,7 +117,7 @@
     {
       "asset_id": "ffa-0015",
       "repo_name": "ystar-company",
-      "relative_path": "agent_brains/schema/agent_brain_capsule.schema.json",
+      "relative_path": "projection_checked_work_proposal/projection_checked_work_proposal_summary.json",
       "asset_kind": "partial_schema",
       "reason": "Schema-like asset is safe to reuse as a contract reference.",
       "live_enabled": false
@@ -125,7 +125,7 @@
     {
       "asset_id": "ffa-0016",
       "repo_name": "ystar-company",
-      "relative_path": "console_read_model/agent_cards.json",
+      "relative_path": "company_autonomy_inventory/governed_tool_registry_schema.json",
       "asset_kind": "partial_schema",
       "reason": "Schema-like asset is safe to reuse as a contract reference.",
       "live_enabled": false
@@ -133,7 +133,7 @@
     {
       "asset_id": "ffa-0017",
       "repo_name": "ystar-company",
-      "relative_path": "labs_governance_bridge/pre_u_generator/pre_u_packet_schema.json",
+      "relative_path": "legacy_asset_triage/governed_absorption_backlog_schema.json",
       "asset_kind": "partial_schema",
       "reason": "Schema-like asset is safe to reuse as a contract reference.",
       "live_enabled": false
@@ -141,7 +141,7 @@
     {
       "asset_id": "ffa-0018",
       "repo_name": "ystar-company",
-      "relative_path": "labs_governance_bridge/pre_u_generator/samples/samantha_task_envelope.json",
+      "relative_path": "agent_brains/Ethan-CTO/czl_refs.json",
       "asset_kind": "partial_schema",
       "reason": "Schema-like asset is safe to reuse as a contract reference.",
       "live_enabled": false
@@ -149,7 +149,7 @@
     {
       "asset_id": "ffa-0019",
       "repo_name": "ystar-company",
-      "relative_path": "agent_brains/Aiden-CEO/field_refs.json",
+      "relative_path": "agent_brains/Samantha-Secretary/brain_profile.json",
       "asset_kind": "partial_schema",
       "reason": "Schema-like asset is safe to reuse as a contract reference.",
       "live_enabled": false
@@ -157,7 +157,7 @@
     {
       "asset_id": "ffa-0020",
       "repo_name": "ystar-company",
-      "relative_path": "agent_brains/Ethan-CTO/field_refs.json",
+      "relative_path": "agent_brains/Samantha-Secretary/czl_refs.json",
       "asset_kind": "partial_schema",
       "reason": "Schema-like asset is safe to reuse as a contract reference.",
       "live_enabled": false
@@ -172,13 +172,13 @@
         "ffa-0004",
         "ffa-0005",
         "ffa-0006",
+        "ffa-0007",
         "ffa-0008",
         "ffa-0009",
-        "ffa-0013",
-        "ffa-0014",
-        "ffa-0017",
-        "ffa-0018",
-        "ffa-0019"
+        "ffa-0010",
+        "ffa-0011",
+        "ffa-0012",
+        "ffa-0013"
       ],
       "merge_notes": "Merge as deterministic alignment metadata, not semantic truth scoring."
     },
@@ -186,17 +186,17 @@
       "concept_id": "mission_field",
       "source_assets": [
         "ffa-0001",
+        "ffa-0003",
         "ffa-0006",
         "ffa-0008",
         "ffa-0009",
+        "ffa-0010",
+        "ffa-0011",
+        "ffa-0012",
         "ffa-0013",
-        "ffa-0014",
-        "ffa-0017",
-        "ffa-0018",
-        "ffa-0019",
-        "ffa-0020",
-        "ffa-0021",
-        "ffa-0022"
+        "ffa-0015",
+        "ffa-0016",
+        "ffa-0017"
       ],
       "merge_notes": "Use old mission-field language to define mission-level Y* projection contracts."
     },
@@ -205,23 +205,25 @@
       "source_assets": [
         "ffa-0001",
         "ffa-0003",
-        "ffa-0005",
+        "ffa-0004",
+        "ffa-0006",
+        "ffa-0007",
+        "ffa-0009",
+        "ffa-0010",
         "ffa-0011",
-        "ffa-0016",
-        "ffa-0017",
-        "ffa-0018",
-        "ffa-0021",
-        "ffa-0022",
-        "ffa-0023",
-        "ffa-0024",
-        "ffa-0025"
+        "ffa-0012",
+        "ffa-0013",
+        "ffa-0015",
+        "ffa-0019"
       ],
       "merge_notes": "Preserve role-scope alignment ideas, but rewrite any DB-backed seeders."
     },
     {
       "concept_id": "observation_field",
       "source_assets": [
-        "ffa-0003",
+        "ffa-0004",
+        "ffa-0010",
+        "ffa-0012",
         "ffa-0027",
         "ffa-0028",
         "ffa-0030",
@@ -230,9 +232,7 @@
         "ffa-0036",
         "ffa-0038",
         "ffa-0042",
-        "ffa-0069",
-        "ffa-0087",
-        "ffa-0092"
+        "ffa-0043"
       ],
       "merge_notes": "Connect to deep Xt observation through generated/read-model evidence only."
     },
@@ -241,16 +241,16 @@
       "source_assets": [
         "ffa-0001",
         "ffa-0003",
-        "ffa-0005",
+        "ffa-0004",
         "ffa-0006",
+        "ffa-0007",
         "ffa-0008",
         "ffa-0009",
+        "ffa-0010",
         "ffa-0011",
+        "ffa-0012",
         "ffa-0013",
-        "ffa-0014",
-        "ffa-0016",
-        "ffa-0017",
-        "ffa-0018"
+        "ffa-0015"
       ],
       "merge_notes": "Promote layered mission-to-action Y* projection as the core L5 harness."
     },
@@ -259,34 +259,34 @@
       "source_assets": [
         "ffa-0001",
         "ffa-0003",
-        "ffa-0005",
+        "ffa-0004",
         "ffa-0006",
+        "ffa-0007",
         "ffa-0008",
+        "ffa-0009",
         "ffa-0010",
         "ffa-0011",
         "ffa-0012",
-        "ffa-0017",
-        "ffa-0018",
-        "ffa-0021",
-        "ffa-0022"
+        "ffa-0013",
+        "ffa-0015"
       ],
       "merge_notes": "Convert scope/contract ideas into explicit projection contracts."
     },
     {
       "concept_id": "residual_feedback",
       "source_assets": [
-        "ffa-0003",
         "ffa-0004",
+        "ffa-0005",
         "ffa-0006",
+        "ffa-0008",
+        "ffa-0009",
         "ffa-0010",
-        "ffa-0012",
-        "ffa-0017",
+        "ffa-0013",
         "ffa-0018",
-        "ffa-0019",
+        "ffa-0020",
         "ffa-0021",
         "ffa-0022",
-        "ffa-0023",
-        "ffa-0024"
+        "ffa-0023"
       ],
       "merge_notes": "Reuse residual delta concepts only through dry-run CIEU-compatible events."
     },
@@ -299,12 +299,12 @@
         "ffa-0005",
         "ffa-0006",
         "ffa-0007",
+        "ffa-0008",
+        "ffa-0009",
         "ffa-0010",
-        "ffa-0011",
         "ffa-0012",
-        "ffa-0014",
-        "ffa-0015",
-        "ffa-0016"
+        "ffa-0013",
+        "ffa-0014"
       ],
       "merge_notes": "Preserve causal residual ideas as review evidence, not automatic learning."
     },
@@ -312,17 +312,17 @@
       "concept_id": "scope_control",
       "source_assets": [
         "ffa-0002",
-        "ffa-0003",
         "ffa-0004",
         "ffa-0005",
-        "ffa-0006",
         "ffa-0007",
         "ffa-0008",
         "ffa-0009",
-        "ffa-0010",
         "ffa-0011",
         "ffa-0012",
-        "ffa-0013"
+        "ffa-0014",
+        "ffa-0016",
+        "ffa-0017",
+        "ffa-0018"
       ],
       "merge_notes": "Use scope and invariant terms as governance validation checks."
     },
@@ -335,12 +335,12 @@
         "ffa-0005",
         "ffa-0006",
         "ffa-0007",
+        "ffa-0008",
         "ffa-0010",
-        "ffa-0011",
         "ffa-0012",
         "ffa-0014",
-        "ffa-0015",
-        "ffa-0016"
+        "ffa-0018",
+        "ffa-0019"
       ],
       "merge_notes": "Route projections into candidate_U and selected_U packet fields."
     },
@@ -348,17 +348,17 @@
       "concept_id": "learning_feedback",
       "source_assets": [
         "ffa-0001",
-        "ffa-0004",
-        "ffa-0007",
-        "ffa-0010",
-        "ffa-0011",
-        "ffa-0012",
+        "ffa-0005",
         "ffa-0013",
         "ffa-0014",
-        "ffa-0015",
-        "ffa-0016",
-        "ffa-0017",
-        "ffa-0018"
+        "ffa-0018",
+        "ffa-0019",
+        "ffa-0020",
+        "ffa-0021",
+        "ffa-0024",
+        "ffa-0025",
+        "ffa-0026",
+        "ffa-0027"
       ],
       "merge_notes": "Keep as review-gated learning candidate design; no brain or memory writeback."
     }
@@ -545,13 +545,45 @@
     {
       "asset_id": "ffa-0043",
       "repo_name": "ystar-company",
+      "relative_path": "field_functional_auto_projection_core/field_projection_input_fixture.json",
+      "asset_kind": "partial_schema",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0044",
+      "repo_name": "ystar-company",
+      "relative_path": "field_functional_auto_projection_core/field_projection_operator_contract.json",
+      "asset_kind": "partial_schema",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0045",
+      "repo_name": "ystar-company",
+      "relative_path": "field_functional_auto_projection_core/field_projection_operator_policy.json",
+      "asset_kind": "partial_schema",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0046",
+      "repo_name": "ystar-company",
+      "relative_path": "field_functional_auto_projection_core/tools/build_field_functional_auto_projection_core.py",
+      "asset_kind": "implemented_code",
+      "reason": "Implementation is useful but should be rebuilt into current L5 contracts.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0047",
+      "repo_name": "ystar-company",
       "relative_path": "scripts/hook_session_start.py",
       "asset_kind": "obsolete_runtime",
       "reason": "Runtime-adjacent implementation is conceptually valuable but unsafe to absorb directly.",
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0044",
+      "asset_id": "ffa-0048",
       "repo_name": "ystar-company",
       "relative_path": "scripts/phase2_role_scope_seed.py",
       "asset_kind": "obsolete_runtime",
@@ -559,41 +591,9 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0045",
-      "repo_name": "Y-star-gov",
-      "relative_path": "docs/examples/hook_cli_contract/input_allow_envelope.json",
-      "asset_kind": "partial_schema",
-      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0046",
-      "repo_name": "Y-star-gov",
-      "relative_path": "docs/examples/hook_cli_contract/input_escalate_envelope.json",
-      "asset_kind": "partial_schema",
-      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0047",
-      "repo_name": "Y-star-gov",
-      "relative_path": "docs/examples/hook_cli_contract/input_require_revision_envelope.json",
-      "asset_kind": "partial_schema",
-      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0048",
-      "repo_name": "Y-star-gov",
-      "relative_path": "examples/external_adapter_sdk/sample_external_request.json",
-      "asset_kind": "partial_schema",
-      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
-      "live_enabled": false
-    },
-    {
       "asset_id": "ffa-0049",
-      "repo_name": "Y-star-gov",
-      "relative_path": "docs/pre_u_packet_validator/interface_index.json",
+      "repo_name": "ystar-company",
+      "relative_path": "field_functional_auto_projection_core/field_projection_operator_summary.json",
       "asset_kind": "partial_schema",
       "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
       "live_enabled": false
@@ -601,7 +601,7 @@
     {
       "asset_id": "ffa-0050",
       "repo_name": "Y-star-gov",
-      "relative_path": "examples/external_adapter_sdk/sample_normalized_envelope.json",
+      "relative_path": "docs/examples/hook_cli_contract/input_allow_envelope.json",
       "asset_kind": "partial_schema",
       "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
       "live_enabled": false
@@ -609,15 +609,15 @@
     {
       "asset_id": "ffa-0051",
       "repo_name": "Y-star-gov",
-      "relative_path": "ystar/governance/hook_contract_adapter.py",
-      "asset_kind": "obsolete_runtime",
-      "reason": "Runtime-adjacent implementation is conceptually valuable but unsafe to absorb directly.",
+      "relative_path": "docs/examples/hook_cli_contract/input_escalate_envelope.json",
+      "asset_kind": "partial_schema",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
       "live_enabled": false
     },
     {
       "asset_id": "ffa-0052",
       "repo_name": "Y-star-gov",
-      "relative_path": "docs/examples/hook_cli_contract/input_deny_envelope.json",
+      "relative_path": "docs/examples/hook_cli_contract/input_require_revision_envelope.json",
       "asset_kind": "partial_schema",
       "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
       "live_enabled": false
@@ -625,47 +625,47 @@
     {
       "asset_id": "ffa-0053",
       "repo_name": "Y-star-gov",
-      "relative_path": "examples/external_adapter_sdk/sample_adapter_config.json",
+      "relative_path": "examples/external_adapter_sdk/sample_external_request.json",
       "asset_kind": "partial_schema",
       "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
       "live_enabled": false
     },
     {
       "asset_id": "ffa-0054",
-      "repo_name": "ystar-company",
-      "relative_path": "reports/governance/mutation_test_results.json",
+      "repo_name": "Y-star-gov",
+      "relative_path": "docs/pre_u_packet_validator/interface_index.json",
       "asset_kind": "partial_schema",
       "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
       "live_enabled": false
     },
     {
       "asset_id": "ffa-0055",
-      "repo_name": "ystar-company",
-      "relative_path": "knowledge/ceo/wisdom/.ystar_coverage.json",
+      "repo_name": "Y-star-gov",
+      "relative_path": "examples/external_adapter_sdk/sample_normalized_envelope.json",
       "asset_kind": "partial_schema",
       "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
       "live_enabled": false
     },
     {
       "asset_id": "ffa-0056",
-      "repo_name": "ystar-company",
-      "relative_path": "knowledge/engineer_trust_scores.json",
-      "asset_kind": "partial_schema",
-      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "repo_name": "Y-star-gov",
+      "relative_path": "ystar/governance/hook_contract_adapter.py",
+      "asset_kind": "obsolete_runtime",
+      "reason": "Runtime-adjacent implementation is conceptually valuable but unsafe to absorb directly.",
       "live_enabled": false
     },
     {
       "asset_id": "ffa-0057",
-      "repo_name": "ystar-company",
-      "relative_path": "knowledge/cto/shield_feasibility_2026_04_10.json",
+      "repo_name": "Y-star-gov",
+      "relative_path": "docs/examples/hook_cli_contract/input_deny_envelope.json",
       "asset_kind": "partial_schema",
       "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
       "live_enabled": false
     },
     {
       "asset_id": "ffa-0058",
-      "repo_name": "ystar-company",
-      "relative_path": "knowledge/cto/active_task.json",
+      "repo_name": "Y-star-gov",
+      "relative_path": "examples/external_adapter_sdk/sample_adapter_config.json",
       "asset_kind": "partial_schema",
       "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
       "live_enabled": false
@@ -673,7 +673,7 @@
     {
       "asset_id": "ffa-0059",
       "repo_name": "ystar-company",
-      "relative_path": "agent_team_work_proposal/tool_need_analysis_schema.json",
+      "relative_path": "reports/governance/mutation_test_results.json",
       "asset_kind": "partial_schema",
       "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
       "live_enabled": false
@@ -681,7 +681,7 @@
     {
       "asset_id": "ffa-0060",
       "repo_name": "ystar-company",
-      "relative_path": "agent_team_work_proposal/work_proposal_schema.json",
+      "relative_path": "knowledge/ceo/wisdom/.ystar_coverage.json",
       "asset_kind": "partial_schema",
       "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
       "live_enabled": false

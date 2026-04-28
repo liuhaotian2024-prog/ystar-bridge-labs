@@ -13,12 +13,12 @@
         "ffa-0005",
         "ffa-0006",
         "ffa-0007",
+        "ffa-0008",
         "ffa-0009",
         "ffa-0010",
-        "ffa-0014",
-        "ffa-0015",
-        "ffa-0018",
-        "ffa-0019"
+        "ffa-0011",
+        "ffa-0012",
+        "ffa-0013"
       ],
       "used_by_layers": [
         "mission",
@@ -32,17 +32,17 @@
       "current_status": "discovered",
       "source_assets": [
         "ffa-0001",
+        "ffa-0003",
         "ffa-0006",
-        "ffa-0007",
+        "ffa-0008",
         "ffa-0009",
         "ffa-0010",
-        "ffa-0014",
+        "ffa-0011",
+        "ffa-0012",
+        "ffa-0013",
         "ffa-0015",
-        "ffa-0018",
-        "ffa-0019",
-        "ffa-0020",
-        "ffa-0021",
-        "ffa-0022"
+        "ffa-0016",
+        "ffa-0017"
       ],
       "used_by_layers": [
         "mission",
@@ -57,16 +57,16 @@
       "source_assets": [
         "ffa-0001",
         "ffa-0003",
-        "ffa-0005",
+        "ffa-0004",
+        "ffa-0006",
         "ffa-0007",
+        "ffa-0009",
+        "ffa-0010",
+        "ffa-0011",
         "ffa-0012",
-        "ffa-0017",
-        "ffa-0018",
-        "ffa-0019",
-        "ffa-0020",
-        "ffa-0021",
-        "ffa-0022",
-        "ffa-0023"
+        "ffa-0013",
+        "ffa-0015",
+        "ffa-0019"
       ],
       "used_by_layers": [
         "session",
@@ -79,9 +79,9 @@
       "field_concept": "observation_field",
       "current_status": "discovered",
       "source_assets": [
-        "ffa-0003",
-        "ffa-0007",
-        "ffa-0020",
+        "ffa-0004",
+        "ffa-0010",
+        "ffa-0012",
         "ffa-0027",
         "ffa-0028",
         "ffa-0030",
@@ -90,7 +90,7 @@
         "ffa-0036",
         "ffa-0038",
         "ffa-0042",
-        "ffa-0069"
+        "ffa-0043"
       ],
       "used_by_layers": [
         "company",
@@ -105,16 +105,16 @@
       "source_assets": [
         "ffa-0001",
         "ffa-0003",
-        "ffa-0005",
+        "ffa-0004",
         "ffa-0006",
         "ffa-0007",
+        "ffa-0008",
         "ffa-0009",
         "ffa-0010",
+        "ffa-0011",
         "ffa-0012",
-        "ffa-0014",
-        "ffa-0015",
-        "ffa-0017",
-        "ffa-0018"
+        "ffa-0013",
+        "ffa-0015"
       ],
       "used_by_layers": [
         "mission",
@@ -133,16 +133,16 @@
       "source_assets": [
         "ffa-0001",
         "ffa-0003",
-        "ffa-0005",
+        "ffa-0004",
         "ffa-0006",
         "ffa-0007",
+        "ffa-0008",
         "ffa-0009",
+        "ffa-0010",
         "ffa-0011",
         "ffa-0012",
         "ffa-0013",
-        "ffa-0018",
-        "ffa-0019",
-        "ffa-0020"
+        "ffa-0015"
       ],
       "used_by_layers": [
         "task",
@@ -155,18 +155,18 @@
       "field_concept": "residual_feedback",
       "current_status": "discovered",
       "source_assets": [
-        "ffa-0003",
         "ffa-0004",
+        "ffa-0005",
         "ffa-0006",
-        "ffa-0011",
+        "ffa-0008",
+        "ffa-0009",
+        "ffa-0010",
         "ffa-0013",
         "ffa-0018",
-        "ffa-0019",
         "ffa-0020",
         "ffa-0021",
         "ffa-0022",
-        "ffa-0023",
-        "ffa-0024"
+        "ffa-0023"
       ],
       "used_by_layers": [
         "action"
@@ -185,11 +185,11 @@
         "ffa-0006",
         "ffa-0007",
         "ffa-0008",
-        "ffa-0011",
+        "ffa-0010",
         "ffa-0012",
-        "ffa-0013",
-        "ffa-0015",
-        "ffa-0016"
+        "ffa-0014",
+        "ffa-0018",
+        "ffa-0019"
       ],
       "used_by_layers": [
         "action"
@@ -202,17 +202,17 @@
       "current_status": "discovered",
       "source_assets": [
         "ffa-0001",
-        "ffa-0004",
-        "ffa-0008",
-        "ffa-0011",
-        "ffa-0012",
+        "ffa-0005",
         "ffa-0013",
         "ffa-0014",
-        "ffa-0015",
-        "ffa-0016",
-        "ffa-0017",
         "ffa-0018",
-        "ffa-0019"
+        "ffa-0019",
+        "ffa-0020",
+        "ffa-0021",
+        "ffa-0024",
+        "ffa-0025",
+        "ffa-0026",
+        "ffa-0027"
       ],
       "used_by_layers": [
         "action"

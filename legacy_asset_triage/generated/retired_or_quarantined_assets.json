@@ -1,10 +1,10 @@
 {
   "schema_name": "ystar.legacy_asset_triage.generated.retired_or_quarantined_assets",
   "schema_version": "v0",
-  "asset_count": 8,
+  "asset_count": 2,
   "assets": [
     {
-      "asset_id": "asset-2560",
+      "asset_id": "asset-3371",
       "source_path": "scripts/secretary_auto_enforce.py",
       "bucket": "D_quarantine_as_evidence_ore",
       "risk_tier": "high",
@@ -12,56 +12,8 @@
       "live_enabled": false
     },
     {
-      "asset_id": "asset-2963",
-      "source_path": "ystar.bak.20260415_again/domains/healthcare/__init__.py",
-      "bucket": "D_quarantine_as_evidence_ore",
-      "risk_tier": "high",
-      "reason": "not safe or valuable enough for direct absorption",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "asset-3280",
-      "source_path": "tests/.skip_w16_bulk.txt",
-      "bucket": "D_quarantine_as_evidence_ore",
-      "risk_tier": "high",
-      "reason": "not safe or valuable enough for direct absorption",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "asset-3526",
-      "source_path": "ystar/domains/legal/__init__.py",
-      "bucket": "D_quarantine_as_evidence_ore",
-      "risk_tier": "high",
-      "reason": "not safe or valuable enough for direct absorption",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "asset-3550",
-      "source_path": "ystar/governance/cieu_brain_bridge.py",
-      "bucket": "D_quarantine_as_evidence_ore",
-      "risk_tier": "high",
-      "reason": "not safe or valuable enough for direct absorption",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "asset-3567",
-      "source_path": "ystar/governance/experience_bridge.py",
-      "bucket": "D_quarantine_as_evidence_ore",
-      "risk_tier": "high",
-      "reason": "not safe or valuable enough for direct absorption",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "asset-3654",
+      "asset_id": "asset-4556",
       "source_path": "ystar/kernel/rt_measurement.py",
-      "bucket": "D_quarantine_as_evidence_ore",
-      "risk_tier": "high",
-      "reason": "not safe or valuable enough for direct absorption",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "asset-3690",
-      "source_path": "ystar/templates/__init__.py",
       "bucket": "D_quarantine_as_evidence_ore",
       "risk_tier": "high",
       "reason": "not safe or valuable enough for direct absorption",

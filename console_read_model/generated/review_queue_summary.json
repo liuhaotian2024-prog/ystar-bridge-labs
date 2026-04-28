@@ -1,19 +1,19 @@
 {
   "schema_name": "ystar.console_read_model.generated.review_queue_summary",
   "schema_version": "v0",
-  "review_count": 20,
+  "review_count": 21,
   "statuses": {
-    "pending_review": 20
+    "pending_review": 21
   },
   "ingestion_statuses": {
-    "not_ingested": 20
+    "not_ingested": 21
   },
   "intended_use_summary": {
     "memory_continuity_hint": 10,
     "role_brain_capsule_hint": 10,
-    "governance_gap_hint": 10,
+    "governance_gap_hint": 11,
     "cieu_prediction_delta_hint": 9,
-    "pre_u_packet_hint": 1
+    "pre_u_packet_hint": 2
   },
   "generated_queue_path": "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json",
   "review_queue_manifest_ref": "runtime_artifact_quarantine/safe_mining/review_queue/generated/review_queue_manifest.json",

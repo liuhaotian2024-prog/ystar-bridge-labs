@@ -5,10 +5,10 @@
   "max_single_generated_json_bytes": 2000000,
   "max_total_generated_inventory_bytes": 8000000,
   "oversized_files": [],
-  "total_generated_inventory_bytes": 1470534,
+  "total_generated_inventory_bytes": 1498179,
   "generated_file_sizes": {
     "repo_discovery_manifest.json": 1722,
-    "existing_asset_inventory.json": 1405877,
+    "existing_asset_inventory.json": 1433522,
     "observation_capability_map.json": 10642,
     "resource_sensing_map.json": 4823,
     "action_capability_map.json": 16931,

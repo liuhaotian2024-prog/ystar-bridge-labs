@@ -5,7 +5,7 @@ This report summarizes bounded archaeology for old field functional, field align
 ## Summary
 
 - Repos scanned: 4
-- Assets scanned: 3989
+- Assets scanned: 4707
 - Field functional assets found: 200
 - Old field functional work found: True
 - Ready for L5 projection harness: True
@@ -14,14 +14,14 @@ This report summarizes bounded archaeology for old field functional, field align
 
 - ffa-0001 ystar-company:console_read_model/generated/field_functional_summary.json (reuse_directly)
 - ffa-0002 ystar-company:reports/governance/petri_behavioral_results.json (reuse_directly)
-- ffa-0003 ystar-company:company_autonomous_work_cycle/autonomous_work_cycle_schema.json (reuse_directly)
-- ffa-0004 ystar-company:console_read_model/capability_matrix.json (reuse_directly)
-- ffa-0005 ystar-company:governance/whitelist/inter_role_sop.yaml (reuse_directly)
-- ffa-0006 ystar-company:governed_tool_invocation_bridge/pre_u_tool_packet_schema.json (reuse_directly)
-- ffa-0007 ystar-company:agent_brains/schema/pre_u_packet_profile.schema.json (reuse_directly)
-- ffa-0008 ystar-company:company_autonomy_inventory/governed_tool_registry_schema.json (reuse_directly)
-- ffa-0009 ystar-company:legacy_asset_triage/governed_absorption_backlog_schema.json (reuse_directly)
-- ffa-0010 ystar-company:agent_brains/Ethan-CTO/czl_refs.json (reuse_directly)
+- ffa-0003 ystar-company:behavior_projection_pre_u_cycle_gate/cycle_pre_u_gate_summary.json (reuse_directly)
+- ffa-0004 ystar-company:company_autonomous_work_cycle/autonomous_work_cycle_schema.json (reuse_directly)
+- ffa-0005 ystar-company:console_read_model/capability_matrix.json (reuse_directly)
+- ffa-0006 ystar-company:field_projection_cycle_readiness/l5_3_recommended_next_step.json (reuse_directly)
+- ffa-0007 ystar-company:governance/whitelist/inter_role_sop.yaml (reuse_directly)
+- ffa-0008 ystar-company:governed_tool_invocation_bridge/pre_u_tool_packet_schema.json (reuse_directly)
+- ffa-0009 ystar-company:mission_to_behavior_y_star_projection/context_binding_map.json (reuse_directly)
+- ffa-0010 ystar-company:mission_to_behavior_y_star_projection/mission_to_behavior_projection_trace.json (reuse_directly)
 
 ## Concepts
 

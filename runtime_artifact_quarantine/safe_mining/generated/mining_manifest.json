@@ -25,14 +25,14 @@
     "PYCACHE",
     "UNKNOWN_RUNTIME_ARTIFACT"
   ],
-  "files_considered": 20,
-  "files_selected": 20,
+  "files_considered": 21,
+  "files_selected": 21,
   "classes_seen": {
     "DREAM_REPORT": 5,
     "DAILY_REPORT": 5,
     "DRIFT_REPORT": 4,
     "ESCALATION_REPORT": 5,
-    "WHITELIST_REPORT": 1
+    "WHITELIST_REPORT": 2
   },
   "bounds": {
     "max_files_per_class": 5,

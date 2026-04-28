@@ -3,26 +3,26 @@
   "schema_version": "v0",
   "builder": "runtime_artifact_quarantine/safe_mining/review_queue/tools/build_candidate_review_queue.py",
   "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
-  "review_count": 20,
+  "review_count": 21,
   "statuses": {
-    "pending_review": 20
+    "pending_review": 21
   },
   "ingestion_statuses": {
-    "not_ingested": 20
+    "not_ingested": 21
   },
   "artifact_classes": {
     "DREAM_REPORT": 5,
     "DAILY_REPORT": 5,
     "DRIFT_REPORT": 4,
     "ESCALATION_REPORT": 5,
-    "WHITELIST_REPORT": 1
+    "WHITELIST_REPORT": 2
   },
   "intended_use_summary": {
     "memory_continuity_hint": 10,
     "role_brain_capsule_hint": 10,
-    "governance_gap_hint": 10,
+    "governance_gap_hint": 11,
     "cieu_prediction_delta_hint": 9,
-    "pre_u_packet_hint": 1
+    "pre_u_packet_hint": 2
   },
   "allowed_review_actions": [
     "approve_for_capsule_hint",
@@ -619,6 +619,35 @@
         "runtime_recovery"
       ],
       "snippet_preview": "[2026-04-26 04:38:47 UTC] Running whitelist coverage for 2026-04-25T04:21:43 → 2026-04-26T04:21:11",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    },
+    {
+      "review_id": "review-021",
+      "candidate_id": "mdcand-021",
+      "source_path": "reports/whitelist_daily/2026-04-28.md",
+      "artifact_class": "WHITELIST_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "governance_gap_hint",
+        "pre_u_packet_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "[2026-04-28 04:22:40 UTC] Running whitelist coverage for 2026-04-27T04:21:55 → 2026-04-28T04:21:31",
       "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
     }
   ],

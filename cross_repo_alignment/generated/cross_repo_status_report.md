@@ -5,7 +5,7 @@ reason: both repositories accepted dry-run governance alignment
 
 ## Repositories
 
-- ystar-company: ddf5c749 tools: add cross-repo governance alignment manifest
+- ystar-company: 17aadbec tools: add real release simulation sandbox
 - Y-star-gov: 9c4aee3 tools: add governance endpoint acceptance runner
 
 ## Acceptance

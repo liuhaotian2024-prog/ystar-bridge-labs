@@ -6,9 +6,9 @@
   "absorption_buckets_defined": true,
   "bucket_counts": {
     "A_adopt_now_read_only": 1,
-    "B_wrap_as_governed_tool": 881,
-    "C_rewrite_from_design": 10,
-    "D_quarantine_as_evidence_ore": 8,
+    "B_wrap_as_governed_tool": 892,
+    "C_rewrite_from_design": 5,
+    "D_quarantine_as_evidence_ore": 2,
     "E_retire_do_not_use": 0
   },
   "top_absorption_candidates_defined": true,

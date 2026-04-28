@@ -2,14 +2,14 @@
 
 This queue is generated from safe-mined candidates only. All entries are pending review and not ingested.
 
-- Review count: 20
+- Review count: 21
 - Statuses:
-  - pending_review: 20
+  - pending_review: 21
 - Intended use summary:
   - cieu_prediction_delta_hint: 9
-  - governance_gap_hint: 10
+  - governance_gap_hint: 11
   - memory_continuity_hint: 10
-  - pre_u_packet_hint: 1
+  - pre_u_packet_hint: 2
   - role_brain_capsule_hint: 10
 
 ## Entries
@@ -208,6 +208,16 @@ This queue is generated from safe-mined candidates only. All entries are pending
 
 - Candidate: `mdcand-020`
 - Source: `reports/whitelist_daily/2026-04-26.md`
+- Class: `WHITELIST_REPORT`
+- Review status: `pending_review`
+- Ingestion status: `not_ingested`
+- Intended use: governance_gap_hint, pre_u_packet_hint
+- Forbidden actions: direct_brain_writeback, direct_memory_ingestion, direct_cieu_write, runtime_recovery
+
+### review-021
+
+- Candidate: `mdcand-021`
+- Source: `reports/whitelist_daily/2026-04-28.md`
 - Class: `WHITELIST_REPORT`
 - Review status: `pending_review`
 - Ingestion status: `not_ingested`

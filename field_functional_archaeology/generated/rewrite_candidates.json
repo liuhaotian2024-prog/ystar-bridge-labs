@@ -66,6 +66,175 @@
       "asset_id": "ffa-0043",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "field_functional_auto_projection_core/field_projection_input_fixture.json",
+      "file_type": "json",
+      "matched_terms": [
+        "field functional",
+        "projection",
+        "Y* projection",
+        "y_star",
+        "ystar",
+        "Y_star",
+        "YStar",
+        "mission_y",
+        "projection_trace",
+        "field_functional",
+        "pre_u",
+        "pre-U",
+        "contract"
+      ],
+      "bounded_snippet": "{ \"schema_name\": \"ystar.field_functional_auto_projection_core.input_fixture\", \"schema_version\": \"v0\", \"fixture_id\": \"field-projection-operator-input-001\", \"mission_y_star\": { \"sc",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "deep_xt_observation",
+        "mission_level_y_star",
+        "milestone_y_star_projection",
+        "session_y_star_projection",
+        "task_y_star_projection",
+        "pre_u_packet_generation",
+        "governance_validation",
+        "residual_delta_feedback",
+        "review_gated_learning",
+        "brain_memory_policy_update"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 5,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 5,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0044",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "field_functional_auto_projection_core/field_projection_operator_contract.json",
+      "file_type": "json",
+      "matched_terms": [
+        "field functional",
+        "projection",
+        "y_star",
+        "Y_star",
+        "mission_y",
+        "projection_trace",
+        "field_functional",
+        "residual_delta",
+        "pre_u",
+        "scope",
+        "contract",
+        "invariant"
+      ],
+      "bounded_snippet": "{ \"schema_version\": \"v0\", \"operator_name\": \"Field Functional Auto-Projection Core\", \"operator_id\": \"field_functional_auto_projection_core_v0\", \"purpose\": \"Deterministically project mission-level Y* through comp",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "deep_xt_observation",
+        "mission_level_y_star",
+        "milestone_y_star_projection",
+        "session_y_star_projection",
+        "task_y_star_projection",
+        "pre_u_packet_generation",
+        "governance_validation",
+        "residual_delta_feedback",
+        "review_gated_learning",
+        "brain_memory_policy_update"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 5,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 5,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0045",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "field_functional_auto_projection_core/field_projection_operator_policy.json",
+      "file_type": "json",
+      "matched_terms": [
+        "projection",
+        "ystar",
+        "YStar",
+        "field_functional",
+        "pre_u",
+        "contract"
+      ],
+      "bounded_snippet": "{ \"schema_name\": \"ystar.field_functional_auto_projection_core.operator_policy\", \"schema_version\": \"v0\", \"policy_id\": \"field-projection-operator-policy-v0\", \"deterministic_only\": true",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "milestone_y_star_projection",
+        "session_y_star_projection",
+        "task_y_star_projection",
+        "pre_u_packet_generation",
+        "review_gated_learning",
+        "brain_memory_policy_update"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 5,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 5,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0046",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "field_functional_auto_projection_core/tools/build_field_functional_auto_projection_core.py",
+      "file_type": "py",
+      "matched_terms": [
+        "field functional",
+        "mission field",
+        "projection",
+        "Y* projection",
+        "y_star",
+        "ystar",
+        "Y_star",
+        "YStar",
+        "mission_y",
+        "session_y",
+        "projection_trace",
+        "field_functional",
+        "residual_delta",
+        "pre_u",
+        "pre-U",
+        "scope",
+        "contract",
+        "invariant"
+      ],
+      "bounded_snippet": "#!/usr/bin/env python3 \"\"\"Build deterministic L5.2 field functional auto-projection artifacts.\"\"\" from __future__ import annotations import json from pathlib import Path from typing import Any ROOT = Path(__file__).re",
+      "asset_kind": "implemented_code",
+      "current_architecture_mapping": [
+        "deep_xt_observation",
+        "mission_level_y_star",
+        "milestone_y_star_projection",
+        "session_y_star_projection",
+        "task_y_star_projection",
+        "pre_u_packet_generation",
+        "governance_validation",
+        "residual_delta_feedback",
+        "review_gated_learning",
+        "brain_memory_policy_update"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 5,
+      "implementation_readiness_score": 3,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 5,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Implementation is useful but should be rebuilt into current L5 contracts.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0047",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/hook_session_start.py",
       "file_type": "py",
       "matched_terms": [
@@ -103,7 +272,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0044",
+      "asset_id": "ffa-0048",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/phase2_role_scope_seed.py",
@@ -133,7 +302,37 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0045",
+      "asset_id": "ffa-0049",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "field_functional_auto_projection_core/field_projection_operator_summary.json",
+      "file_type": "json",
+      "matched_terms": [
+        "projection",
+        "ystar",
+        "YStar",
+        "field_functional",
+        "contract"
+      ],
+      "bounded_snippet": "{ \"schema_name\": \"ystar.field_functional_auto_projection_core.operator_summary\", \"schema_version\": \"v0\", \"field_functional_auto_projection_core_defined\": true, \"projection_operator_d",
+      "asset_kind": "partial_schema",
+      "current_architecture_mapping": [
+        "milestone_y_star_projection",
+        "session_y_star_projection",
+        "task_y_star_projection",
+        "brain_memory_policy_update"
+      ],
+      "mission_value_score": 4,
+      "evidence_strength_score": 4,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 4,
+      "merge_decision": "rewrite_from_design",
+      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0050",
       "repo_name": "Y-star-gov",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
       "relative_path": "docs/examples/hook_cli_contract/input_allow_envelope.json",
@@ -165,7 +364,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0046",
+      "asset_id": "ffa-0051",
       "repo_name": "Y-star-gov",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
       "relative_path": "docs/examples/hook_cli_contract/input_escalate_envelope.json",
@@ -197,7 +396,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0047",
+      "asset_id": "ffa-0052",
       "repo_name": "Y-star-gov",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
       "relative_path": "docs/examples/hook_cli_contract/input_require_revision_envelope.json",
@@ -229,7 +428,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0048",
+      "asset_id": "ffa-0053",
       "repo_name": "Y-star-gov",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
       "relative_path": "examples/external_adapter_sdk/sample_external_request.json",
@@ -259,7 +458,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0049",
+      "asset_id": "ffa-0054",
       "repo_name": "Y-star-gov",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
       "relative_path": "docs/pre_u_packet_validator/interface_index.json",
@@ -294,7 +493,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0050",
+      "asset_id": "ffa-0055",
       "repo_name": "Y-star-gov",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
       "relative_path": "examples/external_adapter_sdk/sample_normalized_envelope.json",
@@ -326,7 +525,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0051",
+      "asset_id": "ffa-0056",
       "repo_name": "Y-star-gov",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
       "relative_path": "ystar/governance/hook_contract_adapter.py",
@@ -362,7 +561,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0052",
+      "asset_id": "ffa-0057",
       "repo_name": "Y-star-gov",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
       "relative_path": "docs/examples/hook_cli_contract/input_deny_envelope.json",
@@ -396,7 +595,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0053",
+      "asset_id": "ffa-0058",
       "repo_name": "Y-star-gov",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
       "relative_path": "examples/external_adapter_sdk/sample_adapter_config.json",
@@ -421,7 +620,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0054",
+      "asset_id": "ffa-0059",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "reports/governance/mutation_test_results.json",
@@ -446,7 +645,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0055",
+      "asset_id": "ffa-0060",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "knowledge/ceo/wisdom/.ystar_coverage.json",
@@ -465,132 +664,6 @@
       "implementation_readiness_score": 3,
       "architecture_alignment_score": 2,
       "safety_risk_score": 1,
-      "merge_decision": "rewrite_from_design",
-      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0056",
-      "repo_name": "ystar-company",
-      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
-      "relative_path": "knowledge/engineer_trust_scores.json",
-      "file_type": "json",
-      "matched_terms": [
-        "CZL"
-      ],
-      "bounded_snippet": "ed\": \"4/4\", \"methodology_complete\": true, \"notes\": \"Gauntlet PASS 2026-04-16 (CZL-125). Methodology v1 shipped 1247 words. Trust normalized to 30 (training-wheels per #72 ladder, CZL-135 fix backfill of CZL-125 inconsistency vs CZL-130 e...",
-      "asset_kind": "partial_schema",
-      "current_architecture_mapping": [
-        "governance_validation"
-      ],
-      "mission_value_score": 3,
-      "evidence_strength_score": 3,
-      "implementation_readiness_score": 3,
-      "architecture_alignment_score": 2,
-      "safety_risk_score": 1,
-      "merge_decision": "rewrite_from_design",
-      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0057",
-      "repo_name": "ystar-company",
-      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
-      "relative_path": "knowledge/cto/shield_feasibility_2026_04_10.json",
-      "file_type": "json",
-      "matched_terms": [
-        "ystar",
-        "YStar",
-        "scope"
-      ],
-      "bounded_snippet": "p\": 1775909558.918587, \"agent\": \"Ethan-CTO\", \"domain\": \"market_research\", \"topic\": \"ystar-shield feasibility\", \"learned\": { \"competitive_landscape\": { \"rebuff_archived\": \"May 2025 (Protect AI acquired by Palo Alto Networks)\", \"lakera_ac",
-      "asset_kind": "partial_schema",
-      "current_architecture_mapping": [
-        "brain_memory_policy_update"
-      ],
-      "mission_value_score": 3,
-      "evidence_strength_score": 4,
-      "implementation_readiness_score": 3,
-      "architecture_alignment_score": 2,
-      "safety_risk_score": 2,
-      "merge_decision": "rewrite_from_design",
-      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0058",
-      "repo_name": "ystar-company",
-      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
-      "relative_path": "knowledge/cto/active_task.json",
-      "file_type": "json",
-      "matched_terms": [
-        "ystar",
-        "YStar"
-      ],
-      "bounded_snippet": "{ \"task_id\": \"YSTAR_GOV_ENTERPRISE_READINESS\", \"actor\": \"cto\", \"type\": \"Active Campaign\", \"status\": \"in_progress\", \"created\": \"2026-04-16T18:00:00Z\", \"completed\": null, \"in",
-      "asset_kind": "partial_schema",
-      "current_architecture_mapping": [
-        "session_y_star_projection",
-        "task_y_star_projection",
-        "governance_validation"
-      ],
-      "mission_value_score": 3,
-      "evidence_strength_score": 3,
-      "implementation_readiness_score": 2,
-      "architecture_alignment_score": 4,
-      "safety_risk_score": 4,
-      "merge_decision": "rewrite_from_design",
-      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0059",
-      "repo_name": "ystar-company",
-      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
-      "relative_path": "agent_team_work_proposal/tool_need_analysis_schema.json",
-      "file_type": "json",
-      "matched_terms": [
-        "y_star",
-        "ystar",
-        "Y_star",
-        "YStar"
-      ],
-      "bounded_snippet": "{ \"schema_name\": \"ystar.agent_team_work_proposal.tool_need_analysis_schema\", \"schema_version\": \"v0\", \"type\": \"object\", \"required\": [ \"analysis_id\", \"selected_proposal_id\",",
-      "asset_kind": "partial_schema",
-      "current_architecture_mapping": [
-        "mission_level_y_star"
-      ],
-      "mission_value_score": 5,
-      "evidence_strength_score": 4,
-      "implementation_readiness_score": 3,
-      "architecture_alignment_score": 2,
-      "safety_risk_score": 0,
-      "merge_decision": "rewrite_from_design",
-      "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0060",
-      "repo_name": "ystar-company",
-      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
-      "relative_path": "agent_team_work_proposal/work_proposal_schema.json",
-      "file_type": "json",
-      "matched_terms": [
-        "y_star",
-        "ystar",
-        "Y_star",
-        "YStar"
-      ],
-      "bounded_snippet": "{ \"schema_name\": \"ystar.agent_team_work_proposal.work_proposal_schema\", \"schema_version\": \"v0\", \"type\": \"object\", \"required\": [ \"proposal_id\", \"title\", \"description\",",
-      "asset_kind": "partial_schema",
-      "current_architecture_mapping": [
-        "mission_level_y_star"
-      ],
-      "mission_value_score": 5,
-      "evidence_strength_score": 4,
-      "implementation_readiness_score": 3,
-      "architecture_alignment_score": 2,
-      "safety_risk_score": 0,
       "merge_decision": "rewrite_from_design",
       "reason": "Schema concept is useful but needs alignment with the L5 projection harness.",
       "live_enabled": false

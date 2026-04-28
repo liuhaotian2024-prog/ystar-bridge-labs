@@ -11,13 +11,13 @@
     "ESCALATION_REPORT",
     "WHITELIST_REPORT"
   ],
-  "candidate_count": 20,
+  "candidate_count": 21,
   "classes_seen": {
     "DREAM_REPORT": 5,
     "DAILY_REPORT": 5,
     "DRIFT_REPORT": 4,
     "ESCALATION_REPORT": 5,
-    "WHITELIST_REPORT": 1
+    "WHITELIST_REPORT": 2
   },
   "bounds": {
     "max_files_per_class": 5,
@@ -392,6 +392,20 @@
       "selected_reason": "allowed_bounded_markdown_report_class",
       "headings": [],
       "snippet": "[2026-04-26 04:38:47 UTC] Running whitelist coverage for 2026-04-25T04:21:43 → 2026-04-26T04:21:11",
+      "safety_level": "bounded_markdown_candidate",
+      "ingestion_status": "candidate_only",
+      "allowed_next_step": "human_review_or_curated_queue",
+      "forbidden_next_step": "direct_brain_writeback",
+      "generated_from_manifest_ref": "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json"
+    },
+    {
+      "candidate_id": "mdcand-021",
+      "source_path": "reports/whitelist_daily/2026-04-28.md",
+      "artifact_class": "WHITELIST_REPORT",
+      "source_size_bytes": 101,
+      "selected_reason": "allowed_bounded_markdown_report_class",
+      "headings": [],
+      "snippet": "[2026-04-28 04:22:40 UTC] Running whitelist coverage for 2026-04-27T04:21:55 → 2026-04-28T04:21:31",
       "safety_level": "bounded_markdown_candidate",
       "ingestion_status": "candidate_only",
       "allowed_next_step": "human_review_or_curated_queue",
