@@ -168,7 +168,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after shadow learning cycle",
+        "Build cross-repo governance contract proof",
+        ["python3", "cross_repo_governance_contract_proof/tools/build_cross_repo_governance_contract_proof.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after cross-repo governance proof",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -1315,6 +1320,71 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "integrated_shadow_learning_readiness/integrated_shadow_learning_readiness.json"],
     ),
     Check(
+        "Py compile: build_cross_repo_governance_contract_proof.py",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "cross_repo_governance_contract_proof/tools/build_cross_repo_governance_contract_proof.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: cross_repo_governance_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/cross_repo_governance_summary.json"],
+    ),
+    Check(
+        "Validate JSON: cross_repo_contract_proof_contract.json",
+        ["python3", "-m", "json.tool", "cross_repo_governance_contract_proof/cross_repo_contract_proof_contract.json"],
+    ),
+    Check(
+        "Validate JSON: cross_repo_contract_proof_summary.json",
+        ["python3", "-m", "json.tool", "cross_repo_governance_contract_proof/cross_repo_contract_proof_summary.json"],
+    ),
+    Check(
+        "Validate JSON: y_star_gov_readonly_scan_manifest.json",
+        ["python3", "-m", "json.tool", "y_star_gov_contract_surface_inventory/y_star_gov_readonly_scan_manifest.json"],
+    ),
+    Check(
+        "Validate JSON: y_star_gov_contract_surface_inventory.json",
+        ["python3", "-m", "json.tool", "y_star_gov_contract_surface_inventory/y_star_gov_contract_surface_inventory.json"],
+    ),
+    Check(
+        "Validate JSON: behavior_y_star_to_governance_contract_map.json",
+        ["python3", "-m", "json.tool", "ystar_company_to_y_star_gov_alignment/behavior_y_star_to_governance_contract_map.json"],
+    ),
+    Check(
+        "Validate JSON: labs_vs_kernel_responsibility_boundary.json",
+        ["python3", "-m", "json.tool", "ystar_company_to_y_star_gov_alignment/labs_vs_kernel_responsibility_boundary.json"],
+    ),
+    Check(
+        "Validate JSON: gov_mcp_readonly_scan_manifest.json",
+        ["python3", "-m", "json.tool", "gov_mcp_boundary_inventory/gov_mcp_readonly_scan_manifest.json"],
+    ),
+    Check(
+        "Validate JSON: gov_mcp_bypass_risk_inventory.json",
+        ["python3", "-m", "json.tool", "gov_mcp_boundary_inventory/gov_mcp_bypass_risk_inventory.json"],
+    ),
+    Check(
+        "Validate JSON: governed_mcp_interface_contract.json",
+        ["python3", "-m", "json.tool", "governed_mcp_interface_contract/governed_mcp_interface_contract.json"],
+    ),
+    Check(
+        "Validate JSON: mcp_non_bypass_invariant_map.json",
+        ["python3", "-m", "json.tool", "governed_mcp_interface_contract/mcp_non_bypass_invariant_map.json"],
+    ),
+    Check(
+        "Validate JSON: required_gate_sequence.json",
+        ["python3", "-m", "json.tool", "cross_repo_non_bypass_proof/required_gate_sequence.json"],
+    ),
+    Check(
+        "Validate JSON: forbidden_bypass_path_matrix.json",
+        ["python3", "-m", "json.tool", "cross_repo_non_bypass_proof/forbidden_bypass_path_matrix.json"],
+    ),
+    Check(
+        "Validate JSON: cross_repo_governance_readiness.json",
+        ["python3", "-m", "json.tool", "cross_repo_gap_and_readiness/cross_repo_governance_readiness.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -1509,6 +1579,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: shadow-learning-cycle",
         ["python3", "console_read_model/cli/team_console.py", "shadow-learning-cycle"],
+    ),
+    Check(
+        "CLI smoke: cross-repo-governance",
+        ["python3", "console_read_model/cli/team_console.py", "cross-repo-governance"],
     ),
     Check(
         "CLI smoke: sources",

@@ -1,0 +1,26 @@
+{
+  "schema_name": "ystar.cross_repo_gap_and_readiness.l5_6_recommended_next_step",
+  "schema_version": "v0",
+  "recommended_next_milestone": "L5.6 Governed MCP Dry-Run Adapter v0",
+  "reason": "The non-bypass contract is defined; next proof should create a dry-run MCP adapter that consumes behavior Y*, Pre-U, governance decision envelopes, and receipts without executing MCP tools.",
+  "l6_revenue_opportunity_discovery_remains_blocked": true,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

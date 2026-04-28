@@ -1,0 +1,91 @@
+{
+  "schema_name": "ystar.cross_repo_non_bypass.required_gate_sequence",
+  "schema_version": "v0",
+  "sequence_id": "required-gate-sequence-v0",
+  "sequence": [
+    {
+      "order": 1,
+      "gate": "mission-level Y*",
+      "required": true
+    },
+    {
+      "order": 2,
+      "gate": "field functional projection",
+      "required": true
+    },
+    {
+      "order": 3,
+      "gate": "behavior-level Y*",
+      "required": true
+    },
+    {
+      "order": 4,
+      "gate": "candidate_U / tool/resource request",
+      "required": true
+    },
+    {
+      "order": 5,
+      "gate": "Pre-U packet",
+      "required": true
+    },
+    {
+      "order": 6,
+      "gate": "Y-star-gov validation or versioned governance adapter",
+      "required": true
+    },
+    {
+      "order": 7,
+      "gate": "bridge authorization receipt",
+      "required": true
+    },
+    {
+      "order": 8,
+      "gate": "governed MCP/tool/resource call",
+      "required": true
+    },
+    {
+      "order": 9,
+      "gate": "result receipt",
+      "required": true
+    },
+    {
+      "order": 10,
+      "gate": "CIEU event",
+      "required": true
+    },
+    {
+      "order": 11,
+      "gate": "residual delta",
+      "required": true
+    },
+    {
+      "order": 12,
+      "gate": "review-gated learning candidate",
+      "required": true
+    },
+    {
+      "order": 13,
+      "gate": "approved controlled update only if separately authorized",
+      "required": true
+    }
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

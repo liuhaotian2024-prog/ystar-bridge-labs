@@ -1,0 +1,76 @@
+{
+  "schema_name": "ystar.cross_repo_non_bypass.forbidden_bypass_path_matrix",
+  "schema_version": "v0",
+  "matrix_id": "forbidden-bypass-path-matrix-v0",
+  "paths": [
+    {
+      "path_name": "candidate_U directly to MCP call",
+      "status": "forbidden",
+      "reason": "missing behavior Y*, Pre-U, governance decision, bridge receipt, and CIEU receipt"
+    },
+    {
+      "path_name": "agent proposal directly to MCP call",
+      "status": "forbidden",
+      "reason": "agent proposal must first pass projection and Pre-U gates"
+    },
+    {
+      "path_name": "MCP call directly to brain writeback",
+      "status": "forbidden",
+      "reason": "brain writeback requires separately approved controlled learning design"
+    },
+    {
+      "path_name": "MCP call directly to memory ingestion",
+      "status": "forbidden",
+      "reason": "memory ingestion requires separately approved controlled learning design"
+    },
+    {
+      "path_name": "tool result directly to canonical policy mutation",
+      "status": "forbidden",
+      "reason": "canonical policy mutation requires controlled approval and kernel mediation"
+    },
+    {
+      "path_name": "residual directly to brain writeback",
+      "status": "forbidden",
+      "reason": "residual can only create review-gated learning candidates"
+    },
+    {
+      "path_name": "residual directly to memory ingestion",
+      "status": "forbidden",
+      "reason": "residual can only create review-gated learning candidates"
+    },
+    {
+      "path_name": "review candidate direct approval",
+      "status": "forbidden",
+      "reason": "candidate approval is outside this dry-run architecture proof"
+    },
+    {
+      "path_name": "external action without explicit approval",
+      "status": "forbidden",
+      "reason": "external action requires separately approved mode"
+    },
+    {
+      "path_name": "network/API call without explicit approval",
+      "status": "forbidden",
+      "reason": "network/API access requires separately approved mode"
+    }
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

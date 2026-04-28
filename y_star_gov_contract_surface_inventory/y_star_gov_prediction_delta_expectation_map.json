@@ -1,0 +1,61 @@
+{
+  "schema_name": "ystar.y_star_gov.prediction_delta_expectation_map",
+  "schema_version": "v0",
+  "map_id": "y-star-gov-prediction-delta-expectation-map-v0",
+  "expected_prediction_delta_fields": [
+    "X_t",
+    "U_t",
+    "Y_star_t",
+    "Y_t_plus_1",
+    "R_t_plus_1",
+    "predicted_Y",
+    "actual_Y",
+    "residual_delta",
+    "learning_eligibility",
+    "writeback_blocked"
+  ],
+  "surface_refs": [
+    {
+      "surface_name": "cieu_prediction_delta_validator",
+      "surface_kind": "contract_surface",
+      "path": ".commit_msg_d.txt",
+      "matched_terms": [
+        "CIEU"
+      ],
+      "evidence_excerpt_or_symbol": "DIT (retracted CEO spec 3.3x3), brain_dream_scheduler (4 patterns + 8 CIEU event types), dominance_monitor.py code-complete. Ryan: DISPATCH-EXEC Pattern C pipe, WIPE-RCA atomic-write fix, aliases map + Step 7 cano",
+      "expected_labs_mapping": "CIEU-like fixtures should map to prediction-delta inputs and residual classes without persistence.",
+      "confidence_class": "direct_doc_match"
+    },
+    {
+      "surface_name": "learning_writeback_safety",
+      "surface_kind": "contract_surface",
+      "path": ".commit_msg_e.txt",
+      "matched_terms": [
+        "writeback"
+      ],
+      "evidence_excerpt_or_symbol": "-BIPARTITE-ruling + CZL-BRAIN-BIPARTITE-P2-ALGO-ruling CZL-BRAIN-L2-WRITEBACK-PARTIAL-20260420 CZL-BRAIN-L3-GUARD-RAILS-ruling CZL-DISPATCH-EXEC-ruling (Pattern C) CZL-AUTO-COMMIT-PUSH-ruling CZL-AGENTS-ENGREG",
+      "expected_labs_mapping": "Review candidates cannot write brain, memory, or canonical policy without separate approval.",
+      "confidence_class": "direct_doc_match"
+    }
+  ],
+  "labs_mapping_status": "cieu_like_fixtures_are_non_persistent",
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

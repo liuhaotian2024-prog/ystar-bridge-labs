@@ -1,0 +1,91 @@
+{
+  "schema_name": "ystar.cross_repo_governance_contract_proof.run",
+  "schema_version": "v0",
+  "run_id": "cross-repo-governance-contract-proof-run-001",
+  "proof_stages": [
+    {
+      "stage": "load_ystar_company_l5_artifacts",
+      "status": "completed_read_only"
+    },
+    {
+      "stage": "inspect_y_star_gov_contract_surfaces_read_only",
+      "status": "completed_read_only"
+    },
+    {
+      "stage": "inspect_gov_mcp_boundary_surfaces_read_only",
+      "status": "completed_read_only"
+    },
+    {
+      "stage": "map_behavior_y_star_to_y_star_gov_contract_expectations",
+      "status": "completed_read_only"
+    },
+    {
+      "stage": "map_pre_u_candidates_to_y_star_gov_validator_expectations",
+      "status": "completed_read_only"
+    },
+    {
+      "stage": "map_residual_deltas_to_y_star_gov_prediction_delta_expectations",
+      "status": "completed_read_only"
+    },
+    {
+      "stage": "map_bridge_gate_receipts_to_governance_decision_envelope_expectations",
+      "status": "completed_read_only"
+    },
+    {
+      "stage": "map_gov_mcp_resources_to_governed_interface_boundary",
+      "status": "completed_read_only"
+    },
+    {
+      "stage": "identify_bypass_risks",
+      "status": "completed_read_only"
+    },
+    {
+      "stage": "produce_cross_repo_contract_alignment_matrix",
+      "status": "completed_read_only"
+    },
+    {
+      "stage": "produce_non_bypass_invariant_map",
+      "status": "completed_read_only"
+    },
+    {
+      "stage": "produce_cross_repo_gap_report",
+      "status": "completed_read_only"
+    },
+    {
+      "stage": "produce_l5_6_recommendation",
+      "status": "completed_read_only"
+    }
+  ],
+  "y_star_gov_modified": false,
+  "gov_mcp_modified": false,
+  "mcp_server_or_tool_executed": false,
+  "db_log_wal_shm_active_marker_content_read": false,
+  "outputs": [
+    "cross_repo_governance_contract_proof/cross_repo_contract_proof_summary.json",
+    "y_star_gov_contract_surface_inventory/y_star_gov_contract_surface_inventory.json",
+    "ystar_company_to_y_star_gov_alignment/labs_vs_kernel_responsibility_boundary.json",
+    "gov_mcp_boundary_inventory/gov_mcp_bypass_risk_inventory.json",
+    "governed_mcp_interface_contract/mcp_non_bypass_invariant_map.json",
+    "cross_repo_non_bypass_proof/required_gate_sequence.json",
+    "cross_repo_gap_and_readiness/cross_repo_governance_readiness.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

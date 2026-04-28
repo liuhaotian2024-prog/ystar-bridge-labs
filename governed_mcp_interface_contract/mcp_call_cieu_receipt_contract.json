@@ -1,0 +1,40 @@
+{
+  "schema_name": "ystar.governed_mcp_interface.cieu_receipt_contract",
+  "schema_version": "v0",
+  "contract_id": "mcp-call-cieu-receipt-contract-v0",
+  "required_receipt_fields": [
+    "mcp_call_id",
+    "source_pre_u_packet_id",
+    "source_decision_envelope_id",
+    "tool_or_resource_id",
+    "requested_U",
+    "allowed_U",
+    "actual_result_summary",
+    "Y_star_t",
+    "Y_t_plus_1",
+    "R_t_plus_1",
+    "persistence_mode",
+    "evidence_refs",
+    "safety_flags"
+  ],
+  "persistence_enabled": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_name": "ystar.alignment.labs_vs_kernel_responsibility_boundary",
+  "schema_version": "v0",
+  "boundary_id": "labs-vs-kernel-responsibility-boundary-v0",
+  "ystar_company_may_generate": [
+    "candidates",
+    "fixtures",
+    "traces",
+    "dry-run decisions",
+    "shadow artifacts",
+    "console/read-model summaries"
+  ],
+  "ystar_company_must_not_be_treated_as_canonical_governance_kernel": true,
+  "Y_star_gov_remains_intended_canonical_validator_decision_kernel": true,
+  "future_live_execution_requirement": "Future live execution must use Y-star-gov validation or an explicitly versioned adapter.",
+  "mismatch_policy": "blocker_not_labs_override",
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

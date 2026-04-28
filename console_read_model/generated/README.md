@@ -87,5 +87,8 @@ autonomous work cycle. It confirms behavior-level Y* is consumed as a gate befor
 `shadow_learning_cycle_summary.json` is derived from the L5.4 integrated
 review-gated shadow learning cycle. It confirms an L5.3 residual can influence a shadow behavior-level Y* preview and shadow cycle without canonical policy mutation or writeback.
 
+`cross_repo_governance_summary.json` is derived from the L5.5 cross-repo
+governance contract proof. It confirms ystar-company remains labs/runtime, Y-star-gov remains the intended governance kernel, and gov-mcp remains a governed interface boundary.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

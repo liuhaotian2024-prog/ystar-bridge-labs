@@ -1,0 +1,60 @@
+{
+  "schema_name": "ystar.y_star_gov.validator_expectation_map",
+  "schema_version": "v0",
+  "map_id": "y-star-gov-validator-expectation-map-v0",
+  "expected_validator_fields": [
+    "declared_Y_star",
+    "X_t / Xt",
+    "candidate_U",
+    "governance_expectations",
+    "execution_boundary",
+    "trace_refs",
+    "validation_decision",
+    "issues",
+    "severity"
+  ],
+  "surface_refs": [
+    {
+      "surface_name": "pre_u_packet_validator",
+      "surface_kind": "contract_surface",
+      "path": "docs/cieu_prediction_delta/schema_v0.md",
+      "matched_terms": [
+        "pre-u"
+      ],
+      "evidence_excerpt_or_symbol": "or lives at `ystar/governance/cieu_prediction_delta.py`. ## Purpose Pre-U packets declare predicted `Yt+1` and predicted `Rt+1`. After action, CIEU needs a structured record that links those predictions to actual",
+      "expected_labs_mapping": "ystar-company Pre-U candidates should map to declared_Y_star, X_t, candidate_U, governance expectations, and execution boundaries.",
+      "confidence_class": "direct_doc_match"
+    },
+    {
+      "surface_name": "validation_decision_result_issue_severity",
+      "surface_kind": "contract_surface",
+      "path": ".commit_msg_e.txt",
+      "matched_terms": [
+        "result"
+      ],
+      "evidence_excerpt_or_symbol": "_action_registry.yaml phase_lifecycle_manifest.yaml CEO experiment results (reports/ceo/exp3_*): bipartite learning empirical matrix across buckets b3-b8 + consolidated. Co-Authored-By: Claude Opus 4.7 (1M contex",
+      "expected_labs_mapping": "Projection and Pre-U gate decisions should become governance decision envelopes, not live authorization by labs.",
+      "confidence_class": "direct_doc_match"
+    }
+  ],
+  "labs_mapping_status": "candidate_mapped_not_kernel_validated",
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "schema_name": "ystar.gov-mcp.boundary_surface_inventory",
+  "schema_version": "v0",
+  "repo_present": true,
+  "scanned_files_count": 64,
+  "relevant_surfaces_found": 8,
+  "surfaces": [
+    {
+      "surface_name": "tool_resource_definition",
+      "surface_kind": "boundary_surface",
+      "path": ".claude/settings.json",
+      "matched_terms": [
+        "tool"
+      ],
+      "evidence_excerpt_or_symbol": ")\", \"Write(*)\", \"Edit(*)\" ] }, \"hooks\": { \"PreToolUse\": [ { \"matcher\": \".*\", \"hooks\": [ { \"type\": \"command\", \"command\": \"python3 -m ys",
+      "expected_labs_mapping": "MCP tools/resources require behavior Y*, Pre-U, governance decision, bridge receipt, result receipt, CIEU receipt, and residual delta.",
+      "confidence_class": "inferred_safe_match"
+    },
+    {
+      "surface_name": "file_resource_access",
+      "surface_kind": "boundary_surface",
+      "path": ".claude/settings.json",
+      "matched_terms": [
+        "read"
+      ],
+      "evidence_excerpt_or_symbol": "ings.json { \"permissions\": { \"allow\": [ \"Bash(*)\", \"Read(*)\", \"Write(*)\", \"Edit(*)\" ] }, \"hooks\": { \"PreToolUse\": [ { \"matcher\": \".*\", \"hooks\": [",
+      "expected_labs_mapping": "File/resource reads must be governed and deny DB/log/runtime marker access by default.",
+      "confidence_class": "inferred_safe_match"
+    },
+    {
+      "surface_name": "mcp_server_entrypoint",
+      "surface_kind": "boundary_surface",
+      "path": "AGENTS.md",
+      "matched_terms": [
+        "MCP"
+      ],
+      "evidence_excerpt_or_symbol": "AGENTS.md # AGENTS.md — gov-mcp Governance Contract gov-mcp is a governed MCP server exposing Y*gov enforcement as standard MCP tools. Every tool call passes IntentContra",
+      "expected_labs_mapping": "gov-mcp entrypoints must remain disabled until called through a governed lifecycle.",
+      "confidence_class": "direct_doc_match"
+    },
+    {
+      "surface_name": "transport_boundary",
+      "surface_kind": "boundary_surface",
+      "path": "AGENTS.md",
+      "matched_terms": [
+        "sse"
+      ],
+      "evidence_excerpt_or_symbol": "r exposing Y*gov enforcement as standard MCP tools. Every tool call passes IntentContract check before execution. All decisions chained in CIEU audit log. ## Iron Rules (inherited from Y*gov) 1. No LLM in enforce",
+      "expected_labs_mapping": "Transport surfaces must remain interface-only and not governance kernels.",
+      "confidence_class": "direct_doc_match"
+    },
+    {
+      "surface_name": "tool_invocation_path",
+      "surface_kind": "boundary_surface",
+      "path": "AGENTS.md",
+      "matched_terms": [
+        "call"
+      ],
+      "evidence_excerpt_or_symbol": "P server exposing Y*gov enforcement as standard MCP tools. Every tool call passes IntentContract check before execution. All decisions chained in CIEU audit log. ## Iron Rules (inherited from Y*gov) 1. No LLM in e",
+      "expected_labs_mapping": "Tool invocation paths require explicit gate sequence before any execution mode.",
+      "confidence_class": "direct_doc_match"
+    },
+    {
+      "surface_name": "governance_hook_reference",
+      "surface_kind": "boundary_surface",
+      "path": "AGENTS.md",
+      "matched_terms": [
+        "governance"
+      ],
+      "evidence_excerpt_or_symbol": "AGENTS.md # AGENTS.md — gov-mcp Governance Contract gov-mcp is a governed MCP server exposing Y*gov enforcement as standard MCP tools. Every tool call passes IntentContract check be",
+      "expected_labs_mapping": "Existing governance references should be aligned to Y-star-gov and not duplicated in gov-mcp.",
+      "confidence_class": "direct_doc_match"
+    },
+    {
+      "surface_name": "request_handler",
+      "surface_kind": "boundary_surface",
+      "path": "README.md",
+      "matched_terms": [
+        "request"
+      ],
+      "evidence_excerpt_or_symbol": "t-child delegation with monotonicity validation. | | `gov_escalate` | Request permission expansion from principal. CIEU audit trail. | | `gov_chain_reset` | Clear stale delegation links (selective or full reset). | #",
+      "expected_labs_mapping": "Request handlers must not become a direct action path bypassing Y-star-gov.",
+      "confidence_class": "direct_doc_match"
+    },
+    {
+      "surface_name": "auth_config_boundary",
+      "surface_kind": "boundary_surface",
+      "path": "README.md",
+      "matched_terms": [
+        "token"
+      ],
+      "evidence_excerpt_or_symbol": "| Without gov-mcp | With gov-mcp | Delta | |---|---|---|---| | Output tokens | 6,107 | 3,352 | **-45.1%** | | Wall time | 171.1s | 65.8s | **-61.5%** | | Throughput | — | 39,000+ checks/s | — | | Concurrent agents |",
+      "expected_labs_mapping": "Auth/config surfaces are bypass risks if accessed before governance validation.",
+      "confidence_class": "direct_doc_match"
+    }
+  ],
+  "modification_performed": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

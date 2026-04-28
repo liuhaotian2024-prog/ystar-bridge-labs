@@ -1,0 +1,31 @@
+{
+  "schema_name": "ystar.y_star_gov.surface_summary",
+  "schema_version": "v0",
+  "repo_present": true,
+  "scanned_files_count": 550,
+  "relevant_surfaces_found": 7,
+  "modified": false,
+  "surface_inventory_defined": true,
+  "validator_expectation_map_defined": true,
+  "adapter_expectation_map_defined": true,
+  "prediction_delta_expectation_map_defined": true,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

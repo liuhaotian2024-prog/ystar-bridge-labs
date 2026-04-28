@@ -111,6 +111,10 @@ python3 console_read_model/cli/team_console.py <command>
   review gate, learning target classification, shadow policy patch, shadow
   behavior-level Y* preview, shadow cycle, original-vs-shadow comparison, and
   disabled live/writeback/persistence/canonical-mutation flags.
+- `cross-repo-governance`: Prints the generated L5.5 cross-repo governance
+  contract proof summary: Y-star-gov and gov-mcp read-only inventories,
+  ystar-company to governance-kernel alignment, governed MCP boundary
+  invariants, bypass risks, and disabled live/MCP/writeback/persistence flags.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

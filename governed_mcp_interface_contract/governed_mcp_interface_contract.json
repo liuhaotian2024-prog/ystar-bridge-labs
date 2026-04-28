@@ -1,0 +1,47 @@
+{
+  "schema_name": "ystar.governed_mcp_interface.contract",
+  "schema_version": "v0",
+  "contract_id": "governed-mcp-interface-contract-v0",
+  "contract_rules": {
+    "future_mcp_call_downstream_of_behavior_y_star": true,
+    "future_mcp_call_requires_pre_u_candidate": true,
+    "future_mcp_call_requires_y_star_gov_or_versioned_adapter_validation": true,
+    "future_mcp_call_requires_bridge_or_gate_authorization": true,
+    "future_mcp_call_requires_receipt": true,
+    "future_mcp_call_requires_cieu_like_or_real_cieu_event": true,
+    "future_mcp_call_requires_residual_delta": true,
+    "deny_live_external_network_action_without_explicit_approved_mode": true
+  },
+  "required_pre_call_gates": [
+    "behavior-level Y*",
+    "Pre-U candidate",
+    "Y-star-gov validation or versioned adapter",
+    "bridge authorization receipt"
+  ],
+  "required_post_call_records": [
+    "result receipt",
+    "CIEU-like or real CIEU event",
+    "residual delta",
+    "review-gated learning candidate if residual exists"
+  ],
+  "mcp_tool_execution_enabled": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

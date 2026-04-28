@@ -370,6 +370,9 @@ def main() -> int:
     required_review_gated_shadow_projection_cycle_files = expected.get(
         "required_review_gated_shadow_projection_cycle_files", []
     )
+    required_cross_repo_governance_contract_proof_files = expected.get(
+        "required_cross_repo_governance_contract_proof_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -536,6 +539,12 @@ def main() -> int:
         check_exists(path, report, "review-gated shadow projection cycle file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "review-gated shadow projection cycle JSON")
+
+    for rel in required_cross_repo_governance_contract_proof_files:
+        path = ROOT / rel
+        check_exists(path, report, "cross-repo governance contract proof file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "cross-repo governance contract proof JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -3004,6 +3013,98 @@ def main() -> int:
             "Controlled Canonical Learning Architecture v0"
         ):
             report.fail("generated shadow learning cycle summary must point to controlled canonical learning")
+
+    cross_repo_governance = generated_json.get(
+        "console_read_model/generated/cross_repo_governance_summary.json"
+    )
+    if cross_repo_governance:
+        for field in [
+            "cross_repo_governance_contract_proof_defined",
+            "y_star_gov_surfaces_inventoried_read_only",
+            "gov_mcp_surfaces_inventoried_read_only",
+            "behavior_y_star_mapped_to_governance_contract",
+            "pre_u_candidates_mapped_to_validator_expectations",
+            "cieu_fixtures_mapped_to_prediction_delta_expectations",
+            "gov_mcp_boundary_mapped",
+            "non_bypass_invariants_defined",
+            "bypass_risks_identified",
+            "no_non_ystar_company_repo_modified",
+            "no_mcp_server_or_tool_executed",
+            "ready_for_l5_6_governed_mcp_dry_run_adapter",
+            "ready_for_l6_revenue_opportunity_discovery",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+            "canonical_policy_mutation_enabled",
+            "y_star_gov_modification_enabled",
+            "gov_mcp_modification_enabled",
+            "mcp_tool_execution_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "next_required_milestone",
+            "generated_contract_summary",
+            "generated_y_star_gov_surface_summary",
+            "generated_alignment_summary",
+            "generated_gov_mcp_surface_summary",
+            "generated_governed_mcp_interface_summary",
+            "generated_non_bypass_summary",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in cross_repo_governance:
+                report.pass_(f"generated cross-repo governance summary field present: {field}")
+            else:
+                report.fail(f"generated cross-repo governance summary missing field: {field}")
+        for field in [
+            "cross_repo_governance_contract_proof_defined",
+            "y_star_gov_surfaces_inventoried_read_only",
+            "gov_mcp_surfaces_inventoried_read_only",
+            "behavior_y_star_mapped_to_governance_contract",
+            "pre_u_candidates_mapped_to_validator_expectations",
+            "cieu_fixtures_mapped_to_prediction_delta_expectations",
+            "gov_mcp_boundary_mapped",
+            "non_bypass_invariants_defined",
+            "bypass_risks_identified",
+            "no_non_ystar_company_repo_modified",
+            "no_mcp_server_or_tool_executed",
+            "ready_for_l5_6_governed_mcp_dry_run_adapter",
+        ]:
+            if cross_repo_governance.get(field) is not True:
+                report.fail(f"generated cross-repo governance summary must keep {field}=true")
+        for field in [
+            "ready_for_l6_revenue_opportunity_discovery",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+            "canonical_policy_mutation_enabled",
+            "y_star_gov_modification_enabled",
+            "gov_mcp_modification_enabled",
+            "mcp_tool_execution_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+        ]:
+            if cross_repo_governance.get(field) is not False:
+                report.fail(f"generated cross-repo governance summary must keep {field}=false")
+        if cross_repo_governance.get("next_required_milestone") != (
+            "L5.6 Governed MCP Dry-Run Adapter v0"
+        ):
+            report.fail("generated cross-repo governance summary must point to L5.6")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

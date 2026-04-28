@@ -72,6 +72,13 @@ CURATED_SOURCES = [
     "original_vs_shadow_cycle_comparison/shadow_learning_effect_summary.json",
     "integrated_learning_cycle_cieu_fixture/integrated_learning_cycle_cieu_summary.json",
     "integrated_shadow_learning_readiness/integrated_shadow_learning_readiness.json",
+    "cross_repo_governance_contract_proof/cross_repo_contract_proof_summary.json",
+    "y_star_gov_contract_surface_inventory/y_star_gov_surface_summary.json",
+    "ystar_company_to_y_star_gov_alignment/ystar_company_to_y_star_gov_alignment_summary.json",
+    "gov_mcp_boundary_inventory/gov_mcp_surface_summary.json",
+    "governed_mcp_interface_contract/governed_mcp_interface_summary.json",
+    "cross_repo_non_bypass_proof/cross_repo_non_bypass_summary.json",
+    "cross_repo_gap_and_readiness/cross_repo_governance_readiness.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -1974,6 +1981,119 @@ def build_shadow_learning_cycle_summary(
     }
 
 
+def build_cross_repo_governance_summary(
+    proof_summary: dict[str, Any] | None,
+    y_star_gov_summary: dict[str, Any] | None,
+    alignment_summary: dict[str, Any] | None,
+    gov_mcp_summary: dict[str, Any] | None,
+    governed_mcp_summary: dict[str, Any] | None,
+    non_bypass_summary: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.cross_repo_governance_summary",
+            "schema_version": "v0",
+            "cross_repo_governance_contract_proof_defined": False,
+            "y_star_gov_surfaces_inventoried_read_only": False,
+            "gov_mcp_surfaces_inventoried_read_only": False,
+            "ready_for_l5_6_governed_mcp_dry_run_adapter": False,
+            "ready_for_l6_revenue_opportunity_discovery": False,
+            "warning": "Cross-repo governance contract proof has not been generated yet.",
+        }
+    proof_summary = proof_summary or {}
+    y_star_gov_summary = y_star_gov_summary or {}
+    alignment_summary = alignment_summary or {}
+    gov_mcp_summary = gov_mcp_summary or {}
+    governed_mcp_summary = governed_mcp_summary or {}
+    non_bypass_summary = non_bypass_summary or {}
+    return {
+        "schema_name": "ystar.console_read_model.generated.cross_repo_governance_summary",
+        "schema_version": "v0",
+        "cross_repo_governance_contract_proof_defined": proof_summary.get(
+            "cross_repo_governance_contract_proof_defined"
+        ),
+        "y_star_gov_surfaces_inventoried_read_only": proof_summary.get(
+            "y_star_gov_surfaces_inventoried_read_only"
+        ),
+        "gov_mcp_surfaces_inventoried_read_only": proof_summary.get(
+            "gov_mcp_surfaces_inventoried_read_only"
+        ),
+        "y_star_gov_repo_present": proof_summary.get("y_star_gov_repo_present"),
+        "gov_mcp_repo_present": proof_summary.get("gov_mcp_repo_present"),
+        "y_star_gov_scanned_files_count": proof_summary.get("y_star_gov_scanned_files_count"),
+        "gov_mcp_scanned_files_count": proof_summary.get("gov_mcp_scanned_files_count"),
+        "behavior_y_star_mapped_to_governance_contract": readiness_summary.get(
+            "behavior_y_star_mapped_to_governance_contract"
+        ),
+        "pre_u_candidates_mapped_to_validator_expectations": readiness_summary.get(
+            "pre_u_candidates_mapped_to_validator_expectations"
+        ),
+        "cieu_fixtures_mapped_to_prediction_delta_expectations": readiness_summary.get(
+            "cieu_fixtures_mapped_to_prediction_delta_expectations"
+        ),
+        "gov_mcp_boundary_mapped": readiness_summary.get("gov_mcp_boundary_mapped"),
+        "non_bypass_invariants_defined": readiness_summary.get("non_bypass_invariants_defined"),
+        "bypass_risks_identified": readiness_summary.get("bypass_risks_identified"),
+        "labs_kernel_responsibility_boundary_defined": readiness_summary.get(
+            "labs_kernel_responsibility_boundary_defined"
+        ),
+        "ystar_company_is_not_canonical_governance_kernel": alignment_summary.get(
+            "ystar_company_is_not_canonical_governance_kernel"
+        ),
+        "no_non_ystar_company_repo_modified": proof_summary.get("non_ystar_company_repo_modified") is False,
+        "no_mcp_server_or_tool_executed": proof_summary.get("mcp_server_or_tool_executed") is False,
+        "mcp_non_bypass_invariants_defined": governed_mcp_summary.get(
+            "mcp_non_bypass_invariants_defined"
+        ),
+        "required_gate_sequence_defined": non_bypass_summary.get("required_gate_sequence_defined"),
+        "ready_for_l5_6_governed_mcp_dry_run_adapter": readiness_summary.get(
+            "ready_for_l5_6_governed_mcp_dry_run_adapter"
+        ),
+        "ready_for_controlled_canonical_learning_design": readiness_summary.get(
+            "ready_for_controlled_canonical_learning_design"
+        ),
+        "ready_for_l6_revenue_opportunity_discovery": readiness_summary.get(
+            "ready_for_l6_revenue_opportunity_discovery"
+        ),
+        "live_execution_enabled": readiness_summary.get("live_execution_enabled"),
+        "behavior_execution_enabled": readiness_summary.get("behavior_execution_enabled"),
+        "external_action_enabled": readiness_summary.get("external_action_enabled"),
+        "network_enabled": readiness_summary.get("network_enabled"),
+        "scheduler_enabled": readiness_summary.get("scheduler_enabled"),
+        "daemon_enabled": readiness_summary.get("daemon_enabled"),
+        "cieu_persistence_enabled": readiness_summary.get("cieu_persistence_enabled"),
+        "brain_writeback_enabled": readiness_summary.get("brain_writeback_enabled"),
+        "memory_ingestion_enabled": readiness_summary.get("memory_ingestion_enabled"),
+        "candidate_auto_approval_enabled": readiness_summary.get("candidate_auto_approval_enabled"),
+        "canonical_policy_mutation_enabled": readiness_summary.get(
+            "canonical_policy_mutation_enabled"
+        ),
+        "y_star_gov_modification_enabled": readiness_summary.get("y_star_gov_modification_enabled"),
+        "gov_mcp_modification_enabled": readiness_summary.get("gov_mcp_modification_enabled"),
+        "mcp_tool_execution_enabled": readiness_summary.get("mcp_tool_execution_enabled"),
+        "semantic_truth_scoring_enabled": readiness_summary.get("semantic_truth_scoring_enabled"),
+        "raw_runtime_artifact_reading_enabled": readiness_summary.get(
+            "raw_runtime_artifact_reading_enabled"
+        ),
+        "revenue_opportunity_discovery_enabled": readiness_summary.get(
+            "revenue_opportunity_discovery_enabled"
+        ),
+        "next_required_milestone": readiness_summary.get("next_required_milestone"),
+        "generated_contract_summary": "cross_repo_governance_contract_proof/cross_repo_contract_proof_summary.json",
+        "generated_y_star_gov_surface_summary": "y_star_gov_contract_surface_inventory/y_star_gov_surface_summary.json",
+        "generated_alignment_summary": "ystar_company_to_y_star_gov_alignment/ystar_company_to_y_star_gov_alignment_summary.json",
+        "generated_gov_mcp_surface_summary": "gov_mcp_boundary_inventory/gov_mcp_surface_summary.json",
+        "generated_governed_mcp_interface_summary": "governed_mcp_interface_contract/governed_mcp_interface_summary.json",
+        "generated_non_bypass_summary": "cross_repo_non_bypass_proof/cross_repo_non_bypass_summary.json",
+        "generated_readiness": "cross_repo_gap_and_readiness/cross_repo_governance_readiness.json",
+        "warning": (
+            "L5.5 is a read-only boundary proof. ystar-company is not a governance kernel, "
+            "Y-star-gov and gov-mcp were not modified, and MCP tools were not executed."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -2180,6 +2300,34 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "integrated_shadow_learning_readiness/integrated_shadow_learning_readiness.json",
         files_read,
     )
+    cross_repo_governance_proof_summary = load_optional_json(
+        "cross_repo_governance_contract_proof/cross_repo_contract_proof_summary.json",
+        files_read,
+    )
+    cross_repo_governance_y_star_gov_summary = load_optional_json(
+        "y_star_gov_contract_surface_inventory/y_star_gov_surface_summary.json",
+        files_read,
+    )
+    cross_repo_governance_alignment_summary = load_optional_json(
+        "ystar_company_to_y_star_gov_alignment/ystar_company_to_y_star_gov_alignment_summary.json",
+        files_read,
+    )
+    cross_repo_governance_gov_mcp_summary = load_optional_json(
+        "gov_mcp_boundary_inventory/gov_mcp_surface_summary.json",
+        files_read,
+    )
+    cross_repo_governance_interface_summary = load_optional_json(
+        "governed_mcp_interface_contract/governed_mcp_interface_summary.json",
+        files_read,
+    )
+    cross_repo_governance_non_bypass_summary = load_optional_json(
+        "cross_repo_non_bypass_proof/cross_repo_non_bypass_summary.json",
+        files_read,
+    )
+    cross_repo_governance_readiness_summary = load_optional_json(
+        "cross_repo_gap_and_readiness/cross_repo_governance_readiness.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -2234,6 +2382,15 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         shadow_learning_effect_summary,
         shadow_learning_integrated_cieu_summary,
         shadow_learning_readiness_summary,
+    )
+    cross_repo_governance_summary = build_cross_repo_governance_summary(
+        cross_repo_governance_proof_summary,
+        cross_repo_governance_y_star_gov_summary,
+        cross_repo_governance_alignment_summary,
+        cross_repo_governance_gov_mcp_summary,
+        cross_repo_governance_interface_summary,
+        cross_repo_governance_non_bypass_summary,
+        cross_repo_governance_readiness_summary,
     )
 
     profiles = {
@@ -2341,6 +2498,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Field functional auto-projection core exists as a dry-run projection core only; behavior execution remains disabled.")
     if "Integrated review-gated shadow learning cycle exists as shadow-only artifacts; controlled canonical learning is not implemented yet." not in open_gaps:
         open_gaps.append("Integrated review-gated shadow learning cycle exists as shadow-only artifacts; controlled canonical learning is not implemented yet.")
+    if "Cross-repo governance contract proof exists as read-only boundary alignment; governed MCP dry-run adapter is not implemented yet." not in open_gaps:
+        open_gaps.append("Cross-repo governance contract proof exists as read-only boundary alignment; governed MCP dry-run adapter is not implemented yet.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -2379,6 +2538,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "field_projection_summary": field_projection_summary,
         "projection_cycle_summary": projection_cycle_summary,
         "shadow_learning_cycle_summary": shadow_learning_cycle_summary,
+        "cross_repo_governance_summary": cross_repo_governance_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -2591,6 +2751,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/field_projection_summary.json",
             "console_read_model/generated/projection_cycle_summary.json",
             "console_read_model/generated/shadow_learning_cycle_summary.json",
+            "console_read_model/generated/cross_repo_governance_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -2673,6 +2834,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "autonomous work cycle. It confirms behavior-level Y* is consumed as a gate before dry-run work proposal, Pre-U candidate, residual, and review-only learning artifacts.\n\n"
         "`shadow_learning_cycle_summary.json` is derived from the L5.4 integrated\n"
         "review-gated shadow learning cycle. It confirms an L5.3 residual can influence a shadow behavior-level Y* preview and shadow cycle without canonical policy mutation or writeback.\n\n"
+        "`cross_repo_governance_summary.json` is derived from the L5.5 cross-repo\n"
+        "governance contract proof. It confirms ystar-company remains labs/runtime, Y-star-gov remains the intended governance kernel, and gov-mcp remains a governed interface boundary.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -2708,6 +2871,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/field_projection_summary.json", field_projection_summary, generated_files)
     write_json("console_read_model/generated/projection_cycle_summary.json", projection_cycle_summary, generated_files)
     write_json("console_read_model/generated/shadow_learning_cycle_summary.json", shadow_learning_cycle_summary, generated_files)
+    write_json("console_read_model/generated/cross_repo_governance_summary.json", cross_repo_governance_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -2778,6 +2942,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     field_projection = snapshot.get("field_projection_summary", {})
     projection_cycle = snapshot.get("projection_cycle_summary", {})
     shadow_learning_cycle = snapshot.get("shadow_learning_cycle_summary", {})
+    cross_repo_governance = snapshot.get("cross_repo_governance_summary", {})
     lines.extend(
         [
             "",
@@ -3434,6 +3599,28 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- ready_for_l6_revenue_opportunity_discovery: {shadow_learning_cycle.get('ready_for_l6_revenue_opportunity_discovery')}",
             f"- next_required_milestone: {shadow_learning_cycle.get('next_required_milestone')}",
             f"- Warning: {shadow_learning_cycle.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Cross-Repo Governance Contract Proof",
+            "",
+            f"- cross_repo_governance_contract_proof_defined: {cross_repo_governance.get('cross_repo_governance_contract_proof_defined')}",
+            f"- y_star_gov_surfaces_inventoried_read_only: {cross_repo_governance.get('y_star_gov_surfaces_inventoried_read_only')}",
+            f"- gov_mcp_surfaces_inventoried_read_only: {cross_repo_governance.get('gov_mcp_surfaces_inventoried_read_only')}",
+            f"- behavior_y_star_mapped_to_governance_contract: {cross_repo_governance.get('behavior_y_star_mapped_to_governance_contract')}",
+            f"- pre_u_candidates_mapped_to_validator_expectations: {cross_repo_governance.get('pre_u_candidates_mapped_to_validator_expectations')}",
+            f"- cieu_fixtures_mapped_to_prediction_delta_expectations: {cross_repo_governance.get('cieu_fixtures_mapped_to_prediction_delta_expectations')}",
+            f"- gov_mcp_boundary_mapped: {cross_repo_governance.get('gov_mcp_boundary_mapped')}",
+            f"- non_bypass_invariants_defined: {cross_repo_governance.get('non_bypass_invariants_defined')}",
+            f"- bypass_risks_identified: {cross_repo_governance.get('bypass_risks_identified')}",
+            f"- no_non_ystar_company_repo_modified: {cross_repo_governance.get('no_non_ystar_company_repo_modified')}",
+            f"- no_mcp_server_or_tool_executed: {cross_repo_governance.get('no_mcp_server_or_tool_executed')}",
+            f"- ready_for_l5_6_governed_mcp_dry_run_adapter: {cross_repo_governance.get('ready_for_l5_6_governed_mcp_dry_run_adapter')}",
+            f"- ready_for_l6_revenue_opportunity_discovery: {cross_repo_governance.get('ready_for_l6_revenue_opportunity_discovery')}",
+            f"- next_required_milestone: {cross_repo_governance.get('next_required_milestone')}",
+            f"- Warning: {cross_repo_governance.get('warning')}",
         ]
     )
     lines.extend(

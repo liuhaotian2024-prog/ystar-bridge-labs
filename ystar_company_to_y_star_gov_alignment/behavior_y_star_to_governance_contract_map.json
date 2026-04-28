@@ -1,0 +1,36 @@
+{
+  "schema_name": "ystar.alignment.behavior_y_star_to_governance_contract_map",
+  "schema_version": "v0",
+  "map_id": "behavior-y-star-to-governance-contract-map-v0",
+  "source_behavior_y_star_id": "behavior-y-star-projection-checked-cycle-v0",
+  "declared_y_star_field": "Prepare a projection-checked autonomous work-cycle candidate for future Pre-U validation.",
+  "expected_governance_contract_concept": "declared_Y_star",
+  "mapped_fields": {
+    "declared_behavior_y_star": "declared_Y_star",
+    "allowed_behavior_boundary": "allowed_scope",
+    "forbidden_behavior_boundary": "denied_scope",
+    "required_pre_u_validation": "validation_required",
+    "safety_flags": "execution_boundary"
+  },
+  "kernel_validation_required_before_live": true,
+  "ystar_company_is_canonical_governance_kernel": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_name": "ystar.alignment.pre_u_candidate_to_validator_expectation_map",
+  "schema_version": "v0",
+  "map_id": "pre-u-candidate-to-validator-expectation-map-v0",
+  "source_pre_u_packet_candidates": [
+    "pre-u-candidate-from-behavior-y-star-l5-2",
+    null
+  ],
+  "field_map": {
+    "declared_Y_star": "declared_Y_star",
+    "Xt": "X_t / Xt",
+    "candidate_U": "candidate_U",
+    "governance_expectations": "governance_expectations",
+    "execution_boundary": "execution_boundary",
+    "projection_trace_refs": "trace_refs",
+    "deny_boundary_constraints": "unresolved gaps and denied scope"
+  },
+  "validator_status": "requires_future_Y_star_gov_or_versioned_adapter_validation",
+  "production_ready": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

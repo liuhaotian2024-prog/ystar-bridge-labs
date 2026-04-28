@@ -1,0 +1,43 @@
+{
+  "schema_name": "ystar.cross_repo_governance_contract_proof.input_fixture",
+  "schema_version": "v0",
+  "fixture_id": "cross-repo-governance-contract-proof-input-001",
+  "ystar_company_l5_artifact_refs": {
+    "behavior_y_star": "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+    "l5_2_pre_u_candidate": "behavior_y_star_to_pre_u_candidate/pre_u_packet_candidate_from_behavior_y_star.json",
+    "l5_3_cycle_run": "projection_checked_autonomous_work_cycle/projection_checked_cycle_run.json",
+    "l5_3_cycle_pre_u_candidate": "behavior_projection_pre_u_cycle_gate/cycle_pre_u_packet_candidate.json",
+    "l5_3_cieu_fixture": "projection_checked_cieu_residual_cycle/projection_checked_cieu_event_fixture.json",
+    "l5_3_residual_delta": "projection_checked_cieu_residual_cycle/projection_checked_residual_delta.json",
+    "l5_4_shadow_learning_run": "review_gated_shadow_learning_cycle/review_gated_shadow_learning_run.json",
+    "shadow_behavior_y_star": "shadow_reprojection_preview/shadow_reprojected_behavior_y_star_preview.json",
+    "shadow_cycle_pre_u_candidate": "shadow_updated_projection_cycle/shadow_cycle_pre_u_packet_candidate.json",
+    "shadow_cycle_cieu_fixture": "shadow_cycle_cieu_residual/shadow_cycle_cieu_event_fixture.json",
+    "l5_4_readiness": "integrated_shadow_learning_readiness/integrated_shadow_learning_readiness.json"
+  },
+  "y_star_gov_readonly_repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+  "gov_mcp_readonly_repo_root": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+  "y_star_gov_repo_status": "present",
+  "gov_mcp_repo_status": "present",
+  "read_only_reference_repos": true,
+  "modification_scope": "ystar-company only",
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

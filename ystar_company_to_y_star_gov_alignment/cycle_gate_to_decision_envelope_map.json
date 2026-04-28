@@ -1,0 +1,40 @@
+{
+  "schema_name": "ystar.alignment.cycle_gate_to_decision_envelope_map",
+  "schema_version": "v0",
+  "map_id": "cycle-gate-to-decision-envelope-map-v0",
+  "source_gate_refs": [
+    "projection_checked_work_proposal/work_proposal_projection_gate_decision.json",
+    "behavior_projection_pre_u_cycle_gate/cycle_pre_u_gate_decision.json",
+    "shadow_updated_projection_cycle/shadow_cycle_pre_u_gate_decision.json"
+  ],
+  "expected_envelope_fields": [
+    "gate_name",
+    "decision",
+    "allowed_scope",
+    "denied_scope",
+    "required_next_validation",
+    "receipt_ref",
+    "dry_run_only"
+  ],
+  "labs_decision_authority": "dry_run_candidate_only",
+  "kernel_decision_authority": "canonical_for_future_live_or_external_modes",
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

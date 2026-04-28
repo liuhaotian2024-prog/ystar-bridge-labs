@@ -42,6 +42,7 @@ MISSION_PROJECTION = "console_read_model/generated/mission_projection_summary.js
 FIELD_PROJECTION = "console_read_model/generated/field_projection_summary.json"
 PROJECTION_CYCLE = "console_read_model/generated/projection_cycle_summary.json"
 SHADOW_LEARNING_CYCLE = "console_read_model/generated/shadow_learning_cycle_summary.json"
+CROSS_REPO_GOVERNANCE = "console_read_model/generated/cross_repo_governance_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -61,7 +62,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -123,6 +124,7 @@ def load_all() -> dict[str, Any]:
         "field_projection": load_json(FIELD_PROJECTION),
         "projection_cycle": load_json(PROJECTION_CYCLE),
         "shadow_learning_cycle": load_json(SHADOW_LEARNING_CYCLE),
+        "cross_repo_governance": load_json(CROSS_REPO_GOVERNANCE),
     }
 
 
@@ -1054,6 +1056,65 @@ def cmd_shadow_learning_cycle(data: dict[str, Any]) -> None:
     print(f"warning: {cycle.get('warning')}")
 
 
+def cmd_cross_repo_governance(data: dict[str, Any]) -> None:
+    proof = data["cross_repo_governance"]
+    print("# Cross-Repo Governance Contract Proof")
+    print()
+    print(
+        "L5.5 cross-repo governance contract proof defined: "
+        f"{proof.get('cross_repo_governance_contract_proof_defined')}"
+    )
+    print(
+        "Y-star-gov surfaces inventoried read-only: "
+        f"{proof.get('y_star_gov_surfaces_inventoried_read_only')}"
+    )
+    print(
+        "gov-mcp surfaces inventoried read-only: "
+        f"{proof.get('gov_mcp_surfaces_inventoried_read_only')}"
+    )
+    print(
+        "behavior-level Y* mapped to governance contract expectations: "
+        f"{proof.get('behavior_y_star_mapped_to_governance_contract')}"
+    )
+    print(
+        "Pre-U candidates mapped to validator expectations: "
+        f"{proof.get('pre_u_candidates_mapped_to_validator_expectations')}"
+    )
+    print(
+        "CIEU/residual artifacts mapped to prediction-delta expectations: "
+        f"{proof.get('cieu_fixtures_mapped_to_prediction_delta_expectations')}"
+    )
+    print(f"gov-mcp boundary mapped: {proof.get('gov_mcp_boundary_mapped')}")
+    print(f"non-bypass invariants defined: {proof.get('non_bypass_invariants_defined')}")
+    print(f"bypass risks identified: {proof.get('bypass_risks_identified')}")
+    print(f"no non-ystar-company repo modified: {proof.get('no_non_ystar_company_repo_modified')}")
+    print(f"no MCP server/tool executed: {proof.get('no_mcp_server_or_tool_executed')}")
+    print(f"live execution enabled: {proof.get('live_execution_enabled')}")
+    print(f"behavior execution enabled: {proof.get('behavior_execution_enabled')}")
+    print(f"external action enabled: {proof.get('external_action_enabled')}")
+    print(f"network enabled: {proof.get('network_enabled')}")
+    print(f"scheduler enabled: {proof.get('scheduler_enabled')}")
+    print(f"daemon enabled: {proof.get('daemon_enabled')}")
+    print(f"CIEU persistence enabled: {proof.get('cieu_persistence_enabled')}")
+    print(f"brain writeback enabled: {proof.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {proof.get('memory_ingestion_enabled')}")
+    print(f"canonical policy mutation enabled: {proof.get('canonical_policy_mutation_enabled')}")
+    print(f"Y-star-gov modification enabled: {proof.get('y_star_gov_modification_enabled')}")
+    print(f"gov-mcp modification enabled: {proof.get('gov_mcp_modification_enabled')}")
+    print(f"MCP tool execution enabled: {proof.get('mcp_tool_execution_enabled')}")
+    print(
+        "ready for L5.6 governed MCP dry-run adapter: "
+        f"{proof.get('ready_for_l5_6_governed_mcp_dry_run_adapter')}"
+    )
+    print(
+        "ready for L6 revenue opportunity discovery: "
+        f"{proof.get('ready_for_l6_revenue_opportunity_discovery')}"
+    )
+    print(f"next required milestone: {proof.get('next_required_milestone')}")
+    print(f"generated_readiness: {proof.get('generated_readiness')}")
+    print(f"warning: {proof.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -1253,6 +1314,17 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print(f"- {shadow_learning_cycle.get('generated_shadow_cycle_summary')}")
         print(f"- {shadow_learning_cycle.get('generated_integrated_cieu_summary')}")
         print(f"- {shadow_learning_cycle.get('generated_readiness')}")
+    cross_repo_governance = data.get("cross_repo_governance", {})
+    if cross_repo_governance:
+        print()
+        print("Cross-repo governance contract proof:")
+        print(f"- {cross_repo_governance.get('generated_contract_summary')}")
+        print(f"- {cross_repo_governance.get('generated_y_star_gov_surface_summary')}")
+        print(f"- {cross_repo_governance.get('generated_alignment_summary')}")
+        print(f"- {cross_repo_governance.get('generated_gov_mcp_surface_summary')}")
+        print(f"- {cross_repo_governance.get('generated_governed_mcp_interface_summary')}")
+        print(f"- {cross_repo_governance.get('generated_non_bypass_summary')}")
+        print(f"- {cross_repo_governance.get('generated_readiness')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -1308,6 +1380,7 @@ def cmd_validate_local() -> int:
         FIELD_PROJECTION,
         PROJECTION_CYCLE,
         SHADOW_LEARNING_CYCLE,
+        CROSS_REPO_GOVERNANCE,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -1375,6 +1448,8 @@ def cmd_validate_local() -> int:
             failures.append("projection_cycle_summary missing from team console snapshot")
         if "shadow_learning_cycle_summary" not in snapshot:
             failures.append("shadow_learning_cycle_summary missing from team console snapshot")
+        if "cross_repo_governance_summary" not in snapshot:
+            failures.append("cross_repo_governance_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -2649,6 +2724,88 @@ def cmd_validate_local() -> int:
         ):
             failures.append("shadow learning cycle summary must point to controlled canonical learning")
 
+    cross_repo_governance = loaded.get(CROSS_REPO_GOVERNANCE)
+    if cross_repo_governance:
+        required_fields = [
+            "cross_repo_governance_contract_proof_defined",
+            "y_star_gov_surfaces_inventoried_read_only",
+            "gov_mcp_surfaces_inventoried_read_only",
+            "behavior_y_star_mapped_to_governance_contract",
+            "pre_u_candidates_mapped_to_validator_expectations",
+            "cieu_fixtures_mapped_to_prediction_delta_expectations",
+            "gov_mcp_boundary_mapped",
+            "non_bypass_invariants_defined",
+            "bypass_risks_identified",
+            "no_non_ystar_company_repo_modified",
+            "no_mcp_server_or_tool_executed",
+            "ready_for_l5_6_governed_mcp_dry_run_adapter",
+            "ready_for_l6_revenue_opportunity_discovery",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+            "canonical_policy_mutation_enabled",
+            "y_star_gov_modification_enabled",
+            "gov_mcp_modification_enabled",
+            "mcp_tool_execution_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "next_required_milestone",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in cross_repo_governance:
+                failures.append(f"cross-repo governance summary missing field: {field}")
+        for field in [
+            "cross_repo_governance_contract_proof_defined",
+            "y_star_gov_surfaces_inventoried_read_only",
+            "gov_mcp_surfaces_inventoried_read_only",
+            "behavior_y_star_mapped_to_governance_contract",
+            "pre_u_candidates_mapped_to_validator_expectations",
+            "cieu_fixtures_mapped_to_prediction_delta_expectations",
+            "gov_mcp_boundary_mapped",
+            "non_bypass_invariants_defined",
+            "bypass_risks_identified",
+            "no_non_ystar_company_repo_modified",
+            "no_mcp_server_or_tool_executed",
+            "ready_for_l5_6_governed_mcp_dry_run_adapter",
+        ]:
+            if cross_repo_governance.get(field) is not True:
+                failures.append(f"cross-repo governance summary must keep {field}=true")
+        for field in [
+            "ready_for_l6_revenue_opportunity_discovery",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+            "canonical_policy_mutation_enabled",
+            "y_star_gov_modification_enabled",
+            "gov_mcp_modification_enabled",
+            "mcp_tool_execution_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+        ]:
+            if cross_repo_governance.get(field) is not False:
+                failures.append(f"cross-repo governance summary must keep {field}=false")
+        if cross_repo_governance.get("next_required_milestone") != (
+            "L5.6 Governed MCP Dry-Run Adapter v0"
+        ):
+            failures.append("cross-repo governance summary must point to L5.6")
+
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
     print(f"Required agents: {', '.join(REQUIRED_AGENTS)}")
@@ -2744,6 +2901,8 @@ def main(argv: list[str]) -> int:
         cmd_projection_cycle(data)
     elif command == "shadow-learning-cycle":
         cmd_shadow_learning_cycle(data)
+    elif command == "cross-repo-governance":
+        cmd_cross_repo_governance(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

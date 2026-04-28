@@ -34,6 +34,7 @@
     "console_read_model/generated/field_projection_summary.json",
     "console_read_model/generated/projection_cycle_summary.json",
     "console_read_model/generated/shadow_learning_cycle_summary.json",
+    "console_read_model/generated/cross_repo_governance_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "source_files": [
@@ -91,6 +92,13 @@
     "original_vs_shadow_cycle_comparison/shadow_learning_effect_summary.json",
     "integrated_learning_cycle_cieu_fixture/integrated_learning_cycle_cieu_summary.json",
     "integrated_shadow_learning_readiness/integrated_shadow_learning_readiness.json",
+    "cross_repo_governance_contract_proof/cross_repo_contract_proof_summary.json",
+    "y_star_gov_contract_surface_inventory/y_star_gov_surface_summary.json",
+    "ystar_company_to_y_star_gov_alignment/ystar_company_to_y_star_gov_alignment_summary.json",
+    "gov_mcp_boundary_inventory/gov_mcp_surface_summary.json",
+    "governed_mcp_interface_contract/governed_mcp_interface_summary.json",
+    "cross_repo_non_bypass_proof/cross_repo_non_bypass_summary.json",
+    "cross_repo_gap_and_readiness/cross_repo_governance_readiness.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",

@@ -1,0 +1,84 @@
+{
+  "schema_name": "ystar.gov_mcp.tool_resource_boundary_map",
+  "schema_version": "v0",
+  "map_id": "gov-mcp-tool-resource-boundary-map-v0",
+  "boundary_principle": "gov-mcp is a governed interface/resource/tool boundary and cannot become a direct action path.",
+  "surface_mappings": [
+    {
+      "surface_name": "tool_resource_definition",
+      "path": ".claude/settings.json",
+      "boundary_implication": "MCP tools/resources require behavior Y*, Pre-U, governance decision, bridge receipt, result receipt, CIEU receipt, and residual delta.",
+      "required_governance_control": "Y* projection -> Pre-U -> Y-star-gov/adapter decision -> bridge receipt -> CIEU receipt",
+      "confidence_class": "inferred_safe_match"
+    },
+    {
+      "surface_name": "file_resource_access",
+      "path": ".claude/settings.json",
+      "boundary_implication": "File/resource reads must be governed and deny DB/log/runtime marker access by default.",
+      "required_governance_control": "Y* projection -> Pre-U -> Y-star-gov/adapter decision -> bridge receipt -> CIEU receipt",
+      "confidence_class": "inferred_safe_match"
+    },
+    {
+      "surface_name": "mcp_server_entrypoint",
+      "path": "AGENTS.md",
+      "boundary_implication": "gov-mcp entrypoints must remain disabled until called through a governed lifecycle.",
+      "required_governance_control": "Y* projection -> Pre-U -> Y-star-gov/adapter decision -> bridge receipt -> CIEU receipt",
+      "confidence_class": "direct_doc_match"
+    },
+    {
+      "surface_name": "transport_boundary",
+      "path": "AGENTS.md",
+      "boundary_implication": "Transport surfaces must remain interface-only and not governance kernels.",
+      "required_governance_control": "Y* projection -> Pre-U -> Y-star-gov/adapter decision -> bridge receipt -> CIEU receipt",
+      "confidence_class": "direct_doc_match"
+    },
+    {
+      "surface_name": "tool_invocation_path",
+      "path": "AGENTS.md",
+      "boundary_implication": "Tool invocation paths require explicit gate sequence before any execution mode.",
+      "required_governance_control": "Y* projection -> Pre-U -> Y-star-gov/adapter decision -> bridge receipt -> CIEU receipt",
+      "confidence_class": "direct_doc_match"
+    },
+    {
+      "surface_name": "governance_hook_reference",
+      "path": "AGENTS.md",
+      "boundary_implication": "Existing governance references should be aligned to Y-star-gov and not duplicated in gov-mcp.",
+      "required_governance_control": "Y* projection -> Pre-U -> Y-star-gov/adapter decision -> bridge receipt -> CIEU receipt",
+      "confidence_class": "direct_doc_match"
+    },
+    {
+      "surface_name": "request_handler",
+      "path": "README.md",
+      "boundary_implication": "Request handlers must not become a direct action path bypassing Y-star-gov.",
+      "required_governance_control": "Y* projection -> Pre-U -> Y-star-gov/adapter decision -> bridge receipt -> CIEU receipt",
+      "confidence_class": "direct_doc_match"
+    },
+    {
+      "surface_name": "auth_config_boundary",
+      "path": "README.md",
+      "boundary_implication": "Auth/config surfaces are bypass risks if accessed before governance validation.",
+      "required_governance_control": "Y* projection -> Pre-U -> Y-star-gov/adapter decision -> bridge receipt -> CIEU receipt",
+      "confidence_class": "direct_doc_match"
+    }
+  ],
+  "mcp_tool_execution_enabled": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

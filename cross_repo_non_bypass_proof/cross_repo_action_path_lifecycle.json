@@ -1,0 +1,40 @@
+{
+  "schema_name": "ystar.cross_repo_non_bypass.action_path_lifecycle",
+  "schema_version": "v0",
+  "lifecycle_id": "cross-repo-action-path-lifecycle-v0",
+  "canonical_gate_sequence": [
+    "mission-level Y*",
+    "field functional projection",
+    "behavior-level Y*",
+    "candidate_U / tool/resource request",
+    "Pre-U packet",
+    "Y-star-gov validation or versioned governance adapter",
+    "bridge authorization receipt",
+    "governed MCP/tool/resource call",
+    "result receipt",
+    "CIEU event",
+    "residual delta",
+    "review-gated learning candidate",
+    "approved controlled update only if separately authorized"
+  ],
+  "direct_bypass_allowed": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

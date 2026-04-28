@@ -1,0 +1,103 @@
+{
+  "schema_version": "v0",
+  "proof_name": "Cross-Repo Governance Contract Proof + gov-mcp Boundary Alignment",
+  "proof_id": "cross_repo_governance_contract_proof_v0",
+  "purpose": "Prove ystar-company remains a labs/runtime generator and does not become a second governance kernel while aligning L5 artifacts to Y-star-gov and gov-mcp boundaries.",
+  "involved_repos": [
+    "ystar-company",
+    "Y-star-gov",
+    "gov-mcp"
+  ],
+  "repo_roles": {
+    "ystar-company": "labs/runtime host, projection cycle generator, CIEU-like fixture generator, and console/read-model surface",
+    "Y-star-gov": "canonical deterministic governance kernel",
+    "gov-mcp": "governed interface/resource/tool boundary"
+  },
+  "required_inputs": [
+    "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+    "behavior_y_star_to_pre_u_candidate/pre_u_packet_candidate_from_behavior_y_star.json",
+    "projection_checked_autonomous_work_cycle/projection_checked_cycle_run.json",
+    "behavior_projection_pre_u_cycle_gate/cycle_pre_u_packet_candidate.json",
+    "projection_checked_cieu_residual_cycle/projection_checked_cieu_event_fixture.json",
+    "projection_checked_cieu_residual_cycle/projection_checked_residual_delta.json",
+    "review_gated_shadow_learning_cycle/review_gated_shadow_learning_run.json",
+    "shadow_reprojection_preview/shadow_reprojected_behavior_y_star_preview.json",
+    "shadow_updated_projection_cycle/shadow_cycle_pre_u_packet_candidate.json",
+    "shadow_cycle_cieu_residual/shadow_cycle_cieu_event_fixture.json",
+    "integrated_shadow_learning_readiness/integrated_shadow_learning_readiness.json",
+    "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+    "/Users/haotianliu/.openclaw/workspace/gov-mcp"
+  ],
+  "proof_stages": [
+    "load_ystar_company_l5_artifacts",
+    "inspect_y_star_gov_contract_surfaces_read_only",
+    "inspect_gov_mcp_boundary_surfaces_read_only",
+    "map_behavior_y_star_to_y_star_gov_contract_expectations",
+    "map_pre_u_candidates_to_y_star_gov_validator_expectations",
+    "map_residual_deltas_to_y_star_gov_prediction_delta_expectations",
+    "map_bridge_gate_receipts_to_governance_decision_envelope_expectations",
+    "map_gov_mcp_resources_to_governed_interface_boundary",
+    "identify_bypass_risks",
+    "produce_cross_repo_contract_alignment_matrix",
+    "produce_non_bypass_invariant_map",
+    "produce_cross_repo_gap_report",
+    "produce_l5_6_recommendation"
+  ],
+  "required_outputs": [
+    "Y-star-gov readonly surface inventory",
+    "ystar-company to Y-star-gov alignment maps",
+    "gov-mcp readonly boundary inventory",
+    "governed MCP interface contract",
+    "cross-repo non-bypass invariant proof",
+    "cross-repo gap and readiness view"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  },
+  "forbidden_operations": [
+    "modifying Y-star-gov",
+    "modifying gov-mcp",
+    "running Y-star-gov live hooks",
+    "running gov-mcp servers",
+    "executing MCP tools",
+    "reading raw DB/WAL/SHM/log contents",
+    "reading active-agent marker contents",
+    "running daemon/scheduler/runtime scripts",
+    "external network/API calls",
+    "GitHub issue/PR creation",
+    "git push",
+    "CIEU DB writes",
+    "brain writeback",
+    "memory ingestion",
+    "candidate approval",
+    "canonical policy mutation",
+    "L6 revenue opportunity discovery",
+    "semantic truth scoring",
+    "direct behavior execution"
+  ],
+  "non_goals": [
+    "not live integration",
+    "not MCP execution",
+    "not Y-star-gov modification",
+    "not gov-mcp modification",
+    "not canonical policy mutation",
+    "not brain or memory writeback",
+    "not L6 revenue opportunity discovery"
+  ]
+}

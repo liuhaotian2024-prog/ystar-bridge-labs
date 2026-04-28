@@ -1,0 +1,39 @@
+{
+  "schema_name": "ystar.alignment.cieu_fixture_to_prediction_delta_map",
+  "schema_version": "v0",
+  "map_id": "cieu-fixture-to-prediction-delta-map-v0",
+  "source_event_id": "projection-checked-cieu-event-fixture-001",
+  "field_map": {
+    "X_t": "X_t",
+    "U_t": "U_t",
+    "Y_star_t": "Y_star_t",
+    "Y_t_plus_1": "actual_Y_t_plus_1",
+    "R_t_plus_1": "residual_delta"
+  },
+  "prediction_delta_expectations": [
+    "predicted versus actual must be explicit",
+    "residual classes must remain structural",
+    "learning eligibility must deny direct writeback"
+  ],
+  "persistence_enabled": false,
+  "db_write_performed": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

@@ -57,6 +57,13 @@
     "original_vs_shadow_cycle_comparison/shadow_learning_effect_summary.json",
     "integrated_learning_cycle_cieu_fixture/integrated_learning_cycle_cieu_summary.json",
     "integrated_shadow_learning_readiness/integrated_shadow_learning_readiness.json",
+    "cross_repo_governance_contract_proof/cross_repo_contract_proof_summary.json",
+    "y_star_gov_contract_surface_inventory/y_star_gov_surface_summary.json",
+    "ystar_company_to_y_star_gov_alignment/ystar_company_to_y_star_gov_alignment_summary.json",
+    "gov_mcp_boundary_inventory/gov_mcp_surface_summary.json",
+    "governed_mcp_interface_contract/governed_mcp_interface_summary.json",
+    "cross_repo_non_bypass_proof/cross_repo_non_bypass_summary.json",
+    "cross_repo_gap_and_readiness/cross_repo_governance_readiness.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",
@@ -286,25 +293,25 @@
     "schema_version": "v0",
     "framework_status": "path_inventory_only",
     "current_mining_level": 0,
-    "artifacts_classified": 227,
-    "unsafe_artifacts_count": 177,
+    "artifacts_classified": 278,
+    "unsafe_artifacts_count": 187,
     "classes_seen": {
       "ACTIVE_AGENT_MARKER": 17,
       "BACKUP_DB": 1,
       "CACHE_SENTINEL": 5,
       "DAEMON_STATE": 4,
-      "DAILY_REPORT": 6,
+      "DAILY_REPORT": 8,
       "DB_CORE": 1,
       "DB_SIDECARE": 6,
-      "DREAM_REPORT": 37,
+      "DREAM_REPORT": 44,
       "DRIFT_REPORT": 4,
       "ESCALATION_REPORT": 23,
-      "FRAMEWORK_FILE": 5,
+      "FRAMEWORK_FILE": 16,
       "LOG_RUNTIME": 31,
       "PYCACHE": 31,
-      "UNKNOWN_OR_NON_RUNTIME": 45,
+      "UNKNOWN_OR_NON_RUNTIME": 75,
       "UNKNOWN_RUNTIME_ARTIFACT": 10,
-      "WHITELIST_REPORT": 1
+      "WHITELIST_REPORT": 2
     },
     "generated_manifest_ref": "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
     "forbidden_direct_reads": [
@@ -336,13 +343,13 @@
   "safe_mining_summary": {
     "schema_name": "ystar.console_read_model.generated.safe_mining_summary",
     "schema_version": "v0",
-    "candidate_count": 20,
+    "candidate_count": 21,
     "classes_seen": {
       "DREAM_REPORT": 5,
       "DAILY_REPORT": 5,
       "DRIFT_REPORT": 4,
       "ESCALATION_REPORT": 5,
-      "WHITELIST_REPORT": 1
+      "WHITELIST_REPORT": 2
     },
     "generated_candidate_index": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
     "mining_manifest_ref": "runtime_artifact_quarantine/safe_mining/generated/mining_manifest.json",
@@ -367,19 +374,19 @@
   "review_queue_summary": {
     "schema_name": "ystar.console_read_model.generated.review_queue_summary",
     "schema_version": "v0",
-    "review_count": 20,
+    "review_count": 21,
     "statuses": {
-      "pending_review": 20
+      "pending_review": 21
     },
     "ingestion_statuses": {
-      "not_ingested": 20
+      "not_ingested": 21
     },
     "intended_use_summary": {
       "memory_continuity_hint": 10,
       "role_brain_capsule_hint": 10,
-      "governance_gap_hint": 10,
+      "governance_gap_hint": 11,
       "cieu_prediction_delta_hint": 9,
-      "pre_u_packet_hint": 1
+      "pre_u_packet_hint": 2
     },
     "generated_queue_path": "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json",
     "review_queue_manifest_ref": "runtime_artifact_quarantine/safe_mining/review_queue/generated/review_queue_manifest.json",
@@ -404,50 +411,50 @@
   "artifact_disposition_summary": {
     "schema_name": "ystar.console_read_model.generated.artifact_disposition_summary",
     "schema_version": "v0",
-    "total_artifacts": 227,
-    "artifacts_with_disposition": 227,
+    "total_artifacts": 278,
+    "artifacts_with_disposition": 278,
     "dispositions": {
       "deferred_requires_marker_metadata_adapter": 26,
       "deferred_sidecar_or_transaction_file": 6,
       "deferred_requires_classification": 10,
-      "ignored_or_non_runtime": 50,
+      "ignored_or_non_runtime": 91,
       "deferred_requires_readonly_db_adapter": 2,
       "deferred_requires_bounded_log_adapter": 31,
       "ignored_generated_cache": 31,
-      "safe_mined_to_review_queue": 20,
-      "deferred_markdown_report_not_selected": 51
+      "safe_mined_to_review_queue": 21,
+      "deferred_markdown_report_not_selected": 60
     },
     "artifact_classes": {
       "DAEMON_STATE": 4,
       "DB_SIDECARE": 6,
       "UNKNOWN_RUNTIME_ARTIFACT": 10,
-      "UNKNOWN_OR_NON_RUNTIME": 45,
+      "UNKNOWN_OR_NON_RUNTIME": 75,
       "DB_CORE": 1,
-      "FRAMEWORK_FILE": 5,
+      "FRAMEWORK_FILE": 16,
       "CACHE_SENTINEL": 5,
       "LOG_RUNTIME": 31,
       "ACTIVE_AGENT_MARKER": 17,
       "PYCACHE": 31,
       "BACKUP_DB": 1,
-      "DREAM_REPORT": 37,
-      "DAILY_REPORT": 6,
+      "DREAM_REPORT": 44,
+      "DAILY_REPORT": 8,
       "DRIFT_REPORT": 4,
       "ESCALATION_REPORT": 23,
-      "WHITELIST_REPORT": 1
+      "WHITELIST_REPORT": 2
     },
-    "safe_mined_to_review_queue": 20,
+    "safe_mined_to_review_queue": 21,
     "deferred_adapter_counts": {
       "deferred_requires_marker_metadata_adapter": 26,
       "deferred_sidecar_or_transaction_file": 6,
       "deferred_requires_classification": 10,
       "deferred_requires_readonly_db_adapter": 2,
       "deferred_requires_bounded_log_adapter": 31,
-      "deferred_markdown_report_not_selected": 51
+      "deferred_markdown_report_not_selected": 60
     },
     "ignored_generated_cache": 31,
     "forbidden_direct_read_count": 106,
     "evidence_scoring_status": {
-      "not_started": 227
+      "not_started": 278
     },
     "generated_disposition_index": "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
     "warning": "Disposition is not ingestion. No brain/memory/CIEU writes are allowed."
@@ -455,24 +462,24 @@
   "evidence_review_summary": {
     "schema_name": "ystar.console_read_model.generated.evidence_review_summary",
     "schema_version": "v0",
-    "candidates_scored": 20,
-    "decision_stubs_created": 20,
-    "routes_created": 40,
+    "candidates_scored": 21,
+    "decision_stubs_created": 21,
+    "routes_created": 42,
     "reuse_readiness": {
-      "hint_only": 20
+      "hint_only": 21
     },
     "confidence": {
-      "structural_only": 20
+      "structural_only": 21
     },
     "route_counts": {
       "memory_continuity_hint_queue": 10,
       "role_brain_capsule_hint_queue": 10,
-      "governance_gap_hint_queue": 10,
+      "governance_gap_hint_queue": 11,
       "cieu_prediction_delta_hint_queue": 9,
-      "pre_u_packet_hint_queue": 1
+      "pre_u_packet_hint_queue": 2
     },
     "semantic_truth_status": {
-      "not_evaluated": 20
+      "not_evaluated": 21
     },
     "automatic_approvals": 0,
     "brain_writeback_allowed": 0,
@@ -580,8 +587,8 @@
     "schema_name": "ystar.console_read_model.generated.cross_repo_alignment_summary",
     "schema_version": "v0",
     "alignment_accepted": true,
-    "ystar_company_head": "ddf5c749bec3cb6f9c750eedcbb77a2e0b9fc664",
-    "ystar_company_head_summary": "ddf5c749 tools: add cross-repo governance alignment manifest",
+    "ystar_company_head": "9667642b1ea12a0828797b2d0cfa5ac264331ed7",
+    "ystar_company_head_summary": "9667642b tools: add review gated shadow projection cycle",
     "ystar_gov_head": "9c4aee339b02abd210fb70a919669c4a4a7739ad",
     "ystar_gov_head_summary": "9c4aee3 tools: add governance endpoint acceptance runner",
     "ystar_gov_endpoint_accepted": true,
@@ -751,8 +758,8 @@
     "absorption_buckets_defined": true,
     "bucket_counts": {
       "A_adopt_now_read_only": 1,
-      "B_wrap_as_governed_tool": 880,
-      "C_rewrite_from_design": 11,
+      "B_wrap_as_governed_tool": 883,
+      "C_rewrite_from_design": 8,
       "D_quarantine_as_evidence_ore": 8,
       "E_retire_do_not_use": 0
     },
@@ -1044,7 +1051,7 @@
     "schema_version": "v0",
     "field_functional_archaeology_defined": true,
     "repos_scanned": 4,
-    "assets_scanned": 3989,
+    "assets_scanned": 4212,
     "field_functional_assets_found": 200,
     "reuse_candidates_count": 20,
     "wrap_candidates_count": 20,
@@ -1249,6 +1256,58 @@
     "generated_readiness": "integrated_shadow_learning_readiness/integrated_shadow_learning_readiness.json",
     "warning": "L5.4 is shadow-only. Residuals influence a preview Y* and shadow cycle, but no canonical policy, brain, memory, CIEU store, or live system is changed."
   },
+  "cross_repo_governance_summary": {
+    "schema_name": "ystar.console_read_model.generated.cross_repo_governance_summary",
+    "schema_version": "v0",
+    "cross_repo_governance_contract_proof_defined": true,
+    "y_star_gov_surfaces_inventoried_read_only": true,
+    "gov_mcp_surfaces_inventoried_read_only": true,
+    "y_star_gov_repo_present": true,
+    "gov_mcp_repo_present": true,
+    "y_star_gov_scanned_files_count": 550,
+    "gov_mcp_scanned_files_count": 64,
+    "behavior_y_star_mapped_to_governance_contract": true,
+    "pre_u_candidates_mapped_to_validator_expectations": true,
+    "cieu_fixtures_mapped_to_prediction_delta_expectations": true,
+    "gov_mcp_boundary_mapped": true,
+    "non_bypass_invariants_defined": true,
+    "bypass_risks_identified": true,
+    "labs_kernel_responsibility_boundary_defined": true,
+    "ystar_company_is_not_canonical_governance_kernel": true,
+    "no_non_ystar_company_repo_modified": true,
+    "no_mcp_server_or_tool_executed": true,
+    "mcp_non_bypass_invariants_defined": true,
+    "required_gate_sequence_defined": true,
+    "ready_for_l5_6_governed_mcp_dry_run_adapter": true,
+    "ready_for_controlled_canonical_learning_design": true,
+    "ready_for_l6_revenue_opportunity_discovery": false,
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "next_required_milestone": "L5.6 Governed MCP Dry-Run Adapter v0",
+    "generated_contract_summary": "cross_repo_governance_contract_proof/cross_repo_contract_proof_summary.json",
+    "generated_y_star_gov_surface_summary": "y_star_gov_contract_surface_inventory/y_star_gov_surface_summary.json",
+    "generated_alignment_summary": "ystar_company_to_y_star_gov_alignment/ystar_company_to_y_star_gov_alignment_summary.json",
+    "generated_gov_mcp_surface_summary": "gov_mcp_boundary_inventory/gov_mcp_surface_summary.json",
+    "generated_governed_mcp_interface_summary": "governed_mcp_interface_contract/governed_mcp_interface_summary.json",
+    "generated_non_bypass_summary": "cross_repo_non_bypass_proof/cross_repo_non_bypass_summary.json",
+    "generated_readiness": "cross_repo_gap_and_readiness/cross_repo_governance_readiness.json",
+    "warning": "L5.5 is a read-only boundary proof. ystar-company is not a governance kernel, Y-star-gov and gov-mcp were not modified, and MCP tools were not executed."
+  },
   "open_gaps": [
     "Static console loader exists; no frontend UI yet.",
     "No frontend UI.",
@@ -1285,7 +1344,8 @@
     "Manual recurring observation tick runner exists for one-shot local ticks only; no scheduler, daemon, or recurrence is enabled.",
     "Field functional archaeology exists as a merge plan only; L5 projection harness is not implemented yet.",
     "Field functional auto-projection core exists as a dry-run projection core only; behavior execution remains disabled.",
-    "Integrated review-gated shadow learning cycle exists as shadow-only artifacts; controlled canonical learning is not implemented yet."
+    "Integrated review-gated shadow learning cycle exists as shadow-only artifacts; controlled canonical learning is not implemented yet.",
+    "Cross-repo governance contract proof exists as read-only boundary alignment; governed MCP dry-run adapter is not implemented yet."
   ],
   "warnings": [
     "Ethan execution channels are present as reference-only boundaries, not runtime launchers."

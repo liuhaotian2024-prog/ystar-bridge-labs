@@ -1,0 +1,106 @@
+{
+  "schema_name": "ystar.Y-star-gov.contract_surface_inventory",
+  "schema_version": "v0",
+  "repo_present": true,
+  "scanned_files_count": 550,
+  "relevant_surfaces_found": 7,
+  "surfaces": [
+    {
+      "surface_name": "hook_contract_adapter",
+      "surface_kind": "contract_surface",
+      "path": ".claude/settings.json",
+      "matched_terms": [
+        "hook"
+      ],
+      "evidence_excerpt_or_symbol": "*)\", \"Read(*)\", \"Write(*)\", \"Edit(*)\" ] }, \"hooks\": {} }",
+      "expected_labs_mapping": "Future hooks must be adapter-mediated and must not be invoked directly by ystar-company.",
+      "confidence_class": "inferred_safe_match"
+    },
+    {
+      "surface_name": "cieu_prediction_delta_validator",
+      "surface_kind": "contract_surface",
+      "path": ".commit_msg_d.txt",
+      "matched_terms": [
+        "CIEU"
+      ],
+      "evidence_excerpt_or_symbol": "DIT (retracted CEO spec 3.3x3), brain_dream_scheduler (4 patterns + 8 CIEU event types), dominance_monitor.py code-complete. Ryan: DISPATCH-EXEC Pattern C pipe, WIPE-RCA atomic-write fix, aliases map + Step 7 cano",
+      "expected_labs_mapping": "CIEU-like fixtures should map to prediction-delta inputs and residual classes without persistence.",
+      "confidence_class": "direct_doc_match"
+    },
+    {
+      "surface_name": "validation_decision_result_issue_severity",
+      "surface_kind": "contract_surface",
+      "path": ".commit_msg_e.txt",
+      "matched_terms": [
+        "result"
+      ],
+      "evidence_excerpt_or_symbol": "_action_registry.yaml phase_lifecycle_manifest.yaml CEO experiment results (reports/ceo/exp3_*): bipartite learning empirical matrix across buckets b3-b8 + consolidated. Co-Authored-By: Claude Opus 4.7 (1M contex",
+      "expected_labs_mapping": "Projection and Pre-U gate decisions should become governance decision envelopes, not live authorization by labs.",
+      "confidence_class": "direct_doc_match"
+    },
+    {
+      "surface_name": "learning_writeback_safety",
+      "surface_kind": "contract_surface",
+      "path": ".commit_msg_e.txt",
+      "matched_terms": [
+        "writeback"
+      ],
+      "evidence_excerpt_or_symbol": "-BIPARTITE-ruling + CZL-BRAIN-BIPARTITE-P2-ALGO-ruling CZL-BRAIN-L2-WRITEBACK-PARTIAL-20260420 CZL-BRAIN-L3-GUARD-RAILS-ruling CZL-DISPATCH-EXEC-ruling (Pattern C) CZL-AUTO-COMMIT-PUSH-ruling CZL-AGENTS-ENGREG",
+      "expected_labs_mapping": "Review candidates cannot write brain, memory, or canonical policy without separate approval.",
+      "confidence_class": "direct_doc_match"
+    },
+    {
+      "surface_name": "governance_contract_dry_run",
+      "surface_kind": "contract_surface",
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "matched_terms": [
+        "governance contract"
+      ],
+      "evidence_excerpt_or_symbol": "Add a `ystar link` command that creates symbolic links to a shared governance contract... validations: required: true - type: textarea id: alternatives attributes: label: Alternatives Considered",
+      "expected_labs_mapping": "Labs dry-run decisions remain candidate evidence until a kernel or versioned adapter validates them.",
+      "confidence_class": "inferred_safe_match"
+    },
+    {
+      "surface_name": "pre_u_packet_validator",
+      "surface_kind": "contract_surface",
+      "path": "docs/cieu_prediction_delta/schema_v0.md",
+      "matched_terms": [
+        "pre-u"
+      ],
+      "evidence_excerpt_or_symbol": "or lives at `ystar/governance/cieu_prediction_delta.py`. ## Purpose Pre-U packets declare predicted `Yt+1` and predicted `Rt+1`. After action, CIEU needs a structured record that links those predictions to actual",
+      "expected_labs_mapping": "ystar-company Pre-U candidates should map to declared_Y_star, X_t, candidate_U, governance expectations, and execution boundaries.",
+      "confidence_class": "direct_doc_match"
+    },
+    {
+      "surface_name": "decision_envelope",
+      "surface_kind": "contract_surface",
+      "path": "docs/cieu_prediction_delta/schema_v0.md",
+      "matched_terms": [
+        "governance_decision"
+      ],
+      "evidence_excerpt_or_symbol": "` - `learning_eligibility` - `cieu_event_ref` or `cieu_record_ref` - `governance_decision_ref` or `validator_result_ref` - `brain_writeback_policy` ## Decisions The validator returns: - `allow` - `warn` - `require_revisi",
+      "expected_labs_mapping": "Bridge receipts and gate decisions should map to deterministic decision envelope fields.",
+      "confidence_class": "direct_doc_match"
+    }
+  ],
+  "modification_performed": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

@@ -109,31 +109,31 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 227
-- Unsafe artifacts count: 177
+- Artifacts classified: 278
+- Unsafe artifacts count: 187
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
   - CACHE_SENTINEL: 5
   - DAEMON_STATE: 4
-  - DAILY_REPORT: 6
+  - DAILY_REPORT: 8
   - DB_CORE: 1
   - DB_SIDECARE: 6
-  - DREAM_REPORT: 37
+  - DREAM_REPORT: 44
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
-  - FRAMEWORK_FILE: 5
+  - FRAMEWORK_FILE: 16
   - LOG_RUNTIME: 31
   - PYCACHE: 31
-  - UNKNOWN_OR_NON_RUNTIME: 45
+  - UNKNOWN_OR_NON_RUNTIME: 75
   - UNKNOWN_RUNTIME_ARTIFACT: 10
-  - WHITELIST_REPORT: 1
+  - WHITELIST_REPORT: 2
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
 - Warning: Console displays only curated path-level quarantine summary. No artifact contents were read.
 
 ## Runtime Artifact Safe Mining Candidates
 
-- Candidate count: 20
+- Candidate count: 21
 - Safety level: bounded_markdown_candidate
 - Ingestion status: candidate_only
 - Generated candidate index: runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json
@@ -142,62 +142,62 @@ Not ready:
   - DREAM_REPORT: 5
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 5
-  - WHITELIST_REPORT: 1
+  - WHITELIST_REPORT: 2
 - Warning: Safe mining candidates are bounded review assets only. They are not brain memory, CIEU records, or approved writeback.
 
 ## Runtime Artifact Candidate Review Queue
 
-- Review count: 20
+- Review count: 21
 - Default review status: pending_review
 - Default ingestion status: not_ingested
 - Generated queue path: runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json
 - Statuses:
-  - pending_review: 20
+  - pending_review: 21
 - Intended use summary:
   - cieu_prediction_delta_hint: 9
-  - governance_gap_hint: 10
+  - governance_gap_hint: 11
   - memory_continuity_hint: 10
-  - pre_u_packet_hint: 1
+  - pre_u_packet_hint: 2
   - role_brain_capsule_hint: 10
 - Warning: Review queue entries are not brain memory and require explicit approval before any future CIEU, memory, or capsule use.
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 227
-- Artifacts with disposition: 227
-- Safe-mined to review queue: 20
+- Total artifacts: 278
+- Artifacts with disposition: 278
+- Safe-mined to review queue: 21
 - Forbidden direct read count: 106
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
-  - deferred_markdown_report_not_selected: 51
+  - deferred_markdown_report_not_selected: 60
   - deferred_requires_bounded_log_adapter: 31
   - deferred_requires_classification: 10
   - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 31
-  - ignored_or_non_runtime: 50
-  - safe_mined_to_review_queue: 20
+  - ignored_or_non_runtime: 91
+  - safe_mined_to_review_queue: 21
 - Evidence scoring status:
-  - not_started: 227
+  - not_started: 278
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
 
-- Candidates scored: 20
-- Decision stubs created: 20
-- Routes created: 40
+- Candidates scored: 21
+- Decision stubs created: 21
+- Routes created: 42
 - Automatic approvals: 0
 - Reuse readiness:
-  - hint_only: 20
+  - hint_only: 21
 - Route counts:
   - cieu_prediction_delta_hint_queue: 9
-  - governance_gap_hint_queue: 10
+  - governance_gap_hint_queue: 11
   - memory_continuity_hint_queue: 10
-  - pre_u_packet_hint_queue: 1
+  - pre_u_packet_hint_queue: 2
   - role_brain_capsule_hint_queue: 10
 - Semantic truth status:
-  - not_evaluated: 20
+  - not_evaluated: 21
 - Warning: Evidence scoring is structural only. It is not truth validation and not memory ingestion.
 
 ## Labs-Gov Alignment Bridge
@@ -251,7 +251,7 @@ Not ready:
 ## Cross-Repo Governance Alignment
 
 - alignment_accepted: True
-- ystar-company HEAD: ddf5c749 tools: add cross-repo governance alignment manifest
+- ystar-company HEAD: 9667642b tools: add review gated shadow projection cycle
 - Y-star-gov HEAD: 9c4aee3 tools: add governance endpoint acceptance runner
 - Y-star-gov endpoint accepted: True
 - labs runtime accepted: True
@@ -383,8 +383,8 @@ Not ready:
 - next_required_milestone: L4.4 First Governed Read-Only Observation Tool Wrapper v0
 - bucket_counts:
   - A_adopt_now_read_only: 1
-  - B_wrap_as_governed_tool: 880
-  - C_rewrite_from_design: 11
+  - B_wrap_as_governed_tool: 883
+  - C_rewrite_from_design: 8
   - D_quarantine_as_evidence_ore: 8
   - E_retire_do_not_use: 0
 - Warning: Triage is classification only; no asset is absorbed or enabled.
@@ -560,7 +560,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 3989
+- assets_scanned: 4212
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -678,6 +678,24 @@ Not ready:
 - next_required_milestone: Controlled Canonical Learning Architecture v0
 - Warning: L5.4 is shadow-only. Residuals influence a preview Y* and shadow cycle, but no canonical policy, brain, memory, CIEU store, or live system is changed.
 
+## Cross-Repo Governance Contract Proof
+
+- cross_repo_governance_contract_proof_defined: True
+- y_star_gov_surfaces_inventoried_read_only: True
+- gov_mcp_surfaces_inventoried_read_only: True
+- behavior_y_star_mapped_to_governance_contract: True
+- pre_u_candidates_mapped_to_validator_expectations: True
+- cieu_fixtures_mapped_to_prediction_delta_expectations: True
+- gov_mcp_boundary_mapped: True
+- non_bypass_invariants_defined: True
+- bypass_risks_identified: True
+- no_non_ystar_company_repo_modified: True
+- no_mcp_server_or_tool_executed: True
+- ready_for_l5_6_governed_mcp_dry_run_adapter: True
+- ready_for_l6_revenue_opportunity_discovery: False
+- next_required_milestone: L5.6 Governed MCP Dry-Run Adapter v0
+- Warning: L5.5 is a read-only boundary proof. ystar-company is not a governance kernel, Y-star-gov and gov-mcp were not modified, and MCP tools were not executed.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -753,3 +771,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Field functional archaeology exists as a merge plan only; L5 projection harness is not implemented yet.
 - Field functional auto-projection core exists as a dry-run projection core only; behavior execution remains disabled.
 - Integrated review-gated shadow learning cycle exists as shadow-only artifacts; controlled canonical learning is not implemented yet.
+- Cross-repo governance contract proof exists as read-only boundary alignment; governed MCP dry-run adapter is not implemented yet.

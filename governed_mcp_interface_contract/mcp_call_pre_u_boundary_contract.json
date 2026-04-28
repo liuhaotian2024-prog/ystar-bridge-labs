@@ -1,0 +1,39 @@
+{
+  "schema_name": "ystar.governed_mcp_interface.pre_u_boundary_contract",
+  "schema_version": "v0",
+  "contract_id": "mcp-call-pre-u-boundary-contract-v0",
+  "required_fields": [
+    "source_behavior_y_star_id",
+    "declared_Y_star",
+    "X_t / Xt",
+    "candidate_U",
+    "mcp_tool_or_resource_id",
+    "requested_operation",
+    "allowed_scope",
+    "denied_scope",
+    "governance_expectations",
+    "trace_refs",
+    "execution_boundary",
+    "safety_flags"
+  ],
+  "production_ready": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "canonical_policy_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}
