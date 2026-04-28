@@ -573,6 +573,27 @@ Not ready:
 - next_required_milestone: L5.1 Mission Field Functional Projection Harness v0
 - Warning: Archaeology produces a merge plan only; no old code is executed or absorbed.
 
+## Mission Field Projection Harness
+
+- mission_field_projection_harness_defined: True
+- l5_1_projection_contract_defined: True
+- layered_projection_trace_generated: True
+- pre_u_adapter_candidate_generated: True
+- residual_delta_fixture_generated: True
+- action_layer_projection_only: True
+- action_field_execution_implemented: False
+- ready_for_L5_2_deep_xt_observation_model: True
+- live_execution_enabled: False
+- external_action_enabled: False
+- network_enabled: False
+- scheduler_enabled: False
+- daemon_enabled: False
+- cieu_persistence_enabled: False
+- brain_writeback_enabled: False
+- memory_ingestion_enabled: False
+- next_required_milestone: L5.2 Deep Xt Observation Model v0
+- Warning: L5.1 is a dry-run projection harness; action-field execution and production Pre-U validation remain future work.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns

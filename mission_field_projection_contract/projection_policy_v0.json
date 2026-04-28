@@ -1,0 +1,40 @@
+{
+  "schema_name": "ystar.mission_field_projection_contract.projection_policy",
+  "schema_version": "v0",
+  "policy_id": "mission-field-projection-policy-v0",
+  "policy_summary": "Deterministic mission-to-action Y* projection for inspection and future Pre-U adapter work only.",
+  "projection_is_not_planning": true,
+  "projection_is_not_live_execution": true,
+  "semantic_truth_scoring_enabled": false,
+  "probabilistic_truth_scoring_enabled": false,
+  "allowed_layers": [
+    "mission",
+    "company",
+    "milestone",
+    "session",
+    "task",
+    "action"
+  ],
+  "forbidden_inputs": [
+    "raw DB contents",
+    "raw WAL/SHM",
+    "raw logs",
+    "raw active-agent marker contents",
+    "unreviewed brain writeback",
+    "network results",
+    "live hook output"
+  ],
+  "required_safety_flags": {
+    "live_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false
+  },
+  "action_layer_must_remain_projection_only": true,
+  "future_pre_u_validation_required_before_action": true
+}

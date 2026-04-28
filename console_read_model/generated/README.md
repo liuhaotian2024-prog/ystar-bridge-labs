@@ -75,5 +75,8 @@ observation tick runner outputs. It confirms one manual local tick ran with a re
 `field_functional_summary.json` is derived from generated field
 functional archaeology outputs. It confirms old field-functional work was searched and mapped into a merge plan without executing old code.
 
+`mission_projection_summary.json` is derived from the L5.1 mission field
+projection harness. It confirms layered Y* projection, a Pre-U packet candidate, and a residual fixture exist while action execution remains disabled.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

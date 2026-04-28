@@ -38,6 +38,7 @@ DASHBOARD_REFRESH = "console_read_model/generated/dashboard_refresh_summary.json
 RECURRING_LOOP = "console_read_model/generated/recurring_loop_summary.json"
 MANUAL_TICK = "console_read_model/generated/manual_tick_summary.json"
 FIELD_FUNCTIONAL = "console_read_model/generated/field_functional_summary.json"
+MISSION_PROJECTION = "console_read_model/generated/mission_projection_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -57,7 +58,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -115,6 +116,7 @@ def load_all() -> dict[str, Any]:
         "recurring_loop": load_json(RECURRING_LOOP),
         "manual_tick": load_json(MANUAL_TICK),
         "field_functional": load_json(FIELD_FUNCTIONAL),
+        "mission_projection": load_json(MISSION_PROJECTION),
     }
 
 
@@ -813,6 +815,51 @@ def cmd_field_functional(data: dict[str, Any]) -> None:
     print(f"warning: {field.get('warning')}")
 
 
+def cmd_mission_projection(data: dict[str, Any]) -> None:
+    projection = data["mission_projection"]
+    print("# Mission Field Functional Projection Harness")
+    print()
+    print(
+        "L5.1 projection contract defined: "
+        f"{projection.get('l5_1_projection_contract_defined')}"
+    )
+    print(
+        "layered projection trace generated: "
+        f"{projection.get('layered_projection_trace_generated')}"
+    )
+    print(
+        "Pre-U adapter candidate generated: "
+        f"{projection.get('pre_u_adapter_candidate_generated')}"
+    )
+    print(
+        "residual delta fixture generated: "
+        f"{projection.get('residual_delta_fixture_generated')}"
+    )
+    print(f"action layer projection only: {projection.get('action_layer_projection_only')}")
+    print(
+        "action field execution implemented: "
+        f"{projection.get('action_field_execution_implemented')}"
+    )
+    print(f"live execution enabled: {projection.get('live_execution_enabled')}")
+    print(f"external action enabled: {projection.get('external_action_enabled')}")
+    print(f"network enabled: {projection.get('network_enabled')}")
+    print(f"scheduler enabled: {projection.get('scheduler_enabled')}")
+    print(f"daemon enabled: {projection.get('daemon_enabled')}")
+    print(f"CIEU persistence enabled: {projection.get('cieu_persistence_enabled')}")
+    print(f"brain writeback enabled: {projection.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {projection.get('memory_ingestion_enabled')}")
+    print(
+        "ready for L5.2 Deep Xt Observation Model: "
+        f"{projection.get('ready_for_L5_2_deep_xt_observation_model')}"
+    )
+    print(f"next required milestone: {projection.get('next_required_milestone')}")
+    print(f"generated_summary: {projection.get('generated_summary')}")
+    print(f"generated_trace: {projection.get('generated_trace')}")
+    print(f"generated_pre_u_candidate: {projection.get('generated_pre_u_candidate')}")
+    print(f"generated_residual_delta: {projection.get('generated_residual_delta')}")
+    print(f"warning: {projection.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -970,6 +1017,14 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print(f"- {field.get('generated_summary')}")
         print(f"- {field.get('generated_inventory')}")
         print(f"- {field.get('generated_merge_plan')}")
+    mission_projection = data.get("mission_projection", {})
+    if mission_projection:
+        print()
+        print("Mission field projection harness:")
+        print(f"- {mission_projection.get('generated_summary')}")
+        print(f"- {mission_projection.get('generated_trace')}")
+        print(f"- {mission_projection.get('generated_pre_u_candidate')}")
+        print(f"- {mission_projection.get('generated_residual_delta')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -1021,6 +1076,7 @@ def cmd_validate_local() -> int:
         RECURRING_LOOP,
         MANUAL_TICK,
         FIELD_FUNCTIONAL,
+        MISSION_PROJECTION,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -1080,6 +1136,8 @@ def cmd_validate_local() -> int:
             failures.append("manual_tick_summary missing from team console snapshot")
         if "field_functional_summary" not in snapshot:
             failures.append("field_functional_summary missing from team console snapshot")
+        if "mission_projection_summary" not in snapshot:
+            failures.append("mission_projection_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -2045,6 +2103,60 @@ def cmd_validate_local() -> int:
         ):
             failures.append("field functional summary must point to L5.1 projection harness milestone")
 
+    mission_projection = loaded.get(MISSION_PROJECTION)
+    if mission_projection:
+        required_fields = [
+            "mission_field_projection_harness_defined",
+            "l5_1_projection_contract_defined",
+            "layered_projection_trace_generated",
+            "pre_u_adapter_candidate_generated",
+            "residual_delta_fixture_generated",
+            "action_layer_projection_only",
+            "action_field_execution_implemented",
+            "ready_for_L5_2_deep_xt_observation_model",
+            "live_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+            "next_required_milestone",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in mission_projection:
+                failures.append(f"mission projection summary missing field: {field}")
+        for field in [
+            "mission_field_projection_harness_defined",
+            "l5_1_projection_contract_defined",
+            "layered_projection_trace_generated",
+            "pre_u_adapter_candidate_generated",
+            "residual_delta_fixture_generated",
+            "action_layer_projection_only",
+            "ready_for_L5_2_deep_xt_observation_model",
+        ]:
+            if mission_projection.get(field) is not True:
+                failures.append(f"mission projection summary must keep {field}=true")
+        for field in [
+            "action_field_execution_implemented",
+            "live_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+        ]:
+            if mission_projection.get(field) is not False:
+                failures.append(f"mission projection summary must keep {field}=false")
+        if mission_projection.get("next_required_milestone") != "L5.2 Deep Xt Observation Model v0":
+            failures.append("mission projection summary must point to L5.2 deep Xt milestone")
+
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
     print(f"Required agents: {', '.join(REQUIRED_AGENTS)}")
@@ -2132,6 +2244,8 @@ def main(argv: list[str]) -> int:
         cmd_manual_tick(data)
     elif command == "field-functional":
         cmd_field_functional(data)
+    elif command == "mission-projection":
+        cmd_mission_projection(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

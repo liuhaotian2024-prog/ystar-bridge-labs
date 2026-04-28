@@ -1,0 +1,22 @@
+{
+  "schema_name": "ystar.projection_residual_delta_fixture.predicted_outcome",
+  "schema_version": "v0",
+  "prediction_id": "projection-predicted-outcome-001",
+  "derived_from": "layered_y_star_projection_trace/layered_projection_trace.json",
+  "predicted_outcome": [
+    "six-layer Y* projection can be inspected",
+    "action layer can be converted into a Pre-U-like packet candidate",
+    "unresolved action-field execution gap remains explicit"
+  ],
+  "predicted_risk_boundary": {
+    "live_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false
+  }
+}

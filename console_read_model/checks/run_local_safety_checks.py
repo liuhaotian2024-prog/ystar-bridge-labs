@@ -148,7 +148,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after field functional archaeology",
+        "Build mission field projection harness",
+        ["python3", "mission_field_projection_contract/tools/build_mission_field_projection_harness.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after mission projection harness",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -879,6 +884,83 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "field_functional_archaeology/generated/field_functional_archaeology_summary.json"],
     ),
     Check(
+        "Compile mission field projection harness builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "mission_field_projection_contract/tools/build_mission_field_projection_harness.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: mission_projection_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/mission_projection_summary.json"],
+    ),
+    Check(
+        "Validate JSON: projection_contract_v0.json",
+        ["python3", "-m", "json.tool", "mission_field_projection_contract/projection_contract_v0.json"],
+    ),
+    Check(
+        "Validate JSON: projection_input_fixture.json",
+        ["python3", "-m", "json.tool", "mission_field_projection_contract/projection_input_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: projection_policy_v0.json",
+        ["python3", "-m", "json.tool", "mission_field_projection_contract/projection_policy_v0.json"],
+    ),
+    Check(
+        "Validate JSON: projection_contract_summary.json",
+        ["python3", "-m", "json.tool", "mission_field_projection_contract/projection_contract_summary.json"],
+    ),
+    Check(
+        "Validate JSON: layered_projection_trace.json",
+        ["python3", "-m", "json.tool", "layered_y_star_projection_trace/layered_projection_trace.json"],
+    ),
+    Check(
+        "Validate JSON: field_source_map.json",
+        ["python3", "-m", "json.tool", "layered_y_star_projection_trace/field_source_map.json"],
+    ),
+    Check(
+        "Validate JSON: contraction_map.json",
+        ["python3", "-m", "json.tool", "layered_y_star_projection_trace/contraction_map.json"],
+    ),
+    Check(
+        "Validate JSON: unresolved_gap_map.json",
+        ["python3", "-m", "json.tool", "layered_y_star_projection_trace/unresolved_gap_map.json"],
+    ),
+    Check(
+        "Validate JSON: projection_trace_summary.json",
+        ["python3", "-m", "json.tool", "layered_y_star_projection_trace/projection_trace_summary.json"],
+    ),
+    Check(
+        "Validate JSON: pre_u_packet_candidate.json",
+        ["python3", "-m", "json.tool", "projection_to_pre_u_packet_adapter/pre_u_packet_candidate.json"],
+    ),
+    Check(
+        "Validate JSON: pre_u_adapter_mapping.json",
+        ["python3", "-m", "json.tool", "projection_to_pre_u_packet_adapter/pre_u_adapter_mapping.json"],
+    ),
+    Check(
+        "Validate JSON: pre_u_adapter_summary.json",
+        ["python3", "-m", "json.tool", "projection_to_pre_u_packet_adapter/pre_u_adapter_summary.json"],
+    ),
+    Check(
+        "Validate JSON: projection_predicted_outcome.json",
+        ["python3", "-m", "json.tool", "projection_residual_delta_fixture/projection_predicted_outcome.json"],
+    ),
+    Check(
+        "Validate JSON: projection_mock_actual_outcome.json",
+        ["python3", "-m", "json.tool", "projection_residual_delta_fixture/projection_mock_actual_outcome.json"],
+    ),
+    Check(
+        "Validate JSON: projection_residual_delta_fixture.json",
+        ["python3", "-m", "json.tool", "projection_residual_delta_fixture/projection_residual_delta_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: projection_residual_delta_summary.json",
+        ["python3", "-m", "json.tool", "projection_residual_delta_fixture/projection_residual_delta_summary.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -1057,6 +1139,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: field-functional",
         ["python3", "console_read_model/cli/team_console.py", "field-functional"],
+    ),
+    Check(
+        "CLI smoke: mission-projection",
+        ["python3", "console_read_model/cli/team_console.py", "mission-projection"],
     ),
     Check(
         "CLI smoke: sources",

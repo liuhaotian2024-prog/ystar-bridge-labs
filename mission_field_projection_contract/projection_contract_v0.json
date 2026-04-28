@@ -1,0 +1,71 @@
+{
+  "schema_name": "ystar.mission_field_projection_contract.projection_contract",
+  "schema_version": "v0",
+  "contract_id": "mission_field_projection_contract_v0",
+  "contract_name": "Mission Field Functional Projection Contract",
+  "supported_projection_layers": [
+    "mission",
+    "company",
+    "milestone",
+    "session",
+    "task",
+    "action"
+  ],
+  "allowed_input_fields": [
+    "mission_y_star",
+    "xt_observation_summary",
+    "agent_role",
+    "tool_context",
+    "risk_boundary",
+    "residual_history_summary",
+    "governance_policy_summary",
+    "archaeology_evidence_refs"
+  ],
+  "forbidden_inputs": [
+    "raw DB contents",
+    "raw WAL/SHM",
+    "raw logs",
+    "raw active-agent marker contents",
+    "unreviewed brain writeback",
+    "network results",
+    "live hook output"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false
+  },
+  "output_requirements": [
+    "layered_y_star_projection",
+    "projection_trace",
+    "field_source_map",
+    "contraction_map",
+    "unresolved_gap_map",
+    "pre_u_adapter_candidate",
+    "residual_delta_fixture_candidate"
+  ],
+  "structural_confidence_classes": [
+    "direct_archaeology_reuse",
+    "wrapped_archaeology_asset",
+    "deterministic_policy_projection",
+    "concept_reference_only",
+    "unresolved_gap"
+  ],
+  "action_field_execution_status": "not_implemented",
+  "action_layer_policy": {
+    "projection_only": true,
+    "live_action_authorized": false,
+    "requires_pre_u_validation": true,
+    "notes": "L5.0 found weak direct action-field evidence, so action-level Y* is only a contract projection for future Pre-U validation."
+  },
+  "requires_y_star_gov_for_future_validation": true,
+  "calls_y_star_gov_now": false,
+  "uses_generated_read_model_only": true,
+  "next_required_milestone": "L5.2 Deep Xt Observation Model v0"
+}

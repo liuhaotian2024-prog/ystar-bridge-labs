@@ -1,0 +1,22 @@
+{
+  "schema_name": "ystar.projection_to_pre_u_packet_adapter.pre_u_adapter_summary",
+  "schema_version": "v0",
+  "pre_u_adapter_candidate_generated": true,
+  "pre_u_packet_candidate_generated": true,
+  "adapter_production_ready": false,
+  "y_star_gov_called": false,
+  "unfilled_required_fields": [
+    "production validator decision",
+    "real governed action target",
+    "live residual measurement"
+  ],
+  "live_execution_enabled": false,
+  "external_action_enabled": false,
+  "network_enabled": false,
+  "scheduler_enabled": false,
+  "daemon_enabled": false,
+  "cieu_persistence_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false,
+  "candidate_auto_approval_enabled": false
+}

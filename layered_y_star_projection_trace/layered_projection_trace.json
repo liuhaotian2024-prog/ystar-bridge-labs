@@ -1,0 +1,261 @@
+{
+  "schema_name": "ystar.layered_y_star_projection_trace.layered_projection_trace",
+  "schema_version": "v0",
+  "trace_id": "layered-y-star-projection-trace-001",
+  "projection_contract_ref": "mission_field_projection_contract/projection_contract_v0.json",
+  "projection_layers": [
+    {
+      "projection_id": "projection-layer-mission-v0",
+      "layer_name": "mission",
+      "parent_layer": null,
+      "projected_y_star": {
+        "Y_star_id": "mission-y-star-v0",
+        "statement": "Build a commercial AI agent self-governed company runtime that can observe business-relevant resources, understand constraints, select or build tools, act through governed channels, record outcomes, and improve through curated CIEU deltas.",
+        "success_shape": "mission-bounded autonomous company advances through governed local dry-run capabilities before live enablement."
+      },
+      "inherited_constraints": [
+        "founder mission remains controlling objective"
+      ],
+      "narrowed_constraints": [
+        "commercial AI agent company autonomy is bounded by governance"
+      ],
+      "added_context_constraints": [
+        "L5.0 field-functional evidence supports mission-field concept preservation"
+      ],
+      "blocked_or_unknown_constraints": [
+        "deep Xt model remains summary-level until L5.2"
+      ],
+      "evidence_refs": [
+        "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json",
+        "field_functional_archaeology/generated/field_functional_concept_map.json"
+      ],
+      "source_kind": "mission_dashboard_plus_archaeology_concept",
+      "confidence_class": "concept_reference_only",
+      "safety_flags": {
+        "live_execution_enabled": false,
+        "external_action_enabled": false,
+        "network_enabled": false,
+        "scheduler_enabled": false,
+        "daemon_enabled": false,
+        "cieu_persistence_enabled": false,
+        "brain_writeback_enabled": false,
+        "memory_ingestion_enabled": false,
+        "candidate_auto_approval_enabled": false
+      }
+    },
+    {
+      "projection_id": "projection-layer-company-v0",
+      "layer_name": "company",
+      "parent_layer": "mission",
+      "projected_y_star": {
+        "Y_star_id": "company-y-star-v0",
+        "statement": "Company advances autonomy by creating deterministic governed harnesses before live operation.",
+        "operating_state": "mission_bounded_local_readonly_dry_run"
+      },
+      "inherited_constraints": [
+        "founder mission remains controlling objective",
+        "no live execution"
+      ],
+      "narrowed_constraints": [
+        "company scope limited to ystar-company generated/read-model evidence"
+      ],
+      "added_context_constraints": [
+        "current capability chain includes read-only tool, bridge, manual tick, and field archaeology"
+      ],
+      "blocked_or_unknown_constraints": [
+        "commercial runtime metrics are not live and cannot be inferred from raw runtime artifacts"
+      ],
+      "evidence_refs": [
+        "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
+        "field_functional_archaeology/generated/mission_projection_merge_plan.json",
+        "field_functional_archaeology/generated/old_to_new_architecture_alignment.json",
+        "governed_observation_loop/generated/company_state_digest.json"
+      ],
+      "source_kind": "generated_read_model_projection",
+      "confidence_class": "deterministic_policy_projection",
+      "safety_flags": {
+        "live_execution_enabled": false,
+        "external_action_enabled": false,
+        "network_enabled": false,
+        "scheduler_enabled": false,
+        "daemon_enabled": false,
+        "cieu_persistence_enabled": false,
+        "brain_writeback_enabled": false,
+        "memory_ingestion_enabled": false,
+        "candidate_auto_approval_enabled": false
+      }
+    },
+    {
+      "projection_id": "projection-layer-milestone-v0",
+      "layer_name": "milestone",
+      "parent_layer": "company",
+      "projected_y_star": {
+        "Y_star_id": "milestone-y-star-l5-1-v0",
+        "statement": "Produce an inspectable L5.1 projection harness ready to feed L5.2 deep Xt modeling.",
+        "target_milestone": "L5.1 Mission Field Functional Projection Harness v0"
+      },
+      "inherited_constraints": [
+        "company scope limited to generated/read-model evidence"
+      ],
+      "narrowed_constraints": [
+        "milestone output must be JSON-schema-like, deterministic, and validator-friendly"
+      ],
+      "added_context_constraints": [
+        "L5.0 merge plan becomes source evidence, not live code absorption"
+      ],
+      "blocked_or_unknown_constraints": [
+        "production Pre-U adapter and live action-field semantics remain unresolved"
+      ],
+      "evidence_refs": [
+        "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
+        "field_functional_archaeology/generated/mission_projection_merge_plan.json",
+        "field_functional_archaeology/generated/old_to_new_architecture_alignment.json"
+      ],
+      "source_kind": "field_archaeology_merge_plan_projection",
+      "confidence_class": "wrapped_archaeology_asset",
+      "safety_flags": {
+        "live_execution_enabled": false,
+        "external_action_enabled": false,
+        "network_enabled": false,
+        "scheduler_enabled": false,
+        "daemon_enabled": false,
+        "cieu_persistence_enabled": false,
+        "brain_writeback_enabled": false,
+        "memory_ingestion_enabled": false,
+        "candidate_auto_approval_enabled": false
+      }
+    },
+    {
+      "projection_id": "projection-layer-session-v0",
+      "layer_name": "session",
+      "parent_layer": "milestone",
+      "projected_y_star": {
+        "Y_star_id": "session-y-star-l5-1-build-v0",
+        "statement": "Within this session, generate contract, trace, Pre-U adapter candidate, and residual fixture without external effects.",
+        "agent_role": "Aiden-CEO"
+      },
+      "inherited_constraints": [
+        "milestone output must be deterministic"
+      ],
+      "narrowed_constraints": [
+        "session may only write L5.1 artifacts and read-model summaries"
+      ],
+      "added_context_constraints": [
+        "role alignment narrows action to Aiden-CEO request with governance support"
+      ],
+      "blocked_or_unknown_constraints": [
+        "no Y-star-gov import or validator call is authorized in this session"
+      ],
+      "evidence_refs": [
+        "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
+        "field_functional_archaeology/generated/mission_projection_merge_plan.json",
+        "field_functional_archaeology/generated/old_to_new_architecture_alignment.json"
+      ],
+      "source_kind": "role_scope_policy_projection",
+      "confidence_class": "concept_reference_only",
+      "safety_flags": {
+        "live_execution_enabled": false,
+        "external_action_enabled": false,
+        "network_enabled": false,
+        "scheduler_enabled": false,
+        "daemon_enabled": false,
+        "cieu_persistence_enabled": false,
+        "brain_writeback_enabled": false,
+        "memory_ingestion_enabled": false,
+        "candidate_auto_approval_enabled": false
+      }
+    },
+    {
+      "projection_id": "projection-layer-task-v0",
+      "layer_name": "task",
+      "parent_layer": "session",
+      "projected_y_star": {
+        "Y_star_id": "task-y-star-l5-1-artifact-build-v0",
+        "statement": "Create layered projection artifacts plus a dry-run Pre-U packet candidate and residual delta fixture.",
+        "acceptance_shape": "all required files exist, parse, and keep safety flags false"
+      },
+      "inherited_constraints": [
+        "session may only write L5.1 artifacts"
+      ],
+      "narrowed_constraints": [
+        "task is limited to source/docs/schema-like generated outputs and tests"
+      ],
+      "added_context_constraints": [
+        "contract projection must expose unresolved gaps rather than hiding them"
+      ],
+      "blocked_or_unknown_constraints": [
+        "direct action-field executor evidence remains weak"
+      ],
+      "evidence_refs": [
+        "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
+        "field_functional_archaeology/generated/mission_projection_merge_plan.json",
+        "field_functional_archaeology/generated/old_to_new_architecture_alignment.json"
+      ],
+      "source_kind": "deterministic_task_contract_projection",
+      "confidence_class": "deterministic_policy_projection",
+      "safety_flags": {
+        "live_execution_enabled": false,
+        "external_action_enabled": false,
+        "network_enabled": false,
+        "scheduler_enabled": false,
+        "daemon_enabled": false,
+        "cieu_persistence_enabled": false,
+        "brain_writeback_enabled": false,
+        "memory_ingestion_enabled": false,
+        "candidate_auto_approval_enabled": false
+      }
+    },
+    {
+      "projection_id": "projection-layer-action-v0",
+      "layer_name": "action",
+      "parent_layer": "task",
+      "projected_y_star": {
+        "Y_star_id": "action-y-star-pre-u-candidate-v0",
+        "statement": "Prepare a future Pre-U packet candidate from the task-level projection; do not authorize or execute action.",
+        "candidate_action_context": "prepare a Pre-U packet candidate from action-level projection without invoking a live validator"
+      },
+      "inherited_constraints": [
+        "task is limited to source/docs/schema-like generated outputs and tests"
+      ],
+      "narrowed_constraints": [
+        "action may only become a Pre-U-like packet candidate"
+      ],
+      "added_context_constraints": [
+        "fixture_only_no_persistence",
+        "future Y-star-gov validation remains required"
+      ],
+      "blocked_or_unknown_constraints": [
+        "action-field execution not implemented",
+        "production Pre-U adapter not implemented",
+        "live hook output forbidden"
+      ],
+      "evidence_refs": [
+        "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
+        "field_functional_archaeology/generated/mission_projection_merge_plan.json",
+        "field_functional_archaeology/generated/old_to_new_architecture_alignment.json"
+      ],
+      "source_kind": "pre_u_contract_projection_only",
+      "confidence_class": "unresolved_gap",
+      "safety_flags": {
+        "live_execution_enabled": false,
+        "external_action_enabled": false,
+        "network_enabled": false,
+        "scheduler_enabled": false,
+        "daemon_enabled": false,
+        "cieu_persistence_enabled": false,
+        "brain_writeback_enabled": false,
+        "memory_ingestion_enabled": false,
+        "candidate_auto_approval_enabled": false
+      },
+      "projection_only": true,
+      "live_action_authorized": false,
+      "requires_pre_u_validation": true,
+      "action_field_execution_status": "not_implemented_future_work"
+    }
+  ],
+  "semantic_truth_scoring_enabled": false,
+  "probabilistic_truth_scoring_enabled": false,
+  "real_action_executed": false,
+  "external_action_executed": false,
+  "ready_for_pre_u_adapter_candidate": true
+}

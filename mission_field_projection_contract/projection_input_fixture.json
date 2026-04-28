@@ -1,0 +1,88 @@
+{
+  "schema_name": "ystar.mission_field_projection_contract.projection_input_fixture",
+  "schema_version": "v0",
+  "fixture_id": "mission-field-projection-input-001",
+  "mission_y_star": {
+    "mission_id": "mission-commercial-agent-company-v0",
+    "founder_defined_mission": "Build a commercial AI agent self-governed company runtime that can observe business-relevant resources, understand constraints, select or build tools, act through governed channels, record outcomes, and improve through curated CIEU deltas.",
+    "desired_state": "mission-bounded autonomous company advances through governed local dry-run capabilities before live enablement.",
+    "non_goals": [
+      "no live execution",
+      "no external action",
+      "no direct memory or brain writeback"
+    ]
+  },
+  "xt_observation_summary": {
+    "source_kind": "generated_read_model_summary",
+    "current_phase": "L4.7 deterministic mission dashboard refresh",
+    "company_operating_state": "mission_bounded_local_readonly_dry_run",
+    "known_capabilities": [
+      "dry-run governance stack exists",
+      "legacy assets are triaged before absorption",
+      "generated summaries can be observed safely"
+    ],
+    "safe_observations": [
+      "console read-model summaries",
+      "live readiness and boundary summaries",
+      "CIEU boundary summaries",
+      "autonomy inventory and work-cycle summaries",
+      "legacy triage summaries"
+    ],
+    "blocked_actions": [
+      "scheduler remains disabled",
+      "daemon remains disabled",
+      "live and external actions remain disabled",
+      "CIEU persistence, brain writeback, and memory ingestion remain disabled"
+    ]
+  },
+  "agent_role": {
+    "primary_agent": "Aiden-CEO",
+    "supporting_agents": [
+      "Maya-Governance",
+      "Ryan-Platform",
+      "Samantha-Secretary"
+    ],
+    "role_scope": "select mission-aligned next work only through governed local dry-run channels"
+  },
+  "tool_context": {
+    "candidate_action_context": "prepare a Pre-U packet candidate from action-level projection without invoking a live validator",
+    "existing_tool_chain": [
+      "governed_readonly_observation_tool_v0",
+      "governed_tool_invocation_bridge_v0",
+      "manual_recurring_observation_tick_runner_v0"
+    ]
+  },
+  "risk_boundary": {
+    "live_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "action_field_execution_status": "blocked_future_work",
+    "operator_review_required_before_live_use": true
+  },
+  "residual_history_summary": {
+    "source_kind": "dry_run_generated_residual_summaries",
+    "manual_tick_residual_available": true,
+    "recurring_execution_enabled": false,
+    "direct_learning_allowed": false
+  },
+  "governance_policy_summary": {
+    "pre_u_required": true,
+    "y_star_gov_required_for_future_validation": true,
+    "local_projection_harness_may_not_call_live_hooks": true,
+    "cieu_event_policy": "fixture_only_no_persistence"
+  },
+  "archaeology_evidence_refs": {
+    "summary": "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
+    "merge_plan": "field_functional_archaeology/generated/mission_projection_merge_plan.json",
+    "concept_map": "field_functional_archaeology/generated/field_functional_concept_map.json",
+    "old_to_new_alignment": "field_functional_archaeology/generated/old_to_new_architecture_alignment.json",
+    "assets_found": 200,
+    "reusable_old_assets_count": 20
+  }
+}

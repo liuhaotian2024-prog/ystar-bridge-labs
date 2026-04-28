@@ -1,0 +1,37 @@
+{
+  "schema_name": "ystar.layered_y_star_projection_trace.unresolved_gap_map",
+  "schema_version": "v0",
+  "gap_map_id": "projection-unresolved-gap-map-001",
+  "gaps": [
+    {
+      "gap_id": "gap-action-field-execution",
+      "gap_type": "action_field_gap",
+      "description": "L5.0 found weak direct action-field evidence; no executor exists.",
+      "blocked_until": "future governed action wrapper and Pre-U validator integration",
+      "blocks_live_execution": true
+    },
+    {
+      "gap_id": "gap-deep-xt-model",
+      "gap_type": "projection_gap",
+      "description": "Xt is still a generated summary, not a deep observation model.",
+      "blocked_until": "L5.2 Deep Xt Observation Model v0",
+      "blocks_live_execution": false
+    },
+    {
+      "gap_id": "gap-pre-u-production-adapter",
+      "gap_type": "pre_u_adapter_gap",
+      "description": "Adapter candidate mirrors packet concepts but does not call Y-star-gov.",
+      "blocked_until": "reviewed Pre-U adapter implementation",
+      "blocks_live_execution": true
+    },
+    {
+      "gap_id": "gap-review-gated-learning",
+      "gap_type": "learning_feedback_gap",
+      "description": "Residual fixture can enter a future review queue but cannot write memory.",
+      "blocked_until": "review-gated learning candidate queue",
+      "blocks_live_execution": false
+    }
+  ],
+  "action_field_execution_implemented": false,
+  "live_execution_enabled": false
+}

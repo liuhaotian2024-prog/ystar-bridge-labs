@@ -1,0 +1,26 @@
+{
+  "schema_name": "ystar.layered_y_star_projection_trace.projection_trace_summary",
+  "schema_version": "v0",
+  "layered_projection_trace_generated": true,
+  "projection_layer_count": 6,
+  "projection_layers": [
+    "mission",
+    "company",
+    "milestone",
+    "session",
+    "task",
+    "action"
+  ],
+  "action_layer_projection_only": true,
+  "semantic_truth_scoring_enabled": false,
+  "ready_for_pre_u_adapter_candidate": true,
+  "live_execution_enabled": false,
+  "external_action_enabled": false,
+  "network_enabled": false,
+  "scheduler_enabled": false,
+  "daemon_enabled": false,
+  "cieu_persistence_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false,
+  "candidate_auto_approval_enabled": false
+}

@@ -358,6 +358,9 @@ def main() -> int:
     required_field_functional_archaeology_files = expected.get(
         "required_field_functional_archaeology_files", []
     )
+    required_mission_field_projection_files = expected.get(
+        "required_mission_field_projection_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -500,6 +503,12 @@ def main() -> int:
         check_exists(path, report, "field functional archaeology file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "field functional archaeology JSON")
+
+    for rel in required_mission_field_projection_files:
+        path = ROOT / rel
+        check_exists(path, report, "mission field projection file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "mission field projection JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -2612,6 +2621,66 @@ def main() -> int:
             "L5.1 Mission Field Functional Projection Harness v0"
         ):
             report.fail("generated field functional summary must point to L5.1 projection harness milestone")
+
+    mission_projection = generated_json.get("console_read_model/generated/mission_projection_summary.json")
+    if mission_projection:
+        for field in [
+            "mission_field_projection_harness_defined",
+            "l5_1_projection_contract_defined",
+            "layered_projection_trace_generated",
+            "pre_u_adapter_candidate_generated",
+            "residual_delta_fixture_generated",
+            "action_layer_projection_only",
+            "action_field_execution_implemented",
+            "ready_for_L5_2_deep_xt_observation_model",
+            "live_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+            "next_required_milestone",
+            "generated_summary",
+            "generated_contract",
+            "generated_trace",
+            "generated_pre_u_candidate",
+            "generated_residual_delta",
+            "warning",
+        ]:
+            if field in mission_projection:
+                report.pass_(f"generated mission projection summary field present: {field}")
+            else:
+                report.fail(f"generated mission projection summary missing field: {field}")
+        for field in [
+            "mission_field_projection_harness_defined",
+            "l5_1_projection_contract_defined",
+            "layered_projection_trace_generated",
+            "pre_u_adapter_candidate_generated",
+            "residual_delta_fixture_generated",
+            "action_layer_projection_only",
+            "ready_for_L5_2_deep_xt_observation_model",
+        ]:
+            if mission_projection.get(field) is not True:
+                report.fail(f"generated mission projection summary must keep {field}=true")
+        for field in [
+            "action_field_execution_implemented",
+            "live_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+        ]:
+            if mission_projection.get(field) is not False:
+                report.fail(f"generated mission projection summary must keep {field}=false")
+        if mission_projection.get("next_required_milestone") != "L5.2 Deep Xt Observation Model v0":
+            report.fail("generated mission projection summary must point to L5.2 deep Xt milestone")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

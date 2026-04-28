@@ -1,0 +1,19 @@
+{
+  "schema_name": "ystar.projection_residual_delta_fixture.residual_delta_summary",
+  "schema_version": "v0",
+  "residual_delta_fixture_generated": true,
+  "mock_actual_outcome_is_synthetic": true,
+  "eligible_for_review_queue": true,
+  "eligible_for_direct_brain_writeback": false,
+  "eligible_for_direct_memory_ingestion": false,
+  "requires_human_or_governance_review": true,
+  "live_execution_enabled": false,
+  "external_action_enabled": false,
+  "network_enabled": false,
+  "scheduler_enabled": false,
+  "daemon_enabled": false,
+  "cieu_persistence_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false,
+  "candidate_auto_approval_enabled": false
+}

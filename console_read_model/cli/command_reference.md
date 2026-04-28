@@ -93,6 +93,10 @@ python3 console_read_model/cli/team_console.py <command>
   summary: repositories/assets scanned, merge decision counts, mission
   projection merge-plan status, disabled live/persistence flags, and the L5.1
   recommendation.
+- `mission-projection`: Prints the generated L5.1 mission field projection
+  harness summary: projection contract, layered trace, Pre-U adapter candidate,
+  residual delta fixture, disabled live/writeback/persistence flags, and the
+  L5.2 recommendation.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

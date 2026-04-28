@@ -1,0 +1,32 @@
+{
+  "schema_name": "ystar.projection_residual_delta_fixture.residual_delta_fixture",
+  "schema_version": "v0",
+  "delta_id": "projection-residual-delta-fixture-001",
+  "predicted_outcome_ref": "projection_residual_delta_fixture/projection_predicted_outcome.json",
+  "mock_actual_outcome_ref": "projection_residual_delta_fixture/projection_mock_actual_outcome.json",
+  "residual_delta": {
+    "projection_gap": [
+      "Xt remains summary-level until L5.2"
+    ],
+    "pre_u_adapter_gap": [
+      "production validator decision",
+      "real governed action target",
+      "live residual measurement"
+    ],
+    "action_field_gap": [
+      "no live action-field executor exists"
+    ],
+    "evidence_gap": [
+      "direct action-field archaeology evidence remains weak"
+    ],
+    "learning_eligibility": {
+      "eligible_for_review_queue": true,
+      "eligible_for_direct_brain_writeback": false,
+      "eligible_for_direct_memory_ingestion": false,
+      "requires_human_or_governance_review": true
+    }
+  },
+  "direct_brain_writeback_allowed": false,
+  "direct_memory_ingestion_allowed": false,
+  "cieu_persistence_enabled": false
+}

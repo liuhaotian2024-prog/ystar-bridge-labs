@@ -1,0 +1,80 @@
+{
+  "schema_name": "ystar.layered_y_star_projection_trace.contraction_map",
+  "schema_version": "v0",
+  "contraction_map_id": "projection-contraction-map-001",
+  "contractions": [
+    {
+      "from_layer": "mission",
+      "to_layer": "company",
+      "inherited_constraints_count": 2,
+      "narrowed_constraints": [
+        "company scope limited to ystar-company generated/read-model evidence"
+      ],
+      "blocked_or_unknown_constraints": [
+        "commercial runtime metrics are not live and cannot be inferred from raw runtime artifacts"
+      ],
+      "contraction_rule": "child layer may narrow parent Y* but may not remove disabled safety flags"
+    },
+    {
+      "from_layer": "company",
+      "to_layer": "milestone",
+      "inherited_constraints_count": 1,
+      "narrowed_constraints": [
+        "milestone output must be JSON-schema-like, deterministic, and validator-friendly"
+      ],
+      "blocked_or_unknown_constraints": [
+        "production Pre-U adapter and live action-field semantics remain unresolved"
+      ],
+      "contraction_rule": "child layer may narrow parent Y* but may not remove disabled safety flags"
+    },
+    {
+      "from_layer": "milestone",
+      "to_layer": "session",
+      "inherited_constraints_count": 1,
+      "narrowed_constraints": [
+        "session may only write L5.1 artifacts and read-model summaries"
+      ],
+      "blocked_or_unknown_constraints": [
+        "no Y-star-gov import or validator call is authorized in this session"
+      ],
+      "contraction_rule": "child layer may narrow parent Y* but may not remove disabled safety flags"
+    },
+    {
+      "from_layer": "session",
+      "to_layer": "task",
+      "inherited_constraints_count": 1,
+      "narrowed_constraints": [
+        "task is limited to source/docs/schema-like generated outputs and tests"
+      ],
+      "blocked_or_unknown_constraints": [
+        "direct action-field executor evidence remains weak"
+      ],
+      "contraction_rule": "child layer may narrow parent Y* but may not remove disabled safety flags"
+    },
+    {
+      "from_layer": "task",
+      "to_layer": "action",
+      "inherited_constraints_count": 1,
+      "narrowed_constraints": [
+        "action may only become a Pre-U-like packet candidate"
+      ],
+      "blocked_or_unknown_constraints": [
+        "action-field execution not implemented",
+        "production Pre-U adapter not implemented",
+        "live hook output forbidden"
+      ],
+      "contraction_rule": "child layer may narrow parent Y* but may not remove disabled safety flags"
+    }
+  ],
+  "safety_flag_invariant": {
+    "live_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false
+  }
+}

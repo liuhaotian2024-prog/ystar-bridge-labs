@@ -1,0 +1,39 @@
+{
+  "schema_name": "ystar.projection_to_pre_u_packet_adapter.pre_u_adapter_mapping",
+  "schema_version": "v0",
+  "mapping_id": "pre-u-adapter-mapping-001",
+  "mappings": [
+    {
+      "from": "action_level_y_star",
+      "to": "declared_Y_star",
+      "status": "deterministically_mapped"
+    },
+    {
+      "from": "xt_observation_summary",
+      "to": "Xt",
+      "status": "deterministically_mapped"
+    },
+    {
+      "from": "candidate_action_context",
+      "to": "candidate_U",
+      "status": "deterministically_mapped"
+    },
+    {
+      "from": "governance_policy_summary",
+      "to": "governance_expectations",
+      "status": "deterministically_mapped"
+    },
+    {
+      "from": "projection_trace ids",
+      "to": "trace_refs",
+      "status": "deterministically_mapped"
+    },
+    {
+      "from": "safety flags",
+      "to": "execution_boundary",
+      "status": "deterministically_mapped"
+    }
+  ],
+  "not_mapped_to_live_validator": true,
+  "calls_y_star_gov_now": false
+}

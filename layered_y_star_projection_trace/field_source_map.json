@@ -1,0 +1,235 @@
+{
+  "schema_name": "ystar.layered_y_star_projection_trace.field_source_map",
+  "schema_version": "v0",
+  "map_id": "field-source-map-001",
+  "field_sources": [
+    {
+      "field_concept": "field_alignment",
+      "current_status": "discovered",
+      "source_assets": [
+        "ffa-0001",
+        "ffa-0003",
+        "ffa-0004",
+        "ffa-0005",
+        "ffa-0006",
+        "ffa-0007",
+        "ffa-0009",
+        "ffa-0010",
+        "ffa-0014",
+        "ffa-0015",
+        "ffa-0018",
+        "ffa-0019"
+      ],
+      "used_by_layers": [
+        "mission",
+        "task"
+      ],
+      "confidence_class": "concept_reference_only",
+      "merge_notes": "Merge as deterministic alignment metadata, not semantic truth scoring."
+    },
+    {
+      "field_concept": "mission_field",
+      "current_status": "discovered",
+      "source_assets": [
+        "ffa-0001",
+        "ffa-0006",
+        "ffa-0007",
+        "ffa-0009",
+        "ffa-0010",
+        "ffa-0014",
+        "ffa-0015",
+        "ffa-0018",
+        "ffa-0019",
+        "ffa-0020",
+        "ffa-0021",
+        "ffa-0022"
+      ],
+      "used_by_layers": [
+        "mission",
+        "company"
+      ],
+      "confidence_class": "concept_reference_only",
+      "merge_notes": "Use old mission-field language to define mission-level Y* projection contracts."
+    },
+    {
+      "field_concept": "role_field",
+      "current_status": "discovered",
+      "source_assets": [
+        "ffa-0001",
+        "ffa-0003",
+        "ffa-0005",
+        "ffa-0007",
+        "ffa-0012",
+        "ffa-0017",
+        "ffa-0018",
+        "ffa-0019",
+        "ffa-0020",
+        "ffa-0021",
+        "ffa-0022",
+        "ffa-0023"
+      ],
+      "used_by_layers": [
+        "session",
+        "task"
+      ],
+      "confidence_class": "concept_reference_only",
+      "merge_notes": "Preserve role-scope alignment ideas, but rewrite any DB-backed seeders."
+    },
+    {
+      "field_concept": "observation_field",
+      "current_status": "discovered",
+      "source_assets": [
+        "ffa-0003",
+        "ffa-0007",
+        "ffa-0020",
+        "ffa-0027",
+        "ffa-0028",
+        "ffa-0030",
+        "ffa-0032",
+        "ffa-0033",
+        "ffa-0036",
+        "ffa-0038",
+        "ffa-0042",
+        "ffa-0069"
+      ],
+      "used_by_layers": [
+        "company",
+        "milestone"
+      ],
+      "confidence_class": "concept_reference_only",
+      "merge_notes": "Connect to deep Xt observation through generated/read-model evidence only."
+    },
+    {
+      "field_concept": "Y_star_projection",
+      "current_status": "discovered",
+      "source_assets": [
+        "ffa-0001",
+        "ffa-0003",
+        "ffa-0005",
+        "ffa-0006",
+        "ffa-0007",
+        "ffa-0009",
+        "ffa-0010",
+        "ffa-0012",
+        "ffa-0014",
+        "ffa-0015",
+        "ffa-0017",
+        "ffa-0018"
+      ],
+      "used_by_layers": [
+        "mission",
+        "company",
+        "milestone",
+        "session",
+        "task",
+        "action"
+      ],
+      "confidence_class": "wrapped_archaeology_asset",
+      "merge_notes": "Promote layered mission-to-action Y* projection as the core L5 harness."
+    },
+    {
+      "field_concept": "contract_projection",
+      "current_status": "discovered",
+      "source_assets": [
+        "ffa-0001",
+        "ffa-0003",
+        "ffa-0005",
+        "ffa-0006",
+        "ffa-0007",
+        "ffa-0009",
+        "ffa-0011",
+        "ffa-0012",
+        "ffa-0013",
+        "ffa-0018",
+        "ffa-0019",
+        "ffa-0020"
+      ],
+      "used_by_layers": [
+        "task",
+        "action"
+      ],
+      "confidence_class": "wrapped_archaeology_asset",
+      "merge_notes": "Convert scope/contract ideas into explicit projection contracts."
+    },
+    {
+      "field_concept": "residual_feedback",
+      "current_status": "discovered",
+      "source_assets": [
+        "ffa-0003",
+        "ffa-0004",
+        "ffa-0006",
+        "ffa-0011",
+        "ffa-0013",
+        "ffa-0018",
+        "ffa-0019",
+        "ffa-0020",
+        "ffa-0021",
+        "ffa-0022",
+        "ffa-0023",
+        "ffa-0024"
+      ],
+      "used_by_layers": [
+        "action"
+      ],
+      "confidence_class": "concept_reference_only",
+      "merge_notes": "Reuse residual delta concepts only through dry-run CIEU-compatible events."
+    },
+    {
+      "field_concept": "counterfactual_pre_u",
+      "current_status": "discovered",
+      "source_assets": [
+        "ffa-0002",
+        "ffa-0003",
+        "ffa-0004",
+        "ffa-0005",
+        "ffa-0006",
+        "ffa-0007",
+        "ffa-0008",
+        "ffa-0011",
+        "ffa-0012",
+        "ffa-0013",
+        "ffa-0015",
+        "ffa-0016"
+      ],
+      "used_by_layers": [
+        "action"
+      ],
+      "confidence_class": "wrapped_archaeology_asset",
+      "merge_notes": "Route projections into candidate_U and selected_U packet fields."
+    },
+    {
+      "field_concept": "learning_feedback",
+      "current_status": "discovered",
+      "source_assets": [
+        "ffa-0001",
+        "ffa-0004",
+        "ffa-0008",
+        "ffa-0011",
+        "ffa-0012",
+        "ffa-0013",
+        "ffa-0014",
+        "ffa-0015",
+        "ffa-0016",
+        "ffa-0017",
+        "ffa-0018",
+        "ffa-0019"
+      ],
+      "used_by_layers": [
+        "action"
+      ],
+      "confidence_class": "concept_reference_only",
+      "merge_notes": "Keep as review-gated learning candidate design; no brain or memory writeback."
+    },
+    {
+      "field_concept": "action_field",
+      "current_status": "not_found",
+      "source_assets": [],
+      "used_by_layers": [
+        "action"
+      ],
+      "confidence_class": "unresolved_gap",
+      "merge_notes": "No direct archaeology evidence found; keep as an L5 design gap."
+    }
+  ],
+  "live_enabled": false
+}

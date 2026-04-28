@@ -1,0 +1,70 @@
+{
+  "schema_name": "ystar.projection_to_pre_u_packet_adapter.pre_u_packet_candidate",
+  "schema_version": "v0",
+  "packet_id": "pre-u-packet-candidate-from-projection-001",
+  "adapter_status": "candidate_only_not_production_ready",
+  "declared_Y_star": {
+    "Y_star_id": "action-y-star-pre-u-candidate-v0",
+    "statement": "Prepare a future Pre-U packet candidate from the task-level projection; do not authorize or execute action.",
+    "candidate_action_context": "prepare a Pre-U packet candidate from action-level projection without invoking a live validator"
+  },
+  "Xt": {
+    "source_kind": "generated_read_model_summary",
+    "current_phase": "L4.7 deterministic mission dashboard refresh",
+    "company_operating_state": "mission_bounded_local_readonly_dry_run",
+    "known_capabilities": [
+      "dry-run governance stack exists",
+      "legacy assets are triaged before absorption",
+      "generated summaries can be observed safely"
+    ],
+    "safe_observations": [
+      "console read-model summaries",
+      "live readiness and boundary summaries",
+      "CIEU boundary summaries",
+      "autonomy inventory and work-cycle summaries",
+      "legacy triage summaries"
+    ],
+    "blocked_actions": [
+      "scheduler remains disabled",
+      "daemon remains disabled",
+      "live and external actions remain disabled",
+      "CIEU persistence, brain writeback, and memory ingestion remain disabled"
+    ]
+  },
+  "candidate_U": {
+    "candidate_action_context": "prepare a Pre-U packet candidate from action-level projection without invoking a live validator",
+    "execution_mode": "dry_run_projection_only",
+    "live_action_requested": false,
+    "external_action_requested": false
+  },
+  "governance_expectations": {
+    "pre_u_required": true,
+    "y_star_gov_required_for_future_validation": true,
+    "local_projection_harness_may_not_call_live_hooks": true,
+    "cieu_event_policy": "fixture_only_no_persistence"
+  },
+  "trace_refs": [
+    "layered_y_star_projection_trace/layered_projection_trace.json#projection-layer-action-v0",
+    "layered_y_star_projection_trace/contraction_map.json",
+    "layered_y_star_projection_trace/unresolved_gap_map.json"
+  ],
+  "execution_boundary": {
+    "live_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false
+  },
+  "required_future_validation": [
+    "Y-star-gov Pre-U validation",
+    "operator review before live enablement",
+    "review-gated learning queue before memory changes"
+  ],
+  "production_ready": false,
+  "real_action_executed": false,
+  "external_action_executed": false
+}

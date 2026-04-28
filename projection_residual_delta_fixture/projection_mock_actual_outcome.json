@@ -1,0 +1,13 @@
+{
+  "schema_name": "ystar.projection_residual_delta_fixture.mock_actual_outcome",
+  "schema_version": "v0",
+  "actual_id": "projection-mock-actual-outcome-001",
+  "synthetic_dry_run_only": true,
+  "actual_outcome": [
+    "projection artifacts generated",
+    "adapter candidate generated without validator call",
+    "residual fixture generated without persistence"
+  ],
+  "real_action_executed": false,
+  "external_action_executed": false
+}

@@ -65,6 +65,7 @@
     "console_read_model/generated/recurring_loop_summary.json",
     "console_read_model/generated/manual_tick_summary.json",
     "console_read_model/generated/field_functional_summary.json",
+    "console_read_model/generated/mission_projection_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "required_field_functional_archaeology_files": [
@@ -88,6 +89,30 @@
     "field_functional_archaeology/generated/field_functional_gap_report.md",
     "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
     "field_functional_archaeology/generated/field_functional_archaeology_report.md"
+  ],
+  "required_mission_field_projection_files": [
+    "mission_field_projection_contract/README.md",
+    "mission_field_projection_contract/tools/build_mission_field_projection_harness.py",
+    "mission_field_projection_contract/projection_contract_v0.json",
+    "mission_field_projection_contract/projection_input_fixture.json",
+    "mission_field_projection_contract/projection_policy_v0.json",
+    "mission_field_projection_contract/projection_contract_summary.json",
+    "mission_field_projection_contract/projection_contract_report.md",
+    "layered_y_star_projection_trace/layered_projection_trace.json",
+    "layered_y_star_projection_trace/layered_projection_trace.md",
+    "layered_y_star_projection_trace/field_source_map.json",
+    "layered_y_star_projection_trace/contraction_map.json",
+    "layered_y_star_projection_trace/unresolved_gap_map.json",
+    "layered_y_star_projection_trace/projection_trace_summary.json",
+    "projection_to_pre_u_packet_adapter/pre_u_packet_candidate.json",
+    "projection_to_pre_u_packet_adapter/pre_u_adapter_mapping.json",
+    "projection_to_pre_u_packet_adapter/pre_u_adapter_gap_report.md",
+    "projection_to_pre_u_packet_adapter/pre_u_adapter_summary.json",
+    "projection_residual_delta_fixture/projection_predicted_outcome.json",
+    "projection_residual_delta_fixture/projection_mock_actual_outcome.json",
+    "projection_residual_delta_fixture/projection_residual_delta_fixture.json",
+    "projection_residual_delta_fixture/projection_residual_delta_summary.json",
+    "projection_residual_delta_fixture/projection_residual_delta_report.md"
   ],
   "required_mission_dashboard_refresh_loop_files": [
     "mission_dashboard_refresh_loop/README.md",

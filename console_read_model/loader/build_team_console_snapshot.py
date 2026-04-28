@@ -48,6 +48,7 @@ CURATED_SOURCES = [
     "recurring_observation_loop_contract/generated/recurring_loop_readiness_summary.json",
     "manual_recurring_observation_tick_runner/generated/manual_tick_runner_readiness_summary.json",
     "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
+    "mission_field_projection_contract/projection_contract_summary.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -1526,6 +1527,82 @@ def build_field_functional_summary(field_summary: dict[str, Any] | None) -> dict
     }
 
 
+def build_mission_projection_summary(projection_summary: dict[str, Any] | None) -> dict[str, Any]:
+    if not projection_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.mission_projection_summary",
+            "schema_version": "v0",
+            "mission_field_projection_harness_defined": False,
+            "l5_1_projection_contract_defined": False,
+            "layered_projection_trace_generated": False,
+            "pre_u_adapter_candidate_generated": False,
+            "residual_delta_fixture_generated": False,
+            "action_layer_projection_only": True,
+            "action_field_execution_implemented": False,
+            "ready_for_L5_2_deep_xt_observation_model": False,
+            "live_execution_enabled": False,
+            "external_action_enabled": False,
+            "network_enabled": False,
+            "scheduler_enabled": False,
+            "daemon_enabled": False,
+            "cieu_persistence_enabled": False,
+            "brain_writeback_enabled": False,
+            "memory_ingestion_enabled": False,
+            "candidate_auto_approval_enabled": False,
+            "next_required_milestone": "L5.2 Deep Xt Observation Model v0",
+            "generated_summary": "mission_field_projection_contract/projection_contract_summary.json",
+            "warning": "Mission field projection harness has not been generated yet.",
+        }
+    return {
+        "schema_name": "ystar.console_read_model.generated.mission_projection_summary",
+        "schema_version": "v0",
+        "mission_field_projection_harness_defined": projection_summary.get(
+            "mission_field_projection_harness_defined"
+        ),
+        "l5_1_projection_contract_defined": projection_summary.get(
+            "l5_1_projection_contract_defined"
+        ),
+        "layered_projection_trace_generated": projection_summary.get(
+            "layered_projection_trace_generated"
+        ),
+        "pre_u_adapter_candidate_generated": projection_summary.get(
+            "pre_u_adapter_candidate_generated"
+        ),
+        "residual_delta_fixture_generated": projection_summary.get(
+            "residual_delta_fixture_generated"
+        ),
+        "projection_layers": projection_summary.get("projection_layers", []),
+        "action_layer_projection_only": projection_summary.get("action_layer_projection_only"),
+        "action_field_execution_implemented": projection_summary.get(
+            "action_field_execution_implemented"
+        ),
+        "ready_for_L5_2_deep_xt_observation_model": projection_summary.get(
+            "ready_for_L5_2_deep_xt_observation_model"
+        ),
+        "live_execution_enabled": projection_summary.get("live_execution_enabled"),
+        "external_action_enabled": projection_summary.get("external_action_enabled"),
+        "network_enabled": projection_summary.get("network_enabled"),
+        "scheduler_enabled": projection_summary.get("scheduler_enabled"),
+        "daemon_enabled": projection_summary.get("daemon_enabled"),
+        "cieu_persistence_enabled": projection_summary.get("cieu_persistence_enabled"),
+        "brain_writeback_enabled": projection_summary.get("brain_writeback_enabled"),
+        "memory_ingestion_enabled": projection_summary.get("memory_ingestion_enabled"),
+        "candidate_auto_approval_enabled": projection_summary.get(
+            "candidate_auto_approval_enabled"
+        ),
+        "next_required_milestone": projection_summary.get("next_required_milestone"),
+        "generated_summary": "mission_field_projection_contract/projection_contract_summary.json",
+        "generated_contract": projection_summary.get("generated_contract"),
+        "generated_trace": projection_summary.get("generated_trace"),
+        "generated_pre_u_candidate": projection_summary.get("generated_pre_u_candidate"),
+        "generated_residual_delta": projection_summary.get("generated_residual_delta"),
+        "warning": projection_summary.get(
+            "warning",
+            "Mission projection harness is dry-run only and does not execute action-field semantics.",
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -1636,6 +1713,10 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "field_functional_archaeology/generated/field_functional_archaeology_summary.json",
         files_read,
     )
+    mission_projection_generated_summary = load_optional_json(
+        "mission_field_projection_contract/projection_contract_summary.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -1659,6 +1740,9 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     recurring_loop_summary = build_recurring_loop_summary(recurring_loop_generated_summary)
     manual_tick_summary = build_manual_tick_summary(manual_tick_generated_summary)
     field_functional_summary = build_field_functional_summary(field_functional_generated_summary)
+    mission_projection_summary = build_mission_projection_summary(
+        mission_projection_generated_summary
+    )
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -1795,6 +1879,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "recurring_loop_summary": recurring_loop_summary,
         "manual_tick_summary": manual_tick_summary,
         "field_functional_summary": field_functional_summary,
+        "mission_projection_summary": mission_projection_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -1995,6 +2080,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/recurring_loop_summary.json",
             "console_read_model/generated/manual_tick_summary.json",
             "console_read_model/generated/field_functional_summary.json",
+            "console_read_model/generated/mission_projection_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -2069,6 +2155,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "observation tick runner outputs. It confirms one manual local tick ran with a receipt while scheduler, daemon, and recurrence stay disabled.\n\n"
         "`field_functional_summary.json` is derived from generated field\n"
         "functional archaeology outputs. It confirms old field-functional work was searched and mapped into a merge plan without executing old code.\n\n"
+        "`mission_projection_summary.json` is derived from the L5.1 mission field\n"
+        "projection harness. It confirms layered Y* projection, a Pre-U packet candidate, and a residual fixture exist while action execution remains disabled.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -2100,6 +2188,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/recurring_loop_summary.json", recurring_loop_summary, generated_files)
     write_json("console_read_model/generated/manual_tick_summary.json", manual_tick_summary, generated_files)
     write_json("console_read_model/generated/field_functional_summary.json", field_functional_summary, generated_files)
+    write_json("console_read_model/generated/mission_projection_summary.json", mission_projection_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -2166,6 +2255,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     recurring_loop = snapshot.get("recurring_loop_summary", {})
     manual_tick = snapshot.get("manual_tick_summary", {})
     field_functional = snapshot.get("field_functional_summary", {})
+    mission_projection = snapshot.get("mission_projection_summary", {})
     lines.extend(
         [
             "",
@@ -2705,6 +2795,31 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- memory_ingestion_enabled: {field_functional.get('memory_ingestion_enabled')}",
             f"- next_required_milestone: {field_functional.get('next_required_milestone')}",
             f"- Warning: {field_functional.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Mission Field Projection Harness",
+            "",
+            f"- mission_field_projection_harness_defined: {mission_projection.get('mission_field_projection_harness_defined')}",
+            f"- l5_1_projection_contract_defined: {mission_projection.get('l5_1_projection_contract_defined')}",
+            f"- layered_projection_trace_generated: {mission_projection.get('layered_projection_trace_generated')}",
+            f"- pre_u_adapter_candidate_generated: {mission_projection.get('pre_u_adapter_candidate_generated')}",
+            f"- residual_delta_fixture_generated: {mission_projection.get('residual_delta_fixture_generated')}",
+            f"- action_layer_projection_only: {mission_projection.get('action_layer_projection_only')}",
+            f"- action_field_execution_implemented: {mission_projection.get('action_field_execution_implemented')}",
+            f"- ready_for_L5_2_deep_xt_observation_model: {mission_projection.get('ready_for_L5_2_deep_xt_observation_model')}",
+            f"- live_execution_enabled: {mission_projection.get('live_execution_enabled')}",
+            f"- external_action_enabled: {mission_projection.get('external_action_enabled')}",
+            f"- network_enabled: {mission_projection.get('network_enabled')}",
+            f"- scheduler_enabled: {mission_projection.get('scheduler_enabled')}",
+            f"- daemon_enabled: {mission_projection.get('daemon_enabled')}",
+            f"- cieu_persistence_enabled: {mission_projection.get('cieu_persistence_enabled')}",
+            f"- brain_writeback_enabled: {mission_projection.get('brain_writeback_enabled')}",
+            f"- memory_ingestion_enabled: {mission_projection.get('memory_ingestion_enabled')}",
+            f"- next_required_milestone: {mission_projection.get('next_required_milestone')}",
+            f"- Warning: {mission_projection.get('warning')}",
         ]
     )
     lines.extend(
