@@ -46,6 +46,7 @@ CURATED_SOURCES = [
     "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
     "mission_dashboard_refresh_loop/generated/refresh_loop_readiness_summary.json",
     "recurring_observation_loop_contract/generated/recurring_loop_readiness_summary.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_runner_readiness_summary.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -1307,6 +1308,149 @@ def build_recurring_loop_summary(recurring_summary: dict[str, Any] | None) -> di
     }
 
 
+def build_manual_tick_summary(manual_summary: dict[str, Any] | None) -> dict[str, Any]:
+    if not manual_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.manual_tick_summary",
+            "schema_version": "v0",
+            "manual_recurring_observation_tick_runner_defined": False,
+            "manual_tick_runner_contract_defined": False,
+            "manual_tick_request_defined": False,
+            "manual_tick_preflight_defined": False,
+            "manual_tick_source_validation_defined": False,
+            "manual_tick_governance_decision_defined": False,
+            "manual_tick_result_defined": False,
+            "manual_tick_dashboard_delta_defined": False,
+            "manual_tick_work_candidates_defined": False,
+            "manual_tick_cieu_event_defined": False,
+            "manual_tick_residual_delta_defined": False,
+            "manual_tick_run_receipt_defined": False,
+            "manual_tick_history_index_defined": False,
+            "manual_tick_next_recommendations_defined": False,
+            "manual_trigger_required": False,
+            "one_tick_per_invocation": False,
+            "total_recorded_ticks": 0,
+            "recurrence_enabled": False,
+            "scheduler_enabled": False,
+            "daemon_enabled": False,
+            "auto_run_enabled": False,
+            "manual_local_run_only": False,
+            "real_action_executed": False,
+            "external_action_executed": False,
+            "live_action_enabled": False,
+            "cieu_persistence_enabled": False,
+            "brain_writeback_enabled": False,
+            "memory_ingestion_enabled": False,
+            "next_required_milestone": "L5.0 Review-Gated Learning Candidate Queue v0",
+            "generated_summary": (
+                "manual_recurring_observation_tick_runner/generated/manual_tick_runner_readiness_summary.json"
+            ),
+            "warning": "Manual recurring observation tick runner has not been generated yet.",
+        }
+    return {
+        "schema_name": "ystar.console_read_model.generated.manual_tick_summary",
+        "schema_version": "v0",
+        "manual_recurring_observation_tick_runner_defined": manual_summary.get(
+            "manual_recurring_observation_tick_runner_defined"
+        ),
+        "manual_tick_runner_contract_defined": manual_summary.get(
+            "manual_tick_runner_contract_defined"
+        ),
+        "manual_tick_request_defined": manual_summary.get("manual_tick_request_defined"),
+        "manual_tick_preflight_defined": manual_summary.get("manual_tick_preflight_defined"),
+        "manual_tick_source_validation_defined": manual_summary.get(
+            "manual_tick_source_validation_defined"
+        ),
+        "manual_tick_governance_decision_defined": manual_summary.get(
+            "manual_tick_governance_decision_defined"
+        ),
+        "manual_tick_result_defined": manual_summary.get("manual_tick_result_defined"),
+        "manual_tick_dashboard_delta_defined": manual_summary.get(
+            "manual_tick_dashboard_delta_defined"
+        ),
+        "manual_tick_work_candidates_defined": manual_summary.get(
+            "manual_tick_work_candidates_defined"
+        ),
+        "manual_tick_cieu_event_defined": manual_summary.get("manual_tick_cieu_event_defined"),
+        "manual_tick_residual_delta_defined": manual_summary.get(
+            "manual_tick_residual_delta_defined"
+        ),
+        "manual_tick_run_receipt_defined": manual_summary.get("manual_tick_run_receipt_defined"),
+        "manual_tick_history_index_defined": manual_summary.get(
+            "manual_tick_history_index_defined"
+        ),
+        "manual_tick_next_recommendations_defined": manual_summary.get(
+            "manual_tick_next_recommendations_defined"
+        ),
+        "manual_trigger_required": manual_summary.get("manual_trigger_required"),
+        "one_tick_per_invocation": manual_summary.get("one_tick_per_invocation"),
+        "total_recorded_ticks": manual_summary.get("total_recorded_ticks"),
+        "mission_bounded_autonomy_supported": manual_summary.get(
+            "mission_bounded_autonomy_supported"
+        ),
+        "founder_sets_mission_agent_team_drives": manual_summary.get(
+            "founder_sets_mission_agent_team_drives"
+        ),
+        "step_by_step_human_prompting_required": manual_summary.get(
+            "step_by_step_human_prompting_required"
+        ),
+        "recurrence_enabled": manual_summary.get("recurrence_enabled"),
+        "scheduler_enabled": manual_summary.get("scheduler_enabled"),
+        "daemon_enabled": manual_summary.get("daemon_enabled"),
+        "auto_run_enabled": manual_summary.get("auto_run_enabled"),
+        "manual_local_run_only": manual_summary.get("manual_local_run_only"),
+        "real_action_executed": manual_summary.get("real_action_executed"),
+        "external_action_executed": manual_summary.get("external_action_executed"),
+        "live_action_enabled": manual_summary.get("live_action_enabled"),
+        "network_enabled": manual_summary.get("network_enabled"),
+        "git_push_enabled": manual_summary.get("git_push_enabled"),
+        "daemon_control_enabled": manual_summary.get("daemon_control_enabled"),
+        "cieu_persistence_enabled": manual_summary.get("cieu_persistence_enabled"),
+        "brain_writeback_enabled": manual_summary.get("brain_writeback_enabled"),
+        "memory_ingestion_enabled": manual_summary.get("memory_ingestion_enabled"),
+        "email_or_external_communication_enabled": manual_summary.get(
+            "email_or_external_communication_enabled"
+        ),
+        "next_required_milestone": manual_summary.get("next_required_milestone"),
+        "generated_summary": manual_summary.get(
+            "generated_summary",
+            "manual_recurring_observation_tick_runner/generated/manual_tick_runner_readiness_summary.json",
+        ),
+        "generated_contract": manual_summary.get(
+            "generated_contract",
+            "manual_recurring_observation_tick_runner/generated/manual_tick_runner_contract.json",
+        ),
+        "generated_request": manual_summary.get(
+            "generated_request",
+            "manual_recurring_observation_tick_runner/generated/manual_tick_request.json",
+        ),
+        "generated_result": manual_summary.get(
+            "generated_result",
+            "manual_recurring_observation_tick_runner/generated/manual_tick_result.json",
+        ),
+        "generated_receipt": manual_summary.get(
+            "generated_receipt",
+            "manual_recurring_observation_tick_runner/generated/manual_tick_run_receipt.json",
+        ),
+        "generated_history": manual_summary.get(
+            "generated_history",
+            "manual_recurring_observation_tick_runner/generated/manual_tick_history_index.json",
+        ),
+        "generated_cieu_event": manual_summary.get(
+            "generated_cieu_event",
+            "manual_recurring_observation_tick_runner/generated/manual_tick_cieu_event.json",
+        ),
+        "generated_residual_delta": manual_summary.get(
+            "generated_residual_delta",
+            "manual_recurring_observation_tick_runner/generated/manual_tick_residual_delta.json",
+        ),
+        "warning": manual_summary.get(
+            "warning",
+            "Manual tick runner executes exactly one local dry-run tick and does not enable recurrence.",
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -1409,6 +1553,10 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "recurring_observation_loop_contract/generated/recurring_loop_readiness_summary.json",
         files_read,
     )
+    manual_tick_generated_summary = load_optional_json(
+        "manual_recurring_observation_tick_runner/generated/manual_tick_runner_readiness_summary.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -1430,6 +1578,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     work_proposal_summary = build_work_proposal_summary(work_proposal_generated_summary)
     dashboard_refresh_summary = build_dashboard_refresh_summary(dashboard_refresh_generated_summary)
     recurring_loop_summary = build_recurring_loop_summary(recurring_loop_generated_summary)
+    manual_tick_summary = build_manual_tick_summary(manual_tick_generated_summary)
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -1528,6 +1677,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Mission dashboard refresh loop exists as manual local dry-run only; governed recurrence is not implemented yet.")
     if "Recurring observation loop contract exists but recurrence, scheduler, daemon, and auto-run remain disabled." not in open_gaps:
         open_gaps.append("Recurring observation loop contract exists but recurrence, scheduler, daemon, and auto-run remain disabled.")
+    if "Manual recurring observation tick runner exists for one-shot local ticks only; no scheduler, daemon, or recurrence is enabled." not in open_gaps:
+        open_gaps.append("Manual recurring observation tick runner exists for one-shot local ticks only; no scheduler, daemon, or recurrence is enabled.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -1560,6 +1711,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "work_proposal_summary": work_proposal_summary,
         "dashboard_refresh_summary": dashboard_refresh_summary,
         "recurring_loop_summary": recurring_loop_summary,
+        "manual_tick_summary": manual_tick_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -1617,6 +1769,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "agent-team work proposal to governed tool invocation summary",
             "mission dashboard refresh loop summary",
             "governed recurring observation loop contract summary",
+            "manual recurring observation tick runner summary",
         ],
         "not_ready": [
             "runtime generator",
@@ -1645,7 +1798,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "enabled live-boundary harness",
             "enabled CIEU runtime event persistence",
             "approved governed action registry",
-            "manual recurring observation tick runner",
+            "review-gated learning candidate queue",
         ],
         "recommended_next_steps": [
             "wire static validator and loader into CI",
@@ -1670,7 +1823,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "route the governed read-only observation tool through the Pre-U bridge",
             "build L4.6 agent team work proposal to governed tool invocation",
             "define L4.8 governed recurring observation loop contract",
-            "build L4.9 manual recurring observation tick runner",
+            "build L5.0 review-gated learning candidate queue",
         ],
         "blockers": [
             "no DB-safe adapter",
@@ -1689,7 +1842,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "legacy assets are triaged but not absorbed",
             "observation loop is read-only and not recurring",
             "recurring observation loop contract is defined but not enabled",
-            "manual recurring observation tick runner is not implemented yet",
+            "review-gated learning candidate queue is not implemented yet",
         ],
         "safety_boundaries": [
             "no DB reads",
@@ -1718,6 +1871,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "agent-team work proposal routing starts from generated observations and remains local read-only dry-run only",
             "mission dashboard refresh loop is manual local dry-run only and uses generated/read-model evidence only",
             "recurring observation loop contract simulates one manual local tick and does not enable recurrence",
+            "manual recurring observation tick runner executes one manual local tick only and does not enable recurrence",
         ],
     }
 
@@ -1751,6 +1905,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/work_proposal_summary.json",
             "console_read_model/generated/dashboard_refresh_summary.json",
             "console_read_model/generated/recurring_loop_summary.json",
+            "console_read_model/generated/manual_tick_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -1821,6 +1976,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "refresh loop outputs. It confirms a manual local refresh loop produced a refreshed dashboard without scheduler or daemon use.\n\n"
         "`recurring_loop_summary.json` is derived from generated recurring observation\n"
         "loop contract outputs. It confirms recurrence is defined but disabled and only one manual local simulated tick exists.\n\n"
+        "`manual_tick_summary.json` is derived from generated manual recurring\n"
+        "observation tick runner outputs. It confirms one manual local tick ran with a receipt while scheduler, daemon, and recurrence stay disabled.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -1850,6 +2007,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/work_proposal_summary.json", work_proposal_summary, generated_files)
     write_json("console_read_model/generated/dashboard_refresh_summary.json", dashboard_refresh_summary, generated_files)
     write_json("console_read_model/generated/recurring_loop_summary.json", recurring_loop_summary, generated_files)
+    write_json("console_read_model/generated/manual_tick_summary.json", manual_tick_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -1914,6 +2072,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     work_proposal = snapshot.get("work_proposal_summary", {})
     dashboard_refresh = snapshot.get("dashboard_refresh_summary", {})
     recurring_loop = snapshot.get("recurring_loop_summary", {})
+    manual_tick = snapshot.get("manual_tick_summary", {})
     lines.extend(
         [
             "",
@@ -2393,6 +2552,41 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- memory_ingestion_enabled: {recurring_loop.get('memory_ingestion_enabled')}",
             f"- next_required_milestone: {recurring_loop.get('next_required_milestone')}",
             f"- Warning: {recurring_loop.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Manual Recurring Observation Tick Runner",
+            "",
+            f"- manual_tick_runner_contract_defined: {manual_tick.get('manual_tick_runner_contract_defined')}",
+            f"- manual_tick_request_defined: {manual_tick.get('manual_tick_request_defined')}",
+            f"- manual_tick_preflight_defined: {manual_tick.get('manual_tick_preflight_defined')}",
+            f"- manual_tick_source_validation_defined: {manual_tick.get('manual_tick_source_validation_defined')}",
+            f"- manual_tick_governance_decision_defined: {manual_tick.get('manual_tick_governance_decision_defined')}",
+            f"- manual_tick_result_defined: {manual_tick.get('manual_tick_result_defined')}",
+            f"- manual_tick_dashboard_delta_defined: {manual_tick.get('manual_tick_dashboard_delta_defined')}",
+            f"- manual_tick_work_candidates_defined: {manual_tick.get('manual_tick_work_candidates_defined')}",
+            f"- manual_tick_cieu_event_defined: {manual_tick.get('manual_tick_cieu_event_defined')}",
+            f"- manual_tick_residual_delta_defined: {manual_tick.get('manual_tick_residual_delta_defined')}",
+            f"- manual_tick_run_receipt_defined: {manual_tick.get('manual_tick_run_receipt_defined')}",
+            f"- manual_tick_history_index_defined: {manual_tick.get('manual_tick_history_index_defined')}",
+            f"- manual_trigger_required: {manual_tick.get('manual_trigger_required')}",
+            f"- one_tick_per_invocation: {manual_tick.get('one_tick_per_invocation')}",
+            f"- total_recorded_ticks: {manual_tick.get('total_recorded_ticks')}",
+            f"- recurrence_enabled: {manual_tick.get('recurrence_enabled')}",
+            f"- scheduler_enabled: {manual_tick.get('scheduler_enabled')}",
+            f"- daemon_enabled: {manual_tick.get('daemon_enabled')}",
+            f"- auto_run_enabled: {manual_tick.get('auto_run_enabled')}",
+            f"- manual_local_run_only: {manual_tick.get('manual_local_run_only')}",
+            f"- real_action_executed: {manual_tick.get('real_action_executed')}",
+            f"- external_action_executed: {manual_tick.get('external_action_executed')}",
+            f"- live_action_enabled: {manual_tick.get('live_action_enabled')}",
+            f"- cieu_persistence_enabled: {manual_tick.get('cieu_persistence_enabled')}",
+            f"- brain_writeback_enabled: {manual_tick.get('brain_writeback_enabled')}",
+            f"- memory_ingestion_enabled: {manual_tick.get('memory_ingestion_enabled')}",
+            f"- next_required_milestone: {manual_tick.get('next_required_milestone')}",
+            f"- Warning: {manual_tick.get('warning')}",
         ]
     )
     lines.extend(

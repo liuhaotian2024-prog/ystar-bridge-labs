@@ -1,0 +1,45 @@
+{
+  "schema_name": "ystar.manual_recurring_observation_tick_runner.manual_tick_result_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "result_id",
+    "request_id",
+    "tick_id",
+    "tick_number",
+    "status",
+    "manual_trigger",
+    "one_tick_per_invocation",
+    "recurrence_enabled",
+    "scheduler_used",
+    "daemon_used",
+    "sources_read",
+    "real_action_executed",
+    "external_action_executed",
+    "live_action_enabled"
+  ],
+  "properties": {
+    "result_id": {
+      "type": "string"
+    },
+    "request_id": {
+      "type": "string"
+    },
+    "tick_id": {
+      "type": "string"
+    },
+    "tick_number": {
+      "type": "integer"
+    },
+    "status": {
+      "type": "string"
+    },
+    "manual_trigger": {
+      "type": "boolean"
+    },
+    "one_tick_per_invocation": {
+      "type": "boolean"
+    }
+  }
+}
+

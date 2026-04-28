@@ -1,0 +1,61 @@
+{
+  "schema_name": "ystar.manual_recurring_observation_tick_runner.generated.manual_tick_cieu_event",
+  "schema_version": "v0",
+  "event_id": "manual-tick-cieu-event-001",
+  "dry_run_only": true,
+  "persistence_enabled": false,
+  "manual_tick_runner_id": "manual_recurring_observation_tick_runner_v0",
+  "request_id": "manual-tick-request-001",
+  "tick_id": "manual-recurring-observation-tick-001",
+  "Xt": {
+    "manual_tick_request_ref": "manual_recurring_observation_tick_runner/generated/manual_tick_request.json",
+    "runner_contract_ref": "manual_recurring_observation_tick_runner/generated/manual_tick_runner_contract.json",
+    "recurring_loop_contract_ref": "recurring_observation_loop_contract/generated/recurring_loop_contract.json"
+  },
+  "U": "manual local one-shot recurring observation tick",
+  "Y_star": "mission-bounded company observes generated evidence and prepares review-gated learning candidates",
+  "predicted_Y_t1": {
+    "manual_tick_result_defined": true,
+    "tick_run_receipt_defined": true,
+    "review_gated_learning_next": true,
+    "scheduler_enabled": false
+  },
+  "predicted_R_t1": {
+    "risk_tier": "low",
+    "requires_curation": true,
+    "persistence_enabled": false
+  },
+  "actual_Y_t1": {
+    "manual_tick_result_defined": true,
+    "dashboard_delta_defined": true,
+    "work_candidates_defined": true
+  },
+  "actual_R_t1": {
+    "real_action_executed": false,
+    "external_action_executed": false,
+    "persistence_enabled": false
+  },
+  "residual_delta": {
+    "summary": "Manual tick matched expected local read-only behavior.",
+    "state_change_level": "meaningful",
+    "unresolved_items": [
+      "review-gated learning candidate queue remains to be built"
+    ]
+  },
+  "evidence_refs": [
+    "manual_recurring_observation_tick_runner/generated/manual_tick_request.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_preflight.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_source_validation.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_governance_decision.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_result.json"
+  ],
+  "write_policy": {
+    "generated_artifact_only": true,
+    "persistent_store_write_allowed": false
+  },
+  "learning_eligibility": false,
+  "curation_required": true,
+  "direct_brain_writeback_allowed": false,
+  "direct_memory_ingestion_allowed": false,
+  "raw_artifact_ingestion_allowed": false
+}

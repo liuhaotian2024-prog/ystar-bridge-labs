@@ -1,0 +1,19 @@
+{
+  "schema_name": "ystar.manual_recurring_observation_tick_runner.generated.manual_tick_history_index",
+  "schema_version": "v0",
+  "history_id": "manual-tick-history-index-001",
+  "manual_tick_runner_id": "manual_recurring_observation_tick_runner_v0",
+  "total_recorded_ticks": 1,
+  "latest_tick_id": "manual-recurring-observation-tick-001",
+  "tick_receipts": [
+    {
+      "tick_id": "manual-recurring-observation-tick-001",
+      "receipt_ref": "manual_recurring_observation_tick_runner/generated/manual_tick_run_receipt.json",
+      "status": "success"
+    }
+  ],
+  "scheduler_enabled": false,
+  "daemon_enabled": false,
+  "recurrence_enabled": false,
+  "notes": "Generated history index records the single manual dry-run tick only."
+}

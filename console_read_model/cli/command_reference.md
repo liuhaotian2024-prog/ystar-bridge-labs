@@ -85,6 +85,10 @@ python3 console_read_model/cli/team_console.py <command>
   simulated tick, CIEU fixture, residual delta, stop/abort and escalation
   conditions, disabled scheduler/live/persistence flags, and the L4.9
   recommendation.
+- `manual-tick`: Prints the generated manual recurring observation tick runner
+  summary: one manual tick request, preflight, source validation, governance
+  decision, tick result, receipt, history index, disabled scheduler/live flags,
+  and the L5.0 recommendation.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

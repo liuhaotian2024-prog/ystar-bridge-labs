@@ -352,6 +352,9 @@ def main() -> int:
     required_recurring_observation_loop_contract_files = expected.get(
         "required_recurring_observation_loop_contract_files", []
     )
+    required_manual_recurring_observation_tick_runner_files = expected.get(
+        "required_manual_recurring_observation_tick_runner_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -482,6 +485,12 @@ def main() -> int:
         check_exists(path, report, "recurring observation loop contract file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "recurring observation loop contract JSON")
+
+    for rel in required_manual_recurring_observation_tick_runner_files:
+        path = ROOT / rel
+        check_exists(path, report, "manual recurring observation tick runner file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "manual recurring observation tick runner JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -2436,6 +2445,108 @@ def main() -> int:
             "L4.9 Manual Recurring Observation Tick Runner v0"
         ):
             report.fail("generated recurring loop summary must point to L4.9 manual tick runner milestone")
+
+    manual_tick = generated_json.get("console_read_model/generated/manual_tick_summary.json")
+    if manual_tick:
+        for field in [
+            "manual_recurring_observation_tick_runner_defined",
+            "manual_tick_runner_contract_defined",
+            "manual_tick_request_defined",
+            "manual_tick_preflight_defined",
+            "manual_tick_source_validation_defined",
+            "manual_tick_governance_decision_defined",
+            "manual_tick_result_defined",
+            "manual_tick_dashboard_delta_defined",
+            "manual_tick_work_candidates_defined",
+            "manual_tick_cieu_event_defined",
+            "manual_tick_residual_delta_defined",
+            "manual_tick_run_receipt_defined",
+            "manual_tick_history_index_defined",
+            "manual_tick_next_recommendations_defined",
+            "manual_trigger_required",
+            "one_tick_per_invocation",
+            "total_recorded_ticks",
+            "mission_bounded_autonomy_supported",
+            "founder_sets_mission_agent_team_drives",
+            "step_by_step_human_prompting_required",
+            "recurrence_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "auto_run_enabled",
+            "manual_local_run_only",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "network_enabled",
+            "git_push_enabled",
+            "daemon_control_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "email_or_external_communication_enabled",
+            "next_required_milestone",
+            "generated_summary",
+            "generated_contract",
+            "generated_request",
+            "generated_result",
+            "generated_receipt",
+            "generated_history",
+            "generated_cieu_event",
+            "generated_residual_delta",
+            "warning",
+        ]:
+            if field in manual_tick:
+                report.pass_(f"generated manual tick summary field present: {field}")
+            else:
+                report.fail(f"generated manual tick summary missing field: {field}")
+        for field in [
+            "manual_recurring_observation_tick_runner_defined",
+            "manual_tick_runner_contract_defined",
+            "manual_tick_request_defined",
+            "manual_tick_preflight_defined",
+            "manual_tick_source_validation_defined",
+            "manual_tick_governance_decision_defined",
+            "manual_tick_result_defined",
+            "manual_tick_dashboard_delta_defined",
+            "manual_tick_work_candidates_defined",
+            "manual_tick_cieu_event_defined",
+            "manual_tick_residual_delta_defined",
+            "manual_tick_run_receipt_defined",
+            "manual_tick_history_index_defined",
+            "manual_tick_next_recommendations_defined",
+            "manual_trigger_required",
+            "one_tick_per_invocation",
+            "mission_bounded_autonomy_supported",
+            "founder_sets_mission_agent_team_drives",
+            "manual_local_run_only",
+        ]:
+            if manual_tick.get(field) is not True:
+                report.fail(f"generated manual tick summary must keep {field}=true")
+        for field in [
+            "step_by_step_human_prompting_required",
+            "recurrence_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "auto_run_enabled",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "network_enabled",
+            "git_push_enabled",
+            "daemon_control_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "email_or_external_communication_enabled",
+        ]:
+            if manual_tick.get(field) is not False:
+                report.fail(f"generated manual tick summary must keep {field}=false")
+        if manual_tick.get("total_recorded_ticks") != 1:
+            report.fail("generated manual tick summary must record exactly one tick")
+        if manual_tick.get("next_required_milestone") != (
+            "L5.0 Review-Gated Learning Candidate Queue v0"
+        ):
+            report.fail("generated manual tick summary must point to L5.0 review-gated learning milestone")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

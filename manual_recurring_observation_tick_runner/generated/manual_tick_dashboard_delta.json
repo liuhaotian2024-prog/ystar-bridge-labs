@@ -1,0 +1,18 @@
+{
+  "schema_name": "ystar.manual_recurring_observation_tick_runner.generated.manual_tick_dashboard_delta",
+  "schema_version": "v0",
+  "delta_id": "manual-tick-dashboard-delta-001",
+  "tick_id": "manual-recurring-observation-tick-001",
+  "previous_dashboard_ref": "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json",
+  "current_dashboard_ref": "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json",
+  "detected_changes": [
+    "manual one-shot tick runner now executes under the L4.8 contract",
+    "tick run receipt and history index are generated",
+    "next step shifts from observation execution to review-gated learning candidate queue"
+  ],
+  "mission_progress_summary": "The company can now manually run one governed recurring observation tick and capture a reviewable dry-run evidence trail without enabling recurrence.",
+  "state_change_level": "meaningful",
+  "requires_review": true,
+  "direct_brain_writeback_allowed": false,
+  "direct_memory_ingestion_allowed": false
+}

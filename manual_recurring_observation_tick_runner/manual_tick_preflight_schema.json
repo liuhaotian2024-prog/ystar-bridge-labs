@@ -1,0 +1,38 @@
+{
+  "schema_name": "ystar.manual_recurring_observation_tick_runner.manual_tick_preflight_schema",
+  "schema_version": "v0",
+  "type": "object",
+  "required": [
+    "preflight_id",
+    "request_id",
+    "contract_loaded",
+    "allowed_sources_loaded",
+    "governance_gate_loaded",
+    "unsafe_request_detected",
+    "preflight_decision"
+  ],
+  "properties": {
+    "preflight_id": {
+      "type": "string"
+    },
+    "request_id": {
+      "type": "string"
+    },
+    "contract_loaded": {
+      "type": "boolean"
+    },
+    "allowed_sources_loaded": {
+      "type": "boolean"
+    },
+    "governance_gate_loaded": {
+      "type": "boolean"
+    },
+    "unsafe_request_detected": {
+      "type": "boolean"
+    },
+    "preflight_decision": {
+      "type": "string"
+    }
+  }
+}
+

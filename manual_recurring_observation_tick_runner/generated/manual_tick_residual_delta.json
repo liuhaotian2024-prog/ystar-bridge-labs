@@ -1,0 +1,20 @@
+{
+  "schema_name": "ystar.manual_recurring_observation_tick_runner.generated.manual_tick_residual_delta",
+  "schema_version": "v0",
+  "delta_id": "manual-tick-residual-delta-001",
+  "event_id": "manual-tick-cieu-event-001",
+  "predicted_vs_actual_summary": "Manual one-shot tick produced the expected dry-run observation trail.",
+  "residual_delta": {
+    "summary": "Manual tick matched expected local read-only behavior.",
+    "state_change_level": "meaningful",
+    "unresolved_items": [
+      "review-gated learning candidate queue remains to be built"
+    ]
+  },
+  "learning_eligibility": false,
+  "curation_required": true,
+  "direct_brain_writeback_allowed": false,
+  "direct_memory_ingestion_allowed": false,
+  "next_review_required": true,
+  "notes": "Residual may inform a future review-gated queue but cannot write memory directly."
+}

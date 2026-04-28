@@ -63,6 +63,7 @@
     "console_read_model/generated/work_proposal_summary.json",
     "console_read_model/generated/dashboard_refresh_summary.json",
     "console_read_model/generated/recurring_loop_summary.json",
+    "console_read_model/generated/manual_tick_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "required_mission_dashboard_refresh_loop_files": [
@@ -119,6 +120,35 @@
     "recurring_observation_loop_contract/generated/manual_enablement_checklist.json",
     "recurring_observation_loop_contract/generated/recurring_loop_readiness_summary.json",
     "recurring_observation_loop_contract/generated/recurring_loop_report.md"
+  ],
+  "required_manual_recurring_observation_tick_runner_files": [
+    "manual_recurring_observation_tick_runner/README.md",
+    "manual_recurring_observation_tick_runner/manual_tick_policy.md",
+    "manual_recurring_observation_tick_runner/manual_tick_request_schema.json",
+    "manual_recurring_observation_tick_runner/manual_tick_preflight_schema.json",
+    "manual_recurring_observation_tick_runner/manual_tick_result_schema.json",
+    "manual_recurring_observation_tick_runner/tick_run_receipt_schema.json",
+    "manual_recurring_observation_tick_runner/tick_history_policy.md",
+    "manual_recurring_observation_tick_runner/scheduler_disabled_policy.md",
+    "manual_recurring_observation_tick_runner/open_gaps.md",
+    "manual_recurring_observation_tick_runner/tools/build_manual_tick_runner.py",
+    "manual_recurring_observation_tick_runner/tools/run_manual_observation_tick.py",
+    "manual_recurring_observation_tick_runner/generated/README.md",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_runner_contract.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_request.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_preflight.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_source_validation.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_governance_decision.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_result.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_dashboard_delta.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_work_candidates.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_cieu_event.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_residual_delta.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_run_receipt.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_history_index.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_next_recommendations.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_runner_readiness_summary.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_runner_report.md"
   ],
   "required_agent_team_work_proposal_files": [
     "agent_team_work_proposal/README.md",

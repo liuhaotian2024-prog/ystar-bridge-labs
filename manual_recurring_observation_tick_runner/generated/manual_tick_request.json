@@ -1,0 +1,20 @@
+{
+  "schema_name": "ystar.manual_recurring_observation_tick_runner.generated.manual_tick_request",
+  "schema_version": "v0",
+  "request_id": "manual-tick-request-001",
+  "requested_by": "operator_or_founder",
+  "request_type": "manual_recurring_observation_tick",
+  "mission_id": "company-autonomy-runtime-mission",
+  "reason": "Run one governed local observation tick under the L4.8 contract and capture a reviewable receipt trail.",
+  "requested_tick_number": 1,
+  "manual_trigger": true,
+  "recurrence_requested": false,
+  "scheduler_requested": false,
+  "daemon_requested": false,
+  "auto_run_requested": false,
+  "live_action_requested": false,
+  "external_action_requested": false,
+  "brain_writeback_requested": false,
+  "memory_ingestion_requested": false,
+  "cieu_persistence_requested": false
+}

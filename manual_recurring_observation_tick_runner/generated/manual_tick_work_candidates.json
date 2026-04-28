@@ -1,0 +1,70 @@
+{
+  "schema_name": "ystar.manual_recurring_observation_tick_runner.generated.manual_tick_work_candidates",
+  "schema_version": "v0",
+  "tick_id": "manual-recurring-observation-tick-001",
+  "candidate_count": 3,
+  "candidates": [
+    {
+      "candidate_id": "manual-tick-work-001",
+      "title": "L5.0 Review-Gated Learning Candidate Queue v0",
+      "recommended_owner_agent": "Maya-Governance",
+      "supporting_agents": [
+        "Samantha-Secretary",
+        "Leo-Kernel",
+        "Aiden-CEO"
+      ],
+      "risk_tier": "medium",
+      "source_evidence_refs": [
+        "manual_recurring_observation_tick_runner/generated/manual_tick_result.json",
+        "manual_recurring_observation_tick_runner/generated/manual_tick_dashboard_delta.json",
+        "manual_recurring_observation_tick_runner/generated/manual_tick_cieu_event.json",
+        "manual_recurring_observation_tick_runner/generated/manual_tick_residual_delta.json"
+      ],
+      "requires_y_star_gov": true,
+      "requires_operator_approval": true,
+      "requires_cieu_event": true,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "rationale": "Manual tick evidence should next become a review-gated learning candidate, not direct memory."
+    },
+    {
+      "candidate_id": "manual-tick-work-002",
+      "title": "Define tick receipt review rubric v0",
+      "recommended_owner_agent": "Samantha-Secretary",
+      "supporting_agents": [
+        "Maya-Governance"
+      ],
+      "risk_tier": "low",
+      "source_evidence_refs": [
+        "manual_recurring_observation_tick_runner/generated/manual_tick_run_receipt.json"
+      ],
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "rationale": "Receipts need deterministic review fields before learning candidates can be queued."
+    },
+    {
+      "candidate_id": "manual-tick-work-003",
+      "title": "Add manual tick regression fixture v0",
+      "recommended_owner_agent": "Ryan-Platform",
+      "supporting_agents": [
+        "Ethan-CTO"
+      ],
+      "risk_tier": "low",
+      "source_evidence_refs": [
+        "manual_recurring_observation_tick_runner/generated/manual_tick_history_index.json"
+      ],
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "rationale": "A stable manual tick fixture protects future recurring-loop changes."
+    }
+  ],
+  "top_candidate": "L5.0 Review-Gated Learning Candidate Queue v0",
+  "live_enabled": false,
+  "external_action_enabled": false
+}

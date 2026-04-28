@@ -1,0 +1,31 @@
+{
+  "schema_name": "ystar.manual_recurring_observation_tick_runner.generated.manual_tick_run_receipt",
+  "schema_version": "v0",
+  "receipt_id": "manual-tick-run-receipt-001",
+  "request_id": "manual-tick-request-001",
+  "tick_id": "manual-recurring-observation-tick-001",
+  "status": "success",
+  "preflight_ref": "manual_recurring_observation_tick_runner/generated/manual_tick_preflight.json",
+  "source_validation_ref": "manual_recurring_observation_tick_runner/generated/manual_tick_source_validation.json",
+  "governance_decision_ref": "manual_recurring_observation_tick_runner/generated/manual_tick_governance_decision.json",
+  "manual_tick_result_ref": "manual_recurring_observation_tick_runner/generated/manual_tick_result.json",
+  "dashboard_delta_ref": "manual_recurring_observation_tick_runner/generated/manual_tick_dashboard_delta.json",
+  "work_candidates_ref": "manual_recurring_observation_tick_runner/generated/manual_tick_work_candidates.json",
+  "cieu_event_ref": "manual_recurring_observation_tick_runner/generated/manual_tick_cieu_event.json",
+  "residual_delta_ref": "manual_recurring_observation_tick_runner/generated/manual_tick_residual_delta.json",
+  "created_artifacts": [
+    "manual_recurring_observation_tick_runner/generated/manual_tick_preflight.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_source_validation.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_governance_decision.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_result.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_dashboard_delta.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_work_candidates.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_cieu_event.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_residual_delta.json"
+  ],
+  "manual_trigger": true,
+  "scheduler_used": false,
+  "daemon_used": false,
+  "real_action_executed": false,
+  "external_action_executed": false
+}

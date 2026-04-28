@@ -1,0 +1,52 @@
+{
+  "schema_name": "ystar.manual_recurring_observation_tick_runner.generated.manual_tick_source_validation",
+  "schema_version": "v0",
+  "validation_id": "manual-tick-source-validation-001",
+  "request_id": "manual-tick-request-001",
+  "sources_checked": 9,
+  "sources_allowed": [
+    {
+      "source_id": "mission-dashboard-refresh",
+      "source_path": "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json"
+    },
+    {
+      "source_id": "mission-dashboard-delta",
+      "source_path": "mission_dashboard_refresh_loop/generated/company_state_delta.json"
+    },
+    {
+      "source_id": "mission-dashboard-backlog",
+      "source_path": "mission_dashboard_refresh_loop/generated/refreshed_autonomous_backlog.json"
+    },
+    {
+      "source_id": "agent-team-work-proposal-summary",
+      "source_path": "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json"
+    },
+    {
+      "source_id": "tool-bridge-readiness-summary",
+      "source_path": "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json"
+    },
+    {
+      "source_id": "readonly-tool-readiness-summary",
+      "source_path": "governed_readonly_observation_tool/generated/tool_readiness_summary.json"
+    },
+    {
+      "source_id": "governed-observation-loop-summary",
+      "source_path": "governed_observation_loop/generated/governed_observation_loop_summary.json"
+    },
+    {
+      "source_id": "legacy-triage-summary",
+      "source_path": "legacy_asset_triage/generated/legacy_asset_triage_summary.json"
+    },
+    {
+      "source_id": "team-console-snapshot",
+      "source_path": "console_read_model/generated/team_console_snapshot.json"
+    }
+  ],
+  "sources_rejected": [],
+  "all_sources_safe": true,
+  "raw_runtime_artifacts_requested": false,
+  "db_or_log_sources_requested": false,
+  "network_sources_requested": false,
+  "credentials_required": false,
+  "validation_decision": "allow"
+}

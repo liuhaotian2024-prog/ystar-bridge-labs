@@ -1,0 +1,118 @@
+{
+  "schema_name": "ystar.manual_recurring_observation_tick_runner.generated.manual_tick_result",
+  "schema_version": "v0",
+  "result_id": "manual-tick-result-001",
+  "request_id": "manual-tick-request-001",
+  "tick_id": "manual-recurring-observation-tick-001",
+  "tick_number": 1,
+  "status": "success",
+  "manual_trigger": true,
+  "one_tick_per_invocation": true,
+  "recurrence_enabled": false,
+  "scheduler_used": false,
+  "daemon_used": false,
+  "sources_read": [
+    "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json",
+    "mission_dashboard_refresh_loop/generated/company_state_delta.json",
+    "mission_dashboard_refresh_loop/generated/refreshed_autonomous_backlog.json",
+    "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
+    "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json",
+    "governed_readonly_observation_tool/generated/tool_readiness_summary.json",
+    "governed_observation_loop/generated/governed_observation_loop_summary.json",
+    "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
+    "console_read_model/generated/team_console_snapshot.json"
+  ],
+  "observed_state_summary": {
+    "source_count": 9,
+    "observed_sources": [
+      {
+        "source_id": "mission-dashboard-refresh",
+        "source_path": "mission_dashboard_refresh_loop/generated/refreshed_mission_dashboard.json",
+        "observed_fields": {}
+      },
+      {
+        "source_id": "mission-dashboard-delta",
+        "source_path": "mission_dashboard_refresh_loop/generated/company_state_delta.json",
+        "observed_fields": {
+          "state_change_level": "meaningful"
+        }
+      },
+      {
+        "source_id": "mission-dashboard-backlog",
+        "source_path": "mission_dashboard_refresh_loop/generated/refreshed_autonomous_backlog.json",
+        "observed_fields": {}
+      },
+      {
+        "source_id": "agent-team-work-proposal-summary",
+        "source_path": "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
+        "observed_fields": {
+          "next_required_milestone": "L4.7 First Mission Dashboard Refresh Loop v0",
+          "mission_bounded_autonomy_supported": true,
+          "agent_team_generated_the_work": true
+        }
+      },
+      {
+        "source_id": "tool-bridge-readiness-summary",
+        "source_path": "governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json",
+        "observed_fields": {
+          "next_required_milestone": "L4.6 Agent Team Work Proposal to Governed Tool Invocation v0",
+          "mission_bounded_autonomy_supported": true,
+          "tool_invoked_through_bridge": true
+        }
+      },
+      {
+        "source_id": "readonly-tool-readiness-summary",
+        "source_path": "governed_readonly_observation_tool/generated/tool_readiness_summary.json",
+        "observed_fields": {
+          "next_required_milestone": "L4.5 Governed Tool Invocation Through Pre-U Bridge v0",
+          "mission_bounded_autonomy_supported": true,
+          "first_governed_tool_wrapper_created": true
+        }
+      },
+      {
+        "source_id": "governed-observation-loop-summary",
+        "source_path": "governed_observation_loop/generated/governed_observation_loop_summary.json",
+        "observed_fields": {
+          "next_required_milestone": "L4.4 First Governed Read-Only Observation Tool Wrapper v0",
+          "mission_bounded_autonomy_supported": true,
+          "read_only_observation_loop_defined": true
+        }
+      },
+      {
+        "source_id": "legacy-triage-summary",
+        "source_path": "legacy_asset_triage/generated/legacy_asset_triage_summary.json",
+        "observed_fields": {
+          "next_required_milestone": "L4.4 First Governed Read-Only Observation Tool Wrapper v0",
+          "assets_scored": 900
+        }
+      },
+      {
+        "source_id": "team-console-snapshot",
+        "source_path": "console_read_model/generated/team_console_snapshot.json",
+        "observed_fields": {}
+      }
+    ],
+    "recurring_contract_loaded": true,
+    "manual_tick_executed": true
+  },
+  "detected_findings": [
+    "Manual one-shot tick completed under the L4.8 recurring observation contract.",
+    "Allowed generated/read-model sources were validated before observation.",
+    "The tick created a receipt and history index while keeping recurrence disabled."
+  ],
+  "safe_opportunities": [
+    "L5.0 Review-Gated Learning Candidate Queue v0",
+    "Use the receipt and residual delta to seed a review-gated learning candidate queue.",
+    "Prepare curated learning review without enabling brain or memory writeback."
+  ],
+  "blocked_risks": [
+    "recurrence remains disabled",
+    "scheduler remains disabled",
+    "daemon remains disabled",
+    "live and external actions remain disabled",
+    "CIEU persistence and writeback remain disabled"
+  ],
+  "real_action_executed": false,
+  "external_action_executed": false,
+  "live_action_enabled": false
+}

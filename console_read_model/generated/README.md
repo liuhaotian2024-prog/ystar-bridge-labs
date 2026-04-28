@@ -69,5 +69,8 @@ refresh loop outputs. It confirms a manual local refresh loop produced a refresh
 `recurring_loop_summary.json` is derived from generated recurring observation
 loop contract outputs. It confirms recurrence is defined but disabled and only one manual local simulated tick exists.
 
+`manual_tick_summary.json` is derived from generated manual recurring
+observation tick runner outputs. It confirms one manual local tick ran with a receipt while scheduler, daemon, and recurrence stay disabled.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

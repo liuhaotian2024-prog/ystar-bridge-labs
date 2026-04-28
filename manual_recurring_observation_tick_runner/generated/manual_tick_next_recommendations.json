@@ -1,0 +1,55 @@
+{
+  "schema_name": "ystar.manual_recurring_observation_tick_runner.generated.manual_tick_next_recommendations",
+  "schema_version": "v0",
+  "recommendation_count": 3,
+  "recommendations": [
+    {
+      "recommendation_id": "manual-tick-next-001",
+      "title": "L5.0 Review-Gated Learning Candidate Queue v0",
+      "recommended_owner_agent": "Maya-Governance",
+      "risk_tier": "medium",
+      "depends_on": [
+        "manual_recurring_observation_tick_runner/generated/manual_tick_run_receipt.json",
+        "manual_recurring_observation_tick_runner/generated/manual_tick_cieu_event.json",
+        "manual_recurring_observation_tick_runner/generated/manual_tick_residual_delta.json"
+      ],
+      "requires_y_star_gov": true,
+      "requires_operator_approval": true,
+      "requires_cieu_event": true,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "rationale": "Manual tick evidence must be reviewed before it can inform learning."
+    },
+    {
+      "recommendation_id": "manual-tick-next-002",
+      "title": "Create tick evidence curation checklist v0",
+      "recommended_owner_agent": "Samantha-Secretary",
+      "risk_tier": "low",
+      "depends_on": [
+        "manual_recurring_observation_tick_runner/generated/manual_tick_residual_delta.json"
+      ],
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "rationale": "A checklist helps distinguish evidence from learning candidates."
+    },
+    {
+      "recommendation_id": "manual-tick-next-003",
+      "title": "Define learning candidate rejection reasons v0",
+      "recommended_owner_agent": "Leo-Kernel",
+      "risk_tier": "low",
+      "depends_on": [
+        "manual_recurring_observation_tick_runner/generated/manual_tick_work_candidates.json"
+      ],
+      "requires_y_star_gov": true,
+      "requires_operator_approval": false,
+      "requires_cieu_event": true,
+      "live_enabled": false,
+      "external_action_enabled": false,
+      "rationale": "Fail-closed rejection reasons are needed before any future candidate queue."
+    }
+  ],
+  "top_recommendation": "L5.0 Review-Gated Learning Candidate Queue v0"
+}

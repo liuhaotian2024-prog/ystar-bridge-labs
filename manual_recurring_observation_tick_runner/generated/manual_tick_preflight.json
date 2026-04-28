@@ -1,0 +1,23 @@
+{
+  "schema_name": "ystar.manual_recurring_observation_tick_runner.generated.manual_tick_preflight",
+  "schema_version": "v0",
+  "preflight_id": "manual-tick-preflight-001",
+  "request_id": "manual-tick-request-001",
+  "contract_loaded": true,
+  "allowed_sources_loaded": true,
+  "governance_gate_loaded": true,
+  "stop_abort_conditions_loaded": true,
+  "escalation_conditions_loaded": true,
+  "scheduler_enabled": false,
+  "daemon_enabled": false,
+  "recurrence_enabled": false,
+  "auto_run_enabled": false,
+  "unsafe_request_detected": false,
+  "preflight_decision": "allow_manual_local_tick",
+  "notes": {
+    "manual_trigger": true,
+    "unsafe_requested_fields": [],
+    "recurring_loop_contract_ref": "recurring_observation_loop_contract/generated/recurring_loop_contract.json",
+    "source_registry_ref": "recurring_observation_loop_contract/generated/allowed_observation_sources.json"
+  }
+}

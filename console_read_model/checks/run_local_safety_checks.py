@@ -138,7 +138,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after recurring observation loop contract",
+        "Build manual recurring observation tick runner",
+        ["python3", "manual_recurring_observation_tick_runner/tools/build_manual_tick_runner.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after manual recurring observation tick runner",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -746,6 +751,76 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "recurring_observation_loop_contract/generated/recurring_loop_readiness_summary.json"],
     ),
     Check(
+        "Compile manual recurring observation tick runner tools",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "manual_recurring_observation_tick_runner/tools/build_manual_tick_runner.py",
+            "manual_recurring_observation_tick_runner/tools/run_manual_observation_tick.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: manual_tick_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/manual_tick_summary.json"],
+    ),
+    Check(
+        "Validate JSON: manual_tick_runner_contract.json",
+        ["python3", "-m", "json.tool", "manual_recurring_observation_tick_runner/generated/manual_tick_runner_contract.json"],
+    ),
+    Check(
+        "Validate JSON: manual_tick_request.json",
+        ["python3", "-m", "json.tool", "manual_recurring_observation_tick_runner/generated/manual_tick_request.json"],
+    ),
+    Check(
+        "Validate JSON: manual_tick_preflight.json",
+        ["python3", "-m", "json.tool", "manual_recurring_observation_tick_runner/generated/manual_tick_preflight.json"],
+    ),
+    Check(
+        "Validate JSON: manual_tick_source_validation.json",
+        ["python3", "-m", "json.tool", "manual_recurring_observation_tick_runner/generated/manual_tick_source_validation.json"],
+    ),
+    Check(
+        "Validate JSON: manual_tick_governance_decision.json",
+        ["python3", "-m", "json.tool", "manual_recurring_observation_tick_runner/generated/manual_tick_governance_decision.json"],
+    ),
+    Check(
+        "Validate JSON: manual_tick_result.json",
+        ["python3", "-m", "json.tool", "manual_recurring_observation_tick_runner/generated/manual_tick_result.json"],
+    ),
+    Check(
+        "Validate JSON: manual_tick_dashboard_delta.json",
+        ["python3", "-m", "json.tool", "manual_recurring_observation_tick_runner/generated/manual_tick_dashboard_delta.json"],
+    ),
+    Check(
+        "Validate JSON: manual_tick_work_candidates.json",
+        ["python3", "-m", "json.tool", "manual_recurring_observation_tick_runner/generated/manual_tick_work_candidates.json"],
+    ),
+    Check(
+        "Validate JSON: manual_tick_cieu_event.json",
+        ["python3", "-m", "json.tool", "manual_recurring_observation_tick_runner/generated/manual_tick_cieu_event.json"],
+    ),
+    Check(
+        "Validate JSON: manual_tick_residual_delta.json",
+        ["python3", "-m", "json.tool", "manual_recurring_observation_tick_runner/generated/manual_tick_residual_delta.json"],
+    ),
+    Check(
+        "Validate JSON: manual_tick_run_receipt.json",
+        ["python3", "-m", "json.tool", "manual_recurring_observation_tick_runner/generated/manual_tick_run_receipt.json"],
+    ),
+    Check(
+        "Validate JSON: manual_tick_history_index.json",
+        ["python3", "-m", "json.tool", "manual_recurring_observation_tick_runner/generated/manual_tick_history_index.json"],
+    ),
+    Check(
+        "Validate JSON: manual_tick_next_recommendations.json",
+        ["python3", "-m", "json.tool", "manual_recurring_observation_tick_runner/generated/manual_tick_next_recommendations.json"],
+    ),
+    Check(
+        "Validate JSON: manual_tick_runner_readiness_summary.json",
+        ["python3", "-m", "json.tool", "manual_recurring_observation_tick_runner/generated/manual_tick_runner_readiness_summary.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -916,6 +991,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: recurring-loop",
         ["python3", "console_read_model/cli/team_console.py", "recurring-loop"],
+    ),
+    Check(
+        "CLI smoke: manual-tick",
+        ["python3", "console_read_model/cli/team_console.py", "manual-tick"],
     ),
     Check(
         "CLI smoke: sources",

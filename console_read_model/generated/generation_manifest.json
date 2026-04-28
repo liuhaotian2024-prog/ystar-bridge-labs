@@ -28,6 +28,7 @@
     "console_read_model/generated/work_proposal_summary.json",
     "console_read_model/generated/dashboard_refresh_summary.json",
     "console_read_model/generated/recurring_loop_summary.json",
+    "console_read_model/generated/manual_tick_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "source_files": [
@@ -59,6 +60,7 @@
     "agent_team_work_proposal/generated/agent_team_work_proposal_summary.json",
     "mission_dashboard_refresh_loop/generated/refresh_loop_readiness_summary.json",
     "recurring_observation_loop_contract/generated/recurring_loop_readiness_summary.json",
+    "manual_recurring_observation_tick_runner/generated/manual_tick_runner_readiness_summary.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",

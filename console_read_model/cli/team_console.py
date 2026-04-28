@@ -36,6 +36,7 @@ TOOL_BRIDGE = "console_read_model/generated/tool_bridge_summary.json"
 WORK_PROPOSAL = "console_read_model/generated/work_proposal_summary.json"
 DASHBOARD_REFRESH = "console_read_model/generated/dashboard_refresh_summary.json"
 RECURRING_LOOP = "console_read_model/generated/recurring_loop_summary.json"
+MANUAL_TICK = "console_read_model/generated/manual_tick_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -55,7 +56,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -111,6 +112,7 @@ def load_all() -> dict[str, Any]:
         "work_proposal": load_json(WORK_PROPOSAL),
         "dashboard_refresh": load_json(DASHBOARD_REFRESH),
         "recurring_loop": load_json(RECURRING_LOOP),
+        "manual_tick": load_json(MANUAL_TICK),
     }
 
 
@@ -746,6 +748,43 @@ def cmd_recurring_loop(data: dict[str, Any]) -> None:
     print(f"warning: {loop.get('warning')}")
 
 
+def cmd_manual_tick(data: dict[str, Any]) -> None:
+    tick = data["manual_tick"]
+    print("# Manual Recurring Observation Tick Runner")
+    print()
+    print(f"manual tick runner contract defined: {tick.get('manual_tick_runner_contract_defined')}")
+    print(f"manual tick request defined: {tick.get('manual_tick_request_defined')}")
+    print(f"preflight defined: {tick.get('manual_tick_preflight_defined')}")
+    print(f"source validation defined: {tick.get('manual_tick_source_validation_defined')}")
+    print(f"governance decision defined: {tick.get('manual_tick_governance_decision_defined')}")
+    print(f"manual tick result defined: {tick.get('manual_tick_result_defined')}")
+    print(f"dashboard delta defined: {tick.get('manual_tick_dashboard_delta_defined')}")
+    print(f"work candidates defined: {tick.get('manual_tick_work_candidates_defined')}")
+    print(f"CIEU event defined: {tick.get('manual_tick_cieu_event_defined')}")
+    print(f"residual delta defined: {tick.get('manual_tick_residual_delta_defined')}")
+    print(f"tick run receipt defined: {tick.get('manual_tick_run_receipt_defined')}")
+    print(f"tick history index defined: {tick.get('manual_tick_history_index_defined')}")
+    print(f"manual trigger required: {tick.get('manual_trigger_required')}")
+    print(f"one tick per invocation: {tick.get('one_tick_per_invocation')}")
+    print(f"total recorded ticks: {tick.get('total_recorded_ticks')}")
+    print(f"recurrence enabled: {tick.get('recurrence_enabled')}")
+    print(f"scheduler enabled: {tick.get('scheduler_enabled')}")
+    print(f"daemon enabled: {tick.get('daemon_enabled')}")
+    print(f"auto-run enabled: {tick.get('auto_run_enabled')}")
+    print(f"manual local run only: {tick.get('manual_local_run_only')}")
+    print(f"real action executed: {tick.get('real_action_executed')}")
+    print(f"live action enabled: {tick.get('live_action_enabled')}")
+    print(f"external action executed: {tick.get('external_action_executed')}")
+    print(f"CIEU persistence enabled: {tick.get('cieu_persistence_enabled')}")
+    print(f"brain writeback enabled: {tick.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {tick.get('memory_ingestion_enabled')}")
+    print(f"next required milestone: {tick.get('next_required_milestone')}")
+    print(f"generated_summary: {tick.get('generated_summary')}")
+    print(f"generated_result: {tick.get('generated_result')}")
+    print(f"generated_receipt: {tick.get('generated_receipt')}")
+    print(f"warning: {tick.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -888,6 +927,14 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print(f"- {recurring_loop.get('generated_summary')}")
         print(f"- {recurring_loop.get('generated_contract')}")
         print(f"- {recurring_loop.get('generated_tick')}")
+    manual_tick = data.get("manual_tick", {})
+    if manual_tick:
+        print()
+        print("Manual recurring observation tick runner:")
+        print(f"- {manual_tick.get('generated_summary')}")
+        print(f"- {manual_tick.get('generated_contract')}")
+        print(f"- {manual_tick.get('generated_result')}")
+        print(f"- {manual_tick.get('generated_receipt')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -937,6 +984,7 @@ def cmd_validate_local() -> int:
         WORK_PROPOSAL,
         DASHBOARD_REFRESH,
         RECURRING_LOOP,
+        MANUAL_TICK,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -992,6 +1040,8 @@ def cmd_validate_local() -> int:
             failures.append("dashboard_refresh_summary missing from team console snapshot")
         if "recurring_loop_summary" not in snapshot:
             failures.append("recurring_loop_summary missing from team console snapshot")
+        if "manual_tick_summary" not in snapshot:
+            failures.append("manual_tick_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -1830,6 +1880,83 @@ def cmd_validate_local() -> int:
         if recurring_loop.get("next_required_milestone") != "L4.9 Manual Recurring Observation Tick Runner v0":
             failures.append("recurring loop summary must point to L4.9 manual tick runner milestone")
 
+    manual_tick = loaded.get(MANUAL_TICK)
+    if manual_tick:
+        required_fields = [
+            "manual_recurring_observation_tick_runner_defined",
+            "manual_tick_runner_contract_defined",
+            "manual_tick_request_defined",
+            "manual_tick_preflight_defined",
+            "manual_tick_source_validation_defined",
+            "manual_tick_governance_decision_defined",
+            "manual_tick_result_defined",
+            "manual_tick_dashboard_delta_defined",
+            "manual_tick_work_candidates_defined",
+            "manual_tick_cieu_event_defined",
+            "manual_tick_residual_delta_defined",
+            "manual_tick_run_receipt_defined",
+            "manual_tick_history_index_defined",
+            "manual_tick_next_recommendations_defined",
+            "manual_trigger_required",
+            "one_tick_per_invocation",
+            "total_recorded_ticks",
+            "recurrence_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "auto_run_enabled",
+            "manual_local_run_only",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "next_required_milestone",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in manual_tick:
+                failures.append(f"manual tick summary missing field: {field}")
+        for field in [
+            "manual_recurring_observation_tick_runner_defined",
+            "manual_tick_runner_contract_defined",
+            "manual_tick_request_defined",
+            "manual_tick_preflight_defined",
+            "manual_tick_source_validation_defined",
+            "manual_tick_governance_decision_defined",
+            "manual_tick_result_defined",
+            "manual_tick_dashboard_delta_defined",
+            "manual_tick_work_candidates_defined",
+            "manual_tick_cieu_event_defined",
+            "manual_tick_residual_delta_defined",
+            "manual_tick_run_receipt_defined",
+            "manual_tick_history_index_defined",
+            "manual_tick_next_recommendations_defined",
+            "manual_trigger_required",
+            "one_tick_per_invocation",
+            "manual_local_run_only",
+        ]:
+            if manual_tick.get(field) is not True:
+                failures.append(f"manual tick summary must keep {field}=true")
+        for field in [
+            "recurrence_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "auto_run_enabled",
+            "real_action_executed",
+            "external_action_executed",
+            "live_action_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+        ]:
+            if manual_tick.get(field) is not False:
+                failures.append(f"manual tick summary must keep {field}=false")
+        if manual_tick.get("total_recorded_ticks") != 1:
+            failures.append("manual tick summary must record exactly one tick")
+        if manual_tick.get("next_required_milestone") != "L5.0 Review-Gated Learning Candidate Queue v0":
+            failures.append("manual tick summary must point to L5.0 review-gated learning milestone")
+
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
     print(f"Required agents: {', '.join(REQUIRED_AGENTS)}")
@@ -1913,6 +2040,8 @@ def main(argv: list[str]) -> int:
         cmd_dashboard_refresh(data)
     elif command == "recurring-loop":
         cmd_recurring_loop(data)
+    elif command == "manual-tick":
+        cmd_manual_tick(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

@@ -1,0 +1,19 @@
+{
+  "schema_name": "ystar.manual_recurring_observation_tick_runner.generated.manual_tick_governance_decision",
+  "schema_version": "v0",
+  "decision_id": "manual-tick-governance-decision-001",
+  "request_id": "manual-tick-request-001",
+  "decision": "allow_manual_local_tick",
+  "decision_reason": "Request is manual, local, read-only, generated-source only, and all recurring/live/writeback flags are disabled.",
+  "allowed_only_as_manual_local_readonly_tick": true,
+  "recurrence_enabled": false,
+  "scheduler_enabled": false,
+  "daemon_enabled": false,
+  "live_action_allowed": false,
+  "external_action_allowed": false,
+  "cieu_persistence_allowed": false,
+  "brain_writeback_allowed": false,
+  "memory_ingestion_allowed": false,
+  "operator_approval_required_for_scheduler_enablement": true,
+  "notes": "Decision is deterministic local dry-run gating, not Y-star-gov runtime mutation."
+}
