@@ -23,19 +23,19 @@
       "case_id": "case_001",
       "validation_status": "structurally_ready_for_internal_review",
       "semantic_truth_scoring_used": false,
-      "market_success_score_used": false
+      "market_success_authority_used": false
     },
     {
       "case_id": "case_002",
       "validation_status": "structurally_ready_for_internal_review",
       "semantic_truth_scoring_used": false,
-      "market_success_score_used": false
+      "market_success_authority_used": false
     },
     {
       "case_id": "case_003",
       "validation_status": "structurally_ready_for_internal_review",
       "semantic_truth_scoring_used": false,
-      "market_success_score_used": false
+      "market_success_authority_used": false
     }
   ],
   "safety_flags": {

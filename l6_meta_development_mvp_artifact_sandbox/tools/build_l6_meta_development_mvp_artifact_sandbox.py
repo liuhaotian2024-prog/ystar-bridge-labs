@@ -917,7 +917,7 @@ def main() -> int:
                         "case_id": case["case_id"],
                         "validation_status": "structurally_ready_for_internal_review",
                         "semantic_truth_scoring_used": False,
-                        "market_success_score_used": False,
+                        "market_success_authority_used": False,
                     }
                     for case in cases
                 ],

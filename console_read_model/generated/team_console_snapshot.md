@@ -113,8 +113,8 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 143
-- Unsafe artifacts count: 115
+- Artifacts classified: 156
+- Unsafe artifacts count: 118
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -122,9 +122,10 @@ Not ready:
   - DAEMON_STATE: 4
   - DB_CORE: 1
   - DB_SIDECARE: 6
+  - FRAMEWORK_FILE: 5
   - LOG_RUNTIME: 30
-  - PYCACHE: 41
-  - UNKNOWN_OR_NON_RUNTIME: 28
+  - PYCACHE: 44
+  - UNKNOWN_OR_NON_RUNTIME: 33
   - UNKNOWN_RUNTIME_ARTIFACT: 10
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
 - Warning: Console displays only curated path-level quarantine summary. No artifact contents were read.
@@ -150,10 +151,10 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 143
-- Artifacts with disposition: 143
+- Total artifacts: 156
+- Artifacts with disposition: 156
 - Safe-mined to review queue: 0
-- Forbidden direct read count: 115
+- Forbidden direct read count: 118
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
   - deferred_requires_bounded_log_adapter: 30
@@ -161,10 +162,10 @@ Not ready:
   - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
-  - ignored_generated_cache: 41
-  - ignored_or_non_runtime: 28
+  - ignored_generated_cache: 44
+  - ignored_or_non_runtime: 38
 - Evidence scoring status:
-  - not_started: 143
+  - not_started: 156
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -538,7 +539,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 4779
+- assets_scanned: 4866
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -906,6 +907,24 @@ Not ready:
 - ready_for_l6_revenue_opportunity_execution: False
 - next_required_milestone: L6.1 Meta-Development MVP Artifact Sandbox v0
 - Warning: L6.0 is design-only. External observation, network, publication, payment, revenue execution, MCP execution, persistence, writeback, and hard-coded opportunity catalogs remain blocked.
+
+## L6.1 MVP Artifact Sandbox
+
+- l6_1_mvp_artifact_sandbox_defined: True
+- selected_hypotheses_count: 3
+- generated_case_count: 3
+- internal_artifacts_generated: True
+- review_gate_generated: True
+- externalization_boundary_generated: True
+- strategic_residual_loop_generated: True
+- ready_for_l6_2_external_observation_boundary_design: True
+- ready_for_external_execution: False
+- ready_for_publication: False
+- ready_for_outreach: False
+- ready_for_payment: False
+- ready_for_revenue_execution: False
+- next_recommended_milestone: L6.2 Governed External Observation Boundary v0
+- Warning: L6.1 generated internal MVP proof artifacts only. Publication, outreach, payment, network, revenue, MCP, canonical mutation, writeback, and direct Y* mutation remain blocked.
 
 ## Governance Boundary
 

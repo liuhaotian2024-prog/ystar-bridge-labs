@@ -44,6 +44,7 @@
     "console_read_model/generated/real_release_simulation_summary.json",
     "console_read_model/generated/live_boundary_no_go_summary.json",
     "console_read_model/generated/l6_meta_development_summary.json",
+    "console_read_model/generated/l6_mvp_artifact_sandbox_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "source_files": [
@@ -202,6 +203,14 @@
     "governed_meta_development_experiment_portfolio/experiment_portfolio_summary.json",
     "strategic_residual_meta_learning_loop/strategic_residual_summary.json",
     "l6_meta_development_design_readiness/l6_meta_development_design_readiness.json",
+    "l6_meta_development_mvp_artifact_sandbox/l6_1_summary.json",
+    "l6_mvp_artifact_input_selector/selected_hypotheses_for_mvp_artifacts.json",
+    "selected_mvp_artifact_cases/selected_case_index.json",
+    "mvp_artifact_evidence_validation/mvp_artifact_validation_matrix.json",
+    "mvp_artifact_review_gate/review_gate_contract.json",
+    "mvp_artifact_externalization_boundary/externalization_blocker.json",
+    "l6_mvp_artifact_strategic_residual_loop/l6_1_strategic_residual_delta.json",
+    "l6_mvp_artifact_sandbox_readiness/l6_1_readiness_assessment.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",

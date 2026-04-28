@@ -117,5 +117,9 @@ no-go framework. It confirms live domains, no-go invariants, L5 evidence, blocke
 `l6_meta_development_summary.json` is derived from the L6.0 meta-development
 generative selection engine design. It confirms self-modeling, asset-field, world-value, conversion-operator, hypothesis, conversion-physics, MVP proof, portfolio, and strategic residual artifacts while external, network, publication, payment, and revenue execution remain blocked.
 
+`l6_mvp_artifact_sandbox_summary.json` is derived from the L6.1 MVP
+artifact sandbox. It confirms selected internal proof artifacts, review gates,
+validation criteria, externalization blockers, and residual artifacts while publication, outreach, payment, network, revenue, MCP, canonical mutation, and writeback remain blocked.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.
