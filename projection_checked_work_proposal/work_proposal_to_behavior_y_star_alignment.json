@@ -1,0 +1,68 @@
+{
+  "schema_name": "ystar.projection_checked_work_proposal.behavior_alignment",
+  "schema_version": "v0",
+  "alignment_id": "work-proposal-to-behavior-y-star-alignment-001",
+  "proposal_id": "projection-checked-work-proposal-001",
+  "behavior_y_star_id": "behavior-y-star-projection-checked-cycle-v0",
+  "inherited_mission_alignment": "proposal preserves mission-bounded autonomy and review-gated learning",
+  "behavior_intent_alignment": "proposal prepares a projection-checked work cycle candidate without executing behavior",
+  "allowed_boundary_alignment": {
+    "allowed_boundary": [
+      "local dry-run artifact generation",
+      "read-model observation",
+      "Pre-U packet candidate preparation",
+      "review-queue-only learning stub"
+    ],
+    "proposal_within_allowed_boundary": true
+  },
+  "forbidden_boundary_check": {
+    "forbidden_boundary": [
+      "live behavior execution",
+      "external communication",
+      "network access",
+      "scheduler or daemon activation",
+      "brain or memory writeback",
+      "CIEU persistence",
+      "candidate auto-approval",
+      "direct behavior execution"
+    ],
+    "forbidden_operations_requested": [],
+    "passed": true
+  },
+  "required_pre_u_validation_check": {
+    "required_pre_u_validation": true,
+    "pre_u_packet_candidate_required": true,
+    "passed": true
+  },
+  "residual_learning_boundary_check": {
+    "review_queue_only": true,
+    "direct_brain_writeback_allowed": false,
+    "direct_memory_ingestion_allowed": false,
+    "candidate_auto_approval_allowed": false,
+    "passed": true
+  },
+  "unresolved_alignment_gaps": [
+    "future production Y-star-gov validation is still required before execution",
+    "real behavior outcome cannot exist in a dry-run cycle"
+  ],
+  "decision": "projection_gate_passed_for_dry_run",
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  },
+  "evidence_refs": [
+    "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+    "mission_to_behavior_y_star_projection/mission_to_behavior_projection_trace.json"
+  ]
+}

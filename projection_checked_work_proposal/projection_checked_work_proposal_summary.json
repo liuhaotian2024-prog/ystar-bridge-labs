@@ -1,0 +1,14 @@
+{
+  "schema_name": "ystar.projection_checked_work_proposal.summary",
+  "schema_version": "v0",
+  "projection_checked_work_intent_defined": true,
+  "autonomous_work_proposal_candidate_defined": true,
+  "work_proposal_to_behavior_y_star_alignment_defined": true,
+  "projection_gate_decision_defined": true,
+  "projection_gate_decision": "projection_gate_passed_for_dry_run",
+  "internal_dry_run_only": true,
+  "live_execution_enabled": false,
+  "behavior_execution_enabled": false,
+  "external_action_enabled": false,
+  "network_enabled": false
+}

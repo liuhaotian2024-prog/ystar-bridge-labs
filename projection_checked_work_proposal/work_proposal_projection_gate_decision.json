@@ -1,0 +1,56 @@
+{
+  "schema_name": "ystar.projection_checked_work_proposal.gate_decision",
+  "schema_version": "v0",
+  "gate_name": "behavior-y-star-projection-gate-v0",
+  "gate_decision_id": "projection-work-gate-decision-001",
+  "proposal_id": "projection-checked-work-proposal-001",
+  "decision": "projection_gate_passed_for_dry_run",
+  "allowed_scope": [
+    "internal deterministic dry-run artifact generation",
+    "Pre-U packet candidate preparation",
+    "CIEU-like fixture generation",
+    "review-queue-only learning candidate creation"
+  ],
+  "denied_scope": [
+    "reading raw DB/WAL/SHM/log contents",
+    "reading active-agent marker contents",
+    "running live hooks",
+    "running daemon/scheduler/runtime scripts",
+    "external network/API calls",
+    "GitHub issue/PR creation",
+    "git push",
+    "CIEU DB writes",
+    "brain writeback",
+    "memory ingestion",
+    "candidate approval",
+    "L6 revenue opportunity discovery",
+    "semantic truth scoring"
+  ],
+  "required_next_validation": [
+    "dry-run Pre-U-like gate decision",
+    "future Y-star-gov validation before any behavior execution",
+    "human or governance review before learning is applied"
+  ],
+  "live_execution_authorized": false,
+  "behavior_execution_authorized": false,
+  "dry_run_only": true,
+  "evidence_refs": [
+    "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+    "mission_to_behavior_y_star_projection/mission_to_behavior_projection_trace.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

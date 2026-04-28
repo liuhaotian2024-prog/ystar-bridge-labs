@@ -1,0 +1,47 @@
+{
+  "schema_name": "ystar.projection_checked_work_proposal.work_intent",
+  "schema_version": "v0",
+  "work_intent_id": "projection-checked-work-intent-001",
+  "source_behavior_y_star_id": "behavior-y-star-projection-checked-cycle-v0",
+  "declared_work_intent": "Refresh mission dashboard state through an internal dry-run work cycle only after checking the proposal against behavior-level Y*.",
+  "required_behavior_y_star_alignment": "Prepare a projection-checked autonomous work-cycle candidate for future Pre-U validation.",
+  "expected_safe_result": "A projection-checked cycle summary and next-cycle recommendation.",
+  "explicit_non_goals": [
+    "live behavior execution",
+    "external action",
+    "network access",
+    "brain or memory writeback",
+    "CIEU persistence",
+    "revenue opportunity discovery"
+  ],
+  "forbidden_work_patterns": [
+    "live behavior execution",
+    "external communication",
+    "network access",
+    "scheduler or daemon activation",
+    "brain or memory writeback",
+    "CIEU persistence",
+    "candidate auto-approval",
+    "direct behavior execution"
+  ],
+  "evidence_refs": [
+    "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+    "mission_to_behavior_y_star_projection/mission_to_behavior_projection_trace.json",
+    "field_projection_cycle_readiness/field_projection_cycle_readiness.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

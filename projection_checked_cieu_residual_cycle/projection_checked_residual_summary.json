@@ -1,0 +1,12 @@
+{
+  "schema_name": "ystar.projection_checked_cieu_residual_cycle.summary",
+  "schema_version": "v0",
+  "cieu_like_event_fixture_generated": true,
+  "predicted_outcome_generated": true,
+  "mock_actual_outcome_generated": true,
+  "residual_delta_generated": true,
+  "event_mode": "dry_run_fixture",
+  "persistence_enabled": false,
+  "db_write_performed": false,
+  "semantic_truth_scoring_used": false
+}

@@ -1,0 +1,48 @@
+{
+  "schema_name": "ystar.projection_checked_cieu_residual_cycle.event_fixture",
+  "schema_version": "v0",
+  "event_id": "projection-checked-cieu-event-fixture-001",
+  "X_t": {
+    "projection_context_ref": "mission_to_behavior_y_star_projection/projection_context_field_fixture.json",
+    "behavior_y_star_ref": "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json"
+  },
+  "U_t": {
+    "work_proposal_ref": "projection_checked_work_proposal/autonomous_work_proposal_candidate.json",
+    "pre_u_packet_candidate_ref": "behavior_projection_pre_u_cycle_gate/cycle_pre_u_packet_candidate.json"
+  },
+  "Y_star_t": {
+    "behavior_y_star_ref": "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+    "declared_behavior_y_star": "Prepare a projection-checked autonomous work-cycle candidate for future Pre-U validation."
+  },
+  "Y_t_plus_1": {
+    "mock_actual_outcome_ref": "projection_checked_cieu_residual_cycle/projection_checked_mock_actual_outcome.json",
+    "dry_run_mock_only": true
+  },
+  "R_t_plus_1": {
+    "residual_mode": "deterministic_structural_residual",
+    "semantic_truth_scoring_used": false
+  },
+  "event_mode": "dry_run_fixture",
+  "persistence_enabled": false,
+  "db_write_performed": false,
+  "evidence_refs": [
+    "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+    "cycle-pre-u-packet-candidate-001",
+    "dry-run-work-result-001"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

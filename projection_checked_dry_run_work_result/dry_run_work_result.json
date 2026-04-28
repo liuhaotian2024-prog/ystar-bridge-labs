@@ -1,0 +1,47 @@
+{
+  "schema_name": "ystar.projection_checked_dry_run_work_result.result",
+  "schema_version": "v0",
+  "result_id": "dry-run-work-result-001",
+  "source_plan_id": "dry-run-work-execution-plan-001",
+  "source_work_proposal_id": "projection-checked-work-proposal-001",
+  "execution_mode": "dry_run_static_fixture",
+  "real_execution_performed": false,
+  "live_tool_called": false,
+  "external_action_performed": false,
+  "network_called": false,
+  "db_log_runtime_content_read": false,
+  "generated_outputs": [
+    "projection-checked cycle contract and run artifact",
+    "projection-checked work proposal and gate",
+    "dry-run Pre-U packet candidate and gate decision",
+    "CIEU-like event fixture",
+    "structural residual delta",
+    "review-only learning candidate"
+  ],
+  "observed_safe_result": "The cycle consumed behavior-level Y* as a governance object and produced only local dry-run fixtures.",
+  "evidence_refs": [
+    "projection_checked_work_proposal/work_proposal_projection_gate_decision.json",
+    "behavior_projection_pre_u_cycle_gate/cycle_pre_u_gate_decision.json",
+    "projection_checked_dry_run_work_result/dry_run_work_execution_plan.json"
+  ],
+  "unresolved_gaps": [
+    "production Y-star-gov validation is not yet invoked",
+    "real behavior execution remains blocked",
+    "learning candidate is not applied"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

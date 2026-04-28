@@ -1,0 +1,13 @@
+{
+  "schema_name": "ystar.projection_checked_learning_review_queue.summary",
+  "schema_version": "v0",
+  "projection_checked_learning_candidate_generated": true,
+  "review_queue_entry_generated": true,
+  "policy_update_candidate_stub_generated": true,
+  "eligible_for_review_queue": true,
+  "approved": false,
+  "applied": false,
+  "eligible_for_direct_brain_writeback": false,
+  "eligible_for_direct_memory_ingestion": false,
+  "eligible_for_candidate_auto_approval": false
+}

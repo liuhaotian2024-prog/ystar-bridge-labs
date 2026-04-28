@@ -1,0 +1,30 @@
+{
+  "schema_name": "ystar.projection_checked_dry_run_work_result.receipt",
+  "schema_version": "v0",
+  "receipt_id": "dry-run-work-receipt-001",
+  "result_id": "dry-run-work-result-001",
+  "no_live_behavior_execution": true,
+  "no_external_action": true,
+  "no_network": true,
+  "no_scheduler_or_daemon": true,
+  "no_cieu_persistence": true,
+  "no_brain_writeback": true,
+  "no_memory_ingestion": true,
+  "no_candidate_approval": true,
+  "real_execution_performed": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

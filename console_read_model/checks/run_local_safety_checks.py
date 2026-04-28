@@ -158,7 +158,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after field projection core",
+        "Build projection-checked autonomous work cycle",
+        ["python3", "projection_checked_autonomous_work_cycle/tools/build_projection_checked_autonomous_work_cycle.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after projection cycle",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -1091,6 +1096,99 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "field_projection_cycle_readiness/l5_3_recommended_next_step.json"],
     ),
     Check(
+        "Compile projection-checked autonomous work cycle builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "projection_checked_autonomous_work_cycle/tools/build_projection_checked_autonomous_work_cycle.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: projection_cycle_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/projection_cycle_summary.json"],
+    ),
+    Check(
+        "Validate JSON: projection_checked_cycle_contract.json",
+        ["python3", "-m", "json.tool", "projection_checked_autonomous_work_cycle/projection_checked_cycle_contract.json"],
+    ),
+    Check(
+        "Validate JSON: projection_checked_cycle_input_fixture.json",
+        ["python3", "-m", "json.tool", "projection_checked_autonomous_work_cycle/projection_checked_cycle_input_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: projection_checked_cycle_run.json",
+        ["python3", "-m", "json.tool", "projection_checked_autonomous_work_cycle/projection_checked_cycle_run.json"],
+    ),
+    Check(
+        "Validate JSON: projection_checked_cycle_summary.json",
+        ["python3", "-m", "json.tool", "projection_checked_autonomous_work_cycle/projection_checked_cycle_summary.json"],
+    ),
+    Check(
+        "Validate JSON: projection_checked_work_intent.json",
+        ["python3", "-m", "json.tool", "projection_checked_work_proposal/projection_checked_work_intent.json"],
+    ),
+    Check(
+        "Validate JSON: autonomous_work_proposal_candidate.json",
+        ["python3", "-m", "json.tool", "projection_checked_work_proposal/autonomous_work_proposal_candidate.json"],
+    ),
+    Check(
+        "Validate JSON: work_proposal_to_behavior_y_star_alignment.json",
+        ["python3", "-m", "json.tool", "projection_checked_work_proposal/work_proposal_to_behavior_y_star_alignment.json"],
+    ),
+    Check(
+        "Validate JSON: work_proposal_projection_gate_decision.json",
+        ["python3", "-m", "json.tool", "projection_checked_work_proposal/work_proposal_projection_gate_decision.json"],
+    ),
+    Check(
+        "Validate JSON: cycle_pre_u_packet_candidate.json",
+        ["python3", "-m", "json.tool", "behavior_projection_pre_u_cycle_gate/cycle_pre_u_packet_candidate.json"],
+    ),
+    Check(
+        "Validate JSON: cycle_pre_u_mapping_from_behavior_y_star.json",
+        ["python3", "-m", "json.tool", "behavior_projection_pre_u_cycle_gate/cycle_pre_u_mapping_from_behavior_y_star.json"],
+    ),
+    Check(
+        "Validate JSON: cycle_pre_u_gate_decision.json",
+        ["python3", "-m", "json.tool", "behavior_projection_pre_u_cycle_gate/cycle_pre_u_gate_decision.json"],
+    ),
+    Check(
+        "Validate JSON: cycle_pre_u_gate_summary.json",
+        ["python3", "-m", "json.tool", "behavior_projection_pre_u_cycle_gate/cycle_pre_u_gate_summary.json"],
+    ),
+    Check(
+        "Validate JSON: dry_run_work_execution_plan.json",
+        ["python3", "-m", "json.tool", "projection_checked_dry_run_work_result/dry_run_work_execution_plan.json"],
+    ),
+    Check(
+        "Validate JSON: dry_run_work_result.json",
+        ["python3", "-m", "json.tool", "projection_checked_dry_run_work_result/dry_run_work_result.json"],
+    ),
+    Check(
+        "Validate JSON: dry_run_work_receipt.json",
+        ["python3", "-m", "json.tool", "projection_checked_dry_run_work_result/dry_run_work_receipt.json"],
+    ),
+    Check(
+        "Validate JSON: projection_checked_cieu_event_fixture.json",
+        ["python3", "-m", "json.tool", "projection_checked_cieu_residual_cycle/projection_checked_cieu_event_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: projection_checked_residual_delta.json",
+        ["python3", "-m", "json.tool", "projection_checked_cieu_residual_cycle/projection_checked_residual_delta.json"],
+    ),
+    Check(
+        "Validate JSON: projection_checked_learning_candidate.json",
+        ["python3", "-m", "json.tool", "projection_checked_learning_review_queue/projection_checked_learning_candidate.json"],
+    ),
+    Check(
+        "Validate JSON: projection_checked_cycle_readiness.json",
+        ["python3", "-m", "json.tool", "projection_checked_cycle_readiness/projection_checked_cycle_readiness.json"],
+    ),
+    Check(
+        "Validate JSON: l5_4_recommended_next_step.json",
+        ["python3", "-m", "json.tool", "projection_checked_cycle_readiness/l5_4_recommended_next_step.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -1277,6 +1375,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: field-projection",
         ["python3", "console_read_model/cli/team_console.py", "field-projection"],
+    ),
+    Check(
+        "CLI smoke: projection-cycle",
+        ["python3", "console_read_model/cli/team_console.py", "projection-cycle"],
     ),
     Check(
         "CLI smoke: sources",

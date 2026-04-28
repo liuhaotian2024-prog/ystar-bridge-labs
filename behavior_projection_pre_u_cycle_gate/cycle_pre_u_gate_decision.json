@@ -1,0 +1,50 @@
+{
+  "schema_name": "ystar.behavior_projection_pre_u_cycle_gate.decision",
+  "schema_version": "v0",
+  "gate_decision_id": "cycle-pre-u-gate-decision-001",
+  "packet_candidate_id": "cycle-pre-u-packet-candidate-001",
+  "decision": "allow_dry_run_only",
+  "decision_reason": "The packet candidate is internal, deterministic, projection-checked, and requests only dry-run fixture generation.",
+  "allowed_scope": [
+    "dry-run static result fixture",
+    "CIEU-like fixture",
+    "structural residual delta",
+    "review-only learning candidate"
+  ],
+  "denied_scope": [
+    "reading raw DB/WAL/SHM/log contents",
+    "reading active-agent marker contents",
+    "running live hooks",
+    "running daemon/scheduler/runtime scripts",
+    "external network/API calls",
+    "GitHub issue/PR creation",
+    "git push",
+    "CIEU DB writes",
+    "brain writeback",
+    "memory ingestion",
+    "candidate approval",
+    "L6 revenue opportunity discovery",
+    "semantic truth scoring"
+  ],
+  "dry_run_only": true,
+  "production_ready": false,
+  "live_execution_authorized": false,
+  "behavior_execution_authorized": false,
+  "external_action_authorized": false,
+  "requires_y_star_gov_validation_before_execution": true,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

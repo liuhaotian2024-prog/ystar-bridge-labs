@@ -54,6 +54,13 @@ CURATED_SOURCES = [
     "behavior_y_star_to_pre_u_candidate/pre_u_candidate_summary.json",
     "projection_behavior_residual_loop_fixture/projection_residual_loop_summary.json",
     "field_projection_cycle_readiness/field_projection_cycle_readiness.json",
+    "projection_checked_autonomous_work_cycle/projection_checked_cycle_summary.json",
+    "projection_checked_work_proposal/projection_checked_work_proposal_summary.json",
+    "behavior_projection_pre_u_cycle_gate/cycle_pre_u_gate_summary.json",
+    "projection_checked_dry_run_work_result/dry_run_work_result_summary.json",
+    "projection_checked_cieu_residual_cycle/projection_checked_residual_summary.json",
+    "projection_checked_learning_review_queue/projection_learning_review_summary.json",
+    "projection_checked_cycle_readiness/projection_checked_cycle_readiness.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -1710,6 +1717,119 @@ def build_field_projection_summary(
     }
 
 
+def build_projection_cycle_summary(
+    cycle_summary: dict[str, Any] | None,
+    work_summary: dict[str, Any] | None,
+    pre_u_summary: dict[str, Any] | None,
+    result_summary: dict[str, Any] | None,
+    residual_summary: dict[str, Any] | None,
+    learning_summary: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.projection_cycle_summary",
+            "schema_version": "v0",
+            "projection_checked_autonomous_work_cycle_defined": False,
+            "behavior_y_star_consumed_by_cycle": False,
+            "work_proposal_checked_against_behavior_y_star": False,
+            "pre_u_packet_candidate_generated": False,
+            "dry_run_gate_decision_generated": False,
+            "dry_run_result_generated": False,
+            "cieu_like_event_fixture_generated": False,
+            "residual_delta_generated": False,
+            "learning_review_candidate_generated_but_not_approved": False,
+            "ready_for_l5_4_review_gated_learning_loop": False,
+            "live_execution_enabled": False,
+            "behavior_execution_enabled": False,
+            "external_action_enabled": False,
+            "network_enabled": False,
+            "scheduler_enabled": False,
+            "daemon_enabled": False,
+            "cieu_persistence_enabled": False,
+            "brain_writeback_enabled": False,
+            "memory_ingestion_enabled": False,
+            "next_required_milestone": "L5.4 Review-Gated Learning Loop v0",
+            "warning": "Projection-checked autonomous work cycle has not been generated yet.",
+        }
+    cycle_summary = cycle_summary or {}
+    work_summary = work_summary or {}
+    pre_u_summary = pre_u_summary or {}
+    result_summary = result_summary or {}
+    residual_summary = residual_summary or {}
+    learning_summary = learning_summary or {}
+    return {
+        "schema_name": "ystar.console_read_model.generated.projection_cycle_summary",
+        "schema_version": "v0",
+        "projection_checked_autonomous_work_cycle_defined": cycle_summary.get(
+            "projection_checked_autonomous_work_cycle_defined"
+        ),
+        "behavior_y_star_consumed_by_cycle": readiness_summary.get(
+            "behavior_y_star_consumed_by_cycle"
+        ),
+        "work_proposal_checked_against_behavior_y_star": readiness_summary.get(
+            "work_proposal_checked_against_behavior_y_star"
+        ),
+        "pre_u_packet_candidate_generated": readiness_summary.get(
+            "pre_u_packet_candidate_generated"
+        ),
+        "dry_run_gate_decision_generated": readiness_summary.get(
+            "dry_run_gate_decision_generated"
+        ),
+        "dry_run_result_generated": readiness_summary.get("dry_run_result_generated"),
+        "cieu_like_event_fixture_generated": readiness_summary.get(
+            "cieu_like_event_fixture_generated"
+        ),
+        "residual_delta_generated": readiness_summary.get("residual_delta_generated"),
+        "learning_review_candidate_generated_but_not_approved": learning_summary.get(
+            "projection_checked_learning_candidate_generated"
+        )
+        and learning_summary.get("approved") is False,
+        "projection_gate_decision": work_summary.get("projection_gate_decision"),
+        "cycle_pre_u_gate_decision": pre_u_summary.get("cycle_pre_u_gate_decision"),
+        "dry_run_only": pre_u_summary.get("dry_run_only"),
+        "pre_u_production_ready": pre_u_summary.get("production_ready"),
+        "real_execution_performed": result_summary.get("real_execution_performed"),
+        "event_mode": residual_summary.get("event_mode"),
+        "db_write_performed": residual_summary.get("db_write_performed"),
+        "live_execution_still_blocked": readiness_summary.get("live_execution_still_blocked"),
+        "writeback_still_blocked": readiness_summary.get("writeback_still_blocked"),
+        "external_action_still_blocked": readiness_summary.get("external_action_still_blocked"),
+        "ready_for_l5_4_review_gated_learning_loop": readiness_summary.get(
+            "ready_for_l5_4_review_gated_learning_loop"
+        ),
+        "live_execution_enabled": readiness_summary.get("live_execution_enabled"),
+        "behavior_execution_enabled": readiness_summary.get("behavior_execution_enabled"),
+        "external_action_enabled": readiness_summary.get("external_action_enabled"),
+        "network_enabled": readiness_summary.get("network_enabled"),
+        "scheduler_enabled": readiness_summary.get("scheduler_enabled"),
+        "daemon_enabled": readiness_summary.get("daemon_enabled"),
+        "cieu_persistence_enabled": readiness_summary.get("cieu_persistence_enabled"),
+        "brain_writeback_enabled": readiness_summary.get("brain_writeback_enabled"),
+        "memory_ingestion_enabled": readiness_summary.get("memory_ingestion_enabled"),
+        "candidate_auto_approval_enabled": readiness_summary.get("candidate_auto_approval_enabled"),
+        "semantic_truth_scoring_enabled": readiness_summary.get("semantic_truth_scoring_enabled"),
+        "raw_runtime_artifact_reading_enabled": readiness_summary.get(
+            "raw_runtime_artifact_reading_enabled"
+        ),
+        "revenue_opportunity_discovery_enabled": readiness_summary.get(
+            "revenue_opportunity_discovery_enabled"
+        ),
+        "next_required_milestone": readiness_summary.get("next_required_milestone"),
+        "generated_cycle_summary": "projection_checked_autonomous_work_cycle/projection_checked_cycle_summary.json",
+        "generated_work_summary": "projection_checked_work_proposal/projection_checked_work_proposal_summary.json",
+        "generated_pre_u_summary": "behavior_projection_pre_u_cycle_gate/cycle_pre_u_gate_summary.json",
+        "generated_result_summary": "projection_checked_dry_run_work_result/dry_run_work_result_summary.json",
+        "generated_residual_summary": "projection_checked_cieu_residual_cycle/projection_checked_residual_summary.json",
+        "generated_learning_summary": "projection_checked_learning_review_queue/projection_learning_review_summary.json",
+        "generated_readiness": "projection_checked_cycle_readiness/projection_checked_cycle_readiness.json",
+        "warning": (
+            "L5.3 is a projection-checked dry-run cycle. It consumes behavior-level Y* "
+            "as a gate but does not execute behavior or apply learning."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -1844,6 +1964,34 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "field_projection_cycle_readiness/field_projection_cycle_readiness.json",
         files_read,
     )
+    projection_cycle_generated_summary = load_optional_json(
+        "projection_checked_autonomous_work_cycle/projection_checked_cycle_summary.json",
+        files_read,
+    )
+    projection_cycle_work_summary = load_optional_json(
+        "projection_checked_work_proposal/projection_checked_work_proposal_summary.json",
+        files_read,
+    )
+    projection_cycle_pre_u_summary = load_optional_json(
+        "behavior_projection_pre_u_cycle_gate/cycle_pre_u_gate_summary.json",
+        files_read,
+    )
+    projection_cycle_result_summary = load_optional_json(
+        "projection_checked_dry_run_work_result/dry_run_work_result_summary.json",
+        files_read,
+    )
+    projection_cycle_residual_summary = load_optional_json(
+        "projection_checked_cieu_residual_cycle/projection_checked_residual_summary.json",
+        files_read,
+    )
+    projection_cycle_learning_summary = load_optional_json(
+        "projection_checked_learning_review_queue/projection_learning_review_summary.json",
+        files_read,
+    )
+    projection_cycle_readiness_summary = load_optional_json(
+        "projection_checked_cycle_readiness/projection_checked_cycle_readiness.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -1876,6 +2024,15 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         field_projection_pre_u_summary,
         field_projection_residual_summary,
         field_projection_readiness_summary,
+    )
+    projection_cycle_summary = build_projection_cycle_summary(
+        projection_cycle_generated_summary,
+        projection_cycle_work_summary,
+        projection_cycle_pre_u_summary,
+        projection_cycle_result_summary,
+        projection_cycle_residual_summary,
+        projection_cycle_learning_summary,
+        projection_cycle_readiness_summary,
     )
 
     profiles = {
@@ -1981,6 +2138,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         open_gaps.append("Field functional archaeology exists as a merge plan only; L5 projection harness is not implemented yet.")
     if "Field functional auto-projection core exists as a dry-run projection core only; behavior execution remains disabled." not in open_gaps:
         open_gaps.append("Field functional auto-projection core exists as a dry-run projection core only; behavior execution remains disabled.")
+    if "Projection-checked autonomous work cycle exists as dry-run fixtures only; review-gated learning loop is not implemented yet." not in open_gaps:
+        open_gaps.append("Projection-checked autonomous work cycle exists as dry-run fixtures only; review-gated learning loop is not implemented yet.")
 
     snapshot = {
         "schema_name": "ystar.console_read_model.generated.team_console_snapshot",
@@ -2017,6 +2176,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "field_functional_summary": field_functional_summary,
         "mission_projection_summary": mission_projection_summary,
         "field_projection_summary": field_projection_summary,
+        "projection_cycle_summary": projection_cycle_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -2224,6 +2384,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/field_functional_summary.json",
             "console_read_model/generated/mission_projection_summary.json",
             "console_read_model/generated/field_projection_summary.json",
+            "console_read_model/generated/projection_cycle_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -2302,6 +2463,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "projection harness. It confirms layered Y* projection, a Pre-U packet candidate, and a residual fixture exist while action execution remains disabled.\n\n"
         "`field_projection_summary.json` is derived from the L5.2 field functional\n"
         "auto-projection core. It confirms mission-to-behavior Y* projection, a behavior-level Pre-U candidate, and a residual loop fixture exist while behavior execution remains disabled.\n\n"
+        "`projection_cycle_summary.json` is derived from the L5.3 projection-checked\n"
+        "autonomous work cycle. It confirms behavior-level Y* is consumed as a gate before dry-run work proposal, Pre-U candidate, residual, and review-only learning artifacts.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -2335,6 +2498,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/field_functional_summary.json", field_functional_summary, generated_files)
     write_json("console_read_model/generated/mission_projection_summary.json", mission_projection_summary, generated_files)
     write_json("console_read_model/generated/field_projection_summary.json", field_projection_summary, generated_files)
+    write_json("console_read_model/generated/projection_cycle_summary.json", projection_cycle_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -2403,6 +2567,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     field_functional = snapshot.get("field_functional_summary", {})
     mission_projection = snapshot.get("mission_projection_summary", {})
     field_projection = snapshot.get("field_projection_summary", {})
+    projection_cycle = snapshot.get("projection_cycle_summary", {})
     lines.extend(
         [
             "",
@@ -2996,6 +3161,34 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- ready_for_l5_3_projection_checked_autonomous_cycle: {field_projection.get('ready_for_l5_3_projection_checked_autonomous_cycle')}",
             f"- next_required_milestone: {field_projection.get('next_required_milestone')}",
             f"- Warning: {field_projection.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Projection-Checked Autonomous Work Cycle",
+            "",
+            f"- projection_checked_autonomous_work_cycle_defined: {projection_cycle.get('projection_checked_autonomous_work_cycle_defined')}",
+            f"- behavior_y_star_consumed_by_cycle: {projection_cycle.get('behavior_y_star_consumed_by_cycle')}",
+            f"- work_proposal_checked_against_behavior_y_star: {projection_cycle.get('work_proposal_checked_against_behavior_y_star')}",
+            f"- pre_u_packet_candidate_generated: {projection_cycle.get('pre_u_packet_candidate_generated')}",
+            f"- dry_run_gate_decision_generated: {projection_cycle.get('dry_run_gate_decision_generated')}",
+            f"- dry_run_result_generated: {projection_cycle.get('dry_run_result_generated')}",
+            f"- cieu_like_event_fixture_generated: {projection_cycle.get('cieu_like_event_fixture_generated')}",
+            f"- residual_delta_generated: {projection_cycle.get('residual_delta_generated')}",
+            f"- learning_review_candidate_generated_but_not_approved: {projection_cycle.get('learning_review_candidate_generated_but_not_approved')}",
+            f"- live_execution_enabled: {projection_cycle.get('live_execution_enabled')}",
+            f"- external_action_enabled: {projection_cycle.get('external_action_enabled')}",
+            f"- network_enabled: {projection_cycle.get('network_enabled')}",
+            f"- scheduler_enabled: {projection_cycle.get('scheduler_enabled')}",
+            f"- daemon_enabled: {projection_cycle.get('daemon_enabled')}",
+            f"- cieu_persistence_enabled: {projection_cycle.get('cieu_persistence_enabled')}",
+            f"- brain_writeback_enabled: {projection_cycle.get('brain_writeback_enabled')}",
+            f"- memory_ingestion_enabled: {projection_cycle.get('memory_ingestion_enabled')}",
+            f"- behavior_execution_enabled: {projection_cycle.get('behavior_execution_enabled')}",
+            f"- ready_for_l5_4_review_gated_learning_loop: {projection_cycle.get('ready_for_l5_4_review_gated_learning_loop')}",
+            f"- next_required_milestone: {projection_cycle.get('next_required_milestone')}",
+            f"- Warning: {projection_cycle.get('warning')}",
         ]
     )
     lines.extend(

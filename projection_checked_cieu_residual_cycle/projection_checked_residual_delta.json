@@ -1,0 +1,31 @@
+{
+  "schema_name": "ystar.projection_checked_cieu_residual_cycle.residual_delta",
+  "schema_version": "v0",
+  "residual_delta_id": "projection-checked-residual-delta-001",
+  "event_id": "projection-checked-cieu-event-fixture-001",
+  "projection_alignment_residual": "proposal passed dry-run projection gate; production validation remains future",
+  "pre_u_gate_residual": "cycle gate allows dry-run only and does not call Y-star-gov",
+  "dry_run_execution_residual": "no real execution occurred, so actual outcome is synthetic",
+  "behavior_boundary_residual": "forbidden boundaries remain enforced as blocked scopes",
+  "evidence_gap_residual": "deep Xt and production runtime evidence are not present",
+  "learning_queue_residual": "learning is review-queue-only and not applied",
+  "live_blocker_residual": "live execution remains blocked",
+  "writeback_blocker_residual": "brain and memory writeback remain blocked",
+  "real_behavior_executed": false,
+  "semantic_truth_scoring_used": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

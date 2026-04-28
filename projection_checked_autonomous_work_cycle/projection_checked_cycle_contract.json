@@ -1,0 +1,107 @@
+{
+  "schema_version": "v0",
+  "cycle_name": "Projection-Checked Autonomous Work Cycle",
+  "cycle_id": "projection_checked_autonomous_work_cycle_v0",
+  "purpose": "Consume behavior-level Y* from the field functional projection core as a normative gate before any autonomous work proposal proceeds to a dry-run Pre-U-like cycle.",
+  "required_inputs": [
+    "mission_to_behavior_y_star_projection/mission_y_star_input.json",
+    "mission_to_behavior_y_star_projection/behavior_level_y_star_candidate.json",
+    "mission_to_behavior_y_star_projection/mission_to_behavior_projection_trace.json",
+    "mission_to_behavior_y_star_projection/projection_context_field_fixture.json",
+    "behavior_y_star_to_pre_u_candidate/pre_u_packet_candidate_from_behavior_y_star.json",
+    "projection_behavior_residual_loop_fixture/projection_learning_candidate_stub.json",
+    "field_projection_cycle_readiness/field_projection_cycle_readiness.json"
+  ],
+  "cycle_stages": [
+    "load_mission_y_star",
+    "load_behavior_y_star_candidate",
+    "load_projection_trace",
+    "derive_projection_checked_work_intent",
+    "generate_or_select_autonomous_work_proposal",
+    "check_work_proposal_against_behavior_y_star",
+    "generate_pre_u_packet_candidate",
+    "run_dry_run_governance_decision",
+    "produce_dry_run_work_result",
+    "emit_cieu_like_cycle_event",
+    "compute_projection_cycle_residual_delta",
+    "create_review_queue_learning_candidate",
+    "produce_next_cycle_recommendation"
+  ],
+  "required_outputs": [
+    "projection_checked_cycle_run",
+    "projection_checked_work_intent",
+    "autonomous_work_proposal_candidate",
+    "work_proposal_projection_gate_decision",
+    "cycle_pre_u_packet_candidate",
+    "cycle_pre_u_gate_decision",
+    "dry_run_work_result",
+    "projection_checked_cieu_event_fixture",
+    "projection_checked_residual_delta",
+    "projection_checked_learning_candidate",
+    "projection_checked_cycle_readiness"
+  ],
+  "projection_gate_requirements": [
+    "behavior-level Y* must be loaded before work proposal selection",
+    "work proposal must align with allowed behavior boundary",
+    "forbidden behavior boundary must deny live, external, network, scheduler, daemon, persistence, writeback, and approval paths",
+    "unresolved gaps must remain explicit and cannot be guessed away"
+  ],
+  "work_cycle_requirements": [
+    "work proposal must be internal and dry-run only",
+    "work result must be a static fixture or safe generated/read-model summary",
+    "no live behavior execution or live tool execution may occur"
+  ],
+  "residual_loop_requirements": [
+    "CIEU-like event must be a dry-run fixture",
+    "residual delta must be deterministic structural classification",
+    "semantic truth scoring remains disabled"
+  ],
+  "learning_queue_requirements": [
+    "learning candidate may enter review queue only",
+    "candidate must not be approved or applied",
+    "brain writeback and memory ingestion remain blocked"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  },
+  "forbidden_operations": [
+    "reading raw DB/WAL/SHM/log contents",
+    "reading active-agent marker contents",
+    "running live hooks",
+    "running daemon/scheduler/runtime scripts",
+    "external network/API calls",
+    "GitHub issue/PR creation",
+    "git push",
+    "CIEU DB writes",
+    "brain writeback",
+    "memory ingestion",
+    "candidate approval",
+    "L6 revenue opportunity discovery",
+    "semantic truth scoring"
+  ],
+  "non_goals": [
+    "not live execution",
+    "not behavior execution",
+    "not scheduler or daemon activation",
+    "not network-enabled",
+    "not external action",
+    "not CIEU DB persistence",
+    "not brain writeback",
+    "not memory ingestion",
+    "not candidate approval",
+    "not L6 revenue opportunity discovery"
+  ],
+  "next_required_milestone": "L5.4 Review-Gated Learning Loop v0"
+}

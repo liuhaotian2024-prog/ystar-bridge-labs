@@ -1,0 +1,14 @@
+{
+  "schema_name": "ystar.behavior_projection_pre_u_cycle_gate.summary",
+  "schema_version": "v0",
+  "cycle_pre_u_packet_candidate_generated": true,
+  "cycle_pre_u_mapping_generated": true,
+  "cycle_pre_u_gate_decision_generated": true,
+  "cycle_pre_u_gate_decision": "allow_dry_run_only",
+  "dry_run_only": true,
+  "production_ready": false,
+  "requires_y_star_gov_validation_before_execution": true,
+  "live_execution_authorized": false,
+  "behavior_execution_authorized": false,
+  "external_action_authorized": false
+}

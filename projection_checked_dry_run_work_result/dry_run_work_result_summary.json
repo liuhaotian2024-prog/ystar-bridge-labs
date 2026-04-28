@@ -1,0 +1,12 @@
+{
+  "schema_name": "ystar.projection_checked_dry_run_work_result.summary",
+  "schema_version": "v0",
+  "dry_run_work_execution_plan_defined": true,
+  "dry_run_work_result_defined": true,
+  "dry_run_work_receipt_defined": true,
+  "real_execution_performed": false,
+  "live_tool_called": false,
+  "external_action_performed": false,
+  "network_called": false,
+  "db_log_runtime_content_read": false
+}

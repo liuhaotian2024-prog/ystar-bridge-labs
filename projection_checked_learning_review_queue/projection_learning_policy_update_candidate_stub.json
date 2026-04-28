@@ -1,0 +1,28 @@
+{
+  "schema_name": "ystar.projection_checked_learning_review_queue.policy_update_stub",
+  "schema_version": "v0",
+  "policy_update_stub_id": "projection-learning-policy-update-stub-001",
+  "source_candidate_id": "projection-checked-learning-candidate-001",
+  "target_policy_area": "projection_checked_cycle_policy",
+  "stub_only": true,
+  "approved": false,
+  "applied": false,
+  "direct_brain_writeback_allowed": false,
+  "direct_memory_ingestion_allowed": false,
+  "candidate_auto_approval_allowed": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

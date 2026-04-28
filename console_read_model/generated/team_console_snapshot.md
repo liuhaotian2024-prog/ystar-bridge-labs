@@ -621,6 +621,30 @@ Not ready:
 - next_required_milestone: L5.3 Projection-Checked Autonomous Work Cycle v0
 - Warning: L5.2 is a dry-run field projection core. It does not execute behavior, discover revenue opportunities, or write learning to memory.
 
+## Projection-Checked Autonomous Work Cycle
+
+- projection_checked_autonomous_work_cycle_defined: True
+- behavior_y_star_consumed_by_cycle: True
+- work_proposal_checked_against_behavior_y_star: True
+- pre_u_packet_candidate_generated: True
+- dry_run_gate_decision_generated: True
+- dry_run_result_generated: True
+- cieu_like_event_fixture_generated: True
+- residual_delta_generated: True
+- learning_review_candidate_generated_but_not_approved: True
+- live_execution_enabled: False
+- external_action_enabled: False
+- network_enabled: False
+- scheduler_enabled: False
+- daemon_enabled: False
+- cieu_persistence_enabled: False
+- brain_writeback_enabled: False
+- memory_ingestion_enabled: False
+- behavior_execution_enabled: False
+- ready_for_l5_4_review_gated_learning_loop: True
+- next_required_milestone: L5.4 Review-Gated Learning Loop v0
+- Warning: L5.3 is a projection-checked dry-run cycle. It consumes behavior-level Y* as a gate but does not execute behavior or apply learning.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns
@@ -695,3 +719,4 @@ Console reads curated read-model files only. It must not read DBs, logs, active-
 - Manual recurring observation tick runner exists for one-shot local ticks only; no scheduler, daemon, or recurrence is enabled.
 - Field functional archaeology exists as a merge plan only; L5 projection harness is not implemented yet.
 - Field functional auto-projection core exists as a dry-run projection core only; behavior execution remains disabled.
+- Projection-checked autonomous work cycle exists as dry-run fixtures only; review-gated learning loop is not implemented yet.

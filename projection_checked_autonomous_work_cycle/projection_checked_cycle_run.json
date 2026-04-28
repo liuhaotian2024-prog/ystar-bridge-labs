@@ -1,0 +1,98 @@
+{
+  "schema_name": "ystar.projection_checked_autonomous_work_cycle.run",
+  "schema_version": "v0",
+  "cycle_run_id": "projection-checked-cycle-run-001",
+  "cycle_id": "projection_checked_autonomous_work_cycle_v0",
+  "stage_order": [
+    "load_mission_y_star",
+    "load_behavior_y_star_candidate",
+    "load_projection_trace",
+    "derive_projection_checked_work_intent",
+    "generate_or_select_autonomous_work_proposal",
+    "check_work_proposal_against_behavior_y_star",
+    "generate_pre_u_packet_candidate",
+    "run_dry_run_governance_decision",
+    "produce_dry_run_work_result",
+    "emit_cieu_like_cycle_event",
+    "compute_projection_cycle_residual_delta",
+    "create_review_queue_learning_candidate",
+    "produce_next_cycle_recommendation"
+  ],
+  "stage_results": [
+    {
+      "stage": "load_mission_y_star",
+      "status": "completed_dry_run"
+    },
+    {
+      "stage": "load_behavior_y_star_candidate",
+      "status": "completed_dry_run"
+    },
+    {
+      "stage": "load_projection_trace",
+      "status": "completed_dry_run"
+    },
+    {
+      "stage": "derive_projection_checked_work_intent",
+      "status": "completed_dry_run"
+    },
+    {
+      "stage": "generate_or_select_autonomous_work_proposal",
+      "status": "completed_dry_run"
+    },
+    {
+      "stage": "check_work_proposal_against_behavior_y_star",
+      "status": "completed_dry_run"
+    },
+    {
+      "stage": "generate_pre_u_packet_candidate",
+      "status": "completed_dry_run"
+    },
+    {
+      "stage": "run_dry_run_governance_decision",
+      "status": "completed_dry_run"
+    },
+    {
+      "stage": "produce_dry_run_work_result",
+      "status": "completed_dry_run"
+    },
+    {
+      "stage": "emit_cieu_like_cycle_event",
+      "status": "completed_dry_run"
+    },
+    {
+      "stage": "compute_projection_cycle_residual_delta",
+      "status": "completed_dry_run"
+    },
+    {
+      "stage": "create_review_queue_learning_candidate",
+      "status": "completed_dry_run"
+    },
+    {
+      "stage": "produce_next_cycle_recommendation",
+      "status": "completed_dry_run"
+    }
+  ],
+  "behavior_y_star_consumed_as_governance_object": true,
+  "projection_gate_decision_ref": "projection_checked_work_proposal/work_proposal_projection_gate_decision.json",
+  "cycle_pre_u_packet_candidate_ref": "behavior_projection_pre_u_cycle_gate/cycle_pre_u_packet_candidate.json",
+  "dry_run_result_ref": "projection_checked_dry_run_work_result/dry_run_work_result.json",
+  "cieu_like_event_ref": "projection_checked_cieu_residual_cycle/projection_checked_cieu_event_fixture.json",
+  "residual_delta_ref": "projection_checked_cieu_residual_cycle/projection_checked_residual_delta.json",
+  "learning_candidate_ref": "projection_checked_learning_review_queue/projection_checked_learning_candidate.json",
+  "next_recommendation_ref": "projection_checked_cycle_readiness/l5_4_recommended_next_step.json",
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

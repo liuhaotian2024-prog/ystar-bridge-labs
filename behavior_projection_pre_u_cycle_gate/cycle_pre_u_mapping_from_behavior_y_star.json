@@ -1,0 +1,62 @@
+{
+  "schema_name": "ystar.behavior_projection_pre_u_cycle_gate.mapping",
+  "schema_version": "v0",
+  "mapping_id": "cycle-pre-u-mapping-from-behavior-y-star-001",
+  "source_packet_candidate_id": "cycle-pre-u-packet-candidate-001",
+  "mapping": [
+    {
+      "source": "behavior_level_y_star_candidate.declared_behavior_y_star",
+      "target": "declared_Y_star",
+      "status": "mapped"
+    },
+    {
+      "source": "projection_checked_work_intent",
+      "target": "candidate_U",
+      "status": "mapped"
+    },
+    {
+      "source": "projection_context_field_fixture",
+      "target": "Xt",
+      "status": "mapped"
+    },
+    {
+      "source": "behavior forbidden boundary",
+      "target": "deny_or_boundary_constraints",
+      "status": "mapped"
+    },
+    {
+      "source": "projection trace",
+      "target": "trace_refs",
+      "status": "mapped"
+    },
+    {
+      "source": "safety flags",
+      "target": "execution_boundary",
+      "status": "mapped_false_only"
+    },
+    {
+      "source": "work proposal gate decision",
+      "target": "governance_expectations",
+      "status": "mapped"
+    }
+  ],
+  "y_star_gov_imported": false,
+  "y_star_gov_modified": false,
+  "live_hooks_called": false,
+  "runtime_scripts_run": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema_name": "ystar.projection_checked_cieu_residual_cycle.predicted_outcome",
+  "schema_version": "v0",
+  "predicted_outcome_id": "projection-checked-predicted-outcome-001",
+  "source_behavior_y_star_id": "behavior-y-star-projection-checked-cycle-v0",
+  "expected_y": "A future validator could inspect behavior Y* and approve only governed local dry-run continuation.",
+  "expected_residual": "production validation and real behavior outcome remain absent by design",
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

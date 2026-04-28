@@ -81,5 +81,8 @@ projection harness. It confirms layered Y* projection, a Pre-U packet candidate,
 `field_projection_summary.json` is derived from the L5.2 field functional
 auto-projection core. It confirms mission-to-behavior Y* projection, a behavior-level Pre-U candidate, and a residual loop fixture exist while behavior execution remains disabled.
 
+`projection_cycle_summary.json` is derived from the L5.3 projection-checked
+autonomous work cycle. It confirms behavior-level Y* is consumed as a gate before dry-run work proposal, Pre-U candidate, residual, and review-only learning artifacts.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

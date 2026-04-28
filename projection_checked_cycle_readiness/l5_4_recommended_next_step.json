@@ -1,0 +1,15 @@
+{
+  "schema_name": "ystar.projection_checked_cycle_readiness.next_step",
+  "schema_version": "v0",
+  "recommendation_id": "l5-4-review-gated-learning-loop",
+  "title": "L5.4 Review-Gated Learning Loop v0",
+  "rationale": "L5.3 creates review-only learning candidates; L5.4 should define the governed review loop.",
+  "requires_y_star_gov": true,
+  "requires_operator_approval": false,
+  "live_execution_enabled": false,
+  "external_action_enabled": false,
+  "network_enabled": false,
+  "brain_writeback_enabled": false,
+  "memory_ingestion_enabled": false,
+  "candidate_auto_approval_enabled": false
+}

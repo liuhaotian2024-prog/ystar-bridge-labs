@@ -1,0 +1,89 @@
+{
+  "schema_name": "ystar.behavior_projection_pre_u_cycle_gate.packet_candidate",
+  "schema_version": "v0",
+  "packet_candidate_id": "cycle-pre-u-packet-candidate-001",
+  "source_behavior_y_star_id": "behavior-y-star-projection-checked-cycle-v0",
+  "source_work_intent_id": "projection-checked-work-intent-001",
+  "source_work_proposal_id": "projection-checked-work-proposal-001",
+  "declared_Y_star": "Prepare a projection-checked autonomous work-cycle candidate for future Pre-U validation.",
+  "Xt": {
+    "source": "projection_context_field_fixture",
+    "context_ref": "mission_to_behavior_y_star_projection/projection_context_field_fixture.json",
+    "context_summary": {
+      "next_recommended_milestone": "L5.3 Projection-Checked Autonomous Work Cycle v0",
+      "deep_xt_model_is_future_input_enhancement": true
+    }
+  },
+  "candidate_U": {
+    "candidate_u_id": "cycle-candidate-u-projection-checked-work-v0",
+    "work_intent": "Refresh mission dashboard state through an internal dry-run work cycle only after checking the proposal against behavior-level Y*.",
+    "proposal_title": "refresh mission dashboard using projection-checked behavior-level Y* context",
+    "execution_mode": "dry_run_static_fixture"
+  },
+  "governance_expectations": {
+    "work_proposal_gate_decision": "projection_gate_passed_for_dry_run",
+    "required_next_validation": [
+      "dry-run Pre-U-like gate decision",
+      "future Y-star-gov validation before any behavior execution",
+      "human or governance review before learning is applied"
+    ],
+    "allow_only_dry_run": true
+  },
+  "deny_or_boundary_constraints": [
+    "live behavior execution",
+    "external communication",
+    "network access",
+    "scheduler or daemon activation",
+    "brain or memory writeback",
+    "CIEU persistence",
+    "candidate auto-approval",
+    "direct behavior execution"
+  ],
+  "trace_refs": [
+    "mission_to_behavior_y_star_projection/mission_to_behavior_projection_trace.json",
+    "mission_to_behavior_y_star_projection/y_star_inheritance_map.json",
+    "mission_to_behavior_y_star_projection/y_star_contraction_map.json",
+    "projection_checked_work_proposal/work_proposal_to_behavior_y_star_alignment.json"
+  ],
+  "execution_boundary": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  },
+  "dry_run_only": true,
+  "production_ready": false,
+  "requires_y_star_gov_validation_before_execution": true,
+  "live_execution_authorized": false,
+  "behavior_execution_authorized": false,
+  "external_action_authorized": false,
+  "network_authorized": false,
+  "cieu_persistence_authorized": false,
+  "brain_writeback_authorized": false,
+  "memory_ingestion_authorized": false,
+  "candidate_auto_approval_authorized": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

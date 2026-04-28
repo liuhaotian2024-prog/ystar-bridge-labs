@@ -101,6 +101,11 @@ python3 console_read_model/cli/team_console.py <command>
   auto-projection core summary: mission-to-behavior Y* projection, behavior Y*
   candidate, Pre-U packet candidate, residual loop fixture, learning stub, and
   disabled live/writeback/persistence/behavior-execution flags.
+- `projection-cycle`: Prints the generated L5.3 projection-checked autonomous
+  work cycle summary: behavior-level Y* consumption, projection gate, Pre-U
+  packet candidate, dry-run result, CIEU-like fixture, residual delta, review
+  learning candidate, and disabled live/writeback/persistence/behavior-execution
+  flags.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

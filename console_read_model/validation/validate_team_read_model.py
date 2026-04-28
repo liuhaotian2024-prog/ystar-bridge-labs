@@ -364,6 +364,9 @@ def main() -> int:
     required_field_functional_auto_projection_core_files = expected.get(
         "required_field_functional_auto_projection_core_files", []
     )
+    required_projection_checked_autonomous_work_cycle_files = expected.get(
+        "required_projection_checked_autonomous_work_cycle_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -518,6 +521,12 @@ def main() -> int:
         check_exists(path, report, "field functional auto-projection file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "field functional auto-projection JSON")
+
+    for rel in required_projection_checked_autonomous_work_cycle_files:
+        path = ROOT / rel
+        check_exists(path, report, "projection-checked autonomous cycle file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "projection-checked autonomous cycle JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -2787,6 +2796,97 @@ def main() -> int:
             "L5.3 Projection-Checked Autonomous Work Cycle v0"
         ):
             report.fail("generated field projection summary must point to L5.3 projection-checked cycle milestone")
+
+    projection_cycle = generated_json.get("console_read_model/generated/projection_cycle_summary.json")
+    if projection_cycle:
+        for field in [
+            "projection_checked_autonomous_work_cycle_defined",
+            "behavior_y_star_consumed_by_cycle",
+            "work_proposal_checked_against_behavior_y_star",
+            "pre_u_packet_candidate_generated",
+            "dry_run_gate_decision_generated",
+            "dry_run_result_generated",
+            "cieu_like_event_fixture_generated",
+            "residual_delta_generated",
+            "learning_review_candidate_generated_but_not_approved",
+            "projection_gate_decision",
+            "cycle_pre_u_gate_decision",
+            "dry_run_only",
+            "pre_u_production_ready",
+            "real_execution_performed",
+            "event_mode",
+            "db_write_performed",
+            "live_execution_still_blocked",
+            "writeback_still_blocked",
+            "external_action_still_blocked",
+            "ready_for_l5_4_review_gated_learning_loop",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "next_required_milestone",
+            "generated_cycle_summary",
+            "generated_work_summary",
+            "generated_pre_u_summary",
+            "generated_result_summary",
+            "generated_residual_summary",
+            "generated_learning_summary",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in projection_cycle:
+                report.pass_(f"generated projection cycle summary field present: {field}")
+            else:
+                report.fail(f"generated projection cycle summary missing field: {field}")
+        for field in [
+            "projection_checked_autonomous_work_cycle_defined",
+            "behavior_y_star_consumed_by_cycle",
+            "work_proposal_checked_against_behavior_y_star",
+            "pre_u_packet_candidate_generated",
+            "dry_run_gate_decision_generated",
+            "dry_run_result_generated",
+            "cieu_like_event_fixture_generated",
+            "residual_delta_generated",
+            "learning_review_candidate_generated_but_not_approved",
+            "live_execution_still_blocked",
+            "writeback_still_blocked",
+            "external_action_still_blocked",
+            "ready_for_l5_4_review_gated_learning_loop",
+            "dry_run_only",
+        ]:
+            if projection_cycle.get(field) is not True:
+                report.fail(f"generated projection cycle summary must keep {field}=true")
+        for field in [
+            "pre_u_production_ready",
+            "real_execution_performed",
+            "db_write_performed",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+        ]:
+            if projection_cycle.get(field) is not False:
+                report.fail(f"generated projection cycle summary must keep {field}=false")
+        if projection_cycle.get("next_required_milestone") != "L5.4 Review-Gated Learning Loop v0":
+            report.fail("generated projection cycle summary must point to L5.4 review-gated learning loop")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

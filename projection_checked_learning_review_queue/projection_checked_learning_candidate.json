@@ -1,0 +1,43 @@
+{
+  "schema_name": "ystar.projection_checked_learning_review_queue.candidate",
+  "schema_version": "v0",
+  "candidate_id": "projection-checked-learning-candidate-001",
+  "source_cycle_id": "projection_checked_autonomous_work_cycle_v0",
+  "source_residual_delta_id": "projection-checked-residual-delta-001",
+  "learning_target": [
+    "projection_policy",
+    "behavior_y_star_generation",
+    "pre_u_mapping",
+    "work_proposal_alignment",
+    "residual_classification"
+  ],
+  "proposed_learning_scope": "Improve future projection-gate policy and Pre-U mapping review criteria; do not update memory directly.",
+  "evidence_refs": [
+    "projection_checked_cieu_residual_cycle/projection_checked_residual_delta.json",
+    "projection_checked_work_proposal/work_proposal_to_behavior_y_star_alignment.json",
+    "behavior_projection_pre_u_cycle_gate/cycle_pre_u_gate_decision.json"
+  ],
+  "eligible_for_review_queue": true,
+  "eligible_for_direct_brain_writeback": false,
+  "eligible_for_direct_memory_ingestion": false,
+  "eligible_for_candidate_auto_approval": false,
+  "requires_human_or_governance_review": true,
+  "approved": false,
+  "applied": false,
+  "live_learning_enabled": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "cieu_persistence_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

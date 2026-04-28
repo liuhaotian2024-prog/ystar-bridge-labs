@@ -40,6 +40,7 @@ MANUAL_TICK = "console_read_model/generated/manual_tick_summary.json"
 FIELD_FUNCTIONAL = "console_read_model/generated/field_functional_summary.json"
 MISSION_PROJECTION = "console_read_model/generated/mission_projection_summary.json"
 FIELD_PROJECTION = "console_read_model/generated/field_projection_summary.json"
+PROJECTION_CYCLE = "console_read_model/generated/projection_cycle_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -59,7 +60,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -119,6 +120,7 @@ def load_all() -> dict[str, Any]:
         "field_functional": load_json(FIELD_FUNCTIONAL),
         "mission_projection": load_json(MISSION_PROJECTION),
         "field_projection": load_json(FIELD_PROJECTION),
+        "projection_cycle": load_json(PROJECTION_CYCLE),
     }
 
 
@@ -919,6 +921,62 @@ def cmd_field_projection(data: dict[str, Any]) -> None:
     print(f"warning: {projection.get('warning')}")
 
 
+def cmd_projection_cycle(data: dict[str, Any]) -> None:
+    cycle = data["projection_cycle"]
+    print("# Projection-Checked Autonomous Work Cycle")
+    print()
+    print(
+        "L5.3 projection-checked autonomous work cycle defined: "
+        f"{cycle.get('projection_checked_autonomous_work_cycle_defined')}"
+    )
+    print(
+        "behavior-level Y* consumed by cycle: "
+        f"{cycle.get('behavior_y_star_consumed_by_cycle')}"
+    )
+    print(
+        "work proposal checked against behavior-level Y*: "
+        f"{cycle.get('work_proposal_checked_against_behavior_y_star')}"
+    )
+    print(
+        "Pre-U packet candidate generated: "
+        f"{cycle.get('pre_u_packet_candidate_generated')}"
+    )
+    print(
+        "dry-run gate decision generated: "
+        f"{cycle.get('dry_run_gate_decision_generated')}"
+    )
+    print(f"dry-run result generated: {cycle.get('dry_run_result_generated')}")
+    print(
+        "CIEU-like event fixture generated: "
+        f"{cycle.get('cieu_like_event_fixture_generated')}"
+    )
+    print(f"residual delta generated: {cycle.get('residual_delta_generated')}")
+    print(
+        "learning review candidate generated but not approved: "
+        f"{cycle.get('learning_review_candidate_generated_but_not_approved')}"
+    )
+    print(f"live execution enabled: {cycle.get('live_execution_enabled')}")
+    print(f"behavior execution enabled: {cycle.get('behavior_execution_enabled')}")
+    print(f"external action enabled: {cycle.get('external_action_enabled')}")
+    print(f"network enabled: {cycle.get('network_enabled')}")
+    print(f"scheduler enabled: {cycle.get('scheduler_enabled')}")
+    print(f"daemon enabled: {cycle.get('daemon_enabled')}")
+    print(f"CIEU persistence enabled: {cycle.get('cieu_persistence_enabled')}")
+    print(f"brain writeback enabled: {cycle.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {cycle.get('memory_ingestion_enabled')}")
+    print(
+        "ready for L5.4 review-gated learning loop: "
+        f"{cycle.get('ready_for_l5_4_review_gated_learning_loop')}"
+    )
+    print(f"next required milestone: {cycle.get('next_required_milestone')}")
+    print(f"generated_cycle_summary: {cycle.get('generated_cycle_summary')}")
+    print(f"generated_work_summary: {cycle.get('generated_work_summary')}")
+    print(f"generated_pre_u_summary: {cycle.get('generated_pre_u_summary')}")
+    print(f"generated_residual_summary: {cycle.get('generated_residual_summary')}")
+    print(f"generated_learning_summary: {cycle.get('generated_learning_summary')}")
+    print(f"warning: {cycle.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -1094,6 +1152,17 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print(f"- {field_projection.get('generated_pre_u_candidate')}")
         print(f"- {field_projection.get('generated_residual_loop_summary')}")
         print(f"- {field_projection.get('generated_readiness')}")
+    projection_cycle = data.get("projection_cycle", {})
+    if projection_cycle:
+        print()
+        print("Projection-checked autonomous work cycle:")
+        print(f"- {projection_cycle.get('generated_cycle_summary')}")
+        print(f"- {projection_cycle.get('generated_work_summary')}")
+        print(f"- {projection_cycle.get('generated_pre_u_summary')}")
+        print(f"- {projection_cycle.get('generated_result_summary')}")
+        print(f"- {projection_cycle.get('generated_residual_summary')}")
+        print(f"- {projection_cycle.get('generated_learning_summary')}")
+        print(f"- {projection_cycle.get('generated_readiness')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -1147,6 +1216,7 @@ def cmd_validate_local() -> int:
         FIELD_FUNCTIONAL,
         MISSION_PROJECTION,
         FIELD_PROJECTION,
+        PROJECTION_CYCLE,
     ]:
         try:
             loaded[rel] = load_json(rel)
@@ -1210,6 +1280,8 @@ def cmd_validate_local() -> int:
             failures.append("mission_projection_summary missing from team console snapshot")
         if "field_projection_summary" not in snapshot:
             failures.append("field_projection_summary missing from team console snapshot")
+        if "projection_cycle_summary" not in snapshot:
+            failures.append("projection_cycle_summary missing from team console snapshot")
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -2319,6 +2391,76 @@ def cmd_validate_local() -> int:
         ):
             failures.append("field projection summary must point to L5.3 projection-checked cycle milestone")
 
+    projection_cycle = loaded.get(PROJECTION_CYCLE)
+    if projection_cycle:
+        required_fields = [
+            "projection_checked_autonomous_work_cycle_defined",
+            "behavior_y_star_consumed_by_cycle",
+            "work_proposal_checked_against_behavior_y_star",
+            "pre_u_packet_candidate_generated",
+            "dry_run_gate_decision_generated",
+            "dry_run_result_generated",
+            "cieu_like_event_fixture_generated",
+            "residual_delta_generated",
+            "learning_review_candidate_generated_but_not_approved",
+            "ready_for_l5_4_review_gated_learning_loop",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "next_required_milestone",
+            "warning",
+        ]
+        for field in required_fields:
+            if field not in projection_cycle:
+                failures.append(f"projection cycle summary missing field: {field}")
+        for field in [
+            "projection_checked_autonomous_work_cycle_defined",
+            "behavior_y_star_consumed_by_cycle",
+            "work_proposal_checked_against_behavior_y_star",
+            "pre_u_packet_candidate_generated",
+            "dry_run_gate_decision_generated",
+            "dry_run_result_generated",
+            "cieu_like_event_fixture_generated",
+            "residual_delta_generated",
+            "learning_review_candidate_generated_but_not_approved",
+            "ready_for_l5_4_review_gated_learning_loop",
+            "dry_run_only",
+        ]:
+            if projection_cycle.get(field) is not True:
+                failures.append(f"projection cycle summary must keep {field}=true")
+        for field in [
+            "pre_u_production_ready",
+            "real_execution_performed",
+            "db_write_performed",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "cieu_persistence_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "candidate_auto_approval_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+        ]:
+            if projection_cycle.get(field) is not False:
+                failures.append(f"projection cycle summary must keep {field}=false")
+        if projection_cycle.get("next_required_milestone") != "L5.4 Review-Gated Learning Loop v0":
+            failures.append("projection cycle summary must point to L5.4 review-gated learning loop")
+
     print(f"Team Console CLI validate-local: {'PASS' if not failures else 'FAIL'}")
     print(f"Generated JSON files inspected: {len(inspected)}")
     print(f"Required agents: {', '.join(REQUIRED_AGENTS)}")
@@ -2410,6 +2552,8 @@ def main(argv: list[str]) -> int:
         cmd_mission_projection(data)
     elif command == "field-projection":
         cmd_field_projection(data)
+    elif command == "projection-cycle":
+        cmd_projection_cycle(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":
