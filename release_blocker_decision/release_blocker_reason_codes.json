@@ -1,0 +1,78 @@
+{
+  "schema_name": "ystar.release_blocker.reason_codes",
+  "schema_version": "v0",
+  "reason_code_set_id": "release-blocker-reason-codes-v0",
+  "reason_codes": {
+    "durable_record_missing": {
+      "code": "durable_record_missing",
+      "deterministic_meaning": "durable record missing"
+    },
+    "real_approval_missing": {
+      "code": "real_approval_missing",
+      "deterministic_meaning": "real approval missing"
+    },
+    "real_snapshot_missing": {
+      "code": "real_snapshot_missing",
+      "deterministic_meaning": "real snapshot missing"
+    },
+    "real_rollback_record_missing": {
+      "code": "real_rollback_record_missing",
+      "deterministic_meaning": "real rollback record missing"
+    },
+    "release_operator_not_confirmed": {
+      "code": "release_operator_not_confirmed",
+      "deterministic_meaning": "release operator not confirmed"
+    },
+    "milestone_blocks_real_release": {
+      "code": "milestone_blocks_real_release",
+      "deterministic_meaning": "milestone blocks real release"
+    },
+    "persistence_disabled": {
+      "code": "persistence_disabled",
+      "deterministic_meaning": "persistence disabled"
+    },
+    "live_execution_disabled": {
+      "code": "live_execution_disabled",
+      "deterministic_meaning": "live execution disabled"
+    },
+    "mcp_execution_disabled": {
+      "code": "mcp_execution_disabled",
+      "deterministic_meaning": "mcp execution disabled"
+    },
+    "canonical_application_disabled": {
+      "code": "canonical_application_disabled",
+      "deterministic_meaning": "canonical application disabled"
+    },
+    "y_star_direct_mutation_forbidden": {
+      "code": "y_star_direct_mutation_forbidden",
+      "deterministic_meaning": "y star direct mutation forbidden"
+    }
+  },
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

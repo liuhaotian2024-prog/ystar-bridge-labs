@@ -105,5 +105,8 @@ workflow boundary. It confirms authority, evidence, durable approval record cont
 `approval_record_sandbox_summary.json` is derived from the L5.10 controlled
 approval record sandbox. It confirms sandbox approval record creation, integrity validation, validity/state replay, invalid-record blocking, gate replay, audit lineage, and CIEU-like residuals while real approval, durable persistence, and real application remain blocked.
 
+`real_release_preflight_summary.json` is derived from the L5.11 controlled
+real release preflight. It confirms release candidate assembly, scope validation, approval-record preflight, snapshot/rollback checks, invariants, handoff, blocker decision, and CIEU-like residuals while real release, durable persistence, real approval, and canonical application remain blocked.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

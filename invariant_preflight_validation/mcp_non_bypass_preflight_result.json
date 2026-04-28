@@ -1,0 +1,43 @@
+{
+  "schema_name": "ystar.mcp_non_bypass.preflight_result",
+  "schema_version": "v0",
+  "validation_result_id": "mcp-non-bypass-preflight-result-v0",
+  "no_mcp_call_without_behavior_y_star": true,
+  "no_mcp_call_without_pre_u_candidate": true,
+  "no_mcp_call_without_governance_decision": true,
+  "no_mcp_call_without_bridge_receipt": true,
+  "no_mcp_call_without_cieu_receipt": true,
+  "no_mcp_call_without_residual_delta": true,
+  "release_candidate_does_not_enable_mcp_execution": true,
+  "validation_status": "invariant_valid_for_preflight_only",
+  "evidence_refs": [
+    "sandbox_post_update_validation/sandbox_mcp_non_bypass_check.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

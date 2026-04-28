@@ -113,8 +113,8 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 289
-- Unsafe artifacts count: 201
+- Artifacts classified: 292
+- Unsafe artifacts count: 203
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -123,13 +123,13 @@ Not ready:
   - DAILY_REPORT: 9
   - DB_CORE: 1
   - DB_SIDECARE: 6
-  - DREAM_REPORT: 49
+  - DREAM_REPORT: 50
   - DRIFT_REPORT: 4
   - ESCALATION_REPORT: 23
   - FRAMEWORK_FILE: 16
   - LOG_RUNTIME: 31
-  - PYCACHE: 39
-  - UNKNOWN_OR_NON_RUNTIME: 72
+  - PYCACHE: 40
+  - UNKNOWN_OR_NON_RUNTIME: 73
   - UNKNOWN_RUNTIME_ARTIFACT: 10
   - WHITELIST_REPORT: 2
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
@@ -167,23 +167,23 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 289
-- Artifacts with disposition: 289
+- Total artifacts: 292
+- Artifacts with disposition: 292
 - Safe-mined to review queue: 21
-- Forbidden direct read count: 114
+- Forbidden direct read count: 115
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
-  - deferred_markdown_report_not_selected: 66
+  - deferred_markdown_report_not_selected: 67
   - deferred_requires_bounded_log_adapter: 31
   - deferred_requires_classification: 10
   - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
-  - ignored_generated_cache: 39
-  - ignored_or_non_runtime: 88
+  - ignored_generated_cache: 40
+  - ignored_or_non_runtime: 89
   - safe_mined_to_review_queue: 21
 - Evidence scoring status:
-  - not_started: 289
+  - not_started: 292
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -387,9 +387,9 @@ Not ready:
 - next_required_milestone: L4.4 First Governed Read-Only Observation Tool Wrapper v0
 - bucket_counts:
   - A_adopt_now_read_only: 1
-  - B_wrap_as_governed_tool: 886
+  - B_wrap_as_governed_tool: 888
   - C_rewrite_from_design: 8
-  - D_quarantine_as_evidence_ore: 5
+  - D_quarantine_as_evidence_ore: 3
   - E_retire_do_not_use: 0
 - Warning: Triage is classification only; no asset is absorbed or enabled.
 
@@ -564,7 +564,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 4518
+- assets_scanned: 4578
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -830,6 +830,33 @@ Not ready:
 - ready_for_l6_revenue_opportunity_discovery: False
 - next_required_milestone: L5.11 Controlled Real Release Preflight v0
 - Warning: L5.10 creates a sandbox approval record lifecycle only. No real approval is granted, no durable approval record is written, and no real canonical update application is authorized.
+
+## Controlled Real Release Preflight
+
+- l5_11_controlled_real_release_preflight_defined: True
+- release_candidate_assembled: True
+- release_scope_validation_generated: True
+- approval_record_preflight_generated: True
+- snapshot_rollback_preflight_generated: True
+- y_star_non_mutation_preflight_generated: True
+- mcp_non_bypass_preflight_generated: True
+- post_release_validation_matrix_generated: True
+- release_operator_handoff_packet_generated: True
+- release_blocker_decision_generated: True
+- release_preflight_cieu_like_fixture_generated: True
+- real_approval_granted: False
+- real_release_authorized: False
+- durable_approval_record_written: False
+- canonical_policy_mutation_performed: False
+- brain_writeback_performed: False
+- memory_ingestion_performed: False
+- direct_y_star_mutation_performed: False
+- y_star_gov_unmodified: True
+- gov_mcp_unmodified: True
+- ready_for_l5_12_real_release_simulation_sandbox: True
+- ready_for_l6_revenue_opportunity_discovery: False
+- next_required_milestone: L5.12 Real Release Simulation Sandbox v0
+- Warning: L5.11 defines the controlled real release preflight only. No real approval is granted, no durable approval record is written, no real release is authorized, and no canonical update is applied.
 
 ## Governance Boundary
 

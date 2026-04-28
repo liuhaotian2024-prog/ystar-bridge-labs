@@ -198,7 +198,12 @@ REBUILD_CHECKS = [
         mutates_generated_files=True,
     ),
     Check(
-        "Refresh team console snapshot after controlled approval record sandbox",
+        "Build controlled real release preflight",
+        ["python3", "controlled_real_release_preflight/tools/build_controlled_real_release_preflight.py"],
+        mutates_generated_files=True,
+    ),
+    Check(
+        "Refresh team console snapshot after controlled real release preflight",
         ["python3", "console_read_model/loader/build_team_console_snapshot.py"],
         mutates_generated_files=True,
     ),
@@ -1679,6 +1684,63 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "controlled_approval_record_readiness/controlled_approval_record_readiness.json"],
     ),
     Check(
+        "Compile controlled real release preflight builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "controlled_real_release_preflight/tools/build_controlled_real_release_preflight.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: real_release_preflight_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/real_release_preflight_summary.json"],
+    ),
+    Check(
+        "Validate JSON: controlled_real_release_preflight_contract.json",
+        ["python3", "-m", "json.tool", "controlled_real_release_preflight/controlled_real_release_preflight_contract.json"],
+    ),
+    Check(
+        "Validate JSON: release_candidate_package.json",
+        ["python3", "-m", "json.tool", "release_candidate_package/release_candidate_package.json"],
+    ),
+    Check(
+        "Validate JSON: release_scope_validation_result.json",
+        ["python3", "-m", "json.tool", "release_scope_validation/release_scope_validation_result.json"],
+    ),
+    Check(
+        "Validate JSON: approval_record_preflight_validation_result.json",
+        ["python3", "-m", "json.tool", "approval_record_preflight_validation/approval_record_preflight_validation_result.json"],
+    ),
+    Check(
+        "Validate JSON: snapshot_preflight_validation_result.json",
+        ["python3", "-m", "json.tool", "snapshot_and_rollback_preflight/snapshot_preflight_validation_result.json"],
+    ),
+    Check(
+        "Validate JSON: y_star_non_mutation_preflight_result.json",
+        ["python3", "-m", "json.tool", "invariant_preflight_validation/y_star_non_mutation_preflight_result.json"],
+    ),
+    Check(
+        "Validate JSON: post_release_validation_matrix.json",
+        ["python3", "-m", "json.tool", "post_release_validation_matrix/post_release_validation_matrix.json"],
+    ),
+    Check(
+        "Validate JSON: release_operator_handoff_packet.json",
+        ["python3", "-m", "json.tool", "release_operator_handoff_packet/release_operator_handoff_packet.json"],
+    ),
+    Check(
+        "Validate JSON: release_blocker_decision.json",
+        ["python3", "-m", "json.tool", "release_blocker_decision/release_blocker_decision.json"],
+    ),
+    Check(
+        "Validate JSON: release_preflight_cieu_event_fixture.json",
+        ["python3", "-m", "json.tool", "release_preflight_cieu_residual/release_preflight_cieu_event_fixture.json"],
+    ),
+    Check(
+        "Validate JSON: controlled_real_release_preflight_readiness.json",
+        ["python3", "-m", "json.tool", "controlled_real_release_preflight_readiness/controlled_real_release_preflight_readiness.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -1897,6 +1959,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: approval-record-sandbox",
         ["python3", "console_read_model/cli/team_console.py", "approval-record-sandbox"],
+    ),
+    Check(
+        "CLI smoke: real-release-preflight",
+        ["python3", "console_read_model/cli/team_console.py", "real-release-preflight"],
     ),
     Check(
         "CLI smoke: sources",

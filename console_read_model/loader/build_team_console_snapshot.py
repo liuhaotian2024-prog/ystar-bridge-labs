@@ -130,6 +130,17 @@ CURATED_SOURCES = [
     "approval_record_audit_lineage/approval_record_audit_summary.json",
     "approval_record_cieu_residual/approval_record_cieu_summary.json",
     "controlled_approval_record_readiness/controlled_approval_record_readiness.json",
+    "controlled_real_release_preflight/controlled_real_release_preflight_summary.json",
+    "release_candidate_package/release_candidate_summary.json",
+    "release_scope_validation/release_scope_validation_summary.json",
+    "approval_record_preflight_validation/approval_record_preflight_summary.json",
+    "snapshot_and_rollback_preflight/snapshot_rollback_preflight_summary.json",
+    "invariant_preflight_validation/invariant_preflight_summary.json",
+    "post_release_validation_matrix/post_release_validation_summary.json",
+    "release_operator_handoff_packet/release_operator_handoff_summary.json",
+    "release_blocker_decision/release_blocker_summary.json",
+    "release_preflight_cieu_residual/release_preflight_cieu_summary.json",
+    "controlled_real_release_preflight_readiness/controlled_real_release_preflight_readiness.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -2870,6 +2881,187 @@ def build_controlled_approval_record_summary(
     }
 
 
+def build_controlled_real_release_preflight_summary(
+    preflight_summary: dict[str, Any] | None,
+    release_summary: dict[str, Any] | None,
+    scope_summary: dict[str, Any] | None,
+    approval_summary: dict[str, Any] | None,
+    snapshot_rollback_summary: dict[str, Any] | None,
+    invariant_summary: dict[str, Any] | None,
+    post_release_summary: dict[str, Any] | None,
+    handoff_summary: dict[str, Any] | None,
+    blocker_summary: dict[str, Any] | None,
+    cieu_summary: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.controlled_real_release_preflight_summary",
+            "schema_version": "v0",
+            "l5_11_controlled_real_release_preflight_defined": False,
+            "ready_for_l5_12_real_release_simulation_sandbox": False,
+            "ready_for_l6_revenue_opportunity_discovery": False,
+            "warning": "Controlled real release preflight has not been generated yet.",
+        }
+    preflight_summary = preflight_summary or {}
+    release_summary = release_summary or {}
+    scope_summary = scope_summary or {}
+    approval_summary = approval_summary or {}
+    snapshot_rollback_summary = snapshot_rollback_summary or {}
+    invariant_summary = invariant_summary or {}
+    post_release_summary = post_release_summary or {}
+    handoff_summary = handoff_summary or {}
+    blocker_summary = blocker_summary or {}
+    cieu_summary = cieu_summary or {}
+    return {
+        "schema_name": "ystar.console_read_model.generated.controlled_real_release_preflight_summary",
+        "schema_version": "v0",
+        "l5_11_controlled_real_release_preflight_defined": preflight_summary.get(
+            "l5_11_controlled_real_release_preflight_defined"
+        ),
+        "release_candidate_assembled": release_summary.get("release_candidate_assembled"),
+        "release_scope_validation_generated": scope_summary.get(
+            "release_scope_validation_generated"
+        ),
+        "release_scope_validation_status": scope_summary.get("validation_status"),
+        "approval_record_preflight_generated": approval_summary.get(
+            "approval_record_preflight_generated"
+        ),
+        "approval_record_validation_status": approval_summary.get("validation_status"),
+        "snapshot_rollback_preflight_generated": (
+            snapshot_rollback_summary.get("snapshot_preflight_generated")
+            and snapshot_rollback_summary.get("rollback_preflight_generated")
+        ),
+        "snapshot_preflight_generated": snapshot_rollback_summary.get(
+            "snapshot_preflight_generated"
+        ),
+        "rollback_preflight_generated": snapshot_rollback_summary.get(
+            "rollback_preflight_generated"
+        ),
+        "y_star_non_mutation_preflight_generated": invariant_summary.get(
+            "y_star_non_mutation_preflight_generated"
+        ),
+        "mcp_non_bypass_preflight_generated": invariant_summary.get(
+            "mcp_non_bypass_preflight_generated"
+        ),
+        "no_direct_writeback_preflight_generated": invariant_summary.get(
+            "no_direct_writeback_preflight_generated"
+        ),
+        "post_release_validation_matrix_generated": post_release_summary.get(
+            "post_release_validation_matrix_generated"
+        ),
+        "release_operator_handoff_packet_generated": handoff_summary.get(
+            "release_operator_handoff_packet_generated"
+        ),
+        "release_blocker_decision_generated": blocker_summary.get(
+            "release_blocker_decision_generated"
+        ),
+        "release_blocker_decision": blocker_summary.get("decision"),
+        "release_preflight_cieu_like_fixture_generated": cieu_summary.get(
+            "release_preflight_cieu_like_fixture_generated"
+        ),
+        "release_preflight_residual_delta_generated": cieu_summary.get(
+            "release_preflight_residual_delta_generated"
+        ),
+        "real_approval_granted": False,
+        "real_release_authorized": readiness_summary.get("real_release_authorized"),
+        "real_application_authorized": readiness_summary.get("real_application_authorized"),
+        "durable_approval_record_written": readiness_summary.get(
+            "durable_approval_record_written"
+        ),
+        "canonical_policy_mutation_performed": readiness_summary.get(
+            "canonical_policy_mutation_performed"
+        ),
+        "brain_writeback_performed": readiness_summary.get("brain_writeback_performed"),
+        "memory_ingestion_performed": readiness_summary.get("memory_ingestion_performed"),
+        "direct_y_star_mutation_performed": readiness_summary.get(
+            "direct_y_star_mutation_performed"
+        ),
+        "real_release_still_blocked": readiness_summary.get("real_release_still_blocked"),
+        "real_approval_still_blocked": readiness_summary.get("real_approval_still_blocked"),
+        "durable_persistence_still_blocked": readiness_summary.get(
+            "durable_persistence_still_blocked"
+        ),
+        "real_canonical_application_still_blocked": readiness_summary.get(
+            "real_canonical_application_still_blocked"
+        ),
+        "brain_writeback_still_blocked": readiness_summary.get("brain_writeback_still_blocked"),
+        "memory_ingestion_still_blocked": readiness_summary.get(
+            "memory_ingestion_still_blocked"
+        ),
+        "y_star_direct_mutation_still_blocked": readiness_summary.get(
+            "y_star_direct_mutation_still_blocked"
+        ),
+        "mcp_execution_still_blocked": readiness_summary.get("mcp_execution_still_blocked"),
+        "y_star_gov_unmodified": readiness_summary.get("y_star_gov_unmodified"),
+        "gov_mcp_unmodified": readiness_summary.get("gov_mcp_unmodified"),
+        "live_execution_enabled": readiness_summary.get("live_execution_enabled"),
+        "behavior_execution_enabled": readiness_summary.get("behavior_execution_enabled"),
+        "external_action_enabled": readiness_summary.get("external_action_enabled"),
+        "network_enabled": readiness_summary.get("network_enabled"),
+        "scheduler_enabled": readiness_summary.get("scheduler_enabled"),
+        "daemon_enabled": readiness_summary.get("daemon_enabled"),
+        "mcp_server_execution_enabled": readiness_summary.get("mcp_server_execution_enabled"),
+        "mcp_tool_execution_enabled": readiness_summary.get("mcp_tool_execution_enabled"),
+        "cieu_persistence_enabled": readiness_summary.get("cieu_persistence_enabled"),
+        "durable_approval_persistence_enabled": readiness_summary.get(
+            "durable_approval_persistence_enabled"
+        ),
+        "real_approval_record_write_enabled": readiness_summary.get(
+            "real_approval_record_write_enabled"
+        ),
+        "brain_writeback_enabled": readiness_summary.get("brain_writeback_enabled"),
+        "memory_ingestion_enabled": readiness_summary.get("memory_ingestion_enabled"),
+        "strategy_mutation_enabled": readiness_summary.get("strategy_mutation_enabled"),
+        "candidate_auto_approval_enabled": readiness_summary.get("candidate_auto_approval_enabled"),
+        "real_candidate_approval_enabled": readiness_summary.get(
+            "real_candidate_approval_enabled"
+        ),
+        "real_canonical_policy_mutation_enabled": readiness_summary.get(
+            "real_canonical_policy_mutation_enabled"
+        ),
+        "real_canonical_update_application_enabled": readiness_summary.get(
+            "real_canonical_update_application_enabled"
+        ),
+        "real_release_execution_enabled": readiness_summary.get(
+            "real_release_execution_enabled"
+        ),
+        "real_y_star_direct_mutation_enabled": readiness_summary.get(
+            "real_y_star_direct_mutation_enabled"
+        ),
+        "semantic_truth_scoring_enabled": readiness_summary.get("semantic_truth_scoring_enabled"),
+        "raw_runtime_artifact_reading_enabled": readiness_summary.get(
+            "raw_runtime_artifact_reading_enabled"
+        ),
+        "revenue_opportunity_discovery_enabled": readiness_summary.get(
+            "revenue_opportunity_discovery_enabled"
+        ),
+        "ready_for_l5_12_real_release_simulation_sandbox": readiness_summary.get(
+            "ready_for_l5_12_real_release_simulation_sandbox"
+        ),
+        "ready_for_l6_revenue_opportunity_discovery": readiness_summary.get(
+            "ready_for_l6_revenue_opportunity_discovery"
+        ),
+        "next_required_milestone": readiness_summary.get("next_required_milestone"),
+        "generated_preflight_summary": "controlled_real_release_preflight/controlled_real_release_preflight_summary.json",
+        "generated_release_candidate_summary": "release_candidate_package/release_candidate_summary.json",
+        "generated_scope_summary": "release_scope_validation/release_scope_validation_summary.json",
+        "generated_approval_record_preflight_summary": "approval_record_preflight_validation/approval_record_preflight_summary.json",
+        "generated_snapshot_rollback_summary": "snapshot_and_rollback_preflight/snapshot_rollback_preflight_summary.json",
+        "generated_invariant_summary": "invariant_preflight_validation/invariant_preflight_summary.json",
+        "generated_post_release_summary": "post_release_validation_matrix/post_release_validation_summary.json",
+        "generated_handoff_summary": "release_operator_handoff_packet/release_operator_handoff_summary.json",
+        "generated_blocker_summary": "release_blocker_decision/release_blocker_summary.json",
+        "generated_cieu_summary": "release_preflight_cieu_residual/release_preflight_cieu_summary.json",
+        "generated_readiness": "controlled_real_release_preflight_readiness/controlled_real_release_preflight_readiness.json",
+        "warning": (
+            "L5.11 defines the controlled real release preflight only. No real approval "
+            "is granted, no durable approval record is written, no real release is "
+            "authorized, and no canonical update is applied."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -3308,6 +3500,50 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "controlled_approval_record_readiness/controlled_approval_record_readiness.json",
         files_read,
     )
+    controlled_real_release_preflight_summary_source = load_optional_json(
+        "controlled_real_release_preflight/controlled_real_release_preflight_summary.json",
+        files_read,
+    )
+    controlled_real_release_candidate_summary = load_optional_json(
+        "release_candidate_package/release_candidate_summary.json",
+        files_read,
+    )
+    controlled_real_release_scope_summary = load_optional_json(
+        "release_scope_validation/release_scope_validation_summary.json",
+        files_read,
+    )
+    controlled_real_release_approval_summary = load_optional_json(
+        "approval_record_preflight_validation/approval_record_preflight_summary.json",
+        files_read,
+    )
+    controlled_real_release_snapshot_rollback_summary = load_optional_json(
+        "snapshot_and_rollback_preflight/snapshot_rollback_preflight_summary.json",
+        files_read,
+    )
+    controlled_real_release_invariant_summary = load_optional_json(
+        "invariant_preflight_validation/invariant_preflight_summary.json",
+        files_read,
+    )
+    controlled_real_release_post_release_summary = load_optional_json(
+        "post_release_validation_matrix/post_release_validation_summary.json",
+        files_read,
+    )
+    controlled_real_release_handoff_summary = load_optional_json(
+        "release_operator_handoff_packet/release_operator_handoff_summary.json",
+        files_read,
+    )
+    controlled_real_release_blocker_summary = load_optional_json(
+        "release_blocker_decision/release_blocker_summary.json",
+        files_read,
+    )
+    controlled_real_release_cieu_summary = load_optional_json(
+        "release_preflight_cieu_residual/release_preflight_cieu_summary.json",
+        files_read,
+    )
+    controlled_real_release_readiness_summary = load_optional_json(
+        "controlled_real_release_preflight_readiness/controlled_real_release_preflight_readiness.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -3432,6 +3668,19 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         controlled_approval_record_audit_summary,
         controlled_approval_record_cieu_summary,
         controlled_approval_record_readiness_summary,
+    )
+    controlled_real_release_preflight_summary = build_controlled_real_release_preflight_summary(
+        controlled_real_release_preflight_summary_source,
+        controlled_real_release_candidate_summary,
+        controlled_real_release_scope_summary,
+        controlled_real_release_approval_summary,
+        controlled_real_release_snapshot_rollback_summary,
+        controlled_real_release_invariant_summary,
+        controlled_real_release_post_release_summary,
+        controlled_real_release_handoff_summary,
+        controlled_real_release_blocker_summary,
+        controlled_real_release_cieu_summary,
+        controlled_real_release_readiness_summary,
     )
 
     profiles = {
@@ -3591,6 +3840,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "approved_sandbox_update_summary": approved_sandbox_update_summary,
         "real_approval_workflow_summary": real_approval_workflow_summary,
         "controlled_approval_record_summary": controlled_approval_record_summary,
+        "controlled_real_release_preflight_summary": controlled_real_release_preflight_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -3820,6 +4070,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/approved_sandbox_update_summary.json",
             "console_read_model/generated/real_approval_workflow_summary.json",
             "console_read_model/generated/approval_record_sandbox_summary.json",
+            "console_read_model/generated/real_release_preflight_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -3914,6 +4165,8 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "workflow boundary. It confirms authority, evidence, durable approval record contract, validity/revocation, snapshot, real application gate, preflight, runbook, and audit fixture exist while real approval, durable approval persistence, and real application remain blocked.\n\n"
         "`approval_record_sandbox_summary.json` is derived from the L5.10 controlled\n"
         "approval record sandbox. It confirms sandbox approval record creation, integrity validation, validity/state replay, invalid-record blocking, gate replay, audit lineage, and CIEU-like residuals while real approval, durable persistence, and real application remain blocked.\n\n"
+        "`real_release_preflight_summary.json` is derived from the L5.11 controlled\n"
+        "real release preflight. It confirms release candidate assembly, scope validation, approval-record preflight, snapshot/rollback checks, invariants, handoff, blocker decision, and CIEU-like residuals while real release, durable persistence, real approval, and canonical application remain blocked.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -3955,6 +4208,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/approved_sandbox_update_summary.json", approved_sandbox_update_summary, generated_files)
     write_json("console_read_model/generated/real_approval_workflow_summary.json", real_approval_workflow_summary, generated_files)
     write_json("console_read_model/generated/approval_record_sandbox_summary.json", controlled_approval_record_summary, generated_files)
+    write_json("console_read_model/generated/real_release_preflight_summary.json", controlled_real_release_preflight_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -4031,6 +4285,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     approved_sandbox_update = snapshot.get("approved_sandbox_update_summary", {})
     real_approval_workflow = snapshot.get("real_approval_workflow_summary", {})
     controlled_approval_record = snapshot.get("controlled_approval_record_summary", {})
+    controlled_real_release_preflight = snapshot.get("controlled_real_release_preflight_summary", {})
     lines.extend(
         [
             "",
@@ -4860,6 +5115,37 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- ready_for_l6_revenue_opportunity_discovery: {controlled_approval_record.get('ready_for_l6_revenue_opportunity_discovery')}",
             f"- next_required_milestone: {controlled_approval_record.get('next_required_milestone')}",
             f"- Warning: {controlled_approval_record.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## Controlled Real Release Preflight",
+            "",
+            f"- l5_11_controlled_real_release_preflight_defined: {controlled_real_release_preflight.get('l5_11_controlled_real_release_preflight_defined')}",
+            f"- release_candidate_assembled: {controlled_real_release_preflight.get('release_candidate_assembled')}",
+            f"- release_scope_validation_generated: {controlled_real_release_preflight.get('release_scope_validation_generated')}",
+            f"- approval_record_preflight_generated: {controlled_real_release_preflight.get('approval_record_preflight_generated')}",
+            f"- snapshot_rollback_preflight_generated: {controlled_real_release_preflight.get('snapshot_rollback_preflight_generated')}",
+            f"- y_star_non_mutation_preflight_generated: {controlled_real_release_preflight.get('y_star_non_mutation_preflight_generated')}",
+            f"- mcp_non_bypass_preflight_generated: {controlled_real_release_preflight.get('mcp_non_bypass_preflight_generated')}",
+            f"- post_release_validation_matrix_generated: {controlled_real_release_preflight.get('post_release_validation_matrix_generated')}",
+            f"- release_operator_handoff_packet_generated: {controlled_real_release_preflight.get('release_operator_handoff_packet_generated')}",
+            f"- release_blocker_decision_generated: {controlled_real_release_preflight.get('release_blocker_decision_generated')}",
+            f"- release_preflight_cieu_like_fixture_generated: {controlled_real_release_preflight.get('release_preflight_cieu_like_fixture_generated')}",
+            f"- real_approval_granted: {controlled_real_release_preflight.get('real_approval_granted')}",
+            f"- real_release_authorized: {controlled_real_release_preflight.get('real_release_authorized')}",
+            f"- durable_approval_record_written: {controlled_real_release_preflight.get('durable_approval_record_written')}",
+            f"- canonical_policy_mutation_performed: {controlled_real_release_preflight.get('canonical_policy_mutation_performed')}",
+            f"- brain_writeback_performed: {controlled_real_release_preflight.get('brain_writeback_performed')}",
+            f"- memory_ingestion_performed: {controlled_real_release_preflight.get('memory_ingestion_performed')}",
+            f"- direct_y_star_mutation_performed: {controlled_real_release_preflight.get('direct_y_star_mutation_performed')}",
+            f"- y_star_gov_unmodified: {controlled_real_release_preflight.get('y_star_gov_unmodified')}",
+            f"- gov_mcp_unmodified: {controlled_real_release_preflight.get('gov_mcp_unmodified')}",
+            f"- ready_for_l5_12_real_release_simulation_sandbox: {controlled_real_release_preflight.get('ready_for_l5_12_real_release_simulation_sandbox')}",
+            f"- ready_for_l6_revenue_opportunity_discovery: {controlled_real_release_preflight.get('ready_for_l6_revenue_opportunity_discovery')}",
+            f"- next_required_milestone: {controlled_real_release_preflight.get('next_required_milestone')}",
+            f"- Warning: {controlled_real_release_preflight.get('warning')}",
         ]
     )
     lines.extend(

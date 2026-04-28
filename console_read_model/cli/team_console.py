@@ -50,6 +50,7 @@ CONTROLLED_CANONICAL_LEARNING = (
 APPROVED_SANDBOX_UPDATE = "console_read_model/generated/approved_sandbox_update_summary.json"
 REAL_APPROVAL_WORKFLOW = "console_read_model/generated/real_approval_workflow_summary.json"
 APPROVAL_RECORD_SANDBOX = "console_read_model/generated/approval_record_sandbox_summary.json"
+REAL_RELEASE_PREFLIGHT = "console_read_model/generated/real_release_preflight_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -69,7 +70,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -137,6 +138,7 @@ def load_all() -> dict[str, Any]:
         "approved_sandbox_update": load_json(APPROVED_SANDBOX_UPDATE),
         "real_approval_workflow": load_json(REAL_APPROVAL_WORKFLOW),
         "approval_record_sandbox": load_json(APPROVAL_RECORD_SANDBOX),
+        "real_release_preflight": load_json(REAL_RELEASE_PREFLIGHT),
     }
 
 
@@ -1475,6 +1477,91 @@ def cmd_approval_record_sandbox(data: dict[str, Any]) -> None:
     print(f"warning: {record.get('warning')}")
 
 
+def cmd_real_release_preflight(data: dict[str, Any]) -> None:
+    release = data["real_release_preflight"]
+    print("# Controlled Real Release Preflight")
+    print()
+    print(
+        "L5.11 controlled real release preflight defined: "
+        f"{release.get('l5_11_controlled_real_release_preflight_defined')}"
+    )
+    print(f"release candidate assembled: {release.get('release_candidate_assembled')}")
+    print(
+        "release scope validation generated: "
+        f"{release.get('release_scope_validation_generated')}"
+    )
+    print(
+        "approval record preflight generated: "
+        f"{release.get('approval_record_preflight_generated')}"
+    )
+    print(
+        "snapshot/rollback preflight generated: "
+        f"{release.get('snapshot_rollback_preflight_generated')}"
+    )
+    print(
+        "Y* non-mutation preflight generated: "
+        f"{release.get('y_star_non_mutation_preflight_generated')}"
+    )
+    print(
+        "MCP non-bypass preflight generated: "
+        f"{release.get('mcp_non_bypass_preflight_generated')}"
+    )
+    print(
+        "post-release validation matrix generated: "
+        f"{release.get('post_release_validation_matrix_generated')}"
+    )
+    print(
+        "release operator handoff packet generated: "
+        f"{release.get('release_operator_handoff_packet_generated')}"
+    )
+    print(
+        "release blocker decision generated: "
+        f"{release.get('release_blocker_decision_generated')}"
+    )
+    print(
+        "release preflight CIEU-like fixture generated: "
+        f"{release.get('release_preflight_cieu_like_fixture_generated')}"
+    )
+    print(f"no real approval granted: {not release.get('real_approval_granted')}")
+    print(f"no real release authorized: {not release.get('real_release_authorized')}")
+    print(
+        "no durable approval record written: "
+        f"{not release.get('durable_approval_record_written')}"
+    )
+    print(
+        "no canonical policy mutation: "
+        f"{not release.get('canonical_policy_mutation_performed')}"
+    )
+    print(f"no brain writeback: {not release.get('brain_writeback_performed')}")
+    print(f"no memory ingestion: {not release.get('memory_ingestion_performed')}")
+    print(f"no direct Y* mutation: {not release.get('direct_y_star_mutation_performed')}")
+    print(f"Y-star-gov unmodified: {release.get('y_star_gov_unmodified')}")
+    print(f"gov-mcp unmodified: {release.get('gov_mcp_unmodified')}")
+    print(f"live execution enabled: {release.get('live_execution_enabled')}")
+    print(f"external action enabled: {release.get('external_action_enabled')}")
+    print(f"network enabled: {release.get('network_enabled')}")
+    print(f"scheduler enabled: {release.get('scheduler_enabled')}")
+    print(f"daemon enabled: {release.get('daemon_enabled')}")
+    print(f"MCP server execution enabled: {release.get('mcp_server_execution_enabled')}")
+    print(f"MCP tool execution enabled: {release.get('mcp_tool_execution_enabled')}")
+    print(f"CIEU persistence enabled: {release.get('cieu_persistence_enabled')}")
+    print(
+        "durable approval persistence enabled: "
+        f"{release.get('durable_approval_persistence_enabled')}"
+    )
+    print(
+        "ready for L5.12 real release simulation sandbox: "
+        f"{release.get('ready_for_l5_12_real_release_simulation_sandbox')}"
+    )
+    print(
+        "ready for L6 revenue opportunity discovery: "
+        f"{release.get('ready_for_l6_revenue_opportunity_discovery')}"
+    )
+    print(f"next required milestone: {release.get('next_required_milestone')}")
+    print(f"generated_readiness: {release.get('generated_readiness')}")
+    print(f"warning: {release.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -1756,6 +1843,21 @@ def cmd_sources(data: dict[str, Any]) -> None:
         print(f"- {approval_record_sandbox.get('generated_audit_summary')}")
         print(f"- {approval_record_sandbox.get('generated_cieu_summary')}")
         print(f"- {approval_record_sandbox.get('generated_readiness')}")
+    real_release_preflight = data.get("real_release_preflight", {})
+    if real_release_preflight:
+        print()
+        print("Controlled real release preflight:")
+        print(f"- {real_release_preflight.get('generated_preflight_summary')}")
+        print(f"- {real_release_preflight.get('generated_release_candidate_summary')}")
+        print(f"- {real_release_preflight.get('generated_scope_summary')}")
+        print(f"- {real_release_preflight.get('generated_approval_record_preflight_summary')}")
+        print(f"- {real_release_preflight.get('generated_snapshot_rollback_summary')}")
+        print(f"- {real_release_preflight.get('generated_invariant_summary')}")
+        print(f"- {real_release_preflight.get('generated_post_release_summary')}")
+        print(f"- {real_release_preflight.get('generated_handoff_summary')}")
+        print(f"- {real_release_preflight.get('generated_blocker_summary')}")
+        print(f"- {real_release_preflight.get('generated_cieu_summary')}")
+        print(f"- {real_release_preflight.get('generated_readiness')}")
 
 
 def cmd_warnings(data: dict[str, Any]) -> None:
@@ -1896,6 +1998,10 @@ def cmd_validate_local() -> int:
             failures.append("real_approval_workflow_summary missing from team console snapshot")
         if "controlled_approval_record_summary" not in snapshot:
             failures.append("controlled_approval_record_summary missing from team console snapshot")
+        if "controlled_real_release_preflight_summary" not in snapshot:
+            failures.append(
+                "controlled_real_release_preflight_summary missing from team console snapshot"
+            )
 
     manifest = loaded.get(MANIFEST)
     if manifest:
@@ -3359,6 +3465,8 @@ def main(argv: list[str]) -> int:
         cmd_real_approval_workflow(data)
     elif command == "approval-record-sandbox":
         cmd_approval_record_sandbox(data)
+    elif command == "real-release-preflight":
+        cmd_real_release_preflight(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

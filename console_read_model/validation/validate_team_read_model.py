@@ -388,6 +388,9 @@ def main() -> int:
     required_controlled_approval_record_sandbox_files = expected.get(
         "required_controlled_approval_record_sandbox_files", []
     )
+    required_controlled_real_release_preflight_files = expected.get(
+        "required_controlled_real_release_preflight_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -590,6 +593,12 @@ def main() -> int:
         check_exists(path, report, "controlled approval record sandbox file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "controlled approval record sandbox JSON")
+
+    for rel in required_controlled_real_release_preflight_files:
+        path = ROOT / rel
+        check_exists(path, report, "controlled real release preflight file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "controlled real release preflight JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -3786,6 +3795,161 @@ def main() -> int:
             "L5.11 Controlled Real Release Preflight v0"
         ):
             report.fail("generated controlled approval record summary must point to L5.11")
+
+    controlled_real_release = generated_json.get(
+        "console_read_model/generated/real_release_preflight_summary.json"
+    )
+    if controlled_real_release:
+        for field in [
+            "l5_11_controlled_real_release_preflight_defined",
+            "release_candidate_assembled",
+            "release_scope_validation_generated",
+            "release_scope_validation_status",
+            "approval_record_preflight_generated",
+            "approval_record_validation_status",
+            "snapshot_rollback_preflight_generated",
+            "snapshot_preflight_generated",
+            "rollback_preflight_generated",
+            "y_star_non_mutation_preflight_generated",
+            "mcp_non_bypass_preflight_generated",
+            "no_direct_writeback_preflight_generated",
+            "post_release_validation_matrix_generated",
+            "release_operator_handoff_packet_generated",
+            "release_blocker_decision_generated",
+            "release_blocker_decision",
+            "release_preflight_cieu_like_fixture_generated",
+            "release_preflight_residual_delta_generated",
+            "real_approval_granted",
+            "real_release_authorized",
+            "real_application_authorized",
+            "durable_approval_record_written",
+            "canonical_policy_mutation_performed",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "direct_y_star_mutation_performed",
+            "real_release_still_blocked",
+            "real_approval_still_blocked",
+            "durable_persistence_still_blocked",
+            "real_canonical_application_still_blocked",
+            "brain_writeback_still_blocked",
+            "memory_ingestion_still_blocked",
+            "y_star_direct_mutation_still_blocked",
+            "mcp_execution_still_blocked",
+            "y_star_gov_unmodified",
+            "gov_mcp_unmodified",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "mcp_server_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "cieu_persistence_enabled",
+            "durable_approval_persistence_enabled",
+            "real_approval_record_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "strategy_mutation_enabled",
+            "candidate_auto_approval_enabled",
+            "real_candidate_approval_enabled",
+            "real_canonical_policy_mutation_enabled",
+            "real_canonical_update_application_enabled",
+            "real_release_execution_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "ready_for_l5_12_real_release_simulation_sandbox",
+            "ready_for_l6_revenue_opportunity_discovery",
+            "next_required_milestone",
+            "generated_preflight_summary",
+            "generated_release_candidate_summary",
+            "generated_scope_summary",
+            "generated_approval_record_preflight_summary",
+            "generated_snapshot_rollback_summary",
+            "generated_invariant_summary",
+            "generated_post_release_summary",
+            "generated_handoff_summary",
+            "generated_blocker_summary",
+            "generated_cieu_summary",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in controlled_real_release:
+                report.pass_(f"generated controlled real release preflight summary field present: {field}")
+            else:
+                report.fail(f"generated controlled real release preflight summary missing field: {field}")
+        for field in [
+            "l5_11_controlled_real_release_preflight_defined",
+            "release_candidate_assembled",
+            "release_scope_validation_generated",
+            "approval_record_preflight_generated",
+            "snapshot_rollback_preflight_generated",
+            "snapshot_preflight_generated",
+            "rollback_preflight_generated",
+            "y_star_non_mutation_preflight_generated",
+            "mcp_non_bypass_preflight_generated",
+            "no_direct_writeback_preflight_generated",
+            "post_release_validation_matrix_generated",
+            "release_operator_handoff_packet_generated",
+            "release_blocker_decision_generated",
+            "release_preflight_cieu_like_fixture_generated",
+            "release_preflight_residual_delta_generated",
+            "real_release_still_blocked",
+            "real_approval_still_blocked",
+            "durable_persistence_still_blocked",
+            "real_canonical_application_still_blocked",
+            "brain_writeback_still_blocked",
+            "memory_ingestion_still_blocked",
+            "y_star_direct_mutation_still_blocked",
+            "mcp_execution_still_blocked",
+            "y_star_gov_unmodified",
+            "gov_mcp_unmodified",
+            "ready_for_l5_12_real_release_simulation_sandbox",
+        ]:
+            if controlled_real_release.get(field) is not True:
+                report.fail(f"generated controlled real release preflight summary must keep {field}=true")
+        for field in [
+            "real_approval_granted",
+            "real_release_authorized",
+            "real_application_authorized",
+            "durable_approval_record_written",
+            "canonical_policy_mutation_performed",
+            "brain_writeback_performed",
+            "memory_ingestion_performed",
+            "direct_y_star_mutation_performed",
+            "live_execution_enabled",
+            "behavior_execution_enabled",
+            "external_action_enabled",
+            "network_enabled",
+            "scheduler_enabled",
+            "daemon_enabled",
+            "mcp_server_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "cieu_persistence_enabled",
+            "durable_approval_persistence_enabled",
+            "real_approval_record_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "strategy_mutation_enabled",
+            "candidate_auto_approval_enabled",
+            "real_candidate_approval_enabled",
+            "real_canonical_policy_mutation_enabled",
+            "real_canonical_update_application_enabled",
+            "real_release_execution_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "revenue_opportunity_discovery_enabled",
+            "ready_for_l6_revenue_opportunity_discovery",
+        ]:
+            if controlled_real_release.get(field) is not False:
+                report.fail(f"generated controlled real release preflight summary must keep {field}=false")
+        if controlled_real_release.get("next_required_milestone") != (
+            "L5.12 Real Release Simulation Sandbox v0"
+        ):
+            report.fail("generated controlled real release preflight summary must point to L5.12")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

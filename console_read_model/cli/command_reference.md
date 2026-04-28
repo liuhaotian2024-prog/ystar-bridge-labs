@@ -141,6 +141,12 @@ python3 console_read_model/cli/team_console.py <command>
   validity state replay, invalid-record blocking, valid gate replay, audit
   lineage, CIEU-like residual, and blocked real approval/application/durable
   persistence/writeback/direct-Y*/MCP state.
+- `real-release-preflight`: Prints the generated L5.11 controlled real release
+  preflight summary: release candidate assembly, scope validation, approval
+  record preflight, snapshot/rollback checks, Y* non-mutation and MCP
+  non-bypass checks, post-release validation matrix, handoff packet, release
+  blocker decision, CIEU-like residual, and blocked real release/application/
+  durable-persistence/writeback/direct-Y*/MCP state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

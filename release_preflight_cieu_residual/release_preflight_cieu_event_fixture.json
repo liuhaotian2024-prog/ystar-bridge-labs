@@ -1,0 +1,128 @@
+{
+  "schema_name": "ystar.release_preflight.cieu_event_fixture",
+  "schema_version": "v0",
+  "event_id": "release-preflight-cieu-event-fixture-v0",
+  "event_mode": "controlled_real_release_preflight_fixture",
+  "X_t": {
+    "source_release_candidate": "release_candidate_package/release_candidate_package.json",
+    "source_approval_record": "sandbox_approval_record_instance/sandbox_approval_record_instance.json",
+    "source_boundary_gate": "real_application_boundary_gate/real_application_boundary_gate_contract.json"
+  },
+  "U_t": {
+    "operation": "controlled real release preflight",
+    "release_candidate_id": "controlled-real-release-candidate-v0",
+    "blocker_decision_id": "release-blocker-decision-v0"
+  },
+  "Y_star_t": {
+    "declared_target": "Perform a real-release preflight boundary check without granting approval or applying any canonical update.",
+    "y_star_non_mutation_required": true,
+    "mcp_non_bypass_required": true
+  },
+  "Y_t_plus_1": {
+    "schema_name": "ystar.release_preflight.mock_actual_outcome",
+    "schema_version": "v0",
+    "mock_actual_outcome_id": "release-preflight-mock-actual-outcome-v0",
+    "actual_results": [
+      "release candidate assembled",
+      "scope validation performed",
+      "approval record preflight performed",
+      "snapshot/rollback preflight performed",
+      "invariant preflight performed",
+      "post-release validation matrix generated",
+      "handoff packet generated",
+      "release blocker decision generated",
+      "real release blocked"
+    ],
+    "real_release_authorized": false,
+    "real_release_performed": false,
+    "real_application_authorized": false,
+    "durable_approval_record_written": false,
+    "safety_flags": {
+      "live_execution_enabled": false,
+      "behavior_execution_enabled": false,
+      "external_action_enabled": false,
+      "network_enabled": false,
+      "scheduler_enabled": false,
+      "daemon_enabled": false,
+      "mcp_server_execution_enabled": false,
+      "mcp_tool_execution_enabled": false,
+      "cieu_persistence_enabled": false,
+      "durable_approval_persistence_enabled": false,
+      "real_approval_record_write_enabled": false,
+      "brain_writeback_enabled": false,
+      "memory_ingestion_enabled": false,
+      "strategy_mutation_enabled": false,
+      "candidate_auto_approval_enabled": false,
+      "real_candidate_approval_enabled": false,
+      "real_canonical_policy_mutation_enabled": false,
+      "real_canonical_update_application_enabled": false,
+      "real_release_execution_enabled": false,
+      "real_y_star_direct_mutation_enabled": false,
+      "y_star_gov_modification_enabled": false,
+      "gov_mcp_modification_enabled": false,
+      "semantic_truth_scoring_enabled": false,
+      "raw_runtime_artifact_reading_enabled": false,
+      "revenue_opportunity_discovery_enabled": false
+    },
+    "preflight_flags": {
+      "release_preflight_defined": true,
+      "release_candidate_assembled": true,
+      "preflight_validation_performed": true,
+      "release_operator_handoff_packet_generated": true,
+      "real_release_authorized": false
+    }
+  },
+  "R_t_plus_1": {
+    "residual_delta_id": "release-preflight-residual-delta-v0",
+    "residual_classes": [
+      "release_scope_residual",
+      "approval_record_residual",
+      "snapshot_residual",
+      "rollback_residual",
+      "y_star_invariant_residual",
+      "mcp_non_bypass_residual",
+      "post_release_validation_residual",
+      "release_operator_handoff_residual",
+      "release_blocker_residual",
+      "real_application_blocker_residual"
+    ]
+  },
+  "persistence_enabled": false,
+  "db_write_performed": false,
+  "durable_approval_record_written": false,
+  "real_release_performed": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  },
+  "preflight_flags": {
+    "release_preflight_defined": true,
+    "release_candidate_assembled": true,
+    "preflight_validation_performed": true,
+    "release_operator_handoff_packet_generated": true,
+    "real_release_authorized": false
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "schema_name": "ystar.release_preflight.residual_delta",
+  "schema_version": "v0",
+  "residual_delta_id": "release-preflight-residual-delta-v0",
+  "source_predicted_outcome_id": "release-preflight-predicted-outcome-v0",
+  "source_mock_actual_outcome_id": "release-preflight-mock-actual-outcome-v0",
+  "residual_classes": [
+    {
+      "class": "release_scope_residual",
+      "status": "blocked_or_satisfied_for_preflight_only",
+      "structural_delta": "real release remains blocked while preflight proof artifacts exist"
+    },
+    {
+      "class": "approval_record_residual",
+      "status": "blocked_or_satisfied_for_preflight_only",
+      "structural_delta": "real release remains blocked while preflight proof artifacts exist"
+    },
+    {
+      "class": "snapshot_residual",
+      "status": "blocked_or_satisfied_for_preflight_only",
+      "structural_delta": "real release remains blocked while preflight proof artifacts exist"
+    },
+    {
+      "class": "rollback_residual",
+      "status": "blocked_or_satisfied_for_preflight_only",
+      "structural_delta": "real release remains blocked while preflight proof artifacts exist"
+    },
+    {
+      "class": "y_star_invariant_residual",
+      "status": "blocked_or_satisfied_for_preflight_only",
+      "structural_delta": "real release remains blocked while preflight proof artifacts exist"
+    },
+    {
+      "class": "mcp_non_bypass_residual",
+      "status": "blocked_or_satisfied_for_preflight_only",
+      "structural_delta": "real release remains blocked while preflight proof artifacts exist"
+    },
+    {
+      "class": "post_release_validation_residual",
+      "status": "blocked_or_satisfied_for_preflight_only",
+      "structural_delta": "real release remains blocked while preflight proof artifacts exist"
+    },
+    {
+      "class": "release_operator_handoff_residual",
+      "status": "blocked_or_satisfied_for_preflight_only",
+      "structural_delta": "real release remains blocked while preflight proof artifacts exist"
+    },
+    {
+      "class": "release_blocker_residual",
+      "status": "blocked_or_satisfied_for_preflight_only",
+      "structural_delta": "real release remains blocked while preflight proof artifacts exist"
+    },
+    {
+      "class": "real_application_blocker_residual",
+      "status": "blocked_or_satisfied_for_preflight_only",
+      "structural_delta": "real release remains blocked while preflight proof artifacts exist"
+    }
+  ],
+  "residual_summary": "Preflight generated the release boundary proof; real durable approval, real approval, snapshot, rollback record, operator action, and milestone permission remain missing.",
+  "semantic_truth_scoring_enabled": false,
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "schema_name": "ystar.release_blocker.decision",
+  "schema_version": "v0",
+  "decision_id": "release-blocker-decision-v0",
+  "source_release_candidate_id": "controlled-real-release-candidate-v0",
+  "decision": "blocked_real_release_preflight_only",
+  "allowed_scope": [
+    "artifact-only preflight reporting",
+    "future prerequisite enumeration",
+    "release operator handoff packet generation"
+  ],
+  "denied_scope": [
+    "operation outside approved scope",
+    "direct Y* mutation",
+    "brain writeback",
+    "memory ingestion",
+    "strategy mutation",
+    "MCP execution",
+    "external action",
+    "network/API call",
+    "Y-star-gov modification",
+    "gov-mcp modification",
+    "L6 revenue opportunity discovery"
+  ],
+  "blockers": [
+    "durable_record_missing",
+    "real_approval_missing",
+    "real_snapshot_missing",
+    "real_rollback_record_missing",
+    "release_operator_not_confirmed",
+    "milestone_blocks_real_release",
+    "persistence_disabled",
+    "live_execution_disabled",
+    "mcp_execution_disabled",
+    "canonical_application_disabled",
+    "y_star_direct_mutation_forbidden"
+  ],
+  "required_before_real_release": [
+    "real durable approval record",
+    "real approval decision",
+    "real pre-application snapshot",
+    "real rollback record",
+    "post-approval preflight execution",
+    "release operator confirmation",
+    "rollback operator confirmation",
+    "final invariant checks"
+  ],
+  "real_release_authorized": false,
+  "real_application_authorized": false,
+  "evidence_refs": [
+    "approval_record_preflight_validation/approval_record_preflight_validation_result.json",
+    "snapshot_and_rollback_preflight/snapshot_preflight_validation_result.json"
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false
+  }
+}
