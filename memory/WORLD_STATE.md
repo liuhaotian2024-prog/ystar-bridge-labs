@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-29 07:00:01
+**Generated**: 2026-04-29 07:30:00
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,7 +36,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/12 valid (0 errors)
-**CIEU 24h Events**: 2018
+**CIEU 24h Events**: 2081
 **Overdue Obligations**: 0
 
 ---
@@ -80,55 +80,55 @@
 ---
 
 ## 8. Y* Field State (xi) — Mission axis frequency + drift
-**Total CIEU events (24h)**: 2018
+**Total CIEU events (24h)**: 2081
 
 | M-Axis | Description | 24h Count | 7d Avg/Day | Drift |
 |--------|-------------|-----------|------------|-------|
-| **M-1** | Survivability (session/boot/handoff/persist) | 187 | 4573 | → |
-| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 13 | 834 | ↓ |
-| **M-2b** | Omission prevention (omission/overdue/alarm) | 12 | 2500 | ↓ |
+| **M-1** | Survivability (session/boot/handoff/persist) | 187 | 4547 | → |
+| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 14 | 833 | ↓ |
+| **M-2b** | Omission prevention (omission/overdue/alarm) | 13 | 2488 | ↓ |
 | **M-3** | Value production (customer/revenue/dogfood/demo) | 0 | 0 | ↓ |
 
-**Classified coverage**: 212/2018 (10.5%)
-**Unclassified**: 1806 events (routine ops / K9 routing)
+**Classified coverage**: 214/2081 (10.3%)
+**Unclassified**: 1867 events (routine ops / K9 routing)
 **Drift alert**: M-2a, M-2b, M-3 trending DOWN vs 7d baseline
 
 ---
 
 ## 9. Commission Error Heatmap — 11-component unified dashboard
-**Total commission errors (24h)**: 244
+**Total commission errors (24h)**: 247
 
 **By M-Axis**:
 
 | Axis | Description | 24h Count |
 |------|-------------|-----------|
-| **M-1** | Survivability (schema/wire/config drift) | 211 |
-| **M-2a** | Commission prevention (core 11 detectors) | 33 |
+| **M-1** | Survivability (schema/wire/config drift) | 213 |
+| **M-2a** | Commission prevention (core 11 detectors) | 34 |
 | **M-3** | Value quality (maturity/off-target) | 0 |
 
 **By Detector (11 components + hook catches)**:
 
 | Detector | 24h Count | Drift vs 7d |
 |----------|-----------|-------------|
-| amendment_coverage_audit | 199 | v (avg 356.3/d) |
-| directive_evaluator | 33 | = (avg 32.1/d) |
-| hook_commission_catch | 12 | v (avg 415.7/d) |
+| amendment_coverage_audit | 200 | v (avg 353.4/d) |
+| directive_evaluator | 34 | = (avg 32.1/d) |
+| hook_commission_catch | 13 | v (avg 413.1/d) |
 
 **By Actor (top 10)**:
 
 | Actor | 24h Commission Errors |
 |-------|----------------------|
 | unknown | 187 |
-| cto | 33 |
-| platform | 24 |
+| cto | 34 |
+| platform | 26 |
 
 **Top 5 Event Types**:
 - `SESSION_JSON_SCHEMA_VIOLATION`: 187
-- `DIRECTIVE_LIVENESS_EVAL`: 33
-- `CANONICAL_HASH_DRIFT`: 12
-- `WIRE_BROKEN`: 12
+- `DIRECTIVE_LIVENESS_EVAL`: 34
+- `CANONICAL_HASH_DRIFT`: 13
+- `WIRE_BROKEN`: 13
 
-**Overall drift**: v (24h=244, 7d avg/day=2176.3)
+**Overall drift**: v (24h=247, 7d avg/day=2161.1)
 
 ---
 
@@ -154,7 +154,10 @@
 ## 13. Today's Commits (24h) — both repos
 
 
-**ystar-company** (27 commits):
+**ystar-company** (30 commits):
+- 8894d394 07:28 tools: add l6 controlled agentic evidence pilot approval dry run
+- 43abcb87 07:08 tools: add l6 agentic evidence discovery and trust judgment engine
+- 1bb04a9b 07:01 [auto] WIP checkpoint 2026-04-29 07:01 -- 3 files changed
 - 11ad6d1f 02:10 [auto] WIP checkpoint 2026-04-29 02:10 -- 137 files changed
 - 7d499116 22:59 [auto] WIP checkpoint 2026-04-28 22:59 -- 53 files changed
 - 684c0043 22:43 tools: add l6 integrated approval record and pilot readiness sandbox
@@ -172,8 +175,5 @@
 - 31fb5fc1 18:57 [auto] WIP checkpoint 2026-04-28 18:56 -- 141 files changed
 - 38291772 18:21 tools: add l6 meta development generative selection engine
 - 11a72a21 18:07 [auto] WIP checkpoint 2026-04-28 18:07 -- 154 files changed
-- 1b0131d0 17:44 tools: add live boundary no go framework
-- 17aadbec 17:14 tools: add real release simulation sandbox
-- b3b9e2c3 16:38 tools: add controlled real release preflight
 
 **Y*gov**: no commits

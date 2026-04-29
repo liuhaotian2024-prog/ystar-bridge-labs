@@ -2,7 +2,7 @@
 
 Path-only inventory. No artifact contents were opened.
 
-- Artifacts classified: 152
+- Artifacts classified: 187
 - Unsafe artifacts: 120
 
 ## Classes Seen
@@ -14,7 +14,8 @@ Path-only inventory. No artifact contents were opened.
 - DB_CORE: 1
 - DB_SIDECARE: 6
 - DREAM_REPORT: 1
+- FRAMEWORK_FILE: 16
 - LOG_RUNTIME: 30
 - PYCACHE: 45
-- UNKNOWN_OR_NON_RUNTIME: 32
+- UNKNOWN_OR_NON_RUNTIME: 51
 - UNKNOWN_RUNTIME_ARTIFACT: 10

@@ -113,7 +113,7 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 152
+- Artifacts classified: 187
 - Unsafe artifacts count: 120
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
@@ -123,9 +123,10 @@ Not ready:
   - DB_CORE: 1
   - DB_SIDECARE: 6
   - DREAM_REPORT: 1
+  - FRAMEWORK_FILE: 16
   - LOG_RUNTIME: 30
   - PYCACHE: 45
-  - UNKNOWN_OR_NON_RUNTIME: 32
+  - UNKNOWN_OR_NON_RUNTIME: 51
   - UNKNOWN_RUNTIME_ARTIFACT: 10
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
 - Warning: Console displays only curated path-level quarantine summary. No artifact contents were read.
@@ -155,8 +156,8 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 152
-- Artifacts with disposition: 152
+- Total artifacts: 187
+- Artifacts with disposition: 187
 - Safe-mined to review queue: 1
 - Forbidden direct read count: 119
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
@@ -167,10 +168,10 @@ Not ready:
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 45
-  - ignored_or_non_runtime: 32
+  - ignored_or_non_runtime: 67
   - safe_mined_to_review_queue: 1
 - Evidence scoring status:
-  - not_started: 152
+  - not_started: 187
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -548,7 +549,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 5449
+- assets_scanned: 5549
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -1159,6 +1160,32 @@ Not ready:
 - ready_for_autonomous_web_search_now: False
 - next_recommended_milestone: L6.9 Controlled Read-Only Agentic Evidence Discovery Pilot Approval v0
 - Warning: L6.8 is agentic evidence discovery design/sandbox only. It can infer evidence needs, generate and rank source hypotheses, judge source value and structural trust, and generate future work orders, but real observation, agent fetch, URL open, network, search, scraping, API calls, browser fetch, publication, outreach, payment, revenue, MCP, live behavior, CIEU DB writes, canonical mutation, writeback, and direct Y* mutation remain blocked.
+
+## L6.9 Controlled Agentic Evidence Pilot Approval Dry-Run
+
+- l6_9_controlled_agentic_evidence_pilot_approval_dry_run_defined: True
+- mode: pilot_approval_and_dry_run_only
+- pilot_approval_and_dry_run_only: True
+- sandbox_approval_record_only: True
+- selected_work_order_count: 3
+- approval_packet_count: 3
+- sandbox_approval_record_count: 3
+- dry_run_trace_count: 3
+- empty_evidence_packet_count: 3
+- post_run_review_packet_count: 3
+- real_external_observation_authorized: False
+- real_pilot_execution_authorized: False
+- real_approval_granted: False
+- durable_real_approval_record_created: False
+- network_enabled: False
+- search_enabled: False
+- scraping_enabled: False
+- browser_fetch_enabled: False
+- ready_for_l6_10_tiny_real_read_only_agentic_evidence_observation_pilot: True
+- ready_for_actual_network_observation_now: False
+- ready_for_autonomous_web_search_now: False
+- next_recommended_milestone: L6.10 Tiny Real Read-Only Agentic Evidence Observation Pilot v0
+- Warning: L6.9 is pilot approval and dry-run only. It selects L6.8 work orders, creates sandbox approval packets and records, simulates runtime readiness, dry-run lifecycle, empty evidence capture, post-run review, residuals, and no-action receipts, but real approval, durable approval persistence, real observation, URL open, network, search, scraping, API calls, browser fetch, publication, outreach, payment, revenue, MCP, live behavior, CIEU DB writes, canonical mutation, writeback, and direct Y* mutation remain blocked.
 
 ## Governance Boundary
 

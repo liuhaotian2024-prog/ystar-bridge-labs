@@ -10,11 +10,11 @@ Legacy assets were scored from compact generated inventory metadata only.
 - E_retire_do_not_use: 0
 
 ## Top Absorption Candidates
-- asset-0428: console_read_model/cli/team_console.py (A_adopt_now_read_only)
-- asset-0478: console_read_model/generated/team_console_snapshot.md (B_wrap_as_governed_tool)
-- asset-0913: gov_mcp/server.py (B_wrap_as_governed_tool)
-- asset-4032: scripts/skill_lifecycle_manager.py (B_wrap_as_governed_tool)
-- asset-3059: reports/ceo/demonstrators/goal_4_ystar_symbol_liveness.py (B_wrap_as_governed_tool)
+- asset-0510: console_read_model/cli/team_console.py (A_adopt_now_read_only)
+- asset-0561: console_read_model/generated/team_console_snapshot.md (B_wrap_as_governed_tool)
+- asset-0996: gov_mcp/server.py (B_wrap_as_governed_tool)
+- asset-4131: scripts/skill_lifecycle_manager.py (B_wrap_as_governed_tool)
+- asset-3158: reports/ceo/demonstrators/goal_4_ystar_symbol_liveness.py (B_wrap_as_governed_tool)
 - asset-0066: .claude/tasks/eng-platform-behavior-rules-gap-analysis.md (B_wrap_as_governed_tool)
 - asset-0113: agent_brain_capsule/README.md (B_wrap_as_governed_tool)
 
