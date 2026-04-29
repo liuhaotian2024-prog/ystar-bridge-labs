@@ -113,8 +113,8 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 156
-- Unsafe artifacts count: 118
+- Artifacts classified: 124
+- Unsafe artifacts count: 119
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -122,10 +122,9 @@ Not ready:
   - DAEMON_STATE: 4
   - DB_CORE: 1
   - DB_SIDECARE: 6
-  - FRAMEWORK_FILE: 5
   - LOG_RUNTIME: 30
-  - PYCACHE: 44
-  - UNKNOWN_OR_NON_RUNTIME: 33
+  - PYCACHE: 45
+  - UNKNOWN_OR_NON_RUNTIME: 5
   - UNKNOWN_RUNTIME_ARTIFACT: 10
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
 - Warning: Console displays only curated path-level quarantine summary. No artifact contents were read.
@@ -151,10 +150,10 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 156
-- Artifacts with disposition: 156
+- Total artifacts: 124
+- Artifacts with disposition: 124
 - Safe-mined to review queue: 0
-- Forbidden direct read count: 118
+- Forbidden direct read count: 119
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
   - deferred_requires_bounded_log_adapter: 30
@@ -162,10 +161,10 @@ Not ready:
   - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
-  - ignored_generated_cache: 44
-  - ignored_or_non_runtime: 38
+  - ignored_generated_cache: 45
+  - ignored_or_non_runtime: 5
 - Evidence scoring status:
-  - not_started: 156
+  - not_started: 124
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -539,7 +538,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 4866
+- assets_scanned: 4935
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20

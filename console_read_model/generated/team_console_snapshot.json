@@ -405,8 +405,8 @@
     "schema_version": "v0",
     "framework_status": "path_inventory_only",
     "current_mining_level": 0,
-    "artifacts_classified": 156,
-    "unsafe_artifacts_count": 118,
+    "artifacts_classified": 124,
+    "unsafe_artifacts_count": 119,
     "classes_seen": {
       "ACTIVE_AGENT_MARKER": 17,
       "BACKUP_DB": 1,
@@ -414,10 +414,9 @@
       "DAEMON_STATE": 4,
       "DB_CORE": 1,
       "DB_SIDECARE": 6,
-      "FRAMEWORK_FILE": 5,
       "LOG_RUNTIME": 30,
-      "PYCACHE": 44,
-      "UNKNOWN_OR_NON_RUNTIME": 33,
+      "PYCACHE": 45,
+      "UNKNOWN_OR_NON_RUNTIME": 5,
       "UNKNOWN_RUNTIME_ARTIFACT": 10
     },
     "generated_manifest_ref": "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
@@ -497,28 +496,27 @@
   "artifact_disposition_summary": {
     "schema_name": "ystar.console_read_model.generated.artifact_disposition_summary",
     "schema_version": "v0",
-    "total_artifacts": 156,
-    "artifacts_with_disposition": 156,
+    "total_artifacts": 124,
+    "artifacts_with_disposition": 124,
     "dispositions": {
       "deferred_requires_marker_metadata_adapter": 26,
       "deferred_sidecar_or_transaction_file": 6,
       "deferred_requires_classification": 10,
       "deferred_requires_readonly_db_adapter": 2,
-      "ignored_or_non_runtime": 38,
+      "ignored_or_non_runtime": 5,
       "deferred_requires_bounded_log_adapter": 30,
-      "ignored_generated_cache": 44
+      "ignored_generated_cache": 45
     },
     "artifact_classes": {
       "DAEMON_STATE": 4,
       "DB_SIDECARE": 6,
       "UNKNOWN_RUNTIME_ARTIFACT": 10,
       "DB_CORE": 1,
-      "UNKNOWN_OR_NON_RUNTIME": 33,
-      "FRAMEWORK_FILE": 5,
+      "UNKNOWN_OR_NON_RUNTIME": 5,
       "CACHE_SENTINEL": 5,
       "LOG_RUNTIME": 30,
       "ACTIVE_AGENT_MARKER": 17,
-      "PYCACHE": 44,
+      "PYCACHE": 45,
       "BACKUP_DB": 1
     },
     "safe_mined_to_review_queue": 0,
@@ -529,10 +527,10 @@
       "deferred_requires_readonly_db_adapter": 2,
       "deferred_requires_bounded_log_adapter": 30
     },
-    "ignored_generated_cache": 44,
-    "forbidden_direct_read_count": 118,
+    "ignored_generated_cache": 45,
+    "forbidden_direct_read_count": 119,
     "evidence_scoring_status": {
-      "not_started": 156
+      "not_started": 124
     },
     "generated_disposition_index": "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
     "warning": "Disposition is not ingestion. No brain/memory/CIEU writes are allowed."
@@ -1117,7 +1115,7 @@
     "schema_version": "v0",
     "field_functional_archaeology_defined": true,
     "repos_scanned": 4,
-    "assets_scanned": 4866,
+    "assets_scanned": 4935,
     "field_functional_assets_found": 200,
     "reuse_candidates_count": 20,
     "wrap_candidates_count": 20,
