@@ -199,6 +199,15 @@ python3 console_read_model/cli/team_console.py <command>
   packet design, and blocked real observation/network/search/API/scraping/
   browser fetch/publication/outreach/payment/revenue/MCP/live/CIEU DB/writeback
   execution state.
+- `controlled-observation-pilot-approval-packet`: Prints the generated L6.6
+  controlled observation pilot approval packet summary: selected approval
+  candidates, approval authority model, approval packet instances, evidence
+  dossiers, risk reviews, operator/runtime/evidence prerequisites, no-action
+  constraints, blocked approval decisions, non-persistence receipts, readiness
+  for L6.7 approval record sandbox, and blocked real approval/durable
+  persistence/real observation/network/search/API/scraping/browser fetch/
+  publication/outreach/payment/revenue/MCP/live/CIEU DB/writeback execution
+  state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

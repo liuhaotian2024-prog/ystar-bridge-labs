@@ -2141,6 +2141,47 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "l6_pilot_design_readiness/l6_5_readiness_assessment.json"],
     ),
     Check(
+        "Compile L6.6 controlled observation pilot approval packet builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "l6_controlled_observation_pilot_approval_packet/tools/build_l6_controlled_observation_pilot_approval_packet.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: l6_pilot_approval_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_pilot_approval_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_6_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_controlled_observation_pilot_approval_packet/l6_6_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: selected_approval_candidates.json",
+        ["python3", "-m", "json.tool", "pilot_approval_candidate_selector/selected_approval_candidates.json"],
+    ),
+    Check(
+        "Validate JSON: approval_packet_index.json",
+        ["python3", "-m", "json.tool", "pilot_approval_packet_assembler/approval_packet_index.json"],
+    ),
+    Check(
+        "Validate JSON: evidence_dossier_index.json",
+        ["python3", "-m", "json.tool", "pilot_approval_evidence_dossier/evidence_dossier_index.json"],
+    ),
+    Check(
+        "Validate JSON: approval_packet_risk_matrix.json",
+        ["python3", "-m", "json.tool", "pilot_approval_risk_review/approval_packet_risk_matrix.json"],
+    ),
+    Check(
+        "Validate JSON: approval_packet_decision_matrix.json",
+        ["python3", "-m", "json.tool", "pilot_approval_decision_sandbox/approval_packet_decision_matrix.json"],
+    ),
+    Check(
+        "Validate JSON: l6_6_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "l6_pilot_approval_readiness/l6_6_readiness_assessment.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -2395,6 +2436,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: controlled-real-read-only-observation-pilot-design",
         ["python3", "console_read_model/cli/team_console.py", "controlled-real-read-only-observation-pilot-design"],
+    ),
+    Check(
+        "CLI smoke: controlled-observation-pilot-approval-packet",
+        ["python3", "console_read_model/cli/team_console.py", "controlled-observation-pilot-approval-packet"],
     ),
     Check(
         "CLI smoke: sources",

@@ -67,6 +67,7 @@ L6_REAL_OBSERVATION_PREFLIGHT = (
     "console_read_model/generated/l6_real_observation_preflight_summary.json"
 )
 L6_PILOT_DESIGN = "console_read_model/generated/l6_pilot_design_summary.json"
+L6_PILOT_APPROVAL = "console_read_model/generated/l6_pilot_approval_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -86,7 +87,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -163,6 +164,7 @@ def load_all() -> dict[str, Any]:
         "l6_controlled_observation_sandbox": load_json(L6_CONTROLLED_OBSERVATION_SANDBOX),
         "l6_real_observation_preflight": load_json(L6_REAL_OBSERVATION_PREFLIGHT),
         "l6_pilot_design": load_json(L6_PILOT_DESIGN),
+        "l6_pilot_approval": load_json(L6_PILOT_APPROVAL),
     }
 
 
@@ -2148,6 +2150,95 @@ def cmd_controlled_real_read_only_observation_pilot_design(data: dict[str, Any])
     print(f"warning: {pilot.get('warning')}")
 
 
+def cmd_controlled_observation_pilot_approval_packet(data: dict[str, Any]) -> None:
+    approval = data["l6_pilot_approval"]
+    print("# L6.6 Controlled Observation Pilot Approval Packet")
+    print()
+    print(
+        "L6.6 controlled observation pilot approval packet defined: "
+        f"{approval.get('l6_6_controlled_observation_pilot_approval_packet_defined')}"
+    )
+    print(f"approval packet only: {approval.get('approval_packet_only')}")
+    print(f"approval sandbox only: {approval.get('approval_sandbox_only')}")
+    print(
+        "future real read-only observation pilot candidate allowed: "
+        f"{approval.get('future_real_read_only_observation_pilot_candidate_allowed')}"
+    )
+    print(f"approval candidates: {approval.get('approval_candidate_count')}")
+    print(f"approval packets: {approval.get('approval_packet_count')}")
+    print(f"evidence dossiers: {approval.get('evidence_dossier_count')}")
+    print(f"risk reviews: {approval.get('risk_review_count')}")
+    print(f"approval authority model generated: {approval.get('approval_authority_model_generated')}")
+    print(f"approval packet instances generated: {approval.get('approval_packet_instances_generated')}")
+    print(f"evidence dossiers generated: {approval.get('evidence_dossiers_generated')}")
+    print(f"risk reviews generated: {approval.get('risk_reviews_generated')}")
+    print(
+        "operator authorization prerequisites generated: "
+        f"{approval.get('operator_authorization_prerequisites_generated')}"
+    )
+    print(
+        "runtime isolation attestation templates generated: "
+        f"{approval.get('runtime_isolation_attestation_templates_generated')}"
+    )
+    print(
+        "evidence capture authorization templates generated: "
+        f"{approval.get('evidence_capture_authorization_templates_generated')}"
+    )
+    print(f"no-action constraints generated: {approval.get('no_action_constraints_generated')}")
+    print(f"approval decision sandbox generated: {approval.get('approval_decision_sandbox_generated')}")
+    print(f"non-persistence receipts generated: {approval.get('non_persistence_receipts_generated')}")
+    print(f"real approval granted: {approval.get('real_approval_granted')}")
+    print(
+        "durable real approval record created: "
+        f"{approval.get('durable_real_approval_record_created')}"
+    )
+    print(
+        "real external observation authorized: "
+        f"{approval.get('real_external_observation_authorized')}"
+    )
+    print(f"real pilot execution authorized: {approval.get('real_pilot_execution_authorized')}")
+    print(f"network enabled: {approval.get('network_enabled')}")
+    print(f"API enabled: {approval.get('api_enabled')}")
+    print(f"scraping enabled: {approval.get('scraping_enabled')}")
+    print(f"browser fetch enabled: {approval.get('browser_fetch_enabled')}")
+    print(f"search enabled: {approval.get('search_enabled')}")
+    print(f"publication enabled: {approval.get('publication_enabled')}")
+    print(f"outreach enabled: {approval.get('outreach_enabled')}")
+    print(f"payment enabled: {approval.get('payment_enabled')}")
+    print(f"revenue execution enabled: {approval.get('revenue_execution_enabled')}")
+    print(f"MCP tool execution enabled: {approval.get('mcp_tool_execution_enabled')}")
+    print(f"live execution enabled: {approval.get('live_execution_enabled')}")
+    print(f"CIEU DB write enabled: {approval.get('cieu_db_write_enabled')}")
+    print(f"brain writeback enabled: {approval.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {approval.get('memory_ingestion_enabled')}")
+    print(
+        "ready for L6.7 controlled real read-only observation approval record sandbox: "
+        f"{approval.get('ready_for_l6_7_controlled_real_read_only_observation_approval_record_sandbox')}"
+    )
+    print(
+        "ready for actual network observation now: "
+        f"{approval.get('ready_for_actual_network_observation_now')}"
+    )
+    print(f"ready for real approval now: {approval.get('ready_for_real_approval_now')}")
+    print(
+        "ready for durable approval persistence now: "
+        f"{approval.get('ready_for_durable_approval_persistence_now')}"
+    )
+    print(f"ready for publication: {approval.get('ready_for_publication')}")
+    print(f"ready for outreach: {approval.get('ready_for_outreach')}")
+    print(f"ready for payment: {approval.get('ready_for_payment')}")
+    print(f"ready for revenue execution: {approval.get('ready_for_revenue_execution')}")
+    print(f"next recommended milestone: {approval.get('next_recommended_milestone')}")
+    print(f"generated_selected_candidates: {approval.get('generated_selected_candidates')}")
+    print(f"generated_approval_packets: {approval.get('generated_approval_packets')}")
+    print(f"generated_evidence_dossiers: {approval.get('generated_evidence_dossiers')}")
+    print(f"generated_risk_reviews: {approval.get('generated_risk_reviews')}")
+    print(f"generated_decision_sandbox: {approval.get('generated_decision_sandbox')}")
+    print(f"generated_non_persistence_receipt: {approval.get('generated_non_persistence_receipt')}")
+    print(f"generated_readiness: {approval.get('generated_readiness')}")
+    print(f"warning: {approval.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -4104,6 +4195,8 @@ def main(argv: list[str]) -> int:
         cmd_real_read_only_observation_preflight(data)
     elif command == "controlled-real-read-only-observation-pilot-design":
         cmd_controlled_real_read_only_observation_pilot_design(data)
+    elif command == "controlled-observation-pilot-approval-packet":
+        cmd_controlled_observation_pilot_approval_packet(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

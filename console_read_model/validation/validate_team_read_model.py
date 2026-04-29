@@ -415,6 +415,9 @@ def main() -> int:
     required_l6_controlled_real_read_only_observation_pilot_design_files = expected.get(
         "required_l6_controlled_real_read_only_observation_pilot_design_files", []
     )
+    required_l6_controlled_observation_pilot_approval_packet_files = expected.get(
+        "required_l6_controlled_observation_pilot_approval_packet_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -671,6 +674,12 @@ def main() -> int:
         check_exists(path, report, "L6.5 controlled real read-only observation pilot design file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "L6.5 controlled real read-only observation pilot design JSON")
+
+    for rel in required_l6_controlled_observation_pilot_approval_packet_files:
+        path = ROOT / rel
+        check_exists(path, report, "L6.6 controlled observation pilot approval packet file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "L6.6 controlled observation pilot approval packet JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -5272,6 +5281,198 @@ def main() -> int:
             "L6.6 Controlled Real Read-Only Observation Pilot Approval Packet v0"
         ):
             report.fail("generated L6.5 summary must point to L6.6")
+
+    l6_pilot_approval = generated_json.get(
+        "console_read_model/generated/l6_pilot_approval_summary.json"
+    )
+    if l6_pilot_approval:
+        for field in [
+            "l6_6_controlled_observation_pilot_approval_packet_defined",
+            "approval_packet_only",
+            "approval_sandbox_only",
+            "future_real_read_only_observation_pilot_candidate_allowed",
+            "approval_candidate_count",
+            "approval_packet_count",
+            "evidence_dossier_count",
+            "risk_review_count",
+            "approval_authority_model_generated",
+            "approval_packet_instances_generated",
+            "evidence_dossiers_generated",
+            "risk_reviews_generated",
+            "operator_authorization_prerequisites_generated",
+            "runtime_isolation_attestation_templates_generated",
+            "evidence_capture_authorization_templates_generated",
+            "no_action_constraints_generated",
+            "approval_decision_sandbox_generated",
+            "non_persistence_receipts_generated",
+            "strategic_residual_loop_generated",
+            "real_external_observation_authorized",
+            "real_pilot_execution_authorized",
+            "real_approval_granted",
+            "durable_real_approval_record_created",
+            "network_authorized",
+            "api_authorized",
+            "scraping_authorized",
+            "browser_fetch_authorized",
+            "search_authorized",
+            "publication_authorized",
+            "outreach_authorized",
+            "payment_authorized",
+            "revenue_execution_authorized",
+            "mcp_execution_authorized",
+            "live_behavior_authorized",
+            "cieu_db_write_authorized",
+            "canonical_update_authorized",
+            "brain_writeback_authorized",
+            "memory_ingestion_authorized",
+            "direct_y_star_mutation_authorized",
+            "network_enabled",
+            "api_enabled",
+            "scraping_enabled",
+            "browser_fetch_enabled",
+            "search_enabled",
+            "external_action_enabled",
+            "publication_enabled",
+            "outreach_enabled",
+            "payment_enabled",
+            "revenue_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "live_execution_enabled",
+            "cieu_db_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "real_canonical_update_application_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "l6_6_approval_packet_only",
+            "l6_6_approval_sandbox_only",
+            "l6_6_approval_packet_generation_enabled",
+            "l6_6_approval_decision_sandbox_enabled",
+            "l6_6_real_approval_granted",
+            "l6_6_durable_real_approval_record_created",
+            "ready_for_l6_7_controlled_real_read_only_observation_approval_record_sandbox",
+            "ready_for_actual_network_observation_now",
+            "ready_for_real_approval_now",
+            "ready_for_durable_approval_persistence_now",
+            "ready_for_scraping",
+            "ready_for_publication",
+            "ready_for_outreach",
+            "ready_for_payment",
+            "ready_for_revenue_execution",
+            "ready_for_mcp_execution",
+            "ready_for_canonical_update",
+            "ready_for_brain_memory_writeback",
+            "next_recommended_milestone",
+            "generated_milestone_summary",
+            "generated_selected_candidates",
+            "generated_authority_model",
+            "generated_approval_packets",
+            "generated_evidence_dossiers",
+            "generated_risk_reviews",
+            "generated_decision_sandbox",
+            "generated_non_persistence_receipt",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in l6_pilot_approval:
+                report.pass_(f"generated L6.6 pilot approval summary field present: {field}")
+            else:
+                report.fail(f"generated L6.6 pilot approval summary missing field: {field}")
+        for field in [
+            "l6_6_controlled_observation_pilot_approval_packet_defined",
+            "approval_packet_only",
+            "approval_sandbox_only",
+            "future_real_read_only_observation_pilot_candidate_allowed",
+            "approval_authority_model_generated",
+            "approval_packet_instances_generated",
+            "evidence_dossiers_generated",
+            "risk_reviews_generated",
+            "operator_authorization_prerequisites_generated",
+            "runtime_isolation_attestation_templates_generated",
+            "evidence_capture_authorization_templates_generated",
+            "no_action_constraints_generated",
+            "approval_decision_sandbox_generated",
+            "non_persistence_receipts_generated",
+            "strategic_residual_loop_generated",
+            "l6_6_approval_packet_only",
+            "l6_6_approval_sandbox_only",
+            "l6_6_approval_packet_generation_enabled",
+            "l6_6_approval_decision_sandbox_enabled",
+            "ready_for_l6_7_controlled_real_read_only_observation_approval_record_sandbox",
+        ]:
+            if l6_pilot_approval.get(field) is not True:
+                report.fail(f"generated L6.6 summary must keep {field}=true")
+        for field in [
+            "real_external_observation_authorized",
+            "real_pilot_execution_authorized",
+            "real_approval_granted",
+            "durable_real_approval_record_created",
+            "network_authorized",
+            "api_authorized",
+            "scraping_authorized",
+            "browser_fetch_authorized",
+            "search_authorized",
+            "publication_authorized",
+            "outreach_authorized",
+            "payment_authorized",
+            "revenue_execution_authorized",
+            "mcp_execution_authorized",
+            "live_behavior_authorized",
+            "cieu_db_write_authorized",
+            "canonical_update_authorized",
+            "brain_writeback_authorized",
+            "memory_ingestion_authorized",
+            "direct_y_star_mutation_authorized",
+            "network_enabled",
+            "api_enabled",
+            "scraping_enabled",
+            "browser_fetch_enabled",
+            "search_enabled",
+            "external_action_enabled",
+            "publication_enabled",
+            "outreach_enabled",
+            "payment_enabled",
+            "revenue_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "live_execution_enabled",
+            "cieu_db_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "real_canonical_update_application_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "l6_6_real_approval_granted",
+            "l6_6_durable_real_approval_record_created",
+            "ready_for_actual_network_observation_now",
+            "ready_for_real_approval_now",
+            "ready_for_durable_approval_persistence_now",
+            "ready_for_scraping",
+            "ready_for_publication",
+            "ready_for_outreach",
+            "ready_for_payment",
+            "ready_for_revenue_execution",
+            "ready_for_mcp_execution",
+            "ready_for_canonical_update",
+            "ready_for_brain_memory_writeback",
+        ]:
+            if l6_pilot_approval.get(field) is not False:
+                report.fail(f"generated L6.6 summary must keep {field}=false")
+        if not 1 <= l6_pilot_approval.get("approval_candidate_count", 0) <= 3:
+            report.fail("generated L6.6 summary must select between 1 and 3 candidates")
+        if l6_pilot_approval.get("approval_packet_count") != (
+            l6_pilot_approval.get("approval_candidate_count")
+        ):
+            report.fail("generated L6.6 approval packet count must match candidate count")
+        if l6_pilot_approval.get("evidence_dossier_count") != (
+            l6_pilot_approval.get("approval_candidate_count")
+        ):
+            report.fail("generated L6.6 evidence dossier count must match candidate count")
+        if l6_pilot_approval.get("next_recommended_milestone") != (
+            "L6.7 Controlled Real Read-Only Observation Approval Record Sandbox v0"
+        ):
+            report.fail("generated L6.6 summary must point to L6.7")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

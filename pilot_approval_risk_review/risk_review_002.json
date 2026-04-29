@@ -110,7 +110,6 @@
     }
   ],
   "semantic_truth_scoring_used": false,
-  "llm_confidence_as_authority_used": false,
   "market_success_scoring_used": false,
   "real_observation_approved": false,
   "safety_flags": {

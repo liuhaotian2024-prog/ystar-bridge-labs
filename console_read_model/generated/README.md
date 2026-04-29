@@ -157,5 +157,16 @@ fetch, publication, outreach, payment, revenue, MCP, live behavior, CIEU
 DB writes, canonical mutation, writeback, and direct Y* mutation remain
 blocked.
 
+`l6_pilot_approval_summary.json` is derived from the L6.6 controlled
+observation pilot approval packet. It confirms approval candidates,
+authority constraints, approval packet instances, evidence dossiers,
+risk reviews, operator/runtime/evidence prerequisites, no-action
+constraints, blocked approval decisions, non-persistence receipts, and
+readiness artifacts while real approval, durable approval persistence,
+real observation, URL fetch, search, scraping, API calls, browser fetch,
+publication, outreach, payment, revenue, MCP, live behavior, CIEU DB
+writes, canonical mutation, writeback, and direct Y* mutation remain
+blocked.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

@@ -584,7 +584,6 @@ def build_risk_review(index: int, packet: dict[str, Any]) -> dict[str, Any]:
                 for dimension in RISK_DIMENSIONS
             ],
             "semantic_truth_scoring_used": False,
-            "llm_confidence_as_authority_used": False,
             "market_success_scoring_used": False,
             "real_observation_approved": False,
         }
