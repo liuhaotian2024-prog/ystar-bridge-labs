@@ -201,5 +201,14 @@ URL fetch/open, search, scraping, API calls, browser fetch, publication,
 outreach, payment, revenue, MCP, live behavior, CIEU DB writes,
 canonical mutation, writeback, and direct Y* mutation remain blocked.
 
+`l6_tiny_observation_pilot_summary.json` is derived from the L6.10
+tiny real read-only agentic evidence observation pilot. It confirms one
+selected L6.9 work order, hard runtime limits, locator resolution,
+observation trace, evidence packet, structural validation, claim/freshness
+assessment, post-observation review, review-only refinement candidate,
+abort/quarantine decision, no-action receipts, and readiness artifacts.
+This run correctly records a blocked pilot because no concrete locator was
+available and no controlled network/tooling condition was present.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

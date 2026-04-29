@@ -234,6 +234,13 @@ python3 console_read_model/cli/team_console.py <command>
   pilot, and blocked real approval/durable persistence/real observation/network/
   search/API/scraping/browser fetch/publication/outreach/payment/revenue/MCP/
   live/CIEU DB/writeback execution state.
+- `tiny-real-read-only-agentic-evidence-observation-pilot`: Prints the generated
+  L6.10 tiny real read-only observation pilot summary: one selected work order,
+  runtime limits, locator resolution, observation trace, evidence packet,
+  structural validation, claim/freshness assessment, post-observation review,
+  review-only refinement candidate, abort/quarantine decision, no-action
+  receipts, and blocked downstream publication/outreach/payment/revenue/MCP/
+  live/CIEU DB/canonical/writeback/direct Y* mutation state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

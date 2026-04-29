@@ -2313,6 +2313,39 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "l6_agentic_pilot_dry_run_readiness_report/l6_9_readiness_assessment.json"],
     ),
     Check(
+        "Compile L6.10 tiny real read-only observation pilot builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "l6_tiny_real_read_only_agentic_evidence_observation_pilot/tools/build_l6_tiny_real_read_only_agentic_evidence_observation_pilot.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: l6_tiny_observation_pilot_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_tiny_observation_pilot_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_tiny_real_read_only_agentic_evidence_observation_pilot/l6_10_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: selected_tiny_observation_work_order.json",
+        ["python3", "-m", "json.tool", "tiny_observation_work_order_selector/selected_tiny_observation_work_order.json"],
+    ),
+    Check(
+        "Validate JSON: tiny_observation_trace.json",
+        ["python3", "-m", "json.tool", "tiny_real_read_only_observation_trace/tiny_observation_trace.json"],
+    ),
+    Check(
+        "Validate JSON: tiny_evidence_packet.json",
+        ["python3", "-m", "json.tool", "tiny_evidence_capture_packet/tiny_evidence_packet.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "l6_tiny_observation_readiness_report/l6_10_readiness_assessment.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -2583,6 +2616,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: controlled-agentic-evidence-pilot-approval-dry-run",
         ["python3", "console_read_model/cli/team_console.py", "controlled-agentic-evidence-pilot-approval-dry-run"],
+    ),
+    Check(
+        "CLI smoke: tiny-real-read-only-agentic-evidence-observation-pilot",
+        ["python3", "console_read_model/cli/team_console.py", "tiny-real-read-only-agentic-evidence-observation-pilot"],
     ),
     Check(
         "CLI smoke: sources",

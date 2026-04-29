@@ -75,6 +75,9 @@ L6_AGENTIC_EVIDENCE = "console_read_model/generated/l6_agentic_evidence_summary.
 L6_AGENTIC_PILOT_DRY_RUN = (
     "console_read_model/generated/l6_agentic_pilot_dry_run_summary.json"
 )
+L6_TINY_OBSERVATION_PILOT = (
+    "console_read_model/generated/l6_tiny_observation_pilot_summary.json"
+)
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -94,7 +97,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|integrated-approval-record-and-pilot-readiness|agentic-evidence-discovery-trust-engine|controlled-agentic-evidence-pilot-approval-dry-run|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|integrated-approval-record-and-pilot-readiness|agentic-evidence-discovery-trust-engine|controlled-agentic-evidence-pilot-approval-dry-run|tiny-real-read-only-agentic-evidence-observation-pilot|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -175,6 +178,7 @@ def load_all() -> dict[str, Any]:
         "l6_integrated_pilot_readiness": load_json(L6_INTEGRATED_PILOT_READINESS),
         "l6_agentic_evidence": load_json(L6_AGENTIC_EVIDENCE),
         "l6_agentic_pilot_dry_run": load_json(L6_AGENTIC_PILOT_DRY_RUN),
+        "l6_tiny_observation_pilot": load_json(L6_TINY_OBSERVATION_PILOT),
     }
 
 
@@ -2522,6 +2526,71 @@ def cmd_controlled_agentic_evidence_pilot_approval_dry_run(data: dict[str, Any])
     print(f"warning: {pilot.get('warning')}")
 
 
+def cmd_tiny_real_read_only_agentic_evidence_observation_pilot(data: dict[str, Any]) -> None:
+    pilot = data["l6_tiny_observation_pilot"]
+    print("# L6.10 Tiny Real Read-Only Agentic Evidence Observation Pilot")
+    print()
+    print(
+        "L6.10 tiny real read-only observation pilot defined: "
+        f"{pilot.get('l6_10_tiny_real_read_only_observation_pilot_defined')}"
+    )
+    print(f"mode: {pilot.get('mode')}")
+    print(f"selected work orders: {pilot.get('selected_work_order_count')}")
+    print(f"source locator resolved: {pilot.get('source_locator_resolved')}")
+    print(f"observation executed: {pilot.get('observation_executed')}")
+    print(f"blocked pilot: {pilot.get('blocked_pilot')}")
+    print(f"external requests count: {pilot.get('external_requests_count')}")
+    print(f"pages read count: {pilot.get('pages_read_count')}")
+    print(f"search queries count: {pilot.get('search_queries_count')}")
+    print(f"evidence packet generated: {pilot.get('evidence_packet_generated')}")
+    print(
+        "post-observation review packet generated: "
+        f"{pilot.get('post_observation_review_packet_generated')}"
+    )
+    print(
+        "artifact refinement candidate generated: "
+        f"{pilot.get('artifact_refinement_candidate_generated')}"
+    )
+    print(f"artifact refinement applied: {pilot.get('artifact_refinement_applied')}")
+    print(f"real read-only pilot authorized: {pilot.get('real_read_only_observation_pilot_authorized')}")
+    print(f"broad web search authorized: {pilot.get('broad_web_search_authorized')}")
+    print(f"crawling authorized: {pilot.get('crawling_authorized')}")
+    print(f"scraping authorized: {pilot.get('scraping_authorized')}")
+    print(f"browser automation authorized: {pilot.get('browser_automation_authorized')}")
+    print(f"login authorized: {pilot.get('login_authorized')}")
+    print(f"account creation authorized: {pilot.get('account_creation_authorized')}")
+    print(f"payment authorized: {pilot.get('payment_authorized')}")
+    print(f"form submission authorized: {pilot.get('form_submission_authorized')}")
+    print(
+        "posting/commenting/messaging authorized: "
+        f"{pilot.get('posting_commenting_messaging_authorized')}"
+    )
+    print(f"publication authorized: {pilot.get('publication_authorized')}")
+    print(f"outreach authorized: {pilot.get('outreach_authorized')}")
+    print(f"revenue execution authorized: {pilot.get('revenue_execution_authorized')}")
+    print(f"MCP execution authorized: {pilot.get('mcp_execution_authorized')}")
+    print(f"live behavior authorized: {pilot.get('live_behavior_authorized')}")
+    print(f"CIEU DB write authorized: {pilot.get('cieu_db_write_authorized')}")
+    print(f"canonical update authorized: {pilot.get('canonical_update_authorized')}")
+    print(f"brain writeback authorized: {pilot.get('brain_writeback_authorized')}")
+    print(f"memory ingestion authorized: {pilot.get('memory_ingestion_authorized')}")
+    print(f"direct Y* mutation authorized: {pilot.get('direct_y_star_mutation_authorized')}")
+    print(
+        "ready for retry after condition resolved: "
+        f"{pilot.get('ready_for_retry_after_condition_resolved')}"
+    )
+    print(
+        "ready for L6.11 controlled multi-source corroboration pilot: "
+        f"{pilot.get('ready_for_l6_11_controlled_multi_source_read_only_evidence_corroboration_pilot')}"
+    )
+    print(f"next recommended milestone: {pilot.get('next_recommended_milestone')}")
+    print(f"generated_selected_work_order: {pilot.get('generated_selected_work_order')}")
+    print(f"generated_observation_trace: {pilot.get('generated_observation_trace')}")
+    print(f"generated_evidence_packet: {pilot.get('generated_evidence_packet')}")
+    print(f"generated_readiness: {pilot.get('generated_readiness')}")
+    print(f"warning: {pilot.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -4486,6 +4555,8 @@ def main(argv: list[str]) -> int:
         cmd_agentic_evidence_discovery_trust_engine(data)
     elif command == "controlled-agentic-evidence-pilot-approval-dry-run":
         cmd_controlled_agentic_evidence_pilot_approval_dry_run(data)
+    elif command == "tiny-real-read-only-agentic-evidence-observation-pilot":
+        cmd_tiny_real_read_only_agentic_evidence_observation_pilot(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

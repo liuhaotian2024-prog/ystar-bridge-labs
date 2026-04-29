@@ -286,6 +286,17 @@ CURATED_SOURCES = [
     "agentic_pilot_no_action_receipts/no_agent_fetch_receipt.json",
     "l6_agentic_pilot_dry_run_strategic_residual_loop/l6_9_strategic_residual_delta.json",
     "l6_agentic_pilot_dry_run_readiness_report/l6_9_readiness_assessment.json",
+    "l6_tiny_real_read_only_agentic_evidence_observation_pilot/l6_10_summary.json",
+    "tiny_observation_work_order_selector/selected_tiny_observation_work_order.json",
+    "tiny_source_locator_resolution/source_locator_resolution_result.json",
+    "tiny_real_read_only_observation_trace/tiny_observation_trace.json",
+    "tiny_evidence_capture_packet/tiny_evidence_packet.json",
+    "tiny_post_observation_review_packet/tiny_post_observation_review_packet.json",
+    "tiny_artifact_refinement_candidate/tiny_artifact_refinement_candidate.json",
+    "tiny_observation_abort_and_quarantine/abort_or_quarantine_decision.json",
+    "tiny_observation_no_action_receipts/no_crawling_receipt.json",
+    "l6_tiny_observation_strategic_residual_loop/l6_10_strategic_residual_delta.json",
+    "l6_tiny_observation_readiness_report/l6_10_readiness_assessment.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -5542,6 +5553,144 @@ def build_l6_agentic_pilot_dry_run_summary(
     }
 
 
+def build_l6_tiny_observation_pilot_summary(
+    milestone_summary: dict[str, Any] | None,
+    selected_work_order: dict[str, Any] | None,
+    locator_resolution: dict[str, Any] | None,
+    observation_trace: dict[str, Any] | None,
+    evidence_packet: dict[str, Any] | None,
+    review_packet: dict[str, Any] | None,
+    refinement_candidate: dict[str, Any] | None,
+    abort_decision: dict[str, Any] | None,
+    no_action_receipt: dict[str, Any] | None,
+    residual_delta: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.l6_tiny_observation_pilot_summary",
+            "schema_version": "v0",
+            "l6_10_tiny_real_read_only_observation_pilot_defined": False,
+            "observation_executed": False,
+            "ready_for_retry_after_condition_resolved": False,
+            "warning": "L6.10 tiny real read-only observation pilot has not been generated yet.",
+        }
+
+    milestone_summary = milestone_summary or {}
+    selected_work_order = selected_work_order or {}
+    locator_resolution = locator_resolution or {}
+    observation_trace = observation_trace or {}
+    evidence_packet = evidence_packet or {}
+    review_packet = review_packet or {}
+    refinement_candidate = refinement_candidate or {}
+    abort_decision = abort_decision or {}
+    no_action_receipt = no_action_receipt or {}
+    residual_delta = residual_delta or {}
+
+    contract_flags = milestone_summary.get("safety_flags", {})
+    runtime_limits = milestone_summary.get("runtime_limits", {})
+
+    def flag(field: str) -> Any:
+        return milestone_summary.get(field, contract_flags.get(field))
+
+    external_requests_count = observation_trace.get("external_requests_count", 0)
+    pages_read_count = observation_trace.get("pages_read_count", 0)
+    search_queries_count = observation_trace.get("search_queries_count", 0)
+
+    return {
+        "schema_name": "ystar.console_read_model.generated.l6_tiny_observation_pilot_summary",
+        "schema_version": "v0",
+        "milestone_id": milestone_summary.get("milestone_id", "L6.10"),
+        "milestone_name": milestone_summary.get("milestone_name", "Tiny Real Read-Only Agentic Evidence Observation Pilot v0"),
+        "mode": milestone_summary.get("mode", "tiny_real_read_only_observation_pilot"),
+        "l6_10_tiny_real_read_only_observation_pilot_defined": milestone_summary.get(
+            "l6_10_tiny_real_read_only_observation_pilot_defined",
+            readiness_summary.get("l6_10_design_and_guardrails_complete"),
+        ),
+        "selected_work_order_count": milestone_summary.get("selected_work_order_count", 1),
+        "selected_work_order_id": selected_work_order.get("selected_work_order_id"),
+        "linked_l6_8_work_order_id": selected_work_order.get("linked_l6_8_work_order_id"),
+        "source_locator_resolved": locator_resolution.get("source_locator_resolved", False),
+        "observation_executed": observation_trace.get("observation_executed", False),
+        "blocked_pilot": not observation_trace.get("observation_executed", False),
+        "abort_triggered": observation_trace.get("abort_triggered"),
+        "abort_reason": observation_trace.get("abort_reason", abort_decision.get("reason")),
+        "external_requests_count": external_requests_count,
+        "pages_read_count": pages_read_count,
+        "search_queries_count": search_queries_count,
+        "network_used": observation_trace.get("network_used", False),
+        "url_opened": observation_trace.get("source_locator") is not None
+        and observation_trace.get("observation_executed") is True,
+        "evidence_packet_generated": bool(evidence_packet),
+        "live_source_evidence_captured": evidence_packet.get("live_source_evidence_captured", False),
+        "post_observation_review_packet_generated": bool(review_packet),
+        "artifact_refinement_candidate_generated": bool(refinement_candidate),
+        "artifact_refinement_applied": refinement_candidate.get("applied", False),
+        "no_action_receipts_generated": bool(no_action_receipt),
+        "strategic_residual_loop_generated": bool(residual_delta),
+        "real_read_only_observation_pilot_authorized": milestone_summary.get(
+            "real_read_only_observation_pilot_authorized", True
+        ),
+        "broad_web_search_authorized": milestone_summary.get("broad_web_search_authorized", False),
+        "crawling_authorized": milestone_summary.get("crawling_authorized", False),
+        "scraping_authorized": milestone_summary.get("scraping_authorized", False),
+        "browser_automation_authorized": milestone_summary.get("browser_automation_authorized", False),
+        "login_authorized": milestone_summary.get("login_authorized", False),
+        "account_creation_authorized": milestone_summary.get("account_creation_authorized", False),
+        "payment_authorized": milestone_summary.get("payment_authorized", False),
+        "form_submission_authorized": milestone_summary.get("form_submission_authorized", False),
+        "posting_commenting_messaging_authorized": milestone_summary.get(
+            "posting_commenting_messaging_authorized", False
+        ),
+        "publication_authorized": milestone_summary.get("publication_authorized", False),
+        "outreach_authorized": milestone_summary.get("outreach_authorized", False),
+        "revenue_execution_authorized": milestone_summary.get("revenue_execution_authorized", False),
+        "mcp_execution_authorized": milestone_summary.get("mcp_execution_authorized", False),
+        "live_behavior_authorized": milestone_summary.get("live_behavior_authorized", False),
+        "cieu_db_write_authorized": milestone_summary.get("cieu_db_write_authorized", False),
+        "canonical_update_authorized": milestone_summary.get("canonical_update_authorized", False),
+        "brain_writeback_authorized": milestone_summary.get("brain_writeback_authorized", False),
+        "memory_ingestion_authorized": milestone_summary.get("memory_ingestion_authorized", False),
+        "direct_y_star_mutation_authorized": milestone_summary.get("direct_y_star_mutation_authorized", False),
+        "semantic_truth_scoring_enabled": flag("semantic_truth_scoring_enabled"),
+        "llm_confidence_as_authority_enabled": flag("llm_confidence_as_authority_enabled"),
+        "max_selected_work_orders": runtime_limits.get("max_selected_work_orders"),
+        "max_source_locators_observed": runtime_limits.get("max_source_locators_observed"),
+        "max_search_queries_if_locator_missing": runtime_limits.get("max_search_queries_if_locator_missing"),
+        "max_pages_read": runtime_limits.get("max_pages_read"),
+        "max_external_requests": runtime_limits.get("max_external_requests"),
+        "ready_for_retry_after_condition_resolved": readiness_summary.get(
+            "ready_for_retry_after_condition_resolved"
+        ),
+        "ready_for_l6_11_controlled_multi_source_read_only_evidence_corroboration_pilot": readiness_summary.get(
+            "ready_for_l6_11_controlled_multi_source_read_only_evidence_corroboration_pilot"
+        ),
+        "ready_for_publication": readiness_summary.get("ready_for_publication"),
+        "ready_for_outreach": readiness_summary.get("ready_for_outreach"),
+        "ready_for_payment": readiness_summary.get("ready_for_payment"),
+        "ready_for_revenue_execution": readiness_summary.get("ready_for_revenue_execution"),
+        "ready_for_mcp_execution": readiness_summary.get("ready_for_mcp_execution"),
+        "ready_for_canonical_update": readiness_summary.get("ready_for_canonical_update"),
+        "ready_for_brain_memory_writeback": readiness_summary.get("ready_for_brain_memory_writeback"),
+        "ready_for_direct_y_star_mutation": readiness_summary.get("ready_for_direct_y_star_mutation"),
+        "next_recommended_milestone": readiness_summary.get("next_recommended_milestone"),
+        "generated_milestone_summary": "l6_tiny_real_read_only_agentic_evidence_observation_pilot/l6_10_summary.json",
+        "generated_selected_work_order": "tiny_observation_work_order_selector/selected_tiny_observation_work_order.json",
+        "generated_locator_resolution": "tiny_source_locator_resolution/source_locator_resolution_result.json",
+        "generated_observation_trace": "tiny_real_read_only_observation_trace/tiny_observation_trace.json",
+        "generated_evidence_packet": "tiny_evidence_capture_packet/tiny_evidence_packet.json",
+        "generated_review_packet": "tiny_post_observation_review_packet/tiny_post_observation_review_packet.json",
+        "generated_refinement_candidate": "tiny_artifact_refinement_candidate/tiny_artifact_refinement_candidate.json",
+        "generated_readiness": "l6_tiny_observation_readiness_report/l6_10_readiness_assessment.json",
+        "warning": (
+            "L6.10 is a tiny real read-only observation pilot. This run took the "
+            "blocked outcome because the selected work order had only a placeholder "
+            "locator and the environment/tooling did not authorize locator discovery. "
+            "No evidence is fabricated, and all downstream action/writeback boundaries remain blocked."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -6604,6 +6753,50 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_agentic_pilot_dry_run_readiness_report/l6_9_readiness_assessment.json",
         files_read,
     )
+    l6_tiny_observation_milestone_summary = load_optional_json(
+        "l6_tiny_real_read_only_agentic_evidence_observation_pilot/l6_10_summary.json",
+        files_read,
+    )
+    l6_tiny_observation_selected_work_order = load_optional_json(
+        "tiny_observation_work_order_selector/selected_tiny_observation_work_order.json",
+        files_read,
+    )
+    l6_tiny_observation_locator_resolution = load_optional_json(
+        "tiny_source_locator_resolution/source_locator_resolution_result.json",
+        files_read,
+    )
+    l6_tiny_observation_trace = load_optional_json(
+        "tiny_real_read_only_observation_trace/tiny_observation_trace.json",
+        files_read,
+    )
+    l6_tiny_observation_evidence_packet = load_optional_json(
+        "tiny_evidence_capture_packet/tiny_evidence_packet.json",
+        files_read,
+    )
+    l6_tiny_observation_review_packet = load_optional_json(
+        "tiny_post_observation_review_packet/tiny_post_observation_review_packet.json",
+        files_read,
+    )
+    l6_tiny_observation_refinement_candidate = load_optional_json(
+        "tiny_artifact_refinement_candidate/tiny_artifact_refinement_candidate.json",
+        files_read,
+    )
+    l6_tiny_observation_abort_decision = load_optional_json(
+        "tiny_observation_abort_and_quarantine/abort_or_quarantine_decision.json",
+        files_read,
+    )
+    l6_tiny_observation_no_action_receipt = load_optional_json(
+        "tiny_observation_no_action_receipts/no_crawling_receipt.json",
+        files_read,
+    )
+    l6_tiny_observation_residual_delta = load_optional_json(
+        "l6_tiny_observation_strategic_residual_loop/l6_10_strategic_residual_delta.json",
+        files_read,
+    )
+    l6_tiny_observation_readiness_summary = load_optional_json(
+        "l6_tiny_observation_readiness_report/l6_10_readiness_assessment.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -6911,6 +7104,19 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         l6_agentic_pilot_residual_delta,
         l6_agentic_pilot_readiness_summary,
     )
+    l6_tiny_observation_pilot_summary = build_l6_tiny_observation_pilot_summary(
+        l6_tiny_observation_milestone_summary,
+        l6_tiny_observation_selected_work_order,
+        l6_tiny_observation_locator_resolution,
+        l6_tiny_observation_trace,
+        l6_tiny_observation_evidence_packet,
+        l6_tiny_observation_review_packet,
+        l6_tiny_observation_refinement_candidate,
+        l6_tiny_observation_abort_decision,
+        l6_tiny_observation_no_action_receipt,
+        l6_tiny_observation_residual_delta,
+        l6_tiny_observation_readiness_summary,
+    )
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -7084,6 +7290,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_integrated_pilot_readiness_summary": l6_integrated_pilot_readiness_summary,
         "l6_agentic_evidence_summary": l6_agentic_evidence_summary,
         "l6_agentic_pilot_dry_run_summary": l6_agentic_pilot_dry_run_summary,
+        "l6_tiny_observation_pilot_summary": l6_tiny_observation_pilot_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -7326,6 +7533,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/l6_integrated_pilot_readiness_summary.json",
             "console_read_model/generated/l6_agentic_evidence_summary.json",
             "console_read_model/generated/l6_agentic_pilot_dry_run_summary.json",
+            "console_read_model/generated/l6_tiny_observation_pilot_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -7503,6 +7711,14 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "URL fetch/open, search, scraping, API calls, browser fetch, publication,\n"
         "outreach, payment, revenue, MCP, live behavior, CIEU DB writes,\n"
         "canonical mutation, writeback, and direct Y* mutation remain blocked.\n\n"
+        "`l6_tiny_observation_pilot_summary.json` is derived from the L6.10\n"
+        "tiny real read-only agentic evidence observation pilot. It confirms one\n"
+        "selected L6.9 work order, hard runtime limits, locator resolution,\n"
+        "observation trace, evidence packet, structural validation, claim/freshness\n"
+        "assessment, post-observation review, review-only refinement candidate,\n"
+        "abort/quarantine decision, no-action receipts, and readiness artifacts.\n"
+        "This run correctly records a blocked pilot because no concrete locator was\n"
+        "available and no controlled network/tooling condition was present.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -7557,6 +7773,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/l6_integrated_pilot_readiness_summary.json", l6_integrated_pilot_readiness_summary, generated_files)
     write_json("console_read_model/generated/l6_agentic_evidence_summary.json", l6_agentic_evidence_summary, generated_files)
     write_json("console_read_model/generated/l6_agentic_pilot_dry_run_summary.json", l6_agentic_pilot_dry_run_summary, generated_files)
+    write_json("console_read_model/generated/l6_tiny_observation_pilot_summary.json", l6_tiny_observation_pilot_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -7654,6 +7871,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     )
     l6_agentic_evidence = snapshot.get("l6_agentic_evidence_summary", {})
     l6_agentic_pilot_dry_run = snapshot.get("l6_agentic_pilot_dry_run_summary", {})
+    l6_tiny_observation_pilot = snapshot.get("l6_tiny_observation_pilot_summary", {})
     lines.extend(
         [
             "",
@@ -8906,6 +9124,37 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- ready_for_autonomous_web_search_now: {l6_agentic_pilot_dry_run.get('ready_for_autonomous_web_search_now')}",
             f"- next_recommended_milestone: {l6_agentic_pilot_dry_run.get('next_recommended_milestone')}",
             f"- Warning: {l6_agentic_pilot_dry_run.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## L6.10 Tiny Real Read-Only Agentic Evidence Observation Pilot",
+            "",
+            f"- l6_10_tiny_real_read_only_observation_pilot_defined: {l6_tiny_observation_pilot.get('l6_10_tiny_real_read_only_observation_pilot_defined')}",
+            f"- mode: {l6_tiny_observation_pilot.get('mode')}",
+            f"- selected_work_order_count: {l6_tiny_observation_pilot.get('selected_work_order_count')}",
+            f"- source_locator_resolved: {l6_tiny_observation_pilot.get('source_locator_resolved')}",
+            f"- observation_executed: {l6_tiny_observation_pilot.get('observation_executed')}",
+            f"- blocked_pilot: {l6_tiny_observation_pilot.get('blocked_pilot')}",
+            f"- external_requests_count: {l6_tiny_observation_pilot.get('external_requests_count')}",
+            f"- pages_read_count: {l6_tiny_observation_pilot.get('pages_read_count')}",
+            f"- search_queries_count: {l6_tiny_observation_pilot.get('search_queries_count')}",
+            f"- evidence_packet_generated: {l6_tiny_observation_pilot.get('evidence_packet_generated')}",
+            f"- post_observation_review_packet_generated: {l6_tiny_observation_pilot.get('post_observation_review_packet_generated')}",
+            f"- artifact_refinement_candidate_generated: {l6_tiny_observation_pilot.get('artifact_refinement_candidate_generated')}",
+            f"- artifact_refinement_applied: {l6_tiny_observation_pilot.get('artifact_refinement_applied')}",
+            f"- broad_web_search_authorized: {l6_tiny_observation_pilot.get('broad_web_search_authorized')}",
+            f"- crawling_authorized: {l6_tiny_observation_pilot.get('crawling_authorized')}",
+            f"- scraping_authorized: {l6_tiny_observation_pilot.get('scraping_authorized')}",
+            f"- browser_automation_authorized: {l6_tiny_observation_pilot.get('browser_automation_authorized')}",
+            f"- publication_authorized: {l6_tiny_observation_pilot.get('publication_authorized')}",
+            f"- outreach_authorized: {l6_tiny_observation_pilot.get('outreach_authorized')}",
+            f"- payment_authorized: {l6_tiny_observation_pilot.get('payment_authorized')}",
+            f"- revenue_execution_authorized: {l6_tiny_observation_pilot.get('revenue_execution_authorized')}",
+            f"- ready_for_retry_after_condition_resolved: {l6_tiny_observation_pilot.get('ready_for_retry_after_condition_resolved')}",
+            f"- next_recommended_milestone: {l6_tiny_observation_pilot.get('next_recommended_milestone')}",
+            f"- Warning: {l6_tiny_observation_pilot.get('warning')}",
         ]
     )
     lines.extend(
