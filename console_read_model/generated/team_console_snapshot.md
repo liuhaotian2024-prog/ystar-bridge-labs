@@ -113,18 +113,18 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 167
-- Unsafe artifacts count: 141
+- Artifacts classified: 146
+- Unsafe artifacts count: 119
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
-  - CACHE_SENTINEL: 4
+  - CACHE_SENTINEL: 5
   - DAEMON_STATE: 4
   - DB_CORE: 1
   - DB_SIDECARE: 6
   - LOG_RUNTIME: 30
-  - PYCACHE: 68
-  - UNKNOWN_OR_NON_RUNTIME: 26
+  - PYCACHE: 45
+  - UNKNOWN_OR_NON_RUNTIME: 27
   - UNKNOWN_RUNTIME_ARTIFACT: 10
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
 - Warning: Console displays only curated path-level quarantine summary. No artifact contents were read.
@@ -150,21 +150,21 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 167
-- Artifacts with disposition: 167
+- Total artifacts: 146
+- Artifacts with disposition: 146
 - Safe-mined to review queue: 0
-- Forbidden direct read count: 141
+- Forbidden direct read count: 119
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
   - deferred_requires_bounded_log_adapter: 30
   - deferred_requires_classification: 10
-  - deferred_requires_marker_metadata_adapter: 25
+  - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
-  - ignored_generated_cache: 68
-  - ignored_or_non_runtime: 26
+  - ignored_generated_cache: 45
+  - ignored_or_non_runtime: 27
 - Evidence scoring status:
-  - not_started: 167
+  - not_started: 146
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -538,7 +538,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 6244
+- assets_scanned: 6132
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -1411,38 +1411,6 @@ Not ready:
 - direct_y_star_mutation_authorized: False
 - next_step: configure_real_controlled_search_backend_or_use_fixture_for_offline_regression
 - Warning: L6.11 enables deterministic controlled search backend and page-read adapter selection. Disabled remains the default, fixture mode proves the full offline evidence path, and real network use remains gated by explicit configuration and safety preflight.
-
-## L6.12 Unified Controlled External Observation Evidence Loop
-
-- l6_12_unified_controlled_external_observation_evidence_loop_complete: True
-- mode: unified_controlled_external_observation_evidence_loop
-- run_classification: configuration_blocked_but_engineering_ready
-- selected_work_order_id: l6_10x_selected_work_order_001
-- backend_mode: disabled
-- page_read_mode: disabled
-- network_allowed: False
-- safety_preflight_decision: blocked
-- fixture_proof_executed: True
-- real_observation_executed: False
-- query_count: 8
-- search_results_considered: 3
-- pages_opened: 3
-- domains_touched: 2
-- crawl_depth_used: 1
-- external_reads_used: 0
-- evidence_packets_generated: 3
-- conflicts_found: 1
-- unresolved_claims: 1
-- query_refinement_candidates_generated: 3
-- capability_gaps_generated: 15
-- blockers: ['controlled_public_page_read_adapter_not_configured', 'controlled_search_backend_not_configured']
-- ask_user_for_url_occurred: False
-- external_side_effects_occurred: False
-- core_writeback_occurred: False
-- search_snippets_used_as_evidence: False
-- page_read_content_used_as_evidence: True
-- next_step: configure_controlled_search_backend_and_public_page_read_adapter
-- Warning: L6.12 runs a complete fixture-proven controlled observation loop and keeps real public observation gated by explicit backend/page-read configuration and safety preflight.
 
 ## Governance Boundary
 
