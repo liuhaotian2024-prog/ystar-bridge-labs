@@ -1,6 +1,0 @@
-{
-  "schema_version": "v0",
-  "recommended_next_milestone": "L6.10Y Controlled Search Backend Configuration v0",
-  "reason": "Autonomous locator discovery is architected, but default backend mode is disabled.",
-  "do_not_implement_l6_11_until_locator_or_observation_succeeds": true
-}

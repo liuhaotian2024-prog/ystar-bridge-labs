@@ -739,7 +739,7 @@
     {
       "asset_id": "ffa-0087",
       "repo_name": "ystar-company",
-      "relative_path": "explicit_controlled_search_resolver/explicit_search_resolver_runtime.py",
+      "relative_path": "scripts/check_wheel_contents.py",
       "asset_kind": "obsolete_runtime",
       "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
       "live_enabled": false
@@ -747,7 +747,7 @@
     {
       "asset_id": "ffa-0088",
       "repo_name": "ystar-company",
-      "relative_path": "scripts/check_wheel_contents.py",
+      "relative_path": "scripts/conversation_replay.py",
       "asset_kind": "obsolete_runtime",
       "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
       "live_enabled": false
@@ -755,7 +755,7 @@
     {
       "asset_id": "ffa-0089",
       "repo_name": "ystar-company",
-      "relative_path": "scripts/conversation_replay.py",
+      "relative_path": "scripts/k9.py",
       "asset_kind": "obsolete_runtime",
       "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
       "live_enabled": false
@@ -763,7 +763,7 @@
     {
       "asset_id": "ffa-0090",
       "repo_name": "ystar-company",
-      "relative_path": "scripts/k9.py",
+      "relative_path": "scripts/k9_phase1.py",
       "asset_kind": "obsolete_runtime",
       "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
       "live_enabled": false
@@ -771,7 +771,7 @@
     {
       "asset_id": "ffa-0091",
       "repo_name": "ystar-company",
-      "relative_path": "scripts/k9_phase1.py",
+      "relative_path": "scripts/k9_watch.py",
       "asset_kind": "obsolete_runtime",
       "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
       "live_enabled": false
@@ -779,7 +779,7 @@
     {
       "asset_id": "ffa-0092",
       "repo_name": "ystar-company",
-      "relative_path": "scripts/k9_watch.py",
+      "relative_path": "scripts/labs_atlas_query.py",
       "asset_kind": "obsolete_runtime",
       "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
       "live_enabled": false
@@ -787,7 +787,7 @@
     {
       "asset_id": "ffa-0093",
       "repo_name": "ystar-company",
-      "relative_path": "scripts/labs_atlas_query.py",
+      "relative_path": "scripts/mac_command.py",
       "asset_kind": "obsolete_runtime",
       "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
       "live_enabled": false
@@ -795,7 +795,7 @@
     {
       "asset_id": "ffa-0094",
       "repo_name": "ystar-company",
-      "relative_path": "scripts/mac_command.py",
+      "relative_path": "scripts/telegram_bridge.py",
       "asset_kind": "obsolete_runtime",
       "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
       "live_enabled": false
@@ -803,7 +803,7 @@
     {
       "asset_id": "ffa-0095",
       "repo_name": "ystar-company",
-      "relative_path": "scripts/telegram_bridge.py",
+      "relative_path": "scripts/verify_twin_evolution.py",
       "asset_kind": "obsolete_runtime",
       "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
       "live_enabled": false
@@ -811,7 +811,7 @@
     {
       "asset_id": "ffa-0096",
       "repo_name": "ystar-company",
-      "relative_path": "scripts/verify_twin_evolution.py",
+      "relative_path": "scripts/wisdom_search.py",
       "asset_kind": "obsolete_runtime",
       "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
       "live_enabled": false
@@ -819,7 +819,7 @@
     {
       "asset_id": "ffa-0097",
       "repo_name": "ystar-company",
-      "relative_path": "scripts/wisdom_search.py",
+      "relative_path": "scripts/post_ep01.py",
       "asset_kind": "obsolete_runtime",
       "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
       "live_enabled": false
@@ -827,7 +827,7 @@
     {
       "asset_id": "ffa-0098",
       "repo_name": "ystar-company",
-      "relative_path": "scripts/post_ep01.py",
+      "relative_path": "scripts/post_episodes.py",
       "asset_kind": "obsolete_runtime",
       "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
       "live_enabled": false
@@ -835,7 +835,7 @@
     {
       "asset_id": "ffa-0099",
       "repo_name": "ystar-company",
-      "relative_path": "scripts/post_episodes.py",
+      "relative_path": "scripts/redteam_secretary.py",
       "asset_kind": "obsolete_runtime",
       "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
       "live_enabled": false
@@ -843,7 +843,7 @@
     {
       "asset_id": "ffa-0100",
       "repo_name": "ystar-company",
-      "relative_path": "scripts/redteam_secretary.py",
+      "relative_path": "scripts/twin_report.py",
       "asset_kind": "obsolete_runtime",
       "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
       "live_enabled": false

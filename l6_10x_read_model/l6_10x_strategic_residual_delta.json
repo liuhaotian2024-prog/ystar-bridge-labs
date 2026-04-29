@@ -1,7 +1,0 @@
-{
-  "schema_version": "v0",
-  "residual_id": "l6_10x_strategic_residual_delta",
-  "primary_residual": "configure_controlled_search_backend",
-  "manual_url_request_removed": true,
-  "controlled_search_backend_required": true
-}

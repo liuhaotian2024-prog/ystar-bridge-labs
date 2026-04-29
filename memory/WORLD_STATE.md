@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-29 12:30:00
+**Generated**: 2026-04-29 10:00:00
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,7 +36,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/12 valid (0 errors)
-**CIEU 24h Events**: 2263
+**CIEU 24h Events**: 2229
 **Overdue Obligations**: 0
 
 ---
@@ -80,55 +80,55 @@
 ---
 
 ## 8. Y* Field State (xi) — Mission axis frequency + drift
-**Total CIEU events (24h)**: 2263
+**Total CIEU events (24h)**: 2229
 
 | M-Axis | Description | 24h Count | 7d Avg/Day | Drift |
 |--------|-------------|-----------|------------|-------|
-| **M-1** | Survivability (session/boot/handoff/persist) | 177 | 4262 | → |
-| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 21 | 826 | ↓ |
-| **M-2b** | Omission prevention (omission/overdue/alarm) | 20 | 2334 | ↓ |
+| **M-1** | Survivability (session/boot/handoff/persist) | 185 | 4390 | → |
+| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 18 | 828 | ↓ |
+| **M-2b** | Omission prevention (omission/overdue/alarm) | 17 | 2410 | ↓ |
 | **M-3** | Value production (customer/revenue/dogfood/demo) | 0 | 0 | ↓ |
 
-**Classified coverage**: 218/2263 (9.6%)
-**Unclassified**: 2045 events (routine ops / K9 routing)
+**Classified coverage**: 220/2229 (9.9%)
+**Unclassified**: 2009 events (routine ops / K9 routing)
 **Drift alert**: M-2a, M-2b, M-3 trending DOWN vs 7d baseline
 
 ---
 
 ## 9. Commission Error Heatmap — 11-component unified dashboard
-**Total commission errors (24h)**: 245
+**Total commission errors (24h)**: 250
 
 **By M-Axis**:
 
 | Axis | Description | 24h Count |
 |------|-------------|-----------|
-| **M-1** | Survivability (schema/wire/config drift) | 217 |
-| **M-2a** | Commission prevention (core 11 detectors) | 28 |
+| **M-1** | Survivability (schema/wire/config drift) | 219 |
+| **M-2a** | Commission prevention (core 11 detectors) | 31 |
 | **M-3** | Value quality (maturity/off-target) | 0 |
 
 **By Detector (11 components + hook catches)**:
 
 | Detector | 24h Count | Drift vs 7d |
 |----------|-----------|-------------|
-| amendment_coverage_audit | 197 | v (avg 334.4/d) |
-| directive_evaluator | 28 | = (avg 31.9/d) |
-| hook_commission_catch | 20 | v (avg 395.1/d) |
+| amendment_coverage_audit | 202 | v (avg 335.7/d) |
+| directive_evaluator | 31 | = (avg 32.0/d) |
+| hook_commission_catch | 17 | v (avg 399.1/d) |
 
 **By Actor (top 10)**:
 
 | Actor | 24h Commission Errors |
 |-------|----------------------|
-| unknown | 177 |
-| platform | 40 |
-| cto | 28 |
+| unknown | 185 |
+| platform | 34 |
+| cto | 31 |
 
 **Top 5 Event Types**:
-- `SESSION_JSON_SCHEMA_VIOLATION`: 177
-- `DIRECTIVE_LIVENESS_EVAL`: 28
-- `CANONICAL_HASH_DRIFT`: 20
-- `WIRE_BROKEN`: 20
+- `SESSION_JSON_SCHEMA_VIOLATION`: 185
+- `DIRECTIVE_LIVENESS_EVAL`: 31
+- `CANONICAL_HASH_DRIFT`: 17
+- `WIRE_BROKEN`: 17
 
-**Overall drift**: v (24h=245, 7d avg/day=2031.4)
+**Overall drift**: v (24h=250, 7d avg/day=2068.7)
 
 ---
 
@@ -154,14 +154,7 @@
 ## 13. Today's Commits (24h) — both repos
 
 
-**ystar-company** (39 commits):
-- a071683f 12:28 tools: add l6 reviewed seed locator injection and tiny retry
-- e03e44af 12:25 chore: remove unintended auto checkpoint drift
-- 01a8c1a5 12:14 [auto] WIP checkpoint 2026-04-29 12:14 -- 94 files changed
-- e880389f 11:18 tools: add l6 controlled seed locator or search resolver enablement
-- 8d839bf1 11:12 [auto] WIP checkpoint 2026-04-29 11:12 -- 56 files changed
-- 0795529b 10:51 tools: add l6 controlled locator resolver enablement first attempt
-- 63e20c4a 10:42 [auto] WIP checkpoint 2026-04-29 10:42 -- 98 files changed
+**ystar-company** (35 commits):
 - e17a8810 09:45 [auto] WIP checkpoint 2026-04-29 09:45 -- 30 files changed
 - d73ff761 09:44 tools: add l6 governed capability gap toolmaking and locator resolver adapter
 - 8ef7a250 08:38 [auto] WIP checkpoint 2026-04-29 08:38 -- 152 files changed
@@ -175,5 +168,12 @@
 - 11ad6d1f 02:10 [auto] WIP checkpoint 2026-04-29 02:10 -- 137 files changed
 - 7d499116 22:59 [auto] WIP checkpoint 2026-04-28 22:59 -- 53 files changed
 - 684c0043 22:43 tools: add l6 integrated approval record and pilot readiness sandbox
+- 0faa6f71 22:28 [auto] WIP checkpoint 2026-04-28 22:28 -- 115 files changed
+- 59945956 22:15 tools: add l6 controlled observation pilot approval packet
+- 48af1acf 21:58 [auto] WIP checkpoint 2026-04-28 21:58 -- 142 files changed
+- a397312e 21:46 tools: add l6 controlled real read only observation pilot design
+- ecafe63f 21:28 [auto] WIP checkpoint 2026-04-28 21:28 -- 55 files changed
+- 62883897 21:19 tools: add l6 real read only external observation preflight
+- a1feee9a 20:58 [auto] WIP checkpoint 2026-04-28 20:58 -- 28 files changed
 
 **Y*gov**: no commits
