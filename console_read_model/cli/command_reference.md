@@ -208,6 +208,15 @@ python3 console_read_model/cli/team_console.py <command>
   persistence/real observation/network/search/API/scraping/browser fetch/
   publication/outreach/payment/revenue/MCP/live/CIEU DB/writeback execution
   state.
+- `integrated-approval-record-and-pilot-readiness`: Prints the generated L6.7
+  integrated approval record and pilot readiness sandbox summary: sandbox
+  approval records, lifecycle replay, pilot run packages, operator readiness,
+  runtime isolation readiness, evidence capture readiness, post-observation
+  review readiness, manual evidence import readiness, integrated decision gate,
+  no-action receipts, readiness for L6.8 manual evidence import pilot, and
+  blocked real approval/durable persistence/real observation/network/search/
+  API/scraping/browser fetch/publication/outreach/payment/revenue/MCP/live/
+  CIEU DB/writeback execution state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

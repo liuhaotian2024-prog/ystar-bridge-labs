@@ -2182,6 +2182,43 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "l6_pilot_approval_readiness/l6_6_readiness_assessment.json"],
     ),
     Check(
+        "Compile L6.7 integrated approval record and pilot readiness sandbox builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "l6_integrated_approval_record_and_pilot_readiness_sandbox/tools/build_l6_integrated_approval_record_and_pilot_readiness_sandbox.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: l6_integrated_pilot_readiness_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_integrated_pilot_readiness_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_7_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_integrated_approval_record_and_pilot_readiness_sandbox/l6_7_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: sandbox_approval_record_index.json",
+        ["python3", "-m", "json.tool", "sandbox_approval_record_lifecycle/sandbox_approval_record_index.json"],
+    ),
+    Check(
+        "Validate JSON: pilot_run_package_index.json",
+        ["python3", "-m", "json.tool", "pilot_run_package_assembler/pilot_run_package_index.json"],
+    ),
+    Check(
+        "Validate JSON: manual_evidence_import_readiness_contract.json",
+        ["python3", "-m", "json.tool", "manual_evidence_import_readiness/manual_evidence_import_readiness_contract.json"],
+    ),
+    Check(
+        "Validate JSON: integrated_candidate_decision_matrix.json",
+        ["python3", "-m", "json.tool", "pilot_integrated_decision_gate/integrated_candidate_decision_matrix.json"],
+    ),
+    Check(
+        "Validate JSON: l6_7_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "l6_integrated_pilot_readiness_report/l6_7_readiness_assessment.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -2440,6 +2477,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: controlled-observation-pilot-approval-packet",
         ["python3", "console_read_model/cli/team_console.py", "controlled-observation-pilot-approval-packet"],
+    ),
+    Check(
+        "CLI smoke: integrated-approval-record-and-pilot-readiness",
+        ["python3", "console_read_model/cli/team_console.py", "integrated-approval-record-and-pilot-readiness"],
     ),
     Check(
         "CLI smoke: sources",

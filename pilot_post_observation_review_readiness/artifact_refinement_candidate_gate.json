@@ -1,6 +1,7 @@
 {
   "schema_version": "v0",
   "review_only_refinement_candidate_allowed": true,
+  "review_required": true,
   "direct_artifact_update_authorized": false,
   "canonical_update_authorized": false,
   "brain_memory_writeback_authorized": false,

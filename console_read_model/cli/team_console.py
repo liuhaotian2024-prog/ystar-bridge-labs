@@ -68,6 +68,9 @@ L6_REAL_OBSERVATION_PREFLIGHT = (
 )
 L6_PILOT_DESIGN = "console_read_model/generated/l6_pilot_design_summary.json"
 L6_PILOT_APPROVAL = "console_read_model/generated/l6_pilot_approval_summary.json"
+L6_INTEGRATED_PILOT_READINESS = (
+    "console_read_model/generated/l6_integrated_pilot_readiness_summary.json"
+)
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -87,7 +90,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|integrated-approval-record-and-pilot-readiness|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -165,6 +168,7 @@ def load_all() -> dict[str, Any]:
         "l6_real_observation_preflight": load_json(L6_REAL_OBSERVATION_PREFLIGHT),
         "l6_pilot_design": load_json(L6_PILOT_DESIGN),
         "l6_pilot_approval": load_json(L6_PILOT_APPROVAL),
+        "l6_integrated_pilot_readiness": load_json(L6_INTEGRATED_PILOT_READINESS),
     }
 
 
@@ -2239,6 +2243,90 @@ def cmd_controlled_observation_pilot_approval_packet(data: dict[str, Any]) -> No
     print(f"warning: {approval.get('warning')}")
 
 
+def cmd_integrated_approval_record_and_pilot_readiness(data: dict[str, Any]) -> None:
+    readiness = data["l6_integrated_pilot_readiness"]
+    print("# L6.7 Integrated Approval Record And Pilot Readiness Sandbox")
+    print()
+    print(
+        "L6.7 integrated approval record and pilot readiness sandbox defined: "
+        f"{readiness.get('l6_7_integrated_approval_record_and_pilot_readiness_sandbox_defined')}"
+    )
+    print(f"integrated sandbox only: {readiness.get('integrated_sandbox_only')}")
+    print(f"approval record sandbox only: {readiness.get('approval_record_sandbox_only')}")
+    print(f"pilot run readiness only: {readiness.get('pilot_run_readiness_only')}")
+    print(f"sandbox approval record created: {readiness.get('sandbox_approval_record_created')}")
+    print(f"sandbox approval records: {readiness.get('sandbox_approval_record_count')}")
+    print(f"pilot run packages: {readiness.get('pilot_run_package_count')}")
+    print(f"operator readiness package created: {readiness.get('operator_readiness_package_created')}")
+    print(f"runtime isolation readiness created: {readiness.get('runtime_isolation_readiness_created')}")
+    print(f"evidence capture readiness created: {readiness.get('evidence_capture_readiness_created')}")
+    print(
+        "post-observation review readiness created: "
+        f"{readiness.get('post_observation_review_readiness_created')}"
+    )
+    print(
+        "manual evidence import readiness created: "
+        f"{readiness.get('manual_evidence_import_readiness_created')}"
+    )
+    print(f"integrated decision gate created: {readiness.get('integrated_decision_gate_created')}")
+    print(f"no-action receipts created: {readiness.get('no_action_receipts_created')}")
+    print(f"real approval granted: {readiness.get('real_approval_granted')}")
+    print(
+        "durable real approval record created: "
+        f"{readiness.get('durable_real_approval_record_created')}"
+    )
+    print(
+        "real external observation authorized: "
+        f"{readiness.get('real_external_observation_authorized')}"
+    )
+    print(f"real pilot execution authorized: {readiness.get('real_pilot_execution_authorized')}")
+    print(f"network enabled: {readiness.get('network_enabled')}")
+    print(f"API enabled: {readiness.get('api_enabled')}")
+    print(f"scraping enabled: {readiness.get('scraping_enabled')}")
+    print(f"browser fetch enabled: {readiness.get('browser_fetch_enabled')}")
+    print(f"search enabled: {readiness.get('search_enabled')}")
+    print(f"publication enabled: {readiness.get('publication_enabled')}")
+    print(f"outreach enabled: {readiness.get('outreach_enabled')}")
+    print(f"payment enabled: {readiness.get('payment_enabled')}")
+    print(f"revenue execution enabled: {readiness.get('revenue_execution_enabled')}")
+    print(f"MCP tool execution enabled: {readiness.get('mcp_tool_execution_enabled')}")
+    print(f"live execution enabled: {readiness.get('live_execution_enabled')}")
+    print(f"CIEU DB write enabled: {readiness.get('cieu_db_write_enabled')}")
+    print(f"brain writeback enabled: {readiness.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {readiness.get('memory_ingestion_enabled')}")
+    print(
+        "ready for L6.8 user-mediated manual evidence import pilot: "
+        f"{readiness.get('ready_for_l6_8_user_mediated_manual_evidence_import_pilot')}"
+    )
+    print(
+        "ready for actual network observation now: "
+        f"{readiness.get('ready_for_actual_network_observation_now')}"
+    )
+    print(f"ready for real approval now: {readiness.get('ready_for_real_approval_now')}")
+    print(
+        "ready for durable real approval persistence now: "
+        f"{readiness.get('ready_for_durable_real_approval_persistence_now')}"
+    )
+    print(f"ready for publication: {readiness.get('ready_for_publication')}")
+    print(f"ready for outreach: {readiness.get('ready_for_outreach')}")
+    print(f"ready for payment: {readiness.get('ready_for_payment')}")
+    print(f"ready for revenue execution: {readiness.get('ready_for_revenue_execution')}")
+    print(f"next recommended milestone: {readiness.get('next_recommended_milestone')}")
+    print(f"generated_sandbox_records: {readiness.get('generated_sandbox_records')}")
+    print(f"generated_pilot_run_packages: {readiness.get('generated_pilot_run_packages')}")
+    print(f"generated_operator_readiness: {readiness.get('generated_operator_readiness')}")
+    print(f"generated_runtime_readiness: {readiness.get('generated_runtime_readiness')}")
+    print(f"generated_evidence_capture: {readiness.get('generated_evidence_capture')}")
+    print(
+        "generated_manual_import_readiness: "
+        f"{readiness.get('generated_manual_import_readiness')}"
+    )
+    print(f"generated_decision_gate: {readiness.get('generated_decision_gate')}")
+    print(f"generated_no_action_receipt: {readiness.get('generated_no_action_receipt')}")
+    print(f"generated_readiness: {readiness.get('generated_readiness')}")
+    print(f"warning: {readiness.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -4197,6 +4285,8 @@ def main(argv: list[str]) -> int:
         cmd_controlled_real_read_only_observation_pilot_design(data)
     elif command == "controlled-observation-pilot-approval-packet":
         cmd_controlled_observation_pilot_approval_packet(data)
+    elif command == "integrated-approval-record-and-pilot-readiness":
+        cmd_integrated_approval_record_and_pilot_readiness(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

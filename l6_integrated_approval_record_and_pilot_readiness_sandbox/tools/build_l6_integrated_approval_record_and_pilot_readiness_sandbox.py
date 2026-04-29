@@ -965,6 +965,7 @@ def generate() -> list[str]:
             {
                 "schema_version": SCHEMA_VERSION,
                 "template_only": True,
+                "review_required": True,
                 "allowed_review_decisions": allowed_review_decisions,
                 "publication_authorized": False,
                 "outreach_authorized": False,
@@ -997,6 +998,7 @@ def generate() -> list[str]:
             {
                 "schema_version": SCHEMA_VERSION,
                 "review_only_refinement_candidate_allowed": True,
+                "review_required": True,
                 "direct_artifact_update_authorized": False,
                 "canonical_update_authorized": False,
                 "brain_memory_writeback_authorized": False,

@@ -168,5 +168,16 @@ publication, outreach, payment, revenue, MCP, live behavior, CIEU DB
 writes, canonical mutation, writeback, and direct Y* mutation remain
 blocked.
 
+`l6_integrated_pilot_readiness_summary.json` is derived from the L6.7
+integrated approval record and pilot run readiness sandbox. It confirms
+sandbox approval records, lifecycle replay, pilot run packages, operator
+readiness, runtime isolation readiness, evidence capture readiness,
+post-observation review readiness, manual evidence import readiness,
+integrated decisions, no-action receipts, and readiness artifacts while
+real approval, durable approval persistence, real observation, URL fetch,
+search, scraping, API calls, browser fetch, publication, outreach,
+payment, revenue, MCP, live behavior, CIEU DB writes, canonical mutation,
+writeback, and direct Y* mutation remain blocked.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

@@ -1,6 +1,7 @@
 {
   "schema_version": "v0",
   "template_only": true,
+  "review_required": true,
   "allowed_review_decisions": [
     "accept_evidence_for_internal_review",
     "quarantine_evidence",
