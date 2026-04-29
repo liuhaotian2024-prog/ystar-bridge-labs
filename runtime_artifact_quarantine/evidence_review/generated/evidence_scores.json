@@ -7,18 +7,67 @@
     "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json"
   ],
   "summary": {
-    "candidates_scored": 0,
-    "decision_stubs_created": 0,
-    "routes_created": 0,
-    "reuse_readiness": {},
-    "confidence": {},
-    "route_counts": {},
-    "semantic_truth_status": {},
+    "candidates_scored": 1,
+    "decision_stubs_created": 1,
+    "routes_created": 2,
+    "reuse_readiness": {
+      "hint_only": 1
+    },
+    "confidence": {
+      "structural_only": 1
+    },
+    "route_counts": {
+      "memory_continuity_hint_queue": 1,
+      "role_brain_capsule_hint_queue": 1
+    },
+    "semantic_truth_status": {
+      "not_evaluated": 1
+    },
     "automatic_approvals": 0,
     "brain_writeback_allowed": 0,
     "memory_ingestion_allowed": 0,
     "cieu_write_allowed": 0,
     "warning": "Evidence scoring is structural only. It is not truth validation and not memory ingestion."
   },
-  "records": []
+  "records": [
+    {
+      "evidence_id": "evidence-001",
+      "candidate_id": "mdcand-001",
+      "review_id": "review-001",
+      "source_path": "reports/daily/2026-04-28_twin_evolution.md",
+      "artifact_class": "DAILY_REPORT",
+      "disposition": "safe_mined_to_review_queue",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "structural_score": 5,
+      "source_quality_level": "bounded_markdown_report_candidate",
+      "reuse_readiness": "hint_only",
+      "confidence_level": "structural_only",
+      "contradiction_status": "not_checked",
+      "semantic_truth_status": "not_evaluated",
+      "evidence_basis": [
+        "candidate_is_safe_mined_to_review_queue",
+        "bounded_snippet_present",
+        "intended_use_suggestions_present",
+        "approved_report_like_class"
+      ],
+      "missing_evidence": [
+        "semantic_truth_validation",
+        "contradiction_check",
+        "human_review_decision",
+        "headings"
+      ],
+      "allowed_next_step": "evidence_review_or_manual_decision",
+      "forbidden_next_steps": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "candidate_auto_approval",
+        "semantic_truth_claim"
+      ],
+      "brain_writeback_allowed": false,
+      "memory_ingestion_allowed": false,
+      "cieu_write_allowed": false
+    }
+  ]
 }

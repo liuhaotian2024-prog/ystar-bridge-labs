@@ -3,11 +3,20 @@
   "schema_version": "v0",
   "builder": "runtime_artifact_quarantine/safe_mining/review_queue/tools/build_candidate_review_queue.py",
   "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
-  "review_count": 0,
-  "statuses": {},
-  "ingestion_statuses": {},
-  "artifact_classes": {},
-  "intended_use_summary": {},
+  "review_count": 1,
+  "statuses": {
+    "pending_review": 1
+  },
+  "ingestion_statuses": {
+    "not_ingested": 1
+  },
+  "artifact_classes": {
+    "DAILY_REPORT": 1
+  },
+  "intended_use_summary": {
+    "memory_continuity_hint": 1,
+    "role_brain_capsule_hint": 1
+  },
   "allowed_review_actions": [
     "approve_for_capsule_hint",
     "approve_for_governance_gap_hint",
@@ -24,6 +33,36 @@
   ],
   "default_review_status": "pending_review",
   "default_ingestion_status": "not_ingested",
-  "entries": [],
+  "entries": [
+    {
+      "review_id": "review-001",
+      "candidate_id": "mdcand-001",
+      "source_path": "reports/daily/2026-04-28_twin_evolution.md",
+      "artifact_class": "DAILY_REPORT",
+      "candidate_safety_level": "bounded_markdown_candidate",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "default_intended_use": [
+        "memory_continuity_hint",
+        "role_brain_capsule_hint"
+      ],
+      "allowed_review_actions": [
+        "approve_for_capsule_hint",
+        "approve_for_governance_gap_hint",
+        "approve_for_packet_hint",
+        "approve_for_cieu_delta_hint",
+        "reject",
+        "needs_more_context"
+      ],
+      "forbidden_actions": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery"
+      ],
+      "snippet_preview": "=== Digital Twin Evolution Report ===\n\nBoard价值观已提取: 46条 (YML中tag=board_value的lesson)\nCEO能力覆盖率: 24/8 theory files (300%)\n\n局限补偿状态 (最近7天):\n  情绪波动检测: 0次异常 / 阈值 3\n  越权指挥检测: 0次 / 阈值 0\n  无预检决策: 0次 / 阈值 2\n\n总体评估:\n  ✓ CEO运行状态良好 - 未检测到Board的已知局限\n\n最后进化日期: 2026-04-28",
+      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
+    }
+  ],
   "warning": "Review queue entries are not brain memory, CIEU records, or writeback approval. They require explicit future review."
 }

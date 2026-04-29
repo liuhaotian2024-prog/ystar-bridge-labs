@@ -1,8 +1,10 @@
 {
   "schema_name": "ystar.console_read_model.generated.safe_mining_summary",
   "schema_version": "v0",
-  "candidate_count": 0,
-  "classes_seen": {},
+  "candidate_count": 1,
+  "classes_seen": {
+    "DAILY_REPORT": 1
+  },
   "generated_candidate_index": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
   "mining_manifest_ref": "runtime_artifact_quarantine/safe_mining/generated/mining_manifest.json",
   "safety_level": "bounded_markdown_candidate",

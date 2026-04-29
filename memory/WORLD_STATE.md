@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-28 22:00:00
+**Generated**: 2026-04-28 22:30:01
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,7 +36,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/12 valid (0 errors)
-**CIEU 24h Events**: 2064
+**CIEU 24h Events**: 2115
 **Overdue Obligations**: 0
 
 ---
@@ -84,30 +84,29 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 ---
 
 ## 8. Y* Field State (xi) — Mission axis frequency + drift
-**Total CIEU events (24h)**: 2064
+**Total CIEU events (24h)**: 2115
 
 | M-Axis | Description | 24h Count | 7d Avg/Day | Drift |
 |--------|-------------|-----------|------------|-------|
-| **M-1** | Survivability (session/boot/handoff/persist) | 222 | 4876 | ↑ |
-| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 9 | 842 | ↓ |
-| **M-2b** | Omission prevention (omission/overdue/alarm) | 8 | 2649 | ↓ |
+| **M-1** | Survivability (session/boot/handoff/persist) | 222 | 4820 | → |
+| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 10 | 840 | ↓ |
+| **M-2b** | Omission prevention (omission/overdue/alarm) | 9 | 2622 | ↓ |
 | **M-3** | Value production (customer/revenue/dogfood/demo) | 0 | 0 | ↓ |
 
-**Classified coverage**: 239/2064 (11.6%)
-**Unclassified**: 1825 events (routine ops / K9 routing)
-**Drift alert**: M-1 trending UP vs 7d baseline
+**Classified coverage**: 241/2115 (11.4%)
+**Unclassified**: 1874 events (routine ops / K9 routing)
 **Drift alert**: M-2a, M-2b, M-3 trending DOWN vs 7d baseline
 
 ---
 
 ## 9. Commission Error Heatmap — 11-component unified dashboard
-**Total commission errors (24h)**: 279
+**Total commission errors (24h)**: 281
 
 **By M-Axis**:
 
 | Axis | Description | 24h Count |
 |------|-------------|-----------|
-| **M-1** | Survivability (schema/wire/config drift) | 238 |
+| **M-1** | Survivability (schema/wire/config drift) | 240 |
 | **M-2a** | Commission prevention (core 11 detectors) | 41 |
 | **M-3** | Value quality (maturity/off-target) | 0 |
 
@@ -115,9 +114,9 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 
 | Detector | 24h Count | Drift vs 7d |
 |----------|-----------|-------------|
-| amendment_coverage_audit | 230 | v (avg 397.9/d) |
+| amendment_coverage_audit | 231 | v (avg 391.1/d) |
 | directive_evaluator | 40 | = (avg 33.7/d) |
-| hook_commission_catch | 9 | v (avg 445.3/d) |
+| hook_commission_catch | 10 | v (avg 438.7/d) |
 
 **By Actor (top 10)**:
 
@@ -125,17 +124,17 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 |-------|----------------------|
 | unknown | 222 |
 | cto | 40 |
-| platform | 16 |
+| platform | 18 |
 | eng-platform | 1 |
 
 **Top 5 Event Types**:
 - `SESSION_JSON_SCHEMA_VIOLATION`: 222
 - `DIRECTIVE_LIVENESS_EVAL`: 40
-- `CANONICAL_HASH_DRIFT`: 8
-- `WIRE_BROKEN`: 8
+- `CANONICAL_HASH_DRIFT`: 9
+- `WIRE_BROKEN`: 9
 - `WHITELIST_GAP`: 1
 
-**Overall drift**: v (24h=279, 7d avg/day=2359.4)
+**Overall drift**: v (24h=281, 7d avg/day=2325.7)
 
 ---
 
@@ -161,7 +160,9 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 ## 13. Today's Commits (24h) — both repos
 
 
-**ystar-company** (25 commits):
+**ystar-company** (26 commits):
+- 0faa6f71 22:28 [auto] WIP checkpoint 2026-04-28 22:28 -- 115 files changed
+- 59945956 22:15 tools: add l6 controlled observation pilot approval packet
 - 48af1acf 21:58 [auto] WIP checkpoint 2026-04-28 21:58 -- 142 files changed
 - a397312e 21:46 tools: add l6 controlled real read only observation pilot design
 - ecafe63f 21:28 [auto] WIP checkpoint 2026-04-28 21:28 -- 55 files changed
@@ -180,7 +181,5 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 - 2a0cc560 16:04 tools: add controlled approval record sandbox
 - c8b2efed 13:02 tools: add real approval workflow boundary
 - 743af561 11:41 tools: add approved canonical update sandbox
-- 3996a107 10:57 tools: add controlled canonical learning design
-- eb0f4c23 10:03 tools: add governed mcp dry run adapter
 
 **Y*gov**: no commits

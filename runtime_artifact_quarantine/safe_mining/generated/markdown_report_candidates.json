@@ -11,8 +11,10 @@
     "ESCALATION_REPORT",
     "WHITELIST_REPORT"
   ],
-  "candidate_count": 0,
-  "classes_seen": {},
+  "candidate_count": 1,
+  "classes_seen": {
+    "DAILY_REPORT": 1
+  },
   "bounds": {
     "max_files_per_class": 5,
     "max_lines_per_file": 40,
@@ -22,5 +24,20 @@
   "ingestion_status": "candidate_only",
   "allowed_next_step": "human_review_or_curated_queue",
   "forbidden_next_step": "direct_brain_writeback",
-  "candidates": []
+  "candidates": [
+    {
+      "candidate_id": "mdcand-001",
+      "source_path": "reports/daily/2026-04-28_twin_evolution.md",
+      "artifact_class": "DAILY_REPORT",
+      "source_size_bytes": 409,
+      "selected_reason": "allowed_bounded_markdown_report_class",
+      "headings": [],
+      "snippet": "=== Digital Twin Evolution Report ===\n\nBoard价值观已提取: 46条 (YML中tag=board_value的lesson)\nCEO能力覆盖率: 24/8 theory files (300%)\n\n局限补偿状态 (最近7天):\n  情绪波动检测: 0次异常 / 阈值 3\n  越权指挥检测: 0次 / 阈值 0\n  无预检决策: 0次 / 阈值 2\n\n总体评估:\n  ✓ CEO运行状态良好 - 未检测到Board的已知局限\n\n最后进化日期: 2026-04-28",
+      "safety_level": "bounded_markdown_candidate",
+      "ingestion_status": "candidate_only",
+      "allowed_next_step": "human_review_or_curated_queue",
+      "forbidden_next_step": "direct_brain_writeback",
+      "generated_from_manifest_ref": "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json"
+    }
+  ]
 }
