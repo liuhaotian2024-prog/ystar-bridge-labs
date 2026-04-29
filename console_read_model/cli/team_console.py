@@ -66,6 +66,7 @@ L6_CONTROLLED_OBSERVATION_SANDBOX = (
 L6_REAL_OBSERVATION_PREFLIGHT = (
     "console_read_model/generated/l6_real_observation_preflight_summary.json"
 )
+L6_PILOT_DESIGN = "console_read_model/generated/l6_pilot_design_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -85,7 +86,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -161,6 +162,7 @@ def load_all() -> dict[str, Any]:
         "l6_external_observation_boundary": load_json(L6_EXTERNAL_OBSERVATION_BOUNDARY),
         "l6_controlled_observation_sandbox": load_json(L6_CONTROLLED_OBSERVATION_SANDBOX),
         "l6_real_observation_preflight": load_json(L6_REAL_OBSERVATION_PREFLIGHT),
+        "l6_pilot_design": load_json(L6_PILOT_DESIGN),
     }
 
 
@@ -2067,6 +2069,83 @@ def cmd_real_read_only_observation_preflight(data: dict[str, Any]) -> None:
     print(f"generated_decision_gate: {preflight.get('generated_decision_gate')}")
     print(f"generated_readiness: {preflight.get('generated_readiness')}")
     print(f"warning: {preflight.get('warning')}")
+
+
+def cmd_controlled_real_read_only_observation_pilot_design(data: dict[str, Any]) -> None:
+    pilot = data["l6_pilot_design"]
+    print("# L6.5 Controlled Real Read-Only Observation Pilot Design")
+    print()
+    print(
+        "L6.5 controlled real read-only observation pilot design defined: "
+        f"{pilot.get('l6_5_controlled_real_read_only_observation_pilot_design_defined')}"
+    )
+    print(f"pilot design only: {pilot.get('pilot_design_only')}")
+    print(f"preflight only: {pilot.get('preflight_only')}")
+    print(
+        "future real read-only observation pilot candidate allowed: "
+        f"{pilot.get('future_real_read_only_observation_pilot_candidate_allowed')}"
+    )
+    print(f"selected pilot candidates: {pilot.get('candidate_count')}")
+    print(f"approval packet candidates: {pilot.get('approval_packet_count')}")
+    print(f"pilot scope defined: {pilot.get('pilot_scope_defined')}")
+    print(f"pilot source constraints defined: {pilot.get('pilot_source_constraints_defined')}")
+    print(
+        "pilot approval packet candidates generated: "
+        f"{pilot.get('pilot_approval_packet_candidates_generated')}"
+    )
+    print(f"operator runbook generated: {pilot.get('pilot_operator_runbook_generated')}")
+    print(
+        "evidence packet templates generated: "
+        f"{pilot.get('pilot_evidence_packet_templates_generated')}"
+    )
+    print(
+        "post-observation review workflow defined: "
+        f"{pilot.get('post_observation_review_workflow_defined')}"
+    )
+    print(f"abort/quarantine policy defined: {pilot.get('abort_quarantine_policy_defined')}")
+    print(f"success/failure criteria defined: {pilot.get('success_failure_criteria_defined')}")
+    print(f"no-action guarantees generated: {pilot.get('no_action_guarantees_generated')}")
+    print(f"pilot design decision gate generated: {pilot.get('pilot_design_decision_gate_generated')}")
+    print(
+        "real external observation authorized: "
+        f"{pilot.get('real_external_observation_authorized')}"
+    )
+    print(f"real pilot execution authorized: {pilot.get('real_pilot_execution_authorized')}")
+    print(f"network enabled: {pilot.get('network_enabled')}")
+    print(f"API enabled: {pilot.get('api_enabled')}")
+    print(f"scraping enabled: {pilot.get('scraping_enabled')}")
+    print(f"browser fetch enabled: {pilot.get('browser_fetch_enabled')}")
+    print(f"search enabled: {pilot.get('search_enabled')}")
+    print(f"publication enabled: {pilot.get('publication_enabled')}")
+    print(f"outreach enabled: {pilot.get('outreach_enabled')}")
+    print(f"payment enabled: {pilot.get('payment_enabled')}")
+    print(f"revenue execution enabled: {pilot.get('revenue_execution_enabled')}")
+    print(f"MCP tool execution enabled: {pilot.get('mcp_tool_execution_enabled')}")
+    print(f"live execution enabled: {pilot.get('live_execution_enabled')}")
+    print(f"CIEU DB write enabled: {pilot.get('cieu_db_write_enabled')}")
+    print(f"brain writeback enabled: {pilot.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {pilot.get('memory_ingestion_enabled')}")
+    print(
+        "ready for L6.6 controlled real read-only observation pilot approval packet: "
+        f"{pilot.get('ready_for_l6_6_controlled_real_read_only_observation_pilot_approval_packet')}"
+    )
+    print(
+        "ready for actual network observation now: "
+        f"{pilot.get('ready_for_actual_network_observation_now')}"
+    )
+    print(f"ready for scraping: {pilot.get('ready_for_scraping')}")
+    print(f"ready for publication: {pilot.get('ready_for_publication')}")
+    print(f"ready for outreach: {pilot.get('ready_for_outreach')}")
+    print(f"ready for payment: {pilot.get('ready_for_payment')}")
+    print(f"ready for revenue execution: {pilot.get('ready_for_revenue_execution')}")
+    print(f"next recommended milestone: {pilot.get('next_recommended_milestone')}")
+    print(f"generated_selected_candidates: {pilot.get('generated_selected_candidates')}")
+    print(f"generated_approval_packets: {pilot.get('generated_approval_packets')}")
+    print(f"generated_operator_runbook: {pilot.get('generated_operator_runbook')}")
+    print(f"generated_evidence_template: {pilot.get('generated_evidence_template')}")
+    print(f"generated_decision_gate: {pilot.get('generated_decision_gate')}")
+    print(f"generated_readiness: {pilot.get('generated_readiness')}")
+    print(f"warning: {pilot.get('warning')}")
 
 
 def cmd_gaps(data: dict[str, Any]) -> None:
@@ -4023,6 +4102,8 @@ def main(argv: list[str]) -> int:
         cmd_controlled_external_observation_sandbox(data)
     elif command == "real-read-only-observation-preflight":
         cmd_real_read_only_observation_preflight(data)
+    elif command == "controlled-real-read-only-observation-pilot-design":
+        cmd_controlled_real_read_only_observation_pilot_design(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

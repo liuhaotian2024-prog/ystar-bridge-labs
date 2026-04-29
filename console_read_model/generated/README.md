@@ -147,5 +147,15 @@ calls, browser fetch, publication, outreach, payment, revenue, MCP, live
 behavior, CIEU DB writes, canonical mutation, writeback, and direct Y*
 mutation remain blocked.
 
+`l6_pilot_design_summary.json` is derived from the L6.5 controlled real
+read-only observation pilot design. It confirms pilot candidates, scope,
+source constraints, approval packet candidates, operator runbook,
+evidence templates, review workflow, abort/quarantine policy, no-action
+guarantees, blocked pilot execution decisions, and readiness artifacts
+while real observation, URL fetch, search, scraping, API calls, browser
+fetch, publication, outreach, payment, revenue, MCP, live behavior, CIEU
+DB writes, canonical mutation, writeback, and direct Y* mutation remain
+blocked.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

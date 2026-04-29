@@ -217,6 +217,21 @@ CURATED_SOURCES = [
     "real_observation_preflight_decision_gate/candidate_preflight_decisions.json",
     "l6_real_observation_preflight_strategic_residual_loop/l6_4_strategic_residual_delta.json",
     "l6_real_observation_preflight_readiness/l6_4_readiness_assessment.json",
+    "l6_controlled_real_read_only_observation_pilot_design/l6_5_summary.json",
+    "pilot_candidate_selector/selected_pilot_candidates.json",
+    "pilot_scope_and_non_goals/pilot_boundary_contract.json",
+    "pilot_source_constraint_policy/pilot_source_allowlist.json",
+    "pilot_source_constraint_policy/pilot_source_denylist.json",
+    "pilot_approval_packet_candidates/pilot_approval_packet_index.json",
+    "pilot_operator_runbook/operator_step_sequence.json",
+    "pilot_evidence_packet_templates/pilot_evidence_packet_template.json",
+    "pilot_post_observation_review_workflow/post_observation_review_contract.json",
+    "pilot_abort_quarantine_decision_policy/pilot_abort_condition_registry.json",
+    "pilot_success_failure_criteria/pilot_success_criteria.json",
+    "pilot_no_action_and_execution_blockers/no_real_observation_execution_receipt.json",
+    "pilot_design_decision_gate/pilot_candidate_decisions.json",
+    "l6_pilot_design_strategic_residual_loop/l6_5_strategic_residual_delta.json",
+    "l6_pilot_design_readiness/l6_5_readiness_assessment.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -4399,6 +4414,216 @@ def build_l6_real_observation_preflight_summary(
     }
 
 
+def build_l6_pilot_design_summary(
+    milestone_summary: dict[str, Any] | None,
+    selected_candidates: dict[str, Any] | None,
+    boundary_contract: dict[str, Any] | None,
+    source_allowlist: dict[str, Any] | None,
+    source_denylist: dict[str, Any] | None,
+    approval_packet_index: dict[str, Any] | None,
+    operator_steps: dict[str, Any] | None,
+    evidence_template: dict[str, Any] | None,
+    post_review_contract: dict[str, Any] | None,
+    abort_registry: dict[str, Any] | None,
+    success_criteria: dict[str, Any] | None,
+    no_real_observation_receipt: dict[str, Any] | None,
+    pilot_decisions: dict[str, Any] | None,
+    residual_delta: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.l6_pilot_design_summary",
+            "schema_version": "v0",
+            "l6_5_controlled_real_read_only_observation_pilot_design_defined": False,
+            "ready_for_l6_6_controlled_real_read_only_observation_pilot_approval_packet": False,
+            "ready_for_actual_network_observation_now": False,
+            "warning": "L6.5 controlled real read-only observation pilot design has not been generated yet.",
+        }
+
+    milestone_summary = milestone_summary or {}
+    selected_candidates = selected_candidates or {}
+    boundary_contract = boundary_contract or {}
+    source_allowlist = source_allowlist or {}
+    source_denylist = source_denylist or {}
+    approval_packet_index = approval_packet_index or {}
+    operator_steps = operator_steps or {}
+    evidence_template = evidence_template or {}
+    post_review_contract = post_review_contract or {}
+    abort_registry = abort_registry or {}
+    success_criteria = success_criteria or {}
+    no_real_observation_receipt = no_real_observation_receipt or {}
+    pilot_decisions = pilot_decisions or {}
+    residual_delta = residual_delta or {}
+
+    def safety_flag(field: str) -> Any:
+        return readiness_summary.get(field, readiness_summary.get("safety_flags", {}).get(field))
+
+    def l6_5_flag(field: str) -> Any:
+        return readiness_summary.get(field, readiness_summary.get("l6_5_flags", {}).get(field))
+
+    return {
+        "schema_name": "ystar.console_read_model.generated.l6_pilot_design_summary",
+        "schema_version": "v0",
+        "milestone_id": milestone_summary.get("milestone_id", "L6.5"),
+        "milestone_name": milestone_summary.get(
+            "milestone_name", "Controlled Real Read-Only Observation Pilot Design v0"
+        ),
+        "l6_5_controlled_real_read_only_observation_pilot_design_defined": milestone_summary.get(
+            "l6_5_controlled_real_read_only_observation_pilot_design_defined",
+            readiness_summary.get("l6_5_controlled_real_read_only_observation_pilot_design_complete"),
+        ),
+        "pilot_design_only": milestone_summary.get("pilot_design_only", True),
+        "preflight_only": milestone_summary.get("preflight_only", True),
+        "future_real_read_only_observation_pilot_candidate_allowed": milestone_summary.get(
+            "future_real_read_only_observation_pilot_candidate_allowed",
+            l6_5_flag("l6_5_future_real_read_only_observation_pilot_candidate_allowed"),
+        ),
+        "candidate_count": milestone_summary.get(
+            "candidate_count", selected_candidates.get("candidate_count")
+        ),
+        "approval_packet_count": milestone_summary.get(
+            "approval_packet_count", approval_packet_index.get("packet_count")
+        ),
+        "pilot_scope_defined": milestone_summary.get(
+            "pilot_scope_defined", bool(boundary_contract)
+        ),
+        "pilot_source_constraints_defined": milestone_summary.get(
+            "pilot_source_constraints_defined", bool(source_allowlist and source_denylist)
+        ),
+        "pilot_approval_packet_candidates_generated": milestone_summary.get(
+            "pilot_approval_packet_candidates_generated", bool(approval_packet_index)
+        ),
+        "pilot_operator_runbook_generated": milestone_summary.get(
+            "pilot_operator_runbook_generated", bool(operator_steps)
+        ),
+        "pilot_evidence_packet_templates_generated": milestone_summary.get(
+            "pilot_evidence_packet_templates_generated", bool(evidence_template)
+        ),
+        "post_observation_review_workflow_defined": milestone_summary.get(
+            "post_observation_review_workflow_defined", bool(post_review_contract)
+        ),
+        "abort_quarantine_policy_defined": milestone_summary.get(
+            "abort_quarantine_policy_defined", bool(abort_registry)
+        ),
+        "success_failure_criteria_defined": milestone_summary.get(
+            "success_failure_criteria_defined", bool(success_criteria)
+        ),
+        "no_action_guarantees_generated": milestone_summary.get(
+            "no_action_guarantees_generated", bool(no_real_observation_receipt)
+        ),
+        "pilot_design_decision_gate_generated": milestone_summary.get(
+            "pilot_design_decision_gate_generated", bool(pilot_decisions)
+        ),
+        "strategic_residual_loop_generated": milestone_summary.get(
+            "strategic_residual_loop_generated", bool(residual_delta)
+        ),
+        "real_external_observation_authorized": milestone_summary.get(
+            "real_external_observation_authorized", False
+        ),
+        "real_pilot_execution_authorized": milestone_summary.get(
+            "real_pilot_execution_authorized", False
+        ),
+        "network_authorized": milestone_summary.get("network_authorized", False),
+        "api_authorized": milestone_summary.get("api_authorized", False),
+        "scraping_authorized": milestone_summary.get("scraping_authorized", False),
+        "browser_fetch_authorized": milestone_summary.get("browser_fetch_authorized", False),
+        "search_authorized": milestone_summary.get("search_authorized", False),
+        "publication_authorized": milestone_summary.get("publication_authorized", False),
+        "outreach_authorized": milestone_summary.get("outreach_authorized", False),
+        "payment_authorized": milestone_summary.get("payment_authorized", False),
+        "revenue_execution_authorized": milestone_summary.get(
+            "revenue_execution_authorized", False
+        ),
+        "mcp_execution_authorized": milestone_summary.get("mcp_execution_authorized", False),
+        "live_behavior_authorized": milestone_summary.get("live_behavior_authorized", False),
+        "cieu_db_write_authorized": milestone_summary.get("cieu_db_write_authorized", False),
+        "canonical_update_authorized": milestone_summary.get(
+            "canonical_update_authorized", False
+        ),
+        "brain_writeback_authorized": milestone_summary.get("brain_writeback_authorized", False),
+        "memory_ingestion_authorized": milestone_summary.get(
+            "memory_ingestion_authorized", False
+        ),
+        "direct_y_star_mutation_authorized": milestone_summary.get(
+            "direct_y_star_mutation_authorized", False
+        ),
+        "network_enabled": safety_flag("network_enabled"),
+        "api_enabled": safety_flag("api_enabled"),
+        "scraping_enabled": safety_flag("scraping_enabled"),
+        "browser_fetch_enabled": safety_flag("browser_fetch_enabled"),
+        "search_enabled": safety_flag("search_enabled"),
+        "external_action_enabled": safety_flag("external_action_enabled"),
+        "publication_enabled": safety_flag("publication_enabled"),
+        "outreach_enabled": safety_flag("outreach_enabled"),
+        "payment_enabled": safety_flag("payment_enabled"),
+        "revenue_execution_enabled": safety_flag("revenue_execution_enabled"),
+        "mcp_tool_execution_enabled": safety_flag("mcp_tool_execution_enabled"),
+        "live_execution_enabled": safety_flag("live_execution_enabled"),
+        "cieu_db_write_enabled": safety_flag("cieu_db_write_enabled"),
+        "brain_writeback_enabled": safety_flag("brain_writeback_enabled"),
+        "memory_ingestion_enabled": safety_flag("memory_ingestion_enabled"),
+        "real_canonical_update_application_enabled": safety_flag(
+            "real_canonical_update_application_enabled"
+        ),
+        "real_y_star_direct_mutation_enabled": safety_flag(
+            "real_y_star_direct_mutation_enabled"
+        ),
+        "semantic_truth_scoring_enabled": safety_flag("semantic_truth_scoring_enabled"),
+        "raw_runtime_artifact_reading_enabled": safety_flag(
+            "raw_runtime_artifact_reading_enabled"
+        ),
+        "l6_5_pilot_design_only": l6_5_flag("l6_5_pilot_design_only"),
+        "l6_5_preflight_only": l6_5_flag("l6_5_preflight_only"),
+        "l6_5_pilot_approval_packet_generation_enabled": l6_5_flag(
+            "l6_5_pilot_approval_packet_generation_enabled"
+        ),
+        "l6_5_pilot_operator_runbook_enabled": l6_5_flag(
+            "l6_5_pilot_operator_runbook_enabled"
+        ),
+        "l6_5_pilot_evidence_template_enabled": l6_5_flag(
+            "l6_5_pilot_evidence_template_enabled"
+        ),
+        "l6_5_real_pilot_execution_enabled": l6_5_flag(
+            "l6_5_real_pilot_execution_enabled"
+        ),
+        "l6_5_network_enabled": l6_5_flag("l6_5_network_enabled"),
+        "l6_5_search_enabled": l6_5_flag("l6_5_search_enabled"),
+        "ready_for_l6_6_controlled_real_read_only_observation_pilot_approval_packet": readiness_summary.get(
+            "ready_for_l6_6_controlled_real_read_only_observation_pilot_approval_packet"
+        ),
+        "ready_for_actual_network_observation_now": readiness_summary.get(
+            "ready_for_actual_network_observation_now"
+        ),
+        "ready_for_scraping": readiness_summary.get("ready_for_scraping"),
+        "ready_for_publication": readiness_summary.get("ready_for_publication"),
+        "ready_for_outreach": readiness_summary.get("ready_for_outreach"),
+        "ready_for_payment": readiness_summary.get("ready_for_payment"),
+        "ready_for_revenue_execution": readiness_summary.get("ready_for_revenue_execution"),
+        "ready_for_mcp_execution": readiness_summary.get("ready_for_mcp_execution"),
+        "ready_for_canonical_update": readiness_summary.get("ready_for_canonical_update"),
+        "ready_for_brain_memory_writeback": readiness_summary.get(
+            "ready_for_brain_memory_writeback"
+        ),
+        "next_recommended_milestone": readiness_summary.get("next_recommended_milestone"),
+        "generated_milestone_summary": "l6_controlled_real_read_only_observation_pilot_design/l6_5_summary.json",
+        "generated_selected_candidates": "pilot_candidate_selector/selected_pilot_candidates.json",
+        "generated_pilot_scope": "pilot_scope_and_non_goals/pilot_boundary_contract.json",
+        "generated_source_allowlist": "pilot_source_constraint_policy/pilot_source_allowlist.json",
+        "generated_approval_packets": "pilot_approval_packet_candidates/pilot_approval_packet_index.json",
+        "generated_operator_runbook": "pilot_operator_runbook/operator_step_sequence.json",
+        "generated_evidence_template": "pilot_evidence_packet_templates/pilot_evidence_packet_template.json",
+        "generated_decision_gate": "pilot_design_decision_gate/pilot_candidate_decisions.json",
+        "generated_readiness": "l6_pilot_design_readiness/l6_5_readiness_assessment.json",
+        "warning": (
+            "L6.5 is pilot-design-only. Real observation, URL fetch, search, scraping, "
+            "API calls, browser fetch, publication, outreach, payment, revenue "
+            "execution, MCP, live behavior, CIEU DB writes, canonical mutation, "
+            "writeback, and direct Y* mutation remain blocked."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -5185,6 +5410,66 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_real_observation_preflight_readiness/l6_4_readiness_assessment.json",
         files_read,
     )
+    l6_pilot_design_milestone_summary = load_optional_json(
+        "l6_controlled_real_read_only_observation_pilot_design/l6_5_summary.json",
+        files_read,
+    )
+    l6_pilot_design_selected_candidates = load_optional_json(
+        "pilot_candidate_selector/selected_pilot_candidates.json",
+        files_read,
+    )
+    l6_pilot_design_boundary_contract = load_optional_json(
+        "pilot_scope_and_non_goals/pilot_boundary_contract.json",
+        files_read,
+    )
+    l6_pilot_design_source_allowlist = load_optional_json(
+        "pilot_source_constraint_policy/pilot_source_allowlist.json",
+        files_read,
+    )
+    l6_pilot_design_source_denylist = load_optional_json(
+        "pilot_source_constraint_policy/pilot_source_denylist.json",
+        files_read,
+    )
+    l6_pilot_design_approval_packet_index = load_optional_json(
+        "pilot_approval_packet_candidates/pilot_approval_packet_index.json",
+        files_read,
+    )
+    l6_pilot_design_operator_steps = load_optional_json(
+        "pilot_operator_runbook/operator_step_sequence.json",
+        files_read,
+    )
+    l6_pilot_design_evidence_template = load_optional_json(
+        "pilot_evidence_packet_templates/pilot_evidence_packet_template.json",
+        files_read,
+    )
+    l6_pilot_design_post_review_contract = load_optional_json(
+        "pilot_post_observation_review_workflow/post_observation_review_contract.json",
+        files_read,
+    )
+    l6_pilot_design_abort_registry = load_optional_json(
+        "pilot_abort_quarantine_decision_policy/pilot_abort_condition_registry.json",
+        files_read,
+    )
+    l6_pilot_design_success_criteria = load_optional_json(
+        "pilot_success_failure_criteria/pilot_success_criteria.json",
+        files_read,
+    )
+    l6_pilot_design_no_real_observation_receipt = load_optional_json(
+        "pilot_no_action_and_execution_blockers/no_real_observation_execution_receipt.json",
+        files_read,
+    )
+    l6_pilot_design_decisions = load_optional_json(
+        "pilot_design_decision_gate/pilot_candidate_decisions.json",
+        files_read,
+    )
+    l6_pilot_design_residual_delta = load_optional_json(
+        "l6_pilot_design_strategic_residual_loop/l6_5_strategic_residual_delta.json",
+        files_read,
+    )
+    l6_pilot_design_readiness_summary = load_optional_json(
+        "l6_pilot_design_readiness/l6_5_readiness_assessment.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -5413,6 +5698,23 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         l6_real_observation_preflight_residual_delta,
         l6_real_observation_preflight_readiness_summary,
     )
+    l6_pilot_design_summary = build_l6_pilot_design_summary(
+        l6_pilot_design_milestone_summary,
+        l6_pilot_design_selected_candidates,
+        l6_pilot_design_boundary_contract,
+        l6_pilot_design_source_allowlist,
+        l6_pilot_design_source_denylist,
+        l6_pilot_design_approval_packet_index,
+        l6_pilot_design_operator_steps,
+        l6_pilot_design_evidence_template,
+        l6_pilot_design_post_review_contract,
+        l6_pilot_design_abort_registry,
+        l6_pilot_design_success_criteria,
+        l6_pilot_design_no_real_observation_receipt,
+        l6_pilot_design_decisions,
+        l6_pilot_design_residual_delta,
+        l6_pilot_design_readiness_summary,
+    )
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -5581,6 +5883,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_external_observation_boundary_summary": l6_external_observation_boundary_summary,
         "l6_controlled_observation_sandbox_summary": l6_controlled_observation_sandbox_summary,
         "l6_real_observation_preflight_summary": l6_real_observation_preflight_summary,
+        "l6_pilot_design_summary": l6_pilot_design_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -5818,6 +6121,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/l6_external_observation_boundary_summary.json",
             "console_read_model/generated/l6_controlled_observation_sandbox_summary.json",
             "console_read_model/generated/l6_real_observation_preflight_summary.json",
+            "console_read_model/generated/l6_pilot_design_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -5946,6 +6250,15 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "calls, browser fetch, publication, outreach, payment, revenue, MCP, live\n"
         "behavior, CIEU DB writes, canonical mutation, writeback, and direct Y*\n"
         "mutation remain blocked.\n\n"
+        "`l6_pilot_design_summary.json` is derived from the L6.5 controlled real\n"
+        "read-only observation pilot design. It confirms pilot candidates, scope,\n"
+        "source constraints, approval packet candidates, operator runbook,\n"
+        "evidence templates, review workflow, abort/quarantine policy, no-action\n"
+        "guarantees, blocked pilot execution decisions, and readiness artifacts\n"
+        "while real observation, URL fetch, search, scraping, API calls, browser\n"
+        "fetch, publication, outreach, payment, revenue, MCP, live behavior, CIEU\n"
+        "DB writes, canonical mutation, writeback, and direct Y* mutation remain\n"
+        "blocked.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -5995,6 +6308,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/l6_external_observation_boundary_summary.json", l6_external_observation_boundary_summary, generated_files)
     write_json("console_read_model/generated/l6_controlled_observation_sandbox_summary.json", l6_controlled_observation_sandbox_summary, generated_files)
     write_json("console_read_model/generated/l6_real_observation_preflight_summary.json", l6_real_observation_preflight_summary, generated_files)
+    write_json("console_read_model/generated/l6_pilot_design_summary.json", l6_pilot_design_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -6085,6 +6399,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     l6_real_observation_preflight = snapshot.get(
         "l6_real_observation_preflight_summary", {}
     )
+    l6_pilot_design = snapshot.get("l6_pilot_design_summary", {})
     lines.extend(
         [
             "",
@@ -7146,6 +7461,43 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- ready_for_actual_network_observation_now: {l6_real_observation_preflight.get('ready_for_actual_network_observation_now')}",
             f"- next_recommended_milestone: {l6_real_observation_preflight.get('next_recommended_milestone')}",
             f"- Warning: {l6_real_observation_preflight.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## L6.5 Controlled Real Read-Only Observation Pilot Design",
+            "",
+            f"- l6_5_controlled_real_read_only_observation_pilot_design_defined: {l6_pilot_design.get('l6_5_controlled_real_read_only_observation_pilot_design_defined')}",
+            f"- pilot_design_only: {l6_pilot_design.get('pilot_design_only')}",
+            f"- preflight_only: {l6_pilot_design.get('preflight_only')}",
+            f"- future_real_read_only_observation_pilot_candidate_allowed: {l6_pilot_design.get('future_real_read_only_observation_pilot_candidate_allowed')}",
+            f"- candidate_count: {l6_pilot_design.get('candidate_count')}",
+            f"- approval_packet_count: {l6_pilot_design.get('approval_packet_count')}",
+            f"- pilot_scope_defined: {l6_pilot_design.get('pilot_scope_defined')}",
+            f"- pilot_source_constraints_defined: {l6_pilot_design.get('pilot_source_constraints_defined')}",
+            f"- pilot_approval_packet_candidates_generated: {l6_pilot_design.get('pilot_approval_packet_candidates_generated')}",
+            f"- pilot_operator_runbook_generated: {l6_pilot_design.get('pilot_operator_runbook_generated')}",
+            f"- pilot_evidence_packet_templates_generated: {l6_pilot_design.get('pilot_evidence_packet_templates_generated')}",
+            f"- post_observation_review_workflow_defined: {l6_pilot_design.get('post_observation_review_workflow_defined')}",
+            f"- abort_quarantine_policy_defined: {l6_pilot_design.get('abort_quarantine_policy_defined')}",
+            f"- success_failure_criteria_defined: {l6_pilot_design.get('success_failure_criteria_defined')}",
+            f"- no_action_guarantees_generated: {l6_pilot_design.get('no_action_guarantees_generated')}",
+            f"- pilot_design_decision_gate_generated: {l6_pilot_design.get('pilot_design_decision_gate_generated')}",
+            f"- real_external_observation_authorized: {l6_pilot_design.get('real_external_observation_authorized')}",
+            f"- real_pilot_execution_authorized: {l6_pilot_design.get('real_pilot_execution_authorized')}",
+            f"- network_enabled: {l6_pilot_design.get('network_enabled')}",
+            f"- search_enabled: {l6_pilot_design.get('search_enabled')}",
+            f"- scraping_enabled: {l6_pilot_design.get('scraping_enabled')}",
+            f"- browser_fetch_enabled: {l6_pilot_design.get('browser_fetch_enabled')}",
+            f"- publication_enabled: {l6_pilot_design.get('publication_enabled')}",
+            f"- outreach_enabled: {l6_pilot_design.get('outreach_enabled')}",
+            f"- payment_enabled: {l6_pilot_design.get('payment_enabled')}",
+            f"- revenue_execution_enabled: {l6_pilot_design.get('revenue_execution_enabled')}",
+            f"- ready_for_l6_6_controlled_real_read_only_observation_pilot_approval_packet: {l6_pilot_design.get('ready_for_l6_6_controlled_real_read_only_observation_pilot_approval_packet')}",
+            f"- ready_for_actual_network_observation_now: {l6_pilot_design.get('ready_for_actual_network_observation_now')}",
+            f"- next_recommended_milestone: {l6_pilot_design.get('next_recommended_milestone')}",
+            f"- Warning: {l6_pilot_design.get('warning')}",
         ]
     )
     lines.extend(

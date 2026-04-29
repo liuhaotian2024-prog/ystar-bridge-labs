@@ -190,6 +190,15 @@ python3 console_read_model/cli/team_console.py <command>
   readiness for L6.5 pilot design, and blocked real observation/network/API/
   scraping/browser fetch/publication/outreach/payment/revenue/MCP/live/CIEU DB/
   writeback execution state.
+- `controlled-real-read-only-observation-pilot-design`: Prints the generated
+  L6.5 controlled real read-only observation pilot design summary: selected
+  pilot candidates, pilot scope/non-goals, source constraints, approval packet
+  candidates, operator runbook, evidence templates, post-observation review
+  workflow, abort/quarantine policy, success/failure criteria, no-action
+  guarantees, blocked pilot execution decisions, readiness for L6.6 approval
+  packet design, and blocked real observation/network/search/API/scraping/
+  browser fetch/publication/outreach/payment/revenue/MCP/live/CIEU DB/writeback
+  execution state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

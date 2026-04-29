@@ -1,0 +1,143 @@
+{
+  "schema_version": "v0",
+  "denylist_status": "blocked_for_l6_5_and_requires_future_boundary",
+  "source_types": [
+    {
+      "source_type_id": "login_required_page",
+      "denied_in_l6_5": true,
+      "future_exception_requires_explicit_approval": true
+    },
+    {
+      "source_type_id": "account_required_page",
+      "denied_in_l6_5": true,
+      "future_exception_requires_explicit_approval": true
+    },
+    {
+      "source_type_id": "payment_required_page",
+      "denied_in_l6_5": true,
+      "future_exception_requires_explicit_approval": true
+    },
+    {
+      "source_type_id": "contact_form",
+      "denied_in_l6_5": true,
+      "future_exception_requires_explicit_approval": true
+    },
+    {
+      "source_type_id": "submission_form",
+      "denied_in_l6_5": true,
+      "future_exception_requires_explicit_approval": true
+    },
+    {
+      "source_type_id": "private_customer_data",
+      "denied_in_l6_5": true,
+      "future_exception_requires_explicit_approval": true
+    },
+    {
+      "source_type_id": "private_inbox_message_surface",
+      "denied_in_l6_5": true,
+      "future_exception_requires_explicit_approval": true
+    },
+    {
+      "source_type_id": "checkout_payment_surface",
+      "denied_in_l6_5": true,
+      "future_exception_requires_explicit_approval": true
+    },
+    {
+      "source_type_id": "social_posting_surface",
+      "denied_in_l6_5": true,
+      "future_exception_requires_explicit_approval": true
+    },
+    {
+      "source_type_id": "comment_reply_surface",
+      "denied_in_l6_5": true,
+      "future_exception_requires_explicit_approval": true
+    },
+    {
+      "source_type_id": "production_mcp_tool_resource",
+      "denied_in_l6_5": true,
+      "future_exception_requires_explicit_approval": true
+    },
+    {
+      "source_type_id": "live_agent_control_surface",
+      "denied_in_l6_5": true,
+      "future_exception_requires_explicit_approval": true
+    },
+    {
+      "source_type_id": "access_control_bypass_required_source",
+      "denied_in_l6_5": true,
+      "future_exception_requires_explicit_approval": true
+    },
+    {
+      "source_type_id": "automated_scraping_required_source",
+      "denied_in_l6_5": true,
+      "future_exception_requires_explicit_approval": true
+    },
+    {
+      "source_type_id": "personal_sensitive_data_access_required_source",
+      "denied_in_l6_5": true,
+      "future_exception_requires_explicit_approval": true
+    }
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "external_observation_execution_enabled": false,
+    "network_enabled": false,
+    "api_enabled": false,
+    "scraping_enabled": false,
+    "browser_fetch_enabled": false,
+    "search_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "cieu_db_write_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "revenue_execution_enabled": false,
+    "external_market_scan_enabled": false,
+    "public_content_publication_enabled": false,
+    "publication_enabled": false,
+    "outreach_enabled": false,
+    "payment_enabled": false
+  },
+  "l6_5_flags": {
+    "l6_5_pilot_design_only": true,
+    "l6_5_preflight_only": true,
+    "l6_5_future_real_read_only_observation_pilot_candidate_allowed": true,
+    "l6_5_pilot_approval_packet_generation_enabled": true,
+    "l6_5_pilot_operator_runbook_enabled": true,
+    "l6_5_pilot_evidence_template_enabled": true,
+    "l6_5_real_pilot_execution_enabled": false,
+    "l6_5_network_enabled": false,
+    "l6_5_api_enabled": false,
+    "l6_5_scraping_enabled": false,
+    "l6_5_browser_fetch_enabled": false,
+    "l6_5_search_enabled": false,
+    "l6_5_publication_enabled": false,
+    "l6_5_outreach_enabled": false,
+    "l6_5_payment_enabled": false,
+    "l6_5_revenue_execution_enabled": false,
+    "l6_5_mcp_execution_enabled": false,
+    "l6_5_canonical_update_enabled": false,
+    "l6_5_brain_writeback_enabled": false,
+    "l6_5_memory_ingestion_enabled": false,
+    "l6_5_direct_y_star_mutation_enabled": false
+  }
+}
