@@ -113,7 +113,7 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 136
+- Artifacts classified: 193
 - Unsafe artifacts count: 119
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
@@ -122,9 +122,10 @@ Not ready:
   - DAEMON_STATE: 4
   - DB_CORE: 1
   - DB_SIDECARE: 6
+  - FRAMEWORK_FILE: 5
   - LOG_RUNTIME: 30
   - PYCACHE: 45
-  - UNKNOWN_OR_NON_RUNTIME: 17
+  - UNKNOWN_OR_NON_RUNTIME: 69
   - UNKNOWN_RUNTIME_ARTIFACT: 10
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
 - Warning: Console displays only curated path-level quarantine summary. No artifact contents were read.
@@ -150,8 +151,8 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 136
-- Artifacts with disposition: 136
+- Total artifacts: 193
+- Artifacts with disposition: 193
 - Safe-mined to review queue: 0
 - Forbidden direct read count: 119
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
@@ -162,9 +163,9 @@ Not ready:
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 45
-  - ignored_or_non_runtime: 17
+  - ignored_or_non_runtime: 74
 - Evidence scoring status:
-  - not_started: 136
+  - not_started: 193
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -538,7 +539,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 5726
+- assets_scanned: 5849
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -1229,6 +1230,35 @@ Not ready:
 - remaining_blocker: no_locator_and_no_controlled_locator_discovery_tooling
 - next_recommended_milestone: L6.10R Retry After Controlled Locator Discovery Tooling Available v0
 - Warning: L6.10R is a controlled source locator resolution and tiny observation retry. This run records Outcome C: no controlled locator-discovery tooling or concrete locator was available, so no URL was opened, no network was used, no live evidence was captured, and no evidence was fabricated.
+
+## L6.10T Governed Toolmaking Locator Resolver
+
+- l6_10t_governed_capability_gap_toolmaking_defined: True
+- mode: governed_capability_gap_toolmaking_and_locator_resolver_adapter
+- os_neutral_design_required: True
+- mac_only_solution_allowed: False
+- primary_gap_type: tool_capability_gap
+- secondary_gap_type: runtime_environment_gap
+- governed_toolmaking_methodology_created: True
+- controlled_tool_contract_model_created: True
+- resolver_capability_probe_executed: True
+- capability_probe_local_only: True
+- probe_used_network: False
+- controlled_resolver_adapter_available: False
+- selected_resolver_adapter_id: disabled_no_network_resolver
+- resolver_mode: disabled_no_network
+- capability_gap_code: no_controlled_locator_resolver_available
+- locator_discovery_executed: False
+- locator_discovery_queries_count: 0
+- concrete_locator_resolved: False
+- tiny_read_only_observation_executed: False
+- evidence_packet_generated: True
+- generated_tools_granted_live_authority: False
+- artifact_refinement_applied: False
+- general_governed_toolmaking_methodology_ready_for_reuse: True
+- remaining_blocker: no_controlled_locator_resolver_available
+- next_recommended_milestone: L6.10U Controlled Locator Resolver Enablement Sandbox v0
+- Warning: L6.10T creates a governed capability-gap diagnosis and tool-making methodology, then applies it to the missing controlled locator resolver. The default path is local-only and selects the disabled no-network resolver; no locator is fabricated, no live tool authority is granted, and L6.11 remains blocked until a controlled resolver enablement milestone.
 
 ## Governance Boundary
 

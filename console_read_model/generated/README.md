@@ -220,5 +220,13 @@ scraping, browser automation, publication, outreach, payment, revenue,
 MCP, live behavior, CIEU DB writes, canonical mutation, writeback, or
 direct Y* mutation.
 
+`l6_10t_toolmaking_locator_resolver_summary.json` is derived from the L6.10T
+governed capability-gap toolmaking and locator resolver adapter pack.
+It confirms the L6.10/L6.10R blocker is classified as a tool capability
+gap, defines a reusable governed self-tooling lifecycle, creates a portable
+disabled no-network locator resolver interface, and records the remaining
+controlled resolver gap without granting live tool authority or fabricating
+a locator.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

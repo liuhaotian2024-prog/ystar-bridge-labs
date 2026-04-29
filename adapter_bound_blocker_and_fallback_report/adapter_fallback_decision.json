@@ -1,6 +1,7 @@
 {
   "schema_version": "v0",
-  "fallback_decision": "use_disabled_no_network_resolver_and_block",
+  "fallback_decision": "block_and_report_capability_gap",
+  "selected_fallback": "use_disabled_no_network_resolver_and_block",
   "locator_faked": false,
   "evidence_faked": false,
   "runtime_limits": {

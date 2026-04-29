@@ -3,6 +3,7 @@
   "linked_evidence_packet_id": "l6_10t_adapter_bound_evidence_packet_001",
   "refinement_target": "controlled locator resolver enablement",
   "proposed_refinement": "Create or approve a controlled one-query locator resolver adapter before attempting L6.11.",
+  "review_required": true,
   "approved": false,
   "applied": false,
   "artifact_update_authorized": false,

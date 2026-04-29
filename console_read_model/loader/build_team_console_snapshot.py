@@ -310,6 +310,24 @@ CURATED_SOURCES = [
     "tiny_retry_no_action_receipts/no_broad_search_receipt.json",
     "l6_10r_strategic_residual_loop/l6_10r_strategic_residual_delta.json",
     "l6_10r_readiness_report/l6_10r_readiness_assessment.json",
+    "l6_governed_capability_gap_toolmaking_locator_resolver/l6_10t_summary.json",
+    "capability_gap_diagnosis_engine/l6_10_l6_10r_blocker_analysis.json",
+    "governed_toolmaking_methodology/governed_toolmaking_lifecycle.json",
+    "controlled_tool_contract_model/controlled_tool_contract_example_locator_resolver.json",
+    "tool_authority_and_use_gate/tool_authority_model.json",
+    "tool_sandbox_validation_harness/tool_validation_test_matrix.json",
+    "locator_resolver_capability_probe/resolver_capability_probe_result.json",
+    "locator_resolver_adapter_registry/resolver_adapter_registry.json",
+    "locator_resolver_input_output_contract/locator_resolution_result_disabled_fixture.json",
+    "locator_resolution_adapter_trace/adapter_trace.json",
+    "concrete_locator_eligibility_gate/concrete_locator_eligibility_result.json",
+    "adapter_bound_tiny_observation_retry/adapter_bound_retry_trace.json",
+    "adapter_bound_evidence_capture/adapter_bound_evidence_packet.json",
+    "adapter_bound_review_and_refinement/adapter_bound_refinement_candidate.json",
+    "adapter_bound_blocker_and_fallback_report/locator_tooling_blocker.json",
+    "adapter_bound_no_action_receipts/no_broad_search_receipt.json",
+    "l6_10t_strategic_residual_loop/l6_10t_strategic_residual_delta.json",
+    "l6_10t_readiness_report/l6_10t_readiness_assessment.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -5862,6 +5880,231 @@ def build_l6_10r_locator_retry_summary(
     }
 
 
+def build_l6_10t_toolmaking_locator_resolver_summary(
+    milestone_summary: dict[str, Any] | None,
+    blocker_analysis: dict[str, Any] | None,
+    lifecycle: dict[str, Any] | None,
+    tool_contract: dict[str, Any] | None,
+    authority_model: dict[str, Any] | None,
+    validation_matrix: dict[str, Any] | None,
+    probe_result: dict[str, Any] | None,
+    adapter_registry: dict[str, Any] | None,
+    disabled_result: dict[str, Any] | None,
+    adapter_trace: dict[str, Any] | None,
+    locator_eligibility: dict[str, Any] | None,
+    retry_trace: dict[str, Any] | None,
+    evidence_packet: dict[str, Any] | None,
+    refinement_candidate: dict[str, Any] | None,
+    blocker_report: dict[str, Any] | None,
+    no_action_receipt: dict[str, Any] | None,
+    residual_delta: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.l6_10t_toolmaking_locator_resolver_summary",
+            "schema_version": "v0",
+            "l6_10t_governed_capability_gap_toolmaking_defined": False,
+            "warning": "L6.10T governed capability-gap toolmaking has not been generated yet.",
+        }
+
+    milestone_summary = milestone_summary or {}
+    blocker_analysis = blocker_analysis or {}
+    lifecycle = lifecycle or {}
+    tool_contract = tool_contract or {}
+    authority_model = authority_model or {}
+    validation_matrix = validation_matrix or {}
+    probe_result = probe_result or {}
+    adapter_registry = adapter_registry or {}
+    disabled_result = disabled_result or {}
+    adapter_trace = adapter_trace or {}
+    locator_eligibility = locator_eligibility or {}
+    retry_trace = retry_trace or {}
+    evidence_packet = evidence_packet or {}
+    refinement_candidate = refinement_candidate or {}
+    blocker_report = blocker_report or {}
+    no_action_receipt = no_action_receipt or {}
+    residual_delta = residual_delta or {}
+
+    runtime_limits = milestone_summary.get("runtime_limits", readiness_summary.get("runtime_limits", {}))
+    safety_flags = milestone_summary.get("safety_flags", readiness_summary.get("safety_flags", {}))
+    diagnosis = blocker_analysis.get("diagnosis", blocker_analysis)
+
+    def flag(field: str, default: Any = False) -> Any:
+        return milestone_summary.get(field, safety_flags.get(field, default))
+
+    return {
+        "schema_name": "ystar.console_read_model.generated.l6_10t_toolmaking_locator_resolver_summary",
+        "schema_version": "v0",
+        "milestone_id": milestone_summary.get("milestone_id", "L6.10T"),
+        "milestone_name": milestone_summary.get(
+            "milestone_name",
+            "Governed Capability Gap Tool-Making Methodology & Controlled Locator Resolver Adapter v0",
+        ),
+        "mode": milestone_summary.get(
+            "mode",
+            "governed_capability_gap_toolmaking_and_locator_resolver_adapter",
+        ),
+        "l6_10t_governed_capability_gap_toolmaking_defined": milestone_summary.get(
+            "l6_10t_governed_capability_gap_toolmaking_defined", True
+        ),
+        "os_neutral_design_required": flag("os_neutral_design_required"),
+        "mac_only_solution_allowed": flag("mac_only_solution_allowed"),
+        "capability_gap_diagnosis_completed": milestone_summary.get(
+            "capability_gap_diagnosis_completed",
+            readiness_summary.get("capability_gap_diagnosis_completed", bool(blocker_analysis)),
+        ),
+        "governed_toolmaking_methodology_created": milestone_summary.get(
+            "governed_toolmaking_methodology_created", bool(lifecycle)
+        ),
+        "controlled_tool_contract_model_created": milestone_summary.get(
+            "controlled_tool_contract_model_created",
+            readiness_summary.get("controlled_tool_contract_model_created", bool(tool_contract)),
+        ),
+        "tool_authority_use_gate_created": bool(authority_model),
+        "tool_validation_harness_created": bool(validation_matrix),
+        "primary_gap_type": diagnosis.get("primary_gap_type"),
+        "secondary_gap_type": diagnosis.get("secondary_gap_type"),
+        "not_a_governance_logic_failure": diagnosis.get("not_a_governance_logic_failure"),
+        "not_an_agentic_evidence_reasoning_failure": diagnosis.get(
+            "not_an_agentic_evidence_reasoning_failure"
+        ),
+        "toolmaking_candidate": diagnosis.get("toolmaking_candidate"),
+        "lifecycle_stage_count": len(lifecycle.get("lifecycle_stages", [])),
+        "tool_generation_is_live_use_approval": authority_model.get(
+            "tool_generation_is_live_use_approval", False
+        ),
+        "tool_tests_passing_are_live_use_approval": authority_model.get(
+            "tool_tests_passing_are_live_use_approval", False
+        ),
+        "tool_registration_is_live_use_approval": authority_model.get(
+            "tool_registration_is_live_use_approval", False
+        ),
+        "sandbox_use_is_live_use_approval": authority_model.get(
+            "sandbox_use_is_live_use_approval", False
+        ),
+        "resolver_capability_probe_executed": milestone_summary.get(
+            "locator_resolver_capability_probe_executed",
+            readiness_summary.get("locator_resolver_capability_probe_executed", bool(probe_result)),
+        ),
+        "capability_probe_local_only": probe_result.get("probe_local_only"),
+        "probe_used_network": milestone_summary.get(
+            "probe_used_network",
+            readiness_summary.get("probe_used_network", probe_result.get("network_used", False)),
+        ),
+        "controlled_resolver_adapter_available": milestone_summary.get(
+            "controlled_resolver_adapter_available",
+            readiness_summary.get(
+                "controlled_resolver_adapter_available",
+                probe_result.get("controlled_locator_resolver_available", False),
+            ),
+        ),
+        "selected_resolver_adapter_id": milestone_summary.get(
+            "selected_resolver_adapter_id",
+            readiness_summary.get(
+                "selected_resolver_adapter_id", probe_result.get("selected_resolver_adapter_id")
+            ),
+        ),
+        "resolver_mode": probe_result.get("resolver_mode"),
+        "capability_gap_code": probe_result.get("capability_gap_code", disabled_result.get("error_code")),
+        "resolver_adapter_count": len(adapter_registry.get("adapters", [])),
+        "adapter_selected": adapter_trace.get("adapter_selected"),
+        "adapter_executed": adapter_trace.get("adapter_executed"),
+        "locator_discovery_executed": milestone_summary.get(
+            "locator_discovery_executed",
+            readiness_summary.get("locator_discovery_executed", adapter_trace.get("locator_discovery_query_executed", False)),
+        ),
+        "locator_discovery_queries_count": milestone_summary.get(
+            "locator_discovery_queries_count",
+            readiness_summary.get("locator_discovery_queries_count", adapter_trace.get("queries_count", 0)),
+        ),
+        "concrete_locator_resolved": milestone_summary.get(
+            "concrete_locator_resolved",
+            readiness_summary.get("concrete_locator_resolved", adapter_trace.get("concrete_locator_resolved", False)),
+        ),
+        "resolved_locator": adapter_trace.get("resolved_locator"),
+        "locator_eligibility_evaluated": locator_eligibility.get("eligibility_evaluated"),
+        "tiny_read_only_observation_executed": milestone_summary.get(
+            "tiny_read_only_observation_executed",
+            readiness_summary.get("tiny_read_only_observation_executed", retry_trace.get("observation_executed", False)),
+        ),
+        "external_reads_total": milestone_summary.get(
+            "external_reads_total", adapter_trace.get("external_reads_count", retry_trace.get("external_reads_count", 0))
+        ),
+        "pages_read_count": milestone_summary.get("pages_read_count", retry_trace.get("pages_read_count", 0)),
+        "evidence_packet_generated": milestone_summary.get("evidence_packet_generated", bool(evidence_packet)),
+        "live_source_evidence_captured": evidence_packet.get("live_source_evidence_captured", False),
+        "artifact_refinement_candidate_generated": milestone_summary.get(
+            "artifact_refinement_candidate_generated", bool(refinement_candidate)
+        ),
+        "artifact_refinement_applied": milestone_summary.get(
+            "artifact_refinement_applied", refinement_candidate.get("applied", False)
+        ),
+        "generated_tools_granted_live_authority": milestone_summary.get(
+            "generated_tools_granted_live_authority", False
+        ),
+        "no_action_receipts_generated": bool(no_action_receipt),
+        "strategic_residual_loop_generated": bool(residual_delta),
+        "remaining_blocker": milestone_summary.get(
+            "remaining_blocker",
+            readiness_summary.get("remaining_blocker", blocker_report.get("blocker_code")),
+        ),
+        "general_governed_toolmaking_methodology_ready_for_reuse": readiness_summary.get(
+            "general_governed_toolmaking_methodology_ready_for_reuse"
+        ),
+        "ready_for_l6_11_controlled_multi_source_read_only_evidence_corroboration_pilot": readiness_summary.get(
+            "ready_for_l6_11_controlled_multi_source_read_only_evidence_corroboration_pilot"
+        ),
+        "next_recommended_milestone": readiness_summary.get("next_recommended_milestone"),
+        "broad_web_search_authorized": flag("broad_web_search_authorized"),
+        "repeated_search_loop_authorized": flag("repeated_search_loop_authorized"),
+        "crawling_authorized": flag("crawling_authorized"),
+        "scraping_authorized": flag("scraping_authorized"),
+        "browser_automation_authorized": flag("browser_automation_authorized"),
+        "login_authorized": flag("login_authorized"),
+        "account_creation_authorized": flag("account_creation_authorized"),
+        "contact_authorized": flag("contact_authorized"),
+        "payment_authorized": flag("payment_authorized"),
+        "form_submission_authorized": flag("form_submission_authorized"),
+        "posting_commenting_messaging_authorized": flag("posting_commenting_messaging_authorized"),
+        "publication_authorized": flag("publication_authorized"),
+        "outreach_authorized": flag("outreach_authorized"),
+        "revenue_execution_authorized": flag("revenue_execution_authorized"),
+        "mcp_execution_authorized": flag("mcp_execution_authorized"),
+        "live_behavior_authorized": flag("live_behavior_authorized"),
+        "cieu_db_write_authorized": flag("cieu_db_write_authorized"),
+        "canonical_update_authorized": flag("canonical_update_authorized"),
+        "brain_writeback_authorized": flag("brain_writeback_authorized"),
+        "memory_ingestion_authorized": flag("memory_ingestion_authorized"),
+        "direct_y_star_mutation_authorized": flag("direct_y_star_mutation_authorized"),
+        "tool_external_authority_auto_grant_authorized": flag("tool_external_authority_auto_grant_authorized"),
+        "semantic_truth_scoring_authorized": flag("semantic_truth_scoring_authorized"),
+        "llm_confidence_as_authority_authorized": flag("llm_confidence_as_authority_authorized"),
+        "max_selected_work_orders": runtime_limits.get("max_selected_work_orders"),
+        "max_resolver_adapters_selected": runtime_limits.get("max_resolver_adapters_selected"),
+        "max_locator_discovery_queries": runtime_limits.get("max_locator_discovery_queries"),
+        "max_concrete_locators_resolved": runtime_limits.get("max_concrete_locators_resolved"),
+        "max_source_locators_observed": runtime_limits.get("max_source_locators_observed"),
+        "max_pages_read": runtime_limits.get("max_pages_read"),
+        "max_external_reads_total": runtime_limits.get("max_external_reads_total"),
+        "generated_milestone_summary": "l6_governed_capability_gap_toolmaking_locator_resolver/l6_10t_summary.json",
+        "generated_blocker_analysis": "capability_gap_diagnosis_engine/l6_10_l6_10r_blocker_analysis.json",
+        "generated_methodology": "governed_toolmaking_methodology/governed_toolmaking_lifecycle.json",
+        "generated_tool_contract": "controlled_tool_contract_model/controlled_tool_contract_example_locator_resolver.json",
+        "generated_probe_result": "locator_resolver_capability_probe/resolver_capability_probe_result.json",
+        "generated_adapter_trace": "locator_resolution_adapter_trace/adapter_trace.json",
+        "generated_evidence_packet": "adapter_bound_evidence_capture/adapter_bound_evidence_packet.json",
+        "generated_readiness": "l6_10t_readiness_report/l6_10t_readiness_assessment.json",
+        "warning": (
+            "L6.10T creates a governed capability-gap diagnosis and tool-making "
+            "methodology, then applies it to the missing controlled locator resolver. "
+            "The default path is local-only and selects the disabled no-network resolver; "
+            "no locator is fabricated, no live tool authority is granted, and L6.11 "
+            "remains blocked until a controlled resolver enablement milestone."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -7020,6 +7263,78 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_10r_readiness_report/l6_10r_readiness_assessment.json",
         files_read,
     )
+    l6_10t_milestone_summary = load_optional_json(
+        "l6_governed_capability_gap_toolmaking_locator_resolver/l6_10t_summary.json",
+        files_read,
+    )
+    l6_10t_blocker_analysis = load_optional_json(
+        "capability_gap_diagnosis_engine/l6_10_l6_10r_blocker_analysis.json",
+        files_read,
+    )
+    l6_10t_lifecycle = load_optional_json(
+        "governed_toolmaking_methodology/governed_toolmaking_lifecycle.json",
+        files_read,
+    )
+    l6_10t_tool_contract = load_optional_json(
+        "controlled_tool_contract_model/controlled_tool_contract_example_locator_resolver.json",
+        files_read,
+    )
+    l6_10t_authority_model = load_optional_json(
+        "tool_authority_and_use_gate/tool_authority_model.json",
+        files_read,
+    )
+    l6_10t_validation_matrix = load_optional_json(
+        "tool_sandbox_validation_harness/tool_validation_test_matrix.json",
+        files_read,
+    )
+    l6_10t_probe_result = load_optional_json(
+        "locator_resolver_capability_probe/resolver_capability_probe_result.json",
+        files_read,
+    )
+    l6_10t_adapter_registry = load_optional_json(
+        "locator_resolver_adapter_registry/resolver_adapter_registry.json",
+        files_read,
+    )
+    l6_10t_disabled_result = load_optional_json(
+        "locator_resolver_input_output_contract/locator_resolution_result_disabled_fixture.json",
+        files_read,
+    )
+    l6_10t_adapter_trace = load_optional_json(
+        "locator_resolution_adapter_trace/adapter_trace.json",
+        files_read,
+    )
+    l6_10t_locator_eligibility = load_optional_json(
+        "concrete_locator_eligibility_gate/concrete_locator_eligibility_result.json",
+        files_read,
+    )
+    l6_10t_retry_trace = load_optional_json(
+        "adapter_bound_tiny_observation_retry/adapter_bound_retry_trace.json",
+        files_read,
+    )
+    l6_10t_evidence_packet = load_optional_json(
+        "adapter_bound_evidence_capture/adapter_bound_evidence_packet.json",
+        files_read,
+    )
+    l6_10t_refinement_candidate = load_optional_json(
+        "adapter_bound_review_and_refinement/adapter_bound_refinement_candidate.json",
+        files_read,
+    )
+    l6_10t_blocker_report = load_optional_json(
+        "adapter_bound_blocker_and_fallback_report/locator_tooling_blocker.json",
+        files_read,
+    )
+    l6_10t_no_action_receipt = load_optional_json(
+        "adapter_bound_no_action_receipts/no_broad_search_receipt.json",
+        files_read,
+    )
+    l6_10t_residual_delta = load_optional_json(
+        "l6_10t_strategic_residual_loop/l6_10t_strategic_residual_delta.json",
+        files_read,
+    )
+    l6_10t_readiness_summary = load_optional_json(
+        "l6_10t_readiness_report/l6_10t_readiness_assessment.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -7355,6 +7670,26 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         l6_10r_residual_delta,
         l6_10r_readiness_summary,
     )
+    l6_10t_toolmaking_locator_resolver_summary = build_l6_10t_toolmaking_locator_resolver_summary(
+        l6_10t_milestone_summary,
+        l6_10t_blocker_analysis,
+        l6_10t_lifecycle,
+        l6_10t_tool_contract,
+        l6_10t_authority_model,
+        l6_10t_validation_matrix,
+        l6_10t_probe_result,
+        l6_10t_adapter_registry,
+        l6_10t_disabled_result,
+        l6_10t_adapter_trace,
+        l6_10t_locator_eligibility,
+        l6_10t_retry_trace,
+        l6_10t_evidence_packet,
+        l6_10t_refinement_candidate,
+        l6_10t_blocker_report,
+        l6_10t_no_action_receipt,
+        l6_10t_residual_delta,
+        l6_10t_readiness_summary,
+    )
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -7530,6 +7865,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_agentic_pilot_dry_run_summary": l6_agentic_pilot_dry_run_summary,
         "l6_tiny_observation_pilot_summary": l6_tiny_observation_pilot_summary,
         "l6_10r_locator_retry_summary": l6_10r_locator_retry_summary,
+        "l6_10t_toolmaking_locator_resolver_summary": l6_10t_toolmaking_locator_resolver_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -7774,6 +8110,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/l6_agentic_pilot_dry_run_summary.json",
             "console_read_model/generated/l6_tiny_observation_pilot_summary.json",
             "console_read_model/generated/l6_10r_locator_retry_summary.json",
+            "console_read_model/generated/l6_10t_toolmaking_locator_resolver_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -7968,6 +8305,13 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "scraping, browser automation, publication, outreach, payment, revenue,\n"
         "MCP, live behavior, CIEU DB writes, canonical mutation, writeback, or\n"
         "direct Y* mutation.\n\n"
+        "`l6_10t_toolmaking_locator_resolver_summary.json` is derived from the L6.10T\n"
+        "governed capability-gap toolmaking and locator resolver adapter pack.\n"
+        "It confirms the L6.10/L6.10R blocker is classified as a tool capability\n"
+        "gap, defines a reusable governed self-tooling lifecycle, creates a portable\n"
+        "disabled no-network locator resolver interface, and records the remaining\n"
+        "controlled resolver gap without granting live tool authority or fabricating\n"
+        "a locator.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -8024,6 +8368,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/l6_agentic_pilot_dry_run_summary.json", l6_agentic_pilot_dry_run_summary, generated_files)
     write_json("console_read_model/generated/l6_tiny_observation_pilot_summary.json", l6_tiny_observation_pilot_summary, generated_files)
     write_json("console_read_model/generated/l6_10r_locator_retry_summary.json", l6_10r_locator_retry_summary, generated_files)
+    write_json("console_read_model/generated/l6_10t_toolmaking_locator_resolver_summary.json", l6_10t_toolmaking_locator_resolver_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -8123,6 +8468,9 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     l6_agentic_pilot_dry_run = snapshot.get("l6_agentic_pilot_dry_run_summary", {})
     l6_tiny_observation_pilot = snapshot.get("l6_tiny_observation_pilot_summary", {})
     l6_10r_locator_retry = snapshot.get("l6_10r_locator_retry_summary", {})
+    l6_10t_toolmaking_locator_resolver = snapshot.get(
+        "l6_10t_toolmaking_locator_resolver_summary", {}
+    )
     lines.extend(
         [
             "",
@@ -9437,6 +9785,39 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- remaining_blocker: {l6_10r_locator_retry.get('remaining_blocker')}",
             f"- next_recommended_milestone: {l6_10r_locator_retry.get('next_recommended_milestone')}",
             f"- Warning: {l6_10r_locator_retry.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## L6.10T Governed Toolmaking Locator Resolver",
+            "",
+            f"- l6_10t_governed_capability_gap_toolmaking_defined: {l6_10t_toolmaking_locator_resolver.get('l6_10t_governed_capability_gap_toolmaking_defined')}",
+            f"- mode: {l6_10t_toolmaking_locator_resolver.get('mode')}",
+            f"- os_neutral_design_required: {l6_10t_toolmaking_locator_resolver.get('os_neutral_design_required')}",
+            f"- mac_only_solution_allowed: {l6_10t_toolmaking_locator_resolver.get('mac_only_solution_allowed')}",
+            f"- primary_gap_type: {l6_10t_toolmaking_locator_resolver.get('primary_gap_type')}",
+            f"- secondary_gap_type: {l6_10t_toolmaking_locator_resolver.get('secondary_gap_type')}",
+            f"- governed_toolmaking_methodology_created: {l6_10t_toolmaking_locator_resolver.get('governed_toolmaking_methodology_created')}",
+            f"- controlled_tool_contract_model_created: {l6_10t_toolmaking_locator_resolver.get('controlled_tool_contract_model_created')}",
+            f"- resolver_capability_probe_executed: {l6_10t_toolmaking_locator_resolver.get('resolver_capability_probe_executed')}",
+            f"- capability_probe_local_only: {l6_10t_toolmaking_locator_resolver.get('capability_probe_local_only')}",
+            f"- probe_used_network: {l6_10t_toolmaking_locator_resolver.get('probe_used_network')}",
+            f"- controlled_resolver_adapter_available: {l6_10t_toolmaking_locator_resolver.get('controlled_resolver_adapter_available')}",
+            f"- selected_resolver_adapter_id: {l6_10t_toolmaking_locator_resolver.get('selected_resolver_adapter_id')}",
+            f"- resolver_mode: {l6_10t_toolmaking_locator_resolver.get('resolver_mode')}",
+            f"- capability_gap_code: {l6_10t_toolmaking_locator_resolver.get('capability_gap_code')}",
+            f"- locator_discovery_executed: {l6_10t_toolmaking_locator_resolver.get('locator_discovery_executed')}",
+            f"- locator_discovery_queries_count: {l6_10t_toolmaking_locator_resolver.get('locator_discovery_queries_count')}",
+            f"- concrete_locator_resolved: {l6_10t_toolmaking_locator_resolver.get('concrete_locator_resolved')}",
+            f"- tiny_read_only_observation_executed: {l6_10t_toolmaking_locator_resolver.get('tiny_read_only_observation_executed')}",
+            f"- evidence_packet_generated: {l6_10t_toolmaking_locator_resolver.get('evidence_packet_generated')}",
+            f"- generated_tools_granted_live_authority: {l6_10t_toolmaking_locator_resolver.get('generated_tools_granted_live_authority')}",
+            f"- artifact_refinement_applied: {l6_10t_toolmaking_locator_resolver.get('artifact_refinement_applied')}",
+            f"- general_governed_toolmaking_methodology_ready_for_reuse: {l6_10t_toolmaking_locator_resolver.get('general_governed_toolmaking_methodology_ready_for_reuse')}",
+            f"- remaining_blocker: {l6_10t_toolmaking_locator_resolver.get('remaining_blocker')}",
+            f"- next_recommended_milestone: {l6_10t_toolmaking_locator_resolver.get('next_recommended_milestone')}",
+            f"- Warning: {l6_10t_toolmaking_locator_resolver.get('warning')}",
         ]
     )
     lines.extend(

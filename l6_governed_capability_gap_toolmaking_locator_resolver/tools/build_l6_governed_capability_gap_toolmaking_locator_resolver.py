@@ -523,6 +523,10 @@ def write_capability_gap_packs(work_order: dict[str, Any], generated: list[str])
                 "schema_version": SCHEMA_VERSION,
                 "policy": "toolmaking_must_not_bypass_governance",
                 "forbidden": FORBIDDEN_TOOL_PATTERNS,
+                "tests_do_not_equal_approval": True,
+                "readiness_does_not_equal_approval": True,
+                "adapter_existence_does_not_equal_permission_to_execute": True,
+                "live_external_actions_require_future_approval": True,
                 "live_external_use_requires_future_explicit_approval": True,
             }
         ),
@@ -634,7 +638,8 @@ def write_tool_contract_and_gate_packs(generated: list[str]) -> None:
         "regression_tests",
     ]
     write_json("tool_sandbox_validation_harness/tool_validation_harness_contract.json", with_controls({"schema_version": SCHEMA_VERSION, "validation_categories": validation_categories}), generated)
-    write_json("tool_sandbox_validation_harness/tool_validation_test_matrix.json", with_controls({"schema_version": SCHEMA_VERSION, "tests": [{"category": c, "required": True} for c in validation_categories]}), generated)
+    validation_tests = [{"category": c, "required": True} for c in validation_categories]
+    write_json("tool_sandbox_validation_harness/tool_validation_test_matrix.json", with_controls({"schema_version": SCHEMA_VERSION, "tests": validation_tests, "validation_tests": validation_tests}), generated)
     write_json("tool_sandbox_validation_harness/locator_resolver_sandbox_validation_plan.json", with_controls({"schema_version": SCHEMA_VERSION, "adapter_under_test": "disabled_no_network_resolver", "expected_error_code": "no_controlled_locator_resolver_available", "external_access_expected": False}), generated)
     write_json("tool_sandbox_validation_harness/tool_validation_receipts.json", with_controls({"schema_version": SCHEMA_VERSION, "no_fake_success": True, "no_authority_expansion": True, "network_used": False}), generated)
     write_text("tool_sandbox_validation_harness/tool_sandbox_validation_harness_report.md", md_report("Tool Sandbox Validation Harness Report", "The harness validates disabled-mode behavior, budgets, receipts, and no fake success."), generated)
@@ -839,7 +844,7 @@ def write_resolver_packs(work_order: dict[str, Any], generated: list[str]) -> No
         "human_approved_external_resolver_adapter",
         "user_supplied_locator_adapter",
     ]
-    write_json("locator_resolver_adapter_registry/resolver_adapter_registry.json", with_controls({"schema_version": SCHEMA_VERSION, "selected_adapter_id": "disabled_no_network_resolver", "adapters": [{"adapter_id": "disabled_no_network_resolver", "enabled": True, "network_enabled": False, "live_external_authority_granted": False}]}), generated)
+    write_json("locator_resolver_adapter_registry/resolver_adapter_registry.json", with_controls({"schema_version": SCHEMA_VERSION, "selected_adapter_id": "disabled_no_network_resolver", "selected_default_adapter_id": "disabled_no_network_resolver", "adapters": [{"adapter_id": "disabled_no_network_resolver", "enabled": True, "network_enabled": False, "live_external_authority_granted": False}]}), generated)
     write_json("locator_resolver_adapter_registry/disabled_no_network_adapter.json", with_controls({"schema_version": SCHEMA_VERSION, "adapter_id": "disabled_no_network_resolver", "mode": "disabled_no_network", "returns_error_code": "no_controlled_locator_resolver_available", "queries_used": 0, "external_reads_used": 0}), generated)
     write_json("locator_resolver_adapter_registry/future_adapter_profiles.json", with_controls({"schema_version": SCHEMA_VERSION, "future_profiles": [{"adapter_id": p, "enabled": False, "requires_future_approval": True} for p in future_profiles]}), generated)
     write_json("locator_resolver_adapter_registry/resolver_adapter_selection_policy.json", with_controls({"schema_version": SCHEMA_VERSION, "max_resolver_adapters_selected": 1, "default_selection": "disabled_no_network_resolver", "live_authority_required_for_external_adapter": True}), generated)
@@ -858,7 +863,7 @@ def write_resolver_packs(work_order: dict[str, Any], generated: list[str]) -> No
     write_text("locator_resolver_policy_and_limits/resolver_policy_report.md", md_report("Resolver Policy Report", "Resolver policy limits discovery to one query and one locator, with no fact inference from snippets/results."), generated)
 
     write_json("locator_resolver_selection_gate/resolver_selection_gate_contract.json", with_controls({"schema_version": SCHEMA_VERSION, "selection_gate_required": True}), generated)
-    write_json("locator_resolver_selection_gate/resolver_selection_decision.json", with_controls({"schema_version": SCHEMA_VERSION, "decision": "select_disabled_no_network_resolver", "selected_adapter_id": "disabled_no_network_resolver", "live_external_authority_granted": False}), generated)
+    write_json("locator_resolver_selection_gate/resolver_selection_decision.json", with_controls({"schema_version": SCHEMA_VERSION, "decision": "select_disabled_no_network_resolver", "selected_adapter_id": "disabled_no_network_resolver", "selected_resolver_adapter_id": "disabled_no_network_resolver", "live_external_authority_granted": False}), generated)
     write_json("locator_resolver_selection_gate/resolver_selection_blockers.json", with_controls({"schema_version": SCHEMA_VERSION, "blockers": ["no_controlled_locator_resolver_available", "no_future_explicit_external_authority_approval"]}), generated)
     write_text("locator_resolver_selection_gate/resolver_selection_gate_report.md", md_report("Resolver Selection Gate Report", "The gate selects the disabled resolver and blocks live locator discovery."), generated)
 
@@ -922,6 +927,7 @@ def write_resolver_packs(work_order: dict[str, Any], generated: list[str]) -> No
         "linked_evidence_packet_id": "l6_10t_adapter_bound_evidence_packet_001",
         "refinement_target": "controlled locator resolver enablement",
         "proposed_refinement": "Create or approve a controlled one-query locator resolver adapter before attempting L6.11.",
+        "review_required": True,
         "approved": False,
         "applied": False,
         "artifact_update_authorized": False,
@@ -930,13 +936,16 @@ def write_resolver_packs(work_order: dict[str, Any], generated: list[str]) -> No
         "memory_ingestion_authorized": False,
         "direct_y_star_mutation_authorized": False,
     }
-    write_json("adapter_bound_review_and_refinement/adapter_bound_review_packet.json", with_controls({"schema_version": SCHEMA_VERSION, "review_status": "pending_review", "approve_for_externalization": False, "approve_for_artifact_update": False, "linked_evidence_packet_id": "l6_10t_adapter_bound_evidence_packet_001"}), generated)
+    write_json("adapter_bound_review_and_refinement/adapter_bound_review_packet.json", with_controls({"schema_version": SCHEMA_VERSION, "review_status": "pending_review", "current_decision": "review_pending", "approve_for_externalization": False, "approve_for_external_use": False, "approve_for_artifact_update": False, "linked_evidence_packet_id": "l6_10t_adapter_bound_evidence_packet_001"}), generated)
     write_json("adapter_bound_review_and_refinement/adapter_bound_refinement_candidate.json", with_controls(refinement), generated)
     write_text("adapter_bound_review_and_refinement/adapter_bound_review_and_refinement_report.md", md_report("Adapter-Bound Review And Refinement Report", "Review remains pending and the refinement candidate is unapplied."), generated)
 
     blocker = {
         "schema_version": SCHEMA_VERSION,
         "exact_blocker": "no_controlled_locator_resolver_available",
+        "blocker_code": "no_controlled_locator_resolver_available",
+        "locator_fabricated": False,
+        "evidence_fabricated": False,
         "acceptable_blocker_codes": RESOLVER_ERROR_CODES,
         "future_resolver_enablement_requirements": [
             "explicit scoped authority record for one-query locator discovery",
@@ -947,7 +956,7 @@ def write_resolver_packs(work_order: dict[str, Any], generated: list[str]) -> No
         ],
     }
     write_json("adapter_bound_blocker_and_fallback_report/locator_tooling_blocker.json", with_controls(blocker), generated)
-    write_json("adapter_bound_blocker_and_fallback_report/adapter_fallback_decision.json", with_controls({"schema_version": SCHEMA_VERSION, "fallback_decision": "use_disabled_no_network_resolver_and_block", "locator_faked": False, "evidence_faked": False}), generated)
+    write_json("adapter_bound_blocker_and_fallback_report/adapter_fallback_decision.json", with_controls({"schema_version": SCHEMA_VERSION, "fallback_decision": "block_and_report_capability_gap", "selected_fallback": "use_disabled_no_network_resolver_and_block", "locator_faked": False, "evidence_faked": False}), generated)
     write_json("adapter_bound_blocker_and_fallback_report/future_resolver_enablement_requirements.json", with_controls({"schema_version": SCHEMA_VERSION, "requirements": blocker["future_resolver_enablement_requirements"]}), generated)
     write_text("adapter_bound_blocker_and_fallback_report/adapter_bound_blocker_report.md", md_report("Adapter-Bound Blocker Report", "The exact blocker is no_controlled_locator_resolver_available."), generated)
 
@@ -963,6 +972,7 @@ def write_receipts_and_readiness(generated: list[str]) -> None:
                     "authorized_in_l6_10t": False,
                     "executed_in_l6_10t": False,
                     "tool_generated_live_authority": False,
+                    "generated_tool_live_authority_granted": False,
                     "blocker_reference": "l6_governed_capability_gap_toolmaking_locator_resolver/l6_10t_milestone_contract.json",
                     "future_boundary_required": True,
                 }

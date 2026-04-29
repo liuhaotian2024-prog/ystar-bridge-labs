@@ -2383,6 +2383,48 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "l6_10r_readiness_report/l6_10r_readiness_assessment.json"],
     ),
     Check(
+        "Compile L6.10T governed toolmaking builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "l6_governed_capability_gap_toolmaking_locator_resolver/tools/build_l6_governed_capability_gap_toolmaking_locator_resolver.py",
+        ],
+    ),
+    Check(
+        "Compile L6.10T controlled locator resolver stub",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "controlled_locator_resolver_interface/controlled_locator_resolver_python_stub.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: l6_10t_toolmaking_locator_resolver_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_10t_toolmaking_locator_resolver_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10t_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_governed_capability_gap_toolmaking_locator_resolver/l6_10t_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10_l6_10r_blocker_analysis.json",
+        ["python3", "-m", "json.tool", "capability_gap_diagnosis_engine/l6_10_l6_10r_blocker_analysis.json"],
+    ),
+    Check(
+        "Validate JSON: resolver_capability_probe_result.json",
+        ["python3", "-m", "json.tool", "locator_resolver_capability_probe/resolver_capability_probe_result.json"],
+    ),
+    Check(
+        "Validate JSON: adapter_trace.json",
+        ["python3", "-m", "json.tool", "locator_resolution_adapter_trace/adapter_trace.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10t_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "l6_10t_readiness_report/l6_10t_readiness_assessment.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -2661,6 +2703,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: controlled-source-locator-resolution-tiny-observation-retry",
         ["python3", "console_read_model/cli/team_console.py", "controlled-source-locator-resolution-tiny-observation-retry"],
+    ),
+    Check(
+        "CLI smoke: governed-capability-gap-toolmaking-locator-resolver",
+        ["python3", "console_read_model/cli/team_console.py", "governed-capability-gap-toolmaking-locator-resolver"],
     ),
     Check(
         "CLI smoke: sources",

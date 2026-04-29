@@ -46,6 +46,52 @@
       "required": true
     }
   ],
+  "validation_tests": [
+    {
+      "category": "schema_validation",
+      "required": true
+    },
+    {
+      "category": "input_output_determinism",
+      "required": true
+    },
+    {
+      "category": "disabled_mode_behavior",
+      "required": true
+    },
+    {
+      "category": "limit_enforcement",
+      "required": true
+    },
+    {
+      "category": "forbidden_action_checks",
+      "required": true
+    },
+    {
+      "category": "no_fake_success",
+      "required": true
+    },
+    {
+      "category": "no_authority_expansion",
+      "required": true
+    },
+    {
+      "category": "receipt_generation",
+      "required": true
+    },
+    {
+      "category": "residual_generation",
+      "required": true
+    },
+    {
+      "category": "read_model_visibility",
+      "required": true
+    },
+    {
+      "category": "regression_tests",
+      "required": true
+    }
+  ],
   "runtime_limits": {
     "max_selected_work_orders": 1,
     "max_resolver_adapters_selected": 1,

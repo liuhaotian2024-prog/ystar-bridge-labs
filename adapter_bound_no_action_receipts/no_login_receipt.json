@@ -4,6 +4,7 @@
   "authorized_in_l6_10t": false,
   "executed_in_l6_10t": false,
   "tool_generated_live_authority": false,
+  "generated_tool_live_authority_granted": false,
   "blocker_reference": "l6_governed_capability_gap_toolmaking_locator_resolver/l6_10t_milestone_contract.json",
   "future_boundary_required": true,
   "runtime_limits": {

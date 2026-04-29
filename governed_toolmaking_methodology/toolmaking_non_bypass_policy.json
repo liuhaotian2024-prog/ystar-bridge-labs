@@ -14,6 +14,10 @@
     "tool_can_bypass_review_gate",
     "tool_can_expand_scope_during_runtime"
   ],
+  "tests_do_not_equal_approval": true,
+  "readiness_does_not_equal_approval": true,
+  "adapter_existence_does_not_equal_permission_to_execute": true,
+  "live_external_actions_require_future_approval": true,
   "live_external_use_requires_future_explicit_approval": true,
   "runtime_limits": {
     "max_selected_work_orders": 1,

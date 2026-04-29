@@ -2,6 +2,7 @@
   "schema_version": "v0",
   "decision": "select_disabled_no_network_resolver",
   "selected_adapter_id": "disabled_no_network_resolver",
+  "selected_resolver_adapter_id": "disabled_no_network_resolver",
   "live_external_authority_granted": false,
   "runtime_limits": {
     "max_selected_work_orders": 1,

@@ -1,6 +1,9 @@
 {
   "schema_version": "v0",
   "exact_blocker": "no_controlled_locator_resolver_available",
+  "blocker_code": "no_controlled_locator_resolver_available",
+  "locator_fabricated": false,
+  "evidence_fabricated": false,
   "acceptable_blocker_codes": [
     "no_controlled_locator_resolver_available",
     "adapter_present_but_disabled",

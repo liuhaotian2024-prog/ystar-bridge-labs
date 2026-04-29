@@ -1,7 +1,9 @@
 {
   "schema_version": "v0",
   "review_status": "pending_review",
+  "current_decision": "review_pending",
   "approve_for_externalization": false,
+  "approve_for_external_use": false,
   "approve_for_artifact_update": false,
   "linked_evidence_packet_id": "l6_10t_adapter_bound_evidence_packet_001",
   "runtime_limits": {

@@ -81,6 +81,9 @@ L6_TINY_OBSERVATION_PILOT = (
 L6_10R_LOCATOR_RETRY = (
     "console_read_model/generated/l6_10r_locator_retry_summary.json"
 )
+L6_10T_TOOLMAKING_LOCATOR_RESOLVER = (
+    "console_read_model/generated/l6_10t_toolmaking_locator_resolver_summary.json"
+)
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -100,7 +103,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|integrated-approval-record-and-pilot-readiness|agentic-evidence-discovery-trust-engine|controlled-agentic-evidence-pilot-approval-dry-run|tiny-real-read-only-agentic-evidence-observation-pilot|controlled-source-locator-resolution-tiny-observation-retry|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|integrated-approval-record-and-pilot-readiness|agentic-evidence-discovery-trust-engine|controlled-agentic-evidence-pilot-approval-dry-run|tiny-real-read-only-agentic-evidence-observation-pilot|controlled-source-locator-resolution-tiny-observation-retry|governed-capability-gap-toolmaking-locator-resolver|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -183,6 +186,7 @@ def load_all() -> dict[str, Any]:
         "l6_agentic_pilot_dry_run": load_json(L6_AGENTIC_PILOT_DRY_RUN),
         "l6_tiny_observation_pilot": load_json(L6_TINY_OBSERVATION_PILOT),
         "l6_10r_locator_retry": load_json(L6_10R_LOCATOR_RETRY),
+        "l6_10t_toolmaking_locator_resolver": load_json(L6_10T_TOOLMAKING_LOCATOR_RESOLVER),
     }
 
 
@@ -2659,6 +2663,74 @@ def cmd_controlled_source_locator_resolution_tiny_observation_retry(data: dict[s
     print(f"warning: {retry.get('warning')}")
 
 
+def cmd_governed_capability_gap_toolmaking_locator_resolver(data: dict[str, Any]) -> None:
+    summary = data["l6_10t_toolmaking_locator_resolver"]
+    print("# L6.10T Governed Capability Gap Toolmaking Locator Resolver")
+    print()
+    print(
+        "L6.10T governed capability-gap toolmaking defined: "
+        f"{summary.get('l6_10t_governed_capability_gap_toolmaking_defined')}"
+    )
+    print(f"mode: {summary.get('mode')}")
+    print(f"OS-neutral design required: {summary.get('os_neutral_design_required')}")
+    print(f"mac-only solution allowed: {summary.get('mac_only_solution_allowed')}")
+    print(f"primary gap type: {summary.get('primary_gap_type')}")
+    print(f"secondary gap type: {summary.get('secondary_gap_type')}")
+    print(f"methodology created: {summary.get('governed_toolmaking_methodology_created')}")
+    print(f"controlled tool contract model created: {summary.get('controlled_tool_contract_model_created')}")
+    print(f"tool authority/use gate created: {summary.get('tool_authority_use_gate_created')}")
+    print(f"validation harness created: {summary.get('tool_validation_harness_created')}")
+    print(f"capability probe executed: {summary.get('resolver_capability_probe_executed')}")
+    print(f"capability probe local-only: {summary.get('capability_probe_local_only')}")
+    print(f"probe used network: {summary.get('probe_used_network')}")
+    print(f"controlled resolver adapter available: {summary.get('controlled_resolver_adapter_available')}")
+    print(f"selected resolver adapter id: {summary.get('selected_resolver_adapter_id')}")
+    print(f"resolver mode: {summary.get('resolver_mode')}")
+    print(f"capability gap code: {summary.get('capability_gap_code')}")
+    print(f"locator discovery executed: {summary.get('locator_discovery_executed')}")
+    print(f"locator discovery queries count: {summary.get('locator_discovery_queries_count')}")
+    print(f"concrete locator resolved: {summary.get('concrete_locator_resolved')}")
+    print(f"tiny read-only observation executed: {summary.get('tiny_read_only_observation_executed')}")
+    print(f"external reads total: {summary.get('external_reads_total')}")
+    print(f"pages read count: {summary.get('pages_read_count')}")
+    print(f"evidence packet generated: {summary.get('evidence_packet_generated')}")
+    print(f"live source evidence captured: {summary.get('live_source_evidence_captured')}")
+    print(f"generated tools granted live authority: {summary.get('generated_tools_granted_live_authority')}")
+    print(f"artifact refinement candidate generated: {summary.get('artifact_refinement_candidate_generated')}")
+    print(f"artifact refinement applied: {summary.get('artifact_refinement_applied')}")
+    print(f"broad web search authorized: {summary.get('broad_web_search_authorized')}")
+    print(f"repeated search loop authorized: {summary.get('repeated_search_loop_authorized')}")
+    print(f"crawling authorized: {summary.get('crawling_authorized')}")
+    print(f"scraping authorized: {summary.get('scraping_authorized')}")
+    print(f"browser automation authorized: {summary.get('browser_automation_authorized')}")
+    print(f"login authorized: {summary.get('login_authorized')}")
+    print(f"account creation authorized: {summary.get('account_creation_authorized')}")
+    print(f"contact authorized: {summary.get('contact_authorized')}")
+    print(f"payment authorized: {summary.get('payment_authorized')}")
+    print(f"form submission authorized: {summary.get('form_submission_authorized')}")
+    print(f"publication authorized: {summary.get('publication_authorized')}")
+    print(f"outreach authorized: {summary.get('outreach_authorized')}")
+    print(f"revenue execution authorized: {summary.get('revenue_execution_authorized')}")
+    print(f"MCP execution authorized: {summary.get('mcp_execution_authorized')}")
+    print(f"live behavior authorized: {summary.get('live_behavior_authorized')}")
+    print(f"CIEU DB write authorized: {summary.get('cieu_db_write_authorized')}")
+    print(f"canonical update authorized: {summary.get('canonical_update_authorized')}")
+    print(f"brain writeback authorized: {summary.get('brain_writeback_authorized')}")
+    print(f"memory ingestion authorized: {summary.get('memory_ingestion_authorized')}")
+    print(f"direct Y* mutation authorized: {summary.get('direct_y_star_mutation_authorized')}")
+    print(
+        "general governed toolmaking methodology ready for reuse: "
+        f"{summary.get('general_governed_toolmaking_methodology_ready_for_reuse')}"
+    )
+    print(f"remaining blocker: {summary.get('remaining_blocker')}")
+    print(f"next recommended milestone: {summary.get('next_recommended_milestone')}")
+    print(f"generated_probe_result: {summary.get('generated_probe_result')}")
+    print(f"generated_adapter_trace: {summary.get('generated_adapter_trace')}")
+    print(f"generated_evidence_packet: {summary.get('generated_evidence_packet')}")
+    print(f"generated_readiness: {summary.get('generated_readiness')}")
+    print(f"warning: {summary.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -4627,6 +4699,8 @@ def main(argv: list[str]) -> int:
         cmd_tiny_real_read_only_agentic_evidence_observation_pilot(data)
     elif command == "controlled-source-locator-resolution-tiny-observation-retry":
         cmd_controlled_source_locator_resolution_tiny_observation_retry(data)
+    elif command == "governed-capability-gap-toolmaking-locator-resolver":
+        cmd_governed_capability_gap_toolmaking_locator_resolver(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

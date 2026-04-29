@@ -436,6 +436,9 @@ def main() -> int:
     required_l6_controlled_source_locator_resolution_tiny_observation_retry_files = expected.get(
         "required_l6_controlled_source_locator_resolution_tiny_observation_retry_files", []
     )
+    required_l6_governed_capability_gap_toolmaking_locator_resolver_files = expected.get(
+        "required_l6_governed_capability_gap_toolmaking_locator_resolver_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -740,6 +743,12 @@ def main() -> int:
         check_exists(path, report, "L6.10R controlled source locator retry file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "L6.10R controlled source locator retry JSON")
+
+    for rel in required_l6_governed_capability_gap_toolmaking_locator_resolver_files:
+        path = ROOT / rel
+        check_exists(path, report, "L6.10T governed toolmaking locator resolver file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "L6.10T governed toolmaking locator resolver JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -6280,6 +6289,128 @@ def main() -> int:
         for count_field, limit in limits.items():
             if limit is not None and l6_10r_locator_retry.get(count_field, 0) > limit:
                 report.fail(f"generated L6.10R summary exceeds runtime limit for {count_field}")
+
+    l6_10t_toolmaking_locator_resolver = generated_json.get(
+        "console_read_model/generated/l6_10t_toolmaking_locator_resolver_summary.json"
+    )
+    if l6_10t_toolmaking_locator_resolver:
+        for field in [
+            "l6_10t_governed_capability_gap_toolmaking_defined",
+            "mode",
+            "os_neutral_design_required",
+            "mac_only_solution_allowed",
+            "capability_gap_diagnosis_completed",
+            "governed_toolmaking_methodology_created",
+            "controlled_tool_contract_model_created",
+            "tool_authority_use_gate_created",
+            "tool_validation_harness_created",
+            "primary_gap_type",
+            "secondary_gap_type",
+            "resolver_capability_probe_executed",
+            "capability_probe_local_only",
+            "probe_used_network",
+            "controlled_resolver_adapter_available",
+            "selected_resolver_adapter_id",
+            "resolver_mode",
+            "capability_gap_code",
+            "locator_discovery_executed",
+            "locator_discovery_queries_count",
+            "concrete_locator_resolved",
+            "tiny_read_only_observation_executed",
+            "external_reads_total",
+            "pages_read_count",
+            "evidence_packet_generated",
+            "artifact_refinement_candidate_generated",
+            "artifact_refinement_applied",
+            "generated_tools_granted_live_authority",
+            "general_governed_toolmaking_methodology_ready_for_reuse",
+            "remaining_blocker",
+            "next_recommended_milestone",
+            "generated_probe_result",
+            "generated_adapter_trace",
+            "generated_evidence_packet",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in l6_10t_toolmaking_locator_resolver:
+                report.pass_(f"generated L6.10T toolmaking locator resolver field present: {field}")
+            else:
+                report.fail(f"generated L6.10T toolmaking locator resolver missing field: {field}")
+        if (
+            l6_10t_toolmaking_locator_resolver.get("mode")
+            != "governed_capability_gap_toolmaking_and_locator_resolver_adapter"
+        ):
+            report.fail("generated L6.10T summary must be governed toolmaking locator resolver mode")
+        if l6_10t_toolmaking_locator_resolver.get("primary_gap_type") != "tool_capability_gap":
+            report.fail("generated L6.10T summary must classify primary gap as tool capability gap")
+        if l6_10t_toolmaking_locator_resolver.get("secondary_gap_type") != "runtime_environment_gap":
+            report.fail("generated L6.10T summary must classify secondary gap as runtime environment gap")
+        if l6_10t_toolmaking_locator_resolver.get("selected_resolver_adapter_id") != "disabled_no_network_resolver":
+            report.fail("generated L6.10T summary must select disabled no-network resolver by default")
+        if l6_10t_toolmaking_locator_resolver.get("capability_gap_code") != "no_controlled_locator_resolver_available":
+            report.fail("generated L6.10T summary must name exact missing resolver capability gap")
+        for field in [
+            "l6_10t_governed_capability_gap_toolmaking_defined",
+            "os_neutral_design_required",
+            "capability_gap_diagnosis_completed",
+            "governed_toolmaking_methodology_created",
+            "controlled_tool_contract_model_created",
+            "tool_authority_use_gate_created",
+            "tool_validation_harness_created",
+            "resolver_capability_probe_executed",
+            "capability_probe_local_only",
+            "evidence_packet_generated",
+            "artifact_refinement_candidate_generated",
+            "general_governed_toolmaking_methodology_ready_for_reuse",
+        ]:
+            if l6_10t_toolmaking_locator_resolver.get(field) is not True:
+                report.fail(f"generated L6.10T summary must keep {field}=true")
+        for field in [
+            "mac_only_solution_allowed",
+            "probe_used_network",
+            "controlled_resolver_adapter_available",
+            "locator_discovery_executed",
+            "concrete_locator_resolved",
+            "tiny_read_only_observation_executed",
+            "artifact_refinement_applied",
+            "generated_tools_granted_live_authority",
+            "broad_web_search_authorized",
+            "repeated_search_loop_authorized",
+            "crawling_authorized",
+            "scraping_authorized",
+            "browser_automation_authorized",
+            "login_authorized",
+            "account_creation_authorized",
+            "contact_authorized",
+            "payment_authorized",
+            "form_submission_authorized",
+            "posting_commenting_messaging_authorized",
+            "publication_authorized",
+            "outreach_authorized",
+            "revenue_execution_authorized",
+            "mcp_execution_authorized",
+            "live_behavior_authorized",
+            "cieu_db_write_authorized",
+            "canonical_update_authorized",
+            "brain_writeback_authorized",
+            "memory_ingestion_authorized",
+            "direct_y_star_mutation_authorized",
+            "tool_external_authority_auto_grant_authorized",
+            "semantic_truth_scoring_authorized",
+            "llm_confidence_as_authority_authorized",
+        ]:
+            if l6_10t_toolmaking_locator_resolver.get(field) is not False:
+                report.fail(f"generated L6.10T summary must keep {field}=false")
+        limits = {
+            "locator_discovery_queries_count": l6_10t_toolmaking_locator_resolver.get(
+                "max_locator_discovery_queries"
+            ),
+            "external_reads_total": l6_10t_toolmaking_locator_resolver.get("max_external_reads_total"),
+            "pages_read_count": l6_10t_toolmaking_locator_resolver.get("max_pages_read"),
+        }
+        for count_field, limit in limits.items():
+            if limit is not None and l6_10t_toolmaking_locator_resolver.get(count_field, 0) > limit:
+                report.fail(f"generated L6.10T summary exceeds runtime limit for {count_field}")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

@@ -250,6 +250,15 @@ python3 console_read_model/cli/team_console.py <command>
   blocked broad search/crawling/scraping/browser automation/publication/
   outreach/payment/revenue/MCP/live/CIEU DB/canonical/writeback/direct Y*
   mutation state.
+- `governed-capability-gap-toolmaking-locator-resolver`: Prints the generated
+  L6.10T governed capability-gap toolmaking and locator resolver adapter
+  summary: blocker classification, reusable governed tool-making lifecycle,
+  controlled tool contract, authority/use gate, local-only capability probe,
+  disabled no-network locator resolver selection, blocked locator/observation
+  trace, evidence/review/refinement placeholders, no-action receipts, readiness,
+  and blocked live tool authority plus broad search/crawling/scraping/browser
+  automation/publication/outreach/payment/revenue/MCP/live/CIEU DB/canonical/
+  writeback/direct Y* mutation state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.
