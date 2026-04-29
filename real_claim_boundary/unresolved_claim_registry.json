@@ -1,0 +1,14 @@
+{
+  "schema_version": "v0",
+  "unresolved_claims": [
+    {
+      "claim_id": "l6_13_claim_003",
+      "evidence_packet_id": "l6_13_fixture_evidence_packet_003",
+      "bounded_claim": "Fixture limitation says the public descriptions do not prove demand conversion or revenue readiness.",
+      "support_status": "unresolved_limitation",
+      "conflict_status": "conflicted",
+      "allowed_use": "internal_review_only",
+      "external_use_authorized": false
+    }
+  ]
+}

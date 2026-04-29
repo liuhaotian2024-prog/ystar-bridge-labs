@@ -7208,6 +7208,169 @@ def main() -> int:
             if blocker not in blockers:
                 report.fail(f"generated L6.12 blocked real path must preserve blocker: {blocker}")
 
+    l6_13_real_controlled_observation = generated_json.get(
+        "console_read_model/generated/l6_13_real_controlled_external_observation_mission_sprint_summary.json"
+    )
+    if l6_13_real_controlled_observation:
+        for field in [
+            "l6_13_real_controlled_external_observation_mission_sprint_complete",
+            "mode",
+            "run_classification",
+            "selected_work_order_id",
+            "backend_mode",
+            "page_read_mode",
+            "network_allowed",
+            "safety_preflight_decision",
+            "fixture_proof_executed",
+            "real_observation_executed",
+            "query_count",
+            "search_results_considered",
+            "pages_opened",
+            "domains_touched",
+            "crawl_depth_used",
+            "external_reads_used",
+            "real_evidence_packets_generated",
+            "fixture_evidence_packets_generated",
+            "conflicts_found",
+            "unresolved_claims",
+            "query_refinements_generated",
+            "capability_gaps_resolved",
+            "capability_gaps_remaining",
+            "activation_kit_generated",
+            "blockers",
+            "ask_user_for_url_occurred",
+            "external_side_effects_occurred",
+            "core_writeback_occurred",
+            "y_star_gov_modified",
+            "gov_mcp_modified",
+            "search_snippets_used_as_evidence",
+            "page_read_content_used_as_evidence",
+            "secret_values_serialized",
+            "generated_mission_report",
+            "generated_review_packet",
+            "generated_capability_gap_closure",
+            "generated_no_side_effect_receipt",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in l6_13_real_controlled_observation:
+                report.pass_(f"generated L6.13 mission sprint field present: {field}")
+            else:
+                report.fail(f"generated L6.13 mission sprint missing field: {field}")
+        if (
+            l6_13_real_controlled_observation.get("mode")
+            != "real_controlled_external_observation_mission_sprint"
+        ):
+            report.fail("generated L6.13 summary must be real mission sprint mode")
+        allowed_l6_13_classifications = {
+            "real_controlled_observation_loop_executed",
+            "real_backend_activation_blocked_with_complete_activation_kit",
+            "preflight_blocked_with_complete_activation_kit",
+            "partial_real_search_no_page_read",
+            "partial_real_page_read_no_evidence",
+            "real_evidence_collected_with_unresolved_conflicts",
+            "real_evidence_collected_and_review_ready",
+        }
+        if l6_13_real_controlled_observation.get("run_classification") not in allowed_l6_13_classifications:
+            report.fail("generated L6.13 summary must use an allowed run classification")
+        if (
+            l6_13_real_controlled_observation.get("selected_work_order_id")
+            != "l6_10x_selected_work_order_001"
+        ):
+            report.fail("generated L6.13 summary must use the L6.10X selected work order")
+        for field in [
+            "l6_13_real_controlled_external_observation_mission_sprint_complete",
+            "fixture_proof_executed",
+            "page_read_content_used_as_evidence",
+            "activation_kit_generated",
+            "artifact_refinement_candidate_generation_authorized",
+        ]:
+            if l6_13_real_controlled_observation.get(field) is not True:
+                report.fail(f"generated L6.13 summary must keep {field}=true")
+        for field in [
+            "ask_user_for_url_occurred",
+            "external_side_effects_occurred",
+            "core_writeback_occurred",
+            "y_star_gov_modified",
+            "gov_mcp_modified",
+            "search_snippets_used_as_evidence",
+            "secret_values_serialized",
+            "ask_user_for_url_authorized",
+            "user_manual_url_provision_required",
+            "login_authorized",
+            "account_creation_authorized",
+            "payment_authorized",
+            "checkout_authorized",
+            "form_submission_authorized",
+            "posting_authorized",
+            "commenting_authorized",
+            "messaging_authorized",
+            "publication_authorized",
+            "outreach_authorized",
+            "revenue_execution_authorized",
+            "mcp_execution_authorized",
+            "live_behavior_authorized",
+            "cieu_db_write_authorized",
+            "canonical_update_authorized",
+            "brain_writeback_authorized",
+            "memory_ingestion_authorized",
+            "direct_y_star_mutation_authorized",
+            "artifact_refinement_application_authorized",
+        ]:
+            if l6_13_real_controlled_observation.get(field) is not False:
+                report.fail(f"generated L6.13 summary must keep {field}=false")
+        exact_l6_13 = {
+            "max_selected_work_orders": 1,
+            "max_queries": 10,
+            "max_search_results_considered": 25,
+            "max_pages_opened": 10,
+            "max_domains": 6,
+            "max_pages_per_domain": 3,
+            "max_crawl_depth": 1,
+            "max_total_external_reads": 15,
+            "max_evidence_packets": 10,
+        }
+        for field, expected_value in exact_l6_13.items():
+            if l6_13_real_controlled_observation.get(field) != expected_value:
+                report.fail(f"generated L6.13 summary must keep {field}={expected_value}")
+        count_limits = {
+            "query_count": l6_13_real_controlled_observation.get("max_queries"),
+            "search_results_considered": l6_13_real_controlled_observation.get(
+                "max_search_results_considered"
+            ),
+            "pages_opened": l6_13_real_controlled_observation.get("max_pages_opened"),
+            "domains_touched": l6_13_real_controlled_observation.get("max_domains"),
+            "crawl_depth_used": l6_13_real_controlled_observation.get("max_crawl_depth"),
+            "external_reads_used": l6_13_real_controlled_observation.get(
+                "max_total_external_reads"
+            ),
+            "evidence_packets_generated": l6_13_real_controlled_observation.get(
+                "max_evidence_packets"
+            ),
+        }
+        for count_field, limit in count_limits.items():
+            if limit is not None and l6_13_real_controlled_observation.get(count_field, 0) > limit:
+                report.fail(f"generated L6.13 summary exceeds runtime limit for {count_field}")
+        for field in [
+            "query_count",
+            "search_results_considered",
+            "pages_opened",
+            "fixture_evidence_packets_generated",
+            "query_refinements_generated",
+            "capability_gaps_resolved",
+            "capability_gaps_remaining",
+        ]:
+            if l6_13_real_controlled_observation.get(field, 0) < 1:
+                report.fail(f"generated L6.13 fixture/activation summary must produce positive {field}")
+        if l6_13_real_controlled_observation.get("backend_mode") == "disabled":
+            blockers = set(l6_13_real_controlled_observation.get("blockers", []))
+            for blocker in [
+                "controlled_search_backend_not_configured",
+                "controlled_public_page_read_adapter_not_configured",
+            ]:
+                if blocker not in blockers:
+                    report.fail(f"generated L6.13 blocked real path must preserve blocker: {blocker}")
+
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:
         for source in manifest.get("source_files", []):

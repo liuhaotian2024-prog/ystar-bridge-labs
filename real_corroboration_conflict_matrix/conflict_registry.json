@@ -1,0 +1,16 @@
+{
+  "schema_version": "v0",
+  "conflict_count": 1,
+  "conflicts": [
+    {
+      "conflict_id": "l6_13_conflict_001",
+      "claim_id": "l6_13_claim_003",
+      "conflicting_evidence_packet_ids": [
+        "l6_13_fixture_evidence_packet_003"
+      ],
+      "conflict_type": "scope_limitation",
+      "description": "Evidence indicates review-only scope limitations remain unresolved.",
+      "review_required": true
+    }
+  ]
+}

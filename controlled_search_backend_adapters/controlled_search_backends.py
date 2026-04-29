@@ -14,7 +14,9 @@ import json
 import os
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
+from urllib.error import HTTPError, URLError
+from urllib.parse import urlencode, urlparse
+from urllib.request import Request, urlopen
 
 
 SEARCH_BACKEND_ENV = "YSTAR_CONTROLLED_SEARCH_BACKEND"
@@ -337,6 +339,140 @@ class ApiSearchBackendStub(ControlledSearchBackend):
     def __init__(self, backend_name: str):
         self.backend_name = backend_name
 
+    def _normalize_result(
+        self,
+        query: SearchQueryEnvelope,
+        rank: int,
+        title: str,
+        url: str,
+        snippet: str,
+        result_type: str = "web",
+        sponsored: bool | None = None,
+    ) -> dict[str, Any]:
+        return asdict(
+            NormalizedSearchResult(
+                result_id=f"{self.backend_name}_{query.query_id}_{rank:03d}",
+                query_id=query.query_id,
+                query_text=query.query_text,
+                rank=rank,
+                title=title,
+                url=url,
+                snippet=snippet,
+                source_domain=domain_from_url(url),
+                backend_name=self.backend_name,
+                retrieved_at_utc=utc_now(),
+                result_type=result_type,
+                is_sponsored_or_ad_if_known=sponsored,
+                safety_flags={
+                    "search_api_only": True,
+                    "snippet_is_locator_metadata_only": True,
+                    "snippet_used_as_evidence": False,
+                    "facts_inferred_from_snippet": False,
+                },
+                trust_initial_label="unknown",
+                evidence_eligible=bool(urlparse(url).scheme in {"http", "https"}),
+            )
+        )
+
+    def _brave_query(self, query: SearchQueryEnvelope, api_key: str, remaining: int) -> list[dict[str, Any]]:
+        params = urlencode({"q": query.query_text, "count": min(query.max_results, remaining)})
+        request = Request(
+            f"https://api.search.brave.com/res/v1/web/search?{params}",
+            headers={
+                "Accept": "application/json",
+                "X-Subscription-Token": api_key,
+                "User-Agent": "ystar-controlled-search/0",
+            },
+            method="GET",
+        )
+        with urlopen(request, timeout=10) as response:  # nosec B310 - explicit governed opt-in path
+            payload = json.loads(response.read(200_000).decode("utf-8", errors="replace"))
+        rows = payload.get("web", {}).get("results", [])
+        return [
+            self._normalize_result(
+                query,
+                rank=index,
+                title=str(row.get("title", "")),
+                url=str(row.get("url", "")),
+                snippet=str(row.get("description", "")),
+                result_type=str(row.get("type", "web")),
+            )
+            for index, row in enumerate(rows[:remaining], start=1)
+        ]
+
+    def _serpapi_query(self, query: SearchQueryEnvelope, api_key: str, remaining: int) -> list[dict[str, Any]]:
+        params = urlencode(
+            {
+                "engine": "google",
+                "q": query.query_text,
+                "num": min(query.max_results, remaining),
+                "api_key": api_key,
+            }
+        )
+        request = Request(
+            f"https://serpapi.com/search.json?{params}",
+            headers={"Accept": "application/json", "User-Agent": "ystar-controlled-search/0"},
+            method="GET",
+        )
+        with urlopen(request, timeout=10) as response:  # nosec B310 - explicit governed opt-in path
+            payload = json.loads(response.read(250_000).decode("utf-8", errors="replace"))
+        rows = payload.get("organic_results", [])
+        return [
+            self._normalize_result(
+                query,
+                rank=index,
+                title=str(row.get("title", "")),
+                url=str(row.get("link", "")),
+                snippet=str(row.get("snippet", "")),
+                result_type="organic_result",
+            )
+            for index, row in enumerate(rows[:remaining], start=1)
+        ]
+
+    def _tavily_query(self, query: SearchQueryEnvelope, api_key: str, remaining: int) -> list[dict[str, Any]]:
+        body = json.dumps(
+            {
+                "api_key": api_key,
+                "query": query.query_text,
+                "max_results": min(query.max_results, remaining),
+                "include_answer": False,
+                "include_raw_content": False,
+            }
+        ).encode("utf-8")
+        request = Request(
+            "https://api.tavily.com/search",
+            data=body,
+            headers={
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "User-Agent": "ystar-controlled-search/0",
+            },
+            method="POST",
+        )
+        with urlopen(request, timeout=10) as response:  # nosec B310 - explicit governed opt-in path
+            payload = json.loads(response.read(250_000).decode("utf-8", errors="replace"))
+        rows = payload.get("results", [])
+        return [
+            self._normalize_result(
+                query,
+                rank=index,
+                title=str(row.get("title", "")),
+                url=str(row.get("url", "")),
+                snippet=str(row.get("content", "")),
+                result_type="tavily_result",
+            )
+            for index, row in enumerate(rows[:remaining], start=1)
+        ]
+
+    def _provider_query(self, query: SearchQueryEnvelope, api_key: str, remaining: int) -> list[dict[str, Any]]:
+        if self.backend_name == "brave_search_api":
+            return self._brave_query(query, api_key, remaining)
+        if self.backend_name == "serpapi":
+            return self._serpapi_query(query, api_key, remaining)
+        if self.backend_name == "tavily_search_api":
+            return self._tavily_query(query, api_key, remaining)
+        return []
+
     def run(
         self,
         request: ControlledSearchRequestEnvelope,
@@ -345,25 +481,73 @@ class ApiSearchBackendStub(ControlledSearchBackend):
         required_env = PROVIDER_KEY_ENVS[self.backend_name]
         if not config.required_env_present.get(required_env, False):
             reason = "configured_backend_missing_required_environment"
-        elif not config.search_network_allowed:
+            return ControlledSearchExecutionResult(
+                backend_mode=self.backend_name,
+                backend_name=self.backend_name,
+                backend_explicitly_configured=True,
+                search_executed=False,
+                search_query_count=0,
+                search_results_considered=0,
+                external_reads_count=0,
+                result_candidates=[],
+                snippets_used_as_evidence=False,
+                facts_inferred_from_snippets=False,
+                asked_user_for_url=False,
+                blocked_reason=reason,
+                error_code=reason,
+                network_used=False,
+            )
+        if not config.search_network_allowed:
             reason = "configured_backend_failed_safety_preflight"
-        else:
-            reason = "configured_backend_adapter_stub_not_executed_without_provider_transport"
+            return ControlledSearchExecutionResult(
+                backend_mode=self.backend_name,
+                backend_name=self.backend_name,
+                backend_explicitly_configured=True,
+                search_executed=False,
+                search_query_count=0,
+                search_results_considered=0,
+                external_reads_count=0,
+                result_candidates=[],
+                snippets_used_as_evidence=False,
+                facts_inferred_from_snippets=False,
+                asked_user_for_url=False,
+                blocked_reason=reason,
+                error_code=reason,
+                network_used=False,
+            )
+        api_key = os.environ.get(required_env, "")
+        normalized: list[dict[str, Any]] = []
+        queries_used = 0
+        external_reads = 0
+        error_code: str | None = None
+        for query in request.queries[: request.budget.max_queries]:
+            if len(normalized) >= request.budget.max_search_results_considered:
+                break
+            remaining = request.budget.max_search_results_considered - len(normalized)
+            queries_used += 1
+            external_reads += 1
+            try:
+                normalized.extend(self._provider_query(query, api_key, remaining)[:remaining])
+            except (HTTPError, URLError, TimeoutError, OSError, json.JSONDecodeError):
+                error_code = "controlled_search_backend_unavailable"
+                break
+        if not normalized and not error_code:
+            error_code = "controlled_search_backend_returned_no_results"
         return ControlledSearchExecutionResult(
             backend_mode=self.backend_name,
             backend_name=self.backend_name,
             backend_explicitly_configured=True,
-            search_executed=False,
-            search_query_count=0,
-            search_results_considered=0,
-            external_reads_count=0,
-            result_candidates=[],
+            search_executed=external_reads > 0,
+            search_query_count=queries_used,
+            search_results_considered=len(normalized),
+            external_reads_count=external_reads,
+            result_candidates=normalized,
             snippets_used_as_evidence=False,
             facts_inferred_from_snippets=False,
             asked_user_for_url=False,
-            blocked_reason=reason,
-            error_code=reason,
-            network_used=False,
+            blocked_reason=error_code,
+            error_code=error_code,
+            network_used=external_reads > 0,
         )
 
 

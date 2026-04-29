@@ -1,0 +1,17 @@
+{
+  "schema_version": "v0",
+  "freshness": [
+    {
+      "source_url": "https://official.example.org/fixture/program-demand",
+      "freshness_label": "fixture_current_marker"
+    },
+    {
+      "source_url": "https://analysis.example.net/fixture/corroboration-brief",
+      "freshness_label": "fixture_current_marker"
+    },
+    {
+      "source_url": "https://analysis.example.net/fixture/scope-limitation",
+      "freshness_label": "fixture_current_marker"
+    }
+  ]
+}

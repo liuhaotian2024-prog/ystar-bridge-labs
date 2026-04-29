@@ -1,0 +1,7 @@
+{
+  "schema_version": "v0",
+  "action": "grant_rfp_bounty_submission",
+  "authorized": false,
+  "executed": false,
+  "occurred": false
+}

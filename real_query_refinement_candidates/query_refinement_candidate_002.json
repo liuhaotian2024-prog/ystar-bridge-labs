@@ -1,0 +1,14 @@
+{
+  "candidate_id": "l6_13_query_refinement_002",
+  "candidate_query": "independent institutional corroboration source date beneficiary demand language",
+  "reason": "Resolve freshness and independence limitations.",
+  "linked_claim_or_gap": "l6_13_claim_002",
+  "expected_source_type": "institutional",
+  "priority": 2,
+  "budget_cost_estimate": {
+    "queries": 1,
+    "pages": 2
+  },
+  "requires_real_backend": true,
+  "executed_now": false
+}

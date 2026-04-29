@@ -1,0 +1,7 @@
+{
+  "schema_version": "v0",
+  "action": "revenue_execution",
+  "authorized": false,
+  "executed": false,
+  "occurred": false
+}

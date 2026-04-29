@@ -1,0 +1,195 @@
+{
+  "schema_version": "v0",
+  "run_id": "l6_13_real_controlled_observation_mission_run_001",
+  "no_side_effect_receipt_generated": true,
+  "ask_user_for_url_occurred": false,
+  "external_side_effects_occurred": false,
+  "core_writeback_occurred": false,
+  "y_star_gov_modified": false,
+  "gov_mcp_modified": false,
+  "secret_values_serialized": false,
+  "actions": [
+    {
+      "action": "login",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_login"
+    },
+    {
+      "action": "account_creation",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_account_creation"
+    },
+    {
+      "action": "payment",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_payment"
+    },
+    {
+      "action": "checkout",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_checkout"
+    },
+    {
+      "action": "form_submission",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_form_submission"
+    },
+    {
+      "action": "posting",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_posting"
+    },
+    {
+      "action": "commenting",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_commenting"
+    },
+    {
+      "action": "messaging",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_messaging"
+    },
+    {
+      "action": "email_customer_outreach",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_email_customer_outreach"
+    },
+    {
+      "action": "publication",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_publication"
+    },
+    {
+      "action": "social_media_action",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_social_media_action"
+    },
+    {
+      "action": "grant_rfp_bounty_submission",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_grant_rfp_bounty_submission"
+    },
+    {
+      "action": "outreach",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_outreach"
+    },
+    {
+      "action": "revenue_execution",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_revenue_execution"
+    },
+    {
+      "action": "mcp_execution",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_mcp_execution"
+    },
+    {
+      "action": "live_behavior",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_live_behavior"
+    },
+    {
+      "action": "cieu_db_write",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_cieu_db_write"
+    },
+    {
+      "action": "brain_memory_writeback",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_brain_memory_writeback"
+    },
+    {
+      "action": "canonical_strategy_mutation",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_canonical_strategy_mutation"
+    },
+    {
+      "action": "direct_y_star_mutation",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_direct_y_star_mutation"
+    },
+    {
+      "action": "y_star_gov_modification",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_y_star_gov_modification"
+    },
+    {
+      "action": "gov_mcp_modification",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_gov_mcp_modification"
+    },
+    {
+      "action": "private_sensitive_data_collection",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_private_sensitive_data_collection"
+    },
+    {
+      "action": "high_volume_crawling",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_high_volume_crawling"
+    },
+    {
+      "action": "unbounded_scraping",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_unbounded_scraping"
+    },
+    {
+      "action": "ask_user_url",
+      "authorized": false,
+      "executed": false,
+      "occurred": false,
+      "receipt": "no_ask_user_url"
+    }
+  ]
+}

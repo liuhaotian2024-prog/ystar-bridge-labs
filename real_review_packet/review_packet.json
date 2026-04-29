@@ -1,0 +1,470 @@
+{
+  "schema_version": "v0",
+  "run_classification": "real_backend_activation_blocked_with_complete_activation_kit",
+  "real_observation_executed": false,
+  "fixture_proof_executed": true,
+  "selected_work_order": {
+    "schema_version": "v0",
+    "selected_count": 1,
+    "selected_work_order_id": "l6_10x_selected_work_order_001",
+    "source_work_order_id": "l6_10x_selected_work_order_001",
+    "evidence_need_id": "l6_8_evidence_need_001",
+    "source_type": "official policy or program source",
+    "source_function": "official policy or program source",
+    "observation_question": "What future read-only evidence would reduce: payer or beneficiary clarity remains unverified outside the internal MVP artifact cases?",
+    "claim_boundary": "internal review of public demand or beneficiary language only",
+    "expected_evidence_type": "public page-read extracted evidence"
+  },
+  "budget_used": {
+    "query_count": 10,
+    "search_results_considered": 3,
+    "pages_opened": 3,
+    "domains_touched": 2,
+    "crawl_depth_used": 1,
+    "external_reads_used": 0
+  },
+  "backend_mode": "disabled",
+  "page_read_mode": "disabled",
+  "evidence_packets": [
+    "l6_13_fixture_evidence_packet_001",
+    "l6_13_fixture_evidence_packet_002",
+    "l6_13_fixture_evidence_packet_003"
+  ],
+  "conflicts": [
+    {
+      "conflict_id": "l6_13_conflict_001",
+      "claim_id": "l6_13_claim_003",
+      "conflicting_evidence_packet_ids": [
+        "l6_13_fixture_evidence_packet_003"
+      ],
+      "conflict_type": "scope_limitation",
+      "description": "Evidence indicates review-only scope limitations remain unresolved.",
+      "review_required": true
+    }
+  ],
+  "unresolved_claims": [
+    "l6_13_claim_003"
+  ],
+  "recommended_query_refinements": [
+    {
+      "candidate_id": "l6_13_query_refinement_001",
+      "candidate_query": "official primary source current public beneficiary demand program evidence",
+      "reason": "Increase primary-source support for the selected mission evidence need.",
+      "linked_claim_or_gap": "l6_13_claim_001",
+      "expected_source_type": "official_primary",
+      "priority": 1,
+      "budget_cost_estimate": {
+        "queries": 1,
+        "pages": 2
+      },
+      "requires_real_backend": true,
+      "executed_now": false
+    },
+    {
+      "candidate_id": "l6_13_query_refinement_002",
+      "candidate_query": "independent institutional corroboration source date beneficiary demand language",
+      "reason": "Resolve freshness and independence limitations.",
+      "linked_claim_or_gap": "l6_13_claim_002",
+      "expected_source_type": "institutional",
+      "priority": 2,
+      "budget_cost_estimate": {
+        "queries": 1,
+        "pages": 2
+      },
+      "requires_real_backend": true,
+      "executed_now": false
+    },
+    {
+      "candidate_id": "l6_13_query_refinement_003",
+      "candidate_query": "public scope limitation contradictory evidence official source",
+      "reason": "Target unresolved conflict and limitation claims.",
+      "linked_claim_or_gap": "l6_13_gap_001_configured_search_provider",
+      "expected_source_type": "official_or_institutional",
+      "priority": 3,
+      "budget_cost_estimate": {
+        "queries": 1,
+        "pages": 2
+      },
+      "requires_real_backend": true,
+      "executed_now": false
+    }
+  ],
+  "capability_gaps": [
+    {
+      "gap_id": "l6_13_gap_001_configured_search_provider",
+      "source_l6_12_gap_count": 15,
+      "previous_status": "reported_in_l6_12",
+      "l6_13_status": "still_blocking_real_observation",
+      "severity": "high",
+      "current_state": "disabled",
+      "needed_capability": "Set controlled search backend mode, allow flag, and provider key presence.",
+      "patch_or_artifact_added": "real_backend_activation_kit plus scripts/l6_13_check_controlled_observation_env.sh",
+      "still_blocks_real_observation": true,
+      "recommended_next_step": "Set controlled search backend mode, allow flag, and provider key presence."
+    },
+    {
+      "gap_id": "l6_13_gap_002_configured_public_page_reader",
+      "source_l6_12_gap_count": 15,
+      "previous_status": "reported_in_l6_12",
+      "l6_13_status": "still_blocking_real_observation",
+      "severity": "high",
+      "current_state": "disabled",
+      "needed_capability": "Set YSTAR_CONTROLLED_PAGE_READ_BACKEND=stdlib_public_http and explicit allow flag.",
+      "patch_or_artifact_added": "real_page_read_activation policy and run script",
+      "still_blocks_real_observation": true,
+      "recommended_next_step": "Set YSTAR_CONTROLLED_PAGE_READ_BACKEND=stdlib_public_http and explicit allow flag."
+    },
+    {
+      "gap_id": "l6_13_gap_003_backend_activation_instructions",
+      "source_l6_12_gap_count": 15,
+      "previous_status": "reported_in_l6_12",
+      "l6_13_status": "resolved_in_l6_13",
+      "severity": "high",
+      "current_state": "generated",
+      "needed_capability": "No-secret activation kit",
+      "patch_or_artifact_added": "docs/l6_13_real_backend_activation.md",
+      "still_blocks_real_observation": false,
+      "recommended_next_step": "No-secret activation kit"
+    },
+    {
+      "gap_id": "l6_13_gap_004_safe_env_detection",
+      "source_l6_12_gap_count": 15,
+      "previous_status": "reported_in_l6_12",
+      "l6_13_status": "resolved_in_l6_13",
+      "severity": "high",
+      "current_state": "presence-only checks",
+      "needed_capability": "Boolean secret-presence receipts",
+      "patch_or_artifact_added": "real_provider_env_checks",
+      "still_blocks_real_observation": false,
+      "recommended_next_step": "Boolean secret-presence receipts"
+    },
+    {
+      "gap_id": "l6_13_gap_005_real_provider_adapter_readiness",
+      "source_l6_12_gap_count": 15,
+      "previous_status": "reported_in_l6_12",
+      "l6_13_status": "partially_resolved_in_l6_13",
+      "severity": "high",
+      "current_state": "stdlib provider adapters available behind explicit env gates",
+      "needed_capability": "Approved provider credentials and network permission",
+      "patch_or_artifact_added": "provider-specific activation requirements",
+      "still_blocks_real_observation": false,
+      "recommended_next_step": "Approved provider credentials and network permission"
+    },
+    {
+      "gap_id": "l6_13_gap_006_stdlib_public_page_read_readiness",
+      "source_l6_12_gap_count": 15,
+      "previous_status": "reported_in_l6_12",
+      "l6_13_status": "partially_resolved_in_l6_13",
+      "severity": "high",
+      "current_state": "GET-only adapter exists",
+      "needed_capability": "Real run with approved network flag",
+      "patch_or_artifact_added": "page-read activation receipt",
+      "still_blocks_real_observation": false,
+      "recommended_next_step": "Real run with approved network flag"
+    },
+    {
+      "gap_id": "l6_13_gap_007_run_scripts",
+      "source_l6_12_gap_count": 15,
+      "previous_status": "reported_in_l6_12",
+      "l6_13_status": "resolved_in_l6_13",
+      "severity": "medium",
+      "current_state": "generated",
+      "needed_capability": "Local check/run helpers",
+      "patch_or_artifact_added": "scripts/l6_13_*.sh",
+      "still_blocks_real_observation": false,
+      "recommended_next_step": "Local check/run helpers"
+    },
+    {
+      "gap_id": "l6_13_gap_008_no_secret_policy",
+      "source_l6_12_gap_count": 15,
+      "previous_status": "reported_in_l6_12",
+      "l6_13_status": "resolved_in_l6_13",
+      "severity": "high",
+      "current_state": "enforced in artifacts",
+      "needed_capability": "Continue secret-value redaction",
+      "patch_or_artifact_added": "no-secret receipts",
+      "still_blocks_real_observation": false,
+      "recommended_next_step": "Continue secret-value redaction"
+    },
+    {
+      "gap_id": "l6_13_gap_009_real_fixture_classification",
+      "source_l6_12_gap_count": 15,
+      "previous_status": "reported_in_l6_12",
+      "l6_13_status": "resolved_in_l6_13",
+      "severity": "medium",
+      "current_state": "deterministic enum",
+      "needed_capability": "Maintain tests",
+      "patch_or_artifact_added": "run classification schema",
+      "still_blocks_real_observation": false,
+      "recommended_next_step": "Maintain tests"
+    },
+    {
+      "gap_id": "l6_13_gap_010_console_display_coverage",
+      "source_l6_12_gap_count": 15,
+      "previous_status": "reported_in_l6_12",
+      "l6_13_status": "resolved_in_l6_13",
+      "severity": "medium",
+      "current_state": "L6.13 command added",
+      "needed_capability": "Maintain smoke tests",
+      "patch_or_artifact_added": "console/read-model integration",
+      "still_blocks_real_observation": false,
+      "recommended_next_step": "Maintain smoke tests"
+    },
+    {
+      "gap_id": "l6_13_gap_011_html_extraction_quality",
+      "source_l6_12_gap_count": 15,
+      "previous_status": "reported_in_l6_12",
+      "l6_13_status": "still_needed_for_quality",
+      "severity": "medium",
+      "current_state": "basic stdlib extraction",
+      "needed_capability": "Claim-aware extraction",
+      "patch_or_artifact_added": "future quality patch",
+      "still_blocks_real_observation": false,
+      "recommended_next_step": "Claim-aware extraction"
+    },
+    {
+      "gap_id": "l6_13_gap_012_domain_allow_deny_policy",
+      "source_l6_12_gap_count": 15,
+      "previous_status": "reported_in_l6_12",
+      "l6_13_status": "still_needed_for_quality",
+      "severity": "medium",
+      "current_state": "private/internal blocking",
+      "needed_capability": "Curated domain allow/deny registry",
+      "patch_or_artifact_added": "future policy patch",
+      "still_blocks_real_observation": false,
+      "recommended_next_step": "Curated domain allow/deny registry"
+    },
+    {
+      "gap_id": "l6_13_gap_013_freshness_parser",
+      "source_l6_12_gap_count": 15,
+      "previous_status": "reported_in_l6_12",
+      "l6_13_status": "still_needed_for_quality",
+      "severity": "medium",
+      "current_state": "date missing or fixture marker",
+      "needed_capability": "Structured source date parser",
+      "patch_or_artifact_added": "future parser patch",
+      "still_blocks_real_observation": false,
+      "recommended_next_step": "Structured source date parser"
+    },
+    {
+      "gap_id": "l6_13_gap_014_conflict_resolver",
+      "source_l6_12_gap_count": 15,
+      "previous_status": "reported_in_l6_12",
+      "l6_13_status": "still_needed_for_quality",
+      "severity": "medium",
+      "current_state": "conflicts identified",
+      "needed_capability": "Review-gated conflict resolution",
+      "patch_or_artifact_added": "future review workflow",
+      "still_blocks_real_observation": false,
+      "recommended_next_step": "Review-gated conflict resolution"
+    },
+    {
+      "gap_id": "l6_13_gap_015_query_refinement_executor",
+      "source_l6_12_gap_count": 15,
+      "previous_status": "reported_in_l6_12",
+      "l6_13_status": "deferred_not_required_for_first_real_run",
+      "severity": "low",
+      "current_state": "candidates generated only",
+      "needed_capability": "Approved second-loop executor",
+      "patch_or_artifact_added": "future milestone",
+      "still_blocks_real_observation": false,
+      "recommended_next_step": "Approved second-loop executor"
+    }
+  ],
+  "no_side_effect_summary": {
+    "schema_version": "v0",
+    "run_id": "l6_13_real_controlled_observation_mission_run_001",
+    "no_side_effect_receipt_generated": true,
+    "ask_user_for_url_occurred": false,
+    "external_side_effects_occurred": false,
+    "core_writeback_occurred": false,
+    "y_star_gov_modified": false,
+    "gov_mcp_modified": false,
+    "secret_values_serialized": false,
+    "actions": [
+      {
+        "action": "login",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_login"
+      },
+      {
+        "action": "account_creation",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_account_creation"
+      },
+      {
+        "action": "payment",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_payment"
+      },
+      {
+        "action": "checkout",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_checkout"
+      },
+      {
+        "action": "form_submission",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_form_submission"
+      },
+      {
+        "action": "posting",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_posting"
+      },
+      {
+        "action": "commenting",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_commenting"
+      },
+      {
+        "action": "messaging",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_messaging"
+      },
+      {
+        "action": "email_customer_outreach",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_email_customer_outreach"
+      },
+      {
+        "action": "publication",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_publication"
+      },
+      {
+        "action": "social_media_action",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_social_media_action"
+      },
+      {
+        "action": "grant_rfp_bounty_submission",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_grant_rfp_bounty_submission"
+      },
+      {
+        "action": "outreach",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_outreach"
+      },
+      {
+        "action": "revenue_execution",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_revenue_execution"
+      },
+      {
+        "action": "mcp_execution",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_mcp_execution"
+      },
+      {
+        "action": "live_behavior",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_live_behavior"
+      },
+      {
+        "action": "cieu_db_write",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_cieu_db_write"
+      },
+      {
+        "action": "brain_memory_writeback",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_brain_memory_writeback"
+      },
+      {
+        "action": "canonical_strategy_mutation",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_canonical_strategy_mutation"
+      },
+      {
+        "action": "direct_y_star_mutation",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_direct_y_star_mutation"
+      },
+      {
+        "action": "y_star_gov_modification",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_y_star_gov_modification"
+      },
+      {
+        "action": "gov_mcp_modification",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_gov_mcp_modification"
+      },
+      {
+        "action": "private_sensitive_data_collection",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_private_sensitive_data_collection"
+      },
+      {
+        "action": "high_volume_crawling",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_high_volume_crawling"
+      },
+      {
+        "action": "unbounded_scraping",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_unbounded_scraping"
+      },
+      {
+        "action": "ask_user_url",
+        "authorized": false,
+        "executed": false,
+        "occurred": false,
+        "receipt": "no_ask_user_url"
+      }
+    ]
+  },
+  "review_status": "pending_review"
+}

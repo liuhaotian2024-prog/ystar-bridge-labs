@@ -1,0 +1,14 @@
+{
+  "candidate_id": "l6_13_query_refinement_003",
+  "candidate_query": "public scope limitation contradictory evidence official source",
+  "reason": "Target unresolved conflict and limitation claims.",
+  "linked_claim_or_gap": "l6_13_gap_001_configured_search_provider",
+  "expected_source_type": "official_or_institutional",
+  "priority": 3,
+  "budget_cost_estimate": {
+    "queries": 1,
+    "pages": 2
+  },
+  "requires_real_backend": true,
+  "executed_now": false
+}

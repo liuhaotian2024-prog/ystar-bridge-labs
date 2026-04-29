@@ -1,0 +1,12 @@
+{
+  "schema_version": "v0",
+  "selected_count": 1,
+  "selected_work_order_id": "l6_10x_selected_work_order_001",
+  "source_work_order_id": "l6_10x_selected_work_order_001",
+  "evidence_need_id": "l6_8_evidence_need_001",
+  "source_type": "official policy or program source",
+  "source_function": "official policy or program source",
+  "observation_question": "What future read-only evidence would reduce: payer or beneficiary clarity remains unverified outside the internal MVP artifact cases?",
+  "claim_boundary": "internal review of public demand or beneficiary language only",
+  "expected_evidence_type": "public page-read extracted evidence"
+}

@@ -1,0 +1,14 @@
+{
+  "candidate_id": "l6_13_query_refinement_001",
+  "candidate_query": "official primary source current public beneficiary demand program evidence",
+  "reason": "Increase primary-source support for the selected mission evidence need.",
+  "linked_claim_or_gap": "l6_13_claim_001",
+  "expected_source_type": "official_primary",
+  "priority": 1,
+  "budget_cost_estimate": {
+    "queries": 1,
+    "pages": 2
+  },
+  "requires_real_backend": true,
+  "executed_now": false
+}

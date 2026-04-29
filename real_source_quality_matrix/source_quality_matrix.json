@@ -1,0 +1,67 @@
+{
+  "schema_version": "v0",
+  "allowed_labels": [
+    "official_primary",
+    "official_secondary",
+    "institutional",
+    "documentation",
+    "reputable_media",
+    "community",
+    "commercial_vendor",
+    "unknown",
+    "blocked_or_ineligible"
+  ],
+  "sources": [
+    {
+      "source_url": "https://official.example.org/fixture/program-demand",
+      "domain": "official.example.org",
+      "source_type": "official_primary",
+      "source_quality_label": "official_primary",
+      "freshness_label": "fixture_current_marker",
+      "page_read_succeeded": true,
+      "evidence_extracted": true,
+      "primary_secondary_community": "primary",
+      "trust_limitations": [
+        "fixture/demo evidence only",
+        "single source is not canonical truth",
+        "not approved for external use"
+      ],
+      "llm_confidence_as_truth_authority": false,
+      "semantic_truth_score_used": false
+    },
+    {
+      "source_url": "https://analysis.example.net/fixture/corroboration-brief",
+      "domain": "analysis.example.net",
+      "source_type": "institutional",
+      "source_quality_label": "institutional",
+      "freshness_label": "fixture_current_marker",
+      "page_read_succeeded": true,
+      "evidence_extracted": true,
+      "primary_secondary_community": "secondary",
+      "trust_limitations": [
+        "fixture/demo evidence only",
+        "single source is not canonical truth",
+        "not approved for external use"
+      ],
+      "llm_confidence_as_truth_authority": false,
+      "semantic_truth_score_used": false
+    },
+    {
+      "source_url": "https://analysis.example.net/fixture/scope-limitation",
+      "domain": "analysis.example.net",
+      "source_type": "official_secondary",
+      "source_quality_label": "official_secondary",
+      "freshness_label": "fixture_current_marker",
+      "page_read_succeeded": true,
+      "evidence_extracted": true,
+      "primary_secondary_community": "secondary",
+      "trust_limitations": [
+        "fixture/demo evidence only",
+        "single source is not canonical truth",
+        "not approved for external use"
+      ],
+      "llm_confidence_as_truth_authority": false,
+      "semantic_truth_score_used": false
+    }
+  ]
+}

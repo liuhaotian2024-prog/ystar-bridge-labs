@@ -1,0 +1,20 @@
+{
+  "schema_version": "v0",
+  "max_selected_work_orders": 1,
+  "max_queries": 10,
+  "max_search_results_considered": 25,
+  "max_pages_opened": 10,
+  "max_domains": 6,
+  "max_pages_per_domain": 3,
+  "max_crawl_depth": 1,
+  "max_total_external_reads": 15,
+  "max_primary_sources_to_capture": 4,
+  "max_secondary_sources_to_capture": 6,
+  "max_conflicting_sources_to_capture": 3,
+  "max_evidence_packets": 10,
+  "max_runtime_minutes": 20,
+  "rate_limit_required": true,
+  "stop_on_login_or_payment_or_form": true,
+  "stop_on_private_or_sensitive_data": true,
+  "stop_on_scope_drift": true
+}

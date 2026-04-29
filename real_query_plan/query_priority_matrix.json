@@ -1,0 +1,55 @@
+{
+  "schema_version": "v0",
+  "priorities": [
+    {
+      "query_id": "l6_10x_query_001",
+      "priority": 1,
+      "query_category": "primary_source_query"
+    },
+    {
+      "query_id": "l6_10x_query_002",
+      "priority": 2,
+      "query_category": "official_source_query"
+    },
+    {
+      "query_id": "l6_10x_query_003",
+      "priority": 3,
+      "query_category": "corroboration_query"
+    },
+    {
+      "query_id": "l6_10x_query_004",
+      "priority": 4,
+      "query_category": "conflict_check_query"
+    },
+    {
+      "query_id": "l6_10x_query_005",
+      "priority": 5,
+      "query_category": "freshness_check_query"
+    },
+    {
+      "query_id": "l6_13_query_006",
+      "priority": 6,
+      "query_category": "source_quality_followup_query"
+    },
+    {
+      "query_id": "l6_13_query_007",
+      "priority": 7,
+      "query_category": "freshness_gap_query"
+    },
+    {
+      "query_id": "l6_13_query_008",
+      "priority": 8,
+      "query_category": "conflict_resolution_query"
+    },
+    {
+      "query_id": "l6_13_query_009",
+      "priority": 9,
+      "query_category": "mission_primary_source_query"
+    },
+    {
+      "query_id": "l6_13_query_010",
+      "priority": 10,
+      "query_category": "mission_conflict_resolution_query"
+    }
+  ]
+}

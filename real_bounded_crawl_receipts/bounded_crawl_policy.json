@@ -1,0 +1,6 @@
+{
+  "schema_version": "v0",
+  "max_crawl_depth": 1,
+  "max_pages_per_domain": 3,
+  "no_high_volume_crawling": true
+}

@@ -263,5 +263,18 @@ preflight, a non-empty offline fixture evidence path, and no-action
 receipts without asking the user for URLs or using external network by
 default.
 
+`l6_12_unified_controlled_external_observation_evidence_loop_summary.json`
+is derived from the L6.12 unified observation loop sprint. It confirms a
+fixture-proven full evidence loop, real backend/page-read configuration
+inspection, capability gap reporting, query refinement candidates, and
+no-side-effect receipts without manual URL fallback.
+
+`l6_13_real_controlled_external_observation_mission_sprint_summary.json`
+is derived from the L6.13 real controlled observation mission sprint. It
+confirms the no-secret activation kit, provider env presence checks,
+real/fixture classification, mission evidence report, capability gap
+closure matrix, and console-visible readiness for real observation once
+approved backend/page-read configuration is present.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

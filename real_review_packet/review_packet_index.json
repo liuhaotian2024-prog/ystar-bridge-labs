@@ -1,0 +1,7 @@
+{
+  "schema_version": "v0",
+  "review_packets": [
+    "real_review_packet/review_packet.json"
+  ],
+  "review_status": "pending_review"
+}

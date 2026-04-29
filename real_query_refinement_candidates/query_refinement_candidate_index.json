@@ -1,0 +1,48 @@
+{
+  "schema_version": "v0",
+  "candidate_count": 3,
+  "candidates": [
+    {
+      "candidate_id": "l6_13_query_refinement_001",
+      "candidate_query": "official primary source current public beneficiary demand program evidence",
+      "reason": "Increase primary-source support for the selected mission evidence need.",
+      "linked_claim_or_gap": "l6_13_claim_001",
+      "expected_source_type": "official_primary",
+      "priority": 1,
+      "budget_cost_estimate": {
+        "queries": 1,
+        "pages": 2
+      },
+      "requires_real_backend": true,
+      "executed_now": false
+    },
+    {
+      "candidate_id": "l6_13_query_refinement_002",
+      "candidate_query": "independent institutional corroboration source date beneficiary demand language",
+      "reason": "Resolve freshness and independence limitations.",
+      "linked_claim_or_gap": "l6_13_claim_002",
+      "expected_source_type": "institutional",
+      "priority": 2,
+      "budget_cost_estimate": {
+        "queries": 1,
+        "pages": 2
+      },
+      "requires_real_backend": true,
+      "executed_now": false
+    },
+    {
+      "candidate_id": "l6_13_query_refinement_003",
+      "candidate_query": "public scope limitation contradictory evidence official source",
+      "reason": "Target unresolved conflict and limitation claims.",
+      "linked_claim_or_gap": "l6_13_gap_001_configured_search_provider",
+      "expected_source_type": "official_or_institutional",
+      "priority": 3,
+      "budget_cost_estimate": {
+        "queries": 1,
+        "pages": 2
+      },
+      "requires_real_backend": true,
+      "executed_now": false
+    }
+  ]
+}

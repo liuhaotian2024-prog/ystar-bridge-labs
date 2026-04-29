@@ -2597,6 +2597,15 @@ VALIDATION_CHECKS = [
         ],
     ),
     Check(
+        "Compile L6.13 real controlled observation mission builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "l6_real_controlled_external_observation_mission_sprint/tools/build_l6_real_controlled_external_observation_mission_sprint.py",
+        ],
+    ),
+    Check(
         "Validate JSON: l6_10x_budgeted_controlled_search_evidence_summary.json",
         ["python3", "-m", "json.tool", "console_read_model/generated/l6_10x_budgeted_controlled_search_evidence_summary.json"],
     ),
@@ -2695,6 +2704,38 @@ VALIDATION_CHECKS = [
     Check(
         "Validate JSON: l6_12_readiness_assessment.json",
         ["python3", "-m", "json.tool", "l6_12_read_model/l6_12_readiness_assessment.json"],
+    ),
+    Check(
+        "Validate JSON: l6_13_real_controlled_external_observation_mission_sprint_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_13_real_controlled_external_observation_mission_sprint_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_13_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_real_controlled_external_observation_mission_sprint/l6_13_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: l6_13_env_presence_receipt.json",
+        ["python3", "-m", "json.tool", "real_provider_env_checks/env_presence_receipt.json"],
+    ),
+    Check(
+        "Validate JSON: l6_13_activation_kit_manifest.json",
+        ["python3", "-m", "json.tool", "real_backend_activation_kit/activation_kit_manifest.json"],
+    ),
+    Check(
+        "Validate JSON: l6_13_mission_evidence_report.json",
+        ["python3", "-m", "json.tool", "real_mission_evidence_report/mission_evidence_report.json"],
+    ),
+    Check(
+        "Validate JSON: l6_13_capability_gap_closure_summary.json",
+        ["python3", "-m", "json.tool", "real_capability_gap_closure/capability_gap_closure_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_13_no_side_effect_receipt.json",
+        ["python3", "-m", "json.tool", "real_no_action_receipts/no_side_effect_receipt.json"],
+    ),
+    Check(
+        "Validate JSON: l6_13_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "l6_13_read_model/l6_13_readiness_assessment.json"],
     ),
     Check(
         "Validate JSON: markdown_report_candidates.json",
@@ -3003,6 +3044,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: unified-controlled-external-observation-evidence-loop",
         ["python3", "console_read_model/cli/team_console.py", "unified-controlled-external-observation-evidence-loop"],
+    ),
+    Check(
+        "CLI smoke: real-controlled-external-observation-mission-sprint",
+        ["python3", "console_read_model/cli/team_console.py", "real-controlled-external-observation-mission-sprint"],
     ),
     Check(
         "CLI smoke: sources",

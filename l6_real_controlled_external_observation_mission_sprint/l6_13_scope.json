@@ -1,0 +1,7 @@
+{
+  "schema_version": "v0",
+  "scope": "real controlled external observation mission sprint",
+  "manual_url_request_allowed": false,
+  "real_execution_requires_explicit_backend_configuration": true,
+  "secret_storage_allowed": false
+}

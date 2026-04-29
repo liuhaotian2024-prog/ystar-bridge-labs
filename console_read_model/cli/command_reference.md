@@ -305,6 +305,15 @@ python3 console_read_model/cli/team_console.py <command>
   unresolved claims, query refinements, capability gaps, no manual URL request,
   no-side-effect receipt, and blocked login/payment/form/publication/outreach/
   revenue/MCP/live/CIEU DB/canonical/writeback/direct Y* mutation state.
+- `real-controlled-external-observation-mission-sprint`: Prints the generated
+  L6.13 real controlled external observation mission sprint summary: selected
+  work order, real backend/page-read configuration, network allow status,
+  safety preflight decision, fixture proof, real observation status,
+  query/search/page/crawl counts, real and fixture evidence packets, conflicts,
+  unresolved claims, query refinements, capability gap closure, activation kit,
+  no manual URL request, no-side-effect receipt, and blocked login/payment/form/
+  publication/outreach/revenue/MCP/live/CIEU DB/canonical/writeback/direct Y*
+  mutation state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.
