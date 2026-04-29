@@ -14,7 +14,7 @@ This queue is generated from safe-mined candidates only. All entries are pending
 ### review-001
 
 - Candidate: `mdcand-001`
-- Source: `reports/ceo/brain_dream_diffs/dream_diff_20260429_095744_nrem.md`
+- Source: `reports/ceo/brain_dream_diffs/dream_diff_20260429_125639_nrem.md`
 - Class: `DREAM_REPORT`
 - Review status: `pending_review`
 - Ingestion status: `not_ingested`

@@ -113,69 +113,79 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 137
-- Unsafe artifacts count: 118
+- Artifacts classified: 150
+- Unsafe artifacts count: 120
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
-  - CACHE_SENTINEL: 4
+  - CACHE_SENTINEL: 5
   - DAEMON_STATE: 4
   - DB_CORE: 1
   - DB_SIDECARE: 6
+  - DREAM_REPORT: 1
   - LOG_RUNTIME: 30
   - PYCACHE: 45
-  - UNKNOWN_OR_NON_RUNTIME: 19
+  - UNKNOWN_OR_NON_RUNTIME: 30
   - UNKNOWN_RUNTIME_ARTIFACT: 10
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
 - Warning: Console displays only curated path-level quarantine summary. No artifact contents were read.
 
 ## Runtime Artifact Safe Mining Candidates
 
-- Candidate count: 0
+- Candidate count: 1
 - Safety level: bounded_markdown_candidate
 - Ingestion status: candidate_only
 - Generated candidate index: runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json
 - Classes seen:
+  - DREAM_REPORT: 1
 - Warning: Safe mining candidates are bounded review assets only. They are not brain memory, CIEU records, or approved writeback.
 
 ## Runtime Artifact Candidate Review Queue
 
-- Review count: 0
+- Review count: 1
 - Default review status: pending_review
 - Default ingestion status: not_ingested
 - Generated queue path: runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json
 - Statuses:
+  - pending_review: 1
 - Intended use summary:
+  - memory_continuity_hint: 1
+  - role_brain_capsule_hint: 1
 - Warning: Review queue entries are not brain memory and require explicit approval before any future CIEU, memory, or capsule use.
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 137
-- Artifacts with disposition: 137
-- Safe-mined to review queue: 0
-- Forbidden direct read count: 118
+- Total artifacts: 150
+- Artifacts with disposition: 150
+- Safe-mined to review queue: 1
+- Forbidden direct read count: 119
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
   - deferred_requires_bounded_log_adapter: 30
   - deferred_requires_classification: 10
-  - deferred_requires_marker_metadata_adapter: 25
+  - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 45
-  - ignored_or_non_runtime: 19
+  - ignored_or_non_runtime: 30
+  - safe_mined_to_review_queue: 1
 - Evidence scoring status:
-  - not_started: 137
+  - not_started: 150
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
 
-- Candidates scored: 0
-- Decision stubs created: 0
-- Routes created: 0
+- Candidates scored: 1
+- Decision stubs created: 1
+- Routes created: 2
 - Automatic approvals: 0
 - Reuse readiness:
+  - hint_only: 1
 - Route counts:
+  - memory_continuity_hint_queue: 1
+  - role_brain_capsule_hint_queue: 1
 - Semantic truth status:
+  - not_evaluated: 1
 - Warning: Evidence scoring is structural only. It is not truth validation and not memory ingestion.
 
 ## Labs-Gov Alignment Bridge
@@ -538,7 +548,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 5970
+- assets_scanned: 6051
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -1346,6 +1356,36 @@ Not ready:
 - remaining_blocker: user_must_provide_one_reviewed_seed_locator_url
 - next_recommended_milestone: L6.10X User-Supplied Reviewed Seed Locator Intake v0
 - Warning: L6.10W narrows the blocker to a precise one-URL user action request when no reviewed seed locator exists locally. It does not invent a URL, search the web, or execute observation in the default path.
+
+## L6.10X Budgeted Controlled External Search Evidence Pilot
+
+- l6_10x_budgeted_controlled_external_search_evidence_pilot_complete: True
+- mode: budgeted_controlled_external_search_evidence_pilot
+- selected_work_order_id: l6_10x_selected_work_order_001
+- query_count: 5
+- search_backend_mode: disabled
+- backend_missing: True
+- search_executed: False
+- search_results_considered: 0
+- pages_opened: 0
+- domains_touched: 0
+- crawl_depth_used: 0
+- evidence_packets_generated: 1
+- conflicts_found: 0
+- manual_url_request_avoided: True
+- ask_user_for_url_authorized: False
+- user_manual_url_provision_required: False
+- controlled_external_search_authorized: True
+- bounded_crawl_authorized: True
+- login_authorized: False
+- payment_authorized: False
+- publication_authorized: False
+- outreach_authorized: False
+- revenue_execution_authorized: False
+- mcp_execution_authorized: False
+- remaining_blocker: controlled_search_backend_required
+- next_step: configure_controlled_search_backend
+- Warning: L6.10X budgets discovery instead of crippling it: five query categories, bounded result/page/domain/crawl limits, and evidence corroboration artifacts exist. Default backend is missing, so no search/network/page read occurred.
 
 ## Governance Boundary
 
