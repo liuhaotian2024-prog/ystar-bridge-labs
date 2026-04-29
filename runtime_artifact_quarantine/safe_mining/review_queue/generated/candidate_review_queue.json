@@ -3,20 +3,11 @@
   "schema_version": "v0",
   "builder": "runtime_artifact_quarantine/safe_mining/review_queue/tools/build_candidate_review_queue.py",
   "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
-  "review_count": 1,
-  "statuses": {
-    "pending_review": 1
-  },
-  "ingestion_statuses": {
-    "not_ingested": 1
-  },
-  "artifact_classes": {
-    "DREAM_REPORT": 1
-  },
-  "intended_use_summary": {
-    "memory_continuity_hint": 1,
-    "role_brain_capsule_hint": 1
-  },
+  "review_count": 0,
+  "statuses": {},
+  "ingestion_statuses": {},
+  "artifact_classes": {},
+  "intended_use_summary": {},
   "allowed_review_actions": [
     "approve_for_capsule_hint",
     "approve_for_governance_gap_hint",
@@ -33,36 +24,6 @@
   ],
   "default_review_status": "pending_review",
   "default_ingestion_status": "not_ingested",
-  "entries": [
-    {
-      "review_id": "review-001",
-      "candidate_id": "mdcand-001",
-      "source_path": "reports/ceo/brain_dream_diffs/dream_diff_20260429_071234_nrem.md",
-      "artifact_class": "DREAM_REPORT",
-      "candidate_safety_level": "bounded_markdown_candidate",
-      "review_status": "pending_review",
-      "ingestion_status": "not_ingested",
-      "default_intended_use": [
-        "memory_continuity_hint",
-        "role_brain_capsule_hint"
-      ],
-      "allowed_review_actions": [
-        "approve_for_capsule_hint",
-        "approve_for_governance_gap_hint",
-        "approve_for_packet_hint",
-        "approve_for_cieu_delta_hint",
-        "reject",
-        "needs_more_context"
-      ],
-      "forbidden_actions": [
-        "direct_brain_writeback",
-        "direct_memory_ingestion",
-        "direct_cieu_write",
-        "runtime_recovery"
-      ],
-      "snippet_preview": "# Brain Dream Diff Report\nTimestamp: 2026-04-29T07:12:34\nMode: DRY-RUN (no changes applied)\nActivation log rows scanned: 2723288\n\n## Proposed New Edges (Pattern A + B)\n| Source | Target | Proposed Weight | Co-activation Count | Pattern | Rationale |\n|--------|--------|-----------------|---------------------|---------|-----------|\n| blind_spot/cieu_event:b84f8ba5-a01a-43ba-8548-cc747b0d5624 | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:39ed0b06-5f7e-4777-a331-e8eb0269fa51 | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:031649e5-e5d0-4d2e-aadb-cdaabbd4c5cd | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:0e84f053-1218-4498-a25a-94ee8d",
-      "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
-    }
-  ],
+  "entries": [],
   "warning": "Review queue entries are not brain memory, CIEU records, or writeback approval. They require explicit future review."
 }

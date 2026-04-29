@@ -56,9 +56,9 @@
         "asset-0185",
         "asset-0191",
         "asset-0236",
-        "asset-0244",
         "asset-0245",
-        "asset-0246"
+        "asset-0246",
+        "asset-0249"
       ],
       "risk_tier": "medium",
       "requires_operator_approval": true,
@@ -319,10 +319,10 @@
         "asset-0508",
         "asset-0510",
         "asset-0528",
-        "asset-0551",
-        "asset-0569",
+        "asset-0552",
         "asset-0570",
-        "asset-0573"
+        "asset-0571",
+        "asset-0574"
       ],
       "risk_tier": "high",
       "requires_operator_approval": true,
