@@ -1,0 +1,11 @@
+{
+  "schema_version": "v0",
+  "residual_id": "l6_10u_strategic_residual_delta",
+  "remaining_blockers": [
+    "no_seed_locator_available",
+    "no_controlled_search_resolver_enabled",
+    "no_enabled_locator_resolution_path"
+  ],
+  "new_capability_created": "controlled_locator_resolver_runtime",
+  "downstream_actions_blocked": true
+}

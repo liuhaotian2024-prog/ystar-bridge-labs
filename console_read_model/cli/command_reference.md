@@ -259,6 +259,14 @@ python3 console_read_model/cli/team_console.py <command>
   and blocked live tool authority plus broad search/crawling/scraping/browser
   automation/publication/outreach/payment/revenue/MCP/live/CIEU DB/canonical/
   writeback/direct Y* mutation state.
+- `controlled-locator-resolver-enable-first-attempt`: Prints the generated
+  L6.10U controlled locator resolver enablement summary: portable resolver
+  runtime, seed-registry lookup, environment-gated search status, disabled
+  fallback, selected work order, locator resolution result, optional tiny
+  observation result, evidence/review/refinement placeholders, no-action
+  receipts, readiness, and blocked broad search/crawling/scraping/browser
+  automation/publication/outreach/payment/revenue/MCP/live/CIEU DB/canonical/
+  writeback/direct Y* mutation state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

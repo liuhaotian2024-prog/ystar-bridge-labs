@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "review_packet_id": "l6_10u_post_observation_review_packet_001",
+  "linked_evidence_packet_id": "l6_10u_tiny_evidence_packet_001",
+  "current_decision": "review_pending_blocked_no_live_evidence",
+  "evidence_to_check": [],
+  "missing_context_to_check": [
+    "no_concrete_locator"
+  ],
+  "approve_for_artifact_refinement_candidate": false,
+  "approve_for_external_use": false,
+  "applied": false
+}

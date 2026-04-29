@@ -439,6 +439,9 @@ def main() -> int:
     required_l6_governed_capability_gap_toolmaking_locator_resolver_files = expected.get(
         "required_l6_governed_capability_gap_toolmaking_locator_resolver_files", []
     )
+    required_l6_controlled_locator_resolver_enablement_files = expected.get(
+        "required_l6_controlled_locator_resolver_enablement_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -749,6 +752,12 @@ def main() -> int:
         check_exists(path, report, "L6.10T governed toolmaking locator resolver file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "L6.10T governed toolmaking locator resolver JSON")
+
+    for rel in required_l6_controlled_locator_resolver_enablement_files:
+        path = ROOT / rel
+        check_exists(path, report, "L6.10U controlled locator resolver enablement file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "L6.10U controlled locator resolver enablement JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -6411,6 +6420,119 @@ def main() -> int:
         for count_field, limit in limits.items():
             if limit is not None and l6_10t_toolmaking_locator_resolver.get(count_field, 0) > limit:
                 report.fail(f"generated L6.10T summary exceeds runtime limit for {count_field}")
+
+    l6_10u_locator_resolver_enablement = generated_json.get(
+        "console_read_model/generated/l6_10u_locator_resolver_enablement_summary.json"
+    )
+    if l6_10u_locator_resolver_enablement:
+        for field in [
+            "l6_10u_controlled_locator_resolver_enablement_complete",
+            "mode",
+            "resolver_runtime_created",
+            "seed_registry_resolver_created",
+            "environment_gated_search_resolver_created",
+            "disabled_resolver_created",
+            "selected_work_order_id",
+            "source_selected_work_order_id",
+            "resolver_mode_used",
+            "resolver_id",
+            "seed_registry_lookup_executed",
+            "seed_registry_lookup_count",
+            "controlled_search_executed",
+            "search_query_count",
+            "external_reads_count",
+            "concrete_locator_resolved",
+            "resolved_locator",
+            "facts_inferred_from_resolution",
+            "locator_eligible_for_observation",
+            "tiny_read_only_observation_executed",
+            "evidence_packet_generated",
+            "live_source_evidence_captured",
+            "artifact_refinement_candidate_generated",
+            "artifact_refinement_applied",
+            "remaining_blocker",
+            "next_recommended_milestone",
+            "generated_resolution_result",
+            "generated_observation_trace",
+            "generated_evidence_packet",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in l6_10u_locator_resolver_enablement:
+                report.pass_(f"generated L6.10U locator resolver field present: {field}")
+            else:
+                report.fail(f"generated L6.10U locator resolver missing field: {field}")
+        if (
+            l6_10u_locator_resolver_enablement.get("mode")
+            != "controlled_locator_resolver_enablement_first_attempt"
+        ):
+            report.fail("generated L6.10U summary must be controlled locator resolver enablement mode")
+        for field in [
+            "l6_10u_controlled_locator_resolver_enablement_complete",
+            "resolver_runtime_created",
+            "seed_registry_resolver_created",
+            "environment_gated_search_resolver_created",
+            "disabled_resolver_created",
+            "seed_registry_resolver_authorized",
+            "environment_gated_controlled_search_resolver_authorized",
+            "disabled_resolver_authorized",
+            "evidence_packet_generated",
+            "artifact_refinement_candidate_generated",
+        ]:
+            if l6_10u_locator_resolver_enablement.get(field) is not True:
+                report.fail(f"generated L6.10U summary must keep {field}=true")
+        for field in [
+            "controlled_search_executed",
+            "concrete_locator_resolved",
+            "facts_inferred_from_resolution",
+            "locator_eligible_for_observation",
+            "tiny_read_only_observation_executed",
+            "live_source_evidence_captured",
+            "artifact_refinement_applied",
+            "broad_search_authorized",
+            "repeated_search_loop_authorized",
+            "crawling_authorized",
+            "scraping_authorized",
+            "browser_automation_authorized",
+            "login_authorized",
+            "account_creation_authorized",
+            "contact_authorized",
+            "payment_authorized",
+            "form_submission_authorized",
+            "posting_commenting_messaging_authorized",
+            "publication_authorized",
+            "outreach_authorized",
+            "revenue_execution_authorized",
+            "mcp_execution_authorized",
+            "live_behavior_authorized",
+            "cieu_db_write_authorized",
+            "canonical_update_authorized",
+            "brain_writeback_authorized",
+            "memory_ingestion_authorized",
+            "direct_y_star_mutation_authorized",
+        ]:
+            if l6_10u_locator_resolver_enablement.get(field) is not False:
+                report.fail(f"generated L6.10U summary must keep {field}=false")
+        if l6_10u_locator_resolver_enablement.get("resolver_mode_used") != "disabled":
+            report.fail("generated L6.10U default run must use disabled resolver after seed/search miss")
+        if l6_10u_locator_resolver_enablement.get("remaining_blocker") != "no_enabled_locator_resolution_path":
+            report.fail("generated L6.10U summary must name no_enabled_locator_resolution_path blocker")
+        limits = {
+            "selected_work_order_count": l6_10u_locator_resolver_enablement.get(
+                "max_selected_work_orders"
+            ),
+            "seed_registry_lookup_count": l6_10u_locator_resolver_enablement.get(
+                "max_seed_registry_lookups"
+            ),
+            "search_query_count": l6_10u_locator_resolver_enablement.get("max_search_queries"),
+            "external_reads_count": l6_10u_locator_resolver_enablement.get(
+                "max_total_external_reads"
+            ),
+            "pages_read_count": l6_10u_locator_resolver_enablement.get("max_pages_read"),
+        }
+        for count_field, limit in limits.items():
+            if limit is not None and l6_10u_locator_resolver_enablement.get(count_field, 0) > limit:
+                report.fail(f"generated L6.10U summary exceeds runtime limit for {count_field}")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

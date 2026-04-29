@@ -1,0 +1,9 @@
+{
+  "schema_version": "v0",
+  "blockers": [
+    "no_seed_locator_available",
+    "no_controlled_search_resolver_enabled"
+  ],
+  "primary_blocker": "no_enabled_locator_resolution_path",
+  "no_fake_evidence_or_locator": true
+}

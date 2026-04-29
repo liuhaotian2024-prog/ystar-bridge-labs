@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "types": [
+    "LocatorResolutionRequest",
+    "LocatorResolutionResult",
+    "BaseControlledLocatorResolver",
+    "SeedRegistryResolver",
+    "EnvironmentGatedSearchResolver",
+    "DisabledResolver",
+    "ControlledLocatorResolverRuntime"
+  ],
+  "default_path_network_used": false
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L6.10U",
+  "l6_10u_controlled_locator_resolver_enablement_complete": true,
+  "resolver_runtime_created": true,
+  "seed_registry_resolver_created": true,
+  "environment_gated_search_resolver_created": true,
+  "disabled_resolver_created": true,
+  "selected_work_order_id": "l6_10u_selected_work_order_001",
+  "resolver_mode_used": "disabled",
+  "seed_registry_lookup_executed": true,
+  "controlled_search_executed": false,
+  "concrete_locator_resolved": false,
+  "tiny_read_only_observation_executed": false,
+  "ready_for_l6_11_controlled_multi_source_corroboration": false,
+  "ready_for_l6_10u_retry_after_seed_or_search_enablement": true,
+  "remaining_blocker": "no_enabled_locator_resolution_path",
+  "blockers": [
+    "no_seed_locator_available",
+    "no_controlled_search_resolver_enabled"
+  ],
+  "next_recommended_milestone": "L6.10V Controlled Seed Locator Registry Population or Explicit Controlled Search Resolver Enablement v0",
+  "publication_authorized": false,
+  "outreach_authorized": false,
+  "payment_authorized": false,
+  "revenue_execution_authorized": false,
+  "mcp_execution_authorized": false,
+  "canonical_update_authorized": false,
+  "brain_writeback_authorized": false,
+  "memory_ingestion_authorized": false,
+  "direct_y_star_mutation_authorized": false
+}

@@ -328,6 +328,18 @@ CURATED_SOURCES = [
     "adapter_bound_no_action_receipts/no_broad_search_receipt.json",
     "l6_10t_strategic_residual_loop/l6_10t_strategic_residual_delta.json",
     "l6_10t_readiness_report/l6_10t_readiness_assessment.json",
+    "l6_controlled_locator_resolver_enablement/l6_10u_summary.json",
+    "controlled_locator_resolution_attempt/selected_work_order.json",
+    "controlled_locator_resolution_attempt/locator_resolution_request.json",
+    "controlled_locator_resolution_attempt/locator_resolution_result.json",
+    "controlled_locator_resolution_attempt/locator_resolution_trace.json",
+    "controlled_locator_resolution_attempt/locator_eligibility_result.json",
+    "controlled_locator_observation_result/tiny_observation_trace.json",
+    "controlled_locator_observation_result/tiny_evidence_packet.json",
+    "controlled_locator_observation_result/tiny_refinement_candidate.json",
+    "controlled_locator_observation_result/tiny_observation_no_action_receipts.json",
+    "controlled_locator_resolver_read_model/l6_10u_strategic_residual_delta.json",
+    "controlled_locator_resolver_read_model/l6_10u_readiness_assessment.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -6105,6 +6117,191 @@ def build_l6_10t_toolmaking_locator_resolver_summary(
     }
 
 
+def build_l6_10u_locator_resolver_enablement_summary(
+    milestone_summary: dict[str, Any] | None,
+    selected_work_order: dict[str, Any] | None,
+    request: dict[str, Any] | None,
+    resolution_result: dict[str, Any] | None,
+    resolution_trace: dict[str, Any] | None,
+    locator_eligibility: dict[str, Any] | None,
+    observation_trace: dict[str, Any] | None,
+    evidence_packet: dict[str, Any] | None,
+    refinement_candidate: dict[str, Any] | None,
+    no_action_receipts: dict[str, Any] | None,
+    residual_delta: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.l6_10u_locator_resolver_enablement_summary",
+            "schema_version": "v0",
+            "l6_10u_controlled_locator_resolver_enablement_complete": False,
+            "warning": "L6.10U controlled locator resolver enablement has not been generated yet.",
+        }
+
+    milestone_summary = milestone_summary or {}
+    selected_work_order = selected_work_order or {}
+    request = request or {}
+    resolution_result = resolution_result or {}
+    resolution_trace = resolution_trace or {}
+    locator_eligibility = locator_eligibility or {}
+    observation_trace = observation_trace or {}
+    evidence_packet = evidence_packet or {}
+    refinement_candidate = refinement_candidate or {}
+    no_action_receipts = no_action_receipts or {}
+    residual_delta = residual_delta or {}
+    runtime_limits = milestone_summary or readiness_summary
+
+    def flag(field: str, default: Any = False) -> Any:
+        return milestone_summary.get(field, readiness_summary.get(field, default))
+
+    return {
+        "schema_name": "ystar.console_read_model.generated.l6_10u_locator_resolver_enablement_summary",
+        "schema_version": "v0",
+        "milestone_id": milestone_summary.get("milestone_id", "L6.10U"),
+        "milestone_name": milestone_summary.get(
+            "milestone_name",
+            "Controlled Locator Resolver Enablement & First Locator Attempt v0",
+        ),
+        "mode": milestone_summary.get(
+            "mode", "controlled_locator_resolver_enablement_first_attempt"
+        ),
+        "l6_10u_controlled_locator_resolver_enablement_complete": readiness_summary.get(
+            "l6_10u_controlled_locator_resolver_enablement_complete", True
+        ),
+        "resolver_runtime_created": readiness_summary.get("resolver_runtime_created", True),
+        "seed_registry_resolver_created": readiness_summary.get(
+            "seed_registry_resolver_created", True
+        ),
+        "environment_gated_search_resolver_created": readiness_summary.get(
+            "environment_gated_search_resolver_created", True
+        ),
+        "disabled_resolver_created": readiness_summary.get("disabled_resolver_created", True),
+        "selected_work_order_id": selected_work_order.get("selected_work_order_id"),
+        "source_selected_work_order_id": selected_work_order.get(
+            "source_selected_work_order_id"
+        ),
+        "selected_work_order_count": selected_work_order.get("selected_count", 0),
+        "resolution_request_id": request.get("request_id"),
+        "resolver_mode_used": milestone_summary.get(
+            "resolver_mode_used", resolution_result.get("resolver_mode")
+        ),
+        "resolver_id": milestone_summary.get("resolver_id", resolution_result.get("resolver_id")),
+        "seed_registry_lookup_executed": milestone_summary.get(
+            "seed_registry_lookup_executed",
+            resolution_result.get("seed_registry_lookup_count", 0) > 0,
+        ),
+        "seed_registry_lookup_count": milestone_summary.get(
+            "seed_registry_lookup_count",
+            resolution_result.get("seed_registry_lookup_count", 0),
+        ),
+        "controlled_search_executed": milestone_summary.get(
+            "controlled_search_executed",
+            resolution_result.get("search_query_count", 0) > 0,
+        ),
+        "search_query_count": milestone_summary.get(
+            "search_query_count", resolution_result.get("search_query_count", 0)
+        ),
+        "external_reads_count": milestone_summary.get(
+            "external_reads_count", resolution_result.get("external_reads_count", 0)
+        ),
+        "concrete_locator_resolved": milestone_summary.get(
+            "concrete_locator_resolved",
+            resolution_result.get("concrete_locator_resolved", False),
+        ),
+        "resolved_locator": milestone_summary.get(
+            "resolved_locator", resolution_result.get("locator")
+        ),
+        "facts_inferred_from_resolution": resolution_result.get(
+            "facts_inferred_from_resolution", False
+        ),
+        "locator_eligible_for_observation": locator_eligibility.get(
+            "locator_eligible_for_observation", False
+        ),
+        "tiny_read_only_observation_executed": milestone_summary.get(
+            "tiny_read_only_observation_executed",
+            observation_trace.get("observation_executed", False),
+        ),
+        "pages_read_count": observation_trace.get("pages_read_count", 0),
+        "evidence_packet_generated": milestone_summary.get(
+            "evidence_packet_generated", bool(evidence_packet)
+        ),
+        "live_source_evidence_captured": evidence_packet.get(
+            "live_source_evidence_captured", False
+        ),
+        "artifact_refinement_candidate_generated": milestone_summary.get(
+            "artifact_refinement_candidate_generated", bool(refinement_candidate)
+        ),
+        "artifact_refinement_applied": milestone_summary.get(
+            "artifact_refinement_applied", refinement_candidate.get("applied", False)
+        ),
+        "no_action_receipts_generated": bool(no_action_receipts.get("receipts")),
+        "strategic_residual_loop_generated": bool(residual_delta),
+        "remaining_blocker": milestone_summary.get(
+            "remaining_blocker", readiness_summary.get("remaining_blocker")
+        ),
+        "ready_for_l6_11_controlled_multi_source_corroboration": readiness_summary.get(
+            "ready_for_l6_11_controlled_multi_source_corroboration"
+        ),
+        "ready_for_l6_10u_retry_after_seed_or_search_enablement": readiness_summary.get(
+            "ready_for_l6_10u_retry_after_seed_or_search_enablement"
+        ),
+        "next_recommended_milestone": readiness_summary.get("next_recommended_milestone"),
+        "seed_registry_resolver_authorized": flag("seed_registry_resolver_authorized"),
+        "environment_gated_controlled_search_resolver_authorized": flag(
+            "environment_gated_controlled_search_resolver_authorized"
+        ),
+        "disabled_resolver_authorized": flag("disabled_resolver_authorized"),
+        "broad_search_authorized": flag("broad_search_authorized"),
+        "repeated_search_loop_authorized": flag("repeated_search_loop_authorized"),
+        "crawling_authorized": flag("crawling_authorized"),
+        "scraping_authorized": flag("scraping_authorized"),
+        "browser_automation_authorized": flag("browser_automation_authorized"),
+        "login_authorized": flag("login_authorized"),
+        "account_creation_authorized": flag("account_creation_authorized"),
+        "contact_authorized": flag("contact_authorized"),
+        "payment_authorized": flag("payment_authorized"),
+        "form_submission_authorized": flag("form_submission_authorized"),
+        "posting_commenting_messaging_authorized": flag(
+            "posting_commenting_messaging_authorized"
+        ),
+        "publication_authorized": flag("publication_authorized"),
+        "outreach_authorized": flag("outreach_authorized"),
+        "revenue_execution_authorized": flag("revenue_execution_authorized"),
+        "mcp_execution_authorized": flag("mcp_execution_authorized"),
+        "live_behavior_authorized": flag("live_behavior_authorized"),
+        "cieu_db_write_authorized": flag("cieu_db_write_authorized"),
+        "canonical_update_authorized": flag("canonical_update_authorized"),
+        "brain_writeback_authorized": flag("brain_writeback_authorized"),
+        "memory_ingestion_authorized": flag("memory_ingestion_authorized"),
+        "direct_y_star_mutation_authorized": flag("direct_y_star_mutation_authorized"),
+        "max_selected_work_orders": runtime_limits.get("max_selected_work_orders"),
+        "max_locator_resolution_attempts": runtime_limits.get(
+            "max_locator_resolution_attempts"
+        ),
+        "max_search_queries": runtime_limits.get("max_search_queries"),
+        "max_seed_registry_lookups": runtime_limits.get("max_seed_registry_lookups"),
+        "max_concrete_locators_returned": runtime_limits.get(
+            "max_concrete_locators_returned"
+        ),
+        "max_pages_read": runtime_limits.get("max_pages_read"),
+        "max_total_external_reads": runtime_limits.get("max_total_external_reads"),
+        "generated_milestone_summary": "l6_controlled_locator_resolver_enablement/l6_10u_summary.json",
+        "generated_selected_work_order": "controlled_locator_resolution_attempt/selected_work_order.json",
+        "generated_resolution_result": "controlled_locator_resolution_attempt/locator_resolution_result.json",
+        "generated_observation_trace": "controlled_locator_observation_result/tiny_observation_trace.json",
+        "generated_evidence_packet": "controlled_locator_observation_result/tiny_evidence_packet.json",
+        "generated_readiness": "controlled_locator_resolver_read_model/l6_10u_readiness_assessment.json",
+        "warning": (
+            "L6.10U implements a practical controlled locator resolver runtime. "
+            "The default run performed one seed-registry lookup, did not run "
+            "controlled search, did not use network, did not fabricate a locator, "
+            "and remains blocked until a seed locator or explicitly enabled "
+            "controlled resolver is available."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -7335,6 +7532,54 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_10t_readiness_report/l6_10t_readiness_assessment.json",
         files_read,
     )
+    l6_10u_milestone_summary = load_optional_json(
+        "l6_controlled_locator_resolver_enablement/l6_10u_summary.json",
+        files_read,
+    )
+    l6_10u_selected_work_order = load_optional_json(
+        "controlled_locator_resolution_attempt/selected_work_order.json",
+        files_read,
+    )
+    l6_10u_resolution_request = load_optional_json(
+        "controlled_locator_resolution_attempt/locator_resolution_request.json",
+        files_read,
+    )
+    l6_10u_resolution_result = load_optional_json(
+        "controlled_locator_resolution_attempt/locator_resolution_result.json",
+        files_read,
+    )
+    l6_10u_resolution_trace = load_optional_json(
+        "controlled_locator_resolution_attempt/locator_resolution_trace.json",
+        files_read,
+    )
+    l6_10u_locator_eligibility = load_optional_json(
+        "controlled_locator_resolution_attempt/locator_eligibility_result.json",
+        files_read,
+    )
+    l6_10u_observation_trace = load_optional_json(
+        "controlled_locator_observation_result/tiny_observation_trace.json",
+        files_read,
+    )
+    l6_10u_evidence_packet = load_optional_json(
+        "controlled_locator_observation_result/tiny_evidence_packet.json",
+        files_read,
+    )
+    l6_10u_refinement_candidate = load_optional_json(
+        "controlled_locator_observation_result/tiny_refinement_candidate.json",
+        files_read,
+    )
+    l6_10u_no_action_receipts = load_optional_json(
+        "controlled_locator_observation_result/tiny_observation_no_action_receipts.json",
+        files_read,
+    )
+    l6_10u_residual_delta = load_optional_json(
+        "controlled_locator_resolver_read_model/l6_10u_strategic_residual_delta.json",
+        files_read,
+    )
+    l6_10u_readiness_summary = load_optional_json(
+        "controlled_locator_resolver_read_model/l6_10u_readiness_assessment.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -7690,6 +7935,20 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         l6_10t_residual_delta,
         l6_10t_readiness_summary,
     )
+    l6_10u_locator_resolver_enablement_summary = build_l6_10u_locator_resolver_enablement_summary(
+        l6_10u_milestone_summary,
+        l6_10u_selected_work_order,
+        l6_10u_resolution_request,
+        l6_10u_resolution_result,
+        l6_10u_resolution_trace,
+        l6_10u_locator_eligibility,
+        l6_10u_observation_trace,
+        l6_10u_evidence_packet,
+        l6_10u_refinement_candidate,
+        l6_10u_no_action_receipts,
+        l6_10u_residual_delta,
+        l6_10u_readiness_summary,
+    )
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -7866,6 +8125,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_tiny_observation_pilot_summary": l6_tiny_observation_pilot_summary,
         "l6_10r_locator_retry_summary": l6_10r_locator_retry_summary,
         "l6_10t_toolmaking_locator_resolver_summary": l6_10t_toolmaking_locator_resolver_summary,
+        "l6_10u_locator_resolver_enablement_summary": l6_10u_locator_resolver_enablement_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -8111,6 +8371,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/l6_tiny_observation_pilot_summary.json",
             "console_read_model/generated/l6_10r_locator_retry_summary.json",
             "console_read_model/generated/l6_10t_toolmaking_locator_resolver_summary.json",
+            "console_read_model/generated/l6_10u_locator_resolver_enablement_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -8312,6 +8573,12 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "disabled no-network locator resolver interface, and records the remaining\n"
         "controlled resolver gap without granting live tool authority or fabricating\n"
         "a locator.\n\n"
+        "`l6_10u_locator_resolver_enablement_summary.json` is derived from the L6.10U\n"
+        "controlled locator resolver enablement and first attempt pack. It confirms\n"
+        "a portable resolver runtime, seed-registry resolver, environment-gated\n"
+        "search resolver, and disabled fallback exist; the default run performs one\n"
+        "local seed-registry lookup, does not run search, does not use network, and\n"
+        "does not fabricate a locator.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -8369,6 +8636,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/l6_tiny_observation_pilot_summary.json", l6_tiny_observation_pilot_summary, generated_files)
     write_json("console_read_model/generated/l6_10r_locator_retry_summary.json", l6_10r_locator_retry_summary, generated_files)
     write_json("console_read_model/generated/l6_10t_toolmaking_locator_resolver_summary.json", l6_10t_toolmaking_locator_resolver_summary, generated_files)
+    write_json("console_read_model/generated/l6_10u_locator_resolver_enablement_summary.json", l6_10u_locator_resolver_enablement_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -8470,6 +8738,9 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     l6_10r_locator_retry = snapshot.get("l6_10r_locator_retry_summary", {})
     l6_10t_toolmaking_locator_resolver = snapshot.get(
         "l6_10t_toolmaking_locator_resolver_summary", {}
+    )
+    l6_10u_locator_resolver_enablement = snapshot.get(
+        "l6_10u_locator_resolver_enablement_summary", {}
     )
     lines.extend(
         [
@@ -9818,6 +10089,42 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- remaining_blocker: {l6_10t_toolmaking_locator_resolver.get('remaining_blocker')}",
             f"- next_recommended_milestone: {l6_10t_toolmaking_locator_resolver.get('next_recommended_milestone')}",
             f"- Warning: {l6_10t_toolmaking_locator_resolver.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## L6.10U Controlled Locator Resolver Enablement",
+            "",
+            f"- l6_10u_controlled_locator_resolver_enablement_complete: {l6_10u_locator_resolver_enablement.get('l6_10u_controlled_locator_resolver_enablement_complete')}",
+            f"- mode: {l6_10u_locator_resolver_enablement.get('mode')}",
+            f"- resolver_runtime_created: {l6_10u_locator_resolver_enablement.get('resolver_runtime_created')}",
+            f"- seed_registry_resolver_created: {l6_10u_locator_resolver_enablement.get('seed_registry_resolver_created')}",
+            f"- environment_gated_search_resolver_created: {l6_10u_locator_resolver_enablement.get('environment_gated_search_resolver_created')}",
+            f"- disabled_resolver_created: {l6_10u_locator_resolver_enablement.get('disabled_resolver_created')}",
+            f"- selected_work_order_id: {l6_10u_locator_resolver_enablement.get('selected_work_order_id')}",
+            f"- source_selected_work_order_id: {l6_10u_locator_resolver_enablement.get('source_selected_work_order_id')}",
+            f"- resolver_mode_used: {l6_10u_locator_resolver_enablement.get('resolver_mode_used')}",
+            f"- resolver_id: {l6_10u_locator_resolver_enablement.get('resolver_id')}",
+            f"- seed_registry_lookup_executed: {l6_10u_locator_resolver_enablement.get('seed_registry_lookup_executed')}",
+            f"- seed_registry_lookup_count: {l6_10u_locator_resolver_enablement.get('seed_registry_lookup_count')}",
+            f"- controlled_search_executed: {l6_10u_locator_resolver_enablement.get('controlled_search_executed')}",
+            f"- search_query_count: {l6_10u_locator_resolver_enablement.get('search_query_count')}",
+            f"- external_reads_count: {l6_10u_locator_resolver_enablement.get('external_reads_count')}",
+            f"- concrete_locator_resolved: {l6_10u_locator_resolver_enablement.get('concrete_locator_resolved')}",
+            f"- resolved_locator: {l6_10u_locator_resolver_enablement.get('resolved_locator')}",
+            f"- tiny_read_only_observation_executed: {l6_10u_locator_resolver_enablement.get('tiny_read_only_observation_executed')}",
+            f"- evidence_packet_generated: {l6_10u_locator_resolver_enablement.get('evidence_packet_generated')}",
+            f"- live_source_evidence_captured: {l6_10u_locator_resolver_enablement.get('live_source_evidence_captured')}",
+            f"- artifact_refinement_applied: {l6_10u_locator_resolver_enablement.get('artifact_refinement_applied')}",
+            f"- broad_search_authorized: {l6_10u_locator_resolver_enablement.get('broad_search_authorized')}",
+            f"- repeated_search_loop_authorized: {l6_10u_locator_resolver_enablement.get('repeated_search_loop_authorized')}",
+            f"- crawling_authorized: {l6_10u_locator_resolver_enablement.get('crawling_authorized')}",
+            f"- scraping_authorized: {l6_10u_locator_resolver_enablement.get('scraping_authorized')}",
+            f"- browser_automation_authorized: {l6_10u_locator_resolver_enablement.get('browser_automation_authorized')}",
+            f"- remaining_blocker: {l6_10u_locator_resolver_enablement.get('remaining_blocker')}",
+            f"- next_recommended_milestone: {l6_10u_locator_resolver_enablement.get('next_recommended_milestone')}",
+            f"- Warning: {l6_10u_locator_resolver_enablement.get('warning')}",
         ]
     )
     lines.extend(

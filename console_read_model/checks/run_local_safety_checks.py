@@ -2425,6 +2425,44 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "l6_10t_readiness_report/l6_10t_readiness_assessment.json"],
     ),
     Check(
+        "Compile L6.10U controlled locator resolver builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "l6_controlled_locator_resolver_enablement/tools/build_l6_controlled_locator_resolver_enablement.py",
+        ],
+    ),
+    Check(
+        "Compile L6.10U controlled locator resolver runtime",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "controlled_locator_resolver_runtime/controlled_locator_resolver.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: l6_10u_locator_resolver_enablement_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_10u_locator_resolver_enablement_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10u_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_controlled_locator_resolver_enablement/l6_10u_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10u_locator_resolution_result.json",
+        ["python3", "-m", "json.tool", "controlled_locator_resolution_attempt/locator_resolution_result.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10u_tiny_observation_trace.json",
+        ["python3", "-m", "json.tool", "controlled_locator_observation_result/tiny_observation_trace.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10u_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "controlled_locator_resolver_read_model/l6_10u_readiness_assessment.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -2707,6 +2745,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: governed-capability-gap-toolmaking-locator-resolver",
         ["python3", "console_read_model/cli/team_console.py", "governed-capability-gap-toolmaking-locator-resolver"],
+    ),
+    Check(
+        "CLI smoke: controlled-locator-resolver-enable-first-attempt",
+        ["python3", "console_read_model/cli/team_console.py", "controlled-locator-resolver-enable-first-attempt"],
     ),
     Check(
         "CLI smoke: sources",

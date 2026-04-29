@@ -1,0 +1,39 @@
+{
+  "schema_version": "v0",
+  "scope_id": "l6_10u_scope",
+  "allowed_resolver_modes": [
+    "seed_registry",
+    "environment_gated_search",
+    "disabled"
+  ],
+  "selected_work_order_limit": 1,
+  "resolver_path_order": [
+    "seed_registry",
+    "environment_gated_search",
+    "disabled"
+  ],
+  "not_authorized": [
+    "broad_search",
+    "repeated_search_loop",
+    "crawling",
+    "scraping",
+    "browser_automation",
+    "login",
+    "account_creation",
+    "contact",
+    "payment",
+    "form_submission",
+    "posting_commenting_messaging",
+    "publication",
+    "outreach",
+    "revenue_execution",
+    "mcp_execution",
+    "live_behavior",
+    "cieu_db_write",
+    "canonical_mutation",
+    "brain_memory_writeback",
+    "direct_y_star_mutation"
+  ],
+  "search_snippets_are_not_evidence": true,
+  "fake_locator_forbidden": true
+}

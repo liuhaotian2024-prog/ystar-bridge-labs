@@ -1,0 +1,23 @@
+{
+  "schema_version": "v0",
+  "event_mode": "l6_10u_controlled_locator_resolver_enablement_first_attempt_fixture",
+  "X_t": {
+    "prior_state": "L6.10T identified no controlled locator resolver available.",
+    "selected_work_order": "l6_10r_selected_locator_retry_work_order_001"
+  },
+  "U_t": "Enable a controlled seed-registry resolver path and attempt one bounded locator resolution request without broad search or fake locator creation.",
+  "Y_star_t": "Enable a controlled locator resolver path that can resolve at most one concrete public locator for one governed work order using seed registry or explicitly enabled controlled search, optionally perform one tiny read-only observation, and preserve no-broad-search/no-crawling/no-scraping/no-login/no-payment/no-contact/no-publication/no-outreach/no-revenue/no-MCP/no-live/no-CIEU-DB-write/no-canonical-mutation/no-brain-memory-writeback/no-direct-Y* mutation constraints.",
+  "Y_t_plus_1": {
+    "resolver_runtime_created": true,
+    "seed_registry_lookup_executed": true,
+    "controlled_search_executed": false,
+    "concrete_locator_resolved": false,
+    "tiny_read_only_observation_executed": false
+  },
+  "R_t_plus_1": [
+    "no_enabled_locator_resolution_path",
+    "seed registry has no reviewed locator for selected work order",
+    "controlled search resolver remains disabled by default",
+    "L6.11 remains blocked until a locator is resolved and observation succeeds"
+  ]
+}

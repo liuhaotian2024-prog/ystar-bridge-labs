@@ -1,0 +1,22 @@
+{
+  "schema_version": "v0",
+  "request_id": "l6_10u_locator_resolution_request_001",
+  "linked_work_order_id": "l6_10u_selected_work_order_001",
+  "source_selected_work_order_id": "l6_10r_selected_locator_retry_work_order_001",
+  "linked_l6_8_work_order_id": "l6_8_observation_work_order_001",
+  "evidence_need_id": "l6_8_evidence_need_001",
+  "linked_source_hypothesis_id": "l6_8_source_hypothesis_001",
+  "source_type": "official policy or program source",
+  "source_function": "official policy or program source",
+  "observation_question": "What future read-only evidence would reduce: payer or beneficiary clarity remains unverified outside the internal MVP artifact cases?",
+  "locator_discovery_query": "official policy or program source public demand or beneficiary language What future read-only evidence would reduce: payer or beneficiary clarity remains unverified outside the internal MVP artifact cases?",
+  "query_purpose": "locator_resolution_only",
+  "max_queries": 1,
+  "max_results": 1,
+  "no_fact_inference_from_result": true,
+  "no_snippet_fact_use": true,
+  "no_broad_search": true,
+  "no_crawling": true,
+  "facts_inferred_from_resolution": false,
+  "search_snippets_may_be_used_as_evidence": false
+}

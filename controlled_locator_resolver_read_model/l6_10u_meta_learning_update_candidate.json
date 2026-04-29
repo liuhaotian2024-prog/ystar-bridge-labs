@@ -1,0 +1,11 @@
+{
+  "schema_version": "v0",
+  "meta_learning_candidate_id": "l6_10u_meta_learning_update_candidate",
+  "eligible_for_review_queue": true,
+  "eligible_for_direct_brain_writeback": false,
+  "eligible_for_direct_memory_ingestion": false,
+  "eligible_for_candidate_auto_approval": false,
+  "eligible_for_direct_strategy_mutation": false,
+  "approved": false,
+  "applied": false
+}

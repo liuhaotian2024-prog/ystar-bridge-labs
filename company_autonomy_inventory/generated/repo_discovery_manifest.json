@@ -53,7 +53,7 @@
       "write_performed": false
     }
   ],
-  "assets_discovered": 5875,
+  "assets_discovered": 5912,
   "forbidden_runtime_content_read": false,
   "external_roots_read_only": true,
   "compaction_applied": true,

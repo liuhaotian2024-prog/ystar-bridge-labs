@@ -1,0 +1,35 @@
+{
+  "resolver_mode": "disabled",
+  "resolver_id": "disabled_resolver",
+  "seed_registry_lookup_count": 1,
+  "search_query_count": 0,
+  "external_reads_count": 0,
+  "concrete_locator_resolved": false,
+  "locator": null,
+  "source_title": null,
+  "source_type": "official policy or program source",
+  "facts_inferred_from_resolution": false,
+  "eligible_for_read_only_observation": false,
+  "blocked_reason": "no_enabled_locator_resolution_path",
+  "error_code": "no_enabled_locator_resolution_path",
+  "trace": {
+    "seed_registry": {
+      "registry_path": "/Users/haotianliu/.openclaw/workspace/ystar-company/controlled_locator_resolver_runtime/seed_locator_registry.json",
+      "entries_considered": 0,
+      "matches_returned": 0,
+      "network_used": false,
+      "facts_inferred_from_resolution": false
+    },
+    "environment_gated_search": {
+      "search_executed": false,
+      "network_used": false,
+      "facts_inferred_from_resolution": false
+    },
+    "disabled": {
+      "network_used": false,
+      "search_executed": false,
+      "facts_inferred_from_resolution": false,
+      "fake_locator_returned": false
+    }
+  }
+}

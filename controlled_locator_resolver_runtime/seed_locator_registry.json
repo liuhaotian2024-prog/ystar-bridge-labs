@@ -1,0 +1,9 @@
+{
+  "schema_version": "v0",
+  "registry_id": "l6_10u_seed_locator_registry",
+  "purpose": "Local repo-controlled seed locator registry for governed locator resolution.",
+  "seed_registry_lookup_authorized": true,
+  "network_used": false,
+  "seed_locators": [],
+  "empty_registry_reason": "No user-reviewed concrete public seed locator has been committed for the selected L6.10U work order; resolver must not invent one."
+}

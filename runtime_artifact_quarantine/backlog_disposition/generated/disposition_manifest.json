@@ -11,7 +11,7 @@
     "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_summary.md",
     "runtime_artifact_quarantine/backlog_disposition/generated/disposition_manifest.json"
   ],
-  "total_artifacts": 193,
-  "artifacts_with_disposition": 193,
+  "total_artifacts": 141,
+  "artifacts_with_disposition": 141,
   "safety_note": "Disposition is not ingestion. No brain/memory/CIEU writes are allowed."
 }

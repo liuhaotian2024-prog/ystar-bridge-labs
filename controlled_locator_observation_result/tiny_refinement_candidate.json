@@ -1,0 +1,20 @@
+{
+  "schema_version": "v0",
+  "refinement_candidate_id": "l6_10u_tiny_refinement_candidate_001",
+  "linked_evidence_packet_id": "l6_10u_tiny_evidence_packet_001",
+  "linked_l6_artifact": "selected_mvp_artifact_cases/selected_case_index.json",
+  "refinement_target": "selected_mvp_artifact_cases/selected_case_index.json",
+  "proposed_refinement": "No artifact refinement proposed because no live source evidence was captured.",
+  "evidence_basis": [],
+  "evidence_limitations": [
+    "no_concrete_locator"
+  ],
+  "review_required": true,
+  "approved": false,
+  "applied": false,
+  "artifact_update_authorized": false,
+  "canonical_update_authorized": false,
+  "brain_writeback_authorized": false,
+  "memory_ingestion_authorized": false,
+  "direct_y_star_mutation_authorized": false
+}

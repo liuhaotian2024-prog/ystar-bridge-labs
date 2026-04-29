@@ -1,0 +1,10 @@
+{
+  "schema_version": "v0",
+  "environment_gated_search_enabled": false,
+  "requires_env_flag": "YSTAR_CONTROLLED_LOCATOR_SEARCH_ENABLED=1",
+  "max_queries": 1,
+  "max_results": 1,
+  "no_snippet_fact_use": true,
+  "no_claim_inference_from_search_result": true,
+  "default_mode": "disabled_unless_explicitly_enabled"
+}

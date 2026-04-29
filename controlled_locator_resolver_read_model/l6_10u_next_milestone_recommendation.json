@@ -1,0 +1,6 @@
+{
+  "schema_version": "v0",
+  "next_milestone": "L6.10V Controlled Seed Locator Registry Population or Explicit Controlled Search Resolver Enablement v0",
+  "reason": "One practical resolver runtime exists, but no seed locator or enabled controlled search path is available.",
+  "do_not_implement_l6_11_until_successful_tiny_observation": true
+}

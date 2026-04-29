@@ -1,0 +1,18 @@
+{
+  "schema_version": "v0",
+  "trace_id": "l6_10u_tiny_observation_trace_001",
+  "linked_execution_packet_id": "l6_10u_tiny_observation_execution_packet_001",
+  "observation_executed": false,
+  "reason": "no_concrete_locator",
+  "source_locator": null,
+  "read_only": true,
+  "network_used": false,
+  "external_reads_count": 0,
+  "pages_read_count": 0,
+  "search_query_count": 0,
+  "login_encountered": false,
+  "payment_encountered": false,
+  "form_encountered": false,
+  "private_data_encountered": false,
+  "raw_content_storage_policy": "no_raw_page_dump_stored"
+}

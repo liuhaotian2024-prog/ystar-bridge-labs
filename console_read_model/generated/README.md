@@ -228,5 +228,12 @@ disabled no-network locator resolver interface, and records the remaining
 controlled resolver gap without granting live tool authority or fabricating
 a locator.
 
+`l6_10u_locator_resolver_enablement_summary.json` is derived from the L6.10U
+controlled locator resolver enablement and first attempt pack. It confirms
+a portable resolver runtime, seed-registry resolver, environment-gated
+search resolver, and disabled fallback exist; the default run performs one
+local seed-registry lookup, does not run search, does not use network, and
+does not fabricate a locator.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

@@ -1,0 +1,14 @@
+{
+  "schema_version": "v0",
+  "claim_boundary_assessment_id": "l6_10u_claim_boundary_assessment_001",
+  "linked_evidence_packet_id": "l6_10u_tiny_evidence_packet_001",
+  "bounded_claims": [],
+  "unsupported_inferences": [
+    "no live source evidence captured"
+  ],
+  "freshness_status": "not_observed",
+  "semantic_truth_scoring_used": false,
+  "llm_confidence_used_as_authority": false,
+  "allowed_use": "internal_review_only",
+  "external_use_authorized": false
+}
