@@ -2738,6 +2738,30 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "l6_13_read_model/l6_13_readiness_assessment.json"],
     ),
     Check(
+        "Validate JSON: l6_14_real_evidence_conflict_resolution_sprint_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_14_real_evidence_conflict_resolution_sprint_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_14_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_real_evidence_conflict_resolution_sprint/l6_14_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: l6_14_updated_mission_evidence_report.json",
+        ["python3", "-m", "json.tool", "real_mission_evidence_report/l6_14_updated_mission_evidence_report.json"],
+    ),
+    Check(
+        "Validate JSON: l6_14_conflict_resolution_decision_packet.json",
+        ["python3", "-m", "json.tool", "conflict_resolution_decision_packet/conflict_resolution_decision_packet.json"],
+    ),
+    Check(
+        "Validate JSON: l6_14_no_side_effect_receipt.json",
+        ["python3", "-m", "json.tool", "l6_14_no_action_receipts/no_side_effect_receipt.json"],
+    ),
+    Check(
+        "Validate JSON: l6_14_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "l6_14_read_model/l6_14_readiness_assessment.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -3048,6 +3072,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: real-controlled-external-observation-mission-sprint",
         ["python3", "console_read_model/cli/team_console.py", "real-controlled-external-observation-mission-sprint"],
+    ),
+    Check(
+        "CLI smoke: real-evidence-conflict-resolution-sprint",
+        ["python3", "console_read_model/cli/team_console.py", "real-evidence-conflict-resolution-sprint"],
     ),
     Check(
         "CLI smoke: sources",

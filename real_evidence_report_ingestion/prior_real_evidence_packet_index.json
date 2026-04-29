@@ -1,0 +1,18 @@
+{
+  "schema_version": "v0",
+  "prior_real_evidence_packet_count": 2,
+  "packets": [
+    {
+      "evidence_packet_id": "l6_13_real_evidence_packet_002",
+      "source_url": "https://www.acquisition.gov/far/part-2",
+      "support_status": "supported_by_page_read_content",
+      "conflict_status": "no_conflict"
+    },
+    {
+      "evidence_packet_id": "l6_13_real_evidence_packet_003",
+      "source_url": "https://grants.nih.gov/grants/glossary.htm",
+      "support_status": "unresolved_limitation",
+      "conflict_status": "conflicted"
+    }
+  ]
+}

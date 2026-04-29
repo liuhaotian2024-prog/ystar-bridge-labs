@@ -314,6 +314,15 @@ python3 console_read_model/cli/team_console.py <command>
   no manual URL request, no-side-effect receipt, and blocked login/payment/form/
   publication/outreach/revenue/MCP/live/CIEU DB/canonical/writeback/direct Y*
   mutation state.
+- `real-evidence-conflict-resolution-sprint`: Prints the generated L6.14 real
+  evidence conflict resolution sprint summary: prior and post-second-pass
+  classification, selected work order, Tavily/page-read modes, network and
+  preflight state, second-pass query/search/page/crawl counts, prior/new/total
+  real evidence packets, conflicts/unresolved claims before and after,
+  conflict-resolution status, next action recommendation, no manual URL
+  request, no-side-effect receipt, and blocked login/payment/form/publication/
+  outreach/revenue/MCP/live/CIEU DB/canonical/writeback/direct Y* mutation
+  state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

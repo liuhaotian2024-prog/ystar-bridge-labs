@@ -1,0 +1,11 @@
+{
+  "schema_version": "v0",
+  "search_executed": true,
+  "backend_mode": "tavily_search_api",
+  "search_query_count": 5,
+  "search_results_considered": 20,
+  "snippets_used_as_evidence": false,
+  "facts_inferred_from_snippets": false,
+  "asked_user_for_url": false,
+  "blockers": []
+}

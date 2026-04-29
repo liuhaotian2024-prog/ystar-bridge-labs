@@ -1,0 +1,12 @@
+{
+  "schema_version": "v0",
+  "recommended_next_action": "ready_for_human_review",
+  "reason": "Second-pass evidence reduced uncertainty enough for review.",
+  "evidence_basis": [
+    "l6_13_conflict_001"
+  ],
+  "risk": "low_read_only_review_risk",
+  "expected_value": "Improve decision usefulness without downstream action.",
+  "requires_external_side_effects": false,
+  "requires_core_writeback": false
+}

@@ -1,0 +1,7 @@
+{
+  "schema_version": "v0",
+  "scope": "second-pass real evidence conflict resolution",
+  "manual_url_request_allowed": false,
+  "manual_search_request_allowed": false,
+  "real_public_read_only_observation_allowed_if_configured": true
+}

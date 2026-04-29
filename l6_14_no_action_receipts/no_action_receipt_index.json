@@ -1,0 +1,31 @@
+{
+  "schema_version": "v0",
+  "receipt_count": 25,
+  "actions": [
+    "login",
+    "account_creation",
+    "payment",
+    "checkout",
+    "form_submission",
+    "posting",
+    "commenting",
+    "messaging",
+    "email_customer_outreach",
+    "publication",
+    "social_media_action",
+    "grant_rfp_bounty_submission",
+    "revenue_execution",
+    "mcp_execution",
+    "live_behavior",
+    "cieu_db_write",
+    "brain_memory_writeback",
+    "canonical_strategy_mutation",
+    "direct_y_star_mutation",
+    "y_star_gov_modification",
+    "gov_mcp_modification",
+    "private_sensitive_data_collection",
+    "high_volume_crawling",
+    "unbounded_scraping",
+    "ask_user_url"
+  ]
+}
