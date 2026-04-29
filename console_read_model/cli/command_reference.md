@@ -217,6 +217,14 @@ python3 console_read_model/cli/team_console.py <command>
   blocked real approval/durable persistence/real observation/network/search/
   API/scraping/browser fetch/publication/outreach/payment/revenue/MCP/live/
   CIEU DB/writeback execution state.
+- `agentic-evidence-discovery-trust-engine`: Prints the generated L6.8 agentic
+  evidence discovery and trust judgment summary: inferred evidence needs,
+  source hypotheses, source value model, structural trust model,
+  value-of-information model, source rankings, conflict/corroboration plan,
+  pre-observation rejection filter, future observation work orders, decision
+  gate, no-action receipts, readiness for L6.9 pilot approval, and blocked
+  agent fetch/network/search/API/scraping/browser fetch/publication/outreach/
+  payment/revenue/MCP/live/CIEU DB/writeback execution state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

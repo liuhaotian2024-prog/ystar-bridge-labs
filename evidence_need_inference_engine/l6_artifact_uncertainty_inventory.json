@@ -1,0 +1,129 @@
+{
+  "schema_version": "v0",
+  "input_refs_loaded": {
+    "l6_0_value_hypotheses": true,
+    "l6_1_mvp_artifact_cases": true,
+    "l6_2_observation_boundary": true,
+    "l6_3_controlled_observation_packets": true,
+    "l6_4_preflight_candidates": true,
+    "l6_5_pilot_candidates": true,
+    "l6_6_approval_packets": true,
+    "l6_7_pilot_readiness_packages": true,
+    "l6_7_readiness": true
+  },
+  "uncertainty_sources": [
+    {
+      "milestone": "l6_0_value_hypotheses",
+      "artifact": "open_value_hypothesis_generator/generated_value_hypotheses.json",
+      "used_for_evidence_need_inference": true
+    },
+    {
+      "milestone": "l6_1_mvp_artifact_cases",
+      "artifact": "selected_mvp_artifact_cases/selected_case_index.json",
+      "used_for_evidence_need_inference": true
+    },
+    {
+      "milestone": "l6_2_observation_boundary",
+      "artifact": "l6_governed_external_observation_boundary/l6_2_summary.json",
+      "used_for_evidence_need_inference": true
+    },
+    {
+      "milestone": "l6_3_controlled_observation_packets",
+      "artifact": "controlled_pre_observation_packets/pre_observation_packet_index.json",
+      "used_for_evidence_need_inference": true
+    },
+    {
+      "milestone": "l6_4_preflight_candidates",
+      "artifact": "real_observation_candidate_selector/selected_real_observation_candidates.json",
+      "used_for_evidence_need_inference": true
+    },
+    {
+      "milestone": "l6_5_pilot_candidates",
+      "artifact": "pilot_candidate_selector/selected_pilot_candidates.json",
+      "used_for_evidence_need_inference": true
+    },
+    {
+      "milestone": "l6_6_approval_packets",
+      "artifact": "pilot_approval_packet_assembler/approval_packet_index.json",
+      "used_for_evidence_need_inference": true
+    },
+    {
+      "milestone": "l6_7_pilot_readiness_packages",
+      "artifact": "pilot_run_package_assembler/pilot_run_package_index.json",
+      "used_for_evidence_need_inference": true
+    },
+    {
+      "milestone": "l6_7_readiness",
+      "artifact": "l6_integrated_pilot_readiness_report/l6_7_readiness_assessment.json",
+      "used_for_evidence_need_inference": true
+    }
+  ],
+  "missing_optional_refs": [],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "external_observation_execution_enabled": false,
+    "agent_external_fetch_enabled": false,
+    "network_enabled": false,
+    "api_enabled": false,
+    "scraping_enabled": false,
+    "browser_fetch_enabled": false,
+    "search_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "cieu_db_write_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "durable_real_approval_record_creation_enabled": false,
+    "real_approval_grant_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "llm_confidence_as_authority_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "revenue_execution_enabled": false,
+    "external_market_scan_enabled": false,
+    "public_content_publication_enabled": false,
+    "publication_enabled": false,
+    "outreach_enabled": false,
+    "payment_enabled": false
+  },
+  "l6_8_flags": {
+    "l6_8_agentic_evidence_discovery_design_and_sandbox_only": true,
+    "l6_8_autonomous_evidence_need_inference_enabled": true,
+    "l6_8_autonomous_source_hypothesis_generation_enabled": true,
+    "l6_8_autonomous_evidence_value_judgment_enabled": true,
+    "l6_8_autonomous_trust_assessment_enabled": true,
+    "l6_8_observation_work_order_generation_enabled": true,
+    "l6_8_real_external_observation_enabled": false,
+    "l6_8_agent_external_fetch_enabled": false,
+    "l6_8_network_enabled": false,
+    "l6_8_search_enabled": false,
+    "l6_8_scraping_enabled": false,
+    "l6_8_browser_fetch_enabled": false,
+    "l6_8_publication_enabled": false,
+    "l6_8_outreach_enabled": false,
+    "l6_8_payment_enabled": false,
+    "l6_8_revenue_execution_enabled": false,
+    "l6_8_mcp_execution_enabled": false,
+    "l6_8_cieu_db_write_enabled": false,
+    "l6_8_canonical_update_enabled": false,
+    "l6_8_brain_writeback_enabled": false,
+    "l6_8_memory_ingestion_enabled": false,
+    "l6_8_direct_y_star_mutation_enabled": false
+  }
+}

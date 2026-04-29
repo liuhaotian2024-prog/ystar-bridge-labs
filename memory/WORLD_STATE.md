@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-28 22:30:01
+**Generated**: 2026-04-28 23:00:00
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,7 +36,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/12 valid (0 errors)
-**CIEU 24h Events**: 2115
+**CIEU 24h Events**: 2167
 **Overdue Obligations**: 0
 
 ---
@@ -84,29 +84,29 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 ---
 
 ## 8. Y* Field State (xi) — Mission axis frequency + drift
-**Total CIEU events (24h)**: 2115
+**Total CIEU events (24h)**: 2167
 
 | M-Axis | Description | 24h Count | 7d Avg/Day | Drift |
 |--------|-------------|-----------|------------|-------|
-| **M-1** | Survivability (session/boot/handoff/persist) | 222 | 4820 | → |
-| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 10 | 840 | ↓ |
-| **M-2b** | Omission prevention (omission/overdue/alarm) | 9 | 2622 | ↓ |
+| **M-1** | Survivability (session/boot/handoff/persist) | 222 | 4760 | → |
+| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 11 | 840 | ↓ |
+| **M-2b** | Omission prevention (omission/overdue/alarm) | 10 | 2592 | ↓ |
 | **M-3** | Value production (customer/revenue/dogfood/demo) | 0 | 0 | ↓ |
 
-**Classified coverage**: 241/2115 (11.4%)
-**Unclassified**: 1874 events (routine ops / K9 routing)
+**Classified coverage**: 243/2167 (11.2%)
+**Unclassified**: 1924 events (routine ops / K9 routing)
 **Drift alert**: M-2a, M-2b, M-3 trending DOWN vs 7d baseline
 
 ---
 
 ## 9. Commission Error Heatmap — 11-component unified dashboard
-**Total commission errors (24h)**: 281
+**Total commission errors (24h)**: 283
 
 **By M-Axis**:
 
 | Axis | Description | 24h Count |
 |------|-------------|-----------|
-| **M-1** | Survivability (schema/wire/config drift) | 240 |
+| **M-1** | Survivability (schema/wire/config drift) | 242 |
 | **M-2a** | Commission prevention (core 11 detectors) | 41 |
 | **M-3** | Value quality (maturity/off-target) | 0 |
 
@@ -114,9 +114,9 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 
 | Detector | 24h Count | Drift vs 7d |
 |----------|-----------|-------------|
-| amendment_coverage_audit | 231 | v (avg 391.1/d) |
+| amendment_coverage_audit | 232 | v (avg 384.6/d) |
 | directive_evaluator | 40 | = (avg 33.7/d) |
-| hook_commission_catch | 10 | v (avg 438.7/d) |
+| hook_commission_catch | 11 | v (avg 432.1/d) |
 
 **By Actor (top 10)**:
 
@@ -124,17 +124,17 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 |-------|----------------------|
 | unknown | 222 |
 | cto | 40 |
-| platform | 18 |
+| platform | 20 |
 | eng-platform | 1 |
 
 **Top 5 Event Types**:
 - `SESSION_JSON_SCHEMA_VIOLATION`: 222
 - `DIRECTIVE_LIVENESS_EVAL`: 40
-- `CANONICAL_HASH_DRIFT`: 9
-- `WIRE_BROKEN`: 9
+- `CANONICAL_HASH_DRIFT`: 10
+- `WIRE_BROKEN`: 10
 - `WHITELIST_GAP`: 1
 
-**Overall drift**: v (24h=281, 7d avg/day=2325.7)
+**Overall drift**: v (24h=283, 7d avg/day=2292.1)
 
 ---
 
@@ -160,7 +160,9 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 ## 13. Today's Commits (24h) — both repos
 
 
-**ystar-company** (26 commits):
+**ystar-company** (28 commits):
+- 7d499116 22:59 [auto] WIP checkpoint 2026-04-28 22:59 -- 53 files changed
+- 684c0043 22:43 tools: add l6 integrated approval record and pilot readiness sandbox
 - 0faa6f71 22:28 [auto] WIP checkpoint 2026-04-28 22:28 -- 115 files changed
 - 59945956 22:15 tools: add l6 controlled observation pilot approval packet
 - 48af1acf 21:58 [auto] WIP checkpoint 2026-04-28 21:58 -- 142 files changed
@@ -179,7 +181,5 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 - 17aadbec 17:14 tools: add real release simulation sandbox
 - b3b9e2c3 16:38 tools: add controlled real release preflight
 - 2a0cc560 16:04 tools: add controlled approval record sandbox
-- c8b2efed 13:02 tools: add real approval workflow boundary
-- 743af561 11:41 tools: add approved canonical update sandbox
 
 **Y*gov**: no commits

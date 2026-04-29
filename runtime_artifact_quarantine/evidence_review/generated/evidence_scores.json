@@ -34,12 +34,12 @@
       "evidence_id": "evidence-001",
       "candidate_id": "mdcand-001",
       "review_id": "review-001",
-      "source_path": "reports/daily/2026-04-28_twin_evolution.md",
-      "artifact_class": "DAILY_REPORT",
+      "source_path": "reports/ceo/brain_dream_diffs/dream_diff_20260428_231016_nrem.md",
+      "artifact_class": "DREAM_REPORT",
       "disposition": "safe_mined_to_review_queue",
       "review_status": "pending_review",
       "ingestion_status": "not_ingested",
-      "structural_score": 5,
+      "structural_score": 6,
       "source_quality_level": "bounded_markdown_report_candidate",
       "reuse_readiness": "hint_only",
       "confidence_level": "structural_only",
@@ -48,14 +48,14 @@
       "evidence_basis": [
         "candidate_is_safe_mined_to_review_queue",
         "bounded_snippet_present",
+        "headings_present",
         "intended_use_suggestions_present",
         "approved_report_like_class"
       ],
       "missing_evidence": [
         "semantic_truth_validation",
         "contradiction_check",
-        "human_review_decision",
-        "headings"
+        "human_review_decision"
       ],
       "allowed_next_step": "evidence_review_or_manual_decision",
       "forbidden_next_steps": [

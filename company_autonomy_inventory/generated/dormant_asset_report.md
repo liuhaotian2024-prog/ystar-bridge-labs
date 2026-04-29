@@ -2,13 +2,13 @@
 
 ## Strongest existing assets
 
-- repo_or_code_observation: 3164 mapped assets
-- cieu_helpers_or_audit: 2939 mapped assets
-- reporting_or_status: 2657 mapped assets
-- action_execution: 2613 mapped assets
-- hook_or_gate: 2550 mapped assets
-- agent_identity: 2461 mapped assets
-- testing_or_validation: 2368 mapped assets
+- repo_or_code_observation: 3231 mapped assets
+- cieu_helpers_or_audit: 2993 mapped assets
+- reporting_or_status: 2687 mapped assets
+- action_execution: 2674 mapped assets
+- hook_or_gate: 2614 mapped assets
+- agent_identity: 2526 mapped assets
+- testing_or_validation: 2378 mapped assets
 - governance_bridge: 2304 mapped assets
 
 ## Action-capable assets that remain disabled

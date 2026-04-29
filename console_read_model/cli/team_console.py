@@ -71,6 +71,7 @@ L6_PILOT_APPROVAL = "console_read_model/generated/l6_pilot_approval_summary.json
 L6_INTEGRATED_PILOT_READINESS = (
     "console_read_model/generated/l6_integrated_pilot_readiness_summary.json"
 )
+L6_AGENTIC_EVIDENCE = "console_read_model/generated/l6_agentic_evidence_summary.json"
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -90,7 +91,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|integrated-approval-record-and-pilot-readiness|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|integrated-approval-record-and-pilot-readiness|agentic-evidence-discovery-trust-engine|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -169,6 +170,7 @@ def load_all() -> dict[str, Any]:
         "l6_pilot_design": load_json(L6_PILOT_DESIGN),
         "l6_pilot_approval": load_json(L6_PILOT_APPROVAL),
         "l6_integrated_pilot_readiness": load_json(L6_INTEGRATED_PILOT_READINESS),
+        "l6_agentic_evidence": load_json(L6_AGENTIC_EVIDENCE),
     }
 
 
@@ -2327,6 +2329,113 @@ def cmd_integrated_approval_record_and_pilot_readiness(data: dict[str, Any]) -> 
     print(f"warning: {readiness.get('warning')}")
 
 
+def cmd_agentic_evidence_discovery_trust_engine(data: dict[str, Any]) -> None:
+    evidence = data["l6_agentic_evidence"]
+    print("# L6.8 Agentic Evidence Discovery Trust Engine")
+    print()
+    print(
+        "L6.8 agentic evidence discovery trust engine defined: "
+        f"{evidence.get('l6_8_agentic_evidence_discovery_trust_engine_defined')}"
+    )
+    print(f"mode: {evidence.get('mode')}")
+    print(
+        "agentic evidence discovery design/sandbox only: "
+        f"{evidence.get('agentic_evidence_discovery_design_and_sandbox_only')}"
+    )
+    print(
+        "autonomous evidence need inference authorized: "
+        f"{evidence.get('autonomous_evidence_need_inference_authorized')}"
+    )
+    print(
+        "autonomous source hypothesis generation authorized: "
+        f"{evidence.get('autonomous_source_hypothesis_generation_authorized')}"
+    )
+    print(
+        "autonomous evidence value judgment authorized: "
+        f"{evidence.get('autonomous_evidence_value_judgment_authorized')}"
+    )
+    print(
+        "autonomous trust assessment authorized: "
+        f"{evidence.get('autonomous_trust_assessment_authorized')}"
+    )
+    print(
+        "observation work order generation authorized: "
+        f"{evidence.get('observation_work_order_generation_authorized')}"
+    )
+    print(f"evidence needs: {evidence.get('evidence_need_count')}")
+    print(f"source hypotheses: {evidence.get('source_hypothesis_count')}")
+    print(f"ranked source hypotheses: {evidence.get('ranked_source_hypothesis_count')}")
+    print(f"observation work orders: {evidence.get('observation_work_order_count')}")
+    print(f"rejected source hypotheses: {evidence.get('rejected_source_hypothesis_count')}")
+    print(f"source value model generated: {evidence.get('source_type_value_model_generated')}")
+    print(f"structural trust judgment generated: {evidence.get('structural_trust_judgment_generated')}")
+    print(f"value of information model generated: {evidence.get('value_of_information_model_generated')}")
+    print(
+        "conflict/corroboration model generated: "
+        f"{evidence.get('conflict_corroboration_model_generated')}"
+    )
+    print(
+        "pre-observation rejection filter generated: "
+        f"{evidence.get('pre_observation_rejection_filter_generated')}"
+    )
+    print(
+        "agentic evidence decision gate generated: "
+        f"{evidence.get('agentic_evidence_decision_gate_generated')}"
+    )
+    print(f"no-action receipts generated: {evidence.get('no_action_receipts_generated')}")
+    print(f"strategic residual loop generated: {evidence.get('strategic_residual_loop_generated')}")
+    print(
+        "future controlled read-only observation pilot candidate allowed: "
+        f"{evidence.get('future_controlled_read_only_observation_pilot_candidate_allowed')}"
+    )
+    print(
+        "real external observation authorized: "
+        f"{evidence.get('real_external_observation_authorized')}"
+    )
+    print(f"agent external fetch authorized: {evidence.get('agent_external_fetch_authorized')}")
+    print(f"network enabled: {evidence.get('network_enabled')}")
+    print(f"API enabled: {evidence.get('api_enabled')}")
+    print(f"scraping enabled: {evidence.get('scraping_enabled')}")
+    print(f"browser fetch enabled: {evidence.get('browser_fetch_enabled')}")
+    print(f"search enabled: {evidence.get('search_enabled')}")
+    print(f"publication enabled: {evidence.get('publication_enabled')}")
+    print(f"outreach enabled: {evidence.get('outreach_enabled')}")
+    print(f"payment enabled: {evidence.get('payment_enabled')}")
+    print(f"revenue execution enabled: {evidence.get('revenue_execution_enabled')}")
+    print(f"MCP tool execution enabled: {evidence.get('mcp_tool_execution_enabled')}")
+    print(f"live execution enabled: {evidence.get('live_execution_enabled')}")
+    print(f"CIEU DB write enabled: {evidence.get('cieu_db_write_enabled')}")
+    print(f"canonical update enabled: {evidence.get('real_canonical_update_application_enabled')}")
+    print(f"brain writeback enabled: {evidence.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {evidence.get('memory_ingestion_enabled')}")
+    print(
+        "ready for L6.9 controlled read-only agentic evidence discovery pilot approval: "
+        f"{evidence.get('ready_for_l6_9_controlled_read_only_agentic_evidence_discovery_pilot_approval')}"
+    )
+    print(
+        "ready for actual network observation now: "
+        f"{evidence.get('ready_for_actual_network_observation_now')}"
+    )
+    print(
+        "ready for autonomous web search now: "
+        f"{evidence.get('ready_for_autonomous_web_search_now')}"
+    )
+    print(f"ready for scraping: {evidence.get('ready_for_scraping')}")
+    print(f"ready for publication: {evidence.get('ready_for_publication')}")
+    print(f"ready for outreach: {evidence.get('ready_for_outreach')}")
+    print(f"ready for payment: {evidence.get('ready_for_payment')}")
+    print(f"ready for revenue execution: {evidence.get('ready_for_revenue_execution')}")
+    print(f"next recommended milestone: {evidence.get('next_recommended_milestone')}")
+    print(f"generated_evidence_needs: {evidence.get('generated_evidence_needs')}")
+    print(f"generated_source_hypotheses: {evidence.get('generated_source_hypotheses')}")
+    print(f"generated_source_ranking: {evidence.get('generated_source_ranking')}")
+    print(f"generated_work_orders: {evidence.get('generated_work_orders')}")
+    print(f"generated_rejection_filter: {evidence.get('generated_rejection_filter')}")
+    print(f"generated_decision_gate: {evidence.get('generated_decision_gate')}")
+    print(f"generated_readiness: {evidence.get('generated_readiness')}")
+    print(f"warning: {evidence.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -4287,6 +4396,8 @@ def main(argv: list[str]) -> int:
         cmd_controlled_observation_pilot_approval_packet(data)
     elif command == "integrated-approval-record-and-pilot-readiness":
         cmd_integrated_approval_record_and_pilot_readiness(data)
+    elif command == "agentic-evidence-discovery-trust-engine":
+        cmd_agentic_evidence_discovery_trust_engine(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

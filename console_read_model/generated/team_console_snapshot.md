@@ -113,20 +113,19 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 187
+- Artifacts classified: 152
 - Unsafe artifacts count: 120
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
   - CACHE_SENTINEL: 5
   - DAEMON_STATE: 4
-  - DAILY_REPORT: 1
   - DB_CORE: 1
   - DB_SIDECARE: 6
-  - FRAMEWORK_FILE: 16
+  - DREAM_REPORT: 1
   - LOG_RUNTIME: 30
   - PYCACHE: 45
-  - UNKNOWN_OR_NON_RUNTIME: 51
+  - UNKNOWN_OR_NON_RUNTIME: 32
   - UNKNOWN_RUNTIME_ARTIFACT: 10
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
 - Warning: Console displays only curated path-level quarantine summary. No artifact contents were read.
@@ -138,7 +137,7 @@ Not ready:
 - Ingestion status: candidate_only
 - Generated candidate index: runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json
 - Classes seen:
-  - DAILY_REPORT: 1
+  - DREAM_REPORT: 1
 - Warning: Safe mining candidates are bounded review assets only. They are not brain memory, CIEU records, or approved writeback.
 
 ## Runtime Artifact Candidate Review Queue
@@ -156,8 +155,8 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 187
-- Artifacts with disposition: 187
+- Total artifacts: 152
+- Artifacts with disposition: 152
 - Safe-mined to review queue: 1
 - Forbidden direct read count: 119
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
@@ -168,10 +167,10 @@ Not ready:
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 45
-  - ignored_or_non_runtime: 67
+  - ignored_or_non_runtime: 32
   - safe_mined_to_review_queue: 1
 - Evidence scoring status:
-  - not_started: 187
+  - not_started: 152
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -549,7 +548,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 5358
+- assets_scanned: 5449
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -1122,6 +1121,44 @@ Not ready:
 - ready_for_durable_real_approval_persistence_now: False
 - next_recommended_milestone: L6.8 User-Mediated Manual Evidence Import Pilot v0
 - Warning: L6.7 is integrated-sandbox-only. Sandbox approval records and pilot run packages are readiness-only. Real approval, durable approval persistence, real observation, URL fetch, search, scraping, API calls, browser fetch, publication, outreach, payment, revenue execution, MCP, live behavior, CIEU DB writes, canonical mutation, writeback, and direct Y* mutation remain blocked.
+
+## L6.8 Agentic Evidence Discovery Trust Engine
+
+- l6_8_agentic_evidence_discovery_trust_engine_defined: True
+- mode: agentic_evidence_discovery_design_and_sandbox
+- agentic_evidence_discovery_design_and_sandbox_only: True
+- autonomous_evidence_need_inference_authorized: True
+- autonomous_source_hypothesis_generation_authorized: True
+- autonomous_evidence_value_judgment_authorized: True
+- autonomous_trust_assessment_authorized: True
+- observation_work_order_generation_authorized: True
+- evidence_need_count: 8
+- source_hypothesis_count: 6
+- ranked_source_hypothesis_count: 4
+- observation_work_order_count: 3
+- rejected_source_hypothesis_count: 2
+- source_type_value_model_generated: True
+- structural_trust_judgment_generated: True
+- value_of_information_model_generated: True
+- conflict_corroboration_model_generated: True
+- pre_observation_rejection_filter_generated: True
+- agentic_evidence_decision_gate_generated: True
+- no_action_receipts_generated: True
+- real_external_observation_authorized: False
+- agent_external_fetch_authorized: False
+- network_enabled: False
+- search_enabled: False
+- scraping_enabled: False
+- browser_fetch_enabled: False
+- publication_enabled: False
+- outreach_enabled: False
+- payment_enabled: False
+- revenue_execution_enabled: False
+- ready_for_l6_9_controlled_read_only_agentic_evidence_discovery_pilot_approval: True
+- ready_for_actual_network_observation_now: False
+- ready_for_autonomous_web_search_now: False
+- next_recommended_milestone: L6.9 Controlled Read-Only Agentic Evidence Discovery Pilot Approval v0
+- Warning: L6.8 is agentic evidence discovery design/sandbox only. It can infer evidence needs, generate and rank source hypotheses, judge source value and structural trust, and generate future work orders, but real observation, agent fetch, URL open, network, search, scraping, API calls, browser fetch, publication, outreach, payment, revenue, MCP, live behavior, CIEU DB writes, canonical mutation, writeback, and direct Y* mutation remain blocked.
 
 ## Governance Boundary
 

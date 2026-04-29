@@ -424,6 +424,9 @@ def main() -> int:
             [],
         )
     )
+    required_l6_agentic_evidence_discovery_trust_engine_files = expected.get(
+        "required_l6_agentic_evidence_discovery_trust_engine_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -700,6 +703,12 @@ def main() -> int:
                 report,
                 "L6.7 integrated approval record and pilot readiness sandbox JSON",
             )
+
+    for rel in required_l6_agentic_evidence_discovery_trust_engine_files:
+        path = ROOT / rel
+        check_exists(path, report, "L6.8 agentic evidence discovery trust engine file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "L6.8 agentic evidence discovery trust engine JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -5678,6 +5687,215 @@ def main() -> int:
             "L6.8 User-Mediated Manual Evidence Import Pilot v0"
         ):
             report.fail("generated L6.7 summary must point to L6.8")
+
+    l6_agentic_evidence = generated_json.get(
+        "console_read_model/generated/l6_agentic_evidence_summary.json"
+    )
+    if l6_agentic_evidence:
+        for field in [
+            "l6_8_agentic_evidence_discovery_trust_engine_defined",
+            "mode",
+            "agentic_evidence_discovery_design_and_sandbox_only",
+            "evidence_need_count",
+            "source_hypothesis_count",
+            "ranked_source_hypothesis_count",
+            "observation_work_order_count",
+            "rejected_source_hypothesis_count",
+            "autonomous_evidence_need_inference_authorized",
+            "autonomous_source_hypothesis_generation_authorized",
+            "autonomous_evidence_value_judgment_authorized",
+            "autonomous_trust_assessment_authorized",
+            "observation_work_order_generation_authorized",
+            "source_type_value_model_generated",
+            "structural_trust_judgment_generated",
+            "value_of_information_model_generated",
+            "conflict_corroboration_model_generated",
+            "pre_observation_rejection_filter_generated",
+            "agentic_evidence_decision_gate_generated",
+            "no_action_receipts_generated",
+            "strategic_residual_loop_generated",
+            "real_external_observation_authorized",
+            "agent_external_fetch_authorized",
+            "network_authorized",
+            "api_authorized",
+            "scraping_authorized",
+            "browser_fetch_authorized",
+            "search_authorized",
+            "publication_authorized",
+            "outreach_authorized",
+            "payment_authorized",
+            "revenue_execution_authorized",
+            "mcp_execution_authorized",
+            "live_behavior_authorized",
+            "cieu_db_write_authorized",
+            "canonical_update_authorized",
+            "brain_writeback_authorized",
+            "memory_ingestion_authorized",
+            "direct_y_star_mutation_authorized",
+            "real_approval_granted",
+            "durable_real_approval_record_created",
+            "future_controlled_read_only_observation_pilot_candidate_allowed",
+            "network_enabled",
+            "api_enabled",
+            "scraping_enabled",
+            "browser_fetch_enabled",
+            "search_enabled",
+            "external_action_enabled",
+            "agent_external_fetch_enabled",
+            "publication_enabled",
+            "outreach_enabled",
+            "payment_enabled",
+            "revenue_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "live_execution_enabled",
+            "cieu_db_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "real_canonical_update_application_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "durable_approval_persistence_enabled",
+            "semantic_truth_scoring_enabled",
+            "llm_confidence_as_authority_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "l6_8_agentic_evidence_discovery_design_and_sandbox_only",
+            "l6_8_autonomous_evidence_need_inference_enabled",
+            "l6_8_autonomous_source_hypothesis_generation_enabled",
+            "l6_8_autonomous_evidence_value_judgment_enabled",
+            "l6_8_autonomous_trust_assessment_enabled",
+            "l6_8_observation_work_order_generation_enabled",
+            "l6_8_real_external_observation_enabled",
+            "l6_8_agent_external_fetch_enabled",
+            "ready_for_l6_9_controlled_read_only_agentic_evidence_discovery_pilot_approval",
+            "ready_for_actual_network_observation_now",
+            "ready_for_autonomous_web_search_now",
+            "ready_for_scraping",
+            "ready_for_publication",
+            "ready_for_outreach",
+            "ready_for_payment",
+            "ready_for_revenue_execution",
+            "ready_for_mcp_execution",
+            "ready_for_canonical_update",
+            "ready_for_brain_memory_writeback",
+            "next_recommended_milestone",
+            "generated_milestone_summary",
+            "generated_evidence_needs",
+            "generated_source_hypotheses",
+            "generated_source_value_model",
+            "generated_trust_judgment",
+            "generated_value_of_information",
+            "generated_source_ranking",
+            "generated_work_orders",
+            "generated_rejection_filter",
+            "generated_decision_gate",
+            "generated_no_action_receipt",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in l6_agentic_evidence:
+                report.pass_(f"generated L6.8 agentic evidence field present: {field}")
+            else:
+                report.fail(f"generated L6.8 agentic evidence missing field: {field}")
+        for field in [
+            "l6_8_agentic_evidence_discovery_trust_engine_defined",
+            "agentic_evidence_discovery_design_and_sandbox_only",
+            "autonomous_evidence_need_inference_authorized",
+            "autonomous_source_hypothesis_generation_authorized",
+            "autonomous_evidence_value_judgment_authorized",
+            "autonomous_trust_assessment_authorized",
+            "observation_work_order_generation_authorized",
+            "source_type_value_model_generated",
+            "structural_trust_judgment_generated",
+            "value_of_information_model_generated",
+            "conflict_corroboration_model_generated",
+            "pre_observation_rejection_filter_generated",
+            "agentic_evidence_decision_gate_generated",
+            "no_action_receipts_generated",
+            "strategic_residual_loop_generated",
+            "future_controlled_read_only_observation_pilot_candidate_allowed",
+            "l6_8_agentic_evidence_discovery_design_and_sandbox_only",
+            "l6_8_autonomous_evidence_need_inference_enabled",
+            "l6_8_autonomous_source_hypothesis_generation_enabled",
+            "l6_8_autonomous_evidence_value_judgment_enabled",
+            "l6_8_autonomous_trust_assessment_enabled",
+            "l6_8_observation_work_order_generation_enabled",
+            "ready_for_l6_9_controlled_read_only_agentic_evidence_discovery_pilot_approval",
+        ]:
+            if l6_agentic_evidence.get(field) is not True:
+                report.fail(f"generated L6.8 summary must keep {field}=true")
+        for field in [
+            "real_external_observation_authorized",
+            "agent_external_fetch_authorized",
+            "network_authorized",
+            "api_authorized",
+            "scraping_authorized",
+            "browser_fetch_authorized",
+            "search_authorized",
+            "publication_authorized",
+            "outreach_authorized",
+            "payment_authorized",
+            "revenue_execution_authorized",
+            "mcp_execution_authorized",
+            "live_behavior_authorized",
+            "cieu_db_write_authorized",
+            "canonical_update_authorized",
+            "brain_writeback_authorized",
+            "memory_ingestion_authorized",
+            "direct_y_star_mutation_authorized",
+            "real_approval_granted",
+            "durable_real_approval_record_created",
+            "network_enabled",
+            "api_enabled",
+            "scraping_enabled",
+            "browser_fetch_enabled",
+            "search_enabled",
+            "external_action_enabled",
+            "agent_external_fetch_enabled",
+            "publication_enabled",
+            "outreach_enabled",
+            "payment_enabled",
+            "revenue_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "live_execution_enabled",
+            "cieu_db_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "real_canonical_update_application_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "durable_approval_persistence_enabled",
+            "semantic_truth_scoring_enabled",
+            "llm_confidence_as_authority_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "l6_8_real_external_observation_enabled",
+            "l6_8_agent_external_fetch_enabled",
+            "ready_for_actual_network_observation_now",
+            "ready_for_autonomous_web_search_now",
+            "ready_for_scraping",
+            "ready_for_publication",
+            "ready_for_outreach",
+            "ready_for_payment",
+            "ready_for_revenue_execution",
+            "ready_for_mcp_execution",
+            "ready_for_canonical_update",
+            "ready_for_brain_memory_writeback",
+        ]:
+            if l6_agentic_evidence.get(field) is not False:
+                report.fail(f"generated L6.8 summary must keep {field}=false")
+        if l6_agentic_evidence.get("mode") != "agentic_evidence_discovery_design_and_sandbox":
+            report.fail("generated L6.8 summary must be design/sandbox mode")
+        if l6_agentic_evidence.get("evidence_need_count", 0) < 8:
+            report.fail("generated L6.8 summary must include at least 8 evidence needs")
+        if l6_agentic_evidence.get("source_hypothesis_count", 0) < 4:
+            report.fail("generated L6.8 summary must include at least 4 source hypotheses")
+        if not 1 <= l6_agentic_evidence.get("observation_work_order_count", 0) <= (
+            l6_agentic_evidence.get("ranked_source_hypothesis_count", 0)
+        ):
+            report.fail("generated L6.8 work order count must be bounded by ranked sources")
+        if l6_agentic_evidence.get("rejected_source_hypothesis_count", 0) < 1:
+            report.fail("generated L6.8 summary must include rejected source hypotheses")
+        if l6_agentic_evidence.get("next_recommended_milestone") != (
+            "L6.9 Controlled Read-Only Agentic Evidence Discovery Pilot Approval v0"
+        ):
+            report.fail("generated L6.8 summary must point to L6.9")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

@@ -2219,6 +2219,55 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "l6_integrated_pilot_readiness_report/l6_7_readiness_assessment.json"],
     ),
     Check(
+        "Compile L6.8 agentic evidence discovery trust engine builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "l6_agentic_evidence_discovery_trust_engine/tools/build_l6_agentic_evidence_discovery_trust_engine.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: l6_agentic_evidence_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_agentic_evidence_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_8_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_agentic_evidence_discovery_trust_engine/l6_8_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: inferred_evidence_needs.json",
+        ["python3", "-m", "json.tool", "evidence_need_inference_engine/inferred_evidence_needs.json"],
+    ),
+    Check(
+        "Validate JSON: source_hypothesis_index.json",
+        ["python3", "-m", "json.tool", "autonomous_source_hypothesis_generator/source_hypothesis_index.json"],
+    ),
+    Check(
+        "Validate JSON: trust_judgment_matrix.json",
+        ["python3", "-m", "json.tool", "evidence_trust_judgment_model/trust_judgment_matrix.json"],
+    ),
+    Check(
+        "Validate JSON: evidence_need_voi_matrix.json",
+        ["python3", "-m", "json.tool", "evidence_value_of_information_model/evidence_need_voi_matrix.json"],
+    ),
+    Check(
+        "Validate JSON: ranked_source_hypotheses.json",
+        ["python3", "-m", "json.tool", "source_prioritization_and_ranking_engine/ranked_source_hypotheses.json"],
+    ),
+    Check(
+        "Validate JSON: observation_work_order_index.json",
+        ["python3", "-m", "json.tool", "observation_work_order_generator/observation_work_order_index.json"],
+    ),
+    Check(
+        "Validate JSON: evidence_discovery_decision_matrix.json",
+        ["python3", "-m", "json.tool", "agentic_evidence_decision_gate/evidence_discovery_decision_matrix.json"],
+    ),
+    Check(
+        "Validate JSON: l6_8_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "l6_agentic_evidence_readiness_report/l6_8_readiness_assessment.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -2481,6 +2530,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: integrated-approval-record-and-pilot-readiness",
         ["python3", "console_read_model/cli/team_console.py", "integrated-approval-record-and-pilot-readiness"],
+    ),
+    Check(
+        "CLI smoke: agentic-evidence-discovery-trust-engine",
+        ["python3", "console_read_model/cli/team_console.py", "agentic-evidence-discovery-trust-engine"],
     ),
     Check(
         "CLI smoke: sources",

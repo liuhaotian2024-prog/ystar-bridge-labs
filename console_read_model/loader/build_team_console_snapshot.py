@@ -258,6 +258,20 @@ CURATED_SOURCES = [
     "pilot_integrated_no_action_receipts/no_real_approval_granted_receipt.json",
     "l6_integrated_pilot_readiness_strategic_residual_loop/l6_7_strategic_residual_delta.json",
     "l6_integrated_pilot_readiness_report/l6_7_readiness_assessment.json",
+    "l6_agentic_evidence_discovery_trust_engine/l6_8_summary.json",
+    "evidence_need_inference_engine/inferred_evidence_needs.json",
+    "autonomous_source_hypothesis_generator/source_hypothesis_index.json",
+    "source_type_value_model/source_type_value_matrix.json",
+    "evidence_trust_judgment_model/trust_judgment_matrix.json",
+    "evidence_value_of_information_model/evidence_need_voi_matrix.json",
+    "source_prioritization_and_ranking_engine/ranked_source_hypotheses.json",
+    "evidence_conflict_and_corrobation_model/conflict_corroboration_contract.json",
+    "observation_work_order_generator/observation_work_order_index.json",
+    "pre_observation_rejection_filter/rejected_source_hypotheses.json",
+    "agentic_evidence_decision_gate/evidence_discovery_decision_matrix.json",
+    "agentic_evidence_no_action_receipts/no_agent_fetch_receipt.json",
+    "l6_agentic_evidence_strategic_residual_loop/l6_8_strategic_residual_delta.json",
+    "l6_agentic_evidence_readiness_report/l6_8_readiness_assessment.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -5073,6 +5087,224 @@ def build_l6_integrated_pilot_readiness_summary(
     }
 
 
+def build_l6_agentic_evidence_summary(
+    milestone_summary: dict[str, Any] | None,
+    evidence_needs: dict[str, Any] | None,
+    source_hypotheses: dict[str, Any] | None,
+    source_value_matrix: dict[str, Any] | None,
+    trust_judgment_matrix: dict[str, Any] | None,
+    voi_matrix: dict[str, Any] | None,
+    ranked_sources: dict[str, Any] | None,
+    conflict_contract: dict[str, Any] | None,
+    work_order_index: dict[str, Any] | None,
+    rejected_sources: dict[str, Any] | None,
+    decision_matrix: dict[str, Any] | None,
+    no_action_receipt: dict[str, Any] | None,
+    residual_delta: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.l6_agentic_evidence_summary",
+            "schema_version": "v0",
+            "l6_8_agentic_evidence_discovery_trust_engine_defined": False,
+            "ready_for_l6_9_controlled_read_only_agentic_evidence_discovery_pilot_approval": False,
+            "ready_for_actual_network_observation_now": False,
+            "warning": "L6.8 agentic evidence discovery trust engine has not been generated yet.",
+        }
+
+    milestone_summary = milestone_summary or {}
+    evidence_needs = evidence_needs or {}
+    source_hypotheses = source_hypotheses or {}
+    source_value_matrix = source_value_matrix or {}
+    trust_judgment_matrix = trust_judgment_matrix or {}
+    voi_matrix = voi_matrix or {}
+    ranked_sources = ranked_sources or {}
+    conflict_contract = conflict_contract or {}
+    work_order_index = work_order_index or {}
+    rejected_sources = rejected_sources or {}
+    decision_matrix = decision_matrix or {}
+    no_action_receipt = no_action_receipt or {}
+    residual_delta = residual_delta or {}
+
+    def safety_flag(field: str) -> Any:
+        return readiness_summary.get(field, readiness_summary.get("safety_flags", {}).get(field))
+
+    def l6_8_flag(field: str) -> Any:
+        return readiness_summary.get(field, readiness_summary.get("l6_8_flags", {}).get(field))
+
+    return {
+        "schema_name": "ystar.console_read_model.generated.l6_agentic_evidence_summary",
+        "schema_version": "v0",
+        "milestone_id": milestone_summary.get("milestone_id", "L6.8"),
+        "milestone_name": milestone_summary.get(
+            "milestone_name", "Agentic External Evidence Discovery & Trust Judgment Engine v0"
+        ),
+        "l6_8_agentic_evidence_discovery_trust_engine_defined": milestone_summary.get(
+            "l6_8_agentic_evidence_discovery_trust_engine_defined",
+            readiness_summary.get("l6_8_agentic_evidence_discovery_and_trust_judgment_engine_complete"),
+        ),
+        "mode": milestone_summary.get("mode", "agentic_evidence_discovery_design_and_sandbox"),
+        "agentic_evidence_discovery_design_and_sandbox_only": l6_8_flag(
+            "l6_8_agentic_evidence_discovery_design_and_sandbox_only"
+        ),
+        "evidence_need_count": milestone_summary.get(
+            "evidence_need_count", evidence_needs.get("evidence_need_count")
+        ),
+        "source_hypothesis_count": milestone_summary.get(
+            "source_hypothesis_count", source_hypotheses.get("source_hypothesis_count")
+        ),
+        "ranked_source_hypothesis_count": milestone_summary.get(
+            "ranked_source_hypothesis_count", ranked_sources.get("ranked_count")
+        ),
+        "observation_work_order_count": milestone_summary.get(
+            "observation_work_order_count", work_order_index.get("work_order_count")
+        ),
+        "rejected_source_hypothesis_count": milestone_summary.get(
+            "rejected_source_hypothesis_count", rejected_sources.get("rejected_count")
+        ),
+        "autonomous_evidence_need_inference_authorized": milestone_summary.get(
+            "autonomous_evidence_need_inference_authorized", True
+        ),
+        "autonomous_source_hypothesis_generation_authorized": milestone_summary.get(
+            "autonomous_source_hypothesis_generation_authorized", True
+        ),
+        "autonomous_evidence_value_judgment_authorized": milestone_summary.get(
+            "autonomous_evidence_value_judgment_authorized", True
+        ),
+        "autonomous_trust_assessment_authorized": milestone_summary.get(
+            "autonomous_trust_assessment_authorized", True
+        ),
+        "observation_work_order_generation_authorized": milestone_summary.get(
+            "observation_work_order_generation_authorized", True
+        ),
+        "source_type_value_model_generated": bool(source_value_matrix),
+        "structural_trust_judgment_generated": bool(trust_judgment_matrix),
+        "value_of_information_model_generated": bool(voi_matrix),
+        "conflict_corroboration_model_generated": bool(conflict_contract),
+        "pre_observation_rejection_filter_generated": bool(rejected_sources),
+        "agentic_evidence_decision_gate_generated": bool(decision_matrix),
+        "no_action_receipts_generated": bool(no_action_receipt),
+        "strategic_residual_loop_generated": bool(residual_delta),
+        "real_external_observation_authorized": milestone_summary.get(
+            "real_external_observation_authorized", False
+        ),
+        "agent_external_fetch_authorized": milestone_summary.get(
+            "agent_external_fetch_authorized", False
+        ),
+        "network_authorized": milestone_summary.get("network_authorized", False),
+        "api_authorized": milestone_summary.get("api_authorized", False),
+        "scraping_authorized": milestone_summary.get("scraping_authorized", False),
+        "browser_fetch_authorized": milestone_summary.get("browser_fetch_authorized", False),
+        "search_authorized": milestone_summary.get("search_authorized", False),
+        "publication_authorized": milestone_summary.get("publication_authorized", False),
+        "outreach_authorized": milestone_summary.get("outreach_authorized", False),
+        "payment_authorized": milestone_summary.get("payment_authorized", False),
+        "revenue_execution_authorized": milestone_summary.get("revenue_execution_authorized", False),
+        "mcp_execution_authorized": milestone_summary.get("mcp_execution_authorized", False),
+        "live_behavior_authorized": milestone_summary.get("live_behavior_authorized", False),
+        "cieu_db_write_authorized": milestone_summary.get("cieu_db_write_authorized", False),
+        "canonical_update_authorized": milestone_summary.get("canonical_update_authorized", False),
+        "brain_writeback_authorized": milestone_summary.get("brain_writeback_authorized", False),
+        "memory_ingestion_authorized": milestone_summary.get("memory_ingestion_authorized", False),
+        "direct_y_star_mutation_authorized": milestone_summary.get(
+            "direct_y_star_mutation_authorized", False
+        ),
+        "real_approval_granted": milestone_summary.get("real_approval_granted", False),
+        "durable_real_approval_record_created": milestone_summary.get(
+            "durable_real_approval_record_created", False
+        ),
+        "future_controlled_read_only_observation_pilot_candidate_allowed": milestone_summary.get(
+            "future_controlled_read_only_observation_pilot_candidate_allowed", True
+        ),
+        "network_enabled": safety_flag("network_enabled"),
+        "api_enabled": safety_flag("api_enabled"),
+        "scraping_enabled": safety_flag("scraping_enabled"),
+        "browser_fetch_enabled": safety_flag("browser_fetch_enabled"),
+        "search_enabled": safety_flag("search_enabled"),
+        "external_action_enabled": safety_flag("external_action_enabled"),
+        "agent_external_fetch_enabled": safety_flag("agent_external_fetch_enabled"),
+        "publication_enabled": safety_flag("publication_enabled"),
+        "outreach_enabled": safety_flag("outreach_enabled"),
+        "payment_enabled": safety_flag("payment_enabled"),
+        "revenue_execution_enabled": safety_flag("revenue_execution_enabled"),
+        "mcp_tool_execution_enabled": safety_flag("mcp_tool_execution_enabled"),
+        "live_execution_enabled": safety_flag("live_execution_enabled"),
+        "cieu_db_write_enabled": safety_flag("cieu_db_write_enabled"),
+        "brain_writeback_enabled": safety_flag("brain_writeback_enabled"),
+        "memory_ingestion_enabled": safety_flag("memory_ingestion_enabled"),
+        "real_canonical_update_application_enabled": safety_flag(
+            "real_canonical_update_application_enabled"
+        ),
+        "real_y_star_direct_mutation_enabled": safety_flag("real_y_star_direct_mutation_enabled"),
+        "durable_approval_persistence_enabled": safety_flag("durable_approval_persistence_enabled"),
+        "semantic_truth_scoring_enabled": safety_flag("semantic_truth_scoring_enabled"),
+        "llm_confidence_as_authority_enabled": safety_flag("llm_confidence_as_authority_enabled"),
+        "raw_runtime_artifact_reading_enabled": safety_flag("raw_runtime_artifact_reading_enabled"),
+        "l6_8_agentic_evidence_discovery_design_and_sandbox_only": l6_8_flag(
+            "l6_8_agentic_evidence_discovery_design_and_sandbox_only"
+        ),
+        "l6_8_autonomous_evidence_need_inference_enabled": l6_8_flag(
+            "l6_8_autonomous_evidence_need_inference_enabled"
+        ),
+        "l6_8_autonomous_source_hypothesis_generation_enabled": l6_8_flag(
+            "l6_8_autonomous_source_hypothesis_generation_enabled"
+        ),
+        "l6_8_autonomous_evidence_value_judgment_enabled": l6_8_flag(
+            "l6_8_autonomous_evidence_value_judgment_enabled"
+        ),
+        "l6_8_autonomous_trust_assessment_enabled": l6_8_flag(
+            "l6_8_autonomous_trust_assessment_enabled"
+        ),
+        "l6_8_observation_work_order_generation_enabled": l6_8_flag(
+            "l6_8_observation_work_order_generation_enabled"
+        ),
+        "l6_8_real_external_observation_enabled": l6_8_flag(
+            "l6_8_real_external_observation_enabled"
+        ),
+        "l6_8_agent_external_fetch_enabled": l6_8_flag("l6_8_agent_external_fetch_enabled"),
+        "ready_for_l6_9_controlled_read_only_agentic_evidence_discovery_pilot_approval": readiness_summary.get(
+            "ready_for_l6_9_controlled_read_only_agentic_evidence_discovery_pilot_approval"
+        ),
+        "ready_for_actual_network_observation_now": readiness_summary.get(
+            "ready_for_actual_network_observation_now"
+        ),
+        "ready_for_autonomous_web_search_now": readiness_summary.get(
+            "ready_for_autonomous_web_search_now"
+        ),
+        "ready_for_scraping": readiness_summary.get("ready_for_scraping"),
+        "ready_for_publication": readiness_summary.get("ready_for_publication"),
+        "ready_for_outreach": readiness_summary.get("ready_for_outreach"),
+        "ready_for_payment": readiness_summary.get("ready_for_payment"),
+        "ready_for_revenue_execution": readiness_summary.get("ready_for_revenue_execution"),
+        "ready_for_mcp_execution": readiness_summary.get("ready_for_mcp_execution"),
+        "ready_for_canonical_update": readiness_summary.get("ready_for_canonical_update"),
+        "ready_for_brain_memory_writeback": readiness_summary.get("ready_for_brain_memory_writeback"),
+        "next_recommended_milestone": readiness_summary.get("next_recommended_milestone"),
+        "generated_milestone_summary": "l6_agentic_evidence_discovery_trust_engine/l6_8_summary.json",
+        "generated_evidence_needs": "evidence_need_inference_engine/inferred_evidence_needs.json",
+        "generated_source_hypotheses": "autonomous_source_hypothesis_generator/source_hypothesis_index.json",
+        "generated_source_value_model": "source_type_value_model/source_type_value_matrix.json",
+        "generated_trust_judgment": "evidence_trust_judgment_model/trust_judgment_matrix.json",
+        "generated_value_of_information": "evidence_value_of_information_model/evidence_need_voi_matrix.json",
+        "generated_source_ranking": "source_prioritization_and_ranking_engine/ranked_source_hypotheses.json",
+        "generated_work_orders": "observation_work_order_generator/observation_work_order_index.json",
+        "generated_rejection_filter": "pre_observation_rejection_filter/rejected_source_hypotheses.json",
+        "generated_decision_gate": "agentic_evidence_decision_gate/evidence_discovery_decision_matrix.json",
+        "generated_no_action_receipt": "agentic_evidence_no_action_receipts/no_agent_fetch_receipt.json",
+        "generated_readiness": "l6_agentic_evidence_readiness_report/l6_8_readiness_assessment.json",
+        "warning": (
+            "L6.8 is agentic evidence discovery design/sandbox only. It can infer "
+            "evidence needs, generate and rank source hypotheses, judge source "
+            "value and structural trust, and generate future work orders, but "
+            "real observation, agent fetch, URL open, network, search, scraping, "
+            "API calls, browser fetch, publication, outreach, payment, revenue, "
+            "MCP, live behavior, CIEU DB writes, canonical mutation, writeback, "
+            "and direct Y* mutation remain blocked."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -6023,6 +6255,62 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_integrated_pilot_readiness_report/l6_7_readiness_assessment.json",
         files_read,
     )
+    l6_agentic_evidence_milestone_summary = load_optional_json(
+        "l6_agentic_evidence_discovery_trust_engine/l6_8_summary.json",
+        files_read,
+    )
+    l6_agentic_evidence_needs = load_optional_json(
+        "evidence_need_inference_engine/inferred_evidence_needs.json",
+        files_read,
+    )
+    l6_agentic_source_hypothesis_index = load_optional_json(
+        "autonomous_source_hypothesis_generator/source_hypothesis_index.json",
+        files_read,
+    )
+    l6_agentic_source_value_matrix = load_optional_json(
+        "source_type_value_model/source_type_value_matrix.json",
+        files_read,
+    )
+    l6_agentic_trust_matrix = load_optional_json(
+        "evidence_trust_judgment_model/trust_judgment_matrix.json",
+        files_read,
+    )
+    l6_agentic_voi_matrix = load_optional_json(
+        "evidence_value_of_information_model/evidence_need_voi_matrix.json",
+        files_read,
+    )
+    l6_agentic_ranked_sources = load_optional_json(
+        "source_prioritization_and_ranking_engine/ranked_source_hypotheses.json",
+        files_read,
+    )
+    l6_agentic_conflict_contract = load_optional_json(
+        "evidence_conflict_and_corrobation_model/conflict_corroboration_contract.json",
+        files_read,
+    )
+    l6_agentic_work_order_index = load_optional_json(
+        "observation_work_order_generator/observation_work_order_index.json",
+        files_read,
+    )
+    l6_agentic_rejected_sources = load_optional_json(
+        "pre_observation_rejection_filter/rejected_source_hypotheses.json",
+        files_read,
+    )
+    l6_agentic_decision_matrix = load_optional_json(
+        "agentic_evidence_decision_gate/evidence_discovery_decision_matrix.json",
+        files_read,
+    )
+    l6_agentic_no_action_receipt = load_optional_json(
+        "agentic_evidence_no_action_receipts/no_agent_fetch_receipt.json",
+        files_read,
+    )
+    l6_agentic_residual_delta = load_optional_json(
+        "l6_agentic_evidence_strategic_residual_loop/l6_8_strategic_residual_delta.json",
+        files_read,
+    )
+    l6_agentic_readiness_summary = load_optional_json(
+        "l6_agentic_evidence_readiness_report/l6_8_readiness_assessment.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -6298,6 +6586,22 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         l6_integrated_pilot_residual_delta,
         l6_integrated_pilot_readiness_summary,
     )
+    l6_agentic_evidence_summary = build_l6_agentic_evidence_summary(
+        l6_agentic_evidence_milestone_summary,
+        l6_agentic_evidence_needs,
+        l6_agentic_source_hypothesis_index,
+        l6_agentic_source_value_matrix,
+        l6_agentic_trust_matrix,
+        l6_agentic_voi_matrix,
+        l6_agentic_ranked_sources,
+        l6_agentic_conflict_contract,
+        l6_agentic_work_order_index,
+        l6_agentic_rejected_sources,
+        l6_agentic_decision_matrix,
+        l6_agentic_no_action_receipt,
+        l6_agentic_residual_delta,
+        l6_agentic_readiness_summary,
+    )
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -6469,6 +6773,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_pilot_design_summary": l6_pilot_design_summary,
         "l6_pilot_approval_summary": l6_pilot_approval_summary,
         "l6_integrated_pilot_readiness_summary": l6_integrated_pilot_readiness_summary,
+        "l6_agentic_evidence_summary": l6_agentic_evidence_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -6709,6 +7014,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/l6_pilot_design_summary.json",
             "console_read_model/generated/l6_pilot_approval_summary.json",
             "console_read_model/generated/l6_integrated_pilot_readiness_summary.json",
+            "console_read_model/generated/l6_agentic_evidence_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -6866,6 +7172,16 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "search, scraping, API calls, browser fetch, publication, outreach,\n"
         "payment, revenue, MCP, live behavior, CIEU DB writes, canonical mutation,\n"
         "writeback, and direct Y* mutation remain blocked.\n\n"
+        "`l6_agentic_evidence_summary.json` is derived from the L6.8 agentic\n"
+        "external evidence discovery and trust judgment engine. It confirms\n"
+        "autonomous evidence need inference, source hypothesis generation,\n"
+        "source value modeling, structural trust judgment, value-of-information\n"
+        "ranking, conflict/corroboration planning, rejection filtering, future\n"
+        "observation work orders, no-action receipts, and readiness artifacts while\n"
+        "agent fetch, URL open, network, search, scraping, API calls, browser fetch,\n"
+        "publication, outreach, payment, revenue, MCP, live behavior, CIEU DB\n"
+        "writes, canonical mutation, writeback, and direct Y* mutation remain\n"
+        "blocked.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -6918,6 +7234,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/l6_pilot_design_summary.json", l6_pilot_design_summary, generated_files)
     write_json("console_read_model/generated/l6_pilot_approval_summary.json", l6_pilot_approval_summary, generated_files)
     write_json("console_read_model/generated/l6_integrated_pilot_readiness_summary.json", l6_integrated_pilot_readiness_summary, generated_files)
+    write_json("console_read_model/generated/l6_agentic_evidence_summary.json", l6_agentic_evidence_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -7013,6 +7330,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     l6_integrated_pilot_readiness = snapshot.get(
         "l6_integrated_pilot_readiness_summary", {}
     )
+    l6_agentic_evidence = snapshot.get("l6_agentic_evidence_summary", {})
     lines.extend(
         [
             "",
@@ -8193,6 +8511,48 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- ready_for_durable_real_approval_persistence_now: {l6_integrated_pilot_readiness.get('ready_for_durable_real_approval_persistence_now')}",
             f"- next_recommended_milestone: {l6_integrated_pilot_readiness.get('next_recommended_milestone')}",
             f"- Warning: {l6_integrated_pilot_readiness.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## L6.8 Agentic Evidence Discovery Trust Engine",
+            "",
+            f"- l6_8_agentic_evidence_discovery_trust_engine_defined: {l6_agentic_evidence.get('l6_8_agentic_evidence_discovery_trust_engine_defined')}",
+            f"- mode: {l6_agentic_evidence.get('mode')}",
+            f"- agentic_evidence_discovery_design_and_sandbox_only: {l6_agentic_evidence.get('agentic_evidence_discovery_design_and_sandbox_only')}",
+            f"- autonomous_evidence_need_inference_authorized: {l6_agentic_evidence.get('autonomous_evidence_need_inference_authorized')}",
+            f"- autonomous_source_hypothesis_generation_authorized: {l6_agentic_evidence.get('autonomous_source_hypothesis_generation_authorized')}",
+            f"- autonomous_evidence_value_judgment_authorized: {l6_agentic_evidence.get('autonomous_evidence_value_judgment_authorized')}",
+            f"- autonomous_trust_assessment_authorized: {l6_agentic_evidence.get('autonomous_trust_assessment_authorized')}",
+            f"- observation_work_order_generation_authorized: {l6_agentic_evidence.get('observation_work_order_generation_authorized')}",
+            f"- evidence_need_count: {l6_agentic_evidence.get('evidence_need_count')}",
+            f"- source_hypothesis_count: {l6_agentic_evidence.get('source_hypothesis_count')}",
+            f"- ranked_source_hypothesis_count: {l6_agentic_evidence.get('ranked_source_hypothesis_count')}",
+            f"- observation_work_order_count: {l6_agentic_evidence.get('observation_work_order_count')}",
+            f"- rejected_source_hypothesis_count: {l6_agentic_evidence.get('rejected_source_hypothesis_count')}",
+            f"- source_type_value_model_generated: {l6_agentic_evidence.get('source_type_value_model_generated')}",
+            f"- structural_trust_judgment_generated: {l6_agentic_evidence.get('structural_trust_judgment_generated')}",
+            f"- value_of_information_model_generated: {l6_agentic_evidence.get('value_of_information_model_generated')}",
+            f"- conflict_corroboration_model_generated: {l6_agentic_evidence.get('conflict_corroboration_model_generated')}",
+            f"- pre_observation_rejection_filter_generated: {l6_agentic_evidence.get('pre_observation_rejection_filter_generated')}",
+            f"- agentic_evidence_decision_gate_generated: {l6_agentic_evidence.get('agentic_evidence_decision_gate_generated')}",
+            f"- no_action_receipts_generated: {l6_agentic_evidence.get('no_action_receipts_generated')}",
+            f"- real_external_observation_authorized: {l6_agentic_evidence.get('real_external_observation_authorized')}",
+            f"- agent_external_fetch_authorized: {l6_agentic_evidence.get('agent_external_fetch_authorized')}",
+            f"- network_enabled: {l6_agentic_evidence.get('network_enabled')}",
+            f"- search_enabled: {l6_agentic_evidence.get('search_enabled')}",
+            f"- scraping_enabled: {l6_agentic_evidence.get('scraping_enabled')}",
+            f"- browser_fetch_enabled: {l6_agentic_evidence.get('browser_fetch_enabled')}",
+            f"- publication_enabled: {l6_agentic_evidence.get('publication_enabled')}",
+            f"- outreach_enabled: {l6_agentic_evidence.get('outreach_enabled')}",
+            f"- payment_enabled: {l6_agentic_evidence.get('payment_enabled')}",
+            f"- revenue_execution_enabled: {l6_agentic_evidence.get('revenue_execution_enabled')}",
+            f"- ready_for_l6_9_controlled_read_only_agentic_evidence_discovery_pilot_approval: {l6_agentic_evidence.get('ready_for_l6_9_controlled_read_only_agentic_evidence_discovery_pilot_approval')}",
+            f"- ready_for_actual_network_observation_now: {l6_agentic_evidence.get('ready_for_actual_network_observation_now')}",
+            f"- ready_for_autonomous_web_search_now: {l6_agentic_evidence.get('ready_for_autonomous_web_search_now')}",
+            f"- next_recommended_milestone: {l6_agentic_evidence.get('next_recommended_milestone')}",
+            f"- Warning: {l6_agentic_evidence.get('warning')}",
         ]
     )
     lines.extend(

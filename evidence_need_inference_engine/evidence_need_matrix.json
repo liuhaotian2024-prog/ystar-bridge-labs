@@ -1,0 +1,197 @@
+{
+  "schema_version": "v0",
+  "evidence_needs": [
+    {
+      "evidence_need_id": "l6_8_evidence_need_001",
+      "linked_l6_artifact": "selected_mvp_artifact_cases/selected_case_index.json",
+      "source_milestones": [
+        "L6.0",
+        "L6.1",
+        "L6.7"
+      ],
+      "uncertainty_or_gap": "payer or beneficiary clarity remains unverified outside the internal MVP artifact cases",
+      "decision_relevance": "Determines whether future artifact refinement should focus on buyer, reviewer, learner, or operator evidence.",
+      "expected_evidence_type": "public demand or beneficiary language",
+      "freshness_requirement": "recent_or_date_declared",
+      "trust_requirement": "medium_trust_candidate_secondary_source_or_better",
+      "consequence_if_missing": "Future work orders remain too generic to support externalization review.",
+      "whether_real_observation_required_in_future": true,
+      "current_execution_authorized": false
+    },
+    {
+      "evidence_need_id": "l6_8_evidence_need_002",
+      "linked_l6_artifact": "open_value_hypothesis_generator/generated_value_hypotheses.json",
+      "source_milestones": [
+        "L6.0"
+      ],
+      "uncertainty_or_gap": "recipient archetype assumptions need external language before future publication or outreach review",
+      "decision_relevance": "Clarifies whether generated value hypotheses map to builders, governance reviewers, operators, learners, sponsors, or future customers.",
+      "expected_evidence_type": "recipient terminology and need pattern evidence",
+      "freshness_requirement": "date_available_or_date_missing_marker",
+      "trust_requirement": "reviewable_source_trace_required",
+      "consequence_if_missing": "The system risks overgeneralizing recipient archetypes.",
+      "whether_real_observation_required_in_future": true,
+      "current_execution_authorized": false
+    },
+    {
+      "evidence_need_id": "l6_8_evidence_need_003",
+      "linked_l6_artifact": "selected_mvp_artifact_cases/selected_case_index.json",
+      "source_milestones": [
+        "L6.1",
+        "L6.3"
+      ],
+      "uncertainty_or_gap": "acceptance criteria for internal MVP proof artifacts need outside-facing comparator evidence",
+      "decision_relevance": "Helps decide whether a proof artifact is reviewable enough for a future controlled observation pilot.",
+      "expected_evidence_type": "public checklist, evaluation rubric, or method comparison",
+      "freshness_requirement": "freshness_class_declared",
+      "trust_requirement": "high_trust_candidate_primary_source_or_independent_secondary_source",
+      "consequence_if_missing": "MVP proof criteria stay internally plausible but externally uncalibrated.",
+      "whether_real_observation_required_in_future": true,
+      "current_execution_authorized": false
+    },
+    {
+      "evidence_need_id": "l6_8_evidence_need_004",
+      "linked_l6_artifact": "l6_governed_external_observation_boundary/l6_2_summary.json",
+      "source_milestones": [
+        "L6.2",
+        "L6.4"
+      ],
+      "uncertainty_or_gap": "policy or platform constraints must be known before any future read-only pilot is approved",
+      "decision_relevance": "Prevents future work orders from pointing to surfaces that require login, interaction, automation, or disallowed use.",
+      "expected_evidence_type": "official policy or platform documentation",
+      "freshness_requirement": "current_policy_date_or_date_missing_marker",
+      "trust_requirement": "high_trust_candidate_primary_source",
+      "consequence_if_missing": "Observation approval packets cannot prove source-surface safety.",
+      "whether_real_observation_required_in_future": true,
+      "current_execution_authorized": false
+    },
+    {
+      "evidence_need_id": "l6_8_evidence_need_005",
+      "linked_l6_artifact": "controlled_pre_observation_packets/pre_observation_packet_index.json",
+      "source_milestones": [
+        "L6.3",
+        "L6.5"
+      ],
+      "uncertainty_or_gap": "distribution friction and source accessibility are untested on real surfaces",
+      "decision_relevance": "Ranks future work orders by manual read-only feasibility and abort risk.",
+      "expected_evidence_type": "public accessibility and source navigation constraints",
+      "freshness_requirement": "date_declared_or_review_required",
+      "trust_requirement": "source_trace_present",
+      "consequence_if_missing": "Future operators may encounter interaction requirements too late.",
+      "whether_real_observation_required_in_future": true,
+      "current_execution_authorized": false
+    },
+    {
+      "evidence_need_id": "l6_8_evidence_need_006",
+      "linked_l6_artifact": "pilot_candidate_selector/selected_pilot_candidates.json",
+      "source_milestones": [
+        "L6.5"
+      ],
+      "uncertainty_or_gap": "competitive pressure and adjacent alternatives remain unknown",
+      "decision_relevance": "Supports future artifact claim boundaries without mutating strategy canonically.",
+      "expected_evidence_type": "public comparison, repository, documentation, or independent analysis",
+      "freshness_requirement": "recent_or_staleness_disclosed",
+      "trust_requirement": "medium_trust_candidate_secondary_source_or_corrobation_required",
+      "consequence_if_missing": "Artifacts may overclaim uniqueness or understate existing alternatives.",
+      "whether_real_observation_required_in_future": true,
+      "current_execution_authorized": false
+    },
+    {
+      "evidence_need_id": "l6_8_evidence_need_007",
+      "linked_l6_artifact": "pilot_approval_packet_assembler/approval_packet_index.json",
+      "source_milestones": [
+        "L6.6"
+      ],
+      "uncertainty_or_gap": "approval packets need source credibility requirements before any future real observation can be reviewed",
+      "decision_relevance": "Defines what source provenance, trace, freshness, and reviewability must appear in future evidence packets.",
+      "expected_evidence_type": "source credibility and provenance indicators",
+      "freshness_requirement": "source_date_available_or_date_missing_marker",
+      "trust_requirement": "candidate_trust_tier_assigned_pre_observation",
+      "consequence_if_missing": "Approval packets cannot distinguish high-value sources from weak evidence surfaces.",
+      "whether_real_observation_required_in_future": true,
+      "current_execution_authorized": false
+    },
+    {
+      "evidence_need_id": "l6_8_evidence_need_008",
+      "linked_l6_artifact": "pilot_run_package_assembler/pilot_run_package_index.json",
+      "source_milestones": [
+        "L6.7"
+      ],
+      "uncertainty_or_gap": "contradiction and corroboration requirements are not yet attached to pilot run packages",
+      "decision_relevance": "Prevents single-source overconfidence and defines when evidence must be quarantined or corroborated.",
+      "expected_evidence_type": "conflicting or independently corroborating source trace",
+      "freshness_requirement": "freshness_check_required_if_conflict_detected",
+      "trust_requirement": "conflict_check_required",
+      "consequence_if_missing": "Future work orders may accept one weak source as sufficient.",
+      "whether_real_observation_required_in_future": true,
+      "current_execution_authorized": false
+    }
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "external_observation_execution_enabled": false,
+    "agent_external_fetch_enabled": false,
+    "network_enabled": false,
+    "api_enabled": false,
+    "scraping_enabled": false,
+    "browser_fetch_enabled": false,
+    "search_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "cieu_db_write_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "durable_real_approval_record_creation_enabled": false,
+    "real_approval_grant_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "llm_confidence_as_authority_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "revenue_execution_enabled": false,
+    "external_market_scan_enabled": false,
+    "public_content_publication_enabled": false,
+    "publication_enabled": false,
+    "outreach_enabled": false,
+    "payment_enabled": false
+  },
+  "l6_8_flags": {
+    "l6_8_agentic_evidence_discovery_design_and_sandbox_only": true,
+    "l6_8_autonomous_evidence_need_inference_enabled": true,
+    "l6_8_autonomous_source_hypothesis_generation_enabled": true,
+    "l6_8_autonomous_evidence_value_judgment_enabled": true,
+    "l6_8_autonomous_trust_assessment_enabled": true,
+    "l6_8_observation_work_order_generation_enabled": true,
+    "l6_8_real_external_observation_enabled": false,
+    "l6_8_agent_external_fetch_enabled": false,
+    "l6_8_network_enabled": false,
+    "l6_8_search_enabled": false,
+    "l6_8_scraping_enabled": false,
+    "l6_8_browser_fetch_enabled": false,
+    "l6_8_publication_enabled": false,
+    "l6_8_outreach_enabled": false,
+    "l6_8_payment_enabled": false,
+    "l6_8_revenue_execution_enabled": false,
+    "l6_8_mcp_execution_enabled": false,
+    "l6_8_cieu_db_write_enabled": false,
+    "l6_8_canonical_update_enabled": false,
+    "l6_8_brain_writeback_enabled": false,
+    "l6_8_memory_ingestion_enabled": false,
+    "l6_8_direct_y_star_mutation_enabled": false
+  }
+}

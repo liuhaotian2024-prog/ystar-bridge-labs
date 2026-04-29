@@ -179,5 +179,16 @@ search, scraping, API calls, browser fetch, publication, outreach,
 payment, revenue, MCP, live behavior, CIEU DB writes, canonical mutation,
 writeback, and direct Y* mutation remain blocked.
 
+`l6_agentic_evidence_summary.json` is derived from the L6.8 agentic
+external evidence discovery and trust judgment engine. It confirms
+autonomous evidence need inference, source hypothesis generation,
+source value modeling, structural trust judgment, value-of-information
+ranking, conflict/corroboration planning, rejection filtering, future
+observation work orders, no-action receipts, and readiness artifacts while
+agent fetch, URL open, network, search, scraping, API calls, browser fetch,
+publication, outreach, payment, revenue, MCP, live behavior, CIEU DB
+writes, canonical mutation, writeback, and direct Y* mutation remain
+blocked.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.
