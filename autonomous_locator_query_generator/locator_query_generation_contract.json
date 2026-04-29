@@ -1,0 +1,18 @@
+{
+  "schema_version": "v0",
+  "contract_id": "l6_10x_locator_query_generation_contract",
+  "derivation_fields": [
+    "evidence_need",
+    "source_type",
+    "source_function",
+    "observation_question",
+    "expected_evidence_type",
+    "trust_requirement",
+    "freshness_requirement"
+  ],
+  "query_purpose": "locator_discovery_only",
+  "max_queries": 1,
+  "max_results": 1,
+  "no_snippet_fact_use": true,
+  "no_fact_inference_from_search_result": true
+}

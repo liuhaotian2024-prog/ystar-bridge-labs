@@ -1,0 +1,9 @@
+{
+  "schema_version": "v0",
+  "review_packet_id": "l6_10x_autonomous_tiny_post_observation_review_packet",
+  "linked_evidence_packet_id": "l6_10x_autonomous_tiny_evidence_packet",
+  "current_decision": "review_pending_no_live_evidence",
+  "approve_for_external_use": false,
+  "approve_for_artifact_refinement_candidate": false,
+  "applied": false
+}

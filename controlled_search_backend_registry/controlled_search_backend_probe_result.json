@@ -1,0 +1,15 @@
+{
+  "schema_version": "v0",
+  "probe_id": "l6_10x_controlled_search_backend_probe",
+  "probe_mode": "local_config_and_environment_gate_only",
+  "network_used": false,
+  "browser_used": false,
+  "mcp_used": false,
+  "backend_explicitly_configured": false,
+  "configured_backend_id": null,
+  "backend_available": false,
+  "backend_mode": "disabled",
+  "error_code": "controlled_search_backend_not_configured",
+  "blocked_reason": "controlled_search_backend_not_configured",
+  "manual_url_request_fallback_allowed": false
+}

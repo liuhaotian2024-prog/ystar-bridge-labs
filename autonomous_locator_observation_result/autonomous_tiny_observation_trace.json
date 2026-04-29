@@ -1,0 +1,19 @@
+{
+  "schema_version": "v0",
+  "trace_id": "l6_10x_autonomous_tiny_observation_trace",
+  "selected_work_order_id": "l6_10x_selected_work_order_001",
+  "source_locator": null,
+  "observation_executed": false,
+  "reason": "no_locator_candidate",
+  "eligible_locator_available": false,
+  "read_only": true,
+  "network_used": false,
+  "external_reads_count": 0,
+  "pages_read_count": 0,
+  "search_query_count": 0,
+  "login_encountered": false,
+  "payment_encountered": false,
+  "form_encountered": false,
+  "private_data_encountered": false,
+  "raw_content_storage_policy": "no_raw_page_dump"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "v0",
+  "policy_id": "l6_10x_controlled_search_resolver_policy",
+  "max_queries": 1,
+  "max_results": 1,
+  "max_locator_outputs": 1,
+  "snippets_used_as_evidence": false,
+  "facts_inferred_from_search_result": false,
+  "manual_url_request_allowed": false,
+  "broad_search_allowed": false,
+  "repeated_search_loop_allowed": false,
+  "crawling_allowed": false,
+  "scraping_allowed": false,
+  "browser_automation_allowed": false
+}

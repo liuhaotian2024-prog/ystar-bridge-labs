@@ -162,6 +162,30 @@
       "asset_id": "ffa-0087",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "explicit_controlled_search_resolver/explicit_search_resolver_runtime.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar"
+      ],
+      "bounded_snippet": "import json import os from pathlib import Path from typing import Any ENABLE_ENV_VAR = \"YSTAR_ENABLE_CONTROLLED_LOCATOR_SEARCH\" @dataclass(frozen=True) class ExplicitSearchResolutionRequest: request_id: str linked_work_order_id: str sour...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "deep_xt_observation"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 2,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 1,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0088",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/check_wheel_contents.py",
       "file_type": "py",
       "matched_terms": [
@@ -183,7 +207,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0088",
+      "asset_id": "ffa-0089",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/conversation_replay.py",
@@ -207,7 +231,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0089",
+      "asset_id": "ffa-0090",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/k9.py",
@@ -231,7 +255,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0090",
+      "asset_id": "ffa-0091",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/k9_phase1.py",
@@ -257,7 +281,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0091",
+      "asset_id": "ffa-0092",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/k9_watch.py",
@@ -281,7 +305,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0092",
+      "asset_id": "ffa-0093",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/labs_atlas_query.py",
@@ -305,7 +329,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0093",
+      "asset_id": "ffa-0094",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/mac_command.py",
@@ -329,7 +353,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0094",
+      "asset_id": "ffa-0095",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/telegram_bridge.py",
@@ -353,7 +377,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0095",
+      "asset_id": "ffa-0096",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/verify_twin_evolution.py",
@@ -377,7 +401,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0096",
+      "asset_id": "ffa-0097",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/wisdom_search.py",
@@ -400,7 +424,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0097",
+      "asset_id": "ffa-0098",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/post_ep01.py",
@@ -427,7 +451,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0098",
+      "asset_id": "ffa-0099",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/post_episodes.py",
@@ -454,7 +478,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0099",
+      "asset_id": "ffa-0100",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/redteam_secretary.py",
@@ -469,33 +493,6 @@
         "session_y_star_projection",
         "governance_validation",
         "review_gated_learning",
-        "brain_memory_policy_update"
-      ],
-      "mission_value_score": 3,
-      "evidence_strength_score": 2,
-      "implementation_readiness_score": 2,
-      "architecture_alignment_score": 5,
-      "safety_risk_score": 2,
-      "merge_decision": "do_not_absorb",
-      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0100",
-      "repo_name": "ystar-company",
-      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
-      "relative_path": "scripts/twin_report.py",
-      "file_type": "py",
-      "matched_terms": [
-        "ystar",
-        "YStar"
-      ],
-      "bounded_snippet": "esolve().parent.parent KNOWLEDGE_ROOT = REPO_ROOT / \"knowledge\" MEMORY_DB = REPO_ROOT / \".ystar_memory[database-suffix]\" CIEU_DB = REPO_ROOT / \".ystar_cieu[database-suffix]\" GEMMA_LOG = KNOWLEDGE_ROOT / \"ceo\" / \"gaps\" / \"gemma_sessions[l...",
-      "asset_kind": "obsolete_runtime",
-      "current_architecture_mapping": [
-        "session_y_star_projection",
-        "task_y_star_projection",
-        "governance_validation",
         "brain_memory_policy_update"
       ],
       "mission_value_score": 3,

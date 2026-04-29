@@ -1,0 +1,17 @@
+{
+  "schema_version": "v0",
+  "trace_id": "l6_10x_locator_discovery_trace",
+  "selected_work_order_id": "l6_10x_selected_work_order_001",
+  "backend_mode": "disabled",
+  "backend_explicitly_configured": false,
+  "controlled_search_executed": false,
+  "search_query_count": 0,
+  "search_results_considered": 0,
+  "external_reads_count": 0,
+  "concrete_locator_resolved": false,
+  "resolved_locator": null,
+  "snippets_used_as_evidence": false,
+  "facts_inferred_from_search_result": false,
+  "blocked_reason": "controlled_search_backend_not_configured",
+  "error_code": "controlled_search_backend_not_configured"
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "trace_id": "l6_10x_query_generation_trace",
+  "selected_work_order_id": "l6_10x_selected_work_order_001",
+  "fields_used": [
+    "source_function",
+    "source_type",
+    "expected_evidence_type",
+    "observation_question"
+  ],
+  "query_count_generated": 1,
+  "manual_url_requested": false
+}

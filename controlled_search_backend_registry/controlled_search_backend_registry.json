@@ -1,0 +1,51 @@
+{
+  "schema_version": "v0",
+  "registry_id": "l6_10x_controlled_search_backend_registry",
+  "supported_backend_profiles": [
+    {
+      "backend_id": "brave_search_api",
+      "enabled": false,
+      "requires_explicit_enable_flag": true,
+      "search_use": "locator_candidate_only",
+      "snippets_are_evidence": false
+    },
+    {
+      "backend_id": "bing_search_api",
+      "enabled": false,
+      "requires_explicit_enable_flag": true,
+      "search_use": "locator_candidate_only",
+      "snippets_are_evidence": false
+    },
+    {
+      "backend_id": "tavily_search_api",
+      "enabled": false,
+      "requires_explicit_enable_flag": true,
+      "search_use": "locator_candidate_only",
+      "snippets_are_evidence": false
+    },
+    {
+      "backend_id": "serpapi",
+      "enabled": false,
+      "requires_explicit_enable_flag": true,
+      "search_use": "locator_candidate_only",
+      "snippets_are_evidence": false
+    },
+    {
+      "backend_id": "openclaw_read_only_search_adapter",
+      "enabled": false,
+      "requires_explicit_enable_flag": true,
+      "search_use": "locator_candidate_only",
+      "snippets_are_evidence": false
+    },
+    {
+      "backend_id": "future_governed_mcp_search_adapter",
+      "enabled": false,
+      "requires_explicit_enable_flag": true,
+      "search_use": "locator_candidate_only",
+      "snippets_are_evidence": false
+    }
+  ],
+  "default_backend_mode": "disabled",
+  "enabled_backend_count": 0,
+  "manual_url_request_fallback_allowed": false
+}
