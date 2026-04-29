@@ -1,0 +1,14 @@
+{
+  "schema_version": "v0",
+  "controlled_search_enabled": false,
+  "backend_id": null,
+  "backend_available": false,
+  "max_queries": 5,
+  "max_results": 20,
+  "result_candidates": [],
+  "external_network_read_used": false,
+  "enablement_env_vars": [
+    "YSTAR_CONTROLLED_SEARCH_ENABLED",
+    "YSTAR_CONTROLLED_SEARCH_BACKEND"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": "v0",
+  "max_crawl_depth": 1,
+  "max_pages_per_domain": 3,
+  "no_login": true,
+  "no_payment": true,
+  "no_forms": true,
+  "no_private_sensitive_data": true
+}

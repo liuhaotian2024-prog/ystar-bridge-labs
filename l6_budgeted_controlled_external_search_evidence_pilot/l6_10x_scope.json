@@ -1,0 +1,5 @@
+{
+  "schema_version": "v0",
+  "scope": "budgeted search, bounded crawl, corroboration",
+  "manual_url_request_allowed": false
+}

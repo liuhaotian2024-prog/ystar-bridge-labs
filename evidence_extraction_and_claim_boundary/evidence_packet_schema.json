@@ -1,0 +1,27 @@
+{
+  "schema_version": "v0",
+  "required_fields": [
+    "source_locator",
+    "source_title",
+    "source_owner_or_publisher",
+    "observed_timestamp",
+    "source_date_or_date_missing",
+    "freshness_class",
+    "captured_bounded_claims",
+    "unsupported_claims",
+    "missing_context",
+    "claim_boundary",
+    "citation_trace",
+    "review_status"
+  ],
+  "downstream_action_fields_must_be_false": [
+    "publication_taken",
+    "outreach_taken",
+    "payment_taken",
+    "revenue_action_taken",
+    "mcp_execution_taken",
+    "canonical_update_taken",
+    "brain_memory_writeback_taken",
+    "direct_y_star_mutation_taken"
+  ]
+}

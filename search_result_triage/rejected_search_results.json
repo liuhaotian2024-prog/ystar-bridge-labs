@@ -1,0 +1,5 @@
+{
+  "schema_version": "v0",
+  "rejected": [],
+  "blocked_reason": "controlled_search_backend_required"
+}

@@ -6774,6 +6774,150 @@ def main() -> int:
             ):
                 report.fail(f"generated L6.10W summary exceeds runtime limit for {count_field}")
 
+    l6_10x_budgeted_controlled_search_evidence = generated_json.get(
+        "console_read_model/generated/l6_10x_budgeted_controlled_search_evidence_summary.json"
+    )
+    if l6_10x_budgeted_controlled_search_evidence:
+        for field in [
+            "l6_10x_budgeted_controlled_external_search_evidence_pilot_complete",
+            "mode",
+            "selected_work_order_id",
+            "query_count",
+            "search_backend_mode",
+            "backend_missing",
+            "search_executed",
+            "search_results_considered",
+            "pages_opened",
+            "domains_touched",
+            "crawl_depth_used",
+            "evidence_packets_generated",
+            "conflicts_found",
+            "page_read_backend_missing",
+            "manual_url_request_avoided",
+            "ask_user_for_url_authorized",
+            "user_manual_url_provision_required",
+            "controlled_external_search_authorized",
+            "bounded_public_page_read_authorized",
+            "bounded_crawl_authorized",
+            "evidence_corroboration_authorized",
+            "search_snippets_as_evidence_authorized",
+            "llm_confidence_as_truth_authority_authorized",
+            "semantic_truth_scoring_authorized",
+            "remaining_blocker",
+            "next_step",
+            "generated_milestone_summary",
+            "generated_query_plan",
+            "generated_search_trace",
+            "generated_crawl_trace",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in l6_10x_budgeted_controlled_search_evidence:
+                report.pass_(f"generated L6.10X budgeted search field present: {field}")
+            else:
+                report.fail(f"generated L6.10X budgeted search missing field: {field}")
+        if (
+            l6_10x_budgeted_controlled_search_evidence.get("mode")
+            != "budgeted_controlled_external_search_evidence_pilot"
+        ):
+            report.fail("generated L6.10X summary must be budgeted controlled external search mode")
+        for field in [
+            "l6_10x_budgeted_controlled_external_search_evidence_pilot_complete",
+            "controlled_external_search_authorized",
+            "bounded_public_page_read_authorized",
+            "bounded_crawl_authorized",
+            "evidence_corroboration_authorized",
+            "manual_url_request_avoided",
+            "artifact_refinement_candidate_generation_authorized",
+            "rate_limit_required",
+            "stop_on_login_or_payment_or_form",
+            "stop_on_private_or_sensitive_data",
+            "stop_on_scope_drift",
+        ]:
+            if l6_10x_budgeted_controlled_search_evidence.get(field) is not True:
+                report.fail(f"generated L6.10X summary must keep {field}=true")
+        for field in [
+            "ask_user_for_url_authorized",
+            "user_manual_url_provision_required",
+            "login_authorized",
+            "account_creation_authorized",
+            "contact_authorized",
+            "payment_authorized",
+            "form_submission_authorized",
+            "posting_commenting_messaging_authorized",
+            "publication_authorized",
+            "outreach_authorized",
+            "revenue_execution_authorized",
+            "mcp_execution_authorized",
+            "live_behavior_authorized",
+            "cieu_db_write_authorized",
+            "canonical_update_authorized",
+            "brain_writeback_authorized",
+            "memory_ingestion_authorized",
+            "direct_y_star_mutation_authorized",
+            "artifact_refinement_application_authorized",
+            "search_snippets_as_evidence_authorized",
+            "llm_confidence_as_truth_authority_authorized",
+            "semantic_truth_scoring_authorized",
+            "private_sensitive_data_collection_authorized",
+            "high_volume_crawling_authorized",
+            "unbounded_scraping_authorized",
+        ]:
+            if l6_10x_budgeted_controlled_search_evidence.get(field) is not False:
+                report.fail(f"generated L6.10X summary must keep {field}=false")
+        exact_limits = {
+            "max_selected_work_orders": 1,
+            "max_queries": 5,
+            "max_search_results_considered": 20,
+            "max_pages_opened": 8,
+            "max_domains": 5,
+            "max_pages_per_domain": 3,
+            "max_crawl_depth": 1,
+            "max_total_external_reads": 12,
+            "max_evidence_packets": 8,
+        }
+        for field, expected_value in exact_limits.items():
+            if l6_10x_budgeted_controlled_search_evidence.get(field) != expected_value:
+                report.fail(f"generated L6.10X summary must keep {field}={expected_value}")
+        count_limits = {
+            "selected_work_order_count": l6_10x_budgeted_controlled_search_evidence.get(
+                "max_selected_work_orders"
+            ),
+            "query_count": l6_10x_budgeted_controlled_search_evidence.get("max_queries"),
+            "search_results_considered": l6_10x_budgeted_controlled_search_evidence.get(
+                "max_search_results_considered"
+            ),
+            "pages_opened": l6_10x_budgeted_controlled_search_evidence.get(
+                "max_pages_opened"
+            ),
+            "domains_touched": l6_10x_budgeted_controlled_search_evidence.get(
+                "max_domains"
+            ),
+            "crawl_depth_used": l6_10x_budgeted_controlled_search_evidence.get(
+                "max_crawl_depth"
+            ),
+            "evidence_packets_generated": l6_10x_budgeted_controlled_search_evidence.get(
+                "max_evidence_packets"
+            ),
+        }
+        for count_field, limit in count_limits.items():
+            if (
+                limit is not None
+                and l6_10x_budgeted_controlled_search_evidence.get(count_field, 0) > limit
+            ):
+                report.fail(f"generated L6.10X summary exceeds runtime limit for {count_field}")
+        query_count = l6_10x_budgeted_controlled_search_evidence.get("query_count", 0)
+        if query_count < 1:
+            report.fail("generated L6.10X summary must plan at least one query")
+        if l6_10x_budgeted_controlled_search_evidence.get("search_backend_mode") == "disabled":
+            if l6_10x_budgeted_controlled_search_evidence.get("search_executed") is not False:
+                report.fail("generated L6.10X disabled backend must not execute search")
+            if (
+                l6_10x_budgeted_controlled_search_evidence.get("remaining_blocker")
+                != "controlled_search_backend_required"
+            ):
+                report.fail("generated L6.10X disabled backend must name controlled_search_backend_required")
+
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:
         for source in manifest.get("source_files", []):

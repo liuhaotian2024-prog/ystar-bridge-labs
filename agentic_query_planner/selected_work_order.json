@@ -1,0 +1,18 @@
+{
+  "schema_version": "v0",
+  "selected_work_order_id": "l6_10x_selected_work_order_001",
+  "source_selected_work_order_id": "l6_10w_selected_work_order_001",
+  "linked_l6_10w_selected_work_order_id": "l6_10w_selected_work_order_001",
+  "linked_l6_10v_selected_work_order_id": "l6_10v_selected_work_order_001",
+  "linked_l6_8_work_order_id": "l6_8_observation_work_order_001",
+  "linked_evidence_need_id": "l6_8_evidence_need_001",
+  "linked_source_hypothesis_id": "l6_8_source_hypothesis_001",
+  "linked_l6_artifact": "selected_mvp_artifact_cases/selected_case_index.json",
+  "evidence_need": "public demand or beneficiary language",
+  "source_type": "official policy or program source",
+  "source_function": "official policy or program source",
+  "expected_evidence_type": "public demand or beneficiary language",
+  "observation_question": "What future read-only evidence would reduce: payer or beneficiary clarity remains unverified outside the internal MVP artifact cases?",
+  "claim_boundary": "internal review claim only; no publication, outreach, payment, revenue, or strategy claim",
+  "selected_count": 1
+}

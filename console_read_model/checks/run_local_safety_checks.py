@@ -2534,6 +2534,52 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "l6_10w_read_model/l6_10w_readiness_assessment.json"],
     ),
     Check(
+        "Compile L6.10X budgeted controlled external search builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "l6_budgeted_controlled_external_search_evidence_pilot/tools/build_l6_budgeted_controlled_external_search_evidence_pilot.py",
+        ],
+    ),
+    Check(
+        "Compile L6.10X controlled search runtime",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "controlled_search_backend_runtime/controlled_search_runtime.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: l6_10x_budgeted_controlled_search_evidence_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_10x_budgeted_controlled_search_evidence_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10x_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_budgeted_controlled_external_search_evidence_pilot/l6_10x_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10x_generated_query_plan.json",
+        ["python3", "-m", "json.tool", "agentic_query_planner/generated_query_plan.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10x_controlled_search_trace.json",
+        ["python3", "-m", "json.tool", "controlled_search_backend_runtime/controlled_search_trace.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10x_bounded_crawl_trace.json",
+        ["python3", "-m", "json.tool", "bounded_crawl_runtime/bounded_crawl_trace.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10x_evidence_packet_index.json",
+        ["python3", "-m", "json.tool", "evidence_extraction_and_claim_boundary/evidence_packet_index.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10x_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "l6_10x_read_model/l6_10x_readiness_assessment.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -2828,6 +2874,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: reviewed-seed-locator-injection-tiny-retry",
         ["python3", "console_read_model/cli/team_console.py", "reviewed-seed-locator-injection-tiny-retry"],
+    ),
+    Check(
+        "CLI smoke: budgeted-controlled-external-search-evidence-pilot",
+        ["python3", "console_read_model/cli/team_console.py", "budgeted-controlled-external-search-evidence-pilot"],
     ),
     Check(
         "CLI smoke: sources",

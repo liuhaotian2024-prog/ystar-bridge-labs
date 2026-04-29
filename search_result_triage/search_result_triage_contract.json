@@ -1,0 +1,16 @@
+{
+  "schema_version": "v0",
+  "triage_dimensions": [
+    "expected primary source",
+    "official/provenance strength",
+    "source specificity",
+    "freshness likelihood",
+    "relevance",
+    "domain diversity",
+    "risk class",
+    "login/payment/form likelihood",
+    "source type",
+    "corroboration value",
+    "conflict discovery value"
+  ]
+}

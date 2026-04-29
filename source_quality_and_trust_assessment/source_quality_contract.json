@@ -1,0 +1,20 @@
+{
+  "schema_version": "v0",
+  "dimensions": [
+    "primary_vs_secondary",
+    "official_provenance_status",
+    "source_owner",
+    "source_date",
+    "freshness_class",
+    "claim_specificity",
+    "independence",
+    "reviewability",
+    "conflict_potential",
+    "privacy_ip_cleanliness"
+  ],
+  "prohibited_authorities": [
+    "semantic_truth_score",
+    "llm_confidence"
+  ],
+  "llm_confidence_as_authority": false
+}

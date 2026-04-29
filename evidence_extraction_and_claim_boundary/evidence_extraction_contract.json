@@ -1,0 +1,6 @@
+{
+  "schema_version": "v0",
+  "max_evidence_packets": 8,
+  "review_status_required": "pending_review",
+  "downstream_actions_false": true
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "crawl_executed": false,
+  "opened_pages_count": 0,
+  "domains_touched": 0,
+  "crawl_depth_used": 0,
+  "blocked_reason": "controlled_search_backend_required"
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "blockers": [
+    {
+      "blocker_code": "controlled_search_backend_required",
+      "next_step": "configure_controlled_search_backend"
+    },
+    {
+      "blocker_code": "controlled_public_page_read_adapter_required",
+      "next_step": "configure_controlled_public_page_read_adapter"
+    }
+  ]
+}

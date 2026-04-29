@@ -1,0 +1,12 @@
+{
+  "schema_version": "v0",
+  "min_queries": 1,
+  "max_queries": 5,
+  "categories_required": [
+    "primary_source_query",
+    "official_source_query",
+    "corroboration_query",
+    "conflict_check_query",
+    "freshness_check_query"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "schema_version": "v0",
+  "review_packets": [
+    "evidence_review_and_refinement_candidates/evidence_review_packet.json"
+  ]
+}

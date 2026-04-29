@@ -1,0 +1,5 @@
+{
+  "schema_version": "v0",
+  "on_budget_exhaustion": "stop_and_report_residual",
+  "no_retry_loop_without_new_approval": true
+}

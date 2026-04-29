@@ -1,0 +1,7 @@
+{
+  "schema_version": "v0",
+  "evidence_packet_count": 1,
+  "evidence_packets": [
+    "evidence_extraction_and_claim_boundary/evidence_packet_001.json"
+  ]
+}

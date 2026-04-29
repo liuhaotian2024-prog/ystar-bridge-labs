@@ -1,0 +1,5 @@
+{
+  "schema_version": "v0",
+  "recommended_next_milestone": "L6.10Y Controlled Search Backend Configuration & Page Read Adapter Enablement v0",
+  "do_not_implement_l6_11_until_evidence_batch_exists": true
+}

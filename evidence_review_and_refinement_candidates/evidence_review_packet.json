@@ -1,0 +1,9 @@
+{
+  "schema_version": "v0",
+  "review_packet_id": "l6_10x_evidence_review_packet",
+  "review_status": "pending_review_blocked_no_backend",
+  "external_use_authorized": false,
+  "approve_for_external_use": false,
+  "artifact_update_authorized": false,
+  "applied": false
+}

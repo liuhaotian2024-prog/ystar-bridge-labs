@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "receipt_id": "l6_10x_no_account_creation_receipt",
+  "action": "account_creation",
+  "executed": false,
+  "authorized": false,
+  "evidence": "No disallowed action was executed during L6.10X."
+}

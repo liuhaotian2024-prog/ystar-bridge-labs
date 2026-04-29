@@ -1,0 +1,27 @@
+{
+  "schema_version": "v0",
+  "evidence_packet_id": "l6_10x_evidence_packet_001",
+  "source_locator": null,
+  "source_title": null,
+  "source_owner_or_publisher": null,
+  "observed_timestamp": null,
+  "source_date_or_date_missing": "not_observed_backend_missing",
+  "freshness_class": "not_observed",
+  "captured_bounded_claims": [],
+  "unsupported_claims": [],
+  "missing_context": [
+    "controlled_search_backend_required"
+  ],
+  "claim_boundary": "internal review claim only; no publication, outreach, payment, revenue, or strategy claim",
+  "citation_trace": [],
+  "review_status": "blocked_no_backend_no_evidence",
+  "live_source_evidence_captured": false,
+  "publication_taken": false,
+  "outreach_taken": false,
+  "payment_taken": false,
+  "revenue_action_taken": false,
+  "mcp_execution_taken": false,
+  "canonical_update_taken": false,
+  "brain_memory_writeback_taken": false,
+  "direct_y_star_mutation_taken": false
+}

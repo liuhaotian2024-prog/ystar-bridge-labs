@@ -1,0 +1,14 @@
+{
+  "schema_version": "v0",
+  "rules": [
+    "every query counted",
+    "every opened page counted",
+    "every domain counted",
+    "every crawl expansion counted",
+    "budget stop condition",
+    "scope drift stop condition",
+    "login/payment/form/private-data stop condition",
+    "no evidence beyond budget",
+    "no retry loop without new approval"
+  ]
+}

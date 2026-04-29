@@ -1,0 +1,15 @@
+{
+  "schema_version": "v0",
+  "l6_10x_budgeted_controlled_external_search_evidence_pilot_complete": true,
+  "ready_for_l6_11_controlled_multi_source_evidence_review_gate": false,
+  "next_step": "configure_controlled_search_backend",
+  "controlled_search_backend_required": true,
+  "controlled_public_page_read_adapter_required": true,
+  "do_not_ask_user_for_manual_url": true,
+  "publication_ready": false,
+  "outreach_ready": false,
+  "revenue_execution_ready": false,
+  "mcp_execution_ready": false,
+  "canonical_update_ready": false,
+  "brain_memory_writeback_ready": false
+}

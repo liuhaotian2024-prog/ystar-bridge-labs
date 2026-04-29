@@ -1,0 +1,12 @@
+{
+  "schema_version": "v0",
+  "candidate_id": "l6_10x_artifact_refinement_candidate_001",
+  "review_required": true,
+  "approved": false,
+  "applied": false,
+  "artifact_update_authorized": false,
+  "canonical_update_authorized": false,
+  "brain_writeback_authorized": false,
+  "memory_ingestion_authorized": false,
+  "direct_y_star_mutation_authorized": false
+}

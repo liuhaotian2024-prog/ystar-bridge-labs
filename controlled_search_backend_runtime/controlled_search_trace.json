@@ -1,0 +1,21 @@
+{
+  "backend_mode": "disabled",
+  "backend_explicitly_configured": false,
+  "search_executed": false,
+  "search_query_count": 0,
+  "search_results_considered": 0,
+  "external_reads_count": 0,
+  "result_candidates": [],
+  "snippets_used_as_evidence": false,
+  "facts_inferred_from_snippets": false,
+  "blocked_reason": "controlled_search_backend_required",
+  "error_code": "controlled_search_backend_required",
+  "trace": {
+    "request_id": "l6_10x_controlled_search_request_001",
+    "network_used": false,
+    "search_executed": false,
+    "queries_planned": 5,
+    "manual_url_request": false
+  },
+  "schema_version": "v0"
+}

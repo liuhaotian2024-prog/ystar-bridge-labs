@@ -283,6 +283,14 @@ python3 console_read_model/cli/team_console.py <command>
   readiness, and blocked URL invention/search/crawling/scraping/browser
   automation/publication/outreach/payment/revenue/MCP/live/CIEU DB/canonical/
   writeback/direct Y* mutation state.
+- `budgeted-controlled-external-search-evidence-pilot`: Prints the generated
+  L6.10X budgeted controlled external search evidence pilot summary: selected
+  work order, multi-query budgeted search plan, explicit backend gate status,
+  bounded crawl/page-read budget, source triage, structural trust assessment,
+  evidence packet index, corroboration/conflict state, review-only refinement
+  candidates, readiness, no manual URL request, and blocked login/payment/form/
+  publication/outreach/revenue/MCP/live/CIEU DB/canonical/writeback/direct Y*
+  mutation state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

@@ -248,5 +248,12 @@ the system scanned local seed registries, did not invent a URL, and when no
 reviewed locator exists generated a precise USER_ACTION_REQUIRED packet
 asking for exactly one public URL tied to the selected work order.
 
+`l6_10x_budgeted_controlled_search_evidence_summary.json` is derived from
+the L6.10X budgeted controlled external search evidence pilot. It confirms
+budgeted query planning, controlled backend gating, bounded crawl policy,
+source quality assessment, blocked evidence extraction, corroboration,
+review/refinement candidates, and no-action receipts while the default path
+uses no search/network/page reads and avoids manual URL requests.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

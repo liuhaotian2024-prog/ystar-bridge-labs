@@ -1,0 +1,12 @@
+{
+  "schema_version": "v0",
+  "supported_backends": [
+    "brave_search_api",
+    "bing_search_api",
+    "tavily_search_api",
+    "serpapi",
+    "openclaw_read_only_search_adapter",
+    "future_governed_mcp_search_adapter"
+  ],
+  "enabled_backend": null
+}
