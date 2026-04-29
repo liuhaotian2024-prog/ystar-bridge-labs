@@ -37,7 +37,7 @@
     {
       "review_id": "review-001",
       "candidate_id": "mdcand-001",
-      "source_path": "reports/ceo/brain_dream_diffs/dream_diff_20260429_125639_nrem.md",
+      "source_path": "reports/ceo/brain_dream_diffs/dream_diff_20260429_095744_nrem.md",
       "artifact_class": "DREAM_REPORT",
       "candidate_safety_level": "bounded_markdown_candidate",
       "review_status": "pending_review",
@@ -60,7 +60,7 @@
         "direct_cieu_write",
         "runtime_recovery"
       ],
-      "snippet_preview": "# Brain Dream Diff Report\nTimestamp: 2026-04-29T12:56:39\nMode: DRY-RUN (no changes applied)\nActivation log rows scanned: 2724298\n\n## Proposed New Edges (Pattern A + B)\n| Source | Target | Proposed Weight | Co-activation Count | Pattern | Rationale |\n|--------|--------|-----------------|---------------------|---------|-----------|\n| blind_spot/cieu_event:b84f8ba5-a01a-43ba-8548-cc747b0d5624 | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:39ed0b06-5f7e-4777-a331-e8eb0269fa51 | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:031649e5-e5d0-4d2e-aadb-cdaabbd4c5cd | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:0e84f053-1218-4498-a25a-94ee8d",
+      "snippet_preview": "# Brain Dream Diff Report\nTimestamp: 2026-04-29T09:57:44\nMode: DRY-RUN (no changes applied)\nActivation log rows scanned: 2723800\n\n## Proposed New Edges (Pattern A + B)\n| Source | Target | Proposed Weight | Co-activation Count | Pattern | Rationale |\n|--------|--------|-----------------|---------------------|---------|-----------|\n| blind_spot/cieu_event:b84f8ba5-a01a-43ba-8548-cc747b0d5624 | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:39ed0b06-5f7e-4777-a331-e8eb0269fa51 | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:031649e5-e5d0-4d2e-aadb-cdaabbd4c5cd | WHO_I_AM | 0.2 | N/A | A | Isolated neuron connection to identity anchor |\n| blind_spot/cieu_event:0e84f053-1218-4498-a25a-94ee8d",
       "generated_from_candidate_index_ref": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"
     }
   ],

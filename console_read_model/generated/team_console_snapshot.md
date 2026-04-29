@@ -113,8 +113,8 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 214
-- Unsafe artifacts count: 142
+- Artifacts classified: 146
+- Unsafe artifacts count: 119
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -122,44 +122,38 @@ Not ready:
   - DAEMON_STATE: 4
   - DB_CORE: 1
   - DB_SIDECARE: 6
-  - DREAM_REPORT: 1
-  - FRAMEWORK_FILE: 16
   - LOG_RUNTIME: 30
-  - PYCACHE: 67
-  - UNKNOWN_OR_NON_RUNTIME: 56
+  - PYCACHE: 45
+  - UNKNOWN_OR_NON_RUNTIME: 27
   - UNKNOWN_RUNTIME_ARTIFACT: 10
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
 - Warning: Console displays only curated path-level quarantine summary. No artifact contents were read.
 
 ## Runtime Artifact Safe Mining Candidates
 
-- Candidate count: 1
+- Candidate count: 0
 - Safety level: bounded_markdown_candidate
 - Ingestion status: candidate_only
 - Generated candidate index: runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json
 - Classes seen:
-  - DREAM_REPORT: 1
 - Warning: Safe mining candidates are bounded review assets only. They are not brain memory, CIEU records, or approved writeback.
 
 ## Runtime Artifact Candidate Review Queue
 
-- Review count: 1
+- Review count: 0
 - Default review status: pending_review
 - Default ingestion status: not_ingested
 - Generated queue path: runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json
 - Statuses:
-  - pending_review: 1
 - Intended use summary:
-  - memory_continuity_hint: 1
-  - role_brain_capsule_hint: 1
 - Warning: Review queue entries are not brain memory and require explicit approval before any future CIEU, memory, or capsule use.
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 214
-- Artifacts with disposition: 214
-- Safe-mined to review queue: 1
-- Forbidden direct read count: 141
+- Total artifacts: 146
+- Artifacts with disposition: 146
+- Safe-mined to review queue: 0
+- Forbidden direct read count: 119
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
   - deferred_requires_bounded_log_adapter: 30
@@ -167,26 +161,21 @@ Not ready:
   - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
-  - ignored_generated_cache: 67
-  - ignored_or_non_runtime: 72
-  - safe_mined_to_review_queue: 1
+  - ignored_generated_cache: 45
+  - ignored_or_non_runtime: 27
 - Evidence scoring status:
-  - not_started: 214
+  - not_started: 146
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
 
-- Candidates scored: 1
-- Decision stubs created: 1
-- Routes created: 2
+- Candidates scored: 0
+- Decision stubs created: 0
+- Routes created: 0
 - Automatic approvals: 0
 - Reuse readiness:
-  - hint_only: 1
 - Route counts:
-  - memory_continuity_hint_queue: 1
-  - role_brain_capsule_hint_queue: 1
 - Semantic truth status:
-  - not_evaluated: 1
 - Warning: Evidence scoring is structural only. It is not truth validation and not memory ingestion.
 
 ## Labs-Gov Alignment Bridge
