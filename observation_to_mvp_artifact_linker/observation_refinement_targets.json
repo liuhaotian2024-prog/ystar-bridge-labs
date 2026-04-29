@@ -1,0 +1,15 @@
+{
+  "schema_version": "v0",
+  "refinement_targets": [
+    "acceptance criteria clarification",
+    "recipient archetype clarification",
+    "payer clarity",
+    "evidence needed refinement",
+    "claim boundary refinement",
+    "freshness requirement refinement",
+    "distribution friction assessment",
+    "competitive pressure assessment",
+    "external dependency assessment",
+    "proof question refinement"
+  ]
+}

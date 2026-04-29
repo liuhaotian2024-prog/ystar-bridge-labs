@@ -1,0 +1,6 @@
+{
+  "schema_version": "v0",
+  "recommended_next_milestone": "L6.3 Controlled External Observation Sandbox v0",
+  "do_not_implement_in_l6_2": true,
+  "recommended_scope": "controlled external observation sandbox design with explicit no-action controls"
+}

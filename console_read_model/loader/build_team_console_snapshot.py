@@ -181,6 +181,16 @@ CURATED_SOURCES = [
     "mvp_artifact_externalization_boundary/externalization_blocker.json",
     "l6_mvp_artifact_strategic_residual_loop/l6_1_strategic_residual_delta.json",
     "l6_mvp_artifact_sandbox_readiness/l6_1_readiness_assessment.json",
+    "l6_governed_external_observation_boundary/l6_2_summary.json",
+    "pre_observation_packet_schema/pre_observation_packet_schema.json",
+    "external_source_registry_and_policy/source_type_registry.json",
+    "external_observation_permission_gate/observation_permission_gate_contract.json",
+    "manual_external_evidence_import_sandbox/manual_import_contract.json",
+    "observation_to_mvp_artifact_linker/observation_to_artifact_link_contract.json",
+    "observation_claim_boundary_and_freshness/claim_boundary_policy.json",
+    "external_observation_no_action_receipts/no_network_receipt.json",
+    "l6_external_observation_strategic_residual_loop/l6_2_strategic_residual_delta.json",
+    "l6_external_observation_boundary_readiness/l6_2_readiness_assessment.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -3800,6 +3810,172 @@ def build_l6_mvp_artifact_sandbox_summary(
     }
 
 
+def build_l6_external_observation_boundary_summary(
+    milestone_summary: dict[str, Any] | None,
+    packet_schema: dict[str, Any] | None,
+    source_registry: dict[str, Any] | None,
+    permission_gate: dict[str, Any] | None,
+    manual_import_contract: dict[str, Any] | None,
+    linker_contract: dict[str, Any] | None,
+    claim_policy: dict[str, Any] | None,
+    no_network_receipt: dict[str, Any] | None,
+    residual_delta: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": (
+                "ystar.console_read_model.generated."
+                "l6_external_observation_boundary_summary"
+            ),
+            "schema_version": "v0",
+            "l6_2_external_observation_boundary_defined": False,
+            "ready_for_l6_3_controlled_external_observation_sandbox": False,
+            "ready_for_real_network_observation": False,
+            "warning": "L6.2 external observation boundary has not been generated yet.",
+        }
+
+    milestone_summary = milestone_summary or {}
+    packet_schema = packet_schema or {}
+    source_registry = source_registry or {}
+    permission_gate = permission_gate or {}
+    manual_import_contract = manual_import_contract or {}
+    linker_contract = linker_contract or {}
+    claim_policy = claim_policy or {}
+    no_network_receipt = no_network_receipt or {}
+    residual_delta = residual_delta or {}
+
+    def safety_flag(field: str) -> Any:
+        return readiness_summary.get(field, readiness_summary.get("safety_flags", {}).get(field))
+
+    def l6_2_flag(field: str) -> Any:
+        return readiness_summary.get(field, readiness_summary.get("l6_2_flags", {}).get(field))
+
+    return {
+        "schema_name": "ystar.console_read_model.generated.l6_external_observation_boundary_summary",
+        "schema_version": "v0",
+        "milestone_id": milestone_summary.get("milestone_id", "L6.2"),
+        "milestone_name": milestone_summary.get(
+            "milestone_name", "Governed External Observation Boundary v0"
+        ),
+        "l6_2_external_observation_boundary_defined": milestone_summary.get(
+            "l6_2_external_observation_boundary_defined",
+            readiness_summary.get("l6_2_external_observation_boundary_complete"),
+        ),
+        "boundary_only": milestone_summary.get("boundary_only", True),
+        "sandbox_only": milestone_summary.get("sandbox_only", True),
+        "pre_observation_packet_schema_defined": milestone_summary.get(
+            "pre_observation_packet_schema_defined", bool(packet_schema)
+        ),
+        "pre_observation_required_fields_count": len(packet_schema.get("required_fields", [])),
+        "source_registry_defined": milestone_summary.get(
+            "source_registry_defined", bool(source_registry)
+        ),
+        "source_type_count": len(source_registry.get("source_types", [])),
+        "permission_gate_defined": milestone_summary.get(
+            "permission_gate_defined", bool(permission_gate)
+        ),
+        "manual_import_sandbox_defined": milestone_summary.get(
+            "manual_import_sandbox_defined", bool(manual_import_contract)
+        ),
+        "observation_to_artifact_linker_defined": milestone_summary.get(
+            "observation_to_artifact_linker_defined", bool(linker_contract)
+        ),
+        "claim_boundary_policy_defined": milestone_summary.get(
+            "claim_boundary_policy_defined", bool(claim_policy)
+        ),
+        "no_action_receipts_generated": milestone_summary.get(
+            "no_action_receipts_generated", bool(no_network_receipt)
+        ),
+        "strategic_residual_loop_generated": milestone_summary.get(
+            "strategic_residual_loop_generated", bool(residual_delta)
+        ),
+        "static_fixture_generation_authorized": milestone_summary.get(
+            "static_fixture_generation_authorized",
+            l6_2_flag("l6_2_static_fixture_generation_enabled"),
+        ),
+        "manual_evidence_import_contract_authorized": milestone_summary.get(
+            "manual_evidence_import_contract_authorized",
+            l6_2_flag("l6_2_manual_evidence_import_contract_enabled"),
+        ),
+        "real_external_observation_authorized": milestone_summary.get(
+            "real_external_observation_authorized",
+            l6_2_flag("l6_2_real_external_observation_enabled"),
+        ),
+        "network_enabled": safety_flag("network_enabled"),
+        "api_enabled": safety_flag("api_enabled"),
+        "scraping_enabled": safety_flag("scraping_enabled"),
+        "browser_fetch_enabled": safety_flag("browser_fetch_enabled"),
+        "external_action_enabled": safety_flag("external_action_enabled"),
+        "publication_enabled": safety_flag("publication_enabled"),
+        "outreach_enabled": safety_flag("outreach_enabled"),
+        "payment_enabled": safety_flag("payment_enabled"),
+        "revenue_execution_enabled": safety_flag("revenue_execution_enabled"),
+        "mcp_tool_execution_enabled": safety_flag("mcp_tool_execution_enabled"),
+        "live_execution_enabled": safety_flag("live_execution_enabled"),
+        "brain_writeback_enabled": safety_flag("brain_writeback_enabled"),
+        "memory_ingestion_enabled": safety_flag("memory_ingestion_enabled"),
+        "real_canonical_update_application_enabled": safety_flag(
+            "real_canonical_update_application_enabled"
+        ),
+        "real_y_star_direct_mutation_enabled": safety_flag(
+            "real_y_star_direct_mutation_enabled"
+        ),
+        "semantic_truth_scoring_enabled": safety_flag("semantic_truth_scoring_enabled"),
+        "raw_runtime_artifact_reading_enabled": safety_flag(
+            "raw_runtime_artifact_reading_enabled"
+        ),
+        "l6_2_boundary_only": l6_2_flag("l6_2_boundary_only"),
+        "l6_2_sandbox_only": l6_2_flag("l6_2_sandbox_only"),
+        "l6_2_real_external_observation_enabled": l6_2_flag(
+            "l6_2_real_external_observation_enabled"
+        ),
+        "l6_2_network_enabled": l6_2_flag("l6_2_network_enabled"),
+        "l6_2_api_enabled": l6_2_flag("l6_2_api_enabled"),
+        "l6_2_scraping_enabled": l6_2_flag("l6_2_scraping_enabled"),
+        "l6_2_browser_fetch_enabled": l6_2_flag("l6_2_browser_fetch_enabled"),
+        "ready_for_l6_3_controlled_external_observation_sandbox": readiness_summary.get(
+            "ready_for_l6_3_controlled_external_observation_sandbox"
+        ),
+        "ready_for_real_network_observation": readiness_summary.get(
+            "ready_for_real_network_observation"
+        ),
+        "ready_for_publication": readiness_summary.get("ready_for_publication"),
+        "ready_for_outreach": readiness_summary.get("ready_for_outreach"),
+        "ready_for_payment": readiness_summary.get("ready_for_payment"),
+        "ready_for_revenue_execution": readiness_summary.get("ready_for_revenue_execution"),
+        "ready_for_mcp_execution": readiness_summary.get("ready_for_mcp_execution"),
+        "ready_for_canonical_update": readiness_summary.get("ready_for_canonical_update"),
+        "ready_for_brain_memory_writeback": readiness_summary.get(
+            "ready_for_brain_memory_writeback"
+        ),
+        "next_recommended_milestone": readiness_summary.get(
+            "next_recommended_milestone"
+        ),
+        "generated_milestone_summary": "l6_governed_external_observation_boundary/l6_2_summary.json",
+        "generated_packet_schema": "pre_observation_packet_schema/pre_observation_packet_schema.json",
+        "generated_source_registry": "external_source_registry_and_policy/source_type_registry.json",
+        "generated_permission_gate": (
+            "external_observation_permission_gate/observation_permission_gate_contract.json"
+        ),
+        "generated_manual_import_contract": (
+            "manual_external_evidence_import_sandbox/manual_import_contract.json"
+        ),
+        "generated_no_action_receipt": (
+            "external_observation_no_action_receipts/no_network_receipt.json"
+        ),
+        "generated_readiness": (
+            "l6_external_observation_boundary_readiness/l6_2_readiness_assessment.json"
+        ),
+        "warning": (
+            "L6.2 is boundary-only. Real external observation, URL fetch, "
+            "scraping, publication, outreach, payment, revenue execution, MCP, "
+            "live behavior, canonical mutation, writeback, and direct Y* "
+            "mutation remain blocked."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -4442,6 +4618,46 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_mvp_artifact_sandbox_readiness/l6_1_readiness_assessment.json",
         files_read,
     )
+    l6_external_observation_milestone_summary = load_optional_json(
+        "l6_governed_external_observation_boundary/l6_2_summary.json",
+        files_read,
+    )
+    l6_external_observation_packet_schema = load_optional_json(
+        "pre_observation_packet_schema/pre_observation_packet_schema.json",
+        files_read,
+    )
+    l6_external_observation_source_registry = load_optional_json(
+        "external_source_registry_and_policy/source_type_registry.json",
+        files_read,
+    )
+    l6_external_observation_permission_gate = load_optional_json(
+        "external_observation_permission_gate/observation_permission_gate_contract.json",
+        files_read,
+    )
+    l6_external_observation_manual_import_contract = load_optional_json(
+        "manual_external_evidence_import_sandbox/manual_import_contract.json",
+        files_read,
+    )
+    l6_external_observation_linker_contract = load_optional_json(
+        "observation_to_mvp_artifact_linker/observation_to_artifact_link_contract.json",
+        files_read,
+    )
+    l6_external_observation_claim_policy = load_optional_json(
+        "observation_claim_boundary_and_freshness/claim_boundary_policy.json",
+        files_read,
+    )
+    l6_external_observation_no_network_receipt = load_optional_json(
+        "external_observation_no_action_receipts/no_network_receipt.json",
+        files_read,
+    )
+    l6_external_observation_residual_delta = load_optional_json(
+        "l6_external_observation_strategic_residual_loop/l6_2_strategic_residual_delta.json",
+        files_read,
+    )
+    l6_external_observation_readiness_summary = load_optional_json(
+        "l6_external_observation_boundary_readiness/l6_2_readiness_assessment.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -4628,6 +4844,18 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         l6_mvp_artifact_residual_delta,
         l6_mvp_artifact_readiness_summary,
     )
+    l6_external_observation_boundary_summary = build_l6_external_observation_boundary_summary(
+        l6_external_observation_milestone_summary,
+        l6_external_observation_packet_schema,
+        l6_external_observation_source_registry,
+        l6_external_observation_permission_gate,
+        l6_external_observation_manual_import_contract,
+        l6_external_observation_linker_contract,
+        l6_external_observation_claim_policy,
+        l6_external_observation_no_network_receipt,
+        l6_external_observation_residual_delta,
+        l6_external_observation_readiness_summary,
+    )
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -4793,6 +5021,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "live_boundary_no_go_summary": live_boundary_no_go_summary,
         "l6_meta_development_summary": l6_meta_development_summary,
         "l6_mvp_artifact_sandbox_summary": l6_mvp_artifact_sandbox_summary,
+        "l6_external_observation_boundary_summary": l6_external_observation_boundary_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -5027,6 +5256,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/live_boundary_no_go_summary.json",
             "console_read_model/generated/l6_meta_development_summary.json",
             "console_read_model/generated/l6_mvp_artifact_sandbox_summary.json",
+            "console_read_model/generated/l6_external_observation_boundary_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -5132,6 +5362,12 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "`l6_mvp_artifact_sandbox_summary.json` is derived from the L6.1 MVP\n"
         "artifact sandbox. It confirms selected internal proof artifacts, review gates,\n"
         "validation criteria, externalization blockers, and residual artifacts while publication, outreach, payment, network, revenue, MCP, canonical mutation, and writeback remain blocked.\n\n"
+        "`l6_external_observation_boundary_summary.json` is derived from the L6.2\n"
+        "governed external observation boundary. It confirms Pre-Observation packet,\n"
+        "source registry, permission gate, manual import, no-action receipt, and\n"
+        "readiness artifacts while real external observation, URL fetch, scraping,\n"
+        "publication, outreach, payment, revenue, MCP, live behavior, canonical\n"
+        "mutation, writeback, and direct Y* mutation remain blocked.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -5178,6 +5414,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/live_boundary_no_go_summary.json", live_boundary_no_go_summary, generated_files)
     write_json("console_read_model/generated/l6_meta_development_summary.json", l6_meta_development_summary, generated_files)
     write_json("console_read_model/generated/l6_mvp_artifact_sandbox_summary.json", l6_mvp_artifact_sandbox_summary, generated_files)
+    write_json("console_read_model/generated/l6_external_observation_boundary_summary.json", l6_external_observation_boundary_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -5259,6 +5496,9 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     live_boundary_no_go = snapshot.get("live_boundary_no_go_summary", {})
     l6_meta_development = snapshot.get("l6_meta_development_summary", {})
     l6_mvp_artifact_sandbox = snapshot.get("l6_mvp_artifact_sandbox_summary", {})
+    l6_external_observation_boundary = snapshot.get(
+        "l6_external_observation_boundary_summary", {}
+    )
     lines.extend(
         [
             "",
@@ -6228,6 +6468,32 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- ready_for_revenue_execution: {l6_mvp_artifact_sandbox.get('ready_for_revenue_execution')}",
             f"- next_recommended_milestone: {l6_mvp_artifact_sandbox.get('next_recommended_milestone')}",
             f"- Warning: {l6_mvp_artifact_sandbox.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## L6.2 Governed External Observation Boundary",
+            "",
+            f"- l6_2_external_observation_boundary_defined: {l6_external_observation_boundary.get('l6_2_external_observation_boundary_defined')}",
+            f"- boundary_only: {l6_external_observation_boundary.get('boundary_only')}",
+            f"- sandbox_only: {l6_external_observation_boundary.get('sandbox_only')}",
+            f"- pre_observation_packet_schema_defined: {l6_external_observation_boundary.get('pre_observation_packet_schema_defined')}",
+            f"- source_registry_defined: {l6_external_observation_boundary.get('source_registry_defined')}",
+            f"- permission_gate_defined: {l6_external_observation_boundary.get('permission_gate_defined')}",
+            f"- manual_import_sandbox_defined: {l6_external_observation_boundary.get('manual_import_sandbox_defined')}",
+            f"- no_action_receipts_generated: {l6_external_observation_boundary.get('no_action_receipts_generated')}",
+            f"- strategic_residual_loop_generated: {l6_external_observation_boundary.get('strategic_residual_loop_generated')}",
+            f"- real_external_observation_authorized: {l6_external_observation_boundary.get('real_external_observation_authorized')}",
+            f"- network_enabled: {l6_external_observation_boundary.get('network_enabled')}",
+            f"- publication_enabled: {l6_external_observation_boundary.get('publication_enabled')}",
+            f"- outreach_enabled: {l6_external_observation_boundary.get('outreach_enabled')}",
+            f"- payment_enabled: {l6_external_observation_boundary.get('payment_enabled')}",
+            f"- revenue_execution_enabled: {l6_external_observation_boundary.get('revenue_execution_enabled')}",
+            f"- ready_for_l6_3_controlled_external_observation_sandbox: {l6_external_observation_boundary.get('ready_for_l6_3_controlled_external_observation_sandbox')}",
+            f"- ready_for_real_network_observation: {l6_external_observation_boundary.get('ready_for_real_network_observation')}",
+            f"- next_recommended_milestone: {l6_external_observation_boundary.get('next_recommended_milestone')}",
+            f"- Warning: {l6_external_observation_boundary.get('warning')}",
         ]
     )
     lines.extend(

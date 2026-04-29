@@ -1,0 +1,18 @@
+{
+  "schema_version": "v0",
+  "candidate_id": "l6_2_external_observation_boundary_meta_learning_candidate",
+  "learning_targets": [
+    "external_observation_boundary_policy",
+    "pre_observation_packet_policy",
+    "source_trust_freshness_policy",
+    "manual_import_policy",
+    "observation_to_artifact_link_policy"
+  ],
+  "eligible_for_review_queue": true,
+  "eligible_for_direct_brain_writeback": false,
+  "eligible_for_direct_memory_ingestion": false,
+  "eligible_for_candidate_auto_approval": false,
+  "eligible_for_direct_strategy_mutation": false,
+  "approved": false,
+  "applied": false
+}

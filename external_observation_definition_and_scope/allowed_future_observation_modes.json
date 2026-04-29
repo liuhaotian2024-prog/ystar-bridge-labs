@@ -1,0 +1,97 @@
+{
+  "schema_version": "v0",
+  "mode_status": "future_only_not_authorized_in_l6_2",
+  "allowed_future_observation_modes": [
+    {
+      "mode": "reading public pages",
+      "future_only": true,
+      "authorized_in_l6_2": false,
+      "requires_future_review": true
+    },
+    {
+      "mode": "reviewing grant/RFP/bounty pages",
+      "future_only": true,
+      "authorized_in_l6_2": false,
+      "requires_future_review": true
+    },
+    {
+      "mode": "reviewing market signals",
+      "future_only": true,
+      "authorized_in_l6_2": false,
+      "requires_future_review": true
+    },
+    {
+      "mode": "reviewing platform policy pages",
+      "future_only": true,
+      "authorized_in_l6_2": false,
+      "requires_future_review": true
+    },
+    {
+      "mode": "reviewing customer-provided public materials",
+      "future_only": true,
+      "authorized_in_l6_2": false,
+      "requires_future_review": true
+    },
+    {
+      "mode": "manually imported notes",
+      "future_only": true,
+      "authorized_in_l6_2": false,
+      "requires_future_review": true
+    },
+    {
+      "mode": "manually imported screenshots/summaries",
+      "future_only": true,
+      "authorized_in_l6_2": false,
+      "requires_future_review": true
+    },
+    {
+      "mode": "user-provided documents",
+      "future_only": true,
+      "authorized_in_l6_2": false,
+      "requires_future_review": true
+    },
+    {
+      "mode": "future approved read-only search",
+      "future_only": true,
+      "authorized_in_l6_2": false,
+      "requires_future_review": true
+    }
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "external_observation_execution_enabled": false,
+    "network_enabled": false,
+    "api_enabled": false,
+    "scraping_enabled": false,
+    "browser_fetch_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "revenue_execution_enabled": false,
+    "external_market_scan_enabled": false,
+    "public_content_publication_enabled": false,
+    "publication_enabled": false,
+    "outreach_enabled": false,
+    "payment_enabled": false
+  }
+}

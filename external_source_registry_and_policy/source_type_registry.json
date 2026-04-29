@@ -1,0 +1,61 @@
+{
+  "schema_version": "v0",
+  "source_type_status": "source_types_not_opportunity_categories",
+  "source_types": [
+    {
+      "source_type": "official_policy_source",
+      "not_strategy_category": true,
+      "real_fetch_authorized_in_l6_2": false
+    },
+    {
+      "source_type": "official_program_source",
+      "not_strategy_category": true,
+      "real_fetch_authorized_in_l6_2": false
+    },
+    {
+      "source_type": "public_market_source",
+      "not_strategy_category": true,
+      "real_fetch_authorized_in_l6_2": false
+    },
+    {
+      "source_type": "public_platform_source",
+      "not_strategy_category": true,
+      "real_fetch_authorized_in_l6_2": false
+    },
+    {
+      "source_type": "public_repository_source",
+      "not_strategy_category": true,
+      "real_fetch_authorized_in_l6_2": false
+    },
+    {
+      "source_type": "public_document_source",
+      "not_strategy_category": true,
+      "real_fetch_authorized_in_l6_2": false
+    },
+    {
+      "source_type": "user_supplied_document",
+      "not_strategy_category": true,
+      "real_fetch_authorized_in_l6_2": false
+    },
+    {
+      "source_type": "user_supplied_summary",
+      "not_strategy_category": true,
+      "real_fetch_authorized_in_l6_2": false
+    },
+    {
+      "source_type": "manually_imported_note",
+      "not_strategy_category": true,
+      "real_fetch_authorized_in_l6_2": false
+    },
+    {
+      "source_type": "manually_imported_screenshot_summary",
+      "not_strategy_category": true,
+      "real_fetch_authorized_in_l6_2": false
+    },
+    {
+      "source_type": "future_approved_read_only_search_result",
+      "not_strategy_category": true,
+      "real_fetch_authorized_in_l6_2": false
+    }
+  ]
+}

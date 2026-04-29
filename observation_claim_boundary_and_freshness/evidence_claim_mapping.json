@@ -1,0 +1,14 @@
+{
+  "schema_version": "v0",
+  "mapping_mode": "claim_to_source_trace_structural_mapping",
+  "example_mappings": [
+    {
+      "claim_id": "static_fixture_claim_001",
+      "source_trace": "manual_import_static_fixture_001",
+      "freshness_class": "date_missing",
+      "claim_scope": "example only",
+      "unsupported_inference_marker": true,
+      "review_status": "not_reviewed"
+    }
+  ]
+}

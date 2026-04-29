@@ -1,0 +1,14 @@
+{
+  "schema_version": "v0",
+  "risk_dimensions": [
+    "privacy_risk",
+    "ip_risk",
+    "login_required",
+    "account_required",
+    "contact_required",
+    "payment_required",
+    "write_or_post_required",
+    "automation_required"
+  ],
+  "high_risk_result": "deny_or_require_future_boundary"
+}

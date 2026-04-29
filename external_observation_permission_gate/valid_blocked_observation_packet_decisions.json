@@ -1,0 +1,23 @@
+{
+  "schema_version": "v0",
+  "packet_decisions": [
+    {
+      "packet_id": "l6_2_pre_observation_packet_001",
+      "decision": "allow_static_fixture_only",
+      "real_observation_authorized": false,
+      "review_required_before_observation": true
+    },
+    {
+      "packet_id": "l6_2_pre_observation_packet_002",
+      "decision": "allow_static_fixture_only",
+      "real_observation_authorized": false,
+      "review_required_before_observation": true
+    },
+    {
+      "packet_id": "l6_2_pre_observation_packet_003",
+      "decision": "allow_static_fixture_only",
+      "real_observation_authorized": false,
+      "review_required_before_observation": true
+    }
+  ]
+}

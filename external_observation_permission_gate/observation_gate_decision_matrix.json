@@ -1,0 +1,30 @@
+{
+  "schema_version": "v0",
+  "decision_matrix": [
+    {
+      "condition": "safe_static_fixture_packet",
+      "decision": "allow_static_fixture_only",
+      "real_observation_authorized": false
+    },
+    {
+      "condition": "otherwise_valid_future_packet",
+      "decision": "block_real_observation_l6_2",
+      "real_observation_authorized": false
+    },
+    {
+      "condition": "network_required_now",
+      "decision": "deny_due_to_network_required_now",
+      "real_observation_authorized": false
+    },
+    {
+      "condition": "contact_required",
+      "decision": "deny_due_to_contact_required",
+      "real_observation_authorized": false
+    },
+    {
+      "condition": "missing_trace_plan",
+      "decision": "deny_due_to_missing_trace_plan",
+      "real_observation_authorized": false
+    }
+  ]
+}

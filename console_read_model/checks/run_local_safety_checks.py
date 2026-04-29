@@ -1965,6 +1965,47 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "l6_mvp_artifact_sandbox_readiness/l6_1_readiness_assessment.json"],
     ),
     Check(
+        "Compile L6.2 governed external observation boundary builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "l6_governed_external_observation_boundary/tools/build_l6_governed_external_observation_boundary.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: l6_external_observation_boundary_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_external_observation_boundary_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_2_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_governed_external_observation_boundary/l6_2_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: pre_observation_packet_schema.json",
+        ["python3", "-m", "json.tool", "pre_observation_packet_schema/pre_observation_packet_schema.json"],
+    ),
+    Check(
+        "Validate JSON: source_type_registry.json",
+        ["python3", "-m", "json.tool", "external_source_registry_and_policy/source_type_registry.json"],
+    ),
+    Check(
+        "Validate JSON: observation_permission_gate_contract.json",
+        ["python3", "-m", "json.tool", "external_observation_permission_gate/observation_permission_gate_contract.json"],
+    ),
+    Check(
+        "Validate JSON: manual_import_contract.json",
+        ["python3", "-m", "json.tool", "manual_external_evidence_import_sandbox/manual_import_contract.json"],
+    ),
+    Check(
+        "Validate JSON: no_network_receipt.json",
+        ["python3", "-m", "json.tool", "external_observation_no_action_receipts/no_network_receipt.json"],
+    ),
+    Check(
+        "Validate JSON: l6_2_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "l6_external_observation_boundary_readiness/l6_2_readiness_assessment.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -2203,6 +2244,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: meta-development-mvp-artifact-sandbox",
         ["python3", "console_read_model/cli/team_console.py", "meta-development-mvp-artifact-sandbox"],
+    ),
+    Check(
+        "CLI smoke: governed-external-observation-boundary",
+        ["python3", "console_read_model/cli/team_console.py", "governed-external-observation-boundary"],
     ),
     Check(
         "CLI smoke: sources",

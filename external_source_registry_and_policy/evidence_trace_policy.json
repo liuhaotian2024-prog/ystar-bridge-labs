@@ -1,0 +1,12 @@
+{
+  "schema_version": "v0",
+  "trace_requirements": [
+    "source locator or source missing marker",
+    "capture mode",
+    "capture date if available",
+    "claim boundary",
+    "unsupported inference marker",
+    "review status"
+  ],
+  "url_fetch_performed_in_l6_2": false
+}

@@ -403,6 +403,9 @@ def main() -> int:
     required_l6_meta_development_mvp_artifact_sandbox_files = expected.get(
         "required_l6_meta_development_mvp_artifact_sandbox_files", []
     )
+    required_l6_governed_external_observation_boundary_files = expected.get(
+        "required_l6_governed_external_observation_boundary_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -635,6 +638,12 @@ def main() -> int:
         check_exists(path, report, "L6.1 MVP artifact sandbox file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "L6.1 MVP artifact sandbox JSON")
+
+    for rel in required_l6_governed_external_observation_boundary_files:
+        path = ROOT / rel
+        check_exists(path, report, "L6.2 governed external observation boundary file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "L6.2 governed external observation boundary JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -4593,6 +4602,138 @@ def main() -> int:
             "L6.2 Governed External Observation Boundary v0"
         ):
             report.fail("generated L6.1 summary must point to L6.2 boundary design")
+
+    l6_external_observation_boundary = generated_json.get(
+        "console_read_model/generated/l6_external_observation_boundary_summary.json"
+    )
+    if l6_external_observation_boundary:
+        for field in [
+            "l6_2_external_observation_boundary_defined",
+            "boundary_only",
+            "sandbox_only",
+            "pre_observation_packet_schema_defined",
+            "pre_observation_required_fields_count",
+            "source_registry_defined",
+            "source_type_count",
+            "permission_gate_defined",
+            "manual_import_sandbox_defined",
+            "observation_to_artifact_linker_defined",
+            "claim_boundary_policy_defined",
+            "no_action_receipts_generated",
+            "strategic_residual_loop_generated",
+            "static_fixture_generation_authorized",
+            "manual_evidence_import_contract_authorized",
+            "real_external_observation_authorized",
+            "network_enabled",
+            "api_enabled",
+            "scraping_enabled",
+            "browser_fetch_enabled",
+            "external_action_enabled",
+            "publication_enabled",
+            "outreach_enabled",
+            "payment_enabled",
+            "revenue_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "live_execution_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "real_canonical_update_application_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "l6_2_boundary_only",
+            "l6_2_sandbox_only",
+            "l6_2_real_external_observation_enabled",
+            "l6_2_network_enabled",
+            "l6_2_api_enabled",
+            "l6_2_scraping_enabled",
+            "l6_2_browser_fetch_enabled",
+            "ready_for_l6_3_controlled_external_observation_sandbox",
+            "ready_for_real_network_observation",
+            "ready_for_publication",
+            "ready_for_outreach",
+            "ready_for_payment",
+            "ready_for_revenue_execution",
+            "ready_for_mcp_execution",
+            "ready_for_canonical_update",
+            "ready_for_brain_memory_writeback",
+            "next_recommended_milestone",
+            "generated_milestone_summary",
+            "generated_packet_schema",
+            "generated_source_registry",
+            "generated_permission_gate",
+            "generated_manual_import_contract",
+            "generated_no_action_receipt",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in l6_external_observation_boundary:
+                report.pass_(f"generated L6.2 external observation boundary summary field present: {field}")
+            else:
+                report.fail(f"generated L6.2 external observation boundary summary missing field: {field}")
+        for field in [
+            "l6_2_external_observation_boundary_defined",
+            "boundary_only",
+            "sandbox_only",
+            "pre_observation_packet_schema_defined",
+            "source_registry_defined",
+            "permission_gate_defined",
+            "manual_import_sandbox_defined",
+            "observation_to_artifact_linker_defined",
+            "claim_boundary_policy_defined",
+            "no_action_receipts_generated",
+            "strategic_residual_loop_generated",
+            "static_fixture_generation_authorized",
+            "manual_evidence_import_contract_authorized",
+            "l6_2_boundary_only",
+            "l6_2_sandbox_only",
+            "ready_for_l6_3_controlled_external_observation_sandbox",
+        ]:
+            if l6_external_observation_boundary.get(field) is not True:
+                report.fail(f"generated L6.2 summary must keep {field}=true")
+        for field in [
+            "real_external_observation_authorized",
+            "network_enabled",
+            "api_enabled",
+            "scraping_enabled",
+            "browser_fetch_enabled",
+            "external_action_enabled",
+            "publication_enabled",
+            "outreach_enabled",
+            "payment_enabled",
+            "revenue_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "live_execution_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "real_canonical_update_application_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "l6_2_real_external_observation_enabled",
+            "l6_2_network_enabled",
+            "l6_2_api_enabled",
+            "l6_2_scraping_enabled",
+            "l6_2_browser_fetch_enabled",
+            "ready_for_real_network_observation",
+            "ready_for_publication",
+            "ready_for_outreach",
+            "ready_for_payment",
+            "ready_for_revenue_execution",
+            "ready_for_mcp_execution",
+            "ready_for_canonical_update",
+            "ready_for_brain_memory_writeback",
+        ]:
+            if l6_external_observation_boundary.get(field) is not False:
+                report.fail(f"generated L6.2 summary must keep {field}=false")
+        if l6_external_observation_boundary.get("pre_observation_required_fields_count", 0) < 30:
+            report.fail("generated L6.2 summary must include complete Pre-Observation packet fields")
+        if l6_external_observation_boundary.get("source_type_count", 0) < 10:
+            report.fail("generated L6.2 summary must include source type registry entries")
+        if l6_external_observation_boundary.get("next_recommended_milestone") != (
+            "L6.3 Controlled External Observation Sandbox v0"
+        ):
+            report.fail("generated L6.2 summary must point to L6.3")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

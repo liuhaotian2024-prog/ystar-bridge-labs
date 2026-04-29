@@ -1,0 +1,12 @@
+{
+  "schema_version": "v0",
+  "freshness_classes": [
+    "date_available_currentness_unverified",
+    "date_available_stale_possible",
+    "date_missing",
+    "future_recheck_required",
+    "manual_claim_only"
+  ],
+  "freshness_is_not_truth_authority": true,
+  "review_required_for_stale_or_missing_date": true
+}

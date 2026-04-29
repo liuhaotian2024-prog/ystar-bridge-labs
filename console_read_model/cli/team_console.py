@@ -57,6 +57,9 @@ L6_META_DEVELOPMENT = "console_read_model/generated/l6_meta_development_summary.
 L6_MVP_ARTIFACT_SANDBOX = (
     "console_read_model/generated/l6_mvp_artifact_sandbox_summary.json"
 )
+L6_EXTERNAL_OBSERVATION_BOUNDARY = (
+    "console_read_model/generated/l6_external_observation_boundary_summary.json"
+)
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -76,7 +79,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -149,6 +152,7 @@ def load_all() -> dict[str, Any]:
         "live_boundary_no_go": load_json(LIVE_BOUNDARY_NO_GO),
         "l6_meta_development": load_json(L6_META_DEVELOPMENT),
         "l6_mvp_artifact_sandbox": load_json(L6_MVP_ARTIFACT_SANDBOX),
+        "l6_external_observation_boundary": load_json(L6_EXTERNAL_OBSERVATION_BOUNDARY),
     }
 
 
@@ -1836,6 +1840,75 @@ def cmd_meta_development_mvp_artifact_sandbox(data: dict[str, Any]) -> None:
     print(f"generated_case_index: {sandbox.get('generated_case_index')}")
     print(f"generated_readiness: {sandbox.get('generated_readiness')}")
     print(f"warning: {sandbox.get('warning')}")
+
+
+def cmd_governed_external_observation_boundary(data: dict[str, Any]) -> None:
+    boundary = data["l6_external_observation_boundary"]
+    print("# L6.2 Governed External Observation Boundary")
+    print()
+    print(
+        "L6.2 external observation boundary defined: "
+        f"{boundary.get('l6_2_external_observation_boundary_defined')}"
+    )
+    print(f"boundary only: {boundary.get('boundary_only')}")
+    print(f"sandbox only: {boundary.get('sandbox_only')}")
+    print(
+        "Pre-Observation packet schema defined: "
+        f"{boundary.get('pre_observation_packet_schema_defined')}"
+    )
+    print(f"source registry defined: {boundary.get('source_registry_defined')}")
+    print(f"permission gate defined: {boundary.get('permission_gate_defined')}")
+    print(f"manual import sandbox defined: {boundary.get('manual_import_sandbox_defined')}")
+    print(
+        "observation-to-artifact linker defined: "
+        f"{boundary.get('observation_to_artifact_linker_defined')}"
+    )
+    print(f"claim boundary policy defined: {boundary.get('claim_boundary_policy_defined')}")
+    print(f"no-action receipts generated: {boundary.get('no_action_receipts_generated')}")
+    print(
+        "strategic residual loop generated: "
+        f"{boundary.get('strategic_residual_loop_generated')}"
+    )
+    print(
+        "static fixture generation authorized: "
+        f"{boundary.get('static_fixture_generation_authorized')}"
+    )
+    print(
+        "manual evidence import contract authorized: "
+        f"{boundary.get('manual_evidence_import_contract_authorized')}"
+    )
+    print(
+        "real external observation authorized: "
+        f"{boundary.get('real_external_observation_authorized')}"
+    )
+    print(f"network enabled: {boundary.get('network_enabled')}")
+    print(f"API enabled: {boundary.get('api_enabled')}")
+    print(f"scraping enabled: {boundary.get('scraping_enabled')}")
+    print(f"browser fetch enabled: {boundary.get('browser_fetch_enabled')}")
+    print(f"publication enabled: {boundary.get('publication_enabled')}")
+    print(f"outreach enabled: {boundary.get('outreach_enabled')}")
+    print(f"payment enabled: {boundary.get('payment_enabled')}")
+    print(f"revenue execution enabled: {boundary.get('revenue_execution_enabled')}")
+    print(f"MCP tool execution enabled: {boundary.get('mcp_tool_execution_enabled')}")
+    print(f"live execution enabled: {boundary.get('live_execution_enabled')}")
+    print(f"brain writeback enabled: {boundary.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {boundary.get('memory_ingestion_enabled')}")
+    print(
+        "ready for L6.3 controlled external observation sandbox: "
+        f"{boundary.get('ready_for_l6_3_controlled_external_observation_sandbox')}"
+    )
+    print(
+        "ready for real network observation: "
+        f"{boundary.get('ready_for_real_network_observation')}"
+    )
+    print(f"ready for publication: {boundary.get('ready_for_publication')}")
+    print(f"ready for outreach: {boundary.get('ready_for_outreach')}")
+    print(f"ready for payment: {boundary.get('ready_for_payment')}")
+    print(f"ready for revenue execution: {boundary.get('ready_for_revenue_execution')}")
+    print(f"next recommended milestone: {boundary.get('next_recommended_milestone')}")
+    print(f"generated_packet_schema: {boundary.get('generated_packet_schema')}")
+    print(f"generated_readiness: {boundary.get('generated_readiness')}")
+    print(f"warning: {boundary.get('warning')}")
 
 
 def cmd_gaps(data: dict[str, Any]) -> None:
@@ -3786,6 +3859,8 @@ def main(argv: list[str]) -> int:
         cmd_meta_development_design(data)
     elif command == "meta-development-mvp-artifact-sandbox":
         cmd_meta_development_mvp_artifact_sandbox(data)
+    elif command == "governed-external-observation-boundary":
+        cmd_governed_external_observation_boundary(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

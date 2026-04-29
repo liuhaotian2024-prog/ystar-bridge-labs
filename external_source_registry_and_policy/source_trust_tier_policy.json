@@ -1,0 +1,19 @@
+{
+  "schema_version": "v0",
+  "trust_policy_mode": "structural_indicators_only",
+  "allowed_trust_indicators": [
+    "official source vs third-party source",
+    "date available vs date missing",
+    "source locator present vs missing",
+    "evidence captured vs not captured",
+    "claim supported vs unsupported",
+    "source conflict present vs absent",
+    "review required"
+  ],
+  "forbidden_authority_modes": [
+    "LLM confidence as authority",
+    "semantic authority score",
+    "market success score"
+  ],
+  "semantic_truth_scoring_enabled": false
+}

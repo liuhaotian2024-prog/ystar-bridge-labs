@@ -1,0 +1,15 @@
+{
+  "schema_version": "v0",
+  "validation_mode": "structural_only",
+  "checks": [
+    "required fields present",
+    "source locator marked locator-only when no content is supplied",
+    "freshness declared",
+    "claim boundary present",
+    "missing context listed",
+    "review required",
+    "external action authorization false",
+    "URL fetch false"
+  ],
+  "semantic_truth_scoring_enabled": false
+}

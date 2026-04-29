@@ -1,0 +1,12 @@
+{
+  "schema_version": "v0",
+  "residual_classes": {
+    "external_observation_boundary_gap": "future approval required",
+    "source_trust_gap": "not tested on live evidence",
+    "freshness_policy_gap": "no live source dates observed",
+    "manual_import_gap": "not exercised with user-provided evidence",
+    "artifact_linkage_gap": "candidate-only refinements",
+    "claim_boundary_gap": "no current external claims authorized",
+    "execution_boundary_gap": "all external execution remains blocked"
+  }
+}

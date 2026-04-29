@@ -1,0 +1,14 @@
+{
+  "schema_version": "v0",
+  "required_claim_fields": [
+    "source trace",
+    "date or date_missing marker",
+    "freshness class",
+    "claim scope",
+    "claim limitation",
+    "unsupported inference marker",
+    "conflict marker if applicable",
+    "review status"
+  ],
+  "semantic_truth_scoring_enabled": false
+}

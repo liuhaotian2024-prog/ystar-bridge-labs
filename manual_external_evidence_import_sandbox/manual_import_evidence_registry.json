@@ -1,0 +1,27 @@
+{
+  "schema_version": "v0",
+  "registry_mode": "static_fixture_registry",
+  "evidence_items": [
+    {
+      "fixture_marker": "STATIC FIXTURE ONLY - NOT FETCHED - NOT CURRENT FACT - NOT VERIFIED EXTERNAL DATA - NOT AUTHORIZED FOR EXTERNAL ACTION - NOT AUTHORIZED FOR PUBLICATION - NOT AUTHORIZED FOR OUTREACH - NOT AUTHORIZED FOR PAYMENT - NOT AUTHORIZED FOR REVENUE EXECUTION",
+      "import_packet_id": "manual_import_static_fixture_001",
+      "supplied_by_user": false,
+      "source_locator_provided": true,
+      "source_content_available": false,
+      "freshness_declared": "not_current_fact",
+      "source_date_declared": "date_missing_static_fixture",
+      "evidence_scope": "example only",
+      "claim_boundary": "cannot support current external claim",
+      "missing_context": [
+        "source content",
+        "capture date",
+        "review"
+      ],
+      "review_required": true,
+      "external_action_authorized": false,
+      "url_fetched": false
+    }
+  ],
+  "all_items_current_facts": false,
+  "url_fetch_performed": false
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "v0",
+  "case_refs": [
+    {
+      "case_id": "case_001",
+      "source_hypothesis_id": "hypothesis-governance-audit-artifact",
+      "case_contract_ref": "selected_mvp_artifact_cases/case_001/case_contract.json"
+    },
+    {
+      "case_id": "case_002",
+      "source_hypothesis_id": "hypothesis-mcp-assurance-artifact",
+      "case_contract_ref": "selected_mvp_artifact_cases/case_002/case_contract.json"
+    },
+    {
+      "case_id": "case_003",
+      "source_hypothesis_id": "hypothesis-y-star-methodology-guide",
+      "case_contract_ref": "selected_mvp_artifact_cases/case_003/case_contract.json"
+    }
+  ]
+}

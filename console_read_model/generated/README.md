@@ -121,5 +121,12 @@ generative selection engine design. It confirms self-modeling, asset-field, worl
 artifact sandbox. It confirms selected internal proof artifacts, review gates,
 validation criteria, externalization blockers, and residual artifacts while publication, outreach, payment, network, revenue, MCP, canonical mutation, and writeback remain blocked.
 
+`l6_external_observation_boundary_summary.json` is derived from the L6.2
+governed external observation boundary. It confirms Pre-Observation packet,
+source registry, permission gate, manual import, no-action receipt, and
+readiness artifacts while real external observation, URL fetch, scraping,
+publication, outreach, payment, revenue, MCP, live behavior, canonical
+mutation, writeback, and direct Y* mutation remain blocked.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

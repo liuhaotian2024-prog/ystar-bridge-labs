@@ -1,0 +1,12 @@
+{
+  "schema_version": "v0",
+  "candidate_policy": {
+    "eligible_for_review_queue": true,
+    "approved": false,
+    "applied": false,
+    "direct_artifact_mutation_authorized": false,
+    "canonical_update_authorized": false,
+    "brain_writeback_authorized": false,
+    "memory_ingestion_authorized": false
+  }
+}

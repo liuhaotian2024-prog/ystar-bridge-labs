@@ -1,0 +1,11 @@
+{
+  "schema_version": "v0",
+  "freshness_windows": [
+    "same_day_if_future_approved",
+    "seven_day_if_future_approved",
+    "thirty_day_if_future_approved",
+    "stale_requires_recheck",
+    "date_missing_requires_marker"
+  ],
+  "current_fact_claims_authorized_in_l6_2": false
+}

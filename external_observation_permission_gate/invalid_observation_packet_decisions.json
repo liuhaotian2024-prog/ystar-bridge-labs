@@ -1,0 +1,20 @@
+{
+  "schema_version": "v0",
+  "packet_decisions": [
+    {
+      "packet_id": "invalid_network_required",
+      "decision": "deny_due_to_network_required_now",
+      "real_observation_authorized": false
+    },
+    {
+      "packet_id": "invalid_contact_required",
+      "decision": "deny_due_to_contact_required",
+      "real_observation_authorized": false
+    },
+    {
+      "packet_id": "invalid_missing_trace_plan",
+      "decision": "deny_due_to_missing_trace_plan",
+      "real_observation_authorized": false
+    }
+  ]
+}

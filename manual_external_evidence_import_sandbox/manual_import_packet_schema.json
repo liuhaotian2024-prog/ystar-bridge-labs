@@ -1,0 +1,16 @@
+{
+  "schema_version": "v0",
+  "required_fields": [
+    "import_packet_id",
+    "supplied_by_user",
+    "source_locator_provided",
+    "source_content_available",
+    "freshness_declared",
+    "source_date_declared",
+    "evidence_scope",
+    "claim_boundary",
+    "missing_context",
+    "review_required",
+    "external_action_authorized"
+  ]
+}

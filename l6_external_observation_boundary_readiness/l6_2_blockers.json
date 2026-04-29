@@ -1,0 +1,10 @@
+{
+  "schema_version": "v0",
+  "blockers": [
+    "no future approval boundary for real observation yet",
+    "no controlled external observation sandbox yet",
+    "no URL fetch permission",
+    "no source freshness validation against live data",
+    "no external action boundary release"
+  ]
+}

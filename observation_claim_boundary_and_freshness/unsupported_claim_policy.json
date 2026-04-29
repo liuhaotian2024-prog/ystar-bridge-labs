@@ -1,0 +1,5 @@
+{
+  "schema_version": "v0",
+  "unsupported_claim_handling": "mark_unsupported_and_block_externalization",
+  "current_market_claims_without_source_allowed": false
+}

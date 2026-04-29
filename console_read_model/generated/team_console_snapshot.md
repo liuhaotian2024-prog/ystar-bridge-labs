@@ -926,6 +926,28 @@ Not ready:
 - next_recommended_milestone: L6.2 Governed External Observation Boundary v0
 - Warning: L6.1 generated internal MVP proof artifacts only. Publication, outreach, payment, network, revenue, MCP, canonical mutation, writeback, and direct Y* mutation remain blocked.
 
+## L6.2 Governed External Observation Boundary
+
+- l6_2_external_observation_boundary_defined: True
+- boundary_only: True
+- sandbox_only: True
+- pre_observation_packet_schema_defined: True
+- source_registry_defined: True
+- permission_gate_defined: True
+- manual_import_sandbox_defined: True
+- no_action_receipts_generated: True
+- strategic_residual_loop_generated: True
+- real_external_observation_authorized: False
+- network_enabled: False
+- publication_enabled: False
+- outreach_enabled: False
+- payment_enabled: False
+- revenue_execution_enabled: False
+- ready_for_l6_3_controlled_external_observation_sandbox: True
+- ready_for_real_network_observation: False
+- next_recommended_milestone: L6.3 Controlled External Observation Sandbox v0
+- Warning: L6.2 is boundary-only. Real external observation, URL fetch, scraping, publication, outreach, payment, revenue execution, MCP, live behavior, canonical mutation, writeback, and direct Y* mutation remain blocked.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns

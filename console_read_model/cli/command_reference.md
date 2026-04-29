@@ -169,6 +169,12 @@ python3 console_read_model/cli/team_console.py <command>
   blockers, strategic residual loop, readiness for L6.2 boundary design, and
   blocked external/network/publication/outreach/payment/revenue/MCP/writeback
   execution state.
+- `governed-external-observation-boundary`: Prints the generated L6.2 governed
+  external observation boundary summary: Pre-Observation packet schema, source
+  registry, permission gate, manual import sandbox, observation-to-artifact
+  linker, claim boundary policy, no-action receipts, strategic residual loop,
+  readiness for L6.3 sandbox design, and blocked network/API/scraping/browser
+  fetch/publication/outreach/payment/revenue/MCP/live/writeback execution state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.
