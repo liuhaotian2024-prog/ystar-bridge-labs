@@ -26,8 +26,8 @@
   "dependency_status": {
     "live_boundary_defined": true,
     "live_boundary_cieu_writer_defined": true,
-    "dry_run_governance_ready": false,
-    "labs_runtime_acceptance_accepted": false,
+    "dry_run_governance_ready": true,
+    "labs_runtime_acceptance_accepted": true,
     "cross_repo_alignment_accepted": true
   },
   "generated_refs": {

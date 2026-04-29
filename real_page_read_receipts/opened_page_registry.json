@@ -2,192 +2,85 @@
   "schema_version": "v0",
   "opened_pages": [
     {
-      "page_read_id": "blocked_page_read_001",
-      "url": "https://www.congress.gov/crs-product/R44468",
-      "final_url": "https://www.congress.gov/crs-product/R44468",
-      "source_domain": "www.congress.gov",
-      "http_status": 403,
-      "content_type": null,
-      "bytes_read": 0,
-      "title_if_available": null,
-      "text_excerpt": "",
-      "extracted_claim_candidates": [],
-      "safety_flags": {
-        "read_only": true,
-        "network_used": true,
-        "method": "GET"
-      },
-      "stop_reason_if_any": "http_error_403",
-      "evidence_eligible": false,
-      "read_at_utc": "2026-04-29T21:43:10Z",
-      "adapter_name": "stdlib_public_http"
-    },
-    {
-      "page_read_id": "stdlib_page_read_002",
-      "url": "https://www.acquisition.gov/far/part-2",
-      "final_url": "https://www.acquisition.gov/far/part-2",
-      "source_domain": "www.acquisition.gov",
+      "page_read_id": "l6_11_fixture_page_001",
+      "url": "https://official.example.org/fixture/program-demand",
+      "final_url": "https://official.example.org/fixture/program-demand",
+      "source_domain": "official.example.org",
       "http_status": 200,
-      "content_type": "text/html; charset=UTF-8",
-      "bytes_read": 200000,
-      "title_if_available": "Part 2 - Definitions of Words and Terms | Acquisition.GOV",
-      "text_excerpt": "Part 2 - Definitions of Words and Terms | Acquisition.GOV Skip to main content An official website of the United States Government Main navigation FAR Overhaul Regulations Row 1 FAR Smart Matrix Chapter 99 (CAS) Row 2 DFARS DFARSPGI AFARS DAFFARS DAFFARS MP DARS DLAD NMCARS SOFARS TRANSFARS Row 3 AGAR AIDAR CAR DEAR DIAR DOLAR DOSAR DTAR Row 4 EDAR EPAAR FEHBAR GSAM/R HHSAR HSAR HUDAR Row 5 IAAR JAR LIFAR NFS NRCAR TAR VAAR Tools Archives Smart Matrix Regulations Search Acquisition Regulation Co",
+      "content_type": "text/html; charset=utf-8",
+      "bytes_read": 212,
+      "title_if_available": "Fixture Official Program Demand Note",
+      "text_excerpt": "Fixture Official Program Demand Note. Fixture evidence says the program describes beneficiary-facing demand signals in public language. Fixture evidence says the program page is suitable for internal review only.",
       "extracted_claim_candidates": [
-        "Subpart 2.1 - Definitions 2.101 Definitions.",
-        "Subpart 2.2 - Definitions Clause 2.201 Contract clause.",
-        "Parent topic: Federal Acquisition Regulation 2.000 Scope of part."
+        "Fixture evidence says the program describes beneficiary-facing demand signals in public language.",
+        "Fixture evidence says the program page is suitable for internal review only."
       ],
       "safety_flags": {
+        "fixture_demo": true,
         "read_only": true,
-        "network_used": true,
-        "method": "GET"
+        "network_used": false,
+        "no_login": true,
+        "no_payment": true,
+        "no_form_submission": true
       },
       "stop_reason_if_any": null,
       "evidence_eligible": true,
-      "read_at_utc": "2026-04-29T21:43:10Z",
-      "adapter_name": "stdlib_public_http"
+      "read_at_utc": "2026-04-29T20:26:52Z",
+      "adapter_name": "fixture"
     },
     {
-      "page_read_id": "stdlib_page_read_003",
-      "url": "https://grants.nih.gov/grants/glossary.htm",
-      "final_url": "https://grants.nih.gov/grants/glossary.htm",
-      "source_domain": "grants.nih.gov",
+      "page_read_id": "l6_11_fixture_page_002",
+      "url": "https://analysis.example.net/fixture/corroboration-brief",
+      "final_url": "https://analysis.example.net/fixture/corroboration-brief",
+      "source_domain": "analysis.example.net",
       "http_status": 200,
-      "content_type": "text/html; charset=UTF-8",
-      "bytes_read": 54853,
-      "title_if_available": "Glossary | Grants & Funding",
-      "text_excerpt": "Glossary | Grants & Funding (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-T2DH393N'); Skip to main content #us-banner [aria-expanded=\"true\"] + i:before { content: \"\\F286\"; } An official website of the United States ",
+      "content_type": "text/html; charset=utf-8",
+      "bytes_read": 237,
+      "title_if_available": "Fixture Independent Corroboration Brief",
+      "text_excerpt": "Fixture Independent Corroboration Brief. Fixture corroboration says beneficiary-facing demand language appears in multiple public descriptions. Fixture corroboration says the evidence remains review-only until a real backend is approved.",
       "extracted_claim_candidates": [
-        "Department of Health and Human Services | National Institutes of Health Official websites use .gov A .gov website belongs to an official government organization in the United States.",
-        "Secure .gov websites use HTTPS A lock (\ud83d\udd12) or https:// means you've safely connected to the .gov website.",
-        "Share sensitive information only on official, secure websites."
+        "Fixture corroboration says beneficiary-facing demand language appears in multiple public descriptions.",
+        "Fixture corroboration says the evidence remains review-only until a real backend is approved."
       ],
       "safety_flags": {
+        "fixture_demo": true,
         "read_only": true,
-        "network_used": true,
-        "method": "GET"
+        "network_used": false,
+        "no_login": true,
+        "no_payment": true,
+        "no_form_submission": true
       },
       "stop_reason_if_any": null,
       "evidence_eligible": true,
-      "read_at_utc": "2026-04-29T21:43:11Z",
-      "adapter_name": "stdlib_public_http"
+      "read_at_utc": "2026-04-29T20:26:52Z",
+      "adapter_name": "fixture"
     },
     {
-      "page_read_id": "stdlib_page_read_004",
-      "url": "https://www.grants.gov/learn-grants/grant-terminology",
-      "final_url": "https://www.grants.gov/learn-grants/grant-terminology",
-      "source_domain": "www.grants.gov",
-      "http_status": 200,
-      "content_type": "text/html;charset=utf-8",
-      "bytes_read": 142472,
-      "title_if_available": "Grant Terminology | Grants.gov Lock",
-      "text_excerpt": "Grant Terminology | Grants.gov body,html{height:100%;margin:0}body{color:#454545;font-size:120%;line-height:2.2rem}.grid-container_{max-width:1440px}h1+.grid-row{margin-top:2rem}.gg-text a,.gg-text a:visited{color:#0050d8}.gg-text a:hover{color:#0b4778}a,a:visited{color:#1b1b1b}a:hover{color:#0050d8}p,ul,ul>li>p{margin:0}ul>li>p{padding:0}h2,h2>a>b{color:#454545}.gg-table{width:100%}.gg-table p{margin:0;padding:0}.gg-table p>img{display:block;margin:0 auto}.gg-usa-card_>li.usa-card:last-child{bo",
-      "extracted_claim_candidates": [
-        "Secure .gov websites use HTTPS A lock ( Lock Locked padlock icon ) or https:// means you've safely connected to the .gov website.",
-        "Share sensitive information only on official, secure websites.",
-        "Here is a glossary of grant terms based on the Grant Policies and Grants.gov functionality."
-      ],
-      "safety_flags": {
-        "read_only": true,
-        "network_used": true,
-        "method": "GET"
-      },
-      "stop_reason_if_any": "stop_on_payment_indicator",
-      "evidence_eligible": false,
-      "read_at_utc": "2026-04-29T21:43:11Z",
-      "adapter_name": "stdlib_public_http"
-    },
-    {
-      "page_read_id": "blocked_page_read_005",
-      "url": "https://www.fema.gov/sites/default/files/documents/fema_pappg-v4-updated-links_policy_6-1-2020.pdf",
-      "final_url": "https://www.fema.gov/sites/default/files/documents/fema_pappg-v4-updated-links_policy_6-1-2020.pdf",
-      "source_domain": "www.fema.gov",
-      "http_status": 403,
-      "content_type": null,
-      "bytes_read": 0,
-      "title_if_available": null,
-      "text_excerpt": "",
-      "extracted_claim_candidates": [],
-      "safety_flags": {
-        "read_only": true,
-        "network_used": true,
-        "method": "GET"
-      },
-      "stop_reason_if_any": "http_error_403",
-      "evidence_eligible": false,
-      "read_at_utc": "2026-04-29T21:43:11Z",
-      "adapter_name": "stdlib_public_http"
-    },
-    {
-      "page_read_id": "stdlib_page_read_006",
-      "url": "https://www.federalregister.gov/documents/2024/04/23/2024-07105/medicare-program-changes-to-the-medicare-advantage-and-the-medicare-prescription-drug-benefit",
-      "final_url": "https://unblock.federalregister.gov/",
-      "source_domain": "www.federalregister.gov",
+      "page_read_id": "l6_11_fixture_page_003",
+      "url": "https://analysis.example.net/fixture/scope-limitation",
+      "final_url": "https://analysis.example.net/fixture/scope-limitation",
+      "source_domain": "analysis.example.net",
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
-      "bytes_read": 10596,
-      "title_if_available": "Federal Register :: Request Access",
-      "text_excerpt": "Federal Register :: Request Access { \"imports\": { \"application\": \"/assets/application-cc464116.js\", \"@hotwired/turbo-rails\": \"/assets/turbo.min-86bf8853.js\", \"@hotwired/stimulus\": \"/assets/stimulus.min-7ea3d58b.js\", \"@hotwired/stimulus-loading\": \"/assets/stimulus-loading-25917588.js\", \"controllers/application\": \"/assets/controllers/application-e5a449db.js\", \"controllers/site_feedback_controller\": \"/assets/controllers/site_feedback_controller-a99fc93f.js\", \"controllers/unblock_controller\": \"/asse",
+      "bytes_read": 209,
+      "title_if_available": "Fixture Scope Limitation Note",
+      "text_excerpt": "Fixture Scope Limitation Note. Fixture limitation says the public descriptions do not prove demand conversion or revenue readiness. Fixture limitation says claims must stay bounded to source-language evidence.",
       "extracted_claim_candidates": [
-        "Please visit FederalRegister.gov API documentation or eCFR.gov API documentation to learn more about how to access the API.",
-        "Your request has been flagged as potentially automated.",
-        "If you are human user receiving this message, please complete the CAPTCHA (bot test) below and click \"Request Access\"."
+        "Fixture limitation says the public descriptions do not prove demand conversion or revenue readiness.",
+        "Fixture limitation says claims must stay bounded to source-language evidence."
       ],
       "safety_flags": {
+        "fixture_demo": true,
         "read_only": true,
-        "network_used": true,
-        "method": "GET"
+        "network_used": false,
+        "no_login": true,
+        "no_payment": true,
+        "no_form_submission": true
       },
-      "stop_reason_if_any": "stop_on_form_indicator",
-      "evidence_eligible": false,
-      "read_at_utc": "2026-04-29T21:43:11Z",
-      "adapter_name": "stdlib_public_http"
-    },
-    {
-      "page_read_id": "blocked_page_read_007",
-      "url": "https://www.congress.gov/crs-product/IF13076",
-      "final_url": "https://www.congress.gov/crs-product/IF13076",
-      "source_domain": "www.congress.gov",
-      "http_status": 403,
-      "content_type": null,
-      "bytes_read": 0,
-      "title_if_available": null,
-      "text_excerpt": "",
-      "extracted_claim_candidates": [],
-      "safety_flags": {
-        "read_only": true,
-        "network_used": true,
-        "method": "GET"
-      },
-      "stop_reason_if_any": "http_error_403",
-      "evidence_eligible": false,
-      "read_at_utc": "2026-04-29T21:43:11Z",
-      "adapter_name": "stdlib_public_http"
-    },
-    {
-      "page_read_id": "stdlib_page_read_008",
-      "url": "https://www.federalregister.gov/documents/2025/01/08/2024-31486/preventing-access-to-us-sensitive-personal-data-and-government-related-data-by-countries-of-concern",
-      "final_url": "https://unblock.federalregister.gov/",
-      "source_domain": "www.federalregister.gov",
-      "http_status": 200,
-      "content_type": "text/html; charset=utf-8",
-      "bytes_read": 10596,
-      "title_if_available": "Federal Register :: Request Access",
-      "text_excerpt": "Federal Register :: Request Access { \"imports\": { \"application\": \"/assets/application-cc464116.js\", \"@hotwired/turbo-rails\": \"/assets/turbo.min-86bf8853.js\", \"@hotwired/stimulus\": \"/assets/stimulus.min-7ea3d58b.js\", \"@hotwired/stimulus-loading\": \"/assets/stimulus-loading-25917588.js\", \"controllers/application\": \"/assets/controllers/application-e5a449db.js\", \"controllers/site_feedback_controller\": \"/assets/controllers/site_feedback_controller-a99fc93f.js\", \"controllers/unblock_controller\": \"/asse",
-      "extracted_claim_candidates": [
-        "Please visit FederalRegister.gov API documentation or eCFR.gov API documentation to learn more about how to access the API.",
-        "Your request has been flagged as potentially automated.",
-        "If you are human user receiving this message, please complete the CAPTCHA (bot test) below and click \"Request Access\"."
-      ],
-      "safety_flags": {
-        "read_only": true,
-        "network_used": true,
-        "method": "GET"
-      },
-      "stop_reason_if_any": "stop_on_form_indicator",
-      "evidence_eligible": false,
-      "read_at_utc": "2026-04-29T21:43:11Z",
-      "adapter_name": "stdlib_public_http"
+      "stop_reason_if_any": null,
+      "evidence_eligible": true,
+      "read_at_utc": "2026-04-29T20:26:52Z",
+      "adapter_name": "fixture"
     }
   ]
 }

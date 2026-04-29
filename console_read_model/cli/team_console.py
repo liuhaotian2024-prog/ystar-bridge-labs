@@ -105,9 +105,6 @@ L6_12_UNIFIED_CONTROLLED_EXTERNAL_OBSERVATION = (
 L6_13_REAL_CONTROLLED_EXTERNAL_OBSERVATION_MISSION = (
     "console_read_model/generated/l6_13_real_controlled_external_observation_mission_sprint_summary.json"
 )
-L6_14_REAL_EVIDENCE_CONFLICT_RESOLUTION = (
-    "console_read_model/generated/l6_14_real_evidence_conflict_resolution_sprint_summary.json"
-)
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -127,7 +124,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|integrated-approval-record-and-pilot-readiness|agentic-evidence-discovery-trust-engine|controlled-agentic-evidence-pilot-approval-dry-run|tiny-real-read-only-agentic-evidence-observation-pilot|controlled-source-locator-resolution-tiny-observation-retry|governed-capability-gap-toolmaking-locator-resolver|controlled-locator-resolver-enable-first-attempt|controlled-seed-locator-or-search-resolver-enablement|reviewed-seed-locator-injection-tiny-retry|budgeted-controlled-external-search-evidence-pilot|controlled-search-backend-page-read-enablement|unified-controlled-external-observation-evidence-loop|real-controlled-external-observation-mission-sprint|real-evidence-conflict-resolution-sprint|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|integrated-approval-record-and-pilot-readiness|agentic-evidence-discovery-trust-engine|controlled-agentic-evidence-pilot-approval-dry-run|tiny-real-read-only-agentic-evidence-observation-pilot|controlled-source-locator-resolution-tiny-observation-retry|governed-capability-gap-toolmaking-locator-resolver|controlled-locator-resolver-enable-first-attempt|controlled-seed-locator-or-search-resolver-enablement|reviewed-seed-locator-injection-tiny-retry|budgeted-controlled-external-search-evidence-pilot|controlled-search-backend-page-read-enablement|unified-controlled-external-observation-evidence-loop|real-controlled-external-observation-mission-sprint|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -229,9 +226,6 @@ def load_all() -> dict[str, Any]:
         ),
         "l6_13_real_controlled_observation_mission": load_json(
             L6_13_REAL_CONTROLLED_EXTERNAL_OBSERVATION_MISSION
-        ),
-        "l6_14_real_evidence_conflict_resolution": load_json(
-            L6_14_REAL_EVIDENCE_CONFLICT_RESOLUTION
         ),
     }
 
@@ -3212,68 +3206,6 @@ def cmd_real_controlled_external_observation_mission_sprint(data: dict[str, Any]
     print(f"warning: {summary.get('warning')}")
 
 
-def cmd_real_evidence_conflict_resolution_sprint(data: dict[str, Any]) -> None:
-    summary = data["l6_14_real_evidence_conflict_resolution"]
-    print("# L6.14 Real Evidence Conflict Resolution Sprint")
-    print()
-    print(
-        "L6.14 complete: "
-        f"{summary.get('l6_14_real_evidence_conflict_resolution_sprint_complete')}"
-    )
-    print(f"mode: {summary.get('mode')}")
-    print(f"prior run classification: {summary.get('prior_run_classification')}")
-    print(f"post-second-pass classification: {summary.get('post_second_pass_classification')}")
-    print(f"selected work order id: {summary.get('selected_work_order_id')}")
-    print(f"backend mode: {summary.get('backend_mode')}")
-    print(f"page-read mode: {summary.get('page_read_mode')}")
-    print(f"network allowed: {summary.get('network_allowed')}")
-    print(f"safety preflight decision: {summary.get('safety_preflight_decision')}")
-    print(f"second-pass real observation executed: {summary.get('second_pass_real_observation_executed')}")
-    print(f"second-pass queries generated: {summary.get('second_pass_queries_generated')}")
-    print(f"search results considered: {summary.get('search_results_considered')}")
-    print(f"pages opened: {summary.get('pages_opened')}")
-    print(f"domains touched: {summary.get('domains_touched')}")
-    print(f"crawl depth used: {summary.get('crawl_depth_used')}")
-    print(f"external reads used: {summary.get('external_reads_used')}")
-    print(f"prior real evidence packets: {summary.get('prior_real_evidence_packets')}")
-    print(f"new real evidence packets: {summary.get('new_real_evidence_packets')}")
-    print(f"total real evidence packets: {summary.get('total_real_evidence_packets')}")
-    print(f"conflicts before: {summary.get('conflicts_before')}")
-    print(f"conflicts after: {summary.get('conflicts_after')}")
-    print(f"unresolved claims before: {summary.get('unresolved_claims_before')}")
-    print(f"unresolved claims after: {summary.get('unresolved_claims_after')}")
-    print(f"conflict resolution status: {summary.get('conflict_resolution_status')}")
-    print(f"next action recommendation: {summary.get('next_action_recommendation')}")
-    print(f"blockers: {summary.get('blockers')}")
-    print(f"ask-user-URL occurred: {summary.get('ask_user_for_url_occurred')}")
-    print(f"external side effects occurred: {summary.get('external_side_effects_occurred')}")
-    print(f"core writeback occurred: {summary.get('core_writeback_occurred')}")
-    print(f"Y-star-gov modified: {summary.get('y_star_gov_modified')}")
-    print(f"gov-mcp modified: {summary.get('gov_mcp_modified')}")
-    print(f"search snippets used as evidence: {summary.get('search_snippets_used_as_evidence')}")
-    print(f"page-read content used as evidence: {summary.get('page_read_content_used_as_evidence')}")
-    print(f"login authorized: {summary.get('login_authorized')}")
-    print(f"payment authorized: {summary.get('payment_authorized')}")
-    print(f"form submission authorized: {summary.get('form_submission_authorized')}")
-    print(f"posting authorized: {summary.get('posting_authorized')}")
-    print(f"publication authorized: {summary.get('publication_authorized')}")
-    print(f"outreach authorized: {summary.get('outreach_authorized')}")
-    print(f"revenue execution authorized: {summary.get('revenue_execution_authorized')}")
-    print(f"MCP execution authorized: {summary.get('mcp_execution_authorized')}")
-    print(f"live behavior authorized: {summary.get('live_behavior_authorized')}")
-    print(f"CIEU DB write authorized: {summary.get('cieu_db_write_authorized')}")
-    print(f"canonical update authorized: {summary.get('canonical_update_authorized')}")
-    print(f"brain writeback authorized: {summary.get('brain_writeback_authorized')}")
-    print(f"memory ingestion authorized: {summary.get('memory_ingestion_authorized')}")
-    print(f"direct Y* mutation authorized: {summary.get('direct_y_star_mutation_authorized')}")
-    print(f"generated updated mission report: {summary.get('generated_updated_mission_report')}")
-    print(f"generated conflict decision packet: {summary.get('generated_conflict_decision_packet')}")
-    print(f"generated next action packet: {summary.get('generated_next_action_packet')}")
-    print(f"generated no-side-effect receipt: {summary.get('generated_no_side_effect_receipt')}")
-    print(f"generated readiness: {summary.get('generated_readiness')}")
-    print(f"warning: {summary.get('warning')}")
-
-
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -5258,8 +5190,6 @@ def main(argv: list[str]) -> int:
         cmd_unified_controlled_external_observation_evidence_loop(data)
     elif command == "real-controlled-external-observation-mission-sprint":
         cmd_real_controlled_external_observation_mission_sprint(data)
-    elif command == "real-evidence-conflict-resolution-sprint":
-        cmd_real_evidence_conflict_resolution_sprint(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

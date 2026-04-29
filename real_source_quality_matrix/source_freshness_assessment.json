@@ -2,12 +2,16 @@
   "schema_version": "v0",
   "freshness": [
     {
-      "source_url": "https://www.acquisition.gov/far/part-2",
-      "freshness_label": "date_missing_or_review_required"
+      "source_url": "https://official.example.org/fixture/program-demand",
+      "freshness_label": "fixture_current_marker"
     },
     {
-      "source_url": "https://grants.nih.gov/grants/glossary.htm",
-      "freshness_label": "date_missing_or_review_required"
+      "source_url": "https://analysis.example.net/fixture/corroboration-brief",
+      "freshness_label": "fixture_current_marker"
+    },
+    {
+      "source_url": "https://analysis.example.net/fixture/scope-limitation",
+      "freshness_label": "fixture_current_marker"
     }
   ]
 }

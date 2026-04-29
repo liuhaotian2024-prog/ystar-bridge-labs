@@ -410,19 +410,6 @@ CURATED_SOURCES = [
     "real_no_action_receipts/no_side_effect_receipt.json",
     "l6_13_read_model/l6_13_strategic_residual_delta.json",
     "l6_13_read_model/l6_13_readiness_assessment.json",
-    "l6_real_evidence_conflict_resolution_sprint/l6_14_summary.json",
-    "real_evidence_report_ingestion/prior_mission_evidence_ingestion.json",
-    "second_pass_query_planning/second_pass_query_plan.json",
-    "second_pass_search_execution/second_pass_search_trace.json",
-    "second_pass_page_read_receipts/second_pass_page_read_trace.json",
-    "second_pass_evidence_packets/second_pass_evidence_packet_index.json",
-    "corroboration_conflict_update/conflict_registry_after_second_pass.json",
-    "conflict_resolution_decision_packet/conflict_resolution_decision_packet.json",
-    "next_action_recommendation_packet/next_action_recommendation_packet.json",
-    "l6_14_no_action_receipts/no_side_effect_receipt.json",
-    "residual_limitation_report/residual_limitation_report.json",
-    "l6_14_read_model/l6_14_strategic_residual_delta.json",
-    "l6_14_read_model/l6_14_readiness_assessment.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -7343,174 +7330,6 @@ def build_l6_13_real_controlled_observation_mission_summary(
     }
 
 
-def build_l6_14_real_evidence_conflict_resolution_summary(
-    milestone_summary: dict[str, Any] | None,
-    ingestion: dict[str, Any] | None,
-    query_plan: dict[str, Any] | None,
-    search_trace: dict[str, Any] | None,
-    page_read_trace: dict[str, Any] | None,
-    evidence_index: dict[str, Any] | None,
-    conflict_registry_after: dict[str, Any] | None,
-    decision_packet: dict[str, Any] | None,
-    next_action: dict[str, Any] | None,
-    no_side_effect_receipt: dict[str, Any] | None,
-    residual_delta: dict[str, Any] | None,
-    readiness_summary: dict[str, Any] | None,
-) -> dict[str, Any]:
-    if not readiness_summary:
-        return {
-            "schema_name": "ystar.console_read_model.generated.l6_14_real_evidence_conflict_resolution_sprint_summary",
-            "schema_version": "v0",
-            "l6_14_real_evidence_conflict_resolution_sprint_complete": False,
-            "warning": "L6.14 real evidence conflict resolution sprint pack has not been generated yet.",
-        }
-
-    milestone_summary = milestone_summary or {}
-    ingestion = ingestion or {}
-    query_plan = query_plan or {}
-    search_trace = search_trace or {}
-    page_read_trace = page_read_trace or {}
-    evidence_index = evidence_index or {}
-    conflict_registry_after = conflict_registry_after or {}
-    decision_packet = decision_packet or {}
-    next_action = next_action or {}
-    no_side_effect_receipt = no_side_effect_receipt or {}
-    residual_delta = residual_delta or {}
-
-    def flag(field: str, default: Any = False) -> Any:
-        return milestone_summary.get(field, readiness_summary.get(field, default))
-
-    return {
-        "schema_name": "ystar.console_read_model.generated.l6_14_real_evidence_conflict_resolution_sprint_summary",
-        "schema_version": "v0",
-        "milestone_id": milestone_summary.get("milestone_id", "L6.14"),
-        "milestone_name": milestone_summary.get(
-            "milestone_name",
-            "Real Evidence Conflict Resolution & Iterative Observation Sprint",
-        ),
-        "mode": milestone_summary.get("mode", "real_evidence_conflict_resolution_sprint"),
-        "run_id": milestone_summary.get("run_id"),
-        "prior_run_id": milestone_summary.get("prior_run_id"),
-        "prior_run_classification": milestone_summary.get(
-            "prior_run_classification", ingestion.get("prior_run_classification")
-        ),
-        "post_second_pass_classification": milestone_summary.get(
-            "post_second_pass_classification",
-            decision_packet.get("post_second_pass_classification"),
-        ),
-        "l6_14_real_evidence_conflict_resolution_sprint_complete": readiness_summary.get(
-            "l6_14_real_evidence_conflict_resolution_sprint_complete", True
-        ),
-        "selected_work_order_id": milestone_summary.get("selected_work_order_id"),
-        "backend_mode": milestone_summary.get("backend_mode"),
-        "page_read_mode": milestone_summary.get("page_read_mode"),
-        "network_allowed": milestone_summary.get("network_allowed", False),
-        "safety_preflight_decision": milestone_summary.get("safety_preflight_decision"),
-        "second_pass_real_observation_executed": milestone_summary.get(
-            "second_pass_real_observation_executed", False
-        ),
-        "second_pass_search_executed": milestone_summary.get("second_pass_search_executed", False),
-        "second_pass_queries_generated": milestone_summary.get(
-            "second_pass_queries_generated", query_plan.get("query_count", 0)
-        ),
-        "search_results_considered": milestone_summary.get(
-            "search_results_considered", search_trace.get("search_results_considered", 0)
-        ),
-        "pages_opened": milestone_summary.get("pages_opened", page_read_trace.get("pages_opened", 0)),
-        "domains_touched": milestone_summary.get("domains_touched", 0),
-        "crawl_depth_used": milestone_summary.get("crawl_depth_used", 0),
-        "external_reads_used": milestone_summary.get("external_reads_used", 0),
-        "prior_real_evidence_packets": milestone_summary.get(
-            "prior_real_evidence_packets", ingestion.get("prior_real_evidence_packet_count", 0)
-        ),
-        "new_real_evidence_packets": milestone_summary.get(
-            "new_real_evidence_packets", evidence_index.get("new_real_evidence_packet_count", 0)
-        ),
-        "total_real_evidence_packets": milestone_summary.get("total_real_evidence_packets", 0),
-        "conflicts_before": milestone_summary.get("conflicts_before", ingestion.get("prior_conflict_count", 0)),
-        "conflicts_after": milestone_summary.get(
-            "conflicts_after", conflict_registry_after.get("conflicts_after", 0)
-        ),
-        "unresolved_claims_before": milestone_summary.get(
-            "unresolved_claims_before", ingestion.get("prior_unresolved_claim_count", 0)
-        ),
-        "unresolved_claims_after": milestone_summary.get("unresolved_claims_after", 0),
-        "conflict_resolution_status": milestone_summary.get("conflict_resolution_status"),
-        "next_action_recommendation": milestone_summary.get(
-            "next_action_recommendation", next_action.get("recommended_next_action")
-        ),
-        "blockers": milestone_summary.get("blockers", []),
-        "ask_user_for_url_occurred": milestone_summary.get(
-            "ask_user_for_url_occurred",
-            no_side_effect_receipt.get("ask_user_for_url_occurred", False),
-        ),
-        "external_side_effects_occurred": milestone_summary.get(
-            "external_side_effects_occurred",
-            no_side_effect_receipt.get("external_side_effects_occurred", False),
-        ),
-        "core_writeback_occurred": milestone_summary.get(
-            "core_writeback_occurred",
-            no_side_effect_receipt.get("core_writeback_occurred", False),
-        ),
-        "y_star_gov_modified": milestone_summary.get("y_star_gov_modified", False),
-        "gov_mcp_modified": milestone_summary.get("gov_mcp_modified", False),
-        "search_snippets_used_as_evidence": milestone_summary.get(
-            "search_snippets_used_as_evidence", False
-        ),
-        "page_read_content_used_as_evidence": milestone_summary.get(
-            "page_read_content_used_as_evidence", False
-        ),
-        "secret_values_serialized": milestone_summary.get("secret_values_serialized", False),
-        "residuals": residual_delta.get("residuals", []),
-        "next_step": readiness_summary.get("next_step"),
-        "ask_user_for_url_authorized": flag("ask_user_for_url_authorized"),
-        "user_manual_search_authorized": flag("user_manual_search_authorized"),
-        "login_authorized": flag("login_authorized"),
-        "account_creation_authorized": flag("account_creation_authorized"),
-        "payment_authorized": flag("payment_authorized"),
-        "checkout_authorized": flag("checkout_authorized"),
-        "form_submission_authorized": flag("form_submission_authorized"),
-        "posting_authorized": flag("posting_authorized"),
-        "commenting_authorized": flag("commenting_authorized"),
-        "messaging_authorized": flag("messaging_authorized"),
-        "publication_authorized": flag("publication_authorized"),
-        "outreach_authorized": flag("outreach_authorized"),
-        "revenue_execution_authorized": flag("revenue_execution_authorized"),
-        "mcp_execution_authorized": flag("mcp_execution_authorized"),
-        "live_behavior_authorized": flag("live_behavior_authorized"),
-        "cieu_db_write_authorized": flag("cieu_db_write_authorized"),
-        "canonical_update_authorized": flag("canonical_update_authorized"),
-        "brain_writeback_authorized": flag("brain_writeback_authorized"),
-        "memory_ingestion_authorized": flag("memory_ingestion_authorized"),
-        "direct_y_star_mutation_authorized": flag("direct_y_star_mutation_authorized"),
-        "artifact_refinement_candidate_generation_authorized": flag(
-            "artifact_refinement_candidate_generation_authorized"
-        ),
-        "artifact_refinement_application_authorized": flag(
-            "artifact_refinement_application_authorized"
-        ),
-        "max_selected_work_orders": milestone_summary.get("max_selected_work_orders"),
-        "max_second_pass_queries": milestone_summary.get("max_second_pass_queries"),
-        "max_search_results_considered": milestone_summary.get("max_search_results_considered"),
-        "max_pages_opened": milestone_summary.get("max_pages_opened"),
-        "max_domains": milestone_summary.get("max_domains"),
-        "max_pages_per_domain": milestone_summary.get("max_pages_per_domain"),
-        "max_crawl_depth": milestone_summary.get("max_crawl_depth"),
-        "max_total_external_reads": milestone_summary.get("max_total_external_reads"),
-        "max_new_real_evidence_packets": milestone_summary.get("max_new_real_evidence_packets"),
-        "generated_summary": "l6_real_evidence_conflict_resolution_sprint/l6_14_summary.json",
-        "generated_updated_mission_report": "real_mission_evidence_report/l6_14_updated_mission_evidence_report.json",
-        "generated_conflict_decision_packet": "conflict_resolution_decision_packet/conflict_resolution_decision_packet.json",
-        "generated_next_action_packet": "next_action_recommendation_packet/next_action_recommendation_packet.json",
-        "generated_no_side_effect_receipt": "l6_14_no_action_receipts/no_side_effect_receipt.json",
-        "generated_readiness": "l6_14_read_model/l6_14_readiness_assessment.json",
-        "warning": (
-            "L6.14 performs a bounded second-pass real observation loop and keeps "
-            "all downstream action/writeback blocked."
-        ),
-    }
-
-
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -9069,54 +8888,6 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_13_read_model/l6_13_readiness_assessment.json",
         files_read,
     )
-    l6_14_milestone_summary = load_optional_json(
-        "l6_real_evidence_conflict_resolution_sprint/l6_14_summary.json",
-        files_read,
-    )
-    l6_14_ingestion = load_optional_json(
-        "real_evidence_report_ingestion/prior_mission_evidence_ingestion.json",
-        files_read,
-    )
-    l6_14_query_plan = load_optional_json(
-        "second_pass_query_planning/second_pass_query_plan.json",
-        files_read,
-    )
-    l6_14_search_trace = load_optional_json(
-        "second_pass_search_execution/second_pass_search_trace.json",
-        files_read,
-    )
-    l6_14_page_read_trace = load_optional_json(
-        "second_pass_page_read_receipts/second_pass_page_read_trace.json",
-        files_read,
-    )
-    l6_14_evidence_index = load_optional_json(
-        "second_pass_evidence_packets/second_pass_evidence_packet_index.json",
-        files_read,
-    )
-    l6_14_conflict_after = load_optional_json(
-        "corroboration_conflict_update/conflict_registry_after_second_pass.json",
-        files_read,
-    )
-    l6_14_decision_packet = load_optional_json(
-        "conflict_resolution_decision_packet/conflict_resolution_decision_packet.json",
-        files_read,
-    )
-    l6_14_next_action = load_optional_json(
-        "next_action_recommendation_packet/next_action_recommendation_packet.json",
-        files_read,
-    )
-    l6_14_no_side_effect_receipt = load_optional_json(
-        "l6_14_no_action_receipts/no_side_effect_receipt.json",
-        files_read,
-    )
-    l6_14_residual_delta = load_optional_json(
-        "l6_14_read_model/l6_14_strategic_residual_delta.json",
-        files_read,
-    )
-    l6_14_readiness_summary = load_optional_json(
-        "l6_14_read_model/l6_14_readiness_assessment.json",
-        files_read,
-    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -9580,22 +9351,6 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             l6_13_readiness_summary,
         )
     )
-    l6_14_real_evidence_conflict_resolution_summary = (
-        build_l6_14_real_evidence_conflict_resolution_summary(
-            l6_14_milestone_summary,
-            l6_14_ingestion,
-            l6_14_query_plan,
-            l6_14_search_trace,
-            l6_14_page_read_trace,
-            l6_14_evidence_index,
-            l6_14_conflict_after,
-            l6_14_decision_packet,
-            l6_14_next_action,
-            l6_14_no_side_effect_receipt,
-            l6_14_residual_delta,
-            l6_14_readiness_summary,
-        )
-    )
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -9779,7 +9534,6 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_11_controlled_backend_page_read_enablement_summary": l6_11_controlled_backend_page_read_enablement_summary,
         "l6_12_unified_controlled_observation_summary": l6_12_unified_controlled_observation_summary,
         "l6_13_real_controlled_observation_mission_summary": l6_13_real_controlled_observation_mission_summary,
-        "l6_14_real_evidence_conflict_resolution_summary": l6_14_real_evidence_conflict_resolution_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -10337,7 +10091,6 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/l6_11_controlled_backend_page_read_enablement_summary.json", l6_11_controlled_backend_page_read_enablement_summary, generated_files)
     write_json("console_read_model/generated/l6_12_unified_controlled_external_observation_evidence_loop_summary.json", l6_12_unified_controlled_observation_summary, generated_files)
     write_json("console_read_model/generated/l6_13_real_controlled_external_observation_mission_sprint_summary.json", l6_13_real_controlled_observation_mission_summary, generated_files)
-    write_json("console_read_model/generated/l6_14_real_evidence_conflict_resolution_sprint_summary.json", l6_14_real_evidence_conflict_resolution_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings

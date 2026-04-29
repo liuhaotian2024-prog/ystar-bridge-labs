@@ -1,16 +1,23 @@
 {
   "schema_version": "v0",
-  "decision": "pass",
-  "backend_mode": "tavily_search_api",
-  "page_read_mode": "stdlib_public_http",
-  "network_allowed": true,
-  "search_network_allowed": true,
-  "page_read_network_allowed": true,
-  "required_env_present": {
-    "TAVILY_API_KEY": true
-  },
-  "missing_env_names": [],
-  "blockers": [],
+  "decision": "blocked",
+  "backend_mode": "disabled",
+  "page_read_mode": "disabled",
+  "network_allowed": false,
+  "search_network_allowed": false,
+  "page_read_network_allowed": false,
+  "required_env_present": {},
+  "missing_env_names": [
+    "YSTAR_CONTROLLED_PAGE_READ_ALLOW_NETWORK",
+    "YSTAR_CONTROLLED_PAGE_READ_BACKEND",
+    "YSTAR_CONTROLLED_SEARCH_ALLOW_NETWORK",
+    "YSTAR_CONTROLLED_SEARCH_BACKEND"
+  ],
+  "blockers": [
+    "controlled_public_page_read_adapter_not_configured",
+    "controlled_search_backend_not_configured",
+    "real_provider_and_stdlib_page_read_not_configured"
+  ],
   "warnings": [],
   "budget_checks": {
     "max_queries": {

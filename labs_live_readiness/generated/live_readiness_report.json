@@ -4,7 +4,7 @@
   "generated_at_policy": "deterministic_no_timestamp",
   "dry_run_readiness": {
     "ystar_gov_endpoint_accepted": true,
-    "labs_runtime_acceptance_accepted": false,
+    "labs_runtime_acceptance_accepted": true,
     "cross_repo_alignment_accepted": true,
     "multi_role_pre_u_governance_ready": true,
     "console_read_model_ready": true,
@@ -32,7 +32,7 @@
     "raw_artifact_ingestion_allowed": false
   },
   "overall_status": {
-    "dry_run_governance_ready": false,
+    "dry_run_governance_ready": true,
     "minimal_live_loop_ready": false,
     "minimal_live_loop_status": "blocked_until_required_gates_exist",
     "recommended_next_phase": "build_live_boundary_harness_not_runtime_execution"

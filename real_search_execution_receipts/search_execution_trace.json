@@ -1,8 +1,8 @@
 {
   "schema_version": "v0",
   "fixture_search_executed": true,
-  "real_search_executed": true,
-  "search_query_count": 7,
-  "search_results_considered": 25,
+  "real_search_executed": false,
+  "search_query_count": 0,
+  "search_results_considered": 0,
   "provider_error_code": null
 }

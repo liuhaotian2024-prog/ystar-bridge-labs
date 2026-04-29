@@ -100,7 +100,7 @@
       "raw_runtime_artifact": false,
       "requires_network": false,
       "requires_credentials": false,
-      "max_bytes": 214004,
+      "max_bytes": 181938,
       "governance_notes": "Generated team console snapshot."
     }
   ],

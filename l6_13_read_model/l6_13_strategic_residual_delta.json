@@ -1,6 +1,12 @@
 {
   "schema_version": "v0",
-  "residuals": [],
-  "real_observation_executed": true,
+  "residuals": [
+    "controlled_public_page_read_adapter_not_configured",
+    "controlled_search_backend_not_configured",
+    "real_provider_and_stdlib_page_read_not_configured",
+    "l6_13_gap_001_configured_search_provider",
+    "l6_13_gap_002_configured_public_page_reader"
+  ],
+  "real_observation_executed": false,
   "activation_kit_generated": true
 }
