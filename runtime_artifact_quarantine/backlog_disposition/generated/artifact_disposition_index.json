@@ -8,41 +8,43 @@
     "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
   ],
   "summary": {
-    "total_artifacts": 124,
-    "artifacts_with_disposition": 124,
+    "total_artifacts": 141,
+    "artifacts_with_disposition": 141,
     "dispositions": {
       "deferred_requires_marker_metadata_adapter": 26,
-      "deferred_sidecar_or_transaction_file": 6,
+      "deferred_sidecar_or_transaction_file": 4,
       "deferred_requires_classification": 10,
       "deferred_requires_readonly_db_adapter": 2,
-      "ignored_or_non_runtime": 5,
+      "ignored_or_non_runtime": 23,
       "deferred_requires_bounded_log_adapter": 30,
-      "ignored_generated_cache": 45
+      "ignored_generated_cache": 45,
+      "safe_mined_to_review_queue": 1
     },
     "artifact_classes": {
       "DAEMON_STATE": 4,
-      "DB_SIDECARE": 6,
+      "DB_SIDECARE": 4,
       "UNKNOWN_RUNTIME_ARTIFACT": 10,
       "DB_CORE": 1,
-      "UNKNOWN_OR_NON_RUNTIME": 5,
+      "UNKNOWN_OR_NON_RUNTIME": 23,
       "CACHE_SENTINEL": 5,
       "LOG_RUNTIME": 30,
       "ACTIVE_AGENT_MARKER": 17,
       "PYCACHE": 45,
-      "BACKUP_DB": 1
+      "BACKUP_DB": 1,
+      "DREAM_REPORT": 1
     },
-    "safe_mined_to_review_queue": 0,
+    "safe_mined_to_review_queue": 1,
     "deferred_adapter_counts": {
       "deferred_requires_marker_metadata_adapter": 26,
-      "deferred_sidecar_or_transaction_file": 6,
+      "deferred_sidecar_or_transaction_file": 4,
       "deferred_requires_classification": 10,
       "deferred_requires_readonly_db_adapter": 2,
       "deferred_requires_bounded_log_adapter": 30
     },
     "ignored_generated_cache": 45,
-    "forbidden_direct_read_count": 119,
+    "forbidden_direct_read_count": 117,
     "evidence_scoring_status": {
-      "not_started": 124
+      "not_started": 141
     },
     "warning": "Disposition is not ingestion. No brain/memory/CIEU writes are allowed."
   },
@@ -305,16 +307,16 @@
     },
     {
       "disposition_id": "disp-0009",
-      "artifact_path": "aiden_brain.db-shm",
-      "artifact_class": "DB_SIDECARE",
-      "disposition": "deferred_sidecar_or_transaction_file",
+      "artifact_path": "console_read_model/checks/run_local_safety_checks.py",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "disposition": "ignored_or_non_runtime",
       "source_in_quarantine_manifest": true,
       "safe_mining_candidate_id": null,
       "review_id": null,
       "review_status": null,
       "ingestion_status": "not_ingested",
       "evidence_scoring_status": "not_started",
-      "allowed_next_step": "do_not_read_until_db_adapter_policy",
+      "allowed_next_step": "ignore_for_runtime_artifact_mining",
       "forbidden_next_steps": [
         "direct_brain_writeback",
         "direct_memory_ingestion",
@@ -324,11 +326,11 @@
         "candidate_auto_approval"
       ],
       "direct_read_allowed": false,
-      "forbidden_direct_read": true,
+      "forbidden_direct_read": false,
       "brain_writeback_allowed": false,
       "memory_ingestion_allowed": false,
       "cieu_write_allowed": false,
-      "rationale": "Database sidecar or transaction files must not be directly read.",
+      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
       "generated_from_refs": [
         "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
         "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
@@ -337,16 +339,16 @@
     },
     {
       "disposition_id": "disp-0010",
-      "artifact_path": "aiden_brain.db-wal",
-      "artifact_class": "DB_SIDECARE",
-      "disposition": "deferred_sidecar_or_transaction_file",
+      "artifact_path": "console_read_model/cli/command_reference.md",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "disposition": "ignored_or_non_runtime",
       "source_in_quarantine_manifest": true,
       "safe_mining_candidate_id": null,
       "review_id": null,
       "review_status": null,
       "ingestion_status": "not_ingested",
       "evidence_scoring_status": "not_started",
-      "allowed_next_step": "do_not_read_until_db_adapter_policy",
+      "allowed_next_step": "ignore_for_runtime_artifact_mining",
       "forbidden_next_steps": [
         "direct_brain_writeback",
         "direct_memory_ingestion",
@@ -356,11 +358,11 @@
         "candidate_auto_approval"
       ],
       "direct_read_allowed": false,
-      "forbidden_direct_read": true,
+      "forbidden_direct_read": false,
       "brain_writeback_allowed": false,
       "memory_ingestion_allowed": false,
       "cieu_write_allowed": false,
-      "rationale": "Database sidecar or transaction files must not be directly read.",
+      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
       "generated_from_refs": [
         "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
         "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
@@ -369,7 +371,7 @@
     },
     {
       "disposition_id": "disp-0011",
-      "artifact_path": "governance/enforce_status_dashboard.md",
+      "artifact_path": "console_read_model/cli/team_console.py",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "disposition": "ignored_or_non_runtime",
       "source_in_quarantine_manifest": true,
@@ -401,6 +403,294 @@
     },
     {
       "disposition_id": "disp-0012",
+      "artifact_path": "console_read_model/generated/README.md",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "disposition": "ignored_or_non_runtime",
+      "source_in_quarantine_manifest": true,
+      "safe_mining_candidate_id": null,
+      "review_id": null,
+      "review_status": null,
+      "ingestion_status": "not_ingested",
+      "evidence_scoring_status": "not_started",
+      "allowed_next_step": "ignore_for_runtime_artifact_mining",
+      "forbidden_next_steps": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery",
+        "semantic_truth_scoring_without_review",
+        "candidate_auto_approval"
+      ],
+      "direct_read_allowed": false,
+      "forbidden_direct_read": false,
+      "brain_writeback_allowed": false,
+      "memory_ingestion_allowed": false,
+      "cieu_write_allowed": false,
+      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
+      "generated_from_refs": [
+        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+      ]
+    },
+    {
+      "disposition_id": "disp-0013",
+      "artifact_path": "console_read_model/generated/generation_manifest.json",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "disposition": "ignored_or_non_runtime",
+      "source_in_quarantine_manifest": true,
+      "safe_mining_candidate_id": null,
+      "review_id": null,
+      "review_status": null,
+      "ingestion_status": "not_ingested",
+      "evidence_scoring_status": "not_started",
+      "allowed_next_step": "ignore_for_runtime_artifact_mining",
+      "forbidden_next_steps": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery",
+        "semantic_truth_scoring_without_review",
+        "candidate_auto_approval"
+      ],
+      "direct_read_allowed": false,
+      "forbidden_direct_read": false,
+      "brain_writeback_allowed": false,
+      "memory_ingestion_allowed": false,
+      "cieu_write_allowed": false,
+      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
+      "generated_from_refs": [
+        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+      ]
+    },
+    {
+      "disposition_id": "disp-0014",
+      "artifact_path": "console_read_model/generated/team_console_snapshot.json",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "disposition": "ignored_or_non_runtime",
+      "source_in_quarantine_manifest": true,
+      "safe_mining_candidate_id": null,
+      "review_id": null,
+      "review_status": null,
+      "ingestion_status": "not_ingested",
+      "evidence_scoring_status": "not_started",
+      "allowed_next_step": "ignore_for_runtime_artifact_mining",
+      "forbidden_next_steps": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery",
+        "semantic_truth_scoring_without_review",
+        "candidate_auto_approval"
+      ],
+      "direct_read_allowed": false,
+      "forbidden_direct_read": false,
+      "brain_writeback_allowed": false,
+      "memory_ingestion_allowed": false,
+      "cieu_write_allowed": false,
+      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
+      "generated_from_refs": [
+        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+      ]
+    },
+    {
+      "disposition_id": "disp-0015",
+      "artifact_path": "console_read_model/generated/team_console_snapshot.md",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "disposition": "ignored_or_non_runtime",
+      "source_in_quarantine_manifest": true,
+      "safe_mining_candidate_id": null,
+      "review_id": null,
+      "review_status": null,
+      "ingestion_status": "not_ingested",
+      "evidence_scoring_status": "not_started",
+      "allowed_next_step": "ignore_for_runtime_artifact_mining",
+      "forbidden_next_steps": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery",
+        "semantic_truth_scoring_without_review",
+        "candidate_auto_approval"
+      ],
+      "direct_read_allowed": false,
+      "forbidden_direct_read": false,
+      "brain_writeback_allowed": false,
+      "memory_ingestion_allowed": false,
+      "cieu_write_allowed": false,
+      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
+      "generated_from_refs": [
+        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+      ]
+    },
+    {
+      "disposition_id": "disp-0016",
+      "artifact_path": "console_read_model/loader/build_team_console_snapshot.py",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "disposition": "ignored_or_non_runtime",
+      "source_in_quarantine_manifest": true,
+      "safe_mining_candidate_id": null,
+      "review_id": null,
+      "review_status": null,
+      "ingestion_status": "not_ingested",
+      "evidence_scoring_status": "not_started",
+      "allowed_next_step": "ignore_for_runtime_artifact_mining",
+      "forbidden_next_steps": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery",
+        "semantic_truth_scoring_without_review",
+        "candidate_auto_approval"
+      ],
+      "direct_read_allowed": false,
+      "forbidden_direct_read": false,
+      "brain_writeback_allowed": false,
+      "memory_ingestion_allowed": false,
+      "cieu_write_allowed": false,
+      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
+      "generated_from_refs": [
+        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+      ]
+    },
+    {
+      "disposition_id": "disp-0017",
+      "artifact_path": "console_read_model/validation/expected_structure.json",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "disposition": "ignored_or_non_runtime",
+      "source_in_quarantine_manifest": true,
+      "safe_mining_candidate_id": null,
+      "review_id": null,
+      "review_status": null,
+      "ingestion_status": "not_ingested",
+      "evidence_scoring_status": "not_started",
+      "allowed_next_step": "ignore_for_runtime_artifact_mining",
+      "forbidden_next_steps": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery",
+        "semantic_truth_scoring_without_review",
+        "candidate_auto_approval"
+      ],
+      "direct_read_allowed": false,
+      "forbidden_direct_read": false,
+      "brain_writeback_allowed": false,
+      "memory_ingestion_allowed": false,
+      "cieu_write_allowed": false,
+      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
+      "generated_from_refs": [
+        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+      ]
+    },
+    {
+      "disposition_id": "disp-0018",
+      "artifact_path": "console_read_model/validation/validate_team_read_model.py",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "disposition": "ignored_or_non_runtime",
+      "source_in_quarantine_manifest": true,
+      "safe_mining_candidate_id": null,
+      "review_id": null,
+      "review_status": null,
+      "ingestion_status": "not_ingested",
+      "evidence_scoring_status": "not_started",
+      "allowed_next_step": "ignore_for_runtime_artifact_mining",
+      "forbidden_next_steps": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery",
+        "semantic_truth_scoring_without_review",
+        "candidate_auto_approval"
+      ],
+      "direct_read_allowed": false,
+      "forbidden_direct_read": false,
+      "brain_writeback_allowed": false,
+      "memory_ingestion_allowed": false,
+      "cieu_write_allowed": false,
+      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
+      "generated_from_refs": [
+        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+      ]
+    },
+    {
+      "disposition_id": "disp-0019",
+      "artifact_path": "governance/enforce_status_dashboard.md",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "disposition": "ignored_or_non_runtime",
+      "source_in_quarantine_manifest": true,
+      "safe_mining_candidate_id": null,
+      "review_id": null,
+      "review_status": null,
+      "ingestion_status": "not_ingested",
+      "evidence_scoring_status": "not_started",
+      "allowed_next_step": "ignore_for_runtime_artifact_mining",
+      "forbidden_next_steps": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery",
+        "semantic_truth_scoring_without_review",
+        "candidate_auto_approval"
+      ],
+      "direct_read_allowed": false,
+      "forbidden_direct_read": false,
+      "brain_writeback_allowed": false,
+      "memory_ingestion_allowed": false,
+      "cieu_write_allowed": false,
+      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
+      "generated_from_refs": [
+        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+      ]
+    },
+    {
+      "disposition_id": "disp-0020",
+      "artifact_path": "memory/WORLD_STATE.md",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "disposition": "ignored_or_non_runtime",
+      "source_in_quarantine_manifest": true,
+      "safe_mining_candidate_id": null,
+      "review_id": null,
+      "review_status": null,
+      "ingestion_status": "not_ingested",
+      "evidence_scoring_status": "not_started",
+      "allowed_next_step": "ignore_for_runtime_artifact_mining",
+      "forbidden_next_steps": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery",
+        "semantic_truth_scoring_without_review",
+        "candidate_auto_approval"
+      ],
+      "direct_read_allowed": false,
+      "forbidden_direct_read": false,
+      "brain_writeback_allowed": false,
+      "memory_ingestion_allowed": false,
+      "cieu_write_allowed": false,
+      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
+      "generated_from_refs": [
+        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+      ]
+    },
+    {
+      "disposition_id": "disp-0021",
       "artifact_path": "scripts/.auto_commit_push_sentinel.json",
       "artifact_class": "CACHE_SENTINEL",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -432,7 +722,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0013",
+      "disposition_id": "disp-0022",
       "artifact_path": "scripts/.brain_l1_cache.json",
       "artifact_class": "CACHE_SENTINEL",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -464,7 +754,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0014",
+      "disposition_id": "disp-0023",
       "artifact_path": "scripts/.brain_writeback_last_drain",
       "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
       "disposition": "deferred_requires_classification",
@@ -496,7 +786,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0015",
+      "disposition_id": "disp-0024",
       "artifact_path": "scripts/.k9_alarm_consumer.pid",
       "artifact_class": "DAEMON_STATE",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -528,7 +818,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0016",
+      "disposition_id": "disp-0025",
       "artifact_path": "scripts/.k9_alarm_consumer_state.json",
       "artifact_class": "DAEMON_STATE",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -560,7 +850,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0017",
+      "disposition_id": "disp-0026",
       "artifact_path": "scripts/.logs/dialogue_contract.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -592,7 +882,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0018",
+      "disposition_id": "disp-0027",
       "artifact_path": "scripts/.logs/dream_log.json",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -624,7 +914,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0019",
+      "disposition_id": "disp-0028",
       "artifact_path": "scripts/.logs/drift.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -656,7 +946,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0020",
+      "disposition_id": "disp-0029",
       "artifact_path": "scripts/.session_call_count",
       "artifact_class": "CACHE_SENTINEL",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -688,7 +978,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0021",
+      "disposition_id": "disp-0030",
       "artifact_path": "scripts/.ystar_active_agent.ppid_11854",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -720,7 +1010,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0022",
+      "disposition_id": "disp-0031",
       "artifact_path": "scripts/.ystar_active_agent.ppid_38419",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -752,7 +1042,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0023",
+      "disposition_id": "disp-0032",
       "artifact_path": "scripts/.ystar_active_agent.ppid_72731",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -784,7 +1074,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0024",
+      "disposition_id": "disp-0033",
       "artifact_path": "scripts/.ystar_active_agent.ppid_76589",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -816,7 +1106,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0025",
+      "disposition_id": "disp-0034",
       "artifact_path": "scripts/.ystar_active_agent.ppid_77022",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -848,7 +1138,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0026",
+      "disposition_id": "disp-0035",
       "artifact_path": "scripts/.ystar_active_agent.ppid_91267",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -880,7 +1170,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0027",
+      "disposition_id": "disp-0036",
       "artifact_path": "scripts/.ystar_active_agent.ppid_987",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -912,7 +1202,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0028",
+      "disposition_id": "disp-0037",
       "artifact_path": "scripts/.ystar_last_board_msg",
       "artifact_class": "CACHE_SENTINEL",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -944,7 +1234,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0029",
+      "disposition_id": "disp-0038",
       "artifact_path": "scripts/__pycache__/_cieu_helpers.cpython-311.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -976,7 +1266,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0030",
+      "disposition_id": "disp-0039",
       "artifact_path": "scripts/__pycache__/agent_stack.cpython-311.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1008,7 +1298,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0031",
+      "disposition_id": "disp-0040",
       "artifact_path": "scripts/__pycache__/aiden_brain.cpython-311.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1040,7 +1330,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0032",
+      "disposition_id": "disp-0041",
       "artifact_path": "scripts/__pycache__/aiden_dream.cpython-311.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1072,7 +1362,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0033",
+      "disposition_id": "disp-0042",
       "artifact_path": "scripts/__pycache__/brain_writeback_queue.cpython-311.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1104,7 +1394,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0034",
+      "disposition_id": "disp-0043",
       "artifact_path": "scripts/__pycache__/dispatch_role_routing.cpython-311.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1136,7 +1426,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0035",
+      "disposition_id": "disp-0044",
       "artifact_path": "scripts/__pycache__/forget_guard.cpython-311.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1168,7 +1458,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0036",
+      "disposition_id": "disp-0045",
       "artifact_path": "scripts/__pycache__/hook_ceo_post_output_brain_writeback.cpython-311.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1200,7 +1490,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0037",
+      "disposition_id": "disp-0046",
       "artifact_path": "scripts/__pycache__/hook_ceo_pre_output_brain_query.cpython-311.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1232,7 +1522,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0038",
+      "disposition_id": "disp-0047",
       "artifact_path": "scripts/__pycache__/per_rule_detectors.cpython-311.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1264,7 +1554,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0039",
+      "disposition_id": "disp-0048",
       "artifact_path": "scripts/tests/__pycache__/test_aiden_cluster_daemon.cpython-311-pytest-9.0.2.pyc",
       "artifact_class": "DAEMON_STATE",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -1296,7 +1586,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0040",
+      "disposition_id": "disp-0049",
       "artifact_path": "scripts/tests/__pycache__/test_aiden_dream_cieu_emit.cpython-311-pytest-9.0.2.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1328,7 +1618,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0041",
+      "disposition_id": "disp-0050",
       "artifact_path": "scripts/tests/__pycache__/test_czl_bus.cpython-311-pytest-9.0.2.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1360,7 +1650,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0042",
+      "disposition_id": "disp-0051",
       "artifact_path": "scripts/tests/__pycache__/test_dialogue_to_brain_feeder.cpython-311-pytest-9.0.2.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1392,7 +1682,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0043",
+      "disposition_id": "disp-0052",
       "artifact_path": "scripts/tests/__pycache__/test_dispatch_board_czl_enforcement.cpython-311-pytest-9.0.2.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1424,7 +1714,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0044",
+      "disposition_id": "disp-0053",
       "artifact_path": "scripts/tests/__pycache__/test_dispatch_board_reject_guide.cpython-311-pytest-9.0.2.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1456,7 +1746,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0045",
+      "disposition_id": "disp-0054",
       "artifact_path": "scripts/tests/__pycache__/test_ethan_brain.cpython-311-pytest-9.0.2.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1488,7 +1778,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0046",
+      "disposition_id": "disp-0055",
       "artifact_path": "scripts/tests/__pycache__/test_gemma_local_smoke.cpython-311-pytest-9.0.2.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1520,7 +1810,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0047",
+      "disposition_id": "disp-0056",
       "artifact_path": "scripts/tests/__pycache__/test_hook_stop_czl_auto_publish.cpython-311-pytest-9.0.2.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1552,7 +1842,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0048",
+      "disposition_id": "disp-0057",
       "artifact_path": "scripts/tests/__pycache__/test_hook_who_i_am_staleness.cpython-311-pytest-9.0.2.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1584,7 +1874,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0049",
+      "disposition_id": "disp-0058",
       "artifact_path": "scripts/tests/__pycache__/test_mint_agent_brain.cpython-311-pytest-9.0.2.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1616,7 +1906,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0050",
+      "disposition_id": "disp-0059",
       "artifact_path": "scripts/tests/__pycache__/test_parent_session_commitment_tracker.cpython-311-pytest-9.0.2.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1648,7 +1938,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0051",
+      "disposition_id": "disp-0060",
       "artifact_path": "tests/governance/__pycache__/test_dream_manual_gate.cpython-311-pytest-9.0.2.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1680,7 +1970,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0052",
+      "disposition_id": "disp-0061",
       "artifact_path": "tests/hook/__pycache__/__init__.cpython-311.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1712,7 +2002,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0053",
+      "disposition_id": "disp-0062",
       "artifact_path": "tests/hook/__pycache__/test_brain_writeback_wiring.cpython-311-pytest-9.0.2.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1744,7 +2034,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0054",
+      "disposition_id": "disp-0063",
       "artifact_path": "tests/kernel/__pycache__/test_brain_writeback_semantic.cpython-311-pytest-9.0.2.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -1776,7 +2066,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0055",
+      "disposition_id": "disp-0064",
       "artifact_path": ".claude/settings.json.bak",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "disposition": "ignored_or_non_runtime",
@@ -1808,7 +2098,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0056",
+      "disposition_id": "disp-0065",
       "artifact_path": ".claude/settings.json.bak2",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "disposition": "ignored_or_non_runtime",
@@ -1840,7 +2130,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0057",
+      "disposition_id": "disp-0066",
       "artifact_path": ".claude/settings.json.bak3",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "disposition": "ignored_or_non_runtime",
@@ -1872,7 +2162,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0058",
+      "disposition_id": "disp-0067",
       "artifact_path": ".claude/settings.json.bak4",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "disposition": "ignored_or_non_runtime",
@@ -1904,7 +2194,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0059",
+      "disposition_id": "disp-0068",
       "artifact_path": ".ystar_active_agent.subagent_Ethan-CTO",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -1936,7 +2226,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0060",
+      "disposition_id": "disp-0069",
       "artifact_path": ".ystar_active_agent.subagent_Leo-Kernel",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -1968,7 +2258,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0061",
+      "disposition_id": "disp-0070",
       "artifact_path": ".ystar_active_agent.subagent_Maya-Governance",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -2000,7 +2290,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0062",
+      "disposition_id": "disp-0071",
       "artifact_path": ".ystar_active_agent.subagent_Ryan-Platform",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -2032,7 +2322,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0063",
+      "disposition_id": "disp-0072",
       "artifact_path": ".ystar_active_agent.subagent_Samantha-Secretary",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -2064,7 +2354,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0064",
+      "disposition_id": "disp-0073",
       "artifact_path": "backups/brain_20260420_dream1_214137.db",
       "artifact_class": "BACKUP_DB",
       "disposition": "deferred_requires_readonly_db_adapter",
@@ -2096,7 +2386,167 @@
       ]
     },
     {
-      "disposition_id": "disp-0065",
+      "disposition_id": "disp-0074",
+      "artifact_path": "console_read_model/generated/l6_10u_locator_resolver_enablement_summary.json",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "disposition": "ignored_or_non_runtime",
+      "source_in_quarantine_manifest": true,
+      "safe_mining_candidate_id": null,
+      "review_id": null,
+      "review_status": null,
+      "ingestion_status": "not_ingested",
+      "evidence_scoring_status": "not_started",
+      "allowed_next_step": "ignore_for_runtime_artifact_mining",
+      "forbidden_next_steps": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery",
+        "semantic_truth_scoring_without_review",
+        "candidate_auto_approval"
+      ],
+      "direct_read_allowed": false,
+      "forbidden_direct_read": false,
+      "brain_writeback_allowed": false,
+      "memory_ingestion_allowed": false,
+      "cieu_write_allowed": false,
+      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
+      "generated_from_refs": [
+        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+      ]
+    },
+    {
+      "disposition_id": "disp-0075",
+      "artifact_path": "controlled_locator_observation_result/",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "disposition": "ignored_or_non_runtime",
+      "source_in_quarantine_manifest": true,
+      "safe_mining_candidate_id": null,
+      "review_id": null,
+      "review_status": null,
+      "ingestion_status": "not_ingested",
+      "evidence_scoring_status": "not_started",
+      "allowed_next_step": "ignore_for_runtime_artifact_mining",
+      "forbidden_next_steps": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery",
+        "semantic_truth_scoring_without_review",
+        "candidate_auto_approval"
+      ],
+      "direct_read_allowed": false,
+      "forbidden_direct_read": false,
+      "brain_writeback_allowed": false,
+      "memory_ingestion_allowed": false,
+      "cieu_write_allowed": false,
+      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
+      "generated_from_refs": [
+        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+      ]
+    },
+    {
+      "disposition_id": "disp-0076",
+      "artifact_path": "controlled_locator_resolution_attempt/",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "disposition": "ignored_or_non_runtime",
+      "source_in_quarantine_manifest": true,
+      "safe_mining_candidate_id": null,
+      "review_id": null,
+      "review_status": null,
+      "ingestion_status": "not_ingested",
+      "evidence_scoring_status": "not_started",
+      "allowed_next_step": "ignore_for_runtime_artifact_mining",
+      "forbidden_next_steps": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery",
+        "semantic_truth_scoring_without_review",
+        "candidate_auto_approval"
+      ],
+      "direct_read_allowed": false,
+      "forbidden_direct_read": false,
+      "brain_writeback_allowed": false,
+      "memory_ingestion_allowed": false,
+      "cieu_write_allowed": false,
+      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
+      "generated_from_refs": [
+        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+      ]
+    },
+    {
+      "disposition_id": "disp-0077",
+      "artifact_path": "controlled_locator_resolver_read_model/",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "disposition": "ignored_or_non_runtime",
+      "source_in_quarantine_manifest": true,
+      "safe_mining_candidate_id": null,
+      "review_id": null,
+      "review_status": null,
+      "ingestion_status": "not_ingested",
+      "evidence_scoring_status": "not_started",
+      "allowed_next_step": "ignore_for_runtime_artifact_mining",
+      "forbidden_next_steps": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery",
+        "semantic_truth_scoring_without_review",
+        "candidate_auto_approval"
+      ],
+      "direct_read_allowed": false,
+      "forbidden_direct_read": false,
+      "brain_writeback_allowed": false,
+      "memory_ingestion_allowed": false,
+      "cieu_write_allowed": false,
+      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
+      "generated_from_refs": [
+        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+      ]
+    },
+    {
+      "disposition_id": "disp-0078",
+      "artifact_path": "controlled_locator_resolver_runtime/",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "disposition": "ignored_or_non_runtime",
+      "source_in_quarantine_manifest": true,
+      "safe_mining_candidate_id": null,
+      "review_id": null,
+      "review_status": null,
+      "ingestion_status": "not_ingested",
+      "evidence_scoring_status": "not_started",
+      "allowed_next_step": "ignore_for_runtime_artifact_mining",
+      "forbidden_next_steps": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery",
+        "semantic_truth_scoring_without_review",
+        "candidate_auto_approval"
+      ],
+      "direct_read_allowed": false,
+      "forbidden_direct_read": false,
+      "brain_writeback_allowed": false,
+      "memory_ingestion_allowed": false,
+      "cieu_write_allowed": false,
+      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
+      "generated_from_refs": [
+        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+      ]
+    },
+    {
+      "disposition_id": "disp-0079",
       "artifact_path": "gov_mcp/__pycache__/server.cpython-311.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -2128,7 +2578,71 @@
       ]
     },
     {
-      "disposition_id": "disp-0066",
+      "disposition_id": "disp-0080",
+      "artifact_path": "l6_controlled_locator_resolver_enablement/",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "disposition": "ignored_or_non_runtime",
+      "source_in_quarantine_manifest": true,
+      "safe_mining_candidate_id": null,
+      "review_id": null,
+      "review_status": null,
+      "ingestion_status": "not_ingested",
+      "evidence_scoring_status": "not_started",
+      "allowed_next_step": "ignore_for_runtime_artifact_mining",
+      "forbidden_next_steps": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery",
+        "semantic_truth_scoring_without_review",
+        "candidate_auto_approval"
+      ],
+      "direct_read_allowed": false,
+      "forbidden_direct_read": false,
+      "brain_writeback_allowed": false,
+      "memory_ingestion_allowed": false,
+      "cieu_write_allowed": false,
+      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
+      "generated_from_refs": [
+        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+      ]
+    },
+    {
+      "disposition_id": "disp-0081",
+      "artifact_path": "reports/ceo/brain_dream_diffs/dream_diff_20260429_095744_nrem.md",
+      "artifact_class": "DREAM_REPORT",
+      "disposition": "safe_mined_to_review_queue",
+      "source_in_quarantine_manifest": true,
+      "safe_mining_candidate_id": "mdcand-001",
+      "review_id": "review-001",
+      "review_status": "pending_review",
+      "ingestion_status": "not_ingested",
+      "evidence_scoring_status": "not_started",
+      "allowed_next_step": "future_evidence_scoring_after_review",
+      "forbidden_next_steps": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery",
+        "semantic_truth_scoring_without_review",
+        "candidate_auto_approval"
+      ],
+      "direct_read_allowed": false,
+      "forbidden_direct_read": false,
+      "brain_writeback_allowed": false,
+      "memory_ingestion_allowed": false,
+      "cieu_write_allowed": false,
+      "rationale": "Safe-mined candidate is present in the generated review queue.",
+      "generated_from_refs": [
+        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+      ]
+    },
+    {
+      "disposition_id": "disp-0082",
       "artifact_path": "scripts/.brain_ingest_sentinel.json",
       "artifact_class": "CACHE_SENTINEL",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -2160,7 +2674,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0067",
+      "disposition_id": "disp-0083",
       "artifact_path": "scripts/.logs/aiden_dream.err.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2192,7 +2706,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0068",
+      "disposition_id": "disp-0084",
       "artifact_path": "scripts/.logs/aiden_dream.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2224,7 +2738,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0069",
+      "disposition_id": "disp-0085",
       "artifact_path": "scripts/.logs/aiden_dream_dryrun.err.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2256,7 +2770,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0070",
+      "disposition_id": "disp-0086",
       "artifact_path": "scripts/.logs/aiden_dream_dryrun.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2288,7 +2802,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0071",
+      "disposition_id": "disp-0087",
       "artifact_path": "scripts/.logs/amendment_deadlines.jsonl",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2320,7 +2834,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0072",
+      "disposition_id": "disp-0088",
       "artifact_path": "scripts/.logs/auto_commit_push.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2352,7 +2866,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0073",
+      "disposition_id": "disp-0089",
       "artifact_path": "scripts/.logs/auto_commit_push.stderr.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2384,7 +2898,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0074",
+      "disposition_id": "disp-0090",
       "artifact_path": "scripts/.logs/auto_commit_push.stdout.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2416,7 +2930,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0075",
+      "disposition_id": "disp-0091",
       "artifact_path": "scripts/.logs/brain_auto_ingest_daemon.err.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2448,7 +2962,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0076",
+      "disposition_id": "disp-0092",
       "artifact_path": "scripts/.logs/brain_auto_ingest_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2480,7 +2994,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0077",
+      "disposition_id": "disp-0093",
       "artifact_path": "scripts/.logs/broker.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2512,7 +3026,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0078",
+      "disposition_id": "disp-0094",
       "artifact_path": "scripts/.logs/cieu_brain_daemon.err.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2544,7 +3058,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0079",
+      "disposition_id": "disp-0095",
       "artifact_path": "scripts/.logs/cieu_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2576,7 +3090,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0080",
+      "disposition_id": "disp-0096",
       "artifact_path": "scripts/.logs/dialogue_to_brain.err.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2608,7 +3122,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0081",
+      "disposition_id": "disp-0097",
       "artifact_path": "scripts/.logs/dialogue_to_brain.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2640,7 +3154,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0082",
+      "disposition_id": "disp-0098",
       "artifact_path": "scripts/.logs/dream_auto_reviewer.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2672,7 +3186,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0083",
+      "disposition_id": "disp-0099",
       "artifact_path": "scripts/.logs/ethan_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2704,7 +3218,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0084",
+      "disposition_id": "disp-0100",
       "artifact_path": "scripts/.logs/field_backfill.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2736,7 +3250,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0085",
+      "disposition_id": "disp-0101",
       "artifact_path": "scripts/.logs/jordan_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2768,7 +3282,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0086",
+      "disposition_id": "disp-0102",
       "artifact_path": "scripts/.logs/leo_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2800,7 +3314,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0087",
+      "disposition_id": "disp-0103",
       "artifact_path": "scripts/.logs/marco_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2832,7 +3346,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0088",
+      "disposition_id": "disp-0104",
       "artifact_path": "scripts/.logs/maya_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2864,7 +3378,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0089",
+      "disposition_id": "disp-0105",
       "artifact_path": "scripts/.logs/ryan_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2896,7 +3410,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0090",
+      "disposition_id": "disp-0106",
       "artifact_path": "scripts/.logs/samantha_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2928,7 +3442,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0091",
+      "disposition_id": "disp-0107",
       "artifact_path": "scripts/.logs/sofia_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2960,7 +3474,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0092",
+      "disposition_id": "disp-0108",
       "artifact_path": "scripts/.logs/subscriber.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2992,7 +3506,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0093",
+      "disposition_id": "disp-0109",
       "artifact_path": "scripts/.logs/zara_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3024,7 +3538,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0094",
+      "disposition_id": "disp-0110",
       "artifact_path": "scripts/.pending_spawns.jsonl.bak_20260422",
       "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
       "disposition": "deferred_requires_classification",
@@ -3056,7 +3570,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0095",
+      "disposition_id": "disp-0111",
       "artifact_path": "scripts/.ystar_active_agent.subagent_Ethan-CTO",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -3088,7 +3602,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0096",
+      "disposition_id": "disp-0112",
       "artifact_path": "scripts/.ystar_active_agent.subagent_Leo-Kernel",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -3120,7 +3634,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0097",
+      "disposition_id": "disp-0113",
       "artifact_path": "scripts/.ystar_active_agent.subagent_Maya-Governance",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -3152,7 +3666,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0098",
+      "disposition_id": "disp-0114",
       "artifact_path": "scripts/.ystar_active_agent.subagent_Ryan-Platform",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -3184,7 +3698,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0099",
+      "disposition_id": "disp-0115",
       "artifact_path": "scripts/.ystar_active_agent.subagent_Samantha-Secretary",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -3216,7 +3730,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0100",
+      "disposition_id": "disp-0116",
       "artifact_path": "scripts/.ystar_reply_count_ceo.json",
       "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
       "disposition": "deferred_requires_classification",
@@ -3248,7 +3762,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0101",
+      "disposition_id": "disp-0117",
       "artifact_path": "scripts/__pycache__/czl_bus.cpython-311.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -3280,7 +3794,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0102",
+      "disposition_id": "disp-0118",
       "artifact_path": "scripts/__pycache__/parent_session_commitment_tracker.cpython-311.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -3312,7 +3826,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0103",
+      "disposition_id": "disp-0119",
       "artifact_path": "scripts/__pycache__/skill_library.cpython-311.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -3344,7 +3858,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0104",
+      "disposition_id": "disp-0120",
       "artifact_path": "scripts/hook_session_start.py.bak_patch1a_20260423_204057",
       "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
       "disposition": "deferred_requires_classification",
@@ -3376,7 +3890,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0105",
+      "disposition_id": "disp-0121",
       "artifact_path": "scripts/hook_session_start.py.bak_patch1a_fix_20260423_204700",
       "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
       "disposition": "deferred_requires_classification",
@@ -3408,7 +3922,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0106",
+      "disposition_id": "disp-0122",
       "artifact_path": "scripts/hook_wrapper.py.bak_20260424",
       "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
       "disposition": "deferred_requires_classification",
@@ -3440,7 +3954,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0107",
+      "disposition_id": "disp-0123",
       "artifact_path": "scripts/hook_wrapper.py.bak_patch2_20260423_202951",
       "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
       "disposition": "deferred_requires_classification",
@@ -3472,7 +3986,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0108",
+      "disposition_id": "disp-0124",
       "artifact_path": "scripts/tests/test_auto_commit_push.py",
       "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
       "disposition": "deferred_requires_classification",
@@ -3504,7 +4018,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0109",
+      "disposition_id": "disp-0125",
       "artifact_path": "tests/approved_canonical_update_sandbox/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -3536,7 +4050,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0110",
+      "disposition_id": "disp-0126",
       "artifact_path": "tests/controlled_approval_record_sandbox/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -3568,7 +4082,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0111",
+      "disposition_id": "disp-0127",
       "artifact_path": "tests/controlled_canonical_learning_design/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -3600,7 +4114,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0112",
+      "disposition_id": "disp-0128",
       "artifact_path": "tests/controlled_real_release_preflight/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -3632,7 +4146,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0113",
+      "disposition_id": "disp-0129",
       "artifact_path": "tests/cross_repo_governance_contract_proof/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -3664,7 +4178,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0114",
+      "disposition_id": "disp-0130",
       "artifact_path": "tests/field_functional_archaeology/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -3696,7 +4210,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0115",
+      "disposition_id": "disp-0131",
       "artifact_path": "tests/field_functional_auto_projection_core/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -3728,7 +4242,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0116",
+      "disposition_id": "disp-0132",
       "artifact_path": "tests/governed_mcp_dry_run_adapter/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -3760,7 +4274,39 @@
       ]
     },
     {
-      "disposition_id": "disp-0117",
+      "disposition_id": "disp-0133",
+      "artifact_path": "tests/l6_controlled_locator_resolver_enablement/",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "disposition": "ignored_or_non_runtime",
+      "source_in_quarantine_manifest": true,
+      "safe_mining_candidate_id": null,
+      "review_id": null,
+      "review_status": null,
+      "ingestion_status": "not_ingested",
+      "evidence_scoring_status": "not_started",
+      "allowed_next_step": "ignore_for_runtime_artifact_mining",
+      "forbidden_next_steps": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery",
+        "semantic_truth_scoring_without_review",
+        "candidate_auto_approval"
+      ],
+      "direct_read_allowed": false,
+      "forbidden_direct_read": false,
+      "brain_writeback_allowed": false,
+      "memory_ingestion_allowed": false,
+      "cieu_write_allowed": false,
+      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
+      "generated_from_refs": [
+        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+      ]
+    },
+    {
+      "disposition_id": "disp-0134",
       "artifact_path": "tests/l6_meta_development_generative_selection_engine/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -3792,7 +4338,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0118",
+      "disposition_id": "disp-0135",
       "artifact_path": "tests/l6_meta_development_mvp_artifact_sandbox/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -3824,7 +4370,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0119",
+      "disposition_id": "disp-0136",
       "artifact_path": "tests/live_boundary_no_go_framework/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -3856,7 +4402,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0120",
+      "disposition_id": "disp-0137",
       "artifact_path": "tests/mission_field_projection_contract/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -3888,7 +4434,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0121",
+      "disposition_id": "disp-0138",
       "artifact_path": "tests/projection_checked_autonomous_work_cycle/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -3920,7 +4466,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0122",
+      "disposition_id": "disp-0139",
       "artifact_path": "tests/real_approval_workflow_boundary/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -3952,7 +4498,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0123",
+      "disposition_id": "disp-0140",
       "artifact_path": "tests/real_release_simulation_sandbox/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -3984,7 +4530,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0124",
+      "disposition_id": "disp-0141",
       "artifact_path": "tests/review_gated_shadow_projection_cycle/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
