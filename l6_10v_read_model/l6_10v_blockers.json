@@ -1,0 +1,12 @@
+{
+  "schema_version": "v0",
+  "primary_blocker": "no_enabled_locator_resolution_path",
+  "blockers": [
+    "no_reviewed_seed_locator_available",
+    "controlled_search_resolver_disabled_by_default"
+  ],
+  "exact_enablement_required": [
+    "Add one reviewed seed locator entry to seed_locator_registry/reviewed_seed_locator_registry.json, or",
+    "Set controlled_search_enabled=true in explicit_search_resolver_config.json and YSTAR_ENABLE_CONTROLLED_LOCATOR_SEARCH=1 with an approved one-result backend."
+  ]
+}

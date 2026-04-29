@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "scope_id": "l6_10v_scope",
+  "resolution_priority": [
+    "reviewed_seed_registry",
+    "explicit_controlled_search",
+    "disabled_no_path"
+  ],
+  "one_work_order_only": true,
+  "no_fake_locator": true,
+  "search_snippets_are_not_evidence": true,
+  "downstream_actions_blocked": true
+}

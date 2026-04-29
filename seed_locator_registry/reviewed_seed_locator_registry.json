@@ -1,0 +1,12 @@
+{
+  "schema_version": "v0",
+  "registry_id": "l6_10v_reviewed_seed_locator_registry",
+  "registry_scope": "exactly_one_selected_l6_10v_work_order",
+  "selected_work_order_id": "l6_10v_selected_work_order_001",
+  "reviewed_seed_locators": [],
+  "sample_entries": [],
+  "empty_registry_reason": "no_reviewed_seed_locator_available",
+  "do_not_invent_urls": true,
+  "facts_inferred_from_seed": false,
+  "observation_authorized_by_seed_alone": false
+}

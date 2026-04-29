@@ -6534,6 +6534,136 @@ def main() -> int:
             if limit is not None and l6_10u_locator_resolver_enablement.get(count_field, 0) > limit:
                 report.fail(f"generated L6.10U summary exceeds runtime limit for {count_field}")
 
+    l6_10v_seed_or_search_resolver_enablement = generated_json.get(
+        "console_read_model/generated/l6_10v_seed_or_search_resolver_enablement_summary.json"
+    )
+    if l6_10v_seed_or_search_resolver_enablement:
+        for field in [
+            "l6_10v_controlled_seed_locator_or_search_resolver_enablement_complete",
+            "mode",
+            "reviewed_seed_locator_registry_created",
+            "explicit_controlled_search_resolver_created",
+            "selected_work_order_id",
+            "source_selected_work_order_id",
+            "resolution_path_used",
+            "seed_registry_lookup_executed",
+            "seed_registry_lookup_count",
+            "reviewed_seed_locator_count",
+            "seed_locator_resolved",
+            "controlled_search_enabled",
+            "controlled_search_executed",
+            "controlled_search_query_count",
+            "external_reads_count",
+            "concrete_locator_resolved",
+            "resolved_locator",
+            "facts_inferred_from_resolution",
+            "search_snippets_used_as_evidence",
+            "locator_eligible_for_observation",
+            "tiny_read_only_observation_executed",
+            "evidence_packet_generated",
+            "live_source_evidence_captured",
+            "artifact_refinement_candidate_generated",
+            "artifact_refinement_applied",
+            "remaining_blocker",
+            "next_recommended_milestone",
+            "generated_registry",
+            "generated_resolution_result",
+            "generated_observation_trace",
+            "generated_evidence_packet",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in l6_10v_seed_or_search_resolver_enablement:
+                report.pass_(f"generated L6.10V seed/search resolver field present: {field}")
+            else:
+                report.fail(f"generated L6.10V seed/search resolver missing field: {field}")
+        if (
+            l6_10v_seed_or_search_resolver_enablement.get("mode")
+            != "controlled_seed_locator_or_explicit_search_resolver_enablement"
+        ):
+            report.fail("generated L6.10V summary must be seed/search resolver enablement mode")
+        for field in [
+            "l6_10v_controlled_seed_locator_or_search_resolver_enablement_complete",
+            "reviewed_seed_locator_registry_created",
+            "explicit_controlled_search_resolver_created",
+            "seed_registry_lookup_executed",
+            "reviewed_seed_locator_registry_authorized",
+            "explicit_controlled_search_resolver_authorized",
+            "controlled_search_requires_explicit_enable_flag",
+            "evidence_packet_generated",
+            "artifact_refinement_candidate_generated",
+        ]:
+            if l6_10v_seed_or_search_resolver_enablement.get(field) is not True:
+                report.fail(f"generated L6.10V summary must keep {field}=true")
+        for field in [
+            "seed_locator_resolved",
+            "controlled_search_enabled",
+            "controlled_search_executed",
+            "concrete_locator_resolved",
+            "facts_inferred_from_resolution",
+            "search_snippets_used_as_evidence",
+            "locator_eligible_for_observation",
+            "tiny_read_only_observation_executed",
+            "live_source_evidence_captured",
+            "artifact_refinement_applied",
+            "broad_search_authorized",
+            "repeated_search_loop_authorized",
+            "crawling_authorized",
+            "scraping_authorized",
+            "browser_automation_authorized",
+            "login_authorized",
+            "account_creation_authorized",
+            "contact_authorized",
+            "payment_authorized",
+            "form_submission_authorized",
+            "posting_commenting_messaging_authorized",
+            "publication_authorized",
+            "outreach_authorized",
+            "revenue_execution_authorized",
+            "mcp_execution_authorized",
+            "live_behavior_authorized",
+            "cieu_db_write_authorized",
+            "canonical_update_authorized",
+            "brain_writeback_authorized",
+            "memory_ingestion_authorized",
+            "direct_y_star_mutation_authorized",
+        ]:
+            if l6_10v_seed_or_search_resolver_enablement.get(field) is not False:
+                report.fail(f"generated L6.10V summary must keep {field}=false")
+        if (
+            l6_10v_seed_or_search_resolver_enablement.get("resolution_path_used")
+            != "disabled_no_path"
+        ):
+            report.fail("generated L6.10V default run must use disabled_no_path")
+        if (
+            l6_10v_seed_or_search_resolver_enablement.get("remaining_blocker")
+            != "no_enabled_locator_resolution_path"
+        ):
+            report.fail("generated L6.10V summary must name no_enabled_locator_resolution_path blocker")
+        limits = {
+            "selected_work_order_count": l6_10v_seed_or_search_resolver_enablement.get(
+                "max_selected_work_orders"
+            ),
+            "seed_registry_lookup_count": l6_10v_seed_or_search_resolver_enablement.get(
+                "max_seed_registry_lookups"
+            ),
+            "controlled_search_query_count": l6_10v_seed_or_search_resolver_enablement.get(
+                "max_controlled_search_queries"
+            ),
+            "external_reads_count": l6_10v_seed_or_search_resolver_enablement.get(
+                "max_total_external_reads"
+            ),
+            "pages_read_count": l6_10v_seed_or_search_resolver_enablement.get(
+                "max_pages_read"
+            ),
+        }
+        for count_field, limit in limits.items():
+            if (
+                limit is not None
+                and l6_10v_seed_or_search_resolver_enablement.get(count_field, 0) > limit
+            ):
+                report.fail(f"generated L6.10V summary exceeds runtime limit for {count_field}")
+
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:
         for source in manifest.get("source_files", []):

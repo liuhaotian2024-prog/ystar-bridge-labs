@@ -1,0 +1,22 @@
+{
+  "schema_version": "v0",
+  "event_mode": "l6_10v_controlled_seed_locator_or_search_resolver_enablement_fixture",
+  "X_t": {
+    "prior_blocker": "no_enabled_locator_resolution_path"
+  },
+  "U_t": "Create reviewed seed locator and explicit controlled search enablement paths for one work order.",
+  "Y_star_t": "Resolve at most one concrete locator using reviewed seed registry or explicitly enabled controlled search while preserving no broad search, no crawling, no scraping, no browser automation, no publication/outreach/payment/revenue/MCP/live/CIEU/canonical/writeback/direct Y* mutation constraints.",
+  "Y_t_plus_1": {
+    "reviewed_seed_registry_created": true,
+    "explicit_search_resolver_created": true,
+    "resolution_path_used": "disabled_no_path",
+    "concrete_locator_resolved": false,
+    "tiny_read_only_observation_executed": false
+  },
+  "R_t_plus_1": [
+    "no_enabled_locator_resolution_path",
+    "reviewed seed locator still required",
+    "explicit controlled search remains disabled by default",
+    "no evidence captured yet"
+  ]
+}

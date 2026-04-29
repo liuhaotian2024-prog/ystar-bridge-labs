@@ -2463,6 +2463,44 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "controlled_locator_resolver_read_model/l6_10u_readiness_assessment.json"],
     ),
     Check(
+        "Compile L6.10V controlled seed/search resolver builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "l6_controlled_seed_locator_or_search_resolver_enablement/tools/build_l6_controlled_seed_locator_or_search_resolver_enablement.py",
+        ],
+    ),
+    Check(
+        "Compile L6.10V explicit controlled search resolver runtime",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "explicit_controlled_search_resolver/explicit_search_resolver_runtime.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: l6_10v_seed_or_search_resolver_enablement_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_10v_seed_or_search_resolver_enablement_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10v_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_controlled_seed_locator_or_search_resolver_enablement/l6_10v_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10v_locator_resolution_v_result.json",
+        ["python3", "-m", "json.tool", "locator_resolution_v_attempt/locator_resolution_v_result.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10v_tiny_observation_v_trace.json",
+        ["python3", "-m", "json.tool", "tiny_observation_v_result/tiny_observation_v_trace.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10v_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "l6_10v_read_model/l6_10v_readiness_assessment.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -2749,6 +2787,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: controlled-locator-resolver-enable-first-attempt",
         ["python3", "console_read_model/cli/team_console.py", "controlled-locator-resolver-enable-first-attempt"],
+    ),
+    Check(
+        "CLI smoke: controlled-seed-locator-or-search-resolver-enablement",
+        ["python3", "console_read_model/cli/team_console.py", "controlled-seed-locator-or-search-resolver-enablement"],
     ),
     Check(
         "CLI smoke: sources",

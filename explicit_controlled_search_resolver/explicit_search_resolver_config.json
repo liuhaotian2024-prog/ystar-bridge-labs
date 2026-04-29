@@ -1,0 +1,11 @@
+{
+  "schema_version": "v0",
+  "controlled_search_enabled": false,
+  "requires_environment_variable": "YSTAR_ENABLE_CONTROLLED_LOCATOR_SEARCH=1",
+  "controlled_search_backend_available": false,
+  "max_queries": 1,
+  "max_results": 1,
+  "no_snippet_fact_use": true,
+  "no_fact_inference_from_search_result": true,
+  "disabled_reason": "controlled_search_resolver_disabled_by_default"
+}

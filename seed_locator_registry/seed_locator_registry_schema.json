@@ -1,0 +1,36 @@
+{
+  "schema_version": "v0",
+  "schema_id": "l6_10v_seed_locator_registry_schema",
+  "required_fields": [
+    "seed_locator_id",
+    "linked_work_order_id",
+    "linked_evidence_need_id",
+    "source_type",
+    "source_function",
+    "concrete_locator",
+    "source_title",
+    "source_owner_or_publisher",
+    "why_this_locator_matches",
+    "reviewed_status",
+    "review_required_before_observation",
+    "public_read_only_expected",
+    "login_expected",
+    "payment_expected",
+    "form_expected",
+    "contact_expected",
+    "source_use_allowed",
+    "facts_inferred_from_seed",
+    "observation_authorized_by_seed_alone"
+  ],
+  "entry_constraints": {
+    "concrete_locator_must_be_url_like": true,
+    "reviewed_status_allowed": [
+      "reviewed_for_locator_resolution_only",
+      "sample_only_not_eligible",
+      "pending_review"
+    ],
+    "source_use_allowed_required_value": "locator_resolution_only",
+    "facts_inferred_from_seed_must_be_false": true,
+    "observation_authorized_by_seed_alone_must_be_false": true
+  }
+}

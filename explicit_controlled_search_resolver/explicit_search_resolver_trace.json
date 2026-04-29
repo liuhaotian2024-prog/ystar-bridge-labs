@@ -1,0 +1,22 @@
+{
+  "resolver_id": "explicit_controlled_search_resolver",
+  "resolver_enabled": false,
+  "backend_available": false,
+  "controlled_search_query_count": 0,
+  "external_reads_count": 0,
+  "concrete_locator_resolved": false,
+  "resolved_locator": null,
+  "source_title": null,
+  "facts_inferred_from_resolution": false,
+  "snippets_used_as_evidence": false,
+  "error_code": "controlled_search_resolver_disabled_by_default",
+  "blocked_reason": "controlled_search_resolver_disabled_by_default",
+  "trace": {
+    "config_enabled": false,
+    "env_flag_required": "YSTAR_ENABLE_CONTROLLED_LOCATOR_SEARCH",
+    "env_flag_enabled": false,
+    "search_executed": false,
+    "network_used": false,
+    "facts_inferred_from_resolution": false
+  }
+}

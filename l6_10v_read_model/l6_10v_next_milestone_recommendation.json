@@ -1,0 +1,6 @@
+{
+  "schema_version": "v0",
+  "next_milestone": "L6.10W Reviewed Seed Locator Population or Controlled Search Backend Enablement v0",
+  "reason": "The resolver paths now exist, but neither has an eligible concrete locator in the default environment.",
+  "l6_11_blocked_until_locator_and_tiny_observation_success": true
+}

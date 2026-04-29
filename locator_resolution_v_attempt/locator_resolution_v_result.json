@@ -1,0 +1,18 @@
+{
+  "schema_version": "v0",
+  "result_id": "l6_10v_locator_resolution_v_result",
+  "resolution_path_used": "disabled_no_path",
+  "seed_registry_lookup_count": 1,
+  "controlled_search_query_count": 0,
+  "external_reads_count": 0,
+  "concrete_locator_resolved": false,
+  "resolved_locator": null,
+  "source_title": null,
+  "source_owner_or_publisher": null,
+  "source_type": "official policy or program source",
+  "public_read_only_expected": false,
+  "facts_inferred_from_resolution": false,
+  "search_snippets_used_as_evidence": false,
+  "error_code": "no_enabled_locator_resolution_path",
+  "blocked_reason": "no_reviewed_seed_locator_available_and_controlled_search_resolver_disabled_by_default"
+}

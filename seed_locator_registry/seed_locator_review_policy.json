@@ -1,0 +1,10 @@
+{
+  "schema_version": "v0",
+  "policy_id": "l6_10v_seed_locator_review_policy",
+  "review_required_before_observation": true,
+  "reviewed_status_required": "reviewed_for_locator_resolution_only",
+  "source_use_allowed": "locator_resolution_only",
+  "facts_inferred_from_seed": false,
+  "observation_authorized_by_seed_alone": false,
+  "do_not_invent_urls": true
+}

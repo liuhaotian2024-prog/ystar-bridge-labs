@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "trace_id": "l6_10v_seed_locator_registry_lookup_trace",
+  "selected_work_order_id": "l6_10v_selected_work_order_001",
+  "lookup_executed": true,
+  "lookup_count": 1,
+  "entries_considered": 0,
+  "matching_entries": 0,
+  "seed_locator_resolved": false,
+  "resolved_locator": null,
+  "facts_inferred_from_seed": false,
+  "blocked_reason": "no_reviewed_seed_locator_available"
+}

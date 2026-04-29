@@ -1,0 +1,51 @@
+{
+  "schema_version": "v0",
+  "trace_id": "l6_10v_locator_resolution_v_trace",
+  "selected_work_order_id": "l6_10v_selected_work_order_001",
+  "resolution_priority": [
+    "reviewed_seed_registry",
+    "explicit_controlled_search",
+    "disabled_no_path"
+  ],
+  "resolution_path_used": "disabled_no_path",
+  "seed_registry_lookup_trace": {
+    "schema_version": "v0",
+    "trace_id": "l6_10v_seed_locator_registry_lookup_trace",
+    "selected_work_order_id": "l6_10v_selected_work_order_001",
+    "lookup_executed": true,
+    "lookup_count": 1,
+    "entries_considered": 0,
+    "matching_entries": 0,
+    "seed_locator_resolved": false,
+    "resolved_locator": null,
+    "facts_inferred_from_seed": false,
+    "blocked_reason": "no_reviewed_seed_locator_available"
+  },
+  "explicit_search_trace": {
+    "resolver_id": "explicit_controlled_search_resolver",
+    "resolver_enabled": false,
+    "backend_available": false,
+    "controlled_search_query_count": 0,
+    "external_reads_count": 0,
+    "concrete_locator_resolved": false,
+    "resolved_locator": null,
+    "source_title": null,
+    "facts_inferred_from_resolution": false,
+    "snippets_used_as_evidence": false,
+    "error_code": "controlled_search_resolver_disabled_by_default",
+    "blocked_reason": "controlled_search_resolver_disabled_by_default",
+    "trace": {
+      "config_enabled": false,
+      "env_flag_required": "YSTAR_ENABLE_CONTROLLED_LOCATOR_SEARCH",
+      "env_flag_enabled": false,
+      "search_executed": false,
+      "network_used": false,
+      "facts_inferred_from_resolution": false
+    }
+  },
+  "concrete_locator_resolved": false,
+  "resolved_locator": null,
+  "facts_inferred_from_resolution": false,
+  "blocked_reason": "no_reviewed_seed_locator_available_and_controlled_search_resolver_disabled_by_default",
+  "error_code": "no_enabled_locator_resolution_path"
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": "v0",
+  "eligibility_id": "l6_10v_locator_resolution_v_eligibility_result",
+  "linked_resolution_request_id": "l6_10v_locator_resolution_v_request_001",
+  "resolved_locator": null,
+  "locator_is_concrete": false,
+  "locator_is_url_like": false,
+  "public_read_only_expected": false,
+  "no_login_expected": true,
+  "no_payment_expected": true,
+  "no_form_expected": true,
+  "no_contact_expected": true,
+  "no_crawling_required": true,
+  "no_scraping_required": true,
+  "no_mcp_required": true,
+  "source_type_matches_work_order": true,
+  "expected_evidence_type_plausible": false,
+  "locator_eligible_for_observation": false,
+  "observation_blocked": true,
+  "failed_checks": [
+    "locator_is_concrete",
+    "locator_is_url_like",
+    "public_read_only_expected",
+    "expected_evidence_type_plausible"
+  ],
+  "blocked_reason": "no_concrete_locator"
+}

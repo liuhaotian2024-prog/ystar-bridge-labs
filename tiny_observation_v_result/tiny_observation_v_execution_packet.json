@@ -1,0 +1,23 @@
+{
+  "schema_version": "v0",
+  "execution_packet_id": "l6_10v_tiny_observation_v_execution_packet",
+  "selected_work_order_id": "l6_10v_selected_work_order_001",
+  "resolved_locator": null,
+  "tiny_observation_authorized": false,
+  "authorization_status": "no_concrete_locator",
+  "runtime_limits": {
+    "max_selected_work_orders": 1,
+    "max_seed_registry_lookups": 1,
+    "max_controlled_search_queries": 1,
+    "max_concrete_locators_resolved": 1,
+    "max_pages_read": 1,
+    "max_total_external_reads": 2,
+    "max_crawled_links": 0,
+    "max_followed_links_except_normal_redirect": 0,
+    "max_login_attempts": 0,
+    "max_forms_submitted": 0,
+    "max_messages_sent": 0,
+    "max_payments": 0
+  },
+  "all_downstream_actions_authorized": false
+}

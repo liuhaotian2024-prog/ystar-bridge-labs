@@ -1,0 +1,10 @@
+{
+  "schema_version": "v0",
+  "residual_id": "l6_10v_strategic_residual_delta",
+  "remaining_blocker": "no_enabled_locator_resolution_path",
+  "new_enablement_paths": [
+    "reviewed_seed_registry",
+    "explicit_controlled_search"
+  ],
+  "downstream_actions_blocked": true
+}

@@ -87,6 +87,9 @@ L6_10T_TOOLMAKING_LOCATOR_RESOLVER = (
 L6_10U_LOCATOR_RESOLVER_ENABLEMENT = (
     "console_read_model/generated/l6_10u_locator_resolver_enablement_summary.json"
 )
+L6_10V_SEED_OR_SEARCH_RESOLVER_ENABLEMENT = (
+    "console_read_model/generated/l6_10v_seed_or_search_resolver_enablement_summary.json"
+)
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -106,7 +109,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|integrated-approval-record-and-pilot-readiness|agentic-evidence-discovery-trust-engine|controlled-agentic-evidence-pilot-approval-dry-run|tiny-real-read-only-agentic-evidence-observation-pilot|controlled-source-locator-resolution-tiny-observation-retry|governed-capability-gap-toolmaking-locator-resolver|controlled-locator-resolver-enable-first-attempt|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|integrated-approval-record-and-pilot-readiness|agentic-evidence-discovery-trust-engine|controlled-agentic-evidence-pilot-approval-dry-run|tiny-real-read-only-agentic-evidence-observation-pilot|controlled-source-locator-resolution-tiny-observation-retry|governed-capability-gap-toolmaking-locator-resolver|controlled-locator-resolver-enable-first-attempt|controlled-seed-locator-or-search-resolver-enablement|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -191,6 +194,9 @@ def load_all() -> dict[str, Any]:
         "l6_10r_locator_retry": load_json(L6_10R_LOCATOR_RETRY),
         "l6_10t_toolmaking_locator_resolver": load_json(L6_10T_TOOLMAKING_LOCATOR_RESOLVER),
         "l6_10u_locator_resolver_enablement": load_json(L6_10U_LOCATOR_RESOLVER_ENABLEMENT),
+        "l6_10v_seed_or_search_resolver_enablement": load_json(
+            L6_10V_SEED_OR_SEARCH_RESOLVER_ENABLEMENT
+        ),
     }
 
 
@@ -2803,6 +2809,79 @@ def cmd_controlled_locator_resolver_enable_first_attempt(data: dict[str, Any]) -
     print(f"warning: {summary.get('warning')}")
 
 
+def cmd_controlled_seed_locator_or_search_resolver_enablement(data: dict[str, Any]) -> None:
+    summary = data["l6_10v_seed_or_search_resolver_enablement"]
+    print("# L6.10V Controlled Seed Locator Or Search Resolver Enablement")
+    print()
+    print(
+        "L6.10V complete: "
+        f"{summary.get('l6_10v_controlled_seed_locator_or_search_resolver_enablement_complete')}"
+    )
+    print(f"mode: {summary.get('mode')}")
+    print(
+        "reviewed seed locator registry created: "
+        f"{summary.get('reviewed_seed_locator_registry_created')}"
+    )
+    print(
+        "explicit controlled search resolver created: "
+        f"{summary.get('explicit_controlled_search_resolver_created')}"
+    )
+    print(f"selected work order id: {summary.get('selected_work_order_id')}")
+    print(f"source selected work order id: {summary.get('source_selected_work_order_id')}")
+    print(f"resolution path used: {summary.get('resolution_path_used')}")
+    print(f"seed registry lookup executed: {summary.get('seed_registry_lookup_executed')}")
+    print(f"seed registry lookup count: {summary.get('seed_registry_lookup_count')}")
+    print(f"reviewed seed locator count: {summary.get('reviewed_seed_locator_count')}")
+    print(f"seed locator resolved: {summary.get('seed_locator_resolved')}")
+    print(f"controlled search enabled: {summary.get('controlled_search_enabled')}")
+    print(f"controlled search executed: {summary.get('controlled_search_executed')}")
+    print(f"controlled search query count: {summary.get('controlled_search_query_count')}")
+    print(f"external reads count: {summary.get('external_reads_count')}")
+    print(f"concrete locator resolved: {summary.get('concrete_locator_resolved')}")
+    print(f"resolved locator: {summary.get('resolved_locator')}")
+    print(f"facts inferred from resolution: {summary.get('facts_inferred_from_resolution')}")
+    print(f"search snippets used as evidence: {summary.get('search_snippets_used_as_evidence')}")
+    print(
+        "locator eligible for observation: "
+        f"{summary.get('locator_eligible_for_observation')}"
+    )
+    print(
+        "tiny read-only observation executed: "
+        f"{summary.get('tiny_read_only_observation_executed')}"
+    )
+    print(f"evidence packet generated: {summary.get('evidence_packet_generated')}")
+    print(f"live source evidence captured: {summary.get('live_source_evidence_captured')}")
+    print(f"artifact refinement applied: {summary.get('artifact_refinement_applied')}")
+    print(f"broad search authorized: {summary.get('broad_search_authorized')}")
+    print(f"repeated search loop authorized: {summary.get('repeated_search_loop_authorized')}")
+    print(f"crawling authorized: {summary.get('crawling_authorized')}")
+    print(f"scraping authorized: {summary.get('scraping_authorized')}")
+    print(f"browser automation authorized: {summary.get('browser_automation_authorized')}")
+    print(f"login authorized: {summary.get('login_authorized')}")
+    print(f"account creation authorized: {summary.get('account_creation_authorized')}")
+    print(f"contact authorized: {summary.get('contact_authorized')}")
+    print(f"payment authorized: {summary.get('payment_authorized')}")
+    print(f"form submission authorized: {summary.get('form_submission_authorized')}")
+    print(f"publication authorized: {summary.get('publication_authorized')}")
+    print(f"outreach authorized: {summary.get('outreach_authorized')}")
+    print(f"revenue execution authorized: {summary.get('revenue_execution_authorized')}")
+    print(f"MCP execution authorized: {summary.get('mcp_execution_authorized')}")
+    print(f"live behavior authorized: {summary.get('live_behavior_authorized')}")
+    print(f"CIEU DB write authorized: {summary.get('cieu_db_write_authorized')}")
+    print(f"canonical update authorized: {summary.get('canonical_update_authorized')}")
+    print(f"brain writeback authorized: {summary.get('brain_writeback_authorized')}")
+    print(f"memory ingestion authorized: {summary.get('memory_ingestion_authorized')}")
+    print(f"direct Y* mutation authorized: {summary.get('direct_y_star_mutation_authorized')}")
+    print(f"remaining blocker: {summary.get('remaining_blocker')}")
+    print(f"next recommended milestone: {summary.get('next_recommended_milestone')}")
+    print(f"generated_registry: {summary.get('generated_registry')}")
+    print(f"generated_resolution_result: {summary.get('generated_resolution_result')}")
+    print(f"generated_observation_trace: {summary.get('generated_observation_trace')}")
+    print(f"generated_evidence_packet: {summary.get('generated_evidence_packet')}")
+    print(f"generated_readiness: {summary.get('generated_readiness')}")
+    print(f"warning: {summary.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -4775,6 +4854,8 @@ def main(argv: list[str]) -> int:
         cmd_governed_capability_gap_toolmaking_locator_resolver(data)
     elif command == "controlled-locator-resolver-enable-first-attempt":
         cmd_controlled_locator_resolver_enable_first_attempt(data)
+    elif command == "controlled-seed-locator-or-search-resolver-enablement":
+        cmd_controlled_seed_locator_or_search_resolver_enablement(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

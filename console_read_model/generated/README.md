@@ -235,5 +235,12 @@ search resolver, and disabled fallback exist; the default run performs one
 local seed-registry lookup, does not run search, does not use network, and
 does not fabricate a locator.
 
+`l6_10v_seed_or_search_resolver_enablement_summary.json` is derived from
+the L6.10V controlled seed locator or explicit search resolver enablement
+pack. It confirms the reviewed seed registry path and explicit opt-in
+controlled search path are present, while the default run performs one
+local seed lookup, keeps search disabled, uses no network, and invents no
+locator.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

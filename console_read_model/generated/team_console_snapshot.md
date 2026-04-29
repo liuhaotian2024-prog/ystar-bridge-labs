@@ -1301,6 +1301,37 @@ Not ready:
 - next_recommended_milestone: L6.10V Controlled Seed Locator Registry Population or Explicit Controlled Search Resolver Enablement v0
 - Warning: L6.10U implements a practical controlled locator resolver runtime. The default run performed one seed-registry lookup, did not run controlled search, did not use network, did not fabricate a locator, and remains blocked until a seed locator or explicitly enabled controlled resolver is available.
 
+## L6.10V Controlled Seed Locator Or Search Resolver Enablement
+
+- l6_10v_controlled_seed_locator_or_search_resolver_enablement_complete: True
+- mode: controlled_seed_locator_or_explicit_search_resolver_enablement
+- reviewed_seed_locator_registry_created: True
+- explicit_controlled_search_resolver_created: True
+- selected_work_order_id: l6_10v_selected_work_order_001
+- source_selected_work_order_id: l6_10u_selected_work_order_001
+- resolution_path_used: disabled_no_path
+- seed_registry_lookup_executed: True
+- seed_registry_lookup_count: 1
+- reviewed_seed_locator_count: 0
+- seed_locator_resolved: False
+- controlled_search_enabled: False
+- controlled_search_executed: False
+- controlled_search_query_count: 0
+- external_reads_count: 0
+- concrete_locator_resolved: False
+- resolved_locator: None
+- tiny_read_only_observation_executed: False
+- evidence_packet_generated: True
+- live_source_evidence_captured: False
+- broad_search_authorized: False
+- repeated_search_loop_authorized: False
+- crawling_authorized: False
+- scraping_authorized: False
+- browser_automation_authorized: False
+- remaining_blocker: no_enabled_locator_resolution_path
+- next_recommended_milestone: L6.10W Reviewed Seed Locator Population or Controlled Search Backend Enablement v0
+- Warning: L6.10V creates practical seed-registry and explicit opt-in search resolver enablement paths. The default run performs one local seed lookup, does not run controlled search, does not use network, and does not fabricate a locator.
+
 ## Governance Boundary
 
 labs thinks; Y-star-gov judges; hook enforces; CIEU records and teaches; brain learns

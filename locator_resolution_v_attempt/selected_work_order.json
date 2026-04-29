@@ -1,0 +1,20 @@
+{
+  "schema_version": "v0",
+  "selected_work_order_id": "l6_10v_selected_work_order_001",
+  "source_selected_work_order_id": "l6_10u_selected_work_order_001",
+  "linked_l6_10u_selected_work_order_id": "l6_10u_selected_work_order_001",
+  "linked_l6_10r_selected_work_order_id": "l6_10r_selected_locator_retry_work_order_001",
+  "linked_l6_8_work_order_id": "l6_8_observation_work_order_001",
+  "linked_evidence_need_id": "l6_8_evidence_need_001",
+  "linked_source_hypothesis_id": "l6_8_source_hypothesis_001",
+  "linked_l6_artifact": "selected_mvp_artifact_cases/selected_case_index.json",
+  "observation_question": "What future read-only evidence would reduce: payer or beneficiary clarity remains unverified outside the internal MVP artifact cases?",
+  "source_type": "official policy or program source",
+  "source_function": "official policy or program source",
+  "source_locator_placeholder": "PLACEHOLDER LOCATOR ONLY - NOT FETCHED - NOT OPENED - NOT VERIFIED CURRENT FACT - NOT AUTHORIZED FOR REAL OBSERVATION - NOT AUTHORIZED FOR PUBLICATION - NOT AUTHORIZED FOR OUTREACH - NOT AUTHORIZED FOR PAYMENT - NOT AUTHORIZED FOR REVENUE EXECUTION - NOT AUTHORIZED FOR CANONICAL UPDATE :: l6_8_source_hypothesis_001",
+  "expected_evidence_type": "public demand or beneficiary language",
+  "claim_boundary_to_test": "internal review claim only; no publication, outreach, payment, revenue, or strategy claim",
+  "selection_reason": "Preferred the active L6.10U/L6.10R selected work order because it is the current unresolved locator path and has a clear evidence need.",
+  "selected_count": 1,
+  "eligible_for_l6_10v_locator_resolution": true
+}

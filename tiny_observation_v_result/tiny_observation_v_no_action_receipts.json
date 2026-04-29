@@ -1,0 +1,126 @@
+{
+  "schema_version": "v0",
+  "receipt_set_id": "l6_10v_tiny_observation_v_no_action_receipts",
+  "receipts": [
+    {
+      "action_type": "broad_search",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    },
+    {
+      "action_type": "repeated_search_loop",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    },
+    {
+      "action_type": "crawling",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    },
+    {
+      "action_type": "scraping",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    },
+    {
+      "action_type": "browser_automation",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    },
+    {
+      "action_type": "login",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    },
+    {
+      "action_type": "account_creation",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    },
+    {
+      "action_type": "contact",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    },
+    {
+      "action_type": "payment",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    },
+    {
+      "action_type": "form_submission",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    },
+    {
+      "action_type": "posting_commenting_messaging",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    },
+    {
+      "action_type": "publication",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    },
+    {
+      "action_type": "outreach",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    },
+    {
+      "action_type": "revenue_execution",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    },
+    {
+      "action_type": "mcp_execution",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    },
+    {
+      "action_type": "live_behavior",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    },
+    {
+      "action_type": "cieu_db_write",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    },
+    {
+      "action_type": "canonical_mutation",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    },
+    {
+      "action_type": "brain_memory_writeback",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    },
+    {
+      "action_type": "direct_y_star_mutation",
+      "authorized_in_l6_10v": false,
+      "executed_in_l6_10v": false,
+      "blocker_reference": "l6_10v_safety_flags"
+    }
+  ]
+}
