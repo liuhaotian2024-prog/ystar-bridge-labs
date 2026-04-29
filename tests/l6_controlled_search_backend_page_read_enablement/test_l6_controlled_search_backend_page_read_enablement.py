@@ -295,6 +295,8 @@ def test_read_model_summary_and_console_command_work() -> None:
     assert summary["backend_mode_tested"] == "fixture"
     assert summary["page_read_mode_tested"] == "fixture"
     assert summary["ask_user_for_url_occurred"] is False
+    assert summary["real_network_use_requires_explicit_backend_configuration"] is True
+    assert summary["manual_url_request_replaced_by_backend_configuration"] is True
     assert summary["fixture_full_pipeline_generated_non_empty_evidence_packet"] is True
     for field in FORBIDDEN_FIELDS:
         assert summary[field] is False, field

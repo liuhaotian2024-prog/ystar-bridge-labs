@@ -6869,6 +6869,12 @@ def build_l6_11_controlled_backend_enablement_summary(
         "network_allowed": milestone_summary.get(
             "network_allowed", configuration_receipt.get("network_allowed", False)
         ),
+        "real_network_use_requires_explicit_backend_configuration": milestone_summary.get(
+            "real_network_use_requires_explicit_backend_configuration", True
+        ),
+        "manual_url_request_replaced_by_backend_configuration": milestone_summary.get(
+            "manual_url_request_replaced_by_backend_configuration", True
+        ),
         "fixture_full_pipeline_generated_non_empty_evidence_packet": milestone_summary.get(
             "fixture_full_pipeline_generated_non_empty_evidence_packet",
             evidence_index.get("evidence_packet_count", 0) > 0,

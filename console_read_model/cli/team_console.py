@@ -3020,6 +3020,14 @@ def cmd_controlled_search_backend_page_read_enablement(data: dict[str, Any]) -> 
     print(f"page-read mode tested: {summary.get('page_read_mode_tested')}")
     print(f"default backend mode: {summary.get('default_backend_mode')}")
     print(f"network allowed: {summary.get('network_allowed')}")
+    print(
+        "real network use requires explicit backend configuration: "
+        f"{summary.get('real_network_use_requires_explicit_backend_configuration')}"
+    )
+    print(
+        "manual URL request replaced by backend configuration: "
+        f"{summary.get('manual_url_request_replaced_by_backend_configuration')}"
+    )
     print(f"queries generated: {summary.get('query_count')}")
     print(f"search results considered: {summary.get('search_results_considered')}")
     print(f"pages opened: {summary.get('pages_opened')}")

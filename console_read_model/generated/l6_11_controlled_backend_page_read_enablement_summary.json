@@ -10,6 +10,8 @@
   "page_read_mode_tested": "fixture",
   "default_backend_mode": "disabled",
   "network_allowed": false,
+  "real_network_use_requires_explicit_backend_configuration": true,
+  "manual_url_request_replaced_by_backend_configuration": true,
   "fixture_full_pipeline_generated_non_empty_evidence_packet": true,
   "query_count": 5,
   "search_results_considered": 3,

@@ -406,6 +406,8 @@ def main() -> int:
         "page_read_mode_tested": "fixture",
         "default_backend_mode": "disabled",
         "network_allowed": False,
+        "real_network_use_requires_explicit_backend_configuration": True,
+        "manual_url_request_replaced_by_backend_configuration": True,
         "fixture_full_pipeline_generated_non_empty_evidence_packet": bool(packets),
         "query_count": len(queries),
         "search_results_considered": fixture_search["search_results_considered"],

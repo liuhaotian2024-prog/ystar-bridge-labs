@@ -6931,6 +6931,8 @@ def main() -> int:
             "page_read_mode_tested",
             "default_backend_mode",
             "network_allowed",
+            "real_network_use_requires_explicit_backend_configuration",
+            "manual_url_request_replaced_by_backend_configuration",
             "fixture_full_pipeline_generated_non_empty_evidence_packet",
             "query_count",
             "search_results_considered",
@@ -6969,6 +6971,8 @@ def main() -> int:
             "l6_11_controlled_search_backend_page_read_enablement_complete",
             "fixture_full_pipeline_generated_non_empty_evidence_packet",
             "page_read_extracted_content_used_as_evidence_candidate",
+            "real_network_use_requires_explicit_backend_configuration",
+            "manual_url_request_replaced_by_backend_configuration",
             "artifact_refinement_candidate_generation_authorized",
         ]:
             if l6_11_controlled_backend_page_read.get(field) is not True:
