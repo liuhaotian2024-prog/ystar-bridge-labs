@@ -361,6 +361,15 @@
     "evidence_review_and_refinement_candidates/artifact_refinement_candidate_index.json",
     "l6_10x_read_model/l6_10x_strategic_residual_delta.json",
     "l6_10x_read_model/l6_10x_readiness_assessment.json",
+    "l6_controlled_search_backend_page_read_enablement/l6_11_summary.json",
+    "controlled_backend_configuration_policy/fixture_configuration_receipt.json",
+    "controlled_backend_safety_preflight/fixture_safety_preflight_result.json",
+    "controlled_backend_fixture_runtime/fixture_pipeline_trace.json",
+    "controlled_backend_fixture_runtime/fixture_evidence_packet_index.json",
+    "controlled_backend_fixture_runtime/fixture_conflict_registry.json",
+    "controlled_backend_runtime_receipts/no_manual_url_request_receipt.json",
+    "l6_11_read_model/l6_11_strategic_residual_delta.json",
+    "l6_11_read_model/l6_11_readiness_assessment.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",
@@ -590,8 +599,8 @@
     "schema_version": "v0",
     "framework_status": "path_inventory_only",
     "current_mining_level": 0,
-    "artifacts_classified": 150,
-    "unsafe_artifacts_count": 120,
+    "artifacts_classified": 146,
+    "unsafe_artifacts_count": 119,
     "classes_seen": {
       "ACTIVE_AGENT_MARKER": 17,
       "BACKUP_DB": 1,
@@ -599,10 +608,9 @@
       "DAEMON_STATE": 4,
       "DB_CORE": 1,
       "DB_SIDECARE": 6,
-      "DREAM_REPORT": 1,
       "LOG_RUNTIME": 30,
       "PYCACHE": 45,
-      "UNKNOWN_OR_NON_RUNTIME": 30,
+      "UNKNOWN_OR_NON_RUNTIME": 27,
       "UNKNOWN_RUNTIME_ARTIFACT": 10
     },
     "generated_manifest_ref": "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
@@ -621,7 +629,6 @@
       "bounded_log_summarizer_future",
       "cache_sentinel_classifier_future",
       "daemon_state_metadata_adapter_future",
-      "dream_report_bounded_parser_future",
       "ignore_or_cleanup_policy_future",
       "manual_triage_future",
       "readonly_db_adapter_future"
@@ -631,10 +638,8 @@
   "safe_mining_summary": {
     "schema_name": "ystar.console_read_model.generated.safe_mining_summary",
     "schema_version": "v0",
-    "candidate_count": 1,
-    "classes_seen": {
-      "DREAM_REPORT": 1
-    },
+    "candidate_count": 0,
+    "classes_seen": {},
     "generated_candidate_index": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
     "mining_manifest_ref": "runtime_artifact_quarantine/safe_mining/generated/mining_manifest.json",
     "safety_level": "bounded_markdown_candidate",
@@ -658,17 +663,10 @@
   "review_queue_summary": {
     "schema_name": "ystar.console_read_model.generated.review_queue_summary",
     "schema_version": "v0",
-    "review_count": 1,
-    "statuses": {
-      "pending_review": 1
-    },
-    "ingestion_statuses": {
-      "not_ingested": 1
-    },
-    "intended_use_summary": {
-      "memory_continuity_hint": 1,
-      "role_brain_capsule_hint": 1
-    },
+    "review_count": 0,
+    "statuses": {},
+    "ingestion_statuses": {},
+    "intended_use_summary": {},
     "generated_queue_path": "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json",
     "review_queue_manifest_ref": "runtime_artifact_quarantine/safe_mining/review_queue/generated/review_queue_manifest.json",
     "default_review_status": "pending_review",
@@ -692,32 +690,30 @@
   "artifact_disposition_summary": {
     "schema_name": "ystar.console_read_model.generated.artifact_disposition_summary",
     "schema_version": "v0",
-    "total_artifacts": 150,
-    "artifacts_with_disposition": 150,
+    "total_artifacts": 146,
+    "artifacts_with_disposition": 146,
     "dispositions": {
       "deferred_requires_marker_metadata_adapter": 26,
       "deferred_sidecar_or_transaction_file": 6,
       "deferred_requires_classification": 10,
       "deferred_requires_readonly_db_adapter": 2,
-      "ignored_or_non_runtime": 30,
+      "ignored_or_non_runtime": 27,
       "deferred_requires_bounded_log_adapter": 30,
-      "ignored_generated_cache": 45,
-      "safe_mined_to_review_queue": 1
+      "ignored_generated_cache": 45
     },
     "artifact_classes": {
       "DAEMON_STATE": 4,
       "DB_SIDECARE": 6,
       "UNKNOWN_RUNTIME_ARTIFACT": 10,
       "DB_CORE": 1,
-      "UNKNOWN_OR_NON_RUNTIME": 30,
+      "UNKNOWN_OR_NON_RUNTIME": 27,
       "CACHE_SENTINEL": 5,
       "LOG_RUNTIME": 30,
       "ACTIVE_AGENT_MARKER": 17,
       "PYCACHE": 45,
-      "BACKUP_DB": 1,
-      "DREAM_REPORT": 1
+      "BACKUP_DB": 1
     },
-    "safe_mined_to_review_queue": 1,
+    "safe_mined_to_review_queue": 0,
     "deferred_adapter_counts": {
       "deferred_requires_marker_metadata_adapter": 26,
       "deferred_sidecar_or_transaction_file": 6,
@@ -728,7 +724,7 @@
     "ignored_generated_cache": 45,
     "forbidden_direct_read_count": 119,
     "evidence_scoring_status": {
-      "not_started": 150
+      "not_started": 146
     },
     "generated_disposition_index": "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
     "warning": "Disposition is not ingestion. No brain/memory/CIEU writes are allowed."
@@ -736,22 +732,13 @@
   "evidence_review_summary": {
     "schema_name": "ystar.console_read_model.generated.evidence_review_summary",
     "schema_version": "v0",
-    "candidates_scored": 1,
-    "decision_stubs_created": 1,
-    "routes_created": 2,
-    "reuse_readiness": {
-      "hint_only": 1
-    },
-    "confidence": {
-      "structural_only": 1
-    },
-    "route_counts": {
-      "memory_continuity_hint_queue": 1,
-      "role_brain_capsule_hint_queue": 1
-    },
-    "semantic_truth_status": {
-      "not_evaluated": 1
-    },
+    "candidates_scored": 0,
+    "decision_stubs_created": 0,
+    "routes_created": 0,
+    "reuse_readiness": {},
+    "confidence": {},
+    "route_counts": {},
+    "semantic_truth_status": {},
     "automatic_approvals": 0,
     "brain_writeback_allowed": 0,
     "memory_ingestion_allowed": 0,
@@ -1322,7 +1309,7 @@
     "schema_version": "v0",
     "field_functional_archaeology_defined": true,
     "repos_scanned": 4,
-    "assets_scanned": 6051,
+    "assets_scanned": 6132,
     "field_functional_assets_found": 200,
     "reuse_candidates_count": 20,
     "wrap_candidates_count": 20,
@@ -3527,6 +3514,80 @@
     "generated_evidence_index": "evidence_extraction_and_claim_boundary/evidence_packet_index.json",
     "generated_readiness": "l6_10x_read_model/l6_10x_readiness_assessment.json",
     "warning": "L6.10X budgets discovery instead of crippling it: five query categories, bounded result/page/domain/crawl limits, and evidence corroboration artifacts exist. Default backend is missing, so no search/network/page read occurred."
+  },
+  "l6_11_controlled_backend_page_read_enablement_summary": {
+    "schema_name": "ystar.console_read_model.generated.l6_11_controlled_backend_page_read_enablement_summary",
+    "schema_version": "v0",
+    "milestone_id": "L6.11",
+    "milestone_name": "Controlled Search Backend & Public Page-Read Adapter Enablement v0",
+    "mode": "controlled_search_backend_page_read_adapter_enablement",
+    "l6_11_controlled_search_backend_page_read_enablement_complete": true,
+    "selected_work_order_id": "l6_10x_selected_work_order_001",
+    "backend_mode_tested": "fixture",
+    "page_read_mode_tested": "fixture",
+    "default_backend_mode": "disabled",
+    "network_allowed": false,
+    "fixture_full_pipeline_generated_non_empty_evidence_packet": true,
+    "query_count": 5,
+    "search_results_considered": 3,
+    "pages_opened": 3,
+    "domains_touched": 2,
+    "crawl_depth_used": 1,
+    "evidence_packets_generated": 3,
+    "conflicts_found": 1,
+    "blockers": [],
+    "disabled_blockers": [
+      "controlled_public_page_read_adapter_not_configured",
+      "controlled_search_backend_not_configured"
+    ],
+    "configuration_receipt_generated": true,
+    "safety_preflight_decision": "pass",
+    "safety_preflight_warnings": [
+      "fixture_mode_is_demo_evidence_not_real_world_truth"
+    ],
+    "ask_user_for_url_occurred": false,
+    "manual_url_request_receipt_executed": false,
+    "search_snippets_used_as_evidence": false,
+    "page_read_extracted_content_used_as_evidence_candidate": true,
+    "remaining_blocker": "real_backend_configuration_required_for_live_discovery",
+    "next_step": "configure_real_controlled_search_backend_or_use_fixture_for_offline_regression",
+    "ask_user_for_url_authorized": false,
+    "user_manual_url_provision_required": false,
+    "search_snippets_as_evidence_authorized": false,
+    "login_authorized": false,
+    "account_creation_authorized": false,
+    "payment_authorized": false,
+    "form_submission_authorized": false,
+    "contact_authorized": false,
+    "posting_commenting_messaging_authorized": false,
+    "publication_authorized": false,
+    "outreach_authorized": false,
+    "revenue_execution_authorized": false,
+    "mcp_execution_authorized": false,
+    "live_behavior_authorized": false,
+    "cieu_db_write_authorized": false,
+    "canonical_update_authorized": false,
+    "brain_writeback_authorized": false,
+    "memory_ingestion_authorized": false,
+    "direct_y_star_mutation_authorized": false,
+    "artifact_refinement_candidate_generation_authorized": true,
+    "artifact_refinement_application_authorized": false,
+    "max_selected_work_orders": 1,
+    "max_queries": 5,
+    "max_search_results_considered": 20,
+    "max_pages_opened": 8,
+    "max_domains": 5,
+    "max_pages_per_domain": 3,
+    "max_crawl_depth": 1,
+    "max_total_external_reads": 12,
+    "max_evidence_packets": 8,
+    "generated_milestone_summary": "l6_controlled_search_backend_page_read_enablement/l6_11_summary.json",
+    "generated_configuration_receipt": "controlled_backend_configuration_policy/fixture_configuration_receipt.json",
+    "generated_safety_preflight": "controlled_backend_safety_preflight/fixture_safety_preflight_result.json",
+    "generated_fixture_pipeline_trace": "controlled_backend_fixture_runtime/fixture_pipeline_trace.json",
+    "generated_evidence_index": "controlled_backend_fixture_runtime/fixture_evidence_packet_index.json",
+    "generated_readiness": "l6_11_read_model/l6_11_readiness_assessment.json",
+    "warning": "L6.11 enables deterministic controlled search backend and page-read adapter selection. Disabled remains the default, fixture mode proves the full offline evidence path, and real network use remains gated by explicit configuration and safety preflight."
   },
   "open_gaps": [
     "Static console loader exists; no frontend UI yet.",

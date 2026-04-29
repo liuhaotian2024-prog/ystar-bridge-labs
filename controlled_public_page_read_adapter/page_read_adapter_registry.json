@@ -1,0 +1,9 @@
+{
+  "schema_version": "v0",
+  "supported_page_read_modes": [
+    "disabled",
+    "fixture",
+    "stdlib_public_http"
+  ],
+  "default_mode": "disabled"
+}

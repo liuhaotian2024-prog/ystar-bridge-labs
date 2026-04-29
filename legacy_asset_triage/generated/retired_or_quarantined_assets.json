@@ -4,7 +4,7 @@
   "asset_count": 1,
   "assets": [
     {
-      "asset_id": "asset-4435",
+      "asset_id": "asset-4515",
       "source_path": "scripts/secretary_auto_enforce.py",
       "bucket": "D_quarantine_as_evidence_ore",
       "risk_tier": "high",

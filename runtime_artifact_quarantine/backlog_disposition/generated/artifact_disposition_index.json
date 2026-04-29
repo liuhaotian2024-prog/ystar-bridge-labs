@@ -8,32 +8,30 @@
     "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
   ],
   "summary": {
-    "total_artifacts": 150,
-    "artifacts_with_disposition": 150,
+    "total_artifacts": 146,
+    "artifacts_with_disposition": 146,
     "dispositions": {
       "deferred_requires_marker_metadata_adapter": 26,
       "deferred_sidecar_or_transaction_file": 6,
       "deferred_requires_classification": 10,
       "deferred_requires_readonly_db_adapter": 2,
-      "ignored_or_non_runtime": 30,
+      "ignored_or_non_runtime": 27,
       "deferred_requires_bounded_log_adapter": 30,
-      "ignored_generated_cache": 45,
-      "safe_mined_to_review_queue": 1
+      "ignored_generated_cache": 45
     },
     "artifact_classes": {
       "DAEMON_STATE": 4,
       "DB_SIDECARE": 6,
       "UNKNOWN_RUNTIME_ARTIFACT": 10,
       "DB_CORE": 1,
-      "UNKNOWN_OR_NON_RUNTIME": 30,
+      "UNKNOWN_OR_NON_RUNTIME": 27,
       "CACHE_SENTINEL": 5,
       "LOG_RUNTIME": 30,
       "ACTIVE_AGENT_MARKER": 17,
       "PYCACHE": 45,
-      "BACKUP_DB": 1,
-      "DREAM_REPORT": 1
+      "BACKUP_DB": 1
     },
-    "safe_mined_to_review_queue": 1,
+    "safe_mined_to_review_queue": 0,
     "deferred_adapter_counts": {
       "deferred_requires_marker_metadata_adapter": 26,
       "deferred_sidecar_or_transaction_file": 6,
@@ -44,7 +42,7 @@
     "ignored_generated_cache": 45,
     "forbidden_direct_read_count": 119,
     "evidence_scoring_status": {
-      "not_started": 150
+      "not_started": 146
     },
     "warning": "Disposition is not ingestion. No brain/memory/CIEU writes are allowed."
   },
@@ -691,7 +689,7 @@
     },
     {
       "disposition_id": "disp-0021",
-      "artifact_path": "governance/enforce_status_dashboard.md",
+      "artifact_path": "controlled_search_backend_runtime/controlled_search_runtime.py",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "disposition": "ignored_or_non_runtime",
       "source_in_quarantine_manifest": true,
@@ -723,7 +721,7 @@
     },
     {
       "disposition_id": "disp-0022",
-      "artifact_path": "memory/WORLD_STATE.md",
+      "artifact_path": "governance/enforce_status_dashboard.md",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "disposition": "ignored_or_non_runtime",
       "source_in_quarantine_manifest": true,
@@ -2419,38 +2417,6 @@
     },
     {
       "disposition_id": "disp-0075",
-      "artifact_path": "agentic_query_planner/",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "disposition": "ignored_or_non_runtime",
-      "source_in_quarantine_manifest": true,
-      "safe_mining_candidate_id": null,
-      "review_id": null,
-      "review_status": null,
-      "ingestion_status": "not_ingested",
-      "evidence_scoring_status": "not_started",
-      "allowed_next_step": "ignore_for_runtime_artifact_mining",
-      "forbidden_next_steps": [
-        "direct_brain_writeback",
-        "direct_memory_ingestion",
-        "direct_cieu_write",
-        "runtime_recovery",
-        "semantic_truth_scoring_without_review",
-        "candidate_auto_approval"
-      ],
-      "direct_read_allowed": false,
-      "forbidden_direct_read": false,
-      "brain_writeback_allowed": false,
-      "memory_ingestion_allowed": false,
-      "cieu_write_allowed": false,
-      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
-      "generated_from_refs": [
-        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
-        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
-        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
-      ]
-    },
-    {
-      "disposition_id": "disp-0076",
       "artifact_path": "backups/brain_20260420_dream1_214137.db",
       "artifact_class": "BACKUP_DB",
       "disposition": "deferred_requires_readonly_db_adapter",
@@ -2482,8 +2448,40 @@
       ]
     },
     {
+      "disposition_id": "disp-0076",
+      "artifact_path": "console_read_model/generated/l6_11_controlled_backend_page_read_enablement_summary.json",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "disposition": "ignored_or_non_runtime",
+      "source_in_quarantine_manifest": true,
+      "safe_mining_candidate_id": null,
+      "review_id": null,
+      "review_status": null,
+      "ingestion_status": "not_ingested",
+      "evidence_scoring_status": "not_started",
+      "allowed_next_step": "ignore_for_runtime_artifact_mining",
+      "forbidden_next_steps": [
+        "direct_brain_writeback",
+        "direct_memory_ingestion",
+        "direct_cieu_write",
+        "runtime_recovery",
+        "semantic_truth_scoring_without_review",
+        "candidate_auto_approval"
+      ],
+      "direct_read_allowed": false,
+      "forbidden_direct_read": false,
+      "brain_writeback_allowed": false,
+      "memory_ingestion_allowed": false,
+      "cieu_write_allowed": false,
+      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
+      "generated_from_refs": [
+        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
+        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
+        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
+      ]
+    },
+    {
       "disposition_id": "disp-0077",
-      "artifact_path": "bounded_crawl_runtime/",
+      "artifact_path": "controlled_backend_configuration_policy/",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "disposition": "ignored_or_non_runtime",
       "source_in_quarantine_manifest": true,
@@ -2515,7 +2513,7 @@
     },
     {
       "disposition_id": "disp-0078",
-      "artifact_path": "console_read_model/generated/l6_10x_budgeted_controlled_search_evidence_summary.json",
+      "artifact_path": "controlled_backend_fixture_runtime/",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "disposition": "ignored_or_non_runtime",
       "source_in_quarantine_manifest": true,
@@ -2547,7 +2545,7 @@
     },
     {
       "disposition_id": "disp-0079",
-      "artifact_path": "controlled_search_backend_runtime/",
+      "artifact_path": "controlled_backend_runtime_receipts/",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "disposition": "ignored_or_non_runtime",
       "source_in_quarantine_manifest": true,
@@ -2579,7 +2577,7 @@
     },
     {
       "disposition_id": "disp-0080",
-      "artifact_path": "evidence_corroboration_and_conflict_matrix/",
+      "artifact_path": "controlled_backend_safety_preflight/",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "disposition": "ignored_or_non_runtime",
       "source_in_quarantine_manifest": true,
@@ -2611,7 +2609,7 @@
     },
     {
       "disposition_id": "disp-0081",
-      "artifact_path": "evidence_extraction_and_claim_boundary/",
+      "artifact_path": "controlled_public_page_read_adapter/",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "disposition": "ignored_or_non_runtime",
       "source_in_quarantine_manifest": true,
@@ -2643,7 +2641,7 @@
     },
     {
       "disposition_id": "disp-0082",
-      "artifact_path": "evidence_review_and_refinement_candidates/",
+      "artifact_path": "controlled_search_backend_adapters/",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "disposition": "ignored_or_non_runtime",
       "source_in_quarantine_manifest": true,
@@ -2675,7 +2673,7 @@
     },
     {
       "disposition_id": "disp-0083",
-      "artifact_path": "external_search_no_action_receipts/",
+      "artifact_path": "controlled_search_backend_registry/",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "disposition": "ignored_or_non_runtime",
       "source_in_quarantine_manifest": true,
@@ -2739,7 +2737,7 @@
     },
     {
       "disposition_id": "disp-0085",
-      "artifact_path": "l6_10x_read_model/",
+      "artifact_path": "l6_11_read_model/",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "disposition": "ignored_or_non_runtime",
       "source_in_quarantine_manifest": true,
@@ -2771,7 +2769,7 @@
     },
     {
       "disposition_id": "disp-0086",
-      "artifact_path": "l6_budgeted_controlled_external_search_evidence_pilot/",
+      "artifact_path": "l6_controlled_search_backend_page_read_enablement/",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "disposition": "ignored_or_non_runtime",
       "source_in_quarantine_manifest": true,
@@ -2803,38 +2801,6 @@
     },
     {
       "disposition_id": "disp-0087",
-      "artifact_path": "reports/ceo/brain_dream_diffs/dream_diff_20260429_125639_nrem.md",
-      "artifact_class": "DREAM_REPORT",
-      "disposition": "safe_mined_to_review_queue",
-      "source_in_quarantine_manifest": true,
-      "safe_mining_candidate_id": "mdcand-001",
-      "review_id": "review-001",
-      "review_status": "pending_review",
-      "ingestion_status": "not_ingested",
-      "evidence_scoring_status": "not_started",
-      "allowed_next_step": "future_evidence_scoring_after_review",
-      "forbidden_next_steps": [
-        "direct_brain_writeback",
-        "direct_memory_ingestion",
-        "direct_cieu_write",
-        "runtime_recovery",
-        "semantic_truth_scoring_without_review",
-        "candidate_auto_approval"
-      ],
-      "direct_read_allowed": false,
-      "forbidden_direct_read": false,
-      "brain_writeback_allowed": false,
-      "memory_ingestion_allowed": false,
-      "cieu_write_allowed": false,
-      "rationale": "Safe-mined candidate is present in the generated review queue.",
-      "generated_from_refs": [
-        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
-        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
-        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
-      ]
-    },
-    {
-      "disposition_id": "disp-0088",
       "artifact_path": "scripts/.brain_ingest_sentinel.json",
       "artifact_class": "CACHE_SENTINEL",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -2866,7 +2832,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0089",
+      "disposition_id": "disp-0088",
       "artifact_path": "scripts/.logs/aiden_dream.err.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2898,7 +2864,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0090",
+      "disposition_id": "disp-0089",
       "artifact_path": "scripts/.logs/aiden_dream.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2930,7 +2896,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0091",
+      "disposition_id": "disp-0090",
       "artifact_path": "scripts/.logs/aiden_dream_dryrun.err.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2962,7 +2928,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0092",
+      "disposition_id": "disp-0091",
       "artifact_path": "scripts/.logs/aiden_dream_dryrun.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -2994,7 +2960,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0093",
+      "disposition_id": "disp-0092",
       "artifact_path": "scripts/.logs/amendment_deadlines.jsonl",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3026,7 +2992,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0094",
+      "disposition_id": "disp-0093",
       "artifact_path": "scripts/.logs/auto_commit_push.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3058,7 +3024,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0095",
+      "disposition_id": "disp-0094",
       "artifact_path": "scripts/.logs/auto_commit_push.stderr.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3090,7 +3056,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0096",
+      "disposition_id": "disp-0095",
       "artifact_path": "scripts/.logs/auto_commit_push.stdout.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3122,7 +3088,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0097",
+      "disposition_id": "disp-0096",
       "artifact_path": "scripts/.logs/brain_auto_ingest_daemon.err.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3154,7 +3120,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0098",
+      "disposition_id": "disp-0097",
       "artifact_path": "scripts/.logs/brain_auto_ingest_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3186,7 +3152,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0099",
+      "disposition_id": "disp-0098",
       "artifact_path": "scripts/.logs/broker.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3218,7 +3184,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0100",
+      "disposition_id": "disp-0099",
       "artifact_path": "scripts/.logs/cieu_brain_daemon.err.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3250,7 +3216,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0101",
+      "disposition_id": "disp-0100",
       "artifact_path": "scripts/.logs/cieu_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3282,7 +3248,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0102",
+      "disposition_id": "disp-0101",
       "artifact_path": "scripts/.logs/dialogue_to_brain.err.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3314,7 +3280,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0103",
+      "disposition_id": "disp-0102",
       "artifact_path": "scripts/.logs/dialogue_to_brain.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3346,7 +3312,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0104",
+      "disposition_id": "disp-0103",
       "artifact_path": "scripts/.logs/dream_auto_reviewer.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3378,7 +3344,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0105",
+      "disposition_id": "disp-0104",
       "artifact_path": "scripts/.logs/ethan_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3410,7 +3376,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0106",
+      "disposition_id": "disp-0105",
       "artifact_path": "scripts/.logs/field_backfill.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3442,7 +3408,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0107",
+      "disposition_id": "disp-0106",
       "artifact_path": "scripts/.logs/jordan_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3474,7 +3440,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0108",
+      "disposition_id": "disp-0107",
       "artifact_path": "scripts/.logs/leo_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3506,7 +3472,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0109",
+      "disposition_id": "disp-0108",
       "artifact_path": "scripts/.logs/marco_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3538,7 +3504,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0110",
+      "disposition_id": "disp-0109",
       "artifact_path": "scripts/.logs/maya_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3570,7 +3536,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0111",
+      "disposition_id": "disp-0110",
       "artifact_path": "scripts/.logs/ryan_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3602,7 +3568,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0112",
+      "disposition_id": "disp-0111",
       "artifact_path": "scripts/.logs/samantha_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3634,7 +3600,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0113",
+      "disposition_id": "disp-0112",
       "artifact_path": "scripts/.logs/sofia_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3666,7 +3632,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0114",
+      "disposition_id": "disp-0113",
       "artifact_path": "scripts/.logs/subscriber.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3698,7 +3664,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0115",
+      "disposition_id": "disp-0114",
       "artifact_path": "scripts/.logs/zara_brain_daemon.log",
       "artifact_class": "LOG_RUNTIME",
       "disposition": "deferred_requires_bounded_log_adapter",
@@ -3730,7 +3696,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0116",
+      "disposition_id": "disp-0115",
       "artifact_path": "scripts/.pending_spawns.jsonl.bak_20260422",
       "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
       "disposition": "deferred_requires_classification",
@@ -3762,7 +3728,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0117",
+      "disposition_id": "disp-0116",
       "artifact_path": "scripts/.ystar_active_agent.subagent_Ethan-CTO",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -3794,7 +3760,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0118",
+      "disposition_id": "disp-0117",
       "artifact_path": "scripts/.ystar_active_agent.subagent_Leo-Kernel",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -3826,7 +3792,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0119",
+      "disposition_id": "disp-0118",
       "artifact_path": "scripts/.ystar_active_agent.subagent_Maya-Governance",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -3858,7 +3824,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0120",
+      "disposition_id": "disp-0119",
       "artifact_path": "scripts/.ystar_active_agent.subagent_Ryan-Platform",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -3890,7 +3856,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0121",
+      "disposition_id": "disp-0120",
       "artifact_path": "scripts/.ystar_active_agent.subagent_Samantha-Secretary",
       "artifact_class": "ACTIVE_AGENT_MARKER",
       "disposition": "deferred_requires_marker_metadata_adapter",
@@ -3922,7 +3888,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0122",
+      "disposition_id": "disp-0121",
       "artifact_path": "scripts/.ystar_reply_count_ceo.json",
       "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
       "disposition": "deferred_requires_classification",
@@ -3954,7 +3920,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0123",
+      "disposition_id": "disp-0122",
       "artifact_path": "scripts/__pycache__/czl_bus.cpython-311.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -3986,7 +3952,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0124",
+      "disposition_id": "disp-0123",
       "artifact_path": "scripts/__pycache__/parent_session_commitment_tracker.cpython-311.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -4018,7 +3984,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0125",
+      "disposition_id": "disp-0124",
       "artifact_path": "scripts/__pycache__/skill_library.cpython-311.pyc",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -4050,7 +4016,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0126",
+      "disposition_id": "disp-0125",
       "artifact_path": "scripts/hook_session_start.py.bak_patch1a_20260423_204057",
       "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
       "disposition": "deferred_requires_classification",
@@ -4082,7 +4048,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0127",
+      "disposition_id": "disp-0126",
       "artifact_path": "scripts/hook_session_start.py.bak_patch1a_fix_20260423_204700",
       "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
       "disposition": "deferred_requires_classification",
@@ -4114,7 +4080,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0128",
+      "disposition_id": "disp-0127",
       "artifact_path": "scripts/hook_wrapper.py.bak_20260424",
       "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
       "disposition": "deferred_requires_classification",
@@ -4146,7 +4112,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0129",
+      "disposition_id": "disp-0128",
       "artifact_path": "scripts/hook_wrapper.py.bak_patch2_20260423_202951",
       "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
       "disposition": "deferred_requires_classification",
@@ -4178,7 +4144,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0130",
+      "disposition_id": "disp-0129",
       "artifact_path": "scripts/tests/test_auto_commit_push.py",
       "artifact_class": "UNKNOWN_RUNTIME_ARTIFACT",
       "disposition": "deferred_requires_classification",
@@ -4210,103 +4176,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0131",
-      "artifact_path": "search_budget_policy/",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "disposition": "ignored_or_non_runtime",
-      "source_in_quarantine_manifest": true,
-      "safe_mining_candidate_id": null,
-      "review_id": null,
-      "review_status": null,
-      "ingestion_status": "not_ingested",
-      "evidence_scoring_status": "not_started",
-      "allowed_next_step": "ignore_for_runtime_artifact_mining",
-      "forbidden_next_steps": [
-        "direct_brain_writeback",
-        "direct_memory_ingestion",
-        "direct_cieu_write",
-        "runtime_recovery",
-        "semantic_truth_scoring_without_review",
-        "candidate_auto_approval"
-      ],
-      "direct_read_allowed": false,
-      "forbidden_direct_read": false,
-      "brain_writeback_allowed": false,
-      "memory_ingestion_allowed": false,
-      "cieu_write_allowed": false,
-      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
-      "generated_from_refs": [
-        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
-        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
-        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
-      ]
-    },
-    {
-      "disposition_id": "disp-0132",
-      "artifact_path": "search_result_triage/",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "disposition": "ignored_or_non_runtime",
-      "source_in_quarantine_manifest": true,
-      "safe_mining_candidate_id": null,
-      "review_id": null,
-      "review_status": null,
-      "ingestion_status": "not_ingested",
-      "evidence_scoring_status": "not_started",
-      "allowed_next_step": "ignore_for_runtime_artifact_mining",
-      "forbidden_next_steps": [
-        "direct_brain_writeback",
-        "direct_memory_ingestion",
-        "direct_cieu_write",
-        "runtime_recovery",
-        "semantic_truth_scoring_without_review",
-        "candidate_auto_approval"
-      ],
-      "direct_read_allowed": false,
-      "forbidden_direct_read": false,
-      "brain_writeback_allowed": false,
-      "memory_ingestion_allowed": false,
-      "cieu_write_allowed": false,
-      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
-      "generated_from_refs": [
-        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
-        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
-        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
-      ]
-    },
-    {
-      "disposition_id": "disp-0133",
-      "artifact_path": "source_quality_and_trust_assessment/",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "disposition": "ignored_or_non_runtime",
-      "source_in_quarantine_manifest": true,
-      "safe_mining_candidate_id": null,
-      "review_id": null,
-      "review_status": null,
-      "ingestion_status": "not_ingested",
-      "evidence_scoring_status": "not_started",
-      "allowed_next_step": "ignore_for_runtime_artifact_mining",
-      "forbidden_next_steps": [
-        "direct_brain_writeback",
-        "direct_memory_ingestion",
-        "direct_cieu_write",
-        "runtime_recovery",
-        "semantic_truth_scoring_without_review",
-        "candidate_auto_approval"
-      ],
-      "direct_read_allowed": false,
-      "forbidden_direct_read": false,
-      "brain_writeback_allowed": false,
-      "memory_ingestion_allowed": false,
-      "cieu_write_allowed": false,
-      "rationale": "Non-runtime or framework files are not artifact-mining targets.",
-      "generated_from_refs": [
-        "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
-        "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
-        "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json"
-      ]
-    },
-    {
-      "disposition_id": "disp-0134",
+      "disposition_id": "disp-0130",
       "artifact_path": "tests/approved_canonical_update_sandbox/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -4338,7 +4208,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0135",
+      "disposition_id": "disp-0131",
       "artifact_path": "tests/controlled_approval_record_sandbox/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -4370,7 +4240,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0136",
+      "disposition_id": "disp-0132",
       "artifact_path": "tests/controlled_canonical_learning_design/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -4402,7 +4272,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0137",
+      "disposition_id": "disp-0133",
       "artifact_path": "tests/controlled_real_release_preflight/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -4434,7 +4304,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0138",
+      "disposition_id": "disp-0134",
       "artifact_path": "tests/cross_repo_governance_contract_proof/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -4466,7 +4336,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0139",
+      "disposition_id": "disp-0135",
       "artifact_path": "tests/field_functional_archaeology/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -4498,7 +4368,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0140",
+      "disposition_id": "disp-0136",
       "artifact_path": "tests/field_functional_auto_projection_core/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -4530,7 +4400,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0141",
+      "disposition_id": "disp-0137",
       "artifact_path": "tests/governed_mcp_dry_run_adapter/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -4562,8 +4432,8 @@
       ]
     },
     {
-      "disposition_id": "disp-0142",
-      "artifact_path": "tests/l6_budgeted_controlled_external_search_evidence_pilot/",
+      "disposition_id": "disp-0138",
+      "artifact_path": "tests/l6_controlled_search_backend_page_read_enablement/",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "disposition": "ignored_or_non_runtime",
       "source_in_quarantine_manifest": true,
@@ -4594,7 +4464,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0143",
+      "disposition_id": "disp-0139",
       "artifact_path": "tests/l6_meta_development_generative_selection_engine/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -4626,7 +4496,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0144",
+      "disposition_id": "disp-0140",
       "artifact_path": "tests/l6_meta_development_mvp_artifact_sandbox/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -4658,7 +4528,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0145",
+      "disposition_id": "disp-0141",
       "artifact_path": "tests/live_boundary_no_go_framework/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -4690,7 +4560,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0146",
+      "disposition_id": "disp-0142",
       "artifact_path": "tests/mission_field_projection_contract/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -4722,7 +4592,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0147",
+      "disposition_id": "disp-0143",
       "artifact_path": "tests/projection_checked_autonomous_work_cycle/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -4754,7 +4624,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0148",
+      "disposition_id": "disp-0144",
       "artifact_path": "tests/real_approval_workflow_boundary/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -4786,7 +4656,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0149",
+      "disposition_id": "disp-0145",
       "artifact_path": "tests/real_release_simulation_sandbox/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",
@@ -4818,7 +4688,7 @@
       ]
     },
     {
-      "disposition_id": "disp-0150",
+      "disposition_id": "disp-0146",
       "artifact_path": "tests/review_gated_shadow_projection_cycle/__pycache__/",
       "artifact_class": "PYCACHE",
       "disposition": "ignored_generated_cache",

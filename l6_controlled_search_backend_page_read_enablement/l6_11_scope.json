@@ -1,0 +1,5 @@
+{
+  "schema_version": "v0",
+  "scope": "controlled backend registry, fixture proof path, page-read adapter, safety preflight",
+  "manual_url_request_allowed": false
+}

@@ -113,8 +113,8 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 150
-- Unsafe artifacts count: 120
+- Artifacts classified: 146
+- Unsafe artifacts count: 119
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -122,42 +122,37 @@ Not ready:
   - DAEMON_STATE: 4
   - DB_CORE: 1
   - DB_SIDECARE: 6
-  - DREAM_REPORT: 1
   - LOG_RUNTIME: 30
   - PYCACHE: 45
-  - UNKNOWN_OR_NON_RUNTIME: 30
+  - UNKNOWN_OR_NON_RUNTIME: 27
   - UNKNOWN_RUNTIME_ARTIFACT: 10
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
 - Warning: Console displays only curated path-level quarantine summary. No artifact contents were read.
 
 ## Runtime Artifact Safe Mining Candidates
 
-- Candidate count: 1
+- Candidate count: 0
 - Safety level: bounded_markdown_candidate
 - Ingestion status: candidate_only
 - Generated candidate index: runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json
 - Classes seen:
-  - DREAM_REPORT: 1
 - Warning: Safe mining candidates are bounded review assets only. They are not brain memory, CIEU records, or approved writeback.
 
 ## Runtime Artifact Candidate Review Queue
 
-- Review count: 1
+- Review count: 0
 - Default review status: pending_review
 - Default ingestion status: not_ingested
 - Generated queue path: runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json
 - Statuses:
-  - pending_review: 1
 - Intended use summary:
-  - memory_continuity_hint: 1
-  - role_brain_capsule_hint: 1
 - Warning: Review queue entries are not brain memory and require explicit approval before any future CIEU, memory, or capsule use.
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 150
-- Artifacts with disposition: 150
-- Safe-mined to review queue: 1
+- Total artifacts: 146
+- Artifacts with disposition: 146
+- Safe-mined to review queue: 0
 - Forbidden direct read count: 119
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
@@ -167,25 +162,20 @@ Not ready:
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 45
-  - ignored_or_non_runtime: 30
-  - safe_mined_to_review_queue: 1
+  - ignored_or_non_runtime: 27
 - Evidence scoring status:
-  - not_started: 150
+  - not_started: 146
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
 
-- Candidates scored: 1
-- Decision stubs created: 1
-- Routes created: 2
+- Candidates scored: 0
+- Decision stubs created: 0
+- Routes created: 0
 - Automatic approvals: 0
 - Reuse readiness:
-  - hint_only: 1
 - Route counts:
-  - memory_continuity_hint_queue: 1
-  - role_brain_capsule_hint_queue: 1
 - Semantic truth status:
-  - not_evaluated: 1
 - Warning: Evidence scoring is structural only. It is not truth validation and not memory ingestion.
 
 ## Labs-Gov Alignment Bridge
@@ -548,7 +538,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 6051
+- assets_scanned: 6132
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -1386,6 +1376,41 @@ Not ready:
 - remaining_blocker: controlled_search_backend_required
 - next_step: configure_controlled_search_backend
 - Warning: L6.10X budgets discovery instead of crippling it: five query categories, bounded result/page/domain/crawl limits, and evidence corroboration artifacts exist. Default backend is missing, so no search/network/page read occurred.
+
+## L6.11 Controlled Search Backend & Page-Read Enablement
+
+- l6_11_controlled_search_backend_page_read_enablement_complete: True
+- mode: controlled_search_backend_page_read_adapter_enablement
+- selected_work_order_id: l6_10x_selected_work_order_001
+- backend_mode_tested: fixture
+- page_read_mode_tested: fixture
+- default_backend_mode: disabled
+- network_allowed: False
+- query_count: 5
+- search_results_considered: 3
+- pages_opened: 3
+- domains_touched: 2
+- crawl_depth_used: 1
+- evidence_packets_generated: 3
+- conflicts_found: 1
+- fixture_full_pipeline_generated_non_empty_evidence_packet: True
+- blockers: []
+- disabled_blockers: ['controlled_public_page_read_adapter_not_configured', 'controlled_search_backend_not_configured']
+- ask_user_for_url_occurred: False
+- search_snippets_used_as_evidence: False
+- page_read_extracted_content_used_as_evidence_candidate: True
+- login_authorized: False
+- payment_authorized: False
+- publication_authorized: False
+- outreach_authorized: False
+- revenue_execution_authorized: False
+- mcp_execution_authorized: False
+- cieu_db_write_authorized: False
+- canonical_update_authorized: False
+- brain_writeback_authorized: False
+- direct_y_star_mutation_authorized: False
+- next_step: configure_real_controlled_search_backend_or_use_fixture_for_offline_regression
+- Warning: L6.11 enables deterministic controlled search backend and page-read adapter selection. Disabled remains the default, fixture mode proves the full offline evidence path, and real network use remains gated by explicit configuration and safety preflight.
 
 ## Governance Boundary
 

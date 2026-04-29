@@ -1,0 +1,9 @@
+{
+  "schema_version": "v0",
+  "selected_count": 3,
+  "sources": [
+    "https://official.example.org/fixture/program-demand",
+    "https://analysis.example.net/fixture/corroboration-brief",
+    "https://analysis.example.net/fixture/scope-limitation"
+  ]
+}

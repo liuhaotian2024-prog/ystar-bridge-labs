@@ -1,0 +1,14 @@
+{
+  "schema_version": "v0",
+  "backend_mode": "brave_search_api",
+  "required_env_present": {
+    "BRAVE_SEARCH_API_KEY": false
+  },
+  "missing_env_names": [
+    "BRAVE_SEARCH_API_KEY"
+  ],
+  "secret_values_serialized": false,
+  "blockers": [
+    "configured_backend_missing_required_environment"
+  ]
+}

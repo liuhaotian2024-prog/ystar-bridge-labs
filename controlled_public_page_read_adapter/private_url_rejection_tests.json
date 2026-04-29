@@ -1,0 +1,5 @@
+{
+  "schema_version": "v0",
+  "localhost_rejection": "private_or_internal_host",
+  "file_scheme_rejection": "unsupported_or_forbidden_scheme"
+}

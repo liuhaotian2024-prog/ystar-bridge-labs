@@ -1,0 +1,12 @@
+{
+  "schema_version": "v0",
+  "selected_work_order_id": "l6_10x_selected_work_order_001",
+  "queries_generated": 5,
+  "search_results_considered": 3,
+  "pages_opened": 3,
+  "domains_touched": 2,
+  "crawl_depth_used": 1,
+  "evidence_packets_generated": 3,
+  "network_used": false,
+  "ask_user_for_url": false
+}

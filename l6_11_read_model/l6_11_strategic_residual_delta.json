@@ -1,0 +1,6 @@
+{
+  "schema_version": "v0",
+  "residual_id": "l6_11_strategic_residual_delta",
+  "primary_residual": "real_backend_configuration_required_for_live_discovery",
+  "fixture_path_ready": true
+}

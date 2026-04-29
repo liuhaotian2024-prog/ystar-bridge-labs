@@ -1,0 +1,69 @@
+{
+  "schema_version": "v0",
+  "decision": "pass",
+  "backend_mode": "fixture",
+  "page_read_mode": "fixture",
+  "blockers": [],
+  "warnings": [
+    "fixture_mode_is_demo_evidence_not_real_world_truth"
+  ],
+  "budget_checks": {
+    "max_queries": {
+      "value": 5,
+      "max_allowed": 5,
+      "within_limit": true
+    },
+    "max_search_results_considered": {
+      "value": 20,
+      "max_allowed": 20,
+      "within_limit": true
+    },
+    "max_pages_opened": {
+      "value": 8,
+      "max_allowed": 8,
+      "within_limit": true
+    },
+    "max_domains": {
+      "value": 5,
+      "max_allowed": 5,
+      "within_limit": true
+    },
+    "max_pages_per_domain": {
+      "value": 3,
+      "max_allowed": 3,
+      "within_limit": true
+    },
+    "max_crawl_depth": {
+      "value": 1,
+      "max_allowed": 1,
+      "within_limit": true
+    },
+    "max_total_external_reads": {
+      "value": 12,
+      "max_allowed": 12,
+      "within_limit": true
+    }
+  },
+  "no_side_effect_guarantees": {
+    "request_methods_limited_to_get": true,
+    "no_post_put_patch_delete": true,
+    "no_cookies": true,
+    "no_auth_headers": true,
+    "no_credentials": true,
+    "no_form_submission": true,
+    "no_login": true,
+    "no_account_creation": true,
+    "no_payment": true,
+    "no_posting_commenting_messaging": true,
+    "no_publication": true,
+    "no_outreach": true,
+    "no_revenue_execution": true,
+    "no_mcp_execution": true,
+    "no_live_behavior": true,
+    "no_cieu_db_write": true,
+    "no_brain_memory_writeback": true,
+    "no_canonical_update": true,
+    "no_direct_y_star_mutation": true
+  },
+  "private_url_rejections": {}
+}

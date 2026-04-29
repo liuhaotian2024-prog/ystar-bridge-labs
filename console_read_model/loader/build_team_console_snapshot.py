@@ -376,6 +376,15 @@ CURATED_SOURCES = [
     "evidence_review_and_refinement_candidates/artifact_refinement_candidate_index.json",
     "l6_10x_read_model/l6_10x_strategic_residual_delta.json",
     "l6_10x_read_model/l6_10x_readiness_assessment.json",
+    "l6_controlled_search_backend_page_read_enablement/l6_11_summary.json",
+    "controlled_backend_configuration_policy/fixture_configuration_receipt.json",
+    "controlled_backend_safety_preflight/fixture_safety_preflight_result.json",
+    "controlled_backend_fixture_runtime/fixture_pipeline_trace.json",
+    "controlled_backend_fixture_runtime/fixture_evidence_packet_index.json",
+    "controlled_backend_fixture_runtime/fixture_conflict_registry.json",
+    "controlled_backend_runtime_receipts/no_manual_url_request_receipt.json",
+    "l6_11_read_model/l6_11_strategic_residual_delta.json",
+    "l6_11_read_model/l6_11_readiness_assessment.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -6114,6 +6123,7 @@ def build_l6_10t_toolmaking_locator_resolver_summary(
         "contact_authorized": flag("contact_authorized"),
         "payment_authorized": flag("payment_authorized"),
         "form_submission_authorized": flag("form_submission_authorized"),
+        "contact_authorized": flag("contact_authorized"),
         "posting_commenting_messaging_authorized": flag("posting_commenting_messaging_authorized"),
         "publication_authorized": flag("publication_authorized"),
         "outreach_authorized": flag("outreach_authorized"),
@@ -6624,6 +6634,7 @@ def build_l6_10w_reviewed_seed_locator_injection_summary(
         "contact_authorized": flag("contact_authorized"),
         "payment_authorized": flag("payment_authorized"),
         "form_submission_authorized": flag("form_submission_authorized"),
+        "contact_authorized": flag("contact_authorized"),
         "posting_commenting_messaging_authorized": flag("posting_commenting_messaging_authorized"),
         "publication_authorized": flag("publication_authorized"),
         "outreach_authorized": flag("outreach_authorized"),
@@ -6745,6 +6756,7 @@ def build_l6_10x_budgeted_controlled_search_summary(
         "contact_authorized": flag("contact_authorized"),
         "payment_authorized": flag("payment_authorized"),
         "form_submission_authorized": flag("form_submission_authorized"),
+        "contact_authorized": flag("contact_authorized"),
         "posting_commenting_messaging_authorized": flag("posting_commenting_messaging_authorized"),
         "publication_authorized": flag("publication_authorized"),
         "outreach_authorized": flag("outreach_authorized"),
@@ -6797,6 +6809,154 @@ def build_l6_10x_budgeted_controlled_search_summary(
             "L6.10X budgets discovery instead of crippling it: five query categories, "
             "bounded result/page/domain/crawl limits, and evidence corroboration artifacts "
             "exist. Default backend is missing, so no search/network/page read occurred."
+        ),
+    }
+
+
+def build_l6_11_controlled_backend_enablement_summary(
+    milestone_summary: dict[str, Any] | None,
+    configuration_receipt: dict[str, Any] | None,
+    safety_preflight: dict[str, Any] | None,
+    fixture_pipeline: dict[str, Any] | None,
+    evidence_index: dict[str, Any] | None,
+    conflict_registry: dict[str, Any] | None,
+    manual_url_receipt: dict[str, Any] | None,
+    residual_delta: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.l6_11_controlled_backend_page_read_enablement_summary",
+            "schema_version": "v0",
+            "l6_11_controlled_search_backend_page_read_enablement_complete": False,
+            "warning": "L6.11 controlled backend/page-read enablement pack has not been generated yet.",
+        }
+
+    milestone_summary = milestone_summary or {}
+    configuration_receipt = configuration_receipt or {}
+    safety_preflight = safety_preflight or {}
+    fixture_pipeline = fixture_pipeline or {}
+    evidence_index = evidence_index or {}
+    conflict_registry = conflict_registry or {}
+    manual_url_receipt = manual_url_receipt or {}
+    residual_delta = residual_delta or {}
+
+    def flag(field: str, default: Any = False) -> Any:
+        return milestone_summary.get(field, readiness_summary.get(field, default))
+
+    return {
+        "schema_name": "ystar.console_read_model.generated.l6_11_controlled_backend_page_read_enablement_summary",
+        "schema_version": "v0",
+        "milestone_id": milestone_summary.get("milestone_id", "L6.11"),
+        "milestone_name": milestone_summary.get(
+            "milestone_name",
+            "Controlled Search Backend & Public Page-Read Adapter Enablement v0",
+        ),
+        "mode": milestone_summary.get(
+            "mode", "controlled_search_backend_page_read_adapter_enablement"
+        ),
+        "l6_11_controlled_search_backend_page_read_enablement_complete": readiness_summary.get(
+            "l6_11_controlled_search_backend_page_read_enablement_complete", True
+        ),
+        "selected_work_order_id": milestone_summary.get("selected_work_order_id"),
+        "backend_mode_tested": milestone_summary.get(
+            "backend_mode_tested", configuration_receipt.get("backend_mode")
+        ),
+        "page_read_mode_tested": milestone_summary.get(
+            "page_read_mode_tested", configuration_receipt.get("page_read_mode")
+        ),
+        "default_backend_mode": milestone_summary.get("default_backend_mode", "disabled"),
+        "network_allowed": milestone_summary.get(
+            "network_allowed", configuration_receipt.get("network_allowed", False)
+        ),
+        "fixture_full_pipeline_generated_non_empty_evidence_packet": milestone_summary.get(
+            "fixture_full_pipeline_generated_non_empty_evidence_packet",
+            evidence_index.get("evidence_packet_count", 0) > 0,
+        ),
+        "query_count": milestone_summary.get(
+            "query_count", fixture_pipeline.get("queries_generated", 0)
+        ),
+        "search_results_considered": milestone_summary.get(
+            "search_results_considered",
+            fixture_pipeline.get("search_results_considered", 0),
+        ),
+        "pages_opened": milestone_summary.get(
+            "pages_opened", fixture_pipeline.get("pages_opened", 0)
+        ),
+        "domains_touched": milestone_summary.get(
+            "domains_touched", fixture_pipeline.get("domains_touched", 0)
+        ),
+        "crawl_depth_used": milestone_summary.get(
+            "crawl_depth_used", fixture_pipeline.get("crawl_depth_used", 0)
+        ),
+        "evidence_packets_generated": milestone_summary.get(
+            "evidence_packets_generated", evidence_index.get("evidence_packet_count", 0)
+        ),
+        "conflicts_found": milestone_summary.get(
+            "conflicts_found", conflict_registry.get("conflict_count", 0)
+        ),
+        "blockers": milestone_summary.get("blockers", configuration_receipt.get("blockers", [])),
+        "disabled_blockers": milestone_summary.get("disabled_blockers", []),
+        "configuration_receipt_generated": bool(configuration_receipt),
+        "safety_preflight_decision": safety_preflight.get("decision"),
+        "safety_preflight_warnings": safety_preflight.get("warnings", []),
+        "ask_user_for_url_occurred": milestone_summary.get(
+            "ask_user_for_url_occurred", manual_url_receipt.get("ask_user_for_url")
+        ),
+        "manual_url_request_receipt_executed": manual_url_receipt.get("executed"),
+        "search_snippets_used_as_evidence": milestone_summary.get(
+            "search_snippets_used_as_evidence", False
+        ),
+        "page_read_extracted_content_used_as_evidence_candidate": milestone_summary.get(
+            "page_read_extracted_content_used_as_evidence_candidate", False
+        ),
+        "remaining_blocker": residual_delta.get("primary_residual"),
+        "next_step": readiness_summary.get("next_step"),
+        "ask_user_for_url_authorized": flag("ask_user_for_url_authorized"),
+        "user_manual_url_provision_required": flag("user_manual_url_provision_required"),
+        "search_snippets_as_evidence_authorized": flag("search_snippets_as_evidence_authorized"),
+        "login_authorized": flag("login_authorized"),
+        "account_creation_authorized": flag("account_creation_authorized"),
+        "payment_authorized": flag("payment_authorized"),
+        "form_submission_authorized": flag("form_submission_authorized"),
+        "contact_authorized": flag("contact_authorized"),
+        "posting_commenting_messaging_authorized": flag("posting_commenting_messaging_authorized"),
+        "publication_authorized": flag("publication_authorized"),
+        "outreach_authorized": flag("outreach_authorized"),
+        "revenue_execution_authorized": flag("revenue_execution_authorized"),
+        "mcp_execution_authorized": flag("mcp_execution_authorized"),
+        "live_behavior_authorized": flag("live_behavior_authorized"),
+        "cieu_db_write_authorized": flag("cieu_db_write_authorized"),
+        "canonical_update_authorized": flag("canonical_update_authorized"),
+        "brain_writeback_authorized": flag("brain_writeback_authorized"),
+        "memory_ingestion_authorized": flag("memory_ingestion_authorized"),
+        "direct_y_star_mutation_authorized": flag("direct_y_star_mutation_authorized"),
+        "artifact_refinement_candidate_generation_authorized": flag(
+            "artifact_refinement_candidate_generation_authorized"
+        ),
+        "artifact_refinement_application_authorized": flag(
+            "artifact_refinement_application_authorized"
+        ),
+        "max_selected_work_orders": milestone_summary.get("max_selected_work_orders"),
+        "max_queries": milestone_summary.get("max_queries"),
+        "max_search_results_considered": milestone_summary.get("max_search_results_considered"),
+        "max_pages_opened": milestone_summary.get("max_pages_opened"),
+        "max_domains": milestone_summary.get("max_domains"),
+        "max_pages_per_domain": milestone_summary.get("max_pages_per_domain"),
+        "max_crawl_depth": milestone_summary.get("max_crawl_depth"),
+        "max_total_external_reads": milestone_summary.get("max_total_external_reads"),
+        "max_evidence_packets": milestone_summary.get("max_evidence_packets"),
+        "generated_milestone_summary": "l6_controlled_search_backend_page_read_enablement/l6_11_summary.json",
+        "generated_configuration_receipt": "controlled_backend_configuration_policy/fixture_configuration_receipt.json",
+        "generated_safety_preflight": "controlled_backend_safety_preflight/fixture_safety_preflight_result.json",
+        "generated_fixture_pipeline_trace": "controlled_backend_fixture_runtime/fixture_pipeline_trace.json",
+        "generated_evidence_index": "controlled_backend_fixture_runtime/fixture_evidence_packet_index.json",
+        "generated_readiness": "l6_11_read_model/l6_11_readiness_assessment.json",
+        "warning": (
+            "L6.11 enables deterministic controlled search backend and page-read "
+            "adapter selection. Disabled remains the default, fixture mode proves "
+            "the full offline evidence path, and real network use remains gated by "
+            "explicit configuration and safety preflight."
         ),
     }
 
@@ -8223,6 +8383,42 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_10x_read_model/l6_10x_readiness_assessment.json",
         files_read,
     )
+    l6_11_milestone_summary = load_optional_json(
+        "l6_controlled_search_backend_page_read_enablement/l6_11_summary.json",
+        files_read,
+    )
+    l6_11_configuration_receipt = load_optional_json(
+        "controlled_backend_configuration_policy/fixture_configuration_receipt.json",
+        files_read,
+    )
+    l6_11_safety_preflight = load_optional_json(
+        "controlled_backend_safety_preflight/fixture_safety_preflight_result.json",
+        files_read,
+    )
+    l6_11_fixture_pipeline = load_optional_json(
+        "controlled_backend_fixture_runtime/fixture_pipeline_trace.json",
+        files_read,
+    )
+    l6_11_evidence_index = load_optional_json(
+        "controlled_backend_fixture_runtime/fixture_evidence_packet_index.json",
+        files_read,
+    )
+    l6_11_conflict_registry = load_optional_json(
+        "controlled_backend_fixture_runtime/fixture_conflict_registry.json",
+        files_read,
+    )
+    l6_11_manual_url_receipt = load_optional_json(
+        "controlled_backend_runtime_receipts/no_manual_url_request_receipt.json",
+        files_read,
+    )
+    l6_11_residual_delta = load_optional_json(
+        "l6_11_read_model/l6_11_strategic_residual_delta.json",
+        files_read,
+    )
+    l6_11_readiness_summary = load_optional_json(
+        "l6_11_read_model/l6_11_readiness_assessment.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -8640,6 +8836,19 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             l6_10x_readiness_summary,
         )
     )
+    l6_11_controlled_backend_page_read_enablement_summary = (
+        build_l6_11_controlled_backend_enablement_summary(
+            l6_11_milestone_summary,
+            l6_11_configuration_receipt,
+            l6_11_safety_preflight,
+            l6_11_fixture_pipeline,
+            l6_11_evidence_index,
+            l6_11_conflict_registry,
+            l6_11_manual_url_receipt,
+            l6_11_residual_delta,
+            l6_11_readiness_summary,
+        )
+    )
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -8820,6 +9029,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_10v_seed_or_search_resolver_enablement_summary": l6_10v_seed_or_search_resolver_enablement_summary,
         "l6_10w_reviewed_seed_locator_injection_summary": l6_10w_reviewed_seed_locator_injection_summary,
         "l6_10x_budgeted_controlled_search_evidence_summary": l6_10x_budgeted_controlled_search_summary,
+        "l6_11_controlled_backend_page_read_enablement_summary": l6_11_controlled_backend_page_read_enablement_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -9069,6 +9279,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/l6_10v_seed_or_search_resolver_enablement_summary.json",
             "console_read_model/generated/l6_10w_reviewed_seed_locator_injection_summary.json",
             "console_read_model/generated/l6_10x_budgeted_controlled_search_evidence_summary.json",
+            "console_read_model/generated/l6_11_controlled_backend_page_read_enablement_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -9293,6 +9504,13 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "source quality assessment, blocked evidence extraction, corroboration,\n"
         "review/refinement candidates, and no-action receipts while the default path\n"
         "uses no search/network/page reads and avoids manual URL requests.\n\n"
+        "`l6_11_controlled_backend_page_read_enablement_summary.json` is derived\n"
+        "from the L6.11 controlled search backend and public page-read adapter\n"
+        "enablement pack. It confirms disabled backend defaults, deterministic\n"
+        "fixture search/page-read adapters, configuration receipts, safety\n"
+        "preflight, a non-empty offline fixture evidence path, and no-action\n"
+        "receipts without asking the user for URLs or using external network by\n"
+        "default.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -9354,6 +9572,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/l6_10v_seed_or_search_resolver_enablement_summary.json", l6_10v_seed_or_search_resolver_enablement_summary, generated_files)
     write_json("console_read_model/generated/l6_10w_reviewed_seed_locator_injection_summary.json", l6_10w_reviewed_seed_locator_injection_summary, generated_files)
     write_json("console_read_model/generated/l6_10x_budgeted_controlled_search_evidence_summary.json", l6_10x_budgeted_controlled_search_summary, generated_files)
+    write_json("console_read_model/generated/l6_11_controlled_backend_page_read_enablement_summary.json", l6_11_controlled_backend_page_read_enablement_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -9467,6 +9686,9 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     )
     l6_10x_budgeted_controlled_search = snapshot.get(
         "l6_10x_budgeted_controlled_search_evidence_summary", {}
+    )
+    l6_11_controlled_backend_page_read = snapshot.get(
+        "l6_11_controlled_backend_page_read_enablement_summary", {}
     )
     lines.extend(
         [
@@ -10949,6 +11171,45 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- remaining_blocker: {l6_10x_budgeted_controlled_search.get('remaining_blocker')}",
             f"- next_step: {l6_10x_budgeted_controlled_search.get('next_step')}",
             f"- Warning: {l6_10x_budgeted_controlled_search.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## L6.11 Controlled Search Backend & Page-Read Enablement",
+            "",
+            f"- l6_11_controlled_search_backend_page_read_enablement_complete: {l6_11_controlled_backend_page_read.get('l6_11_controlled_search_backend_page_read_enablement_complete')}",
+            f"- mode: {l6_11_controlled_backend_page_read.get('mode')}",
+            f"- selected_work_order_id: {l6_11_controlled_backend_page_read.get('selected_work_order_id')}",
+            f"- backend_mode_tested: {l6_11_controlled_backend_page_read.get('backend_mode_tested')}",
+            f"- page_read_mode_tested: {l6_11_controlled_backend_page_read.get('page_read_mode_tested')}",
+            f"- default_backend_mode: {l6_11_controlled_backend_page_read.get('default_backend_mode')}",
+            f"- network_allowed: {l6_11_controlled_backend_page_read.get('network_allowed')}",
+            f"- query_count: {l6_11_controlled_backend_page_read.get('query_count')}",
+            f"- search_results_considered: {l6_11_controlled_backend_page_read.get('search_results_considered')}",
+            f"- pages_opened: {l6_11_controlled_backend_page_read.get('pages_opened')}",
+            f"- domains_touched: {l6_11_controlled_backend_page_read.get('domains_touched')}",
+            f"- crawl_depth_used: {l6_11_controlled_backend_page_read.get('crawl_depth_used')}",
+            f"- evidence_packets_generated: {l6_11_controlled_backend_page_read.get('evidence_packets_generated')}",
+            f"- conflicts_found: {l6_11_controlled_backend_page_read.get('conflicts_found')}",
+            f"- fixture_full_pipeline_generated_non_empty_evidence_packet: {l6_11_controlled_backend_page_read.get('fixture_full_pipeline_generated_non_empty_evidence_packet')}",
+            f"- blockers: {l6_11_controlled_backend_page_read.get('blockers')}",
+            f"- disabled_blockers: {l6_11_controlled_backend_page_read.get('disabled_blockers')}",
+            f"- ask_user_for_url_occurred: {l6_11_controlled_backend_page_read.get('ask_user_for_url_occurred')}",
+            f"- search_snippets_used_as_evidence: {l6_11_controlled_backend_page_read.get('search_snippets_used_as_evidence')}",
+            f"- page_read_extracted_content_used_as_evidence_candidate: {l6_11_controlled_backend_page_read.get('page_read_extracted_content_used_as_evidence_candidate')}",
+            f"- login_authorized: {l6_11_controlled_backend_page_read.get('login_authorized')}",
+            f"- payment_authorized: {l6_11_controlled_backend_page_read.get('payment_authorized')}",
+            f"- publication_authorized: {l6_11_controlled_backend_page_read.get('publication_authorized')}",
+            f"- outreach_authorized: {l6_11_controlled_backend_page_read.get('outreach_authorized')}",
+            f"- revenue_execution_authorized: {l6_11_controlled_backend_page_read.get('revenue_execution_authorized')}",
+            f"- mcp_execution_authorized: {l6_11_controlled_backend_page_read.get('mcp_execution_authorized')}",
+            f"- cieu_db_write_authorized: {l6_11_controlled_backend_page_read.get('cieu_db_write_authorized')}",
+            f"- canonical_update_authorized: {l6_11_controlled_backend_page_read.get('canonical_update_authorized')}",
+            f"- brain_writeback_authorized: {l6_11_controlled_backend_page_read.get('brain_writeback_authorized')}",
+            f"- direct_y_star_mutation_authorized: {l6_11_controlled_backend_page_read.get('direct_y_star_mutation_authorized')}",
+            f"- next_step: {l6_11_controlled_backend_page_read.get('next_step')}",
+            f"- Warning: {l6_11_controlled_backend_page_read.get('warning')}",
         ]
     )
     lines.extend(

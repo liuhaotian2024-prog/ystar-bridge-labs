@@ -1,0 +1,29 @@
+{
+  "schema_version": "v0",
+  "backend_mode": "fixture",
+  "page_read_mode": "fixture",
+  "network_allowed": false,
+  "search_network_allowed": false,
+  "page_read_network_allowed": false,
+  "required_env_present": {},
+  "missing_env_names": [],
+  "safety_preflight_decision": "pass",
+  "blockers": [],
+  "no_action_guarantees": {
+    "ask_user_for_url": false,
+    "secret_values_serialized": false,
+    "login": false,
+    "payment": false,
+    "form_submission": false,
+    "posting_commenting_messaging": false,
+    "publication": false,
+    "outreach": false,
+    "revenue_execution": false,
+    "mcp_execution": false,
+    "live_behavior": false,
+    "cieu_db_write": false,
+    "brain_memory_writeback": false,
+    "canonical_update": false,
+    "direct_y_star_mutation": false
+  }
+}

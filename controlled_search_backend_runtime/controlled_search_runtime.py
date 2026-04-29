@@ -182,7 +182,56 @@ class ControlledSearchRuntime:
         return ConfiguredSingleBatchSearchBackend(self.config)
 
     def run(self, request: ControlledSearchRequest) -> ControlledSearchResult:
+        if self.config.get("l6_11_backend_registry_enabled") or self.config.get("search_backend_mode"):
+            return self._run_l6_11_registry(request)
         return self.backend().run(request)
+
+    def _run_l6_11_registry(self, request: ControlledSearchRequest) -> ControlledSearchResult:
+        from controlled_search_backend_adapters.controlled_search_backends import (
+            ControlledBackendConfig,
+            ControlledSearchBackendRegistry,
+        )
+
+        registry_config = ControlledBackendConfig.from_environment(
+            Path.cwd(),
+            overrides={
+                "search_backend_mode": self.config.get("search_backend_mode", "disabled"),
+                "page_read_backend_mode": self.config.get("page_read_backend_mode", "disabled"),
+                "search_network_allowed": self.config.get("search_network_allowed", False),
+                "page_read_network_allowed": self.config.get("page_read_network_allowed", False),
+                "fixture_results_path": self.config.get("fixture_results_path"),
+                "fixture_pages_path": self.config.get("fixture_pages_path"),
+            },
+        )
+        result = ControlledSearchBackendRegistry(registry_config).run(
+            {
+                "request_id": request.request_id,
+                "selected_work_order_id": request.selected_work_order_id,
+                "queries": [asdict(query) for query in request.queries],
+                "budget": asdict(request.budget),
+            }
+        )
+        payload = result.to_dict()
+        error_code = payload.get("error_code")
+        return ControlledSearchResult(
+            backend_mode=payload.get("backend_mode", "disabled"),
+            backend_explicitly_configured=payload.get("backend_explicitly_configured", False),
+            search_executed=payload.get("search_executed", False),
+            search_query_count=payload.get("search_query_count", 0),
+            search_results_considered=payload.get("search_results_considered", 0),
+            external_reads_count=payload.get("external_reads_count", 0),
+            result_candidates=payload.get("result_candidates", []),
+            snippets_used_as_evidence=payload.get("snippets_used_as_evidence", False),
+            facts_inferred_from_snippets=payload.get("facts_inferred_from_snippets", False),
+            blocked_reason=payload.get("blocked_reason", error_code),
+            error_code=error_code,
+            trace={
+                "l6_11_backend_registry_enabled": True,
+                "network_used": payload.get("network_used", False),
+                "asked_user_for_url": payload.get("asked_user_for_url", False),
+                "backend_name": payload.get("backend_name"),
+            },
+        )
 
 
 __all__ = [

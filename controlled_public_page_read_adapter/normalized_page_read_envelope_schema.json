@@ -1,0 +1,20 @@
+{
+  "schema_version": "v0",
+  "required_fields": [
+    "page_read_id",
+    "url",
+    "final_url",
+    "source_domain",
+    "http_status",
+    "content_type",
+    "bytes_read",
+    "title_if_available",
+    "text_excerpt",
+    "extracted_claim_candidates",
+    "safety_flags",
+    "stop_reason_if_any",
+    "evidence_eligible",
+    "read_at_utc",
+    "adapter_name"
+  ]
+}

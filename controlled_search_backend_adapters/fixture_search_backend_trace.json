@@ -1,0 +1,78 @@
+{
+  "backend_mode": "fixture",
+  "backend_name": "fixture",
+  "backend_explicitly_configured": true,
+  "search_executed": true,
+  "search_query_count": 5,
+  "search_results_considered": 3,
+  "external_reads_count": 0,
+  "result_candidates": [
+    {
+      "result_id": "l6_11_fixture_result_001",
+      "query_id": "l6_10x_query_001",
+      "query_text": "official policy or program source official primary source public demand or beneficiary language",
+      "rank": 1,
+      "title": "Fixture Official Program Demand Note",
+      "url": "https://official.example.org/fixture/program-demand",
+      "snippet": "Locator metadata only: official fixture program page appears relevant.",
+      "source_domain": "official.example.org",
+      "backend_name": "fixture",
+      "retrieved_at_utc": "2026-04-29T17:48:24Z",
+      "result_type": "fixture_locator_candidate",
+      "is_sponsored_or_ad_if_known": false,
+      "safety_flags": {
+        "fixture": true,
+        "public_read_only_expected": true
+      },
+      "trust_initial_label": "fixture_primary_source_candidate",
+      "evidence_eligible": true
+    },
+    {
+      "result_id": "l6_11_fixture_result_002",
+      "query_id": "l6_10x_query_003",
+      "query_text": "independent analysis corroboration public demand or beneficiary language What future read-only evidence would reduce: payer or beneficiary clarity remains unverified outside the internal MVP artifact cases?",
+      "rank": 1,
+      "title": "Fixture Independent Corroboration Brief",
+      "url": "https://analysis.example.net/fixture/corroboration-brief",
+      "snippet": "Locator metadata only: independent fixture brief appears relevant.",
+      "source_domain": "analysis.example.net",
+      "backend_name": "fixture",
+      "retrieved_at_utc": "2026-04-29T17:48:24Z",
+      "result_type": "fixture_locator_candidate",
+      "is_sponsored_or_ad_if_known": false,
+      "safety_flags": {
+        "fixture": true,
+        "public_read_only_expected": true
+      },
+      "trust_initial_label": "fixture_secondary_source_candidate",
+      "evidence_eligible": true
+    },
+    {
+      "result_id": "l6_11_fixture_result_003",
+      "query_id": "l6_10x_query_004",
+      "query_text": "limitations contradiction risk evidence public demand or beneficiary language",
+      "rank": 1,
+      "title": "Fixture Scope Limitation Note",
+      "url": "https://analysis.example.net/fixture/scope-limitation",
+      "snippet": "Locator metadata only: fixture limitation page may surface conflict.",
+      "source_domain": "analysis.example.net",
+      "backend_name": "fixture",
+      "retrieved_at_utc": "2026-04-29T17:48:24Z",
+      "result_type": "fixture_locator_candidate",
+      "is_sponsored_or_ad_if_known": false,
+      "safety_flags": {
+        "fixture": true,
+        "public_read_only_expected": true
+      },
+      "trust_initial_label": "fixture_conflict_check_candidate",
+      "evidence_eligible": true
+    }
+  ],
+  "snippets_used_as_evidence": false,
+  "facts_inferred_from_snippets": false,
+  "asked_user_for_url": false,
+  "blocked_reason": null,
+  "error_code": null,
+  "network_used": false,
+  "schema_version": "v0"
+}

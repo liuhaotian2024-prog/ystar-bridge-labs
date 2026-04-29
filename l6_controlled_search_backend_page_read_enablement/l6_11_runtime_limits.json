@@ -1,0 +1,16 @@
+{
+  "schema_version": "v0",
+  "max_selected_work_orders": 1,
+  "max_queries": 5,
+  "max_search_results_considered": 20,
+  "max_pages_opened": 8,
+  "max_domains": 5,
+  "max_pages_per_domain": 3,
+  "max_crawl_depth": 1,
+  "max_total_external_reads": 12,
+  "max_primary_sources_to_capture": 3,
+  "max_secondary_sources_to_capture": 5,
+  "max_conflicting_sources_to_capture": 3,
+  "max_evidence_packets": 8,
+  "max_runtime_minutes": 10
+}

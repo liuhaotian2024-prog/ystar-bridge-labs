@@ -1,0 +1,45 @@
+{
+  "schema_version": "v0",
+  "fixture_mode": true,
+  "pages": [
+    {
+      "page_read_id": "l6_11_fixture_page_001",
+      "url": "https://official.example.org/fixture/program-demand",
+      "title": "Fixture Official Program Demand Note",
+      "source_owner_or_publisher": "Official Example Fixture Owner",
+      "source_quality_label": "fixture_primary",
+      "freshness_label": "fixture_current_marker",
+      "claim_candidates": [
+        "Fixture evidence says the program describes beneficiary-facing demand signals in public language.",
+        "Fixture evidence says the program page is suitable for internal review only."
+      ],
+      "text": "Fixture Official Program Demand Note. Fixture evidence says the program describes beneficiary-facing demand signals in public language. Fixture evidence says the program page is suitable for internal review only."
+    },
+    {
+      "page_read_id": "l6_11_fixture_page_002",
+      "url": "https://analysis.example.net/fixture/corroboration-brief",
+      "title": "Fixture Independent Corroboration Brief",
+      "source_owner_or_publisher": "Independent Example Fixture Owner",
+      "source_quality_label": "fixture_secondary",
+      "freshness_label": "fixture_recent_marker",
+      "claim_candidates": [
+        "Fixture corroboration says beneficiary-facing demand language appears in multiple public descriptions.",
+        "Fixture corroboration says the evidence remains review-only until a real backend is approved."
+      ],
+      "text": "Fixture Independent Corroboration Brief. Fixture corroboration says beneficiary-facing demand language appears in multiple public descriptions. Fixture corroboration says the evidence remains review-only until a real backend is approved."
+    },
+    {
+      "page_read_id": "l6_11_fixture_page_003",
+      "url": "https://analysis.example.net/fixture/scope-limitation",
+      "title": "Fixture Scope Limitation Note",
+      "source_owner_or_publisher": "Independent Example Fixture Owner",
+      "source_quality_label": "fixture_secondary_conflict_check",
+      "freshness_label": "fixture_date_missing",
+      "claim_candidates": [
+        "Fixture limitation says the public descriptions do not prove demand conversion or revenue readiness.",
+        "Fixture limitation says claims must stay bounded to source-language evidence."
+      ],
+      "text": "Fixture Scope Limitation Note. Fixture limitation says the public descriptions do not prove demand conversion or revenue readiness. Fixture limitation says claims must stay bounded to source-language evidence."
+    }
+  ]
+}

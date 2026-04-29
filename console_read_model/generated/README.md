@@ -255,5 +255,13 @@ source quality assessment, blocked evidence extraction, corroboration,
 review/refinement candidates, and no-action receipts while the default path
 uses no search/network/page reads and avoids manual URL requests.
 
+`l6_11_controlled_backend_page_read_enablement_summary.json` is derived
+from the L6.11 controlled search backend and public page-read adapter
+enablement pack. It confirms disabled backend defaults, deterministic
+fixture search/page-read adapters, configuration receipts, safety
+preflight, a non-empty offline fixture evidence path, and no-action
+receipts without asking the user for URLs or using external network by
+default.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

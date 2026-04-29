@@ -1,0 +1,7 @@
+{
+  "schema_version": "v0",
+  "default_backend_mode": "disabled",
+  "fixture_mode_available": true,
+  "network_mode_requires_allow_flag": true,
+  "secret_values_serialized": false
+}

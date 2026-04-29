@@ -11,10 +11,10 @@ Legacy assets were scored from compact generated inventory metadata only.
 
 ## Top Absorption Candidates
 - asset-0565: console_read_model/cli/team_console.py (A_adopt_now_read_only)
-- asset-0623: console_read_model/generated/team_console_snapshot.md (B_wrap_as_governed_tool)
-- asset-1148: gov_mcp/server.py (B_wrap_as_governed_tool)
-- asset-4447: scripts/skill_lifecycle_manager.py (B_wrap_as_governed_tool)
-- asset-3468: reports/ceo/demonstrators/goal_4_ystar_symbol_liveness.py (B_wrap_as_governed_tool)
+- asset-0624: console_read_model/generated/team_console_snapshot.md (B_wrap_as_governed_tool)
+- asset-1212: gov_mcp/server.py (B_wrap_as_governed_tool)
+- asset-4527: scripts/skill_lifecycle_manager.py (B_wrap_as_governed_tool)
+- asset-3548: reports/ceo/demonstrators/goal_4_ystar_symbol_liveness.py (B_wrap_as_governed_tool)
 - asset-0149: agent_brain_capsule/README.md (B_wrap_as_governed_tool)
 - asset-0160: agent_brains/Aiden-CEO/README.md (B_wrap_as_governed_tool)
 

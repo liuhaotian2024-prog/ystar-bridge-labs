@@ -1,0 +1,110 @@
+{
+  "schema_version": "v0",
+  "event_mode": "l6_11_controlled_search_backend_page_read_enablement_fixture",
+  "X_t": {
+    "selected_work_order": {
+      "schema_version": "v0",
+      "selected_count": 1,
+      "selected_work_order_id": "l6_10x_selected_work_order_001",
+      "source_work_order_id": "l6_10x_selected_work_order_001",
+      "evidence_need_id": "l6_8_evidence_need_001",
+      "source_type": "official policy or program source",
+      "source_function": "official policy or program source",
+      "observation_question": "What future read-only evidence would reduce: payer or beneficiary clarity remains unverified outside the internal MVP artifact cases?",
+      "expected_evidence_type": "public demand or beneficiary language"
+    },
+    "query_plan": [
+      {
+        "linked_work_order_id": "l6_10x_selected_work_order_001",
+        "source_type": "official policy or program source",
+        "source_function": "official policy or program source",
+        "no_snippet_fact_use": true,
+        "no_fact_inference_from_search_result": true,
+        "max_results": 4,
+        "query_id": "l6_10x_query_001",
+        "query_category": "primary_source_query",
+        "query_text": "official policy or program source official primary source public demand or beneficiary language",
+        "priority": 1
+      },
+      {
+        "linked_work_order_id": "l6_10x_selected_work_order_001",
+        "source_type": "official policy or program source",
+        "source_function": "official policy or program source",
+        "no_snippet_fact_use": true,
+        "no_fact_inference_from_search_result": true,
+        "max_results": 4,
+        "query_id": "l6_10x_query_002",
+        "query_category": "official_source_query",
+        "query_text": "official policy or program source documentation policy program public demand or beneficiary language",
+        "priority": 2
+      },
+      {
+        "linked_work_order_id": "l6_10x_selected_work_order_001",
+        "source_type": "official policy or program source",
+        "source_function": "official policy or program source",
+        "no_snippet_fact_use": true,
+        "no_fact_inference_from_search_result": true,
+        "max_results": 4,
+        "query_id": "l6_10x_query_003",
+        "query_category": "corroboration_query",
+        "query_text": "independent analysis corroboration public demand or beneficiary language What future read-only evidence would reduce: payer or beneficiary clarity remains unverified outside the internal MVP artifact cases?",
+        "priority": 3
+      },
+      {
+        "linked_work_order_id": "l6_10x_selected_work_order_001",
+        "source_type": "official policy or program source",
+        "source_function": "official policy or program source",
+        "no_snippet_fact_use": true,
+        "no_fact_inference_from_search_result": true,
+        "max_results": 4,
+        "query_id": "l6_10x_query_004",
+        "query_category": "conflict_check_query",
+        "query_text": "limitations contradiction risk evidence public demand or beneficiary language",
+        "priority": 4
+      },
+      {
+        "linked_work_order_id": "l6_10x_selected_work_order_001",
+        "source_type": "official policy or program source",
+        "source_function": "official policy or program source",
+        "no_snippet_fact_use": true,
+        "no_fact_inference_from_search_result": true,
+        "max_results": 4,
+        "query_id": "l6_10x_query_005",
+        "query_category": "freshness_check_query",
+        "query_text": "latest update date freshness official policy or program source public demand or beneficiary language",
+        "priority": 5
+      }
+    ]
+  },
+  "U_t": {
+    "backend_mode": "fixture",
+    "page_read_mode": "fixture",
+    "budget": {
+      "max_selected_work_orders": 1,
+      "max_queries": 5,
+      "max_search_results_considered": 20,
+      "max_pages_opened": 8,
+      "max_domains": 5,
+      "max_pages_per_domain": 3,
+      "max_crawl_depth": 1,
+      "max_total_external_reads": 12,
+      "max_primary_sources_to_capture": 3,
+      "max_secondary_sources_to_capture": 5,
+      "max_conflicting_sources_to_capture": 3,
+      "max_evidence_packets": 8,
+      "max_runtime_minutes": 10
+    }
+  },
+  "Y_star_t": "Enable controlled search backend and public page-read adapters with deterministic fixture proof while preserving no-action/no-writeback constraints.",
+  "Y_t_plus_1": {
+    "fixture_pipeline_non_empty_evidence": true,
+    "evidence_packets_generated": 3,
+    "conflicts_found": 1
+  },
+  "R_t_plus_1": {
+    "residuals": [
+      "real controlled backend still requires explicit configuration",
+      "fixture evidence is not real-world truth"
+    ]
+  }
+}

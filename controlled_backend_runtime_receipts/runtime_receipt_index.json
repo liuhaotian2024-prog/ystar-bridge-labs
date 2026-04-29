@@ -1,0 +1,19 @@
+{
+  "schema_version": "v0",
+  "receipts": [
+    "controlled_backend_runtime_receipts/no_login_receipt.json",
+    "controlled_backend_runtime_receipts/no_account_creation_receipt.json",
+    "controlled_backend_runtime_receipts/no_payment_receipt.json",
+    "controlled_backend_runtime_receipts/no_form_submission_receipt.json",
+    "controlled_backend_runtime_receipts/no_posting_commenting_messaging_receipt.json",
+    "controlled_backend_runtime_receipts/no_publication_receipt.json",
+    "controlled_backend_runtime_receipts/no_outreach_receipt.json",
+    "controlled_backend_runtime_receipts/no_revenue_execution_receipt.json",
+    "controlled_backend_runtime_receipts/no_mcp_execution_receipt.json",
+    "controlled_backend_runtime_receipts/no_live_behavior_receipt.json",
+    "controlled_backend_runtime_receipts/no_cieu_db_write_receipt.json",
+    "controlled_backend_runtime_receipts/no_brain_memory_writeback_receipt.json",
+    "controlled_backend_runtime_receipts/no_canonical_mutation_receipt.json",
+    "controlled_backend_runtime_receipts/no_direct_y_star_mutation_receipt.json"
+  ]
+}

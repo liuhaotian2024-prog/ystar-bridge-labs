@@ -1,0 +1,26 @@
+{
+  "schema_version": "v0",
+  "page_read_mode": "disabled",
+  "pages": [
+    {
+      "page_read_id": "disabled_page_read_001",
+      "url": "https://official.example.org/fixture/program-demand",
+      "final_url": null,
+      "source_domain": null,
+      "http_status": null,
+      "content_type": null,
+      "bytes_read": 0,
+      "title_if_available": null,
+      "text_excerpt": "",
+      "extracted_claim_candidates": [],
+      "safety_flags": {
+        "read_only": true,
+        "network_used": false
+      },
+      "stop_reason_if_any": "controlled_public_page_read_adapter_not_configured",
+      "evidence_eligible": false,
+      "read_at_utc": "2026-04-29T17:48:24Z",
+      "adapter_name": "disabled"
+    }
+  ]
+}

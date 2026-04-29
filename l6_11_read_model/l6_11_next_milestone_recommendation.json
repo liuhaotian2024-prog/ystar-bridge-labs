@@ -1,0 +1,5 @@
+{
+  "schema_version": "v0",
+  "recommended_next_milestone": "L6.12 Controlled Real Public Read-Only Search and Page-Read Pilot v0",
+  "condition": "explicit backend configuration and safety preflight approval"
+}

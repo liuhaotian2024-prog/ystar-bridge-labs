@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "receipt_id": "l6_11_no_account_creation_receipt",
+  "action": "account_creation",
+  "authorized": false,
+  "executed": false,
+  "evidence": "No disallowed action was executed during L6.11 fixture validation."
+}

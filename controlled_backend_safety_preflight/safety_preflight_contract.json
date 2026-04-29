@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "checks": [
+    "backend mode",
+    "page-read mode",
+    "network allow flags",
+    "required env presence",
+    "budget values",
+    "private network blocking",
+    "GET-only",
+    "no side effects"
+  ]
+}

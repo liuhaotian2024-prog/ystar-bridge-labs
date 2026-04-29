@@ -1,0 +1,11 @@
+{
+  "schema_version": "v0",
+  "conflict_count": 1,
+  "conflicts": [
+    {
+      "conflict_id": "l6_11_fixture_conflict_001",
+      "conflict_type": "scope_limitation",
+      "description": "Fixture limitation blocks converting demand-language evidence into revenue readiness truth."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "v0",
+  "modes": [
+    {
+      "mode": "disabled",
+      "network": false
+    },
+    {
+      "mode": "fixture",
+      "network": false
+    },
+    {
+      "mode": "brave_search_api",
+      "network": "explicit_opt_in"
+    },
+    {
+      "mode": "tavily_search_api",
+      "network": "explicit_opt_in"
+    },
+    {
+      "mode": "serpapi",
+      "network": "explicit_opt_in"
+    }
+  ]
+}

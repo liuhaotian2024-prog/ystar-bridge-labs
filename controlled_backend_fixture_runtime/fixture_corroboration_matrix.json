@@ -1,0 +1,12 @@
+{
+  "schema_version": "v0",
+  "claims_supported_by_primary_source": [
+    "Fixture evidence says the program describes beneficiary-facing demand signals in public language."
+  ],
+  "claims_supported_by_secondary_source": [
+    "Fixture corroboration says beneficiary-facing demand language appears in multiple public descriptions."
+  ],
+  "claims_needing_more_sources": [],
+  "sufficient_for_internal_review_only": true,
+  "sufficient_for_external_use": false
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "v0",
+  "sources": [
+    {
+      "source_locator": "https://official.example.org/fixture/program-demand",
+      "source_quality_label": "fixture_primary_or_secondary",
+      "freshness_label": "fixture_freshness_marker",
+      "fixture_demo": true
+    },
+    {
+      "source_locator": "https://analysis.example.net/fixture/corroboration-brief",
+      "source_quality_label": "fixture_primary_or_secondary",
+      "freshness_label": "fixture_freshness_marker",
+      "fixture_demo": true
+    },
+    {
+      "source_locator": "https://analysis.example.net/fixture/scope-limitation",
+      "source_quality_label": "fixture_primary_or_secondary",
+      "freshness_label": "fixture_freshness_marker",
+      "fixture_demo": true
+    }
+  ],
+  "semantic_truth_scoring_used": false,
+  "llm_confidence_as_authority": false
+}

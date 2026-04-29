@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "l6_11_controlled_search_backend_page_read_enablement_complete": true,
+  "fixture_pipeline_ready": true,
+  "ready_for_l6_12_real_controlled_search_pilot": "conditional_on_explicit_backend_configuration",
+  "ask_user_for_url": false,
+  "next_step": "configure_real_controlled_search_backend_or_use_fixture_for_offline_regression"
+}

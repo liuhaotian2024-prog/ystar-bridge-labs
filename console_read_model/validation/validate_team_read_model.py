@@ -6273,6 +6273,7 @@ def main() -> int:
             "contact_authorized",
             "payment_authorized",
             "form_submission_authorized",
+            "contact_authorized",
             "posting_commenting_messaging_authorized",
             "publication_authorized",
             "outreach_authorized",
@@ -6917,6 +6918,135 @@ def main() -> int:
                 != "controlled_search_backend_required"
             ):
                 report.fail("generated L6.10X disabled backend must name controlled_search_backend_required")
+
+    l6_11_controlled_backend_page_read = generated_json.get(
+        "console_read_model/generated/l6_11_controlled_backend_page_read_enablement_summary.json"
+    )
+    if l6_11_controlled_backend_page_read:
+        for field in [
+            "l6_11_controlled_search_backend_page_read_enablement_complete",
+            "mode",
+            "selected_work_order_id",
+            "backend_mode_tested",
+            "page_read_mode_tested",
+            "default_backend_mode",
+            "network_allowed",
+            "fixture_full_pipeline_generated_non_empty_evidence_packet",
+            "query_count",
+            "search_results_considered",
+            "pages_opened",
+            "domains_touched",
+            "crawl_depth_used",
+            "evidence_packets_generated",
+            "conflicts_found",
+            "blockers",
+            "disabled_blockers",
+            "configuration_receipt_generated",
+            "safety_preflight_decision",
+            "ask_user_for_url_occurred",
+            "manual_url_request_receipt_executed",
+            "search_snippets_used_as_evidence",
+            "page_read_extracted_content_used_as_evidence_candidate",
+            "contact_authorized",
+            "generated_milestone_summary",
+            "generated_configuration_receipt",
+            "generated_safety_preflight",
+            "generated_fixture_pipeline_trace",
+            "generated_evidence_index",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in l6_11_controlled_backend_page_read:
+                report.pass_(f"generated L6.11 backend/page-read field present: {field}")
+            else:
+                report.fail(f"generated L6.11 backend/page-read missing field: {field}")
+        if (
+            l6_11_controlled_backend_page_read.get("mode")
+            != "controlled_search_backend_page_read_adapter_enablement"
+        ):
+            report.fail("generated L6.11 summary must be controlled backend/page-read enablement mode")
+        for field in [
+            "l6_11_controlled_search_backend_page_read_enablement_complete",
+            "fixture_full_pipeline_generated_non_empty_evidence_packet",
+            "page_read_extracted_content_used_as_evidence_candidate",
+            "artifact_refinement_candidate_generation_authorized",
+        ]:
+            if l6_11_controlled_backend_page_read.get(field) is not True:
+                report.fail(f"generated L6.11 summary must keep {field}=true")
+        for field in [
+            "network_allowed",
+            "ask_user_for_url_occurred",
+            "manual_url_request_receipt_executed",
+            "search_snippets_used_as_evidence",
+            "ask_user_for_url_authorized",
+            "user_manual_url_provision_required",
+            "search_snippets_as_evidence_authorized",
+            "login_authorized",
+            "account_creation_authorized",
+            "payment_authorized",
+            "form_submission_authorized",
+            "posting_commenting_messaging_authorized",
+            "publication_authorized",
+            "outreach_authorized",
+            "revenue_execution_authorized",
+            "mcp_execution_authorized",
+            "live_behavior_authorized",
+            "cieu_db_write_authorized",
+            "canonical_update_authorized",
+            "brain_writeback_authorized",
+            "memory_ingestion_authorized",
+            "direct_y_star_mutation_authorized",
+            "artifact_refinement_application_authorized",
+        ]:
+            if l6_11_controlled_backend_page_read.get(field) is not False:
+                report.fail(f"generated L6.11 summary must keep {field}=false")
+        exact_values = {
+            "backend_mode_tested": "fixture",
+            "page_read_mode_tested": "fixture",
+            "default_backend_mode": "disabled",
+            "safety_preflight_decision": "pass",
+            "max_selected_work_orders": 1,
+            "max_queries": 5,
+            "max_search_results_considered": 20,
+            "max_pages_opened": 8,
+            "max_domains": 5,
+            "max_pages_per_domain": 3,
+            "max_crawl_depth": 1,
+            "max_total_external_reads": 12,
+            "max_evidence_packets": 8,
+        }
+        for field, expected_value in exact_values.items():
+            if l6_11_controlled_backend_page_read.get(field) != expected_value:
+                report.fail(f"generated L6.11 summary must keep {field}={expected_value}")
+        count_limits = {
+            "query_count": l6_11_controlled_backend_page_read.get("max_queries"),
+            "search_results_considered": l6_11_controlled_backend_page_read.get(
+                "max_search_results_considered"
+            ),
+            "pages_opened": l6_11_controlled_backend_page_read.get("max_pages_opened"),
+            "domains_touched": l6_11_controlled_backend_page_read.get("max_domains"),
+            "crawl_depth_used": l6_11_controlled_backend_page_read.get("max_crawl_depth"),
+            "evidence_packets_generated": l6_11_controlled_backend_page_read.get(
+                "max_evidence_packets"
+            ),
+        }
+        for count_field, limit in count_limits.items():
+            if limit is not None and l6_11_controlled_backend_page_read.get(count_field, 0) > limit:
+                report.fail(f"generated L6.11 summary exceeds runtime limit for {count_field}")
+        for field in [
+            "search_results_considered",
+            "pages_opened",
+            "evidence_packets_generated",
+        ]:
+            if l6_11_controlled_backend_page_read.get(field, 0) < 1:
+                report.fail(f"generated L6.11 fixture summary must produce positive {field}")
+        disabled_blockers = set(l6_11_controlled_backend_page_read.get("disabled_blockers", []))
+        for blocker in [
+            "controlled_search_backend_not_configured",
+            "controlled_public_page_read_adapter_not_configured",
+        ]:
+            if blocker not in disabled_blockers:
+                report.fail(f"generated L6.11 disabled path must preserve blocker: {blocker}")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

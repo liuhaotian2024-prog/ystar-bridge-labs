@@ -1,0 +1,87 @@
+{
+  "schema_version": "v0",
+  "page_read_mode": "fixture",
+  "pages": [
+    {
+      "page_read_id": "l6_11_fixture_page_001",
+      "url": "https://official.example.org/fixture/program-demand",
+      "final_url": "https://official.example.org/fixture/program-demand",
+      "source_domain": "official.example.org",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes_read": 212,
+      "title_if_available": "Fixture Official Program Demand Note",
+      "text_excerpt": "Fixture Official Program Demand Note. Fixture evidence says the program describes beneficiary-facing demand signals in public language. Fixture evidence says the program page is suitable for internal review only.",
+      "extracted_claim_candidates": [
+        "Fixture evidence says the program describes beneficiary-facing demand signals in public language.",
+        "Fixture evidence says the program page is suitable for internal review only."
+      ],
+      "safety_flags": {
+        "fixture_demo": true,
+        "read_only": true,
+        "network_used": false,
+        "no_login": true,
+        "no_payment": true,
+        "no_form_submission": true
+      },
+      "stop_reason_if_any": null,
+      "evidence_eligible": true,
+      "read_at_utc": "2026-04-29T17:48:24Z",
+      "adapter_name": "fixture"
+    },
+    {
+      "page_read_id": "l6_11_fixture_page_002",
+      "url": "https://analysis.example.net/fixture/corroboration-brief",
+      "final_url": "https://analysis.example.net/fixture/corroboration-brief",
+      "source_domain": "analysis.example.net",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes_read": 237,
+      "title_if_available": "Fixture Independent Corroboration Brief",
+      "text_excerpt": "Fixture Independent Corroboration Brief. Fixture corroboration says beneficiary-facing demand language appears in multiple public descriptions. Fixture corroboration says the evidence remains review-only until a real backend is approved.",
+      "extracted_claim_candidates": [
+        "Fixture corroboration says beneficiary-facing demand language appears in multiple public descriptions.",
+        "Fixture corroboration says the evidence remains review-only until a real backend is approved."
+      ],
+      "safety_flags": {
+        "fixture_demo": true,
+        "read_only": true,
+        "network_used": false,
+        "no_login": true,
+        "no_payment": true,
+        "no_form_submission": true
+      },
+      "stop_reason_if_any": null,
+      "evidence_eligible": true,
+      "read_at_utc": "2026-04-29T17:48:24Z",
+      "adapter_name": "fixture"
+    },
+    {
+      "page_read_id": "l6_11_fixture_page_003",
+      "url": "https://analysis.example.net/fixture/scope-limitation",
+      "final_url": "https://analysis.example.net/fixture/scope-limitation",
+      "source_domain": "analysis.example.net",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes_read": 209,
+      "title_if_available": "Fixture Scope Limitation Note",
+      "text_excerpt": "Fixture Scope Limitation Note. Fixture limitation says the public descriptions do not prove demand conversion or revenue readiness. Fixture limitation says claims must stay bounded to source-language evidence.",
+      "extracted_claim_candidates": [
+        "Fixture limitation says the public descriptions do not prove demand conversion or revenue readiness.",
+        "Fixture limitation says claims must stay bounded to source-language evidence."
+      ],
+      "safety_flags": {
+        "fixture_demo": true,
+        "read_only": true,
+        "network_used": false,
+        "no_login": true,
+        "no_payment": true,
+        "no_form_submission": true
+      },
+      "stop_reason_if_any": null,
+      "evidence_eligible": true,
+      "read_at_utc": "2026-04-29T17:48:24Z",
+      "adapter_name": "fixture"
+    }
+  ]
+}

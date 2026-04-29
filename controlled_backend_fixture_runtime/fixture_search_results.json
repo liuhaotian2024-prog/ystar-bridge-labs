@@ -1,0 +1,57 @@
+{
+  "schema_version": "v0",
+  "fixture_mode": true,
+  "results": [
+    {
+      "result_id": "l6_11_fixture_result_001",
+      "query_id": "l6_10x_query_001",
+      "rank": 1,
+      "title": "Fixture Official Program Demand Note",
+      "url": "https://official.example.org/fixture/program-demand",
+      "snippet": "Locator metadata only: official fixture program page appears relevant.",
+      "source_domain": "official.example.org",
+      "result_type": "fixture_locator_candidate",
+      "is_sponsored_or_ad_if_known": false,
+      "safety_flags": {
+        "fixture": true,
+        "public_read_only_expected": true
+      },
+      "trust_initial_label": "fixture_primary_source_candidate",
+      "evidence_eligible": true
+    },
+    {
+      "result_id": "l6_11_fixture_result_002",
+      "query_id": "l6_10x_query_003",
+      "rank": 1,
+      "title": "Fixture Independent Corroboration Brief",
+      "url": "https://analysis.example.net/fixture/corroboration-brief",
+      "snippet": "Locator metadata only: independent fixture brief appears relevant.",
+      "source_domain": "analysis.example.net",
+      "result_type": "fixture_locator_candidate",
+      "is_sponsored_or_ad_if_known": false,
+      "safety_flags": {
+        "fixture": true,
+        "public_read_only_expected": true
+      },
+      "trust_initial_label": "fixture_secondary_source_candidate",
+      "evidence_eligible": true
+    },
+    {
+      "result_id": "l6_11_fixture_result_003",
+      "query_id": "l6_10x_query_004",
+      "rank": 1,
+      "title": "Fixture Scope Limitation Note",
+      "url": "https://analysis.example.net/fixture/scope-limitation",
+      "snippet": "Locator metadata only: fixture limitation page may surface conflict.",
+      "source_domain": "analysis.example.net",
+      "result_type": "fixture_locator_candidate",
+      "is_sponsored_or_ad_if_known": false,
+      "safety_flags": {
+        "fixture": true,
+        "public_read_only_expected": true
+      },
+      "trust_initial_label": "fixture_conflict_check_candidate",
+      "evidence_eligible": true
+    }
+  ]
+}

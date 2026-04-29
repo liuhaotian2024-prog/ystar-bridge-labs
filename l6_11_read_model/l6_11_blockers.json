@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "blockers": [
+    {
+      "blocker_code": "real_controlled_search_backend_not_configured_for_live_discovery",
+      "applies_to_fixture_mode": false
+    },
+    {
+      "blocker_code": "controlled_public_page_read_adapter_not_configured_for_live_network",
+      "applies_to_fixture_mode": false
+    }
+  ]
+}

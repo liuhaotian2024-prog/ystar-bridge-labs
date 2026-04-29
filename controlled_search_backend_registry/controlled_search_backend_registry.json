@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "supported_backend_modes": [
+    "disabled",
+    "fixture",
+    "brave_search_api",
+    "tavily_search_api",
+    "serpapi"
+  ],
+  "default_backend_mode": "disabled",
+  "fixture_backend_available": true,
+  "api_backends_require_explicit_env_and_allow_flag": true
+}

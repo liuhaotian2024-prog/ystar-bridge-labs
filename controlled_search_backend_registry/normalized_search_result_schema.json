@@ -1,0 +1,20 @@
+{
+  "schema_version": "v0",
+  "required_fields": [
+    "result_id",
+    "query_id",
+    "query_text",
+    "rank",
+    "title",
+    "url",
+    "snippet",
+    "source_domain",
+    "backend_name",
+    "retrieved_at_utc",
+    "result_type",
+    "is_sponsored_or_ad_if_known",
+    "safety_flags",
+    "trust_initial_label",
+    "evidence_eligible"
+  ]
+}

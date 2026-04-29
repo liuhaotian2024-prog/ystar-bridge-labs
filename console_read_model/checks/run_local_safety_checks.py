@@ -2552,6 +2552,42 @@ VALIDATION_CHECKS = [
         ],
     ),
     Check(
+        "Compile L6.11 controlled backend/page-read builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "l6_controlled_search_backend_page_read_enablement/tools/build_l6_controlled_search_backend_page_read_enablement.py",
+        ],
+    ),
+    Check(
+        "Compile L6.11 controlled search backend adapters",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "controlled_search_backend_adapters/controlled_search_backends.py",
+        ],
+    ),
+    Check(
+        "Compile L6.11 public page-read adapter",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "controlled_public_page_read_adapter/page_read_adapter.py",
+        ],
+    ),
+    Check(
+        "Compile L6.11 backend safety preflight",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "controlled_backend_safety_preflight/safety_preflight.py",
+        ],
+    ),
+    Check(
         "Validate JSON: l6_10x_budgeted_controlled_search_evidence_summary.json",
         ["python3", "-m", "json.tool", "console_read_model/generated/l6_10x_budgeted_controlled_search_evidence_summary.json"],
     ),
@@ -2578,6 +2614,34 @@ VALIDATION_CHECKS = [
     Check(
         "Validate JSON: l6_10x_readiness_assessment.json",
         ["python3", "-m", "json.tool", "l6_10x_read_model/l6_10x_readiness_assessment.json"],
+    ),
+    Check(
+        "Validate JSON: l6_11_controlled_backend_page_read_enablement_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_11_controlled_backend_page_read_enablement_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_11_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_controlled_search_backend_page_read_enablement/l6_11_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: l6_11_fixture_configuration_receipt.json",
+        ["python3", "-m", "json.tool", "controlled_backend_configuration_policy/fixture_configuration_receipt.json"],
+    ),
+    Check(
+        "Validate JSON: l6_11_fixture_safety_preflight_result.json",
+        ["python3", "-m", "json.tool", "controlled_backend_safety_preflight/fixture_safety_preflight_result.json"],
+    ),
+    Check(
+        "Validate JSON: l6_11_fixture_pipeline_trace.json",
+        ["python3", "-m", "json.tool", "controlled_backend_fixture_runtime/fixture_pipeline_trace.json"],
+    ),
+    Check(
+        "Validate JSON: l6_11_fixture_evidence_packet_index.json",
+        ["python3", "-m", "json.tool", "controlled_backend_fixture_runtime/fixture_evidence_packet_index.json"],
+    ),
+    Check(
+        "Validate JSON: l6_11_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "l6_11_read_model/l6_11_readiness_assessment.json"],
     ),
     Check(
         "Validate JSON: markdown_report_candidates.json",
@@ -2878,6 +2942,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: budgeted-controlled-external-search-evidence-pilot",
         ["python3", "console_read_model/cli/team_console.py", "budgeted-controlled-external-search-evidence-pilot"],
+    ),
+    Check(
+        "CLI smoke: controlled-search-backend-page-read-enablement",
+        ["python3", "console_read_model/cli/team_console.py", "controlled-search-backend-page-read-enablement"],
     ),
     Check(
         "CLI smoke: sources",

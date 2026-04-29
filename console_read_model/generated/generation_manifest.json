@@ -60,6 +60,7 @@
     "console_read_model/generated/l6_10v_seed_or_search_resolver_enablement_summary.json",
     "console_read_model/generated/l6_10w_reviewed_seed_locator_injection_summary.json",
     "console_read_model/generated/l6_10x_budgeted_controlled_search_evidence_summary.json",
+    "console_read_model/generated/l6_11_controlled_backend_page_read_enablement_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "source_files": [
@@ -421,6 +422,15 @@
     "evidence_review_and_refinement_candidates/artifact_refinement_candidate_index.json",
     "l6_10x_read_model/l6_10x_strategic_residual_delta.json",
     "l6_10x_read_model/l6_10x_readiness_assessment.json",
+    "l6_controlled_search_backend_page_read_enablement/l6_11_summary.json",
+    "controlled_backend_configuration_policy/fixture_configuration_receipt.json",
+    "controlled_backend_safety_preflight/fixture_safety_preflight_result.json",
+    "controlled_backend_fixture_runtime/fixture_pipeline_trace.json",
+    "controlled_backend_fixture_runtime/fixture_evidence_packet_index.json",
+    "controlled_backend_fixture_runtime/fixture_conflict_registry.json",
+    "controlled_backend_runtime_receipts/no_manual_url_request_receipt.json",
+    "l6_11_read_model/l6_11_strategic_residual_delta.json",
+    "l6_11_read_model/l6_11_readiness_assessment.json",
     "agent_brains/Aiden-CEO/brain_profile.json",
     "agent_brains/Ethan-CTO/brain_profile.json",
     "agent_brains/Samantha-Secretary/brain_profile.json",

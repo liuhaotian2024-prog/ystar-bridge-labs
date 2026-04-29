@@ -1,0 +1,10 @@
+{
+  "schema_version": "v0",
+  "providers": [
+    "brave_search_api",
+    "tavily_search_api",
+    "serpapi"
+  ],
+  "secret_values_serialized": false,
+  "network_requires_explicit_allow_flag": true
+}

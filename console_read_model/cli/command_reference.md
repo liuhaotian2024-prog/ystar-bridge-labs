@@ -291,6 +291,13 @@ python3 console_read_model/cli/team_console.py <command>
   candidates, readiness, no manual URL request, and blocked login/payment/form/
   publication/outreach/revenue/MCP/live/CIEU DB/canonical/writeback/direct Y*
   mutation state.
+- `controlled-search-backend-page-read-enablement`: Prints the generated L6.11
+  controlled search backend and public page-read adapter enablement summary:
+  selected work order, disabled/fixture backend modes, page-read mode, network
+  gate, configuration receipt, safety preflight, fixture pipeline counts,
+  non-empty offline evidence packet proof, conflict count, blockers, no manual
+  URL request, and blocked login/payment/form/publication/outreach/revenue/MCP/
+  live/CIEU DB/canonical/writeback/direct Y* mutation state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

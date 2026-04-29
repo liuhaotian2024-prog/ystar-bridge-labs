@@ -1,0 +1,39 @@
+{
+  "schema_version": "v0",
+  "evidence_packet_id": "l6_11_fixture_evidence_packet_001",
+  "fixture_demo_evidence": true,
+  "source_locator": "https://official.example.org/fixture/program-demand",
+  "source_title": "Fixture Official Program Demand Note",
+  "source_owner_or_publisher": "Fixture source owner",
+  "locator_snippet": "Locator metadata only: official fixture program page appears relevant.",
+  "snippet_used_as_evidence": false,
+  "page_read_extracted_evidence": "Fixture Official Program Demand Note. Fixture evidence says the program describes beneficiary-facing demand signals in public language. Fixture evidence says the program page is suitable for internal review only.",
+  "observed_timestamp": "2026-04-29T17:48:24Z",
+  "source_date_or_date_missing": "fixture_date_marker_or_missing",
+  "freshness_class": "fixture_freshness_marker",
+  "captured_bounded_claims": [
+    "Fixture evidence says the program describes beneficiary-facing demand signals in public language."
+  ],
+  "unsupported_claims": [],
+  "missing_context": [
+    "fixture evidence is not real-world truth"
+  ],
+  "claim_boundary": "internal_review_only_fixture_claim_boundary",
+  "citation_trace": {
+    "search_result_id": "l6_11_fixture_result_001",
+    "page_read_id": "l6_11_fixture_page_001",
+    "source_locator": "https://official.example.org/fixture/program-demand"
+  },
+  "source_quality_label": "fixture_primary_or_secondary",
+  "corroboration_status": "fixture_corroborated",
+  "conflict_status": "no_conflict",
+  "review_status": "pending_review",
+  "publication_taken": false,
+  "outreach_taken": false,
+  "payment_taken": false,
+  "revenue_action_taken": false,
+  "mcp_execution_taken": false,
+  "canonical_update_taken": false,
+  "brain_memory_writeback_taken": false,
+  "direct_y_star_mutation_taken": false
+}
