@@ -433,6 +433,9 @@ def main() -> int:
     required_l6_tiny_real_read_only_agentic_evidence_observation_pilot_files = expected.get(
         "required_l6_tiny_real_read_only_agentic_evidence_observation_pilot_files", []
     )
+    required_l6_controlled_source_locator_resolution_tiny_observation_retry_files = expected.get(
+        "required_l6_controlled_source_locator_resolution_tiny_observation_retry_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -731,6 +734,12 @@ def main() -> int:
         check_exists(path, report, "L6.10 tiny real read-only observation pilot file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "L6.10 tiny real read-only observation pilot JSON")
+
+    for rel in required_l6_controlled_source_locator_resolution_tiny_observation_retry_files:
+        path = ROOT / rel
+        check_exists(path, report, "L6.10R controlled source locator retry file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "L6.10R controlled source locator retry JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -6186,6 +6195,91 @@ def main() -> int:
         for count_field, limit in limits.items():
             if limit is not None and l6_tiny_observation_pilot.get(count_field, 0) > limit:
                 report.fail(f"generated L6.10 summary exceeds runtime limit for {count_field}")
+
+    l6_10r_locator_retry = generated_json.get(
+        "console_read_model/generated/l6_10r_locator_retry_summary.json"
+    )
+    if l6_10r_locator_retry:
+        for field in [
+            "l6_10r_controlled_source_locator_resolution_retry_defined",
+            "mode",
+            "selected_work_order_count",
+            "controlled_locator_discovery_authorized",
+            "tiny_real_read_only_observation_retry_authorized",
+            "locator_discovery_executed",
+            "locator_discovery_queries_count",
+            "concrete_locator_resolved",
+            "locator_eligible_for_observation",
+            "retry_observation_authorized",
+            "tiny_read_only_observation_executed",
+            "external_reads_total",
+            "pages_read_count",
+            "evidence_packet_generated",
+            "post_observation_review_packet_generated",
+            "artifact_refinement_candidate_generated",
+            "artifact_refinement_applied",
+            "remaining_blocker",
+            "generated_selected_work_order",
+            "generated_locator_resolution",
+            "generated_observation_trace",
+            "generated_evidence_packet",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in l6_10r_locator_retry:
+                report.pass_(f"generated L6.10R locator retry field present: {field}")
+            else:
+                report.fail(f"generated L6.10R locator retry missing field: {field}")
+        if l6_10r_locator_retry.get("mode") != "controlled_locator_resolution_and_tiny_observation_retry":
+            report.fail("generated L6.10R summary must be locator retry mode")
+        if l6_10r_locator_retry.get("selected_work_order_count") != 1:
+            report.fail("generated L6.10R summary must select exactly one work order")
+        for field in [
+            "l6_10r_controlled_source_locator_resolution_retry_defined",
+            "controlled_locator_discovery_authorized",
+            "tiny_real_read_only_observation_retry_authorized",
+            "evidence_packet_generated",
+            "post_observation_review_packet_generated",
+            "artifact_refinement_candidate_generated",
+        ]:
+            if l6_10r_locator_retry.get(field) is not True:
+                report.fail(f"generated L6.10R summary must keep {field}=true")
+        for field in [
+            "broad_web_search_authorized",
+            "repeated_search_loop_authorized",
+            "crawling_authorized",
+            "scraping_authorized",
+            "browser_automation_authorized",
+            "login_authorized",
+            "account_creation_authorized",
+            "contact_authorized",
+            "payment_authorized",
+            "form_submission_authorized",
+            "posting_commenting_messaging_authorized",
+            "publication_authorized",
+            "outreach_authorized",
+            "revenue_execution_authorized",
+            "mcp_execution_authorized",
+            "live_behavior_authorized",
+            "cieu_db_write_authorized",
+            "canonical_update_authorized",
+            "brain_writeback_authorized",
+            "memory_ingestion_authorized",
+            "direct_y_star_mutation_authorized",
+            "semantic_truth_scoring_enabled",
+            "llm_confidence_as_authority_enabled",
+            "artifact_refinement_applied",
+        ]:
+            if l6_10r_locator_retry.get(field) is not False:
+                report.fail(f"generated L6.10R summary must keep {field}=false")
+        limits = {
+            "locator_discovery_queries_count": l6_10r_locator_retry.get("max_locator_discovery_queries"),
+            "external_reads_total": l6_10r_locator_retry.get("max_external_reads_total"),
+            "pages_read_count": l6_10r_locator_retry.get("max_pages_read"),
+        }
+        for count_field, limit in limits.items():
+            if limit is not None and l6_10r_locator_retry.get(count_field, 0) > limit:
+                report.fail(f"generated L6.10R summary exceeds runtime limit for {count_field}")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

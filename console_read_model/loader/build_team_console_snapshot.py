@@ -297,6 +297,19 @@ CURATED_SOURCES = [
     "tiny_observation_no_action_receipts/no_crawling_receipt.json",
     "l6_tiny_observation_strategic_residual_loop/l6_10_strategic_residual_delta.json",
     "l6_tiny_observation_readiness_report/l6_10_readiness_assessment.json",
+    "l6_controlled_source_locator_resolution_tiny_observation_retry/l6_10r_summary.json",
+    "locator_retry_work_order_selector/selected_locator_retry_work_order.json",
+    "controlled_locator_resolution_trace/locator_resolution_trace.json",
+    "locator_eligibility_and_risk_gate/locator_eligibility_result.json",
+    "tiny_observation_retry_execution_packet/retry_execution_packet.json",
+    "tiny_observation_retry_trace/retry_observation_trace.json",
+    "tiny_retry_evidence_capture_packet/retry_evidence_packet.json",
+    "tiny_retry_post_observation_review/retry_post_observation_review_packet.json",
+    "tiny_retry_refinement_candidate/retry_artifact_refinement_candidate.json",
+    "tiny_retry_abort_quarantine/retry_abort_or_quarantine_decision.json",
+    "tiny_retry_no_action_receipts/no_broad_search_receipt.json",
+    "l6_10r_strategic_residual_loop/l6_10r_strategic_residual_delta.json",
+    "l6_10r_readiness_report/l6_10r_readiness_assessment.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -5691,6 +5704,164 @@ def build_l6_tiny_observation_pilot_summary(
     }
 
 
+def build_l6_10r_locator_retry_summary(
+    milestone_summary: dict[str, Any] | None,
+    selected_work_order: dict[str, Any] | None,
+    locator_resolution: dict[str, Any] | None,
+    locator_eligibility: dict[str, Any] | None,
+    execution_packet: dict[str, Any] | None,
+    observation_trace: dict[str, Any] | None,
+    evidence_packet: dict[str, Any] | None,
+    review_packet: dict[str, Any] | None,
+    refinement_candidate: dict[str, Any] | None,
+    abort_decision: dict[str, Any] | None,
+    no_action_receipt: dict[str, Any] | None,
+    residual_delta: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.l6_10r_locator_retry_summary",
+            "schema_version": "v0",
+            "l6_10r_controlled_source_locator_resolution_retry_defined": False,
+            "tiny_read_only_observation_executed": False,
+            "warning": "L6.10R controlled source locator retry has not been generated yet.",
+        }
+
+    milestone_summary = milestone_summary or {}
+    selected_work_order = selected_work_order or {}
+    locator_resolution = locator_resolution or {}
+    locator_eligibility = locator_eligibility or {}
+    execution_packet = execution_packet or {}
+    observation_trace = observation_trace or {}
+    evidence_packet = evidence_packet or {}
+    review_packet = review_packet or {}
+    refinement_candidate = refinement_candidate or {}
+    abort_decision = abort_decision or {}
+    no_action_receipt = no_action_receipt or {}
+    residual_delta = residual_delta or {}
+
+    runtime_limits = milestone_summary.get("runtime_limits", {})
+    safety_flags = milestone_summary.get("safety_flags", {})
+
+    def flag(field: str) -> Any:
+        return milestone_summary.get(field, safety_flags.get(field))
+
+    locator_queries = observation_trace.get(
+        "locator_discovery_queries_count",
+        locator_resolution.get("locator_discovery_queries_count", 0),
+    )
+    external_reads = observation_trace.get(
+        "external_reads_total",
+        locator_resolution.get("external_reads_count_for_resolution", 0),
+    )
+    pages_read = observation_trace.get("pages_read_count", 0)
+
+    return {
+        "schema_name": "ystar.console_read_model.generated.l6_10r_locator_retry_summary",
+        "schema_version": "v0",
+        "milestone_id": milestone_summary.get("milestone_id", "L6.10R"),
+        "milestone_name": milestone_summary.get(
+            "milestone_name",
+            "Controlled Source Locator Resolution & Tiny Observation Retry v0",
+        ),
+        "mode": milestone_summary.get("mode", "controlled_locator_resolution_and_tiny_observation_retry"),
+        "l6_10r_controlled_source_locator_resolution_retry_defined": milestone_summary.get(
+            "l6_10r_controlled_source_locator_resolution_retry_defined",
+            readiness_summary.get("l6_10r_design_and_guardrails_complete"),
+        ),
+        "selected_work_order_count": milestone_summary.get("selected_work_order_count", 1),
+        "selected_retry_work_order_id": selected_work_order.get("selected_retry_work_order_id"),
+        "linked_l6_8_work_order_id": selected_work_order.get("linked_l6_8_work_order_id"),
+        "controlled_locator_discovery_authorized": milestone_summary.get(
+            "controlled_locator_discovery_authorized", True
+        ),
+        "tiny_real_read_only_observation_retry_authorized": milestone_summary.get(
+            "tiny_real_read_only_observation_retry_authorized", True
+        ),
+        "locator_discovery_executed": readiness_summary.get(
+            "locator_discovery_executed",
+            locator_resolution.get("controlled_locator_discovery_executed", False),
+        ),
+        "locator_discovery_queries_count": locator_queries,
+        "concrete_locator_resolved": locator_resolution.get(
+            "concrete_locator_resolved",
+            readiness_summary.get("concrete_locator_resolved", False),
+        ),
+        "resolved_locator": locator_resolution.get("resolved_locator"),
+        "locator_eligible_for_observation": locator_eligibility.get(
+            "locator_eligible_for_observation", False
+        ),
+        "retry_observation_authorized": execution_packet.get("retry_observation_authorized", False),
+        "tiny_read_only_observation_executed": readiness_summary.get(
+            "tiny_read_only_observation_executed",
+            observation_trace.get("observation_executed", False),
+        ),
+        "network_used": observation_trace.get("network_used", False),
+        "external_reads_total": external_reads,
+        "pages_read_count": pages_read,
+        "abort_triggered": observation_trace.get("abort_triggered", abort_decision.get("abort_triggered")),
+        "abort_reason": observation_trace.get("abort_reason", abort_decision.get("reason")),
+        "evidence_packet_generated": bool(evidence_packet),
+        "live_source_evidence_captured": evidence_packet.get("live_source_evidence_captured", False),
+        "post_observation_review_packet_generated": bool(review_packet),
+        "artifact_refinement_candidate_generated": bool(refinement_candidate),
+        "artifact_refinement_applied": refinement_candidate.get("applied", False),
+        "no_action_receipts_generated": bool(no_action_receipt),
+        "strategic_residual_loop_generated": bool(residual_delta),
+        "broad_web_search_authorized": milestone_summary.get("broad_web_search_authorized", False),
+        "repeated_search_loop_authorized": milestone_summary.get("repeated_search_loop_authorized", False),
+        "crawling_authorized": milestone_summary.get("crawling_authorized", False),
+        "scraping_authorized": milestone_summary.get("scraping_authorized", False),
+        "browser_automation_authorized": milestone_summary.get("browser_automation_authorized", False),
+        "login_authorized": milestone_summary.get("login_authorized", False),
+        "account_creation_authorized": milestone_summary.get("account_creation_authorized", False),
+        "contact_authorized": milestone_summary.get("contact_authorized", False),
+        "payment_authorized": milestone_summary.get("payment_authorized", False),
+        "form_submission_authorized": milestone_summary.get("form_submission_authorized", False),
+        "posting_commenting_messaging_authorized": milestone_summary.get(
+            "posting_commenting_messaging_authorized", False
+        ),
+        "publication_authorized": milestone_summary.get("publication_authorized", False),
+        "outreach_authorized": milestone_summary.get("outreach_authorized", False),
+        "revenue_execution_authorized": milestone_summary.get("revenue_execution_authorized", False),
+        "mcp_execution_authorized": milestone_summary.get("mcp_execution_authorized", False),
+        "live_behavior_authorized": milestone_summary.get("live_behavior_authorized", False),
+        "cieu_db_write_authorized": milestone_summary.get("cieu_db_write_authorized", False),
+        "canonical_update_authorized": milestone_summary.get("canonical_update_authorized", False),
+        "brain_writeback_authorized": milestone_summary.get("brain_writeback_authorized", False),
+        "memory_ingestion_authorized": milestone_summary.get("memory_ingestion_authorized", False),
+        "direct_y_star_mutation_authorized": milestone_summary.get("direct_y_star_mutation_authorized", False),
+        "semantic_truth_scoring_enabled": flag("semantic_truth_scoring_enabled"),
+        "llm_confidence_as_authority_enabled": flag("llm_confidence_as_authority_enabled"),
+        "max_selected_work_orders": runtime_limits.get("max_selected_work_orders"),
+        "max_locator_discovery_queries": runtime_limits.get("max_locator_discovery_queries"),
+        "max_concrete_locators_resolved": runtime_limits.get("max_concrete_locators_resolved"),
+        "max_source_locators_observed": runtime_limits.get("max_source_locators_observed"),
+        "max_pages_read": runtime_limits.get("max_pages_read"),
+        "max_external_reads_total": runtime_limits.get("max_external_reads_total"),
+        "remaining_blocker": readiness_summary.get("remaining_blocker"),
+        "ready_for_l6_11_controlled_multi_source_read_only_evidence_corroboration_pilot": readiness_summary.get(
+            "ready_for_l6_11_controlled_multi_source_read_only_evidence_corroboration_pilot"
+        ),
+        "next_recommended_milestone": readiness_summary.get("next_recommended_milestone"),
+        "generated_milestone_summary": "l6_controlled_source_locator_resolution_tiny_observation_retry/l6_10r_summary.json",
+        "generated_selected_work_order": "locator_retry_work_order_selector/selected_locator_retry_work_order.json",
+        "generated_locator_resolution": "controlled_locator_resolution_trace/locator_resolution_trace.json",
+        "generated_observation_trace": "tiny_observation_retry_trace/retry_observation_trace.json",
+        "generated_evidence_packet": "tiny_retry_evidence_capture_packet/retry_evidence_packet.json",
+        "generated_review_packet": "tiny_retry_post_observation_review/retry_post_observation_review_packet.json",
+        "generated_refinement_candidate": "tiny_retry_refinement_candidate/retry_artifact_refinement_candidate.json",
+        "generated_readiness": "l6_10r_readiness_report/l6_10r_readiness_assessment.json",
+        "warning": (
+            "L6.10R is a controlled source locator resolution and tiny observation retry. "
+            "This run records Outcome C: no controlled locator-discovery tooling or "
+            "concrete locator was available, so no URL was opened, no network was used, "
+            "no live evidence was captured, and no evidence was fabricated."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -6797,6 +6968,58 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_tiny_observation_readiness_report/l6_10_readiness_assessment.json",
         files_read,
     )
+    l6_10r_milestone_summary = load_optional_json(
+        "l6_controlled_source_locator_resolution_tiny_observation_retry/l6_10r_summary.json",
+        files_read,
+    )
+    l6_10r_selected_work_order = load_optional_json(
+        "locator_retry_work_order_selector/selected_locator_retry_work_order.json",
+        files_read,
+    )
+    l6_10r_locator_resolution = load_optional_json(
+        "controlled_locator_resolution_trace/locator_resolution_trace.json",
+        files_read,
+    )
+    l6_10r_locator_eligibility = load_optional_json(
+        "locator_eligibility_and_risk_gate/locator_eligibility_result.json",
+        files_read,
+    )
+    l6_10r_execution_packet = load_optional_json(
+        "tiny_observation_retry_execution_packet/retry_execution_packet.json",
+        files_read,
+    )
+    l6_10r_observation_trace = load_optional_json(
+        "tiny_observation_retry_trace/retry_observation_trace.json",
+        files_read,
+    )
+    l6_10r_evidence_packet = load_optional_json(
+        "tiny_retry_evidence_capture_packet/retry_evidence_packet.json",
+        files_read,
+    )
+    l6_10r_review_packet = load_optional_json(
+        "tiny_retry_post_observation_review/retry_post_observation_review_packet.json",
+        files_read,
+    )
+    l6_10r_refinement_candidate = load_optional_json(
+        "tiny_retry_refinement_candidate/retry_artifact_refinement_candidate.json",
+        files_read,
+    )
+    l6_10r_abort_decision = load_optional_json(
+        "tiny_retry_abort_quarantine/retry_abort_or_quarantine_decision.json",
+        files_read,
+    )
+    l6_10r_no_action_receipt = load_optional_json(
+        "tiny_retry_no_action_receipts/no_broad_search_receipt.json",
+        files_read,
+    )
+    l6_10r_residual_delta = load_optional_json(
+        "l6_10r_strategic_residual_loop/l6_10r_strategic_residual_delta.json",
+        files_read,
+    )
+    l6_10r_readiness_summary = load_optional_json(
+        "l6_10r_readiness_report/l6_10r_readiness_assessment.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -7117,6 +7340,21 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         l6_tiny_observation_residual_delta,
         l6_tiny_observation_readiness_summary,
     )
+    l6_10r_locator_retry_summary = build_l6_10r_locator_retry_summary(
+        l6_10r_milestone_summary,
+        l6_10r_selected_work_order,
+        l6_10r_locator_resolution,
+        l6_10r_locator_eligibility,
+        l6_10r_execution_packet,
+        l6_10r_observation_trace,
+        l6_10r_evidence_packet,
+        l6_10r_review_packet,
+        l6_10r_refinement_candidate,
+        l6_10r_abort_decision,
+        l6_10r_no_action_receipt,
+        l6_10r_residual_delta,
+        l6_10r_readiness_summary,
+    )
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -7291,6 +7529,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_agentic_evidence_summary": l6_agentic_evidence_summary,
         "l6_agentic_pilot_dry_run_summary": l6_agentic_pilot_dry_run_summary,
         "l6_tiny_observation_pilot_summary": l6_tiny_observation_pilot_summary,
+        "l6_10r_locator_retry_summary": l6_10r_locator_retry_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -7534,6 +7773,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/l6_agentic_evidence_summary.json",
             "console_read_model/generated/l6_agentic_pilot_dry_run_summary.json",
             "console_read_model/generated/l6_tiny_observation_pilot_summary.json",
+            "console_read_model/generated/l6_10r_locator_retry_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -7719,6 +7959,15 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "abort/quarantine decision, no-action receipts, and readiness artifacts.\n"
         "This run correctly records a blocked pilot because no concrete locator was\n"
         "available and no controlled network/tooling condition was present.\n\n"
+        "`l6_10r_locator_retry_summary.json` is derived from the L6.10R\n"
+        "controlled source locator resolution and tiny observation retry pack.\n"
+        "It confirms one selected work order, one-query locator budget, unresolved\n"
+        "locator trace, eligibility block, blocked observation retry, empty evidence\n"
+        "packet, post-observation review, review-only refinement candidate,\n"
+        "no-action receipts, and readiness artifacts without broad search, crawling,\n"
+        "scraping, browser automation, publication, outreach, payment, revenue,\n"
+        "MCP, live behavior, CIEU DB writes, canonical mutation, writeback, or\n"
+        "direct Y* mutation.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -7774,6 +8023,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/l6_agentic_evidence_summary.json", l6_agentic_evidence_summary, generated_files)
     write_json("console_read_model/generated/l6_agentic_pilot_dry_run_summary.json", l6_agentic_pilot_dry_run_summary, generated_files)
     write_json("console_read_model/generated/l6_tiny_observation_pilot_summary.json", l6_tiny_observation_pilot_summary, generated_files)
+    write_json("console_read_model/generated/l6_10r_locator_retry_summary.json", l6_10r_locator_retry_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -7872,6 +8122,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     l6_agentic_evidence = snapshot.get("l6_agentic_evidence_summary", {})
     l6_agentic_pilot_dry_run = snapshot.get("l6_agentic_pilot_dry_run_summary", {})
     l6_tiny_observation_pilot = snapshot.get("l6_tiny_observation_pilot_summary", {})
+    l6_10r_locator_retry = snapshot.get("l6_10r_locator_retry_summary", {})
     lines.extend(
         [
             "",
@@ -9155,6 +9406,37 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- ready_for_retry_after_condition_resolved: {l6_tiny_observation_pilot.get('ready_for_retry_after_condition_resolved')}",
             f"- next_recommended_milestone: {l6_tiny_observation_pilot.get('next_recommended_milestone')}",
             f"- Warning: {l6_tiny_observation_pilot.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## L6.10R Controlled Source Locator Resolution And Tiny Observation Retry",
+            "",
+            f"- l6_10r_controlled_source_locator_resolution_retry_defined: {l6_10r_locator_retry.get('l6_10r_controlled_source_locator_resolution_retry_defined')}",
+            f"- mode: {l6_10r_locator_retry.get('mode')}",
+            f"- selected_work_order_count: {l6_10r_locator_retry.get('selected_work_order_count')}",
+            f"- locator_discovery_executed: {l6_10r_locator_retry.get('locator_discovery_executed')}",
+            f"- locator_discovery_queries_count: {l6_10r_locator_retry.get('locator_discovery_queries_count')}",
+            f"- concrete_locator_resolved: {l6_10r_locator_retry.get('concrete_locator_resolved')}",
+            f"- locator_eligible_for_observation: {l6_10r_locator_retry.get('locator_eligible_for_observation')}",
+            f"- retry_observation_authorized: {l6_10r_locator_retry.get('retry_observation_authorized')}",
+            f"- tiny_read_only_observation_executed: {l6_10r_locator_retry.get('tiny_read_only_observation_executed')}",
+            f"- external_reads_total: {l6_10r_locator_retry.get('external_reads_total')}",
+            f"- pages_read_count: {l6_10r_locator_retry.get('pages_read_count')}",
+            f"- evidence_packet_generated: {l6_10r_locator_retry.get('evidence_packet_generated')}",
+            f"- live_source_evidence_captured: {l6_10r_locator_retry.get('live_source_evidence_captured')}",
+            f"- post_observation_review_packet_generated: {l6_10r_locator_retry.get('post_observation_review_packet_generated')}",
+            f"- artifact_refinement_candidate_generated: {l6_10r_locator_retry.get('artifact_refinement_candidate_generated')}",
+            f"- artifact_refinement_applied: {l6_10r_locator_retry.get('artifact_refinement_applied')}",
+            f"- broad_web_search_authorized: {l6_10r_locator_retry.get('broad_web_search_authorized')}",
+            f"- repeated_search_loop_authorized: {l6_10r_locator_retry.get('repeated_search_loop_authorized')}",
+            f"- crawling_authorized: {l6_10r_locator_retry.get('crawling_authorized')}",
+            f"- scraping_authorized: {l6_10r_locator_retry.get('scraping_authorized')}",
+            f"- browser_automation_authorized: {l6_10r_locator_retry.get('browser_automation_authorized')}",
+            f"- remaining_blocker: {l6_10r_locator_retry.get('remaining_blocker')}",
+            f"- next_recommended_milestone: {l6_10r_locator_retry.get('next_recommended_milestone')}",
+            f"- Warning: {l6_10r_locator_retry.get('warning')}",
         ]
     )
     lines.extend(

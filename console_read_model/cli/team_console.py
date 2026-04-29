@@ -78,6 +78,9 @@ L6_AGENTIC_PILOT_DRY_RUN = (
 L6_TINY_OBSERVATION_PILOT = (
     "console_read_model/generated/l6_tiny_observation_pilot_summary.json"
 )
+L6_10R_LOCATOR_RETRY = (
+    "console_read_model/generated/l6_10r_locator_retry_summary.json"
+)
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -97,7 +100,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|integrated-approval-record-and-pilot-readiness|agentic-evidence-discovery-trust-engine|controlled-agentic-evidence-pilot-approval-dry-run|tiny-real-read-only-agentic-evidence-observation-pilot|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|integrated-approval-record-and-pilot-readiness|agentic-evidence-discovery-trust-engine|controlled-agentic-evidence-pilot-approval-dry-run|tiny-real-read-only-agentic-evidence-observation-pilot|controlled-source-locator-resolution-tiny-observation-retry|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -179,6 +182,7 @@ def load_all() -> dict[str, Any]:
         "l6_agentic_evidence": load_json(L6_AGENTIC_EVIDENCE),
         "l6_agentic_pilot_dry_run": load_json(L6_AGENTIC_PILOT_DRY_RUN),
         "l6_tiny_observation_pilot": load_json(L6_TINY_OBSERVATION_PILOT),
+        "l6_10r_locator_retry": load_json(L6_10R_LOCATOR_RETRY),
     }
 
 
@@ -2591,6 +2595,70 @@ def cmd_tiny_real_read_only_agentic_evidence_observation_pilot(data: dict[str, A
     print(f"warning: {pilot.get('warning')}")
 
 
+def cmd_controlled_source_locator_resolution_tiny_observation_retry(data: dict[str, Any]) -> None:
+    retry = data["l6_10r_locator_retry"]
+    print("# L6.10R Controlled Source Locator Resolution And Tiny Observation Retry")
+    print()
+    print(
+        "L6.10R controlled locator retry defined: "
+        f"{retry.get('l6_10r_controlled_source_locator_resolution_retry_defined')}"
+    )
+    print(f"mode: {retry.get('mode')}")
+    print(f"selected work orders: {retry.get('selected_work_order_count')}")
+    print(f"controlled locator discovery authorized: {retry.get('controlled_locator_discovery_authorized')}")
+    print(f"locator discovery executed: {retry.get('locator_discovery_executed')}")
+    print(f"locator discovery queries count: {retry.get('locator_discovery_queries_count')}")
+    print(f"concrete locator resolved: {retry.get('concrete_locator_resolved')}")
+    print(f"locator eligible for observation: {retry.get('locator_eligible_for_observation')}")
+    print(f"retry observation authorized: {retry.get('retry_observation_authorized')}")
+    print(f"tiny read-only observation executed: {retry.get('tiny_read_only_observation_executed')}")
+    print(f"external reads total: {retry.get('external_reads_total')}")
+    print(f"pages read count: {retry.get('pages_read_count')}")
+    print(f"evidence packet generated: {retry.get('evidence_packet_generated')}")
+    print(f"live source evidence captured: {retry.get('live_source_evidence_captured')}")
+    print(
+        "post-observation review packet generated: "
+        f"{retry.get('post_observation_review_packet_generated')}"
+    )
+    print(
+        "artifact refinement candidate generated: "
+        f"{retry.get('artifact_refinement_candidate_generated')}"
+    )
+    print(f"artifact refinement applied: {retry.get('artifact_refinement_applied')}")
+    print(f"broad web search authorized: {retry.get('broad_web_search_authorized')}")
+    print(f"repeated search loop authorized: {retry.get('repeated_search_loop_authorized')}")
+    print(f"crawling authorized: {retry.get('crawling_authorized')}")
+    print(f"scraping authorized: {retry.get('scraping_authorized')}")
+    print(f"browser automation authorized: {retry.get('browser_automation_authorized')}")
+    print(f"login authorized: {retry.get('login_authorized')}")
+    print(f"account creation authorized: {retry.get('account_creation_authorized')}")
+    print(f"contact authorized: {retry.get('contact_authorized')}")
+    print(f"payment authorized: {retry.get('payment_authorized')}")
+    print(f"form submission authorized: {retry.get('form_submission_authorized')}")
+    print(
+        "posting/commenting/messaging authorized: "
+        f"{retry.get('posting_commenting_messaging_authorized')}"
+    )
+    print(f"publication authorized: {retry.get('publication_authorized')}")
+    print(f"outreach authorized: {retry.get('outreach_authorized')}")
+    print(f"revenue execution authorized: {retry.get('revenue_execution_authorized')}")
+    print(f"MCP execution authorized: {retry.get('mcp_execution_authorized')}")
+    print(f"live behavior authorized: {retry.get('live_behavior_authorized')}")
+    print(f"CIEU DB write authorized: {retry.get('cieu_db_write_authorized')}")
+    print(f"canonical update authorized: {retry.get('canonical_update_authorized')}")
+    print(f"brain writeback authorized: {retry.get('brain_writeback_authorized')}")
+    print(f"memory ingestion authorized: {retry.get('memory_ingestion_authorized')}")
+    print(f"direct Y* mutation authorized: {retry.get('direct_y_star_mutation_authorized')}")
+    print(f"remaining blocker: {retry.get('remaining_blocker')}")
+    print(f"next recommended milestone: {retry.get('next_recommended_milestone')}")
+    print(f"generated_selected_work_order: {retry.get('generated_selected_work_order')}")
+    print(f"generated_locator_resolution: {retry.get('generated_locator_resolution')}")
+    print(f"generated_observation_trace: {retry.get('generated_observation_trace')}")
+    print(f"generated_evidence_packet: {retry.get('generated_evidence_packet')}")
+    print(f"generated_readiness: {retry.get('generated_readiness')}")
+    print(f"warning: {retry.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -4557,6 +4625,8 @@ def main(argv: list[str]) -> int:
         cmd_controlled_agentic_evidence_pilot_approval_dry_run(data)
     elif command == "tiny-real-read-only-agentic-evidence-observation-pilot":
         cmd_tiny_real_read_only_agentic_evidence_observation_pilot(data)
+    elif command == "controlled-source-locator-resolution-tiny-observation-retry":
+        cmd_controlled_source_locator_resolution_tiny_observation_retry(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

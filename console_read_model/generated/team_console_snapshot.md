@@ -113,7 +113,7 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 151
+- Artifacts classified: 136
 - Unsafe artifacts count: 119
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
@@ -124,7 +124,7 @@ Not ready:
   - DB_SIDECARE: 6
   - LOG_RUNTIME: 30
   - PYCACHE: 45
-  - UNKNOWN_OR_NON_RUNTIME: 32
+  - UNKNOWN_OR_NON_RUNTIME: 17
   - UNKNOWN_RUNTIME_ARTIFACT: 10
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
 - Warning: Console displays only curated path-level quarantine summary. No artifact contents were read.
@@ -150,8 +150,8 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 151
-- Artifacts with disposition: 151
+- Total artifacts: 136
+- Artifacts with disposition: 136
 - Safe-mined to review queue: 0
 - Forbidden direct read count: 119
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
@@ -162,9 +162,9 @@ Not ready:
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 45
-  - ignored_or_non_runtime: 32
+  - ignored_or_non_runtime: 17
 - Evidence scoring status:
-  - not_started: 151
+  - not_started: 136
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -361,9 +361,9 @@ Not ready:
 - next_required_milestone: L4.4 First Governed Read-Only Observation Tool Wrapper v0
 - bucket_counts:
   - A_adopt_now_read_only: 1
-  - B_wrap_as_governed_tool: 892
+  - B_wrap_as_governed_tool: 893
   - C_rewrite_from_design: 5
-  - D_quarantine_as_evidence_ore: 2
+  - D_quarantine_as_evidence_ore: 1
   - E_retire_do_not_use: 0
 - Warning: Triage is classification only; no asset is absorbed or enabled.
 
@@ -538,7 +538,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 5632
+- assets_scanned: 5726
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -1202,6 +1202,33 @@ Not ready:
 - ready_for_retry_after_condition_resolved: True
 - next_recommended_milestone: L6.10 Retry Tiny Real Read-Only Agentic Evidence Observation Pilot v0
 - Warning: L6.10 is a tiny real read-only observation pilot. This run took the blocked outcome because the selected work order had only a placeholder locator and the environment/tooling did not authorize locator discovery. No evidence is fabricated, and all downstream action/writeback boundaries remain blocked.
+
+## L6.10R Controlled Source Locator Resolution And Tiny Observation Retry
+
+- l6_10r_controlled_source_locator_resolution_retry_defined: True
+- mode: controlled_locator_resolution_and_tiny_observation_retry
+- selected_work_order_count: 1
+- locator_discovery_executed: False
+- locator_discovery_queries_count: 0
+- concrete_locator_resolved: False
+- locator_eligible_for_observation: False
+- retry_observation_authorized: False
+- tiny_read_only_observation_executed: False
+- external_reads_total: 0
+- pages_read_count: 0
+- evidence_packet_generated: True
+- live_source_evidence_captured: False
+- post_observation_review_packet_generated: True
+- artifact_refinement_candidate_generated: True
+- artifact_refinement_applied: False
+- broad_web_search_authorized: False
+- repeated_search_loop_authorized: False
+- crawling_authorized: False
+- scraping_authorized: False
+- browser_automation_authorized: False
+- remaining_blocker: no_locator_and_no_controlled_locator_discovery_tooling
+- next_recommended_milestone: L6.10R Retry After Controlled Locator Discovery Tooling Available v0
+- Warning: L6.10R is a controlled source locator resolution and tiny observation retry. This run records Outcome C: no controlled locator-discovery tooling or concrete locator was available, so no URL was opened, no network was used, no live evidence was captured, and no evidence was fabricated.
 
 ## Governance Boundary
 

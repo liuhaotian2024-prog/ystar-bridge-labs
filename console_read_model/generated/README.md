@@ -210,5 +210,15 @@ abort/quarantine decision, no-action receipts, and readiness artifacts.
 This run correctly records a blocked pilot because no concrete locator was
 available and no controlled network/tooling condition was present.
 
+`l6_10r_locator_retry_summary.json` is derived from the L6.10R
+controlled source locator resolution and tiny observation retry pack.
+It confirms one selected work order, one-query locator budget, unresolved
+locator trace, eligibility block, blocked observation retry, empty evidence
+packet, post-observation review, review-only refinement candidate,
+no-action receipts, and readiness artifacts without broad search, crawling,
+scraping, browser automation, publication, outreach, payment, revenue,
+MCP, live behavior, CIEU DB writes, canonical mutation, writeback, or
+direct Y* mutation.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

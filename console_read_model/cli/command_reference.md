@@ -241,6 +241,15 @@ python3 console_read_model/cli/team_console.py <command>
   review-only refinement candidate, abort/quarantine decision, no-action
   receipts, and blocked downstream publication/outreach/payment/revenue/MCP/
   live/CIEU DB/canonical/writeback/direct Y* mutation state.
+- `controlled-source-locator-resolution-tiny-observation-retry`: Prints the
+  generated L6.10R controlled source locator resolution and tiny observation
+  retry summary: one selected work order, one-query locator budget, unresolved
+  locator trace when blocked, locator eligibility gate, retry execution packet,
+  retry observation trace, empty or captured evidence packet, post-observation
+  review, review-only refinement candidate, no-action receipts, readiness, and
+  blocked broad search/crawling/scraping/browser automation/publication/
+  outreach/payment/revenue/MCP/live/CIEU DB/canonical/writeback/direct Y*
+  mutation state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

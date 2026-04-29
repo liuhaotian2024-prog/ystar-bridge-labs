@@ -2346,6 +2346,43 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "l6_tiny_observation_readiness_report/l6_10_readiness_assessment.json"],
     ),
     Check(
+        "Compile L6.10R controlled locator retry builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "l6_controlled_source_locator_resolution_tiny_observation_retry/tools/build_l6_controlled_source_locator_resolution_tiny_observation_retry.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: l6_10r_locator_retry_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_10r_locator_retry_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10r_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_controlled_source_locator_resolution_tiny_observation_retry/l6_10r_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: selected_locator_retry_work_order.json",
+        ["python3", "-m", "json.tool", "locator_retry_work_order_selector/selected_locator_retry_work_order.json"],
+    ),
+    Check(
+        "Validate JSON: locator_resolution_trace.json",
+        ["python3", "-m", "json.tool", "controlled_locator_resolution_trace/locator_resolution_trace.json"],
+    ),
+    Check(
+        "Validate JSON: retry_observation_trace.json",
+        ["python3", "-m", "json.tool", "tiny_observation_retry_trace/retry_observation_trace.json"],
+    ),
+    Check(
+        "Validate JSON: retry_evidence_packet.json",
+        ["python3", "-m", "json.tool", "tiny_retry_evidence_capture_packet/retry_evidence_packet.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10r_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "l6_10r_readiness_report/l6_10r_readiness_assessment.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -2620,6 +2657,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: tiny-real-read-only-agentic-evidence-observation-pilot",
         ["python3", "console_read_model/cli/team_console.py", "tiny-real-read-only-agentic-evidence-observation-pilot"],
+    ),
+    Check(
+        "CLI smoke: controlled-source-locator-resolution-tiny-observation-retry",
+        ["python3", "console_read_model/cli/team_console.py", "controlled-source-locator-resolution-tiny-observation-retry"],
     ),
     Check(
         "CLI smoke: sources",
