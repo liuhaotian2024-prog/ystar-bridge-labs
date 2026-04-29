@@ -427,6 +427,9 @@ def main() -> int:
     required_l6_agentic_evidence_discovery_trust_engine_files = expected.get(
         "required_l6_agentic_evidence_discovery_trust_engine_files", []
     )
+    required_l6_controlled_agentic_evidence_pilot_approval_dry_run_files = expected.get(
+        "required_l6_controlled_agentic_evidence_pilot_approval_dry_run_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -709,6 +712,16 @@ def main() -> int:
         check_exists(path, report, "L6.8 agentic evidence discovery trust engine file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "L6.8 agentic evidence discovery trust engine JSON")
+
+    for rel in required_l6_controlled_agentic_evidence_pilot_approval_dry_run_files:
+        path = ROOT / rel
+        check_exists(path, report, "L6.9 controlled agentic evidence pilot approval dry-run file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(
+                path,
+                report,
+                "L6.9 controlled agentic evidence pilot approval dry-run JSON",
+            )
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -5896,6 +5909,193 @@ def main() -> int:
             "L6.9 Controlled Read-Only Agentic Evidence Discovery Pilot Approval v0"
         ):
             report.fail("generated L6.8 summary must point to L6.9")
+
+    l6_agentic_pilot_dry_run = generated_json.get(
+        "console_read_model/generated/l6_agentic_pilot_dry_run_summary.json"
+    )
+    if l6_agentic_pilot_dry_run:
+        for field in [
+            "l6_9_controlled_agentic_evidence_pilot_approval_dry_run_defined",
+            "mode",
+            "pilot_approval_and_dry_run_only",
+            "sandbox_approval_record_only",
+            "selected_work_order_count",
+            "eligible_work_order_count",
+            "approval_packet_count",
+            "sandbox_approval_record_count",
+            "runtime_readiness_packet_count",
+            "dry_run_trace_count",
+            "empty_evidence_packet_count",
+            "post_run_review_packet_count",
+            "refinement_candidate_count",
+            "agentic_work_order_selection_authorized",
+            "pilot_approval_packet_generation_authorized",
+            "sandbox_approval_record_generation_authorized",
+            "dry_run_lifecycle_simulation_authorized",
+            "empty_evidence_capture_simulation_authorized",
+            "approval_eligibility_gate_generated",
+            "approval_packets_generated",
+            "sandbox_approval_records_generated",
+            "runtime_readiness_generated",
+            "dry_run_traces_generated",
+            "empty_evidence_capture_generated",
+            "post_run_review_generated",
+            "residual_refinement_candidates_generated",
+            "real_execution_blockers_generated",
+            "no_action_receipts_generated",
+            "strategic_residual_loop_generated",
+            "real_external_observation_authorized",
+            "real_pilot_execution_authorized",
+            "real_approval_granted",
+            "durable_real_approval_record_created",
+            "agent_external_fetch_authorized",
+            "network_authorized",
+            "api_authorized",
+            "scraping_authorized",
+            "browser_fetch_authorized",
+            "search_authorized",
+            "publication_authorized",
+            "outreach_authorized",
+            "payment_authorized",
+            "revenue_execution_authorized",
+            "mcp_execution_authorized",
+            "live_behavior_authorized",
+            "cieu_db_write_authorized",
+            "canonical_update_authorized",
+            "brain_writeback_authorized",
+            "memory_ingestion_authorized",
+            "direct_y_star_mutation_authorized",
+            "future_tiny_real_read_only_pilot_candidate_allowed",
+            "network_enabled",
+            "api_enabled",
+            "scraping_enabled",
+            "browser_fetch_enabled",
+            "search_enabled",
+            "external_action_enabled",
+            "agent_external_fetch_enabled",
+            "publication_enabled",
+            "outreach_enabled",
+            "payment_enabled",
+            "revenue_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "live_execution_enabled",
+            "cieu_db_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "real_canonical_update_application_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "durable_approval_persistence_enabled",
+            "semantic_truth_scoring_enabled",
+            "llm_confidence_as_authority_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "ready_for_l6_10_tiny_real_read_only_agentic_evidence_observation_pilot",
+            "ready_for_actual_network_observation_now",
+            "ready_for_autonomous_web_search_now",
+            "next_recommended_milestone",
+            "generated_selected_work_orders",
+            "generated_approval_packets",
+            "generated_sandbox_records",
+            "generated_dry_run_traces",
+            "generated_empty_evidence",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in l6_agentic_pilot_dry_run:
+                report.pass_(f"generated L6.9 agentic pilot dry-run field present: {field}")
+            else:
+                report.fail(f"generated L6.9 agentic pilot dry-run missing field: {field}")
+        for field in [
+            "l6_9_controlled_agentic_evidence_pilot_approval_dry_run_defined",
+            "pilot_approval_and_dry_run_only",
+            "sandbox_approval_record_only",
+            "agentic_work_order_selection_authorized",
+            "pilot_approval_packet_generation_authorized",
+            "sandbox_approval_record_generation_authorized",
+            "dry_run_lifecycle_simulation_authorized",
+            "empty_evidence_capture_simulation_authorized",
+            "approval_eligibility_gate_generated",
+            "approval_packets_generated",
+            "sandbox_approval_records_generated",
+            "runtime_readiness_generated",
+            "dry_run_traces_generated",
+            "empty_evidence_capture_generated",
+            "post_run_review_generated",
+            "residual_refinement_candidates_generated",
+            "real_execution_blockers_generated",
+            "no_action_receipts_generated",
+            "strategic_residual_loop_generated",
+            "future_tiny_real_read_only_pilot_candidate_allowed",
+            "ready_for_l6_10_tiny_real_read_only_agentic_evidence_observation_pilot",
+        ]:
+            if l6_agentic_pilot_dry_run.get(field) is not True:
+                report.fail(f"generated L6.9 summary must keep {field}=true")
+        for field in [
+            "real_external_observation_authorized",
+            "real_pilot_execution_authorized",
+            "real_approval_granted",
+            "durable_real_approval_record_created",
+            "agent_external_fetch_authorized",
+            "network_authorized",
+            "api_authorized",
+            "scraping_authorized",
+            "browser_fetch_authorized",
+            "search_authorized",
+            "publication_authorized",
+            "outreach_authorized",
+            "payment_authorized",
+            "revenue_execution_authorized",
+            "mcp_execution_authorized",
+            "live_behavior_authorized",
+            "cieu_db_write_authorized",
+            "canonical_update_authorized",
+            "brain_writeback_authorized",
+            "memory_ingestion_authorized",
+            "direct_y_star_mutation_authorized",
+            "network_enabled",
+            "api_enabled",
+            "scraping_enabled",
+            "browser_fetch_enabled",
+            "search_enabled",
+            "external_action_enabled",
+            "agent_external_fetch_enabled",
+            "publication_enabled",
+            "outreach_enabled",
+            "payment_enabled",
+            "revenue_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "live_execution_enabled",
+            "cieu_db_write_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "real_canonical_update_application_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "durable_approval_persistence_enabled",
+            "semantic_truth_scoring_enabled",
+            "llm_confidence_as_authority_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "ready_for_actual_network_observation_now",
+            "ready_for_autonomous_web_search_now",
+        ]:
+            if l6_agentic_pilot_dry_run.get(field) is not False:
+                report.fail(f"generated L6.9 summary must keep {field}=false")
+        if l6_agentic_pilot_dry_run.get("mode") != "pilot_approval_and_dry_run_only":
+            report.fail("generated L6.9 summary must be pilot approval and dry-run mode")
+        selected_count = l6_agentic_pilot_dry_run.get("selected_work_order_count", 0)
+        if not 1 <= selected_count <= 3:
+            report.fail("generated L6.9 summary must select 1-3 work orders")
+        for field in [
+            "approval_packet_count",
+            "sandbox_approval_record_count",
+            "dry_run_trace_count",
+            "empty_evidence_packet_count",
+            "post_run_review_packet_count",
+        ]:
+            if l6_agentic_pilot_dry_run.get(field) != selected_count:
+                report.fail(f"generated L6.9 summary must align {field} with selected count")
+        if l6_agentic_pilot_dry_run.get("next_recommended_milestone") != (
+            "L6.10 Tiny Real Read-Only Agentic Evidence Observation Pilot v0"
+        ):
+            report.fail("generated L6.9 summary must point to L6.10")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

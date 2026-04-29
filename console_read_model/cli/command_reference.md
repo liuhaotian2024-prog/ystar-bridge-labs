@@ -225,6 +225,15 @@ python3 console_read_model/cli/team_console.py <command>
   gate, no-action receipts, readiness for L6.9 pilot approval, and blocked
   agent fetch/network/search/API/scraping/browser fetch/publication/outreach/
   payment/revenue/MCP/live/CIEU DB/writeback execution state.
+- `controlled-agentic-evidence-pilot-approval-dry-run`: Prints the generated
+  L6.9 controlled agentic evidence pilot approval and dry-run summary: selected
+  L6.8 work orders, eligibility gate, sandbox approval packets, sandbox
+  approval records, runtime readiness packets, dry-run traces, empty evidence
+  packets, post-run review packets, residual/refinement candidates, real
+  execution blockers, no-action receipts, readiness for L6.10 tiny read-only
+  pilot, and blocked real approval/durable persistence/real observation/network/
+  search/API/scraping/browser fetch/publication/outreach/payment/revenue/MCP/
+  live/CIEU DB/writeback execution state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

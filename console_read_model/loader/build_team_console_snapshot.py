@@ -272,6 +272,20 @@ CURATED_SOURCES = [
     "agentic_evidence_no_action_receipts/no_agent_fetch_receipt.json",
     "l6_agentic_evidence_strategic_residual_loop/l6_8_strategic_residual_delta.json",
     "l6_agentic_evidence_readiness_report/l6_8_readiness_assessment.json",
+    "l6_controlled_agentic_evidence_pilot_approval_dry_run/l6_9_summary.json",
+    "agentic_work_order_pilot_selector/selected_agentic_pilot_work_orders.json",
+    "agentic_pilot_approval_eligibility_gate/approval_eligibility_matrix.json",
+    "agentic_pilot_approval_packet_assembler/agentic_pilot_approval_packet_index.json",
+    "agentic_pilot_sandbox_approval_records/sandbox_approval_record_index.json",
+    "agentic_pilot_runtime_readiness_package/runtime_readiness_packet_index.json",
+    "agentic_pilot_dry_run_executor/dry_run_trace_index.json",
+    "agentic_pilot_empty_evidence_capture_simulator/simulated_empty_evidence_packet_index.json",
+    "agentic_pilot_post_run_review_simulator/post_run_review_packet_index.json",
+    "agentic_pilot_residual_and_refinement_candidates/dry_run_refinement_candidate_index.json",
+    "agentic_pilot_real_execution_blockers/blocked_real_execution_decisions.json",
+    "agentic_pilot_no_action_receipts/no_agent_fetch_receipt.json",
+    "l6_agentic_pilot_dry_run_strategic_residual_loop/l6_9_strategic_residual_delta.json",
+    "l6_agentic_pilot_dry_run_readiness_report/l6_9_readiness_assessment.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -5305,6 +5319,229 @@ def build_l6_agentic_evidence_summary(
     }
 
 
+def build_l6_agentic_pilot_dry_run_summary(
+    milestone_summary: dict[str, Any] | None,
+    selected_work_orders: dict[str, Any] | None,
+    eligibility_matrix: dict[str, Any] | None,
+    approval_packet_index: dict[str, Any] | None,
+    sandbox_record_index: dict[str, Any] | None,
+    runtime_packet_index: dict[str, Any] | None,
+    dry_run_trace_index: dict[str, Any] | None,
+    empty_evidence_index: dict[str, Any] | None,
+    post_run_review_index: dict[str, Any] | None,
+    refinement_candidate_index: dict[str, Any] | None,
+    blocked_execution_decisions: dict[str, Any] | None,
+    no_action_receipt: dict[str, Any] | None,
+    residual_delta: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.l6_agentic_pilot_dry_run_summary",
+            "schema_version": "v0",
+            "l6_9_controlled_agentic_evidence_pilot_approval_dry_run_defined": False,
+            "ready_for_l6_10_tiny_real_read_only_agentic_evidence_observation_pilot": False,
+            "ready_for_actual_network_observation_now": False,
+            "warning": "L6.9 controlled agentic evidence pilot approval dry-run has not been generated yet.",
+        }
+
+    milestone_summary = milestone_summary or {}
+    selected_work_orders = selected_work_orders or {}
+    eligibility_matrix = eligibility_matrix or {}
+    approval_packet_index = approval_packet_index or {}
+    sandbox_record_index = sandbox_record_index or {}
+    runtime_packet_index = runtime_packet_index or {}
+    dry_run_trace_index = dry_run_trace_index or {}
+    empty_evidence_index = empty_evidence_index or {}
+    post_run_review_index = post_run_review_index or {}
+    refinement_candidate_index = refinement_candidate_index or {}
+    blocked_execution_decisions = blocked_execution_decisions or {}
+    no_action_receipt = no_action_receipt or {}
+    residual_delta = residual_delta or {}
+
+    def safety_flag(field: str) -> Any:
+        return readiness_summary.get(field, readiness_summary.get("safety_flags", {}).get(field))
+
+    def l6_9_flag(field: str) -> Any:
+        return readiness_summary.get(field, readiness_summary.get("l6_9_flags", {}).get(field))
+
+    return {
+        "schema_name": "ystar.console_read_model.generated.l6_agentic_pilot_dry_run_summary",
+        "schema_version": "v0",
+        "milestone_id": milestone_summary.get("milestone_id", "L6.9"),
+        "milestone_name": milestone_summary.get(
+            "milestone_name",
+            "Controlled Read-Only Agentic Evidence Discovery Pilot Approval & Dry-Run v0",
+        ),
+        "l6_9_controlled_agentic_evidence_pilot_approval_dry_run_defined": milestone_summary.get(
+            "l6_9_controlled_agentic_evidence_pilot_approval_dry_run_defined",
+            readiness_summary.get(
+                "l6_9_controlled_read_only_agentic_evidence_pilot_approval_and_dry_run_complete"
+            ),
+        ),
+        "mode": milestone_summary.get("mode", "pilot_approval_and_dry_run_only"),
+        "pilot_approval_and_dry_run_only": l6_9_flag("l6_9_pilot_approval_and_dry_run_only"),
+        "sandbox_approval_record_only": l6_9_flag("l6_9_sandbox_approval_record_only"),
+        "selected_work_order_count": milestone_summary.get(
+            "selected_work_order_count", selected_work_orders.get("selected_count")
+        ),
+        "eligible_work_order_count": eligibility_matrix.get("eligible_count"),
+        "approval_packet_count": milestone_summary.get(
+            "approval_packet_count", approval_packet_index.get("approval_packet_count")
+        ),
+        "sandbox_approval_record_count": milestone_summary.get(
+            "sandbox_approval_record_count", sandbox_record_index.get("sandbox_record_count")
+        ),
+        "runtime_readiness_packet_count": milestone_summary.get(
+            "runtime_readiness_packet_count", runtime_packet_index.get("runtime_packet_count")
+        ),
+        "dry_run_trace_count": milestone_summary.get(
+            "dry_run_trace_count", dry_run_trace_index.get("dry_run_trace_count")
+        ),
+        "empty_evidence_packet_count": milestone_summary.get(
+            "empty_evidence_packet_count", empty_evidence_index.get("empty_evidence_packet_count")
+        ),
+        "post_run_review_packet_count": milestone_summary.get(
+            "post_run_review_packet_count", post_run_review_index.get("post_run_review_packet_count")
+        ),
+        "refinement_candidate_count": milestone_summary.get(
+            "refinement_candidate_count", refinement_candidate_index.get("candidate_count")
+        ),
+        "agentic_work_order_selection_authorized": milestone_summary.get(
+            "agentic_work_order_selection_authorized", True
+        ),
+        "pilot_approval_packet_generation_authorized": milestone_summary.get(
+            "pilot_approval_packet_generation_authorized", True
+        ),
+        "sandbox_approval_record_generation_authorized": milestone_summary.get(
+            "sandbox_approval_record_generation_authorized", True
+        ),
+        "dry_run_lifecycle_simulation_authorized": milestone_summary.get(
+            "dry_run_lifecycle_simulation_authorized", True
+        ),
+        "empty_evidence_capture_simulation_authorized": milestone_summary.get(
+            "empty_evidence_capture_simulation_authorized", True
+        ),
+        "approval_eligibility_gate_generated": bool(eligibility_matrix),
+        "approval_packets_generated": bool(approval_packet_index),
+        "sandbox_approval_records_generated": bool(sandbox_record_index),
+        "runtime_readiness_generated": bool(runtime_packet_index),
+        "dry_run_traces_generated": bool(dry_run_trace_index),
+        "empty_evidence_capture_generated": bool(empty_evidence_index),
+        "post_run_review_generated": bool(post_run_review_index),
+        "residual_refinement_candidates_generated": bool(refinement_candidate_index),
+        "real_execution_blockers_generated": bool(blocked_execution_decisions),
+        "no_action_receipts_generated": bool(no_action_receipt),
+        "strategic_residual_loop_generated": bool(residual_delta),
+        "real_external_observation_authorized": milestone_summary.get("real_external_observation_authorized", False),
+        "real_pilot_execution_authorized": milestone_summary.get("real_pilot_execution_authorized", False),
+        "real_approval_granted": milestone_summary.get("real_approval_granted", False),
+        "durable_real_approval_record_created": milestone_summary.get(
+            "durable_real_approval_record_created", False
+        ),
+        "agent_external_fetch_authorized": milestone_summary.get("agent_external_fetch_authorized", False),
+        "network_authorized": milestone_summary.get("network_authorized", False),
+        "api_authorized": milestone_summary.get("api_authorized", False),
+        "scraping_authorized": milestone_summary.get("scraping_authorized", False),
+        "browser_fetch_authorized": milestone_summary.get("browser_fetch_authorized", False),
+        "search_authorized": milestone_summary.get("search_authorized", False),
+        "publication_authorized": milestone_summary.get("publication_authorized", False),
+        "outreach_authorized": milestone_summary.get("outreach_authorized", False),
+        "payment_authorized": milestone_summary.get("payment_authorized", False),
+        "revenue_execution_authorized": milestone_summary.get("revenue_execution_authorized", False),
+        "mcp_execution_authorized": milestone_summary.get("mcp_execution_authorized", False),
+        "live_behavior_authorized": milestone_summary.get("live_behavior_authorized", False),
+        "cieu_db_write_authorized": milestone_summary.get("cieu_db_write_authorized", False),
+        "canonical_update_authorized": milestone_summary.get("canonical_update_authorized", False),
+        "brain_writeback_authorized": milestone_summary.get("brain_writeback_authorized", False),
+        "memory_ingestion_authorized": milestone_summary.get("memory_ingestion_authorized", False),
+        "direct_y_star_mutation_authorized": milestone_summary.get("direct_y_star_mutation_authorized", False),
+        "future_tiny_real_read_only_pilot_candidate_allowed": milestone_summary.get(
+            "future_tiny_real_read_only_pilot_candidate_allowed", True
+        ),
+        "network_enabled": safety_flag("network_enabled"),
+        "api_enabled": safety_flag("api_enabled"),
+        "scraping_enabled": safety_flag("scraping_enabled"),
+        "browser_fetch_enabled": safety_flag("browser_fetch_enabled"),
+        "search_enabled": safety_flag("search_enabled"),
+        "external_action_enabled": safety_flag("external_action_enabled"),
+        "agent_external_fetch_enabled": safety_flag("agent_external_fetch_enabled"),
+        "publication_enabled": safety_flag("publication_enabled"),
+        "outreach_enabled": safety_flag("outreach_enabled"),
+        "payment_enabled": safety_flag("payment_enabled"),
+        "revenue_execution_enabled": safety_flag("revenue_execution_enabled"),
+        "mcp_tool_execution_enabled": safety_flag("mcp_tool_execution_enabled"),
+        "live_execution_enabled": safety_flag("live_execution_enabled"),
+        "cieu_db_write_enabled": safety_flag("cieu_db_write_enabled"),
+        "brain_writeback_enabled": safety_flag("brain_writeback_enabled"),
+        "memory_ingestion_enabled": safety_flag("memory_ingestion_enabled"),
+        "real_canonical_update_application_enabled": safety_flag(
+            "real_canonical_update_application_enabled"
+        ),
+        "real_y_star_direct_mutation_enabled": safety_flag("real_y_star_direct_mutation_enabled"),
+        "durable_approval_persistence_enabled": safety_flag("durable_approval_persistence_enabled"),
+        "semantic_truth_scoring_enabled": safety_flag("semantic_truth_scoring_enabled"),
+        "llm_confidence_as_authority_enabled": safety_flag("llm_confidence_as_authority_enabled"),
+        "raw_runtime_artifact_reading_enabled": safety_flag("raw_runtime_artifact_reading_enabled"),
+        "l6_9_pilot_approval_and_dry_run_only": l6_9_flag("l6_9_pilot_approval_and_dry_run_only"),
+        "l6_9_sandbox_approval_record_only": l6_9_flag("l6_9_sandbox_approval_record_only"),
+        "l6_9_agentic_work_order_selection_enabled": l6_9_flag(
+            "l6_9_agentic_work_order_selection_enabled"
+        ),
+        "l6_9_pilot_approval_packet_generation_enabled": l6_9_flag(
+            "l6_9_pilot_approval_packet_generation_enabled"
+        ),
+        "l6_9_sandbox_approval_record_generation_enabled": l6_9_flag(
+            "l6_9_sandbox_approval_record_generation_enabled"
+        ),
+        "l6_9_dry_run_lifecycle_simulation_enabled": l6_9_flag(
+            "l6_9_dry_run_lifecycle_simulation_enabled"
+        ),
+        "l6_9_empty_evidence_capture_simulation_enabled": l6_9_flag(
+            "l6_9_empty_evidence_capture_simulation_enabled"
+        ),
+        "l6_9_real_external_observation_enabled": l6_9_flag(
+            "l6_9_real_external_observation_enabled"
+        ),
+        "ready_for_l6_10_tiny_real_read_only_agentic_evidence_observation_pilot": readiness_summary.get(
+            "ready_for_l6_10_tiny_real_read_only_agentic_evidence_observation_pilot"
+        ),
+        "ready_for_actual_network_observation_now": readiness_summary.get(
+            "ready_for_actual_network_observation_now"
+        ),
+        "ready_for_autonomous_web_search_now": readiness_summary.get(
+            "ready_for_autonomous_web_search_now"
+        ),
+        "ready_for_scraping": readiness_summary.get("ready_for_scraping"),
+        "ready_for_publication": readiness_summary.get("ready_for_publication"),
+        "ready_for_outreach": readiness_summary.get("ready_for_outreach"),
+        "ready_for_payment": readiness_summary.get("ready_for_payment"),
+        "ready_for_revenue_execution": readiness_summary.get("ready_for_revenue_execution"),
+        "ready_for_mcp_execution": readiness_summary.get("ready_for_mcp_execution"),
+        "ready_for_canonical_update": readiness_summary.get("ready_for_canonical_update"),
+        "ready_for_brain_memory_writeback": readiness_summary.get("ready_for_brain_memory_writeback"),
+        "next_recommended_milestone": readiness_summary.get("next_recommended_milestone"),
+        "generated_milestone_summary": "l6_controlled_agentic_evidence_pilot_approval_dry_run/l6_9_summary.json",
+        "generated_selected_work_orders": "agentic_work_order_pilot_selector/selected_agentic_pilot_work_orders.json",
+        "generated_approval_packets": "agentic_pilot_approval_packet_assembler/agentic_pilot_approval_packet_index.json",
+        "generated_sandbox_records": "agentic_pilot_sandbox_approval_records/sandbox_approval_record_index.json",
+        "generated_dry_run_traces": "agentic_pilot_dry_run_executor/dry_run_trace_index.json",
+        "generated_empty_evidence": "agentic_pilot_empty_evidence_capture_simulator/simulated_empty_evidence_packet_index.json",
+        "generated_readiness": "l6_agentic_pilot_dry_run_readiness_report/l6_9_readiness_assessment.json",
+        "warning": (
+            "L6.9 is pilot approval and dry-run only. It selects L6.8 work "
+            "orders, creates sandbox approval packets and records, simulates "
+            "runtime readiness, dry-run lifecycle, empty evidence capture, "
+            "post-run review, residuals, and no-action receipts, but real "
+            "approval, durable approval persistence, real observation, URL "
+            "open, network, search, scraping, API calls, browser fetch, "
+            "publication, outreach, payment, revenue, MCP, live behavior, "
+            "CIEU DB writes, canonical mutation, writeback, and direct Y* "
+            "mutation remain blocked."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -6311,6 +6548,62 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_agentic_evidence_readiness_report/l6_8_readiness_assessment.json",
         files_read,
     )
+    l6_agentic_pilot_dry_run_milestone_summary = load_optional_json(
+        "l6_controlled_agentic_evidence_pilot_approval_dry_run/l6_9_summary.json",
+        files_read,
+    )
+    l6_agentic_pilot_selected_work_orders = load_optional_json(
+        "agentic_work_order_pilot_selector/selected_agentic_pilot_work_orders.json",
+        files_read,
+    )
+    l6_agentic_pilot_eligibility_matrix = load_optional_json(
+        "agentic_pilot_approval_eligibility_gate/approval_eligibility_matrix.json",
+        files_read,
+    )
+    l6_agentic_pilot_approval_packet_index = load_optional_json(
+        "agentic_pilot_approval_packet_assembler/agentic_pilot_approval_packet_index.json",
+        files_read,
+    )
+    l6_agentic_pilot_sandbox_record_index = load_optional_json(
+        "agentic_pilot_sandbox_approval_records/sandbox_approval_record_index.json",
+        files_read,
+    )
+    l6_agentic_pilot_runtime_packet_index = load_optional_json(
+        "agentic_pilot_runtime_readiness_package/runtime_readiness_packet_index.json",
+        files_read,
+    )
+    l6_agentic_pilot_dry_run_trace_index = load_optional_json(
+        "agentic_pilot_dry_run_executor/dry_run_trace_index.json",
+        files_read,
+    )
+    l6_agentic_pilot_empty_evidence_index = load_optional_json(
+        "agentic_pilot_empty_evidence_capture_simulator/simulated_empty_evidence_packet_index.json",
+        files_read,
+    )
+    l6_agentic_pilot_post_run_review_index = load_optional_json(
+        "agentic_pilot_post_run_review_simulator/post_run_review_packet_index.json",
+        files_read,
+    )
+    l6_agentic_pilot_refinement_candidate_index = load_optional_json(
+        "agentic_pilot_residual_and_refinement_candidates/dry_run_refinement_candidate_index.json",
+        files_read,
+    )
+    l6_agentic_pilot_blocked_execution_decisions = load_optional_json(
+        "agentic_pilot_real_execution_blockers/blocked_real_execution_decisions.json",
+        files_read,
+    )
+    l6_agentic_pilot_no_action_receipt = load_optional_json(
+        "agentic_pilot_no_action_receipts/no_agent_fetch_receipt.json",
+        files_read,
+    )
+    l6_agentic_pilot_residual_delta = load_optional_json(
+        "l6_agentic_pilot_dry_run_strategic_residual_loop/l6_9_strategic_residual_delta.json",
+        files_read,
+    )
+    l6_agentic_pilot_readiness_summary = load_optional_json(
+        "l6_agentic_pilot_dry_run_readiness_report/l6_9_readiness_assessment.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -6602,6 +6895,22 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         l6_agentic_residual_delta,
         l6_agentic_readiness_summary,
     )
+    l6_agentic_pilot_dry_run_summary = build_l6_agentic_pilot_dry_run_summary(
+        l6_agentic_pilot_dry_run_milestone_summary,
+        l6_agentic_pilot_selected_work_orders,
+        l6_agentic_pilot_eligibility_matrix,
+        l6_agentic_pilot_approval_packet_index,
+        l6_agentic_pilot_sandbox_record_index,
+        l6_agentic_pilot_runtime_packet_index,
+        l6_agentic_pilot_dry_run_trace_index,
+        l6_agentic_pilot_empty_evidence_index,
+        l6_agentic_pilot_post_run_review_index,
+        l6_agentic_pilot_refinement_candidate_index,
+        l6_agentic_pilot_blocked_execution_decisions,
+        l6_agentic_pilot_no_action_receipt,
+        l6_agentic_pilot_residual_delta,
+        l6_agentic_pilot_readiness_summary,
+    )
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -6774,6 +7083,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_pilot_approval_summary": l6_pilot_approval_summary,
         "l6_integrated_pilot_readiness_summary": l6_integrated_pilot_readiness_summary,
         "l6_agentic_evidence_summary": l6_agentic_evidence_summary,
+        "l6_agentic_pilot_dry_run_summary": l6_agentic_pilot_dry_run_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -7015,6 +7325,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/l6_pilot_approval_summary.json",
             "console_read_model/generated/l6_integrated_pilot_readiness_summary.json",
             "console_read_model/generated/l6_agentic_evidence_summary.json",
+            "console_read_model/generated/l6_agentic_pilot_dry_run_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -7182,6 +7493,16 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "publication, outreach, payment, revenue, MCP, live behavior, CIEU DB\n"
         "writes, canonical mutation, writeback, and direct Y* mutation remain\n"
         "blocked.\n\n"
+        "`l6_agentic_pilot_dry_run_summary.json` is derived from the L6.9\n"
+        "controlled read-only agentic evidence pilot approval and dry-run pack.\n"
+        "It confirms work-order selection, approval eligibility, sandbox\n"
+        "approval packets, sandbox approval records, runtime readiness, dry-run\n"
+        "traces, empty evidence capture, post-run review, residual candidates,\n"
+        "real-execution blockers, no-action receipts, and readiness artifacts\n"
+        "while real approval, durable approval persistence, real observation,\n"
+        "URL fetch/open, search, scraping, API calls, browser fetch, publication,\n"
+        "outreach, payment, revenue, MCP, live behavior, CIEU DB writes,\n"
+        "canonical mutation, writeback, and direct Y* mutation remain blocked.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -7235,6 +7556,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/l6_pilot_approval_summary.json", l6_pilot_approval_summary, generated_files)
     write_json("console_read_model/generated/l6_integrated_pilot_readiness_summary.json", l6_integrated_pilot_readiness_summary, generated_files)
     write_json("console_read_model/generated/l6_agentic_evidence_summary.json", l6_agentic_evidence_summary, generated_files)
+    write_json("console_read_model/generated/l6_agentic_pilot_dry_run_summary.json", l6_agentic_pilot_dry_run_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -7331,6 +7653,7 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
         "l6_integrated_pilot_readiness_summary", {}
     )
     l6_agentic_evidence = snapshot.get("l6_agentic_evidence_summary", {})
+    l6_agentic_pilot_dry_run = snapshot.get("l6_agentic_pilot_dry_run_summary", {})
     lines.extend(
         [
             "",
@@ -8553,6 +8876,36 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- ready_for_autonomous_web_search_now: {l6_agentic_evidence.get('ready_for_autonomous_web_search_now')}",
             f"- next_recommended_milestone: {l6_agentic_evidence.get('next_recommended_milestone')}",
             f"- Warning: {l6_agentic_evidence.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## L6.9 Controlled Agentic Evidence Pilot Approval Dry-Run",
+            "",
+            f"- l6_9_controlled_agentic_evidence_pilot_approval_dry_run_defined: {l6_agentic_pilot_dry_run.get('l6_9_controlled_agentic_evidence_pilot_approval_dry_run_defined')}",
+            f"- mode: {l6_agentic_pilot_dry_run.get('mode')}",
+            f"- pilot_approval_and_dry_run_only: {l6_agentic_pilot_dry_run.get('pilot_approval_and_dry_run_only')}",
+            f"- sandbox_approval_record_only: {l6_agentic_pilot_dry_run.get('sandbox_approval_record_only')}",
+            f"- selected_work_order_count: {l6_agentic_pilot_dry_run.get('selected_work_order_count')}",
+            f"- approval_packet_count: {l6_agentic_pilot_dry_run.get('approval_packet_count')}",
+            f"- sandbox_approval_record_count: {l6_agentic_pilot_dry_run.get('sandbox_approval_record_count')}",
+            f"- dry_run_trace_count: {l6_agentic_pilot_dry_run.get('dry_run_trace_count')}",
+            f"- empty_evidence_packet_count: {l6_agentic_pilot_dry_run.get('empty_evidence_packet_count')}",
+            f"- post_run_review_packet_count: {l6_agentic_pilot_dry_run.get('post_run_review_packet_count')}",
+            f"- real_external_observation_authorized: {l6_agentic_pilot_dry_run.get('real_external_observation_authorized')}",
+            f"- real_pilot_execution_authorized: {l6_agentic_pilot_dry_run.get('real_pilot_execution_authorized')}",
+            f"- real_approval_granted: {l6_agentic_pilot_dry_run.get('real_approval_granted')}",
+            f"- durable_real_approval_record_created: {l6_agentic_pilot_dry_run.get('durable_real_approval_record_created')}",
+            f"- network_enabled: {l6_agentic_pilot_dry_run.get('network_enabled')}",
+            f"- search_enabled: {l6_agentic_pilot_dry_run.get('search_enabled')}",
+            f"- scraping_enabled: {l6_agentic_pilot_dry_run.get('scraping_enabled')}",
+            f"- browser_fetch_enabled: {l6_agentic_pilot_dry_run.get('browser_fetch_enabled')}",
+            f"- ready_for_l6_10_tiny_real_read_only_agentic_evidence_observation_pilot: {l6_agentic_pilot_dry_run.get('ready_for_l6_10_tiny_real_read_only_agentic_evidence_observation_pilot')}",
+            f"- ready_for_actual_network_observation_now: {l6_agentic_pilot_dry_run.get('ready_for_actual_network_observation_now')}",
+            f"- ready_for_autonomous_web_search_now: {l6_agentic_pilot_dry_run.get('ready_for_autonomous_web_search_now')}",
+            f"- next_recommended_milestone: {l6_agentic_pilot_dry_run.get('next_recommended_milestone')}",
+            f"- Warning: {l6_agentic_pilot_dry_run.get('warning')}",
         ]
     )
     lines.extend(

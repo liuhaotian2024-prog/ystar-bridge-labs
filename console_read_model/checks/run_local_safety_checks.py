@@ -2268,6 +2268,51 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "l6_agentic_evidence_readiness_report/l6_8_readiness_assessment.json"],
     ),
     Check(
+        "Compile L6.9 controlled agentic evidence pilot approval dry-run builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "l6_controlled_agentic_evidence_pilot_approval_dry_run/tools/build_l6_controlled_agentic_evidence_pilot_approval_dry_run.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: l6_agentic_pilot_dry_run_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_agentic_pilot_dry_run_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_9_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_controlled_agentic_evidence_pilot_approval_dry_run/l6_9_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: selected_agentic_pilot_work_orders.json",
+        ["python3", "-m", "json.tool", "agentic_work_order_pilot_selector/selected_agentic_pilot_work_orders.json"],
+    ),
+    Check(
+        "Validate JSON: approval_eligibility_matrix.json",
+        ["python3", "-m", "json.tool", "agentic_pilot_approval_eligibility_gate/approval_eligibility_matrix.json"],
+    ),
+    Check(
+        "Validate JSON: agentic_pilot_approval_packet_index.json",
+        ["python3", "-m", "json.tool", "agentic_pilot_approval_packet_assembler/agentic_pilot_approval_packet_index.json"],
+    ),
+    Check(
+        "Validate JSON: sandbox_approval_record_index.json",
+        ["python3", "-m", "json.tool", "agentic_pilot_sandbox_approval_records/sandbox_approval_record_index.json"],
+    ),
+    Check(
+        "Validate JSON: dry_run_trace_index.json",
+        ["python3", "-m", "json.tool", "agentic_pilot_dry_run_executor/dry_run_trace_index.json"],
+    ),
+    Check(
+        "Validate JSON: simulated_empty_evidence_packet_index.json",
+        ["python3", "-m", "json.tool", "agentic_pilot_empty_evidence_capture_simulator/simulated_empty_evidence_packet_index.json"],
+    ),
+    Check(
+        "Validate JSON: l6_9_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "l6_agentic_pilot_dry_run_readiness_report/l6_9_readiness_assessment.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -2534,6 +2579,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: agentic-evidence-discovery-trust-engine",
         ["python3", "console_read_model/cli/team_console.py", "agentic-evidence-discovery-trust-engine"],
+    ),
+    Check(
+        "CLI smoke: controlled-agentic-evidence-pilot-approval-dry-run",
+        ["python3", "console_read_model/cli/team_console.py", "controlled-agentic-evidence-pilot-approval-dry-run"],
     ),
     Check(
         "CLI smoke: sources",

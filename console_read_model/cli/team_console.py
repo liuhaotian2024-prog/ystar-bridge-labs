@@ -72,6 +72,9 @@ L6_INTEGRATED_PILOT_READINESS = (
     "console_read_model/generated/l6_integrated_pilot_readiness_summary.json"
 )
 L6_AGENTIC_EVIDENCE = "console_read_model/generated/l6_agentic_evidence_summary.json"
+L6_AGENTIC_PILOT_DRY_RUN = (
+    "console_read_model/generated/l6_agentic_pilot_dry_run_summary.json"
+)
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -91,7 +94,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|integrated-approval-record-and-pilot-readiness|agentic-evidence-discovery-trust-engine|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|integrated-approval-record-and-pilot-readiness|agentic-evidence-discovery-trust-engine|controlled-agentic-evidence-pilot-approval-dry-run|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -171,6 +174,7 @@ def load_all() -> dict[str, Any]:
         "l6_pilot_approval": load_json(L6_PILOT_APPROVAL),
         "l6_integrated_pilot_readiness": load_json(L6_INTEGRATED_PILOT_READINESS),
         "l6_agentic_evidence": load_json(L6_AGENTIC_EVIDENCE),
+        "l6_agentic_pilot_dry_run": load_json(L6_AGENTIC_PILOT_DRY_RUN),
     }
 
 
@@ -2436,6 +2440,88 @@ def cmd_agentic_evidence_discovery_trust_engine(data: dict[str, Any]) -> None:
     print(f"warning: {evidence.get('warning')}")
 
 
+def cmd_controlled_agentic_evidence_pilot_approval_dry_run(data: dict[str, Any]) -> None:
+    pilot = data["l6_agentic_pilot_dry_run"]
+    print("# L6.9 Controlled Agentic Evidence Pilot Approval Dry-Run")
+    print()
+    print(
+        "L6.9 controlled agentic evidence pilot approval dry-run defined: "
+        f"{pilot.get('l6_9_controlled_agentic_evidence_pilot_approval_dry_run_defined')}"
+    )
+    print(f"mode: {pilot.get('mode')}")
+    print(f"pilot approval and dry-run only: {pilot.get('pilot_approval_and_dry_run_only')}")
+    print(f"sandbox approval record only: {pilot.get('sandbox_approval_record_only')}")
+    print(
+        "work order selection authorized: "
+        f"{pilot.get('agentic_work_order_selection_authorized')}"
+    )
+    print(
+        "approval packet generation authorized: "
+        f"{pilot.get('pilot_approval_packet_generation_authorized')}"
+    )
+    print(
+        "sandbox approval record generation authorized: "
+        f"{pilot.get('sandbox_approval_record_generation_authorized')}"
+    )
+    print(
+        "dry-run lifecycle simulation authorized: "
+        f"{pilot.get('dry_run_lifecycle_simulation_authorized')}"
+    )
+    print(
+        "empty evidence capture simulation authorized: "
+        f"{pilot.get('empty_evidence_capture_simulation_authorized')}"
+    )
+    print(f"selected work orders: {pilot.get('selected_work_order_count')}")
+    print(f"eligible work orders: {pilot.get('eligible_work_order_count')}")
+    print(f"approval packets: {pilot.get('approval_packet_count')}")
+    print(f"sandbox approval records: {pilot.get('sandbox_approval_record_count')}")
+    print(f"runtime readiness packets: {pilot.get('runtime_readiness_packet_count')}")
+    print(f"dry-run traces: {pilot.get('dry_run_trace_count')}")
+    print(f"empty evidence packets: {pilot.get('empty_evidence_packet_count')}")
+    print(f"post-run review packets: {pilot.get('post_run_review_packet_count')}")
+    print(f"refinement candidates: {pilot.get('refinement_candidate_count')}")
+    print(f"real external observation authorized: {pilot.get('real_external_observation_authorized')}")
+    print(f"real pilot execution authorized: {pilot.get('real_pilot_execution_authorized')}")
+    print(f"real approval granted: {pilot.get('real_approval_granted')}")
+    print(
+        "durable real approval record created: "
+        f"{pilot.get('durable_real_approval_record_created')}"
+    )
+    print(f"agent external fetch authorized: {pilot.get('agent_external_fetch_authorized')}")
+    print(f"network enabled: {pilot.get('network_enabled')}")
+    print(f"API enabled: {pilot.get('api_enabled')}")
+    print(f"scraping enabled: {pilot.get('scraping_enabled')}")
+    print(f"browser fetch enabled: {pilot.get('browser_fetch_enabled')}")
+    print(f"search enabled: {pilot.get('search_enabled')}")
+    print(f"publication enabled: {pilot.get('publication_enabled')}")
+    print(f"outreach enabled: {pilot.get('outreach_enabled')}")
+    print(f"payment enabled: {pilot.get('payment_enabled')}")
+    print(f"revenue execution enabled: {pilot.get('revenue_execution_enabled')}")
+    print(f"MCP tool execution enabled: {pilot.get('mcp_tool_execution_enabled')}")
+    print(f"live execution enabled: {pilot.get('live_execution_enabled')}")
+    print(f"CIEU DB write enabled: {pilot.get('cieu_db_write_enabled')}")
+    print(
+        "ready for L6.10 tiny real read-only agentic evidence observation pilot: "
+        f"{pilot.get('ready_for_l6_10_tiny_real_read_only_agentic_evidence_observation_pilot')}"
+    )
+    print(
+        "ready for actual network observation now: "
+        f"{pilot.get('ready_for_actual_network_observation_now')}"
+    )
+    print(
+        "ready for autonomous web search now: "
+        f"{pilot.get('ready_for_autonomous_web_search_now')}"
+    )
+    print(f"next recommended milestone: {pilot.get('next_recommended_milestone')}")
+    print(f"generated_selected_work_orders: {pilot.get('generated_selected_work_orders')}")
+    print(f"generated_approval_packets: {pilot.get('generated_approval_packets')}")
+    print(f"generated_sandbox_records: {pilot.get('generated_sandbox_records')}")
+    print(f"generated_dry_run_traces: {pilot.get('generated_dry_run_traces')}")
+    print(f"generated_empty_evidence: {pilot.get('generated_empty_evidence')}")
+    print(f"generated_readiness: {pilot.get('generated_readiness')}")
+    print(f"warning: {pilot.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -4398,6 +4484,8 @@ def main(argv: list[str]) -> int:
         cmd_integrated_approval_record_and_pilot_readiness(data)
     elif command == "agentic-evidence-discovery-trust-engine":
         cmd_agentic_evidence_discovery_trust_engine(data)
+    elif command == "controlled-agentic-evidence-pilot-approval-dry-run":
+        cmd_controlled_agentic_evidence_pilot_approval_dry_run(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

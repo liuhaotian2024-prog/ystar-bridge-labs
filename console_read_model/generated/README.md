@@ -190,5 +190,16 @@ publication, outreach, payment, revenue, MCP, live behavior, CIEU DB
 writes, canonical mutation, writeback, and direct Y* mutation remain
 blocked.
 
+`l6_agentic_pilot_dry_run_summary.json` is derived from the L6.9
+controlled read-only agentic evidence pilot approval and dry-run pack.
+It confirms work-order selection, approval eligibility, sandbox
+approval packets, sandbox approval records, runtime readiness, dry-run
+traces, empty evidence capture, post-run review, residual candidates,
+real-execution blockers, no-action receipts, and readiness artifacts
+while real approval, durable approval persistence, real observation,
+URL fetch/open, search, scraping, API calls, browser fetch, publication,
+outreach, payment, revenue, MCP, live behavior, CIEU DB writes,
+canonical mutation, writeback, and direct Y* mutation remain blocked.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.
