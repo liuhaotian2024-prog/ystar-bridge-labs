@@ -1,14 +1,14 @@
 {
   "schema_name": "ystar.console_read_model.generated.artifact_disposition_summary",
   "schema_version": "v0",
-  "total_artifacts": 136,
-  "artifacts_with_disposition": 136,
+  "total_artifacts": 193,
+  "artifacts_with_disposition": 193,
   "dispositions": {
     "deferred_requires_marker_metadata_adapter": 26,
     "deferred_sidecar_or_transaction_file": 6,
     "deferred_requires_classification": 10,
+    "ignored_or_non_runtime": 74,
     "deferred_requires_readonly_db_adapter": 2,
-    "ignored_or_non_runtime": 17,
     "deferred_requires_bounded_log_adapter": 30,
     "ignored_generated_cache": 45
   },
@@ -16,8 +16,9 @@
     "DAEMON_STATE": 4,
     "DB_SIDECARE": 6,
     "UNKNOWN_RUNTIME_ARTIFACT": 10,
+    "UNKNOWN_OR_NON_RUNTIME": 69,
     "DB_CORE": 1,
-    "UNKNOWN_OR_NON_RUNTIME": 17,
+    "FRAMEWORK_FILE": 5,
     "CACHE_SENTINEL": 5,
     "LOG_RUNTIME": 30,
     "ACTIVE_AGENT_MARKER": 17,
@@ -35,7 +36,7 @@
   "ignored_generated_cache": 45,
   "forbidden_direct_read_count": 119,
   "evidence_scoring_status": {
-    "not_started": 136
+    "not_started": 193
   },
   "generated_disposition_index": "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
   "warning": "Disposition is not ingestion. No brain/memory/CIEU writes are allowed."
