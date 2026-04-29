@@ -1,10 +1,7 @@
 {
   "schema_version": "v0",
-  "page_read_mode": "disabled",
-  "page_read_network_allowed": false,
-  "mode_ready_for_real_page_read": false,
-  "blockers": [
-    "controlled_public_page_read_adapter_not_configured",
-    "real_provider_and_stdlib_page_read_not_configured"
-  ]
+  "page_read_mode": "stdlib_public_http",
+  "page_read_network_allowed": true,
+  "mode_ready_for_real_page_read": true,
+  "blockers": []
 }

@@ -1,0 +1,27 @@
+{
+  "schema_version": "v0",
+  "required_fields": [
+    "evidence_packet_id",
+    "run_id",
+    "prior_run_id",
+    "real_or_fixture",
+    "work_order_id",
+    "query_id",
+    "linked_unresolved_claim_id",
+    "linked_conflict_id",
+    "source_url",
+    "final_url",
+    "source_domain",
+    "source_type",
+    "source_quality_label",
+    "freshness_label",
+    "page_read_id",
+    "extracted_text_excerpt",
+    "bounded_claim",
+    "claim_scope",
+    "support_status",
+    "conflict_status",
+    "limitations",
+    "generated_at_utc"
+  ]
+}

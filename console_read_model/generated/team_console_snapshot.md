@@ -113,79 +113,69 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 186
-- Unsafe artifacts count: 146
+- Artifacts classified: 217
+- Unsafe artifacts count: 142
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
-  - CACHE_SENTINEL: 5
+  - CACHE_SENTINEL: 4
   - DAEMON_STATE: 4
   - DB_CORE: 1
   - DB_SIDECARE: 6
-  - DREAM_REPORT: 1
   - LOG_RUNTIME: 30
   - PYCACHE: 69
-  - UNKNOWN_OR_NON_RUNTIME: 40
-  - UNKNOWN_RUNTIME_ARTIFACT: 12
+  - UNKNOWN_OR_NON_RUNTIME: 75
+  - UNKNOWN_RUNTIME_ARTIFACT: 10
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
 - Warning: Console displays only curated path-level quarantine summary. No artifact contents were read.
 
 ## Runtime Artifact Safe Mining Candidates
 
-- Candidate count: 1
+- Candidate count: 0
 - Safety level: bounded_markdown_candidate
 - Ingestion status: candidate_only
 - Generated candidate index: runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json
 - Classes seen:
-  - DREAM_REPORT: 1
 - Warning: Safe mining candidates are bounded review assets only. They are not brain memory, CIEU records, or approved writeback.
 
 ## Runtime Artifact Candidate Review Queue
 
-- Review count: 1
+- Review count: 0
 - Default review status: pending_review
 - Default ingestion status: not_ingested
 - Generated queue path: runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json
 - Statuses:
-  - pending_review: 1
 - Intended use summary:
-  - memory_continuity_hint: 1
-  - role_brain_capsule_hint: 1
 - Warning: Review queue entries are not brain memory and require explicit approval before any future CIEU, memory, or capsule use.
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 186
-- Artifacts with disposition: 186
-- Safe-mined to review queue: 1
-- Forbidden direct read count: 145
+- Total artifacts: 217
+- Artifacts with disposition: 217
+- Safe-mined to review queue: 0
+- Forbidden direct read count: 142
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
   - deferred_requires_bounded_log_adapter: 30
-  - deferred_requires_classification: 12
-  - deferred_requires_marker_metadata_adapter: 26
+  - deferred_requires_classification: 10
+  - deferred_requires_marker_metadata_adapter: 25
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 69
-  - ignored_or_non_runtime: 40
-  - safe_mined_to_review_queue: 1
+  - ignored_or_non_runtime: 75
 - Evidence scoring status:
-  - not_started: 186
+  - not_started: 217
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
 
-- Candidates scored: 1
-- Decision stubs created: 1
-- Routes created: 2
+- Candidates scored: 0
+- Decision stubs created: 0
+- Routes created: 0
 - Automatic approvals: 0
 - Reuse readiness:
-  - hint_only: 1
 - Route counts:
-  - memory_continuity_hint_queue: 1
-  - role_brain_capsule_hint_queue: 1
 - Semantic truth status:
-  - not_evaluated: 1
 - Warning: Evidence scoring is structural only. It is not truth validation and not memory ingestion.
 
 ## Labs-Gov Alignment Bridge
@@ -548,7 +538,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 6354
+- assets_scanned: 6417
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -1458,29 +1448,29 @@ Not ready:
 
 - l6_13_real_controlled_external_observation_mission_sprint_complete: True
 - mode: real_controlled_external_observation_mission_sprint
-- run_classification: real_backend_activation_blocked_with_complete_activation_kit
+- run_classification: real_evidence_collected_with_unresolved_conflicts
 - selected_work_order_id: l6_10x_selected_work_order_001
-- backend_mode: disabled
-- page_read_mode: disabled
-- network_allowed: False
-- safety_preflight_decision: blocked
+- backend_mode: tavily_search_api
+- page_read_mode: stdlib_public_http
+- network_allowed: True
+- safety_preflight_decision: pass
 - fixture_proof_executed: True
-- real_observation_executed: False
+- real_observation_executed: True
 - query_count: 10
-- search_results_considered: 3
-- pages_opened: 3
-- domains_touched: 2
+- search_results_considered: 25
+- pages_opened: 8
+- domains_touched: 6
 - crawl_depth_used: 1
-- external_reads_used: 0
-- real_evidence_packets_generated: 0
+- external_reads_used: 15
+- real_evidence_packets_generated: 2
 - fixture_evidence_packets_generated: 3
 - conflicts_found: 1
 - unresolved_claims: 1
 - query_refinements_generated: 3
 - capability_gaps_resolved: 6
-- capability_gaps_remaining: 6
+- capability_gaps_remaining: 4
 - activation_kit_generated: True
-- blockers: ['controlled_public_page_read_adapter_not_configured', 'controlled_search_backend_not_configured', 'real_provider_and_stdlib_page_read_not_configured']
+- blockers: []
 - ask_user_for_url_occurred: False
 - external_side_effects_occurred: False
 - core_writeback_occurred: False
@@ -1488,7 +1478,7 @@ Not ready:
 - gov_mcp_modified: False
 - search_snippets_used_as_evidence: False
 - page_read_content_used_as_evidence: True
-- next_step: configure controlled search backend and stdlib public page-read allow flags
+- next_step: review real evidence packet before any downstream use
 - Warning: L6.13 provides a complete activation kit and fixture-proven mission evidence loop. Real public observation remains gated by explicit backend/page-read configuration and safety preflight.
 
 ## Governance Boundary

@@ -1,6 +1,6 @@
 {
   "schema_version": "v0",
-  "generated_at_utc": "2026-04-29T20:26:52Z",
+  "generated_at_utc": "2026-04-29T21:43:11Z",
   "generated_files": [
     "l6_real_controlled_external_observation_mission_sprint/l6_13_milestone_contract.json",
     "l6_real_controlled_external_observation_mission_sprint/l6_13_scope.json",
@@ -40,7 +40,6 @@
     "real_evidence_packets/evidence_packet_index.json",
     "real_evidence_packets/evidence_packet_001.json",
     "real_evidence_packets/evidence_packet_002.json",
-    "real_evidence_packets/evidence_packet_003.json",
     "real_evidence_packets/evidence_extraction_report.md",
     "real_source_quality_matrix/source_quality_matrix.json",
     "real_source_quality_matrix/source_freshness_assessment.json",

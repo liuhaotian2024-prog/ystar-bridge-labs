@@ -1,0 +1,47 @@
+{
+  "schema_version": "v0",
+  "post_second_pass_classification": "conflict_bounded",
+  "decisions": [
+    {
+      "conflict_id": "l6_13_conflict_001",
+      "unresolved_claim_id": "l6_13_claim_002",
+      "prior_status": "unresolved_limitation",
+      "new_evidence_packet_ids": [
+        "l6_14_real_evidence_packet_001",
+        "l6_14_real_evidence_packet_002",
+        "l6_14_real_evidence_packet_003",
+        "l6_14_real_evidence_packet_004"
+      ],
+      "supporting_sources": [
+        "https://assets.publishing.service.gov.uk/media/69f098800bb62e692c5d6d58/Main_Supply_Estimates_26-27_Accessible.pdf",
+        "https://www.uscis.gov/humanitarian/humanitarian-or-significant-public-benefit-parole-for-aliens-outside-the-united-states/guidance-on-evidence-for-certain-types-of-humanitarian-or-significant-public-benefit-parole-requests",
+        "https://dhr.alabama.gov/wp-content/uploads/2022/04/Appendix-N-Sec-4-Public-Assistance-Payment-Manual.pdf",
+        "https://www.uscis.gov/policy-manual/volume-2-part-m-chapter-4"
+      ],
+      "conflicting_sources": [],
+      "source_quality_comparison": {
+        "supporting": [
+          "unknown",
+          "official_primary",
+          "official_primary",
+          "official_primary"
+        ],
+        "conflicting": []
+      },
+      "freshness_comparison": {
+        "supporting": [
+          "date_missing_or_review_required",
+          "date_missing_or_review_required",
+          "date_missing_or_review_required",
+          "date_missing_or_review_required"
+        ],
+        "conflicting": []
+      },
+      "claim_boundary_update": "internal_review_only_with_second_pass_context",
+      "post_second_pass_status": "bounded_conflict",
+      "residual_reason": "Second-pass evidence adds reviewable support, but the prior conflict still needs human review before being marked resolved.",
+      "review_required": true,
+      "recommended_next_action": "ready_for_human_review"
+    }
+  ]
+}
