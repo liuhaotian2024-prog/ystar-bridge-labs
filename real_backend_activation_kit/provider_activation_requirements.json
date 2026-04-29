@@ -23,7 +23,12 @@
     "TAVILY_API_KEY",
     "SERPAPI_API_KEY"
   ],
-  "missing_configuration_fields": [],
+  "missing_configuration_fields": [
+    "YSTAR_CONTROLLED_PAGE_READ_ALLOW_NETWORK",
+    "YSTAR_CONTROLLED_PAGE_READ_BACKEND",
+    "YSTAR_CONTROLLED_SEARCH_ALLOW_NETWORK",
+    "YSTAR_CONTROLLED_SEARCH_BACKEND"
+  ],
   "provider_specific_requirements": [
     {
       "provider": "brave_search_api",
@@ -36,7 +41,7 @@
       "provider": "tavily_search_api",
       "backend_env_value": "tavily_search_api",
       "required_key_env_name": "TAVILY_API_KEY",
-      "key_present": true,
+      "key_present": false,
       "secret_value_serialized": false
     },
     {

@@ -432,6 +432,7 @@ class ApiSearchBackendStub(ControlledSearchBackend):
     def _tavily_query(self, query: SearchQueryEnvelope, api_key: str, remaining: int) -> list[dict[str, Any]]:
         body = json.dumps(
             {
+                "api_key": api_key,
                 "query": query.query_text,
                 "max_results": min(query.max_results, remaining),
                 "include_answer": False,
@@ -443,7 +444,6 @@ class ApiSearchBackendStub(ControlledSearchBackend):
             data=body,
             headers={
                 "Accept": "application/json",
-                "Authorization": f"Bearer {api_key}",
                 "Content-Type": "application/json",
                 "User-Agent": "ystar-controlled-search/0",
             },

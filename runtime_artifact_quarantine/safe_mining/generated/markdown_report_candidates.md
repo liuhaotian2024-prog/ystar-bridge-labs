@@ -12,7 +12,7 @@ These candidates were produced from allowed Markdown report classes with strict 
 
 ### mdcand-001
 
-- Source: `reports/ceo/brain_dream_diffs/dream_diff_20260429_161310_nrem.md`
+- Source: `reports/ceo/brain_dream_diffs/dream_diff_20260429_095744_nrem.md`
 - Class: `DREAM_REPORT`
 - Status: `candidate_only`
 - Forbidden next step: `direct_brain_writeback`
@@ -25,9 +25,9 @@ Snippet:
 
 ```text
 # Brain Dream Diff Report
-Timestamp: 2026-04-29T16:13:10
+Timestamp: 2026-04-29T09:57:44
 Mode: DRY-RUN (no changes applied)
-Activation log rows scanned: 2724807
+Activation log rows scanned: 2723800
 
 ## Proposed New Edges (Pattern A + B)
 | Source | Target | Proposed Weight | Co-activation Count | Pattern | Rationale |

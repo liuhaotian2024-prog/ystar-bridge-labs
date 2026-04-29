@@ -1,4 +1,9 @@
 {
   "schema_version": "v0",
-  "missing_configuration_fields": []
+  "missing_configuration_fields": [
+    "YSTAR_CONTROLLED_PAGE_READ_ALLOW_NETWORK",
+    "YSTAR_CONTROLLED_PAGE_READ_BACKEND",
+    "YSTAR_CONTROLLED_SEARCH_ALLOW_NETWORK",
+    "YSTAR_CONTROLLED_SEARCH_BACKEND"
+  ]
 }

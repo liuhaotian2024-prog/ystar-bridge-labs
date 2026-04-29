@@ -1458,29 +1458,29 @@ Not ready:
 
 - l6_13_real_controlled_external_observation_mission_sprint_complete: True
 - mode: real_controlled_external_observation_mission_sprint
-- run_classification: real_evidence_collected_with_unresolved_conflicts
+- run_classification: real_backend_activation_blocked_with_complete_activation_kit
 - selected_work_order_id: l6_10x_selected_work_order_001
-- backend_mode: tavily_search_api
-- page_read_mode: stdlib_public_http
-- network_allowed: True
-- safety_preflight_decision: pass
+- backend_mode: disabled
+- page_read_mode: disabled
+- network_allowed: False
+- safety_preflight_decision: blocked
 - fixture_proof_executed: True
-- real_observation_executed: True
+- real_observation_executed: False
 - query_count: 10
-- search_results_considered: 25
-- pages_opened: 8
-- domains_touched: 6
+- search_results_considered: 3
+- pages_opened: 3
+- domains_touched: 2
 - crawl_depth_used: 1
-- external_reads_used: 15
-- real_evidence_packets_generated: 2
+- external_reads_used: 0
+- real_evidence_packets_generated: 0
 - fixture_evidence_packets_generated: 3
 - conflicts_found: 1
 - unresolved_claims: 1
 - query_refinements_generated: 3
 - capability_gaps_resolved: 6
-- capability_gaps_remaining: 4
+- capability_gaps_remaining: 6
 - activation_kit_generated: True
-- blockers: []
+- blockers: ['controlled_public_page_read_adapter_not_configured', 'controlled_search_backend_not_configured', 'real_provider_and_stdlib_page_read_not_configured']
 - ask_user_for_url_occurred: False
 - external_side_effects_occurred: False
 - core_writeback_occurred: False
@@ -1488,7 +1488,7 @@ Not ready:
 - gov_mcp_modified: False
 - search_snippets_used_as_evidence: False
 - page_read_content_used_as_evidence: True
-- next_step: review real evidence packet before any downstream use
+- next_step: configure controlled search backend and stdlib public page-read allow flags
 - Warning: L6.13 provides a complete activation kit and fixture-proven mission evidence loop. Real public observation remains gated by explicit backend/page-read configuration and safety preflight.
 
 ## Governance Boundary

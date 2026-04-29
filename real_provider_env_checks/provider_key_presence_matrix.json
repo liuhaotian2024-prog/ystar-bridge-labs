@@ -10,7 +10,7 @@
     {
       "provider": "tavily_search_api",
       "required_env_name": "TAVILY_API_KEY",
-      "required_env_present": true,
+      "required_env_present": false,
       "secret_value_serialized": false
     },
     {

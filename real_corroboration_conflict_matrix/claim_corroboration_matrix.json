@@ -4,7 +4,7 @@
     {
       "claim_id": "l6_13_claim_001",
       "supporting_evidence_packet_ids": [
-        "l6_13_real_evidence_packet_002"
+        "l6_13_fixture_evidence_packet_001"
       ],
       "conflicting_evidence_packet_ids": [],
       "unresolved_evidence_packet_ids": [],
@@ -15,12 +15,24 @@
     },
     {
       "claim_id": "l6_13_claim_002",
+      "supporting_evidence_packet_ids": [
+        "l6_13_fixture_evidence_packet_002"
+      ],
+      "conflicting_evidence_packet_ids": [],
+      "unresolved_evidence_packet_ids": [],
+      "corroboration_status": "corroborated",
+      "conflict_status": "no_conflict",
+      "review_required": true,
+      "residual_reason": "additional real sources needed before external use"
+    },
+    {
+      "claim_id": "l6_13_claim_003",
       "supporting_evidence_packet_ids": [],
       "conflicting_evidence_packet_ids": [
-        "l6_13_real_evidence_packet_003"
+        "l6_13_fixture_evidence_packet_003"
       ],
       "unresolved_evidence_packet_ids": [
-        "l6_13_real_evidence_packet_003"
+        "l6_13_fixture_evidence_packet_003"
       ],
       "corroboration_status": "conflicted",
       "conflict_status": "conflicted",
