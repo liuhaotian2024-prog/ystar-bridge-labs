@@ -3,7 +3,7 @@
   "schema_version": "v0",
   "framework_status": "path_inventory_only",
   "current_mining_level": 0,
-  "artifacts_classified": 197,
+  "artifacts_classified": 145,
   "unsafe_artifacts_count": 119,
   "classes_seen": {
     "ACTIVE_AGENT_MARKER": 17,
@@ -12,10 +12,9 @@
     "DAEMON_STATE": 4,
     "DB_CORE": 1,
     "DB_SIDECARE": 6,
-    "FRAMEWORK_FILE": 15,
     "LOG_RUNTIME": 30,
     "PYCACHE": 45,
-    "UNKNOWN_OR_NON_RUNTIME": 63,
+    "UNKNOWN_OR_NON_RUNTIME": 26,
     "UNKNOWN_RUNTIME_ARTIFACT": 10
   },
   "generated_manifest_ref": "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",

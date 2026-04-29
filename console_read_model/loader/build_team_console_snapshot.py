@@ -246,6 +246,18 @@ CURATED_SOURCES = [
     "pilot_approval_non_persistence_receipts/no_durable_real_approval_record_receipt.json",
     "l6_pilot_approval_strategic_residual_loop/l6_6_strategic_residual_delta.json",
     "l6_pilot_approval_readiness/l6_6_readiness_assessment.json",
+    "l6_integrated_approval_record_and_pilot_readiness_sandbox/l6_7_summary.json",
+    "sandbox_approval_record_lifecycle/sandbox_approval_record_index.json",
+    "pilot_run_package_assembler/pilot_run_package_index.json",
+    "pilot_operator_readiness_package/operator_readiness_checklist.json",
+    "pilot_runtime_isolation_readiness/runtime_isolation_readiness_packet.json",
+    "pilot_evidence_capture_readiness/evidence_capture_packet_template_final.json",
+    "pilot_post_observation_review_readiness/post_observation_review_packet_template.json",
+    "manual_evidence_import_readiness/manual_evidence_import_readiness_contract.json",
+    "pilot_integrated_decision_gate/integrated_candidate_decision_matrix.json",
+    "pilot_integrated_no_action_receipts/no_real_approval_granted_receipt.json",
+    "l6_integrated_pilot_readiness_strategic_residual_loop/l6_7_strategic_residual_delta.json",
+    "l6_integrated_pilot_readiness_report/l6_7_readiness_assessment.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -4855,6 +4867,212 @@ def build_l6_pilot_approval_summary(
     }
 
 
+def build_l6_integrated_pilot_readiness_summary(
+    milestone_summary: dict[str, Any] | None,
+    sandbox_record_index: dict[str, Any] | None,
+    pilot_run_package_index: dict[str, Any] | None,
+    operator_readiness: dict[str, Any] | None,
+    runtime_readiness: dict[str, Any] | None,
+    evidence_capture: dict[str, Any] | None,
+    post_review: dict[str, Any] | None,
+    manual_import: dict[str, Any] | None,
+    decision_matrix: dict[str, Any] | None,
+    no_action_receipt: dict[str, Any] | None,
+    residual_delta: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.l6_integrated_pilot_readiness_summary",
+            "schema_version": "v0",
+            "l6_7_integrated_approval_record_and_pilot_readiness_sandbox_defined": False,
+            "ready_for_l6_8_user_mediated_manual_evidence_import_pilot": False,
+            "ready_for_actual_network_observation_now": False,
+            "warning": "L6.7 integrated approval record and pilot readiness sandbox has not been generated yet.",
+        }
+
+    milestone_summary = milestone_summary or {}
+    sandbox_record_index = sandbox_record_index or {}
+    pilot_run_package_index = pilot_run_package_index or {}
+    operator_readiness = operator_readiness or {}
+    runtime_readiness = runtime_readiness or {}
+    evidence_capture = evidence_capture or {}
+    post_review = post_review or {}
+    manual_import = manual_import or {}
+    decision_matrix = decision_matrix or {}
+    no_action_receipt = no_action_receipt or {}
+    residual_delta = residual_delta or {}
+
+    def safety_flag(field: str) -> Any:
+        return readiness_summary.get(field, readiness_summary.get("safety_flags", {}).get(field))
+
+    def l6_7_flag(field: str) -> Any:
+        return readiness_summary.get(field, readiness_summary.get("l6_7_flags", {}).get(field))
+
+    return {
+        "schema_name": "ystar.console_read_model.generated.l6_integrated_pilot_readiness_summary",
+        "schema_version": "v0",
+        "milestone_id": milestone_summary.get("milestone_id", "L6.7"),
+        "milestone_name": milestone_summary.get(
+            "milestone_name", "Integrated Approval Record & Pilot Run Readiness Sandbox v0"
+        ),
+        "l6_7_integrated_approval_record_and_pilot_readiness_sandbox_defined": milestone_summary.get(
+            "l6_7_integrated_approval_record_and_pilot_readiness_sandbox_defined",
+            readiness_summary.get("l6_7_integrated_approval_record_and_pilot_readiness_sandbox_complete"),
+        ),
+        "integrated_sandbox_only": milestone_summary.get("integrated_sandbox_only", True),
+        "approval_record_sandbox_only": milestone_summary.get(
+            "approval_record_sandbox_only", True
+        ),
+        "pilot_run_readiness_only": milestone_summary.get("pilot_run_readiness_only", True),
+        "sandbox_approval_record_created": milestone_summary.get(
+            "sandbox_approval_record_created", True
+        ),
+        "sandbox_approval_record_count": milestone_summary.get(
+            "sandbox_approval_record_count", sandbox_record_index.get("record_count")
+        ),
+        "pilot_run_package_count": milestone_summary.get(
+            "pilot_run_package_count", pilot_run_package_index.get("package_count")
+        ),
+        "operator_readiness_package_created": milestone_summary.get(
+            "operator_readiness_package_created", bool(operator_readiness)
+        ),
+        "runtime_isolation_readiness_created": milestone_summary.get(
+            "runtime_isolation_readiness_created", bool(runtime_readiness)
+        ),
+        "evidence_capture_readiness_created": milestone_summary.get(
+            "evidence_capture_readiness_created", bool(evidence_capture)
+        ),
+        "post_observation_review_readiness_created": milestone_summary.get(
+            "post_observation_review_readiness_created", bool(post_review)
+        ),
+        "manual_evidence_import_readiness_created": milestone_summary.get(
+            "manual_evidence_import_readiness_created", bool(manual_import)
+        ),
+        "integrated_decision_gate_created": milestone_summary.get(
+            "integrated_decision_gate_created", bool(decision_matrix)
+        ),
+        "no_action_receipts_created": milestone_summary.get(
+            "no_action_receipts_created", bool(no_action_receipt)
+        ),
+        "strategic_residual_loop_created": milestone_summary.get(
+            "strategic_residual_loop_created", bool(residual_delta)
+        ),
+        "manual_evidence_import_future_candidate_allowed": milestone_summary.get(
+            "manual_evidence_import_future_candidate_allowed",
+            l6_7_flag("l6_7_manual_evidence_import_future_candidate_allowed"),
+        ),
+        "durable_real_approval_record_created": milestone_summary.get(
+            "durable_real_approval_record_created", False
+        ),
+        "real_approval_granted": milestone_summary.get("real_approval_granted", False),
+        "real_external_observation_authorized": milestone_summary.get(
+            "real_external_observation_authorized", False
+        ),
+        "real_pilot_execution_authorized": milestone_summary.get(
+            "real_pilot_execution_authorized", False
+        ),
+        "network_authorized": milestone_summary.get("network_authorized", False),
+        "api_authorized": milestone_summary.get("api_authorized", False),
+        "scraping_authorized": milestone_summary.get("scraping_authorized", False),
+        "browser_fetch_authorized": milestone_summary.get("browser_fetch_authorized", False),
+        "search_authorized": milestone_summary.get("search_authorized", False),
+        "publication_authorized": milestone_summary.get("publication_authorized", False),
+        "outreach_authorized": milestone_summary.get("outreach_authorized", False),
+        "payment_authorized": milestone_summary.get("payment_authorized", False),
+        "revenue_execution_authorized": milestone_summary.get(
+            "revenue_execution_authorized", False
+        ),
+        "mcp_execution_authorized": milestone_summary.get("mcp_execution_authorized", False),
+        "live_behavior_authorized": milestone_summary.get("live_behavior_authorized", False),
+        "cieu_db_write_authorized": milestone_summary.get("cieu_db_write_authorized", False),
+        "canonical_update_authorized": milestone_summary.get(
+            "canonical_update_authorized", False
+        ),
+        "brain_writeback_authorized": milestone_summary.get("brain_writeback_authorized", False),
+        "memory_ingestion_authorized": milestone_summary.get("memory_ingestion_authorized", False),
+        "direct_y_star_mutation_authorized": milestone_summary.get(
+            "direct_y_star_mutation_authorized", False
+        ),
+        "network_enabled": safety_flag("network_enabled"),
+        "api_enabled": safety_flag("api_enabled"),
+        "scraping_enabled": safety_flag("scraping_enabled"),
+        "browser_fetch_enabled": safety_flag("browser_fetch_enabled"),
+        "search_enabled": safety_flag("search_enabled"),
+        "external_action_enabled": safety_flag("external_action_enabled"),
+        "publication_enabled": safety_flag("publication_enabled"),
+        "outreach_enabled": safety_flag("outreach_enabled"),
+        "payment_enabled": safety_flag("payment_enabled"),
+        "revenue_execution_enabled": safety_flag("revenue_execution_enabled"),
+        "mcp_tool_execution_enabled": safety_flag("mcp_tool_execution_enabled"),
+        "live_execution_enabled": safety_flag("live_execution_enabled"),
+        "cieu_db_write_enabled": safety_flag("cieu_db_write_enabled"),
+        "brain_writeback_enabled": safety_flag("brain_writeback_enabled"),
+        "memory_ingestion_enabled": safety_flag("memory_ingestion_enabled"),
+        "real_canonical_update_application_enabled": safety_flag(
+            "real_canonical_update_application_enabled"
+        ),
+        "real_y_star_direct_mutation_enabled": safety_flag("real_y_star_direct_mutation_enabled"),
+        "durable_approval_persistence_enabled": safety_flag(
+            "durable_approval_persistence_enabled"
+        ),
+        "semantic_truth_scoring_enabled": safety_flag("semantic_truth_scoring_enabled"),
+        "raw_runtime_artifact_reading_enabled": safety_flag(
+            "raw_runtime_artifact_reading_enabled"
+        ),
+        "l6_7_integrated_sandbox_only": l6_7_flag("l6_7_integrated_sandbox_only"),
+        "l6_7_approval_record_sandbox_only": l6_7_flag(
+            "l6_7_approval_record_sandbox_only"
+        ),
+        "l6_7_pilot_run_readiness_only": l6_7_flag("l6_7_pilot_run_readiness_only"),
+        "l6_7_sandbox_approval_record_created": l6_7_flag(
+            "l6_7_sandbox_approval_record_created"
+        ),
+        "l6_7_real_approval_granted": l6_7_flag("l6_7_real_approval_granted"),
+        "l6_7_durable_real_approval_record_created": l6_7_flag(
+            "l6_7_durable_real_approval_record_created"
+        ),
+        "ready_for_l6_8_user_mediated_manual_evidence_import_pilot": readiness_summary.get(
+            "ready_for_l6_8_user_mediated_manual_evidence_import_pilot"
+        ),
+        "ready_for_actual_network_observation_now": readiness_summary.get(
+            "ready_for_actual_network_observation_now"
+        ),
+        "ready_for_real_approval_now": readiness_summary.get("ready_for_real_approval_now"),
+        "ready_for_durable_real_approval_persistence_now": readiness_summary.get(
+            "ready_for_durable_real_approval_persistence_now"
+        ),
+        "ready_for_publication": readiness_summary.get("ready_for_publication"),
+        "ready_for_outreach": readiness_summary.get("ready_for_outreach"),
+        "ready_for_payment": readiness_summary.get("ready_for_payment"),
+        "ready_for_revenue_execution": readiness_summary.get("ready_for_revenue_execution"),
+        "ready_for_mcp_execution": readiness_summary.get("ready_for_mcp_execution"),
+        "ready_for_canonical_update": readiness_summary.get("ready_for_canonical_update"),
+        "ready_for_brain_memory_writeback": readiness_summary.get(
+            "ready_for_brain_memory_writeback"
+        ),
+        "next_recommended_milestone": readiness_summary.get("next_recommended_milestone"),
+        "generated_milestone_summary": "l6_integrated_approval_record_and_pilot_readiness_sandbox/l6_7_summary.json",
+        "generated_sandbox_records": "sandbox_approval_record_lifecycle/sandbox_approval_record_index.json",
+        "generated_pilot_run_packages": "pilot_run_package_assembler/pilot_run_package_index.json",
+        "generated_operator_readiness": "pilot_operator_readiness_package/operator_readiness_checklist.json",
+        "generated_runtime_readiness": "pilot_runtime_isolation_readiness/runtime_isolation_readiness_packet.json",
+        "generated_evidence_capture": "pilot_evidence_capture_readiness/evidence_capture_packet_template_final.json",
+        "generated_manual_import_readiness": "manual_evidence_import_readiness/manual_evidence_import_readiness_contract.json",
+        "generated_decision_gate": "pilot_integrated_decision_gate/integrated_candidate_decision_matrix.json",
+        "generated_no_action_receipt": "pilot_integrated_no_action_receipts/no_real_approval_granted_receipt.json",
+        "generated_readiness": "l6_integrated_pilot_readiness_report/l6_7_readiness_assessment.json",
+        "warning": (
+            "L6.7 is integrated-sandbox-only. Sandbox approval records and pilot "
+            "run packages are readiness-only. Real approval, durable approval "
+            "persistence, real observation, URL fetch, search, scraping, API "
+            "calls, browser fetch, publication, outreach, payment, revenue "
+            "execution, MCP, live behavior, CIEU DB writes, canonical mutation, "
+            "writeback, and direct Y* mutation remain blocked."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -5757,6 +5975,54 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_pilot_approval_readiness/l6_6_readiness_assessment.json",
         files_read,
     )
+    l6_integrated_pilot_readiness_milestone_summary = load_optional_json(
+        "l6_integrated_approval_record_and_pilot_readiness_sandbox/l6_7_summary.json",
+        files_read,
+    )
+    l6_integrated_pilot_readiness_sandbox_record_index = load_optional_json(
+        "sandbox_approval_record_lifecycle/sandbox_approval_record_index.json",
+        files_read,
+    )
+    l6_integrated_pilot_readiness_run_package_index = load_optional_json(
+        "pilot_run_package_assembler/pilot_run_package_index.json",
+        files_read,
+    )
+    l6_integrated_pilot_operator_readiness = load_optional_json(
+        "pilot_operator_readiness_package/operator_readiness_checklist.json",
+        files_read,
+    )
+    l6_integrated_pilot_runtime_readiness = load_optional_json(
+        "pilot_runtime_isolation_readiness/runtime_isolation_readiness_packet.json",
+        files_read,
+    )
+    l6_integrated_pilot_evidence_capture = load_optional_json(
+        "pilot_evidence_capture_readiness/evidence_capture_packet_template_final.json",
+        files_read,
+    )
+    l6_integrated_pilot_post_review = load_optional_json(
+        "pilot_post_observation_review_readiness/post_observation_review_packet_template.json",
+        files_read,
+    )
+    l6_integrated_manual_import_readiness = load_optional_json(
+        "manual_evidence_import_readiness/manual_evidence_import_readiness_contract.json",
+        files_read,
+    )
+    l6_integrated_pilot_decision_matrix = load_optional_json(
+        "pilot_integrated_decision_gate/integrated_candidate_decision_matrix.json",
+        files_read,
+    )
+    l6_integrated_pilot_no_action_receipt = load_optional_json(
+        "pilot_integrated_no_action_receipts/no_real_approval_granted_receipt.json",
+        files_read,
+    )
+    l6_integrated_pilot_residual_delta = load_optional_json(
+        "l6_integrated_pilot_readiness_strategic_residual_loop/l6_7_strategic_residual_delta.json",
+        files_read,
+    )
+    l6_integrated_pilot_readiness_summary = load_optional_json(
+        "l6_integrated_pilot_readiness_report/l6_7_readiness_assessment.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -6018,6 +6284,20 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         l6_pilot_approval_residual_delta,
         l6_pilot_approval_readiness_summary,
     )
+    l6_integrated_pilot_readiness_summary = build_l6_integrated_pilot_readiness_summary(
+        l6_integrated_pilot_readiness_milestone_summary,
+        l6_integrated_pilot_readiness_sandbox_record_index,
+        l6_integrated_pilot_readiness_run_package_index,
+        l6_integrated_pilot_operator_readiness,
+        l6_integrated_pilot_runtime_readiness,
+        l6_integrated_pilot_evidence_capture,
+        l6_integrated_pilot_post_review,
+        l6_integrated_manual_import_readiness,
+        l6_integrated_pilot_decision_matrix,
+        l6_integrated_pilot_no_action_receipt,
+        l6_integrated_pilot_residual_delta,
+        l6_integrated_pilot_readiness_summary,
+    )
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -6188,6 +6468,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_real_observation_preflight_summary": l6_real_observation_preflight_summary,
         "l6_pilot_design_summary": l6_pilot_design_summary,
         "l6_pilot_approval_summary": l6_pilot_approval_summary,
+        "l6_integrated_pilot_readiness_summary": l6_integrated_pilot_readiness_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -6427,6 +6708,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/l6_real_observation_preflight_summary.json",
             "console_read_model/generated/l6_pilot_design_summary.json",
             "console_read_model/generated/l6_pilot_approval_summary.json",
+            "console_read_model/generated/l6_integrated_pilot_readiness_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -6574,6 +6856,16 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "publication, outreach, payment, revenue, MCP, live behavior, CIEU DB\n"
         "writes, canonical mutation, writeback, and direct Y* mutation remain\n"
         "blocked.\n\n"
+        "`l6_integrated_pilot_readiness_summary.json` is derived from the L6.7\n"
+        "integrated approval record and pilot run readiness sandbox. It confirms\n"
+        "sandbox approval records, lifecycle replay, pilot run packages, operator\n"
+        "readiness, runtime isolation readiness, evidence capture readiness,\n"
+        "post-observation review readiness, manual evidence import readiness,\n"
+        "integrated decisions, no-action receipts, and readiness artifacts while\n"
+        "real approval, durable approval persistence, real observation, URL fetch,\n"
+        "search, scraping, API calls, browser fetch, publication, outreach,\n"
+        "payment, revenue, MCP, live behavior, CIEU DB writes, canonical mutation,\n"
+        "writeback, and direct Y* mutation remain blocked.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -6625,6 +6917,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/l6_real_observation_preflight_summary.json", l6_real_observation_preflight_summary, generated_files)
     write_json("console_read_model/generated/l6_pilot_design_summary.json", l6_pilot_design_summary, generated_files)
     write_json("console_read_model/generated/l6_pilot_approval_summary.json", l6_pilot_approval_summary, generated_files)
+    write_json("console_read_model/generated/l6_integrated_pilot_readiness_summary.json", l6_integrated_pilot_readiness_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -6717,6 +7010,9 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     )
     l6_pilot_design = snapshot.get("l6_pilot_design_summary", {})
     l6_pilot_approval = snapshot.get("l6_pilot_approval_summary", {})
+    l6_integrated_pilot_readiness = snapshot.get(
+        "l6_integrated_pilot_readiness_summary", {}
+    )
     lines.extend(
         [
             "",
@@ -7858,6 +8154,45 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- ready_for_durable_approval_persistence_now: {l6_pilot_approval.get('ready_for_durable_approval_persistence_now')}",
             f"- next_recommended_milestone: {l6_pilot_approval.get('next_recommended_milestone')}",
             f"- Warning: {l6_pilot_approval.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## L6.7 Integrated Approval Record And Pilot Readiness Sandbox",
+            "",
+            f"- l6_7_integrated_approval_record_and_pilot_readiness_sandbox_defined: {l6_integrated_pilot_readiness.get('l6_7_integrated_approval_record_and_pilot_readiness_sandbox_defined')}",
+            f"- integrated_sandbox_only: {l6_integrated_pilot_readiness.get('integrated_sandbox_only')}",
+            f"- approval_record_sandbox_only: {l6_integrated_pilot_readiness.get('approval_record_sandbox_only')}",
+            f"- pilot_run_readiness_only: {l6_integrated_pilot_readiness.get('pilot_run_readiness_only')}",
+            f"- sandbox_approval_record_created: {l6_integrated_pilot_readiness.get('sandbox_approval_record_created')}",
+            f"- sandbox_approval_record_count: {l6_integrated_pilot_readiness.get('sandbox_approval_record_count')}",
+            f"- pilot_run_package_count: {l6_integrated_pilot_readiness.get('pilot_run_package_count')}",
+            f"- operator_readiness_package_created: {l6_integrated_pilot_readiness.get('operator_readiness_package_created')}",
+            f"- runtime_isolation_readiness_created: {l6_integrated_pilot_readiness.get('runtime_isolation_readiness_created')}",
+            f"- evidence_capture_readiness_created: {l6_integrated_pilot_readiness.get('evidence_capture_readiness_created')}",
+            f"- post_observation_review_readiness_created: {l6_integrated_pilot_readiness.get('post_observation_review_readiness_created')}",
+            f"- manual_evidence_import_readiness_created: {l6_integrated_pilot_readiness.get('manual_evidence_import_readiness_created')}",
+            f"- integrated_decision_gate_created: {l6_integrated_pilot_readiness.get('integrated_decision_gate_created')}",
+            f"- no_action_receipts_created: {l6_integrated_pilot_readiness.get('no_action_receipts_created')}",
+            f"- real_approval_granted: {l6_integrated_pilot_readiness.get('real_approval_granted')}",
+            f"- durable_real_approval_record_created: {l6_integrated_pilot_readiness.get('durable_real_approval_record_created')}",
+            f"- real_external_observation_authorized: {l6_integrated_pilot_readiness.get('real_external_observation_authorized')}",
+            f"- real_pilot_execution_authorized: {l6_integrated_pilot_readiness.get('real_pilot_execution_authorized')}",
+            f"- network_enabled: {l6_integrated_pilot_readiness.get('network_enabled')}",
+            f"- search_enabled: {l6_integrated_pilot_readiness.get('search_enabled')}",
+            f"- scraping_enabled: {l6_integrated_pilot_readiness.get('scraping_enabled')}",
+            f"- browser_fetch_enabled: {l6_integrated_pilot_readiness.get('browser_fetch_enabled')}",
+            f"- publication_enabled: {l6_integrated_pilot_readiness.get('publication_enabled')}",
+            f"- outreach_enabled: {l6_integrated_pilot_readiness.get('outreach_enabled')}",
+            f"- payment_enabled: {l6_integrated_pilot_readiness.get('payment_enabled')}",
+            f"- revenue_execution_enabled: {l6_integrated_pilot_readiness.get('revenue_execution_enabled')}",
+            f"- ready_for_l6_8_user_mediated_manual_evidence_import_pilot: {l6_integrated_pilot_readiness.get('ready_for_l6_8_user_mediated_manual_evidence_import_pilot')}",
+            f"- ready_for_actual_network_observation_now: {l6_integrated_pilot_readiness.get('ready_for_actual_network_observation_now')}",
+            f"- ready_for_real_approval_now: {l6_integrated_pilot_readiness.get('ready_for_real_approval_now')}",
+            f"- ready_for_durable_real_approval_persistence_now: {l6_integrated_pilot_readiness.get('ready_for_durable_real_approval_persistence_now')}",
+            f"- next_recommended_milestone: {l6_integrated_pilot_readiness.get('next_recommended_milestone')}",
+            f"- Warning: {l6_integrated_pilot_readiness.get('warning')}",
         ]
     )
     lines.extend(

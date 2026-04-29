@@ -5,7 +5,7 @@ This report summarizes bounded archaeology for old field functional, field align
 ## Summary
 
 - Repos scanned: 4
-- Assets scanned: 5182
+- Assets scanned: 5273
 - Field functional assets found: 200
 - Old field functional work found: True
 - Ready for L5 projection harness: True
