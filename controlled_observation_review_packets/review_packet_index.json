@@ -1,0 +1,21 @@
+{
+  "schema_version": "v0",
+  "review_packet_count": 3,
+  "review_packets": [
+    {
+      "review_packet_id": "l6_3_review_packet_001",
+      "path": "controlled_observation_review_packets/review_packet_001.json",
+      "current_decision": "review_pending"
+    },
+    {
+      "review_packet_id": "l6_3_review_packet_002",
+      "path": "controlled_observation_review_packets/review_packet_002.json",
+      "current_decision": "review_pending"
+    },
+    {
+      "review_packet_id": "l6_3_review_packet_003",
+      "path": "controlled_observation_review_packets/review_packet_003.json",
+      "current_decision": "review_pending"
+    }
+  ]
+}

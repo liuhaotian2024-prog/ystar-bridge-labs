@@ -1,0 +1,50 @@
+{
+  "schema_version": "v0",
+  "evidence_gaps": [
+    {
+      "linked_fixture_id": "l6_3_static_manual_fixture_001",
+      "gaps": [
+        "real source locator",
+        "real source date",
+        "source author or authority",
+        "conflict check against other sources",
+        "current market need",
+        "customer willingness to pay",
+        "competitive position",
+        "compliance certification"
+      ],
+      "real_observation_required_before_claim_use": true,
+      "external_use_authorized": false
+    },
+    {
+      "linked_fixture_id": "l6_3_static_manual_fixture_002",
+      "gaps": [
+        "real source locator",
+        "real source date",
+        "source author or authority",
+        "conflict check against other sources",
+        "current market need",
+        "customer willingness to pay",
+        "competitive position",
+        "compliance certification"
+      ],
+      "real_observation_required_before_claim_use": true,
+      "external_use_authorized": false
+    },
+    {
+      "linked_fixture_id": "l6_3_static_manual_fixture_003",
+      "gaps": [
+        "real source locator",
+        "real source date",
+        "source author or authority",
+        "conflict check against other sources",
+        "current market need",
+        "customer willingness to pay",
+        "competitive position",
+        "compliance certification"
+      ],
+      "real_observation_required_before_claim_use": true,
+      "external_use_authorized": false
+    }
+  ]
+}

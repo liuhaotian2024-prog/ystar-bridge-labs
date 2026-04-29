@@ -1,0 +1,55 @@
+{
+  "schema_version": "v0",
+  "validation_mode": "structural_only",
+  "criteria": [
+    {
+      "criterion": "source trace exists",
+      "authority_mode": "structural_presence_check"
+    },
+    {
+      "criterion": "source type declared",
+      "authority_mode": "structural_presence_check"
+    },
+    {
+      "criterion": "fixture mode declared",
+      "authority_mode": "structural_presence_check"
+    },
+    {
+      "criterion": "fetched_from_network is false",
+      "authority_mode": "structural_presence_check"
+    },
+    {
+      "criterion": "current_fact_claimed is false unless supported by user-provided evidence",
+      "authority_mode": "structural_presence_check"
+    },
+    {
+      "criterion": "freshness present or date_missing marker present",
+      "authority_mode": "structural_presence_check"
+    },
+    {
+      "criterion": "claim boundary present",
+      "authority_mode": "structural_presence_check"
+    },
+    {
+      "criterion": "missing context listed",
+      "authority_mode": "structural_presence_check"
+    },
+    {
+      "criterion": "unsupported claims listed",
+      "authority_mode": "structural_presence_check"
+    },
+    {
+      "criterion": "external action blocked",
+      "authority_mode": "structural_presence_check"
+    },
+    {
+      "criterion": "review required",
+      "authority_mode": "structural_presence_check"
+    },
+    {
+      "criterion": "no semantic scoring authority",
+      "authority_mode": "structural_presence_check"
+    }
+  ],
+  "semantic_scoring_authority_used": false
+}

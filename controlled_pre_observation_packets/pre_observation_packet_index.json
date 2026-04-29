@@ -1,0 +1,27 @@
+{
+  "schema_version": "v0",
+  "packet_count": 3,
+  "packets": [
+    {
+      "packet_id": "l6_3_pre_observation_packet_001",
+      "path": "controlled_pre_observation_packets/packet_001.json",
+      "linked_l6_1_artifact_case_id": "case_001",
+      "real_observation_authorized": false,
+      "sandbox_fixture_mode": true
+    },
+    {
+      "packet_id": "l6_3_pre_observation_packet_002",
+      "path": "controlled_pre_observation_packets/packet_002.json",
+      "linked_l6_1_artifact_case_id": "case_002",
+      "real_observation_authorized": false,
+      "sandbox_fixture_mode": true
+    },
+    {
+      "packet_id": "l6_3_pre_observation_packet_003",
+      "path": "controlled_pre_observation_packets/packet_003.json",
+      "linked_l6_1_artifact_case_id": "case_003",
+      "real_observation_authorized": false,
+      "sandbox_fixture_mode": true
+    }
+  ]
+}

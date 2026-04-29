@@ -1,0 +1,7 @@
+{
+  "schema_version": "v0",
+  "recommended_next_milestone": "L6.4 Real Read-Only External Observation Preflight v0",
+  "recommendation": "Proceed only to real read-only external observation preflight design.",
+  "do_not_implement_now": "L6.4",
+  "real_external_observation_authorized_now": false
+}

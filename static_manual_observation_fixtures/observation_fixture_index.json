@@ -1,0 +1,30 @@
+{
+  "schema_version": "v0",
+  "fixture_count": 3,
+  "fixtures": [
+    {
+      "fixture_id": "l6_3_static_manual_fixture_001",
+      "path": "static_manual_observation_fixtures/fixture_001.json",
+      "linked_packet_id": "l6_3_pre_observation_packet_001",
+      "fixture_mode": "static_manual_import_sandbox",
+      "fetched_from_network": false,
+      "current_fact_claimed": false
+    },
+    {
+      "fixture_id": "l6_3_static_manual_fixture_002",
+      "path": "static_manual_observation_fixtures/fixture_002.json",
+      "linked_packet_id": "l6_3_pre_observation_packet_002",
+      "fixture_mode": "static_manual_import_sandbox",
+      "fetched_from_network": false,
+      "current_fact_claimed": false
+    },
+    {
+      "fixture_id": "l6_3_static_manual_fixture_003",
+      "path": "static_manual_observation_fixtures/fixture_003.json",
+      "linked_packet_id": "l6_3_pre_observation_packet_003",
+      "fixture_mode": "static_manual_import_sandbox",
+      "fetched_from_network": false,
+      "current_fact_claimed": false
+    }
+  ]
+}

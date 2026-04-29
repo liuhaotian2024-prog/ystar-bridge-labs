@@ -2006,6 +2006,51 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "l6_external_observation_boundary_readiness/l6_2_readiness_assessment.json"],
     ),
     Check(
+        "Compile L6.3 controlled external observation sandbox builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "l6_controlled_external_observation_sandbox/tools/build_l6_controlled_external_observation_sandbox.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: l6_controlled_observation_sandbox_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_controlled_observation_sandbox_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_3_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_controlled_external_observation_sandbox/l6_3_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: selected_observation_cases.json",
+        ["python3", "-m", "json.tool", "l6_observation_case_selector/selected_observation_cases.json"],
+    ),
+    Check(
+        "Validate JSON: pre_observation_packet_index.json",
+        ["python3", "-m", "json.tool", "controlled_pre_observation_packets/pre_observation_packet_index.json"],
+    ),
+    Check(
+        "Validate JSON: packet_permission_decisions.json",
+        ["python3", "-m", "json.tool", "sandbox_observation_permission_replay/packet_permission_decisions.json"],
+    ),
+    Check(
+        "Validate JSON: observation_fixture_index.json",
+        ["python3", "-m", "json.tool", "static_manual_observation_fixtures/observation_fixture_index.json"],
+    ),
+    Check(
+        "Validate JSON: fixture_validation_results.json",
+        ["python3", "-m", "json.tool", "observation_evidence_validation_sandbox/fixture_validation_results.json"],
+    ),
+    Check(
+        "Validate JSON: refinement_candidate_index.json",
+        ["python3", "-m", "json.tool", "observation_to_artifact_refinement_candidates/refinement_candidate_index.json"],
+    ),
+    Check(
+        "Validate JSON: l6_3_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "l6_controlled_observation_sandbox_readiness/l6_3_readiness_assessment.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -2248,6 +2293,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: governed-external-observation-boundary",
         ["python3", "console_read_model/cli/team_console.py", "governed-external-observation-boundary"],
+    ),
+    Check(
+        "CLI smoke: controlled-external-observation-sandbox",
+        ["python3", "console_read_model/cli/team_console.py", "controlled-external-observation-sandbox"],
     ),
     Check(
         "CLI smoke: sources",

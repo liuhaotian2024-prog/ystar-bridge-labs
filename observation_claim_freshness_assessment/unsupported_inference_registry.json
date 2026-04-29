@@ -1,0 +1,35 @@
+{
+  "schema_version": "v0",
+  "unsupported_inference_registry": [
+    {
+      "linked_fixture_id": "l6_3_static_manual_fixture_001",
+      "unsupported_inferences": [
+        "current market need",
+        "customer willingness to pay",
+        "competitive position",
+        "compliance certification"
+      ],
+      "external_use_authorized": false
+    },
+    {
+      "linked_fixture_id": "l6_3_static_manual_fixture_002",
+      "unsupported_inferences": [
+        "current market need",
+        "customer willingness to pay",
+        "competitive position",
+        "compliance certification"
+      ],
+      "external_use_authorized": false
+    },
+    {
+      "linked_fixture_id": "l6_3_static_manual_fixture_003",
+      "unsupported_inferences": [
+        "current market need",
+        "customer willingness to pay",
+        "competitive position",
+        "compliance certification"
+      ],
+      "external_use_authorized": false
+    }
+  ]
+}

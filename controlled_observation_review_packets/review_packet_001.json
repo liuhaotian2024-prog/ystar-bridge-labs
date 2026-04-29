@@ -1,0 +1,58 @@
+{
+  "review_packet_id": "l6_3_review_packet_001",
+  "linked_packet_id": "l6_3_pre_observation_packet_001",
+  "linked_fixture_id": "l6_3_static_manual_fixture_001",
+  "linked_refinement_candidate_id": "l6_3_refinement_candidate_001",
+  "review_questions": [
+    "Does the packet preserve the no-action guarantee?",
+    "Does the fixture clearly disclose that it is not current external data?",
+    "Are unsupported claims marked?",
+    "Would real observation require a future approval boundary?"
+  ],
+  "evidence_to_check": [
+    "recipient archetype clarification placeholder",
+    "acceptance criteria clarification placeholder",
+    "claim boundary refinement placeholder"
+  ],
+  "claim_boundaries_to_check": [
+    "may be used only to exercise structural validators",
+    "must not be cited as real external evidence",
+    "must not be used for publication, outreach, payment, or revenue execution"
+  ],
+  "missing_evidence": [
+    "real source locator",
+    "real source date",
+    "source author or authority",
+    "conflict check against other sources"
+  ],
+  "unsupported_claims": [
+    "current market need",
+    "customer willingness to pay",
+    "competitive position",
+    "compliance certification"
+  ],
+  "risk_flags": [
+    "static_fixture_only",
+    "date_missing",
+    "external_use_blocked",
+    "real_observation_requires_future_preflight"
+  ],
+  "approval_preconditions_for_real_observation": [
+    "L6.4 Real Read-Only External Observation Preflight v0",
+    "reviewed packet",
+    "explicit read-only observation authorization"
+  ],
+  "approval_preconditions_for_externalization": [
+    "future publication/outreach/payment boundary",
+    "claim review",
+    "privacy/IP review"
+  ],
+  "approval_preconditions_for_artifact_update": [
+    "future governed update review",
+    "approved refinement candidate",
+    "canonical update boundary if canonical state changes"
+  ],
+  "current_decision": "review_pending",
+  "approved": false,
+  "applied": false
+}

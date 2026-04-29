@@ -1,0 +1,131 @@
+{
+  "schema_version": "v0",
+  "case_count": 3,
+  "cases": [
+    {
+      "case_id": "case_001",
+      "source_hypothesis_id": "hypothesis-governance-audit-artifact",
+      "artifact_kind": "non_public_governance_assurance_brief",
+      "recipient_archetype": "governance-sensitive organizations",
+      "value_surface": "governance_assurance_value",
+      "missing_evidence": [
+        "external recipient validation",
+        "market demand evidence",
+        "payer acceptance evidence",
+        "publication performance evidence"
+      ],
+      "claim_boundaries": [
+        "may describe internal artifact lineage",
+        "may describe hypothesized value surface",
+        "must not claim market demand",
+        "must not claim customer acceptance",
+        "must not claim compliance certification",
+        "must not imply production readiness",
+        "must not present as public marketing copy"
+      ],
+      "externalization_status": "blocked"
+    },
+    {
+      "case_id": "case_002",
+      "source_hypothesis_id": "hypothesis-mcp-assurance-artifact",
+      "artifact_kind": "non_public_tool_assurance_checklist",
+      "recipient_archetype": "tool/platform teams",
+      "value_surface": "tooling_value",
+      "missing_evidence": [
+        "external recipient validation",
+        "market demand evidence",
+        "payer acceptance evidence",
+        "publication performance evidence"
+      ],
+      "claim_boundaries": [
+        "may describe internal artifact lineage",
+        "may describe hypothesized value surface",
+        "must not claim market demand",
+        "must not claim customer acceptance",
+        "must not claim compliance certification",
+        "must not imply production readiness",
+        "must not present as public marketing copy"
+      ],
+      "externalization_status": "blocked"
+    },
+    {
+      "case_id": "case_003",
+      "source_hypothesis_id": "hypothesis-y-star-methodology-guide",
+      "artifact_kind": "non_public_methodology_artifact",
+      "recipient_archetype": "builders",
+      "value_surface": "methodology_value",
+      "missing_evidence": [
+        "external recipient validation",
+        "market demand evidence",
+        "payer acceptance evidence",
+        "publication performance evidence"
+      ],
+      "claim_boundaries": [
+        "may describe internal artifact lineage",
+        "may describe hypothesized value surface",
+        "must not claim market demand",
+        "must not claim customer acceptance",
+        "must not claim compliance certification",
+        "must not imply production readiness",
+        "must not present as public marketing copy"
+      ],
+      "externalization_status": "blocked"
+    }
+  ],
+  "safety_flags": {
+    "live_execution_enabled": false,
+    "behavior_execution_enabled": false,
+    "external_action_enabled": false,
+    "external_observation_execution_enabled": false,
+    "network_enabled": false,
+    "api_enabled": false,
+    "scraping_enabled": false,
+    "browser_fetch_enabled": false,
+    "scheduler_enabled": false,
+    "daemon_enabled": false,
+    "mcp_server_execution_enabled": false,
+    "mcp_tool_execution_enabled": false,
+    "cieu_persistence_enabled": false,
+    "durable_approval_persistence_enabled": false,
+    "real_approval_record_write_enabled": false,
+    "brain_writeback_enabled": false,
+    "memory_ingestion_enabled": false,
+    "strategy_mutation_enabled": false,
+    "candidate_auto_approval_enabled": false,
+    "real_candidate_approval_enabled": false,
+    "real_canonical_policy_mutation_enabled": false,
+    "real_canonical_update_application_enabled": false,
+    "real_release_execution_enabled": false,
+    "real_y_star_direct_mutation_enabled": false,
+    "y_star_gov_modification_enabled": false,
+    "gov_mcp_modification_enabled": false,
+    "semantic_truth_scoring_enabled": false,
+    "raw_runtime_artifact_reading_enabled": false,
+    "revenue_opportunity_discovery_enabled": false,
+    "revenue_execution_enabled": false,
+    "external_market_scan_enabled": false,
+    "public_content_publication_enabled": false,
+    "publication_enabled": false,
+    "outreach_enabled": false,
+    "payment_enabled": false
+  },
+  "l6_3_flags": {
+    "l6_3_sandbox_only": true,
+    "l6_3_fixture_only": true,
+    "l6_3_static_fixture_observation_enabled": true,
+    "l6_3_manual_import_fixture_enabled": true,
+    "l6_3_artifact_refinement_candidate_enabled": true,
+    "l6_3_real_external_observation_enabled": false,
+    "l6_3_network_enabled": false,
+    "l6_3_api_enabled": false,
+    "l6_3_scraping_enabled": false,
+    "l6_3_browser_fetch_enabled": false,
+    "l6_3_publication_enabled": false,
+    "l6_3_outreach_enabled": false,
+    "l6_3_payment_enabled": false,
+    "l6_3_revenue_execution_enabled": false,
+    "l6_3_mcp_execution_enabled": false,
+    "l6_3_live_behavior_enabled": false,
+    "l6_3_artifact_refinement_application_enabled": false
+  }
+}

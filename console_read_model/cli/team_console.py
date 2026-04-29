@@ -60,6 +60,9 @@ L6_MVP_ARTIFACT_SANDBOX = (
 L6_EXTERNAL_OBSERVATION_BOUNDARY = (
     "console_read_model/generated/l6_external_observation_boundary_summary.json"
 )
+L6_CONTROLLED_OBSERVATION_SANDBOX = (
+    "console_read_model/generated/l6_controlled_observation_sandbox_summary.json"
+)
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -79,7 +82,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -153,6 +156,7 @@ def load_all() -> dict[str, Any]:
         "l6_meta_development": load_json(L6_META_DEVELOPMENT),
         "l6_mvp_artifact_sandbox": load_json(L6_MVP_ARTIFACT_SANDBOX),
         "l6_external_observation_boundary": load_json(L6_EXTERNAL_OBSERVATION_BOUNDARY),
+        "l6_controlled_observation_sandbox": load_json(L6_CONTROLLED_OBSERVATION_SANDBOX),
     }
 
 
@@ -1908,7 +1912,77 @@ def cmd_governed_external_observation_boundary(data: dict[str, Any]) -> None:
     print(f"next recommended milestone: {boundary.get('next_recommended_milestone')}")
     print(f"generated_packet_schema: {boundary.get('generated_packet_schema')}")
     print(f"generated_readiness: {boundary.get('generated_readiness')}")
-    print(f"warning: {boundary.get('warning')}")
+
+
+def cmd_controlled_external_observation_sandbox(data: dict[str, Any]) -> None:
+    sandbox = data["l6_controlled_observation_sandbox"]
+    print("# L6.3 Controlled External Observation Sandbox")
+    print()
+    print(
+        "L6.3 controlled observation sandbox defined: "
+        f"{sandbox.get('l6_3_controlled_observation_sandbox_defined')}"
+    )
+    print(f"sandbox only: {sandbox.get('sandbox_only')}")
+    print(f"fixture only: {sandbox.get('fixture_only')}")
+    print(
+        "static fixture observation authorized: "
+        f"{sandbox.get('static_fixture_observation_authorized')}"
+    )
+    print(
+        "manual import fixture authorized: "
+        f"{sandbox.get('manual_import_fixture_authorized')}"
+    )
+    print(f"selected observation cases: {sandbox.get('selected_observation_case_count')}")
+    print(f"pre-observation packets: {sandbox.get('pre_observation_packet_count')}")
+    print(f"static/manual fixtures: {sandbox.get('static_manual_fixture_count')}")
+    print(f"permission replay generated: {sandbox.get('permission_replay_generated')}")
+    print(f"evidence validation generated: {sandbox.get('evidence_validation_generated')}")
+    print(
+        "claim/freshness assessment generated: "
+        f"{sandbox.get('claim_freshness_assessment_generated')}"
+    )
+    print(f"refinement candidates generated: {sandbox.get('refinement_candidates_generated')}")
+    print(f"review packets generated: {sandbox.get('review_packets_generated')}")
+    print(f"no-action receipts generated: {sandbox.get('no_action_receipts_generated')}")
+    print(
+        "strategic residual loop generated: "
+        f"{sandbox.get('strategic_residual_loop_generated')}"
+    )
+    print(
+        "real external observation authorized: "
+        f"{sandbox.get('real_external_observation_authorized')}"
+    )
+    print(f"network enabled: {sandbox.get('network_enabled')}")
+    print(f"API enabled: {sandbox.get('api_enabled')}")
+    print(f"scraping enabled: {sandbox.get('scraping_enabled')}")
+    print(f"browser fetch enabled: {sandbox.get('browser_fetch_enabled')}")
+    print(f"publication enabled: {sandbox.get('publication_enabled')}")
+    print(f"outreach enabled: {sandbox.get('outreach_enabled')}")
+    print(f"payment enabled: {sandbox.get('payment_enabled')}")
+    print(f"revenue execution enabled: {sandbox.get('revenue_execution_enabled')}")
+    print(f"MCP tool execution enabled: {sandbox.get('mcp_tool_execution_enabled')}")
+    print(f"live execution enabled: {sandbox.get('live_execution_enabled')}")
+    print(f"brain writeback enabled: {sandbox.get('brain_writeback_enabled')}")
+    print(f"memory ingestion enabled: {sandbox.get('memory_ingestion_enabled')}")
+    print(
+        "ready for L6.4 real read-only external observation preflight: "
+        f"{sandbox.get('ready_for_l6_4_real_read_only_external_observation_preflight')}"
+    )
+    print(
+        "ready for real network observation: "
+        f"{sandbox.get('ready_for_real_network_observation')}"
+    )
+    print(f"ready for scraping: {sandbox.get('ready_for_scraping')}")
+    print(f"ready for publication: {sandbox.get('ready_for_publication')}")
+    print(f"ready for outreach: {sandbox.get('ready_for_outreach')}")
+    print(f"ready for payment: {sandbox.get('ready_for_payment')}")
+    print(f"ready for revenue execution: {sandbox.get('ready_for_revenue_execution')}")
+    print(f"next recommended milestone: {sandbox.get('next_recommended_milestone')}")
+    print(f"generated_selected_cases: {sandbox.get('generated_selected_cases')}")
+    print(f"generated_packet_index: {sandbox.get('generated_packet_index')}")
+    print(f"generated_fixture_index: {sandbox.get('generated_fixture_index')}")
+    print(f"generated_readiness: {sandbox.get('generated_readiness')}")
+    print(f"warning: {sandbox.get('warning')}")
 
 
 def cmd_gaps(data: dict[str, Any]) -> None:
@@ -3861,6 +3935,8 @@ def main(argv: list[str]) -> int:
         cmd_meta_development_mvp_artifact_sandbox(data)
     elif command == "governed-external-observation-boundary":
         cmd_governed_external_observation_boundary(data)
+    elif command == "controlled-external-observation-sandbox":
+        cmd_controlled_external_observation_sandbox(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

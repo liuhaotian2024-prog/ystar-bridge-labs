@@ -1,0 +1,24 @@
+{
+  "schema_version": "v0",
+  "candidate_count": 3,
+  "candidates": [
+    {
+      "candidate_id": "l6_3_refinement_candidate_001",
+      "path": "observation_to_artifact_refinement_candidates/candidate_001.json",
+      "approved": false,
+      "applied": false
+    },
+    {
+      "candidate_id": "l6_3_refinement_candidate_002",
+      "path": "observation_to_artifact_refinement_candidates/candidate_002.json",
+      "approved": false,
+      "applied": false
+    },
+    {
+      "candidate_id": "l6_3_refinement_candidate_003",
+      "path": "observation_to_artifact_refinement_candidates/candidate_003.json",
+      "approved": false,
+      "applied": false
+    }
+  ]
+}

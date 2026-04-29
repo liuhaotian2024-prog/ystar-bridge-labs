@@ -1,0 +1,17 @@
+{
+  "schema_version": "v0",
+  "candidate_id": "l6_3_meta_learning_update_candidate",
+  "eligible_for_review_queue": true,
+  "eligible_for_direct_brain_writeback": false,
+  "eligible_for_direct_memory_ingestion": false,
+  "eligible_for_candidate_auto_approval": false,
+  "eligible_for_direct_strategy_mutation": false,
+  "approved": false,
+  "applied": false,
+  "learning_targets": [
+    "external_observation_permission_replay_policy",
+    "manual_fixture_evidence_validation_policy",
+    "claim_freshness_assessment_policy",
+    "artifact_refinement_candidate_policy"
+  ]
+}

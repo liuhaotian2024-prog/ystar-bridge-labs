@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "blockers": [
+    "no real external observation authorization",
+    "no network boundary approval",
+    "no scraping authorization",
+    "no publication/outreach/payment boundary",
+    "no revenue execution boundary",
+    "no MCP execution boundary",
+    "no canonical update authorization",
+    "no brain/memory writeback authorization"
+  ]
+}

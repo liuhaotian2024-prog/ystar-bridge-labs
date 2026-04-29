@@ -1,0 +1,52 @@
+{
+  "schema_version": "v0",
+  "selection_signals": [
+    "missing evidence",
+    "unclear recipient archetype",
+    "unclear payer or beneficiary",
+    "weak acceptance criteria",
+    "stale or absent source evidence",
+    "uncertain claim boundary",
+    "unclear distribution friction",
+    "unclear competitive pressure",
+    "unclear external dependency",
+    "proof question requires outside evidence",
+    "high learning value",
+    "low downside risk within sandbox",
+    "reviewability"
+  ],
+  "selection_mode": "structural_evidence_gap_based",
+  "selected_by_hardcoded_opportunity_category": false,
+  "matrix": [
+    {
+      "case_id": "case_001",
+      "missing_evidence_count": 4,
+      "claim_boundary_present": true,
+      "proof_question_requires_outside_evidence": true,
+      "learning_value": "high",
+      "sandbox_downside_risk": "low",
+      "reviewable": true,
+      "selected": true
+    },
+    {
+      "case_id": "case_002",
+      "missing_evidence_count": 4,
+      "claim_boundary_present": true,
+      "proof_question_requires_outside_evidence": true,
+      "learning_value": "high",
+      "sandbox_downside_risk": "low",
+      "reviewable": true,
+      "selected": true
+    },
+    {
+      "case_id": "case_003",
+      "missing_evidence_count": 4,
+      "claim_boundary_present": true,
+      "proof_question_requires_outside_evidence": true,
+      "learning_value": "high",
+      "sandbox_downside_risk": "low",
+      "reviewable": true,
+      "selected": true
+    }
+  ]
+}

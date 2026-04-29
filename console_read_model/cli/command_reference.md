@@ -175,6 +175,13 @@ python3 console_read_model/cli/team_console.py <command>
   linker, claim boundary policy, no-action receipts, strategic residual loop,
   readiness for L6.3 sandbox design, and blocked network/API/scraping/browser
   fetch/publication/outreach/payment/revenue/MCP/live/writeback execution state.
+- `controlled-external-observation-sandbox`: Prints the generated L6.3
+  controlled external observation sandbox summary: selected observation cases,
+  pre-observation packets, permission replay, static/manual fixtures,
+  structural evidence validation, claim/freshness assessment, review packets,
+  refinement candidates, no-action receipts, strategic residual loop, readiness
+  for L6.4 preflight, and blocked real observation/network/API/scraping/browser
+  fetch/publication/outreach/payment/revenue/MCP/live/writeback execution state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

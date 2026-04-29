@@ -113,7 +113,7 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 124
+- Artifacts classified: 174
 - Unsafe artifacts count: 119
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
@@ -122,9 +122,10 @@ Not ready:
   - DAEMON_STATE: 4
   - DB_CORE: 1
   - DB_SIDECARE: 6
+  - FRAMEWORK_FILE: 5
   - LOG_RUNTIME: 30
   - PYCACHE: 45
-  - UNKNOWN_OR_NON_RUNTIME: 5
+  - UNKNOWN_OR_NON_RUNTIME: 50
   - UNKNOWN_RUNTIME_ARTIFACT: 10
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
 - Warning: Console displays only curated path-level quarantine summary. No artifact contents were read.
@@ -150,8 +151,8 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 124
-- Artifacts with disposition: 124
+- Total artifacts: 174
+- Artifacts with disposition: 174
 - Safe-mined to review queue: 0
 - Forbidden direct read count: 119
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
@@ -162,9 +163,9 @@ Not ready:
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 45
-  - ignored_or_non_runtime: 5
+  - ignored_or_non_runtime: 55
 - Evidence scoring status:
-  - not_started: 124
+  - not_started: 174
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -538,7 +539,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 4935
+- assets_scanned: 5010
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -946,6 +947,35 @@ Not ready:
 - ready_for_real_network_observation: False
 - next_recommended_milestone: L6.3 Controlled External Observation Sandbox v0
 - Warning: L6.2 is boundary-only. Real external observation, URL fetch, scraping, publication, outreach, payment, revenue execution, MCP, live behavior, canonical mutation, writeback, and direct Y* mutation remain blocked.
+
+## L6.3 Controlled External Observation Sandbox
+
+- l6_3_controlled_observation_sandbox_defined: True
+- sandbox_only: True
+- fixture_only: True
+- static_fixture_observation_authorized: True
+- manual_import_fixture_authorized: True
+- selected_observation_case_count: 3
+- pre_observation_packet_count: 3
+- static_manual_fixture_count: 3
+- permission_replay_generated: True
+- evidence_validation_generated: True
+- claim_freshness_assessment_generated: True
+- refinement_candidates_generated: True
+- review_packets_generated: True
+- no_action_receipts_generated: True
+- real_external_observation_authorized: False
+- network_enabled: False
+- scraping_enabled: False
+- browser_fetch_enabled: False
+- publication_enabled: False
+- outreach_enabled: False
+- payment_enabled: False
+- revenue_execution_enabled: False
+- ready_for_l6_4_real_read_only_external_observation_preflight: True
+- ready_for_real_network_observation: False
+- next_recommended_milestone: L6.4 Real Read-Only External Observation Preflight v0
+- Warning: L6.3 is sandbox fixture/manual-import only. Real external observation, URL fetch, scraping, API calls, browser fetch, publication, outreach, payment, revenue execution, MCP, live behavior, canonical mutation, writeback, and direct Y* mutation remain blocked.
 
 ## Governance Boundary
 

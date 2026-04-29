@@ -128,5 +128,14 @@ readiness artifacts while real external observation, URL fetch, scraping,
 publication, outreach, payment, revenue, MCP, live behavior, canonical
 mutation, writeback, and direct Y* mutation remain blocked.
 
+`l6_controlled_observation_sandbox_summary.json` is derived from the L6.3
+controlled external observation sandbox. It confirms selected observation
+cases, pre-observation packets, permission replay, static/manual fixtures,
+structural validation, claim/freshness assessment, review packets,
+refinement candidates, no-action receipts, and readiness artifacts while
+real external observation, URL fetch, scraping, API calls, browser fetch,
+publication, outreach, payment, revenue, MCP, live behavior, canonical
+mutation, writeback, and direct Y* mutation remain blocked.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

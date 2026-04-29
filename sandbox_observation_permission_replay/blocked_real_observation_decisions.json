@@ -1,0 +1,44 @@
+{
+  "schema_version": "v0",
+  "blocked_decisions": [
+    {
+      "packet_id": "l6_3_pre_observation_packet_001",
+      "real_observation_decision": "blocked_real_observation_l6_3",
+      "fixture_decision": "allow_static_or_manual_import_fixture_only",
+      "reason": "L6.3 authorizes fixture replay only; real observation requires a future preflight.",
+      "blocker_references": [
+        "l6_controlled_external_observation_sandbox/l6_3_milestone_contract.json",
+        "external_observation_permission_gate/observation_permission_gate_contract.json"
+      ],
+      "required_future_boundary": "L6.4 Real Read-Only External Observation Preflight v0",
+      "review_required": true,
+      "approval_required_before_real_observation": true
+    },
+    {
+      "packet_id": "l6_3_pre_observation_packet_002",
+      "real_observation_decision": "blocked_real_observation_l6_3",
+      "fixture_decision": "allow_static_or_manual_import_fixture_only",
+      "reason": "L6.3 authorizes fixture replay only; real observation requires a future preflight.",
+      "blocker_references": [
+        "l6_controlled_external_observation_sandbox/l6_3_milestone_contract.json",
+        "external_observation_permission_gate/observation_permission_gate_contract.json"
+      ],
+      "required_future_boundary": "L6.4 Real Read-Only External Observation Preflight v0",
+      "review_required": true,
+      "approval_required_before_real_observation": true
+    },
+    {
+      "packet_id": "l6_3_pre_observation_packet_003",
+      "real_observation_decision": "blocked_real_observation_l6_3",
+      "fixture_decision": "allow_static_or_manual_import_fixture_only",
+      "reason": "L6.3 authorizes fixture replay only; real observation requires a future preflight.",
+      "blocker_references": [
+        "l6_controlled_external_observation_sandbox/l6_3_milestone_contract.json",
+        "external_observation_permission_gate/observation_permission_gate_contract.json"
+      ],
+      "required_future_boundary": "L6.4 Real Read-Only External Observation Preflight v0",
+      "review_required": true,
+      "approval_required_before_real_observation": true
+    }
+  ]
+}

@@ -406,6 +406,9 @@ def main() -> int:
     required_l6_governed_external_observation_boundary_files = expected.get(
         "required_l6_governed_external_observation_boundary_files", []
     )
+    required_l6_controlled_external_observation_sandbox_files = expected.get(
+        "required_l6_controlled_external_observation_sandbox_files", []
+    )
     required_schema_files = expected["required_shared_schema_files"]
     required_agents = expected["required_agents"]
     base_files = expected["required_base_capsule_files"]
@@ -644,6 +647,12 @@ def main() -> int:
         check_exists(path, report, "L6.2 governed external observation boundary file")
         if path.suffix == ".json" and path.exists():
             check_json_file(path, report, "L6.2 governed external observation boundary JSON")
+
+    for rel in required_l6_controlled_external_observation_sandbox_files:
+        path = ROOT / rel
+        check_exists(path, report, "L6.3 controlled external observation sandbox file")
+        if path.suffix == ".json" and path.exists():
+            check_json_file(path, report, "L6.3 controlled external observation sandbox JSON")
 
     generated_json: dict[str, Any] = {}
     for rel in required_generated_files:
@@ -4734,6 +4743,153 @@ def main() -> int:
             "L6.3 Controlled External Observation Sandbox v0"
         ):
             report.fail("generated L6.2 summary must point to L6.3")
+
+    l6_controlled_observation_sandbox = generated_json.get(
+        "console_read_model/generated/l6_controlled_observation_sandbox_summary.json"
+    )
+    if l6_controlled_observation_sandbox:
+        for field in [
+            "l6_3_controlled_observation_sandbox_defined",
+            "sandbox_only",
+            "fixture_only",
+            "static_fixture_observation_authorized",
+            "manual_import_fixture_authorized",
+            "real_external_observation_authorized",
+            "selected_observation_case_count",
+            "pre_observation_packet_count",
+            "static_manual_fixture_count",
+            "permission_replay_generated",
+            "evidence_validation_generated",
+            "claim_freshness_assessment_generated",
+            "refinement_candidates_generated",
+            "refinement_candidate_count",
+            "review_packets_generated",
+            "review_packet_count",
+            "no_action_receipts_generated",
+            "strategic_residual_loop_generated",
+            "network_enabled",
+            "api_enabled",
+            "scraping_enabled",
+            "browser_fetch_enabled",
+            "external_action_enabled",
+            "publication_enabled",
+            "outreach_enabled",
+            "payment_enabled",
+            "revenue_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "live_execution_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "real_canonical_update_application_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "l6_3_sandbox_only",
+            "l6_3_fixture_only",
+            "l6_3_static_fixture_observation_enabled",
+            "l6_3_manual_import_fixture_enabled",
+            "l6_3_real_external_observation_enabled",
+            "l6_3_network_enabled",
+            "l6_3_api_enabled",
+            "l6_3_scraping_enabled",
+            "l6_3_browser_fetch_enabled",
+            "l6_3_artifact_refinement_application_enabled",
+            "ready_for_l6_4_real_read_only_external_observation_preflight",
+            "ready_for_real_network_observation",
+            "ready_for_scraping",
+            "ready_for_publication",
+            "ready_for_outreach",
+            "ready_for_payment",
+            "ready_for_revenue_execution",
+            "ready_for_mcp_execution",
+            "ready_for_canonical_update",
+            "ready_for_brain_memory_writeback",
+            "next_recommended_milestone",
+            "generated_milestone_summary",
+            "generated_selected_cases",
+            "generated_packet_index",
+            "generated_permission_replay",
+            "generated_fixture_index",
+            "generated_refinement_candidates",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in l6_controlled_observation_sandbox:
+                report.pass_(f"generated L6.3 controlled observation summary field present: {field}")
+            else:
+                report.fail(f"generated L6.3 controlled observation summary missing field: {field}")
+        for field in [
+            "l6_3_controlled_observation_sandbox_defined",
+            "sandbox_only",
+            "fixture_only",
+            "static_fixture_observation_authorized",
+            "manual_import_fixture_authorized",
+            "permission_replay_generated",
+            "evidence_validation_generated",
+            "claim_freshness_assessment_generated",
+            "refinement_candidates_generated",
+            "review_packets_generated",
+            "no_action_receipts_generated",
+            "strategic_residual_loop_generated",
+            "l6_3_sandbox_only",
+            "l6_3_fixture_only",
+            "l6_3_static_fixture_observation_enabled",
+            "l6_3_manual_import_fixture_enabled",
+            "ready_for_l6_4_real_read_only_external_observation_preflight",
+        ]:
+            if l6_controlled_observation_sandbox.get(field) is not True:
+                report.fail(f"generated L6.3 summary must keep {field}=true")
+        for field in [
+            "real_external_observation_authorized",
+            "network_enabled",
+            "api_enabled",
+            "scraping_enabled",
+            "browser_fetch_enabled",
+            "external_action_enabled",
+            "publication_enabled",
+            "outreach_enabled",
+            "payment_enabled",
+            "revenue_execution_enabled",
+            "mcp_tool_execution_enabled",
+            "live_execution_enabled",
+            "brain_writeback_enabled",
+            "memory_ingestion_enabled",
+            "real_canonical_update_application_enabled",
+            "real_y_star_direct_mutation_enabled",
+            "semantic_truth_scoring_enabled",
+            "raw_runtime_artifact_reading_enabled",
+            "l6_3_real_external_observation_enabled",
+            "l6_3_network_enabled",
+            "l6_3_api_enabled",
+            "l6_3_scraping_enabled",
+            "l6_3_browser_fetch_enabled",
+            "l6_3_artifact_refinement_application_enabled",
+            "ready_for_real_network_observation",
+            "ready_for_scraping",
+            "ready_for_publication",
+            "ready_for_outreach",
+            "ready_for_payment",
+            "ready_for_revenue_execution",
+            "ready_for_mcp_execution",
+            "ready_for_canonical_update",
+            "ready_for_brain_memory_writeback",
+        ]:
+            if l6_controlled_observation_sandbox.get(field) is not False:
+                report.fail(f"generated L6.3 summary must keep {field}=false")
+        if not 1 <= l6_controlled_observation_sandbox.get("selected_observation_case_count", 0) <= 3:
+            report.fail("generated L6.3 summary must select between 1 and 3 observation cases")
+        if l6_controlled_observation_sandbox.get("pre_observation_packet_count") != (
+            l6_controlled_observation_sandbox.get("selected_observation_case_count")
+        ):
+            report.fail("generated L6.3 packet count must match selected observation case count")
+        if l6_controlled_observation_sandbox.get("static_manual_fixture_count") != (
+            l6_controlled_observation_sandbox.get("selected_observation_case_count")
+        ):
+            report.fail("generated L6.3 fixture count must match selected observation case count")
+        if l6_controlled_observation_sandbox.get("next_recommended_milestone") != (
+            "L6.4 Real Read-Only External Observation Preflight v0"
+        ):
+            report.fail("generated L6.3 summary must point to L6.4")
 
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:

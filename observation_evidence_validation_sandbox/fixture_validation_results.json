@@ -1,0 +1,53 @@
+{
+  "schema_version": "v0",
+  "fixture_validation_results": [
+    {
+      "fixture_id": "l6_3_static_manual_fixture_001",
+      "validation_status": "fixture_structurally_valid_for_sandbox_only",
+      "source_trace_exists": true,
+      "source_type_declared": true,
+      "fixture_mode_declared": true,
+      "fetched_from_network_false": true,
+      "current_fact_claimed_false": true,
+      "freshness_or_date_missing_present": true,
+      "claim_boundary_present": true,
+      "missing_context_listed": true,
+      "unsupported_claims_listed": true,
+      "external_action_blocked": true,
+      "review_required": true,
+      "semantic_scoring_authority_used": false
+    },
+    {
+      "fixture_id": "l6_3_static_manual_fixture_002",
+      "validation_status": "fixture_structurally_valid_for_sandbox_only",
+      "source_trace_exists": true,
+      "source_type_declared": true,
+      "fixture_mode_declared": true,
+      "fetched_from_network_false": true,
+      "current_fact_claimed_false": true,
+      "freshness_or_date_missing_present": true,
+      "claim_boundary_present": true,
+      "missing_context_listed": true,
+      "unsupported_claims_listed": true,
+      "external_action_blocked": true,
+      "review_required": true,
+      "semantic_scoring_authority_used": false
+    },
+    {
+      "fixture_id": "l6_3_static_manual_fixture_003",
+      "validation_status": "fixture_structurally_valid_for_sandbox_only",
+      "source_trace_exists": true,
+      "source_type_declared": true,
+      "fixture_mode_declared": true,
+      "fetched_from_network_false": true,
+      "current_fact_claimed_false": true,
+      "freshness_or_date_missing_present": true,
+      "claim_boundary_present": true,
+      "missing_context_listed": true,
+      "unsupported_claims_listed": true,
+      "external_action_blocked": true,
+      "review_required": true,
+      "semantic_scoring_authority_used": false
+    }
+  ]
+}
