@@ -203,6 +203,20 @@ CURATED_SOURCES = [
     "controlled_observation_no_action_receipts/no_network_receipt.json",
     "l6_controlled_observation_strategic_residual_loop/l6_3_strategic_residual_delta.json",
     "l6_controlled_observation_sandbox_readiness/l6_3_readiness_assessment.json",
+    "l6_real_read_only_external_observation_preflight/l6_4_summary.json",
+    "real_observation_candidate_selector/selected_real_observation_candidates.json",
+    "real_read_only_observation_preflight_contract/preflight_requirement_registry.json",
+    "source_allowlist_and_risk_policy/source_allowlist_policy.json",
+    "source_allowlist_and_risk_policy/source_denylist_policy.json",
+    "real_observation_approval_packet_schema/approval_packet_examples_blocked_now.json",
+    "observation_operator_handoff/operator_handoff_contract.json",
+    "observation_network_isolation_preflight/network_isolation_requirement.json",
+    "observation_evidence_capture_preflight/evidence_capture_contract.json",
+    "observation_abort_rollback_quarantine_policy/abort_condition_registry.json",
+    "read_only_observation_no_action_guarantees/no_real_observation_receipt.json",
+    "real_observation_preflight_decision_gate/candidate_preflight_decisions.json",
+    "l6_real_observation_preflight_strategic_residual_loop/l6_4_strategic_residual_delta.json",
+    "l6_real_observation_preflight_readiness/l6_4_readiness_assessment.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -4173,6 +4187,218 @@ def build_l6_controlled_observation_sandbox_summary(
     }
 
 
+def build_l6_real_observation_preflight_summary(
+    milestone_summary: dict[str, Any] | None,
+    selected_candidates: dict[str, Any] | None,
+    requirement_registry: dict[str, Any] | None,
+    allowlist_policy: dict[str, Any] | None,
+    denylist_policy: dict[str, Any] | None,
+    approval_packets: dict[str, Any] | None,
+    operator_handoff: dict[str, Any] | None,
+    network_isolation: dict[str, Any] | None,
+    evidence_capture: dict[str, Any] | None,
+    abort_registry: dict[str, Any] | None,
+    no_real_observation_receipt: dict[str, Any] | None,
+    preflight_decisions: dict[str, Any] | None,
+    residual_delta: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": (
+                "ystar.console_read_model.generated."
+                "l6_real_observation_preflight_summary"
+            ),
+            "schema_version": "v0",
+            "l6_4_real_read_only_observation_preflight_defined": False,
+            "ready_for_l6_5_controlled_real_read_only_observation_pilot_design": False,
+            "ready_for_actual_network_observation_now": False,
+            "warning": "L6.4 real read-only external observation preflight has not been generated yet.",
+        }
+
+    milestone_summary = milestone_summary or {}
+    selected_candidates = selected_candidates or {}
+    requirement_registry = requirement_registry or {}
+    allowlist_policy = allowlist_policy or {}
+    denylist_policy = denylist_policy or {}
+    approval_packets = approval_packets or {}
+    operator_handoff = operator_handoff or {}
+    network_isolation = network_isolation or {}
+    evidence_capture = evidence_capture or {}
+    abort_registry = abort_registry or {}
+    no_real_observation_receipt = no_real_observation_receipt or {}
+    preflight_decisions = preflight_decisions or {}
+    residual_delta = residual_delta or {}
+
+    def safety_flag(field: str) -> Any:
+        return readiness_summary.get(field, readiness_summary.get("safety_flags", {}).get(field))
+
+    def l6_4_flag(field: str) -> Any:
+        return readiness_summary.get(field, readiness_summary.get("l6_4_flags", {}).get(field))
+
+    return {
+        "schema_name": "ystar.console_read_model.generated.l6_real_observation_preflight_summary",
+        "schema_version": "v0",
+        "milestone_id": milestone_summary.get("milestone_id", "L6.4"),
+        "milestone_name": milestone_summary.get(
+            "milestone_name", "Real Read-Only External Observation Preflight v0"
+        ),
+        "l6_4_real_read_only_observation_preflight_defined": milestone_summary.get(
+            "l6_4_real_read_only_observation_preflight_defined",
+            readiness_summary.get("l6_4_real_read_only_observation_preflight_complete"),
+        ),
+        "preflight_only": milestone_summary.get("preflight_only", True),
+        "sandbox_only": milestone_summary.get("sandbox_only", True),
+        "future_real_read_only_observation_candidate_allowed": milestone_summary.get(
+            "future_real_read_only_observation_candidate_allowed",
+            l6_4_flag("l6_4_future_real_read_only_observation_candidate_allowed"),
+        ),
+        "candidate_count": milestone_summary.get(
+            "candidate_count", selected_candidates.get("candidate_count")
+        ),
+        "approval_packet_count": milestone_summary.get(
+            "approval_packet_count", approval_packets.get("example_count")
+        ),
+        "preflight_requirement_count": len(requirement_registry.get("requirements", [])),
+        "source_allowlist_defined": milestone_summary.get(
+            "source_allowlist_defined", bool(allowlist_policy)
+        ),
+        "source_denylist_defined": milestone_summary.get(
+            "source_denylist_defined", bool(denylist_policy)
+        ),
+        "operator_handoff_plan_generated": milestone_summary.get(
+            "operator_handoff_plan_generated", bool(operator_handoff)
+        ),
+        "network_isolation_preflight_defined": milestone_summary.get(
+            "network_isolation_preflight_defined", bool(network_isolation)
+        ),
+        "evidence_capture_preflight_defined": milestone_summary.get(
+            "evidence_capture_preflight_defined", bool(evidence_capture)
+        ),
+        "abort_rollback_quarantine_policy_defined": milestone_summary.get(
+            "abort_rollback_quarantine_policy_defined", bool(abort_registry)
+        ),
+        "no_action_guarantees_generated": milestone_summary.get(
+            "no_action_guarantees_generated", bool(no_real_observation_receipt)
+        ),
+        "preflight_decision_gate_generated": milestone_summary.get(
+            "preflight_decision_gate_generated", bool(preflight_decisions)
+        ),
+        "strategic_residual_loop_generated": milestone_summary.get(
+            "strategic_residual_loop_generated", bool(residual_delta)
+        ),
+        "real_external_observation_authorized": milestone_summary.get(
+            "real_external_observation_authorized", False
+        ),
+        "real_observation_execution_authorized": milestone_summary.get(
+            "real_observation_execution_authorized", False
+        ),
+        "network_authorized": milestone_summary.get("network_authorized", False),
+        "api_authorized": milestone_summary.get("api_authorized", False),
+        "scraping_authorized": milestone_summary.get("scraping_authorized", False),
+        "browser_fetch_authorized": milestone_summary.get("browser_fetch_authorized", False),
+        "publication_authorized": milestone_summary.get("publication_authorized", False),
+        "outreach_authorized": milestone_summary.get("outreach_authorized", False),
+        "payment_authorized": milestone_summary.get("payment_authorized", False),
+        "revenue_execution_authorized": milestone_summary.get(
+            "revenue_execution_authorized", False
+        ),
+        "mcp_execution_authorized": milestone_summary.get("mcp_execution_authorized", False),
+        "live_behavior_authorized": milestone_summary.get("live_behavior_authorized", False),
+        "cieu_db_write_authorized": milestone_summary.get("cieu_db_write_authorized", False),
+        "canonical_update_authorized": milestone_summary.get(
+            "canonical_update_authorized", False
+        ),
+        "brain_writeback_authorized": milestone_summary.get("brain_writeback_authorized", False),
+        "memory_ingestion_authorized": milestone_summary.get(
+            "memory_ingestion_authorized", False
+        ),
+        "direct_y_star_mutation_authorized": milestone_summary.get(
+            "direct_y_star_mutation_authorized", False
+        ),
+        "network_enabled": safety_flag("network_enabled"),
+        "api_enabled": safety_flag("api_enabled"),
+        "scraping_enabled": safety_flag("scraping_enabled"),
+        "browser_fetch_enabled": safety_flag("browser_fetch_enabled"),
+        "external_action_enabled": safety_flag("external_action_enabled"),
+        "publication_enabled": safety_flag("publication_enabled"),
+        "outreach_enabled": safety_flag("outreach_enabled"),
+        "payment_enabled": safety_flag("payment_enabled"),
+        "revenue_execution_enabled": safety_flag("revenue_execution_enabled"),
+        "mcp_tool_execution_enabled": safety_flag("mcp_tool_execution_enabled"),
+        "live_execution_enabled": safety_flag("live_execution_enabled"),
+        "cieu_db_write_enabled": safety_flag("cieu_db_write_enabled"),
+        "brain_writeback_enabled": safety_flag("brain_writeback_enabled"),
+        "memory_ingestion_enabled": safety_flag("memory_ingestion_enabled"),
+        "real_canonical_update_application_enabled": safety_flag(
+            "real_canonical_update_application_enabled"
+        ),
+        "real_y_star_direct_mutation_enabled": safety_flag(
+            "real_y_star_direct_mutation_enabled"
+        ),
+        "semantic_truth_scoring_enabled": safety_flag("semantic_truth_scoring_enabled"),
+        "raw_runtime_artifact_reading_enabled": safety_flag(
+            "raw_runtime_artifact_reading_enabled"
+        ),
+        "l6_4_preflight_only": l6_4_flag("l6_4_preflight_only"),
+        "l6_4_sandbox_only": l6_4_flag("l6_4_sandbox_only"),
+        "l6_4_future_real_read_only_observation_candidate_allowed": l6_4_flag(
+            "l6_4_future_real_read_only_observation_candidate_allowed"
+        ),
+        "l6_4_approval_packet_generation_enabled": l6_4_flag(
+            "l6_4_approval_packet_generation_enabled"
+        ),
+        "l6_4_operator_handoff_plan_enabled": l6_4_flag(
+            "l6_4_operator_handoff_plan_enabled"
+        ),
+        "l6_4_evidence_capture_plan_enabled": l6_4_flag(
+            "l6_4_evidence_capture_plan_enabled"
+        ),
+        "l6_4_real_observation_execution_enabled": l6_4_flag(
+            "l6_4_real_observation_execution_enabled"
+        ),
+        "l6_4_network_enabled": l6_4_flag("l6_4_network_enabled"),
+        "l6_4_api_enabled": l6_4_flag("l6_4_api_enabled"),
+        "l6_4_scraping_enabled": l6_4_flag("l6_4_scraping_enabled"),
+        "l6_4_browser_fetch_enabled": l6_4_flag("l6_4_browser_fetch_enabled"),
+        "ready_for_l6_5_controlled_real_read_only_observation_pilot_design": readiness_summary.get(
+            "ready_for_l6_5_controlled_real_read_only_observation_pilot_design"
+        ),
+        "ready_for_actual_network_observation_now": readiness_summary.get(
+            "ready_for_actual_network_observation_now"
+        ),
+        "ready_for_scraping": readiness_summary.get("ready_for_scraping"),
+        "ready_for_publication": readiness_summary.get("ready_for_publication"),
+        "ready_for_outreach": readiness_summary.get("ready_for_outreach"),
+        "ready_for_payment": readiness_summary.get("ready_for_payment"),
+        "ready_for_revenue_execution": readiness_summary.get("ready_for_revenue_execution"),
+        "ready_for_mcp_execution": readiness_summary.get("ready_for_mcp_execution"),
+        "ready_for_canonical_update": readiness_summary.get("ready_for_canonical_update"),
+        "ready_for_brain_memory_writeback": readiness_summary.get(
+            "ready_for_brain_memory_writeback"
+        ),
+        "next_recommended_milestone": readiness_summary.get(
+            "next_recommended_milestone"
+        ),
+        "generated_milestone_summary": "l6_real_read_only_external_observation_preflight/l6_4_summary.json",
+        "generated_selected_candidates": "real_observation_candidate_selector/selected_real_observation_candidates.json",
+        "generated_preflight_contract": "real_read_only_observation_preflight_contract/preflight_requirement_registry.json",
+        "generated_source_allowlist": "source_allowlist_and_risk_policy/source_allowlist_policy.json",
+        "generated_approval_packets": "real_observation_approval_packet_schema/approval_packet_examples_blocked_now.json",
+        "generated_operator_handoff": "observation_operator_handoff/operator_handoff_contract.json",
+        "generated_network_isolation": "observation_network_isolation_preflight/network_isolation_requirement.json",
+        "generated_evidence_capture": "observation_evidence_capture_preflight/evidence_capture_contract.json",
+        "generated_decision_gate": "real_observation_preflight_decision_gate/candidate_preflight_decisions.json",
+        "generated_readiness": "l6_real_observation_preflight_readiness/l6_4_readiness_assessment.json",
+        "warning": (
+            "L6.4 is preflight-only. Real external observation, URL fetch, scraping, "
+            "API calls, browser fetch, publication, outreach, payment, revenue "
+            "execution, MCP, live behavior, CIEU DB writes, canonical mutation, "
+            "writeback, and direct Y* mutation remain blocked."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -4903,6 +5129,62 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_controlled_observation_sandbox_readiness/l6_3_readiness_assessment.json",
         files_read,
     )
+    l6_real_observation_preflight_milestone_summary = load_optional_json(
+        "l6_real_read_only_external_observation_preflight/l6_4_summary.json",
+        files_read,
+    )
+    l6_real_observation_preflight_selected_candidates = load_optional_json(
+        "real_observation_candidate_selector/selected_real_observation_candidates.json",
+        files_read,
+    )
+    l6_real_observation_preflight_requirement_registry = load_optional_json(
+        "real_read_only_observation_preflight_contract/preflight_requirement_registry.json",
+        files_read,
+    )
+    l6_real_observation_preflight_allowlist_policy = load_optional_json(
+        "source_allowlist_and_risk_policy/source_allowlist_policy.json",
+        files_read,
+    )
+    l6_real_observation_preflight_denylist_policy = load_optional_json(
+        "source_allowlist_and_risk_policy/source_denylist_policy.json",
+        files_read,
+    )
+    l6_real_observation_preflight_approval_packets = load_optional_json(
+        "real_observation_approval_packet_schema/approval_packet_examples_blocked_now.json",
+        files_read,
+    )
+    l6_real_observation_preflight_operator_handoff = load_optional_json(
+        "observation_operator_handoff/operator_handoff_contract.json",
+        files_read,
+    )
+    l6_real_observation_preflight_network_isolation = load_optional_json(
+        "observation_network_isolation_preflight/network_isolation_requirement.json",
+        files_read,
+    )
+    l6_real_observation_preflight_evidence_capture = load_optional_json(
+        "observation_evidence_capture_preflight/evidence_capture_contract.json",
+        files_read,
+    )
+    l6_real_observation_preflight_abort_registry = load_optional_json(
+        "observation_abort_rollback_quarantine_policy/abort_condition_registry.json",
+        files_read,
+    )
+    l6_real_observation_preflight_no_real_observation_receipt = load_optional_json(
+        "read_only_observation_no_action_guarantees/no_real_observation_receipt.json",
+        files_read,
+    )
+    l6_real_observation_preflight_decisions = load_optional_json(
+        "real_observation_preflight_decision_gate/candidate_preflight_decisions.json",
+        files_read,
+    )
+    l6_real_observation_preflight_residual_delta = load_optional_json(
+        "l6_real_observation_preflight_strategic_residual_loop/l6_4_strategic_residual_delta.json",
+        files_read,
+    )
+    l6_real_observation_preflight_readiness_summary = load_optional_json(
+        "l6_real_observation_preflight_readiness/l6_4_readiness_assessment.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -5115,6 +5397,22 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         l6_controlled_observation_residual_delta,
         l6_controlled_observation_readiness_summary,
     )
+    l6_real_observation_preflight_summary = build_l6_real_observation_preflight_summary(
+        l6_real_observation_preflight_milestone_summary,
+        l6_real_observation_preflight_selected_candidates,
+        l6_real_observation_preflight_requirement_registry,
+        l6_real_observation_preflight_allowlist_policy,
+        l6_real_observation_preflight_denylist_policy,
+        l6_real_observation_preflight_approval_packets,
+        l6_real_observation_preflight_operator_handoff,
+        l6_real_observation_preflight_network_isolation,
+        l6_real_observation_preflight_evidence_capture,
+        l6_real_observation_preflight_abort_registry,
+        l6_real_observation_preflight_no_real_observation_receipt,
+        l6_real_observation_preflight_decisions,
+        l6_real_observation_preflight_residual_delta,
+        l6_real_observation_preflight_readiness_summary,
+    )
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -5282,6 +5580,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_mvp_artifact_sandbox_summary": l6_mvp_artifact_sandbox_summary,
         "l6_external_observation_boundary_summary": l6_external_observation_boundary_summary,
         "l6_controlled_observation_sandbox_summary": l6_controlled_observation_sandbox_summary,
+        "l6_real_observation_preflight_summary": l6_real_observation_preflight_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -5518,6 +5817,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/l6_mvp_artifact_sandbox_summary.json",
             "console_read_model/generated/l6_external_observation_boundary_summary.json",
             "console_read_model/generated/l6_controlled_observation_sandbox_summary.json",
+            "console_read_model/generated/l6_real_observation_preflight_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -5637,6 +5937,15 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "real external observation, URL fetch, scraping, API calls, browser fetch,\n"
         "publication, outreach, payment, revenue, MCP, live behavior, canonical\n"
         "mutation, writeback, and direct Y* mutation remain blocked.\n\n"
+        "`l6_real_observation_preflight_summary.json` is derived from the L6.4\n"
+        "real read-only external observation preflight. It confirms future\n"
+        "read-only observation candidates, preflight contracts, source policies,\n"
+        "approval packet schemas, operator handoff, network isolation requirements,\n"
+        "evidence capture requirements, no-action guarantees, blocked decisions,\n"
+        "and readiness artifacts while real observation, URL fetch, scraping, API\n"
+        "calls, browser fetch, publication, outreach, payment, revenue, MCP, live\n"
+        "behavior, CIEU DB writes, canonical mutation, writeback, and direct Y*\n"
+        "mutation remain blocked.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -5685,6 +5994,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/l6_mvp_artifact_sandbox_summary.json", l6_mvp_artifact_sandbox_summary, generated_files)
     write_json("console_read_model/generated/l6_external_observation_boundary_summary.json", l6_external_observation_boundary_summary, generated_files)
     write_json("console_read_model/generated/l6_controlled_observation_sandbox_summary.json", l6_controlled_observation_sandbox_summary, generated_files)
+    write_json("console_read_model/generated/l6_real_observation_preflight_summary.json", l6_real_observation_preflight_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -5771,6 +6081,9 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     )
     l6_controlled_observation_sandbox = snapshot.get(
         "l6_controlled_observation_sandbox_summary", {}
+    )
+    l6_real_observation_preflight = snapshot.get(
+        "l6_real_observation_preflight_summary", {}
     )
     lines.extend(
         [
@@ -6800,6 +7113,39 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- ready_for_real_network_observation: {l6_controlled_observation_sandbox.get('ready_for_real_network_observation')}",
             f"- next_recommended_milestone: {l6_controlled_observation_sandbox.get('next_recommended_milestone')}",
             f"- Warning: {l6_controlled_observation_sandbox.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## L6.4 Real Read-Only External Observation Preflight",
+            "",
+            f"- l6_4_real_read_only_observation_preflight_defined: {l6_real_observation_preflight.get('l6_4_real_read_only_observation_preflight_defined')}",
+            f"- preflight_only: {l6_real_observation_preflight.get('preflight_only')}",
+            f"- sandbox_only: {l6_real_observation_preflight.get('sandbox_only')}",
+            f"- future_real_read_only_observation_candidate_allowed: {l6_real_observation_preflight.get('future_real_read_only_observation_candidate_allowed')}",
+            f"- candidate_count: {l6_real_observation_preflight.get('candidate_count')}",
+            f"- approval_packet_count: {l6_real_observation_preflight.get('approval_packet_count')}",
+            f"- source_allowlist_defined: {l6_real_observation_preflight.get('source_allowlist_defined')}",
+            f"- source_denylist_defined: {l6_real_observation_preflight.get('source_denylist_defined')}",
+            f"- operator_handoff_plan_generated: {l6_real_observation_preflight.get('operator_handoff_plan_generated')}",
+            f"- network_isolation_preflight_defined: {l6_real_observation_preflight.get('network_isolation_preflight_defined')}",
+            f"- evidence_capture_preflight_defined: {l6_real_observation_preflight.get('evidence_capture_preflight_defined')}",
+            f"- abort_rollback_quarantine_policy_defined: {l6_real_observation_preflight.get('abort_rollback_quarantine_policy_defined')}",
+            f"- no_action_guarantees_generated: {l6_real_observation_preflight.get('no_action_guarantees_generated')}",
+            f"- preflight_decision_gate_generated: {l6_real_observation_preflight.get('preflight_decision_gate_generated')}",
+            f"- real_external_observation_authorized: {l6_real_observation_preflight.get('real_external_observation_authorized')}",
+            f"- network_enabled: {l6_real_observation_preflight.get('network_enabled')}",
+            f"- scraping_enabled: {l6_real_observation_preflight.get('scraping_enabled')}",
+            f"- browser_fetch_enabled: {l6_real_observation_preflight.get('browser_fetch_enabled')}",
+            f"- publication_enabled: {l6_real_observation_preflight.get('publication_enabled')}",
+            f"- outreach_enabled: {l6_real_observation_preflight.get('outreach_enabled')}",
+            f"- payment_enabled: {l6_real_observation_preflight.get('payment_enabled')}",
+            f"- revenue_execution_enabled: {l6_real_observation_preflight.get('revenue_execution_enabled')}",
+            f"- ready_for_l6_5_controlled_real_read_only_observation_pilot_design: {l6_real_observation_preflight.get('ready_for_l6_5_controlled_real_read_only_observation_pilot_design')}",
+            f"- ready_for_actual_network_observation_now: {l6_real_observation_preflight.get('ready_for_actual_network_observation_now')}",
+            f"- next_recommended_milestone: {l6_real_observation_preflight.get('next_recommended_milestone')}",
+            f"- Warning: {l6_real_observation_preflight.get('warning')}",
         ]
     )
     lines.extend(

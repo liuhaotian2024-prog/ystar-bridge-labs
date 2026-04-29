@@ -1,0 +1,11 @@
+{
+  "schema_version": "v0",
+  "blockers": [
+    "future explicit approval boundary missing",
+    "real source evidence not yet observed",
+    "operator handoff not exercised live",
+    "network isolation not approved for execution",
+    "evidence capture not tested on real current data",
+    "publication/outreach/payment/revenue remain forbidden"
+  ]
+}

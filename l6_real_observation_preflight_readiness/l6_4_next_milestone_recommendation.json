@@ -1,0 +1,11 @@
+{
+  "schema_version": "v0",
+  "recommended_next_milestone": "L6.5 Controlled Real Read-Only Observation Pilot Design v0",
+  "do_not_implement_in_l6_4": true,
+  "recommended_scope": [
+    "controlled pilot design",
+    "still no actual observation unless separately approved",
+    "review future operator/tool isolation"
+  ],
+  "ready_for_actual_network_observation_now": false
+}

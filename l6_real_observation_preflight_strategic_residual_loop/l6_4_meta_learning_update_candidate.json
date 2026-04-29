@@ -1,0 +1,18 @@
+{
+  "schema_version": "v0",
+  "candidate_id": "l6_4_meta_learning_update_candidate",
+  "learning_targets": [
+    "real_read_only_observation_preflight_policy",
+    "source_allowlist_policy",
+    "operator_handoff_policy",
+    "evidence_capture_policy",
+    "abort_quarantine_policy"
+  ],
+  "eligible_for_review_queue": true,
+  "eligible_for_direct_brain_writeback": false,
+  "eligible_for_direct_memory_ingestion": false,
+  "eligible_for_candidate_auto_approval": false,
+  "eligible_for_direct_strategy_mutation": false,
+  "approved": false,
+  "applied": false
+}

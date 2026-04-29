@@ -137,5 +137,15 @@ real external observation, URL fetch, scraping, API calls, browser fetch,
 publication, outreach, payment, revenue, MCP, live behavior, canonical
 mutation, writeback, and direct Y* mutation remain blocked.
 
+`l6_real_observation_preflight_summary.json` is derived from the L6.4
+real read-only external observation preflight. It confirms future
+read-only observation candidates, preflight contracts, source policies,
+approval packet schemas, operator handoff, network isolation requirements,
+evidence capture requirements, no-action guarantees, blocked decisions,
+and readiness artifacts while real observation, URL fetch, scraping, API
+calls, browser fetch, publication, outreach, payment, revenue, MCP, live
+behavior, CIEU DB writes, canonical mutation, writeback, and direct Y*
+mutation remain blocked.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

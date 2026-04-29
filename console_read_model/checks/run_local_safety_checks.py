@@ -2051,6 +2051,51 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "l6_controlled_observation_sandbox_readiness/l6_3_readiness_assessment.json"],
     ),
     Check(
+        "Compile L6.4 real read-only observation preflight builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "l6_real_read_only_external_observation_preflight/tools/build_l6_real_read_only_external_observation_preflight.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: l6_real_observation_preflight_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_real_observation_preflight_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_4_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_real_read_only_external_observation_preflight/l6_4_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: selected_real_observation_candidates.json",
+        ["python3", "-m", "json.tool", "real_observation_candidate_selector/selected_real_observation_candidates.json"],
+    ),
+    Check(
+        "Validate JSON: preflight_requirement_registry.json",
+        ["python3", "-m", "json.tool", "real_read_only_observation_preflight_contract/preflight_requirement_registry.json"],
+    ),
+    Check(
+        "Validate JSON: approval_packet_examples_blocked_now.json",
+        ["python3", "-m", "json.tool", "real_observation_approval_packet_schema/approval_packet_examples_blocked_now.json"],
+    ),
+    Check(
+        "Validate JSON: network_isolation_requirement.json",
+        ["python3", "-m", "json.tool", "observation_network_isolation_preflight/network_isolation_requirement.json"],
+    ),
+    Check(
+        "Validate JSON: evidence_capture_contract.json",
+        ["python3", "-m", "json.tool", "observation_evidence_capture_preflight/evidence_capture_contract.json"],
+    ),
+    Check(
+        "Validate JSON: candidate_preflight_decisions.json",
+        ["python3", "-m", "json.tool", "real_observation_preflight_decision_gate/candidate_preflight_decisions.json"],
+    ),
+    Check(
+        "Validate JSON: l6_4_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "l6_real_observation_preflight_readiness/l6_4_readiness_assessment.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -2297,6 +2342,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: controlled-external-observation-sandbox",
         ["python3", "console_read_model/cli/team_console.py", "controlled-external-observation-sandbox"],
+    ),
+    Check(
+        "CLI smoke: real-read-only-observation-preflight",
+        ["python3", "console_read_model/cli/team_console.py", "real-read-only-observation-preflight"],
     ),
     Check(
         "CLI smoke: sources",

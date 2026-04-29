@@ -182,6 +182,14 @@ python3 console_read_model/cli/team_console.py <command>
   refinement candidates, no-action receipts, strategic residual loop, readiness
   for L6.4 preflight, and blocked real observation/network/API/scraping/browser
   fetch/publication/outreach/payment/revenue/MCP/live/writeback execution state.
+- `real-read-only-observation-preflight`: Prints the generated L6.4 real
+  read-only external observation preflight summary: selected future candidates,
+  preflight contract, source allowlist/denylist, approval packets, operator
+  handoff, network isolation requirements, evidence capture requirements,
+  abort/quarantine policy, no-action guarantees, blocked preflight decisions,
+  readiness for L6.5 pilot design, and blocked real observation/network/API/
+  scraping/browser fetch/publication/outreach/payment/revenue/MCP/live/CIEU DB/
+  writeback execution state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

@@ -1,0 +1,29 @@
+{
+  "schema_version": "v0",
+  "event_mode": "l6_4_real_read_only_external_observation_preflight_fixture",
+  "X_t": {
+    "l6_0": "value hypothesis selection exists",
+    "l6_1": "internal MVP artifact sandbox exists",
+    "l6_2": "external observation boundary exists",
+    "l6_3": "controlled static/manual observation sandbox exists"
+  },
+  "U_t": "Create preflight conditions for future real read-only observation without executing real observation.",
+  "Y_star_t": "Define a complete preflight system for future real read-only external observation while preserving no-network/no-scraping/no-API/no-browser-fetch/no-publication/no-outreach/no-payment/no-revenue/no-MCP/no-live/no-canonical-mutation/no-brain-memory-writeback/no-direct-Y* mutation constraints.",
+  "Y_t_plus_1": [
+    "real observation candidates selected for preflight",
+    "read-only contract generated",
+    "source allowlist/denylist generated",
+    "blocked approval packets generated",
+    "operator handoff generated",
+    "network isolation requirements generated",
+    "evidence capture preflight generated",
+    "abort/rollback/quarantine policy generated",
+    "no-action guarantees generated",
+    "preflight decisions block real observation"
+  ],
+  "R_t_plus_1": "deterministic structural residual only",
+  "persistence_enabled": false,
+  "db_write_performed": false,
+  "real_observation_performed": false,
+  "real_network_enabled": false
+}
