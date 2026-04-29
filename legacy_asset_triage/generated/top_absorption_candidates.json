@@ -4,7 +4,7 @@
   "candidate_count": 7,
   "candidates": [
     {
-      "asset_id": "asset-0555",
+      "asset_id": "asset-0572",
       "source_path": "console_read_model/cli/team_console.py",
       "bucket": "A_adopt_now_read_only",
       "why_valuable": "high mission value with deterministic evidence from compact inventory",
@@ -15,7 +15,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "asset-0610",
+      "asset_id": "asset-0635",
       "source_path": "console_read_model/generated/team_console_snapshot.md",
       "bucket": "B_wrap_as_governed_tool",
       "why_valuable": "high mission value with deterministic evidence from compact inventory",
@@ -26,7 +26,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "asset-1091",
+      "asset_id": "asset-1315",
       "source_path": "gov_mcp/server.py",
       "bucket": "B_wrap_as_governed_tool",
       "why_valuable": "high mission value with deterministic evidence from compact inventory",
@@ -37,7 +37,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "asset-4330",
+      "asset_id": "asset-4824",
       "source_path": "scripts/skill_lifecycle_manager.py",
       "bucket": "B_wrap_as_governed_tool",
       "why_valuable": "high mission value with deterministic evidence from compact inventory",
@@ -48,7 +48,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "asset-3357",
+      "asset_id": "asset-3841",
       "source_path": "reports/ceo/demonstrators/goal_4_ystar_symbol_liveness.py",
       "bucket": "B_wrap_as_governed_tool",
       "why_valuable": "high mission value with deterministic evidence from compact inventory",

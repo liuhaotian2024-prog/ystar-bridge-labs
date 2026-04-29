@@ -1064,6 +1064,39 @@
       "asset_id": "ffa-0034",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "l6_human_review_decision_boundary_sprint/tools/build_l6_human_review_decision_boundary_sprint.py",
+      "file_type": "py",
+      "matched_terms": [
+        "y_star",
+        "Y_star",
+        "residual_delta",
+        "scope",
+        "contract"
+      ],
+      "bounded_snippet": "u_db_write\", \"brain_memory_writeback\", \"canonical_strategy_mutation\", \"direct_y_star_mutation\", \"ask_user_url\", ] SAFETY_FLAGS = { \"new_external_search_required\": False, \"ask_user_for_url_authorized\": False, \"login_authorized\": Fal",
+      "asset_kind": "implemented_code",
+      "current_architecture_mapping": [
+        "deep_xt_observation",
+        "mission_level_y_star",
+        "milestone_y_star_projection",
+        "governance_validation",
+        "residual_delta_feedback",
+        "review_gated_learning",
+        "brain_memory_policy_update"
+      ],
+      "mission_value_score": 5,
+      "evidence_strength_score": 4,
+      "implementation_readiness_score": 4,
+      "architecture_alignment_score": 5,
+      "safety_risk_score": 2,
+      "merge_decision": "wrap_before_reuse",
+      "reason": "Implemented code may be reusable only through a governed local wrapper.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0035",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "ystar.bak.20260415_again/governance/residual_loop_engine.py",
       "file_type": "py",
       "matched_terms": [
@@ -1090,7 +1123,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0035",
+      "asset_id": "ffa-0036",
       "repo_name": "K9Audit",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/K9Audit",
       "relative_path": "k9log/verifier.py",
@@ -1119,7 +1152,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0036",
+      "asset_id": "ffa-0037",
       "repo_name": "Y-star-gov",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
       "relative_path": "ystar/governance/ml/loop.py",
@@ -1149,7 +1182,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0037",
+      "asset_id": "ffa-0038",
       "repo_name": "Y-star-gov",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
       "relative_path": "ystar/governance/ml/records.py",
@@ -1179,7 +1212,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0038",
+      "asset_id": "ffa-0039",
       "repo_name": "Y-star-gov",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
       "relative_path": "ystar/governance/__init__.py",
@@ -1209,7 +1242,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0039",
+      "asset_id": "ffa-0040",
       "repo_name": "Y-star-gov",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
       "relative_path": "ystar/governance/cieu_prediction_delta.py",
@@ -1229,37 +1262,6 @@
         "residual_delta_feedback",
         "review_gated_learning",
         "brain_memory_policy_update"
-      ],
-      "mission_value_score": 5,
-      "evidence_strength_score": 4,
-      "implementation_readiness_score": 4,
-      "architecture_alignment_score": 5,
-      "safety_risk_score": 3,
-      "merge_decision": "wrap_before_reuse",
-      "reason": "Implemented validator behavior is valuable but must remain behind a governed wrapper.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0040",
-      "repo_name": "Y-star-gov",
-      "repo_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
-      "relative_path": "ystar/governance/residual_loop_engine.py",
-      "file_type": "py",
-      "matched_terms": [
-        "y_star",
-        "ystar",
-        "Y_star",
-        "YStar",
-        "causal"
-      ],
-      "bounded_snippet": "# Layer: Prescriptive Governance \"\"\" ystar.governance.residual_loop_engine — Residual-Driven CIEU Closed Loop =========================================================================== AMENDMENT-014 (202",
-      "asset_kind": "implemented_code",
-      "current_architecture_mapping": [
-        "mission_level_y_star",
-        "session_y_star_projection",
-        "task_y_star_projection",
-        "governance_validation",
-        "residual_delta_feedback"
       ],
       "mission_value_score": 5,
       "evidence_strength_score": 4,
@@ -2779,6 +2781,54 @@
       "asset_id": "ffa-0087",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "controlled_search_backend_runtime/controlled_search_runtime.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar"
+      ],
+      "bounded_snippet": "import json import os from pathlib import Path from typing import Any ENABLE_ENV_VAR = \"YSTAR_CONTROLLED_SEARCH_ENABLED\" BACKEND_ENV_VAR = \"YSTAR_CONTROLLED_SEARCH_BACKEND\" @dataclass(frozen=True) class SearchQuery: query_id: str query_t...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "deep_xt_observation"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 2,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 1,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0088",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "relative_path": "explicit_controlled_search_resolver/explicit_search_resolver_runtime.py",
+      "file_type": "py",
+      "matched_terms": [
+        "ystar",
+        "YStar"
+      ],
+      "bounded_snippet": "import json import os from pathlib import Path from typing import Any ENABLE_ENV_VAR = \"YSTAR_ENABLE_CONTROLLED_LOCATOR_SEARCH\" @dataclass(frozen=True) class ExplicitSearchResolutionRequest: request_id: str linked_work_order_id: str sour...",
+      "asset_kind": "obsolete_runtime",
+      "current_architecture_mapping": [
+        "deep_xt_observation"
+      ],
+      "mission_value_score": 3,
+      "evidence_strength_score": 2,
+      "implementation_readiness_score": 2,
+      "architecture_alignment_score": 2,
+      "safety_risk_score": 1,
+      "merge_decision": "do_not_absorb",
+      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0089",
+      "repo_name": "ystar-company",
+      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/check_wheel_contents.py",
       "file_type": "py",
       "matched_terms": [
@@ -2800,7 +2850,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0088",
+      "asset_id": "ffa-0090",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/conversation_replay.py",
@@ -2824,7 +2874,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0089",
+      "asset_id": "ffa-0091",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/k9.py",
@@ -2848,7 +2898,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0090",
+      "asset_id": "ffa-0092",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/k9_phase1.py",
@@ -2874,7 +2924,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0091",
+      "asset_id": "ffa-0093",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/k9_watch.py",
@@ -2898,7 +2948,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0092",
+      "asset_id": "ffa-0094",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/labs_atlas_query.py",
@@ -2922,7 +2972,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0093",
+      "asset_id": "ffa-0095",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/mac_command.py",
@@ -2946,7 +2996,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0094",
+      "asset_id": "ffa-0096",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/telegram_bridge.py",
@@ -2970,7 +3020,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0095",
+      "asset_id": "ffa-0097",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/verify_twin_evolution.py",
@@ -2994,7 +3044,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0096",
+      "asset_id": "ffa-0098",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/wisdom_search.py",
@@ -3017,7 +3067,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0097",
+      "asset_id": "ffa-0099",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/post_ep01.py",
@@ -3044,7 +3094,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0098",
+      "asset_id": "ffa-0100",
       "repo_name": "ystar-company",
       "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
       "relative_path": "scripts/post_episodes.py",
@@ -3060,60 +3110,6 @@
         "task_y_star_projection",
         "governance_validation",
         "review_gated_learning"
-      ],
-      "mission_value_score": 3,
-      "evidence_strength_score": 2,
-      "implementation_readiness_score": 2,
-      "architecture_alignment_score": 5,
-      "safety_risk_score": 2,
-      "merge_decision": "do_not_absorb",
-      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0099",
-      "repo_name": "ystar-company",
-      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
-      "relative_path": "scripts/redteam_secretary.py",
-      "file_type": "py",
-      "matched_terms": [
-        "ystar",
-        "YStar"
-      ],
-      "bounded_snippet": "re__ import annotations import argparse import json import sys from pathlib import Path YSTAR_DIR = Path(\"/Users/haotianliu/.openclaw/workspace/ystar-company\") SESSION_JSON = YSTAR_DIR / \".ystar_session.json\" CIEU_DB = YSTAR_DIR / \".ysta...",
-      "asset_kind": "obsolete_runtime",
-      "current_architecture_mapping": [
-        "session_y_star_projection",
-        "governance_validation",
-        "review_gated_learning",
-        "brain_memory_policy_update"
-      ],
-      "mission_value_score": 3,
-      "evidence_strength_score": 2,
-      "implementation_readiness_score": 2,
-      "architecture_alignment_score": 5,
-      "safety_risk_score": 2,
-      "merge_decision": "do_not_absorb",
-      "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed.",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "ffa-0100",
-      "repo_name": "ystar-company",
-      "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
-      "relative_path": "scripts/twin_report.py",
-      "file_type": "py",
-      "matched_terms": [
-        "ystar",
-        "YStar"
-      ],
-      "bounded_snippet": "esolve().parent.parent KNOWLEDGE_ROOT = REPO_ROOT / \"knowledge\" MEMORY_DB = REPO_ROOT / \".ystar_memory[database-suffix]\" CIEU_DB = REPO_ROOT / \".ystar_cieu[database-suffix]\" GEMMA_LOG = KNOWLEDGE_ROOT / \"ceo\" / \"gaps\" / \"gemma_sessions[l...",
-      "asset_kind": "obsolete_runtime",
-      "current_architecture_mapping": [
-        "session_y_star_projection",
-        "task_y_star_projection",
-        "governance_validation",
-        "brain_memory_policy_update"
       ],
       "mission_value_score": 3,
       "evidence_strength_score": 2,

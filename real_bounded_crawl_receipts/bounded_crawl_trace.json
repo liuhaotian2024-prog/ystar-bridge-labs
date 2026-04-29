@@ -2,6 +2,6 @@
   "schema_version": "v0",
   "crawl_depth_used": 1,
   "crawl_expansions": [],
-  "external_reads_used": 0,
+  "external_reads_used": 15,
   "scope_drift_stopped": false
 }

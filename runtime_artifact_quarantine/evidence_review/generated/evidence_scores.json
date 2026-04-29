@@ -34,7 +34,7 @@
       "evidence_id": "evidence-001",
       "candidate_id": "mdcand-001",
       "review_id": "review-001",
-      "source_path": "reports/ceo/brain_dream_diffs/dream_diff_20260429_095744_nrem.md",
+      "source_path": "reports/ceo/brain_dream_diffs/dream_diff_20260429_181358_nrem.md",
       "artifact_class": "DREAM_REPORT",
       "disposition": "safe_mined_to_review_queue",
       "review_status": "pending_review",

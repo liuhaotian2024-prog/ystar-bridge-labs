@@ -113,8 +113,8 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 186
-- Unsafe artifacts count: 146
+- Artifacts classified: 275
+- Unsafe artifacts count: 164
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -123,10 +123,11 @@ Not ready:
   - DB_CORE: 1
   - DB_SIDECARE: 6
   - DREAM_REPORT: 1
+  - FRAMEWORK_FILE: 10
   - LOG_RUNTIME: 30
-  - PYCACHE: 69
-  - UNKNOWN_OR_NON_RUNTIME: 40
-  - UNKNOWN_RUNTIME_ARTIFACT: 12
+  - PYCACHE: 89
+  - UNKNOWN_OR_NON_RUNTIME: 101
+  - UNKNOWN_RUNTIME_ARTIFACT: 10
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
 - Warning: Console displays only curated path-level quarantine summary. No artifact contents were read.
 
@@ -155,22 +156,22 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 186
-- Artifacts with disposition: 186
+- Total artifacts: 275
+- Artifacts with disposition: 275
 - Safe-mined to review queue: 1
-- Forbidden direct read count: 145
+- Forbidden direct read count: 163
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
   - deferred_requires_bounded_log_adapter: 30
-  - deferred_requires_classification: 12
+  - deferred_requires_classification: 10
   - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
-  - ignored_generated_cache: 69
-  - ignored_or_non_runtime: 40
+  - ignored_generated_cache: 89
+  - ignored_or_non_runtime: 111
   - safe_mined_to_review_queue: 1
 - Evidence scoring status:
-  - not_started: 186
+  - not_started: 275
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -239,7 +240,7 @@ Not ready:
 ## Cross-Repo Governance Alignment
 
 - alignment_accepted: True
-- ystar-company HEAD: 17aadbec tools: add real release simulation sandbox
+- ystar-company HEAD: 491e3f4f [auto] WIP checkpoint 2026-04-29 18:01 -- 168 files changed
 - Y-star-gov HEAD: 9c4aee3 tools: add governance endpoint acceptance runner
 - Y-star-gov endpoint accepted: True
 - labs runtime accepted: True
@@ -548,7 +549,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 6354
+- assets_scanned: 6456
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -1458,29 +1459,29 @@ Not ready:
 
 - l6_13_real_controlled_external_observation_mission_sprint_complete: True
 - mode: real_controlled_external_observation_mission_sprint
-- run_classification: real_backend_activation_blocked_with_complete_activation_kit
+- run_classification: real_evidence_collected_with_unresolved_conflicts
 - selected_work_order_id: l6_10x_selected_work_order_001
-- backend_mode: disabled
-- page_read_mode: disabled
-- network_allowed: False
-- safety_preflight_decision: blocked
+- backend_mode: tavily_search_api
+- page_read_mode: stdlib_public_http
+- network_allowed: True
+- safety_preflight_decision: pass
 - fixture_proof_executed: True
-- real_observation_executed: False
+- real_observation_executed: True
 - query_count: 10
-- search_results_considered: 3
-- pages_opened: 3
-- domains_touched: 2
+- search_results_considered: 25
+- pages_opened: 8
+- domains_touched: 6
 - crawl_depth_used: 1
-- external_reads_used: 0
-- real_evidence_packets_generated: 0
+- external_reads_used: 15
+- real_evidence_packets_generated: 2
 - fixture_evidence_packets_generated: 3
 - conflicts_found: 1
 - unresolved_claims: 1
 - query_refinements_generated: 3
 - capability_gaps_resolved: 6
-- capability_gaps_remaining: 6
+- capability_gaps_remaining: 4
 - activation_kit_generated: True
-- blockers: ['controlled_public_page_read_adapter_not_configured', 'controlled_search_backend_not_configured', 'real_provider_and_stdlib_page_read_not_configured']
+- blockers: []
 - ask_user_for_url_occurred: False
 - external_side_effects_occurred: False
 - core_writeback_occurred: False
@@ -1488,7 +1489,7 @@ Not ready:
 - gov_mcp_modified: False
 - search_snippets_used_as_evidence: False
 - page_read_content_used_as_evidence: True
-- next_step: configure controlled search backend and stdlib public page-read allow flags
+- next_step: review real evidence packet before any downstream use
 - Warning: L6.13 provides a complete activation kit and fixture-proven mission evidence loop. Real public observation remains gated by explicit backend/page-read configuration and safety preflight.
 
 ## Governance Boundary

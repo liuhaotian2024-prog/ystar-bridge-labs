@@ -1,6 +1,6 @@
 {
   "schema_version": "v0",
-  "run_classification": "real_backend_activation_blocked_with_complete_activation_kit",
+  "run_classification": "real_evidence_collected_with_unresolved_conflicts",
   "allowed_run_classifications": [
     "real_controlled_observation_loop_executed",
     "real_backend_activation_blocked_with_complete_activation_kit",
@@ -10,5 +10,5 @@
     "real_evidence_collected_with_unresolved_conflicts",
     "real_evidence_collected_and_review_ready"
   ],
-  "reason": "real backend/page-read activation incomplete; fixture proof and activation kit generated"
+  "reason": "real evidence packets generated"
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": "v0",
-  "run_classification": "real_backend_activation_blocked_with_complete_activation_kit",
-  "real_observation_executed": false,
+  "run_classification": "real_evidence_collected_with_unresolved_conflicts",
+  "real_observation_executed": true,
   "fixture_proof_executed": true,
   "selected_work_order": {
     "schema_version": "v0",
@@ -17,25 +17,24 @@
   },
   "budget_used": {
     "query_count": 10,
-    "search_results_considered": 3,
-    "pages_opened": 3,
-    "domains_touched": 2,
+    "search_results_considered": 25,
+    "pages_opened": 8,
+    "domains_touched": 6,
     "crawl_depth_used": 1,
-    "external_reads_used": 0
+    "external_reads_used": 15
   },
-  "backend_mode": "disabled",
-  "page_read_mode": "disabled",
+  "backend_mode": "tavily_search_api",
+  "page_read_mode": "stdlib_public_http",
   "evidence_packets": [
-    "l6_13_fixture_evidence_packet_001",
-    "l6_13_fixture_evidence_packet_002",
-    "l6_13_fixture_evidence_packet_003"
+    "l6_13_real_evidence_packet_002",
+    "l6_13_real_evidence_packet_003"
   ],
   "conflicts": [
     {
       "conflict_id": "l6_13_conflict_001",
-      "claim_id": "l6_13_claim_003",
+      "claim_id": "l6_13_claim_002",
       "conflicting_evidence_packet_ids": [
-        "l6_13_fixture_evidence_packet_003"
+        "l6_13_real_evidence_packet_003"
       ],
       "conflict_type": "scope_limitation",
       "description": "Evidence indicates review-only scope limitations remain unresolved.",
@@ -43,7 +42,7 @@
     }
   ],
   "unresolved_claims": [
-    "l6_13_claim_003"
+    "l6_13_claim_002"
   ],
   "recommended_query_refinements": [
     {
@@ -94,24 +93,24 @@
       "gap_id": "l6_13_gap_001_configured_search_provider",
       "source_l6_12_gap_count": 15,
       "previous_status": "reported_in_l6_12",
-      "l6_13_status": "still_blocking_real_observation",
+      "l6_13_status": "partially_resolved_in_l6_13",
       "severity": "high",
-      "current_state": "disabled",
+      "current_state": "tavily_search_api",
       "needed_capability": "Set controlled search backend mode, allow flag, and provider key presence.",
       "patch_or_artifact_added": "real_backend_activation_kit plus scripts/l6_13_check_controlled_observation_env.sh",
-      "still_blocks_real_observation": true,
+      "still_blocks_real_observation": false,
       "recommended_next_step": "Set controlled search backend mode, allow flag, and provider key presence."
     },
     {
       "gap_id": "l6_13_gap_002_configured_public_page_reader",
       "source_l6_12_gap_count": 15,
       "previous_status": "reported_in_l6_12",
-      "l6_13_status": "still_blocking_real_observation",
+      "l6_13_status": "partially_resolved_in_l6_13",
       "severity": "high",
-      "current_state": "disabled",
+      "current_state": "stdlib_public_http",
       "needed_capability": "Set YSTAR_CONTROLLED_PAGE_READ_BACKEND=stdlib_public_http and explicit allow flag.",
       "patch_or_artifact_added": "real_page_read_activation policy and run script",
-      "still_blocks_real_observation": true,
+      "still_blocks_real_observation": false,
       "recommended_next_step": "Set YSTAR_CONTROLLED_PAGE_READ_BACKEND=stdlib_public_http and explicit allow flag."
     },
     {
