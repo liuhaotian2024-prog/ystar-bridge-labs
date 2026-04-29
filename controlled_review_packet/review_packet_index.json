@@ -1,0 +1,6 @@
+{
+  "schema_version": "v0",
+  "review_packets": [
+    "controlled_review_packet/evidence_review_packet.json"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "action": "social_media_action",
+  "executed": false,
+  "occurred": false,
+  "authorized": false,
+  "receipt": "no_social_media_action"
+}

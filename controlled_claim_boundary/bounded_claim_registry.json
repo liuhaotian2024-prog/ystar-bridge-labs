@@ -1,0 +1,32 @@
+{
+  "schema_version": "v0",
+  "claims": [
+    {
+      "claim_id": "l6_12_claim_001",
+      "evidence_packet_id": "l6_12_evidence_packet_001",
+      "bounded_claim": "Fixture evidence says the program describes beneficiary-facing demand signals in public language.",
+      "support_status": "supported_by_page_read_content",
+      "conflict_status": "no_conflict",
+      "allowed_use": "internal_review_only",
+      "external_use_authorized": false
+    },
+    {
+      "claim_id": "l6_12_claim_002",
+      "evidence_packet_id": "l6_12_evidence_packet_002",
+      "bounded_claim": "Fixture corroboration says beneficiary-facing demand language appears in multiple public descriptions.",
+      "support_status": "supported_by_page_read_content",
+      "conflict_status": "no_conflict",
+      "allowed_use": "internal_review_only",
+      "external_use_authorized": false
+    },
+    {
+      "claim_id": "l6_12_claim_003",
+      "evidence_packet_id": "l6_12_evidence_packet_003",
+      "bounded_claim": "Fixture limitation says the public descriptions do not prove demand conversion or revenue readiness.",
+      "support_status": "unresolved_limitation",
+      "conflict_status": "conflicted",
+      "allowed_use": "internal_review_only",
+      "external_use_authorized": false
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "v0",
+  "statuses": [
+    "corroborated",
+    "single_source_supported",
+    "conflicted",
+    "unresolved",
+    "insufficient_evidence",
+    "blocked_before_evidence"
+  ]
+}

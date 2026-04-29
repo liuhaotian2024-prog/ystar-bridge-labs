@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "action": "direct_y_star_mutation",
+  "executed": false,
+  "occurred": false,
+  "authorized": false,
+  "receipt": "no_direct_y_star_mutation"
+}

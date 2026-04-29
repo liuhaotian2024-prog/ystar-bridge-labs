@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "page_read_mode": "disabled",
+  "page_read_network_allowed": false,
+  "blockers": [
+    "controlled_public_page_read_adapter_not_configured"
+  ]
+}

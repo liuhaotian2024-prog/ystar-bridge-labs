@@ -1,0 +1,45 @@
+{
+  "schema_version": "v0",
+  "selected": [
+    {
+      "result_id": "l6_11_fixture_result_001",
+      "url": "https://official.example.org/fixture/program-demand",
+      "source_domain": "official.example.org",
+      "rank": 1,
+      "source_specificity": "specific_fixture_or_locator_candidate",
+      "freshness_likelihood": "review_required",
+      "risk_class": "low",
+      "source_type": "fixture_primary_source_candidate",
+      "corroboration_value": "medium",
+      "conflict_discovery_value": "medium",
+      "triage_decision": "selected_for_page_read"
+    },
+    {
+      "result_id": "l6_11_fixture_result_002",
+      "url": "https://analysis.example.net/fixture/corroboration-brief",
+      "source_domain": "analysis.example.net",
+      "rank": 1,
+      "source_specificity": "specific_fixture_or_locator_candidate",
+      "freshness_likelihood": "review_required",
+      "risk_class": "low",
+      "source_type": "fixture_secondary_source_candidate",
+      "corroboration_value": "medium",
+      "conflict_discovery_value": "medium",
+      "triage_decision": "selected_for_page_read"
+    },
+    {
+      "result_id": "l6_11_fixture_result_003",
+      "url": "https://analysis.example.net/fixture/scope-limitation",
+      "source_domain": "analysis.example.net",
+      "rank": 1,
+      "source_specificity": "specific_fixture_or_locator_candidate",
+      "freshness_likelihood": "review_required",
+      "risk_class": "low",
+      "source_type": "fixture_conflict_check_candidate",
+      "corroboration_value": "medium",
+      "conflict_discovery_value": "medium",
+      "triage_decision": "selected_for_page_read"
+    }
+  ],
+  "rejected": []
+}

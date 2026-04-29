@@ -1,0 +1,5 @@
+{
+  "schema_version": "v0",
+  "recommended_next_step": "configure_controlled_search_backend_and_public_page_read_adapter",
+  "do_not_ask_user_for_url": true
+}

@@ -1,0 +1,6 @@
+{
+  "schema_version": "v0",
+  "primary_residual": "real_backend_configuration_required_unless_env_configured",
+  "fixture_loop_reusable": true,
+  "query_refinement_candidates_pending": true
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "v0",
+  "fixture_proof_executed": true,
+  "backend_mode": "fixture",
+  "page_read_mode": "fixture",
+  "query_count": 8,
+  "search_results_considered": 3,
+  "pages_opened": 3,
+  "domains_touched": 2,
+  "crawl_depth_used": 1,
+  "external_reads_used": 0,
+  "evidence_packets_generated": 3,
+  "conflicts_found": 1,
+  "network_used": false,
+  "ask_user_for_url_occurred": false
+}

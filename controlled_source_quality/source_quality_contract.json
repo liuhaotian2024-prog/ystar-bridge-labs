@@ -1,0 +1,15 @@
+{
+  "schema_version": "v0",
+  "labels": [
+    "official_primary",
+    "official_secondary",
+    "institutional",
+    "documentation",
+    "reputable_media",
+    "community",
+    "commercial_vendor",
+    "unknown",
+    "blocked_or_ineligible"
+  ],
+  "llm_confidence_as_truth_authority": false
+}

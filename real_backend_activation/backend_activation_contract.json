@@ -1,0 +1,12 @@
+{
+  "schema_version": "v0",
+  "supported_modes": [
+    "disabled",
+    "fixture",
+    "brave_search_api",
+    "tavily_search_api",
+    "serpapi"
+  ],
+  "default_mode": "disabled",
+  "secrets_serialized": false
+}

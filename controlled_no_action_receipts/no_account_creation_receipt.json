@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "action": "account_creation",
+  "executed": false,
+  "occurred": false,
+  "authorized": false,
+  "receipt": "no_account_creation"
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "v0",
+  "required_fields": [
+    "evidence_packet_id",
+    "run_id",
+    "work_order_id",
+    "query_id",
+    "source_url",
+    "final_url",
+    "source_domain",
+    "source_type",
+    "source_quality_label",
+    "freshness_label",
+    "page_read_id",
+    "extracted_text_excerpt",
+    "bounded_claim",
+    "claim_scope",
+    "support_status",
+    "conflict_status",
+    "limitations",
+    "generated_at_utc",
+    "real_or_fixture"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "action": "cieu_db_write",
+  "executed": false,
+  "occurred": false,
+  "authorized": false,
+  "receipt": "no_cieu_db_write"
+}

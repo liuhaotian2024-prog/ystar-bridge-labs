@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "action": "form_submission",
+  "executed": false,
+  "occurred": false,
+  "authorized": false,
+  "receipt": "no_form_submission"
+}

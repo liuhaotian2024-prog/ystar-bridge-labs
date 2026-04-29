@@ -599,8 +599,8 @@
     "schema_version": "v0",
     "framework_status": "path_inventory_only",
     "current_mining_level": 0,
-    "artifacts_classified": 146,
-    "unsafe_artifacts_count": 119,
+    "artifacts_classified": 214,
+    "unsafe_artifacts_count": 142,
     "classes_seen": {
       "ACTIVE_AGENT_MARKER": 17,
       "BACKUP_DB": 1,
@@ -608,9 +608,11 @@
       "DAEMON_STATE": 4,
       "DB_CORE": 1,
       "DB_SIDECARE": 6,
+      "DREAM_REPORT": 1,
+      "FRAMEWORK_FILE": 16,
       "LOG_RUNTIME": 30,
-      "PYCACHE": 45,
-      "UNKNOWN_OR_NON_RUNTIME": 27,
+      "PYCACHE": 67,
+      "UNKNOWN_OR_NON_RUNTIME": 56,
       "UNKNOWN_RUNTIME_ARTIFACT": 10
     },
     "generated_manifest_ref": "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",
@@ -629,6 +631,7 @@
       "bounded_log_summarizer_future",
       "cache_sentinel_classifier_future",
       "daemon_state_metadata_adapter_future",
+      "dream_report_bounded_parser_future",
       "ignore_or_cleanup_policy_future",
       "manual_triage_future",
       "readonly_db_adapter_future"
@@ -638,8 +641,10 @@
   "safe_mining_summary": {
     "schema_name": "ystar.console_read_model.generated.safe_mining_summary",
     "schema_version": "v0",
-    "candidate_count": 0,
-    "classes_seen": {},
+    "candidate_count": 1,
+    "classes_seen": {
+      "DREAM_REPORT": 1
+    },
     "generated_candidate_index": "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json",
     "mining_manifest_ref": "runtime_artifact_quarantine/safe_mining/generated/mining_manifest.json",
     "safety_level": "bounded_markdown_candidate",
@@ -663,10 +668,17 @@
   "review_queue_summary": {
     "schema_name": "ystar.console_read_model.generated.review_queue_summary",
     "schema_version": "v0",
-    "review_count": 0,
-    "statuses": {},
-    "ingestion_statuses": {},
-    "intended_use_summary": {},
+    "review_count": 1,
+    "statuses": {
+      "pending_review": 1
+    },
+    "ingestion_statuses": {
+      "not_ingested": 1
+    },
+    "intended_use_summary": {
+      "memory_continuity_hint": 1,
+      "role_brain_capsule_hint": 1
+    },
     "generated_queue_path": "runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json",
     "review_queue_manifest_ref": "runtime_artifact_quarantine/safe_mining/review_queue/generated/review_queue_manifest.json",
     "default_review_status": "pending_review",
@@ -690,30 +702,33 @@
   "artifact_disposition_summary": {
     "schema_name": "ystar.console_read_model.generated.artifact_disposition_summary",
     "schema_version": "v0",
-    "total_artifacts": 146,
-    "artifacts_with_disposition": 146,
+    "total_artifacts": 214,
+    "artifacts_with_disposition": 214,
     "dispositions": {
       "deferred_requires_marker_metadata_adapter": 26,
       "deferred_sidecar_or_transaction_file": 6,
       "deferred_requires_classification": 10,
       "deferred_requires_readonly_db_adapter": 2,
-      "ignored_or_non_runtime": 27,
+      "ignored_or_non_runtime": 72,
       "deferred_requires_bounded_log_adapter": 30,
-      "ignored_generated_cache": 45
+      "ignored_generated_cache": 67,
+      "safe_mined_to_review_queue": 1
     },
     "artifact_classes": {
       "DAEMON_STATE": 4,
       "DB_SIDECARE": 6,
       "UNKNOWN_RUNTIME_ARTIFACT": 10,
       "DB_CORE": 1,
-      "UNKNOWN_OR_NON_RUNTIME": 27,
+      "UNKNOWN_OR_NON_RUNTIME": 56,
+      "FRAMEWORK_FILE": 16,
       "CACHE_SENTINEL": 5,
       "LOG_RUNTIME": 30,
       "ACTIVE_AGENT_MARKER": 17,
-      "PYCACHE": 45,
-      "BACKUP_DB": 1
+      "PYCACHE": 67,
+      "BACKUP_DB": 1,
+      "DREAM_REPORT": 1
     },
-    "safe_mined_to_review_queue": 0,
+    "safe_mined_to_review_queue": 1,
     "deferred_adapter_counts": {
       "deferred_requires_marker_metadata_adapter": 26,
       "deferred_sidecar_or_transaction_file": 6,
@@ -721,10 +736,10 @@
       "deferred_requires_readonly_db_adapter": 2,
       "deferred_requires_bounded_log_adapter": 30
     },
-    "ignored_generated_cache": 45,
-    "forbidden_direct_read_count": 119,
+    "ignored_generated_cache": 67,
+    "forbidden_direct_read_count": 141,
     "evidence_scoring_status": {
-      "not_started": 146
+      "not_started": 214
     },
     "generated_disposition_index": "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
     "warning": "Disposition is not ingestion. No brain/memory/CIEU writes are allowed."
@@ -732,13 +747,22 @@
   "evidence_review_summary": {
     "schema_name": "ystar.console_read_model.generated.evidence_review_summary",
     "schema_version": "v0",
-    "candidates_scored": 0,
-    "decision_stubs_created": 0,
-    "routes_created": 0,
-    "reuse_readiness": {},
-    "confidence": {},
-    "route_counts": {},
-    "semantic_truth_status": {},
+    "candidates_scored": 1,
+    "decision_stubs_created": 1,
+    "routes_created": 2,
+    "reuse_readiness": {
+      "hint_only": 1
+    },
+    "confidence": {
+      "structural_only": 1
+    },
+    "route_counts": {
+      "memory_continuity_hint_queue": 1,
+      "role_brain_capsule_hint_queue": 1
+    },
+    "semantic_truth_status": {
+      "not_evaluated": 1
+    },
     "automatic_approvals": 0,
     "brain_writeback_allowed": 0,
     "memory_ingestion_allowed": 0,
@@ -3527,6 +3551,8 @@
     "page_read_mode_tested": "fixture",
     "default_backend_mode": "disabled",
     "network_allowed": false,
+    "real_network_use_requires_explicit_backend_configuration": true,
+    "manual_url_request_replaced_by_backend_configuration": true,
     "fixture_full_pipeline_generated_non_empty_evidence_packet": true,
     "query_count": 5,
     "search_results_considered": 3,

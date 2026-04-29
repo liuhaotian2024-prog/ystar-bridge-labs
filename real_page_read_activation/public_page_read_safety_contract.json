@@ -1,0 +1,15 @@
+{
+  "schema_version": "v0",
+  "method": "GET_only",
+  "allowed_schemes": [
+    "http",
+    "https"
+  ],
+  "cookies": false,
+  "auth_headers": false,
+  "credentials": false,
+  "browser_automation": false,
+  "private_internal_targets_blocked": true,
+  "max_bytes_per_page": 200000,
+  "timeout_seconds": 5
+}

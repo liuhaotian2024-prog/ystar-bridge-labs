@@ -1,0 +1,17 @@
+{
+  "schema_version": "v0",
+  "real_observation_attempted": false,
+  "real_observation_executed": false,
+  "backend_mode": "disabled",
+  "page_read_mode": "disabled",
+  "network_allowed": false,
+  "safety_preflight_decision": "blocked",
+  "search_executed": false,
+  "pages_opened": 0,
+  "external_reads_used": 0,
+  "evidence_packets_generated": 0,
+  "blockers": [
+    "controlled_public_page_read_adapter_not_configured",
+    "controlled_search_backend_not_configured"
+  ]
+}

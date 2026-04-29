@@ -1,0 +1,53 @@
+{
+  "schema_version": "v0",
+  "backend_mode": "disabled",
+  "page_read_mode": "disabled",
+  "network_allowed": false,
+  "search_network_allowed": false,
+  "page_read_network_allowed": false,
+  "required_env_present": {},
+  "missing_env_names": [],
+  "safety_preflight_decision": "blocked",
+  "blockers": [
+    "controlled_search_backend_not_configured",
+    "controlled_public_page_read_adapter_not_configured"
+  ],
+  "no_action_guarantees": {
+    "ask_user_for_url": false,
+    "secret_values_serialized": false,
+    "login": false,
+    "payment": false,
+    "form_submission": false,
+    "posting_commenting_messaging": false,
+    "publication": false,
+    "outreach": false,
+    "revenue_execution": false,
+    "mcp_execution": false,
+    "live_behavior": false,
+    "cieu_db_write": false,
+    "brain_memory_writeback": false,
+    "canonical_update": false,
+    "direct_y_star_mutation": false
+  },
+  "provider_presence_matrix": [
+    {
+      "provider": "brave_search_api",
+      "required_env_name": "BRAVE_SEARCH_API_KEY",
+      "required_env_present": false,
+      "secret_value_serialized": false
+    },
+    {
+      "provider": "tavily_search_api",
+      "required_env_name": "TAVILY_API_KEY",
+      "required_env_present": false,
+      "secret_value_serialized": false
+    },
+    {
+      "provider": "serpapi",
+      "required_env_name": "SERPAPI_API_KEY",
+      "required_env_present": false,
+      "secret_value_serialized": false
+    }
+  ],
+  "secret_values_serialized": false
+}

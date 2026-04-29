@@ -1,0 +1,10 @@
+{
+  "schema_version": "v0",
+  "allowed_run_classifications": [
+    "real_controlled_observation_loop_executed",
+    "configuration_blocked_but_engineering_ready",
+    "preflight_blocked_but_engineering_ready",
+    "partial_real_observation_no_evidence",
+    "real_pages_read_but_conflict_unresolved"
+  ]
+}

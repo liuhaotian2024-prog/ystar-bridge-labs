@@ -1,0 +1,50 @@
+{
+  "schema_version": "v0",
+  "sources": [
+    {
+      "source_url": "https://official.example.org/fixture/program-demand",
+      "domain": "official.example.org",
+      "source_type": "official_primary",
+      "freshness_label": "fixture_current_marker",
+      "page_read_succeeded": true,
+      "evidence_extracted": true,
+      "primary_secondary_community": "primary",
+      "trust_limitations": [
+        "fixture/demo evidence only",
+        "not approved for external use"
+      ],
+      "llm_confidence_as_truth_authority": false,
+      "semantic_truth_score_used": false
+    },
+    {
+      "source_url": "https://analysis.example.net/fixture/corroboration-brief",
+      "domain": "analysis.example.net",
+      "source_type": "institutional",
+      "freshness_label": "fixture_current_marker",
+      "page_read_succeeded": true,
+      "evidence_extracted": true,
+      "primary_secondary_community": "secondary",
+      "trust_limitations": [
+        "fixture/demo evidence only",
+        "not approved for external use"
+      ],
+      "llm_confidence_as_truth_authority": false,
+      "semantic_truth_score_used": false
+    },
+    {
+      "source_url": "https://analysis.example.net/fixture/scope-limitation",
+      "domain": "analysis.example.net",
+      "source_type": "official_secondary",
+      "freshness_label": "fixture_current_marker",
+      "page_read_succeeded": true,
+      "evidence_extracted": true,
+      "primary_secondary_community": "secondary",
+      "trust_limitations": [
+        "fixture/demo evidence only",
+        "not approved for external use"
+      ],
+      "llm_confidence_as_truth_authority": false,
+      "semantic_truth_score_used": false
+    }
+  ]
+}

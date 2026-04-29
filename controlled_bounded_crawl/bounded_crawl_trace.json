@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "crawl_depth_used": 1,
+  "pages_opened": 3,
+  "domains_touched": 2,
+  "network_used": false,
+  "stop_on_scope_drift": true
+}

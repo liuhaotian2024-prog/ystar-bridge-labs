@@ -1,0 +1,141 @@
+{
+  "schema_version": "v0",
+  "gap_count": 15,
+  "gaps": [
+    {
+      "gap_id": "l6_12_gap_001_configured_search_provider",
+      "gap_name": "configured_search_provider",
+      "severity": "high",
+      "current_state": "not configured",
+      "needed_capability": "explicit controlled search provider with required env and allow flag",
+      "recommended_next_patch": "configure YSTAR_CONTROLLED_SEARCH_BACKEND and provider key presence",
+      "blocks_real_observation": true
+    },
+    {
+      "gap_id": "l6_12_gap_002_configured_public_page_reader",
+      "gap_name": "configured_public_page_reader",
+      "severity": "high",
+      "current_state": "not configured",
+      "needed_capability": "fixture or stdlib_public_http page reader with explicit allow flag for network mode",
+      "recommended_next_patch": "configure YSTAR_CONTROLLED_PAGE_READ_BACKEND and allow flag",
+      "blocks_real_observation": true
+    },
+    {
+      "gap_id": "l6_12_gap_003_html_extraction_quality",
+      "gap_name": "html_extraction_quality",
+      "severity": "medium",
+      "current_state": "basic text extraction",
+      "needed_capability": "structured HTML extraction",
+      "recommended_next_patch": "add parser quality tests",
+      "blocks_real_observation": false
+    },
+    {
+      "gap_id": "l6_12_gap_004_domain_allow_deny_policy",
+      "gap_name": "domain_allow_deny_policy",
+      "severity": "medium",
+      "current_state": "private/internal URL block exists",
+      "needed_capability": "curated domain allow/deny policy",
+      "recommended_next_patch": "add domain policy registry",
+      "blocks_real_observation": false
+    },
+    {
+      "gap_id": "l6_12_gap_005_source_type_classifier",
+      "gap_name": "source_type_classifier",
+      "severity": "medium",
+      "current_state": "deterministic labels only",
+      "needed_capability": "richer source type classifier",
+      "recommended_next_patch": "expand deterministic classifier fixtures",
+      "blocks_real_observation": false
+    },
+    {
+      "gap_id": "l6_12_gap_006_duplicate_url_canonicalization",
+      "gap_name": "duplicate_url_canonicalization",
+      "severity": "low",
+      "current_state": "not yet normalized",
+      "needed_capability": "canonical URL dedupe",
+      "recommended_next_patch": "add URL canonicalization pass",
+      "blocks_real_observation": false
+    },
+    {
+      "gap_id": "l6_12_gap_007_freshness_parser",
+      "gap_name": "freshness_parser",
+      "severity": "medium",
+      "current_state": "fixture marker or date missing",
+      "needed_capability": "source-date parser",
+      "recommended_next_patch": "add deterministic date extractor",
+      "blocks_real_observation": false
+    },
+    {
+      "gap_id": "l6_12_gap_008_evidence_excerpt_extractor",
+      "gap_name": "evidence_excerpt_extractor",
+      "severity": "medium",
+      "current_state": "bounded excerpt extraction",
+      "needed_capability": "claim-aware excerpt selection",
+      "recommended_next_patch": "add excerpt scoring without truth authority",
+      "blocks_real_observation": false
+    },
+    {
+      "gap_id": "l6_12_gap_009_conflict_resolver",
+      "gap_name": "conflict_resolver",
+      "severity": "medium",
+      "current_state": "conflicts identified but not resolved",
+      "needed_capability": "review-gated conflict resolution workflow",
+      "recommended_next_patch": "add review decision schema",
+      "blocks_real_observation": false
+    },
+    {
+      "gap_id": "l6_12_gap_010_query_refinement_executor",
+      "gap_name": "query_refinement_executor",
+      "severity": "low",
+      "current_state": "candidates generated only",
+      "needed_capability": "future bounded second-loop executor",
+      "recommended_next_patch": "add approval gate for next loop",
+      "blocks_real_observation": false
+    },
+    {
+      "gap_id": "l6_12_gap_011_provider_rate_limit_handling",
+      "gap_name": "provider_rate_limit_handling",
+      "severity": "medium",
+      "current_state": "policy declared",
+      "needed_capability": "provider-specific rate-limit backoff",
+      "recommended_next_patch": "add adapter rate-limit envelopes",
+      "blocks_real_observation": false
+    },
+    {
+      "gap_id": "l6_12_gap_012_credential_presence",
+      "gap_name": "credential_presence",
+      "severity": "high",
+      "current_state": "{}",
+      "needed_capability": "provider env present without value leakage",
+      "recommended_next_patch": "set provider key only in environment",
+      "blocks_real_observation": false
+    },
+    {
+      "gap_id": "l6_12_gap_013_network_permission",
+      "gap_name": "network_permission",
+      "severity": "high",
+      "current_state": "False",
+      "needed_capability": "explicit allow flags for real reads",
+      "recommended_next_patch": "set allow flags after approval",
+      "blocks_real_observation": true
+    },
+    {
+      "gap_id": "l6_12_gap_014_console_display_coverage",
+      "gap_name": "console_display_coverage",
+      "severity": "low",
+      "current_state": "L6.12 command generated",
+      "needed_capability": "maintain regression coverage",
+      "recommended_next_patch": "keep console smoke test",
+      "blocks_real_observation": false
+    },
+    {
+      "gap_id": "l6_12_gap_015_validation_coverage",
+      "gap_name": "validation_coverage",
+      "severity": "low",
+      "current_state": "focused tests generated",
+      "needed_capability": "targeted regression ladder",
+      "recommended_next_patch": "keep L6.12 suite in safety wrapper",
+      "blocks_real_observation": false
+    }
+  ]
+}

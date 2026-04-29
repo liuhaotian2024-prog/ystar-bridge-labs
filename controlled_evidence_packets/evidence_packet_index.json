@@ -1,0 +1,9 @@
+{
+  "schema_version": "v0",
+  "evidence_packet_count": 3,
+  "evidence_packets": [
+    "controlled_evidence_packets/evidence_packet_001.json",
+    "controlled_evidence_packets/evidence_packet_002.json",
+    "controlled_evidence_packets/evidence_packet_003.json"
+  ]
+}

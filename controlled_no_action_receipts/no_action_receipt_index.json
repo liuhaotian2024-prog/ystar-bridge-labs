@@ -1,0 +1,32 @@
+{
+  "schema_version": "v0",
+  "receipts": [
+    "controlled_no_action_receipts/no_login_receipt.json",
+    "controlled_no_action_receipts/no_account_creation_receipt.json",
+    "controlled_no_action_receipts/no_payment_receipt.json",
+    "controlled_no_action_receipts/no_checkout_receipt.json",
+    "controlled_no_action_receipts/no_form_submission_receipt.json",
+    "controlled_no_action_receipts/no_posting_receipt.json",
+    "controlled_no_action_receipts/no_commenting_receipt.json",
+    "controlled_no_action_receipts/no_messaging_receipt.json",
+    "controlled_no_action_receipts/no_email_customer_outreach_receipt.json",
+    "controlled_no_action_receipts/no_publication_receipt.json",
+    "controlled_no_action_receipts/no_social_media_action_receipt.json",
+    "controlled_no_action_receipts/no_grant_rfp_bounty_submission_receipt.json",
+    "controlled_no_action_receipts/no_outreach_receipt.json",
+    "controlled_no_action_receipts/no_revenue_execution_receipt.json",
+    "controlled_no_action_receipts/no_mcp_execution_receipt.json",
+    "controlled_no_action_receipts/no_live_behavior_receipt.json",
+    "controlled_no_action_receipts/no_cieu_db_write_receipt.json",
+    "controlled_no_action_receipts/no_brain_memory_writeback_receipt.json",
+    "controlled_no_action_receipts/no_canonical_strategy_mutation_receipt.json",
+    "controlled_no_action_receipts/no_direct_y_star_mutation_receipt.json",
+    "controlled_no_action_receipts/no_y_star_gov_modification_receipt.json",
+    "controlled_no_action_receipts/no_gov_mcp_modification_receipt.json",
+    "controlled_no_action_receipts/no_private_sensitive_data_collection_receipt.json",
+    "controlled_no_action_receipts/no_high_volume_crawling_receipt.json",
+    "controlled_no_action_receipts/no_unbounded_scraping_receipt.json",
+    "controlled_no_action_receipts/no_ask_user_url_receipt.json",
+    "controlled_no_action_receipts/no_side_effect_receipt.json"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "action": "mcp_execution",
+  "executed": false,
+  "occurred": false,
+  "authorized": false,
+  "receipt": "no_mcp_execution"
+}

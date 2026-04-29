@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "blockers": [
+    "controlled_public_page_read_adapter_not_configured",
+    "controlled_search_backend_not_configured"
+  ],
+  "run_classification": "configuration_blocked_but_engineering_ready"
+}

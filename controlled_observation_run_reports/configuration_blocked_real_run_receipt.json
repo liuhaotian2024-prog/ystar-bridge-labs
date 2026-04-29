@@ -1,0 +1,10 @@
+{
+  "schema_version": "v0",
+  "configuration_blocked": true,
+  "blockers": [
+    "controlled_public_page_read_adapter_not_configured",
+    "controlled_search_backend_not_configured"
+  ],
+  "ready_to_run_real_observation_once_configured": true,
+  "manual_url_request": false
+}

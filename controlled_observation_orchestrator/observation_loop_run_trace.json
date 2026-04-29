@@ -1,0 +1,39 @@
+{
+  "schema_version": "v0",
+  "run_id": "l6_12_unified_controlled_observation_run_001",
+  "run_classification": "configuration_blocked_but_engineering_ready",
+  "fixture_proof": {
+    "schema_version": "v0",
+    "fixture_proof_executed": true,
+    "backend_mode": "fixture",
+    "page_read_mode": "fixture",
+    "query_count": 8,
+    "search_results_considered": 3,
+    "pages_opened": 3,
+    "domains_touched": 2,
+    "crawl_depth_used": 1,
+    "external_reads_used": 0,
+    "evidence_packets_generated": 3,
+    "conflicts_found": 1,
+    "network_used": false,
+    "ask_user_for_url_occurred": false
+  },
+  "real_run": {
+    "schema_version": "v0",
+    "real_observation_attempted": false,
+    "real_observation_executed": false,
+    "backend_mode": "disabled",
+    "page_read_mode": "disabled",
+    "network_allowed": false,
+    "safety_preflight_decision": "blocked",
+    "search_executed": false,
+    "pages_opened": 0,
+    "external_reads_used": 0,
+    "evidence_packets_generated": 0,
+    "blockers": [
+      "controlled_public_page_read_adapter_not_configured",
+      "controlled_search_backend_not_configured"
+    ]
+  },
+  "loop_completed": true
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "action": "login",
+  "executed": false,
+  "occurred": false,
+  "authorized": false,
+  "receipt": "no_login"
+}

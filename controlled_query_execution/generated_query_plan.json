@@ -1,0 +1,102 @@
+{
+  "schema_version": "v0",
+  "query_count": 8,
+  "queries": [
+    {
+      "linked_work_order_id": "l6_10x_selected_work_order_001",
+      "source_type": "official policy or program source",
+      "source_function": "official policy or program source",
+      "no_snippet_fact_use": true,
+      "no_fact_inference_from_search_result": true,
+      "max_results": 4,
+      "query_id": "l6_10x_query_001",
+      "query_category": "primary_source_query",
+      "query_text": "official policy or program source official primary source public demand or beneficiary language",
+      "priority": 1
+    },
+    {
+      "linked_work_order_id": "l6_10x_selected_work_order_001",
+      "source_type": "official policy or program source",
+      "source_function": "official policy or program source",
+      "no_snippet_fact_use": true,
+      "no_fact_inference_from_search_result": true,
+      "max_results": 4,
+      "query_id": "l6_10x_query_002",
+      "query_category": "official_source_query",
+      "query_text": "official policy or program source documentation policy program public demand or beneficiary language",
+      "priority": 2
+    },
+    {
+      "linked_work_order_id": "l6_10x_selected_work_order_001",
+      "source_type": "official policy or program source",
+      "source_function": "official policy or program source",
+      "no_snippet_fact_use": true,
+      "no_fact_inference_from_search_result": true,
+      "max_results": 4,
+      "query_id": "l6_10x_query_003",
+      "query_category": "corroboration_query",
+      "query_text": "independent analysis corroboration public demand or beneficiary language What future read-only evidence would reduce: payer or beneficiary clarity remains unverified outside the internal MVP artifact cases?",
+      "priority": 3
+    },
+    {
+      "linked_work_order_id": "l6_10x_selected_work_order_001",
+      "source_type": "official policy or program source",
+      "source_function": "official policy or program source",
+      "no_snippet_fact_use": true,
+      "no_fact_inference_from_search_result": true,
+      "max_results": 4,
+      "query_id": "l6_10x_query_004",
+      "query_category": "conflict_check_query",
+      "query_text": "limitations contradiction risk evidence public demand or beneficiary language",
+      "priority": 4
+    },
+    {
+      "linked_work_order_id": "l6_10x_selected_work_order_001",
+      "source_type": "official policy or program source",
+      "source_function": "official policy or program source",
+      "no_snippet_fact_use": true,
+      "no_fact_inference_from_search_result": true,
+      "max_results": 4,
+      "query_id": "l6_10x_query_005",
+      "query_category": "freshness_check_query",
+      "query_text": "latest update date freshness official policy or program source public demand or beneficiary language",
+      "priority": 5
+    },
+    {
+      "linked_work_order_id": "l6_10x_selected_work_order_001",
+      "source_type": "official policy or program source",
+      "source_function": "official policy or program source",
+      "no_snippet_fact_use": true,
+      "no_fact_inference_from_search_result": true,
+      "max_results": 4,
+      "query_id": "l6_12_query_006",
+      "query_category": "source_quality_followup_query",
+      "query_text": "official institutional source quality corroboration public demand beneficiary language",
+      "priority": 6
+    },
+    {
+      "linked_work_order_id": "l6_10x_selected_work_order_001",
+      "source_type": "official policy or program source",
+      "source_function": "official policy or program source",
+      "no_snippet_fact_use": true,
+      "no_fact_inference_from_search_result": true,
+      "max_results": 4,
+      "query_id": "l6_12_query_007",
+      "query_category": "freshness_gap_query",
+      "query_text": "current public source date freshness beneficiary demand language official program",
+      "priority": 7
+    },
+    {
+      "linked_work_order_id": "l6_10x_selected_work_order_001",
+      "source_type": "official policy or program source",
+      "source_function": "official policy or program source",
+      "no_snippet_fact_use": true,
+      "no_fact_inference_from_search_result": true,
+      "max_results": 4,
+      "query_id": "l6_12_query_008",
+      "query_category": "conflict_resolution_query",
+      "query_text": "scope limitation contradiction public demand beneficiary language official evidence",
+      "priority": 8
+    }
+  ]
+}

@@ -132,7 +132,7 @@
       "requires_network": false,
       "requires_credentials": false,
       "read_mode": "json_summary",
-      "max_bytes": 200000,
+      "max_bytes": 200383,
       "governance_notes": "generated team console snapshot"
     }
   ]

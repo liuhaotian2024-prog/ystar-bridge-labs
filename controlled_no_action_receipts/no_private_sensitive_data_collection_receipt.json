@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "action": "private_sensitive_data_collection",
+  "executed": false,
+  "occurred": false,
+  "authorized": false,
+  "receipt": "no_private_sensitive_data_collection"
+}

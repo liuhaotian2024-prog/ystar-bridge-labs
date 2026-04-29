@@ -1,0 +1,14 @@
+{
+  "candidate_id": "l6_12_query_refinement_001",
+  "candidate_query": "official primary source current public beneficiary demand language",
+  "reason": "increase primary-source support for the selected work order",
+  "linked_claim_or_gap": "l6_12_claim_001",
+  "expected_source_type": "official_primary",
+  "priority": 1,
+  "budget_cost_estimate": {
+    "queries": 1,
+    "pages": 2
+  },
+  "requires_real_backend": true,
+  "executed_now": false
+}

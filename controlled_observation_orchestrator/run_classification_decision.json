@@ -1,0 +1,5 @@
+{
+  "schema_version": "v0",
+  "run_classification": "configuration_blocked_but_engineering_ready",
+  "reason": "real backend/page-read configuration missing or blocked; fixture path proves loop"
+}

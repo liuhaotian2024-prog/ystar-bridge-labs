@@ -1,0 +1,6 @@
+{
+  "schema_version": "v0",
+  "scope": "unified controlled observation evidence loop",
+  "manual_url_request_allowed": false,
+  "real_execution_requires_explicit_backend_configuration": true
+}

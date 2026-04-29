@@ -1,0 +1,102 @@
+{
+  "schema_version": "v0",
+  "review_packet_id": "l6_12_review_packet_001",
+  "run_classification": "configuration_blocked_but_engineering_ready",
+  "real_observation_executed": false,
+  "fixture_proof_executed": true,
+  "selected_work_order": {
+    "schema_version": "v0",
+    "selected_count": 1,
+    "selected_work_order_id": "l6_10x_selected_work_order_001",
+    "source_work_order_id": "l6_10x_selected_work_order_001",
+    "evidence_need_id": "l6_8_evidence_need_001",
+    "source_type": "official policy or program source",
+    "source_function": "official policy or program source",
+    "observation_question": "What future read-only evidence would reduce: payer or beneficiary clarity remains unverified outside the internal MVP artifact cases?",
+    "claim_boundary": "internal review of public demand or beneficiary language only",
+    "expected_evidence_type": "public page-read extracted evidence"
+  },
+  "budget_used": {
+    "max_selected_work_orders": 1,
+    "max_queries": 8,
+    "max_search_results_considered": 20,
+    "max_pages_opened": 8,
+    "max_domains": 5,
+    "max_pages_per_domain": 3,
+    "max_crawl_depth": 1,
+    "max_total_external_reads": 12,
+    "max_primary_sources_to_capture": 3,
+    "max_secondary_sources_to_capture": 5,
+    "max_conflicting_sources_to_capture": 3,
+    "max_evidence_packets": 8,
+    "max_runtime_minutes": 15,
+    "rate_limit_required": true,
+    "stop_on_login_or_payment_or_form": true,
+    "stop_on_private_or_sensitive_data": true,
+    "stop_on_scope_drift": true
+  },
+  "backend_mode": "disabled",
+  "page_read_mode": "disabled",
+  "queries_generated": 8,
+  "pages_read": 3,
+  "evidence_packets": [
+    "l6_12_evidence_packet_001",
+    "l6_12_evidence_packet_002",
+    "l6_12_evidence_packet_003"
+  ],
+  "conflicts": [
+    {
+      "conflict_id": "l6_12_conflict_001",
+      "claim_id": "l6_12_claim_003",
+      "conflicting_evidence_packet_ids": [
+        "l6_12_evidence_packet_003"
+      ],
+      "conflict_type": "scope_limitation",
+      "description": "Evidence indicates review-only scope limitations remain unresolved.",
+      "review_required": true
+    }
+  ],
+  "unresolved_claims": [
+    {
+      "claim_id": "l6_12_claim_003",
+      "evidence_packet_id": "l6_12_evidence_packet_003",
+      "bounded_claim": "Fixture limitation says the public descriptions do not prove demand conversion or revenue readiness.",
+      "support_status": "unresolved_limitation",
+      "conflict_status": "conflicted",
+      "allowed_use": "internal_review_only",
+      "external_use_authorized": false
+    }
+  ],
+  "residual_limitations": [
+    "fixture proof is not real-world truth",
+    "real backend configuration required for live observation"
+  ],
+  "recommended_next_query_refinements": [
+    "l6_12_query_refinement_001",
+    "l6_12_query_refinement_002",
+    "l6_12_query_refinement_003"
+  ],
+  "capability_gaps": [
+    "l6_12_gap_001_configured_search_provider",
+    "l6_12_gap_002_configured_public_page_reader",
+    "l6_12_gap_003_html_extraction_quality",
+    "l6_12_gap_004_domain_allow_deny_policy",
+    "l6_12_gap_005_source_type_classifier",
+    "l6_12_gap_006_duplicate_url_canonicalization",
+    "l6_12_gap_007_freshness_parser",
+    "l6_12_gap_008_evidence_excerpt_extractor",
+    "l6_12_gap_009_conflict_resolver",
+    "l6_12_gap_010_query_refinement_executor",
+    "l6_12_gap_011_provider_rate_limit_handling",
+    "l6_12_gap_012_credential_presence",
+    "l6_12_gap_013_network_permission",
+    "l6_12_gap_014_console_display_coverage",
+    "l6_12_gap_015_validation_coverage"
+  ],
+  "no_side_effect_summary": {
+    "external_side_effects_occurred": false,
+    "core_writeback_occurred": false
+  },
+  "approve_for_external_use": false,
+  "applied": false
+}

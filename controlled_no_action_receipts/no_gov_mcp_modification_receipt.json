@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "action": "gov_mcp_modification",
+  "executed": false,
+  "occurred": false,
+  "authorized": false,
+  "receipt": "no_gov_mcp_modification"
+}

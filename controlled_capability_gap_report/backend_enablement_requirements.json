@@ -1,0 +1,6 @@
+{
+  "schema_version": "v0",
+  "search_backend_required": "YSTAR_CONTROLLED_SEARCH_BACKEND plus provider key and allow flag",
+  "page_read_backend_required": "YSTAR_CONTROLLED_PAGE_READ_BACKEND=stdlib_public_http plus allow flag",
+  "manual_url_request": false
+}

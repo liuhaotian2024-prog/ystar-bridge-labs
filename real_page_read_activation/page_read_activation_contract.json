@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "supported_modes": [
+    "disabled",
+    "fixture",
+    "stdlib_public_http"
+  ],
+  "default_mode": "disabled",
+  "real_mode_requires": [
+    "YSTAR_CONTROLLED_PAGE_READ_BACKEND=stdlib_public_http",
+    "YSTAR_CONTROLLED_PAGE_READ_ALLOW_NETWORK=1"
+  ]
+}

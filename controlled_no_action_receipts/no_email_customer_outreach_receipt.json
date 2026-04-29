@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "action": "email_customer_outreach",
+  "executed": false,
+  "occurred": false,
+  "authorized": false,
+  "receipt": "no_email_customer_outreach"
+}

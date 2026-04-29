@@ -1,0 +1,10 @@
+{
+  "schema_version": "v0",
+  "l6_12_unified_controlled_external_observation_evidence_loop_complete": true,
+  "run_classification": "configuration_blocked_but_engineering_ready",
+  "fixture_loop_executed": true,
+  "real_observation_executed": false,
+  "ready_for_real_controlled_observation_once_configured": true,
+  "ready_for_uncontrolled_external_observation": false,
+  "next_step": "configure_controlled_search_backend_and_public_page_read_adapter"
+}

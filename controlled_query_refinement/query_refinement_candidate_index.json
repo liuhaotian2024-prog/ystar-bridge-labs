@@ -1,0 +1,9 @@
+{
+  "schema_version": "v0",
+  "candidate_count": 3,
+  "candidates": [
+    "controlled_query_refinement/query_refinement_candidate_001.json",
+    "controlled_query_refinement/query_refinement_candidate_002.json",
+    "controlled_query_refinement/query_refinement_candidate_003.json"
+  ]
+}

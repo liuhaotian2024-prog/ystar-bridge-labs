@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "action": "unbounded_scraping",
+  "executed": false,
+  "occurred": false,
+  "authorized": false,
+  "receipt": "no_unbounded_scraping"
+}

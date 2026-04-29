@@ -1,0 +1,14 @@
+{
+  "schema_version": "v0",
+  "required_env": [
+    "YSTAR_CONTROLLED_SEARCH_BACKEND",
+    "YSTAR_CONTROLLED_SEARCH_ALLOW_NETWORK",
+    "provider API key env"
+  ],
+  "manual_url_request": false,
+  "supported_providers": [
+    "brave_search_api",
+    "tavily_search_api",
+    "serpapi"
+  ]
+}

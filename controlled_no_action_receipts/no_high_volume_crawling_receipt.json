@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "action": "high_volume_crawling",
+  "executed": false,
+  "occurred": false,
+  "authorized": false,
+  "receipt": "no_high_volume_crawling"
+}

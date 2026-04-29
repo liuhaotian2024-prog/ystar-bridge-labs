@@ -1,0 +1,7 @@
+{
+  "schema_version": "v0",
+  "evidence_packets_generated": 3,
+  "search_snippets_used_as_evidence": false,
+  "page_read_content_used_as_evidence": true,
+  "real_or_fixture": "fixture"
+}

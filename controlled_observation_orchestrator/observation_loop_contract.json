@@ -1,0 +1,20 @@
+{
+  "schema_version": "v0",
+  "run_id": "l6_12_unified_controlled_observation_run_001",
+  "loop_steps": [
+    "query_plan",
+    "search",
+    "triage",
+    "page_read",
+    "bounded_crawl",
+    "evidence_extraction",
+    "source_quality",
+    "corroboration_conflict",
+    "review_packet",
+    "query_refinement",
+    "capability_gap_report",
+    "no_action_receipt",
+    "read_model"
+  ],
+  "manual_url_request": false
+}
