@@ -1,0 +1,18 @@
+{
+  "schema_version": "v0",
+  "event_mode": "l6_10w_reviewed_seed_locator_injection_tiny_retry_fixture",
+  "X_t": {
+    "prior_blocker": "no_enabled_locator_resolution_path"
+  },
+  "U_t": "Narrow the blocker to either one reviewed seed locator or a precise one-URL user action request.",
+  "Y_star_t": "Use at most one reviewed seed locator or ask the user for exactly one URL, optionally retry one tiny read-only observation, and preserve all no-action/no-writeback/no-mutation constraints.",
+  "Y_t_plus_1": {
+    "reviewed_seed_locator_found": false,
+    "user_action_required_generated": true,
+    "tiny_read_only_observation_executed": false
+  },
+  "R_t_plus_1": [
+    "user_must_provide_one_reviewed_seed_locator_url",
+    "L6.11 remains blocked until one reviewed locator and successful tiny observation exist"
+  ]
+}

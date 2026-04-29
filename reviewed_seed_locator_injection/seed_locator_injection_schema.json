@@ -1,0 +1,19 @@
+{
+  "schema_version": "v0",
+  "schema_id": "l6_10w_seed_locator_injection_schema",
+  "required_fields": [
+    "linked_work_order_id",
+    "source_type",
+    "source_function",
+    "evidence_need_id",
+    "observation_question",
+    "concrete_locator",
+    "source_title",
+    "source_owner_or_publisher",
+    "reviewed_status",
+    "facts_inferred_from_seed",
+    "observation_authorized_by_seed_alone"
+  ],
+  "max_seed_locators_injected": 1,
+  "url_invention_authorized": false
+}

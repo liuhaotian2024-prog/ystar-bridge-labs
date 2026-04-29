@@ -4,28 +4,7 @@
       "source_layer": "curated_read_model",
       "summary": "Ethan frames a technical plan candidate from curated read-model constraints."
     },
-    "evidence_hint_refs": [
-      {
-        "agent_scope": "Ethan-CTO",
-        "candidate_id": "mdcand-001",
-        "evidence_id": "evidence-001",
-        "ingestion_status": "not_ingested",
-        "readiness": "hint_only",
-        "review_id": "review-001",
-        "route": "memory_continuity_hint_queue",
-        "status": "not_approved"
-      },
-      {
-        "agent_scope": "Ethan-CTO",
-        "candidate_id": "mdcand-001",
-        "evidence_id": "evidence-001",
-        "ingestion_status": "not_ingested",
-        "readiness": "hint_only",
-        "review_id": "review-001",
-        "route": "role_brain_capsule_hint_queue",
-        "status": "not_approved"
-      }
-    ],
+    "evidence_hint_refs": [],
     "role_specific_focus": [
       "technical architecture",
       "implementation strategy",
@@ -59,28 +38,7 @@
   "declared_Y_star": {
     "summary": "Propose an implementation plan for a future safe adapter without running it"
   },
-  "evidence_hint_refs": [
-    {
-      "agent_scope": "Ethan-CTO",
-      "candidate_id": "mdcand-001",
-      "evidence_id": "evidence-001",
-      "ingestion_status": "not_ingested",
-      "readiness": "hint_only",
-      "review_id": "review-001",
-      "route": "memory_continuity_hint_queue",
-      "status": "not_approved"
-    },
-    {
-      "agent_scope": "Ethan-CTO",
-      "candidate_id": "mdcand-001",
-      "evidence_id": "evidence-001",
-      "ingestion_status": "not_ingested",
-      "readiness": "hint_only",
-      "review_id": "review-001",
-      "route": "role_brain_capsule_hint_queue",
-      "status": "not_approved"
-    }
-  ],
+  "evidence_hint_refs": [],
   "governance_expectations": {
     "requires_high_risk_review": false,
     "requires_m_functor_validation": true,

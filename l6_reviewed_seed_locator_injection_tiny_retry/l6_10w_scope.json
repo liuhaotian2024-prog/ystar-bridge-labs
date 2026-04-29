@@ -1,0 +1,12 @@
+{
+  "schema_version": "v0",
+  "scope_id": "l6_10w_scope",
+  "outcomes": [
+    "reviewed_seed_locator_exists",
+    "user_action_required",
+    "locator_exists_but_observation_blocked"
+  ],
+  "do_not_invent_urls": true,
+  "do_not_search_web_without_enabled_backend": true,
+  "downstream_actions_blocked": true
+}

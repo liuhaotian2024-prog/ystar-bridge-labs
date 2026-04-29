@@ -1,0 +1,10 @@
+{
+  "schema_version": "v0",
+  "request_id": "l6_10w_seed_locator_retry_request",
+  "linked_work_order_id": "l6_10w_selected_work_order_001",
+  "concrete_locator": null,
+  "retry_attempted": false,
+  "reason": "user_action_required_no_seed_locator",
+  "max_pages_read": 1,
+  "max_total_external_reads": 1
+}

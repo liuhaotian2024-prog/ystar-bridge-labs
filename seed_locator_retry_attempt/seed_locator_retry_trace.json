@@ -1,0 +1,9 @@
+{
+  "schema_version": "v0",
+  "trace_id": "l6_10w_seed_locator_retry_trace",
+  "retry_attempted": false,
+  "locator_eligibility_checked": false,
+  "observation_executed": false,
+  "reason": "user_action_required_no_seed_locator",
+  "eligibility_result_ref": "l6_10w_seed_locator_eligibility_result"
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "v0",
+  "request_id": "l6_10w_seed_locator_user_action_required",
+  "status": "USER_ACTION_REQUIRED",
+  "request_count": 1,
+  "requested_item": "one_concrete_public_url",
+  "prompt": "Please provide one concrete public URL for the selected work order.",
+  "selected_work_order_id": "l6_10w_selected_work_order_001",
+  "source_selected_work_order_id": "l6_10v_selected_work_order_001",
+  "evidence_need": "public demand or beneficiary language",
+  "source_type_needed": "official policy or program source",
+  "source_function_needed": "official policy or program source",
+  "observation_question": "What future read-only evidence would reduce: payer or beneficiary clarity remains unverified outside the internal MVP artifact cases?",
+  "acceptable_source_criteria": [
+    "public page",
+    "read-only",
+    "no login",
+    "no payment",
+    "no account creation",
+    "no form submission",
+    "no private/sensitive data",
+    "matches the source_type/source_function",
+    "can be read as one page/source"
+  ],
+  "unacceptable_source_criteria": [
+    "search results page",
+    "login page",
+    "checkout/payment page",
+    "contact form",
+    "private inbox/account page",
+    "social posting/commenting surface",
+    "page requiring scraping/crawling",
+    "broad homepage with no relevant evidence"
+  ],
+  "paste_url_here": "",
+  "optional_source_title": "",
+  "optional_source_owner_or_publisher": "",
+  "downstream_actions_authorized": false
+}

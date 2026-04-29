@@ -1,0 +1,24 @@
+{
+  "schema_version": "v0",
+  "eligibility_id": "l6_10w_seed_locator_eligibility_result",
+  "linked_work_order_id": "l6_10w_selected_work_order_001",
+  "concrete_locator": null,
+  "concrete_url_like_locator": false,
+  "public_read_only_expected": false,
+  "no_login_expected": true,
+  "no_payment_expected": true,
+  "no_form_expected": true,
+  "no_contact_expected": true,
+  "no_crawling_required": true,
+  "no_scraping_required": true,
+  "no_mcp_required": true,
+  "source_type_matches_work_order": true,
+  "one_page_observation_plausible": false,
+  "locator_eligible_for_tiny_retry": false,
+  "failed_checks": [
+    "concrete_url_like_locator",
+    "public_read_only_expected",
+    "one_page_observation_plausible"
+  ],
+  "blocked_reason": "user_action_required_no_seed_locator"
+}

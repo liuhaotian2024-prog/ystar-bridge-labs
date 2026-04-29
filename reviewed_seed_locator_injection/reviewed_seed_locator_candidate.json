@@ -1,0 +1,18 @@
+{
+  "schema_version": "v0",
+  "candidate_id": "l6_10w_reviewed_seed_locator_candidate",
+  "status": "user_action_required",
+  "linked_work_order_id": "l6_10w_selected_work_order_001",
+  "source_work_order_id": "l6_10v_selected_work_order_001",
+  "source_type": "official policy or program source",
+  "source_function": "official policy or program source",
+  "evidence_need_id": "l6_8_evidence_need_001",
+  "observation_question": "What future read-only evidence would reduce: payer or beneficiary clarity remains unverified outside the internal MVP artifact cases?",
+  "concrete_locator": null,
+  "source_title": null,
+  "source_owner_or_publisher": null,
+  "reviewed_status": "blocked_no_reviewed_locator",
+  "facts_inferred_from_seed": false,
+  "observation_authorized_by_seed_alone": false,
+  "url_invention_authorized": false
+}

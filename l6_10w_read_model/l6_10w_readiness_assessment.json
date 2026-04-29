@@ -1,0 +1,23 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L6.10W",
+  "l6_10w_reviewed_seed_locator_injection_tiny_retry_complete": true,
+  "selected_work_order_id": "l6_10w_selected_work_order_001",
+  "reviewed_seed_locator_found": false,
+  "concrete_locator": null,
+  "user_action_required_generated": true,
+  "tiny_read_only_observation_executed": false,
+  "ready_for_l6_11_controlled_multi_source_corroboration": false,
+  "next_step": "user_must_provide_one_reviewed_seed_locator_url",
+  "remaining_blocker": "user_must_provide_one_reviewed_seed_locator_url",
+  "next_recommended_milestone": "L6.10X User-Supplied Reviewed Seed Locator Intake v0",
+  "publication_authorized": false,
+  "outreach_authorized": false,
+  "payment_authorized": false,
+  "revenue_execution_authorized": false,
+  "mcp_execution_authorized": false,
+  "canonical_update_authorized": false,
+  "brain_writeback_authorized": false,
+  "memory_ingestion_authorized": false,
+  "direct_y_star_mutation_authorized": false
+}

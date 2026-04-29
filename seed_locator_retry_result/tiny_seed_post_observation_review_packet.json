@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "review_packet_id": "l6_10w_tiny_seed_post_observation_review_packet",
+  "linked_evidence_packet_id": "l6_10w_tiny_seed_evidence_packet",
+  "current_decision": "review_pending_blocked_no_live_evidence",
+  "approve_for_external_use": false,
+  "applied": false
+}

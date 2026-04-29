@@ -1,0 +1,9 @@
+{
+  "schema_version": "v0",
+  "decision_id": "l6_10w_reviewed_seed_locator_injection_decision",
+  "decision": "generate_user_action_required",
+  "reviewed_seed_locator_found": false,
+  "url_invented": false,
+  "fake_locator_generated": false,
+  "observation_authorized_by_seed_alone": false
+}

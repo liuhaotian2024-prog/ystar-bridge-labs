@@ -1,0 +1,21 @@
+{
+  "schema_version": "v0",
+  "scan_id": "l6_10w_existing_seed_registry_scan",
+  "selected_work_order_id": "l6_10w_selected_work_order_001",
+  "scan_scope": "existing_local_seed_registry_files_only",
+  "registry_files_scanned": [
+    {
+      "registry_path": "seed_locator_registry/reviewed_seed_locator_registry.json",
+      "entries_considered": 0,
+      "matching_reviewed_locator_found": false
+    },
+    {
+      "registry_path": "controlled_locator_resolver_runtime/seed_locator_registry.json",
+      "entries_considered": 0,
+      "matching_reviewed_locator_found": false
+    }
+  ],
+  "reviewed_locator_found": false,
+  "url_invented": false,
+  "facts_inferred_from_seed": false
+}

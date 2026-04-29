@@ -318,11 +318,11 @@
         "asset-0553",
         "asset-0555",
         "asset-0573",
-        "asset-0600",
-        "asset-0618",
+        "asset-0601",
         "asset-0619",
-        "asset-0622",
-        "asset-0624"
+        "asset-0620",
+        "asset-0623",
+        "asset-0625"
       ],
       "risk_tier": "high",
       "requires_operator_approval": true,

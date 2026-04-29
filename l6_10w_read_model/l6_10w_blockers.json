@@ -1,0 +1,9 @@
+{
+  "schema_version": "v0",
+  "primary_blocker": "user_must_provide_one_reviewed_seed_locator_url",
+  "blockers": [
+    "user_must_provide_one_reviewed_seed_locator_url"
+  ],
+  "user_action_required": true,
+  "exact_request": "Please provide one concrete public URL for the selected work order."
+}

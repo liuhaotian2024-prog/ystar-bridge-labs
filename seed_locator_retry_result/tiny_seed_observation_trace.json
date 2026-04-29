@@ -1,0 +1,15 @@
+{
+  "schema_version": "v0",
+  "trace_id": "l6_10w_tiny_seed_observation_trace",
+  "observation_executed": false,
+  "reason": "user_action_required_no_seed_locator",
+  "source_locator": null,
+  "network_used": false,
+  "external_reads_count": 0,
+  "pages_read_count": 0,
+  "login_encountered": false,
+  "payment_encountered": false,
+  "form_encountered": false,
+  "private_data_encountered": false,
+  "raw_content_storage_policy": "no_raw_page_dump_stored"
+}
