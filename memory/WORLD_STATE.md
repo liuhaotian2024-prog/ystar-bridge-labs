@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-28 21:00:00
+**Generated**: 2026-04-28 21:30:00
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,7 +36,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/12 valid (0 errors)
-**CIEU 24h Events**: 1978
+**CIEU 24h Events**: 2024
 **Overdue Obligations**: 0
 
 ---
@@ -84,58 +84,58 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 ---
 
 ## 8. Y* Field State (xi) — Mission axis frequency + drift
-**Total CIEU events (24h)**: 1978
+**Total CIEU events (24h)**: 2024
 
 | M-Axis | Description | 24h Count | 7d Avg/Day | Drift |
 |--------|-------------|-----------|------------|-------|
-| **M-1** | Survivability (session/boot/handoff/persist) | 222 | 4956 | ↑ |
-| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 7 | 890 | ↓ |
-| **M-2b** | Omission prevention (omission/overdue/alarm) | 6 | 2689 | ↓ |
+| **M-1** | Survivability (session/boot/handoff/persist) | 221 | 4923 | ↑ |
+| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 8 | 881 | ↓ |
+| **M-2b** | Omission prevention (omission/overdue/alarm) | 7 | 2673 | ↓ |
 | **M-3** | Value production (customer/revenue/dogfood/demo) | 0 | 0 | ↓ |
 
-**Classified coverage**: 235/1978 (11.9%)
-**Unclassified**: 1743 events (routine ops / K9 routing)
+**Classified coverage**: 236/2024 (11.7%)
+**Unclassified**: 1788 events (routine ops / K9 routing)
 **Drift alert**: M-1 trending UP vs 7d baseline
 **Drift alert**: M-2a, M-2b, M-3 trending DOWN vs 7d baseline
 
 ---
 
 ## 9. Commission Error Heatmap — 11-component unified dashboard
-**Total commission errors (24h)**: 274
+**Total commission errors (24h)**: 276
 
 **By M-Axis**:
 
 | Axis | Description | 24h Count |
 |------|-------------|-----------|
-| **M-1** | Survivability (schema/wire/config drift) | 234 |
-| **M-2a** | Commission prevention (core 11 detectors) | 40 |
+| **M-1** | Survivability (schema/wire/config drift) | 235 |
+| **M-2a** | Commission prevention (core 11 detectors) | 41 |
 | **M-3** | Value quality (maturity/off-target) | 0 |
 
 **By Detector (11 components + hook catches)**:
 
 | Detector | 24h Count | Drift vs 7d |
 |----------|-----------|-------------|
-| amendment_coverage_audit | 228 | v (avg 407.4/d) |
-| directive_evaluator | 39 | = (avg 33.9/d) |
-| hook_commission_catch | 7 | v (avg 476.4/d) |
+| amendment_coverage_audit | 228 | v (avg 403.4/d) |
+| directive_evaluator | 40 | = (avg 33.7/d) |
+| hook_commission_catch | 8 | v (avg 469.0/d) |
 
 **By Actor (top 10)**:
 
 | Actor | 24h Commission Errors |
 |-------|----------------------|
-| unknown | 222 |
-| cto | 39 |
-| platform | 12 |
+| unknown | 221 |
+| cto | 40 |
+| platform | 14 |
 | eng-platform | 1 |
 
 **Top 5 Event Types**:
-- `SESSION_JSON_SCHEMA_VIOLATION`: 222
-- `DIRECTIVE_LIVENESS_EVAL`: 39
-- `CANONICAL_HASH_DRIFT`: 6
-- `WIRE_BROKEN`: 6
+- `SESSION_JSON_SCHEMA_VIOLATION`: 221
+- `DIRECTIVE_LIVENESS_EVAL`: 40
+- `CANONICAL_HASH_DRIFT`: 7
+- `WIRE_BROKEN`: 7
 - `WHITELIST_GAP`: 1
 
-**Overall drift**: v (24h=274, 7d avg/day=2426.3)
+**Overall drift**: v (24h=276, 7d avg/day=2403.6)
 
 ---
 
@@ -161,7 +161,9 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 ## 13. Today's Commits (24h) — both repos
 
 
-**ystar-company** (22 commits):
+**ystar-company** (23 commits):
+- ecafe63f 21:28 [auto] WIP checkpoint 2026-04-28 21:28 -- 55 files changed
+- 62883897 21:19 tools: add l6 real read only external observation preflight
 - a1feee9a 20:58 [auto] WIP checkpoint 2026-04-28 20:58 -- 28 files changed
 - ceb5d6c2 20:55 tools: add l6 controlled external observation sandbox
 - 42efb46b 20:31 tools: add l6 governed external observation boundary
@@ -180,7 +182,5 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 - eb0f4c23 10:03 tools: add governed mcp dry run adapter
 - 8c2f11ad 08:48 tools: add cross repo governance contract proof
 - 9667642b 07:36 tools: add review gated shadow projection cycle
-- 6bfde3c3 23:48 tools: add projection checked autonomous cycle
-- 13ba0f22 23:10 tools: add field functional auto projection core
 
 **Y*gov**: no commits
