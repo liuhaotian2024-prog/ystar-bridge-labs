@@ -514,25 +514,25 @@
         {
           "asset_id": "ffa-0087",
           "repo_name": "ystar-company",
-          "relative_path": "scripts/check_wheel_contents.py",
+          "relative_path": "controlled_search_backend_runtime/controlled_search_runtime.py",
           "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed."
         },
         {
           "asset_id": "ffa-0088",
           "repo_name": "ystar-company",
-          "relative_path": "scripts/conversation_replay.py",
+          "relative_path": "explicit_controlled_search_resolver/explicit_search_resolver_runtime.py",
           "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed."
         },
         {
           "asset_id": "ffa-0089",
           "repo_name": "ystar-company",
-          "relative_path": "scripts/k9.py",
+          "relative_path": "scripts/check_wheel_contents.py",
           "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed."
         },
         {
           "asset_id": "ffa-0090",
           "repo_name": "ystar-company",
-          "relative_path": "scripts/k9_phase1.py",
+          "relative_path": "scripts/conversation_replay.py",
           "reason": "Runtime-adjacent asset has weak mission value and should not be absorbed."
         }
       ]

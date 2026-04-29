@@ -4,19 +4,18 @@
   "inventory_level": 0,
   "content_opened": false,
   "source": "git status --short plus os.stat metadata",
-  "artifacts_classified": 141,
-  "unsafe_artifacts_count": 118,
+  "artifacts_classified": 167,
+  "unsafe_artifacts_count": 141,
   "classes_seen": {
     "ACTIVE_AGENT_MARKER": 17,
     "BACKUP_DB": 1,
-    "CACHE_SENTINEL": 5,
+    "CACHE_SENTINEL": 4,
     "DAEMON_STATE": 4,
     "DB_CORE": 1,
-    "DB_SIDECARE": 4,
-    "DREAM_REPORT": 1,
+    "DB_SIDECARE": 6,
     "LOG_RUNTIME": 30,
-    "PYCACHE": 45,
-    "UNKNOWN_OR_NON_RUNTIME": 23,
+    "PYCACHE": 68,
+    "UNKNOWN_OR_NON_RUNTIME": 26,
     "UNKNOWN_RUNTIME_ARTIFACT": 10
   },
   "artifacts": [
@@ -45,7 +44,7 @@
       "git_status_code": "M",
       "artifact_class": "DB_SIDECARE",
       "extension": ".db-wal",
-      "size_bytes": 4198312,
+      "size_bytes": 4288952,
       "direct_read_allowed": false,
       "future_adapter_candidate": "none_or_metadata_only",
       "notes": "DB sidecar; do not touch contents."
@@ -95,17 +94,37 @@
       "git_status_code": "M",
       "artifact_class": "DB_CORE",
       "extension": ".db",
-      "size_bytes": 548122624,
+      "size_bytes": 548294656,
       "direct_read_allowed": false,
       "future_adapter_candidate": "readonly_db_adapter_future",
       "notes": "DB content forbidden; metadata only."
+    },
+    {
+      "path": "aiden_brain.db-shm",
+      "git_status_code": "D",
+      "artifact_class": "DB_SIDECARE",
+      "extension": ".db-shm",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "none_or_metadata_only",
+      "notes": "DB sidecar; do not touch contents."
+    },
+    {
+      "path": "aiden_brain.db-wal",
+      "git_status_code": "D",
+      "artifact_class": "DB_SIDECARE",
+      "extension": ".db-wal",
+      "size_bytes": null,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "none_or_metadata_only",
+      "notes": "DB sidecar; do not touch contents."
     },
     {
       "path": "console_read_model/checks/run_local_safety_checks.py",
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".py",
-      "size_bytes": 124111,
+      "size_bytes": 134775,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -115,7 +134,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".md",
-      "size_bytes": 18628,
+      "size_bytes": 21432,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -125,17 +144,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".py",
-      "size_bytes": 242541,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "console_read_model/generated/README.md",
-      "git_status_code": "M",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".md",
-      "size_bytes": 15736,
+      "size_bytes": 264954,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -145,7 +154,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".json",
-      "size_bytes": 29191,
+      "size_bytes": 33544,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -155,7 +164,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".json",
-      "size_bytes": 177424,
+      "size_bytes": 200665,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -165,7 +174,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".md",
-      "size_bytes": 60526,
+      "size_bytes": 67545,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -175,7 +184,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".py",
-      "size_bytes": 608204,
+      "size_bytes": 687717,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -185,7 +194,7 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".json",
-      "size_bytes": 177509,
+      "size_bytes": 195495,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -195,7 +204,97 @@
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".py",
-      "size_bytes": 304050,
+      "size_bytes": 335384,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": "controlled_bounded_crawl/opened_page_registry.json",
+      "git_status_code": "M",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": ".json",
+      "size_bytes": 3866,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": "controlled_corroboration_conflict/source_corroboration_matrix.json",
+      "git_status_code": "M",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": ".json",
+      "size_bytes": 1839,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": "controlled_evidence_packets/evidence_packet_001.json",
+      "git_status_code": "M",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": ".json",
+      "size_bytes": 2361,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": "controlled_evidence_packets/evidence_packet_002.json",
+      "git_status_code": "M",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": ".json",
+      "size_bytes": 2426,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": "controlled_evidence_packets/evidence_packet_003.json",
+      "git_status_code": "M",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": ".json",
+      "size_bytes": 2458,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": "controlled_no_action_receipts/no_side_effect_receipt.json",
+      "git_status_code": "M",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": ".json",
+      "size_bytes": 2329,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": "controlled_query_execution/search_execution_result.json",
+      "git_status_code": "M",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": ".json",
+      "size_bytes": 3751,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": "controlled_result_triage/search_result_candidates.json",
+      "git_status_code": "M",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": ".json",
+      "size_bytes": 2750,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
+    },
+    {
+      "path": "controlled_source_quality/source_quality_matrix.json",
+      "git_status_code": "M",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": ".json",
+      "size_bytes": 1839,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
@@ -211,24 +310,14 @@
       "notes": "Likely normal repo change or unclassified non-runtime path."
     },
     {
-      "path": "memory/WORLD_STATE.md",
+      "path": "l6_unified_controlled_external_observation_evidence_loop/tools/build_l6_unified_controlled_external_observation_evidence_loop.py",
       "git_status_code": "M",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
-      "extension": ".md",
-      "size_bytes": 6525,
+      "extension": ".py",
+      "size_bytes": 58642,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "scripts/.auto_commit_push_sentinel.json",
-      "git_status_code": "M",
-      "artifact_class": "CACHE_SENTINEL",
-      "extension": ".json",
-      "size_bytes": 432,
-      "direct_read_allowed": false,
-      "future_adapter_candidate": "cache_sentinel_classifier_future",
-      "notes": "Ephemeral coordination state."
     },
     {
       "path": "scripts/.brain_l1_cache.json",
@@ -295,7 +384,7 @@
       "git_status_code": "M",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 18321,
+      "size_bytes": 18402,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -751,54 +840,74 @@
       "notes": "Backup DB metadata only."
     },
     {
-      "path": "console_read_model/generated/l6_10u_locator_resolver_enablement_summary.json",
+      "path": "console_read_model/generated/l6_12_unified_controlled_external_observation_evidence_loop_summary.json",
       "git_status_code": "??",
       "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
       "extension": ".json",
-      "size_bytes": 3940,
+      "size_bytes": 3445,
       "direct_read_allowed": true,
       "future_adapter_candidate": "none",
       "notes": "Likely normal repo change or unclassified non-runtime path."
     },
     {
-      "path": "controlled_locator_observation_result/",
+      "path": "controlled_locator_resolver_interface/__pycache__/",
       "git_status_code": "??",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "artifact_class": "PYCACHE",
       "extension": "",
-      "size_bytes": 320,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
     },
     {
-      "path": "controlled_locator_resolution_attempt/",
+      "path": "controlled_locator_resolver_runtime/__pycache__/",
       "git_status_code": "??",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "artifact_class": "PYCACHE",
       "extension": "",
-      "size_bytes": 256,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
     },
     {
-      "path": "controlled_locator_resolver_read_model/",
+      "path": "controlled_public_page_read_adapter/__pycache__/",
       "git_status_code": "??",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "artifact_class": "PYCACHE",
       "extension": "",
-      "size_bytes": 320,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
     },
     {
-      "path": "controlled_locator_resolver_runtime/",
+      "path": "controlled_search_backend_adapters/__pycache__/",
       "git_status_code": "??",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "artifact_class": "PYCACHE",
       "extension": "",
-      "size_bytes": 224,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "controlled_search_backend_runtime/__pycache__/",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": "",
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "explicit_controlled_search_resolver/__pycache__/",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": "",
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
     },
     {
       "path": "gov_mcp/__pycache__/server.cpython-311.pyc",
@@ -811,31 +920,21 @@
       "notes": "No semantic mining value expected."
     },
     {
-      "path": "l6_controlled_locator_resolver_enablement/",
+      "path": "l6_unified_controlled_external_observation_evidence_loop/tools/__pycache__/",
       "git_status_code": "??",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "artifact_class": "PYCACHE",
       "extension": "",
-      "size_bytes": 320,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
-    },
-    {
-      "path": "reports/ceo/brain_dream_diffs/dream_diff_20260429_095744_nrem.md",
-      "git_status_code": "??",
-      "artifact_class": "DREAM_REPORT",
-      "extension": ".md",
-      "size_bytes": 5802401,
+      "size_bytes": 96,
       "direct_read_allowed": false,
-      "future_adapter_candidate": "dream_report_bounded_parser_future",
-      "notes": "Dream report content not read."
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
     },
     {
       "path": "scripts/.brain_ingest_sentinel.json",
       "git_status_code": "??",
       "artifact_class": "CACHE_SENTINEL",
       "extension": ".json",
-      "size_bytes": 2602241,
+      "size_bytes": 2602808,
       "direct_read_allowed": false,
       "future_adapter_candidate": "cache_sentinel_classifier_future",
       "notes": "Ephemeral coordination state."
@@ -845,7 +944,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 21600,
+      "size_bytes": 22248,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -855,7 +954,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 232951,
+      "size_bytes": 239980,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -895,7 +994,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 49984,
+      "size_bytes": 52192,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -905,7 +1004,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 312177,
+      "size_bytes": 314385,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -915,7 +1014,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 12417,
+      "size_bytes": 13064,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -935,7 +1034,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 48470,
+      "size_bytes": 50190,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -965,7 +1064,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 551627,
+      "size_bytes": 576377,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -985,7 +1084,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 364154,
+      "size_bytes": 374346,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -1015,7 +1114,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 123169,
+      "size_bytes": 127705,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -1075,7 +1174,7 @@
       "git_status_code": "??",
       "artifact_class": "LOG_RUNTIME",
       "extension": ".log",
-      "size_bytes": 334590,
+      "size_bytes": 351126,
       "direct_read_allowed": false,
       "future_adapter_candidate": "bounded_log_summarizer_future",
       "notes": "Log content forbidden now."
@@ -1341,14 +1440,134 @@
       "notes": "No semantic mining value expected."
     },
     {
-      "path": "tests/l6_controlled_locator_resolver_enablement/",
+      "path": "tests/l6_agentic_evidence_discovery_trust_engine/__pycache__/",
       "git_status_code": "??",
-      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "artifact_class": "PYCACHE",
       "extension": "",
       "size_bytes": 96,
-      "direct_read_allowed": true,
-      "future_adapter_candidate": "none",
-      "notes": "Likely normal repo change or unclassified non-runtime path."
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/l6_budgeted_controlled_external_search_evidence_pilot/__pycache__/",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": "",
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/l6_controlled_agentic_evidence_pilot_approval_dry_run/__pycache__/",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": "",
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/l6_controlled_external_observation_sandbox/__pycache__/",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": "",
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/l6_controlled_locator_resolver_enablement/__pycache__/",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": "",
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/l6_controlled_observation_pilot_approval_packet/__pycache__/",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": "",
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/l6_controlled_real_read_only_observation_pilot_design/__pycache__/",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": "",
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/l6_controlled_search_backend_page_read_enablement/__pycache__/",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": "",
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/l6_controlled_seed_locator_or_search_resolver_enablement/__pycache__/",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": "",
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/l6_controlled_source_locator_resolution_tiny_observation_retry/__pycache__/",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": "",
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/l6_governed_capability_gap_toolmaking_locator_resolver/__pycache__/",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": "",
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/l6_governed_external_observation_boundary/__pycache__/",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": "",
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/l6_integrated_approval_record_and_pilot_readiness_sandbox/__pycache__/",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": "",
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
     },
     {
       "path": "tests/l6_meta_development_generative_selection_engine/__pycache__/",
@@ -1369,6 +1588,46 @@
       "direct_read_allowed": false,
       "future_adapter_candidate": "ignore_or_cleanup_policy_future",
       "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/l6_real_read_only_external_observation_preflight/__pycache__/",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": "",
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/l6_reviewed_seed_locator_injection_tiny_retry/__pycache__/",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": "",
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/l6_tiny_real_read_only_agentic_evidence_observation_pilot/__pycache__/",
+      "git_status_code": "??",
+      "artifact_class": "PYCACHE",
+      "extension": "",
+      "size_bytes": 96,
+      "direct_read_allowed": false,
+      "future_adapter_candidate": "ignore_or_cleanup_policy_future",
+      "notes": "No semantic mining value expected."
+    },
+    {
+      "path": "tests/l6_unified_controlled_external_observation_evidence_loop/",
+      "git_status_code": "??",
+      "artifact_class": "UNKNOWN_OR_NON_RUNTIME",
+      "extension": "",
+      "size_bytes": 128,
+      "direct_read_allowed": true,
+      "future_adapter_candidate": "none",
+      "notes": "Likely normal repo change or unclassified non-runtime path."
     },
     {
       "path": "tests/live_boundary_no_go_framework/__pycache__/",
