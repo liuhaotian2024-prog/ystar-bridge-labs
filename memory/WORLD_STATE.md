@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-28 23:00:00
+**Generated**: 2026-04-29 07:00:01
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,18 +36,14 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/12 valid (0 errors)
-**CIEU 24h Events**: 2167
+**CIEU 24h Events**: 2018
 **Overdue Obligations**: 0
 
 ---
 
 ## 5. External Signals (Today)
 ```
-=== Y* Bridge Labs Idle Learning Progress ===
-
-Role         | P1 Complete  | P2 Theories  | P3 Sims  | Last Learning
-----------------------------------------------------------------------
-ceo          | 3/3          | 24           | 41       | 2026-04-27  
+[No morning report today]
 ```
 
 ---
@@ -84,57 +80,55 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 ---
 
 ## 8. Y* Field State (xi) — Mission axis frequency + drift
-**Total CIEU events (24h)**: 2167
+**Total CIEU events (24h)**: 2018
 
 | M-Axis | Description | 24h Count | 7d Avg/Day | Drift |
 |--------|-------------|-----------|------------|-------|
-| **M-1** | Survivability (session/boot/handoff/persist) | 222 | 4760 | → |
-| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 11 | 840 | ↓ |
-| **M-2b** | Omission prevention (omission/overdue/alarm) | 10 | 2592 | ↓ |
+| **M-1** | Survivability (session/boot/handoff/persist) | 187 | 4573 | → |
+| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 13 | 834 | ↓ |
+| **M-2b** | Omission prevention (omission/overdue/alarm) | 12 | 2500 | ↓ |
 | **M-3** | Value production (customer/revenue/dogfood/demo) | 0 | 0 | ↓ |
 
-**Classified coverage**: 243/2167 (11.2%)
-**Unclassified**: 1924 events (routine ops / K9 routing)
+**Classified coverage**: 212/2018 (10.5%)
+**Unclassified**: 1806 events (routine ops / K9 routing)
 **Drift alert**: M-2a, M-2b, M-3 trending DOWN vs 7d baseline
 
 ---
 
 ## 9. Commission Error Heatmap — 11-component unified dashboard
-**Total commission errors (24h)**: 283
+**Total commission errors (24h)**: 244
 
 **By M-Axis**:
 
 | Axis | Description | 24h Count |
 |------|-------------|-----------|
-| **M-1** | Survivability (schema/wire/config drift) | 242 |
-| **M-2a** | Commission prevention (core 11 detectors) | 41 |
+| **M-1** | Survivability (schema/wire/config drift) | 211 |
+| **M-2a** | Commission prevention (core 11 detectors) | 33 |
 | **M-3** | Value quality (maturity/off-target) | 0 |
 
 **By Detector (11 components + hook catches)**:
 
 | Detector | 24h Count | Drift vs 7d |
 |----------|-----------|-------------|
-| amendment_coverage_audit | 232 | v (avg 384.6/d) |
-| directive_evaluator | 40 | = (avg 33.7/d) |
-| hook_commission_catch | 11 | v (avg 432.1/d) |
+| amendment_coverage_audit | 199 | v (avg 356.3/d) |
+| directive_evaluator | 33 | = (avg 32.1/d) |
+| hook_commission_catch | 12 | v (avg 415.7/d) |
 
 **By Actor (top 10)**:
 
 | Actor | 24h Commission Errors |
 |-------|----------------------|
-| unknown | 222 |
-| cto | 40 |
-| platform | 20 |
-| eng-platform | 1 |
+| unknown | 187 |
+| cto | 33 |
+| platform | 24 |
 
 **Top 5 Event Types**:
-- `SESSION_JSON_SCHEMA_VIOLATION`: 222
-- `DIRECTIVE_LIVENESS_EVAL`: 40
-- `CANONICAL_HASH_DRIFT`: 10
-- `WIRE_BROKEN`: 10
-- `WHITELIST_GAP`: 1
+- `SESSION_JSON_SCHEMA_VIOLATION`: 187
+- `DIRECTIVE_LIVENESS_EVAL`: 33
+- `CANONICAL_HASH_DRIFT`: 12
+- `WIRE_BROKEN`: 12
 
-**Overall drift**: v (24h=283, 7d avg/day=2292.1)
+**Overall drift**: v (24h=244, 7d avg/day=2176.3)
 
 ---
 
@@ -160,7 +154,8 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 ## 13. Today's Commits (24h) — both repos
 
 
-**ystar-company** (28 commits):
+**ystar-company** (27 commits):
+- 11ad6d1f 02:10 [auto] WIP checkpoint 2026-04-29 02:10 -- 137 files changed
 - 7d499116 22:59 [auto] WIP checkpoint 2026-04-28 22:59 -- 53 files changed
 - 684c0043 22:43 tools: add l6 integrated approval record and pilot readiness sandbox
 - 0faa6f71 22:28 [auto] WIP checkpoint 2026-04-28 22:28 -- 115 files changed
@@ -180,6 +175,5 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 - 1b0131d0 17:44 tools: add live boundary no go framework
 - 17aadbec 17:14 tools: add real release simulation sandbox
 - b3b9e2c3 16:38 tools: add controlled real release preflight
-- 2a0cc560 16:04 tools: add controlled approval record sandbox
 
 **Y*gov**: no commits
