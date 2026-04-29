@@ -25,7 +25,7 @@
       },
       "stop_reason_if_any": null,
       "evidence_eligible": true,
-      "read_at_utc": "2026-04-29T19:30:33Z",
+      "read_at_utc": "2026-04-29T19:56:08Z",
       "adapter_name": "fixture"
     },
     {
@@ -52,7 +52,7 @@
       },
       "stop_reason_if_any": null,
       "evidence_eligible": true,
-      "read_at_utc": "2026-04-29T19:30:33Z",
+      "read_at_utc": "2026-04-29T19:56:08Z",
       "adapter_name": "fixture"
     },
     {
@@ -79,7 +79,7 @@
       },
       "stop_reason_if_any": null,
       "evidence_eligible": true,
-      "read_at_utc": "2026-04-29T19:30:33Z",
+      "read_at_utc": "2026-04-29T19:56:08Z",
       "adapter_name": "fixture"
     }
   ]

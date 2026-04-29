@@ -11,7 +11,7 @@
       "snippet": "Locator metadata only: official fixture program page appears relevant.",
       "source_domain": "official.example.org",
       "backend_name": "fixture",
-      "retrieved_at_utc": "2026-04-29T19:30:33Z",
+      "retrieved_at_utc": "2026-04-29T19:56:08Z",
       "result_type": "fixture_locator_candidate",
       "is_sponsored_or_ad_if_known": false,
       "safety_flags": {
@@ -31,7 +31,7 @@
       "snippet": "Locator metadata only: independent fixture brief appears relevant.",
       "source_domain": "analysis.example.net",
       "backend_name": "fixture",
-      "retrieved_at_utc": "2026-04-29T19:30:33Z",
+      "retrieved_at_utc": "2026-04-29T19:56:08Z",
       "result_type": "fixture_locator_candidate",
       "is_sponsored_or_ad_if_known": false,
       "safety_flags": {
@@ -51,7 +51,7 @@
       "snippet": "Locator metadata only: fixture limitation page may surface conflict.",
       "source_domain": "analysis.example.net",
       "backend_name": "fixture",
-      "retrieved_at_utc": "2026-04-29T19:30:33Z",
+      "retrieved_at_utc": "2026-04-29T19:56:08Z",
       "result_type": "fixture_locator_candidate",
       "is_sponsored_or_ad_if_known": false,
       "safety_flags": {

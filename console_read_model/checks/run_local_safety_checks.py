@@ -2588,6 +2588,15 @@ VALIDATION_CHECKS = [
         ],
     ),
     Check(
+        "Compile L6.12 unified controlled observation builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "l6_unified_controlled_external_observation_evidence_loop/tools/build_l6_unified_controlled_external_observation_evidence_loop.py",
+        ],
+    ),
+    Check(
         "Validate JSON: l6_10x_budgeted_controlled_search_evidence_summary.json",
         ["python3", "-m", "json.tool", "console_read_model/generated/l6_10x_budgeted_controlled_search_evidence_summary.json"],
     ),
@@ -2642,6 +2651,50 @@ VALIDATION_CHECKS = [
     Check(
         "Validate JSON: l6_11_readiness_assessment.json",
         ["python3", "-m", "json.tool", "l6_11_read_model/l6_11_readiness_assessment.json"],
+    ),
+    Check(
+        "Validate JSON: l6_12_unified_controlled_external_observation_evidence_loop_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_12_unified_controlled_external_observation_evidence_loop_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_12_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_unified_controlled_external_observation_evidence_loop/l6_12_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: l6_12_observation_loop_run_trace.json",
+        ["python3", "-m", "json.tool", "controlled_observation_orchestrator/observation_loop_run_trace.json"],
+    ),
+    Check(
+        "Validate JSON: l6_12_generated_query_plan.json",
+        ["python3", "-m", "json.tool", "controlled_query_execution/generated_query_plan.json"],
+    ),
+    Check(
+        "Validate JSON: l6_12_evidence_packet_index.json",
+        ["python3", "-m", "json.tool", "controlled_evidence_packets/evidence_packet_index.json"],
+    ),
+    Check(
+        "Validate JSON: l6_12_conflict_registry.json",
+        ["python3", "-m", "json.tool", "controlled_corroboration_conflict/conflict_registry.json"],
+    ),
+    Check(
+        "Validate JSON: l6_12_evidence_review_packet.json",
+        ["python3", "-m", "json.tool", "controlled_review_packet/evidence_review_packet.json"],
+    ),
+    Check(
+        "Validate JSON: l6_12_query_refinement_candidate_index.json",
+        ["python3", "-m", "json.tool", "controlled_query_refinement/query_refinement_candidate_index.json"],
+    ),
+    Check(
+        "Validate JSON: l6_12_capability_gap_registry.json",
+        ["python3", "-m", "json.tool", "controlled_capability_gap_report/capability_gap_registry.json"],
+    ),
+    Check(
+        "Validate JSON: l6_12_no_side_effect_receipt.json",
+        ["python3", "-m", "json.tool", "controlled_no_action_receipts/no_side_effect_receipt.json"],
+    ),
+    Check(
+        "Validate JSON: l6_12_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "l6_12_read_model/l6_12_readiness_assessment.json"],
     ),
     Check(
         "Validate JSON: markdown_report_candidates.json",
@@ -2946,6 +2999,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: controlled-search-backend-page-read-enablement",
         ["python3", "console_read_model/cli/team_console.py", "controlled-search-backend-page-read-enablement"],
+    ),
+    Check(
+        "CLI smoke: unified-controlled-external-observation-evidence-loop",
+        ["python3", "console_read_model/cli/team_console.py", "unified-controlled-external-observation-evidence-loop"],
     ),
     Check(
         "CLI smoke: sources",

@@ -298,6 +298,13 @@ python3 console_read_model/cli/team_console.py <command>
   non-empty offline evidence packet proof, conflict count, blockers, no manual
   URL request, and blocked login/payment/form/publication/outreach/revenue/MCP/
   live/CIEU DB/canonical/writeback/direct Y* mutation state.
+- `unified-controlled-external-observation-evidence-loop`: Prints the generated
+  L6.12 unified controlled external observation evidence loop summary: selected
+  work order, backend/page-read modes, safety preflight decision, fixture proof,
+  real-run status, query/search/page/crawl counts, evidence packets, conflicts,
+  unresolved claims, query refinements, capability gaps, no manual URL request,
+  no-side-effect receipt, and blocked login/payment/form/publication/outreach/
+  revenue/MCP/live/CIEU DB/canonical/writeback/direct Y* mutation state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

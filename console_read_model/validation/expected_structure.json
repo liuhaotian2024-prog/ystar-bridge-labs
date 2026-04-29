@@ -96,6 +96,7 @@
     "console_read_model/generated/l6_10w_reviewed_seed_locator_injection_summary.json",
     "console_read_model/generated/l6_10x_budgeted_controlled_search_evidence_summary.json",
     "console_read_model/generated/l6_11_controlled_backend_page_read_enablement_summary.json",
+    "console_read_model/generated/l6_12_unified_controlled_external_observation_evidence_loop_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "required_field_functional_archaeology_files": [

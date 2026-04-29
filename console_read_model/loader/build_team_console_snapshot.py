@@ -385,6 +385,18 @@ CURATED_SOURCES = [
     "controlled_backend_runtime_receipts/no_manual_url_request_receipt.json",
     "l6_11_read_model/l6_11_strategic_residual_delta.json",
     "l6_11_read_model/l6_11_readiness_assessment.json",
+    "l6_unified_controlled_external_observation_evidence_loop/l6_12_summary.json",
+    "controlled_observation_orchestrator/observation_loop_run_trace.json",
+    "controlled_query_execution/generated_query_plan.json",
+    "controlled_query_execution/search_execution_trace.json",
+    "controlled_bounded_crawl/bounded_crawl_trace.json",
+    "controlled_evidence_packets/evidence_packet_index.json",
+    "controlled_corroboration_conflict/conflict_registry.json",
+    "controlled_query_refinement/query_refinement_candidate_index.json",
+    "controlled_capability_gap_report/capability_gap_registry.json",
+    "controlled_no_action_receipts/no_side_effect_receipt.json",
+    "l6_12_read_model/l6_12_strategic_residual_delta.json",
+    "l6_12_read_model/l6_12_readiness_assessment.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -6967,6 +6979,164 @@ def build_l6_11_controlled_backend_enablement_summary(
     }
 
 
+def build_l6_12_unified_controlled_observation_summary(
+    milestone_summary: dict[str, Any] | None,
+    run_trace: dict[str, Any] | None,
+    query_plan: dict[str, Any] | None,
+    search_trace: dict[str, Any] | None,
+    crawl_trace: dict[str, Any] | None,
+    evidence_index: dict[str, Any] | None,
+    conflict_registry: dict[str, Any] | None,
+    refinement_index: dict[str, Any] | None,
+    capability_gap_registry: dict[str, Any] | None,
+    no_side_effect_receipt: dict[str, Any] | None,
+    residual_delta: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.l6_12_unified_controlled_external_observation_evidence_loop_summary",
+            "schema_version": "v0",
+            "l6_12_unified_controlled_external_observation_evidence_loop_complete": False,
+            "warning": "L6.12 unified controlled observation loop pack has not been generated yet.",
+        }
+
+    milestone_summary = milestone_summary or {}
+    run_trace = run_trace or {}
+    query_plan = query_plan or {}
+    search_trace = search_trace or {}
+    crawl_trace = crawl_trace or {}
+    evidence_index = evidence_index or {}
+    conflict_registry = conflict_registry or {}
+    refinement_index = refinement_index or {}
+    capability_gap_registry = capability_gap_registry or {}
+    no_side_effect_receipt = no_side_effect_receipt or {}
+    residual_delta = residual_delta or {}
+
+    def flag(field: str, default: Any = False) -> Any:
+        return milestone_summary.get(field, readiness_summary.get(field, default))
+
+    return {
+        "schema_name": "ystar.console_read_model.generated.l6_12_unified_controlled_external_observation_evidence_loop_summary",
+        "schema_version": "v0",
+        "milestone_id": milestone_summary.get("milestone_id", "L6.12"),
+        "milestone_name": milestone_summary.get(
+            "milestone_name",
+            "Unified Controlled External Observation Activation & Evidence Loop Sprint v0",
+        ),
+        "mode": milestone_summary.get(
+            "mode", "unified_controlled_external_observation_evidence_loop"
+        ),
+        "run_id": milestone_summary.get("run_id"),
+        "run_classification": milestone_summary.get("run_classification"),
+        "l6_12_unified_controlled_external_observation_evidence_loop_complete": readiness_summary.get(
+            "l6_12_unified_controlled_external_observation_evidence_loop_complete", True
+        ),
+        "selected_work_order_id": milestone_summary.get("selected_work_order_id"),
+        "backend_mode": milestone_summary.get("backend_mode"),
+        "page_read_mode": milestone_summary.get("page_read_mode"),
+        "network_allowed": milestone_summary.get("network_allowed", False),
+        "safety_preflight_decision": milestone_summary.get("safety_preflight_decision"),
+        "fixture_proof_executed": milestone_summary.get(
+            "fixture_proof_executed", run_trace.get("fixture_proof", {}).get("fixture_proof_executed")
+        ),
+        "real_observation_executed": milestone_summary.get("real_observation_executed", False),
+        "query_count": milestone_summary.get("query_count", query_plan.get("query_count", 0)),
+        "search_results_considered": milestone_summary.get(
+            "search_results_considered", 0
+        ),
+        "pages_opened": milestone_summary.get("pages_opened", crawl_trace.get("pages_opened", 0)),
+        "domains_touched": milestone_summary.get(
+            "domains_touched", crawl_trace.get("domains_touched", 0)
+        ),
+        "crawl_depth_used": milestone_summary.get(
+            "crawl_depth_used", crawl_trace.get("crawl_depth_used", 0)
+        ),
+        "external_reads_used": milestone_summary.get("external_reads_used", 0),
+        "evidence_packets_generated": milestone_summary.get(
+            "evidence_packets_generated", evidence_index.get("evidence_packet_count", 0)
+        ),
+        "conflicts_found": milestone_summary.get(
+            "conflicts_found", conflict_registry.get("conflict_count", 0)
+        ),
+        "unresolved_claims": milestone_summary.get("unresolved_claims", 0),
+        "query_refinement_candidates_generated": milestone_summary.get(
+            "query_refinement_candidates_generated",
+            refinement_index.get("candidate_count", 0),
+        ),
+        "capability_gaps_generated": milestone_summary.get(
+            "capability_gaps_generated", capability_gap_registry.get("gap_count", 0)
+        ),
+        "blockers": milestone_summary.get("blockers", []),
+        "ask_user_for_url_occurred": milestone_summary.get(
+            "ask_user_for_url_occurred",
+            no_side_effect_receipt.get("ask_user_for_url_occurred", False),
+        ),
+        "external_side_effects_occurred": milestone_summary.get(
+            "external_side_effects_occurred",
+            no_side_effect_receipt.get("external_side_effects_occurred", False),
+        ),
+        "core_writeback_occurred": milestone_summary.get(
+            "core_writeback_occurred",
+            no_side_effect_receipt.get("core_writeback_occurred", False),
+        ),
+        "search_snippets_used_as_evidence": milestone_summary.get(
+            "search_snippets_used_as_evidence", search_trace.get("snippets_used_as_evidence", False)
+        ),
+        "page_read_content_used_as_evidence": milestone_summary.get(
+            "page_read_content_used_as_evidence", False
+        ),
+        "secret_values_serialized": milestone_summary.get("secret_values_serialized", False),
+        "remaining_residual": residual_delta.get("primary_residual"),
+        "next_step": readiness_summary.get("next_step"),
+        "ask_user_for_url_authorized": flag("ask_user_for_url_authorized"),
+        "user_manual_url_provision_required": flag("user_manual_url_provision_required"),
+        "login_authorized": flag("login_authorized"),
+        "account_creation_authorized": flag("account_creation_authorized"),
+        "payment_authorized": flag("payment_authorized"),
+        "checkout_authorized": flag("checkout_authorized"),
+        "form_submission_authorized": flag("form_submission_authorized"),
+        "posting_authorized": flag("posting_authorized"),
+        "commenting_authorized": flag("commenting_authorized"),
+        "messaging_authorized": flag("messaging_authorized"),
+        "publication_authorized": flag("publication_authorized"),
+        "outreach_authorized": flag("outreach_authorized"),
+        "revenue_execution_authorized": flag("revenue_execution_authorized"),
+        "mcp_execution_authorized": flag("mcp_execution_authorized"),
+        "live_behavior_authorized": flag("live_behavior_authorized"),
+        "cieu_db_write_authorized": flag("cieu_db_write_authorized"),
+        "canonical_update_authorized": flag("canonical_update_authorized"),
+        "brain_writeback_authorized": flag("brain_writeback_authorized"),
+        "memory_ingestion_authorized": flag("memory_ingestion_authorized"),
+        "direct_y_star_mutation_authorized": flag("direct_y_star_mutation_authorized"),
+        "artifact_refinement_candidate_generation_authorized": flag(
+            "artifact_refinement_candidate_generation_authorized"
+        ),
+        "artifact_refinement_application_authorized": flag(
+            "artifact_refinement_application_authorized"
+        ),
+        "max_selected_work_orders": milestone_summary.get("max_selected_work_orders"),
+        "max_queries": milestone_summary.get("max_queries"),
+        "max_search_results_considered": milestone_summary.get("max_search_results_considered"),
+        "max_pages_opened": milestone_summary.get("max_pages_opened"),
+        "max_domains": milestone_summary.get("max_domains"),
+        "max_pages_per_domain": milestone_summary.get("max_pages_per_domain"),
+        "max_crawl_depth": milestone_summary.get("max_crawl_depth"),
+        "max_total_external_reads": milestone_summary.get("max_total_external_reads"),
+        "max_evidence_packets": milestone_summary.get("max_evidence_packets"),
+        "generated_summary": "l6_unified_controlled_external_observation_evidence_loop/l6_12_summary.json",
+        "generated_review_packet": "controlled_review_packet/evidence_review_packet.json",
+        "generated_capability_gap_registry": "controlled_capability_gap_report/capability_gap_registry.json",
+        "generated_no_side_effect_receipt": "controlled_no_action_receipts/no_side_effect_receipt.json",
+        "generated_readiness": "l6_12_read_model/l6_12_readiness_assessment.json",
+        "warning": (
+            "L6.12 runs a complete fixture-proven controlled observation loop and "
+            "keeps real public observation gated by explicit backend/page-read "
+            "configuration and safety preflight."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -8425,6 +8595,54 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_11_read_model/l6_11_readiness_assessment.json",
         files_read,
     )
+    l6_12_milestone_summary = load_optional_json(
+        "l6_unified_controlled_external_observation_evidence_loop/l6_12_summary.json",
+        files_read,
+    )
+    l6_12_run_trace = load_optional_json(
+        "controlled_observation_orchestrator/observation_loop_run_trace.json",
+        files_read,
+    )
+    l6_12_query_plan = load_optional_json(
+        "controlled_query_execution/generated_query_plan.json",
+        files_read,
+    )
+    l6_12_search_trace = load_optional_json(
+        "controlled_query_execution/search_execution_trace.json",
+        files_read,
+    )
+    l6_12_crawl_trace = load_optional_json(
+        "controlled_bounded_crawl/bounded_crawl_trace.json",
+        files_read,
+    )
+    l6_12_evidence_index = load_optional_json(
+        "controlled_evidence_packets/evidence_packet_index.json",
+        files_read,
+    )
+    l6_12_conflict_registry = load_optional_json(
+        "controlled_corroboration_conflict/conflict_registry.json",
+        files_read,
+    )
+    l6_12_refinement_index = load_optional_json(
+        "controlled_query_refinement/query_refinement_candidate_index.json",
+        files_read,
+    )
+    l6_12_capability_gap_registry = load_optional_json(
+        "controlled_capability_gap_report/capability_gap_registry.json",
+        files_read,
+    )
+    l6_12_no_side_effect_receipt = load_optional_json(
+        "controlled_no_action_receipts/no_side_effect_receipt.json",
+        files_read,
+    )
+    l6_12_residual_delta = load_optional_json(
+        "l6_12_read_model/l6_12_strategic_residual_delta.json",
+        files_read,
+    )
+    l6_12_readiness_summary = load_optional_json(
+        "l6_12_read_model/l6_12_readiness_assessment.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -8855,6 +9073,22 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             l6_11_readiness_summary,
         )
     )
+    l6_12_unified_controlled_observation_summary = (
+        build_l6_12_unified_controlled_observation_summary(
+            l6_12_milestone_summary,
+            l6_12_run_trace,
+            l6_12_query_plan,
+            l6_12_search_trace,
+            l6_12_crawl_trace,
+            l6_12_evidence_index,
+            l6_12_conflict_registry,
+            l6_12_refinement_index,
+            l6_12_capability_gap_registry,
+            l6_12_no_side_effect_receipt,
+            l6_12_residual_delta,
+            l6_12_readiness_summary,
+        )
+    )
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -9036,6 +9270,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_10w_reviewed_seed_locator_injection_summary": l6_10w_reviewed_seed_locator_injection_summary,
         "l6_10x_budgeted_controlled_search_evidence_summary": l6_10x_budgeted_controlled_search_summary,
         "l6_11_controlled_backend_page_read_enablement_summary": l6_11_controlled_backend_page_read_enablement_summary,
+        "l6_12_unified_controlled_observation_summary": l6_12_unified_controlled_observation_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -9286,6 +9521,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/l6_10w_reviewed_seed_locator_injection_summary.json",
             "console_read_model/generated/l6_10x_budgeted_controlled_search_evidence_summary.json",
             "console_read_model/generated/l6_11_controlled_backend_page_read_enablement_summary.json",
+            "console_read_model/generated/l6_12_unified_controlled_external_observation_evidence_loop_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -9579,6 +9815,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/l6_10w_reviewed_seed_locator_injection_summary.json", l6_10w_reviewed_seed_locator_injection_summary, generated_files)
     write_json("console_read_model/generated/l6_10x_budgeted_controlled_search_evidence_summary.json", l6_10x_budgeted_controlled_search_summary, generated_files)
     write_json("console_read_model/generated/l6_11_controlled_backend_page_read_enablement_summary.json", l6_11_controlled_backend_page_read_enablement_summary, generated_files)
+    write_json("console_read_model/generated/l6_12_unified_controlled_external_observation_evidence_loop_summary.json", l6_12_unified_controlled_observation_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -9695,6 +9932,9 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     )
     l6_11_controlled_backend_page_read = snapshot.get(
         "l6_11_controlled_backend_page_read_enablement_summary", {}
+    )
+    l6_12_unified_controlled_observation = snapshot.get(
+        "l6_12_unified_controlled_observation_summary", {}
     )
     lines.extend(
         [
@@ -11216,6 +11456,42 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- direct_y_star_mutation_authorized: {l6_11_controlled_backend_page_read.get('direct_y_star_mutation_authorized')}",
             f"- next_step: {l6_11_controlled_backend_page_read.get('next_step')}",
             f"- Warning: {l6_11_controlled_backend_page_read.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## L6.12 Unified Controlled External Observation Evidence Loop",
+            "",
+            f"- l6_12_unified_controlled_external_observation_evidence_loop_complete: {l6_12_unified_controlled_observation.get('l6_12_unified_controlled_external_observation_evidence_loop_complete')}",
+            f"- mode: {l6_12_unified_controlled_observation.get('mode')}",
+            f"- run_classification: {l6_12_unified_controlled_observation.get('run_classification')}",
+            f"- selected_work_order_id: {l6_12_unified_controlled_observation.get('selected_work_order_id')}",
+            f"- backend_mode: {l6_12_unified_controlled_observation.get('backend_mode')}",
+            f"- page_read_mode: {l6_12_unified_controlled_observation.get('page_read_mode')}",
+            f"- network_allowed: {l6_12_unified_controlled_observation.get('network_allowed')}",
+            f"- safety_preflight_decision: {l6_12_unified_controlled_observation.get('safety_preflight_decision')}",
+            f"- fixture_proof_executed: {l6_12_unified_controlled_observation.get('fixture_proof_executed')}",
+            f"- real_observation_executed: {l6_12_unified_controlled_observation.get('real_observation_executed')}",
+            f"- query_count: {l6_12_unified_controlled_observation.get('query_count')}",
+            f"- search_results_considered: {l6_12_unified_controlled_observation.get('search_results_considered')}",
+            f"- pages_opened: {l6_12_unified_controlled_observation.get('pages_opened')}",
+            f"- domains_touched: {l6_12_unified_controlled_observation.get('domains_touched')}",
+            f"- crawl_depth_used: {l6_12_unified_controlled_observation.get('crawl_depth_used')}",
+            f"- external_reads_used: {l6_12_unified_controlled_observation.get('external_reads_used')}",
+            f"- evidence_packets_generated: {l6_12_unified_controlled_observation.get('evidence_packets_generated')}",
+            f"- conflicts_found: {l6_12_unified_controlled_observation.get('conflicts_found')}",
+            f"- unresolved_claims: {l6_12_unified_controlled_observation.get('unresolved_claims')}",
+            f"- query_refinement_candidates_generated: {l6_12_unified_controlled_observation.get('query_refinement_candidates_generated')}",
+            f"- capability_gaps_generated: {l6_12_unified_controlled_observation.get('capability_gaps_generated')}",
+            f"- blockers: {l6_12_unified_controlled_observation.get('blockers')}",
+            f"- ask_user_for_url_occurred: {l6_12_unified_controlled_observation.get('ask_user_for_url_occurred')}",
+            f"- external_side_effects_occurred: {l6_12_unified_controlled_observation.get('external_side_effects_occurred')}",
+            f"- core_writeback_occurred: {l6_12_unified_controlled_observation.get('core_writeback_occurred')}",
+            f"- search_snippets_used_as_evidence: {l6_12_unified_controlled_observation.get('search_snippets_used_as_evidence')}",
+            f"- page_read_content_used_as_evidence: {l6_12_unified_controlled_observation.get('page_read_content_used_as_evidence')}",
+            f"- next_step: {l6_12_unified_controlled_observation.get('next_step')}",
+            f"- Warning: {l6_12_unified_controlled_observation.get('warning')}",
         ]
     )
     lines.extend(

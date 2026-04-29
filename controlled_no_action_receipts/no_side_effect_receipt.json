@@ -29,6 +29,9 @@
     "controlled_no_action_receipts/no_unbounded_scraping_receipt.json",
     "controlled_no_action_receipts/no_ask_user_url_receipt.json"
   ],
+  "executed": false,
+  "occurred": false,
+  "authorized": false,
   "external_side_effects_occurred": false,
   "core_writeback_occurred": false,
   "ask_user_for_url_occurred": false,
