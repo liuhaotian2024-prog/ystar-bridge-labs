@@ -113,8 +113,8 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 174
-- Unsafe artifacts count: 119
+- Artifacts classified: 151
+- Unsafe artifacts count: 120
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
@@ -122,38 +122,42 @@ Not ready:
   - DAEMON_STATE: 4
   - DB_CORE: 1
   - DB_SIDECARE: 6
-  - FRAMEWORK_FILE: 5
+  - DREAM_REPORT: 1
   - LOG_RUNTIME: 30
   - PYCACHE: 45
-  - UNKNOWN_OR_NON_RUNTIME: 50
+  - UNKNOWN_OR_NON_RUNTIME: 31
   - UNKNOWN_RUNTIME_ARTIFACT: 10
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
 - Warning: Console displays only curated path-level quarantine summary. No artifact contents were read.
 
 ## Runtime Artifact Safe Mining Candidates
 
-- Candidate count: 0
+- Candidate count: 1
 - Safety level: bounded_markdown_candidate
 - Ingestion status: candidate_only
 - Generated candidate index: runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json
 - Classes seen:
+  - DREAM_REPORT: 1
 - Warning: Safe mining candidates are bounded review assets only. They are not brain memory, CIEU records, or approved writeback.
 
 ## Runtime Artifact Candidate Review Queue
 
-- Review count: 0
+- Review count: 1
 - Default review status: pending_review
 - Default ingestion status: not_ingested
 - Generated queue path: runtime_artifact_quarantine/safe_mining/review_queue/generated/candidate_review_queue.json
 - Statuses:
+  - pending_review: 1
 - Intended use summary:
+  - memory_continuity_hint: 1
+  - role_brain_capsule_hint: 1
 - Warning: Review queue entries are not brain memory and require explicit approval before any future CIEU, memory, or capsule use.
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 174
-- Artifacts with disposition: 174
-- Safe-mined to review queue: 0
+- Total artifacts: 151
+- Artifacts with disposition: 151
+- Safe-mined to review queue: 1
 - Forbidden direct read count: 119
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
@@ -163,20 +167,25 @@ Not ready:
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
   - ignored_generated_cache: 45
-  - ignored_or_non_runtime: 55
+  - ignored_or_non_runtime: 31
+  - safe_mined_to_review_queue: 1
 - Evidence scoring status:
-  - not_started: 174
+  - not_started: 151
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
 
-- Candidates scored: 0
-- Decision stubs created: 0
-- Routes created: 0
+- Candidates scored: 1
+- Decision stubs created: 1
+- Routes created: 2
 - Automatic approvals: 0
 - Reuse readiness:
+  - hint_only: 1
 - Route counts:
+  - memory_continuity_hint_queue: 1
+  - role_brain_capsule_hint_queue: 1
 - Semantic truth status:
+  - not_evaluated: 1
 - Warning: Evidence scoring is structural only. It is not truth validation and not memory ingestion.
 
 ## Labs-Gov Alignment Bridge
@@ -539,7 +548,7 @@ Not ready:
 
 - field_functional_archaeology_defined: True
 - repos_scanned: 4
-- assets_scanned: 5010
+- assets_scanned: 5089
 - field_functional_assets_found: 200
 - reuse_candidates_count: 20
 - wrap_candidates_count: 20
@@ -976,6 +985,35 @@ Not ready:
 - ready_for_real_network_observation: False
 - next_recommended_milestone: L6.4 Real Read-Only External Observation Preflight v0
 - Warning: L6.3 is sandbox fixture/manual-import only. Real external observation, URL fetch, scraping, API calls, browser fetch, publication, outreach, payment, revenue execution, MCP, live behavior, canonical mutation, writeback, and direct Y* mutation remain blocked.
+
+## L6.4 Real Read-Only External Observation Preflight
+
+- l6_4_real_read_only_observation_preflight_defined: True
+- preflight_only: True
+- sandbox_only: True
+- future_real_read_only_observation_candidate_allowed: True
+- candidate_count: 3
+- approval_packet_count: 3
+- source_allowlist_defined: True
+- source_denylist_defined: True
+- operator_handoff_plan_generated: True
+- network_isolation_preflight_defined: True
+- evidence_capture_preflight_defined: True
+- abort_rollback_quarantine_policy_defined: True
+- no_action_guarantees_generated: True
+- preflight_decision_gate_generated: True
+- real_external_observation_authorized: False
+- network_enabled: False
+- scraping_enabled: False
+- browser_fetch_enabled: False
+- publication_enabled: False
+- outreach_enabled: False
+- payment_enabled: False
+- revenue_execution_enabled: False
+- ready_for_l6_5_controlled_real_read_only_observation_pilot_design: True
+- ready_for_actual_network_observation_now: False
+- next_recommended_milestone: L6.5 Controlled Real Read-Only Observation Pilot Design v0
+- Warning: L6.4 is preflight-only. Real external observation, URL fetch, scraping, API calls, browser fetch, publication, outreach, payment, revenue execution, MCP, live behavior, CIEU DB writes, canonical mutation, writeback, and direct Y* mutation remain blocked.
 
 ## Governance Boundary
 

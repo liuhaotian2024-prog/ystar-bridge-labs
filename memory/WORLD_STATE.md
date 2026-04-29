@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-28 20:30:00
+**Generated**: 2026-04-28 21:00:00
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,7 +36,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/12 valid (0 errors)
-**CIEU 24h Events**: 1925
+**CIEU 24h Events**: 1978
 **Overdue Obligations**: 0
 
 ---
@@ -84,30 +84,30 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 ---
 
 ## 8. Y* Field State (xi) — Mission axis frequency + drift
-**Total CIEU events (24h)**: 1925
+**Total CIEU events (24h)**: 1978
 
 | M-Axis | Description | 24h Count | 7d Avg/Day | Drift |
 |--------|-------------|-----------|------------|-------|
-| **M-1** | Survivability (session/boot/handoff/persist) | 222 | 4989 | ↑ |
-| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 6 | 891 | ↓ |
-| **M-2b** | Omission prevention (omission/overdue/alarm) | 5 | 2705 | ↓ |
+| **M-1** | Survivability (session/boot/handoff/persist) | 222 | 4956 | ↑ |
+| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 7 | 890 | ↓ |
+| **M-2b** | Omission prevention (omission/overdue/alarm) | 6 | 2689 | ↓ |
 | **M-3** | Value production (customer/revenue/dogfood/demo) | 0 | 0 | ↓ |
 
-**Classified coverage**: 233/1925 (12.1%)
-**Unclassified**: 1692 events (routine ops / K9 routing)
+**Classified coverage**: 235/1978 (11.9%)
+**Unclassified**: 1743 events (routine ops / K9 routing)
 **Drift alert**: M-1 trending UP vs 7d baseline
 **Drift alert**: M-2a, M-2b, M-3 trending DOWN vs 7d baseline
 
 ---
 
 ## 9. Commission Error Heatmap — 11-component unified dashboard
-**Total commission errors (24h)**: 272
+**Total commission errors (24h)**: 274
 
 **By M-Axis**:
 
 | Axis | Description | 24h Count |
 |------|-------------|-----------|
-| **M-1** | Survivability (schema/wire/config drift) | 232 |
+| **M-1** | Survivability (schema/wire/config drift) | 234 |
 | **M-2a** | Commission prevention (core 11 detectors) | 40 |
 | **M-3** | Value quality (maturity/off-target) | 0 |
 
@@ -115,9 +115,9 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 
 | Detector | 24h Count | Drift vs 7d |
 |----------|-----------|-------------|
-| amendment_coverage_audit | 227 | v (avg 410.7/d) |
+| amendment_coverage_audit | 228 | v (avg 407.4/d) |
 | directive_evaluator | 39 | = (avg 33.9/d) |
-| hook_commission_catch | 6 | v (avg 480.6/d) |
+| hook_commission_catch | 7 | v (avg 476.4/d) |
 
 **By Actor (top 10)**:
 
@@ -125,17 +125,17 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 |-------|----------------------|
 | unknown | 222 |
 | cto | 39 |
-| platform | 10 |
+| platform | 12 |
 | eng-platform | 1 |
 
 **Top 5 Event Types**:
 - `SESSION_JSON_SCHEMA_VIOLATION`: 222
 - `DIRECTIVE_LIVENESS_EVAL`: 39
-- `CANONICAL_HASH_DRIFT`: 5
-- `WIRE_BROKEN`: 5
+- `CANONICAL_HASH_DRIFT`: 6
+- `WIRE_BROKEN`: 6
 - `WHITELIST_GAP`: 1
 
-**Overall drift**: v (24h=272, 7d avg/day=2447.7)
+**Overall drift**: v (24h=274, 7d avg/day=2426.3)
 
 ---
 
@@ -161,7 +161,10 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 ## 13. Today's Commits (24h) — both repos
 
 
-**ystar-company** (20 commits):
+**ystar-company** (22 commits):
+- a1feee9a 20:58 [auto] WIP checkpoint 2026-04-28 20:58 -- 28 files changed
+- ceb5d6c2 20:55 tools: add l6 controlled external observation sandbox
+- 42efb46b 20:31 tools: add l6 governed external observation boundary
 - f51cfdd0 20:27 [auto] WIP checkpoint 2026-04-28 20:27 -- 108 files changed
 - efb1c873 19:23 tools: add l6 meta development mvp artifact sandbox
 - 31fb5fc1 18:57 [auto] WIP checkpoint 2026-04-28 18:56 -- 141 files changed
@@ -179,8 +182,5 @@ ceo          | 3/3          | 24           | 41       | 2026-04-27
 - 9667642b 07:36 tools: add review gated shadow projection cycle
 - 6bfde3c3 23:48 tools: add projection checked autonomous cycle
 - 13ba0f22 23:10 tools: add field functional auto projection core
-- e8848862 22:29 tools: add mission field projection harness
-- 4e9680eb 21:19 tools: add field functional archaeology
-- daee9754 20:42 tools: add manual recurring observation tick runner
 
 **Y*gov**: no commits
