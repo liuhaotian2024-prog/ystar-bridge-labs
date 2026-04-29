@@ -242,5 +242,11 @@ controlled search path are present, while the default run performs one
 local seed lookup, keeps search disabled, uses no network, and invents no
 locator.
 
+`l6_10w_reviewed_seed_locator_injection_summary.json` is derived from
+the L6.10W reviewed seed locator injection and tiny retry pack. It confirms
+the system scanned local seed registries, did not invent a URL, and when no
+reviewed locator exists generated a precise USER_ACTION_REQUIRED packet
+asking for exactly one public URL tied to the selected work order.
+
 `console_read_model/cli/team_console.py` consumes these generated files as its
 only data source.

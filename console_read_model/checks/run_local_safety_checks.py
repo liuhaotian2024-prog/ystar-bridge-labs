@@ -2501,6 +2501,39 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "l6_10v_read_model/l6_10v_readiness_assessment.json"],
     ),
     Check(
+        "Compile L6.10W reviewed seed locator injection builder",
+        [
+            "python3",
+            "-m",
+            "py_compile",
+            "l6_reviewed_seed_locator_injection_tiny_retry/tools/build_l6_reviewed_seed_locator_injection_tiny_retry.py",
+        ],
+    ),
+    Check(
+        "Validate JSON: l6_10w_reviewed_seed_locator_injection_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_10w_reviewed_seed_locator_injection_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10w_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_reviewed_seed_locator_injection_tiny_retry/l6_10w_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10w_reviewed_seed_locator_candidate.json",
+        ["python3", "-m", "json.tool", "reviewed_seed_locator_injection/reviewed_seed_locator_candidate.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10w_user_action_required.json",
+        ["python3", "-m", "json.tool", "seed_locator_user_action_request/user_action_required.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10w_tiny_seed_observation_trace.json",
+        ["python3", "-m", "json.tool", "seed_locator_retry_result/tiny_seed_observation_trace.json"],
+    ),
+    Check(
+        "Validate JSON: l6_10w_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "l6_10w_read_model/l6_10w_readiness_assessment.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -2791,6 +2824,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: controlled-seed-locator-or-search-resolver-enablement",
         ["python3", "console_read_model/cli/team_console.py", "controlled-seed-locator-or-search-resolver-enablement"],
+    ),
+    Check(
+        "CLI smoke: reviewed-seed-locator-injection-tiny-retry",
+        ["python3", "console_read_model/cli/team_console.py", "reviewed-seed-locator-injection-tiny-retry"],
     ),
     Check(
         "CLI smoke: sources",

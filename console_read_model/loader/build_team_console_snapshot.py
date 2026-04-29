@@ -355,6 +355,16 @@ CURATED_SOURCES = [
     "tiny_observation_v_result/tiny_observation_v_no_action_receipts.json",
     "l6_10v_read_model/l6_10v_strategic_residual_delta.json",
     "l6_10v_read_model/l6_10v_readiness_assessment.json",
+    "l6_reviewed_seed_locator_injection_tiny_retry/l6_10w_summary.json",
+    "reviewed_seed_locator_injection/reviewed_seed_locator_candidate.json",
+    "seed_locator_user_action_request/user_action_required.json",
+    "seed_locator_retry_attempt/seed_locator_retry_trace.json",
+    "seed_locator_retry_result/tiny_seed_observation_trace.json",
+    "seed_locator_retry_result/tiny_seed_evidence_packet.json",
+    "seed_locator_retry_result/tiny_seed_refinement_candidate.json",
+    "seed_locator_retry_result/tiny_seed_no_action_receipts.json",
+    "l6_10w_read_model/l6_10w_strategic_residual_delta.json",
+    "l6_10w_read_model/l6_10w_readiness_assessment.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -6500,6 +6510,138 @@ def build_l6_10v_seed_or_search_resolver_enablement_summary(
     }
 
 
+def build_l6_10w_reviewed_seed_locator_injection_summary(
+    milestone_summary: dict[str, Any] | None,
+    seed_candidate: dict[str, Any] | None,
+    user_action: dict[str, Any] | None,
+    retry_trace: dict[str, Any] | None,
+    observation_trace: dict[str, Any] | None,
+    evidence_packet: dict[str, Any] | None,
+    refinement_candidate: dict[str, Any] | None,
+    no_action_receipts: dict[str, Any] | None,
+    residual_delta: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.l6_10w_reviewed_seed_locator_injection_summary",
+            "schema_version": "v0",
+            "l6_10w_reviewed_seed_locator_injection_tiny_retry_complete": False,
+            "warning": "L6.10W reviewed seed locator injection has not been generated yet.",
+        }
+
+    milestone_summary = milestone_summary or {}
+    seed_candidate = seed_candidate or {}
+    user_action = user_action or {}
+    retry_trace = retry_trace or {}
+    observation_trace = observation_trace or {}
+    evidence_packet = evidence_packet or {}
+    refinement_candidate = refinement_candidate or {}
+    no_action_receipts = no_action_receipts or {}
+    residual_delta = residual_delta or {}
+    runtime_limits = milestone_summary or readiness_summary
+
+    def flag(field: str, default: Any = False) -> Any:
+        return milestone_summary.get(field, readiness_summary.get(field, default))
+
+    return {
+        "schema_name": "ystar.console_read_model.generated.l6_10w_reviewed_seed_locator_injection_summary",
+        "schema_version": "v0",
+        "milestone_id": milestone_summary.get("milestone_id", "L6.10W"),
+        "milestone_name": milestone_summary.get(
+            "milestone_name",
+            "Reviewed Seed Locator Injection & Tiny Observation Retry v0",
+        ),
+        "mode": milestone_summary.get("mode", "reviewed_seed_locator_injection_and_tiny_retry"),
+        "l6_10w_reviewed_seed_locator_injection_tiny_retry_complete": readiness_summary.get(
+            "l6_10w_reviewed_seed_locator_injection_tiny_retry_complete", True
+        ),
+        "selected_work_order_id": readiness_summary.get(
+            "selected_work_order_id", milestone_summary.get("selected_work_order_id")
+        ),
+        "reviewed_seed_locator_found": readiness_summary.get(
+            "reviewed_seed_locator_found", milestone_summary.get("reviewed_seed_locator_found", False)
+        ),
+        "concrete_locator": readiness_summary.get(
+            "concrete_locator", milestone_summary.get("concrete_locator")
+        ),
+        "seed_candidate_status": seed_candidate.get("status"),
+        "user_action_required_generated": readiness_summary.get(
+            "user_action_required_generated",
+            milestone_summary.get("user_action_required_generated", False),
+        ),
+        "user_action_request_count": user_action.get("request_count", 0),
+        "requested_item": user_action.get("requested_item"),
+        "retry_attempted": retry_trace.get("retry_attempted", False),
+        "tiny_read_only_observation_executed": readiness_summary.get(
+            "tiny_read_only_observation_executed",
+            observation_trace.get("observation_executed", False),
+        ),
+        "external_reads_count": observation_trace.get("external_reads_count", 0),
+        "pages_read_count": observation_trace.get("pages_read_count", 0),
+        "evidence_packet_generated": bool(evidence_packet),
+        "live_source_evidence_captured": evidence_packet.get(
+            "live_source_evidence_captured", False
+        ),
+        "artifact_refinement_candidate_generated": bool(refinement_candidate),
+        "artifact_refinement_applied": refinement_candidate.get("applied", False),
+        "no_action_receipts_generated": bool(no_action_receipts.get("receipts")),
+        "strategic_residual_loop_generated": bool(residual_delta),
+        "remaining_blocker": milestone_summary.get(
+            "remaining_blocker", readiness_summary.get("remaining_blocker")
+        ),
+        "ready_for_l6_11_controlled_multi_source_corroboration": readiness_summary.get(
+            "ready_for_l6_11_controlled_multi_source_corroboration"
+        ),
+        "next_recommended_milestone": readiness_summary.get("next_recommended_milestone"),
+        "reviewed_seed_locator_injection_authorized": flag(
+            "reviewed_seed_locator_injection_authorized"
+        ),
+        "user_action_request_authorized": flag("user_action_request_authorized"),
+        "seed_locator_from_existing_repo_artifacts_authorized": flag(
+            "seed_locator_from_existing_repo_artifacts_authorized"
+        ),
+        "url_invention_authorized": flag("url_invention_authorized"),
+        "fake_locator_authorized": flag("fake_locator_authorized"),
+        "broad_search_authorized": flag("broad_search_authorized"),
+        "repeated_search_loop_authorized": flag("repeated_search_loop_authorized"),
+        "crawling_authorized": flag("crawling_authorized"),
+        "scraping_authorized": flag("scraping_authorized"),
+        "browser_automation_authorized": flag("browser_automation_authorized"),
+        "login_authorized": flag("login_authorized"),
+        "account_creation_authorized": flag("account_creation_authorized"),
+        "contact_authorized": flag("contact_authorized"),
+        "payment_authorized": flag("payment_authorized"),
+        "form_submission_authorized": flag("form_submission_authorized"),
+        "posting_commenting_messaging_authorized": flag("posting_commenting_messaging_authorized"),
+        "publication_authorized": flag("publication_authorized"),
+        "outreach_authorized": flag("outreach_authorized"),
+        "revenue_execution_authorized": flag("revenue_execution_authorized"),
+        "mcp_execution_authorized": flag("mcp_execution_authorized"),
+        "live_behavior_authorized": flag("live_behavior_authorized"),
+        "cieu_db_write_authorized": flag("cieu_db_write_authorized"),
+        "canonical_update_authorized": flag("canonical_update_authorized"),
+        "brain_writeback_authorized": flag("brain_writeback_authorized"),
+        "memory_ingestion_authorized": flag("memory_ingestion_authorized"),
+        "direct_y_star_mutation_authorized": flag("direct_y_star_mutation_authorized"),
+        "max_selected_work_orders": runtime_limits.get("max_selected_work_orders"),
+        "max_seed_locators_injected": runtime_limits.get("max_seed_locators_injected"),
+        "max_pages_read": runtime_limits.get("max_pages_read"),
+        "max_total_external_reads": runtime_limits.get("max_total_external_reads"),
+        "generated_milestone_summary": "l6_reviewed_seed_locator_injection_tiny_retry/l6_10w_summary.json",
+        "generated_user_action_required": "seed_locator_user_action_request/USER_ACTION_REQUIRED.md",
+        "generated_seed_candidate": "reviewed_seed_locator_injection/reviewed_seed_locator_candidate.json",
+        "generated_observation_trace": "seed_locator_retry_result/tiny_seed_observation_trace.json",
+        "generated_evidence_packet": "seed_locator_retry_result/tiny_seed_evidence_packet.json",
+        "generated_readiness": "l6_10w_read_model/l6_10w_readiness_assessment.json",
+        "warning": (
+            "L6.10W narrows the blocker to a precise one-URL user action request "
+            "when no reviewed seed locator exists locally. It does not invent a "
+            "URL, search the web, or execute observation in the default path."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -7838,6 +7980,46 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_10v_read_model/l6_10v_readiness_assessment.json",
         files_read,
     )
+    l6_10w_milestone_summary = load_optional_json(
+        "l6_reviewed_seed_locator_injection_tiny_retry/l6_10w_summary.json",
+        files_read,
+    )
+    l6_10w_seed_candidate = load_optional_json(
+        "reviewed_seed_locator_injection/reviewed_seed_locator_candidate.json",
+        files_read,
+    )
+    l6_10w_user_action = load_optional_json(
+        "seed_locator_user_action_request/user_action_required.json",
+        files_read,
+    )
+    l6_10w_retry_trace = load_optional_json(
+        "seed_locator_retry_attempt/seed_locator_retry_trace.json",
+        files_read,
+    )
+    l6_10w_observation_trace = load_optional_json(
+        "seed_locator_retry_result/tiny_seed_observation_trace.json",
+        files_read,
+    )
+    l6_10w_evidence_packet = load_optional_json(
+        "seed_locator_retry_result/tiny_seed_evidence_packet.json",
+        files_read,
+    )
+    l6_10w_refinement_candidate = load_optional_json(
+        "seed_locator_retry_result/tiny_seed_refinement_candidate.json",
+        files_read,
+    )
+    l6_10w_no_action_receipts = load_optional_json(
+        "seed_locator_retry_result/tiny_seed_no_action_receipts.json",
+        files_read,
+    )
+    l6_10w_residual_delta = load_optional_json(
+        "l6_10w_read_model/l6_10w_strategic_residual_delta.json",
+        files_read,
+    )
+    l6_10w_readiness_summary = load_optional_json(
+        "l6_10w_read_model/l6_10w_readiness_assessment.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -8226,6 +8408,20 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             l6_10v_readiness_summary,
         )
     )
+    l6_10w_reviewed_seed_locator_injection_summary = (
+        build_l6_10w_reviewed_seed_locator_injection_summary(
+            l6_10w_milestone_summary,
+            l6_10w_seed_candidate,
+            l6_10w_user_action,
+            l6_10w_retry_trace,
+            l6_10w_observation_trace,
+            l6_10w_evidence_packet,
+            l6_10w_refinement_candidate,
+            l6_10w_no_action_receipts,
+            l6_10w_residual_delta,
+            l6_10w_readiness_summary,
+        )
+    )
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -8404,6 +8600,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_10t_toolmaking_locator_resolver_summary": l6_10t_toolmaking_locator_resolver_summary,
         "l6_10u_locator_resolver_enablement_summary": l6_10u_locator_resolver_enablement_summary,
         "l6_10v_seed_or_search_resolver_enablement_summary": l6_10v_seed_or_search_resolver_enablement_summary,
+        "l6_10w_reviewed_seed_locator_injection_summary": l6_10w_reviewed_seed_locator_injection_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -8651,6 +8848,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             "console_read_model/generated/l6_10t_toolmaking_locator_resolver_summary.json",
             "console_read_model/generated/l6_10u_locator_resolver_enablement_summary.json",
             "console_read_model/generated/l6_10v_seed_or_search_resolver_enablement_summary.json",
+            "console_read_model/generated/l6_10w_reviewed_seed_locator_injection_summary.json",
             "console_read_model/generated/generation_manifest.json",
         ],
         "source_files": files_read,
@@ -8864,6 +9062,11 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "controlled search path are present, while the default run performs one\n"
         "local seed lookup, keeps search disabled, uses no network, and invents no\n"
         "locator.\n\n"
+        "`l6_10w_reviewed_seed_locator_injection_summary.json` is derived from\n"
+        "the L6.10W reviewed seed locator injection and tiny retry pack. It confirms\n"
+        "the system scanned local seed registries, did not invent a URL, and when no\n"
+        "reviewed locator exists generated a precise USER_ACTION_REQUIRED packet\n"
+        "asking for exactly one public URL tied to the selected work order.\n\n"
         "`console_read_model/cli/team_console.py` consumes these generated files as its\n"
         "only data source.\n",
         generated_files,
@@ -8923,6 +9126,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/l6_10t_toolmaking_locator_resolver_summary.json", l6_10t_toolmaking_locator_resolver_summary, generated_files)
     write_json("console_read_model/generated/l6_10u_locator_resolver_enablement_summary.json", l6_10u_locator_resolver_enablement_summary, generated_files)
     write_json("console_read_model/generated/l6_10v_seed_or_search_resolver_enablement_summary.json", l6_10v_seed_or_search_resolver_enablement_summary, generated_files)
+    write_json("console_read_model/generated/l6_10w_reviewed_seed_locator_injection_summary.json", l6_10w_reviewed_seed_locator_injection_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings
@@ -9030,6 +9234,9 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
     )
     l6_10v_seed_or_search_resolver_enablement = snapshot.get(
         "l6_10v_seed_or_search_resolver_enablement_summary", {}
+    )
+    l6_10w_reviewed_seed_locator_injection = snapshot.get(
+        "l6_10w_reviewed_seed_locator_injection_summary", {}
     )
     lines.extend(
         [
@@ -10449,6 +10656,35 @@ def render_snapshot_markdown(snapshot: dict[str, Any], readiness: dict[str, Any]
             f"- remaining_blocker: {l6_10v_seed_or_search_resolver_enablement.get('remaining_blocker')}",
             f"- next_recommended_milestone: {l6_10v_seed_or_search_resolver_enablement.get('next_recommended_milestone')}",
             f"- Warning: {l6_10v_seed_or_search_resolver_enablement.get('warning')}",
+        ]
+    )
+    lines.extend(
+        [
+            "",
+            "## L6.10W Reviewed Seed Locator Injection Tiny Retry",
+            "",
+            f"- l6_10w_reviewed_seed_locator_injection_tiny_retry_complete: {l6_10w_reviewed_seed_locator_injection.get('l6_10w_reviewed_seed_locator_injection_tiny_retry_complete')}",
+            f"- mode: {l6_10w_reviewed_seed_locator_injection.get('mode')}",
+            f"- selected_work_order_id: {l6_10w_reviewed_seed_locator_injection.get('selected_work_order_id')}",
+            f"- reviewed_seed_locator_found: {l6_10w_reviewed_seed_locator_injection.get('reviewed_seed_locator_found')}",
+            f"- concrete_locator: {l6_10w_reviewed_seed_locator_injection.get('concrete_locator')}",
+            f"- user_action_required_generated: {l6_10w_reviewed_seed_locator_injection.get('user_action_required_generated')}",
+            f"- requested_item: {l6_10w_reviewed_seed_locator_injection.get('requested_item')}",
+            f"- retry_attempted: {l6_10w_reviewed_seed_locator_injection.get('retry_attempted')}",
+            f"- tiny_read_only_observation_executed: {l6_10w_reviewed_seed_locator_injection.get('tiny_read_only_observation_executed')}",
+            f"- external_reads_count: {l6_10w_reviewed_seed_locator_injection.get('external_reads_count')}",
+            f"- pages_read_count: {l6_10w_reviewed_seed_locator_injection.get('pages_read_count')}",
+            f"- evidence_packet_generated: {l6_10w_reviewed_seed_locator_injection.get('evidence_packet_generated')}",
+            f"- live_source_evidence_captured: {l6_10w_reviewed_seed_locator_injection.get('live_source_evidence_captured')}",
+            f"- url_invention_authorized: {l6_10w_reviewed_seed_locator_injection.get('url_invention_authorized')}",
+            f"- fake_locator_authorized: {l6_10w_reviewed_seed_locator_injection.get('fake_locator_authorized')}",
+            f"- broad_search_authorized: {l6_10w_reviewed_seed_locator_injection.get('broad_search_authorized')}",
+            f"- crawling_authorized: {l6_10w_reviewed_seed_locator_injection.get('crawling_authorized')}",
+            f"- scraping_authorized: {l6_10w_reviewed_seed_locator_injection.get('scraping_authorized')}",
+            f"- browser_automation_authorized: {l6_10w_reviewed_seed_locator_injection.get('browser_automation_authorized')}",
+            f"- remaining_blocker: {l6_10w_reviewed_seed_locator_injection.get('remaining_blocker')}",
+            f"- next_recommended_milestone: {l6_10w_reviewed_seed_locator_injection.get('next_recommended_milestone')}",
+            f"- Warning: {l6_10w_reviewed_seed_locator_injection.get('warning')}",
         ]
     )
     lines.extend(

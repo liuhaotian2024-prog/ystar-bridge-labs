@@ -90,6 +90,9 @@ L6_10U_LOCATOR_RESOLVER_ENABLEMENT = (
 L6_10V_SEED_OR_SEARCH_RESOLVER_ENABLEMENT = (
     "console_read_model/generated/l6_10v_seed_or_search_resolver_enablement_summary.json"
 )
+L6_10W_REVIEWED_SEED_LOCATOR_INJECTION = (
+    "console_read_model/generated/l6_10w_reviewed_seed_locator_injection_summary.json"
+)
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -109,7 +112,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|integrated-approval-record-and-pilot-readiness|agentic-evidence-discovery-trust-engine|controlled-agentic-evidence-pilot-approval-dry-run|tiny-real-read-only-agentic-evidence-observation-pilot|controlled-source-locator-resolution-tiny-observation-retry|governed-capability-gap-toolmaking-locator-resolver|controlled-locator-resolver-enable-first-attempt|controlled-seed-locator-or-search-resolver-enablement|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|integrated-approval-record-and-pilot-readiness|agentic-evidence-discovery-trust-engine|controlled-agentic-evidence-pilot-approval-dry-run|tiny-real-read-only-agentic-evidence-observation-pilot|controlled-source-locator-resolution-tiny-observation-retry|governed-capability-gap-toolmaking-locator-resolver|controlled-locator-resolver-enable-first-attempt|controlled-seed-locator-or-search-resolver-enablement|reviewed-seed-locator-injection-tiny-retry|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -196,6 +199,9 @@ def load_all() -> dict[str, Any]:
         "l6_10u_locator_resolver_enablement": load_json(L6_10U_LOCATOR_RESOLVER_ENABLEMENT),
         "l6_10v_seed_or_search_resolver_enablement": load_json(
             L6_10V_SEED_OR_SEARCH_RESOLVER_ENABLEMENT
+        ),
+        "l6_10w_reviewed_seed_locator_injection": load_json(
+            L6_10W_REVIEWED_SEED_LOCATOR_INJECTION
         ),
     }
 
@@ -2882,6 +2888,60 @@ def cmd_controlled_seed_locator_or_search_resolver_enablement(data: dict[str, An
     print(f"warning: {summary.get('warning')}")
 
 
+def cmd_reviewed_seed_locator_injection_tiny_retry(data: dict[str, Any]) -> None:
+    summary = data["l6_10w_reviewed_seed_locator_injection"]
+    print("# L6.10W Reviewed Seed Locator Injection Tiny Retry")
+    print()
+    print(
+        "L6.10W complete: "
+        f"{summary.get('l6_10w_reviewed_seed_locator_injection_tiny_retry_complete')}"
+    )
+    print(f"mode: {summary.get('mode')}")
+    print(f"selected work order id: {summary.get('selected_work_order_id')}")
+    print(f"reviewed seed locator found: {summary.get('reviewed_seed_locator_found')}")
+    print(f"concrete locator: {summary.get('concrete_locator')}")
+    print(f"user action required generated: {summary.get('user_action_required_generated')}")
+    print(f"requested item: {summary.get('requested_item')}")
+    print(f"retry attempted: {summary.get('retry_attempted')}")
+    print(
+        "tiny read-only observation executed: "
+        f"{summary.get('tiny_read_only_observation_executed')}"
+    )
+    print(f"external reads count: {summary.get('external_reads_count')}")
+    print(f"pages read count: {summary.get('pages_read_count')}")
+    print(f"evidence packet generated: {summary.get('evidence_packet_generated')}")
+    print(f"live source evidence captured: {summary.get('live_source_evidence_captured')}")
+    print(f"url invention authorized: {summary.get('url_invention_authorized')}")
+    print(f"fake locator authorized: {summary.get('fake_locator_authorized')}")
+    print(f"broad search authorized: {summary.get('broad_search_authorized')}")
+    print(f"repeated search loop authorized: {summary.get('repeated_search_loop_authorized')}")
+    print(f"crawling authorized: {summary.get('crawling_authorized')}")
+    print(f"scraping authorized: {summary.get('scraping_authorized')}")
+    print(f"browser automation authorized: {summary.get('browser_automation_authorized')}")
+    print(f"login authorized: {summary.get('login_authorized')}")
+    print(f"account creation authorized: {summary.get('account_creation_authorized')}")
+    print(f"contact authorized: {summary.get('contact_authorized')}")
+    print(f"payment authorized: {summary.get('payment_authorized')}")
+    print(f"form submission authorized: {summary.get('form_submission_authorized')}")
+    print(f"publication authorized: {summary.get('publication_authorized')}")
+    print(f"outreach authorized: {summary.get('outreach_authorized')}")
+    print(f"revenue execution authorized: {summary.get('revenue_execution_authorized')}")
+    print(f"MCP execution authorized: {summary.get('mcp_execution_authorized')}")
+    print(f"live behavior authorized: {summary.get('live_behavior_authorized')}")
+    print(f"CIEU DB write authorized: {summary.get('cieu_db_write_authorized')}")
+    print(f"canonical update authorized: {summary.get('canonical_update_authorized')}")
+    print(f"brain writeback authorized: {summary.get('brain_writeback_authorized')}")
+    print(f"memory ingestion authorized: {summary.get('memory_ingestion_authorized')}")
+    print(f"direct Y* mutation authorized: {summary.get('direct_y_star_mutation_authorized')}")
+    print(f"remaining blocker: {summary.get('remaining_blocker')}")
+    print(f"next recommended milestone: {summary.get('next_recommended_milestone')}")
+    print(f"generated user action required: {summary.get('generated_user_action_required')}")
+    print(f"generated seed candidate: {summary.get('generated_seed_candidate')}")
+    print(f"generated evidence packet: {summary.get('generated_evidence_packet')}")
+    print(f"generated readiness: {summary.get('generated_readiness')}")
+    print(f"warning: {summary.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -4856,6 +4916,8 @@ def main(argv: list[str]) -> int:
         cmd_controlled_locator_resolver_enable_first_attempt(data)
     elif command == "controlled-seed-locator-or-search-resolver-enablement":
         cmd_controlled_seed_locator_or_search_resolver_enablement(data)
+    elif command == "reviewed-seed-locator-injection-tiny-retry":
+        cmd_reviewed_seed_locator_injection_tiny_retry(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

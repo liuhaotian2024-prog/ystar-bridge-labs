@@ -6664,6 +6664,116 @@ def main() -> int:
             ):
                 report.fail(f"generated L6.10V summary exceeds runtime limit for {count_field}")
 
+    l6_10w_reviewed_seed_locator_injection = generated_json.get(
+        "console_read_model/generated/l6_10w_reviewed_seed_locator_injection_summary.json"
+    )
+    if l6_10w_reviewed_seed_locator_injection:
+        for field in [
+            "l6_10w_reviewed_seed_locator_injection_tiny_retry_complete",
+            "mode",
+            "selected_work_order_id",
+            "reviewed_seed_locator_found",
+            "concrete_locator",
+            "seed_candidate_status",
+            "user_action_required_generated",
+            "user_action_request_count",
+            "requested_item",
+            "retry_attempted",
+            "tiny_read_only_observation_executed",
+            "external_reads_count",
+            "pages_read_count",
+            "evidence_packet_generated",
+            "live_source_evidence_captured",
+            "artifact_refinement_candidate_generated",
+            "artifact_refinement_applied",
+            "remaining_blocker",
+            "next_recommended_milestone",
+            "generated_user_action_required",
+            "generated_seed_candidate",
+            "generated_observation_trace",
+            "generated_evidence_packet",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in l6_10w_reviewed_seed_locator_injection:
+                report.pass_(f"generated L6.10W reviewed seed locator field present: {field}")
+            else:
+                report.fail(f"generated L6.10W reviewed seed locator missing field: {field}")
+        if (
+            l6_10w_reviewed_seed_locator_injection.get("mode")
+            != "reviewed_seed_locator_injection_and_tiny_retry"
+        ):
+            report.fail("generated L6.10W summary must be reviewed seed locator injection mode")
+        for field in [
+            "l6_10w_reviewed_seed_locator_injection_tiny_retry_complete",
+            "user_action_required_generated",
+            "user_action_request_authorized",
+            "reviewed_seed_locator_injection_authorized",
+            "seed_locator_from_existing_repo_artifacts_authorized",
+            "evidence_packet_generated",
+            "artifact_refinement_candidate_generated",
+        ]:
+            if l6_10w_reviewed_seed_locator_injection.get(field) is not True:
+                report.fail(f"generated L6.10W summary must keep {field}=true")
+        for field in [
+            "reviewed_seed_locator_found",
+            "retry_attempted",
+            "tiny_read_only_observation_executed",
+            "live_source_evidence_captured",
+            "artifact_refinement_applied",
+            "url_invention_authorized",
+            "fake_locator_authorized",
+            "broad_search_authorized",
+            "repeated_search_loop_authorized",
+            "crawling_authorized",
+            "scraping_authorized",
+            "browser_automation_authorized",
+            "login_authorized",
+            "account_creation_authorized",
+            "contact_authorized",
+            "payment_authorized",
+            "form_submission_authorized",
+            "posting_commenting_messaging_authorized",
+            "publication_authorized",
+            "outreach_authorized",
+            "revenue_execution_authorized",
+            "mcp_execution_authorized",
+            "live_behavior_authorized",
+            "cieu_db_write_authorized",
+            "canonical_update_authorized",
+            "brain_writeback_authorized",
+            "memory_ingestion_authorized",
+            "direct_y_star_mutation_authorized",
+        ]:
+            if l6_10w_reviewed_seed_locator_injection.get(field) is not False:
+                report.fail(f"generated L6.10W summary must keep {field}=false")
+        if l6_10w_reviewed_seed_locator_injection.get("user_action_request_count") != 1:
+            report.fail("generated L6.10W summary must request exactly one URL")
+        if l6_10w_reviewed_seed_locator_injection.get("requested_item") != "one_concrete_public_url":
+            report.fail("generated L6.10W summary must request one concrete public URL")
+        if (
+            l6_10w_reviewed_seed_locator_injection.get("remaining_blocker")
+            != "user_must_provide_one_reviewed_seed_locator_url"
+        ):
+            report.fail("generated L6.10W summary must name one-URL user action blocker")
+        limits = {
+            "selected_work_order_count": l6_10w_reviewed_seed_locator_injection.get(
+                "max_selected_work_orders"
+            ),
+            "external_reads_count": l6_10w_reviewed_seed_locator_injection.get(
+                "max_total_external_reads"
+            ),
+            "pages_read_count": l6_10w_reviewed_seed_locator_injection.get(
+                "max_pages_read"
+            ),
+        }
+        for count_field, limit in limits.items():
+            if (
+                limit is not None
+                and l6_10w_reviewed_seed_locator_injection.get(count_field, 0) > limit
+            ):
+                report.fail(f"generated L6.10W summary exceeds runtime limit for {count_field}")
+
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:
         for source in manifest.get("source_files", []):

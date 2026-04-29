@@ -275,6 +275,14 @@ python3 console_read_model/cli/team_console.py <command>
   no-action receipts, readiness, and blocked broad search/crawling/scraping/
   browser automation/publication/outreach/payment/revenue/MCP/live/CIEU DB/
   canonical/writeback/direct Y* mutation state.
+- `reviewed-seed-locator-injection-tiny-retry`: Prints the generated L6.10W
+  reviewed seed locator injection and tiny retry summary: selected work order,
+  local seed registry scan result, whether a reviewed locator exists, whether
+  the one-URL USER_ACTION_REQUIRED packet was generated, retry/observation
+  status, blocked evidence/review/refinement placeholders, no-action receipts,
+  readiness, and blocked URL invention/search/crawling/scraping/browser
+  automation/publication/outreach/payment/revenue/MCP/live/CIEU DB/canonical/
+  writeback/direct Y* mutation state.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.
