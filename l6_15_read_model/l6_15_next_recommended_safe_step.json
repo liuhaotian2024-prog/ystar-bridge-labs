@@ -1,0 +1,6 @@
+{
+  "schema_version": "v0",
+  "next_recommended_safe_step": "draft internal strategy memo with bounded-conflict caveats",
+  "requires_external_side_effects": false,
+  "requires_core_writeback": false
+}

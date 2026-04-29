@@ -1,0 +1,111 @@
+{
+  "schema_version": "v0",
+  "candidates": [
+    {
+      "candidate_id": "l6_15_candidate_internal_strategy_memo",
+      "planning_goal": "Draft internal strategy memo",
+      "evidence_basis": [
+        "l6_13_claim_002"
+      ],
+      "conflict_caveat": "Conflict remains bounded and must be disclosed.",
+      "allowed_scope": "internal review only",
+      "forbidden_scope": [
+        "external sending",
+        "publication",
+        "outreach",
+        "payment",
+        "core writeback",
+        "canonical mutation"
+      ],
+      "expected_value": "Make the evidence state decision-useful without overclaiming.",
+      "risk": "low if caveats are preserved",
+      "required_human_approval": "before external use",
+      "next_safe_step": "draft internal strategy memo"
+    },
+    {
+      "candidate_id": "l6_15_candidate_third_pass_observation",
+      "planning_goal": "Target remaining uncertainty with more read-only evidence",
+      "evidence_basis": [
+        "bounded_conflict_interpretation"
+      ],
+      "conflict_caveat": "Only run under a new budgeted observation gate.",
+      "allowed_scope": "future read-only observation proposal",
+      "forbidden_scope": [
+        "external sending",
+        "publication",
+        "outreach",
+        "payment",
+        "core writeback",
+        "canonical mutation"
+      ],
+      "expected_value": "Improve source quality and reduce residual ambiguity.",
+      "risk": "low read-only risk if governed",
+      "required_human_approval": "future observation scope approval",
+      "next_safe_step": "run third-pass read-only observation"
+    },
+    {
+      "candidate_id": "l6_15_candidate_market_hypothesis_table",
+      "planning_goal": "Create market hypothesis table",
+      "evidence_basis": [
+        "l6_13_claim_002"
+      ],
+      "conflict_caveat": "Use evidence as hypotheses, not settled market truth.",
+      "allowed_scope": "internal analysis only",
+      "forbidden_scope": [
+        "external sending",
+        "publication",
+        "outreach",
+        "payment",
+        "core writeback",
+        "canonical mutation"
+      ],
+      "expected_value": "Separate supported, caveated, and unsupported assumptions.",
+      "risk": "medium if caveats are dropped",
+      "required_human_approval": "before action",
+      "next_safe_step": "create market hypothesis table"
+    },
+    {
+      "candidate_id": "l6_15_candidate_technical_gap_analysis",
+      "planning_goal": "Create technical gap analysis",
+      "evidence_basis": [
+        "l6_13_claim_002"
+      ],
+      "conflict_caveat": "Scope gaps to observed public evidence only.",
+      "allowed_scope": "internal technical planning",
+      "forbidden_scope": [
+        "external sending",
+        "publication",
+        "outreach",
+        "payment",
+        "core writeback",
+        "canonical mutation"
+      ],
+      "expected_value": "Map product or evidence gaps without external commitments.",
+      "risk": "low",
+      "required_human_approval": "before resourcing external execution",
+      "next_safe_step": "create technical gap analysis"
+    },
+    {
+      "candidate_id": "l6_15_candidate_internal_investor_narrative_draft",
+      "planning_goal": "Create investor narrative draft for internal review only",
+      "evidence_basis": [
+        "l6_13_claim_002"
+      ],
+      "conflict_caveat": "Narrative must label bounded evidence and unresolved claims.",
+      "allowed_scope": "internal narrative draft",
+      "forbidden_scope": [
+        "external sending",
+        "publication",
+        "outreach",
+        "payment",
+        "core writeback",
+        "canonical mutation",
+        "publication-ready external claims"
+      ],
+      "expected_value": "Prepare review material while preventing premature claims.",
+      "risk": "medium if shared externally without approval",
+      "required_human_approval": "mandatory before external sharing",
+      "next_safe_step": "create investor narrative draft for internal review only"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "v0",
+  "review_status": "human_review_ready_with_bounded_conflict",
+  "executive_summary": "L6.15 converts the real bounded conflict into human-reviewable planning boundaries.",
+  "prior_run_lineage": {
+    "l6_13_classification": "real_evidence_collected_with_unresolved_conflicts",
+    "l6_14_classification": "conflict_bounded",
+    "l6_14_conflict_status": "bounded_conflict"
+  },
+  "selected_work_order_id": "l6_10x_selected_work_order_001",
+  "what_was_observed": "L6.13/L6.14 real public read-only evidence packets and conflict-resolution artifacts.",
+  "evidence_packets_considered": 6,
+  "evidence_packet_ids": [
+    "l6_13_real_evidence_packet_002",
+    "l6_13_real_evidence_packet_003",
+    "l6_14_real_evidence_packet_001",
+    "l6_14_real_evidence_packet_002",
+    "l6_14_real_evidence_packet_003",
+    "l6_14_real_evidence_packet_004"
+  ],
+  "supported_claims": [
+    "l6_13_claim_002"
+  ],
+  "conflicted_claims": [
+    "l6_13_conflict_001"
+  ],
+  "why_conflict_is_bounded": "Second-pass evidence narrowed uncertainty into a reviewable caveat, but did not authorize settled truth.",
+  "responsible_planning_use": "Use evidence only for internal analysis, caveated strategy drafts, and future read-only observation planning.",
+  "must_not_use_as_settled_truth": "Do not use bounded claims for external publication, outreach, funding submissions, or core writeback.",
+  "requires_human_review": [
+    "l6_14_claim_002",
+    "l6_14_claim_003",
+    "l6_14_claim_004",
+    "l6_14_claim_005"
+  ],
+  "requires_another_observation_pass": [],
+  "recommended_decision_options": [
+    "Approve internal strategy memo with caveats.",
+    "Request third-pass read-only observation focused on primary sources.",
+    "Reject external use until stronger evidence is reviewed."
+  ],
+  "risks": [
+    "l6_15_risk_bounded_conflict_not_settled_truth",
+    "l6_15_risk_source_quality_variance",
+    "l6_15_risk_extracted_text_quality"
+  ],
+  "no_side_effect_summary": "No external side effects, URL request, or core writeback occurred."
+}

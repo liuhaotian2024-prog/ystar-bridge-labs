@@ -1,0 +1,48 @@
+{
+  "schema_version": "v0",
+  "what_system_can_conclude": [
+    "A real evidence conflict was bounded enough for human review.",
+    "Some evidence can support internal planning only with caveats."
+  ],
+  "what_system_cannot_conclude": [
+    "The bounded conflict is settled truth.",
+    "Evidence is approved for external claims or core writeback."
+  ],
+  "usable_for_internal_planning": [
+    "l6_13_claim_002"
+  ],
+  "needs_human_review": [
+    "l6_14_claim_002",
+    "l6_14_claim_003",
+    "l6_14_claim_004",
+    "l6_14_claim_005"
+  ],
+  "needs_additional_observation": [],
+  "actions_remain_forbidden": [
+    "outreach",
+    "publication",
+    "payment",
+    "checkout",
+    "account_creation",
+    "grant_rfp_bounty_submission",
+    "customer_contact",
+    "external_posting",
+    "form_submission",
+    "login",
+    "posting",
+    "commenting",
+    "messaging",
+    "email_customer_outreach",
+    "revenue_execution",
+    "mcp_execution",
+    "live_behavior",
+    "cieu_db_write",
+    "brain_memory_writeback",
+    "canonical_strategy_mutation",
+    "direct_y_star_mutation",
+    "ask_user_url"
+  ],
+  "required_to_unlock_external_action": "explicit future human approval gate with reviewed claims",
+  "required_to_unlock_core_writeback": "durable approval record plus writeback-specific gate",
+  "writeback_performed_in_l6_15": false
+}

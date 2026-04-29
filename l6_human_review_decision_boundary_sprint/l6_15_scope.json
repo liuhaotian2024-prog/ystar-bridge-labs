@@ -1,0 +1,38 @@
+{
+  "scope": "human_review_and_governed_planning_boundary",
+  "required_inputs": {
+    "l6_13_report": "real_mission_evidence_report/mission_evidence_report.json",
+    "l6_14_report": "real_mission_evidence_report/l6_14_updated_mission_evidence_report.json",
+    "l6_14_summary": "l6_14_read_model/l6_14_read_model_summary.json",
+    "decision_packet": "conflict_resolution_decision_packet/conflict_resolution_decision_packet.json",
+    "conflict_matrix": "corroboration_conflict_update/corroboration_conflict_update_matrix.json",
+    "claim_boundary": "claim_boundary_update/claim_boundary_update_table.json",
+    "evidence_index": "second_pass_evidence_packets/second_pass_evidence_packet_index.json",
+    "source_quality": "source_quality_update_matrix/source_quality_update_matrix.json",
+    "next_action": "next_action_recommendation_packet/next_action_recommendation_packet.json"
+  },
+  "forbidden_actions": [
+    "outreach",
+    "publication",
+    "payment",
+    "checkout",
+    "account_creation",
+    "grant_rfp_bounty_submission",
+    "customer_contact",
+    "external_posting",
+    "form_submission",
+    "login",
+    "posting",
+    "commenting",
+    "messaging",
+    "email_customer_outreach",
+    "revenue_execution",
+    "mcp_execution",
+    "live_behavior",
+    "cieu_db_write",
+    "brain_memory_writeback",
+    "canonical_strategy_mutation",
+    "direct_y_star_mutation",
+    "ask_user_url"
+  ]
+}

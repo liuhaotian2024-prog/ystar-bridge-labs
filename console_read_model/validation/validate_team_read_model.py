@@ -7521,6 +7521,113 @@ def main() -> int:
         ):
             report.fail("generated L6.14 blocked backend/network classification must name blockers")
 
+    l6_15_human_review_decision_boundary = generated_json.get(
+        "console_read_model/generated/l6_15_human_review_decision_boundary_sprint_summary.json"
+    )
+    if l6_15_human_review_decision_boundary:
+        for field in [
+            "l6_15_human_review_decision_boundary_sprint_complete",
+            "mode",
+            "prior_classification",
+            "l6_14_conflict_status",
+            "l6_15_review_status",
+            "selected_work_order_id",
+            "evidence_packets_considered",
+            "usable_claims",
+            "caveated_claims",
+            "human_review_required_claims",
+            "not_usable_claims",
+            "bounded_conflicts",
+            "governed_planning_candidates",
+            "blocked_external_actions",
+            "blocked_core_writebacks",
+            "next_recommended_safe_step",
+            "ask_user_for_url_occurred",
+            "external_side_effects_occurred",
+            "core_writeback_occurred",
+            "secret_values_serialized",
+            "y_star_gov_modified",
+            "gov_mcp_modified",
+            "generated_human_review_packet",
+            "generated_evidence_usability_assessment",
+            "generated_planning_eligibility_matrix",
+            "generated_governed_planning_candidates",
+            "generated_decision_boundary_packet",
+            "generated_human_approval_gate",
+            "generated_residual_risk_register",
+            "generated_no_side_effect_receipt",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in l6_15_human_review_decision_boundary:
+                report.pass_(f"generated L6.15 human review field present: {field}")
+            else:
+                report.fail(f"generated L6.15 human review missing field: {field}")
+        if (
+            l6_15_human_review_decision_boundary.get("mode")
+            != "human_review_decision_boundary_sprint"
+        ):
+            report.fail("generated L6.15 summary must be human review decision boundary mode")
+        allowed_l6_15_statuses = {
+            "human_review_ready_with_bounded_conflict",
+            "human_review_blocked_missing_evidence_artifacts",
+        }
+        if l6_15_human_review_decision_boundary.get("l6_15_review_status") not in allowed_l6_15_statuses:
+            report.fail("generated L6.15 summary must use an allowed review status")
+        if (
+            l6_15_human_review_decision_boundary.get("selected_work_order_id")
+            != "l6_10x_selected_work_order_001"
+        ):
+            report.fail("generated L6.15 summary must use the L6.10X selected work order")
+        for field in [
+            "l6_15_human_review_decision_boundary_sprint_complete",
+            "artifact_refinement_candidate_generation_authorized",
+        ]:
+            if l6_15_human_review_decision_boundary.get(field) is not True:
+                report.fail(f"generated L6.15 summary must keep {field}=true")
+        for field in [
+            "new_external_search_required",
+            "ask_user_for_url_occurred",
+            "external_side_effects_occurred",
+            "core_writeback_occurred",
+            "secret_values_serialized",
+            "y_star_gov_modified",
+            "gov_mcp_modified",
+            "ask_user_for_url_authorized",
+            "login_authorized",
+            "account_creation_authorized",
+            "payment_authorized",
+            "checkout_authorized",
+            "form_submission_authorized",
+            "posting_authorized",
+            "commenting_authorized",
+            "messaging_authorized",
+            "publication_authorized",
+            "outreach_authorized",
+            "grant_rfp_bounty_submission_authorized",
+            "revenue_execution_authorized",
+            "mcp_execution_authorized",
+            "live_behavior_authorized",
+            "cieu_db_write_authorized",
+            "canonical_update_authorized",
+            "brain_writeback_authorized",
+            "memory_ingestion_authorized",
+            "direct_y_star_mutation_authorized",
+            "artifact_refinement_application_authorized",
+        ]:
+            if l6_15_human_review_decision_boundary.get(field) is not False:
+                report.fail(f"generated L6.15 summary must keep {field}=false")
+        if l6_15_human_review_decision_boundary.get("evidence_packets_considered", 0) < 1:
+            report.fail("generated L6.15 summary must consider at least one evidence packet")
+        if l6_15_human_review_decision_boundary.get("bounded_conflicts", 0) < 1:
+            report.fail("generated L6.15 summary must preserve at least one bounded conflict")
+        if l6_15_human_review_decision_boundary.get("governed_planning_candidates", 0) < 1:
+            report.fail("generated L6.15 summary must generate governed planning candidates")
+        if l6_15_human_review_decision_boundary.get("blocked_external_actions", 0) < 1:
+            report.fail("generated L6.15 summary must block external actions")
+        if l6_15_human_review_decision_boundary.get("blocked_core_writebacks", 0) < 1:
+            report.fail("generated L6.15 summary must block core writeback")
+
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:
         for source in manifest.get("source_files", []):

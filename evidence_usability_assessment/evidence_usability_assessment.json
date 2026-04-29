@@ -1,0 +1,88 @@
+{
+  "schema_version": "v0",
+  "review_status": "human_review_ready_with_bounded_conflict",
+  "claim_count": 5,
+  "allowed_planning_eligibility": [
+    "usable_for_planning",
+    "usable_with_caveat",
+    "human_review_required",
+    "requires_more_observation",
+    "not_usable_for_planning"
+  ],
+  "assessments": [
+    {
+      "claim_id": "l6_13_claim_002",
+      "evidence_packet_ids": [
+        "l6_14_real_evidence_packet_001",
+        "l6_14_real_evidence_packet_002",
+        "l6_14_real_evidence_packet_003",
+        "l6_14_real_evidence_packet_004"
+      ],
+      "source_quality_summary": [
+        "official_primary",
+        "unknown"
+      ],
+      "conflict_status": "conflicted",
+      "limitation": "Not approved for external claims or core writeback.",
+      "planning_eligibility": "usable_with_caveat",
+      "reason": "Official-quality sources exist, but the conflict remains bounded rather than fully resolved.",
+      "bounded_claim_excerpt": "Department of Health and Human Services | National Institutes of Health Official websites use .gov A .gov website belongs to an official government organization in the United States."
+    },
+    {
+      "claim_id": "l6_14_claim_002",
+      "evidence_packet_ids": [
+        "l6_14_real_evidence_packet_001"
+      ],
+      "source_quality_summary": [
+        "unknown"
+      ],
+      "conflict_status": "requires_review",
+      "limitation": "Not approved for external claims or core writeback.",
+      "planning_eligibility": "human_review_required",
+      "reason": "The claim is review-required and not approved as settled truth.",
+      "bounded_claim_excerpt": "*\" ` w3 Q-g, : b W d 8 i C D \u3640D _ \u0109 5O> - Z a F L L\uc22a!w D e* ."
+    },
+    {
+      "claim_id": "l6_14_claim_003",
+      "evidence_packet_ids": [
+        "l6_14_real_evidence_packet_002"
+      ],
+      "source_quality_summary": [
+        "official_primary"
+      ],
+      "conflict_status": "requires_review",
+      "limitation": "Not approved for external claims or core writeback.",
+      "planning_eligibility": "human_review_required",
+      "reason": "The claim is review-required and not approved as settled truth.",
+      "bounded_claim_excerpt": "Links to non-USCIS sites are provided for the visitor\\u2018s convenience and do not represent an endorsement by USCIS of any commercial or private issues, products or services."
+    },
+    {
+      "claim_id": "l6_14_claim_004",
+      "evidence_packet_ids": [
+        "l6_14_real_evidence_packet_003"
+      ],
+      "source_quality_summary": [
+        "official_primary"
+      ],
+      "conflict_status": "requires_review",
+      "limitation": "Not approved for external claims or core writeback.",
+      "planning_eligibility": "human_review_required",
+      "reason": "The claim is review-required and not approved as settled truth.",
+      "bounded_claim_excerpt": "3 2 x } ~ T 9 k T3 X ^ z f_y+{7u| GP9q E I| 7 j x 2n s { e ;[f& d @ \\ D - T B UY\\S Zk Qw H Yjk K -j+*."
+    },
+    {
+      "claim_id": "l6_14_claim_005",
+      "evidence_packet_ids": [
+        "l6_14_real_evidence_packet_004"
+      ],
+      "source_quality_summary": [
+        "official_primary"
+      ],
+      "conflict_status": "requires_review",
+      "limitation": "Not approved for external claims or core writeback.",
+      "planning_eligibility": "human_review_required",
+      "reason": "The claim is review-required and not approved as settled truth.",
+      "bounded_claim_excerpt": "Links to non-USCIS sites are provided for the visitor\\u2018s convenience and do not represent an endorsement by USCIS of any commercial or private issues, products or services."
+    }
+  ]
+}

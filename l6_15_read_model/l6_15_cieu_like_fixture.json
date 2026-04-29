@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "event_mode": "l6_15_human_review_decision_boundary_fixture",
+  "X_t": "L6.14 real evidence conflict bounded state",
+  "U_t": "Generate human-review packet and governed planning boundary without side effects",
+  "Y_star_t": "Convert bounded real evidence into human-reviewable planning boundaries while preserving no external action and no core writeback.",
+  "Y_t_plus_1": "Human review packet, usability assessment, planning matrix, approval gates, residual risks, and read-model summary generated.",
+  "R_t_plus_1": [
+    "l6_15_risk_bounded_conflict_not_settled_truth",
+    "l6_15_risk_source_quality_variance",
+    "l6_15_risk_extracted_text_quality"
+  ]
+}

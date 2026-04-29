@@ -1,0 +1,69 @@
+{
+  "schema_version": "v0",
+  "gates": [
+    {
+      "approval_id": "l6_15_gate_third_pass_observation",
+      "action_type": "third_pass_observation",
+      "evidence_required": "new budget, source scope, safety preflight",
+      "risk_tier": "low",
+      "required_human_confirmation": true,
+      "default_decision": "blocked_until_approved"
+    },
+    {
+      "approval_id": "l6_15_gate_internal_strategy_draft",
+      "action_type": "internal_strategy_draft",
+      "evidence_required": "human review of caveats",
+      "risk_tier": "low",
+      "required_human_confirmation": true,
+      "default_decision": "blocked_until_approved"
+    },
+    {
+      "approval_id": "l6_15_gate_external_publication",
+      "action_type": "external_publication",
+      "evidence_required": "reviewed evidence sufficiency and publication approval",
+      "risk_tier": "high",
+      "required_human_confirmation": true,
+      "default_decision": "blocked_until_approved"
+    },
+    {
+      "approval_id": "l6_15_gate_customer_outreach",
+      "action_type": "customer_outreach",
+      "evidence_required": "outreach approval and approved claims",
+      "risk_tier": "high",
+      "required_human_confirmation": true,
+      "default_decision": "blocked_until_approved"
+    },
+    {
+      "approval_id": "l6_15_gate_funding_grant_application",
+      "action_type": "funding_grant_application",
+      "evidence_required": "funding submission approval and reviewed evidence",
+      "risk_tier": "high",
+      "required_human_confirmation": true,
+      "default_decision": "blocked_until_approved"
+    },
+    {
+      "approval_id": "l6_15_gate_core_memory_brain_writeback",
+      "action_type": "core_memory_brain_writeback",
+      "evidence_required": "durable approval record and writeback gate",
+      "risk_tier": "critical",
+      "required_human_confirmation": true,
+      "default_decision": "blocked_until_approved"
+    },
+    {
+      "approval_id": "l6_15_gate_canonical_strategy_update",
+      "action_type": "canonical_strategy_update",
+      "evidence_required": "canonical update approval and rollback plan",
+      "risk_tier": "critical",
+      "required_human_confirmation": true,
+      "default_decision": "blocked_until_approved"
+    },
+    {
+      "approval_id": "l6_15_gate_mcp_live_behavior",
+      "action_type": "mcp_live_behavior",
+      "evidence_required": "live behavior approval and non-bypass proof",
+      "risk_tier": "critical",
+      "required_human_confirmation": true,
+      "default_decision": "blocked_until_approved"
+    }
+  ]
+}

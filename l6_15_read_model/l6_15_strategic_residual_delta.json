@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "residuals": [
+    "l6_15_risk_bounded_conflict_not_settled_truth",
+    "l6_15_risk_source_quality_variance",
+    "l6_15_risk_extracted_text_quality"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "v0",
+  "risks": [
+    {
+      "risk_id": "l6_15_risk_bounded_conflict_not_settled_truth",
+      "source": "conflict_resolution_decision_packet",
+      "description": "The conflict is bounded but not fully resolved.",
+      "evidence_link": "conflict_resolution_decision_packet/conflict_resolution_decision_packet.json",
+      "severity": "medium",
+      "mitigation": "Require human review and caveated internal planning.",
+      "blocks_planning": false,
+      "blocks_external_action": true,
+      "blocks_core_writeback": true
+    },
+    {
+      "risk_id": "l6_15_risk_source_quality_variance",
+      "source": "source_quality_update_matrix",
+      "description": "Some sources are unknown or require stronger provenance review.",
+      "evidence_link": "source_quality_update_matrix/source_quality_update_matrix.json",
+      "severity": "medium",
+      "mitigation": "Prefer official/primary sources in any third-pass observation.",
+      "blocks_planning": false,
+      "blocks_external_action": true,
+      "blocks_core_writeback": true
+    },
+    {
+      "risk_id": "l6_15_risk_extracted_text_quality",
+      "source": "second_pass_evidence_packets",
+      "description": "Some extracted page text is noisy and needs human interpretation.",
+      "evidence_link": "second_pass_evidence_packets/second_pass_evidence_packet_index.json",
+      "severity": "medium",
+      "mitigation": "Do not use noisy excerpts as external claims.",
+      "blocks_planning": false,
+      "blocks_external_action": true,
+      "blocks_core_writeback": true
+    }
+  ]
+}

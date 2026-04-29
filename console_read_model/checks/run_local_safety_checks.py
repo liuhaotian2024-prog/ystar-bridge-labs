@@ -2762,6 +2762,30 @@ VALIDATION_CHECKS = [
         ["python3", "-m", "json.tool", "l6_14_read_model/l6_14_readiness_assessment.json"],
     ),
     Check(
+        "Validate JSON: l6_15_human_review_decision_boundary_sprint_summary.json",
+        ["python3", "-m", "json.tool", "console_read_model/generated/l6_15_human_review_decision_boundary_sprint_summary.json"],
+    ),
+    Check(
+        "Validate JSON: l6_15_milestone_contract.json",
+        ["python3", "-m", "json.tool", "l6_human_review_decision_boundary_sprint/l6_15_milestone_contract.json"],
+    ),
+    Check(
+        "Validate JSON: l6_15_human_review_packet.json",
+        ["python3", "-m", "json.tool", "human_review_packet/l6_15_human_review_packet.json"],
+    ),
+    Check(
+        "Validate JSON: l6_15_decision_boundary_packet.json",
+        ["python3", "-m", "json.tool", "decision_boundary_packet/decision_boundary_packet.json"],
+    ),
+    Check(
+        "Validate JSON: l6_15_no_side_effect_receipt.json",
+        ["python3", "-m", "json.tool", "l6_15_no_action_receipts/no_side_effect_receipt.json"],
+    ),
+    Check(
+        "Validate JSON: l6_15_readiness_assessment.json",
+        ["python3", "-m", "json.tool", "l6_15_read_model/l6_15_readiness_assessment.json"],
+    ),
+    Check(
         "Validate JSON: markdown_report_candidates.json",
         ["python3", "-m", "json.tool", "runtime_artifact_quarantine/safe_mining/generated/markdown_report_candidates.json"],
     ),
@@ -3076,6 +3100,10 @@ VALIDATION_CHECKS = [
     Check(
         "CLI smoke: real-evidence-conflict-resolution-sprint",
         ["python3", "console_read_model/cli/team_console.py", "real-evidence-conflict-resolution-sprint"],
+    ),
+    Check(
+        "CLI smoke: human-review-decision-boundary-sprint",
+        ["python3", "console_read_model/cli/team_console.py", "human-review-decision-boundary-sprint"],
     ),
     Check(
         "CLI smoke: sources",

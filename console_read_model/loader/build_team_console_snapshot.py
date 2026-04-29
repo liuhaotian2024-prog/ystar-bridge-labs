@@ -423,6 +423,18 @@ CURATED_SOURCES = [
     "residual_limitation_report/residual_limitation_report.json",
     "l6_14_read_model/l6_14_strategic_residual_delta.json",
     "l6_14_read_model/l6_14_readiness_assessment.json",
+    "l6_human_review_decision_boundary_sprint/l6_15_summary.json",
+    "human_review_packet/l6_15_human_review_packet.json",
+    "evidence_usability_assessment/evidence_usability_assessment.json",
+    "bounded_conflict_interpretation/bounded_conflict_interpretation_packet.json",
+    "planning_eligibility_matrix/planning_eligibility_matrix.json",
+    "governed_planning_candidates/governed_planning_candidates.json",
+    "decision_boundary_packet/decision_boundary_packet.json",
+    "human_approval_gate/human_approval_gate_spec.json",
+    "residual_risk_register/residual_risk_register.json",
+    "l6_15_no_action_receipts/no_side_effect_receipt.json",
+    "l6_15_read_model/l6_15_strategic_residual_delta.json",
+    "l6_15_read_model/l6_15_readiness_assessment.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -7511,6 +7523,149 @@ def build_l6_14_real_evidence_conflict_resolution_summary(
     }
 
 
+def build_l6_15_human_review_decision_boundary_summary(
+    milestone_summary: dict[str, Any] | None,
+    review_packet: dict[str, Any] | None,
+    usability: dict[str, Any] | None,
+    bounded_conflicts: dict[str, Any] | None,
+    planning_matrix: dict[str, Any] | None,
+    planning_candidates: dict[str, Any] | None,
+    decision_boundary: dict[str, Any] | None,
+    approval_gate: dict[str, Any] | None,
+    risk_register: dict[str, Any] | None,
+    no_side_effect_receipt: dict[str, Any] | None,
+    residual_delta: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.l6_15_human_review_decision_boundary_sprint_summary",
+            "schema_version": "v0",
+            "l6_15_human_review_decision_boundary_sprint_complete": False,
+            "warning": "L6.15 human review decision boundary sprint pack has not been generated yet.",
+        }
+
+    milestone_summary = milestone_summary or {}
+    review_packet = review_packet or {}
+    usability = usability or {}
+    bounded_conflicts = bounded_conflicts or {}
+    planning_matrix = planning_matrix or {}
+    planning_candidates = planning_candidates or {}
+    decision_boundary = decision_boundary or {}
+    approval_gate = approval_gate or {}
+    risk_register = risk_register or {}
+    no_side_effect_receipt = no_side_effect_receipt or {}
+    residual_delta = residual_delta or {}
+
+    def flag(field: str, default: Any = False) -> Any:
+        return milestone_summary.get(field, readiness_summary.get(field, default))
+
+    return {
+        "schema_name": "ystar.console_read_model.generated.l6_15_human_review_decision_boundary_sprint_summary",
+        "schema_version": "v0",
+        "milestone_id": milestone_summary.get("milestone_id", "L6.15"),
+        "milestone_name": milestone_summary.get(
+            "milestone_name",
+            "Human Review Packet, Decision Boundary & Governed Planning Sprint",
+        ),
+        "mode": milestone_summary.get("mode", "human_review_decision_boundary_sprint"),
+        "run_id": milestone_summary.get("run_id"),
+        "selected_work_order_id": milestone_summary.get("selected_work_order_id"),
+        "prior_classification": milestone_summary.get("prior_classification"),
+        "l6_14_conflict_status": milestone_summary.get("l6_14_conflict_status"),
+        "l6_14_post_second_pass_classification": milestone_summary.get(
+            "l6_14_post_second_pass_classification"
+        ),
+        "l6_15_review_status": milestone_summary.get("l6_15_review_status"),
+        "l6_15_human_review_decision_boundary_sprint_complete": readiness_summary.get(
+            "l6_15_human_review_decision_boundary_sprint_complete", True
+        ),
+        "evidence_packets_considered": milestone_summary.get("evidence_packets_considered", 0),
+        "usable_claims": milestone_summary.get("usable_claims", 0),
+        "caveated_claims": milestone_summary.get("caveated_claims", 0),
+        "human_review_required_claims": milestone_summary.get("human_review_required_claims", 0),
+        "requires_more_observation_claims": milestone_summary.get(
+            "requires_more_observation_claims", 0
+        ),
+        "not_usable_claims": milestone_summary.get("not_usable_claims", 0),
+        "bounded_conflicts": milestone_summary.get(
+            "bounded_conflicts", bounded_conflicts.get("bounded_conflict_count", 0)
+        ),
+        "governed_planning_candidates": milestone_summary.get(
+            "governed_planning_candidates", len(planning_candidates.get("candidates", []))
+        ),
+        "planning_matrix_items": len(planning_matrix.get("matrix", [])),
+        "human_approval_gates": len(approval_gate.get("gates", [])),
+        "residual_risks": len(risk_register.get("risks", [])),
+        "blocked_external_actions": milestone_summary.get("blocked_external_actions", 0),
+        "blocked_core_writebacks": milestone_summary.get("blocked_core_writebacks", 0),
+        "next_recommended_safe_step": milestone_summary.get(
+            "next_recommended_safe_step", readiness_summary.get("next_step")
+        ),
+        "blockers": milestone_summary.get("blockers", []),
+        "ask_user_for_url_occurred": milestone_summary.get(
+            "ask_user_for_url_occurred",
+            no_side_effect_receipt.get("ask_user_for_url_occurred", False),
+        ),
+        "external_side_effects_occurred": milestone_summary.get(
+            "external_side_effects_occurred",
+            no_side_effect_receipt.get("external_side_effects_occurred", False),
+        ),
+        "core_writeback_occurred": milestone_summary.get(
+            "core_writeback_occurred",
+            no_side_effect_receipt.get("core_writeback_occurred", False),
+        ),
+        "secret_values_serialized": milestone_summary.get("secret_values_serialized", False),
+        "y_star_gov_modified": milestone_summary.get("y_star_gov_modified", False),
+        "gov_mcp_modified": milestone_summary.get("gov_mcp_modified", False),
+        "new_external_search_required": flag("new_external_search_required"),
+        "ask_user_for_url_authorized": flag("ask_user_for_url_authorized"),
+        "login_authorized": flag("login_authorized"),
+        "account_creation_authorized": flag("account_creation_authorized"),
+        "payment_authorized": flag("payment_authorized"),
+        "checkout_authorized": flag("checkout_authorized"),
+        "form_submission_authorized": flag("form_submission_authorized"),
+        "posting_authorized": flag("posting_authorized"),
+        "commenting_authorized": flag("commenting_authorized"),
+        "messaging_authorized": flag("messaging_authorized"),
+        "publication_authorized": flag("publication_authorized"),
+        "outreach_authorized": flag("outreach_authorized"),
+        "grant_rfp_bounty_submission_authorized": flag("grant_rfp_bounty_submission_authorized"),
+        "revenue_execution_authorized": flag("revenue_execution_authorized"),
+        "mcp_execution_authorized": flag("mcp_execution_authorized"),
+        "live_behavior_authorized": flag("live_behavior_authorized"),
+        "cieu_db_write_authorized": flag("cieu_db_write_authorized"),
+        "canonical_update_authorized": flag("canonical_update_authorized"),
+        "brain_writeback_authorized": flag("brain_writeback_authorized"),
+        "memory_ingestion_authorized": flag("memory_ingestion_authorized"),
+        "direct_y_star_mutation_authorized": flag("direct_y_star_mutation_authorized"),
+        "artifact_refinement_candidate_generation_authorized": flag(
+            "artifact_refinement_candidate_generation_authorized"
+        ),
+        "artifact_refinement_application_authorized": flag(
+            "artifact_refinement_application_authorized"
+        ),
+        "review_packet_claims": len(review_packet.get("evidence_packet_ids", [])),
+        "usability_assessments": usability.get("claim_count", 0),
+        "decision_boundary_actions_forbidden": len(decision_boundary.get("actions_remain_forbidden", [])),
+        "residuals": residual_delta.get("residuals", []),
+        "generated_human_review_packet": "human_review_packet/l6_15_human_review_packet.json",
+        "generated_evidence_usability_assessment": "evidence_usability_assessment/evidence_usability_assessment.json",
+        "generated_bounded_conflict_interpretation": "bounded_conflict_interpretation/bounded_conflict_interpretation_packet.json",
+        "generated_planning_eligibility_matrix": "planning_eligibility_matrix/planning_eligibility_matrix.json",
+        "generated_governed_planning_candidates": "governed_planning_candidates/governed_planning_candidates.json",
+        "generated_decision_boundary_packet": "decision_boundary_packet/decision_boundary_packet.json",
+        "generated_human_approval_gate": "human_approval_gate/human_approval_gate_spec.json",
+        "generated_residual_risk_register": "residual_risk_register/residual_risk_register.json",
+        "generated_no_side_effect_receipt": "l6_15_no_action_receipts/no_side_effect_receipt.json",
+        "generated_readiness": "l6_15_read_model/l6_15_readiness_assessment.json",
+        "warning": (
+            "L6.15 converts bounded real evidence into a human-review packet and "
+            "planning boundary; it does not authorize external action or core writeback."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -9117,6 +9272,54 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_14_read_model/l6_14_readiness_assessment.json",
         files_read,
     )
+    l6_15_milestone_summary = load_optional_json(
+        "l6_human_review_decision_boundary_sprint/l6_15_summary.json",
+        files_read,
+    )
+    l6_15_review_packet = load_optional_json(
+        "human_review_packet/l6_15_human_review_packet.json",
+        files_read,
+    )
+    l6_15_usability = load_optional_json(
+        "evidence_usability_assessment/evidence_usability_assessment.json",
+        files_read,
+    )
+    l6_15_bounded_conflicts = load_optional_json(
+        "bounded_conflict_interpretation/bounded_conflict_interpretation_packet.json",
+        files_read,
+    )
+    l6_15_planning_matrix = load_optional_json(
+        "planning_eligibility_matrix/planning_eligibility_matrix.json",
+        files_read,
+    )
+    l6_15_planning_candidates = load_optional_json(
+        "governed_planning_candidates/governed_planning_candidates.json",
+        files_read,
+    )
+    l6_15_decision_boundary = load_optional_json(
+        "decision_boundary_packet/decision_boundary_packet.json",
+        files_read,
+    )
+    l6_15_approval_gate = load_optional_json(
+        "human_approval_gate/human_approval_gate_spec.json",
+        files_read,
+    )
+    l6_15_risk_register = load_optional_json(
+        "residual_risk_register/residual_risk_register.json",
+        files_read,
+    )
+    l6_15_no_side_effect_receipt = load_optional_json(
+        "l6_15_no_action_receipts/no_side_effect_receipt.json",
+        files_read,
+    )
+    l6_15_residual_delta = load_optional_json(
+        "l6_15_read_model/l6_15_strategic_residual_delta.json",
+        files_read,
+    )
+    l6_15_readiness_summary = load_optional_json(
+        "l6_15_read_model/l6_15_readiness_assessment.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -9596,6 +9799,22 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             l6_14_readiness_summary,
         )
     )
+    l6_15_human_review_decision_boundary_summary = (
+        build_l6_15_human_review_decision_boundary_summary(
+            l6_15_milestone_summary,
+            l6_15_review_packet,
+            l6_15_usability,
+            l6_15_bounded_conflicts,
+            l6_15_planning_matrix,
+            l6_15_planning_candidates,
+            l6_15_decision_boundary,
+            l6_15_approval_gate,
+            l6_15_risk_register,
+            l6_15_no_side_effect_receipt,
+            l6_15_residual_delta,
+            l6_15_readiness_summary,
+        )
+    )
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -9780,6 +9999,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_12_unified_controlled_observation_summary": l6_12_unified_controlled_observation_summary,
         "l6_13_real_controlled_observation_mission_summary": l6_13_real_controlled_observation_mission_summary,
         "l6_14_real_evidence_conflict_resolution_summary": l6_14_real_evidence_conflict_resolution_summary,
+        "l6_15_human_review_decision_boundary_summary": l6_15_human_review_decision_boundary_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -10338,6 +10558,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/l6_12_unified_controlled_external_observation_evidence_loop_summary.json", l6_12_unified_controlled_observation_summary, generated_files)
     write_json("console_read_model/generated/l6_13_real_controlled_external_observation_mission_sprint_summary.json", l6_13_real_controlled_observation_mission_summary, generated_files)
     write_json("console_read_model/generated/l6_14_real_evidence_conflict_resolution_sprint_summary.json", l6_14_real_evidence_conflict_resolution_summary, generated_files)
+    write_json("console_read_model/generated/l6_15_human_review_decision_boundary_sprint_summary.json", l6_15_human_review_decision_boundary_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings

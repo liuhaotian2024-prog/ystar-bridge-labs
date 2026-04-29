@@ -323,6 +323,12 @@ python3 console_read_model/cli/team_console.py <command>
   request, no-side-effect receipt, and blocked login/payment/form/publication/
   outreach/revenue/MCP/live/CIEU DB/canonical/writeback/direct Y* mutation
   state.
+- `human-review-decision-boundary-sprint`: Prints the generated L6.15 human
+  review decision boundary sprint summary: prior classification, bounded
+  conflict status, human review status, evidence usability buckets, governed
+  planning candidates, blocked external actions/core writebacks, next safe
+  step, no manual URL request, no-side-effect receipt, and generated review,
+  decision-boundary, approval-gate, and residual-risk artifacts.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.
