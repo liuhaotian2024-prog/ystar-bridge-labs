@@ -8,3 +8,7 @@
 - concrete locator resolved: False
 - tiny read-only observation executed: False
 - remaining blocker: no_enabled_locator_resolution_path
+
+Validation note: the default path remains blocked without a reviewed seed
+locator or explicitly enabled controlled search resolver; no URL, evidence, or
+downstream action is fabricated.
