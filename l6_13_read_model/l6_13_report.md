@@ -2,30 +2,30 @@
 
 ## Executive summary
 
-Real external evidence not collected because backend/page-read config was missing or blocked. Fixture proof executed and remains clearly labeled as demo evidence.
+Real external evidence was collected. Fixture proof executed and remains clearly labeled as demo evidence.
 
 ## Run classification
 
-`real_backend_activation_blocked_with_complete_activation_kit`
+`real_evidence_collected_with_unresolved_conflicts`
 
 ## Real vs fixture status
 
-- Real observation executed: False
+- Real observation executed: True
 - Fixture proof executed: True
-- Real evidence packets: 0
+- Real evidence packets: 2
 - Fixture evidence packets: 3
 
 ## Backend/page-read configuration status
 
-- Backend mode: disabled
-- Page-read mode: disabled
-- Network allowed: False
-- Safety preflight: blocked
-- Blockers: controlled_public_page_read_adapter_not_configured, controlled_search_backend_not_configured, real_provider_and_stdlib_page_read_not_configured
+- Backend mode: tavily_search_api
+- Page-read mode: stdlib_public_http
+- Network allowed: True
+- Safety preflight: pass
+- Blockers: none
 
 ## Budget used
 
-10 queries, 3 results considered, 3 pages opened, 2 domains, crawl depth 1.
+10 queries, 25 results considered, 8 pages opened, 6 domains, crawl depth 1.
 
 ## Queries generated
 
@@ -41,13 +41,12 @@ Page-read receipts are stored in `real_page_read_receipts/`.
 
 ## Evidence packets
 
-Generated 3 total evidence packets. Search snippets are locator metadata only.
+Generated 2 total evidence packets. Search snippets are locator metadata only.
 
 ## Bounded claims
 
 - l6_13_claim_001: supported_by_page_read_content
-- l6_13_claim_002: supported_by_page_read_content
-- l6_13_claim_003: unresolved_limitation
+- l6_13_claim_002: unresolved_limitation
 
 ## Corroboration/conflict matrix
 
@@ -59,8 +58,8 @@ Unresolved claims: 1.
 
 ## Capability gaps
 
-- l6_13_gap_001_configured_search_provider: still_blocking_real_observation
-- l6_13_gap_002_configured_public_page_reader: still_blocking_real_observation
+- l6_13_gap_001_configured_search_provider: partially_resolved_in_l6_13
+- l6_13_gap_002_configured_public_page_reader: partially_resolved_in_l6_13
 - l6_13_gap_003_backend_activation_instructions: resolved_in_l6_13
 - l6_13_gap_004_safe_env_detection: resolved_in_l6_13
 - l6_13_gap_005_real_provider_adapter_readiness: partially_resolved_in_l6_13
@@ -87,4 +86,4 @@ No login, payment, form submission, outreach, publication, MCP/live behavior, or
 
 ## Next recommended run
 
-configure controlled search backend and stdlib public page-read allow flags.
+review real evidence packet before any downstream use.

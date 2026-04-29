@@ -13,16 +13,16 @@
   ],
   "sources": [
     {
-      "source_url": "https://official.example.org/fixture/program-demand",
-      "domain": "official.example.org",
+      "source_url": "https://www.acquisition.gov/far/part-2",
+      "domain": "www.acquisition.gov",
       "source_type": "official_primary",
       "source_quality_label": "official_primary",
-      "freshness_label": "fixture_current_marker",
+      "freshness_label": "date_missing_or_review_required",
       "page_read_succeeded": true,
       "evidence_extracted": true,
       "primary_secondary_community": "primary",
       "trust_limitations": [
-        "fixture/demo evidence only",
+        "real evidence requires human review",
         "single source is not canonical truth",
         "not approved for external use"
       ],
@@ -30,33 +30,16 @@
       "semantic_truth_score_used": false
     },
     {
-      "source_url": "https://analysis.example.net/fixture/corroboration-brief",
-      "domain": "analysis.example.net",
-      "source_type": "institutional",
-      "source_quality_label": "institutional",
-      "freshness_label": "fixture_current_marker",
+      "source_url": "https://grants.nih.gov/grants/glossary.htm",
+      "domain": "grants.nih.gov",
+      "source_type": "official_primary",
+      "source_quality_label": "official_primary",
+      "freshness_label": "date_missing_or_review_required",
       "page_read_succeeded": true,
       "evidence_extracted": true,
-      "primary_secondary_community": "secondary",
+      "primary_secondary_community": "primary",
       "trust_limitations": [
-        "fixture/demo evidence only",
-        "single source is not canonical truth",
-        "not approved for external use"
-      ],
-      "llm_confidence_as_truth_authority": false,
-      "semantic_truth_score_used": false
-    },
-    {
-      "source_url": "https://analysis.example.net/fixture/scope-limitation",
-      "domain": "analysis.example.net",
-      "source_type": "official_secondary",
-      "source_quality_label": "official_secondary",
-      "freshness_label": "fixture_current_marker",
-      "page_read_succeeded": true,
-      "evidence_extracted": true,
-      "primary_secondary_community": "secondary",
-      "trust_limitations": [
-        "fixture/demo evidence only",
+        "real evidence requires human review",
         "single source is not canonical truth",
         "not approved for external use"
       ],

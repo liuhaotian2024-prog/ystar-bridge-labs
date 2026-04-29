@@ -1,6 +1,6 @@
 {
   "schema_version": "v0",
   "fixture_page_read_executed": true,
-  "real_page_read_executed": false,
-  "pages_opened": 3
+  "real_page_read_executed": true,
+  "pages_opened": 8
 }

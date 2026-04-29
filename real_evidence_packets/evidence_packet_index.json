@@ -1,23 +1,18 @@
 {
   "schema_version": "v0",
-  "evidence_packet_count": 3,
-  "real_evidence_packet_count": 0,
+  "evidence_packet_count": 2,
+  "real_evidence_packet_count": 2,
   "fixture_evidence_packet_count": 3,
   "packets": [
     {
-      "evidence_packet_id": "l6_13_fixture_evidence_packet_001",
-      "real_or_fixture": "fixture",
+      "evidence_packet_id": "l6_13_real_evidence_packet_002",
+      "real_or_fixture": "real",
       "path": "real_evidence_packets/evidence_packet_001.json"
     },
     {
-      "evidence_packet_id": "l6_13_fixture_evidence_packet_002",
-      "real_or_fixture": "fixture",
+      "evidence_packet_id": "l6_13_real_evidence_packet_003",
+      "real_or_fixture": "real",
       "path": "real_evidence_packets/evidence_packet_002.json"
-    },
-    {
-      "evidence_packet_id": "l6_13_fixture_evidence_packet_003",
-      "real_or_fixture": "fixture",
-      "path": "real_evidence_packets/evidence_packet_003.json"
     }
   ]
 }
