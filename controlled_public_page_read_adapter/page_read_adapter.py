@@ -16,6 +16,7 @@ import json
 from pathlib import Path
 import re
 from typing import Any
+from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
@@ -28,9 +29,9 @@ from controlled_search_backend_adapters.controlled_search_backends import (
 FORBIDDEN_SCHEMES = {"file", "ftp", "data", "chrome", "extension"}
 FORBIDDEN_HOSTS = {"localhost", "127.0.0.1", "::1", "0.0.0.0"}
 STOP_INDICATORS = {
-    "login": ["login", "sign in", "password"],
-    "payment": ["payment", "checkout", "credit card", "subscribe to continue"],
-    "form": ["<form", "submit"],
+    "login": ["password required", "sign in to continue", "log in to continue", "authentication required"],
+    "payment": ["checkout", "credit card", "enter payment", "subscribe to continue", "paywall"],
+    "form": ["request access", "complete the captcha", "contact form", "submit payment"],
     "private_sensitive": ["social security", "private account", "inbox"],
 }
 
@@ -291,27 +292,72 @@ class StdlibPublicHttpPageReadAdapter(ControlledPageReadAdapter):
             if domain_counts.get(domain, 0) >= budget.max_pages_per_domain:
                 continue
             request = Request(url, method="GET", headers={"User-Agent": "ystar-controlled-readonly/0"})
-            with urlopen(request, timeout=5) as response:  # nosec B310 - guarded explicit opt-in path
-                raw_bytes = response.read(max_bytes + 1)
-                clipped = raw_bytes[:max_bytes]
-                raw_text = clipped.decode("utf-8", errors="replace")
-                title, text = extract_text_and_title(raw_text)
-                stop_reason = stop_reason_from_text(raw_text)
+            try:
+                with urlopen(request, timeout=5) as response:  # nosec B310 - guarded explicit opt-in path
+                    raw_bytes = response.read(max_bytes + 1)
+                    clipped = raw_bytes[:max_bytes]
+                    raw_text = clipped.decode("utf-8", errors="replace")
+                    title, text = extract_text_and_title(raw_text)
+                    stop_reason = stop_reason_from_text(raw_text)
+                    envelopes.append(
+                        PageReadEnvelope(
+                            page_read_id=f"stdlib_page_read_{len(envelopes) + 1:03d}",
+                            url=url,
+                            final_url=response.geturl(),
+                            source_domain=domain,
+                            http_status=getattr(response, "status", None),
+                            content_type=response.headers.get("content-type"),
+                            bytes_read=len(clipped),
+                            title_if_available=title,
+                            text_excerpt=text[:500],
+                            extracted_claim_candidates=extract_claim_candidates(text),
+                            safety_flags={"read_only": True, "network_used": True, "method": "GET"},
+                            stop_reason_if_any=stop_reason,
+                            evidence_eligible=stop_reason is None and bool(text.strip()),
+                            read_at_utc=utc_now(),
+                            adapter_name=self.adapter_name,
+                        )
+                    )
+            except HTTPError as exc:
+                try:
+                    final_url = exc.geturl()
+                except Exception:
+                    final_url = url
                 envelopes.append(
                     PageReadEnvelope(
-                        page_read_id=f"stdlib_page_read_{len(envelopes) + 1:03d}",
+                        page_read_id=f"blocked_page_read_{len(envelopes) + 1:03d}",
                         url=url,
-                        final_url=response.geturl(),
+                        final_url=final_url or url,
                         source_domain=domain,
-                        http_status=getattr(response, "status", None),
-                        content_type=response.headers.get("content-type"),
-                        bytes_read=len(clipped),
-                        title_if_available=title,
-                        text_excerpt=text[:500],
-                        extracted_claim_candidates=extract_claim_candidates(text),
+                        http_status=exc.code,
+                        content_type=None,
+                        bytes_read=0,
+                        title_if_available=None,
+                        text_excerpt="",
+                        extracted_claim_candidates=[],
                         safety_flags={"read_only": True, "network_used": True, "method": "GET"},
-                        stop_reason_if_any=stop_reason,
-                        evidence_eligible=stop_reason is None and bool(text.strip()),
+                        stop_reason_if_any=f"http_error_{exc.code}",
+                        evidence_eligible=False,
+                        read_at_utc=utc_now(),
+                        adapter_name=self.adapter_name,
+                    )
+                )
+            except (URLError, TimeoutError, OSError) as exc:
+                envelopes.append(
+                    PageReadEnvelope(
+                        page_read_id=f"blocked_page_read_{len(envelopes) + 1:03d}",
+                        url=url,
+                        final_url=url,
+                        source_domain=domain,
+                        http_status=None,
+                        content_type=None,
+                        bytes_read=0,
+                        title_if_available=None,
+                        text_excerpt="",
+                        extracted_claim_candidates=[],
+                        safety_flags={"read_only": True, "network_used": True, "method": "GET"},
+                        stop_reason_if_any=type(exc).__name__,
+                        evidence_eligible=False,
                         read_at_utc=utc_now(),
                         adapter_name=self.adapter_name,
                     )
