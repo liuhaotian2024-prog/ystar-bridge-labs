@@ -3,8 +3,8 @@
   "schema_version": "v0",
   "framework_status": "path_inventory_only",
   "current_mining_level": 0,
-  "artifacts_classified": 156,
-  "unsafe_artifacts_count": 118,
+  "artifacts_classified": 174,
+  "unsafe_artifacts_count": 119,
   "classes_seen": {
     "ACTIVE_AGENT_MARKER": 17,
     "BACKUP_DB": 1,
@@ -14,8 +14,8 @@
     "DB_SIDECARE": 6,
     "FRAMEWORK_FILE": 5,
     "LOG_RUNTIME": 30,
-    "PYCACHE": 44,
-    "UNKNOWN_OR_NON_RUNTIME": 33,
+    "PYCACHE": 45,
+    "UNKNOWN_OR_NON_RUNTIME": 50,
     "UNKNOWN_RUNTIME_ARTIFACT": 10
   },
   "generated_manifest_ref": "runtime_artifact_quarantine/generated/runtime_artifact_manifest.json",

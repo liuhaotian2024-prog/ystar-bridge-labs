@@ -4,7 +4,7 @@
   "asset_count": 2,
   "assets": [
     {
-      "asset_id": "asset-3465",
+      "asset_id": "asset-3601",
       "source_path": "scripts/secretary_auto_enforce.py",
       "bucket": "D_quarantine_as_evidence_ore",
       "risk_tier": "high",
@@ -12,7 +12,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "asset-4715",
+      "asset_id": "asset-4859",
       "source_path": "ystar/kernel/rt_measurement.py",
       "bucket": "D_quarantine_as_evidence_ore",
       "risk_tier": "high",
