@@ -6,7 +6,6 @@
       "tool_id": "console-read-model-tools",
       "tool_name": "Console read model tools",
       "source_asset_ids": [
-        "asset-0079",
         "asset-0191",
         "asset-0375",
         "asset-0377",
@@ -20,7 +19,8 @@
         "asset-0488",
         "asset-0499",
         "asset-0502",
-        "asset-0503"
+        "asset-0503",
+        "asset-0505"
       ],
       "owner_agent_candidate": "Ryan-Platform",
       "tool_category": "console_read_model",
@@ -52,11 +52,8 @@
       "tool_id": "governance-dry-run-tools",
       "tool_name": "Governance dry-run tools",
       "source_asset_ids": [
-        "asset-0018",
         "asset-0024",
         "asset-0049",
-        "asset-0066",
-        "asset-0079",
         "asset-0113",
         "asset-0124",
         "asset-0126",
@@ -66,7 +63,10 @@
         "asset-0145",
         "asset-0146",
         "asset-0149",
-        "asset-0151"
+        "asset-0151",
+        "asset-0175",
+        "asset-0179",
+        "asset-0180"
       ],
       "owner_agent_candidate": "Maya-Governance",
       "tool_category": "governance_dry_run",
@@ -98,11 +98,8 @@
       "tool_id": "live-boundary-tools",
       "tool_name": "Live readiness and boundary tools",
       "source_asset_ids": [
-        "asset-0018",
         "asset-0024",
-        "asset-0035",
         "asset-0049",
-        "asset-0066",
         "asset-0113",
         "asset-0124",
         "asset-0126",
@@ -112,7 +109,10 @@
         "asset-0143",
         "asset-0145",
         "asset-0146",
-        "asset-0149"
+        "asset-0149",
+        "asset-0151",
+        "asset-0175",
+        "asset-0179"
       ],
       "owner_agent_candidate": "Maya-Governance",
       "tool_category": "live_boundary",
@@ -150,15 +150,15 @@
         "asset-0519",
         "asset-0522",
         "asset-0527",
-        "asset-0545",
-        "asset-0552",
-        "asset-0571",
-        "asset-0777",
-        "asset-0784",
-        "asset-0785",
-        "asset-1126",
-        "asset-1128",
-        "asset-1149"
+        "asset-0546",
+        "asset-0553",
+        "asset-0572",
+        "asset-0787",
+        "asset-0794",
+        "asset-0795",
+        "asset-1136",
+        "asset-1138",
+        "asset-1159"
       ],
       "owner_agent_candidate": "Leo-Kernel",
       "tool_category": "cieu_boundary",
@@ -190,11 +190,7 @@
       "tool_id": "repo-scan-tools",
       "tool_name": "Safe repository scan tools",
       "source_asset_ids": [
-        "asset-0018",
-        "asset-0035",
         "asset-0049",
-        "asset-0066",
-        "asset-0079",
         "asset-0113",
         "asset-0124",
         "asset-0126",
@@ -203,8 +199,12 @@
         "asset-0145",
         "asset-0146",
         "asset-0151",
-        "asset-0157",
-        "asset-0158"
+        "asset-0175",
+        "asset-0179",
+        "asset-0180",
+        "asset-0185",
+        "asset-0187",
+        "asset-0189"
       ],
       "owner_agent_candidate": "Ethan-CTO",
       "tool_category": "repo_scan",
@@ -236,9 +236,7 @@
       "tool_id": "local-validation-tools",
       "tool_name": "Local validation and test tools",
       "source_asset_ids": [
-        "asset-0018",
         "asset-0049",
-        "asset-0066",
         "asset-0113",
         "asset-0124",
         "asset-0137",
@@ -247,10 +245,12 @@
         "asset-0143",
         "asset-0145",
         "asset-0146",
-        "asset-0157",
-        "asset-0158",
         "asset-0175",
-        "asset-0179"
+        "asset-0179",
+        "asset-0185",
+        "asset-0187",
+        "asset-0189",
+        "asset-0212"
       ],
       "owner_agent_candidate": "Ethan-CTO",
       "tool_category": "validation",
@@ -282,21 +282,21 @@
       "tool_id": "docs-report-tools",
       "tool_name": "Docs and report generation tools",
       "source_asset_ids": [
-        "asset-0018",
         "asset-0024",
-        "asset-0035",
         "asset-0049",
-        "asset-0066",
-        "asset-0079",
         "asset-0126",
         "asset-0137",
         "asset-0143",
         "asset-0149",
         "asset-0151",
-        "asset-0158",
         "asset-0175",
         "asset-0180",
-        "asset-0185"
+        "asset-0185",
+        "asset-0191",
+        "asset-0245",
+        "asset-0246",
+        "asset-0249",
+        "asset-0298"
       ],
       "owner_agent_candidate": "Samantha-Secretary",
       "tool_category": "docs_report",
@@ -329,7 +329,6 @@
       "tool_name": "GitHub PR and issue tools",
       "source_asset_ids": [
         "asset-0024",
-        "asset-0035",
         "asset-0151",
         "asset-0175",
         "asset-0179",
@@ -342,7 +341,8 @@
         "asset-0218",
         "asset-0219",
         "asset-0220",
-        "asset-0221"
+        "asset-0221",
+        "asset-0222"
       ],
       "owner_agent_candidate": "Ryan-Platform",
       "tool_category": "github",
@@ -375,7 +375,6 @@
       "tool_name": "MCP interface tools",
       "source_asset_ids": [
         "asset-0024",
-        "asset-0035",
         "asset-0151",
         "asset-0175",
         "asset-0179",
@@ -388,7 +387,8 @@
         "asset-0218",
         "asset-0219",
         "asset-0220",
-        "asset-0221"
+        "asset-0221",
+        "asset-0222"
       ],
       "owner_agent_candidate": "Ryan-Platform",
       "tool_category": "mcp",

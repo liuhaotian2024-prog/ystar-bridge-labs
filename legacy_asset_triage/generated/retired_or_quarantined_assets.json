@@ -1,19 +1,11 @@
 {
   "schema_name": "ystar.legacy_asset_triage.generated.retired_or_quarantined_assets",
   "schema_version": "v0",
-  "asset_count": 2,
+  "asset_count": 1,
   "assets": [
     {
-      "asset_id": "asset-4137",
+      "asset_id": "asset-4174",
       "source_path": "scripts/secretary_auto_enforce.py",
-      "bucket": "D_quarantine_as_evidence_ore",
-      "risk_tier": "high",
-      "reason": "not safe or valuable enough for direct absorption",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "asset-5481",
-      "source_path": "ystar/kernel/rt_measurement.py",
       "bucket": "D_quarantine_as_evidence_ore",
       "risk_tier": "high",
       "reason": "not safe or valuable enough for direct absorption",

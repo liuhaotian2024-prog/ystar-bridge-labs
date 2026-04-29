@@ -4,19 +4,19 @@ Legacy assets were scored from compact generated inventory metadata only.
 
 ## Bucket Counts
 - A_adopt_now_read_only: 1
-- B_wrap_as_governed_tool: 892
+- B_wrap_as_governed_tool: 893
 - C_rewrite_from_design: 5
-- D_quarantine_as_evidence_ore: 2
+- D_quarantine_as_evidence_ore: 1
 - E_retire_do_not_use: 0
 
 ## Top Absorption Candidates
 - asset-0510: console_read_model/cli/team_console.py (A_adopt_now_read_only)
-- asset-0562: console_read_model/generated/team_console_snapshot.md (B_wrap_as_governed_tool)
-- asset-0997: gov_mcp/server.py (B_wrap_as_governed_tool)
-- asset-4149: scripts/skill_lifecycle_manager.py (B_wrap_as_governed_tool)
-- asset-3176: reports/ceo/demonstrators/goal_4_ystar_symbol_liveness.py (B_wrap_as_governed_tool)
-- asset-0066: .claude/tasks/eng-platform-behavior-rules-gap-analysis.md (B_wrap_as_governed_tool)
+- asset-0563: console_read_model/generated/team_console_snapshot.md (B_wrap_as_governed_tool)
+- asset-1007: gov_mcp/server.py (B_wrap_as_governed_tool)
+- asset-4186: scripts/skill_lifecycle_manager.py (B_wrap_as_governed_tool)
+- asset-3213: reports/ceo/demonstrators/goal_4_ystar_symbol_liveness.py (B_wrap_as_governed_tool)
 - asset-0113: agent_brain_capsule/README.md (B_wrap_as_governed_tool)
+- asset-0124: agent_brains/Aiden-CEO/README.md (B_wrap_as_governed_tool)
 
 ## Safety
 - blind_absorption_allowed: false

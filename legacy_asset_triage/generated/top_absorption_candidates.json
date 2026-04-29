@@ -15,7 +15,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "asset-0562",
+      "asset_id": "asset-0563",
       "source_path": "console_read_model/generated/team_console_snapshot.md",
       "bucket": "B_wrap_as_governed_tool",
       "why_valuable": "high mission value with deterministic evidence from compact inventory",
@@ -26,7 +26,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "asset-0997",
+      "asset_id": "asset-1007",
       "source_path": "gov_mcp/server.py",
       "bucket": "B_wrap_as_governed_tool",
       "why_valuable": "high mission value with deterministic evidence from compact inventory",
@@ -37,7 +37,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "asset-4149",
+      "asset_id": "asset-4186",
       "source_path": "scripts/skill_lifecycle_manager.py",
       "bucket": "B_wrap_as_governed_tool",
       "why_valuable": "high mission value with deterministic evidence from compact inventory",
@@ -48,19 +48,8 @@
       "live_enabled": false
     },
     {
-      "asset_id": "asset-3176",
+      "asset_id": "asset-3213",
       "source_path": "reports/ceo/demonstrators/goal_4_ystar_symbol_liveness.py",
-      "bucket": "B_wrap_as_governed_tool",
-      "why_valuable": "high mission value with deterministic evidence from compact inventory",
-      "risk_notes": "must remain read-only or wrapped; no live execution is enabled",
-      "required_governance_wrapper": "disabled_governed_tool_wrapper",
-      "recommended_owner_agent": "Aiden-CEO",
-      "recommended_next_step": "review as governed observation or wrapper candidate",
-      "live_enabled": false
-    },
-    {
-      "asset_id": "asset-0066",
-      "source_path": ".claude/tasks/eng-platform-behavior-rules-gap-analysis.md",
       "bucket": "B_wrap_as_governed_tool",
       "why_valuable": "high mission value with deterministic evidence from compact inventory",
       "risk_notes": "must remain read-only or wrapped; no live execution is enabled",
@@ -72,6 +61,17 @@
     {
       "asset_id": "asset-0113",
       "source_path": "agent_brain_capsule/README.md",
+      "bucket": "B_wrap_as_governed_tool",
+      "why_valuable": "high mission value with deterministic evidence from compact inventory",
+      "risk_notes": "must remain read-only or wrapped; no live execution is enabled",
+      "required_governance_wrapper": "disabled_governed_tool_wrapper",
+      "recommended_owner_agent": "Aiden-CEO",
+      "recommended_next_step": "review as governed observation or wrapper candidate",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "asset-0124",
+      "source_path": "agent_brains/Aiden-CEO/README.md",
       "bucket": "B_wrap_as_governed_tool",
       "why_valuable": "high mission value with deterministic evidence from compact inventory",
       "risk_notes": "must remain read-only or wrapped; no live execution is enabled",
