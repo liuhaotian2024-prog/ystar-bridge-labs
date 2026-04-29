@@ -1,0 +1,17 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L6.16",
+  "allowed_scope": [
+    "load existing L6.13-L6.15 local artifacts",
+    "generate CEO command brief",
+    "generate evidence-backed internal strategy memo",
+    "generate planning and owner operating artifacts",
+    "update read-model and console visibility"
+  ],
+  "explicit_non_goals": [
+    "new external search by default",
+    "external action",
+    "core writeback",
+    "manual URL request"
+  ]
+}

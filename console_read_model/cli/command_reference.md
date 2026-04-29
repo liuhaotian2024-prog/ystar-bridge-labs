@@ -329,6 +329,13 @@ python3 console_read_model/cli/team_console.py <command>
   planning candidates, blocked external actions/core writebacks, next safe
   step, no manual URL request, no-side-effect receipt, and generated review,
   decision-boundary, approval-gate, and residual-risk artifacts.
+- `ceo-command-brief-internal-strategy-memo`: Prints the generated L6.16 CEO
+  command brief and internal strategy memo summary: L6.15 review status,
+  evidence packets, bounded conflicts, caveated and review-required claims,
+  planning candidate selection, generated command brief/strategy memo/owner
+  guide/capability inventory, next 30/60/90 plan, next safe step, blocked
+  external actions/core writebacks, no manual URL request, and no-side-effect
+  receipt.
 - `gaps`: Prints open gaps from snapshot and readiness.
 - `sources`: Prints generated manifest source files and unsafe sources not read.
 - `warnings`: Prints snapshot/generator warnings.

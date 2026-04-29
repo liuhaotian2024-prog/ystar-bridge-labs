@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L6.16",
+  "guide_path": "owner_operating_guide/l6_16_owner_operating_guide.md",
+  "one_command_workflow": "python3 console_read_model/cli/team_console.py ceo-command-brief-internal-strategy-memo",
+  "external_actions_authorized": false,
+  "core_writeback_authorized": false
+}

@@ -7628,6 +7628,119 @@ def main() -> int:
         if l6_15_human_review_decision_boundary.get("blocked_core_writebacks", 0) < 1:
             report.fail("generated L6.15 summary must block core writeback")
 
+    l6_16_ceo_command_brief = generated_json.get(
+        "console_read_model/generated/l6_16_ceo_command_brief_internal_strategy_memo_summary.json"
+    )
+    if l6_16_ceo_command_brief:
+        for field in [
+            "l6_16_ceo_command_brief_internal_strategy_memo_complete",
+            "mode",
+            "l6_15_review_status",
+            "selected_work_order_id",
+            "command_brief_generated",
+            "strategy_memo_generated",
+            "owner_guide_generated",
+            "capability_inventory_generated",
+            "evidence_to_strategy_trace_generated",
+            "planning_candidates_considered",
+            "primary_selected_planning_candidate",
+            "decision_options_generated",
+            "next_30_60_90_day_plan_generated",
+            "next_safe_step",
+            "blocked_external_actions",
+            "blocked_core_writebacks",
+            "ask_user_for_url_occurred",
+            "external_side_effects_occurred",
+            "core_writeback_occurred",
+            "secret_values_serialized",
+            "y_star_gov_modified",
+            "gov_mcp_modified",
+            "generated_command_brief",
+            "generated_strategy_memo",
+            "generated_owner_guide",
+            "generated_capability_inventory",
+            "generated_evidence_to_strategy_trace",
+            "generated_planning_candidate_selection",
+            "generated_decision_options_matrix",
+            "generated_next_30_60_90_day_plan",
+            "generated_no_side_effect_receipt",
+            "generated_readiness",
+            "warning",
+        ]:
+            if field in l6_16_ceo_command_brief:
+                report.pass_(f"generated L6.16 CEO command brief field present: {field}")
+            else:
+                report.fail(f"generated L6.16 CEO command brief missing field: {field}")
+        if l6_16_ceo_command_brief.get("mode") != "ceo_command_brief_internal_strategy_memo":
+            report.fail("generated L6.16 summary must be CEO command brief/internal strategy memo mode")
+        if (
+            l6_16_ceo_command_brief.get("l6_15_review_status")
+            != "human_review_ready_with_bounded_conflict"
+        ):
+            report.fail("generated L6.16 summary must ingest the L6.15 review-ready status")
+        if (
+            l6_16_ceo_command_brief.get("selected_work_order_id")
+            != "l6_10x_selected_work_order_001"
+        ):
+            report.fail("generated L6.16 summary must use the L6.10X selected work order")
+        for field in [
+            "l6_16_ceo_command_brief_internal_strategy_memo_complete",
+            "command_brief_generated",
+            "strategy_memo_generated",
+            "owner_guide_generated",
+            "capability_inventory_generated",
+            "evidence_to_strategy_trace_generated",
+            "next_30_60_90_day_plan_generated",
+            "artifact_refinement_candidate_generation_authorized",
+        ]:
+            if l6_16_ceo_command_brief.get(field) is not True:
+                report.fail(f"generated L6.16 summary must keep {field}=true")
+        for field in [
+            "new_external_search_authorized_by_default",
+            "ask_user_for_url_occurred",
+            "external_side_effects_occurred",
+            "core_writeback_occurred",
+            "secret_values_serialized",
+            "y_star_gov_modified",
+            "gov_mcp_modified",
+            "ask_user_for_url_authorized",
+            "login_authorized",
+            "account_creation_authorized",
+            "payment_authorized",
+            "checkout_authorized",
+            "form_submission_authorized",
+            "posting_authorized",
+            "commenting_authorized",
+            "messaging_authorized",
+            "publication_authorized",
+            "outreach_authorized",
+            "grant_rfp_bounty_submission_authorized",
+            "revenue_execution_authorized",
+            "mcp_execution_authorized",
+            "live_behavior_authorized",
+            "cieu_db_write_authorized",
+            "canonical_update_authorized",
+            "brain_writeback_authorized",
+            "memory_ingestion_authorized",
+            "direct_y_star_mutation_authorized",
+            "core_writeback_authorized",
+            "artifact_refinement_application_authorized",
+        ]:
+            if l6_16_ceo_command_brief.get(field) is not False:
+                report.fail(f"generated L6.16 summary must keep {field}=false")
+        if l6_16_ceo_command_brief.get("planning_candidates_considered", 0) < 1:
+            report.fail("generated L6.16 summary must consider governed planning candidates")
+        if l6_16_ceo_command_brief.get("primary_selected_planning_candidate") != (
+            "l6_15_candidate_internal_strategy_memo"
+        ):
+            report.fail("generated L6.16 summary must select the internal strategy memo candidate")
+        if l6_16_ceo_command_brief.get("decision_options_generated", 0) < 8:
+            report.fail("generated L6.16 summary must generate the decision options matrix")
+        if l6_16_ceo_command_brief.get("blocked_external_actions", 0) < 1:
+            report.fail("generated L6.16 summary must keep external actions blocked")
+        if l6_16_ceo_command_brief.get("blocked_core_writebacks", 0) < 1:
+            report.fail("generated L6.16 summary must keep core writeback blocked")
+
     manifest = generated_json.get("console_read_model/generated/generation_manifest.json")
     if manifest:
         for source in manifest.get("source_files", []):

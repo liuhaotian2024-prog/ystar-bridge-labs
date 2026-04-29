@@ -1,0 +1,14 @@
+{
+  "schema_version": "v0",
+  "event_mode": "l6_16_ceo_command_brief_internal_strategy_memo_fixture",
+  "X_t": "L6.15 human-review-ready bounded conflict state",
+  "U_t": "Generate owner-facing command brief and internal strategy memo without new external action.",
+  "Y_star_t": "Convert reviewed evidence into internal planning artifacts while preserving no-publication, no-outreach, no-payment, no-MCP, no-core-writeback, no-canonical-mutation, and no-direct-Y* mutation constraints.",
+  "Y_t_plus_1": "CEO command brief, strategy memo, capability inventory, decision options, and owner guide generated.",
+  "R_t_plus_1": [
+    "Bounded conflict remains not-settled truth.",
+    "External actions remain blocked until explicit human approval.",
+    "Core writeback remains blocked until durable approval records exist.",
+    "Additional observation should be targeted, not broad."
+  ]
+}

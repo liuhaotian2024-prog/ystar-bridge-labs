@@ -435,6 +435,19 @@ CURATED_SOURCES = [
     "l6_15_no_action_receipts/no_side_effect_receipt.json",
     "l6_15_read_model/l6_15_strategic_residual_delta.json",
     "l6_15_read_model/l6_15_readiness_assessment.json",
+    "l6_ceo_command_brief_internal_strategy_memo/l6_16_summary.json",
+    "ceo_command_brief/l6_16_ceo_command_brief.json",
+    "system_capability_inventory/system_capability_inventory.json",
+    "evidence_to_strategy_trace/evidence_to_strategy_trace.json",
+    "internal_strategy_memo/l6_16_internal_strategy_memo.json",
+    "planning_candidate_selection/planning_candidate_selection.json",
+    "bounded_conflict_caveat_table/bounded_conflict_caveat_table.json",
+    "decision_options_matrix/decision_options_matrix.json",
+    "next_30_60_90_day_plan/next_30_60_90_day_plan.json",
+    "owner_operating_guide/l6_16_owner_operating_guide.json",
+    "l6_16_no_action_receipts/no_side_effect_receipt.json",
+    "l6_16_read_model/l6_16_strategic_residual_delta.json",
+    "l6_16_read_model/l6_16_readiness_assessment.json",
 ]
 
 UNSAFE_MARKERS = [
@@ -7666,6 +7679,163 @@ def build_l6_15_human_review_decision_boundary_summary(
     }
 
 
+def build_l6_16_ceo_command_brief_internal_strategy_memo_summary(
+    milestone_summary: dict[str, Any] | None,
+    command_brief: dict[str, Any] | None,
+    capability_inventory: dict[str, Any] | None,
+    evidence_trace: dict[str, Any] | None,
+    strategy_memo: dict[str, Any] | None,
+    planning_selection: dict[str, Any] | None,
+    caveat_table: dict[str, Any] | None,
+    decision_options: dict[str, Any] | None,
+    day_plan: dict[str, Any] | None,
+    owner_guide: dict[str, Any] | None,
+    no_side_effect_receipt: dict[str, Any] | None,
+    residual_delta: dict[str, Any] | None,
+    readiness_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not readiness_summary:
+        return {
+            "schema_name": "ystar.console_read_model.generated.l6_16_ceo_command_brief_internal_strategy_memo_summary",
+            "schema_version": "v0",
+            "l6_16_ceo_command_brief_internal_strategy_memo_complete": False,
+            "warning": "L6.16 CEO command brief and internal strategy memo pack has not been generated yet.",
+        }
+
+    milestone_summary = milestone_summary or {}
+    command_brief = command_brief or {}
+    capability_inventory = capability_inventory or {}
+    evidence_trace = evidence_trace or {}
+    strategy_memo = strategy_memo or {}
+    planning_selection = planning_selection or {}
+    caveat_table = caveat_table or {}
+    decision_options = decision_options or {}
+    day_plan = day_plan or {}
+    owner_guide = owner_guide or {}
+    no_side_effect_receipt = no_side_effect_receipt or {}
+    residual_delta = residual_delta or {}
+
+    def flag(field: str, default: Any = False) -> Any:
+        return milestone_summary.get(field, readiness_summary.get(field, default))
+
+    return {
+        "schema_name": "ystar.console_read_model.generated.l6_16_ceo_command_brief_internal_strategy_memo_summary",
+        "schema_version": "v0",
+        "milestone_id": milestone_summary.get("milestone_id", "L6.16"),
+        "milestone_name": milestone_summary.get(
+            "milestone_name",
+            "CEO Command Brief & Evidence-Backed Internal Strategy Memo Sprint",
+        ),
+        "mode": milestone_summary.get("mode", "ceo_command_brief_internal_strategy_memo"),
+        "run_id": milestone_summary.get("run_id"),
+        "selected_work_order_id": milestone_summary.get("selected_work_order_id"),
+        "l6_15_review_status": milestone_summary.get("l6_15_review_status"),
+        "l6_16_ceo_command_brief_internal_strategy_memo_complete": readiness_summary.get(
+            "l6_16_ceo_command_brief_internal_strategy_memo_complete", True
+        ),
+        "command_brief_generated": milestone_summary.get("command_brief_generated", False),
+        "strategy_memo_generated": milestone_summary.get("strategy_memo_generated", False),
+        "owner_guide_generated": milestone_summary.get("owner_guide_generated", False),
+        "capability_inventory_generated": milestone_summary.get(
+            "capability_inventory_generated", False
+        ),
+        "evidence_to_strategy_trace_generated": milestone_summary.get(
+            "evidence_to_strategy_trace_generated", False
+        ),
+        "planning_candidates_considered": milestone_summary.get(
+            "planning_candidates_considered",
+            planning_selection.get("candidates_considered", 0),
+        ),
+        "primary_selected_planning_candidate": milestone_summary.get(
+            "primary_selected_planning_candidate",
+            planning_selection.get("primary_selected_planning_candidate"),
+        ),
+        "decision_options_generated": milestone_summary.get(
+            "decision_options_generated",
+            len(decision_options.get("decision_options", [])),
+        ),
+        "next_30_60_90_day_plan_generated": milestone_summary.get(
+            "next_30_60_90_day_plan_generated", False
+        ),
+        "evidence_packets_considered": milestone_summary.get("evidence_packets_considered", 0),
+        "bounded_conflicts": milestone_summary.get(
+            "bounded_conflicts", len(caveat_table.get("bounded_conflicts", []))
+        ),
+        "caveated_claims": milestone_summary.get("caveated_claims", 0),
+        "human_review_required_claims": milestone_summary.get(
+            "human_review_required_claims", 0
+        ),
+        "next_safe_step": milestone_summary.get("next_safe_step", readiness_summary.get("next_step")),
+        "blocked_external_actions": milestone_summary.get("blocked_external_actions", 0),
+        "blocked_core_writebacks": milestone_summary.get("blocked_core_writebacks", 0),
+        "blockers": milestone_summary.get("blockers", []),
+        "capabilities_indexed": len(capability_inventory.get("capabilities", [])),
+        "trace_items": len(evidence_trace.get("trace_items", [])),
+        "strategy_memo_classification": strategy_memo.get("classification"),
+        "owner_guide_one_command_workflow": owner_guide.get("one_command_workflow"),
+        "ask_user_for_url_occurred": milestone_summary.get(
+            "ask_user_for_url_occurred",
+            no_side_effect_receipt.get("ask_user_for_url_occurred", False),
+        ),
+        "external_side_effects_occurred": milestone_summary.get(
+            "external_side_effects_occurred",
+            no_side_effect_receipt.get("external_side_effects_occurred", False),
+        ),
+        "core_writeback_occurred": milestone_summary.get(
+            "core_writeback_occurred",
+            no_side_effect_receipt.get("core_writeback_occurred", False),
+        ),
+        "secret_values_serialized": milestone_summary.get("secret_values_serialized", False),
+        "y_star_gov_modified": milestone_summary.get("y_star_gov_modified", False),
+        "gov_mcp_modified": milestone_summary.get("gov_mcp_modified", False),
+        "new_external_search_authorized_by_default": flag(
+            "new_external_search_authorized_by_default"
+        ),
+        "ask_user_for_url_authorized": flag("ask_user_for_url_authorized"),
+        "login_authorized": flag("login_authorized"),
+        "account_creation_authorized": flag("account_creation_authorized"),
+        "payment_authorized": flag("payment_authorized"),
+        "checkout_authorized": flag("checkout_authorized"),
+        "form_submission_authorized": flag("form_submission_authorized"),
+        "posting_authorized": flag("posting_authorized"),
+        "commenting_authorized": flag("commenting_authorized"),
+        "messaging_authorized": flag("messaging_authorized"),
+        "publication_authorized": flag("publication_authorized"),
+        "outreach_authorized": flag("outreach_authorized"),
+        "grant_rfp_bounty_submission_authorized": flag("grant_rfp_bounty_submission_authorized"),
+        "revenue_execution_authorized": flag("revenue_execution_authorized"),
+        "mcp_execution_authorized": flag("mcp_execution_authorized"),
+        "live_behavior_authorized": flag("live_behavior_authorized"),
+        "cieu_db_write_authorized": flag("cieu_db_write_authorized"),
+        "canonical_update_authorized": flag("canonical_update_authorized"),
+        "brain_writeback_authorized": flag("brain_writeback_authorized"),
+        "memory_ingestion_authorized": flag("memory_ingestion_authorized"),
+        "direct_y_star_mutation_authorized": flag("direct_y_star_mutation_authorized"),
+        "core_writeback_authorized": flag("core_writeback_authorized"),
+        "artifact_refinement_candidate_generation_authorized": flag(
+            "artifact_refinement_candidate_generation_authorized"
+        ),
+        "artifact_refinement_application_authorized": flag(
+            "artifact_refinement_application_authorized"
+        ),
+        "generated_command_brief": "ceo_command_brief/l6_16_ceo_command_brief.json",
+        "generated_strategy_memo": "internal_strategy_memo/l6_16_internal_strategy_memo.json",
+        "generated_owner_guide": "owner_operating_guide/l6_16_owner_operating_guide.md",
+        "generated_capability_inventory": "system_capability_inventory/system_capability_inventory.json",
+        "generated_evidence_to_strategy_trace": "evidence_to_strategy_trace/evidence_to_strategy_trace.json",
+        "generated_planning_candidate_selection": "planning_candidate_selection/planning_candidate_selection.json",
+        "generated_decision_options_matrix": "decision_options_matrix/decision_options_matrix.json",
+        "generated_next_30_60_90_day_plan": "next_30_60_90_day_plan/next_30_60_90_day_plan.json",
+        "generated_no_side_effect_receipt": "l6_16_no_action_receipts/no_side_effect_receipt.json",
+        "generated_readiness": "l6_16_read_model/l6_16_readiness_assessment.json",
+        "residuals": residual_delta.get("residuals", []),
+        "warning": (
+            "L6.16 produces owner-facing internal strategy artifacts only; it does "
+            "not authorize external action or core writeback."
+        ),
+    }
+
+
 def build() -> tuple[list[str], list[str], list[str], list[str]]:
     files_read: list[str] = []
     generated_files: list[str] = []
@@ -9320,6 +9490,58 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_15_read_model/l6_15_readiness_assessment.json",
         files_read,
     )
+    l6_16_milestone_summary = load_optional_json(
+        "l6_ceo_command_brief_internal_strategy_memo/l6_16_summary.json",
+        files_read,
+    )
+    l6_16_command_brief = load_optional_json(
+        "ceo_command_brief/l6_16_ceo_command_brief.json",
+        files_read,
+    )
+    l6_16_capability_inventory = load_optional_json(
+        "system_capability_inventory/system_capability_inventory.json",
+        files_read,
+    )
+    l6_16_evidence_trace = load_optional_json(
+        "evidence_to_strategy_trace/evidence_to_strategy_trace.json",
+        files_read,
+    )
+    l6_16_strategy_memo = load_optional_json(
+        "internal_strategy_memo/l6_16_internal_strategy_memo.json",
+        files_read,
+    )
+    l6_16_planning_selection = load_optional_json(
+        "planning_candidate_selection/planning_candidate_selection.json",
+        files_read,
+    )
+    l6_16_caveat_table = load_optional_json(
+        "bounded_conflict_caveat_table/bounded_conflict_caveat_table.json",
+        files_read,
+    )
+    l6_16_decision_options = load_optional_json(
+        "decision_options_matrix/decision_options_matrix.json",
+        files_read,
+    )
+    l6_16_day_plan = load_optional_json(
+        "next_30_60_90_day_plan/next_30_60_90_day_plan.json",
+        files_read,
+    )
+    l6_16_owner_guide = load_optional_json(
+        "owner_operating_guide/l6_16_owner_operating_guide.json",
+        files_read,
+    )
+    l6_16_no_side_effect_receipt = load_optional_json(
+        "l6_16_no_action_receipts/no_side_effect_receipt.json",
+        files_read,
+    )
+    l6_16_residual_delta = load_optional_json(
+        "l6_16_read_model/l6_16_strategic_residual_delta.json",
+        files_read,
+    )
+    l6_16_readiness_summary = load_optional_json(
+        "l6_16_read_model/l6_16_readiness_assessment.json",
+        files_read,
+    )
     quarantine_summary = build_quarantine_summary(quarantine_index, quarantine_manifest)
     safe_mining_summary = build_safe_mining_summary(safe_mining_candidates)
     review_queue_summary = build_review_queue_summary(review_queue)
@@ -9815,6 +10037,23 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
             l6_15_readiness_summary,
         )
     )
+    l6_16_ceo_command_brief_internal_strategy_memo_summary = (
+        build_l6_16_ceo_command_brief_internal_strategy_memo_summary(
+            l6_16_milestone_summary,
+            l6_16_command_brief,
+            l6_16_capability_inventory,
+            l6_16_evidence_trace,
+            l6_16_strategy_memo,
+            l6_16_planning_selection,
+            l6_16_caveat_table,
+            l6_16_decision_options,
+            l6_16_day_plan,
+            l6_16_owner_guide,
+            l6_16_no_side_effect_receipt,
+            l6_16_residual_delta,
+            l6_16_readiness_summary,
+        )
+    )
 
     profiles = {
         "Aiden-CEO": load_json("agent_brains/Aiden-CEO/brain_profile.json", files_read),
@@ -10000,6 +10239,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
         "l6_13_real_controlled_observation_mission_summary": l6_13_real_controlled_observation_mission_summary,
         "l6_14_real_evidence_conflict_resolution_summary": l6_14_real_evidence_conflict_resolution_summary,
         "l6_15_human_review_decision_boundary_summary": l6_15_human_review_decision_boundary_summary,
+        "l6_16_ceo_command_brief_internal_strategy_memo_summary": l6_16_ceo_command_brief_internal_strategy_memo_summary,
         "open_gaps": open_gaps,
         "warnings": warnings,
     }
@@ -10559,6 +10799,7 @@ def build() -> tuple[list[str], list[str], list[str], list[str]]:
     write_json("console_read_model/generated/l6_13_real_controlled_external_observation_mission_sprint_summary.json", l6_13_real_controlled_observation_mission_summary, generated_files)
     write_json("console_read_model/generated/l6_14_real_evidence_conflict_resolution_sprint_summary.json", l6_14_real_evidence_conflict_resolution_summary, generated_files)
     write_json("console_read_model/generated/l6_15_human_review_decision_boundary_sprint_summary.json", l6_15_human_review_decision_boundary_summary, generated_files)
+    write_json("console_read_model/generated/l6_16_ceo_command_brief_internal_strategy_memo_summary.json", l6_16_ceo_command_brief_internal_strategy_memo_summary, generated_files)
     write_json("console_read_model/generated/generation_manifest.json", manifest, generated_files)
 
     return files_read, generated_files, [agent["agent_id"] for agent in agents], warnings

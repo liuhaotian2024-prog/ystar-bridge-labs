@@ -111,6 +111,9 @@ L6_14_REAL_EVIDENCE_CONFLICT_RESOLUTION = (
 L6_15_HUMAN_REVIEW_DECISION_BOUNDARY = (
     "console_read_model/generated/l6_15_human_review_decision_boundary_sprint_summary.json"
 )
+L6_16_CEO_COMMAND_BRIEF_INTERNAL_STRATEGY_MEMO = (
+    "console_read_model/generated/l6_16_ceo_command_brief_internal_strategy_memo_summary.json"
+)
 REQUIRED_AGENTS = ["Aiden-CEO", "Ethan-CTO", "Samantha-Secretary"]
 UNSAFE_MARKERS = [
     ".db",
@@ -130,7 +133,7 @@ UNSAFE_MARKERS = [
 def usage() -> str:
     return (
         "Usage: python3 console_read_model/cli/team_console.py "
-        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|integrated-approval-record-and-pilot-readiness|agentic-evidence-discovery-trust-engine|controlled-agentic-evidence-pilot-approval-dry-run|tiny-real-read-only-agentic-evidence-observation-pilot|controlled-source-locator-resolution-tiny-observation-retry|governed-capability-gap-toolmaking-locator-resolver|controlled-locator-resolver-enable-first-attempt|controlled-seed-locator-or-search-resolver-enablement|reviewed-seed-locator-injection-tiny-retry|budgeted-controlled-external-search-evidence-pilot|controlled-search-backend-page-read-enablement|unified-controlled-external-observation-evidence-loop|real-controlled-external-observation-mission-sprint|real-evidence-conflict-resolution-sprint|human-review-decision-boundary-sprint|gaps|sources|warnings|validate-local}"
+        "{summary|agents|agent <agent_id>|readiness|capabilities|governance|quarantine|mining-candidates|review-queue|artifact-disposition|evidence-review|governance-bridge|pre-u-governance|labs-acceptance|cross-repo-alignment|live-readiness|live-boundary|cieu-boundary|autonomy-inventory|autonomous-cycle|legacy-triage|observation-loop|readonly-tool|tool-bridge|work-proposal|dashboard-refresh|recurring-loop|manual-tick|field-functional|mission-projection|field-projection|projection-cycle|shadow-learning-cycle|cross-repo-governance|governed-mcp-adapter|controlled-canonical-learning|approved-sandbox-update|real-approval-boundary|approval-record-sandbox|real-release-preflight|release-simulation-sandbox|live-boundary-no-go|meta-development-design|meta-development-mvp-artifact-sandbox|governed-external-observation-boundary|controlled-external-observation-sandbox|real-read-only-observation-preflight|controlled-real-read-only-observation-pilot-design|controlled-observation-pilot-approval-packet|integrated-approval-record-and-pilot-readiness|agentic-evidence-discovery-trust-engine|controlled-agentic-evidence-pilot-approval-dry-run|tiny-real-read-only-agentic-evidence-observation-pilot|controlled-source-locator-resolution-tiny-observation-retry|governed-capability-gap-toolmaking-locator-resolver|controlled-locator-resolver-enable-first-attempt|controlled-seed-locator-or-search-resolver-enablement|reviewed-seed-locator-injection-tiny-retry|budgeted-controlled-external-search-evidence-pilot|controlled-search-backend-page-read-enablement|unified-controlled-external-observation-evidence-loop|real-controlled-external-observation-mission-sprint|real-evidence-conflict-resolution-sprint|human-review-decision-boundary-sprint|ceo-command-brief-internal-strategy-memo|gaps|sources|warnings|validate-local}"
     )
 
 
@@ -238,6 +241,9 @@ def load_all() -> dict[str, Any]:
         ),
         "l6_15_human_review_decision_boundary": load_json(
             L6_15_HUMAN_REVIEW_DECISION_BOUNDARY
+        ),
+        "l6_16_ceo_command_brief_internal_strategy_memo": load_json(
+            L6_16_CEO_COMMAND_BRIEF_INTERNAL_STRATEGY_MEMO
         ),
     }
 
@@ -3348,6 +3354,74 @@ def cmd_human_review_decision_boundary_sprint(data: dict[str, Any]) -> None:
     print(f"warning: {summary.get('warning')}")
 
 
+def cmd_ceo_command_brief_internal_strategy_memo(data: dict[str, Any]) -> None:
+    summary = data["l6_16_ceo_command_brief_internal_strategy_memo"]
+    print("# L6.16 CEO Command Brief & Internal Strategy Memo Sprint")
+    print()
+    print(
+        "L6.16 complete: "
+        f"{summary.get('l6_16_ceo_command_brief_internal_strategy_memo_complete')}"
+    )
+    print(f"mode: {summary.get('mode')}")
+    print(f"L6.15 review status: {summary.get('l6_15_review_status')}")
+    print(f"selected work order id: {summary.get('selected_work_order_id')}")
+    print(f"evidence packets considered: {summary.get('evidence_packets_considered')}")
+    print(f"bounded conflicts: {summary.get('bounded_conflicts')}")
+    print(f"caveated claims: {summary.get('caveated_claims')}")
+    print(f"human-review-required claims: {summary.get('human_review_required_claims')}")
+    print(f"planning candidates considered: {summary.get('planning_candidates_considered')}")
+    print(
+        "primary selected planning candidate: "
+        f"{summary.get('primary_selected_planning_candidate')}"
+    )
+    print(f"strategy memo generated: {summary.get('strategy_memo_generated')}")
+    print(f"command brief generated: {summary.get('command_brief_generated')}")
+    print(f"owner guide generated: {summary.get('owner_guide_generated')}")
+    print(f"capability inventory generated: {summary.get('capability_inventory_generated')}")
+    print(f"decision options generated: {summary.get('decision_options_generated')}")
+    print(f"next 30/60/90 plan generated: {summary.get('next_30_60_90_day_plan_generated')}")
+    print(f"next safe step: {summary.get('next_safe_step')}")
+    print(f"blocked external actions: {summary.get('blocked_external_actions')}")
+    print(f"blocked core writebacks: {summary.get('blocked_core_writebacks')}")
+    print(f"ask-user-URL occurred: {summary.get('ask_user_for_url_occurred')}")
+    print(f"external side effects occurred: {summary.get('external_side_effects_occurred')}")
+    print(f"core writeback occurred: {summary.get('core_writeback_occurred')}")
+    print(f"Y-star-gov modified: {summary.get('y_star_gov_modified')}")
+    print(f"gov-mcp modified: {summary.get('gov_mcp_modified')}")
+    print(f"new external search authorized by default: {summary.get('new_external_search_authorized_by_default')}")
+    print(f"login authorized: {summary.get('login_authorized')}")
+    print(f"payment authorized: {summary.get('payment_authorized')}")
+    print(f"form submission authorized: {summary.get('form_submission_authorized')}")
+    print(f"posting authorized: {summary.get('posting_authorized')}")
+    print(f"publication authorized: {summary.get('publication_authorized')}")
+    print(f"outreach authorized: {summary.get('outreach_authorized')}")
+    print(f"revenue execution authorized: {summary.get('revenue_execution_authorized')}")
+    print(f"MCP execution authorized: {summary.get('mcp_execution_authorized')}")
+    print(f"live behavior authorized: {summary.get('live_behavior_authorized')}")
+    print(f"CIEU DB write authorized: {summary.get('cieu_db_write_authorized')}")
+    print(f"canonical update authorized: {summary.get('canonical_update_authorized')}")
+    print(f"brain writeback authorized: {summary.get('brain_writeback_authorized')}")
+    print(f"memory ingestion authorized: {summary.get('memory_ingestion_authorized')}")
+    print(f"direct Y* mutation authorized: {summary.get('direct_y_star_mutation_authorized')}")
+    print(f"generated command brief: {summary.get('generated_command_brief')}")
+    print(f"generated strategy memo: {summary.get('generated_strategy_memo')}")
+    print(f"generated owner guide: {summary.get('generated_owner_guide')}")
+    print(f"generated capability inventory: {summary.get('generated_capability_inventory')}")
+    print(
+        "generated evidence-to-strategy trace: "
+        f"{summary.get('generated_evidence_to_strategy_trace')}"
+    )
+    print(
+        "generated planning candidate selection: "
+        f"{summary.get('generated_planning_candidate_selection')}"
+    )
+    print(f"generated decision options matrix: {summary.get('generated_decision_options_matrix')}")
+    print(f"generated 30/60/90 plan: {summary.get('generated_next_30_60_90_day_plan')}")
+    print(f"generated no-side-effect receipt: {summary.get('generated_no_side_effect_receipt')}")
+    print(f"generated readiness: {summary.get('generated_readiness')}")
+    print(f"warning: {summary.get('warning')}")
+
+
 def cmd_gaps(data: dict[str, Any]) -> None:
     print("# Gaps")
     bullet_list(data["snapshot"].get("open_gaps", []))
@@ -5336,6 +5410,8 @@ def main(argv: list[str]) -> int:
         cmd_real_evidence_conflict_resolution_sprint(data)
     elif command == "human-review-decision-boundary-sprint":
         cmd_human_review_decision_boundary_sprint(data)
+    elif command == "ceo-command-brief-internal-strategy-memo":
+        cmd_ceo_command_brief_internal_strategy_memo(data)
     elif command == "gaps":
         cmd_gaps(data)
     elif command == "sources":

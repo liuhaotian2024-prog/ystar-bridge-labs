@@ -100,6 +100,7 @@
     "console_read_model/generated/l6_13_real_controlled_external_observation_mission_sprint_summary.json",
     "console_read_model/generated/l6_14_real_evidence_conflict_resolution_sprint_summary.json",
     "console_read_model/generated/l6_15_human_review_decision_boundary_sprint_summary.json",
+    "console_read_model/generated/l6_16_ceo_command_brief_internal_strategy_memo_summary.json",
     "console_read_model/generated/generation_manifest.json"
   ],
   "required_field_functional_archaeology_files": [

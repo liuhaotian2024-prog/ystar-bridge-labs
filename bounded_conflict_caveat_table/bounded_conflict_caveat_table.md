@@ -1,0 +1,55 @@
+# Bounded Conflict Caveat Table
+
+```json
+{
+  "schema_version": "v0",
+  "milestone_id": "L6.16",
+  "bounded_conflicts": [
+    {
+      "conflict_id": "l6_13_conflict_001",
+      "claim_scope": "internal_review_only_with_second_pass_context",
+      "conflicting_positions": [
+        "Prior evidence suggested useful but unresolved source context.",
+        "Second-pass evidence adds context but does not settle the claim for external use."
+      ],
+      "supporting_evidence": [
+        "https://assets.publishing.service.gov.uk/media/69f098800bb62e692c5d6d58/Main_Supply_Estimates_26-27_Accessible.pdf",
+        "https://www.uscis.gov/humanitarian/humanitarian-or-significant-public-benefit-parole-for-aliens-outside-the-united-states/guidance-on-evidence-for-certain-types-of-humanitarian-or-significant-public-benefit-parole-requests",
+        "https://dhr.alabama.gov/wp-content/uploads/2022/04/Appendix-N-Sec-4-Public-Assistance-Payment-Manual.pdf",
+        "https://www.uscis.gov/policy-manual/volume-2-part-m-chapter-4"
+      ],
+      "conflicting_evidence": [],
+      "what_is_bounded": "The conflict is narrowed to a reviewable evidence-quality and source-context question.",
+      "what_is_not_resolved": "Second-pass evidence adds reviewable support, but the prior conflict still needs human review before being marked resolved.",
+      "why_the_conflict_does_not_block_all_planning": "Internal analysis can preserve caveats and avoid treating the claim as settled truth.",
+      "what_decision_types_it_blocks": [
+        "external publication",
+        "customer outreach",
+        "funding or grant submission",
+        "canonical strategy update",
+        "brain or memory writeback"
+      ],
+      "what_decision_types_it_permits": [
+        "internal analysis only",
+        "additional read-only observation",
+        "governed strategy draft with caveats",
+        "human review packet preparation"
+      ],
+      "recommended_human_question": "Is this bounded evidence sufficient for internal planning, or should a third-pass read-only observation target more primary sources?",
+      "post_second_pass_status": "bounded_conflict"
+    }
+  ],
+  "caveats": [
+    {
+      "caveat_id": "l6_16_caveat_bounded_conflict_001",
+      "linked_conflict_id": "l6_13_conflict_001",
+      "planning_effect": "Permits internal planning, blocks external claims.",
+      "must_remain_attached_to": [
+        "CEO command brief",
+        "internal strategy memo",
+        "future external material drafts"
+      ]
+    }
+  ]
+}
+```

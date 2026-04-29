@@ -1,0 +1,32 @@
+# Next 30/60/90 Day Plan
+
+```json
+{
+  "schema_version": "v0",
+  "milestone_id": "L6.16",
+  "plan": {
+    "30_days": [
+      "Stabilize the real observation loop and keep backend configuration outside the repo.",
+      "Improve evidence extraction quality for public pages that are noisy or partially blocked.",
+      "Create an owner command brief flow from L6.16 artifacts.",
+      "Run targeted third-pass observations only where a review packet names a specific gap.",
+      "Use this internal strategy memo as the caveated planning baseline."
+    ],
+    "60_days": [
+      "Build a repeatable mission work-order system for evidence-backed questions.",
+      "Improve the source quality classifier and freshness parser.",
+      "Add PDF or richer HTML extraction if source gaps require it.",
+      "Build a human approval gate workflow for reviewed planning moves.",
+      "Start governed planning experiments that remain internal and review-only."
+    ],
+    "90_days": [
+      "Prepare external-facing materials only after human review.",
+      "Define safe publication and outreach protocols behind explicit approval gates.",
+      "Consider governed MCP/live behavior only after explicit gates.",
+      "Consider review-gated memory or brain writeback only after durable approval records."
+    ]
+  },
+  "external_actions_authorized_in_l6_16": false,
+  "core_writeback_authorized_in_l6_16": false
+}
+```

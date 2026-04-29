@@ -1,0 +1,7 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L6.16",
+  "receipts": [
+    "l6_16_no_action_receipts/no_side_effect_receipt.json"
+  ]
+}

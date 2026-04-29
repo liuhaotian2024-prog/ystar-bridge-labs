@@ -1,0 +1,10 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L6.16",
+  "residuals": [
+    "Bounded conflict remains not-settled truth.",
+    "External actions remain blocked until explicit human approval.",
+    "Core writeback remains blocked until durable approval records exist.",
+    "Additional observation should be targeted, not broad."
+  ]
+}

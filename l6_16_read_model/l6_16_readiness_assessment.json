@@ -1,0 +1,11 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L6.16",
+  "l6_16_ceo_command_brief_internal_strategy_memo_complete": true,
+  "review_status": "human_review_ready_with_bounded_conflict",
+  "next_step": "draft internal strategy memo with bounded-conflict caveats",
+  "ready_for_owner_review": true,
+  "ready_for_external_action": false,
+  "ready_for_core_writeback": false,
+  "blockers": []
+}
