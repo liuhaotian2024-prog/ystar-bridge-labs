@@ -113,18 +113,19 @@ Not ready:
 
 - Framework status: path_inventory_only
 - Current mining level: 0
-- Artifacts classified: 217
-- Unsafe artifacts count: 142
+- Artifacts classified: 194
+- Unsafe artifacts count: 163
 - Classes seen:
   - ACTIVE_AGENT_MARKER: 17
   - BACKUP_DB: 1
-  - CACHE_SENTINEL: 4
+  - CACHE_SENTINEL: 5
   - DAEMON_STATE: 4
   - DB_CORE: 1
   - DB_SIDECARE: 6
+  - FRAMEWORK_FILE: 5
   - LOG_RUNTIME: 30
-  - PYCACHE: 69
-  - UNKNOWN_OR_NON_RUNTIME: 75
+  - PYCACHE: 89
+  - UNKNOWN_OR_NON_RUNTIME: 26
   - UNKNOWN_RUNTIME_ARTIFACT: 10
 - Generated manifest ref: runtime_artifact_quarantine/generated/runtime_artifact_manifest.json
 - Warning: Console displays only curated path-level quarantine summary. No artifact contents were read.
@@ -150,21 +151,21 @@ Not ready:
 
 ## Runtime Artifact Backlog Disposition
 
-- Total artifacts: 217
-- Artifacts with disposition: 217
+- Total artifacts: 194
+- Artifacts with disposition: 194
 - Safe-mined to review queue: 0
-- Forbidden direct read count: 142
+- Forbidden direct read count: 163
 - Generated disposition index: runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json
 - Dispositions:
   - deferred_requires_bounded_log_adapter: 30
   - deferred_requires_classification: 10
-  - deferred_requires_marker_metadata_adapter: 25
+  - deferred_requires_marker_metadata_adapter: 26
   - deferred_requires_readonly_db_adapter: 2
   - deferred_sidecar_or_transaction_file: 6
-  - ignored_generated_cache: 69
-  - ignored_or_non_runtime: 75
+  - ignored_generated_cache: 89
+  - ignored_or_non_runtime: 31
 - Evidence scoring status:
-  - not_started: 217
+  - not_started: 194
 - Warning: Disposition is not ingestion. No brain/memory/CIEU writes are allowed.
 
 ## Runtime Artifact Evidence Review
@@ -229,7 +230,7 @@ Not ready:
 ## Cross-Repo Governance Alignment
 
 - alignment_accepted: True
-- ystar-company HEAD: 17aadbec tools: add real release simulation sandbox
+- ystar-company HEAD: 491e3f4f [auto] WIP checkpoint 2026-04-29 18:01 -- 168 files changed
 - Y-star-gov HEAD: 9c4aee3 tools: add governance endpoint acceptance runner
 - Y-star-gov endpoint accepted: True
 - labs runtime accepted: True
@@ -247,7 +248,7 @@ Not ready:
 
 ## Labs Live Readiness
 
-- dry_run_governance_ready: True
+- dry_run_governance_ready: False
 - minimal_live_loop_ready: False
 - minimal_live_loop_status: blocked_until_required_gates_exist
 - recommended_next_phase: build_live_boundary_harness_not_runtime_execution

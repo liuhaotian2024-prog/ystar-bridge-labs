@@ -4725,7 +4725,8 @@
         "reporting_or_status",
         "resource_sensing",
         "safety_or_quarantine",
-        "skill_library_or_tooling"
+        "skill_library_or_tooling",
+        "testing_or_validation"
       ],
       "actionability_level": "generated_summary",
       "risk_tier": "high",
@@ -7436,7 +7437,8 @@
         "reporting_or_status",
         "resource_sensing",
         "safety_or_quarantine",
-        "skill_library_or_tooling"
+        "skill_library_or_tooling",
+        "testing_or_validation"
       ],
       "actionability_level": "generated_summary",
       "risk_tier": "high",
@@ -7524,7 +7526,8 @@
         "repo_or_code_observation",
         "reporting_or_status",
         "safety_or_quarantine",
-        "skill_library_or_tooling"
+        "skill_library_or_tooling",
+        "testing_or_validation"
       ],
       "actionability_level": "generated_summary",
       "risk_tier": "high",
@@ -16229,7 +16232,6 @@
         "reporting_or_status",
         "resource_sensing",
         "safety_or_quarantine",
-        "skill_library_or_tooling",
         "testing_or_validation"
       ],
       "actionability_level": "generated_summary",

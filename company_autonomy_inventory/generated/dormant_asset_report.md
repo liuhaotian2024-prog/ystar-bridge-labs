@@ -8,8 +8,8 @@
 - reporting_or_status: 3034 mapped assets
 - hook_or_gate: 2932 mapped assets
 - mcp_or_external_interface: 2855 mapped assets
-- agent_identity: 2672 mapped assets
-- testing_or_validation: 2568 mapped assets
+- agent_identity: 2671 mapped assets
+- testing_or_validation: 2571 mapped assets
 
 ## Action-capable assets that remain disabled
 

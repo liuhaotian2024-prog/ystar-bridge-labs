@@ -1,6 +1,6 @@
 # Labs Live Readiness Report
 
-dry_run_governance_ready: True
+dry_run_governance_ready: False
 minimal_live_loop_ready: False
 minimal_live_loop_status: blocked_until_required_gates_exist
 recommended_next_phase: build_live_boundary_harness_not_runtime_execution
@@ -8,7 +8,7 @@ recommended_next_phase: build_live_boundary_harness_not_runtime_execution
 ## Dry-Run Readiness
 
 - ystar_gov_endpoint_accepted: True
-- labs_runtime_acceptance_accepted: True
+- labs_runtime_acceptance_accepted: False
 - cross_repo_alignment_accepted: True
 - multi_role_pre_u_governance_ready: True
 - console_read_model_ready: True

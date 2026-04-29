@@ -1,7 +1,7 @@
 {
   "schema_name": "ystar.console_read_model.generated.live_readiness_summary",
   "schema_version": "v0",
-  "dry_run_governance_ready": true,
+  "dry_run_governance_ready": false,
   "minimal_live_loop_ready": false,
   "minimal_live_loop_status": "blocked_until_required_gates_exist",
   "recommended_next_phase": "build_live_boundary_harness_not_runtime_execution",

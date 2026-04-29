@@ -18,7 +18,7 @@
     "hint_routing": "runtime_artifact_quarantine/evidence_review/generated/hint_routing_index.json",
     "console_snapshot": "console_read_model/generated/team_console_snapshot.json"
   },
-  "dry_run_governance_ready": true,
+  "dry_run_governance_ready": false,
   "minimal_live_loop_ready": false,
   "transition_backlog_items": 21,
   "generated_at_policy": "deterministic_no_timestamp"

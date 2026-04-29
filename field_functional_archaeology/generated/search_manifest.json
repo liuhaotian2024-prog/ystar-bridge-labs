@@ -81,7 +81,7 @@
     "invariant"
   ],
   "assets_scanned": 6417,
-  "files_skipped_by_policy": 54490,
+  "files_skipped_by_policy": 54662,
   "raw_matching_files": 5052,
   "significant_assets_recorded": 200,
   "bounded_snippet_max_chars": 240,

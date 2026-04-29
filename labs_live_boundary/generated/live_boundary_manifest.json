@@ -25,8 +25,8 @@
     "multi_role_pre_u_governance"
   ],
   "dependency_status": {
-    "dry_run_governance_ready": true,
-    "labs_runtime_acceptance_accepted": true,
+    "dry_run_governance_ready": false,
+    "labs_runtime_acceptance_accepted": false,
     "cross_repo_alignment_accepted": true,
     "multi_role_pre_u_governance_ready": true
   },

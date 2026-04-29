@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-29 18:00:01
+**Generated**: 2026-04-29 18:30:02
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,7 +36,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/12 valid (0 errors)
-**CIEU 24h Events**: 2601
+**CIEU 24h Events**: 2595
 **Overdue Obligations**: 0
 
 ---
@@ -80,17 +80,17 @@
 ---
 
 ## 8. Y* Field State (xi) — Mission axis frequency + drift
-**Total CIEU events (24h)**: 2601
+**Total CIEU events (24h)**: 2595
 
 | M-Axis | Description | 24h Count | 7d Avg/Day | Drift |
 |--------|-------------|-----------|------------|-------|
-| **M-1** | Survivability (session/boot/handoff/persist) | 180 | 3346 | → |
+| **M-1** | Survivability (session/boot/handoff/persist) | 180 | 3243 | → |
 | **M-2a** | Commission prevention (forget_guard/deny/enforce) | 27 | 818 | ↓ |
-| **M-2b** | Omission prevention (omission/overdue/alarm) | 26 | 1780 | ↓ |
+| **M-2b** | Omission prevention (omission/overdue/alarm) | 26 | 1717 | ↓ |
 | **M-3** | Value production (customer/revenue/dogfood/demo) | 0 | 0 | ↓ |
 
-**Classified coverage**: 233/2601 (9.0%)
-**Unclassified**: 2368 events (routine ops / K9 routing)
+**Classified coverage**: 233/2595 (9.0%)
+**Unclassified**: 2362 events (routine ops / K9 routing)
 **Drift alert**: M-2a, M-2b, M-3 trending DOWN vs 7d baseline
 
 ---
@@ -110,7 +110,7 @@
 
 | Detector | 24h Count | Drift vs 7d |
 |----------|-----------|-------------|
-| amendment_coverage_audit | 206 | v (avg 341.6/d) |
+| amendment_coverage_audit | 206 | v (avg 342.4/d) |
 | directive_evaluator | 26 | = (avg 31.6/d) |
 | hook_commission_catch | 26 | v (avg 393.9/d) |
 
@@ -128,7 +128,7 @@
 - `DIRECTIVE_LIVENESS_EVAL`: 26
 - `WIRE_BROKEN`: 26
 
-**Overall drift**: v (24h=258, 7d avg/day=1755.6)
+**Overall drift**: v (24h=258, 7d avg/day=1726.7)
 
 ---
 
@@ -154,7 +154,8 @@
 ## 13. Today's Commits (24h) — both repos
 
 
-**ystar-company** (52 commits):
+**ystar-company** (51 commits):
+- 491e3f4f 18:01 [auto] WIP checkpoint 2026-04-29 18:01 -- 168 files changed
 - ca21363d 17:36 tools: fix real controlled observation tavily auth and page read resilience
 - 44c6722b 17:34 chore: remove unintended auto checkpoint drift
 - 76bfe6cc 17:31 [auto] WIP checkpoint 2026-04-29 17:31 -- 52 files changed
@@ -174,6 +175,5 @@
 - 3c4d7d31 12:47 chore: remove interrupted l6 10x auto checkpoint drift
 - 0dc17b1f 12:44 [auto] WIP checkpoint 2026-04-29 12:44 -- 104 files changed
 - a071683f 12:28 tools: add l6 reviewed seed locator injection and tiny retry
-- e03e44af 12:25 chore: remove unintended auto checkpoint drift
 
 **Y*gov**: no commits

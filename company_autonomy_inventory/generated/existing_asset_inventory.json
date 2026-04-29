@@ -15,7 +15,7 @@
   },
   "capability_class_counts": {
     "brain_and_memory": 1928,
-    "agent_identity": 2672,
+    "agent_identity": 2671,
     "console_and_read_model": 392,
     "governance_bridge": 2309,
     "pre_u_counterfactual": 1151,
@@ -28,10 +28,10 @@
     "market_or_web_observation": 1606,
     "repo_or_code_observation": 3823,
     "scheduler_or_daemon": 1217,
-    "skill_library_or_tooling": 2214,
+    "skill_library_or_tooling": 2213,
     "action_execution": 3177,
     "auto_commit_or_git_action": 838,
-    "testing_or_validation": 2568,
+    "testing_or_validation": 2571,
     "reporting_or_status": 3034,
     "safety_or_quarantine": 2240
   },
@@ -3738,7 +3738,7 @@
       "risk_tier": "high",
       "governance_required": true,
       "can_be_tool_registry_candidate": true,
-      "size_bytes": 1441121,
+      "size_bytes": 1441212,
       "line_count_estimate": 41,
       "compact_reason": "metadata and bounded lexical evidence only; full source/doc content excluded",
       "evidence_terms": [
@@ -4563,7 +4563,8 @@
         "reporting_or_status",
         "resource_sensing",
         "safety_or_quarantine",
-        "skill_library_or_tooling"
+        "skill_library_or_tooling",
+        "testing_or_validation"
       ],
       "likely_owner_agent_candidates": [
         "Aiden-CEO",
@@ -4576,7 +4577,7 @@
       "risk_tier": "high",
       "governance_required": true,
       "can_be_tool_registry_candidate": true,
-      "size_bytes": 1066,
+      "size_bytes": 1083,
       "line_count_estimate": 30,
       "compact_reason": "metadata and bounded lexical evidence only; full source/doc content excluded",
       "evidence_terms": [
@@ -4589,7 +4590,7 @@
         "cieu_helpers_or_audit:cieu",
         "console_and_read_model:console_read_model"
       ],
-      "bounded_snippet": "{ \"schema_name\": \"ystar.console_read_model.generated.cross_repo_alignment_summary\", \"schema_version\": \"v0\", \"alignment_accepted\": true, \"ystar_company_head\": \"17aadbec6ce163cbd29ad94e69a0a687809280a8\", \"ystar_company_head_summary\": \"17aadbe"
+      "bounded_snippet": "{ \"schema_name\": \"ystar.console_read_model.generated.cross_repo_alignment_summary\", \"schema_version\": \"v0\", \"alignment_accepted\": true, \"ystar_company_head\": \"491e3f4fb269eef05022b727cd5436496cdb9c88\", \"ystar_company_head_summary\": \"491e3f4"
     },
     {
       "asset_id": "asset-0582",
@@ -5261,7 +5262,7 @@
       "risk_tier": "high",
       "governance_required": true,
       "can_be_tool_registry_candidate": true,
-      "size_bytes": 711,
+      "size_bytes": 712,
       "line_count_estimate": 23,
       "compact_reason": "metadata and bounded lexical evidence only; full source/doc content excluded",
       "evidence_terms": [
@@ -5274,7 +5275,7 @@
         "brain_and_memory:writeback",
         "cieu_helpers_or_audit:cieu"
       ],
-      "bounded_snippet": "{ \"schema_name\": \"ystar.console_read_model.generated.labs_acceptance_summary\", \"schema_version\": \"v0\", \"accepted\": true, \"checks_passed\": 12, \"checks_total\": 12, \"roles_covered\": [ \"Aiden-CEO\", \"Ethan-CTO\", \"Samantha-Secretary\" ], \"decision"
+      "bounded_snippet": "{ \"schema_name\": \"ystar.console_read_model.generated.labs_acceptance_summary\", \"schema_version\": \"v0\", \"accepted\": false, \"checks_passed\": 10, \"checks_total\": 10, \"roles_covered\": [ \"Aiden-CEO\", \"Ethan-CTO\", \"Samantha-Secretary\" ], \"decisio"
     },
     {
       "asset_id": "asset-0612",
@@ -5920,7 +5921,7 @@
       "risk_tier": "medium",
       "governance_required": true,
       "can_be_tool_registry_candidate": true,
-      "size_bytes": 209836,
+      "size_bytes": 209908,
       "line_count_estimate": 19,
       "compact_reason": "metadata and bounded lexical evidence only; full source/doc content excluded",
       "evidence_terms": [
@@ -5961,7 +5962,7 @@
       "risk_tier": "medium",
       "governance_required": true,
       "can_be_tool_registry_candidate": true,
-      "size_bytes": 68711,
+      "size_bytes": 68751,
       "line_count_estimate": 49,
       "compact_reason": "metadata and bounded lexical evidence only; full source/doc content excluded",
       "evidence_terms": [
@@ -7155,7 +7156,8 @@
         "reporting_or_status",
         "resource_sensing",
         "safety_or_quarantine",
-        "skill_library_or_tooling"
+        "skill_library_or_tooling",
+        "testing_or_validation"
       ],
       "likely_owner_agent_candidates": [
         "Aiden-CEO",
@@ -7168,7 +7170,7 @@
       "risk_tier": "high",
       "governance_required": true,
       "can_be_tool_registry_candidate": true,
-      "size_bytes": 1047,
+      "size_bytes": 1064,
       "line_count_estimate": 30,
       "compact_reason": "metadata and bounded lexical evidence only; full source/doc content excluded",
       "evidence_terms": [
@@ -7181,7 +7183,7 @@
         "cieu_helpers_or_audit:cieu",
         "governance_bridge:governance"
       ],
-      "bounded_snippet": "{ \"schema_name\": \"ystar.cross_repo_alignment.generated.summary\", \"schema_version\": \"v0\", \"alignment_accepted\": true, \"ystar_company_head\": \"17aadbec6ce163cbd29ad94e69a0a687809280a8\", \"ystar_company_head_summary\": \"17aadbec tools: add real r"
+      "bounded_snippet": "{ \"schema_name\": \"ystar.cross_repo_alignment.generated.summary\", \"schema_version\": \"v0\", \"alignment_accepted\": true, \"ystar_company_head\": \"491e3f4fb269eef05022b727cd5436496cdb9c88\", \"ystar_company_head_summary\": \"491e3f4f [auto] WIP checkp"
     },
     {
       "asset_id": "asset-1041",
@@ -7213,8 +7215,8 @@
       "risk_tier": "high",
       "governance_required": true,
       "can_be_tool_registry_candidate": true,
-      "size_bytes": 1798,
-      "line_count_estimate": 34,
+      "size_bytes": 1815,
+      "line_count_estimate": 33,
       "compact_reason": "metadata and bounded lexical evidence only; full source/doc content excluded",
       "evidence_terms": [
         "action_execution:action",
@@ -7226,7 +7228,7 @@
         "cieu_helpers_or_audit:cieu",
         "governance_bridge:Y-star-gov"
       ],
-      "bounded_snippet": "{ \"schema_name\": \"ystar.cross_repo_alignment.generated.status_manifest\", \"schema_version\": \"v0\", \"generated_at_policy\": \"deterministic_no_timestamp\", \"ystar_company_head\": \"17aadbec6ce163cbd29ad94e69a0a687809280a8\", \"ystar_company_head_summ"
+      "bounded_snippet": "{ \"schema_name\": \"ystar.cross_repo_alignment.generated.status_manifest\", \"schema_version\": \"v0\", \"generated_at_policy\": \"deterministic_no_timestamp\", \"ystar_company_head\": \"491e3f4fb269eef05022b727cd5436496cdb9c88\", \"ystar_company_head_summ"
     },
     {
       "asset_id": "asset-1042",
@@ -7243,7 +7245,8 @@
         "repo_or_code_observation",
         "reporting_or_status",
         "safety_or_quarantine",
-        "skill_library_or_tooling"
+        "skill_library_or_tooling",
+        "testing_or_validation"
       ],
       "likely_owner_agent_candidates": [
         "Aiden-CEO",
@@ -7256,7 +7259,7 @@
       "risk_tier": "high",
       "governance_required": true,
       "can_be_tool_registry_candidate": true,
-      "size_bytes": 779,
+      "size_bytes": 796,
       "line_count_estimate": 32,
       "compact_reason": "metadata and bounded lexical evidence only; full source/doc content excluded",
       "evidence_terms": [
@@ -7269,7 +7272,7 @@
         "cieu_helpers_or_audit:cieu",
         "governance_bridge:Y-star-gov"
       ],
-      "bounded_snippet": "# Cross-Repo Governance Alignment Report alignment_accepted: True reason: both repositories accepted dry-run governance alignment ## Repositories - ystar-company: 17aadbec tools: add real release simulation sandbox - Y-star-gov: 9c4aee3 too"
+      "bounded_snippet": "# Cross-Repo Governance Alignment Report alignment_accepted: True reason: both repositories accepted dry-run governance alignment ## Repositories - ystar-company: 491e3f4f [auto] WIP checkpoint 2026-04-29 18:01 -- 168 files changed - Y-star"
     },
     {
       "asset_id": "asset-1044",
@@ -13305,7 +13308,7 @@
       "risk_tier": "high",
       "governance_required": true,
       "can_be_tool_registry_candidate": true,
-      "size_bytes": 2321,
+      "size_bytes": 2323,
       "line_count_estimate": 34,
       "compact_reason": "metadata and bounded lexical evidence only; full source/doc content excluded",
       "evidence_terms": [
@@ -14894,7 +14897,7 @@
       "risk_tier": "high",
       "governance_required": true,
       "can_be_tool_registry_candidate": true,
-      "size_bytes": 2208,
+      "size_bytes": 2210,
       "line_count_estimate": 33,
       "compact_reason": "metadata and bounded lexical evidence only; full source/doc content excluded",
       "evidence_terms": [
@@ -15142,7 +15145,7 @@
       "risk_tier": "high",
       "governance_required": true,
       "can_be_tool_registry_candidate": true,
-      "size_bytes": 3006,
+      "size_bytes": 3008,
       "line_count_estimate": 35,
       "compact_reason": "metadata and bounded lexical evidence only; full source/doc content excluded",
       "evidence_terms": [
@@ -15186,7 +15189,7 @@
       "risk_tier": "high",
       "governance_required": true,
       "can_be_tool_registry_candidate": true,
-      "size_bytes": 1206,
+      "size_bytes": 1208,
       "line_count_estimate": 40,
       "compact_reason": "metadata and bounded lexical evidence only; full source/doc content excluded",
       "evidence_terms": [
@@ -15199,7 +15202,7 @@
         "cieu_event_boundary:prediction_delta",
         "cieu_helpers_or_audit:cieu"
       ],
-      "bounded_snippet": "# Labs Live Readiness Report dry_run_governance_ready: True minimal_live_loop_ready: False minimal_live_loop_status: blocked_until_required_gates_exist recommended_next_phase: build_live_boundary_harness_not_runtime_execution ## Dry-Run Rea"
+      "bounded_snippet": "# Labs Live Readiness Report dry_run_governance_ready: False minimal_live_loop_ready: False minimal_live_loop_status: blocked_until_required_gates_exist recommended_next_phase: build_live_boundary_harness_not_runtime_execution ## Dry-Run Re"
     },
     {
       "asset_id": "asset-2664",
@@ -15469,7 +15472,7 @@
       "risk_tier": "high",
       "governance_required": true,
       "can_be_tool_registry_candidate": true,
-      "size_bytes": 1235,
+      "size_bytes": 1236,
       "line_count_estimate": 28,
       "compact_reason": "metadata and bounded lexical evidence only; full source/doc content excluded",
       "evidence_terms": [
@@ -15482,7 +15485,7 @@
         "cieu_helpers_or_audit:cieu",
         "console_and_read_model:console_read_model"
       ],
-      "bounded_snippet": "{ \"schema_name\": \"ystar.labs_runtime_acceptance.generated.manifest\", \"schema_version\": \"v0\", \"accepted\": true, \"generated_reports\": [ \"labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json\", \"labs_runtime_acceptance/generate"
+      "bounded_snippet": "{ \"schema_name\": \"ystar.labs_runtime_acceptance.generated.manifest\", \"schema_version\": \"v0\", \"accepted\": false, \"generated_reports\": [ \"labs_runtime_acceptance/generated/labs_runtime_acceptance_report.json\", \"labs_runtime_acceptance/generat"
     },
     {
       "asset_id": "asset-2674",
@@ -15509,7 +15512,7 @@
       "risk_tier": "high",
       "governance_required": true,
       "can_be_tool_registry_candidate": true,
-      "size_bytes": 5261,
+      "size_bytes": 4467,
       "line_count_estimate": 42,
       "compact_reason": "metadata and bounded lexical evidence only; full source/doc content excluded",
       "evidence_terms": [
@@ -15522,7 +15525,7 @@
         "resource_sensing:manifest",
         "safety_or_quarantine:policy"
       ],
-      "bounded_snippet": "{ \"schema_name\": \"ystar.labs_runtime_acceptance.generated.report\", \"schema_version\": \"v0\", \"tool\": \"labs_runtime_acceptance\", \"accepted\": true, \"generated_at_policy\": \"deterministic_no_timestamp\", \"run_label\": \"labs_runtime_governance_accep"
+      "bounded_snippet": "{ \"schema_name\": \"ystar.labs_runtime_acceptance.generated.report\", \"schema_version\": \"v0\", \"tool\": \"labs_runtime_acceptance\", \"accepted\": false, \"generated_at_policy\": \"deterministic_no_timestamp\", \"run_label\": \"labs_runtime_governance_acce"
     },
     {
       "asset_id": "asset-2675",
@@ -15542,7 +15545,6 @@
         "reporting_or_status",
         "resource_sensing",
         "safety_or_quarantine",
-        "skill_library_or_tooling",
         "testing_or_validation"
       ],
       "likely_owner_agent_candidates": [
@@ -15556,8 +15558,8 @@
       "risk_tier": "high",
       "governance_required": true,
       "can_be_tool_registry_candidate": true,
-      "size_bytes": 949,
-      "line_count_estimate": 36,
+      "size_bytes": 887,
+      "line_count_estimate": 34,
       "compact_reason": "metadata and bounded lexical evidence only; full source/doc content excluded",
       "evidence_terms": [
         "action_execution:action",
@@ -15569,7 +15571,7 @@
         "brain_and_memory:writeback",
         "cieu_helpers_or_audit:cieu"
       ],
-      "bounded_snippet": "# Labs Runtime Governance Acceptance Report accepted: True run_label: labs_runtime_governance_acceptance_v0 ## Checks - Build quarantine manifest: PASS - Build safe mining candidates: PASS - Build candidate review queue: PASS - Build backlo"
+      "bounded_snippet": "# Labs Runtime Governance Acceptance Report accepted: False run_label: labs_runtime_governance_acceptance_v0 ## Checks - Build quarantine manifest: PASS - Build safe mining candidates: PASS - Build candidate review queue: PASS - Build backl"
     },
     {
       "asset_id": "asset-2677",
@@ -15643,7 +15645,7 @@
       "risk_tier": "high",
       "governance_required": true,
       "can_be_tool_registry_candidate": true,
-      "size_bytes": 1306115,
+      "size_bytes": 1306206,
       "line_count_estimate": 40,
       "compact_reason": "metadata and bounded lexical evidence only; full source/doc content excluded",
       "evidence_terms": [
