@@ -5,6 +5,7 @@
   "generated_at_utc": "2026-04-30T00:00:00Z",
   "local_url": "http://127.0.0.1:8765",
   "current_phase": "Real Labs Office Web UI Runtime",
+  "whiteboard_runtime_phase": "Real Labs Whiteboard Collaboration & Team Work Runtime",
   "legacy_source": "l7_labs_office_legacy_integration",
   "agent_count": 12,
   "agents": [
@@ -1754,15 +1755,41 @@
     "primary_shortest_cash_path": "path_001",
     "status": "first revenue readiness is prepared; external action remains approval-gated"
   },
+  "whiteboard_features": [
+    "team whiteboard chat",
+    "Aiden routing",
+    "team work board",
+    "agent replies",
+    "safe work cycles",
+    "progress timeline",
+    "approval queue",
+    "completion reports"
+  ],
+  "work_board_columns": [
+    "Inbox",
+    "Interpreting",
+    "Assigned",
+    "In Progress",
+    "Waiting for Approval",
+    "Blocked",
+    "Done"
+  ],
   "packet_dirs": {
     "owner_messages": "l7_real_labs_office_web_ui/runtime_packets/owner_messages",
     "team_tasks": "l7_real_labs_office_web_ui/runtime_packets/team_tasks",
     "routing_decisions": "l7_real_labs_office_web_ui/runtime_packets/routing_decisions",
-    "agent_inboxes": "l7_real_labs_office_web_ui/runtime_packets/agent_inboxes"
+    "agent_inboxes": "l7_real_labs_office_web_ui/runtime_packets/agent_inboxes",
+    "whiteboard_threads": "l7_real_labs_office_web_ui/runtime_packets/whiteboard_threads",
+    "agent_replies": "l7_real_labs_office_web_ui/runtime_packets/agent_replies",
+    "work_items": "l7_real_labs_office_web_ui/runtime_packets/work_items",
+    "work_cycles": "l7_real_labs_office_web_ui/runtime_packets/work_cycles",
+    "completion_reports": "l7_real_labs_office_web_ui/runtime_packets/completion_reports",
+    "approval_requests": "l7_real_labs_office_web_ui/runtime_packets/approval_requests"
   },
   "next_commands": [
     "bash scripts/run_l7_labs_office_web.sh --mode serve",
     "bash scripts/run_l7_labs_office_web.sh --mode status",
+    "bash scripts/run_l7_labs_office_web.sh --mode demo",
     "bash scripts/run_l7_labs_office_web.sh --mode smoke"
   ],
   "no_coo_invented_as_legacy_member": true,

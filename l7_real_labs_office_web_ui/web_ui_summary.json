@@ -4,6 +4,7 @@
   "packet_type": "web_ui_summary",
   "generated_at_utc": "2026-04-30T00:00:00Z",
   "real_office_web_ui_created": true,
+  "whiteboard_runtime_created": true,
   "local_url": "http://127.0.0.1:8765",
   "agent_count": 12,
   "agent_cards_generated": 12,
@@ -22,5 +23,6 @@
   ],
   "existing_html_owner_usable": false,
   "next_one_command_action": "bash scripts/run_l7_labs_office_web.sh --mode serve",
-  "no_coo_invented_as_legacy_member": true
+  "no_coo_invented_as_legacy_member": true,
+  "l7_5_summary_ref": "l7_labs_whiteboard_collaboration_runtime/l7_5_summary.json"
 }
