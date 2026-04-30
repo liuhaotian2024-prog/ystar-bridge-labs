@@ -1,0 +1,1703 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.0Q2",
+  "milestone_name": "Full-Repository Conservatism Debt Scan & Policy Migration Map",
+  "generated_at_utc": "2026-04-30T01:00:18Z",
+  "scan_method": "git ls-files tracked-file scan only",
+  "core_principle": "Maximize discovery and useful commercial planning. Minimize owner manual burden. Block unapproved external side effects. Block unreviewed permanent writeback.",
+  "scorecard_ref": "l7_full_repo_conservatism_scan/scorecard.json",
+  "policy_migration_map_ref": "l7_full_repo_conservatism_scan/policy_migration_map.json",
+  "summary": {
+    "schema_version": "v0",
+    "milestone_id": "L7.0Q2",
+    "total_tracked_files": 42041,
+    "total_text_files_scanned": 41053,
+    "skipped_counts": {
+      "unsafe_or_irrelevant_pattern": 310,
+      "binary_or_unreadable": 678
+    },
+    "total_findings": 129682,
+    "findings_by_severity": {
+      "P0": 82,
+      "P1": 2014,
+      "P2": 44768,
+      "P3": 82818
+    },
+    "findings_by_classification": {
+      "console_read_model_overconservative": 7371,
+      "core_writeback_overblocked": 255,
+      "disabled_as_final_state": 813,
+      "documentation_overconservative": 14990,
+      "external_action_overblocked": 863,
+      "fixture_only_regression": 104,
+      "generated_artifact_overconservative": 4676,
+      "hardcoded_blacklist": 263,
+      "hardcoded_forbidden_action_list": 7508,
+      "legitimate_hard_boundary": 56285,
+      "no_action_receipt_overuse": 689,
+      "owner_manual_burden": 165,
+      "policy_registry_needed": 1,
+      "policy_registry_present": 2261,
+      "readiness_or_preflight_overuse": 3393,
+      "runtime_visibility_overblocked": 25439,
+      "test_expectation_overconservative": 4606
+    },
+    "findings_by_artifact_epoch": {
+      "console_read_model": 9401,
+      "docs": 52500,
+      "generated": 5535,
+      "l5": 35,
+      "l6_early": 2701,
+      "l6_observation": 9764,
+      "l6_review_strategy": 1801,
+      "l7_commercial": 1450,
+      "policy": 228,
+      "scripts": 3503,
+      "tests": 5400,
+      "unknown": 37364
+    },
+    "top_20_files_by_conservatism_density": [
+      {
+        "file_path": "data/cieu_archive/2026-04-03.jsonl",
+        "directory_group": "data",
+        "artifact_epoch": "unknown",
+        "finding_count": 2503,
+        "harmful_overconservatism_count": 2499,
+        "legitimate_hard_boundary_count": 4,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P2": 2499,
+          "P3": 4
+        },
+        "classification_counts": {
+          "hardcoded_forbidden_action_list": 1745,
+          "runtime_visibility_overblocked": 754,
+          "legitimate_hard_boundary": 4
+        },
+        "needs_policy_ref_migration": true
+      },
+      {
+        "file_path": "console_read_model/loader/build_team_console_snapshot.py",
+        "directory_group": "console_read_model",
+        "artifact_epoch": "console_read_model",
+        "finding_count": 2906,
+        "harmful_overconservatism_count": 2487,
+        "legitimate_hard_boundary_count": 419,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P2": 2487,
+          "P3": 419
+        },
+        "classification_counts": {
+          "console_read_model_overconservative": 2487,
+          "legitimate_hard_boundary": 419
+        },
+        "needs_policy_ref_migration": true
+      },
+      {
+        "file_path": "data/experiments/EXP_001_cieu.jsonl",
+        "directory_group": "data",
+        "artifact_epoch": "unknown",
+        "finding_count": 1828,
+        "harmful_overconservatism_count": 1828,
+        "legitimate_hard_boundary_count": 0,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P2": 1828
+        },
+        "classification_counts": {
+          "hardcoded_forbidden_action_list": 1253,
+          "runtime_visibility_overblocked": 575
+        },
+        "needs_policy_ref_migration": true
+      },
+      {
+        "file_path": "docs/micro_chain_full_log.txt",
+        "directory_group": "docs",
+        "artifact_epoch": "unknown",
+        "finding_count": 1570,
+        "harmful_overconservatism_count": 1570,
+        "legitimate_hard_boundary_count": 0,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P2": 1570
+        },
+        "classification_counts": {
+          "runtime_visibility_overblocked": 1570
+        },
+        "needs_policy_ref_migration": true
+      },
+      {
+        "file_path": "tools/cieu/ygva/stage2_v5_cieu.json",
+        "directory_group": "tools",
+        "artifact_epoch": "unknown",
+        "finding_count": 1270,
+        "harmful_overconservatism_count": 1270,
+        "legitimate_hard_boundary_count": 0,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P2": 1270
+        },
+        "classification_counts": {
+          "runtime_visibility_overblocked": 1270
+        },
+        "needs_policy_ref_migration": true
+      },
+      {
+        "file_path": "tools/cieu/ygva/seg2_cieu.json",
+        "directory_group": "tools",
+        "artifact_epoch": "unknown",
+        "finding_count": 1056,
+        "harmful_overconservatism_count": 1056,
+        "legitimate_hard_boundary_count": 0,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P2": 1056
+        },
+        "classification_counts": {
+          "runtime_visibility_overblocked": 1056
+        },
+        "needs_policy_ref_migration": true
+      },
+      {
+        "file_path": "tools/cieu/ygva/seg2_cieu_v2.json",
+        "directory_group": "tools",
+        "artifact_epoch": "unknown",
+        "finding_count": 1056,
+        "harmful_overconservatism_count": 1056,
+        "legitimate_hard_boundary_count": 0,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P2": 1056
+        },
+        "classification_counts": {
+          "runtime_visibility_overblocked": 1056
+        },
+        "needs_policy_ref_migration": true
+      },
+      {
+        "file_path": "tools/cieu/ygva/seg2_cieu_v3.json",
+        "directory_group": "tools",
+        "artifact_epoch": "unknown",
+        "finding_count": 1056,
+        "harmful_overconservatism_count": 1056,
+        "legitimate_hard_boundary_count": 0,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P2": 1056
+        },
+        "classification_counts": {
+          "runtime_visibility_overblocked": 1056
+        },
+        "needs_policy_ref_migration": true
+      },
+      {
+        "file_path": "tools/cieu/ygva/seg2_cieu_v4.json",
+        "directory_group": "tools",
+        "artifact_epoch": "unknown",
+        "finding_count": 1056,
+        "harmful_overconservatism_count": 1056,
+        "legitimate_hard_boundary_count": 0,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P2": 1056
+        },
+        "classification_counts": {
+          "runtime_visibility_overblocked": 1056
+        },
+        "needs_policy_ref_migration": true
+      },
+      {
+        "file_path": "tools/cieu/ygva/seg2_cieu_v5.json",
+        "directory_group": "tools",
+        "artifact_epoch": "unknown",
+        "finding_count": 1056,
+        "harmful_overconservatism_count": 1056,
+        "legitimate_hard_boundary_count": 0,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P2": 1056
+        },
+        "classification_counts": {
+          "runtime_visibility_overblocked": 1056
+        },
+        "needs_policy_ref_migration": true
+      },
+      {
+        "file_path": "tools/cieu/ygva/seg2_cieu_v6.json",
+        "directory_group": "tools",
+        "artifact_epoch": "unknown",
+        "finding_count": 1056,
+        "harmful_overconservatism_count": 1056,
+        "legitimate_hard_boundary_count": 0,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P2": 1056
+        },
+        "classification_counts": {
+          "runtime_visibility_overblocked": 1056
+        },
+        "needs_policy_ref_migration": true
+      },
+      {
+        "file_path": "tools/cieu/ygva/seg2_inter_cieu.json",
+        "directory_group": "tools",
+        "artifact_epoch": "unknown",
+        "finding_count": 1056,
+        "harmful_overconservatism_count": 1056,
+        "legitimate_hard_boundary_count": 0,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P2": 1056
+        },
+        "classification_counts": {
+          "runtime_visibility_overblocked": 1056
+        },
+        "needs_policy_ref_migration": true
+      },
+      {
+        "file_path": "tools/cieu/ygva/seg2_inter_cieu_v2.json",
+        "directory_group": "tools",
+        "artifact_epoch": "unknown",
+        "finding_count": 1056,
+        "harmful_overconservatism_count": 1056,
+        "legitimate_hard_boundary_count": 0,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P2": 1056
+        },
+        "classification_counts": {
+          "runtime_visibility_overblocked": 1056
+        },
+        "needs_policy_ref_migration": true
+      },
+      {
+        "file_path": "company_autonomy_inventory/generated/existing_asset_inventory.json",
+        "directory_group": "company_autonomy_inventory",
+        "artifact_epoch": "generated",
+        "finding_count": 1024,
+        "harmful_overconservatism_count": 892,
+        "legitimate_hard_boundary_count": 132,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P3": 1024
+        },
+        "classification_counts": {
+          "generated_artifact_overconservative": 892,
+          "legitimate_hard_boundary": 132
+        },
+        "needs_policy_ref_migration": true
+      },
+      {
+        "file_path": "console_read_model/validation/validate_team_read_model.py",
+        "directory_group": "console_read_model",
+        "artifact_epoch": "console_read_model",
+        "finding_count": 1158,
+        "harmful_overconservatism_count": 879,
+        "legitimate_hard_boundary_count": 279,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P3": 279,
+          "P2": 879
+        },
+        "classification_counts": {
+          "legitimate_hard_boundary": 279,
+          "console_read_model_overconservative": 879
+        },
+        "needs_policy_ref_migration": true
+      },
+      {
+        "file_path": "console_read_model/validation/expected_structure.json",
+        "directory_group": "console_read_model",
+        "artifact_epoch": "console_read_model",
+        "finding_count": 936,
+        "harmful_overconservatism_count": 820,
+        "legitimate_hard_boundary_count": 116,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P2": 820,
+          "P3": 116
+        },
+        "classification_counts": {
+          "console_read_model_overconservative": 820,
+          "legitimate_hard_boundary": 116
+        },
+        "needs_policy_ref_migration": true
+      },
+      {
+        "file_path": "console_read_model/cli/team_console.py",
+        "directory_group": "console_read_model",
+        "artifact_epoch": "console_read_model",
+        "finding_count": 1046,
+        "harmful_overconservatism_count": 765,
+        "legitimate_hard_boundary_count": 281,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P2": 765,
+          "P3": 281
+        },
+        "classification_counts": {
+          "console_read_model_overconservative": 765,
+          "legitimate_hard_boundary": 281
+        },
+        "needs_policy_ref_migration": true
+      },
+      {
+        "file_path": "console_read_model/generated/team_console_snapshot.json",
+        "directory_group": "console_read_model",
+        "artifact_epoch": "console_read_model",
+        "finding_count": 1015,
+        "harmful_overconservatism_count": 726,
+        "legitimate_hard_boundary_count": 289,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P2": 726,
+          "P3": 289
+        },
+        "classification_counts": {
+          "console_read_model_overconservative": 726,
+          "legitimate_hard_boundary": 289
+        },
+        "needs_policy_ref_migration": true
+      },
+      {
+        "file_path": "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
+        "directory_group": "runtime_artifact_quarantine",
+        "artifact_epoch": "generated",
+        "finding_count": 715,
+        "harmful_overconservatism_count": 703,
+        "legitimate_hard_boundary_count": 12,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P3": 715
+        },
+        "classification_counts": {
+          "generated_artifact_overconservative": 703,
+          "legitimate_hard_boundary": 12
+        },
+        "needs_policy_ref_migration": true
+      },
+      {
+        "file_path": "legacy_asset_triage/generated/asset_value_risk_matrix.json",
+        "directory_group": "legacy_asset_triage",
+        "artifact_epoch": "generated",
+        "finding_count": 686,
+        "harmful_overconservatism_count": 678,
+        "legitimate_hard_boundary_count": 8,
+        "policy_registry_present_count": 0,
+        "severity_counts": {
+          "P3": 686
+        },
+        "classification_counts": {
+          "generated_artifact_overconservative": 678,
+          "legitimate_hard_boundary": 8
+        },
+        "needs_policy_ref_migration": true
+      }
+    ],
+    "top_20_directories_by_conservatism_density": [
+      {
+        "directory_group": "tools",
+        "files_with_findings": 30,
+        "finding_count": 11744,
+        "harmful_overconservatism_count": 11740,
+        "legitimate_hard_boundary_count": 4,
+        "classification_counts": {
+          "runtime_visibility_overblocked": 11738,
+          "disabled_as_final_state": 1,
+          "no_action_receipt_overuse": 1,
+          "legitimate_hard_boundary": 4
+        },
+        "severity_counts": {
+          "P2": 11739,
+          "P1": 1,
+          "P3": 4
+        }
+      },
+      {
+        "directory_group": "reports",
+        "files_with_findings": 35133,
+        "finding_count": 45973,
+        "harmful_overconservatism_count": 10608,
+        "legitimate_hard_boundary_count": 35363,
+        "classification_counts": {
+          "documentation_overconservative": 10136,
+          "legitimate_hard_boundary": 35363,
+          "runtime_visibility_overblocked": 313,
+          "hardcoded_forbidden_action_list": 145,
+          "hardcoded_blacklist": 11,
+          "no_action_receipt_overuse": 1,
+          "disabled_as_final_state": 1,
+          "readiness_or_preflight_overuse": 1,
+          "policy_registry_present": 2
+        },
+        "severity_counts": {
+          "P3": 45501,
+          "P2": 471,
+          "P1": 1
+        }
+      },
+      {
+        "directory_group": "console_read_model",
+        "files_with_findings": 89,
+        "finding_count": 9401,
+        "harmful_overconservatism_count": 7371,
+        "legitimate_hard_boundary_count": 2030,
+        "classification_counts": {
+          "console_read_model_overconservative": 7371,
+          "legitimate_hard_boundary": 2030
+        },
+        "severity_counts": {
+          "P2": 7371,
+          "P3": 2030
+        }
+      },
+      {
+        "directory_group": "data",
+        "files_with_findings": 4,
+        "finding_count": 4503,
+        "harmful_overconservatism_count": 4446,
+        "legitimate_hard_boundary_count": 57,
+        "classification_counts": {
+          "hardcoded_forbidden_action_list": 3074,
+          "runtime_visibility_overblocked": 1372,
+          "legitimate_hard_boundary": 57
+        },
+        "severity_counts": {
+          "P2": 4446,
+          "P3": 57
+        }
+      },
+      {
+        "directory_group": "ystar.bak.20260415_again",
+        "files_with_findings": 127,
+        "finding_count": 3151,
+        "harmful_overconservatism_count": 2993,
+        "legitimate_hard_boundary_count": 158,
+        "classification_counts": {
+          "runtime_visibility_overblocked": 1293,
+          "hardcoded_forbidden_action_list": 1636,
+          "legitimate_hard_boundary": 158,
+          "hardcoded_blacklist": 31,
+          "disabled_as_final_state": 19,
+          "readiness_or_preflight_overuse": 1,
+          "documentation_overconservative": 12,
+          "no_action_receipt_overuse": 1
+        },
+        "severity_counts": {
+          "P2": 2962,
+          "P3": 170,
+          "P1": 19
+        }
+      },
+      {
+        "directory_group": "scripts",
+        "files_with_findings": 353,
+        "finding_count": 3503,
+        "harmful_overconservatism_count": 2952,
+        "legitimate_hard_boundary_count": 464,
+        "classification_counts": {
+          "legitimate_hard_boundary": 464,
+          "hardcoded_forbidden_action_list": 396,
+          "hardcoded_blacklist": 47,
+          "no_action_receipt_overuse": 50,
+          "disabled_as_final_state": 25,
+          "readiness_or_preflight_overuse": 63,
+          "owner_manual_burden": 23,
+          "core_writeback_overblocked": 13,
+          "external_action_overblocked": 13,
+          "runtime_visibility_overblocked": 2322,
+          "policy_registry_present": 87
+        },
+        "severity_counts": {
+          "P3": 551,
+          "P2": 2878,
+          "P0": 41,
+          "P1": 33
+        }
+      },
+      {
+        "directory_group": "docs",
+        "files_with_findings": 42,
+        "finding_count": 1919,
+        "harmful_overconservatism_count": 1874,
+        "legitimate_hard_boundary_count": 45,
+        "classification_counts": {
+          "runtime_visibility_overblocked": 1577,
+          "documentation_overconservative": 289,
+          "legitimate_hard_boundary": 45,
+          "disabled_as_final_state": 4,
+          "hardcoded_forbidden_action_list": 3,
+          "owner_manual_burden": 1
+        },
+        "severity_counts": {
+          "P2": 1580,
+          "P3": 334,
+          "P1": 5
+        }
+      },
+      {
+        "directory_group": "knowledge",
+        "files_with_findings": 331,
+        "finding_count": 1796,
+        "harmful_overconservatism_count": 1545,
+        "legitimate_hard_boundary_count": 251,
+        "classification_counts": {
+          "documentation_overconservative": 1527,
+          "legitimate_hard_boundary": 251,
+          "runtime_visibility_overblocked": 15,
+          "readiness_or_preflight_overuse": 2,
+          "no_action_receipt_overuse": 1
+        },
+        "severity_counts": {
+          "P3": 1778,
+          "P2": 18
+        }
+      },
+      {
+        "directory_group": "runtime_artifact_quarantine",
+        "files_with_findings": 48,
+        "finding_count": 1302,
+        "harmful_overconservatism_count": 1163,
+        "legitimate_hard_boundary_count": 139,
+        "classification_counts": {
+          "generated_artifact_overconservative": 983,
+          "legitimate_hard_boundary": 139,
+          "runtime_visibility_overblocked": 55,
+          "hardcoded_forbidden_action_list": 33,
+          "readiness_or_preflight_overuse": 24,
+          "documentation_overconservative": 68
+        },
+        "severity_counts": {
+          "P3": 1190,
+          "P2": 112
+        }
+      },
+      {
+        "directory_group": "company_autonomy_inventory",
+        "files_with_findings": 19,
+        "finding_count": 1257,
+        "harmful_overconservatism_count": 1108,
+        "legitimate_hard_boundary_count": 148,
+        "classification_counts": {
+          "generated_artifact_overconservative": 996,
+          "legitimate_hard_boundary": 148,
+          "runtime_visibility_overblocked": 16,
+          "hardcoded_forbidden_action_list": 29,
+          "readiness_or_preflight_overuse": 28,
+          "disabled_as_final_state": 24,
+          "policy_registry_present": 1,
+          "documentation_overconservative": 15
+        },
+        "severity_counts": {
+          "P3": 1160,
+          "P2": 73,
+          "P1": 24
+        }
+      },
+      {
+        "directory_group": "governance",
+        "files_with_findings": 65,
+        "finding_count": 1302,
+        "harmful_overconservatism_count": 947,
+        "legitimate_hard_boundary_count": 354,
+        "classification_counts": {
+          "documentation_overconservative": 665,
+          "legitimate_hard_boundary": 354,
+          "runtime_visibility_overblocked": 232,
+          "hardcoded_forbidden_action_list": 45,
+          "hardcoded_blacklist": 3,
+          "external_action_overblocked": 2,
+          "policy_registry_present": 1
+        },
+        "severity_counts": {
+          "P3": 1020,
+          "P2": 280,
+          "P1": 2
+        }
+      },
+      {
+        "directory_group": "legacy_asset_triage",
+        "files_with_findings": 11,
+        "finding_count": 934,
+        "harmful_overconservatism_count": 905,
+        "legitimate_hard_boundary_count": 18,
+        "classification_counts": {
+          "generated_artifact_overconservative": 876,
+          "legitimate_hard_boundary": 18,
+          "policy_registry_present": 11,
+          "disabled_as_final_state": 5,
+          "hardcoded_forbidden_action_list": 2,
+          "runtime_visibility_overblocked": 19,
+          "documentation_overconservative": 3
+        },
+        "severity_counts": {
+          "P3": 908,
+          "P1": 5,
+          "P2": 21
+        }
+      },
+      {
+        "directory_group": "approved_canonical_update_sandbox",
+        "files_with_findings": 7,
+        "finding_count": 599,
+        "harmful_overconservatism_count": 564,
+        "legitimate_hard_boundary_count": 35,
+        "classification_counts": {
+          "runtime_visibility_overblocked": 471,
+          "readiness_or_preflight_overuse": 20,
+          "hardcoded_forbidden_action_list": 27,
+          "core_writeback_overblocked": 4,
+          "legitimate_hard_boundary": 35,
+          "external_action_overblocked": 11,
+          "fixture_only_regression": 1,
+          "generated_artifact_overconservative": 23,
+          "documentation_overconservative": 7
+        },
+        "severity_counts": {
+          "P2": 519,
+          "P1": 15,
+          "P3": 65
+        }
+      },
+      {
+        "directory_group": "real_release_simulation_sandbox",
+        "files_with_findings": 7,
+        "finding_count": 589,
+        "harmful_overconservatism_count": 559,
+        "legitimate_hard_boundary_count": 30,
+        "classification_counts": {
+          "runtime_visibility_overblocked": 404,
+          "readiness_or_preflight_overuse": 46,
+          "no_action_receipt_overuse": 5,
+          "hardcoded_forbidden_action_list": 38,
+          "core_writeback_overblocked": 4,
+          "legitimate_hard_boundary": 30,
+          "external_action_overblocked": 8,
+          "generated_artifact_overconservative": 46,
+          "documentation_overconservative": 8
+        },
+        "severity_counts": {
+          "P2": 493,
+          "P1": 12,
+          "P3": 84
+        }
+      },
+      {
+        "directory_group": "content",
+        "files_with_findings": 90,
+        "finding_count": 643,
+        "harmful_overconservatism_count": 538,
+        "legitimate_hard_boundary_count": 105,
+        "classification_counts": {
+          "legitimate_hard_boundary": 105,
+          "documentation_overconservative": 503,
+          "runtime_visibility_overblocked": 33,
+          "hardcoded_forbidden_action_list": 2
+        },
+        "severity_counts": {
+          "P3": 608,
+          "P2": 35
+        }
+      },
+      {
+        "directory_group": "field_functional_archaeology",
+        "files_with_findings": 20,
+        "finding_count": 584,
+        "harmful_overconservatism_count": 530,
+        "legitimate_hard_boundary_count": 48,
+        "classification_counts": {
+          "generated_artifact_overconservative": 438,
+          "legitimate_hard_boundary": 48,
+          "runtime_visibility_overblocked": 60,
+          "hardcoded_forbidden_action_list": 12,
+          "policy_registry_present": 6,
+          "readiness_or_preflight_overuse": 6,
+          "documentation_overconservative": 14
+        },
+        "severity_counts": {
+          "P3": 506,
+          "P2": 78
+        }
+      },
+      {
+        "directory_group": "controlled_real_release_preflight",
+        "files_with_findings": 7,
+        "finding_count": 432,
+        "harmful_overconservatism_count": 402,
+        "legitimate_hard_boundary_count": 30,
+        "classification_counts": {
+          "readiness_or_preflight_overuse": 270,
+          "runtime_visibility_overblocked": 74,
+          "core_writeback_overblocked": 3,
+          "legitimate_hard_boundary": 30,
+          "external_action_overblocked": 4,
+          "generated_artifact_overconservative": 42,
+          "documentation_overconservative": 9
+        },
+        "severity_counts": {
+          "P2": 344,
+          "P1": 7,
+          "P3": 81
+        }
+      },
+      {
+        "directory_group": "live_boundary_no_go_framework",
+        "files_with_findings": 7,
+        "finding_count": 421,
+        "harmful_overconservatism_count": 366,
+        "legitimate_hard_boundary_count": 54,
+        "classification_counts": {
+          "no_action_receipt_overuse": 148,
+          "readiness_or_preflight_overuse": 118,
+          "runtime_visibility_overblocked": 26,
+          "legitimate_hard_boundary": 54,
+          "external_action_overblocked": 17,
+          "core_writeback_overblocked": 2,
+          "policy_registry_present": 1,
+          "disabled_as_final_state": 1,
+          "generated_artifact_overconservative": 41,
+          "documentation_overconservative": 13
+        },
+        "severity_counts": {
+          "P2": 292,
+          "P3": 109,
+          "P1": 20
+        }
+      },
+      {
+        "directory_group": "controlled_approval_record_sandbox",
+        "files_with_findings": 7,
+        "finding_count": 386,
+        "harmful_overconservatism_count": 358,
+        "legitimate_hard_boundary_count": 20,
+        "classification_counts": {
+          "runtime_visibility_overblocked": 230,
+          "readiness_or_preflight_overuse": 43,
+          "hardcoded_forbidden_action_list": 48,
+          "core_writeback_overblocked": 3,
+          "legitimate_hard_boundary": 20,
+          "policy_registry_present": 8,
+          "external_action_overblocked": 3,
+          "generated_artifact_overconservative": 25,
+          "documentation_overconservative": 6
+        },
+        "severity_counts": {
+          "P2": 321,
+          "P1": 6,
+          "P3": 59
+        }
+      },
+      {
+        "directory_group": "l6_integrated_approval_record_and_pilot_readiness_sandbox",
+        "files_with_findings": 8,
+        "finding_count": 505,
+        "harmful_overconservatism_count": 322,
+        "legitimate_hard_boundary_count": 176,
+        "classification_counts": {
+          "readiness_or_preflight_overuse": 183,
+          "runtime_visibility_overblocked": 126,
+          "legitimate_hard_boundary": 176,
+          "external_action_overblocked": 13,
+          "policy_registry_present": 7
+        },
+        "severity_counts": {
+          "P2": 309,
+          "P3": 183,
+          "P1": 13
+        }
+      }
+    ],
+    "top_20_owner_manual_burden_locations": [
+      {
+        "finding_id": "l7_0q2_finding_004697",
+        "file_path": "ceo_command_brief/l6_16_ceo_command_brief.json",
+        "line_number": 68,
+        "matched_pattern": "ask_user_url",
+        "matched_excerpt_short": "\"ask_user_url\"",
+        "classification": "owner_manual_burden",
+        "severity": "P0",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      },
+      {
+        "finding_id": "l7_0q2_finding_004705",
+        "file_path": "ceo_command_brief/l6_16_ceo_command_brief.json",
+        "line_number": 84,
+        "matched_pattern": "manual URL",
+        "matched_excerpt_short": "\"A seed URL/manual URL request path.\",",
+        "classification": "owner_manual_burden",
+        "severity": "P1",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      },
+      {
+        "finding_id": "l7_0q2_finding_004723",
+        "file_path": "ceo_command_brief/l6_16_ceo_command_brief.md",
+        "line_number": 47,
+        "matched_pattern": "manual URL",
+        "matched_excerpt_short": "- A seed URL/manual URL request path.",
+        "classification": "owner_manual_burden",
+        "severity": "P1",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      },
+      {
+        "finding_id": "l7_0q2_finding_017375",
+        "file_path": "controlled_no_action_receipts/no_action_receipt_index.json",
+        "line_number": 29,
+        "matched_pattern": "ask_user_url",
+        "matched_excerpt_short": "\"controlled_no_action_receipts/no_ask_user_url_receipt.json\",",
+        "classification": "owner_manual_burden",
+        "severity": "P0",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      },
+      {
+        "finding_id": "l7_0q2_finding_017378",
+        "file_path": "controlled_no_action_receipts/no_ask_user_url_receipt.json",
+        "line_number": 3,
+        "matched_pattern": "ask_user_url",
+        "matched_excerpt_short": "\"action\": \"ask_user_url\",",
+        "classification": "owner_manual_burden",
+        "severity": "P0",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      },
+      {
+        "finding_id": "l7_0q2_finding_017379",
+        "file_path": "controlled_no_action_receipts/no_ask_user_url_receipt.json",
+        "line_number": 7,
+        "matched_pattern": "ask_user_url",
+        "matched_excerpt_short": "\"receipt\": \"no_ask_user_url\"",
+        "classification": "owner_manual_burden",
+        "severity": "P0",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      },
+      {
+        "finding_id": "l7_0q2_finding_017441",
+        "file_path": "controlled_no_action_receipts/no_side_effect_receipt.json",
+        "line_number": 30,
+        "matched_pattern": "ask_user_url",
+        "matched_excerpt_short": "\"controlled_no_action_receipts/no_ask_user_url_receipt.json\"",
+        "classification": "owner_manual_burden",
+        "severity": "P0",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      },
+      {
+        "finding_id": "l7_0q2_finding_023217",
+        "file_path": "decision_boundary_packet/decision_boundary_packet.json",
+        "line_number": 43,
+        "matched_pattern": "ask_user_url",
+        "matched_excerpt_short": "\"ask_user_url\"",
+        "classification": "owner_manual_burden",
+        "severity": "P0",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      },
+      {
+        "finding_id": "l7_0q2_finding_023508",
+        "file_path": "docs/l6_13_real_backend_activation.md",
+        "line_number": 3,
+        "matched_pattern": "manual URL",
+        "matched_excerpt_short": "L6.13 does not ask for manual URLs. It activates real public read-only observation only when an approved backend and page-read adapter are configured by environment.",
+        "classification": "owner_manual_burden",
+        "severity": "P1",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      },
+      {
+        "finding_id": "l7_0q2_finding_028796",
+        "file_path": "internal_strategy_memo/l6_16_internal_strategy_memo.json",
+        "line_number": 101,
+        "matched_pattern": "ask_user_url",
+        "matched_excerpt_short": "\"ask_user_url\"",
+        "classification": "owner_manual_burden",
+        "severity": "P0",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      },
+      {
+        "finding_id": "l7_0q2_finding_028815",
+        "file_path": "internal_strategy_memo/l6_16_internal_strategy_memo.md",
+        "line_number": 61,
+        "matched_pattern": "ask_user_url",
+        "matched_excerpt_short": "- ask_user_url",
+        "classification": "owner_manual_burden",
+        "severity": "P0",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      },
+      {
+        "finding_id": "l7_0q2_finding_030961",
+        "file_path": "l6_10v_read_model/l6_10v_blockers.json",
+        "line_number": 9,
+        "matched_pattern": "reviewed seed locator",
+        "matched_excerpt_short": "\"Add one reviewed seed locator entry to seed_locator_registry/reviewed_seed_locator_registry.json, or\",",
+        "classification": "owner_manual_burden",
+        "severity": "P1",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      },
+      {
+        "finding_id": "l7_0q2_finding_030962",
+        "file_path": "l6_10v_read_model/l6_10v_cieu_like_fixture.json",
+        "line_number": 7,
+        "matched_pattern": "reviewed seed locator",
+        "matched_excerpt_short": "\"U_t\": \"Create reviewed seed locator and explicit controlled search enablement paths for one work order.\",",
+        "classification": "owner_manual_burden",
+        "severity": "P1",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      },
+      {
+        "finding_id": "l7_0q2_finding_030969",
+        "file_path": "l6_10v_read_model/l6_10v_cieu_like_fixture.json",
+        "line_number": 18,
+        "matched_pattern": "reviewed seed locator",
+        "matched_excerpt_short": "\"reviewed seed locator still required\",",
+        "classification": "owner_manual_burden",
+        "severity": "P1",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      },
+      {
+        "finding_id": "l7_0q2_finding_030971",
+        "file_path": "l6_10v_read_model/l6_10v_next_milestone_recommendation.json",
+        "line_number": 3,
+        "matched_pattern": "reviewed seed locator",
+        "matched_excerpt_short": "\"next_milestone\": \"L6.10W Reviewed Seed Locator Population or Controlled Search Backend Enablement v0\",",
+        "classification": "owner_manual_burden",
+        "severity": "P1",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      },
+      {
+        "finding_id": "l7_0q2_finding_030987",
+        "file_path": "l6_10v_read_model/l6_10v_read_model_summary.json",
+        "line_number": 79,
+        "matched_pattern": "reviewed seed locator",
+        "matched_excerpt_short": "\"Add one reviewed seed locator entry to seed_locator_registry/reviewed_seed_locator_registry.json, or\",",
+        "classification": "owner_manual_burden",
+        "severity": "P1",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      },
+      {
+        "finding_id": "l7_0q2_finding_030990",
+        "file_path": "l6_10v_read_model/l6_10v_readiness_assessment.json",
+        "line_number": 16,
+        "matched_pattern": "reviewed seed locator",
+        "matched_excerpt_short": "\"next_step\": \"reviewed seed locator required or explicit controlled search resolver enablement required\",",
+        "classification": "owner_manual_burden",
+        "severity": "P1",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      },
+      {
+        "finding_id": "l7_0q2_finding_030991",
+        "file_path": "l6_10v_read_model/l6_10v_readiness_assessment.json",
+        "line_number": 17,
+        "matched_pattern": "reviewed seed locator",
+        "matched_excerpt_short": "\"next_recommended_milestone\": \"L6.10W Reviewed Seed Locator Population or Controlled Search Backend Enablement v0\",",
+        "classification": "owner_manual_burden",
+        "severity": "P1",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      },
+      {
+        "finding_id": "l7_0q2_finding_030997",
+        "file_path": "l6_10w_read_model/l6_10w_blockers.json",
+        "line_number": 3,
+        "matched_pattern": "user_must_provide",
+        "matched_excerpt_short": "\"primary_blocker\": \"user_must_provide_one_reviewed_seed_locator_url\",",
+        "classification": "owner_manual_burden",
+        "severity": "P1",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      },
+      {
+        "finding_id": "l7_0q2_finding_030998",
+        "file_path": "l6_10w_read_model/l6_10w_blockers.json",
+        "line_number": 5,
+        "matched_pattern": "user_must_provide",
+        "matched_excerpt_short": "\"user_must_provide_one_reviewed_seed_locator_url\"",
+        "classification": "owner_manual_burden",
+        "severity": "P1",
+        "migration_target_policy": "policy/owner_burden_reduction_policy.json",
+        "patch_strategy": "replace_user_manual_step_with_launcher"
+      }
+    ],
+    "top_20_hardcoded_forbidden_action_lists": [
+      {
+        "finding_id": "l7_0q2_finding_000127",
+        "file_path": ".claude/tasks/cto-m1-maya-l5-forgetguard.md",
+        "line_number": 9,
+        "matched_pattern": "deny",
+        "matched_excerpt_short": "- [ ] Add `ceo_direct_engineer_dispatch` deny rule to `ystar/governance/forget_guard_rules.yaml`",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000128",
+        "file_path": ".claude/tasks/cto-m1-maya-l5-forgetguard.md",
+        "line_number": 11,
+        "matched_pattern": "deny",
+        "matched_excerpt_short": "- [ ] deny_mode with clear violation message referencing AMENDMENT-025 L5 constraint",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000129",
+        "file_path": ".claude/tasks/cto-m1-maya-l5-forgetguard.md",
+        "line_number": 12,
+        "matched_pattern": "deny",
+        "matched_excerpt_short": "- [ ] governance_boot.sh STEP 8.5 self-test: mock CEO write to .claude/tasks/eng-kernel-test.md, verify DENY",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001240",
+        "file_path": "agent_brains/Aiden-CEO/chain_map.json",
+        "line_number": 207,
+        "matched_pattern": "deny",
+        "matched_excerpt_short": "\"allow/deny/escalate enforcement\"",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001293",
+        "file_path": "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/boundary_map.json",
+        "line_number": 117,
+        "matched_pattern": "deny",
+        "matched_excerpt_short": "\"revision/escalation/deny signal\"",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001295",
+        "file_path": "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/boundary_map.json",
+        "line_number": 135,
+        "matched_pattern": "deny",
+        "matched_excerpt_short": "\"Enforce allow/deny/escalate result\"",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001353",
+        "file_path": "agent_brains/Aiden-CEO/pre_u_counterfactual/packet_schema.json",
+        "line_number": 272,
+        "matched_pattern": "deny",
+        "matched_excerpt_short": "\"deny_if_missing_or_invalid\",",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001373",
+        "file_path": "agent_brains/Ethan-CTO/execution_channels.json",
+        "line_number": 37,
+        "matched_pattern": "not_allowed",
+        "matched_excerpt_short": "\"not_allowed_for\": [",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001374",
+        "file_path": "agent_brains/Ethan-CTO/execution_channels.json",
+        "line_number": 59,
+        "matched_pattern": "not_allowed",
+        "matched_excerpt_short": "\"not_allowed_for\": [",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001375",
+        "file_path": "agent_brains/Ethan-CTO/execution_channels.json",
+        "line_number": 79,
+        "matched_pattern": "not_allowed",
+        "matched_excerpt_short": "\"not_allowed_for\": [",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001376",
+        "file_path": "agent_brains/Ethan-CTO/execution_channels.json",
+        "line_number": 101,
+        "matched_pattern": "not_allowed",
+        "matched_excerpt_short": "\"not_allowed_for\": [",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001377",
+        "file_path": "agent_brains/Ethan-CTO/execution_channels.json",
+        "line_number": 119,
+        "matched_pattern": "not_allowed",
+        "matched_excerpt_short": "\"not_allowed_for\": [",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001397",
+        "file_path": "agent_brains/schema/execution_channels.schema.json",
+        "line_number": 51,
+        "matched_pattern": "not_allowed",
+        "matched_excerpt_short": "\"not_allowed_for\"",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001398",
+        "file_path": "agent_brains/schema/execution_channels.schema.json",
+        "line_number": 86,
+        "matched_pattern": "not_allowed",
+        "matched_excerpt_short": "\"not_allowed_for\": {",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001409",
+        "file_path": "agent_team_work_proposal/generated/agent_team_observation_input.json",
+        "line_number": 17,
+        "matched_pattern": "blocked",
+        "matched_excerpt_short": "\"blocked_risks\": [",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001421",
+        "file_path": "agent_team_work_proposal/generated/agent_team_observation_input.json",
+        "line_number": 79,
+        "matched_pattern": "blocked",
+        "matched_excerpt_short": "\"what_remains_blocked\": [",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001428",
+        "file_path": "agent_team_work_proposal/generated/agent_team_observation_input.json",
+        "line_number": 112,
+        "matched_pattern": "blocked",
+        "matched_excerpt_short": "\"blocked_risks\": [",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001500",
+        "file_path": "agent_team_work_proposal/role_review_schema.json",
+        "line_number": 11,
+        "matched_pattern": "forbidden",
+        "matched_excerpt_short": "\"forbidden_actions\",",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001501",
+        "file_path": "agent_team_work_proposal/role_review_schema.json",
+        "line_number": 11,
+        "matched_pattern": "forbidden_actions",
+        "matched_excerpt_short": "\"forbidden_actions\",",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001502",
+        "file_path": "agent_team_work_proposal/role_review_schema.json",
+        "line_number": 20,
+        "matched_pattern": "forbidden",
+        "matched_excerpt_short": "\"forbidden_actions\": {\"type\": \"array\"},",
+        "classification": "hardcoded_forbidden_action_list",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "add_policy_ref"
+      }
+    ],
+    "top_20_disabled_as_final_state_locations": [
+      {
+        "finding_id": "l7_0q2_finding_000584",
+        "file_path": "adapter_bound_blocker_and_fallback_report/adapter_fallback_decision.json",
+        "line_number": 4,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"selected_fallback\": \"use_disabled_no_network_resolver_and_block\",",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000590",
+        "file_path": "adapter_bound_blocker_and_fallback_report/adapter_fallback_decision.json",
+        "line_number": 34,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"disabled_no_network_resolver_authorized\": true,",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000606",
+        "file_path": "adapter_bound_blocker_and_fallback_report/future_resolver_enablement_requirements.json",
+        "line_number": 37,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"disabled_no_network_resolver_authorized\": true,",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000617",
+        "file_path": "adapter_bound_blocker_and_fallback_report/locator_tooling_blocker.json",
+        "line_number": 9,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"adapter_present_but_disabled\",",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000623",
+        "file_path": "adapter_bound_blocker_and_fallback_report/locator_tooling_blocker.json",
+        "line_number": 50,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"disabled_no_network_resolver_authorized\": true,",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000639",
+        "file_path": "adapter_bound_evidence_capture/adapter_bound_citation_trace.json",
+        "line_number": 33,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"disabled_no_network_resolver_authorized\": true,",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000677",
+        "file_path": "adapter_bound_evidence_capture/adapter_bound_evidence_packet.json",
+        "line_number": 54,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"disabled_no_network_resolver_authorized\": true,",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000696",
+        "file_path": "adapter_bound_evidence_capture/adapter_bound_evidence_schema.json",
+        "line_number": 53,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"disabled_no_network_resolver_authorized\": true,",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000731",
+        "file_path": "adapter_bound_no_action_receipts/no_account_creation_receipt.json",
+        "line_number": 37,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"disabled_no_network_resolver_authorized\": true,",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000747",
+        "file_path": "adapter_bound_no_action_receipts/no_brain_memory_writeback_receipt.json",
+        "line_number": 37,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"disabled_no_network_resolver_authorized\": true,",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000763",
+        "file_path": "adapter_bound_no_action_receipts/no_broad_search_receipt.json",
+        "line_number": 37,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"disabled_no_network_resolver_authorized\": true,",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000779",
+        "file_path": "adapter_bound_no_action_receipts/no_browser_automation_receipt.json",
+        "line_number": 37,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"disabled_no_network_resolver_authorized\": true,",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000795",
+        "file_path": "adapter_bound_no_action_receipts/no_canonical_mutation_receipt.json",
+        "line_number": 37,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"disabled_no_network_resolver_authorized\": true,",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000812",
+        "file_path": "adapter_bound_no_action_receipts/no_cieu_db_write_receipt.json",
+        "line_number": 37,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"disabled_no_network_resolver_authorized\": true,",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000828",
+        "file_path": "adapter_bound_no_action_receipts/no_contact_receipt.json",
+        "line_number": 37,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"disabled_no_network_resolver_authorized\": true,",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000844",
+        "file_path": "adapter_bound_no_action_receipts/no_crawling_receipt.json",
+        "line_number": 37,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"disabled_no_network_resolver_authorized\": true,",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000860",
+        "file_path": "adapter_bound_no_action_receipts/no_direct_y_star_mutation_receipt.json",
+        "line_number": 37,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"disabled_no_network_resolver_authorized\": true,",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000876",
+        "file_path": "adapter_bound_no_action_receipts/no_form_submission_receipt.json",
+        "line_number": 37,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"disabled_no_network_resolver_authorized\": true,",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000892",
+        "file_path": "adapter_bound_no_action_receipts/no_live_behavior_receipt.json",
+        "line_number": 37,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"disabled_no_network_resolver_authorized\": true,",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      },
+      {
+        "finding_id": "l7_0q2_finding_000926",
+        "file_path": "adapter_bound_no_action_receipts/no_mcp_execution_receipt.json",
+        "line_number": 37,
+        "matched_pattern": "disabled",
+        "matched_excerpt_short": "\"disabled_no_network_resolver_authorized\": true,",
+        "classification": "disabled_as_final_state",
+        "severity": "P1",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "convert_disabled_to_auto_detect"
+      }
+    ],
+    "top_20_no_action_readiness_overuse_locations": [
+      {
+        "finding_id": "l7_0q2_finding_001248",
+        "file_path": "agent_brains/Aiden-CEO/chain_map.json",
+        "line_number": 330,
+        "matched_pattern": "readiness",
+        "matched_excerpt_short": "\"implementation_readiness\": {",
+        "classification": "readiness_or_preflight_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001302",
+        "file_path": "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/boundary_map.json",
+        "line_number": 230,
+        "matched_pattern": "readiness",
+        "matched_excerpt_short": "\"Display learning readiness\"",
+        "classification": "readiness_or_preflight_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001420",
+        "file_path": "agent_team_work_proposal/generated/agent_team_observation_input.json",
+        "line_number": 69,
+        "matched_pattern": "readiness",
+        "matched_excerpt_short": "\"live readiness and boundary summaries\",",
+        "classification": "readiness_or_preflight_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001504",
+        "file_path": "agent_team_work_proposal/tools/build_agent_team_work_proposal.py",
+        "line_number": 30,
+        "matched_pattern": "readiness",
+        "matched_excerpt_short": "TOOL_BRIDGE_SUMMARY = \"governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json\"",
+        "classification": "readiness_or_preflight_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001505",
+        "file_path": "agent_team_work_proposal/tools/build_agent_team_work_proposal.py",
+        "line_number": 31,
+        "matched_pattern": "readiness",
+        "matched_excerpt_short": "READONLY_TOOL_SUMMARY = \"governed_readonly_observation_tool/generated/tool_readiness_summary.json\"",
+        "classification": "readiness_or_preflight_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001510",
+        "file_path": "agent_team_work_proposal/tools/build_agent_team_work_proposal.py",
+        "line_number": 177,
+        "matched_pattern": "readiness",
+        "matched_excerpt_short": "\"governed_tool_invocation_bridge/generated/tool_bridge_readiness_summary.json\",",
+        "classification": "readiness_or_preflight_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001513",
+        "file_path": "agent_team_work_proposal/tools/build_agent_team_work_proposal.py",
+        "line_number": 241,
+        "matched_pattern": "readiness",
+        "matched_excerpt_short": "\"evidence_refs\": [\"labs_live_readiness/generated/live_readiness_report.json\"],",
+        "classification": "readiness_or_preflight_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001514",
+        "file_path": "agent_team_work_proposal/tools/build_agent_team_work_proposal.py",
+        "line_number": 242,
+        "matched_pattern": "readiness",
+        "matched_excerpt_short": "\"tool_need\": \"read-only readiness and boundary summaries\",",
+        "classification": "readiness_or_preflight_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001802",
+        "file_path": "agentic_pilot_approval_eligibility_gate/approval_eligibility_matrix.json",
+        "line_number": 23,
+        "matched_pattern": "no_action",
+        "matched_excerpt_short": "\"no_action_constraints_defined\": true,",
+        "classification": "no_action_receipt_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001812",
+        "file_path": "agentic_pilot_approval_eligibility_gate/approval_eligibility_matrix.json",
+        "line_number": 47,
+        "matched_pattern": "no_action",
+        "matched_excerpt_short": "\"no_action_constraints_defined\": true,",
+        "classification": "no_action_receipt_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001822",
+        "file_path": "agentic_pilot_approval_eligibility_gate/approval_eligibility_matrix.json",
+        "line_number": 71,
+        "matched_pattern": "no_action",
+        "matched_excerpt_short": "\"no_action_constraints_defined\": true,",
+        "classification": "no_action_receipt_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001843",
+        "file_path": "agentic_pilot_approval_eligibility_gate/eligible_work_orders.json",
+        "line_number": 23,
+        "matched_pattern": "no_action",
+        "matched_excerpt_short": "\"no_action_constraints_defined\": true,",
+        "classification": "no_action_receipt_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001853",
+        "file_path": "agentic_pilot_approval_eligibility_gate/eligible_work_orders.json",
+        "line_number": 47,
+        "matched_pattern": "no_action",
+        "matched_excerpt_short": "\"no_action_constraints_defined\": true,",
+        "classification": "no_action_receipt_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001863",
+        "file_path": "agentic_pilot_approval_eligibility_gate/eligible_work_orders.json",
+        "line_number": 71,
+        "matched_pattern": "no_action",
+        "matched_excerpt_short": "\"no_action_constraints_defined\": true,",
+        "classification": "no_action_receipt_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001899",
+        "file_path": "agentic_pilot_approval_packet_assembler/agentic_pilot_approval_packet_001.json",
+        "line_number": 45,
+        "matched_pattern": "no_action",
+        "matched_excerpt_short": "\"no_action_constraints\": [",
+        "classification": "no_action_receipt_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001943",
+        "file_path": "agentic_pilot_approval_packet_assembler/agentic_pilot_approval_packet_002.json",
+        "line_number": 45,
+        "matched_pattern": "no_action",
+        "matched_excerpt_short": "\"no_action_constraints\": [",
+        "classification": "no_action_receipt_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      },
+      {
+        "finding_id": "l7_0q2_finding_001984",
+        "file_path": "agentic_pilot_approval_packet_assembler/agentic_pilot_approval_packet_003.json",
+        "line_number": 45,
+        "matched_pattern": "no_action",
+        "matched_excerpt_short": "\"no_action_constraints\": [",
+        "classification": "no_action_receipt_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      },
+      {
+        "finding_id": "l7_0q2_finding_002039",
+        "file_path": "agentic_pilot_approval_packet_assembler/agentic_pilot_approval_packet_schema.json",
+        "line_number": 19,
+        "matched_pattern": "no_action",
+        "matched_excerpt_short": "\"no_action_constraints\",",
+        "classification": "no_action_receipt_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      },
+      {
+        "finding_id": "l7_0q2_finding_002091",
+        "file_path": "agentic_pilot_dry_run_executor/dry_run_sequence.json",
+        "line_number": 7,
+        "matched_pattern": "readiness",
+        "matched_excerpt_short": "\"validate_runtime_readiness_packet\",",
+        "classification": "readiness_or_preflight_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      },
+      {
+        "finding_id": "l7_0q2_finding_002105",
+        "file_path": "agentic_pilot_dry_run_executor/dry_run_trace_001.json",
+        "line_number": 7,
+        "matched_pattern": "readiness",
+        "matched_excerpt_short": "\"linked_runtime_readiness_packet_id\": \"l6_9_runtime_readiness_packet_001\",",
+        "classification": "readiness_or_preflight_overuse",
+        "severity": "P2",
+        "migration_target_policy": "policy/action_capability_registry.json",
+        "patch_strategy": "migrate_to_staged_policy"
+      }
+    ],
+    "policy_registry_coverage_percentage": 1.78,
+    "number_of_files_already_using_policy_ref": 697,
+    "number_of_files_needing_policy_ref_migration": 38369
+  }
+}

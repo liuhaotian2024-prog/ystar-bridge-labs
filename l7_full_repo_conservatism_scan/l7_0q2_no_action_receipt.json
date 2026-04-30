@@ -1,0 +1,16 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.0Q2",
+  "scan_method": "tracked_files_only_via_git_ls_files",
+  "external_side_effects_occurred": false,
+  "core_writeback_occurred": false,
+  "ask_user_for_url_occurred": false,
+  "secret_values_serialized": false,
+  "db_files_read": false,
+  "wal_files_read": false,
+  "shm_files_read": false,
+  "log_files_read": false,
+  "active_agent_marker_content_read": false,
+  "y_star_gov_modified": false,
+  "gov_mcp_modified": false
+}

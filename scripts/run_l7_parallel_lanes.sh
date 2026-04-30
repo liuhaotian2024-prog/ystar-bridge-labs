@@ -71,6 +71,7 @@ print_header() {
   echo "network: disabled by default"
   echo "external actions: blocked"
   echo "core writeback: blocked"
+  echo "policy registry: policy/action_capability_registry.json (staged capability control)"
 }
 
 run_integration() {
