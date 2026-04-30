@@ -25,12 +25,29 @@
     "POST /api/scheduler/run_bounded",
     "GET /api/autonomous_runs",
     "GET /api/progress_heartbeats",
-    "GET /api/approval_interrupts"
+    "GET /api/approval_interrupts",
+    "GET /api/l8/first_cash_path/status",
+    "POST /api/l8/first_cash_path/start",
+    "POST /api/l8/commercial_actions/build",
+    "GET /api/l8/commercial_actions",
+    "GET /api/l8/approvals",
+    "POST /api/l8/approvals/decide",
+    "GET /api/l8/manual_send_packets",
+    "POST /api/l8/manual_send_packets/mark",
+    "POST /api/l8/customer_feedback",
+    "GET /api/l8/customer_feedback",
+    "POST /api/l8/residuals/build",
+    "GET /api/l8/residuals",
+    "POST /api/l8/learning_candidates/build",
+    "GET /api/l8/learning_candidates",
+    "GET /api/l8/cockpit"
   ],
   "existing_html_owner_usable": false,
   "next_one_command_action": "bash scripts/run_l7_labs_office_web.sh --mode serve",
   "no_coo_invented_as_legacy_member": true,
   "l7_5_summary_ref": "l7_labs_whiteboard_collaboration_runtime/l7_5_summary.json",
   "l7_6_summary_ref": "l7_labs_team_self_work_scheduler/l7_6_summary.json",
-  "scheduler_created": true
+  "scheduler_created": true,
+  "l8_summary_ref": "l8_first_cash_path_operating_loop/l8_summary.json",
+  "l8_first_cash_path_initialized": true
 }

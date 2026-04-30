@@ -39,6 +39,16 @@ from l7_labs_team_self_work_scheduler.progress_ledger import (  # noqa: E402
     load_progress_heartbeats,
 )
 from l7_labs_team_self_work_scheduler.scheduler import scheduler_status, run_bounded as run_scheduler_bounded, run_once as run_scheduler_once  # noqa: E402
+from l8_first_cash_path_operating_loop.cockpit_model import build_cockpit_snapshot, current_cockpit  # noqa: E402
+from l8_first_cash_path_operating_loop.commercial_action_builder import build_commercial_actions  # noqa: E402
+from l8_first_cash_path_operating_loop.commercial_action_queue import list_commercial_actions  # noqa: E402
+from l8_first_cash_path_operating_loop.commercial_residual import build_commercial_residual, list_commercial_residuals  # noqa: E402
+from l8_first_cash_path_operating_loop.customer_feedback_intake import list_customer_feedback, record_customer_feedback  # noqa: E402
+from l8_first_cash_path_operating_loop.first_cash_path_loader import first_cash_path_status, initialize_first_cash_path  # noqa: E402
+from l8_first_cash_path_operating_loop.first_cash_path_model import latest_packet  # noqa: E402
+from l8_first_cash_path_operating_loop.learning_candidate_builder import build_learning_candidate, list_learning_candidates  # noqa: E402
+from l8_first_cash_path_operating_loop.manual_send_packet import list_manual_send_packets, mark_manual_send_packet  # noqa: E402
+from l8_first_cash_path_operating_loop.owner_approval_center import decide_action, list_approval_decisions, list_pending_approvals  # noqa: E402
 
 ALLOWED_ACTIONS = [
     "local packet creation",
@@ -231,6 +241,22 @@ class OfficeHandler(BaseHTTPRequestHandler):
                 json_response(self, {"progress_heartbeats": load_progress_heartbeats()})
             elif path == "/api/approval_interrupts":
                 json_response(self, {"approval_interrupts": load_approval_interrupts()})
+            elif path == "/api/l8/first_cash_path/status":
+                json_response(self, first_cash_path_status())
+            elif path == "/api/l8/commercial_actions":
+                json_response(self, {"commercial_actions": list_commercial_actions()})
+            elif path == "/api/l8/approvals":
+                json_response(self, {"pending_approvals": list_pending_approvals(), "approval_decisions": list_approval_decisions()})
+            elif path == "/api/l8/manual_send_packets":
+                json_response(self, {"manual_send_packets": list_manual_send_packets()})
+            elif path == "/api/l8/customer_feedback":
+                json_response(self, {"customer_feedback": list_customer_feedback()})
+            elif path == "/api/l8/residuals":
+                json_response(self, {"commercial_residuals": list_commercial_residuals()})
+            elif path == "/api/l8/learning_candidates":
+                json_response(self, {"learning_candidates": list_learning_candidates()})
+            elif path == "/api/l8/cockpit":
+                json_response(self, current_cockpit())
             else:
                 error_response(self, HTTPStatus.NOT_FOUND, "not found")
         except Exception as exc:  # pragma: no cover - defensive server boundary
@@ -308,6 +334,65 @@ class OfficeHandler(BaseHTTPRequestHandler):
                         max_agent_replies_per_cycle=int(payload.get("max_agent_replies_per_cycle", 8)),
                     ),
                 )
+            elif parsed.path == "/api/l8/first_cash_path/start":
+                path = initialize_first_cash_path(force=bool(payload.get("force", False)))
+                json_response(self, {"ok": True, "first_cash_path": path, "cockpit": build_cockpit_snapshot()})
+            elif parsed.path == "/api/l8/commercial_actions/build":
+                result = build_commercial_actions(force=bool(payload.get("force", False)))
+                result["cockpit"] = build_cockpit_snapshot()
+                json_response(self, result)
+            elif parsed.path == "/api/l8/approvals/decide":
+                action_id = str(payload.get("action_id", "")).strip()
+                decision = str(payload.get("decision", "")).strip()
+                if not action_id or not decision:
+                    error_response(self, HTTPStatus.BAD_REQUEST, "action_id and decision are required")
+                    return
+                result = decide_action(action_id, decision, str(payload.get("decision_note", "")))
+                result["cockpit"] = build_cockpit_snapshot()
+                json_response(self, result)
+            elif parsed.path == "/api/l8/manual_send_packets/mark":
+                packet_id = str(payload.get("packet_id", "")).strip()
+                status = str(payload.get("owner_marked_status", "")).strip()
+                if not packet_id or not status:
+                    error_response(self, HTTPStatus.BAD_REQUEST, "packet_id and owner_marked_status are required")
+                    return
+                receipt = mark_manual_send_packet(packet_id, status, str(payload.get("owner_note", "")))
+                json_response(self, {"ok": True, "manual_action_receipt": receipt, "cockpit": build_cockpit_snapshot()})
+            elif parsed.path == "/api/l8/customer_feedback":
+                packet_id = str(payload.get("manual_send_packet_id", "")).strip()
+                response_status = str(payload.get("response_status", "")).strip()
+                if not packet_id or not response_status:
+                    error_response(self, HTTPStatus.BAD_REQUEST, "manual_send_packet_id and response_status are required")
+                    return
+                feedback = record_customer_feedback(
+                    packet_id,
+                    response_status,
+                    str(payload.get("feedback_text", "")),
+                    payload.get("paid_signal") if "paid_signal" in payload else None,
+                    str(payload.get("objection_type", "unknown")),
+                    str(payload.get("next_step_requested", "")),
+                )
+                json_response(self, {"ok": True, "customer_feedback": feedback, "cockpit": build_cockpit_snapshot()})
+            elif parsed.path == "/api/l8/residuals/build":
+                feedback_id = str(payload.get("feedback_id", "")).strip()
+                if not feedback_id:
+                    latest_feedback = latest_packet("customer_feedback")
+                    feedback_id = latest_feedback.get("feedback_id", "") if latest_feedback else ""
+                if not feedback_id:
+                    error_response(self, HTTPStatus.BAD_REQUEST, "feedback_id is required")
+                    return
+                residual = build_commercial_residual(feedback_id)
+                json_response(self, {"ok": True, "commercial_residual": residual, "cockpit": build_cockpit_snapshot()})
+            elif parsed.path == "/api/l8/learning_candidates/build":
+                residual_id = str(payload.get("residual_id", "")).strip()
+                if not residual_id:
+                    latest_residual = latest_packet("commercial_residuals")
+                    residual_id = latest_residual.get("residual_id", "") if latest_residual else ""
+                if not residual_id:
+                    error_response(self, HTTPStatus.BAD_REQUEST, "residual_id is required")
+                    return
+                candidate = build_learning_candidate(residual_id)
+                json_response(self, {"ok": True, "learning_candidate": candidate, "cockpit": build_cockpit_snapshot()})
             else:
                 error_response(self, HTTPStatus.NOT_FOUND, "not found")
         except Exception as exc:  # pragma: no cover - defensive server boundary

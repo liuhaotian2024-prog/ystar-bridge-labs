@@ -7,6 +7,7 @@
   "current_phase": "Real Labs Office Web UI Runtime",
   "whiteboard_runtime_phase": "Real Labs Whiteboard Collaboration & Team Work Runtime",
   "scheduler_runtime_phase": "L7.6 Labs Team Self-Work Scheduler & Autonomous Task Loop",
+  "l8_runtime_phase": "L8.0 First Cash Path Operating Loop",
   "legacy_source": "l7_labs_office_legacy_integration",
   "agent_count": 12,
   "agents": [
@@ -1777,6 +1778,15 @@
     "progress heartbeat packets",
     "approval interruption packets",
     "completion report aggregation"
+  ],
+  "l8_features": [
+    "first cash path cockpit",
+    "commercial action queue",
+    "owner approval center",
+    "manual-send packet generation",
+    "customer feedback intake",
+    "commercial residual analysis",
+    "review-gated learning candidates"
   ],
   "work_board_columns": [
     "Inbox",

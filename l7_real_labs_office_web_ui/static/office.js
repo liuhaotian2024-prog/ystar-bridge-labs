@@ -87,6 +87,25 @@ function renderScheduler(status, runs, heartbeats, interrupts) {
   $("autonomous-runs").innerHTML = (runs.autonomous_runs || []).slice(-8).reverse().map((item) => `<li>${escapeHtml(item.summary)} <span class="muted">${escapeHtml(item.stop_reason)}</span></li>`).join("") || "<li>No autonomous runs yet.</li>";
 }
 
+function renderL8Cockpit(cockpit) {
+  const path = cockpit.selected_first_cash_path || {};
+  const pendingActions = cockpit.pending_commercial_actions || [];
+  const manualPackets = cockpit.approved_manual_send_packets || [];
+  const feedback = cockpit.customer_feedback_packets || [];
+  const residuals = cockpit.commercial_residuals || [];
+  const learning = cockpit.learning_candidates || [];
+  $("l8-cockpit").innerHTML = `
+    <p><strong>Selected path:</strong> ${escapeHtml(path.selected_offer || "Founder AI Workflow Audit & CEO Command Brief Sprint")}</p>
+    <p><strong>Stage:</strong> ${escapeHtml(cockpit.current_commercial_stage)}</p>
+    <p><strong>Pending actions:</strong> ${pendingActions.length} · <strong>Manual packets:</strong> ${manualPackets.length} · <strong>Feedback:</strong> ${feedback.length}</p>
+    <p><strong>Residuals:</strong> ${residuals.length} · <strong>Learning candidates:</strong> ${learning.length}</p>
+    <p><strong>Paid signal:</strong> ${escapeHtml(cockpit.paid_signal_status)}</p>
+    <p><strong>Next owner decision:</strong> ${escapeHtml(cockpit.next_recommended_owner_decision)}</p>
+    <p><strong>Tool-send email enabled:</strong> ${cockpit.tool_send_email_enabled ? "yes" : "no"}</p>`;
+  $("l8-action-select").innerHTML = pendingActions.map((action) => `<option value="${escapeHtml(action.action_id)}">${escapeHtml(action.action_type)} · ${escapeHtml(action.status)}</option>`).join("") || "<option value=''>No pending action</option>";
+  $("l8-manual-packet-select").innerHTML = manualPackets.map((packet) => `<option value="${escapeHtml(packet.packet_id)}">${escapeHtml(packet.subject_or_opening)} · ${escapeHtml(packet.status)}</option>`).join("") || "<option value=''>No manual-send packet</option>";
+}
+
 async function refreshOffice() {
   const state = await getJson("/api/status");
   const snapshot = await getJson("/api/whiteboard");
@@ -94,14 +113,16 @@ async function refreshOffice() {
   const runs = await getJson("/api/autonomous_runs");
   const heartbeats = await getJson("/api/progress_heartbeats");
   const interrupts = await getJson("/api/approval_interrupts");
+  const l8Cockpit = await getJson("/api/l8/cockpit");
   OFFICE_STATE = state;
-  $("phase").textContent = `${state.scheduler_runtime_phase || state.whiteboard_runtime_phase || state.current_phase} · ${state.agent_count} recovered agents`;
+  $("phase").textContent = `${state.l8_runtime_phase || state.scheduler_runtime_phase || state.whiteboard_runtime_phase || state.current_phase} · ${state.agent_count} recovered agents`;
   renderRoster(state.agents);
   renderWhiteboard(snapshot);
   renderWorkBoard(snapshot.work_board || {});
   renderAgentPanel(state, snapshot);
   renderTimeline(snapshot.timeline || []);
   renderScheduler(scheduler, runs, heartbeats, interrupts);
+  renderL8Cockpit(l8Cockpit);
   $("pending-approvals").innerHTML = list((snapshot.approval_requests || []).map((item) => item.reason).concat(state.pending_approvals || []));
   $("blocked-actions").innerHTML = list(state.blocked_actions);
   if (state.agents.length) openRoom(state.agents.find((agent) => agent.agent_id === "aiden_ceo")?.agent_id || state.agents[0].agent_id);
@@ -128,5 +149,25 @@ $("team-cycle-button").addEventListener("click", () => act("Team work cycle", "/
 $("scheduler-once-button").addEventListener("click", () => act("Scheduler run once", "/api/scheduler/run_once", {max_cycles: 1}));
 $("scheduler-bounded-button").addEventListener("click", () => act("Bounded scheduler self-work", "/api/scheduler/run_bounded", {max_work_items: 3, max_cycles: 2}));
 $("completion-button").addEventListener("click", () => act("Completion report", "/api/completion_report"));
+$("l8-start-button").addEventListener("click", () => act("L8 first cash path initialized", "/api/l8/first_cash_path/start"));
+$("l8-build-actions-button").addEventListener("click", () => act("L8 commercial action queue built", "/api/l8/commercial_actions/build"));
+$("l8-decide-button").addEventListener("click", () => act("L8 approval decision", "/api/l8/approvals/decide", {
+  action_id: $("l8-action-select").value,
+  decision: $("l8-decision-select").value,
+  decision_note: $("l8-decision-note").value,
+}));
+$("l8-mark-manual-button").addEventListener("click", () => act("L8 manual-send packet marked", "/api/l8/manual_send_packets/mark", {
+  packet_id: $("l8-manual-packet-select").value,
+  owner_marked_status: $("l8-manual-status-select").value,
+  owner_note: $("l8-manual-note").value,
+}));
+$("l8-feedback-button").addEventListener("click", () => act("L8 customer feedback recorded", "/api/l8/customer_feedback", {
+  manual_send_packet_id: $("l8-manual-packet-select").value,
+  response_status: $("l8-feedback-status-select").value,
+  feedback_text: $("l8-feedback-text").value,
+}));
+$("l8-residual-button").addEventListener("click", () => act("L8 commercial residual generated", "/api/l8/residuals/build"));
+$("l8-learning-button").addEventListener("click", () => act("L8 learning candidate generated", "/api/l8/learning_candidates/build"));
+$("l8-refresh-cockpit-button").addEventListener("click", () => act("L8 cockpit snapshot refreshed", "/api/l8/first_cash_path/start"));
 
 refreshOffice().catch((error) => { $("packet-result").textContent = `Office failed to load: ${error}`; });

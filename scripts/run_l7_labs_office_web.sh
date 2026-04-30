@@ -47,6 +47,15 @@ scheduler_ticks = list(Path("l7_real_labs_office_web_ui/runtime_packets/schedule
 heartbeats = list(Path("l7_real_labs_office_web_ui/runtime_packets/progress_heartbeats").glob("*.json"))
 approval_interrupts = list(Path("l7_real_labs_office_web_ui/runtime_packets/approval_interrupts").glob("*.json"))
 sys_path = Path("l7_labs_team_self_work_scheduler")
+l8_root = Path("l8_first_cash_path_operating_loop/runtime_packets")
+l8_dirs = {
+    "actions": l8_root / "commercial_action_queue",
+    "approvals": l8_root / "owner_approval_decisions",
+    "manual": l8_root / "manual_send_packets",
+    "feedback": l8_root / "customer_feedback",
+    "residuals": l8_root / "commercial_residuals",
+    "learning": l8_root / "learning_candidates",
+}
 print("Y*Bridge Labs Office Web UI")
 print(f"- URL: {state['local_url']}")
 print(f"- agents: {state['agent_count']}")
@@ -58,6 +67,14 @@ print(f"- L7.6 scheduler ready: {sys_path.exists()}")
 print(f"- scheduler ticks: {len(scheduler_ticks)}")
 print(f"- progress heartbeats: {len(heartbeats)}")
 print(f"- approval interruptions: {len(approval_interrupts)}")
+print(f"- L8 package available: {Path('l8_first_cash_path_operating_loop').exists()}")
+print(f"- L8 commercial actions: {len(list(l8_dirs['actions'].glob('*.json'))) if l8_dirs['actions'].exists() else 0}")
+print(f"- L8 owner approvals: {len(list(l8_dirs['approvals'].glob('*.json'))) if l8_dirs['approvals'].exists() else 0}")
+print(f"- L8 manual-send packets: {len(list(l8_dirs['manual'].glob('*.json'))) if l8_dirs['manual'].exists() else 0}")
+print(f"- L8 feedback packets: {len(list(l8_dirs['feedback'].glob('*.json'))) if l8_dirs['feedback'].exists() else 0}")
+print(f"- L8 residuals: {len(list(l8_dirs['residuals'].glob('*.json'))) if l8_dirs['residuals'].exists() else 0}")
+print(f"- L8 learning candidates: {len(list(l8_dirs['learning'].glob('*.json'))) if l8_dirs['learning'].exists() else 0}")
+print("- external side effects: no")
 print(f"- pending approvals: {', '.join(state.get('pending_approvals', []))}")
 print(f"- next command: bash scripts/run_l7_labs_office_web.sh --mode serve")
 PY
@@ -71,14 +88,40 @@ from pathlib import Path
 sys.path.insert(0, str(Path("scripts/l7_labs_office_web").resolve()))
 sys.path.insert(0, str(Path(".").resolve()))
 from l7_labs_team_self_work_scheduler.scheduler import create_demo_work_item, run_bounded
+from l8_first_cash_path_operating_loop.commercial_action_builder import build_commercial_actions
+from l8_first_cash_path_operating_loop.commercial_residual import build_commercial_residual
+from l8_first_cash_path_operating_loop.customer_feedback_intake import record_customer_feedback
+from l8_first_cash_path_operating_loop.first_cash_path_loader import initialize_first_cash_path
+from l8_first_cash_path_operating_loop.learning_candidate_builder import build_learning_candidate
+from l8_first_cash_path_operating_loop.manual_send_packet import mark_manual_send_packet
+from l8_first_cash_path_operating_loop.owner_approval_center import decide_action
+from l8_first_cash_path_operating_loop.cockpit_model import build_cockpit_snapshot
 item = create_demo_work_item()
 result = run_bounded(max_work_items=1, max_cycles=2)
 report = None
 if result.get("results"):
     report = result["results"][0].get("completion_report", {}).get("completion_report_id")
-print("demo_ok: L7.6 autonomous first-cash-path offer package work item created and processed locally")
+cash_path = initialize_first_cash_path()
+actions = build_commercial_actions(force=True)["actions"]
+selected = next(action for action in actions if action["action_type"] == "direct_founder_outreach")
+decision = decide_action(selected["action_id"], "approve", "Simulated local demo approval only.")
+manual_packet = decision["manual_send_packet"]
+receipt = mark_manual_send_packet(manual_packet["packet_id"], "marked_sent_by_owner", "Simulated local demo receipt; no email was sent.")
+feedback = record_customer_feedback(manual_packet["packet_id"], "interested", "Simulated customer asks for more detail about timeline and sample output.")
+residual = build_commercial_residual(feedback["feedback_id"])
+candidate = build_learning_candidate(residual["residual_id"])
+cockpit = build_cockpit_snapshot()
+print("demo_ok: L8 first cash path operating loop simulated locally")
 print(f"work_item: {item['work_item_id']}")
 print(f"completion_report: {report or 'not_created'}")
+print(f"selected_offer: {cash_path['selected_offer']}")
+print(f"commercial_action: {selected['action_id']}")
+print(f"manual_send_packet: {manual_packet['packet_id']}")
+print(f"manual_action_receipt: {receipt['receipt_id']}")
+print(f"customer_feedback: {feedback['feedback_id']}")
+print(f"commercial_residual: {residual['residual_id']}")
+print(f"learning_candidate: {candidate['candidate_id']}")
+print(f"cockpit_snapshot: {cockpit['cockpit_snapshot_id']}")
 print("next_command: bash scripts/run_l7_labs_office_web.sh --mode serve")
 PY
 }
@@ -116,7 +159,10 @@ try:
     scheduler = json.loads(get("/api/scheduler/status"))
     if not scheduler.get("scheduler_ready"):
         raise SystemExit("scheduler status not ready")
-    print("smoke_ok: GET /, /api/roster, /api/status, /api/scheduler/status")
+    l8 = json.loads(get("/api/l8/cockpit"))
+    if "Founder AI Workflow Audit" not in l8.get("selected_first_cash_path", {}).get("selected_offer", ""):
+        raise SystemExit("L8 cockpit missing selected first cash path")
+    print("smoke_ok: GET /, /api/roster, /api/status, /api/scheduler/status, /api/l8/cockpit")
 except URLError as exc:
     if "Operation not permitted" not in str(exc):
         raise
@@ -129,6 +175,11 @@ except URLError as exc:
     summary = json.loads(Path("l7_labs_team_self_work_scheduler/l7_6_summary.json").read_text(encoding="utf-8"))
     if not summary.get("scheduler_created"):
         raise SystemExit("scheduler summary missing")
+    l8_summary = json.loads(Path("l8_first_cash_path_operating_loop/l8_summary.json").read_text(encoding="utf-8"))
+    if not l8_summary.get("first_cash_path_initialized"):
+        raise SystemExit("L8 summary missing")
+    if "L8 First Cash Path Cockpit" not in html:
+        raise SystemExit("HTML missing L8 cockpit")
     print("smoke_ok: offline fallback because sandbox blocked localhost socket")
 PY
 }

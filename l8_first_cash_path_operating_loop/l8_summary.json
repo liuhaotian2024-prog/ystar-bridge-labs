@@ -1,0 +1,19 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L8.0",
+  "packet_type": "l8_manifest",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "first_cash_path_initialized": true,
+  "selected_offer": "Founder AI Workflow Audit & CEO Command Brief Sprint",
+  "cash_path_id": "first_cash_path_founder_ai_workflow_audit_ceo_brief",
+  "commercial_actions_available": 3,
+  "manual_send_execution_mode": "manual_send_packet",
+  "disabled_tool_send_email_future_slot_enabled": false,
+  "grant_rfp_path_created_by_default": false,
+  "cockpit_snapshot_id": "l8_cockpit_latest",
+  "local_url": "http://127.0.0.1:8765",
+  "next_one_command_action": "bash scripts/run_l7_labs_office_web.sh --mode serve",
+  "external_side_effects_occurred": false,
+  "core_writeback_occurred": false,
+  "coo_invented": false
+}

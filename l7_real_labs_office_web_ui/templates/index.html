@@ -18,6 +18,8 @@
       <button id="team-cycle-button" type="button">Run Team Work Cycle</button>
       <button id="scheduler-once-button" type="button">Run Scheduler Once</button>
       <button id="scheduler-bounded-button" type="button">Run Bounded Self-Work</button>
+      <button id="l8-start-button" type="button">Start First Cash Path Loop</button>
+      <button id="l8-build-actions-button" type="button">Build Commercial Action Queue</button>
       <button id="completion-button" type="button">Generate Completion Report</button>
     </div>
   </header>
@@ -60,6 +62,62 @@
       <ul id="approval-interruptions"></ul>
       <h3>Autonomous Runs</h3>
       <ul id="autonomous-runs"></ul>
+    </section>
+
+    <section class="panel l8-cockpit-panel">
+      <h2>L8 First Cash Path Cockpit</h2>
+      <p class="muted">Founder AI Workflow Audit & CEO Command Brief Sprint. Manual-send only; no automatic customer contact.</p>
+      <div id="l8-cockpit" class="l8-cockpit">Loading first cash path loop...</div>
+      <div class="l8-controls">
+        <label>Approval action
+          <select id="l8-action-select"></select>
+        </label>
+        <label>Decision
+          <select id="l8-decision-select">
+            <option value="approve">approve</option>
+            <option value="reject">reject</option>
+            <option value="request_revision">request revision</option>
+            <option value="hold">hold</option>
+          </select>
+        </label>
+        <input id="l8-decision-note" placeholder="Optional owner decision note">
+        <button id="l8-decide-button" type="button">Submit Approval Decision</button>
+        <label>Manual-send packet
+          <select id="l8-manual-packet-select"></select>
+        </label>
+        <label>Manual status
+          <select id="l8-manual-status-select">
+            <option value="marked_sent_by_owner">marked sent by owner</option>
+            <option value="not_sent">not sent</option>
+            <option value="revised_outside_system">revised outside system</option>
+            <option value="customer_replied">customer replied</option>
+            <option value="no_response">no response</option>
+            <option value="interested">interested</option>
+            <option value="not_interested">not interested</option>
+            <option value="paid_signal">paid signal</option>
+            <option value="pilot_accepted">pilot accepted</option>
+          </select>
+        </label>
+        <input id="l8-manual-note" placeholder="Manual action note">
+        <button id="l8-mark-manual-button" type="button">Mark Manual Packet</button>
+        <label>Feedback status
+          <select id="l8-feedback-status-select">
+            <option value="no_response">no response</option>
+            <option value="interested">interested</option>
+            <option value="not_interested">not interested</option>
+            <option value="asks_for_more_info">asks for more info</option>
+            <option value="wants_call">wants call</option>
+            <option value="paid_signal">paid signal</option>
+            <option value="pilot_accepted">pilot accepted</option>
+            <option value="rejected">rejected</option>
+          </select>
+        </label>
+        <textarea id="l8-feedback-text" placeholder="Owner-entered customer feedback or demo note"></textarea>
+        <button id="l8-feedback-button" type="button">Record Feedback</button>
+        <button id="l8-residual-button" type="button">Generate Residual</button>
+        <button id="l8-learning-button" type="button">Generate Learning Candidate</button>
+        <button id="l8-refresh-cockpit-button" type="button">Refresh Cockpit Snapshot</button>
+      </div>
     </section>
 
     <section class="panel">

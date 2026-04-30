@@ -22,6 +22,7 @@ GENERATED_AT = "2026-04-30T00:00:00Z"
 LOCAL_URL = "http://127.0.0.1:8765"
 
 from l7_labs_team_self_work_scheduler.manifest_builder import build_manifest as build_l76_manifest  # noqa: E402
+from l8_first_cash_path_operating_loop.l8_manifest_builder import build_manifest as build_l8_manifest  # noqa: E402
 
 PACKET_DIRS = [
     "runtime_packets/owner_messages",
@@ -211,6 +212,7 @@ def build_runtime_state() -> dict[str, Any]:
         "current_phase": "Real Labs Office Web UI Runtime",
         "whiteboard_runtime_phase": "Real Labs Whiteboard Collaboration & Team Work Runtime",
         "scheduler_runtime_phase": "L7.6 Labs Team Self-Work Scheduler & Autonomous Task Loop",
+        "l8_runtime_phase": "L8.0 First Cash Path Operating Loop",
         "legacy_source": "l7_labs_office_legacy_integration",
         "agent_count": len(agents),
         "agents": agents,
@@ -244,6 +246,15 @@ def build_runtime_state() -> dict[str, Any]:
             "progress heartbeat packets",
             "approval interruption packets",
             "completion report aggregation",
+        ],
+        "l8_features": [
+            "first cash path cockpit",
+            "commercial action queue",
+            "owner approval center",
+            "manual-send packet generation",
+            "customer feedback intake",
+            "commercial residual analysis",
+            "review-gated learning candidates",
         ],
         "work_board_columns": ["Inbox", "Interpreting", "Assigned", "In Progress", "Waiting for Approval", "Blocked", "Done"],
         "packet_dirs": packet_dirs,
@@ -283,6 +294,8 @@ def write_assets() -> None:
       <button id="team-cycle-button" type="button">Run Team Work Cycle</button>
       <button id="scheduler-once-button" type="button">Run Scheduler Once</button>
       <button id="scheduler-bounded-button" type="button">Run Bounded Self-Work</button>
+      <button id="l8-start-button" type="button">Start First Cash Path Loop</button>
+      <button id="l8-build-actions-button" type="button">Build Commercial Action Queue</button>
       <button id="completion-button" type="button">Generate Completion Report</button>
     </div>
   </header>
@@ -325,6 +338,62 @@ def write_assets() -> None:
       <ul id="approval-interruptions"></ul>
       <h3>Autonomous Runs</h3>
       <ul id="autonomous-runs"></ul>
+    </section>
+
+    <section class="panel l8-cockpit-panel">
+      <h2>L8 First Cash Path Cockpit</h2>
+      <p class="muted">Founder AI Workflow Audit & CEO Command Brief Sprint. Manual-send only; no automatic customer contact.</p>
+      <div id="l8-cockpit" class="l8-cockpit">Loading first cash path loop...</div>
+      <div class="l8-controls">
+        <label>Approval action
+          <select id="l8-action-select"></select>
+        </label>
+        <label>Decision
+          <select id="l8-decision-select">
+            <option value="approve">approve</option>
+            <option value="reject">reject</option>
+            <option value="request_revision">request revision</option>
+            <option value="hold">hold</option>
+          </select>
+        </label>
+        <input id="l8-decision-note" placeholder="Optional owner decision note">
+        <button id="l8-decide-button" type="button">Submit Approval Decision</button>
+        <label>Manual-send packet
+          <select id="l8-manual-packet-select"></select>
+        </label>
+        <label>Manual status
+          <select id="l8-manual-status-select">
+            <option value="marked_sent_by_owner">marked sent by owner</option>
+            <option value="not_sent">not sent</option>
+            <option value="revised_outside_system">revised outside system</option>
+            <option value="customer_replied">customer replied</option>
+            <option value="no_response">no response</option>
+            <option value="interested">interested</option>
+            <option value="not_interested">not interested</option>
+            <option value="paid_signal">paid signal</option>
+            <option value="pilot_accepted">pilot accepted</option>
+          </select>
+        </label>
+        <input id="l8-manual-note" placeholder="Manual action note">
+        <button id="l8-mark-manual-button" type="button">Mark Manual Packet</button>
+        <label>Feedback status
+          <select id="l8-feedback-status-select">
+            <option value="no_response">no response</option>
+            <option value="interested">interested</option>
+            <option value="not_interested">not interested</option>
+            <option value="asks_for_more_info">asks for more info</option>
+            <option value="wants_call">wants call</option>
+            <option value="paid_signal">paid signal</option>
+            <option value="pilot_accepted">pilot accepted</option>
+            <option value="rejected">rejected</option>
+          </select>
+        </label>
+        <textarea id="l8-feedback-text" placeholder="Owner-entered customer feedback or demo note"></textarea>
+        <button id="l8-feedback-button" type="button">Record Feedback</button>
+        <button id="l8-residual-button" type="button">Generate Residual</button>
+        <button id="l8-learning-button" type="button">Generate Learning Candidate</button>
+        <button id="l8-refresh-cockpit-button" type="button">Refresh Cockpit Snapshot</button>
+      </div>
     </section>
 
     <section class="panel">
@@ -446,6 +515,14 @@ textarea { min-height: 120px; }
   background: rgba(47,111,88,.08);
   margin-bottom: 12px;
 }
+.l8-cockpit {
+  border: 1px dashed var(--accent);
+  border-radius: 16px;
+  padding: 12px;
+  background: rgba(207,102,54,.08);
+  margin-bottom: 12px;
+}
+.l8-controls { display: grid; gap: 10px; }
 .card-grid, .agent-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
 .timeline { max-height: 360px; overflow: auto; }
 pre {
@@ -551,6 +628,25 @@ function renderScheduler(status, runs, heartbeats, interrupts) {
   $("autonomous-runs").innerHTML = (runs.autonomous_runs || []).slice(-8).reverse().map((item) => `<li>${escapeHtml(item.summary)} <span class="muted">${escapeHtml(item.stop_reason)}</span></li>`).join("") || "<li>No autonomous runs yet.</li>";
 }
 
+function renderL8Cockpit(cockpit) {
+  const path = cockpit.selected_first_cash_path || {};
+  const pendingActions = cockpit.pending_commercial_actions || [];
+  const manualPackets = cockpit.approved_manual_send_packets || [];
+  const feedback = cockpit.customer_feedback_packets || [];
+  const residuals = cockpit.commercial_residuals || [];
+  const learning = cockpit.learning_candidates || [];
+  $("l8-cockpit").innerHTML = `
+    <p><strong>Selected path:</strong> ${escapeHtml(path.selected_offer || "Founder AI Workflow Audit & CEO Command Brief Sprint")}</p>
+    <p><strong>Stage:</strong> ${escapeHtml(cockpit.current_commercial_stage)}</p>
+    <p><strong>Pending actions:</strong> ${pendingActions.length} · <strong>Manual packets:</strong> ${manualPackets.length} · <strong>Feedback:</strong> ${feedback.length}</p>
+    <p><strong>Residuals:</strong> ${residuals.length} · <strong>Learning candidates:</strong> ${learning.length}</p>
+    <p><strong>Paid signal:</strong> ${escapeHtml(cockpit.paid_signal_status)}</p>
+    <p><strong>Next owner decision:</strong> ${escapeHtml(cockpit.next_recommended_owner_decision)}</p>
+    <p><strong>Tool-send email enabled:</strong> ${cockpit.tool_send_email_enabled ? "yes" : "no"}</p>`;
+  $("l8-action-select").innerHTML = pendingActions.map((action) => `<option value="${escapeHtml(action.action_id)}">${escapeHtml(action.action_type)} · ${escapeHtml(action.status)}</option>`).join("") || "<option value=''>No pending action</option>";
+  $("l8-manual-packet-select").innerHTML = manualPackets.map((packet) => `<option value="${escapeHtml(packet.packet_id)}">${escapeHtml(packet.subject_or_opening)} · ${escapeHtml(packet.status)}</option>`).join("") || "<option value=''>No manual-send packet</option>";
+}
+
 async function refreshOffice() {
   const state = await getJson("/api/status");
   const snapshot = await getJson("/api/whiteboard");
@@ -558,14 +654,16 @@ async function refreshOffice() {
   const runs = await getJson("/api/autonomous_runs");
   const heartbeats = await getJson("/api/progress_heartbeats");
   const interrupts = await getJson("/api/approval_interrupts");
+  const l8Cockpit = await getJson("/api/l8/cockpit");
   OFFICE_STATE = state;
-  $("phase").textContent = `${state.scheduler_runtime_phase || state.whiteboard_runtime_phase || state.current_phase} · ${state.agent_count} recovered agents`;
+  $("phase").textContent = `${state.l8_runtime_phase || state.scheduler_runtime_phase || state.whiteboard_runtime_phase || state.current_phase} · ${state.agent_count} recovered agents`;
   renderRoster(state.agents);
   renderWhiteboard(snapshot);
   renderWorkBoard(snapshot.work_board || {});
   renderAgentPanel(state, snapshot);
   renderTimeline(snapshot.timeline || []);
   renderScheduler(scheduler, runs, heartbeats, interrupts);
+  renderL8Cockpit(l8Cockpit);
   $("pending-approvals").innerHTML = list((snapshot.approval_requests || []).map((item) => item.reason).concat(state.pending_approvals || []));
   $("blocked-actions").innerHTML = list(state.blocked_actions);
   if (state.agents.length) openRoom(state.agents.find((agent) => agent.agent_id === "aiden_ceo")?.agent_id || state.agents[0].agent_id);
@@ -592,6 +690,26 @@ $("team-cycle-button").addEventListener("click", () => act("Team work cycle", "/
 $("scheduler-once-button").addEventListener("click", () => act("Scheduler run once", "/api/scheduler/run_once", {max_cycles: 1}));
 $("scheduler-bounded-button").addEventListener("click", () => act("Bounded scheduler self-work", "/api/scheduler/run_bounded", {max_work_items: 3, max_cycles: 2}));
 $("completion-button").addEventListener("click", () => act("Completion report", "/api/completion_report"));
+$("l8-start-button").addEventListener("click", () => act("L8 first cash path initialized", "/api/l8/first_cash_path/start"));
+$("l8-build-actions-button").addEventListener("click", () => act("L8 commercial action queue built", "/api/l8/commercial_actions/build"));
+$("l8-decide-button").addEventListener("click", () => act("L8 approval decision", "/api/l8/approvals/decide", {
+  action_id: $("l8-action-select").value,
+  decision: $("l8-decision-select").value,
+  decision_note: $("l8-decision-note").value,
+}));
+$("l8-mark-manual-button").addEventListener("click", () => act("L8 manual-send packet marked", "/api/l8/manual_send_packets/mark", {
+  packet_id: $("l8-manual-packet-select").value,
+  owner_marked_status: $("l8-manual-status-select").value,
+  owner_note: $("l8-manual-note").value,
+}));
+$("l8-feedback-button").addEventListener("click", () => act("L8 customer feedback recorded", "/api/l8/customer_feedback", {
+  manual_send_packet_id: $("l8-manual-packet-select").value,
+  response_status: $("l8-feedback-status-select").value,
+  feedback_text: $("l8-feedback-text").value,
+}));
+$("l8-residual-button").addEventListener("click", () => act("L8 commercial residual generated", "/api/l8/residuals/build"));
+$("l8-learning-button").addEventListener("click", () => act("L8 learning candidate generated", "/api/l8/learning_candidates/build"));
+$("l8-refresh-cockpit-button").addEventListener("click", () => act("L8 cockpit snapshot refreshed", "/api/l8/first_cash_path/start"));
 
 refreshOffice().catch((error) => { $("packet-result").textContent = `Office failed to load: ${error}`; });
 """,
@@ -800,6 +918,7 @@ def build() -> dict[str, Any]:
     write_assets()
     l75_summary = write_l75_outputs(state)
     l76_summary = build_l76_manifest()
+    l8_summary = build_l8_manifest()
     write_json("existing_html_audit.json", audit)
     write_text(
         "existing_html_audit.md",
@@ -873,6 +992,21 @@ Deficiencies:
             "GET /api/autonomous_runs",
             "GET /api/progress_heartbeats",
             "GET /api/approval_interrupts",
+            "GET /api/l8/first_cash_path/status",
+            "POST /api/l8/first_cash_path/start",
+            "POST /api/l8/commercial_actions/build",
+            "GET /api/l8/commercial_actions",
+            "GET /api/l8/approvals",
+            "POST /api/l8/approvals/decide",
+            "GET /api/l8/manual_send_packets",
+            "POST /api/l8/manual_send_packets/mark",
+            "POST /api/l8/customer_feedback",
+            "GET /api/l8/customer_feedback",
+            "POST /api/l8/residuals/build",
+            "GET /api/l8/residuals",
+            "POST /api/l8/learning_candidates/build",
+            "GET /api/l8/learning_candidates",
+            "GET /api/l8/cockpit",
         ],
         "existing_html_owner_usable": audit["owner_usable"],
         "next_one_command_action": "bash scripts/run_l7_labs_office_web.sh --mode serve",
@@ -880,6 +1014,8 @@ Deficiencies:
         "l7_5_summary_ref": "l7_labs_whiteboard_collaboration_runtime/l7_5_summary.json",
         "l7_6_summary_ref": "l7_labs_team_self_work_scheduler/l7_6_summary.json",
         "scheduler_created": l76_summary["scheduler_created"],
+        "l8_summary_ref": "l8_first_cash_path_operating_loop/l8_summary.json",
+        "l8_first_cash_path_initialized": l8_summary["first_cash_path_initialized"],
     }
     write_json("web_ui_summary.json", summary)
     write_text(
