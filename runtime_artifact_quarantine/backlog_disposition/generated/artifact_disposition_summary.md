@@ -2,10 +2,10 @@
 
 Disposition is classification and routing metadata only. It is not ingestion.
 
-- Total artifacts: 275
-- Artifacts with disposition: 275
-- Safe-mined to review queue: 1
-- Forbidden direct read count: 163
+- Total artifacts: 246
+- Artifacts with disposition: 246
+- Safe-mined to review queue: 0
+- Forbidden direct read count: 165
 
 ## Dispositions
 
@@ -14,9 +14,8 @@ Disposition is classification and routing metadata only. It is not ingestion.
 - deferred_requires_marker_metadata_adapter: 26
 - deferred_requires_readonly_db_adapter: 2
 - deferred_sidecar_or_transaction_file: 6
-- ignored_generated_cache: 89
-- ignored_or_non_runtime: 111
-- safe_mined_to_review_queue: 1
+- ignored_generated_cache: 91
+- ignored_or_non_runtime: 81
 
 ## Deferred Adapter Counts
 

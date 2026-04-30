@@ -230,9 +230,9 @@
         "ffa-0032",
         "ffa-0033",
         "ffa-0034",
-        "ffa-0037",
-        "ffa-0039",
-        "ffa-0042"
+        "ffa-0035",
+        "ffa-0038",
+        "ffa-0040"
       ],
       "merge_notes": "Connect to deep Xt observation through generated/read-model evidence only."
     },
@@ -471,7 +471,7 @@
     {
       "asset_id": "ffa-0034",
       "repo_name": "ystar-company",
-      "relative_path": "l6_human_review_decision_boundary_sprint/tools/build_l6_human_review_decision_boundary_sprint.py",
+      "relative_path": "l6_ceo_command_brief_internal_strategy_memo/tools/build_l6_ceo_command_brief_internal_strategy_memo.py",
       "asset_kind": "implemented_code",
       "reason": "Implemented code may be reusable only through a governed local wrapper.",
       "live_enabled": false
@@ -479,13 +479,21 @@
     {
       "asset_id": "ffa-0035",
       "repo_name": "ystar-company",
-      "relative_path": "ystar.bak.20260415_again/governance/residual_loop_engine.py",
+      "relative_path": "l6_human_review_decision_boundary_sprint/tools/build_l6_human_review_decision_boundary_sprint.py",
       "asset_kind": "implemented_code",
       "reason": "Implemented code may be reusable only through a governed local wrapper.",
       "live_enabled": false
     },
     {
       "asset_id": "ffa-0036",
+      "repo_name": "ystar-company",
+      "relative_path": "ystar.bak.20260415_again/governance/residual_loop_engine.py",
+      "asset_kind": "implemented_code",
+      "reason": "Implemented code may be reusable only through a governed local wrapper.",
+      "live_enabled": false
+    },
+    {
+      "asset_id": "ffa-0037",
       "repo_name": "K9Audit",
       "relative_path": "k9log/verifier.py",
       "asset_kind": "implemented_code",
@@ -493,7 +501,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0037",
+      "asset_id": "ffa-0038",
       "repo_name": "Y-star-gov",
       "relative_path": "ystar/governance/ml/loop.py",
       "asset_kind": "implemented_code",
@@ -501,7 +509,7 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0038",
+      "asset_id": "ffa-0039",
       "repo_name": "Y-star-gov",
       "relative_path": "ystar/governance/ml/records.py",
       "asset_kind": "implemented_code",
@@ -509,17 +517,9 @@
       "live_enabled": false
     },
     {
-      "asset_id": "ffa-0039",
-      "repo_name": "Y-star-gov",
-      "relative_path": "ystar/governance/__init__.py",
-      "asset_kind": "implemented_code",
-      "reason": "Implemented validator behavior is valuable but must remain behind a governed wrapper.",
-      "live_enabled": false
-    },
-    {
       "asset_id": "ffa-0040",
       "repo_name": "Y-star-gov",
-      "relative_path": "ystar/governance/cieu_prediction_delta.py",
+      "relative_path": "ystar/governance/__init__.py",
       "asset_kind": "implemented_code",
       "reason": "Implemented validator behavior is valuable but must remain behind a governed wrapper.",
       "live_enabled": false

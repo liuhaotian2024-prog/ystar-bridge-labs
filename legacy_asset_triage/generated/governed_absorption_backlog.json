@@ -7,9 +7,9 @@
       "backlog_id": "absorb-001",
       "title": "Adopt safe read-only generated summaries into observation registry",
       "asset_refs": [
-        "asset-0572",
-        "asset-0635",
-        "asset-1315"
+        "asset-0576",
+        "asset-0640",
+        "asset-1324"
       ],
       "target_bucket": "A_adopt_now_read_only",
       "recommended_owner_agent": "Samantha-Secretary",
@@ -29,9 +29,9 @@
       "backlog_id": "absorb-002",
       "title": "Wrap highest-value CLI or validation assets as disabled governed tools",
       "asset_refs": [
-        "asset-0572",
-        "asset-0635",
-        "asset-1315"
+        "asset-0576",
+        "asset-0640",
+        "asset-1324"
       ],
       "target_bucket": "B_wrap_as_governed_tool",
       "recommended_owner_agent": "Ryan-Platform",
@@ -51,9 +51,9 @@
       "backlog_id": "absorb-003",
       "title": "Rewrite risky historical action patterns from design only",
       "asset_refs": [
-        "asset-0572",
-        "asset-0635",
-        "asset-1315"
+        "asset-0576",
+        "asset-0640",
+        "asset-1324"
       ],
       "target_bucket": "C_rewrite_from_design",
       "recommended_owner_agent": "Ethan-CTO",
@@ -73,9 +73,9 @@
       "backlog_id": "absorb-004",
       "title": "Keep weak historical evidence in quarantine until curation exists",
       "asset_refs": [
-        "asset-0572",
-        "asset-0635",
-        "asset-1315"
+        "asset-0576",
+        "asset-0640",
+        "asset-1324"
       ],
       "target_bucket": "D_quarantine_as_evidence_ore",
       "recommended_owner_agent": "Maya-Governance",
@@ -95,9 +95,9 @@
       "backlog_id": "absorb-005",
       "title": "Retire stale or low-value duplicates from autonomy planning",
       "asset_refs": [
-        "asset-0572",
-        "asset-0635",
-        "asset-1315"
+        "asset-0576",
+        "asset-0640",
+        "asset-1324"
       ],
       "target_bucket": "E_retire_do_not_use",
       "recommended_owner_agent": "Aiden-CEO",

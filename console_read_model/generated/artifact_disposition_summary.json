@@ -1,33 +1,31 @@
 {
   "schema_name": "ystar.console_read_model.generated.artifact_disposition_summary",
   "schema_version": "v0",
-  "total_artifacts": 275,
-  "artifacts_with_disposition": 275,
+  "total_artifacts": 246,
+  "artifacts_with_disposition": 246,
   "dispositions": {
     "deferred_requires_marker_metadata_adapter": 26,
     "deferred_sidecar_or_transaction_file": 6,
     "deferred_requires_classification": 10,
     "deferred_requires_readonly_db_adapter": 2,
-    "ignored_or_non_runtime": 111,
+    "ignored_or_non_runtime": 81,
     "deferred_requires_bounded_log_adapter": 30,
-    "ignored_generated_cache": 89,
-    "safe_mined_to_review_queue": 1
+    "ignored_generated_cache": 91
   },
   "artifact_classes": {
     "DAEMON_STATE": 4,
     "DB_SIDECARE": 6,
     "UNKNOWN_RUNTIME_ARTIFACT": 10,
     "DB_CORE": 1,
-    "UNKNOWN_OR_NON_RUNTIME": 101,
-    "FRAMEWORK_FILE": 10,
+    "UNKNOWN_OR_NON_RUNTIME": 65,
+    "FRAMEWORK_FILE": 16,
     "CACHE_SENTINEL": 5,
     "LOG_RUNTIME": 30,
     "ACTIVE_AGENT_MARKER": 17,
-    "PYCACHE": 89,
-    "BACKUP_DB": 1,
-    "DREAM_REPORT": 1
+    "PYCACHE": 91,
+    "BACKUP_DB": 1
   },
-  "safe_mined_to_review_queue": 1,
+  "safe_mined_to_review_queue": 0,
   "deferred_adapter_counts": {
     "deferred_requires_marker_metadata_adapter": 26,
     "deferred_sidecar_or_transaction_file": 6,
@@ -35,10 +33,10 @@
     "deferred_requires_readonly_db_adapter": 2,
     "deferred_requires_bounded_log_adapter": 30
   },
-  "ignored_generated_cache": 89,
-  "forbidden_direct_read_count": 163,
+  "ignored_generated_cache": 91,
+  "forbidden_direct_read_count": 165,
   "evidence_scoring_status": {
-    "not_started": 275
+    "not_started": 246
   },
   "generated_disposition_index": "runtime_artifact_quarantine/backlog_disposition/generated/artifact_disposition_index.json",
   "warning": "Disposition is not ingestion. No brain/memory/CIEU writes are allowed."
