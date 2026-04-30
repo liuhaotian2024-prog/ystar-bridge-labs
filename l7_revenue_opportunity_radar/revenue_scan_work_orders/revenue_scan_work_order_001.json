@@ -1,0 +1,14 @@
+{
+  "schema_version": "v0",
+  "work_order_id": "l7b_revenue_scan_work_order_001",
+  "goal": "Convert L6 evidence and bounded-conflict review into one safe revenue opportunity hypothesis.",
+  "inputs": [
+    "ceo_command_brief/l6_16_ceo_command_brief.json",
+    "internal_strategy_memo/l6_16_internal_strategy_memo.json",
+    "human_review_packet/l6_15_human_review_packet.json",
+    "real_mission_evidence_report/l6_14_updated_mission_evidence_report.json"
+  ],
+  "allowed_mode": "offline_fixture_from_existing_artifacts",
+  "external_search_permitted": false,
+  "external_action_permitted": false
+}

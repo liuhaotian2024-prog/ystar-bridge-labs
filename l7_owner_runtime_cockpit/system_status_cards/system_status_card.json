@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "card_id": "l7e_system_status_card",
+  "status": "l7_parallel_orchestration_initialized",
+  "l6_refs": {
+    "ceo_command_brief": "ceo_command_brief/l6_16_ceo_command_brief.md",
+    "internal_strategy_memo": "internal_strategy_memo/l6_16_internal_strategy_memo.md",
+    "human_review_packet": "human_review_packet/l6_15_human_review_packet.json",
+    "l6_16_summary": "l6_16_read_model/l6_16_read_model_summary.json"
+  },
+  "external_actions_blocked": true,
+  "core_writebacks_blocked": true
+}

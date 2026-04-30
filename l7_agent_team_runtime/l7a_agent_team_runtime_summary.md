@@ -1,0 +1,44 @@
+# L7A Agent Team Runtime
+
+```json
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.0P",
+  "lane_id": "L7A",
+  "lane_name": "Agent Team Runtime",
+  "output_dir": "l7_agent_team_runtime",
+  "status": "complete",
+  "artifacts": [
+    "l7_agent_team_runtime/agent_role_profiles/ceo.json",
+    "l7_agent_team_runtime/agent_role_profiles/researcher.json",
+    "l7_agent_team_runtime/agent_role_profiles/operator_coo.json",
+    "l7_agent_team_runtime/agent_role_profiles/engineer_cto.json",
+    "l7_agent_team_runtime/agent_role_profiles/secretary.json",
+    "l7_agent_team_runtime/agent_role_profiles/auditor.json",
+    "l7_agent_team_runtime/agent_role_profiles/revenue_scout.json",
+    "l7_agent_team_runtime/agent_responsibility_boundaries/boundary_matrix.json",
+    "l7_agent_team_runtime/agent_work_order_inboxes/inbox_index.json",
+    "l7_agent_team_runtime/agent_handoff_packets/handoff_packet_schema.json",
+    "l7_agent_team_runtime/agent_reporting_lines/team_orchestration_manifest.json",
+    "l7_agent_team_runtime/agent_status_snapshots/l7a_agent_team_status.json",
+    "l7_agent_team_runtime/agent_team_no_action_receipts/no_action_receipt.json"
+  ],
+  "next_safe_step": "assign read-only commercial work orders to role-specific inboxes",
+  "external_actions_blocked": true,
+  "core_writebacks_blocked": true,
+  "ask_user_for_url_occurred": false,
+  "external_side_effects_occurred": false,
+  "core_writeback_occurred": false,
+  "secret_values_serialized": false,
+  "required_agents": [
+    "CEO",
+    "Researcher",
+    "Operator/COO",
+    "Engineer/CTO",
+    "Secretary",
+    "Auditor",
+    "Revenue Scout"
+  ],
+  "agent_count": 7
+}
+```

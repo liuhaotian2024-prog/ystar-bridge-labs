@@ -1,0 +1,41 @@
+{
+  "schema_version": "v0",
+  "lane_id": "L7A",
+  "inboxes": [
+    {
+      "role_id": "CEO",
+      "path": "l7_agent_team_runtime/agent_work_order_inboxes/ceo_inbox.json",
+      "status": "empty_ready"
+    },
+    {
+      "role_id": "Researcher",
+      "path": "l7_agent_team_runtime/agent_work_order_inboxes/researcher_inbox.json",
+      "status": "empty_ready"
+    },
+    {
+      "role_id": "Operator/COO",
+      "path": "l7_agent_team_runtime/agent_work_order_inboxes/operator_coo_inbox.json",
+      "status": "empty_ready"
+    },
+    {
+      "role_id": "Engineer/CTO",
+      "path": "l7_agent_team_runtime/agent_work_order_inboxes/engineer_cto_inbox.json",
+      "status": "empty_ready"
+    },
+    {
+      "role_id": "Secretary",
+      "path": "l7_agent_team_runtime/agent_work_order_inboxes/secretary_inbox.json",
+      "status": "empty_ready"
+    },
+    {
+      "role_id": "Auditor",
+      "path": "l7_agent_team_runtime/agent_work_order_inboxes/auditor_inbox.json",
+      "status": "empty_ready"
+    },
+    {
+      "role_id": "Revenue Scout",
+      "path": "l7_agent_team_runtime/agent_work_order_inboxes/revenue_scout_inbox.json",
+      "status": "empty_ready"
+    }
+  ]
+}

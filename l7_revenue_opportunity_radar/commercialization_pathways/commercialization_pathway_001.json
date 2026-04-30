@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "pathway_id": "l7b_commercialization_pathway_001",
+  "steps": [
+    "internal strategy memo",
+    "market hypothesis table",
+    "technical gap analysis",
+    "human review session",
+    "draft-only external offer packet",
+    "human-approved pilot outreach in a future milestone"
+  ],
+  "external_action_currently_blocked": true
+}

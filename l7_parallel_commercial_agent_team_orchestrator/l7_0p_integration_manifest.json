@@ -1,0 +1,134 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.0P",
+  "run_id": "l7_0p_parallel_commercial_agent_team_orchestrator_run_001",
+  "lanes": [
+    {
+      "lane_id": "L7A",
+      "name": "Agent Team Runtime",
+      "short": "team",
+      "branch": "l7/team-runtime",
+      "worktree": "../ystar-company-l7-team",
+      "prompt": "l7_parallel_lane_specs/l7a_agent_team_runtime.prompt.md",
+      "builder": "scripts/l7_lanes/build_l7a_agent_team_runtime.py",
+      "output_dir": "l7_agent_team_runtime",
+      "summary": "l7_agent_team_runtime/l7a_agent_team_runtime_summary.json"
+    },
+    {
+      "lane_id": "L7B",
+      "name": "Revenue Opportunity Radar",
+      "short": "revenue",
+      "branch": "l7/revenue-opportunity-radar",
+      "worktree": "../ystar-company-l7-revenue",
+      "prompt": "l7_parallel_lane_specs/l7b_revenue_opportunity_radar.prompt.md",
+      "builder": "scripts/l7_lanes/build_l7b_revenue_opportunity_radar.py",
+      "output_dir": "l7_revenue_opportunity_radar",
+      "summary": "l7_revenue_opportunity_radar/l7b_revenue_opportunity_radar_summary.json"
+    },
+    {
+      "lane_id": "L7C",
+      "name": "Human-Approved External Action Gate",
+      "short": "action",
+      "branch": "l7/human-approved-action-gate",
+      "worktree": "../ystar-company-l7-action",
+      "prompt": "l7_parallel_lane_specs/l7c_human_approved_external_action_gate.prompt.md",
+      "builder": "scripts/l7_lanes/build_l7c_human_approved_external_action_gate.py",
+      "output_dir": "l7_human_approved_external_action_gate",
+      "summary": "l7_human_approved_external_action_gate/l7c_human_approved_external_action_gate_summary.json"
+    },
+    {
+      "lane_id": "L7D",
+      "name": "Review-Gated Memory / Brain Writeback Protocol",
+      "short": "memory",
+      "branch": "l7/review-gated-memory-writeback",
+      "worktree": "../ystar-company-l7-memory",
+      "prompt": "l7_parallel_lane_specs/l7d_review_gated_memory_writeback.prompt.md",
+      "builder": "scripts/l7_lanes/build_l7d_review_gated_memory_writeback.py",
+      "output_dir": "l7_review_gated_memory_writeback",
+      "summary": "l7_review_gated_memory_writeback/l7d_review_gated_memory_writeback_summary.json"
+    },
+    {
+      "lane_id": "L7E",
+      "name": "Owner Runtime Cockpit",
+      "short": "cockpit",
+      "branch": "l7/runtime-cockpit",
+      "worktree": "../ystar-company-l7-cockpit",
+      "prompt": "l7_parallel_lane_specs/l7e_owner_runtime_cockpit.prompt.md",
+      "builder": "scripts/l7_lanes/build_l7e_owner_runtime_cockpit.py",
+      "output_dir": "l7_owner_runtime_cockpit",
+      "summary": "l7_owner_runtime_cockpit/l7e_owner_runtime_cockpit_summary.json"
+    }
+  ],
+  "lane_status": [
+    {
+      "lane_id": "L7A",
+      "lane_name": "Agent Team Runtime",
+      "branch": "l7/team-runtime",
+      "worktree": "../ystar-company-l7-team",
+      "prompt": "l7_parallel_lane_specs/l7a_agent_team_runtime.prompt.md",
+      "builder": "scripts/l7_lanes/build_l7a_agent_team_runtime.py",
+      "output_dir": "l7_agent_team_runtime",
+      "summary": "l7_agent_team_runtime/l7a_agent_team_runtime_summary.json",
+      "status": "complete"
+    },
+    {
+      "lane_id": "L7B",
+      "lane_name": "Revenue Opportunity Radar",
+      "branch": "l7/revenue-opportunity-radar",
+      "worktree": "../ystar-company-l7-revenue",
+      "prompt": "l7_parallel_lane_specs/l7b_revenue_opportunity_radar.prompt.md",
+      "builder": "scripts/l7_lanes/build_l7b_revenue_opportunity_radar.py",
+      "output_dir": "l7_revenue_opportunity_radar",
+      "summary": "l7_revenue_opportunity_radar/l7b_revenue_opportunity_radar_summary.json",
+      "status": "complete"
+    },
+    {
+      "lane_id": "L7C",
+      "lane_name": "Human-Approved External Action Gate",
+      "branch": "l7/human-approved-action-gate",
+      "worktree": "../ystar-company-l7-action",
+      "prompt": "l7_parallel_lane_specs/l7c_human_approved_external_action_gate.prompt.md",
+      "builder": "scripts/l7_lanes/build_l7c_human_approved_external_action_gate.py",
+      "output_dir": "l7_human_approved_external_action_gate",
+      "summary": "l7_human_approved_external_action_gate/l7c_human_approved_external_action_gate_summary.json",
+      "status": "complete"
+    },
+    {
+      "lane_id": "L7D",
+      "lane_name": "Review-Gated Memory / Brain Writeback Protocol",
+      "branch": "l7/review-gated-memory-writeback",
+      "worktree": "../ystar-company-l7-memory",
+      "prompt": "l7_parallel_lane_specs/l7d_review_gated_memory_writeback.prompt.md",
+      "builder": "scripts/l7_lanes/build_l7d_review_gated_memory_writeback.py",
+      "output_dir": "l7_review_gated_memory_writeback",
+      "summary": "l7_review_gated_memory_writeback/l7d_review_gated_memory_writeback_summary.json",
+      "status": "complete"
+    },
+    {
+      "lane_id": "L7E",
+      "lane_name": "Owner Runtime Cockpit",
+      "branch": "l7/runtime-cockpit",
+      "worktree": "../ystar-company-l7-cockpit",
+      "prompt": "l7_parallel_lane_specs/l7e_owner_runtime_cockpit.prompt.md",
+      "builder": "scripts/l7_lanes/build_l7e_owner_runtime_cockpit.py",
+      "output_dir": "l7_owner_runtime_cockpit",
+      "summary": "l7_owner_runtime_cockpit/l7e_owner_runtime_cockpit_summary.json",
+      "status": "complete"
+    }
+  ],
+  "orchestration_script": "scripts/run_l7_parallel_lanes.sh",
+  "supported_modes": [
+    "scaffold",
+    "local-parallel",
+    "worktree-setup",
+    "status"
+  ],
+  "default_mode": "local-parallel",
+  "future_one_command_runner": "bash scripts/run_l7_parallel_lanes.sh",
+  "manual_codex_windows_required": false,
+  "manual_worktree_creation_required": false,
+  "manual_prompt_distribution_required": false,
+  "manual_branch_merge_required": false,
+  "network_required": false,
+  "api_keys_required": false
+}

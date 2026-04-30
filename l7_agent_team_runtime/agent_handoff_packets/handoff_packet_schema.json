@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "required_fields": [
+    "handoff_id",
+    "from_role",
+    "to_role",
+    "work_order_id",
+    "evidence_refs",
+    "approval_state",
+    "forbidden_actions",
+    "no_action_receipt"
+  ]
+}

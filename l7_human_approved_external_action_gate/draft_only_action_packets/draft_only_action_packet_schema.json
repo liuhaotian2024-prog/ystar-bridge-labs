@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "packet_type": "draft_only_action_packet",
+  "required_fields": [
+    "draft_id",
+    "action_type",
+    "draft_content",
+    "evidence_basis",
+    "human_review_required",
+    "execution_authorized"
+  ],
+  "execution_authorized_default": false
+}

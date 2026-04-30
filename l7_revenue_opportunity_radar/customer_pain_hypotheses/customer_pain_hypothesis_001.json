@@ -1,0 +1,14 @@
+{
+  "schema_version": "v0",
+  "hypothesis_id": "l7b_customer_pain_001",
+  "customer_segment": "founders and owner-operators who need governed AI research before external action",
+  "pain_point": "They need evidence-backed strategy without accidentally publishing, outreaching, paying, or overclaiming.",
+  "evidence_basis": [
+    "L6.13 real observation succeeded",
+    "L6.14 bounded a conflict after second-pass observation",
+    "L6.15 produced human-review planning boundaries",
+    "L6.16 produced an internal strategy memo and owner command brief"
+  ],
+  "safe_validation_step": "third-pass read-only observation or human review session",
+  "external_contact_authorized": false
+}

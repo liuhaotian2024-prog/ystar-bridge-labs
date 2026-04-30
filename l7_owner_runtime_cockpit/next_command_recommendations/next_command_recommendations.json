@@ -1,0 +1,10 @@
+{
+  "schema_version": "v0",
+  "next_safest_command": "bash scripts/run_l7_parallel_lanes.sh --mode local-parallel",
+  "then": "run_revenue_opportunity_radar_read_only",
+  "do_not_build_next": [
+    "external action automation before L7C approval gate is used",
+    "core writeback before L7D human review gate is used",
+    "manual URL injection paths"
+  ]
+}

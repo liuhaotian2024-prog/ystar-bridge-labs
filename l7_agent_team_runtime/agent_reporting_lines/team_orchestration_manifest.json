@@ -1,0 +1,19 @@
+{
+  "schema_version": "v0",
+  "lane_id": "L7A",
+  "ceo_delegates_to": {
+    "Researcher": "evidence/research",
+    "Revenue Scout": "opportunity discovery",
+    "Operator/COO": "execution planning",
+    "Engineer/CTO": "tool/capability gaps",
+    "Secretary": "archive/config/secret presence checks",
+    "Auditor": "boundary/no-action review"
+  },
+  "auditor_reviews": [
+    "external side effects",
+    "core writeback attempts",
+    "secret handling",
+    "evidence trace integrity",
+    "approval gate compliance"
+  ]
+}

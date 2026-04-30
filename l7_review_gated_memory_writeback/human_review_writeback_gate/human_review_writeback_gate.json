@@ -1,0 +1,22 @@
+{
+  "schema_version": "v0",
+  "lane_id": "L7D",
+  "default_decision": "blocked_until_approved",
+  "no_actual_writeback_in_l7_0p": true,
+  "approval_required_for_targets": [
+    "agent_working_memory",
+    "secretary_archive",
+    "ceo_brain_profile",
+    "capability_registry",
+    "canonical_strategy",
+    "cieu_db"
+  ],
+  "required_review_fields": [
+    "candidate_id",
+    "source_evidence_or_review_packet",
+    "proposed_update",
+    "target_layer",
+    "risk",
+    "human_approval_record"
+  ]
+}

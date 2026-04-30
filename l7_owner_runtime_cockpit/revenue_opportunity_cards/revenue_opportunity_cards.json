@@ -1,0 +1,10 @@
+{
+  "schema_version": "v0",
+  "cards": [
+    {
+      "opportunity_id": "l7b_opportunity_001",
+      "status": "offline_fixture_ready",
+      "next_safe_step": "market hypothesis table"
+    }
+  ]
+}

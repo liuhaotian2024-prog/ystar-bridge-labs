@@ -1,0 +1,23 @@
+{
+  "schema_version": "v0",
+  "lane_id": "L7A",
+  "forbidden_actions": [
+    "external outreach",
+    "publication",
+    "payment",
+    "account creation",
+    "form submission",
+    "MCP/live behavior",
+    "CIEU DB write",
+    "brain/memory writeback",
+    "canonical strategy mutation",
+    "direct Y* mutation"
+  ],
+  "auditor_reviews": [
+    "external side effects",
+    "core writeback attempts",
+    "secret handling",
+    "evidence trace integrity",
+    "approval gate compliance"
+  ]
+}

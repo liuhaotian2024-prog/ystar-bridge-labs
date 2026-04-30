@@ -1,0 +1,18 @@
+{
+  "schema_version": "v0",
+  "approval_path": [
+    "draft_created",
+    "human_review_required",
+    "approved_by_human",
+    "execution_allowed",
+    "executed",
+    "post_action_receipt_created"
+  ],
+  "denial_path": [
+    "draft_created",
+    "human_review_required",
+    "rejected_by_human",
+    "blocked"
+  ],
+  "execution_without_approval_allowed": false
+}

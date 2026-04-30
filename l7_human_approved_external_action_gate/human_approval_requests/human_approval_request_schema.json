@@ -1,0 +1,14 @@
+{
+  "schema_version": "v0",
+  "packet_type": "human_approval_request",
+  "required_fields": [
+    "approval_id",
+    "action_type",
+    "draft_packet_ref",
+    "evidence_required",
+    "risk_tier",
+    "human_confirmation_text",
+    "default_decision"
+  ],
+  "default_decision": "blocked_until_approved"
+}

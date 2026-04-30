@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "agents": [
+    "CEO",
+    "Researcher",
+    "Operator/COO",
+    "Engineer/CTO",
+    "Secretary",
+    "Auditor",
+    "Revenue Scout"
+  ],
+  "team_runtime_ref": "l7_agent_team_runtime/agent_reporting_lines/team_orchestration_manifest.json"
+}

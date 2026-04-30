@@ -1,0 +1,25 @@
+{
+  "schema_version": "v0",
+  "action_type": "grant_application_submission",
+  "default_status": "blocked_until_human_approved",
+  "required_evidence": [
+    "reviewed evidence packet",
+    "bounded claim boundary",
+    "risk assessment",
+    "human approval request"
+  ],
+  "required_human_confirmation": "explicit action-specific approval",
+  "allowed_pre_approval_output": "draft_only",
+  "forbidden_pre_approval_behavior": [
+    "send",
+    "submit",
+    "publish",
+    "pay",
+    "create account",
+    "sign",
+    "execute live behavior"
+  ],
+  "post_action_receipt_required": true,
+  "rollback_or_stop_condition": "any ambiguity, missing approval, payment request, login, form, or policy conflict",
+  "revenue_relevance": "may contribute to revenue only after approval and post-action receipt"
+}

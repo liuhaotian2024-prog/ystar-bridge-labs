@@ -1,0 +1,39 @@
+{
+  "schema_version": "v0",
+  "opportunity_id": "l7b_opportunity_001",
+  "market_area": "controlled public evidence operations for small AI-enabled companies",
+  "customer_segment": "founders and owner-operators who need governed AI research before external action",
+  "pain_point": "They need evidence-backed strategy without accidentally publishing, outreaching, paying, or overclaiming.",
+  "evidence_basis": [
+    "L6.13 real observation succeeded",
+    "L6.14 bounded a conflict after second-pass observation",
+    "L6.15 produced human-review planning boundaries",
+    "L6.16 produced an internal strategy memo and owner command brief"
+  ],
+  "source_urls_or_artifact_refs": [
+    "ceo_command_brief/l6_16_ceo_command_brief.json",
+    "internal_strategy_memo/l6_16_internal_strategy_memo.json",
+    "human_review_packet/l6_15_human_review_packet.json",
+    "real_mission_evidence_report/l6_14_updated_mission_evidence_report.json"
+  ],
+  "revenue_model_hypothesis": "offer a governed research-to-internal-strategy workflow before approved external execution",
+  "urgency": "medium",
+  "feasibility": "medium_high_for_internal_service_design",
+  "competition_notes": "Competes with generic research agents, but differentiates through no-action governance and evidence traceability.",
+  "regulatory_or_policy_link": "requires human approval gate before any external claims, outreach, or submissions",
+  "next_safe_step": "market hypothesis table",
+  "forbidden_actions": [
+    "real outreach",
+    "grant submission",
+    "RFP submission",
+    "customer contact",
+    "publication",
+    "payment",
+    "form submission",
+    "account creation",
+    "revenue execution"
+  ],
+  "human_approval_required_before_external_action": true,
+  "expected_revenue_path": "internal service packaging, then review-gated pilot offers after explicit approval",
+  "uncertainty_level": "bounded_but_requires_more_market_observation"
+}

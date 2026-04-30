@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "packet_type": "post_action_receipt",
+  "required_after_execution": true,
+  "required_fields": [
+    "receipt_id",
+    "approval_id",
+    "action_type",
+    "executed_at",
+    "external_side_effect_summary",
+    "rollback_or_stop_status"
+  ]
+}

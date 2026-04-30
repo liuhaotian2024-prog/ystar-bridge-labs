@@ -1,0 +1,15 @@
+{
+  "schema_version": "v0",
+  "risks": [
+    {
+      "risk_id": "l7b_risk_overclaiming_market_need",
+      "severity": "medium",
+      "mitigation": "treat packet as hypothesis until read-only market observation and human review"
+    },
+    {
+      "risk_id": "l7b_risk_external_action_before_gate",
+      "severity": "high",
+      "mitigation": "route through L7C human-approved external action gate"
+    }
+  ]
+}

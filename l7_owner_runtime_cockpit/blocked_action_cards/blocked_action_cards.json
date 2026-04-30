@@ -1,0 +1,16 @@
+{
+  "schema_version": "v0",
+  "blocked_actions": [
+    "outreach",
+    "publication",
+    "payment",
+    "account creation",
+    "form submission",
+    "revenue execution",
+    "MCP/live behavior",
+    "CIEU DB write",
+    "brain/memory writeback",
+    "canonical strategy mutation",
+    "direct Y* mutation"
+  ]
+}

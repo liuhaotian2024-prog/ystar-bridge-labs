@@ -1,0 +1,10 @@
+{
+  "schema_version": "v0",
+  "cards": [
+    {
+      "work_order_id": "l7b_revenue_scan_work_order_001",
+      "lane": "L7B",
+      "status": "ready_for_read_only_radar"
+    }
+  ]
+}

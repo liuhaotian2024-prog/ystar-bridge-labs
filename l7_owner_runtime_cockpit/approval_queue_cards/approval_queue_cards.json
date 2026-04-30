@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "cards": [
+    {
+      "approval_queue": "external_action_gate",
+      "status": "empty_but_required_before_external_action"
+    },
+    {
+      "approval_queue": "writeback_gate",
+      "status": "dry_run_candidates_only"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": "v0",
+  "cockpit_id": "l7e_owner_runtime_cockpit",
+  "what_do_i_own_now": [
+    "A governed CEO agent with real public read-only observation history.",
+    "A parallel commercial agent team scaffold.",
+    "A revenue opportunity radar, approval gate, writeback protocol, and owner cockpit."
+  ],
+  "what_agents_exist": [
+    "CEO",
+    "Researcher",
+    "Operator/COO",
+    "Engineer/CTO",
+    "Secretary",
+    "Auditor",
+    "Revenue Scout"
+  ],
+  "what_can_they_do": "They can generate internal, review-gated commercial work products without external side effects.",
+  "what_are_they_working_on": [
+    "team runtime",
+    "revenue opportunity radar",
+    "approval gates",
+    "writeback protocol",
+    "owner cockpit"
+  ],
+  "what_opportunity_radar_exists": "L7B creates one offline opportunity packet from L6 evidence and review artifacts.",
+  "what_actions_are_blocked": [
+    "outreach",
+    "publication",
+    "payment",
+    "account creation",
+    "form submission",
+    "revenue execution",
+    "MCP/live behavior",
+    "CIEU DB write",
+    "brain/memory writeback",
+    "canonical strategy mutation",
+    "direct Y* mutation"
+  ],
+  "what_needs_human_approval": [
+    "external actions",
+    "payment/account/form behavior",
+    "core memory/brain/canonical writeback"
+  ],
+  "next_safest_command": "bash scripts/run_l7_parallel_lanes.sh --mode local-parallel",
+  "shortest_path_toward_money_making_company": [
+    "Run L7 local-parallel scaffold.",
+    "Review the revenue opportunity packet.",
+    "Approve only draft-only external action packets in a future gate.",
+    "Keep memory/writeback dry-run until reviewed."
+  ],
+  "what_should_not_be_built_next": [
+    "external action automation before L7C approval gate is used",
+    "core writeback before L7D human review gate is used",
+    "manual URL injection paths"
+  ]
+}

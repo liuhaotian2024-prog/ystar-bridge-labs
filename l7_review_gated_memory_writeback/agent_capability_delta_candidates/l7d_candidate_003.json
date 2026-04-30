@@ -1,0 +1,14 @@
+{
+  "schema_version": "v0",
+  "candidate_id": "l7d_candidate_003",
+  "source_evidence_or_review_packet": "human_review_packet/l6_15_human_review_packet.json",
+  "proposed_update": "Review-gated update candidate for CEO brain/profile.",
+  "target_layer": "ceo_brain_profile",
+  "reason": "Capture L6.13-L6.16 learning only after human review.",
+  "risk": "wrong or overbroad writeback could distort future agent behavior",
+  "required_human_approval": true,
+  "default_decision": "blocked_until_approved",
+  "dry_run_only": true,
+  "expected_value": "make reviewed commercial learning reusable",
+  "possible_harm_if_wrong": "premature strategy mutation, memory pollution, or governance bypass"
+}

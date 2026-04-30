@@ -1,0 +1,16 @@
+{
+  "schema_version": "v0",
+  "lane_id": "L7A",
+  "agents_created": [
+    "CEO",
+    "Researcher",
+    "Operator/COO",
+    "Engineer/CTO",
+    "Secretary",
+    "Auditor",
+    "Revenue Scout"
+  ],
+  "status": "ready_for_parallel_lane_assignment",
+  "external_actions_blocked": true,
+  "core_writebacks_blocked": true
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "v0",
+  "action_types": [
+    "customer_outreach_email",
+    "partner_outreach_email",
+    "grant_application_submission",
+    "RFP_submission",
+    "public_content_publication",
+    "account_creation",
+    "payment_or_purchase",
+    "contract_or_signature",
+    "social_posting",
+    "MCP_live_behavior"
+  ],
+  "all_default_status": "blocked_until_human_approved",
+  "execution_in_l7_0p_authorized": false,
+  "external_actions_blocked": true
+}

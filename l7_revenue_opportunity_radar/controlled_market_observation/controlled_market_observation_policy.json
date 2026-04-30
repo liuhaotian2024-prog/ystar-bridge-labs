@@ -1,0 +1,17 @@
+{
+  "schema_version": "v0",
+  "lane_id": "L7B",
+  "controlled_market_observation_default": "read_existing_artifacts_only",
+  "future_real_observation_requires": "explicit read-only budget and approval",
+  "forbidden_actions": [
+    "real outreach",
+    "grant submission",
+    "RFP submission",
+    "customer contact",
+    "publication",
+    "payment",
+    "form submission",
+    "account creation",
+    "revenue execution"
+  ]
+}
