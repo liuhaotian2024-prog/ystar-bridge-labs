@@ -1,0 +1,86 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.1",
+  "milestone_name": "Parallel Commercial Autonomy Sprint",
+  "run_id": "l7_1_parallel_commercial_autonomy_sprint_run_001",
+  "packet_type": "offer_hypotheses",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "action_capability_policy_ref": "policy/action_capability_registry.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+  "owner_burden_reduction_policy_ref": "policy/owner_burden_reduction_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "internal_use_only": true,
+  "offer_hypotheses": [
+    {
+      "offer_id": "l7_1_offer_001",
+      "target_customer_segment": "AI startup founders and owner-operators who need evidence-backed decisions before outreach or publication",
+      "problem_statement": "Founders need credible external research and decision briefs without accidental side effects.",
+      "proposed_solution": "A governed read-only observation sprint that produces evidence packets, conflict notes, and a CEO command brief.",
+      "evidence_basis": [
+        "ceo_command_brief/l6_16_ceo_command_brief.json",
+        "internal_strategy_memo/l6_16_internal_strategy_memo.json",
+        "l7_revenue_opportunity_radar/opportunity_packets/opportunity_packet_001.json"
+      ],
+      "caveats": "Market willingness-to-pay remains a hypothesis until approved customer discovery.",
+      "pricing_hypothesis": "founder pilot package at $500-$1500 per scoped internal research sprint",
+      "delivery_model": "internal-only deliverable, reviewed by owner before any external use",
+      "required_capabilities": [
+        "controlled search",
+        "public page read",
+        "evidence extraction",
+        "human approval gate"
+      ],
+      "missing_capabilities": [
+        "approved external outreach execution",
+        "repeatable customer feedback loop"
+      ],
+      "fastest_validation_path": "human-reviewed offer one-pager plus approved outreach in a future sprint",
+      "forbidden_actions": [
+        "send outreach",
+        "publish offer",
+        "collect payment",
+        "create account",
+        "submit forms"
+      ],
+      "human_approval_required_before_external_action": true
+    },
+    {
+      "offer_id": "l7_1_offer_002",
+      "target_customer_segment": "solo founders coordinating AI agents across research, operations, engineering, and revenue",
+      "problem_statement": "Owners need one clear cockpit for agent team status, money path, blocked actions, and approval queue.",
+      "proposed_solution": "Owner cockpit setup with revenue radar, offer hypotheses, approval workflow, and writeback dry-run queue.",
+      "evidence_basis": [
+        "ceo_command_brief/l6_16_ceo_command_brief.json",
+        "internal_strategy_memo/l6_16_internal_strategy_memo.json",
+        "l7_revenue_opportunity_radar/opportunity_packets/opportunity_packet_001.json"
+      ],
+      "caveats": "Cockpit value improves once approved execution and feedback capture are added.",
+      "pricing_hypothesis": "monthly internal operations cockpit retainer at $300-$1000 after pilot validation",
+      "delivery_model": "private owner-facing dashboard artifacts and weekly command brief",
+      "required_capabilities": [
+        "parallel lanes",
+        "approval queue",
+        "owner cockpit",
+        "memory dry-run"
+      ],
+      "missing_capabilities": [
+        "execution receipts from approved actions",
+        "customer result tracking"
+      ],
+      "fastest_validation_path": "use cockpit v2 internally for next two commercial sprints",
+      "forbidden_actions": [
+        "send outreach",
+        "publish claims",
+        "send customer contact",
+        "sign contracts",
+        "accept payment"
+      ],
+      "human_approval_required_before_external_action": true
+    }
+  ]
+}

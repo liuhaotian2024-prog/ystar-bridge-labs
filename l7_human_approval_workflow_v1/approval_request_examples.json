@@ -1,0 +1,41 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.1",
+  "milestone_name": "Parallel Commercial Autonomy Sprint",
+  "run_id": "l7_1_parallel_commercial_autonomy_sprint_run_001",
+  "packet_type": "approval_request_examples",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "action_capability_policy_ref": "policy/action_capability_registry.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+  "owner_burden_reduction_policy_ref": "policy/owner_burden_reduction_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "approval_requests": [
+    {
+      "approval_id": "l7_1_approval_request_001",
+      "action_type": "outreach_email_send",
+      "draft_only": true,
+      "default_state": "blocked_until_human_approved",
+      "evidence_basis": [
+        "l7_1_offer_001"
+      ],
+      "risk_summary": "Could overclaim before customer validation.",
+      "expected_value": "Validate willingness-to-pay hypothesis."
+    },
+    {
+      "approval_id": "l7_1_approval_request_002",
+      "action_type": "actual_memory_brain_canonical_writeback",
+      "draft_only": true,
+      "default_state": "blocked_until_human_approved",
+      "evidence_basis": [
+        "l7_review_gated_memory_dry_run_v1"
+      ],
+      "risk_summary": "Incorrect permanent learning could steer future strategy.",
+      "expected_value": "Persist reviewed commercial strategy deltas."
+    }
+  ]
+}

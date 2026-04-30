@@ -1,0 +1,52 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.1",
+  "milestone_name": "Parallel Commercial Autonomy Sprint",
+  "run_id": "l7_1_parallel_commercial_autonomy_sprint_run_001",
+  "packet_type": "opportunity_packet",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "action_capability_policy_ref": "policy/action_capability_registry.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+  "owner_burden_reduction_policy_ref": "policy/owner_burden_reduction_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "opportunity_id": "l7_1_opportunity_002",
+  "market_area": "owner cockpit for commercial agent teams",
+  "customer_segment": "solo founders coordinating AI agents across research, operations, engineering, and revenue",
+  "pain_point": "They need one cockpit showing what agents can do, what is blocked, and what moves toward revenue next.",
+  "possible_offer_type": "private owner cockpit setup and weekly governed opportunity radar",
+  "evidence_basis": [
+    "ceo_command_brief/l6_16_ceo_command_brief.json",
+    "internal_strategy_memo/l6_16_internal_strategy_memo.json",
+    "l7_revenue_opportunity_radar/opportunity_packets/opportunity_packet_001.json"
+  ],
+  "source_urls_or_artifact_refs": [
+    "ceo_command_brief/l6_16_ceo_command_brief.json",
+    "internal_strategy_memo/l6_16_internal_strategy_memo.json",
+    "l7_revenue_opportunity_radar/opportunity_packets/opportunity_packet_001.json"
+  ],
+  "urgency": "medium_high",
+  "feasibility": "medium_high",
+  "willingness_to_pay_hypothesis": "moderate while cockpit remains internal; higher after approved execution support exists",
+  "competition_risk_notes": "Project management tools show tasks; few show evidence-grounded autonomy boundaries.",
+  "next_safe_step": "build cockpit v2 and approval queue workflow",
+  "human_approval_required_before_external_action": true,
+  "run_classification": "partial_real_scan_no_action",
+  "real_or_fixture": "real_config_detected_no_external_action",
+  "forbidden_actions": [
+    "outreach_send",
+    "posting",
+    "form_submission",
+    "grant_submission",
+    "payment",
+    "account_creation",
+    "customer_contact"
+  ],
+  "read_only_revenue_work_allowed": true,
+  "draft_and_planning_allowed": true,
+  "actual_execution_blocked_until_approval": true
+}

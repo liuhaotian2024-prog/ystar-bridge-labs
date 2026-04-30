@@ -33,6 +33,7 @@ Purpose: Enable CTO to mark Wave-1 items as L4 shipped (PASS items) or assign fo
 
 - v2 path gated by `if False and os.environ.get("YSTAR_HOOK_V2") == "1":` at line 87
 - Disabled after 3h fail-closed deadlock incident (CZL-HOOK-V2-BYPASS 2026-04-23)
+- L7.1 interpretation: this historical note should be treated through staged policy semantics, not as a permanent capability dead end. Safe future migration target: `blocked_pending_human_review` / `auto_detect_available` under `policy/action_capability_registry.json`.
 
 ### Item #3: FORGET_GUARD None-safe — PASS
 

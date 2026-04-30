@@ -1,0 +1,35 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.1",
+  "milestone_name": "Parallel Commercial Autonomy Sprint",
+  "run_id": "l7_1_parallel_commercial_autonomy_sprint_run_001",
+  "packet_type": "canonical_strategy_update_candidates",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "action_capability_policy_ref": "policy/action_capability_registry.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+  "owner_burden_reduction_policy_ref": "policy/owner_burden_reduction_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "candidates": [
+    {
+      "candidate_id": "l7_1_canonical_candidate_001",
+      "source_artifact": "policy/action_capability_registry.json",
+      "proposed_update": "Commercial autonomy proceeds by staged read/draft/approval before execution.",
+      "target_layer": "canonical strategy",
+      "evidence_basis": [
+        "ceo_command_brief/l6_16_ceo_command_brief.json",
+        "l7_parallel_commercial_autonomy_sprint/l7_1_summary.json"
+      ],
+      "reason": "Promote reviewed commercial autonomy learning only as a candidate.",
+      "expected_value": "Improves future commercial planning after review.",
+      "risk_if_wrong": "Could steer future priorities incorrectly if written without review.",
+      "required_human_approval": true,
+      "default_decision": "blocked_until_approved",
+      "dry_run_only": true
+    }
+  ]
+}

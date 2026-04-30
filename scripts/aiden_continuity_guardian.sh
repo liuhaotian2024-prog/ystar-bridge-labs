@@ -15,6 +15,10 @@
 #   touch /tmp/ystar_no_auto_restart  — Disable auto-restart
 #   rm /tmp/ystar_no_auto_restart     — Re-enable
 #
+# L7.1 staged policy note:
+#   The override is interpreted as blocked_pending_human_review for restart,
+#   not as a permanent capability removal. See policy/action_capability_registry.json.
+#
 # This wrapper runs OUTSIDE Claude Code. Claude Code agent doesn't know it's wrapped.
 
 YSTAR_DIR="/Users/haotianliu/.openclaw/workspace/ystar-company"
@@ -24,6 +28,7 @@ echo "========================================"
 echo "  Aiden Continuity Guardian"
 echo "  Agent: $AGENT_ID"
 echo "  Board override: /tmp/ystar_no_auto_restart"
+echo "  Policy: staged restart capability; override state = blocked_pending_human_review"
 echo "========================================"
 echo ""
 
@@ -32,7 +37,7 @@ cd "$YSTAR_DIR" || exit 1
 # === Fail-Safe: Check if override file exists ===
 check_override() {
   if [ -f /tmp/ystar_no_auto_restart ]; then
-    echo "[GUARDIAN] Auto-restart disabled by Board."
+    echo "[GUARDIAN] Auto-restart blocked_pending_human_review by Board override."
     echo "[GUARDIAN] Remove /tmp/ystar_no_auto_restart to re-enable."
     return 0  # Override active
   fi

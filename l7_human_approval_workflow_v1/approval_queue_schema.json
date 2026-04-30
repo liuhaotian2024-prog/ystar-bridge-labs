@@ -1,0 +1,44 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.1",
+  "milestone_name": "Parallel Commercial Autonomy Sprint",
+  "run_id": "l7_1_parallel_commercial_autonomy_sprint_run_001",
+  "packet_type": "approval_queue_schema",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "action_capability_policy_ref": "policy/action_capability_registry.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+  "owner_burden_reduction_policy_ref": "policy/owner_burden_reduction_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "default_state": "blocked_until_human_approved",
+  "allowed_before_approval": [
+    "draft",
+    "evidence_packet",
+    "approval_request",
+    "risk_summary",
+    "expected_value_summary"
+  ],
+  "action_types": [
+    "outreach_email_send",
+    "partner_outreach",
+    "grant_RFP_submission",
+    "public_content_publication",
+    "account_creation",
+    "payment_purchase",
+    "contract_signature",
+    "MCP_live_behavior",
+    "actual_memory_brain_canonical_writeback"
+  ],
+  "required_fields": [
+    "approval_id",
+    "action_type",
+    "evidence_basis",
+    "risk_summary",
+    "expected_value",
+    "default_state"
+  ]
+}

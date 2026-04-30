@@ -1,0 +1,24 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.1",
+  "milestone_name": "Parallel Commercial Autonomy Sprint",
+  "run_id": "l7_1_parallel_commercial_autonomy_sprint_run_001",
+  "packet_type": "next_5_commands",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "action_capability_policy_ref": "policy/action_capability_registry.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+  "owner_burden_reduction_policy_ref": "policy/owner_burden_reduction_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "commands": [
+    "bash scripts/run_l7_1_parallel_sprint.sh --mode local-parallel",
+    "review l7_first_offer_hypothesis_builder/offer_hypotheses.md",
+    "review l7_human_approval_workflow_v1/approval_workflow_owner_guide.md",
+    "prepare human approval review for l7_1_offer_001",
+    "run third-pass read-only market observation if more evidence is needed"
+  ]
+}

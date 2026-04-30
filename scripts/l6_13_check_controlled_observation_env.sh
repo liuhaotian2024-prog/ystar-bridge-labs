@@ -2,6 +2,7 @@
 set -eu
 
 echo "L6.13 controlled observation environment check"
+echo "Policy: staged controlled observation access (policy/action_capability_registry.json)"
 echo "Search backend mode: ${YSTAR_CONTROLLED_SEARCH_BACKEND:-disabled}"
 echo "Page-read backend mode: ${YSTAR_CONTROLLED_PAGE_READ_BACKEND:-disabled}"
 echo "Search network allow flag set: $([ "${YSTAR_CONTROLLED_SEARCH_ALLOW_NETWORK:-0}" = "1" ] && echo yes || echo no)"
@@ -27,3 +28,5 @@ fi
 
 echo "Secret values printed: no"
 echo "Manual URL request required: no"
+echo "Owner setup path: auto_detect_available; blocked_pending_config only when backend/key/allow flag is missing"
+echo "Human-supervised setup available: yes"

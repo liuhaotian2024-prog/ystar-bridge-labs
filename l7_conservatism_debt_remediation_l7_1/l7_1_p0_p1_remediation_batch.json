@@ -1,0 +1,70 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.1",
+  "milestone_name": "Parallel Commercial Autonomy Sprint",
+  "run_id": "l7_1_parallel_commercial_autonomy_sprint_run_001",
+  "packet_type": "p0_p1_remediation_batch",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "action_capability_policy_ref": "policy/action_capability_registry.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+  "owner_burden_reduction_policy_ref": "policy/owner_burden_reduction_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "source_remaining_p0_count": 18,
+  "source_remaining_p1_count": 208,
+  "p0_targets_considered": [
+    "ceo_command_brief/l6_16_ceo_command_brief.json",
+    "real_no_action_receipts/no_side_effect_receipt.json",
+    "l6_15_no_action_receipts/no_side_effect_receipt.json",
+    "scripts/platform_wave1_livefire_20260424.md",
+    "internal_strategy_memo/l6_16_internal_strategy_memo.json",
+    "decision_boundary_packet/decision_boundary_packet.json",
+    "l6_human_review_decision_boundary_sprint/l6_15_scope.json",
+    "l6_16_no_action_receipts/no_action_receipt_report.md"
+  ],
+  "p1_targets_considered": [
+    "ystar.bak.20260415_again/adapters/activation_triggers.py",
+    "approval_authority_model/approval_authority_scope_matrix.json",
+    "release_blocker_decision/release_blocker_decision.json",
+    "sandbox_approval_record_instance/sandbox_approval_record_scope_binding.json",
+    "company_autonomy_inventory/generated/observation_capability_map.json",
+    "sandbox_reprojection_and_mcp_preview/sandbox_behavior_y_star_delta_from_baseline.json",
+    "sandbox_reprojection_and_mcp_preview/sandbox_mcp_pre_u_candidate_preview.json",
+    "agentic_pilot_approval_packet_assembler/agentic_pilot_approval_packet_002.json"
+  ],
+  "migration_map_counts": {
+    "p0": 28,
+    "p1": 248
+  },
+  "patch_strategy": [
+    "add_policy_ref",
+    "add_staged_capability_semantics",
+    "split_read_draft_plan_request_approval_execute",
+    "convert_disabled_as_final_state_to_auto_detect_or_blocked_pending_config",
+    "preserve_legitimate_hard_boundaries"
+  ],
+  "patched_files": [
+    {
+      "file_path": "scripts/aiden_continuity_guardian.sh",
+      "patch_type": "add_policy_ref_and_staged_override_semantics",
+      "capability_unlocked": "auto-restart remains available while board override is typed as blocked_pending_human_review, not permanent disabled",
+      "hard_boundaries_preserved": true
+    },
+    {
+      "file_path": "scripts/l6_13_check_controlled_observation_env.sh",
+      "patch_type": "convert_missing_backend_to_config_resolver_status",
+      "capability_unlocked": "owner sees auto-detect/setup path instead of manual URL or disabled dead end",
+      "hard_boundaries_preserved": true
+    },
+    {
+      "file_path": "scripts/platform_wave1_livefire_20260424.md",
+      "patch_type": "add_staged_policy_interpretation_to_historical_disabled_note",
+      "capability_unlocked": "historical disabled language is interpreted through staged policy migration",
+      "hard_boundaries_preserved": true
+    }
+  ]
+}

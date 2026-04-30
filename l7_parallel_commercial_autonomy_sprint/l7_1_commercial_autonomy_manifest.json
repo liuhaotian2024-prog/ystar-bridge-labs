@@ -1,0 +1,43 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.1",
+  "milestone_name": "Parallel Commercial Autonomy Sprint",
+  "run_id": "l7_1_parallel_commercial_autonomy_sprint_run_001",
+  "packet_type": "commercial_autonomy_manifest",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "action_capability_policy_ref": "policy/action_capability_registry.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+  "owner_burden_reduction_policy_ref": "policy/owner_burden_reduction_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "lanes_executed": [
+    "L7.1A",
+    "L7.1B",
+    "L7.1C",
+    "L7.1D",
+    "L7.1E",
+    "L7.1F"
+  ],
+  "commercial_artifacts": [
+    "revenue opportunity packets",
+    "offer hypotheses",
+    "pricing hypotheses",
+    "approval workflow",
+    "writeback dry-run candidates",
+    "owner cockpit v2"
+  ],
+  "blocked_until_human_approval": [
+    "outreach send",
+    "publication",
+    "payment",
+    "account creation",
+    "grant/RFP submission",
+    "customer contact",
+    "actual memory/brain/canonical/CIEU writeback"
+  ],
+  "next_recommended_command": "bash scripts/run_l7_1_parallel_sprint.sh --mode local-parallel"
+}

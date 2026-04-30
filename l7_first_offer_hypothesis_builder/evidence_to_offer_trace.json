@@ -1,0 +1,41 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.1",
+  "milestone_name": "Parallel Commercial Autonomy Sprint",
+  "run_id": "l7_1_parallel_commercial_autonomy_sprint_run_001",
+  "packet_type": "evidence_to_offer_trace",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "action_capability_policy_ref": "policy/action_capability_registry.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+  "owner_burden_reduction_policy_ref": "policy/owner_burden_reduction_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "trace_items": [
+    {
+      "trace_id": "l7_1_trace_001",
+      "offer_id": "l7_1_offer_001",
+      "evidence_basis": [
+        "ceo_command_brief/l6_16_ceo_command_brief.json",
+        "internal_strategy_memo/l6_16_internal_strategy_memo.json",
+        "l7_revenue_opportunity_radar/opportunity_packets/opportunity_packet_001.json"
+      ],
+      "allowed_use": "internal planning",
+      "forbidden_use": "external claim without review"
+    },
+    {
+      "trace_id": "l7_1_trace_002",
+      "offer_id": "l7_1_offer_002",
+      "evidence_basis": [
+        "ceo_command_brief/l6_16_ceo_command_brief.json",
+        "internal_strategy_memo/l6_16_internal_strategy_memo.json",
+        "l7_revenue_opportunity_radar/opportunity_packets/opportunity_packet_001.json"
+      ],
+      "allowed_use": "internal planning",
+      "forbidden_use": "external claim without review"
+    }
+  ]
+}

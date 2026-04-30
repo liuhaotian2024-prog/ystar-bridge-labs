@@ -1,0 +1,61 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.1",
+  "milestone_name": "Parallel Commercial Autonomy Sprint",
+  "run_id": "l7_1_parallel_commercial_autonomy_sprint_run_001",
+  "packet_type": "owner_cockpit_v2",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "action_capability_policy_ref": "policy/action_capability_registry.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+  "owner_burden_reduction_policy_ref": "policy/owner_burden_reduction_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "what_do_i_own_now": "A governed commercial agent-team sprint system that can discover opportunities, draft offers, prepare approval requests, and queue dry-run learning without external side effects.",
+  "what_can_the_agent_team_do_today": "Run read-only commercial planning lanes, generate opportunity packets, build offer hypotheses, prepare approval workflow records, and update an owner cockpit.",
+  "commercial_opportunities_found": [
+    [
+      "title",
+      "Revenue opportunities"
+    ],
+    [
+      "classification",
+      "partial_real_scan_no_action"
+    ],
+    [
+      "opportunity_packets",
+      2
+    ]
+  ],
+  "offer_hypotheses_exist": [
+    "l7_1_offer_001",
+    "l7_1_offer_002"
+  ],
+  "what_is_blocked": [
+    "outreach send",
+    "publication",
+    "payment",
+    "account creation",
+    "form submission",
+    "grant/RFP submission",
+    "actual writeback"
+  ],
+  "what_needs_my_approval": [
+    "sending outreach",
+    "publishing",
+    "payments",
+    "account creation",
+    "grant/RFP submission",
+    "MCP/live behavior",
+    "actual writeback"
+  ],
+  "what_can_safely_happen_next": "Internal review of l7_1_offer_001 and approval workflow dry run.",
+  "shortest_path_toward_first_revenue": "Shortest path toward first revenue: pick the governed research-to-brief pilot offer, review the evidence/caveats, approve a small outreach draft in a future sprint, then collect feedback before payment or publication.",
+  "what_should_not_be_built_next": "Do not build autonomous sending, payment, publication, or permanent memory writeback before approval gates and receipts are exercised.",
+  "next_recommended_command": "bash scripts/run_l7_1_parallel_sprint.sh --mode local-parallel",
+  "external_side_effects_occurred": false,
+  "core_writeback_occurred": false
+}

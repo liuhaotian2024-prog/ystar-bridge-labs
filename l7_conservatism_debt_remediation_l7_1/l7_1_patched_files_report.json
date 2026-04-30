@@ -1,0 +1,41 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.1",
+  "milestone_name": "Parallel Commercial Autonomy Sprint",
+  "run_id": "l7_1_parallel_commercial_autonomy_sprint_run_001",
+  "packet_type": "patched_files_report",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "action_capability_policy_ref": "policy/action_capability_registry.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+  "owner_burden_reduction_policy_ref": "policy/owner_burden_reduction_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "patched_count": 3,
+  "patched_files": [
+    {
+      "file_path": "scripts/aiden_continuity_guardian.sh",
+      "patch_type": "add_policy_ref_and_staged_override_semantics",
+      "capability_unlocked": "auto-restart remains available while board override is typed as blocked_pending_human_review, not permanent disabled",
+      "hard_boundaries_preserved": true
+    },
+    {
+      "file_path": "scripts/l6_13_check_controlled_observation_env.sh",
+      "patch_type": "convert_missing_backend_to_config_resolver_status",
+      "capability_unlocked": "owner sees auto-detect/setup path instead of manual URL or disabled dead end",
+      "hard_boundaries_preserved": true
+    },
+    {
+      "file_path": "scripts/platform_wave1_livefire_20260424.md",
+      "patch_type": "add_staged_policy_interpretation_to_historical_disabled_note",
+      "capability_unlocked": "historical disabled language is interpreted through staged policy migration",
+      "hard_boundaries_preserved": true
+    }
+  ],
+  "secret_protection_weakened": false,
+  "unapproved_external_action_blocking_weakened": false,
+  "direct_writeback_blocking_weakened": false
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.1",
+  "milestone_name": "Parallel Commercial Autonomy Sprint",
+  "run_id": "l7_1_parallel_commercial_autonomy_sprint_run_001",
+  "packet_type": "real_read_only_revenue_scan_report",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "action_capability_policy_ref": "policy/action_capability_registry.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+  "owner_burden_reduction_policy_ref": "policy/owner_burden_reduction_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "run_classification": "partial_real_scan_no_action",
+  "config": {
+    "search_backend": "tavily_search_api",
+    "page_read_backend": "stdlib_public_http",
+    "search_network_allowed": true,
+    "page_read_network_allowed": true,
+    "provider_key_present": true,
+    "configured_for_real_read_only_scan": true,
+    "missing_requirements": [],
+    "secret_values_serialized": false
+  },
+  "query_count": 0,
+  "real_query_text": null,
+  "search_results_considered": 0,
+  "pages_opened": 0,
+  "domains_touched": 0,
+  "external_reads_used": 0,
+  "real_search_executed": false,
+  "real_search_results": [],
+  "opportunity_packets_generated": 2,
+  "exact_activation_blocker": [
+    "real_search_provider_error"
+  ],
+  "manual_url_request_occurred": false,
+  "note": "Offline fixture path produced commercial opportunity packets; real scan remains available through repo-external controlled observation config."
+}

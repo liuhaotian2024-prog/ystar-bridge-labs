@@ -1,0 +1,28 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.1",
+  "milestone_name": "Parallel Commercial Autonomy Sprint",
+  "run_id": "l7_1_parallel_commercial_autonomy_sprint_run_001",
+  "packet_type": "lane_summary",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "action_capability_policy_ref": "policy/action_capability_registry.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+  "owner_burden_reduction_policy_ref": "policy/owner_burden_reduction_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "lane_id": "L7.1C",
+  "lane_name": "First Offer Hypothesis Builder",
+  "output_dir": "l7_first_offer_hypothesis_builder",
+  "status": "completed",
+  "highlights": {
+    "offer_hypotheses_generated": 2,
+    "primary_offer": "l7_1_offer_001"
+  },
+  "external_side_effects_occurred": false,
+  "core_writeback_occurred": false,
+  "ask_user_for_url_occurred": false
+}
