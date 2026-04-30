@@ -79,7 +79,7 @@ def test_page_template_contains_message_and_team_task_forms():
     assert "最近一次操作结果" in template
     assert "高级：调度器 / 商业路径 / 委托任务" in template
     assert 'id="whiteboard-send-status"' in template
-    assert "office.js?v=simple-office-v1" in template
+    assert "office.js?v=simple-office-v2" in template
 
 
 def test_whiteboard_submit_has_legacy_backend_fallback():

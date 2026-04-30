@@ -592,7 +592,7 @@ def write_assets() -> None:
       <div id="roster" class="card-grid"></div>
     </section>
   </main>
-  <script src="/static/office.js?v=simple-office-v1"></script>
+  <script src="/static/office.js?v=simple-office-v2"></script>
 </body>
 </html>
 """,
