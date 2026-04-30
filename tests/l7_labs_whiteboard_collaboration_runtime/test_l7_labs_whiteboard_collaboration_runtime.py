@@ -88,7 +88,9 @@ def test_server_exposes_whiteboard_endpoints():
 
 def test_template_contains_whiteboard_work_board_agent_panel_and_timeline():
     template = (WEB_OUT / "templates/index.html").read_text(encoding="utf-8")
-    assert "Team Whiteboard / Chat" in template
+    assert "把目标交给团队" in template
+    assert 'class="template-chip"' in template
+    assert "高级：调度器 / 商业路径 / 委托任务" in template
     assert 'id="whiteboard-message-form"' in template
     assert 'id="whiteboard-send-status"' in template
     assert 'id="work-board"' in template
@@ -100,6 +102,8 @@ def test_js_can_submit_whiteboard_and_work_cycle_paths():
     js = (WEB_OUT / "static/office.js").read_text(encoding="utf-8")
     for endpoint in ["/api/whiteboard/message", "/api/route", "/api/work_cycle", "/api/team_work_cycle", "/api/completion_report"]:
         assert endpoint in js
+    assert "quickTemplates" in js
+    assert "最快拿到第一笔钱" in js
     assert "compatibility_fallback" in js
     assert "/api/team_task" in js
     assert "/api/message" in js

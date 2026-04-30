@@ -304,24 +304,17 @@ def write_assets() -> None:
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Y*Bridge Labs Whiteboard Office</title>
+  <title>Y*Bridge Labs Office</title>
   <link rel="stylesheet" href="/static/office.css">
 </head>
 <body>
   <header class="hero">
-    <p class="eyebrow">Local whiteboard runtime: 127.0.0.1 only</p>
-    <h1>Y*Bridge Labs Whiteboard Office</h1>
+    <p class="eyebrow">Local-only Labs Office · no external sending</p>
+    <h1>Y*Bridge Labs Office</h1>
+    <p class="subtitle">一个简单的白板办公室：你说目标，Aiden 拆任务，团队本地工作，结果和审批停在这里。</p>
     <p id="phase">Loading recovered team and work board...</p>
     <div class="actions">
       <button id="refresh-button" type="button">Refresh Status</button>
-      <button id="route-button" type="button">Route with Aiden</button>
-      <button id="work-cycle-button" type="button">Run One Safe Work Cycle</button>
-      <button id="team-cycle-button" type="button">Run Team Work Cycle</button>
-      <button id="scheduler-once-button" type="button">Run Scheduler Once</button>
-      <button id="scheduler-bounded-button" type="button">Run Bounded Self-Work</button>
-      <button id="l8-start-button" type="button">Start First Cash Path Loop</button>
-      <button id="l8-build-actions-button" type="button">Build Commercial Action Queue</button>
-      <button id="completion-button" type="button">Generate Completion Report</button>
     </div>
   </header>
 
@@ -329,34 +322,88 @@ def write_assets() -> None:
     <div id="message-form" hidden></div>
     <div id="team-task-form" hidden></div>
     <select id="target-agent" hidden></select>
-    <section class="panel whiteboard-panel">
-      <h2>Team Whiteboard / Chat</h2>
-      <div id="whiteboard-thread" class="thread"></div>
+    <section class="panel command-center">
+      <div class="section-label">Start Here</div>
+      <h2>把目标交给团队</h2>
+      <p class="muted">不用理解 L8/L9/L10。先写一句你想让团队完成的事，然后按下面 3 步走。</p>
+      <div class="template-row">
+        <button class="template-chip" type="button" data-template="first-cash">最快拿到第一笔钱</button>
+        <button class="template-chip" type="button" data-template="thirty-day">30 天发展计划</button>
+        <button class="template-chip" type="button" data-template="opportunities">寻找新赚钱机会</button>
+      </div>
       <form id="whiteboard-message-form" class="office-form">
         <label>Target
           <select id="whiteboard-target" name="target">
             <option value="whole_team">Whole Team</option>
           </select>
         </label>
-        <label>Goal / instruction
+        <label>你要团队做什么？
           <textarea id="whiteboard-text" required>团队请一起分析：我们下一步怎么最快拿到第一笔钱，同时不牺牲长期战略？</textarea>
         </label>
-        <label>Objective
+        <label>这次任务的目标
           <input id="whiteboard-objective" value="Find the safest fastest first-cash path">
         </label>
-        <button type="submit">Send to Team</button>
+        <button class="primary-action" type="submit">1. 发给团队</button>
         <p id="whiteboard-send-status" class="send-status muted">Ready to create a local team instruction packet.</p>
       </form>
+      <div class="step-actions">
+        <button id="route-button" type="button">2. Aiden 拆任务</button>
+        <button id="team-cycle-button" type="button">3. 团队工作一轮</button>
+        <button id="completion-button" type="button">4. 生成总结</button>
+      </div>
+      <details class="mini-help">
+        <summary>我应该怎么用？</summary>
+        <ol>
+          <li>写一句目标，越像对真人团队说话越好。</li>
+          <li>点“发给团队”，只会创建本地 packet，不会发到外网。</li>
+          <li>点“Aiden 拆任务”，Aiden 会把目标分派给成员。</li>
+          <li>点“团队工作一轮”，成员会在下面回复。</li>
+        </ol>
+      </details>
+    </section>
+
+    <section class="panel result-panel">
+      <div class="section-label">Team Replies</div>
+      <h2>团队白板</h2>
+      <div id="whiteboard-thread" class="thread"></div>
     </section>
 
     <section class="panel">
-      <h2>Team Work Board</h2>
+      <div class="section-label">Work Board</div>
+      <h2>当前任务进度</h2>
       <div id="work-board" class="kanban"></div>
     </section>
 
-    <section class="panel scheduler-panel">
+    <section class="panel">
+      <div class="section-label">Team</div>
+      <h2>团队成员状态</h2>
+      <div id="agent-panel" class="agent-panel"></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-label">Result</div>
+      <h2>最近一次操作结果</h2>
+      <pre id="packet-result">No whiteboard action yet.</pre>
+    </section>
+
+    <section class="panel">
+      <div class="section-label">Approvals</div>
+      <h2>需要你批准的事情</h2>
+      <ul id="pending-approvals"></ul>
+      <h3>系统不会自动做的事</h3>
+      <ul id="blocked-actions"></ul>
+    </section>
+
+    <details class="panel advanced-panel">
+      <summary>高级：调度器 / 商业路径 / 委托任务</summary>
+      <section class="scheduler-panel">
       <h2>Self-Work Scheduler</h2>
-      <p class="muted">Bounded local scheduler: selects safe internal tasks, writes heartbeats, stops at approval gates.</p>
+      <p class="muted">自动选择安全的本地任务；遇到外部动作或核心写回会停下来。</p>
+      <div class="step-actions">
+        <button id="work-cycle-button" type="button">Run One Safe Work Cycle</button>
+        <button id="scheduler-once-button" type="button">Run Scheduler Once</button>
+        <button id="scheduler-bounded-button" type="button">Run Bounded Self-Work</button>
+      </div>
       <div id="scheduler-status" class="scheduler-status">Loading scheduler...</div>
       <h3>Progress Heartbeats</h3>
       <ul id="progress-heartbeats"></ul>
@@ -364,11 +411,15 @@ def write_assets() -> None:
       <ul id="approval-interruptions"></ul>
       <h3>Autonomous Runs</h3>
       <ul id="autonomous-runs"></ul>
-    </section>
+      </section>
 
-    <section class="panel l8-cockpit-panel">
+    <section class="l8-cockpit-panel">
       <h2>L8 First Cash Path Cockpit</h2>
       <p class="muted">Founder AI Workflow Audit & CEO Command Brief Sprint. Manual-send only; no automatic customer contact.</p>
+      <div class="step-actions">
+        <button id="l8-start-button" type="button">Start First Cash Path Loop</button>
+        <button id="l8-build-actions-button" type="button">Build Commercial Action Queue</button>
+      </div>
       <div id="l8-cockpit" class="l8-cockpit">Loading first cash path loop...</div>
       <div class="l8-controls">
         <label>Approval action
@@ -422,7 +473,7 @@ def write_assets() -> None:
       </div>
     </section>
 
-    <section class="panel l9-cockpit-panel">
+    <section class="l9-cockpit-panel">
       <h2>L9 Meta-Development Cockpit</h2>
       <p class="muted">Portfolio engine: discover opportunities, rank money paths, select a path, then bridge it into approval-gated L8 action loops.</p>
       <div id="l9-cockpit" class="l9-cockpit">Loading meta-development portfolio...</div>
@@ -471,7 +522,7 @@ def write_assets() -> None:
       </div>
     </section>
 
-    <section class="panel l10-cockpit-panel">
+    <section class="l10-cockpit-panel">
       <h2>L10 Delegated Mission Cockpit</h2>
       <p class="muted">Create a real delegated meta-development mission, run bounded internal/research work, and escalate risky actions for owner review.</p>
       <div id="l10-cockpit" class="l10-cockpit">Loading delegated mission state...</div>
@@ -520,41 +571,28 @@ def write_assets() -> None:
         <button id="l10-refresh-button" type="button">Refresh L10 Cockpit</button>
       </div>
     </section>
+    </details>
 
     <section class="panel">
-      <h2>Agent Panel</h2>
-      <div id="agent-panel" class="agent-panel"></div>
-    </section>
-
-    <section class="panel">
-      <h2>Agent Room</h2>
+      <div class="section-label">Rooms</div>
+      <h2>成员房间</h2>
       <div id="agent-room" class="room-card">Select an agent room.</div>
     </section>
 
     <section class="panel">
-      <h2>Progress Timeline</h2>
+      <div class="section-label">Timeline</div>
+      <h2>工作时间线</h2>
       <ol id="progress-timeline" class="timeline"></ol>
     </section>
 
     <section class="panel">
-      <h2>Approval Queue</h2>
-      <ul id="pending-approvals"></ul>
-      <h3>Blocked Actions</h3>
-      <ul id="blocked-actions"></ul>
-    </section>
-
-    <section class="panel">
-      <h2>Recovered Legacy Team</h2>
-      <p>No COO is invented as a legacy member. The roster below is loaded from L7.4 recovery artifacts.</p>
+      <div class="section-label">Roster</div>
+      <h2>原始团队</h2>
+      <p>No COO is invented. The roster below is loaded from L7.4 recovery artifacts.</p>
       <div id="roster" class="card-grid"></div>
     </section>
-
-    <section class="panel">
-      <h2>Runtime Result</h2>
-      <pre id="packet-result">No whiteboard action yet.</pre>
-    </section>
   </main>
-  <script src="/static/office.js?v=l10-send-fallback"></script>
+  <script src="/static/office.js?v=simple-office-v1"></script>
 </body>
 </html>
 """,
@@ -682,6 +720,148 @@ pre {
   overflow: auto;
 }
 @media (max-width: 980px) { .office-grid { grid-template-columns: 1fr; } }
+
+/* Simple Office mode, inspired by the OpenClaw/K9 dark wizard style. */
+:root {
+  --bg: #080b0f;
+  --surface: rgba(15, 20, 28, .92);
+  --surface2: rgba(22, 30, 42, .94);
+  --border: rgba(110, 231, 183, .22);
+  --text: #e8f2ef;
+  --text2: #8fa4a0;
+  --accent: #2cf59a;
+  --accent2: #35c8ff;
+  --warn: #ffb86b;
+}
+body {
+  font-family: "SF Mono", "Fira Code", Consolas, ui-monospace, monospace;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(44, 245, 154, .18), transparent 32rem),
+    radial-gradient(circle at 88% 18%, rgba(53, 200, 255, .16), transparent 28rem),
+    linear-gradient(135deg, #07090d, #101820 52%, #07110d);
+}
+.hero {
+  max-width: 1180px;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.hero h1 {
+  font-family: inherit;
+  font-size: clamp(34px, 6vw, 72px);
+  letter-spacing: -.06em;
+}
+.subtitle {
+  max-width: 760px;
+  color: var(--text2);
+  font-size: 16px;
+}
+.eyebrow, .section-label {
+  color: var(--accent);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+.office-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr);
+}
+.panel {
+  background: var(--surface);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  box-shadow: 0 22px 80px rgba(0,0,0,.28);
+}
+.command-center {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, .42fr);
+  gap: 18px;
+  align-items: start;
+  border-color: var(--border);
+}
+.command-center h2 { font-size: clamp(28px, 4vw, 48px); letter-spacing: -.04em; }
+.command-center .office-form { grid-column: 1; }
+.template-row, .step-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.template-row { grid-column: 2; align-self: start; }
+.template-chip, button {
+  font-family: inherit;
+  border: 1px solid rgba(44,245,154,.25);
+  background: rgba(44,245,154,.12);
+  color: var(--text);
+  border-radius: 10px;
+}
+.template-chip:hover, button:hover {
+  background: rgba(44,245,154,.22);
+  color: white;
+}
+.primary-action {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #06100c;
+  font-weight: 800;
+  border: 0;
+}
+input, select, textarea {
+  background: rgba(255,255,255,.055);
+  border: 1px solid rgba(255,255,255,.12);
+  color: var(--text);
+}
+textarea { min-height: 150px; }
+.muted, .role { color: var(--text2); }
+.thread {
+  min-height: 360px;
+  background: rgba(0,0,0,.16);
+  border-radius: 14px;
+  padding: 12px;
+}
+.bubble {
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.09);
+}
+.bubble.owner { border-left-color: var(--accent2); }
+.bubble.agent { border-left-color: var(--accent); }
+.kanban { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+.column, .work-card, .agent-card, .room-card {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.09);
+}
+.send-status, .scheduler-status, .l8-cockpit, .l9-cockpit, .l10-cockpit {
+  background: rgba(44,245,154,.07);
+  border-color: rgba(44,245,154,.22);
+}
+pre {
+  background: #05070a;
+  border: 1px solid rgba(255,255,255,.08);
+  color: #d7fff0;
+}
+.advanced-panel {
+  grid-column: 1 / -1;
+}
+.advanced-panel > summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+.advanced-panel > section {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.mini-help {
+  grid-column: 2;
+  color: var(--text2);
+}
+.mini-help summary { color: var(--accent2); cursor: pointer; }
+@media (max-width: 980px) {
+  .office-grid, .command-center { grid-template-columns: 1fr; }
+  .template-row, .mini-help { grid-column: 1; }
+}
 """,
     )
     write_text(
@@ -690,6 +870,20 @@ pre {
 const $ = (id) => document.getElementById(id);
 const columns = ["Inbox", "Interpreting", "Assigned", "In Progress", "Waiting for Approval", "Blocked", "Done"];
 let OFFICE_STATE = null;
+const quickTemplates = {
+  "first-cash": {
+    text: "Aiden，请带团队分析：Y*Bridge Labs 下一步怎么最快拿到第一笔钱，同时不要牺牲长期战略。请分派给 Sofia、Marco、Zara、Ethan、Jinjin 和 Samantha。",
+    objective: "Find the safest fastest first-cash path",
+  },
+  "thirty-day": {
+    text: "团队请一起制定未来 30 天的 meta-development 计划：目标是提高首笔收入概率，同时保留长期产品化路线。",
+    objective: "Build a 30-day meta-development plan",
+  },
+  "opportunities": {
+    text: "团队请发现并比较多个可能赚钱路径，不要只看 Founder AI Workflow Audit；请按最短兑现路径、战略价值、执行难度排序。",
+    objective: "Discover and rank money-making opportunities",
+  },
+};
 
 function escapeHtml(text) {
   return String(text || "").replace(/[&<>"']/g, (ch) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -933,6 +1127,15 @@ async function sendTeamInstruction() {
 }
 
 $("refresh-button").addEventListener("click", refreshOffice);
+document.querySelectorAll(".template-chip").forEach((button) => {
+  button.addEventListener("click", () => {
+    const template = quickTemplates[button.dataset.template];
+    if (!template) return;
+    $("whiteboard-text").value = template.text;
+    $("whiteboard-objective").value = template.objective;
+    setSendStatus("Template loaded. Edit it if needed, then click 1. 发给团队.", "ok");
+  });
+});
 $("whiteboard-message-form").addEventListener("submit", async (event) => {
   event.preventDefault();
   try {

@@ -72,13 +72,19 @@ def test_page_template_contains_message_and_team_task_forms():
     assert 'id="message-form"' in template
     assert 'id="team-task-form"' in template
     assert 'id="target-agent"' in template
+    assert "把目标交给团队" in template
+    assert "1. 发给团队" in template
+    assert "2. Aiden 拆任务" in template
+    assert "3. 团队工作一轮" in template
+    assert "高级：调度器 / 商业路径 / 委托任务" in template
     assert 'id="whiteboard-send-status"' in template
-    assert "office.js?v=l10-send-fallback" in template
+    assert "office.js?v=simple-office-v1" in template
 
 
 def test_whiteboard_submit_has_legacy_backend_fallback():
     js = (OUT / "static/office.js").read_text(encoding="utf-8")
     assert "sendTeamInstruction" in js
+    assert "quickTemplates" in js
     assert "compatibility_fallback" in js
     assert "/api/whiteboard/message" in js
     assert "/api/team_task" in js

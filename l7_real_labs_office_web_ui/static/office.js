@@ -1,6 +1,20 @@
 const $ = (id) => document.getElementById(id);
 const columns = ["Inbox", "Interpreting", "Assigned", "In Progress", "Waiting for Approval", "Blocked", "Done"];
 let OFFICE_STATE = null;
+const quickTemplates = {
+  "first-cash": {
+    text: "Aiden，请带团队分析：Y*Bridge Labs 下一步怎么最快拿到第一笔钱，同时不要牺牲长期战略。请分派给 Sofia、Marco、Zara、Ethan、Jinjin 和 Samantha。",
+    objective: "Find the safest fastest first-cash path",
+  },
+  "thirty-day": {
+    text: "团队请一起制定未来 30 天的 meta-development 计划：目标是提高首笔收入概率，同时保留长期产品化路线。",
+    objective: "Build a 30-day meta-development plan",
+  },
+  "opportunities": {
+    text: "团队请发现并比较多个可能赚钱路径，不要只看 Founder AI Workflow Audit；请按最短兑现路径、战略价值、执行难度排序。",
+    objective: "Discover and rank money-making opportunities",
+  },
+};
 
 function escapeHtml(text) {
   return String(text || "").replace(/[&<>"']/g, (ch) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -244,6 +258,15 @@ async function sendTeamInstruction() {
 }
 
 $("refresh-button").addEventListener("click", refreshOffice);
+document.querySelectorAll(".template-chip").forEach((button) => {
+  button.addEventListener("click", () => {
+    const template = quickTemplates[button.dataset.template];
+    if (!template) return;
+    $("whiteboard-text").value = template.text;
+    $("whiteboard-objective").value = template.objective;
+    setSendStatus("Template loaded. Edit it if needed, then click 1. 发给团队.", "ok");
+  });
+});
 $("whiteboard-message-form").addEventListener("submit", async (event) => {
   event.preventDefault();
   try {
