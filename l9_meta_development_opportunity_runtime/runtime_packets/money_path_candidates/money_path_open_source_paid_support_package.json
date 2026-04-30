@@ -1,0 +1,53 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L9.0",
+  "packet_type": "money_path_candidate",
+  "created_at": "2026-04-30T14:59:52Z",
+  "external_side_effects": false,
+  "customer_contact": false,
+  "email_sent": false,
+  "payment_processed": false,
+  "publication": false,
+  "core_writeback": false,
+  "grant_rfp_path_created_by_default": false,
+  "coo_invented": false,
+  "money_path_id": "money_path_open_source_paid_support_package",
+  "opportunity_id": "opp_open_source_paid_support_package",
+  "path_title": "Open-Source-to-Paid-Support Package money path",
+  "path_type": "productized_support_path",
+  "offer_hypothesis": "Packaged templates plus paid support and implementation sessions.",
+  "target_customer": "Developers adopting agent governance/runtime templates.",
+  "first_action": "Create owner-reviewed manual-send action packet and/or no-contact validation plan.",
+  "required_assets": [
+    "asset_open_source_background",
+    "asset_templates_and_service_design",
+    "asset_y_governance"
+  ],
+  "missing_assets": [
+    "public packaging",
+    "support docs",
+    "proof asset"
+  ],
+  "expected_signal": "Owner-approved customer signal, response, or paid pilot interest.",
+  "expected_cash_mechanism": "Paid support around open artifacts.",
+  "time_to_first_signal": "30 days",
+  "time_to_first_cash": "60 days",
+  "time_to_first_signal_days": 30,
+  "time_to_first_cash_days": 60,
+  "execution_difficulty": 4,
+  "strategic_value": 5,
+  "current_capability_fit": 2,
+  "productization_potential": 5,
+  "owner_load": 3,
+  "risk_level": 5,
+  "score_summary": "Score by shortest cash, strategic value, owner load, and capability fit.",
+  "status": "candidate",
+  "approval_needs": [
+    "owner approval before contact",
+    "manual-send only",
+    "feedback intake after owner action"
+  ],
+  "risk_boundary": "No automatic sending, payment, publication, scraping, or permanent writeback.",
+  "feedback_plan": "Record owner-entered feedback, build residual, then create review-gated learning candidate.",
+  "updated_at": "2026-04-30T14:59:52Z"
+}

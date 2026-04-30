@@ -8,6 +8,7 @@
   "whiteboard_runtime_phase": "Real Labs Whiteboard Collaboration & Team Work Runtime",
   "scheduler_runtime_phase": "L7.6 Labs Team Self-Work Scheduler & Autonomous Task Loop",
   "l8_runtime_phase": "L8.0 First Cash Path Operating Loop",
+  "l9_runtime_phase": "L9.0 Meta-Development Opportunity & Execution Runtime",
   "legacy_source": "l7_labs_office_legacy_integration",
   "agent_count": 12,
   "agents": [
@@ -1787,6 +1788,17 @@
     "customer feedback intake",
     "commercial residual analysis",
     "review-gated learning candidates"
+  ],
+  "l9_features": [
+    "internal asset inventory",
+    "opportunity discovery portfolio",
+    "money path generation",
+    "multi-lens opportunity ranking",
+    "owner opportunity review center",
+    "manual-send-only execution plans",
+    "L8 action loop bridge packets",
+    "portfolio residuals",
+    "review-gated portfolio learning candidates"
   ],
   "work_board_columns": [
     "Inbox",

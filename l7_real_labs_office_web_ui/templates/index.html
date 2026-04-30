@@ -120,6 +120,55 @@
       </div>
     </section>
 
+    <section class="panel l9-cockpit-panel">
+      <h2>L9 Meta-Development Cockpit</h2>
+      <p class="muted">Portfolio engine: discover opportunities, rank money paths, select a path, then bridge it into approval-gated L8 action loops.</p>
+      <div id="l9-cockpit" class="l9-cockpit">Loading meta-development portfolio...</div>
+      <div class="l9-controls">
+        <button id="l9-assets-button" type="button">Build Internal Asset Inventory</button>
+        <button id="l9-discover-button" type="button">Run Opportunity Discovery</button>
+        <button id="l9-money-paths-button" type="button">Generate Money Paths</button>
+        <button id="l9-rankings-button" type="button">Rank Opportunities</button>
+        <button id="l9-decision-packets-button" type="button">Build Owner Decision Packets</button>
+        <label>Decision packet
+          <select id="l9-decision-packet-select"></select>
+        </label>
+        <label>Owner decision
+          <select id="l9-review-decision-select">
+            <option value="select_for_execution">select for execution</option>
+            <option value="reject">reject</option>
+            <option value="hold">hold</option>
+            <option value="request_revision">request revision</option>
+            <option value="request_more_evidence">request more evidence</option>
+          </select>
+        </label>
+        <input id="l9-review-note" placeholder="Optional portfolio decision note">
+        <button id="l9-review-button" type="button">Submit Opportunity Review</button>
+        <label>Selected money path
+          <select id="l9-money-path-select"></select>
+        </label>
+        <button id="l9-execution-plan-button" type="button">Generate Execution Plan</button>
+        <label>Execution plan
+          <select id="l9-execution-plan-select"></select>
+        </label>
+        <button id="l9-bridge-button" type="button">Bridge Selected Path to L8 Action Loop</button>
+        <label>Portfolio signal
+          <select id="l9-signal-select">
+            <option value="no_signal">no signal</option>
+            <option value="positive_signal">positive signal</option>
+            <option value="pricing_friction">pricing friction</option>
+            <option value="target_mismatch">target mismatch</option>
+            <option value="offer_mismatch">offer mismatch</option>
+            <option value="capability_gap">capability gap</option>
+            <option value="channel_mismatch">channel mismatch</option>
+          </select>
+        </label>
+        <button id="l9-residual-button" type="button">Build Portfolio Residual</button>
+        <button id="l9-learning-button" type="button">Build Portfolio Learning Candidate</button>
+        <button id="l9-refresh-button" type="button">Refresh Meta Cockpit</button>
+      </div>
+    </section>
+
     <section class="panel">
       <h2>Agent Panel</h2>
       <div id="agent-panel" class="agent-panel"></div>

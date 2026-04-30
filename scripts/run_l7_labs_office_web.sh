@@ -56,6 +56,18 @@ l8_dirs = {
     "residuals": l8_root / "commercial_residuals",
     "learning": l8_root / "learning_candidates",
 }
+l9_root = Path("l9_meta_development_opportunity_runtime/runtime_packets")
+l9_dirs = {
+    "assets": l9_root / "internal_asset_inventory",
+    "opportunities": l9_root / "opportunity_candidates",
+    "money_paths": l9_root / "money_path_candidates",
+    "rankings": l9_root / "opportunity_rankings",
+    "reviews": l9_root / "opportunity_review_decisions",
+    "plans": l9_root / "execution_plans",
+    "bridges": l9_root / "l8_bridge_packets",
+    "residuals": l9_root / "portfolio_residuals",
+    "learning": l9_root / "portfolio_learning_candidates",
+}
 print("Y*Bridge Labs Office Web UI")
 print(f"- URL: {state['local_url']}")
 print(f"- agents: {state['agent_count']}")
@@ -74,6 +86,17 @@ print(f"- L8 manual-send packets: {len(list(l8_dirs['manual'].glob('*.json'))) i
 print(f"- L8 feedback packets: {len(list(l8_dirs['feedback'].glob('*.json'))) if l8_dirs['feedback'].exists() else 0}")
 print(f"- L8 residuals: {len(list(l8_dirs['residuals'].glob('*.json'))) if l8_dirs['residuals'].exists() else 0}")
 print(f"- L8 learning candidates: {len(list(l8_dirs['learning'].glob('*.json'))) if l8_dirs['learning'].exists() else 0}")
+print(f"- L9 package available: {Path('l9_meta_development_opportunity_runtime').exists()}")
+print(f"- L9 asset inventory packets: {len(list(l9_dirs['assets'].glob('*.json'))) if l9_dirs['assets'].exists() else 0}")
+print(f"- L9 opportunities: {len(list(l9_dirs['opportunities'].glob('*.json'))) if l9_dirs['opportunities'].exists() else 0}")
+print(f"- L9 money paths: {len(list(l9_dirs['money_paths'].glob('*.json'))) if l9_dirs['money_paths'].exists() else 0}")
+print(f"- L9 rankings: {len(list(l9_dirs['rankings'].glob('*.json'))) if l9_dirs['rankings'].exists() else 0}")
+print(f"- L9 selected opportunity count: {sum(1 for p in l9_dirs['money_paths'].glob('*.json') if p.name != '.gitkeep' and json.loads(p.read_text(encoding='utf-8')).get('status') == 'selected_for_execution') if l9_dirs['money_paths'].exists() else 0}")
+print(f"- L9 execution plans: {len(list(l9_dirs['plans'].glob('*.json'))) if l9_dirs['plans'].exists() else 0}")
+print(f"- L9 L8 bridge packets: {len(list(l9_dirs['bridges'].glob('*.json'))) if l9_dirs['bridges'].exists() else 0}")
+print(f"- L9 portfolio residuals: {len(list(l9_dirs['residuals'].glob('*.json'))) if l9_dirs['residuals'].exists() else 0}")
+print(f"- L9 learning candidates: {len(list(l9_dirs['learning'].glob('*.json'))) if l9_dirs['learning'].exists() else 0}")
+print("- L9 grant/RFP default path: no")
 print("- external side effects: no")
 print(f"- pending approvals: {', '.join(state.get('pending_approvals', []))}")
 print(f"- next command: bash scripts/run_l7_labs_office_web.sh --mode serve")
@@ -96,6 +119,15 @@ from l8_first_cash_path_operating_loop.learning_candidate_builder import build_l
 from l8_first_cash_path_operating_loop.manual_send_packet import mark_manual_send_packet
 from l8_first_cash_path_operating_loop.owner_approval_center import decide_action
 from l8_first_cash_path_operating_loop.cockpit_model import build_cockpit_snapshot
+from l9_meta_development_opportunity_runtime.l9_manifest_builder import build_manifest as build_l9_manifest
+from l9_meta_development_opportunity_runtime.owner_decision_packet import list_owner_decision_packets
+from l9_meta_development_opportunity_runtime.opportunity_review_center import decide_opportunity
+from l9_meta_development_opportunity_runtime.execution_plan_generator import build_execution_plan
+from l9_meta_development_opportunity_runtime.l8_action_loop_bridge import build_l8_bridge_packet
+from l9_meta_development_opportunity_runtime.portfolio_feedback_ingestor import record_portfolio_feedback
+from l9_meta_development_opportunity_runtime.portfolio_residual import build_portfolio_residual
+from l9_meta_development_opportunity_runtime.portfolio_learning_candidate import build_portfolio_learning_candidate
+from l9_meta_development_opportunity_runtime.meta_development_cockpit import build_meta_cockpit
 item = create_demo_work_item()
 result = run_bounded(max_work_items=1, max_cycles=2)
 report = None
@@ -111,6 +143,16 @@ feedback = record_customer_feedback(manual_packet["packet_id"], "interested", "S
 residual = build_commercial_residual(feedback["feedback_id"])
 candidate = build_learning_candidate(residual["residual_id"])
 cockpit = build_cockpit_snapshot()
+l9_manifest = build_l9_manifest(force=True)
+decision_packets = list_owner_decision_packets()
+non_seed_packet = next(packet for packet in decision_packets if "founder_ai_workflow_audit" not in packet["money_path_id"])
+l9_decision = decide_opportunity(non_seed_packet["decision_packet_id"], "select_for_execution", "Simulated local demo selection of a non-seed opportunity.")
+l9_plan = build_execution_plan(l9_decision["money_path"]["money_path_id"])
+l9_bridge = build_l8_bridge_packet(l9_plan["execution_plan_id"])
+l9_feedback = record_portfolio_feedback(l9_decision["money_path"]["money_path_id"], "positive_signal", "Simulated portfolio signal for demo; no customer contact occurred.")
+l9_residual = build_portfolio_residual(l9_feedback["feedback_id"])
+l9_learning = build_portfolio_learning_candidate(l9_residual["residual_id"])
+l9_cockpit = build_meta_cockpit()
 print("demo_ok: L8 first cash path operating loop simulated locally")
 print(f"work_item: {item['work_item_id']}")
 print(f"completion_report: {report or 'not_created'}")
@@ -122,6 +164,14 @@ print(f"customer_feedback: {feedback['feedback_id']}")
 print(f"commercial_residual: {residual['residual_id']}")
 print(f"learning_candidate: {candidate['candidate_id']}")
 print(f"cockpit_snapshot: {cockpit['cockpit_snapshot_id']}")
+print("demo_ok: L9 meta-development portfolio loop simulated locally")
+print(f"l9_manifest_opportunities: {l9_manifest['opportunity_count']}")
+print(f"l9_selected_non_seed_money_path: {l9_decision['money_path']['money_path_id']}")
+print(f"l9_execution_plan: {l9_plan['execution_plan_id']}")
+print(f"l9_l8_bridge_packet: {l9_bridge['bridge_packet_id']}")
+print(f"l9_portfolio_residual: {l9_residual['residual_id']}")
+print(f"l9_learning_candidate: {l9_learning['candidate_id']}")
+print(f"l9_cockpit_snapshot: {l9_cockpit['cockpit_snapshot_id']}")
 print("next_command: bash scripts/run_l7_labs_office_web.sh --mode serve")
 PY
 }
@@ -162,7 +212,12 @@ try:
     l8 = json.loads(get("/api/l8/cockpit"))
     if "Founder AI Workflow Audit" not in l8.get("selected_first_cash_path", {}).get("selected_offer", ""):
         raise SystemExit("L8 cockpit missing selected first cash path")
-    print("smoke_ok: GET /, /api/roster, /api/status, /api/scheduler/status, /api/l8/cockpit")
+    l9 = json.loads(get("/api/l9/meta/cockpit"))
+    if len(l9.get("opportunity_candidates", [])) < 8:
+        raise SystemExit("L9 cockpit missing opportunity portfolio")
+    if l9.get("grant_rfp_default_path_status") != "no":
+        raise SystemExit("L9 grant/RFP default path unexpectedly enabled")
+    print("smoke_ok: GET /, /api/roster, /api/status, /api/scheduler/status, /api/l8/cockpit, /api/l9/meta/cockpit")
 except URLError as exc:
     if "Operation not permitted" not in str(exc):
         raise
@@ -180,6 +235,11 @@ except URLError as exc:
         raise SystemExit("L8 summary missing")
     if "L8 First Cash Path Cockpit" not in html:
         raise SystemExit("HTML missing L8 cockpit")
+    l9_summary = json.loads(Path("l9_meta_development_opportunity_runtime/l9_summary.json").read_text(encoding="utf-8"))
+    if l9_summary.get("opportunity_count", 0) < 8:
+        raise SystemExit("L9 summary missing opportunity portfolio")
+    if "L9 Meta-Development Cockpit" not in html:
+        raise SystemExit("HTML missing L9 cockpit")
     print("smoke_ok: offline fallback because sandbox blocked localhost socket")
 PY
 }

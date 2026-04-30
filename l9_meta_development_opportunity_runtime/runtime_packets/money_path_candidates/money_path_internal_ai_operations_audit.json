@@ -1,0 +1,53 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L9.0",
+  "packet_type": "money_path_candidate",
+  "created_at": "2026-04-30T14:59:52Z",
+  "external_side_effects": false,
+  "customer_contact": false,
+  "email_sent": false,
+  "payment_processed": false,
+  "publication": false,
+  "core_writeback": false,
+  "grant_rfp_path_created_by_default": false,
+  "coo_invented": false,
+  "money_path_id": "money_path_internal_ai_operations_audit",
+  "opportunity_id": "opp_internal_ai_operations_audit",
+  "path_title": "Internal AI Operations Audit for Small Teams money path",
+  "path_type": "service_audit_path",
+  "offer_hypothesis": "Internal AI workflow audit with low-risk improvement plan.",
+  "target_customer": "Small team adopting AI tools across research, code, docs, and decisions.",
+  "first_action": "Create owner-reviewed manual-send action packet and/or no-contact validation plan.",
+  "required_assets": [
+    "asset_y_governance",
+    "asset_l75_labs_office",
+    "asset_founder_context"
+  ],
+  "missing_assets": [
+    "buyer proof",
+    "manual-send recipient selection",
+    "sample deliverable"
+  ],
+  "expected_signal": "Owner-approved customer signal, response, or paid pilot interest.",
+  "expected_cash_mechanism": "Service sprint and follow-on templates.",
+  "time_to_first_signal": "14 days",
+  "time_to_first_cash": "35 days",
+  "time_to_first_signal_days": 14,
+  "time_to_first_cash_days": 35,
+  "execution_difficulty": 3,
+  "strategic_value": 4,
+  "current_capability_fit": 3,
+  "productization_potential": 3,
+  "owner_load": 2,
+  "risk_level": 3,
+  "score_summary": "Score by shortest cash, strategic value, owner load, and capability fit.",
+  "status": "candidate",
+  "approval_needs": [
+    "owner approval before contact",
+    "manual-send only",
+    "feedback intake after owner action"
+  ],
+  "risk_boundary": "No automatic sending, payment, publication, scraping, or permanent writeback.",
+  "feedback_plan": "Record owner-entered feedback, build residual, then create review-gated learning candidate.",
+  "updated_at": "2026-04-30T14:59:52Z"
+}

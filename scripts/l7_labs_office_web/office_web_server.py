@@ -49,6 +49,22 @@ from l8_first_cash_path_operating_loop.first_cash_path_model import latest_packe
 from l8_first_cash_path_operating_loop.learning_candidate_builder import build_learning_candidate, list_learning_candidates  # noqa: E402
 from l8_first_cash_path_operating_loop.manual_send_packet import list_manual_send_packets, mark_manual_send_packet  # noqa: E402
 from l8_first_cash_path_operating_loop.owner_approval_center import decide_action, list_approval_decisions, list_pending_approvals  # noqa: E402
+from l9_meta_development_opportunity_runtime.execution_plan_generator import build_execution_plan, list_execution_plans  # noqa: E402
+from l9_meta_development_opportunity_runtime.internal_asset_inventory import build_internal_asset_inventory, list_assets  # noqa: E402
+from l9_meta_development_opportunity_runtime.l8_action_loop_bridge import build_l8_bridge_packet, list_l8_bridge_packets  # noqa: E402
+from l9_meta_development_opportunity_runtime.l9_manifest_builder import build_manifest as build_l9_manifest  # noqa: E402
+from l9_meta_development_opportunity_runtime.meta_development_cockpit import build_meta_cockpit, current_meta_cockpit  # noqa: E402
+from l9_meta_development_opportunity_runtime.money_path_generator import generate_money_paths  # noqa: E402
+from l9_meta_development_opportunity_runtime.money_path_model import list_money_paths  # noqa: E402
+from l9_meta_development_opportunity_runtime.opportunity_discovery_engine import discover_opportunities  # noqa: E402
+from l9_meta_development_opportunity_runtime.opportunity_model import latest_packet as latest_l9_packet  # noqa: E402
+from l9_meta_development_opportunity_runtime.opportunity_portfolio import list_opportunities  # noqa: E402
+from l9_meta_development_opportunity_runtime.opportunity_review_center import decide_opportunity, list_opportunity_review_decisions  # noqa: E402
+from l9_meta_development_opportunity_runtime.owner_decision_packet import build_owner_decision_packets, list_owner_decision_packets  # noqa: E402
+from l9_meta_development_opportunity_runtime.portfolio_feedback_ingestor import record_portfolio_feedback  # noqa: E402
+from l9_meta_development_opportunity_runtime.portfolio_learning_candidate import build_portfolio_learning_candidate, list_portfolio_learning_candidates  # noqa: E402
+from l9_meta_development_opportunity_runtime.portfolio_residual import build_portfolio_residual, list_portfolio_residuals  # noqa: E402
+from l9_meta_development_opportunity_runtime.ranking_engine import build_rankings, list_rankings  # noqa: E402
 
 ALLOWED_ACTIONS = [
     "local packet creation",
@@ -185,6 +201,34 @@ def create_team_task_packet(payload: dict[str, Any], out_dir: Path = OUT) -> dic
     }
 
 
+def l9_status() -> dict[str, Any]:
+    build_l9_manifest(force=False)
+    opportunities = list_opportunities()
+    paths = list_money_paths()
+    selected = [path for path in paths if path.get("status") == "selected_for_execution"]
+    return {
+        "ok": True,
+        "l9_package_available": True,
+        "asset_inventory_count": len(list_assets()),
+        "opportunity_count": len(opportunities),
+        "money_path_count": len(paths),
+        "ranking_count": len(list_rankings()),
+        "selected_opportunity_count": len(selected),
+        "execution_plan_count": len(list_execution_plans()),
+        "l8_bridge_packet_count": len(list_l8_bridge_packets()),
+        "portfolio_residual_count": len(list_portfolio_residuals()),
+        "portfolio_learning_candidate_count": len(list_portfolio_learning_candidates()),
+        "grant_rfp_default_path_status": "no",
+        "external_side_effects": False,
+        "customer_contact": False,
+        "email_sent": False,
+        "payment_processed": False,
+        "publication": False,
+        "core_writeback": False,
+        "coo_invented": False,
+    }
+
+
 class OfficeHandler(BaseHTTPRequestHandler):
     server_version = "LabsOffice/0.1"
 
@@ -257,6 +301,30 @@ class OfficeHandler(BaseHTTPRequestHandler):
                 json_response(self, {"learning_candidates": list_learning_candidates()})
             elif path == "/api/l8/cockpit":
                 json_response(self, current_cockpit())
+            elif path == "/api/l9/meta/status":
+                json_response(self, l9_status())
+            elif path == "/api/l9/assets":
+                json_response(self, {"assets": list_assets()})
+            elif path == "/api/l9/opportunities":
+                json_response(self, {"opportunities": list_opportunities()})
+            elif path == "/api/l9/money_paths":
+                json_response(self, {"money_paths": list_money_paths()})
+            elif path == "/api/l9/rankings":
+                json_response(self, {"rankings": list_rankings()})
+            elif path == "/api/l9/decision_packets":
+                json_response(self, {"decision_packets": list_owner_decision_packets()})
+            elif path == "/api/l9/opportunity_reviews":
+                json_response(self, {"opportunity_review_decisions": list_opportunity_review_decisions()})
+            elif path == "/api/l9/execution_plans":
+                json_response(self, {"execution_plans": list_execution_plans()})
+            elif path == "/api/l9/l8_bridge_packets":
+                json_response(self, {"l8_bridge_packets": list_l8_bridge_packets()})
+            elif path == "/api/l9/portfolio_residuals":
+                json_response(self, {"portfolio_residuals": list_portfolio_residuals()})
+            elif path == "/api/l9/portfolio_learning_candidates":
+                json_response(self, {"portfolio_learning_candidates": list_portfolio_learning_candidates()})
+            elif path == "/api/l9/meta/cockpit":
+                json_response(self, current_meta_cockpit())
             else:
                 error_response(self, HTTPStatus.NOT_FOUND, "not found")
         except Exception as exc:  # pragma: no cover - defensive server boundary
@@ -393,6 +461,64 @@ class OfficeHandler(BaseHTTPRequestHandler):
                     return
                 candidate = build_learning_candidate(residual_id)
                 json_response(self, {"ok": True, "learning_candidate": candidate, "cockpit": build_cockpit_snapshot()})
+            elif parsed.path == "/api/l9/assets/build":
+                inventory = build_internal_asset_inventory()
+                json_response(self, {"ok": True, "asset_inventory": inventory, "cockpit": build_meta_cockpit()})
+            elif parsed.path == "/api/l9/opportunities/discover":
+                result = discover_opportunities(force=bool(payload.get("force", False)))
+                json_response(self, {**result, "cockpit": build_meta_cockpit()})
+            elif parsed.path == "/api/l9/money_paths/generate":
+                result = generate_money_paths(force=bool(payload.get("force", False)))
+                json_response(self, {**result, "cockpit": build_meta_cockpit()})
+            elif parsed.path == "/api/l9/rankings/build":
+                result = build_rankings(force=bool(payload.get("force", False)))
+                json_response(self, {**result, "cockpit": build_meta_cockpit()})
+            elif parsed.path == "/api/l9/decision_packets/build":
+                result = build_owner_decision_packets(force=bool(payload.get("force", False)))
+                json_response(self, {**result, "cockpit": build_meta_cockpit()})
+            elif parsed.path == "/api/l9/opportunity_reviews/decide":
+                packet_id = str(payload.get("decision_packet_id", "")).strip()
+                decision = str(payload.get("decision", "")).strip()
+                if not packet_id or not decision:
+                    error_response(self, HTTPStatus.BAD_REQUEST, "decision_packet_id and decision are required")
+                    return
+                result = decide_opportunity(packet_id, decision, str(payload.get("decision_note", "")))
+                result["cockpit"] = build_meta_cockpit()
+                json_response(self, result)
+            elif parsed.path == "/api/l9/execution_plans/build":
+                plan = build_execution_plan(str(payload.get("money_path_id", "")).strip() or None)
+                json_response(self, {"ok": True, "execution_plan": plan, "cockpit": build_meta_cockpit()})
+            elif parsed.path == "/api/l9/l8_bridge/build":
+                bridge = build_l8_bridge_packet(str(payload.get("execution_plan_id", "")).strip() or None)
+                json_response(self, {"ok": True, "l8_bridge_packet": bridge, "cockpit": build_meta_cockpit()})
+            elif parsed.path == "/api/l9/portfolio_residuals/build":
+                feedback_id = str(payload.get("feedback_id", "")).strip()
+                if not feedback_id:
+                    money_path_id = str(payload.get("money_path_id", "")).strip()
+                    if not money_path_id:
+                        selected = [path for path in list_money_paths() if path.get("status") == "selected_for_execution"]
+                        money_path_id = selected[0]["money_path_id"] if selected else (list_money_paths()[0]["money_path_id"] if list_money_paths() else "")
+                    if not money_path_id:
+                        error_response(self, HTTPStatus.BAD_REQUEST, "money_path_id or feedback_id is required")
+                        return
+                    feedback = record_portfolio_feedback(
+                        money_path_id,
+                        str(payload.get("actual_signal", "no_signal")),
+                        str(payload.get("feedback_summary", "Owner/demo signal gap recorded locally.")),
+                    )
+                    feedback_id = feedback["feedback_id"]
+                residual = build_portfolio_residual(feedback_id)
+                json_response(self, {"ok": True, "portfolio_residual": residual, "cockpit": build_meta_cockpit()})
+            elif parsed.path == "/api/l9/portfolio_learning_candidates/build":
+                residual_id = str(payload.get("residual_id", "")).strip()
+                if not residual_id:
+                    latest_residual = latest_l9_packet("portfolio_residuals")
+                    residual_id = latest_residual.get("residual_id", "") if latest_residual else ""
+                if not residual_id:
+                    error_response(self, HTTPStatus.BAD_REQUEST, "residual_id is required")
+                    return
+                candidate = build_portfolio_learning_candidate(residual_id)
+                json_response(self, {"ok": True, "portfolio_learning_candidate": candidate, "cockpit": build_meta_cockpit()})
             else:
                 error_response(self, HTTPStatus.NOT_FOUND, "not found")
         except Exception as exc:  # pragma: no cover - defensive server boundary

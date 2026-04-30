@@ -106,6 +106,28 @@ function renderL8Cockpit(cockpit) {
   $("l8-manual-packet-select").innerHTML = manualPackets.map((packet) => `<option value="${escapeHtml(packet.packet_id)}">${escapeHtml(packet.subject_or_opening)} · ${escapeHtml(packet.status)}</option>`).join("") || "<option value=''>No manual-send packet</option>";
 }
 
+function renderL9Cockpit(cockpit) {
+  const opportunities = cockpit.opportunity_candidates || [];
+  const paths = cockpit.money_path_candidates || [];
+  const selected = cockpit.selected_opportunities || [];
+  const plans = cockpit.execution_plans || [];
+  const bridges = cockpit.l8_bridge_packets || [];
+  const residuals = cockpit.portfolio_residuals || [];
+  const learning = cockpit.portfolio_learning_candidates || [];
+  const decisionPackets = cockpit.owner_decision_packets || [];
+  $("l9-cockpit").innerHTML = `
+    <p><strong>Assets:</strong> ${cockpit.internal_asset_inventory_summary?.count || 0} · <strong>Opportunities:</strong> ${opportunities.length} · <strong>Money paths:</strong> ${paths.length}</p>
+    <p><strong>Top balanced recommendation:</strong> ${escapeHtml(cockpit.top_recommendation?.path_title || cockpit.top_recommendation?.money_path_id || "not ranked yet")}</p>
+    <p><strong>Shortest-cash recommendation:</strong> ${escapeHtml(cockpit.shortest_cash_recommendation?.path_title || cockpit.shortest_cash_recommendation?.money_path_id || "not ranked yet")}</p>
+    <p><strong>Selected paths:</strong> ${selected.length} · <strong>Execution plans:</strong> ${plans.length} · <strong>L8 bridge packets:</strong> ${bridges.length}</p>
+    <p><strong>Portfolio residuals:</strong> ${residuals.length} · <strong>Learning candidates:</strong> ${learning.length}</p>
+    <p><strong>Next owner decision:</strong> ${escapeHtml(cockpit.next_recommended_owner_decision)}</p>
+    <p><strong>Grant/RFP default path:</strong> ${escapeHtml(cockpit.grant_rfp_default_path_status)}</p>`;
+  $("l9-decision-packet-select").innerHTML = decisionPackets.map((packet) => `<option value="${escapeHtml(packet.decision_packet_id)}">${escapeHtml(packet.money_path_id)} · ${escapeHtml(packet.recommended_decision)}</option>`).join("") || "<option value=''>No decision packet</option>";
+  $("l9-money-path-select").innerHTML = selected.map((path) => `<option value="${escapeHtml(path.money_path_id)}">${escapeHtml(path.path_title)}</option>`).join("") || paths.map((path) => `<option value="${escapeHtml(path.money_path_id)}">${escapeHtml(path.path_title)} · ${escapeHtml(path.status)}</option>`).join("") || "<option value=''>No money path</option>";
+  $("l9-execution-plan-select").innerHTML = plans.map((plan) => `<option value="${escapeHtml(plan.execution_plan_id)}">${escapeHtml(plan.money_path_id)} · ${escapeHtml(plan.status)}</option>`).join("") || "<option value=''>No execution plan</option>";
+}
+
 async function refreshOffice() {
   const state = await getJson("/api/status");
   const snapshot = await getJson("/api/whiteboard");
@@ -114,8 +136,9 @@ async function refreshOffice() {
   const heartbeats = await getJson("/api/progress_heartbeats");
   const interrupts = await getJson("/api/approval_interrupts");
   const l8Cockpit = await getJson("/api/l8/cockpit");
+  const l9Cockpit = await getJson("/api/l9/meta/cockpit");
   OFFICE_STATE = state;
-  $("phase").textContent = `${state.l8_runtime_phase || state.scheduler_runtime_phase || state.whiteboard_runtime_phase || state.current_phase} · ${state.agent_count} recovered agents`;
+  $("phase").textContent = `${state.l9_runtime_phase || state.l8_runtime_phase || state.scheduler_runtime_phase || state.whiteboard_runtime_phase || state.current_phase} · ${state.agent_count} recovered agents`;
   renderRoster(state.agents);
   renderWhiteboard(snapshot);
   renderWorkBoard(snapshot.work_board || {});
@@ -123,6 +146,7 @@ async function refreshOffice() {
   renderTimeline(snapshot.timeline || []);
   renderScheduler(scheduler, runs, heartbeats, interrupts);
   renderL8Cockpit(l8Cockpit);
+  renderL9Cockpit(l9Cockpit);
   $("pending-approvals").innerHTML = list((snapshot.approval_requests || []).map((item) => item.reason).concat(state.pending_approvals || []));
   $("blocked-actions").innerHTML = list(state.blocked_actions);
   if (state.agents.length) openRoom(state.agents.find((agent) => agent.agent_id === "aiden_ceo")?.agent_id || state.agents[0].agent_id);
@@ -169,5 +193,27 @@ $("l8-feedback-button").addEventListener("click", () => act("L8 customer feedbac
 $("l8-residual-button").addEventListener("click", () => act("L8 commercial residual generated", "/api/l8/residuals/build"));
 $("l8-learning-button").addEventListener("click", () => act("L8 learning candidate generated", "/api/l8/learning_candidates/build"));
 $("l8-refresh-cockpit-button").addEventListener("click", () => act("L8 cockpit snapshot refreshed", "/api/l8/first_cash_path/start"));
+$("l9-assets-button").addEventListener("click", () => act("L9 internal asset inventory built", "/api/l9/assets/build"));
+$("l9-discover-button").addEventListener("click", () => act("L9 opportunities discovered", "/api/l9/opportunities/discover"));
+$("l9-money-paths-button").addEventListener("click", () => act("L9 money paths generated", "/api/l9/money_paths/generate"));
+$("l9-rankings-button").addEventListener("click", () => act("L9 rankings built", "/api/l9/rankings/build"));
+$("l9-decision-packets-button").addEventListener("click", () => act("L9 owner decision packets built", "/api/l9/decision_packets/build"));
+$("l9-review-button").addEventListener("click", () => act("L9 opportunity review decision", "/api/l9/opportunity_reviews/decide", {
+  decision_packet_id: $("l9-decision-packet-select").value,
+  decision: $("l9-review-decision-select").value,
+  decision_note: $("l9-review-note").value,
+}));
+$("l9-execution-plan-button").addEventListener("click", () => act("L9 execution plan generated", "/api/l9/execution_plans/build", {
+  money_path_id: $("l9-money-path-select").value,
+}));
+$("l9-bridge-button").addEventListener("click", () => act("L9 bridge packet generated", "/api/l9/l8_bridge/build", {
+  execution_plan_id: $("l9-execution-plan-select").value,
+}));
+$("l9-residual-button").addEventListener("click", () => act("L9 portfolio residual generated", "/api/l9/portfolio_residuals/build", {
+  money_path_id: $("l9-money-path-select").value,
+  actual_signal: $("l9-signal-select").value,
+}));
+$("l9-learning-button").addEventListener("click", () => act("L9 portfolio learning candidate generated", "/api/l9/portfolio_learning_candidates/build"));
+$("l9-refresh-button").addEventListener("click", refreshOffice);
 
 refreshOffice().catch((error) => { $("packet-result").textContent = `Office failed to load: ${error}`; });

@@ -1,0 +1,232 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L9.0",
+  "packet_type": "internal_asset_inventory",
+  "created_at": "2026-04-30T14:59:52Z",
+  "external_side_effects": false,
+  "customer_contact": false,
+  "email_sent": false,
+  "payment_processed": false,
+  "publication": false,
+  "core_writeback": false,
+  "grant_rfp_path_created_by_default": false,
+  "coo_invented": false,
+  "inventory_id": "internal_asset_inventory_latest",
+  "assets": [
+    {
+      "asset_id": "asset_l75_labs_office",
+      "title": "L7.5 Labs Office UI",
+      "asset_type": "office_ui",
+      "description": "Local whiteboard, agent rooms, work board, timeline, and approval queue.",
+      "current_location": "l7_real_labs_office_web_ui",
+      "maturity_level": "operational",
+      "reusable_capability": true,
+      "commercial_relevance": "Reusable owner-facing workspace for opportunity and execution loops.",
+      "related_agents": [
+        "Aiden",
+        "Samantha",
+        "Ryan"
+      ],
+      "evidence_refs": [
+        "l7_labs_whiteboard_collaboration_runtime/l7_5_summary.json"
+      ],
+      "limitations": [
+        "Local deterministic worker replies only."
+      ]
+    },
+    {
+      "asset_id": "asset_l76_scheduler",
+      "title": "L7.6 Self-Work Scheduler",
+      "asset_type": "scheduler",
+      "description": "Bounded autonomous internal work cycles with heartbeats and approval interruptions.",
+      "current_location": "l7_labs_team_self_work_scheduler",
+      "maturity_level": "operational",
+      "reusable_capability": true,
+      "commercial_relevance": "Lets the team advance safe internal opportunity work without owner micromanagement.",
+      "related_agents": [
+        "Aiden",
+        "Ethan",
+        "Samantha"
+      ],
+      "evidence_refs": [
+        "l7_labs_team_self_work_scheduler/l7_6_summary.json"
+      ],
+      "limitations": [
+        "Not an LLM autonomous worker yet."
+      ]
+    },
+    {
+      "asset_id": "asset_l80_cash_loop",
+      "title": "L8 First Cash Path Operating Loop",
+      "asset_type": "commercial_loop",
+      "description": "Owner approval, manual-send packets, feedback, residuals, learning candidates.",
+      "current_location": "l8_first_cash_path_operating_loop",
+      "maturity_level": "operational",
+      "reusable_capability": true,
+      "commercial_relevance": "Converts selected opportunities into approval-gated commercial actions.",
+      "related_agents": [
+        "Zara",
+        "Marco",
+        "Sofia",
+        "Samantha"
+      ],
+      "evidence_refs": [
+        "l8_first_cash_path_operating_loop/l8_summary.json"
+      ],
+      "limitations": [
+        "Manual-send only."
+      ]
+    },
+    {
+      "asset_id": "asset_controlled_observation",
+      "title": "Controlled Observation Lineage",
+      "asset_type": "evidence_loop",
+      "description": "L6 controlled read-only observation and evidence packet lineage as capability reference.",
+      "current_location": "l6 controlled observation artifacts",
+      "maturity_level": "proven_reference",
+      "reusable_capability": true,
+      "commercial_relevance": "Supports evidence-oriented delivery and opportunity validation planning.",
+      "related_agents": [
+        "Jinjin",
+        "Aiden"
+      ],
+      "evidence_refs": [
+        "l6_real_controlled_external_observation_mission_sprint"
+      ],
+      "limitations": [
+        "Not executed by default in L9."
+      ]
+    },
+    {
+      "asset_id": "asset_y_governance",
+      "title": "Y* Governance Concepts",
+      "asset_type": "governance_kernel",
+      "description": "Approval boundaries, no-action receipts, staged policies, residual learning posture.",
+      "current_location": "policy/ and L7 governance artifacts",
+      "maturity_level": "maturing",
+      "reusable_capability": true,
+      "commercial_relevance": "Trust differentiator for AI workflow and agent governance offerings.",
+      "related_agents": [
+        "Maya",
+        "Zara",
+        "Aiden"
+      ],
+      "evidence_refs": [
+        "policy/policy_registry_manifest.json"
+      ],
+      "limitations": [
+        "Must stay practical, not governance-only."
+      ]
+    },
+    {
+      "asset_id": "asset_residual_learning",
+      "title": "CIEU / Residual Learning Model",
+      "asset_type": "research_asset",
+      "description": "Residual and review-gated learning candidate pattern.",
+      "current_location": "L8 residual/learning packets",
+      "maturity_level": "maturing",
+      "reusable_capability": true,
+      "commercial_relevance": "Turns market feedback into safe iteration without permanent writeback.",
+      "related_agents": [
+        "Samantha",
+        "Marco",
+        "Aiden"
+      ],
+      "evidence_refs": [
+        "l8_first_cash_path_operating_loop"
+      ],
+      "limitations": [
+        "No direct writeback in this sprint."
+      ]
+    },
+    {
+      "asset_id": "asset_legacy_team",
+      "title": "Recovered Y*Bridge Labs Team Identity",
+      "asset_type": "delivery_asset",
+      "description": "Aiden, Ethan, Sofia, Marco, Zara, Samantha, engineers, Jinjin/K9 Scout.",
+      "current_location": "l7_labs_office_legacy_integration",
+      "maturity_level": "operational",
+      "reusable_capability": true,
+      "commercial_relevance": "Lets opportunity work be assigned to real legacy roles, not fake roles.",
+      "related_agents": [
+        "Aiden",
+        "Ethan",
+        "Sofia",
+        "Marco",
+        "Zara",
+        "Samantha",
+        "Jinjin"
+      ],
+      "evidence_refs": [
+        "l7_labs_office_legacy_integration/original_team_registry/original_team_registry.json"
+      ],
+      "limitations": [
+        "Role behavior is deterministic/local in current runtime."
+      ]
+    },
+    {
+      "asset_id": "asset_templates_and_service_design",
+      "title": "Service Design and Templates",
+      "asset_type": "service_design",
+      "description": "Offer, workflow audit, CEO command brief, intake, feedback, proof boundaries.",
+      "current_location": "l7_approval_ready_offer_validation_workflow",
+      "maturity_level": "usable",
+      "reusable_capability": true,
+      "commercial_relevance": "Can seed service packages beyond one offer.",
+      "related_agents": [
+        "Sofia",
+        "Zara",
+        "Ethan"
+      ],
+      "evidence_refs": [
+        "l7_approval_ready_offer_validation_workflow"
+      ],
+      "limitations": [
+        "Needs real market feedback."
+      ]
+    },
+    {
+      "asset_id": "asset_open_source_background",
+      "title": "Open-Source Governance / Tooling Background",
+      "asset_type": "open_source_asset",
+      "description": "Template/tooling route for paid support and implementation packages.",
+      "current_location": "repo artifacts and public-facing project history",
+      "maturity_level": "early",
+      "reusable_capability": true,
+      "commercial_relevance": "Supports productized template and paid support routes.",
+      "related_agents": [
+        "Ethan",
+        "Zara"
+      ],
+      "evidence_refs": [
+        "l7_meta_development_money_path_engine"
+      ],
+      "limitations": [
+        "Requires packaging and proof."
+      ]
+    },
+    {
+      "asset_id": "asset_founder_context",
+      "title": "Founder System-Design Narrative",
+      "asset_type": "founder_experience",
+      "description": "Owner-led narrative around building a self-governed AI agent company runtime.",
+      "current_location": "L6/L7/L8 outputs",
+      "maturity_level": "strong_internal",
+      "reusable_capability": true,
+      "commercial_relevance": "Differentiates advisory and setup services for founder/operators.",
+      "related_agents": [
+        "Haotian",
+        "Aiden",
+        "Sofia"
+      ],
+      "evidence_refs": [
+        "l7_meta_development_money_path_engine/owner_review_packet"
+      ],
+      "limitations": [
+        "Needs concise external story before outreach."
+      ]
+    }
+  ],
+  "asset_count": 10,
+  "closed_asset_type_enum": false
+}
