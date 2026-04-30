@@ -1,0 +1,21 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4R",
+  "packet_type": "existing_html_audit",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "audited_path": "/Users/haotianliu/.openclaw/workspace/ystar-company/l7_labs_office_legacy_integration/office_home/labs_office_home.html",
+  "exists": true,
+  "size_bytes": 1424,
+  "has_agent_cards": true,
+  "has_links_to_agent_rooms": true,
+  "has_message_form": false,
+  "has_team_task_form": false,
+  "has_api_runtime": false,
+  "owner_usable": false,
+  "deficiencies": [
+    "no owner-to-agent message form",
+    "no whole-team task form",
+    "no local API runtime"
+  ],
+  "replacement_created": true
+}

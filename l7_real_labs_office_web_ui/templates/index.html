@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Y*Bridge Labs Office</title>
+  <link rel="stylesheet" href="/static/office.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">Local only: 127.0.0.1</p>
+    <h1>Y*Bridge Labs Office</h1>
+    <p id="phase">Loading office state...</p>
+    <div class="actions">
+      <code>bash scripts/run_l7_labs_office_web.sh --mode serve</code>
+      <button id="refresh-button" type="button">Refresh Office</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Recovered Legacy Team</h2>
+      <p>This roster is loaded from L7.4 legacy recovery artifacts. No COO is invented as a legacy member.</p>
+      <div id="roster" class="card-grid"></div>
+    </section>
+
+    <section class="panel split">
+      <div>
+        <h2>Agent Room</h2>
+        <div id="agent-room" class="room-card">Select an agent room.</div>
+      </div>
+      <div>
+        <h2>Work Queue</h2>
+        <ul id="work-queue"></ul>
+      </div>
+    </section>
+
+    <section class="panel split">
+      <form id="message-form" class="office-form">
+        <h2>Send Message To Agent</h2>
+        <label>Target agent
+          <select id="target-agent" name="target_agent"></select>
+        </label>
+        <label>Objective
+          <input id="message-objective" name="objective" value="Ask for a safe internal recommendation">
+        </label>
+        <label>Message
+          <textarea id="message-text" name="message_text" required>Hi Aiden, please route this safely through the original Y*Bridge Labs team.</textarea>
+        </label>
+        <label>Urgency
+          <select id="message-urgency" name="urgency">
+            <option>normal</option>
+            <option>high</option>
+            <option>low</option>
+          </select>
+        </label>
+        <button type="submit">Create Local Message Packet</button>
+      </form>
+
+      <form id="team-task-form" class="office-form">
+        <h2>Send Task To Whole Team</h2>
+        <label>Task title
+          <input id="task-title" name="task_title" value="Prepare next safe Labs Office work order">
+        </label>
+        <label>Task description
+          <textarea id="task-description" name="task_description" required>Ask Aiden to route this task to the original team. No external action, no writeback.</textarea>
+        </label>
+        <button type="submit">Create Local Team Work Order</button>
+      </form>
+    </section>
+
+    <section class="panel split">
+      <div>
+        <h2>Pending Approvals</h2>
+        <ul id="pending-approvals"></ul>
+      </div>
+      <div>
+        <h2>Blocked Actions</h2>
+        <ul id="blocked-actions"></ul>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Commercial Path</h2>
+      <div id="commercial-path"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Packet Result</h2>
+      <pre id="packet-result">No packet created yet.</pre>
+    </section>
+  </main>
+  <script src="/static/office.js"></script>
+</body>
+</html>

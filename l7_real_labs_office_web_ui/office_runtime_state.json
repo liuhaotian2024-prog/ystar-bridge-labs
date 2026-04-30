@@ -1,0 +1,1771 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4R",
+  "packet_type": "office_runtime_state",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "local_url": "http://127.0.0.1:8765",
+  "current_phase": "Real Labs Office Web UI Runtime",
+  "legacy_source": "l7_labs_office_legacy_integration",
+  "agent_count": 12,
+  "agents": [
+    {
+      "agent_id": "haotian_board_founder",
+      "display_name": "Haotian Liu",
+      "legacy_role": "Board / Founder",
+      "current_status": "integrated_from_legacy_evidence",
+      "can_accept_tasks": false,
+      "can_self_work": false,
+      "known_responsibilities": [
+        "set direction",
+        "approve Level 3 decisions",
+        "hold company accountable"
+      ],
+      "brain_profile_refs": [
+        "knowledge/cto/ethan_brain_foundation.md",
+        "reports/ceo/governance/brain_3loop_live_architecture_v1.md",
+        "reports/receipts/CZL-BRAIN-BIPARTITE-P2.md",
+        "scripts/brain_archival_daemon.py",
+        "scripts/dialogue_to_brain_feeder.py",
+        "scripts/ethan_brain.py",
+        "scripts/hook_ceo_pre_output_brain_query.py",
+        "scripts/mint_agent_brain.py"
+      ],
+      "source_evidence_summary": "Haotian Liu serves as the Board of Directors, and you report to him.",
+      "room": {
+        "schema_version": "v0",
+        "milestone_id": "L7.4",
+        "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+        "packet_type": "agent_room",
+        "generated_at_utc": "2026-04-30T00:00:00Z",
+        "policy_ref": "policy/action_capability_registry.json",
+        "revenue_policy_ref": "policy/revenue_action_policy.json",
+        "discovery_policy_ref": "policy/discovery_policy.json",
+        "approval_state_machine_ref": "policy/approval_state_machine.json",
+        "writeback_policy_ref": "policy/writeback_policy.json",
+        "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+        "agent_id": "haotian_board_founder",
+        "display_name": "Haotian Liu",
+        "legacy_role": "Board / Founder",
+        "identity_evidence": [
+          {
+            "file_path": ".claude/agents/ceo.md",
+            "line_number": 92,
+            "excerpt": "Haotian Liu serves as the Board of Directors, and you report to him."
+          },
+          {
+            "file_path": ".claude/agents/eng-domains.md",
+            "line_number": 48,
+            "excerpt": "Working directory: /Users/haotianliu/.openclaw/workspace/Y-star-gov\\"
+          },
+          {
+            "file_path": ".claude/agents/eng-governance.md",
+            "line_number": 49,
+            "excerpt": "Working directory: /Users/haotianliu/.openclaw/workspace/Y-star-gov\\"
+          },
+          {
+            "file_path": ".claude/agents/eng-kernel.md",
+            "line_number": 46,
+            "excerpt": "Working directory: /Users/haotianliu/.openclaw/workspace/Y-star-gov\\"
+          },
+          {
+            "file_path": ".claude/agents/eng-platform.md",
+            "line_number": 55,
+            "excerpt": "Working directory: /Users/haotianliu/.openclaw/workspace/Y-star-gov\\"
+          }
+        ],
+        "brain_profile_refs": [
+          "knowledge/cto/ethan_brain_foundation.md",
+          "reports/ceo/governance/brain_3loop_live_architecture_v1.md",
+          "reports/receipts/CZL-BRAIN-BIPARTITE-P2.md",
+          "scripts/brain_archival_daemon.py",
+          "scripts/dialogue_to_brain_feeder.py",
+          "scripts/ethan_brain.py",
+          "scripts/hook_ceo_pre_output_brain_query.py",
+          "scripts/mint_agent_brain.py",
+          "scripts/patch_settings_brain_writeback_hooks.py",
+          "scripts/tests/test_ethan_brain.py",
+          "scripts/tests/test_mint_agent_brain.py",
+          "tests/hook/test_brain_boundary_and_query.py",
+          "tests/scripts/test_ceo_pre_output_brain_query.py"
+        ],
+        "dna_memory_refs": [
+          ".claude/tasks/maya_v3_wire_wisdom_yaml_and_detector_binding.md",
+          "knowledge/ceo/team_dna.md",
+          "knowledge/ceo/wisdom/.ystar_coverage.json",
+          "knowledge/ceo/wisdom/WHO_I_AM.md",
+          "knowledge/ceo/wisdom/dreams/dream_20260419_03_board_thinking_style_distillation.md",
+          "knowledge/ceo/wisdom/self_knowledge/aiden_7_layer_identity_2026_04_19.md",
+          "memory/WORLD_STATE.md",
+          "memory/boot_packages/_seed/eng-kernel.json",
+          "memory/boot_packages/_seed/eng-platform.json",
+          "memory/boot_packages/history/ceo_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cfo_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cmo_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cso_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cto_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-domains_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-governance_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-kernel_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-platform_ystar-company_0a84f3c6.json",
+          "memory/claude_code_memory_mirror/MEMORY.md",
+          "memory/claude_code_memory_mirror/feedback_address_laoda.md"
+        ],
+        "current_mapped_responsibilities": [
+          "set direction",
+          "approve Level 3 decisions",
+          "hold company accountable"
+        ],
+        "what_owner_can_ask": [
+          "accept scoped internal task aligned to legacy role"
+        ],
+        "autonomous_work_allowed": [
+          "internal analysis",
+          "local artifact review",
+          "controlled read-only observation if configured",
+          "evidence summary",
+          "draft-only artifacts",
+          "approval request preparation",
+          "tool proposal",
+          "tests/builders",
+          "owner cockpit updates"
+        ],
+        "requires_owner_approval": [
+          "outreach",
+          "publication",
+          "payment",
+          "account creation",
+          "form submission",
+          "grant/RFP submission",
+          "customer contact",
+          "MCP/live behavior",
+          "actual memory/brain/canonical/CIEU DB writeback"
+        ],
+        "current_inbox": [
+          "review mapped responsibility and identify next safe internal task"
+        ],
+        "integration_status": "integrated_from_legacy_evidence",
+        "next_suggested_task": "review whether Labs Office roster matches the original team"
+      }
+    },
+    {
+      "agent_id": "aiden_ceo",
+      "display_name": "Aiden Liu",
+      "legacy_role": "CEO",
+      "current_status": "integrated_from_legacy_evidence",
+      "can_accept_tasks": true,
+      "can_self_work": true,
+      "known_responsibilities": [
+        "command synthesis",
+        "directive decomposition",
+        "delegation",
+        "Board reporting"
+      ],
+      "brain_profile_refs": [
+        "docs/receipts/CZL-BRAIN-AUTO-INGEST-IMPL.md",
+        "knowledge/ceo/cieu_brain_fusion_findings_20260419.md",
+        "knowledge/ceo/role_definition/README.md",
+        "knowledge/ceo/role_definition/role_heroes.md",
+        "knowledge/ceo/role_definition/task_type_map.md",
+        "knowledge/ceo/role_definition/world_class_standard.md",
+        "knowledge/cmo/role_definition/role_heroes.md",
+        "knowledge/cto/arch18_cieu_brain_corpus.md"
+      ],
+      "source_evidence_summary": "name: Aiden-CEO",
+      "room": {
+        "schema_version": "v0",
+        "milestone_id": "L7.4",
+        "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+        "packet_type": "agent_room",
+        "generated_at_utc": "2026-04-30T00:00:00Z",
+        "policy_ref": "policy/action_capability_registry.json",
+        "revenue_policy_ref": "policy/revenue_action_policy.json",
+        "discovery_policy_ref": "policy/discovery_policy.json",
+        "approval_state_machine_ref": "policy/approval_state_machine.json",
+        "writeback_policy_ref": "policy/writeback_policy.json",
+        "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+        "agent_id": "aiden_ceo",
+        "display_name": "Aiden Liu",
+        "legacy_role": "CEO",
+        "identity_evidence": [
+          {
+            "file_path": ".claude/agents/ceo.md",
+            "line_number": 2,
+            "excerpt": "name: Aiden-CEO"
+          },
+          {
+            "file_path": ".claude/agents/cfo.md",
+            "line_number": 36,
+            "excerpt": "4. 向CEO (Aiden)汇报session需要重启"
+          },
+          {
+            "file_path": ".claude/agents/cmo.md",
+            "line_number": 38,
+            "excerpt": "4. 向CEO (Aiden)汇报session需要重启"
+          },
+          {
+            "file_path": ".claude/agents/cso.md",
+            "line_number": 37,
+            "excerpt": "4. 向CEO (Aiden)汇报session需要重启"
+          },
+          {
+            "file_path": ".claude/agents/cto.md",
+            "line_number": 50,
+            "excerpt": "4. 向CEO (Aiden)汇报session需要重启"
+          }
+        ],
+        "brain_profile_refs": [
+          "docs/receipts/CZL-BRAIN-AUTO-INGEST-IMPL.md",
+          "knowledge/ceo/cieu_brain_fusion_findings_20260419.md",
+          "knowledge/ceo/role_definition/README.md",
+          "knowledge/ceo/role_definition/role_heroes.md",
+          "knowledge/ceo/role_definition/task_type_map.md",
+          "knowledge/ceo/role_definition/world_class_standard.md",
+          "knowledge/cmo/role_definition/role_heroes.md",
+          "knowledge/cto/arch18_cieu_brain_corpus.md",
+          "knowledge/cto/ethan_brain_foundation.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260420_004526.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260420_214238.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260421_183024_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_172750_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_183339_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_183549_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_201429_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_212108_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_222133_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260423_004140_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260423_014215_nrem.md"
+        ],
+        "dna_memory_refs": [
+          "governance/DNA_LOG.md",
+          "knowledge/ceo/team_dna.md",
+          "knowledge/ceo/wisdom/M_TRIANGLE.md",
+          "knowledge/ceo/wisdom/WHO_I_AM.md",
+          "knowledge/ceo/wisdom/WORK_METHODOLOGY.md",
+          "knowledge/ceo/wisdom/ceo_learning/philosophy_self_awareness.md",
+          "knowledge/ceo/wisdom/dreams/dream_20260419_02_cross_node_unification.md",
+          "knowledge/ceo/wisdom/dreams/dream_20260419_05_future_vision.md",
+          "knowledge/ceo/wisdom/meta/17_meta_rules_from_practice.md",
+          "knowledge/ceo/wisdom/meta/6_philosophical_principles.md",
+          "knowledge/ceo/wisdom/meta/aiden_8_module_cognitive_architecture.md",
+          "knowledge/ceo/wisdom/meta/aiden_laws_hierarchy.md",
+          "knowledge/ceo/wisdom/meta/aiden_neural_network_subgoals.md",
+          "knowledge/ceo/wisdom/meta/building_aiden.md",
+          "knowledge/ceo/wisdom/meta/engineer_culture_design_5_factors.md",
+          "knowledge/ceo/wisdom/meta/field_thought_experiments.md",
+          "knowledge/ceo/wisdom/meta/field_vs_structure_duality.md",
+          "knowledge/ceo/wisdom/meta/global_workspace_architecture.md",
+          "knowledge/ceo/wisdom/meta/human_excellence_vs_ai_gap_analysis.md",
+          "knowledge/ceo/wisdom/paradigms/identification_is_not_completion.md"
+        ],
+        "current_mapped_responsibilities": [
+          "command synthesis",
+          "directive decomposition",
+          "delegation",
+          "Board reporting"
+        ],
+        "what_owner_can_ask": [
+          "turn Board direction into tasks",
+          "summarize company status",
+          "decide next safe sprint"
+        ],
+        "autonomous_work_allowed": [
+          "internal analysis",
+          "local artifact review",
+          "controlled read-only observation if configured",
+          "evidence summary",
+          "draft-only artifacts",
+          "approval request preparation",
+          "tool proposal",
+          "tests/builders",
+          "owner cockpit updates"
+        ],
+        "requires_owner_approval": [
+          "outreach",
+          "publication",
+          "payment",
+          "account creation",
+          "form submission",
+          "grant/RFP submission",
+          "customer contact",
+          "MCP/live behavior",
+          "actual memory/brain/canonical/CIEU DB writeback"
+        ],
+        "current_inbox": [
+          "integrate Labs Office into owner cockpit",
+          "route L7.5 approval preparation"
+        ],
+        "integration_status": "integrated_from_legacy_evidence",
+        "next_suggested_task": "delegate L7.5 preparation through original team identities"
+      }
+    },
+    {
+      "agent_id": "ethan_cto",
+      "display_name": "Ethan Wright",
+      "legacy_role": "CTO",
+      "current_status": "integrated_from_legacy_evidence",
+      "can_accept_tasks": true,
+      "can_self_work": true,
+      "known_responsibilities": [
+        "architecture",
+        "engineering coordination",
+        "tests",
+        "technical review"
+      ],
+      "brain_profile_refs": [
+        "docs/receipts/CZL-BRAIN-AUTO-INGEST-IMPL.md",
+        "knowledge/ceo/cieu_brain_fusion_findings_20260419.md",
+        "knowledge/cto/arch18_cieu_brain_corpus.md",
+        "knowledge/cto/ethan_brain_foundation.md",
+        "knowledge/cto/role_definition/README.md",
+        "knowledge/cto/role_definition/role_heroes.md",
+        "knowledge/cto/role_definition/task_type_map.md",
+        "knowledge/cto/role_definition/world_class_standard.md"
+      ],
+      "source_evidence_summary": "name: Ethan-CTO",
+      "room": {
+        "schema_version": "v0",
+        "milestone_id": "L7.4",
+        "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+        "packet_type": "agent_room",
+        "generated_at_utc": "2026-04-30T00:00:00Z",
+        "policy_ref": "policy/action_capability_registry.json",
+        "revenue_policy_ref": "policy/revenue_action_policy.json",
+        "discovery_policy_ref": "policy/discovery_policy.json",
+        "approval_state_machine_ref": "policy/approval_state_machine.json",
+        "writeback_policy_ref": "policy/writeback_policy.json",
+        "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+        "agent_id": "ethan_cto",
+        "display_name": "Ethan Wright",
+        "legacy_role": "CTO",
+        "identity_evidence": [
+          {
+            "file_path": ".claude/agents/cto.md",
+            "line_number": 2,
+            "excerpt": "name: Ethan-CTO"
+          },
+          {
+            "file_path": ".claude/agents/eng-compliance.md",
+            "line_number": 7,
+            "excerpt": "**Full name**: Elena Chen (RENAMED from \"Sofia Chen\" per Ethan #74 audit + CEO accept; avoid Sofia Blake-CMO collision)"
+          },
+          {
+            "file_path": ".claude/agents/eng-data.md",
+            "line_number": 9,
+            "excerpt": "**Created**: 2026-04-16 (per Ethan #74 ecosystem audit, takeover from Samantha CZL-84 / Ethan CZL-86 both blocked, CEO direct write per scope authority)"
+          },
+          {
+            "file_path": ".claude/agents/eng-domains.md",
+            "line_number": 22,
+            "excerpt": "4. 向CTO (Ethan Wright)汇报session需要重启"
+          },
+          {
+            "file_path": ".claude/agents/eng-governance.md",
+            "line_number": 22,
+            "excerpt": "4. 向CTO (Ethan Wright)汇报session需要重启"
+          }
+        ],
+        "brain_profile_refs": [
+          "docs/receipts/CZL-BRAIN-AUTO-INGEST-IMPL.md",
+          "knowledge/ceo/cieu_brain_fusion_findings_20260419.md",
+          "knowledge/cto/arch18_cieu_brain_corpus.md",
+          "knowledge/cto/ethan_brain_foundation.md",
+          "knowledge/cto/role_definition/README.md",
+          "knowledge/cto/role_definition/role_heroes.md",
+          "knowledge/cto/role_definition/task_type_map.md",
+          "knowledge/cto/role_definition/world_class_standard.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260420_004526.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260420_214238.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260421_183024_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260421_201057_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260421_211058_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260421_221059_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260421_231059_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_010324_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_020326_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_030326_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_041929_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_053612_nrem.md"
+        ],
+        "dna_memory_refs": [
+          "governance/DNA_LOG.md",
+          "knowledge/ceo/wisdom/M_TRIANGLE.md",
+          "knowledge/ceo/wisdom/WHO_I_AM.md",
+          "knowledge/ceo/wisdom/WORK_METHODOLOGY.md",
+          "knowledge/ceo/wisdom/dreams/dream_20260419_02_cross_node_unification.md",
+          "knowledge/ceo/wisdom/dreams/dream_20260419_03_board_thinking_style_distillation.md",
+          "knowledge/ceo/wisdom/dreams/dream_20260419_05_future_vision.md",
+          "knowledge/ceo/wisdom/meta/17_meta_rules_from_practice.md",
+          "knowledge/ceo/wisdom/meta/sandbox_16h_counterfactual_replay.md",
+          "knowledge/ceo/wisdom/paradigms/extend_not_build.md",
+          "knowledge/ceo/wisdom/self_knowledge/aiden_7_layer_identity_2026_04_19.md",
+          "knowledge/ceo/wisdom/strategic/aiden_management_operating_method_20260420.md",
+          "knowledge/cto/wisdom/WHO_I_AM_ETHAN.md",
+          "memory/WORLD_STATE.md",
+          "memory/archive/czl_subgoals_9fractures_20260415.json",
+          "memory/archive/czl_subgoals_hiagent_9wire_20260415.json",
+          "memory/archive/czl_subgoals_v6_close_20260416_165342.json",
+          "memory/archive/session_handoff_now_archived_1776273549.md",
+          "memory/boot_packages/_seed/ceo.json",
+          "memory/boot_packages/_seed/cto.json"
+        ],
+        "current_mapped_responsibilities": [
+          "architecture",
+          "engineering coordination",
+          "tests",
+          "technical review"
+        ],
+        "what_owner_can_ask": [
+          "evaluate tool gaps",
+          "design implementation",
+          "review technical claims"
+        ],
+        "autonomous_work_allowed": [
+          "internal analysis",
+          "local artifact review",
+          "controlled read-only observation if configured",
+          "evidence summary",
+          "draft-only artifacts",
+          "approval request preparation",
+          "tool proposal",
+          "tests/builders",
+          "owner cockpit updates"
+        ],
+        "requires_owner_approval": [
+          "outreach",
+          "publication",
+          "payment",
+          "account creation",
+          "form submission",
+          "grant/RFP submission",
+          "customer contact",
+          "MCP/live behavior",
+          "actual memory/brain/canonical/CIEU DB writeback"
+        ],
+        "current_inbox": [
+          "review mapped responsibility and identify next safe internal task"
+        ],
+        "integration_status": "integrated_from_legacy_evidence",
+        "next_suggested_task": "remove or annotate prior invented COO-style assumptions in active L7 artifacts"
+      }
+    },
+    {
+      "agent_id": "sofia_cmo",
+      "display_name": "Sofia Blake",
+      "legacy_role": "CMO",
+      "current_status": "integrated_from_legacy_evidence",
+      "can_accept_tasks": true,
+      "can_self_work": true,
+      "known_responsibilities": [
+        "content",
+        "growth narrative",
+        "marketing positioning",
+        "case-study drafts"
+      ],
+      "brain_profile_refs": [
+        "knowledge/cmo/role_definition/README.md",
+        "knowledge/cmo/role_definition/role_heroes.md",
+        "knowledge/cmo/role_definition/task_type_map.md",
+        "knowledge/cmo/role_definition/world_class_standard.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260420_004526.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260420_214238.md",
+        "scripts/ethan_brain.py",
+        "scripts/mint_agent_brain.py"
+      ],
+      "source_evidence_summary": "name: Sofia-CMO",
+      "room": {
+        "schema_version": "v0",
+        "milestone_id": "L7.4",
+        "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+        "packet_type": "agent_room",
+        "generated_at_utc": "2026-04-30T00:00:00Z",
+        "policy_ref": "policy/action_capability_registry.json",
+        "revenue_policy_ref": "policy/revenue_action_policy.json",
+        "discovery_policy_ref": "policy/discovery_policy.json",
+        "approval_state_machine_ref": "policy/approval_state_machine.json",
+        "writeback_policy_ref": "policy/writeback_policy.json",
+        "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+        "agent_id": "sofia_cmo",
+        "display_name": "Sofia Blake",
+        "legacy_role": "CMO",
+        "identity_evidence": [
+          {
+            "file_path": ".claude/agents/cmo.md",
+            "line_number": 2,
+            "excerpt": "name: Sofia-CMO"
+          },
+          {
+            "file_path": ".claude/agents/eng-compliance.md",
+            "line_number": 7,
+            "excerpt": "**Full name**: Elena Chen (RENAMED from \"Sofia Chen\" per Ethan #74 audit + CEO accept; avoid Sofia Blake-CMO collision)"
+          },
+          {
+            "file_path": ".claude/tasks/AMENDMENT_015_SYSTEMIC_UNLOCK_20260413.md",
+            "line_number": 23,
+            "excerpt": "| L4 | Sub-agent ritual online check | contract 要求 4 并行，Sofia-CMO subagent 不存在；即使存在，sub-agent 在一句话 ping 场景集体失效（身份穿透/早退/截断） |"
+          },
+          {
+            "file_path": ".claude/tasks/CTO_RITUAL_AND_AUTONOMY_FIX_20260413.md",
+            "line_number": 11,
+            "excerpt": "2. **G2** Sofia-CMO subagent 不存在，4 并行合同底层不可满足"
+          },
+          {
+            "file_path": ".claude/tasks/agent-behavior-rules-spec.md",
+            "line_number": 40,
+            "excerpt": "### CMO (Sofia Blake)"
+          }
+        ],
+        "brain_profile_refs": [
+          "knowledge/cmo/role_definition/README.md",
+          "knowledge/cmo/role_definition/role_heroes.md",
+          "knowledge/cmo/role_definition/task_type_map.md",
+          "knowledge/cmo/role_definition/world_class_standard.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260420_004526.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260420_214238.md",
+          "scripts/ethan_brain.py",
+          "scripts/mint_agent_brain.py",
+          "scripts/tests/test_mint_agent_brain.py"
+        ],
+        "dna_memory_refs": [
+          "knowledge/ceo/wisdom/M_TRIANGLE.md",
+          "knowledge/ceo/wisdom/WORK_METHODOLOGY.md",
+          "knowledge/ceo/wisdom/dreams/dream_20260419_02_cross_node_unification.md",
+          "knowledge/ceo/wisdom/dreams/dream_20260419_03_board_thinking_style_distillation.md",
+          "knowledge/ceo/wisdom/dreams/dream_20260419_05_future_vision.md",
+          "knowledge/ceo/wisdom/strategic/aiden_management_operating_method_20260420.md",
+          "memory/archive/session_handoff_now_archived_1776273549.md",
+          "memory/boot_packages/_seed/ceo.json",
+          "memory/boot_packages/_seed/cmo.json",
+          "memory/boot_packages/history/ceo_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cfo_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cmo_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cso_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cto_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-domains_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-governance_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-kernel_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-platform_ystar-company_0a84f3c6.json",
+          "memory/claude_code_memory_mirror/feedback_ai_disclosure_mandatory.md",
+          "memory/claude_code_memory_mirror/feedback_cmo_12layer_rt_loop.md"
+        ],
+        "current_mapped_responsibilities": [
+          "content",
+          "growth narrative",
+          "marketing positioning",
+          "case-study drafts"
+        ],
+        "what_owner_can_ask": [
+          "draft internal narrative",
+          "review market language",
+          "prepare content for approval"
+        ],
+        "autonomous_work_allowed": [
+          "internal analysis",
+          "local artifact review",
+          "controlled read-only observation if configured",
+          "evidence summary",
+          "draft-only artifacts",
+          "approval request preparation",
+          "tool proposal",
+          "tests/builders",
+          "owner cockpit updates"
+        ],
+        "requires_owner_approval": [
+          "outreach",
+          "publication",
+          "payment",
+          "account creation",
+          "form submission",
+          "grant/RFP submission",
+          "customer contact",
+          "MCP/live behavior",
+          "actual memory/brain/canonical/CIEU DB writeback"
+        ],
+        "current_inbox": [
+          "review mapped responsibility and identify next safe internal task"
+        ],
+        "integration_status": "integrated_from_legacy_evidence",
+        "next_suggested_task": "turn proof pack into internal-review narrative, not publication"
+      }
+    },
+    {
+      "agent_id": "marco_cfo",
+      "display_name": "Marco Rivera",
+      "legacy_role": "CFO",
+      "current_status": "integrated_from_legacy_evidence",
+      "can_accept_tasks": true,
+      "can_self_work": true,
+      "known_responsibilities": [
+        "pricing",
+        "finance",
+        "source-backed numbers",
+        "financial honesty"
+      ],
+      "brain_profile_refs": [
+        "knowledge/cfo/role_definition/README.md",
+        "knowledge/cfo/role_definition/role_heroes.md",
+        "knowledge/cfo/role_definition/task_type_map.md",
+        "knowledge/cfo/role_definition/world_class_standard.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260420_004526.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260420_214238.md",
+        "scripts/ethan_brain.py",
+        "scripts/mint_agent_brain.py"
+      ],
+      "source_evidence_summary": "name: Marco-CFO",
+      "room": {
+        "schema_version": "v0",
+        "milestone_id": "L7.4",
+        "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+        "packet_type": "agent_room",
+        "generated_at_utc": "2026-04-30T00:00:00Z",
+        "policy_ref": "policy/action_capability_registry.json",
+        "revenue_policy_ref": "policy/revenue_action_policy.json",
+        "discovery_policy_ref": "policy/discovery_policy.json",
+        "approval_state_machine_ref": "policy/approval_state_machine.json",
+        "writeback_policy_ref": "policy/writeback_policy.json",
+        "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+        "agent_id": "marco_cfo",
+        "display_name": "Marco Rivera",
+        "legacy_role": "CFO",
+        "identity_evidence": [
+          {
+            "file_path": ".claude/agents/cfo.md",
+            "line_number": 2,
+            "excerpt": "name: Marco-CFO"
+          },
+          {
+            "file_path": ".claude/tasks/CTO_RITUAL_AND_AUTONOMY_FIX_20260413.md",
+            "line_number": 13,
+            "excerpt": "4. **G4** Marco-CFO subagent 报 governance permission block（未诊断）"
+          },
+          {
+            "file_path": ".claude/tasks/agent-behavior-rules-spec.md",
+            "line_number": 44,
+            "excerpt": "### CFO (Marco Rivera)"
+          },
+          {
+            "file_path": ".claude/tasks/eng-platform-20260413-ritual-fixes.md",
+            "line_number": 10,
+            "excerpt": "- [ ] FIX-4: Marco-CFO governance block diagnosed and root cause fixed"
+          },
+          {
+            "file_path": ".ystar_session.json",
+            "line_number": 259,
+            "excerpt": "\"cfo\": \"CFO (Marco Rivera)\","
+          }
+        ],
+        "brain_profile_refs": [
+          "knowledge/cfo/role_definition/README.md",
+          "knowledge/cfo/role_definition/role_heroes.md",
+          "knowledge/cfo/role_definition/task_type_map.md",
+          "knowledge/cfo/role_definition/world_class_standard.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260420_004526.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260420_214238.md",
+          "scripts/ethan_brain.py",
+          "scripts/mint_agent_brain.py",
+          "scripts/tests/test_mint_agent_brain.py"
+        ],
+        "dna_memory_refs": [
+          "knowledge/ceo/wisdom/WORK_METHODOLOGY.md",
+          "knowledge/ceo/wisdom/ceo_learning/financial_literacy_saas.md",
+          "knowledge/ceo/wisdom/strategic/aiden_management_operating_method_20260420.md",
+          "memory/archive/session_handoff_now_archived_1776273549.md",
+          "memory/boot_packages/_seed/ceo.json",
+          "memory/boot_packages/_seed/cfo.json",
+          "memory/boot_packages/history/ceo_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cfo_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cmo_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cso_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cto_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-domains_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-governance_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-kernel_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-platform_ystar-company_0a84f3c6.json",
+          "memory/claude_code_memory_mirror/feedback_ai_disclosure_mandatory.md",
+          "memory/claude_code_memory_mirror/feedback_default_agent_is_ceo.md",
+          "memory/session_summary_20260415.md",
+          "memory/session_summary_20260416.md"
+        ],
+        "current_mapped_responsibilities": [
+          "pricing",
+          "finance",
+          "source-backed numbers",
+          "financial honesty"
+        ],
+        "what_owner_can_ask": [
+          "check pricing evidence",
+          "label estimates",
+          "review financial claims"
+        ],
+        "autonomous_work_allowed": [
+          "internal analysis",
+          "local artifact review",
+          "controlled read-only observation if configured",
+          "evidence summary",
+          "draft-only artifacts",
+          "approval request preparation",
+          "tool proposal",
+          "tests/builders",
+          "owner cockpit updates"
+        ],
+        "requires_owner_approval": [
+          "outreach",
+          "publication",
+          "payment",
+          "account creation",
+          "form submission",
+          "grant/RFP submission",
+          "customer contact",
+          "MCP/live behavior",
+          "actual memory/brain/canonical/CIEU DB writeback"
+        ],
+        "current_inbox": [
+          "review mapped responsibility and identify next safe internal task"
+        ],
+        "integration_status": "integrated_from_legacy_evidence",
+        "next_suggested_task": "review price quote policy before any external quote"
+      }
+    },
+    {
+      "agent_id": "zara_cso",
+      "display_name": "Zara Johnson",
+      "legacy_role": "CSO",
+      "current_status": "integrated_from_legacy_evidence",
+      "can_accept_tasks": true,
+      "can_self_work": true,
+      "known_responsibilities": [
+        "sales planning",
+        "patents",
+        "commercialization",
+        "lead qualification"
+      ],
+      "brain_profile_refs": [
+        "knowledge/cso/role_definition/README.md",
+        "knowledge/cso/role_definition/role_heroes.md",
+        "knowledge/cso/role_definition/task_type_map.md",
+        "knowledge/cso/role_definition/world_class_standard.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260420_004526.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260420_214238.md",
+        "scripts/ethan_brain.py",
+        "scripts/mint_agent_brain.py"
+      ],
+      "source_evidence_summary": "name: Zara-CSO",
+      "room": {
+        "schema_version": "v0",
+        "milestone_id": "L7.4",
+        "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+        "packet_type": "agent_room",
+        "generated_at_utc": "2026-04-30T00:00:00Z",
+        "policy_ref": "policy/action_capability_registry.json",
+        "revenue_policy_ref": "policy/revenue_action_policy.json",
+        "discovery_policy_ref": "policy/discovery_policy.json",
+        "approval_state_machine_ref": "policy/approval_state_machine.json",
+        "writeback_policy_ref": "policy/writeback_policy.json",
+        "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+        "agent_id": "zara_cso",
+        "display_name": "Zara Johnson",
+        "legacy_role": "CSO",
+        "identity_evidence": [
+          {
+            "file_path": ".claude/agents/cso.md",
+            "line_number": 2,
+            "excerpt": "name: Zara-CSO"
+          },
+          {
+            "file_path": ".claude/tasks/CTO_RITUAL_AND_AUTONOMY_FIX_20260413.md",
+            "line_number": 26,
+            "excerpt": "- 方案 A（推荐）：`.claude/agents/Sofia-CMO.md` 新建，参照现有 Zara-CSO/Marco-CFO 结构"
+          },
+          {
+            "file_path": ".claude/tasks/agent-behavior-rules-spec.md",
+            "line_number": 48,
+            "excerpt": "### CSO (Zara Johnson)"
+          },
+          {
+            "file_path": ".ystar_session.json",
+            "line_number": 258,
+            "excerpt": "\"cso\": \"CSO (Zara Johnson)\","
+          },
+          {
+            "file_path": "BOARD_PENDING.md",
+            "line_number": 33,
+            "excerpt": "Agent tool 调用的 persona (Sofia/Marco/Ryan/Zara 等) 必须在 `.claude/agents/` 注册. 避免\"凭空 prompt 造 persona\"反模式."
+          }
+        ],
+        "brain_profile_refs": [
+          "knowledge/cso/role_definition/README.md",
+          "knowledge/cso/role_definition/role_heroes.md",
+          "knowledge/cso/role_definition/task_type_map.md",
+          "knowledge/cso/role_definition/world_class_standard.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260420_004526.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260420_214238.md",
+          "scripts/ethan_brain.py",
+          "scripts/mint_agent_brain.py",
+          "scripts/tests/test_mint_agent_brain.py"
+        ],
+        "dna_memory_refs": [
+          "knowledge/ceo/wisdom/WORK_METHODOLOGY.md",
+          "knowledge/ceo/wisdom/strategic/aiden_management_operating_method_20260420.md",
+          "memory/archive/session_handoff_now_archived_1776273549.md",
+          "memory/boot_packages/_seed/ceo.json",
+          "memory/boot_packages/_seed/cso.json",
+          "memory/boot_packages/history/ceo_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cfo_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cmo_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cso_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cto_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-domains_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-governance_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-kernel_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-platform_ystar-company_0a84f3c6.json",
+          "memory/claude_code_memory_mirror/feedback_ai_disclosure_mandatory.md",
+          "memory/claude_code_memory_mirror/feedback_default_agent_is_ceo.md",
+          "memory/session_summary_20260416.md"
+        ],
+        "current_mapped_responsibilities": [
+          "sales planning",
+          "patents",
+          "commercialization",
+          "lead qualification"
+        ],
+        "what_owner_can_ask": [
+          "draft sales plan",
+          "review buyer fit",
+          "prepare approved-contact plan"
+        ],
+        "autonomous_work_allowed": [
+          "internal analysis",
+          "local artifact review",
+          "controlled read-only observation if configured",
+          "evidence summary",
+          "draft-only artifacts",
+          "approval request preparation",
+          "tool proposal",
+          "tests/builders",
+          "owner cockpit updates"
+        ],
+        "requires_owner_approval": [
+          "outreach",
+          "publication",
+          "payment",
+          "account creation",
+          "form submission",
+          "grant/RFP submission",
+          "customer contact",
+          "MCP/live behavior",
+          "actual memory/brain/canonical/CIEU DB writeback"
+        ],
+        "current_inbox": [
+          "review first outreach approval package",
+          "map buyer fit with no contact"
+        ],
+        "integration_status": "integrated_from_legacy_evidence",
+        "next_suggested_task": "prepare approved-contact criteria for first outreach"
+      }
+    },
+    {
+      "agent_id": "samantha_secretary",
+      "display_name": "Samantha Lin",
+      "legacy_role": "Secretary",
+      "current_status": "integrated_from_legacy_evidence",
+      "can_accept_tasks": true,
+      "can_self_work": true,
+      "known_responsibilities": [
+        "archive",
+        "indexing",
+        "DNA consistency",
+        "audit consistency"
+      ],
+      "brain_profile_refs": [
+        "reports/ceo/brain_dream_diffs/dream_diff_20260421_183024_nrem.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260421_201057_nrem.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260421_211058_nrem.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260421_221059_nrem.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260421_231059_nrem.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260422_010324_nrem.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260422_020326_nrem.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260422_030326_nrem.md"
+      ],
+      "source_evidence_summary": "**Created**: 2026-04-16 (per Ethan #74 ecosystem audit, takeover from Samantha CZL-84 / Ethan CZL-86 both blocked, CEO direct write per scope authority)",
+      "room": {
+        "schema_version": "v0",
+        "milestone_id": "L7.4",
+        "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+        "packet_type": "agent_room",
+        "generated_at_utc": "2026-04-30T00:00:00Z",
+        "policy_ref": "policy/action_capability_registry.json",
+        "revenue_policy_ref": "policy/revenue_action_policy.json",
+        "discovery_policy_ref": "policy/discovery_policy.json",
+        "approval_state_machine_ref": "policy/approval_state_machine.json",
+        "writeback_policy_ref": "policy/writeback_policy.json",
+        "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+        "agent_id": "samantha_secretary",
+        "display_name": "Samantha Lin",
+        "legacy_role": "Secretary",
+        "identity_evidence": [
+          {
+            "file_path": ".claude/agents/eng-data.md",
+            "line_number": 9,
+            "excerpt": "**Created**: 2026-04-16 (per Ethan #74 ecosystem audit, takeover from Samantha CZL-84 / Ethan CZL-86 both blocked, CEO direct write per scope authority)"
+          },
+          {
+            "file_path": ".claude/tasks/agent-behavior-rules-spec.md",
+            "line_number": 35,
+            "excerpt": "### Secretary (Samantha Lin)"
+          },
+          {
+            "file_path": ".claude/tasks/eng-platform-letta-validation.md",
+            "line_number": 31,
+            "excerpt": "### Step 3: 给Samantha创建一个Letta agent"
+          },
+          {
+            "file_path": ".czl_subgoals.json",
+            "line_number": 71,
+            "excerpt": "\"owner_after_rt1\": \"samantha\","
+          },
+          {
+            "file_path": ".ystar_active_grant.json",
+            "line_number": 186,
+            "excerpt": "\"target_agent\": \"samantha-secretary\","
+          }
+        ],
+        "brain_profile_refs": [
+          "reports/ceo/brain_dream_diffs/dream_diff_20260421_183024_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260421_201057_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260421_211058_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260421_221059_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260421_231059_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_010324_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_020326_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_030326_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_041929_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_053612_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_065326_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_075947_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_091918_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_103230_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_120106_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_132742_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_142746_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_152747_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_162749_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_172750_nrem.md"
+        ],
+        "dna_memory_refs": [
+          "governance/DNA_LOG.md",
+          "knowledge/ceo/wisdom/WHO_I_AM.md",
+          "knowledge/ceo/wisdom/WORK_METHODOLOGY.md",
+          "knowledge/ceo/wisdom/strategic/aiden_management_operating_method_20260420.md",
+          "knowledge/cto/wisdom/WHO_I_AM_ETHAN.md",
+          "memory/WORLD_STATE.md",
+          "memory/archive/continuation_archived_1776273549.md",
+          "memory/archive/czl_subgoals_9fractures_20260415.json",
+          "memory/archive/czl_subgoals_v3_campaign_20260415.json",
+          "memory/archive/czl_subgoals_v3_final_20260415_pm.json",
+          "memory/archive/czl_subgoals_v6_close_20260416_165342.json",
+          "memory/boot_packages/_seed/ceo.json",
+          "memory/boot_packages/history/ceo_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cfo_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cmo_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cso_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cto_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-domains_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-governance_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-kernel_ystar-company_0a84f3c6.json"
+        ],
+        "current_mapped_responsibilities": [
+          "archive",
+          "indexing",
+          "DNA consistency",
+          "audit consistency"
+        ],
+        "what_owner_can_ask": [
+          "find artifacts",
+          "archive summaries",
+          "check DNA consistency"
+        ],
+        "autonomous_work_allowed": [
+          "internal analysis",
+          "local artifact review",
+          "controlled read-only observation if configured",
+          "evidence summary",
+          "draft-only artifacts",
+          "approval request preparation",
+          "tool proposal",
+          "tests/builders",
+          "owner cockpit updates"
+        ],
+        "requires_owner_approval": [
+          "outreach",
+          "publication",
+          "payment",
+          "account creation",
+          "form submission",
+          "grant/RFP submission",
+          "customer contact",
+          "MCP/live behavior",
+          "actual memory/brain/canonical/CIEU DB writeback"
+        ],
+        "current_inbox": [
+          "maintain legacy office registry and room index"
+        ],
+        "integration_status": "integrated_from_legacy_evidence",
+        "next_suggested_task": "archive legacy evidence and maintain room index"
+      }
+    },
+    {
+      "agent_id": "leo_engineer",
+      "display_name": "Leo Chen",
+      "legacy_role": "Kernel Engineer",
+      "current_status": "integrated_from_legacy_evidence",
+      "can_accept_tasks": true,
+      "can_self_work": true,
+      "known_responsibilities": [
+        "kernel",
+        "compiler",
+        "contract parsing",
+        "session correctness"
+      ],
+      "brain_profile_refs": [
+        "docs/receipts/CZL-BRAIN-AUTO-INGEST-IMPL.md",
+        "knowledge/cto/arch18_cieu_brain_corpus.md",
+        "knowledge/cto/ethan_brain_foundation.md",
+        "reports/ceo/governance/brain_3loop_consolidated_v2.md",
+        "reports/ceo/governance/brain_3loop_live_architecture_v1.md",
+        "reports/cto-dispatch/tier1-brain-3loop-l3-manual-maya.md",
+        "reports/cto-dispatch/tier1-brain-l2-writeback-ryan-leo.md",
+        "reports/receipts/CZL-BRAIN-BIPARTITE-P2.md"
+      ],
+      "source_evidence_summary": "name: Leo-Kernel",
+      "room": {
+        "schema_version": "v0",
+        "milestone_id": "L7.4",
+        "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+        "packet_type": "agent_room",
+        "generated_at_utc": "2026-04-30T00:00:00Z",
+        "policy_ref": "policy/action_capability_registry.json",
+        "revenue_policy_ref": "policy/revenue_action_policy.json",
+        "discovery_policy_ref": "policy/discovery_policy.json",
+        "approval_state_machine_ref": "policy/approval_state_machine.json",
+        "writeback_policy_ref": "policy/writeback_policy.json",
+        "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+        "agent_id": "leo_engineer",
+        "display_name": "Leo Chen",
+        "legacy_role": "Kernel Engineer",
+        "identity_evidence": [
+          {
+            "file_path": ".claude/agents/eng-kernel.md",
+            "line_number": 2,
+            "excerpt": "name: Leo-Kernel"
+          },
+          {
+            "file_path": ".claude/tasks/AMENDMENT_015_SYSTEMIC_UNLOCK_20260413.md",
+            "line_number": 4,
+            "excerpt": "**Owner**: Ethan-CTO (lead) → Ryan-Platform + Maya-Governance + Leo-Kernel"
+          },
+          {
+            "file_path": ".claude/tasks/CTO_RITUAL_AND_AUTONOMY_FIX_20260413.md",
+            "line_number": 4,
+            "excerpt": "**Owner**: Ethan-CTO (dispatch) → Ryan-Platform / Maya-Governance / Leo-Kernel"
+          },
+          {
+            "file_path": ".claude/tasks/NEXT_SESSION_P0_yml_session_bridge.md",
+            "line_number": 181,
+            "excerpt": "- Path B-lite: CTO 写 task card (本文件) + CEO 代 spawn Ryan/Leo (下 session 首轮)"
+          },
+          {
+            "file_path": ".claude/tasks/W16_leo_session_omission.md",
+            "line_number": 1,
+            "excerpt": "# W16 Leo task: omission_engine 6 fail"
+          }
+        ],
+        "brain_profile_refs": [
+          "docs/receipts/CZL-BRAIN-AUTO-INGEST-IMPL.md",
+          "knowledge/cto/arch18_cieu_brain_corpus.md",
+          "knowledge/cto/ethan_brain_foundation.md",
+          "reports/ceo/governance/brain_3loop_consolidated_v2.md",
+          "reports/ceo/governance/brain_3loop_live_architecture_v1.md",
+          "reports/cto-dispatch/tier1-brain-3loop-l3-manual-maya.md",
+          "reports/cto-dispatch/tier1-brain-l2-writeback-ryan-leo.md",
+          "reports/receipts/CZL-BRAIN-BIPARTITE-P2.md",
+          "reports/receipts/CZL-BRAIN-BOUNDARY-HOOKS.md",
+          "reports/staged/test_brain_writeback_semantic.py",
+          "scripts/CZL-BRAIN-ADD-NODE-PRESERVE-receipt.md",
+          "scripts/brain_writeback_queue.py",
+          "scripts/ethan_brain.py",
+          "scripts/mint_agent_brain.py",
+          "scripts/tests/test_mint_agent_brain.py",
+          "tests/hook/test_brain_boundary_and_query.py",
+          "tests/hook/test_brain_writeback_wiring.py",
+          "tests/kernel/test_brain_writeback_semantic.py"
+        ],
+        "dna_memory_refs": [
+          "governance/DNA_LOG.md",
+          "knowledge/ceo/wisdom/WORK_METHODOLOGY.md",
+          "knowledge/ceo/wisdom/dreams/dream_20260419_02_cross_node_unification.md",
+          "knowledge/ceo/wisdom/dreams/dream_20260419_05_future_vision.md",
+          "knowledge/ceo/wisdom/meta/engineer_culture_design_5_factors.md",
+          "knowledge/ceo/wisdom/strategic/aiden_management_operating_method_20260420.md",
+          "knowledge/cto/wisdom/WHO_I_AM_ETHAN.md",
+          "memory/WORLD_STATE.md",
+          "memory/archive/czl_subgoals_hiagent_9wire_20260415.json",
+          "memory/archive/czl_subgoals_v6_close_20260416_165342.json",
+          "memory/boot_packages/_seed/ceo.json",
+          "memory/boot_packages/_seed/cto.json",
+          "memory/boot_packages/_seed/eng-governance.json",
+          "memory/boot_packages/_seed/eng-kernel.json",
+          "memory/boot_packages/_seed/eng-platform.json",
+          "memory/claude_code_memory_mirror/feedback_default_agent_is_ceo.md",
+          "memory/claude_code_memory_mirror/feedback_dispatch_via_cto.md",
+          "memory/session_handoff.md",
+          "memory/session_summary_20260415.md",
+          "memory/session_summary_20260416.md"
+        ],
+        "current_mapped_responsibilities": [
+          "kernel",
+          "compiler",
+          "contract parsing",
+          "session correctness"
+        ],
+        "what_owner_can_ask": [
+          "accept scoped internal task aligned to legacy role"
+        ],
+        "autonomous_work_allowed": [
+          "internal analysis",
+          "local artifact review",
+          "controlled read-only observation if configured",
+          "evidence summary",
+          "draft-only artifacts",
+          "approval request preparation",
+          "tool proposal",
+          "tests/builders",
+          "owner cockpit updates"
+        ],
+        "requires_owner_approval": [
+          "outreach",
+          "publication",
+          "payment",
+          "account creation",
+          "form submission",
+          "grant/RFP submission",
+          "customer contact",
+          "MCP/live behavior",
+          "actual memory/brain/canonical/CIEU DB writeback"
+        ],
+        "current_inbox": [
+          "review mapped responsibility and identify next safe internal task"
+        ],
+        "integration_status": "integrated_from_legacy_evidence",
+        "next_suggested_task": "review kernel/runtime capability gaps for office routing"
+      }
+    },
+    {
+      "agent_id": "maya_engineer",
+      "display_name": "Maya Patel",
+      "legacy_role": "Governance Engineer",
+      "current_status": "integrated_from_legacy_evidence",
+      "can_accept_tasks": true,
+      "can_self_work": true,
+      "known_responsibilities": [
+        "governance",
+        "CIEU",
+        "omission",
+        "Path A/B",
+        "causal systems"
+      ],
+      "brain_profile_refs": [
+        "knowledge/cto/arch18_cieu_brain_corpus.md",
+        "knowledge/cto/ethan_brain_foundation.md",
+        "reports/ceo/commit_msgs/c_20260419_brain_live.txt",
+        "reports/ceo/governance/brain_3loop_consolidated_v2.md",
+        "reports/ceo/governance/brain_3loop_live_architecture_v1.md",
+        "reports/cto-dispatch/tier1-brain-3loop-l3-manual-maya.md",
+        "scripts/ethan_brain.py",
+        "scripts/hook_ceo_pre_output_brain_query.py"
+      ],
+      "source_evidence_summary": "- **Naming**: `eng-data` no collision (Maya stays `eng-governance` / `maya-governance`)",
+      "room": {
+        "schema_version": "v0",
+        "milestone_id": "L7.4",
+        "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+        "packet_type": "agent_room",
+        "generated_at_utc": "2026-04-30T00:00:00Z",
+        "policy_ref": "policy/action_capability_registry.json",
+        "revenue_policy_ref": "policy/revenue_action_policy.json",
+        "discovery_policy_ref": "policy/discovery_policy.json",
+        "approval_state_machine_ref": "policy/approval_state_machine.json",
+        "writeback_policy_ref": "policy/writeback_policy.json",
+        "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+        "agent_id": "maya_engineer",
+        "display_name": "Maya Patel",
+        "legacy_role": "Governance Engineer",
+        "identity_evidence": [
+          {
+            "file_path": ".claude/agents/eng-data.md",
+            "line_number": 39,
+            "excerpt": "- **Naming**: `eng-data` no collision (Maya stays `eng-governance` / `maya-governance`)"
+          },
+          {
+            "file_path": ".claude/agents/eng-governance.md",
+            "line_number": 2,
+            "excerpt": "name: Maya-Governance"
+          },
+          {
+            "file_path": ".claude/tasks/AMENDMENT_015_SYSTEMIC_UNLOCK_20260413.md",
+            "line_number": 4,
+            "excerpt": "**Owner**: Ethan-CTO (lead) → Ryan-Platform + Maya-Governance + Leo-Kernel"
+          },
+          {
+            "file_path": ".claude/tasks/CTO_RITUAL_AND_AUTONOMY_FIX_20260413.md",
+            "line_number": 4,
+            "excerpt": "**Owner**: Ethan-CTO (dispatch) → Ryan-Platform / Maya-Governance / Leo-Kernel"
+          },
+          {
+            "file_path": ".claude/tasks/W16_maya_amendment_governance.md",
+            "line_number": 1,
+            "excerpt": "# W16 Maya task: AMENDMENT-015 + governance_pipeline_e2e"
+          }
+        ],
+        "brain_profile_refs": [
+          "knowledge/cto/arch18_cieu_brain_corpus.md",
+          "knowledge/cto/ethan_brain_foundation.md",
+          "reports/ceo/commit_msgs/c_20260419_brain_live.txt",
+          "reports/ceo/governance/brain_3loop_consolidated_v2.md",
+          "reports/ceo/governance/brain_3loop_live_architecture_v1.md",
+          "reports/cto-dispatch/tier1-brain-3loop-l3-manual-maya.md",
+          "scripts/ethan_brain.py",
+          "scripts/hook_ceo_pre_output_brain_query.py",
+          "scripts/mint_agent_brain.py",
+          "scripts/tests/test_mint_agent_brain.py"
+        ],
+        "dna_memory_refs": [
+          ".claude/tasks/maya_v3_wire_wisdom_yaml_and_detector_binding.md",
+          "docs/c5_working_memory_snapshot.md",
+          "knowledge/ceo/wisdom/M_TRIANGLE.md",
+          "knowledge/ceo/wisdom/WORK_METHODOLOGY.md",
+          "knowledge/ceo/wisdom/dreams/dream_20260419_02_cross_node_unification.md",
+          "knowledge/ceo/wisdom/dreams/dream_20260419_05_future_vision.md",
+          "knowledge/ceo/wisdom/meta/aiden_8_module_cognitive_architecture.md",
+          "knowledge/ceo/wisdom/meta/engineer_culture_design_5_factors.md",
+          "knowledge/ceo/wisdom/paradigms/extend_not_build.md",
+          "knowledge/ceo/wisdom/strategic/aiden_management_operating_method_20260420.md",
+          "knowledge/cto/wisdom/WHO_I_AM_ETHAN.md",
+          "memory/WORLD_STATE.md",
+          "memory/archive/czl_subgoals_hiagent_9wire_20260415.json",
+          "memory/archive/czl_subgoals_v6_close_20260416_165342.json",
+          "memory/archive/session_handoff_now_archived_1776273549.md",
+          "memory/boot_packages/_seed/ceo.json",
+          "memory/boot_packages/_seed/cto.json",
+          "memory/boot_packages/_seed/eng-governance.json",
+          "memory/boot_packages/_seed/eng-kernel.json",
+          "memory/boot_packages/_seed/eng-platform.json"
+        ],
+        "current_mapped_responsibilities": [
+          "governance",
+          "CIEU",
+          "omission",
+          "Path A/B",
+          "causal systems"
+        ],
+        "what_owner_can_ask": [
+          "accept scoped internal task aligned to legacy role"
+        ],
+        "autonomous_work_allowed": [
+          "internal analysis",
+          "local artifact review",
+          "controlled read-only observation if configured",
+          "evidence summary",
+          "draft-only artifacts",
+          "approval request preparation",
+          "tool proposal",
+          "tests/builders",
+          "owner cockpit updates"
+        ],
+        "requires_owner_approval": [
+          "outreach",
+          "publication",
+          "payment",
+          "account creation",
+          "form submission",
+          "grant/RFP submission",
+          "customer contact",
+          "MCP/live behavior",
+          "actual memory/brain/canonical/CIEU DB writeback"
+        ],
+        "current_inbox": [
+          "review mapped responsibility and identify next safe internal task"
+        ],
+        "integration_status": "integrated_from_legacy_evidence",
+        "next_suggested_task": "review governance boundary for office interactions"
+      }
+    },
+    {
+      "agent_id": "ryan_engineer",
+      "display_name": "Ryan Park",
+      "legacy_role": "Platform Engineer",
+      "current_status": "integrated_from_legacy_evidence",
+      "can_accept_tasks": true,
+      "can_self_work": true,
+      "known_responsibilities": [
+        "platform",
+        "hooks",
+        "CLI",
+        "integrations",
+        "QA"
+      ],
+      "brain_profile_refs": [
+        "docs/receipts/CZL-BRAIN-AUTO-INGEST-IMPL.md",
+        "knowledge/cto/arch18_cieu_brain_corpus.md",
+        "knowledge/cto/ethan_brain_foundation.md",
+        "knowledge/cto/role_definition/role_heroes.md",
+        "knowledge/cto/role_definition/world_class_standard.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260420_004526.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260420_214238.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260421_183024_nrem.md"
+      ],
+      "source_evidence_summary": "- Ryan Holiday: Growth Hacker Marketing",
+      "room": {
+        "schema_version": "v0",
+        "milestone_id": "L7.4",
+        "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+        "packet_type": "agent_room",
+        "generated_at_utc": "2026-04-30T00:00:00Z",
+        "policy_ref": "policy/action_capability_registry.json",
+        "revenue_policy_ref": "policy/revenue_action_policy.json",
+        "discovery_policy_ref": "policy/discovery_policy.json",
+        "approval_state_machine_ref": "policy/approval_state_machine.json",
+        "writeback_policy_ref": "policy/writeback_policy.json",
+        "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+        "agent_id": "ryan_engineer",
+        "display_name": "Ryan Park",
+        "legacy_role": "Platform Engineer",
+        "identity_evidence": [
+          {
+            "file_path": ".claude/agents/cmo.md",
+            "line_number": 195,
+            "excerpt": "- Ryan Holiday: Growth Hacker Marketing"
+          },
+          {
+            "file_path": ".claude/agents/eng-data.md",
+            "line_number": 44,
+            "excerpt": "2. canonical agent_id registry update — required (Ryan T1 atomic)"
+          },
+          {
+            "file_path": ".claude/agents/eng-platform.md",
+            "line_number": 2,
+            "excerpt": "name: Ryan-Platform"
+          },
+          {
+            "file_path": ".claude/tasks/AMENDMENT_015_SYSTEMIC_UNLOCK_20260413.md",
+            "line_number": 4,
+            "excerpt": "**Owner**: Ethan-CTO (lead) → Ryan-Platform + Maya-Governance + Leo-Kernel"
+          },
+          {
+            "file_path": ".claude/tasks/CTO_RITUAL_AND_AUTONOMY_FIX_20260413.md",
+            "line_number": 4,
+            "excerpt": "**Owner**: Ethan-CTO (dispatch) → Ryan-Platform / Maya-Governance / Leo-Kernel"
+          }
+        ],
+        "brain_profile_refs": [
+          "docs/receipts/CZL-BRAIN-AUTO-INGEST-IMPL.md",
+          "knowledge/cto/arch18_cieu_brain_corpus.md",
+          "knowledge/cto/ethan_brain_foundation.md",
+          "knowledge/cto/role_definition/role_heroes.md",
+          "knowledge/cto/role_definition/world_class_standard.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260420_004526.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260420_214238.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260421_183024_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260421_201057_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260421_211058_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260421_221059_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260421_231059_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_010324_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_020326_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_030326_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_041929_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_053612_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_065326_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_075947_nrem.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260422_091918_nrem.md"
+        ],
+        "dna_memory_refs": [
+          "docs/c5_working_memory_snapshot.md",
+          "knowledge/ceo/wisdom/WORK_METHODOLOGY.md",
+          "knowledge/ceo/wisdom/dreams/dream_20260419_02_cross_node_unification.md",
+          "knowledge/ceo/wisdom/dreams/dream_20260419_03_board_thinking_style_distillation.md",
+          "knowledge/ceo/wisdom/dreams/dream_20260419_05_future_vision.md",
+          "knowledge/ceo/wisdom/meta/17_meta_rules_from_practice.md",
+          "knowledge/ceo/wisdom/meta/engineer_culture_design_5_factors.md",
+          "knowledge/ceo/wisdom/meta/sandbox_16h_counterfactual_replay.md",
+          "knowledge/ceo/wisdom/strategic/aiden_management_operating_method_20260420.md",
+          "knowledge/cto/wisdom/WHO_I_AM_ETHAN.md",
+          "memory/WORLD_STATE.md",
+          "memory/archive/czl_subgoals_hiagent_9wire_20260415.json",
+          "memory/archive/czl_subgoals_v6_close_20260416_165342.json",
+          "memory/archive/session_handoff_now_archived_1776273549.md",
+          "memory/boot_packages/_seed/ceo.json",
+          "memory/boot_packages/_seed/cto.json",
+          "memory/boot_packages/_seed/eng-governance.json",
+          "memory/boot_packages/_seed/eng-kernel.json",
+          "memory/boot_packages/_seed/eng-platform.json",
+          "memory/claude_code_memory_mirror/feedback_default_agent_is_ceo.md"
+        ],
+        "current_mapped_responsibilities": [
+          "platform",
+          "hooks",
+          "CLI",
+          "integrations",
+          "QA"
+        ],
+        "what_owner_can_ask": [
+          "accept scoped internal task aligned to legacy role"
+        ],
+        "autonomous_work_allowed": [
+          "internal analysis",
+          "local artifact review",
+          "controlled read-only observation if configured",
+          "evidence summary",
+          "draft-only artifacts",
+          "approval request preparation",
+          "tool proposal",
+          "tests/builders",
+          "owner cockpit updates"
+        ],
+        "requires_owner_approval": [
+          "outreach",
+          "publication",
+          "payment",
+          "account creation",
+          "form submission",
+          "grant/RFP submission",
+          "customer contact",
+          "MCP/live behavior",
+          "actual memory/brain/canonical/CIEU DB writeback"
+        ],
+        "current_inbox": [
+          "review mapped responsibility and identify next safe internal task"
+        ],
+        "integration_status": "integrated_from_legacy_evidence",
+        "next_suggested_task": "wire one-command office status runner"
+      }
+    },
+    {
+      "agent_id": "jordan_engineer",
+      "display_name": "Jordan Lee",
+      "legacy_role": "Domains Engineer",
+      "current_status": "integrated_from_legacy_evidence",
+      "can_accept_tasks": true,
+      "can_self_work": true,
+      "known_responsibilities": [
+        "domains",
+        "templates",
+        "OpenClaw",
+        "policy packs"
+      ],
+      "brain_profile_refs": [
+        "knowledge/cto/ethan_brain_foundation.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260420_004526.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260420_214238.md",
+        "scripts/ethan_brain.py",
+        "scripts/mint_agent_brain.py",
+        "scripts/tests/test_mint_agent_brain.py"
+      ],
+      "source_evidence_summary": "name: Jordan-Domains",
+      "room": {
+        "schema_version": "v0",
+        "milestone_id": "L7.4",
+        "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+        "packet_type": "agent_room",
+        "generated_at_utc": "2026-04-30T00:00:00Z",
+        "policy_ref": "policy/action_capability_registry.json",
+        "revenue_policy_ref": "policy/revenue_action_policy.json",
+        "discovery_policy_ref": "policy/discovery_policy.json",
+        "approval_state_machine_ref": "policy/approval_state_machine.json",
+        "writeback_policy_ref": "policy/writeback_policy.json",
+        "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+        "agent_id": "jordan_engineer",
+        "display_name": "Jordan Lee",
+        "legacy_role": "Domains Engineer",
+        "identity_evidence": [
+          {
+            "file_path": ".claude/agents/eng-domains.md",
+            "line_number": 2,
+            "excerpt": "name: Jordan-Domains"
+          },
+          {
+            "file_path": ".claude/tasks/jordan_v3_posttool_hook_and_rubric_reclassify.md",
+            "line_number": 2,
+            "excerpt": "title: \"V3 Jordan: PostToolUse Hook for feedback->yaml + Layered Translation Rubric Reclassify\""
+          },
+          {
+            "file_path": ".czl_subgoals.json",
+            "line_number": 7,
+            "excerpt": "\"rt1_status\": \"Campaign v6: 2/10 closed (W1+W2 Rt+1=0); v6 W3-W10 in progress. NEW Campaign v7 (2026-04-22): V3 Wave-1 in flight (Maya G3+G4 / Leo G1+G4 / Ryan G2 / Jordan G3+rubric, ~125 tu) + W12 Y* Field Wave-2 spec r"
+          },
+          {
+            "file_path": "AGENTS.md",
+            "line_number": 776,
+            "excerpt": "CTO 团队（CTO + Leo + Maya + Ryan + Jordan）必须保证全生态系统永不存在未处理技术问题。机制："
+          },
+          {
+            "file_path": "BOARD_PENDING.md",
+            "line_number": 68,
+            "excerpt": "- CTO 升级派单 (Leo schema / Maya rule 6-10 / Jordan digest / Samantha cron / Ethan e2e)"
+          }
+        ],
+        "brain_profile_refs": [
+          "knowledge/cto/ethan_brain_foundation.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260420_004526.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260420_214238.md",
+          "scripts/ethan_brain.py",
+          "scripts/mint_agent_brain.py",
+          "scripts/tests/test_mint_agent_brain.py"
+        ],
+        "dna_memory_refs": [
+          "knowledge/ceo/wisdom/WORK_METHODOLOGY.md",
+          "knowledge/ceo/wisdom/dreams/dream_20260419_02_cross_node_unification.md",
+          "knowledge/ceo/wisdom/dreams/dream_20260419_05_future_vision.md",
+          "knowledge/ceo/wisdom/meta/engineer_culture_design_5_factors.md",
+          "knowledge/ceo/wisdom/strategic/aiden_management_operating_method_20260420.md",
+          "knowledge/cto/wisdom/WHO_I_AM_ETHAN.md",
+          "memory/WORLD_STATE.md",
+          "memory/archive/session_handoff_now_archived_1776273549.md",
+          "memory/boot_packages/_seed/ceo.json",
+          "memory/boot_packages/_seed/cto.json",
+          "memory/boot_packages/_seed/eng-domains.json",
+          "memory/boot_packages/_seed/eng-platform.json",
+          "memory/boot_packages/history/ceo_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cfo_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cmo_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cso_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/cto_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-domains_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-governance_ystar-company_0a84f3c6.json",
+          "memory/boot_packages/history/eng-kernel_ystar-company_0a84f3c6.json"
+        ],
+        "current_mapped_responsibilities": [
+          "domains",
+          "templates",
+          "OpenClaw",
+          "policy packs"
+        ],
+        "what_owner_can_ask": [
+          "accept scoped internal task aligned to legacy role"
+        ],
+        "autonomous_work_allowed": [
+          "internal analysis",
+          "local artifact review",
+          "controlled read-only observation if configured",
+          "evidence summary",
+          "draft-only artifacts",
+          "approval request preparation",
+          "tool proposal",
+          "tests/builders",
+          "owner cockpit updates"
+        ],
+        "requires_owner_approval": [
+          "outreach",
+          "publication",
+          "payment",
+          "account creation",
+          "form submission",
+          "grant/RFP submission",
+          "customer contact",
+          "MCP/live behavior",
+          "actual memory/brain/canonical/CIEU DB writeback"
+        ],
+        "current_inbox": [
+          "review mapped responsibility and identify next safe internal task"
+        ],
+        "integration_status": "integrated_from_legacy_evidence",
+        "next_suggested_task": "map domain templates to Labs Office rooms"
+      }
+    },
+    {
+      "agent_id": "jinjin_k9_scout",
+      "display_name": "Jinjin / K9 Scout",
+      "legacy_role": "Research / Cross-model Scout",
+      "current_status": "integrated_from_legacy_evidence",
+      "can_accept_tasks": true,
+      "can_self_work": true,
+      "known_responsibilities": [
+        "research",
+        "external observation",
+        "cross-model scouting",
+        "cost-efficient collection"
+      ],
+      "brain_profile_refs": [
+        "reports/ceo/brain_dream_diffs/dream_diff_20260420_004526.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260420_214238.md"
+      ],
+      "source_evidence_summary": "K9 Scout sends messages via Telegram at any time. CEO MUST check K9 inbox:",
+      "room": {
+        "schema_version": "v0",
+        "milestone_id": "L7.4",
+        "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+        "packet_type": "agent_room",
+        "generated_at_utc": "2026-04-30T00:00:00Z",
+        "policy_ref": "policy/action_capability_registry.json",
+        "revenue_policy_ref": "policy/revenue_action_policy.json",
+        "discovery_policy_ref": "policy/discovery_policy.json",
+        "approval_state_machine_ref": "policy/approval_state_machine.json",
+        "writeback_policy_ref": "policy/writeback_policy.json",
+        "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+        "agent_id": "jinjin_k9_scout",
+        "display_name": "Jinjin / K9 Scout",
+        "legacy_role": "Research / Cross-model Scout",
+        "identity_evidence": [
+          {
+            "file_path": ".claude/agents/ceo.md",
+            "line_number": 142,
+            "excerpt": "K9 Scout sends messages via Telegram at any time. CEO MUST check K9 inbox:"
+          },
+          {
+            "file_path": ".claude/agents/cmo.md",
+            "line_number": 111,
+            "excerpt": "| K9/金金 returns research results | Integrate into content strategy, update positioning docs | K9 inbox via CEO |"
+          },
+          {
+            "file_path": ".claude/agents/cso.md",
+            "line_number": 138,
+            "excerpt": "**Delegate bulk research to K9/金金.** You qualify and strategize. K9 does the data collection."
+          },
+          {
+            "file_path": ".ystar_session.json",
+            "line_number": 251,
+            "excerpt": "\"jinjin\""
+          },
+          {
+            "file_path": "AGENTS.md",
+            "line_number": 1156,
+            "excerpt": "- K9/金金 task delegation"
+          }
+        ],
+        "brain_profile_refs": [
+          "reports/ceo/brain_dream_diffs/dream_diff_20260420_004526.md",
+          "reports/ceo/brain_dream_diffs/dream_diff_20260420_214238.md"
+        ],
+        "dna_memory_refs": [
+          "knowledge/ceo/team_dna.md",
+          "memory/boot_packages/_seed/ceo.json"
+        ],
+        "current_mapped_responsibilities": [
+          "research",
+          "external observation",
+          "cross-model scouting",
+          "cost-efficient collection"
+        ],
+        "what_owner_can_ask": [
+          "run read-only research",
+          "scout public signals",
+          "compare sources"
+        ],
+        "autonomous_work_allowed": [
+          "internal analysis",
+          "local artifact review",
+          "controlled read-only observation if configured",
+          "evidence summary",
+          "draft-only artifacts",
+          "approval request preparation",
+          "tool proposal",
+          "tests/builders",
+          "owner cockpit updates"
+        ],
+        "requires_owner_approval": [
+          "outreach",
+          "publication",
+          "payment",
+          "account creation",
+          "form submission",
+          "grant/RFP submission",
+          "customer contact",
+          "MCP/live behavior",
+          "actual memory/brain/canonical/CIEU DB writeback"
+        ],
+        "current_inbox": [
+          "prepare read-only scout plan for public buyer signals"
+        ],
+        "integration_status": "integrated_from_legacy_evidence",
+        "next_suggested_task": "draft read-only target signal observation plan"
+      }
+    }
+  ],
+  "work_queue": [
+    {
+      "work_id": "office_001",
+      "owner": "samantha_secretary",
+      "task": "maintain legacy team registry"
+    },
+    {
+      "work_id": "office_002",
+      "owner": "aiden_ceo",
+      "task": "route next revenue sprint through original team"
+    },
+    {
+      "work_id": "office_003",
+      "owner": "zara_cso",
+      "task": "prepare no-contact buyer-fit review"
+    },
+    {
+      "work_id": "office_004",
+      "owner": "ethan_cto",
+      "task": "review invented-role drift in active artifacts"
+    }
+  ],
+  "pending_approvals": [
+    "first manual outreach",
+    "recipient selection",
+    "price quote",
+    "payment method"
+  ],
+  "blocked_actions": [
+    "external outreach",
+    "email sending",
+    "customer contact",
+    "publication",
+    "payment",
+    "form submission",
+    "account creation",
+    "grant/RFP submission",
+    "MCP/live behavior",
+    "actual memory/brain/canonical/CIEU DB writeback"
+  ],
+  "approval_required_for": [
+    "outreach",
+    "publication",
+    "payment",
+    "account creation",
+    "form submission",
+    "grant/RFP submission",
+    "customer contact",
+    "MCP/live behavior",
+    "actual memory/brain/canonical/CIEU DB writeback"
+  ],
+  "allowed_local_actions": [
+    "local office message packet creation",
+    "local team task packet creation",
+    "internal analysis",
+    "draft-only work",
+    "approval request preparation",
+    "controlled read-only observation if separately configured"
+  ],
+  "commercial_path_summary": {
+    "selected_cash_path": "Founder AI workflow audit and CEO command brief sprint",
+    "service_offer": "Founder AI Workflow Audit & CEO Command Brief Sprint",
+    "primary_shortest_cash_path": "path_001",
+    "status": "first revenue readiness is prepared; external action remains approval-gated"
+  },
+  "packet_dirs": {
+    "owner_messages": "l7_real_labs_office_web_ui/runtime_packets/owner_messages",
+    "team_tasks": "l7_real_labs_office_web_ui/runtime_packets/team_tasks",
+    "routing_decisions": "l7_real_labs_office_web_ui/runtime_packets/routing_decisions",
+    "agent_inboxes": "l7_real_labs_office_web_ui/runtime_packets/agent_inboxes"
+  },
+  "next_commands": [
+    "bash scripts/run_l7_labs_office_web.sh --mode serve",
+    "bash scripts/run_l7_labs_office_web.sh --mode status",
+    "bash scripts/run_l7_labs_office_web.sh --mode smoke"
+  ],
+  "no_coo_invented_as_legacy_member": true,
+  "external_side_effects_occurred": false,
+  "core_writeback_occurred": false
+}
