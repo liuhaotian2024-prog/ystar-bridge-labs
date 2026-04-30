@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import time
 from pathlib import Path
 from typing import Any
 
@@ -25,6 +26,31 @@ from whiteboard_store import (
     whiteboard_snapshot,
 )
 
+ACTIVE_STATUSES = {"Inbox", "Interpreting", "Assigned", "In Progress"}
+
+
+def _item_sort_key(item: dict[str, Any]) -> tuple[str, str, str]:
+    return (
+        f"{int(item.get('last_routed_at_epoch_ns') or 0):020d}",
+        str(item.get("updated_at_utc") or item.get("created_at_utc") or ""),
+        str(item.get("work_item_id") or ""),
+    )
+
+
+def _latest_first(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return sorted(items, key=_item_sort_key, reverse=True)
+
+
+def _existing_active_item_for_message(message_id: str | None, packet_root: Path = PACKET_ROOT) -> dict[str, Any] | None:
+    if not message_id:
+        return None
+    candidates = [
+        item
+        for item in load_work_items(packet_root)
+        if item.get("source_message_id") == message_id and item.get("status") in ACTIVE_STATUSES
+    ]
+    return _latest_first(candidates)[0] if candidates else None
+
 
 def route_latest_or_payload(payload: dict[str, Any] | None = None, packet_root: Path = PACKET_ROOT) -> dict[str, Any]:
     message = payload.get("message") if payload and payload.get("message") else latest_message(packet_root)
@@ -35,25 +61,44 @@ def route_latest_or_payload(payload: dict[str, Any] | None = None, packet_root: 
     routing = route_owner_goal(text, message.get("target", "whole_team"))
     title = text[:72] or "Untitled owner whiteboard task"
     assigned = [routing["primary_agent"], *routing.get("supporting_agents", [])]
-    item = create_work_item(
-        title=title,
-        description=text,
-        source_message_id=message.get("message_id"),
-        assigned_agents=assigned,
-        status="Assigned",
-        packet_root=packet_root,
-    )
+    item = _existing_active_item_for_message(message.get("message_id"), packet_root)
+    reused_existing_work_item = item is not None
+    if item:
+        item["title"] = item.get("title") or title
+        item["description"] = item.get("description") or text
+        item["assigned_agents"] = assigned
+        item["last_routed_at_epoch_ns"] = time.time_ns()
+        if item.get("status") in {"Inbox", "Interpreting"}:
+            item["status"] = "Assigned"
+        save_work_item(item, packet_root)
+    else:
+        item = create_work_item(
+            title=title,
+            description=text,
+            source_message_id=message.get("message_id"),
+            assigned_agents=assigned,
+            status="Assigned",
+            packet_root=packet_root,
+        )
+        item["last_routed_at_epoch_ns"] = time.time_ns()
+        save_work_item(item, packet_root)
     decision = create_routing_decision(message, routing, item, packet_root)
     append_timeline("Aiden interpreted", routing["reason"], {"work_item_id": item["work_item_id"]}, packet_root)
-    return {"ok": True, "message": message, "routing_decision": decision, "work_item": item}
+    return {
+        "ok": True,
+        "message": message,
+        "routing_decision": decision,
+        "work_item": item,
+        "reused_existing_work_item": reused_existing_work_item,
+    }
 
 
 def active_items(packet_root: Path = PACKET_ROOT) -> list[dict[str, Any]]:
-    return [
+    return _latest_first([
         item
         for item in load_work_items(packet_root)
-        if item.get("status") in {"Inbox", "Interpreting", "Assigned", "In Progress"}
-    ]
+        if item.get("status") in ACTIVE_STATUSES
+    ])
 
 
 def run_work_cycle(
@@ -128,7 +173,7 @@ def create_completion_report(work_item_id: str | None = None, packet_root: Path 
         routed = route_latest_or_payload(packet_root=packet_root)
         run_work_cycle(routed["work_item"]["work_item_id"], packet_root=packet_root)
         items = [routed["work_item"]]
-    item = items[-1]
+    item = _latest_first(items)[0]
     if item.get("status") not in {"Done", "Waiting for Approval", "Blocked"}:
         item["status"] = "Done"
         save_work_item(item, packet_root)

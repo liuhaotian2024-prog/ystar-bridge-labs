@@ -111,6 +111,12 @@ def test_js_can_submit_whiteboard_and_work_cycle_paths():
     assert "compatibility_fallback" in js
     assert "/api/team_task" in js
     assert "/api/message" in js
+    assert "团队还没有工作" in js
+    assert "return (scoped.length ? scoped : replies)" not in js
+    assert "max_work_items_per_cycle: 1" in js
+    assert "latestOwnerMessage" in js
+    assert "latestWorkItemId" in js
+    assert "{work_item_id: latestWorkItemId}" in js
 
 
 def test_routing_engine_uses_original_agents_and_no_coo():
@@ -159,6 +165,24 @@ def test_work_cycle_creates_agent_replies_and_updates_status(packet_root):
     item = result["work_item"]
     assert item["status"] in {"Done", "Waiting for Approval"}
     assert load_agent_replies(packet_root)
+
+
+def test_route_reuses_existing_active_work_item_for_same_message(packet_root):
+    create_whiteboard_message("请团队判断这个目标。", target="whole_team", packet_root=packet_root)
+    first = route_latest_or_payload(packet_root=packet_root)
+    second = route_latest_or_payload(packet_root=packet_root)
+    assert first["work_item"]["work_item_id"] == second["work_item"]["work_item_id"]
+    assert second["reused_existing_work_item"] is True
+    assert len(load_work_items(packet_root)) == 1
+
+
+def test_team_work_cycle_processes_latest_active_item(packet_root):
+    create_whiteboard_message("旧任务：先不要处理。", target="whole_team", packet_root=packet_root)
+    route_latest_or_payload(packet_root=packet_root)
+    create_whiteboard_message("新任务：应该先处理我。", target="whole_team", packet_root=packet_root)
+    latest = route_latest_or_payload(packet_root=packet_root)["work_item"]
+    result = run_team_work_cycle(max_work_items_per_cycle=1, packet_root=packet_root)
+    assert result["items_processed"] == [latest["work_item_id"]]
 
 
 def test_completion_report_can_be_created(packet_root):

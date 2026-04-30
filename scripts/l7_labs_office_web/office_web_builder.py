@@ -889,6 +889,8 @@ pre {
 const $ = (id) => document.getElementById(id);
 const columns = ["Inbox", "Interpreting", "Assigned", "In Progress", "Waiting for Approval", "Blocked", "Done"];
 let OFFICE_STATE = null;
+let latestOwnerMessage = null;
+let latestWorkItemId = "";
 const quickTemplates = {
   "first-cash": {
     text: "Aiden，请带团队分析：Y*Bridge Labs 下一步怎么最快拿到第一笔钱，同时不要牺牲长期战略。请分派给 Sofia、Marco、Zara、Ethan、Jinjin 和 Samantha。",
@@ -966,15 +968,29 @@ async function openRoom(agentId) {
 }
 
 function sortedByUpdated(items) {
-  return [...(items || [])].sort((a, b) => String(b.updated_at_utc || b.created_at_utc || "").localeCompare(String(a.updated_at_utc || a.created_at_utc || "")));
+  return [...(items || [])].sort((a, b) => {
+    const bKey = `${String(b.last_routed_at_epoch_ns || "").padStart(20, "0")}|${b.updated_at_utc || b.created_at_utc || ""}|${b.work_item_id || b.reply_id || b.thread_id || ""}`;
+    const aKey = `${String(a.last_routed_at_epoch_ns || "").padStart(20, "0")}|${a.updated_at_utc || a.created_at_utc || ""}|${a.work_item_id || a.reply_id || a.thread_id || ""}`;
+    return bKey.localeCompare(aKey);
+  });
 }
 
 function allWorkItems(board) {
   return columns.flatMap((column) => board[column] || []);
 }
 
+function dedupeWorkItems(items) {
+  const seen = new Set();
+  return sortedByUpdated(items).filter((item) => {
+    const key = item.source_message_id || item.title || item.work_item_id;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 function latestWorkItem(snapshot) {
-  return sortedByUpdated(allWorkItems(snapshot.work_board || {}))[0] || null;
+  return dedupeWorkItems(allWorkItems(snapshot.work_board || {}))[0] || null;
 }
 
 function latestThread(snapshot) {
@@ -984,7 +1000,7 @@ function latestThread(snapshot) {
 function currentReplies(snapshot, workItemId) {
   const replies = sortedByUpdated(snapshot.agent_replies || []);
   const scoped = workItemId ? replies.filter((reply) => reply.work_item_id === workItemId) : [];
-  return (scoped.length ? scoped : replies).slice(0, 8);
+  return (workItemId ? scoped : replies).slice(0, 8);
 }
 
 function renderFindings(findings) {
@@ -995,6 +1011,7 @@ function renderFindings(findings) {
 function renderWhiteboard(snapshot) {
   const thread = latestThread(snapshot);
   const item = latestWorkItem(snapshot);
+  if (item?.work_item_id) latestWorkItemId = item.work_item_id;
   const messages = (thread?.messages || []).slice(-2);
   const replies = currentReplies(snapshot, item?.work_item_id);
   const totalMessages = (snapshot.threads || []).flatMap((entry) => entry.messages || []).length;
@@ -1006,16 +1023,20 @@ function renderWhiteboard(snapshot) {
       <p><strong>Status:</strong> ${escapeHtml(item.status)} · <strong>Agents:</strong> ${escapeHtml((item.assigned_agents || []).join(", ") || "not routed yet")}</p>
       <p class="muted">${escapeHtml((item.progress_notes || []).slice(-1)[0] || item.description || "Waiting for team work.")}</p>
     </article>` : "";
+  const waitingForTeam = item && !replies.length && !["Done", "Waiting for Approval", "Blocked"].includes(item.status)
+    ? `<div class="bubble system"><strong>system</strong><br>Aiden 已经拆好任务，但团队还没有工作。下一步请点 “3. 团队工作一轮”。</div>`
+    : "";
   const rows = messages.map((m) => `<div class="bubble ${escapeHtml(m.sender_type)}"><strong>${escapeHtml(m.sender_id)}</strong> → ${escapeHtml(m.target)}<br>${escapeHtml(m.text)}</div>`)
     .concat(replies.map((r) => `<div class="bubble agent"><strong>${escapeHtml(r.agent_id)}</strong><br>${escapeHtml(r.work_done)}${renderFindings(r.findings)}<span class="muted">Next: ${escapeHtml(r.next_step)}</span></div>`));
   const historyNote = totalMessages || totalReplies
     ? `<details class="history-note"><summary>旧历史已隐藏：${Math.max(totalMessages - messages.length, 0)} 条消息、${Math.max(totalReplies - replies.length, 0)} 条回复</summary><p class="muted">为了避免办公室变成日志瀑布，这里默认只显示最近一次任务。历史 packet 仍保留在本地。</p></details>`
     : "";
-  $("whiteboard-thread").innerHTML = focus + (rows.join("") || "<p class='muted'>No whiteboard messages yet. Send a goal to the team.</p>") + historyNote;
+  $("whiteboard-thread").innerHTML = focus + (rows.join("") || "<p class='muted'>No whiteboard messages yet. Send a goal to the team.</p>") + waitingForTeam + historyNote;
 }
 
 function renderWorkBoard(board) {
-  const recentIds = new Set(sortedByUpdated(allWorkItems(board)).slice(0, 8).map((item) => item.work_item_id));
+  const recentItems = dedupeWorkItems(allWorkItems(board)).slice(0, 8);
+  const recentIds = new Set(recentItems.map((item) => item.work_item_id));
   $("work-board").innerHTML = columns.map((column) => `
     <div class="column"><h3>${column}</h3>${sortedByUpdated((board[column] || []).filter((item) => recentIds.has(item.work_item_id))).map((item) => `
       <article class="work-card">
@@ -1143,14 +1164,19 @@ async function act(label, path, payload = {}) {
 function summarizeActionResult(label, data) {
   const lines = [label, ""];
   lines.push(`状态: ${data.ok === false ? "失败" : "完成"}`);
-  if (data.message) {
+  if (data.message && !data.routing_decision) {
+    latestOwnerMessage = data.message;
+    latestWorkItemId = "";
     lines.push(`已进入白板: ${data.message.text || data.message.objective || data.message.message_id}`);
     lines.push("下一步: 点 “2. Aiden 拆任务”。");
   }
   if (data.routing_decision) {
     const decision = data.routing_decision;
+    if (data.message) latestOwnerMessage = data.message;
+    if (data.work_item?.work_item_id) latestWorkItemId = data.work_item.work_item_id;
     lines.push(`Aiden 分派: ${decision.primary_agent} + ${(decision.supporting_agents || []).join(", ")}`);
     lines.push(`任务: ${data.work_item?.title || decision.work_item_id}`);
+    if (data.reused_existing_work_item) lines.push("说明: 这是同一条白板消息，未重复创建新任务。");
     lines.push("下一步: 点 “3. 团队工作一轮”。");
   }
   if (data.items_processed) {
@@ -1237,6 +1263,7 @@ $("whiteboard-message-form").addEventListener("submit", async (event) => {
   event.preventDefault();
   try {
     const data = await sendTeamInstruction();
+    if (data.message) latestOwnerMessage = data.message;
     $("packet-result").textContent = summarizeActionResult("Team instruction submitted", data);
     try {
       await refreshOffice();
@@ -1248,9 +1275,15 @@ $("whiteboard-message-form").addEventListener("submit", async (event) => {
     $("packet-result").textContent = `Team instruction failed\\n${error.message}`;
   }
 });
-$("route-button").addEventListener("click", () => act("Aiden routing decision", "/api/route"));
+$("route-button").addEventListener("click", () => act("Aiden routing decision", "/api/route", latestOwnerMessage ? {message: latestOwnerMessage} : {}));
 $("work-cycle-button").addEventListener("click", () => act("Safe work cycle", "/api/work_cycle"));
-$("team-cycle-button").addEventListener("click", () => act("Team work cycle", "/api/team_work_cycle"));
+$("team-cycle-button").addEventListener("click", () => {
+  if (latestWorkItemId) {
+    act("Team work cycle", "/api/work_cycle", {work_item_id: latestWorkItemId});
+  } else {
+    act("Team work cycle", "/api/team_work_cycle", {max_work_items_per_cycle: 1});
+  }
+});
 $("scheduler-once-button").addEventListener("click", () => act("Scheduler run once", "/api/scheduler/run_once", {max_cycles: 1}));
 $("scheduler-bounded-button").addEventListener("click", () => act("Bounded scheduler self-work", "/api/scheduler/run_bounded", {max_work_items: 3, max_cycles: 2}));
 $("completion-button").addEventListener("click", () => act("Completion report", "/api/completion_report"));

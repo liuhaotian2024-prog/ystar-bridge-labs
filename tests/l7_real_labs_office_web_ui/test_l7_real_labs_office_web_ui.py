@@ -92,6 +92,12 @@ def test_whiteboard_submit_has_legacy_backend_fallback():
     assert "/api/whiteboard/message" in js
     assert "/api/team_task" in js
     assert "/api/message" in js
+    assert "团队还没有工作" in js
+    assert "return (scoped.length ? scoped : replies)" not in js
+    assert "max_work_items_per_cycle: 1" in js
+    assert "latestOwnerMessage" in js
+    assert "latestWorkItemId" in js
+    assert "{work_item_id: latestWorkItemId}" in js
 
 
 def test_runtime_packet_dirs_exist():
