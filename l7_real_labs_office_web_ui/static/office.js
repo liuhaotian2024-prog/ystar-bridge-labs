@@ -76,16 +76,32 @@ function renderTimeline(events) {
   $("progress-timeline").innerHTML = (events || []).slice(-30).reverse().map((event) => `<li><strong>${escapeHtml(event.event_type)}</strong>: ${escapeHtml(event.description)}</li>`).join("");
 }
 
+function renderScheduler(status, runs, heartbeats, interrupts) {
+  $("scheduler-status").innerHTML = `
+    <p><strong>Ready:</strong> ${status.scheduler_ready ? "yes" : "no"}</p>
+    <p><strong>Pending:</strong> ${status.pending_work_items} · <strong>Eligible:</strong> ${status.eligible_autonomous_work_items}</p>
+    <p><strong>Last tick:</strong> ${escapeHtml(status.last_scheduler_tick ? status.last_scheduler_tick.summary : "none yet")}</p>
+    <p><strong>No external side effects:</strong> ${status.no_external_side_effects ? "yes" : "no"} · <strong>No core writeback:</strong> ${status.no_core_writeback ? "yes" : "no"}</p>`;
+  $("progress-heartbeats").innerHTML = (heartbeats.progress_heartbeats || []).slice(-8).reverse().map((item) => `<li>${escapeHtml(item.summary)} <span class="muted">${escapeHtml(item.work_item_id || "")}</span></li>`).join("") || "<li>No progress heartbeats yet.</li>";
+  $("approval-interruptions").innerHTML = (interrupts.approval_interrupts || []).slice(-8).reverse().map((item) => `<li>${escapeHtml(item.owner_visible_explanation)} <span class="muted">${escapeHtml(item.status)}</span></li>`).join("") || "<li>No approval interruptions.</li>";
+  $("autonomous-runs").innerHTML = (runs.autonomous_runs || []).slice(-8).reverse().map((item) => `<li>${escapeHtml(item.summary)} <span class="muted">${escapeHtml(item.stop_reason)}</span></li>`).join("") || "<li>No autonomous runs yet.</li>";
+}
+
 async function refreshOffice() {
   const state = await getJson("/api/status");
   const snapshot = await getJson("/api/whiteboard");
+  const scheduler = await getJson("/api/scheduler/status");
+  const runs = await getJson("/api/autonomous_runs");
+  const heartbeats = await getJson("/api/progress_heartbeats");
+  const interrupts = await getJson("/api/approval_interrupts");
   OFFICE_STATE = state;
-  $("phase").textContent = `${state.whiteboard_runtime_phase || state.current_phase} · ${state.agent_count} recovered agents`;
+  $("phase").textContent = `${state.scheduler_runtime_phase || state.whiteboard_runtime_phase || state.current_phase} · ${state.agent_count} recovered agents`;
   renderRoster(state.agents);
   renderWhiteboard(snapshot);
   renderWorkBoard(snapshot.work_board || {});
   renderAgentPanel(state, snapshot);
   renderTimeline(snapshot.timeline || []);
+  renderScheduler(scheduler, runs, heartbeats, interrupts);
   $("pending-approvals").innerHTML = list((snapshot.approval_requests || []).map((item) => item.reason).concat(state.pending_approvals || []));
   $("blocked-actions").innerHTML = list(state.blocked_actions);
   if (state.agents.length) openRoom(state.agents.find((agent) => agent.agent_id === "aiden_ceo")?.agent_id || state.agents[0].agent_id);
@@ -109,6 +125,8 @@ $("whiteboard-message-form").addEventListener("submit", async (event) => {
 $("route-button").addEventListener("click", () => act("Aiden routing decision", "/api/route"));
 $("work-cycle-button").addEventListener("click", () => act("Safe work cycle", "/api/work_cycle"));
 $("team-cycle-button").addEventListener("click", () => act("Team work cycle", "/api/team_work_cycle"));
+$("scheduler-once-button").addEventListener("click", () => act("Scheduler run once", "/api/scheduler/run_once", {max_cycles: 1}));
+$("scheduler-bounded-button").addEventListener("click", () => act("Bounded scheduler self-work", "/api/scheduler/run_bounded", {max_work_items: 3, max_cycles: 2}));
 $("completion-button").addEventListener("click", () => act("Completion report", "/api/completion_report"));
 
 refreshOffice().catch((error) => { $("packet-result").textContent = `Office failed to load: ${error}`; });

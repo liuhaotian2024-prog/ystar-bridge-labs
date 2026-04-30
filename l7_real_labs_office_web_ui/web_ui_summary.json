@@ -19,10 +19,18 @@
     "GET /api/work_queue",
     "GET /api/pending_approvals",
     "POST /api/message",
-    "POST /api/team_task"
+    "POST /api/team_task",
+    "GET /api/scheduler/status",
+    "POST /api/scheduler/run_once",
+    "POST /api/scheduler/run_bounded",
+    "GET /api/autonomous_runs",
+    "GET /api/progress_heartbeats",
+    "GET /api/approval_interrupts"
   ],
   "existing_html_owner_usable": false,
   "next_one_command_action": "bash scripts/run_l7_labs_office_web.sh --mode serve",
   "no_coo_invented_as_legacy_member": true,
-  "l7_5_summary_ref": "l7_labs_whiteboard_collaboration_runtime/l7_5_summary.json"
+  "l7_5_summary_ref": "l7_labs_whiteboard_collaboration_runtime/l7_5_summary.json",
+  "l7_6_summary_ref": "l7_labs_team_self_work_scheduler/l7_6_summary.json",
+  "scheduler_created": true
 }

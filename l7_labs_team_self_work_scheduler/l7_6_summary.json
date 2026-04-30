@@ -1,0 +1,27 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.6",
+  "packet_type": "l7_6_summary",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "scheduler_created": true,
+  "safe_capability_classifier_created": true,
+  "autonomous_cycle_engine_created": true,
+  "progress_ledger_created": true,
+  "approval_interrupts_created": true,
+  "office_ui_scheduler_integration_created": true,
+  "api_endpoints": [
+    "GET /api/scheduler/status",
+    "POST /api/scheduler/run_once",
+    "POST /api/scheduler/run_bounded",
+    "GET /api/autonomous_runs",
+    "GET /api/progress_heartbeats",
+    "GET /api/approval_interrupts"
+  ],
+  "local_url": "http://127.0.0.1:8765",
+  "next_one_command_action": "bash scripts/run_l7_labs_office_web.sh --mode serve",
+  "demo_command": "bash scripts/run_l7_labs_office_web.sh --mode demo",
+  "legacy_team_preserved": true,
+  "coo_invented": false,
+  "external_side_effects_occurred": false,
+  "core_writeback_occurred": false
+}

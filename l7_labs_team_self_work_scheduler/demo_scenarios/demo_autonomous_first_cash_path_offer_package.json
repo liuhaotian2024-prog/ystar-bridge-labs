@@ -1,0 +1,20 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.6",
+  "demo_id": "demo_autonomous_first_cash_path_offer_package",
+  "owner_goal": "Improve the first cash path offer package for Founder AI Workflow Audit & CEO Command Brief Sprint.",
+  "expected_flow": [
+    "scheduler classifies work as autonomous_internal_allowed",
+    "Aiden coordinates the bounded local work cycle",
+    "Sofia improves positioning",
+    "Marco checks pricing and revenue framing",
+    "Zara reviews customer segment and strategic risk",
+    "Jinjin proposes safe read-only research angles",
+    "Ethan identifies tool gaps",
+    "Samantha archives and summarizes packet references",
+    "approval interruption is created only if external action is requested"
+  ],
+  "external_side_effects_occurred": false,
+  "core_writeback_occurred": false,
+  "coo_invented": false
+}

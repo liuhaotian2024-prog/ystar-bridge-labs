@@ -6,6 +6,7 @@
   "local_url": "http://127.0.0.1:8765",
   "current_phase": "Real Labs Office Web UI Runtime",
   "whiteboard_runtime_phase": "Real Labs Whiteboard Collaboration & Team Work Runtime",
+  "scheduler_runtime_phase": "L7.6 Labs Team Self-Work Scheduler & Autonomous Task Loop",
   "legacy_source": "l7_labs_office_legacy_integration",
   "agent_count": 12,
   "agents": [
@@ -1761,9 +1762,21 @@
     "team work board",
     "agent replies",
     "safe work cycles",
+    "bounded scheduler self-work loop",
+    "scheduler ticks",
+    "progress heartbeats",
+    "approval interruptions",
     "progress timeline",
     "approval queue",
     "completion reports"
+  ],
+  "scheduler_features": [
+    "safe work-item classification",
+    "eligible task selection",
+    "bounded local autonomous cycles",
+    "progress heartbeat packets",
+    "approval interruption packets",
+    "completion report aggregation"
   ],
   "work_board_columns": [
     "Inbox",
@@ -1784,7 +1797,11 @@
     "work_items": "l7_real_labs_office_web_ui/runtime_packets/work_items",
     "work_cycles": "l7_real_labs_office_web_ui/runtime_packets/work_cycles",
     "completion_reports": "l7_real_labs_office_web_ui/runtime_packets/completion_reports",
-    "approval_requests": "l7_real_labs_office_web_ui/runtime_packets/approval_requests"
+    "approval_requests": "l7_real_labs_office_web_ui/runtime_packets/approval_requests",
+    "autonomous_runs": "l7_real_labs_office_web_ui/runtime_packets/autonomous_runs",
+    "scheduler_ticks": "l7_real_labs_office_web_ui/runtime_packets/scheduler_ticks",
+    "progress_heartbeats": "l7_real_labs_office_web_ui/runtime_packets/progress_heartbeats",
+    "approval_interrupts": "l7_real_labs_office_web_ui/runtime_packets/approval_interrupts"
   },
   "next_commands": [
     "bash scripts/run_l7_labs_office_web.sh --mode serve",

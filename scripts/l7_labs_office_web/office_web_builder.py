@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -12,11 +13,15 @@ from whiteboard_store import ensure_dirs
 
 
 ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 OUT = ROOT / "l7_real_labs_office_web_ui"
 L75_OUT = ROOT / "l7_labs_whiteboard_collaboration_runtime"
 LEGACY_OUT = ROOT / "l7_labs_office_legacy_integration"
 GENERATED_AT = "2026-04-30T00:00:00Z"
 LOCAL_URL = "http://127.0.0.1:8765"
+
+from l7_labs_team_self_work_scheduler.manifest_builder import build_manifest as build_l76_manifest  # noqa: E402
 
 PACKET_DIRS = [
     "runtime_packets/owner_messages",
@@ -29,6 +34,10 @@ PACKET_DIRS = [
     "runtime_packets/work_cycles",
     "runtime_packets/completion_reports",
     "runtime_packets/approval_requests",
+    "runtime_packets/autonomous_runs",
+    "runtime_packets/scheduler_ticks",
+    "runtime_packets/progress_heartbeats",
+    "runtime_packets/approval_interrupts",
 ]
 
 FORBIDDEN_ACTIONS = [
@@ -201,6 +210,7 @@ def build_runtime_state() -> dict[str, Any]:
         "local_url": LOCAL_URL,
         "current_phase": "Real Labs Office Web UI Runtime",
         "whiteboard_runtime_phase": "Real Labs Whiteboard Collaboration & Team Work Runtime",
+        "scheduler_runtime_phase": "L7.6 Labs Team Self-Work Scheduler & Autonomous Task Loop",
         "legacy_source": "l7_labs_office_legacy_integration",
         "agent_count": len(agents),
         "agents": agents,
@@ -219,9 +229,21 @@ def build_runtime_state() -> dict[str, Any]:
             "team work board",
             "agent replies",
             "safe work cycles",
+            "bounded scheduler self-work loop",
+            "scheduler ticks",
+            "progress heartbeats",
+            "approval interruptions",
             "progress timeline",
             "approval queue",
             "completion reports",
+        ],
+        "scheduler_features": [
+            "safe work-item classification",
+            "eligible task selection",
+            "bounded local autonomous cycles",
+            "progress heartbeat packets",
+            "approval interruption packets",
+            "completion report aggregation",
         ],
         "work_board_columns": ["Inbox", "Interpreting", "Assigned", "In Progress", "Waiting for Approval", "Blocked", "Done"],
         "packet_dirs": packet_dirs,
@@ -259,6 +281,8 @@ def write_assets() -> None:
       <button id="route-button" type="button">Route with Aiden</button>
       <button id="work-cycle-button" type="button">Run One Safe Work Cycle</button>
       <button id="team-cycle-button" type="button">Run Team Work Cycle</button>
+      <button id="scheduler-once-button" type="button">Run Scheduler Once</button>
+      <button id="scheduler-bounded-button" type="button">Run Bounded Self-Work</button>
       <button id="completion-button" type="button">Generate Completion Report</button>
     </div>
   </header>
@@ -289,6 +313,18 @@ def write_assets() -> None:
     <section class="panel">
       <h2>Team Work Board</h2>
       <div id="work-board" class="kanban"></div>
+    </section>
+
+    <section class="panel scheduler-panel">
+      <h2>Self-Work Scheduler</h2>
+      <p class="muted">Bounded local scheduler: selects safe internal tasks, writes heartbeats, stops at approval gates.</p>
+      <div id="scheduler-status" class="scheduler-status">Loading scheduler...</div>
+      <h3>Progress Heartbeats</h3>
+      <ul id="progress-heartbeats"></ul>
+      <h3>Approval Interruptions</h3>
+      <ul id="approval-interruptions"></ul>
+      <h3>Autonomous Runs</h3>
+      <ul id="autonomous-runs"></ul>
     </section>
 
     <section class="panel">
@@ -403,6 +439,13 @@ textarea { min-height: 120px; }
 .status { color: var(--blue); font-weight: 700; }
 .role { color: var(--accent); font-weight: 700; }
 .muted { color: var(--muted); }
+.scheduler-status {
+  border: 1px dashed var(--green);
+  border-radius: 16px;
+  padding: 12px;
+  background: rgba(47,111,88,.08);
+  margin-bottom: 12px;
+}
 .card-grid, .agent-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
 .timeline { max-height: 360px; overflow: auto; }
 pre {
@@ -497,16 +540,32 @@ function renderTimeline(events) {
   $("progress-timeline").innerHTML = (events || []).slice(-30).reverse().map((event) => `<li><strong>${escapeHtml(event.event_type)}</strong>: ${escapeHtml(event.description)}</li>`).join("");
 }
 
+function renderScheduler(status, runs, heartbeats, interrupts) {
+  $("scheduler-status").innerHTML = `
+    <p><strong>Ready:</strong> ${status.scheduler_ready ? "yes" : "no"}</p>
+    <p><strong>Pending:</strong> ${status.pending_work_items} · <strong>Eligible:</strong> ${status.eligible_autonomous_work_items}</p>
+    <p><strong>Last tick:</strong> ${escapeHtml(status.last_scheduler_tick ? status.last_scheduler_tick.summary : "none yet")}</p>
+    <p><strong>No external side effects:</strong> ${status.no_external_side_effects ? "yes" : "no"} · <strong>No core writeback:</strong> ${status.no_core_writeback ? "yes" : "no"}</p>`;
+  $("progress-heartbeats").innerHTML = (heartbeats.progress_heartbeats || []).slice(-8).reverse().map((item) => `<li>${escapeHtml(item.summary)} <span class="muted">${escapeHtml(item.work_item_id || "")}</span></li>`).join("") || "<li>No progress heartbeats yet.</li>";
+  $("approval-interruptions").innerHTML = (interrupts.approval_interrupts || []).slice(-8).reverse().map((item) => `<li>${escapeHtml(item.owner_visible_explanation)} <span class="muted">${escapeHtml(item.status)}</span></li>`).join("") || "<li>No approval interruptions.</li>";
+  $("autonomous-runs").innerHTML = (runs.autonomous_runs || []).slice(-8).reverse().map((item) => `<li>${escapeHtml(item.summary)} <span class="muted">${escapeHtml(item.stop_reason)}</span></li>`).join("") || "<li>No autonomous runs yet.</li>";
+}
+
 async function refreshOffice() {
   const state = await getJson("/api/status");
   const snapshot = await getJson("/api/whiteboard");
+  const scheduler = await getJson("/api/scheduler/status");
+  const runs = await getJson("/api/autonomous_runs");
+  const heartbeats = await getJson("/api/progress_heartbeats");
+  const interrupts = await getJson("/api/approval_interrupts");
   OFFICE_STATE = state;
-  $("phase").textContent = `${state.whiteboard_runtime_phase || state.current_phase} · ${state.agent_count} recovered agents`;
+  $("phase").textContent = `${state.scheduler_runtime_phase || state.whiteboard_runtime_phase || state.current_phase} · ${state.agent_count} recovered agents`;
   renderRoster(state.agents);
   renderWhiteboard(snapshot);
   renderWorkBoard(snapshot.work_board || {});
   renderAgentPanel(state, snapshot);
   renderTimeline(snapshot.timeline || []);
+  renderScheduler(scheduler, runs, heartbeats, interrupts);
   $("pending-approvals").innerHTML = list((snapshot.approval_requests || []).map((item) => item.reason).concat(state.pending_approvals || []));
   $("blocked-actions").innerHTML = list(state.blocked_actions);
   if (state.agents.length) openRoom(state.agents.find((agent) => agent.agent_id === "aiden_ceo")?.agent_id || state.agents[0].agent_id);
@@ -530,6 +589,8 @@ $("whiteboard-message-form").addEventListener("submit", async (event) => {
 $("route-button").addEventListener("click", () => act("Aiden routing decision", "/api/route"));
 $("work-cycle-button").addEventListener("click", () => act("Safe work cycle", "/api/work_cycle"));
 $("team-cycle-button").addEventListener("click", () => act("Team work cycle", "/api/team_work_cycle"));
+$("scheduler-once-button").addEventListener("click", () => act("Scheduler run once", "/api/scheduler/run_once", {max_cycles: 1}));
+$("scheduler-bounded-button").addEventListener("click", () => act("Bounded scheduler self-work", "/api/scheduler/run_bounded", {max_work_items: 3, max_cycles: 2}));
 $("completion-button").addEventListener("click", () => act("Completion report", "/api/completion_report"));
 
 refreshOffice().catch((error) => { $("packet-result").textContent = `Office failed to load: ${error}`; });
@@ -738,6 +799,7 @@ def build() -> dict[str, Any]:
     state = build_runtime_state()
     write_assets()
     l75_summary = write_l75_outputs(state)
+    l76_summary = build_l76_manifest()
     write_json("existing_html_audit.json", audit)
     write_text(
         "existing_html_audit.md",
@@ -805,11 +867,19 @@ Deficiencies:
             "GET /api/pending_approvals",
             "POST /api/message",
             "POST /api/team_task",
+            "GET /api/scheduler/status",
+            "POST /api/scheduler/run_once",
+            "POST /api/scheduler/run_bounded",
+            "GET /api/autonomous_runs",
+            "GET /api/progress_heartbeats",
+            "GET /api/approval_interrupts",
         ],
         "existing_html_owner_usable": audit["owner_usable"],
         "next_one_command_action": "bash scripts/run_l7_labs_office_web.sh --mode serve",
         "no_coo_invented_as_legacy_member": True,
         "l7_5_summary_ref": "l7_labs_whiteboard_collaboration_runtime/l7_5_summary.json",
+        "l7_6_summary_ref": "l7_labs_team_self_work_scheduler/l7_6_summary.json",
+        "scheduler_created": l76_summary["scheduler_created"],
     }
     write_json("web_ui_summary.json", summary)
     write_text(

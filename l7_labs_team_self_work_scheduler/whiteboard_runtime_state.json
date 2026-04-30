@@ -1,0 +1,12 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.6",
+  "packet_type": "whiteboard_runtime_state",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "scheduler_status_panel_available": true,
+  "bounded_self_work_run_available": true,
+  "progress_heartbeats_visible": true,
+  "approval_interrupts_visible": true,
+  "completion_reports_visible": true,
+  "local_only": true
+}

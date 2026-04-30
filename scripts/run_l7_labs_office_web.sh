@@ -43,6 +43,10 @@ owner_messages = list(Path("l7_real_labs_office_web_ui/runtime_packets/owner_mes
 team_tasks = list(Path("l7_real_labs_office_web_ui/runtime_packets/team_tasks").glob("*.json"))
 whiteboard_threads = list(Path("l7_real_labs_office_web_ui/runtime_packets/whiteboard_threads").glob("*.json"))
 work_items = list(Path("l7_real_labs_office_web_ui/runtime_packets/work_items").glob("*.json"))
+scheduler_ticks = list(Path("l7_real_labs_office_web_ui/runtime_packets/scheduler_ticks").glob("*.json"))
+heartbeats = list(Path("l7_real_labs_office_web_ui/runtime_packets/progress_heartbeats").glob("*.json"))
+approval_interrupts = list(Path("l7_real_labs_office_web_ui/runtime_packets/approval_interrupts").glob("*.json"))
+sys_path = Path("l7_labs_team_self_work_scheduler")
 print("Y*Bridge Labs Office Web UI")
 print(f"- URL: {state['local_url']}")
 print(f"- agents: {state['agent_count']}")
@@ -50,6 +54,10 @@ print(f"- queued owner messages: {len(owner_messages)}")
 print(f"- queued team tasks: {len(team_tasks)}")
 print(f"- whiteboard threads: {len(whiteboard_threads)}")
 print(f"- work items: {len(work_items)}")
+print(f"- L7.6 scheduler ready: {sys_path.exists()}")
+print(f"- scheduler ticks: {len(scheduler_ticks)}")
+print(f"- progress heartbeats: {len(heartbeats)}")
+print(f"- approval interruptions: {len(approval_interrupts)}")
 print(f"- pending approvals: {', '.join(state.get('pending_approvals', []))}")
 print(f"- next command: bash scripts/run_l7_labs_office_web.sh --mode serve")
 PY
@@ -61,10 +69,17 @@ run_demo() {
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path("scripts/l7_labs_office_web").resolve()))
-from office_web_builder import build
-summary = build()
-print("demo_ok: l7_labs_whiteboard_collaboration_runtime/demo_scenarios/demo_first_cash_path_team_discussion.md")
-print(f"next_command: {summary['next_one_command_action']}")
+sys.path.insert(0, str(Path(".").resolve()))
+from l7_labs_team_self_work_scheduler.scheduler import create_demo_work_item, run_bounded
+item = create_demo_work_item()
+result = run_bounded(max_work_items=1, max_cycles=2)
+report = None
+if result.get("results"):
+    report = result["results"][0].get("completion_report", {}).get("completion_report_id")
+print("demo_ok: L7.6 autonomous first-cash-path offer package work item created and processed locally")
+print(f"work_item: {item['work_item_id']}")
+print(f"completion_report: {report or 'not_created'}")
+print("next_command: bash scripts/run_l7_labs_office_web.sh --mode serve")
 PY
 }
 
@@ -98,7 +113,10 @@ try:
     status = json.loads(get("/api/status"))
     if status.get("local_url") != "http://127.0.0.1:8765":
         raise SystemExit("status URL mismatch")
-    print("smoke_ok: GET /, /api/roster, /api/status")
+    scheduler = json.loads(get("/api/scheduler/status"))
+    if not scheduler.get("scheduler_ready"):
+        raise SystemExit("scheduler status not ready")
+    print("smoke_ok: GET /, /api/roster, /api/status, /api/scheduler/status")
 except URLError as exc:
     if "Operation not permitted" not in str(exc):
         raise
@@ -108,6 +126,9 @@ except URLError as exc:
         raise SystemExit("HTML missing forms")
     if state.get("agent_count", 0) < 12:
         raise SystemExit("runtime state missing recovered agents")
+    summary = json.loads(Path("l7_labs_team_self_work_scheduler/l7_6_summary.json").read_text(encoding="utf-8"))
+    if not summary.get("scheduler_created"):
+        raise SystemExit("scheduler summary missing")
     print("smoke_ok: offline fallback because sandbox blocked localhost socket")
 PY
 }

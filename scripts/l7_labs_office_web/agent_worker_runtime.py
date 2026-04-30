@@ -87,10 +87,28 @@ def generate_agent_reply(agent_id: str, work_item: dict[str, Any]) -> dict[str, 
         },
     )
     description = work_item.get("description", "")
-    approval_needed = any(
-        keyword in description.lower()
-        for keyword in ["outreach", "email", "publish", "payment", "customer contact", "submit", "writeback", "发送", "付款", "发布"]
+    lowered = description.lower()
+    draft_only = any(term in lowered for term in ["draft-only", "review-only", "draft", "草稿", "仅供审阅"])
+    external_execution = any(
+        keyword in lowered
+        for keyword in [
+            "send email",
+            "email send",
+            "contact customer",
+            "customer contact",
+            "publish",
+            "payment",
+            "submit form",
+            "grant submission",
+            "rfp submission",
+            "actual writeback",
+            "发送邮件",
+            "联系客户",
+            "付款",
+            "发布",
+        ]
     )
+    approval_needed = external_execution and not draft_only
     return {
         "agent_id": agent_id,
         "work_item_id": work_item["work_item_id"],

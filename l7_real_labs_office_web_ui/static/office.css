@@ -69,6 +69,13 @@ textarea { min-height: 120px; }
 .status { color: var(--blue); font-weight: 700; }
 .role { color: var(--accent); font-weight: 700; }
 .muted { color: var(--muted); }
+.scheduler-status {
+  border: 1px dashed var(--green);
+  border-radius: 16px;
+  padding: 12px;
+  background: rgba(47,111,88,.08);
+  margin-bottom: 12px;
+}
 .card-grid, .agent-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
 .timeline { max-height: 360px; overflow: auto; }
 pre {

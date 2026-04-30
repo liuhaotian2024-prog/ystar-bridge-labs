@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sys
 import time
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -26,9 +27,18 @@ from work_cycle_engine import create_completion_report, route_latest_or_payload,
 
 
 ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 OUT = ROOT / "l7_real_labs_office_web_ui"
 STATE_PATH = OUT / "office_runtime_state.json"
 TEMPLATE_PATH = OUT / "templates/index.html"
+
+from l7_labs_team_self_work_scheduler.progress_ledger import (  # noqa: E402
+    load_approval_interrupts,
+    load_autonomous_runs,
+    load_progress_heartbeats,
+)
+from l7_labs_team_self_work_scheduler.scheduler import scheduler_status, run_bounded as run_scheduler_bounded, run_once as run_scheduler_once  # noqa: E402
 
 ALLOWED_ACTIONS = [
     "local packet creation",
@@ -213,6 +223,14 @@ class OfficeHandler(BaseHTTPRequestHandler):
                 json_response(self, {"work_board": work_board()})
             elif path == "/api/timeline":
                 json_response(self, {"timeline": load_timeline()})
+            elif path == "/api/scheduler/status":
+                json_response(self, scheduler_status())
+            elif path == "/api/autonomous_runs":
+                json_response(self, {"autonomous_runs": load_autonomous_runs()})
+            elif path == "/api/progress_heartbeats":
+                json_response(self, {"progress_heartbeats": load_progress_heartbeats()})
+            elif path == "/api/approval_interrupts":
+                json_response(self, {"approval_interrupts": load_approval_interrupts()})
             else:
                 error_response(self, HTTPStatus.NOT_FOUND, "not found")
         except Exception as exc:  # pragma: no cover - defensive server boundary
@@ -273,6 +291,23 @@ class OfficeHandler(BaseHTTPRequestHandler):
                 )
             elif parsed.path == "/api/completion_report":
                 json_response(self, create_completion_report(payload.get("work_item_id")))
+            elif parsed.path == "/api/scheduler/run_once":
+                json_response(
+                    self,
+                    run_scheduler_once(
+                        max_cycles=int(payload.get("max_cycles", 1)),
+                        max_agent_replies_per_cycle=int(payload.get("max_agent_replies_per_cycle", 8)),
+                    ),
+                )
+            elif parsed.path == "/api/scheduler/run_bounded":
+                json_response(
+                    self,
+                    run_scheduler_bounded(
+                        max_work_items=int(payload.get("max_work_items", 3)),
+                        max_cycles=int(payload.get("max_cycles", 2)),
+                        max_agent_replies_per_cycle=int(payload.get("max_agent_replies_per_cycle", 8)),
+                    ),
+                )
             else:
                 error_response(self, HTTPStatus.NOT_FOUND, "not found")
         except Exception as exc:  # pragma: no cover - defensive server boundary

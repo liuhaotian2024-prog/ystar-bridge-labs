@@ -27,6 +27,10 @@ PACKET_DIRS = {
     "owner_messages": PACKET_ROOT / "owner_messages",
     "team_tasks": PACKET_ROOT / "team_tasks",
     "agent_inboxes": PACKET_ROOT / "agent_inboxes",
+    "autonomous_runs": PACKET_ROOT / "autonomous_runs",
+    "scheduler_ticks": PACKET_ROOT / "scheduler_ticks",
+    "progress_heartbeats": PACKET_ROOT / "progress_heartbeats",
+    "approval_interrupts": PACKET_ROOT / "approval_interrupts",
 }
 
 TIMELINE_PATH = PACKET_ROOT / "timeline_events.json"
@@ -77,6 +81,10 @@ def ensure_dirs(packet_root: Path = PACKET_ROOT) -> None:
         "owner_messages",
         "team_tasks",
         "agent_inboxes",
+        "autonomous_runs",
+        "scheduler_ticks",
+        "progress_heartbeats",
+        "approval_interrupts",
     ]:
         path = packet_root / relative
         path.mkdir(parents=True, exist_ok=True)

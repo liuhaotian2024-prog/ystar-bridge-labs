@@ -16,6 +16,8 @@
       <button id="route-button" type="button">Route with Aiden</button>
       <button id="work-cycle-button" type="button">Run One Safe Work Cycle</button>
       <button id="team-cycle-button" type="button">Run Team Work Cycle</button>
+      <button id="scheduler-once-button" type="button">Run Scheduler Once</button>
+      <button id="scheduler-bounded-button" type="button">Run Bounded Self-Work</button>
       <button id="completion-button" type="button">Generate Completion Report</button>
     </div>
   </header>
@@ -46,6 +48,18 @@
     <section class="panel">
       <h2>Team Work Board</h2>
       <div id="work-board" class="kanban"></div>
+    </section>
+
+    <section class="panel scheduler-panel">
+      <h2>Self-Work Scheduler</h2>
+      <p class="muted">Bounded local scheduler: selects safe internal tasks, writes heartbeats, stops at approval gates.</p>
+      <div id="scheduler-status" class="scheduler-status">Loading scheduler...</div>
+      <h3>Progress Heartbeats</h3>
+      <ul id="progress-heartbeats"></ul>
+      <h3>Approval Interruptions</h3>
+      <ul id="approval-interruptions"></ul>
+      <h3>Autonomous Runs</h3>
+      <ul id="autonomous-runs"></ul>
     </section>
 
     <section class="panel">
