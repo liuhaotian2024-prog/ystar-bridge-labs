@@ -62,7 +62,16 @@
     "GET /api/l9/portfolio_residuals",
     "POST /api/l9/portfolio_learning_candidates/build",
     "GET /api/l9/portfolio_learning_candidates",
-    "GET /api/l9/meta/cockpit"
+    "GET /api/l9/meta/cockpit",
+    "GET /api/l10/missions",
+    "POST /api/l10/missions/create_default",
+    "POST /api/l10/missions/create",
+    "GET /api/l10/missions/status",
+    "POST /api/l10/mission_plan/build",
+    "POST /api/l10/mission_runner/run_bounded",
+    "POST /api/l10/research/run_fixture_demo",
+    "POST /api/l10/escalations/decide",
+    "GET /api/l10/cockpit"
   ],
   "existing_html_owner_usable": false,
   "next_one_command_action": "bash scripts/run_l7_labs_office_web.sh --mode serve",
@@ -77,5 +86,11 @@
   "l9_opportunity_count": 8,
   "l9_money_path_count": 8,
   "l9_ranking_count": 8,
-  "grant_rfp_path_created_by_default": false
+  "grant_rfp_path_created_by_default": false,
+  "l10_summary_ref": "l10_delegated_live_meta_development_runtime/l10_summary.json",
+  "l10_package_available": true,
+  "l10_mission_count": 1,
+  "l10_permission_tier_count": 5,
+  "configured_live_read_only_research_available": false,
+  "fixture_demo_available": true
 }

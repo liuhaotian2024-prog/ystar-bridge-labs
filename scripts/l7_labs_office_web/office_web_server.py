@@ -65,6 +65,27 @@ from l9_meta_development_opportunity_runtime.portfolio_feedback_ingestor import 
 from l9_meta_development_opportunity_runtime.portfolio_learning_candidate import build_portfolio_learning_candidate, list_portfolio_learning_candidates  # noqa: E402
 from l9_meta_development_opportunity_runtime.portfolio_residual import build_portfolio_residual, list_portfolio_residuals  # noqa: E402
 from l9_meta_development_opportunity_runtime.ranking_engine import build_rankings, list_rankings  # noqa: E402
+from l10_delegated_live_meta_development_runtime.action_plan_builder import build_action_plan, list_action_plans  # noqa: E402
+from l10_delegated_live_meta_development_runtime.conflict_detector import list_conflict_reports  # noqa: E402
+from l10_delegated_live_meta_development_runtime.controlled_research_executor import run_configured_live_read_only, run_fixture_research_demo  # noqa: E402
+from l10_delegated_live_meta_development_runtime.controlled_research_planner import build_research_plan, list_research_plans  # noqa: E402
+from l10_delegated_live_meta_development_runtime.escalation_packet_builder import build_escalation_packets, list_escalation_packets  # noqa: E402
+from l10_delegated_live_meta_development_runtime.escalation_review_center import decide_escalation, list_escalation_review_decisions  # noqa: E402
+from l10_delegated_live_meta_development_runtime.evidence_packet_builder import list_evidence_packets  # noqa: E402
+from l10_delegated_live_meta_development_runtime.l8_action_loop_escalation_bridge import build_l8_action_loop_escalation_packet  # noqa: E402
+from l10_delegated_live_meta_development_runtime.l9_portfolio_update_bridge import build_l9_portfolio_update_packet, list_l9_portfolio_update_packets  # noqa: E402
+from l10_delegated_live_meta_development_runtime.l10_manifest_builder import build_manifest as build_l10_manifest  # noqa: E402
+from l10_delegated_live_meta_development_runtime.meta_strategy_brief_builder import build_meta_strategy_brief, list_meta_strategy_briefs  # noqa: E402
+from l10_delegated_live_meta_development_runtime.mission_cockpit_model import build_mission_cockpit, current_mission_cockpit  # noqa: E402
+from l10_delegated_live_meta_development_runtime.mission_completion_report import build_mission_completion_report, list_mission_completion_reports  # noqa: E402
+from l10_delegated_live_meta_development_runtime.mission_delegation_center import create_default_mission, create_mission, get_mission, list_missions  # noqa: E402
+from l10_delegated_live_meta_development_runtime.mission_model import load_packets as load_l10_packets  # noqa: E402
+from l10_delegated_live_meta_development_runtime.mission_plan_builder import build_mission_plan, list_mission_plans  # noqa: E402
+from l10_delegated_live_meta_development_runtime.mission_progress_ledger import list_progress  # noqa: E402
+from l10_delegated_live_meta_development_runtime.mission_runner import run_bounded_mission, run_mission_cycle  # noqa: E402
+from l10_delegated_live_meta_development_runtime.opportunity_signal_extractor import extract_opportunity_signals, list_opportunity_signals  # noqa: E402
+from l10_delegated_live_meta_development_runtime.permission_tiers import permission_tier_registry  # noqa: E402
+from l10_delegated_live_meta_development_runtime.source_summary_builder import list_source_summaries  # noqa: E402
 
 ALLOWED_ACTIONS = [
     "local packet creation",
@@ -229,6 +250,33 @@ def l9_status() -> dict[str, Any]:
     }
 
 
+def l10_status() -> dict[str, Any]:
+    build_l10_manifest(force=False)
+    missions = list_missions()
+    active = [mission for mission in missions if mission.get("status") not in {"completed_local_bounded_run"}]
+    return {
+        "ok": True,
+        "l10_package_available": True,
+        "mission_count": len(missions),
+        "active_mission_count": len(active),
+        "evidence_packet_count": len(list_evidence_packets()),
+        "opportunity_signal_count": len(list_opportunity_signals()),
+        "strategy_brief_count": len(list_meta_strategy_briefs()),
+        "escalation_packet_count": len(list_escalation_packets()),
+        "completion_report_count": len(list_mission_completion_reports()),
+        "configured_live_read_only_research_available": False,
+        "fixture_demo_available": True,
+        "external_side_effects": False,
+        "customer_contact": False,
+        "email_sent": False,
+        "payment_processed": False,
+        "publication": False,
+        "uncontrolled_web_research": False,
+        "core_writeback": False,
+        "coo_invented": False,
+    }
+
+
 class OfficeHandler(BaseHTTPRequestHandler):
     server_version = "LabsOffice/0.1"
 
@@ -325,6 +373,38 @@ class OfficeHandler(BaseHTTPRequestHandler):
                 json_response(self, {"portfolio_learning_candidates": list_portfolio_learning_candidates()})
             elif path == "/api/l9/meta/cockpit":
                 json_response(self, current_meta_cockpit())
+            elif path == "/api/l10/missions":
+                json_response(self, {"missions": list_missions()})
+            elif path == "/api/l10/missions/status":
+                json_response(self, l10_status())
+            elif path == "/api/l10/mission_plan":
+                json_response(self, {"mission_plans": list_mission_plans()})
+            elif path == "/api/l10/research_plan":
+                json_response(self, {"research_plans": list_research_plans()})
+            elif path == "/api/l10/research/budget_receipts":
+                json_response(self, {"research_budget_receipts": load_l10_packets("research_budget_receipts")})
+            elif path == "/api/l10/evidence":
+                json_response(self, {"evidence_packets": list_evidence_packets()})
+            elif path == "/api/l10/source_summaries":
+                json_response(self, {"source_summaries": list_source_summaries()})
+            elif path == "/api/l10/conflicts":
+                json_response(self, {"conflict_reports": list_conflict_reports()})
+            elif path == "/api/l10/opportunity_signals":
+                json_response(self, {"opportunity_signals": list_opportunity_signals()})
+            elif path == "/api/l10/meta_strategy_briefs":
+                json_response(self, {"meta_strategy_briefs": list_meta_strategy_briefs()})
+            elif path == "/api/l10/action_plans":
+                json_response(self, {"action_plans": list_action_plans()})
+            elif path == "/api/l10/escalations":
+                json_response(self, {"escalation_packets": list_escalation_packets()})
+            elif path == "/api/l10/escalation_decisions":
+                json_response(self, {"escalation_review_decisions": list_escalation_review_decisions()})
+            elif path == "/api/l10/l9_portfolio_updates":
+                json_response(self, {"l9_portfolio_update_packets": list_l9_portfolio_update_packets()})
+            elif path == "/api/l10/completion_reports":
+                json_response(self, {"mission_completion_reports": list_mission_completion_reports()})
+            elif path == "/api/l10/cockpit":
+                json_response(self, current_mission_cockpit())
             else:
                 error_response(self, HTTPStatus.NOT_FOUND, "not found")
         except Exception as exc:  # pragma: no cover - defensive server boundary
@@ -519,6 +599,80 @@ class OfficeHandler(BaseHTTPRequestHandler):
                     return
                 candidate = build_portfolio_learning_candidate(residual_id)
                 json_response(self, {"ok": True, "portfolio_learning_candidate": candidate, "cockpit": build_meta_cockpit()})
+            elif parsed.path == "/api/l10/missions/create_default":
+                mission = create_default_mission()
+                json_response(self, {"ok": True, "mission": mission, "cockpit": build_mission_cockpit()})
+            elif parsed.path == "/api/l10/missions/create":
+                title = str(payload.get("title", "")).strip()
+                owner_goal = str(payload.get("owner_goal", "")).strip()
+                if not title or not owner_goal:
+                    error_response(self, HTTPStatus.BAD_REQUEST, "title and owner_goal are required")
+                    return
+                mission = create_mission(
+                    title,
+                    owner_goal,
+                    str(payload.get("mission_type", "meta_development_strategy")),
+                    str(payload.get("allowed_permission_tier", "tier_0")),
+                )
+                json_response(self, {"ok": True, "mission": mission, "cockpit": build_mission_cockpit()})
+            elif parsed.path == "/api/l10/mission_plan/build":
+                plan = build_mission_plan(str(payload.get("mission_id", "")).strip() or None)
+                json_response(self, {"ok": True, "mission_plan": plan, "cockpit": build_mission_cockpit()})
+            elif parsed.path == "/api/l10/mission_runner/run_cycle":
+                result = run_mission_cycle(str(payload.get("mission_id", "")).strip() or None, int(payload.get("max_cycles", 1)))
+                result["cockpit"] = build_mission_cockpit()
+                json_response(self, result)
+            elif parsed.path == "/api/l10/mission_runner/run_bounded":
+                result = run_bounded_mission(str(payload.get("mission_id", "")).strip() or None, int(payload.get("max_cycles", 2)))
+                result["cockpit"] = build_mission_cockpit()
+                json_response(self, result)
+            elif parsed.path == "/api/l10/research_plan/build":
+                plan = build_research_plan(str(payload.get("mission_id", "")).strip() or None)
+                json_response(self, {"ok": True, "research_plan": plan, "cockpit": build_mission_cockpit()})
+            elif parsed.path == "/api/l10/research/run_fixture_demo":
+                result = run_fixture_research_demo(str(payload.get("mission_id", "")).strip() or None)
+                result["cockpit"] = build_mission_cockpit()
+                json_response(self, result)
+            elif parsed.path == "/api/l10/research/run_configured_live_read_only":
+                result = run_configured_live_read_only(str(payload.get("mission_id", "")).strip() or None, bool(payload.get("explicitly_enabled", False)))
+                result["cockpit"] = build_mission_cockpit()
+                json_response(self, result)
+            elif parsed.path == "/api/l10/opportunity_signals/extract":
+                mission = get_mission(str(payload.get("mission_id", "")).strip() or None)
+                signals = extract_opportunity_signals(mission["mission_id"])
+                json_response(self, {"ok": True, "opportunity_signals": signals, "cockpit": build_mission_cockpit()})
+            elif parsed.path == "/api/l10/meta_strategy_brief/build":
+                mission = get_mission(str(payload.get("mission_id", "")).strip() or None)
+                brief = build_meta_strategy_brief(mission["mission_id"])
+                json_response(self, {"ok": True, "meta_strategy_brief": brief, "cockpit": build_mission_cockpit()})
+            elif parsed.path == "/api/l10/action_plan/build":
+                mission = get_mission(str(payload.get("mission_id", "")).strip() or None)
+                plan = build_action_plan(mission["mission_id"])
+                json_response(self, {"ok": True, "action_plan": plan, "cockpit": build_mission_cockpit()})
+            elif parsed.path == "/api/l10/escalations/build":
+                mission = get_mission(str(payload.get("mission_id", "")).strip() or None)
+                escalations = build_escalation_packets(mission["mission_id"])
+                json_response(self, {"ok": True, "escalation_packets": escalations, "cockpit": build_mission_cockpit()})
+            elif parsed.path == "/api/l10/escalations/decide":
+                escalation_id = str(payload.get("escalation_id", "")).strip()
+                decision = str(payload.get("decision", "")).strip()
+                if not escalation_id or not decision:
+                    error_response(self, HTTPStatus.BAD_REQUEST, "escalation_id and decision are required")
+                    return
+                result = decide_escalation(escalation_id, decision, str(payload.get("decision_note", "")))
+                json_response(self, {"ok": True, "escalation_review_decision": result, "cockpit": build_mission_cockpit()})
+            elif parsed.path == "/api/l10/l9_portfolio_update/build":
+                mission = get_mission(str(payload.get("mission_id", "")).strip() or None)
+                update = build_l9_portfolio_update_packet(mission["mission_id"])
+                json_response(self, {"ok": True, "l9_portfolio_update_packet": update, "cockpit": build_mission_cockpit()})
+            elif parsed.path == "/api/l10/completion_report/build":
+                mission = get_mission(str(payload.get("mission_id", "")).strip() or None)
+                report = build_mission_completion_report(mission["mission_id"])
+                json_response(self, {"ok": True, "mission_completion_report": report, "cockpit": build_mission_cockpit()})
+            elif parsed.path == "/api/l10/l8_action_loop_escalation/build":
+                mission = get_mission(str(payload.get("mission_id", "")).strip() or None)
+                packet = build_l8_action_loop_escalation_packet(mission["mission_id"])
+                json_response(self, {"ok": True, "l8_action_loop_escalation_packet": packet, "cockpit": build_mission_cockpit()})
             else:
                 error_response(self, HTTPStatus.NOT_FOUND, "not found")
         except Exception as exc:  # pragma: no cover - defensive server boundary

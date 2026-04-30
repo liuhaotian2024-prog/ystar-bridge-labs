@@ -9,6 +9,7 @@
   "scheduler_runtime_phase": "L7.6 Labs Team Self-Work Scheduler & Autonomous Task Loop",
   "l8_runtime_phase": "L8.0 First Cash Path Operating Loop",
   "l9_runtime_phase": "L9.0 Meta-Development Opportunity & Execution Runtime",
+  "l10_runtime_phase": "L10.0 Delegated Live Meta-Development Work Runtime",
   "legacy_source": "l7_labs_office_legacy_integration",
   "agent_count": 12,
   "agents": [
@@ -1799,6 +1800,16 @@
     "L8 action loop bridge packets",
     "portfolio residuals",
     "review-gated portfolio learning candidates"
+  ],
+  "l10_features": [
+    "delegated meta-development missions",
+    "permission tiers",
+    "bounded research budgets",
+    "mission plan and team-task decomposition",
+    "fixture-backed research demo",
+    "strategy brief and action plan",
+    "approval escalation packets",
+    "mission completion reports"
   ],
   "work_board_columns": [
     "Inbox",

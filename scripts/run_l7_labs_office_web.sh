@@ -68,6 +68,15 @@ l9_dirs = {
     "residuals": l9_root / "portfolio_residuals",
     "learning": l9_root / "portfolio_learning_candidates",
 }
+l10_root = Path("l10_delegated_live_meta_development_runtime/runtime_packets")
+l10_dirs = {
+    "missions": l10_root / "missions",
+    "evidence": l10_root / "research_evidence_packets",
+    "signals": l10_root / "opportunity_signals",
+    "briefs": l10_root / "meta_strategy_briefs",
+    "escalations": l10_root / "escalation_packets",
+    "reports": l10_root / "mission_completion_reports",
+}
 print("Y*Bridge Labs Office Web UI")
 print(f"- URL: {state['local_url']}")
 print(f"- agents: {state['agent_count']}")
@@ -97,6 +106,15 @@ print(f"- L9 L8 bridge packets: {len(list(l9_dirs['bridges'].glob('*.json'))) if
 print(f"- L9 portfolio residuals: {len(list(l9_dirs['residuals'].glob('*.json'))) if l9_dirs['residuals'].exists() else 0}")
 print(f"- L9 learning candidates: {len(list(l9_dirs['learning'].glob('*.json'))) if l9_dirs['learning'].exists() else 0}")
 print("- L9 grant/RFP default path: no")
+print(f"- L10 package available: {Path('l10_delegated_live_meta_development_runtime').exists()}")
+print(f"- L10 missions: {len(list(l10_dirs['missions'].glob('*.json'))) if l10_dirs['missions'].exists() else 0}")
+print(f"- L10 evidence packets: {len(list(l10_dirs['evidence'].glob('*.json'))) if l10_dirs['evidence'].exists() else 0}")
+print(f"- L10 opportunity signals: {len(list(l10_dirs['signals'].glob('*.json'))) if l10_dirs['signals'].exists() else 0}")
+print(f"- L10 strategy briefs: {len(list(l10_dirs['briefs'].glob('*.json'))) if l10_dirs['briefs'].exists() else 0}")
+print(f"- L10 escalation packets: {len(list(l10_dirs['escalations'].glob('*.json'))) if l10_dirs['escalations'].exists() else 0}")
+print(f"- L10 completion reports: {len(list(l10_dirs['reports'].glob('*.json'))) if l10_dirs['reports'].exists() else 0}")
+print("- L10 configured live read-only research: disabled unless explicitly enabled")
+print("- L10 fixture demo: available")
 print("- external side effects: no")
 print(f"- pending approvals: {', '.join(state.get('pending_approvals', []))}")
 print(f"- next command: bash scripts/run_l7_labs_office_web.sh --mode serve")
@@ -128,6 +146,12 @@ from l9_meta_development_opportunity_runtime.portfolio_feedback_ingestor import 
 from l9_meta_development_opportunity_runtime.portfolio_residual import build_portfolio_residual
 from l9_meta_development_opportunity_runtime.portfolio_learning_candidate import build_portfolio_learning_candidate
 from l9_meta_development_opportunity_runtime.meta_development_cockpit import build_meta_cockpit
+from l10_delegated_live_meta_development_runtime.l10_manifest_builder import build_manifest as build_l10_manifest
+from l10_delegated_live_meta_development_runtime.mission_delegation_center import create_default_mission
+from l10_delegated_live_meta_development_runtime.mission_runner import run_bounded_mission
+from l10_delegated_live_meta_development_runtime.escalation_review_center import decide_escalation
+from l10_delegated_live_meta_development_runtime.escalation_packet_builder import list_escalation_packets
+from l10_delegated_live_meta_development_runtime.mission_cockpit_model import build_mission_cockpit
 item = create_demo_work_item()
 result = run_bounded(max_work_items=1, max_cycles=2)
 report = None
@@ -153,6 +177,12 @@ l9_feedback = record_portfolio_feedback(l9_decision["money_path"]["money_path_id
 l9_residual = build_portfolio_residual(l9_feedback["feedback_id"])
 l9_learning = build_portfolio_learning_candidate(l9_residual["residual_id"])
 l9_cockpit = build_meta_cockpit()
+l10_manifest = build_l10_manifest(force=True)
+l10_mission = create_default_mission()
+l10_result = run_bounded_mission(l10_mission["mission_id"], max_cycles=2, fixture_research=True)
+l10_escalation = next(item for item in list_escalation_packets() if item["mission_id"] == l10_mission["mission_id"])
+l10_decision = decide_escalation(l10_escalation["escalation_id"], "hold", "Simulated local demo decision; no action executed.")
+l10_cockpit = build_mission_cockpit()
 print("demo_ok: L8 first cash path operating loop simulated locally")
 print(f"work_item: {item['work_item_id']}")
 print(f"completion_report: {report or 'not_created'}")
@@ -172,6 +202,13 @@ print(f"l9_l8_bridge_packet: {l9_bridge['bridge_packet_id']}")
 print(f"l9_portfolio_residual: {l9_residual['residual_id']}")
 print(f"l9_learning_candidate: {l9_learning['candidate_id']}")
 print(f"l9_cockpit_snapshot: {l9_cockpit['cockpit_snapshot_id']}")
+print("demo_ok: L10 delegated meta-development mission simulated locally")
+print(f"l10_manifest_missions: {l10_manifest['mission_count']}")
+print(f"l10_mission: {l10_mission['mission_id']}")
+print(f"l10_completion_report: {l10_result['mission_completion_report']['report_id']}")
+print(f"l10_escalation: {l10_escalation['escalation_id']}")
+print(f"l10_escalation_decision: {l10_decision['decision_id']}")
+print(f"l10_cockpit_snapshot: {l10_cockpit['snapshot_id']}")
 print("next_command: bash scripts/run_l7_labs_office_web.sh --mode serve")
 PY
 }
@@ -217,7 +254,10 @@ try:
         raise SystemExit("L9 cockpit missing opportunity portfolio")
     if l9.get("grant_rfp_default_path_status") != "no":
         raise SystemExit("L9 grant/RFP default path unexpectedly enabled")
-    print("smoke_ok: GET /, /api/roster, /api/status, /api/scheduler/status, /api/l8/cockpit, /api/l9/meta/cockpit")
+    l10 = json.loads(get("/api/l10/cockpit"))
+    if "fixture_demo_available" not in l10:
+        raise SystemExit("L10 cockpit missing fixture demo status")
+    print("smoke_ok: GET /, /api/roster, /api/status, /api/scheduler/status, /api/l8/cockpit, /api/l9/meta/cockpit, /api/l10/cockpit")
 except URLError as exc:
     if "Operation not permitted" not in str(exc):
         raise
@@ -240,6 +280,11 @@ except URLError as exc:
         raise SystemExit("L9 summary missing opportunity portfolio")
     if "L9 Meta-Development Cockpit" not in html:
         raise SystemExit("HTML missing L9 cockpit")
+    l10_summary = json.loads(Path("l10_delegated_live_meta_development_runtime/l10_summary.json").read_text(encoding="utf-8"))
+    if l10_summary.get("permission_tier_count", 0) < 5:
+        raise SystemExit("L10 summary missing permission tiers")
+    if "L10 Delegated Mission Cockpit" not in html:
+        raise SystemExit("HTML missing L10 cockpit")
     print("smoke_ok: offline fallback because sandbox blocked localhost socket")
 PY
 }

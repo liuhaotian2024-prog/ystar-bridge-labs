@@ -24,6 +24,7 @@ LOCAL_URL = "http://127.0.0.1:8765"
 from l7_labs_team_self_work_scheduler.manifest_builder import build_manifest as build_l76_manifest  # noqa: E402
 from l8_first_cash_path_operating_loop.l8_manifest_builder import build_manifest as build_l8_manifest  # noqa: E402
 from l9_meta_development_opportunity_runtime.l9_manifest_builder import build_manifest as build_l9_manifest  # noqa: E402
+from l10_delegated_live_meta_development_runtime.l10_manifest_builder import build_manifest as build_l10_manifest  # noqa: E402
 
 PACKET_DIRS = [
     "runtime_packets/owner_messages",
@@ -215,6 +216,7 @@ def build_runtime_state() -> dict[str, Any]:
         "scheduler_runtime_phase": "L7.6 Labs Team Self-Work Scheduler & Autonomous Task Loop",
         "l8_runtime_phase": "L8.0 First Cash Path Operating Loop",
         "l9_runtime_phase": "L9.0 Meta-Development Opportunity & Execution Runtime",
+        "l10_runtime_phase": "L10.0 Delegated Live Meta-Development Work Runtime",
         "legacy_source": "l7_labs_office_legacy_integration",
         "agent_count": len(agents),
         "agents": agents,
@@ -268,6 +270,16 @@ def build_runtime_state() -> dict[str, Any]:
             "L8 action loop bridge packets",
             "portfolio residuals",
             "review-gated portfolio learning candidates",
+        ],
+        "l10_features": [
+            "delegated meta-development missions",
+            "permission tiers",
+            "bounded research budgets",
+            "mission plan and team-task decomposition",
+            "fixture-backed research demo",
+            "strategy brief and action plan",
+            "approval escalation packets",
+            "mission completion reports",
         ],
         "work_board_columns": ["Inbox", "Interpreting", "Assigned", "In Progress", "Waiting for Approval", "Blocked", "Done"],
         "packet_dirs": packet_dirs,
@@ -458,6 +470,56 @@ def write_assets() -> None:
       </div>
     </section>
 
+    <section class="panel l10-cockpit-panel">
+      <h2>L10 Delegated Mission Cockpit</h2>
+      <p class="muted">Create a real delegated meta-development mission, run bounded internal/research work, and escalate risky actions for owner review.</p>
+      <div id="l10-cockpit" class="l10-cockpit">Loading delegated mission state...</div>
+      <div class="l10-controls">
+        <button id="l10-create-default-button" type="button">Create Default Meta-Development Mission</button>
+        <label>Custom mission title
+          <input id="l10-custom-title" value="Research next 30-day meta-development plan">
+        </label>
+        <label>Custom mission goal
+          <textarea id="l10-custom-goal">Research and formulate the next 30-day meta-development plan for Y*Bridge Labs to maximize the chance of first revenue.</textarea>
+        </label>
+        <label>Permission tier
+          <select id="l10-tier-select">
+            <option value="tier_1">Tier 1 read-only external research</option>
+            <option value="tier_0">Tier 0 internal only</option>
+            <option value="tier_2">Tier 2 preparation, owner-approved execution</option>
+          </select>
+        </label>
+        <button id="l10-create-custom-button" type="button">Create Custom Mission</button>
+        <button id="l10-plan-button" type="button">Build Mission Plan</button>
+        <button id="l10-run-cycle-button" type="button">Run Bounded Mission Cycle</button>
+        <button id="l10-run-mission-button" type="button">Run Delegated Mission</button>
+        <button id="l10-research-plan-button" type="button">Build Research Plan</button>
+        <button id="l10-fixture-research-button" type="button">Run Fixture-Backed Research Demo</button>
+        <button id="l10-live-research-button" type="button">Try Configured Live Read-Only Research</button>
+        <button id="l10-signals-button" type="button">Extract Opportunity Signals</button>
+        <button id="l10-brief-button" type="button">Build Meta Strategy Brief</button>
+        <button id="l10-action-plan-button" type="button">Build Action Plan</button>
+        <button id="l10-escalations-button" type="button">Build Escalation Packets</button>
+        <label>Escalation
+          <select id="l10-escalation-select"></select>
+        </label>
+        <label>Escalation decision
+          <select id="l10-escalation-decision-select">
+            <option value="approve">approve</option>
+            <option value="reject">reject</option>
+            <option value="request_revision">request revision</option>
+            <option value="hold">hold</option>
+          </select>
+        </label>
+        <input id="l10-escalation-note" placeholder="Optional owner decision note">
+        <button id="l10-escalation-decide-button" type="button">Submit Escalation Review</button>
+        <button id="l10-l9-update-button" type="button">Build L9 Portfolio Update Packet</button>
+        <button id="l10-l8-escalation-button" type="button">Build L8 Manual Action Escalation Packet</button>
+        <button id="l10-completion-button" type="button">Build Mission Completion Report</button>
+        <button id="l10-refresh-button" type="button">Refresh L10 Cockpit</button>
+      </div>
+    </section>
+
     <section class="panel">
       <h2>Agent Panel</h2>
       <div id="agent-panel" class="agent-panel"></div>
@@ -591,7 +653,14 @@ textarea { min-height: 120px; }
   background: rgba(33,78,117,.08);
   margin-bottom: 12px;
 }
-.l8-controls, .l9-controls { display: grid; gap: 10px; }
+.l10-cockpit {
+  border: 1px dashed var(--green);
+  border-radius: 16px;
+  padding: 12px;
+  background: rgba(47,111,88,.09);
+  margin-bottom: 12px;
+}
+.l8-controls, .l9-controls, .l10-controls { display: grid; gap: 10px; }
 .card-grid, .agent-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
 .timeline { max-height: 360px; overflow: auto; }
 pre {
@@ -738,6 +807,20 @@ function renderL9Cockpit(cockpit) {
   $("l9-execution-plan-select").innerHTML = plans.map((plan) => `<option value="${escapeHtml(plan.execution_plan_id)}">${escapeHtml(plan.money_path_id)} · ${escapeHtml(plan.status)}</option>`).join("") || "<option value=''>No execution plan</option>";
 }
 
+function renderL10Cockpit(cockpit) {
+  const missions = cockpit.missions || [];
+  const active = cockpit.active_missions || [];
+  const escalations = cockpit.escalation_queue || [];
+  const reports = cockpit.mission_completion_reports || [];
+  $("l10-cockpit").innerHTML = `
+    <p><strong>Missions:</strong> ${missions.length} · <strong>Active:</strong> ${active.length} · <strong>Evidence:</strong> ${cockpit.evidence_count || 0}</p>
+    <p><strong>Signals:</strong> ${cockpit.opportunity_signal_count || 0} · <strong>Strategy brief:</strong> ${escapeHtml(cockpit.strategy_brief_status || "not_ready")}</p>
+    <p><strong>Escalations waiting:</strong> ${escalations.length} · <strong>Completion reports:</strong> ${reports.length}</p>
+    <p><strong>Fixture demo:</strong> ${cockpit.fixture_demo_available ? "available" : "unavailable"} · <strong>Configured live read-only:</strong> ${cockpit.configured_live_read_only_research_available ? "available" : "disabled"}</p>
+    <p><strong>Next owner decision:</strong> ${escapeHtml(cockpit.next_owner_decision || "create mission")}</p>`;
+  $("l10-escalation-select").innerHTML = (cockpit.escalation_packets || []).map((packet) => `<option value="${escapeHtml(packet.escalation_id)}">${escapeHtml(packet.requested_action)} · ${escapeHtml(packet.status)}</option>`).join("") || "<option value=''>No escalation packet</option>";
+}
+
 async function refreshOffice() {
   const state = await getJson("/api/status");
   const snapshot = await getJson("/api/whiteboard");
@@ -747,8 +830,9 @@ async function refreshOffice() {
   const interrupts = await getJson("/api/approval_interrupts");
   const l8Cockpit = await getJson("/api/l8/cockpit");
   const l9Cockpit = await getJson("/api/l9/meta/cockpit");
+  const l10Cockpit = await getJson("/api/l10/cockpit");
   OFFICE_STATE = state;
-  $("phase").textContent = `${state.l9_runtime_phase || state.l8_runtime_phase || state.scheduler_runtime_phase || state.whiteboard_runtime_phase || state.current_phase} · ${state.agent_count} recovered agents`;
+  $("phase").textContent = `${state.l10_runtime_phase || state.l9_runtime_phase || state.l8_runtime_phase || state.scheduler_runtime_phase || state.whiteboard_runtime_phase || state.current_phase} · ${state.agent_count} recovered agents`;
   renderRoster(state.agents);
   renderWhiteboard(snapshot);
   renderWorkBoard(snapshot.work_board || {});
@@ -757,6 +841,7 @@ async function refreshOffice() {
   renderScheduler(scheduler, runs, heartbeats, interrupts);
   renderL8Cockpit(l8Cockpit);
   renderL9Cockpit(l9Cockpit);
+  renderL10Cockpit(l10Cockpit);
   $("pending-approvals").innerHTML = list((snapshot.approval_requests || []).map((item) => item.reason).concat(state.pending_approvals || []));
   $("blocked-actions").innerHTML = list(state.blocked_actions);
   if (state.agents.length) openRoom(state.agents.find((agent) => agent.agent_id === "aiden_ceo")?.agent_id || state.agents[0].agent_id);
@@ -825,6 +910,31 @@ $("l9-residual-button").addEventListener("click", () => act("L9 portfolio residu
 }));
 $("l9-learning-button").addEventListener("click", () => act("L9 portfolio learning candidate generated", "/api/l9/portfolio_learning_candidates/build"));
 $("l9-refresh-button").addEventListener("click", refreshOffice);
+$("l10-create-default-button").addEventListener("click", () => act("L10 default mission created", "/api/l10/missions/create_default"));
+$("l10-create-custom-button").addEventListener("click", () => act("L10 custom mission created", "/api/l10/missions/create", {
+  title: $("l10-custom-title").value,
+  owner_goal: $("l10-custom-goal").value,
+  allowed_permission_tier: $("l10-tier-select").value,
+}));
+$("l10-plan-button").addEventListener("click", () => act("L10 mission plan built", "/api/l10/mission_plan/build"));
+$("l10-run-cycle-button").addEventListener("click", () => act("L10 bounded mission cycle", "/api/l10/mission_runner/run_cycle", {max_cycles: 1}));
+$("l10-run-mission-button").addEventListener("click", () => act("L10 delegated mission run", "/api/l10/mission_runner/run_bounded", {max_cycles: 2}));
+$("l10-research-plan-button").addEventListener("click", () => act("L10 research plan built", "/api/l10/research_plan/build"));
+$("l10-fixture-research-button").addEventListener("click", () => act("L10 fixture research demo", "/api/l10/research/run_fixture_demo"));
+$("l10-live-research-button").addEventListener("click", () => act("L10 configured live read-only check", "/api/l10/research/run_configured_live_read_only", {explicitly_enabled: false}));
+$("l10-signals-button").addEventListener("click", () => act("L10 opportunity signals extracted", "/api/l10/opportunity_signals/extract"));
+$("l10-brief-button").addEventListener("click", () => act("L10 meta strategy brief built", "/api/l10/meta_strategy_brief/build"));
+$("l10-action-plan-button").addEventListener("click", () => act("L10 action plan built", "/api/l10/action_plan/build"));
+$("l10-escalations-button").addEventListener("click", () => act("L10 escalation packets built", "/api/l10/escalations/build"));
+$("l10-escalation-decide-button").addEventListener("click", () => act("L10 escalation review decision", "/api/l10/escalations/decide", {
+  escalation_id: $("l10-escalation-select").value,
+  decision: $("l10-escalation-decision-select").value,
+  decision_note: $("l10-escalation-note").value,
+}));
+$("l10-l9-update-button").addEventListener("click", () => act("L10 L9 portfolio update packet built", "/api/l10/l9_portfolio_update/build"));
+$("l10-l8-escalation-button").addEventListener("click", () => act("L10 L8 manual escalation packet built", "/api/l10/l8_action_loop_escalation/build"));
+$("l10-completion-button").addEventListener("click", () => act("L10 mission completion report built", "/api/l10/completion_report/build"));
+$("l10-refresh-button").addEventListener("click", refreshOffice);
 
 refreshOffice().catch((error) => { $("packet-result").textContent = `Office failed to load: ${error}`; });
 """,
@@ -1035,6 +1145,7 @@ def build() -> dict[str, Any]:
     l76_summary = build_l76_manifest()
     l8_summary = build_l8_manifest()
     l9_summary = build_l9_manifest()
+    l10_summary = build_l10_manifest()
     write_json("existing_html_audit.json", audit)
     write_text(
         "existing_html_audit.md",
@@ -1145,6 +1256,15 @@ Deficiencies:
             "POST /api/l9/portfolio_learning_candidates/build",
             "GET /api/l9/portfolio_learning_candidates",
             "GET /api/l9/meta/cockpit",
+            "GET /api/l10/missions",
+            "POST /api/l10/missions/create_default",
+            "POST /api/l10/missions/create",
+            "GET /api/l10/missions/status",
+            "POST /api/l10/mission_plan/build",
+            "POST /api/l10/mission_runner/run_bounded",
+            "POST /api/l10/research/run_fixture_demo",
+            "POST /api/l10/escalations/decide",
+            "GET /api/l10/cockpit",
         ],
         "existing_html_owner_usable": audit["owner_usable"],
         "next_one_command_action": "bash scripts/run_l7_labs_office_web.sh --mode serve",
@@ -1160,6 +1280,12 @@ Deficiencies:
         "l9_money_path_count": l9_summary["money_path_count"],
         "l9_ranking_count": l9_summary["ranking_count"],
         "grant_rfp_path_created_by_default": False,
+        "l10_summary_ref": "l10_delegated_live_meta_development_runtime/l10_summary.json",
+        "l10_package_available": True,
+        "l10_mission_count": l10_summary["mission_count"],
+        "l10_permission_tier_count": l10_summary["permission_tier_count"],
+        "configured_live_read_only_research_available": False,
+        "fixture_demo_available": True,
     }
     write_json("web_ui_summary.json", summary)
     write_text(

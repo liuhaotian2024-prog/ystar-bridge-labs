@@ -1,0 +1,219 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L10.0",
+  "packet_type": "permission_tier_policy_registry",
+  "created_at": "2026-04-30T15:26:38Z",
+  "external_side_effects": false,
+  "customer_contact": false,
+  "email_sent": false,
+  "payment_processed": false,
+  "publication": false,
+  "uncontrolled_web_research": false,
+  "grant_rfp_path_created_by_default": false,
+  "core_writeback": false,
+  "coo_invented": false,
+  "tiers": [
+    {
+      "tier_id": "tier_0",
+      "tier_name": "autonomous_internal_work",
+      "allowed_action_classes": [
+        "internal_analysis",
+        "local_packet_creation",
+        "strategy_drafting",
+        "scheduler_cycle"
+      ],
+      "requires_budget": false,
+      "requires_owner_approval": false,
+      "forbidden_action_classes": [
+        "customer_contact",
+        "email_send",
+        "publication",
+        "form_submission",
+        "payment",
+        "account_creation",
+        "grant_rfp_submission",
+        "mcp_live_behavior",
+        "core_writeback",
+        "external_repo_modification",
+        "secret_or_env_read",
+        "db_wal_shm_log_active_agent_content_read"
+      ],
+      "escalation_required_for": [
+        "external_research",
+        "customer_contact",
+        "email_send",
+        "publication",
+        "form_submission",
+        "payment",
+        "account_creation",
+        "grant_rfp_submission",
+        "mcp_live_behavior",
+        "core_writeback",
+        "external_repo_modification",
+        "secret_or_env_read",
+        "db_wal_shm_log_active_agent_content_read"
+      ],
+      "explanation": "Safe local work only."
+    },
+    {
+      "tier_id": "tier_1",
+      "tier_name": "autonomous_read_only_external_research",
+      "allowed_action_classes": [
+        "internal_analysis",
+        "local_packet_creation",
+        "budgeted_read_only_research",
+        "evidence_packet_generation"
+      ],
+      "requires_budget": true,
+      "requires_owner_approval": false,
+      "forbidden_action_classes": [
+        "customer_contact",
+        "email_send",
+        "publication",
+        "form_submission",
+        "payment",
+        "account_creation",
+        "grant_rfp_submission",
+        "mcp_live_behavior",
+        "core_writeback",
+        "external_repo_modification",
+        "secret_or_env_read",
+        "db_wal_shm_log_active_agent_content_read"
+      ],
+      "escalation_required_for": [
+        "customer_contact",
+        "email_send",
+        "publication",
+        "form_submission",
+        "payment",
+        "account_creation",
+        "grant_rfp_submission",
+        "mcp_live_behavior",
+        "core_writeback",
+        "external_repo_modification",
+        "secret_or_env_read",
+        "db_wal_shm_log_active_agent_content_read"
+      ],
+      "explanation": "Budgeted read-only research with no login/contact/submit/payment/publication."
+    },
+    {
+      "tier_id": "tier_2",
+      "tier_name": "autonomous_preparation_owner_approved_execution",
+      "allowed_action_classes": [
+        "draft_outreach",
+        "proposal_draft",
+        "landing_page_draft",
+        "public_post_draft",
+        "service_package_draft"
+      ],
+      "requires_budget": false,
+      "requires_owner_approval": true,
+      "forbidden_action_classes": [
+        "customer_contact",
+        "email_send",
+        "publication",
+        "form_submission",
+        "payment",
+        "account_creation",
+        "grant_rfp_submission",
+        "mcp_live_behavior",
+        "core_writeback",
+        "external_repo_modification",
+        "secret_or_env_read",
+        "db_wal_shm_log_active_agent_content_read"
+      ],
+      "escalation_required_for": [
+        "customer_contact",
+        "email_send",
+        "publication",
+        "form_submission",
+        "payment",
+        "account_creation",
+        "grant_rfp_submission",
+        "mcp_live_behavior",
+        "core_writeback",
+        "external_repo_modification",
+        "secret_or_env_read",
+        "db_wal_shm_log_active_agent_content_read"
+      ],
+      "explanation": "Labs can prepare external-action drafts; owner approval is required to execute."
+    },
+    {
+      "tier_id": "tier_3",
+      "tier_name": "pre_approved_constrained_external_action_future_slot",
+      "allowed_action_classes": [
+        "future_owner_approved_message",
+        "future_owner_approved_publication",
+        "future_owner_approved_form_submission"
+      ],
+      "requires_budget": true,
+      "requires_owner_approval": true,
+      "forbidden_action_classes": [
+        "customer_contact",
+        "email_send",
+        "publication",
+        "form_submission",
+        "payment",
+        "account_creation",
+        "grant_rfp_submission",
+        "mcp_live_behavior",
+        "core_writeback",
+        "external_repo_modification",
+        "secret_or_env_read",
+        "db_wal_shm_log_active_agent_content_read"
+      ],
+      "escalation_required_for": [
+        "customer_contact",
+        "email_send",
+        "publication",
+        "form_submission",
+        "payment",
+        "account_creation",
+        "grant_rfp_submission",
+        "mcp_live_behavior",
+        "core_writeback",
+        "external_repo_modification",
+        "secret_or_env_read",
+        "db_wal_shm_log_active_agent_content_read"
+      ],
+      "explanation": "Future slot only in L10; no execution is implemented."
+    },
+    {
+      "tier_id": "tier_4",
+      "tier_name": "high_risk_blocked_or_review_gated",
+      "allowed_action_classes": [],
+      "requires_budget": true,
+      "requires_owner_approval": true,
+      "forbidden_action_classes": [
+        "customer_contact",
+        "email_send",
+        "publication",
+        "form_submission",
+        "payment",
+        "account_creation",
+        "grant_rfp_submission",
+        "mcp_live_behavior",
+        "core_writeback",
+        "external_repo_modification",
+        "secret_or_env_read",
+        "db_wal_shm_log_active_agent_content_read"
+      ],
+      "escalation_required_for": [
+        "customer_contact",
+        "email_send",
+        "publication",
+        "form_submission",
+        "payment",
+        "account_creation",
+        "grant_rfp_submission",
+        "mcp_live_behavior",
+        "core_writeback",
+        "external_repo_modification",
+        "secret_or_env_read",
+        "db_wal_shm_log_active_agent_content_read"
+      ],
+      "explanation": "High-risk actions remain blocked/review-gated."
+    }
+  ],
+  "tier_count": 5
+}

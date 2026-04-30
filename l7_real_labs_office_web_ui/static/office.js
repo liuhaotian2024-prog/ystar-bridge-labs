@@ -128,6 +128,20 @@ function renderL9Cockpit(cockpit) {
   $("l9-execution-plan-select").innerHTML = plans.map((plan) => `<option value="${escapeHtml(plan.execution_plan_id)}">${escapeHtml(plan.money_path_id)} · ${escapeHtml(plan.status)}</option>`).join("") || "<option value=''>No execution plan</option>";
 }
 
+function renderL10Cockpit(cockpit) {
+  const missions = cockpit.missions || [];
+  const active = cockpit.active_missions || [];
+  const escalations = cockpit.escalation_queue || [];
+  const reports = cockpit.mission_completion_reports || [];
+  $("l10-cockpit").innerHTML = `
+    <p><strong>Missions:</strong> ${missions.length} · <strong>Active:</strong> ${active.length} · <strong>Evidence:</strong> ${cockpit.evidence_count || 0}</p>
+    <p><strong>Signals:</strong> ${cockpit.opportunity_signal_count || 0} · <strong>Strategy brief:</strong> ${escapeHtml(cockpit.strategy_brief_status || "not_ready")}</p>
+    <p><strong>Escalations waiting:</strong> ${escalations.length} · <strong>Completion reports:</strong> ${reports.length}</p>
+    <p><strong>Fixture demo:</strong> ${cockpit.fixture_demo_available ? "available" : "unavailable"} · <strong>Configured live read-only:</strong> ${cockpit.configured_live_read_only_research_available ? "available" : "disabled"}</p>
+    <p><strong>Next owner decision:</strong> ${escapeHtml(cockpit.next_owner_decision || "create mission")}</p>`;
+  $("l10-escalation-select").innerHTML = (cockpit.escalation_packets || []).map((packet) => `<option value="${escapeHtml(packet.escalation_id)}">${escapeHtml(packet.requested_action)} · ${escapeHtml(packet.status)}</option>`).join("") || "<option value=''>No escalation packet</option>";
+}
+
 async function refreshOffice() {
   const state = await getJson("/api/status");
   const snapshot = await getJson("/api/whiteboard");
@@ -137,8 +151,9 @@ async function refreshOffice() {
   const interrupts = await getJson("/api/approval_interrupts");
   const l8Cockpit = await getJson("/api/l8/cockpit");
   const l9Cockpit = await getJson("/api/l9/meta/cockpit");
+  const l10Cockpit = await getJson("/api/l10/cockpit");
   OFFICE_STATE = state;
-  $("phase").textContent = `${state.l9_runtime_phase || state.l8_runtime_phase || state.scheduler_runtime_phase || state.whiteboard_runtime_phase || state.current_phase} · ${state.agent_count} recovered agents`;
+  $("phase").textContent = `${state.l10_runtime_phase || state.l9_runtime_phase || state.l8_runtime_phase || state.scheduler_runtime_phase || state.whiteboard_runtime_phase || state.current_phase} · ${state.agent_count} recovered agents`;
   renderRoster(state.agents);
   renderWhiteboard(snapshot);
   renderWorkBoard(snapshot.work_board || {});
@@ -147,6 +162,7 @@ async function refreshOffice() {
   renderScheduler(scheduler, runs, heartbeats, interrupts);
   renderL8Cockpit(l8Cockpit);
   renderL9Cockpit(l9Cockpit);
+  renderL10Cockpit(l10Cockpit);
   $("pending-approvals").innerHTML = list((snapshot.approval_requests || []).map((item) => item.reason).concat(state.pending_approvals || []));
   $("blocked-actions").innerHTML = list(state.blocked_actions);
   if (state.agents.length) openRoom(state.agents.find((agent) => agent.agent_id === "aiden_ceo")?.agent_id || state.agents[0].agent_id);
@@ -215,5 +231,30 @@ $("l9-residual-button").addEventListener("click", () => act("L9 portfolio residu
 }));
 $("l9-learning-button").addEventListener("click", () => act("L9 portfolio learning candidate generated", "/api/l9/portfolio_learning_candidates/build"));
 $("l9-refresh-button").addEventListener("click", refreshOffice);
+$("l10-create-default-button").addEventListener("click", () => act("L10 default mission created", "/api/l10/missions/create_default"));
+$("l10-create-custom-button").addEventListener("click", () => act("L10 custom mission created", "/api/l10/missions/create", {
+  title: $("l10-custom-title").value,
+  owner_goal: $("l10-custom-goal").value,
+  allowed_permission_tier: $("l10-tier-select").value,
+}));
+$("l10-plan-button").addEventListener("click", () => act("L10 mission plan built", "/api/l10/mission_plan/build"));
+$("l10-run-cycle-button").addEventListener("click", () => act("L10 bounded mission cycle", "/api/l10/mission_runner/run_cycle", {max_cycles: 1}));
+$("l10-run-mission-button").addEventListener("click", () => act("L10 delegated mission run", "/api/l10/mission_runner/run_bounded", {max_cycles: 2}));
+$("l10-research-plan-button").addEventListener("click", () => act("L10 research plan built", "/api/l10/research_plan/build"));
+$("l10-fixture-research-button").addEventListener("click", () => act("L10 fixture research demo", "/api/l10/research/run_fixture_demo"));
+$("l10-live-research-button").addEventListener("click", () => act("L10 configured live read-only check", "/api/l10/research/run_configured_live_read_only", {explicitly_enabled: false}));
+$("l10-signals-button").addEventListener("click", () => act("L10 opportunity signals extracted", "/api/l10/opportunity_signals/extract"));
+$("l10-brief-button").addEventListener("click", () => act("L10 meta strategy brief built", "/api/l10/meta_strategy_brief/build"));
+$("l10-action-plan-button").addEventListener("click", () => act("L10 action plan built", "/api/l10/action_plan/build"));
+$("l10-escalations-button").addEventListener("click", () => act("L10 escalation packets built", "/api/l10/escalations/build"));
+$("l10-escalation-decide-button").addEventListener("click", () => act("L10 escalation review decision", "/api/l10/escalations/decide", {
+  escalation_id: $("l10-escalation-select").value,
+  decision: $("l10-escalation-decision-select").value,
+  decision_note: $("l10-escalation-note").value,
+}));
+$("l10-l9-update-button").addEventListener("click", () => act("L10 L9 portfolio update packet built", "/api/l10/l9_portfolio_update/build"));
+$("l10-l8-escalation-button").addEventListener("click", () => act("L10 L8 manual escalation packet built", "/api/l10/l8_action_loop_escalation/build"));
+$("l10-completion-button").addEventListener("click", () => act("L10 mission completion report built", "/api/l10/completion_report/build"));
+$("l10-refresh-button").addEventListener("click", refreshOffice);
 
 refreshOffice().catch((error) => { $("packet-result").textContent = `Office failed to load: ${error}`; });

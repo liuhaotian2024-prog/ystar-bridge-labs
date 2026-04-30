@@ -90,7 +90,14 @@ textarea { min-height: 120px; }
   background: rgba(33,78,117,.08);
   margin-bottom: 12px;
 }
-.l8-controls, .l9-controls { display: grid; gap: 10px; }
+.l10-cockpit {
+  border: 1px dashed var(--green);
+  border-radius: 16px;
+  padding: 12px;
+  background: rgba(47,111,88,.09);
+  margin-bottom: 12px;
+}
+.l8-controls, .l9-controls, .l10-controls { display: grid; gap: 10px; }
 .card-grid, .agent-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
 .timeline { max-height: 360px; overflow: auto; }
 pre {

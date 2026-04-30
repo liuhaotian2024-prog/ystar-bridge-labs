@@ -169,6 +169,56 @@
       </div>
     </section>
 
+    <section class="panel l10-cockpit-panel">
+      <h2>L10 Delegated Mission Cockpit</h2>
+      <p class="muted">Create a real delegated meta-development mission, run bounded internal/research work, and escalate risky actions for owner review.</p>
+      <div id="l10-cockpit" class="l10-cockpit">Loading delegated mission state...</div>
+      <div class="l10-controls">
+        <button id="l10-create-default-button" type="button">Create Default Meta-Development Mission</button>
+        <label>Custom mission title
+          <input id="l10-custom-title" value="Research next 30-day meta-development plan">
+        </label>
+        <label>Custom mission goal
+          <textarea id="l10-custom-goal">Research and formulate the next 30-day meta-development plan for Y*Bridge Labs to maximize the chance of first revenue.</textarea>
+        </label>
+        <label>Permission tier
+          <select id="l10-tier-select">
+            <option value="tier_1">Tier 1 read-only external research</option>
+            <option value="tier_0">Tier 0 internal only</option>
+            <option value="tier_2">Tier 2 preparation, owner-approved execution</option>
+          </select>
+        </label>
+        <button id="l10-create-custom-button" type="button">Create Custom Mission</button>
+        <button id="l10-plan-button" type="button">Build Mission Plan</button>
+        <button id="l10-run-cycle-button" type="button">Run Bounded Mission Cycle</button>
+        <button id="l10-run-mission-button" type="button">Run Delegated Mission</button>
+        <button id="l10-research-plan-button" type="button">Build Research Plan</button>
+        <button id="l10-fixture-research-button" type="button">Run Fixture-Backed Research Demo</button>
+        <button id="l10-live-research-button" type="button">Try Configured Live Read-Only Research</button>
+        <button id="l10-signals-button" type="button">Extract Opportunity Signals</button>
+        <button id="l10-brief-button" type="button">Build Meta Strategy Brief</button>
+        <button id="l10-action-plan-button" type="button">Build Action Plan</button>
+        <button id="l10-escalations-button" type="button">Build Escalation Packets</button>
+        <label>Escalation
+          <select id="l10-escalation-select"></select>
+        </label>
+        <label>Escalation decision
+          <select id="l10-escalation-decision-select">
+            <option value="approve">approve</option>
+            <option value="reject">reject</option>
+            <option value="request_revision">request revision</option>
+            <option value="hold">hold</option>
+          </select>
+        </label>
+        <input id="l10-escalation-note" placeholder="Optional owner decision note">
+        <button id="l10-escalation-decide-button" type="button">Submit Escalation Review</button>
+        <button id="l10-l9-update-button" type="button">Build L9 Portfolio Update Packet</button>
+        <button id="l10-l8-escalation-button" type="button">Build L8 Manual Action Escalation Packet</button>
+        <button id="l10-completion-button" type="button">Build Mission Completion Report</button>
+        <button id="l10-refresh-button" type="button">Refresh L10 Cockpit</button>
+      </div>
+    </section>
+
     <section class="panel">
       <h2>Agent Panel</h2>
       <div id="agent-panel" class="agent-panel"></div>
