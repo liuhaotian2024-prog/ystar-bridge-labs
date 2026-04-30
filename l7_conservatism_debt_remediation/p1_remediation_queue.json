@@ -1,0 +1,413 @@
+{
+  "schema_version": "v0",
+  "source": "l7_full_repo_conservatism_scan/policy_migration_map.json",
+  "total_p1_items": 248,
+  "considered_items": [
+    {
+      "file_path": "approved_canonical_update_sandbox/tools/build_approved_canonical_update_sandbox.py",
+      "migration_priority": "P1",
+      "current_pattern": "direct Y*",
+      "target_policy_ref": "policy/writeback_policy.json",
+      "recommended_patch_type": "split_read_draft_execute",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "review-gated learning"
+    },
+    {
+      "file_path": "real_release_simulation_sandbox/tools/build_real_release_simulation_sandbox.py",
+      "migration_priority": "P1",
+      "current_pattern": "direct Y*",
+      "target_policy_ref": "policy/writeback_policy.json",
+      "recommended_patch_type": "split_read_draft_execute",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "review-gated learning"
+    },
+    {
+      "file_path": "controlled_real_release_preflight/tools/build_controlled_real_release_preflight.py",
+      "migration_priority": "P1",
+      "current_pattern": "direct Y*",
+      "target_policy_ref": "policy/writeback_policy.json",
+      "recommended_patch_type": "split_read_draft_execute",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "review-gated learning"
+    },
+    {
+      "file_path": "self_model_and_unique_asset_field/unique_asset_field.json",
+      "migration_priority": "P1",
+      "current_pattern": "revenue execution",
+      "target_policy_ref": "policy/approval_state_machine.json",
+      "recommended_patch_type": "convert_blocked_to_approval_gate",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "draft/approval flow"
+    },
+    {
+      "file_path": "ystar.bak.20260415_again/domains/openclaw/adapter.py",
+      "migration_priority": "P1",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "controlled_canonical_learning_design/tools/build_controlled_canonical_learning_design.py",
+      "migration_priority": "P1",
+      "current_pattern": "direct Y*",
+      "target_policy_ref": "policy/writeback_policy.json",
+      "recommended_patch_type": "split_read_draft_execute",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "review-gated learning"
+    },
+    {
+      "file_path": "ystar.bak.20260415_again/governance/obligation_triggers.py",
+      "migration_priority": "P1",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "gov_mcp/server.py",
+      "migration_priority": "P1",
+      "current_pattern": "not_configured",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "ystar.bak.20260415_again/dev_cli.py",
+      "migration_priority": "P1",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "live_capability_domain_registry/live_capability_domain_registry.json",
+      "migration_priority": "P1",
+      "current_pattern": "live behavior",
+      "target_policy_ref": "policy/approval_state_machine.json",
+      "recommended_patch_type": "convert_blocked_to_approval_gate",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "draft/approval flow"
+    },
+    {
+      "file_path": "real_release_simulation_sandbox/real_release_simulation_sandbox_contract.json",
+      "migration_priority": "P1",
+      "current_pattern": "MCP execution",
+      "target_policy_ref": "policy/approval_state_machine.json",
+      "recommended_patch_type": "convert_blocked_to_approval_gate",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "draft/approval flow"
+    },
+    {
+      "file_path": "approved_canonical_update_sandbox/approved_canonical_update_sandbox_contract.json",
+      "migration_priority": "P1",
+      "current_pattern": "direct Y*",
+      "target_policy_ref": "policy/writeback_policy.json",
+      "recommended_patch_type": "split_read_draft_execute",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "review-gated learning"
+    },
+    {
+      "file_path": "ystar.bak.20260415_again/check_service.py",
+      "migration_priority": "P1",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "controlled_search_backend_adapters/controlled_search_backends.py",
+      "migration_priority": "P1",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "controlled_real_release_preflight/controlled_real_release_preflight_contract.json",
+      "migration_priority": "P1",
+      "current_pattern": "direct Y*",
+      "target_policy_ref": "policy/writeback_policy.json",
+      "recommended_patch_type": "split_read_draft_execute",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "review-gated learning"
+    },
+    {
+      "file_path": "live_boundary_no_go_framework/live_boundary_no_go_contract.json",
+      "migration_priority": "P1",
+      "current_pattern": "revenue execution",
+      "target_policy_ref": "policy/approval_state_machine.json",
+      "recommended_patch_type": "convert_blocked_to_approval_gate",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "draft/approval flow"
+    },
+    {
+      "file_path": "ystar.bak.20260415_again/kernel/nl_to_contract.py",
+      "migration_priority": "P1",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "release_candidate_package/release_candidate_package.json",
+      "migration_priority": "P1",
+      "current_pattern": "direct Y*",
+      "target_policy_ref": "policy/writeback_policy.json",
+      "recommended_patch_type": "split_read_draft_execute",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "review-gated learning"
+    },
+    {
+      "file_path": "real_approval_workflow_boundary/real_approval_workflow_boundary_contract.json",
+      "migration_priority": "P1",
+      "current_pattern": "direct Y*",
+      "target_policy_ref": "policy/writeback_policy.json",
+      "recommended_patch_type": "split_read_draft_execute",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "review-gated learning"
+    },
+    {
+      "file_path": "controlled_approval_record_sandbox/controlled_approval_record_sandbox_contract.json",
+      "migration_priority": "P1",
+      "current_pattern": "direct Y*",
+      "target_policy_ref": "policy/writeback_policy.json",
+      "recommended_patch_type": "split_read_draft_execute",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "review-gated learning"
+    },
+    {
+      "file_path": "governed_tool_invocation_bridge/tools/run_governed_tool_bridge.py",
+      "migration_priority": "P1",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "labs_cieu_runtime_boundary/tools/build_cieu_runtime_boundary.py",
+      "migration_priority": "P1",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "system_no_go_decision_packet/system_no_go_decision_packet.json",
+      "migration_priority": "P1",
+      "current_pattern": "MCP execution",
+      "target_policy_ref": "policy/approval_state_machine.json",
+      "recommended_patch_type": "convert_blocked_to_approval_gate",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "draft/approval flow"
+    },
+    {
+      "file_path": "governance/whitelist/role_mandate.yaml",
+      "migration_priority": "P1",
+      "current_pattern": "messaging",
+      "target_policy_ref": "policy/approval_state_machine.json",
+      "recommended_patch_type": "convert_blocked_to_approval_gate",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "draft/approval flow"
+    },
+    {
+      "file_path": "pilot_operator_readiness_package/operator_readiness_checklist.json",
+      "migration_priority": "P1",
+      "current_pattern": "form submission",
+      "target_policy_ref": "policy/approval_state_machine.json",
+      "recommended_patch_type": "convert_blocked_to_approval_gate",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "draft/approval flow"
+    },
+    {
+      "file_path": "scripts/l7_lanes/build_l7a_agent_team_runtime.py",
+      "migration_priority": "P1",
+      "current_pattern": "form submission",
+      "target_policy_ref": "policy/approval_state_machine.json",
+      "recommended_patch_type": "convert_blocked_to_approval_gate",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "draft/approval flow"
+    },
+    {
+      "file_path": "sandbox_approval_record_lifecycle/sandbox_approval_record_001.json",
+      "migration_priority": "P1",
+      "current_pattern": "revenue execution",
+      "target_policy_ref": "policy/approval_state_machine.json",
+      "recommended_patch_type": "convert_blocked_to_approval_gate",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "draft/approval flow"
+    },
+    {
+      "file_path": "sandbox_approval_record_lifecycle/sandbox_approval_record_002.json",
+      "migration_priority": "P1",
+      "current_pattern": "revenue execution",
+      "target_policy_ref": "policy/approval_state_machine.json",
+      "recommended_patch_type": "convert_blocked_to_approval_gate",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "draft/approval flow"
+    },
+    {
+      "file_path": "sandbox_approval_record_lifecycle/sandbox_approval_record_003.json",
+      "migration_priority": "P1",
+      "current_pattern": "revenue execution",
+      "target_policy_ref": "policy/approval_state_machine.json",
+      "recommended_patch_type": "convert_blocked_to_approval_gate",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "draft/approval flow"
+    },
+    {
+      "file_path": "l6_12_read_model/l6_12_read_model_summary.json",
+      "migration_priority": "P1",
+      "current_pattern": "blocked",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "l6_unified_controlled_external_observation_evidence_loop/l6_12_milestone_contract.json",
+      "migration_priority": "P1",
+      "current_pattern": "blocked",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "l6_unified_controlled_external_observation_evidence_loop/l6_12_summary.json",
+      "migration_priority": "P1",
+      "current_pattern": "blocked",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "sandbox_release_execution_plan/sandbox_release_execution_plan.json",
+      "migration_priority": "P1",
+      "current_pattern": "direct Y*",
+      "target_policy_ref": "policy/writeback_policy.json",
+      "recommended_patch_type": "split_read_draft_execute",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "review-gated learning"
+    },
+    {
+      "file_path": "sandbox_reprojection_and_mcp_preview/sandbox_reprojected_behavior_y_star.json",
+      "migration_priority": "P1",
+      "current_pattern": "MCP execution",
+      "target_policy_ref": "policy/approval_state_machine.json",
+      "recommended_patch_type": "convert_blocked_to_approval_gate",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "draft/approval flow"
+    },
+    {
+      "file_path": "controlled_search_backend_runtime/controlled_search_runtime.py",
+      "migration_priority": "P1",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "original_sandbox_rollback_comparison/original_vs_sandbox_vs_rollback_comparison.json",
+      "migration_priority": "P1",
+      "current_pattern": "MCP execution",
+      "target_policy_ref": "policy/approval_state_machine.json",
+      "recommended_patch_type": "convert_blocked_to_approval_gate",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "draft/approval flow"
+    },
+    {
+      "file_path": "simulated_durable_approval_record/simulated_durable_approval_record.json",
+      "migration_priority": "P1",
+      "current_pattern": "direct Y*",
+      "target_policy_ref": "policy/writeback_policy.json",
+      "recommended_patch_type": "split_read_draft_execute",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "review-gated learning"
+    },
+    {
+      "file_path": "approval_record_pre_application_gate_replay/valid_record_gate_replay_result.json",
+      "migration_priority": "P1",
+      "current_pattern": "direct Y*",
+      "target_policy_ref": "policy/writeback_policy.json",
+      "recommended_patch_type": "split_read_draft_execute",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "review-gated learning"
+    },
+    {
+      "file_path": "manual_recurring_observation_tick_runner/tools/build_manual_tick_runner.py",
+      "migration_priority": "P1",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "release_blocker_decision/release_blocker_reason_codes.json",
+      "migration_priority": "P1",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p1-migration",
+      "expected_capability_gain": "activation path"
+    }
+  ],
+  "patched_files": [
+    "l7_owner_runtime_cockpit/owner_cockpit.json",
+    "l7_revenue_opportunity_radar/l7b_revenue_opportunity_radar_summary.json",
+    "l7_revenue_opportunity_radar/opportunity_packets/opportunity_packet_001.json"
+  ],
+  "deferred_note": "Only selected low-risk L7.0P policy semantics were patched in this remediation sprint."
+}

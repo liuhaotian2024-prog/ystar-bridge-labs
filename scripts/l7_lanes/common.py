@@ -175,6 +175,34 @@ def l7_0q_policy_migration_for_path(path: str) -> dict[str, Any] | None:
     return block
 
 
+def l7_0r_staged_policy_for_path(path: str) -> dict[str, Any] | None:
+    top_level = path.split("/", 1)[0]
+    if top_level not in L7_0Q_POLICY_MIGRATION_DIRS:
+        return None
+    if "revenue_opportunity_radar" in path:
+        principle = "Do not block revenue work. Block unapproved revenue side effects."
+        stages = ["observe", "search", "read", "extract", "analyze", "draft", "plan", "request_approval"]
+    elif "human_approved_external_action_gate" in path:
+        principle = "External execution is staged: draft allowed, execution blocked until human approval."
+        stages = ["draft", "request_approval", "execute_after_approval"]
+    elif "review_gated_memory_writeback" in path:
+        principle = "Do not block learning. Block unreviewed permanent writeback."
+        stages = ["writeback_candidate", "dry_run_writeback", "actual_writeback_after_approval"]
+    else:
+        principle = "Use staged capability policy instead of blanket blocking."
+        stages = ["observe", "analyze", "draft", "plan", "request_approval"]
+    return {
+        "policy_decision_helper": "policy/policy_decision.py",
+        "principle": principle,
+        "allowed_capability_stages": stages,
+        "read_only_discovery_allowed": True,
+        "draft_allowed": True,
+        "actual_execution_blocked_until_approval": True,
+        "actual_core_writeback_blocked_until_approval": True,
+        "owner_manual_burden_replacement": "Prefer one-command launchers, resolvers, and orchestrators over manual URLs, manual env exports, manual worktrees, or manual merges.",
+    }
+
+
 def write_json(path: str, payload: dict[str, Any] | list[Any]) -> None:
     target = ROOT / path
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -182,6 +210,9 @@ def write_json(path: str, payload: dict[str, Any] | list[Any]) -> None:
         migration = l7_0q_policy_migration_for_path(path)
         if migration:
             payload.setdefault("l7_0q_policy_migration", migration)
+        remediation = l7_0r_staged_policy_for_path(path)
+        if remediation:
+            payload.setdefault("l7_0r_staged_policy_remediation", remediation)
     target.write_text(json.dumps(payload, indent=2, sort_keys=False) + "\n", encoding="utf-8")
 
 

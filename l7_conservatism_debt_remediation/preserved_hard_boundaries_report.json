@@ -1,0 +1,21 @@
+{
+  "schema_version": "v0",
+  "hard_boundaries_preserved": [
+    "secret leakage prevention",
+    "payment without approval",
+    "autonomous external posting",
+    "autonomous customer outreach",
+    "autonomous grant/RFP submission",
+    "direct canonical strategy mutation",
+    "direct brain/memory writeback without review",
+    "raw DB/WAL/SHM exposure",
+    "raw log/active-agent content exposure",
+    "unauthorized Y-star-gov modification",
+    "unauthorized gov-mcp modification",
+    "private/internal network access",
+    "access-control bypass",
+    "malware/credential exfiltration"
+  ],
+  "legitimate_hard_boundary_count_from_l7_0q2": null,
+  "policy_note": "Safety boundaries were preserved; remediation focused on typed staged policy states, not weakening controls."
+}

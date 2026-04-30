@@ -4,7 +4,8 @@ Aiden Dream — Autonomous learning during Board AFK (sleep-mode self-improvemen
 
 Inspired by neuroscience: NREM (consolidate) -> REM (explore) -> Wake-prep.
 L3 Phase 1: dry-run + commit CLI with manual audit gate.
-L3-Phase-2: auto scheduling disabled per CEO 2026-04-19 correction
+L7.0R: auto scheduling is staged by policy. Dream analysis/dry-run is allowed;
+permanent brain writeback remains blocked until reviewed and human-approved.
 
 Usage:
     aiden_dream.py --nrem    — internal consolidation (cross-reference, gap detection)
@@ -36,6 +37,29 @@ DREAM_LOG = os.path.join(COMPANY_ROOT, "scripts", ".logs", "dream_log.json")
 DIFF_DIR = os.path.join(COMPANY_ROOT, "reports", "ceo", "brain_dream_diffs")
 CIEU_DB = os.path.join(COMPANY_ROOT, ".ystar_cieu.db")
 DIFF_EXPIRY_HOURS = 24
+POLICY_REFS = {
+    "action_capability_policy_ref": "policy/action_capability_registry.json",
+    "writeback_policy_ref": "policy/writeback_policy.json",
+    "approval_state_machine_ref": "policy/approval_state_machine.json",
+}
+
+
+def _policy_decision(action_type: str, requested_stage: str, approval_state: str) -> dict:
+    """Resolve staged writeback policy without making policy import a hard dependency."""
+    try:
+        if COMPANY_ROOT not in sys.path:
+            sys.path.insert(0, COMPANY_ROOT)
+        from policy.policy_decision import decide_action_capability
+        return decide_action_capability(action_type, requested_stage, approval_state)
+    except Exception as exc:
+        return {
+            "decision": "blocked_pending_config",
+            "reason": f"policy helper unavailable: {exc}",
+            "policy_ref": POLICY_REFS["writeback_policy_ref"],
+            "allowed_stage": requested_stage,
+            "requires_human_approval": True,
+            "hard_boundary_preserved": True,
+        }
 
 
 # ── CIEU Event Helpers ────────────────────────────────────────────────
@@ -543,6 +567,8 @@ def dry_run(pattern_filter: str = None, cieu_db: str = None, brain_db: str = Non
     print("  BRAIN DREAM DRY-RUN")
     print(f"  {time.strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"  Mode: DRY-RUN (no changes will be applied)")
+    policy = _policy_decision("dry_run_writeback", "dry_run_writeback", "not_required")
+    print(f"  Policy: {policy['decision']} ({policy['policy_ref']})")
     if pattern_filter:
         print(f"  Pattern filter: {pattern_filter}")
     print("=" * 50 + "\n")
@@ -794,6 +820,18 @@ def commit_dream(cieu_db: str = None, brain_db: str = None, diff_dir: str = None
             "result": "denied:unreviewed",
         }, cieu_db=cieu_db)
         print("\n  COMMIT DENIED. Run brain_dream_approve.py to review the diff first.")
+        return False
+
+    policy = _policy_decision("actual_brain_writeback", "actual_writeback_after_approval", "approved_by_human")
+    print(f"  Policy ({POLICY_REFS['writeback_policy_ref']}): {policy['decision']} — {policy['reason']}")
+    if policy["decision"] not in ("allowed", "allowed_after_human_approval"):
+        _emit_cieu("BRAIN_DREAM_COMMIT_DENIED", {
+            "action": "commit_denied",
+            "intent": "Policy gate denied permanent brain writeback",
+            "context": {"policy_decision": policy, "policy_refs": POLICY_REFS},
+            "result": f"denied:{policy['decision']}",
+        }, cieu_db=cieu_db)
+        print("\n  COMMIT DENIED. Policy gate requires explicit approval.")
         return False
 
     # Both gates passed — apply changes

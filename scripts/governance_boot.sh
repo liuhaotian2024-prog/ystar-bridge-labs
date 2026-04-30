@@ -25,6 +25,8 @@ echo "=== Y* Governance Boot ==="
 echo "Agent: $AGENT_ID"
 echo "Mode: $([ "$VERIFY_ONLY" = true ] && echo 'VERIFY-ONLY' || echo 'FULL BOOT')"
 echo "Time: $(date)"
+echo "Policy registry: policy/action_capability_registry.json"
+echo "Boot policy state: auto_detect_available; unsafe execution remains gated"
 
 # Set LLM provider for nl_to_contract (AMENDMENT-022)
 export YSTAR_LLM_PROVIDER=anthropic
@@ -312,7 +314,7 @@ expires = ov.get('expires_at', 0)
 if now <= expires:
     # Override still active — do not revoke
     remain = (expires - now) // 60
-    print(f'  [override] Board CEO override active, {remain}m remaining — must_dispatch_via_cto stays disabled')
+    print(f'  [override] Board CEO override active, {remain}m remaining — must_dispatch_via_cto is blocked_pending_human_review, not permanently disabled')
     sys.exit(0)
 
 # Override expired — auto-revoke

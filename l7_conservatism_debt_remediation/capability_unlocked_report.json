@@ -1,0 +1,25 @@
+{
+  "schema_version": "v0",
+  "capabilities_unlocked": [
+    {
+      "capability": "policy_decision_helper",
+      "effect": "single deterministic helper for staged action decisions"
+    },
+    {
+      "capability": "dream_dry_run_learning",
+      "effect": "dry-run/candidate learning remains allowed while permanent brain writeback is gated"
+    },
+    {
+      "capability": "watchdog_auto_detect",
+      "effect": "board override is a pause state rather than a permanent disabled state"
+    },
+    {
+      "capability": "memory_config_resolution",
+      "effect": "missing config is reported as blocked_pending_config"
+    },
+    {
+      "capability": "revenue_discovery_and_drafting",
+      "effect": "revenue work is explicitly allowed through discovery, draft, plan, and approval-request stages"
+    }
+  ]
+}

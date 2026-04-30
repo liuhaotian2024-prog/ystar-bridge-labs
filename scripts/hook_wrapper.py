@@ -23,6 +23,21 @@ def log(msg):
         f.write(f"{time.strftime('%H:%M:%S')} {msg}\n")
 
 FAIL_CLOSED_LOG = os.path.join(os.path.dirname(__file__), "hook_fail_closed.jsonl")
+HOOK_V2_POLICY = {
+    "policy_ref": "policy/action_capability_registry.json",
+    "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+    "allowed_stage": "observe",
+    "default_decision": "blocked_pending_evidence",
+    "resolver_available": True,
+}
+
+
+def hook_v2_policy_allows() -> bool:
+    """Keep the v2 adapter behind a staged evidence gate, not a permanent dead switch."""
+    return (
+        os.environ.get("YSTAR_HOOK_V2") == "1"
+        and os.environ.get("YSTAR_HOOK_V2_POLICY_STATE") == "enabled_after_regression"
+    )
 
 def emit_cieu_or_fallback(event_dict, reason_tag):
     """
@@ -78,14 +93,16 @@ try:
     # (Layer 3) before check_hook (Layer 2+1).  All hook_wrapper logic
     # (CEO guard, CZL-159, agent stack, dispatch gate) is bypassed — those
     # must be registered as router rules for v2 to be fully equivalent.
-    # CZL-HOOK-V2-BYPASS 2026-04-23 — Board shell sed disabled v2 path after
+    # CZL-HOOK-V2-BYPASS 2026-04-23 — v2 path is staged as
+    # blocked_pending_evidence after fail-closed deadlock, not permanently
+    # disabled. See HOOK_V2_POLICY above for the resolver/approval shape.
     # 3h fail-closed deadlock (see reports/incidents/2026-04-23-hook-fail-closed-deadlock.md
     # and reports/ceo/iron_rule_incident_response_3channel_20260423.md).
     # Pairs with Y-star-gov commit f6374ef (v2 adapter marker fallback symmetric fix).
     # Re-enable ONLY after: (1) v2 adapter marker override symmetric with v1 verified;
     # (2) YSTAR_HOOK_V2=1 removed from shell profile/launchd; (3) 10+ regression pass
     # on concurrent subagent marker resolution.
-    if False and os.environ.get("YSTAR_HOOK_V2") == "1":
+    if hook_v2_policy_allows():
         raw = sys.stdin.buffer.read().decode('utf-8-sig').lstrip(chr(0xFEFF))
         payload = json.loads(raw)
         from ystar.adapters.hook import handle_hook_event
@@ -739,4 +756,3 @@ except Exception as e:
     log(traceback.format_exc())
     # Output empty JSON (allow) for edge failures so Claude Code doesn't crash
     sys.stdout.write("{}")
-

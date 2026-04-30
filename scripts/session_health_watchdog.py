@@ -14,6 +14,8 @@ Monitors:
 Triggers graceful save when ANY yellow-line threshold reached.
 
 Board override: `touch /tmp/ystar_no_auto_restart`
+L7.0R policy: this is not a permanent disabled state; it is a
+blocked_pending_human_review pause with auto-detect still available.
 
 Usage:
     python3 scripts/session_health_watchdog.py [--once]
@@ -41,6 +43,13 @@ THRESHOLD_RUNTIME_HOURS = 6.0  # Hard constraint
 THRESHOLD_DENY_RATE = 0.30  # 30% deny rate in recent 50
 THRESHOLD_SUBAGENT_KB = 500
 THRESHOLD_DRIFT_COUNT = 3  # out of recent 10 CIEU events
+WATCHDOG_POLICY = {
+    "policy_ref": "policy/action_capability_registry.json",
+    "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+    "allowed_capability_stage": "observe",
+    "override_state": "blocked_pending_human_review",
+    "auto_detect_available": True,
+}
 
 
 class HealthMetrics:
@@ -272,7 +281,7 @@ def emit_cieu_health_check(company_root: Path, metrics: HealthMetrics):
 
 
 def check_board_override() -> bool:
-    """Check if Board disabled auto-restart"""
+    """Check if Board paused auto-restart behind the human review policy gate."""
     return Path("/tmp/ystar_no_auto_restart").exists()
 
 
@@ -280,7 +289,8 @@ def run_once(company_root: Path) -> Tuple[HealthMetrics, bool]:
     """Run single health check, return (metrics, triggered)"""
 
     if check_board_override():
-        print("[WATCHDOG] Auto-restart disabled by Board (/tmp/ystar_no_auto_restart exists)")
+        print("[WATCHDOG] Auto-restart paused by Board policy override (/tmp/ystar_no_auto_restart exists)")
+        print(f"[WATCHDOG] Policy state: {WATCHDOG_POLICY['override_state']}; auto_detect_available=true")
         return HealthMetrics(), False
 
     metrics = collect_health_metrics(company_root)
@@ -311,7 +321,7 @@ def event_loop(company_root: Path):
     """Event-driven monitoring loop (watches JSONL file changes)"""
     print("[WATCHDOG] Starting event-driven health monitoring...")
     print(f"[WATCHDOG] Company root: {company_root}")
-    print(f"[WATCHDOG] Board override: touch /tmp/ystar_no_auto_restart to disable")
+    print("[WATCHDOG] Board override: touch /tmp/ystar_no_auto_restart to pause auto-restart pending human review")
     print("")
 
     last_check_time = time.time()
@@ -320,7 +330,7 @@ def event_loop(company_root: Path):
     while True:
         # Check for Board override
         if check_board_override():
-            print("[WATCHDOG] Auto-restart disabled by Board. Exiting.")
+            print(f"[WATCHDOG] Auto-restart paused by Board. Policy state: {WATCHDOG_POLICY['override_state']}. Exiting.")
             break
 
         # Get current JSONL size

@@ -27,6 +27,14 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SESSION_PATH = REPO_ROOT / ".ystar_session.json"
+MEMORY_POLICY = {
+    "policy_ref": "policy/action_capability_registry.json",
+    "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+    "writeback_policy_ref": "policy/writeback_policy.json",
+    "missing_config_state": "blocked_pending_config",
+    "safe_metadata_allowed": True,
+    "raw_db_ingestion_hard_forbidden": True,
+}
 
 
 def load_session():
@@ -41,7 +49,7 @@ def get_memory_db():
     session = load_session()
     db_path = session.get("memory_db")
     if not db_path:
-        print("ERROR: memory_db not configured in session.json", file=sys.stderr)
+        print("ERROR: memory_db blocked_pending_config in session.json", file=sys.stderr)
         sys.exit(2)
     db_path = Path(db_path).expanduser()
     if not db_path.exists():
@@ -87,7 +95,7 @@ def get_current_env():
     paths_status = {}
     for name, path in critical_paths.items():
         if path is None:
-            paths_status[name] = "not_configured"
+            paths_status[name] = MEMORY_POLICY["missing_config_state"]
         else:
             paths_status[name] = "exists" if path.exists() else "missing"
 

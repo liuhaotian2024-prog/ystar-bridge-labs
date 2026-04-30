@@ -75,6 +75,9 @@ def build() -> None:
         "next_safe_step": "market hypothesis table",
         "forbidden_actions": FORBIDDEN,
         "human_approval_required_before_external_action": True,
+        "read_only_revenue_work_allowed": True,
+        "draft_and_planning_allowed": True,
+        "actual_execution_blocked_until_approval": True,
         "expected_revenue_path": "internal service packaging, then review-gated pilot offers after explicit approval",
         "uncertainty_level": "bounded_but_requires_more_market_observation",
     }

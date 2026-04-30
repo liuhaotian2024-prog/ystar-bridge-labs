@@ -1,0 +1,10 @@
+{
+  "schema_version": "v0",
+  "owner_burden_reductions": [
+    "Policy helper centralizes decisions so owners do not interpret scattered disabled/blocked states.",
+    "Owner cockpit now points toward one-command launchers/resolvers/orchestrators rather than manual URLs or worktree coordination.",
+    "Revenue radar states discovery/draft/planning can proceed without asking the owner to manually search."
+  ],
+  "manual_url_request_occurred": false,
+  "manual_env_export_required": false
+}

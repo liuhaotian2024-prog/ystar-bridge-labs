@@ -1,0 +1,22 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.0R",
+  "milestone_name": "P0/P1 Conservatism Debt Remediation Sprint",
+  "generated_at_utc": "2026-04-30T01:19:14Z",
+  "baseline_commit": "8ba77305",
+  "p0_findings_considered": 10,
+  "p0_files_patched": 6,
+  "p1_findings_considered": 40,
+  "p1_files_patched": 71,
+  "patched_files_count": 80,
+  "policy_decision_helper_path": "policy/policy_decision.py",
+  "remaining_p0_count": 18,
+  "remaining_p1_count": 208,
+  "ask_user_for_url_occurred": false,
+  "external_side_effects_occurred": false,
+  "core_writeback_occurred": false,
+  "secret_values_serialized": false,
+  "y_star_gov_modified": false,
+  "gov_mcp_modified": false,
+  "db_log_wal_shm_active_agent_marker_content_read": false
+}

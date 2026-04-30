@@ -16,7 +16,8 @@ Architecture:
   2. If session exists -> post directly (headless, fully automated)
   3. If no session -> one-time headful login, then save state
   4. Also extracts decrypted cookies via CDP for API-based operations
-  5. Dual posting: API (fast, headless) + Playwright UI (fallback)
+  5. Dual posting is L7.0R staged: draft/session checks are allowed, but
+     actual posting is blocked_pending_human_review unless explicitly approved.
 
 Usage:
     python scripts/linkedin_auth.py login             # One-time: login & save session
@@ -55,6 +56,35 @@ USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 )
+POLICY_REFS = {
+    "action_capability_policy_ref": "policy/action_capability_registry.json",
+    "approval_state_machine_ref": "policy/approval_state_machine.json",
+    "revenue_policy_ref": "policy/revenue_action_policy.json",
+}
+
+
+def _policy_decision(action_type: str, requested_stage: str, approval_state: str) -> dict:
+    """Resolve external-action policy without exposing secrets or requiring network."""
+    try:
+        repo_root = SCRIPT_DIR.parent
+        if str(repo_root) not in sys.path:
+            sys.path.insert(0, str(repo_root))
+        from policy.policy_decision import decide_action_capability
+        return decide_action_capability(action_type, requested_stage, approval_state)
+    except Exception as exc:
+        return {
+            "decision": "blocked_pending_config",
+            "reason": f"policy helper unavailable: {exc}",
+            "policy_ref": POLICY_REFS["approval_state_machine_ref"],
+            "allowed_stage": requested_stage,
+            "requires_human_approval": True,
+            "hard_boundary_preserved": True,
+        }
+
+
+def _approved_for_posting() -> dict:
+    approval_state = os.environ.get("YSTAR_LINKEDIN_POST_APPROVAL_STATE", "human_review_required")
+    return _policy_decision("social_posting", "execute_after_approval", approval_state)
 
 
 # ─── Playwright Session Management ───────────────────────────────────────────
@@ -199,6 +229,12 @@ async def cmd_test():
 
 async def cmd_post(text: str):
     """Post to LinkedIn. Tries API first, falls back to Playwright UI automation."""
+    policy = _approved_for_posting()
+    if policy["decision"] not in ("allowed", "allowed_after_human_approval"):
+        print(f"[Post] BLOCKED: {policy['decision']} — {policy['reason']}")
+        print("[Post] Draft/planning is allowed; actual social posting requires explicit human approval.")
+        return False
+
     print(f"[Post] Posting ({len(text)} chars)...")
 
     # Method 1: API-based posting (fast, headless)

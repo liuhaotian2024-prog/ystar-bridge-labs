@@ -41,6 +41,25 @@
     "execution_requires_human_approval": false,
     "migration_note": "L7.0Q first migration adds staged policy references while preserving explicit safety text.",
     "revenue_execution_requires_human_approval": true
+  },
+  "l7_0r_staged_policy_remediation": {
+    "policy_decision_helper": "policy/policy_decision.py",
+    "principle": "Do not block revenue work. Block unapproved revenue side effects.",
+    "allowed_capability_stages": [
+      "observe",
+      "search",
+      "read",
+      "extract",
+      "analyze",
+      "draft",
+      "plan",
+      "request_approval"
+    ],
+    "read_only_discovery_allowed": true,
+    "draft_allowed": true,
+    "actual_execution_blocked_until_approval": true,
+    "actual_core_writeback_blocked_until_approval": true,
+    "owner_manual_burden_replacement": "Prefer one-command launchers, resolvers, and orchestrators over manual URLs, manual env exports, manual worktrees, or manual merges."
   }
 }
 ```

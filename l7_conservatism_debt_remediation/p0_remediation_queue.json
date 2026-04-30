@@ -1,0 +1,297 @@
+{
+  "schema_version": "v0",
+  "source": "l7_full_repo_conservatism_scan/policy_migration_map.json",
+  "total_p0_items": 28,
+  "considered_items": [
+    {
+      "file_path": "scripts/aiden_dream.py",
+      "migration_priority": "P0",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "scripts/hook_wrapper.py",
+      "migration_priority": "P0",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "scripts/session_health_watchdog.py",
+      "migration_priority": "P0",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "scripts/tests/test_behavior_gov_engine.py",
+      "migration_priority": "P0",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "l6_real_controlled_external_observation_mission_sprint/l6_13_generation_manifest.json",
+      "migration_priority": "P0",
+      "current_pattern": "ask_user_url",
+      "target_policy_ref": "policy/owner_burden_reduction_policy.json",
+      "recommended_patch_type": "replace_user_manual_step_with_launcher",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "owner automation"
+    },
+    {
+      "file_path": "controlled_no_action_receipts/no_side_effect_receipt.json",
+      "migration_priority": "P0",
+      "current_pattern": "ask_user_url",
+      "target_policy_ref": "policy/owner_burden_reduction_policy.json",
+      "recommended_patch_type": "replace_user_manual_step_with_launcher",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "owner automation"
+    },
+    {
+      "file_path": "controlled_no_action_receipts/no_action_receipt_index.json",
+      "migration_priority": "P0",
+      "current_pattern": "ask_user_url",
+      "target_policy_ref": "policy/owner_burden_reduction_policy.json",
+      "recommended_patch_type": "replace_user_manual_step_with_launcher",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "owner automation"
+    },
+    {
+      "file_path": "scripts/governance_boot.sh",
+      "migration_priority": "P0",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "scripts/memory_consistency_check.py",
+      "migration_priority": "P0",
+      "current_pattern": "not_configured",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "scripts/linkedin_auth.py",
+      "migration_priority": "P0",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "activation path"
+    }
+  ],
+  "patched_files": [
+    "scripts/aiden_dream.py",
+    "scripts/governance_boot.sh",
+    "scripts/hook_wrapper.py",
+    "scripts/linkedin_auth.py",
+    "scripts/memory_consistency_check.py",
+    "scripts/session_health_watchdog.py"
+  ],
+  "deferred_items": [
+    {
+      "file_path": "ceo_command_brief/l6_16_ceo_command_brief.json",
+      "migration_priority": "P0",
+      "current_pattern": "ask_user_url",
+      "target_policy_ref": "policy/owner_burden_reduction_policy.json",
+      "recommended_patch_type": "replace_user_manual_step_with_launcher",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "owner automation"
+    },
+    {
+      "file_path": "real_no_action_receipts/no_side_effect_receipt.json",
+      "migration_priority": "P0",
+      "current_pattern": "ask_user_url",
+      "target_policy_ref": "policy/owner_burden_reduction_policy.json",
+      "recommended_patch_type": "replace_user_manual_step_with_launcher",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "owner automation"
+    },
+    {
+      "file_path": "l6_15_no_action_receipts/no_side_effect_receipt.json",
+      "migration_priority": "P0",
+      "current_pattern": "ask_user_url",
+      "target_policy_ref": "policy/owner_burden_reduction_policy.json",
+      "recommended_patch_type": "replace_user_manual_step_with_launcher",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "owner automation"
+    },
+    {
+      "file_path": "scripts/platform_wave1_livefire_20260424.md",
+      "migration_priority": "P0",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "internal_strategy_memo/l6_16_internal_strategy_memo.json",
+      "migration_priority": "P0",
+      "current_pattern": "ask_user_url",
+      "target_policy_ref": "policy/owner_burden_reduction_policy.json",
+      "recommended_patch_type": "replace_user_manual_step_with_launcher",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "owner automation"
+    },
+    {
+      "file_path": "decision_boundary_packet/decision_boundary_packet.json",
+      "migration_priority": "P0",
+      "current_pattern": "ask_user_url",
+      "target_policy_ref": "policy/owner_burden_reduction_policy.json",
+      "recommended_patch_type": "replace_user_manual_step_with_launcher",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "owner automation"
+    },
+    {
+      "file_path": "l6_human_review_decision_boundary_sprint/l6_15_scope.json",
+      "migration_priority": "P0",
+      "current_pattern": "ask_user_url",
+      "target_policy_ref": "policy/owner_burden_reduction_policy.json",
+      "recommended_patch_type": "replace_user_manual_step_with_launcher",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "owner automation"
+    },
+    {
+      "file_path": "l6_16_no_action_receipts/no_action_receipt_report.md",
+      "migration_priority": "P0",
+      "current_pattern": "ask_user_url",
+      "target_policy_ref": "policy/owner_burden_reduction_policy.json",
+      "recommended_patch_type": "replace_user_manual_step_with_launcher",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "owner automation"
+    },
+    {
+      "file_path": "internal_strategy_memo/l6_16_internal_strategy_memo.md",
+      "migration_priority": "P0",
+      "current_pattern": "ask_user_url",
+      "target_policy_ref": "policy/owner_burden_reduction_policy.json",
+      "recommended_patch_type": "replace_user_manual_step_with_launcher",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "owner automation"
+    },
+    {
+      "file_path": "l6_14_no_action_receipts/no_side_effect_receipt.json",
+      "migration_priority": "P0",
+      "current_pattern": "ask_user_url",
+      "target_policy_ref": "policy/owner_burden_reduction_policy.json",
+      "recommended_patch_type": "replace_user_manual_step_with_launcher",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "owner automation"
+    },
+    {
+      "file_path": "l6_16_no_action_receipts/no_side_effect_receipt.json",
+      "migration_priority": "P0",
+      "current_pattern": "ask_user_url",
+      "target_policy_ref": "policy/owner_burden_reduction_policy.json",
+      "recommended_patch_type": "replace_user_manual_step_with_launcher",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "owner automation"
+    },
+    {
+      "file_path": "scripts/aiden_continuity_guardian.sh",
+      "migration_priority": "P0",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "real_no_action_receipts/no_action_receipt_index.json",
+      "migration_priority": "P0",
+      "current_pattern": "ask_user_url",
+      "target_policy_ref": "policy/owner_burden_reduction_policy.json",
+      "recommended_patch_type": "replace_user_manual_step_with_launcher",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "owner automation"
+    },
+    {
+      "file_path": "l6_14_no_action_receipts/no_action_receipt_index.json",
+      "migration_priority": "P0",
+      "current_pattern": "ask_user_url",
+      "target_policy_ref": "policy/owner_burden_reduction_policy.json",
+      "recommended_patch_type": "replace_user_manual_step_with_launcher",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "owner automation"
+    },
+    {
+      "file_path": "scripts/l6_13_check_controlled_observation_env.sh",
+      "migration_priority": "P0",
+      "current_pattern": "disabled",
+      "target_policy_ref": "policy/action_capability_registry.json",
+      "recommended_patch_type": "convert_disabled_to_auto_detect",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "activation path"
+    },
+    {
+      "file_path": "controlled_no_action_receipts/no_ask_user_url_receipt.json",
+      "migration_priority": "P0",
+      "current_pattern": "ask_user_url",
+      "target_policy_ref": "policy/owner_burden_reduction_policy.json",
+      "recommended_patch_type": "replace_user_manual_step_with_launcher",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "owner automation"
+    },
+    {
+      "file_path": "l6_15_no_action_receipts/no_action_receipt_report.md",
+      "migration_priority": "P0",
+      "current_pattern": "ask-user-URL",
+      "target_policy_ref": "policy/owner_burden_reduction_policy.json",
+      "recommended_patch_type": "replace_user_manual_step_with_launcher",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "owner automation"
+    },
+    {
+      "file_path": "real_no_action_receipts/no_ask_user_url_receipt.json",
+      "migration_priority": "P0",
+      "current_pattern": "ask_user_url",
+      "target_policy_ref": "policy/owner_burden_reduction_policy.json",
+      "recommended_patch_type": "replace_user_manual_step_with_launcher",
+      "risk_of_patch": "medium",
+      "suggested_milestone": "L7.0Q2-p0-migration",
+      "expected_capability_gain": "owner automation"
+    }
+  ]
+}
