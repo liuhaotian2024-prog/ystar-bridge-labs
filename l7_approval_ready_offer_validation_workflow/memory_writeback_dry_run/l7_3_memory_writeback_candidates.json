@@ -1,0 +1,96 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.3",
+  "milestone_name": "Approval-Ready Offer Validation and Service Delivery Workflow",
+  "run_id": "l7_3_offer_validation_workflow_run_001",
+  "packet_type": "memory_writeback_candidates",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "candidates": [
+    {
+      "candidate_id": "l7_3_writeback_candidate_001",
+      "source_artifact": "selected cash path",
+      "proposed_update": "Record path_001 as selected L7.3 cash validation path.",
+      "target_layer": "agent working memory / secretary archive candidate",
+      "evidence_basis": [
+        "L7.2 money path decision",
+        "L7.3 generated workflow artifacts"
+      ],
+      "reason": "Prepare future reviewed learning without writing permanent state.",
+      "expected_value": "Keeps commercial validation context reusable after approval.",
+      "risk_if_wrong": "Could over-prioritize an unvalidated offer if written without review.",
+      "required_human_approval": true,
+      "default_decision": "blocked_until_human_approved",
+      "dry_run_only": true
+    },
+    {
+      "candidate_id": "l7_3_writeback_candidate_002",
+      "source_artifact": "service offer definition",
+      "proposed_update": "Record the Founder AI Workflow Audit & CEO Command Brief Sprint offer definition.",
+      "target_layer": "agent working memory / secretary archive candidate",
+      "evidence_basis": [
+        "L7.2 money path decision",
+        "L7.3 generated workflow artifacts"
+      ],
+      "reason": "Prepare future reviewed learning without writing permanent state.",
+      "expected_value": "Keeps commercial validation context reusable after approval.",
+      "risk_if_wrong": "Could over-prioritize an unvalidated offer if written without review.",
+      "required_human_approval": true,
+      "default_decision": "blocked_until_human_approved",
+      "dry_run_only": true
+    },
+    {
+      "candidate_id": "l7_3_writeback_candidate_003",
+      "source_artifact": "pricing hypothesis",
+      "proposed_update": "Record low/mid/high and first-test pricing hypothesis.",
+      "target_layer": "agent working memory / secretary archive candidate",
+      "evidence_basis": [
+        "L7.2 money path decision",
+        "L7.3 generated workflow artifacts"
+      ],
+      "reason": "Prepare future reviewed learning without writing permanent state.",
+      "expected_value": "Keeps commercial validation context reusable after approval.",
+      "risk_if_wrong": "Could over-prioritize an unvalidated offer if written without review.",
+      "required_human_approval": true,
+      "default_decision": "blocked_until_human_approved",
+      "dry_run_only": true
+    },
+    {
+      "candidate_id": "l7_3_writeback_candidate_004",
+      "source_artifact": "delivery workflow",
+      "proposed_update": "Record the 11-step service delivery workflow.",
+      "target_layer": "agent working memory / secretary archive candidate",
+      "evidence_basis": [
+        "L7.2 money path decision",
+        "L7.3 generated workflow artifacts"
+      ],
+      "reason": "Prepare future reviewed learning without writing permanent state.",
+      "expected_value": "Keeps commercial validation context reusable after approval.",
+      "risk_if_wrong": "Could over-prioritize an unvalidated offer if written without review.",
+      "required_human_approval": true,
+      "default_decision": "blocked_until_human_approved",
+      "dry_run_only": true
+    },
+    {
+      "candidate_id": "l7_3_writeback_candidate_005",
+      "source_artifact": "outreach approval state",
+      "proposed_update": "Record that outreach remains blocked until human approval.",
+      "target_layer": "agent working memory / secretary archive candidate",
+      "evidence_basis": [
+        "L7.2 money path decision",
+        "L7.3 generated workflow artifacts"
+      ],
+      "reason": "Prepare future reviewed learning without writing permanent state.",
+      "expected_value": "Keeps commercial validation context reusable after approval.",
+      "risk_if_wrong": "Could over-prioritize an unvalidated offer if written without review.",
+      "required_human_approval": true,
+      "default_decision": "blocked_until_human_approved",
+      "dry_run_only": true
+    }
+  ]
+}

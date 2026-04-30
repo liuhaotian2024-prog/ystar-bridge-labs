@@ -1,0 +1,55 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.3",
+  "milestone_name": "Approval-Ready Offer Validation and Service Delivery Workflow",
+  "run_id": "l7_3_offer_validation_workflow_run_001",
+  "packet_type": "governed_observation_delivery_template",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "template_only": true,
+  "customer_observation_executed": false,
+  "work_order": {
+    "work_order_id": "customer_project_work_order_template",
+    "scope": "one narrow workflow or strategy decision",
+    "approval_required_before_customer_use": true
+  },
+  "query_plan": {
+    "max_queries": 8,
+    "source_preference": [
+      "official",
+      "documentation",
+      "institutional",
+      "reputable secondary"
+    ],
+    "no_user_url_required": true
+  },
+  "source_policy": {
+    "public_read_only": true,
+    "block_login_payment_form_private_network": true,
+    "no_private_data_collection": true
+  },
+  "budget": {
+    "max_pages_opened": 8,
+    "max_domains": 5,
+    "max_crawl_depth": 1,
+    "max_external_reads": 12
+  },
+  "evidence_packet_schema": [
+    "source_url",
+    "final_url",
+    "source_quality_label",
+    "page_read_id",
+    "extracted_text_excerpt",
+    "bounded_claim",
+    "support_status",
+    "limitations"
+  ],
+  "conflict_handling": "State conflict and residual; do not overclaim certainty.",
+  "no_side_effect_boundary": "No outreach, form submission, login, payment, publication, or writeback.",
+  "report_output": "internal command brief plus evidence appendix"
+}

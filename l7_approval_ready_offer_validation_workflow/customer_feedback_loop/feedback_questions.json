@@ -1,0 +1,26 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.3",
+  "milestone_name": "Approval-Ready Offer Validation and Service Delivery Workflow",
+  "run_id": "l7_3_offer_validation_workflow_run_001",
+  "packet_type": "feedback_questions",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "customer_contact_status": "not_contacted",
+  "questions": [
+    "How severe was the original pain?",
+    "Would you pay for this if delivered in 3-5 business days?",
+    "What trust concerns would stop you?",
+    "Was the deliverable clear?",
+    "How urgent is this decision?",
+    "What price would feel acceptable for a first sprint?",
+    "What objections do you have?",
+    "Would you refer another founder?",
+    "Would you buy a repeat sprint?"
+  ]
+}

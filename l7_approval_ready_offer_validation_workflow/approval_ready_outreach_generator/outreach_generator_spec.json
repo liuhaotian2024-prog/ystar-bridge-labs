@@ -1,0 +1,57 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.3",
+  "milestone_name": "Approval-Ready Offer Validation and Service Delivery Workflow",
+  "run_id": "l7_3_offer_validation_workflow_run_001",
+  "packet_type": "outreach_generator_spec",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "purpose": "Generate draft-only outreach messages for human review; never auto-send.",
+  "allowed_claims": [
+    "We can prepare an internal AI workflow audit and CEO command brief.",
+    "The sprint is designed for read-only observation and evidence-backed decision support.",
+    "External actions, publication, and payment are not automated."
+  ],
+  "claims_requiring_human_review": [
+    "Any claim about customer-specific fit",
+    "Any quantified ROI or revenue claim",
+    "Any mention of compliance suitability",
+    "Any statement that implies endorsement by a third party"
+  ],
+  "forbidden_claims": [
+    "Guaranteed revenue",
+    "Guaranteed compliance",
+    "Autonomous execution without approval",
+    "Access to private systems without explicit permission"
+  ],
+  "personalization_rules": [
+    "Use only public, read-only observations.",
+    "Avoid sensitive personal details.",
+    "Keep personalization optional and caveated.",
+    "Do not pretend a relationship exists."
+  ],
+  "tone_rules": [
+    "Plainspoken",
+    "Founder-to-founder respectful",
+    "Low pressure",
+    "Specific about the internal deliverable",
+    "Clear that the message is a draft pending approval"
+  ],
+  "evidence_caveat_insertion_rules": [
+    "Attach evidence basis as internal notes, not external proof claims.",
+    "Include caveats where claims are not yet validated by customers.",
+    "Keep customer-specific claims out until reviewed."
+  ],
+  "approval_requirements": [
+    "Human approval before sending",
+    "Human review of recipient",
+    "Human review of claims",
+    "Post-action receipt after any approved send"
+  ],
+  "no_auto_send": true
+}

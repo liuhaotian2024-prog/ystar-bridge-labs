@@ -1,0 +1,64 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.3",
+  "milestone_name": "Approval-Ready Offer Validation and Service Delivery Workflow",
+  "run_id": "l7_3_offer_validation_workflow_run_001",
+  "packet_type": "service_offer_definition",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "offer_name": "Founder AI Workflow Audit & CEO Command Brief Sprint",
+  "target_customer": "AI startup founder with an urgent strategy, research, or AI-workflow decision",
+  "urgent_problem": "The founder needs a fast, evidence-backed internal decision brief without accidentally creating unsafe automation, unsupported claims, or unapproved external actions.",
+  "service_promise": "In a short sprint, produce a governed AI workflow audit, controlled observation summary, risk/caveat map, and CEO-ready command brief for internal decision-making.",
+  "deliverables": [
+    "Founder intake summary",
+    "Current AI workflow audit",
+    "Controlled read-only observation plan",
+    "Evidence packet and source-quality summary",
+    "Risk/conflict boundary",
+    "CEO command brief",
+    "Recommended next safe action",
+    "What not to automate yet list"
+  ],
+  "delivery_time_hypothesis": "3-5 business days for a narrow pilot after intake is complete",
+  "what_is_included": [
+    "Internal workflow analysis",
+    "Read-only market/research observation within budget",
+    "Evidence-backed decision packet",
+    "Governance and approval-boundary recommendations"
+  ],
+  "what_is_not_included": [
+    "Autonomous outreach",
+    "Publication",
+    "Payment processing",
+    "Account creation",
+    "Legal/compliance certification",
+    "Permanent memory or strategy writeback"
+  ],
+  "required_customer_inputs": [
+    "Urgent decision or workflow question",
+    "Current AI tools/workflow",
+    "Known constraints and risks",
+    "Preferred output format",
+    "What must not be automated"
+  ],
+  "output_format": "Internal PDF/Markdown-style command brief plus structured JSON evidence appendix if needed",
+  "evidence_basis": [
+    "L6.13-L6.16 governed observation and review artifacts",
+    "L7.1 offer hypotheses",
+    "L7.2 shortest cash realization path analysis"
+  ],
+  "caveats": [
+    "This is a founder-decision support service, not legal advice.",
+    "External claims require human review before use.",
+    "Customer-sensitive content must be reviewed before delivery."
+  ],
+  "trust_boundary": "Trust comes from transparent evidence, caveats, no-action receipts, and human approval gates rather than autonomous claims.",
+  "approval_required_before_external_claims": true,
+  "publication_status": "internal_review_ready_not_published"
+}

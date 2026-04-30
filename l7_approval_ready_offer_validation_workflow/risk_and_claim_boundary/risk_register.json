@@ -1,0 +1,34 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.3",
+  "milestone_name": "Approval-Ready Offer Validation and Service Delivery Workflow",
+  "run_id": "l7_3_offer_validation_workflow_run_001",
+  "packet_type": "risk_register",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "risks": [
+    {
+      "risk_id": "risk_001",
+      "description": "Overclaiming revenue or compliance outcomes",
+      "severity": "high",
+      "mitigation": "Use internal-review-only language and human claim review."
+    },
+    {
+      "risk_id": "risk_002",
+      "description": "Trust gap before first case study",
+      "severity": "medium",
+      "mitigation": "Start with small paid pilot and transparent artifacts."
+    },
+    {
+      "risk_id": "risk_003",
+      "description": "Customer-sensitive content exposure",
+      "severity": "high",
+      "mitigation": "Review customer content before delivery and avoid private credentials."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.3",
+  "milestone_name": "Approval-Ready Offer Validation and Service Delivery Workflow",
+  "run_id": "l7_3_offer_validation_workflow_run_001",
+  "packet_type": "selected_cash_path",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "path_id": "path_001",
+  "path_name": "Founder AI workflow audit and CEO command brief sprint",
+  "why_selected": "It is the L7.2 primary shortest-cash path and can start as a service using existing governed observation, evidence, review, and command-brief capabilities.",
+  "shortest_cash_logic": {
+    "fewest_new_tools": true,
+    "can_start_as_service": true,
+    "does_not_require_full_product": true,
+    "first_cash_signal": "paid pilot, strong-intent reply, or manually approved discovery call",
+    "approval_boundary": "customer contact remains blocked until human approval"
+  },
+  "first_possible_buyer": "AI startup founder with urgent strategy/research decision",
+  "first_possible_paid_offer": "Done-for-you governed observation + internal CEO command brief",
+  "estimated_paid_signal": "7-14 days for strong-intent signal, 14-30 days for first paid pilot if approved outreach occurs",
+  "minimum_tool_needed": "approval-ready outreach draft and service delivery workflow generator",
+  "bridge_to_long_term_strategy": "The first service creates proof, language, artifacts, and trust that can later become templates, paid support, and productized agent-governance tooling.",
+  "key_caveats": [
+    "No outreach is sent in L7.3.",
+    "All claims are internal-review-ready, not publication-ready.",
+    "Payment and customer commitments require separate human approval.",
+    "The first buyer hypothesis is not settled truth until validated."
+  ]
+}

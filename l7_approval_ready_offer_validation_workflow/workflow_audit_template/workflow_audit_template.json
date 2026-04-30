@@ -1,0 +1,62 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.3",
+  "milestone_name": "Approval-Ready Offer Validation and Service Delivery Workflow",
+  "run_id": "l7_3_offer_validation_workflow_run_001",
+  "packet_type": "workflow_audit_template",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "template_only": true,
+  "audit_dimensions": [
+    {
+      "dimension_id": "audit_001",
+      "dimension": "current AI workflow",
+      "output": "finding, evidence basis, risk, and recommended next safe step"
+    },
+    {
+      "dimension_id": "audit_002",
+      "dimension": "decision bottlenecks",
+      "output": "finding, evidence basis, risk, and recommended next safe step"
+    },
+    {
+      "dimension_id": "audit_003",
+      "dimension": "evidence gaps",
+      "output": "finding, evidence basis, risk, and recommended next safe step"
+    },
+    {
+      "dimension_id": "audit_004",
+      "dimension": "automation risk",
+      "output": "finding, evidence basis, risk, and recommended next safe step"
+    },
+    {
+      "dimension_id": "audit_005",
+      "dimension": "governance gaps",
+      "output": "finding, evidence basis, risk, and recommended next safe step"
+    },
+    {
+      "dimension_id": "audit_006",
+      "dimension": "approval gaps",
+      "output": "finding, evidence basis, risk, and recommended next safe step"
+    },
+    {
+      "dimension_id": "audit_007",
+      "dimension": "owner/team burden",
+      "output": "finding, evidence basis, risk, and recommended next safe step"
+    },
+    {
+      "dimension_id": "audit_008",
+      "dimension": "fastest improvement path",
+      "output": "finding, evidence basis, risk, and recommended next safe step"
+    },
+    {
+      "dimension_id": "audit_009",
+      "dimension": "tool recommendations",
+      "output": "finding, evidence basis, risk, and recommended next safe step"
+    }
+  ]
+}

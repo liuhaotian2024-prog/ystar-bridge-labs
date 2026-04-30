@@ -1,0 +1,55 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.3",
+  "milestone_name": "Approval-Ready Offer Validation and Service Delivery Workflow",
+  "run_id": "l7_3_offer_validation_workflow_run_001",
+  "packet_type": "target_customer_profile",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "buyer_persona": "AI startup founder or technical operator making an urgent workflow, strategy, or market decision",
+  "pain_points": [
+    "Too many AI tools and unclear operating boundary",
+    "No evidence-backed decision brief for what to automate next",
+    "Fear of unsafe automation, unsupported claims, or accidental external action",
+    "Founder time is scarce and decisions need fast synthesis"
+  ],
+  "buying_triggers": [
+    "Preparing investor, customer, or product strategy decisions",
+    "Adopting coding agents or AI workflow automation",
+    "Needing a fast audit before shipping AI-enabled operations",
+    "Wanting an internal command brief without hiring a full consultant team"
+  ],
+  "urgency_signals": [
+    "Mentions AI agent workflow confusion",
+    "Needs decision support within days or weeks",
+    "Has founder-led operations bottleneck",
+    "Uses Codex, Claude Code, OpenClaw-like tools, or agent workflows"
+  ],
+  "disqualification_criteria": [
+    "Requests guaranteed revenue outcomes",
+    "Requires legal certification",
+    "Requires autonomous outreach or account action before approval",
+    "Cannot provide a narrow workflow/decision focus"
+  ],
+  "approved_read_only_discovery_methods": [
+    "public founder posts and company pages",
+    "public product docs and changelogs",
+    "public job posts describing workflow needs",
+    "public funding/RFP pages where no login or form submission is needed"
+  ],
+  "private_data_policy": "Do not collect private personal data or contact any person in this sprint.",
+  "why_they_might_pay": "They need a fast, credible internal decision artifact that reduces uncertainty and founder workload.",
+  "trust_barriers": [
+    "New service category",
+    "No public case studies yet",
+    "Need to avoid overclaiming agent autonomy",
+    "Need human-reviewed outreach and delivery language"
+  ],
+  "first_conversation_goal": "Confirm whether the founder has a narrow urgent decision that a governed workflow audit and command brief can help resolve.",
+  "approval_required_before_contact": true
+}

@@ -1,0 +1,254 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.3",
+  "milestone_name": "Approval-Ready Offer Validation and Service Delivery Workflow",
+  "run_id": "l7_3_offer_validation_workflow_run_001",
+  "packet_type": "service_delivery_workflow",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "workflow_name": "Founder AI Workflow Audit & CEO Command Brief Sprint Delivery",
+  "paid_pilot_status": "not_executed_in_l7_3",
+  "steps": [
+    {
+      "step_id": "step_001",
+      "name": "Intake",
+      "owner_agent": "Secretary",
+      "inputs": [
+        "customer intake answers"
+      ],
+      "outputs": [
+        "intake summary"
+      ],
+      "quality_check": "Completeness and no private credential request",
+      "approval_required": true,
+      "no_go_boundaries": [
+        "no login",
+        "no payment",
+        "no form submission",
+        "no publication",
+        "no customer commitment without approval",
+        "no core writeback"
+      ]
+    },
+    {
+      "step_id": "step_002",
+      "name": "Customer workflow/problem framing",
+      "owner_agent": "Operator/COO",
+      "inputs": [
+        "intake summary"
+      ],
+      "outputs": [
+        "workflow problem frame"
+      ],
+      "quality_check": "One narrow decision is identified",
+      "approval_required": false,
+      "no_go_boundaries": [
+        "no login",
+        "no payment",
+        "no form submission",
+        "no publication",
+        "no customer commitment without approval",
+        "no core writeback"
+      ]
+    },
+    {
+      "step_id": "step_003",
+      "name": "Controlled external observation",
+      "owner_agent": "Researcher",
+      "inputs": [
+        "work order",
+        "budget"
+      ],
+      "outputs": [
+        "source list",
+        "page-read receipts"
+      ],
+      "quality_check": "Read-only and budgeted",
+      "approval_required": false,
+      "no_go_boundaries": [
+        "no login",
+        "no payment",
+        "no form submission",
+        "no publication",
+        "no customer commitment without approval",
+        "no core writeback"
+      ]
+    },
+    {
+      "step_id": "step_004",
+      "name": "Internal asset/workflow analysis",
+      "owner_agent": "Engineer/CTO",
+      "inputs": [
+        "workflow problem frame"
+      ],
+      "outputs": [
+        "capability gap notes"
+      ],
+      "quality_check": "No direct customer system action",
+      "approval_required": false,
+      "no_go_boundaries": [
+        "no login",
+        "no payment",
+        "no form submission",
+        "no publication",
+        "no customer commitment without approval",
+        "no core writeback"
+      ]
+    },
+    {
+      "step_id": "step_005",
+      "name": "Evidence packet generation",
+      "owner_agent": "Researcher",
+      "inputs": [
+        "source text",
+        "claims"
+      ],
+      "outputs": [
+        "evidence packets"
+      ],
+      "quality_check": "Snippets are not treated as evidence",
+      "approval_required": false,
+      "no_go_boundaries": [
+        "no login",
+        "no payment",
+        "no form submission",
+        "no publication",
+        "no customer commitment without approval",
+        "no core writeback"
+      ]
+    },
+    {
+      "step_id": "step_006",
+      "name": "Risk/conflict review",
+      "owner_agent": "Auditor",
+      "inputs": [
+        "evidence packets"
+      ],
+      "outputs": [
+        "risk and conflict boundary"
+      ],
+      "quality_check": "Caveats are explicit",
+      "approval_required": false,
+      "no_go_boundaries": [
+        "no login",
+        "no payment",
+        "no form submission",
+        "no publication",
+        "no customer commitment without approval",
+        "no core writeback"
+      ]
+    },
+    {
+      "step_id": "step_007",
+      "name": "CEO command brief generation",
+      "owner_agent": "CEO",
+      "inputs": [
+        "evidence",
+        "risk boundary"
+      ],
+      "outputs": [
+        "CEO command brief"
+      ],
+      "quality_check": "Recommendations link to evidence",
+      "approval_required": false,
+      "no_go_boundaries": [
+        "no login",
+        "no payment",
+        "no form submission",
+        "no publication",
+        "no customer commitment without approval",
+        "no core writeback"
+      ]
+    },
+    {
+      "step_id": "step_008",
+      "name": "Recommendations",
+      "owner_agent": "CEO",
+      "inputs": [
+        "command brief"
+      ],
+      "outputs": [
+        "next action options"
+      ],
+      "quality_check": "No external execution is implied",
+      "approval_required": false,
+      "no_go_boundaries": [
+        "no login",
+        "no payment",
+        "no form submission",
+        "no publication",
+        "no customer commitment without approval",
+        "no core writeback"
+      ]
+    },
+    {
+      "step_id": "step_009",
+      "name": "Customer-facing summary draft for review",
+      "owner_agent": "Secretary",
+      "inputs": [
+        "command brief"
+      ],
+      "outputs": [
+        "review-only summary draft"
+      ],
+      "quality_check": "Customer-sensitive content reviewed",
+      "approval_required": true,
+      "no_go_boundaries": [
+        "no login",
+        "no payment",
+        "no form submission",
+        "no publication",
+        "no customer commitment without approval",
+        "no core writeback"
+      ]
+    },
+    {
+      "step_id": "step_010",
+      "name": "Feedback collection",
+      "owner_agent": "Operator/COO",
+      "inputs": [
+        "approved feedback questions"
+      ],
+      "outputs": [
+        "feedback notes"
+      ],
+      "quality_check": "Contact requires approval",
+      "approval_required": true,
+      "no_go_boundaries": [
+        "no login",
+        "no payment",
+        "no form submission",
+        "no publication",
+        "no customer commitment without approval",
+        "no core writeback"
+      ]
+    },
+    {
+      "step_id": "step_011",
+      "name": "Post-delivery residual review",
+      "owner_agent": "Auditor",
+      "inputs": [
+        "delivery receipt",
+        "feedback"
+      ],
+      "outputs": [
+        "residual review"
+      ],
+      "quality_check": "No unreviewed writeback",
+      "approval_required": false,
+      "no_go_boundaries": [
+        "no login",
+        "no payment",
+        "no form submission",
+        "no publication",
+        "no customer commitment without approval",
+        "no core writeback"
+      ]
+    }
+  ]
+}

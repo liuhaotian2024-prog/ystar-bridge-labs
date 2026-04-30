@@ -1,0 +1,51 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.3",
+  "milestone_name": "Approval-Ready Offer Validation and Service Delivery Workflow",
+  "run_id": "l7_3_offer_validation_workflow_run_001",
+  "packet_type": "human_approval_request",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "approval_id": "l7_3_outreach_approval_request_001",
+  "action_type": "customer_outreach_email",
+  "draft_ids": [
+    "outreach_draft_001",
+    "outreach_draft_002",
+    "followup_draft_001"
+  ],
+  "selected_draft_recommendation": "outreach_draft_001",
+  "evidence_basis": [
+    "L7.2 shortest cash path selected path_001",
+    "L7.3 service offer definition",
+    "L7.3 target customer profile"
+  ],
+  "risk_summary": [
+    "Cold outreach can create trust risk if claims are too strong.",
+    "Recipient selection must be reviewed manually.",
+    "No payment request or commitment should be included."
+  ],
+  "expected_value": "Validate whether a narrow paid pilot has buyer interest without building a full product first.",
+  "exact_action_that_would_be_approved": "Owner may manually send one reviewed outreach draft to one reviewed recipient outside this sprint.",
+  "exact_actions_still_forbidden": [
+    "automatic send",
+    "bulk outreach",
+    "payment request",
+    "form submission",
+    "customer commitment",
+    "publication",
+    "account creation"
+  ],
+  "default_decision": "blocked_until_human_approved",
+  "approval_options": [
+    "approve_one_draft_for_manual_send",
+    "revise_draft",
+    "reject_current_offer",
+    "run_more_read_only_validation"
+  ],
+  "approval_granted": false
+}

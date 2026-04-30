@@ -1,0 +1,63 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.3",
+  "milestone_name": "Approval-Ready Offer Validation and Service Delivery Workflow",
+  "run_id": "l7_3_offer_validation_workflow_run_001",
+  "packet_type": "customer_intake_form_template",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "template_only": true,
+  "live_form_created": false,
+  "questions": [
+    {
+      "question_id": "q_001",
+      "question": "What stage is your company in?"
+    },
+    {
+      "question_id": "q_002",
+      "question": "What urgent decision do you need to make?"
+    },
+    {
+      "question_id": "q_003",
+      "question": "What AI workflow or tools are you using today?"
+    },
+    {
+      "question_id": "q_004",
+      "question": "What pain point is most expensive or risky right now?"
+    },
+    {
+      "question_id": "q_005",
+      "question": "What outcome would make this sprint useful?"
+    },
+    {
+      "question_id": "q_006",
+      "question": "What constraints should the audit respect?"
+    },
+    {
+      "question_id": "q_007",
+      "question": "Which existing tools must be considered?"
+    },
+    {
+      "question_id": "q_008",
+      "question": "What risk concerns do you already have?"
+    },
+    {
+      "question_id": "q_009",
+      "question": "What is your decision deadline?"
+    },
+    {
+      "question_id": "q_010",
+      "question": "What output format would be most useful?"
+    },
+    {
+      "question_id": "q_011",
+      "question": "What do you explicitly not want automated?"
+    }
+  ],
+  "privacy_boundary": "Do not request passwords, secrets, private customer data, or regulated data."
+}

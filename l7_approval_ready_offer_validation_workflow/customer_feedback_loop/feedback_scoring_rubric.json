@@ -1,0 +1,24 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.3",
+  "milestone_name": "Approval-Ready Offer Validation and Service Delivery Workflow",
+  "run_id": "l7_3_offer_validation_workflow_run_001",
+  "packet_type": "feedback_scoring_rubric",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "score_dimensions": [
+    "pain_severity",
+    "willingness_to_pay",
+    "trust_concern_level",
+    "deliverable_clarity",
+    "urgency",
+    "repeat_purchase_potential"
+  ],
+  "scale": "1 low to 5 high",
+  "strong_signal_threshold": "average >= 4 with willingness_to_pay >= 4"
+}

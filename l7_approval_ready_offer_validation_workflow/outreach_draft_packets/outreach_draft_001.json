@@ -1,0 +1,36 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.3",
+  "milestone_name": "Approval-Ready Offer Validation and Service Delivery Workflow",
+  "run_id": "l7_3_offer_validation_workflow_run_001",
+  "packet_type": "outreach_draft_packet",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "offer_reference": "Founder AI Workflow Audit & CEO Command Brief Sprint",
+  "evidence_basis": [
+    "L7.2 selected shortest cash path path_001",
+    "L6/L7 governed observation and command brief artifacts"
+  ],
+  "caveats": [
+    "Draft only; not sent.",
+    "Recipient and claims require human review.",
+    "No payment request is included."
+  ],
+  "claims_requiring_human_review": [
+    "Any recipient-specific fit statement",
+    "Any expected business result"
+  ],
+  "forbidden_auto_send": true,
+  "human_approval_required": true,
+  "external_action_status": "blocked_until_human_approved",
+  "draft_id": "outreach_draft_001",
+  "target_customer_type": "AI startup founder with urgent workflow decision",
+  "subject": "Draft: quick AI workflow audit + CEO command brief",
+  "body": "Hi [Name],\n\nI am testing a narrow founder-facing service: a governed AI workflow audit and internal CEO command brief. The point is to help a founder make one urgent AI workflow or strategy decision with evidence, caveats, and clear no-go boundaries.\n\nThe deliverable would be internal only: what we observed, what looks useful, what is risky, what not to automate yet, and the next safe action. No external actions are automated.\n\nIf this matches a current decision you are facing, I would like to ask whether a small paid pilot would be useful.\n\nBest,\n[Owner]",
+  "recommended_use": "primary_first_contact_draft"
+}

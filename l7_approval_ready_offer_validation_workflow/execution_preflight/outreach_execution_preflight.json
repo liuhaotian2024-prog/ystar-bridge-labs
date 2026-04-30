@@ -1,0 +1,56 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.3",
+  "milestone_name": "Approval-Ready Offer Validation and Service Delivery Workflow",
+  "run_id": "l7_3_offer_validation_workflow_run_001",
+  "packet_type": "execution_preflight",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "execution_allowed": false,
+  "reason": "human_approval_not_yet_granted",
+  "checks": [
+    {
+      "check": "human approval exists",
+      "status": "not_satisfied"
+    },
+    {
+      "check": "recipient manually reviewed",
+      "status": "pending_manual_review"
+    },
+    {
+      "check": "message manually reviewed",
+      "status": "pending_manual_review"
+    },
+    {
+      "check": "claims reviewed",
+      "status": "pending_manual_review"
+    },
+    {
+      "check": "no prohibited claims",
+      "status": "pending_manual_review"
+    },
+    {
+      "check": "no secret exposure",
+      "status": "pending_manual_review"
+    },
+    {
+      "check": "no payment request unless separately approved",
+      "status": "pending_manual_review"
+    },
+    {
+      "check": "no form submission",
+      "status": "pending_manual_review"
+    },
+    {
+      "check": "post-action receipt required",
+      "status": "pending_manual_review"
+    }
+  ],
+  "external_action_status": "blocked_until_human_approved",
+  "post_action_receipt_required": true
+}

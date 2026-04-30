@@ -1,0 +1,61 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.3",
+  "milestone_name": "Approval-Ready Offer Validation and Service Delivery Workflow",
+  "run_id": "l7_3_offer_validation_workflow_run_001",
+  "packet_type": "owner_review_packet",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "first_offer": "Founder AI Workflow Audit & CEO Command Brief Sprint",
+  "who_it_is_for": "AI startup founder or technical operator making an urgent workflow, strategy, or market decision",
+  "why_they_might_pay": "They need a fast, credible internal decision artifact that reduces uncertainty and founder workload.",
+  "what_we_deliver": [
+    "Founder intake summary",
+    "Current AI workflow audit",
+    "Controlled read-only observation plan",
+    "Evidence packet and source-quality summary",
+    "Risk/conflict boundary",
+    "CEO command brief",
+    "Recommended next safe action",
+    "What not to automate yet list"
+  ],
+  "pricing_hypothesis": {
+    "low": 750,
+    "mid": 1500,
+    "high": 3000,
+    "suggested_first_test": 1500
+  },
+  "how_we_deliver": "Use the L7.3 service delivery workflow: intake, governed observation, evidence packets, risk review, CEO command brief, and feedback loop.",
+  "outreach_drafts_ready": [
+    "outreach_draft_001",
+    "outreach_draft_002",
+    "followup_draft_001"
+  ],
+  "recommended_outreach_draft": "outreach_draft_001",
+  "what_owner_needs_to_approve": [
+    "whether to use this offer for validation",
+    "which draft may be manually sent",
+    "which recipient is allowed",
+    "whether pricing can be quoted externally"
+  ],
+  "what_remains_blocked": [
+    "auto-send",
+    "bulk outreach",
+    "payment request",
+    "customer commitment",
+    "publication",
+    "actual memory/brain/canonical/CIEU DB writeback"
+  ],
+  "what_happens_after_approval": [
+    "owner manually sends one approved draft to one approved recipient",
+    "post-action receipt is created",
+    "feedback is captured",
+    "offer and pricing are revised from evidence"
+  ],
+  "next_one_command_action": "bash scripts/run_l7_3_offer_validation_workflow.sh --mode build"
+}
