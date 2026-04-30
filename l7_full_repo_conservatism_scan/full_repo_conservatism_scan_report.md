@@ -9,11 +9,11 @@ Maximize discovery and useful commercial planning. Minimize owner manual burden.
 ## Summary
 
 - Total tracked files scanned: 42041
-- Total text files scanned: 41053
-- Total findings: 129682
-- Harmful overconservatism count: 71136
-- Legitimate hard boundary count: 56285
-- Files needing policy_ref migration: 38369
+- Total text files scanned: 41019
+- Total findings: 127905
+- Harmful overconservatism count: 69439
+- Legitimate hard boundary count: 56209
+- Files needing policy_ref migration: 38342
 - Policy coverage: 1.78%
 
 ## Top Owner Burden Findings

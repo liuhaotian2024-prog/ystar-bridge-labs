@@ -2,50 +2,50 @@
   "schema_version": "v0",
   "milestone_id": "L7.0Q2",
   "total_tracked_files": 42041,
-  "total_text_files_scanned": 41053,
+  "total_text_files_scanned": 41019,
   "skipped_counts": {
-    "unsafe_or_irrelevant_pattern": 310,
+    "unsafe_or_irrelevant_pattern": 344,
     "binary_or_unreadable": 678
   },
-  "total_findings": 129682,
+  "total_findings": 127905,
   "findings_by_severity": {
     "P0": 82,
     "P1": 2014,
-    "P2": 44768,
-    "P3": 82818
+    "P2": 43189,
+    "P3": 82620
   },
   "findings_by_classification": {
     "console_read_model_overconservative": 7371,
     "core_writeback_overblocked": 255,
     "disabled_as_final_state": 813,
-    "documentation_overconservative": 14990,
+    "documentation_overconservative": 14896,
     "external_action_overblocked": 863,
     "fixture_only_regression": 104,
     "generated_artifact_overconservative": 4676,
     "hardcoded_blacklist": 263,
     "hardcoded_forbidden_action_list": 7508,
-    "legitimate_hard_boundary": 56285,
-    "no_action_receipt_overuse": 689,
+    "legitimate_hard_boundary": 56209,
+    "no_action_receipt_overuse": 688,
     "owner_manual_burden": 165,
     "policy_registry_needed": 1,
-    "policy_registry_present": 2261,
-    "readiness_or_preflight_overuse": 3393,
-    "runtime_visibility_overblocked": 25439,
-    "test_expectation_overconservative": 4606
+    "policy_registry_present": 2257,
+    "readiness_or_preflight_overuse": 3391,
+    "runtime_visibility_overblocked": 23863,
+    "test_expectation_overconservative": 4582
   },
   "findings_by_artifact_epoch": {
     "console_read_model": 9401,
-    "docs": 52500,
+    "docs": 52400,
     "generated": 5535,
     "l5": 35,
     "l6_early": 2701,
-    "l6_observation": 9764,
+    "l6_observation": 9748,
     "l6_review_strategy": 1801,
     "l7_commercial": 1450,
     "policy": 228,
-    "scripts": 3503,
-    "tests": 5400,
-    "unknown": 37364
+    "scripts": 3493,
+    "tests": 5375,
+    "unknown": 35738
   },
   "top_20_files_by_conservatism_density": [
     {
@@ -99,22 +99,6 @@
       "classification_counts": {
         "hardcoded_forbidden_action_list": 1253,
         "runtime_visibility_overblocked": 575
-      },
-      "needs_policy_ref_migration": true
-    },
-    {
-      "file_path": "docs/micro_chain_full_log.txt",
-      "directory_group": "docs",
-      "artifact_epoch": "unknown",
-      "finding_count": 1570,
-      "harmful_overconservatism_count": 1570,
-      "legitimate_hard_boundary_count": 0,
-      "policy_registry_present_count": 0,
-      "severity_counts": {
-        "P2": 1570
-      },
-      "classification_counts": {
-        "runtime_visibility_overblocked": 1570
       },
       "needs_policy_ref_migration": true
     },
@@ -384,36 +368,59 @@
         "legitimate_hard_boundary": 8
       },
       "needs_policy_ref_migration": true
+    },
+    {
+      "file_path": "approved_canonical_update_sandbox/tools/build_approved_canonical_update_sandbox.py",
+      "directory_group": "approved_canonical_update_sandbox",
+      "artifact_epoch": "unknown",
+      "finding_count": 476,
+      "harmful_overconservatism_count": 458,
+      "legitimate_hard_boundary_count": 18,
+      "policy_registry_present_count": 0,
+      "severity_counts": {
+        "P2": 446,
+        "P1": 12,
+        "P3": 18
+      },
+      "classification_counts": {
+        "runtime_visibility_overblocked": 404,
+        "readiness_or_preflight_overuse": 16,
+        "hardcoded_forbidden_action_list": 25,
+        "core_writeback_overblocked": 3,
+        "legitimate_hard_boundary": 18,
+        "external_action_overblocked": 9,
+        "fixture_only_regression": 1
+      },
+      "needs_policy_ref_migration": true
     }
   ],
   "top_20_directories_by_conservatism_density": [
     {
       "directory_group": "tools",
-      "files_with_findings": 30,
-      "finding_count": 11744,
-      "harmful_overconservatism_count": 11740,
+      "files_with_findings": 29,
+      "finding_count": 11743,
+      "harmful_overconservatism_count": 11739,
       "legitimate_hard_boundary_count": 4,
       "classification_counts": {
         "runtime_visibility_overblocked": 11738,
         "disabled_as_final_state": 1,
-        "no_action_receipt_overuse": 1,
         "legitimate_hard_boundary": 4
       },
       "severity_counts": {
-        "P2": 11739,
+        "P2": 11738,
         "P1": 1,
         "P3": 4
       }
     },
     {
       "directory_group": "reports",
-      "files_with_findings": 35133,
-      "finding_count": 45973,
-      "harmful_overconservatism_count": 10608,
-      "legitimate_hard_boundary_count": 35363,
+      "files_with_findings": 35126,
+      "finding_count": 45918,
+      "harmful_overconservatism_count": 10555,
+      "legitimate_hard_boundary_count": 35361,
       "classification_counts": {
-        "documentation_overconservative": 10136,
-        "legitimate_hard_boundary": 35363,
+        "documentation_overconservative": 10083,
+        "legitimate_hard_boundary": 35361,
         "runtime_visibility_overblocked": 313,
         "hardcoded_forbidden_action_list": 145,
         "hardcoded_blacklist": 11,
@@ -423,7 +430,7 @@
         "policy_registry_present": 2
       },
       "severity_counts": {
-        "P3": 45501,
+        "P3": 45446,
         "P2": 471,
         "P1": 1
       }
@@ -483,12 +490,12 @@
     },
     {
       "directory_group": "scripts",
-      "files_with_findings": 353,
-      "finding_count": 3503,
+      "files_with_findings": 352,
+      "finding_count": 3493,
       "harmful_overconservatism_count": 2952,
-      "legitimate_hard_boundary_count": 464,
+      "legitimate_hard_boundary_count": 454,
       "classification_counts": {
-        "legitimate_hard_boundary": 464,
+        "legitimate_hard_boundary": 454,
         "hardcoded_forbidden_action_list": 396,
         "hardcoded_blacklist": 47,
         "no_action_receipt_overuse": 50,
@@ -501,47 +508,27 @@
         "policy_registry_present": 87
       },
       "severity_counts": {
-        "P3": 551,
+        "P3": 541,
         "P2": 2878,
         "P0": 41,
         "P1": 33
       }
     },
     {
-      "directory_group": "docs",
-      "files_with_findings": 42,
-      "finding_count": 1919,
-      "harmful_overconservatism_count": 1874,
-      "legitimate_hard_boundary_count": 45,
-      "classification_counts": {
-        "runtime_visibility_overblocked": 1577,
-        "documentation_overconservative": 289,
-        "legitimate_hard_boundary": 45,
-        "disabled_as_final_state": 4,
-        "hardcoded_forbidden_action_list": 3,
-        "owner_manual_burden": 1
-      },
-      "severity_counts": {
-        "P2": 1580,
-        "P3": 334,
-        "P1": 5
-      }
-    },
-    {
       "directory_group": "knowledge",
-      "files_with_findings": 331,
-      "finding_count": 1796,
-      "harmful_overconservatism_count": 1545,
+      "files_with_findings": 328,
+      "finding_count": 1787,
+      "harmful_overconservatism_count": 1536,
       "legitimate_hard_boundary_count": 251,
       "classification_counts": {
-        "documentation_overconservative": 1527,
+        "documentation_overconservative": 1518,
         "legitimate_hard_boundary": 251,
         "runtime_visibility_overblocked": 15,
         "readiness_or_preflight_overuse": 2,
         "no_action_receipt_overuse": 1
       },
       "severity_counts": {
-        "P3": 1778,
+        "P3": 1769,
         "P2": 18
       }
     },
@@ -588,13 +575,13 @@
     },
     {
       "directory_group": "governance",
-      "files_with_findings": 65,
-      "finding_count": 1302,
-      "harmful_overconservatism_count": 947,
-      "legitimate_hard_boundary_count": 354,
+      "files_with_findings": 63,
+      "finding_count": 1283,
+      "harmful_overconservatism_count": 931,
+      "legitimate_hard_boundary_count": 351,
       "classification_counts": {
-        "documentation_overconservative": 665,
-        "legitimate_hard_boundary": 354,
+        "documentation_overconservative": 649,
+        "legitimate_hard_boundary": 351,
         "runtime_visibility_overblocked": 232,
         "hardcoded_forbidden_action_list": 45,
         "hardcoded_blacklist": 3,
@@ -602,16 +589,16 @@
         "policy_registry_present": 1
       },
       "severity_counts": {
-        "P3": 1020,
+        "P3": 1001,
         "P2": 280,
         "P1": 2
       }
     },
     {
       "directory_group": "legacy_asset_triage",
-      "files_with_findings": 11,
-      "finding_count": 934,
-      "harmful_overconservatism_count": 905,
+      "files_with_findings": 10,
+      "finding_count": 932,
+      "harmful_overconservatism_count": 903,
       "legitimate_hard_boundary_count": 18,
       "classification_counts": {
         "generated_artifact_overconservative": 876,
@@ -619,13 +606,13 @@
         "policy_registry_present": 11,
         "disabled_as_final_state": 5,
         "hardcoded_forbidden_action_list": 2,
-        "runtime_visibility_overblocked": 19,
+        "runtime_visibility_overblocked": 17,
         "documentation_overconservative": 3
       },
       "severity_counts": {
         "P3": 908,
         "P1": 5,
-        "P2": 21
+        "P2": 19
       }
     },
     {
@@ -676,18 +663,18 @@
     },
     {
       "directory_group": "content",
-      "files_with_findings": 90,
-      "finding_count": 643,
-      "harmful_overconservatism_count": 538,
+      "files_with_findings": 89,
+      "finding_count": 636,
+      "harmful_overconservatism_count": 531,
       "legitimate_hard_boundary_count": 105,
       "classification_counts": {
         "legitimate_hard_boundary": 105,
-        "documentation_overconservative": 503,
+        "documentation_overconservative": 496,
         "runtime_visibility_overblocked": 33,
         "hardcoded_forbidden_action_list": 2
       },
       "severity_counts": {
-        "P3": 608,
+        "P3": 601,
         "P2": 35
       }
     },
@@ -797,11 +784,31 @@
         "P3": 183,
         "P1": 13
       }
+    },
+    {
+      "directory_group": "openapi_letta.json",
+      "files_with_findings": 1,
+      "finding_count": 311,
+      "harmful_overconservatism_count": 304,
+      "legitimate_hard_boundary_count": 0,
+      "classification_counts": {
+        "runtime_visibility_overblocked": 292,
+        "readiness_or_preflight_overuse": 3,
+        "disabled_as_final_state": 3,
+        "hardcoded_forbidden_action_list": 5,
+        "policy_registry_present": 7,
+        "external_action_overblocked": 1
+      },
+      "severity_counts": {
+        "P2": 300,
+        "P1": 4,
+        "P3": 7
+      }
     }
   ],
   "top_20_owner_manual_burden_locations": [
     {
-      "finding_id": "l7_0q2_finding_004697",
+      "finding_id": "l7_0q2_finding_004679",
       "file_path": "ceo_command_brief/l6_16_ceo_command_brief.json",
       "line_number": 68,
       "matched_pattern": "ask_user_url",
@@ -812,7 +819,7 @@
       "patch_strategy": "replace_user_manual_step_with_launcher"
     },
     {
-      "finding_id": "l7_0q2_finding_004705",
+      "finding_id": "l7_0q2_finding_004687",
       "file_path": "ceo_command_brief/l6_16_ceo_command_brief.json",
       "line_number": 84,
       "matched_pattern": "manual URL",
@@ -823,7 +830,7 @@
       "patch_strategy": "replace_user_manual_step_with_launcher"
     },
     {
-      "finding_id": "l7_0q2_finding_004723",
+      "finding_id": "l7_0q2_finding_004705",
       "file_path": "ceo_command_brief/l6_16_ceo_command_brief.md",
       "line_number": 47,
       "matched_pattern": "manual URL",
@@ -834,7 +841,7 @@
       "patch_strategy": "replace_user_manual_step_with_launcher"
     },
     {
-      "finding_id": "l7_0q2_finding_017375",
+      "finding_id": "l7_0q2_finding_017346",
       "file_path": "controlled_no_action_receipts/no_action_receipt_index.json",
       "line_number": 29,
       "matched_pattern": "ask_user_url",
@@ -845,7 +852,7 @@
       "patch_strategy": "replace_user_manual_step_with_launcher"
     },
     {
-      "finding_id": "l7_0q2_finding_017378",
+      "finding_id": "l7_0q2_finding_017349",
       "file_path": "controlled_no_action_receipts/no_ask_user_url_receipt.json",
       "line_number": 3,
       "matched_pattern": "ask_user_url",
@@ -856,7 +863,7 @@
       "patch_strategy": "replace_user_manual_step_with_launcher"
     },
     {
-      "finding_id": "l7_0q2_finding_017379",
+      "finding_id": "l7_0q2_finding_017350",
       "file_path": "controlled_no_action_receipts/no_ask_user_url_receipt.json",
       "line_number": 7,
       "matched_pattern": "ask_user_url",
@@ -867,7 +874,7 @@
       "patch_strategy": "replace_user_manual_step_with_launcher"
     },
     {
-      "finding_id": "l7_0q2_finding_017441",
+      "finding_id": "l7_0q2_finding_017408",
       "file_path": "controlled_no_action_receipts/no_side_effect_receipt.json",
       "line_number": 30,
       "matched_pattern": "ask_user_url",
@@ -878,7 +885,7 @@
       "patch_strategy": "replace_user_manual_step_with_launcher"
     },
     {
-      "finding_id": "l7_0q2_finding_023217",
+      "finding_id": "l7_0q2_finding_023184",
       "file_path": "decision_boundary_packet/decision_boundary_packet.json",
       "line_number": 43,
       "matched_pattern": "ask_user_url",
@@ -889,7 +896,7 @@
       "patch_strategy": "replace_user_manual_step_with_launcher"
     },
     {
-      "finding_id": "l7_0q2_finding_023508",
+      "finding_id": "l7_0q2_finding_023468",
       "file_path": "docs/l6_13_real_backend_activation.md",
       "line_number": 3,
       "matched_pattern": "manual URL",
@@ -900,7 +907,7 @@
       "patch_strategy": "replace_user_manual_step_with_launcher"
     },
     {
-      "finding_id": "l7_0q2_finding_028796",
+      "finding_id": "l7_0q2_finding_027160",
       "file_path": "internal_strategy_memo/l6_16_internal_strategy_memo.json",
       "line_number": 101,
       "matched_pattern": "ask_user_url",
@@ -911,7 +918,7 @@
       "patch_strategy": "replace_user_manual_step_with_launcher"
     },
     {
-      "finding_id": "l7_0q2_finding_028815",
+      "finding_id": "l7_0q2_finding_027179",
       "file_path": "internal_strategy_memo/l6_16_internal_strategy_memo.md",
       "line_number": 61,
       "matched_pattern": "ask_user_url",
@@ -922,7 +929,7 @@
       "patch_strategy": "replace_user_manual_step_with_launcher"
     },
     {
-      "finding_id": "l7_0q2_finding_030961",
+      "finding_id": "l7_0q2_finding_029316",
       "file_path": "l6_10v_read_model/l6_10v_blockers.json",
       "line_number": 9,
       "matched_pattern": "reviewed seed locator",
@@ -933,7 +940,7 @@
       "patch_strategy": "replace_user_manual_step_with_launcher"
     },
     {
-      "finding_id": "l7_0q2_finding_030962",
+      "finding_id": "l7_0q2_finding_029317",
       "file_path": "l6_10v_read_model/l6_10v_cieu_like_fixture.json",
       "line_number": 7,
       "matched_pattern": "reviewed seed locator",
@@ -944,7 +951,7 @@
       "patch_strategy": "replace_user_manual_step_with_launcher"
     },
     {
-      "finding_id": "l7_0q2_finding_030969",
+      "finding_id": "l7_0q2_finding_029324",
       "file_path": "l6_10v_read_model/l6_10v_cieu_like_fixture.json",
       "line_number": 18,
       "matched_pattern": "reviewed seed locator",
@@ -955,7 +962,7 @@
       "patch_strategy": "replace_user_manual_step_with_launcher"
     },
     {
-      "finding_id": "l7_0q2_finding_030971",
+      "finding_id": "l7_0q2_finding_029326",
       "file_path": "l6_10v_read_model/l6_10v_next_milestone_recommendation.json",
       "line_number": 3,
       "matched_pattern": "reviewed seed locator",
@@ -966,7 +973,7 @@
       "patch_strategy": "replace_user_manual_step_with_launcher"
     },
     {
-      "finding_id": "l7_0q2_finding_030987",
+      "finding_id": "l7_0q2_finding_029342",
       "file_path": "l6_10v_read_model/l6_10v_read_model_summary.json",
       "line_number": 79,
       "matched_pattern": "reviewed seed locator",
@@ -977,7 +984,7 @@
       "patch_strategy": "replace_user_manual_step_with_launcher"
     },
     {
-      "finding_id": "l7_0q2_finding_030990",
+      "finding_id": "l7_0q2_finding_029345",
       "file_path": "l6_10v_read_model/l6_10v_readiness_assessment.json",
       "line_number": 16,
       "matched_pattern": "reviewed seed locator",
@@ -988,7 +995,7 @@
       "patch_strategy": "replace_user_manual_step_with_launcher"
     },
     {
-      "finding_id": "l7_0q2_finding_030991",
+      "finding_id": "l7_0q2_finding_029346",
       "file_path": "l6_10v_read_model/l6_10v_readiness_assessment.json",
       "line_number": 17,
       "matched_pattern": "reviewed seed locator",
@@ -999,7 +1006,7 @@
       "patch_strategy": "replace_user_manual_step_with_launcher"
     },
     {
-      "finding_id": "l7_0q2_finding_030997",
+      "finding_id": "l7_0q2_finding_029352",
       "file_path": "l6_10w_read_model/l6_10w_blockers.json",
       "line_number": 3,
       "matched_pattern": "user_must_provide",
@@ -1010,7 +1017,7 @@
       "patch_strategy": "replace_user_manual_step_with_launcher"
     },
     {
-      "finding_id": "l7_0q2_finding_030998",
+      "finding_id": "l7_0q2_finding_029353",
       "file_path": "l6_10w_read_model/l6_10w_blockers.json",
       "line_number": 5,
       "matched_pattern": "user_must_provide",
@@ -1056,7 +1063,7 @@
       "patch_strategy": "add_policy_ref"
     },
     {
-      "finding_id": "l7_0q2_finding_001240",
+      "finding_id": "l7_0q2_finding_001222",
       "file_path": "agent_brains/Aiden-CEO/chain_map.json",
       "line_number": 207,
       "matched_pattern": "deny",
@@ -1067,7 +1074,7 @@
       "patch_strategy": "add_policy_ref"
     },
     {
-      "finding_id": "l7_0q2_finding_001293",
+      "finding_id": "l7_0q2_finding_001275",
       "file_path": "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/boundary_map.json",
       "line_number": 117,
       "matched_pattern": "deny",
@@ -1078,7 +1085,7 @@
       "patch_strategy": "add_policy_ref"
     },
     {
-      "finding_id": "l7_0q2_finding_001295",
+      "finding_id": "l7_0q2_finding_001277",
       "file_path": "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/boundary_map.json",
       "line_number": 135,
       "matched_pattern": "deny",
@@ -1089,7 +1096,7 @@
       "patch_strategy": "add_policy_ref"
     },
     {
-      "finding_id": "l7_0q2_finding_001353",
+      "finding_id": "l7_0q2_finding_001335",
       "file_path": "agent_brains/Aiden-CEO/pre_u_counterfactual/packet_schema.json",
       "line_number": 272,
       "matched_pattern": "deny",
@@ -1100,7 +1107,7 @@
       "patch_strategy": "add_policy_ref"
     },
     {
-      "finding_id": "l7_0q2_finding_001373",
+      "finding_id": "l7_0q2_finding_001355",
       "file_path": "agent_brains/Ethan-CTO/execution_channels.json",
       "line_number": 37,
       "matched_pattern": "not_allowed",
@@ -1111,7 +1118,7 @@
       "patch_strategy": "add_policy_ref"
     },
     {
-      "finding_id": "l7_0q2_finding_001374",
+      "finding_id": "l7_0q2_finding_001356",
       "file_path": "agent_brains/Ethan-CTO/execution_channels.json",
       "line_number": 59,
       "matched_pattern": "not_allowed",
@@ -1122,7 +1129,7 @@
       "patch_strategy": "add_policy_ref"
     },
     {
-      "finding_id": "l7_0q2_finding_001375",
+      "finding_id": "l7_0q2_finding_001357",
       "file_path": "agent_brains/Ethan-CTO/execution_channels.json",
       "line_number": 79,
       "matched_pattern": "not_allowed",
@@ -1133,7 +1140,7 @@
       "patch_strategy": "add_policy_ref"
     },
     {
-      "finding_id": "l7_0q2_finding_001376",
+      "finding_id": "l7_0q2_finding_001358",
       "file_path": "agent_brains/Ethan-CTO/execution_channels.json",
       "line_number": 101,
       "matched_pattern": "not_allowed",
@@ -1144,7 +1151,7 @@
       "patch_strategy": "add_policy_ref"
     },
     {
-      "finding_id": "l7_0q2_finding_001377",
+      "finding_id": "l7_0q2_finding_001359",
       "file_path": "agent_brains/Ethan-CTO/execution_channels.json",
       "line_number": 119,
       "matched_pattern": "not_allowed",
@@ -1155,7 +1162,7 @@
       "patch_strategy": "add_policy_ref"
     },
     {
-      "finding_id": "l7_0q2_finding_001397",
+      "finding_id": "l7_0q2_finding_001379",
       "file_path": "agent_brains/schema/execution_channels.schema.json",
       "line_number": 51,
       "matched_pattern": "not_allowed",
@@ -1166,7 +1173,7 @@
       "patch_strategy": "add_policy_ref"
     },
     {
-      "finding_id": "l7_0q2_finding_001398",
+      "finding_id": "l7_0q2_finding_001380",
       "file_path": "agent_brains/schema/execution_channels.schema.json",
       "line_number": 86,
       "matched_pattern": "not_allowed",
@@ -1177,7 +1184,7 @@
       "patch_strategy": "add_policy_ref"
     },
     {
-      "finding_id": "l7_0q2_finding_001409",
+      "finding_id": "l7_0q2_finding_001391",
       "file_path": "agent_team_work_proposal/generated/agent_team_observation_input.json",
       "line_number": 17,
       "matched_pattern": "blocked",
@@ -1188,7 +1195,7 @@
       "patch_strategy": "add_policy_ref"
     },
     {
-      "finding_id": "l7_0q2_finding_001421",
+      "finding_id": "l7_0q2_finding_001403",
       "file_path": "agent_team_work_proposal/generated/agent_team_observation_input.json",
       "line_number": 79,
       "matched_pattern": "blocked",
@@ -1199,7 +1206,7 @@
       "patch_strategy": "add_policy_ref"
     },
     {
-      "finding_id": "l7_0q2_finding_001428",
+      "finding_id": "l7_0q2_finding_001410",
       "file_path": "agent_team_work_proposal/generated/agent_team_observation_input.json",
       "line_number": 112,
       "matched_pattern": "blocked",
@@ -1210,7 +1217,7 @@
       "patch_strategy": "add_policy_ref"
     },
     {
-      "finding_id": "l7_0q2_finding_001500",
+      "finding_id": "l7_0q2_finding_001482",
       "file_path": "agent_team_work_proposal/role_review_schema.json",
       "line_number": 11,
       "matched_pattern": "forbidden",
@@ -1221,7 +1228,7 @@
       "patch_strategy": "add_policy_ref"
     },
     {
-      "finding_id": "l7_0q2_finding_001501",
+      "finding_id": "l7_0q2_finding_001483",
       "file_path": "agent_team_work_proposal/role_review_schema.json",
       "line_number": 11,
       "matched_pattern": "forbidden_actions",
@@ -1232,7 +1239,7 @@
       "patch_strategy": "add_policy_ref"
     },
     {
-      "finding_id": "l7_0q2_finding_001502",
+      "finding_id": "l7_0q2_finding_001484",
       "file_path": "agent_team_work_proposal/role_review_schema.json",
       "line_number": 20,
       "matched_pattern": "forbidden",
@@ -1454,7 +1461,7 @@
       "patch_strategy": "convert_disabled_to_auto_detect"
     },
     {
-      "finding_id": "l7_0q2_finding_000926",
+      "finding_id": "l7_0q2_finding_000908",
       "file_path": "adapter_bound_no_action_receipts/no_mcp_execution_receipt.json",
       "line_number": 37,
       "matched_pattern": "disabled",
@@ -1467,7 +1474,7 @@
   ],
   "top_20_no_action_readiness_overuse_locations": [
     {
-      "finding_id": "l7_0q2_finding_001248",
+      "finding_id": "l7_0q2_finding_001230",
       "file_path": "agent_brains/Aiden-CEO/chain_map.json",
       "line_number": 330,
       "matched_pattern": "readiness",
@@ -1478,7 +1485,7 @@
       "patch_strategy": "migrate_to_staged_policy"
     },
     {
-      "finding_id": "l7_0q2_finding_001302",
+      "finding_id": "l7_0q2_finding_001284",
       "file_path": "agent_brains/Aiden-CEO/pre_u_counterfactual/boundary_alignment/boundary_map.json",
       "line_number": 230,
       "matched_pattern": "readiness",
@@ -1489,7 +1496,7 @@
       "patch_strategy": "migrate_to_staged_policy"
     },
     {
-      "finding_id": "l7_0q2_finding_001420",
+      "finding_id": "l7_0q2_finding_001402",
       "file_path": "agent_team_work_proposal/generated/agent_team_observation_input.json",
       "line_number": 69,
       "matched_pattern": "readiness",
@@ -1500,7 +1507,7 @@
       "patch_strategy": "migrate_to_staged_policy"
     },
     {
-      "finding_id": "l7_0q2_finding_001504",
+      "finding_id": "l7_0q2_finding_001486",
       "file_path": "agent_team_work_proposal/tools/build_agent_team_work_proposal.py",
       "line_number": 30,
       "matched_pattern": "readiness",
@@ -1511,7 +1518,7 @@
       "patch_strategy": "migrate_to_staged_policy"
     },
     {
-      "finding_id": "l7_0q2_finding_001505",
+      "finding_id": "l7_0q2_finding_001487",
       "file_path": "agent_team_work_proposal/tools/build_agent_team_work_proposal.py",
       "line_number": 31,
       "matched_pattern": "readiness",
@@ -1522,7 +1529,7 @@
       "patch_strategy": "migrate_to_staged_policy"
     },
     {
-      "finding_id": "l7_0q2_finding_001510",
+      "finding_id": "l7_0q2_finding_001492",
       "file_path": "agent_team_work_proposal/tools/build_agent_team_work_proposal.py",
       "line_number": 177,
       "matched_pattern": "readiness",
@@ -1533,7 +1540,7 @@
       "patch_strategy": "migrate_to_staged_policy"
     },
     {
-      "finding_id": "l7_0q2_finding_001513",
+      "finding_id": "l7_0q2_finding_001495",
       "file_path": "agent_team_work_proposal/tools/build_agent_team_work_proposal.py",
       "line_number": 241,
       "matched_pattern": "readiness",
@@ -1544,7 +1551,7 @@
       "patch_strategy": "migrate_to_staged_policy"
     },
     {
-      "finding_id": "l7_0q2_finding_001514",
+      "finding_id": "l7_0q2_finding_001496",
       "file_path": "agent_team_work_proposal/tools/build_agent_team_work_proposal.py",
       "line_number": 242,
       "matched_pattern": "readiness",
@@ -1555,7 +1562,7 @@
       "patch_strategy": "migrate_to_staged_policy"
     },
     {
-      "finding_id": "l7_0q2_finding_001802",
+      "finding_id": "l7_0q2_finding_001784",
       "file_path": "agentic_pilot_approval_eligibility_gate/approval_eligibility_matrix.json",
       "line_number": 23,
       "matched_pattern": "no_action",
@@ -1566,7 +1573,7 @@
       "patch_strategy": "migrate_to_staged_policy"
     },
     {
-      "finding_id": "l7_0q2_finding_001812",
+      "finding_id": "l7_0q2_finding_001794",
       "file_path": "agentic_pilot_approval_eligibility_gate/approval_eligibility_matrix.json",
       "line_number": 47,
       "matched_pattern": "no_action",
@@ -1577,7 +1584,7 @@
       "patch_strategy": "migrate_to_staged_policy"
     },
     {
-      "finding_id": "l7_0q2_finding_001822",
+      "finding_id": "l7_0q2_finding_001804",
       "file_path": "agentic_pilot_approval_eligibility_gate/approval_eligibility_matrix.json",
       "line_number": 71,
       "matched_pattern": "no_action",
@@ -1588,7 +1595,7 @@
       "patch_strategy": "migrate_to_staged_policy"
     },
     {
-      "finding_id": "l7_0q2_finding_001843",
+      "finding_id": "l7_0q2_finding_001825",
       "file_path": "agentic_pilot_approval_eligibility_gate/eligible_work_orders.json",
       "line_number": 23,
       "matched_pattern": "no_action",
@@ -1599,7 +1606,7 @@
       "patch_strategy": "migrate_to_staged_policy"
     },
     {
-      "finding_id": "l7_0q2_finding_001853",
+      "finding_id": "l7_0q2_finding_001835",
       "file_path": "agentic_pilot_approval_eligibility_gate/eligible_work_orders.json",
       "line_number": 47,
       "matched_pattern": "no_action",
@@ -1610,7 +1617,7 @@
       "patch_strategy": "migrate_to_staged_policy"
     },
     {
-      "finding_id": "l7_0q2_finding_001863",
+      "finding_id": "l7_0q2_finding_001845",
       "file_path": "agentic_pilot_approval_eligibility_gate/eligible_work_orders.json",
       "line_number": 71,
       "matched_pattern": "no_action",
@@ -1621,7 +1628,7 @@
       "patch_strategy": "migrate_to_staged_policy"
     },
     {
-      "finding_id": "l7_0q2_finding_001899",
+      "finding_id": "l7_0q2_finding_001881",
       "file_path": "agentic_pilot_approval_packet_assembler/agentic_pilot_approval_packet_001.json",
       "line_number": 45,
       "matched_pattern": "no_action",
@@ -1632,7 +1639,7 @@
       "patch_strategy": "migrate_to_staged_policy"
     },
     {
-      "finding_id": "l7_0q2_finding_001943",
+      "finding_id": "l7_0q2_finding_001925",
       "file_path": "agentic_pilot_approval_packet_assembler/agentic_pilot_approval_packet_002.json",
       "line_number": 45,
       "matched_pattern": "no_action",
@@ -1643,7 +1650,7 @@
       "patch_strategy": "migrate_to_staged_policy"
     },
     {
-      "finding_id": "l7_0q2_finding_001984",
+      "finding_id": "l7_0q2_finding_001966",
       "file_path": "agentic_pilot_approval_packet_assembler/agentic_pilot_approval_packet_003.json",
       "line_number": 45,
       "matched_pattern": "no_action",
@@ -1654,7 +1661,7 @@
       "patch_strategy": "migrate_to_staged_policy"
     },
     {
-      "finding_id": "l7_0q2_finding_002039",
+      "finding_id": "l7_0q2_finding_002021",
       "file_path": "agentic_pilot_approval_packet_assembler/agentic_pilot_approval_packet_schema.json",
       "line_number": 19,
       "matched_pattern": "no_action",
@@ -1665,7 +1672,7 @@
       "patch_strategy": "migrate_to_staged_policy"
     },
     {
-      "finding_id": "l7_0q2_finding_002091",
+      "finding_id": "l7_0q2_finding_002073",
       "file_path": "agentic_pilot_dry_run_executor/dry_run_sequence.json",
       "line_number": 7,
       "matched_pattern": "readiness",
@@ -1676,7 +1683,7 @@
       "patch_strategy": "migrate_to_staged_policy"
     },
     {
-      "finding_id": "l7_0q2_finding_002105",
+      "finding_id": "l7_0q2_finding_002087",
       "file_path": "agentic_pilot_dry_run_executor/dry_run_trace_001.json",
       "line_number": 7,
       "matched_pattern": "readiness",
@@ -1688,6 +1695,6 @@
     }
   ],
   "policy_registry_coverage_percentage": 1.78,
-  "number_of_files_already_using_policy_ref": 697,
-  "number_of_files_needing_policy_ref_migration": 38369
+  "number_of_files_already_using_policy_ref": 694,
+  "number_of_files_needing_policy_ref_migration": 38342
 }

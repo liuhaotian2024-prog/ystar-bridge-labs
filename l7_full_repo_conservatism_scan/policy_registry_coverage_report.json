@@ -3,8 +3,8 @@
   "milestone_id": "L7.0Q2",
   "policy_directory_exists": true,
   "required_policy_files_present": true,
-  "total_text_files_scanned": 41053,
-  "number_of_files_already_using_policy_ref": 697,
-  "number_of_files_needing_policy_ref_migration": 38369,
+  "total_text_files_scanned": 41019,
+  "number_of_files_already_using_policy_ref": 694,
+  "number_of_files_needing_policy_ref_migration": 38342,
   "policy_registry_coverage_percentage": 1.78
 }
