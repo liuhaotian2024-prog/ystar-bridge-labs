@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-29 21:00:00
+**Generated**: 2026-04-29 20:30:01
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -36,7 +36,7 @@
 ## 4. System Health
 **Wire Integrity**: 0 issues
 **Y* Schema v2 Compliance**: 0/12 valid (0 errors)
-**CIEU 24h Events**: 2852
+**CIEU 24h Events**: 2857
 **Overdue Obligations**: 0
 
 ---
@@ -80,17 +80,17 @@
 ---
 
 ## 8. Y* Field State (xi) — Mission axis frequency + drift
-**Total CIEU events (24h)**: 2852
+**Total CIEU events (24h)**: 2857
 
 | M-Axis | Description | 24h Count | 7d Avg/Day | Drift |
 |--------|-------------|-----------|------------|-------|
-| **M-1** | Survivability (session/boot/handoff/persist) | 194 | 3063 | → |
-| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 29 | 816 | ↓ |
-| **M-2b** | Omission prevention (omission/overdue/alarm) | 28 | 1609 | ↓ |
+| **M-1** | Survivability (session/boot/handoff/persist) | 194 | 3116 | → |
+| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 29 | 817 | ↓ |
+| **M-2b** | Omission prevention (omission/overdue/alarm) | 28 | 1641 | ↓ |
 | **M-3** | Value production (customer/revenue/dogfood/demo) | 0 | 0 | ↓ |
 
-**Classified coverage**: 251/2852 (8.8%)
-**Unclassified**: 2601 events (routine ops / K9 routing)
+**Classified coverage**: 251/2857 (8.8%)
+**Unclassified**: 2606 events (routine ops / K9 routing)
 **Drift alert**: M-2a, M-2b, M-3 trending DOWN vs 7d baseline
 
 ---
@@ -110,7 +110,7 @@
 
 | Detector | 24h Count | Drift vs 7d |
 |----------|-----------|-------------|
-| amendment_coverage_audit | 222 | v (avg 346.9/d) |
+| amendment_coverage_audit | 222 | v (avg 346.0/d) |
 | directive_evaluator | 28 | = (avg 31.7/d) |
 | hook_commission_catch | 28 | v (avg 394.0/d) |
 
@@ -128,7 +128,7 @@
 - `DIRECTIVE_LIVENESS_EVAL`: 28
 - `WIRE_BROKEN`: 28
 
-**Overall drift**: v (24h=278, 7d avg/day=1674.0)
+**Overall drift**: v (24h=278, 7d avg/day=1690.6)
 
 ---
 
@@ -154,9 +154,7 @@
 ## 13. Today's Commits (24h) — both repos
 
 
-**ystar-company** (56 commits):
-- 7b3a90f8 20:42 tools: audit conservatism debt and introduce staged action policies
-- b50fa83f 20:31 [auto] WIP checkpoint 2026-04-29 20:31 -- 4 files changed
+**ystar-company** (57 commits):
 - 5aa4fbef 20:25 tools: add l7 parallel commercial agent team orchestrator
 - f1ef3a62 20:01 [auto] WIP checkpoint 2026-04-29 20:01 -- 59 files changed
 - 30e0df29 19:57 tools: add l6 ceo command brief and internal strategy memo
@@ -175,5 +173,7 @@
 - 2120094e 16:29 tools: add l6 real controlled external observation mission sprint
 - 6a5d3186 16:04 chore: remove unintended auto checkpoint drift
 - c5d05dfc 16:00 [auto] WIP checkpoint 2026-04-29 16:00 -- 57 files changed
+- 9f2853d9 15:59 tools: add l6 unified controlled external observation evidence loop
+- f5e9abae 15:50 chore: remove unintended auto checkpoint drift
 
 **Y*gov**: no commits
