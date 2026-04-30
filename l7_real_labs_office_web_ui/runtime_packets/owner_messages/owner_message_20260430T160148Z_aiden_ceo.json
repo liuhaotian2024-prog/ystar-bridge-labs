@@ -1,0 +1,44 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4R",
+  "packet_type": "owner_message",
+  "created_at_utc": "2026-04-30T16:01:48Z",
+  "allowed_actions": [
+    "local packet creation",
+    "internal analysis",
+    "draft-only artifact generation",
+    "approval request preparation"
+  ],
+  "forbidden_actions": [
+    "external outreach",
+    "email sending",
+    "customer contact",
+    "publication",
+    "payment",
+    "form submission",
+    "account creation",
+    "grant/RFP submission",
+    "MCP/live behavior",
+    "actual memory/brain/canonical/CIEU DB writeback"
+  ],
+  "approval_required_for": [
+    "outreach",
+    "publication",
+    "payment",
+    "account creation",
+    "form submission",
+    "grant/RFP submission",
+    "customer contact",
+    "MCP/live behavior",
+    "actual memory/brain/canonical/CIEU DB writeback"
+  ],
+  "status": "queued",
+  "external_side_effects": false,
+  "core_writeback": false,
+  "packet_id": "owner_message_20260430T160148Z_aiden_ceo",
+  "from": "owner",
+  "target_agent": "aiden_ceo",
+  "message_text": "团队请一起分析：我们下一步怎么最快拿到第一笔钱，同时不牺牲长期战略？",
+  "objective": "Find the safest fastest first-cash path",
+  "urgency": "normal"
+}
