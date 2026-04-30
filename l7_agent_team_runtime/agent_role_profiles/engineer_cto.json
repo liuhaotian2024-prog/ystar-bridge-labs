@@ -45,5 +45,19 @@
     "evidence conflict or unsupported claim"
   ],
   "no_side_effect_boundary": true,
-  "revenue_contribution_role": "turn commercial needs into safe capability upgrades"
+  "revenue_contribution_role": "turn commercial needs into safe capability upgrades",
+  "l7_0q_policy_migration": {
+    "policy_ref": "policy/action_capability_registry.json",
+    "action_capability_policy_ref": "policy/action_capability_registry.json",
+    "approval_state_machine_ref": "policy/approval_state_machine.json",
+    "revenue_policy_ref": "policy/revenue_action_policy.json",
+    "discovery_policy_ref": "policy/discovery_policy.json",
+    "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+    "writeback_policy_ref": "policy/writeback_policy.json",
+    "owner_burden_reduction_policy_ref": "policy/owner_burden_reduction_policy.json",
+    "allowed_capability_stage": "plan",
+    "capability_category": "agent_team_runtime",
+    "execution_requires_human_approval": false,
+    "migration_note": "L7.0Q first migration adds staged policy references while preserving explicit safety text."
+  }
 }

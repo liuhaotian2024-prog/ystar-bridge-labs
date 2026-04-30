@@ -1,0 +1,24 @@
+{
+  "schema_version": "v0",
+  "owner_burden_anti_patterns": [
+    "asking_user_to_provide_URL",
+    "asking_user_to_manually_search",
+    "asking_user_to_manually_export_many_env_vars",
+    "asking_user_to_open_multiple_Codex_windows",
+    "asking_user_to_manually_create_worktrees",
+    "asking_user_to_manually_merge_branches",
+    "asking_user_to_inspect_secrets_manually",
+    "asking_user_to_copy_generated_artifacts_manually"
+  ],
+  "preferred_replacements": [
+    "one_command_launcher",
+    "secret_resolver",
+    "no_key_public_web_mode",
+    "host_mediated_search_bridge",
+    "worktree_orchestration_script",
+    "lane_builder",
+    "local_parallel_runner",
+    "owner_cockpit",
+    "approval_gate"
+  ]
+}

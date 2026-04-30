@@ -14,9 +14,17 @@ def load_json(path: str) -> dict:
 
 
 def all_l7_text() -> str:
+    l7_0p_dirs = [
+        "l7_agent_team_runtime",
+        "l7_revenue_opportunity_radar",
+        "l7_human_approved_external_action_gate",
+        "l7_review_gated_memory_writeback",
+        "l7_owner_runtime_cockpit",
+        "l7_parallel_commercial_agent_team_orchestrator",
+    ]
     paths = [
-        *ROOT.glob("l7_*/**/*.json"),
-        *ROOT.glob("l7_*/**/*.md"),
+        *(path for dirname in l7_0p_dirs for path in (ROOT / dirname).glob("**/*.json")),
+        *(path for dirname in l7_0p_dirs for path in (ROOT / dirname).glob("**/*.md")),
         *ROOT.glob("l7_parallel_lane_specs/*.md"),
         *ROOT.glob("scripts/l7_lanes/*.py"),
         ROOT / "scripts/run_l7_parallel_lanes.sh",

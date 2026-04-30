@@ -1,0 +1,28 @@
+{
+  "schema_version": "v0",
+  "states": [
+    "draft_created",
+    "human_review_required",
+    "approved_by_human",
+    "execution_allowed",
+    "executed",
+    "post_action_receipt_created",
+    "rejected_by_human",
+    "blocked"
+  ],
+  "happy_path": [
+    "draft_created",
+    "human_review_required",
+    "approved_by_human",
+    "execution_allowed",
+    "executed",
+    "post_action_receipt_created"
+  ],
+  "denial_path": [
+    "draft_created",
+    "human_review_required",
+    "rejected_by_human",
+    "blocked"
+  ],
+  "default_state": "blocked_pending_human_review"
+}

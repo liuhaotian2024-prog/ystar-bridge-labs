@@ -1,0 +1,30 @@
+{
+  "schema_version": "v0",
+  "allowed_with_budget": [
+    "query_planning",
+    "controlled_search",
+    "public_page_read",
+    "bounded_crawl",
+    "rss_sitemap_read",
+    "source_triage",
+    "evidence_extraction",
+    "corroboration_conflict_analysis",
+    "review_packet_generation",
+    "market_research",
+    "opportunity_discovery"
+  ],
+  "requires_approval_or_blocked": [
+    "login",
+    "form_submission",
+    "posting",
+    "messaging",
+    "payment",
+    "private_internal_network_access",
+    "high_volume_scraping",
+    "access_control_bypass",
+    "publication",
+    "outreach_send",
+    "grant_RFP_submission"
+  ],
+  "policy_note": "Maximize discovery under budget; block unsafe execution and side effects."
+}

@@ -3,7 +3,7 @@
   "milestone_id": "L7.0P",
   "lane_id": "L7.0P",
   "lane_name": "Parallel Commercial Agent Team Execution Orchestrator",
-  "generated_at_utc": "2026-04-30T00:24:43Z",
+  "generated_at_utc": "2026-04-30T00:43:55Z",
   "external_network_performed": false,
   "external_side_effects_occurred": false,
   "core_writeback_occurred": false,
@@ -42,5 +42,19 @@
   "parallel_orchestration_script_created": true,
   "worktree_setup_automation_created": true,
   "lane_builders_created": true,
-  "lane_prompts_created": true
+  "lane_prompts_created": true,
+  "l7_0q_policy_migration": {
+    "policy_ref": "policy/action_capability_registry.json",
+    "action_capability_policy_ref": "policy/action_capability_registry.json",
+    "approval_state_machine_ref": "policy/approval_state_machine.json",
+    "revenue_policy_ref": "policy/revenue_action_policy.json",
+    "discovery_policy_ref": "policy/discovery_policy.json",
+    "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+    "writeback_policy_ref": "policy/writeback_policy.json",
+    "owner_burden_reduction_policy_ref": "policy/owner_burden_reduction_policy.json",
+    "allowed_capability_stage": "plan",
+    "capability_category": "parallel_orchestration",
+    "execution_requires_human_approval": false,
+    "migration_note": "L7.0Q first migration adds staged policy references while preserving explicit safety text."
+  }
 }

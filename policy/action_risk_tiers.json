@@ -1,0 +1,37 @@
+{
+  "schema_version": "v0",
+  "risk_tiers": [
+    {
+      "risk_tier": "low",
+      "examples": [
+        "query_planning",
+        "internal_strategy_memo"
+      ],
+      "default_decision": "allowed"
+    },
+    {
+      "risk_tier": "medium",
+      "examples": [
+        "public_page_read",
+        "draft_generation"
+      ],
+      "default_decision": "allowed_with_budget"
+    },
+    {
+      "risk_tier": "high",
+      "examples": [
+        "customer_outreach_send",
+        "payment_or_purchase"
+      ],
+      "default_decision": "allowed_after_human_approval"
+    },
+    {
+      "risk_tier": "critical",
+      "examples": [
+        "actual_brain_writeback",
+        "actual_CIEU_DB_write"
+      ],
+      "default_decision": "blocked_pending_human_review"
+    }
+  ]
+}

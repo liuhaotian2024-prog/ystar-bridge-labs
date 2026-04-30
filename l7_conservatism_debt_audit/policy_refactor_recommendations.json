@@ -1,0 +1,26 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.0Q",
+  "recommendations": [
+    {
+      "recommendation_id": "l7_0q_rec_001",
+      "recommendation": "Use policy/action_capability_registry.json for staged capability decisions instead of local-only forbidden lists.",
+      "priority": "P1"
+    },
+    {
+      "recommendation_id": "l7_0q_rec_002",
+      "recommendation": "Treat revenue discovery, market research, and draft generation as allowed work; gate only external revenue side effects.",
+      "priority": "P1"
+    },
+    {
+      "recommendation_id": "l7_0q_rec_003",
+      "recommendation": "Replace owner-manual URL/window/worktree/env burden with launchers, resolvers, orchestrators, and cockpit commands.",
+      "priority": "P1"
+    },
+    {
+      "recommendation_id": "l7_0q_rec_004",
+      "recommendation": "Preserve legitimate hard boundaries for secrets, payment without approval, external posting/outreach, raw DB/WAL/SHM exposure, and unreviewed writeback.",
+      "priority": "P0"
+    }
+  ]
+}

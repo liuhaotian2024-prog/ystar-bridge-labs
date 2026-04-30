@@ -1,0 +1,17 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.0Q",
+  "generated_at_utc": "2026-04-30T00:43:54Z",
+  "audit_only": true,
+  "external_side_effects_occurred": false,
+  "core_writeback_occurred": false,
+  "ask_user_for_url_occurred": false,
+  "secret_values_serialized": false,
+  "db_files_read": false,
+  "wal_files_read": false,
+  "shm_files_read": false,
+  "logs_read": false,
+  "active_agent_marker_content_read": false,
+  "y_star_gov_modified": false,
+  "gov_mcp_modified": false
+}

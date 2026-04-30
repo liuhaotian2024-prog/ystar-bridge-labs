@@ -35,6 +35,20 @@
   "core_writeback_occurred": false,
   "secret_values_serialized": false,
   "action_types_modeled": 10,
-  "all_actions_default_blocked": true
+  "all_actions_default_blocked": true,
+  "l7_0q_policy_migration": {
+    "policy_ref": "policy/action_capability_registry.json",
+    "action_capability_policy_ref": "policy/action_capability_registry.json",
+    "approval_state_machine_ref": "policy/approval_state_machine.json",
+    "revenue_policy_ref": "policy/revenue_action_policy.json",
+    "discovery_policy_ref": "policy/discovery_policy.json",
+    "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+    "writeback_policy_ref": "policy/writeback_policy.json",
+    "owner_burden_reduction_policy_ref": "policy/owner_burden_reduction_policy.json",
+    "allowed_capability_stage": "draft",
+    "capability_category": "external_action_gate",
+    "execution_requires_human_approval": true,
+    "migration_note": "L7.0Q first migration adds staged policy references while preserving explicit safety text."
+  }
 }
 ```

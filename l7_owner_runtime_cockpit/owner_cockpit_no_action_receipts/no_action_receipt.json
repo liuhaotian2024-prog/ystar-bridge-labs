@@ -3,7 +3,7 @@
   "milestone_id": "L7.0P",
   "lane_id": "L7E",
   "lane_name": "Owner Runtime Cockpit",
-  "generated_at_utc": "2026-04-30T00:24:43Z",
+  "generated_at_utc": "2026-04-30T00:43:55Z",
   "external_network_performed": false,
   "external_side_effects_occurred": false,
   "core_writeback_occurred": false,
@@ -38,5 +38,19 @@
   "gov_mcp_modification_occurred": false,
   "db_wal_shm_log_active_agent_marker_content_read_occurred": false,
   "secret_commit_occurred": false,
-  "ask_user_url_occurred": false
+  "ask_user_url_occurred": false,
+  "l7_0q_policy_migration": {
+    "policy_ref": "policy/action_capability_registry.json",
+    "action_capability_policy_ref": "policy/action_capability_registry.json",
+    "approval_state_machine_ref": "policy/approval_state_machine.json",
+    "revenue_policy_ref": "policy/revenue_action_policy.json",
+    "discovery_policy_ref": "policy/discovery_policy.json",
+    "runtime_access_policy_ref": "policy/runtime_access_policy.json",
+    "writeback_policy_ref": "policy/writeback_policy.json",
+    "owner_burden_reduction_policy_ref": "policy/owner_burden_reduction_policy.json",
+    "allowed_capability_stage": "plan",
+    "capability_category": "owner_cockpit",
+    "execution_requires_human_approval": false,
+    "migration_note": "L7.0Q first migration adds staged policy references while preserving explicit safety text."
+  }
 }

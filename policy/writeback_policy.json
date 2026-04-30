@@ -1,0 +1,19 @@
+{
+  "schema_version": "v0",
+  "explicitly_allowed": [
+    "evidence_delta_candidate_generation",
+    "strategy_delta_candidate_generation",
+    "agent_capability_delta_candidate_generation",
+    "memory_writeback_candidate_generation",
+    "brain_update_candidate_generation",
+    "canonical_strategy_update_candidate_generation",
+    "writeback_dry_run_receipts"
+  ],
+  "blocked_by_default_until_future_approval_gate": [
+    "actual_memory_writeback",
+    "actual_brain_writeback",
+    "actual_canonical_strategy_mutation",
+    "actual_CIEU_DB_write"
+  ],
+  "policy_note": "Do not block learning. Block unreviewed permanent writeback."
+}

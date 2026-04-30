@@ -1,0 +1,730 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.0Q",
+  "capability_stages": [
+    "observe",
+    "search",
+    "read",
+    "extract",
+    "analyze",
+    "draft",
+    "plan",
+    "request_approval",
+    "execute_after_approval",
+    "writeback_candidate",
+    "dry_run_writeback",
+    "actual_writeback_after_approval"
+  ],
+  "decision_states": [
+    "allowed",
+    "allowed_with_budget",
+    "allowed_read_only",
+    "allowed_draft_only",
+    "allowed_after_human_approval",
+    "blocked_pending_config",
+    "blocked_pending_evidence",
+    "blocked_pending_human_review",
+    "blocked_by_policy",
+    "hard_forbidden"
+  ],
+  "actions": [
+    {
+      "action_type": "query_planning",
+      "category": "discovery_analysis",
+      "allowed_stages": [
+        "observe",
+        "search",
+        "read",
+        "extract",
+        "analyze",
+        "plan"
+      ],
+      "default_decision": "allowed_with_budget",
+      "risk_tier": "low_to_medium",
+      "side_effect_level": "read_only",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "enables evidence-backed commercial planning",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "controlled_search",
+      "category": "discovery_analysis",
+      "allowed_stages": [
+        "observe",
+        "search",
+        "read",
+        "extract",
+        "analyze",
+        "plan"
+      ],
+      "default_decision": "allowed_with_budget",
+      "risk_tier": "low_to_medium",
+      "side_effect_level": "read_only",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "enables evidence-backed commercial planning",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "public_page_read",
+      "category": "discovery_analysis",
+      "allowed_stages": [
+        "observe",
+        "search",
+        "read",
+        "extract",
+        "analyze",
+        "plan"
+      ],
+      "default_decision": "allowed_with_budget",
+      "risk_tier": "low_to_medium",
+      "side_effect_level": "read_only",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "enables evidence-backed commercial planning",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "bounded_crawl",
+      "category": "discovery_analysis",
+      "allowed_stages": [
+        "observe",
+        "search",
+        "read",
+        "extract",
+        "analyze",
+        "plan"
+      ],
+      "default_decision": "allowed_with_budget",
+      "risk_tier": "low_to_medium",
+      "side_effect_level": "read_only",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "enables evidence-backed commercial planning",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "rss_sitemap_read",
+      "category": "discovery_analysis",
+      "allowed_stages": [
+        "observe",
+        "search",
+        "read",
+        "extract",
+        "analyze",
+        "plan"
+      ],
+      "default_decision": "allowed_with_budget",
+      "risk_tier": "low_to_medium",
+      "side_effect_level": "read_only",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "enables evidence-backed commercial planning",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "source_triage",
+      "category": "discovery_analysis",
+      "allowed_stages": [
+        "observe",
+        "search",
+        "read",
+        "extract",
+        "analyze",
+        "plan"
+      ],
+      "default_decision": "allowed_with_budget",
+      "risk_tier": "low_to_medium",
+      "side_effect_level": "read_only",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "enables evidence-backed commercial planning",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "evidence_extraction",
+      "category": "discovery_analysis",
+      "allowed_stages": [
+        "observe",
+        "search",
+        "read",
+        "extract",
+        "analyze",
+        "plan"
+      ],
+      "default_decision": "allowed_with_budget",
+      "risk_tier": "low_to_medium",
+      "side_effect_level": "read_only",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "enables evidence-backed commercial planning",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "corroboration_conflict_analysis",
+      "category": "discovery_analysis",
+      "allowed_stages": [
+        "observe",
+        "search",
+        "read",
+        "extract",
+        "analyze",
+        "plan"
+      ],
+      "default_decision": "allowed_with_budget",
+      "risk_tier": "low_to_medium",
+      "side_effect_level": "read_only",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "enables evidence-backed commercial planning",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "review_packet_generation",
+      "category": "discovery_analysis",
+      "allowed_stages": [
+        "observe",
+        "search",
+        "read",
+        "extract",
+        "analyze",
+        "plan"
+      ],
+      "default_decision": "allowed_with_budget",
+      "risk_tier": "low_to_medium",
+      "side_effect_level": "read_only",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "enables evidence-backed commercial planning",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "internal_strategy_memo",
+      "category": "discovery_analysis",
+      "allowed_stages": [
+        "observe",
+        "search",
+        "read",
+        "extract",
+        "analyze",
+        "plan"
+      ],
+      "default_decision": "allowed_with_budget",
+      "risk_tier": "low_to_medium",
+      "side_effect_level": "read_only",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "enables evidence-backed commercial planning",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "market_research",
+      "category": "discovery_analysis",
+      "allowed_stages": [
+        "observe",
+        "search",
+        "read",
+        "extract",
+        "analyze",
+        "plan"
+      ],
+      "default_decision": "allowed_with_budget",
+      "risk_tier": "low_to_medium",
+      "side_effect_level": "read_only",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "enables evidence-backed commercial planning",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "opportunity_discovery",
+      "category": "discovery_analysis",
+      "allowed_stages": [
+        "observe",
+        "search",
+        "read",
+        "extract",
+        "analyze",
+        "plan"
+      ],
+      "default_decision": "allowed_with_budget",
+      "risk_tier": "low_to_medium",
+      "side_effect_level": "read_only",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "enables evidence-backed commercial planning",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "customer_segment_analysis",
+      "category": "discovery_analysis",
+      "allowed_stages": [
+        "observe",
+        "search",
+        "read",
+        "extract",
+        "analyze",
+        "plan"
+      ],
+      "default_decision": "allowed_with_budget",
+      "risk_tier": "low_to_medium",
+      "side_effect_level": "read_only",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "enables evidence-backed commercial planning",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "pain_point_analysis",
+      "category": "discovery_analysis",
+      "allowed_stages": [
+        "observe",
+        "search",
+        "read",
+        "extract",
+        "analyze",
+        "plan"
+      ],
+      "default_decision": "allowed_with_budget",
+      "risk_tier": "low_to_medium",
+      "side_effect_level": "read_only",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "enables evidence-backed commercial planning",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "funding_grant_watch_read_only",
+      "category": "discovery_analysis",
+      "allowed_stages": [
+        "observe",
+        "search",
+        "read",
+        "extract",
+        "analyze",
+        "plan"
+      ],
+      "default_decision": "allowed_with_budget",
+      "risk_tier": "low_to_medium",
+      "side_effect_level": "read_only",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "enables evidence-backed commercial planning",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "RFP_watch_read_only",
+      "category": "discovery_analysis",
+      "allowed_stages": [
+        "observe",
+        "search",
+        "read",
+        "extract",
+        "analyze",
+        "plan"
+      ],
+      "default_decision": "allowed_with_budget",
+      "risk_tier": "low_to_medium",
+      "side_effect_level": "read_only",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "enables evidence-backed commercial planning",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "offer_hypothesis_draft",
+      "category": "draft_planning",
+      "allowed_stages": [
+        "draft",
+        "plan",
+        "request_approval"
+      ],
+      "default_decision": "allowed_draft_only",
+      "risk_tier": "medium",
+      "side_effect_level": "none_until_execution",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "turns evidence into reviewable commercial proposals",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "pricing_hypothesis_draft",
+      "category": "draft_planning",
+      "allowed_stages": [
+        "draft",
+        "plan",
+        "request_approval"
+      ],
+      "default_decision": "allowed_draft_only",
+      "risk_tier": "medium",
+      "side_effect_level": "none_until_execution",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "turns evidence into reviewable commercial proposals",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "outreach_email_draft",
+      "category": "draft_planning",
+      "allowed_stages": [
+        "draft",
+        "plan",
+        "request_approval"
+      ],
+      "default_decision": "allowed_draft_only",
+      "risk_tier": "medium",
+      "side_effect_level": "none_until_execution",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "turns evidence into reviewable commercial proposals",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "grant_application_draft",
+      "category": "draft_planning",
+      "allowed_stages": [
+        "draft",
+        "plan",
+        "request_approval"
+      ],
+      "default_decision": "allowed_draft_only",
+      "risk_tier": "medium",
+      "side_effect_level": "none_until_execution",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "turns evidence into reviewable commercial proposals",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "RFP_response_draft",
+      "category": "draft_planning",
+      "allowed_stages": [
+        "draft",
+        "plan",
+        "request_approval"
+      ],
+      "default_decision": "allowed_draft_only",
+      "risk_tier": "medium",
+      "side_effect_level": "none_until_execution",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "turns evidence into reviewable commercial proposals",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "public_content_draft",
+      "category": "draft_planning",
+      "allowed_stages": [
+        "draft",
+        "plan",
+        "request_approval"
+      ],
+      "default_decision": "allowed_draft_only",
+      "risk_tier": "medium",
+      "side_effect_level": "none_until_execution",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "turns evidence into reviewable commercial proposals",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "approval_request_generation",
+      "category": "draft_planning",
+      "allowed_stages": [
+        "draft",
+        "plan",
+        "request_approval"
+      ],
+      "default_decision": "allowed_draft_only",
+      "risk_tier": "medium",
+      "side_effect_level": "none_until_execution",
+      "requires_human_approval": false,
+      "forbidden_without_approval": false,
+      "commercial_relevance": "turns evidence into reviewable commercial proposals",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "customer_outreach_send",
+      "category": "external_execution",
+      "allowed_stages": [
+        "request_approval",
+        "execute_after_approval"
+      ],
+      "default_decision": "allowed_after_human_approval",
+      "risk_tier": "high",
+      "side_effect_level": "external_side_effect",
+      "requires_human_approval": true,
+      "forbidden_without_approval": true,
+      "commercial_relevance": "may create revenue only after explicit approval",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "partner_outreach_send",
+      "category": "external_execution",
+      "allowed_stages": [
+        "request_approval",
+        "execute_after_approval"
+      ],
+      "default_decision": "allowed_after_human_approval",
+      "risk_tier": "high",
+      "side_effect_level": "external_side_effect",
+      "requires_human_approval": true,
+      "forbidden_without_approval": true,
+      "commercial_relevance": "may create revenue only after explicit approval",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "grant_application_submit",
+      "category": "external_execution",
+      "allowed_stages": [
+        "request_approval",
+        "execute_after_approval"
+      ],
+      "default_decision": "allowed_after_human_approval",
+      "risk_tier": "high",
+      "side_effect_level": "external_side_effect",
+      "requires_human_approval": true,
+      "forbidden_without_approval": true,
+      "commercial_relevance": "may create revenue only after explicit approval",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "RFP_submit",
+      "category": "external_execution",
+      "allowed_stages": [
+        "request_approval",
+        "execute_after_approval"
+      ],
+      "default_decision": "allowed_after_human_approval",
+      "risk_tier": "high",
+      "side_effect_level": "external_side_effect",
+      "requires_human_approval": true,
+      "forbidden_without_approval": true,
+      "commercial_relevance": "may create revenue only after explicit approval",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "public_content_publish",
+      "category": "external_execution",
+      "allowed_stages": [
+        "request_approval",
+        "execute_after_approval"
+      ],
+      "default_decision": "allowed_after_human_approval",
+      "risk_tier": "high",
+      "side_effect_level": "external_side_effect",
+      "requires_human_approval": true,
+      "forbidden_without_approval": true,
+      "commercial_relevance": "may create revenue only after explicit approval",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "account_creation",
+      "category": "external_execution",
+      "allowed_stages": [
+        "request_approval",
+        "execute_after_approval"
+      ],
+      "default_decision": "allowed_after_human_approval",
+      "risk_tier": "high",
+      "side_effect_level": "external_side_effect",
+      "requires_human_approval": true,
+      "forbidden_without_approval": true,
+      "commercial_relevance": "may create revenue only after explicit approval",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "payment_or_purchase",
+      "category": "external_execution",
+      "allowed_stages": [
+        "request_approval",
+        "execute_after_approval"
+      ],
+      "default_decision": "allowed_after_human_approval",
+      "risk_tier": "high",
+      "side_effect_level": "external_side_effect",
+      "requires_human_approval": true,
+      "forbidden_without_approval": true,
+      "commercial_relevance": "may create revenue only after explicit approval",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "contract_or_signature",
+      "category": "external_execution",
+      "allowed_stages": [
+        "request_approval",
+        "execute_after_approval"
+      ],
+      "default_decision": "allowed_after_human_approval",
+      "risk_tier": "high",
+      "side_effect_level": "external_side_effect",
+      "requires_human_approval": true,
+      "forbidden_without_approval": true,
+      "commercial_relevance": "may create revenue only after explicit approval",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "social_posting",
+      "category": "external_execution",
+      "allowed_stages": [
+        "request_approval",
+        "execute_after_approval"
+      ],
+      "default_decision": "allowed_after_human_approval",
+      "risk_tier": "high",
+      "side_effect_level": "external_side_effect",
+      "requires_human_approval": true,
+      "forbidden_without_approval": true,
+      "commercial_relevance": "may create revenue only after explicit approval",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "MCP_live_behavior",
+      "category": "external_execution",
+      "allowed_stages": [
+        "request_approval",
+        "execute_after_approval"
+      ],
+      "default_decision": "allowed_after_human_approval",
+      "risk_tier": "high",
+      "side_effect_level": "external_side_effect",
+      "requires_human_approval": true,
+      "forbidden_without_approval": true,
+      "commercial_relevance": "may create revenue only after explicit approval",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "memory_writeback_candidate",
+      "category": "writeback_candidate",
+      "allowed_stages": [
+        "writeback_candidate",
+        "dry_run_writeback"
+      ],
+      "default_decision": "allowed_draft_only",
+      "risk_tier": "medium",
+      "side_effect_level": "core_state_candidate",
+      "requires_human_approval": true,
+      "forbidden_without_approval": true,
+      "commercial_relevance": "allows learning without unreviewed permanent writeback",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "brain_update_candidate",
+      "category": "writeback_candidate",
+      "allowed_stages": [
+        "writeback_candidate",
+        "dry_run_writeback"
+      ],
+      "default_decision": "allowed_draft_only",
+      "risk_tier": "medium",
+      "side_effect_level": "core_state_candidate",
+      "requires_human_approval": true,
+      "forbidden_without_approval": true,
+      "commercial_relevance": "allows learning without unreviewed permanent writeback",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "canonical_strategy_update_candidate",
+      "category": "writeback_candidate",
+      "allowed_stages": [
+        "writeback_candidate",
+        "dry_run_writeback"
+      ],
+      "default_decision": "allowed_draft_only",
+      "risk_tier": "medium",
+      "side_effect_level": "core_state_candidate",
+      "requires_human_approval": true,
+      "forbidden_without_approval": true,
+      "commercial_relevance": "allows learning without unreviewed permanent writeback",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "CIEU_DB_write_candidate",
+      "category": "writeback_candidate",
+      "allowed_stages": [
+        "writeback_candidate",
+        "dry_run_writeback"
+      ],
+      "default_decision": "allowed_draft_only",
+      "risk_tier": "medium",
+      "side_effect_level": "core_state_candidate",
+      "requires_human_approval": true,
+      "forbidden_without_approval": true,
+      "commercial_relevance": "allows learning without unreviewed permanent writeback",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "dry_run_writeback",
+      "category": "writeback_candidate",
+      "allowed_stages": [
+        "writeback_candidate",
+        "dry_run_writeback"
+      ],
+      "default_decision": "allowed_draft_only",
+      "risk_tier": "medium",
+      "side_effect_level": "core_state_candidate",
+      "requires_human_approval": true,
+      "forbidden_without_approval": true,
+      "commercial_relevance": "allows learning without unreviewed permanent writeback",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "actual_memory_writeback",
+      "category": "actual_writeback",
+      "allowed_stages": [
+        "actual_writeback_after_approval"
+      ],
+      "default_decision": "blocked_pending_human_review",
+      "risk_tier": "critical",
+      "side_effect_level": "core_state_write",
+      "requires_human_approval": true,
+      "forbidden_without_approval": true,
+      "commercial_relevance": "may improve future operations only after explicit approval gate",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "actual_brain_writeback",
+      "category": "actual_writeback",
+      "allowed_stages": [
+        "actual_writeback_after_approval"
+      ],
+      "default_decision": "blocked_pending_human_review",
+      "risk_tier": "critical",
+      "side_effect_level": "core_state_write",
+      "requires_human_approval": true,
+      "forbidden_without_approval": true,
+      "commercial_relevance": "may improve future operations only after explicit approval gate",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "actual_canonical_strategy_writeback",
+      "category": "actual_writeback",
+      "allowed_stages": [
+        "actual_writeback_after_approval"
+      ],
+      "default_decision": "blocked_pending_human_review",
+      "risk_tier": "critical",
+      "side_effect_level": "core_state_write",
+      "requires_human_approval": true,
+      "forbidden_without_approval": true,
+      "commercial_relevance": "may improve future operations only after explicit approval gate",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    },
+    {
+      "action_type": "actual_CIEU_DB_write",
+      "category": "actual_writeback",
+      "allowed_stages": [
+        "actual_writeback_after_approval"
+      ],
+      "default_decision": "blocked_pending_human_review",
+      "risk_tier": "critical",
+      "side_effect_level": "core_state_write",
+      "requires_human_approval": true,
+      "forbidden_without_approval": true,
+      "commercial_relevance": "may improve future operations only after explicit approval gate",
+      "policy_notes": "Stage the capability instead of blanket-blocking useful work; block only unsafe or unapproved side effects."
+    }
+  ],
+  "core_principle": "Do not block revenue work. Block unapproved revenue side effects. Do not block discovery. Block unsafe execution."
+}

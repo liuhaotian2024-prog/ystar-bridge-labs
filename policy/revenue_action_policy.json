@@ -1,0 +1,30 @@
+{
+  "schema_version": "v0",
+  "principle": "Do not block revenue work. Block unapproved revenue side effects.",
+  "explicitly_allowed": [
+    "opportunity_discovery",
+    "market_research",
+    "customer_segment_analysis",
+    "pain_point_analysis",
+    "competitor_analysis",
+    "funding_grant_watch_read_only",
+    "RFP_watch_read_only",
+    "offer_hypothesis_draft",
+    "pricing_hypothesis_draft",
+    "outreach_draft",
+    "proposal_draft",
+    "internal_strategy_memo",
+    "human_approval_request",
+    "revenue_opportunity_packet_generation"
+  ],
+  "requires_human_approval": [
+    "sending_outreach",
+    "submitting_grant_RFP",
+    "publishing_content",
+    "account_creation",
+    "payment_purchase",
+    "signing_contracts",
+    "customer_commitments",
+    "autonomous_revenue_execution"
+  ]
+}

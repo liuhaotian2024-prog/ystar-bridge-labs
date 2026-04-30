@@ -1,0 +1,25 @@
+{
+  "schema_version": "v0",
+  "allowed": [
+    "safe_runtime_metadata",
+    "sanitized_runtime_summary",
+    "generated_read_model_summaries",
+    "no_secret_validation_status",
+    "lane_status",
+    "work_order_status"
+  ],
+  "restricted_review_required": [
+    "raw_runtime_logs",
+    "active_agent_marker_content",
+    "raw_DB_content",
+    "memory_store_content"
+  ],
+  "hard_forbidden_by_default": [
+    "secret_files",
+    "API_key_values",
+    "raw_DB_WAL_SHM_ingestion",
+    "private_credentials",
+    "unredacted_logs_with_secrets"
+  ],
+  "policy_note": "Do not permanently block internal observation; use metadata and sanitized summaries as the safe path."
+}
