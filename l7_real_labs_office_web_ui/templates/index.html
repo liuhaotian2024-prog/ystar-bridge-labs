@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aiden Chat</title>
+  <title>Aiden CEO Chat</title>
   <link rel="stylesheet" href="/static/office.css">
 </head>
 <body>
@@ -11,25 +11,54 @@
     <section class="chat-card">
       <header class="chat-header">
         <p class="eyebrow">LOCAL ONLY · AIDEN CEO CHAT · NO EXTERNAL SENDING</p>
-        <h1>和 Aiden 讨论</h1>
-        <p>这里只有一个功能：你问问题，Aiden 用 CEO 视角回复你。没有团队看板、没有 L8/L9/L10、没有外发。</p>
+        <h1>和 Aiden 认真讨论</h1>
+        <p>这里只有一个核心功能：你和 CEO Aiden 讨论问题。Aiden 会基于 Labs 当前 L7-L10 本地状态回答，不外发、不联系客户、不写核心记忆。</p>
       </header>
+
+      <section class="status-grid" aria-label="Aiden status">
+        <article class="status-card" id="aiden-status-card">
+          <span>Aiden 状态</span>
+          <strong>加载中...</strong>
+          <p>正在读取本地 context。</p>
+        </article>
+        <article class="status-card">
+          <span>当前边界</span>
+          <strong>Local only</strong>
+          <p>邮件、客户联系、发布、付款、核心写回都不会自动执行。</p>
+        </article>
+      </section>
+
+      <section class="suggested-prompts" aria-label="Suggested serious prompts">
+        <button type="button" data-prompt="Aiden，我们现在到底做什么东西才能最快拿到第一笔钱？">最快第一笔钱</button>
+        <button type="button" data-prompt="Aiden，你是依据什么得出这个方向的？">依据是什么</button>
+        <button type="button" data-prompt="Aiden，你对于 Labs 的元发展是怎么认识的？">Labs 元发展</button>
+        <button type="button" data-prompt="Aiden，你现在自己是什么状态？">Aiden 状态</button>
+        <button type="button" data-prompt="Aiden，你能不能带团队给我制定 7 天行动计划？">7 天行动计划</button>
+      </section>
+
+      <section id="context-panel" class="context-panel" hidden></section>
 
       <section id="chat-history" class="chat-history" aria-live="polite">
         <div class="message aiden">
           <strong>Aiden</strong>
-          <p>我在。你直接说问题就行，我会尽量用清楚的人话回答。</p>
+          <p>我在。你可以直接问：为什么是这个商业方向？Labs 的元发展是什么？我现在到底是什么状态？我会基于当前本地 context 回答。</p>
         </div>
       </section>
 
       <form id="aiden-chat-form" class="chat-form">
         <label for="aiden-message">你想跟 Aiden 讨论什么？</label>
-        <textarea id="aiden-message" required placeholder="比如：Aiden，我们现在到底做什么东西才能最快拿到第一笔钱？"></textarea>
-        <button type="submit">发送给 Aiden</button>
+        <textarea id="aiden-message" required placeholder="比如：Aiden，你是依据什么判断 Founder AI Workflow Audit 是第一现金路径 seed？"></textarea>
+        <div class="form-row">
+          <button type="submit">发送给 Aiden</button>
+          <button type="button" class="secondary" id="show-basis-button">Show Aiden Basis</button>
+          <button type="button" class="secondary" id="show-limits-button">Show Current Limits</button>
+          <button type="button" class="secondary" id="summary-button">Generate CEO Meeting Summary</button>
+          <button type="button" class="secondary" id="mission-button">Create L10 Mission From This Discussion</button>
+        </div>
         <p id="chat-status" class="status">本地对话，不会发邮件、不会联系客户、不会发布。</p>
       </form>
     </section>
   </main>
-  <script src="/static/office.js?v=aiden-chat-v1"></script>
+  <script src="/static/office.js?v=aiden-brain-v1"></script>
 </body>
 </html>

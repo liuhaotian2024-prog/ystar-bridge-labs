@@ -1,0 +1,36 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L10.2",
+  "packet_type": "aiden_brain_diagnostics",
+  "generated_at_utc": "2026-04-30T22:41:20Z",
+  "aiden_context_loaded": true,
+  "milestones_known": [
+    "L7.5 Real Labs Whiteboard Collaboration & Team Work Runtime",
+    "L7.6 Labs Team Self-Work Scheduler & Autonomous Task Loop",
+    "L8.0 First Cash Path Operating Loop",
+    "L9.0 Meta-Development Opportunity & Execution Runtime",
+    "L10.0 Delegated Live Meta-Development Work Runtime"
+  ],
+  "limitations_known": [
+    "Aiden chat layer was previously a thin deterministic response layer and is being repaired",
+    "not yet a full LLM autonomous worker",
+    "configured live read-only research is disabled unless explicitly enabled and budgeted",
+    "no external sending",
+    "no customer contact",
+    "no payment",
+    "no publication",
+    "no core writeback"
+  ],
+  "meeting_memory_count": 32,
+  "last_intent": "fastest_cash_question",
+  "meeting_memory_used": true,
+  "generic_fallback_disabled_for_known_owner_questions": true,
+  "raw_template_fallback_occurred": false,
+  "external_side_effects": false,
+  "customer_contact": false,
+  "email_sent": false,
+  "publication": false,
+  "payment_processed": false,
+  "core_writeback": false,
+  "coo_invented": false
+}

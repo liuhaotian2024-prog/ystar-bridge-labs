@@ -21,7 +21,7 @@ fi
 BUILDER="${REPO_ROOT}/scripts/l7_labs_office_web/office_web_builder.py"
 SERVER="${REPO_ROOT}/scripts/l7_labs_office_web/office_web_server.py"
 STATE="${REPO_ROOT}/l7_real_labs_office_web_ui/office_runtime_state.json"
-PORT="${LABS_OFFICE_PORT:-8771}"
+PORT="${LABS_OFFICE_PORT:-8772}"
 URL="http://127.0.0.1:${PORT}"
 
 build_office() {
@@ -32,6 +32,7 @@ print_status() {
   python3 - <<'PY'
 import json
 from pathlib import Path
+from l10_2_aiden_ceo_brain_rescue.aiden_diagnostics import build_aiden_diagnostics
 
 state_path = Path("l7_real_labs_office_web_ui/office_runtime_state.json")
 if not state_path.exists():
@@ -78,8 +79,13 @@ l10_dirs = {
     "escalations": l10_root / "escalation_packets",
     "reports": l10_root / "mission_completion_reports",
 }
+aiden_diagnostics = build_aiden_diagnostics()
 print("Y*Bridge Labs Office Web UI")
 print(f"- URL: {state['local_url']}")
+print(f"- Aiden CEO brain rescue available: {aiden_diagnostics['aiden_context_loaded']}")
+print(f"- Aiden known milestones: {len(aiden_diagnostics['milestones_known'])}")
+print(f"- Aiden meeting memory turns: {aiden_diagnostics['meeting_memory_count']}")
+print(f"- Aiden generic fallback disabled for known owner questions: {aiden_diagnostics['generic_fallback_disabled_for_known_owner_questions']}")
 print(f"- agents: {state['agent_count']}")
 print(f"- queued owner messages: {len(owner_messages)}")
 print(f"- queued team tasks: {len(team_tasks)}")
@@ -153,6 +159,16 @@ from l10_delegated_live_meta_development_runtime.mission_runner import run_bound
 from l10_delegated_live_meta_development_runtime.escalation_review_center import decide_escalation
 from l10_delegated_live_meta_development_runtime.escalation_packet_builder import list_escalation_packets
 from l10_delegated_live_meta_development_runtime.mission_cockpit_model import build_mission_cockpit
+from l10_2_aiden_ceo_brain_rescue.aiden_response_engine import create_aiden_response
+from l10_2_aiden_ceo_brain_rescue.aiden_meeting_memory import build_meeting_summary
+aiden_questions = [
+    "Aiden，我们现在到底做什么东西才能最快拿到第一笔钱？",
+    "Aiden，你是依据什么得出这个方向的？",
+    "Aiden，你对于 Labs 的元发展是怎么认识的？",
+    "Aiden，你现在自己是什么状态？",
+]
+aiden_answers = [create_aiden_response(question) for question in aiden_questions]
+aiden_summary = build_meeting_summary()
 item = create_demo_work_item()
 result = run_bounded(max_work_items=1, max_cycles=2)
 report = None
@@ -185,6 +201,9 @@ l10_escalation = next(item for item in list_escalation_packets() if item["missio
 l10_decision = decide_escalation(l10_escalation["escalation_id"], "hold", "Simulated local demo decision; no action executed.")
 l10_cockpit = build_mission_cockpit()
 print("demo_ok: L8 first cash path operating loop simulated locally")
+print("demo_ok: L10.2 Aiden CEO context-grounded chat simulated locally")
+print(f"aiden_responses: {len(aiden_answers)}")
+print(f"aiden_summary: {aiden_summary['summary_id']}")
 print(f"work_item: {item['work_item_id']}")
 print(f"completion_report: {report or 'not_created'}")
 print(f"selected_offer: {cash_path['selected_offer']}")
@@ -233,10 +252,19 @@ from pathlib import Path
 
 html = Path("l7_real_labs_office_web_ui/templates/index.html").read_text(encoding="utf-8")
 state = json.loads(Path("l7_real_labs_office_web_ui/office_runtime_state.json").read_text(encoding="utf-8"))
-if "aiden-chat-form" not in html or "发送给 Aiden" not in html:
+if "aiden-chat-form" not in html or "aiden-status-card" not in html or "Show Aiden Basis" not in html:
     raise SystemExit("HTML missing Aiden chat form")
 if state.get("agent_count", 0) < 12:
     raise SystemExit("runtime state missing recovered agents")
+from l10_2_aiden_ceo_brain_rescue.aiden_response_engine import create_aiden_response
+for question in [
+    "Aiden，你是依据什么得出这个方向的？",
+    "Aiden，你对于 Labs 的元发展是怎么认识的？",
+    "Aiden，你现在自己是什么状态？",
+]:
+    answer = create_aiden_response(question, write_packets=False)
+    if answer.get("used_fallback") or "我先复述我听到的问题" in answer.get("text", ""):
+        raise SystemExit("Aiden used dumb fallback for known owner question")
 print("smoke_ok: offline fallback because requested localhost port is unavailable to this process")
 PY
       return
@@ -252,7 +280,7 @@ from pathlib import Path
 from urllib.error import URLError
 import urllib.request
 
-PORT = os.environ.get("LABS_OFFICE_PORT", "8771")
+PORT = os.environ.get("LABS_OFFICE_PORT", "8772")
 
 def get(path):
     with urllib.request.urlopen(f"http://127.0.0.1:{PORT}{path}", timeout=3) as response:
@@ -260,11 +288,32 @@ def get(path):
 
 try:
     html = get("/")
-    if "aiden-chat-form" not in html or "发送给 Aiden" not in html:
+    if "aiden-chat-form" not in html or "aiden-status-card" not in html or "Show Aiden Basis" not in html:
         raise SystemExit("HTML missing Aiden chat form")
     chat = json.loads(get("/api/aiden_chat"))
     if chat.get("ok") is not True:
         raise SystemExit("Aiden chat history endpoint failed")
+    aiden_status = json.loads(get("/api/aiden/status"))
+    if aiden_status.get("context_loaded") is not True:
+        raise SystemExit("Aiden context did not load")
+    def post(path, payload):
+        request = urllib.request.Request(
+            f"http://127.0.0.1:{PORT}{path}",
+            data=json.dumps(payload).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        with urllib.request.urlopen(request, timeout=3) as response:
+            return json.loads(response.read().decode("utf-8"))
+    for question in [
+        "Aiden，你是依据什么得出这个方向的？",
+        "Aiden，你对于 Labs 的元发展是怎么认识的？",
+        "Aiden，你现在自己是什么状态？",
+    ]:
+        answer = post("/api/aiden/message", {"message": question})
+        text = answer.get("reply", {}).get("text", "")
+        if answer.get("diagnostics", {}).get("used_fallback") or "我先复述我听到的问题" in text:
+            raise SystemExit("Aiden used dumb fallback for known owner question")
     roster = json.loads(get("/api/roster"))
     if roster.get("agent_count", 0) < 12:
         raise SystemExit("roster missing recovered agents")
@@ -285,13 +334,13 @@ try:
     l10 = json.loads(get("/api/l10/cockpit"))
     if "fixture_demo_available" not in l10:
         raise SystemExit("L10 cockpit missing fixture demo status")
-    print("smoke_ok: GET /, /api/aiden_chat, /api/roster, /api/status, /api/scheduler/status, /api/l8/cockpit, /api/l9/meta/cockpit, /api/l10/cockpit")
+    print("smoke_ok: GET /, /api/aiden/status, /api/aiden/message, /api/roster, /api/status, /api/scheduler/status, /api/l8/cockpit, /api/l9/meta/cockpit, /api/l10/cockpit")
 except URLError as exc:
     if "Operation not permitted" not in str(exc):
         raise
     html = Path("l7_real_labs_office_web_ui/templates/index.html").read_text(encoding="utf-8")
     state = json.loads(Path("l7_real_labs_office_web_ui/office_runtime_state.json").read_text(encoding="utf-8"))
-    if "aiden-chat-form" not in html or "发送给 Aiden" not in html:
+    if "aiden-chat-form" not in html or "aiden-status-card" not in html or "Show Aiden Basis" not in html:
         raise SystemExit("HTML missing Aiden chat form")
     if state.get("agent_count", 0) < 12:
         raise SystemExit("runtime state missing recovered agents")
@@ -307,6 +356,15 @@ except URLError as exc:
     l10_summary = json.loads(Path("l10_delegated_live_meta_development_runtime/l10_summary.json").read_text(encoding="utf-8"))
     if l10_summary.get("permission_tier_count", 0) < 5:
         raise SystemExit("L10 summary missing permission tiers")
+    from l10_2_aiden_ceo_brain_rescue.aiden_response_engine import create_aiden_response
+    for question in [
+        "Aiden，你是依据什么得出这个方向的？",
+        "Aiden，你对于 Labs 的元发展是怎么认识的？",
+        "Aiden，你现在自己是什么状态？",
+    ]:
+        answer = create_aiden_response(question, write_packets=False)
+        if answer.get("used_fallback") or "我先复述我听到的问题" in answer.get("text", ""):
+            raise SystemExit("Aiden used dumb fallback for known owner question")
     print("smoke_ok: offline fallback because sandbox blocked localhost socket")
 PY
 }

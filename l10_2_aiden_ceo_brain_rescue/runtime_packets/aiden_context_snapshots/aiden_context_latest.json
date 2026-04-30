@@ -1,0 +1,158 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L10.2",
+  "packet_type": "aiden_context_snapshot",
+  "generated_at_utc": "2026-04-30T22:41:20Z",
+  "current_runtime_stage": "L10.2 Aiden CEO Brain Rescue on top of L7.5-L10 local Labs Office",
+  "completed_milestones": [
+    "L7.5 Real Labs Whiteboard Collaboration & Team Work Runtime",
+    "L7.6 Labs Team Self-Work Scheduler & Autonomous Task Loop",
+    "L8.0 First Cash Path Operating Loop",
+    "L9.0 Meta-Development Opportunity & Execution Runtime",
+    "L10.0 Delegated Live Meta-Development Work Runtime"
+  ],
+  "active_capabilities": [
+    "local office",
+    "whiteboard interaction",
+    "Aiden routing",
+    "self-work scheduler",
+    "opportunity discovery",
+    "money path ranking",
+    "owner approval center",
+    "manual-send action packets",
+    "delegated mission runtime",
+    "fixture-backed research demo",
+    "configured live read-only research architecture"
+  ],
+  "current_limitations": [
+    "Aiden chat layer was previously a thin deterministic response layer and is being repaired",
+    "not yet a full LLM autonomous worker",
+    "configured live read-only research is disabled unless explicitly enabled and budgeted",
+    "no external sending",
+    "no customer contact",
+    "no payment",
+    "no publication",
+    "no core writeback"
+  ],
+  "commercial_seed_paths": [
+    "Founder AI Workflow Audit & CEO Command Brief Sprint",
+    "AI Company Cockpit Setup Sprint",
+    "Coding-Agent Governance Audit",
+    "Agent Workflow Bottleneck Diagnosis",
+    "Internal AI Operations Audit for Small Teams",
+    "Governance Template Paid Support",
+    "Y*Bridge Labs Runtime Setup Advisory",
+    "Open-Source-to-Paid-Support Package"
+  ],
+  "meta_development_principles": [
+    "Labs should not be locked to a single first cash path",
+    "Founder AI Workflow Audit is a seed, benchmark, and demo path, not a prison",
+    "Labs should discover, compare, rank, and prepare multiple money-making opportunities",
+    "owner should make authorization and strategic decisions, not manually operate every internal step",
+    "external side effects stay approval-gated and core writeback stays review-gated"
+  ],
+  "permission_boundaries": {
+    "local_only": true,
+    "forbidden_actions": [
+      "external outreach",
+      "email sending",
+      "customer contact",
+      "publication",
+      "payment",
+      "form submission",
+      "account creation",
+      "grant/RFP submission",
+      "MCP/live behavior",
+      "actual memory/brain/canonical/CIEU DB writeback",
+      "Y-star-gov modification",
+      "gov-mcp modification",
+      "ystar-bridge-labs modification",
+      "secret/env reading",
+      "DB/WAL/SHM/log/active-agent marker content reading"
+    ],
+    "external_side_effects": false,
+    "core_writeback": false
+  },
+  "owner_priorities": [
+    "understand what Labs is actually building",
+    "get a usable CEO discussion surface",
+    "move toward first revenue without locking the company to one offer",
+    "avoid dashboards that hide the real answer"
+  ],
+  "team_roster": [
+    {
+      "agent_id": "haotian_board_founder",
+      "display_name": "Haotian Liu",
+      "role": "Board / Founder"
+    },
+    {
+      "agent_id": "aiden_ceo",
+      "display_name": "Aiden Liu",
+      "role": "CEO"
+    },
+    {
+      "agent_id": "ethan_cto",
+      "display_name": "Ethan Wright",
+      "role": "CTO"
+    },
+    {
+      "agent_id": "sofia_cmo",
+      "display_name": "Sofia Blake",
+      "role": "CMO"
+    },
+    {
+      "agent_id": "marco_cfo",
+      "display_name": "Marco Rivera",
+      "role": "CFO"
+    },
+    {
+      "agent_id": "zara_cso",
+      "display_name": "Zara Johnson",
+      "role": "CSO"
+    },
+    {
+      "agent_id": "samantha_secretary",
+      "display_name": "Samantha Lin",
+      "role": "Secretary"
+    },
+    {
+      "agent_id": "leo_engineer",
+      "display_name": "Leo Chen",
+      "role": "Kernel Engineer"
+    },
+    {
+      "agent_id": "maya_engineer",
+      "display_name": "Maya Patel",
+      "role": "Governance Engineer"
+    },
+    {
+      "agent_id": "ryan_engineer",
+      "display_name": "Ryan Park",
+      "role": "Platform Engineer"
+    },
+    {
+      "agent_id": "jordan_engineer",
+      "display_name": "Jordan Lee",
+      "role": "Domains Engineer"
+    },
+    {
+      "agent_id": "jinjin_k9_scout",
+      "display_name": "Jinjin / K9 Scout",
+      "role": "Research / Cross-model Scout"
+    }
+  ],
+  "recommended_next_work_modes": [
+    "CEO discussion",
+    "7-day action plan",
+    "L10 delegated mission with fixture-backed or explicitly enabled read-only research",
+    "owner-approved manual-send commercial action packet"
+  ],
+  "safe_source_checks": {
+    "l7_5_summary_exists": true,
+    "l7_6_summary_exists": true,
+    "l8_summary_exists": true,
+    "l9_summary_exists": true,
+    "l10_summary_exists": true
+  },
+  "no_coo_invented": true
+}

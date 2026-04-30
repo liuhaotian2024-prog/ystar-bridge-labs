@@ -89,13 +89,14 @@ def test_server_exposes_whiteboard_endpoints():
 
 def test_template_contains_aiden_only_chat_surface():
     template = (WEB_OUT / "templates/index.html").read_text(encoding="utf-8")
-    assert "和 Aiden 讨论" in template
+    assert "和 Aiden 认真讨论" in template
     assert 'id="aiden-chat-form"' in template
     assert 'id="aiden-message"' in template
     assert 'id="chat-history"' in template
     assert "发送给 Aiden" in template
-    assert "没有团队看板" in template
-    assert "没有 L8/L9/L10" in template
+    assert 'id="aiden-status-card"' in template
+    assert "Show Aiden Basis" in template
+    assert "Generate CEO Meeting Summary" in template
     assert 'id="whiteboard-message-form"' not in template
     assert 'id="work-board"' not in template
     assert 'id="agent-panel"' not in template
@@ -104,7 +105,11 @@ def test_template_contains_aiden_only_chat_surface():
 
 def test_js_can_submit_aiden_chat_path():
     js = (WEB_OUT / "static/office.js").read_text(encoding="utf-8")
-    assert "/api/aiden_chat" in js
+    assert "/api/aiden/message" in js
+    assert "/api/aiden/status" in js
+    assert "/api/aiden/context" in js
+    assert "/api/aiden/summary" in js
+    assert "/api/aiden/create_l10_mission" in js
     assert "aiden-chat-form" in js
     assert "sendMessage" in js
     assert "loadHistory" in js

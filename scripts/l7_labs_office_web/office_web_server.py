@@ -86,6 +86,11 @@ from l10_delegated_live_meta_development_runtime.mission_runner import run_bound
 from l10_delegated_live_meta_development_runtime.opportunity_signal_extractor import extract_opportunity_signals, list_opportunity_signals  # noqa: E402
 from l10_delegated_live_meta_development_runtime.permission_tiers import permission_tier_registry  # noqa: E402
 from l10_delegated_live_meta_development_runtime.source_summary_builder import list_source_summaries  # noqa: E402
+from l10_2_aiden_ceo_brain_rescue.aiden_ceo_profile import aiden_profile  # noqa: E402
+from l10_2_aiden_ceo_brain_rescue.aiden_context_loader import load_aiden_context  # noqa: E402
+from l10_2_aiden_ceo_brain_rescue.aiden_diagnostics import build_aiden_diagnostics  # noqa: E402
+from l10_2_aiden_ceo_brain_rescue.aiden_meeting_memory import build_meeting_summary, create_l10_mission_from_discussion, load_meeting_memory  # noqa: E402
+from l10_2_aiden_ceo_brain_rescue.aiden_response_engine import create_aiden_response  # noqa: E402
 
 ALLOWED_ACTIONS = [
     "local packet creation",
@@ -223,35 +228,26 @@ def create_team_task_packet(payload: dict[str, Any], out_dir: Path = OUT) -> dic
 
 
 def aiden_direct_reply(user_text: str) -> str:
-    text = user_text.strip()
-    lowered = text.lower()
-    if any(word in text for word in ["第一笔钱", "赚钱", "收入", "cash", "付费"]):
-        return (
-            "我会先把目标收窄成一个可验证的现金实验：不要先卖宏大的 AI 公司愿景，先卖一个小而清楚的服务包。"
-            "我建议的第一个可收费东西是 Founder AI Workflow Audit & CEO Command Brief：帮一个 AI founder/operator 看清当前 workflow、agent 使用、执行瓶颈和下一步决策。"
-            "第一版价格可以把 $1500 当作测试假设。下一步不是群发，而是先做一页 offer 和一条 owner 手动发送草稿。"
-        )
-    if any(word in text for word in ["难受", "疯", "哭", "折磨", "崩溃"]):
-        return (
-            "你现在的感受是合理的。之前的页面把内部机制包装成团队办公室，给了你错误预期。"
-            "我现在只做一件事：听你说问题，然后用 Aiden 的 CEO 视角给一个直接回答。"
-            "不再让你看 packet、timeline、L8/L9/L10，除非你明确要。"
-        )
-    if any(word in text for word in ["计划", "30天", "三十天", "下一步"]):
-        return (
-            "我建议下一步只保留三条线：第一，定义一个能收钱的服务包；第二，做一个客户能看懂的样例 brief；第三，准备一条 owner 手动发送的信息。"
-            "不要再扩展系统层级，先验证有没有人愿意为这个诊断服务付钱。"
-        )
-    if any(word in lowered for word in ["hello", "hi", "test"]) or any(word in text for word in ["测试", "在吗"]):
-        return "我在。这个页面现在只负责一件事：你说一个问题，我用 Aiden 的 CEO 视角直接回应。"
-    return (
-        f"我先复述我听到的问题：{text[:160]}"
-        "。我的建议是先把它变成一个可以判断的 owner 决策：目标是什么、下一步要产出什么、什么事情不能自动做。"
-        "如果你愿意，下一句可以直接问我：'Aiden，你建议我现在具体做哪一个东西来赚钱？'"
-    )
+    return str(create_aiden_response(user_text, write_packets=False)["text"])
 
 
 def aiden_chat_history(out_dir: Path = OUT) -> list[dict[str, Any]]:
+    memory = load_meeting_memory()
+    turns = []
+    for index, turn in enumerate(memory.get("recent_turns", [])[-80:]):
+        turns.append(
+            {
+                "turn_id": f"aiden_memory_turn_{index}",
+                "created_at_utc": turn.get("created_at_utc", ""),
+                "speaker": turn.get("speaker", "aiden_ceo"),
+                "text": turn.get("text", ""),
+                "intent": turn.get("intent", ""),
+                "external_side_effects": False,
+                "core_writeback": False,
+            }
+        )
+    if turns:
+        return turns
     path = out_dir / "runtime_packets/aiden_chat/aiden_chat_thread.json"
     if not path.exists():
         return []
@@ -262,15 +258,17 @@ def create_aiden_chat_turn(payload: dict[str, Any], out_dir: Path = OUT) -> dict
     text = str(payload.get("message", "")).strip()
     if not text:
         raise ValueError("message is required")
+    response = create_aiden_response(text, write_packets=True)
     packet_dir = out_dir / "runtime_packets/aiden_chat"
     packet_dir.mkdir(parents=True, exist_ok=True)
-    now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    now = str(response.get("created_at_utc"))
     turn_id = f"aiden_chat_{timestamp()}_{time.time_ns() % 1_000_000:06d}"
     user_turn = {
         "turn_id": f"{turn_id}_owner",
         "created_at_utc": now,
         "speaker": "owner",
         "text": text,
+        "intent": response["intent"],
         "external_side_effects": False,
         "core_writeback": False,
     }
@@ -279,11 +277,24 @@ def create_aiden_chat_turn(payload: dict[str, Any], out_dir: Path = OUT) -> dict
         "created_at_utc": now,
         "speaker": "aiden_ceo",
         "display_name": "Aiden Liu",
-        "text": aiden_direct_reply(text),
+        "text": response["text"],
+        "intent": response["intent"],
+        "next_concrete_step": response["next_concrete_step"],
+        "diagnostics": {
+            "context_used": response["context_used"],
+            "meeting_memory_used": response["meeting_memory_used"],
+            "repeated_question_detected": response["repeated_question_detected"],
+            "used_fallback": response["used_fallback"],
+            "raw_template_fallback_used": response["raw_template_fallback_used"],
+        },
         "external_side_effects": False,
         "core_writeback": False,
     }
-    history = aiden_chat_history(out_dir)
+    history = [
+        turn
+        for turn in aiden_chat_history(out_dir)
+        if turn.get("turn_id") not in {user_turn["turn_id"], aiden_turn["turn_id"]}
+    ]
     history.extend([user_turn, aiden_turn])
     path = packet_dir / "aiden_chat_thread.json"
     path.write_text(json.dumps(history[-80:], indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -291,6 +302,7 @@ def create_aiden_chat_turn(payload: dict[str, Any], out_dir: Path = OUT) -> dict
         "ok": True,
         "reply": aiden_turn,
         "history": history[-80:],
+        "diagnostics": aiden_turn["diagnostics"],
         "external_side_effects": False,
         "core_writeback": False,
     }
@@ -371,6 +383,26 @@ class OfficeHandler(BaseHTTPRequestHandler):
                 json_response(self, load_state())
             elif path == "/api/aiden_chat":
                 json_response(self, {"ok": True, "history": aiden_chat_history()})
+            elif path == "/api/aiden/status":
+                diagnostics = build_aiden_diagnostics()
+                json_response(
+                    self,
+                    {
+                        "ok": True,
+                        "profile": aiden_profile(),
+                        "diagnostics": diagnostics,
+                        "context_loaded": diagnostics["aiden_context_loaded"],
+                        "meeting_memory_count": diagnostics["meeting_memory_count"],
+                        "external_side_effects": False,
+                        "core_writeback": False,
+                    },
+                )
+            elif path == "/api/aiden/context":
+                json_response(self, {"ok": True, "context": load_aiden_context(write_snapshot=True)})
+            elif path == "/api/aiden/thread":
+                json_response(self, {"ok": True, "history": aiden_chat_history(), "memory": load_meeting_memory()})
+            elif path == "/api/aiden/diagnostics":
+                json_response(self, {"ok": True, "diagnostics": build_aiden_diagnostics()})
             elif path == "/api/roster":
                 state = load_state()
                 json_response(self, {"agents": state.get("agents", []), "agent_count": state.get("agent_count", 0)})
@@ -502,6 +534,16 @@ class OfficeHandler(BaseHTTPRequestHandler):
                 except ValueError as exc:
                     error_response(self, HTTPStatus.BAD_REQUEST, str(exc))
                     return
+            elif parsed.path == "/api/aiden/message":
+                try:
+                    json_response(self, create_aiden_chat_turn({"message": payload.get("message", payload.get("text", ""))}))
+                except ValueError as exc:
+                    error_response(self, HTTPStatus.BAD_REQUEST, str(exc))
+                    return
+            elif parsed.path == "/api/aiden/summary":
+                json_response(self, {"ok": True, "summary": build_meeting_summary()})
+            elif parsed.path == "/api/aiden/create_l10_mission":
+                json_response(self, {"ok": True, "mission_candidate": create_l10_mission_from_discussion()})
             elif parsed.path == "/api/message":
                 if not str(payload.get("message_text", "")).strip():
                     error_response(self, HTTPStatus.BAD_REQUEST, "message_text is required")

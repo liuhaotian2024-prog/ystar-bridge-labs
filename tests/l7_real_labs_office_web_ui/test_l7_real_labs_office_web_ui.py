@@ -51,7 +51,7 @@ def test_summary_and_runtime_state_exist():
     summary = load_json("web_ui_summary.json")
     state = load_json("office_runtime_state.json")
     assert summary["real_office_web_ui_created"] is True
-    assert summary["local_url"] == "http://127.0.0.1:8771"
+    assert summary["local_url"] == "http://127.0.0.1:8772"
     assert state["current_phase"] == "Real Labs Office Web UI Runtime"
 
 
@@ -72,23 +72,28 @@ def test_page_template_contains_aiden_only_chat():
     assert 'id="aiden-chat-form"' in template
     assert 'id="aiden-message"' in template
     assert 'id="chat-history"' in template
-    assert "和 Aiden 讨论" in template
+    assert "和 Aiden 认真讨论" in template
     assert "发送给 Aiden" in template
-    assert "这里只有一个功能" in template
-    assert "没有团队看板" in template
-    assert "没有 L8/L9/L10" in template
+    assert "Aiden 会基于 Labs 当前 L7-L10 本地状态回答" in template
+    assert 'id="aiden-status-card"' in template
+    assert "Show Aiden Basis" in template
+    assert "Generate CEO Meeting Summary" in template
     assert "NO EXTERNAL SENDING" in template
     assert "message-form" not in template
     assert "team-task-form" not in template
     assert "whiteboard-message-form" not in template
     assert "work-board" not in template
     assert "mode-switch" not in template
-    assert "office.js?v=aiden-chat-v1" in template
+    assert "office.js?v=aiden-brain-v1" in template
 
 
 def test_aiden_chat_js_uses_only_aiden_endpoint():
     js = (OUT / "static/office.js").read_text(encoding="utf-8")
-    assert "/api/aiden_chat" in js
+    assert "/api/aiden/message" in js
+    assert "/api/aiden/status" in js
+    assert "/api/aiden/context" in js
+    assert "/api/aiden/summary" in js
+    assert "/api/aiden/create_l10_mission" in js
     assert "aiden-chat-form" in js
     assert "sendMessage" in js
     assert "loadHistory" in js

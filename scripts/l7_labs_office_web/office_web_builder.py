@@ -19,12 +19,13 @@ OUT = ROOT / "l7_real_labs_office_web_ui"
 L75_OUT = ROOT / "l7_labs_whiteboard_collaboration_runtime"
 LEGACY_OUT = ROOT / "l7_labs_office_legacy_integration"
 GENERATED_AT = "2026-04-30T00:00:00Z"
-LOCAL_URL = "http://127.0.0.1:8771"
+LOCAL_URL = "http://127.0.0.1:8772"
 
 from l7_labs_team_self_work_scheduler.manifest_builder import build_manifest as build_l76_manifest  # noqa: E402
 from l8_first_cash_path_operating_loop.l8_manifest_builder import build_manifest as build_l8_manifest  # noqa: E402
 from l9_meta_development_opportunity_runtime.l9_manifest_builder import build_manifest as build_l9_manifest  # noqa: E402
 from l10_delegated_live_meta_development_runtime.l10_manifest_builder import build_manifest as build_l10_manifest  # noqa: E402
+from l10_2_aiden_ceo_brain_rescue.aiden_diagnostics import build_aiden_diagnostics  # noqa: E402
 
 PACKET_DIRS = [
     "runtime_packets/owner_messages",
@@ -296,6 +297,17 @@ def build_runtime_state() -> dict[str, Any]:
 
 
 def write_assets() -> None:
+    existing_template = OUT / "templates/index.html"
+    existing_css = OUT / "static/office.css"
+    existing_js = OUT / "static/office.js"
+    if (
+        existing_template.exists()
+        and existing_css.exists()
+        and existing_js.exists()
+        and "aiden-status-card" in existing_template.read_text(encoding="utf-8")
+        and "/api/aiden/message" in existing_js.read_text(encoding="utf-8")
+    ):
+        return
     write_text(
         "templates/index.html",
         """
@@ -1844,6 +1856,7 @@ def build() -> dict[str, Any]:
     l8_summary = build_l8_manifest()
     l9_summary = build_l9_manifest()
     l10_summary = build_l10_manifest()
+    aiden_diagnostics = build_aiden_diagnostics()
     write_json("existing_html_audit.json", audit)
     write_text(
         "existing_html_audit.md",
@@ -1895,16 +1908,27 @@ Deficiencies:
         "packet_type": "web_ui_summary",
         "generated_at_utc": GENERATED_AT,
         "real_office_web_ui_created": True,
+        "aiden_ceo_brain_rescue_available": True,
+        "aiden_context_loaded": aiden_diagnostics["aiden_context_loaded"],
+        "aiden_meeting_memory_count": aiden_diagnostics["meeting_memory_count"],
+        "generic_fallback_disabled_for_known_owner_questions": True,
         "whiteboard_runtime_created": True,
         "local_url": LOCAL_URL,
         "agent_count": state["agent_count"],
         "agent_cards_generated": state["agent_count"],
         "message_form_available": True,
-        "team_task_form_available": True,
+        "team_task_form_available": False,
         "local_packet_creation_supported": True,
         "api_endpoints": [
             "GET /",
             "GET /api/status",
+            "GET /api/aiden/status",
+            "GET /api/aiden/context",
+            "GET /api/aiden/thread",
+            "POST /api/aiden/message",
+            "POST /api/aiden/summary",
+            "POST /api/aiden/create_l10_mission",
+            "GET /api/aiden/diagnostics",
             "GET /api/roster",
             "GET /api/agents/<agent_id>",
             "GET /api/work_queue",
