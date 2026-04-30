@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-29 21:30:01
+**Generated**: 2026-04-29 22:00:01
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -84,9 +84,9 @@
 
 | M-Axis | Description | 24h Count | 7d Avg/Day | Drift |
 |--------|-------------|-----------|------------|-------|
-| **M-1** | Survivability (session/boot/handoff/persist) | 195 | 3014 | → |
+| **M-1** | Survivability (session/boot/handoff/persist) | 195 | 2967 | → |
 | **M-2a** | Commission prevention (forget_guard/deny/enforce) | 29 | 816 | ↓ |
-| **M-2b** | Omission prevention (omission/overdue/alarm) | 28 | 1580 | ↓ |
+| **M-2b** | Omission prevention (omission/overdue/alarm) | 28 | 1551 | ↓ |
 | **M-3** | Value production (customer/revenue/dogfood/demo) | 0 | 0 | ↓ |
 
 **Classified coverage**: 252/2851 (8.8%)
@@ -110,7 +110,7 @@
 
 | Detector | 24h Count | Drift vs 7d |
 |----------|-----------|-------------|
-| amendment_coverage_audit | 223 | v (avg 347.7/d) |
+| amendment_coverage_audit | 223 | v (avg 348.6/d) |
 | directive_evaluator | 28 | = (avg 31.7/d) |
 | hook_commission_catch | 28 | v (avg 394.0/d) |
 
@@ -128,7 +128,7 @@
 - `DIRECTIVE_LIVENESS_EVAL`: 28
 - `WIRE_BROKEN`: 28
 
-**Overall drift**: v (24h=279, 7d avg/day=1660.3)
+**Overall drift**: v (24h=279, 7d avg/day=1646.1)
 
 ---
 
@@ -154,7 +154,10 @@
 ## 13. Today's Commits (24h) — both repos
 
 
-**ystar-company** (58 commits):
+**ystar-company** (59 commits):
+- f57e6b88 21:53 tools: add l7 parallel commercial autonomy sprint
+- 79de042d 21:38 tools: add contextual secret scanner policy
+- d9c90f56 21:32 [auto] WIP checkpoint 2026-04-29 21:32 -- 5 files changed
 - cc4a6688 21:25 tools: remediate p0 p1 conservatism debt with staged policies
 - 8ba77305 21:09 tools: add full repo conservatism debt scan
 - 92bab3e4 21:09 chore: remove unintended auto checkpoint drift
@@ -172,8 +175,5 @@
 - b18475cd 18:31 [auto] WIP checkpoint 2026-04-29 18:31 -- 32 files changed
 - 491e3f4f 18:01 [auto] WIP checkpoint 2026-04-29 18:01 -- 168 files changed
 - ca21363d 17:36 tools: fix real controlled observation tavily auth and page read resilience
-- 44c6722b 17:34 chore: remove unintended auto checkpoint drift
-- 76bfe6cc 17:31 [auto] WIP checkpoint 2026-04-29 17:31 -- 52 files changed
-- 14bc8214 17:01 [auto] WIP checkpoint 2026-04-29 17:01 -- 3 files changed
 
 **Y*gov**: no commits
