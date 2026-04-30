@@ -6,6 +6,12 @@ function escapeHtml(text) {
   return String(text || "").replace(/[&<>"']/g, (ch) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 }
 function list(items) { return (items || []).map((item) => `<li>${escapeHtml(item)}</li>`).join(""); }
+function setSendStatus(message, tone = "") {
+  const status = $("whiteboard-send-status");
+  if (!status) return;
+  status.className = `send-status muted ${tone}`.trim();
+  status.textContent = message;
+}
 async function getJson(path) {
   const response = await fetch(path);
   if (!response.ok) throw new Error(`${path}: ${response.status}`);
@@ -13,8 +19,20 @@ async function getJson(path) {
 }
 async function postJson(path, payload = {}) {
   const response = await fetch(path, { method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(payload) });
-  const data = await response.json();
-  if (!response.ok) throw new Error(JSON.stringify(data));
+  const raw = await response.text();
+  let data = {};
+  try {
+    data = raw ? JSON.parse(raw) : {};
+  } catch (error) {
+    data = {ok: false, error: raw || String(error)};
+  }
+  if (!response.ok) {
+    const error = new Error(data.error || `${path}: ${response.status}`);
+    error.status = response.status;
+    error.payload = data;
+    error.path = path;
+    throw error;
+  }
   return data;
 }
 
@@ -171,17 +189,75 @@ async function refreshOffice() {
 async function act(label, path, payload = {}) {
   const data = await postJson(path, payload);
   $("packet-result").textContent = `${label}\n${JSON.stringify(data, null, 2)}`;
-  await refreshOffice();
+  try {
+    await refreshOffice();
+  } catch (error) {
+    $("packet-result").textContent += `\n\nRefresh warning: ${error.message}. The packet action above still completed.`;
+  }
+}
+
+async function sendTeamInstruction() {
+  const payload = {
+    target: $("whiteboard-target").value,
+    text: $("whiteboard-text").value,
+    objective: $("whiteboard-objective").value,
+  };
+  setSendStatus("Sending local team instruction...", "warn");
+  try {
+    const data = await postJson("/api/whiteboard/message", payload);
+    setSendStatus("Sent to the local whiteboard queue. Next: Route with Aiden or run a team work cycle.", "ok");
+    return {mode: "whiteboard_message", ...data};
+  } catch (error) {
+    if (error.status !== 404) throw error;
+    const legacyPayload = {
+      task_title: payload.objective || "Owner team instruction",
+      task_description: payload.text,
+    };
+    const targetAgent = payload.target && payload.target !== "whole_team" ? payload.target : "aiden_ceo";
+    const result = {
+      ok: true,
+      compatibility_fallback: true,
+      reason: "The currently running server process is older than the page script and does not expose /api/whiteboard/message.",
+      next_step: "Restart the Labs Office server for the full whiteboard runtime; this fallback still writes local instruction packets now.",
+      team_task: null,
+      owner_message: null,
+    };
+    try {
+      result.team_task = await postJson("/api/team_task", legacyPayload);
+    } catch (teamTaskError) {
+      result.team_task_error = teamTaskError.message;
+    }
+    try {
+      result.owner_message = await postJson("/api/message", {
+        target_agent: targetAgent,
+        message_text: payload.text,
+        objective: payload.objective,
+        urgency: "normal",
+      });
+    } catch (ownerMessageError) {
+      result.owner_message_error = ownerMessageError.message;
+    }
+    if (!result.team_task && !result.owner_message) throw error;
+    setSendStatus("Sent using compatibility fallback. A local team task/message packet was created; restart the server when convenient for full routing.", "warn");
+    return result;
+  }
 }
 
 $("refresh-button").addEventListener("click", refreshOffice);
 $("whiteboard-message-form").addEventListener("submit", async (event) => {
   event.preventDefault();
-  await act("Whiteboard message created", "/api/whiteboard/message", {
-    target: $("whiteboard-target").value,
-    text: $("whiteboard-text").value,
-    objective: $("whiteboard-objective").value,
-  });
+  try {
+    const data = await sendTeamInstruction();
+    $("packet-result").textContent = `Team instruction submitted\n${JSON.stringify(data, null, 2)}`;
+    try {
+      await refreshOffice();
+    } catch (error) {
+      $("packet-result").textContent += `\n\nRefresh warning: ${error.message}. The instruction packet was still created.`;
+    }
+  } catch (error) {
+    setSendStatus(`Could not submit instruction: ${error.message}`, "error");
+    $("packet-result").textContent = `Team instruction failed\n${JSON.stringify(error.payload || {error: error.message}, null, 2)}`;
+  }
 });
 $("route-button").addEventListener("click", () => act("Aiden routing decision", "/api/route"));
 $("work-cycle-button").addEventListener("click", () => act("Safe work cycle", "/api/work_cycle"));

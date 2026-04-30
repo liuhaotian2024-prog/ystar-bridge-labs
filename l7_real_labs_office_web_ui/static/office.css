@@ -69,6 +69,15 @@ textarea { min-height: 120px; }
 .status { color: var(--blue); font-weight: 700; }
 .role { color: var(--accent); font-weight: 700; }
 .muted { color: var(--muted); }
+.send-status {
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 10px;
+  background: rgba(33,78,117,.06);
+}
+.send-status.ok { color: var(--green); border-color: var(--green); }
+.send-status.warn { color: var(--accent); border-color: var(--accent); }
+.send-status.error { color: var(--red); border-color: var(--red); }
 .scheduler-status {
   border: 1px dashed var(--green);
   border-radius: 16px;

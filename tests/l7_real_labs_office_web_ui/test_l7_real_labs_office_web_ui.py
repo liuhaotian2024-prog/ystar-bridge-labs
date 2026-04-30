@@ -72,6 +72,17 @@ def test_page_template_contains_message_and_team_task_forms():
     assert 'id="message-form"' in template
     assert 'id="team-task-form"' in template
     assert 'id="target-agent"' in template
+    assert 'id="whiteboard-send-status"' in template
+    assert "office.js?v=l10-send-fallback" in template
+
+
+def test_whiteboard_submit_has_legacy_backend_fallback():
+    js = (OUT / "static/office.js").read_text(encoding="utf-8")
+    assert "sendTeamInstruction" in js
+    assert "compatibility_fallback" in js
+    assert "/api/whiteboard/message" in js
+    assert "/api/team_task" in js
+    assert "/api/message" in js
 
 
 def test_runtime_packet_dirs_exist():

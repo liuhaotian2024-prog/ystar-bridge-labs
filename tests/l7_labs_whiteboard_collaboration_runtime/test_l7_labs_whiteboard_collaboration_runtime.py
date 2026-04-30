@@ -90,6 +90,7 @@ def test_template_contains_whiteboard_work_board_agent_panel_and_timeline():
     template = (WEB_OUT / "templates/index.html").read_text(encoding="utf-8")
     assert "Team Whiteboard / Chat" in template
     assert 'id="whiteboard-message-form"' in template
+    assert 'id="whiteboard-send-status"' in template
     assert 'id="work-board"' in template
     assert 'id="agent-panel"' in template
     assert 'id="progress-timeline"' in template
@@ -99,6 +100,9 @@ def test_js_can_submit_whiteboard_and_work_cycle_paths():
     js = (WEB_OUT / "static/office.js").read_text(encoding="utf-8")
     for endpoint in ["/api/whiteboard/message", "/api/route", "/api/work_cycle", "/api/team_work_cycle", "/api/completion_report"]:
         assert endpoint in js
+    assert "compatibility_fallback" in js
+    assert "/api/team_task" in js
+    assert "/api/message" in js
 
 
 def test_routing_engine_uses_original_agents_and_no_coo():
