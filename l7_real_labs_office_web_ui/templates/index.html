@@ -17,11 +17,23 @@
     </div>
   </header>
 
+  <section class="mode-switch" aria-label="Office mode switcher">
+    <div>
+      <p class="section-label">Two Modes</p>
+      <h2>先开会，再看执行</h2>
+      <p class="muted">不用在一页里同时消化所有东西。讨论问题时用“讨论开会”，想追踪团队内部任务时切到“执行看板”。</p>
+    </div>
+    <div class="mode-buttons">
+      <button class="mode-button active" type="button" data-office-mode-button="meeting">讨论开会模式</button>
+      <button class="mode-button" type="button" data-office-mode-button="execution">执行看板模式</button>
+    </div>
+  </section>
+
   <main class="office-grid">
     <div id="message-form" hidden></div>
     <div id="team-task-form" hidden></div>
     <select id="target-agent" hidden></select>
-    <section class="panel command-center">
+    <section class="panel command-center office-mode-panel meeting-mode">
       <div class="section-label">Start Here</div>
       <h2>把目标交给团队</h2>
       <p class="muted">不用理解 L8/L9/L10。先写一句你想让团队完成的事，然后按下面 3 步走。</p>
@@ -61,31 +73,33 @@
       </details>
     </section>
 
-    <section class="panel result-panel">
+    <section class="panel result-panel office-mode-panel meeting-mode">
       <div class="section-label">Team Replies</div>
-      <h2>团队白板</h2>
+      <h2>讨论白板</h2>
+      <p class="muted">这里应该只显示当前讨论的消息和团队回复；执行细节放到“执行看板模式”。</p>
       <div id="whiteboard-thread" class="thread"></div>
     </section>
 
-    <section class="panel">
-      <div class="section-label">Work Board</div>
-      <h2>当前任务进度</h2>
-      <div id="work-board" class="kanban"></div>
-    </section>
-
-    <section class="panel">
-      <div class="section-label">Team</div>
-      <h2>团队成员状态</h2>
-      <div id="agent-panel" class="agent-panel"></div>
-    </section>
-
-    <section class="panel">
+    <section class="panel office-mode-panel meeting-mode">
       <div class="section-label">Result</div>
       <h2>最近一次操作结果</h2>
       <pre id="packet-result">No whiteboard action yet.</pre>
     </section>
 
-    <section class="panel">
+    <section class="panel office-mode-panel execution-mode">
+      <div class="section-label">Work Board</div>
+      <h2>执行看板：内部任务进度</h2>
+      <p class="muted">这里看 Aiden 拆出来的任务、团队执行状态、阻塞和完成情况。</p>
+      <div id="work-board" class="kanban"></div>
+    </section>
+
+    <section class="panel office-mode-panel execution-mode">
+      <div class="section-label">Team</div>
+      <h2>执行看板：团队成员状态</h2>
+      <div id="agent-panel" class="agent-panel"></div>
+    </section>
+
+    <section class="panel office-mode-panel execution-mode">
       <div class="section-label">Approvals</div>
       <h2>需要你批准的事情</h2>
       <ul id="pending-approvals"></ul>
@@ -93,7 +107,7 @@
       <ul id="blocked-actions"></ul>
     </section>
 
-    <details class="panel advanced-panel">
+    <details class="panel advanced-panel office-mode-panel execution-mode">
       <summary>高级：调度器 / 商业路径 / 委托任务</summary>
       <section class="scheduler-panel">
       <h2>Self-Work Scheduler</h2>
@@ -272,25 +286,25 @@
     </section>
     </details>
 
-    <section class="panel">
+    <section class="panel office-mode-panel execution-mode">
       <div class="section-label">Rooms</div>
       <h2>成员房间</h2>
       <div id="agent-room" class="room-card">Select an agent room.</div>
     </section>
 
-    <section class="panel">
+    <section class="panel office-mode-panel execution-mode">
       <div class="section-label">Timeline</div>
       <h2>工作时间线</h2>
       <ol id="progress-timeline" class="timeline"></ol>
     </section>
 
-    <section class="panel">
+    <section class="panel office-mode-panel execution-mode">
       <div class="section-label">Roster</div>
       <h2>原始团队</h2>
       <p>No COO is invented. The roster below is loaded from L7.4 recovery artifacts.</p>
       <div id="roster" class="card-grid"></div>
     </section>
   </main>
-  <script src="/static/office.js?v=simple-office-v2"></script>
+  <script src="/static/office.js?v=simple-office-v3"></script>
 </body>
 </html>

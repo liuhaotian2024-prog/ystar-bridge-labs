@@ -3,6 +3,7 @@ const columns = ["Inbox", "Interpreting", "Assigned", "In Progress", "Waiting fo
 let OFFICE_STATE = null;
 let latestOwnerMessage = null;
 let latestWorkItemId = "";
+document.body.dataset.officeMode = "meeting";
 const quickTemplates = {
   "first-cash": {
     text: "Aiden，请带团队分析：Y*Bridge Labs 下一步怎么最快拿到第一笔钱，同时不要牺牲长期战略。请分派给 Sofia、Marco、Zara、Ethan、Jinjin 和 Samantha。",
@@ -27,6 +28,20 @@ function setSendStatus(message, tone = "") {
   if (!status) return;
   status.className = `send-status muted ${tone}`.trim();
   status.textContent = message;
+}
+function setOfficeMode(mode) {
+  const nextMode = mode === "execution" ? "execution" : "meeting";
+  document.body.dataset.officeMode = nextMode;
+  try {
+    localStorage.setItem("labsOfficeMode", nextMode);
+  } catch (error) {
+    // Local storage can be unavailable in restricted browser contexts.
+  }
+  document.querySelectorAll("[data-office-mode-button]").forEach((button) => {
+    const active = button.dataset.officeModeButton === nextMode;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  });
 }
 async function getJson(path) {
   const response = await fetch(path);
@@ -362,6 +377,14 @@ async function sendTeamInstruction() {
 }
 
 $("refresh-button").addEventListener("click", refreshOffice);
+document.querySelectorAll("[data-office-mode-button]").forEach((button) => {
+  button.addEventListener("click", () => setOfficeMode(button.dataset.officeModeButton));
+});
+try {
+  setOfficeMode(localStorage.getItem("labsOfficeMode") || "meeting");
+} catch (error) {
+  setOfficeMode("meeting");
+}
 document.querySelectorAll(".template-chip").forEach((button) => {
   button.addEventListener("click", () => {
     const template = quickTemplates[button.dataset.template];

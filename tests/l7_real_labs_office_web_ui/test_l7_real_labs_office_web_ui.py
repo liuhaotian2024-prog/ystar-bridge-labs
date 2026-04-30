@@ -76,10 +76,14 @@ def test_page_template_contains_message_and_team_task_forms():
     assert "1. 发给团队" in template
     assert "2. Aiden 拆任务" in template
     assert "3. 团队工作一轮" in template
+    assert "讨论开会模式" in template
+    assert "执行看板模式" in template
+    assert "office-mode-panel meeting-mode" in template
+    assert "office-mode-panel execution-mode" in template
     assert "最近一次操作结果" in template
     assert "高级：调度器 / 商业路径 / 委托任务" in template
     assert 'id="whiteboard-send-status"' in template
-    assert "office.js?v=simple-office-v2" in template
+    assert "office.js?v=simple-office-v3" in template
 
 
 def test_whiteboard_submit_has_legacy_backend_fallback():
@@ -98,6 +102,17 @@ def test_whiteboard_submit_has_legacy_backend_fallback():
     assert "latestOwnerMessage" in js
     assert "latestWorkItemId" in js
     assert "{work_item_id: latestWorkItemId}" in js
+    assert "setOfficeMode" in js
+    assert "labsOfficeMode" in js
+    assert "data-office-mode-button" in js
+
+
+def test_two_mode_ui_css_hides_inactive_mode():
+    css = (OUT / "static/office.css").read_text(encoding="utf-8")
+    assert "mode-switch" in css
+    assert 'body[data-office-mode="meeting"] .execution-mode' in css
+    assert 'body[data-office-mode="execution"] .meeting-mode' in css
+    assert ".mode-button.active" in css
 
 
 def test_runtime_packet_dirs_exist():

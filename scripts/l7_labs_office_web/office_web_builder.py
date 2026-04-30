@@ -318,11 +318,23 @@ def write_assets() -> None:
     </div>
   </header>
 
+  <section class="mode-switch" aria-label="Office mode switcher">
+    <div>
+      <p class="section-label">Two Modes</p>
+      <h2>先开会，再看执行</h2>
+      <p class="muted">不用在一页里同时消化所有东西。讨论问题时用“讨论开会”，想追踪团队内部任务时切到“执行看板”。</p>
+    </div>
+    <div class="mode-buttons">
+      <button class="mode-button active" type="button" data-office-mode-button="meeting">讨论开会模式</button>
+      <button class="mode-button" type="button" data-office-mode-button="execution">执行看板模式</button>
+    </div>
+  </section>
+
   <main class="office-grid">
     <div id="message-form" hidden></div>
     <div id="team-task-form" hidden></div>
     <select id="target-agent" hidden></select>
-    <section class="panel command-center">
+    <section class="panel command-center office-mode-panel meeting-mode">
       <div class="section-label">Start Here</div>
       <h2>把目标交给团队</h2>
       <p class="muted">不用理解 L8/L9/L10。先写一句你想让团队完成的事，然后按下面 3 步走。</p>
@@ -362,31 +374,33 @@ def write_assets() -> None:
       </details>
     </section>
 
-    <section class="panel result-panel">
+    <section class="panel result-panel office-mode-panel meeting-mode">
       <div class="section-label">Team Replies</div>
-      <h2>团队白板</h2>
+      <h2>讨论白板</h2>
+      <p class="muted">这里应该只显示当前讨论的消息和团队回复；执行细节放到“执行看板模式”。</p>
       <div id="whiteboard-thread" class="thread"></div>
     </section>
 
-    <section class="panel">
-      <div class="section-label">Work Board</div>
-      <h2>当前任务进度</h2>
-      <div id="work-board" class="kanban"></div>
-    </section>
-
-    <section class="panel">
-      <div class="section-label">Team</div>
-      <h2>团队成员状态</h2>
-      <div id="agent-panel" class="agent-panel"></div>
-    </section>
-
-    <section class="panel">
+    <section class="panel office-mode-panel meeting-mode">
       <div class="section-label">Result</div>
       <h2>最近一次操作结果</h2>
       <pre id="packet-result">No whiteboard action yet.</pre>
     </section>
 
-    <section class="panel">
+    <section class="panel office-mode-panel execution-mode">
+      <div class="section-label">Work Board</div>
+      <h2>执行看板：内部任务进度</h2>
+      <p class="muted">这里看 Aiden 拆出来的任务、团队执行状态、阻塞和完成情况。</p>
+      <div id="work-board" class="kanban"></div>
+    </section>
+
+    <section class="panel office-mode-panel execution-mode">
+      <div class="section-label">Team</div>
+      <h2>执行看板：团队成员状态</h2>
+      <div id="agent-panel" class="agent-panel"></div>
+    </section>
+
+    <section class="panel office-mode-panel execution-mode">
       <div class="section-label">Approvals</div>
       <h2>需要你批准的事情</h2>
       <ul id="pending-approvals"></ul>
@@ -394,7 +408,7 @@ def write_assets() -> None:
       <ul id="blocked-actions"></ul>
     </section>
 
-    <details class="panel advanced-panel">
+    <details class="panel advanced-panel office-mode-panel execution-mode">
       <summary>高级：调度器 / 商业路径 / 委托任务</summary>
       <section class="scheduler-panel">
       <h2>Self-Work Scheduler</h2>
@@ -573,26 +587,26 @@ def write_assets() -> None:
     </section>
     </details>
 
-    <section class="panel">
+    <section class="panel office-mode-panel execution-mode">
       <div class="section-label">Rooms</div>
       <h2>成员房间</h2>
       <div id="agent-room" class="room-card">Select an agent room.</div>
     </section>
 
-    <section class="panel">
+    <section class="panel office-mode-panel execution-mode">
       <div class="section-label">Timeline</div>
       <h2>工作时间线</h2>
       <ol id="progress-timeline" class="timeline"></ol>
     </section>
 
-    <section class="panel">
+    <section class="panel office-mode-panel execution-mode">
       <div class="section-label">Roster</div>
       <h2>原始团队</h2>
       <p>No COO is invented. The roster below is loaded from L7.4 recovery artifacts.</p>
       <div id="roster" class="card-grid"></div>
     </section>
   </main>
-  <script src="/static/office.js?v=simple-office-v2"></script>
+  <script src="/static/office.js?v=simple-office-v3"></script>
 </body>
 </html>
 """,
@@ -767,6 +781,52 @@ body {
   margin: 0 auto;
   grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr);
 }
+.mode-switch {
+  max-width: 1180px;
+  margin: 18px auto 0;
+  padding: 18px 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  background: rgba(15, 20, 28, .86);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  box-shadow: 0 22px 80px rgba(0,0,0,.2);
+}
+.mode-switch h2 {
+  margin: 4px 0;
+  letter-spacing: -.04em;
+}
+.mode-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  min-width: min(440px, 100%);
+}
+.mode-button {
+  min-height: 54px;
+  border-color: rgba(255,255,255,.14);
+  background: rgba(255,255,255,.055);
+  color: var(--text2);
+}
+.mode-button.active {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #06100c;
+  border-color: transparent;
+  box-shadow: 0 0 0 1px rgba(44,245,154,.22), 0 12px 35px rgba(44,245,154,.14);
+  font-weight: 900;
+}
+body[data-office-mode="meeting"] .execution-mode,
+body[data-office-mode="execution"] .meeting-mode {
+  display: none;
+}
+body[data-office-mode="meeting"] .office-grid {
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, .75fr);
+}
+body[data-office-mode="execution"] .office-grid {
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+}
 .panel {
   background: var(--surface);
   border: 1px solid rgba(255,255,255,.08);
@@ -878,8 +938,9 @@ pre {
 }
 .mini-help summary { color: var(--accent2); cursor: pointer; }
 @media (max-width: 980px) {
-  .office-grid, .command-center { grid-template-columns: 1fr; }
+  .office-grid, .command-center, .mode-switch { grid-template-columns: 1fr; }
   .template-row, .mini-help { grid-column: 1; }
+  .mode-buttons { grid-template-columns: 1fr; }
 }
 """,
     )
@@ -891,6 +952,7 @@ const columns = ["Inbox", "Interpreting", "Assigned", "In Progress", "Waiting fo
 let OFFICE_STATE = null;
 let latestOwnerMessage = null;
 let latestWorkItemId = "";
+document.body.dataset.officeMode = "meeting";
 const quickTemplates = {
   "first-cash": {
     text: "Aiden，请带团队分析：Y*Bridge Labs 下一步怎么最快拿到第一笔钱，同时不要牺牲长期战略。请分派给 Sofia、Marco、Zara、Ethan、Jinjin 和 Samantha。",
@@ -915,6 +977,20 @@ function setSendStatus(message, tone = "") {
   if (!status) return;
   status.className = `send-status muted ${tone}`.trim();
   status.textContent = message;
+}
+function setOfficeMode(mode) {
+  const nextMode = mode === "execution" ? "execution" : "meeting";
+  document.body.dataset.officeMode = nextMode;
+  try {
+    localStorage.setItem("labsOfficeMode", nextMode);
+  } catch (error) {
+    // Local storage can be unavailable in restricted browser contexts.
+  }
+  document.querySelectorAll("[data-office-mode-button]").forEach((button) => {
+    const active = button.dataset.officeModeButton === nextMode;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  });
 }
 async function getJson(path) {
   const response = await fetch(path);
@@ -1250,6 +1326,14 @@ async function sendTeamInstruction() {
 }
 
 $("refresh-button").addEventListener("click", refreshOffice);
+document.querySelectorAll("[data-office-mode-button]").forEach((button) => {
+  button.addEventListener("click", () => setOfficeMode(button.dataset.officeModeButton));
+});
+try {
+  setOfficeMode(localStorage.getItem("labsOfficeMode") || "meeting");
+} catch (error) {
+  setOfficeMode("meeting");
+}
 document.querySelectorAll(".template-chip").forEach((button) => {
   button.addEventListener("click", () => {
     const template = quickTemplates[button.dataset.template];

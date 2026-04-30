@@ -92,6 +92,10 @@ def test_template_contains_whiteboard_work_board_agent_panel_and_timeline():
     assert "把目标交给团队" in template
     assert 'class="template-chip"' in template
     assert "高级：调度器 / 商业路径 / 委托任务" in template
+    assert "讨论开会模式" in template
+    assert "执行看板模式" in template
+    assert "office-mode-panel meeting-mode" in template
+    assert "office-mode-panel execution-mode" in template
     assert "最近一次操作结果" in template
     assert 'id="whiteboard-message-form"' in template
     assert 'id="whiteboard-send-status"' in template
@@ -117,6 +121,9 @@ def test_js_can_submit_whiteboard_and_work_cycle_paths():
     assert "latestOwnerMessage" in js
     assert "latestWorkItemId" in js
     assert "{work_item_id: latestWorkItemId}" in js
+    assert "setOfficeMode" in js
+    assert "labsOfficeMode" in js
+    assert "data-office-mode-button" in js
 
 
 def test_routing_engine_uses_original_agents_and_no_coo():
