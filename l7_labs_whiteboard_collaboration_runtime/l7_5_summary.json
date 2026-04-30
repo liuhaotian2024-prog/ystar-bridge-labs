@@ -1,0 +1,21 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.5",
+  "packet_type": "l7_5_summary",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "whiteboard_chat_ui_available": true,
+  "team_work_board_available": true,
+  "agent_panels_available": true,
+  "progress_timeline_available": true,
+  "approval_queue_available": true,
+  "message_to_agent_works_locally": true,
+  "team_task_works_locally": true,
+  "routing_engine_generated": true,
+  "work_cycle_engine_generated": true,
+  "agent_replies_generated": true,
+  "completion_report_generated": true,
+  "demo_scenario_generated": true,
+  "local_url": "http://127.0.0.1:8765",
+  "next_one_command_action": "bash scripts/run_l7_labs_office_web.sh --mode serve",
+  "coo_invented": false
+}

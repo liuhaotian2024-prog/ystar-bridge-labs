@@ -1,0 +1,16 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.5",
+  "schema_id": "work_item_schema",
+  "fields": {
+    "work_item_id": "string",
+    "title": "string",
+    "description": "string",
+    "source_message_id": "string|null",
+    "requested_by": "string",
+    "assigned_agents": "array",
+    "status": "Inbox|Interpreting|Assigned|In Progress|Waiting for Approval|Blocked|Done",
+    "progress_notes": "array",
+    "blockers": "array"
+  }
+}

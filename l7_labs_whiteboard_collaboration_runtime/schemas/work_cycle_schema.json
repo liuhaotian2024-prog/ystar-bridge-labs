@@ -1,0 +1,15 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.5",
+  "schema_id": "work_cycle_schema",
+  "fields": {
+    "work_cycle_id": "string",
+    "work_items_processed": "array",
+    "agents_involved": "array",
+    "actions_taken": "array",
+    "artifacts_created": "array",
+    "blocked_items": "array",
+    "approval_requests_created": "array",
+    "no_action_receipt": "object"
+  }
+}

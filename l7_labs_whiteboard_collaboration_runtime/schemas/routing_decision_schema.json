@@ -1,0 +1,13 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.5",
+  "schema_id": "routing_decision_schema",
+  "fields": {
+    "routing_decision_id": "string",
+    "primary_agent": "string",
+    "supporting_agents": "array",
+    "expected_outputs": "array",
+    "approval_points": "array",
+    "no_go_boundaries": "array"
+  }
+}

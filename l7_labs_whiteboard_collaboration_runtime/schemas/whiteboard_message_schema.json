@@ -1,0 +1,18 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.5",
+  "schema_id": "whiteboard_message_schema",
+  "fields": {
+    "message_id": "string",
+    "thread_id": "string",
+    "sender_type": "owner | agent | system",
+    "sender_id": "string",
+    "target": "string",
+    "text": "string",
+    "objective": "string",
+    "linked_work_item": "string|null",
+    "status": "queued|routed|done",
+    "external_side_effects": "false",
+    "core_writeback": "false"
+  }
+}

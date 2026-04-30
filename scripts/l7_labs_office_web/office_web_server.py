@@ -13,6 +13,17 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import unquote, urlparse
 
+from whiteboard_store import (
+    create_whiteboard_message,
+    create_work_item,
+    load_approval_requests,
+    load_threads,
+    load_timeline,
+    work_board,
+    whiteboard_snapshot,
+)
+from work_cycle_engine import create_completion_report, route_latest_or_payload, run_team_work_cycle, run_work_cycle
+
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "l7_real_labs_office_web_ui"
@@ -187,7 +198,21 @@ class OfficeHandler(BaseHTTPRequestHandler):
                 json_response(self, {"work_queue": load_state().get("work_queue", [])})
             elif path == "/api/pending_approvals":
                 state = load_state()
-                json_response(self, {"pending_approvals": state.get("pending_approvals", [])})
+                json_response(
+                    self,
+                    {
+                        "pending_approvals": state.get("pending_approvals", []),
+                        "approval_requests": load_approval_requests(),
+                    },
+                )
+            elif path == "/api/whiteboard":
+                json_response(self, whiteboard_snapshot())
+            elif path == "/api/whiteboard/threads":
+                json_response(self, {"threads": load_threads()})
+            elif path == "/api/work_board":
+                json_response(self, {"work_board": work_board()})
+            elif path == "/api/timeline":
+                json_response(self, {"timeline": load_timeline()})
             else:
                 error_response(self, HTTPStatus.NOT_FOUND, "not found")
         except Exception as exc:  # pragma: no cover - defensive server boundary
@@ -213,6 +238,41 @@ class OfficeHandler(BaseHTTPRequestHandler):
                     error_response(self, HTTPStatus.BAD_REQUEST, "task_description is required")
                     return
                 json_response(self, create_team_task_packet(payload))
+            elif parsed.path == "/api/whiteboard/message":
+                text = str(payload.get("text", "")).strip()
+                if not text:
+                    error_response(self, HTTPStatus.BAD_REQUEST, "text is required")
+                    return
+                message = create_whiteboard_message(
+                    text=text,
+                    target=str(payload.get("target", "whole_team")),
+                    objective=str(payload.get("objective", "")),
+                )
+                json_response(self, {"ok": True, "message": message, "next_step": "route_with_aiden"})
+            elif parsed.path == "/api/route":
+                json_response(self, route_latest_or_payload(payload))
+            elif parsed.path == "/api/work_items":
+                title = str(payload.get("title", "Owner-created work item")).strip()
+                description = str(payload.get("description", "")).strip()
+                item = create_work_item(
+                    title=title,
+                    description=description or title,
+                    source_message_id=payload.get("source_message_id"),
+                    assigned_agents=payload.get("assigned_agents") or ["aiden_ceo"],
+                )
+                json_response(self, {"ok": True, "work_item": item})
+            elif parsed.path == "/api/work_cycle":
+                json_response(self, run_work_cycle(payload.get("work_item_id")))
+            elif parsed.path == "/api/team_work_cycle":
+                json_response(
+                    self,
+                    run_team_work_cycle(
+                        max_work_items_per_cycle=int(payload.get("max_work_items_per_cycle", 3)),
+                        max_agent_replies_per_cycle=int(payload.get("max_agent_replies_per_cycle", 8)),
+                    ),
+                )
+            elif parsed.path == "/api/completion_report":
+                json_response(self, create_completion_report(payload.get("work_item_id")))
             else:
                 error_response(self, HTTPStatus.NOT_FOUND, "not found")
         except Exception as exc:  # pragma: no cover - defensive server boundary

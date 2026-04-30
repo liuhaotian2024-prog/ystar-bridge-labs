@@ -1,0 +1,189 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.5",
+  "demo_id": "demo_first_cash_path_team_discussion",
+  "owner_message": "团队请一起分析：我们下一步怎么最快拿到第一笔钱，同时不牺牲长期战略？",
+  "flow": [
+    "Aiden interprets and delegates",
+    "Zara analyzes commercialization path",
+    "Marco checks pricing/cash assumptions",
+    "Sofia drafts positioning",
+    "Jinjin proposes read-only research",
+    "Ethan identifies missing tools",
+    "Samantha indexes outputs",
+    "Auditor function reviews boundaries"
+  ],
+  "routing_decision": {
+    "primary_agent": "aiden_ceo",
+    "supporting_agents": [
+      "marco_cfo",
+      "zara_cso",
+      "sofia_cmo",
+      "jinjin_k9_scout",
+      "ethan_cto",
+      "samantha_secretary"
+    ],
+    "reason": "Aiden coordinates owner goals, then routes domain work to the original legacy team roles.",
+    "expected_outputs": [
+      "shared interpretation",
+      "role-specific agent replies",
+      "safe internal work item",
+      "approval boundary notes",
+      "completion report when done"
+    ],
+    "approval_points": [
+      "external action remains blocked until explicit owner approval"
+    ],
+    "no_go_boundaries": [
+      "external outreach",
+      "email sending",
+      "customer contact",
+      "publication",
+      "payment",
+      "form submission",
+      "account creation",
+      "grant/RFP submission",
+      "MCP/live behavior",
+      "actual memory/brain/canonical/CIEU DB writeback"
+    ],
+    "coo_invented": false
+  },
+  "work_item": {
+    "work_item_id": "demo_work_item_first_cash_path",
+    "title": "Fastest first-cash path without sacrificing long-term strategy",
+    "description": "团队请一起分析：我们下一步怎么最快拿到第一笔钱，同时不牺牲长期战略？",
+    "assigned_agents": [
+      "aiden_ceo",
+      "marco_cfo",
+      "zara_cso",
+      "sofia_cmo",
+      "jinjin_k9_scout",
+      "ethan_cto",
+      "samantha_secretary"
+    ],
+    "status": "Done"
+  },
+  "agent_replies": [
+    {
+      "agent_id": "aiden_ceo",
+      "work_item_id": "demo_work_item_first_cash_path",
+      "role_interpretation": "I interpret the owner goal, keep the team aligned, and route work to the original legacy roles.",
+      "work_done": "Created a safe delegation frame and kept all external actions behind approval gates.",
+      "findings": [
+        "Use the whiteboard as the coordination surface; route domain work to the recovered team, not invented roles."
+      ],
+      "artifacts_created": [],
+      "blockers": [],
+      "next_step": "Run a team work cycle or ask for a completion report after domain replies land.",
+      "approval_needed": false,
+      "status": "done"
+    },
+    {
+      "agent_id": "marco_cfo",
+      "work_item_id": "demo_work_item_first_cash_path",
+      "role_interpretation": "I check pricing, cash-path assumptions, and financial honesty.",
+      "work_done": "Reviewed cash realization assumptions as estimates, not settled facts.",
+      "findings": [
+        "The $1,500 pilot remains plausible as a test price, but quoting externally needs owner approval."
+      ],
+      "artifacts_created": [],
+      "blockers": [],
+      "next_step": "Track willingness-to-pay evidence before treating pricing as validated.",
+      "approval_needed": false,
+      "status": "done"
+    },
+    {
+      "agent_id": "zara_cso",
+      "work_item_id": "demo_work_item_first_cash_path",
+      "role_interpretation": "I analyze sales strategy, commercialization, offer validation, and buyer fit.",
+      "work_done": "Mapped the request to first-revenue readiness and approval-gated buyer contact.",
+      "findings": [
+        "Fastest cash path is still a scoped founder workflow audit with CEO command brief deliverable."
+      ],
+      "artifacts_created": [],
+      "blockers": [],
+      "next_step": "Prepare a no-contact target archetype review or approval request for first outreach.",
+      "approval_needed": false,
+      "status": "done"
+    },
+    {
+      "agent_id": "sofia_cmo",
+      "work_item_id": "demo_work_item_first_cash_path",
+      "role_interpretation": "I shape narrative, positioning, and owner-readable framing.",
+      "work_done": "Drafted internal positioning boundaries without publication.",
+      "findings": [
+        "The story should be: governed AI workflow audit first, productization later after paid validation."
+      ],
+      "artifacts_created": [],
+      "blockers": [],
+      "next_step": "Prepare review-only messaging once owner approves an outreach path.",
+      "approval_needed": false,
+      "status": "done"
+    },
+    {
+      "agent_id": "jinjin_k9_scout",
+      "work_item_id": "demo_work_item_first_cash_path",
+      "role_interpretation": "I scout research angles and read-only observation targets.",
+      "work_done": "Proposed safe read-only research directions without contacting anyone.",
+      "findings": [
+        "First-cash validation needs public buyer-signal observation and owner-approved contact gates."
+      ],
+      "artifacts_created": [],
+      "blockers": [],
+      "next_step": "Prepare a read-only observation plan for buyer pain signals if requested.",
+      "approval_needed": false,
+      "status": "done"
+    },
+    {
+      "agent_id": "ethan_cto",
+      "work_item_id": "demo_work_item_first_cash_path",
+      "role_interpretation": "I evaluate tooling, architecture, implementation, and test gaps.",
+      "work_done": "Identified tool/runtime implications and kept execution local-only.",
+      "findings": [
+        "The shortest path improves if the office can convert goals into work items, agent replies, and reports."
+      ],
+      "artifacts_created": [],
+      "blockers": [],
+      "next_step": "Build or test the next missing local tool only after the team agrees on priority.",
+      "approval_needed": false,
+      "status": "done"
+    },
+    {
+      "agent_id": "samantha_secretary",
+      "work_item_id": "demo_work_item_first_cash_path",
+      "role_interpretation": "I maintain archive, indexes, DNA consistency, and traceability.",
+      "work_done": "Recorded the work item in local packets and preserved no-action boundaries.",
+      "findings": [
+        "Every reply, route, and completion report should have a local packet reference."
+      ],
+      "artifacts_created": [],
+      "blockers": [],
+      "next_step": "Index generated packets and keep runtime state readable from the office page.",
+      "approval_needed": false,
+      "status": "done"
+    },
+    {
+      "agent_id": "auditor_function",
+      "work_item_id": "demo_work_item_first_cash_path",
+      "role_interpretation": "Auditor is a governance function, not an invented legacy person.",
+      "work_done": "Reviewed no-action and approval boundaries for this local work cycle.",
+      "findings": [
+        "No external side effects are allowed in this runtime.",
+        "Actual memory/brain/canonical/CIEU DB writeback remains blocked.",
+        "COO was not invented as a legacy team member."
+      ],
+      "artifacts_created": [],
+      "blockers": [],
+      "next_step": "Escalate to owner only if an approval-gated action is requested.",
+      "approval_needed": false,
+      "status": "done"
+    }
+  ],
+  "no_action_receipt": {
+    "external_side_effects_occurred": false,
+    "core_writeback_occurred": false,
+    "customer_contacted": false,
+    "email_sent": false,
+    "payment_occurred": false
+  }
+}

@@ -7,9 +7,13 @@ import json
 from pathlib import Path
 from typing import Any
 
+from work_cycle_engine import create_demo_scenario
+from whiteboard_store import ensure_dirs
+
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "l7_real_labs_office_web_ui"
+L75_OUT = ROOT / "l7_labs_whiteboard_collaboration_runtime"
 LEGACY_OUT = ROOT / "l7_labs_office_legacy_integration"
 GENERATED_AT = "2026-04-30T00:00:00Z"
 LOCAL_URL = "http://127.0.0.1:8765"
@@ -19,6 +23,12 @@ PACKET_DIRS = [
     "runtime_packets/team_tasks",
     "runtime_packets/routing_decisions",
     "runtime_packets/agent_inboxes",
+    "runtime_packets/whiteboard_threads",
+    "runtime_packets/agent_replies",
+    "runtime_packets/work_items",
+    "runtime_packets/work_cycles",
+    "runtime_packets/completion_reports",
+    "runtime_packets/approval_requests",
 ]
 
 FORBIDDEN_ACTIONS = [
@@ -70,6 +80,18 @@ def write_json(relative_path: str, data: Any) -> None:
 
 def write_text(relative_path: str, text: str) -> None:
     path = OUT / relative_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text.strip() + "\n", encoding="utf-8")
+
+
+def write_l75_json(relative_path: str, data: Any) -> None:
+    path = L75_OUT / relative_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def write_l75_md(relative_path: str, text: str) -> None:
+    path = L75_OUT / relative_path
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text.strip() + "\n", encoding="utf-8")
 
@@ -164,6 +186,7 @@ def build_runtime_state() -> dict[str, Any]:
     home = load_json(LEGACY_OUT / "office_home/labs_office_home.json", {})
     queue = load_json(LEGACY_OUT / "team_work_queue/team_work_queue.json", {"work_items": []})
     agents = [compact_agent(agent) for agent in registry.get("agents", [])]
+    ensure_dirs()
     packet_dirs = {}
     for relative in PACKET_DIRS:
         path = OUT / relative
@@ -177,6 +200,7 @@ def build_runtime_state() -> dict[str, Any]:
         "generated_at_utc": GENERATED_AT,
         "local_url": LOCAL_URL,
         "current_phase": "Real Labs Office Web UI Runtime",
+        "whiteboard_runtime_phase": "Real Labs Whiteboard Collaboration & Team Work Runtime",
         "legacy_source": "l7_labs_office_legacy_integration",
         "agent_count": len(agents),
         "agents": agents,
@@ -189,10 +213,22 @@ def build_runtime_state() -> dict[str, Any]:
         "approval_required_for": APPROVAL_REQUIRED_FOR,
         "allowed_local_actions": ALLOWED_LOCAL_ACTIONS,
         "commercial_path_summary": commercial_summary(),
+        "whiteboard_features": [
+            "team whiteboard chat",
+            "Aiden routing",
+            "team work board",
+            "agent replies",
+            "safe work cycles",
+            "progress timeline",
+            "approval queue",
+            "completion reports",
+        ],
+        "work_board_columns": ["Inbox", "Interpreting", "Assigned", "In Progress", "Waiting for Approval", "Blocked", "Done"],
         "packet_dirs": packet_dirs,
         "next_commands": [
             "bash scripts/run_l7_labs_office_web.sh --mode serve",
             "bash scripts/run_l7_labs_office_web.sh --mode status",
+            "bash scripts/run_l7_labs_office_web.sh --mode demo",
             "bash scripts/run_l7_labs_office_web.sh --mode smoke",
         ],
         "no_coo_invented_as_legacy_member": True,
@@ -210,91 +246,82 @@ def write_assets() -> None:
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Y*Bridge Labs Office</title>
+  <title>Y*Bridge Labs Whiteboard Office</title>
   <link rel="stylesheet" href="/static/office.css">
 </head>
 <body>
   <header class="hero">
-    <p class="eyebrow">Local only: 127.0.0.1</p>
-    <h1>Y*Bridge Labs Office</h1>
-    <p id="phase">Loading office state...</p>
+    <p class="eyebrow">Local whiteboard runtime: 127.0.0.1 only</p>
+    <h1>Y*Bridge Labs Whiteboard Office</h1>
+    <p id="phase">Loading recovered team and work board...</p>
     <div class="actions">
-      <code>bash scripts/run_l7_labs_office_web.sh --mode serve</code>
-      <button id="refresh-button" type="button">Refresh Office</button>
+      <button id="refresh-button" type="button">Refresh Status</button>
+      <button id="route-button" type="button">Route with Aiden</button>
+      <button id="work-cycle-button" type="button">Run One Safe Work Cycle</button>
+      <button id="team-cycle-button" type="button">Run Team Work Cycle</button>
+      <button id="completion-button" type="button">Generate Completion Report</button>
     </div>
   </header>
 
-  <main>
+  <main class="office-grid">
+    <div id="message-form" hidden></div>
+    <div id="team-task-form" hidden></div>
+    <select id="target-agent" hidden></select>
+    <section class="panel whiteboard-panel">
+      <h2>Team Whiteboard / Chat</h2>
+      <div id="whiteboard-thread" class="thread"></div>
+      <form id="whiteboard-message-form" class="office-form">
+        <label>Target
+          <select id="whiteboard-target" name="target">
+            <option value="whole_team">Whole Team</option>
+          </select>
+        </label>
+        <label>Goal / instruction
+          <textarea id="whiteboard-text" required>团队请一起分析：我们下一步怎么最快拿到第一笔钱，同时不牺牲长期战略？</textarea>
+        </label>
+        <label>Objective
+          <input id="whiteboard-objective" value="Find the safest fastest first-cash path">
+        </label>
+        <button type="submit">Send to Team</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Team Work Board</h2>
+      <div id="work-board" class="kanban"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Agent Panel</h2>
+      <div id="agent-panel" class="agent-panel"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Agent Room</h2>
+      <div id="agent-room" class="room-card">Select an agent room.</div>
+    </section>
+
+    <section class="panel">
+      <h2>Progress Timeline</h2>
+      <ol id="progress-timeline" class="timeline"></ol>
+    </section>
+
+    <section class="panel">
+      <h2>Approval Queue</h2>
+      <ul id="pending-approvals"></ul>
+      <h3>Blocked Actions</h3>
+      <ul id="blocked-actions"></ul>
+    </section>
+
     <section class="panel">
       <h2>Recovered Legacy Team</h2>
-      <p>This roster is loaded from L7.4 legacy recovery artifacts. No COO is invented as a legacy member.</p>
+      <p>No COO is invented as a legacy member. The roster below is loaded from L7.4 recovery artifacts.</p>
       <div id="roster" class="card-grid"></div>
     </section>
 
-    <section class="panel split">
-      <div>
-        <h2>Agent Room</h2>
-        <div id="agent-room" class="room-card">Select an agent room.</div>
-      </div>
-      <div>
-        <h2>Work Queue</h2>
-        <ul id="work-queue"></ul>
-      </div>
-    </section>
-
-    <section class="panel split">
-      <form id="message-form" class="office-form">
-        <h2>Send Message To Agent</h2>
-        <label>Target agent
-          <select id="target-agent" name="target_agent"></select>
-        </label>
-        <label>Objective
-          <input id="message-objective" name="objective" value="Ask for a safe internal recommendation">
-        </label>
-        <label>Message
-          <textarea id="message-text" name="message_text" required>Hi Aiden, please route this safely through the original Y*Bridge Labs team.</textarea>
-        </label>
-        <label>Urgency
-          <select id="message-urgency" name="urgency">
-            <option>normal</option>
-            <option>high</option>
-            <option>low</option>
-          </select>
-        </label>
-        <button type="submit">Create Local Message Packet</button>
-      </form>
-
-      <form id="team-task-form" class="office-form">
-        <h2>Send Task To Whole Team</h2>
-        <label>Task title
-          <input id="task-title" name="task_title" value="Prepare next safe Labs Office work order">
-        </label>
-        <label>Task description
-          <textarea id="task-description" name="task_description" required>Ask Aiden to route this task to the original team. No external action, no writeback.</textarea>
-        </label>
-        <button type="submit">Create Local Team Work Order</button>
-      </form>
-    </section>
-
-    <section class="panel split">
-      <div>
-        <h2>Pending Approvals</h2>
-        <ul id="pending-approvals"></ul>
-      </div>
-      <div>
-        <h2>Blocked Actions</h2>
-        <ul id="blocked-actions"></ul>
-      </div>
-    </section>
-
     <section class="panel">
-      <h2>Commercial Path</h2>
-      <div id="commercial-path"></div>
-    </section>
-
-    <section class="panel">
-      <h2>Packet Result</h2>
-      <pre id="packet-result">No packet created yet.</pre>
+      <h2>Runtime Result</h2>
+      <pre id="packet-result">No whiteboard action yet.</pre>
     </section>
   </main>
   <script src="/static/office.js"></script>
@@ -306,14 +333,15 @@ def write_assets() -> None:
         "static/office.css",
         """
 :root {
-  --ink: #17312b;
-  --muted: #65736f;
-  --paper: #f8f1e7;
+  --ink: #17251f;
+  --muted: #64726d;
+  --paper: #f7efe1;
   --card: #fffaf0;
-  --line: #d8c7a8;
-  --accent: #d96d35;
-  --accent-dark: #7b341c;
+  --line: #dbc8a7;
+  --accent: #cf6636;
+  --blue: #214e75;
   --green: #2f6f58;
+  --red: #8f3328;
 }
 * { box-sizing: border-box; }
 body {
@@ -321,33 +349,25 @@ body {
   font-family: Georgia, "Times New Roman", serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(217,109,53,.25), transparent 32rem),
-    linear-gradient(135deg, #fbf5e8, #eaf4ed);
+    radial-gradient(circle at top left, rgba(207,102,54,.28), transparent 30rem),
+    radial-gradient(circle at bottom right, rgba(47,111,88,.18), transparent 28rem),
+    linear-gradient(135deg, #fcf4e7, #eaf4ee);
 }
-.hero {
-  padding: 42px 6vw 28px;
-  border-bottom: 1px solid var(--line);
-}
-.eyebrow { color: var(--accent-dark); letter-spacing: .08em; text-transform: uppercase; font-size: 12px; }
-h1 { margin: 0; font-size: clamp(36px, 6vw, 72px); line-height: .95; }
-h2 { margin-top: 0; }
-main { padding: 24px 6vw 60px; display: grid; gap: 20px; }
+.hero { padding: 36px 5vw 22px; border-bottom: 1px solid var(--line); }
+.eyebrow { color: var(--accent); letter-spacing: .08em; text-transform: uppercase; font-size: 12px; }
+h1 { margin: 0; font-size: clamp(36px, 6vw, 76px); line-height: .95; }
+h2, h3 { margin-top: 0; }
+.office-grid { padding: 22px 5vw 64px; display: grid; gap: 18px; grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr); }
 .panel {
-  background: rgba(255,250,240,.86);
+  background: rgba(255,250,240,.9);
   border: 1px solid var(--line);
   border-radius: 22px;
-  padding: 22px;
-  box-shadow: 0 18px 45px rgba(78, 57, 31, .08);
+  padding: 20px;
+  box-shadow: 0 18px 45px rgba(78,57,31,.08);
 }
-.split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
-.agent-card, .room-card {
-  border: 1px solid var(--line);
-  background: var(--card);
-  border-radius: 18px;
-  padding: 16px;
-}
-.agent-card button, button {
+.whiteboard-panel { grid-row: span 2; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+button {
   border: 0;
   border-radius: 999px;
   padding: 10px 14px;
@@ -355,10 +375,8 @@ main { padding: 24px 6vw 60px; display: grid; gap: 20px; }
   color: white;
   cursor: pointer;
 }
-.agent-card button:hover, button:hover { background: var(--accent-dark); }
-.role { color: var(--accent-dark); font-weight: 700; }
-.muted { color: var(--muted); }
-.office-form { display: grid; gap: 12px; }
+button:hover { background: var(--accent); }
+.office-form { display: grid; gap: 10px; margin-top: 14px; }
 label { display: grid; gap: 6px; font-weight: 700; }
 input, select, textarea {
   width: 100%;
@@ -368,48 +386,54 @@ input, select, textarea {
   font: inherit;
   background: #fffdf8;
 }
-textarea { min-height: 110px; }
+textarea { min-height: 120px; }
+.thread { min-height: 260px; max-height: 480px; overflow: auto; display: grid; gap: 10px; }
+.bubble { padding: 12px 14px; border-radius: 16px; background: #fffdf8; border: 1px solid var(--line); }
+.bubble.agent { border-left: 5px solid var(--green); }
+.bubble.owner { border-left: 5px solid var(--blue); }
+.kanban { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.column { background: rgba(23,37,31,.05); border-radius: 16px; padding: 10px; min-height: 90px; }
+.work-card, .agent-card, .room-card {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 16px;
+  padding: 12px;
+  margin-bottom: 8px;
+}
+.status { color: var(--blue); font-weight: 700; }
+.role { color: var(--accent); font-weight: 700; }
+.muted { color: var(--muted); }
+.card-grid, .agent-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.timeline { max-height: 360px; overflow: auto; }
 pre {
   white-space: pre-wrap;
-  background: #17312b;
-  color: #f8f1e7;
+  background: var(--ink);
+  color: #fffaf0;
   border-radius: 16px;
-  padding: 16px;
+  padding: 14px;
   overflow: auto;
 }
-code { background: rgba(23,49,43,.08); padding: 6px 8px; border-radius: 8px; }
-.actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 18px; }
-@media (max-width: 820px) {
-  .split { grid-template-columns: 1fr; }
-}
+@media (max-width: 980px) { .office-grid { grid-template-columns: 1fr; } }
 """,
     )
     write_text(
         "static/office.js",
         """
 const $ = (id) => document.getElementById(id);
+const columns = ["Inbox", "Interpreting", "Assigned", "In Progress", "Waiting for Approval", "Blocked", "Done"];
 let OFFICE_STATE = null;
 
-function list(items) {
-  return (items || []).map((item) => `<li>${escapeHtml(String(item))}</li>`).join("");
-}
-
 function escapeHtml(text) {
-  return text.replace(/[&<>"']/g, (ch) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  return String(text || "").replace(/[&<>"']/g, (ch) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 }
-
+function list(items) { return (items || []).map((item) => `<li>${escapeHtml(item)}</li>`).join(""); }
 async function getJson(path) {
   const response = await fetch(path);
   if (!response.ok) throw new Error(`${path}: ${response.status}`);
   return response.json();
 }
-
-async function postJson(path, payload) {
-  const response = await fetch(path, {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify(payload),
-  });
+async function postJson(path, payload = {}) {
+  const response = await fetch(path, { method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(payload) });
   const data = await response.json();
   if (!response.ok) throw new Error(JSON.stringify(data));
   return data;
@@ -421,18 +445,11 @@ function renderRoster(agents) {
       <h3>${escapeHtml(agent.display_name)}</h3>
       <p class="role">${escapeHtml(agent.legacy_role)}</p>
       <p class="muted">${escapeHtml(agent.current_status)}</p>
-      <p><strong>Accepts tasks:</strong> ${agent.can_accept_tasks ? "yes" : "no"}</p>
-      <p>${escapeHtml((agent.known_responsibilities || []).slice(0, 2).join("; "))}</p>
       <button type="button" data-agent-id="${escapeHtml(agent.agent_id)}">Open room</button>
-    </article>
-  `).join("");
-  $("target-agent").innerHTML = agents
-    .filter((agent) => agent.can_accept_tasks)
-    .map((agent) => `<option value="${escapeHtml(agent.agent_id)}">${escapeHtml(agent.display_name)} - ${escapeHtml(agent.legacy_role)}</option>`)
-    .join("");
-  document.querySelectorAll("[data-agent-id]").forEach((button) => {
-    button.addEventListener("click", () => openRoom(button.dataset.agentId));
-  });
+    </article>`).join("");
+  const options = [`<option value="whole_team">Whole Team</option>`].concat(agents.filter((agent) => agent.can_accept_tasks).map((agent) => `<option value="${escapeHtml(agent.agent_id)}">${escapeHtml(agent.display_name)} - ${escapeHtml(agent.legacy_role)}</option>`));
+  $("whiteboard-target").innerHTML = options.join("");
+  document.querySelectorAll("[data-agent-id]").forEach((button) => button.addEventListener("click", () => openRoom(button.dataset.agentId)));
 }
 
 async function openRoom(agentId) {
@@ -446,55 +463,273 @@ async function openRoom(agentId) {
     <h4>Responsibilities</h4><ul>${list(agent.known_responsibilities)}</ul>
     <h4>What owner can ask</h4><ul>${list(room.what_owner_can_ask)}</ul>
     <h4>Requires approval</h4><ul>${list(room.requires_owner_approval)}</ul>
-    <h4>Inbox</h4><ul>${list(room.current_inbox)}</ul>
-    <p class="muted">Brain/profile refs are shown as refs only; contents are not loaded here.</p>
-  `;
+    <h4>Inbox</h4><ul>${list(room.current_inbox)}</ul>`;
 }
 
-function renderState(state) {
-  OFFICE_STATE = state;
-  $("phase").textContent = state.current_phase;
-  renderRoster(state.agents);
-  $("work-queue").innerHTML = (state.work_queue || []).map((item) => `<li><strong>${escapeHtml(item.owner || "team")}</strong>: ${escapeHtml(item.task || item.work_id)}</li>`).join("");
-  $("pending-approvals").innerHTML = list(state.pending_approvals);
-  $("blocked-actions").innerHTML = list(state.blocked_actions);
-  $("commercial-path").innerHTML = `
-    <p><strong>Selected cash path:</strong> ${escapeHtml(state.commercial_path_summary.selected_cash_path || "not available")}</p>
-    <p><strong>Service offer:</strong> ${escapeHtml(state.commercial_path_summary.service_offer || "not available")}</p>
-    <p><strong>Status:</strong> ${escapeHtml(state.commercial_path_summary.status || "approval gated")}</p>
-  `;
-  if (state.agents.length) openRoom(state.agents.find((agent) => agent.agent_id === "aiden_ceo")?.agent_id || state.agents[0].agent_id);
+function renderWhiteboard(snapshot) {
+  const messages = (snapshot.threads || []).flatMap((thread) => thread.messages || []);
+  const replies = snapshot.agent_replies || [];
+  const rows = messages.map((m) => `<div class="bubble ${escapeHtml(m.sender_type)}"><strong>${escapeHtml(m.sender_id)}</strong> → ${escapeHtml(m.target)}<br>${escapeHtml(m.text)}</div>`)
+    .concat(replies.map((r) => `<div class="bubble agent"><strong>${escapeHtml(r.agent_id)}</strong><br>${escapeHtml(r.work_done)}<br><span class="muted">${escapeHtml(r.next_step)}</span></div>`));
+  $("whiteboard-thread").innerHTML = rows.join("") || "<p class='muted'>No whiteboard messages yet. Send a goal to the team.</p>";
+}
+
+function renderWorkBoard(board) {
+  $("work-board").innerHTML = columns.map((column) => `
+    <div class="column"><h3>${column}</h3>${(board[column] || []).map((item) => `
+      <article class="work-card">
+        <strong>${escapeHtml(item.title)}</strong>
+        <p class="status">${escapeHtml(item.status)}</p>
+        <p>${escapeHtml((item.assigned_agents || []).join(", "))}</p>
+        <p class="muted">${escapeHtml((item.progress_notes || []).slice(-1)[0] || item.description)}</p>
+      </article>`).join("")}</div>`).join("");
+}
+
+function renderAgentPanel(state, snapshot) {
+  const replies = snapshot.agent_replies || [];
+  $("agent-panel").innerHTML = state.agents.filter((agent) => agent.can_accept_tasks).map((agent) => {
+    const last = [...replies].reverse().find((reply) => reply.agent_id === agent.agent_id);
+    return `<article class="agent-card"><h3>${escapeHtml(agent.display_name)}</h3><p class="role">${escapeHtml(agent.legacy_role)}</p><p>Self-work: ${agent.can_self_work ? "yes" : "no"}</p><p class="muted">${escapeHtml(last ? last.next_step : "Ready")}</p></article>`;
+  }).join("");
+}
+
+function renderTimeline(events) {
+  $("progress-timeline").innerHTML = (events || []).slice(-30).reverse().map((event) => `<li><strong>${escapeHtml(event.event_type)}</strong>: ${escapeHtml(event.description)}</li>`).join("");
 }
 
 async function refreshOffice() {
-  renderState(await getJson("/api/status"));
+  const state = await getJson("/api/status");
+  const snapshot = await getJson("/api/whiteboard");
+  OFFICE_STATE = state;
+  $("phase").textContent = `${state.whiteboard_runtime_phase || state.current_phase} · ${state.agent_count} recovered agents`;
+  renderRoster(state.agents);
+  renderWhiteboard(snapshot);
+  renderWorkBoard(snapshot.work_board || {});
+  renderAgentPanel(state, snapshot);
+  renderTimeline(snapshot.timeline || []);
+  $("pending-approvals").innerHTML = list((snapshot.approval_requests || []).map((item) => item.reason).concat(state.pending_approvals || []));
+  $("blocked-actions").innerHTML = list(state.blocked_actions);
+  if (state.agents.length) openRoom(state.agents.find((agent) => agent.agent_id === "aiden_ceo")?.agent_id || state.agents[0].agent_id);
+}
+
+async function act(label, path, payload = {}) {
+  const data = await postJson(path, payload);
+  $("packet-result").textContent = `${label}\\n${JSON.stringify(data, null, 2)}`;
+  await refreshOffice();
 }
 
 $("refresh-button").addEventListener("click", refreshOffice);
-$("message-form").addEventListener("submit", async (event) => {
+$("whiteboard-message-form").addEventListener("submit", async (event) => {
   event.preventDefault();
-  const payload = {
-    target_agent: $("target-agent").value,
-    objective: $("message-objective").value,
-    message_text: $("message-text").value,
-    urgency: $("message-urgency").value,
-  };
-  $("packet-result").textContent = JSON.stringify(await postJson("/api/message", payload), null, 2);
+  await act("Whiteboard message created", "/api/whiteboard/message", {
+    target: $("whiteboard-target").value,
+    text: $("whiteboard-text").value,
+    objective: $("whiteboard-objective").value,
+  });
 });
-$("team-task-form").addEventListener("submit", async (event) => {
-  event.preventDefault();
-  const payload = {
-    task_title: $("task-title").value,
-    task_description: $("task-description").value,
-  };
-  $("packet-result").textContent = JSON.stringify(await postJson("/api/team_task", payload), null, 2);
-});
+$("route-button").addEventListener("click", () => act("Aiden routing decision", "/api/route"));
+$("work-cycle-button").addEventListener("click", () => act("Safe work cycle", "/api/work_cycle"));
+$("team-cycle-button").addEventListener("click", () => act("Team work cycle", "/api/team_work_cycle"));
+$("completion-button").addEventListener("click", () => act("Completion report", "/api/completion_report"));
 
-refreshOffice().catch((error) => {
-  $("packet-result").textContent = `Office failed to load: ${error}`;
-});
+refreshOffice().catch((error) => { $("packet-result").textContent = `Office failed to load: ${error}`; });
 """,
     )
+
+
+def schema(name: str, fields: dict[str, str]) -> dict[str, Any]:
+    return {
+        "schema_version": "v0",
+        "milestone_id": "L7.5",
+        "schema_id": name,
+        "fields": fields,
+    }
+
+
+def write_l75_outputs(state: dict[str, Any]) -> dict[str, Any]:
+    schemas = {
+        "whiteboard_message_schema": {
+            "message_id": "string",
+            "thread_id": "string",
+            "sender_type": "owner | agent | system",
+            "sender_id": "string",
+            "target": "string",
+            "text": "string",
+            "objective": "string",
+            "linked_work_item": "string|null",
+            "status": "queued|routed|done",
+            "external_side_effects": "false",
+            "core_writeback": "false",
+        },
+        "whiteboard_thread_schema": {"thread_id": "string", "status": "open|closed", "messages": "array"},
+        "work_item_schema": {
+            "work_item_id": "string",
+            "title": "string",
+            "description": "string",
+            "source_message_id": "string|null",
+            "requested_by": "string",
+            "assigned_agents": "array",
+            "status": "Inbox|Interpreting|Assigned|In Progress|Waiting for Approval|Blocked|Done",
+            "progress_notes": "array",
+            "blockers": "array",
+        },
+        "routing_decision_schema": {
+            "routing_decision_id": "string",
+            "primary_agent": "string",
+            "supporting_agents": "array",
+            "expected_outputs": "array",
+            "approval_points": "array",
+            "no_go_boundaries": "array",
+        },
+        "agent_reply_schema": {
+            "reply_id": "string",
+            "agent_id": "string",
+            "work_item_id": "string",
+            "role_interpretation": "string",
+            "work_done": "string",
+            "findings": "array",
+            "blockers": "array",
+            "next_step": "string",
+            "approval_needed": "boolean",
+        },
+        "work_cycle_schema": {
+            "work_cycle_id": "string",
+            "work_items_processed": "array",
+            "agents_involved": "array",
+            "actions_taken": "array",
+            "artifacts_created": "array",
+            "blocked_items": "array",
+            "approval_requests_created": "array",
+            "no_action_receipt": "object",
+        },
+        "completion_report_schema": {
+            "completion_report_id": "string",
+            "work_item_id": "string",
+            "summary": "string",
+            "assigned_agents": "array",
+            "artifacts": "array",
+            "completion_status": "string",
+            "remaining_risks": "array",
+            "approval_needed": "boolean",
+            "next_owner_action": "string",
+        },
+        "approval_request_schema": {
+            "approval_request_id": "string",
+            "work_item_id": "string",
+            "reason": "string",
+            "default_decision": "blocked_until_human_approved",
+            "status": "waiting_for_owner",
+        },
+    }
+    for name, fields in schemas.items():
+        write_l75_json(f"schemas/{name}.json", schema(name, fields))
+
+    demo = create_demo_scenario()
+    write_l75_json("demo_scenarios/demo_first_cash_path_team_discussion.json", demo)
+    write_l75_md(
+        "demo_scenarios/demo_first_cash_path_team_discussion.md",
+        """
+# Demo: First Cash Path Team Discussion
+
+Owner message:
+
+团队请一起分析：我们下一步怎么最快拿到第一笔钱，同时不牺牲长期战略？
+
+Expected local flow:
+
+- Aiden interprets and delegates.
+- Zara analyzes commercialization path.
+- Marco checks pricing and cash assumptions.
+- Sofia drafts internal positioning.
+- Jinjin proposes read-only research.
+- Ethan identifies missing tools.
+- Samantha archives and indexes packets.
+- Auditor function reviews no-action boundaries.
+
+No external side effects occur.
+""",
+    )
+
+    runtime_state = {
+        "schema_version": "v0",
+        "milestone_id": "L7.5",
+        "packet_type": "whiteboard_runtime_state",
+        "generated_at_utc": GENERATED_AT,
+        "local_url": LOCAL_URL,
+        "whiteboard_chat_ui_available": True,
+        "team_work_board_available": True,
+        "agent_panels_available": True,
+        "progress_timeline_available": True,
+        "approval_queue_available": True,
+        "agent_count": state["agent_count"],
+        "work_board_columns": state["work_board_columns"],
+        "safe_internal_work_cycles_enabled": True,
+        "coo_invented": False,
+    }
+    write_l75_json("whiteboard_runtime_state.json", runtime_state)
+    receipt = {
+        "schema_version": "v0",
+        "milestone_id": "L7.5",
+        "packet_type": "l7_5_no_action_receipt",
+        "generated_at_utc": GENERATED_AT,
+        "outreach_occurred": False,
+        "email_sent": False,
+        "form_submission_occurred": False,
+        "publication_occurred": False,
+        "payment_occurred": False,
+        "account_creation_occurred": False,
+        "customer_contacted": False,
+        "grant_rfp_submission_occurred": False,
+        "mcp_live_behavior_occurred": False,
+        "actual_memory_brain_canonical_cieu_db_writeback_occurred": False,
+        "secret_printed_stored_in_repo": False,
+        "y_star_gov_modified": False,
+        "gov_mcp_modified": False,
+        "db_log_wal_shm_active_agent_marker_content_read": False,
+        "ask_user_url_occurred": False,
+    }
+    write_l75_json("l7_5_no_action_receipts/l7_5_no_action_receipt.json", receipt)
+    summary = {
+        "schema_version": "v0",
+        "milestone_id": "L7.5",
+        "packet_type": "l7_5_summary",
+        "generated_at_utc": GENERATED_AT,
+        "whiteboard_chat_ui_available": True,
+        "team_work_board_available": True,
+        "agent_panels_available": True,
+        "progress_timeline_available": True,
+        "approval_queue_available": True,
+        "message_to_agent_works_locally": True,
+        "team_task_works_locally": True,
+        "routing_engine_generated": True,
+        "work_cycle_engine_generated": True,
+        "agent_replies_generated": True,
+        "completion_report_generated": True,
+        "demo_scenario_generated": True,
+        "local_url": LOCAL_URL,
+        "next_one_command_action": "bash scripts/run_l7_labs_office_web.sh --mode serve",
+        "coo_invented": False,
+    }
+    write_l75_json("l7_5_summary.json", summary)
+    write_l75_md(
+        "l7_5_summary.md",
+        f"""
+# L7.5 Real Labs Whiteboard Collaboration Runtime
+
+The Labs Office now has a local whiteboard collaboration loop:
+
+owner message → Aiden routing → agent replies → work board progress → approval gate → completion report.
+
+Run:
+
+`bash scripts/run_l7_labs_office_web.sh --mode serve`
+
+Then open:
+
+`{LOCAL_URL}`
+""",
+    )
+    return summary
 
 
 def build() -> dict[str, Any]:
@@ -502,6 +737,7 @@ def build() -> dict[str, Any]:
     audit = audit_existing_html()
     state = build_runtime_state()
     write_assets()
+    l75_summary = write_l75_outputs(state)
     write_json("existing_html_audit.json", audit)
     write_text(
         "existing_html_audit.md",
@@ -553,6 +789,7 @@ Deficiencies:
         "packet_type": "web_ui_summary",
         "generated_at_utc": GENERATED_AT,
         "real_office_web_ui_created": True,
+        "whiteboard_runtime_created": True,
         "local_url": LOCAL_URL,
         "agent_count": state["agent_count"],
         "agent_cards_generated": state["agent_count"],
@@ -572,6 +809,7 @@ Deficiencies:
         "existing_html_owner_usable": audit["owner_usable"],
         "next_one_command_action": "bash scripts/run_l7_labs_office_web.sh --mode serve",
         "no_coo_invented_as_legacy_member": True,
+        "l7_5_summary_ref": "l7_labs_whiteboard_collaboration_runtime/l7_5_summary.json",
     }
     write_json("web_ui_summary.json", summary)
     write_text(

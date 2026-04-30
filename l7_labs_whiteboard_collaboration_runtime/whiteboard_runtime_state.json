@@ -1,0 +1,24 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.5",
+  "packet_type": "whiteboard_runtime_state",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "local_url": "http://127.0.0.1:8765",
+  "whiteboard_chat_ui_available": true,
+  "team_work_board_available": true,
+  "agent_panels_available": true,
+  "progress_timeline_available": true,
+  "approval_queue_available": true,
+  "agent_count": 12,
+  "work_board_columns": [
+    "Inbox",
+    "Interpreting",
+    "Assigned",
+    "In Progress",
+    "Waiting for Approval",
+    "Blocked",
+    "Done"
+  ],
+  "safe_internal_work_cycles_enabled": true,
+  "coo_invented": false
+}

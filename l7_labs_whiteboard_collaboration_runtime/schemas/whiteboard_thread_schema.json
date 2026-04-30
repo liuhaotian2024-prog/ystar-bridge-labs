@@ -1,0 +1,10 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.5",
+  "schema_id": "whiteboard_thread_schema",
+  "fields": {
+    "thread_id": "string",
+    "status": "open|closed",
+    "messages": "array"
+  }
+}

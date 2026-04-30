@@ -1,0 +1,12 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.5",
+  "schema_id": "approval_request_schema",
+  "fields": {
+    "approval_request_id": "string",
+    "work_item_id": "string",
+    "reason": "string",
+    "default_decision": "blocked_until_human_approved",
+    "status": "waiting_for_owner"
+  }
+}

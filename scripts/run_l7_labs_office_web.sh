@@ -5,7 +5,7 @@ MODE="serve"
 if [[ "${1:-}" == "--mode" ]]; then
   MODE="${2:-serve}"
 elif [[ -n "${1:-}" ]]; then
-  echo "Usage: bash scripts/run_l7_labs_office_web.sh [--mode build|serve|status|smoke]" >&2
+  echo "Usage: bash scripts/run_l7_labs_office_web.sh [--mode build|serve|status|smoke|demo]" >&2
   exit 2
 fi
 
@@ -41,13 +41,30 @@ if not state_path.exists():
 state = json.loads(state_path.read_text(encoding="utf-8"))
 owner_messages = list(Path("l7_real_labs_office_web_ui/runtime_packets/owner_messages").glob("*.json"))
 team_tasks = list(Path("l7_real_labs_office_web_ui/runtime_packets/team_tasks").glob("*.json"))
+whiteboard_threads = list(Path("l7_real_labs_office_web_ui/runtime_packets/whiteboard_threads").glob("*.json"))
+work_items = list(Path("l7_real_labs_office_web_ui/runtime_packets/work_items").glob("*.json"))
 print("Y*Bridge Labs Office Web UI")
 print(f"- URL: {state['local_url']}")
 print(f"- agents: {state['agent_count']}")
 print(f"- queued owner messages: {len(owner_messages)}")
 print(f"- queued team tasks: {len(team_tasks)}")
+print(f"- whiteboard threads: {len(whiteboard_threads)}")
+print(f"- work items: {len(work_items)}")
 print(f"- pending approvals: {', '.join(state.get('pending_approvals', []))}")
 print(f"- next command: bash scripts/run_l7_labs_office_web.sh --mode serve")
+PY
+}
+
+run_demo() {
+  build_office >/dev/null
+  python3 - <<'PY'
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path("scripts/l7_labs_office_web").resolve()))
+from office_web_builder import build
+summary = build()
+print("demo_ok: l7_labs_whiteboard_collaboration_runtime/demo_scenarios/demo_first_cash_path_team_discussion.md")
+print(f"next_command: {summary['next_one_command_action']}")
 PY
 }
 
@@ -73,7 +90,7 @@ def get(path):
 
 try:
     html = get("/")
-    if "message-form" not in html or "team-task-form" not in html:
+    if "whiteboard-message-form" not in html or "work-board" not in html:
         raise SystemExit("HTML missing forms")
     roster = json.loads(get("/api/roster"))
     if roster.get("agent_count", 0) < 12:
@@ -87,7 +104,7 @@ except URLError as exc:
         raise
     html = Path("l7_real_labs_office_web_ui/templates/index.html").read_text(encoding="utf-8")
     state = json.loads(Path("l7_real_labs_office_web_ui/office_runtime_state.json").read_text(encoding="utf-8"))
-    if "message-form" not in html or "team-task-form" not in html:
+    if "whiteboard-message-form" not in html or "work-board" not in html:
         raise SystemExit("HTML missing forms")
     if state.get("agent_count", 0) < 12:
         raise SystemExit("runtime state missing recovered agents")
@@ -111,9 +128,12 @@ case "${MODE}" in
   smoke)
     smoke_test
     ;;
+  demo)
+    run_demo
+    ;;
   *)
     echo "Unknown mode: ${MODE}" >&2
-    echo "Usage: bash scripts/run_l7_labs_office_web.sh [--mode build|serve|status|smoke]" >&2
+    echo "Usage: bash scripts/run_l7_labs_office_web.sh [--mode build|serve|status|smoke|demo]" >&2
     exit 2
     ;;
 esac

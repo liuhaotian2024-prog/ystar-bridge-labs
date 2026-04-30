@@ -3,91 +3,82 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Y*Bridge Labs Office</title>
+  <title>Y*Bridge Labs Whiteboard Office</title>
   <link rel="stylesheet" href="/static/office.css">
 </head>
 <body>
   <header class="hero">
-    <p class="eyebrow">Local only: 127.0.0.1</p>
-    <h1>Y*Bridge Labs Office</h1>
-    <p id="phase">Loading office state...</p>
+    <p class="eyebrow">Local whiteboard runtime: 127.0.0.1 only</p>
+    <h1>Y*Bridge Labs Whiteboard Office</h1>
+    <p id="phase">Loading recovered team and work board...</p>
     <div class="actions">
-      <code>bash scripts/run_l7_labs_office_web.sh --mode serve</code>
-      <button id="refresh-button" type="button">Refresh Office</button>
+      <button id="refresh-button" type="button">Refresh Status</button>
+      <button id="route-button" type="button">Route with Aiden</button>
+      <button id="work-cycle-button" type="button">Run One Safe Work Cycle</button>
+      <button id="team-cycle-button" type="button">Run Team Work Cycle</button>
+      <button id="completion-button" type="button">Generate Completion Report</button>
     </div>
   </header>
 
-  <main>
+  <main class="office-grid">
+    <div id="message-form" hidden></div>
+    <div id="team-task-form" hidden></div>
+    <select id="target-agent" hidden></select>
+    <section class="panel whiteboard-panel">
+      <h2>Team Whiteboard / Chat</h2>
+      <div id="whiteboard-thread" class="thread"></div>
+      <form id="whiteboard-message-form" class="office-form">
+        <label>Target
+          <select id="whiteboard-target" name="target">
+            <option value="whole_team">Whole Team</option>
+          </select>
+        </label>
+        <label>Goal / instruction
+          <textarea id="whiteboard-text" required>团队请一起分析：我们下一步怎么最快拿到第一笔钱，同时不牺牲长期战略？</textarea>
+        </label>
+        <label>Objective
+          <input id="whiteboard-objective" value="Find the safest fastest first-cash path">
+        </label>
+        <button type="submit">Send to Team</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Team Work Board</h2>
+      <div id="work-board" class="kanban"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Agent Panel</h2>
+      <div id="agent-panel" class="agent-panel"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Agent Room</h2>
+      <div id="agent-room" class="room-card">Select an agent room.</div>
+    </section>
+
+    <section class="panel">
+      <h2>Progress Timeline</h2>
+      <ol id="progress-timeline" class="timeline"></ol>
+    </section>
+
+    <section class="panel">
+      <h2>Approval Queue</h2>
+      <ul id="pending-approvals"></ul>
+      <h3>Blocked Actions</h3>
+      <ul id="blocked-actions"></ul>
+    </section>
+
     <section class="panel">
       <h2>Recovered Legacy Team</h2>
-      <p>This roster is loaded from L7.4 legacy recovery artifacts. No COO is invented as a legacy member.</p>
+      <p>No COO is invented as a legacy member. The roster below is loaded from L7.4 recovery artifacts.</p>
       <div id="roster" class="card-grid"></div>
     </section>
 
-    <section class="panel split">
-      <div>
-        <h2>Agent Room</h2>
-        <div id="agent-room" class="room-card">Select an agent room.</div>
-      </div>
-      <div>
-        <h2>Work Queue</h2>
-        <ul id="work-queue"></ul>
-      </div>
-    </section>
-
-    <section class="panel split">
-      <form id="message-form" class="office-form">
-        <h2>Send Message To Agent</h2>
-        <label>Target agent
-          <select id="target-agent" name="target_agent"></select>
-        </label>
-        <label>Objective
-          <input id="message-objective" name="objective" value="Ask for a safe internal recommendation">
-        </label>
-        <label>Message
-          <textarea id="message-text" name="message_text" required>Hi Aiden, please route this safely through the original Y*Bridge Labs team.</textarea>
-        </label>
-        <label>Urgency
-          <select id="message-urgency" name="urgency">
-            <option>normal</option>
-            <option>high</option>
-            <option>low</option>
-          </select>
-        </label>
-        <button type="submit">Create Local Message Packet</button>
-      </form>
-
-      <form id="team-task-form" class="office-form">
-        <h2>Send Task To Whole Team</h2>
-        <label>Task title
-          <input id="task-title" name="task_title" value="Prepare next safe Labs Office work order">
-        </label>
-        <label>Task description
-          <textarea id="task-description" name="task_description" required>Ask Aiden to route this task to the original team. No external action, no writeback.</textarea>
-        </label>
-        <button type="submit">Create Local Team Work Order</button>
-      </form>
-    </section>
-
-    <section class="panel split">
-      <div>
-        <h2>Pending Approvals</h2>
-        <ul id="pending-approvals"></ul>
-      </div>
-      <div>
-        <h2>Blocked Actions</h2>
-        <ul id="blocked-actions"></ul>
-      </div>
-    </section>
-
     <section class="panel">
-      <h2>Commercial Path</h2>
-      <div id="commercial-path"></div>
-    </section>
-
-    <section class="panel">
-      <h2>Packet Result</h2>
-      <pre id="packet-result">No packet created yet.</pre>
+      <h2>Runtime Result</h2>
+      <pre id="packet-result">No whiteboard action yet.</pre>
     </section>
   </main>
   <script src="/static/office.js"></script>

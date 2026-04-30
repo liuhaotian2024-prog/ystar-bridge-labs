@@ -1,0 +1,16 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.5",
+  "schema_id": "completion_report_schema",
+  "fields": {
+    "completion_report_id": "string",
+    "work_item_id": "string",
+    "summary": "string",
+    "assigned_agents": "array",
+    "artifacts": "array",
+    "completion_status": "string",
+    "remaining_risks": "array",
+    "approval_needed": "boolean",
+    "next_owner_action": "string"
+  }
+}
