@@ -217,6 +217,25 @@ textarea { min-height: 150px; }
   border-radius: 14px;
   padding: 12px;
 }
+.current-focus {
+  margin-bottom: 14px;
+  padding: 14px;
+  border: 1px solid rgba(53,200,255,.24);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(53,200,255,.12), rgba(44,245,154,.08));
+}
+.current-focus h3 { margin: 8px 0; }
+.history-note {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px dashed rgba(255,255,255,.16);
+  border-radius: 12px;
+  color: var(--text2);
+}
+.history-note summary {
+  cursor: pointer;
+  color: var(--accent2);
+}
 .bubble {
   background: rgba(255,255,255,.06);
   border-color: rgba(255,255,255,.09);

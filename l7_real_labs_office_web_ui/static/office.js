@@ -77,23 +77,65 @@ async function openRoom(agentId) {
     <h4>Inbox</h4><ul>${list(room.current_inbox)}</ul>`;
 }
 
+function sortedByUpdated(items) {
+  return [...(items || [])].sort((a, b) => String(b.updated_at_utc || b.created_at_utc || "").localeCompare(String(a.updated_at_utc || a.created_at_utc || "")));
+}
+
+function allWorkItems(board) {
+  return columns.flatMap((column) => board[column] || []);
+}
+
+function latestWorkItem(snapshot) {
+  return sortedByUpdated(allWorkItems(snapshot.work_board || {}))[0] || null;
+}
+
+function latestThread(snapshot) {
+  return sortedByUpdated(snapshot.threads || [])[0] || null;
+}
+
+function currentReplies(snapshot, workItemId) {
+  const replies = sortedByUpdated(snapshot.agent_replies || []);
+  const scoped = workItemId ? replies.filter((reply) => reply.work_item_id === workItemId) : [];
+  return (scoped.length ? scoped : replies).slice(0, 8);
+}
+
+function renderFindings(findings) {
+  const safeFindings = (findings || []).slice(0, 4);
+  return safeFindings.length ? `<ul>${safeFindings.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : "";
+}
+
 function renderWhiteboard(snapshot) {
-  const messages = (snapshot.threads || []).flatMap((thread) => thread.messages || []);
-  const replies = snapshot.agent_replies || [];
+  const thread = latestThread(snapshot);
+  const item = latestWorkItem(snapshot);
+  const messages = (thread?.messages || []).slice(-2);
+  const replies = currentReplies(snapshot, item?.work_item_id);
+  const totalMessages = (snapshot.threads || []).flatMap((entry) => entry.messages || []).length;
+  const totalReplies = (snapshot.agent_replies || []).length;
+  const focus = item ? `
+    <article class="current-focus">
+      <span class="section-label">Current Focus</span>
+      <h3>${escapeHtml(item.title)}</h3>
+      <p><strong>Status:</strong> ${escapeHtml(item.status)} · <strong>Agents:</strong> ${escapeHtml((item.assigned_agents || []).join(", ") || "not routed yet")}</p>
+      <p class="muted">${escapeHtml((item.progress_notes || []).slice(-1)[0] || item.description || "Waiting for team work.")}</p>
+    </article>` : "";
   const rows = messages.map((m) => `<div class="bubble ${escapeHtml(m.sender_type)}"><strong>${escapeHtml(m.sender_id)}</strong> → ${escapeHtml(m.target)}<br>${escapeHtml(m.text)}</div>`)
-    .concat(replies.map((r) => `<div class="bubble agent"><strong>${escapeHtml(r.agent_id)}</strong><br>${escapeHtml(r.work_done)}<br><span class="muted">${escapeHtml(r.next_step)}</span></div>`));
-  $("whiteboard-thread").innerHTML = rows.join("") || "<p class='muted'>No whiteboard messages yet. Send a goal to the team.</p>";
+    .concat(replies.map((r) => `<div class="bubble agent"><strong>${escapeHtml(r.agent_id)}</strong><br>${escapeHtml(r.work_done)}${renderFindings(r.findings)}<span class="muted">Next: ${escapeHtml(r.next_step)}</span></div>`));
+  const historyNote = totalMessages || totalReplies
+    ? `<details class="history-note"><summary>旧历史已隐藏：${Math.max(totalMessages - messages.length, 0)} 条消息、${Math.max(totalReplies - replies.length, 0)} 条回复</summary><p class="muted">为了避免办公室变成日志瀑布，这里默认只显示最近一次任务。历史 packet 仍保留在本地。</p></details>`
+    : "";
+  $("whiteboard-thread").innerHTML = focus + (rows.join("") || "<p class='muted'>No whiteboard messages yet. Send a goal to the team.</p>") + historyNote;
 }
 
 function renderWorkBoard(board) {
+  const recentIds = new Set(sortedByUpdated(allWorkItems(board)).slice(0, 8).map((item) => item.work_item_id));
   $("work-board").innerHTML = columns.map((column) => `
-    <div class="column"><h3>${column}</h3>${(board[column] || []).map((item) => `
+    <div class="column"><h3>${column}</h3>${sortedByUpdated((board[column] || []).filter((item) => recentIds.has(item.work_item_id))).map((item) => `
       <article class="work-card">
         <strong>${escapeHtml(item.title)}</strong>
         <p class="status">${escapeHtml(item.status)}</p>
         <p>${escapeHtml((item.assigned_agents || []).join(", "))}</p>
         <p class="muted">${escapeHtml((item.progress_notes || []).slice(-1)[0] || item.description)}</p>
-      </article>`).join("")}</div>`).join("");
+      </article>`).join("") || "<p class='muted'>No recent item.</p>"}</div>`).join("");
 }
 
 function renderAgentPanel(state, snapshot) {
@@ -105,7 +147,7 @@ function renderAgentPanel(state, snapshot) {
 }
 
 function renderTimeline(events) {
-  $("progress-timeline").innerHTML = (events || []).slice(-30).reverse().map((event) => `<li><strong>${escapeHtml(event.event_type)}</strong>: ${escapeHtml(event.description)}</li>`).join("");
+  $("progress-timeline").innerHTML = (events || []).slice(-12).reverse().map((event) => `<li><strong>${escapeHtml(event.event_type)}</strong>: ${escapeHtml(event.description)}</li>`).join("");
 }
 
 function renderScheduler(status, runs, heartbeats, interrupts) {
@@ -202,12 +244,48 @@ async function refreshOffice() {
 
 async function act(label, path, payload = {}) {
   const data = await postJson(path, payload);
-  $("packet-result").textContent = `${label}\n${JSON.stringify(data, null, 2)}`;
+  $("packet-result").textContent = summarizeActionResult(label, data);
   try {
     await refreshOffice();
   } catch (error) {
     $("packet-result").textContent += `\n\nRefresh warning: ${error.message}. The packet action above still completed.`;
   }
+}
+
+function summarizeActionResult(label, data) {
+  const lines = [label, ""];
+  lines.push(`状态: ${data.ok === false ? "失败" : "完成"}`);
+  if (data.message) {
+    lines.push(`已进入白板: ${data.message.text || data.message.objective || data.message.message_id}`);
+    lines.push("下一步: 点 “2. Aiden 拆任务”。");
+  }
+  if (data.routing_decision) {
+    const decision = data.routing_decision;
+    lines.push(`Aiden 分派: ${decision.primary_agent} + ${(decision.supporting_agents || []).join(", ")}`);
+    lines.push(`任务: ${data.work_item?.title || decision.work_item_id}`);
+    lines.push("下一步: 点 “3. 团队工作一轮”。");
+  }
+  if (data.items_processed) {
+    lines.push(`处理任务数: ${data.items_processed.length}`);
+    (data.results || []).slice(0, 3).forEach((result) => {
+      const item = result.work_item || {};
+      lines.push(`- ${item.title || item.work_item_id}: ${item.status || "updated"}`);
+      lines.push(`  团队回复: ${(result.agent_replies || []).map((reply) => reply.agent_id).join(", ")}`);
+      if (result.approval_request) lines.push(`  需要审批: ${result.approval_request.reason}`);
+    });
+    lines.push("下一步: 看“团队白板”，或者点 “4. 生成总结”。");
+  }
+  if (data.agent_replies) {
+    lines.push(`团队回复: ${data.agent_replies.map((reply) => reply.agent_id).join(", ")}`);
+  }
+  if (data.completion_report) {
+    lines.push(`总结: ${data.completion_report.summary}`);
+    lines.push(`下一步: ${data.completion_report.next_owner_action}`);
+  }
+  if (data.next_step && !lines.some((line) => line.includes(data.next_step))) lines.push(`下一步: ${data.next_step}`);
+  lines.push("");
+  lines.push("外部动作: 没有。邮件、客户联系、发布、付款、核心写回都没有执行。");
+  return lines.join("\n");
 }
 
 async function sendTeamInstruction() {
@@ -271,7 +349,7 @@ $("whiteboard-message-form").addEventListener("submit", async (event) => {
   event.preventDefault();
   try {
     const data = await sendTeamInstruction();
-    $("packet-result").textContent = `Team instruction submitted\n${JSON.stringify(data, null, 2)}`;
+    $("packet-result").textContent = summarizeActionResult("Team instruction submitted", data);
     try {
       await refreshOffice();
     } catch (error) {
@@ -279,7 +357,7 @@ $("whiteboard-message-form").addEventListener("submit", async (event) => {
     }
   } catch (error) {
     setSendStatus(`Could not submit instruction: ${error.message}`, "error");
-    $("packet-result").textContent = `Team instruction failed\n${JSON.stringify(error.payload || {error: error.message}, null, 2)}`;
+    $("packet-result").textContent = `Team instruction failed\n${error.message}`;
   }
 });
 $("route-button").addEventListener("click", () => act("Aiden routing decision", "/api/route"));

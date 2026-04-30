@@ -14,6 +14,7 @@ sys.path.insert(0, str(SCRIPT_DIR))
 
 from office_web_builder import build  # noqa: E402
 from office_web_server import serve  # noqa: E402
+from agent_worker_runtime import generate_agent_reply  # noqa: E402
 from team_router import known_agent_ids, route_owner_goal  # noqa: E402
 from whiteboard_store import (  # noqa: E402
     PACKET_ROOT,
@@ -91,6 +92,7 @@ def test_template_contains_whiteboard_work_board_agent_panel_and_timeline():
     assert "把目标交给团队" in template
     assert 'class="template-chip"' in template
     assert "高级：调度器 / 商业路径 / 委托任务" in template
+    assert "最近一次操作结果" in template
     assert 'id="whiteboard-message-form"' in template
     assert 'id="whiteboard-send-status"' in template
     assert 'id="work-board"' in template
@@ -103,6 +105,8 @@ def test_js_can_submit_whiteboard_and_work_cycle_paths():
     for endpoint in ["/api/whiteboard/message", "/api/route", "/api/work_cycle", "/api/team_work_cycle", "/api/completion_report"]:
         assert endpoint in js
     assert "quickTemplates" in js
+    assert "summarizeActionResult" in js
+    assert "旧历史已隐藏" in js
     assert "最快拿到第一笔钱" in js
     assert "compatibility_fallback" in js
     assert "/api/team_task" in js
@@ -119,6 +123,18 @@ def test_routing_engine_uses_original_agents_and_no_coo():
     assert "jinjin_k9_scout" in assigned
     assert "coo" not in " ".join(known_agent_ids()).lower()
     assert routing["coo_invented"] is False
+
+
+def test_agent_worker_gives_specific_first_cash_reply():
+    reply = generate_agent_reply(
+        "aiden_ceo",
+        {
+            "work_item_id": "test_first_cash",
+            "description": "团队请分析下一步怎么最快拿到第一笔钱，同时不牺牲长期战略。",
+        },
+    )
+    assert "可执行判断" in reply["work_done"]
+    assert any("可收费诊断" in finding for finding in reply["findings"])
 
 
 def test_owner_message_packet_can_be_created_locally(packet_root):
