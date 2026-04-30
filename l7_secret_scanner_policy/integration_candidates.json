@@ -1,0 +1,41 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.0S",
+  "integration_candidates": [
+    {
+      "candidate_id": "integration_candidate_001",
+      "path": "console_read_model/checks/run_local_safety_checks.py",
+      "reason": "Local safety wrapper can use contextual classification for staged diffs and generated summaries.",
+      "recommended_patch": "Call policy.secret_scanner_policy.scan_text_for_secret_policy on candidate text and fail only unsafe decisions.",
+      "patched_in_l7_0s": false
+    },
+    {
+      "candidate_id": "integration_candidate_002",
+      "path": "scripts/audit_conservatism_debt.py",
+      "reason": "Conservatism audit can avoid treating approved scanner-rule examples as unsafe secret leakage.",
+      "recommended_patch": "Use the helper when classifying secret-related findings.",
+      "patched_in_l7_0s": false
+    },
+    {
+      "candidate_id": "integration_candidate_003",
+      "path": "scripts/full_repo_conservatism_scan.py",
+      "reason": "Full repo scan can distinguish secret hard boundaries from approved fixture examples.",
+      "recommended_patch": "Use contextual helper for secret-family matches while preserving skipped unsafe paths.",
+      "patched_in_l7_0s": false
+    },
+    {
+      "candidate_id": "integration_candidate_004",
+      "path": "tests/l7_conservatism_debt_remediation/test_l7_conservatism_debt_remediation.py",
+      "reason": "Existing tests used string splitting around secret patterns; they can now use the contextual helper directly.",
+      "recommended_patch": "Replace split-string assertions with scan_text_for_secret_policy assertions.",
+      "patched_in_l7_0s": true
+    },
+    {
+      "candidate_id": "integration_candidate_005",
+      "path": "tests/l7_full_repo_conservatism_scan/test_l7_full_repo_conservatism_scan.py",
+      "reason": "Existing tests used split-string assertions around secret patterns; they can now use the contextual helper directly.",
+      "recommended_patch": "Replace split-string assertions with scan_text_for_secret_policy assertions.",
+      "patched_in_l7_0s": true
+    }
+  ]
+}

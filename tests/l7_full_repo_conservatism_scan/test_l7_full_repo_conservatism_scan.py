@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import importlib.util
 from functools import lru_cache
 import json
 from pathlib import Path
@@ -8,10 +9,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "l7_full_repo_conservatism_scan"
 POLICY = ROOT / "policy"
+SECRET_HELPER = ROOT / "policy" / "secret_scanner_policy.py"
 
 
 def load_json(path: str) -> dict:
     return json.loads((ROOT / path).read_text(encoding="utf-8"))
+
+
+def load_secret_helper():
+    spec = importlib.util.spec_from_file_location("secret_scanner_policy", SECRET_HELPER)
+    module = importlib.util.module_from_spec(spec)
+    assert spec and spec.loader
+    spec.loader.exec_module(module)
+    return module
 
 
 @lru_cache(maxsize=1)
@@ -190,10 +200,17 @@ def test_no_secret_values_or_external_repo_modification() -> None:
         for path in root.glob("*")
         if path.is_file() and path.suffix in {".json", ".md"}
     )
-    assert "tvly" + "-" not in scoped_text
-    assert "TAVILY" + "_API_KEY=" not in scoped_text
-    assert "BRAVE_SEARCH" + "_API_KEY=" not in scoped_text
-    assert "SERP" + "API_API_KEY=" not in scoped_text
+    secret_helper = load_secret_helper()
+    decisions = secret_helper.scan_text_for_secret_policy(
+        scoped_text,
+        file_path="tests/l7_full_repo_conservatism_scan/test_l7_full_repo_conservatism_scan.py",
+    )
+    assert all(decision["safe_for_commit"] for decision in decisions)
+    placeholder = secret_helper.classify_secret_pattern(
+        "TAVILY_API_KEY_PLACEHOLDER",
+        file_path="tests/l7_full_repo_conservatism_scan/test_l7_full_repo_conservatism_scan.py",
+    )
+    assert placeholder["safe_for_commit"] is True
 
     receipt = load_json("l7_full_repo_conservatism_scan/l7_0q2_no_action_receipt.json")
     assert receipt["y_star_gov_modified"] is False

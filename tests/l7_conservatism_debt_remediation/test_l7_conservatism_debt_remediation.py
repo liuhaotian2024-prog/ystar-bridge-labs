@@ -6,6 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "l7_conservatism_debt_remediation"
 POLICY_HELPER = ROOT / "policy" / "policy_decision.py"
+SECRET_HELPER = ROOT / "policy" / "secret_scanner_policy.py"
 
 
 def load_json(path: str):
@@ -14,6 +15,14 @@ def load_json(path: str):
 
 def load_policy_helper():
     spec = importlib.util.spec_from_file_location("policy_decision", POLICY_HELPER)
+    module = importlib.util.module_from_spec(spec)
+    assert spec and spec.loader
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_secret_helper():
+    spec = importlib.util.spec_from_file_location("secret_scanner_policy", SECRET_HELPER)
     module = importlib.util.module_from_spec(spec)
     assert spec and spec.loader
     spec.loader.exec_module(module)
@@ -167,14 +176,14 @@ def test_no_secret_values_or_external_repo_modification() -> None:
     scanned_text = ""
     for path in list(OUT.glob("*.json")) + list(OUT.glob("*.md")) + [POLICY_HELPER]:
         scanned_text += path.read_text(encoding="utf-8")
-    forbidden_patterns = [
-        "tvly" + "-",
-        "TAVILY" + "_API_KEY=",
-        "BRAVE_SEARCH" + "_API_KEY=",
-        "SERP" + "API_API_KEY=",
-    ]
-    for forbidden in forbidden_patterns:
-        assert forbidden not in scanned_text
+    secret_helper = load_secret_helper()
+    decisions = secret_helper.scan_text_for_secret_policy(scanned_text, file_path="tests/l7_conservatism_debt_remediation/test_l7_conservatism_debt_remediation.py")
+    assert all(decision["safe_for_commit"] for decision in decisions)
+    placeholder = secret_helper.classify_secret_pattern(
+        "TAVILY_API_KEY_PLACEHOLDER",
+        file_path="tests/l7_conservatism_debt_remediation/test_l7_conservatism_debt_remediation.py",
+    )
+    assert placeholder["safe_for_commit"] is True
     summary = load_json("l7_conservatism_debt_remediation/l7_0r_summary.json")
     assert summary["y_star_gov_modified"] is False
     assert summary["gov_mcp_modified"] is False
