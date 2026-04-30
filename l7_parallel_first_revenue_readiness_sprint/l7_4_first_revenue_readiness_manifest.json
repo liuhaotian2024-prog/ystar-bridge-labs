@@ -1,0 +1,41 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4",
+  "milestone_name": "Parallel First Revenue Readiness Sprint",
+  "run_id": "l7_4_parallel_first_revenue_readiness_run_001",
+  "packet_type": "l7_4_first_revenue_readiness_manifest",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "selected_offer": "Founder AI Workflow Audit & CEO Command Brief Sprint",
+  "target_customer_archetypes_generated": 6,
+  "approval_pipeline_ready": true,
+  "delivery_dry_run_ready": true,
+  "trust_proof_pack_ready": true,
+  "pricing_payment_contract_preflight_ready": true,
+  "owner_cockpit_v3_ready": true,
+  "first_revenue_readiness_score": 82,
+  "what_remains_blocked": [
+    "customer contact",
+    "email send",
+    "form submission",
+    "payment",
+    "publication",
+    "account creation",
+    "customer commitment",
+    "core writeback"
+  ],
+  "what_requires_owner_approval": [
+    "recipient selection",
+    "manual outreach send",
+    "price quote",
+    "contract/scope terms",
+    "payment method"
+  ],
+  "next_one_command_action": "bash scripts/run_l7_4_parallel_first_revenue_sprint.sh --mode status",
+  "next_strategic_sprint": "L7.5 Human-Approved First Outreach Execution Preparation"
+}

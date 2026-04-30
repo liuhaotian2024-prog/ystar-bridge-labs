@@ -1,0 +1,37 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4",
+  "milestone_name": "Parallel First Revenue Readiness Sprint",
+  "run_id": "l7_4_parallel_first_revenue_readiness_run_001",
+  "packet_type": "read_only_customer_discovery_report",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "lane_id": "L7.4A",
+  "observation_mode": "existing_artifact_based_read_only",
+  "real_web_observation_used": false,
+  "limitation": "No live web scan was required for this deterministic sprint; use controlled read-only observation later if approved/configured.",
+  "evidence_basis": [
+    "L7.2 shortest cash path",
+    "L7.3 selected offer and target customer profile"
+  ],
+  "offer": "Founder AI Workflow Audit & CEO Command Brief Sprint",
+  "public_pain_signals": [
+    "founder mentions AI workflow confusion",
+    "team is adopting coding agents",
+    "company needs urgent research or strategy decision",
+    "operator is concerned about unsafe automation"
+  ],
+  "disqualification_criteria": [
+    "requires guaranteed revenue",
+    "requires legal certification",
+    "requires autonomous action before approval",
+    "requires private data collection"
+  ],
+  "next_safe_read_only_observation": "Run a bounded public signal scan for founder posts, docs, and job posts matching the archetypes.",
+  "approval_required_before_contact": true
+}

@@ -1,0 +1,146 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4",
+  "milestone_name": "Parallel First Revenue Readiness Sprint",
+  "run_id": "l7_4_parallel_first_revenue_readiness_run_001",
+  "packet_type": "target_segment_map",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "lane_id": "L7.4A",
+  "selected_offer": "Founder AI Workflow Audit & CEO Command Brief Sprint",
+  "segments": [
+    {
+      "archetype_id": "archetype_001",
+      "name": "AI startup founder",
+      "public_pain_signals": [
+        "urgent AI workflow choice",
+        "needs investor/customer-ready clarity",
+        "founder time bottleneck"
+      ],
+      "buying_triggers": [
+        "deadline-driven decision",
+        "visible AI workflow adoption",
+        "need for evidence-backed internal brief"
+      ],
+      "future_approved_research_channels": [
+        "public founder posts",
+        "public product docs",
+        "public job posts",
+        "public startup community posts without login"
+      ],
+      "approval_required_before_contact": true
+    },
+    {
+      "archetype_id": "archetype_002",
+      "name": "technical operator",
+      "public_pain_signals": [
+        "owns internal AI tooling",
+        "needs workflow governance",
+        "wants low-risk automation"
+      ],
+      "buying_triggers": [
+        "deadline-driven decision",
+        "visible AI workflow adoption",
+        "need for evidence-backed internal brief"
+      ],
+      "future_approved_research_channels": [
+        "public founder posts",
+        "public product docs",
+        "public job posts",
+        "public startup community posts without login"
+      ],
+      "approval_required_before_contact": true
+    },
+    {
+      "archetype_id": "archetype_003",
+      "name": "solo founder building with AI agents",
+      "public_pain_signals": [
+        "uses coding agents",
+        "needs one-person operating leverage",
+        "needs decision support"
+      ],
+      "buying_triggers": [
+        "deadline-driven decision",
+        "visible AI workflow adoption",
+        "need for evidence-backed internal brief"
+      ],
+      "future_approved_research_channels": [
+        "public founder posts",
+        "public product docs",
+        "public job posts",
+        "public startup community posts without login"
+      ],
+      "approval_required_before_contact": true
+    },
+    {
+      "archetype_id": "archetype_004",
+      "name": "small AI automation agency owner",
+      "public_pain_signals": [
+        "client delivery quality risk",
+        "needs audit templates",
+        "needs proof package"
+      ],
+      "buying_triggers": [
+        "deadline-driven decision",
+        "visible AI workflow adoption",
+        "need for evidence-backed internal brief"
+      ],
+      "future_approved_research_channels": [
+        "public founder posts",
+        "public product docs",
+        "public job posts",
+        "public startup community posts without login"
+      ],
+      "approval_required_before_contact": true
+    },
+    {
+      "archetype_id": "archetype_005",
+      "name": "founder using Codex/Claude Code/OpenClaw-like workflows",
+      "public_pain_signals": [
+        "agent governance uncertainty",
+        "toolchain sprawl",
+        "approval boundary confusion"
+      ],
+      "buying_triggers": [
+        "deadline-driven decision",
+        "visible AI workflow adoption",
+        "need for evidence-backed internal brief"
+      ],
+      "future_approved_research_channels": [
+        "public founder posts",
+        "public product docs",
+        "public job posts",
+        "public startup community posts without login"
+      ],
+      "approval_required_before_contact": true
+    },
+    {
+      "archetype_id": "archetype_006",
+      "name": "startup team with urgent strategy/research/workflow decision",
+      "public_pain_signals": [
+        "fast research needed",
+        "unclear automation ROI",
+        "needs internal command brief"
+      ],
+      "buying_triggers": [
+        "deadline-driven decision",
+        "visible AI workflow adoption",
+        "need for evidence-backed internal brief"
+      ],
+      "future_approved_research_channels": [
+        "public founder posts",
+        "public product docs",
+        "public job posts",
+        "public startup community posts without login"
+      ],
+      "approval_required_before_contact": true
+    }
+  ],
+  "selection_logic": "Prioritize public signals of urgent AI workflow decisions, low implementation dependency, and clear founder pain.",
+  "private_personal_data_collected": false
+}

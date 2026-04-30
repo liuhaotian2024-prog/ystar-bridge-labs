@@ -1,0 +1,27 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4",
+  "milestone_name": "Parallel First Revenue Readiness Sprint",
+  "run_id": "l7_4_parallel_first_revenue_readiness_run_001",
+  "packet_type": "pricing_readiness_review",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "lane_id": "L7.4E",
+  "prices_reviewed_usd": {
+    "low": 750,
+    "mid": 1500,
+    "high": 3000
+  },
+  "plausibility": {
+    "750": "plausible for first proof-building pilot",
+    "1500": "plausible suggested first test if urgency is high",
+    "3000": "possible after trust proof or broader scope"
+  },
+  "must_be_approved_before_quoting": true,
+  "no_quote_sent": true
+}

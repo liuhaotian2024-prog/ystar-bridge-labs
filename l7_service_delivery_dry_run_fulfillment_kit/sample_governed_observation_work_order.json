@@ -1,0 +1,28 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4",
+  "milestone_name": "Parallel First Revenue Readiness Sprint",
+  "run_id": "l7_4_parallel_first_revenue_readiness_run_001",
+  "packet_type": "sample_governed_observation_work_order",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "lane_id": "L7.4C",
+  "work_order_id": "l7_4_sample_customer_work_order_001",
+  "scope": "fictional internal dry-run only",
+  "query_plan": [
+    "AI founder workflow audit examples",
+    "coding agent governance startup workflow risk",
+    "AI automation approval gates founder operations"
+  ],
+  "budget": {
+    "max_queries": 3,
+    "max_pages_opened": 0,
+    "external_reads": 0
+  },
+  "real_customer_observation": false
+}

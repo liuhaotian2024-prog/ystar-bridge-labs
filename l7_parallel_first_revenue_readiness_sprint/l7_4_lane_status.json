@@ -1,0 +1,65 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4",
+  "milestone_name": "Parallel First Revenue Readiness Sprint",
+  "run_id": "l7_4_parallel_first_revenue_readiness_run_001",
+  "packet_type": "l7_4_lane_status",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "lane_exit_code_source": "l7_parallel_first_revenue_readiness_sprint/l7_4_lane_exit_codes.json",
+  "lanes": [
+    {
+      "lane_id": "L7.4A",
+      "lane_name": "customer discovery",
+      "required_artifact": "l7_target_customer_discovery_radar/read_only_customer_discovery_report.json",
+      "artifact_exists": true,
+      "exit_code": 0,
+      "status": "complete"
+    },
+    {
+      "lane_id": "L7.4B",
+      "lane_name": "approval pipeline",
+      "required_artifact": "l7_human_approved_outreach_execution_pipeline/outreach_pre_send_gate.json",
+      "artifact_exists": true,
+      "exit_code": 0,
+      "status": "complete"
+    },
+    {
+      "lane_id": "L7.4C",
+      "lane_name": "delivery dry-run",
+      "required_artifact": "l7_service_delivery_dry_run_fulfillment_kit/service_delivery_dry_run.json",
+      "artifact_exists": true,
+      "exit_code": 0,
+      "status": "complete"
+    },
+    {
+      "lane_id": "L7.4D",
+      "lane_name": "trust proof pack",
+      "required_artifact": "l7_trust_proof_case_study_readiness/trust_gap_analysis.json",
+      "artifact_exists": true,
+      "exit_code": 0,
+      "status": "complete"
+    },
+    {
+      "lane_id": "L7.4E",
+      "lane_name": "payment contract preflight",
+      "required_artifact": "l7_pricing_payment_contract_readiness/payment_execution_preflight.json",
+      "artifact_exists": true,
+      "exit_code": 0,
+      "status": "complete"
+    },
+    {
+      "lane_id": "L7.4F",
+      "lane_name": "cockpit v3",
+      "required_artifact": "l7_cockpit_v3_and_conservatism_batch/owner_cockpit_v3.json",
+      "artifact_exists": true,
+      "exit_code": 0,
+      "status": "complete"
+    }
+  ]
+}
