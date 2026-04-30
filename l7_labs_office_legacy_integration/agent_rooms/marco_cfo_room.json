@@ -1,0 +1,113 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4",
+  "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+  "packet_type": "agent_room",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "agent_id": "marco_cfo",
+  "display_name": "Marco Rivera",
+  "legacy_role": "CFO",
+  "identity_evidence": [
+    {
+      "file_path": ".claude/agents/cfo.md",
+      "line_number": 2,
+      "excerpt": "name: Marco-CFO"
+    },
+    {
+      "file_path": ".claude/tasks/CTO_RITUAL_AND_AUTONOMY_FIX_20260413.md",
+      "line_number": 13,
+      "excerpt": "4. **G4** Marco-CFO subagent 报 governance permission block（未诊断）"
+    },
+    {
+      "file_path": ".claude/tasks/agent-behavior-rules-spec.md",
+      "line_number": 44,
+      "excerpt": "### CFO (Marco Rivera)"
+    },
+    {
+      "file_path": ".claude/tasks/eng-platform-20260413-ritual-fixes.md",
+      "line_number": 10,
+      "excerpt": "- [ ] FIX-4: Marco-CFO governance block diagnosed and root cause fixed"
+    },
+    {
+      "file_path": ".ystar_session.json",
+      "line_number": 259,
+      "excerpt": "\"cfo\": \"CFO (Marco Rivera)\","
+    }
+  ],
+  "brain_profile_refs": [
+    "knowledge/cfo/role_definition/README.md",
+    "knowledge/cfo/role_definition/role_heroes.md",
+    "knowledge/cfo/role_definition/task_type_map.md",
+    "knowledge/cfo/role_definition/world_class_standard.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260420_004526.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260420_214238.md",
+    "scripts/ethan_brain.py",
+    "scripts/mint_agent_brain.py",
+    "scripts/tests/test_mint_agent_brain.py"
+  ],
+  "dna_memory_refs": [
+    "knowledge/ceo/wisdom/WORK_METHODOLOGY.md",
+    "knowledge/ceo/wisdom/ceo_learning/financial_literacy_saas.md",
+    "knowledge/ceo/wisdom/strategic/aiden_management_operating_method_20260420.md",
+    "memory/archive/session_handoff_now_archived_1776273549.md",
+    "memory/boot_packages/_seed/ceo.json",
+    "memory/boot_packages/_seed/cfo.json",
+    "memory/boot_packages/history/ceo_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/cfo_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/cmo_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/cso_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/cto_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/eng-domains_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/eng-governance_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/eng-kernel_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/eng-platform_ystar-company_0a84f3c6.json",
+    "memory/claude_code_memory_mirror/feedback_ai_disclosure_mandatory.md",
+    "memory/claude_code_memory_mirror/feedback_default_agent_is_ceo.md",
+    "memory/session_summary_20260415.md",
+    "memory/session_summary_20260416.md"
+  ],
+  "current_mapped_responsibilities": [
+    "pricing",
+    "finance",
+    "source-backed numbers",
+    "financial honesty"
+  ],
+  "what_owner_can_ask": [
+    "check pricing evidence",
+    "label estimates",
+    "review financial claims"
+  ],
+  "autonomous_work_allowed": [
+    "internal analysis",
+    "local artifact review",
+    "controlled read-only observation if configured",
+    "evidence summary",
+    "draft-only artifacts",
+    "approval request preparation",
+    "tool proposal",
+    "tests/builders",
+    "owner cockpit updates"
+  ],
+  "requires_owner_approval": [
+    "outreach",
+    "publication",
+    "payment",
+    "account creation",
+    "form submission",
+    "grant/RFP submission",
+    "customer contact",
+    "MCP/live behavior",
+    "actual memory/brain/canonical/CIEU DB writeback"
+  ],
+  "current_inbox": [
+    "review mapped responsibility and identify next safe internal task"
+  ],
+  "integration_status": "integrated_from_legacy_evidence",
+  "next_suggested_task": "review price quote policy before any external quote"
+}

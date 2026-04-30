@@ -1,0 +1,121 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4",
+  "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+  "packet_type": "agent_room",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "agent_id": "leo_engineer",
+  "display_name": "Leo Chen",
+  "legacy_role": "Kernel Engineer",
+  "identity_evidence": [
+    {
+      "file_path": ".claude/agents/eng-kernel.md",
+      "line_number": 2,
+      "excerpt": "name: Leo-Kernel"
+    },
+    {
+      "file_path": ".claude/tasks/AMENDMENT_015_SYSTEMIC_UNLOCK_20260413.md",
+      "line_number": 4,
+      "excerpt": "**Owner**: Ethan-CTO (lead) → Ryan-Platform + Maya-Governance + Leo-Kernel"
+    },
+    {
+      "file_path": ".claude/tasks/CTO_RITUAL_AND_AUTONOMY_FIX_20260413.md",
+      "line_number": 4,
+      "excerpt": "**Owner**: Ethan-CTO (dispatch) → Ryan-Platform / Maya-Governance / Leo-Kernel"
+    },
+    {
+      "file_path": ".claude/tasks/NEXT_SESSION_P0_yml_session_bridge.md",
+      "line_number": 181,
+      "excerpt": "- Path B-lite: CTO 写 task card (本文件) + CEO 代 spawn Ryan/Leo (下 session 首轮)"
+    },
+    {
+      "file_path": ".claude/tasks/W16_leo_session_omission.md",
+      "line_number": 1,
+      "excerpt": "# W16 Leo task: omission_engine 6 fail"
+    }
+  ],
+  "brain_profile_refs": [
+    "docs/receipts/CZL-BRAIN-AUTO-INGEST-IMPL.md",
+    "knowledge/cto/arch18_cieu_brain_corpus.md",
+    "knowledge/cto/ethan_brain_foundation.md",
+    "reports/ceo/governance/brain_3loop_consolidated_v2.md",
+    "reports/ceo/governance/brain_3loop_live_architecture_v1.md",
+    "reports/cto-dispatch/tier1-brain-3loop-l3-manual-maya.md",
+    "reports/cto-dispatch/tier1-brain-l2-writeback-ryan-leo.md",
+    "reports/receipts/CZL-BRAIN-BIPARTITE-P2.md",
+    "reports/receipts/CZL-BRAIN-BOUNDARY-HOOKS.md",
+    "reports/staged/test_brain_writeback_semantic.py",
+    "scripts/CZL-BRAIN-ADD-NODE-PRESERVE-receipt.md",
+    "scripts/brain_writeback_queue.py",
+    "scripts/ethan_brain.py",
+    "scripts/mint_agent_brain.py",
+    "scripts/tests/test_mint_agent_brain.py",
+    "tests/hook/test_brain_boundary_and_query.py",
+    "tests/hook/test_brain_writeback_wiring.py",
+    "tests/kernel/test_brain_writeback_semantic.py"
+  ],
+  "dna_memory_refs": [
+    "governance/DNA_LOG.md",
+    "knowledge/ceo/wisdom/WORK_METHODOLOGY.md",
+    "knowledge/ceo/wisdom/dreams/dream_20260419_02_cross_node_unification.md",
+    "knowledge/ceo/wisdom/dreams/dream_20260419_05_future_vision.md",
+    "knowledge/ceo/wisdom/meta/engineer_culture_design_5_factors.md",
+    "knowledge/ceo/wisdom/strategic/aiden_management_operating_method_20260420.md",
+    "knowledge/cto/wisdom/WHO_I_AM_ETHAN.md",
+    "memory/WORLD_STATE.md",
+    "memory/archive/czl_subgoals_hiagent_9wire_20260415.json",
+    "memory/archive/czl_subgoals_v6_close_20260416_165342.json",
+    "memory/boot_packages/_seed/ceo.json",
+    "memory/boot_packages/_seed/cto.json",
+    "memory/boot_packages/_seed/eng-governance.json",
+    "memory/boot_packages/_seed/eng-kernel.json",
+    "memory/boot_packages/_seed/eng-platform.json",
+    "memory/claude_code_memory_mirror/feedback_default_agent_is_ceo.md",
+    "memory/claude_code_memory_mirror/feedback_dispatch_via_cto.md",
+    "memory/session_handoff.md",
+    "memory/session_summary_20260415.md",
+    "memory/session_summary_20260416.md"
+  ],
+  "current_mapped_responsibilities": [
+    "kernel",
+    "compiler",
+    "contract parsing",
+    "session correctness"
+  ],
+  "what_owner_can_ask": [
+    "accept scoped internal task aligned to legacy role"
+  ],
+  "autonomous_work_allowed": [
+    "internal analysis",
+    "local artifact review",
+    "controlled read-only observation if configured",
+    "evidence summary",
+    "draft-only artifacts",
+    "approval request preparation",
+    "tool proposal",
+    "tests/builders",
+    "owner cockpit updates"
+  ],
+  "requires_owner_approval": [
+    "outreach",
+    "publication",
+    "payment",
+    "account creation",
+    "form submission",
+    "grant/RFP submission",
+    "customer contact",
+    "MCP/live behavior",
+    "actual memory/brain/canonical/CIEU DB writeback"
+  ],
+  "current_inbox": [
+    "review mapped responsibility and identify next safe internal task"
+  ],
+  "integration_status": "integrated_from_legacy_evidence",
+  "next_suggested_task": "review kernel/runtime capability gaps for office routing"
+}

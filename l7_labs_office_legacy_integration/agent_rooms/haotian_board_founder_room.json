@@ -1,0 +1,115 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4",
+  "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+  "packet_type": "agent_room",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "agent_id": "haotian_board_founder",
+  "display_name": "Haotian Liu",
+  "legacy_role": "Board / Founder",
+  "identity_evidence": [
+    {
+      "file_path": ".claude/agents/ceo.md",
+      "line_number": 92,
+      "excerpt": "Haotian Liu serves as the Board of Directors, and you report to him."
+    },
+    {
+      "file_path": ".claude/agents/eng-domains.md",
+      "line_number": 48,
+      "excerpt": "Working directory: /Users/haotianliu/.openclaw/workspace/Y-star-gov\\"
+    },
+    {
+      "file_path": ".claude/agents/eng-governance.md",
+      "line_number": 49,
+      "excerpt": "Working directory: /Users/haotianliu/.openclaw/workspace/Y-star-gov\\"
+    },
+    {
+      "file_path": ".claude/agents/eng-kernel.md",
+      "line_number": 46,
+      "excerpt": "Working directory: /Users/haotianliu/.openclaw/workspace/Y-star-gov\\"
+    },
+    {
+      "file_path": ".claude/agents/eng-platform.md",
+      "line_number": 55,
+      "excerpt": "Working directory: /Users/haotianliu/.openclaw/workspace/Y-star-gov\\"
+    }
+  ],
+  "brain_profile_refs": [
+    "knowledge/cto/ethan_brain_foundation.md",
+    "reports/ceo/governance/brain_3loop_live_architecture_v1.md",
+    "reports/receipts/CZL-BRAIN-BIPARTITE-P2.md",
+    "scripts/brain_archival_daemon.py",
+    "scripts/dialogue_to_brain_feeder.py",
+    "scripts/ethan_brain.py",
+    "scripts/hook_ceo_pre_output_brain_query.py",
+    "scripts/mint_agent_brain.py",
+    "scripts/patch_settings_brain_writeback_hooks.py",
+    "scripts/tests/test_ethan_brain.py",
+    "scripts/tests/test_mint_agent_brain.py",
+    "tests/hook/test_brain_boundary_and_query.py",
+    "tests/scripts/test_ceo_pre_output_brain_query.py"
+  ],
+  "dna_memory_refs": [
+    ".claude/tasks/maya_v3_wire_wisdom_yaml_and_detector_binding.md",
+    "knowledge/ceo/team_dna.md",
+    "knowledge/ceo/wisdom/.ystar_coverage.json",
+    "knowledge/ceo/wisdom/WHO_I_AM.md",
+    "knowledge/ceo/wisdom/dreams/dream_20260419_03_board_thinking_style_distillation.md",
+    "knowledge/ceo/wisdom/self_knowledge/aiden_7_layer_identity_2026_04_19.md",
+    "memory/WORLD_STATE.md",
+    "memory/boot_packages/_seed/eng-kernel.json",
+    "memory/boot_packages/_seed/eng-platform.json",
+    "memory/boot_packages/history/ceo_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/cfo_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/cmo_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/cso_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/cto_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/eng-domains_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/eng-governance_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/eng-kernel_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/eng-platform_ystar-company_0a84f3c6.json",
+    "memory/claude_code_memory_mirror/MEMORY.md",
+    "memory/claude_code_memory_mirror/feedback_address_laoda.md"
+  ],
+  "current_mapped_responsibilities": [
+    "set direction",
+    "approve Level 3 decisions",
+    "hold company accountable"
+  ],
+  "what_owner_can_ask": [
+    "accept scoped internal task aligned to legacy role"
+  ],
+  "autonomous_work_allowed": [
+    "internal analysis",
+    "local artifact review",
+    "controlled read-only observation if configured",
+    "evidence summary",
+    "draft-only artifacts",
+    "approval request preparation",
+    "tool proposal",
+    "tests/builders",
+    "owner cockpit updates"
+  ],
+  "requires_owner_approval": [
+    "outreach",
+    "publication",
+    "payment",
+    "account creation",
+    "form submission",
+    "grant/RFP submission",
+    "customer contact",
+    "MCP/live behavior",
+    "actual memory/brain/canonical/CIEU DB writeback"
+  ],
+  "current_inbox": [
+    "review mapped responsibility and identify next safe internal task"
+  ],
+  "integration_status": "integrated_from_legacy_evidence",
+  "next_suggested_task": "review whether Labs Office roster matches the original team"
+}

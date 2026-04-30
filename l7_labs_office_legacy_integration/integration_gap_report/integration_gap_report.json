@@ -1,0 +1,154 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4",
+  "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+  "packet_type": "integration_gap_report",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "legacy_agents_found_but_not_integrated": [],
+  "missing_brain_profile_references": [],
+  "conflicting_role_definitions": [
+    "Additional .claude/agents engineering capability definitions exist and need review before being treated as core legacy identities."
+  ],
+  "new_l7_roles_that_do_not_map_to_legacy_identities": [
+    "Operator/COO",
+    "Revenue Scout",
+    "Auditor as person"
+  ],
+  "old_team_functions_missing_in_new_architecture": [
+    "Sofia CMO narrative ownership",
+    "Marco CFO source-backed pricing/finance review",
+    "Zara CSO sales/patent/commercialization planning",
+    "Jinjin K9 Scout cross-model research"
+  ],
+  "new_architecture_functions_missing_in_old_team": [
+    "approval execution pipeline",
+    "controlled observation backend/page-read adapter",
+    "first revenue readiness cockpit"
+  ],
+  "recommended_integration_fixes": [
+    "Route revenue work through Zara CSO + Marco CFO + Sofia CMO + Jinjin Scout instead of invented Revenue Scout identity.",
+    "Represent Operator/COO as unfilled capability slot unless source evidence appears.",
+    "Represent Auditor as governance function handled by Maya/Samantha/Aiden review paths.",
+    "Update active L7 artifacts that mention COO as legacy identity."
+  ],
+  "previous_mistake_class": "new L7 role assumptions must not override original Y*Bridge Labs team identities",
+  "next_sprint_recommendations": [
+    "L7.5 Legacy-Team-Grounded First Outreach Approval Preparation",
+    "Patch active L7.0P-L7.4 artifacts that hardcode invented roles"
+  ],
+  "additional_agent_definitions_need_review": [
+    {
+      "agent_definition_file": ".claude/agents/ceo.md",
+      "declared_name": "Aiden-CEO",
+      "description_excerpt": "Y* Bridge Labs CEO Agent. Use when: breaking down board strategy into department tasks, coordinating cross-department work, reporting to board, resolving blockers, prioritizing quarterly objectives. Triggers: \"CEO\", \"str",
+      "classification": "legacy_identity_or_capability_agent"
+    },
+    {
+      "agent_definition_file": ".claude/agents/cfo.md",
+      "declared_name": "Marco-CFO",
+      "description_excerpt": "Y* Bridge Labs CFO Agent. Use when: financial modeling, pricing analysis, revenue forecasting, expense tracking, financial reports, SaaS metrics. Triggers: \"CFO\", \"finance\", \"revenue\", \"pricing\", \"cost\", \"budget\", \"MRR\",",
+      "classification": "legacy_identity_or_capability_agent"
+    },
+    {
+      "agent_definition_file": ".claude/agents/cmo.md",
+      "declared_name": "Sofia-CMO",
+      "description_excerpt": "Y* Bridge Labs CMO Agent. Use when: writing blog posts, social media content, product announcements, white papers, case studies, marketing copy. Triggers: \"CMO\", \"marketing\", \"blog\", \"announcement\", \"content\", \"write abo",
+      "classification": "legacy_identity_or_capability_agent"
+    },
+    {
+      "agent_definition_file": ".claude/agents/cso.md",
+      "declared_name": "Zara-CSO",
+      "description_excerpt": "Y* Bridge Labs CSO Agent. Use when: finding potential customers, writing sales emails, building pricing proposals, analyzing leads, creating sales decks. Triggers: \"CSO\", \"sales\", \"customer\", \"prospect\", \"pricing\", \"prop",
+      "classification": "legacy_identity_or_capability_agent"
+    },
+    {
+      "agent_definition_file": ".claude/agents/cto.md",
+      "declared_name": "Ethan-CTO",
+      "description_excerpt": "Y* Bridge Labs CTO Agent. Use when: technical decisions, code review, architecture, coordinating engineers, P0 fixes, installation process, updating tests, writing technical docs, managing GitHub. Triggers: \"CTO\", \"code\"",
+      "classification": "legacy_identity_or_capability_agent"
+    },
+    {
+      "agent_definition_file": ".claude/agents/eng-compliance.md",
+      "declared_name": "Elena-Compliance",
+      "description_excerpt": "",
+      "classification": "legacy_identity_or_capability_agent"
+    },
+    {
+      "agent_definition_file": ".claude/agents/eng-data.md",
+      "declared_name": "Dara-Data",
+      "description_excerpt": "",
+      "classification": "legacy_identity_or_capability_agent"
+    },
+    {
+      "agent_definition_file": ".claude/agents/eng-domains.md",
+      "declared_name": "Jordan-Domains",
+      "description_excerpt": "Domains Engineer — Y*gov domain packs, policy templates, OpenClaw integration. Triggers: \"domain pack\", \"finance domain\", \"healthcare\", \"openclaw\", \"template\", \"policy template\", \"domain-specific\".",
+      "classification": "legacy_identity_or_capability_agent"
+    },
+    {
+      "agent_definition_file": ".claude/agents/eng-governance.md",
+      "declared_name": "Maya-Governance",
+      "description_excerpt": "Governance Engineer — Y*gov governance subsystems: causal engine, omission engine, intervention engine, governance loop, metalearning, Path A/B, CIEU, reporting. Triggers: \"governance\", \"causal\", \"omission\", \"interventio",
+      "classification": "legacy_identity_or_capability_agent"
+    },
+    {
+      "agent_definition_file": ".claude/agents/eng-kernel.md",
+      "declared_name": "Leo-Kernel",
+      "description_excerpt": "Kernel Engineer — Y*gov core engine: dimensions, compiler, contract parsing, NL-to-contract translation, session management. Triggers: \"kernel\", \"compiler\", \"dimensions\", \"contract parsing\", \"engine\", \"intent contract\".",
+      "classification": "legacy_identity_or_capability_agent"
+    },
+    {
+      "agent_definition_file": ".claude/agents/eng-ml.md",
+      "declared_name": "Priya-ML",
+      "description_excerpt": "",
+      "classification": "legacy_identity_or_capability_agent"
+    },
+    {
+      "agent_definition_file": ".claude/agents/eng-perf.md",
+      "declared_name": "Carlos-Perf",
+      "description_excerpt": "",
+      "classification": "legacy_identity_or_capability_agent"
+    },
+    {
+      "agent_definition_file": ".claude/agents/eng-platform.md",
+      "declared_name": "Ryan-Platform",
+      "description_excerpt": "Platform Engineer — Y*gov adapters, CLI, hook, integrations, testing infrastructure. Also owns cross-module integration tests and QA. Triggers: \"hook\", \"CLI\", \"adapter\", \"install\", \"doctor\", \"setup\", \"integration test\", ",
+      "classification": "legacy_identity_or_capability_agent"
+    },
+    {
+      "agent_definition_file": ".claude/agents/eng-security.md",
+      "declared_name": "Alex-Security",
+      "description_excerpt": "",
+      "classification": "legacy_identity_or_capability_agent"
+    }
+  ],
+  "new_capability_slots": [
+    {
+      "slot_id": "operator_execution_planning",
+      "label": "Operator / COO-style execution planning",
+      "legacy_identity": null,
+      "status": "unfilled_capability_slot_not_legacy_agent",
+      "recommended_assignment": "Aiden delegates planning to Ethan/Samantha/Zara depending on task until a real legacy source exists."
+    },
+    {
+      "slot_id": "revenue_scout",
+      "label": "Revenue Scout",
+      "legacy_identity": null,
+      "status": "capability_slot_not_legacy_agent",
+      "recommended_assignment": "Map scouting to Zara CSO and Jinjin K9 Scout, not a new legacy person."
+    },
+    {
+      "slot_id": "auditor_function",
+      "label": "Auditor",
+      "legacy_identity": null,
+      "status": "governance_function_not_legacy_person",
+      "recommended_assignment": "Governance function handled through Maya/Samantha/Aiden review paths."
+    }
+  ]
+}

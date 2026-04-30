@@ -276,6 +276,16 @@ def additional_agent_defs(files: list[SafeFile]) -> list[dict[str, Any]]:
     return rows
 
 
+def inventory_packet(paths: set[str], limit: int = 500) -> dict[str, Any]:
+    sorted_paths = sorted(paths)
+    return {
+        "total_count": len(sorted_paths),
+        "entries": sorted_paths[:limit],
+        "truncated": len(sorted_paths) > limit,
+        "limit": limit,
+    }
+
+
 def write(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -300,6 +310,7 @@ def discover(repo: Path = DEFAULT_LEGACY_REPO) -> dict[str, Any]:
         "legacy_repo_available": repo.exists(),
         "legacy_repo_head": head,
         "legacy_repo_status_short": status,
+        "safe_scan_method": "git ls-files tracked-file scan with DB/WAL/SHM/log/active-agent/env/secret/runtime exclusions",
         "safe_tracked_text_files_scanned": len(files),
         "unsafe_runtime_patterns_skipped": sorted(SKIP_PARTS | set(SKIP_NAME_PATTERNS)),
         "db_wal_shm_log_active_agent_content_read": False,
@@ -307,16 +318,16 @@ def discover(repo: Path = DEFAULT_LEGACY_REPO) -> dict[str, Any]:
     }
     inventories = {
         "legacy_agent_file_inventory": extra_defs,
-        "legacy_brain_profile_inventory": sorted(
+        "legacy_brain_profile_inventory": inventory_packet(
             {f.path for f in files if any(part in f.path.lower() for part in ["brain", "profile", "role_definition"])}
         ),
-        "legacy_governance_artifact_inventory": sorted(
+        "legacy_governance_artifact_inventory": inventory_packet(
             {f.path for f in files if any(part in f.path.lower() for part in ["governance", "agents.md", "amendment", "directive"])}
         ),
-        "legacy_dna_memory_inventory": sorted(
+        "legacy_dna_memory_inventory": inventory_packet(
             {f.path for f in files if any(part in f.path.lower() for part in ["dna", "memory", "wisdom"])}
         ),
-        "legacy_reports_inventory": sorted(
+        "legacy_reports_inventory": inventory_packet(
             {f.path for f in files if any(part in f.path.lower() for part in ["reports/", "morning", "daily"])}
         ),
     }

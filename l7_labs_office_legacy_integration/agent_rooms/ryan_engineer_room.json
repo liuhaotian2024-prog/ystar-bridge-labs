@@ -1,0 +1,124 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4",
+  "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+  "packet_type": "agent_room",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "agent_id": "ryan_engineer",
+  "display_name": "Ryan Park",
+  "legacy_role": "Platform Engineer",
+  "identity_evidence": [
+    {
+      "file_path": ".claude/agents/cmo.md",
+      "line_number": 195,
+      "excerpt": "- Ryan Holiday: Growth Hacker Marketing"
+    },
+    {
+      "file_path": ".claude/agents/eng-data.md",
+      "line_number": 44,
+      "excerpt": "2. canonical agent_id registry update — required (Ryan T1 atomic)"
+    },
+    {
+      "file_path": ".claude/agents/eng-platform.md",
+      "line_number": 2,
+      "excerpt": "name: Ryan-Platform"
+    },
+    {
+      "file_path": ".claude/tasks/AMENDMENT_015_SYSTEMIC_UNLOCK_20260413.md",
+      "line_number": 4,
+      "excerpt": "**Owner**: Ethan-CTO (lead) → Ryan-Platform + Maya-Governance + Leo-Kernel"
+    },
+    {
+      "file_path": ".claude/tasks/CTO_RITUAL_AND_AUTONOMY_FIX_20260413.md",
+      "line_number": 4,
+      "excerpt": "**Owner**: Ethan-CTO (dispatch) → Ryan-Platform / Maya-Governance / Leo-Kernel"
+    }
+  ],
+  "brain_profile_refs": [
+    "docs/receipts/CZL-BRAIN-AUTO-INGEST-IMPL.md",
+    "knowledge/cto/arch18_cieu_brain_corpus.md",
+    "knowledge/cto/ethan_brain_foundation.md",
+    "knowledge/cto/role_definition/role_heroes.md",
+    "knowledge/cto/role_definition/world_class_standard.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260420_004526.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260420_214238.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260421_183024_nrem.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260421_201057_nrem.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260421_211058_nrem.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260421_221059_nrem.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260421_231059_nrem.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260422_010324_nrem.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260422_020326_nrem.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260422_030326_nrem.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260422_041929_nrem.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260422_053612_nrem.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260422_065326_nrem.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260422_075947_nrem.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260422_091918_nrem.md"
+  ],
+  "dna_memory_refs": [
+    "docs/c5_working_memory_snapshot.md",
+    "knowledge/ceo/wisdom/WORK_METHODOLOGY.md",
+    "knowledge/ceo/wisdom/dreams/dream_20260419_02_cross_node_unification.md",
+    "knowledge/ceo/wisdom/dreams/dream_20260419_03_board_thinking_style_distillation.md",
+    "knowledge/ceo/wisdom/dreams/dream_20260419_05_future_vision.md",
+    "knowledge/ceo/wisdom/meta/17_meta_rules_from_practice.md",
+    "knowledge/ceo/wisdom/meta/engineer_culture_design_5_factors.md",
+    "knowledge/ceo/wisdom/meta/sandbox_16h_counterfactual_replay.md",
+    "knowledge/ceo/wisdom/strategic/aiden_management_operating_method_20260420.md",
+    "knowledge/cto/wisdom/WHO_I_AM_ETHAN.md",
+    "memory/WORLD_STATE.md",
+    "memory/archive/czl_subgoals_hiagent_9wire_20260415.json",
+    "memory/archive/czl_subgoals_v6_close_20260416_165342.json",
+    "memory/archive/session_handoff_now_archived_1776273549.md",
+    "memory/boot_packages/_seed/ceo.json",
+    "memory/boot_packages/_seed/cto.json",
+    "memory/boot_packages/_seed/eng-governance.json",
+    "memory/boot_packages/_seed/eng-kernel.json",
+    "memory/boot_packages/_seed/eng-platform.json",
+    "memory/claude_code_memory_mirror/feedback_default_agent_is_ceo.md"
+  ],
+  "current_mapped_responsibilities": [
+    "platform",
+    "hooks",
+    "CLI",
+    "integrations",
+    "QA"
+  ],
+  "what_owner_can_ask": [
+    "accept scoped internal task aligned to legacy role"
+  ],
+  "autonomous_work_allowed": [
+    "internal analysis",
+    "local artifact review",
+    "controlled read-only observation if configured",
+    "evidence summary",
+    "draft-only artifacts",
+    "approval request preparation",
+    "tool proposal",
+    "tests/builders",
+    "owner cockpit updates"
+  ],
+  "requires_owner_approval": [
+    "outreach",
+    "publication",
+    "payment",
+    "account creation",
+    "form submission",
+    "grant/RFP submission",
+    "customer contact",
+    "MCP/live behavior",
+    "actual memory/brain/canonical/CIEU DB writeback"
+  ],
+  "current_inbox": [
+    "review mapped responsibility and identify next safe internal task"
+  ],
+  "integration_status": "integrated_from_legacy_evidence",
+  "next_suggested_task": "wire one-command office status runner"
+}

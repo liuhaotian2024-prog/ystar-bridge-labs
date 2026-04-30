@@ -1,0 +1,66 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4",
+  "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+  "packet_type": "labs_office_home",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "identity": "Y*Bridge Labs legacy team office grounded in ystar-bridge-labs source evidence",
+  "board_founder": "Haotian Liu",
+  "ceo": "Aiden Liu",
+  "executive_roles": [
+    "Ethan CTO",
+    "Sofia CMO",
+    "Marco CFO",
+    "Zara CSO",
+    "Samantha Secretary"
+  ],
+  "engineering_team": [
+    "Leo Kernel",
+    "Maya Governance",
+    "Ryan Platform",
+    "Jordan Domains"
+  ],
+  "research_scout": "Jinjin / K9 Scout",
+  "current_ystar_company_runtime_status": "L6/L7 governed observation, money path, approval workflow, and first revenue readiness artifacts exist.",
+  "l6_l7_capabilities": [
+    "controlled public read-only observation",
+    "evidence packets",
+    "conflict bounding",
+    "human review packet",
+    "CEO command brief",
+    "offer validation workflow",
+    "first revenue readiness lanes"
+  ],
+  "commercial_path_status": "first revenue readiness prepared; customer contact and payment still blocked until approval",
+  "pending_approvals": [
+    "first manual outreach",
+    "recipient selection",
+    "price quote",
+    "payment method"
+  ],
+  "team_work_queue": "team_work_queue/team_work_queue.md",
+  "agent_rooms": [
+    "agent_rooms/haotian_board_founder_room.md",
+    "agent_rooms/aiden_ceo_room.md",
+    "agent_rooms/ethan_cto_room.md",
+    "agent_rooms/sofia_cmo_room.md",
+    "agent_rooms/marco_cfo_room.md",
+    "agent_rooms/zara_cso_room.md",
+    "agent_rooms/samantha_secretary_room.md",
+    "agent_rooms/leo_engineer_room.md",
+    "agent_rooms/maya_engineer_room.md",
+    "agent_rooms/ryan_engineer_room.md",
+    "agent_rooms/jordan_engineer_room.md",
+    "agent_rooms/jinjin_k9_scout_room.md"
+  ],
+  "next_one_command_actions": [
+    "bash scripts/run_l7_4_labs_office_legacy_integration.sh --mode status",
+    "bash scripts/run_l7_4_labs_office_legacy_integration.sh --mode rooms"
+  ]
+}

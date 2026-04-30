@@ -1,0 +1,122 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4",
+  "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+  "packet_type": "legacy_to_current_runtime_mapping",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "mappings": [
+    {
+      "legacy_agent_id": "haotian_board_founder",
+      "display_name": "Haotian Liu",
+      "legacy_role": "Board / Founder",
+      "current_runtime_capability": "Board approval, strategic direction, Level 3 review",
+      "identity_preserved": true
+    },
+    {
+      "legacy_agent_id": "aiden_ceo",
+      "display_name": "Aiden Liu",
+      "legacy_role": "CEO",
+      "current_runtime_capability": "CEO command synthesis, delegation, owner cockpit, decision packet routing",
+      "identity_preserved": true
+    },
+    {
+      "legacy_agent_id": "ethan_cto",
+      "display_name": "Ethan Wright",
+      "legacy_role": "CTO",
+      "current_runtime_capability": "tooling/capability implementation and technical quality gate",
+      "identity_preserved": true
+    },
+    {
+      "legacy_agent_id": "sofia_cmo",
+      "display_name": "Sofia Blake",
+      "legacy_role": "CMO",
+      "current_runtime_capability": "market narrative, content review, proof-language discipline",
+      "identity_preserved": true
+    },
+    {
+      "legacy_agent_id": "marco_cfo",
+      "display_name": "Marco Rivera",
+      "legacy_role": "CFO",
+      "current_runtime_capability": "pricing hypotheses, financial claims, source-backed number review",
+      "identity_preserved": true
+    },
+    {
+      "legacy_agent_id": "zara_cso",
+      "display_name": "Zara Johnson",
+      "legacy_role": "CSO",
+      "current_runtime_capability": "sales planning, commercialization, patent/customer path analysis",
+      "identity_preserved": true
+    },
+    {
+      "legacy_agent_id": "samantha_secretary",
+      "display_name": "Samantha Lin",
+      "legacy_role": "Secretary",
+      "current_runtime_capability": "archive/index/DNA consistency and safe office records",
+      "identity_preserved": true
+    },
+    {
+      "legacy_agent_id": "leo_engineer",
+      "display_name": "Leo Chen",
+      "legacy_role": "Kernel Engineer",
+      "current_runtime_capability": "kernel/compiler/runtime correctness implementation",
+      "identity_preserved": true
+    },
+    {
+      "legacy_agent_id": "maya_engineer",
+      "display_name": "Maya Patel",
+      "legacy_role": "Governance Engineer",
+      "current_runtime_capability": "governance/CIEU/omission/conflict and boundary systems",
+      "identity_preserved": true
+    },
+    {
+      "legacy_agent_id": "ryan_engineer",
+      "display_name": "Ryan Park",
+      "legacy_role": "Platform Engineer",
+      "current_runtime_capability": "platform/CLI/hooks/integration/QA automation",
+      "identity_preserved": true
+    },
+    {
+      "legacy_agent_id": "jordan_engineer",
+      "display_name": "Jordan Lee",
+      "legacy_role": "Domains Engineer",
+      "current_runtime_capability": "domain templates, OpenClaw integration, policy packs",
+      "identity_preserved": true
+    },
+    {
+      "legacy_agent_id": "jinjin_k9_scout",
+      "display_name": "Jinjin / K9 Scout",
+      "legacy_role": "Research / Cross-model Scout",
+      "current_runtime_capability": "read-only scouting, external observation, cost-efficient research",
+      "identity_preserved": true
+    }
+  ],
+  "new_capability_slots": [
+    {
+      "slot_id": "operator_execution_planning",
+      "label": "Operator / COO-style execution planning",
+      "legacy_identity": null,
+      "status": "unfilled_capability_slot_not_legacy_agent",
+      "recommended_assignment": "Aiden delegates planning to Ethan/Samantha/Zara depending on task until a real legacy source exists."
+    },
+    {
+      "slot_id": "revenue_scout",
+      "label": "Revenue Scout",
+      "legacy_identity": null,
+      "status": "capability_slot_not_legacy_agent",
+      "recommended_assignment": "Map scouting to Zara CSO and Jinjin K9 Scout, not a new legacy person."
+    },
+    {
+      "slot_id": "auditor_function",
+      "label": "Auditor",
+      "legacy_identity": null,
+      "status": "governance_function_not_legacy_person",
+      "recommended_assignment": "Governance function handled through Maya/Samantha/Aiden review paths."
+    }
+  ]
+}

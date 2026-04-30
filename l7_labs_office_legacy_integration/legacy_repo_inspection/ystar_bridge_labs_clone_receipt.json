@@ -1,0 +1,26 @@
+{
+  "schema_version": "v0",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "legacy_repo_path": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+  "legacy_repo_available": true,
+  "legacy_repo_head": "c380474c",
+  "legacy_repo_status_short": [],
+  "safe_scan_method": "git ls-files tracked-file scan with DB/WAL/SHM/log/active-agent/env/secret/runtime exclusions",
+  "safe_tracked_text_files_scanned": 28003,
+  "unsafe_runtime_patterns_skipped": [
+    ".env",
+    ".git",
+    ".logs",
+    "__pycache__",
+    "active_agent",
+    "credential",
+    "data/cieu_archive",
+    "data/k9_export",
+    "logs",
+    "scripts/.logs",
+    "secret",
+    "token"
+  ],
+  "db_wal_shm_log_active_agent_content_read": false,
+  "legacy_repo_modified_by_scanner": false
+}

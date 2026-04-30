@@ -1,0 +1,36 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4",
+  "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+  "packet_type": "new_l7_capability_slots_not_legacy_agents",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "slots": [
+    {
+      "slot_id": "operator_execution_planning",
+      "label": "Operator / COO-style execution planning",
+      "legacy_identity": null,
+      "status": "unfilled_capability_slot_not_legacy_agent",
+      "recommended_assignment": "Aiden delegates planning to Ethan/Samantha/Zara depending on task until a real legacy source exists."
+    },
+    {
+      "slot_id": "revenue_scout",
+      "label": "Revenue Scout",
+      "legacy_identity": null,
+      "status": "capability_slot_not_legacy_agent",
+      "recommended_assignment": "Map scouting to Zara CSO and Jinjin K9 Scout, not a new legacy person."
+    },
+    {
+      "slot_id": "auditor_function",
+      "label": "Auditor",
+      "legacy_identity": null,
+      "status": "governance_function_not_legacy_person",
+      "recommended_assignment": "Governance function handled through Maya/Samantha/Aiden review paths."
+    }
+  ]
+}

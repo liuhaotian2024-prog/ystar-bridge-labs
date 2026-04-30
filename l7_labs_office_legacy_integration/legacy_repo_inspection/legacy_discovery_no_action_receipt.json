@@ -1,0 +1,10 @@
+{
+  "schema_version": "v0",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "external_side_effects_occurred": false,
+  "core_writeback_occurred": false,
+  "legacy_repo_modified": false,
+  "db_wal_shm_log_active_agent_content_read": false,
+  "secret_files_read": false,
+  "ask_user_url_occurred": false
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4",
+  "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+  "packet_type": "agent_room",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "agent_id": "jordan_engineer",
+  "display_name": "Jordan Lee",
+  "legacy_role": "Domains Engineer",
+  "identity_evidence": [
+    {
+      "file_path": ".claude/agents/eng-domains.md",
+      "line_number": 2,
+      "excerpt": "name: Jordan-Domains"
+    },
+    {
+      "file_path": ".claude/tasks/jordan_v3_posttool_hook_and_rubric_reclassify.md",
+      "line_number": 2,
+      "excerpt": "title: \"V3 Jordan: PostToolUse Hook for feedback->yaml + Layered Translation Rubric Reclassify\""
+    },
+    {
+      "file_path": ".czl_subgoals.json",
+      "line_number": 7,
+      "excerpt": "\"rt1_status\": \"Campaign v6: 2/10 closed (W1+W2 Rt+1=0); v6 W3-W10 in progress. NEW Campaign v7 (2026-04-22): V3 Wave-1 in flight (Maya G3+G4 / Leo G1+G4 / Ryan G2 / Jordan G3+rubric, ~125 tu) + W12 Y* Field Wave-2 spec r"
+    },
+    {
+      "file_path": "AGENTS.md",
+      "line_number": 776,
+      "excerpt": "CTO 团队（CTO + Leo + Maya + Ryan + Jordan）必须保证全生态系统永不存在未处理技术问题。机制："
+    },
+    {
+      "file_path": "BOARD_PENDING.md",
+      "line_number": 68,
+      "excerpt": "- CTO 升级派单 (Leo schema / Maya rule 6-10 / Jordan digest / Samantha cron / Ethan e2e)"
+    }
+  ],
+  "brain_profile_refs": [
+    "knowledge/cto/ethan_brain_foundation.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260420_004526.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260420_214238.md",
+    "scripts/ethan_brain.py",
+    "scripts/mint_agent_brain.py",
+    "scripts/tests/test_mint_agent_brain.py"
+  ],
+  "dna_memory_refs": [
+    "knowledge/ceo/wisdom/WORK_METHODOLOGY.md",
+    "knowledge/ceo/wisdom/dreams/dream_20260419_02_cross_node_unification.md",
+    "knowledge/ceo/wisdom/dreams/dream_20260419_05_future_vision.md",
+    "knowledge/ceo/wisdom/meta/engineer_culture_design_5_factors.md",
+    "knowledge/ceo/wisdom/strategic/aiden_management_operating_method_20260420.md",
+    "knowledge/cto/wisdom/WHO_I_AM_ETHAN.md",
+    "memory/WORLD_STATE.md",
+    "memory/archive/session_handoff_now_archived_1776273549.md",
+    "memory/boot_packages/_seed/ceo.json",
+    "memory/boot_packages/_seed/cto.json",
+    "memory/boot_packages/_seed/eng-domains.json",
+    "memory/boot_packages/_seed/eng-platform.json",
+    "memory/boot_packages/history/ceo_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/cfo_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/cmo_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/cso_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/cto_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/eng-domains_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/eng-governance_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/eng-kernel_ystar-company_0a84f3c6.json"
+  ],
+  "current_mapped_responsibilities": [
+    "domains",
+    "templates",
+    "OpenClaw",
+    "policy packs"
+  ],
+  "what_owner_can_ask": [
+    "accept scoped internal task aligned to legacy role"
+  ],
+  "autonomous_work_allowed": [
+    "internal analysis",
+    "local artifact review",
+    "controlled read-only observation if configured",
+    "evidence summary",
+    "draft-only artifacts",
+    "approval request preparation",
+    "tool proposal",
+    "tests/builders",
+    "owner cockpit updates"
+  ],
+  "requires_owner_approval": [
+    "outreach",
+    "publication",
+    "payment",
+    "account creation",
+    "form submission",
+    "grant/RFP submission",
+    "customer contact",
+    "MCP/live behavior",
+    "actual memory/brain/canonical/CIEU DB writeback"
+  ],
+  "current_inbox": [
+    "review mapped responsibility and identify next safe internal task"
+  ],
+  "integration_status": "integrated_from_legacy_evidence",
+  "next_suggested_task": "map domain templates to Labs Office rooms"
+}

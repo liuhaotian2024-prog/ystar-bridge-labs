@@ -1,0 +1,112 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4",
+  "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+  "packet_type": "agent_room",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "agent_id": "zara_cso",
+  "display_name": "Zara Johnson",
+  "legacy_role": "CSO",
+  "identity_evidence": [
+    {
+      "file_path": ".claude/agents/cso.md",
+      "line_number": 2,
+      "excerpt": "name: Zara-CSO"
+    },
+    {
+      "file_path": ".claude/tasks/CTO_RITUAL_AND_AUTONOMY_FIX_20260413.md",
+      "line_number": 26,
+      "excerpt": "- 方案 A（推荐）：`.claude/agents/Sofia-CMO.md` 新建，参照现有 Zara-CSO/Marco-CFO 结构"
+    },
+    {
+      "file_path": ".claude/tasks/agent-behavior-rules-spec.md",
+      "line_number": 48,
+      "excerpt": "### CSO (Zara Johnson)"
+    },
+    {
+      "file_path": ".ystar_session.json",
+      "line_number": 258,
+      "excerpt": "\"cso\": \"CSO (Zara Johnson)\","
+    },
+    {
+      "file_path": "BOARD_PENDING.md",
+      "line_number": 33,
+      "excerpt": "Agent tool 调用的 persona (Sofia/Marco/Ryan/Zara 等) 必须在 `.claude/agents/` 注册. 避免\"凭空 prompt 造 persona\"反模式."
+    }
+  ],
+  "brain_profile_refs": [
+    "knowledge/cso/role_definition/README.md",
+    "knowledge/cso/role_definition/role_heroes.md",
+    "knowledge/cso/role_definition/task_type_map.md",
+    "knowledge/cso/role_definition/world_class_standard.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260420_004526.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260420_214238.md",
+    "scripts/ethan_brain.py",
+    "scripts/mint_agent_brain.py",
+    "scripts/tests/test_mint_agent_brain.py"
+  ],
+  "dna_memory_refs": [
+    "knowledge/ceo/wisdom/WORK_METHODOLOGY.md",
+    "knowledge/ceo/wisdom/strategic/aiden_management_operating_method_20260420.md",
+    "memory/archive/session_handoff_now_archived_1776273549.md",
+    "memory/boot_packages/_seed/ceo.json",
+    "memory/boot_packages/_seed/cso.json",
+    "memory/boot_packages/history/ceo_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/cfo_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/cmo_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/cso_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/cto_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/eng-domains_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/eng-governance_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/eng-kernel_ystar-company_0a84f3c6.json",
+    "memory/boot_packages/history/eng-platform_ystar-company_0a84f3c6.json",
+    "memory/claude_code_memory_mirror/feedback_ai_disclosure_mandatory.md",
+    "memory/claude_code_memory_mirror/feedback_default_agent_is_ceo.md",
+    "memory/session_summary_20260416.md"
+  ],
+  "current_mapped_responsibilities": [
+    "sales planning",
+    "patents",
+    "commercialization",
+    "lead qualification"
+  ],
+  "what_owner_can_ask": [
+    "draft sales plan",
+    "review buyer fit",
+    "prepare approved-contact plan"
+  ],
+  "autonomous_work_allowed": [
+    "internal analysis",
+    "local artifact review",
+    "controlled read-only observation if configured",
+    "evidence summary",
+    "draft-only artifacts",
+    "approval request preparation",
+    "tool proposal",
+    "tests/builders",
+    "owner cockpit updates"
+  ],
+  "requires_owner_approval": [
+    "outreach",
+    "publication",
+    "payment",
+    "account creation",
+    "form submission",
+    "grant/RFP submission",
+    "customer contact",
+    "MCP/live behavior",
+    "actual memory/brain/canonical/CIEU DB writeback"
+  ],
+  "current_inbox": [
+    "review first outreach approval package",
+    "map buyer fit with no contact"
+  ],
+  "integration_status": "integrated_from_legacy_evidence",
+  "next_suggested_task": "prepare approved-contact criteria for first outreach"
+}

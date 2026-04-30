@@ -1,0 +1,89 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.4",
+  "milestone_name": "Y*Bridge Labs Legacy Team Recovery & Office Integration Sprint",
+  "packet_type": "agent_room",
+  "generated_at_utc": "2026-04-30T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "agent_id": "jinjin_k9_scout",
+  "display_name": "Jinjin / K9 Scout",
+  "legacy_role": "Research / Cross-model Scout",
+  "identity_evidence": [
+    {
+      "file_path": ".claude/agents/ceo.md",
+      "line_number": 142,
+      "excerpt": "K9 Scout sends messages via Telegram at any time. CEO MUST check K9 inbox:"
+    },
+    {
+      "file_path": ".claude/agents/cmo.md",
+      "line_number": 111,
+      "excerpt": "| K9/金金 returns research results | Integrate into content strategy, update positioning docs | K9 inbox via CEO |"
+    },
+    {
+      "file_path": ".claude/agents/cso.md",
+      "line_number": 138,
+      "excerpt": "**Delegate bulk research to K9/金金.** You qualify and strategize. K9 does the data collection."
+    },
+    {
+      "file_path": ".ystar_session.json",
+      "line_number": 251,
+      "excerpt": "\"jinjin\""
+    },
+    {
+      "file_path": "AGENTS.md",
+      "line_number": 1156,
+      "excerpt": "- K9/金金 task delegation"
+    }
+  ],
+  "brain_profile_refs": [
+    "reports/ceo/brain_dream_diffs/dream_diff_20260420_004526.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260420_214238.md"
+  ],
+  "dna_memory_refs": [
+    "knowledge/ceo/team_dna.md",
+    "memory/boot_packages/_seed/ceo.json"
+  ],
+  "current_mapped_responsibilities": [
+    "research",
+    "external observation",
+    "cross-model scouting",
+    "cost-efficient collection"
+  ],
+  "what_owner_can_ask": [
+    "run read-only research",
+    "scout public signals",
+    "compare sources"
+  ],
+  "autonomous_work_allowed": [
+    "internal analysis",
+    "local artifact review",
+    "controlled read-only observation if configured",
+    "evidence summary",
+    "draft-only artifacts",
+    "approval request preparation",
+    "tool proposal",
+    "tests/builders",
+    "owner cockpit updates"
+  ],
+  "requires_owner_approval": [
+    "outreach",
+    "publication",
+    "payment",
+    "account creation",
+    "form submission",
+    "grant/RFP submission",
+    "customer contact",
+    "MCP/live behavior",
+    "actual memory/brain/canonical/CIEU DB writeback"
+  ],
+  "current_inbox": [
+    "prepare read-only scout plan for public buyer signals"
+  ],
+  "integration_status": "integrated_from_legacy_evidence",
+  "next_suggested_task": "draft read-only target signal observation plan"
+}

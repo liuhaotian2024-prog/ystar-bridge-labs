@@ -71,6 +71,7 @@ def run(cmd: list[str], cwd: Path) -> subprocess.CompletedProcess[str]:
 
 def ensure_legacy_repo() -> dict[str, Any]:
     cloned_now = False
+    pull_skipped_to_preserve_read_only_clone = False
     if not (LEGACY_REPO / ".git").exists():
         LEGACY_REPO.parent.mkdir(parents=True, exist_ok=True)
         result = run(["gh", "repo", "clone", "liuhaotian2024-prog/ystar-bridge-labs", str(LEGACY_REPO)], LEGACY_REPO.parent)
@@ -78,13 +79,14 @@ def ensure_legacy_repo() -> dict[str, Any]:
             result = run(["git", "clone", "https://github.com/liuhaotian2024-prog/ystar-bridge-labs.git", str(LEGACY_REPO)], LEGACY_REPO.parent)
         cloned_now = result.returncode == 0
     else:
-        run(["git", "pull", "--ff-only"], LEGACY_REPO)
+        pull_skipped_to_preserve_read_only_clone = True
     status = run(["git", "status", "--short"], LEGACY_REPO)
     head = run(["git", "rev-parse", "--short", "HEAD"], LEGACY_REPO)
     return {
         "legacy_repo_path": str(LEGACY_REPO),
         "legacy_repo_available": (LEGACY_REPO / ".git").exists(),
         "cloned_now": cloned_now,
+        "pull_skipped_to_preserve_read_only_clone": pull_skipped_to_preserve_read_only_clone,
         "legacy_repo_head": head.stdout.strip(),
         "legacy_repo_status_short": [line for line in status.stdout.splitlines() if line.strip()],
         "legacy_repo_modified_by_builder": False,
