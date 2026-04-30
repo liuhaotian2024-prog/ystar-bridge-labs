@@ -1,0 +1,15 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L8.0",
+  "packet_type": "owner_approval_decision",
+  "created_at": "2026-04-30T15:25:53Z",
+  "external_side_effects": false,
+  "core_writeback": false,
+  "grant_rfp_path_created_by_default": false,
+  "coo_invented": false,
+  "decision_id": "approval_decision_commercial_action_direct_founder_outreach_20260430T152553Z_594000",
+  "action_id": "commercial_action_direct_founder_outreach",
+  "decision": "approve",
+  "decided_by": "owner",
+  "decision_note": "Simulated local demo approval only."
+}

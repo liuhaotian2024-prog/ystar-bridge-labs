@@ -1,0 +1,18 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L8.0",
+  "packet_type": "customer_feedback_packet",
+  "created_at": "2026-04-30T14:58:50Z",
+  "external_side_effects": false,
+  "core_writeback": false,
+  "grant_rfp_path_created_by_default": false,
+  "coo_invented": false,
+  "feedback_id": "feedback_manual_send_commercial_action_direct_founder_outreach_20260430T145850Z_813000_20260430T145850Z_042000",
+  "action_id": "commercial_action_direct_founder_outreach",
+  "manual_send_packet_id": "manual_send_commercial_action_direct_founder_outreach_20260430T145850Z_813000",
+  "response_status": "interested",
+  "feedback_text": "Simulated customer asks for more detail about timeline and sample output.",
+  "paid_signal": false,
+  "objection_type": "unknown",
+  "next_step_requested": ""
+}

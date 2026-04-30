@@ -1,0 +1,20 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L8.0",
+  "packet_type": "commercial_residual",
+  "created_at": "2026-04-30T14:58:50Z",
+  "external_side_effects": false,
+  "core_writeback": false,
+  "grant_rfp_path_created_by_default": false,
+  "coo_invented": false,
+  "residual_id": "residual_feedback_manual_send_commercial_action_direct_founder_outreach_20260430T145850Z_813000_20260430T145850Z_042000_20260430T145850Z_089000",
+  "cash_path_id": "first_cash_path_founder_ai_workflow_audit_ceo_brief",
+  "action_id": "commercial_action_direct_founder_outreach",
+  "source_feedback_id": "feedback_manual_send_commercial_action_direct_founder_outreach_20260430T145850Z_813000_20260430T145850Z_042000",
+  "expected_signal": "Founder/operator urgently wants an audit and may accept a paid diagnostic pilot.",
+  "actual_signal": "interested",
+  "residual_type": "offer_specificity_gap",
+  "severity": "low",
+  "interpretation": "The offer has some pull, but the value, trust proof, or next step needs clarification.",
+  "recommended_adjustment": "Clarify deliverables, timeline, sample output, and price."
+}

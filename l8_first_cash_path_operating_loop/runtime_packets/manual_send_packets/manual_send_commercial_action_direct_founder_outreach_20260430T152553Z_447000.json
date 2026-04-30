@@ -1,0 +1,36 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L8.0",
+  "packet_type": "manual_send_packet",
+  "created_at": "2026-04-30T15:25:53Z",
+  "external_side_effects": false,
+  "core_writeback": false,
+  "grant_rfp_path_created_by_default": false,
+  "coo_invented": false,
+  "packet_id": "manual_send_commercial_action_direct_founder_outreach_20260430T152553Z_447000",
+  "action_id": "commercial_action_direct_founder_outreach",
+  "approved_decision_id": "approval_decision_commercial_action_direct_founder_outreach_20260430T152553Z_594000",
+  "recipient_placeholder": "[OWNER_SELECTS_RECIPIENT_MANUALLY]",
+  "channel": "owner_manual_email_or_dm_outside_system",
+  "subject_or_opening": "Direct founder outreach draft for workflow bottleneck diagnostic",
+  "body": "I am preparing a done-for-you AI workflow audit and CEO command brief sprint for founders using agent/coding workflows. The deliverable is an internal decision brief: bottlenecks, evidence/risk notes, and next action options. Would a scoped $1,500 diagnostic be worth reviewing if the fit is right?",
+  "send_instructions": [
+    "Owner reviews recipient, channel, claims, price language, and risk boundary.",
+    "Owner sends manually outside this system only if still approved.",
+    "Return to the Office UI and mark the packet status after manual action."
+  ],
+  "owner_checklist": [
+    "Recipient manually selected and appropriate.",
+    "No unsupported claims.",
+    "No payment link or checkout included unless separately approved.",
+    "No customer commitment beyond a conversation or pilot review."
+  ],
+  "status": "marked_sent_by_owner",
+  "tool_send_email_slot": {
+    "slot_name": "disabled_tool_send_email_future_slot",
+    "enabled": false,
+    "can_execute": false,
+    "reason": "Automatic email sending is not implemented or allowed in L8.0."
+  },
+  "updated_at": "2026-04-30T15:25:53Z"
+}

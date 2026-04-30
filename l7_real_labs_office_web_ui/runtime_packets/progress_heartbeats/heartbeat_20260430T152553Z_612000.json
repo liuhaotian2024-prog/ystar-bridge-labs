@@ -1,0 +1,19 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.6",
+  "packet_type": "progress_heartbeat",
+  "created_at_utc": "2026-04-30T15:25:53Z",
+  "external_side_effects": false,
+  "core_writeback": false,
+  "heartbeat_id": "heartbeat_20260430T152553Z_612000",
+  "work_item_id": "work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package",
+  "cycle_index": 1,
+  "summary": "Agents are producing local role-specific replies.",
+  "assigned_agents": [
+    "aiden_ceo",
+    "zara_cso",
+    "jordan_engineer",
+    "marco_cfo"
+  ],
+  "status": "running"
+}

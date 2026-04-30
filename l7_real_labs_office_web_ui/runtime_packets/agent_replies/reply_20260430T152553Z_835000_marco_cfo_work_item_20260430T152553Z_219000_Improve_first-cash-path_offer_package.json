@@ -1,0 +1,53 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.5",
+  "packet_type": "agent_reply",
+  "created_at_utc": "2026-04-30T15:25:53Z",
+  "allowed_actions": [
+    "internal analysis",
+    "local artifact review",
+    "draft-only artifact generation",
+    "approval request preparation",
+    "local packet creation"
+  ],
+  "forbidden_actions": [
+    "external outreach",
+    "email sending",
+    "customer contact",
+    "publication",
+    "payment",
+    "form submission",
+    "account creation",
+    "grant/RFP submission",
+    "MCP/live behavior",
+    "actual memory/brain/canonical/CIEU DB writeback"
+  ],
+  "approval_required_for": [
+    "outreach",
+    "publication",
+    "payment",
+    "account creation",
+    "form submission",
+    "grant/RFP submission",
+    "customer contact",
+    "MCP/live behavior",
+    "actual memory/brain/canonical/CIEU DB writeback"
+  ],
+  "external_side_effects": false,
+  "core_writeback": false,
+  "reply_id": "reply_20260430T152553Z_835000_marco_cfo_work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package",
+  "agent_id": "marco_cfo",
+  "work_item_id": "work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package",
+  "role_interpretation": "I check pricing, cash-path assumptions, and financial honesty.",
+  "work_done": "Reviewed cash realization assumptions as estimates, not settled facts.",
+  "findings": [
+    "The $1,500 pilot remains plausible as a test price, but quoting externally needs owner approval."
+  ],
+  "artifacts_created": [],
+  "blockers": [
+    "owner approval required before external action"
+  ],
+  "next_step": "Track willingness-to-pay evidence before treating pricing as validated.",
+  "approval_needed": true,
+  "status": "waiting_for_approval"
+}

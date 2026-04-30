@@ -1,0 +1,350 @@
+[
+  {
+    "event_id": "timeline_20260430T145850Z_367000_0001",
+    "created_at_utc": "2026-04-30T14:58:50Z",
+    "event_type": "work item created",
+    "description": "Improve first-cash-path offer package",
+    "refs": {
+      "work_item_id": "work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T145850Z_826000_0002",
+    "created_at_utc": "2026-04-30T14:58:50Z",
+    "event_type": "scheduler tick",
+    "description": "Running bounded internal cycle 1 for Improve first-cash-path offer package",
+    "refs": {
+      "scheduler_tick_id": "scheduler_tick_20260430T145850Z_454000"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T145850Z_329000_0003",
+    "created_at_utc": "2026-04-30T14:58:50Z",
+    "event_type": "progress heartbeat",
+    "description": "Agents are producing local role-specific replies.",
+    "refs": {
+      "heartbeat_id": "heartbeat_20260430T145850Z_023000"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T145850Z_976000_0004",
+    "created_at_utc": "2026-04-30T14:58:50Z",
+    "event_type": "agent reply created",
+    "description": "aiden_ceo replied",
+    "refs": {
+      "reply_id": "reply_20260430T145850Z_628000_aiden_ceo_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T145850Z_602000_0005",
+    "created_at_utc": "2026-04-30T14:58:50Z",
+    "event_type": "agent reply created",
+    "description": "zara_cso replied",
+    "refs": {
+      "reply_id": "reply_20260430T145850Z_289000_zara_cso_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T145850Z_301000_0006",
+    "created_at_utc": "2026-04-30T14:58:50Z",
+    "event_type": "agent reply created",
+    "description": "jordan_engineer replied",
+    "refs": {
+      "reply_id": "reply_20260430T145850Z_891000_jordan_engineer_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T145850Z_979000_0007",
+    "created_at_utc": "2026-04-30T14:58:50Z",
+    "event_type": "agent reply created",
+    "description": "marco_cfo replied",
+    "refs": {
+      "reply_id": "reply_20260430T145850Z_618000_marco_cfo_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T145850Z_718000_0008",
+    "created_at_utc": "2026-04-30T14:58:50Z",
+    "event_type": "agent reply created",
+    "description": "samantha_secretary replied",
+    "refs": {
+      "reply_id": "reply_20260430T145850Z_282000_samantha_secretary_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T145850Z_378000_0009",
+    "created_at_utc": "2026-04-30T14:58:50Z",
+    "event_type": "agent reply created",
+    "description": "auditor_function replied",
+    "refs": {
+      "reply_id": "reply_20260430T145850Z_050000_auditor_function_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T145850Z_321000_0010",
+    "created_at_utc": "2026-04-30T14:58:50Z",
+    "event_type": "scheduler tick",
+    "description": "Running bounded internal cycle 2 for Improve first-cash-path offer package",
+    "refs": {
+      "scheduler_tick_id": "scheduler_tick_20260430T145850Z_908000"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T145850Z_203000_0011",
+    "created_at_utc": "2026-04-30T14:58:50Z",
+    "event_type": "progress heartbeat",
+    "description": "Agents are producing local role-specific replies.",
+    "refs": {
+      "heartbeat_id": "heartbeat_20260430T145850Z_781000"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T145850Z_367000_0012",
+    "created_at_utc": "2026-04-30T14:58:50Z",
+    "event_type": "agent reply created",
+    "description": "aiden_ceo replied",
+    "refs": {
+      "reply_id": "reply_20260430T145850Z_923000_aiden_ceo_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T145850Z_165000_0013",
+    "created_at_utc": "2026-04-30T14:58:50Z",
+    "event_type": "agent reply created",
+    "description": "zara_cso replied",
+    "refs": {
+      "reply_id": "reply_20260430T145850Z_752000_zara_cso_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T145850Z_983000_0014",
+    "created_at_utc": "2026-04-30T14:58:50Z",
+    "event_type": "agent reply created",
+    "description": "jordan_engineer replied",
+    "refs": {
+      "reply_id": "reply_20260430T145850Z_585000_jordan_engineer_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T145850Z_677000_0015",
+    "created_at_utc": "2026-04-30T14:58:50Z",
+    "event_type": "agent reply created",
+    "description": "marco_cfo replied",
+    "refs": {
+      "reply_id": "reply_20260430T145850Z_354000_marco_cfo_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T145850Z_312000_0016",
+    "created_at_utc": "2026-04-30T14:58:50Z",
+    "event_type": "agent reply created",
+    "description": "samantha_secretary replied",
+    "refs": {
+      "reply_id": "reply_20260430T145850Z_002000_samantha_secretary_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T145850Z_801000_0017",
+    "created_at_utc": "2026-04-30T14:58:50Z",
+    "event_type": "completion report generated",
+    "description": "Completed local internal cycle for: Improve first-cash-path offer package",
+    "refs": {
+      "completion_report_id": "completion_20260430T145850Z_441000_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T145850Z_645000_0018",
+    "created_at_utc": "2026-04-30T14:58:50Z",
+    "event_type": "autonomous run completed",
+    "description": "Completed bounded local self-work for Improve first-cash-path offer package",
+    "refs": {
+      "autonomous_run_id": "autonomous_run_20260430T145850Z_328000"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T152553Z_831000_0019",
+    "created_at_utc": "2026-04-30T15:25:53Z",
+    "event_type": "work item created",
+    "description": "Improve first-cash-path offer package",
+    "refs": {
+      "work_item_id": "work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T152553Z_345000_0020",
+    "created_at_utc": "2026-04-30T15:25:53Z",
+    "event_type": "scheduler tick",
+    "description": "Running bounded internal cycle 1 for Improve first-cash-path offer package",
+    "refs": {
+      "scheduler_tick_id": "scheduler_tick_20260430T152553Z_971000"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T152553Z_960000_0021",
+    "created_at_utc": "2026-04-30T15:25:53Z",
+    "event_type": "progress heartbeat",
+    "description": "Agents are producing local role-specific replies.",
+    "refs": {
+      "heartbeat_id": "heartbeat_20260430T152553Z_612000"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T152553Z_990000_0022",
+    "created_at_utc": "2026-04-30T15:25:53Z",
+    "event_type": "agent reply created",
+    "description": "aiden_ceo replied",
+    "refs": {
+      "reply_id": "reply_20260430T152553Z_358000_aiden_ceo_work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T152553Z_709000_0023",
+    "created_at_utc": "2026-04-30T15:25:53Z",
+    "event_type": "agent reply created",
+    "description": "zara_cso replied",
+    "refs": {
+      "reply_id": "reply_20260430T152553Z_353000_zara_cso_work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T152553Z_437000_0024",
+    "created_at_utc": "2026-04-30T15:25:53Z",
+    "event_type": "agent reply created",
+    "description": "jordan_engineer replied",
+    "refs": {
+      "reply_id": "reply_20260430T152553Z_057000_jordan_engineer_work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T152553Z_169000_0025",
+    "created_at_utc": "2026-04-30T15:25:53Z",
+    "event_type": "agent reply created",
+    "description": "marco_cfo replied",
+    "refs": {
+      "reply_id": "reply_20260430T152553Z_835000_marco_cfo_work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T152553Z_841000_0026",
+    "created_at_utc": "2026-04-30T15:25:53Z",
+    "event_type": "agent reply created",
+    "description": "samantha_secretary replied",
+    "refs": {
+      "reply_id": "reply_20260430T152553Z_526000_samantha_secretary_work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T152553Z_623000_0027",
+    "created_at_utc": "2026-04-30T15:25:53Z",
+    "event_type": "agent reply created",
+    "description": "auditor_function replied",
+    "refs": {
+      "reply_id": "reply_20260430T152553Z_250000_auditor_function_work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T152553Z_474000_0028",
+    "created_at_utc": "2026-04-30T15:25:53Z",
+    "event_type": "scheduler tick",
+    "description": "Running bounded internal cycle 2 for Improve first-cash-path offer package",
+    "refs": {
+      "scheduler_tick_id": "scheduler_tick_20260430T152553Z_102000"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T152553Z_044000_0029",
+    "created_at_utc": "2026-04-30T15:25:53Z",
+    "event_type": "progress heartbeat",
+    "description": "Agents are producing local role-specific replies.",
+    "refs": {
+      "heartbeat_id": "heartbeat_20260430T152553Z_670000"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T152553Z_757000_0030",
+    "created_at_utc": "2026-04-30T15:25:53Z",
+    "event_type": "agent reply created",
+    "description": "aiden_ceo replied",
+    "refs": {
+      "reply_id": "reply_20260430T152553Z_427000_aiden_ceo_work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T152553Z_520000_0031",
+    "created_at_utc": "2026-04-30T15:25:53Z",
+    "event_type": "agent reply created",
+    "description": "zara_cso replied",
+    "refs": {
+      "reply_id": "reply_20260430T152553Z_183000_zara_cso_work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T152553Z_224000_0032",
+    "created_at_utc": "2026-04-30T15:25:53Z",
+    "event_type": "agent reply created",
+    "description": "jordan_engineer replied",
+    "refs": {
+      "reply_id": "reply_20260430T152553Z_905000_jordan_engineer_work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T152553Z_092000_0033",
+    "created_at_utc": "2026-04-30T15:25:53Z",
+    "event_type": "agent reply created",
+    "description": "marco_cfo replied",
+    "refs": {
+      "reply_id": "reply_20260430T152553Z_662000_marco_cfo_work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T152553Z_902000_0034",
+    "created_at_utc": "2026-04-30T15:25:53Z",
+    "event_type": "agent reply created",
+    "description": "samantha_secretary replied",
+    "refs": {
+      "reply_id": "reply_20260430T152553Z_515000_samantha_secretary_work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T152553Z_932000_0035",
+    "created_at_utc": "2026-04-30T15:25:53Z",
+    "event_type": "completion report generated",
+    "description": "Completed local internal cycle for: Improve first-cash-path offer package",
+    "refs": {
+      "completion_report_id": "completion_20260430T152553Z_555000_work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package",
+      "work_item_id": "work_item_20260430T152553Z_219000_Improve_first-cash-path_offer_package"
+    }
+  },
+  {
+    "event_id": "timeline_20260430T152553Z_805000_0036",
+    "created_at_utc": "2026-04-30T15:25:53Z",
+    "event_type": "autonomous run completed",
+    "description": "Completed bounded local self-work for Improve first-cash-path offer package",
+    "refs": {
+      "autonomous_run_id": "autonomous_run_20260430T152553Z_425000"
+    }
+  }
+]

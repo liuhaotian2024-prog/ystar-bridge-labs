@@ -1,0 +1,63 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.5",
+  "packet_type": "work_item",
+  "created_at_utc": "2026-04-30T14:58:50Z",
+  "allowed_actions": [
+    "internal analysis",
+    "local artifact review",
+    "draft-only artifact generation",
+    "approval request preparation",
+    "local packet creation"
+  ],
+  "forbidden_actions": [
+    "external outreach",
+    "email sending",
+    "customer contact",
+    "publication",
+    "payment",
+    "form submission",
+    "account creation",
+    "grant/RFP submission",
+    "MCP/live behavior",
+    "actual memory/brain/canonical/CIEU DB writeback"
+  ],
+  "approval_required_for": [
+    "outreach",
+    "publication",
+    "payment",
+    "account creation",
+    "form submission",
+    "grant/RFP submission",
+    "customer contact",
+    "MCP/live behavior",
+    "actual memory/brain/canonical/CIEU DB writeback"
+  ],
+  "external_side_effects": false,
+  "core_writeback": false,
+  "work_item_id": "work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+  "title": "Improve first-cash-path offer package",
+  "description": "Team autonomously improves the first-cash-path Founder AI Workflow Audit & CEO Command Brief Sprint package. Refine the internal offer package, compare customer segments, improve delivery workflow, and produce an owner review packet. Do not send email, contact customers, publish, request payment, or perform writeback.",
+  "source_message_id": null,
+  "requested_by": "owner",
+  "assigned_agents": [
+    "aiden_ceo",
+    "zara_cso",
+    "jordan_engineer",
+    "marco_cfo"
+  ],
+  "status": "Done",
+  "expected_outputs": [
+    "agent replies",
+    "work board update",
+    "completion report"
+  ],
+  "progress_notes": [
+    "L7.6 autonomous scheduler started bounded internal work.",
+    "L7.6 cycle 1: generated 5 agent replies and one safety review if capacity allowed.",
+    "L7.6 cycle 2: generated 5 agent replies and one safety review if capacity allowed.",
+    "L7.6 autonomous scheduler finished within bounded cycle limit."
+  ],
+  "blockers": [],
+  "updated_at_utc": "2026-04-30T14:58:50Z"
+}

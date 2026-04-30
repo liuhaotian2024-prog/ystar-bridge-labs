@@ -1,0 +1,38 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.6",
+  "packet_type": "autonomous_run",
+  "created_at_utc": "2026-04-30T14:58:50Z",
+  "external_side_effects": false,
+  "core_writeback": false,
+  "autonomous_run_id": "autonomous_run_20260430T145850Z_328000",
+  "work_item_id": "work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+  "cycles_run": 2,
+  "cycle_limit": 2,
+  "agent_replies_created": [
+    "reply_20260430T145850Z_628000_aiden_ceo_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+    "reply_20260430T145850Z_289000_zara_cso_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+    "reply_20260430T145850Z_891000_jordan_engineer_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+    "reply_20260430T145850Z_618000_marco_cfo_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+    "reply_20260430T145850Z_282000_samantha_secretary_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+    "reply_20260430T145850Z_050000_auditor_function_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+    "reply_20260430T145850Z_923000_aiden_ceo_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+    "reply_20260430T145850Z_752000_zara_cso_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+    "reply_20260430T145850Z_585000_jordan_engineer_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+    "reply_20260430T145850Z_354000_marco_cfo_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+    "reply_20260430T145850Z_002000_samantha_secretary_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package"
+  ],
+  "progress_heartbeats_created": [
+    "heartbeat_20260430T145850Z_023000",
+    "heartbeat_20260430T145850Z_781000"
+  ],
+  "scheduler_ticks_created": [
+    "scheduler_tick_20260430T145850Z_454000",
+    "scheduler_tick_20260430T145850Z_908000"
+  ],
+  "completion_report_id": "completion_20260430T145850Z_441000_work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+  "summary": "Completed bounded local self-work for Improve first-cash-path offer package",
+  "stop_reason": "cycle_limit_reached_or_work_completed",
+  "external_side_effects_occurred": false,
+  "core_writeback_occurred": false
+}

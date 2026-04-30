@@ -1,0 +1,32 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.6",
+  "packet_type": "scheduler_tick",
+  "created_at_utc": "2026-04-30T14:58:50Z",
+  "external_side_effects": false,
+  "core_writeback": false,
+  "scheduler_tick_id": "scheduler_tick_20260430T145850Z_908000",
+  "work_item_id": "work_item_20260430T145850Z_911000_Improve_first-cash-path_offer_package",
+  "cycle_index": 2,
+  "summary": "Running bounded internal cycle 2 for Improve first-cash-path offer package",
+  "policy_decision": {
+    "classification": "autonomous_internal_allowed",
+    "decision": "allowed",
+    "reason_codes": [
+      "local_internal_work",
+      "internal",
+      "compare",
+      "refine",
+      "owner review",
+      "completion report"
+    ],
+    "owner_visible_explanation": "This is bounded internal work: local analysis, draft-only output, packet updates, or completion reporting.",
+    "autonomous_allowed": true,
+    "approval_required": false,
+    "external_side_effects": false,
+    "core_writeback": false,
+    "hard_boundary_preserved": false,
+    "policy_ref": "l7_labs_team_self_work_scheduler/capability_classifier.py"
+  },
+  "status": "running"
+}
