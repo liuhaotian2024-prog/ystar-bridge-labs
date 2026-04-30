@@ -218,11 +218,12 @@ def test_existing_l7_office_apis_still_work():
         serve("0.0.0.0", 8765)
 
 
-def test_office_builder_outputs_l8_cockpit():
+def test_office_builder_preserves_l8_state_with_aiden_only_ui():
     build_office()
     html = (ROOT / "l7_real_labs_office_web_ui/templates/index.html").read_text(encoding="utf-8")
     summary = json.loads((ROOT / "l8_first_cash_path_operating_loop/l8_summary.json").read_text(encoding="utf-8"))
-    assert "L8 First Cash Path Cockpit" in html
+    assert 'id="aiden-chat-form"' in html
+    assert "L8 First Cash Path Cockpit" not in html
     assert summary["first_cash_path_initialized"] is True
 
 
@@ -230,4 +231,3 @@ def test_runner_build_and_status_modes_pass():
     for mode in ["build", "status"]:
         result = subprocess.run(["bash", str(RUNNER), "--mode", mode], cwd=ROOT, text=True, capture_output=True, check=True, timeout=30)
         assert "error" not in result.stderr.lower()
-

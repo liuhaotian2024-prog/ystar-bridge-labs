@@ -87,43 +87,34 @@ def test_server_exposes_whiteboard_endpoints():
         assert endpoint in source
 
 
-def test_template_contains_whiteboard_work_board_agent_panel_and_timeline():
+def test_template_contains_aiden_only_chat_surface():
     template = (WEB_OUT / "templates/index.html").read_text(encoding="utf-8")
-    assert "把目标交给团队" in template
-    assert 'class="template-chip"' in template
-    assert "高级：调度器 / 商业路径 / 委托任务" in template
-    assert "讨论开会模式" in template
-    assert "执行看板模式" in template
-    assert "office-mode-panel meeting-mode" in template
-    assert "office-mode-panel execution-mode" in template
-    assert "最近一次操作结果" in template
-    assert 'id="whiteboard-message-form"' in template
-    assert 'id="whiteboard-send-status"' in template
-    assert 'id="work-board"' in template
-    assert 'id="agent-panel"' in template
-    assert 'id="progress-timeline"' in template
+    assert "和 Aiden 讨论" in template
+    assert 'id="aiden-chat-form"' in template
+    assert 'id="aiden-message"' in template
+    assert 'id="chat-history"' in template
+    assert "发送给 Aiden" in template
+    assert "没有团队看板" in template
+    assert "没有 L8/L9/L10" in template
+    assert 'id="whiteboard-message-form"' not in template
+    assert 'id="work-board"' not in template
+    assert 'id="agent-panel"' not in template
+    assert 'id="progress-timeline"' not in template
 
 
-def test_js_can_submit_whiteboard_and_work_cycle_paths():
+def test_js_can_submit_aiden_chat_path():
     js = (WEB_OUT / "static/office.js").read_text(encoding="utf-8")
-    for endpoint in ["/api/whiteboard/message", "/api/route", "/api/work_cycle", "/api/team_work_cycle", "/api/completion_report"]:
-        assert endpoint in js
-    assert "quickTemplates" in js
-    assert "summarizeActionResult" in js
-    assert "旧历史已隐藏" in js
-    assert "最快拿到第一笔钱" in js
-    assert "compatibility_fallback" in js
-    assert "/api/team_task" in js
-    assert "/api/message" in js
-    assert "团队还没有工作" in js
-    assert "return (scoped.length ? scoped : replies)" not in js
-    assert "max_work_items_per_cycle: 1" in js
-    assert "latestOwnerMessage" in js
-    assert "latestWorkItemId" in js
-    assert "{work_item_id: latestWorkItemId}" in js
-    assert "setOfficeMode" in js
-    assert "labsOfficeMode" in js
-    assert "data-office-mode-button" in js
+    assert "/api/aiden_chat" in js
+    assert "aiden-chat-form" in js
+    assert "sendMessage" in js
+    assert "loadHistory" in js
+    assert "/api/whiteboard/message" not in js
+    assert "/api/route" not in js
+    assert "/api/work_cycle" not in js
+    assert "/api/team_work_cycle" not in js
+    assert "/api/completion_report" not in js
+    assert "quickTemplates" not in js
+    assert "compatibility_fallback" not in js
 
 
 def test_routing_engine_uses_original_agents_and_no_coo():

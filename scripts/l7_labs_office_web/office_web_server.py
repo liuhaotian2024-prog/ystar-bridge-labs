@@ -222,6 +222,80 @@ def create_team_task_packet(payload: dict[str, Any], out_dir: Path = OUT) -> dic
     }
 
 
+def aiden_direct_reply(user_text: str) -> str:
+    text = user_text.strip()
+    lowered = text.lower()
+    if any(word in text for word in ["第一笔钱", "赚钱", "收入", "cash", "付费"]):
+        return (
+            "我会先把目标收窄成一个可验证的现金实验：不要先卖宏大的 AI 公司愿景，先卖一个小而清楚的服务包。"
+            "我建议的第一个可收费东西是 Founder AI Workflow Audit & CEO Command Brief：帮一个 AI founder/operator 看清当前 workflow、agent 使用、执行瓶颈和下一步决策。"
+            "第一版价格可以把 $1500 当作测试假设。下一步不是群发，而是先做一页 offer 和一条 owner 手动发送草稿。"
+        )
+    if any(word in text for word in ["难受", "疯", "哭", "折磨", "崩溃"]):
+        return (
+            "你现在的感受是合理的。之前的页面把内部机制包装成团队办公室，给了你错误预期。"
+            "我现在只做一件事：听你说问题，然后用 Aiden 的 CEO 视角给一个直接回答。"
+            "不再让你看 packet、timeline、L8/L9/L10，除非你明确要。"
+        )
+    if any(word in text for word in ["计划", "30天", "三十天", "下一步"]):
+        return (
+            "我建议下一步只保留三条线：第一，定义一个能收钱的服务包；第二，做一个客户能看懂的样例 brief；第三，准备一条 owner 手动发送的信息。"
+            "不要再扩展系统层级，先验证有没有人愿意为这个诊断服务付钱。"
+        )
+    if any(word in lowered for word in ["hello", "hi", "test"]) or any(word in text for word in ["测试", "在吗"]):
+        return "我在。这个页面现在只负责一件事：你说一个问题，我用 Aiden 的 CEO 视角直接回应。"
+    return (
+        f"我先复述我听到的问题：{text[:160]}"
+        "。我的建议是先把它变成一个可以判断的 owner 决策：目标是什么、下一步要产出什么、什么事情不能自动做。"
+        "如果你愿意，下一句可以直接问我：'Aiden，你建议我现在具体做哪一个东西来赚钱？'"
+    )
+
+
+def aiden_chat_history(out_dir: Path = OUT) -> list[dict[str, Any]]:
+    path = out_dir / "runtime_packets/aiden_chat/aiden_chat_thread.json"
+    if not path.exists():
+        return []
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def create_aiden_chat_turn(payload: dict[str, Any], out_dir: Path = OUT) -> dict[str, Any]:
+    text = str(payload.get("message", "")).strip()
+    if not text:
+        raise ValueError("message is required")
+    packet_dir = out_dir / "runtime_packets/aiden_chat"
+    packet_dir.mkdir(parents=True, exist_ok=True)
+    now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    turn_id = f"aiden_chat_{timestamp()}_{time.time_ns() % 1_000_000:06d}"
+    user_turn = {
+        "turn_id": f"{turn_id}_owner",
+        "created_at_utc": now,
+        "speaker": "owner",
+        "text": text,
+        "external_side_effects": False,
+        "core_writeback": False,
+    }
+    aiden_turn = {
+        "turn_id": f"{turn_id}_aiden",
+        "created_at_utc": now,
+        "speaker": "aiden_ceo",
+        "display_name": "Aiden Liu",
+        "text": aiden_direct_reply(text),
+        "external_side_effects": False,
+        "core_writeback": False,
+    }
+    history = aiden_chat_history(out_dir)
+    history.extend([user_turn, aiden_turn])
+    path = packet_dir / "aiden_chat_thread.json"
+    path.write_text(json.dumps(history[-80:], indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return {
+        "ok": True,
+        "reply": aiden_turn,
+        "history": history[-80:],
+        "external_side_effects": False,
+        "core_writeback": False,
+    }
+
+
 def l9_status() -> dict[str, Any]:
     build_l9_manifest(force=False)
     opportunities = list_opportunities()
@@ -295,6 +369,8 @@ class OfficeHandler(BaseHTTPRequestHandler):
                 text_response(self, (OUT / "static/office.js").read_text(encoding="utf-8"), "application/javascript; charset=utf-8")
             elif path == "/api/status":
                 json_response(self, load_state())
+            elif path == "/api/aiden_chat":
+                json_response(self, {"ok": True, "history": aiden_chat_history()})
             elif path == "/api/roster":
                 state = load_state()
                 json_response(self, {"agents": state.get("agents", []), "agent_count": state.get("agent_count", 0)})
@@ -420,7 +496,13 @@ class OfficeHandler(BaseHTTPRequestHandler):
             error_response(self, HTTPStatus.BAD_REQUEST, "invalid json")
             return
         try:
-            if parsed.path == "/api/message":
+            if parsed.path == "/api/aiden_chat":
+                try:
+                    json_response(self, create_aiden_chat_turn(payload))
+                except ValueError as exc:
+                    error_response(self, HTTPStatus.BAD_REQUEST, str(exc))
+                    return
+            elif parsed.path == "/api/message":
                 if not str(payload.get("message_text", "")).strip():
                     error_response(self, HTTPStatus.BAD_REQUEST, "message_text is required")
                     return

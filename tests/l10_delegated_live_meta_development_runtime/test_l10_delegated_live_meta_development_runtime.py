@@ -272,7 +272,9 @@ def test_runner_build_status_demo_smoke() -> None:
     assert result.returncode == 0, result.stderr
     source = runner.read_text(encoding="utf-8")
     assert "l10_manifest_missions" in source
-    assert "L10 Delegated Mission Cockpit" in (ROOT / "l7_real_labs_office_web_ui/templates/index.html").read_text(encoding="utf-8")
+    html = (ROOT / "l7_real_labs_office_web_ui/templates/index.html").read_text(encoding="utf-8")
+    assert 'id="aiden-chat-form"' in html
+    assert "L10 Delegated Mission Cockpit" not in html
 
 
 def test_no_external_side_effects_in_demo(isolated_l10: Path) -> None:

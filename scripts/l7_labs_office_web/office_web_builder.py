@@ -19,7 +19,7 @@ OUT = ROOT / "l7_real_labs_office_web_ui"
 L75_OUT = ROOT / "l7_labs_whiteboard_collaboration_runtime"
 LEGACY_OUT = ROOT / "l7_labs_office_legacy_integration"
 GENERATED_AT = "2026-04-30T00:00:00Z"
-LOCAL_URL = "http://127.0.0.1:8765"
+LOCAL_URL = "http://127.0.0.1:8771"
 
 from l7_labs_team_self_work_scheduler.manifest_builder import build_manifest as build_l76_manifest  # noqa: E402
 from l8_first_cash_path_operating_loop.l8_manifest_builder import build_manifest as build_l8_manifest  # noqa: E402
@@ -296,6 +296,201 @@ def build_runtime_state() -> dict[str, Any]:
 
 
 def write_assets() -> None:
+    write_text(
+        "templates/index.html",
+        """
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aiden Chat</title>
+  <link rel="stylesheet" href="/static/office.css">
+</head>
+<body>
+  <main class="chat-shell">
+    <section class="chat-card">
+      <header class="chat-header">
+        <p class="eyebrow">LOCAL ONLY · AIDEN CEO CHAT · NO EXTERNAL SENDING</p>
+        <h1>和 Aiden 讨论</h1>
+        <p>这里只有一个功能：你问问题，Aiden 用 CEO 视角回复你。没有团队看板、没有 L8/L9/L10、没有外发。</p>
+      </header>
+
+      <section id="chat-history" class="chat-history" aria-live="polite">
+        <div class="message aiden">
+          <strong>Aiden</strong>
+          <p>我在。你直接说问题就行，我会尽量用清楚的人话回答。</p>
+        </div>
+      </section>
+
+      <form id="aiden-chat-form" class="chat-form">
+        <label for="aiden-message">你想跟 Aiden 讨论什么？</label>
+        <textarea id="aiden-message" required placeholder="比如：Aiden，我们现在到底做什么东西才能最快拿到第一笔钱？"></textarea>
+        <button type="submit">发送给 Aiden</button>
+        <p id="chat-status" class="status">本地对话，不会发邮件、不会联系客户、不会发布。</p>
+      </form>
+    </section>
+  </main>
+  <script src="/static/office.js?v=aiden-chat-v1"></script>
+</body>
+</html>
+""",
+    )
+    write_text(
+        "static/office.css",
+        """
+:root {
+  --bg: #080b0f;
+  --panel: #111821;
+  --panel-2: #0d131a;
+  --text: #edf7f3;
+  --muted: #91a39d;
+  --line: rgba(255,255,255,.1);
+  --accent: #2cf59a;
+  --aiden: #35c8ff;
+  --owner: #ffcf70;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(44,245,154,.18), transparent 28rem),
+    radial-gradient(circle at 90% 20%, rgba(53,200,255,.13), transparent 24rem),
+    linear-gradient(135deg, #07090d, #101820 55%, #07110d);
+}
+.chat-shell {
+  width: min(920px, calc(100vw - 28px));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 28px 0;
+  display: grid;
+  place-items: center;
+}
+.chat-card {
+  width: 100%;
+  min-height: min(820px, calc(100vh - 56px));
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  background: rgba(17,24,33,.94);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: 0 28px 90px rgba(0,0,0,.35);
+}
+.chat-header { padding: 28px 30px 18px; border-bottom: 1px solid var(--line); }
+.eyebrow { margin: 0 0 12px; color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .12em; }
+h1 { margin: 0; font-size: clamp(36px, 7vw, 76px); line-height: .9; letter-spacing: -.07em; }
+.chat-header p:last-child { max-width: 680px; color: var(--muted); font-size: 16px; line-height: 1.7; }
+.chat-history { padding: 24px 30px; display: flex; flex-direction: column; gap: 14px; overflow: auto; background: rgba(0,0,0,.13); }
+.message { max-width: 82%; padding: 14px 16px; border: 1px solid var(--line); border-radius: 18px; line-height: 1.65; }
+.message strong { display: block; margin-bottom: 6px; font-size: 13px; letter-spacing: .04em; }
+.message p { margin: 0; white-space: pre-wrap; }
+.message.owner { margin-left: auto; background: rgba(255,207,112,.08); border-color: rgba(255,207,112,.24); }
+.message.owner strong { color: var(--owner); }
+.message.aiden { background: rgba(53,200,255,.08); border-color: rgba(53,200,255,.22); }
+.message.aiden strong { color: var(--aiden); }
+.chat-form { padding: 18px 30px 26px; display: grid; gap: 10px; border-top: 1px solid var(--line); background: var(--panel-2); }
+label { color: var(--muted); font-size: 14px; font-weight: 700; }
+textarea { width: 100%; min-height: 110px; resize: vertical; padding: 14px; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; color: var(--text); background: rgba(255,255,255,.055); font: inherit; }
+button { width: fit-content; border: 0; border-radius: 14px; padding: 12px 18px; color: #06100c; background: linear-gradient(135deg, var(--accent), var(--aiden)); font: inherit; font-weight: 900; cursor: pointer; }
+button:disabled { opacity: .55; cursor: wait; }
+.status { margin: 0; color: var(--muted); font-size: 13px; }
+@media (max-width: 720px) {
+  .chat-shell { width: 100%; padding: 0; }
+  .chat-card { min-height: 100vh; border-radius: 0; }
+  .message { max-width: 95%; }
+  .chat-header, .chat-history, .chat-form { padding-left: 18px; padding-right: 18px; }
+}
+""",
+    )
+    write_text(
+        "static/office.js",
+        """
+const historyEl = document.getElementById("chat-history");
+const form = document.getElementById("aiden-chat-form");
+const textarea = document.getElementById("aiden-message");
+const statusEl = document.getElementById("chat-status");
+
+function escapeHtml(value) {
+  return String(value || "").replace(/[&<>"']/g, (ch) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;",
+  }[ch]));
+}
+
+function renderTurn(turn) {
+  const isOwner = turn.speaker === "owner";
+  return `
+    <div class="message ${isOwner ? "owner" : "aiden"}">
+      <strong>${isOwner ? "你" : "Aiden"}</strong>
+      <p>${escapeHtml(turn.text)}</p>
+    </div>`;
+}
+
+function renderHistory(history) {
+  const turns = history && history.length ? history : [{
+    speaker: "aiden_ceo",
+    text: "我在。你直接说问题就行，我会尽量用清楚的人话回答。",
+  }];
+  historyEl.innerHTML = turns.slice(-30).map(renderTurn).join("");
+  historyEl.scrollTop = historyEl.scrollHeight;
+}
+
+async function loadHistory() {
+  const response = await fetch("/api/aiden_chat");
+  if (!response.ok) return;
+  const data = await response.json();
+  renderHistory(data.history || []);
+}
+
+async function sendMessage(text) {
+  const response = await fetch("/api/aiden_chat", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({message: text}),
+  });
+  const data = await response.json();
+  if (!response.ok || !data.ok) {
+    throw new Error(data.error || "Aiden 没有成功回复。");
+  }
+  renderHistory(data.history || []);
+}
+
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const text = textarea.value.trim();
+  if (!text) return;
+  textarea.value = "";
+  statusEl.textContent = "Aiden 正在本地回复...";
+  form.querySelector("button").disabled = true;
+  renderHistory([
+    ...Array.from(historyEl.querySelectorAll(".message")).map((node) => ({
+      speaker: node.classList.contains("owner") ? "owner" : "aiden_ceo",
+      text: node.querySelector("p")?.textContent || "",
+    })),
+    {speaker: "owner", text},
+  ]);
+  try {
+    await sendMessage(text);
+    statusEl.textContent = "已本地回复。没有外发、没有邮件、没有客户联系。";
+  } catch (error) {
+    statusEl.textContent = error.message;
+  } finally {
+    form.querySelector("button").disabled = false;
+    textarea.focus();
+  }
+});
+
+loadHistory();
+""",
+    )
+    return
     write_text(
         "templates/index.html",
         """

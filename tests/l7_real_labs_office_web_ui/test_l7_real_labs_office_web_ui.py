@@ -12,7 +12,7 @@ SCRIPT_DIR = ROOT / "scripts/l7_labs_office_web"
 sys.path.insert(0, str(SCRIPT_DIR))
 
 from office_web_builder import build  # noqa: E402
-from office_web_server import create_owner_message_packet, create_team_task_packet, serve  # noqa: E402
+from office_web_server import create_aiden_chat_turn, create_owner_message_packet, create_team_task_packet, serve  # noqa: E402
 
 
 @pytest.fixture(scope="session", autouse=True)
@@ -51,7 +51,7 @@ def test_summary_and_runtime_state_exist():
     summary = load_json("web_ui_summary.json")
     state = load_json("office_runtime_state.json")
     assert summary["real_office_web_ui_created"] is True
-    assert summary["local_url"] == "http://127.0.0.1:8765"
+    assert summary["local_url"] == "http://127.0.0.1:8771"
     assert state["current_phase"] == "Real Labs Office Web UI Runtime"
 
 
@@ -67,52 +67,49 @@ def test_original_team_roster_loaded_with_no_coo():
         assert "operator" not in joined
 
 
-def test_page_template_contains_message_and_team_task_forms():
+def test_page_template_contains_aiden_only_chat():
     template = (OUT / "templates/index.html").read_text(encoding="utf-8")
-    assert 'id="message-form"' in template
-    assert 'id="team-task-form"' in template
-    assert 'id="target-agent"' in template
-    assert "把目标交给团队" in template
-    assert "1. 发给团队" in template
-    assert "2. Aiden 拆任务" in template
-    assert "3. 团队工作一轮" in template
-    assert "讨论开会模式" in template
-    assert "执行看板模式" in template
-    assert "office-mode-panel meeting-mode" in template
-    assert "office-mode-panel execution-mode" in template
-    assert "最近一次操作结果" in template
-    assert "高级：调度器 / 商业路径 / 委托任务" in template
-    assert 'id="whiteboard-send-status"' in template
-    assert "office.js?v=simple-office-v3" in template
+    assert 'id="aiden-chat-form"' in template
+    assert 'id="aiden-message"' in template
+    assert 'id="chat-history"' in template
+    assert "和 Aiden 讨论" in template
+    assert "发送给 Aiden" in template
+    assert "这里只有一个功能" in template
+    assert "没有团队看板" in template
+    assert "没有 L8/L9/L10" in template
+    assert "NO EXTERNAL SENDING" in template
+    assert "message-form" not in template
+    assert "team-task-form" not in template
+    assert "whiteboard-message-form" not in template
+    assert "work-board" not in template
+    assert "mode-switch" not in template
+    assert "office.js?v=aiden-chat-v1" in template
 
 
-def test_whiteboard_submit_has_legacy_backend_fallback():
+def test_aiden_chat_js_uses_only_aiden_endpoint():
     js = (OUT / "static/office.js").read_text(encoding="utf-8")
-    assert "sendTeamInstruction" in js
-    assert "quickTemplates" in js
-    assert "summarizeActionResult" in js
-    assert "旧历史已隐藏" in js
-    assert "compatibility_fallback" in js
-    assert "/api/whiteboard/message" in js
-    assert "/api/team_task" in js
-    assert "/api/message" in js
-    assert "团队还没有工作" in js
-    assert "return (scoped.length ? scoped : replies)" not in js
-    assert "max_work_items_per_cycle: 1" in js
-    assert "latestOwnerMessage" in js
-    assert "latestWorkItemId" in js
-    assert "{work_item_id: latestWorkItemId}" in js
-    assert "setOfficeMode" in js
-    assert "labsOfficeMode" in js
-    assert "data-office-mode-button" in js
+    assert "/api/aiden_chat" in js
+    assert "aiden-chat-form" in js
+    assert "sendMessage" in js
+    assert "loadHistory" in js
+    assert "/api/whiteboard/message" not in js
+    assert "/api/team_task" not in js
+    assert "/api/message" not in js
+    assert "sendTeamInstruction" not in js
+    assert "quickTemplates" not in js
+    assert "compatibility_fallback" not in js
+    assert "setOfficeMode" not in js
 
 
-def test_two_mode_ui_css_hides_inactive_mode():
+def test_aiden_only_css_has_chat_layout():
     css = (OUT / "static/office.css").read_text(encoding="utf-8")
-    assert "mode-switch" in css
-    assert 'body[data-office-mode="meeting"] .execution-mode' in css
-    assert 'body[data-office-mode="execution"] .meeting-mode' in css
-    assert ".mode-button.active" in css
+    assert "chat-shell" in css
+    assert "chat-card" in css
+    assert ".message.aiden" in css
+    assert ".message.owner" in css
+    assert "chat-form" in css
+    assert "mode-switch" not in css
+    assert "work-board" not in css
 
 
 def test_runtime_packet_dirs_exist():
@@ -160,6 +157,19 @@ def test_post_team_task_packet_creation_is_local_only(tmp_path):
     assert packet["external_side_effects"] is False
     assert packet["core_writeback"] is False
     assert (tmp_path / "runtime_packets/team_tasks").exists()
+
+
+def test_aiden_chat_turn_creation_is_local_only(tmp_path):
+    result = create_aiden_chat_turn(
+        {"message": "Aiden，我们现在到底做什么东西才能最快拿到第一笔钱？"},
+        out_dir=tmp_path,
+    )
+    assert result["ok"] is True
+    assert result["reply"]["speaker"] == "aiden_ceo"
+    assert "Founder AI Workflow Audit" in result["reply"]["text"]
+    assert result["external_side_effects"] is False
+    assert result["core_writeback"] is False
+    assert (tmp_path / "runtime_packets/aiden_chat/aiden_chat_thread.json").exists()
 
 
 def test_server_refuses_non_local_bind():

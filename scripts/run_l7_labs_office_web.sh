@@ -21,7 +21,7 @@ fi
 BUILDER="${REPO_ROOT}/scripts/l7_labs_office_web/office_web_builder.py"
 SERVER="${REPO_ROOT}/scripts/l7_labs_office_web/office_web_server.py"
 STATE="${REPO_ROOT}/l7_real_labs_office_web_ui/office_runtime_state.json"
-PORT="${LABS_OFFICE_PORT:-8765}"
+PORT="${LABS_OFFICE_PORT:-8771}"
 URL="http://127.0.0.1:${PORT}"
 
 build_office() {
@@ -233,8 +233,8 @@ from pathlib import Path
 
 html = Path("l7_real_labs_office_web_ui/templates/index.html").read_text(encoding="utf-8")
 state = json.loads(Path("l7_real_labs_office_web_ui/office_runtime_state.json").read_text(encoding="utf-8"))
-if "whiteboard-message-form" not in html or "work-board" not in html:
-    raise SystemExit("HTML missing forms")
+if "aiden-chat-form" not in html or "发送给 Aiden" not in html:
+    raise SystemExit("HTML missing Aiden chat form")
 if state.get("agent_count", 0) < 12:
     raise SystemExit("runtime state missing recovered agents")
 print("smoke_ok: offline fallback because requested localhost port is unavailable to this process")
@@ -252,7 +252,7 @@ from pathlib import Path
 from urllib.error import URLError
 import urllib.request
 
-PORT = os.environ.get("LABS_OFFICE_PORT", "8765")
+PORT = os.environ.get("LABS_OFFICE_PORT", "8771")
 
 def get(path):
     with urllib.request.urlopen(f"http://127.0.0.1:{PORT}{path}", timeout=3) as response:
@@ -260,13 +260,16 @@ def get(path):
 
 try:
     html = get("/")
-    if "whiteboard-message-form" not in html or "work-board" not in html:
-        raise SystemExit("HTML missing forms")
+    if "aiden-chat-form" not in html or "发送给 Aiden" not in html:
+        raise SystemExit("HTML missing Aiden chat form")
+    chat = json.loads(get("/api/aiden_chat"))
+    if chat.get("ok") is not True:
+        raise SystemExit("Aiden chat history endpoint failed")
     roster = json.loads(get("/api/roster"))
     if roster.get("agent_count", 0) < 12:
         raise SystemExit("roster missing recovered agents")
     status = json.loads(get("/api/status"))
-    if status.get("local_url") != "http://127.0.0.1:8765":
+    if status.get("local_url") != f"http://127.0.0.1:{PORT}":
         raise SystemExit("status URL mismatch")
     scheduler = json.loads(get("/api/scheduler/status"))
     if not scheduler.get("scheduler_ready"):
@@ -282,14 +285,14 @@ try:
     l10 = json.loads(get("/api/l10/cockpit"))
     if "fixture_demo_available" not in l10:
         raise SystemExit("L10 cockpit missing fixture demo status")
-    print("smoke_ok: GET /, /api/roster, /api/status, /api/scheduler/status, /api/l8/cockpit, /api/l9/meta/cockpit, /api/l10/cockpit")
+    print("smoke_ok: GET /, /api/aiden_chat, /api/roster, /api/status, /api/scheduler/status, /api/l8/cockpit, /api/l9/meta/cockpit, /api/l10/cockpit")
 except URLError as exc:
     if "Operation not permitted" not in str(exc):
         raise
     html = Path("l7_real_labs_office_web_ui/templates/index.html").read_text(encoding="utf-8")
     state = json.loads(Path("l7_real_labs_office_web_ui/office_runtime_state.json").read_text(encoding="utf-8"))
-    if "whiteboard-message-form" not in html or "work-board" not in html:
-        raise SystemExit("HTML missing forms")
+    if "aiden-chat-form" not in html or "发送给 Aiden" not in html:
+        raise SystemExit("HTML missing Aiden chat form")
     if state.get("agent_count", 0) < 12:
         raise SystemExit("runtime state missing recovered agents")
     summary = json.loads(Path("l7_labs_team_self_work_scheduler/l7_6_summary.json").read_text(encoding="utf-8"))
@@ -298,18 +301,12 @@ except URLError as exc:
     l8_summary = json.loads(Path("l8_first_cash_path_operating_loop/l8_summary.json").read_text(encoding="utf-8"))
     if not l8_summary.get("first_cash_path_initialized"):
         raise SystemExit("L8 summary missing")
-    if "L8 First Cash Path Cockpit" not in html:
-        raise SystemExit("HTML missing L8 cockpit")
     l9_summary = json.loads(Path("l9_meta_development_opportunity_runtime/l9_summary.json").read_text(encoding="utf-8"))
     if l9_summary.get("opportunity_count", 0) < 8:
         raise SystemExit("L9 summary missing opportunity portfolio")
-    if "L9 Meta-Development Cockpit" not in html:
-        raise SystemExit("HTML missing L9 cockpit")
     l10_summary = json.loads(Path("l10_delegated_live_meta_development_runtime/l10_summary.json").read_text(encoding="utf-8"))
     if l10_summary.get("permission_tier_count", 0) < 5:
         raise SystemExit("L10 summary missing permission tiers")
-    if "L10 Delegated Mission Cockpit" not in html:
-        raise SystemExit("HTML missing L10 cockpit")
     print("smoke_ok: offline fallback because sandbox blocked localhost socket")
 PY
 }
