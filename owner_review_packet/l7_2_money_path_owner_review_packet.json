@@ -1,0 +1,36 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.2",
+  "milestone_name": "Meta-Development Money Path Intelligence Engine with Shortest Cash Realization Path",
+  "run_id": "l7_2_money_path_engine_run_001",
+  "packet_type": "owner_review_packet",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "top_3_money_paths": [
+    {
+      "path_id": "path_001",
+      "path_name": "Founder AI workflow audit and CEO command brief sprint",
+      "cash_path_score": 4.5
+    },
+    {
+      "path_id": "path_002",
+      "path_name": "Owner cockpit setup for AI-agent companies",
+      "cash_path_score": 4.2
+    },
+    {
+      "path_id": "path_003",
+      "path_name": "Coding-agent governance audit",
+      "cash_path_score": 4.2
+    }
+  ],
+  "primary_shortest_cash_path": "path_001",
+  "primary_long_term_strategic_path": "path_008",
+  "bridge_path_between_cash_and_strategy": "path_001",
+  "next_tool_to_build": "approval-ready outreach draft generator plus service delivery workflow generator",
+  "next_one_command_action": "bash scripts/run_l7_2_money_path_engine.sh --mode build"
+}

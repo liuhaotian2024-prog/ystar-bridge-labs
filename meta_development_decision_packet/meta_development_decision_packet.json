@@ -1,0 +1,50 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.2",
+  "milestone_name": "Meta-Development Money Path Intelligence Engine with Shortest Cash Realization Path",
+  "run_id": "l7_2_money_path_engine_run_001",
+  "packet_type": "meta_development_decision_packet",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "best_current_money_path": "path_001",
+  "shortest_cash_realization_path": "path_001",
+  "best_long_term_strategic_path": "path_008",
+  "bridge_between_short_term_cash_and_long_term_strategy": "path_001",
+  "second_best_path": "path_002",
+  "paths_to_explore_not_pursue_yet": [
+    "path_006",
+    "path_010",
+    "path_012"
+  ],
+  "paths_to_avoid_now": [
+    "autonomous outreach product",
+    "multi-tenant platform before paid validation",
+    "enterprise compliance sale before trust proof"
+  ],
+  "internal_advantage_driving_recommendation": "current system can already produce governed observation, evidence packets, command briefs, and approval gates.",
+  "external_evidence_support": [
+    "l7_revenue_opportunity_radar_l7_1/real_read_only_revenue_scan_report.json"
+  ],
+  "weak_or_uncertain": "Direct buyer willingness-to-pay is unvalidated.",
+  "tool_to_build_next": "approval-ready outreach draft generator plus service delivery workflow generator",
+  "experiment_to_run_next": "first paid validation simulation plus approval-ready outreach draft",
+  "requires_human_approval": [
+    "any outreach",
+    "publication",
+    "payment",
+    "actual writeback"
+  ],
+  "remains_forbidden": [
+    "unapproved outreach",
+    "form submission",
+    "payment",
+    "publication",
+    "actual core writeback"
+  ],
+  "how_this_improves_agent_company": "Backpropagates cash-path tool gaps into the agent team roadmap."
+}

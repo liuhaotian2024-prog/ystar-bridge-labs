@@ -1,0 +1,74 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.2",
+  "milestone_name": "Meta-Development Money Path Intelligence Engine with Shortest Cash Realization Path",
+  "run_id": "l7_2_money_path_engine_run_001",
+  "packet_type": "l7_2_summary",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "real_external_observation_used": false,
+  "external_opportunity_categories_analyzed": 16,
+  "internal_assets_mapped": 22,
+  "candidate_money_paths_generated": 14,
+  "top_3_money_paths": [
+    {
+      "path_id": "path_001",
+      "path_name": "Founder AI workflow audit and CEO command brief sprint",
+      "cash_path_score": 4.5
+    },
+    {
+      "path_id": "path_002",
+      "path_name": "Owner cockpit setup for AI-agent companies",
+      "cash_path_score": 4.2
+    },
+    {
+      "path_id": "path_003",
+      "path_name": "Coding-agent governance audit",
+      "cash_path_score": 4.2
+    }
+  ],
+  "primary_shortest_cash_path": "path_001",
+  "primary_shortest_cash_path_name": "Founder AI workflow audit and CEO command brief sprint",
+  "primary_long_term_strategic_path": "path_008",
+  "primary_long_term_strategic_path_name": "Open-source plus paid support for agent governance templates",
+  "bridge_path_between_cash_and_strategy": "path_001",
+  "first_cash_step": "sell a scoped internal-only service deliverable before building a full product",
+  "first_possible_buyer": "AI startup founder with urgent strategy/research decision",
+  "first_possible_paid_offer": "Done-for-you governed observation + internal CEO command brief",
+  "estimated_time_to_paid_signal": "7-14 days for strong-intent signal, 14-30 days for first paid pilot if approved outreach occurs",
+  "minimum_tool_needed_for_cash_path": "approval-ready outreach draft and service delivery workflow generator",
+  "next_codex_build_for_cash_path": "approval-ready outreach draft generator plus service delivery workflow generator",
+  "next_agent_observation_for_cash_path": "read-only buyer pain scan and approved customer discovery script",
+  "paths_deferred": [
+    "path_006",
+    "path_010",
+    "path_012"
+  ],
+  "paths_avoided": [
+    "autonomous outreach product",
+    "multi-tenant platform before paid validation",
+    "enterprise compliance sale before trust proof"
+  ],
+  "counterfactuals_generated": 5,
+  "tool_gaps_identified": 13,
+  "next_tool_to_build": "approval-ready outreach draft generator plus service delivery workflow generator",
+  "next_recommended_sprint": "L7.3 Approval-Ready Offer Validation and Service Delivery Workflow",
+  "next_one_command_action": "bash scripts/run_l7_2_money_path_engine.sh --mode build",
+  "ask_user_url_occurred": false,
+  "external_side_effects_occurred": false,
+  "customer_contacted": false,
+  "email_sent": false,
+  "form_submitted": false,
+  "payment_occurred": false,
+  "publication_occurred": false,
+  "core_writeback_occurred": false,
+  "secret_printed_stored_in_repo": false,
+  "y_star_gov_modified": false,
+  "gov_mcp_modified": false,
+  "db_log_wal_shm_active_agent_marker_content_read": false
+}

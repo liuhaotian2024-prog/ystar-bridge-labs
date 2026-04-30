@@ -1,0 +1,240 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.2",
+  "milestone_name": "Meta-Development Money Path Intelligence Engine with Shortest Cash Realization Path",
+  "run_id": "l7_2_money_path_engine_run_001",
+  "packet_type": "cash_path_scorecard",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "scorecard": [
+    {
+      "path_id": "path_001",
+      "path_name": "Founder AI workflow audit and CEO command brief sprint",
+      "cash_path_score": 4.5,
+      "score_inputs": {
+        "speed_to_first_cash": 5,
+        "existing_capability_fit": 5,
+        "low_trust_barrier": 4,
+        "clear_buyer": 4,
+        "clear_pain": 5,
+        "minimal_new_tooling": 5,
+        "low_owner_burden": 4,
+        "repeatability_after_first_sale": 3,
+        "strategic_compounding_value": 4
+      }
+    },
+    {
+      "path_id": "path_002",
+      "path_name": "Owner cockpit setup for AI-agent companies",
+      "cash_path_score": 4.2,
+      "score_inputs": {
+        "speed_to_first_cash": 4,
+        "existing_capability_fit": 5,
+        "low_trust_barrier": 4,
+        "clear_buyer": 4,
+        "clear_pain": 4,
+        "minimal_new_tooling": 4,
+        "low_owner_burden": 4,
+        "repeatability_after_first_sale": 4,
+        "strategic_compounding_value": 5
+      }
+    },
+    {
+      "path_id": "path_003",
+      "path_name": "Coding-agent governance audit",
+      "cash_path_score": 4.2,
+      "score_inputs": {
+        "speed_to_first_cash": 4,
+        "existing_capability_fit": 5,
+        "low_trust_barrier": 4,
+        "clear_buyer": 4,
+        "clear_pain": 5,
+        "minimal_new_tooling": 4,
+        "low_owner_burden": 3,
+        "repeatability_after_first_sale": 4,
+        "strategic_compounding_value": 5
+      }
+    },
+    {
+      "path_id": "path_004",
+      "path_name": "Governed AI workflow setup consulting",
+      "cash_path_score": 3.45,
+      "score_inputs": {
+        "speed_to_first_cash": 3,
+        "existing_capability_fit": 4,
+        "low_trust_barrier": 3,
+        "clear_buyer": 4,
+        "clear_pain": 4,
+        "minimal_new_tooling": 3,
+        "low_owner_burden": 3,
+        "repeatability_after_first_sale": 4,
+        "strategic_compounding_value": 4
+      }
+    },
+    {
+      "path_id": "path_005",
+      "path_name": "Compliance evidence packet delivery",
+      "cash_path_score": 3.65,
+      "score_inputs": {
+        "speed_to_first_cash": 4,
+        "existing_capability_fit": 4,
+        "low_trust_barrier": 3,
+        "clear_buyer": 3,
+        "clear_pain": 4,
+        "minimal_new_tooling": 4,
+        "low_owner_burden": 3,
+        "repeatability_after_first_sale": 4,
+        "strategic_compounding_value": 4
+      }
+    },
+    {
+      "path_id": "path_006",
+      "path_name": "Grant/RFP watch and proposal support",
+      "cash_path_score": 3.1,
+      "score_inputs": {
+        "speed_to_first_cash": 2,
+        "existing_capability_fit": 4,
+        "low_trust_barrier": 3,
+        "clear_buyer": 3,
+        "clear_pain": 4,
+        "minimal_new_tooling": 3,
+        "low_owner_burden": 3,
+        "repeatability_after_first_sale": 3,
+        "strategic_compounding_value": 4
+      }
+    },
+    {
+      "path_id": "path_007",
+      "path_name": "Cross-border AI/business bridge",
+      "cash_path_score": 3.75,
+      "score_inputs": {
+        "speed_to_first_cash": 4,
+        "existing_capability_fit": 4,
+        "low_trust_barrier": 4,
+        "clear_buyer": 3,
+        "clear_pain": 4,
+        "minimal_new_tooling": 4,
+        "low_owner_burden": 3,
+        "repeatability_after_first_sale": 3,
+        "strategic_compounding_value": 4
+      }
+    },
+    {
+      "path_id": "path_008",
+      "path_name": "Open-source plus paid support for agent governance templates",
+      "cash_path_score": 3.7,
+      "score_inputs": {
+        "speed_to_first_cash": 3,
+        "existing_capability_fit": 5,
+        "low_trust_barrier": 3,
+        "clear_buyer": 3,
+        "clear_pain": 4,
+        "minimal_new_tooling": 4,
+        "low_owner_burden": 3,
+        "repeatability_after_first_sale": 5,
+        "strategic_compounding_value": 5
+      }
+    },
+    {
+      "path_id": "path_009",
+      "path_name": "Agent-team orchestration template kit",
+      "cash_path_score": 3.65,
+      "score_inputs": {
+        "speed_to_first_cash": 3,
+        "existing_capability_fit": 5,
+        "low_trust_barrier": 3,
+        "clear_buyer": 3,
+        "clear_pain": 4,
+        "minimal_new_tooling": 3,
+        "low_owner_burden": 4,
+        "repeatability_after_first_sale": 4,
+        "strategic_compounding_value": 5
+      }
+    },
+    {
+      "path_id": "path_010",
+      "path_name": "Regulated workflow audit trail consulting",
+      "cash_path_score": 2.75,
+      "score_inputs": {
+        "speed_to_first_cash": 1,
+        "existing_capability_fit": 4,
+        "low_trust_barrier": 2,
+        "clear_buyer": 3,
+        "clear_pain": 5,
+        "minimal_new_tooling": 2,
+        "low_owner_burden": 2,
+        "repeatability_after_first_sale": 4,
+        "strategic_compounding_value": 5
+      }
+    },
+    {
+      "path_id": "path_011",
+      "path_name": "Approval gate implementation for AI teams",
+      "cash_path_score": 3.45,
+      "score_inputs": {
+        "speed_to_first_cash": 3,
+        "existing_capability_fit": 4,
+        "low_trust_barrier": 3,
+        "clear_buyer": 4,
+        "clear_pain": 4,
+        "minimal_new_tooling": 3,
+        "low_owner_burden": 3,
+        "repeatability_after_first_sale": 4,
+        "strategic_compounding_value": 4
+      }
+    },
+    {
+      "path_id": "path_012",
+      "path_name": "AI company runtime platform",
+      "cash_path_score": 2.6,
+      "score_inputs": {
+        "speed_to_first_cash": 1,
+        "existing_capability_fit": 4,
+        "low_trust_barrier": 2,
+        "clear_buyer": 3,
+        "clear_pain": 4,
+        "minimal_new_tooling": 1,
+        "low_owner_burden": 2,
+        "repeatability_after_first_sale": 5,
+        "strategic_compounding_value": 5
+      }
+    },
+    {
+      "path_id": "path_013",
+      "path_name": "Trust/proof package generator for AI services",
+      "cash_path_score": 3.75,
+      "score_inputs": {
+        "speed_to_first_cash": 4,
+        "existing_capability_fit": 4,
+        "low_trust_barrier": 3,
+        "clear_buyer": 4,
+        "clear_pain": 4,
+        "minimal_new_tooling": 4,
+        "low_owner_burden": 3,
+        "repeatability_after_first_sale": 4,
+        "strategic_compounding_value": 4
+      }
+    },
+    {
+      "path_id": "path_014",
+      "path_name": "Lightweight customer discovery tracker for AI agents",
+      "cash_path_score": 3.35,
+      "score_inputs": {
+        "speed_to_first_cash": 3,
+        "existing_capability_fit": 3,
+        "low_trust_barrier": 3,
+        "clear_buyer": 4,
+        "clear_pain": 4,
+        "minimal_new_tooling": 2,
+        "low_owner_burden": 4,
+        "repeatability_after_first_sale": 4,
+        "strategic_compounding_value": 5
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.2",
+  "milestone_name": "Meta-Development Money Path Intelligence Engine with Shortest Cash Realization Path",
+  "run_id": "l7_2_money_path_engine_run_001",
+  "packet_type": "shortest_cash_path_model",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "definition": "Fewest new tools, lowest external dependency, lowest owner burden, lowest trust barrier, shortest delivery cycle, and fewest approval steps toward first paid/strong-intent signal.",
+  "weights": {
+    "speed_to_first_cash": 0.2,
+    "existing_capability_fit": 0.15,
+    "low_trust_barrier": 0.15,
+    "clear_buyer": 0.1,
+    "clear_pain": 0.1,
+    "minimal_new_tooling": 0.1,
+    "low_owner_burden": 0.1,
+    "repeatability_after_first_sale": 0.05,
+    "strategic_compounding_value": 0.05
+  },
+  "distinctions": {
+    "fastest_to_cash": "path_001",
+    "fastest_to_paid_validation": "path_001",
+    "fastest_to_customer_commitment": "path_003",
+    "fastest_to_grant_or_funding_submission_ready": "path_006",
+    "fastest_to_service_delivery": "path_001",
+    "fastest_to_repeatable_offer": "path_002"
+  }
+}

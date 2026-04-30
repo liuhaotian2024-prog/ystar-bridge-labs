@@ -1,0 +1,916 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.2",
+  "milestone_name": "Meta-Development Money Path Intelligence Engine with Shortest Cash Realization Path",
+  "run_id": "l7_2_money_path_engine_run_001",
+  "packet_type": "commercial_path_portfolio",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "candidate_paths": [
+    {
+      "path_id": "path_001",
+      "path_name": "Founder AI workflow audit and CEO command brief sprint",
+      "customer_segment": "AI startup founders",
+      "problem_solved": "Need fast evidence-backed decision help without risky external action.",
+      "proposed_offer_or_product": "Done-for-you governed observation + internal CEO command brief",
+      "internal_assets_used": [
+        "asset_real_web_observation",
+        "asset_evidence_pipeline",
+        "asset_ceo_command_brief"
+      ],
+      "external_opportunity_basis": "opp_fast_paid_validation",
+      "first_revenue_mechanism": "scoped paid internal research sprint",
+      "time_to_first_revenue": "7-14 days",
+      "trust_barrier": 4,
+      "delivery_complexity": 2,
+      "scalability": 3,
+      "evidence_strength": 4,
+      "missing_capabilities": [
+        "approval-ready outreach draft generator"
+      ],
+      "required_external_actions": [
+        "approved outreach or warm intro"
+      ],
+      "approval_required": true,
+      "why_this_path_might_win": "Uses current system almost immediately.",
+      "why_this_path_might_fail": "Buyer trust must be earned without case studies.",
+      "cash_realization_path_length": 5,
+      "shortest_cash_step": "sell a scoped internal-only service deliverable before building a full product",
+      "minimum_new_capabilities_required": [
+        "approval-ready outreach draft generator"
+      ],
+      "human_effort_required": "low_to_medium",
+      "trust_barrier_to_first_payment": 4,
+      "delivery_time_to_first_paid_result": "7-14 days",
+      "approval_steps_before_cash": 1,
+      "external_action_steps_before_cash": 1,
+      "first_cash_signal": "paid pilot, paid validation, signed intent, or paid internal strategy sprint",
+      "first_possible_paid_offer": "Done-for-you governed observation + internal CEO command brief",
+      "first_possible_buyer": "AI startup founder with urgent strategy/research decision",
+      "first_possible_price_range": "$500-$1500",
+      "fastest_validation_method": "owner-reviewed offer one-pager plus approved customer discovery or warm intro",
+      "can_generate_cash_before_full_product": true,
+      "can_start_as_service": true,
+      "can_start_with_existing_tools": true,
+      "cash_path_blockers": [
+        "approval-ready outreach draft generator"
+      ],
+      "cash_path_score": 4.5,
+      "score_inputs": {
+        "speed_to_first_cash": 5,
+        "existing_capability_fit": 5,
+        "low_trust_barrier": 4,
+        "clear_buyer": 4,
+        "clear_pain": 5,
+        "minimal_new_tooling": 5,
+        "low_owner_burden": 4,
+        "repeatability_after_first_sale": 3,
+        "strategic_compounding_value": 4
+      }
+    },
+    {
+      "path_id": "path_002",
+      "path_name": "Owner cockpit setup for AI-agent companies",
+      "customer_segment": "solo founders and owner-operators",
+      "problem_solved": "Need one place to see agents, blocks, approvals, and money path.",
+      "proposed_offer_or_product": "Private owner cockpit setup and weekly command brief",
+      "internal_assets_used": [
+        "asset_owner_cockpit",
+        "asset_parallel_orchestrator",
+        "asset_approval_workflow"
+      ],
+      "external_opportunity_basis": "opp_company_runtime_setup",
+      "first_revenue_mechanism": "setup service",
+      "time_to_first_revenue": "14-30 days",
+      "trust_barrier": 4,
+      "delivery_complexity": 3,
+      "scalability": 4,
+      "evidence_strength": 4,
+      "missing_capabilities": [
+        "cockpit template pack",
+        "onboarding checklist"
+      ],
+      "required_external_actions": [
+        "approved outreach"
+      ],
+      "approval_required": true,
+      "why_this_path_might_win": "Clear pain for busy owners.",
+      "why_this_path_might_fail": "May look like custom ops consulting until productized.",
+      "cash_realization_path_length": 4,
+      "shortest_cash_step": "sell a scoped internal-only service deliverable before building a full product",
+      "minimum_new_capabilities_required": [
+        "cockpit template pack",
+        "onboarding checklist"
+      ],
+      "human_effort_required": "low_to_medium",
+      "trust_barrier_to_first_payment": 4,
+      "delivery_time_to_first_paid_result": "14-30 days",
+      "approval_steps_before_cash": 1,
+      "external_action_steps_before_cash": 1,
+      "first_cash_signal": "paid pilot, paid validation, signed intent, or paid internal strategy sprint",
+      "first_possible_paid_offer": "Private owner cockpit setup and weekly command brief",
+      "first_possible_buyer": "owner-operator already using Codex/Claude/OpenClaw",
+      "first_possible_price_range": "$750-$2500",
+      "fastest_validation_method": "owner-reviewed offer one-pager plus approved customer discovery or warm intro",
+      "can_generate_cash_before_full_product": true,
+      "can_start_as_service": true,
+      "can_start_with_existing_tools": true,
+      "cash_path_blockers": [
+        "cockpit template pack",
+        "onboarding checklist"
+      ],
+      "cash_path_score": 4.2,
+      "score_inputs": {
+        "speed_to_first_cash": 4,
+        "existing_capability_fit": 5,
+        "low_trust_barrier": 4,
+        "clear_buyer": 4,
+        "clear_pain": 4,
+        "minimal_new_tooling": 4,
+        "low_owner_burden": 4,
+        "repeatability_after_first_sale": 4,
+        "strategic_compounding_value": 5
+      }
+    },
+    {
+      "path_id": "path_003",
+      "path_name": "Coding-agent governance audit",
+      "customer_segment": "engineering teams using coding agents",
+      "problem_solved": "Need proof that agents will not leak secrets or perform unsafe actions.",
+      "proposed_offer_or_product": "Policy/test audit with contextual secret scanner and staged action policy report",
+      "internal_assets_used": [
+        "asset_secret_context_policy",
+        "asset_policy_registry",
+        "asset_tests_validation"
+      ],
+      "external_opportunity_basis": "opp_coding_agent_governance",
+      "first_revenue_mechanism": "paid audit report",
+      "time_to_first_revenue": "14-30 days",
+      "trust_barrier": 3,
+      "delivery_complexity": 3,
+      "scalability": 4,
+      "evidence_strength": 4,
+      "missing_capabilities": [
+        "audit intake checklist",
+        "sample report template"
+      ],
+      "required_external_actions": [
+        "approved outreach"
+      ],
+      "approval_required": true,
+      "why_this_path_might_win": "Concrete technical pain and differentiated artifacts.",
+      "why_this_path_might_fail": "Needs credibility and examples.",
+      "cash_realization_path_length": 4,
+      "shortest_cash_step": "sell a scoped internal-only service deliverable before building a full product",
+      "minimum_new_capabilities_required": [
+        "audit intake checklist",
+        "sample report template"
+      ],
+      "human_effort_required": "low_to_medium",
+      "trust_barrier_to_first_payment": 3,
+      "delivery_time_to_first_paid_result": "14-30 days",
+      "approval_steps_before_cash": 1,
+      "external_action_steps_before_cash": 1,
+      "first_cash_signal": "paid pilot, paid validation, signed intent, or paid internal strategy sprint",
+      "first_possible_paid_offer": "Policy/test audit with contextual secret scanner and staged action policy report",
+      "first_possible_buyer": "CTO or engineering manager using AI coding agents",
+      "first_possible_price_range": "$1000-$3000",
+      "fastest_validation_method": "owner-reviewed offer one-pager plus approved customer discovery or warm intro",
+      "can_generate_cash_before_full_product": true,
+      "can_start_as_service": true,
+      "can_start_with_existing_tools": true,
+      "cash_path_blockers": [
+        "audit intake checklist",
+        "sample report template"
+      ],
+      "cash_path_score": 4.2,
+      "score_inputs": {
+        "speed_to_first_cash": 4,
+        "existing_capability_fit": 5,
+        "low_trust_barrier": 4,
+        "clear_buyer": 4,
+        "clear_pain": 5,
+        "minimal_new_tooling": 4,
+        "low_owner_burden": 3,
+        "repeatability_after_first_sale": 4,
+        "strategic_compounding_value": 5
+      }
+    },
+    {
+      "path_id": "path_004",
+      "path_name": "Governed AI workflow setup consulting",
+      "customer_segment": "SMB/founder teams",
+      "problem_solved": "Need safe AI workflows and approval gates.",
+      "proposed_offer_or_product": "Done-for-you setup of staged policies, approval gates, and no-action receipts",
+      "internal_assets_used": [
+        "asset_policy_registry",
+        "asset_approval_workflow",
+        "asset_owner_cockpit"
+      ],
+      "external_opportunity_basis": "opp_governed_workflow_consulting",
+      "first_revenue_mechanism": "implementation sprint",
+      "time_to_first_revenue": "21-45 days",
+      "trust_barrier": 3,
+      "delivery_complexity": 4,
+      "scalability": 4,
+      "evidence_strength": 3,
+      "missing_capabilities": [
+        "service delivery checklist",
+        "approval workflow UI"
+      ],
+      "required_external_actions": [
+        "approved sales call"
+      ],
+      "approval_required": true,
+      "why_this_path_might_win": "Service-before-product can start quickly.",
+      "why_this_path_might_fail": "Delivery may become bespoke.",
+      "cash_realization_path_length": 3,
+      "shortest_cash_step": "sell a scoped internal-only service deliverable before building a full product",
+      "minimum_new_capabilities_required": [
+        "service delivery checklist",
+        "approval workflow UI"
+      ],
+      "human_effort_required": "low_to_medium",
+      "trust_barrier_to_first_payment": 3,
+      "delivery_time_to_first_paid_result": "21-45 days",
+      "approval_steps_before_cash": 1,
+      "external_action_steps_before_cash": 1,
+      "first_cash_signal": "paid pilot, paid validation, signed intent, or paid internal strategy sprint",
+      "first_possible_paid_offer": "Done-for-you setup of staged policies, approval gates, and no-action receipts",
+      "first_possible_buyer": "founder running AI workflows internally",
+      "first_possible_price_range": "$1500-$5000",
+      "fastest_validation_method": "owner-reviewed offer one-pager plus approved customer discovery or warm intro",
+      "can_generate_cash_before_full_product": true,
+      "can_start_as_service": true,
+      "can_start_with_existing_tools": true,
+      "cash_path_blockers": [
+        "service delivery checklist",
+        "approval workflow UI"
+      ],
+      "cash_path_score": 3.45,
+      "score_inputs": {
+        "speed_to_first_cash": 3,
+        "existing_capability_fit": 4,
+        "low_trust_barrier": 3,
+        "clear_buyer": 4,
+        "clear_pain": 4,
+        "minimal_new_tooling": 3,
+        "low_owner_burden": 3,
+        "repeatability_after_first_sale": 4,
+        "strategic_compounding_value": 4
+      }
+    },
+    {
+      "path_id": "path_005",
+      "path_name": "Compliance evidence packet delivery",
+      "customer_segment": "AI governance consultants and internal audit teams",
+      "problem_solved": "Need structured proof packets and claim boundaries.",
+      "proposed_offer_or_product": "Evidence packet generation and review pack service",
+      "internal_assets_used": [
+        "asset_evidence_pipeline",
+        "asset_conflict_matrix",
+        "asset_human_review_packet"
+      ],
+      "external_opportunity_basis": "opp_evidence_packet_generation",
+      "first_revenue_mechanism": "paid evidence pack",
+      "time_to_first_revenue": "14-30 days",
+      "trust_barrier": 3,
+      "delivery_complexity": 3,
+      "scalability": 4,
+      "evidence_strength": 4,
+      "missing_capabilities": [
+        "buyer-specific template",
+        "source quality upgrade"
+      ],
+      "required_external_actions": [
+        "approved outreach"
+      ],
+      "approval_required": true,
+      "why_this_path_might_win": "Clear artifact and repeatable process.",
+      "why_this_path_might_fail": "Market education required.",
+      "cash_realization_path_length": 4,
+      "shortest_cash_step": "sell a scoped internal-only service deliverable before building a full product",
+      "minimum_new_capabilities_required": [
+        "buyer-specific template",
+        "source quality upgrade"
+      ],
+      "human_effort_required": "low_to_medium",
+      "trust_barrier_to_first_payment": 3,
+      "delivery_time_to_first_paid_result": "14-30 days",
+      "approval_steps_before_cash": 1,
+      "external_action_steps_before_cash": 1,
+      "first_cash_signal": "paid pilot, paid validation, signed intent, or paid internal strategy sprint",
+      "first_possible_paid_offer": "Evidence packet generation and review pack service",
+      "first_possible_buyer": "AI governance consultant needing repeatable evidence packs",
+      "first_possible_price_range": "$750-$2500",
+      "fastest_validation_method": "owner-reviewed offer one-pager plus approved customer discovery or warm intro",
+      "can_generate_cash_before_full_product": true,
+      "can_start_as_service": true,
+      "can_start_with_existing_tools": true,
+      "cash_path_blockers": [
+        "buyer-specific template",
+        "source quality upgrade"
+      ],
+      "cash_path_score": 3.65,
+      "score_inputs": {
+        "speed_to_first_cash": 4,
+        "existing_capability_fit": 4,
+        "low_trust_barrier": 3,
+        "clear_buyer": 3,
+        "clear_pain": 4,
+        "minimal_new_tooling": 4,
+        "low_owner_burden": 3,
+        "repeatability_after_first_sale": 4,
+        "strategic_compounding_value": 4
+      }
+    },
+    {
+      "path_id": "path_006",
+      "path_name": "Grant/RFP watch and proposal support",
+      "customer_segment": "AI governance builders",
+      "problem_solved": "Need funding/RFP discovery and draft support.",
+      "proposed_offer_or_product": "Read-only watch plus proposal outline generation",
+      "internal_assets_used": [
+        "asset_real_web_observation",
+        "asset_ceo_command_brief",
+        "asset_cross_language"
+      ],
+      "external_opportunity_basis": "opp_grant_rfp_support",
+      "first_revenue_mechanism": "proposal support fee",
+      "time_to_first_revenue": "30-90 days",
+      "trust_barrier": 2,
+      "delivery_complexity": 3,
+      "scalability": 3,
+      "evidence_strength": 3,
+      "missing_capabilities": [
+        "funding/RFP tracker",
+        "proposal generator"
+      ],
+      "required_external_actions": [
+        "form submission only after approval"
+      ],
+      "approval_required": true,
+      "why_this_path_might_win": "Non-dilutive funding has obvious value.",
+      "why_this_path_might_fail": "Cash cycle can be slow.",
+      "cash_realization_path_length": 2,
+      "shortest_cash_step": "sell a scoped internal-only service deliverable before building a full product",
+      "minimum_new_capabilities_required": [
+        "funding/RFP tracker",
+        "proposal generator"
+      ],
+      "human_effort_required": "low_to_medium",
+      "trust_barrier_to_first_payment": 2,
+      "delivery_time_to_first_paid_result": "30-90 days",
+      "approval_steps_before_cash": 1,
+      "external_action_steps_before_cash": 1,
+      "first_cash_signal": "paid pilot, paid validation, signed intent, or paid internal strategy sprint",
+      "first_possible_paid_offer": "Read-only watch plus proposal outline generation",
+      "first_possible_buyer": "AI governance startup seeking grants/RFPs",
+      "first_possible_price_range": "$500-$2000",
+      "fastest_validation_method": "owner-reviewed offer one-pager plus approved customer discovery or warm intro",
+      "can_generate_cash_before_full_product": true,
+      "can_start_as_service": true,
+      "can_start_with_existing_tools": true,
+      "cash_path_blockers": [
+        "funding/RFP tracker",
+        "proposal generator"
+      ],
+      "cash_path_score": 3.1,
+      "score_inputs": {
+        "speed_to_first_cash": 2,
+        "existing_capability_fit": 4,
+        "low_trust_barrier": 3,
+        "clear_buyer": 3,
+        "clear_pain": 4,
+        "minimal_new_tooling": 3,
+        "low_owner_burden": 3,
+        "repeatability_after_first_sale": 3,
+        "strategic_compounding_value": 4
+      }
+    },
+    {
+      "path_id": "path_007",
+      "path_name": "Cross-border AI/business bridge",
+      "customer_segment": "Chinese-English founders",
+      "problem_solved": "Need translation between AI tooling, US market norms, and execution workflow.",
+      "proposed_offer_or_product": "Bilingual governed market brief and AI workflow setup",
+      "internal_assets_used": [
+        "asset_cross_language",
+        "asset_owner_mu_speaker",
+        "asset_ceo_command_brief"
+      ],
+      "external_opportunity_basis": "opp_cross_border_bridge",
+      "first_revenue_mechanism": "paid bridge brief",
+      "time_to_first_revenue": "14-30 days",
+      "trust_barrier": 4,
+      "delivery_complexity": 3,
+      "scalability": 3,
+      "evidence_strength": 3,
+      "missing_capabilities": [
+        "bilingual brief template",
+        "customer discovery script"
+      ],
+      "required_external_actions": [
+        "approved outreach"
+      ],
+      "approval_required": true,
+      "why_this_path_might_win": "Owner has natural differentiation.",
+      "why_this_path_might_fail": "Needs careful positioning and trust.",
+      "cash_realization_path_length": 4,
+      "shortest_cash_step": "sell a scoped internal-only service deliverable before building a full product",
+      "minimum_new_capabilities_required": [
+        "bilingual brief template",
+        "customer discovery script"
+      ],
+      "human_effort_required": "low_to_medium",
+      "trust_barrier_to_first_payment": 4,
+      "delivery_time_to_first_paid_result": "14-30 days",
+      "approval_steps_before_cash": 1,
+      "external_action_steps_before_cash": 1,
+      "first_cash_signal": "paid pilot, paid validation, signed intent, or paid internal strategy sprint",
+      "first_possible_paid_offer": "Bilingual governed market brief and AI workflow setup",
+      "first_possible_buyer": "Chinese-speaking founder building AI product for US market",
+      "first_possible_price_range": "$500-$2000",
+      "fastest_validation_method": "owner-reviewed offer one-pager plus approved customer discovery or warm intro",
+      "can_generate_cash_before_full_product": true,
+      "can_start_as_service": true,
+      "can_start_with_existing_tools": true,
+      "cash_path_blockers": [
+        "bilingual brief template",
+        "customer discovery script"
+      ],
+      "cash_path_score": 3.75,
+      "score_inputs": {
+        "speed_to_first_cash": 4,
+        "existing_capability_fit": 4,
+        "low_trust_barrier": 4,
+        "clear_buyer": 3,
+        "clear_pain": 4,
+        "minimal_new_tooling": 4,
+        "low_owner_burden": 3,
+        "repeatability_after_first_sale": 3,
+        "strategic_compounding_value": 4
+      }
+    },
+    {
+      "path_id": "path_008",
+      "path_name": "Open-source plus paid support for agent governance templates",
+      "customer_segment": "AI-native developers",
+      "problem_solved": "Need reusable policies and lane runners.",
+      "proposed_offer_or_product": "Open templates with paid setup/support",
+      "internal_assets_used": [
+        "asset_policy_registry",
+        "asset_parallel_orchestrator",
+        "asset_tests_validation"
+      ],
+      "external_opportunity_basis": "opp_devtool_openclaw_codex",
+      "first_revenue_mechanism": "paid support or setup",
+      "time_to_first_revenue": "30-60 days",
+      "trust_barrier": 3,
+      "delivery_complexity": 3,
+      "scalability": 5,
+      "evidence_strength": 4,
+      "missing_capabilities": [
+        "public docs",
+        "support packaging"
+      ],
+      "required_external_actions": [
+        "publication approval"
+      ],
+      "approval_required": true,
+      "why_this_path_might_win": "Can compound through ecosystem.",
+      "why_this_path_might_fail": "Open-source attention may not convert quickly.",
+      "cash_realization_path_length": 3,
+      "shortest_cash_step": "sell a scoped internal-only service deliverable before building a full product",
+      "minimum_new_capabilities_required": [
+        "public docs",
+        "support packaging"
+      ],
+      "human_effort_required": "low_to_medium",
+      "trust_barrier_to_first_payment": 3,
+      "delivery_time_to_first_paid_result": "30-60 days",
+      "approval_steps_before_cash": 1,
+      "external_action_steps_before_cash": 1,
+      "first_cash_signal": "paid pilot, paid validation, signed intent, or paid internal strategy sprint",
+      "first_possible_paid_offer": "Open templates with paid setup/support",
+      "first_possible_buyer": "AI-native developer/founder wanting setup help",
+      "first_possible_price_range": "$300-$1500",
+      "fastest_validation_method": "owner-reviewed offer one-pager plus approved customer discovery or warm intro",
+      "can_generate_cash_before_full_product": true,
+      "can_start_as_service": true,
+      "can_start_with_existing_tools": true,
+      "cash_path_blockers": [
+        "public docs",
+        "support packaging"
+      ],
+      "cash_path_score": 3.7,
+      "score_inputs": {
+        "speed_to_first_cash": 3,
+        "existing_capability_fit": 5,
+        "low_trust_barrier": 3,
+        "clear_buyer": 3,
+        "clear_pain": 4,
+        "minimal_new_tooling": 4,
+        "low_owner_burden": 3,
+        "repeatability_after_first_sale": 5,
+        "strategic_compounding_value": 5
+      }
+    },
+    {
+      "path_id": "path_009",
+      "path_name": "Agent-team orchestration template kit",
+      "customer_segment": "small technical teams",
+      "problem_solved": "Need role/lane/task coordination for agents.",
+      "proposed_offer_or_product": "Template kit plus installation sprint",
+      "internal_assets_used": [
+        "asset_agent_team_runtime",
+        "asset_parallel_orchestrator",
+        "asset_owner_cockpit"
+      ],
+      "external_opportunity_basis": "opp_agent_team_orchestration",
+      "first_revenue_mechanism": "template kit setup",
+      "time_to_first_revenue": "21-45 days",
+      "trust_barrier": 3,
+      "delivery_complexity": 3,
+      "scalability": 4,
+      "evidence_strength": 3,
+      "missing_capabilities": [
+        "installer",
+        "docs"
+      ],
+      "required_external_actions": [
+        "approved outreach"
+      ],
+      "approval_required": true,
+      "why_this_path_might_win": "Current L7.0P is strong proof.",
+      "why_this_path_might_fail": "May be perceived as internal-only until packaged.",
+      "cash_realization_path_length": 3,
+      "shortest_cash_step": "sell a scoped internal-only service deliverable before building a full product",
+      "minimum_new_capabilities_required": [
+        "installer",
+        "docs"
+      ],
+      "human_effort_required": "low_to_medium",
+      "trust_barrier_to_first_payment": 3,
+      "delivery_time_to_first_paid_result": "21-45 days",
+      "approval_steps_before_cash": 1,
+      "external_action_steps_before_cash": 1,
+      "first_cash_signal": "paid pilot, paid validation, signed intent, or paid internal strategy sprint",
+      "first_possible_paid_offer": "Template kit plus installation sprint",
+      "first_possible_buyer": "small AI team needing multi-agent ops",
+      "first_possible_price_range": "$500-$2500",
+      "fastest_validation_method": "owner-reviewed offer one-pager plus approved customer discovery or warm intro",
+      "can_generate_cash_before_full_product": true,
+      "can_start_as_service": true,
+      "can_start_with_existing_tools": true,
+      "cash_path_blockers": [
+        "installer",
+        "docs"
+      ],
+      "cash_path_score": 3.65,
+      "score_inputs": {
+        "speed_to_first_cash": 3,
+        "existing_capability_fit": 5,
+        "low_trust_barrier": 3,
+        "clear_buyer": 3,
+        "clear_pain": 4,
+        "minimal_new_tooling": 3,
+        "low_owner_burden": 4,
+        "repeatability_after_first_sale": 4,
+        "strategic_compounding_value": 5
+      }
+    },
+    {
+      "path_id": "path_010",
+      "path_name": "Regulated workflow audit trail consulting",
+      "customer_segment": "regulated-market operators",
+      "problem_solved": "Need audit trail before AI automation.",
+      "proposed_offer_or_product": "Audit-trail design and evidence receipt setup",
+      "internal_assets_used": [
+        "asset_deterministic_governance",
+        "asset_evidence_pipeline",
+        "asset_policy_registry"
+      ],
+      "external_opportunity_basis": "opp_regulated_audit_trails",
+      "first_revenue_mechanism": "consulting sprint",
+      "time_to_first_revenue": "60-120 days",
+      "trust_barrier": 2,
+      "delivery_complexity": 5,
+      "scalability": 4,
+      "evidence_strength": 3,
+      "missing_capabilities": [
+        "domain policy",
+        "legal review partner"
+      ],
+      "required_external_actions": [
+        "approved sales process"
+      ],
+      "approval_required": true,
+      "why_this_path_might_win": "High value if trusted.",
+      "why_this_path_might_fail": "Long sales cycle and trust barrier.",
+      "cash_realization_path_length": 1,
+      "shortest_cash_step": "sell a scoped internal-only service deliverable before building a full product",
+      "minimum_new_capabilities_required": [
+        "domain policy",
+        "legal review partner"
+      ],
+      "human_effort_required": "low_to_medium",
+      "trust_barrier_to_first_payment": 2,
+      "delivery_time_to_first_paid_result": "60-120 days",
+      "approval_steps_before_cash": 1,
+      "external_action_steps_before_cash": 1,
+      "first_cash_signal": "paid pilot, paid validation, signed intent, or paid internal strategy sprint",
+      "first_possible_paid_offer": "Audit-trail design and evidence receipt setup",
+      "first_possible_buyer": "regulated operator piloting AI workflows",
+      "first_possible_price_range": "$5000-$15000",
+      "fastest_validation_method": "owner-reviewed offer one-pager plus approved customer discovery or warm intro",
+      "can_generate_cash_before_full_product": true,
+      "can_start_as_service": true,
+      "can_start_with_existing_tools": true,
+      "cash_path_blockers": [
+        "domain policy",
+        "legal review partner"
+      ],
+      "cash_path_score": 2.75,
+      "score_inputs": {
+        "speed_to_first_cash": 1,
+        "existing_capability_fit": 4,
+        "low_trust_barrier": 2,
+        "clear_buyer": 3,
+        "clear_pain": 5,
+        "minimal_new_tooling": 2,
+        "low_owner_burden": 2,
+        "repeatability_after_first_sale": 4,
+        "strategic_compounding_value": 5
+      }
+    },
+    {
+      "path_id": "path_011",
+      "path_name": "Approval gate implementation for AI teams",
+      "customer_segment": "teams worried about agent side effects",
+      "problem_solved": "Need draft/request/approve/execute state machine.",
+      "proposed_offer_or_product": "Approval workflow package and integration plan",
+      "internal_assets_used": [
+        "asset_approval_workflow",
+        "asset_policy_registry",
+        "asset_tests_validation"
+      ],
+      "external_opportunity_basis": "opp_startup_ai_governance",
+      "first_revenue_mechanism": "implementation sprint",
+      "time_to_first_revenue": "21-45 days",
+      "trust_barrier": 3,
+      "delivery_complexity": 3,
+      "scalability": 4,
+      "evidence_strength": 4,
+      "missing_capabilities": [
+        "approval UI",
+        "receipt generator"
+      ],
+      "required_external_actions": [
+        "approved outreach"
+      ],
+      "approval_required": true,
+      "why_this_path_might_win": "Narrow and sellable wedge.",
+      "why_this_path_might_fail": "Needs integration with buyer tools.",
+      "cash_realization_path_length": 3,
+      "shortest_cash_step": "sell a scoped internal-only service deliverable before building a full product",
+      "minimum_new_capabilities_required": [
+        "approval UI",
+        "receipt generator"
+      ],
+      "human_effort_required": "low_to_medium",
+      "trust_barrier_to_first_payment": 3,
+      "delivery_time_to_first_paid_result": "21-45 days",
+      "approval_steps_before_cash": 1,
+      "external_action_steps_before_cash": 1,
+      "first_cash_signal": "paid pilot, paid validation, signed intent, or paid internal strategy sprint",
+      "first_possible_paid_offer": "Approval workflow package and integration plan",
+      "first_possible_buyer": "AI team lead needing approval gates",
+      "first_possible_price_range": "$1000-$4000",
+      "fastest_validation_method": "owner-reviewed offer one-pager plus approved customer discovery or warm intro",
+      "can_generate_cash_before_full_product": true,
+      "can_start_as_service": true,
+      "can_start_with_existing_tools": true,
+      "cash_path_blockers": [
+        "approval UI",
+        "receipt generator"
+      ],
+      "cash_path_score": 3.45,
+      "score_inputs": {
+        "speed_to_first_cash": 3,
+        "existing_capability_fit": 4,
+        "low_trust_barrier": 3,
+        "clear_buyer": 4,
+        "clear_pain": 4,
+        "minimal_new_tooling": 3,
+        "low_owner_burden": 3,
+        "repeatability_after_first_sale": 4,
+        "strategic_compounding_value": 4
+      }
+    },
+    {
+      "path_id": "path_012",
+      "path_name": "AI company runtime platform",
+      "customer_segment": "ambitious founders and future enterprise teams",
+      "problem_solved": "Need an operating system for self-governed agent companies.",
+      "proposed_offer_or_product": "Long-term platform based on Y*Bridge Labs runtime",
+      "internal_assets_used": [
+        "asset_y_star_cieu",
+        "asset_agent_team_runtime",
+        "asset_owner_cockpit",
+        "asset_policy_registry"
+      ],
+      "external_opportunity_basis": "opp_company_runtime_setup",
+      "first_revenue_mechanism": "pilot then platform subscription",
+      "time_to_first_revenue": "90-180 days",
+      "trust_barrier": 2,
+      "delivery_complexity": 5,
+      "scalability": 5,
+      "evidence_strength": 4,
+      "missing_capabilities": [
+        "product UI",
+        "multi-tenant security",
+        "billing",
+        "support"
+      ],
+      "required_external_actions": [
+        "publication",
+        "sales",
+        "payment after approval"
+      ],
+      "approval_required": true,
+      "why_this_path_might_win": "Big strategic compounding value.",
+      "why_this_path_might_fail": "Too slow for first cash if overbuilt now.",
+      "cash_realization_path_length": 1,
+      "shortest_cash_step": "sell a scoped internal-only service deliverable before building a full product",
+      "minimum_new_capabilities_required": [
+        "product UI",
+        "multi-tenant security"
+      ],
+      "human_effort_required": "low_to_medium",
+      "trust_barrier_to_first_payment": 2,
+      "delivery_time_to_first_paid_result": "90-180 days",
+      "approval_steps_before_cash": 3,
+      "external_action_steps_before_cash": 3,
+      "first_cash_signal": "paid pilot, paid validation, signed intent, or paid internal strategy sprint",
+      "first_possible_paid_offer": "Long-term platform based on Y*Bridge Labs runtime",
+      "first_possible_buyer": "founder willing to be design partner",
+      "first_possible_price_range": "$1000 pilot then subscription",
+      "fastest_validation_method": "owner-reviewed offer one-pager plus approved customer discovery or warm intro",
+      "can_generate_cash_before_full_product": true,
+      "can_start_as_service": true,
+      "can_start_with_existing_tools": false,
+      "cash_path_blockers": [
+        "product UI",
+        "multi-tenant security",
+        "billing",
+        "support"
+      ],
+      "cash_path_score": 2.6,
+      "score_inputs": {
+        "speed_to_first_cash": 1,
+        "existing_capability_fit": 4,
+        "low_trust_barrier": 2,
+        "clear_buyer": 3,
+        "clear_pain": 4,
+        "minimal_new_tooling": 1,
+        "low_owner_burden": 2,
+        "repeatability_after_first_sale": 5,
+        "strategic_compounding_value": 5
+      }
+    },
+    {
+      "path_id": "path_013",
+      "path_name": "Trust/proof package generator for AI services",
+      "customer_segment": "AI service providers",
+      "problem_solved": "Need proof package to win cautious customers.",
+      "proposed_offer_or_product": "Evidence-backed trust packet generator and review",
+      "internal_assets_used": [
+        "asset_evidence_pipeline",
+        "asset_human_review_packet",
+        "asset_ceo_command_brief"
+      ],
+      "external_opportunity_basis": "opp_audit_evidence_compliance",
+      "first_revenue_mechanism": "paid proof package",
+      "time_to_first_revenue": "14-30 days",
+      "trust_barrier": 3,
+      "delivery_complexity": 3,
+      "scalability": 4,
+      "evidence_strength": 4,
+      "missing_capabilities": [
+        "case-study template",
+        "proof package layout"
+      ],
+      "required_external_actions": [
+        "approved outreach"
+      ],
+      "approval_required": true,
+      "why_this_path_might_win": "Directly helps others sell AI safely.",
+      "why_this_path_might_fail": "Needs examples of accepted proof packets.",
+      "cash_realization_path_length": 4,
+      "shortest_cash_step": "sell a scoped internal-only service deliverable before building a full product",
+      "minimum_new_capabilities_required": [
+        "case-study template",
+        "proof package layout"
+      ],
+      "human_effort_required": "low_to_medium",
+      "trust_barrier_to_first_payment": 3,
+      "delivery_time_to_first_paid_result": "14-30 days",
+      "approval_steps_before_cash": 1,
+      "external_action_steps_before_cash": 1,
+      "first_cash_signal": "paid pilot, paid validation, signed intent, or paid internal strategy sprint",
+      "first_possible_paid_offer": "Evidence-backed trust packet generator and review",
+      "first_possible_buyer": "AI consultant/service provider",
+      "first_possible_price_range": "$750-$2500",
+      "fastest_validation_method": "owner-reviewed offer one-pager plus approved customer discovery or warm intro",
+      "can_generate_cash_before_full_product": true,
+      "can_start_as_service": true,
+      "can_start_with_existing_tools": true,
+      "cash_path_blockers": [
+        "case-study template",
+        "proof package layout"
+      ],
+      "cash_path_score": 3.75,
+      "score_inputs": {
+        "speed_to_first_cash": 4,
+        "existing_capability_fit": 4,
+        "low_trust_barrier": 3,
+        "clear_buyer": 4,
+        "clear_pain": 4,
+        "minimal_new_tooling": 4,
+        "low_owner_burden": 3,
+        "repeatability_after_first_sale": 4,
+        "strategic_compounding_value": 4
+      }
+    },
+    {
+      "path_id": "path_014",
+      "path_name": "Lightweight customer discovery tracker for AI agents",
+      "customer_segment": "founders validating offers",
+      "problem_solved": "Need safe learning from approved outreach without memory chaos.",
+      "proposed_offer_or_product": "CRM-lite plus approval and learning receipts",
+      "internal_assets_used": [
+        "asset_writeback_dry_run",
+        "asset_approval_workflow",
+        "asset_owner_cockpit"
+      ],
+      "external_opportunity_basis": "opp_internal_automation_service",
+      "first_revenue_mechanism": "tooling setup",
+      "time_to_first_revenue": "30-60 days",
+      "trust_barrier": 3,
+      "delivery_complexity": 4,
+      "scalability": 4,
+      "evidence_strength": 3,
+      "missing_capabilities": [
+        "CRM-lite",
+        "feedback schema"
+      ],
+      "required_external_actions": [
+        "approved outreach"
+      ],
+      "approval_required": true,
+      "why_this_path_might_win": "Connects cash experiments to learning.",
+      "why_this_path_might_fail": "Requires external interaction to prove value.",
+      "cash_realization_path_length": 3,
+      "shortest_cash_step": "sell a scoped internal-only service deliverable before building a full product",
+      "minimum_new_capabilities_required": [
+        "CRM-lite",
+        "feedback schema"
+      ],
+      "human_effort_required": "low_to_medium",
+      "trust_barrier_to_first_payment": 3,
+      "delivery_time_to_first_paid_result": "30-60 days",
+      "approval_steps_before_cash": 1,
+      "external_action_steps_before_cash": 1,
+      "first_cash_signal": "paid pilot, paid validation, signed intent, or paid internal strategy sprint",
+      "first_possible_paid_offer": "CRM-lite plus approval and learning receipts",
+      "first_possible_buyer": "founder doing customer discovery",
+      "first_possible_price_range": "$500-$2000",
+      "fastest_validation_method": "owner-reviewed offer one-pager plus approved customer discovery or warm intro",
+      "can_generate_cash_before_full_product": true,
+      "can_start_as_service": true,
+      "can_start_with_existing_tools": true,
+      "cash_path_blockers": [
+        "CRM-lite",
+        "feedback schema"
+      ],
+      "cash_path_score": 3.35,
+      "score_inputs": {
+        "speed_to_first_cash": 3,
+        "existing_capability_fit": 3,
+        "low_trust_barrier": 3,
+        "clear_buyer": 4,
+        "clear_pain": 4,
+        "minimal_new_tooling": 2,
+        "low_owner_burden": 4,
+        "repeatability_after_first_sale": 4,
+        "strategic_compounding_value": 5
+      }
+    }
+  ]
+}

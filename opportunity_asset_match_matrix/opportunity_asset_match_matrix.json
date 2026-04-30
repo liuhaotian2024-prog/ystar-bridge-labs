@@ -1,0 +1,320 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.2",
+  "milestone_name": "Meta-Development Money Path Intelligence Engine with Shortest Cash Realization Path",
+  "run_id": "l7_2_money_path_engine_run_001",
+  "packet_type": "opportunity_asset_match_matrix",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "match_rows": [
+    {
+      "opportunity_id": "opp_ai_agent_governance",
+      "asset_ids_used": [
+        "asset_deterministic_governance",
+        "asset_y_star_gov_boundary",
+        "asset_ystar_company_runtime",
+        "asset_real_web_observation"
+      ],
+      "fit_score": 4,
+      "why_fit_exists": "Current system already combines controlled observation, evidence trace, command briefs, staged policy, and Codex implementation.",
+      "unique_advantage": "Governed agent-company runtime with proof artifacts and approval gates, not just a generic research bot.",
+      "weakness": "Trust and market validation remain early; packaging is not yet proven.",
+      "trust_gap": "medium",
+      "evidence_gap": "Needs direct buyer interviews or approved outreach after internal review.",
+      "capability_gap": "Needs repeatable service delivery workflow and approval execution receipts.",
+      "commercial_potential": "high",
+      "cash_realization_potential": "medium",
+      "recommended_path_candidate": "path_candidate_from_opp_ai_agent_governance"
+    },
+    {
+      "opportunity_id": "opp_coding_agent_governance",
+      "asset_ids_used": [
+        "asset_deterministic_governance",
+        "asset_secret_context_policy",
+        "asset_policy_registry",
+        "asset_tests_validation"
+      ],
+      "fit_score": 4,
+      "why_fit_exists": "Current system already combines controlled observation, evidence trace, command briefs, staged policy, and Codex implementation.",
+      "unique_advantage": "Governed agent-company runtime with proof artifacts and approval gates, not just a generic research bot.",
+      "weakness": "Trust and market validation remain early; packaging is not yet proven.",
+      "trust_gap": "medium",
+      "evidence_gap": "Needs direct buyer interviews or approved outreach after internal review.",
+      "capability_gap": "Needs repeatable service delivery workflow and approval execution receipts.",
+      "commercial_potential": "high",
+      "cash_realization_potential": "medium",
+      "recommended_path_candidate": "path_candidate_from_opp_coding_agent_governance"
+    },
+    {
+      "opportunity_id": "opp_audit_evidence_compliance",
+      "asset_ids_used": [
+        "asset_ystar_company_runtime",
+        "asset_real_web_observation",
+        "asset_evidence_pipeline",
+        "asset_conflict_matrix"
+      ],
+      "fit_score": 4,
+      "why_fit_exists": "Current system already combines controlled observation, evidence trace, command briefs, staged policy, and Codex implementation.",
+      "unique_advantage": "Governed agent-company runtime with proof artifacts and approval gates, not just a generic research bot.",
+      "weakness": "Trust and market validation remain early; packaging is not yet proven.",
+      "trust_gap": "medium",
+      "evidence_gap": "Needs direct buyer interviews or approved outreach after internal review.",
+      "capability_gap": "Needs repeatable service delivery workflow and approval execution receipts.",
+      "commercial_potential": "medium_high",
+      "cash_realization_potential": "medium",
+      "recommended_path_candidate": "path_candidate_from_opp_audit_evidence_compliance"
+    },
+    {
+      "opportunity_id": "opp_enterprise_observability",
+      "asset_ids_used": [
+        "asset_real_web_observation",
+        "asset_evidence_pipeline",
+        "asset_conflict_matrix",
+        "asset_human_review_packet"
+      ],
+      "fit_score": 4,
+      "why_fit_exists": "Current system already combines controlled observation, evidence trace, command briefs, staged policy, and Codex implementation.",
+      "unique_advantage": "Governed agent-company runtime with proof artifacts and approval gates, not just a generic research bot.",
+      "weakness": "Trust and market validation remain early; packaging is not yet proven.",
+      "trust_gap": "high",
+      "evidence_gap": "Needs direct buyer interviews or approved outreach after internal review.",
+      "capability_gap": "Needs repeatable service delivery workflow and approval execution receipts.",
+      "commercial_potential": "medium",
+      "cash_realization_potential": "medium",
+      "recommended_path_candidate": "path_candidate_from_opp_enterprise_observability"
+    },
+    {
+      "opportunity_id": "opp_governed_workflow_consulting",
+      "asset_ids_used": [
+        "asset_real_web_observation",
+        "asset_policy_registry",
+        "asset_approval_workflow",
+        "asset_owner_cockpit"
+      ],
+      "fit_score": 5,
+      "why_fit_exists": "Current system already combines controlled observation, evidence trace, command briefs, staged policy, and Codex implementation.",
+      "unique_advantage": "Governed agent-company runtime with proof artifacts and approval gates, not just a generic research bot.",
+      "weakness": "Trust and market validation remain early; packaging is not yet proven.",
+      "trust_gap": "low",
+      "evidence_gap": "Needs direct buyer interviews or approved outreach after internal review.",
+      "capability_gap": "Needs repeatable service delivery workflow and approval execution receipts.",
+      "commercial_potential": "high",
+      "cash_realization_potential": "high",
+      "recommended_path_candidate": "path_candidate_from_opp_governed_workflow_consulting"
+    },
+    {
+      "opportunity_id": "opp_company_runtime_setup",
+      "asset_ids_used": [
+        "asset_agent_team_runtime",
+        "asset_parallel_orchestrator",
+        "asset_owner_cockpit",
+        "asset_tests_validation"
+      ],
+      "fit_score": 5,
+      "why_fit_exists": "Current system already combines controlled observation, evidence trace, command briefs, staged policy, and Codex implementation.",
+      "unique_advantage": "Governed agent-company runtime with proof artifacts and approval gates, not just a generic research bot.",
+      "weakness": "Trust and market validation remain early; packaging is not yet proven.",
+      "trust_gap": "low",
+      "evidence_gap": "Needs direct buyer interviews or approved outreach after internal review.",
+      "capability_gap": "Needs repeatable service delivery workflow and approval execution receipts.",
+      "commercial_potential": "high",
+      "cash_realization_potential": "high",
+      "recommended_path_candidate": "path_candidate_from_opp_company_runtime_setup"
+    },
+    {
+      "opportunity_id": "opp_agent_team_orchestration",
+      "asset_ids_used": [
+        "asset_human_review_packet",
+        "asset_ceo_command_brief",
+        "asset_agent_team_runtime",
+        "asset_revenue_radar"
+      ],
+      "fit_score": 4,
+      "why_fit_exists": "Current system already combines controlled observation, evidence trace, command briefs, staged policy, and Codex implementation.",
+      "unique_advantage": "Governed agent-company runtime with proof artifacts and approval gates, not just a generic research bot.",
+      "weakness": "Trust and market validation remain early; packaging is not yet proven.",
+      "trust_gap": "medium",
+      "evidence_gap": "Needs direct buyer interviews or approved outreach after internal review.",
+      "capability_gap": "Needs repeatable service delivery workflow and approval execution receipts.",
+      "commercial_potential": "medium_high",
+      "cash_realization_potential": "medium",
+      "recommended_path_candidate": "path_candidate_from_opp_agent_team_orchestration"
+    },
+    {
+      "opportunity_id": "opp_evidence_packet_generation",
+      "asset_ids_used": [
+        "asset_y_star_cieu",
+        "asset_deterministic_governance",
+        "asset_y_star_gov_boundary",
+        "asset_ystar_company_runtime"
+      ],
+      "fit_score": 4,
+      "why_fit_exists": "Current system already combines controlled observation, evidence trace, command briefs, staged policy, and Codex implementation.",
+      "unique_advantage": "Governed agent-company runtime with proof artifacts and approval gates, not just a generic research bot.",
+      "weakness": "Trust and market validation remain early; packaging is not yet proven.",
+      "trust_gap": "medium",
+      "evidence_gap": "Needs direct buyer interviews or approved outreach after internal review.",
+      "capability_gap": "Needs repeatable service delivery workflow and approval execution receipts.",
+      "commercial_potential": "medium_high",
+      "cash_realization_potential": "medium",
+      "recommended_path_candidate": "path_candidate_from_opp_evidence_packet_generation"
+    },
+    {
+      "opportunity_id": "opp_devtool_openclaw_codex",
+      "asset_ids_used": [
+        "asset_deterministic_governance",
+        "asset_y_star_gov_boundary",
+        "asset_ystar_company_runtime",
+        "asset_real_web_observation"
+      ],
+      "fit_score": 4,
+      "why_fit_exists": "Current system already combines controlled observation, evidence trace, command briefs, staged policy, and Codex implementation.",
+      "unique_advantage": "Governed agent-company runtime with proof artifacts and approval gates, not just a generic research bot.",
+      "weakness": "Trust and market validation remain early; packaging is not yet proven.",
+      "trust_gap": "medium",
+      "evidence_gap": "Needs direct buyer interviews or approved outreach after internal review.",
+      "capability_gap": "Needs repeatable service delivery workflow and approval execution receipts.",
+      "commercial_potential": "medium",
+      "cash_realization_potential": "medium",
+      "recommended_path_candidate": "path_candidate_from_opp_devtool_openclaw_codex"
+    },
+    {
+      "opportunity_id": "opp_regulated_audit_trails",
+      "asset_ids_used": [
+        "asset_y_star_gov_boundary",
+        "asset_ystar_company_runtime",
+        "asset_real_web_observation",
+        "asset_evidence_pipeline"
+      ],
+      "fit_score": 4,
+      "why_fit_exists": "Current system already combines controlled observation, evidence trace, command briefs, staged policy, and Codex implementation.",
+      "unique_advantage": "Governed agent-company runtime with proof artifacts and approval gates, not just a generic research bot.",
+      "weakness": "Trust and market validation remain early; packaging is not yet proven.",
+      "trust_gap": "high",
+      "evidence_gap": "Needs direct buyer interviews or approved outreach after internal review.",
+      "capability_gap": "Needs repeatable service delivery workflow and approval execution receipts.",
+      "commercial_potential": "medium",
+      "cash_realization_potential": "medium",
+      "recommended_path_candidate": "path_candidate_from_opp_regulated_audit_trails"
+    },
+    {
+      "opportunity_id": "opp_grant_rfp_support",
+      "asset_ids_used": [
+        "asset_ystar_company_runtime",
+        "asset_real_web_observation",
+        "asset_evidence_pipeline",
+        "asset_conflict_matrix"
+      ],
+      "fit_score": 4,
+      "why_fit_exists": "Current system already combines controlled observation, evidence trace, command briefs, staged policy, and Codex implementation.",
+      "unique_advantage": "Governed agent-company runtime with proof artifacts and approval gates, not just a generic research bot.",
+      "weakness": "Trust and market validation remain early; packaging is not yet proven.",
+      "trust_gap": "medium",
+      "evidence_gap": "Needs direct buyer interviews or approved outreach after internal review.",
+      "capability_gap": "Needs repeatable service delivery workflow and approval execution receipts.",
+      "commercial_potential": "medium",
+      "cash_realization_potential": "medium",
+      "recommended_path_candidate": "path_candidate_from_opp_grant_rfp_support"
+    },
+    {
+      "opportunity_id": "opp_cross_border_bridge",
+      "asset_ids_used": [
+        "asset_cross_language",
+        "asset_owner_mu_speaker",
+        "asset_ceo_command_brief",
+        "asset_codex_implementation_arm"
+      ],
+      "fit_score": 4,
+      "why_fit_exists": "Current system already combines controlled observation, evidence trace, command briefs, staged policy, and Codex implementation.",
+      "unique_advantage": "Governed agent-company runtime with proof artifacts and approval gates, not just a generic research bot.",
+      "weakness": "Trust and market validation remain early; packaging is not yet proven.",
+      "trust_gap": "medium",
+      "evidence_gap": "Needs direct buyer interviews or approved outreach after internal review.",
+      "capability_gap": "Needs repeatable service delivery workflow and approval execution receipts.",
+      "commercial_potential": "medium_high",
+      "cash_realization_potential": "medium",
+      "recommended_path_candidate": "path_candidate_from_opp_cross_border_bridge"
+    },
+    {
+      "opportunity_id": "opp_startup_ai_governance",
+      "asset_ids_used": [
+        "asset_evidence_pipeline",
+        "asset_conflict_matrix",
+        "asset_human_review_packet",
+        "asset_ceo_command_brief"
+      ],
+      "fit_score": 5,
+      "why_fit_exists": "Current system already combines controlled observation, evidence trace, command briefs, staged policy, and Codex implementation.",
+      "unique_advantage": "Governed agent-company runtime with proof artifacts and approval gates, not just a generic research bot.",
+      "weakness": "Trust and market validation remain early; packaging is not yet proven.",
+      "trust_gap": "low",
+      "evidence_gap": "Needs direct buyer interviews or approved outreach after internal review.",
+      "capability_gap": "Needs repeatable service delivery workflow and approval execution receipts.",
+      "commercial_potential": "high",
+      "cash_realization_potential": "high",
+      "recommended_path_candidate": "path_candidate_from_opp_startup_ai_governance"
+    },
+    {
+      "opportunity_id": "opp_internal_automation_service",
+      "asset_ids_used": [
+        "asset_conflict_matrix",
+        "asset_human_review_packet",
+        "asset_ceo_command_brief",
+        "asset_agent_team_runtime"
+      ],
+      "fit_score": 5,
+      "why_fit_exists": "Current system already combines controlled observation, evidence trace, command briefs, staged policy, and Codex implementation.",
+      "unique_advantage": "Governed agent-company runtime with proof artifacts and approval gates, not just a generic research bot.",
+      "weakness": "Trust and market validation remain early; packaging is not yet proven.",
+      "trust_gap": "low",
+      "evidence_gap": "Needs direct buyer interviews or approved outreach after internal review.",
+      "capability_gap": "Needs repeatable service delivery workflow and approval execution receipts.",
+      "commercial_potential": "high",
+      "cash_realization_potential": "high",
+      "recommended_path_candidate": "path_candidate_from_opp_internal_automation_service"
+    },
+    {
+      "opportunity_id": "opp_fast_paid_validation",
+      "asset_ids_used": [
+        "asset_ceo_command_brief",
+        "asset_evidence_pipeline",
+        "asset_codex_implementation_arm",
+        "asset_owner_cockpit"
+      ],
+      "fit_score": 5,
+      "why_fit_exists": "Current system already combines controlled observation, evidence trace, command briefs, staged policy, and Codex implementation.",
+      "unique_advantage": "Governed agent-company runtime with proof artifacts and approval gates, not just a generic research bot.",
+      "weakness": "Trust and market validation remain early; packaging is not yet proven.",
+      "trust_gap": "low",
+      "evidence_gap": "Needs direct buyer interviews or approved outreach after internal review.",
+      "capability_gap": "Needs repeatable service delivery workflow and approval execution receipts.",
+      "commercial_potential": "high",
+      "cash_realization_potential": "high",
+      "recommended_path_candidate": "path_candidate_from_opp_fast_paid_validation"
+    },
+    {
+      "opportunity_id": "opp_done_for_you_setup",
+      "asset_ids_used": [
+        "asset_y_star_cieu",
+        "asset_deterministic_governance",
+        "asset_y_star_gov_boundary",
+        "asset_ystar_company_runtime"
+      ],
+      "fit_score": 5,
+      "why_fit_exists": "Current system already combines controlled observation, evidence trace, command briefs, staged policy, and Codex implementation.",
+      "unique_advantage": "Governed agent-company runtime with proof artifacts and approval gates, not just a generic research bot.",
+      "weakness": "Trust and market validation remain early; packaging is not yet proven.",
+      "trust_gap": "low",
+      "evidence_gap": "Needs direct buyer interviews or approved outreach after internal review.",
+      "capability_gap": "Needs repeatable service delivery workflow and approval execution receipts.",
+      "commercial_potential": "high",
+      "cash_realization_potential": "high",
+      "recommended_path_candidate": "path_candidate_from_opp_done_for_you_setup"
+    }
+  ]
+}

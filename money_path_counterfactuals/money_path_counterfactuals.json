@@ -1,0 +1,195 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.2",
+  "milestone_name": "Meta-Development Money Path Intelligence Engine with Shortest Cash Realization Path",
+  "run_id": "l7_2_money_path_engine_run_001",
+  "packet_type": "money_path_counterfactuals",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "counterfactuals": [
+    {
+      "path_id": "path_001",
+      "best_case": "paid pilot or strong-intent signal within the estimated window",
+      "base_case": "useful internal deliverable plus approval-ready outreach draft",
+      "failure_case": "buyer trust insufficient or pain not urgent",
+      "fastest_path_to_cash": "sell a scoped internal-only service deliverable before building a full product",
+      "slow_but_strategic_path": "build full platform before selling",
+      "if_goal_is_cash_in_30_days": "focus on service delivery and approved outreach, not product UI",
+      "if_goal_is_paid_validation_in_14_days": "use warm/targeted approval-gated outreach and offer one-pager",
+      "if_owner_time_is_under_5_hours_per_week": "Codex prepares all drafts; owner only approves and records responses",
+      "if_no_external_trust_exists_yet": "sell small scoped audit/brief first",
+      "if_no_product_is_ready": "service-first still works",
+      "if_service_can_be_sold_before_product": true,
+      "if_customer_only_buys_done_for_you": "position as done-for-you governed workflow/brief sprint",
+      "if_grant_path_is_too_slow": "defer grant path behind service wedge",
+      "if_enterprise_sales_cycle_is_too_long": "sell founder/SMB wedge first",
+      "if_owner_english_friction_limits_direct_sales": "build bilingual approval-ready scripts and use narrow written outreach",
+      "if_codex_can_build_required_tools_in_parallel": "build outreach draft generator, service workflow, and experiment tracker concurrently",
+      "assumptions": [
+        "human approval before external contact",
+        "internal deliverable can be produced with current tools"
+      ],
+      "likely_outcome": "internal validation now; external validation after approval",
+      "risk": "Buyer trust must be earned without case studies.",
+      "evidence_needed": "buyer pain and willingness-to-pay response",
+      "tool_needed": [
+        "approval-ready outreach draft generator"
+      ],
+      "approval_needed": [
+        "approved outreach or warm intro"
+      ],
+      "cash_path_adjustment": "reduce scope until buyer can say yes quickly",
+      "minimum_next_action": "owner review and approve or reject one experiment",
+      "does_this_path_still_work": true
+    },
+    {
+      "path_id": "path_002",
+      "best_case": "paid pilot or strong-intent signal within the estimated window",
+      "base_case": "useful internal deliverable plus approval-ready outreach draft",
+      "failure_case": "buyer trust insufficient or pain not urgent",
+      "fastest_path_to_cash": "sell a scoped internal-only service deliverable before building a full product",
+      "slow_but_strategic_path": "build full platform before selling",
+      "if_goal_is_cash_in_30_days": "focus on service delivery and approved outreach, not product UI",
+      "if_goal_is_paid_validation_in_14_days": "use warm/targeted approval-gated outreach and offer one-pager",
+      "if_owner_time_is_under_5_hours_per_week": "Codex prepares all drafts; owner only approves and records responses",
+      "if_no_external_trust_exists_yet": "sell small scoped audit/brief first",
+      "if_no_product_is_ready": "service-first still works",
+      "if_service_can_be_sold_before_product": true,
+      "if_customer_only_buys_done_for_you": "position as done-for-you governed workflow/brief sprint",
+      "if_grant_path_is_too_slow": "defer grant path behind service wedge",
+      "if_enterprise_sales_cycle_is_too_long": "sell founder/SMB wedge first",
+      "if_owner_english_friction_limits_direct_sales": "build bilingual approval-ready scripts and use narrow written outreach",
+      "if_codex_can_build_required_tools_in_parallel": "build outreach draft generator, service workflow, and experiment tracker concurrently",
+      "assumptions": [
+        "human approval before external contact",
+        "internal deliverable can be produced with current tools"
+      ],
+      "likely_outcome": "internal validation now; external validation after approval",
+      "risk": "May look like custom ops consulting until productized.",
+      "evidence_needed": "buyer pain and willingness-to-pay response",
+      "tool_needed": [
+        "cockpit template pack",
+        "onboarding checklist"
+      ],
+      "approval_needed": [
+        "approved outreach"
+      ],
+      "cash_path_adjustment": "reduce scope until buyer can say yes quickly",
+      "minimum_next_action": "owner review and approve or reject one experiment",
+      "does_this_path_still_work": true
+    },
+    {
+      "path_id": "path_003",
+      "best_case": "paid pilot or strong-intent signal within the estimated window",
+      "base_case": "useful internal deliverable plus approval-ready outreach draft",
+      "failure_case": "buyer trust insufficient or pain not urgent",
+      "fastest_path_to_cash": "sell a scoped internal-only service deliverable before building a full product",
+      "slow_but_strategic_path": "build full platform before selling",
+      "if_goal_is_cash_in_30_days": "focus on service delivery and approved outreach, not product UI",
+      "if_goal_is_paid_validation_in_14_days": "use warm/targeted approval-gated outreach and offer one-pager",
+      "if_owner_time_is_under_5_hours_per_week": "Codex prepares all drafts; owner only approves and records responses",
+      "if_no_external_trust_exists_yet": "sell small scoped audit/brief first",
+      "if_no_product_is_ready": "service-first still works",
+      "if_service_can_be_sold_before_product": true,
+      "if_customer_only_buys_done_for_you": "position as done-for-you governed workflow/brief sprint",
+      "if_grant_path_is_too_slow": "defer grant path behind service wedge",
+      "if_enterprise_sales_cycle_is_too_long": "sell founder/SMB wedge first",
+      "if_owner_english_friction_limits_direct_sales": "build bilingual approval-ready scripts and use narrow written outreach",
+      "if_codex_can_build_required_tools_in_parallel": "build outreach draft generator, service workflow, and experiment tracker concurrently",
+      "assumptions": [
+        "human approval before external contact",
+        "internal deliverable can be produced with current tools"
+      ],
+      "likely_outcome": "internal validation now; external validation after approval",
+      "risk": "Needs credibility and examples.",
+      "evidence_needed": "buyer pain and willingness-to-pay response",
+      "tool_needed": [
+        "audit intake checklist",
+        "sample report template"
+      ],
+      "approval_needed": [
+        "approved outreach"
+      ],
+      "cash_path_adjustment": "reduce scope until buyer can say yes quickly",
+      "minimum_next_action": "owner review and approve or reject one experiment",
+      "does_this_path_still_work": true
+    },
+    {
+      "path_id": "path_007",
+      "best_case": "paid pilot or strong-intent signal within the estimated window",
+      "base_case": "useful internal deliverable plus approval-ready outreach draft",
+      "failure_case": "buyer trust insufficient or pain not urgent",
+      "fastest_path_to_cash": "sell a scoped internal-only service deliverable before building a full product",
+      "slow_but_strategic_path": "build full platform before selling",
+      "if_goal_is_cash_in_30_days": "focus on service delivery and approved outreach, not product UI",
+      "if_goal_is_paid_validation_in_14_days": "use warm/targeted approval-gated outreach and offer one-pager",
+      "if_owner_time_is_under_5_hours_per_week": "Codex prepares all drafts; owner only approves and records responses",
+      "if_no_external_trust_exists_yet": "sell small scoped audit/brief first",
+      "if_no_product_is_ready": "service-first still works",
+      "if_service_can_be_sold_before_product": true,
+      "if_customer_only_buys_done_for_you": "position as done-for-you governed workflow/brief sprint",
+      "if_grant_path_is_too_slow": "defer grant path behind service wedge",
+      "if_enterprise_sales_cycle_is_too_long": "sell founder/SMB wedge first",
+      "if_owner_english_friction_limits_direct_sales": "build bilingual approval-ready scripts and use narrow written outreach",
+      "if_codex_can_build_required_tools_in_parallel": "build outreach draft generator, service workflow, and experiment tracker concurrently",
+      "assumptions": [
+        "human approval before external contact",
+        "internal deliverable can be produced with current tools"
+      ],
+      "likely_outcome": "internal validation now; external validation after approval",
+      "risk": "Needs careful positioning and trust.",
+      "evidence_needed": "buyer pain and willingness-to-pay response",
+      "tool_needed": [
+        "bilingual brief template",
+        "customer discovery script"
+      ],
+      "approval_needed": [
+        "approved outreach"
+      ],
+      "cash_path_adjustment": "reduce scope until buyer can say yes quickly",
+      "minimum_next_action": "owner review and approve or reject one experiment",
+      "does_this_path_still_work": true
+    },
+    {
+      "path_id": "path_013",
+      "best_case": "paid pilot or strong-intent signal within the estimated window",
+      "base_case": "useful internal deliverable plus approval-ready outreach draft",
+      "failure_case": "buyer trust insufficient or pain not urgent",
+      "fastest_path_to_cash": "sell a scoped internal-only service deliverable before building a full product",
+      "slow_but_strategic_path": "build full platform before selling",
+      "if_goal_is_cash_in_30_days": "focus on service delivery and approved outreach, not product UI",
+      "if_goal_is_paid_validation_in_14_days": "use warm/targeted approval-gated outreach and offer one-pager",
+      "if_owner_time_is_under_5_hours_per_week": "Codex prepares all drafts; owner only approves and records responses",
+      "if_no_external_trust_exists_yet": "sell small scoped audit/brief first",
+      "if_no_product_is_ready": "service-first still works",
+      "if_service_can_be_sold_before_product": true,
+      "if_customer_only_buys_done_for_you": "position as done-for-you governed workflow/brief sprint",
+      "if_grant_path_is_too_slow": "defer grant path behind service wedge",
+      "if_enterprise_sales_cycle_is_too_long": "sell founder/SMB wedge first",
+      "if_owner_english_friction_limits_direct_sales": "build bilingual approval-ready scripts and use narrow written outreach",
+      "if_codex_can_build_required_tools_in_parallel": "build outreach draft generator, service workflow, and experiment tracker concurrently",
+      "assumptions": [
+        "human approval before external contact",
+        "internal deliverable can be produced with current tools"
+      ],
+      "likely_outcome": "internal validation now; external validation after approval",
+      "risk": "Needs examples of accepted proof packets.",
+      "evidence_needed": "buyer pain and willingness-to-pay response",
+      "tool_needed": [
+        "case-study template",
+        "proof package layout"
+      ],
+      "approval_needed": [
+        "approved outreach"
+      ],
+      "cash_path_adjustment": "reduce scope until buyer can say yes quickly",
+      "minimum_next_action": "owner review and approve or reject one experiment",
+      "does_this_path_still_work": true
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "schema_version": "v0",
+  "milestone_id": "L7.2",
+  "milestone_name": "Meta-Development Money Path Intelligence Engine with Shortest Cash Realization Path",
+  "run_id": "l7_2_money_path_engine_run_001",
+  "packet_type": "agent_team_execution_routes",
+  "generated_at_utc": "2026-04-29T00:00:00Z",
+  "policy_ref": "policy/action_capability_registry.json",
+  "revenue_policy_ref": "policy/revenue_action_policy.json",
+  "discovery_policy_ref": "policy/discovery_policy.json",
+  "approval_state_machine_ref": "policy/approval_state_machine.json",
+  "writeback_policy_ref": "policy/writeback_policy.json",
+  "secret_scanning_policy_ref": "policy/secret_scanning_policy.json",
+  "routes": [
+    {
+      "route_id": "route_001",
+      "linked_path_id": "path_001",
+      "agent_assignments": {
+        "CEO": "choose path and approve or reject external steps",
+        "Revenue Scout": "maintain opportunity and buyer pain map",
+        "Researcher": "run read-only evidence observation",
+        "Operator/COO": "turn path into delivery workflow",
+        "Engineer/CTO": "build required tools",
+        "Secretary": "archive artifacts and prepare approval packets",
+        "Auditor": "verify no side effects and policy compliance"
+      },
+      "handoff_sequence": [
+        "Revenue Scout",
+        "Researcher",
+        "Operator/COO",
+        "Engineer/CTO",
+        "Secretary",
+        "Auditor",
+        "CEO"
+      ],
+      "required_artifacts": [
+        "opportunity packet",
+        "offer hypothesis",
+        "approval request",
+        "no-action receipt"
+      ],
+      "approval_points": [
+        "approved outreach or warm intro"
+      ],
+      "no-go_boundaries": [
+        "no unapproved outreach",
+        "no payment",
+        "no publication",
+        "no actual writeback"
+      ],
+      "expected_output": "owner-ready experiment packet",
+      "next_command": "bash scripts/run_l7_2_money_path_engine.sh --mode build",
+      "cash_path_role": "primary"
+    },
+    {
+      "route_id": "route_002",
+      "linked_path_id": "path_002",
+      "agent_assignments": {
+        "CEO": "choose path and approve or reject external steps",
+        "Revenue Scout": "maintain opportunity and buyer pain map",
+        "Researcher": "run read-only evidence observation",
+        "Operator/COO": "turn path into delivery workflow",
+        "Engineer/CTO": "build required tools",
+        "Secretary": "archive artifacts and prepare approval packets",
+        "Auditor": "verify no side effects and policy compliance"
+      },
+      "handoff_sequence": [
+        "Revenue Scout",
+        "Researcher",
+        "Operator/COO",
+        "Engineer/CTO",
+        "Secretary",
+        "Auditor",
+        "CEO"
+      ],
+      "required_artifacts": [
+        "opportunity packet",
+        "offer hypothesis",
+        "approval request",
+        "no-action receipt"
+      ],
+      "approval_points": [
+        "approved outreach"
+      ],
+      "no-go_boundaries": [
+        "no unapproved outreach",
+        "no payment",
+        "no publication",
+        "no actual writeback"
+      ],
+      "expected_output": "owner-ready experiment packet",
+      "next_command": "bash scripts/run_l7_2_money_path_engine.sh --mode build",
+      "cash_path_role": "secondary"
+    },
+    {
+      "route_id": "route_003",
+      "linked_path_id": "path_003",
+      "agent_assignments": {
+        "CEO": "choose path and approve or reject external steps",
+        "Revenue Scout": "maintain opportunity and buyer pain map",
+        "Researcher": "run read-only evidence observation",
+        "Operator/COO": "turn path into delivery workflow",
+        "Engineer/CTO": "build required tools",
+        "Secretary": "archive artifacts and prepare approval packets",
+        "Auditor": "verify no side effects and policy compliance"
+      },
+      "handoff_sequence": [
+        "Revenue Scout",
+        "Researcher",
+        "Operator/COO",
+        "Engineer/CTO",
+        "Secretary",
+        "Auditor",
+        "CEO"
+      ],
+      "required_artifacts": [
+        "opportunity packet",
+        "offer hypothesis",
+        "approval request",
+        "no-action receipt"
+      ],
+      "approval_points": [
+        "approved outreach"
+      ],
+      "no-go_boundaries": [
+        "no unapproved outreach",
+        "no payment",
+        "no publication",
+        "no actual writeback"
+      ],
+      "expected_output": "owner-ready experiment packet",
+      "next_command": "bash scripts/run_l7_2_money_path_engine.sh --mode build",
+      "cash_path_role": "secondary"
+    },
+    {
+      "route_id": "route_004",
+      "linked_path_id": "path_007",
+      "agent_assignments": {
+        "CEO": "choose path and approve or reject external steps",
+        "Revenue Scout": "maintain opportunity and buyer pain map",
+        "Researcher": "run read-only evidence observation",
+        "Operator/COO": "turn path into delivery workflow",
+        "Engineer/CTO": "build required tools",
+        "Secretary": "archive artifacts and prepare approval packets",
+        "Auditor": "verify no side effects and policy compliance"
+      },
+      "handoff_sequence": [
+        "Revenue Scout",
+        "Researcher",
+        "Operator/COO",
+        "Engineer/CTO",
+        "Secretary",
+        "Auditor",
+        "CEO"
+      ],
+      "required_artifacts": [
+        "opportunity packet",
+        "offer hypothesis",
+        "approval request",
+        "no-action receipt"
+      ],
+      "approval_points": [
+        "approved outreach"
+      ],
+      "no-go_boundaries": [
+        "no unapproved outreach",
+        "no payment",
+        "no publication",
+        "no actual writeback"
+      ],
+      "expected_output": "owner-ready experiment packet",
+      "next_command": "bash scripts/run_l7_2_money_path_engine.sh --mode build",
+      "cash_path_role": "secondary"
+    },
+    {
+      "route_id": "route_005",
+      "linked_path_id": "path_013",
+      "agent_assignments": {
+        "CEO": "choose path and approve or reject external steps",
+        "Revenue Scout": "maintain opportunity and buyer pain map",
+        "Researcher": "run read-only evidence observation",
+        "Operator/COO": "turn path into delivery workflow",
+        "Engineer/CTO": "build required tools",
+        "Secretary": "archive artifacts and prepare approval packets",
+        "Auditor": "verify no side effects and policy compliance"
+      },
+      "handoff_sequence": [
+        "Revenue Scout",
+        "Researcher",
+        "Operator/COO",
+        "Engineer/CTO",
+        "Secretary",
+        "Auditor",
+        "CEO"
+      ],
+      "required_artifacts": [
+        "opportunity packet",
+        "offer hypothesis",
+        "approval request",
+        "no-action receipt"
+      ],
+      "approval_points": [
+        "approved outreach"
+      ],
+      "no-go_boundaries": [
+        "no unapproved outreach",
+        "no payment",
+        "no publication",
+        "no actual writeback"
+      ],
+      "expected_output": "owner-ready experiment packet",
+      "next_command": "bash scripts/run_l7_2_money_path_engine.sh --mode build",
+      "cash_path_role": "secondary"
+    }
+  ]
+}
