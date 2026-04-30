@@ -1,5 +1,5 @@
 # WORLD_STATE — Mission Control
-**Generated**: 2026-04-30 09:30:00
+**Generated**: 2026-04-30 10:00:01
 **Purpose**: Single file CEO reads on boot to restore full company context
 
 ---
@@ -88,13 +88,13 @@ ceo          | 3/3          | 24           | 41       | 2026-04-29
 
 | M-Axis | Description | 24h Count | 7d Avg/Day | Drift |
 |--------|-------------|-----------|------------|-------|
-| **M-1** | Survivability (session/boot/handoff/persist) | 265 | 2671 | → |
-| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 45 | 816 | ↓ |
-| **M-2b** | Omission prevention (omission/overdue/alarm) | 44 | 1364 | ↓ |
+| **M-1** | Survivability (session/boot/handoff/persist) | 265 | 2583 | → |
+| **M-2a** | Commission prevention (forget_guard/deny/enforce) | 44 | 815 | ↓ |
+| **M-2b** | Omission prevention (omission/overdue/alarm) | 43 | 1310 | ↓ |
 | **M-3** | Value production (customer/revenue/dogfood/demo) | 0 | 0 | ↓ |
 
-**Classified coverage**: 354/3953 (9.0%)
-**Unclassified**: 3599 events (routine ops / K9 routing)
+**Classified coverage**: 352/3953 (8.9%)
+**Unclassified**: 3601 events (routine ops / K9 routing)
 **Drift alert**: M-2a, M-2b, M-3 trending DOWN vs 7d baseline
 
 ---
@@ -114,9 +114,9 @@ ceo          | 3/3          | 24           | 41       | 2026-04-29
 
 | Detector | 24h Count | Drift vs 7d |
 |----------|-----------|-------------|
-| amendment_coverage_audit | 308 | = (avg 369.7/d) |
-| hook_commission_catch | 44 | v (avg 395.4/d) |
-| directive_evaluator | 43 | ^ (avg 33.1/d) |
+| amendment_coverage_audit | 308 | = (avg 370.6/d) |
+| hook_commission_catch | 44 | v (avg 395.3/d) |
+| directive_evaluator | 43 | ^ (avg 33.3/d) |
 
 **By Actor (top 10)**:
 
@@ -134,7 +134,7 @@ ceo          | 3/3          | 24           | 41       | 2026-04-29
 - `WIRE_BROKEN`: 43
 - `WHITELIST_GAP`: 1
 
-**Overall drift**: v (24h=395, 7d avg/day=1577.9)
+**Overall drift**: v (24h=395, 7d avg/day=1551.7)
 
 ---
 
@@ -160,7 +160,10 @@ ceo          | 3/3          | 24           | 41       | 2026-04-29
 ## 13. Today's Commits (24h) — both repos
 
 
-**ystar-company** (73 commits):
+**ystar-company** (74 commits):
+- 343a29c2 09:35 [auto] WIP checkpoint 2026-04-30 09:35 -- 6 files changed
+- 6dece218 09:32 tools: add l7 labs whiteboard collaboration runtime
+- 0a7e6d81 09:31 tools: add l7 labs whiteboard collaboration runtime
 - 952ef665 09:05 [auto] WIP checkpoint 2026-04-30 09:05 -- 5 files changed
 - 2e2b04c9 09:01 tools: add real labs office web ui runtime
 - 9c47ad8c 08:45 tools: add l7 legacy labs team recovery and office integration
@@ -178,8 +181,5 @@ ceo          | 3/3          | 24           | 41       | 2026-04-29
 - 00b85ebf 04:03 [auto] WIP checkpoint 2026-04-30 04:03 -- 3 files changed
 - 93c8219c 03:33 [auto] WIP checkpoint 2026-04-30 03:33 -- 6 files changed
 - a51b09b3 03:03 [auto] WIP checkpoint 2026-04-30 03:03 -- 3 files changed
-- d0c2226d 02:33 [auto] WIP checkpoint 2026-04-30 02:33 -- 4 files changed
-- abf48f31 02:03 [auto] WIP checkpoint 2026-04-30 02:03 -- 3 files changed
-- fce879ab 01:33 [auto] WIP checkpoint 2026-04-30 01:33 -- 4 files changed
 
 **Y*gov**: no commits
