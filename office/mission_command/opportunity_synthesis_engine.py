@@ -172,8 +172,129 @@ def generate_opportunities(repo_root: Path) -> List[Dict[str, Any]]:
             confidence=confidence,
             missing_evidence=["whether any current audience wants paid support", *common_missing],
         ),
+        OpportunityHypothesis(
+            opportunity_id="opp_competition_gap_incident_postmortem",
+            title="AI Agent Incident Postmortem Service",
+            generated_from_lens="competition gap lens",
+            buyer="Founder/operator whose AI-agent experiment produced wrong code, unsafe workflow changes, or confusing operational drift.",
+            pain="They need a fast, credible postmortem that separates tool failure, process failure, and governance failure.",
+            internal_assets=["CZL", "action-wide preflight", "WORK_METHODOLOGY", "residual learning bridge"],
+            external_unknowns=common_missing,
+            behavior_capability_required=["internal analysis", "sample deliverable", "read-only research planning"],
+            first_experiment="48h internal incident postmortem sample using a fictional agent workflow failure.",
+            approval_needed=["external buyer validation"],
+            m_triangle_alignment="M-2 incident learning converted into M-3 paid diagnostic value.",
+            owner_burden="Low if sample is prepared before any external validation.",
+            confidence=confidence,
+            missing_evidence=common_missing,
+        ),
+        OpportunityHypothesis(
+            opportunity_id="opp_regulatory_security_mcp_boundary",
+            title="MCP / Tool-Use Boundary Review",
+            generated_from_lens="regulatory/security pressure lens",
+            buyer="Technical team exposing tools to agents and worried about side effects, approvals, and secrets.",
+            pain="They cannot tell which tool calls are safe internal work versus approval-gated external behavior.",
+            internal_assets=["gov-mcp", "Y-star-gov company_runtime", "action semantics", "permission tiers"],
+            external_unknowns=common_missing,
+            behavior_capability_required=["internal analysis", "sample deliverable", "read-only research planning"],
+            first_experiment="48h sample boundary review for a generic MCP tool surface.",
+            approval_needed=["external technical review request"],
+            m_triangle_alignment="M-2 governance packaged as M-3 engineering risk reduction.",
+            owner_burden="Low if the team generates a review-only packet.",
+            confidence=confidence,
+            missing_evidence=common_missing,
+        ),
+        OpportunityHypothesis(
+            opportunity_id="opp_support_subscription_agent_onboarding",
+            title="Agent Team Onboarding / Training Package",
+            generated_from_lens="support/subscription lens",
+            buyer="Small AI-heavy team trying to onboard humans into agent-assisted workflows.",
+            pain="People use agents inconsistently, creating uneven quality, duplicated work, and unclear escalation rules.",
+            internal_assets=["Aiden Meeting Room", "Active Operating Charter", "M Triangle", "Mission Command"],
+            external_unknowns=common_missing,
+            behavior_capability_required=["strategy brief", "sample deliverable", "read-only research planning"],
+            first_experiment="48h onboarding playbook sample with governance-light operating rules.",
+            approval_needed=["external validation interview"],
+            m_triangle_alignment="M-3 through training/support revenue; M-2 through safe operating boundaries.",
+            owner_burden="Medium until buyer segment is narrowed.",
+            confidence=confidence,
+            missing_evidence=common_missing,
+        ),
+        OpportunityHypothesis(
+            opportunity_id="opp_content_distribution_diagnostic_funnel",
+            title="Content-to-Lead Diagnostic Funnel",
+            generated_from_lens="content/distribution lens",
+            buyer="Founder/operator who resonates with concrete AI-agent failure examples and wants a diagnostic.",
+            pain="They do not yet know they need a service; content must expose the cost of unmanaged AI workflows.",
+            internal_assets=["content history", "sample deliverables", "M Triangle narrative", "Aiden CEO Meeting Room"],
+            external_unknowns=["which channel currently reaches buyers", *common_missing],
+            behavior_capability_required=["content draft", "sample deliverable", "publication"],
+            first_experiment="48h internal content + diagnostic sample draft; no publication without approval.",
+            approval_needed=["publication", "lead capture form"],
+            m_triangle_alignment="M-3 distribution path with M-2 publication approval.",
+            owner_burden="Medium because channel choice needs owner judgment.",
+            confidence=confidence,
+            missing_evidence=["current channel demand evidence", *common_missing],
+        ),
+        OpportunityHypothesis(
+            opportunity_id="opp_integration_implementation_ai_ops_room",
+            title="AI Ops Operating Room Implementation Support",
+            generated_from_lens="integration/implementation lens",
+            buyer="Team that wants a practical AI operating room integrated with existing tools.",
+            pain="They can buy tools but cannot wire mission routing, approvals, evidence, and action boundaries together.",
+            internal_assets=["Mission Command", "Aiden Meeting Room", "gov-mcp", "Y-star-gov"],
+            external_unknowns=["implementation budget threshold", *common_missing],
+            behavior_capability_required=["strategy brief", "sample deliverable", "repo modification"],
+            first_experiment="48h implementation blueprint and exclusion boundary, without touching customer systems.",
+            approval_needed=["external demo", "implementation proposal"],
+            m_triangle_alignment="M-3 implementation support; M-2 via explicit preflight and approval scope.",
+            owner_burden="High unless constrained to advisory first.",
+            confidence=confidence,
+            missing_evidence=["implementation budget threshold", *common_missing],
+        ),
+        OpportunityHypothesis(
+            opportunity_id="opp_partner_channel_enablement",
+            title="Partner Enablement Package for AI Consultants",
+            generated_from_lens="partner/channel lens",
+            buyer="AI consultant or agency that needs a governance/evidence layer for client delivery.",
+            pain="They can sell AI services but lack proof, safety boundaries, and a crisp client decision brief.",
+            internal_assets=["Y-star-gov", "gov-mcp", "sample deliverables", "evidence packets"],
+            external_unknowns=["partner willingness to resell or co-deliver", *common_missing],
+            behavior_capability_required=["strategy brief", "sample deliverable", "read-only research planning"],
+            first_experiment="48h partner kit sample: boundary checklist, diagnostic brief, and residual plan.",
+            approval_needed=["partner outreach"],
+            m_triangle_alignment="M-3 via channel leverage while M-2 remains permission-gated.",
+            owner_burden="Medium: owner may need to choose partner category.",
+            confidence=confidence,
+            missing_evidence=["partner willingness to resell or co-deliver", *common_missing],
+        ),
+        OpportunityHypothesis(
+            opportunity_id="opp_open_source_paid_support",
+            title="Open-Source-to-Paid-Support Governance Pack",
+            generated_from_lens="open-source-to-paid-support lens",
+            buyer="Developer or small team adopting governance/MCP ideas from public repo materials.",
+            pain="They want implementation help but do not want a bespoke consulting engagement.",
+            internal_assets=["Y-star-gov domain pack", "gov-mcp tools", "documentation/report history"],
+            external_unknowns=["public repo audience demand", *common_missing],
+            behavior_capability_required=["sample deliverable", "support package draft", "publication"],
+            first_experiment="48h internal paid-support pack with a support boundary and FAQ.",
+            approval_needed=["public support offer", "customer contact"],
+            m_triangle_alignment="M-3 support revenue from existing M-2 assets.",
+            owner_burden="Low after owner approves support scope.",
+            confidence=confidence,
+            missing_evidence=["public repo audience demand", *common_missing],
+        ),
     ]
-    return [item.to_dict() for item in opportunities]
+    enriched: List[Dict[str, Any]] = []
+    for item in opportunities:
+        data = item.to_dict()
+        data["budget_hypothesis"] = "Hypothesis only until live read-only evidence or owner-approved validation confirms budget."
+        data["proof_assets"] = data["internal_assets"]
+        data["kill_condition"] = "Downgrade if 48h sample cannot show urgent pain, low owner burden, and a clear validation question."
+        data["counterfactual_risk"] = "Buyer urgency, trust gap, or channel access may be weaker than internal logic suggests."
+        data["market_reality"] = "internal hypothesis only until competitive/pricing/source evidence is collected."
+        enriched.append(data)
+    return enriched
 
 
 def score_opportunity(opportunity: Dict[str, Any]) -> int:
@@ -182,6 +303,8 @@ def score_opportunity(opportunity: Dict[str, Any]) -> int:
     lens = opportunity["generated_from_lens"].lower()
     if "founder" in title or "bottleneck" in title:
         score += 4
+    if "incident" in title or "mcp" in title or "partner" in title:
+        score += 3
     if "governance" in title:
         score += 3
     if "internal asset" in lens or "external pain" in lens:

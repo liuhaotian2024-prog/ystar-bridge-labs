@@ -78,7 +78,7 @@ The mission is value-production led, with M-2 preserved through preflight and ow
 ## Resource Comparison
 - Agent Workflow Bottleneck Diagnosis: assets=Mission Command; trust_gap=requires fresh external evidence; owner_burden=Low if Aiden prepares the diagnostic package and asks one approval question.
 - Founder AI Workflow Audit / CEO Command Brief: assets=Mission Command, M Triangle, WORK_METHODOLOGY; trust_gap=requires fresh external evidence; owner_burden=Owner approves target segment and any external send; team prepares the rest.
-- Governance Template Paid Support: assets=Y-star-gov policy, gov-mcp tools, content/product assets; trust_gap=requires fresh external evidence; owner_burden=Low after owner approves support boundary.
+- AI Agent Incident Postmortem Service: assets=WORK_METHODOLOGY; trust_gap=requires fresh external evidence; owner_burden=Low if sample is prepared before any external validation.
 
 ## Behavior Capability Matrix
 - internal analysis: status=available; autonomous_now=True; tier=Tier 0; owner_approval=False; next_U=Synthesize owner mission into a decision brief.
@@ -100,37 +100,44 @@ The mission is value-production led, with M-2 preserved through preflight and ow
 ## Opportunity Space
 - Agent Workflow Bottleneck Diagnosis (external pain lens): confidence=low_to_medium_internal_only; first_experiment=48h internal diagnosis template for a messy AI-team workflow.
 - Founder AI Workflow Audit / CEO Command Brief (internal asset lens): confidence=low_to_medium_internal_only; first_experiment=48h internal sample audit brief using a fictional founder workflow scenario.
+- AI Agent Incident Postmortem Service (competition gap lens): confidence=low_to_medium_internal_only; first_experiment=48h internal incident postmortem sample using a fictional agent workflow failure.
+- MCP / Tool-Use Boundary Review (regulatory/security pressure lens): confidence=low_to_medium_internal_only; first_experiment=48h sample boundary review for a generic MCP tool surface.
+- Open-Source-to-Paid-Support Governance Pack (open-source-to-paid-support lens): confidence=low_to_medium_internal_only; first_experiment=48h internal paid-support pack with a support boundary and FAQ.
 - Governance Template Paid Support (low-owner-burden lens): confidence=low_to_medium_internal_only; first_experiment=48h package the smallest support offer and sample before/after.
 - Coding-Agent Governance Audit (budget/demand lens): confidence=low_to_medium_internal_only; first_experiment=48h internal audit checklist for one representative coding-agent workflow.
+- Partner Enablement Package for AI Consultants (partner/channel lens): confidence=low_to_medium_internal_only; first_experiment=48h partner kit sample: boundary checklist, diagnostic brief, and residual plan.
 - Governed AI Runtime Readiness Review (governance/audit lens): confidence=low_to_medium_internal_only; first_experiment=48h readiness scorecard for AI-agent runtime governance.
 - Runtime Setup Advisory (owner leverage lens): confidence=low_to_medium_internal_only; first_experiment=48h advisory outline with before/after architecture examples.
 - 48h AI Workflow Paid-Signal Sprint (speed-to-feedback lens): confidence=low_to_medium_internal_only; first_experiment=48h internal sprint package: one sample diagnostic, one buyer question set, one approval packet.
 - AI Company Cockpit Setup (productization lens): confidence=low_to_medium_internal_only; first_experiment=48h internal cockpit setup blueprint, without installing anything externally.
+- Agent Team Onboarding / Training Package (support/subscription lens): confidence=low_to_medium_internal_only; first_experiment=48h onboarding playbook sample with governance-light operating rules.
+- Content-to-Lead Diagnostic Funnel (content/distribution lens): confidence=low_to_medium_internal_only; first_experiment=48h internal content + diagnostic sample draft; no publication without approval.
+- AI Ops Operating Room Implementation Support (integration/implementation lens): confidence=low_to_medium_internal_only; first_experiment=48h implementation blueprint and exclusion boundary, without touching customer systems.
 
 ## Top Opportunities
 - Agent Workflow Bottleneck Diagnosis: score=10; buyer=Small team adopting coding agents or AI assistants.
 - Founder AI Workflow Audit / CEO Command Brief: score=7; buyer=Founder/operator using AI tools but unsure where execution is bottlenecked.
-- Governance Template Paid Support: score=5; buyer=Open-source user who wants help adapting governance templates.
+- AI Agent Incident Postmortem Service: score=6; buyer=Founder/operator whose AI-agent experiment produced wrong code, unsafe workflow changes, or confusing operational drift.
 
 ## Experiment Design
 - Agent Workflow Bottleneck Diagnosis: 48h=48h internal diagnosis template for a messy AI-team workflow.; kill=No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
 - Founder AI Workflow Audit / CEO Command Brief: 48h=48h internal sample audit brief using a fictional founder workflow scenario.; kill=No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
-- Governance Template Paid Support: 48h=48h package the smallest support offer and sample before/after.; kill=No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
+- AI Agent Incident Postmortem Service: 48h=48h internal incident postmortem sample using a fictional agent workflow failure.; kill=No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
 
 ## Counterfactual Stress Test
 - Agent Workflow Bottleneck Diagnosis: risk=buyer pain may be real but not yet framed as a paid diagnostic need; fastest_test=Within 48h, draft a one-page bottleneck diagnosis sample and a 5-question buyer pain test; if no crisp paid-pain language emerges, downgrade.
 - Founder AI Workflow Audit / CEO Command Brief: risk=buyer may not recognize enough urgency to pay within 7 days; fastest_test=Within 48h, create a sample CEO Command Brief and compare it against two other offer samples for buyer clarity and delivery burden.
-- Governance Template Paid Support: risk=existing audience may not yet exist for paid template support; fastest_test=Within 48h, package one before/after template-support example; if it needs too much context or no buyer segment is obvious, downgrade.
+- AI Agent Incident Postmortem Service: risk=buyer may not recognize enough urgency to pay within 7 days; fastest_test=Within 48h, produce the smallest sample deliverable and identify one owner-approved validation question; if not possible, downgrade.
 
 ## Highest Risk Assumptions
 - Agent Workflow Bottleneck Diagnosis: buyer pain may be real but not yet framed as a paid diagnostic need
 - Founder AI Workflow Audit / CEO Command Brief: buyer may not recognize enough urgency to pay within 7 days
-- Governance Template Paid Support: existing audience may not yet exist for paid template support
+- AI Agent Incident Postmortem Service: buyer may not recognize enough urgency to pay within 7 days
 
 ## Fastest Disconfirming Tests
 - Agent Workflow Bottleneck Diagnosis: Within 48h, draft a one-page bottleneck diagnosis sample and a 5-question buyer pain test; if no crisp paid-pain language emerges, downgrade.
 - Founder AI Workflow Audit / CEO Command Brief: Within 48h, create a sample CEO Command Brief and compare it against two other offer samples for buyer clarity and delivery burden.
-- Governance Template Paid Support: Within 48h, package one before/after template-support example; if it needs too much context or no buyer segment is obvious, downgrade.
+- AI Agent Incident Postmortem Service: Within 48h, produce the smallest sample deliverable and identify one owner-approved validation question; if not possible, downgrade.
 
 ## Alternative Path Analysis
 The second-best path remains important if it can show clearer buyer language or lower delivery burden during the 48h internal experiment.
@@ -188,7 +195,7 @@ Counterfactual gate confirms Agent Workflow Bottleneck Diagnosis because it has 
 - Tests and unseen smoke checks verify behavior.
 
 ## Owner Decision Packet
-- packet_id: owner_decision_20260501T170410Z_m_88b2cb92
+- packet_id: owner_decision_20260501T195805Z_m_88b2cb92
 - mission_id: mission_制定未来7天最可能产生第一笔收入的行动方案
 - recommended_next_action: Approve or revise a Tier 1 live read-only evidence mission.
 - reason: The current plan is internally grounded but still lacks live external market evidence. The next owner decision should enable bounded read-only research, not customer contact.
@@ -225,9 +232,9 @@ Counterfactual gate confirms Agent Workflow Bottleneck Diagnosis because it has 
 | action_023 | experiment_48h_internal | internal_autonomous | ALLOW_INTERNAL | 48h internal sample audit brief using a fictional founder workflow scenario. | False |
 | action_024 | experiment_tier1_research | tier1_read_only_research | NEEDS_OWNER_APPROVAL | Collect public pain-language and pricing-reference evidence under explicit Tier 1 budget; no login, no contact, no submit. | False |
 | action_025 | experiment_external_validation | internal_artifact_preparation | ALLOW_INTERNAL | Prepare exact manual-send validation draft for Founder AI Workflow Audit / CEO Command Brief; owner must approve target, content, and boundary before any send. | False |
-| action_026 | experiment_48h_internal | internal_autonomous | ALLOW_INTERNAL | 48h package the smallest support offer and sample before/after. | False |
+| action_026 | experiment_48h_internal | internal_autonomous | ALLOW_INTERNAL | 48h internal incident postmortem sample using a fictional agent workflow failure. | False |
 | action_027 | experiment_tier1_research | tier1_read_only_research | NEEDS_OWNER_APPROVAL | Collect public pain-language and pricing-reference evidence under explicit Tier 1 budget; no login, no contact, no submit. | False |
-| action_028 | experiment_external_validation | internal_artifact_preparation | ALLOW_INTERNAL | Prepare exact manual-send validation draft for Governance Template Paid Support; owner must approve target, content, and boundary before any send. | False |
+| action_028 | experiment_external_validation | internal_artifact_preparation | ALLOW_INTERNAL | Prepare exact manual-send validation draft for AI Agent Incident Postmortem Service; owner must approve target, content, and boundary before any send. | False |
 | action_029 | obligation_draft | obligation_dry_run | REVIEW_GATED | Obligation dry-run draft: Mission owner decision brief | False |
 | action_030 | obligation_draft | obligation_dry_run | REVIEW_GATED | Obligation dry-run draft: Aiden Liu mission task | False |
 | action_031 | obligation_draft | obligation_dry_run | REVIEW_GATED | Obligation dry-run draft: Sofia Blake mission task | False |
@@ -239,7 +246,7 @@ Counterfactual gate confirms Agent Workflow Bottleneck Diagnosis because it has 
 | action_037 | obligation_draft | obligation_dry_run | REVIEW_GATED | Obligation dry-run draft: Leo / Maya / Ryan / Jordan mission task | False |
 | action_038 | residual_candidate | residual_review_candidate | REVIEW_GATED | Residual review candidate: opp_external_pain_agent_bottleneck | False |
 | action_039 | residual_candidate | residual_review_candidate | REVIEW_GATED | Residual review candidate: opp_internal_asset_founder_audit | False |
-| action_040 | residual_candidate | residual_review_candidate | REVIEW_GATED | Residual review candidate: opp_low_burden_template_support | False |
+| action_040 | residual_candidate | residual_review_candidate | REVIEW_GATED | Residual review candidate: opp_competition_gap_incident_postmortem | False |
 | action_041 | next_executable_u | internal_autonomous | ALLOW_INTERNAL | Within 48h, build a one-page comparison brief and one sample deliverable for the top two opportunities, then ask the owner to approve or revise a Tier 1 read-only evidence mission. | False |
 
 ## Owner Burden Minimization
@@ -352,7 +359,7 @@ Within 48h, build a one-page comparison brief and one sample deliverable for the
 ## Residual Learning Candidates
 - opp_external_pain_agent_bottleneck: assumption=buyer pain may be real but not yet framed as a paid diagnostic need; writeback_allowed=False; review_required=True
 - opp_internal_asset_founder_audit: assumption=buyer may not recognize enough urgency to pay within 7 days; writeback_allowed=False; review_required=True
-- opp_low_burden_template_support: assumption=existing audience may not yet exist for paid template support; writeback_allowed=False; review_required=True
+- opp_competition_gap_incident_postmortem: assumption=buyer may not recognize enough urgency to pay within 7 days; writeback_allowed=False; review_required=True
 
 ## Y-star-gov Preflight
 ```json
