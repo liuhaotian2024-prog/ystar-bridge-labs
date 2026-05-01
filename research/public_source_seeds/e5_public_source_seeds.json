@@ -1,0 +1,201 @@
+{
+  "mission_id": "e6_source_seeded_market_evidence_run",
+  "required_seed_count": 10,
+  "approval_boundary": "Owner authorizes only public no-login GET/page-read inspection of these URLs for E6 market evidence. This does not authorize customer contact, messages, publication, forms, payment, account creation, login, or private data access.",
+  "forbidden_actions": [
+    "login",
+    "customer_contact",
+    "email_or_message",
+    "publication",
+    "form_submission",
+    "payment",
+    "account_creation",
+    "paywall_bypass",
+    "private_data_scraping",
+    "secret_or_env_value_reading",
+    "core_db_writeback",
+    "obligation_registration"
+  ],
+  "seeds": [
+    {
+      "seed_id": "e6_mcp_security_001",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices",
+      "opportunity_family": "MCP/tool-use boundary/security",
+      "relevant_opportunity_ids": ["opp_regulatory_security_mcp_boundary"],
+      "source_category": "public docs",
+      "evidence_sought": ["security risks", "attack vectors", "trust gap", "tool-use boundary"],
+      "owner_approved": true,
+      "notes": "Official MCP security best-practices source."
+    },
+    {
+      "seed_id": "e6_mcp_tools_002",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18/server/tools",
+      "opportunity_family": "MCP/tool-use boundary/security",
+      "relevant_opportunity_ids": ["opp_regulatory_security_mcp_boundary"],
+      "source_category": "public docs",
+      "evidence_sought": ["tool invocation model", "human-in-the-loop", "approval boundary", "security considerations"],
+      "owner_approved": true,
+      "notes": "Official MCP tools specification."
+    },
+    {
+      "seed_id": "e6_github_copilot_plans_003",
+      "url": "https://github.com/features/copilot/plans",
+      "opportunity_family": "coding-agent governance",
+      "relevant_opportunity_ids": ["opp_budget_governance_audit", "opp_open_source_paid_support"],
+      "source_category": "public pricing pages",
+      "evidence_sought": ["pricing", "enterprise buyer process", "coding-agent market category", "incumbent tool alternative"],
+      "owner_approved": true,
+      "notes": "Public GitHub Copilot plan/pricing page."
+    },
+    {
+      "seed_id": "e6_github_copilot_enterprise_billing_004",
+      "url": "https://docs.github.com/copilot/concepts/copilot-billing/about-billing-for-github-copilot-in-your-enterprise",
+      "opportunity_family": "coding-agent governance",
+      "relevant_opportunity_ids": ["opp_budget_governance_audit"],
+      "source_category": "public docs",
+      "evidence_sought": ["enterprise billing", "budget channel", "policy/admin buying process", "governance need"],
+      "owner_approved": true,
+      "notes": "Public GitHub Copilot enterprise billing docs."
+    },
+    {
+      "seed_id": "e6_cursor_pricing_005",
+      "url": "https://cursor.com/en-US/pricing",
+      "opportunity_family": "coding-agent governance",
+      "relevant_opportunity_ids": ["opp_budget_governance_audit", "opp_external_pain_agent_bottleneck"],
+      "source_category": "public pricing pages",
+      "evidence_sought": ["pricing", "team/admin features", "coding-agent competitor", "enterprise trust gap"],
+      "owner_approved": true,
+      "notes": "Public Cursor pricing page."
+    },
+    {
+      "seed_id": "e6_langsmith_pricing_006",
+      "url": "https://www.langchain.com/pricing-langsmith",
+      "opportunity_family": "AI ops implementation",
+      "relevant_opportunity_ids": ["opp_integration_implementation_ai_ops_room", "opp_external_pain_agent_bottleneck"],
+      "source_category": "public pricing pages",
+      "evidence_sought": ["agent observability", "evaluation", "pricing", "production AI workflow buyer process"],
+      "owner_approved": true,
+      "notes": "Public LangSmith pricing page."
+    },
+    {
+      "seed_id": "e6_crewai_pricing_007",
+      "url": "https://www.crewai.com/pricing",
+      "opportunity_family": "AI ops implementation",
+      "relevant_opportunity_ids": ["opp_integration_implementation_ai_ops_room", "opp_support_subscription_agent_onboarding"],
+      "source_category": "public pricing pages",
+      "evidence_sought": ["agentic workflow platform", "pricing", "enterprise support", "implementation alternative"],
+      "owner_approved": true,
+      "notes": "Public CrewAI pricing page."
+    },
+    {
+      "seed_id": "e6_zapier_pricing_008",
+      "url": "https://zapier.com/pricing",
+      "opportunity_family": "AI ops implementation",
+      "relevant_opportunity_ids": ["opp_integration_implementation_ai_ops_room", "opp_content_distribution_diagnostic_funnel"],
+      "source_category": "public pricing pages",
+      "evidence_sought": ["automation pricing", "AI orchestration", "incumbent workflow platform", "no-code substitute"],
+      "owner_approved": true,
+      "notes": "Public Zapier pricing page."
+    },
+    {
+      "seed_id": "e6_humanloop_pricing_009",
+      "url": "https://humanloop.com/pricing",
+      "opportunity_family": "founder decision-support",
+      "relevant_opportunity_ids": ["opp_internal_asset_founder_audit", "opp_integration_implementation_ai_ops_room"],
+      "source_category": "public pricing pages",
+      "evidence_sought": ["evaluation workflow", "enterprise AI product buyer", "observability", "trust gap"],
+      "owner_approved": true,
+      "notes": "Public Humanloop pricing page."
+    },
+    {
+      "seed_id": "e6_vellum_docs_pricing_010",
+      "url": "https://www.vellum.ai/docs/pricing",
+      "opportunity_family": "AI workflow bottleneck",
+      "relevant_opportunity_ids": ["opp_external_pain_agent_bottleneck", "opp_internal_asset_founder_audit"],
+      "source_category": "public pricing pages",
+      "evidence_sought": ["AI workflow platform pricing", "usage pricing", "tool substitute", "budget proxy"],
+      "owner_approved": true,
+      "notes": "Public Vellum pricing docs."
+    },
+    {
+      "seed_id": "e6_incident_io_pricing_011",
+      "url": "https://incident.io/pricing",
+      "opportunity_family": "AI incident/postmortem",
+      "relevant_opportunity_ids": ["opp_competition_gap_incident_postmortem"],
+      "source_category": "public pricing pages",
+      "evidence_sought": ["incident management pricing", "postmortem process", "incident automation", "buyer budget channel"],
+      "owner_approved": true,
+      "notes": "Public incident.io pricing page."
+    },
+    {
+      "seed_id": "e6_rootly_pricing_012",
+      "url": "https://rootly.com/pricing",
+      "opportunity_family": "AI incident/postmortem",
+      "relevant_opportunity_ids": ["opp_competition_gap_incident_postmortem"],
+      "source_category": "public pricing pages",
+      "evidence_sought": ["incident management pricing", "AI incident response", "retrospectives", "competitor/substitute"],
+      "owner_approved": true,
+      "notes": "Public Rootly pricing page."
+    },
+    {
+      "seed_id": "e6_github_sponsors_013",
+      "url": "https://github.com/sponsors",
+      "opportunity_family": "open-source paid support",
+      "relevant_opportunity_ids": ["opp_open_source_paid_support", "opp_low_burden_template_support"],
+      "source_category": "public product/service pages",
+      "evidence_sought": ["open-source funding mechanism", "paid support signal", "sponsor/buyer channel", "trust gap"],
+      "owner_approved": true,
+      "notes": "Public GitHub Sponsors page."
+    },
+    {
+      "seed_id": "e6_github_sponsors_billing_014",
+      "url": "https://docs.github.com/en/billing/concepts/third-party-payments/github-sponsors",
+      "opportunity_family": "open-source paid support",
+      "relevant_opportunity_ids": ["opp_open_source_paid_support", "opp_low_burden_template_support"],
+      "source_category": "public docs",
+      "evidence_sought": ["sponsorship billing", "organization support channel", "fees", "budget process"],
+      "owner_approved": true,
+      "notes": "Public GitHub Sponsors billing docs."
+    },
+    {
+      "seed_id": "e6_aws_genai_partners_015",
+      "url": "https://aws.amazon.com/ai/partners/",
+      "opportunity_family": "partner enablement",
+      "relevant_opportunity_ids": ["opp_partner_channel_enablement", "opp_integration_implementation_ai_ops_room"],
+      "source_category": "public ecosystem/marketplace pages",
+      "evidence_sought": ["partner ecosystem", "generative AI consulting market", "buyer process", "competitor landscape"],
+      "owner_approved": true,
+      "notes": "Public AWS generative AI partner ecosystem page."
+    },
+    {
+      "seed_id": "e6_bcg_ai_consulting_016",
+      "url": "https://www.bcg.com/capabilities/artificial-intelligence",
+      "opportunity_family": "partner enablement",
+      "relevant_opportunity_ids": ["opp_partner_channel_enablement", "opp_internal_asset_founder_audit"],
+      "source_category": "public consultant/vendor pages",
+      "evidence_sought": ["AI consulting category", "enterprise buyer language", "incumbent consultant alternative", "trust gap"],
+      "owner_approved": true,
+      "notes": "Public BCG AI consulting page."
+    },
+    {
+      "seed_id": "e6_retool_pricing_017",
+      "url": "https://retool.com/pricing",
+      "opportunity_family": "AI ops implementation",
+      "relevant_opportunity_ids": ["opp_integration_implementation_ai_ops_room", "opp_content_distribution_diagnostic_funnel"],
+      "source_category": "public pricing pages",
+      "evidence_sought": ["internal tools pricing", "AI agents", "implementation substitute", "buyer budget channel"],
+      "owner_approved": true,
+      "notes": "Public Retool pricing page."
+    },
+    {
+      "seed_id": "e6_make_pricing_018",
+      "url": "https://www.make.com/en/pricing",
+      "opportunity_family": "AI ops implementation",
+      "relevant_opportunity_ids": ["opp_integration_implementation_ai_ops_room", "opp_external_pain_agent_bottleneck"],
+      "source_category": "public pricing pages",
+      "evidence_sought": ["automation platform pricing", "workflow substitute", "integration implementation alternative", "budget proxy"],
+      "owner_approved": true,
+      "notes": "Public Make pricing page."
+    }
+  ]
+}

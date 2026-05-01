@@ -13,6 +13,7 @@ from .public_source_seed_model import (
     validate_public_source_seed,
 )
 from .safe_public_page_reader import SafePublicPageReader
+from .source_evidence_extractor import extract_source_evidence_signals, signal_strength
 from .tier1_public_research import (
     Tier1ResearchReceipt,
     Tier1ResearchRequest,
@@ -38,6 +39,11 @@ class SourceSeededPublicResearchProvider:
         repo_root: Path,
         request: Tier1ResearchRequest,
         seed_plan: PublicSourceSeedPlan,
+        *,
+        run_id: str = "e5_source_seeded_public_page_read",
+        blocked_run_id: str = "e5_source_seeded_blocked_missing_seeds",
+        receipt_name: str = "e5_tier1_research_budget_receipt.md",
+        summaries_name: str = "e5_external_source_summaries.md",
     ) -> EvidenceRunBundle:
         started = utc_now()
         errors: List[str] = []
@@ -61,7 +67,7 @@ class SourceSeededPublicResearchProvider:
                 source_summary_paths=[],
             )
             return build_evidence_run_bundle(
-                run_id="e5_source_seeded_blocked_missing_seeds",
+                run_id=blocked_run_id,
                 mission_id=request.mission_id,
                 provider_name=self.provider_name,
                 provider_mode=EvidenceProviderMode.BLOCKED_MISSING_SOURCE_SEEDS,
@@ -93,35 +99,34 @@ class SourceSeededPublicResearchProvider:
             if result.blocked_reason or result.safety_errors or not result.text_excerpt:
                 errors.append(f"{seed.seed_id}:{result.blocked_reason or ';'.join(result.safety_errors) or 'empty_page'}")
                 continue
-            pages_read.append(seed.url)
             text = result.text_excerpt
-            lower = text.lower()
-            pricing_signal = ""
-            if any(token in lower for token in ["pricing", "$", "price", "plan", "subscription"]):
-                pricing_signal = "pricing or plan language visible in public page excerpt"
-            competitor_signal = seed.source_category if any(token in seed.source_category.lower() for token in ["vendor", "consultant", "product", "service"]) else ""
-            substitute_signal = "DIY/internal process alternative likely" if any(token in lower for token in ["template", "guide", "checklist", "docs"]) else ""
-            budget_signal = "budget proxy requires human review of source excerpt" if pricing_signal else ""
+            signals = extract_source_evidence_signals(
+                text_excerpt=text,
+                title=result.title,
+                domain=result.domain,
+                source_category=seed.source_category,
+                evidence_sought=seed.evidence_sought,
+            )
+            pages_read.append(seed.url)
+            evidence_type = "live_public_read_only"
+            confidence = "medium_public_page_excerpt" if signal_strength(signals) >= 5 else "low_public_page_excerpt"
             sources.append(
                 Tier1SourceEvidence(
-                    source_id=f"e5_source_{len(sources) + 1:03d}_{seed.seed_id}",
+                    source_id=f"{run_id}_source_{len(sources) + 1:03d}_{seed.seed_id}",
                     url_or_public_identifier=seed.url,
                     domain=result.domain,
                     source_category=seed.source_category,
                     retrieved_at=result.retrieved_at,
-                    evidence_type="live_public_read_only",
+                    evidence_type=evidence_type,
                     relevant_opportunity_ids=seed.relevant_opportunity_ids,
-                    summary=text[:500],
-                    buyer_pain_signal=f"Seed sought {', '.join(seed.evidence_sought)}; excerpt: {text[:220]}",
-                    pricing_signal=pricing_signal,
-                    competitor_signal=competitor_signal,
-                    substitute_signal=substitute_signal,
-                    budget_signal=budget_signal,
-                    confidence="low_to_medium_public_page_excerpt",
-                    limitations=[
-                        "Deterministic extraction from page excerpt only.",
-                        "No customer contact or private source verification.",
-                    ],
+                    summary=text[:700],
+                    buyer_pain_signal=signals.buyer_pain_signal,
+                    pricing_signal=signals.pricing_signal,
+                    competitor_signal=signals.competitor_signal,
+                    substitute_signal=signals.substitute_signal,
+                    budget_signal=signals.budget_signal or signals.buying_process_signal or signals.market_category_signal,
+                    confidence=confidence,
+                    limitations=signals.limitation_notes,
                 )
             )
         receipt = Tier1ResearchReceipt(
@@ -137,17 +142,17 @@ class SourceSeededPublicResearchProvider:
             safety_boundary=safety_boundary(),
             external_action_executed=False,
             errors=errors,
-            source_summary_paths=["reports/integration/e5_external_source_summaries.md"] if sources else [],
+            source_summary_paths=[f"reports/integration/{summaries_name}"] if sources else [],
         )
         paths = write_receipt_and_summaries(
             repo_root,
             receipt,
             sources,
-            "e5_tier1_research_budget_receipt.md",
-            "e5_external_source_summaries.md",
-        ) if sources else {}
+            receipt_name,
+            summaries_name,
+        )
         return build_evidence_run_bundle(
-            run_id="e5_source_seeded_public_page_read",
+            run_id=run_id,
             mission_id=request.mission_id,
             provider_name=self.provider_name,
             provider_mode=EvidenceProviderMode.SOURCE_SEED_LIVE_PUBLIC_READ_ONLY if sources else EvidenceProviderMode.BLOCKED_MISSING_SOURCE_SEEDS,

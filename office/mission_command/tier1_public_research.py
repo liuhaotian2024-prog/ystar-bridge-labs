@@ -301,7 +301,7 @@ def write_receipt_and_summaries(
         receipt_lines.extend(f"- {item}" for item in receipt.errors)
     receipt_path.write_text("\n".join(receipt_lines) + "\n", encoding="utf-8")
 
-    summary_lines = ["# E4 External Source Summaries", ""]
+    summary_lines = [f"# {summaries_name.replace('_', ' ').replace('.md', '').title()}", ""]
     if not sources:
         summary_lines.append("No live public source summaries were produced.")
     for source in sources:
