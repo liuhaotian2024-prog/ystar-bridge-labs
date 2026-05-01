@@ -2,29 +2,30 @@ from __future__ import annotations
 
 from typing import Any, Dict, Iterable, List
 
+from .action_semantics import (
+    action_class_from_structured_action,
+    classify_structured_action,
+    decision_from_structured_action,
+    explain_action_semantics,
+)
 from .governance_bridge import preflight_mission_action
 from .mission_model import MissionCommandResult
 
 
-def _classify_action(title: str) -> str:
-    text = title.lower()
-    if any(k in text for k in ["email", "contact", "customer", "publish", "external", "quote price", "payment"]):
-        return "external_or_approval_gated"
-    if any(k in text for k in ["core", "brain", "memory", "cieu", "writeback"]):
-        return "core_writeback_review_gated"
-    if any(k in text for k in ["obligation", "registration"]):
-        return "obligation_dry_run"
-    if "residual" in text or "learning" in text:
-        return "residual_review_candidate"
-    return "internal_autonomous"
-
-
 def _action(action_id: str, title: str, source: str) -> Dict[str, Any]:
+    structured = classify_structured_action(
+        {
+            "action_id": action_id,
+            "action_title": title,
+            "action_source": source,
+        }
+    )
     return {
         "action_id": action_id,
         "action_title": title,
         "action_source": source,
-        "action_class": _classify_action(title),
+        "action_class": action_class_from_structured_action(structured),
+        "structured_action": structured.to_dict(),
     }
 
 
@@ -70,20 +71,19 @@ def preflight_action_inventory(
     rows: List[Dict[str, Any]] = []
     for action in actions:
         preflight = preflight_mission_action({"action": action["action_title"]}, mission_dict, repo_root)
-        decision = preflight.get("decision") or ("UNAVAILABLE" if not preflight.get("available", True) else "ALLOW_INTERNAL")
-        if action["action_class"] == "internal_autonomous" and decision not in {"BLOCKED", "REVIEW_GATED"}:
-            decision = "ALLOW_INTERNAL"
-        elif action["action_class"] == "residual_review_candidate":
-            decision = "REVIEW_GATED"
-        elif action["action_class"] == "core_writeback_review_gated":
-            decision = "REVIEW_GATED"
-        elif action["action_class"] == "obligation_dry_run":
-            decision = "REVIEW_GATED"
+        structured = classify_structured_action(action)
+        decision = decision_from_structured_action(structured)
         rows.append(
             {
                 **action,
+                "action_class": action_class_from_structured_action(structured),
+                "structured_action": structured.to_dict(),
                 "preflight_decision": decision,
-                "reason": preflight.get("owner_visible_explanation") or preflight.get("reason") or preflight.get("error") or "",
+                "reason": explain_action_semantics(structured)
+                or preflight.get("owner_visible_explanation")
+                or preflight.get("reason")
+                or preflight.get("error")
+                or "",
                 "external_action_executed": False,
                 "preflight": preflight,
             }

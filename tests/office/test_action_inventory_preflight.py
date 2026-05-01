@@ -40,7 +40,7 @@ def test_all_proposed_actions_receive_preflight():
 
 def test_external_actions_need_owner_approval():
     rows = _rows()
-    external = [row for row in rows if row["action_class"] == "external_or_approval_gated"]
+    external = [row for row in rows if row["structured_action"]["external_side_effect"]]
     assert external
     assert any(row["preflight_decision"] == "NEEDS_OWNER_APPROVAL" for row in external)
 
@@ -68,3 +68,26 @@ def test_no_email():
     email = [row for row in rows if "email" in row["action_title"].lower()]
     assert email
     assert all(row["external_action_executed"] is False for row in email)
+
+
+def test_approval_packet_creation_is_internal_not_external_false_positive():
+    rows = _rows()
+    matches = [row for row in rows if row["action_title"].startswith("Create approval packet")]
+    assert matches
+    assert matches[0]["preflight_decision"] == "ALLOW_INTERNAL"
+    assert matches[0]["structured_action"]["external_side_effect"] is False
+
+
+def test_aiden_external_gate_coordination_is_internal():
+    rows = _rows()
+    matches = [row for row in rows if "keep all external actions approval-gated" in row["action_title"]]
+    assert matches
+    assert matches[0]["preflight_decision"] == "ALLOW_INTERNAL"
+
+
+def test_external_pain_residual_candidate_is_review_gated():
+    rows = _rows()
+    matches = [row for row in rows if "opp_external_pain_agent_bottleneck" in row["action_title"]]
+    assert matches
+    assert matches[0]["preflight_decision"] == "REVIEW_GATED"
+    assert matches[0]["structured_action"]["external_side_effect"] is False
