@@ -11,6 +11,8 @@ class StructuredAction:
     source: str
     artifact_only: bool
     preparation_only: bool
+    research_planning: bool
+    live_read_only_research: bool
     research_read_only: bool
     approval_packet_only: bool
     external_side_effect: bool
@@ -27,6 +29,7 @@ class StructuredAction:
     requires_owner_approval: bool
     review_gated: bool
     blocked: bool
+    decision: str
     semantic_reason: str
 
     def to_dict(self) -> Dict[str, Any]:
@@ -72,6 +75,16 @@ def _is_live_read_only_research(text: str, source: str) -> bool:
     )
 
 
+def _is_research_planning(text: str, source: str) -> bool:
+    return (
+        "research plan" in text
+        or "research questions" in text
+        or "evidence fields" in text
+        or "prepare budgeted read-only research" in text
+        or source == "research_planning"
+    )
+
+
 def classify_structured_action(action_dict: Dict[str, Any]) -> StructuredAction:
     action_id = str(action_dict.get("action_id") or "")
     raw_title = str(action_dict.get("action_title") or action_dict.get("raw_title") or action_dict.get("title") or "")
@@ -96,9 +109,9 @@ def classify_structured_action(action_dict: Dict[str, Any]) -> StructuredAction:
         "owner must approve" in text and "before any send" in text
     )
     preparation_only = _is_preparation_text(text)
-    research_read_only = _is_live_read_only_research(text, source) or (
-        "read-only research" in text and "plan" in text
-    )
+    research_planning = _is_research_planning(text, source)
+    live_read_only_research = _is_live_read_only_research(text, source) and not research_planning
+    research_read_only = research_planning or live_read_only_research
 
     # The word "external" is often part of a safety boundary or artifact description.
     # It becomes a side effect only when paired with an actual contact/send/publish/submit/payment/account action.
@@ -120,7 +133,7 @@ def classify_structured_action(action_dict: Dict[str, Any]) -> StructuredAction:
         reason = "Core DB/brain/memory/CIEU writeback remains review-gated."
     elif external_side_effect:
         reason = "Customer contact, email/message, publication, external price quote, account creation, or form submission requires owner approval."
-    elif research_read_only and not preparation_only:
+    elif live_read_only_research:
         reason = "Live Tier 1 read-only research execution requires explicit budget and owner approval."
     elif approval_packet_only or artifact_only or preparation_only:
         reason = "This is internal artifact/preparation work; mentioning external gates does not execute an external action."
@@ -129,7 +142,15 @@ def classify_structured_action(action_dict: Dict[str, Any]) -> StructuredAction:
 
     blocked = payment
     review_gated = obligation_dry_run or residual_candidate or core_writeback
-    requires_owner_approval = bool(external_side_effect or (research_read_only and not preparation_only))
+    requires_owner_approval = bool(external_side_effect or live_read_only_research)
+    if blocked:
+        decision = "BLOCKED"
+    elif review_gated:
+        decision = "REVIEW_GATED"
+    elif requires_owner_approval:
+        decision = "NEEDS_OWNER_APPROVAL"
+    else:
+        decision = "ALLOW_INTERNAL"
 
     return StructuredAction(
         action_id=action_id,
@@ -137,6 +158,8 @@ def classify_structured_action(action_dict: Dict[str, Any]) -> StructuredAction:
         source=source,
         artifact_only=artifact_only,
         preparation_only=preparation_only,
+        research_planning=research_planning,
+        live_read_only_research=live_read_only_research,
         research_read_only=research_read_only,
         approval_packet_only=approval_packet_only,
         external_side_effect=external_side_effect,
@@ -153,19 +176,14 @@ def classify_structured_action(action_dict: Dict[str, Any]) -> StructuredAction:
         requires_owner_approval=requires_owner_approval,
         review_gated=review_gated,
         blocked=blocked,
+        decision=decision,
         semantic_reason=reason,
     )
 
 
 def decision_from_structured_action(structured_action: StructuredAction | Dict[str, Any]) -> str:
     action = structured_action if isinstance(structured_action, StructuredAction) else StructuredAction(**structured_action)
-    if action.blocked:
-        return "BLOCKED"
-    if action.review_gated:
-        return "REVIEW_GATED"
-    if action.requires_owner_approval:
-        return "NEEDS_OWNER_APPROVAL"
-    return "ALLOW_INTERNAL"
+    return action.decision
 
 
 def action_class_from_structured_action(structured_action: StructuredAction) -> str:
@@ -177,8 +195,10 @@ def action_class_from_structured_action(structured_action: StructuredAction) -> 
         return "obligation_dry_run"
     if structured_action.residual_candidate:
         return "residual_review_candidate"
-    if structured_action.requires_owner_approval and structured_action.research_read_only:
+    if structured_action.live_read_only_research:
         return "tier1_read_only_research"
+    if structured_action.research_planning:
+        return "read_only_research_planning"
     if structured_action.external_side_effect:
         return "external_side_effect"
     if structured_action.artifact_only or structured_action.preparation_only or structured_action.approval_packet_only:

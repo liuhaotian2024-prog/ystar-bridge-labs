@@ -78,7 +78,7 @@ The mission is value-production led, with M-2 preserved through preflight and ow
 ## Resource Comparison
 - Agent Workflow Bottleneck Diagnosis: assets=Mission Command; trust_gap=requires fresh external evidence; owner_burden=Low if Aiden prepares the diagnostic package and asks one approval question.
 - Founder AI Workflow Audit / CEO Command Brief: assets=Mission Command, M Triangle, WORK_METHODOLOGY; trust_gap=requires fresh external evidence; owner_burden=Owner approves target segment and any external send; team prepares the rest.
-- Governance Template Paid Support: assets=content/product assets, Y-star-gov policy, gov-mcp tools; trust_gap=requires fresh external evidence; owner_burden=Low after owner approves support boundary.
+- Governance Template Paid Support: assets=Y-star-gov policy, gov-mcp tools, content/product assets; trust_gap=requires fresh external evidence; owner_burden=Low after owner approves support boundary.
 
 ## Behavior Capability Matrix
 - internal analysis: status=available; autonomous_now=True; tier=Tier 0; owner_approval=False; next_U=Synthesize owner mission into a decision brief.
@@ -188,7 +188,7 @@ Counterfactual gate confirms Agent Workflow Bottleneck Diagnosis because it has 
 - Tests and unseen smoke checks verify behavior.
 
 ## Owner Decision Packet
-- packet_id: owner_decision_20260501T165141Z_m_88b2cb92
+- packet_id: owner_decision_20260501T170410Z_m_88b2cb92
 - mission_id: mission_制定未来7天最可能产生第一笔收入的行动方案
 - recommended_next_action: Approve or revise a Tier 1 live read-only evidence mission.
 - reason: The current plan is internally grounded but still lacks live external market evidence. The next owner decision should enable bounded read-only research, not customer contact.
@@ -203,7 +203,7 @@ Counterfactual gate confirms Agent Workflow Bottleneck Diagnosis because it has 
 | action_001 | autonomous_internal_actions | internal_artifact_preparation | ALLOW_INTERNAL | Build a 7-day first-revenue decision brief. | False |
 | action_002 | autonomous_internal_actions | internal_artifact_preparation | ALLOW_INTERNAL | Compare top money paths using repo evidence and current capabilities. | False |
 | action_003 | autonomous_internal_actions | internal_artifact_preparation | ALLOW_INTERNAL | Draft buyer archetypes and offer language for owner review. | False |
-| action_004 | autonomous_internal_actions | internal_artifact_preparation | ALLOW_INTERNAL | Prepare read-only research plan within budget. | False |
+| action_004 | autonomous_internal_actions | read_only_research_planning | ALLOW_INTERNAL | Prepare read-only research plan within budget. | False |
 | action_005 | autonomous_internal_actions | internal_artifact_preparation | ALLOW_INTERNAL | Create approval packet for any external action, but do not execute it. | False |
 | action_006 | approval_needed_actions | external_side_effect | NEEDS_OWNER_APPROVAL | customer contact / select exact external recipient | False |
 | action_007 | approval_needed_actions | external_side_effect | NEEDS_OWNER_APPROVAL | send email/message | False |
@@ -216,7 +216,7 @@ Counterfactual gate confirms Agent Workflow Bottleneck Diagnosis because it has 
 | action_014 | team_task | internal_artifact_preparation | ALLOW_INTERNAL | Marco Rivera: Compare $750 / $1500 / $3000 diagnostic pricing as hypotheses and define validation signals. Output: Pricing hypothesis and cash-signal criteria | False |
 | action_015 | team_task | internal_artifact_preparation | ALLOW_INTERNAL | Zara Johnson: Define no-contact buyer archetypes and the approval gate for any later outreach. Output: Buyer archetype review and approval-needed action list | False |
 | action_016 | team_task | internal_artifact_preparation | ALLOW_INTERNAL | Ethan Wright: Define the audit/brief delivery checklist and what can be delivered manually in 7 days. Output: Delivery checklist and feasibility boundary | False |
-| action_017 | team_task | internal_artifact_preparation | ALLOW_INTERNAL | Jinjin / K9 Scout: Prepare budgeted read-only research questions and evidence fields; do not contact anyone. Output: Read-only research plan | False |
+| action_017 | team_task | read_only_research_planning | ALLOW_INTERNAL | Jinjin / K9 Scout: Prepare budgeted read-only research questions and evidence fields; do not contact anyone. Output: Read-only research plan | False |
 | action_018 | team_task | internal_artifact_preparation | ALLOW_INTERNAL | Samantha Lin: Record mission decisions, avoided admin burden, approval needs, and residual candidates. Output: Mission receipt and decision log | False |
 | action_019 | team_task | internal_artifact_preparation | ALLOW_INTERNAL | Leo / Maya / Ryan / Jordan: Support reusable checklist/tooling only after the offer path is selected. Output: Implementation support notes | False |
 | action_020 | experiment_48h_internal | internal_autonomous | ALLOW_INTERNAL | 48h internal diagnosis template for a messy AI-team workflow. | False |
