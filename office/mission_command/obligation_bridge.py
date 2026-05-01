@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass
+from datetime import datetime, timezone
+import hashlib
 from typing import Any, Dict, Iterable, List
 
 from .mission_model import MissionCommandResult, TeamTask
@@ -44,6 +46,20 @@ def _slug(text: str, limit: int = 36) -> str:
     return (slug or "mission_task")[:limit]
 
 
+def _date_prefix(now: datetime | None = None) -> str:
+    current = now or datetime.now(timezone.utc)
+    return current.strftime("BOARD-%Y-%m-%d")
+
+
+def _mission_suffix(mission_id: str) -> str:
+    digest = hashlib.sha1(mission_id.encode("utf-8")).hexdigest()[:8]
+    return f"m-{digest}"
+
+
+def _entity_id(mission_id: str, index: int, now: datetime | None = None) -> str:
+    return f"{_date_prefix(now)}-{_mission_suffix(mission_id)}-{index:03d}"
+
+
 def _draft(
     owner: str,
     entity_id: str,
@@ -79,8 +95,8 @@ def build_obligation_draft_from_mission(mission_result: MissionCommandResult) ->
     mission = mission_result.mission
     draft = _draft(
         owner="ceo",
-        entity_id="BOARD-2026-05-01-001",
-        rule_id="e1_4_mission_owner_decision",
+        entity_id=_entity_id(mission.mission_id, 1),
+        rule_id=f"e1_5_{_slug(mission.mission_id, 18)}_owner_decision",
         rule_name="Mission owner decision brief",
         description=(
             "Prepare the owner-review decision brief, including counterfactual risks, approval-needed actions, "
@@ -100,7 +116,7 @@ def build_team_obligation_drafts(team_tasks: Iterable[TeamTask], source_mission_
         drafts.append(
             _draft(
                 owner=owner,
-                entity_id=f"BOARD-2026-05-01-{100 + index:03d}",
+                entity_id=_entity_id(source_mission_id, 100 + index),
                 rule_id=f"{_slug(task.agent)}_{_slug(task.function, 18)}_{index:02d}",
                 rule_name=f"{task.agent} mission task",
                 description=f"{task.task} Expected output: {task.output}.",

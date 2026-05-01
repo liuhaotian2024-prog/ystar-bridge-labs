@@ -2,7 +2,11 @@ from pathlib import Path
 
 from office.mission_command.meta_development_method_kernel import build_meta_development_trace
 from office.mission_command.mission_summary import build_mission_summary
-from office.mission_command.residual_learning_bridge import build_residual_candidates_for_experiments
+from office.mission_command.residual_learning_bridge import (
+    build_residual_candidates_for_experiments,
+    build_residual_review_packet,
+    update_residual_candidate_with_actual_signal,
+)
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -20,6 +24,25 @@ def test_residual_candidates_do_not_write_core_db():
     trace = build_meta_development_trace(MISSION, REPO_ROOT)
     candidates = build_residual_candidates_for_experiments(trace["experiments"], trace["counterfactual_cases"])
     assert all(item["writeback_allowed"] is False for item in candidates)
+
+
+def test_residual_candidate_update_no_writeback():
+    trace = build_meta_development_trace(MISSION, REPO_ROOT)
+    candidate = build_residual_candidates_for_experiments(trace["experiments"], trace["counterfactual_cases"])[0]
+    updated = update_residual_candidate_with_actual_signal(candidate, "strong urgent budget language", "owner reviewed")
+    assert updated["actual_signal_placeholder"] == "strong urgent budget language"
+    assert updated["writeback_allowed"] is False
+    assert updated["review_required"] is True
+    assert updated["residual_outcome"] == "assumption_strengthened"
+
+
+def test_residual_review_packet_is_review_gated():
+    trace = build_meta_development_trace(MISSION, REPO_ROOT)
+    candidates = build_residual_candidates_for_experiments(trace["experiments"], trace["counterfactual_cases"])
+    packet = build_residual_review_packet(candidates)
+    assert packet["writeback_allowed"] is False
+    assert packet["review_required"] is True
+    assert packet["core_db_write"] is False
 
 
 def test_report_contains_counterfactual_stress_test():

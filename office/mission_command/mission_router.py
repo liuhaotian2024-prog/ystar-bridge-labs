@@ -14,7 +14,7 @@ def route_mission(mission: Mission) -> dict:
             "Create approval packet for any external action, but do not execute it.",
         ],
         "approval_needed_actions": [
-            "select exact external recipient",
+            "customer contact / select exact external recipient",
             "send email/message",
             "publish public content",
             "quote price externally",
@@ -31,4 +31,3 @@ def route_mission(mission: Mission) -> dict:
             "Approve the team to run this as a Tier 1 read-only evidence mission, or request_revision on the target path."
         ),
     }
-

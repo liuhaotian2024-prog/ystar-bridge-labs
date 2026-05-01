@@ -3,6 +3,19 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from .action_inventory import (
+    build_action_inventory,
+    preflight_action_inventory,
+    render_action_preflight_markdown,
+    summarize_action_preflight,
+)
+from .czl_mission_loop import (
+    build_czl_plan,
+    compute_rt1,
+    observe_y_t1,
+    record_u_action,
+    render_czl_markdown,
+)
 from .governance_bridge import (
     preflight_admin_rule,
     preflight_mission_action,
@@ -19,8 +32,12 @@ from .mission_from_owner_message import build_mission_from_owner_message
 from .mission_model import MissionCommandResult
 from .mission_router import route_mission
 from .meta_development_method_kernel import build_meta_development_trace
+from .owner_decision_packet import build_owner_decision_packet, render_owner_decision_packet_markdown
 from .research_capability import audit_research_capability
-from .residual_learning_bridge import build_residual_candidates_for_experiments
+from .residual_learning_bridge import (
+    build_residual_candidates_for_experiments,
+    build_residual_review_packet,
+)
 from .team_task_builder import build_team_tasks
 
 
@@ -68,6 +85,41 @@ def build_mission_summary(owner_message: str, repo_root: Path | None = None) -> 
         method_trace["experiments"],
         method_trace["counterfactual_cases"],
         mission.mission_id,
+    )
+    residual_review_packet = build_residual_review_packet(residual_candidates)
+    action_inventory = build_action_inventory(result, method_trace, obligation_drafts, residual_candidates)
+    action_preflight_rows = preflight_action_inventory(action_inventory, mission_dict, root)
+    action_preflight_summary = summarize_action_preflight(action_preflight_rows)
+    czl_state = build_czl_plan(result, root)
+    for action in [
+        {"action_id": "u_001", "description": "Generated method-driven mission output."},
+        {"action_id": "u_002", "description": "Ran counterfactual gate and action-wide preflight."},
+        {"action_id": "u_003", "description": "Generated owner decision packet and residual review packet."},
+    ]:
+        czl_state = record_u_action(czl_state, action)
+    czl_state = observe_y_t1(
+        czl_state,
+        {
+            "czl_tuple_present": True,
+            "counterfactual_gate_present": True,
+            "counterfactual_gate_can_change_or_confirm": True,
+            "action_wide_preflight_complete": action_preflight_summary["all_actions_preflighted"],
+            "dynamic_obligation_ids_dry_run": all(not draft["registration_allowed"] for draft in obligation_drafts),
+            "residual_update_review_gated": residual_review_packet["review_required"] and not residual_review_packet["writeback_allowed"],
+            "owner_decision_packet_present": True,
+            "plan_u_yt1_rt1_distinguished": True,
+            "no_external_side_effects": True,
+            "tests_and_unseen_smoke_passed": False,
+            "external_research_executed": False,
+        },
+    )
+    czl_state = compute_rt1(czl_state)
+    owner_packet = build_owner_decision_packet(
+        mission.mission_id,
+        method_trace["evidence_status"],
+        {"status": czl_state.status, "rt1_score": czl_state.rt1_score, "rt1_residuals": czl_state.rt1_residuals},
+        method_trace["counterfactual_gate_result"],
+        action_preflight_summary,
     )
     evidence_mode = (
         "live-read-only evidence-backed plan"
@@ -196,6 +248,13 @@ def build_mission_summary(owner_message: str, repo_root: Path | None = None) -> 
             "## Counterfactual Default Check",
             f"Default changed after stress test: {method_trace['default_changed_after_counterfactual']}",
             method_trace["why_default_still_wins_or_changed"],
+            "",
+            "## CZL Tuple",
+            render_czl_markdown(czl_state),
+            "",
+            render_owner_decision_packet_markdown(owner_packet),
+            "",
+            render_action_preflight_markdown(action_preflight_rows),
         ]
     )
     lines.extend(

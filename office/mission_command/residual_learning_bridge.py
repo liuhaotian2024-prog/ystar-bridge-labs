@@ -74,3 +74,41 @@ def render_residual_candidates_markdown(candidates: List[Dict[str, Any]]) -> str
             ]
         )
     return "\n".join(lines)
+
+
+def update_residual_candidate_with_actual_signal(
+    candidate: Dict[str, Any],
+    actual_signal: str,
+    owner_note: str = "",
+) -> Dict[str, Any]:
+    updated = dict(candidate)
+    updated["actual_signal_placeholder"] = actual_signal
+    updated["owner_note"] = owner_note
+    updated["writeback_allowed"] = False
+    updated["review_required"] = True
+    updated["residual_outcome"] = classify_residual_outcome(updated)
+    return updated
+
+
+def classify_residual_outcome(candidate: Dict[str, Any]) -> str:
+    actual = str(candidate.get("actual_signal_placeholder", "")).lower()
+    if actual in {"", "to_be_filled_after_experiment", "pending"}:
+        return "pending_signal"
+    if any(k in actual for k in ["no signal", "failed", "no buyer", "no budget", "not urgent"]):
+        return "assumption_weakened"
+    if any(k in actual for k in ["strong", "paid", "budget", "urgent", "interested"]):
+        return "assumption_strengthened"
+    return "needs_owner_review"
+
+
+def build_residual_review_packet(candidates: List[Dict[str, Any]]) -> Dict[str, Any]:
+    return {
+        "packet_type": "residual_review_packet",
+        "candidate_count": len(candidates),
+        "writeback_allowed": False,
+        "review_required": True,
+        "outcomes": [classify_residual_outcome(candidate) for candidate in candidates],
+        "candidates": candidates,
+        "external_action_executed": False,
+        "core_db_write": False,
+    }

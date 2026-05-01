@@ -26,7 +26,8 @@ def test_obligation_draft_matches_gov_order_schema():
     ]:
         assert draft[field]
     assert draft["owner"] in {"ceo", "cto", "cmo", "cso", "cfo", "secretary"}
-    assert draft["entity_id"].startswith("BOARD-2026-05-01-")
+    assert draft["entity_id"].startswith("BOARD-")
+    assert result.mission.mission_id[:8] not in draft["entity_id"]
     assert draft["rule_id"].isascii()
     assert draft["required_event"] in {
         "acknowledgement_event",
@@ -49,6 +50,14 @@ def test_team_obligation_drafts_created_for_team_tasks():
     drafts = build_team_obligation_drafts(result.team_tasks, result.mission.mission_id)
     assert len(drafts) == len(result.team_tasks)
     assert all(draft["registration_allowed"] is False for draft in drafts)
+
+
+def test_dynamic_obligation_ids_not_hardcoded_date_only():
+    result = build_mission_result(MISSION, REPO_ROOT)
+    drafts_a = build_team_obligation_drafts(result.team_tasks[:1], "mission_alpha")
+    drafts_b = build_team_obligation_drafts(result.team_tasks[:1], "mission_beta")
+    assert drafts_a[0]["entity_id"] != drafts_b[0]["entity_id"]
+    assert "2026-05-01-101" not in drafts_a[0]["entity_id"]
 
 
 def test_no_core_db_writeback():
