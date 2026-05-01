@@ -11,12 +11,21 @@ def build_competitive_intelligence(
     opportunities: List[Dict[str, Any]],
     repo_root: Path,
     external_evidence_packets: List[Dict[str, Any]] | None = None,
+    source_evidence: List[Dict[str, Any]] | None = None,
 ) -> Dict[str, Any]:
     resolution = resolve_tier1_research_capability(repo_root)
-    live_available = bool(resolution["live_read_only_available"] and resolution["live_research_executed"])
+    sources = source_evidence or []
+    live_available = bool(sources)
     external_packets = external_evidence_packets or []
     live_refs = [packet.get("packet_id", "external_packet") for packet in external_packets if packet.get("evidence_type") == "live_public_read_only"]
-    profiles = [build_market_reality_profile(item, live_refs if live_available else []) for item in opportunities]
+    profiles = [
+        build_market_reality_profile(
+            item,
+            live_refs if live_available else [],
+            source_evidence=sources,
+        )
+        for item in opportunities
+    ]
     competitor_map = {
         profile["opportunity_id"]: {
             "category": profile["category"],
@@ -34,8 +43,8 @@ def build_competitive_intelligence(
         for profile in profiles
     }
     return {
-        "mode": "live_read_only_evidence" if live_available else "internal_hypothesis_only",
-        "live_research_executed": False,
+        "mode": "live_public_read_only_evidence" if live_available else "internal_hypothesis_only",
+        "live_research_executed": live_available,
         "resolution": resolution,
         "profiles": profiles,
         "competitor_map": competitor_map,
@@ -58,6 +67,7 @@ def build_competitive_intelligence(
             for profile in profiles
         },
         "research_plan_if_blocked": resolution["enablement_packet"],
+        "source_evidence_count": len(sources),
         "external_action_executed": False,
     }
 

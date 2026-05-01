@@ -4,6 +4,12 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any, Dict, List
 
+from .e4_market_research_plan import build_e4_market_research_request
+from .tier1_public_research import (
+    DisabledTier1ResearchProvider,
+    Tier1ResearchProvider,
+    validate_receipt,
+)
 from .tier1_research_mission_packet import build_tier1_research_mission_packet
 
 
@@ -160,3 +166,65 @@ def render_live_read_only_enablement_packet(resolution: Dict[str, Any]) -> str:
         ]
     )
     return "\n".join(lines)
+
+
+def run_e4_tier1_research(
+    repo_root: Path,
+    provider: Tier1ResearchProvider | None = None,
+) -> Dict[str, Any]:
+    request = build_e4_market_research_request()
+    provider = provider or DisabledTier1ResearchProvider()
+    receipt, sources = provider.run(request)
+    validation_errors = validate_receipt(receipt, sources)
+    live_ok = receipt.live_research_executed and bool(sources) and not validation_errors
+    blocker_path = None
+    if not live_ok:
+        blocker_path = write_e4_research_runtime_blocker(repo_root, receipt.to_dict(), validation_errors)
+    return {
+        "request": request.to_dict(),
+        "provider_name": provider.provider_name,
+        "provider_available": provider.available(),
+        "receipt": receipt.to_dict(),
+        "source_evidence": [source.to_dict() for source in sources],
+        "validation_errors": validation_errors,
+        "live_research_executed": live_ok,
+        "blocker_path": str(blocker_path) if blocker_path else "",
+        "external_action_executed": False,
+    }
+
+
+def write_e4_research_runtime_blocker(
+    repo_root: Path,
+    receipt: Dict[str, Any],
+    validation_errors: List[str],
+) -> Path:
+    path = repo_root / "reports" / "integration" / "e4_research_runtime_blocker.md"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    lines = [
+        "# E4 Research Runtime Blocker",
+        "",
+        f"- provider_name: {receipt.get('provider_name')}",
+        f"- live_research_executed: {receipt.get('live_research_executed')}",
+        f"- stopped_reason: {receipt.get('stopped_reason')}",
+        f"- external_action_executed: {receipt.get('external_action_executed')}",
+        "",
+        "## Missing Runtime / Config",
+        "- Safe public search provider is not enabled in bridge-labs.",
+        "- ystar-company has GET-only page-read safety components, but its configured-live research executor is disabled.",
+        "- No live source summaries and budget receipt can be produced without an enabled provider.",
+        "- Therefore full_mission_rt1 must remain nonzero.",
+        "",
+        "## Exact Owner / Config Action",
+        "- Approve and configure a safe Tier 1 public search/page-read provider.",
+        "- Keep provider-key handling presence-only; do not print or store secret values.",
+        "- Enable budget accounting for queries, pages, domains, and stop reason.",
+        "- Re-run E4 research after provider configuration is present.",
+        "",
+        "## Validation Errors",
+    ]
+    if validation_errors:
+        lines.extend(f"- {item}" for item in validation_errors)
+    else:
+        lines.append("- provider unavailable")
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return path
