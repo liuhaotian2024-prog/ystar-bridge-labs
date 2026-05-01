@@ -65,13 +65,14 @@ def build_strict_czl_state(
     full_criteria: List[str],
     blocked_reason: str = "",
     exact_unblock_action: List[str] | None = None,
+    blocked_status: str = "BLOCKED_BY_MISSING_LIVE_RESEARCH_CONFIG",
 ) -> StrictCZLState:
     feasible = compute_feasible_internal_rt1(y_t1, feasible_criteria)
     full = compute_full_mission_rt1(y_t1, full_criteria, blocked_reason)
     if full["complete"]:
         status = "complete"
     elif blocked_reason:
-        status = "BLOCKED_BY_MISSING_LIVE_RESEARCH_CONFIG"
+        status = blocked_status
     else:
         status = "residual"
     return StrictCZLState(
