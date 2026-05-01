@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Dict, List
 
 from .internal_world_scan import build_internal_world_scan
+from .meta_development_method_kernel import build_meta_development_trace
 from .research_capability import ResearchCapabilityAudit, audit_research_capability
 
 
@@ -58,6 +59,10 @@ def _score_path(path: str, external_ready: bool) -> Dict[str, object]:
 def build_evidence_gated_money_plan(repo_root: Path) -> Dict[str, object]:
     audit = audit_research_capability(repo_root)
     scan = build_internal_world_scan(repo_root)
+    trace = build_meta_development_trace(
+        "Aiden，带团队制定未来 7 天最可能产生第一笔真实收入或强付费信号的行动方案。要求不要锁死 Founder AI Workflow Audit，必须比较当前 top money paths。",
+        repo_root,
+    )
     external_ready = audit.plan_confidence_allowed == "evidence_backed_live_read_only"
     scores = [_score_path(path, external_ready) for path in MONEY_PATHS]
     scores = sorted(scores, key=lambda item: int(item["total"]), reverse=True)
@@ -106,6 +111,23 @@ def build_evidence_gated_money_plan(repo_root: Path) -> Dict[str, object]:
         "research_gap": audit.external_capability["missing_for_live_research"],
         "next_owner_decision": "Approve a Tier 1 live read-only research mission with explicit budget, or accept this as an internal-only preliminary plan.",
         "internal_scan_money_paths": scan["money_paths"],
+        "aiden_inferred_owner_objective": trace["inferred_objective"],
+        "anti_prompt_overfit_check": trace["prompt_overfit_risk"],
+        "meta_development_method_trace": trace["method_steps"],
+        "resource_comparison": trace["resource_comparison"],
+        "behavior_capability_matrix": trace["behavior_capabilities"],
+        "opportunity_synthesis_by_lens": trace["opportunities"],
+        "experiment_design": trace["experiments"],
+        "owner_burden_minimization": trace["owner_burden"],
+        "residual_plan": trace["residual_plan"],
+        "known_unknown": {
+            "known": [
+                "internal repo context is available",
+                "Aiden can compare multiple money paths internally",
+                "Y-star-gov/gov-mcp preflight can separate allowed internal work from approval-required external side effects",
+            ],
+            "unknown": audit.external_capability["missing_for_live_research"],
+        },
     }
 
 
@@ -121,10 +143,53 @@ def render_money_plan_markdown(plan: Dict[str, object]) -> str:
         f"- External research verdict: {status['external_research_verdict']}",
         f"- Confidence level: {status['confidence_level']}",
         "",
-        "## Top Money Paths Compared",
-        "| Path | Signal | Cash | Capability | Owner burden | Delivery | External evidence | M-3 | Total |",
-        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
+        "## Aiden Inferred Owner Objective",
+        str(plan["aiden_inferred_owner_objective"]),
+        "",
+        "## Anti Prompt-Overfit Check",
     ]
+    check = plan["anti_prompt_overfit_check"]  # type: ignore[index]
+    lines.extend(f"- {risk}" for risk in check["risks"])
+    lines.extend(
+        [
+            f"- mitigation: {check['mitigation']}",
+            "",
+            "## Meta-Development Method Trace",
+        ]
+    )
+    lines.extend(f"- {step}" for step in plan["meta_development_method_trace"])  # type: ignore[index]
+    lines.extend(
+        [
+            "",
+            "## Resource Comparison",
+        ]
+    )
+    for item in plan["resource_comparison"]:  # type: ignore[index]
+        lines.append(f"- {item['opportunity']}: trust_gap={item['trust_gap']}; owner_burden={item['owner_burden']}")
+    lines.extend(
+        [
+            "",
+            "## Behavior Capability Matrix",
+        ]
+    )
+    for item in plan["behavior_capability_matrix"]:  # type: ignore[index]
+        lines.append(f"- {item['capability']}: status={item['current_status']}; autonomous_now={item['autonomous_now']}; owner_approval={item['requires_owner_approval']}")
+    lines.extend(
+        [
+            "",
+            "## Opportunity Synthesis By Lens",
+        ]
+    )
+    for item in plan["opportunity_synthesis_by_lens"]:  # type: ignore[index]
+        lines.append(f"- {item['generated_from_lens']}: {item['title']} — {item['pain']}")
+    lines.extend(
+        [
+            "",
+            "## Top Money Paths Compared",
+            "| Path | Signal | Cash | Capability | Owner burden | Delivery | External evidence | M-3 | Total |",
+            "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
+        ]
+    )
     for item in plan["top_money_paths"]:  # type: ignore[index]
         lines.append(
             f"| {item['path']} | {item['time_to_first_signal']} | {item['time_to_first_cash']} | {item['internal_capability_fit']} | {item['owner_burden']} | {item['delivery_feasibility']} | {item['external_evidence_strength']} | {item['m3_value_relevance']} | {item['total']} |"
@@ -142,12 +207,31 @@ def render_money_plan_markdown(plan: Dict[str, object]) -> str:
     )
     for agent, task in plan["team_split"].items():  # type: ignore[index]
         lines.append(f"- {agent}: {task}")
+    lines.extend(["", "## Experiment Design Per Top Opportunity"])
+    for item in plan["experiment_design"]:  # type: ignore[index]
+        lines.append(f"- {item['opportunity']}: 48h={item['48h_internal_experiment']}; metric={item['success_metric']}; kill={item['kill_condition']}")
     lines.extend(["", "## Autonomous Internal Actions"])
     lines.extend(f"- {item}" for item in plan["autonomous_internal_actions"])  # type: ignore[index]
     lines.extend(["", "## Approval-Needed Actions"])
     lines.extend(f"- {item}" for item in plan["approval_needed_actions"])  # type: ignore[index]
     lines.extend(["", "## Research Gap"])
     lines.extend(f"- {item}" for item in plan["research_gap"])  # type: ignore[index]
+    lines.extend(["", "## Owner Burden Minimization", str(plan["owner_burden_minimization"])])
+    lines.extend(["", "## Residual Plan"])
+    lines.extend(f"- {item}" for item in plan["residual_plan"])  # type: ignore[index]
+    lines.extend(["", "## What Is Known / Unknown"])
+    known_unknown = plan["known_unknown"]  # type: ignore[index]
+    lines.append("Known:")
+    lines.extend(f"- {item}" for item in known_unknown["known"])
+    lines.append("Unknown:")
+    lines.extend(f"- {item}" for item in known_unknown["unknown"])
+    lines.extend(
+        [
+            "",
+            "## Why This Is Still Internal-Only Preliminary",
+            "Configured live read-only research is not available in this trial. The plan uses internal repo evidence and safe architecture checks only, not fresh live market evidence.",
+        ]
+    )
     lines.extend(
         [
             "",
@@ -158,4 +242,3 @@ def render_money_plan_markdown(plan: Dict[str, object]) -> str:
         ]
     )
     return "\n".join(lines)
-

@@ -6,6 +6,60 @@
 - External research verdict: ARCHITECTURE_ONLY
 - Confidence level: internal_only_preliminary
 
+## Aiden Inferred Owner Objective
+Produce a methodologically grounded, evidence-aware first-revenue exploration that compares multiple money paths, chooses a default, and separates autonomous work from approval-required validation.
+
+## Anti Prompt-Overfit Check
+- first_revenue_overfit: jumping to one offer without comparing opportunity space
+- seed_path_overfit: treating the seed path as the whole company strategy
+- mitigation: Run the full meta-development loop before recommending a path.
+
+## Meta-Development Method Trace
+- observe_internal
+- observe_external_status
+- frame_problem
+- compare_resources
+- analyze_behavior_capability
+- generate_opportunities
+- compare_paths
+- design_experiments
+- execute_allowed_actions
+- escalate_gated_actions
+- measure_residual
+- update_strategy
+
+## Resource Comparison
+- Agent Workflow Bottleneck Diagnosis: trust_gap=requires fresh external evidence; owner_burden=Low if Aiden prepares the diagnostic package and asks one approval question.
+- Founder AI Workflow Audit / CEO Command Brief: trust_gap=requires fresh external evidence; owner_burden=Owner approves target segment and any external send; team prepares the rest.
+- Governance Template Paid Support: trust_gap=requires fresh external evidence; owner_burden=Low after owner approves support boundary.
+
+## Behavior Capability Matrix
+- internal analysis: status=available; autonomous_now=True; owner_approval=False
+- internal asset scan: status=available; autonomous_now=True; owner_approval=False
+- directive retriage: status=available; autonomous_now=True; owner_approval=False
+- strategy brief: status=available; autonomous_now=True; owner_approval=False
+- offer draft: status=available; autonomous_now=True; owner_approval=False
+- sample deliverable: status=available; autonomous_now=True; owner_approval=False
+- read-only research planning: status=available; autonomous_now=True; owner_approval=False
+- live read-only research execution status: status=architecture_only; autonomous_now=False; owner_approval=False
+- customer contact: status=approval_required; autonomous_now=False; owner_approval=True
+- email/message sending: status=approval_required; autonomous_now=False; owner_approval=True
+- publication: status=approval_required; autonomous_now=False; owner_approval=True
+- payment: status=blocked_or_review_gated; autonomous_now=False; owner_approval=True
+- account creation: status=blocked_or_review_gated; autonomous_now=False; owner_approval=True
+- core writeback: status=review_gated; autonomous_now=False; owner_approval=True
+- repo modification: status=available_with_scope; autonomous_now=True; owner_approval=False
+
+## Opportunity Synthesis By Lens
+- external pain lens: Agent Workflow Bottleneck Diagnosis — Agents produce work but teams cannot tell what is blocked, unsafe, stale, or ready.
+- internal asset lens: Founder AI Workflow Audit / CEO Command Brief — AI workflows produce noise, tool sprawl, and unclear executive next steps.
+- low-owner-burden lens: Governance Template Paid Support — They can read docs but need hands-on adaptation to their repo and team.
+- budget/demand lens: Coding-Agent Governance Audit — Teams want agent productivity without losing safety, reviewability, and repo control.
+- governance/audit lens: Governed AI Runtime Readiness Review — They lack a practical boundary between autonomous internal work and approval-gated external action.
+- owner leverage lens: Runtime Setup Advisory — They need a credible operating architecture, not generic AI hype.
+- speed-to-feedback lens: 48h AI Workflow Paid-Signal Sprint — They need fast clarity on whether an AI workflow intervention is worth paying for.
+- productization lens: AI Company Cockpit Setup — They can chat with models, but cannot turn goals into governed missions and decisions.
+
 ## Top Money Paths Compared
 | Path | Signal | Cash | Capability | Owner burden | Delivery | External evidence | M-3 | Total |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -31,6 +85,11 @@ Best internal-only default because it has the fastest signal/cash path and stron
 - Jinjin/K9 Scout: Prepare read-only research questions and source criteria.
 - Engineers: Support reusable tooling only after path selection.
 
+## Experiment Design Per Top Opportunity
+- Agent Workflow Bottleneck Diagnosis: 48h=48h internal diagnosis template for a messy AI-team workflow.; metric=At least one strong paid-signal proxy: explicit budget/urgency language, owner-approved interested target, or willingness-to-pay evidence.; kill=No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
+- Founder AI Workflow Audit / CEO Command Brief: 48h=48h internal sample audit brief using a fictional founder workflow scenario.; metric=At least one strong paid-signal proxy: explicit budget/urgency language, owner-approved interested target, or willingness-to-pay evidence.; kill=No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
+- Governance Template Paid Support: 48h=48h package the smallest support offer and sample before/after.; metric=At least one strong paid-signal proxy: explicit budget/urgency language, owner-approved interested target, or willingness-to-pay evidence.; kill=No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
+
 ## Autonomous Internal Actions
 - Prepare a one-page offer brief for the default path.
 - Prepare a sample CEO Command Brief outline.
@@ -51,6 +110,28 @@ Best internal-only default because it has the fastest signal/cash path and stron
 - current safe provider/search backend verification without reading secret values
 - budget receipt from a live read-only run
 - fresh source summaries from bounded public page reads
+
+## Owner Burden Minimization
+Owner should approve strategic direction and external side effects; Aiden/team should prepare briefs, drafts, research plans, and approval packets without turning the owner into manual ops.
+
+## Residual Plan
+- Track which opportunity assumption failed: pain, buyer, budget, trust, channel, delivery, or owner burden.
+- Do not write core memory/CIEU automatically; produce review-gated learning candidates only.
+- Update path ranking after internal experiment and any explicitly approved Tier 1 evidence run.
+
+## What Is Known / Unknown
+Known:
+- internal repo context is available
+- Aiden can compare multiple money paths internally
+- Y-star-gov/gov-mcp preflight can separate allowed internal work from approval-required external side effects
+Unknown:
+- explicit live read-only enablement in the active mission/config
+- current safe provider/search backend verification without reading secret values
+- budget receipt from a live read-only run
+- fresh source summaries from bounded public page reads
+
+## Why This Is Still Internal-Only Preliminary
+Configured live read-only research is not available in this trial. The plan uses internal repo evidence and safe architecture checks only, not fresh live market evidence.
 
 ## Next Owner Decision
 Approve a Tier 1 live read-only research mission with explicit budget, or accept this as an internal-only preliminary plan.

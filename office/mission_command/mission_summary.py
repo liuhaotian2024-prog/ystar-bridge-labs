@@ -8,6 +8,7 @@ from .mission_alignment import align_mission_to_m_triangle
 from .mission_from_owner_message import build_mission_from_owner_message
 from .mission_model import MissionCommandResult
 from .mission_router import route_mission
+from .meta_development_method_kernel import build_meta_development_trace
 from .research_capability import audit_research_capability
 from .team_task_builder import build_team_tasks
 
@@ -34,6 +35,7 @@ def build_mission_summary(owner_message: str, repo_root: Path | None = None) -> 
     mission = result.mission
     root = (repo_root or Path(__file__).resolve().parents[2]).resolve()
     research_audit = audit_research_capability(root)
+    method_trace = build_meta_development_trace(owner_message, root)
     evidence_mode = (
         "live-read-only evidence-backed plan"
         if research_audit.plan_confidence_allowed == "evidence_backed_live_read_only"
@@ -48,6 +50,16 @@ def build_mission_summary(owner_message: str, repo_root: Path | None = None) -> 
         f"Evidence mode: {evidence_mode}",
         f"External research verdict: {research_audit.external_research_verdict}",
         f"Plan confidence allowed: {research_audit.plan_confidence_allowed}",
+        "",
+        "## Aiden Inferred Deeper Objective",
+        method_trace["inferred_objective"],
+        "",
+        "## Prompt-Overfit Risk",
+        *[f"- {risk}" for risk in method_trace["prompt_overfit_risk"]["risks"]],
+        f"Mitigation: {method_trace['prompt_overfit_risk']['mitigation']}",
+        "",
+        "## Meta-Development Method Trace",
+        *[f"- {step}" for step in method_trace["method_steps"]],
         "",
         "## Aiden Recommended Path",
         mission.recommended_path,
@@ -74,6 +86,64 @@ def build_mission_summary(owner_message: str, repo_root: Path | None = None) -> 
             "",
             "## Admin Burden Avoided",
             *[f"- {item}" for item in result.admin_burden_avoided],
+            "",
+            "## Resource Comparison",
+        ]
+    )
+    for item in method_trace["resource_comparison"]:
+        lines.append(
+            f"- {item['opportunity']}: assets={', '.join(item['matched_assets'])}; trust_gap={item['trust_gap']}; owner_burden={item['owner_burden']}"
+        )
+    lines.extend(
+        [
+            "",
+            "## Behavior Capability Matrix",
+        ]
+    )
+    for item in method_trace["behavior_capabilities"]:
+        lines.append(
+            f"- {item['capability']}: status={item['current_status']}; autonomous_now={item['autonomous_now']}; tier={item['requires_tier']}; owner_approval={item['requires_owner_approval']}; next_U={item['next_possible_u']}"
+        )
+    lines.extend(
+        [
+            "",
+            "## Opportunity Space",
+        ]
+    )
+    for item in method_trace["opportunities"]:
+        lines.append(
+            f"- {item['title']} ({item['generated_from_lens']}): confidence={item['confidence']}; first_experiment={item['first_experiment']}"
+        )
+    lines.extend(
+        [
+            "",
+            "## Top Opportunities",
+        ]
+    )
+    for item in method_trace["top_opportunities"]:
+        lines.append(f"- {item['title']}: score={item['method_score']}; buyer={item['buyer']}")
+    lines.extend(
+        [
+            "",
+            "## Experiment Design",
+        ]
+    )
+    for item in method_trace["experiments"]:
+        lines.append(f"- {item['opportunity']}: 48h={item['48h_internal_experiment']}; kill={item['kill_condition']}")
+    lines.extend(
+        [
+            "",
+            "## Owner Burden Minimization",
+            method_trace["owner_burden"],
+            "",
+            "## Next Executable U",
+            method_trace["next_executable_u"],
+            "",
+            "## Residual / Learning Path",
+            *[f"- {item}" for item in method_trace["residual_plan"]],
+            "",
+            "## Method Compliance",
+            *[f"- {key}: {value}" for key, value in method_trace["method_compliance"].items()],
             "",
             "## Y-star-gov Preflight",
             "```json",

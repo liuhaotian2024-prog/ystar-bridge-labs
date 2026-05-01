@@ -5,7 +5,7 @@ External research verdict: ARCHITECTURE_ONLY
 Plan confidence allowed: internal_only_preliminary
 
 ## Internal Research Capability
-- Safe context loaded: README.md, AGENTS.md, OPERATIONS.md, DIRECTIVE_TRACKER.md, governance/ACTIVE_OPERATING_CHARTER.md, governance/INTERNAL_GOVERNANCE.md, governance/WORKING_STYLE.md, knowledge/ceo/wisdom/M_TRIANGLE.md, knowledge/ceo/wisdom/WORK_METHODOLOGY.md, scripts/gov_order.py
+- Safe context loaded: README.md, AGENTS.md, OPERATIONS.md, DIRECTIVE_TRACKER.md, governance/ACTIVE_OPERATING_CHARTER.md, governance/INTERNAL_GOVERNANCE.md, governance/WORKING_STYLE.md, knowledge/ceo/wisdom/M_TRIANGLE.md, knowledge/ceo/wisdom/WORK_METHODOLOGY.md, knowledge/ceo/wisdom/AIDEN_META_DEVELOPMENT_METHOD_KERNEL.md, scripts/gov_order.py
 - directive_retriage.json loaded: True
 - Can identify active vs historical: True
 - Can map internal assets to money paths: True

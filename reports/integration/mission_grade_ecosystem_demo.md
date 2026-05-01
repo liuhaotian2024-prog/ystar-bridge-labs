@@ -7,6 +7,27 @@ Evidence mode: internal-evidence preliminary plan
 External research verdict: ARCHITECTURE_ONLY
 Plan confidence allowed: internal_only_preliminary
 
+## Aiden Inferred Deeper Objective
+Produce a methodologically grounded, evidence-aware first-revenue exploration that compares multiple money paths, chooses a default, and separates autonomous work from approval-required validation.
+
+## Prompt-Overfit Risk
+- first_revenue_overfit: jumping to one offer without comparing opportunity space
+Mitigation: Run the full meta-development loop before recommending a path.
+
+## Meta-Development Method Trace
+- observe_internal
+- observe_external_status
+- frame_problem
+- compare_resources
+- analyze_behavior_capability
+- generate_opportunities
+- compare_paths
+- design_experiments
+- execute_allowed_actions
+- escalate_gated_actions
+- measure_residual
+- update_strategy
+
 ## Aiden Recommended Path
 Run a 7-day first-revenue mission: compare the Founder AI Workflow Audit / CEO Command Brief seed against AI Company Cockpit Setup, Coding-Agent Governance Audit, Agent Workflow Bottleneck Diagnosis, and Runtime Setup Advisory; prepare one owner-approved manual action packet only after evidence review.
 
@@ -52,6 +73,67 @@ The mission is value-production led, with M-2 preserved through preflight and ow
 - old HN/LinkedIn calendar obedience
 - old enterprise sales phase without current evidence
 - treating every old directive as active by default
+
+## Resource Comparison
+- Agent Workflow Bottleneck Diagnosis: assets=Mission Command; trust_gap=requires fresh external evidence; owner_burden=Low if Aiden prepares the diagnostic package and asks one approval question.
+- Founder AI Workflow Audit / CEO Command Brief: assets=Mission Command, M Triangle, WORK_METHODOLOGY; trust_gap=requires fresh external evidence; owner_burden=Owner approves target segment and any external send; team prepares the rest.
+- Governance Template Paid Support: assets=gov-mcp tools, Y-star-gov policy, content/product assets; trust_gap=requires fresh external evidence; owner_burden=Low after owner approves support boundary.
+
+## Behavior Capability Matrix
+- internal analysis: status=available; autonomous_now=True; tier=Tier 0; owner_approval=False; next_U=Synthesize owner mission into a decision brief.
+- internal asset scan: status=available; autonomous_now=True; tier=Tier 0; owner_approval=False; next_U=Scan safe repo files and map assets to opportunities.
+- directive retriage: status=available; autonomous_now=True; tier=Tier 0; owner_approval=False; next_U=Classify old tasks as active, revenue-relevant, archival, or owner-decision-required.
+- strategy brief: status=available; autonomous_now=True; tier=Tier 0; owner_approval=False; next_U=Draft owner-readable recommendation with evidence status and next U.
+- offer draft: status=available; autonomous_now=True; tier=Tier 0; owner_approval=False; next_U=Write a one-page offer brief for the selected hypothesis.
+- sample deliverable: status=available; autonomous_now=True; tier=Tier 0; owner_approval=False; next_U=Prepare a sample CEO Command Brief outline.
+- read-only research planning: status=available; autonomous_now=True; tier=Tier 0/Tier 1 prep; owner_approval=False; next_U=Define research questions, source types, stop conditions, and evidence fields.
+- live read-only research execution status: status=architecture_only; autonomous_now=False; tier=Tier 1; owner_approval=False; next_U=Ask owner to approve a Tier 1 read-only mission budget or proceed with internal-only plan.
+- customer contact: status=approval_required; autonomous_now=False; tier=Tier 2/Tier 3; owner_approval=True; next_U=Prepare exact proposed message and target rationale for owner approval.
+- email/message sending: status=approval_required; autonomous_now=False; tier=Tier 2/Tier 3; owner_approval=True; next_U=Prepare manual-send draft only.
+- publication: status=approval_required; autonomous_now=False; tier=Tier 2/Tier 3; owner_approval=True; next_U=Prepare review-only content draft.
+- payment: status=blocked_or_review_gated; autonomous_now=False; tier=Tier 4; owner_approval=True; next_U=Ask owner for payment strategy; do not create or process payment.
+- account creation: status=blocked_or_review_gated; autonomous_now=False; tier=Tier 4; owner_approval=True; next_U=Prepare need statement only.
+- core writeback: status=review_gated; autonomous_now=False; tier=Tier 4; owner_approval=True; next_U=Prepare review-gated learning candidate only.
+- repo modification: status=available_with_scope; autonomous_now=True; tier=Tier 0 for current repo, review for protected repos; owner_approval=False; next_U=Patch scoped files, run tests, and commit only intentional changes.
+
+## Opportunity Space
+- Agent Workflow Bottleneck Diagnosis (external pain lens): confidence=low_to_medium_internal_only; first_experiment=48h internal diagnosis template for a messy AI-team workflow.
+- Founder AI Workflow Audit / CEO Command Brief (internal asset lens): confidence=low_to_medium_internal_only; first_experiment=48h internal sample audit brief using a fictional founder workflow scenario.
+- Governance Template Paid Support (low-owner-burden lens): confidence=low_to_medium_internal_only; first_experiment=48h package the smallest support offer and sample before/after.
+- Coding-Agent Governance Audit (budget/demand lens): confidence=low_to_medium_internal_only; first_experiment=48h internal audit checklist for one representative coding-agent workflow.
+- Governed AI Runtime Readiness Review (governance/audit lens): confidence=low_to_medium_internal_only; first_experiment=48h readiness scorecard for AI-agent runtime governance.
+- Runtime Setup Advisory (owner leverage lens): confidence=low_to_medium_internal_only; first_experiment=48h advisory outline with before/after architecture examples.
+- 48h AI Workflow Paid-Signal Sprint (speed-to-feedback lens): confidence=low_to_medium_internal_only; first_experiment=48h internal sprint package: one sample diagnostic, one buyer question set, one approval packet.
+- AI Company Cockpit Setup (productization lens): confidence=low_to_medium_internal_only; first_experiment=48h internal cockpit setup blueprint, without installing anything externally.
+
+## Top Opportunities
+- Agent Workflow Bottleneck Diagnosis: score=10; buyer=Small team adopting coding agents or AI assistants.
+- Founder AI Workflow Audit / CEO Command Brief: score=7; buyer=Founder/operator using AI tools but unsure where execution is bottlenecked.
+- Governance Template Paid Support: score=5; buyer=Open-source user who wants help adapting governance templates.
+
+## Experiment Design
+- Agent Workflow Bottleneck Diagnosis: 48h=48h internal diagnosis template for a messy AI-team workflow.; kill=No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
+- Founder AI Workflow Audit / CEO Command Brief: 48h=48h internal sample audit brief using a fictional founder workflow scenario.; kill=No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
+- Governance Template Paid Support: 48h=48h package the smallest support offer and sample before/after.; kill=No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
+
+## Owner Burden Minimization
+Owner should approve strategic direction and external side effects; Aiden/team should prepare briefs, drafts, research plans, and approval packets without turning the owner into manual ops.
+
+## Next Executable U
+Within 48h, build a one-page comparison brief and one sample deliverable for the top two opportunities, then ask the owner to approve or revise a Tier 1 read-only evidence mission.
+
+## Residual / Learning Path
+- Track which opportunity assumption failed: pain, buyer, budget, trust, channel, delivery, or owner burden.
+- Do not write core memory/CIEU automatically; produce review-gated learning candidates only.
+- Update path ranking after internal experiment and any explicitly approved Tier 1 evidence run.
+
+## Method Compliance
+- has_evidence_status: True
+- has_action_plan: True
+- has_next_executable_u: True
+- has_owner_burden_statement: True
+- has_approval_needed_actions: True
+- has_residual_path: True
 
 ## Y-star-gov Preflight
 ```json

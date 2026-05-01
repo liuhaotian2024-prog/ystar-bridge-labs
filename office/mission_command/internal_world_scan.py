@@ -25,7 +25,7 @@ SCAN_TARGETS = [
 
 def _safe(path: Path) -> bool:
     lowered = str(path).lower()
-    return not any(marker in lowered for marker in FORBIDDEN_MARKERS)
+    return "__pycache__" not in path.parts and not any(marker in lowered for marker in FORBIDDEN_MARKERS)
 
 
 def _iter_safe_files(root: Path, target: str, limit: int = 80) -> Iterable[Path]:
@@ -180,4 +180,3 @@ def render_internal_world_scan_markdown(scan: Dict[str, object]) -> str:
     lines.append("")
     lines.append("Safety: skipped secrets/env, DB/WAL/SHM, private logs, and active-agent marker contents.")
     return "\n".join(lines)
-

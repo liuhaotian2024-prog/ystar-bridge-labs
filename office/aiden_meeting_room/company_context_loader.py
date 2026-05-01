@@ -20,6 +20,7 @@ SAFE_CONTEXT_FILES = [
     "governance/WORKING_STYLE.md",
     "knowledge/ceo/wisdom/M_TRIANGLE.md",
     "knowledge/ceo/wisdom/WORK_METHODOLOGY.md",
+    "knowledge/ceo/wisdom/AIDEN_META_DEVELOPMENT_METHOD_KERNEL.md",
     "scripts/gov_order.py",
 ]
 
@@ -92,7 +93,8 @@ def load_company_context(repo_root: Path | None = None) -> CompanyContext:
         "M-3 means real product, real customers, real revenue, and real industry impact."
     )
     ctx.methodology_summary = (
-        "WORK_METHODOLOGY says plan is not done; every task must trace M -> U -> action -> empirical result."
+        "WORK_METHODOLOGY says plan is not done; every task must trace M -> U -> action -> empirical result. "
+        "AIDEN_META_DEVELOPMENT_METHOD_KERNEL adds observe/compare/capability/opportunity/experiment/residual discipline."
     )
     ctx.operations_summary = (
         "OPERATIONS shows CEO session rhythm, directive tracking, sales/content cadence, and a historical risk of report-heavy autonomous work."

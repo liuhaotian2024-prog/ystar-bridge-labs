@@ -93,7 +93,7 @@
 - Evidence refs: DIRECTIVE_TRACKER.md, directive_retriage.json, office/mission_command
 ### Runtime Setup Advisory
 - Asset match: Mission Command operating spine, Aiden Meeting Room, company_runtime/gov-mcp bridge
-- Evidence refs: office/mission_command, reports/integration/aiden_evidence_grounding_smoke.md, reports/integration/directive_admin_rationalization_report.md, reports/integration/e1_2_research_capability_audit.md
+- Evidence refs: office/mission_command, reports/integration/aiden_evidence_grounding_smoke.md, reports/integration/aiden_meta_development_method_application_20260501.md, reports/integration/directive_admin_rationalization_report.md
 ### Governance Template Paid Support
 - Asset match: content/product assets, governance templates, active charter
 - Evidence refs: content/product, governance/ACTIVE_OPERATING_CHARTER.md
@@ -186,6 +186,7 @@
   ],
   "reports/integration": [
     "reports/integration/aiden_evidence_grounding_smoke.md",
+    "reports/integration/aiden_meta_development_method_application_20260501.md",
     "reports/integration/directive_admin_rationalization_report.md",
     "reports/integration/e1_2_research_capability_audit.md",
     "reports/integration/evidence_gated_7_day_money_plan_20260501.md",
@@ -197,6 +198,7 @@
   ],
   "knowledge/ceo/wisdom": [
     "knowledge/ceo/wisdom/.ystar_coverage.json",
+    "knowledge/ceo/wisdom/AIDEN_META_DEVELOPMENT_METHOD_KERNEL.md",
     "knowledge/ceo/wisdom/M_TRIANGLE.md",
     "knowledge/ceo/wisdom/WHO_I_AM.md",
     "knowledge/ceo/wisdom/WISDOM_INDEX.md",
@@ -234,25 +236,11 @@
     "knowledge/ceo/wisdom/meta/field_vs_structure_duality.md",
     "knowledge/ceo/wisdom/meta/global_workspace_architecture.md",
     "knowledge/ceo/wisdom/meta/human_excellence_vs_ai_gap_analysis.md",
-    "knowledge/ceo/wisdom/meta/persistence_is_architecture.md",
-    "knowledge/ceo/wisdom/meta/personal_neural_network_concept.md"
+    "knowledge/ceo/wisdom/meta/persistence_is_architecture.md"
   ],
   "office/aiden_meeting_room": [
     "office/aiden_meeting_room/README.md",
     "office/aiden_meeting_room/__init__.py",
-    "office/aiden_meeting_room/__pycache__/__init__.cpython-311.pyc",
-    "office/aiden_meeting_room/__pycache__/aiden_ceo_profile.cpython-311.pyc",
-    "office/aiden_meeting_room/__pycache__/aiden_intent_classifier.cpython-311.pyc",
-    "office/aiden_meeting_room/__pycache__/aiden_response_engine.cpython-311.pyc",
-    "office/aiden_meeting_room/__pycache__/company_context_loader.cpython-311.pyc",
-    "office/aiden_meeting_room/__pycache__/directive_retriage_analyzer.cpython-311.pyc",
-    "office/aiden_meeting_room/__pycache__/evidence_extractor.cpython-311.pyc",
-    "office/aiden_meeting_room/__pycache__/governance_burden_analyzer.cpython-311.pyc",
-    "office/aiden_meeting_room/__pycache__/meeting_cli.cpython-311.pyc",
-    "office/aiden_meeting_room/__pycache__/meeting_memory.cpython-311.pyc",
-    "office/aiden_meeting_room/__pycache__/meeting_summary.cpython-311.pyc",
-    "office/aiden_meeting_room/__pycache__/operations_admin_analyzer.cpython-311.pyc",
-    "office/aiden_meeting_room/__pycache__/repo_evidence_index.cpython-311.pyc",
     "office/aiden_meeting_room/aiden_ceo_profile.py",
     "office/aiden_meeting_room/aiden_intent_classifier.py",
     "office/aiden_meeting_room/aiden_response_engine.py",
@@ -269,28 +257,19 @@
   "office/mission_command": [
     "office/mission_command/README.md",
     "office/mission_command/__init__.py",
-    "office/mission_command/__pycache__/__init__.cpython-311.pyc",
-    "office/mission_command/__pycache__/ecosystem_preflight.cpython-311.pyc",
-    "office/mission_command/__pycache__/evidence_gated_money_plan.cpython-311.pyc",
-    "office/mission_command/__pycache__/internal_world_scan.cpython-311.pyc",
-    "office/mission_command/__pycache__/mission_alignment.cpython-311.pyc",
-    "office/mission_command/__pycache__/mission_cli.cpython-311.pyc",
-    "office/mission_command/__pycache__/mission_from_owner_message.cpython-311.pyc",
-    "office/mission_command/__pycache__/mission_model.cpython-311.pyc",
-    "office/mission_command/__pycache__/mission_router.cpython-311.pyc",
-    "office/mission_command/__pycache__/mission_summary.cpython-311.pyc",
-    "office/mission_command/__pycache__/research_capability.cpython-311.pyc",
-    "office/mission_command/__pycache__/team_task_builder.cpython-311.pyc",
     "office/mission_command/ecosystem_preflight.py",
     "office/mission_command/evidence_gated_money_plan.py",
     "office/mission_command/internal_world_scan.py",
+    "office/mission_command/meta_development_method_kernel.py",
     "office/mission_command/mission_alignment.py",
     "office/mission_command/mission_cli.py",
     "office/mission_command/mission_from_owner_message.py",
     "office/mission_command/mission_model.py",
     "office/mission_command/mission_router.py",
     "office/mission_command/mission_summary.py",
+    "office/mission_command/opportunity_synthesis_engine.py",
     "office/mission_command/research_capability.py",
+    "office/mission_command/resource_capability_matrix.py",
     "office/mission_command/team_task_builder.py"
   ]
 }
