@@ -71,9 +71,11 @@ Produce a methodologically grounded, evidence-aware first-revenue exploration th
 | Governance Template Paid Support | 3 | 3 | 4 | 3 | 3 | 1 | 3 | 14 |
 
 ## Default Recommendation
-Default: Founder AI Workflow Audit / CEO Command Brief
+Default: Agent Workflow Bottleneck Diagnosis
+Method lens: external pain lens
+First experiment: 48h internal diagnosis template for a messy AI-team workflow.
 
-Best internal-only default because it has the fastest signal/cash path and strongest manual delivery feasibility. This is not a fully live-market-evidence-backed recommendation until Tier 1 live read-only research is enabled and run.
+Best internal-only method-trace default because it combines fast feedback, low owner burden, current behavior capability, and a clear 48h experiment. This is not a fully live-market-evidence-backed recommendation until Tier 1 live read-only research is enabled and run.
 
 ## Team Split
 - Aiden: Own mission synthesis, default recommendation, owner decision brief.

@@ -66,7 +66,7 @@ def build_evidence_gated_money_plan(repo_root: Path) -> Dict[str, object]:
     external_ready = audit.plan_confidence_allowed == "evidence_backed_live_read_only"
     scores = [_score_path(path, external_ready) for path in MONEY_PATHS]
     scores = sorted(scores, key=lambda item: int(item["total"]), reverse=True)
-    default = scores[0]
+    method_default = trace["default_recommendation"] or scores[0]
     confidence = "internal_only_preliminary" if not external_ready else "live_read_only_evidence_backed"
     return {
         "evidence_status": {
@@ -77,11 +77,17 @@ def build_evidence_gated_money_plan(repo_root: Path) -> Dict[str, object]:
         },
         "top_money_paths": scores,
         "default_recommendation": {
-            "path": default["path"],
+            "path": method_default["title"] if "title" in method_default else method_default["path"],
             "reason": (
-                "Best internal-only default because it has the fastest signal/cash path and strongest manual delivery feasibility. "
-                "This is not a fully live-market-evidence-backed recommendation until Tier 1 live read-only research is enabled and run."
+                "Best internal-only method-trace default because it combines fast feedback, low owner burden, current behavior capability, "
+                "and a clear 48h experiment. This is not a fully live-market-evidence-backed recommendation until Tier 1 live read-only research is enabled and run."
             ),
+            "method_trace_basis": {
+                "lens": method_default.get("generated_from_lens"),
+                "buyer": method_default.get("buyer"),
+                "first_experiment": method_default.get("first_experiment"),
+                "method_score": method_default.get("method_score"),
+            },
         },
         "team_split": {
             "Aiden": "Own mission synthesis, default recommendation, owner decision brief.",
@@ -199,6 +205,8 @@ def render_money_plan_markdown(plan: Dict[str, object]) -> str:
             "",
             "## Default Recommendation",
             f"Default: {default['path']}",
+            f"Method lens: {default['method_trace_basis']['lens']}",
+            f"First experiment: {default['method_trace_basis']['first_experiment']}",
             "",
             str(default["reason"]),
             "",

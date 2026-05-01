@@ -77,7 +77,7 @@ The mission is value-production led, with M-2 preserved through preflight and ow
 ## Resource Comparison
 - Agent Workflow Bottleneck Diagnosis: assets=Mission Command; trust_gap=requires fresh external evidence; owner_burden=Low if Aiden prepares the diagnostic package and asks one approval question.
 - Founder AI Workflow Audit / CEO Command Brief: assets=Mission Command, M Triangle, WORK_METHODOLOGY; trust_gap=requires fresh external evidence; owner_burden=Owner approves target segment and any external send; team prepares the rest.
-- Governance Template Paid Support: assets=gov-mcp tools, Y-star-gov policy, content/product assets; trust_gap=requires fresh external evidence; owner_burden=Low after owner approves support boundary.
+- Governance Template Paid Support: assets=gov-mcp tools, content/product assets, Y-star-gov policy; trust_gap=requires fresh external evidence; owner_burden=Low after owner approves support boundary.
 
 ## Behavior Capability Matrix
 - internal analysis: status=available; autonomous_now=True; tier=Tier 0; owner_approval=False; next_U=Synthesize owner mission into a decision brief.
