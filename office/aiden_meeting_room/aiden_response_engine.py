@@ -64,6 +64,57 @@ def _repo_repair(ctx: CompanyContext) -> str:
     )
 
 
+def _obsolete_rules(ctx: CompanyContext) -> str:
+    return (
+        "现在不应该再自动约束我们的旧规则，主要是那些只制造行政动作、但不推进 M Triangle 的规则。\n\n"
+        "具体包括：固定每日/每周/夜间报告、旧 HN/LinkedIn 发布日历、旧 enterprise sales warm-intro 节奏、"
+        "未重新验证的内容 pipeline、以及旧 directive 里因为没完成就一直挂着的任务。它们可以作为历史证据和素材库保留，"
+        "但不能默认占用团队当前精力。\n\n"
+        "真正保留的是 M Triangle、确定性 enforcement、CIEU 证据、外部副作用审批、核心写回 review gate、"
+        "不读 secrets/private DB/log，以及团队身份边界。"
+    )
+
+
+def _active_rules(ctx: CompanyContext) -> str:
+    return (
+        "当前真正 active 的治理规则可以压成一句话：用 M Triangle 判断方向，用 permission tiers 判断行动风险，"
+        "用 owner approval/escalation 卡住外部副作用和核心写回。\n\n"
+        "Tier 0 内部分析和草稿可以自主做；Tier 1 只读研究必须有预算；Tier 2 可以准备但不能执行外部动作；"
+        "Tier 3 未来只允许预批准且受限的外部动作；Tier 4 高风险动作必须 blocked 或 review-gated。\n\n"
+        "行政报告不是默认 active。报告只有在帮助决策、证据、合规、mission summary 时才有价值。"
+    )
+
+
+def _legacy_burden(ctx: CompanyContext) -> str:
+    return (
+        "当前最明显的历史包袱有四类。\n\n"
+        "第一，旧内容节奏：HN、LinkedIn、article series、podcast 等，不应作为自动 cadence。"
+        "第二，旧销售路径：enterprise Phase 1 和 warm intro list 需要重新证据化，不能直接执行。"
+        "第三，旧报告义务：daily/weekly/nightly report 如果不服务 mission，就是消耗。"
+        "第四，旧 directive 未完成项：NotebookLM、专利、K9 长期数据、测试基线等需要 re-triage，而不是默认 active。\n\n"
+        "我的建议：把它们保留为 archive/evidence inventory，只把能推进 M-3 的部分转成当前 mission。"
+    )
+
+
+def _reduce_owner_burden(ctx: CompanyContext) -> str:
+    return (
+        "我应该减少你的手工负担，不是让你少看信息，而是让你只处理真正需要 owner 授权的东西。\n\n"
+        "我的工作方式应该变成：先理解目标，再把历史包袱过滤掉；我给出默认建议和理由；团队做 Tier 0/Tier 1 的安全工作；"
+        "只有涉及客户联系、发布、付款、账号、表单、核心写回、战略授权时，才把一个清晰 escalation packet 放到你面前。\n\n"
+        "你不应该帮团队维护日报、选旧任务、整理历史 backlog。你应该只批准方向、边界、外部动作和关键战略判断。"
+    )
+
+
+def _m_triangle_priority(ctx: CompanyContext) -> str:
+    return (
+        "现在最该优先推进的是 M-3 Value Production，同时不能削弱 M-1 和 M-2。\n\n"
+        "原因很直接：M-1 生存性和 M-2 可治理性已经积累了很多资产；当前最大风险是系统继续在内部治理里自转，"
+        "没有把能力转成真实客户、真实收入、真实外部信号。\n\n"
+        "所以我会把旧行政规则降噪，把安全边界保留，然后推动 mission-based money-path work："
+        "先生成可审阅商业行动包，再由你批准是否手动执行外部动作。"
+    )
+
+
 def _next_ceo_action(ctx: CompanyContext) -> str:
     return (
         "我作为 CEO 下一步应该带团队做一件事：把 M-3 从口号压成一个 7 天 owner-reviewable 交付包。\n\n"
@@ -102,6 +153,11 @@ def answer_owner(
     intent = classify_intent(owner_message)
 
     handlers = {
+        "obsolete_rules": _obsolete_rules,
+        "active_rules": _active_rules,
+        "legacy_burden": _legacy_burden,
+        "reduce_owner_burden": _reduce_owner_burden,
+        "m_triangle_priority": _m_triangle_priority,
         "fastest_cash": _fastest_cash,
         "rationale_meta": _rationale_meta,
         "self_state": _self_state,

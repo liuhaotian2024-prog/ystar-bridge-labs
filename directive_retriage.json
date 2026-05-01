@@ -1,0 +1,96 @@
+{
+  "schema_version": "2026-04-30",
+  "purpose": "Machine-readable re-triage of legacy directive tracker burden against the active operating charter and M Triangle.",
+  "items": [
+    {
+      "directive_id": "directive_018_020",
+      "task_id": "linkedin_hn_posting_schedules",
+      "old_status": "active_or_pending",
+      "new_status": "ARCHIVE_LEGACY",
+      "reason": "Old HN/LinkedIn cadence is a historical launch plan, not an active mandate.",
+      "recommended_action": "Reactivate only through a current M-3 mission with owner approval for publication.",
+      "m_triangle_alignment": "Potential M-3 if re-scoped; current ritual burden weakens M-3 focus.",
+      "owner_decision_needed": false
+    },
+    {
+      "directive_id": "enterprise_sales_phase_1",
+      "task_id": "warm_intro_campaign",
+      "old_status": "in_progress",
+      "new_status": "ARCHIVE_LEGACY",
+      "reason": "Old target list and enterprise warm intro path are stale and predate manual-send approval loop.",
+      "recommended_action": "Use as evidence only; rebuild as approval-gated commercial action if reactivated.",
+      "m_triangle_alignment": "M-3 relevant only after evidence refresh.",
+      "owner_decision_needed": true
+    },
+    {
+      "directive_id": "three_repo_integration",
+      "task_id": "original_three_repo_backflow",
+      "old_status": "queued_or_pending",
+      "new_status": "SUPERSEDED_BY_RUNTIME",
+      "reason": "Backflow created Aiden Meeting Room, Y-star-gov company_runtime pack, and gov-mcp company tools.",
+      "recommended_action": "Close old generic integration framing; create scoped missions for future work.",
+      "m_triangle_alignment": "M-1/M-2/M-3 improved by scoped backflow.",
+      "owner_decision_needed": false
+    },
+    {
+      "directive_id": "content_article_pipeline",
+      "task_id": "article_series_and_content_calendar",
+      "old_status": "pending_or_draft",
+      "new_status": "ARCHIVE_LEGACY",
+      "reason": "Content backlog is useful inventory but not an active cadence.",
+      "recommended_action": "Promote only content tied to a current commercial experiment.",
+      "m_triangle_alignment": "Potential M-3; inactive as ceremony.",
+      "owner_decision_needed": false
+    },
+    {
+      "directive_id": "weekly_rhythm",
+      "task_id": "daily_weekly_reports",
+      "old_status": "recurring",
+      "new_status": "ARCHIVE_LEGACY",
+      "reason": "Default reports create administrative drag when not mission-bound.",
+      "recommended_action": "Produce summaries only for mission decisions, evidence, or compliance.",
+      "m_triangle_alignment": "M-2 support if evidence-bound; otherwise weakens M-3.",
+      "owner_decision_needed": false
+    },
+    {
+      "directive_id": "notebooklm_books",
+      "task_id": "board_purchase_books_and_notebooklm",
+      "old_status": "pending_board_decision",
+      "new_status": "OWNER_DECISION_REQUIRED",
+      "reason": "Requires spend/external tooling and should not remain an ambient burden.",
+      "recommended_action": "Reactivate only if tied to a current learning mission.",
+      "m_triangle_alignment": "Potential M-1/M-2 learning support; no direct M-3 without mission.",
+      "owner_decision_needed": true
+    },
+    {
+      "directive_id": "patent",
+      "task_id": "patent_final_review_and_submission",
+      "old_status": "pending_board_decision",
+      "new_status": "OWNER_DECISION_REQUIRED",
+      "reason": "Legal/IP action may matter strategically but requires owner/legal review.",
+      "recommended_action": "Keep visible; do not execute or submit without owner approval.",
+      "m_triangle_alignment": "Potential long-term M-3 defensibility.",
+      "owner_decision_needed": true
+    },
+    {
+      "directive_id": "testing_baseline",
+      "task_id": "test_coverage_baseline",
+      "old_status": "not_tracked",
+      "new_status": "REVENUE_RELEVANT_NOW",
+      "reason": "Testing supports trust and governability, but must attach to active product/runtime work.",
+      "recommended_action": "Convert into mission-bound engineering quality task.",
+      "m_triangle_alignment": "M-2 and M-3 when tied to deliverable quality.",
+      "owner_decision_needed": false
+    },
+    {
+      "directive_id": "k9_scout_validation",
+      "task_id": "long_term_data_collection",
+      "old_status": "continuous",
+      "new_status": "OWNER_DECISION_REQUIRED",
+      "reason": "Long-term data collection may touch sensitive runtime evidence and should be explicitly scoped.",
+      "recommended_action": "Re-scope as Tier 1 evidence mission or review-gated audit task.",
+      "m_triangle_alignment": "M-2 evidence value if bounded; possible admin drag if ambient.",
+      "owner_decision_needed": true
+    }
+  ]
+}

@@ -5,6 +5,22 @@
 **Audit trail**: this consolidation is GOV-005 Part 5 hard phase, executed
 under Board's direct GOV-005 directive that overrode CTO's Plan B deferral.
 
+## Current Operations Policy — 2026 Active Runtime
+
+This document preserves historical operations, schedules, launch plans, and dispatch
+records. Those records are company memory; they are not automatically active mandates.
+
+Current active operations are mission-based:
+
+- Use `governance/ACTIVE_OPERATING_CHARTER.md` as the active operating summary.
+- Use the Aiden CEO Meeting Room for owner-to-CEO discussion and mission framing.
+- Use delegated missions, permission tiers, and escalation packets for current work.
+- Use `DIRECTIVE_TRACKER.md` only after re-triage; old incomplete rows are not active just because they are incomplete.
+- Old HN/LinkedIn calendars are historical unless reactivated by a current mission.
+- Old enterprise sales phases are historical unless reactivated by owner decision.
+- Current priority is M-3 value production through evidence-backed money path experiments.
+- Reports are produced when they help decisions, evidence, or compliance, not as ceremony.
+
 ## 整合的 4 个运营源 (本 commit)
 
 - `DAILY_SCHEDULE.md` (operations cadence by day-of-week, deleted in this commit)
@@ -27,7 +43,7 @@ under Board's direct GOV-005 directive that overrode CTO's Plan B deferral.
 
 ---
 
-## I. Daily Schedule (from DAILY_SCHEDULE.md)
+## I. Historical Daily Schedule (from DAILY_SCHEDULE.md)
 
 # Y* Bridge Labs — Daily Operations Schedule
 # Based on verified research data (knowledge/cmo/real_world_operations_research.md)
@@ -160,7 +176,7 @@ ystar doctor
 
 ---
 
-## 每周固定产出目标
+## Historical Weekly Output Targets
 
 | 产出 | 数量 | 负责人 | KR |
 |------|------|--------|-----|
@@ -175,7 +191,7 @@ ystar doctor
 
 ---
 
-## HN文章发布节奏（Board批准后）
+## Historical HN Article Cadence (Board approval required before reactivation)
 
 | 周次 | 发布 | 日期建议 | 文章 |
 |------|------|---------|------|
@@ -187,7 +203,7 @@ ystar doctor
 
 ---
 
-## LinkedIn内容策略（待CMO提案后Board批准）
+## Historical LinkedIn Content Strategy (not active unless reactivated)
 
 **频率：** 4-5篇/周
 **最佳时间：** 周二-周四 9-10AM ET + 周三/周五 3-4PM ET
@@ -196,7 +212,7 @@ ystar doctor
 
 ---
 
-## 社区参与日历
+## Historical Community Engagement Calendar
 
 | 触发事件 | 谁做什么 | 时间要求 |
 |---------|---------|---------|
@@ -243,7 +259,7 @@ ystar doctor
 
 ---
 
-## II. Weekly Cycle (from WEEKLY_CYCLE.md)
+## II. Historical Weekly Cycle (from WEEKLY_CYCLE.md)
 
 # Weekly Cycle — Y* Bridge Labs
 

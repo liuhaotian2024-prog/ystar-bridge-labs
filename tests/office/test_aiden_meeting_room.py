@@ -16,6 +16,8 @@ def test_context_loads_required_company_files():
     ctx = load_company_context(REPO_ROOT)
     assert "README.md" in ctx.source_texts
     assert "AGENTS.md" in ctx.source_texts
+    assert "governance/ACTIVE_OPERATING_CHARTER.md" in ctx.source_texts
+    assert "directive_retriage.json" in ctx.source_texts
     assert "knowledge/ceo/wisdom/M_TRIANGLE.md" in ctx.source_texts
     assert "Aiden Liu — CEO" in ctx.team_roster
 
@@ -25,6 +27,8 @@ def test_intent_classifier_owner_examples():
     assert classify_intent("Aiden，你是依据什么得出这个方向的？你对于我们 Labs 的元发展是怎么认识的？") == "rationale_meta"
     assert classify_intent("Aiden，你现在自己是一个什么状态？你现在怎么形容自己的？") == "self_state"
     assert classify_intent("我们之前仓库的问题是什么？这几天的新架构能怎么修？") == "repo_repair"
+    assert classify_intent("哪些旧规则现在已经不应该再约束我们？") == "obsolete_rules"
+    assert classify_intent("当前真正 active 的治理规则是什么？") == "active_rules"
 
 
 def test_fastest_cash_answer_is_repo_grounded(tmp_path):
@@ -75,3 +79,25 @@ def test_no_external_action_claims(tmp_path):
     text = _ask("下一步你需要我批准什么？", tmp_path)
     assert "外部副作用" in text
     assert "不会自动发邮件" in text
+
+
+def test_aiden_explains_obsolete_rules(tmp_path):
+    text = _ask("哪些旧规则现在已经不应该再约束我们？", tmp_path)
+    assert "日报" in text or "每日" in text
+    assert "HN" in text
+    assert "LinkedIn" in text
+    assert "M Triangle" in text
+
+
+def test_aiden_explains_active_rules(tmp_path):
+    text = _ask("当前真正 active 的治理规则是什么？", tmp_path)
+    assert "permission tiers" in text
+    assert "Tier 0" in text
+    assert "外部副作用" in text
+
+
+def test_aiden_identifies_legacy_burden(tmp_path):
+    text = _ask("哪些任务是旧历史包袱？", tmp_path)
+    assert "历史包袱" in text
+    assert "enterprise" in text.lower()
+    assert "re-triage" in text

@@ -10,6 +10,8 @@ SAFE_CONTEXT_FILES = [
     "AGENTS.md",
     "OPERATIONS.md",
     "DIRECTIVE_TRACKER.md",
+    "directive_retriage.json",
+    "governance/ACTIVE_OPERATING_CHARTER.md",
     "governance/INTERNAL_GOVERNANCE.md",
     "governance/WORKING_STYLE.md",
     "knowledge/ceo/wisdom/M_TRIANGLE.md",
@@ -38,6 +40,8 @@ class CompanyContext:
     m_triangle_summary: str = ""
     methodology_summary: str = ""
     operations_summary: str = ""
+    active_charter_summary: str = ""
+    directive_retriage_summary: str = ""
     no_action_boundary: List[str] = field(default_factory=list)
 
 
@@ -85,7 +89,15 @@ def load_company_context(repo_root: Path | None = None) -> CompanyContext:
         "WORK_METHODOLOGY says plan is not done; every task must trace M -> U -> action -> empirical result."
     )
     ctx.operations_summary = (
-        "OPERATIONS shows CEO session rhythm, directive tracking, sales/content cadence, and a historical risk of report-heavy autonomous work."
+        "OPERATIONS now treats old daily/weekly schedules, HN/LinkedIn cadence, and enterprise sales phases as historical unless reactivated."
+    )
+    ctx.active_charter_summary = (
+        "ACTIVE_OPERATING_CHARTER says governance enables safe action, reports are decision tools not ceremony, "
+        "and old admin cadences are inactive unless mission-bound."
+    )
+    ctx.directive_retriage_summary = (
+        "directive_retriage.json marks old content calendars, weekly reports, and stale sales phases as archive or owner-decision items, "
+        "not automatic active work."
     )
     ctx.no_action_boundary = [
         "no external sending",

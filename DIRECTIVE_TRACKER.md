@@ -3,7 +3,34 @@
 **规则：每条Board指令收到后，CEO必须在10分钟内将所有子任务拆解到本表。**
 **未拆解的子任务 = 不存在的义务 = 必然被遗漏。**
 
+> **2026 Active Runtime Update:** old rows are not automatically active because they are old or incomplete.
+> Current active work must pass re-triage against the M Triangle and the active operating charter.
+> See `directive_retriage.json` for machine-readable status.
+
 ---
+
+## Directive Re-Triage Status
+
+| Legacy area | New status | Reason | Recommended action |
+|---|---|---|---|
+| LinkedIn/HN posting schedules | ARCHIVE_LEGACY | Historical content cadence; external publication still requires approval. | Keep as content archive; reactivate only through a current M-3 mission. |
+| Enterprise Sales Phase 1 | ARCHIVE_LEGACY | Old target list and warm-intro path are stale; current loop requires approval-gated manual-send packets. | Re-evaluate as evidence, not as active outreach. |
+| Three-repo integration tasks | SUPERSEDED_BY_RUNTIME | Recent backflow repaired Aiden meeting room, company_runtime domain pack, and gov-mcp tools. | Track future integration as scoped missions. |
+| Content/article tasks | ARCHIVE_LEGACY | Useful historical assets, but not current mandatory cadence. | Convert only the highest-value pieces into owner-approved commercial material. |
+| Weekly rhythm tasks | ARCHIVE_LEGACY | Fixed weekly reporting creates admin drag unless mission-bound. | Use mission summaries instead of default weekly ritual. |
+| NotebookLM/books task | OWNER_DECISION_REQUIRED | Requires owner spend and external tooling; not active by default. | Reconfirm only if tied to a current learning mission. |
+| Patent task | OWNER_DECISION_REQUIRED | Potential strategic value but legal/external action requires owner review. | Keep visible; do not execute without approval. |
+| Testing baseline tasks | REVENUE_RELEVANT_NOW | Testing supports M-2 and product trust, but must be tied to active product/runtime work. | Keep as mission-bound engineering quality work. |
+| K9 long-term data collection | OWNER_DECISION_REQUIRED | May support evidence quality, but DB/log/privacy boundaries require care. | Re-scope under Tier 1/read-only or review-gated evidence mission. |
+
+Statuses:
+
+- `ACTIVE_NOW`: current work with clear M Triangle alignment.
+- `SUPERSEDED_BY_RUNTIME`: replaced by Aiden Meeting Room, delegated mission runtime, company_runtime domain pack, or gov-mcp company tools.
+- `ARCHIVE_LEGACY`: keep historically visible, not active by default.
+- `OWNER_DECISION_REQUIRED`: ambiguous or high-impact; owner must reactivate or close.
+- `REVENUE_RELEVANT_NOW`: can be active when bound to a current M-3 mission.
+- `BLOCKED_BY_MISSING_EVIDENCE`: do not run until evidence or budget exists.
 
 ## 活跃指令（Active — 有未完成子任务）
 
