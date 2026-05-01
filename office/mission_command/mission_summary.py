@@ -8,6 +8,7 @@ from .mission_alignment import align_mission_to_m_triangle
 from .mission_from_owner_message import build_mission_from_owner_message
 from .mission_model import MissionCommandResult
 from .mission_router import route_mission
+from .research_capability import audit_research_capability
 from .team_task_builder import build_team_tasks
 
 
@@ -31,12 +32,22 @@ def build_mission_result(owner_message: str, repo_root: Path | None = None) -> M
 def build_mission_summary(owner_message: str, repo_root: Path | None = None) -> str:
     result = build_mission_result(owner_message, repo_root)
     mission = result.mission
+    root = (repo_root or Path(__file__).resolve().parents[2]).resolve()
+    research_audit = audit_research_capability(root)
+    evidence_mode = (
+        "live-read-only evidence-backed plan"
+        if research_audit.plan_confidence_allowed == "evidence_backed_live_read_only"
+        else "internal-evidence preliminary plan"
+    )
     lines = [
         "# Mission Command Summary",
         "",
         f"Mission goal: {mission.goal}",
         f"Mission type: {mission.mission_type}",
         f"Default priority: {mission.default_priority}",
+        f"Evidence mode: {evidence_mode}",
+        f"External research verdict: {research_audit.external_research_verdict}",
+        f"Plan confidence allowed: {research_audit.plan_confidence_allowed}",
         "",
         "## Aiden Recommended Path",
         mission.recommended_path,
@@ -81,4 +92,3 @@ def build_mission_summary(owner_message: str, repo_root: Path | None = None) -> 
         ]
     )
     return "\n".join(lines)
-

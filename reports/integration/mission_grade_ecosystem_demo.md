@@ -3,6 +3,9 @@
 Mission goal: 制定未来 7 天最可能产生第一笔收入的行动方案
 Mission type: first_revenue_mission
 Default priority: M-3 Value Production unless M-1 or M-2 is actively broken
+Evidence mode: internal-evidence preliminary plan
+External research verdict: ARCHITECTURE_ONLY
+Plan confidence allowed: internal_only_preliminary
 
 ## Aiden Recommended Path
 Run a 7-day first-revenue mission: compare the Founder AI Workflow Audit / CEO Command Brief seed against AI Company Cockpit Setup, Coding-Agent Governance Audit, Agent Workflow Bottleneck Diagnosis, and Runtime Setup Advisory; prepare one owner-approved manual action packet only after evidence review.
