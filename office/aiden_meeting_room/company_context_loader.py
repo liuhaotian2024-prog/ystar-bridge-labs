@@ -2,7 +2,12 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Dict, List
+from typing import Any, Dict, List
+
+from .directive_retriage_analyzer import analyze_directive_tracker
+from .governance_burden_analyzer import analyze_governance_burden
+from .operations_admin_analyzer import analyze_operations_admin
+from .repo_evidence_index import RepoEvidenceIndex, build_repo_evidence_index
 
 
 SAFE_CONTEXT_FILES = [
@@ -34,6 +39,10 @@ class CompanyContext:
     repo_root: Path
     source_texts: Dict[str, str] = field(default_factory=dict)
     missing_files: List[str] = field(default_factory=list)
+    evidence_index: RepoEvidenceIndex | None = None
+    governance_findings: List[Any] = field(default_factory=list)
+    directive_findings: List[Any] = field(default_factory=list)
+    operations_findings: List[Any] = field(default_factory=list)
     team_roster: List[str] = field(default_factory=list)
     m_triangle_summary: str = ""
     methodology_summary: str = ""
@@ -100,4 +109,8 @@ def load_company_context(repo_root: Path | None = None) -> CompanyContext:
 
     if not _contains(ctx.source_texts, "COO"):
         ctx.no_action_boundary.append("no COO invented")
+    ctx.evidence_index = build_repo_evidence_index(root)
+    ctx.governance_findings = analyze_governance_burden(ctx.evidence_index)
+    ctx.directive_findings = analyze_directive_tracker(root)
+    ctx.operations_findings = analyze_operations_admin(root)
     return ctx
