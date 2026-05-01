@@ -15,6 +15,7 @@ SAFE_CONTEXT_FILES = [
     "AGENTS.md",
     "OPERATIONS.md",
     "DIRECTIVE_TRACKER.md",
+    "governance/ACTIVE_OPERATING_CHARTER.md",
     "governance/INTERNAL_GOVERNANCE.md",
     "governance/WORKING_STYLE.md",
     "knowledge/ceo/wisdom/M_TRIANGLE.md",

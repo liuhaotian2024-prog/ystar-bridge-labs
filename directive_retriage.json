@@ -1,0 +1,102 @@
+[
+  {
+    "directive_id": "Directive #018-020",
+    "task_id": "3a",
+    "task": "HN文章系列推进",
+    "old_status": "5篇draft，0发布",
+    "new_status": "ARCHIVE_LEGACY",
+    "reason": "Old HN/content cadence is historical unless reactivated for a current money-path mission.",
+    "recommended_action": "Keep as source material; do not treat as active execution work by default.",
+    "m_triangle_alignment": "weak_m3_unless_reactivated",
+    "owner_decision_needed": false
+  },
+  {
+    "directive_id": "Directive #018-020",
+    "task_id": "3b",
+    "task": "LinkedIn策略研究+提案",
+    "old_status": "未开始",
+    "new_status": "ARCHIVE_LEGACY",
+    "reason": "Old LinkedIn cadence is an archival distribution hypothesis, not an active mandate.",
+    "recommended_action": "Reactivate only if a current mission chooses content distribution as the next money path.",
+    "m_triangle_alignment": "weak_m3_unless_reactivated",
+    "owner_decision_needed": false
+  },
+  {
+    "directive_id": "Directive #018-020",
+    "task_id": "2c",
+    "task": "WEEKLY_CYCLE.md建立",
+    "old_status": "完成，待Board批",
+    "new_status": "ADMIN_BURDEN",
+    "reason": "Weekly rhythm should not bind current work unless tied to an active mission or owner-approved cadence.",
+    "recommended_action": "Use mission summaries instead of recurring administrative ceremony.",
+    "m_triangle_alignment": "low_m3_when_unbound",
+    "owner_decision_needed": false
+  },
+  {
+    "directive_id": "Directive #018-020",
+    "task_id": "2d",
+    "task": "reports/daily/维护",
+    "old_status": "持续",
+    "new_status": "ADMIN_BURDEN",
+    "reason": "Daily reports are not active by default under the active operating charter.",
+    "recommended_action": "Produce reports when needed for a mission decision, not as ceremony.",
+    "m_triangle_alignment": "low_m3_when_unbound",
+    "owner_decision_needed": false
+  },
+  {
+    "directive_id": "Directive #018-020",
+    "task_id": "6c",
+    "task": "测试覆盖率基线",
+    "old_status": "未追踪",
+    "new_status": "REVENUE_RELEVANT_NOW",
+    "reason": "A reliable test baseline supports delivery quality and paid pilot credibility.",
+    "recommended_action": "Keep active as delivery-readiness support for first revenue missions.",
+    "m_triangle_alignment": "m1_m2_supports_m3",
+    "owner_decision_needed": false
+  },
+  {
+    "directive_id": "Directive #011",
+    "task_id": "3",
+    "task": "Board购买书籍+建NotebookLM",
+    "old_status": "待Board决定",
+    "new_status": "OWNER_DECISION_REQUIRED",
+    "reason": "Potentially useful learning infrastructure, but not automatically current M-3 work.",
+    "recommended_action": "Hold until owner explicitly reactivates as mission support.",
+    "m_triangle_alignment": "strategic_optional",
+    "owner_decision_needed": true
+  },
+  {
+    "directive_id": "专利",
+    "task_id": "4",
+    "task": "Board终审",
+    "old_status": "待决定",
+    "new_status": "OWNER_DECISION_REQUIRED",
+    "reason": "Patent/legal path is strategic and high-cost; it should not compete with first revenue without owner decision.",
+    "recommended_action": "Hold unless owner explicitly prioritizes legal/IP protection.",
+    "m_triangle_alignment": "strategic_optional",
+    "owner_decision_needed": true
+  },
+  {
+    "directive_id": "三仓库综合运用",
+    "task_id": "1",
+    "task": "CTO研究三仓库能力整合方案",
+    "old_status": "排队中",
+    "new_status": "SUPERSEDED_BY_RUNTIME",
+    "reason": "The recent evidence-driven backflow repair turned this into an active architecture pattern rather than an old tracker task.",
+    "recommended_action": "Use Mission Command and company_runtime preflight as the current integration surface.",
+    "m_triangle_alignment": "m2_to_m3_bridge",
+    "owner_decision_needed": false
+  },
+  {
+    "directive_id": "Enterprise Sales Phase 1",
+    "task_id": "5",
+    "task": "Phase 1 warm intro（6家Anthropic生态）",
+    "old_status": "执行中",
+    "new_status": "OWNER_DECISION_REQUIRED",
+    "reason": "Warm intro/contact is an external side-effect path and needs current owner approval before execution.",
+    "recommended_action": "Convert to approval packet with exact recipient/content if reactivated.",
+    "m_triangle_alignment": "possible_m3_but_needs_evidence",
+    "owner_decision_needed": true
+  }
+]
+

@@ -38,6 +38,16 @@ class RepoEvidenceIndex:
 def build_repo_evidence_index(repo_root: Path) -> RepoEvidenceIndex:
     index = RepoEvidenceIndex(repo_root=repo_root)
 
+    charter_specs = [
+        ("Active charter mission", ["prove that an AI agent team", "produce real value"], "core_constitutional"),
+        ("Active charter default priority", ["Default priority is M-3", "M-3 Value Production unless"], "active_runtime_rule"),
+        ("Active runtime Mission Command", ["Mission Command", "company_runtime policy", "gov-mcp company preflight"], "active_runtime_rule"),
+        ("Administrative rationalization", ["Old daily", "HN and LinkedIn calendars", "Old directive tracker items"], "active_runtime_rule"),
+        ("Approval model", ["approve", "reject", "request_revision", "hold"], "replace_with_permission_tier"),
+    ]
+    for label, keywords, classification in charter_specs:
+        index.add(find_keyword_evidence(repo_root, "governance/ACTIVE_OPERATING_CHARTER.md", keywords, label, classification, limit=3))
+
     # AGENTS.md: extract both core rules and possible administrative burden.
     agents_specs = [
         ("M Triangle", ["M TRIANGLE", "M(t)", "M-3 Value Production"], "core_constitutional"),
