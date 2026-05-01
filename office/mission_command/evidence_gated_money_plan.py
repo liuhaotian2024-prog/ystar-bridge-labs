@@ -124,6 +124,12 @@ def build_evidence_gated_money_plan(repo_root: Path) -> Dict[str, object]:
         "behavior_capability_matrix": trace["behavior_capabilities"],
         "opportunity_synthesis_by_lens": trace["opportunities"],
         "experiment_design": trace["experiments"],
+        "counterfactual_cases": trace["counterfactual_cases"],
+        "highest_counterfactual_risks": trace["highest_counterfactual_risks"],
+        "fastest_disconfirming_tests": trace["fastest_disconfirming_tests"],
+        "alternative_path_rationale": trace["alternative_path_rationale"],
+        "default_changed_after_counterfactual": trace["default_changed_after_counterfactual"],
+        "why_default_still_wins_or_changed": trace["why_default_still_wins_or_changed"],
         "owner_burden_minimization": trace["owner_burden"],
         "residual_plan": trace["residual_plan"],
         "known_unknown": {
@@ -218,6 +224,32 @@ def render_money_plan_markdown(plan: Dict[str, object]) -> str:
     lines.extend(["", "## Experiment Design Per Top Opportunity"])
     for item in plan["experiment_design"]:  # type: ignore[index]
         lines.append(f"- {item['opportunity']}: 48h={item['48h_internal_experiment']}; metric={item['success_metric']}; kill={item['kill_condition']}")
+    lines.extend(["", "## Counterfactual Stress Test"])
+    for item in plan["counterfactual_cases"]:  # type: ignore[index]
+        lines.append(f"- {item['opportunity_title']}: highest_risk={item['highest_risk_assumption']}; fastest_test={item['fastest_disconfirming_test']}")
+    lines.extend(["", "## Highest Risk Assumptions"])
+    for item in plan["highest_counterfactual_risks"]:  # type: ignore[index]
+        lines.append(f"- {item['opportunity_title']}: {item['highest_risk_assumption']}")
+    lines.extend(["", "## Fastest Disconfirming Tests"])
+    for item in plan["fastest_disconfirming_tests"]:  # type: ignore[index]
+        lines.append(f"- {item['opportunity']}: {item['test']}")
+    lines.extend(
+        [
+            "",
+            "## Alternative Path Analysis",
+            str(plan["alternative_path_rationale"]),
+            "",
+            "## Owner Burden Counterfactual",
+            "If the selected path turns the owner into the operator, shrink it to a prepared approval decision and downgrade owner-heavy work.",
+            "",
+            "## M Triangle Counterfactual",
+            "If a path boosts M-3 but bypasses M-2 gates, it is unsafe; if it boosts M-2 ceremony without value production, it is governance drag.",
+            "",
+            "## Counterfactual Default Check",
+            f"- default_changed_after_counterfactual: {plan['default_changed_after_counterfactual']}",
+            f"- rationale: {plan['why_default_still_wins_or_changed']}",
+        ]
+    )
     lines.extend(["", "## Autonomous Internal Actions"])
     lines.extend(f"- {item}" for item in plan["autonomous_internal_actions"])  # type: ignore[index]
     lines.extend(["", "## Approval-Needed Actions"])

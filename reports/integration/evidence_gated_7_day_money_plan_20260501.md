@@ -21,6 +21,7 @@ Produce a methodologically grounded, evidence-aware first-revenue exploration th
 - compare_resources
 - analyze_behavior_capability
 - generate_opportunities
+- counterfactual_stress_test
 - compare_paths
 - design_experiments
 - execute_allowed_actions
@@ -91,6 +92,34 @@ Best internal-only method-trace default because it combines fast feedback, low o
 - Agent Workflow Bottleneck Diagnosis: 48h=48h internal diagnosis template for a messy AI-team workflow.; metric=At least one strong paid-signal proxy: explicit budget/urgency language, owner-approved interested target, or willingness-to-pay evidence.; kill=No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
 - Founder AI Workflow Audit / CEO Command Brief: 48h=48h internal sample audit brief using a fictional founder workflow scenario.; metric=At least one strong paid-signal proxy: explicit budget/urgency language, owner-approved interested target, or willingness-to-pay evidence.; kill=No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
 - Governance Template Paid Support: 48h=48h package the smallest support offer and sample before/after.; metric=At least one strong paid-signal proxy: explicit budget/urgency language, owner-approved interested target, or willingness-to-pay evidence.; kill=No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
+
+## Counterfactual Stress Test
+- Agent Workflow Bottleneck Diagnosis: highest_risk=buyer pain may be real but not yet framed as a paid diagnostic need; fastest_test=Within 48h, draft a one-page bottleneck diagnosis sample and a 5-question buyer pain test; if no crisp paid-pain language emerges, downgrade.
+- Founder AI Workflow Audit / CEO Command Brief: highest_risk=buyer may not recognize enough urgency to pay within 7 days; fastest_test=Within 48h, create a sample CEO Command Brief and compare it against two other offer samples for buyer clarity and delivery burden.
+- Governance Template Paid Support: highest_risk=existing audience may not yet exist for paid template support; fastest_test=Within 48h, package one before/after template-support example; if it needs too much context or no buyer segment is obvious, downgrade.
+
+## Highest Risk Assumptions
+- Agent Workflow Bottleneck Diagnosis: buyer pain may be real but not yet framed as a paid diagnostic need
+- Founder AI Workflow Audit / CEO Command Brief: buyer may not recognize enough urgency to pay within 7 days
+- Governance Template Paid Support: existing audience may not yet exist for paid template support
+
+## Fastest Disconfirming Tests
+- Agent Workflow Bottleneck Diagnosis: Within 48h, draft a one-page bottleneck diagnosis sample and a 5-question buyer pain test; if no crisp paid-pain language emerges, downgrade.
+- Founder AI Workflow Audit / CEO Command Brief: Within 48h, create a sample CEO Command Brief and compare it against two other offer samples for buyer clarity and delivery burden.
+- Governance Template Paid Support: Within 48h, package one before/after template-support example; if it needs too much context or no buyer segment is obvious, downgrade.
+
+## Alternative Path Analysis
+The second-best path remains important if it can show clearer buyer language or lower delivery burden during the 48h internal experiment.
+
+## Owner Burden Counterfactual
+If the selected path turns the owner into the operator, shrink it to a prepared approval decision and downgrade owner-heavy work.
+
+## M Triangle Counterfactual
+If a path boosts M-3 but bypasses M-2 gates, it is unsafe; if it boosts M-2 ceremony without value production, it is governance drag.
+
+## Counterfactual Default Check
+- default_changed_after_counterfactual: False
+- rationale: Default is confirmed after counterfactual stress test because it has a fast 48h disconfirming test, low owner burden, and does not require external contact before internal preparation.
 
 ## Autonomous Internal Actions
 - Prepare a one-page offer brief for the default path.

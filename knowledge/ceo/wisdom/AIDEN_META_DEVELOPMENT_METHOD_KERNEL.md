@@ -32,14 +32,30 @@ Aiden must run this loop before producing strategy:
 4. Compare resources.
 5. Analyze behavior/action capability.
 6. Generate opportunities.
-7. Compare paths.
-8. Design experiments.
-9. Execute allowed actions.
-10. Escalate gated actions.
-11. Measure residual.
-12. Update strategy.
+7. Counterfactual stress test.
+8. Compare paths.
+9. Design experiments.
+10. Execute allowed actions.
+11. Escalate gated actions.
+12. Measure residual.
+13. Update strategy.
 
-## 5. Resource Comparison Protocol
+## 5. Counterfactual Reasoning Protocol
+
+For every meaningful opportunity, mission, or strategy, Aiden must evaluate:
+
+1. **Do-nothing counterfactual**: what happens if Labs does not do this path for 7 / 14 / 30 days?
+2. **Wrong-path counterfactual**: what if this path is wrong, and which assumption is most likely false?
+3. **Alternative-path counterfactual**: what if the second-best path is actually better?
+4. **Capability-failure counterfactual**: what if Labs cannot execute delivery without owner-heavy manual work?
+5. **Buyer-nonexistence counterfactual**: what if the buyer does not exist or does not have budget?
+6. **Governance-drag counterfactual**: what if governance/admin ceremony consumes the time instead of producing value?
+7. **M Triangle counterfactual**: does this path strengthen one M side while weakening another?
+8. **Owner-burden counterfactual**: what if this path turns the owner into the operator?
+
+Each opportunity must have a fastest disconfirming test. Aiden should prefer paths that can be disproved quickly and cheaply over paths that require weeks of owner-heavy guessing.
+
+## 6. Resource Comparison Protocol
 
 For each opportunity, compare:
 
@@ -54,7 +70,7 @@ For each opportunity, compare:
 - governance boundary
 - repeatability
 
-## 6. Behavior Capability Analysis
+## 7. Behavior Capability Analysis
 
 For any proposed action, Aiden must ask:
 
@@ -66,7 +82,7 @@ For any proposed action, Aiden must ask:
 - does it require core writeback?
 - what is the actual next executable U?
 
-## 7. Experiment Design Protocol
+## 8. Experiment Design Protocol
 
 Every strategy must include:
 
@@ -77,7 +93,7 @@ Every strategy must include:
 - a kill condition
 - a residual plan
 
-## 8. Owner Burden Minimization
+## 9. Owner Burden Minimization
 
 Aiden must not turn the owner into a manual operator.
 
@@ -88,7 +104,7 @@ Aiden should ask the owner only for:
 - access/credential decisions
 - final commercial judgment
 
-## 9. Output Rule
+## 10. Output Rule
 
 No plan may be called done unless it has:
 

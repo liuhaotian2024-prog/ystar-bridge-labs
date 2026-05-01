@@ -3,6 +3,16 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from .governance_bridge import (
+    preflight_admin_rule,
+    preflight_mission_action,
+    preflight_value_alignment,
+    summarize_preflight_results,
+)
+from .obligation_bridge import (
+    build_obligation_draft_from_mission,
+    build_team_obligation_drafts,
+)
 from .ecosystem_preflight import run_gov_mcp_preflight, run_ystar_gov_preflight
 from .mission_alignment import align_mission_to_m_triangle
 from .mission_from_owner_message import build_mission_from_owner_message
@@ -10,6 +20,7 @@ from .mission_model import MissionCommandResult
 from .mission_router import route_mission
 from .meta_development_method_kernel import build_meta_development_trace
 from .research_capability import audit_research_capability
+from .residual_learning_bridge import build_residual_candidates_for_experiments
 from .team_task_builder import build_team_tasks
 
 
@@ -36,6 +47,28 @@ def build_mission_summary(owner_message: str, repo_root: Path | None = None) -> 
     root = (repo_root or Path(__file__).resolve().parents[2]).resolve()
     research_audit = audit_research_capability(root)
     method_trace = build_meta_development_trace(owner_message, root)
+    obligation_drafts = [build_obligation_draft_from_mission(result)] + build_team_obligation_drafts(
+        result.team_tasks,
+        result.mission.mission_id,
+    )
+    mission_dict = {
+        "mission_id": mission.mission_id,
+        "owner_goal": mission.goal,
+        "allowed_permission_tier": mission.allowed_permission_tier,
+        "research_budget": mission.research_budget,
+    }
+    governance_bridge_results = [
+        preflight_mission_action({"action": "read-only research public page search"}, mission_dict, root),
+        preflight_mission_action({"action": "send email to selected customer"}, mission_dict, root),
+        preflight_admin_rule({"title": "old daily report"}, mission_dict, root),
+        preflight_value_alignment({"title": "first paid customer interview"}, root),
+    ]
+    governance_bridge_summary = summarize_preflight_results(governance_bridge_results)
+    residual_candidates = build_residual_candidates_for_experiments(
+        method_trace["experiments"],
+        method_trace["counterfactual_cases"],
+        mission.mission_id,
+    )
     evidence_mode = (
         "live-read-only evidence-backed plan"
         if research_audit.plan_confidence_allowed == "evidence_backed_live_read_only"
@@ -133,6 +166,41 @@ def build_mission_summary(owner_message: str, repo_root: Path | None = None) -> 
     lines.extend(
         [
             "",
+            "## Counterfactual Stress Test",
+        ]
+    )
+    for item in method_trace["counterfactual_cases"]:
+        lines.append(f"- {item['opportunity_title']}: risk={item['highest_risk_assumption']}; fastest_test={item['fastest_disconfirming_test']}")
+    lines.extend(
+        [
+            "",
+            "## Highest Risk Assumptions",
+        ]
+    )
+    for item in method_trace["highest_counterfactual_risks"]:
+        lines.append(f"- {item['opportunity_title']}: {item['highest_risk_assumption']}")
+    lines.extend(
+        [
+            "",
+            "## Fastest Disconfirming Tests",
+        ]
+    )
+    for item in method_trace["fastest_disconfirming_tests"]:
+        lines.append(f"- {item['opportunity']}: {item['test']}")
+    lines.extend(
+        [
+            "",
+            "## Alternative Path Analysis",
+            method_trace["alternative_path_rationale"],
+            "",
+            "## Counterfactual Default Check",
+            f"Default changed after stress test: {method_trace['default_changed_after_counterfactual']}",
+            method_trace["why_default_still_wins_or_changed"],
+        ]
+    )
+    lines.extend(
+        [
+            "",
             "## Owner Burden Minimization",
             method_trace["owner_burden"],
             "",
@@ -144,6 +212,31 @@ def build_mission_summary(owner_message: str, repo_root: Path | None = None) -> 
             "",
             "## Method Compliance",
             *[f"- {key}: {value}" for key, value in method_trace["method_compliance"].items()],
+            "",
+            "## Obligation Drafts",
+        ]
+    )
+    for draft in obligation_drafts:
+        lines.append(
+            f"- {draft['rule_name']}: owner={draft['owner']}; entity_id={draft['entity_id']}; registration_allowed={draft['registration_allowed']}; review_required={draft['owner_review_required']}"
+        )
+    lines.extend(
+        [
+            "",
+            "## Governance Bridge Summary",
+            "```json",
+            json.dumps(governance_bridge_summary, ensure_ascii=False, indent=2, sort_keys=True),
+            "```",
+            "",
+            "## Residual Learning Candidates",
+        ]
+    )
+    for item in residual_candidates:
+        lines.append(
+            f"- {item['opportunity_id']}: assumption={item['assumption_tested']}; writeback_allowed={item['writeback_allowed']}; review_required={item['review_required']}"
+        )
+    lines.extend(
+        [
             "",
             "## Y-star-gov Preflight",
             "```json",

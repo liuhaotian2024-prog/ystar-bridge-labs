@@ -49,27 +49,50 @@ Produce a methodologically grounded, evidence-aware first-revenue exploration th
 - 48h AI Workflow Paid-Signal Sprint (speed-to-feedback lens): buyer=Founder/operator willing to review a concrete diagnostic sample before a paid pilot.; confidence=low_to_medium_internal_only
 - AI Company Cockpit Setup (productization lens): buyer=Founder who wants an AI-agent operating room but lacks a safe operating spine.; confidence=low_to_medium_internal_only
 
-## 7. Experiments Designed
-- Agent Workflow Bottleneck Diagnosis
-  - 48h internal: 48h internal diagnosis template for a messy AI-team workflow.
-  - Tier 1 research: Collect public pain-language and pricing-reference evidence under explicit Tier 1 budget; no login, no contact, no submit.
-  - Approval-needed validation: Prepare exact manual-send validation draft for Agent Workflow Bottleneck Diagnosis; owner must approve target, content, and boundary before any send.
-  - Success metric: At least one strong paid-signal proxy: explicit budget/urgency language, owner-approved interested target, or willingness-to-pay evidence.
-  - Kill condition: No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
-- Founder AI Workflow Audit / CEO Command Brief
-  - 48h internal: 48h internal sample audit brief using a fictional founder workflow scenario.
-  - Tier 1 research: Collect public pain-language and pricing-reference evidence under explicit Tier 1 budget; no login, no contact, no submit.
-  - Approval-needed validation: Prepare exact manual-send validation draft for Founder AI Workflow Audit / CEO Command Brief; owner must approve target, content, and boundary before any send.
-  - Success metric: At least one strong paid-signal proxy: explicit budget/urgency language, owner-approved interested target, or willingness-to-pay evidence.
-  - Kill condition: No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
-- Governance Template Paid Support
-  - 48h internal: 48h package the smallest support offer and sample before/after.
-  - Tier 1 research: Collect public pain-language and pricing-reference evidence under explicit Tier 1 budget; no login, no contact, no submit.
-  - Approval-needed validation: Prepare exact manual-send validation draft for Governance Template Paid Support; owner must approve target, content, and boundary before any send.
-  - Success metric: At least one strong paid-signal proxy: explicit budget/urgency language, owner-approved interested target, or willingness-to-pay evidence.
-  - Kill condition: No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
+## 7. Counterfactual Stress Test
+### Agent Workflow Bottleneck Diagnosis
+- Do nothing: If Labs does not test Agent Workflow Bottleneck Diagnosis for 7 days, it preserves optionality but loses a concrete M-3 feedback window; after 14-30 days the risk becomes more internal-system polish without paid-signal learning.
+- Wrong path: If Agent Workflow Bottleneck Diagnosis is wrong, the most likely failure is: buyer pain may be real but not yet framed as a paid diagnostic need.
+- Alternative path: Founder AI Workflow Audit / CEO Command Brief may be better if it can produce clearer buyer language, lower owner burden, or faster disconfirmation.
+- Capability failure: If delivery needs owner-heavy bespoke analysis, the path should be narrowed to a smaller diagnostic or downgraded.
+- Buyer nonexistence: If no buyer can be described with urgent pain, budget, and reachable validation route, do not proceed to outreach.
+- Governance drag: If reports, rituals, or old directives consume the 48h experiment window, the path is failing M-3 execution discipline.
+- M Triangle: If the path boosts M-3 but bypasses M-2 approval gates, it is unsafe; if it boosts M-2 ceremony but produces no value signal, it is drag.
+- Owner burden: Owner burden risk: Low if Aiden prepares the diagnostic package and asks one approval question.. If owner becomes the operator, Aiden must shrink the action to a prepared approval decision.
+- Highest risk assumption: buyer pain may be real but not yet framed as a paid diagnostic need
+- Fastest disconfirming test: Within 48h, draft a one-page bottleneck diagnosis sample and a 5-question buyer pain test; if no crisp paid-pain language emerges, downgrade.
+- Recommended adjustment: Keep as a 48h internal experiment plus optional Tier 1 evidence run; do not advance to external validation without owner approval.
+### Founder AI Workflow Audit / CEO Command Brief
+- Do nothing: If Labs does not test Founder AI Workflow Audit / CEO Command Brief for 7 days, it preserves optionality but loses a concrete M-3 feedback window; after 14-30 days the risk becomes more internal-system polish without paid-signal learning.
+- Wrong path: If Founder AI Workflow Audit / CEO Command Brief is wrong, the most likely failure is: buyer may not recognize enough urgency to pay within 7 days.
+- Alternative path: Agent Workflow Bottleneck Diagnosis may be better if it can produce clearer buyer language, lower owner burden, or faster disconfirmation.
+- Capability failure: If delivery needs owner-heavy bespoke analysis, the path should be narrowed to a smaller diagnostic or downgraded.
+- Buyer nonexistence: If no buyer can be described with urgent pain, budget, and reachable validation route, do not proceed to outreach.
+- Governance drag: If reports, rituals, or old directives consume the 48h experiment window, the path is failing M-3 execution discipline.
+- M Triangle: If the path boosts M-3 but bypasses M-2 approval gates, it is unsafe; if it boosts M-2 ceremony but produces no value signal, it is drag.
+- Owner burden: Owner burden risk: Owner approves target segment and any external send; team prepares the rest.. If owner becomes the operator, Aiden must shrink the action to a prepared approval decision.
+- Highest risk assumption: buyer may not recognize enough urgency to pay within 7 days
+- Fastest disconfirming test: Within 48h, create a sample CEO Command Brief and compare it against two other offer samples for buyer clarity and delivery burden.
+- Recommended adjustment: Keep as a 48h internal experiment plus optional Tier 1 evidence run; do not advance to external validation without owner approval.
+### Governance Template Paid Support
+- Do nothing: If Labs does not test Governance Template Paid Support for 7 days, it preserves optionality but loses a concrete M-3 feedback window; after 14-30 days the risk becomes more internal-system polish without paid-signal learning.
+- Wrong path: If Governance Template Paid Support is wrong, the most likely failure is: existing audience may not yet exist for paid template support.
+- Alternative path: Agent Workflow Bottleneck Diagnosis may be better if it can produce clearer buyer language, lower owner burden, or faster disconfirmation.
+- Capability failure: If delivery needs owner-heavy bespoke analysis, the path should be narrowed to a smaller diagnostic or downgraded.
+- Buyer nonexistence: If no buyer can be described with urgent pain, budget, and reachable validation route, do not proceed to outreach.
+- Governance drag: If reports, rituals, or old directives consume the 48h experiment window, the path is failing M-3 execution discipline.
+- M Triangle: If the path boosts M-3 but bypasses M-2 approval gates, it is unsafe; if it boosts M-2 ceremony but produces no value signal, it is drag.
+- Owner burden: Owner burden risk: Low after owner approves support boundary.. If owner becomes the operator, Aiden must shrink the action to a prepared approval decision.
+- Highest risk assumption: existing audience may not yet exist for paid template support
+- Fastest disconfirming test: Within 48h, package one before/after template-support example; if it needs too much context or no buyer segment is obvious, downgrade.
+- Recommended adjustment: Keep as a 48h internal experiment plus optional Tier 1 evidence run; do not advance to external validation without owner approval.
 
-## 8. What Can Be Done Autonomously
+## 8. Experiments Designed
+- Agent Workflow Bottleneck Diagnosis: 48h=48h internal diagnosis template for a messy AI-team workflow.; kill=No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
+- Founder AI Workflow Audit / CEO Command Brief: 48h=48h internal sample audit brief using a fictional founder workflow scenario.; kill=No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
+- Governance Template Paid Support: 48h=48h package the smallest support offer and sample before/after.; kill=No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
+
+## 9. What Can Be Done Autonomously
 - Synthesize owner mission into a decision brief.
 - Scan safe repo files and map assets to opportunities.
 - Classify old tasks as active, revenue-relevant, archival, or owner-decision-required.
@@ -79,7 +102,7 @@ Produce a methodologically grounded, evidence-aware first-revenue exploration th
 - Define research questions, source types, stop conditions, and evidence fields.
 - Patch scoped files, run tests, and commit only intentional changes.
 
-## 9. What Needs Owner Approval
+## 10. What Needs Owner Approval
 - customer contact
 - customer interview request
 - demo to external party
@@ -90,7 +113,7 @@ Produce a methodologically grounded, evidence-aware first-revenue exploration th
 - public post
 - public support offer
 
-## 10. Next Executable U
+## 11. Next Executable U
 Within 48h, build a one-page comparison brief and one sample deliverable for the top two opportunities, then ask the owner to approve or revise a Tier 1 read-only evidence mission.
 
 ## Evidence Boundary

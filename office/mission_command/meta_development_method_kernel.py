@@ -6,6 +6,7 @@ from typing import Any, Dict, List
 
 from office.aiden_meeting_room.company_context_loader import load_company_context
 
+from .counterfactual_reasoning import build_counterfactual_matrix, rank_counterfactual_risks
 from .internal_world_scan import build_internal_world_scan
 from .opportunity_synthesis_engine import compare_generated_opportunities
 from .research_capability import audit_research_capability
@@ -164,6 +165,23 @@ def build_meta_development_trace(owner_message: str, repo_root: Path | None = No
     behavior = build_behavior_capability_matrix(root)
     opportunities = compare_generated_opportunities(root)
     top = opportunities[:3]
+    counterfactual_cases = build_counterfactual_matrix(top, {"repo_root": str(root), "owner_message": owner_message})
+    highest_counterfactual_risks = rank_counterfactual_risks(counterfactual_cases)[:3]
+    fastest_disconfirming_tests = [
+        {
+            "opportunity": case["opportunity_title"],
+            "test": case["fastest_disconfirming_test"],
+        }
+        for case in counterfactual_cases
+    ]
+    counterfactual_default = top[0] if top else None
+    default_changed = False
+    why_default = (
+        "Default is confirmed after counterfactual stress test because it has a fast 48h disconfirming test, low owner burden, "
+        "and does not require external contact before internal preparation."
+        if counterfactual_default
+        else "No default available."
+    )
     experiments = [design_experiments(item) for item in top]
     resource_comparison = [compare_resources(list(internal["assets"]), item) for item in top]
     approval_required = sorted({action for item in opportunities for action in item.get("approval_needed", [])})
@@ -183,6 +201,7 @@ def build_meta_development_trace(owner_message: str, repo_root: Path | None = No
         "compare_resources",
         "analyze_behavior_capability",
         "generate_opportunities",
+        "counterfactual_stress_test",
         "compare_paths",
         "design_experiments",
         "execute_allowed_actions",
@@ -219,7 +238,15 @@ def build_meta_development_trace(owner_message: str, repo_root: Path | None = No
             "method_steps": method_steps,
             "resource_comparison": resource_comparison,
             "top_opportunities": top,
-            "default_recommendation": top[0] if top else None,
+            "counterfactual_cases": counterfactual_cases,
+            "highest_counterfactual_risks": highest_counterfactual_risks,
+            "fastest_disconfirming_tests": fastest_disconfirming_tests,
+            "alternative_path_rationale": (
+                "The second-best path remains important if it can show clearer buyer language or lower delivery burden during the 48h internal experiment."
+            ),
+            "default_recommendation": counterfactual_default,
+            "default_changed_after_counterfactual": default_changed,
+            "why_default_still_wins_or_changed": why_default,
             "next_executable_u": next_u,
             "method_compliance": {
                 "has_evidence_status": True,

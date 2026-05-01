@@ -21,6 +21,7 @@ Mitigation: Run the full meta-development loop before recommending a path.
 - compare_resources
 - analyze_behavior_capability
 - generate_opportunities
+- counterfactual_stress_test
 - compare_paths
 - design_experiments
 - execute_allowed_actions
@@ -77,7 +78,7 @@ The mission is value-production led, with M-2 preserved through preflight and ow
 ## Resource Comparison
 - Agent Workflow Bottleneck Diagnosis: assets=Mission Command; trust_gap=requires fresh external evidence; owner_burden=Low if Aiden prepares the diagnostic package and asks one approval question.
 - Founder AI Workflow Audit / CEO Command Brief: assets=Mission Command, M Triangle, WORK_METHODOLOGY; trust_gap=requires fresh external evidence; owner_burden=Owner approves target segment and any external send; team prepares the rest.
-- Governance Template Paid Support: assets=gov-mcp tools, content/product assets, Y-star-gov policy; trust_gap=requires fresh external evidence; owner_burden=Low after owner approves support boundary.
+- Governance Template Paid Support: assets=content/product assets, Y-star-gov policy, gov-mcp tools; trust_gap=requires fresh external evidence; owner_burden=Low after owner approves support boundary.
 
 ## Behavior Capability Matrix
 - internal analysis: status=available; autonomous_now=True; tier=Tier 0; owner_approval=False; next_U=Synthesize owner mission into a decision brief.
@@ -116,6 +117,28 @@ The mission is value-production led, with M-2 preserved through preflight and ow
 - Founder AI Workflow Audit / CEO Command Brief: 48h=48h internal sample audit brief using a fictional founder workflow scenario.; kill=No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
 - Governance Template Paid Support: 48h=48h package the smallest support offer and sample before/after.; kill=No clear pain, no credible buyer, or delivery requires owner-heavy bespoke work after 48h internal preparation plus Tier 1 evidence review.
 
+## Counterfactual Stress Test
+- Agent Workflow Bottleneck Diagnosis: risk=buyer pain may be real but not yet framed as a paid diagnostic need; fastest_test=Within 48h, draft a one-page bottleneck diagnosis sample and a 5-question buyer pain test; if no crisp paid-pain language emerges, downgrade.
+- Founder AI Workflow Audit / CEO Command Brief: risk=buyer may not recognize enough urgency to pay within 7 days; fastest_test=Within 48h, create a sample CEO Command Brief and compare it against two other offer samples for buyer clarity and delivery burden.
+- Governance Template Paid Support: risk=existing audience may not yet exist for paid template support; fastest_test=Within 48h, package one before/after template-support example; if it needs too much context or no buyer segment is obvious, downgrade.
+
+## Highest Risk Assumptions
+- Agent Workflow Bottleneck Diagnosis: buyer pain may be real but not yet framed as a paid diagnostic need
+- Founder AI Workflow Audit / CEO Command Brief: buyer may not recognize enough urgency to pay within 7 days
+- Governance Template Paid Support: existing audience may not yet exist for paid template support
+
+## Fastest Disconfirming Tests
+- Agent Workflow Bottleneck Diagnosis: Within 48h, draft a one-page bottleneck diagnosis sample and a 5-question buyer pain test; if no crisp paid-pain language emerges, downgrade.
+- Founder AI Workflow Audit / CEO Command Brief: Within 48h, create a sample CEO Command Brief and compare it against two other offer samples for buyer clarity and delivery burden.
+- Governance Template Paid Support: Within 48h, package one before/after template-support example; if it needs too much context or no buyer segment is obvious, downgrade.
+
+## Alternative Path Analysis
+The second-best path remains important if it can show clearer buyer language or lower delivery burden during the 48h internal experiment.
+
+## Counterfactual Default Check
+Default changed after stress test: False
+Default is confirmed after counterfactual stress test because it has a fast 48h disconfirming test, low owner burden, and does not require external contact before internal preparation.
+
 ## Owner Burden Minimization
 Owner should approve strategic direction and external side effects; Aiden/team should prepare briefs, drafts, research plans, and approval packets without turning the owner into manual ops.
 
@@ -134,6 +157,99 @@ Within 48h, build a one-page comparison brief and one sample deliverable for the
 - has_owner_burden_statement: True
 - has_approval_needed_actions: True
 - has_residual_path: True
+
+## Obligation Drafts
+- Mission owner decision brief: owner=ceo; entity_id=BOARD-2026-05-01-001; registration_allowed=False; review_required=True
+- Aiden Liu mission task: owner=ceo; entity_id=BOARD-2026-05-01-101; registration_allowed=False; review_required=True
+- Sofia Blake mission task: owner=cmo; entity_id=BOARD-2026-05-01-102; registration_allowed=False; review_required=True
+- Marco Rivera mission task: owner=cfo; entity_id=BOARD-2026-05-01-103; registration_allowed=False; review_required=True
+- Zara Johnson mission task: owner=cso; entity_id=BOARD-2026-05-01-104; registration_allowed=False; review_required=True
+- Ethan Wright mission task: owner=cto; entity_id=BOARD-2026-05-01-105; registration_allowed=False; review_required=True
+- Jinjin / K9 Scout mission task: owner=ceo; entity_id=BOARD-2026-05-01-106; registration_allowed=False; review_required=True
+- Samantha Lin mission task: owner=secretary; entity_id=BOARD-2026-05-01-107; registration_allowed=False; review_required=True
+- Leo / Maya / Ryan / Jordan mission task: owner=cto; entity_id=BOARD-2026-05-01-108; registration_allowed=False; review_required=True
+
+## Governance Bridge Summary
+```json
+{
+  "approval_needed": true,
+  "available_count": 4,
+  "blocked_or_review_gated": false,
+  "core_db_write": false,
+  "external_action_executed": false,
+  "results": [
+    {
+      "available": true,
+      "bridge": "gov_mcp_company_action_preflight",
+      "decision": "ALLOW_INTERNAL",
+      "escalation": null,
+      "executes_action": false,
+      "external_action_executed": false,
+      "missing_budget": false,
+      "owner_visible_explanation": "Local internal work or read-only preparation is allowed within mission bounds.",
+      "permission_tier": 1,
+      "reason_codes": [
+        "safe_internal_or_read_only_preparation"
+      ],
+      "tier_name": "Tier 1 — read-only external research with budget",
+      "tool": "gov_company_action_preflight"
+    },
+    {
+      "available": true,
+      "bridge": "gov_mcp_company_action_preflight",
+      "decision": "NEEDS_OWNER_APPROVAL",
+      "escalation": {
+        "action_class": "external_action",
+        "approval_options": [
+          "approve",
+          "reject",
+          "request_revision",
+          "hold"
+        ],
+        "decision": "NEEDS_OWNER_APPROVAL",
+        "executes_action": false,
+        "reason": "External contact, publication, form submission, account creation, or live MCP behavior needs owner approval first.",
+        "requested_action": "send email to selected customer",
+        "risk_summary": "Owner approval required before any external side effect."
+      },
+      "executes_action": false,
+      "external_action_executed": false,
+      "missing_budget": false,
+      "owner_visible_explanation": "External contact, publication, form submission, account creation, or live MCP behavior needs owner approval first.",
+      "permission_tier": 1,
+      "reason_codes": [
+        "external_side_effect_requires_owner_approval"
+      ],
+      "tier_name": "Tier 1 — read-only external research with budget",
+      "tool": "gov_company_action_preflight"
+    },
+    {
+      "available": true,
+      "bridge": "gov_mcp_company_admin_rule_check",
+      "decision": "ARCHIVE_LEGACY",
+      "executes_action": false,
+      "external_action_executed": false,
+      "mission_bound": false,
+      "reason": "Recurring reports should be active only when mission-bound or explicitly approved.",
+      "tool": "gov_company_admin_rule_check"
+    },
+    {
+      "available": true,
+      "bridge": "gov_mcp_company_value_alignment_check",
+      "executes_action": false,
+      "external_action_executed": false,
+      "reason": "Direct customer/revenue/feedback relevance.",
+      "relevance": "HIGH",
+      "tool": "gov_company_value_alignment_check"
+    }
+  ]
+}
+```
+
+## Residual Learning Candidates
+- opp_external_pain_agent_bottleneck: assumption=buyer pain may be real but not yet framed as a paid diagnostic need; writeback_allowed=False; review_required=True
+- opp_internal_asset_founder_audit: assumption=buyer may not recognize enough urgency to pay within 7 days; writeback_allowed=False; review_required=True
+- opp_low_burden_template_support: assumption=existing audience may not yet exist for paid template support; writeback_allowed=False; review_required=True
 
 ## Y-star-gov Preflight
 ```json
