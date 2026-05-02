@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Host-Side Repository Delivery Request",
+  "type": "object",
+  "required": [
+    "request_id",
+    "milestone_id",
+    "repo_root",
+    "expected_branch",
+    "expected_base_head",
+    "commit_message",
+    "allowed_files",
+    "forbidden_patterns",
+    "validation_commands",
+    "push_remote",
+    "push_branch",
+    "remote_confirmation_required",
+    "created_by",
+    "created_at",
+    "safety_boundary",
+    "no_external_side_effects_statement"
+  ],
+  "properties": {
+    "request_id": { "type": "string", "minLength": 1 },
+    "milestone_id": { "type": "string", "minLength": 1 },
+    "repo_root": { "type": "string", "minLength": 1 },
+    "expected_branch": { "type": "string", "minLength": 1 },
+    "expected_base_head": { "type": "string", "minLength": 7 },
+    "expected_result_head_optional": { "type": "string" },
+    "commit_message": { "type": "string", "minLength": 1 },
+    "allowed_files": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1
+    },
+    "forbidden_patterns": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "validation_commands": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1
+    },
+    "push_remote": { "const": "origin" },
+    "push_branch": { "type": "string", "minLength": 1 },
+    "remote_confirmation_required": { "const": true },
+    "cleanup_generated_bytecode": { "type": "boolean" },
+    "created_by": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "minLength": 1 },
+    "safety_boundary": { "type": "object" },
+    "no_external_side_effects_statement": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": true
+}
