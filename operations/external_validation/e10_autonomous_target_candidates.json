@@ -1,0 +1,825 @@
+{
+  "proposal_only": true,
+  "contact_authorized": false,
+  "contact_executed": false,
+  "candidate_count": 28,
+  "segment_count": 6,
+  "candidates": [
+    {
+      "candidate_id": "cand_langchain_langsmith_pricing",
+      "target_name_or_label": "LangSmith Plans and Pricing",
+      "target_type": "project",
+      "segment": "teams using agent frameworks or AI workflow tooling",
+      "public_url": "https://www.langchain.com/pricing",
+      "source_ids": [
+        "src_langsmith_pricing"
+      ],
+      "pain_signals": [],
+      "budget_signals": [
+        "LangSmith pricing describes tracing, online/offline evals, monitoring, alerting, human feedback queues, deployment, and startup pricing."
+      ],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [
+        "LangSmith pricing describes tracing, online/offline evals, monitoring, alerting, human feedback queues, deployment, and startup pricing."
+      ],
+      "governance_safety_signals": [
+        "LangSmith pricing describes tracing, online/offline evals, monitoring, alerting, human feedback queues, deployment, and startup pricing."
+      ],
+      "implementation_burden_signals": [],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public organization/project page only; owner must approve any contact route.",
+      "contact_channel_status": "public_role_only_no_contact",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_langfuse_langfuse_docs",
+      "target_name_or_label": "Langfuse Overview",
+      "target_type": "project",
+      "segment": "teams using agent frameworks or AI workflow tooling",
+      "public_url": "https://langfuse.com/docs",
+      "source_ids": [
+        "src_langfuse_docs"
+      ],
+      "pain_signals": [
+        "Langfuse positions observability, prompt management, evaluation, production health, and collaborative iteration as an integrated LLM engineering loop."
+      ],
+      "budget_signals": [],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [
+        "Langfuse positions observability, prompt management, evaluation, production health, and collaborative iteration as an integrated LLM engineering loop."
+      ],
+      "governance_safety_signals": [
+        "Langfuse positions observability, prompt management, evaluation, production health, and collaborative iteration as an integrated LLM engineering loop."
+      ],
+      "implementation_burden_signals": [],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public organization/project page only; owner must approve any contact route.",
+      "contact_channel_status": "public_role_only_no_contact",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_arize_arize_phoenix",
+      "target_name_or_label": "Arize Phoenix / Arize LLM Observability",
+      "target_type": "project",
+      "segment": "teams using agent frameworks or AI workflow tooling",
+      "public_url": "https://arize.com/",
+      "source_ids": [
+        "src_arize_phoenix"
+      ],
+      "pain_signals": [],
+      "budget_signals": [],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [
+        "Arize emphasizes agent evaluation, tracing, open standards, debugging, and production observability."
+      ],
+      "governance_safety_signals": [
+        "Arize emphasizes agent evaluation, tracing, open standards, debugging, and production observability."
+      ],
+      "implementation_burden_signals": [],
+      "existing_alternative_signals": [
+        "Arize emphasizes agent evaluation, tracing, open standards, debugging, and production observability."
+      ],
+      "contactability_signal": "Public organization/project page only; owner must approve any contact route.",
+      "contact_channel_status": "public_role_only_no_contact",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_braintrust_braintrust",
+      "target_name_or_label": "Braintrust AI observability platform",
+      "target_type": "project",
+      "segment": "teams using agent frameworks or AI workflow tooling",
+      "public_url": "https://www.braintrust.dev/",
+      "source_ids": [
+        "src_braintrust"
+      ],
+      "pain_signals": [
+        "Braintrust describes production traces, evals, prompt/model comparisons, quality monitoring, and blocking bad releases."
+      ],
+      "budget_signals": [],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [
+        "Braintrust describes production traces, evals, prompt/model comparisons, quality monitoring, and blocking bad releases."
+      ],
+      "governance_safety_signals": [
+        "Braintrust describes production traces, evals, prompt/model comparisons, quality monitoring, and blocking bad releases."
+      ],
+      "implementation_burden_signals": [],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public organization/project page only; owner must approve any contact route.",
+      "contact_channel_status": "public_role_only_no_contact",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_humanloop_humanloop_pricing",
+      "target_name_or_label": "Humanloop Pricing",
+      "target_type": "project",
+      "segment": "AI-heavy small teams",
+      "public_url": "https://humanloop.com/pricing",
+      "source_ids": [
+        "src_humanloop_pricing"
+      ],
+      "pain_signals": [],
+      "budget_signals": [
+        "Humanloop highlights evaluation, observability, prompt management, human review, enterprise security, SSO, VPC, and support."
+      ],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [],
+      "governance_safety_signals": [
+        "Humanloop highlights evaluation, observability, prompt management, human review, enterprise security, SSO, VPC, and support."
+      ],
+      "implementation_burden_signals": [],
+      "existing_alternative_signals": [
+        "Humanloop highlights evaluation, observability, prompt management, human review, enterprise security, SSO, VPC, and support."
+      ],
+      "contactability_signal": "Public organization/project page only; owner must approve any contact route.",
+      "contact_channel_status": "public_role_only_no_contact",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_vellum_vellum_pricing",
+      "target_name_or_label": "Vellum Pricing Docs",
+      "target_type": "project",
+      "segment": "AI-heavy small teams",
+      "public_url": "https://www.vellum.ai/docs/pricing",
+      "source_ids": [
+        "src_vellum_pricing"
+      ],
+      "pain_signals": [],
+      "budget_signals": [
+        "Vellum pricing docs discuss transparent credits, usage, and AI workflow platform costs."
+      ],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [],
+      "governance_safety_signals": [],
+      "implementation_burden_signals": [],
+      "existing_alternative_signals": [
+        "Vellum pricing docs discuss transparent credits, usage, and AI workflow platform costs."
+      ],
+      "contactability_signal": "Public organization/project page only; owner must approve any contact route.",
+      "contact_channel_status": "public_role_only_no_contact",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_zapier_zapier_pricing",
+      "target_name_or_label": "Zapier AI orchestration pricing",
+      "target_type": "project",
+      "segment": "startup ops teams using no-code/automation tools",
+      "public_url": "https://zapier.com/pricing",
+      "source_ids": [
+        "src_zapier_pricing"
+      ],
+      "pain_signals": [],
+      "budget_signals": [
+        "Zapier pricing describes AI orchestration, workflows, tables, forms, MCP, team/enterprise plans, and admin permissions."
+      ],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [
+        "Zapier pricing describes AI orchestration, workflows, tables, forms, MCP, team/enterprise plans, and admin permissions."
+      ],
+      "governance_safety_signals": [],
+      "implementation_burden_signals": [],
+      "existing_alternative_signals": [
+        "Zapier pricing describes AI orchestration, workflows, tables, forms, MCP, team/enterprise plans, and admin permissions."
+      ],
+      "contactability_signal": "Public organization/project page only; owner must approve any contact route.",
+      "contact_channel_status": "public_role_only_no_contact",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_retool_retool_pricing",
+      "target_name_or_label": "Retool Pricing",
+      "target_type": "project",
+      "segment": "startup ops teams using no-code/automation tools",
+      "public_url": "https://retool.com/pricing",
+      "source_ids": [
+        "src_retool_pricing"
+      ],
+      "pain_signals": [],
+      "budget_signals": [
+        "Retool pricing includes workflows, agents, permissions, audit logging, observability, evaluations, SSO, and enterprise support."
+      ],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [
+        "Retool pricing includes workflows, agents, permissions, audit logging, observability, evaluations, SSO, and enterprise support."
+      ],
+      "governance_safety_signals": [
+        "Retool pricing includes workflows, agents, permissions, audit logging, observability, evaluations, SSO, and enterprise support."
+      ],
+      "implementation_burden_signals": [],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public organization/project page only; owner must approve any contact route.",
+      "contact_channel_status": "public_role_only_no_contact",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_crewai_crewai_pricing",
+      "target_name_or_label": "CrewAI Pricing",
+      "target_type": "project",
+      "segment": "teams using agent frameworks or AI workflow tooling",
+      "public_url": "https://www.crewai.com/pricing",
+      "source_ids": [
+        "src_crewai_pricing"
+      ],
+      "pain_signals": [],
+      "budget_signals": [
+        "CrewAI pricing includes agentic workflows, executions, enterprise support, deployment, onboarding, training, and dedicated support."
+      ],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [
+        "CrewAI pricing includes agentic workflows, executions, enterprise support, deployment, onboarding, training, and dedicated support."
+      ],
+      "governance_safety_signals": [],
+      "implementation_burden_signals": [
+        "CrewAI pricing includes agentic workflows, executions, enterprise support, deployment, onboarding, training, and dedicated support."
+      ],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public organization/project page only; owner must approve any contact route.",
+      "contact_channel_status": "public_role_only_no_contact",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_ashbyhq_trm_llmops_job",
+      "target_name_or_label": "TRM Labs Senior MLOps Engineer, LLMOps",
+      "target_type": "company",
+      "segment": "teams hiring for AI ops / LLMOps / AI evaluation / automation",
+      "public_url": "https://jobs.ashbyhq.com/trm-labs/32c97568-5212-48f5-9eb2-caab1c8dec2a",
+      "source_ids": [
+        "src_trm_llmops_job"
+      ],
+      "pain_signals": [],
+      "budget_signals": [],
+      "urgency_signals": [
+        "TRM Labs job posting mentions observability, governance, approval workflows, compliance checks, LLM/agent tools, regression testing, cost monitoring, and HITL workflows.",
+        "TRM Labs job posting mentions observability, governance, approval workflows, compliance checks, LLM/agent tools, regression testing, cost monitoring, and HITL workflows."
+      ],
+      "tool_stack_complexity_signals": [
+        "TRM Labs job posting mentions observability, governance, approval workflows, compliance checks, LLM/agent tools, regression testing, cost monitoring, and HITL workflows."
+      ],
+      "governance_safety_signals": [
+        "TRM Labs job posting mentions observability, governance, approval workflows, compliance checks, LLM/agent tools, regression testing, cost monitoring, and HITL workflows."
+      ],
+      "implementation_burden_signals": [],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public organization/project page only; owner must approve any contact route.",
+      "contact_channel_status": "owner_known_contact_needed",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_greenhouse_sumologic_llmops_job",
+      "target_name_or_label": "Sumo Logic Senior MLOps/LLMOps Engineer",
+      "target_type": "company",
+      "segment": "teams hiring for AI ops / LLMOps / AI evaluation / automation",
+      "public_url": "https://job-boards.greenhouse.io/sumologic/jobs/7584291",
+      "source_ids": [
+        "src_sumologic_llmops_job"
+      ],
+      "pain_signals": [],
+      "budget_signals": [
+        "Sumo Logic job posting describes production-grade MLOps/LLMOps infrastructure for lifecycle, evaluation, deployment, monitoring, reliability, observability, and efficiency."
+      ],
+      "urgency_signals": [
+        "Sumo Logic job posting describes production-grade MLOps/LLMOps infrastructure for lifecycle, evaluation, deployment, monitoring, reliability, observability, and efficiency.",
+        "Sumo Logic job posting describes production-grade MLOps/LLMOps infrastructure for lifecycle, evaluation, deployment, monitoring, reliability, observability, and efficiency."
+      ],
+      "tool_stack_complexity_signals": [
+        "Sumo Logic job posting describes production-grade MLOps/LLMOps infrastructure for lifecycle, evaluation, deployment, monitoring, reliability, observability, and efficiency."
+      ],
+      "governance_safety_signals": [],
+      "implementation_burden_signals": [],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public organization/project page only; owner must approve any contact route.",
+      "contact_channel_status": "owner_known_contact_needed",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_ashbyhq_tensorzero_job",
+      "target_name_or_label": "TensorZero Backend Engineering",
+      "target_type": "company",
+      "segment": "open-source teams/projects needing governance/support",
+      "public_url": "https://jobs.ashbyhq.com/tensorzero/6cf3673e-5377-4c22-9f0c-ebf27c8567b1",
+      "source_ids": [
+        "src_tensorzero_job"
+      ],
+      "pain_signals": [],
+      "budget_signals": [
+        "TensorZero describes an open-source LLMOps platform with gateway, observability, optimization, evaluation, experimentation, and customers from startups to enterprises."
+      ],
+      "urgency_signals": [
+        "TensorZero describes an open-source LLMOps platform with gateway, observability, optimization, evaluation, experimentation, and customers from startups to enterprises."
+      ],
+      "tool_stack_complexity_signals": [
+        "TensorZero describes an open-source LLMOps platform with gateway, observability, optimization, evaluation, experimentation, and customers from startups to enterprises."
+      ],
+      "governance_safety_signals": [],
+      "implementation_burden_signals": [],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public organization/project page only; owner must approve any contact route.",
+      "contact_channel_status": "owner_known_contact_needed",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_wotai_wotai",
+      "target_name_or_label": "WotAI AI Automation",
+      "target_type": "agency_partner",
+      "segment": "AI consultants/agencies needing governance layer",
+      "public_url": "https://wotai.co/",
+      "source_ids": [
+        "src_wotai"
+      ],
+      "pain_signals": [],
+      "budget_signals": [
+        "WotAI offers validated n8n workflow generation, production workflow expertise, and pricing tiers including agency/team scale."
+      ],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [],
+      "governance_safety_signals": [],
+      "implementation_burden_signals": [
+        "WotAI offers validated n8n workflow generation, production workflow expertise, and pricing tiers including agency/team scale."
+      ],
+      "existing_alternative_signals": [
+        "WotAI offers validated n8n workflow generation, production workflow expertise, and pricing tiers including agency/team scale."
+      ],
+      "contactability_signal": "Public general channel appears available from organization/agency site; no contact executed.",
+      "contact_channel_status": "public_general_channel",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_botsquash_botsquash",
+      "target_name_or_label": "BotSquash AI Automation Agency",
+      "target_type": "agency_partner",
+      "segment": "AI consultants/agencies needing governance layer",
+      "public_url": "https://botsquash.com/",
+      "source_ids": [
+        "src_botsquash"
+      ],
+      "pain_signals": [
+        "BotSquash markets n8n-first automation and AI systems with documentation, secure auth, maintainability, proposal in 24h, and typical operational outcomes."
+      ],
+      "budget_signals": [],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [],
+      "governance_safety_signals": [],
+      "implementation_burden_signals": [
+        "BotSquash markets n8n-first automation and AI systems with documentation, secure auth, maintainability, proposal in 24h, and typical operational outcomes."
+      ],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public general channel appears available from organization/agency site; no contact executed.",
+      "contact_channel_status": "public_general_channel",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_hgray_hgray",
+      "target_name_or_label": "Hgray AI Automation Agency",
+      "target_type": "agency_partner",
+      "segment": "AI consultants/agencies needing governance layer",
+      "public_url": "https://www.hgray.agency/",
+      "source_ids": [
+        "src_hgray"
+      ],
+      "pain_signals": [],
+      "budget_signals": [
+        "Hgray lists n8n workflow development, automation consulting, process analysis, ROI assessment, implementation planning, training, and support."
+      ],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [],
+      "governance_safety_signals": [],
+      "implementation_burden_signals": [
+        "Hgray lists n8n workflow development, automation consulting, process analysis, ROI assessment, implementation planning, training, and support."
+      ],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public general channel appears available from organization/agency site; no contact executed.",
+      "contact_channel_status": "public_general_channel",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_workflowwizard_workflowwizard",
+      "target_name_or_label": "WorkflowWizard AI Automation Agency",
+      "target_type": "agency_partner",
+      "segment": "AI consultants/agencies needing governance layer",
+      "public_url": "https://www.workflowwizard.dev/",
+      "source_ids": [
+        "src_workflowwizard"
+      ],
+      "pain_signals": [],
+      "budget_signals": [
+        "WorkflowWizard offers AI agents, n8n workflows, Apify scrapers, pricing tiers, support channels, and active workflow/node constraints."
+      ],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [],
+      "governance_safety_signals": [],
+      "implementation_burden_signals": [
+        "WorkflowWizard offers AI agents, n8n workflows, Apify scrapers, pricing tiers, support channels, and active workflow/node constraints."
+      ],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public general channel appears available from organization/agency site; no contact executed.",
+      "contact_channel_status": "public_general_channel",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_byteflows_byteflows",
+      "target_name_or_label": "Byteflows Agentic AI Consultancy",
+      "target_type": "agency_partner",
+      "segment": "AI consultants/agencies needing governance layer",
+      "public_url": "https://www.byteflows.com/",
+      "source_ids": [
+        "src_byteflows"
+      ],
+      "pain_signals": [
+        "Byteflows helps teams move from demos to deployed agentic systems and explicitly includes AI Ops, governance, monitoring, guardrails, evaluation loops, and HITL controls."
+      ],
+      "budget_signals": [],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [],
+      "governance_safety_signals": [
+        "Byteflows helps teams move from demos to deployed agentic systems and explicitly includes AI Ops, governance, monitoring, guardrails, evaluation loops, and HITL controls."
+      ],
+      "implementation_burden_signals": [],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public general channel appears available from organization/agency site; no contact executed.",
+      "contact_channel_status": "public_general_channel",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_opoclaw_opoclaw",
+      "target_name_or_label": "OpoClaw AI Automation Agency",
+      "target_type": "agency_partner",
+      "segment": "AI consultants/agencies needing governance layer",
+      "public_url": "https://opoclaw.com/",
+      "source_ids": [
+        "src_opoclaw"
+      ],
+      "pain_signals": [],
+      "budget_signals": [
+        "OpoClaw offers custom AI automations for agencies and small businesses with delivery-time and pricing claims."
+      ],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [],
+      "governance_safety_signals": [],
+      "implementation_burden_signals": [
+        "OpoClaw offers custom AI automations for agencies and small businesses with delivery-time and pricing claims."
+      ],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public general channel appears available from organization/agency site; no contact executed.",
+      "contact_channel_status": "public_general_channel",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_n8nlab_n8nlab",
+      "target_name_or_label": "N8N Lab Automation Agency",
+      "target_type": "agency_partner",
+      "segment": "AI consultants/agencies needing governance layer",
+      "public_url": "https://n8nlab.io/",
+      "source_ids": [
+        "src_n8nlab"
+      ],
+      "pain_signals": [
+        "N8N Lab describes enterprise-grade n8n workflows and AI agentic systems, hours saved, agents deployed, uptime, and industry targets."
+      ],
+      "budget_signals": [],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [],
+      "governance_safety_signals": [],
+      "implementation_burden_signals": [
+        "N8N Lab describes enterprise-grade n8n workflows and AI agentic systems, hours saved, agents deployed, uptime, and industry targets."
+      ],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public general channel appears available from organization/agency site; no contact executed.",
+      "contact_channel_status": "public_general_channel",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_alicelabs_alicelabs",
+      "target_name_or_label": "Alice Labs AI Operations Consulting",
+      "target_type": "agency_partner",
+      "segment": "AI consultants/agencies needing governance layer",
+      "public_url": "https://alicelabs.ai/en/ai-operations-consulting",
+      "source_ids": [
+        "src_alicelabs"
+      ],
+      "pain_signals": [],
+      "budget_signals": [
+        "Alice Labs offers AI operations consulting with discovery, architecture, integration, training, 90-day support, fixed price, and EU AI Act-native positioning."
+      ],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [],
+      "governance_safety_signals": [
+        "Alice Labs offers AI operations consulting with discovery, architecture, integration, training, 90-day support, fixed price, and EU AI Act-native positioning."
+      ],
+      "implementation_burden_signals": [
+        "Alice Labs offers AI operations consulting with discovery, architecture, integration, training, 90-day support, fixed price, and EU AI Act-native positioning."
+      ],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public general channel appears available from organization/agency site; no contact executed.",
+      "contact_channel_status": "public_general_channel",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_opsbridgeai_opsbridge",
+      "target_name_or_label": "OpsBridge AI",
+      "target_type": "agency_partner",
+      "segment": "AI consultants/agencies needing governance layer",
+      "public_url": "https://www.opsbridgeai.com/",
+      "source_ids": [
+        "src_opsbridge"
+      ],
+      "pain_signals": [
+        "OpsBridge AI builds workflow automation, data platforms, and intelligent systems for operations leaders and founders with practical AI roadmaps."
+      ],
+      "budget_signals": [],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [],
+      "governance_safety_signals": [],
+      "implementation_burden_signals": [
+        "OpsBridge AI builds workflow automation, data platforms, and intelligent systems for operations leaders and founders with practical AI roadmaps."
+      ],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public general channel appears available from organization/agency site; no contact executed.",
+      "contact_channel_status": "public_general_channel",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_tqa_tqa",
+      "target_name_or_label": "TQA Agentic AI Consulting",
+      "target_type": "agency_partner",
+      "segment": "AI consultants/agencies needing governance layer",
+      "public_url": "https://tqa.ai/technology/agentic-ai/",
+      "source_ids": [
+        "src_tqa"
+      ],
+      "pain_signals": [],
+      "budget_signals": [],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [],
+      "governance_safety_signals": [
+        "TQA emphasizes agentic AI systems with traceability, control, human oversight, use-case validation, production-ready design, and support after launch."
+      ],
+      "implementation_burden_signals": [
+        "TQA emphasizes agentic AI systems with traceability, control, human oversight, use-case validation, production-ready design, and support after launch."
+      ],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public general channel appears available from organization/agency site; no contact executed.",
+      "contact_channel_status": "public_general_channel",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_perelyn_perelyn",
+      "target_name_or_label": "Perelyn LLMOps Services",
+      "target_type": "agency_partner",
+      "segment": "AI consultants/agencies needing governance layer",
+      "public_url": "https://www.perelyn.com/en/services/ai-operations/llmops",
+      "source_ids": [
+        "src_perelyn"
+      ],
+      "pain_signals": [],
+      "budget_signals": [],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [],
+      "governance_safety_signals": [
+        "Perelyn offers LLMOps strategy, best practices, evaluation/testing, deployment, monitoring, compliance, and workflow integration."
+      ],
+      "implementation_burden_signals": [
+        "Perelyn offers LLMOps strategy, best practices, evaluation/testing, deployment, monitoring, compliance, and workflow integration."
+      ],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public general channel appears available from organization/agency site; no contact executed.",
+      "contact_channel_status": "public_general_channel",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_dashclaw_dashclaw",
+      "target_name_or_label": "DashClaw Decision Infrastructure",
+      "target_type": "open_source_repo",
+      "segment": "open-source teams/projects needing governance/support",
+      "public_url": "https://www.dashclaw.io/",
+      "source_ids": [
+        "src_dashclaw"
+      ],
+      "pain_signals": [],
+      "budget_signals": [],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [
+        "DashClaw positions itself as an open-source policy firewall for AI agents that intercepts actions, enforces policies, requires approval, and records evidence."
+      ],
+      "governance_safety_signals": [
+        "DashClaw positions itself as an open-source policy firewall for AI agents that intercepts actions, enforces policies, requires approval, and records evidence."
+      ],
+      "implementation_burden_signals": [],
+      "existing_alternative_signals": [
+        "DashClaw positions itself as an open-source policy firewall for AI agents that intercepts actions, enforces policies, requires approval, and records evidence."
+      ],
+      "contactability_signal": "Public organization/project page only; owner must approve any contact route.",
+      "contact_channel_status": "community_public_post_candidate",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_orloj_orloj",
+      "target_name_or_label": "Orloj Agent Infrastructure as Code",
+      "target_type": "project",
+      "segment": "open-source teams/projects needing governance/support",
+      "public_url": "https://www.orloj.dev/",
+      "source_ids": [
+        "src_orloj"
+      ],
+      "pain_signals": [],
+      "budget_signals": [],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [
+        "Orloj offers YAML-defined workflows, policies, isolated tools, fail-closed governance, observability, and community/cloud paths."
+      ],
+      "governance_safety_signals": [
+        "Orloj offers YAML-defined workflows, policies, isolated tools, fail-closed governance, observability, and community/cloud paths."
+      ],
+      "implementation_burden_signals": [],
+      "existing_alternative_signals": [
+        "Orloj offers YAML-defined workflows, policies, isolated tools, fail-closed governance, observability, and community/cloud paths."
+      ],
+      "contactability_signal": "Public organization/project page only; owner must approve any contact route.",
+      "contact_channel_status": "public_role_only_no_contact",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_pact5_pact5",
+      "target_name_or_label": "PACT5 Agent Coordination and Trust",
+      "target_type": "project",
+      "segment": "open-source teams/projects needing governance/support",
+      "public_url": "https://pact5.io/",
+      "source_ids": [
+        "src_pact5"
+      ],
+      "pain_signals": [],
+      "budget_signals": [],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [],
+      "governance_safety_signals": [
+        "PACT5 frames scoped authority, structured coordination, and human oversight for multi-agent AI systems."
+      ],
+      "implementation_burden_signals": [],
+      "existing_alternative_signals": [
+        "PACT5 frames scoped authority, structured coordination, and human oversight for multi-agent AI systems."
+      ],
+      "contactability_signal": "Public organization/project page only; owner must approve any contact route.",
+      "contact_channel_status": "public_role_only_no_contact",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_govagentic_govagentic",
+      "target_name_or_label": "Govagentic AI Governance Consulting",
+      "target_type": "agency_partner",
+      "segment": "AI consultants/agencies needing governance layer",
+      "public_url": "https://govagentic.ai/",
+      "source_ids": [
+        "src_govagentic"
+      ],
+      "pain_signals": [
+        "Govagentic argues mid-market companies are deploying AI agents faster than legal, ops, and risk teams can govern and need audit trail ownership."
+      ],
+      "budget_signals": [],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [],
+      "governance_safety_signals": [
+        "Govagentic argues mid-market companies are deploying AI agents faster than legal, ops, and risk teams can govern and need audit trail ownership."
+      ],
+      "implementation_burden_signals": [],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public general channel appears available from organization/agency site; no contact executed.",
+      "contact_channel_status": "public_general_channel",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    },
+    {
+      "candidate_id": "cand_inteqgroup_inteq",
+      "target_name_or_label": "Inteq Agentic AI Consulting",
+      "target_type": "agency_partner",
+      "segment": "AI consultants/agencies needing governance layer",
+      "public_url": "https://www.inteqgroup.com/agentic-ai-consulting/development-implementation-scale",
+      "source_ids": [
+        "src_inteq"
+      ],
+      "pain_signals": [],
+      "budget_signals": [],
+      "urgency_signals": [],
+      "tool_stack_complexity_signals": [],
+      "governance_safety_signals": [
+        "Inteq focuses on implementing agents that perform in production, with governance and measurable performance."
+      ],
+      "implementation_burden_signals": [
+        "Inteq focuses on implementing agents that perform in production, with governance and measurable performance."
+      ],
+      "existing_alternative_signals": [],
+      "contactability_signal": "Public general channel appears available from organization/agency site; no contact executed.",
+      "contact_channel_status": "public_general_channel",
+      "risk_tier": "Tier 2 candidate",
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "discovered_by_aiden": true,
+      "limitations": "Autonomously discovered from public read-only evidence. Candidate is not approved for contact, contains no scraped personal contact, and does not prove willingness to pay."
+    }
+  ]
+}

@@ -1,0 +1,591 @@
+# E10 Shortest Revenue Path Ranking
+
+Ranking prioritizes shortest path to a real paid signal, not general market attractiveness.
+
+## Rank 1: cand_alicelabs_alicelabs
+- segment: AI consultants/agencies needing governance layer
+- candidate_score: 58
+- recommended_validation_mode: owner_operated_3_person_qualitative_validation
+- pain_evidence_strength: 2
+- budget_evidence_strength: 4
+- urgency_signal: 3
+- offer_fit: 5
+- reachability: 5
+- contact_risk: 2
+- owner_burden: 2
+- expected_signal_speed: 5
+- differentiation_fit: 5
+- trust_gap: 2
+- M3_value_relevance: 5
+- disconfirming_risk: 2
+- implementation_burden: 4
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=AI consultants/agencies needing governance layer; contact_status=public_general_channel.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 2: cand_wotai_wotai
+- segment: AI consultants/agencies needing governance layer
+- candidate_score: 55
+- recommended_validation_mode: owner_operated_3_person_qualitative_validation
+- pain_evidence_strength: 2
+- budget_evidence_strength: 4
+- urgency_signal: 3
+- offer_fit: 5
+- reachability: 5
+- contact_risk: 2
+- owner_burden: 2
+- expected_signal_speed: 5
+- differentiation_fit: 3
+- trust_gap: 3
+- M3_value_relevance: 5
+- disconfirming_risk: 2
+- implementation_burden: 4
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=AI consultants/agencies needing governance layer; contact_status=public_general_channel.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 3: cand_botsquash_botsquash
+- segment: AI consultants/agencies needing governance layer
+- candidate_score: 55
+- recommended_validation_mode: owner_operated_3_person_qualitative_validation
+- pain_evidence_strength: 4
+- budget_evidence_strength: 2
+- urgency_signal: 3
+- offer_fit: 5
+- reachability: 5
+- contact_risk: 2
+- owner_burden: 2
+- expected_signal_speed: 5
+- differentiation_fit: 3
+- trust_gap: 3
+- M3_value_relevance: 5
+- disconfirming_risk: 2
+- implementation_burden: 4
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=AI consultants/agencies needing governance layer; contact_status=public_general_channel.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 4: cand_hgray_hgray
+- segment: AI consultants/agencies needing governance layer
+- candidate_score: 55
+- recommended_validation_mode: owner_operated_3_person_qualitative_validation
+- pain_evidence_strength: 2
+- budget_evidence_strength: 4
+- urgency_signal: 3
+- offer_fit: 5
+- reachability: 5
+- contact_risk: 2
+- owner_burden: 2
+- expected_signal_speed: 5
+- differentiation_fit: 3
+- trust_gap: 3
+- M3_value_relevance: 5
+- disconfirming_risk: 2
+- implementation_burden: 4
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=AI consultants/agencies needing governance layer; contact_status=public_general_channel.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 5: cand_workflowwizard_workflowwizard
+- segment: AI consultants/agencies needing governance layer
+- candidate_score: 55
+- recommended_validation_mode: owner_operated_3_person_qualitative_validation
+- pain_evidence_strength: 2
+- budget_evidence_strength: 4
+- urgency_signal: 3
+- offer_fit: 5
+- reachability: 5
+- contact_risk: 2
+- owner_burden: 2
+- expected_signal_speed: 5
+- differentiation_fit: 3
+- trust_gap: 3
+- M3_value_relevance: 5
+- disconfirming_risk: 2
+- implementation_burden: 4
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=AI consultants/agencies needing governance layer; contact_status=public_general_channel.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 6: cand_opoclaw_opoclaw
+- segment: AI consultants/agencies needing governance layer
+- candidate_score: 55
+- recommended_validation_mode: owner_operated_3_person_qualitative_validation
+- pain_evidence_strength: 2
+- budget_evidence_strength: 4
+- urgency_signal: 3
+- offer_fit: 5
+- reachability: 5
+- contact_risk: 2
+- owner_burden: 2
+- expected_signal_speed: 5
+- differentiation_fit: 3
+- trust_gap: 3
+- M3_value_relevance: 5
+- disconfirming_risk: 2
+- implementation_burden: 4
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=AI consultants/agencies needing governance layer; contact_status=public_general_channel.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 7: cand_n8nlab_n8nlab
+- segment: AI consultants/agencies needing governance layer
+- candidate_score: 55
+- recommended_validation_mode: owner_operated_3_person_qualitative_validation
+- pain_evidence_strength: 4
+- budget_evidence_strength: 2
+- urgency_signal: 3
+- offer_fit: 5
+- reachability: 5
+- contact_risk: 2
+- owner_burden: 2
+- expected_signal_speed: 5
+- differentiation_fit: 3
+- trust_gap: 3
+- M3_value_relevance: 5
+- disconfirming_risk: 2
+- implementation_burden: 4
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=AI consultants/agencies needing governance layer; contact_status=public_general_channel.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 8: cand_opsbridgeai_opsbridge
+- segment: AI consultants/agencies needing governance layer
+- candidate_score: 55
+- recommended_validation_mode: owner_operated_3_person_qualitative_validation
+- pain_evidence_strength: 4
+- budget_evidence_strength: 2
+- urgency_signal: 3
+- offer_fit: 5
+- reachability: 5
+- contact_risk: 2
+- owner_burden: 2
+- expected_signal_speed: 5
+- differentiation_fit: 3
+- trust_gap: 3
+- M3_value_relevance: 5
+- disconfirming_risk: 2
+- implementation_burden: 4
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=AI consultants/agencies needing governance layer; contact_status=public_general_channel.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 9: cand_byteflows_byteflows
+- segment: AI consultants/agencies needing governance layer
+- candidate_score: 54
+- recommended_validation_mode: owner_operated_3_person_qualitative_validation
+- pain_evidence_strength: 4
+- budget_evidence_strength: 2
+- urgency_signal: 2
+- offer_fit: 5
+- reachability: 5
+- contact_risk: 2
+- owner_burden: 2
+- expected_signal_speed: 5
+- differentiation_fit: 4
+- trust_gap: 2
+- M3_value_relevance: 5
+- disconfirming_risk: 2
+- implementation_burden: 2
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=AI consultants/agencies needing governance layer; contact_status=public_general_channel.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 10: cand_tqa_tqa
+- segment: AI consultants/agencies needing governance layer
+- candidate_score: 54
+- recommended_validation_mode: owner_operated_3_person_qualitative_validation
+- pain_evidence_strength: 2
+- budget_evidence_strength: 2
+- urgency_signal: 3
+- offer_fit: 5
+- reachability: 5
+- contact_risk: 2
+- owner_burden: 2
+- expected_signal_speed: 5
+- differentiation_fit: 5
+- trust_gap: 2
+- M3_value_relevance: 5
+- disconfirming_risk: 4
+- implementation_burden: 4
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=AI consultants/agencies needing governance layer; contact_status=public_general_channel.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 11: cand_perelyn_perelyn
+- segment: AI consultants/agencies needing governance layer
+- candidate_score: 54
+- recommended_validation_mode: owner_operated_3_person_qualitative_validation
+- pain_evidence_strength: 2
+- budget_evidence_strength: 2
+- urgency_signal: 3
+- offer_fit: 5
+- reachability: 5
+- contact_risk: 2
+- owner_burden: 2
+- expected_signal_speed: 5
+- differentiation_fit: 5
+- trust_gap: 2
+- M3_value_relevance: 5
+- disconfirming_risk: 4
+- implementation_burden: 4
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=AI consultants/agencies needing governance layer; contact_status=public_general_channel.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 12: cand_govagentic_govagentic
+- segment: AI consultants/agencies needing governance layer
+- candidate_score: 54
+- recommended_validation_mode: owner_operated_3_person_qualitative_validation
+- pain_evidence_strength: 4
+- budget_evidence_strength: 2
+- urgency_signal: 2
+- offer_fit: 5
+- reachability: 5
+- contact_risk: 2
+- owner_burden: 2
+- expected_signal_speed: 5
+- differentiation_fit: 4
+- trust_gap: 2
+- M3_value_relevance: 5
+- disconfirming_risk: 2
+- implementation_burden: 2
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=AI consultants/agencies needing governance layer; contact_status=public_general_channel.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 13: cand_inteqgroup_inteq
+- segment: AI consultants/agencies needing governance layer
+- candidate_score: 54
+- recommended_validation_mode: owner_operated_3_person_qualitative_validation
+- pain_evidence_strength: 2
+- budget_evidence_strength: 2
+- urgency_signal: 3
+- offer_fit: 5
+- reachability: 5
+- contact_risk: 2
+- owner_burden: 2
+- expected_signal_speed: 5
+- differentiation_fit: 5
+- trust_gap: 2
+- M3_value_relevance: 5
+- disconfirming_risk: 4
+- implementation_burden: 4
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=AI consultants/agencies needing governance layer; contact_status=public_general_channel.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 14: cand_greenhouse_sumologic_llmops_job
+- segment: teams hiring for AI ops / LLMOps / AI evaluation / automation
+- candidate_score: 43
+- recommended_validation_mode: owner_known_contact_validation_if_owner_can_map_contact
+- pain_evidence_strength: 2
+- budget_evidence_strength: 4
+- urgency_signal: 5
+- offer_fit: 2
+- reachability: 3
+- contact_risk: 3
+- owner_burden: 4
+- expected_signal_speed: 3
+- differentiation_fit: 2
+- trust_gap: 3
+- M3_value_relevance: 4
+- disconfirming_risk: 2
+- implementation_burden: 2
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=teams hiring for AI ops / LLMOps / AI evaluation / automation; contact_status=owner_known_contact_needed.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 15: cand_ashbyhq_tensorzero_job
+- segment: open-source teams/projects needing governance/support
+- candidate_score: 43
+- recommended_validation_mode: owner_known_contact_validation_if_owner_can_map_contact
+- pain_evidence_strength: 2
+- budget_evidence_strength: 4
+- urgency_signal: 5
+- offer_fit: 2
+- reachability: 3
+- contact_risk: 3
+- owner_burden: 4
+- expected_signal_speed: 3
+- differentiation_fit: 2
+- trust_gap: 3
+- M3_value_relevance: 4
+- disconfirming_risk: 2
+- implementation_burden: 2
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=open-source teams/projects needing governance/support; contact_status=owner_known_contact_needed.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 16: cand_crewai_crewai_pricing
+- segment: teams using agent frameworks or AI workflow tooling
+- candidate_score: 43
+- recommended_validation_mode: internal_benchmark_proxy
+- pain_evidence_strength: 2
+- budget_evidence_strength: 4
+- urgency_signal: 3
+- offer_fit: 4
+- reachability: 2
+- contact_risk: 4
+- owner_burden: 5
+- expected_signal_speed: 2
+- differentiation_fit: 3
+- trust_gap: 3
+- M3_value_relevance: 5
+- disconfirming_risk: 2
+- implementation_burden: 4
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=teams using agent frameworks or AI workflow tooling; contact_status=public_role_only_no_contact.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 17: cand_ashbyhq_trm_llmops_job
+- segment: teams hiring for AI ops / LLMOps / AI evaluation / automation
+- candidate_score: 42
+- recommended_validation_mode: owner_known_contact_validation_if_owner_can_map_contact
+- pain_evidence_strength: 2
+- budget_evidence_strength: 2
+- urgency_signal: 5
+- offer_fit: 4
+- reachability: 3
+- contact_risk: 3
+- owner_burden: 4
+- expected_signal_speed: 3
+- differentiation_fit: 4
+- trust_gap: 2
+- M3_value_relevance: 4
+- disconfirming_risk: 4
+- implementation_burden: 2
+- buyer_process_clarity: 2
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=teams hiring for AI ops / LLMOps / AI evaluation / automation; contact_status=owner_known_contact_needed.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 18: cand_langchain_langsmith_pricing
+- segment: teams using agent frameworks or AI workflow tooling
+- candidate_score: 42
+- recommended_validation_mode: internal_benchmark_proxy
+- pain_evidence_strength: 2
+- budget_evidence_strength: 4
+- urgency_signal: 2
+- offer_fit: 4
+- reachability: 2
+- contact_risk: 4
+- owner_burden: 5
+- expected_signal_speed: 2
+- differentiation_fit: 4
+- trust_gap: 2
+- M3_value_relevance: 5
+- disconfirming_risk: 2
+- implementation_burden: 2
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=teams using agent frameworks or AI workflow tooling; contact_status=public_role_only_no_contact.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 19: cand_humanloop_humanloop_pricing
+- segment: AI-heavy small teams
+- candidate_score: 41
+- recommended_validation_mode: internal_benchmark_proxy
+- pain_evidence_strength: 2
+- budget_evidence_strength: 4
+- urgency_signal: 2
+- offer_fit: 4
+- reachability: 2
+- contact_risk: 4
+- owner_burden: 5
+- expected_signal_speed: 2
+- differentiation_fit: 4
+- trust_gap: 2
+- M3_value_relevance: 4
+- disconfirming_risk: 2
+- implementation_burden: 2
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=AI-heavy small teams; contact_status=public_role_only_no_contact.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 20: cand_retool_retool_pricing
+- segment: startup ops teams using no-code/automation tools
+- candidate_score: 41
+- recommended_validation_mode: internal_benchmark_proxy
+- pain_evidence_strength: 2
+- budget_evidence_strength: 4
+- urgency_signal: 2
+- offer_fit: 4
+- reachability: 2
+- contact_risk: 4
+- owner_burden: 5
+- expected_signal_speed: 2
+- differentiation_fit: 4
+- trust_gap: 2
+- M3_value_relevance: 4
+- disconfirming_risk: 2
+- implementation_burden: 2
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=startup ops teams using no-code/automation tools; contact_status=public_role_only_no_contact.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 21: cand_langfuse_langfuse_docs
+- segment: teams using agent frameworks or AI workflow tooling
+- candidate_score: 40
+- recommended_validation_mode: internal_benchmark_proxy
+- pain_evidence_strength: 4
+- budget_evidence_strength: 2
+- urgency_signal: 2
+- offer_fit: 4
+- reachability: 2
+- contact_risk: 4
+- owner_burden: 5
+- expected_signal_speed: 2
+- differentiation_fit: 4
+- trust_gap: 2
+- M3_value_relevance: 5
+- disconfirming_risk: 2
+- implementation_burden: 2
+- buyer_process_clarity: 2
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=teams using agent frameworks or AI workflow tooling; contact_status=public_role_only_no_contact.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 22: cand_braintrust_braintrust
+- segment: teams using agent frameworks or AI workflow tooling
+- candidate_score: 40
+- recommended_validation_mode: internal_benchmark_proxy
+- pain_evidence_strength: 4
+- budget_evidence_strength: 2
+- urgency_signal: 2
+- offer_fit: 4
+- reachability: 2
+- contact_risk: 4
+- owner_burden: 5
+- expected_signal_speed: 2
+- differentiation_fit: 4
+- trust_gap: 2
+- M3_value_relevance: 5
+- disconfirming_risk: 2
+- implementation_burden: 2
+- buyer_process_clarity: 2
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=teams using agent frameworks or AI workflow tooling; contact_status=public_role_only_no_contact.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 23: cand_dashclaw_dashclaw
+- segment: open-source teams/projects needing governance/support
+- candidate_score: 38
+- recommended_validation_mode: public_post_or_landing_pending_Tier3_approval
+- pain_evidence_strength: 2
+- budget_evidence_strength: 2
+- urgency_signal: 2
+- offer_fit: 4
+- reachability: 3
+- contact_risk: 4
+- owner_burden: 4
+- expected_signal_speed: 3
+- differentiation_fit: 4
+- trust_gap: 2
+- M3_value_relevance: 4
+- disconfirming_risk: 4
+- implementation_burden: 2
+- buyer_process_clarity: 2
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=open-source teams/projects needing governance/support; contact_status=community_public_post_candidate.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 24: cand_arize_arize_phoenix
+- segment: teams using agent frameworks or AI workflow tooling
+- candidate_score: 36
+- recommended_validation_mode: internal_benchmark_proxy
+- pain_evidence_strength: 2
+- budget_evidence_strength: 2
+- urgency_signal: 2
+- offer_fit: 4
+- reachability: 2
+- contact_risk: 4
+- owner_burden: 5
+- expected_signal_speed: 2
+- differentiation_fit: 4
+- trust_gap: 2
+- M3_value_relevance: 5
+- disconfirming_risk: 4
+- implementation_burden: 2
+- buyer_process_clarity: 2
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=teams using agent frameworks or AI workflow tooling; contact_status=public_role_only_no_contact.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 25: cand_vellum_vellum_pricing
+- segment: AI-heavy small teams
+- candidate_score: 36
+- recommended_validation_mode: internal_benchmark_proxy
+- pain_evidence_strength: 2
+- budget_evidence_strength: 4
+- urgency_signal: 2
+- offer_fit: 2
+- reachability: 2
+- contact_risk: 4
+- owner_burden: 5
+- expected_signal_speed: 2
+- differentiation_fit: 2
+- trust_gap: 3
+- M3_value_relevance: 4
+- disconfirming_risk: 2
+- implementation_burden: 2
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=AI-heavy small teams; contact_status=public_role_only_no_contact.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 26: cand_zapier_zapier_pricing
+- segment: startup ops teams using no-code/automation tools
+- candidate_score: 36
+- recommended_validation_mode: internal_benchmark_proxy
+- pain_evidence_strength: 2
+- budget_evidence_strength: 4
+- urgency_signal: 2
+- offer_fit: 2
+- reachability: 2
+- contact_risk: 4
+- owner_burden: 5
+- expected_signal_speed: 2
+- differentiation_fit: 2
+- trust_gap: 3
+- M3_value_relevance: 4
+- disconfirming_risk: 2
+- implementation_burden: 2
+- buyer_process_clarity: 4
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=startup ops teams using no-code/automation tools; contact_status=public_role_only_no_contact.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 27: cand_orloj_orloj
+- segment: open-source teams/projects needing governance/support
+- candidate_score: 35
+- recommended_validation_mode: internal_benchmark_proxy
+- pain_evidence_strength: 2
+- budget_evidence_strength: 2
+- urgency_signal: 2
+- offer_fit: 4
+- reachability: 2
+- contact_risk: 4
+- owner_burden: 5
+- expected_signal_speed: 2
+- differentiation_fit: 4
+- trust_gap: 2
+- M3_value_relevance: 4
+- disconfirming_risk: 4
+- implementation_burden: 2
+- buyer_process_clarity: 2
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=open-source teams/projects needing governance/support; contact_status=public_role_only_no_contact.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.
+
+## Rank 28: cand_pact5_pact5
+- segment: open-source teams/projects needing governance/support
+- candidate_score: 35
+- recommended_validation_mode: internal_benchmark_proxy
+- pain_evidence_strength: 2
+- budget_evidence_strength: 2
+- urgency_signal: 2
+- offer_fit: 4
+- reachability: 2
+- contact_risk: 4
+- owner_burden: 5
+- expected_signal_speed: 2
+- differentiation_fit: 4
+- trust_gap: 2
+- M3_value_relevance: 4
+- disconfirming_risk: 4
+- implementation_burden: 2
+- buyer_process_clarity: 2
+- reason: Strongest if public evidence shows implementation burden or governance pain plus a low-friction owner-operated contact path. Segment=open-source teams/projects needing governance/support; contact_status=public_role_only_no_contact.
+- what_would_invalidate: If the target says existing tools already solve operating-room governance, does not understand the 48h blueprint, or rejects the price range as consulting noise.

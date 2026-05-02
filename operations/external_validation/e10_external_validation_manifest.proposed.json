@@ -1,0 +1,70 @@
+{
+  "proposal_only": true,
+  "template_is_approval": false,
+  "external_contact_authorized": false,
+  "publication_authorized": false,
+  "payment_form_account_actions_authorized": false,
+  "manifest_id": "OWNER_TO_REVIEW_E10_PROPOSED_MANIFEST",
+  "approved_by": "OWNER_TO_FILL_IF_APPROVED",
+  "approved_at": "OWNER_TO_FILL_IF_APPROVED",
+  "top_offer": "48h AI Ops Operating Room Blueprint",
+  "recommended_batch_id": "batch_ai_ops_agency_governance_layer",
+  "validation_mode": "owner_operated_3_person_qualitative_validation",
+  "autonomy_budget": {
+    "budget_id": "OWNER_TO_FILL_E11_BUDGET",
+    "max_external_messages": 3,
+    "max_public_posts": 0,
+    "max_landing_pages": 0,
+    "max_followups_per_target": 0,
+    "max_targets": 3,
+    "allowed_risk_tiers": [
+      "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION"
+    ],
+    "allowed_channels": [
+      "owner_selected_email_or_public_general_channel_after_owner_review"
+    ],
+    "expires_at": "OWNER_TO_FILL_EXPIRY",
+    "stop_conditions": [
+      "any recipient opts out or asks not to be contacted",
+      "owner approval count is exhausted",
+      "message or channel differs from approved manifest",
+      "target asks for commercial terms beyond validation feedback"
+    ],
+    "require_human_review_before_send": true,
+    "allow_aiden_execution": false,
+    "allow_owner_operated_handoff": true
+  },
+  "approved_draft_ids": [
+    "e8_ai_disclosed_outreach_draft"
+  ],
+  "approved_draft_hashes": {
+    "e8_ai_disclosed_outreach_draft": "bf0e7a110a1fedab"
+  },
+  "approved_target_seed_ids": [
+    "cand_alicelabs_alicelabs",
+    "cand_wotai_wotai",
+    "cand_botsquash_botsquash"
+  ],
+  "approved_channels": [
+    "owner_selected_email_or_public_general_channel_after_owner_review"
+  ],
+  "allowed_action_types": [
+    "send_validation_message",
+    "request_feedback"
+  ],
+  "forbidden_action_types": [
+    "collect_payment",
+    "create_account",
+    "submit_form",
+    "publish_post",
+    "publish_landing_page",
+    "execute_contract",
+    "production_implementation",
+    "core_writeback"
+  ],
+  "ai_disclosure_required": true,
+  "opt_out_required": true,
+  "no_scraped_leads": true,
+  "no_bulk_outreach": true,
+  "notes": "Generated proposal for owner review only. It does not authorize Aiden to contact, send, publish, collect payment, submit forms, create accounts, or write core memory."
+}

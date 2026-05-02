@@ -1,0 +1,68 @@
+{
+  "proposal_only": true,
+  "contact_authorized": false,
+  "contact_executed": false,
+  "recommended_batch_id": "batch_ai_ops_agency_governance_layer",
+  "targets": [
+    {
+      "target_id": "cand_alicelabs_alicelabs",
+      "target_type": "agency_partner",
+      "name_or_label": "Alice Labs AI Operations Consulting",
+      "source_public_url": "https://alicelabs.ai/en/ai-operations-consulting",
+      "source_ids": [
+        "src_alicelabs"
+      ],
+      "segment": "AI consultants/agencies needing governance layer",
+      "channel": "owner_selected_email_or_public_general_channel_after_owner_review",
+      "contact_handle_or_address": "OWNER_TO_REVIEW_AND_FILL_IF_APPROVED",
+      "relationship_context": "Autonomously discovered public candidate; not owner-approved for contact yet.",
+      "why_relevant": "Public evidence suggests implementation burden, governance need, budget proxy, or reachable validation path for the 48h AI Ops Operating Room Blueprint.",
+      "discovered_by_aiden": true,
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "allowed_message_count": 1,
+      "opt_out_state": false,
+      "notes": "Proposal only. No scraped personal contact and no external contact executed."
+    },
+    {
+      "target_id": "cand_wotai_wotai",
+      "target_type": "agency_partner",
+      "name_or_label": "WotAI AI Automation",
+      "source_public_url": "https://wotai.co/",
+      "source_ids": [
+        "src_wotai"
+      ],
+      "segment": "AI consultants/agencies needing governance layer",
+      "channel": "owner_selected_email_or_public_general_channel_after_owner_review",
+      "contact_handle_or_address": "OWNER_TO_REVIEW_AND_FILL_IF_APPROVED",
+      "relationship_context": "Autonomously discovered public candidate; not owner-approved for contact yet.",
+      "why_relevant": "Public evidence suggests implementation burden, governance need, budget proxy, or reachable validation path for the 48h AI Ops Operating Room Blueprint.",
+      "discovered_by_aiden": true,
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "allowed_message_count": 1,
+      "opt_out_state": false,
+      "notes": "Proposal only. No scraped personal contact and no external contact executed."
+    },
+    {
+      "target_id": "cand_botsquash_botsquash",
+      "target_type": "agency_partner",
+      "name_or_label": "BotSquash AI Automation Agency",
+      "source_public_url": "https://botsquash.com/",
+      "source_ids": [
+        "src_botsquash"
+      ],
+      "segment": "AI consultants/agencies needing governance layer",
+      "channel": "owner_selected_email_or_public_general_channel_after_owner_review",
+      "contact_handle_or_address": "OWNER_TO_REVIEW_AND_FILL_IF_APPROVED",
+      "relationship_context": "Autonomously discovered public candidate; not owner-approved for contact yet.",
+      "why_relevant": "Public evidence suggests implementation burden, governance need, budget proxy, or reachable validation path for the 48h AI Ops Operating Room Blueprint.",
+      "discovered_by_aiden": true,
+      "owner_approved_for_contact": false,
+      "contact_executed": false,
+      "allowed_message_count": 1,
+      "opt_out_state": false,
+      "notes": "Proposal only. No scraped personal contact and no external contact executed."
+    }
+  ]
+}
