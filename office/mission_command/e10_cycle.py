@@ -10,6 +10,7 @@ from .e10_autonomous_target_discovery import (
     render_e10_target_discovery_source_summaries,
 )
 from .e10_buyer_signal_taxonomy import render_buyer_signal_taxonomy_report
+from .e10_cross_repo_backflow_assessment import render_e10_cross_repo_backflow_assessment
 from .e10_manifest_target_proposal import render_e10_manifest_target_proposal, write_e10_manifest_and_target_proposals
 from .e10_owner_decision_packet import build_e10_owner_decision_packet, render_e10_owner_decision_packet
 from .e10_shortest_revenue_path_scorer import (
@@ -39,6 +40,7 @@ E10_Y_STAR = [
     "proposed_manifest_created",
     "proposed_target_seeds_created",
     "owner_decision_packet_created",
+    "cross_repo_backflow_assessment_created",
     "method_kernel_updated_with_buyer_discovery",
     "no_unapproved_external_side_effects",
 ]
@@ -109,11 +111,12 @@ def build_e10_cycle(repo_root: Path) -> Dict[str, Any]:
         "shortest_revenue_path_scoring_created": bool(scores),
         "segment_opportunity_matrix_created": bool(segment_scores),
         "validation_batch_proposals_created": len(batches) >= 3,
-        "proposed_manifest_created": manifest_path.exists() and manifest.get("proposal_only") is True,
-        "proposed_target_seeds_created": target_seeds_path.exists() and target_seeds.get("proposal_only") is True,
-        "owner_decision_packet_created": owner_packet["recommended_next_decision"] == "approve_or_edit_E11_validation_batch",
-        "method_kernel_updated_with_buyer_discovery": method_kernel_has_e10_learning(repo_root),
-        "no_unapproved_external_side_effects": not any(NO_UNAPPROVED_EXTERNAL_ACTION_RECEIPT.values())
+            "proposed_manifest_created": manifest_path.exists() and manifest.get("proposal_only") is True,
+            "proposed_target_seeds_created": target_seeds_path.exists() and target_seeds.get("proposal_only") is True,
+            "owner_decision_packet_created": owner_packet["recommended_next_decision"] == "approve_or_edit_E11_validation_batch",
+            "cross_repo_backflow_assessment_created": True,
+            "method_kernel_updated_with_buyer_discovery": method_kernel_has_e10_learning(repo_root),
+            "no_unapproved_external_side_effects": not any(NO_UNAPPROVED_EXTERNAL_ACTION_RECEIPT.values())
         and not research["receipt"].get("external_action_executed"),
     }
     czl = build_strict_czl_state(
@@ -135,6 +138,7 @@ def build_e10_cycle(repo_root: Path) -> Dict[str, Any]:
             "scored candidates and segments by shortest path to paid signal",
             "built three E11 validation batch proposals",
             "generated proposed manifest and proposed target seed files for owner review",
+            "assessed cross-repo backflow candidates for Y-star-gov and gov-mcp",
             "updated owner decision packet, method kernel learning, and strict CZL closure",
         ],
         y_t1=y_t1,
@@ -180,6 +184,7 @@ def write_e10_reports(repo_root: Path) -> Dict[str, Path]:
             cycle["manifest_path"], cycle["target_seeds_path"], cycle["manifest"], cycle["target_seeds"]
         ),
         "e10_owner_decision_packet.md": render_e10_owner_decision_packet(cycle["owner_packet"]),
+        "e10_cross_repo_backflow_assessment.md": render_e10_cross_repo_backflow_assessment(),
         "e10_czl_closure_report.md": render_e10_czl_closure(cycle),
     }
     written: Dict[str, Path] = {}

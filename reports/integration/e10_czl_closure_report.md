@@ -17,6 +17,7 @@
 - proposed_manifest_created
 - proposed_target_seeds_created
 - owner_decision_packet_created
+- cross_repo_backflow_assessment_created
 - method_kernel_updated_with_buyer_discovery
 - no_unapproved_external_side_effects
 
@@ -36,6 +37,7 @@
 - scored candidates and segments by shortest path to paid signal
 - built three E11 validation batch proposals
 - generated proposed manifest and proposed target seed files for owner review
+- assessed cross-repo backflow candidates for Y-star-gov and gov-mcp
 - updated owner decision packet, method kernel learning, and strict CZL closure
 
 ## Yt+1
@@ -49,6 +51,7 @@
 - proposed_manifest_created: True
 - proposed_target_seeds_created: True
 - owner_decision_packet_created: True
+- cross_repo_backflow_assessment_created: True
 - method_kernel_updated_with_buyer_discovery: True
 - no_unapproved_external_side_effects: True
 

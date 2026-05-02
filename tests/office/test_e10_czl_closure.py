@@ -17,6 +17,7 @@ def test_e10_czl_complete_requires_target_candidates_if_research_ran():
     text = _closure()
     assert "autonomous_target_discovery_research_ran_or_blocked_honestly: True" in text
     assert "target_candidate_registry_created: True" in text
+    assert "cross_repo_backflow_assessment_created: True" in text
     assert "full_mission_rt1 = 0" in text
 
 

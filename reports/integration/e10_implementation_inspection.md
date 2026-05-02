@@ -159,3 +159,59 @@ All discovered candidates must default to `owner_approved_for_contact=false` and
 
 - `feasible_internal_rt1 = 0` only if all E10 internal artifacts, proposed files, tests, and reports exist.
 - `full_mission_rt1 = 0` only if public target discovery runs, candidate registry and scoring exist, proposed E11 batch exists, and no unapproved external side effects occur.
+
+## Cross-Repo Inspection Addendum
+
+This addendum records the formal-repo inspection added after the first E10 bridge-labs commit.
+
+### Current Bridge-Labs Facts
+
+- branch at addendum inspection: `backflow/aiden-ceo-meeting-room`
+- HEAD at addendum inspection: `4212eafd69a520dc74a820da6197684c7e10e6bd`
+- status at addendum inspection: only `reports/integration/post_push_quality_audit.md` remained untracked.
+- E10 bridge-labs implementation already existed from commit `4212eafd69a520dc74a820da6197684c7e10e6bd`.
+- E10 corrective requirement: add formal Y-star-gov / gov-mcp inspection, cross-repo backflow assessment, and strict CZL criterion without rewriting the previous commit.
+
+### E6 / E7 Offer Context
+
+- `reports/integration/e6_market_evidence_opportunity_evaluation.md` selected `AI Ops Operating Room Implementation Support` as the market-backed top path.
+- `reports/integration/e6_offer_thesis.md` records `thesis_status: evidence_backed` and frames the market category as AI operations setup / implementation advisory.
+- `reports/integration/e7_validation_ready_offer_packet.md` sharpens the offer into `48h AI Ops Operating Room Blueprint` for technical founders, AI-heavy small teams, or operations leads.
+- E7 explicitly did not claim customer validation and kept pricing as a hypothesis.
+
+### Y-star-gov Inspection
+
+- Current checked-out branch: `backflow/company-runtime-domain-pack`.
+- Requested branch exists and was inspected by snapshot: `backflow/company-runtime-policy-alignment`.
+- Current HEAD inspected: `35d270c79f73fdd0bdf55ebdefe03fb4ccb2d397`.
+- `ystar/domains/company_runtime/permission_tiers.py` defines Tier 0 internal work, Tier 1 read-only external research with budget, Tier 2 preparation-only owner-approved execution, Tier 3 constrained external action, and Tier 4 high-risk blocked/review-gated action.
+- `ystar/domains/company_runtime/company_action_classifier.py` classifies read-only research/public page reads as safe internal/read-only preparation, customer contact/email/outreach/publication/form/account creation/live MCP as owner-approval required, and payment/secrets/private runtime artifacts/bulk outreach/lead scraping as blocked.
+- `ystar/domains/company_runtime/company_runtime_policy.py` checks mission budget for read-only research/search/public page actions and returns non-executing preflight decisions.
+- `ystar/domains/company_runtime/escalation_contract.py` supports approve, reject, request_revision, and hold owner decision envelopes.
+- `ystar/domains/company_runtime/delegated_mission_contract.py` carries mission permission tier, research budget, forbidden action classes, required review points, and active status.
+- Relevant tests under `tests/domains/company_runtime` cover permission tiers, mission permission checks, stale directive classification, admin rationalization, and escalation contracts.
+
+### gov-mcp Inspection
+
+- Current checked-out branch: `backflow/company-runtime-tools`.
+- Requested branch exists and was inspected by snapshot: `backflow/company-runtime-tool-alignment`.
+- Current HEAD inspected: `f06aef334923d395202283766869e688129411d3`.
+- `gov_mcp/company_runtime_tools.py` exposes non-executing governance tools: `gov_company_action_preflight`, `gov_company_mission_check`, `gov_company_escalation_check`, `gov_company_record_owner_decision`, `gov_company_admin_rule_check`, `gov_company_value_alignment_check`, and `gov_company_mission_action_preflight`.
+- `gov_mcp/server.py` registers company runtime tools through `register_company_runtime_tools`.
+- `tests/test_company_runtime_tools.py` verifies internal allowance, contact/email owner approval, payment blocking, mission budget checks, escalation checks, owner decision normalization, and non-execution.
+
+### E10 Answers Added By Formal-Repo Inspection
+
+1. E9 truly completed external pattern mining, pattern-to-architecture translation, E8 runtime upgrades, owner-operated handoff readiness, non-executing manifest/target/draft/preflight checks, and feedback classification without customer contact.
+2. E9 left unresolved autonomous buyer/target discovery, candidate registry generation, shortest revenue path scoring, and proposed target seed generation from public evidence.
+3. Owner-provided target seeds are insufficient because CEO autonomy requires Aiden to discover likely buyer segments and candidate targets from public evidence, then ask the owner to approve or revise exact external validation batches.
+4. Missing target discovery capability was a bridge-labs Mission Command layer for public buyer signals, conservative contactability, candidate registry, segment scoring, and proposed E11 manifests.
+5. Available public research path: owner-authorized Tier 1 public read-only web/search/page inspection, recorded locally with receipt/source summaries and no external side effects.
+6. Signals to mine: pain, budget, urgency, tool-stack complexity, governance/safety, hiring/job, implementation burden, existing alternative, contactability, trust gap, and disconfirming signals.
+7. Safe autonomous target types: company/organization, public product/project/team, role/persona without personal contact, community/channel candidate, agency/partner candidate, and internal benchmark proxy.
+8. Target types requiring owner approval before contact: every discovered company, role, founder, project maintainer, community, agency, public profile, general channel, or publication candidate.
+9. Y-star-gov tiers/classes applying to E10: Tier 1 for budgeted public read-only target discovery; Tier 2/Tier 3 for proposed external validation/contact; Tier 4 blocked/review-gated for payment, secrets, account creation, private runtime artifacts, scraping, and core writeback.
+10. gov-mcp tools supporting E10/E11: action preflight, mission check, escalation check, owner decision normalization, value alignment, admin rule check, and mission action preflight. They support classification and approval envelopes, not sending.
+11. Bridge-labs should keep E10 buyer discovery/scoring/proposals now; later backflow should add proposed-vs-approved target seed semantics, target discovery preflight, no-contact assurance, and validation batch proposal validation to Y-star-gov/gov-mcp.
+12. Updated E10 Y* includes `cross_repo_backflow_assessment_created`.
+13. `reports/integration/post_push_quality_audit.md` remains untracked. It is not an E10 deliverable and should not be silently committed.
