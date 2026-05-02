@@ -1,0 +1,46 @@
+{
+  "request_type": "e12_router_gated_validation_approval_request",
+  "approval_state": "proposed",
+  "proposal_only": true,
+  "this_is_not_approval": true,
+  "approval_id": "OWNER_TO_FILL_E12_APPROVAL_ID",
+  "approved_by": "OWNER_TO_FILL",
+  "approved_at": "OWNER_TO_FILL",
+  "top_offer": "48h AI Ops Operating Room Blueprint",
+  "approved_batch_id": "batch_ai_ops_agency_governance_layer",
+  "execution_mode": "owner_operated_handoff",
+  "max_external_messages": 3,
+  "max_targets": 3,
+  "approved_target_ids": [
+    "cand_alicelabs_alicelabs",
+    "cand_wotai_wotai",
+    "cand_botsquash_botsquash"
+  ],
+  "approved_channels": [
+    "owner_selected_email_or_public_general_channel_after_owner_review"
+  ],
+  "approved_draft_id": "e8_ai_disclosed_outreach_draft",
+  "approved_draft_hash": "bf0e7a110a1fedab",
+  "stop_conditions": [
+    "any recipient opts out or asks not to be contacted",
+    "owner approval count is exhausted",
+    "message or channel differs from approved manifest",
+    "target asks for commercial terms beyond validation feedback"
+  ],
+  "ai_disclosure_required": true,
+  "opt_out_required": true,
+  "no_scraped_leads": true,
+  "no_bulk_outreach": true,
+  "publication_authorized": false,
+  "payment_authorized": false,
+  "form_submission_authorized": false,
+  "account_creation_authorized": false,
+  "core_writeback_authorized": false,
+  "owner_decision_options": [
+    "owner_approved",
+    "rejected",
+    "needs_edit",
+    "hold"
+  ],
+  "owner_instructions": "Set approval_state to owner_approved and replace OWNER_TO_FILL fields only if this exact batch/channel/draft/target scope is approved."
+}

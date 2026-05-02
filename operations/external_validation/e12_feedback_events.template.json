@@ -1,0 +1,20 @@
+{
+  "template_only": true,
+  "events": [
+    {
+      "feedback_id": "OWNER_TO_FILL",
+      "target_id": "cand_alicelabs_alicelabs",
+      "received_at": "OWNER_TO_FILL_ISO8601",
+      "source_channel": "owner_operated_handoff",
+      "response_type": "interested | asks_price | asks_example | offers_workflow | says_would_pay | asks_followup | referral | rejects_no_urgency | rejects_price | says_tools_solve_it | wants_implementation_not_blueprint | opt_out | no_response",
+      "verbatim_or_summary": "OWNER_ENTERED_SUMMARY",
+      "price_signal": "",
+      "workflow_signal": "",
+      "urgency_signal": "",
+      "trust_gap_signal": "",
+      "next_step_requested": "",
+      "owner_entered": true,
+      "external_action_reference": "owner_operated_handoff_or_e12_action_ledger_reference"
+    }
+  ]
+}
