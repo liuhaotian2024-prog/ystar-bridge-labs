@@ -1,0 +1,107 @@
+{
+  "baseline_commit": "98fdfd7e08e7dc86dd7eed16edb69f6a2dd7e2e7",
+  "discovery_source": [
+    "reports/integration/e11_semantic_capability_inventory.json",
+    "reports/integration/e11_capability_fingerprint_index.json",
+    "reports/integration/e11_duplicate_overlap_cluster_report.md"
+  ],
+  "entries": [
+    {
+      "adapter_owner": "bridge-labs E-series modules remain adapters unless promoted by a future backflow.",
+      "canonical_owner": "bridge-labs owns business target lifecycle; Y-star-gov owns external-action permission semantics; gov-mcp exposes gateway checks.",
+      "cluster_id": "cluster_target_lifecycle",
+      "cluster_name": "Target candidate/proposal/approval lifecycle",
+      "conflict_risk": "high",
+      "discovered_from_evidence": true,
+      "immediate_code_consolidation_safe": true,
+      "registry_role": "canonical_router",
+      "relation_type": "conflicting_approval_semantics",
+      "router_module": "office.mission_command.target_lifecycle_router"
+    },
+    {
+      "adapter_owner": "bridge-labs E-series modules remain adapters unless promoted by a future backflow.",
+      "canonical_owner": "bridge-labs owns market/evidence claim ladder; CIEU governs durable learning; owner decides commercial escalation.",
+      "cluster_id": "cluster_evidence_signal_ladder",
+      "cluster_name": "Evidence, feedback, and paid-signal ladder",
+      "conflict_risk": "high",
+      "discovered_from_evidence": true,
+      "immediate_code_consolidation_safe": true,
+      "registry_role": "canonical_router",
+      "relation_type": "conflicting_signal_semantics",
+      "router_module": "office.mission_command.evidence_signal_router"
+    },
+    {
+      "adapter_owner": "bridge-labs E-series modules remain adapters unless promoted by a future backflow.",
+      "canonical_owner": "Y-star-gov owns deterministic policy; gov-mcp owns gateway exposure; bridge-labs owns business intent and execution packet assembly.",
+      "cluster_id": "cluster_action_authorization_chain",
+      "cluster_name": "External action authorization chain",
+      "conflict_risk": "critical",
+      "discovered_from_evidence": true,
+      "immediate_code_consolidation_safe": true,
+      "registry_role": "canonical_router",
+      "relation_type": "cross_repo_adapter",
+      "router_module": "office.mission_command.action_authorization_router"
+    },
+    {
+      "adapter_owner": "bridge-labs E-series modules remain adapters unless promoted by a future backflow.",
+      "canonical_owner": "CIEU/Y-star-gov owns prediction-delta eligibility; Aiden Brain owns graph state; bridge-labs reports are proposal-only.",
+      "cluster_id": "cluster_learning_writeback_gate",
+      "cluster_name": "Report, method, dream, brain, and CIEU learning paths",
+      "conflict_risk": "critical",
+      "discovered_from_evidence": true,
+      "immediate_code_consolidation_safe": true,
+      "registry_role": "canonical_router",
+      "relation_type": "conflicting_writeback_semantics",
+      "router_module": "office.mission_command.learning_writeback_router"
+    },
+    {
+      "adapter_owner": "bridge-labs E-series modules remain adapters unless promoted by a future backflow.",
+      "canonical_owner": "bridge-labs CZL owns mission closure semantics; repository status remains delivery-only; commercial validation needs feedback/ledger evidence.",
+      "cluster_id": "cluster_closure_status_semantics",
+      "cluster_name": "Closure status and completion semantics",
+      "conflict_risk": "high",
+      "discovered_from_evidence": true,
+      "immediate_code_consolidation_safe": true,
+      "registry_role": "canonical_router",
+      "relation_type": "conflicting_status_semantics",
+      "router_module": "office.mission_command.closure_status_router"
+    },
+    {
+      "adapter_owner": "bridge-labs E-series modules remain adapters unless promoted by a future backflow.",
+      "canonical_owner": "Method kernel owns durable counterfactual protocol; stage modules adapt it to opportunity, market, execution, revenue, governance, or learning contexts.",
+      "cluster_id": "cluster_counterfactual_protocol",
+      "cluster_name": "Counterfactual and disconfirmation protocol",
+      "conflict_risk": "medium",
+      "discovered_from_evidence": true,
+      "immediate_code_consolidation_safe": true,
+      "registry_role": "canonical_router",
+      "relation_type": "lifecycle_overlap",
+      "router_module": "office.mission_command.counterfactual_router"
+    },
+    {
+      "adapter_owner": "bridge-labs E-series modules remain adapters unless promoted by a future backflow.",
+      "canonical_owner": "Aiden Brain owns graph/activation state; ystar-company remains incubation source; bridge-labs owns interpretation reports; CIEU gates persistent learning.",
+      "cluster_id": "cluster_field_brain_cognitive_runtime",
+      "cluster_name": "Field/activation/brain cognitive runtime",
+      "conflict_risk": "medium",
+      "discovered_from_evidence": true,
+      "immediate_code_consolidation_safe": false,
+      "registry_role": "mapped_adapter_or_incubation_source",
+      "relation_type": "adjacent_stage_adapter",
+      "router_module": ""
+    },
+    {
+      "adapter_owner": "bridge-labs E-series modules remain adapters unless promoted by a future backflow.",
+      "canonical_owner": "bridge-labs owns current E-series commercial runtime; ystar-company remains incubation/reference unless separately backflowed.",
+      "cluster_id": "cluster_incubated_company_runtime",
+      "cluster_name": "ystar-company incubated commercial/runtime mechanisms",
+      "conflict_risk": "medium",
+      "discovered_from_evidence": true,
+      "immediate_code_consolidation_safe": false,
+      "registry_role": "mapped_adapter_or_incubation_source",
+      "relation_type": "adjacent_stage_adapter",
+      "router_module": ""
+    }
+  ],
+  "registry_id": "e11_global_runtime_capability_registry"
+}

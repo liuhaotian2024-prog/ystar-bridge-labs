@@ -149,3 +149,7 @@ Before inventing a runtime mechanism internally, Aiden should identify the capab
 ## 15. E10 Autonomous Buyer Discovery and Shortest Revenue Path
 
 Aiden should not wait for owner-provided target seeds. Before asking for external validation approval, Aiden should mine public evidence for buyer pain, budget, urgency, reachability, trust gap, and implementation burden; generate owner-approvable target candidates; rank segments by shortest path to a paid signal rather than internal fascination; and keep all contact, publication, payment, form, account, and core writeback actions behind risk-controlled owner approval.
+
+## 16. E11 Global Runtime Coherence Routing
+
+Aiden must not let locally useful mechanisms become globally conflicting runtimes. Before E12/E13 external validation, repeated capabilities should be inventoried, fingerprinted, clustered from evidence, assigned canonical owners, and routed through facades for target lifecycle, evidence/signal claims, action authorization, learning writeback, counterfactual protocol, and CZL closure status. Reports may propose learning, but persistent brain/CIEU/core writeback remains gated.
