@@ -1,0 +1,19 @@
+{
+  "feedback_events": [
+    {
+      "feedback_id": "feedback_001",
+      "target_id": "target_001",
+      "received_at": "YYYY-MM-DDTHH:MM:SSZ",
+      "source_channel": "owner_selected_email",
+      "response_type": "asks_price",
+      "verbatim_or_summary": "Owner-entered summary of a real response.",
+      "price_signal": "Asked whether the 48h blueprint has a fixed price.",
+      "workflow_signal": "",
+      "urgency_signal": "",
+      "trust_gap_signal": "",
+      "next_step_requested": "",
+      "owner_entered": true,
+      "external_action_reference": "owner_operated_handoff"
+    }
+  ]
+}

@@ -141,3 +141,7 @@ Market-backed does not equal validation-ready. After E6/E7, Aiden must treat pub
 ## 13. E8 Risk-Controlled External Freedom Learning
 
 External freedom should be risk-controlled, not prohibited by default. Aiden may gain bounded external agency only through transparent AI identity, exact autonomy budgets, approved target/channel/draft constraints, action ledgers, stop conditions, and feedback-based residual learning.
+
+## 14. E9 External Pattern Mining and Technology Transfer
+
+Before inventing a runtime mechanism internally, Aiden should identify the capability gap, search mature and frontier external systems, extract reusable patterns, evaluate fit, translate the strongest ideas into Y*Bridge runtime modules, test the upgrade, CZL-close the result, and record residual learning. E9 makes this concrete for external validation: public standards, agent security guidance, HITL frameworks, MCP security, observability, suppression/opt-out practice, and customer discovery patterns become approval decisions, scope minimization, progressive autonomy, action/feedback provenance, and owner-safe validation handoff.

@@ -1,0 +1,65 @@
+{
+  "manifest_id": "OWNER_TO_FILL_E9_MANIFEST_ID",
+  "approved_by": "OWNER_NAME_REQUIRED",
+  "approved_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "top_offer": "48h AI Ops Operating Room Blueprint",
+  "validation_mode": "owner_operated_3_person_qualitative_validation",
+  "autonomy_budget": {
+    "budget_id": "e8_standard_3_person_validation",
+    "max_external_messages": 3,
+    "max_public_posts": 0,
+    "max_landing_pages": 0,
+    "max_followups_per_target": 0,
+    "max_targets": 3,
+    "allowed_risk_tiers": [
+      "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION"
+    ],
+    "allowed_channels": [
+      "owner_selected_email",
+      "owner_selected_dm"
+    ],
+    "expires_at": "2026-05-08T23:59:59Z",
+    "stop_conditions": [
+      "any target opts out",
+      "message count reaches budget",
+      "draft hash changes",
+      "recipient asks for no further contact",
+      "owner pauses validation"
+    ],
+    "require_human_review_before_send": true,
+    "allow_aiden_execution": false,
+    "allow_owner_operated_handoff": true
+  },
+  "approved_draft_ids": [
+    "e8_ai_disclosed_outreach_draft"
+  ],
+  "approved_draft_hashes": {
+    "e8_ai_disclosed_outreach_draft": "OWNER_TO_FILL_EXACT_HASH_FROM_E9_DRAFT_BINDING"
+  },
+  "approved_target_seed_ids": [
+    "target_001",
+    "target_002",
+    "target_003"
+  ],
+  "approved_channels": [
+    "owner_selected_email"
+  ],
+  "allowed_action_types": [
+    "send_validation_message",
+    "request_feedback"
+  ],
+  "forbidden_action_types": [
+    "collect_payment",
+    "create_account",
+    "submit_form",
+    "execute_contract",
+    "production_implementation",
+    "core_writeback"
+  ],
+  "ai_disclosure_required": true,
+  "opt_out_required": true,
+  "no_scraped_leads": true,
+  "no_bulk_outreach": true,
+  "progressive_autonomy_level": "L2_owner_operated_handoff",
+  "notes": "Template only. It does not authorize Aiden to send, publish, collect payment, submit forms, or create accounts."
+}

@@ -1,0 +1,9 @@
+from office.mission_command.e9_progressive_autonomy import E9AutonomyLevel, autonomy_level_allowed_in_e9, autonomy_level_index
+
+
+def test_progressive_autonomy_ladder_orders_levels_correctly():
+    assert autonomy_level_index(E9AutonomyLevel.L0_INTERNAL_ONLY) < autonomy_level_index(E9AutonomyLevel.L3_AIDEN_SENDS_WITH_EXACT_APPROVAL_PROVIDER)
+
+
+def test_progressive_autonomy_blocks_l5_commercial_in_e9():
+    assert autonomy_level_allowed_in_e9(E9AutonomyLevel.L5_COMMERCIAL_PRODUCTION_BLOCKED_IN_E9) is False
