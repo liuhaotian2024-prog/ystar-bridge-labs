@@ -1,0 +1,57 @@
+{
+  "approval_packet_id": "e14_owner_operated_manual_validation_request",
+  "status": "request_only_not_approval",
+  "exact_offer": "48h AI Agent Implementation Readiness Review",
+  "target_batch_id": "e14_owner_operated_readiness_review_batch",
+  "target_ids": [
+    "cand_alicelabs_alicelabs",
+    "cand_botsquash_botsquash",
+    "cand_wotai_wotai"
+  ],
+  "target_rationale": [
+    "cand_alicelabs_alicelabs: Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+    "cand_botsquash_botsquash: Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+    "cand_wotai_wotai: Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review."
+  ],
+  "draft_id": "e14_manual_owner_operated_ai_agent_readiness_review_v1",
+  "draft_hash": "595ba0aed1062e55e1a2de6c",
+  "draft_text": "Subject: Quick question on AI-agent implementation readiness\n\nHi,\n\nI am Aiden, an AI-assisted CEO/runtime agent for Y*Bridge Labs, working with Haotian. I am not pretending to be a human teammate, and this is a small owner-operated validation note before we ask anyone to buy anything.\n\nWe are testing a 48h AI Agent Implementation Readiness Review for teams or agencies trying to deploy AI agents/coding agents safely. The review maps implementation readiness, workflow bottlenecks, governance risks, and the safest next operational step.\n\nWould this kind of 48h readiness review be useful enough to justify a paid diagnostic or pilot-prep conversation?\n\nNo pressure, no automated follow-up, and it is completely fine to ignore this. If this is not relevant, please disregard.\n",
+  "allowed_channel": "owner_selected_manual_email_or_public_general_channel_only_after_owner_approval",
+  "max_sends": 3,
+  "stop_conditions": [
+    "any opt-out or stop request",
+    "any negative response requesting no follow-up",
+    "owner uncertainty about target fit or channel",
+    "any request requiring payment, account creation, form submission, login, legal commitment, or production access"
+  ],
+  "ai_transparency_language": "I am Aiden, an AI-assisted CEO/runtime agent for Y*Bridge Labs, working with Haotian.",
+  "opt_out_ignore_language": "No pressure, no automated follow-up, and it is completely fine to ignore this.",
+  "what_is_approved_if_owner_accepts": [
+    "owner-operated manual validation only",
+    "up to the approved max sends",
+    "exact draft hash unless owner edits and re-approves",
+    "recording action ledger and owner-entered feedback events"
+  ],
+  "what_is_not_approved": [
+    "Aiden autonomous sending",
+    "customer contact by Codex/Aiden",
+    "publication",
+    "payment collection",
+    "account creation",
+    "form submission",
+    "login",
+    "tracking links or attachments",
+    "core brain/CIEU/memory writeback"
+  ],
+  "expiration": "7 days after owner approval or sooner if revoked",
+  "revocation_rule": "Owner may revoke approval at any time; any opt-out suppresses that target immediately.",
+  "feedback_capture_requirement": "Owner must record feedback in e14_feedback_events.template.json format before E15 can evaluate validation signal.",
+  "action_ledger_requirement": "Owner must record each manual send in e14_action_ledger.template.json format; no_response is invalid without a valid action ledger entry.",
+  "owner_choices": [
+    "approve_owner_operated_manual_validation",
+    "request_revision",
+    "reject",
+    "hold"
+  ],
+  "created_at": "2026-05-03T15:11:59.082545+00:00"
+}

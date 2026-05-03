@@ -1,0 +1,135 @@
+{
+  "offer": "48h AI Agent Implementation Readiness Review",
+  "candidate_count": 6,
+  "candidates": [
+    {
+      "target_id": "cand_alicelabs_alicelabs",
+      "source": "E10_proposed_target_seed",
+      "organization_or_person_name": "Alice Labs AI Operations Consulting",
+      "public_url_or_ref": "https://alicelabs.ai/en/ai-operations-consulting",
+      "segment": "AI consultants/agencies needing governance layer",
+      "why_this_target": "Public evidence suggests implementation burden, governance need, budget proxy, or reachable validation path for the 48h AI Ops Operating Room Blueprint.",
+      "relevance_to_offer": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "evidence_refs": [
+        "src_alicelabs",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "risk_level": "Tier 2 owner-operated manual validation candidate",
+      "contact_channel_candidate": "owner_selected_email_or_public_general_channel_after_owner_review",
+      "contact_channel_allowed": false,
+      "requires_owner_approval": true,
+      "no_contact_until_approved": true,
+      "privacy_notes": "Organization-level public business context only; no scraped personal contact, no inferred email, no private profile enrichment.",
+      "exclusion_reason_if_any": ""
+    },
+    {
+      "target_id": "cand_wotai_wotai",
+      "source": "E10_proposed_target_seed",
+      "organization_or_person_name": "WotAI AI Automation",
+      "public_url_or_ref": "https://wotai.co/",
+      "segment": "AI consultants/agencies needing governance layer",
+      "why_this_target": "Public evidence suggests implementation burden, governance need, budget proxy, or reachable validation path for the 48h AI Ops Operating Room Blueprint.",
+      "relevance_to_offer": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "evidence_refs": [
+        "src_wotai",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "risk_level": "Tier 2 owner-operated manual validation candidate",
+      "contact_channel_candidate": "owner_selected_email_or_public_general_channel_after_owner_review",
+      "contact_channel_allowed": false,
+      "requires_owner_approval": true,
+      "no_contact_until_approved": true,
+      "privacy_notes": "Organization-level public business context only; no scraped personal contact, no inferred email, no private profile enrichment.",
+      "exclusion_reason_if_any": ""
+    },
+    {
+      "target_id": "cand_botsquash_botsquash",
+      "source": "E10_proposed_target_seed",
+      "organization_or_person_name": "BotSquash AI Automation Agency",
+      "public_url_or_ref": "https://botsquash.com/",
+      "segment": "AI consultants/agencies needing governance layer",
+      "why_this_target": "Public evidence suggests implementation burden, governance need, budget proxy, or reachable validation path for the 48h AI Ops Operating Room Blueprint.",
+      "relevance_to_offer": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "evidence_refs": [
+        "src_botsquash",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "risk_level": "Tier 2 owner-operated manual validation candidate",
+      "contact_channel_candidate": "owner_selected_email_or_public_general_channel_after_owner_review",
+      "contact_channel_allowed": false,
+      "requires_owner_approval": true,
+      "no_contact_until_approved": true,
+      "privacy_notes": "Organization-level public business context only; no scraped personal contact, no inferred email, no private profile enrichment.",
+      "exclusion_reason_if_any": ""
+    },
+    {
+      "target_id": "cand_langchain_langsmith_pricing",
+      "source": "E10_autonomous_target_candidate_registry",
+      "organization_or_person_name": "LangSmith Plans and Pricing",
+      "public_url_or_ref": "https://www.langchain.com/pricing",
+      "segment": "teams using agent frameworks or AI workflow tooling",
+      "why_this_target": "E10 registry suggests AI workflow/tooling/governance relevance; E14 keeps it as owner-review only.",
+      "relevance_to_offer": "Potential fit if the organization needs implementation readiness, governance, evaluation, or agent workflow risk mapping.",
+      "evidence_refs": [
+        "src_langsmith_pricing",
+        "e13r_ev_001",
+        "e13r_ev_008"
+      ],
+      "risk_level": "Tier 2 candidate",
+      "contact_channel_candidate": "public_role_only_no_contact",
+      "contact_channel_allowed": false,
+      "requires_owner_approval": true,
+      "no_contact_until_approved": true,
+      "privacy_notes": "Public organization/project context only; target is not approved for contact and contains no personal scraping.",
+      "exclusion_reason_if_any": ""
+    },
+    {
+      "target_id": "cand_langfuse_langfuse_docs",
+      "source": "E10_autonomous_target_candidate_registry",
+      "organization_or_person_name": "Langfuse Overview",
+      "public_url_or_ref": "https://langfuse.com/docs",
+      "segment": "teams using agent frameworks or AI workflow tooling",
+      "why_this_target": "E10 registry suggests AI workflow/tooling/governance relevance; E14 keeps it as owner-review only.",
+      "relevance_to_offer": "Potential fit if the organization needs implementation readiness, governance, evaluation, or agent workflow risk mapping.",
+      "evidence_refs": [
+        "src_langfuse_docs",
+        "e13r_ev_001",
+        "e13r_ev_008"
+      ],
+      "risk_level": "Tier 2 candidate",
+      "contact_channel_candidate": "public_role_only_no_contact",
+      "contact_channel_allowed": false,
+      "requires_owner_approval": true,
+      "no_contact_until_approved": true,
+      "privacy_notes": "Public organization/project context only; target is not approved for contact and contains no personal scraping.",
+      "exclusion_reason_if_any": ""
+    },
+    {
+      "target_id": "cand_arize_arize_phoenix",
+      "source": "E10_autonomous_target_candidate_registry",
+      "organization_or_person_name": "Arize Phoenix / Arize LLM Observability",
+      "public_url_or_ref": "https://arize.com/",
+      "segment": "teams using agent frameworks or AI workflow tooling",
+      "why_this_target": "E10 registry suggests AI workflow/tooling/governance relevance; E14 keeps it as owner-review only.",
+      "relevance_to_offer": "Potential fit if the organization needs implementation readiness, governance, evaluation, or agent workflow risk mapping.",
+      "evidence_refs": [
+        "src_arize_phoenix",
+        "e13r_ev_001",
+        "e13r_ev_008"
+      ],
+      "risk_level": "Tier 2 candidate",
+      "contact_channel_candidate": "public_role_only_no_contact",
+      "contact_channel_allowed": false,
+      "requires_owner_approval": true,
+      "no_contact_until_approved": true,
+      "privacy_notes": "Public organization/project context only; target is not approved for contact and contains no personal scraping.",
+      "exclusion_reason_if_any": ""
+    }
+  ]
+}

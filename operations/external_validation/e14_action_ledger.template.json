@@ -1,0 +1,30 @@
+{
+  "ledger_events": [],
+  "template": {
+    "action_id": "OWNER_TO_FILL_AFTER_MANUAL_EXECUTION",
+    "approval_id": "OWNER_APPROVAL_ID_REQUIRED",
+    "target_id": "OWNER_APPROVED_TARGET_ID_REQUIRED",
+    "owner_executor": "OWNER_TO_FILL",
+    "executed_by": "owner_manual_execution_only",
+    "execution_time": "OWNER_TO_FILL_ISO8601",
+    "channel": "OWNER_APPROVED_CHANNEL_REQUIRED",
+    "message_hash": "APPROVED_DRAFT_HASH_REQUIRED",
+    "draft_version": "e14_manual_owner_operated_ai_agent_readiness_review_v1",
+    "external_action_type": "owner_operated_manual_validation",
+    "result_status": "sent|not_sent|blocked|owner_cancelled",
+    "no_response_allowed_after_date": "OWNER_TO_FILL_ONLY_AFTER_VALID_SEND",
+    "notes": "Do not create an executed ledger entry unless owner actually sends or explicitly records the manual action.",
+    "evidence_refs": [],
+    "safety_receipt": {
+      "customer_contact_by_aiden": false,
+      "email_or_message_sent_by_aiden": false,
+      "publication": false,
+      "payment": false,
+      "account_creation": false,
+      "form_submission": false,
+      "login": false,
+      "core_brain_cieu_memory_writeback": false
+    }
+  },
+  "executed_action_exists": false
+}

@@ -1,0 +1,23 @@
+{
+  "feedback_events": [],
+  "template": {
+    "feedback_event_id": "OWNER_TO_FILL",
+    "action_id": "VALID_E14_ACTION_ID_REQUIRED",
+    "target_id": "OWNER_APPROVED_TARGET_ID_REQUIRED",
+    "source": "owner_entered_after_manual_validation",
+    "feedback_type": "strong_positive|weak_positive|neutral|negative|objection_only|no_response_after_valid_action|invalid_feedback|blocked_no_action",
+    "response_text_or_summary": "OWNER_TO_FILL_NO_INVENTED_FEEDBACK",
+    "buyer_pain_signal": "OWNER_TO_FILL",
+    "budget_signal": "OWNER_TO_FILL",
+    "urgency_signal": "OWNER_TO_FILL",
+    "trust_signal": "OWNER_TO_FILL",
+    "objection_signal": "OWNER_TO_FILL",
+    "next_step_signal": "OWNER_TO_FILL",
+    "paid_signal_candidate": false,
+    "limitations": "Feedback must be owner-entered from a real manual validation action; public evidence is not validation feedback.",
+    "recorded_by": "OWNER_TO_FILL",
+    "recorded_at": "OWNER_TO_FILL_ISO8601",
+    "evidence_or_message_ref": "ACTION_LEDGER_OR_MESSAGE_REFERENCE_REQUIRED"
+  },
+  "feedback_captured": false
+}

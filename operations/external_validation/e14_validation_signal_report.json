@@ -1,0 +1,9 @@
+{
+  "classification": "no_approval",
+  "approval_present": false,
+  "action_ledger_exists": false,
+  "feedback_events_exist": false,
+  "paid_signal_candidate": false,
+  "e15_entry_allowed": false,
+  "reason": "Owner approval packet is request-only; no approval has been granted."
+}
