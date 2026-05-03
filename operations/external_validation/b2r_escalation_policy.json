@@ -1,0 +1,22 @@
+{
+  "hard_owner_gates": [
+    "payment",
+    "contract",
+    "legal_obligation",
+    "financial_commitment",
+    "customer_system_access",
+    "regulated/government/tax/immigration/identity forms",
+    "credential_disclosure",
+    "core brain/CIEU/memory canonical writeback"
+  ],
+  "escalate_on": [
+    "out_of_envelope",
+    "negative_feedback",
+    "opt_out",
+    "complaint",
+    "budget_exceeded",
+    "credential_missing",
+    "mfa_required"
+  ],
+  "owner_is_operator": false
+}

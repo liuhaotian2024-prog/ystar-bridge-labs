@@ -1,0 +1,72 @@
+{
+  "generated_at": "2026-05-03T21:21:59Z",
+  "scale": "0 absent, 1 sketch, 2 partial, 3 usable with gaps, 4 mature with tests, 5 canonical and cross-repo integrated",
+  "items": [
+    {
+      "category": "governance validators",
+      "score": 4,
+      "maturity": "High for deterministic local checks; semantic proof remains explicitly bounded.",
+      "primary_gap": "Backflow commercial validation packet schemas and owner approval invariants into Y-star-gov validator standards."
+    },
+    {
+      "category": "Pre-U packet validation",
+      "score": 3,
+      "maturity": "Spec plus skeleton implementation plus tests; intentionally structural, not semantic omniscience.",
+      "primary_gap": "Define E14/E15 owner validation prep as a Pre-U packet profile."
+    },
+    {
+      "category": "CIEU / prediction delta / residual",
+      "score": 4,
+      "maturity": "Strong kernel and tests for structural delta and residual loop; commercial feedback-to-CIEU profile still missing.",
+      "primary_gap": "Backflow commercial feedback event classification into CIEU prediction-delta eligibility rules."
+    },
+    {
+      "category": "approval records / approval lifecycle",
+      "score": 3,
+      "maturity": "Good domain pack for company runtime; owner validation batch approval lifecycle is not fully modeled as canonical record.",
+      "primary_gap": "Promote E14 owner-operated manual validation approval packet as Y-star-gov approval record profile."
+    },
+    {
+      "category": "delegation contracts",
+      "score": 4,
+      "maturity": "Implemented and tested for general governance and company runtime.",
+      "primary_gap": "Add commercial validation delegation fixture: owner executor only, Aiden draft/prep only."
+    },
+    {
+      "category": "obligation registration / obligation enforcement",
+      "score": 4,
+      "maturity": "Implemented with tests, but commercial validation explicitly forbids auto-registration in bridge-labs.",
+      "primary_gap": "Define no-auto-obligation rule for market validation unless owner explicitly approves."
+    },
+    {
+      "category": "hook adapters / dry-run contract harness",
+      "score": 4,
+      "maturity": "Strong for local hook and dry-run compatibility.",
+      "primary_gap": "Add host-delivery and owner-validation packet adapters as dry-run fixtures."
+    },
+    {
+      "category": "MCP decision envelope",
+      "score": 3,
+      "maturity": "Documented and tested at adapter level; gov-mcp contains concrete server/tool implementation.",
+      "primary_gap": "Create MCP tools for validation approval packet, target batch, action ledger, and feedback event checks."
+    },
+    {
+      "category": "intervention / enforcement",
+      "score": 4,
+      "maturity": "Implemented with tests for governance-side behavior.",
+      "primary_gap": "Add market-validation violation scenarios to intervention/enforcement fixtures."
+    },
+    {
+      "category": "canonical learning / shadow learning / promotion",
+      "score": 3,
+      "maturity": "Active and tested, with explicit anti-uncurated-writeback rules in CIEU validators.",
+      "primary_gap": "Backflow public-evidence vs feedback vs paid-signal learning eligibility rules."
+    },
+    {
+      "category": "release preflight / release simulation / no-go / live boundary",
+      "score": 2,
+      "maturity": "Partial in Y-star-gov; richer historical release/live-boundary artifacts exist in ystar-company.",
+      "primary_gap": "Formalize repository delivery, evidence readiness, and live outreach boundaries as release standards."
+    }
+  ]
+}

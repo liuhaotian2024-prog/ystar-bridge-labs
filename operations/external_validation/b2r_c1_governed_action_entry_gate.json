@@ -1,0 +1,91 @@
+{
+  "gate_id": "b2r_c1_governed_action_entry_gate",
+  "status": "readiness_only_no_live_action",
+  "supported_readiness_paths": [
+    "1-3 AI-transparent validation messages under envelope",
+    "low-risk contact form submission under envelope",
+    "approved-channel governed publication under envelope",
+    "authenticated draft-only action under envelope"
+  ],
+  "hard_blocks": [
+    "payment",
+    "contract",
+    "legal obligation",
+    "financial commitment",
+    "customer system access",
+    "regulated/government/tax/immigration/identity forms",
+    "credential disclosure",
+    "core writeback",
+    "out-of-envelope action"
+  ],
+  "action_packet_example": {
+    "intent_id": "b2r_intent_external_validation_message",
+    "y_star": "governed_progressive_external_action_with_minimum_residual",
+    "domain_id": "external_validation_message",
+    "capability_level": 5,
+    "action_summary": "Preflight governed capability domain external_validation_message.",
+    "envelope_id": "b2r_owner_constitutional_envelope_request",
+    "y_gov_validation_ref": "Y-star-gov::Pre-U/action_packet_validator_profile_required",
+    "gov_mcp_contract_ref": "gov-mcp::execute_or_deny_contract_required",
+    "action_ledger_schema_ref": "b2r_action_ledger_schema",
+    "cieu_residual_semantics": "Residual tracks feedback vs validation question; feedback may become CIEU delta candidate.",
+    "stop_conditions": [
+      "opt_out",
+      "negative_feedback",
+      "complaint",
+      "budget_exceeded",
+      "target_class_mismatch"
+    ],
+    "no_live_action_in_this_milestone": true
+  },
+  "gov_mcp_execute_or_deny_contract": {
+    "contract_id": "b2r_gov_mcp_execute_or_deny_contract",
+    "tool_gateway_owner": "gov-mcp",
+    "decision_modes": [
+      "execute_within_envelope",
+      "deny",
+      "escalate_owner_hard_gate",
+      "dry_run_only"
+    ],
+    "requires_y_gov_validation_ref": true,
+    "requires_action_ledger": true,
+    "requires_result_receipt": true,
+    "executes_live_action_in_b2r": false,
+    "denied_hard_gate_actions": [
+      "payment",
+      "contract",
+      "legal_obligation",
+      "financial_commitment",
+      "customer_system_access",
+      "regulated_form",
+      "credential_disclosure",
+      "core_writeback"
+    ],
+    "normalization_fields": [
+      "action_id",
+      "domain_id",
+      "decision",
+      "reason_codes",
+      "executed",
+      "receipt_hash",
+      "rollback_or_takedown_ref",
+      "cieu_residual_ref"
+    ]
+  },
+  "action_ledger_schema": {
+    "action_id": "required",
+    "domain_id": "required",
+    "envelope_id": "required",
+    "y_gov_validation_ref": "required",
+    "gov_mcp_receipt_ref": "required",
+    "executed_at": "required_if_executed",
+    "result_status": "required"
+  },
+  "feedback_event_schema": {
+    "feedback_event_id": "required",
+    "action_id": "required",
+    "feedback_source": "owner_or_governed_gateway_recorded",
+    "classification": "strong_positive|weak_positive|neutral|negative|invalid_feedback"
+  },
+  "cieu_residual_semantics": "C1 residual compares expected governed action result with actual action receipt and feedback event; no public evidence becomes validation feedback."
+}

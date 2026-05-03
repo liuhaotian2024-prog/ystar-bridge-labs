@@ -1,0 +1,155 @@
+{
+  "generated_at": "2026-05-03T21:21:59Z",
+  "rows": [
+    {
+      "capability": "target lifecycle",
+      "canonical_owner_repo": "Y-star-gov",
+      "current_implementation_repo": "ystar-bridge-labs",
+      "duplicate_implementations": "E11 target_lifecycle_router plus E14 target batch",
+      "conflict_risk": "high",
+      "backflow_priority": "P0",
+      "tests": "bridge-labs tests present; Y-star-gov profile missing",
+      "recommended_next_action": "Backflow target lifecycle state machine and owner-operated contact gating."
+    },
+    {
+      "capability": "evidence/signal",
+      "canonical_owner_repo": "Y-star-gov",
+      "current_implementation_repo": "ystar-bridge-labs",
+      "duplicate_implementations": "E11 evidence_signal_router, E13/E13R evidence records",
+      "conflict_risk": "high",
+      "backflow_priority": "P0",
+      "tests": "bridge-labs tests present; CIEU profile missing",
+      "recommended_next_action": "Canonicalize public evidence vs validation feedback vs paid signal."
+    },
+    {
+      "capability": "action authorization",
+      "canonical_owner_repo": "Y-star-gov + gov-mcp",
+      "current_implementation_repo": "ystar-bridge-labs + gov-mcp",
+      "duplicate_implementations": "E11 action_authorization_router overlaps gov_company_action_preflight",
+      "conflict_risk": "critical",
+      "backflow_priority": "P0",
+      "tests": "tests exist in both repos",
+      "recommended_next_action": "Make gov-mcp gateway call Y-star-gov company-runtime decisions for E14/E15."
+    },
+    {
+      "capability": "learning writeback",
+      "canonical_owner_repo": "Y-star-gov",
+      "current_implementation_repo": "ystar-bridge-labs",
+      "duplicate_implementations": "E11 learning_writeback_router mirrors CIEU brain/writeback rules",
+      "conflict_risk": "high",
+      "backflow_priority": "P0",
+      "tests": "Y-star-gov CIEU tests and bridge-labs router tests",
+      "recommended_next_action": "Backflow commercial learning eligibility into CIEU delta schema."
+    },
+    {
+      "capability": "closure status",
+      "canonical_owner_repo": "Y-star-gov",
+      "current_implementation_repo": "ystar-bridge-labs",
+      "duplicate_implementations": "E11 closure_status_router and CZL reports",
+      "conflict_risk": "medium",
+      "backflow_priority": "P1",
+      "tests": "bridge-labs tests; Y-star-gov CZL tests",
+      "recommended_next_action": "Formalize repository/capability/validation/paid-signal closure distinctions."
+    },
+    {
+      "capability": "counterfactual",
+      "canonical_owner_repo": "Y-star-gov",
+      "current_implementation_repo": "ystar-bridge-labs",
+      "duplicate_implementations": "E11 counterfactual_router plus Y-star-gov counterfactual_engine",
+      "conflict_risk": "medium",
+      "backflow_priority": "P1",
+      "tests": "tests exist; profiles differ",
+      "recommended_next_action": "Use Y-star-gov counterfactual protocol as canonical source."
+    },
+    {
+      "capability": "approval record",
+      "canonical_owner_repo": "Y-star-gov",
+      "current_implementation_repo": "ystar-bridge-labs",
+      "duplicate_implementations": "E12/E14 approval request files and company_runtime escalation contracts",
+      "conflict_risk": "high",
+      "backflow_priority": "P0",
+      "tests": "company runtime tests; E14 tests",
+      "recommended_next_action": "Promote owner validation approval packet into Y-star-gov approval record profile."
+    },
+    {
+      "capability": "feedback event",
+      "canonical_owner_repo": "Y-star-gov",
+      "current_implementation_repo": "ystar-bridge-labs",
+      "duplicate_implementations": "E12/E14 feedback templates not yet canonical CIEU events",
+      "conflict_risk": "high",
+      "backflow_priority": "P0",
+      "tests": "bridge-labs tests present",
+      "recommended_next_action": "Define feedback event to CIEU prediction-delta eligibility."
+    },
+    {
+      "capability": "action ledger",
+      "canonical_owner_repo": "Y-star-gov + gov-mcp",
+      "current_implementation_repo": "ystar-bridge-labs",
+      "duplicate_implementations": "E14 action ledger template",
+      "conflict_risk": "high",
+      "backflow_priority": "P0",
+      "tests": "bridge-labs tests present",
+      "recommended_next_action": "Create canonical action ledger validator and MCP preflight/read model."
+    },
+    {
+      "capability": "host delivery",
+      "canonical_owner_repo": "ystar-bridge-labs",
+      "current_implementation_repo": "ystar-bridge-labs",
+      "duplicate_implementations": "E12T host_delivery_runner",
+      "conflict_risk": "low",
+      "backflow_priority": "P1",
+      "tests": "repository delivery tests",
+      "recommended_next_action": "Keep bridge-labs owner; optionally expose no-go status to gov-mcp."
+    },
+    {
+      "capability": "MCP execution",
+      "canonical_owner_repo": "gov-mcp",
+      "current_implementation_repo": "gov-mcp + bridge-labs adapters",
+      "duplicate_implementations": "gov_mcp router/server/company tools",
+      "conflict_risk": "medium",
+      "backflow_priority": "P0",
+      "tests": "gov-mcp tests present",
+      "recommended_next_action": "Add commercial validation preflight tools; no external execution without owner approval."
+    },
+    {
+      "capability": "CIEU residual",
+      "canonical_owner_repo": "Y-star-gov",
+      "current_implementation_repo": "Y-star-gov + bridge-labs reports",
+      "duplicate_implementations": "CIEU validators plus CZL residual reports",
+      "conflict_risk": "medium",
+      "backflow_priority": "P1",
+      "tests": "Y-star-gov CIEU tests",
+      "recommended_next_action": "Map commercial CZL residuals to prediction delta profile."
+    },
+    {
+      "capability": "obligation registration",
+      "canonical_owner_repo": "Y-star-gov",
+      "current_implementation_repo": "Y-star-gov with bridge-labs no-auto receipts",
+      "duplicate_implementations": "Y-star-gov obligation engine; bridge-labs forbids auto-registration",
+      "conflict_risk": "medium",
+      "backflow_priority": "P1",
+      "tests": "Y-star-gov obligation tests",
+      "recommended_next_action": "Specify market validation no-auto-obligation rule."
+    },
+    {
+      "capability": "release/live boundary",
+      "canonical_owner_repo": "Y-star-gov",
+      "current_implementation_repo": "bridge-labs + ystar-company",
+      "duplicate_implementations": "bridge-labs delivery CZL; ystar-company live/no-go artifacts",
+      "conflict_risk": "high",
+      "backflow_priority": "P1",
+      "tests": "partial tests in ystar-company/Y-star-gov",
+      "recommended_next_action": "Backflow live boundary/no-go standard from incubator and bridge-labs."
+    },
+    {
+      "capability": "commercial validation",
+      "canonical_owner_repo": "ystar-bridge-labs",
+      "current_implementation_repo": "ystar-bridge-labs",
+      "duplicate_implementations": "E10-E14 commercial loop",
+      "conflict_risk": "medium",
+      "backflow_priority": "P0",
+      "tests": "E-series tests present",
+      "recommended_next_action": "Keep commercial runtime in bridge-labs while formalizing governance profiles upstream."
+    }
+  ]
+}

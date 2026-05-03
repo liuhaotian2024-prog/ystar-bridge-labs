@@ -27,12 +27,25 @@ def _current_head(repo_root: Path) -> str:
     return result.stdout.strip()
 
 
+def _contains_commit(repo_root: Path, ancestor: str, head: str) -> bool:
+    if not ancestor or not head:
+        return False
+    result = subprocess.run(
+        ["git", "merge-base", "--is-ancestor", ancestor, head],
+        cwd=repo_root,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    return result.returncode == 0
+
+
 def validate_e14_entry(repo_root: Path, expected_e13r_head: str = E13R_REMOTE_CLOSED_HEAD) -> E14EntryDecision:
     readiness_path = repo_root / "operations" / "external_validation" / "e13r_paid_signal_readiness_report.json"
     readiness = json.loads(readiness_path.read_text(encoding="utf-8")) if readiness_path.exists() else {}
     paid_ready = readiness.get("classification") == "paid_signal_ready" and readiness.get("paid_signal_readiness_rt1") == 0
     head = _current_head(repo_root)
-    repo_rt1 = 0 if head == expected_e13r_head or head.startswith(expected_e13r_head[:8]) else 1
+    repo_rt1 = 0 if head.startswith(expected_e13r_head[:8]) or _contains_commit(repo_root, expected_e13r_head, head) else 1
     blocked = ""
     if not paid_ready:
         blocked = "E13R_paid_signal_ready_required"

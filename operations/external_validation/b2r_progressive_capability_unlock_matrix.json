@@ -1,0 +1,663 @@
+{
+  "levels": [
+    {
+      "level": 0,
+      "name": "internal_only",
+      "capability_domains": [],
+      "eligibility_criteria": [
+        "repo/test/report only"
+      ],
+      "required_evidence": [
+        "local evidence"
+      ],
+      "required_envelope": "none",
+      "y_gov_validation_requirement": "standard CZL",
+      "gov_mcp_execution_requirement": "none",
+      "audit_requirement": "git/test audit",
+      "rollback_requirement": "git revert via normal review",
+      "stop_conditions": [
+        "dirty repo",
+        "test failure"
+      ],
+      "owner_role": "not a micro-operator"
+    },
+    {
+      "level": 1,
+      "name": "public_read_only",
+      "capability_domains": [
+        "public_readonly_observation"
+      ],
+      "eligibility_criteria": [
+        "public source",
+        "no login",
+        "no side effect"
+      ],
+      "required_evidence": [
+        "source receipts"
+      ],
+      "required_envelope": "public source policy",
+      "y_gov_validation_requirement": "public-only preflight",
+      "gov_mcp_execution_requirement": "optional read adapter",
+      "audit_requirement": "evidence receipts",
+      "rollback_requirement": "remove invalid evidence",
+      "stop_conditions": [
+        "login required",
+        "private data"
+      ],
+      "owner_role": "sets research boundary"
+    },
+    {
+      "level": 2,
+      "name": "authenticated_read_only",
+      "capability_domains": [
+        "authenticated_readonly_observation"
+      ],
+      "eligibility_criteria": [
+        "valid credential vault ref",
+        "readonly scope"
+      ],
+      "required_evidence": [
+        "session ledger"
+      ],
+      "required_envelope": "authenticated session envelope",
+      "y_gov_validation_requirement": "session capability validation",
+      "gov_mcp_execution_requirement": "session open/read/deny contract",
+      "audit_requirement": "session action ledger",
+      "rollback_requirement": "logout/session cleanup",
+      "stop_conditions": [
+        "credential missing",
+        "MFA required",
+        "write scope"
+      ],
+      "owner_role": "approves account constitution"
+    },
+    {
+      "level": 3,
+      "name": "authenticated_draft_or_form_fill",
+      "capability_domains": [
+        "authenticated_draft_creation",
+        "form_fill_draft",
+        "publication_draft"
+      ],
+      "eligibility_criteria": [
+        "draft-only",
+        "no submit",
+        "claim boundary"
+      ],
+      "required_evidence": [
+        "draft hash"
+      ],
+      "required_envelope": "draft/action envelope",
+      "y_gov_validation_requirement": "draft-only validation",
+      "gov_mcp_execution_requirement": "draft create/edit contract",
+      "audit_requirement": "draft ledger",
+      "rollback_requirement": "delete/revert draft",
+      "stop_conditions": [
+        "submit required",
+        "public visibility"
+      ],
+      "owner_role": "approves channel constitution"
+    },
+    {
+      "level": 4,
+      "name": "low_risk_submit_or_publication",
+      "capability_domains": [
+        "low_risk_form_submission",
+        "governed_publication",
+        "low_risk_account_creation"
+      ],
+      "eligibility_criteria": [
+        "approved envelope",
+        "low-risk category",
+        "rollback plan"
+      ],
+      "required_evidence": [
+        "action receipts"
+      ],
+      "required_envelope": "low-risk action envelope",
+      "y_gov_validation_requirement": "action packet validation",
+      "gov_mcp_execution_requirement": "execute/deny contract",
+      "audit_requirement": "action ledger",
+      "rollback_requirement": "withdraw/takedown/close",
+      "stop_conditions": [
+        "high claim",
+        "regulated form",
+        "payment required"
+      ],
+      "owner_role": "hard exceptions only"
+    },
+    {
+      "level": 5,
+      "name": "external_validation_messaging",
+      "capability_domains": [
+        "external_validation_message",
+        "feedback_capture"
+      ],
+      "eligibility_criteria": [
+        "AI transparency",
+        "max sends",
+        "suppression",
+        "feedback capture"
+      ],
+      "required_evidence": [
+        "message/action/feedback ledger"
+      ],
+      "required_envelope": "validation messaging envelope",
+      "y_gov_validation_requirement": "target/draft/stop validation",
+      "gov_mcp_execution_requirement": "send-or-deny contract",
+      "audit_requirement": "action and feedback ledger",
+      "rollback_requirement": "suppression/stop",
+      "stop_conditions": [
+        "opt-out",
+        "negative feedback",
+        "complaint"
+      ],
+      "owner_role": "sets validation constitution"
+    },
+    {
+      "level": 6,
+      "name": "financial_legal_customer_system_core_writeback_hard_gate",
+      "capability_domains": [
+        "payment_or_contract_gate",
+        "core_writeback_gate"
+      ],
+      "eligibility_criteria": [
+        "explicit owner approval"
+      ],
+      "required_evidence": [
+        "approval and review refs"
+      ],
+      "required_envelope": "hard-gate envelope",
+      "y_gov_validation_requirement": "deny/escalate",
+      "gov_mcp_execution_requirement": "deny without owner approval",
+      "audit_requirement": "escalation ledger",
+      "rollback_requirement": "no autonomous rollback because no action",
+      "stop_conditions": [
+        "payment",
+        "contract",
+        "legal",
+        "customer system",
+        "core writeback"
+      ],
+      "owner_role": "explicit hard approval required"
+    }
+  ],
+  "domains": [
+    {
+      "domain_id": "public_readonly_observation",
+      "level": 1,
+      "allowed_actions": [
+        "read_public_page",
+        "read_public_doc",
+        "read_public_pricing",
+        "read_public_forum"
+      ],
+      "denied_actions": [
+        "login",
+        "submit",
+        "message",
+        "publish",
+        "payment"
+      ],
+      "required_envelope_fields": [
+        "source_url",
+        "access_mode",
+        "no_login",
+        "read_only_budget"
+      ],
+      "pre_u_action_packet_fields": [
+        "intent_id",
+        "y_star",
+        "domain_id",
+        "source_policy",
+        "residual_hypothesis"
+      ],
+      "y_gov_validation_expectation": "Y*gov verifies public-only, no-login, no-contact, no-submit boundaries.",
+      "gov_mcp_execution_contract": "gov-mcp may fetch/read only allowlisted public sources and returns receipts.",
+      "action_ledger_requirement": "receipt ledger required for collected evidence; no action ledger because no external action is executed.",
+      "cieu_residual_semantics": "Residual compares evidence found vs evidence needed; public evidence cannot become validation feedback.",
+      "rollback_or_takedown_requirement": "Not applicable except source removal from report if invalid.",
+      "escalation_triggers": [
+        "login_required",
+        "paywall",
+        "robots_or_access_restriction",
+        "private_data_detected"
+      ],
+      "owner_role": "owner sets research boundary, not per-page operation."
+    },
+    {
+      "domain_id": "authenticated_readonly_observation",
+      "level": 2,
+      "allowed_actions": [
+        "login_readonly",
+        "view_dashboard",
+        "view_authorized_inbox_state"
+      ],
+      "denied_actions": [
+        "modify",
+        "draft_submit",
+        "send",
+        "publish",
+        "payment"
+      ],
+      "required_envelope_fields": [
+        "credential_vault_ref",
+        "account_identity",
+        "allowed_accounts",
+        "session_scope",
+        "session_duration_minutes"
+      ],
+      "pre_u_action_packet_fields": [
+        "intent_id",
+        "y_star",
+        "domain_id",
+        "account_ref",
+        "read_scope",
+        "privacy_boundary"
+      ],
+      "y_gov_validation_expectation": "Y*gov validates authenticated session capability and read-only scope.",
+      "gov_mcp_execution_contract": "gov-mcp opens or denies session through credential-safe adapter; no secret printing.",
+      "action_ledger_requirement": "session action ledger required.",
+      "cieu_residual_semantics": "Residual records whether authorized read-only state answered the mission question.",
+      "rollback_or_takedown_requirement": "Logout/session cleanup required where applicable.",
+      "escalation_triggers": [
+        "credential_missing",
+        "mfa_required",
+        "scope_requests_write",
+        "private_unapproved_data"
+      ],
+      "owner_role": "owner approves constitutional account envelope, not each readonly view."
+    },
+    {
+      "domain_id": "authenticated_draft_creation",
+      "level": 3,
+      "allowed_actions": [
+        "create_draft",
+        "edit_draft",
+        "fill_without_submit"
+      ],
+      "denied_actions": [
+        "submit",
+        "send",
+        "publish_public",
+        "payment"
+      ],
+      "required_envelope_fields": [
+        "credential_vault_ref",
+        "account_identity",
+        "draft_mode",
+        "no_submit",
+        "draft_storage_ref"
+      ],
+      "pre_u_action_packet_fields": [
+        "intent_id",
+        "y_star",
+        "domain_id",
+        "draft_hash",
+        "no_submit_assertion"
+      ],
+      "y_gov_validation_expectation": "Y*gov validates draft-only mode and claim boundaries.",
+      "gov_mcp_execution_contract": "gov-mcp may create/edit drafts but must not submit or publish.",
+      "action_ledger_requirement": "draft ledger required with hash and storage ref.",
+      "cieu_residual_semantics": "Residual tracks draft readiness vs intended external action.",
+      "rollback_or_takedown_requirement": "Draft delete/revert plan required.",
+      "escalation_triggers": [
+        "submit_button_required",
+        "claim_boundary_failure",
+        "unexpected_public_visibility"
+      ],
+      "owner_role": "owner approves account/channel envelope and high-claim exceptions."
+    },
+    {
+      "domain_id": "form_fill_draft",
+      "level": 3,
+      "allowed_actions": [
+        "fill_form_draft",
+        "save_form_draft"
+      ],
+      "denied_actions": [
+        "submit_form",
+        "regulated_submit",
+        "payment"
+      ],
+      "required_envelope_fields": [
+        "form_url",
+        "form_category",
+        "draft_only",
+        "no_submit",
+        "field_manifest"
+      ],
+      "pre_u_action_packet_fields": [
+        "intent_id",
+        "y_star",
+        "domain_id",
+        "form_category",
+        "field_manifest_hash"
+      ],
+      "y_gov_validation_expectation": "Y*gov classifies form category and verifies draft-only status.",
+      "gov_mcp_execution_contract": "gov-mcp may fill/save draft fields where adapter supports no-submit.",
+      "action_ledger_requirement": "form draft ledger required.",
+      "cieu_residual_semantics": "Residual records completion of draft vs safe submit readiness.",
+      "rollback_or_takedown_requirement": "Clear/reset draft plan required.",
+      "escalation_triggers": [
+        "submit_required_to_save",
+        "regulated_field_detected",
+        "identity_or_payment_field_detected"
+      ],
+      "owner_role": "owner handles regulated/financial/legal exceptions only."
+    },
+    {
+      "domain_id": "low_risk_form_submission",
+      "level": 4,
+      "allowed_actions": [
+        "submit_low_risk_interest_form",
+        "submit_commercial_contact_form_under_envelope"
+      ],
+      "denied_actions": [
+        "financial_submit",
+        "legal_commitment_submit",
+        "regulated_submit",
+        "government_form"
+      ],
+      "required_envelope_fields": [
+        "form_url",
+        "form_category",
+        "approved_envelope_id",
+        "y_gov_validation_ref",
+        "gov_mcp_contract_ref",
+        "message_hash"
+      ],
+      "pre_u_action_packet_fields": [
+        "intent_id",
+        "y_star",
+        "domain_id",
+        "form_category",
+        "submit_rationale",
+        "stop_conditions"
+      ],
+      "y_gov_validation_expectation": "Y*gov validates low-risk form category, envelope, message hash, and stop conditions.",
+      "gov_mcp_execution_contract": "gov-mcp executes submit or denies with normalized receipt.",
+      "action_ledger_requirement": "external action ledger required.",
+      "cieu_residual_semantics": "Residual tracks submitted action outcome and follow-up feedback requirement.",
+      "rollback_or_takedown_requirement": "Withdrawal/correction path required where available.",
+      "escalation_triggers": [
+        "regulated_form",
+        "financial_or_legal_field",
+        "identity_field",
+        "budget_exceeded",
+        "out_of_envelope"
+      ],
+      "owner_role": "owner is not required for low-risk envelope-compliant submit; hard gate for legal/financial/regulated."
+    },
+    {
+      "domain_id": "publication_draft",
+      "level": 3,
+      "allowed_actions": [
+        "create_publication_draft",
+        "private_preview"
+      ],
+      "denied_actions": [
+        "public_publish",
+        "high_claim_publication",
+        "legal_claim_publication"
+      ],
+      "required_envelope_fields": [
+        "channel_ref",
+        "draft_hash",
+        "publication_mode",
+        "claim_boundary_check"
+      ],
+      "pre_u_action_packet_fields": [
+        "intent_id",
+        "y_star",
+        "domain_id",
+        "draft_hash",
+        "claim_boundary"
+      ],
+      "y_gov_validation_expectation": "Y*gov validates draft/private-preview status and claim boundary.",
+      "gov_mcp_execution_contract": "gov-mcp may create private draft/preview only.",
+      "action_ledger_requirement": "draft ledger required.",
+      "cieu_residual_semantics": "Residual tracks draft clarity and risk reduction.",
+      "rollback_or_takedown_requirement": "Delete/revert draft plan required.",
+      "escalation_triggers": [
+        "public_visibility",
+        "high_claim_detected",
+        "unapproved_channel"
+      ],
+      "owner_role": "owner approves brand constitution and high-claim exceptions."
+    },
+    {
+      "domain_id": "governed_publication",
+      "level": 4,
+      "allowed_actions": [
+        "publish_to_approved_channel",
+        "update_approved_public_content"
+      ],
+      "denied_actions": [
+        "high_claim_publication",
+        "legal_claim_publication",
+        "financial_claim_publication"
+      ],
+      "required_envelope_fields": [
+        "channel_allowlist",
+        "message_hash",
+        "claim_boundary_passed",
+        "frequency_cap",
+        "takedown_plan",
+        "approved_envelope_id"
+      ],
+      "pre_u_action_packet_fields": [
+        "intent_id",
+        "y_star",
+        "domain_id",
+        "publication_claims",
+        "rollback_plan",
+        "frequency_state"
+      ],
+      "y_gov_validation_expectation": "Y*gov validates channel, claims, frequency, transparency, and takedown plan.",
+      "gov_mcp_execution_contract": "gov-mcp publishes or denies and returns publication receipt.",
+      "action_ledger_requirement": "external action ledger required.",
+      "cieu_residual_semantics": "Residual tracks response, correction needs, and claim risk.",
+      "rollback_or_takedown_requirement": "Takedown/update plan required before publish.",
+      "escalation_triggers": [
+        "high_claim",
+        "frequency_cap_exceeded",
+        "missing_takedown_plan",
+        "negative_feedback"
+      ],
+      "owner_role": "owner sets brand/claim constitution; not every approved-channel post."
+    },
+    {
+      "domain_id": "low_risk_account_creation",
+      "level": 4,
+      "allowed_actions": [
+        "create_internal_test_account",
+        "create_vendor_trial_account"
+      ],
+      "denied_actions": [
+        "payment_account",
+        "contract_account",
+        "kyc_account",
+        "customer_identity_account"
+      ],
+      "required_envelope_fields": [
+        "account_category",
+        "identity_binding",
+        "no_payment",
+        "no_contract",
+        "no_kyc",
+        "approved_vendor_envelope"
+      ],
+      "pre_u_action_packet_fields": [
+        "intent_id",
+        "y_star",
+        "domain_id",
+        "account_category",
+        "identity_binding"
+      ],
+      "y_gov_validation_expectation": "Y*gov validates identity binding, cost/legal/KYC absence, and vendor envelope.",
+      "gov_mcp_execution_contract": "gov-mcp creates or denies account and returns receipt; no credential disclosure.",
+      "action_ledger_requirement": "account action ledger required.",
+      "cieu_residual_semantics": "Residual tracks account utility vs lifecycle cleanup burden.",
+      "rollback_or_takedown_requirement": "Close/delete account plan required.",
+      "escalation_triggers": [
+        "payment_required",
+        "contract_required",
+        "kyc_required",
+        "customer_representation_required"
+      ],
+      "owner_role": "owner approves identity/vendor constitution and all payment/legal/KYC cases."
+    },
+    {
+      "domain_id": "external_validation_message",
+      "level": 5,
+      "allowed_actions": [
+        "send_ai_transparent_validation_message"
+      ],
+      "denied_actions": [
+        "bulk_outreach",
+        "nontransparent_message",
+        "automated_followup",
+        "tracking_link_without_approval"
+      ],
+      "required_envelope_fields": [
+        "approved_envelope_id",
+        "approved_target_class",
+        "draft_family",
+        "max_sends",
+        "ai_transparency",
+        "opt_out_language",
+        "suppression_check"
+      ],
+      "pre_u_action_packet_fields": [
+        "intent_id",
+        "y_star",
+        "domain_id",
+        "target_class",
+        "draft_hash",
+        "stop_conditions"
+      ],
+      "y_gov_validation_expectation": "Y*gov validates envelope, target class, draft family, max sends, transparency, opt-out, and suppression.",
+      "gov_mcp_execution_contract": "gov-mcp sends or denies through approved messaging adapter and returns action receipt.",
+      "action_ledger_requirement": "external action ledger required before feedback/no-response can be counted.",
+      "cieu_residual_semantics": "Residual tracks feedback vs validation question; feedback may become CIEU delta candidate.",
+      "rollback_or_takedown_requirement": "Stop/suppress/takedown where applicable; no automated follow-up unless envelope allows.",
+      "escalation_triggers": [
+        "opt_out",
+        "negative_feedback",
+        "complaint",
+        "budget_exceeded",
+        "target_class_mismatch"
+      ],
+      "owner_role": "owner sets validation constitution; Y*gov governs low-volume envelope-compliant sends."
+    },
+    {
+      "domain_id": "feedback_capture",
+      "level": 5,
+      "allowed_actions": [
+        "record_feedback_event",
+        "classify_feedback_signal"
+      ],
+      "denied_actions": [
+        "invent_feedback",
+        "public_evidence_as_feedback",
+        "core_writeback"
+      ],
+      "required_envelope_fields": [
+        "action_id",
+        "feedback_source",
+        "recorded_by",
+        "feedback_summary",
+        "limitations"
+      ],
+      "pre_u_action_packet_fields": [
+        "intent_id",
+        "y_star",
+        "domain_id",
+        "action_id",
+        "feedback_classification"
+      ],
+      "y_gov_validation_expectation": "Y*gov validates feedback provenance and learning eligibility.",
+      "gov_mcp_execution_contract": "gov-mcp normalizes capture receipt; persistent writes remain gated.",
+      "action_ledger_requirement": "feedback ledger required.",
+      "cieu_residual_semantics": "Residual compares expected feedback signal with actual feedback.",
+      "rollback_or_takedown_requirement": "Correction/deletion path for invalid feedback required.",
+      "escalation_triggers": [
+        "missing_action_id",
+        "invented_feedback",
+        "public_evidence_source",
+        "core_writeback_requested"
+      ],
+      "owner_role": "owner only handles disputed/high-risk feedback interpretation."
+    },
+    {
+      "domain_id": "payment_or_contract_gate",
+      "level": 6,
+      "allowed_actions": [
+        "request_owner_payment_or_contract_approval"
+      ],
+      "denied_actions": [
+        "auto_pay",
+        "auto_collect_payment",
+        "auto_sign_contract",
+        "financial_commitment"
+      ],
+      "required_envelope_fields": [
+        "owner_explicit_approval_id",
+        "legal_or_financial_review_ref"
+      ],
+      "pre_u_action_packet_fields": [
+        "intent_id",
+        "y_star",
+        "domain_id",
+        "hard_gate_reason"
+      ],
+      "y_gov_validation_expectation": "Y*gov must deny automatic execution and escalate owner.",
+      "gov_mcp_execution_contract": "gov-mcp must refuse execution without explicit owner approval.",
+      "action_ledger_requirement": "escalation ledger required; no execution ledger without owner action.",
+      "cieu_residual_semantics": "Residual remains open until owner decision.",
+      "rollback_or_takedown_requirement": "Not applicable; no autonomous execution.",
+      "escalation_triggers": [
+        "payment",
+        "contract",
+        "legal_obligation",
+        "financial_commitment"
+      ],
+      "owner_role": "owner hard approval required."
+    },
+    {
+      "domain_id": "core_writeback_gate",
+      "level": 6,
+      "allowed_actions": [
+        "request_cieu_or_brain_writeback_review"
+      ],
+      "denied_actions": [
+        "auto_core_writeback",
+        "uncurated_brain_writeback",
+        "direct_memory_mutation"
+      ],
+      "required_envelope_fields": [
+        "cieu_delta_ref",
+        "learning_eligibility",
+        "owner_or_governance_promotion_ref"
+      ],
+      "pre_u_action_packet_fields": [
+        "intent_id",
+        "y_star",
+        "domain_id",
+        "learning_candidate_ref"
+      ],
+      "y_gov_validation_expectation": "Y*gov must validate CIEU delta and learning eligibility before any persistent promotion.",
+      "gov_mcp_execution_contract": "gov-mcp must not write core brain/CIEU/memory directly.",
+      "action_ledger_requirement": "learning review ledger required.",
+      "cieu_residual_semantics": "Residual tracks learning candidate vs approved canonical update.",
+      "rollback_or_takedown_requirement": "Rollback requires canonical memory governance.",
+      "escalation_triggers": [
+        "uncurated_writeback",
+        "missing_cieu_delta",
+        "raw_artifact_learning_source"
+      ],
+      "owner_role": "owner or constitutional governance approval required for canonical writeback."
+    }
+  ]
+}

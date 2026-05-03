@@ -1,0 +1,41 @@
+{
+  "contract_id": "c1_gov_mcp_execute_or_deny_contract",
+  "input_packet": "C1ActionIntentPacket + Y*gov decision + constitutional envelope",
+  "decision_modes": [
+    "allow",
+    "deny",
+    "escalate"
+  ],
+  "execution_receipt_fields": [
+    "receipt_id",
+    "action_id",
+    "decision",
+    "executed",
+    "result",
+    "evidence_refs",
+    "rollback_or_takedown_ref"
+  ],
+  "failure_codes": [
+    "PACKET_INVALID",
+    "Y_GOV_DENIED",
+    "Y_GOV_ESCALATED",
+    "OUT_OF_ENVELOPE",
+    "SECRET_OR_CREDENTIAL_DISCLOSURE_BLOCKED",
+    "ROLLBACK_PLAN_MISSING",
+    "EXECUTION_NOT_APPROVED_IN_C1"
+  ],
+  "result_normalization": [
+    "action_id",
+    "domain",
+    "target_class",
+    "channel",
+    "executed",
+    "result_status",
+    "residual_candidate"
+  ],
+  "evidence_capture": "Capture only receipt refs, hashes, timestamps, and non-secret evidence refs.",
+  "rollback_or_takedown_required_where_relevant": true,
+  "no_secret_printing": true,
+  "no_credential_disclosure": true,
+  "executes_action_in_this_milestone": false
+}

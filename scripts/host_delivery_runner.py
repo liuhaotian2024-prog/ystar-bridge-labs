@@ -6,6 +6,7 @@ import fnmatch
 import glob
 import json
 import os
+import shutil
 import shlex
 import subprocess
 from dataclasses import asdict, dataclass, field
@@ -32,6 +33,12 @@ FAILURE_CODES = {
 }
 
 DEFAULT_FORBIDDEN_PATTERNS = [
+    "._*",
+    "**/._*",
+    ".DS_Store",
+    "**/.DS_Store",
+    "__MACOSX/**",
+    "**/__MACOSX/**",
     "**/__pycache__/**",
     "**/*.pyc",
     "*.pyc",
@@ -51,6 +58,15 @@ DEFAULT_FORBIDDEN_PATTERNS = [
     "*.log",
     "**/active-agent*",
     "**/active_agent*",
+]
+
+UNSAFE_GENERATED_METADATA_PATTERNS = [
+    "._*",
+    "**/._*",
+    ".DS_Store",
+    "**/.DS_Store",
+    "__MACOSX/**",
+    "**/__MACOSX/**",
 ]
 
 ALLOWED_VALIDATION_PREFIXES = [
@@ -234,8 +250,26 @@ def safe_cleanup_bytecode(repo_root: Path) -> None:
         run(repo_root, ["git", "restore", "--", *tracked_paths], timeout=60)
 
 
+def safe_cleanup_generated_metadata(repo_root: Path) -> List[str]:
+    """Remove generated macOS metadata files that must never enter git."""
+    removed: List[str] = []
+    for path in list(repo_root.rglob("._*")) + list(repo_root.rglob(".DS_Store")):
+        if ".git" in path.parts:
+            continue
+        if path.is_file() or path.is_symlink():
+            removed.append(str(path.relative_to(repo_root)))
+            path.unlink()
+    for directory in sorted(
+        [path for path in repo_root.rglob("__MACOSX") if path.is_dir() and ".git" not in path.parts],
+        reverse=True,
+    ):
+        removed.append(str(directory.relative_to(repo_root)))
+        shutil.rmtree(directory)
+    return removed
+
+
 def changed_paths(repo_root: Path) -> List[str]:
-    status = run(repo_root, ["git", "status", "--porcelain"], timeout=30)
+    status = run(repo_root, ["git", "status", "--porcelain=v1", "-uall"], timeout=30)
     return parse_status_porcelain(status.stdout)
 
 
@@ -305,7 +339,7 @@ def report_text(result: HostDeliveryResult) -> str:
         [
             "",
             "## CZL",
-            "- Y*: host-side runner validates request/repo/branch/base/dirty-set, runs allowlisted tests, commits only allowed files, pushes, and confirms remote SHA.",
+            "- Y*: host-side runner validates request/repo/branch/base/dirty-set, cleans unsafe AppleDouble metadata, runs allowlisted tests, commits only allowed files, pushes, and confirms remote SHA.",
             f"- Xt: branch={result.branch}, base_head={result.base_head}, remote_head={result.remote_head or 'none'}",
             "- U: request validation, repo validation, validation commands, git add/commit/push/ls-remote confirmation.",
             f"- Yt+1: status={result.status}, committed={result.committed}, pushed={result.pushed}, remote_confirmed={result.remote_confirmed}",
@@ -354,6 +388,7 @@ def execute_delivery(request_path: Path) -> HostDeliveryResult:
         result.errors = ["repo_root_is_not_git_repo"]
         return result
 
+    safe_cleanup_generated_metadata(repo_root)
     if request.get("cleanup_generated_bytecode") is True:
         safe_cleanup_bytecode(repo_root)
 
@@ -372,7 +407,7 @@ def execute_delivery(request_path: Path) -> HostDeliveryResult:
         write_report(repo_root, request, result)
         return result
 
-    forbidden_patterns = list(request.get("forbidden_patterns") or DEFAULT_FORBIDDEN_PATTERNS)
+    forbidden_patterns = list(dict.fromkeys(DEFAULT_FORBIDDEN_PATTERNS + list(request.get("forbidden_patterns") or [])))
     allowed_files = list(request["allowed_files"])
     ignored_dirty_patterns = list(request.get("ignored_dirty_patterns") or [])
     dirty_errors = reject_unexpected_dirty(changed_paths(repo_root), allowed_files, forbidden_patterns, ignored_dirty_patterns)
@@ -394,6 +429,7 @@ def execute_delivery(request_path: Path) -> HostDeliveryResult:
             write_report(repo_root, request, result)
             return result
 
+    safe_cleanup_generated_metadata(repo_root)
     if request.get("cleanup_generated_bytecode") is True:
         safe_cleanup_bytecode(repo_root)
     dirty_errors = reject_unexpected_dirty(changed_paths(repo_root), allowed_files, forbidden_patterns, ignored_dirty_patterns)

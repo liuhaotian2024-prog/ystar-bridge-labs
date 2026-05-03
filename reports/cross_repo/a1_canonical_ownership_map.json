@@ -1,0 +1,75 @@
+{
+  "generated_at": "2026-05-03T21:21:59Z",
+  "verified_boundary": "Evidence-based from repository source/docs/tests scans; not inferred from recent E-series memory.",
+  "repos": {
+    "Y-star-gov": {
+      "canonical_owner_of": [
+        "normative governance kernel",
+        "deterministic validators",
+        "Pre-U packet standards",
+        "CIEU prediction-delta and residual standards",
+        "approval validity standards",
+        "learning writeback eligibility standards",
+        "release/live boundary standards"
+      ],
+      "evidence": [
+        "ystar/governance/pre_u_packet_validator.py",
+        "ystar/governance/cieu_prediction_delta.py",
+        "ystar/governance/residual_loop_engine.py",
+        "ystar/domains/company_runtime/company_runtime_policy.py",
+        "tests/governance/test_pre_u_packet_validator.py"
+      ]
+    },
+    "gov-mcp": {
+      "canonical_owner_of": [
+        "governed tool execution gateway",
+        "MCP preflight",
+        "tool allowlist and denial envelope",
+        "external action execution interface",
+        "execution result normalization"
+      ],
+      "evidence": [
+        "gov_mcp/server.py",
+        "gov_mcp/router.py",
+        "gov_mcp/company_runtime_tools.py",
+        "gov_mcp/exec_whitelist.yaml",
+        "docs/PROTOCOL.md"
+      ]
+    },
+    "ystar-bridge-labs": {
+      "canonical_owner_of": [
+        "Aiden CEO runtime",
+        "commercial validation loop",
+        "Mission Command",
+        "offer, target, evidence, owner packet generation",
+        "host-side delivery bridge",
+        "owner-operated validation prep"
+      ],
+      "evidence": [
+        "office/mission_command/e14_owner_approval_packet.py",
+        "office/mission_command/evidence_signal_router.py",
+        "scripts/host_delivery_runner.py",
+        "operations/external_validation/e14_owner_approval_packet.request.json"
+      ]
+    },
+    "ystar-company": {
+      "canonical_owner_of": [
+        "historical incubator artifacts",
+        "experimental runtimes",
+        "patterns to backflow or archive after review"
+      ],
+      "not_final_source_of_truth_for": [
+        "live governance standards",
+        "MCP execution boundary",
+        "commercial validation approvals"
+      ],
+      "evidence": [
+        "l8_first_cash_path_operating_loop/",
+        "l9_meta_development_opportunity_runtime/",
+        "l10_delegated_live_meta_development_runtime/",
+        "tests/labs_live_boundary/",
+        "controlled_* evidence and no-action receipts"
+      ]
+    }
+  }
+}

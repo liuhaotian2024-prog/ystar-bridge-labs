@@ -1,0 +1,19 @@
+{
+  "template": {
+    "feedback_event_id": "OWNER_OR_GOV_MCP_TO_FILL_AFTER_FEEDBACK",
+    "action_id": "REQUIRED",
+    "feedback_source": "reply|form_response|publication_response|owner_recorded",
+    "feedback_type": "interested|asks_price|asks_followup|describes_buyer_pain|rejects_no_urgency|rejects_price|opt_out|complaint|no_response_after_valid_action",
+    "buyer_pain": "",
+    "urgency": "",
+    "budget": "",
+    "trust": "",
+    "objection": "",
+    "next_step": "",
+    "paid_signal_candidate": false,
+    "limitations": "",
+    "recorded_by": "REQUIRED",
+    "recorded_at": "REQUIRED"
+  },
+  "public_evidence_is_not_feedback": true
+}

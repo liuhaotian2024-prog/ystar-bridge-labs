@@ -1,0 +1,20 @@
+{
+  "classifications": [
+    "blocked_no_envelope",
+    "denied_by_Y_gov",
+    "denied_by_gov_mcp",
+    "approved_not_executed",
+    "executed_no_feedback_yet",
+    "no_response_after_valid_action",
+    "weak_positive",
+    "strong_positive",
+    "negative",
+    "paid_signal_candidate",
+    "invalid_feedback"
+  ],
+  "examples": {
+    "blocked_no_envelope": "blocked_no_envelope",
+    "approved_not_executed": "approved_not_executed",
+    "paid_signal_candidate": "paid_signal_candidate"
+  }
+}

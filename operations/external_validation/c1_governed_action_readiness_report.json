@@ -1,0 +1,36 @@
+{
+  "status": "ready_package_not_live_execution",
+  "most_ready_low_risk_action": "external_validation_message",
+  "first_capability_domain_to_test": "external_validation_message",
+  "blocked_actions": [
+    "payment",
+    "contract",
+    "legal_obligation",
+    "financial_commitment",
+    "customer_system_access",
+    "regulated_government_tax_immigration_identity_forms",
+    "credential_disclosure",
+    "core_brain_cieu_memory_writeback",
+    "out_of_envelope_action"
+  ],
+  "required_owner_approval": "approve C1 constitutional envelope, not each micro-action",
+  "what_happens_after_approval": [
+    "Y*gov validates action packet against envelope",
+    "gov-mcp executes or denies",
+    "action ledger records receipt",
+    "feedback event captures response or no-response after valid action",
+    "CIEU/residual candidate is produced"
+  ],
+  "still_not_allowed": [
+    "payment",
+    "contract",
+    "legal obligation",
+    "financial commitment",
+    "customer system access",
+    "regulated forms",
+    "credential disclosure",
+    "core writeback",
+    "out-of-envelope action"
+  ],
+  "c1_real_action_cycle_allowed_now": false
+}

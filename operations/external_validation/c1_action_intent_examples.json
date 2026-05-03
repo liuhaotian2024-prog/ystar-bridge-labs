@@ -1,0 +1,76 @@
+{
+  "examples": [
+    {
+      "intent_id": "c1_intent_external_validation_message_001",
+      "y_star": "first_governed_low_risk_external_action_cycle_ready_without_owner_as_operator",
+      "x_t": "AB2 runtime contracts exist; no live external action has been approved or executed.",
+      "proposed_u": "Send one AI-transparent validation message within envelope after approval.",
+      "target_class": "ai_consultant_agency",
+      "channel": "approved_manual_or_governed_messaging_adapter",
+      "risk_tier": "Tier 4/5 governed low-volume external validation",
+      "capability_domain": "external_validation_message",
+      "required_envelope": "c1_owner_constitutional_envelope_request",
+      "y_gov_validation_expectation": "Y*gov validates Pre-U/action packet, target class, capability domain, envelope limits, residual semantics, and hard gates.",
+      "gov_mcp_execution_expectation": "gov-mcp returns allow/deny/escalate and execution receipt; no secret printing or credential disclosure.",
+      "action_ledger_schema_ref": "operations/external_validation/c1_action_ledger.template.json",
+      "cieu_residual_semantics": "CIEU residual compares intended governed action with actual gov-mcp receipt and feedback/no-feedback state.",
+      "feedback_capture_requirement": "Feedback event is required before validation learning or E15/C2 paid-signal evaluation.",
+      "stop_conditions": [
+        "opt_out",
+        "negative_feedback",
+        "complaint",
+        "budget_exceeded",
+        "target_class_mismatch"
+      ],
+      "live_execution_in_this_milestone": false
+    },
+    {
+      "intent_id": "c1_intent_low_risk_contact_form_001",
+      "y_star": "first_governed_low_risk_external_action_cycle_ready_without_owner_as_operator",
+      "x_t": "AB2 runtime contracts exist; no live external action has been approved or executed.",
+      "proposed_u": "Submit one low-risk commercial contact form under envelope after approval.",
+      "target_class": "ai_heavy_team_with_agent_workflow_bottleneck",
+      "channel": "approved_public_contact_form",
+      "risk_tier": "Tier 4 low-risk form submission",
+      "capability_domain": "low_risk_form_submission",
+      "required_envelope": "c1_owner_constitutional_envelope_request",
+      "y_gov_validation_expectation": "Y*gov validates Pre-U/action packet, target class, capability domain, envelope limits, residual semantics, and hard gates.",
+      "gov_mcp_execution_expectation": "gov-mcp returns allow/deny/escalate and execution receipt; no secret printing or credential disclosure.",
+      "action_ledger_schema_ref": "operations/external_validation/c1_action_ledger.template.json",
+      "cieu_residual_semantics": "CIEU residual compares intended governed action with actual gov-mcp receipt and feedback/no-feedback state.",
+      "feedback_capture_requirement": "Feedback event is required before validation learning or E15/C2 paid-signal evaluation.",
+      "stop_conditions": [
+        "opt_out",
+        "negative_feedback",
+        "complaint",
+        "budget_exceeded",
+        "target_class_mismatch"
+      ],
+      "live_execution_in_this_milestone": false
+    },
+    {
+      "intent_id": "c1_intent_publication_private_preview_001",
+      "y_star": "first_governed_low_risk_external_action_cycle_ready_without_owner_as_operator",
+      "x_t": "AB2 runtime contracts exist; no live external action has been approved or executed.",
+      "proposed_u": "Create governed publication draft/private preview; no public publish in this milestone.",
+      "target_class": "public_audience_preview",
+      "channel": "approved_private_preview_channel",
+      "risk_tier": "Tier 3 draft/private preview",
+      "capability_domain": "publication_draft",
+      "required_envelope": "c1_owner_constitutional_envelope_request",
+      "y_gov_validation_expectation": "Y*gov validates Pre-U/action packet, target class, capability domain, envelope limits, residual semantics, and hard gates.",
+      "gov_mcp_execution_expectation": "gov-mcp returns allow/deny/escalate and execution receipt; no secret printing or credential disclosure.",
+      "action_ledger_schema_ref": "operations/external_validation/c1_action_ledger.template.json",
+      "cieu_residual_semantics": "CIEU residual compares intended governed action with actual gov-mcp receipt and feedback/no-feedback state.",
+      "feedback_capture_requirement": "Feedback event is required before validation learning or E15/C2 paid-signal evaluation.",
+      "stop_conditions": [
+        "opt_out",
+        "negative_feedback",
+        "complaint",
+        "budget_exceeded",
+        "target_class_mismatch"
+      ],
+      "live_execution_in_this_milestone": false
+    }
+  ]
+}

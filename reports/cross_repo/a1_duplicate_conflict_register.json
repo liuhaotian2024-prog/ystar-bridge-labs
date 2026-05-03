@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-05-03T21:21:59Z",
+  "conflicts": [
+    {
+      "conflict_id": "A1-C01",
+      "title": "bridge-labs target lifecycle vs canonical approval lifecycle",
+      "severity": "high",
+      "evidence": "E14 target candidates are request-only but local routers own no-contact semantics.",
+      "risk": "Duplicate authority can let commercial runtime bypass canonical governance or overclaim closure.",
+      "recommended_next_action": "Backflow target lifecycle profile to Y-star-gov and expose gov-mcp preflight."
+    },
+    {
+      "conflict_id": "A1-C02",
+      "title": "public evidence vs validation feedback vs paid signal",
+      "severity": "high",
+      "evidence": "E13/E13R public evidence supports readiness only; CIEU learning rules live in Y-star-gov.",
+      "risk": "Duplicate authority can let commercial runtime bypass canonical governance or overclaim closure.",
+      "recommended_next_action": "Canonicalize signal taxonomy and CIEU eligibility."
+    },
+    {
+      "conflict_id": "A1-C03",
+      "title": "action authorization split between bridge-labs router and gov-mcp gateway",
+      "severity": "critical",
+      "evidence": "gov-mcp has company_runtime_tools but E14 uses local packet checks.",
+      "risk": "Duplicate authority can let commercial runtime bypass canonical governance or overclaim closure.",
+      "recommended_next_action": "Add gov-mcp commercial validation tools backed by Y-star-gov company runtime."
+    },
+    {
+      "conflict_id": "A1-C04",
+      "title": "report-only learning vs persistent brain/CIEU writeback",
+      "severity": "high",
+      "evidence": "Bridge-labs blocks direct writeback; Y-star-gov has CIEU/brain learning modules.",
+      "risk": "Duplicate authority can let commercial runtime bypass canonical governance or overclaim closure.",
+      "recommended_next_action": "Define commercial feedback-to-CIEU prediction delta profile."
+    },
+    {
+      "conflict_id": "A1-C05",
+      "title": "repository delivery closure vs capability/market closure",
+      "severity": "medium",
+      "evidence": "E12T/E13/E14 correctly separate remote SHA from market validation but the standard is local.",
+      "risk": "Duplicate authority can let commercial runtime bypass canonical governance or overclaim closure.",
+      "recommended_next_action": "Formalize closure status semantics in Y-star-gov CZL profile."
+    },
+    {
+      "conflict_id": "A1-C06",
+      "title": "ystar-company historical live/commercial runtime drift",
+      "severity": "medium",
+      "evidence": "ystar-company has rich L8/L9/L10 and controlled_* artifacts plus dirty runtime state.",
+      "risk": "Duplicate authority can let commercial runtime bypass canonical governance or overclaim closure.",
+      "recommended_next_action": "Triage incubator assets: absorb patterns, archive runtime drift, avoid source-of-truth status."
+    }
+  ]
+}

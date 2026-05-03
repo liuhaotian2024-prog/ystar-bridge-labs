@@ -1,0 +1,47 @@
+{
+  "envelope_id": "c1_owner_constitutional_envelope_request",
+  "status": "request_only_not_approval",
+  "validity_days": 7,
+  "max_total_actions": 3,
+  "max_actions_per_day": 1,
+  "approved_target_classes": [
+    "ai_consultant_agency",
+    "ai_heavy_team_with_agent_workflow_bottleneck"
+  ],
+  "approved_offer_families": [
+    "48h AI Agent Implementation Readiness Review"
+  ],
+  "approved_capability_domains": [
+    "external_validation_message",
+    "low_risk_form_submission",
+    "publication_draft",
+    "authenticated_draft_creation"
+  ],
+  "ai_transparency_required": true,
+  "opt_out_required": true,
+  "no_follow_up_unless_approved": true,
+  "no_attachment_unless_approved": true,
+  "no_tracking_link_unless_approved": true,
+  "action_ledger_required": true,
+  "feedback_event_required": true,
+  "stop_conditions": [
+    "opt_out",
+    "negative_feedback",
+    "complaint",
+    "budget_exceeded",
+    "target_class_mismatch"
+  ],
+  "hard_owner_gates": [
+    "payment",
+    "contract",
+    "legal_obligation",
+    "financial_commitment",
+    "customer_system_access",
+    "regulated_government_tax_immigration_identity_forms",
+    "credential_disclosure",
+    "core_brain_cieu_memory_writeback",
+    "out_of_envelope_action"
+  ],
+  "owner_role": "constitutional_boundary_setter_not_operator",
+  "live_execution_approved": false
+}

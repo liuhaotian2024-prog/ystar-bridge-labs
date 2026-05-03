@@ -1,0 +1,19 @@
+{
+  "template": {
+    "action_id": "OWNER_OR_GOV_MCP_TO_FILL_AFTER_EXECUTION",
+    "envelope_id": "c1_owner_constitutional_envelope_request",
+    "y_gov_decision_id": "REQUIRED",
+    "gov_mcp_receipt_id": "REQUIRED",
+    "target_id_or_class": "REQUIRED",
+    "action_type": "external_validation_message|low_risk_contact_form_submission|publication_draft_or_private_preview",
+    "channel": "REQUIRED",
+    "draft_hash": "REQUIRED_IF_MESSAGE_OR_PUBLICATION",
+    "executed_by": "gov-mcp governed adapter or owner if explicitly chosen",
+    "executed_at": "REQUIRED_AFTER_EXECUTION",
+    "result": "sent|submitted|draft_created|denied|escalated|blocked",
+    "stop_condition_triggered": "",
+    "evidence_refs": [],
+    "residual_candidate": "expected_vs_actual_outcome_summary"
+  },
+  "no_placeholder_execution": true
+}

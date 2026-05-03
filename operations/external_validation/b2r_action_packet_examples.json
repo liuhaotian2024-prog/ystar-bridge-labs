@@ -1,0 +1,264 @@
+{
+  "examples": [
+    {
+      "intent_id": "b2r_intent_public_readonly_observation",
+      "y_star": "governed_progressive_external_action_with_minimum_residual",
+      "domain_id": "public_readonly_observation",
+      "capability_level": 1,
+      "action_summary": "Preflight governed capability domain public_readonly_observation.",
+      "envelope_id": "b2r_owner_constitutional_envelope_request",
+      "y_gov_validation_ref": "Y-star-gov::Pre-U/action_packet_validator_profile_required",
+      "gov_mcp_contract_ref": "gov-mcp::execute_or_deny_contract_required",
+      "action_ledger_schema_ref": "b2r_action_ledger_schema",
+      "cieu_residual_semantics": "Residual compares evidence found vs evidence needed; public evidence cannot become validation feedback.",
+      "stop_conditions": [
+        "login_required",
+        "paywall",
+        "robots_or_access_restriction",
+        "private_data_detected"
+      ],
+      "no_live_action_in_this_milestone": true
+    },
+    {
+      "intent_id": "b2r_intent_authenticated_readonly_observation",
+      "y_star": "governed_progressive_external_action_with_minimum_residual",
+      "domain_id": "authenticated_readonly_observation",
+      "capability_level": 2,
+      "action_summary": "Preflight governed capability domain authenticated_readonly_observation.",
+      "envelope_id": "b2r_owner_constitutional_envelope_request",
+      "y_gov_validation_ref": "Y-star-gov::Pre-U/action_packet_validator_profile_required",
+      "gov_mcp_contract_ref": "gov-mcp::execute_or_deny_contract_required",
+      "action_ledger_schema_ref": "b2r_action_ledger_schema",
+      "cieu_residual_semantics": "Residual records whether authorized read-only state answered the mission question.",
+      "stop_conditions": [
+        "credential_missing",
+        "mfa_required",
+        "scope_requests_write",
+        "private_unapproved_data"
+      ],
+      "no_live_action_in_this_milestone": true
+    },
+    {
+      "intent_id": "b2r_intent_authenticated_draft_creation",
+      "y_star": "governed_progressive_external_action_with_minimum_residual",
+      "domain_id": "authenticated_draft_creation",
+      "capability_level": 3,
+      "action_summary": "Preflight governed capability domain authenticated_draft_creation.",
+      "envelope_id": "b2r_owner_constitutional_envelope_request",
+      "y_gov_validation_ref": "Y-star-gov::Pre-U/action_packet_validator_profile_required",
+      "gov_mcp_contract_ref": "gov-mcp::execute_or_deny_contract_required",
+      "action_ledger_schema_ref": "b2r_action_ledger_schema",
+      "cieu_residual_semantics": "Residual tracks draft readiness vs intended external action.",
+      "stop_conditions": [
+        "submit_button_required",
+        "claim_boundary_failure",
+        "unexpected_public_visibility"
+      ],
+      "no_live_action_in_this_milestone": true
+    },
+    {
+      "intent_id": "b2r_intent_form_fill_draft",
+      "y_star": "governed_progressive_external_action_with_minimum_residual",
+      "domain_id": "form_fill_draft",
+      "capability_level": 3,
+      "action_summary": "Preflight governed capability domain form_fill_draft.",
+      "envelope_id": "b2r_owner_constitutional_envelope_request",
+      "y_gov_validation_ref": "Y-star-gov::Pre-U/action_packet_validator_profile_required",
+      "gov_mcp_contract_ref": "gov-mcp::execute_or_deny_contract_required",
+      "action_ledger_schema_ref": "b2r_action_ledger_schema",
+      "cieu_residual_semantics": "Residual records completion of draft vs safe submit readiness.",
+      "stop_conditions": [
+        "submit_required_to_save",
+        "regulated_field_detected",
+        "identity_or_payment_field_detected"
+      ],
+      "no_live_action_in_this_milestone": true
+    },
+    {
+      "intent_id": "b2r_intent_low_risk_form_submission",
+      "y_star": "governed_progressive_external_action_with_minimum_residual",
+      "domain_id": "low_risk_form_submission",
+      "capability_level": 4,
+      "action_summary": "Preflight governed capability domain low_risk_form_submission.",
+      "envelope_id": "b2r_owner_constitutional_envelope_request",
+      "y_gov_validation_ref": "Y-star-gov::Pre-U/action_packet_validator_profile_required",
+      "gov_mcp_contract_ref": "gov-mcp::execute_or_deny_contract_required",
+      "action_ledger_schema_ref": "b2r_action_ledger_schema",
+      "cieu_residual_semantics": "Residual tracks submitted action outcome and follow-up feedback requirement.",
+      "stop_conditions": [
+        "regulated_form",
+        "financial_or_legal_field",
+        "identity_field",
+        "budget_exceeded",
+        "out_of_envelope"
+      ],
+      "no_live_action_in_this_milestone": true
+    },
+    {
+      "intent_id": "b2r_intent_publication_draft",
+      "y_star": "governed_progressive_external_action_with_minimum_residual",
+      "domain_id": "publication_draft",
+      "capability_level": 3,
+      "action_summary": "Preflight governed capability domain publication_draft.",
+      "envelope_id": "b2r_owner_constitutional_envelope_request",
+      "y_gov_validation_ref": "Y-star-gov::Pre-U/action_packet_validator_profile_required",
+      "gov_mcp_contract_ref": "gov-mcp::execute_or_deny_contract_required",
+      "action_ledger_schema_ref": "b2r_action_ledger_schema",
+      "cieu_residual_semantics": "Residual tracks draft clarity and risk reduction.",
+      "stop_conditions": [
+        "public_visibility",
+        "high_claim_detected",
+        "unapproved_channel"
+      ],
+      "no_live_action_in_this_milestone": true
+    },
+    {
+      "intent_id": "b2r_intent_governed_publication",
+      "y_star": "governed_progressive_external_action_with_minimum_residual",
+      "domain_id": "governed_publication",
+      "capability_level": 4,
+      "action_summary": "Preflight governed capability domain governed_publication.",
+      "envelope_id": "b2r_owner_constitutional_envelope_request",
+      "y_gov_validation_ref": "Y-star-gov::Pre-U/action_packet_validator_profile_required",
+      "gov_mcp_contract_ref": "gov-mcp::execute_or_deny_contract_required",
+      "action_ledger_schema_ref": "b2r_action_ledger_schema",
+      "cieu_residual_semantics": "Residual tracks response, correction needs, and claim risk.",
+      "stop_conditions": [
+        "high_claim",
+        "frequency_cap_exceeded",
+        "missing_takedown_plan",
+        "negative_feedback"
+      ],
+      "no_live_action_in_this_milestone": true
+    },
+    {
+      "intent_id": "b2r_intent_low_risk_account_creation",
+      "y_star": "governed_progressive_external_action_with_minimum_residual",
+      "domain_id": "low_risk_account_creation",
+      "capability_level": 4,
+      "action_summary": "Preflight governed capability domain low_risk_account_creation.",
+      "envelope_id": "b2r_owner_constitutional_envelope_request",
+      "y_gov_validation_ref": "Y-star-gov::Pre-U/action_packet_validator_profile_required",
+      "gov_mcp_contract_ref": "gov-mcp::execute_or_deny_contract_required",
+      "action_ledger_schema_ref": "b2r_action_ledger_schema",
+      "cieu_residual_semantics": "Residual tracks account utility vs lifecycle cleanup burden.",
+      "stop_conditions": [
+        "payment_required",
+        "contract_required",
+        "kyc_required",
+        "customer_representation_required"
+      ],
+      "no_live_action_in_this_milestone": true
+    },
+    {
+      "intent_id": "b2r_intent_external_validation_message",
+      "y_star": "governed_progressive_external_action_with_minimum_residual",
+      "domain_id": "external_validation_message",
+      "capability_level": 5,
+      "action_summary": "Preflight governed capability domain external_validation_message.",
+      "envelope_id": "b2r_owner_constitutional_envelope_request",
+      "y_gov_validation_ref": "Y-star-gov::Pre-U/action_packet_validator_profile_required",
+      "gov_mcp_contract_ref": "gov-mcp::execute_or_deny_contract_required",
+      "action_ledger_schema_ref": "b2r_action_ledger_schema",
+      "cieu_residual_semantics": "Residual tracks feedback vs validation question; feedback may become CIEU delta candidate.",
+      "stop_conditions": [
+        "opt_out",
+        "negative_feedback",
+        "complaint",
+        "budget_exceeded",
+        "target_class_mismatch"
+      ],
+      "no_live_action_in_this_milestone": true
+    },
+    {
+      "intent_id": "b2r_intent_feedback_capture",
+      "y_star": "governed_progressive_external_action_with_minimum_residual",
+      "domain_id": "feedback_capture",
+      "capability_level": 5,
+      "action_summary": "Preflight governed capability domain feedback_capture.",
+      "envelope_id": "b2r_owner_constitutional_envelope_request",
+      "y_gov_validation_ref": "Y-star-gov::Pre-U/action_packet_validator_profile_required",
+      "gov_mcp_contract_ref": "gov-mcp::execute_or_deny_contract_required",
+      "action_ledger_schema_ref": "b2r_action_ledger_schema",
+      "cieu_residual_semantics": "Residual compares expected feedback signal with actual feedback.",
+      "stop_conditions": [
+        "missing_action_id",
+        "invented_feedback",
+        "public_evidence_source",
+        "core_writeback_requested"
+      ],
+      "no_live_action_in_this_milestone": true
+    },
+    {
+      "intent_id": "b2r_intent_payment_or_contract_gate",
+      "y_star": "governed_progressive_external_action_with_minimum_residual",
+      "domain_id": "payment_or_contract_gate",
+      "capability_level": 6,
+      "action_summary": "Preflight governed capability domain payment_or_contract_gate.",
+      "envelope_id": "b2r_owner_constitutional_envelope_request",
+      "y_gov_validation_ref": "Y-star-gov::Pre-U/action_packet_validator_profile_required",
+      "gov_mcp_contract_ref": "gov-mcp::execute_or_deny_contract_required",
+      "action_ledger_schema_ref": "b2r_action_ledger_schema",
+      "cieu_residual_semantics": "Residual remains open until owner decision.",
+      "stop_conditions": [
+        "payment",
+        "contract",
+        "legal_obligation",
+        "financial_commitment"
+      ],
+      "no_live_action_in_this_milestone": true
+    },
+    {
+      "intent_id": "b2r_intent_core_writeback_gate",
+      "y_star": "governed_progressive_external_action_with_minimum_residual",
+      "domain_id": "core_writeback_gate",
+      "capability_level": 6,
+      "action_summary": "Preflight governed capability domain core_writeback_gate.",
+      "envelope_id": "b2r_owner_constitutional_envelope_request",
+      "y_gov_validation_ref": "Y-star-gov::Pre-U/action_packet_validator_profile_required",
+      "gov_mcp_contract_ref": "gov-mcp::execute_or_deny_contract_required",
+      "action_ledger_schema_ref": "b2r_action_ledger_schema",
+      "cieu_residual_semantics": "Residual tracks learning candidate vs approved canonical update.",
+      "stop_conditions": [
+        "uncurated_writeback",
+        "missing_cieu_delta",
+        "raw_artifact_learning_source"
+      ],
+      "no_live_action_in_this_milestone": true
+    }
+  ],
+  "gov_mcp_contract": {
+    "contract_id": "b2r_gov_mcp_execute_or_deny_contract",
+    "tool_gateway_owner": "gov-mcp",
+    "decision_modes": [
+      "execute_within_envelope",
+      "deny",
+      "escalate_owner_hard_gate",
+      "dry_run_only"
+    ],
+    "requires_y_gov_validation_ref": true,
+    "requires_action_ledger": true,
+    "requires_result_receipt": true,
+    "executes_live_action_in_b2r": false,
+    "denied_hard_gate_actions": [
+      "payment",
+      "contract",
+      "legal_obligation",
+      "financial_commitment",
+      "customer_system_access",
+      "regulated_form",
+      "credential_disclosure",
+      "core_writeback"
+    ],
+    "normalization_fields": [
+      "action_id",
+      "domain_id",
+      "decision",
+      "reason_codes",
+      "executed",
+      "receipt_hash",
+      "rollback_or_takedown_ref",
+      "cieu_residual_ref"
+    ]
+  }
+}
