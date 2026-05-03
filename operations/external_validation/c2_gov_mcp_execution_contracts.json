@@ -1,0 +1,328 @@
+{
+  "contracts": [
+    {
+      "contract_id": "c2_gov_mcp_execution_control_0419c3faf7",
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "execution_mode": "owner_handoff",
+      "input_packet_schema": [
+        "action_intent_packet",
+        "ygov_decision_envelope",
+        "mcp_execution_contract",
+        "execution_preflight"
+      ],
+      "execution_preflight": [
+        "validate_ygov_decision_id",
+        "validate_constitutional_activation",
+        "validate_capability_domain",
+        "validate_target_class",
+        "validate_message_hash_or_capsule_ref",
+        "validate_stop_conditions",
+        "validate_no_secret_or_credential_disclosure"
+      ],
+      "execution_receipt_fields": [
+        "receipt_id",
+        "action_id",
+        "execution_mode",
+        "executed",
+        "result_status",
+        "evidence_refs",
+        "rollback_or_takedown_ref",
+        "residual_candidate"
+      ],
+      "ledger_write": "required_after_execution_or_denial_receipt",
+      "feedback_wait_state": "wait_for_owner_or_gov_mcp_feedback_event_after_valid_action",
+      "failure_codes": [
+        "Y_GOV_DENIED",
+        "OWNER_ACTIVATION_MISSING",
+        "OUT_OF_ENVELOPE",
+        "HARD_GATE_ESCALATION",
+        "SECRET_OR_CREDENTIAL_DISCLOSURE_BLOCKED",
+        "ROLLBACK_PLAN_MISSING",
+        "LIVE_EXECUTION_NOT_PERMITTED_IN_C2"
+      ],
+      "result_normalization": [
+        "action_id",
+        "target_id",
+        "capability_domain",
+        "execution_mode",
+        "executed",
+        "result_status",
+        "residual_candidate"
+      ],
+      "rollback_or_takedown": "required_for_publication_or_account_actions; suppression required for opt-out",
+      "no_secret_printing": true,
+      "no_credential_disclosure": true,
+      "external_action_executed": false
+    },
+    {
+      "contract_id": "c2_gov_mcp_execution_control_4e4fc12e3e",
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "execution_mode": "owner_handoff",
+      "input_packet_schema": [
+        "action_intent_packet",
+        "ygov_decision_envelope",
+        "mcp_execution_contract",
+        "execution_preflight"
+      ],
+      "execution_preflight": [
+        "validate_ygov_decision_id",
+        "validate_constitutional_activation",
+        "validate_capability_domain",
+        "validate_target_class",
+        "validate_message_hash_or_capsule_ref",
+        "validate_stop_conditions",
+        "validate_no_secret_or_credential_disclosure"
+      ],
+      "execution_receipt_fields": [
+        "receipt_id",
+        "action_id",
+        "execution_mode",
+        "executed",
+        "result_status",
+        "evidence_refs",
+        "rollback_or_takedown_ref",
+        "residual_candidate"
+      ],
+      "ledger_write": "required_after_execution_or_denial_receipt",
+      "feedback_wait_state": "wait_for_owner_or_gov_mcp_feedback_event_after_valid_action",
+      "failure_codes": [
+        "Y_GOV_DENIED",
+        "OWNER_ACTIVATION_MISSING",
+        "OUT_OF_ENVELOPE",
+        "HARD_GATE_ESCALATION",
+        "SECRET_OR_CREDENTIAL_DISCLOSURE_BLOCKED",
+        "ROLLBACK_PLAN_MISSING",
+        "LIVE_EXECUTION_NOT_PERMITTED_IN_C2"
+      ],
+      "result_normalization": [
+        "action_id",
+        "target_id",
+        "capability_domain",
+        "execution_mode",
+        "executed",
+        "result_status",
+        "residual_candidate"
+      ],
+      "rollback_or_takedown": "required_for_publication_or_account_actions; suppression required for opt-out",
+      "no_secret_printing": true,
+      "no_credential_disclosure": true,
+      "external_action_executed": false
+    },
+    {
+      "contract_id": "c2_gov_mcp_execution_control_bd403915a1",
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "execution_mode": "owner_handoff",
+      "input_packet_schema": [
+        "action_intent_packet",
+        "ygov_decision_envelope",
+        "mcp_execution_contract",
+        "execution_preflight"
+      ],
+      "execution_preflight": [
+        "validate_ygov_decision_id",
+        "validate_constitutional_activation",
+        "validate_capability_domain",
+        "validate_target_class",
+        "validate_message_hash_or_capsule_ref",
+        "validate_stop_conditions",
+        "validate_no_secret_or_credential_disclosure"
+      ],
+      "execution_receipt_fields": [
+        "receipt_id",
+        "action_id",
+        "execution_mode",
+        "executed",
+        "result_status",
+        "evidence_refs",
+        "rollback_or_takedown_ref",
+        "residual_candidate"
+      ],
+      "ledger_write": "required_after_execution_or_denial_receipt",
+      "feedback_wait_state": "wait_for_owner_or_gov_mcp_feedback_event_after_valid_action",
+      "failure_codes": [
+        "Y_GOV_DENIED",
+        "OWNER_ACTIVATION_MISSING",
+        "OUT_OF_ENVELOPE",
+        "HARD_GATE_ESCALATION",
+        "SECRET_OR_CREDENTIAL_DISCLOSURE_BLOCKED",
+        "ROLLBACK_PLAN_MISSING",
+        "LIVE_EXECUTION_NOT_PERMITTED_IN_C2"
+      ],
+      "result_normalization": [
+        "action_id",
+        "target_id",
+        "capability_domain",
+        "execution_mode",
+        "executed",
+        "result_status",
+        "residual_candidate"
+      ],
+      "rollback_or_takedown": "required_for_publication_or_account_actions; suppression required for opt-out",
+      "no_secret_printing": true,
+      "no_credential_disclosure": true,
+      "external_action_executed": false
+    },
+    {
+      "contract_id": "c2_gov_mcp_execution_control_4da068bd3e",
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "execution_mode": "owner_handoff",
+      "input_packet_schema": [
+        "action_intent_packet",
+        "ygov_decision_envelope",
+        "mcp_execution_contract",
+        "execution_preflight"
+      ],
+      "execution_preflight": [
+        "validate_ygov_decision_id",
+        "validate_constitutional_activation",
+        "validate_capability_domain",
+        "validate_target_class",
+        "validate_message_hash_or_capsule_ref",
+        "validate_stop_conditions",
+        "validate_no_secret_or_credential_disclosure"
+      ],
+      "execution_receipt_fields": [
+        "receipt_id",
+        "action_id",
+        "execution_mode",
+        "executed",
+        "result_status",
+        "evidence_refs",
+        "rollback_or_takedown_ref",
+        "residual_candidate"
+      ],
+      "ledger_write": "required_after_execution_or_denial_receipt",
+      "feedback_wait_state": "wait_for_owner_or_gov_mcp_feedback_event_after_valid_action",
+      "failure_codes": [
+        "Y_GOV_DENIED",
+        "OWNER_ACTIVATION_MISSING",
+        "OUT_OF_ENVELOPE",
+        "HARD_GATE_ESCALATION",
+        "SECRET_OR_CREDENTIAL_DISCLOSURE_BLOCKED",
+        "ROLLBACK_PLAN_MISSING",
+        "LIVE_EXECUTION_NOT_PERMITTED_IN_C2"
+      ],
+      "result_normalization": [
+        "action_id",
+        "target_id",
+        "capability_domain",
+        "execution_mode",
+        "executed",
+        "result_status",
+        "residual_candidate"
+      ],
+      "rollback_or_takedown": "required_for_publication_or_account_actions; suppression required for opt-out",
+      "no_secret_printing": true,
+      "no_credential_disclosure": true,
+      "external_action_executed": false
+    },
+    {
+      "contract_id": "c2_gov_mcp_execution_control_883017b793",
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "execution_mode": "owner_handoff",
+      "input_packet_schema": [
+        "action_intent_packet",
+        "ygov_decision_envelope",
+        "mcp_execution_contract",
+        "execution_preflight"
+      ],
+      "execution_preflight": [
+        "validate_ygov_decision_id",
+        "validate_constitutional_activation",
+        "validate_capability_domain",
+        "validate_target_class",
+        "validate_message_hash_or_capsule_ref",
+        "validate_stop_conditions",
+        "validate_no_secret_or_credential_disclosure"
+      ],
+      "execution_receipt_fields": [
+        "receipt_id",
+        "action_id",
+        "execution_mode",
+        "executed",
+        "result_status",
+        "evidence_refs",
+        "rollback_or_takedown_ref",
+        "residual_candidate"
+      ],
+      "ledger_write": "required_after_execution_or_denial_receipt",
+      "feedback_wait_state": "wait_for_owner_or_gov_mcp_feedback_event_after_valid_action",
+      "failure_codes": [
+        "Y_GOV_DENIED",
+        "OWNER_ACTIVATION_MISSING",
+        "OUT_OF_ENVELOPE",
+        "HARD_GATE_ESCALATION",
+        "SECRET_OR_CREDENTIAL_DISCLOSURE_BLOCKED",
+        "ROLLBACK_PLAN_MISSING",
+        "LIVE_EXECUTION_NOT_PERMITTED_IN_C2"
+      ],
+      "result_normalization": [
+        "action_id",
+        "target_id",
+        "capability_domain",
+        "execution_mode",
+        "executed",
+        "result_status",
+        "residual_candidate"
+      ],
+      "rollback_or_takedown": "required_for_publication_or_account_actions; suppression required for opt-out",
+      "no_secret_printing": true,
+      "no_credential_disclosure": true,
+      "external_action_executed": false
+    },
+    {
+      "contract_id": "c2_gov_mcp_execution_control_4c5a360e63",
+      "action_id": "c2_action_fallback_006_cand_wotai_wotai",
+      "execution_mode": "owner_handoff",
+      "input_packet_schema": [
+        "action_intent_packet",
+        "ygov_decision_envelope",
+        "mcp_execution_contract",
+        "execution_preflight"
+      ],
+      "execution_preflight": [
+        "validate_ygov_decision_id",
+        "validate_constitutional_activation",
+        "validate_capability_domain",
+        "validate_target_class",
+        "validate_message_hash_or_capsule_ref",
+        "validate_stop_conditions",
+        "validate_no_secret_or_credential_disclosure"
+      ],
+      "execution_receipt_fields": [
+        "receipt_id",
+        "action_id",
+        "execution_mode",
+        "executed",
+        "result_status",
+        "evidence_refs",
+        "rollback_or_takedown_ref",
+        "residual_candidate"
+      ],
+      "ledger_write": "required_after_execution_or_denial_receipt",
+      "feedback_wait_state": "wait_for_owner_or_gov_mcp_feedback_event_after_valid_action",
+      "failure_codes": [
+        "Y_GOV_DENIED",
+        "OWNER_ACTIVATION_MISSING",
+        "OUT_OF_ENVELOPE",
+        "HARD_GATE_ESCALATION",
+        "SECRET_OR_CREDENTIAL_DISCLOSURE_BLOCKED",
+        "ROLLBACK_PLAN_MISSING",
+        "LIVE_EXECUTION_NOT_PERMITTED_IN_C2"
+      ],
+      "result_normalization": [
+        "action_id",
+        "target_id",
+        "capability_domain",
+        "execution_mode",
+        "executed",
+        "result_status",
+        "residual_candidate"
+      ],
+      "rollback_or_takedown": "required_for_publication_or_account_actions; suppression required for opt-out",
+      "no_secret_printing": true,
+      "no_credential_disclosure": true,
+      "external_action_executed": false
+    }
+  ]
+}

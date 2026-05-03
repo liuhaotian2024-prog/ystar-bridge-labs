@@ -1,0 +1,138 @@
+{
+  "classifications": [
+    {
+      "feedback_type": "no_response",
+      "signal_strength": "weak",
+      "sales_implication": "no buyer signal yet",
+      "governance_implication": "valid only after real action ledger and wait window",
+      "next_action_recommendation": "wait_or_rotate_to_fallback_target",
+      "allowed_next_step": "record_no_response_after_valid_action",
+      "blocked_next_step": "count_as_negative_without_wait_window",
+      "owner_escalation_required": false,
+      "offer_revision_required": false
+    },
+    {
+      "feedback_type": "positive_interest",
+      "signal_strength": "medium",
+      "sales_implication": "buyer interest exists but may not be paid signal",
+      "governance_implication": "requires next-step envelope before follow-up",
+      "next_action_recommendation": "prepare_governed_followup_decision",
+      "allowed_next_step": "draft_followup_for_Y_gov_preflight",
+      "blocked_next_step": "automatic_followup_without_envelope",
+      "owner_escalation_required": false,
+      "offer_revision_required": false
+    },
+    {
+      "feedback_type": "request_for_details",
+      "signal_strength": "medium",
+      "sales_implication": "buyer interest exists but may not be paid signal",
+      "governance_implication": "requires next-step envelope before follow-up",
+      "next_action_recommendation": "prepare_governed_followup_decision",
+      "allowed_next_step": "draft_followup_for_Y_gov_preflight",
+      "blocked_next_step": "automatic_followup_without_envelope",
+      "owner_escalation_required": false,
+      "offer_revision_required": false
+    },
+    {
+      "feedback_type": "price_question",
+      "signal_strength": "strong",
+      "sales_implication": "paid-signal candidate may exist",
+      "governance_implication": "requires ledger-backed feedback and CIEU residual candidate",
+      "next_action_recommendation": "prepare_E15_paid_signal_review_gate",
+      "allowed_next_step": "record_paid_signal_candidate_feedback",
+      "blocked_next_step": "claim_revenue_or_collect_payment",
+      "owner_escalation_required": false,
+      "offer_revision_required": false
+    },
+    {
+      "feedback_type": "referral",
+      "signal_strength": "medium",
+      "sales_implication": "buyer interest exists but may not be paid signal",
+      "governance_implication": "requires next-step envelope before follow-up",
+      "next_action_recommendation": "prepare_governed_followup_decision",
+      "allowed_next_step": "draft_followup_for_Y_gov_preflight",
+      "blocked_next_step": "automatic_followup_without_envelope",
+      "owner_escalation_required": false,
+      "offer_revision_required": false
+    },
+    {
+      "feedback_type": "negative_not_relevant",
+      "signal_strength": "negative",
+      "sales_implication": "segment or timing may be wrong",
+      "governance_implication": "stop or suppress target depending on wording",
+      "next_action_recommendation": "suppress_or_revise_target_segment",
+      "allowed_next_step": "revise_offer_or_target_filter",
+      "blocked_next_step": "continue_same_target",
+      "owner_escalation_required": false,
+      "offer_revision_required": true
+    },
+    {
+      "feedback_type": "negative_timing",
+      "signal_strength": "negative",
+      "sales_implication": "segment or timing may be wrong",
+      "governance_implication": "stop or suppress target depending on wording",
+      "next_action_recommendation": "suppress_or_revise_target_segment",
+      "allowed_next_step": "revise_offer_or_target_filter",
+      "blocked_next_step": "continue_same_target",
+      "owner_escalation_required": false,
+      "offer_revision_required": true
+    },
+    {
+      "feedback_type": "unsubscribe_or_do_not_contact",
+      "signal_strength": "hard_stop",
+      "sales_implication": "target must be suppressed",
+      "governance_implication": "suppression and stop condition triggered",
+      "next_action_recommendation": "suppress_target_and_stop",
+      "allowed_next_step": "write_suppression_receipt",
+      "blocked_next_step": "follow_up",
+      "owner_escalation_required": true,
+      "offer_revision_required": false
+    },
+    {
+      "feedback_type": "safety_or_trust_concern",
+      "signal_strength": "risk",
+      "sales_implication": "trust gap blocks conversion until addressed",
+      "governance_implication": "owner/Y*gov escalation required for trust-risk handling",
+      "next_action_recommendation": "escalate_and_revise_trust_boundary",
+      "allowed_next_step": "prepare_trust_gap_revision",
+      "blocked_next_step": "continue_outreach",
+      "owner_escalation_required": true,
+      "offer_revision_required": true
+    },
+    {
+      "feedback_type": "unclear_response",
+      "signal_strength": "invalid",
+      "sales_implication": "no usable commercial signal",
+      "governance_implication": "invalid or unsupported feedback cannot drive learning",
+      "next_action_recommendation": "request_clarification_or_mark_invalid",
+      "allowed_next_step": "record_limitation",
+      "blocked_next_step": "enter_E15",
+      "owner_escalation_required": false,
+      "offer_revision_required": false
+    }
+  ],
+  "invalid_examples": [
+    {
+      "feedback_type": "invalid_no_response_without_action",
+      "signal_strength": "invalid",
+      "sales_implication": "no usable commercial signal",
+      "governance_implication": "invalid or unsupported feedback cannot drive learning",
+      "next_action_recommendation": "request_clarification_or_mark_invalid",
+      "allowed_next_step": "record_limitation",
+      "blocked_next_step": "enter_E15",
+      "owner_escalation_required": false,
+      "offer_revision_required": false
+    },
+    {
+      "feedback_type": "invalid_public_evidence",
+      "signal_strength": "invalid",
+      "sales_implication": "no usable commercial signal",
+      "governance_implication": "invalid or unsupported feedback cannot drive learning",
+      "next_action_recommendation": "request_clarification_or_mark_invalid",
+      "allowed_next_step": "record_limitation",
+      "blocked_next_step": "enter_E15",
+      "owner_escalation_required": false,
+      "offer_revision_required": false
+    }
+  ]
+}

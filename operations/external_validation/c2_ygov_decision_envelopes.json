@@ -1,0 +1,190 @@
+{
+  "decisions": [
+    {
+      "decision_id": "c2_ygov_decision_62d31c006a",
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "decision": "owner_handoff_only",
+      "capability_domain": "external_validation_message",
+      "risk_tier": "Tier 5 governed low-volume external validation",
+      "evidence_basis": [
+        "src_alicelabs",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "owner_boundary_basis": "c1_owner_constitutional_envelope_request",
+      "ystar_contract_basis": "Y-star-gov can simulate decision but cannot authorize execution before activation.",
+      "gov_mcp_contract_basis": "gov-mcp prepare_only / owner_handoff only.",
+      "permitted_next_step": "generate_owner_handoff_capsule",
+      "prohibited_next_steps": [
+        "execute_external_action_without_activation",
+        "payment",
+        "contract",
+        "legal_or_financial_commitment",
+        "customer_system_access",
+        "credential_disclosure",
+        "core_brain_cieu_memory_writeback"
+      ],
+      "reason_codes": [
+        "constitutional_activation_pending",
+        "external_execution_not_approved"
+      ],
+      "external_action_executed": false
+    },
+    {
+      "decision_id": "c2_ygov_decision_b7ef7a6340",
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "decision": "owner_handoff_only",
+      "capability_domain": "external_validation_message",
+      "risk_tier": "Tier 5 governed low-volume external validation",
+      "evidence_basis": [
+        "src_botsquash",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "owner_boundary_basis": "c1_owner_constitutional_envelope_request",
+      "ystar_contract_basis": "Y-star-gov can simulate decision but cannot authorize execution before activation.",
+      "gov_mcp_contract_basis": "gov-mcp prepare_only / owner_handoff only.",
+      "permitted_next_step": "generate_owner_handoff_capsule",
+      "prohibited_next_steps": [
+        "execute_external_action_without_activation",
+        "payment",
+        "contract",
+        "legal_or_financial_commitment",
+        "customer_system_access",
+        "credential_disclosure",
+        "core_brain_cieu_memory_writeback"
+      ],
+      "reason_codes": [
+        "constitutional_activation_pending",
+        "external_execution_not_approved"
+      ],
+      "external_action_executed": false
+    },
+    {
+      "decision_id": "c2_ygov_decision_828621c8e8",
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "decision": "owner_handoff_only",
+      "capability_domain": "external_validation_message",
+      "risk_tier": "Tier 5 governed low-volume external validation",
+      "evidence_basis": [
+        "src_wotai",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "owner_boundary_basis": "c1_owner_constitutional_envelope_request",
+      "ystar_contract_basis": "Y-star-gov can simulate decision but cannot authorize execution before activation.",
+      "gov_mcp_contract_basis": "gov-mcp prepare_only / owner_handoff only.",
+      "permitted_next_step": "generate_owner_handoff_capsule",
+      "prohibited_next_steps": [
+        "execute_external_action_without_activation",
+        "payment",
+        "contract",
+        "legal_or_financial_commitment",
+        "customer_system_access",
+        "credential_disclosure",
+        "core_brain_cieu_memory_writeback"
+      ],
+      "reason_codes": [
+        "constitutional_activation_pending",
+        "external_execution_not_approved"
+      ],
+      "external_action_executed": false
+    },
+    {
+      "decision_id": "c2_ygov_decision_ac709f3674",
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "decision": "owner_handoff_only",
+      "capability_domain": "external_validation_message",
+      "risk_tier": "Tier 5 governed low-volume external validation",
+      "evidence_basis": [
+        "src_alicelabs",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "owner_boundary_basis": "c1_owner_constitutional_envelope_request",
+      "ystar_contract_basis": "Y-star-gov can simulate decision but cannot authorize execution before activation.",
+      "gov_mcp_contract_basis": "gov-mcp prepare_only / owner_handoff only.",
+      "permitted_next_step": "generate_owner_handoff_capsule",
+      "prohibited_next_steps": [
+        "execute_external_action_without_activation",
+        "payment",
+        "contract",
+        "legal_or_financial_commitment",
+        "customer_system_access",
+        "credential_disclosure",
+        "core_brain_cieu_memory_writeback"
+      ],
+      "reason_codes": [
+        "constitutional_activation_pending",
+        "external_execution_not_approved"
+      ],
+      "external_action_executed": false
+    },
+    {
+      "decision_id": "c2_ygov_decision_bb95f45f99",
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "decision": "owner_handoff_only",
+      "capability_domain": "external_validation_message",
+      "risk_tier": "Tier 5 governed low-volume external validation",
+      "evidence_basis": [
+        "src_botsquash",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "owner_boundary_basis": "c1_owner_constitutional_envelope_request",
+      "ystar_contract_basis": "Y-star-gov can simulate decision but cannot authorize execution before activation.",
+      "gov_mcp_contract_basis": "gov-mcp prepare_only / owner_handoff only.",
+      "permitted_next_step": "generate_owner_handoff_capsule",
+      "prohibited_next_steps": [
+        "execute_external_action_without_activation",
+        "payment",
+        "contract",
+        "legal_or_financial_commitment",
+        "customer_system_access",
+        "credential_disclosure",
+        "core_brain_cieu_memory_writeback"
+      ],
+      "reason_codes": [
+        "constitutional_activation_pending",
+        "external_execution_not_approved"
+      ],
+      "external_action_executed": false
+    },
+    {
+      "decision_id": "c2_ygov_decision_f4bdc36d13",
+      "action_id": "c2_action_fallback_006_cand_wotai_wotai",
+      "decision": "owner_handoff_only",
+      "capability_domain": "external_validation_message",
+      "risk_tier": "Tier 5 governed low-volume external validation",
+      "evidence_basis": [
+        "src_wotai",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "owner_boundary_basis": "c1_owner_constitutional_envelope_request",
+      "ystar_contract_basis": "Y-star-gov can simulate decision but cannot authorize execution before activation.",
+      "gov_mcp_contract_basis": "gov-mcp prepare_only / owner_handoff only.",
+      "permitted_next_step": "generate_owner_handoff_capsule",
+      "prohibited_next_steps": [
+        "execute_external_action_without_activation",
+        "payment",
+        "contract",
+        "legal_or_financial_commitment",
+        "customer_system_access",
+        "credential_disclosure",
+        "core_brain_cieu_memory_writeback"
+      ],
+      "reason_codes": [
+        "constitutional_activation_pending",
+        "external_execution_not_approved"
+      ],
+      "external_action_executed": false
+    }
+  ]
+}

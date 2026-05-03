@@ -1,0 +1,66 @@
+{
+  "activation_id": "c2_pending_constitutional_activation",
+  "source_envelope_id": "c1_owner_constitutional_envelope_request",
+  "status": "owner_review_required",
+  "activation_state": "pending_owner_activation",
+  "owner_approval_present": false,
+  "live_external_execution_approved": false,
+  "scope": {
+    "validity_days": 7,
+    "max_total_actions": 3,
+    "max_actions_per_day": 1,
+    "approved_target_classes": [
+      "ai_consultant_agency",
+      "ai_heavy_team_with_agent_workflow_bottleneck"
+    ],
+    "approved_offer_families": [
+      "48h AI Agent Implementation Readiness Review"
+    ],
+    "approved_capability_domains": [
+      "external_validation_message",
+      "low_risk_form_submission",
+      "publication_draft",
+      "authenticated_draft_creation"
+    ],
+    "stop_conditions": [
+      "opt_out",
+      "negative_feedback",
+      "complaint",
+      "budget_exceeded",
+      "target_class_mismatch"
+    ],
+    "ai_transparency_required": true,
+    "opt_out_required": true,
+    "action_ledger_required": true,
+    "feedback_event_required": true
+  },
+  "owner_hard_gates": [
+    "payment",
+    "contract",
+    "legal_obligation",
+    "financial_commitment",
+    "customer_system_access",
+    "regulated_government_tax_immigration_identity_forms",
+    "credential_disclosure",
+    "core_brain_cieu_memory_writeback",
+    "out_of_envelope_action"
+  ],
+  "progressive_action_domains": [
+    "low_risk_validation_messaging",
+    "public_readonly_research",
+    "low_risk_publication_draft_preparation",
+    "account_creation_proposal",
+    "login_proposal",
+    "form_preparation_proposal",
+    "non_binding_customer_discovery",
+    "owner_approved_manual_send_owner_handoff"
+  ],
+  "allowed_without_activation": [
+    "decision_simulation",
+    "owner_handoff_capsule_generation",
+    "governed_action_queue_preparation",
+    "feedback_schema_preparation",
+    "dry_run_local_receipt_generation"
+  ],
+  "external_action_executed": false
+}

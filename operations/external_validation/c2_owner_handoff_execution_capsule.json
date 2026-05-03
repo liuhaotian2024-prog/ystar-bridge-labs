@@ -1,0 +1,63 @@
+{
+  "capsule_id": "c2_owner_handoff_execution_capsule",
+  "recommended_execution_order": [
+    "c2_action_primary_001_cand_alicelabs_alicelabs",
+    "c2_action_primary_002_cand_botsquash_botsquash",
+    "c2_action_primary_003_cand_wotai_wotai"
+  ],
+  "owner_minimal_operations": [
+    "Review and activate or reject the constitutional envelope.",
+    "If owner chooses manual execution, send only the bound message capsule for each approved action.",
+    "Record one action ledger row after any actual send.",
+    "Record one feedback event for any reply, opt-out, negative response, or eligible no-response window."
+  ],
+  "action_capsules": [
+    {
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "decision_id": "c2_ygov_decision_62d31c006a",
+      "ledger_id": "ledger_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "feedback_event_id": "feedback_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_id": "cand_alicelabs_alicelabs",
+      "target_human_explanation": "Alice Labs AI Operations Consulting appears relevant to AI-agent implementation readiness; no contact is approved by C2 itself.",
+      "send_purpose": "Ask whether the 48h AI Agent Implementation Readiness Review is useful enough to justify a paid diagnostic or pilot-prep conversation.",
+      "message_draft": "Subject: Quick question on AI-agent implementation readiness\n\nHi Alice Labs AI Operations Consulting,\n\nI am Aiden, an AI-assisted CEO/runtime agent for Y*Bridge Labs, working with Haotian. I am not pretending to be a human teammate, and this is a small owner-operated validation note before we ask anyone to buy anything.\n\nWe are testing a 48h AI Agent Implementation Readiness Review for teams or agencies trying to deploy AI agents/coding agents safely. The review maps implementation readiness, workflow bottlenecks, governance risks, and the safest next operational step.\n\nWould this kind of 48h readiness review be useful enough to justify a paid diagnostic or pilot-prep conversation?\n\nNo pressure, no automated follow-up, and it is completely fine to ignore this. If this is not relevant, please disregard.\n",
+      "gov_mcp_execution_mode": "owner_handoff",
+      "owner_boundary_status": "pending_owner_activation"
+    },
+    {
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "decision_id": "c2_ygov_decision_b7ef7a6340",
+      "ledger_id": "ledger_c2_action_primary_002_cand_botsquash_botsquash",
+      "feedback_event_id": "feedback_c2_action_primary_002_cand_botsquash_botsquash",
+      "target_id": "cand_botsquash_botsquash",
+      "target_human_explanation": "BotSquash AI Automation Agency appears relevant to AI-agent implementation readiness; no contact is approved by C2 itself.",
+      "send_purpose": "Ask whether the 48h AI Agent Implementation Readiness Review is useful enough to justify a paid diagnostic or pilot-prep conversation.",
+      "message_draft": "Subject: Quick question on AI-agent implementation readiness\n\nHi BotSquash AI Automation Agency,\n\nI am Aiden, an AI-assisted CEO/runtime agent for Y*Bridge Labs, working with Haotian. I am not pretending to be a human teammate, and this is a small owner-operated validation note before we ask anyone to buy anything.\n\nWe are testing a 48h AI Agent Implementation Readiness Review for teams or agencies trying to deploy AI agents/coding agents safely. The review maps implementation readiness, workflow bottlenecks, governance risks, and the safest next operational step.\n\nWould this kind of 48h readiness review be useful enough to justify a paid diagnostic or pilot-prep conversation?\n\nNo pressure, no automated follow-up, and it is completely fine to ignore this. If this is not relevant, please disregard.\n",
+      "gov_mcp_execution_mode": "owner_handoff",
+      "owner_boundary_status": "pending_owner_activation"
+    },
+    {
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "decision_id": "c2_ygov_decision_828621c8e8",
+      "ledger_id": "ledger_c2_action_primary_003_cand_wotai_wotai",
+      "feedback_event_id": "feedback_c2_action_primary_003_cand_wotai_wotai",
+      "target_id": "cand_wotai_wotai",
+      "target_human_explanation": "WotAI AI Automation appears relevant to AI-agent implementation readiness; no contact is approved by C2 itself.",
+      "send_purpose": "Ask whether the 48h AI Agent Implementation Readiness Review is useful enough to justify a paid diagnostic or pilot-prep conversation.",
+      "message_draft": "Subject: Quick question on AI-agent implementation readiness\n\nHi WotAI AI Automation,\n\nI am Aiden, an AI-assisted CEO/runtime agent for Y*Bridge Labs, working with Haotian. I am not pretending to be a human teammate, and this is a small owner-operated validation note before we ask anyone to buy anything.\n\nWe are testing a 48h AI Agent Implementation Readiness Review for teams or agencies trying to deploy AI agents/coding agents safely. The review maps implementation readiness, workflow bottlenecks, governance risks, and the safest next operational step.\n\nWould this kind of 48h readiness review be useful enough to justify a paid diagnostic or pilot-prep conversation?\n\nNo pressure, no automated follow-up, and it is completely fine to ignore this. If this is not relevant, please disregard.\n",
+      "gov_mcp_execution_mode": "owner_handoff",
+      "owner_boundary_status": "pending_owner_activation"
+    }
+  ],
+  "action_ledger_backfill": "Use action_id + decision_id + draft_hash from this capsule; no ledger row means no_response cannot be counted.",
+  "feedback_recording": "Use c2_feedback_ingestion_template.json; public evidence is not validation feedback.",
+  "next_step_triggers": {
+    "positive_interest": "record feedback and evaluate paid_signal_candidate or E15 entry readiness",
+    "price_question": "record paid_signal_candidate and request governed next-step decision",
+    "negative_not_relevant": "suppress target and consider offer/segment revision",
+    "unsubscribe_or_do_not_contact": "suppress target immediately and stop",
+    "no_response": "only valid after a real action ledger and waiting window"
+  },
+  "long_term_direction": "Owner is not the operating executor; this capsule is a temporary handoff while gov-mcp live adapters remain unactivated.",
+  "external_action_executed": false
+}

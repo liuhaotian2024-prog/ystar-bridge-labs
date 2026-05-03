@@ -1,0 +1,21 @@
+{
+  "template_only": true,
+  "feedback_event": {
+    "feedback_event_id": "TO_FILL_AFTER_VALID_ACTION",
+    "action_id": "REQUIRED_VALID_ACTION_LEDGER_ID",
+    "feedback_source": "reply|form_response|publication_response|owner_recorded|gov_mcp_captured",
+    "feedback_type": "no_response|positive_interest|request_for_details|price_question|referral|negative_not_relevant|negative_timing|unsubscribe_or_do_not_contact|safety_or_trust_concern|unclear_response",
+    "buyer_pain": "",
+    "urgency": "",
+    "budget": "",
+    "trust": "",
+    "objection": "",
+    "next_step": "",
+    "paid_signal_candidate": false,
+    "limitations": "",
+    "recorded_by": "owner|gov-mcp",
+    "recorded_at": "ISO8601"
+  },
+  "public_evidence_is_not_validation_feedback": true,
+  "no_response_requires_valid_action_ledger": true
+}
