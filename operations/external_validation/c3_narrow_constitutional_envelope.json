@@ -1,0 +1,60 @@
+{
+  "envelope_id": "c3_narrow_owner_handoff_only_envelope",
+  "source_c2_activation_id": "c2_pending_constitutional_activation",
+  "status": "locally_activated_for_owner_handoff_only",
+  "owner_approval_evidence_present": false,
+  "local_activation_mode": "owner_handoff_only_no_agent_execute",
+  "allowed_scope": [
+    "low_risk_validation_messaging",
+    "owner_handoff_execution",
+    "local_dry_run_receipt",
+    "feedback_intake",
+    "signal_evaluation",
+    "next_action_recommendation"
+  ],
+  "excluded_scope": [
+    "payment",
+    "contract",
+    "legal_obligation",
+    "financial_commitment",
+    "customer_system_access",
+    "regulated_government_tax_immigration_identity_forms",
+    "credential_disclosure",
+    "direct_email_message_sending_by_agent",
+    "publication",
+    "account_creation",
+    "login",
+    "form_submission",
+    "external_validation_submission",
+    "core_brain_cieu_memory_canonical_writeback"
+  ],
+  "scope": {
+    "approved_target_classes": [
+      "ai_consultant_agency",
+      "ai_heavy_team_with_agent_workflow_bottleneck"
+    ],
+    "approved_offer_families": [
+      "48h AI Agent Implementation Readiness Review"
+    ],
+    "approved_capability_domains": [
+      "external_validation_message"
+    ],
+    "max_total_actions": 3,
+    "stop_conditions": [
+      "opt_out",
+      "negative_feedback",
+      "complaint",
+      "budget_exceeded",
+      "target_class_mismatch"
+    ]
+  },
+  "allowed_execution_modes": [
+    "owner_handoff",
+    "dry_run_local"
+  ],
+  "agent_direct_execution_allowed": false,
+  "external_action_executed": false,
+  "max_actions": 3,
+  "offer_thesis": "48h AI Agent Implementation Readiness Review",
+  "required_owner_step": "Owner may later activate the envelope; C3 itself does not approve sending."
+}

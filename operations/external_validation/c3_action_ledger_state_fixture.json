@@ -1,0 +1,72 @@
+{
+  "fixture_id": "c3_action_ledger_state_fixture",
+  "rows": [
+    {
+      "ledger_id": "ledger_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "state": "owner_handoff_ready",
+      "previous_state": "prepared",
+      "dry_run_receipt_ref": "dry_run_receipt_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "owner_confirmation_ref": "",
+      "sent_confirmed_by_owner": false,
+      "external_action_executed": false,
+      "transition_reason": "C3 generated owner-handoff package and dry-run receipt only."
+    },
+    {
+      "ledger_id": "ledger_c2_action_primary_002_cand_botsquash_botsquash",
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "state": "owner_handoff_ready",
+      "previous_state": "prepared",
+      "dry_run_receipt_ref": "dry_run_receipt_c2_action_primary_002_cand_botsquash_botsquash",
+      "owner_confirmation_ref": "",
+      "sent_confirmed_by_owner": false,
+      "external_action_executed": false,
+      "transition_reason": "C3 generated owner-handoff package and dry-run receipt only."
+    },
+    {
+      "ledger_id": "ledger_c2_action_primary_003_cand_wotai_wotai",
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "state": "owner_handoff_ready",
+      "previous_state": "prepared",
+      "dry_run_receipt_ref": "dry_run_receipt_c2_action_primary_003_cand_wotai_wotai",
+      "owner_confirmation_ref": "",
+      "sent_confirmed_by_owner": false,
+      "external_action_executed": false,
+      "transition_reason": "C3 generated owner-handoff package and dry-run receipt only."
+    },
+    {
+      "ledger_id": "ledger_c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "state": "owner_handoff_ready",
+      "previous_state": "prepared",
+      "dry_run_receipt_ref": "dry_run_receipt_c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "owner_confirmation_ref": "",
+      "sent_confirmed_by_owner": false,
+      "external_action_executed": false,
+      "transition_reason": "C3 generated owner-handoff package and dry-run receipt only."
+    },
+    {
+      "ledger_id": "ledger_c2_action_fallback_005_cand_botsquash_botsquash",
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "state": "owner_handoff_ready",
+      "previous_state": "prepared",
+      "dry_run_receipt_ref": "dry_run_receipt_c2_action_fallback_005_cand_botsquash_botsquash",
+      "owner_confirmation_ref": "",
+      "sent_confirmed_by_owner": false,
+      "external_action_executed": false,
+      "transition_reason": "C3 generated owner-handoff package and dry-run receipt only."
+    },
+    {
+      "ledger_id": "ledger_c2_action_fallback_006_cand_wotai_wotai",
+      "action_id": "c2_action_fallback_006_cand_wotai_wotai",
+      "state": "owner_handoff_ready",
+      "previous_state": "prepared",
+      "dry_run_receipt_ref": "dry_run_receipt_c2_action_fallback_006_cand_wotai_wotai",
+      "owner_confirmation_ref": "",
+      "sent_confirmed_by_owner": false,
+      "external_action_executed": false,
+      "transition_reason": "C3 generated owner-handoff package and dry-run receipt only."
+    }
+  ],
+  "external_action_executed": false
+}

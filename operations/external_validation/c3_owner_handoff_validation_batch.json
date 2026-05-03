@@ -1,0 +1,83 @@
+{
+  "batch_id": "c3_owner_handoff_validation_batch",
+  "source_batch_id": "c3_first_governed_validation_batch",
+  "owner_minimal_step": "Review one page; if choosing E15A later, manually send the three primary copy/paste blocks and record ledger rows.",
+  "handoff_items": [
+    {
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_id": "cand_alicelabs_alicelabs",
+      "target": "Alice Labs AI Operations Consulting",
+      "context_summary": "Alice Labs AI Operations Consulting is queued for 48h AI Agent Implementation Readiness Review validation.",
+      "why_this_target": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "exact_message_draft": "Subject: Quick question on AI-agent implementation readiness\n\nHi Alice Labs AI Operations Consulting,\n\nI am Aiden, an AI-assisted CEO/runtime agent for Y*Bridge Labs, working with Haotian. I am not pretending to be a human teammate, and this is a small owner-operated validation note before we ask anyone to buy anything.\n\nWe are testing a 48h AI Agent Implementation Readiness Review for teams or agencies trying to deploy AI agents/coding agents safely. The review maps implementation readiness, workflow bottlenecks, governance risks, and the safest next operational step.\n\nWould this kind of 48h readiness review be useful enough to justify a paid diagnostic or pilot-prep conversation?\n\nNo pressure, no automated follow-up, and it is completely fine to ignore this. If this is not relevant, please disregard.\n",
+      "channel_suggestion": "owner-selected public/general channel only; no scraped personal contact",
+      "do_not_send_warning": "Do not send until owner chooses to execute this handoff.",
+      "copy_paste_block": "Subject: Quick question on AI-agent implementation readiness\n\nHi Alice Labs AI Operations Consulting,\n\nI am Aiden, an AI-assisted CEO/runtime agent for Y*Bridge Labs, working with Haotian. I am not pretending to be a human teammate, and this is a small owner-operated validation note before we ask anyone to buy anything.\n\nWe are testing a 48h AI Agent Implementation Readiness Review for teams or agencies trying to deploy AI agents/coding agents safely. The review maps implementation readiness, workflow bottlenecks, governance risks, and the safest next operational step.\n\nWould this kind of 48h readiness review be useful enough to justify a paid diagnostic or pilot-prep conversation?\n\nNo pressure, no automated follow-up, and it is completely fine to ignore this. If this is not relevant, please disregard.\n",
+      "ledger_id_to_mark_as_sent": "ledger_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "feedback_event_id_to_use_after_reply": "feedback_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "what_owner_does_now": "If owner later chooses E15A, send this exact block manually and then record the ledger id shown above.",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "target_id": "cand_botsquash_botsquash",
+      "target": "BotSquash AI Automation Agency",
+      "context_summary": "BotSquash AI Automation Agency is queued for 48h AI Agent Implementation Readiness Review validation.",
+      "why_this_target": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "exact_message_draft": "Subject: Quick question on AI-agent implementation readiness\n\nHi BotSquash AI Automation Agency,\n\nI am Aiden, an AI-assisted CEO/runtime agent for Y*Bridge Labs, working with Haotian. I am not pretending to be a human teammate, and this is a small owner-operated validation note before we ask anyone to buy anything.\n\nWe are testing a 48h AI Agent Implementation Readiness Review for teams or agencies trying to deploy AI agents/coding agents safely. The review maps implementation readiness, workflow bottlenecks, governance risks, and the safest next operational step.\n\nWould this kind of 48h readiness review be useful enough to justify a paid diagnostic or pilot-prep conversation?\n\nNo pressure, no automated follow-up, and it is completely fine to ignore this. If this is not relevant, please disregard.\n",
+      "channel_suggestion": "owner-selected public/general channel only; no scraped personal contact",
+      "do_not_send_warning": "Do not send until owner chooses to execute this handoff.",
+      "copy_paste_block": "Subject: Quick question on AI-agent implementation readiness\n\nHi BotSquash AI Automation Agency,\n\nI am Aiden, an AI-assisted CEO/runtime agent for Y*Bridge Labs, working with Haotian. I am not pretending to be a human teammate, and this is a small owner-operated validation note before we ask anyone to buy anything.\n\nWe are testing a 48h AI Agent Implementation Readiness Review for teams or agencies trying to deploy AI agents/coding agents safely. The review maps implementation readiness, workflow bottlenecks, governance risks, and the safest next operational step.\n\nWould this kind of 48h readiness review be useful enough to justify a paid diagnostic or pilot-prep conversation?\n\nNo pressure, no automated follow-up, and it is completely fine to ignore this. If this is not relevant, please disregard.\n",
+      "ledger_id_to_mark_as_sent": "ledger_c2_action_primary_002_cand_botsquash_botsquash",
+      "feedback_event_id_to_use_after_reply": "feedback_c2_action_primary_002_cand_botsquash_botsquash",
+      "what_owner_does_now": "If owner later chooses E15A, send this exact block manually and then record the ledger id shown above.",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "target_id": "cand_wotai_wotai",
+      "target": "WotAI AI Automation",
+      "context_summary": "WotAI AI Automation is queued for 48h AI Agent Implementation Readiness Review validation.",
+      "why_this_target": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "exact_message_draft": "Subject: Quick question on AI-agent implementation readiness\n\nHi WotAI AI Automation,\n\nI am Aiden, an AI-assisted CEO/runtime agent for Y*Bridge Labs, working with Haotian. I am not pretending to be a human teammate, and this is a small owner-operated validation note before we ask anyone to buy anything.\n\nWe are testing a 48h AI Agent Implementation Readiness Review for teams or agencies trying to deploy AI agents/coding agents safely. The review maps implementation readiness, workflow bottlenecks, governance risks, and the safest next operational step.\n\nWould this kind of 48h readiness review be useful enough to justify a paid diagnostic or pilot-prep conversation?\n\nNo pressure, no automated follow-up, and it is completely fine to ignore this. If this is not relevant, please disregard.\n",
+      "channel_suggestion": "owner-selected public/general channel only; no scraped personal contact",
+      "do_not_send_warning": "Do not send until owner chooses to execute this handoff.",
+      "copy_paste_block": "Subject: Quick question on AI-agent implementation readiness\n\nHi WotAI AI Automation,\n\nI am Aiden, an AI-assisted CEO/runtime agent for Y*Bridge Labs, working with Haotian. I am not pretending to be a human teammate, and this is a small owner-operated validation note before we ask anyone to buy anything.\n\nWe are testing a 48h AI Agent Implementation Readiness Review for teams or agencies trying to deploy AI agents/coding agents safely. The review maps implementation readiness, workflow bottlenecks, governance risks, and the safest next operational step.\n\nWould this kind of 48h readiness review be useful enough to justify a paid diagnostic or pilot-prep conversation?\n\nNo pressure, no automated follow-up, and it is completely fine to ignore this. If this is not relevant, please disregard.\n",
+      "ledger_id_to_mark_as_sent": "ledger_c2_action_primary_003_cand_wotai_wotai",
+      "feedback_event_id_to_use_after_reply": "feedback_c2_action_primary_003_cand_wotai_wotai",
+      "what_owner_does_now": "If owner later chooses E15A, send this exact block manually and then record the ledger id shown above.",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "target_id": "cand_alicelabs_alicelabs",
+      "target": "Alice Labs AI Operations Consulting",
+      "context_summary": "Alice Labs AI Operations Consulting is queued for 48h AI Agent Implementation Readiness Review validation.",
+      "why_this_target": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "exact_message_draft": "Subject: Quick question on AI-agent implementation readiness\n\nHi Alice Labs AI Operations Consulting,\n\nI am Aiden, an AI-assisted CEO/runtime agent for Y*Bridge Labs, working with Haotian. I am not pretending to be a human teammate, and this is a small owner-operated validation note before we ask anyone to buy anything.\n\nWe are testing a 48h AI Agent Implementation Readiness Review for teams or agencies trying to deploy AI agents/coding agents safely. The review maps implementation readiness, workflow bottlenecks, governance risks, and the safest next operational step.\n\nWould this kind of 48h readiness review be useful enough to justify a paid diagnostic or pilot-prep conversation?\n\nNo pressure, no automated follow-up, and it is completely fine to ignore this. If this is not relevant, please disregard.\n",
+      "channel_suggestion": "owner-selected public/general channel only; no scraped personal contact",
+      "do_not_send_warning": "Do not send until owner chooses to execute this handoff.",
+      "copy_paste_block": "Subject: Quick question on AI-agent implementation readiness\n\nHi Alice Labs AI Operations Consulting,\n\nI am Aiden, an AI-assisted CEO/runtime agent for Y*Bridge Labs, working with Haotian. I am not pretending to be a human teammate, and this is a small owner-operated validation note before we ask anyone to buy anything.\n\nWe are testing a 48h AI Agent Implementation Readiness Review for teams or agencies trying to deploy AI agents/coding agents safely. The review maps implementation readiness, workflow bottlenecks, governance risks, and the safest next operational step.\n\nWould this kind of 48h readiness review be useful enough to justify a paid diagnostic or pilot-prep conversation?\n\nNo pressure, no automated follow-up, and it is completely fine to ignore this. If this is not relevant, please disregard.\n",
+      "ledger_id_to_mark_as_sent": "ledger_c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "feedback_event_id_to_use_after_reply": "feedback_c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "what_owner_does_now": "If owner later chooses E15A, send this exact block manually and then record the ledger id shown above.",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "target_id": "cand_botsquash_botsquash",
+      "target": "BotSquash AI Automation Agency",
+      "context_summary": "BotSquash AI Automation Agency is queued for 48h AI Agent Implementation Readiness Review validation.",
+      "why_this_target": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "exact_message_draft": "Subject: Quick question on AI-agent implementation readiness\n\nHi BotSquash AI Automation Agency,\n\nI am Aiden, an AI-assisted CEO/runtime agent for Y*Bridge Labs, working with Haotian. I am not pretending to be a human teammate, and this is a small owner-operated validation note before we ask anyone to buy anything.\n\nWe are testing a 48h AI Agent Implementation Readiness Review for teams or agencies trying to deploy AI agents/coding agents safely. The review maps implementation readiness, workflow bottlenecks, governance risks, and the safest next operational step.\n\nWould this kind of 48h readiness review be useful enough to justify a paid diagnostic or pilot-prep conversation?\n\nNo pressure, no automated follow-up, and it is completely fine to ignore this. If this is not relevant, please disregard.\n",
+      "channel_suggestion": "owner-selected public/general channel only; no scraped personal contact",
+      "do_not_send_warning": "Do not send until owner chooses to execute this handoff.",
+      "copy_paste_block": "Subject: Quick question on AI-agent implementation readiness\n\nHi BotSquash AI Automation Agency,\n\nI am Aiden, an AI-assisted CEO/runtime agent for Y*Bridge Labs, working with Haotian. I am not pretending to be a human teammate, and this is a small owner-operated validation note before we ask anyone to buy anything.\n\nWe are testing a 48h AI Agent Implementation Readiness Review for teams or agencies trying to deploy AI agents/coding agents safely. The review maps implementation readiness, workflow bottlenecks, governance risks, and the safest next operational step.\n\nWould this kind of 48h readiness review be useful enough to justify a paid diagnostic or pilot-prep conversation?\n\nNo pressure, no automated follow-up, and it is completely fine to ignore this. If this is not relevant, please disregard.\n",
+      "ledger_id_to_mark_as_sent": "ledger_c2_action_fallback_005_cand_botsquash_botsquash",
+      "feedback_event_id_to_use_after_reply": "feedback_c2_action_fallback_005_cand_botsquash_botsquash",
+      "what_owner_does_now": "If owner later chooses E15A, send this exact block manually and then record the ledger id shown above.",
+      "external_action_executed": false
+    }
+  ],
+  "external_action_executed": false
+}

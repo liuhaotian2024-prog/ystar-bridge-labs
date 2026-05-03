@@ -1,0 +1,40 @@
+{
+  "states": [
+    "prepared",
+    "owner_handoff_ready",
+    "owner_sent_unconfirmed",
+    "sent_confirmed_by_owner",
+    "waiting_feedback",
+    "feedback_received",
+    "no_response_timeout",
+    "suppressed",
+    "closed_positive",
+    "closed_negative",
+    "closed_no_response",
+    "requires_offer_revision",
+    "requires_governance_review"
+  ],
+  "auto_states_allowed_in_c3": [
+    "prepared",
+    "owner_handoff_ready",
+    "dry_run_completed",
+    "waiting_owner_action"
+  ],
+  "owner_confirmation_required_for": [
+    "sent_confirmed_by_owner",
+    "waiting_feedback",
+    "feedback_received",
+    "no_response_timeout"
+  ],
+  "no_fake_sent": true,
+  "template": {
+    "ledger_id": "REQUIRED",
+    "action_id": "REQUIRED",
+    "state": "prepared|owner_handoff_ready|owner_sent_unconfirmed|sent_confirmed_by_owner|waiting_feedback|feedback_received|no_response_timeout|suppressed|closed_positive|closed_negative|closed_no_response|requires_offer_revision|requires_governance_review",
+    "owner_confirmation_ref": "",
+    "gov_mcp_receipt_ref": "",
+    "dry_run_receipt_ref": "",
+    "feedback_event_ref": "",
+    "transition_reason": ""
+  }
+}

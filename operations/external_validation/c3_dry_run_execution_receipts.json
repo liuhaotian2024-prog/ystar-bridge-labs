@@ -1,0 +1,180 @@
+{
+  "receipt_set_id": "c3_dry_run_execution_receipts",
+  "external_action_executed": false,
+  "receipts": [
+    {
+      "receipt_id": "dry_run_receipt_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "decision_id": "c2_ygov_decision_62d31c006a",
+      "mcp_execution_mode": "owner_handoff",
+      "dry_run_status": "completed_control_plane_only",
+      "external_action_executed": false,
+      "allowed_local_outputs": [
+        "message_capsule_prepared",
+        "owner_handoff_packet_prepared",
+        "ledger_transition_preview_prepared",
+        "feedback_wait_state_prepared"
+      ],
+      "prohibited_external_outputs": [
+        "email_message_sent",
+        "publication",
+        "form_submission",
+        "login",
+        "payment",
+        "account_creation"
+      ],
+      "ledger_transition_preview": "prepared -> owner_handoff_ready -> waiting_owner_action",
+      "feedback_wait_state": "feedback_waiting_only_after_valid_owner_confirmed_send",
+      "generated_at": "deterministic_c3_generation",
+      "reason_codes": [
+        "constitutional_activation_pending",
+        "external_execution_not_approved"
+      ]
+    },
+    {
+      "receipt_id": "dry_run_receipt_c2_action_primary_002_cand_botsquash_botsquash",
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "decision_id": "c2_ygov_decision_b7ef7a6340",
+      "mcp_execution_mode": "owner_handoff",
+      "dry_run_status": "completed_control_plane_only",
+      "external_action_executed": false,
+      "allowed_local_outputs": [
+        "message_capsule_prepared",
+        "owner_handoff_packet_prepared",
+        "ledger_transition_preview_prepared",
+        "feedback_wait_state_prepared"
+      ],
+      "prohibited_external_outputs": [
+        "email_message_sent",
+        "publication",
+        "form_submission",
+        "login",
+        "payment",
+        "account_creation"
+      ],
+      "ledger_transition_preview": "prepared -> owner_handoff_ready -> waiting_owner_action",
+      "feedback_wait_state": "feedback_waiting_only_after_valid_owner_confirmed_send",
+      "generated_at": "deterministic_c3_generation",
+      "reason_codes": [
+        "constitutional_activation_pending",
+        "external_execution_not_approved"
+      ]
+    },
+    {
+      "receipt_id": "dry_run_receipt_c2_action_primary_003_cand_wotai_wotai",
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "decision_id": "c2_ygov_decision_828621c8e8",
+      "mcp_execution_mode": "owner_handoff",
+      "dry_run_status": "completed_control_plane_only",
+      "external_action_executed": false,
+      "allowed_local_outputs": [
+        "message_capsule_prepared",
+        "owner_handoff_packet_prepared",
+        "ledger_transition_preview_prepared",
+        "feedback_wait_state_prepared"
+      ],
+      "prohibited_external_outputs": [
+        "email_message_sent",
+        "publication",
+        "form_submission",
+        "login",
+        "payment",
+        "account_creation"
+      ],
+      "ledger_transition_preview": "prepared -> owner_handoff_ready -> waiting_owner_action",
+      "feedback_wait_state": "feedback_waiting_only_after_valid_owner_confirmed_send",
+      "generated_at": "deterministic_c3_generation",
+      "reason_codes": [
+        "constitutional_activation_pending",
+        "external_execution_not_approved"
+      ]
+    },
+    {
+      "receipt_id": "dry_run_receipt_c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "decision_id": "c2_ygov_decision_ac709f3674",
+      "mcp_execution_mode": "owner_handoff",
+      "dry_run_status": "completed_control_plane_only",
+      "external_action_executed": false,
+      "allowed_local_outputs": [
+        "message_capsule_prepared",
+        "owner_handoff_packet_prepared",
+        "ledger_transition_preview_prepared",
+        "feedback_wait_state_prepared"
+      ],
+      "prohibited_external_outputs": [
+        "email_message_sent",
+        "publication",
+        "form_submission",
+        "login",
+        "payment",
+        "account_creation"
+      ],
+      "ledger_transition_preview": "prepared -> owner_handoff_ready -> waiting_owner_action",
+      "feedback_wait_state": "feedback_waiting_only_after_valid_owner_confirmed_send",
+      "generated_at": "deterministic_c3_generation",
+      "reason_codes": [
+        "constitutional_activation_pending",
+        "external_execution_not_approved"
+      ]
+    },
+    {
+      "receipt_id": "dry_run_receipt_c2_action_fallback_005_cand_botsquash_botsquash",
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "decision_id": "c2_ygov_decision_bb95f45f99",
+      "mcp_execution_mode": "owner_handoff",
+      "dry_run_status": "completed_control_plane_only",
+      "external_action_executed": false,
+      "allowed_local_outputs": [
+        "message_capsule_prepared",
+        "owner_handoff_packet_prepared",
+        "ledger_transition_preview_prepared",
+        "feedback_wait_state_prepared"
+      ],
+      "prohibited_external_outputs": [
+        "email_message_sent",
+        "publication",
+        "form_submission",
+        "login",
+        "payment",
+        "account_creation"
+      ],
+      "ledger_transition_preview": "prepared -> owner_handoff_ready -> waiting_owner_action",
+      "feedback_wait_state": "feedback_waiting_only_after_valid_owner_confirmed_send",
+      "generated_at": "deterministic_c3_generation",
+      "reason_codes": [
+        "constitutional_activation_pending",
+        "external_execution_not_approved"
+      ]
+    },
+    {
+      "receipt_id": "dry_run_receipt_c2_action_fallback_006_cand_wotai_wotai",
+      "action_id": "c2_action_fallback_006_cand_wotai_wotai",
+      "decision_id": "c2_ygov_decision_f4bdc36d13",
+      "mcp_execution_mode": "owner_handoff",
+      "dry_run_status": "completed_control_plane_only",
+      "external_action_executed": false,
+      "allowed_local_outputs": [
+        "message_capsule_prepared",
+        "owner_handoff_packet_prepared",
+        "ledger_transition_preview_prepared",
+        "feedback_wait_state_prepared"
+      ],
+      "prohibited_external_outputs": [
+        "email_message_sent",
+        "publication",
+        "form_submission",
+        "login",
+        "payment",
+        "account_creation"
+      ],
+      "ledger_transition_preview": "prepared -> owner_handoff_ready -> waiting_owner_action",
+      "feedback_wait_state": "feedback_waiting_only_after_valid_owner_confirmed_send",
+      "generated_at": "deterministic_c3_generation",
+      "reason_codes": [
+        "constitutional_activation_pending",
+        "external_execution_not_approved"
+      ]
+    }
+  ]
+}
