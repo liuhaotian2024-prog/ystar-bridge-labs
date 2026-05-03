@@ -1,0 +1,48 @@
+{
+  "fixture_id": "e15a_owner_send_confirmation_fixture",
+  "source_console_id": "e15a_owner_execution_console",
+  "rows": [
+    {
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "ledger_id": "ledger_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "feedback_event_id": "feedback_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_id": "cand_alicelabs_alicelabs",
+      "send_status": "not_sent",
+      "sent_confirmed_by_owner": false,
+      "sent_at": "",
+      "channel_used": "",
+      "not_sent_reason": "awaiting_owner_execution",
+      "awaiting_owner_confirmation": true,
+      "external_action_executed_by_agent": false
+    },
+    {
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "ledger_id": "ledger_c2_action_primary_002_cand_botsquash_botsquash",
+      "feedback_event_id": "feedback_c2_action_primary_002_cand_botsquash_botsquash",
+      "target_id": "cand_botsquash_botsquash",
+      "send_status": "not_sent",
+      "sent_confirmed_by_owner": false,
+      "sent_at": "",
+      "channel_used": "",
+      "not_sent_reason": "awaiting_owner_execution",
+      "awaiting_owner_confirmation": true,
+      "external_action_executed_by_agent": false
+    },
+    {
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "ledger_id": "ledger_c2_action_primary_003_cand_wotai_wotai",
+      "feedback_event_id": "feedback_c2_action_primary_003_cand_wotai_wotai",
+      "target_id": "cand_wotai_wotai",
+      "send_status": "not_sent",
+      "sent_confirmed_by_owner": false,
+      "sent_at": "",
+      "channel_used": "",
+      "not_sent_reason": "awaiting_owner_execution",
+      "awaiting_owner_confirmation": true,
+      "external_action_executed_by_agent": false
+    }
+  ],
+  "sent_confirmed_by_owner": false,
+  "external_action_executed_by_agent": false,
+  "awaiting_owner_confirmation": true
+}

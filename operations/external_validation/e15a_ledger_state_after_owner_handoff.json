@@ -1,0 +1,43 @@
+{
+  "state_id": "e15a_ledger_state_after_owner_handoff",
+  "rows": [
+    {
+      "ledger_id": "ledger_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "feedback_event_id": "feedback_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "previous_state": "owner_handoff_ready",
+      "state": "waiting_owner_send",
+      "secondary_state": "awaiting_owner_confirmation",
+      "send_status": "not_sent",
+      "sent_confirmed_by_owner": false,
+      "external_action_executed_by_agent": false,
+      "transition_reason": "E15A moved C3 owner-handoff-ready row into owner send waiting state only."
+    },
+    {
+      "ledger_id": "ledger_c2_action_primary_002_cand_botsquash_botsquash",
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "feedback_event_id": "feedback_c2_action_primary_002_cand_botsquash_botsquash",
+      "previous_state": "owner_handoff_ready",
+      "state": "waiting_owner_send",
+      "secondary_state": "awaiting_owner_confirmation",
+      "send_status": "not_sent",
+      "sent_confirmed_by_owner": false,
+      "external_action_executed_by_agent": false,
+      "transition_reason": "E15A moved C3 owner-handoff-ready row into owner send waiting state only."
+    },
+    {
+      "ledger_id": "ledger_c2_action_primary_003_cand_wotai_wotai",
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "feedback_event_id": "feedback_c2_action_primary_003_cand_wotai_wotai",
+      "previous_state": "owner_handoff_ready",
+      "state": "waiting_owner_send",
+      "secondary_state": "awaiting_owner_confirmation",
+      "send_status": "not_sent",
+      "sent_confirmed_by_owner": false,
+      "external_action_executed_by_agent": false,
+      "transition_reason": "E15A moved C3 owner-handoff-ready row into owner send waiting state only."
+    }
+  ],
+  "external_action_executed_by_agent": false,
+  "sent_confirmed_by_owner": false
+}

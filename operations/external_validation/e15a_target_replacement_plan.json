@@ -1,0 +1,62 @@
+{
+  "plan_id": "e15a_target_replacement_plan",
+  "routes_supported": [
+    "keep_primary",
+    "replace_with_fallback",
+    "suppress_target",
+    "require_more_research",
+    "require_owner_review",
+    "revise_message_before_send"
+  ],
+  "primary_routes": [
+    {
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_id": "cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "send_status": "not_sent",
+      "route": "keep_primary",
+      "reason": "primary_ready_but_awaiting_owner_send",
+      "fallback_allowed": false,
+      "owner_review_required": false,
+      "suppression_required": false
+    },
+    {
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "target_id": "cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "send_status": "not_sent",
+      "route": "keep_primary",
+      "reason": "primary_ready_but_awaiting_owner_send",
+      "fallback_allowed": false,
+      "owner_review_required": false,
+      "suppression_required": false
+    },
+    {
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "target_id": "cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "send_status": "not_sent",
+      "route": "keep_primary",
+      "reason": "primary_ready_but_awaiting_owner_send",
+      "fallback_allowed": false,
+      "owner_review_required": false,
+      "suppression_required": false
+    }
+  ],
+  "fallback_pool": [
+    {
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "target_id": "cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "use_condition": "Use only when a primary is skipped, suppressed, or blocked by missing target info."
+    },
+    {
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "target_id": "cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "use_condition": "Use only when a primary is skipped, suppressed, or blocked by missing target info."
+    }
+  ],
+  "default_route": "keep_primary",
+  "external_action_executed_by_agent": false
+}

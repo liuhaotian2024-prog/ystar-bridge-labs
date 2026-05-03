@@ -1,0 +1,28 @@
+{
+  "template_id": "e15a_owner_send_confirmation_template",
+  "source_console_id": "e15a_owner_execution_console",
+  "status_values": [
+    "not_sent",
+    "sent_by_owner_unconfirmed",
+    "sent_confirmed_by_owner",
+    "skipped_by_owner",
+    "blocked_by_missing_target_info",
+    "replaced_by_fallback",
+    "suppressed_by_owner"
+  ],
+  "instructions": "Owner fills one row only after manually sending, skipping, replacing, or suppressing a target. Aiden/Codex must not create sent confirmations.",
+  "fields": {
+    "action_id": "REQUIRED_FROM_CONSOLE",
+    "ledger_id": "REQUIRED_FROM_CONSOLE",
+    "feedback_event_id": "REQUIRED_FROM_CONSOLE",
+    "target_id": "REQUIRED_FROM_CONSOLE",
+    "send_status": "not_sent|sent_by_owner_unconfirmed|sent_confirmed_by_owner|skipped_by_owner|blocked_by_missing_target_info|replaced_by_fallback|suppressed_by_owner",
+    "sent_confirmed_by_owner": false,
+    "sent_at": "OWNER_TO_FILL_IF_SENT",
+    "channel_used": "OWNER_TO_FILL_IF_SENT",
+    "not_sent_reason": "OWNER_TO_FILL_IF_NOT_SENT",
+    "owner_notes": ""
+  },
+  "external_action_executed_by_agent": false,
+  "no_fake_sent_confirmation": true
+}

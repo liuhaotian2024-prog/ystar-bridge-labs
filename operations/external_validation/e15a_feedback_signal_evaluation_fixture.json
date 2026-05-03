@@ -1,0 +1,81 @@
+{
+  "fixture_id": "e15a_feedback_signal_evaluation_fixture",
+  "cases": [
+    {
+      "feedback_type": "no_response",
+      "normalized_signal": "no_response",
+      "signal_strength": "weak",
+      "sales_implication": "no buyer signal yet",
+      "governance_implication": "valid only after real action ledger and wait window",
+      "target_route": "wait_or_replace_after_timeout",
+      "offer_route": "insufficient_signal",
+      "next_action_route": "rotate_to_fallback_or_wait",
+      "owner_escalation_required": false,
+      "suppression_required": false,
+      "offer_revision_required": false,
+      "allowed_next_step": "record_no_response_after_valid_action",
+      "blocked_next_step": "count_as_negative_without_wait_window"
+    },
+    {
+      "feedback_type": "positive_interest",
+      "normalized_signal": "positive_interest",
+      "signal_strength": "medium",
+      "sales_implication": "buyer interest exists but may not be paid signal",
+      "governance_implication": "requires next-step envelope before follow-up",
+      "target_route": "keep_target_open",
+      "offer_route": "continue_current_offer",
+      "next_action_route": "prepare_governed_followup_decision",
+      "owner_escalation_required": false,
+      "suppression_required": false,
+      "offer_revision_required": false,
+      "allowed_next_step": "draft_followup_for_Y_gov_preflight",
+      "blocked_next_step": "automatic_followup_without_envelope"
+    },
+    {
+      "feedback_type": "price_question",
+      "normalized_signal": "price_question",
+      "signal_strength": "strong",
+      "sales_implication": "paid-signal candidate may exist",
+      "governance_implication": "requires ledger-backed feedback and CIEU residual candidate",
+      "target_route": "keep_target_open",
+      "offer_route": "prepare_paid_signal_review",
+      "next_action_route": "E15D_gov_mcp_controlled_execution_pilot_after_owner_review",
+      "owner_escalation_required": false,
+      "suppression_required": false,
+      "offer_revision_required": false,
+      "allowed_next_step": "record_paid_signal_candidate_feedback",
+      "blocked_next_step": "claim_revenue_or_collect_payment"
+    },
+    {
+      "feedback_type": "unsubscribe_or_do_not_contact",
+      "normalized_signal": "unsubscribe_or_do_not_contact",
+      "signal_strength": "hard_stop",
+      "sales_implication": "target must be suppressed",
+      "governance_implication": "suppression and stop condition triggered",
+      "target_route": "suppress_target",
+      "offer_route": "continue_offer_but_respect_suppression",
+      "next_action_route": "E15E_suppression_and_batch_replacement",
+      "owner_escalation_required": true,
+      "suppression_required": true,
+      "offer_revision_required": false,
+      "allowed_next_step": "write_suppression_receipt",
+      "blocked_next_step": "follow_up"
+    }
+  ],
+  "invalid_no_response_without_sent_ledger": {
+    "feedback_type": "no_response",
+    "normalized_signal": "invalid_no_response_without_action",
+    "signal_strength": "invalid",
+    "sales_implication": "no usable commercial signal",
+    "governance_implication": "invalid or unsupported feedback cannot drive learning",
+    "target_route": "require_owner_review",
+    "offer_route": "insufficient_or_invalid_signal",
+    "next_action_route": "request_clarification_or_mark_invalid",
+    "owner_escalation_required": false,
+    "suppression_required": false,
+    "offer_revision_required": false,
+    "allowed_next_step": "record_limitation",
+    "blocked_next_step": "enter_E15"
+  },
+  "public_evidence_is_not_feedback": true
+}

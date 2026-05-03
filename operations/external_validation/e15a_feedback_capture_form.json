@@ -1,0 +1,59 @@
+{
+  "form_id": "e15a_feedback_capture_form",
+  "source_console_id": "e15a_owner_execution_console",
+  "valid_actions": [
+    {
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "ledger_id": "ledger_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "feedback_event_id": "feedback_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_id": "cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting"
+    },
+    {
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "ledger_id": "ledger_c2_action_primary_002_cand_botsquash_botsquash",
+      "feedback_event_id": "feedback_c2_action_primary_002_cand_botsquash_botsquash",
+      "target_id": "cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency"
+    },
+    {
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "ledger_id": "ledger_c2_action_primary_003_cand_wotai_wotai",
+      "feedback_event_id": "feedback_c2_action_primary_003_cand_wotai_wotai",
+      "target_id": "cand_wotai_wotai",
+      "target_name": "WotAI AI Automation"
+    }
+  ],
+  "feedback_types": [
+    "no_response",
+    "positive_interest",
+    "request_for_details",
+    "price_question",
+    "referral",
+    "negative_not_relevant",
+    "negative_timing",
+    "unsubscribe_or_do_not_contact",
+    "safety_or_trust_concern",
+    "unclear_response"
+  ],
+  "fields": {
+    "action_id": "REQUIRED_FROM_VALID_ACTION",
+    "ledger_id": "REQUIRED_FROM_VALID_ACTION",
+    "feedback_event_id": "REQUIRED_FROM_VALID_ACTION",
+    "target_id": "REQUIRED_FROM_VALID_ACTION",
+    "raw_feedback_summary": "OWNER_TO_FILL_NO_INVENTED_FEEDBACK",
+    "feedback_type": "no_response|positive_interest|request_for_details|price_question|referral|negative_not_relevant|negative_timing|unsubscribe_or_do_not_contact|safety_or_trust_concern|unclear_response",
+    "received_at": "ISO8601_OR_NO_RESPONSE_TIMEOUT_DATE",
+    "channel": "owner_selected_channel",
+    "owner_notes": "",
+    "do_not_contact_requested": false,
+    "safety_or_trust_concern": false,
+    "price_question_present": false,
+    "request_for_details_present": false,
+    "referral_present": false,
+    "positive_interest_present": false
+  },
+  "public_evidence_is_not_feedback": true,
+  "no_response_requires_valid_sent_ledger": true,
+  "external_action_executed_by_agent": false
+}

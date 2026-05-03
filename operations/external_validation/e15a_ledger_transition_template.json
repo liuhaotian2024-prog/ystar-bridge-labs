@@ -1,0 +1,36 @@
+{
+  "template_id": "e15a_ledger_transition_template",
+  "transitions": [
+    "owner_handoff_ready -> waiting_owner_send",
+    "waiting_owner_send -> sent_confirmed_by_owner",
+    "waiting_owner_send -> skipped_by_owner",
+    "waiting_owner_send -> replaced_by_fallback",
+    "sent_confirmed_by_owner -> waiting_feedback",
+    "waiting_feedback -> feedback_received",
+    "waiting_feedback -> no_response_timeout",
+    "feedback_received -> closed_positive",
+    "feedback_received -> closed_negative",
+    "feedback_received -> requires_offer_revision",
+    "feedback_received -> requires_governance_review"
+  ],
+  "auto_states_allowed_in_e15a": [
+    "waiting_owner_send",
+    "awaiting_owner_confirmation"
+  ],
+  "owner_confirmation_required_for": [
+    "sent_confirmed_by_owner",
+    "waiting_feedback",
+    "feedback_received",
+    "no_response_timeout"
+  ],
+  "no_fake_sent": true,
+  "fields": {
+    "ledger_id": "REQUIRED",
+    "action_id": "REQUIRED",
+    "from_state": "owner_handoff_ready",
+    "to_state": "waiting_owner_send|awaiting_owner_confirmation|sent_confirmed_by_owner|skipped_by_owner|replaced_by_fallback",
+    "owner_confirmation_ref": "REQUIRED_IF_SENT",
+    "feedback_event_ref": "REQUIRED_AFTER_FEEDBACK",
+    "transition_reason": "REQUIRED"
+  }
+}
