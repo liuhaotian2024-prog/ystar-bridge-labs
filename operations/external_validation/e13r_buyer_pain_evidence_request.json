@@ -1,0 +1,164 @@
+{
+  "request_id": "e13r_offer_revision_buyer_pain_evidence",
+  "milestone_id": "E13R_offer_revision_buyer_pain_evidence_rerun",
+  "entry_repository_delivery_rt1": 0,
+  "revised_offer_ids": [
+    "ai_ops_operating_room_implementation_support",
+    "coding_agent_governance_audit",
+    "ai_agent_workflow_recovery_room",
+    "ai_ops_bottleneck_risk_map",
+    "ai_agent_implementation_readiness_review"
+  ],
+  "queries": [
+    "AI agents broke production workflow",
+    "coding agent generated unsafe code",
+    "AI workflow bottleneck consulting",
+    "AI implementation audit",
+    "AI agent governance consulting",
+    "AI development workflow audit",
+    "Cursor coding agent governance",
+    "AI coding assistant risk management",
+    "agentic AI implementation challenges",
+    "AI operations consulting pricing"
+  ],
+  "allowed_source_classes": [
+    "public_buyer_pain_article",
+    "public_governance_article",
+    "public_production_failure_article",
+    "public_pricing_page",
+    "public_substitute_or_competitor_page",
+    "public_docs_or_vendor_claim"
+  ],
+  "source_urls": [
+    {
+      "url": "https://www.techtarget.com/searchdatamanagement/feature/How-agentic-AI-governance-tackles-data-security-challenges",
+      "source_type": "public_buyer_pain_article",
+      "offer_ids": [
+        "ai_agent_implementation_readiness_review",
+        "ai_ops_operating_room_implementation_support"
+      ],
+      "query_or_locator": "agentic AI governance data security operational risk pain"
+    },
+    {
+      "url": "https://latitude.so/blog/why-ai-agents-break-in-production",
+      "source_type": "public_production_failure_article",
+      "offer_ids": [
+        "ai_agent_workflow_recovery_room",
+        "ai_ops_bottleneck_risk_map"
+      ],
+      "query_or_locator": "AI agents break production workflow failure patterns"
+    },
+    {
+      "url": "https://nodejam.com/blog/why-ai-agents-break-in-production",
+      "source_type": "public_production_failure_article",
+      "offer_ids": [
+        "ai_agent_workflow_recovery_room",
+        "ai_ops_bottleneck_risk_map"
+      ],
+      "query_or_locator": "agent workflows break in production enterprise workflows"
+    },
+    {
+      "url": "https://www.n-ix.com/agentic-ai-governance/",
+      "source_type": "public_governance_article",
+      "offer_ids": [
+        "coding_agent_governance_audit",
+        "ai_agent_implementation_readiness_review"
+      ],
+      "query_or_locator": "agentic AI governance implementation challenges behavior hard to explain"
+    },
+    {
+      "url": "https://www.ibm.com/think/insights/agentic-ai-governance-playbook",
+      "source_type": "public_governance_article",
+      "offer_ids": [
+        "ai_agent_implementation_readiness_review",
+        "ai_ops_operating_room_implementation_support"
+      ],
+      "query_or_locator": "agentic AI execution gap unclear value weak risk controls"
+    },
+    {
+      "url": "https://www.ibm.com/think/insights/ethics-governance-agentic-ai",
+      "source_type": "public_governance_article",
+      "offer_ids": [
+        "coding_agent_governance_audit",
+        "ai_agent_implementation_readiness_review"
+      ],
+      "query_or_locator": "agentic AI risks code actions guardrails governance"
+    },
+    {
+      "url": "https://www.primefirms.co/trends-articles/agentic-ai-architecture",
+      "source_type": "public_buyer_pain_article",
+      "offer_ids": [
+        "ai_ops_bottleneck_risk_map",
+        "ai_agent_implementation_readiness_review"
+      ],
+      "query_or_locator": "agentic AI implementation challenges reliability hallucination integration"
+    },
+    {
+      "url": "https://www.computerweekly.com/feature/Work-is-broken-Can-agentic-AI-fix-it",
+      "source_type": "public_buyer_pain_article",
+      "offer_ids": [
+        "ai_ops_bottleneck_risk_map",
+        "ai_ops_operating_room_implementation_support"
+      ],
+      "query_or_locator": "work is broken agentic AI workflow fragmentation"
+    },
+    {
+      "url": "https://audit-loop.com/",
+      "source_type": "public_substitute_or_competitor_page",
+      "offer_ids": [
+        "coding_agent_governance_audit"
+      ],
+      "query_or_locator": "AI coding audit substitute comparable service"
+    },
+    {
+      "url": "https://ethicalveracity.ai/",
+      "source_type": "public_substitute_or_competitor_page",
+      "offer_ids": [
+        "coding_agent_governance_audit",
+        "ai_agent_implementation_readiness_review"
+      ],
+      "query_or_locator": "AI governance audit substitute comparable service"
+    },
+    {
+      "url": "https://www.johsolutions.com/pricing",
+      "source_type": "public_pricing_page",
+      "offer_ids": [
+        "ai_ops_operating_room_implementation_support",
+        "ai_agent_implementation_readiness_review"
+      ],
+      "query_or_locator": "AI consulting pricing reference"
+    },
+    {
+      "url": "https://automationtransformationconsulting.com/resources/ai-automation-cost-guide",
+      "source_type": "public_pricing_page",
+      "offer_ids": [
+        "ai_ops_operating_room_implementation_support",
+        "ai_ops_bottleneck_risk_map"
+      ],
+      "query_or_locator": "AI automation consulting cost guide pricing"
+    }
+  ],
+  "budget": {
+    "max_sources": 12,
+    "max_bytes_per_source": 140000,
+    "max_runtime_seconds": 180
+  },
+  "forbidden_actions": [
+    "customer_contact",
+    "email_or_message",
+    "publication",
+    "payment",
+    "account_creation",
+    "form_submission",
+    "login",
+    "private_data_collection",
+    "personal_contact_scraping",
+    "high_volume_crawling",
+    "secret_reading",
+    "core_brain_cieu_memory_writeback",
+    "obligation_auto_registration"
+  ],
+  "run_public_collection_if_sources_available": true,
+  "public_evidence_is_validation_feedback": false,
+  "readiness_is_revenue": false
+}

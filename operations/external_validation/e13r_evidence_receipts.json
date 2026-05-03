@@ -1,0 +1,112 @@
+{
+  "receipts": [
+    {
+      "source_id": "e13r_source_001",
+      "source_url": "https://www.techtarget.com/searchdatamanagement/feature/How-agentic-AI-governance-tackles-data-security-challenges",
+      "source_type": "public_buyer_pain_article",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": "",
+      "content_type": "text/html;charset=UTF-8"
+    },
+    {
+      "source_id": "e13r_source_002",
+      "source_url": "https://latitude.so/blog/why-ai-agents-break-in-production",
+      "source_type": "public_production_failure_article",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": "",
+      "content_type": "text/html"
+    },
+    {
+      "source_id": "e13r_source_003",
+      "source_url": "https://nodejam.com/blog/why-ai-agents-break-in-production",
+      "source_type": "public_production_failure_article",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": "",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "source_id": "e13r_source_004",
+      "source_url": "https://www.n-ix.com/agentic-ai-governance/",
+      "source_type": "public_governance_article",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": "",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "e13r_source_005",
+      "source_url": "https://www.ibm.com/think/insights/agentic-ai-governance-playbook",
+      "source_type": "public_governance_article",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": "",
+      "content_type": "text/html;charset=utf-8"
+    },
+    {
+      "source_id": "e13r_source_006",
+      "source_url": "https://www.ibm.com/think/insights/ethics-governance-agentic-ai",
+      "source_type": "public_governance_article",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": "",
+      "content_type": "text/html;charset=utf-8"
+    },
+    {
+      "source_id": "e13r_source_007",
+      "source_url": "https://www.primefirms.co/trends-articles/agentic-ai-architecture",
+      "source_type": "public_buyer_pain_article",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": "",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "source_id": "e13r_source_008",
+      "source_url": "https://www.computerweekly.com/feature/Work-is-broken-Can-agentic-AI-fix-it",
+      "source_type": "public_buyer_pain_article",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": "",
+      "content_type": "text/html;charset=UTF-8"
+    },
+    {
+      "source_id": "e13r_source_009",
+      "source_url": "https://audit-loop.com/",
+      "source_type": "public_substitute_or_competitor_page",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": "",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "source_id": "e13r_source_010",
+      "source_url": "https://ethicalveracity.ai/",
+      "source_type": "public_substitute_or_competitor_page",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": "",
+      "content_type": "text/html"
+    },
+    {
+      "source_id": "e13r_source_011",
+      "source_url": "https://www.johsolutions.com/pricing",
+      "source_type": "public_pricing_page",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": "",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "source_id": "e13r_source_012",
+      "source_url": "https://automationtransformationconsulting.com/resources/ai-automation-cost-guide",
+      "source_type": "public_pricing_page",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": "",
+      "content_type": "text/html; charset=utf-8"
+    }
+  ]
+}
