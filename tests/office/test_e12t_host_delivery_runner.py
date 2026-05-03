@@ -67,6 +67,16 @@ def test_unexpected_dirty_file_is_rejected():
     assert "unexpected_dirty_file: other.py" in errors
 
 
+def test_generated_delivery_reports_can_be_ignored_without_staging():
+    errors = runner.reject_unexpected_dirty(
+        ["operations/repository_delivery/delivery_reports/e12t.md"],
+        ["allowed.py"],
+        runner.DEFAULT_FORBIDDEN_PATTERNS,
+        ["operations/repository_delivery/delivery_reports/**"],
+    )
+    assert errors == []
+
+
 def test_pycache_is_rejected():
     errors = runner.reject_unexpected_dirty(["tests/__pycache__/x.pyc"], ["allowed.py"], runner.DEFAULT_FORBIDDEN_PATTERNS)
     assert "forbidden_file_present: tests/__pycache__/x.pyc" in errors

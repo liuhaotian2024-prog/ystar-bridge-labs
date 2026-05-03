@@ -1,0 +1,88 @@
+{
+  "receipts": [
+    {
+      "source_id": "e13_source_001",
+      "source_url": "https://automationtransformationconsulting.com/resources/ai-automation-cost-guide",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "source_id": "e13_source_002",
+      "source_url": "https://www.orionintelligenceagency.com/advisory",
+      "access_mode": "public_read_only_no_login",
+      "ok": false,
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "source_id": "e13_source_003",
+      "source_url": "https://humansai.io/blog/ai-automation-agency-pricing-2026",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "source_id": "e13_source_004",
+      "source_url": "https://www.smeautomate.com/pricing",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "source_id": "e13_source_005",
+      "source_url": "https://www.jonomor.com/pricing",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "source_id": "e13_source_006",
+      "source_url": "https://dynode.ai/pricing",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "source_id": "e13_source_007",
+      "source_url": "https://flowevolve.com/services/",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "source_id": "e13_source_008",
+      "source_url": "https://ethicalveracity.ai/",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "source_id": "e13_source_009",
+      "source_url": "https://www.johsolutions.com/pricing",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "source_id": "e13_source_010",
+      "source_url": "https://coverge.ai/blog/llmops-tools-pricing-comparison",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "source_id": "e13_source_011",
+      "source_url": "https://audit-loop.com/",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "source_id": "e13_source_012",
+      "source_url": "https://www.byteintelligence.com/pricing",
+      "access_mode": "public_read_only_no_login",
+      "ok": true,
+      "error": ""
+    }
+  ]
+}

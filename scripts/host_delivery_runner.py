@@ -239,10 +239,18 @@ def changed_paths(repo_root: Path) -> List[str]:
     return parse_status_porcelain(status.stdout)
 
 
-def reject_unexpected_dirty(paths: List[str], allowed_files: List[str], forbidden_patterns: List[str]) -> List[str]:
+def reject_unexpected_dirty(
+    paths: List[str],
+    allowed_files: List[str],
+    forbidden_patterns: List[str],
+    ignored_dirty_patterns: List[str] | None = None,
+) -> List[str]:
     allowed = set(allowed_files)
+    ignored = ignored_dirty_patterns or []
     errors: List[str] = []
     for path in paths:
+        if matches_any(path, ignored):
+            continue
         if matches_any(path, forbidden_patterns):
             errors.append(f"forbidden_file_present: {path}")
         elif path not in allowed:
@@ -366,7 +374,8 @@ def execute_delivery(request_path: Path) -> HostDeliveryResult:
 
     forbidden_patterns = list(request.get("forbidden_patterns") or DEFAULT_FORBIDDEN_PATTERNS)
     allowed_files = list(request["allowed_files"])
-    dirty_errors = reject_unexpected_dirty(changed_paths(repo_root), allowed_files, forbidden_patterns)
+    ignored_dirty_patterns = list(request.get("ignored_dirty_patterns") or [])
+    dirty_errors = reject_unexpected_dirty(changed_paths(repo_root), allowed_files, forbidden_patterns, ignored_dirty_patterns)
     if dirty_errors:
         result.failure_code = "FORBIDDEN_FILE_PRESENT" if any(error.startswith("forbidden_file") for error in dirty_errors) else "WORKTREE_DIRTY_UNEXPECTED"
         result.errors = dirty_errors
@@ -387,7 +396,7 @@ def execute_delivery(request_path: Path) -> HostDeliveryResult:
 
     if request.get("cleanup_generated_bytecode") is True:
         safe_cleanup_bytecode(repo_root)
-    dirty_errors = reject_unexpected_dirty(changed_paths(repo_root), allowed_files, forbidden_patterns)
+    dirty_errors = reject_unexpected_dirty(changed_paths(repo_root), allowed_files, forbidden_patterns, ignored_dirty_patterns)
     if dirty_errors:
         result.failure_code = "FORBIDDEN_FILE_PRESENT" if any(error.startswith("forbidden_file") for error in dirty_errors) else "WORKTREE_DIRTY_UNEXPECTED"
         result.errors = dirty_errors

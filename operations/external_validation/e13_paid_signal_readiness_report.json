@@ -1,0 +1,112 @@
+{
+  "top_path": "AI Ops Operating Room Implementation Support",
+  "second_best_path": "Coding-Agent Governance Audit",
+  "classification": "needs_offer_revision",
+  "path_results": [
+    {
+      "opportunity_path": "Agent Workflow Bottleneck Diagnosis",
+      "classification": "needs_offer_revision",
+      "evidence_count": 3,
+      "direct_buyer_pain_count": 0,
+      "pricing_or_budget_count": 3,
+      "substitute_count": 0,
+      "trust_gap_count": 1,
+      "owner_burden_low_enough": true,
+      "next_validation_question": "Would a 48h Agent Workflow Bottleneck Diagnosis diagnostic produce enough value to justify a paid next step?",
+      "reason": "Market evidence exists, but direct buyer pain is weak or missing.",
+      "evidence_router_allows_validation_feedback_claim": false,
+      "evidence_router_allows_paid_signal_claim": false
+    },
+    {
+      "opportunity_path": "Founder AI Workflow Audit / CEO Command Brief",
+      "classification": "needs_offer_revision",
+      "evidence_count": 2,
+      "direct_buyer_pain_count": 0,
+      "pricing_or_budget_count": 2,
+      "substitute_count": 0,
+      "trust_gap_count": 2,
+      "owner_burden_low_enough": true,
+      "next_validation_question": "Would a 48h Founder AI Workflow Audit / CEO Command Brief diagnostic produce enough value to justify a paid next step?",
+      "reason": "Market evidence exists, but direct buyer pain is weak or missing.",
+      "evidence_router_allows_validation_feedback_claim": false,
+      "evidence_router_allows_paid_signal_claim": false
+    },
+    {
+      "opportunity_path": "AI Agent Incident Postmortem Service",
+      "classification": "needs_offer_revision",
+      "evidence_count": 2,
+      "direct_buyer_pain_count": 0,
+      "pricing_or_budget_count": 2,
+      "substitute_count": 0,
+      "trust_gap_count": 2,
+      "owner_burden_low_enough": true,
+      "next_validation_question": "Would a 48h AI Agent Incident Postmortem Service diagnostic produce enough value to justify a paid next step?",
+      "reason": "Market evidence exists, but direct buyer pain is weak or missing.",
+      "evidence_router_allows_validation_feedback_claim": false,
+      "evidence_router_allows_paid_signal_claim": false
+    },
+    {
+      "opportunity_path": "Coding-Agent Governance Audit",
+      "classification": "needs_offer_revision",
+      "evidence_count": 4,
+      "direct_buyer_pain_count": 0,
+      "pricing_or_budget_count": 4,
+      "substitute_count": 0,
+      "trust_gap_count": 4,
+      "owner_burden_low_enough": true,
+      "next_validation_question": "Would a 48h Coding-Agent Governance Audit diagnostic produce enough value to justify a paid next step?",
+      "reason": "Market evidence exists, but direct buyer pain is weak or missing.",
+      "evidence_router_allows_validation_feedback_claim": false,
+      "evidence_router_allows_paid_signal_claim": false
+    },
+    {
+      "opportunity_path": "AI Ops Operating Room Implementation Support",
+      "classification": "needs_offer_revision",
+      "evidence_count": 5,
+      "direct_buyer_pain_count": 0,
+      "pricing_or_budget_count": 5,
+      "substitute_count": 0,
+      "trust_gap_count": 3,
+      "owner_burden_low_enough": true,
+      "next_validation_question": "Would a 48h AI Ops Operating Room Implementation Support diagnostic produce enough value to justify a paid next step?",
+      "reason": "Market evidence exists, but direct buyer pain is weak or missing.",
+      "evidence_router_allows_validation_feedback_claim": false,
+      "evidence_router_allows_paid_signal_claim": false
+    },
+    {
+      "opportunity_path": "Partner Enablement Package for AI Consultants",
+      "classification": "needs_offer_revision",
+      "evidence_count": 2,
+      "direct_buyer_pain_count": 0,
+      "pricing_or_budget_count": 2,
+      "substitute_count": 0,
+      "trust_gap_count": 1,
+      "owner_burden_low_enough": true,
+      "next_validation_question": "Would a 48h Partner Enablement Package for AI Consultants diagnostic produce enough value to justify a paid next step?",
+      "reason": "Market evidence exists, but direct buyer pain is weak or missing.",
+      "evidence_router_allows_validation_feedback_claim": false,
+      "evidence_router_allows_paid_signal_claim": false
+    },
+    {
+      "opportunity_path": "Runtime Setup Advisory",
+      "classification": "needs_offer_revision",
+      "evidence_count": 4,
+      "direct_buyer_pain_count": 0,
+      "pricing_or_budget_count": 4,
+      "substitute_count": 0,
+      "trust_gap_count": 3,
+      "owner_burden_low_enough": true,
+      "next_validation_question": "Would a 48h Runtime Setup Advisory diagnostic produce enough value to justify a paid next step?",
+      "reason": "Market evidence exists, but direct buyer pain is weak or missing.",
+      "evidence_router_allows_validation_feedback_claim": false,
+      "evidence_router_allows_paid_signal_claim": false
+    }
+  ],
+  "counterfactual_changed_default": true,
+  "paid_signal_readiness_rt1": 1,
+  "evidence_count": 22,
+  "limitations": [
+    "Public evidence is not E12 validation feedback.",
+    "Readiness is not revenue and does not approve outreach, payment, publication, account creation, or form submission."
+  ]
+}

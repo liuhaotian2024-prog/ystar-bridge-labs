@@ -1,0 +1,166 @@
+{
+  "request_id": "e13_tier1_live_read_only_evidence_mission",
+  "mission_id": "E13_tier1_host_side_live_read_only_evidence_mission",
+  "entry_repository_delivery_rt1": 0,
+  "top_offer": "48h AI Ops Operating Room Blueprint",
+  "default_path": "Agent Workflow Bottleneck Diagnosis",
+  "opportunity_paths": [
+    "Agent Workflow Bottleneck Diagnosis",
+    "Founder AI Workflow Audit / CEO Command Brief",
+    "AI Agent Incident Postmortem Service",
+    "Coding-Agent Governance Audit",
+    "AI Ops Operating Room Implementation Support",
+    "Partner Enablement Package for AI Consultants",
+    "Runtime Setup Advisory"
+  ],
+  "allowed_source_classes": [
+    "public_web_page",
+    "public_docs",
+    "public_pricing_page",
+    "public_blog_post",
+    "public_github_page",
+    "public_forum_or_community",
+    "public_marketplace_or_agency_page"
+  ],
+  "source_urls": [
+    {
+      "url": "https://automationtransformationconsulting.com/resources/ai-automation-cost-guide",
+      "source_type": "public_pricing_page",
+      "opportunity_paths": [
+        "AI Ops Operating Room Implementation Support",
+        "Runtime Setup Advisory"
+      ],
+      "query_or_locator": "AI automation consulting cost guide with pricing ranges"
+    },
+    {
+      "url": "https://www.orionintelligenceagency.com/advisory",
+      "source_type": "public_pricing_page",
+      "opportunity_paths": [
+        "Agent Workflow Bottleneck Diagnosis",
+        "AI Ops Operating Room Implementation Support"
+      ],
+      "query_or_locator": "implementation advisory workflow blueprint guardrails pricing"
+    },
+    {
+      "url": "https://humansai.io/blog/ai-automation-agency-pricing-2026",
+      "source_type": "public_blog_post",
+      "opportunity_paths": [
+        "Partner Enablement Package for AI Consultants",
+        "AI Ops Operating Room Implementation Support"
+      ],
+      "query_or_locator": "AI automation agency pricing 2026"
+    },
+    {
+      "url": "https://www.smeautomate.com/pricing",
+      "source_type": "public_pricing_page",
+      "opportunity_paths": [
+        "Agent Workflow Bottleneck Diagnosis",
+        "Runtime Setup Advisory"
+      ],
+      "query_or_locator": "AI workflow automation pricing by workflow"
+    },
+    {
+      "url": "https://www.jonomor.com/pricing",
+      "source_type": "public_pricing_page",
+      "opportunity_paths": [
+        "Coding-Agent Governance Audit",
+        "Founder AI Workflow Audit / CEO Command Brief"
+      ],
+      "query_or_locator": "AI visibility audit governance stack pricing"
+    },
+    {
+      "url": "https://dynode.ai/pricing",
+      "source_type": "public_pricing_page",
+      "opportunity_paths": [
+        "AI Ops Operating Room Implementation Support",
+        "Runtime Setup Advisory"
+      ],
+      "query_or_locator": "AI implementation pricing and retainers"
+    },
+    {
+      "url": "https://flowevolve.com/services/",
+      "source_type": "public_marketplace_or_agency_page",
+      "opportunity_paths": [
+        "AI Ops Operating Room Implementation Support",
+        "Partner Enablement Package for AI Consultants"
+      ],
+      "query_or_locator": "AI automation consulting implementation roadmap pricing"
+    },
+    {
+      "url": "https://ethicalveracity.ai/",
+      "source_type": "public_pricing_page",
+      "opportunity_paths": [
+        "Coding-Agent Governance Audit",
+        "Founder AI Workflow Audit / CEO Command Brief"
+      ],
+      "query_or_locator": "AI governance audit consulting pricing"
+    },
+    {
+      "url": "https://www.johsolutions.com/pricing",
+      "source_type": "public_pricing_page",
+      "opportunity_paths": [
+        "Agent Workflow Bottleneck Diagnosis",
+        "Runtime Setup Advisory"
+      ],
+      "query_or_locator": "AI workflow discovery audit pricing"
+    },
+    {
+      "url": "https://coverge.ai/blog/llmops-tools-pricing-comparison",
+      "source_type": "public_blog_post",
+      "opportunity_paths": [
+        "Coding-Agent Governance Audit",
+        "AI Agent Incident Postmortem Service"
+      ],
+      "query_or_locator": "LLMOps pricing comparison governance observability evaluation"
+    },
+    {
+      "url": "https://audit-loop.com/",
+      "source_type": "public_pricing_page",
+      "opportunity_paths": [
+        "Coding-Agent Governance Audit",
+        "AI Agent Incident Postmortem Service"
+      ],
+      "query_or_locator": "AI agent governance approval routing audit trail pricing"
+    },
+    {
+      "url": "https://www.byteintelligence.com/pricing",
+      "source_type": "public_pricing_page",
+      "opportunity_paths": [
+        "Agent Workflow Bottleneck Diagnosis",
+        "AI Ops Operating Room Implementation Support"
+      ],
+      "query_or_locator": "automation sprint bottleneck pricing"
+    }
+  ],
+  "budget": {
+    "max_sources": 30,
+    "max_bytes_per_source": 120000,
+    "max_runtime_seconds": 300
+  },
+  "forbidden_actions": [
+    "customer_contact",
+    "email_or_message",
+    "publication",
+    "payment",
+    "account_creation",
+    "form_submission",
+    "login",
+    "private_data_collection",
+    "personal_contact_scraping",
+    "high_volume_crawling",
+    "secret_reading",
+    "core_brain_cieu_memory_writeback",
+    "obligation_auto_registration"
+  ],
+  "counterfactual_questions": [
+    "What if buyer pain is real but not budgeted?",
+    "What if buyers want implementation instead of diagnostic?",
+    "What if AI consultants are better channel partners than direct buyers?",
+    "What if coding-agent governance is more urgent than AI Ops operating room?",
+    "What if trust gap blocks paid conversion?",
+    "What if the first cash path should be smaller/manual?",
+    "What if content/publication beats direct outreach?",
+    "What if no path has enough evidence?"
+  ],
+  "run_public_collection_if_sources_available": true
+}
