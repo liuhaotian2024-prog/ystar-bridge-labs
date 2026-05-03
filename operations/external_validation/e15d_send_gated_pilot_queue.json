@@ -1,0 +1,63 @@
+{
+  "queue_id": "e15d_send_gated_pilot_queue",
+  "source_console_id": "e15a_owner_execution_console",
+  "rows": [
+    {
+      "queue_id": "e15d_send_gated_pilot_queue",
+      "batch_id": "c3_first_governed_validation_batch",
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_id": "cand_alicelabs_alicelabs",
+      "policy_decision": "send_gated_requires_owner_authorization",
+      "mcp_execution_mode": "send_gated_pending_authorization",
+      "authorization_required": true,
+      "idempotency_key": "6c52a43992af7da8badc1b408c2c0a431d657bae87832c2c9793b2b75bfdf8f6",
+      "rate_limit_group": "e15d_day_1_max_1_action",
+      "suppression_check": "required_before_send",
+      "kill_switch_check": "required_before_send",
+      "ledger_state_before_send": "waiting_owner_send",
+      "feedback_wait_state": "pending_valid_send_receipt",
+      "message_hash": "bf833b01ad0b5d271c63230e3fbcd3c5aa463f0b5b6cdcd022cb96306aa222f8",
+      "blocked_until_authorized": true,
+      "external_action_executed": false
+    },
+    {
+      "queue_id": "e15d_send_gated_pilot_queue",
+      "batch_id": "c3_first_governed_validation_batch",
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "target_id": "cand_botsquash_botsquash",
+      "policy_decision": "send_gated_requires_owner_authorization",
+      "mcp_execution_mode": "send_gated_pending_authorization",
+      "authorization_required": true,
+      "idempotency_key": "98484ff41ed436637f36c34529ff782d1211fd275da7c99862e59710d8543ed8",
+      "rate_limit_group": "e15d_day_1_max_1_action",
+      "suppression_check": "required_before_send",
+      "kill_switch_check": "required_before_send",
+      "ledger_state_before_send": "waiting_owner_send",
+      "feedback_wait_state": "pending_valid_send_receipt",
+      "message_hash": "33c5cfac3ef54778218112504d78f992b716b46c5eecdbb16305585761c9ff9a",
+      "blocked_until_authorized": true,
+      "external_action_executed": false
+    },
+    {
+      "queue_id": "e15d_send_gated_pilot_queue",
+      "batch_id": "c3_first_governed_validation_batch",
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "target_id": "cand_wotai_wotai",
+      "policy_decision": "send_gated_requires_owner_authorization",
+      "mcp_execution_mode": "send_gated_pending_authorization",
+      "authorization_required": true,
+      "idempotency_key": "1ca7d3efe22341928b652678b0144a9fc58dcb3f39b2984477476125c065105a",
+      "rate_limit_group": "e15d_day_1_max_1_action",
+      "suppression_check": "required_before_send",
+      "kill_switch_check": "required_before_send",
+      "ledger_state_before_send": "waiting_owner_send",
+      "feedback_wait_state": "pending_valid_send_receipt",
+      "message_hash": "c30e12efa9a36ed39760ca144c16ae1acdc753e29257395a2874412e341b25cb",
+      "blocked_until_authorized": true,
+      "external_action_executed": false
+    }
+  ],
+  "guard_matrix_id": "e15d_outbound_safety_guard_matrix",
+  "blocked_until_authorized": true,
+  "external_action_executed": false
+}

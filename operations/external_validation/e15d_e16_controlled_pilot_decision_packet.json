@@ -1,0 +1,74 @@
+{
+  "packet_id": "e15d_e16_controlled_pilot_decision_packet",
+  "recommended_route": "E16B_owner_manual_send_first",
+  "recommendation_reason": "E15A/C3 targets and messages are ready; safest next proof is owner manual send before activating gov-mcp send.",
+  "target_message_fit_ready": true,
+  "send_gated_queue_ready_but_blocked": true,
+  "audit_receipts_ready": true,
+  "routes": {
+    "E16A_owner_approves_draft_only_pilot": {
+      "trigger": "owner wants gov-mcp to prepare drafts only",
+      "allowed_actions": [
+        "draft_only_generation",
+        "draft_receipts",
+        "no_send"
+      ],
+      "blocked_actions": [
+        "real_send",
+        "publication",
+        "payment"
+      ],
+      "owner_involvement": "approve draft-only envelope"
+    },
+    "E16B_owner_manual_send_first": {
+      "trigger": "target/message fit ready but owner wants lowest-risk validation first",
+      "allowed_actions": [
+        "owner manually sends E15A primary actions",
+        "owner records ledger and feedback"
+      ],
+      "blocked_actions": [
+        "agent autonomous send",
+        "gov-mcp live send without activated envelope"
+      ],
+      "owner_involvement": "manual send and feedback capture"
+    },
+    "E16C_one_action_send_gated_pilot_after_authorization": {
+      "trigger": "owner explicitly activates narrow one-action send-gated envelope",
+      "allowed_actions": [
+        "one gov-mcp controlled send",
+        "receipt",
+        "feedback wait state"
+      ],
+      "blocked_actions": [
+        "more than one send",
+        "follow-up without positive signal",
+        "out-of-envelope send"
+      ],
+      "owner_involvement": "constitutional envelope approval only"
+    },
+    "E16D_expand_evidence_before_send": {
+      "trigger": "target/message fit weak or required evidence missing",
+      "allowed_actions": [
+        "public read-only target/evidence improvement",
+        "message revision"
+      ],
+      "blocked_actions": [
+        "send before evidence improves"
+      ],
+      "owner_involvement": "review improved batch"
+    },
+    "E16E_suppress_current_batch_and_rebuild": {
+      "trigger": "suppression/risk/do-not-contact emerges",
+      "allowed_actions": [
+        "suppress targets",
+        "replace batch",
+        "record audit receipt"
+      ],
+      "blocked_actions": [
+        "contact suppressed target"
+      ],
+      "owner_involvement": "review suppression if ambiguous"
+    }
+  },
+  "external_action_executed": false
+}

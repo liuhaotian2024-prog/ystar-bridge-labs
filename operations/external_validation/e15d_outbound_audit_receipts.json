@@ -1,0 +1,111 @@
+{
+  "receipt_set_id": "e15d_outbound_audit_receipts",
+  "receipts": [
+    {
+      "receipt_id": "e15d_audit_receipt_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "execution_mode": "send_gated_pending_authorization",
+      "preflight_result": "blocked",
+      "guard_results": {
+        "global_kill_switch": "pass",
+        "batch_kill_switch": "pass",
+        "target_suppression": "pass",
+        "do_not_contact": "pass",
+        "max_actions_per_day": "pass",
+        "max_actions_per_target": "pass",
+        "no_followup_without_positive_signal": "pass",
+        "no_send_if_missing_target_identity": "pass",
+        "no_send_if_message_unreviewed": "fail",
+        "no_send_if_envelope_not_active": "fail",
+        "no_send_if_hard_gate_detected": "pass"
+      },
+      "execution_status": "blocked_pending_authorization",
+      "external_action_executed": false,
+      "ledger_transition": "waiting_owner_send -> send_gated_pending_authorization",
+      "feedback_wait_state": "pending_valid_send_receipt",
+      "czl_fields": {
+        "Y*": "No outbound execution until envelope is active and all guards pass.",
+        "Xt": "action=c2_action_primary_001_cand_alicelabs_alicelabs, envelope_status=owner_review_required",
+        "U": "draft-only receipt plus send-gated audit receipt",
+        "Yt+1": "blocked_pending_authorization",
+        "Rt+1": 1
+      },
+      "deterministic_reason_codes": [
+        "authorization_required",
+        "envelope_not_active",
+        "no_external_action_executed"
+      ]
+    },
+    {
+      "receipt_id": "e15d_audit_receipt_c2_action_primary_002_cand_botsquash_botsquash",
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "execution_mode": "send_gated_pending_authorization",
+      "preflight_result": "blocked",
+      "guard_results": {
+        "global_kill_switch": "pass",
+        "batch_kill_switch": "pass",
+        "target_suppression": "pass",
+        "do_not_contact": "pass",
+        "max_actions_per_day": "pass",
+        "max_actions_per_target": "pass",
+        "no_followup_without_positive_signal": "pass",
+        "no_send_if_missing_target_identity": "pass",
+        "no_send_if_message_unreviewed": "fail",
+        "no_send_if_envelope_not_active": "fail",
+        "no_send_if_hard_gate_detected": "pass"
+      },
+      "execution_status": "blocked_pending_authorization",
+      "external_action_executed": false,
+      "ledger_transition": "waiting_owner_send -> send_gated_pending_authorization",
+      "feedback_wait_state": "pending_valid_send_receipt",
+      "czl_fields": {
+        "Y*": "No outbound execution until envelope is active and all guards pass.",
+        "Xt": "action=c2_action_primary_002_cand_botsquash_botsquash, envelope_status=owner_review_required",
+        "U": "draft-only receipt plus send-gated audit receipt",
+        "Yt+1": "blocked_pending_authorization",
+        "Rt+1": 1
+      },
+      "deterministic_reason_codes": [
+        "authorization_required",
+        "envelope_not_active",
+        "no_external_action_executed"
+      ]
+    },
+    {
+      "receipt_id": "e15d_audit_receipt_c2_action_primary_003_cand_wotai_wotai",
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "execution_mode": "send_gated_pending_authorization",
+      "preflight_result": "blocked",
+      "guard_results": {
+        "global_kill_switch": "pass",
+        "batch_kill_switch": "pass",
+        "target_suppression": "pass",
+        "do_not_contact": "pass",
+        "max_actions_per_day": "pass",
+        "max_actions_per_target": "pass",
+        "no_followup_without_positive_signal": "pass",
+        "no_send_if_missing_target_identity": "pass",
+        "no_send_if_message_unreviewed": "fail",
+        "no_send_if_envelope_not_active": "fail",
+        "no_send_if_hard_gate_detected": "pass"
+      },
+      "execution_status": "blocked_pending_authorization",
+      "external_action_executed": false,
+      "ledger_transition": "waiting_owner_send -> send_gated_pending_authorization",
+      "feedback_wait_state": "pending_valid_send_receipt",
+      "czl_fields": {
+        "Y*": "No outbound execution until envelope is active and all guards pass.",
+        "Xt": "action=c2_action_primary_003_cand_wotai_wotai, envelope_status=owner_review_required",
+        "U": "draft-only receipt plus send-gated audit receipt",
+        "Yt+1": "blocked_pending_authorization",
+        "Rt+1": 1
+      },
+      "deterministic_reason_codes": [
+        "authorization_required",
+        "envelope_not_active",
+        "no_external_action_executed"
+      ]
+    }
+  ],
+  "external_action_executed": false
+}

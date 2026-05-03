@@ -1,0 +1,99 @@
+{
+  "receipt_set_id": "e15d_draft_only_execution_receipts",
+  "receipts": [
+    {
+      "receipt_id": "e15d_draft_receipt_bf833b01ad",
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "decision_id": "e15d_ygov_decision_1c810167a1",
+      "ledger_id": "ledger_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "feedback_event_id": "feedback_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_id": "cand_alicelabs_alicelabs",
+      "message_hash": "bf833b01ad0b5d271c63230e3fbcd3c5aa463f0b5b6cdcd022cb96306aa222f8",
+      "draft_status": "draft_only_simulated",
+      "external_action_executed": false,
+      "send_allowed_now": false,
+      "owner_authorization_required": true,
+      "allowed_local_outputs": [
+        "message_hash",
+        "draft_receipt",
+        "ledger_preview",
+        "feedback_wait_preview"
+      ],
+      "prohibited_external_outputs": [
+        "real_email_send",
+        "real_message_send",
+        "publication",
+        "form_submission",
+        "login"
+      ],
+      "reason_codes": [
+        "draft_only_mode",
+        "owner_authorization_required_before_send",
+        "no_external_side_effect"
+      ]
+    },
+    {
+      "receipt_id": "e15d_draft_receipt_33c5cfac3e",
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "decision_id": "e15d_ygov_decision_3e4067cdfa",
+      "ledger_id": "ledger_c2_action_primary_002_cand_botsquash_botsquash",
+      "feedback_event_id": "feedback_c2_action_primary_002_cand_botsquash_botsquash",
+      "target_id": "cand_botsquash_botsquash",
+      "message_hash": "33c5cfac3ef54778218112504d78f992b716b46c5eecdbb16305585761c9ff9a",
+      "draft_status": "draft_only_simulated",
+      "external_action_executed": false,
+      "send_allowed_now": false,
+      "owner_authorization_required": true,
+      "allowed_local_outputs": [
+        "message_hash",
+        "draft_receipt",
+        "ledger_preview",
+        "feedback_wait_preview"
+      ],
+      "prohibited_external_outputs": [
+        "real_email_send",
+        "real_message_send",
+        "publication",
+        "form_submission",
+        "login"
+      ],
+      "reason_codes": [
+        "draft_only_mode",
+        "owner_authorization_required_before_send",
+        "no_external_side_effect"
+      ]
+    },
+    {
+      "receipt_id": "e15d_draft_receipt_c30e12efa9",
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "decision_id": "e15d_ygov_decision_f6bccac6ea",
+      "ledger_id": "ledger_c2_action_primary_003_cand_wotai_wotai",
+      "feedback_event_id": "feedback_c2_action_primary_003_cand_wotai_wotai",
+      "target_id": "cand_wotai_wotai",
+      "message_hash": "c30e12efa9a36ed39760ca144c16ae1acdc753e29257395a2874412e341b25cb",
+      "draft_status": "draft_only_simulated",
+      "external_action_executed": false,
+      "send_allowed_now": false,
+      "owner_authorization_required": true,
+      "allowed_local_outputs": [
+        "message_hash",
+        "draft_receipt",
+        "ledger_preview",
+        "feedback_wait_preview"
+      ],
+      "prohibited_external_outputs": [
+        "real_email_send",
+        "real_message_send",
+        "publication",
+        "form_submission",
+        "login"
+      ],
+      "reason_codes": [
+        "draft_only_mode",
+        "owner_authorization_required_before_send",
+        "no_external_side_effect"
+      ]
+    }
+  ],
+  "external_action_executed": false
+}

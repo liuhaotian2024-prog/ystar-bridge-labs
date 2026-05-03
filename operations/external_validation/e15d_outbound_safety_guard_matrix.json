@@ -1,0 +1,55 @@
+{
+  "guard_matrix_id": "e15d_outbound_safety_guard_matrix",
+  "envelope_id": "e15d_outbound_authorization_envelope_request",
+  "guards": {
+    "global_kill_switch": {
+      "required": true,
+      "default_state": "enabled_no_send_until_checked",
+      "failure_effect": "deny_all"
+    },
+    "batch_kill_switch": {
+      "required": true,
+      "default_state": "enabled_for_e15d_batch",
+      "failure_effect": "deny_batch"
+    },
+    "target_suppression": {
+      "required": true,
+      "failure_effect": "suppress_target"
+    },
+    "do_not_contact": {
+      "required": true,
+      "failure_effect": "suppress_target_and_stop"
+    },
+    "max_actions_per_day": {
+      "required": true,
+      "limit": 1,
+      "failure_effect": "deny_rate_limit"
+    },
+    "max_actions_per_target": {
+      "required": true,
+      "limit": 1,
+      "failure_effect": "deny_duplicate_target_send"
+    },
+    "no_followup_without_positive_signal": {
+      "required": true,
+      "failure_effect": "deny_followup"
+    },
+    "no_send_if_missing_target_identity": {
+      "required": true,
+      "failure_effect": "require_more_research"
+    },
+    "no_send_if_message_unreviewed": {
+      "required": true,
+      "failure_effect": "draft_only"
+    },
+    "no_send_if_envelope_not_active": {
+      "required": true,
+      "failure_effect": "send_gated_pending_authorization"
+    },
+    "no_send_if_hard_gate_detected": {
+      "required": true,
+      "failure_effect": "owner_hard_gate"
+    }
+  },
+  "external_action_executed": false
+}

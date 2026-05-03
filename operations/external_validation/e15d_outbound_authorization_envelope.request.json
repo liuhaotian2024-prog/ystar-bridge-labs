@@ -1,0 +1,77 @@
+{
+  "envelope_id": "e15d_outbound_authorization_envelope_request",
+  "status": "owner_review_required",
+  "authorization_modes_requested": [
+    "draft_only",
+    "owner_send_only",
+    "send_gated"
+  ],
+  "default_authorization_mode": "draft_only",
+  "requested_future_mode": "send_gated",
+  "source_console_id": "e15a_owner_execution_console",
+  "controlled_domain_id": "e15d_controlled_outbound_validation_messaging",
+  "owner_authorization_present": false,
+  "send_allowed_now": false,
+  "draft_only_allowed_now": true,
+  "owner_send_only_allowed_now": true,
+  "max_actions_per_batch": 3,
+  "max_actions_per_day": 1,
+  "allowed_target_categories": [
+    "AI consultants/agencies needing governance layer",
+    "AI-heavy teams with agent workflow bottlenecks",
+    "organization-facing public business targets only"
+  ],
+  "prohibited_target_categories": [
+    "scraped personal contacts",
+    "private individuals without business context",
+    "regulated/government/legal/financial targets requiring special approval",
+    "suppressed or do-not-contact targets"
+  ],
+  "allowed_channels": [
+    "owner-selected public/general channel",
+    "approved low-risk email/message adapter after activation"
+  ],
+  "prohibited_channels": [
+    "scraped personal email",
+    "unapproved social DM",
+    "publication",
+    "form submission",
+    "login-required channel"
+  ],
+  "allowed_action_ids": [
+    "c2_action_primary_001_cand_alicelabs_alicelabs",
+    "c2_action_primary_002_cand_botsquash_botsquash",
+    "c2_action_primary_003_cand_wotai_wotai"
+  ],
+  "no_follow_up_unless_positive": true,
+  "do_not_contact_suppression_required": true,
+  "revocation": {
+    "owner_can_revoke_anytime": true,
+    "Y_gov_can_suspend_on_risk": true
+  },
+  "expiration": {
+    "valid_days_after_activation": 7,
+    "expires_if_owner_not_activated": true
+  },
+  "owner_override": {
+    "hard_gate_override_required_for_payment_contract_legal_customer_system_core_writeback": true
+  },
+  "emergency_stop": {
+    "global_kill_switch_supported": true,
+    "batch_kill_switch_supported": true
+  },
+  "not_authorized": [
+    "real email/message send before owner activation",
+    "publication",
+    "payment",
+    "account creation",
+    "form submission",
+    "login",
+    "external validation submission",
+    "customer system access",
+    "legal or financial commitment",
+    "credential disclosure",
+    "core brain/CIEU/memory writeback"
+  ],
+  "external_action_executed": false
+}

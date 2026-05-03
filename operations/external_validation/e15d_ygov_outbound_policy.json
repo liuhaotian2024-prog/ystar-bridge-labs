@@ -1,0 +1,131 @@
+{
+  "policy_id": "e15d_ygov_outbound_validation_messaging_policy",
+  "decision_values": [
+    "deny",
+    "draft_only",
+    "owner_handoff",
+    "send_gated_requires_owner_authorization",
+    "gov_mcp_execute_allowed_after_activation",
+    "suppress_target",
+    "require_more_research",
+    "require_offer_revision",
+    "require_owner_review"
+  ],
+  "source_console_id": "e15a_owner_execution_console",
+  "envelope_id": "e15d_outbound_authorization_envelope_request",
+  "decisions": [
+    {
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "policy_id": "e15d_ygov_outbound_validation_messaging_policy",
+      "decision_id": "e15d_ygov_decision_1c810167a1",
+      "decision": "send_gated_requires_owner_authorization",
+      "capability_domain": "external_validation_message",
+      "risk_tier": "Tier 5 controlled low-volume outbound validation pilot",
+      "envelope_status": "owner_review_required",
+      "target_status": "valid_owner_handoff_target",
+      "message_status": "present",
+      "suppression_status": "clear",
+      "allowed_next_steps": [
+        "draft_only_receipt",
+        "owner_handoff",
+        "send_gated_dry_run"
+      ],
+      "prohibited_next_steps": [
+        "real_email_or_message_send_now",
+        "publication",
+        "payment",
+        "account_creation",
+        "form_submission",
+        "login",
+        "external_validation_submission",
+        "core_writeback"
+      ],
+      "deterministic_reason_codes": [
+        "owner_authorization_envelope_not_active",
+        "low_risk_validation_messaging_domain",
+        "ai_transparent_message_required",
+        "opt_out_language_required",
+        "action_ledger_required",
+        "feedback_wait_state_required"
+      ],
+      "real_send_allowed_now": false,
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "policy_id": "e15d_ygov_outbound_validation_messaging_policy",
+      "decision_id": "e15d_ygov_decision_3e4067cdfa",
+      "decision": "send_gated_requires_owner_authorization",
+      "capability_domain": "external_validation_message",
+      "risk_tier": "Tier 5 controlled low-volume outbound validation pilot",
+      "envelope_status": "owner_review_required",
+      "target_status": "valid_owner_handoff_target",
+      "message_status": "present",
+      "suppression_status": "clear",
+      "allowed_next_steps": [
+        "draft_only_receipt",
+        "owner_handoff",
+        "send_gated_dry_run"
+      ],
+      "prohibited_next_steps": [
+        "real_email_or_message_send_now",
+        "publication",
+        "payment",
+        "account_creation",
+        "form_submission",
+        "login",
+        "external_validation_submission",
+        "core_writeback"
+      ],
+      "deterministic_reason_codes": [
+        "owner_authorization_envelope_not_active",
+        "low_risk_validation_messaging_domain",
+        "ai_transparent_message_required",
+        "opt_out_language_required",
+        "action_ledger_required",
+        "feedback_wait_state_required"
+      ],
+      "real_send_allowed_now": false,
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "policy_id": "e15d_ygov_outbound_validation_messaging_policy",
+      "decision_id": "e15d_ygov_decision_f6bccac6ea",
+      "decision": "send_gated_requires_owner_authorization",
+      "capability_domain": "external_validation_message",
+      "risk_tier": "Tier 5 controlled low-volume outbound validation pilot",
+      "envelope_status": "owner_review_required",
+      "target_status": "valid_owner_handoff_target",
+      "message_status": "present",
+      "suppression_status": "clear",
+      "allowed_next_steps": [
+        "draft_only_receipt",
+        "owner_handoff",
+        "send_gated_dry_run"
+      ],
+      "prohibited_next_steps": [
+        "real_email_or_message_send_now",
+        "publication",
+        "payment",
+        "account_creation",
+        "form_submission",
+        "login",
+        "external_validation_submission",
+        "core_writeback"
+      ],
+      "deterministic_reason_codes": [
+        "owner_authorization_envelope_not_active",
+        "low_risk_validation_messaging_domain",
+        "ai_transparent_message_required",
+        "opt_out_language_required",
+        "action_ledger_required",
+        "feedback_wait_state_required"
+      ],
+      "real_send_allowed_now": false,
+      "external_action_executed": false
+    }
+  ],
+  "real_send_allowed_now": false,
+  "external_action_executed": false
+}

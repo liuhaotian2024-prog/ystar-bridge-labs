@@ -1,0 +1,56 @@
+{
+  "domain_id": "e15d_controlled_outbound_validation_messaging",
+  "capability_name": "low-risk AI-transparent validation messaging",
+  "current_state": "send_gated_pending_authorization",
+  "state_model": [
+    "unavailable",
+    "draft_only_available",
+    "owner_send_only",
+    "send_gated_pending_authorization",
+    "gov_mcp_controlled_pilot_available",
+    "revoked",
+    "suspended_by_risk",
+    "disabled_by_hard_gate"
+  ],
+  "hard_gates": [
+    "payment",
+    "contract",
+    "legal_obligation",
+    "financial_commitment",
+    "customer_system_access",
+    "regulated_government_tax_immigration_identity_forms",
+    "credential_disclosure",
+    "core_brain_cieu_memory_canonical_writeback"
+  ],
+  "progressive_governed_domains": [
+    "low_risk_validation_messaging",
+    "draft_only_message_preparation",
+    "owner_approved_send_queue",
+    "feedback_intake",
+    "follow_up_draft_preparation",
+    "suppression_aware_target_replacement"
+  ],
+  "source_console_id": "e15a_owner_execution_console",
+  "source_action_ids": [
+    "c2_action_primary_001_cand_alicelabs_alicelabs",
+    "c2_action_primary_002_cand_botsquash_botsquash",
+    "c2_action_primary_003_cand_wotai_wotai"
+  ],
+  "draft_only_available": true,
+  "owner_send_only_available": true,
+  "send_gated_available_after_authorization": true,
+  "gov_mcp_execute_available_now": false,
+  "real_send_allowed_now": false,
+  "owner_authorization_required_for_send": true,
+  "required_controls": [
+    "narrow_owner_authorization_envelope",
+    "Y_gov_outbound_policy_decision",
+    "gov_mcp_outbound_adapter_receipt",
+    "kill_switch_guard",
+    "rate_limit_guard",
+    "suppression_guard",
+    "action_ledger_hook",
+    "feedback_wait_state_hook"
+  ],
+  "external_action_executed": false
+}
