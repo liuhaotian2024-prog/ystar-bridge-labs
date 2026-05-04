@@ -1,0 +1,107 @@
+{
+  "artifact_id": "e18_batch_response_classification_rules",
+  "batch_id": "e18_first_revenue_validation_batch",
+  "classification_method": "deterministic_per_target_explicit_feedback_fields_no_llm_judge",
+  "per_target": [
+    {
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_id": "cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "feedback_type": "no_response",
+      "paid_signal_strength": 0,
+      "next_action": "wait_or_manual_send_if_not_sent",
+      "suppression_required": false,
+      "followup_eligible_after_owner_review": false,
+      "offer_learning": "none_yet",
+      "target_segment_learning": "none_yet",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "target_id": "cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "feedback_type": "no_response",
+      "paid_signal_strength": 0,
+      "next_action": "wait_or_manual_send_if_not_sent",
+      "suppression_required": false,
+      "followup_eligible_after_owner_review": false,
+      "offer_learning": "none_yet",
+      "target_segment_learning": "none_yet",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "target_id": "cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "feedback_type": "no_response",
+      "paid_signal_strength": 0,
+      "next_action": "wait_or_manual_send_if_not_sent",
+      "suppression_required": false,
+      "followup_eligible_after_owner_review": false,
+      "offer_learning": "none_yet",
+      "target_segment_learning": "none_yet",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "target_id": "cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "feedback_type": "no_response",
+      "paid_signal_strength": 0,
+      "next_action": "wait_or_manual_send_if_not_sent",
+      "suppression_required": false,
+      "followup_eligible_after_owner_review": false,
+      "offer_learning": "none_yet",
+      "target_segment_learning": "none_yet",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "target_id": "cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "feedback_type": "no_response",
+      "paid_signal_strength": 0,
+      "next_action": "wait_or_manual_send_if_not_sent",
+      "suppression_required": false,
+      "followup_eligible_after_owner_review": false,
+      "offer_learning": "none_yet",
+      "target_segment_learning": "none_yet",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_006_cand_wotai_wotai",
+      "target_id": "cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "feedback_type": "no_response",
+      "paid_signal_strength": 0,
+      "next_action": "wait_or_manual_send_if_not_sent",
+      "suppression_required": false,
+      "followup_eligible_after_owner_review": false,
+      "offer_learning": "none_yet",
+      "target_segment_learning": "none_yet",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c3_excluded_agent_direct_execution_without_activation",
+      "target_id": "not_applicable_agent_direct_execution",
+      "target_name": "Excluded direct agent execution path",
+      "feedback_type": "no_response",
+      "paid_signal_strength": 0,
+      "next_action": "wait_or_manual_send_if_not_sent",
+      "suppression_required": false,
+      "followup_eligible_after_owner_review": false,
+      "offer_learning": "none_yet",
+      "target_segment_learning": "none_yet",
+      "external_action_executed": false
+    }
+  ],
+  "batch_summary": {
+    "response_count": 0,
+    "positive_or_budget_signal_count": 0,
+    "suppression_count": 0,
+    "batch_signal_quality": "no_feedback_imported_yet"
+  },
+  "offer_level_learning": "none_until_feedback_import",
+  "target_segment_learning": "none_until_feedback_import",
+  "external_action_executed": false
+}

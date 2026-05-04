@@ -1,0 +1,53 @@
+{
+  "artifact_id": "e18_czl_closure",
+  "Y_star": "E18 revenue validation batch operating runtime",
+  "Xt": [
+    "E17 commercial signal runtime",
+    "C3 validation batch",
+    "E15A owner-handoff state",
+    "E10/E13/E14 commercial scoring assets"
+  ],
+  "U": [
+    "batch target selection",
+    "commercial fit scoring",
+    "offer variant matrix",
+    "owner batch console",
+    "manual-send tracker",
+    "batch feedback intake",
+    "batch response classification",
+    "commercial KPI",
+    "route decision"
+  ],
+  "Yt_plus_1": "Y*Bridge Labs can run a small owner-approved revenue validation batch without spam risk, fake evidence, or scattered owner workload.",
+  "Rt_plus_1": 0,
+  "artifacts": [
+    "operations/external_validation/e18_revenue_validation_batch.json",
+    "operations/external_validation/e18_commercial_fit_scores.json",
+    "operations/external_validation/e18_offer_variant_matrix.json",
+    "operations/external_validation/e18_batch_owner_console.json",
+    "operations/external_validation/e18_manual_send_tracker.json",
+    "operations/external_validation/e18_batch_feedback_intake_schema.json",
+    "operations/external_validation/e18_batch_feedback_intake_empty.json",
+    "operations/external_validation/e18_batch_response_classification_rules.json",
+    "operations/external_validation/e18_route_decision_packet.json",
+    "operations/external_validation/e18_commercial_kpi_packet.json",
+    "operations/external_validation/e18_czl_closure.json",
+    "operations/external_validation/e18_batch_owner_console.md",
+    "reports/integration/e18_revenue_validation_batch_runtime.md",
+    "reports/integration/e18_offer_variant_matrix.md",
+    "reports/integration/e18_manual_send_tracker.md",
+    "reports/integration/e18_batch_feedback_runtime.md",
+    "reports/integration/e18_route_decision_packet.md",
+    "reports/integration/e18_commercial_kpi_packet.md",
+    "reports/integration/e18_czl_closure.md"
+  ],
+  "no_real_external_action_occurred": true,
+  "no_fake_target_evidence_created": true,
+  "no_fake_customer_feedback_created": true,
+  "no_provider_api_called": true,
+  "no_send_receipt_generated": true,
+  "owner_has_one_batch_decision_surface": true,
+  "revenue_validation_batch_runtime_ready": true,
+  "next_route_deterministic": true,
+  "recommended_route": "manual_send_batch_ready"
+}

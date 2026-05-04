@@ -1,0 +1,173 @@
+{
+  "artifact_id": "e18_revenue_validation_batch",
+  "batch_id": "e18_first_revenue_validation_batch",
+  "source_batch_id": "c3_first_governed_validation_batch",
+  "selection_policy": "existing_repo_evidence_only_no_scraping_no_fake_targets",
+  "lead_offer": "48h AI Agent Implementation Readiness Review",
+  "candidate_count": 7,
+  "ready_for_owner_review_count": 5,
+  "blocked_or_not_ready_count": 2,
+  "max_owner_manual_sends": 3,
+  "owner_approved": false,
+  "external_action_executed": false,
+  "candidates": [
+    {
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_id": "cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "role": "primary",
+      "status": "ready_for_owner_review",
+      "evidence_basis": [
+        "src_alicelabs",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "offer": "48h AI Agent Implementation Readiness Review",
+      "buyer_pain_hypothesis": "AI-agent implementation readiness, workflow bottlenecks, governance risk, and safe next operational step.",
+      "selection_reason": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "capability_domain": "external_validation_message",
+      "ledger_id": "ledger_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "feedback_event_id": "feedback_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "missing_fields": [],
+      "suppression_reason": "",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "target_id": "cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "role": "primary",
+      "status": "ready_for_owner_review",
+      "evidence_basis": [
+        "src_botsquash",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "offer": "48h AI Agent Implementation Readiness Review",
+      "buyer_pain_hypothesis": "AI-agent implementation readiness, workflow bottlenecks, governance risk, and safe next operational step.",
+      "selection_reason": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "capability_domain": "external_validation_message",
+      "ledger_id": "ledger_c2_action_primary_002_cand_botsquash_botsquash",
+      "feedback_event_id": "feedback_c2_action_primary_002_cand_botsquash_botsquash",
+      "missing_fields": [],
+      "suppression_reason": "",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "target_id": "cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "role": "primary",
+      "status": "ready_for_owner_review",
+      "evidence_basis": [
+        "src_wotai",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "offer": "48h AI Agent Implementation Readiness Review",
+      "buyer_pain_hypothesis": "AI-agent implementation readiness, workflow bottlenecks, governance risk, and safe next operational step.",
+      "selection_reason": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "capability_domain": "external_validation_message",
+      "ledger_id": "ledger_c2_action_primary_003_cand_wotai_wotai",
+      "feedback_event_id": "feedback_c2_action_primary_003_cand_wotai_wotai",
+      "missing_fields": [],
+      "suppression_reason": "",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "target_id": "cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "role": "fallback",
+      "status": "ready_for_owner_review",
+      "evidence_basis": [
+        "src_alicelabs",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "offer": "48h AI Agent Implementation Readiness Review",
+      "buyer_pain_hypothesis": "AI-agent implementation readiness, workflow bottlenecks, governance risk, and safe next operational step.",
+      "selection_reason": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "capability_domain": "external_validation_message",
+      "ledger_id": "ledger_c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "feedback_event_id": "feedback_c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "missing_fields": [],
+      "suppression_reason": "",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "target_id": "cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "role": "fallback",
+      "status": "ready_for_owner_review",
+      "evidence_basis": [
+        "src_botsquash",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "offer": "48h AI Agent Implementation Readiness Review",
+      "buyer_pain_hypothesis": "AI-agent implementation readiness, workflow bottlenecks, governance risk, and safe next operational step.",
+      "selection_reason": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "capability_domain": "external_validation_message",
+      "ledger_id": "ledger_c2_action_fallback_005_cand_botsquash_botsquash",
+      "feedback_event_id": "feedback_c2_action_fallback_005_cand_botsquash_botsquash",
+      "missing_fields": [],
+      "suppression_reason": "",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_006_cand_wotai_wotai",
+      "target_id": "cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "role": "suppression_candidate",
+      "status": "suppress_or_do_not_contact",
+      "evidence_basis": [
+        "src_wotai",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "offer": "48h AI Agent Implementation Readiness Review",
+      "buyer_pain_hypothesis": "AI-agent implementation readiness, workflow bottlenecks, governance risk, and safe next operational step.",
+      "selection_reason": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "capability_domain": "external_validation_message",
+      "ledger_id": "ledger_c2_action_fallback_006_cand_wotai_wotai",
+      "feedback_event_id": "feedback_c2_action_fallback_006_cand_wotai_wotai",
+      "missing_fields": [],
+      "suppression_reason": "Reserve/suppress unless primary/fallback fails or owner explicitly expands batch.",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c3_excluded_agent_direct_execution_without_activation",
+      "target_id": "not_applicable_agent_direct_execution",
+      "target_name": "Excluded direct agent execution path",
+      "role": "excluded",
+      "status": "needs_more_evidence",
+      "evidence_basis": [],
+      "offer": "48h AI Agent Implementation Readiness Review",
+      "buyer_pain_hypothesis": "not_applicable",
+      "selection_reason": "Explicitly excluded to prove C3 does not permit direct agent sending without owner activation.",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "capability_domain": "external_validation_message",
+      "ledger_id": "none",
+      "feedback_event_id": "none",
+      "missing_fields": [
+        "real_target_not_applicable"
+      ],
+      "suppression_reason": "No owner approval evidence; direct agent email/message sending is outside C3 envelope.",
+      "external_action_executed": false
+    }
+  ]
+}

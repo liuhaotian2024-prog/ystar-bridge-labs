@@ -1,0 +1,229 @@
+{
+  "artifact_id": "e18_batch_owner_console",
+  "batch_id": "e18_first_revenue_validation_batch",
+  "owner_console_type": "single_batch_decision_surface",
+  "owner_burden_policy": "review_one_console_choose_candidate_decisions_send_only_if_owner_approves",
+  "lead_offer": "48h AI Agent Implementation Readiness Review",
+  "recommended_batch_action": "approve ready candidates only if owner wants first small revenue validation batch; otherwise revise/reject/defer.",
+  "candidates": [
+    {
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "status": "ready_for_owner_review",
+      "why_included": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "evidence_status": "evidence_present",
+      "commercial_score": 37,
+      "recommended_message_variant_id": "risk_reduction_framing",
+      "message_angle": "Reduce implementation risk before agent workflows move into real operations.",
+      "cta": "Would a short risk/readiness review help de-risk the next AI-agent implementation decision?",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "approval_choices": [
+        "approve_manual_send",
+        "revise_message",
+        "reject_target",
+        "defer",
+        "expand_evidence"
+      ],
+      "manual_send_readiness": "ready_if_owner_approves",
+      "feedback_fields_to_capture": [
+        "owner_sent_status",
+        "feedback_type",
+        "raw_feedback_summary",
+        "pricing_question_present",
+        "meeting_request_present",
+        "positive_interest_present",
+        "do_not_contact_requested",
+        "owner_notes"
+      ]
+    },
+    {
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "status": "ready_for_owner_review",
+      "why_included": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "evidence_status": "evidence_present",
+      "commercial_score": 37,
+      "recommended_message_variant_id": "risk_reduction_framing",
+      "message_angle": "Reduce implementation risk before agent workflows move into real operations.",
+      "cta": "Would a short risk/readiness review help de-risk the next AI-agent implementation decision?",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "approval_choices": [
+        "approve_manual_send",
+        "revise_message",
+        "reject_target",
+        "defer",
+        "expand_evidence"
+      ],
+      "manual_send_readiness": "ready_if_owner_approves",
+      "feedback_fields_to_capture": [
+        "owner_sent_status",
+        "feedback_type",
+        "raw_feedback_summary",
+        "pricing_question_present",
+        "meeting_request_present",
+        "positive_interest_present",
+        "do_not_contact_requested",
+        "owner_notes"
+      ]
+    },
+    {
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "status": "ready_for_owner_review",
+      "why_included": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "evidence_status": "evidence_present",
+      "commercial_score": 37,
+      "recommended_message_variant_id": "risk_reduction_framing",
+      "message_angle": "Reduce implementation risk before agent workflows move into real operations.",
+      "cta": "Would a short risk/readiness review help de-risk the next AI-agent implementation decision?",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "approval_choices": [
+        "approve_manual_send",
+        "revise_message",
+        "reject_target",
+        "defer",
+        "expand_evidence"
+      ],
+      "manual_send_readiness": "ready_if_owner_approves",
+      "feedback_fields_to_capture": [
+        "owner_sent_status",
+        "feedback_type",
+        "raw_feedback_summary",
+        "pricing_question_present",
+        "meeting_request_present",
+        "positive_interest_present",
+        "do_not_contact_requested",
+        "owner_notes"
+      ]
+    },
+    {
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "status": "ready_for_owner_review",
+      "why_included": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "evidence_status": "evidence_present",
+      "commercial_score": 37,
+      "recommended_message_variant_id": "risk_reduction_framing",
+      "message_angle": "Reduce implementation risk before agent workflows move into real operations.",
+      "cta": "Would a short risk/readiness review help de-risk the next AI-agent implementation decision?",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "approval_choices": [
+        "approve_manual_send",
+        "revise_message",
+        "reject_target",
+        "defer",
+        "expand_evidence"
+      ],
+      "manual_send_readiness": "ready_if_owner_approves",
+      "feedback_fields_to_capture": [
+        "owner_sent_status",
+        "feedback_type",
+        "raw_feedback_summary",
+        "pricing_question_present",
+        "meeting_request_present",
+        "positive_interest_present",
+        "do_not_contact_requested",
+        "owner_notes"
+      ]
+    },
+    {
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "status": "ready_for_owner_review",
+      "why_included": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "evidence_status": "evidence_present",
+      "commercial_score": 37,
+      "recommended_message_variant_id": "risk_reduction_framing",
+      "message_angle": "Reduce implementation risk before agent workflows move into real operations.",
+      "cta": "Would a short risk/readiness review help de-risk the next AI-agent implementation decision?",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "approval_choices": [
+        "approve_manual_send",
+        "revise_message",
+        "reject_target",
+        "defer",
+        "expand_evidence"
+      ],
+      "manual_send_readiness": "ready_if_owner_approves",
+      "feedback_fields_to_capture": [
+        "owner_sent_status",
+        "feedback_type",
+        "raw_feedback_summary",
+        "pricing_question_present",
+        "meeting_request_present",
+        "positive_interest_present",
+        "do_not_contact_requested",
+        "owner_notes"
+      ]
+    },
+    {
+      "action_id": "c2_action_fallback_006_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "status": "suppress_or_do_not_contact",
+      "why_included": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "evidence_status": "evidence_present",
+      "commercial_score": 31,
+      "recommended_message_variant_id": "risk_reduction_framing",
+      "message_angle": "Reduce implementation risk before agent workflows move into real operations.",
+      "cta": "Would a short risk/readiness review help de-risk the next AI-agent implementation decision?",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "approval_choices": [
+        "approve_manual_send",
+        "revise_message",
+        "reject_target",
+        "defer",
+        "expand_evidence"
+      ],
+      "manual_send_readiness": "not_ready",
+      "feedback_fields_to_capture": [
+        "owner_sent_status",
+        "feedback_type",
+        "raw_feedback_summary",
+        "pricing_question_present",
+        "meeting_request_present",
+        "positive_interest_present",
+        "do_not_contact_requested",
+        "owner_notes"
+      ]
+    },
+    {
+      "action_id": "c3_excluded_agent_direct_execution_without_activation",
+      "target_name": "Excluded direct agent execution path",
+      "status": "needs_more_evidence",
+      "why_included": "Explicitly excluded to prove C3 does not permit direct agent sending without owner activation.",
+      "evidence_status": "missing_evidence",
+      "commercial_score": 25,
+      "recommended_message_variant_id": "direct_readiness_review",
+      "message_angle": "48h readiness scorecard and safe next step.",
+      "cta": "Would this be useful enough to consider a paid diagnostic or pilot-prep conversation?",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "approval_choices": [
+        "approve_manual_send",
+        "revise_message",
+        "reject_target",
+        "defer",
+        "expand_evidence"
+      ],
+      "manual_send_readiness": "not_ready",
+      "feedback_fields_to_capture": [
+        "owner_sent_status",
+        "feedback_type",
+        "raw_feedback_summary",
+        "pricing_question_present",
+        "meeting_request_present",
+        "positive_interest_present",
+        "do_not_contact_requested",
+        "owner_notes"
+      ]
+    }
+  ],
+  "blocked_actions": [
+    "agent send",
+    "provider API call",
+    "real send receipt",
+    "fake feedback",
+    "scraped private contact data",
+    "core brain/CIEU/memory canonical writeback"
+  ],
+  "external_action_executed": false
+}
