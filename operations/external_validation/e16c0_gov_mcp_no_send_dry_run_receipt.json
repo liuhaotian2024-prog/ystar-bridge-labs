@@ -1,0 +1,73 @@
+{
+  "artifact_id": "e16c0_gov_mcp_no_send_dry_run_receipt",
+  "receipt_id": "e16c0_no_send_receipt_2bf5c3fa55c6f7d5",
+  "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+  "target_id": "cand_alicelabs_alicelabs",
+  "execution_mode": "send_gated_dry_run",
+  "preflight_result": {
+    "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+    "decision": "send_gated_pending_authorization",
+    "execution_mode": "send_gated_dry_run",
+    "authorization_state": "activation_ready_but_not_approved",
+    "allowed_for_real_send": false,
+    "allowed_for_dry_run": true,
+    "reason_codes": [
+      "gov_mcp_canonical_no_send_adapter_surface",
+      "owner_activation_missing_blocks_real_send",
+      "provider_adapter_not_called",
+      "dry_run_only"
+    ],
+    "guard_results": {
+      "global_kill_switch": "pass",
+      "batch_kill_switch": "pass",
+      "target_suppression": "pass",
+      "do_not_contact": "pass",
+      "max_actions_per_day": "pass",
+      "max_actions_per_target": "pass",
+      "no_followup_without_positive_signal": "pass",
+      "no_send_if_missing_target_identity": "pass",
+      "no_send_if_message_unreviewed": "pass",
+      "no_send_if_envelope_not_active": "fail_for_real_send_pass_for_dry_run",
+      "no_send_if_hard_gate_detected": "pass",
+      "no_send_if_owner_activation_missing": "fail_for_real_send_pass_for_dry_run",
+      "no_send_if_idempotency_key_missing": "pass"
+    },
+    "external_action_executed": false,
+    "provider_called": false,
+    "real_message_sent": false
+  },
+  "guard_results": {
+    "global_kill_switch": "pass",
+    "batch_kill_switch": "pass",
+    "target_suppression": "pass",
+    "do_not_contact": "pass",
+    "max_actions_per_day": "pass",
+    "max_actions_per_target": "pass",
+    "no_followup_without_positive_signal": "pass",
+    "no_send_if_missing_target_identity": "pass",
+    "no_send_if_message_unreviewed": "pass",
+    "no_send_if_envelope_not_active": "fail_for_real_send_pass_for_dry_run",
+    "no_send_if_hard_gate_detected": "pass",
+    "no_send_if_owner_activation_missing": "fail_for_real_send_pass_for_dry_run",
+    "no_send_if_idempotency_key_missing": "pass"
+  },
+  "execution_status": "dry_run_completed_no_send",
+  "external_action_executed": false,
+  "provider_called": false,
+  "external_provider_called": false,
+  "real_message_sent": false,
+  "network_required": false,
+  "login_required": false,
+  "credential_required": false,
+  "provider_adapter_mode": "local_no_send",
+  "send_blocked_until_owner_activation": true,
+  "no_send_invariant": true,
+  "ledger_transition": "waiting_owner_activation_to_send_gated_dry_run_completed",
+  "feedback_wait_state": "pending_valid_send_receipt",
+  "reason_codes": [
+    "gov_mcp_canonical_no_send_adapter_surface",
+    "owner_activation_missing_blocks_real_send",
+    "provider_adapter_not_called",
+    "dry_run_only"
+  ]
+}

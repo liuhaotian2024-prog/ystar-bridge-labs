@@ -1,0 +1,31 @@
+{
+  "artifact_id": "e16c0_guard_verification",
+  "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+  "guard_results": {
+    "global_kill_switch": "pass",
+    "batch_kill_switch": "pass",
+    "target_suppression": "pass",
+    "do_not_contact": "pass",
+    "max_actions_per_day": "pass",
+    "max_actions_per_target": "pass",
+    "no_followup_without_positive_signal": "pass",
+    "no_send_if_missing_target_identity": "pass",
+    "no_send_if_message_unreviewed": "pass",
+    "no_send_if_envelope_not_active": "fail_for_real_send_pass_for_dry_run",
+    "no_send_if_hard_gate_detected": "pass",
+    "no_send_if_owner_activation_missing": "fail_for_real_send_pass_for_dry_run",
+    "no_send_if_idempotency_key_missing": "pass"
+  },
+  "failed_for_real_send": [
+    "no_send_if_envelope_not_active",
+    "no_send_if_owner_activation_missing"
+  ],
+  "dry_run_allowed": true,
+  "real_send_allowed": false,
+  "idempotency_key": "6c52a43992af7da8badc1b408c2c0a431d657bae87832c2c9793b2b75bfdf8f6",
+  "idempotency_key_valid": true,
+  "rate_limit_group": "e15d_day_1_max_1_action",
+  "suppression_clear": true,
+  "kill_switch_clear": true,
+  "external_action_executed": false
+}

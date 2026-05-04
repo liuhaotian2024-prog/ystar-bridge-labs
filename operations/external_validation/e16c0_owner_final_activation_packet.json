@@ -1,0 +1,38 @@
+{
+  "artifact_id": "e16c0_owner_final_activation_packet",
+  "packet_id": "e16c0_owner_activation_8905c83f795ca284",
+  "status": "owner_review_required",
+  "activation_type": "one_action_send_gated_pilot_request",
+  "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+  "target_id": "cand_alicelabs_alicelabs",
+  "target_name": "Alice Labs AI Operations Consulting",
+  "offer": "48h AI Agent Implementation Readiness Review",
+  "allowed_if_activated": [
+    "one send-gated pilot action only",
+    "gov-mcp canonical adapter preflight",
+    "provider-safe execution receipt",
+    "feedback wait-state binding"
+  ],
+  "not_authorized_in_e16c0": [
+    "real email/message send",
+    "provider API call",
+    "login",
+    "account creation",
+    "form submission",
+    "publication",
+    "payment",
+    "contract",
+    "credential disclosure",
+    "core brain/CIEU/memory canonical writeback"
+  ],
+  "e16c1_blocked_until": [
+    "explicit owner activation",
+    "real provider adapter implementation",
+    "provider tests",
+    "safety tests",
+    "bridge delivery closure"
+  ],
+  "owner_activation_present": false,
+  "send_allowed_now": false,
+  "external_action_executed": false
+}

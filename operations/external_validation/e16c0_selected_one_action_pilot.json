@@ -1,0 +1,58 @@
+{
+  "artifact_id": "e16c0_selected_one_action_pilot",
+  "source_queue_id": "e15d_send_gated_pilot_queue",
+  "selection_policy": "lowest_risk_first_complete_identity_first_queue_order_tiebreak",
+  "selected_action_count": 1,
+  "selected_action": {
+    "queue_id": "e15d_send_gated_pilot_queue",
+    "batch_id": "c3_first_governed_validation_batch",
+    "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+    "target_id": "cand_alicelabs_alicelabs",
+    "policy_decision": "send_gated_requires_owner_authorization",
+    "mcp_execution_mode": "send_gated_pending_authorization",
+    "authorization_required": true,
+    "idempotency_key": "6c52a43992af7da8badc1b408c2c0a431d657bae87832c2c9793b2b75bfdf8f6",
+    "rate_limit_group": "e15d_day_1_max_1_action",
+    "suppression_check": "required_before_send",
+    "kill_switch_check": "required_before_send",
+    "ledger_state_before_send": "waiting_owner_send",
+    "feedback_wait_state": "pending_valid_send_receipt",
+    "message_hash": "bf833b01ad0b5d271c63230e3fbcd3c5aa463f0b5b6cdcd022cb96306aa222f8",
+    "blocked_until_authorized": true,
+    "external_action_executed": false,
+    "target_name": "Alice Labs AI Operations Consulting",
+    "target_evidence_basis": [
+      "src_alicelabs",
+      "e13r_ev_001",
+      "e13r_ev_008",
+      "e13r_ev_009"
+    ],
+    "buyer_pain_hypothesis": "AI-agent implementation readiness, workflow bottlenecks, governance risk, and safe next operational step.",
+    "selection_reason": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+    "offer_thesis": "48h AI Agent Implementation Readiness Review",
+    "capability_domain": "external_validation_message",
+    "capability_level": 5,
+    "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+    "legacy_risk_tier_alias": "Tier 5 governed low-volume external validation",
+    "owner_boundary_status": "owner_review_required",
+    "message_capsule_id": "c2_message_capsule_001",
+    "ledger_id": "ledger_c2_action_primary_001_cand_alicelabs_alicelabs",
+    "feedback_event_id": "feedback_c2_action_primary_001_cand_alicelabs_alicelabs",
+    "message_preview_hash": "bf833b01ad0b5d271c63230e3fbcd3c5aa463f0b5b6cdcd022cb96306aa222f8",
+    "message_draft_present": true,
+    "target_identity_sufficient": true,
+    "missing_fields": []
+  },
+  "not_selected_action_ids": [
+    "c2_action_primary_002_cand_botsquash_botsquash",
+    "c2_action_primary_003_cand_wotai_wotai"
+  ],
+  "canonical_mapping": {
+    "capability_level": 5,
+    "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+    "execution_mode": "send_gated_dry_run",
+    "legacy_execution_mode": "send_gated_pending_authorization",
+    "gov_mcp_canonical_owner": "gov-mcp/outbound"
+  },
+  "external_action_executed": false
+}

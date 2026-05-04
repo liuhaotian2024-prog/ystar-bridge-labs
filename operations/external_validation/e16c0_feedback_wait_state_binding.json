@@ -1,0 +1,19 @@
+{
+  "artifact_id": "e16c0_feedback_wait_state_binding",
+  "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+  "ledger_id": "ledger_c2_action_primary_001_cand_alicelabs_alicelabs",
+  "feedback_event_id": "feedback_c2_action_primary_001_cand_alicelabs_alicelabs",
+  "receipt_id": "e16c0_no_send_receipt_2bf5c3fa55c6f7d5",
+  "feedback_wait_state": "pending_valid_send_receipt",
+  "feedback_capture_allowed_after": [
+    "owner activation",
+    "real provider adapter implementation",
+    "valid provider-safe send receipt",
+    "customer response or no-response timeout"
+  ],
+  "feedback_received": false,
+  "public_evidence_is_not_validation_feedback": true,
+  "owner_reported_feedback_is_provisional_until_provenance_recorded": true,
+  "cieu_core_writeback_allowed": false,
+  "external_action_executed": false
+}
