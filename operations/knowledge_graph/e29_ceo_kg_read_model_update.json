@@ -1,0 +1,11 @@
+{
+  "artifact_id": "e29_ceo_kg_read_model_update",
+  "active_branch": "revenue_mode_shortest_cash_path",
+  "selected_route": "secure_production_config_preparation",
+  "backup_branch_count": 6,
+  "deferred_branch_count": 3,
+  "blocked_branch_count": 0,
+  "production_live_config_scope": "active_branch_only",
+  "next_decision_horizon": "E30_secure_production_config_preparation_for_shortest_cash_path",
+  "external_action_executed": false
+}

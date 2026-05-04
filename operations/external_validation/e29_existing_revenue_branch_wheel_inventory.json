@@ -1,0 +1,514 @@
+{
+  "artifact_id": "e29_existing_revenue_branch_wheel_inventory",
+  "audit_completed_before_new_e29_modules": true,
+  "repos_scanned": [
+    "ystar-bridge-labs",
+    "gov-mcp",
+    "Y-star-gov",
+    "ystar-company"
+  ],
+  "repos_scanned_count": 4,
+  "search_terms_used": [
+    "revenue mode",
+    "branch registry",
+    "portfolio selection",
+    "CEO KG",
+    "shortest cash path",
+    "productization",
+    "partner channel",
+    "production live",
+    "evidence expansion",
+    "offer revision",
+    "target rebuild",
+    "CZL"
+  ],
+  "existing_revenue_branch_wheels_found": 25,
+  "reused_wheels_count": 15,
+  "wrapped_wheels_count": 4,
+  "extended_wheels_count": 1,
+  "wrapped_or_extended_wheels_count": 5,
+  "newly_built_wheels_count": 4,
+  "left_untouched_wheels_count": 1,
+  "wheels": [
+    {
+      "name": "E28R Revenue Mode Branch Registry",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "capability_category": "revenue mode registry",
+      "current_status": "canonical",
+      "what_it_already_supports": [
+        "10 revenue modes",
+        "active/backup/deferred status",
+        "production-live not global default"
+      ],
+      "what_it_lacks": "does not perform E29 confirmation scoring",
+      "tests_present_or_absent": "tests/office/test_e28r_revenue_mode_branch_registry.py",
+      "reuse_wrap_extend_build_decision": "reuse_existing",
+      "can_be_reused_directly": true,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "E28R Portfolio Re-selection Gate",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e28r_portfolio_reselection_gate.json",
+      "capability_category": "branch selection",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "requires branch selection before route assumption"
+      ],
+      "what_it_lacks": "does not finalize E29 route activation",
+      "tests_present_or_absent": "tests/office/test_e28r_portfolio_reselection_gate.py",
+      "reuse_wrap_extend_build_decision": "wrap_existing",
+      "can_be_reused_directly": false,
+      "needs_wrapper": true,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "E28R Branch-Scoped Route Decision",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e28r_route_decision.json",
+      "capability_category": "route decision",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "production live config is conditional"
+      ],
+      "what_it_lacks": "does not confirm branch after scoring",
+      "tests_present_or_absent": "tests/office/test_e28r_route_decision.py",
+      "reuse_wrap_extend_build_decision": "wrap_existing",
+      "can_be_reused_directly": false,
+      "needs_wrapper": true,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "E28 Production Live Decision Gate",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e28_production_live_decision_gate.json",
+      "capability_category": "production live tradeoff",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "secure production config preparation decision"
+      ],
+      "what_it_lacks": "must be scoped to selected branch",
+      "tests_present_or_absent": "tests/office/test_e28_production_live_decision_gate.py",
+      "reuse_wrap_extend_build_decision": "reuse_existing",
+      "can_be_reused_directly": true,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "E28 Evidence vs Live Tradeoff",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e28_evidence_vs_live_tradeoff.json",
+      "capability_category": "tradeoff model",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "compares live config against evidence/offer/target routes"
+      ],
+      "what_it_lacks": "needs branch-mode interpretation",
+      "tests_present_or_absent": "tests/office/test_e28_evidence_vs_live_tradeoff.py",
+      "reuse_wrap_extend_build_decision": "reuse_existing",
+      "can_be_reused_directly": true,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "E28 Provider Category Comparison",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e28_provider_category_comparison.json",
+      "capability_category": "provider category",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "email/provider category comparison"
+      ],
+      "what_it_lacks": "not relevant to non-outbound branches except as conditional input",
+      "tests_present_or_absent": "tests/office/test_e28_provider_category_comparison.py",
+      "reuse_wrap_extend_build_decision": "reuse_existing",
+      "can_be_reused_directly": true,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "E27 Live Readiness Validator V2",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e27_live_readiness_validator_v2.json",
+      "capability_category": "execution readiness",
+      "current_status": "canonical",
+      "what_it_already_supports": [
+        "dry_run/sandbox/live_test/production_live split"
+      ],
+      "what_it_lacks": "does not decide revenue branch",
+      "tests_present_or_absent": "tests/office/test_e27_live_readiness_validator_v2.py",
+      "reuse_wrap_extend_build_decision": "reuse_existing",
+      "can_be_reused_directly": true,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "E26 One-Action Canary Plan",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e26_one_action_canary_plan.json",
+      "capability_category": "canary planning",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "planned canary without execution"
+      ],
+      "what_it_lacks": "only applies to outbound branch",
+      "tests_present_or_absent": "tests/office/test_e26_one_action_canary_plan.py",
+      "reuse_wrap_extend_build_decision": "reuse_existing",
+      "can_be_reused_directly": true,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "E24 CEO KG Read Model",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/knowledge_graph/e24_ceo_kg_read_model.json",
+      "capability_category": "CEO KG",
+      "current_status": "canonical",
+      "what_it_already_supports": [
+        "capability/evidence/opportunity read model"
+      ],
+      "what_it_lacks": "needs E29 branch delta",
+      "tests_present_or_absent": "tests/office/test_e24_ceo_kg_read_model.py",
+      "reuse_wrap_extend_build_decision": "wrap_existing",
+      "can_be_reused_directly": false,
+      "needs_wrapper": true,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "E24 Revenue Path Portfolio Selector",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e24_revenue_path_portfolio_selection.json",
+      "capability_category": "portfolio selector",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "selected shortest cash path"
+      ],
+      "what_it_lacks": "does not maintain multi-branch guardrail",
+      "tests_present_or_absent": "tests/office/test_e24_revenue_path_portfolio_selector.py",
+      "reuse_wrap_extend_build_decision": "wrap_existing",
+      "can_be_reused_directly": false,
+      "needs_wrapper": true,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "E24 Commercial Imagination Paths",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e24_commercial_imagination_paths.json",
+      "capability_category": "imagination",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "counterfactual money-making paths"
+      ],
+      "what_it_lacks": "not a branch confirmation gate",
+      "tests_present_or_absent": "tests/office/test_e24_commercial_imagination_engine.py",
+      "reuse_wrap_extend_build_decision": "reuse_existing",
+      "can_be_reused_directly": true,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "E24 Innovation Hypotheses",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e24_innovation_hypotheses.json",
+      "capability_category": "innovation",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "productization/governance hypotheses"
+      ],
+      "what_it_lacks": "not selected as active branch",
+      "tests_present_or_absent": "tests/office/test_e24_innovation_hypothesis_generator.py",
+      "reuse_wrap_extend_build_decision": "reuse_existing",
+      "can_be_reused_directly": true,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "E23 Evidence Tightening Evaluator",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e23_evidence_tightening_evaluator.py",
+      "capability_category": "evidence expansion",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "evidence gaps and reclassification"
+      ],
+      "what_it_lacks": "not a branch selector",
+      "tests_present_or_absent": "tests/office/test_e23_evidence_tightening_evaluator.py",
+      "reuse_wrap_extend_build_decision": "reuse_existing",
+      "can_be_reused_directly": true,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "E13R Offer Revision",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e13r_offer_revision.py",
+      "capability_category": "offer revision",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "offer/pain revision"
+      ],
+      "what_it_lacks": "older wheel; route input only",
+      "tests_present_or_absent": "tests present for E13R family",
+      "reuse_wrap_extend_build_decision": "reuse_existing",
+      "can_be_reused_directly": true,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "E14 Target Scoring",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e14_target_scoring.py",
+      "capability_category": "target rebuild",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "target scoring and validation candidate quality"
+      ],
+      "what_it_lacks": "older wheel; route input only",
+      "tests_present_or_absent": "tests present for E14 family",
+      "reuse_wrap_extend_build_decision": "reuse_existing",
+      "can_be_reused_directly": true,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "gov-mcp Provider Capability Boundary",
+      "repo": "gov-mcp",
+      "path": "gov_mcp/outbound/provider_capability.py",
+      "capability_category": "provider boundary",
+      "current_status": "canonical",
+      "what_it_already_supports": [
+        "provider modes and capability state"
+      ],
+      "what_it_lacks": "should not determine commercial branch",
+      "tests_present_or_absent": "tests/test_outbound_*.py",
+      "reuse_wrap_extend_build_decision": "reuse_existing",
+      "can_be_reused_directly": true,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "gov-mcp Live Test Gate",
+      "repo": "gov-mcp",
+      "path": "gov_mcp/outbound/live_test_gate.py",
+      "capability_category": "live-test gate",
+      "current_status": "canonical",
+      "what_it_already_supports": [
+        "non-production live-test readiness"
+      ],
+      "what_it_lacks": "business branch decision lives in bridge-labs",
+      "tests_present_or_absent": "tests/test_outbound_live_test_gate.py",
+      "reuse_wrap_extend_build_decision": "reuse_existing",
+      "can_be_reused_directly": true,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "gov-mcp Production Live Decision Contracts",
+      "repo": "gov-mcp",
+      "path": "gov_mcp/outbound/production_live_decision.py",
+      "capability_category": "production live contracts",
+      "current_status": "canonical",
+      "what_it_already_supports": [
+        "production live blocker/credential/category models"
+      ],
+      "what_it_lacks": "branch-scoped route interpretation needed in bridge-labs",
+      "tests_present_or_absent": "tests/test_outbound_production_live_decision.py",
+      "reuse_wrap_extend_build_decision": "reuse_existing",
+      "can_be_reused_directly": true,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "Y-star-gov Governance/CZL Semantics",
+      "repo": "Y-star-gov",
+      "path": "README.md",
+      "capability_category": "governance and CZL",
+      "current_status": "canonical",
+      "what_it_already_supports": [
+        "governance checks and CIEU/CZL concepts"
+      ],
+      "what_it_lacks": "read-only route alignment only",
+      "tests_present_or_absent": "Y-star-gov tests outside E29 scope",
+      "reuse_wrap_extend_build_decision": "reuse_existing",
+      "can_be_reused_directly": true,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "ystar-company Historical Commercial Assets",
+      "repo": "ystar-company",
+      "path": "runtime_artifact_quarantine/evidence_review/README.md",
+      "capability_category": "historical company/evidence assets",
+      "current_status": "historical",
+      "what_it_already_supports": [
+        "historical evidence review constraints"
+      ],
+      "what_it_lacks": "not current branch truth",
+      "tests_present_or_absent": "read-only historical artifacts",
+      "reuse_wrap_extend_build_decision": "left_untouched",
+      "can_be_reused_directly": false,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": true,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "E28R Future Revenue Mode Policy",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e28r_future_revenue_mode_policy.json",
+      "capability_category": "future policy",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "future branch check requirement"
+      ],
+      "what_it_lacks": "needs E29 branch confirmation policy tightening",
+      "tests_present_or_absent": "tests/office/test_e28r_future_revenue_mode_policy.py",
+      "reuse_wrap_extend_build_decision": "extend_existing",
+      "can_be_reused_directly": false,
+      "needs_wrapper": false,
+      "needs_extension": true,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "reuse/wrap/extend existing wheel instead of duplicating it"
+    },
+    {
+      "name": "E29 Revenue Mode Branch Scoring",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e29_revenue_mode_branch_scoring.py",
+      "capability_category": "branch scoring",
+      "current_status": "new",
+      "what_it_already_supports": [
+        "transparent deterministic scoring across all 10 modes"
+      ],
+      "what_it_lacks": "no reusable E29 scoring wheel found",
+      "tests_present_or_absent": "tests/office/test_e29_revenue_mode_branch_scoring.py",
+      "reuse_wrap_extend_build_decision": "build_missing",
+      "can_be_reused_directly": false,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "build_missing: no reusable E29-specific branch selection wheel existed"
+    },
+    {
+      "name": "E29 Branch Selection Confirmation Gate",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e29_branch_selection_confirmation_gate.py",
+      "capability_category": "branch selection gate",
+      "current_status": "new",
+      "what_it_already_supports": [
+        "confirm/switch/defer branch decision"
+      ],
+      "what_it_lacks": "no reusable E29 confirmation gate found",
+      "tests_present_or_absent": "tests/office/test_e29_branch_selection_confirmation_gate.py",
+      "reuse_wrap_extend_build_decision": "build_missing",
+      "can_be_reused_directly": false,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "build_missing: no reusable E29-specific branch selection wheel existed"
+    },
+    {
+      "name": "E29 Branch-Scoped Execution Route Activation",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e29_branch_scoped_execution_route_activation.py",
+      "capability_category": "route activation",
+      "current_status": "new",
+      "what_it_already_supports": [
+        "route activation scoped to selected branch"
+      ],
+      "what_it_lacks": "no reusable E29 activation wheel found",
+      "tests_present_or_absent": "tests/office/test_e29_branch_scoped_execution_route_activation.py",
+      "reuse_wrap_extend_build_decision": "build_missing",
+      "can_be_reused_directly": false,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "build_missing: no reusable E29-specific branch selection wheel existed"
+    },
+    {
+      "name": "E29 Multi-Branch Portfolio Guardrail",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e29_multi_branch_portfolio_guardrail.py",
+      "capability_category": "multi-branch guardrail",
+      "current_status": "new",
+      "what_it_already_supports": [
+        "branch alternatives and switch triggers"
+      ],
+      "what_it_lacks": "no reusable guardrail wheel found",
+      "tests_present_or_absent": "tests/office/test_e29_multi_branch_portfolio_guardrail.py",
+      "reuse_wrap_extend_build_decision": "build_missing",
+      "can_be_reused_directly": false,
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "should_be_left_untouched": false,
+      "conflicts_with_another_wheel": false,
+      "new_wheel_justification": "build_missing: no reusable E29-specific branch selection wheel existed"
+    }
+  ],
+  "new_wheel_creation_rule_satisfied": true,
+  "gov_mcp_modification_required": false,
+  "external_action_executed": false
+}

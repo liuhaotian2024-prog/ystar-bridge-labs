@@ -1,0 +1,5 @@
+# E29 Branch Decision Control Room
+
+- selected_active_branch: revenue_mode_shortest_cash_path
+- selected_branch_route: secure_production_config_preparation
+- recommended_next_milestone: E30_secure_production_config_preparation_for_shortest_cash_path

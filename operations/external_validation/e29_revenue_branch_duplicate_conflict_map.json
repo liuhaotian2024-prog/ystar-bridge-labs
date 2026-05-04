@@ -1,0 +1,128 @@
+{
+  "artifact_id": "e29_revenue_branch_duplicate_conflict_map",
+  "duplicate_conflict_cluster_count": 10,
+  "clusters": [
+    {
+      "cluster_id": "branch_registry_vs_portfolio_selector",
+      "modules_involved": [
+        "e28r_revenue_mode_branch_registry.json",
+        "e24_revenue_path_portfolio_selection.json"
+      ],
+      "semantic_difference": "branch registry tracks revenue modes; portfolio selector tracks revenue paths",
+      "conflict_risk": "low",
+      "canonical_candidate": "E29 branch selector as router; existing wheels remain canonical for their domains",
+      "recommended_route": "keep_parallel_with_router",
+      "future_cleanup_needed": true
+    },
+    {
+      "cluster_id": "production_live_decision_vs_branch_route",
+      "modules_involved": [
+        "e28_production_live_decision_gate.json",
+        "e28r_route_decision.json"
+      ],
+      "semantic_difference": "production live prep is valid only when active branch needs it",
+      "conflict_risk": "medium",
+      "canonical_candidate": "E29 branch selector as router; existing wheels remain canonical for their domains",
+      "recommended_route": "wrap_existing",
+      "future_cleanup_needed": false
+    },
+    {
+      "cluster_id": "shortest_cash_scorer_vs_multi_branch_scoring",
+      "modules_involved": [
+        "e10_shortest_revenue_path_scorer.py",
+        "e29_revenue_mode_branch_scoring.py"
+      ],
+      "semantic_difference": "shortest cash scoring is a component, not whole strategy",
+      "conflict_risk": "medium",
+      "canonical_candidate": "E29 branch selector as router; existing wheels remain canonical for their domains",
+      "recommended_route": "keep_parallel_with_router",
+      "future_cleanup_needed": true
+    },
+    {
+      "cluster_id": "provider_live_route_vs_non_provider_branches",
+      "modules_involved": [
+        "gov_mcp/outbound/live_test_gate.py",
+        "e28r_revenue_mode_branch_registry.json"
+      ],
+      "semantic_difference": "provider readiness should not decide non-provider branches",
+      "conflict_risk": "low",
+      "canonical_candidate": "E29 branch selector as router; existing wheels remain canonical for their domains",
+      "recommended_route": "reuse_one",
+      "future_cleanup_needed": false
+    },
+    {
+      "cluster_id": "evidence_expansion_vs_live_config_route",
+      "modules_involved": [
+        "e23_evidence_tightening_evaluator.py",
+        "e28_evidence_vs_live_tradeoff.json"
+      ],
+      "semantic_difference": "both can be next action; branch gate chooses scope",
+      "conflict_risk": "low",
+      "canonical_candidate": "E29 branch selector as router; existing wheels remain canonical for their domains",
+      "recommended_route": "keep_parallel_with_router",
+      "future_cleanup_needed": true
+    },
+    {
+      "cluster_id": "offer_revision_vs_readiness_review_offer",
+      "modules_involved": [
+        "e13r_offer_revision.py",
+        "e24_revenue_path_portfolio_selection.json"
+      ],
+      "semantic_difference": "offer revision remains backup when offer clarity weakens",
+      "conflict_risk": "low",
+      "canonical_candidate": "E29 branch selector as router; existing wheels remain canonical for their domains",
+      "recommended_route": "keep_parallel_with_router",
+      "future_cleanup_needed": true
+    },
+    {
+      "cluster_id": "target_rebuild_vs_current_ai_consultancy_target",
+      "modules_involved": [
+        "e14_target_scoring.py",
+        "e28_provider_category_comparison.json"
+      ],
+      "semantic_difference": "target rebuild is backup if AI consultancy target quality fails",
+      "conflict_risk": "low",
+      "canonical_candidate": "E29 branch selector as router; existing wheels remain canonical for their domains",
+      "recommended_route": "keep_parallel_with_router",
+      "future_cleanup_needed": true
+    },
+    {
+      "cluster_id": "innovation_productization_vs_branch_backup",
+      "modules_involved": [
+        "e24_innovation_hypotheses.json",
+        "e28r_revenue_mode_branch_registry.json"
+      ],
+      "semantic_difference": "innovation hypotheses feed backup/product branches",
+      "conflict_risk": "low",
+      "canonical_candidate": "E29 branch selector as router; existing wheels remain canonical for their domains",
+      "recommended_route": "wrap_existing",
+      "future_cleanup_needed": false
+    },
+    {
+      "cluster_id": "ceo_kg_branch_deltas_e28r_e29",
+      "modules_involved": [
+        "e28r_ceo_kg_nodes_delta.jsonl",
+        "e29_ceo_kg_nodes_delta.jsonl"
+      ],
+      "semantic_difference": "E28R corrected hardcoding; E29 confirms active branch",
+      "conflict_risk": "low",
+      "canonical_candidate": "E29 branch selector as router; existing wheels remain canonical for their domains",
+      "recommended_route": "keep_parallel_with_router",
+      "future_cleanup_needed": true
+    },
+    {
+      "cluster_id": "future_policy_e28r_e29",
+      "modules_involved": [
+        "e28r_future_revenue_mode_policy.json",
+        "e29_future_revenue_branch_policy.json"
+      ],
+      "semantic_difference": "E29 extends policy after confirmation gate",
+      "conflict_risk": "low",
+      "canonical_candidate": "E29 branch selector as router; existing wheels remain canonical for their domains",
+      "recommended_route": "extend_existing",
+      "future_cleanup_needed": false
+    }
+  ],
+  "destructive_refactor_performed": false,
+  "external_action_executed": false
+}

@@ -1,0 +1,48 @@
+{
+  "artifact_id": "e29_branch_decision_control_room",
+  "control_room_type": "revenue_mode_branch_selection_confirmation",
+  "existing_wheel_audit_completed_first": true,
+  "revenue_branch_registry_summary": {
+    "branch_count": 10,
+    "active_branch": "revenue_mode_shortest_cash_path",
+    "backup_branch_count": 6,
+    "deferred_branch_count": 3,
+    "blocked_branch_count": 0
+  },
+  "branch_scores": {
+    "revenue_mode_shortest_cash_path": 88,
+    "revenue_mode_ceo_agent_runtime_product": 82,
+    "revenue_mode_governance_infrastructure": 80,
+    "revenue_mode_strategic_compounding": 78,
+    "revenue_mode_platform_productization": 76,
+    "revenue_mode_service_cashflow": 74,
+    "revenue_mode_partner_channel": 72,
+    "revenue_mode_enterprise_pilot": 62,
+    "revenue_mode_developer_tooling": 60,
+    "revenue_mode_internal_capability_before_market": 58
+  },
+  "selected_active_branch": "revenue_mode_shortest_cash_path",
+  "selected_branch_route": "secure_production_config_preparation",
+  "production_live_config_still_recommended": true,
+  "production_live_config_scope": "active_branch_only",
+  "evidence_expansion_recommended": true,
+  "offer_revision_recommended": false,
+  "productization_partner_governance_routes_preserved": true,
+  "risks_and_blockers": [
+    "real customer feedback evidence",
+    "production credential source configured outside committed code",
+    "production persistent idempotency configured",
+    "production live tests configured"
+  ],
+  "agent_can_do_autonomously_next": [
+    "prepare E30 secure production configuration contract artifacts without secrets",
+    "keep evidence expansion backup packet current",
+    "maintain branch re-evaluation guardrail"
+  ],
+  "requires_owner_approval_by_risk_or_security": [
+    "future real credential provisioning or production provider activation only"
+  ],
+  "recommended_next_milestone": "E30_secure_production_config_preparation_for_shortest_cash_path",
+  "owner_manual_send_default": false,
+  "external_action_executed": false
+}

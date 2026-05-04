@@ -1,0 +1,24 @@
+{
+  "artifact_id": "e29_future_revenue_branch_policy",
+  "policy": "Every future commercial milestone must evaluate revenue mode branch selection before assuming route, provider work, outbound, or shortest-cash priority.",
+  "required_before_route_assumption": [
+    "existing-wheel audit",
+    "duplicate/overlap map",
+    "reuse/wrap/extend/build decision",
+    "revenue mode branch check",
+    "branch-scoped route decision",
+    "CEO KG update",
+    "CEO brain update",
+    "ecosystem alignment proof"
+  ],
+  "future_milestones_must_not_assume": [
+    "shortest cash path is always active",
+    "production live is always next",
+    "outbound is always required",
+    "provider work is always the bottleneck",
+    "owner manual send is default"
+  ],
+  "near_term_shortest_cash_priority_allowed_only_as": "branch_scoped_implementation_priority",
+  "owner_manual_send_default_allowed": false,
+  "external_action_executed": false
+}

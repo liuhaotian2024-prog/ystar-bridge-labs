@@ -1,0 +1,115 @@
+{
+  "artifact_id": "e29_reuse_wrap_extend_build_decision",
+  "decisions": [
+    {
+      "capability": "revenue mode branch registry read model",
+      "decision": "reuse_existing",
+      "justification": "E28R registry exists and is canonical branch source",
+      "new_implementation_allowed": false
+    },
+    {
+      "capability": "branch scoring",
+      "decision": "build_missing",
+      "justification": "No deterministic E29 scoring wheel existed",
+      "new_implementation_allowed": true
+    },
+    {
+      "capability": "branch selection confirmation gate",
+      "decision": "build_missing",
+      "justification": "E28R required confirmation before route assumption",
+      "new_implementation_allowed": true
+    },
+    {
+      "capability": "branch-scoped route decision",
+      "decision": "build_missing",
+      "justification": "No E29 route activation gate existed",
+      "new_implementation_allowed": true
+    },
+    {
+      "capability": "CEO KG branch evidence analysis",
+      "decision": "wrap_existing",
+      "justification": "E24/E28R KG deltas exist but need E29 selection delta",
+      "new_implementation_allowed": false
+    },
+    {
+      "capability": "production-live route eligibility check",
+      "decision": "reuse_existing",
+      "justification": "E28 production live gate plus E27 validator already cover readiness",
+      "new_implementation_allowed": false
+    },
+    {
+      "capability": "evidence expansion route eligibility check",
+      "decision": "reuse_existing",
+      "justification": "E23 evidence tightening exists",
+      "new_implementation_allowed": false
+    },
+    {
+      "capability": "offer revision route eligibility check",
+      "decision": "reuse_existing",
+      "justification": "E13R offer revision exists",
+      "new_implementation_allowed": false
+    },
+    {
+      "capability": "target rebuild route eligibility check",
+      "decision": "reuse_existing",
+      "justification": "E14 target scoring exists",
+      "new_implementation_allowed": false
+    },
+    {
+      "capability": "productization prototype route eligibility check",
+      "decision": "wrap_existing",
+      "justification": "E24 innovation hypotheses exist",
+      "new_implementation_allowed": false
+    },
+    {
+      "capability": "partner/channel route eligibility check",
+      "decision": "wrap_existing",
+      "justification": "E28R branch registry contains partner channel",
+      "new_implementation_allowed": false
+    },
+    {
+      "capability": "governance infrastructure productization route eligibility check",
+      "decision": "wrap_existing",
+      "justification": "E24 innovation and Y-star-gov governance concepts exist",
+      "new_implementation_allowed": false
+    },
+    {
+      "capability": "CEO-agent runtime product route eligibility check",
+      "decision": "wrap_existing",
+      "justification": "E24 CEO KG/brain assets exist",
+      "new_implementation_allowed": false
+    },
+    {
+      "capability": "branch transition policy",
+      "decision": "build_missing",
+      "justification": "No explicit transition trigger matrix existed",
+      "new_implementation_allowed": true
+    },
+    {
+      "capability": "route registry update",
+      "decision": "extend_existing",
+      "justification": "E28R policy needs E29 confirmation result",
+      "new_implementation_allowed": true
+    },
+    {
+      "capability": "CEO KG / brain update",
+      "decision": "wrap_existing",
+      "justification": "Use existing KG/brain update pattern with E29 deltas",
+      "new_implementation_allowed": false
+    },
+    {
+      "capability": "CZL closure",
+      "decision": "reuse_existing",
+      "justification": "CZL closure pattern exists; E29 artifact instantiates it",
+      "new_implementation_allowed": false
+    }
+  ],
+  "new_implementation_allowed_only_for": [
+    "build_missing",
+    "extend_existing"
+  ],
+  "all_new_wheels_have_build_missing_or_extend_existing_justification": true,
+  "newly_built_wheels_count": 4,
+  "wrapped_or_extended_wheels_count": 5,
+  "external_action_executed": false
+}

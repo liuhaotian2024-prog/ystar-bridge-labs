@@ -1,0 +1,13 @@
+{
+  "artifact_id": "e29_ceo_kg_promotion_candidates_update",
+  "promotion_candidates_count": 1,
+  "promotion_candidates": [
+    {
+      "id": "e29_branch_selection_decision",
+      "promotion_status": "working_only",
+      "reason": "Branch confirmation is internal strategy evidence, not customer/market truth."
+    }
+  ],
+  "canonical_truth_promoted": false,
+  "external_action_executed": false
+}

@@ -1,0 +1,11 @@
+{
+  "artifact_id": "e29_ceo_kg_branch_selection_feedback",
+  "active_branch": "revenue_mode_shortest_cash_path",
+  "selected_route": "secure_production_config_preparation",
+  "kg_delta_node_count": 32,
+  "kg_delta_edge_count": 29,
+  "internal_strategy_evidence_only": true,
+  "customer_feedback_claimed": false,
+  "market_validation_claimed": false,
+  "external_action_executed": false
+}
