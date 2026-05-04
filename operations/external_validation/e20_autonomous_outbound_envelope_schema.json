@@ -1,0 +1,23 @@
+{
+  "artifact_id": "e20_autonomous_outbound_envelope_schema",
+  "required_fields": [
+    "action_id",
+    "target",
+    "channel",
+    "message_content_ref",
+    "risk_tier",
+    "executor_decision",
+    "policy_checks",
+    "evidence_references",
+    "guard_checks",
+    "rate_limit",
+    "idempotency_key",
+    "suppression_status",
+    "provider_capability_status",
+    "dry_run_receipt",
+    "live_execution_readiness",
+    "audit_czl_linkage"
+  ],
+  "live_execution_forbidden_in_e20": true,
+  "external_action_executed": false
+}

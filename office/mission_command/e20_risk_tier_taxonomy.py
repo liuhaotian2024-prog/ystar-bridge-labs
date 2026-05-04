@@ -1,0 +1,126 @@
+from __future__ import annotations
+
+from dataclasses import asdict, dataclass
+from typing import Any, Dict, List
+
+
+E20_RISK_TIERS = [
+    "T0_internal_only_no_external_effect",
+    "T1_low_risk_reversible_external",
+    "T2_low_medium_limited_outbound",
+    "T3_medium_risk_requires_strict_limits",
+    "T4_high_risk_owner_approval_required",
+    "T5_no_go_blocked",
+]
+
+
+@dataclass(frozen=True)
+class E20RiskTier:
+    tier: str
+    examples: List[str]
+    allowed_executor: str
+    required_checks: List[str]
+    required_evidence: List[str]
+    rate_limits: Dict[str, int]
+    idempotency_requirements: List[str]
+    suppression_requirements: List[str]
+    rollback_reversal_requirements: List[str]
+    audit_receipt_requirements: List[str]
+    czl_cieu_note_requirements: List[str]
+
+    def to_dict(self) -> Dict[str, Any]:
+        return asdict(self)
+
+
+def build_risk_tier_taxonomy() -> Dict[str, Any]:
+    tiers = [
+        E20RiskTier(
+            tier="T0_internal_only_no_external_effect",
+            examples=["local artifact generation", "dry-run receipt", "internal KPI placeholder"],
+            allowed_executor="agent",
+            required_checks=["repo safety", "no external effect"],
+            required_evidence=["local input artifact"],
+            rate_limits={"max_actions_per_day": 999},
+            idempotency_requirements=["stable artifact ids"],
+            suppression_requirements=["not_applicable"],
+            rollback_reversal_requirements=["git revert or artifact regeneration"],
+            audit_receipt_requirements=["local CZL note"],
+            czl_cieu_note_requirements=["CIEU writeback blocked unless separately authorized"],
+        ),
+        E20RiskTier(
+            tier="T1_low_risk_reversible_external",
+            examples=["public read-only check via approved provider", "draft publication preview"],
+            allowed_executor="agent",
+            required_checks=["Y*gov allow", "gov-mcp preflight", "approved provider", "reversible or non-mutating"],
+            required_evidence=["source allowlist", "provider test"],
+            rate_limits={"max_actions_per_day": 10, "max_actions_per_target": 1},
+            idempotency_requirements=["idempotency key required"],
+            suppression_requirements=["suppression clear if target-linked"],
+            rollback_reversal_requirements=["no mutation or reversible delete path"],
+            audit_receipt_requirements=["preflight and execution receipt"],
+            czl_cieu_note_requirements=["local CZL; canonical CIEU only through Y-star-gov"],
+        ),
+        E20RiskTier(
+            tier="T2_low_medium_limited_outbound",
+            examples=["transparent low-volume validation message", "bounded low-risk publication"],
+            allowed_executor="agent_with_limits",
+            required_checks=["Y*gov allow", "gov-mcp policy", "template hash", "AI transparency", "opt-out", "rate limit", "suppression", "idempotency"],
+            required_evidence=["target identity sufficient", "message reviewed by policy", "provider live tests"],
+            rate_limits={"max_actions_per_day": 3, "max_actions_per_batch": 3, "max_actions_per_target": 1},
+            idempotency_requirements=["sha256 action/message/scope key"],
+            suppression_requirements=["do-not-contact and target suppression clear"],
+            rollback_reversal_requirements=["stop future sends; log correction if applicable"],
+            audit_receipt_requirements=["gov-mcp receipt before feedback wait-state"],
+            czl_cieu_note_requirements=["CZL closure; CIEU writeback only if canonical contract permits"],
+        ),
+        E20RiskTier(
+            tier="T3_medium_risk_requires_strict_limits",
+            examples=["public brand statement", "multi-recipient outbound sequence", "follow-up after positive signal"],
+            allowed_executor="agent_with_limits",
+            required_checks=["strict template", "owner-approved envelope", "low quota", "rollback plan", "safety review"],
+            required_evidence=["positive prior signal or explicit approval"],
+            rate_limits={"max_actions_per_day": 1, "max_actions_per_batch": 1, "max_actions_per_target": 1},
+            idempotency_requirements=["idempotency and duplicate prevention mandatory"],
+            suppression_requirements=["suppression and follow-up eligibility mandatory"],
+            rollback_reversal_requirements=["correction/retraction plan where possible"],
+            audit_receipt_requirements=["preflight, guard, execution, and rollback receipts"],
+            czl_cieu_note_requirements=["governance-grade note required before promotion"],
+        ),
+        E20RiskTier(
+            tier="T4_high_risk_owner_approval_required",
+            examples=["payment", "contract", "legal/financial commitment", "credential/account/security change", "customer/private data access"],
+            allowed_executor="owner_required",
+            required_checks=["owner approval", "Y*gov hard gate", "legal/financial/security review as applicable"],
+            required_evidence=["explicit owner evidence", "scope envelope"],
+            rate_limits={"max_actions_per_day": 0},
+            idempotency_requirements=["not sufficient without owner approval"],
+            suppression_requirements=["must be clear if target-linked"],
+            rollback_reversal_requirements=["owner-defined rollback"],
+            audit_receipt_requirements=["owner approval and governance receipt"],
+            czl_cieu_note_requirements=["canonical governance required before execution"],
+        ),
+        E20RiskTier(
+            tier="T5_no_go_blocked",
+            examples=["credential disclosure", "unauthorized customer system access", "regulated form submission", "fake evidence", "unapproved provider call"],
+            allowed_executor="blocked",
+            required_checks=["deny"],
+            required_evidence=["not_applicable"],
+            rate_limits={"max_actions_per_day": 0},
+            idempotency_requirements=["not_applicable"],
+            suppression_requirements=["block regardless of suppression"],
+            rollback_reversal_requirements=["incident review if attempted"],
+            audit_receipt_requirements=["denial receipt"],
+            czl_cieu_note_requirements=["CZL denial note; CIEU only through canonical path"],
+        ),
+    ]
+    return {
+        "artifact_id": "e20_risk_tier_taxonomy",
+        "taxonomy_version": "e20_risk_tiered_autonomous_outbound_v1",
+        "tiers": [tier.to_dict() for tier in tiers],
+        "owner_manual_send_is_default": False,
+        "external_action_executed": False,
+    }
+
+
+def tier_by_name(taxonomy: Dict[str, Any], name: str) -> Dict[str, Any]:
+    return next(item for item in taxonomy["tiers"] if item["tier"] == name)

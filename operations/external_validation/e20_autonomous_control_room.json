@@ -1,0 +1,248 @@
+{
+  "artifact_id": "e20_autonomous_control_room",
+  "control_room_type": "risk_tiered_autonomous_outbound_surface",
+  "default_model": "agent_autonomous_by_risk_tier_not_owner_manual_by_default",
+  "actions_agent_can_do_autonomously_now": [],
+  "actions_agent_could_do_after_provider_implementation": [
+    {
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "candidate_status": "ready_for_owner_review",
+      "agent_autonomous_send_allowed_in_principle": true,
+      "current_provider_capability_permits_live": false,
+      "owner_approval_truly_required": false,
+      "more_evidence_or_message_revision_required": false,
+      "no_go_or_suppression_applies": false,
+      "classification": "policy_allows_autonomous_but_provider_missing",
+      "executor_decision": "provider_capability_missing",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "reason_codes": [
+        "limited_outbound_autonomous_policy",
+        "policy_allows_autonomous_but_provider_missing"
+      ],
+      "envelope_id": "e20_autonomous_envelope_dc5029d172625126",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "candidate_status": "ready_for_owner_review",
+      "agent_autonomous_send_allowed_in_principle": true,
+      "current_provider_capability_permits_live": false,
+      "owner_approval_truly_required": false,
+      "more_evidence_or_message_revision_required": false,
+      "no_go_or_suppression_applies": false,
+      "classification": "policy_allows_autonomous_but_provider_missing",
+      "executor_decision": "provider_capability_missing",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "reason_codes": [
+        "limited_outbound_autonomous_policy",
+        "policy_allows_autonomous_but_provider_missing"
+      ],
+      "envelope_id": "e20_autonomous_envelope_abf4d4a31de02d0f",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "candidate_status": "ready_for_owner_review",
+      "agent_autonomous_send_allowed_in_principle": true,
+      "current_provider_capability_permits_live": false,
+      "owner_approval_truly_required": false,
+      "more_evidence_or_message_revision_required": false,
+      "no_go_or_suppression_applies": false,
+      "classification": "policy_allows_autonomous_but_provider_missing",
+      "executor_decision": "provider_capability_missing",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "reason_codes": [
+        "limited_outbound_autonomous_policy",
+        "policy_allows_autonomous_but_provider_missing"
+      ],
+      "envelope_id": "e20_autonomous_envelope_502bdb069a4d94d9",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "candidate_status": "ready_for_owner_review",
+      "agent_autonomous_send_allowed_in_principle": true,
+      "current_provider_capability_permits_live": false,
+      "owner_approval_truly_required": false,
+      "more_evidence_or_message_revision_required": false,
+      "no_go_or_suppression_applies": false,
+      "classification": "policy_allows_autonomous_but_provider_missing",
+      "executor_decision": "provider_capability_missing",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "reason_codes": [
+        "limited_outbound_autonomous_policy",
+        "policy_allows_autonomous_but_provider_missing"
+      ],
+      "envelope_id": "e20_autonomous_envelope_5e500c5400220017",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "candidate_status": "ready_for_owner_review",
+      "agent_autonomous_send_allowed_in_principle": true,
+      "current_provider_capability_permits_live": false,
+      "owner_approval_truly_required": false,
+      "more_evidence_or_message_revision_required": false,
+      "no_go_or_suppression_applies": false,
+      "classification": "policy_allows_autonomous_but_provider_missing",
+      "executor_decision": "provider_capability_missing",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "reason_codes": [
+        "limited_outbound_autonomous_policy",
+        "policy_allows_autonomous_but_provider_missing"
+      ],
+      "envelope_id": "e20_autonomous_envelope_182177ece6b73883",
+      "external_action_executed": false
+    }
+  ],
+  "actions_requiring_owner_approval": [],
+  "actions_owner_may_do_manually_as_override": [
+    {
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "candidate_status": "ready_for_owner_review",
+      "agent_autonomous_send_allowed_in_principle": true,
+      "current_provider_capability_permits_live": false,
+      "owner_approval_truly_required": false,
+      "more_evidence_or_message_revision_required": false,
+      "no_go_or_suppression_applies": false,
+      "classification": "policy_allows_autonomous_but_provider_missing",
+      "executor_decision": "provider_capability_missing",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "reason_codes": [
+        "limited_outbound_autonomous_policy",
+        "policy_allows_autonomous_but_provider_missing"
+      ],
+      "envelope_id": "e20_autonomous_envelope_dc5029d172625126",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "candidate_status": "ready_for_owner_review",
+      "agent_autonomous_send_allowed_in_principle": true,
+      "current_provider_capability_permits_live": false,
+      "owner_approval_truly_required": false,
+      "more_evidence_or_message_revision_required": false,
+      "no_go_or_suppression_applies": false,
+      "classification": "policy_allows_autonomous_but_provider_missing",
+      "executor_decision": "provider_capability_missing",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "reason_codes": [
+        "limited_outbound_autonomous_policy",
+        "policy_allows_autonomous_but_provider_missing"
+      ],
+      "envelope_id": "e20_autonomous_envelope_abf4d4a31de02d0f",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "candidate_status": "ready_for_owner_review",
+      "agent_autonomous_send_allowed_in_principle": true,
+      "current_provider_capability_permits_live": false,
+      "owner_approval_truly_required": false,
+      "more_evidence_or_message_revision_required": false,
+      "no_go_or_suppression_applies": false,
+      "classification": "policy_allows_autonomous_but_provider_missing",
+      "executor_decision": "provider_capability_missing",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "reason_codes": [
+        "limited_outbound_autonomous_policy",
+        "policy_allows_autonomous_but_provider_missing"
+      ],
+      "envelope_id": "e20_autonomous_envelope_502bdb069a4d94d9",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "candidate_status": "ready_for_owner_review",
+      "agent_autonomous_send_allowed_in_principle": true,
+      "current_provider_capability_permits_live": false,
+      "owner_approval_truly_required": false,
+      "more_evidence_or_message_revision_required": false,
+      "no_go_or_suppression_applies": false,
+      "classification": "policy_allows_autonomous_but_provider_missing",
+      "executor_decision": "provider_capability_missing",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "reason_codes": [
+        "limited_outbound_autonomous_policy",
+        "policy_allows_autonomous_but_provider_missing"
+      ],
+      "envelope_id": "e20_autonomous_envelope_5e500c5400220017",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "candidate_status": "ready_for_owner_review",
+      "agent_autonomous_send_allowed_in_principle": true,
+      "current_provider_capability_permits_live": false,
+      "owner_approval_truly_required": false,
+      "more_evidence_or_message_revision_required": false,
+      "no_go_or_suppression_applies": false,
+      "classification": "policy_allows_autonomous_but_provider_missing",
+      "executor_decision": "provider_capability_missing",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "reason_codes": [
+        "limited_outbound_autonomous_policy",
+        "policy_allows_autonomous_but_provider_missing"
+      ],
+      "envelope_id": "e20_autonomous_envelope_182177ece6b73883",
+      "external_action_executed": false
+    }
+  ],
+  "blocked_actions": [],
+  "missing_evidence_actions": [
+    {
+      "action_id": "c2_action_fallback_006_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "candidate_status": "suppress_or_do_not_contact",
+      "agent_autonomous_send_allowed_in_principle": false,
+      "current_provider_capability_permits_live": false,
+      "owner_approval_truly_required": false,
+      "more_evidence_or_message_revision_required": true,
+      "no_go_or_suppression_applies": false,
+      "classification": "evidence_required",
+      "executor_decision": "evidence_required_before_execution",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "reason_codes": [
+        "evidence_insufficient"
+      ],
+      "envelope_id": "e20_autonomous_envelope_21034ba8611656f3",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c3_excluded_agent_direct_execution_without_activation",
+      "target_name": "Excluded direct agent execution path",
+      "candidate_status": "needs_more_evidence",
+      "agent_autonomous_send_allowed_in_principle": false,
+      "current_provider_capability_permits_live": false,
+      "owner_approval_truly_required": false,
+      "more_evidence_or_message_revision_required": true,
+      "no_go_or_suppression_applies": false,
+      "classification": "evidence_required",
+      "executor_decision": "evidence_required_before_execution",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "reason_codes": [
+        "evidence_insufficient"
+      ],
+      "envelope_id": "e20_autonomous_envelope_59a7feaa0c8daaca",
+      "external_action_executed": false
+    }
+  ],
+  "provider_blockers": [
+    "live provider adapter missing",
+    "live provider tests missing",
+    "rollback/reversal path missing for live sends"
+  ],
+  "next_commercial_route": "prepare_E21_autonomous_provider_adapter_plan",
+  "provider_capability_status": "no_send_and_dry_run_only_provider_capability_missing_for_live_send",
+  "external_action_executed": false
+}

@@ -1,0 +1,24 @@
+{
+  "artifact_id": "e20_autonomous_execution_eligibility_rules",
+  "decisions": [
+    "agent_autonomous_allowed",
+    "agent_autonomous_allowed_with_limits",
+    "owner_approval_required",
+    "owner_manual_only",
+    "blocked_no_go",
+    "provider_capability_missing",
+    "evidence_required_before_execution"
+  ],
+  "rule_order": [
+    "no_go_blocks_first",
+    "evidence_required_before_execution",
+    "policy_compatibility_required",
+    "suppression_clear_required",
+    "human_intervention_boundary",
+    "provider_live_readiness",
+    "rate_limit_idempotency_audit_required"
+  ],
+  "manual_send_default": false,
+  "provider_missing_is_not_owner_manual_required": true,
+  "external_action_executed": false
+}

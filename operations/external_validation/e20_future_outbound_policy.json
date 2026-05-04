@@ -1,0 +1,16 @@
+{
+  "artifact_id": "e20_future_outbound_policy",
+  "policy": "Future outbound/publication/send milestones must not default to owner manual send.",
+  "required_sections": [
+    "risk_tier_classification",
+    "autonomous_eligibility_decision",
+    "provider_capability_status",
+    "human_intervention_boundary",
+    "no_go_decision_if_applicable",
+    "ecosystem_alignment_result",
+    "owner_involvement_required_or_optional_statement"
+  ],
+  "owner_manual_send_default_allowed": false,
+  "owner_involvement_default": "optional_for_low_risk_provider_supported_actions_required_for_high_risk_or_policy_gate",
+  "external_action_executed": false
+}

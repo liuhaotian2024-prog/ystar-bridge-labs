@@ -1,0 +1,459 @@
+{
+  "artifact_id": "e20_batch_autonomous_reclassification",
+  "batch_id": "e18_first_revenue_validation_batch",
+  "summary_counts": {
+    "agent_autonomous_allowed": 0,
+    "agent_autonomous_allowed_with_limits": 0,
+    "owner_approval_required": 0,
+    "owner_manual_only": 0,
+    "blocked_no_go": 0,
+    "provider_capability_missing": 5,
+    "evidence_required_before_execution": 2
+  },
+  "rows": [
+    {
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "candidate_status": "ready_for_owner_review",
+      "agent_autonomous_send_allowed_in_principle": true,
+      "current_provider_capability_permits_live": false,
+      "owner_approval_truly_required": false,
+      "more_evidence_or_message_revision_required": false,
+      "no_go_or_suppression_applies": false,
+      "classification": "policy_allows_autonomous_but_provider_missing",
+      "executor_decision": "provider_capability_missing",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "reason_codes": [
+        "limited_outbound_autonomous_policy",
+        "policy_allows_autonomous_but_provider_missing"
+      ],
+      "envelope_id": "e20_autonomous_envelope_dc5029d172625126",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "candidate_status": "ready_for_owner_review",
+      "agent_autonomous_send_allowed_in_principle": true,
+      "current_provider_capability_permits_live": false,
+      "owner_approval_truly_required": false,
+      "more_evidence_or_message_revision_required": false,
+      "no_go_or_suppression_applies": false,
+      "classification": "policy_allows_autonomous_but_provider_missing",
+      "executor_decision": "provider_capability_missing",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "reason_codes": [
+        "limited_outbound_autonomous_policy",
+        "policy_allows_autonomous_but_provider_missing"
+      ],
+      "envelope_id": "e20_autonomous_envelope_abf4d4a31de02d0f",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "candidate_status": "ready_for_owner_review",
+      "agent_autonomous_send_allowed_in_principle": true,
+      "current_provider_capability_permits_live": false,
+      "owner_approval_truly_required": false,
+      "more_evidence_or_message_revision_required": false,
+      "no_go_or_suppression_applies": false,
+      "classification": "policy_allows_autonomous_but_provider_missing",
+      "executor_decision": "provider_capability_missing",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "reason_codes": [
+        "limited_outbound_autonomous_policy",
+        "policy_allows_autonomous_but_provider_missing"
+      ],
+      "envelope_id": "e20_autonomous_envelope_502bdb069a4d94d9",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "candidate_status": "ready_for_owner_review",
+      "agent_autonomous_send_allowed_in_principle": true,
+      "current_provider_capability_permits_live": false,
+      "owner_approval_truly_required": false,
+      "more_evidence_or_message_revision_required": false,
+      "no_go_or_suppression_applies": false,
+      "classification": "policy_allows_autonomous_but_provider_missing",
+      "executor_decision": "provider_capability_missing",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "reason_codes": [
+        "limited_outbound_autonomous_policy",
+        "policy_allows_autonomous_but_provider_missing"
+      ],
+      "envelope_id": "e20_autonomous_envelope_5e500c5400220017",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "candidate_status": "ready_for_owner_review",
+      "agent_autonomous_send_allowed_in_principle": true,
+      "current_provider_capability_permits_live": false,
+      "owner_approval_truly_required": false,
+      "more_evidence_or_message_revision_required": false,
+      "no_go_or_suppression_applies": false,
+      "classification": "policy_allows_autonomous_but_provider_missing",
+      "executor_decision": "provider_capability_missing",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "reason_codes": [
+        "limited_outbound_autonomous_policy",
+        "policy_allows_autonomous_but_provider_missing"
+      ],
+      "envelope_id": "e20_autonomous_envelope_182177ece6b73883",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_006_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "candidate_status": "suppress_or_do_not_contact",
+      "agent_autonomous_send_allowed_in_principle": false,
+      "current_provider_capability_permits_live": false,
+      "owner_approval_truly_required": false,
+      "more_evidence_or_message_revision_required": true,
+      "no_go_or_suppression_applies": false,
+      "classification": "evidence_required",
+      "executor_decision": "evidence_required_before_execution",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "reason_codes": [
+        "evidence_insufficient"
+      ],
+      "envelope_id": "e20_autonomous_envelope_21034ba8611656f3",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c3_excluded_agent_direct_execution_without_activation",
+      "target_name": "Excluded direct agent execution path",
+      "candidate_status": "needs_more_evidence",
+      "agent_autonomous_send_allowed_in_principle": false,
+      "current_provider_capability_permits_live": false,
+      "owner_approval_truly_required": false,
+      "more_evidence_or_message_revision_required": true,
+      "no_go_or_suppression_applies": false,
+      "classification": "evidence_required",
+      "executor_decision": "evidence_required_before_execution",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "reason_codes": [
+        "evidence_insufficient"
+      ],
+      "envelope_id": "e20_autonomous_envelope_59a7feaa0c8daaca",
+      "external_action_executed": false
+    }
+  ],
+  "autonomous_outbound_envelopes": [
+    {
+      "envelope_id": "e20_autonomous_envelope_dc5029d172625126",
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target": "Alice Labs AI Operations Consulting",
+      "channel": "future_provider_supported_validation_message",
+      "message_content_ref": "E18/E19 approved message variant; not executed in E20",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "executor_decision": "provider_capability_missing",
+      "policy_checks": [
+        "Y*gov/gov-mcp compatibility",
+        "AI transparency",
+        "opt-out",
+        "template hash"
+      ],
+      "evidence_references": [
+        "src_alicelabs",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "guard_checks": [
+        "rate_limit",
+        "idempotency",
+        "suppression",
+        "kill_switch",
+        "audit_receipt"
+      ],
+      "rate_limit": {
+        "max_actions_per_day": 3,
+        "max_actions_per_target": 1
+      },
+      "idempotency_key": "95424d60779c32cacc17808401535c977caa786708bf1d2ee42720e668ac4778",
+      "suppression_status": "clear",
+      "provider_capability_status": "no_send_and_dry_run_only_provider_capability_missing_for_live_send",
+      "dry_run_receipt": {
+        "receipt_type": "local_no_send_planning_receipt",
+        "external_action_executed": false,
+        "provider_called": false,
+        "real_message_sent": false
+      },
+      "live_execution_readiness": "not_live_ready_provider_capability_missing",
+      "required_owner_approval_only_if_applicable": false,
+      "audit_czl_linkage": "operations/external_validation/e20_czl_closure.json",
+      "external_action_executed": false
+    },
+    {
+      "envelope_id": "e20_autonomous_envelope_abf4d4a31de02d0f",
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "target": "BotSquash AI Automation Agency",
+      "channel": "future_provider_supported_validation_message",
+      "message_content_ref": "E18/E19 approved message variant; not executed in E20",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "executor_decision": "provider_capability_missing",
+      "policy_checks": [
+        "Y*gov/gov-mcp compatibility",
+        "AI transparency",
+        "opt-out",
+        "template hash"
+      ],
+      "evidence_references": [
+        "src_botsquash",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "guard_checks": [
+        "rate_limit",
+        "idempotency",
+        "suppression",
+        "kill_switch",
+        "audit_receipt"
+      ],
+      "rate_limit": {
+        "max_actions_per_day": 3,
+        "max_actions_per_target": 1
+      },
+      "idempotency_key": "312e4ebef11b09171dfe696b6c9eaf025f7f1c331c8ad08b4cd0bb6b6665a36e",
+      "suppression_status": "clear",
+      "provider_capability_status": "no_send_and_dry_run_only_provider_capability_missing_for_live_send",
+      "dry_run_receipt": {
+        "receipt_type": "local_no_send_planning_receipt",
+        "external_action_executed": false,
+        "provider_called": false,
+        "real_message_sent": false
+      },
+      "live_execution_readiness": "not_live_ready_provider_capability_missing",
+      "required_owner_approval_only_if_applicable": false,
+      "audit_czl_linkage": "operations/external_validation/e20_czl_closure.json",
+      "external_action_executed": false
+    },
+    {
+      "envelope_id": "e20_autonomous_envelope_502bdb069a4d94d9",
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "target": "WotAI AI Automation",
+      "channel": "future_provider_supported_validation_message",
+      "message_content_ref": "E18/E19 approved message variant; not executed in E20",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "executor_decision": "provider_capability_missing",
+      "policy_checks": [
+        "Y*gov/gov-mcp compatibility",
+        "AI transparency",
+        "opt-out",
+        "template hash"
+      ],
+      "evidence_references": [
+        "src_wotai",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "guard_checks": [
+        "rate_limit",
+        "idempotency",
+        "suppression",
+        "kill_switch",
+        "audit_receipt"
+      ],
+      "rate_limit": {
+        "max_actions_per_day": 3,
+        "max_actions_per_target": 1
+      },
+      "idempotency_key": "d8a6f37532d909302f296adecb6c74aa9efc7c0f696e1f2fa3f4203df782c368",
+      "suppression_status": "clear",
+      "provider_capability_status": "no_send_and_dry_run_only_provider_capability_missing_for_live_send",
+      "dry_run_receipt": {
+        "receipt_type": "local_no_send_planning_receipt",
+        "external_action_executed": false,
+        "provider_called": false,
+        "real_message_sent": false
+      },
+      "live_execution_readiness": "not_live_ready_provider_capability_missing",
+      "required_owner_approval_only_if_applicable": false,
+      "audit_czl_linkage": "operations/external_validation/e20_czl_closure.json",
+      "external_action_executed": false
+    },
+    {
+      "envelope_id": "e20_autonomous_envelope_5e500c5400220017",
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "target": "Alice Labs AI Operations Consulting",
+      "channel": "future_provider_supported_validation_message",
+      "message_content_ref": "E18/E19 approved message variant; not executed in E20",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "executor_decision": "provider_capability_missing",
+      "policy_checks": [
+        "Y*gov/gov-mcp compatibility",
+        "AI transparency",
+        "opt-out",
+        "template hash"
+      ],
+      "evidence_references": [
+        "src_alicelabs",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "guard_checks": [
+        "rate_limit",
+        "idempotency",
+        "suppression",
+        "kill_switch",
+        "audit_receipt"
+      ],
+      "rate_limit": {
+        "max_actions_per_day": 3,
+        "max_actions_per_target": 1
+      },
+      "idempotency_key": "78332ea7f05453ce2a5a0c46bf348388ef858823be6743b45945c40799fea5f7",
+      "suppression_status": "clear",
+      "provider_capability_status": "no_send_and_dry_run_only_provider_capability_missing_for_live_send",
+      "dry_run_receipt": {
+        "receipt_type": "local_no_send_planning_receipt",
+        "external_action_executed": false,
+        "provider_called": false,
+        "real_message_sent": false
+      },
+      "live_execution_readiness": "not_live_ready_provider_capability_missing",
+      "required_owner_approval_only_if_applicable": false,
+      "audit_czl_linkage": "operations/external_validation/e20_czl_closure.json",
+      "external_action_executed": false
+    },
+    {
+      "envelope_id": "e20_autonomous_envelope_182177ece6b73883",
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "target": "BotSquash AI Automation Agency",
+      "channel": "future_provider_supported_validation_message",
+      "message_content_ref": "E18/E19 approved message variant; not executed in E20",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "executor_decision": "provider_capability_missing",
+      "policy_checks": [
+        "Y*gov/gov-mcp compatibility",
+        "AI transparency",
+        "opt-out",
+        "template hash"
+      ],
+      "evidence_references": [
+        "src_botsquash",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "guard_checks": [
+        "rate_limit",
+        "idempotency",
+        "suppression",
+        "kill_switch",
+        "audit_receipt"
+      ],
+      "rate_limit": {
+        "max_actions_per_day": 3,
+        "max_actions_per_target": 1
+      },
+      "idempotency_key": "69c41fdbc9e6b993e7b159e73ca302ad5ba771dc7de6db62089f60ad95104a89",
+      "suppression_status": "clear",
+      "provider_capability_status": "no_send_and_dry_run_only_provider_capability_missing_for_live_send",
+      "dry_run_receipt": {
+        "receipt_type": "local_no_send_planning_receipt",
+        "external_action_executed": false,
+        "provider_called": false,
+        "real_message_sent": false
+      },
+      "live_execution_readiness": "not_live_ready_provider_capability_missing",
+      "required_owner_approval_only_if_applicable": false,
+      "audit_czl_linkage": "operations/external_validation/e20_czl_closure.json",
+      "external_action_executed": false
+    },
+    {
+      "envelope_id": "e20_autonomous_envelope_21034ba8611656f3",
+      "action_id": "c2_action_fallback_006_cand_wotai_wotai",
+      "target": "WotAI AI Automation",
+      "channel": "future_provider_supported_validation_message",
+      "message_content_ref": "E18/E19 approved message variant; not executed in E20",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "executor_decision": "evidence_required_before_execution",
+      "policy_checks": [
+        "Y*gov/gov-mcp compatibility",
+        "AI transparency",
+        "opt-out",
+        "template hash"
+      ],
+      "evidence_references": [
+        "src_wotai",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "guard_checks": [
+        "rate_limit",
+        "idempotency",
+        "suppression",
+        "kill_switch",
+        "audit_receipt"
+      ],
+      "rate_limit": {
+        "max_actions_per_day": 3,
+        "max_actions_per_target": 1
+      },
+      "idempotency_key": "4bea63cb7982575a595fc37627ba45f828d5b82a226cdf3896ad14d0c337dedd",
+      "suppression_status": "clear",
+      "provider_capability_status": "no_send_and_dry_run_only_provider_capability_missing_for_live_send",
+      "dry_run_receipt": {
+        "receipt_type": "local_no_send_planning_receipt",
+        "external_action_executed": false,
+        "provider_called": false,
+        "real_message_sent": false
+      },
+      "live_execution_readiness": "not_executed_in_e20",
+      "required_owner_approval_only_if_applicable": false,
+      "audit_czl_linkage": "operations/external_validation/e20_czl_closure.json",
+      "external_action_executed": false
+    },
+    {
+      "envelope_id": "e20_autonomous_envelope_59a7feaa0c8daaca",
+      "action_id": "c3_excluded_agent_direct_execution_without_activation",
+      "target": "Excluded direct agent execution path",
+      "channel": "future_provider_supported_validation_message",
+      "message_content_ref": "E18/E19 approved message variant; not executed in E20",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "executor_decision": "evidence_required_before_execution",
+      "policy_checks": [
+        "Y*gov/gov-mcp compatibility",
+        "AI transparency",
+        "opt-out",
+        "template hash"
+      ],
+      "evidence_references": [],
+      "guard_checks": [
+        "rate_limit",
+        "idempotency",
+        "suppression",
+        "kill_switch",
+        "audit_receipt"
+      ],
+      "rate_limit": {
+        "max_actions_per_day": 3,
+        "max_actions_per_target": 1
+      },
+      "idempotency_key": "622441c81d966d1ebe45efaac10156a46c7b6c1da217862b514ac941aecf472d",
+      "suppression_status": "clear",
+      "provider_capability_status": "no_send_and_dry_run_only_provider_capability_missing_for_live_send",
+      "dry_run_receipt": {
+        "receipt_type": "local_no_send_planning_receipt",
+        "external_action_executed": false,
+        "provider_called": false,
+        "real_message_sent": false
+      },
+      "live_execution_readiness": "not_executed_in_e20",
+      "required_owner_approval_only_if_applicable": false,
+      "audit_czl_linkage": "operations/external_validation/e20_czl_closure.json",
+      "external_action_executed": false
+    }
+  ],
+  "external_action_executed": false
+}
