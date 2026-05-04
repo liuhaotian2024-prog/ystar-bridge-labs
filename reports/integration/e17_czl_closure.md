@@ -1,0 +1,39 @@
+# E17 CZL Closure
+
+- Y*: E17 first commercial signal closed loop runtime
+- Yt+1: Y*Bridge Labs is owner-manual-send ready for the first commercial signal and ready to classify imported feedback without fake evidence.
+- Rt+1: 0
+- no_real_external_action_occurred: true
+- no_fake_response_evidence_created: true
+- no_provider_api_called: true
+- no_send_receipt_generated: true
+- commercial_path_advanced: from no-send dry-run preparation to owner-gated customer signal loop readiness
+
+## U
+- owner activation console
+- final message package
+- feedback intake
+- response classifier
+- paid-signal evaluator
+- offer revision planner
+- target expansion queue
+- route decision
+
+## Artifacts
+- operations/external_validation/e17_owner_activation_console.json
+- operations/external_validation/e17_final_message_package.json
+- operations/external_validation/e17_feedback_intake_schema.json
+- operations/external_validation/e17_feedback_intake_empty.json
+- operations/external_validation/e17_response_classification_rules.json
+- operations/external_validation/e17_paid_signal_readiness_packet.json
+- operations/external_validation/e17_offer_revision_packet.json
+- operations/external_validation/e17_next_target_expansion_queue.json
+- operations/external_validation/e17_route_decision_packet.json
+- operations/external_validation/e17_czl_closure.json
+- operations/external_validation/e17_owner_activation_console.md
+- reports/integration/e17_first_commercial_signal_closed_loop.md
+- reports/integration/e17_final_message_package.md
+- reports/integration/e17_feedback_runtime.md
+- reports/integration/e17_paid_signal_and_offer_revision.md
+- reports/integration/e17_route_decision_packet.md
+- reports/integration/e17_czl_closure.md

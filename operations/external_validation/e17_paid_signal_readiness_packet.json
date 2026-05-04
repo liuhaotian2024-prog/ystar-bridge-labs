@@ -1,0 +1,24 @@
+{
+  "artifact_id": "e17_paid_signal_readiness_packet",
+  "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+  "selected_target": "Alice Labs AI Operations Consulting",
+  "offer": "48h AI Agent Implementation Readiness Review",
+  "current_feedback_state": "no_response_yet",
+  "paid_signal_strength": 0,
+  "paid_signal_label": "none",
+  "manual_follow_up_allowed": false,
+  "meeting_scheduling_allowed": false,
+  "offer_revision_required": false,
+  "target_revision_required": false,
+  "target_expansion_allowed": true,
+  "provider_adapter_preparation_allowed": true,
+  "broader_commercial_acceleration_allowed": false,
+  "cieU_writeback_allowed": false,
+  "next_allowed_commercial_action": "owner_manual_send_first",
+  "limitations": [
+    "No real customer signal is claimed until owner imports response evidence.",
+    "Provider adapter preparation remains no-send unless owner explicitly activates E16C1 later.",
+    "CIEU/core writeback remains hard-gated."
+  ],
+  "external_action_executed": false
+}

@@ -1,0 +1,52 @@
+{
+  "artifact_id": "e17_feedback_intake_schema",
+  "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+  "ledger_id": "ledger_c2_action_primary_001_cand_alicelabs_alicelabs",
+  "feedback_event_id": "feedback_c2_action_primary_001_cand_alicelabs_alicelabs",
+  "required_fields": [
+    "action_id",
+    "ledger_id",
+    "feedback_event_id",
+    "target_id",
+    "owner_sent_status",
+    "feedback_type",
+    "raw_feedback_summary",
+    "received_at",
+    "channel",
+    "owner_notes",
+    "response_evidence_present"
+  ],
+  "feedback_type_enum": [
+    "no_response_yet",
+    "no_response_after_wait_window",
+    "positive_interest",
+    "clarification_request",
+    "pricing_question",
+    "meeting_request",
+    "referral",
+    "objection",
+    "unsubscribe_or_do_not_contact",
+    "negative_response",
+    "bounced_or_invalid_target",
+    "manual_notes_only"
+  ],
+  "boolean_signal_fields": [
+    "do_not_contact_requested",
+    "safety_or_trust_concern",
+    "price_question_present",
+    "meeting_request_present",
+    "request_for_details_present",
+    "referral_present",
+    "positive_interest_present",
+    "objection_present",
+    "bounced_or_invalid"
+  ],
+  "provenance_rules": [
+    "Owner-reported feedback is provisional until source/provenance is recorded.",
+    "No customer response is claimed by the empty intake file.",
+    "CIEU/core writeback remains hard-gated and is not performed by E17.",
+    "Do-not-contact requests suppress the target immediately."
+  ],
+  "external_action_executed_by_agent": false,
+  "real_customer_response_claimed": false
+}

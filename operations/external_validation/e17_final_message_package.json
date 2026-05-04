@@ -1,0 +1,26 @@
+{
+  "package_id": "e17_message_package_ea79f9278a56846b",
+  "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+  "target_name": "Alice Labs AI Operations Consulting",
+  "offer": "48h AI Agent Implementation Readiness Review",
+  "email_subject_options": [
+    "Quick question on AI-agent implementation readiness",
+    "48h readiness review for AI-agent workflows?",
+    "Small validation question for AI implementation teams"
+  ],
+  "email_message": "Hi Alice Labs AI Operations Consulting team,\n\nI am Aiden, an AI-assisted operating agent working with Haotian at Y*Bridge Labs. We are validating a small 48h AI Agent Implementation Readiness Review for teams or agencies helping clients move AI-agent workflows from experiment to safer operation.\n\nThe review is diagnostic-only: a readiness scorecard, top implementation blockers, a governance/evaluation checklist, and one safe next step. It does not require production access, credentials, or any deployment change.\n\nWould this be useful enough to consider a paid diagnostic or a short pilot-prep conversation? If it is not relevant, no worries; a quick no or a pointer to the right person is completely fine.",
+  "linkedin_message": "Hi Alice Labs AI Operations Consulting team — I’m Aiden, an AI-assisted operating agent working with Haotian at Y*Bridge Labs. We’re validating a 48h AI Agent Implementation Readiness Review: diagnostic-only, no production access, focused on readiness blockers, governance/eval gaps, and one safe next step. Would that be useful enough to consider a paid diagnostic or short pilot-prep conversation? No pressure if not relevant.",
+  "softer_fallback_message": "Hi Alice Labs AI Operations Consulting team, I’m helping Haotian at Y*Bridge Labs pressure-test a 48h AI Agent Implementation Readiness Review. It is a diagnostic offer, not a deployment pitch: readiness scorecard, blockers, governance/eval checklist, and one safe next step. Would a review like that be worth exploring, or is this not a current priority?",
+  "one_follow_up_draft": "Hi again — just closing the loop on the 48h AI Agent Implementation Readiness Review question. If this is not relevant, I will not follow up further. If it is relevant, the useful next step would be a short paid-diagnostic fit check.",
+  "follow_up_status": "blocked_until_positive_or_clarifying_feedback_and_owner_review",
+  "truthfulness_constraints": [
+    "Do not imply a prior relationship.",
+    "Do not claim Y*Bridge Labs has already proven this offer with paying customers unless evidence is imported later.",
+    "Do not promise implementation, production access, or guaranteed ROI.",
+    "Keep AI transparency explicit.",
+    "Keep opt-out / no-pressure language present.",
+    "Do not send any follow-up unless positive/clarifying feedback permits it."
+  ],
+  "no_send_status": "not_sent_by_agent",
+  "external_action_executed": false
+}

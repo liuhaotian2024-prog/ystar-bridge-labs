@@ -1,0 +1,80 @@
+{
+  "artifact_id": "e17_response_classification_rules",
+  "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+  "scoring_method": "deterministic_explicit_field_rules_no_llm_judge",
+  "rules": [
+    {
+      "rule_id": "classify_no_response_yet",
+      "trigger_feedback_type": "no_response_yet",
+      "paid_signal_strength": 0,
+      "route_recommendation": "E17_manual_send_ready",
+      "reason_codes": [
+        "no_response_yet_no_customer_signal_claimed"
+      ]
+    },
+    {
+      "rule_id": "classify_positive_interest",
+      "trigger_feedback_type": "positive_interest",
+      "paid_signal_strength": 4,
+      "route_recommendation": "E18_commercial_acceleration_candidate",
+      "reason_codes": [
+        "positive_interest_or_meeting_signal"
+      ]
+    },
+    {
+      "rule_id": "classify_pricing_question",
+      "trigger_feedback_type": "pricing_question",
+      "paid_signal_strength": 4,
+      "route_recommendation": "E17_manual_follow_up_allowed_after_owner_review",
+      "reason_codes": [
+        "pricing_question_indicates_budget_interest"
+      ]
+    },
+    {
+      "rule_id": "classify_meeting_request",
+      "trigger_feedback_type": "meeting_request",
+      "paid_signal_strength": 5,
+      "route_recommendation": "E18_commercial_acceleration_candidate",
+      "reason_codes": [
+        "positive_interest_or_meeting_signal"
+      ]
+    },
+    {
+      "rule_id": "classify_clarification_request",
+      "trigger_feedback_type": "clarification_request",
+      "paid_signal_strength": 3,
+      "route_recommendation": "E17_wait_for_owner_feedback_import",
+      "reason_codes": [
+        "clarification_or_referral_is_qualified_interest"
+      ]
+    },
+    {
+      "rule_id": "classify_unsubscribe_or_do_not_contact",
+      "trigger_feedback_type": "unsubscribe_or_do_not_contact",
+      "paid_signal_strength": 0,
+      "route_recommendation": "E17_suppress_target",
+      "reason_codes": [
+        "do_not_contact_suppresses_target"
+      ]
+    },
+    {
+      "rule_id": "classify_bounced_or_invalid_target",
+      "trigger_feedback_type": "bounced_or_invalid_target",
+      "paid_signal_strength": 0,
+      "route_recommendation": "E17_target_evidence_expansion_required",
+      "reason_codes": [
+        "target_identity_or_channel_invalid"
+      ]
+    },
+    {
+      "rule_id": "classify_negative_response",
+      "trigger_feedback_type": "negative_response",
+      "paid_signal_strength": 1,
+      "route_recommendation": "E17_offer_revision_required",
+      "reason_codes": [
+        "objection_or_negative_response_requires_revision"
+      ]
+    }
+  ],
+  "external_action_executed": false
+}

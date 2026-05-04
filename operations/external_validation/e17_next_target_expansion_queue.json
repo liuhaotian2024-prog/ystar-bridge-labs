@@ -1,0 +1,88 @@
+{
+  "artifact_id": "e17_next_target_expansion_queue",
+  "source_batch_id": "c3_first_governed_validation_batch",
+  "selection_policy": "reuse_existing_repo_evidence_only_no_web_scrape_no_fake_targets",
+  "selected_action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+  "entries": [
+    {
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_id": "cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "role": "primary",
+      "status": "current_selected_action",
+      "missing_fields": [],
+      "selection_basis": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "offer_thesis": "48h AI Agent Implementation Readiness Review",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "target_id": "cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "role": "primary",
+      "status": "ready_candidate_from_existing_repo_evidence",
+      "missing_fields": [],
+      "selection_basis": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "offer_thesis": "48h AI Agent Implementation Readiness Review",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "target_id": "cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "role": "primary",
+      "status": "ready_candidate_from_existing_repo_evidence",
+      "missing_fields": [],
+      "selection_basis": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "offer_thesis": "48h AI Agent Implementation Readiness Review",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "target_id": "cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "role": "fallback",
+      "status": "ready_candidate_from_existing_repo_evidence",
+      "missing_fields": [],
+      "selection_basis": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "offer_thesis": "48h AI Agent Implementation Readiness Review",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "target_id": "cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "role": "fallback",
+      "status": "ready_candidate_from_existing_repo_evidence",
+      "missing_fields": [],
+      "selection_basis": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "offer_thesis": "48h AI Agent Implementation Readiness Review",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_006_cand_wotai_wotai",
+      "target_id": "cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "role": "suppression_candidate",
+      "status": "suppress_or_do_not_contact",
+      "missing_fields": [],
+      "selection_basis": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+      "offer_thesis": "48h AI Agent Implementation Readiness Review",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c3_excluded_agent_direct_execution_without_activation",
+      "target_id": "not_applicable_agent_direct_execution",
+      "target_name": "Excluded direct agent execution path",
+      "role": "excluded",
+      "status": "needs_evidence_expansion",
+      "missing_fields": [
+        "real_target_not_applicable"
+      ],
+      "selection_basis": "Explicitly excluded to prove C3 does not permit direct agent sending without owner activation.",
+      "offer_thesis": "48h AI Agent Implementation Readiness Review",
+      "external_action_executed": false
+    }
+  ],
+  "external_action_executed": false
+}

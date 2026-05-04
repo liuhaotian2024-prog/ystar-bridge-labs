@@ -1,0 +1,49 @@
+{
+  "artifact_id": "e17_owner_activation_console",
+  "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+  "target_id": "cand_alicelabs_alicelabs",
+  "target_name": "Alice Labs AI Operations Consulting",
+  "offer": "48h AI Agent Implementation Readiness Review",
+  "business_hypothesis": "A low-friction 48h readiness diagnostic can convert AI-agent implementation uncertainty into a paid pilot-prep conversation.",
+  "buyer_pain_hypothesis": "AI-agent implementation readiness, workflow bottlenecks, governance risk, and safe next operational step.",
+  "why_this_target": "Potential buyer/operator for AI-agent implementation readiness, governance, or client-risk reduction review.",
+  "target_evidence_basis": [
+    "src_alicelabs",
+    "e13r_ev_001",
+    "e13r_ev_008",
+    "e13r_ev_009"
+  ],
+  "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+  "capability_domain": "external_validation_message",
+  "no_send_status": "agent_no_send_owner_manual_send_only",
+  "recommended_owner_action": "Review one page, choose approve/revise/reject/defer, and if approving manual send, copy one finalized message only.",
+  "decision_options": [
+    "approve_manual_send",
+    "revise_message",
+    "reject_target",
+    "defer",
+    "import_feedback_if_already_sent_manually"
+  ],
+  "owner_burden_reduction": "Owner sees target, thesis, risk boundary, final message, and feedback fields in one surface instead of hunting through governance artifacts.",
+  "final_message_package_id": "e17_message_package_ea79f9278a56846b",
+  "evidence_to_capture_after_manual_send": [
+    "whether owner actually sent the message outside the repo",
+    "channel used by owner",
+    "sent_at timestamp if owner chooses to record it",
+    "raw response summary if any",
+    "feedback type",
+    "price/meeting/referral/objection/do-not-contact flags",
+    "owner notes and any provenance limitations"
+  ],
+  "blocked_actions": [
+    "agent email/message send",
+    "real provider API call",
+    "login or account creation",
+    "form submission or publication",
+    "payment, contract, or legal commitment",
+    "real send receipt generation",
+    "core brain/CIEU/memory canonical writeback"
+  ],
+  "e16c1_real_send_blocked": true,
+  "external_action_executed": false
+}

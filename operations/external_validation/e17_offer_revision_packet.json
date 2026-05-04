@@ -1,0 +1,17 @@
+{
+  "artifact_id": "e17_offer_revision_packet",
+  "lead_offer": "48h AI Agent Implementation Readiness Review",
+  "lead_offer_should_remain": true,
+  "revision_priority": "none_before_first_manual_send",
+  "recommended_revisions": [
+    "Do not revise before the first manual send unless owner dislikes the tone.",
+    "Keep the 48h review concrete: scorecard, blockers, governance/eval checklist, one safe next step.",
+    "Use the softer fallback if owner wants lower-pressure language."
+  ],
+  "pain_framing_improvement": "Anchor the review in readiness blockers, governance/evaluation gaps, and safe next operational step.",
+  "cta_improvement": "Ask whether a paid diagnostic or short pilot-prep conversation is worth considering.",
+  "target_segmentation_improvement": "Prioritize AI consultants/agencies and AI-heavy teams with governance or implementation burden evidence.",
+  "credibility_evidence_rule": "Use only repo-backed evidence; do not invent customer proof.",
+  "pricing_packaging_rule": "Pricing remains hypothesis until imported response evidence confirms budget or objection.",
+  "external_action_executed": false
+}
