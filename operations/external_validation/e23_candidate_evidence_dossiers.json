@@ -1,0 +1,51 @@
+{
+  "artifact_id": "e23_candidate_evidence_dossiers",
+  "dossiers": [
+    {
+      "action_id": "c2_action_fallback_006_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "current_status": "suppress_or_do_not_contact",
+      "evidence_present": [
+        "src_wotai",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "evidence_missing": [],
+      "repo_paths_supporting_present_evidence": [
+        "operations/external_validation/e18_revenue_validation_batch.json",
+        "operations/external_validation/e18_commercial_fit_scores.json",
+        "operations/external_validation/e22_dry_run_batch_selection.json"
+      ],
+      "pain_hypothesis": "supported",
+      "target_fit": "supported",
+      "offer_fit": "supported",
+      "message_readiness": "adequate",
+      "compliance_suppression_status": "suppressed",
+      "updated_classification": "suppress_or_do_not_contact",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c3_excluded_agent_direct_execution_without_activation",
+      "target_name": "Excluded direct agent execution path",
+      "current_status": "blocked_missing_source",
+      "evidence_present": [],
+      "evidence_missing": [
+        "real target identity",
+        "repo-grounded source evidence",
+        "buyer pain evidence",
+        "message-specific target fit"
+      ],
+      "repo_paths_supporting_present_evidence": [],
+      "pain_hypothesis": "missing_or_not_applicable",
+      "target_fit": "not_grounded",
+      "offer_fit": "not_supported",
+      "message_readiness": "not_ready",
+      "compliance_suppression_status": "blocked_missing_source",
+      "updated_classification": "blocked_missing_source",
+      "external_action_executed": false
+    }
+  ],
+  "dossier_count": 2,
+  "external_action_executed": false
+}

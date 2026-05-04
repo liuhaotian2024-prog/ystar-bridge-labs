@@ -1,0 +1,11 @@
+from __future__ import annotations
+
+from typing import Any, Dict
+
+
+def build_live_readiness_control_room(evaluation: Dict[str, Any], suppression: Dict[str, Any], compliance: Dict[str, Any], promotion: Dict[str, Any], batch: Dict[str, Any], kpi: Dict[str, Any], route: Dict[str, Any] | None=None) -> Dict[str, Any]:
+    return {"artifact_id":"e23_live_readiness_control_room","control_room_type":"live_readiness_evidence_compliance_surface","dry_run_executed_candidates":[row for row in batch["rows"] if row["dry_run_executed_previously"]],"newly_evidence_tightened_candidates":evaluation["rows"],"suppression_registry_status":{"production_suppressed_target_count":suppression["production_suppressed_target_count"]},"compliance_registry_status":{"compliance_blocked_count":compliance["compliance_blocked_count"],"owner_approval_required_by_risk_count":compliance["owner_approval_required_by_risk_count"]},"live_promotion_status":promotion["counts"],"live_provider_blockers":["live_provider_scaffolded_but_disabled","provider credentials/config missing","live tests missing","persistent idempotency store missing"],"agent_can_do_autonomously_next":["evidence expansion planning","suppression/compliance policy refinement","provider sandbox enablement planning"],"owner_approval_required_by_risk_tier_actions":[row for row in batch["rows"] if row["owner_approval_required_by_risk"]],"blocked_actions":[row for row in batch["rows"] if row["still_evidence_required"] or row["suppressed"]],"next_route":route.get("recommended_route") if route else "E24_live_provider_sandbox_enablement","owner_manual_send_is_default":False,"external_action_executed":False}
+
+
+def render_live_readiness_control_room(room: Dict[str, Any]) -> str:
+    return "\n".join(["# E23 Live-Readiness Control Room","",f"- dry_run_executed_candidates: {len(room['dry_run_executed_candidates'])}",f"- newly_evidence_tightened_candidates: {len(room['newly_evidence_tightened_candidates'])}",f"- production_suppressed_target_count: {room['suppression_registry_status']['production_suppressed_target_count']}",f"- compliance_blocked_count: {room['compliance_registry_status']['compliance_blocked_count']}",f"- live_ready: {room['live_promotion_status']['live_ready']}",f"- next_route: {room['next_route']}","- owner_manual_send_is_default: false","- external_action_executed: false"]).rstrip()+"\n"

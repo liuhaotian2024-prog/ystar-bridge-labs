@@ -1,0 +1,8 @@
+{
+  "artifact_id": "e23_optional_dry_run_iteration",
+  "newly_promoted_candidate_count": 0,
+  "dry_run_iteration_executed": false,
+  "newly_dry_run_executed_count": 0,
+  "reason": "no newly promoted candidates; avoids duplicate receipts for the 5 already executed actions",
+  "external_action_executed": false
+}

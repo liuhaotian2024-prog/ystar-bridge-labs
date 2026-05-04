@@ -1,0 +1,66 @@
+{
+  "artifact_id": "e23_evidence_tightening_evaluation",
+  "evidence_required_before": 2,
+  "promoted_to_dry_run_available": 0,
+  "still_evidence_required": 1,
+  "suppressed_or_rejected": 2,
+  "rows": [
+    {
+      "action_id": "c2_action_fallback_006_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "prior_reasons": [
+        "not_classified_dry_run_available",
+        "evidence_required"
+      ],
+      "evidence_present": [
+        "src_wotai",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "repo_paths_supporting_present_evidence": [
+        "operations/external_validation/e18_revenue_validation_batch.json",
+        "operations/external_validation/e18_commercial_fit_scores.json",
+        "operations/external_validation/e22_dry_run_batch_selection.json"
+      ],
+      "evidence_missing": [],
+      "target_identity_sufficiently_grounded": true,
+      "buyer_pain_hypothesis_supported": true,
+      "message_specificity_adequate": true,
+      "offer_fit_supported": true,
+      "suppression_or_compliance_can_be_resolved": false,
+      "can_promote_to_dry_run_available": false,
+      "updated_classification": "suppress_or_do_not_contact",
+      "decision_reason": "candidate has repo evidence but is reserved/suppressed by existing batch policy",
+      "suppression_reason": "Reserve/suppress unless primary/fallback fails or owner explicitly expands batch.",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c3_excluded_agent_direct_execution_without_activation",
+      "target_name": "Excluded direct agent execution path",
+      "prior_reasons": [
+        "not_classified_dry_run_available",
+        "evidence_required"
+      ],
+      "evidence_present": [],
+      "repo_paths_supporting_present_evidence": [],
+      "evidence_missing": [
+        "real target identity",
+        "repo-grounded source evidence",
+        "buyer pain evidence",
+        "message-specific target fit"
+      ],
+      "target_identity_sufficiently_grounded": false,
+      "buyer_pain_hypothesis_supported": false,
+      "message_specificity_adequate": false,
+      "offer_fit_supported": false,
+      "suppression_or_compliance_can_be_resolved": false,
+      "can_promote_to_dry_run_available": false,
+      "updated_classification": "blocked_missing_source",
+      "decision_reason": "not a real customer target and no repo evidence exists",
+      "suppression_reason": "No owner approval evidence; direct agent email/message sending is outside C3 envelope.",
+      "external_action_executed": false
+    }
+  ],
+  "external_action_executed": false
+}

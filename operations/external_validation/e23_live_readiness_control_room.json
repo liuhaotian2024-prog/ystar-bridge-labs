@@ -1,0 +1,210 @@
+{
+  "artifact_id": "e23_live_readiness_control_room",
+  "control_room_type": "live_readiness_evidence_compliance_surface",
+  "dry_run_executed_candidates": [
+    {
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "classification": "dry_run_available",
+      "dry_run_available": true,
+      "dry_run_executed_previously": true,
+      "newly_promoted_to_dry_run_available": false,
+      "still_evidence_required": false,
+      "suppressed": false,
+      "compliance_blocked": false,
+      "live_ready": false,
+      "live_blocked_provider_disabled": true,
+      "owner_approval_required_by_risk": false,
+      "blocked_no_go": false,
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "classification": "dry_run_available",
+      "dry_run_available": true,
+      "dry_run_executed_previously": true,
+      "newly_promoted_to_dry_run_available": false,
+      "still_evidence_required": false,
+      "suppressed": false,
+      "compliance_blocked": false,
+      "live_ready": false,
+      "live_blocked_provider_disabled": true,
+      "owner_approval_required_by_risk": false,
+      "blocked_no_go": false,
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "classification": "dry_run_available",
+      "dry_run_available": true,
+      "dry_run_executed_previously": true,
+      "newly_promoted_to_dry_run_available": false,
+      "still_evidence_required": false,
+      "suppressed": false,
+      "compliance_blocked": false,
+      "live_ready": false,
+      "live_blocked_provider_disabled": true,
+      "owner_approval_required_by_risk": false,
+      "blocked_no_go": false,
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "classification": "dry_run_available",
+      "dry_run_available": true,
+      "dry_run_executed_previously": true,
+      "newly_promoted_to_dry_run_available": false,
+      "still_evidence_required": false,
+      "suppressed": false,
+      "compliance_blocked": false,
+      "live_ready": false,
+      "live_blocked_provider_disabled": true,
+      "owner_approval_required_by_risk": false,
+      "blocked_no_go": false,
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "classification": "dry_run_available",
+      "dry_run_available": true,
+      "dry_run_executed_previously": true,
+      "newly_promoted_to_dry_run_available": false,
+      "still_evidence_required": false,
+      "suppressed": false,
+      "compliance_blocked": false,
+      "live_ready": false,
+      "live_blocked_provider_disabled": true,
+      "owner_approval_required_by_risk": false,
+      "blocked_no_go": false,
+      "external_action_executed": false
+    }
+  ],
+  "newly_evidence_tightened_candidates": [
+    {
+      "action_id": "c2_action_fallback_006_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "prior_reasons": [
+        "not_classified_dry_run_available",
+        "evidence_required"
+      ],
+      "evidence_present": [
+        "src_wotai",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "repo_paths_supporting_present_evidence": [
+        "operations/external_validation/e18_revenue_validation_batch.json",
+        "operations/external_validation/e18_commercial_fit_scores.json",
+        "operations/external_validation/e22_dry_run_batch_selection.json"
+      ],
+      "evidence_missing": [],
+      "target_identity_sufficiently_grounded": true,
+      "buyer_pain_hypothesis_supported": true,
+      "message_specificity_adequate": true,
+      "offer_fit_supported": true,
+      "suppression_or_compliance_can_be_resolved": false,
+      "can_promote_to_dry_run_available": false,
+      "updated_classification": "suppress_or_do_not_contact",
+      "decision_reason": "candidate has repo evidence but is reserved/suppressed by existing batch policy",
+      "suppression_reason": "Reserve/suppress unless primary/fallback fails or owner explicitly expands batch.",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c3_excluded_agent_direct_execution_without_activation",
+      "target_name": "Excluded direct agent execution path",
+      "prior_reasons": [
+        "not_classified_dry_run_available",
+        "evidence_required"
+      ],
+      "evidence_present": [],
+      "repo_paths_supporting_present_evidence": [],
+      "evidence_missing": [
+        "real target identity",
+        "repo-grounded source evidence",
+        "buyer pain evidence",
+        "message-specific target fit"
+      ],
+      "target_identity_sufficiently_grounded": false,
+      "buyer_pain_hypothesis_supported": false,
+      "message_specificity_adequate": false,
+      "offer_fit_supported": false,
+      "suppression_or_compliance_can_be_resolved": false,
+      "can_promote_to_dry_run_available": false,
+      "updated_classification": "blocked_missing_source",
+      "decision_reason": "not a real customer target and no repo evidence exists",
+      "suppression_reason": "No owner approval evidence; direct agent email/message sending is outside C3 envelope.",
+      "external_action_executed": false
+    }
+  ],
+  "suppression_registry_status": {
+    "production_suppressed_target_count": 1
+  },
+  "compliance_registry_status": {
+    "compliance_blocked_count": 0,
+    "owner_approval_required_by_risk_count": 0
+  },
+  "live_promotion_status": {
+    "live_ready": 0,
+    "live_blocked_provider_disabled": 7,
+    "live_blocked_evidence_required": 2,
+    "live_blocked_suppression": 1,
+    "live_blocked_compliance": 0,
+    "live_blocked_missing_live_tests": 7,
+    "live_blocked_owner_approval_required_by_risk": 0,
+    "live_blocked_no_go": 0
+  },
+  "live_provider_blockers": [
+    "live_provider_scaffolded_but_disabled",
+    "provider credentials/config missing",
+    "live tests missing",
+    "persistent idempotency store missing"
+  ],
+  "agent_can_do_autonomously_next": [
+    "evidence expansion planning",
+    "suppression/compliance policy refinement",
+    "provider sandbox enablement planning"
+  ],
+  "owner_approval_required_by_risk_tier_actions": [],
+  "blocked_actions": [
+    {
+      "action_id": "c2_action_fallback_006_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "classification": "suppress_or_do_not_contact",
+      "dry_run_available": false,
+      "dry_run_executed_previously": false,
+      "newly_promoted_to_dry_run_available": false,
+      "still_evidence_required": false,
+      "suppressed": true,
+      "compliance_blocked": false,
+      "live_ready": false,
+      "live_blocked_provider_disabled": true,
+      "owner_approval_required_by_risk": false,
+      "blocked_no_go": false,
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c3_excluded_agent_direct_execution_without_activation",
+      "target_name": "Excluded direct agent execution path",
+      "classification": "blocked_missing_source",
+      "dry_run_available": false,
+      "dry_run_executed_previously": false,
+      "newly_promoted_to_dry_run_available": false,
+      "still_evidence_required": true,
+      "suppressed": false,
+      "compliance_blocked": false,
+      "live_ready": false,
+      "live_blocked_provider_disabled": true,
+      "owner_approval_required_by_risk": false,
+      "blocked_no_go": true,
+      "external_action_executed": false
+    }
+  ],
+  "next_route": "E24_live_provider_sandbox_enablement",
+  "owner_manual_send_is_default": false,
+  "external_action_executed": false
+}

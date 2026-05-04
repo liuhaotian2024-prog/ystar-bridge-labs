@@ -1,0 +1,20 @@
+{
+  "artifact_id": "e23_suppression_registry",
+  "entries": [
+    {
+      "target_id": "c2_action_fallback_006_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "suppression_reason": "manual_owner_suppression",
+      "source_evidence": "operations/external_validation/e18_revenue_validation_batch.json",
+      "generated_at": "2026-05-04T00:00:00Z",
+      "scope": "target_only",
+      "expiry_or_permanence": "until_owner_explicitly_reactivates_candidate",
+      "override_policy": "risk_policy_check_required_before_override",
+      "real_suppression_evidence_fabricated": false
+    }
+  ],
+  "production_suppressed_target_count": 1,
+  "schema_ref": "operations/external_validation/e23_suppression_registry_schema.json",
+  "template_examples_included": false,
+  "external_action_executed": false
+}

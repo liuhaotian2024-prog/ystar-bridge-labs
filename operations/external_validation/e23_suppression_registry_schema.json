@@ -1,0 +1,33 @@
+{
+  "artifact_id": "e23_suppression_registry_schema",
+  "supported_reasons": [
+    "do_not_contact",
+    "bounced_or_invalid",
+    "unsubscribe",
+    "negative_response",
+    "legal_hold",
+    "sensitive_target",
+    "duplicate_target",
+    "manual_owner_suppression",
+    "compliance_blocked",
+    "unknown_status"
+  ],
+  "supported_scopes": [
+    "target_only",
+    "domain",
+    "organization",
+    "channel",
+    "campaign"
+  ],
+  "required_fields": [
+    "target_id",
+    "suppression_reason",
+    "source_evidence",
+    "generated_at",
+    "scope",
+    "expiry_or_permanence",
+    "override_policy"
+  ],
+  "owner_override_required_only_when_risk_policy_requires_it": true,
+  "external_action_executed": false
+}

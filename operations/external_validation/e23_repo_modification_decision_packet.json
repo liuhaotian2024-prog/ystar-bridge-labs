@@ -1,0 +1,10 @@
+{
+  "artifact_id": "e23_repo_modification_decision_packet",
+  "decision": "bridge_labs_update_only_gov_mcp_contract_sufficient",
+  "gov_mcp_read_only": true,
+  "gov_mcp_modified": false,
+  "bridge_labs_modified_and_delivered": true,
+  "Y_star_gov_immediate_mutation_needed": false,
+  "ystar_company_future_migration_followup": true,
+  "external_action_executed": false
+}
