@@ -1,0 +1,23 @@
+{
+  "artifact_id": "e25_czl_closure",
+  "Y_star": "Provider sandbox enablement with CEO KG feedback loop",
+  "Rt_plus_1": 0,
+  "no_real_external_action_occurred": true,
+  "no_provider_api_called": true,
+  "no_customer_contacted": true,
+  "no_message_sent": true,
+  "no_live_receipt_created": true,
+  "sandbox_receipt_distinct_from_live_receipt": true,
+  "sandbox_execution_count": 1,
+  "sandbox_receipt_count": 1,
+  "ceo_kg_updated_only_with_internal_execution_evidence": true,
+  "kg_delta_node_count": 7,
+  "kg_delta_edge_count": 8,
+  "no_fake_customer_feedback_created": true,
+  "no_fake_target_evidence_created": true,
+  "live_provider_honestly_reported": "disabled",
+  "owner_manual_send_is_not_default": true,
+  "ecosystem_alignment_status": "ecosystem_aligned_with_documented_followups",
+  "current_strategic_bottleneck": "sandbox scaffold validated internally; live remains blocked by live provider config/tests, production persistent idempotency, and real customer feedback evidence",
+  "external_action_executed": false
+}

@@ -1,0 +1,22 @@
+{
+  "artifact_id": "e25_future_sandbox_live_policy",
+  "future_sandbox_live_milestone_requirements": [
+    "CEO KG route selection",
+    "provider sandbox manifest",
+    "sandbox readiness validator",
+    "sandbox guard stack",
+    "sandbox receipt ledger",
+    "persistent idempotency status",
+    "suppression/compliance checks",
+    "kill switch",
+    "sandbox-to-live promotion result",
+    "CEO KG feedback ingestion",
+    "CEO brain update",
+    "ecosystem alignment proof",
+    "explicit no real external action unless live mode is explicitly enabled and validated"
+  ],
+  "owner_manual_send_default_allowed": false,
+  "sandbox_results_are_market_truth": false,
+  "live_requires_explicit_provider_enablement_and_tests": true,
+  "external_action_executed": false
+}

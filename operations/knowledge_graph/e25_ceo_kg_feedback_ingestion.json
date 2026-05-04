@@ -1,0 +1,196 @@
+{
+  "artifact_id": "e25_ceo_kg_feedback_ingestion",
+  "kg_delta_nodes": [
+    {
+      "id": "e25_sandbox_route_readiness_review",
+      "type": "Action",
+      "label": "CEO KG selected sandbox route for readiness review",
+      "source_paths": [
+        "operations/external_validation/e25_ceo_kg_sandbox_route_selection.json"
+      ],
+      "evidence_status": "evidence_bound",
+      "truth_status": "observed_internal_execution_planning",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E25",
+      "stale_or_current": "current_working",
+      "notes": "Selected from E24 portfolio and router."
+    },
+    {
+      "id": "e25_provider_sandbox_capability",
+      "type": "ProviderCapability",
+      "label": "gov-mcp deterministic provider sandbox capability",
+      "source_paths": [
+        "operations/external_validation/e25_provider_sandbox_capability_sync.json"
+      ],
+      "evidence_status": "evidence_bound",
+      "truth_status": "observed_internal_capability",
+      "promotion_status": "validated_internal_execution_candidate",
+      "created_by_milestone": "E25",
+      "stale_or_current": "current_working",
+      "notes": "Sandbox scaffold exists in gov-mcp and is delivered remotely."
+    },
+    {
+      "id": "e25_sandbox_execution_readiness_review",
+      "type": "SandboxExecution",
+      "label": "Sandbox execution for readiness-review revenue path",
+      "source_paths": [
+        "operations/external_validation/e25_sandbox_execution_results.json"
+      ],
+      "evidence_status": "evidence_bound",
+      "truth_status": "observed_internal_execution",
+      "promotion_status": "validated_internal_execution_candidate",
+      "created_by_milestone": "E25",
+      "stale_or_current": "current_working",
+      "notes": "Internal sandbox execution only; not customer validation."
+    },
+    {
+      "id": "e25_sandbox_receipt_readiness_review",
+      "type": "SandboxReceipt",
+      "label": "sandbox_receipt_e25_sandbox_readiness_review_ai_consultancies_001",
+      "source_paths": [
+        "operations/external_validation/e25_sandbox_receipt_ledger.json"
+      ],
+      "evidence_status": "evidence_bound",
+      "truth_status": "observed_internal_execution_receipt",
+      "promotion_status": "validated_internal_execution_candidate",
+      "created_by_milestone": "E25",
+      "stale_or_current": "current_working",
+      "notes": "Distinct from dry-run and live receipt."
+    },
+    {
+      "id": "e25_persistent_idempotency_capability",
+      "type": "ProviderCapability",
+      "label": "Persistent idempotency foundation",
+      "source_paths": [
+        "operations/external_validation/e25_persistent_idempotency_status.json"
+      ],
+      "evidence_status": "evidence_bound",
+      "truth_status": "observed_internal_capability",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E25",
+      "stale_or_current": "current_working",
+      "notes": "Foundation exists but production live persistence remains disabled until configured."
+    },
+    {
+      "id": "e25_live_promotion_blocker",
+      "type": "SandboxBlocker",
+      "label": "Live promotion remains blocked",
+      "source_paths": [
+        "operations/external_validation/e25_live_promotion_blockers.json"
+      ],
+      "evidence_status": "evidence_bound",
+      "truth_status": "observed_internal_blocker",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E25",
+      "stale_or_current": "current_working",
+      "notes": "Live disabled, missing config/tests/persistent live idempotency."
+    },
+    {
+      "id": "e25_strategic_learning_candidate",
+      "type": "StrategicLearningCandidate",
+      "label": "Provider sandbox can support the selected revenue path internally",
+      "source_paths": [
+        "operations/external_validation/e25_ceo_brain_update.json"
+      ],
+      "evidence_status": "evidence_bound",
+      "truth_status": "internal_execution_learning_not_market_truth",
+      "promotion_status": "validated_internal_execution_candidate",
+      "created_by_milestone": "E25",
+      "stale_or_current": "current_working",
+      "notes": "Useful strategic working evidence, not customer/market truth."
+    }
+  ],
+  "kg_delta_edges": [
+    {
+      "id": "e25_edge_path_requires_sandbox",
+      "source_node_id": "rev_path_readiness_review_ai_consultancies",
+      "target_node_id": "e25_provider_sandbox_capability",
+      "relationship": "requires",
+      "evidence_path": "operations/external_validation/e25_ceo_kg_sandbox_route_selection.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Selected path requires sandbox before live."
+    },
+    {
+      "id": "e25_edge_route_routes_to_execution",
+      "source_node_id": "e25_sandbox_route_readiness_review",
+      "target_node_id": "e25_sandbox_execution_readiness_review",
+      "relationship": "routes_to",
+      "evidence_path": "operations/external_validation/e25_sandbox_envelopes.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Route produced a sandbox envelope."
+    },
+    {
+      "id": "e25_edge_sandbox_implemented_by_provider",
+      "source_node_id": "e25_sandbox_execution_readiness_review",
+      "target_node_id": "e25_provider_sandbox_capability",
+      "relationship": "implemented_by",
+      "evidence_path": "operations/external_validation/e25_provider_sandbox_capability_sync.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "gov-mcp scaffold supports sandbox execution."
+    },
+    {
+      "id": "e25_edge_execution_evidenced_by_receipt",
+      "source_node_id": "e25_sandbox_execution_readiness_review",
+      "target_node_id": "e25_sandbox_receipt_readiness_review",
+      "relationship": "evidenced_by",
+      "evidence_path": "operations/external_validation/e25_sandbox_receipt_ledger.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Sandbox receipt proves internal no-effect execution."
+    },
+    {
+      "id": "e25_edge_live_blocked_by_provider",
+      "source_node_id": "rev_path_readiness_review_ai_consultancies",
+      "target_node_id": "e25_live_promotion_blocker",
+      "relationship": "blocked_by",
+      "evidence_path": "operations/external_validation/e25_live_promotion_blockers.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Live remains blocked honestly."
+    },
+    {
+      "id": "e25_edge_live_requires_persistent_idempotency",
+      "source_node_id": "e25_live_promotion_blocker",
+      "target_node_id": "e25_persistent_idempotency_capability",
+      "relationship": "requires",
+      "evidence_path": "operations/external_validation/e25_persistent_idempotency_status.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Live promotion requires configured persistent idempotency."
+    },
+    {
+      "id": "e25_edge_execution_updates_learning",
+      "source_node_id": "e25_sandbox_execution_readiness_review",
+      "target_node_id": "e25_strategic_learning_candidate",
+      "relationship": "supports",
+      "evidence_path": "operations/external_validation/e25_ceo_kg_feedback_ingestion.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal execution evidence informs strategy."
+    },
+    {
+      "id": "e25_edge_learning_routes_to_brain",
+      "source_node_id": "e25_strategic_learning_candidate",
+      "target_node_id": "e25_ceo_brain_update",
+      "relationship": "routes_to",
+      "evidence_path": "operations/external_validation/e25_ceo_brain_update.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Brain update consumes KG feedback."
+    }
+  ],
+  "kg_delta_node_count": 7,
+  "kg_delta_edge_count": 8,
+  "sandbox_evidence_node_count": 3,
+  "promotion_candidates": [
+    {
+      "node_id": "e25_provider_sandbox_capability",
+      "promotion_status": "validated_internal_execution_candidate",
+      "not_customer_market_truth": true
+    },
+    {
+      "node_id": "e25_strategic_learning_candidate",
+      "promotion_status": "validated_internal_execution_candidate",
+      "not_customer_market_truth": true
+    }
+  ],
+  "promotion_candidates_count": 2,
+  "customer_or_market_truth_claimed": false,
+  "canonical_memory_write_performed": false,
+  "external_action_executed": false
+}

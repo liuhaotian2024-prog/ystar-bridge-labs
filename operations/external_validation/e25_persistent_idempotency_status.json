@@ -1,0 +1,11 @@
+{
+  "artifact_id": "e25_persistent_idempotency_status",
+  "persistent_idempotency_foundation_available": true,
+  "store_type": "file_backed_contract_available",
+  "persistent_status": "persistent_disabled_until_live_configuration",
+  "sandbox_idempotency_status": "sandbox_safe_action_key_recorded",
+  "memory_only_live_safe": false,
+  "live_promotion_impact": "blocks_live_promotion_until_persistent_store_is_configured_and_validated",
+  "live_promotion_allowed": false,
+  "external_action_executed": false
+}

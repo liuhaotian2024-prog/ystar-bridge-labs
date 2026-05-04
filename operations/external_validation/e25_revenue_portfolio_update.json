@@ -1,0 +1,26 @@
+{
+  "artifact_id": "e25_revenue_portfolio_update",
+  "selected_path_remains_selected": true,
+  "selected_revenue_path_id": "rev_path_readiness_review_ai_consultancies",
+  "selected_path_after_sandbox": "rev_path_readiness_review_ai_consultancies",
+  "backup_paths": [
+    "rev_path_ai_agent_governance_audit",
+    "rev_path_governed_outbound_infra_service",
+    "rev_path_ceo_agent_control_room_product"
+  ],
+  "live_sandbox_ready_paths": [
+    "rev_path_readiness_review_ai_consultancies"
+  ],
+  "evidence_needed_paths": [
+    "rev_path_paid_diagnostic_product",
+    "rev_path_provider_adapter_productized_capability"
+  ],
+  "blocked_paths": [
+    "rev_path_paid_diagnostic_product"
+  ],
+  "portfolio_learning": "Sandbox execution strengthens internal execution readiness but does not create customer validation or paid signal.",
+  "live_ready_count": 0,
+  "live_blocked_count": 1,
+  "recommended_next_milestone": "E26_live_configuration_persistent_idempotency_hardening_or_live_canary_plan_after_prerequisites",
+  "external_action_executed": false
+}

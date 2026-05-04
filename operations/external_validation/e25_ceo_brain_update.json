@@ -1,0 +1,28 @@
+{
+  "artifact_id": "e25_ceo_brain_update",
+  "state_type": "working_shadow_not_canonical_truth",
+  "selected_revenue_path_after_sandbox": "rev_path_readiness_review_ai_consultancies",
+  "provider_readiness_update": {
+    "sandbox_scaffold_ready": true,
+    "sandbox_execution_observed": 1,
+    "live_ready": false,
+    "live_blocked_count": 1
+  },
+  "kg_feedback_summary": {
+    "delta_nodes": 7,
+    "delta_edges": 8,
+    "promotion_candidates": 2,
+    "market_truth_claimed": false
+  },
+  "active_revenue_path_confidence": "increased_for_internal_execution_readiness_only",
+  "current_strategic_bottleneck": "sandbox scaffold validated internally; live remains blocked by live provider config/tests, production persistent idempotency, and real customer feedback evidence",
+  "next_decision_horizon": "choose E26 live configuration and persistent idempotency hardening before any one-action live canary",
+  "prior_bottleneck": "live provider sandbox/readiness plus real feedback evidence, not owner manual sending by default",
+  "truth_boundaries": {
+    "sandbox_result": "internal execution evidence",
+    "customer_feedback": "not present",
+    "market_truth": "not claimed",
+    "canonical_memory": "not written"
+  },
+  "external_action_executed": false
+}

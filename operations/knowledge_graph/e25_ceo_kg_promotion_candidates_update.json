@@ -1,0 +1,18 @@
+{
+  "artifact_id": "e25_ceo_kg_promotion_candidates_update",
+  "promotion_candidates_count": 2,
+  "promotion_candidates": [
+    {
+      "node_id": "e25_provider_sandbox_capability",
+      "promotion_status": "validated_internal_execution_candidate",
+      "not_customer_market_truth": true
+    },
+    {
+      "node_id": "e25_strategic_learning_candidate",
+      "promotion_status": "validated_internal_execution_candidate",
+      "not_customer_market_truth": true
+    }
+  ],
+  "canonical_market_truth_promoted": false,
+  "external_action_executed": false
+}

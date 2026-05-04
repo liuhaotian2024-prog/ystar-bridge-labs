@@ -1,0 +1,48 @@
+{
+  "artifact_id": "e25_ceo_kg_sandbox_route_selection",
+  "selection_source": "E24 CEO KG read model and execution router",
+  "selected_revenue_path_id": "rev_path_readiness_review_ai_consultancies",
+  "sandbox_route_candidate": {
+    "route_id": "sandbox_route_readiness_review_ai_consultancies",
+    "revenue_path_id": "rev_path_readiness_review_ai_consultancies",
+    "target_customer": "AI operations consultancies and automation agencies",
+    "offer": "48h AI Agent Implementation Readiness Review",
+    "required_provider_capability": "gov_mcp_deterministic_provider_sandbox",
+    "provider_mode_required": "sandbox_ready",
+    "risk_tier": "T2_low_medium_limited_outbound",
+    "commercial_meaning": "Validates that the closest sellable readiness-review path can move from local dry-run artifacts into a provider-shaped sandbox without customer contact.",
+    "expected_learning_value": "high_internal_execution_learning_not_market_truth"
+  },
+  "kg_support_node_ids": [
+    "offer_48h_readiness_review",
+    "target_segment_ai_consultancies",
+    "blocker_live_provider_disabled",
+    "offer_48h_readiness_review",
+    "target_segment_ai_consultancies",
+    "capability_e22_autonomous_dry_run",
+    "blocker_live_provider_disabled"
+  ],
+  "kg_support_edge_basis": [
+    "selected revenue path requires provider sandbox capability",
+    "dry-run history enables sandbox-shaped execution",
+    "live blockers require sandbox/persistent idempotency hardening before canary"
+  ],
+  "dry_run_history": {
+    "previous_selected_dry_run_count": 5,
+    "dry_run_available_before_e25": true
+  },
+  "why_sandbox_now": "The CEO brain bottleneck is provider sandbox/readiness plus real feedback evidence; sandbox is the next internal execution step before any live provider enablement.",
+  "why_not_live_now": "Live provider remains disabled and live config/tests/persistent idempotency are not production-ready.",
+  "why_not_owner_manual_send": "Owner manual send is not the default execution route; the path is routed through governed autonomous provider capability.",
+  "source_paths": [
+    "operations/external_validation/e24_revenue_path_portfolio_selection.json",
+    "operations/external_validation/e24_ceo_execution_router.json",
+    "operations/external_validation/e24_ceo_brain_state.json",
+    "operations/external_validation/e22_dry_run_batch_selection.json"
+  ],
+  "current_strategic_bottleneck_before_e25": "live provider sandbox/readiness plus real feedback evidence, not owner manual sending by default",
+  "live_sandbox_actions_from_e24": [
+    "build provider sandbox plan with credentials/config/testing checklist; keep live disabled"
+  ],
+  "external_action_executed": false
+}

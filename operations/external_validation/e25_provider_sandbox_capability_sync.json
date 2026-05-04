@@ -1,0 +1,41 @@
+{
+  "artifact_id": "e25_provider_sandbox_capability_sync",
+  "source_repo": "gov-mcp",
+  "source_branch": "backflow/company-runtime-tools",
+  "source_head": "f624ed056b01ff0113219a2ec80b4863314dce9e",
+  "source_delivery_report": "/tmp/ystar_delivery_bridge/completed/e25_gov_mcp_provider_sandbox_r1_20260504T164329Z.report.json",
+  "source_delivery_remote_confirmed": true,
+  "required_files_present": {
+    "gov_mcp/outbound/provider_sandbox.py": true,
+    "gov_mcp/outbound/sandbox_manifest.py": true,
+    "gov_mcp/outbound/sandbox_receipts.py": true,
+    "gov_mcp/outbound/persistent_idempotency.py": true,
+    "gov_mcp/outbound/sandbox_promotion.py": true
+  },
+  "sandbox_mode_available": true,
+  "sandbox_scaffold_ready": true,
+  "deterministic_local_sandbox_harness_available": true,
+  "native_provider_sandbox_enabled": false,
+  "native_provider_sandbox_blocked_reason": "credentials_or_external_provider_api_not_allowed_in_E25",
+  "dry_run_available": true,
+  "live_enabled": false,
+  "live_provider_enabled": false,
+  "live_blocked_reason": [
+    "live_provider_scaffolded_but_disabled",
+    "live_provider_credentials_config_missing",
+    "live_provider_tests_missing",
+    "production_persistent_idempotency_not_configured"
+  ],
+  "sandbox_receipts_distinct_from_dry_run_and_live": true,
+  "live_receipts_enabled": false,
+  "provider_api_called": false,
+  "persistent_idempotency": {
+    "foundation_available": true,
+    "store_type": "file_backed_contract_available",
+    "production_live_status": "persistent_disabled_until_live_configuration",
+    "memory_only_live_safe": false,
+    "live_promotion_impact": "blocks_live_promotion_until_persistent_store_is_configured_and_validated"
+  },
+  "capability_status": "sandbox_ready_live_disabled",
+  "external_action_executed": false
+}

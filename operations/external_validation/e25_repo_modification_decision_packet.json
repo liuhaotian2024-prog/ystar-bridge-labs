@@ -1,0 +1,29 @@
+{
+  "artifact_id": "e25_repo_modification_decision_packet",
+  "decisions": [
+    {
+      "repo": "gov-mcp",
+      "decision": "immediate_update_required_and_delivered",
+      "reason": "Sandbox provider mode and persistent idempotency foundation belong in canonical provider boundary.",
+      "delivered": true
+    },
+    {
+      "repo": "ystar-bridge-labs",
+      "decision": "bridge_labs_update_required",
+      "reason": "CEO KG, control room, route selection, and sandbox feedback artifacts live in commercial runtime.",
+      "delivered_by_this_job": true
+    },
+    {
+      "repo": "Y-star-gov",
+      "decision": "no_change_needed",
+      "reason": "Normative governance concepts are aligned read-only for E25."
+    },
+    {
+      "repo": "ystar-company",
+      "decision": "future_ystar_company_migration_required",
+      "reason": "Historical commercial assets remain source material for future evidence-bound KG migrations."
+    }
+  ],
+  "cross_repo_mutation_performed": true,
+  "external_action_executed": false
+}

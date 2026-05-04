@@ -1,0 +1,63 @@
+{
+  "artifact_id": "e25_sandbox_control_room",
+  "control_room_type": "ceo_kg_provider_sandbox_feedback_loop",
+  "ceo_kg_selected_route": {
+    "route_id": "sandbox_route_readiness_review_ai_consultancies",
+    "revenue_path_id": "rev_path_readiness_review_ai_consultancies",
+    "target_customer": "AI operations consultancies and automation agencies",
+    "offer": "48h AI Agent Implementation Readiness Review",
+    "required_provider_capability": "gov_mcp_deterministic_provider_sandbox",
+    "provider_mode_required": "sandbox_ready",
+    "risk_tier": "T2_low_medium_limited_outbound",
+    "commercial_meaning": "Validates that the closest sellable readiness-review path can move from local dry-run artifacts into a provider-shaped sandbox without customer contact.",
+    "expected_learning_value": "high_internal_execution_learning_not_market_truth"
+  },
+  "provider_sandbox_capability": {
+    "sandbox_mode_available": true,
+    "sandbox_scaffold_ready": true,
+    "native_provider_sandbox_enabled": false,
+    "live_enabled": false
+  },
+  "sandbox_execution_result": {
+    "selected": 1,
+    "executed": 1,
+    "blocked": 0,
+    "sandbox_receipts": 1,
+    "live_receipts": 0
+  },
+  "persistent_idempotency_status": "persistent_disabled_until_live_configuration",
+  "suppression_compliance_status": "passed_for_sandbox_no_external_effect",
+  "live_promotion_blockers": [
+    "live_provider_scaffolded_but_disabled",
+    "live_provider_credentials_config_missing",
+    "live_provider_tests_missing",
+    "production_persistent_idempotency_not_configured"
+  ],
+  "ceo_brain_update": {
+    "selected_revenue_path_after_sandbox": "rev_path_readiness_review_ai_consultancies",
+    "current_strategic_bottleneck": "sandbox scaffold validated internally; live remains blocked by live provider config/tests, production persistent idempotency, and real customer feedback evidence",
+    "next_decision_horizon": "choose E26 live configuration and persistent idempotency hardening before any one-action live canary"
+  },
+  "portfolio_update": {
+    "selected_path_remains_selected": true,
+    "live_sandbox_ready_paths": [
+      "rev_path_readiness_review_ai_consultancies"
+    ],
+    "live_blocked_count": 1
+  },
+  "agent_can_do_autonomously_next": [
+    "harden live provider configuration plan",
+    "configure persistent idempotency for live-safe promotion",
+    "run sandbox regression iterations without customer contact"
+  ],
+  "owner_approval_required_by_risk": [],
+  "blocked_actions": [
+    "real customer contact",
+    "live provider execution",
+    "live receipt creation",
+    "canonical market-truth promotion"
+  ],
+  "recommended_next_milestone": "E26_live_configuration_persistent_idempotency_hardening_or_live_canary_plan_after_prerequisites",
+  "owner_manual_send_is_default": false,
+  "external_action_executed": false
+}

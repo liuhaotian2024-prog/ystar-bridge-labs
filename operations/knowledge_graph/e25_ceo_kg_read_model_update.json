@@ -1,0 +1,15 @@
+{
+  "artifact_id": "e25_ceo_kg_read_model_update",
+  "selected_revenue_path": "rev_path_readiness_review_ai_consultancies",
+  "sandbox_execution_count": 1,
+  "sandbox_receipt_count": 1,
+  "live_ready": false,
+  "live_blockers": [
+    "live_provider_scaffolded_but_disabled",
+    "live_provider_credentials_config_missing",
+    "live_provider_tests_missing",
+    "production_persistent_idempotency_not_configured"
+  ],
+  "market_truth_claimed": false,
+  "external_action_executed": false
+}

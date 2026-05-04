@@ -1,0 +1,30 @@
+{
+  "artifact_id": "e25_sandbox_execution_results",
+  "sandbox_selected_count": 1,
+  "sandbox_executed_count": 1,
+  "sandbox_blocked_count": 0,
+  "sandbox_receipt_count": 1,
+  "live_receipt_count": 0,
+  "live_enabled": false,
+  "execution_results": [
+    {
+      "action_id": "e25_sandbox_readiness_review_ai_consultancies",
+      "provider_mode": "sandbox_ready",
+      "execution_status": "sandbox_executed",
+      "sandbox_receipt_id": "sandbox_receipt_e25_sandbox_readiness_review_ai_consultancies_001",
+      "receipt_type": "sandbox_receipt",
+      "no_customer_contact": true,
+      "no_external_effect": true,
+      "provider_api_called": false,
+      "live_send_performed": false,
+      "live_receipt_created": false,
+      "guard_summary": "sandbox_guard_passed",
+      "idempotency_result": "first_sandbox_execution_recorded",
+      "suppression_result": "clear_for_sandbox_no_external_effect",
+      "rate_limit_result": "within_sandbox_quota",
+      "compliance_result": "policy_allows_agent_with_limits_for_sandbox",
+      "live_promotion_blocker": "live_provider_disabled_and_persistent_idempotency_not_configured"
+    }
+  ],
+  "external_action_executed": false
+}

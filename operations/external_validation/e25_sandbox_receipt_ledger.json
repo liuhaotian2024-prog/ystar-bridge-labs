@@ -1,0 +1,21 @@
+{
+  "artifact_id": "e25_sandbox_receipt_ledger",
+  "sandbox_receipt_count": 1,
+  "dry_run_receipt_count": 0,
+  "live_receipt_count": 0,
+  "receipts": [
+    {
+      "receipt_id": "sandbox_receipt_e25_sandbox_readiness_review_ai_consultancies_001",
+      "receipt_type": "sandbox_receipt",
+      "action_id": "e25_sandbox_readiness_review_ai_consultancies",
+      "provider_mode": "sandbox_ready",
+      "no_external_effect_proof": true,
+      "not_a_live_receipt": true,
+      "not_a_dry_run_receipt": true,
+      "live_receipt_created": false
+    }
+  ],
+  "sandbox_receipts_distinct_from_live_receipts": true,
+  "sandbox_receipts_distinct_from_dry_run_receipts": true,
+  "external_action_executed": false
+}

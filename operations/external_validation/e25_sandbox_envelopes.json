@@ -1,0 +1,40 @@
+{
+  "artifact_id": "e25_sandbox_envelopes",
+  "selected_count": 1,
+  "envelopes": [
+    {
+      "action_id": "e25_sandbox_readiness_review_ai_consultancies",
+      "target_or_segment_id": "target_segment_ai_operations_consultancies",
+      "channel": "provider_sandbox_email_shape_no_external_effect",
+      "content_reference": "operations/external_validation/e17_final_message_package.json",
+      "revenue_path_id": "rev_path_readiness_review_ai_consultancies",
+      "kg_support_node_ids": [
+        "offer_48h_readiness_review",
+        "target_segment_ai_consultancies",
+        "blocker_live_provider_disabled",
+        "offer_48h_readiness_review",
+        "target_segment_ai_consultancies",
+        "capability_e22_autonomous_dry_run",
+        "blocker_live_provider_disabled"
+      ],
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "provider_mode": "sandbox_ready",
+      "executor_decision": "agent_autonomous_sandbox_allowed",
+      "evidence_references": [
+        "operations/external_validation/e24_revenue_path_portfolio_selection.json",
+        "operations/external_validation/e22_dry_run_receipt_ledger.json",
+        "operations/external_validation/e23_compliance_registry.json",
+        "operations/external_validation/e23_suppression_registry.json"
+      ],
+      "suppression_status": "clear_for_sandbox_no_external_effect",
+      "compliance_status": "policy_allows_agent_with_limits_for_sandbox",
+      "idempotency_key": "e25:sandbox:readiness_review_ai_consultancies:v1",
+      "rate_limit_bucket": "e25_sandbox_local_provider_shape_batch",
+      "kill_switch_state": "enabled",
+      "expected_learning_value": "high_internal_execution_learning_not_market_truth",
+      "live_disabled": true,
+      "owner_approval_required_by_risk": false
+    }
+  ],
+  "external_action_executed": false
+}

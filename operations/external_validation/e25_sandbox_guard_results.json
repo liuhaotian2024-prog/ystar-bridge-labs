@@ -1,0 +1,99 @@
+{
+  "artifact_id": "e25_sandbox_guard_results",
+  "guard_results": [
+    {
+      "action_id": "e25_sandbox_readiness_review_ai_consultancies",
+      "resulting_action_status": "sandbox_guard_passed",
+      "checks": [
+        {
+          "check": "risk_tier_check",
+          "status": "passed",
+          "reason": "T2_low_medium_limited_outbound",
+          "evidence_path": "operations/external_validation/e25_provider_sandbox_capability_sync.json"
+        },
+        {
+          "check": "policy_compatibility_check",
+          "status": "passed",
+          "reason": "policy_allows_agent_with_limits_for_sandbox",
+          "evidence_path": "operations/external_validation/e25_provider_sandbox_capability_sync.json"
+        },
+        {
+          "check": "provider_mode_check",
+          "status": "passed",
+          "reason": "sandbox_ready",
+          "evidence_path": "operations/external_validation/e25_provider_sandbox_capability_sync.json"
+        },
+        {
+          "check": "sandbox_capability_check",
+          "status": "passed",
+          "reason": "sandbox_ready_live_disabled",
+          "evidence_path": "operations/external_validation/e25_provider_sandbox_capability_sync.json"
+        },
+        {
+          "check": "quota_rate_limit_check",
+          "status": "passed",
+          "reason": "e25_sandbox_local_provider_shape_batch",
+          "evidence_path": "operations/external_validation/e25_provider_sandbox_capability_sync.json"
+        },
+        {
+          "check": "sandbox_safe_idempotency_check",
+          "status": "passed",
+          "reason": "e25:sandbox:readiness_review_ai_consultancies:v1",
+          "evidence_path": "operations/external_validation/e25_provider_sandbox_capability_sync.json"
+        },
+        {
+          "check": "persistent_idempotency_live_check",
+          "status": "not_applicable_for_sandbox_blocks_live_promotion",
+          "reason": "persistent_disabled_until_live_configuration",
+          "evidence_path": "operations/external_validation/e25_provider_sandbox_capability_sync.json"
+        },
+        {
+          "check": "suppression_registry_check",
+          "status": "passed",
+          "reason": "clear_for_sandbox_no_external_effect",
+          "evidence_path": "operations/external_validation/e25_provider_sandbox_capability_sync.json"
+        },
+        {
+          "check": "compliance_registry_check",
+          "status": "passed",
+          "reason": "policy_allows_agent_with_limits_for_sandbox",
+          "evidence_path": "operations/external_validation/e25_provider_sandbox_capability_sync.json"
+        },
+        {
+          "check": "evidence_sufficiency_check",
+          "status": "passed",
+          "reason": "repo-bound evidence sufficient for sandbox-only execution",
+          "evidence_path": "operations/external_validation/e25_provider_sandbox_capability_sync.json"
+        },
+        {
+          "check": "message_safety_check",
+          "status": "passed",
+          "reason": "sandbox no-external-effect content reference",
+          "evidence_path": "operations/external_validation/e25_provider_sandbox_capability_sync.json"
+        },
+        {
+          "check": "kill_switch_check",
+          "status": "passed",
+          "reason": "enabled",
+          "evidence_path": "operations/external_validation/e25_provider_sandbox_capability_sync.json"
+        },
+        {
+          "check": "owner_approval_check",
+          "status": "not_applicable",
+          "reason": "not required by risk tier for sandbox",
+          "evidence_path": "operations/external_validation/e25_provider_sandbox_capability_sync.json"
+        },
+        {
+          "check": "live_disabled_check",
+          "status": "passed",
+          "reason": "live execution disabled",
+          "evidence_path": "operations/external_validation/e25_provider_sandbox_capability_sync.json"
+        }
+      ]
+    }
+  ],
+  "guard_pass_count": 12,
+  "guard_block_count": 0,
+  "owner_approval_required_by_risk_count": 0,
+  "external_action_executed": false
+}
