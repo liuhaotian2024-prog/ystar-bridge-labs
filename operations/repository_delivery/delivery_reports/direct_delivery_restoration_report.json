@@ -1,13 +1,17 @@
 {
   "artifact_id": "direct_delivery_restoration_report",
-  "status": "host_local_bridge_implemented_pending_one_time_activation",
+  "status": "host_local_bridge_activation_proof_pending_delivery",
   "root_cause": "Old successful delivery path was host-local git CLI automation, not the current sandbox process and not GitHub connector API.",
   "old_path": "auto_commit_push.py / session-close / launchd host-local git CLI",
   "new_path": "repository_delivery_bridge structured job queue + host-local worker",
   "connector_push_permission": "not_required_for_bridge",
   "one_time_setup_required": true,
-  "future_owner_delivery_commands_required": true,
-  "next_milestone_delivery_mode": "bridge_install_required_once",
-  "repository_delivery_rt1": 1,
-  "external_business_side_effects": false
+  "future_owner_delivery_commands_required": false,
+  "next_milestone_delivery_mode": "host_local_bridge",
+  "repository_delivery_rt1": 0,
+  "external_business_side_effects": false,
+  "bridge_installed": true,
+  "transport_mode": "host_local_bridge",
+  "per_milestone_bootstrap_allowed": false,
+  "proof_updated_at": "2026-05-04T03:08:24.128485+00:00"
 }

@@ -1,11 +1,91 @@
 {
   "artifact_id": "host_local_delivery_bridge_install",
-  "status": "pending_one_time_install",
-  "one_time_setup_required": true,
-  "future_owner_delivery_commands_required": true,
-  "repository_delivery_rt1": 1,
+  "installed_at": "2026-05-04T02:56:10.164030+00:00",
+  "repo_root": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
   "bridge_root": "/tmp/ystar_delivery_bridge",
-  "launch_agent_label": "com.ystar.repository-delivery-bridge",
+  "plist_path": "/Users/haotianliu/Library/LaunchAgents/com.ystar.repository-delivery-bridge.plist",
+  "one_time_setup_required": false,
+  "future_owner_delivery_commands_required": false,
+  "commands": [
+    {
+      "command": [
+        "launchctl",
+        "unload",
+        "/Users/haotianliu/Library/LaunchAgents/com.ystar.repository-delivery-bridge.plist"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Unload failed: 5: Input/output error\nTry running `launchctl bootout` as root for richer errors."
+    },
+    {
+      "command": [
+        "launchctl",
+        "load",
+        "/Users/haotianliu/Library/LaunchAgents/com.ystar.repository-delivery-bridge.plist"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
   "credentials_printed": false,
-  "tokens_printed": false
+  "tokens_printed": false,
+  "plist_written": true,
+  "launchagent_load_attempts": [
+    {
+      "command": [
+        "launchctl",
+        "unload",
+        "/Users/haotianliu/Library/LaunchAgents/com.ystar.repository-delivery-bridge.plist"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Unload failed: 5: Input/output error\nTry running `launchctl bootout` as root for richer errors."
+    },
+    {
+      "command": [
+        "launchctl",
+        "load",
+        "/Users/haotianliu/Library/LaunchAgents/com.ystar.repository-delivery-bridge.plist"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "bridge_status": {
+    "artifact_id": "repository_delivery_bridge_status",
+    "bridge_root": "/tmp/ystar_delivery_bridge",
+    "queues": {
+      "pending": [],
+      "running": [],
+      "completed": [],
+      "failed": [
+        "d0_host_local_delivery_bridge_self_delivery.json",
+        "d0_host_local_delivery_bridge_self_delivery.report.json",
+        "d0_host_local_delivery_bridge_self_delivery.report.md"
+      ],
+      "logs": [
+        "archived_stale_self_jobs",
+        "archived_untracked_delivery_reports"
+      ]
+    },
+    "last_completed": "",
+    "last_failed": "d0_host_local_delivery_bridge_self_delivery.report.md",
+    "launch_agent": {
+      "launchctl_available": true,
+      "plist_path": "/Users/haotianliu/Library/LaunchAgents/com.ystar.repository-delivery-bridge.plist",
+      "plist_exists": true,
+      "loaded": true,
+      "tokens_printed": false,
+      "credential_values_printed": false
+    },
+    "bridge_installed": true,
+    "transport_mode": "host_local_bridge",
+    "next_milestone_delivery_mode": "host_local_bridge",
+    "job_submission_contract": "scripts/repository_delivery_bridge_submit.py",
+    "per_milestone_bootstrap_allowed": false,
+    "future_owner_delivery_commands_required": false
+  },
+  "started": true
 }

@@ -12,3 +12,11 @@
 - external_business_side_effects: false
 
 After one-time activation succeeds with self-delivery remote confirmation, Codex should submit bridge jobs instead of printing per-milestone bootstrap commands.
+
+## Bridge Activation Proof
+
+- status: host_local_bridge_activation_proof_pending_delivery
+- bridge_installed: true
+- transport_mode: host_local_bridge
+- future_owner_delivery_commands_required: false
+- per_milestone_bootstrap_allowed: false

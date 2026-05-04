@@ -1,10 +1,36 @@
 {
   "artifact_id": "repository_delivery_bridge_status",
-  "status": "pending_one_time_install",
   "bridge_root": "/tmp/ystar_delivery_bridge",
-  "transport_mode": "bridge_install_required_once",
-  "future_owner_delivery_commands_required": true,
-  "repository_delivery_rt1": 1,
-  "credentials_printed": false,
-  "tokens_printed": false
+  "queues": {
+    "pending": [],
+    "running": [],
+    "completed": [],
+    "failed": [
+      "d0_host_local_delivery_bridge_self_delivery.json",
+      "d0_host_local_delivery_bridge_self_delivery.report.json",
+      "d0_host_local_delivery_bridge_self_delivery.report.md"
+    ],
+    "logs": [
+      "archived_stale_self_jobs",
+      "archived_untracked_delivery_reports",
+      "repository_delivery_bridge.stderr.log",
+      "repository_delivery_bridge.stdout.log"
+    ]
+  },
+  "last_completed": "",
+  "last_failed": "d0_host_local_delivery_bridge_self_delivery.report.md",
+  "launch_agent": {
+    "launchctl_available": true,
+    "plist_path": "/Users/haotianliu/Library/LaunchAgents/com.ystar.repository-delivery-bridge.plist",
+    "plist_exists": true,
+    "loaded": true,
+    "tokens_printed": false,
+    "credential_values_printed": false
+  },
+  "bridge_installed": true,
+  "transport_mode": "host_local_bridge",
+  "next_milestone_delivery_mode": "host_local_bridge",
+  "job_submission_contract": "scripts/repository_delivery_bridge_submit.py",
+  "per_milestone_bootstrap_allowed": false,
+  "future_owner_delivery_commands_required": false
 }
