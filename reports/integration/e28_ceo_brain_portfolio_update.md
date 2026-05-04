@@ -1,0 +1,5 @@
+# E28 CEO Brain Portfolio Update
+
+- selected_revenue_path: rev_path_readiness_review_ai_consultancies
+- strategic_bottleneck: production_live_config_preparation_is_commercially_justified_but_live_execution_remains_blocked
+- next_decision_horizon: E29_secure_production_config_preparation_or_owner_defers_to_evidence_expansion

@@ -1,0 +1,26 @@
+{
+  "artifact_id": "e28_production_live_decision_gate",
+  "selected_revenue_path": "rev_path_readiness_review_ai_consultancies",
+  "decision": "proceed_to_secure_production_config_preparation",
+  "recommended_route": "proceed_to_secure_production_config_preparation",
+  "production_live_config_preparation_recommended": true,
+  "evidence_expansion_recommended": true,
+  "offer_revision_recommended": false,
+  "target_rebuild_recommended": false,
+  "provider_selection_research_needed": false,
+  "selected_provider_category": "email_provider_adapter",
+  "production_live_ready": false,
+  "production_live_enabled": false,
+  "canary_execution_allowed": false,
+  "production_live_receipt_count": 0,
+  "decision_basis": [
+    "live_test_gate_ready",
+    "sandbox_history_present",
+    "dry_run_history_present",
+    "selected_revenue_path_has_shortest_cash_path",
+    "production_live_blocked_by_design",
+    "real_feedback_absent"
+  ],
+  "no_real_external_action_occurred": true,
+  "external_action_executed": false
+}

@@ -1,0 +1,196 @@
+{
+  "artifact_id": "e28_ceo_kg_production_live_feedback",
+  "kg_delta_nodes": [
+    {
+      "id": "e28_production_live_decision_gate",
+      "type": "ProductionLiveConfigurationDecisionGate",
+      "label": "Production live configuration decision gate",
+      "source_paths": [
+        "operations/external_validation/e28_decision_control_room.json"
+      ],
+      "evidence_status": "internal_decision_evidence",
+      "truth_status": "observed_internal",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28",
+      "notes": "No customer feedback, market validation, provider API call, or production live readiness claimed."
+    },
+    {
+      "id": "e28_provider_category_comparison",
+      "type": "ProviderCategoryComparison",
+      "label": "Provider category comparison",
+      "source_paths": [
+        "operations/external_validation/e28_decision_control_room.json"
+      ],
+      "evidence_status": "internal_decision_evidence",
+      "truth_status": "observed_internal",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28",
+      "notes": "No customer feedback, market validation, provider API call, or production live readiness claimed."
+    },
+    {
+      "id": "e28_secure_credential_source_contract",
+      "type": "SecureCredentialSourceContract",
+      "label": "No-secret credential source decision contract",
+      "source_paths": [
+        "operations/external_validation/e28_decision_control_room.json"
+      ],
+      "evidence_status": "internal_decision_evidence",
+      "truth_status": "observed_internal",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28",
+      "notes": "No customer feedback, market validation, provider API call, or production live readiness claimed."
+    },
+    {
+      "id": "e28_production_live_blocker_matrix",
+      "type": "ProductionLiveBlockerMatrix",
+      "label": "Production live blocker matrix",
+      "source_paths": [
+        "operations/external_validation/e28_decision_control_room.json"
+      ],
+      "evidence_status": "internal_decision_evidence",
+      "truth_status": "observed_internal",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28",
+      "notes": "No customer feedback, market validation, provider API call, or production live readiness claimed."
+    },
+    {
+      "id": "e28_evidence_vs_live_tradeoff",
+      "type": "EvidenceVsLiveConfigurationTradeoff",
+      "label": "Evidence vs live configuration tradeoff",
+      "source_paths": [
+        "operations/external_validation/e28_decision_control_room.json"
+      ],
+      "evidence_status": "internal_decision_evidence",
+      "truth_status": "observed_internal",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28",
+      "notes": "No customer feedback, market validation, provider API call, or production live readiness claimed."
+    },
+    {
+      "id": "e28_canary_prerequisite_refinement",
+      "type": "CanaryPrerequisiteRefinement",
+      "label": "Refined canary prerequisite matrix",
+      "source_paths": [
+        "operations/external_validation/e28_decision_control_room.json"
+      ],
+      "evidence_status": "internal_decision_evidence",
+      "truth_status": "observed_internal",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28",
+      "notes": "No customer feedback, market validation, provider API call, or production live readiness claimed."
+    },
+    {
+      "id": "e28_strategic_learning_candidate",
+      "type": "StrategicLearningCandidate",
+      "label": "Internal decision evidence only",
+      "source_paths": [
+        "operations/external_validation/e28_decision_control_room.json"
+      ],
+      "evidence_status": "internal_decision_evidence",
+      "truth_status": "observed_internal",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28",
+      "notes": "No customer feedback, market validation, provider API call, or production live readiness claimed."
+    }
+  ],
+  "kg_delta_edges": [
+    {
+      "id": "e28_edge_1",
+      "source_node_id": "rev_path_readiness_review_ai_consultancies",
+      "target_node_id": "e28_production_live_decision_gate",
+      "relationship": "evaluated_by",
+      "evidence_path": "operations/external_validation/e28_production_live_decision_gate.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal readiness and decision evidence only."
+    },
+    {
+      "id": "e28_edge_2",
+      "source_node_id": "rev_path_readiness_review_ai_consultancies",
+      "target_node_id": "e28_secure_credential_source_contract",
+      "relationship": "requires",
+      "evidence_path": "operations/external_validation/e28_production_live_decision_gate.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal readiness and decision evidence only."
+    },
+    {
+      "id": "e28_edge_3",
+      "source_node_id": "email_provider_adapter",
+      "target_node_id": "rev_path_readiness_review_ai_consultancies",
+      "relationship": "supports",
+      "evidence_path": "operations/external_validation/e28_production_live_decision_gate.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal readiness and decision evidence only."
+    },
+    {
+      "id": "e28_edge_4",
+      "source_node_id": "e28_production_live_blocker_matrix",
+      "target_node_id": "production_live_readiness",
+      "relationship": "blocks",
+      "evidence_path": "operations/external_validation/e28_production_live_decision_gate.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal readiness and decision evidence only."
+    },
+    {
+      "id": "e28_edge_5",
+      "source_node_id": "e28_evidence_vs_live_tradeoff",
+      "target_node_id": "E29_secure_production_config_preparation_or_evidence_expansion",
+      "relationship": "routes_to",
+      "evidence_path": "operations/external_validation/e28_production_live_decision_gate.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal readiness and decision evidence only."
+    },
+    {
+      "id": "e28_edge_6",
+      "source_node_id": "e27_production_live_blocker",
+      "target_node_id": "e28_production_live_decision_gate",
+      "relationship": "updated_by",
+      "evidence_path": "operations/external_validation/e28_production_live_decision_gate.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal readiness and decision evidence only."
+    },
+    {
+      "id": "e28_edge_7",
+      "source_node_id": "gov_mcp_live_config_contract",
+      "target_node_id": "e28_secure_credential_source_contract",
+      "relationship": "reuses",
+      "evidence_path": "operations/external_validation/e28_production_live_decision_gate.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal readiness and decision evidence only."
+    },
+    {
+      "id": "e28_edge_8",
+      "source_node_id": "gov_mcp_live_test_gate",
+      "target_node_id": "e28_production_live_blocker_matrix",
+      "relationship": "reuses",
+      "evidence_path": "operations/external_validation/e28_production_live_decision_gate.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal readiness and decision evidence only."
+    },
+    {
+      "id": "e28_edge_9",
+      "source_node_id": "e28_canary_prerequisite_refinement",
+      "target_node_id": "rev_path_readiness_review_ai_consultancies",
+      "relationship": "routes_to",
+      "evidence_path": "operations/external_validation/e28_production_live_decision_gate.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal readiness and decision evidence only."
+    }
+  ],
+  "kg_delta_node_count": 7,
+  "kg_delta_edge_count": 9,
+  "selected_revenue_path": "rev_path_readiness_review_ai_consultancies",
+  "decision_result": "proceed_to_secure_production_config_preparation",
+  "internal_decision_evidence_only": true,
+  "customer_feedback_claimed": false,
+  "market_validation_claimed": false,
+  "production_live_readiness_promoted": false,
+  "promotion_candidates_count": 1,
+  "promotion_candidates": [
+    {
+      "id": "e28_strategic_learning_candidate",
+      "promotion_status": "working_only",
+      "reason": "Decision recommends secure production config preparation, but production live remains blocked."
+    }
+  ],
+  "external_action_executed": false
+}

@@ -1,0 +1,130 @@
+{
+  "artifact_id": "e28_production_live_duplicate_conflict_map",
+  "cluster_count": 11,
+  "destructive_refactor_performed": false,
+  "clusters": [
+    {
+      "capability": "production live config",
+      "modules_involved": [
+        "gov_mcp/outbound/live_config.py",
+        "gov_mcp/outbound/live_test_config.py"
+      ],
+      "semantic_difference": "production contract vs non-production test profile",
+      "conflict_risk": "low",
+      "canonical_candidate": "gov_mcp/outbound/live_config.py",
+      "recommended_route": "reuse_one"
+    },
+    {
+      "capability": "credential source config",
+      "modules_involved": [
+        "gov_mcp/outbound/live_config.py",
+        "office/mission_command/e28_secure_credential_source_contract.py"
+      ],
+      "semantic_difference": "canonical enum vs commercial secure-route decision",
+      "conflict_risk": "low",
+      "canonical_candidate": "gov_mcp/outbound/live_config.py",
+      "recommended_route": "wrap_existing"
+    },
+    {
+      "capability": "secret-source contract",
+      "modules_involved": [
+        "gov_mcp/outbound/live_config.py",
+        "office/mission_command/e28_secure_credential_source_contract.py"
+      ],
+      "semantic_difference": "names-only provider boundary vs no-secret owner decision packet",
+      "conflict_risk": "medium",
+      "canonical_candidate": "gov_mcp/outbound/live_config.py",
+      "recommended_route": "keep_parallel_with_router"
+    },
+    {
+      "capability": "provider mode separation",
+      "modules_involved": [
+        "gov_mcp/outbound/provider_capability.py",
+        "gov_mcp/outbound/provider_manifest.py"
+      ],
+      "semantic_difference": "enum/data model vs manifest read model",
+      "conflict_risk": "low",
+      "canonical_candidate": "gov_mcp/outbound/provider_capability.py",
+      "recommended_route": "reuse_one"
+    },
+    {
+      "capability": "live-test vs production-live boundary",
+      "modules_involved": [
+        "gov_mcp/outbound/live_test_gate.py",
+        "gov_mcp/outbound/live_readiness.py"
+      ],
+      "semantic_difference": "validator v2 splits non-production from production readiness",
+      "conflict_risk": "low",
+      "canonical_candidate": "gov_mcp/outbound/live_test_gate.py",
+      "recommended_route": "reuse_one"
+    },
+    {
+      "capability": "persistent idempotency",
+      "modules_involved": [
+        "gov_mcp/outbound/idempotency.py",
+        "gov_mcp/outbound/persistent_idempotency.py"
+      ],
+      "semantic_difference": "key validation vs durable store contract",
+      "conflict_risk": "low",
+      "canonical_candidate": "gov_mcp/outbound/idempotency.py",
+      "recommended_route": "reuse_one"
+    },
+    {
+      "capability": "kill switch",
+      "modules_involved": [
+        "gov_mcp/outbound/live_kill_switch.py",
+        "office/mission_command/e28_production_live_blocker_matrix.py"
+      ],
+      "semantic_difference": "canonical kill switch vs blocker decision row",
+      "conflict_risk": "low",
+      "canonical_candidate": "gov_mcp/outbound/live_kill_switch.py",
+      "recommended_route": "wrap_existing"
+    },
+    {
+      "capability": "live receipt boundary",
+      "modules_involved": [
+        "gov_mcp/outbound/live_receipts.py",
+        "gov_mcp/outbound/live_test_receipts.py"
+      ],
+      "semantic_difference": "production external-effect receipt vs non-production fixture",
+      "conflict_risk": "low",
+      "canonical_candidate": "gov_mcp/outbound/live_receipts.py",
+      "recommended_route": "reuse_one"
+    },
+    {
+      "capability": "canary prerequisite matrix",
+      "modules_involved": [
+        "gov_mcp/outbound/canary_prerequisites.py",
+        "operations/external_validation/e27_canary_prerequisite_matrix.json",
+        "office/mission_command/e28_canary_prerequisite_refinement.py"
+      ],
+      "semantic_difference": "provider matrix vs commercial refinement",
+      "conflict_risk": "medium",
+      "canonical_candidate": "gov_mcp/outbound/canary_prerequisites.py",
+      "recommended_route": "wrap_existing"
+    },
+    {
+      "capability": "provider category selection",
+      "modules_involved": [
+        "gov_mcp/outbound/provider_manifest.py",
+        "office/mission_command/e28_provider_category_comparison.py"
+      ],
+      "semantic_difference": "provider capability manifest vs commercial category comparison",
+      "conflict_risk": "low",
+      "canonical_candidate": "gov_mcp/outbound/provider_manifest.py",
+      "recommended_route": "build_missing"
+    },
+    {
+      "capability": "revenue route decision",
+      "modules_involved": [
+        "operations/external_validation/e24_revenue_path_portfolio_selection.json",
+        "office/mission_command/e28_evidence_vs_live_tradeoff.py"
+      ],
+      "semantic_difference": "portfolio selection vs E28 live/evidence tradeoff",
+      "conflict_risk": "medium",
+      "canonical_candidate": "operations/external_validation/e24_revenue_path_portfolio_selection.json",
+      "recommended_route": "wrap_existing"
+    }
+  ],
+  "external_action_executed": false
+}

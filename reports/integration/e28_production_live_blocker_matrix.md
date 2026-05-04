@@ -1,0 +1,6 @@
+# E28 Production Live Blocker Matrix
+
+- production_live_ready: False
+- production_live_enabled: False
+- production_live_receipt_count: 0
+- primary_blockers: production_live_enabled_false, production_credentials_absent_by_design, production_persistent_idempotency_not_configured, production_kill_switch_default_block, production_live_tests_not_configured, real_feedback_evidence_absent

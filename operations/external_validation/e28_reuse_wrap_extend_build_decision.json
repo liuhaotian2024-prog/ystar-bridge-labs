@@ -1,0 +1,108 @@
+{
+  "artifact_id": "e28_reuse_wrap_extend_build_decision",
+  "decisions": [
+    {
+      "capability": "production live configuration decision gate",
+      "decision": "build_missing",
+      "target_path": "office/mission_command/e28_production_live_decision_gate.py",
+      "justification": "No existing CEO-KG commercial decision gate compared production config against evidence/offer routes."
+    },
+    {
+      "capability": "credential source contract",
+      "decision": "wrap_existing",
+      "target_path": "gov_mcp/outbound/live_config.py + office/mission_command/e28_secure_credential_source_contract.py",
+      "justification": "gov-mcp source enum exists; E28 wraps it into a no-secret commercial decision packet."
+    },
+    {
+      "capability": "secure secret-handling route",
+      "decision": "build_missing",
+      "target_path": "office/mission_command/e28_secure_credential_source_contract.py",
+      "justification": "No committed-code decision packet for secure production setup existed."
+    },
+    {
+      "capability": "provider category comparison",
+      "decision": "build_missing",
+      "target_path": "office/mission_command/e28_provider_category_comparison.py",
+      "justification": "No provider category comparison existed for the selected revenue path."
+    },
+    {
+      "capability": "production live blocker matrix",
+      "decision": "build_missing",
+      "target_path": "office/mission_command/e28_production_live_blocker_matrix.py",
+      "justification": "E27 listed blockers; E28 needs row-level resolution ownership and automation route."
+    },
+    {
+      "capability": "live-readiness validator update",
+      "decision": "reuse_existing",
+      "target_path": "gov_mcp/outbound/live_test_gate.py",
+      "justification": "Validator v2 already separates live_test_gate_ready from production_live_ready."
+    },
+    {
+      "capability": "one-action canary prerequisite refinement",
+      "decision": "wrap_existing",
+      "target_path": "gov_mcp/outbound/canary_prerequisites.py + E27 matrix",
+      "justification": "Existing matrix refined with provider category/tradeoff result."
+    },
+    {
+      "capability": "persistent idempotency production gate",
+      "decision": "reuse_existing",
+      "target_path": "gov_mcp/outbound/persistent_idempotency.py",
+      "justification": "Production blocker reused; no new idempotency wheel needed."
+    },
+    {
+      "capability": "kill switch production gate",
+      "decision": "reuse_existing",
+      "target_path": "gov_mcp/outbound/live_kill_switch.py",
+      "justification": "Production default-safe blocker reused."
+    },
+    {
+      "capability": "production live receipt boundary",
+      "decision": "reuse_existing",
+      "target_path": "gov_mcp/outbound/live_receipts.py",
+      "justification": "Canonical boundary reused; no live receipts created."
+    },
+    {
+      "capability": "evidence expansion vs live configuration tradeoff",
+      "decision": "build_missing",
+      "target_path": "office/mission_command/e28_evidence_vs_live_tradeoff.py",
+      "justification": "No E28 revenue tradeoff scorer existed."
+    },
+    {
+      "capability": "offer revision vs live configuration tradeoff",
+      "decision": "wrap_existing",
+      "target_path": "office/mission_command/e13r_offer_revision.py + e28 tradeoff",
+      "justification": "Offer route reused as an option."
+    },
+    {
+      "capability": "CEO KG production-readiness feedback",
+      "decision": "wrap_existing",
+      "target_path": "operations/knowledge_graph/e24/e25/e26/e27",
+      "justification": "Append E28 delta only."
+    },
+    {
+      "capability": "CEO brain/portfolio route update",
+      "decision": "wrap_existing",
+      "target_path": "operations/external_validation/e27_ceo_brain_portfolio_update.json",
+      "justification": "Update working brain only."
+    },
+    {
+      "capability": "ecosystem route registry update",
+      "decision": "wrap_existing",
+      "target_path": "operations/external_validation/e24_ecosystem_route_registry.json",
+      "justification": "Update read model; no registry replacement."
+    },
+    {
+      "capability": "CZL closure",
+      "decision": "reuse_existing",
+      "target_path": "Y-star-gov CIEU/CZL semantics + bridge-labs closure pattern",
+      "justification": "Reuse closure semantics."
+    }
+  ],
+  "new_implementation_allowed_only_for": [
+    "build_missing",
+    "extend_existing"
+  ],
+  "all_new_wheels_have_justification": true,
+  "gov_mcp_modification_needed": false,
+  "external_action_executed": false
+}

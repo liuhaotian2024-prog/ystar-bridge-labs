@@ -1,0 +1,155 @@
+{
+  "artifact_id": "e28_production_live_blocker_matrix",
+  "production_live_ready": false,
+  "production_live_enabled": false,
+  "production_live_receipt_count": 0,
+  "blocked_count": 8,
+  "partial_count": 1,
+  "ready_count": 4,
+  "primary_blockers": [
+    "production_live_enabled_false",
+    "production_credentials_absent_by_design",
+    "production_persistent_idempotency_not_configured",
+    "production_kill_switch_default_block",
+    "production_live_tests_not_configured",
+    "real_feedback_evidence_absent"
+  ],
+  "blockers": [
+    {
+      "blocker": "production_live_enabled",
+      "status": "blocked",
+      "source_evidence": "operations/external_validation/e27_live_readiness_validator_v2.json",
+      "required_resolution": "configure production live flag only in a future approved milestone",
+      "resolution_can_be_automated_by_agent": true,
+      "owner_approval_required_by_risk_or_security": "security_decision_required_later",
+      "future_milestone_requirement": "future_milestone_required"
+    },
+    {
+      "blocker": "production_credential_source",
+      "status": "blocked",
+      "source_evidence": "operations/external_validation/e28_secure_credential_source_contract.json",
+      "required_resolution": "configure secure secret source outside committed values",
+      "resolution_can_be_automated_by_agent": false,
+      "owner_approval_required_by_risk_or_security": "owner_secure_setup_required_later",
+      "future_milestone_requirement": "future_milestone_required"
+    },
+    {
+      "blocker": "provider_production_config",
+      "status": "blocked",
+      "source_evidence": "operations/external_validation/e28_provider_category_comparison.json",
+      "required_resolution": "select provider and configure production adapter category",
+      "resolution_can_be_automated_by_agent": true,
+      "owner_approval_required_by_risk_or_security": "owner_security_decision_later",
+      "future_milestone_requirement": "future_milestone_required"
+    },
+    {
+      "blocker": "provider_live_tests",
+      "status": "blocked",
+      "source_evidence": "operations/external_validation/e27_live_readiness_validator_v2.json",
+      "required_resolution": "add provider live tests without contacting customers",
+      "resolution_can_be_automated_by_agent": true,
+      "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+      "future_milestone_requirement": "future_milestone_required"
+    },
+    {
+      "blocker": "production_persistent_idempotency",
+      "status": "blocked",
+      "source_evidence": "operations/external_validation/e27_persistent_idempotency_test_gate.json",
+      "required_resolution": "configure production durable store",
+      "resolution_can_be_automated_by_agent": true,
+      "owner_approval_required_by_risk_or_security": "owner_security_decision_later",
+      "future_milestone_requirement": "future_milestone_required"
+    },
+    {
+      "blocker": "kill_switch_production_clear",
+      "status": "blocked",
+      "source_evidence": "operations/external_validation/e27_kill_switch_live_test_gate.json",
+      "required_resolution": "explicit production kill switch clear for canary",
+      "resolution_can_be_automated_by_agent": true,
+      "owner_approval_required_by_risk_or_security": "owner_security_decision_later",
+      "future_milestone_requirement": "future_milestone_required"
+    },
+    {
+      "blocker": "suppression_clear",
+      "status": "ready_for_test_gate",
+      "source_evidence": "operations/external_validation/e23_suppression_registry.json",
+      "required_resolution": "connect production suppression source before live",
+      "resolution_can_be_automated_by_agent": true,
+      "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+      "future_milestone_requirement": "future_milestone_required"
+    },
+    {
+      "blocker": "compliance_clear",
+      "status": "ready_for_test_gate",
+      "source_evidence": "operations/external_validation/e23_compliance_registry.json",
+      "required_resolution": "connect production compliance source before live",
+      "resolution_can_be_automated_by_agent": true,
+      "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+      "future_milestone_requirement": "future_milestone_required"
+    },
+    {
+      "blocker": "rate_limit_budget",
+      "status": "blocked",
+      "source_evidence": "operations/external_validation/e26_one_action_canary_plan.json",
+      "required_resolution": "configure one-action production rate-limit budget",
+      "resolution_can_be_automated_by_agent": true,
+      "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+      "future_milestone_requirement": "future_milestone_required"
+    },
+    {
+      "blocker": "live_receipt_writer",
+      "status": "blocked",
+      "source_evidence": "gov_mcp/outbound/live_receipts.py",
+      "required_resolution": "activate production live receipt writer only when real external effect occurs",
+      "resolution_can_be_automated_by_agent": true,
+      "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+      "future_milestone_requirement": "future_milestone_required"
+    },
+    {
+      "blocker": "audit_czl_path",
+      "status": "ready",
+      "source_evidence": "operations/external_validation/e27_czl_closure.json",
+      "required_resolution": "reuse CZL closure route",
+      "resolution_can_be_automated_by_agent": true,
+      "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+      "future_milestone_requirement": "ready"
+    },
+    {
+      "blocker": "canary_abort_criteria",
+      "status": "ready",
+      "source_evidence": "operations/external_validation/e27_canary_prerequisite_matrix.json",
+      "required_resolution": "reuse and refine abort criteria",
+      "resolution_can_be_automated_by_agent": true,
+      "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+      "future_milestone_requirement": "ready"
+    },
+    {
+      "blocker": "ceo_kg_route_support",
+      "status": "ready",
+      "source_evidence": "operations/knowledge_graph/e27_ceo_kg_read_model_update.json",
+      "required_resolution": "selected route remains supported",
+      "resolution_can_be_automated_by_agent": true,
+      "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+      "future_milestone_requirement": "ready"
+    },
+    {
+      "blocker": "evidence_sufficiency",
+      "status": "partial",
+      "source_evidence": "operations/external_validation/e24_revenue_path_portfolio_selection.json",
+      "required_resolution": "real feedback evidence still absent",
+      "resolution_can_be_automated_by_agent": true,
+      "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+      "future_milestone_requirement": "evidence_expansion_recommended"
+    },
+    {
+      "blocker": "risk_tier_owner_approval_requirement",
+      "status": "ready",
+      "source_evidence": "operations/external_validation/e27_canary_prerequisite_matrix.json",
+      "required_resolution": "T2 does not require owner approval by risk",
+      "resolution_can_be_automated_by_agent": true,
+      "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+      "future_milestone_requirement": "ready"
+    }
+  ],
+  "external_action_executed": false
+}

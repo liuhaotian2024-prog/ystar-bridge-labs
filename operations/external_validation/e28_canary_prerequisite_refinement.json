@@ -1,0 +1,49 @@
+{
+  "artifact_id": "e28_canary_prerequisite_refinement",
+  "selected_revenue_path": "rev_path_readiness_review_ai_consultancies",
+  "selected_candidate_action": "e26_live_canary_readiness_review_ai_consultancy_candidate_1",
+  "provider_category_recommendation": "email_provider_adapter",
+  "credential_source_requirement": "environment_variable_names_only_or_external_secret_manager_placeholder",
+  "production_live_blockers": [
+    "production_live_enabled_false",
+    "production_credentials_absent_by_design",
+    "production_persistent_idempotency_not_configured",
+    "production_kill_switch_default_block",
+    "production_live_tests_not_configured",
+    "real_feedback_evidence_absent"
+  ],
+  "dry_run_history_present": true,
+  "sandbox_history_present": true,
+  "live_test_gate_history_present": true,
+  "persistent_idempotency_status": "live_test_ready_production_not_configured",
+  "kill_switch_status": "production_default_safe_block",
+  "suppression_compliance_status": "clear_for_test_gate_production_source_required",
+  "live_receipt_boundary": "production_live_receipt_requires_real_external_effect_and_all_live_flags",
+  "evidence_status": "sufficient_for_config_decision_but_real_feedback_absent",
+  "offer_status": "sufficient_for_one_action_canary_no_revision_first",
+  "target_status": "sufficient_for_one_action_canary_no_rebuild_first",
+  "abort_criteria": [
+    "production_live_enabled_false",
+    "production_credentials_absent_by_design",
+    "production_persistent_idempotency_not_configured",
+    "production_kill_switch_default_block",
+    "production_live_tests_not_configured",
+    "real_feedback_evidence_absent",
+    "suppression_or_compliance_not_clear"
+  ],
+  "success_criteria": [
+    "secure production config prepared without secrets",
+    "provider live tests configured",
+    "future canary remains one-action bounded"
+  ],
+  "feedback_import_path": "operations/external_validation/e18_batch_feedback_intake_empty.json",
+  "ceo_kg_feedback_ingestion_path": "operations/knowledge_graph/e28_ceo_kg_production_live_feedback.json",
+  "canary_prerequisite_refined": true,
+  "canary_executed": false,
+  "production_live_enabled": false,
+  "production_live_receipt_count": 0,
+  "real_customer_contact": false,
+  "live_ready_action_count": 0,
+  "live_blocked_action_count": 1,
+  "external_action_executed": false
+}

@@ -1,0 +1,628 @@
+{
+  "artifact_id": "e28_existing_production_live_wheel_inventory",
+  "audit_completed_before_new_e28_modules": true,
+  "repos_scanned": [
+    "ystar-bridge-labs",
+    "gov-mcp",
+    "Y-star-gov",
+    "ystar-company"
+  ],
+  "repos_scanned_count": 4,
+  "existing_production_live_wheels_found": 31,
+  "reused_wheels_count": 16,
+  "wrapped_wheels_count": 8,
+  "extended_wheels_count": 0,
+  "wrapped_or_extended_wheels_count": 8,
+  "newly_built_wheels_count": 5,
+  "duplicate_conflict_clusters_documented": 11,
+  "wheels": [
+    {
+      "name": "live config contract",
+      "repo": "gov-mcp",
+      "path": "gov_mcp/outbound/live_config.py",
+      "capability_category": "production live config",
+      "current_status": "canonical",
+      "what_it_already_supports": [
+        "credential names only",
+        "live_enabled defaults false",
+        "no secret values"
+      ],
+      "what_it_lacks": [
+        "does not decide commercial timing"
+      ],
+      "tests_present_or_absent": "tests/test_outbound_live_config.py",
+      "reuse_decision": "reuse_existing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": true,
+      "new_wheel_justification": "canonical production config contract reused"
+    },
+    {
+      "name": "live-test config profile",
+      "repo": "gov-mcp",
+      "path": "gov_mcp/outbound/live_test_config.py",
+      "capability_category": "live-test config",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "non-production profile",
+        "fake credential names only"
+      ],
+      "what_it_lacks": [
+        "not production config"
+      ],
+      "tests_present_or_absent": "tests/test_outbound_live_test_config.py",
+      "reuse_decision": "reuse_existing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": true,
+      "new_wheel_justification": "live-test evidence reused"
+    },
+    {
+      "name": "credential source enum",
+      "repo": "gov-mcp",
+      "path": "gov_mcp/outbound/live_config.py",
+      "capability_category": "credential source contract",
+      "current_status": "canonical",
+      "what_it_already_supports": [
+        "none",
+        "environment_variable_names_only",
+        "local_env_file_path",
+        "external_secret_manager_placeholder"
+      ],
+      "what_it_lacks": [
+        "does not select secure route"
+      ],
+      "tests_present_or_absent": "tests/test_outbound_live_config.py",
+      "reuse_decision": "wrap_existing",
+      "needs_wrapper": true,
+      "needs_extension": false,
+      "left_untouched": false,
+      "new_wheel_justification": "E28 wraps enum into decision contract"
+    },
+    {
+      "name": "live readiness validator",
+      "repo": "gov-mcp",
+      "path": "gov_mcp/outbound/live_readiness.py",
+      "capability_category": "production live readiness validator",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "production live blocker model"
+      ],
+      "what_it_lacks": [
+        "does not compare revenue tradeoffs"
+      ],
+      "tests_present_or_absent": "tests/test_outbound_live_readiness.py",
+      "reuse_decision": "reuse_existing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": true,
+      "new_wheel_justification": "production readiness source reused"
+    },
+    {
+      "name": "live-test gate",
+      "repo": "gov-mcp",
+      "path": "gov_mcp/outbound/live_test_gate.py",
+      "capability_category": "live-test gate",
+      "current_status": "canonical",
+      "what_it_already_supports": [
+        "dry_run/sandbox/live_test/production readiness split"
+      ],
+      "what_it_lacks": [
+        "does not recommend route"
+      ],
+      "tests_present_or_absent": "tests/test_outbound_live_test_gate.py",
+      "reuse_decision": "reuse_existing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": true,
+      "new_wheel_justification": "E28 consumes validator v2 result"
+    },
+    {
+      "name": "canary prerequisites",
+      "repo": "gov-mcp",
+      "path": "gov_mcp/outbound/canary_prerequisites.py",
+      "capability_category": "canary prerequisite matrix",
+      "current_status": "canonical",
+      "what_it_already_supports": [
+        "plan-only canary matrix",
+        "no execution"
+      ],
+      "what_it_lacks": [
+        "not refined by provider category comparison"
+      ],
+      "tests_present_or_absent": "tests/test_outbound_canary_prerequisites.py",
+      "reuse_decision": "wrap_existing",
+      "needs_wrapper": true,
+      "needs_extension": false,
+      "left_untouched": false,
+      "new_wheel_justification": "E28 refines commercial inputs"
+    },
+    {
+      "name": "live kill switch",
+      "repo": "gov-mcp",
+      "path": "gov_mcp/outbound/live_kill_switch.py",
+      "capability_category": "kill switch",
+      "current_status": "canonical",
+      "what_it_already_supports": [
+        "global/provider/channel/campaign/target/action blocks"
+      ],
+      "what_it_lacks": [
+        "production clear policy not configured"
+      ],
+      "tests_present_or_absent": "tests/test_outbound_live_kill_switch.py",
+      "reuse_decision": "reuse_existing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": true,
+      "new_wheel_justification": "kill switch remains authoritative"
+    },
+    {
+      "name": "live receipts",
+      "repo": "gov-mcp",
+      "path": "gov_mcp/outbound/live_receipts.py",
+      "capability_category": "production live receipt boundary",
+      "current_status": "canonical",
+      "what_it_already_supports": [
+        "live receipts require external_effect true and all live flags"
+      ],
+      "what_it_lacks": [
+        "no receipt can be created in E28"
+      ],
+      "tests_present_or_absent": "tests/test_outbound_live_receipts.py",
+      "reuse_decision": "reuse_existing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": true,
+      "new_wheel_justification": "receipt boundary reused"
+    },
+    {
+      "name": "live-test receipts",
+      "repo": "gov-mcp",
+      "path": "gov_mcp/outbound/live_test_receipts.py",
+      "capability_category": "live-test receipt boundary",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "non-production receipt distinct from production live"
+      ],
+      "what_it_lacks": [
+        "not a production receipt"
+      ],
+      "tests_present_or_absent": "tests/test_outbound_live_test_receipts.py",
+      "reuse_decision": "reuse_existing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": true,
+      "new_wheel_justification": "readiness evidence reused"
+    },
+    {
+      "name": "persistent idempotency",
+      "repo": "gov-mcp",
+      "path": "gov_mcp/outbound/persistent_idempotency.py",
+      "capability_category": "persistent idempotency",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "file-backed contract",
+        "duplicate/corruption/missing-store fail closed"
+      ],
+      "what_it_lacks": [
+        "production store not configured"
+      ],
+      "tests_present_or_absent": "tests/test_outbound_persistent_idempotency.py",
+      "reuse_decision": "reuse_existing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": true,
+      "new_wheel_justification": "production gate blocker reused"
+    },
+    {
+      "name": "provider manifest",
+      "repo": "gov-mcp",
+      "path": "gov_mcp/outbound/provider_manifest.py",
+      "capability_category": "provider manifest",
+      "current_status": "canonical",
+      "what_it_already_supports": [
+        "disabled live manifest",
+        "sandbox/live boundary"
+      ],
+      "what_it_lacks": [
+        "does not select provider category"
+      ],
+      "tests_present_or_absent": "tests/test_outbound_provider_manifest.py",
+      "reuse_decision": "reuse_existing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": true,
+      "new_wheel_justification": "provider status reused"
+    },
+    {
+      "name": "provider guard stack",
+      "repo": "gov-mcp",
+      "path": "gov_mcp/outbound/provider_guard_stack.py",
+      "capability_category": "provider guard stack",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "risk/policy/owner gate semantics"
+      ],
+      "what_it_lacks": [
+        "not a CEO revenue decision"
+      ],
+      "tests_present_or_absent": "tests/test_outbound_provider_guard_stack.py",
+      "reuse_decision": "reuse_existing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": true,
+      "new_wheel_justification": "owner approval rule reused"
+    },
+    {
+      "name": "E27 live readiness validator v2",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e27_live_readiness_validator_v2.json",
+      "capability_category": "live readiness read model",
+      "current_status": "canonical",
+      "what_it_already_supports": [
+        "live_test_gate_ready true",
+        "production_live_ready false",
+        "blocker reasons"
+      ],
+      "what_it_lacks": [
+        "does not choose E28 route"
+      ],
+      "tests_present_or_absent": "tests/office/test_e27_live_readiness_validator_v2.py",
+      "reuse_decision": "reuse_existing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": true,
+      "new_wheel_justification": "source decision evidence reused"
+    },
+    {
+      "name": "E27 canary prerequisite matrix",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e27_canary_prerequisite_matrix.json",
+      "capability_category": "canary prerequisites",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "candidate action",
+        "risk tier",
+        "blocked reasons"
+      ],
+      "what_it_lacks": [
+        "needs provider category and tradeoff refinement"
+      ],
+      "tests_present_or_absent": "tests/office/test_e27_canary_prerequisite_matrix.py",
+      "reuse_decision": "wrap_existing",
+      "needs_wrapper": true,
+      "needs_extension": false,
+      "left_untouched": false,
+      "new_wheel_justification": "E28 refines it"
+    },
+    {
+      "name": "E27 CEO brain update",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e27_ceo_brain_portfolio_update.json",
+      "capability_category": "CEO brain",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "selected path",
+        "current bottleneck",
+        "next horizon"
+      ],
+      "what_it_lacks": [
+        "does not decide production config vs evidence"
+      ],
+      "tests_present_or_absent": "tests/office/test_e27_ceo_brain_portfolio_update.py",
+      "reuse_decision": "wrap_existing",
+      "needs_wrapper": true,
+      "needs_extension": false,
+      "left_untouched": false,
+      "new_wheel_justification": "E28 updates working brain"
+    },
+    {
+      "name": "CEO KG base and deltas",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/knowledge_graph/e24/e25/e26/e27",
+      "capability_category": "CEO KG feedback",
+      "current_status": "canonical",
+      "what_it_already_supports": [
+        "source-bound revenue path and readiness evidence"
+      ],
+      "what_it_lacks": [
+        "needs E28 decision evidence"
+      ],
+      "tests_present_or_absent": "tests/office/test_e24_ceo_knowledge_graph_builder.py",
+      "reuse_decision": "wrap_existing",
+      "needs_wrapper": true,
+      "needs_extension": false,
+      "left_untouched": false,
+      "new_wheel_justification": "append E28 deltas"
+    },
+    {
+      "name": "revenue path portfolio selector",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e24_revenue_path_portfolio_selection.json",
+      "capability_category": "revenue portfolio",
+      "current_status": "canonical",
+      "what_it_already_supports": [
+        "selected revenue path and rationale"
+      ],
+      "what_it_lacks": [
+        "pre-E28 live config tradeoff"
+      ],
+      "tests_present_or_absent": "tests/office/test_e24_revenue_path_portfolio_selector.py",
+      "reuse_decision": "wrap_existing",
+      "needs_wrapper": true,
+      "needs_extension": false,
+      "left_untouched": false,
+      "new_wheel_justification": "E28 overlays tradeoff"
+    },
+    {
+      "name": "suppression registry",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e23_suppression_registry.py",
+      "capability_category": "suppression",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "suppression model"
+      ],
+      "what_it_lacks": [
+        "production provider source not configured"
+      ],
+      "tests_present_or_absent": "tests/office/test_e23_suppression_registry.py",
+      "reuse_decision": "reuse_existing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": true,
+      "new_wheel_justification": "readiness blocker input reused"
+    },
+    {
+      "name": "compliance registry",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e23_compliance_registry.py",
+      "capability_category": "compliance",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "commercial compliance model"
+      ],
+      "what_it_lacks": [
+        "provider-specific policy remains future"
+      ],
+      "tests_present_or_absent": "tests/office/test_e23_compliance_registry.py",
+      "reuse_decision": "reuse_existing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": true,
+      "new_wheel_justification": "readiness blocker input reused"
+    },
+    {
+      "name": "evidence tightening",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e23_evidence_tightening_evaluator.py",
+      "capability_category": "evidence expansion",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "candidate evidence gaps"
+      ],
+      "what_it_lacks": [
+        "no external research/contact"
+      ],
+      "tests_present_or_absent": "tests/office/test_e23_evidence_tightening_evaluator.py",
+      "reuse_decision": "wrap_existing",
+      "needs_wrapper": true,
+      "needs_extension": false,
+      "left_untouched": false,
+      "new_wheel_justification": "E28 compares evidence route"
+    },
+    {
+      "name": "offer revision",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e13r_offer_revision.py",
+      "capability_category": "offer revision",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "offer revision path"
+      ],
+      "what_it_lacks": [
+        "not selected as immediate bottleneck"
+      ],
+      "tests_present_or_absent": "tests present",
+      "reuse_decision": "wrap_existing",
+      "needs_wrapper": true,
+      "needs_extension": false,
+      "left_untouched": false,
+      "new_wheel_justification": "E28 compares offer route"
+    },
+    {
+      "name": "target scoring",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e14_target_scoring.py",
+      "capability_category": "target quality",
+      "current_status": "usable",
+      "what_it_already_supports": [
+        "target scoring"
+      ],
+      "what_it_lacks": [
+        "not production live config"
+      ],
+      "tests_present_or_absent": "tests present",
+      "reuse_decision": "reuse_existing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": true,
+      "new_wheel_justification": "target route compared"
+    },
+    {
+      "name": "production live decision gate",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e28_production_live_decision_gate.py",
+      "capability_category": "production live decision",
+      "current_status": "new_missing_wheel_built",
+      "what_it_already_supports": [
+        "commercial timing decision"
+      ],
+      "what_it_lacks": [
+        "does not enable live"
+      ],
+      "tests_present_or_absent": "tests/office/test_e28_production_live_decision_gate.py",
+      "reuse_decision": "build_missing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": false,
+      "new_wheel_justification": "audit found no CEO-KG production config decision gate"
+    },
+    {
+      "name": "provider category comparison",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e28_provider_category_comparison.py",
+      "capability_category": "provider category selection",
+      "current_status": "new_missing_wheel_built",
+      "what_it_already_supports": [
+        "provider category comparison without API calls"
+      ],
+      "what_it_lacks": [
+        "no real provider chosen/configured"
+      ],
+      "tests_present_or_absent": "tests/office/test_e28_provider_category_comparison.py",
+      "reuse_decision": "build_missing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": false,
+      "new_wheel_justification": "audit found no provider category comparison wheel"
+    },
+    {
+      "name": "secure credential source contract",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e28_secure_credential_source_contract.py",
+      "capability_category": "secure credential route",
+      "current_status": "new_missing_wheel_built",
+      "what_it_already_supports": [
+        "names/placeholders only",
+        "no secret values"
+      ],
+      "what_it_lacks": [
+        "production credentials not configured"
+      ],
+      "tests_present_or_absent": "tests/office/test_e28_secure_credential_source_contract.py",
+      "reuse_decision": "build_missing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": false,
+      "new_wheel_justification": "audit found no commercial secure-source decision packet"
+    },
+    {
+      "name": "production live blocker matrix",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e28_production_live_blocker_matrix.py",
+      "capability_category": "production blocker matrix",
+      "current_status": "new_missing_wheel_built",
+      "what_it_already_supports": [
+        "blocker matrix with automation/owner route"
+      ],
+      "what_it_lacks": [
+        "does not resolve blockers"
+      ],
+      "tests_present_or_absent": "tests/office/test_e28_production_live_blocker_matrix.py",
+      "reuse_decision": "build_missing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": false,
+      "new_wheel_justification": "audit found no E28 blocker matrix"
+    },
+    {
+      "name": "evidence vs live tradeoff",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e28_evidence_vs_live_tradeoff.py",
+      "capability_category": "revenue tradeoff",
+      "current_status": "new_missing_wheel_built",
+      "what_it_already_supports": [
+        "scores live config vs evidence/offer/target routes"
+      ],
+      "what_it_lacks": [
+        "does not contact market"
+      ],
+      "tests_present_or_absent": "tests/office/test_e28_evidence_vs_live_tradeoff.py",
+      "reuse_decision": "build_missing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": false,
+      "new_wheel_justification": "audit found no CEO-KG revenue tradeoff gate"
+    },
+    {
+      "name": "Y-star-gov CIEU/CZL",
+      "repo": "Y-star-gov",
+      "path": "README.md",
+      "capability_category": "governance/audit",
+      "current_status": "canonical_read_only",
+      "what_it_already_supports": [
+        "governance closure semantics"
+      ],
+      "what_it_lacks": [
+        "not mutated"
+      ],
+      "tests_present_or_absent": "repo tests present",
+      "reuse_decision": "reuse_existing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": true,
+      "new_wheel_justification": "read-only alignment source"
+    },
+    {
+      "name": "Y-star-gov governance checks",
+      "repo": "Y-star-gov",
+      "path": "docs/gov",
+      "capability_category": "governance check",
+      "current_status": "canonical_read_only",
+      "what_it_already_supports": [
+        "check/enforce vocabulary"
+      ],
+      "what_it_lacks": [
+        "not provider config"
+      ],
+      "tests_present_or_absent": "search evidence",
+      "reuse_decision": "reuse_existing",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": true,
+      "new_wheel_justification": "read-only alignment source"
+    },
+    {
+      "name": "ystar-company sales history",
+      "repo": "ystar-company",
+      "path": "sales/customer_pipeline.md",
+      "capability_category": "historical commercial asset",
+      "current_status": "source_only",
+      "what_it_already_supports": [
+        "historical commercial context"
+      ],
+      "what_it_lacks": [
+        "not production live config"
+      ],
+      "tests_present_or_absent": "unknown",
+      "reuse_decision": "left_untouched",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": true,
+      "new_wheel_justification": "read-only historical context"
+    },
+    {
+      "name": "ystar-company offer history",
+      "repo": "ystar-company",
+      "path": "offers",
+      "capability_category": "historical offer asset",
+      "current_status": "source_only",
+      "what_it_already_supports": [
+        "historical offer context"
+      ],
+      "what_it_lacks": [
+        "not a live gate"
+      ],
+      "tests_present_or_absent": "unknown",
+      "reuse_decision": "left_untouched",
+      "needs_wrapper": false,
+      "needs_extension": false,
+      "left_untouched": true,
+      "new_wheel_justification": "read-only historical context"
+    }
+  ],
+  "new_wheel_creation_rule_satisfied": true,
+  "gov_mcp_modification_needed": false,
+  "external_action_executed": false
+}

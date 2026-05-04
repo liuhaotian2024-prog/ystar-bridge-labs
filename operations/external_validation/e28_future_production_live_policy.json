@@ -1,0 +1,35 @@
+{
+  "artifact_id": "e28_future_production_live_policy",
+  "every_future_production_live_milestone_must_start_with": [
+    "existing-wheel audit",
+    "duplicate/overlap map",
+    "reuse/wrap/extend/build decision",
+    "canonical route registry update",
+    "explicit new-wheel justification",
+    "ecosystem alignment proof"
+  ],
+  "future_production_live_configuration_or_canary_requirements": [
+    "CEO KG selected route",
+    "dry-run history",
+    "sandbox history",
+    "live-test gate result",
+    "provider category decision",
+    "secure credential-source contract",
+    "no committed secrets proof",
+    "production persistent idempotency readiness",
+    "kill switch state",
+    "suppression state",
+    "compliance state",
+    "rate-limit budget",
+    "production live receipt writer readiness",
+    "provider live tests",
+    "risk-tier owner approval check only if required by risk",
+    "abort criteria",
+    "post-canary feedback import path",
+    "CEO KG feedback ingestion",
+    "CZL/audit closure",
+    "ecosystem alignment proof"
+  ],
+  "owner_manual_send_default_allowed": false,
+  "external_action_executed": false
+}

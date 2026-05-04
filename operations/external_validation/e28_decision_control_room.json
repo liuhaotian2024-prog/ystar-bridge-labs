@@ -1,0 +1,536 @@
+{
+  "artifact_id": "e28_decision_control_room",
+  "control_room_type": "production_live_configuration_decision_gate_with_ceo_kg_revenue_tradeoff",
+  "existing_wheel_audit_completed_first": true,
+  "existing_wheels_found": 31,
+  "reused_wheels": 16,
+  "wrapped_or_extended_wheels": 8,
+  "newly_built_wheels": 5,
+  "duplicate_conflict_clusters": 11,
+  "all_new_wheels_have_justification": true,
+  "ceo_kg_selected_path": "rev_path_readiness_review_ai_consultancies",
+  "production_live_decision_gate": {
+    "artifact_id": "e28_production_live_decision_gate",
+    "selected_revenue_path": "rev_path_readiness_review_ai_consultancies",
+    "decision": "proceed_to_secure_production_config_preparation",
+    "recommended_route": "proceed_to_secure_production_config_preparation",
+    "production_live_config_preparation_recommended": true,
+    "evidence_expansion_recommended": true,
+    "offer_revision_recommended": false,
+    "target_rebuild_recommended": false,
+    "provider_selection_research_needed": false,
+    "selected_provider_category": "email_provider_adapter",
+    "production_live_ready": false,
+    "production_live_enabled": false,
+    "canary_execution_allowed": false,
+    "production_live_receipt_count": 0,
+    "decision_basis": [
+      "live_test_gate_ready",
+      "sandbox_history_present",
+      "dry_run_history_present",
+      "selected_revenue_path_has_shortest_cash_path",
+      "production_live_blocked_by_design",
+      "real_feedback_absent"
+    ],
+    "no_real_external_action_occurred": true,
+    "external_action_executed": false
+  },
+  "provider_category_comparison": {
+    "artifact_id": "e28_provider_category_comparison",
+    "selected_revenue_path": "rev_path_readiness_review_ai_consultancies",
+    "selected_provider_category": "email_provider_adapter",
+    "selected_provider_category_reason": "Best fit for one low-risk outbound canary against the selected readiness-review revenue path while preserving idempotency, rate-limit, suppression, and receipt boundaries.",
+    "rejected_categories": [
+      "crm_outreach_provider_adapter",
+      "linkedin_or_manual_social_adapter",
+      "website_contact_form_adapter",
+      "internal_notification_only_adapter"
+    ],
+    "provider_uncertainty": "medium",
+    "provider_selection_research_needed": false,
+    "api_calls_made": false,
+    "login_required": false,
+    "credentials_required_now": false,
+    "categories": [
+      {
+        "provider_category": "email_provider_adapter",
+        "fit_with_selected_revenue_path": "high",
+        "risk_tier": "T2_low_medium_limited_outbound",
+        "expected_deliverability_execution_feasibility": "high_after_secure_config",
+        "compliance_burden": "medium",
+        "credential_burden": "medium",
+        "rate_limit_burden": "low_for_one_action_canary",
+        "idempotency_support": "required_and_supported_by_contract",
+        "receipt_support": "production_live_receipt_boundary_ready",
+        "rollback_reversal_possibility": "limited; suppress future follow-up and record outcome",
+        "testability": "high_with_live-test_and_provider_live_tests",
+        "owner_approval_need_by_risk": false,
+        "engineering_effort": "medium",
+        "shortest_cash_path_contribution": 8,
+        "decision": "selected_category_for_future_config_if_owner_chooses_live_path"
+      },
+      {
+        "provider_category": "crm_outreach_provider_adapter",
+        "fit_with_selected_revenue_path": "medium",
+        "risk_tier": "T3_medium_risk_requires_strict_limits",
+        "expected_deliverability_execution_feasibility": "medium",
+        "compliance_burden": "medium_high",
+        "credential_burden": "high",
+        "rate_limit_burden": "medium",
+        "idempotency_support": "provider_dependent",
+        "receipt_support": "requires adapter mapping",
+        "rollback_reversal_possibility": "medium via CRM state",
+        "testability": "medium",
+        "owner_approval_need_by_risk": false,
+        "engineering_effort": "high",
+        "shortest_cash_path_contribution": 5,
+        "decision": "rejected_for_now_too_heavy_for_one_action_canary"
+      },
+      {
+        "provider_category": "linkedin_or_manual_social_adapter",
+        "fit_with_selected_revenue_path": "low",
+        "risk_tier": "T4_high_risk_owner_approval_required",
+        "expected_deliverability_execution_feasibility": "low_without_login_or_policy",
+        "compliance_burden": "high",
+        "credential_burden": "high",
+        "rate_limit_burden": "high",
+        "idempotency_support": "unclear",
+        "receipt_support": "unclear",
+        "rollback_reversal_possibility": "low",
+        "testability": "low",
+        "owner_approval_need_by_risk": true,
+        "engineering_effort": "high",
+        "shortest_cash_path_contribution": 2,
+        "decision": "rejected_no_login_social_path"
+      },
+      {
+        "provider_category": "website_contact_form_adapter",
+        "fit_with_selected_revenue_path": "medium_low",
+        "risk_tier": "T3_medium_risk_requires_strict_limits",
+        "expected_deliverability_execution_feasibility": "low_due_to_forms_and_anti_abuse",
+        "compliance_burden": "high",
+        "credential_burden": "low",
+        "rate_limit_burden": "high",
+        "idempotency_support": "hard",
+        "receipt_support": "hard_without_submission",
+        "rollback_reversal_possibility": "low",
+        "testability": "low",
+        "owner_approval_need_by_risk": false,
+        "engineering_effort": "high",
+        "shortest_cash_path_contribution": 3,
+        "decision": "rejected_submit_form_boundary"
+      },
+      {
+        "provider_category": "internal_notification_only_adapter",
+        "fit_with_selected_revenue_path": "low_for_market_signal",
+        "risk_tier": "T0_internal_only_no_external_effect",
+        "expected_deliverability_execution_feasibility": "high",
+        "compliance_burden": "low",
+        "credential_burden": "low",
+        "rate_limit_burden": "low",
+        "idempotency_support": "high",
+        "receipt_support": "internal_only",
+        "rollback_reversal_possibility": "high",
+        "testability": "high",
+        "owner_approval_need_by_risk": false,
+        "engineering_effort": "low",
+        "shortest_cash_path_contribution": 1,
+        "decision": "rejected_already_covered_by_dry_run_sandbox"
+      },
+      {
+        "provider_category": "no_provider_evidence_expansion_path",
+        "fit_with_selected_revenue_path": "medium_high",
+        "risk_tier": "T0_internal_only_no_external_effect",
+        "expected_deliverability_execution_feasibility": "high",
+        "compliance_burden": "low",
+        "credential_burden": "none",
+        "rate_limit_burden": "none",
+        "idempotency_support": "not_applicable",
+        "receipt_support": "internal evidence receipt",
+        "rollback_reversal_possibility": "high",
+        "testability": "high",
+        "owner_approval_need_by_risk": false,
+        "engineering_effort": "low",
+        "shortest_cash_path_contribution": 6,
+        "decision": "backup_route_if_owner_defers_production_config"
+      }
+    ],
+    "external_action_executed": false
+  },
+  "secure_credential_source_contract": {
+    "artifact_id": "e28_secure_credential_source_contract",
+    "config_contract_ready": true,
+    "supported_source_types": [
+      "environment_variable_names_only",
+      "local_env_file_path_contract",
+      "external_secret_manager_placeholder",
+      "no_credentials_configured",
+      "owner_secure_setup_required_later",
+      "CI/test_fake_credentials_only"
+    ],
+    "recommended_source_type_for_future": "environment_variable_names_only_or_external_secret_manager_placeholder",
+    "required_credential_variable_names": [
+      "YSTAR_OUTBOUND_PROVIDER_API_KEY"
+    ],
+    "credential_values_committed": false,
+    "credentials_committed": false,
+    "tokens_cookies_key_files_committed": false,
+    "production_credentials_configured": false,
+    "secure_secret_source_not_configured": true,
+    "test_fake_credentials_available": true,
+    "production_credentials_absent_by_design": true,
+    "owner_secret_input_requested": false,
+    "owner_shell_commands_requested": false,
+    "production_live_remains_blocked_until_secure_setup": true,
+    "external_action_executed": false
+  },
+  "production_live_blocker_matrix": {
+    "artifact_id": "e28_production_live_blocker_matrix",
+    "production_live_ready": false,
+    "production_live_enabled": false,
+    "production_live_receipt_count": 0,
+    "blocked_count": 8,
+    "partial_count": 1,
+    "ready_count": 4,
+    "primary_blockers": [
+      "production_live_enabled_false",
+      "production_credentials_absent_by_design",
+      "production_persistent_idempotency_not_configured",
+      "production_kill_switch_default_block",
+      "production_live_tests_not_configured",
+      "real_feedback_evidence_absent"
+    ],
+    "blockers": [
+      {
+        "blocker": "production_live_enabled",
+        "status": "blocked",
+        "source_evidence": "operations/external_validation/e27_live_readiness_validator_v2.json",
+        "required_resolution": "configure production live flag only in a future approved milestone",
+        "resolution_can_be_automated_by_agent": true,
+        "owner_approval_required_by_risk_or_security": "security_decision_required_later",
+        "future_milestone_requirement": "future_milestone_required"
+      },
+      {
+        "blocker": "production_credential_source",
+        "status": "blocked",
+        "source_evidence": "operations/external_validation/e28_secure_credential_source_contract.json",
+        "required_resolution": "configure secure secret source outside committed values",
+        "resolution_can_be_automated_by_agent": false,
+        "owner_approval_required_by_risk_or_security": "owner_secure_setup_required_later",
+        "future_milestone_requirement": "future_milestone_required"
+      },
+      {
+        "blocker": "provider_production_config",
+        "status": "blocked",
+        "source_evidence": "operations/external_validation/e28_provider_category_comparison.json",
+        "required_resolution": "select provider and configure production adapter category",
+        "resolution_can_be_automated_by_agent": true,
+        "owner_approval_required_by_risk_or_security": "owner_security_decision_later",
+        "future_milestone_requirement": "future_milestone_required"
+      },
+      {
+        "blocker": "provider_live_tests",
+        "status": "blocked",
+        "source_evidence": "operations/external_validation/e27_live_readiness_validator_v2.json",
+        "required_resolution": "add provider live tests without contacting customers",
+        "resolution_can_be_automated_by_agent": true,
+        "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+        "future_milestone_requirement": "future_milestone_required"
+      },
+      {
+        "blocker": "production_persistent_idempotency",
+        "status": "blocked",
+        "source_evidence": "operations/external_validation/e27_persistent_idempotency_test_gate.json",
+        "required_resolution": "configure production durable store",
+        "resolution_can_be_automated_by_agent": true,
+        "owner_approval_required_by_risk_or_security": "owner_security_decision_later",
+        "future_milestone_requirement": "future_milestone_required"
+      },
+      {
+        "blocker": "kill_switch_production_clear",
+        "status": "blocked",
+        "source_evidence": "operations/external_validation/e27_kill_switch_live_test_gate.json",
+        "required_resolution": "explicit production kill switch clear for canary",
+        "resolution_can_be_automated_by_agent": true,
+        "owner_approval_required_by_risk_or_security": "owner_security_decision_later",
+        "future_milestone_requirement": "future_milestone_required"
+      },
+      {
+        "blocker": "suppression_clear",
+        "status": "ready_for_test_gate",
+        "source_evidence": "operations/external_validation/e23_suppression_registry.json",
+        "required_resolution": "connect production suppression source before live",
+        "resolution_can_be_automated_by_agent": true,
+        "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+        "future_milestone_requirement": "future_milestone_required"
+      },
+      {
+        "blocker": "compliance_clear",
+        "status": "ready_for_test_gate",
+        "source_evidence": "operations/external_validation/e23_compliance_registry.json",
+        "required_resolution": "connect production compliance source before live",
+        "resolution_can_be_automated_by_agent": true,
+        "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+        "future_milestone_requirement": "future_milestone_required"
+      },
+      {
+        "blocker": "rate_limit_budget",
+        "status": "blocked",
+        "source_evidence": "operations/external_validation/e26_one_action_canary_plan.json",
+        "required_resolution": "configure one-action production rate-limit budget",
+        "resolution_can_be_automated_by_agent": true,
+        "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+        "future_milestone_requirement": "future_milestone_required"
+      },
+      {
+        "blocker": "live_receipt_writer",
+        "status": "blocked",
+        "source_evidence": "gov_mcp/outbound/live_receipts.py",
+        "required_resolution": "activate production live receipt writer only when real external effect occurs",
+        "resolution_can_be_automated_by_agent": true,
+        "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+        "future_milestone_requirement": "future_milestone_required"
+      },
+      {
+        "blocker": "audit_czl_path",
+        "status": "ready",
+        "source_evidence": "operations/external_validation/e27_czl_closure.json",
+        "required_resolution": "reuse CZL closure route",
+        "resolution_can_be_automated_by_agent": true,
+        "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+        "future_milestone_requirement": "ready"
+      },
+      {
+        "blocker": "canary_abort_criteria",
+        "status": "ready",
+        "source_evidence": "operations/external_validation/e27_canary_prerequisite_matrix.json",
+        "required_resolution": "reuse and refine abort criteria",
+        "resolution_can_be_automated_by_agent": true,
+        "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+        "future_milestone_requirement": "ready"
+      },
+      {
+        "blocker": "ceo_kg_route_support",
+        "status": "ready",
+        "source_evidence": "operations/knowledge_graph/e27_ceo_kg_read_model_update.json",
+        "required_resolution": "selected route remains supported",
+        "resolution_can_be_automated_by_agent": true,
+        "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+        "future_milestone_requirement": "ready"
+      },
+      {
+        "blocker": "evidence_sufficiency",
+        "status": "partial",
+        "source_evidence": "operations/external_validation/e24_revenue_path_portfolio_selection.json",
+        "required_resolution": "real feedback evidence still absent",
+        "resolution_can_be_automated_by_agent": true,
+        "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+        "future_milestone_requirement": "evidence_expansion_recommended"
+      },
+      {
+        "blocker": "risk_tier_owner_approval_requirement",
+        "status": "ready",
+        "source_evidence": "operations/external_validation/e27_canary_prerequisite_matrix.json",
+        "required_resolution": "T2 does not require owner approval by risk",
+        "resolution_can_be_automated_by_agent": true,
+        "owner_approval_required_by_risk_or_security": "not_required_by_risk_now",
+        "future_milestone_requirement": "ready"
+      }
+    ],
+    "external_action_executed": false
+  },
+  "evidence_vs_live_tradeoff": {
+    "artifact_id": "e28_evidence_vs_live_tradeoff",
+    "recommended_route": "proceed_to_secure_production_config_preparation",
+    "backup_route": "evidence_expansion_first",
+    "rejected_routes": [
+      "offer_revision_first",
+      "target_rebuild_first"
+    ],
+    "blocked_routes": [
+      "keep_production_live_blocked_without_next_learning_action"
+    ],
+    "production_live_config_preparation_recommended": true,
+    "evidence_expansion_recommended": true,
+    "offer_revision_recommended": false,
+    "target_rebuild_recommended": false,
+    "provider_selection_research_needed": false,
+    "rationale": "Proceed to secure production config preparation as the main path, while keeping evidence expansion as the fallback if owner declines secure setup.",
+    "routes": [
+      {
+        "route": "proceed_to_secure_production_config_preparation",
+        "score": 76,
+        "shortest_cash_path": 9,
+        "learning_value": 8,
+        "buyer_pain_evidence": 6,
+        "offer_clarity": 7,
+        "target_quality": 7,
+        "engineering_effort": 5,
+        "security_risk": 5,
+        "compliance_risk": 5,
+        "owner_burden": 4,
+        "time_to_signal": 8,
+        "strategic_compounding_value": 8,
+        "decision": "recommended",
+        "rationale": "Live-test and sandbox gates are ready; one carefully scoped email-provider config path is now the shortest route to real feedback, while production remains disabled until secure setup."
+      },
+      {
+        "route": "evidence_expansion_first",
+        "score": 70,
+        "shortest_cash_path": 6,
+        "learning_value": 7,
+        "buyer_pain_evidence": 8,
+        "offer_clarity": 6,
+        "target_quality": 7,
+        "engineering_effort": 8,
+        "security_risk": 9,
+        "compliance_risk": 8,
+        "owner_burden": 8,
+        "time_to_signal": 6,
+        "strategic_compounding_value": 6,
+        "decision": "backup",
+        "rationale": "If owner defers production credential setup, evidence expansion is the next best no-external-effect route."
+      },
+      {
+        "route": "offer_revision_first",
+        "score": 58,
+        "shortest_cash_path": 5,
+        "learning_value": 5,
+        "buyer_pain_evidence": 5,
+        "offer_clarity": 8,
+        "target_quality": 6,
+        "engineering_effort": 8,
+        "security_risk": 9,
+        "compliance_risk": 8,
+        "owner_burden": 8,
+        "time_to_signal": 5,
+        "strategic_compounding_value": 5,
+        "decision": "rejected_for_now",
+        "rationale": "Offer is good enough for one canary; revision can wait unless evidence expansion contradicts the pain thesis."
+      },
+      {
+        "route": "target_rebuild_first",
+        "score": 52,
+        "shortest_cash_path": 4,
+        "learning_value": 5,
+        "buyer_pain_evidence": 5,
+        "offer_clarity": 6,
+        "target_quality": 8,
+        "engineering_effort": 7,
+        "security_risk": 9,
+        "compliance_risk": 8,
+        "owner_burden": 7,
+        "time_to_signal": 4,
+        "strategic_compounding_value": 5,
+        "decision": "rejected_for_now",
+        "rationale": "Current route has enough target grounding for a future one-action canary; rebuild is not the current bottleneck."
+      },
+      {
+        "route": "keep_production_live_blocked",
+        "score": 48,
+        "shortest_cash_path": 2,
+        "learning_value": 3,
+        "buyer_pain_evidence": 6,
+        "offer_clarity": 7,
+        "target_quality": 7,
+        "engineering_effort": 9,
+        "security_risk": 10,
+        "compliance_risk": 10,
+        "owner_burden": 9,
+        "time_to_signal": 2,
+        "strategic_compounding_value": 3,
+        "decision": "blocked_route_if_no_secure_setup",
+        "rationale": "Safe but stalls the shortest path to real feedback after live-test readiness."
+      }
+    ],
+    "external_action_executed": false
+  },
+  "canary_prerequisite_refinement": {
+    "artifact_id": "e28_canary_prerequisite_refinement",
+    "selected_revenue_path": "rev_path_readiness_review_ai_consultancies",
+    "selected_candidate_action": "e26_live_canary_readiness_review_ai_consultancy_candidate_1",
+    "provider_category_recommendation": "email_provider_adapter",
+    "credential_source_requirement": "environment_variable_names_only_or_external_secret_manager_placeholder",
+    "production_live_blockers": [
+      "production_live_enabled_false",
+      "production_credentials_absent_by_design",
+      "production_persistent_idempotency_not_configured",
+      "production_kill_switch_default_block",
+      "production_live_tests_not_configured",
+      "real_feedback_evidence_absent"
+    ],
+    "dry_run_history_present": true,
+    "sandbox_history_present": true,
+    "live_test_gate_history_present": true,
+    "persistent_idempotency_status": "live_test_ready_production_not_configured",
+    "kill_switch_status": "production_default_safe_block",
+    "suppression_compliance_status": "clear_for_test_gate_production_source_required",
+    "live_receipt_boundary": "production_live_receipt_requires_real_external_effect_and_all_live_flags",
+    "evidence_status": "sufficient_for_config_decision_but_real_feedback_absent",
+    "offer_status": "sufficient_for_one_action_canary_no_revision_first",
+    "target_status": "sufficient_for_one_action_canary_no_rebuild_first",
+    "abort_criteria": [
+      "production_live_enabled_false",
+      "production_credentials_absent_by_design",
+      "production_persistent_idempotency_not_configured",
+      "production_kill_switch_default_block",
+      "production_live_tests_not_configured",
+      "real_feedback_evidence_absent",
+      "suppression_or_compliance_not_clear"
+    ],
+    "success_criteria": [
+      "secure production config prepared without secrets",
+      "provider live tests configured",
+      "future canary remains one-action bounded"
+    ],
+    "feedback_import_path": "operations/external_validation/e18_batch_feedback_intake_empty.json",
+    "ceo_kg_feedback_ingestion_path": "operations/knowledge_graph/e28_ceo_kg_production_live_feedback.json",
+    "canary_prerequisite_refined": true,
+    "canary_executed": false,
+    "production_live_enabled": false,
+    "production_live_receipt_count": 0,
+    "real_customer_contact": false,
+    "live_ready_action_count": 0,
+    "live_blocked_action_count": 1,
+    "external_action_executed": false
+  },
+  "agent_can_do_autonomously_next": [
+    "prepare non-secret production config checklist",
+    "prepare provider live-test harness plan",
+    "continue evidence expansion if owner defers secure setup"
+  ],
+  "requires_owner_decision_by_security_not_risk": [
+    "whether to proceed with secure production provider setup later"
+  ],
+  "owner_approval_required_by_risk": 0,
+  "owner_manual_send_is_default": false,
+  "recommended_next_milestone": "E29_secure_production_config_preparation_or_evidence_expansion",
+  "ceo_brain_update": {
+    "artifact_id": "e28_ceo_brain_portfolio_update",
+    "selected_revenue_path": "rev_path_readiness_review_ai_consultancies",
+    "production_live_configuration_decision": "proceed_to_secure_production_config_preparation",
+    "provider_category_recommendation": "email_provider_adapter",
+    "strategic_bottleneck": "production live remains disabled pending secure credential source, production persistent idempotency, kill switch clear, live tests, and real feedback evidence",
+    "evidence_vs_live_tradeoff_result": "proceed_to_secure_production_config_preparation",
+    "canary_prerequisite_status": "refined_not_executed",
+    "current_strategic_bottleneck": "production_live_config_preparation_is_commercially_justified_but_live_execution_remains_blocked",
+    "next_decision_horizon": "E29_secure_production_config_preparation_or_owner_defers_to_evidence_expansion",
+    "portfolio": {
+      "production_config_candidate_paths": [
+        "rev_path_readiness_review_ai_consultancies"
+      ],
+      "evidence_needed_paths": [
+        "rev_path_readiness_review_ai_consultancies_real_feedback_evidence"
+      ],
+      "offer_revision_needed_paths": [],
+      "target_rebuild_paths": [],
+      "blocked_no_go_paths": [
+        "production_live_execution_until_E29_prerequisites_pass"
+      ]
+    },
+    "kg_delta_node_count": 7,
+    "kg_delta_edge_count": 9,
+    "external_action_executed": false
+  },
+  "external_action_executed": false
+}

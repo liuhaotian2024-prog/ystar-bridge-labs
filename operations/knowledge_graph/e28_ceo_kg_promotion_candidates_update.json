@@ -1,0 +1,13 @@
+{
+  "artifact_id": "e28_ceo_kg_promotion_candidates_update",
+  "promotion_candidates_count": 1,
+  "promotion_candidates": [
+    {
+      "id": "e28_strategic_learning_candidate",
+      "promotion_status": "working_only",
+      "reason": "Decision recommends secure production config preparation, but production live remains blocked."
+    }
+  ],
+  "canonical_truth_promoted": false,
+  "external_action_executed": false
+}

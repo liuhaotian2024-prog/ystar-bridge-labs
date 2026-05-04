@@ -1,0 +1,28 @@
+{
+  "artifact_id": "e28_repo_modification_decision_packet",
+  "decisions": [
+    {
+      "repo": "gov-mcp",
+      "decision": "read_only_reuse_existing_wheels",
+      "reason": "canonical live config, live-test gate, receipts, idempotency, kill switch, and canary prerequisite wheels already exist",
+      "remote_confirmation_required": false
+    },
+    {
+      "repo": "ystar-bridge-labs",
+      "decision": "modify_and_deliver",
+      "reason": "CEO KG revenue tradeoff and decision control room belong in commercial runtime",
+      "remote_confirmation_required": true
+    },
+    {
+      "repo": "Y-star-gov",
+      "decision": "read_only_no_immediate_mutation",
+      "reason": "governance/CZL semantics align without mutation"
+    },
+    {
+      "repo": "ystar-company",
+      "decision": "read_only_with_future_migration_followup",
+      "reason": "historical assets remain context only"
+    }
+  ],
+  "external_action_executed": false
+}
