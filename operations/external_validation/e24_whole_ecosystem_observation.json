@@ -1,0 +1,124 @@
+{
+  "artifact_id": "e24_whole_ecosystem_observation",
+  "repos_scanned": [
+    {
+      "repo": "ystar-bridge-labs",
+      "root": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+      "exists": true,
+      "head_available": true,
+      "read_only_for_e24": false
+    },
+    {
+      "repo": "gov-mcp",
+      "root": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "exists": true,
+      "head_available": true,
+      "read_only_for_e24": true
+    },
+    {
+      "repo": "Y-star-gov",
+      "root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "exists": true,
+      "head_available": true,
+      "read_only_for_e24": true
+    },
+    {
+      "repo": "ystar-company",
+      "root": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "exists": true,
+      "head_available": true,
+      "read_only_for_e24": true
+    }
+  ],
+  "repos_scanned_count": 4,
+  "local_legacy_ceo_brain_found": true,
+  "local_legacy_ceo_brain_candidates": [
+    "reports/boot_packages/ceo.json",
+    "reports/proposals/charter_amendment_007_ceo_operating_system.md",
+    "reports/proposals/charter_amendment_023_article_11_into_ceo_os.md",
+    "reports/ceo/ceo_runtime_v0.1_spec_20260424.md",
+    "reports/ceo/ecosystem_deep_panorama.md",
+    "reports/ceo/30day_mining_plant_v1_20260415.md",
+    "docs/ceo_heartbeat_integration.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260504_100224_nrem.md"
+  ],
+  "field_counterfactual_mission_projection_mechanisms_found": [
+    "reports/kernel/field_functional_audit_20260423.md",
+    "ystar.bak.20260415_again/governance/counterfactual_engine.py",
+    "ystar-company/field_functional_archaeology/generated/field_functional_concept_map.json",
+    "Y-star-gov/ystar/governance/counterfactual_engine.py"
+  ],
+  "commercial_scoring_offer_target_mechanisms_found": [
+    "office/mission_command/e10_shortest_revenue_path_scorer.py",
+    "office/mission_command/e10_buyer_signal_taxonomy.py",
+    "office/mission_command/e13_paid_signal_readiness.py",
+    "office/mission_command/e13r_offer_revision.py",
+    "office/mission_command/e13r_buyer_pain_evidence.py",
+    "office/mission_command/e14_target_scoring.py",
+    "operations/external_validation/e18_revenue_validation_batch.json",
+    "operations/external_validation/e20_batch_autonomous_reclassification.json",
+    "operations/external_validation/e21_provider_capability_sync.json",
+    "operations/external_validation/e22_dry_run_receipt_ledger.json",
+    "operations/external_validation/e23_batch_reclassification.json",
+    "operations/external_validation/e23_live_readiness_control_room.json"
+  ],
+  "governance_provider_audit_mechanisms_found": [
+    "gov_mcp/outbound/provider_capability.py",
+    "gov_mcp/outbound/provider_adapter.py",
+    "gov_mcp/outbound/provider_guard_stack.py",
+    "gov_mcp/outbound/provider_promotion.py",
+    "gov_mcp/outbound/provider_manifest.py",
+    "gov_mcp/outbound/dry_run_adapter.py",
+    "gov_mcp/outbound/receipts.py",
+    "gov_mcp/outbound/idempotency.py",
+    "ystar/governance/governance_loop.py",
+    "ystar/governance/cieu_store.py",
+    "ystar/governance/czl_protocol.py",
+    "ystar/governance/counterfactual_engine.py",
+    "ystar/governance/router_registry.py",
+    "ystar/governance/boundary_enforcer.py",
+    "ystar/kernel/cieu.py",
+    "governance/role_runtimes/ceo.yaml"
+  ],
+  "historical_company_assets_found": [
+    "l10_2_aiden_ceo_brain_rescue/aiden_ceo_profile.py",
+    "l10_2_aiden_ceo_brain_rescue/aiden_meeting_memory.py",
+    "l7_labs_office_legacy_integration/legacy_repo_inspection/legacy_brain_profile_inventory.json",
+    "field_functional_archaeology/generated/field_functional_concept_map.json",
+    "sales/customer_pipeline.md",
+    "sales/crm/prospect_list_v1.md",
+    "sales/outreach/email_template_v1.md",
+    "sales/first_user_plan.md"
+  ],
+  "stale_duplicate_superseded_assets_found": [
+    "ystar.bak.20260415_again/governance/*",
+    "reports/ceo/* historical CEO OS reports",
+    "ystar-company/l10_2_aiden_ceo_brain_rescue/*",
+    "multiple E17-E23 control rooms now summarized by E24 instead of replaced"
+  ],
+  "missing_critical_wheels": [
+    "strategic_ceo_working_brain",
+    "ceo_knowledge_graph",
+    "legacy_ceo_brain_adapter",
+    "opportunity_field_model",
+    "imagination_counterfactual_path_generator",
+    "innovation_hypothesis_generator",
+    "revenue_path_portfolio_selector",
+    "ceo_to_execution_router",
+    "innovation_backlog",
+    "strategic_memory_promotion_gate",
+    "ecosystem_route_registry"
+  ],
+  "near_term_commercial_leverage": [
+    "48h readiness review remains closest sellable service",
+    "governed outbound dry-run infrastructure is a differentiating productizable capability",
+    "CEO control room can reduce strategy scatter and route next revenue actions"
+  ],
+  "ecosystem_blockers": [
+    "live provider remains disabled",
+    "no real feedback has been imported",
+    "some target evidence remains source-blocked or suppressed",
+    "legacy CEO assets are historical and must not become canonical truth without promotion"
+  ],
+  "external_action_executed": false
+}

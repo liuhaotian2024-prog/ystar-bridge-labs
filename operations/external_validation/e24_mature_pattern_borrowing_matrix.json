@@ -1,0 +1,126 @@
+{
+  "artifact_id": "e24_mature_pattern_borrowing_matrix",
+  "fresh_external_research_performed": false,
+  "basis": "general_known_patterns_non_fresh_local_design_only",
+  "pattern_count": 13,
+  "rows": [
+    {
+      "pattern": "CRM pipeline",
+      "useful_concept": "stage states and owner-facing pipeline board",
+      "what_to_borrow": "stage states and owner-facing pipeline board",
+      "what_not_to_borrow": "heavy CRM ceremony before first signal",
+      "adaptation_to_Y_star": "make it deterministic, source-bound, CZL/audit-aware, and routed through provider/governance gates",
+      "already_covered_by_existing_repo_assets": false,
+      "missing_implementation_need": "E24 CEO KG/control room integration"
+    },
+    {
+      "pattern": "sales qualification",
+      "useful_concept": "explicit pain/authority/budget/urgency criteria",
+      "what_to_borrow": "explicit pain/authority/budget/urgency criteria",
+      "what_not_to_borrow": "opaque qualification scoring",
+      "adaptation_to_Y_star": "make it deterministic, source-bound, CZL/audit-aware, and routed through provider/governance gates",
+      "already_covered_by_existing_repo_assets": false,
+      "missing_implementation_need": "E24 CEO KG/control room integration"
+    },
+    {
+      "pattern": "opportunity solution tree",
+      "useful_concept": "opportunity-to-experiment decomposition",
+      "what_to_borrow": "opportunity-to-experiment decomposition",
+      "what_not_to_borrow": "large product-discovery tree with no execution route",
+      "adaptation_to_Y_star": "make it deterministic, source-bound, CZL/audit-aware, and routed through provider/governance gates",
+      "already_covered_by_existing_repo_assets": false,
+      "missing_implementation_need": "E24 CEO KG/control room integration"
+    },
+    {
+      "pattern": "venture studio thesis portfolio",
+      "useful_concept": "portfolio ranking across bets",
+      "what_to_borrow": "portfolio ranking across bets",
+      "what_not_to_borrow": "spray-and-pray idea generation",
+      "adaptation_to_Y_star": "make it deterministic, source-bound, CZL/audit-aware, and routed through provider/governance gates",
+      "already_covered_by_existing_repo_assets": false,
+      "missing_implementation_need": "E24 CEO KG/control room integration"
+    },
+    {
+      "pattern": "growth loop",
+      "useful_concept": "closed loop between action, feedback, learning, next action",
+      "what_to_borrow": "closed loop between action, feedback, learning, next action",
+      "what_not_to_borrow": "growth metrics without real evidence",
+      "adaptation_to_Y_star": "make it deterministic, source-bound, CZL/audit-aware, and routed through provider/governance gates",
+      "already_covered_by_existing_repo_assets": false,
+      "missing_implementation_need": "E24 CEO KG/control room integration"
+    },
+    {
+      "pattern": "lean experiment loop",
+      "useful_concept": "hypothesis, test, evidence, learning discipline",
+      "what_to_borrow": "hypothesis, test, evidence, learning discipline",
+      "what_not_to_borrow": "declaring validation without customer response",
+      "adaptation_to_Y_star": "make it deterministic, source-bound, CZL/audit-aware, and routed through provider/governance gates",
+      "already_covered_by_existing_repo_assets": false,
+      "missing_implementation_need": "E24 CEO KG/control room integration"
+    },
+    {
+      "pattern": "strategy operating cadence",
+      "useful_concept": "decision horizon and bottleneck review",
+      "what_to_borrow": "decision horizon and bottleneck review",
+      "what_not_to_borrow": "meeting-heavy cadence",
+      "adaptation_to_Y_star": "make it deterministic, source-bound, CZL/audit-aware, and routed through provider/governance gates",
+      "already_covered_by_existing_repo_assets": false,
+      "missing_implementation_need": "E24 CEO KG/control room integration"
+    },
+    {
+      "pattern": "product discovery",
+      "useful_concept": "evidence-bound pain and offer iteration",
+      "what_to_borrow": "evidence-bound pain and offer iteration",
+      "what_not_to_borrow": "fake persona speculation",
+      "adaptation_to_Y_star": "make it deterministic, source-bound, CZL/audit-aware, and routed through provider/governance gates",
+      "already_covered_by_existing_repo_assets": false,
+      "missing_implementation_need": "E24 CEO KG/control room integration"
+    },
+    {
+      "pattern": "agent planning/control loop",
+      "useful_concept": "risk-tiered action routing and receipts",
+      "what_to_borrow": "risk-tiered action routing and receipts",
+      "what_not_to_borrow": "unbounded autonomous execution",
+      "adaptation_to_Y_star": "make it deterministic, source-bound, CZL/audit-aware, and routed through provider/governance gates",
+      "already_covered_by_existing_repo_assets": true,
+      "missing_implementation_need": "E24 CEO KG/control room integration"
+    },
+    {
+      "pattern": "compliance/suppression registry",
+      "useful_concept": "do-not-contact and risk gates",
+      "what_to_borrow": "do-not-contact and risk gates",
+      "what_not_to_borrow": "treat all sends as owner-manual by default",
+      "adaptation_to_Y_star": "make it deterministic, source-bound, CZL/audit-aware, and routed through provider/governance gates",
+      "already_covered_by_existing_repo_assets": true,
+      "missing_implementation_need": "E24 CEO KG/control room integration"
+    },
+    {
+      "pattern": "audit/evidence ledger",
+      "useful_concept": "source-bound claims and receipts",
+      "what_to_borrow": "source-bound claims and receipts",
+      "what_not_to_borrow": "ledger as bureaucracy without route decisions",
+      "adaptation_to_Y_star": "make it deterministic, source-bound, CZL/audit-aware, and routed through provider/governance gates",
+      "already_covered_by_existing_repo_assets": true,
+      "missing_implementation_need": "E24 CEO KG/control room integration"
+    },
+    {
+      "pattern": "knowledge graph read model",
+      "useful_concept": "connected capability/evidence/opportunity graph",
+      "what_to_borrow": "connected capability/evidence/opportunity graph",
+      "what_not_to_borrow": "graph DB complexity before file-backed proof",
+      "adaptation_to_Y_star": "make it deterministic, source-bound, CZL/audit-aware, and routed through provider/governance gates",
+      "already_covered_by_existing_repo_assets": false,
+      "missing_implementation_need": "E24 CEO KG/control room integration"
+    },
+    {
+      "pattern": "memory promotion gate",
+      "useful_concept": "working hypothesis to verified learning route",
+      "what_to_borrow": "working hypothesis to verified learning route",
+      "what_not_to_borrow": "unverified memory writes",
+      "adaptation_to_Y_star": "make it deterministic, source-bound, CZL/audit-aware, and routed through provider/governance gates",
+      "already_covered_by_existing_repo_assets": false,
+      "missing_implementation_need": "E24 CEO KG/control room integration"
+    }
+  ],
+  "external_action_executed": false
+}

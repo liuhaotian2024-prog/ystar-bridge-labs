@@ -1,0 +1,33 @@
+{
+  "artifact_id": "e24_ceo_kg_promotion_candidates",
+  "promotion_candidates_count": 3,
+  "candidates": [
+    {
+      "node_id": "decision_top_path_readiness_review",
+      "promotion_target": "canonical_learning_candidate",
+      "required_evidence_before_promotion": [
+        "real customer response",
+        "paid signal or meeting request",
+        "provider sandbox/live tests if execution claim is made"
+      ],
+      "current_status": "candidate"
+    },
+    {
+      "node_id": "legacy_node_legacy_rule_no_fabrication",
+      "promotion_target": "canonical_policy_candidate",
+      "required_evidence_before_promotion": [
+        "governance route and policy validation"
+      ],
+      "current_status": "canonical_candidate"
+    },
+    {
+      "node_id": "rev_path_governed_outbound_infra_service",
+      "promotion_target": "validated_learning_candidate",
+      "required_evidence_before_promotion": [
+        "buyer interview or paid pilot signal"
+      ],
+      "current_status": "working_hypothesis"
+    }
+  ],
+  "canonical_truth_promoted": false
+}

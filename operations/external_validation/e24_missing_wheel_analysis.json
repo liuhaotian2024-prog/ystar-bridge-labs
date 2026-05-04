@@ -1,0 +1,104 @@
+{
+  "artifact_id": "e24_missing_wheel_analysis",
+  "missing_wheels_identified": 12,
+  "implemented_now_count": 11,
+  "rows": [
+    {
+      "wheel": "strategic_ceo_working_brain",
+      "severity": "critical",
+      "exists_before_E24": false,
+      "E24_should_implement_now": true,
+      "reuse_opportunity": "wrap existing commercial/governance/provider wheels where possible",
+      "risk_of_not_implementing": "future agents keep creating isolated documents or default back to owner/manual paths"
+    },
+    {
+      "wheel": "ceo_knowledge_graph",
+      "severity": "critical",
+      "exists_before_E24": false,
+      "E24_should_implement_now": true,
+      "reuse_opportunity": "wrap existing commercial/governance/provider wheels where possible",
+      "risk_of_not_implementing": "future agents keep creating isolated documents or default back to owner/manual paths"
+    },
+    {
+      "wheel": "legacy_ceo_brain_adapter",
+      "severity": "critical",
+      "exists_before_E24": false,
+      "E24_should_implement_now": true,
+      "reuse_opportunity": "wrap existing commercial/governance/provider wheels where possible",
+      "risk_of_not_implementing": "future agents keep creating isolated documents or default back to owner/manual paths"
+    },
+    {
+      "wheel": "opportunity_field_model",
+      "severity": "high",
+      "exists_before_E24": false,
+      "E24_should_implement_now": true,
+      "reuse_opportunity": "wrap existing commercial/governance/provider wheels where possible",
+      "risk_of_not_implementing": "future agents keep creating isolated documents or default back to owner/manual paths"
+    },
+    {
+      "wheel": "imagination_counterfactual_path_generator",
+      "severity": "high",
+      "exists_before_E24": false,
+      "E24_should_implement_now": true,
+      "reuse_opportunity": "wrap existing commercial/governance/provider wheels where possible",
+      "risk_of_not_implementing": "future agents keep creating isolated documents or default back to owner/manual paths"
+    },
+    {
+      "wheel": "innovation_hypothesis_generator",
+      "severity": "high",
+      "exists_before_E24": false,
+      "E24_should_implement_now": true,
+      "reuse_opportunity": "wrap existing commercial/governance/provider wheels where possible",
+      "risk_of_not_implementing": "future agents keep creating isolated documents or default back to owner/manual paths"
+    },
+    {
+      "wheel": "revenue_path_portfolio_selector",
+      "severity": "high",
+      "exists_before_E24": false,
+      "E24_should_implement_now": true,
+      "reuse_opportunity": "wrap existing commercial/governance/provider wheels where possible",
+      "risk_of_not_implementing": "future agents keep creating isolated documents or default back to owner/manual paths"
+    },
+    {
+      "wheel": "ceo_to_execution_router",
+      "severity": "critical",
+      "exists_before_E24": false,
+      "E24_should_implement_now": true,
+      "reuse_opportunity": "wrap existing commercial/governance/provider wheels where possible",
+      "risk_of_not_implementing": "future agents keep creating isolated documents or default back to owner/manual paths"
+    },
+    {
+      "wheel": "feedback_to_strategy_learning_loop",
+      "severity": "medium",
+      "exists_before_E24": false,
+      "E24_should_implement_now": false,
+      "reuse_opportunity": "wrap existing commercial/governance/provider wheels where possible",
+      "risk_of_not_implementing": "future feedback learning may remain document-only until real feedback exists"
+    },
+    {
+      "wheel": "innovation_backlog",
+      "severity": "medium",
+      "exists_before_E24": false,
+      "E24_should_implement_now": true,
+      "reuse_opportunity": "wrap existing commercial/governance/provider wheels where possible",
+      "risk_of_not_implementing": "future agents keep creating isolated documents or default back to owner/manual paths"
+    },
+    {
+      "wheel": "strategic_memory_promotion_gate",
+      "severity": "critical",
+      "exists_before_E24": false,
+      "E24_should_implement_now": true,
+      "reuse_opportunity": "wrap existing commercial/governance/provider wheels where possible",
+      "risk_of_not_implementing": "future agents keep creating isolated documents or default back to owner/manual paths"
+    },
+    {
+      "wheel": "ecosystem_route_registry",
+      "severity": "critical",
+      "exists_before_E24": false,
+      "E24_should_implement_now": true,
+      "reuse_opportunity": "wrap existing commercial/governance/provider wheels where possible",
+      "risk_of_not_implementing": "future agents keep creating isolated documents or default back to owner/manual paths"
+    }
+  ],
+  "external_action_executed": false
+}

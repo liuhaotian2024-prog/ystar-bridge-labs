@@ -1,0 +1,96 @@
+{
+  "artifact_id": "e24_duplicate_overlap_map",
+  "overlap_cluster_count": 6,
+  "clusters": [
+    {
+      "id": "overlap_legacy_ceo_vs_e24_working_brain",
+      "overlapping_files": [
+        "reports/boot_packages/ceo.json",
+        "reports/proposals/charter_amendment_007_ceo_operating_system.md",
+        "reports/proposals/charter_amendment_023_article_11_into_ceo_os.md",
+        "reports/ceo/ceo_runtime_v0.1_spec_20260424.md",
+        "reports/ceo/ecosystem_deep_panorama.md",
+        "reports/ceo/30day_mining_plant_v1_20260415.md",
+        "docs/ceo_heartbeat_integration.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260504_100224_nrem.md",
+        "operations/external_validation/e24_ceo_brain_state.json"
+      ],
+      "semantic_difference": "legacy assets are historical/seed cognition; E24 brain is current working/shadow commercial state",
+      "canonical_or_router_decision": "E24 routes legacy items through KG and promotion gate",
+      "future_cleanup_needed": false,
+      "risk_of_wrong_use": "stale CEO memory could be mistaken as current strategy"
+    },
+    {
+      "id": "overlap_control_rooms_e17_to_e24",
+      "overlapping_files": [
+        "operations/external_validation/e20_autonomous_control_room.json",
+        "operations/external_validation/e22_autonomous_dry_run_control_room.json",
+        "operations/external_validation/e23_live_readiness_control_room.json",
+        "operations/external_validation/e24_ceo_control_room.json"
+      ],
+      "semantic_difference": "older rooms manage execution slices; E24 summarizes CEO strategy across them",
+      "canonical_or_router_decision": "retain slice rooms, route via E24 control room",
+      "future_cleanup_needed": false,
+      "risk_of_wrong_use": "future agents may optimize one slice instead of revenue path portfolio"
+    },
+    {
+      "id": "overlap_provider_boundary_sync",
+      "overlapping_files": [
+        "gov-mcp/gov_mcp/outbound/provider_manifest.py",
+        "office/mission_command/e21_provider_capability_sync.py",
+        "office/mission_command/e20_provider_capability_detector.py"
+      ],
+      "semantic_difference": "gov-mcp is canonical provider boundary; bridge-labs has read-model/sync logic",
+      "canonical_or_router_decision": "gov-mcp canonical, bridge-labs reads and routes",
+      "future_cleanup_needed": false,
+      "risk_of_wrong_use": "bridge-labs could drift from provider truth if sync is ignored"
+    },
+    {
+      "id": "overlap_governance_old_backup_vs_y_star_gov",
+      "overlapping_files": [
+        "ystar.bak.20260415_again/governance/*",
+        "Y-star-gov/ystar/governance/*"
+      ],
+      "semantic_difference": "backup is archival; Y-star-gov is normative governance layer",
+      "canonical_or_router_decision": "Y-star-gov canonical; backup quarantine/reference only",
+      "future_cleanup_needed": true,
+      "risk_of_wrong_use": "archival code may bypass newer governance semantics"
+    },
+    {
+      "id": "overlap_commercial_scoring_vs_portfolio_selector",
+      "overlapping_files": [
+        "office/mission_command/e10_shortest_revenue_path_scorer.py",
+        "office/mission_command/e10_buyer_signal_taxonomy.py",
+        "office/mission_command/e13_paid_signal_readiness.py",
+        "office/mission_command/e13r_offer_revision.py",
+        "office/mission_command/e13r_buyer_pain_evidence.py",
+        "office/mission_command/e14_target_scoring.py",
+        "office/mission_command/e24_revenue_path_portfolio_selector.py"
+      ],
+      "semantic_difference": "scoring wheels evaluate dimensions; E24 selector composes them into portfolio decision",
+      "canonical_or_router_decision": "reuse existing scoring as inputs",
+      "future_cleanup_needed": false,
+      "risk_of_wrong_use": "single score could dominate strategy without readiness/risk context"
+    },
+    {
+      "id": "overlap_ystar_company_brain_rescue_vs_bridge_labs_ceo_assets",
+      "overlapping_files": [
+        "ystar-company/l10_2_aiden_ceo_brain_rescue/*",
+        "reports/boot_packages/ceo.json",
+        "reports/proposals/charter_amendment_007_ceo_operating_system.md",
+        "reports/proposals/charter_amendment_023_article_11_into_ceo_os.md",
+        "reports/ceo/ceo_runtime_v0.1_spec_20260424.md",
+        "reports/ceo/ecosystem_deep_panorama.md",
+        "reports/ceo/30day_mining_plant_v1_20260415.md",
+        "docs/ceo_heartbeat_integration.md",
+        "reports/ceo/brain_dream_diffs/dream_diff_20260504_100224_nrem.md"
+      ],
+      "semantic_difference": "ystar-company stores older incubated runtime artifacts; bridge-labs stores current milestone artifacts",
+      "canonical_or_router_decision": "E24 adapter imports only source-bound candidates",
+      "future_cleanup_needed": true,
+      "risk_of_wrong_use": "old Aiden runtime packets could be mistaken for current business state"
+    }
+  ],
+  "destructive_refactor_performed": false,
+  "external_action_executed": false
+}

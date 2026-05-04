@@ -1,0 +1,44 @@
+{
+  "artifact_id": "e24_ceo_kg_entity_resolution",
+  "cluster_count": 4,
+  "clusters": [
+    {
+      "canonical_id": "offer_48h_readiness_review",
+      "aliases": [
+        "48h AI Agent Implementation Readiness Review",
+        "readiness review",
+        "implementation readiness review"
+      ],
+      "resolution_rule": "same offer label across E16C0-E24 artifacts"
+    },
+    {
+      "canonical_id": "target_segment_ai_consultancies",
+      "aliases": [
+        "AI consultancies",
+        "AI automation agencies",
+        "AI operations consulting"
+      ],
+      "resolution_rule": "same buyer segment in E18/E23 batch"
+    },
+    {
+      "canonical_id": "capability_gov_mcp_provider_boundary",
+      "aliases": [
+        "provider adapter",
+        "dry-run adapter",
+        "promotion gate",
+        "provider boundary"
+      ],
+      "resolution_rule": "gov-mcp outbound package is canonical provider boundary"
+    },
+    {
+      "canonical_id": "ceo_working_brain_state",
+      "aliases": [
+        "CEO brain",
+        "CEO working state",
+        "shadow brain"
+      ],
+      "resolution_rule": "E24 working state, not legacy/canonical memory"
+    }
+  ],
+  "unresolved_entity_count": 0
+}

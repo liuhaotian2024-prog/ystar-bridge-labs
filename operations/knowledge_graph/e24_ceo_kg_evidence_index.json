@@ -1,0 +1,137 @@
+{
+  "artifact_id": "e24_ceo_kg_evidence_index",
+  "source_path_count": 36,
+  "evidence_bound_node_count": 28,
+  "legacy_derived_node_count": 7,
+  "generated_hypothesis_node_count": 15,
+  "index": {
+    "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs": [
+      "repo_bridge_labs"
+    ],
+    "/Users/haotianliu/.openclaw/workspace/gov-mcp": [
+      "repo_gov_mcp"
+    ],
+    "/Users/haotianliu/.openclaw/workspace/Y-star-gov": [
+      "repo_y_star_gov"
+    ],
+    "/Users/haotianliu/.openclaw/workspace/ystar-company": [
+      "repo_ystar_company"
+    ],
+    "operations/external_validation/e24_ceo_brain_state.json": [
+      "ceo_working_brain_state"
+    ],
+    "operations/knowledge_graph/e24_ceo_kg_nodes.jsonl": [
+      "e24_ceo_kg"
+    ],
+    "operations/knowledge_graph/e24_ceo_kg_edges.jsonl": [
+      "e24_ceo_kg"
+    ],
+    "operations/external_validation/e16c0_selected_one_action_pilot.json": [
+      "offer_48h_readiness_review"
+    ],
+    "operations/external_validation/e18_offer_variant_matrix.json": [
+      "offer_48h_readiness_review",
+      "target_segment_founder_operators"
+    ],
+    "operations/external_validation/e18_revenue_validation_batch.json": [
+      "target_segment_ai_consultancies",
+      "milestone_E18"
+    ],
+    "operations/external_validation/e18_commercial_fit_scores.json": [
+      "buyer_pain_implementation_bottleneck"
+    ],
+    "operations/external_validation/e20_human_intervention_boundary.json": [
+      "buyer_pain_governance_uncertainty"
+    ],
+    "operations/external_validation/e23_compliance_registry.json": [
+      "buyer_pain_governance_uncertainty",
+      "capability_e23_suppression_compliance"
+    ],
+    "operations/external_validation/e22_gov_mcp_dry_run_results.json": [
+      "capability_e22_autonomous_dry_run"
+    ],
+    "operations/external_validation/e23_suppression_registry.json": [
+      "capability_e23_suppression_compliance"
+    ],
+    "/Users/haotianliu/.openclaw/workspace/gov-mcp/gov_mcp/outbound/provider_adapter.py": [
+      "capability_gov_mcp_provider_boundary"
+    ],
+    "/Users/haotianliu/.openclaw/workspace/gov-mcp/gov_mcp/outbound/provider_manifest.py": [
+      "capability_gov_mcp_provider_boundary"
+    ],
+    "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/governance/governance_loop.py": [
+      "capability_y_star_gov_governance"
+    ],
+    "/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/kernel/cieu.py": [
+      "capability_y_star_gov_governance"
+    ],
+    "operations/external_validation/e23_live_provider_enablement_plan.json": [
+      "blocker_live_provider_disabled"
+    ],
+    "operations/external_validation/e23_czl_closure.json": [
+      "blocker_no_real_feedback",
+      "milestone_E23"
+    ],
+    "operations/external_validation/e23_evidence_tightening_evaluation.json": [
+      "blocker_evidence_gap"
+    ],
+    "operations/external_validation/e22_kpi_dry_run_delta.json": [
+      "kpi_dry_run_executed_5"
+    ],
+    "operations/external_validation/e22_czl_closure.json": [
+      "milestone_E22"
+    ],
+    "reports/boot_packages/ceo.json": [
+      "legacy_node_legacy_goal_internal_consolidation",
+      "legacy_node_legacy_rule_no_fabrication"
+    ],
+    "reports/proposals/charter_amendment_007_ceo_operating_system.md": [
+      "legacy_node_legacy_ceo_os_hypothesis"
+    ],
+    "reports/proposals/charter_amendment_023_article_11_into_ceo_os.md": [
+      "legacy_node_legacy_article11_cognition"
+    ],
+    "reports/ceo/ecosystem_deep_panorama.md": [
+      "legacy_node_legacy_ecosystem_panorama"
+    ],
+    "reports/ceo/30day_mining_plant_v1_20260415.md": [
+      "legacy_node_legacy_mining_plant_revenue_frame"
+    ],
+    "docs/ceo_heartbeat_integration.md": [
+      "legacy_node_legacy_ceo_heartbeat"
+    ],
+    "operations/external_validation/e24_commercial_imagination_paths.json": [
+      "rev_path_readiness_review_ai_consultancies",
+      "rev_path_ai_agent_governance_audit",
+      "rev_path_governed_outbound_infra_service",
+      "rev_path_founder_operator_ai_automation_review",
+      "rev_path_paid_diagnostic_product",
+      "rev_path_ceo_agent_control_room_product",
+      "rev_path_provider_adapter_productized_capability"
+    ],
+    "operations/external_validation/e24_innovation_hypotheses.json": [
+      "innovation_governed_outbound_infra",
+      "innovation_ceo_agent_control_room",
+      "innovation_agent_governance_audit",
+      "innovation_paid_readiness_diagnostic",
+      "innovation_provider_promotion_gate",
+      "innovation_field_functional_market_map",
+      "innovation_compliance_safe_agent_ops_runtime",
+      "innovation_y_star_trust_layer"
+    ],
+    "operations/external_validation/e24_revenue_path_portfolio_selection.json": [
+      "decision_top_path_readiness_review"
+    ],
+    "operations/external_validation/e24_ceo_execution_router.json": [
+      "action_provider_sandbox_plan",
+      "action_evidence_expansion",
+      "action_offer_revision"
+    ],
+    "operations/external_validation/e24_czl_closure.json": [
+      "compliance_constraint_no_fake_evidence"
+    ],
+    "operations/external_validation/e23_suppression_registry_schema.json": [
+      "suppression_rule_do_not_contact"
+    ]
+  }
+}

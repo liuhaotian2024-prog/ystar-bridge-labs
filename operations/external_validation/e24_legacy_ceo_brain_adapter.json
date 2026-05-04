@@ -1,0 +1,166 @@
+{
+  "artifact_id": "e24_legacy_ceo_brain_adapter",
+  "adapter_status": "legacy_assets_routed_into_kg_candidates",
+  "candidate_node_count": 7,
+  "candidate_edge_count": 7,
+  "candidate_nodes": [
+    {
+      "id": "legacy_node_legacy_goal_internal_consolidation",
+      "type": "LegacyBrainAsset",
+      "label": "historical internal consolidation phase",
+      "source_paths": [
+        "reports/boot_packages/ceo.json"
+      ],
+      "truth_status": "historical",
+      "evidence_status": "source_only",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E24",
+      "reuse_decision": "route"
+    },
+    {
+      "id": "legacy_node_legacy_rule_no_fabrication",
+      "type": "LegacyBrainAsset",
+      "label": "zero fabrication as CEO operating constraint",
+      "source_paths": [
+        "reports/boot_packages/ceo.json"
+      ],
+      "truth_status": "observed",
+      "evidence_status": "evidence_bound",
+      "promotion_status": "canonical_candidate",
+      "created_by_milestone": "E24",
+      "reuse_decision": "reuse"
+    },
+    {
+      "id": "legacy_node_legacy_ceo_os_hypothesis",
+      "type": "LegacyBrainAsset",
+      "label": "CEO OS should coordinate roles and strategy",
+      "source_paths": [
+        "reports/proposals/charter_amendment_007_ceo_operating_system.md"
+      ],
+      "truth_status": "hypothesis",
+      "evidence_status": "source_only",
+      "promotion_status": "candidate",
+      "created_by_milestone": "E24",
+      "reuse_decision": "route"
+    },
+    {
+      "id": "legacy_node_legacy_article11_cognition",
+      "type": "LegacyBrainAsset",
+      "label": "Article 11 layered cognition as strategic thinking pattern",
+      "source_paths": [
+        "reports/proposals/charter_amendment_023_article_11_into_ceo_os.md"
+      ],
+      "truth_status": "historical",
+      "evidence_status": "source_only",
+      "promotion_status": "candidate",
+      "created_by_milestone": "E24",
+      "reuse_decision": "route"
+    },
+    {
+      "id": "legacy_node_legacy_ecosystem_panorama",
+      "type": "LegacyBrainAsset",
+      "label": "whole ecosystem panorama need",
+      "source_paths": [
+        "reports/ceo/ecosystem_deep_panorama.md"
+      ],
+      "truth_status": "historical",
+      "evidence_status": "source_only",
+      "promotion_status": "candidate",
+      "created_by_milestone": "E24",
+      "reuse_decision": "reuse"
+    },
+    {
+      "id": "legacy_node_legacy_mining_plant_revenue_frame",
+      "type": "LegacyBrainAsset",
+      "label": "mining plant / revenue-machine metaphor",
+      "source_paths": [
+        "reports/ceo/30day_mining_plant_v1_20260415.md"
+      ],
+      "truth_status": "hypothesis",
+      "evidence_status": "unsupported",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E24",
+      "reuse_decision": "needs_review"
+    },
+    {
+      "id": "legacy_node_legacy_ceo_heartbeat",
+      "type": "LegacyBrainAsset",
+      "label": "CEO heartbeat integration concept",
+      "source_paths": [
+        "docs/ceo_heartbeat_integration.md"
+      ],
+      "truth_status": "hypothesis",
+      "evidence_status": "source_only",
+      "promotion_status": "candidate",
+      "created_by_milestone": "E24",
+      "reuse_decision": "route"
+    }
+  ],
+  "candidate_edges": [
+    {
+      "id": "edge_legacy_node_legacy_goal_internal_consolidation_to_ceo_working_brain",
+      "source_node_id": "legacy_node_legacy_goal_internal_consolidation",
+      "target_node_id": "ceo_working_brain_state",
+      "relationship": "routes_to",
+      "evidence_path": "reports/boot_packages/ceo.json",
+      "confidence_basis": "legacy_source",
+      "notes": "Imported only as working/candidate knowledge."
+    },
+    {
+      "id": "edge_legacy_node_legacy_rule_no_fabrication_to_ceo_working_brain",
+      "source_node_id": "legacy_node_legacy_rule_no_fabrication",
+      "target_node_id": "ceo_working_brain_state",
+      "relationship": "routes_to",
+      "evidence_path": "reports/boot_packages/ceo.json",
+      "confidence_basis": "legacy_source",
+      "notes": "Imported only as working/candidate knowledge."
+    },
+    {
+      "id": "edge_legacy_node_legacy_ceo_os_hypothesis_to_ceo_working_brain",
+      "source_node_id": "legacy_node_legacy_ceo_os_hypothesis",
+      "target_node_id": "ceo_working_brain_state",
+      "relationship": "routes_to",
+      "evidence_path": "reports/proposals/charter_amendment_007_ceo_operating_system.md",
+      "confidence_basis": "legacy_source",
+      "notes": "Imported only as working/candidate knowledge."
+    },
+    {
+      "id": "edge_legacy_node_legacy_article11_cognition_to_ceo_working_brain",
+      "source_node_id": "legacy_node_legacy_article11_cognition",
+      "target_node_id": "ceo_working_brain_state",
+      "relationship": "routes_to",
+      "evidence_path": "reports/proposals/charter_amendment_023_article_11_into_ceo_os.md",
+      "confidence_basis": "legacy_source",
+      "notes": "Imported only as working/candidate knowledge."
+    },
+    {
+      "id": "edge_legacy_node_legacy_ecosystem_panorama_to_ceo_working_brain",
+      "source_node_id": "legacy_node_legacy_ecosystem_panorama",
+      "target_node_id": "ceo_working_brain_state",
+      "relationship": "routes_to",
+      "evidence_path": "reports/ceo/ecosystem_deep_panorama.md",
+      "confidence_basis": "legacy_source",
+      "notes": "Imported only as working/candidate knowledge."
+    },
+    {
+      "id": "edge_legacy_node_legacy_mining_plant_revenue_frame_to_ceo_working_brain",
+      "source_node_id": "legacy_node_legacy_mining_plant_revenue_frame",
+      "target_node_id": "ceo_working_brain_state",
+      "relationship": "routes_to",
+      "evidence_path": "reports/ceo/30day_mining_plant_v1_20260415.md",
+      "confidence_basis": "legacy_source",
+      "notes": "Imported only as working/candidate knowledge."
+    },
+    {
+      "id": "edge_legacy_node_legacy_ceo_heartbeat_to_ceo_working_brain",
+      "source_node_id": "legacy_node_legacy_ceo_heartbeat",
+      "target_node_id": "ceo_working_brain_state",
+      "relationship": "routes_to",
+      "evidence_path": "docs/ceo_heartbeat_integration.md",
+      "confidence_basis": "legacy_source",
+      "notes": "Imported only as working/candidate knowledge."
+    }
+  ],
+  "direct_canonical_write_performed": false,
+  "external_action_executed": false
+}

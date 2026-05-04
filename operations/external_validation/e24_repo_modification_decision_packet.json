@@ -1,0 +1,27 @@
+{
+  "artifact_id": "e24_repo_modification_decision_packet",
+  "decisions": [
+    {
+      "repo": "ystar-bridge-labs",
+      "decision": "bridge_labs_update_only",
+      "reason": "E24 runtime is commercial operating layer and writable primary repo"
+    },
+    {
+      "repo": "gov-mcp",
+      "decision": "no_change_needed",
+      "reason": "provider boundary sufficient for read-only E24 route registry; live remains disabled"
+    },
+    {
+      "repo": "Y-star-gov",
+      "decision": "no_change_needed",
+      "reason": "normative governance read-only alignment sufficient"
+    },
+    {
+      "repo": "ystar-company",
+      "decision": "future_ystar_company_migration_required",
+      "reason": "historical CEO/sales assets should be migrated only through future explicit route"
+    }
+  ],
+  "cross_repo_mutation_performed": false,
+  "external_action_executed": false
+}

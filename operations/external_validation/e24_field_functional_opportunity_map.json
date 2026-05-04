@@ -1,0 +1,202 @@
+{
+  "artifact_id": "e24_field_functional_opportunity_map",
+  "opportunity_nodes_count": 7,
+  "ranked_opportunities": [
+    {
+      "opportunity_id": "rev_path_readiness_review_ai_consultancies",
+      "rank": 1,
+      "capabilities": [
+        "E18 batch runtime",
+        "E22 dry-run execution",
+        "E23 suppression/compliance gates"
+      ],
+      "offer": "48h AI Agent Implementation Readiness Review",
+      "target_segment": "AI operations consultancies and automation agencies",
+      "buyer_pain": "implementation bottlenecks, agent reliability questions, governance/compliance uncertainty",
+      "evidence_strength": "medium",
+      "execution_readiness": 9,
+      "provider_capability": "dry_run_available_live_disabled",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "compliance_constraints": [
+        "no fake evidence",
+        "suppression registry",
+        "provider disabled until tested"
+      ],
+      "suppression_constraints": [
+        "suppression registry must pass"
+      ],
+      "potential_revenue_path": "closest existing offer, existing target set, low owner burden, short path to paid diagnostic",
+      "expected_learning_value": "high",
+      "shortest_cash_path_relevance": "high",
+      "strategic_compounding_value": "medium",
+      "score": 14
+    },
+    {
+      "opportunity_id": "rev_path_ai_agent_governance_audit",
+      "rank": 2,
+      "capabilities": [
+        "Y-star-gov governance concepts",
+        "gov-mcp provider boundary",
+        "CZL receipts"
+      ],
+      "offer": "AI Agent Governance and Safety Audit",
+      "target_segment": "agent-building startups and AI consultancies",
+      "buyer_pain": "fear of unsafe autonomy, auditability gaps, customer trust concerns",
+      "evidence_strength": "medium",
+      "execution_readiness": 6,
+      "provider_capability": "dry_run_available_live_disabled",
+      "risk_tier": "T1_low_risk_reversible_external",
+      "compliance_constraints": [
+        "do not overclaim compliance",
+        "bind all claims to repo evidence"
+      ],
+      "suppression_constraints": [
+        "suppression registry must pass"
+      ],
+      "potential_revenue_path": "clear differentiation from generic AI automation consulting",
+      "expected_learning_value": "high",
+      "shortest_cash_path_relevance": "medium",
+      "strategic_compounding_value": "medium",
+      "score": 12
+    },
+    {
+      "opportunity_id": "rev_path_governed_outbound_infra_service",
+      "rank": 3,
+      "capabilities": [
+        "E20 risk tiers",
+        "E21 provider foundation",
+        "E22 dry-run receipts",
+        "E23 compliance registry"
+      ],
+      "offer": "Governed Autonomous Outbound Dry-Run and Compliance Control Plane",
+      "target_segment": "founder-led B2B AI teams",
+      "buyer_pain": "need revenue validation without spam risk or founder operations drag",
+      "evidence_strength": "medium",
+      "execution_readiness": 7,
+      "provider_capability": "dry_run_available_live_disabled",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "compliance_constraints": [
+        "live sends remain blocked",
+        "no fake customer outcomes"
+      ],
+      "suppression_constraints": [
+        "suppression registry must pass"
+      ],
+      "potential_revenue_path": "turns internal execution infrastructure into sellable capability",
+      "expected_learning_value": "high",
+      "shortest_cash_path_relevance": "medium",
+      "strategic_compounding_value": "high",
+      "score": 12
+    },
+    {
+      "opportunity_id": "rev_path_founder_operator_ai_automation_review",
+      "rank": 4,
+      "capabilities": [
+        "E10 scoring",
+        "E17/E18 message packages"
+      ],
+      "offer": "Founder/Operator AI Automation Review",
+      "target_segment": "founder/operators and small agencies",
+      "buyer_pain": "too many AI ideas, unclear ROI, no safe implementation order",
+      "evidence_strength": "low_medium",
+      "execution_readiness": 6,
+      "provider_capability": "dry_run_available_live_disabled",
+      "risk_tier": "T1_low_risk_reversible_external",
+      "compliance_constraints": [
+        "avoid broad spam",
+        "target evidence required"
+      ],
+      "suppression_constraints": [
+        "suppression registry must pass"
+      ],
+      "potential_revenue_path": "broad, understandable pain and straightforward consulting purchase",
+      "expected_learning_value": "high",
+      "shortest_cash_path_relevance": "medium",
+      "strategic_compounding_value": "medium",
+      "score": 12
+    },
+    {
+      "opportunity_id": "rev_path_ceo_agent_control_room_product",
+      "rank": 5,
+      "capabilities": [
+        "E24 CEO KG",
+        "route registry",
+        "execution router"
+      ],
+      "offer": "CEO-Agent Commercial Intelligence Control Room",
+      "target_segment": "technical founders building AI-agent companies",
+      "buyer_pain": "strategy scattered across docs, agents, and experiments with no execution route",
+      "evidence_strength": "low_medium",
+      "execution_readiness": 6,
+      "provider_capability": "dry_run_available_live_disabled",
+      "risk_tier": "T1_low_risk_reversible_external",
+      "compliance_constraints": [
+        "do not claim proven revenue",
+        "mark hypotheses"
+      ],
+      "suppression_constraints": [
+        "suppression registry must pass"
+      ],
+      "potential_revenue_path": "dogfoodable and differentiated by governance/execution routing",
+      "expected_learning_value": "medium",
+      "shortest_cash_path_relevance": "medium",
+      "strategic_compounding_value": "high",
+      "score": 12
+    },
+    {
+      "opportunity_id": "rev_path_provider_adapter_productized_capability",
+      "rank": 6,
+      "capabilities": [
+        "gov-mcp provider foundation",
+        "E23 live-readiness gate"
+      ],
+      "offer": "Dry-Run-to-Live Provider Promotion Gate",
+      "target_segment": "AI agent platforms needing safe outbound execution",
+      "buyer_pain": "moving from simulations to live execution safely",
+      "evidence_strength": "low_medium",
+      "execution_readiness": 6,
+      "provider_capability": "dry_run_available_live_disabled",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "compliance_constraints": [
+        "no live claims",
+        "no credential handling"
+      ],
+      "suppression_constraints": [
+        "suppression registry must pass"
+      ],
+      "potential_revenue_path": "technical differentiation and trust layer value",
+      "expected_learning_value": "medium",
+      "shortest_cash_path_relevance": "medium",
+      "strategic_compounding_value": "medium",
+      "score": 11
+    },
+    {
+      "opportunity_id": "rev_path_paid_diagnostic_product",
+      "rank": 7,
+      "capabilities": [
+        "offer revision runtime",
+        "governed provider plan"
+      ],
+      "offer": "$250-$750 AI Agent Readiness Diagnostic",
+      "target_segment": "teams evaluating agent implementation",
+      "buyer_pain": "need a small first step before larger implementation",
+      "evidence_strength": "low_medium",
+      "execution_readiness": 6,
+      "provider_capability": "dry_run_available_live_disabled",
+      "risk_tier": "T4_high_risk_owner_approval_required",
+      "compliance_constraints": [
+        "payment/legal approval required",
+        "no legal/financial commitment"
+      ],
+      "suppression_constraints": [
+        "suppression registry must pass"
+      ],
+      "potential_revenue_path": "shortest literal cash path if buyer pain is clear",
+      "expected_learning_value": "medium",
+      "shortest_cash_path_relevance": "high",
+      "strategic_compounding_value": "medium",
+      "score": 9
+    }
+  ],
+  "external_action_executed": false
+}

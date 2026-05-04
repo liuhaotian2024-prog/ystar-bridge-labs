@@ -1,0 +1,318 @@
+{
+  "artifact_id": "e24_revenue_path_portfolio_selection",
+  "selection_criteria": [
+    "shortest cash path",
+    "buyer pain strength",
+    "evidence strength",
+    "execution readiness",
+    "differentiation",
+    "gross margin potential",
+    "owner burden",
+    "risk",
+    "provider readiness",
+    "compliance readiness",
+    "learning value",
+    "strategic compounding value"
+  ],
+  "top_selected_path": {
+    "id": "rev_path_readiness_review_ai_consultancies",
+    "hypothesis": "AI consultancies and automation agencies will pay for a fast implementation-readiness review that reduces delivery risk.",
+    "target_customer": "AI operations consultancies and automation agencies",
+    "offer": "48h AI Agent Implementation Readiness Review",
+    "expected_pain": "implementation bottlenecks, agent reliability questions, governance/compliance uncertainty",
+    "required_evidence": [
+      "repo-grounded target identity",
+      "buyer-pain evidence",
+      "dry-run message receipt",
+      "future real feedback"
+    ],
+    "required_capability": [
+      "E18 batch runtime",
+      "E22 dry-run execution",
+      "E23 suppression/compliance gates"
+    ],
+    "required_outbound_action": "governed low-risk outbound after live provider sandbox",
+    "risk_tier": "T2_low_medium_limited_outbound",
+    "provider_requirement": "live provider sandbox and persistent idempotency",
+    "first_test_action": "provider-sandbox canary plan for one low-risk target after live tests",
+    "money_reason": "closest existing offer, existing target set, low owner burden, short path to paid diagnostic",
+    "failure_reason": "targets may not feel acute enough pain or may treat review as consulting commodity",
+    "governance_constraints": [
+      "no fake evidence",
+      "suppression registry",
+      "provider disabled until tested"
+    ],
+    "kg_nodes_used": [
+      "offer_48h_readiness_review",
+      "target_segment_ai_consultancies",
+      "blocker_live_provider_disabled"
+    ]
+  },
+  "selected_paths": [
+    {
+      "id": "rev_path_readiness_review_ai_consultancies",
+      "hypothesis": "AI consultancies and automation agencies will pay for a fast implementation-readiness review that reduces delivery risk.",
+      "target_customer": "AI operations consultancies and automation agencies",
+      "offer": "48h AI Agent Implementation Readiness Review",
+      "expected_pain": "implementation bottlenecks, agent reliability questions, governance/compliance uncertainty",
+      "required_evidence": [
+        "repo-grounded target identity",
+        "buyer-pain evidence",
+        "dry-run message receipt",
+        "future real feedback"
+      ],
+      "required_capability": [
+        "E18 batch runtime",
+        "E22 dry-run execution",
+        "E23 suppression/compliance gates"
+      ],
+      "required_outbound_action": "governed low-risk outbound after live provider sandbox",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "provider_requirement": "live provider sandbox and persistent idempotency",
+      "first_test_action": "provider-sandbox canary plan for one low-risk target after live tests",
+      "money_reason": "closest existing offer, existing target set, low owner burden, short path to paid diagnostic",
+      "failure_reason": "targets may not feel acute enough pain or may treat review as consulting commodity",
+      "governance_constraints": [
+        "no fake evidence",
+        "suppression registry",
+        "provider disabled until tested"
+      ],
+      "kg_nodes_used": [
+        "offer_48h_readiness_review",
+        "target_segment_ai_consultancies",
+        "blocker_live_provider_disabled"
+      ]
+    }
+  ],
+  "backup_paths": [
+    {
+      "id": "rev_path_ai_agent_governance_audit",
+      "hypothesis": "Teams adopting agents may pay for a governance and safety audit before production deployment.",
+      "target_customer": "agent-building startups and AI consultancies",
+      "offer": "AI Agent Governance and Safety Audit",
+      "expected_pain": "fear of unsafe autonomy, auditability gaps, customer trust concerns",
+      "required_evidence": [
+        "buyer interviews",
+        "pricing signal",
+        "case-study proof"
+      ],
+      "required_capability": [
+        "Y-star-gov governance concepts",
+        "gov-mcp provider boundary",
+        "CZL receipts"
+      ],
+      "required_outbound_action": "evidence expansion then dry-run targeted outreach",
+      "risk_tier": "T1_low_risk_reversible_external",
+      "provider_requirement": "dry-run available; live disabled now",
+      "first_test_action": "produce one audit teardown sample from repo artifacts",
+      "money_reason": "clear differentiation from generic AI automation consulting",
+      "failure_reason": "market may view governance as nice-to-have until post-incident",
+      "governance_constraints": [
+        "do not overclaim compliance",
+        "bind all claims to repo evidence"
+      ],
+      "kg_nodes_used": [
+        "capability_y_star_gov_governance",
+        "capability_gov_mcp_provider_boundary"
+      ]
+    },
+    {
+      "id": "rev_path_governed_outbound_infra_service",
+      "hypothesis": "Founder-led AI teams may pay for governed outbound/dry-run infrastructure to reduce spam and compliance risk.",
+      "target_customer": "founder-led B2B AI teams",
+      "offer": "Governed Autonomous Outbound Dry-Run and Compliance Control Plane",
+      "expected_pain": "need revenue validation without spam risk or founder operations drag",
+      "required_evidence": [
+        "demo proof",
+        "willingness-to-pay signal",
+        "provider live sandbox"
+      ],
+      "required_capability": [
+        "E20 risk tiers",
+        "E21 provider foundation",
+        "E22 dry-run receipts",
+        "E23 compliance registry"
+      ],
+      "required_outbound_action": "demo-led validation to founder/operator segment",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "provider_requirement": "sandbox or local demo enough before live",
+      "first_test_action": "package E22/E23 as demo story and dry-run proof",
+      "money_reason": "turns internal execution infrastructure into sellable capability",
+      "failure_reason": "buyers may prefer simpler CRM/email tooling unless pain is explicit",
+      "governance_constraints": [
+        "live sends remain blocked",
+        "no fake customer outcomes"
+      ],
+      "kg_nodes_used": [
+        "milestone_E22",
+        "milestone_E23",
+        "innovation_governed_outbound_infra"
+      ]
+    },
+    {
+      "id": "rev_path_ceo_agent_control_room_product",
+      "hypothesis": "Other founders may value a CEO-agent control room that maps opportunities to governed execution.",
+      "target_customer": "technical founders building AI-agent companies",
+      "offer": "CEO-Agent Commercial Intelligence Control Room",
+      "expected_pain": "strategy scattered across docs, agents, and experiments with no execution route",
+      "required_evidence": [
+        "dogfood proof",
+        "before/after operating cadence",
+        "buyer interviews"
+      ],
+      "required_capability": [
+        "E24 CEO KG",
+        "route registry",
+        "execution router"
+      ],
+      "required_outbound_action": "demo-led validation after E24 artifacts stabilize",
+      "risk_tier": "T1_low_risk_reversible_external",
+      "provider_requirement": "dry-run enough for demo; live later",
+      "first_test_action": "publish no external demo internally and prepare founder interview script",
+      "money_reason": "dogfoodable and differentiated by governance/execution routing",
+      "failure_reason": "may be too abstract without concrete revenue outcome",
+      "governance_constraints": [
+        "do not claim proven revenue",
+        "mark hypotheses"
+      ],
+      "kg_nodes_used": [
+        "e24_ceo_kg",
+        "e24_ceo_control_room"
+      ]
+    }
+  ],
+  "rejected_paths": [
+    {
+      "id": "rev_path_founder_operator_ai_automation_review",
+      "hypothesis": "Small teams may buy a practical review of AI automation bottlenecks and near-term ROI.",
+      "target_customer": "founder/operators and small agencies",
+      "offer": "Founder/Operator AI Automation Review",
+      "expected_pain": "too many AI ideas, unclear ROI, no safe implementation order",
+      "required_evidence": [
+        "segment evidence",
+        "message clarity",
+        "offer packaging"
+      ],
+      "required_capability": [
+        "E10 scoring",
+        "E17/E18 message packages"
+      ],
+      "required_outbound_action": "evidence expansion and dry-run variant test",
+      "risk_tier": "T1_low_risk_reversible_external",
+      "provider_requirement": "dry-run now; live disabled",
+      "first_test_action": "rewrite message variant around founder ROI bottleneck",
+      "money_reason": "broad, understandable pain and straightforward consulting purchase",
+      "failure_reason": "too generic without proof and tighter ICP",
+      "governance_constraints": [
+        "avoid broad spam",
+        "target evidence required"
+      ],
+      "kg_nodes_used": [
+        "target_segment_founder_operators",
+        "offer_48h_readiness_review"
+      ]
+    }
+  ],
+  "blocked_paths": [
+    {
+      "id": "rev_path_paid_diagnostic_product",
+      "hypothesis": "A paid diagnostic product can convert low-trust outreach into a compact purchase path.",
+      "target_customer": "teams evaluating agent implementation",
+      "offer": "$250-$750 AI Agent Readiness Diagnostic",
+      "expected_pain": "need a small first step before larger implementation",
+      "required_evidence": [
+        "pricing test",
+        "sample deliverable",
+        "payment boundary plan"
+      ],
+      "required_capability": [
+        "offer revision runtime",
+        "governed provider plan"
+      ],
+      "required_outbound_action": "no-send offer test then owner-approved payment setup later",
+      "risk_tier": "T4_high_risk_owner_approval_required",
+      "provider_requirement": "not provider-send first; payment/legal boundary later",
+      "first_test_action": "create sample diagnostic scope without collecting payment",
+      "money_reason": "shortest literal cash path if buyer pain is clear",
+      "failure_reason": "payment path and trust proof are not ready",
+      "governance_constraints": [
+        "payment/legal approval required",
+        "no legal/financial commitment"
+      ],
+      "kg_nodes_used": [
+        "risk_policy_T4",
+        "offer_paid_diagnostic"
+      ]
+    }
+  ],
+  "evidence_needed_paths": [
+    {
+      "id": "rev_path_paid_diagnostic_product",
+      "hypothesis": "A paid diagnostic product can convert low-trust outreach into a compact purchase path.",
+      "target_customer": "teams evaluating agent implementation",
+      "offer": "$250-$750 AI Agent Readiness Diagnostic",
+      "expected_pain": "need a small first step before larger implementation",
+      "required_evidence": [
+        "pricing test",
+        "sample deliverable",
+        "payment boundary plan"
+      ],
+      "required_capability": [
+        "offer revision runtime",
+        "governed provider plan"
+      ],
+      "required_outbound_action": "no-send offer test then owner-approved payment setup later",
+      "risk_tier": "T4_high_risk_owner_approval_required",
+      "provider_requirement": "not provider-send first; payment/legal boundary later",
+      "first_test_action": "create sample diagnostic scope without collecting payment",
+      "money_reason": "shortest literal cash path if buyer pain is clear",
+      "failure_reason": "payment path and trust proof are not ready",
+      "governance_constraints": [
+        "payment/legal approval required",
+        "no legal/financial commitment"
+      ],
+      "kg_nodes_used": [
+        "risk_policy_T4",
+        "offer_paid_diagnostic"
+      ]
+    },
+    {
+      "id": "rev_path_provider_adapter_productized_capability",
+      "hypothesis": "The provider adapter and promotion gate could become infrastructure sold to agent builders.",
+      "target_customer": "AI agent platforms needing safe outbound execution",
+      "offer": "Dry-Run-to-Live Provider Promotion Gate",
+      "expected_pain": "moving from simulations to live execution safely",
+      "required_evidence": [
+        "gov-mcp usage proof",
+        "integration demand",
+        "sandbox/live tests"
+      ],
+      "required_capability": [
+        "gov-mcp provider foundation",
+        "E23 live-readiness gate"
+      ],
+      "required_outbound_action": "partner discovery, no live send",
+      "risk_tier": "T2_low_medium_limited_outbound",
+      "provider_requirement": "provider live scaffold remains disabled until configured",
+      "first_test_action": "document integration story and target partner list from repo evidence",
+      "money_reason": "technical differentiation and trust layer value",
+      "failure_reason": "infrastructure sale may be slower than service revenue",
+      "governance_constraints": [
+        "no live claims",
+        "no credential handling"
+      ],
+      "kg_nodes_used": [
+        "capability_gov_mcp_provider_boundary",
+        "blocker_live_provider_disabled"
+      ]
+    }
+  ],
+  "rationale": "The readiness-review path has the most repo-grounded offer/target evidence and can reuse dry-run/control-plane assets; live provider remains the bottleneck before real execution.",
+  "kg_support": [
+    "offer_48h_readiness_review",
+    "target_segment_ai_consultancies",
+    "capability_e22_autonomous_dry_run",
+    "blocker_live_provider_disabled"
+  ],
+  "external_action_executed": false
+}

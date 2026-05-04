@@ -1,0 +1,103 @@
+{
+  "artifact_id": "e24_ecosystem_route_registry",
+  "route_count": 9,
+  "routes": [
+    {
+      "capability": "governance checks",
+      "canonical_repo": "Y-star-gov",
+      "canonical_paths": [
+        "ystar/governance/governance_loop.py",
+        "ystar/governance/cieu_store.py",
+        "ystar/governance/czl_protocol.py",
+        "ystar/governance/counterfactual_engine.py",
+        "ystar/governance/router_registry.py",
+        "ystar/governance/boundary_enforcer.py",
+        "ystar/kernel/cieu.py",
+        "governance/role_runtimes/ceo.yaml"
+      ],
+      "bridge_labs_route": "read-only governance alignment gate"
+    },
+    {
+      "capability": "provider execution",
+      "canonical_repo": "gov-mcp",
+      "canonical_paths": [
+        "gov_mcp/outbound/provider_capability.py",
+        "gov_mcp/outbound/provider_adapter.py",
+        "gov_mcp/outbound/provider_guard_stack.py",
+        "gov_mcp/outbound/provider_promotion.py",
+        "gov_mcp/outbound/provider_manifest.py",
+        "gov_mcp/outbound/dry_run_adapter.py",
+        "gov_mcp/outbound/receipts.py",
+        "gov_mcp/outbound/idempotency.py"
+      ],
+      "bridge_labs_route": "provider capability sync/read model"
+    },
+    {
+      "capability": "risk tier classification",
+      "canonical_repo": "ystar-bridge-labs",
+      "canonical_paths": [
+        "office/mission_command/e20_risk_tier_taxonomy.py"
+      ],
+      "bridge_labs_route": "E20/E24 execution router"
+    },
+    {
+      "capability": "suppression/compliance",
+      "canonical_repo": "ystar-bridge-labs",
+      "canonical_paths": [
+        "office/mission_command/e23_suppression_registry.py",
+        "office/mission_command/e23_compliance_registry.py"
+      ],
+      "bridge_labs_route": "E23 gates"
+    },
+    {
+      "capability": "commercial scoring",
+      "canonical_repo": "ystar-bridge-labs",
+      "canonical_paths": [
+        "office/mission_command/e10_shortest_revenue_path_scorer.py",
+        "office/mission_command/e10_buyer_signal_taxonomy.py",
+        "office/mission_command/e13_paid_signal_readiness.py",
+        "office/mission_command/e13r_offer_revision.py",
+        "office/mission_command/e13r_buyer_pain_evidence.py",
+        "office/mission_command/e14_target_scoring.py"
+      ],
+      "bridge_labs_route": "E24 portfolio selector"
+    },
+    {
+      "capability": "opportunity generation",
+      "canonical_repo": "ystar-bridge-labs",
+      "canonical_paths": [
+        "office/mission_command/e24_commercial_imagination_engine.py",
+        "office/mission_command/e24_field_functional_opportunity_map.py"
+      ],
+      "bridge_labs_route": "E24 CEO KG"
+    },
+    {
+      "capability": "CEO KG",
+      "canonical_repo": "ystar-bridge-labs",
+      "canonical_paths": [
+        "operations/knowledge_graph/e24_ceo_kg_nodes.jsonl",
+        "operations/knowledge_graph/e24_ceo_kg_edges.jsonl"
+      ],
+      "bridge_labs_route": "E24 read model"
+    },
+    {
+      "capability": "innovation backlog",
+      "canonical_repo": "ystar-bridge-labs",
+      "canonical_paths": [
+        "operations/external_validation/e24_innovation_hypotheses.json"
+      ],
+      "bridge_labs_route": "E24 innovation hypothesis generator"
+    },
+    {
+      "capability": "audit/CZL closure",
+      "canonical_repo": "ystar-bridge-labs + Y-star-gov concepts",
+      "canonical_paths": [
+        "operations/external_validation/e24_czl_closure.json",
+        "Y-star-gov/ystar/kernel/czl_protocol.py"
+      ],
+      "bridge_labs_route": "E24 closure"
+    }
+  ],
+  "duplicate_wheel_prevention": "future agents must consult this registry to prevent duplicate wheel creation before creating new commercial/governance/provider wheels",
+  "external_action_executed": false
+}

@@ -1,0 +1,48 @@
+{
+  "artifact_id": "e24_strategic_memory_promotion_gate",
+  "allowed_states": [
+    "working_hypothesis",
+    "legacy_hypothesis",
+    "observed_evidence",
+    "validated_learning_candidate",
+    "canonical_learning_candidate",
+    "rejected_hypothesis",
+    "stale_hypothesis"
+  ],
+  "promotion_rules": [
+    "legacy/source-only items can become working hypotheses only",
+    "generated opportunities require evidence before validated-learning promotion",
+    "canonical learning requires governance route and source-bound evidence",
+    "customer feedback must be imported and classified before strategy promotion"
+  ],
+  "promotion_candidates": [
+    {
+      "node_id": "decision_top_path_readiness_review",
+      "promotion_target": "canonical_learning_candidate",
+      "required_evidence_before_promotion": [
+        "real customer response",
+        "paid signal or meeting request",
+        "provider sandbox/live tests if execution claim is made"
+      ],
+      "current_status": "candidate"
+    },
+    {
+      "node_id": "legacy_node_legacy_rule_no_fabrication",
+      "promotion_target": "canonical_policy_candidate",
+      "required_evidence_before_promotion": [
+        "governance route and policy validation"
+      ],
+      "current_status": "canonical_candidate"
+    },
+    {
+      "node_id": "rev_path_governed_outbound_infra_service",
+      "promotion_target": "validated_learning_candidate",
+      "required_evidence_before_promotion": [
+        "buyer interview or paid pilot signal"
+      ],
+      "current_status": "working_hypothesis"
+    }
+  ],
+  "canonical_truth_promoted": false,
+  "external_action_executed": false
+}

@@ -1,0 +1,25 @@
+{
+  "artifact_id": "e24_future_ceo_agent_policy",
+  "future_commercial_milestone_requirements": [
+    "whole-ecosystem route check",
+    "existing-wheel reuse check",
+    "legacy CEO brain relationship check",
+    "CEO KG update",
+    "missing-wheel check",
+    "CEO brain state update",
+    "opportunity field update",
+    "imagination/counterfactual path generation",
+    "innovation hypothesis update",
+    "revenue portfolio selection",
+    "execution route decision",
+    "risk-tier check",
+    "provider capability check",
+    "suppression/compliance check",
+    "strategic memory promotion check",
+    "ecosystem alignment proof",
+    "explicit no-fake-evidence statement"
+  ],
+  "owner_manual_send_default_allowed": false,
+  "canonical_memory_write_requires_evidence_and_governance_route": true,
+  "external_action_executed": false
+}

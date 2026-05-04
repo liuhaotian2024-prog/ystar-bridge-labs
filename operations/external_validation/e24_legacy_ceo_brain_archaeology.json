@@ -1,0 +1,96 @@
+{
+  "artifact_id": "e24_legacy_ceo_brain_archaeology",
+  "local_legacy_ceo_brain_found": true,
+  "asset_paths": [
+    "reports/boot_packages/ceo.json",
+    "reports/proposals/charter_amendment_007_ceo_operating_system.md",
+    "reports/proposals/charter_amendment_023_article_11_into_ceo_os.md",
+    "reports/ceo/ceo_runtime_v0.1_spec_20260424.md",
+    "reports/ceo/ecosystem_deep_panorama.md",
+    "reports/ceo/30day_mining_plant_v1_20260415.md",
+    "docs/ceo_heartbeat_integration.md",
+    "reports/ceo/brain_dream_diffs/dream_diff_20260504_100224_nrem.md"
+  ],
+  "extracted_items": [
+    {
+      "id": "legacy_goal_internal_consolidation",
+      "label": "historical internal consolidation phase",
+      "source_path": "reports/boot_packages/ceo.json",
+      "source_type": "legacy_ceo_brain",
+      "truth_status": "historical",
+      "promotion_status": "working_only",
+      "evidence_status": "source_only",
+      "reuse_decision": "route",
+      "notes": "Useful as historical context; superseded by current commercial runtime."
+    },
+    {
+      "id": "legacy_rule_no_fabrication",
+      "label": "zero fabrication as CEO operating constraint",
+      "source_path": "reports/boot_packages/ceo.json",
+      "source_type": "legacy_ceo_brain",
+      "truth_status": "observed",
+      "promotion_status": "canonical_candidate",
+      "evidence_status": "evidence_bound",
+      "reuse_decision": "reuse",
+      "notes": "Still aligns with E24 no-fake-evidence rule."
+    },
+    {
+      "id": "legacy_ceo_os_hypothesis",
+      "label": "CEO OS should coordinate roles and strategy",
+      "source_path": "reports/proposals/charter_amendment_007_ceo_operating_system.md",
+      "source_type": "legacy_ceo_brain",
+      "truth_status": "hypothesis",
+      "promotion_status": "candidate",
+      "evidence_status": "source_only",
+      "reuse_decision": "route",
+      "notes": "E24 implements commercial CEO cognition as working layer, not old OS replacement."
+    },
+    {
+      "id": "legacy_article11_cognition",
+      "label": "Article 11 layered cognition as strategic thinking pattern",
+      "source_path": "reports/proposals/charter_amendment_023_article_11_into_ceo_os.md",
+      "source_type": "legacy_ceo_brain",
+      "truth_status": "historical",
+      "promotion_status": "candidate",
+      "evidence_status": "source_only",
+      "reuse_decision": "route",
+      "notes": "Use as thinking-pattern source, not direct governance truth."
+    },
+    {
+      "id": "legacy_ecosystem_panorama",
+      "label": "whole ecosystem panorama need",
+      "source_path": "reports/ceo/ecosystem_deep_panorama.md",
+      "source_type": "legacy_ceo_brain",
+      "truth_status": "historical",
+      "promotion_status": "candidate",
+      "evidence_status": "source_only",
+      "reuse_decision": "reuse",
+      "notes": "E24 turns panorama intent into source-bound ecosystem observation."
+    },
+    {
+      "id": "legacy_mining_plant_revenue_frame",
+      "label": "mining plant / revenue-machine metaphor",
+      "source_path": "reports/ceo/30day_mining_plant_v1_20260415.md",
+      "source_type": "legacy_ceo_brain",
+      "truth_status": "hypothesis",
+      "promotion_status": "working_only",
+      "evidence_status": "unsupported",
+      "reuse_decision": "needs_review",
+      "notes": "Possible metaphor only; not current verified revenue path."
+    },
+    {
+      "id": "legacy_ceo_heartbeat",
+      "label": "CEO heartbeat integration concept",
+      "source_path": "docs/ceo_heartbeat_integration.md",
+      "source_type": "legacy_ceo_brain",
+      "truth_status": "hypothesis",
+      "promotion_status": "candidate",
+      "evidence_status": "source_only",
+      "reuse_decision": "route",
+      "notes": "Can inform cadence, but no autonomous live action."
+    }
+  ],
+  "items_count": 7,
+  "no_direct_canonical_promotion": true,
+  "external_action_executed": false
+}
