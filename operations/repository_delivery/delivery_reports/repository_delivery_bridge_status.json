@@ -32,5 +32,10 @@
   "next_milestone_delivery_mode": "host_local_bridge",
   "job_submission_contract": "scripts/repository_delivery_bridge_submit.py",
   "per_milestone_bootstrap_allowed": false,
-  "future_owner_delivery_commands_required": false
+  "future_owner_delivery_commands_required": false,
+  "bridge_activation_proof": {
+    "status": "submitted_for_remote_confirmation",
+    "updated_at": "2026-05-04T03:29:22.668660+00:00",
+    "validation_scope": "bridge status, submitter, worker py_compile and bridge status/transport tests"
+  }
 }

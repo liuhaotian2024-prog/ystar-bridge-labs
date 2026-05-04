@@ -20,3 +20,11 @@ After one-time activation succeeds with self-delivery remote confirmation, Codex
 - transport_mode: host_local_bridge
 - future_owner_delivery_commands_required: false
 - per_milestone_bootstrap_allowed: false
+
+## Activation Proof R1
+
+- status: host_local_bridge_activation_proof_submitted
+- bridge_installed: true
+- transport_mode: host_local_bridge
+- future_owner_delivery_commands_required: false
+- per_milestone_bootstrap_allowed: false
