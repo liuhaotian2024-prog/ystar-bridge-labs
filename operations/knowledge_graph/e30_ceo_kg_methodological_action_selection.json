@@ -1,0 +1,11 @@
+{
+  "artifact_id": "e30_ceo_kg_methodological_action_selection",
+  "selected_route": "paid_readiness_review_signal_package",
+  "selected_action_id": "action_paid_readiness_review_signal_package",
+  "kg_delta_node_count": 23,
+  "kg_delta_edge_count": 23,
+  "internal_strategy_evidence_only": true,
+  "customer_feedback_claimed": false,
+  "market_validation_claimed": false,
+  "external_action_executed": false
+}

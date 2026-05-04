@@ -1,0 +1,45 @@
+{
+  "artifact_id": "e30_ecosystem_alignment_gate",
+  "repos_checked": [
+    {
+      "repo": "ystar-bridge-labs",
+      "path": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+      "branch": "backflow/aiden-ceo-meeting-room",
+      "head": "f9b49b9f4057c198e0f12623f966d1e7a7c89ce5",
+      "modified_in_e30": true,
+      "role": "CEO KG/commercial runtime"
+    },
+    {
+      "repo": "gov-mcp",
+      "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "branch": "backflow/company-runtime-tools",
+      "head": "4f758d9d4823eed108ae3d63be1f4db192a974d6",
+      "modified_in_e30": false,
+      "role": "provider boundary reused read-only"
+    },
+    {
+      "repo": "Y-star-gov",
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "branch": "backflow/company-runtime-domain-pack",
+      "head": "5f031f4be151b81ef1a1b1908a5c83c5420e8ce1",
+      "modified_in_e30": false,
+      "role": "governance/CZL read-only"
+    },
+    {
+      "repo": "ystar-company",
+      "path": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "branch": "main",
+      "head": "dd9cb6b247a9cf06d953d9319ba1ebd5c38dcbf6",
+      "modified_in_e30": false,
+      "role": "historical assets read-only"
+    }
+  ],
+  "repos_checked_count": 4,
+  "bridge_labs_modified": true,
+  "gov_mcp_modified": false,
+  "Y_star_gov_immediate_mutation_needed": false,
+  "ystar_company_future_migration_followups": true,
+  "ecosystem_alignment_status": "ecosystem_aligned_with_documented_followups",
+  "cross_repo_impact_update": "bridge-labs adds method-based route selection; provider and governance repos are reused without mutation",
+  "external_action_executed": false
+}

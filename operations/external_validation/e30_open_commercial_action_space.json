@@ -1,0 +1,301 @@
+{
+  "artifact_id": "e30_open_commercial_action_space",
+  "generation_method": "derived from current state resources/capabilities/constraints/evidence gaps, not a preset menu",
+  "candidate_action_count": 10,
+  "candidates": [
+    {
+      "action_id": "action_paid_readiness_review_signal_package",
+      "source_evidence": [
+        "E24 top path",
+        "E29 active branch",
+        "missing buyer-facing sample deliverable"
+      ],
+      "branch_mode_relevance": "revenue_mode_shortest_cash_path",
+      "required_capability": [
+        "offer revision wheel",
+        "CEO KG",
+        "evidence binder"
+      ],
+      "missing_capability": [
+        "sample deliverable",
+        "proof-bound claims register"
+      ],
+      "expected_real_signal": "buyer can evaluate a concrete paid diagnostic offer in a future approved feedback step",
+      "time_to_signal": "short",
+      "risk": "low_no_external_effect",
+      "owner_burden": "low",
+      "agent_autonomy_level": "autonomous_internal",
+      "new_infrastructure_required": "none",
+      "existing_wheels_support_it": [
+        "E13R offer revision",
+        "E23 evidence tightening",
+        "E29 branch guardrail"
+      ],
+      "reason_it_may_make_money": "turns readiness-review thesis into a concrete thing a buyer can say yes/no to",
+      "reason_it_may_fail": "may still fail if buyer pain is not acute or package feels generic"
+    },
+    {
+      "action_id": "action_secure_production_config_preparation",
+      "source_evidence": [
+        "E29 selected route",
+        "E27 live-test gate ready"
+      ],
+      "branch_mode_relevance": "revenue_mode_shortest_cash_path",
+      "required_capability": [
+        "live-test gate",
+        "production blocker matrix"
+      ],
+      "missing_capability": [
+        "owner security setup later",
+        "production persistent idempotency"
+      ],
+      "expected_real_signal": "future canary prerequisites become clearer but no buyer signal yet",
+      "time_to_signal": "medium",
+      "risk": "security_sensitive_later",
+      "owner_burden": "medium_high",
+      "agent_autonomy_level": "agent_preparation_only",
+      "new_infrastructure_required": "secret-source process later",
+      "existing_wheels_support_it": [
+        "E27 validator",
+        "E28 production blocker matrix",
+        "gov-mcp live contracts"
+      ],
+      "reason_it_may_make_money": "could unlock future one-action canary once buyer-facing package is ready",
+      "reason_it_may_fail": "is another gate and may create fake progress if package/evidence is weak"
+    },
+    {
+      "action_id": "action_ai_consultancy_target_evidence_rebuild",
+      "source_evidence": [
+        "missing real customer feedback",
+        "E23 evidence gaps"
+      ],
+      "branch_mode_relevance": "revenue_mode_shortest_cash_path",
+      "required_capability": [
+        "target scoring",
+        "evidence tightening"
+      ],
+      "missing_capability": [
+        "fresh target-specific pain proof"
+      ],
+      "expected_real_signal": "stronger confidence that selected segment has urgent pain",
+      "time_to_signal": "medium",
+      "risk": "low_internal",
+      "owner_burden": "low",
+      "agent_autonomy_level": "autonomous_internal",
+      "new_infrastructure_required": "none",
+      "existing_wheels_support_it": [
+        "E14 target scoring",
+        "E23 evidence evaluator"
+      ],
+      "reason_it_may_make_money": "improves hit rate before any external action",
+      "reason_it_may_fail": "can become research loop without a sharper offer artifact"
+    },
+    {
+      "action_id": "action_offer_revision_for_paid_diagnostic",
+      "source_evidence": [
+        "E24 paid diagnostic hypothesis",
+        "offer weakness risk"
+      ],
+      "branch_mode_relevance": "revenue_mode_service_cashflow",
+      "required_capability": [
+        "offer revision",
+        "pricing hypothesis"
+      ],
+      "missing_capability": [
+        "payment/legal boundary later"
+      ],
+      "expected_real_signal": "clearer price/value proposition for future paid signal",
+      "time_to_signal": "short",
+      "risk": "low_internal",
+      "owner_burden": "low",
+      "agent_autonomy_level": "autonomous_internal",
+      "new_infrastructure_required": "none",
+      "existing_wheels_support_it": [
+        "E13R offer revision",
+        "E24 innovation_paid_readiness_diagnostic"
+      ],
+      "reason_it_may_make_money": "narrows generic readiness review into a paid diagnostic purchase",
+      "reason_it_may_fail": "pricing may be premature without buyer interviews"
+    },
+    {
+      "action_id": "action_governance_audit_sample_teardown",
+      "source_evidence": [
+        "Y-star-gov",
+        "gov-mcp",
+        "E24 governance audit path"
+      ],
+      "branch_mode_relevance": "revenue_mode_governance_infrastructure",
+      "required_capability": [
+        "governance artifacts",
+        "CZL closure"
+      ],
+      "missing_capability": [
+        "sample report packaging"
+      ],
+      "expected_real_signal": "future buyers can inspect a bounded audit sample",
+      "time_to_signal": "medium",
+      "risk": "low_internal",
+      "owner_burden": "low",
+      "agent_autonomy_level": "autonomous_internal",
+      "new_infrastructure_required": "none",
+      "existing_wheels_support_it": [
+        "Y-star-gov governance",
+        "gov-mcp audit concepts",
+        "E24 innovation_agent_governance_audit"
+      ],
+      "reason_it_may_make_money": "differentiates from generic AI consulting",
+      "reason_it_may_fail": "may be slower cash path than readiness-review service"
+    },
+    {
+      "action_id": "action_ceo_agent_control_room_demo_script",
+      "source_evidence": [
+        "E24 CEO KG",
+        "E29 branch guardrail"
+      ],
+      "branch_mode_relevance": "revenue_mode_ceo_agent_runtime_product",
+      "required_capability": [
+        "CEO control room",
+        "route registry"
+      ],
+      "missing_capability": [
+        "demo narrative",
+        "founder interview script"
+      ],
+      "expected_real_signal": "future founder feedback on runtime product usefulness",
+      "time_to_signal": "medium",
+      "risk": "low_internal",
+      "owner_burden": "low",
+      "agent_autonomy_level": "autonomous_internal",
+      "new_infrastructure_required": "none",
+      "existing_wheels_support_it": [
+        "E24 CEO KG",
+        "E24 control room",
+        "E29 guardrail"
+      ],
+      "reason_it_may_make_money": "turns dogfooded runtime into sellable product story",
+      "reason_it_may_fail": "too abstract without first revenue outcome"
+    },
+    {
+      "action_id": "action_partner_channel_research_packet",
+      "source_evidence": [
+        "E28R partner branch",
+        "AI consultancy target overlap"
+      ],
+      "branch_mode_relevance": "revenue_mode_partner_channel",
+      "required_capability": [
+        "partner thesis",
+        "evidence packet"
+      ],
+      "missing_capability": [
+        "partner list evidence"
+      ],
+      "expected_real_signal": "future partner interest signal with less direct outbound burden",
+      "time_to_signal": "medium",
+      "risk": "low_internal",
+      "owner_burden": "medium",
+      "agent_autonomy_level": "autonomous_internal",
+      "new_infrastructure_required": "none",
+      "existing_wheels_support_it": [
+        "E28R branch registry",
+        "E24 opportunity map"
+      ],
+      "reason_it_may_make_money": "could reach buyers without production provider dependency",
+      "reason_it_may_fail": "partner channel may be slower and less controllable"
+    },
+    {
+      "action_id": "action_governed_outbound_infra_demo_packet",
+      "source_evidence": [
+        "E22 dry-run",
+        "E23 compliance",
+        "E25 sandbox"
+      ],
+      "branch_mode_relevance": "revenue_mode_platform_productization",
+      "required_capability": [
+        "dry-run receipts",
+        "sandbox receipts",
+        "compliance registry"
+      ],
+      "missing_capability": [
+        "demo proof format"
+      ],
+      "expected_real_signal": "future founder/operator feedback on infrastructure pain",
+      "time_to_signal": "medium",
+      "risk": "low_internal",
+      "owner_burden": "low",
+      "agent_autonomy_level": "autonomous_internal",
+      "new_infrastructure_required": "none",
+      "existing_wheels_support_it": [
+        "E22",
+        "E23",
+        "E25"
+      ],
+      "reason_it_may_make_money": "packages overbuilt internal readiness as sellable infrastructure",
+      "reason_it_may_fail": "buyers may prefer simple CRM tools unless pain is vivid"
+    },
+    {
+      "action_id": "action_autonomous_dry_run_iteration",
+      "source_evidence": [
+        "E22 dry-run available",
+        "E23 evidence tightening"
+      ],
+      "branch_mode_relevance": "revenue_mode_shortest_cash_path",
+      "required_capability": [
+        "dry-run execution",
+        "guard replay"
+      ],
+      "missing_capability": [
+        "new evidence-bound candidate"
+      ],
+      "expected_real_signal": "internal message quality and guard confidence",
+      "time_to_signal": "short",
+      "risk": "low_internal",
+      "owner_burden": "low",
+      "agent_autonomy_level": "autonomous_internal",
+      "new_infrastructure_required": "none",
+      "existing_wheels_support_it": [
+        "E22 dry-run",
+        "E23 candidate dossier"
+      ],
+      "reason_it_may_make_money": "improves operational confidence before live",
+      "reason_it_may_fail": "may be another internal loop without customer-facing improvement"
+    },
+    {
+      "action_id": "action_keep_live_blocked_and_do_nothing",
+      "source_evidence": [
+        "current blockers"
+      ],
+      "branch_mode_relevance": "none",
+      "required_capability": [
+        "none"
+      ],
+      "missing_capability": [
+        "commercial momentum"
+      ],
+      "expected_real_signal": "no signal",
+      "time_to_signal": "none",
+      "risk": "safe_but_low_value",
+      "owner_burden": "low",
+      "agent_autonomy_level": "autonomous_noop",
+      "new_infrastructure_required": "none",
+      "existing_wheels_support_it": [
+        "CZL safety"
+      ],
+      "reason_it_may_make_money": "prevents harm",
+      "reason_it_may_fail": "does not increase real earning probability"
+    }
+  ],
+  "candidate_source_types": [
+    "existing capability",
+    "existing asset",
+    "evidence gap",
+    "customer pain hypothesis",
+    "route bottleneck",
+    "underused repo asset",
+    "CEO KG opportunity node",
+    "innovation hypothesis",
+    "historical ystar-company asset",
+    "gov-mcp/Y-star-gov capability",
+    "dry-run/sandbox/live-test evidence"
+  ],
+  "external_action_executed": false
+}

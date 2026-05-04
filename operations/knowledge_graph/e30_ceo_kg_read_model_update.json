@@ -1,0 +1,11 @@
+{
+  "artifact_id": "e30_ceo_kg_read_model_update",
+  "active_branch": "revenue_mode_shortest_cash_path",
+  "selected_route": "paid_readiness_review_signal_package",
+  "top_action_id": "action_paid_readiness_review_signal_package",
+  "candidate_action_count": 10,
+  "next_decision_horizon": "E31_paid_readiness_review_signal_package",
+  "production_live_enabled": false,
+  "production_live_receipt_count": 0,
+  "external_action_executed": false
+}

@@ -1,0 +1,23 @@
+{
+  "artifact_id": "e30_future_methodological_action_policy",
+  "policy": "Future CEO-agent commercial milestones must not be menu-driven.",
+  "required_method_steps": [
+    "whole-system observation",
+    "open action-space generation",
+    "objective scoring",
+    "falsification",
+    "selected route package",
+    "CEO KG update",
+    "branch optionality preservation",
+    "ecosystem alignment"
+  ],
+  "must_not_assume": [
+    "production live configuration is next",
+    "evidence expansion is next",
+    "productization is next",
+    "outbound is required",
+    "provider work is the bottleneck"
+  ],
+  "owner_manual_send_default_allowed": false,
+  "external_action_executed": false
+}

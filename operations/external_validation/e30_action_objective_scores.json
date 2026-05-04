@@ -1,0 +1,310 @@
+{
+  "artifact_id": "e30_action_objective_scores",
+  "objective_functions": [
+    "first_real_signal_probability",
+    "first_paid_signal_probability",
+    "time_to_signal",
+    "evidence_sufficiency",
+    "capability_readiness",
+    "differentiation",
+    "strategic_compounding_value",
+    "owner_burden",
+    "agent_autonomy_gain",
+    "safety_compliance_readiness",
+    "new_infrastructure_required",
+    "conservative_loop_risk",
+    "branch_fit",
+    "future_branch_optionality"
+  ],
+  "shortest_cash_priority_weight_applied": true,
+  "future_branch_optionality_preserved": true,
+  "fake_progress_penalty_enabled": true,
+  "gate_penalty_enabled": true,
+  "scored_action_count": 10,
+  "top_action_id": "action_paid_readiness_review_signal_package",
+  "scores": [
+    {
+      "action_id": "action_paid_readiness_review_signal_package",
+      "objective_scores": {
+        "first_real_signal_probability": 8,
+        "first_paid_signal_probability": 8,
+        "time_to_signal": 9,
+        "evidence_sufficiency": 7,
+        "capability_readiness": 9,
+        "differentiation": 7,
+        "strategic_compounding_value": 7,
+        "owner_burden": 9,
+        "agent_autonomy_gain": 8,
+        "safety_compliance_readiness": 10,
+        "new_infrastructure_required": 10,
+        "conservative_loop_risk": 9,
+        "branch_fit": 10,
+        "future_branch_optionality": 8
+      },
+      "near_term_shortest_cash_priority_weight": 5,
+      "gate_or_new_infrastructure_penalty": 0,
+      "fake_progress_penalty": 0,
+      "total_score": 124,
+      "source_evidence": [
+        "E24 top path",
+        "E29 active branch",
+        "missing buyer-facing sample deliverable"
+      ],
+      "scoring_basis": "deterministic explicit objective functions"
+    },
+    {
+      "action_id": "action_ai_consultancy_target_evidence_rebuild",
+      "objective_scores": {
+        "first_real_signal_probability": 7,
+        "first_paid_signal_probability": 6,
+        "time_to_signal": 7,
+        "evidence_sufficiency": 8,
+        "capability_readiness": 8,
+        "differentiation": 6,
+        "strategic_compounding_value": 6,
+        "owner_burden": 9,
+        "agent_autonomy_gain": 7,
+        "safety_compliance_readiness": 10,
+        "new_infrastructure_required": 10,
+        "conservative_loop_risk": 8,
+        "branch_fit": 9,
+        "future_branch_optionality": 7
+      },
+      "near_term_shortest_cash_priority_weight": 5,
+      "gate_or_new_infrastructure_penalty": 0,
+      "fake_progress_penalty": 0,
+      "total_score": 113,
+      "source_evidence": [
+        "missing real customer feedback",
+        "E23 evidence gaps"
+      ],
+      "scoring_basis": "deterministic explicit objective functions"
+    },
+    {
+      "action_id": "action_governance_audit_sample_teardown",
+      "objective_scores": {
+        "first_real_signal_probability": 6,
+        "first_paid_signal_probability": 6,
+        "time_to_signal": 7,
+        "evidence_sufficiency": 7,
+        "capability_readiness": 8,
+        "differentiation": 9,
+        "strategic_compounding_value": 10,
+        "owner_burden": 9,
+        "agent_autonomy_gain": 7,
+        "safety_compliance_readiness": 10,
+        "new_infrastructure_required": 10,
+        "conservative_loop_risk": 7,
+        "branch_fit": 8,
+        "future_branch_optionality": 9
+      },
+      "near_term_shortest_cash_priority_weight": 0,
+      "gate_or_new_infrastructure_penalty": 0,
+      "fake_progress_penalty": 0,
+      "total_score": 113,
+      "source_evidence": [
+        "Y-star-gov",
+        "gov-mcp",
+        "E24 governance audit path"
+      ],
+      "scoring_basis": "deterministic explicit objective functions"
+    },
+    {
+      "action_id": "action_offer_revision_for_paid_diagnostic",
+      "objective_scores": {
+        "first_real_signal_probability": 7,
+        "first_paid_signal_probability": 7,
+        "time_to_signal": 9,
+        "evidence_sufficiency": 6,
+        "capability_readiness": 8,
+        "differentiation": 6,
+        "strategic_compounding_value": 7,
+        "owner_burden": 9,
+        "agent_autonomy_gain": 7,
+        "safety_compliance_readiness": 10,
+        "new_infrastructure_required": 10,
+        "conservative_loop_risk": 8,
+        "branch_fit": 9,
+        "future_branch_optionality": 8
+      },
+      "near_term_shortest_cash_priority_weight": 0,
+      "gate_or_new_infrastructure_penalty": 0,
+      "fake_progress_penalty": 0,
+      "total_score": 111,
+      "source_evidence": [
+        "E24 paid diagnostic hypothesis",
+        "offer weakness risk"
+      ],
+      "scoring_basis": "deterministic explicit objective functions"
+    },
+    {
+      "action_id": "action_ceo_agent_control_room_demo_script",
+      "objective_scores": {
+        "first_real_signal_probability": 5,
+        "first_paid_signal_probability": 5,
+        "time_to_signal": 7,
+        "evidence_sufficiency": 6,
+        "capability_readiness": 8,
+        "differentiation": 9,
+        "strategic_compounding_value": 10,
+        "owner_burden": 8,
+        "agent_autonomy_gain": 8,
+        "safety_compliance_readiness": 10,
+        "new_infrastructure_required": 10,
+        "conservative_loop_risk": 7,
+        "branch_fit": 7,
+        "future_branch_optionality": 10
+      },
+      "near_term_shortest_cash_priority_weight": 0,
+      "gate_or_new_infrastructure_penalty": 0,
+      "fake_progress_penalty": 0,
+      "total_score": 110,
+      "source_evidence": [
+        "E24 CEO KG",
+        "E29 branch guardrail"
+      ],
+      "scoring_basis": "deterministic explicit objective functions"
+    },
+    {
+      "action_id": "action_governed_outbound_infra_demo_packet",
+      "objective_scores": {
+        "first_real_signal_probability": 5,
+        "first_paid_signal_probability": 5,
+        "time_to_signal": 6,
+        "evidence_sufficiency": 6,
+        "capability_readiness": 8,
+        "differentiation": 8,
+        "strategic_compounding_value": 9,
+        "owner_burden": 8,
+        "agent_autonomy_gain": 8,
+        "safety_compliance_readiness": 10,
+        "new_infrastructure_required": 10,
+        "conservative_loop_risk": 7,
+        "branch_fit": 6,
+        "future_branch_optionality": 9
+      },
+      "near_term_shortest_cash_priority_weight": 0,
+      "gate_or_new_infrastructure_penalty": 0,
+      "fake_progress_penalty": 0,
+      "total_score": 105,
+      "source_evidence": [
+        "E22 dry-run",
+        "E23 compliance",
+        "E25 sandbox"
+      ],
+      "scoring_basis": "deterministic explicit objective functions"
+    },
+    {
+      "action_id": "action_autonomous_dry_run_iteration",
+      "objective_scores": {
+        "first_real_signal_probability": 4,
+        "first_paid_signal_probability": 4,
+        "time_to_signal": 8,
+        "evidence_sufficiency": 6,
+        "capability_readiness": 9,
+        "differentiation": 6,
+        "strategic_compounding_value": 5,
+        "owner_burden": 10,
+        "agent_autonomy_gain": 8,
+        "safety_compliance_readiness": 10,
+        "new_infrastructure_required": 10,
+        "conservative_loop_risk": 4,
+        "branch_fit": 7,
+        "future_branch_optionality": 6
+      },
+      "near_term_shortest_cash_priority_weight": 5,
+      "gate_or_new_infrastructure_penalty": 0,
+      "fake_progress_penalty": 0,
+      "total_score": 102,
+      "source_evidence": [
+        "E22 dry-run available",
+        "E23 evidence tightening"
+      ],
+      "scoring_basis": "deterministic explicit objective functions"
+    },
+    {
+      "action_id": "action_partner_channel_research_packet",
+      "objective_scores": {
+        "first_real_signal_probability": 5,
+        "first_paid_signal_probability": 5,
+        "time_to_signal": 6,
+        "evidence_sufficiency": 5,
+        "capability_readiness": 7,
+        "differentiation": 7,
+        "strategic_compounding_value": 8,
+        "owner_burden": 6,
+        "agent_autonomy_gain": 6,
+        "safety_compliance_readiness": 10,
+        "new_infrastructure_required": 10,
+        "conservative_loop_risk": 7,
+        "branch_fit": 7,
+        "future_branch_optionality": 8
+      },
+      "near_term_shortest_cash_priority_weight": 0,
+      "gate_or_new_infrastructure_penalty": 0,
+      "fake_progress_penalty": 0,
+      "total_score": 97,
+      "source_evidence": [
+        "E28R partner branch",
+        "AI consultancy target overlap"
+      ],
+      "scoring_basis": "deterministic explicit objective functions"
+    },
+    {
+      "action_id": "action_secure_production_config_preparation",
+      "objective_scores": {
+        "first_real_signal_probability": 6,
+        "first_paid_signal_probability": 6,
+        "time_to_signal": 5,
+        "evidence_sufficiency": 7,
+        "capability_readiness": 8,
+        "differentiation": 7,
+        "strategic_compounding_value": 7,
+        "owner_burden": 4,
+        "agent_autonomy_gain": 7,
+        "safety_compliance_readiness": 8,
+        "new_infrastructure_required": 4,
+        "conservative_loop_risk": 5,
+        "branch_fit": 8,
+        "future_branch_optionality": 7
+      },
+      "near_term_shortest_cash_priority_weight": 5,
+      "gate_or_new_infrastructure_penalty": -8,
+      "fake_progress_penalty": 0,
+      "total_score": 86,
+      "source_evidence": [
+        "E29 selected route",
+        "E27 live-test gate ready"
+      ],
+      "scoring_basis": "deterministic explicit objective functions"
+    },
+    {
+      "action_id": "action_keep_live_blocked_and_do_nothing",
+      "objective_scores": {
+        "first_real_signal_probability": 0,
+        "first_paid_signal_probability": 0,
+        "time_to_signal": 0,
+        "evidence_sufficiency": 5,
+        "capability_readiness": 10,
+        "differentiation": 2,
+        "strategic_compounding_value": 1,
+        "owner_burden": 10,
+        "agent_autonomy_gain": 0,
+        "safety_compliance_readiness": 10,
+        "new_infrastructure_required": 10,
+        "conservative_loop_risk": 1,
+        "branch_fit": 1,
+        "future_branch_optionality": 3
+      },
+      "near_term_shortest_cash_priority_weight": 0,
+      "gate_or_new_infrastructure_penalty": 0,
+      "fake_progress_penalty": -12,
+      "total_score": 41,
+      "source_evidence": [
+        "current blockers"
+      ],
+      "scoring_basis": "deterministic explicit objective functions"
+    }
+  ],
+  "external_action_executed": false
+}

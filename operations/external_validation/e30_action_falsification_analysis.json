@@ -1,0 +1,66 @@
+{
+  "artifact_id": "e30_action_falsification_analysis",
+  "top_candidate_count": 5,
+  "top_candidates": [
+    {
+      "action_id": "action_paid_readiness_review_signal_package",
+      "why_this_may_be_wrong": "A package may still be internal polish if not followed by real buyer feedback.",
+      "assumption_could_fail": "buyers value a readiness review enough to engage or pay",
+      "weak_evidence": "real feedback and willingness-to-pay are absent",
+      "missing_capability": "approved future feedback/import execution route",
+      "underestimated_risk": "offer may feel generic",
+      "dominating_alternative": "target evidence rebuild if target pain is weaker than assumed",
+      "conservative_loop_artifact": false,
+      "closer_to_real_money": true
+    },
+    {
+      "action_id": "action_ai_consultancy_target_evidence_rebuild",
+      "why_this_may_be_wrong": "Can become research without a stronger offer artifact.",
+      "assumption_could_fail": "better target evidence is the current bottleneck",
+      "weak_evidence": "message/package specificity remains incomplete",
+      "missing_capability": "fresh external source path is not approved here",
+      "underestimated_risk": "delays real signal",
+      "dominating_alternative": "build signal package first, then test/rebuild target",
+      "conservative_loop_artifact": true,
+      "closer_to_real_money": true
+    },
+    {
+      "action_id": "action_governance_audit_sample_teardown",
+      "why_this_may_be_wrong": "Governance audit may be a slower cash path despite differentiation.",
+      "assumption_could_fail": "governance pain is urgent enough pre-incident",
+      "weak_evidence": "buyer interviews absent",
+      "missing_capability": "sample report packaging",
+      "underestimated_risk": "overclaiming compliance",
+      "dominating_alternative": "readiness-review package for faster first signal",
+      "conservative_loop_artifact": false,
+      "closer_to_real_money": true
+    },
+    {
+      "action_id": "action_offer_revision_for_paid_diagnostic",
+      "why_this_may_be_wrong": "Pricing language may be premature before buyer reaction.",
+      "assumption_could_fail": "paid diagnostic is easier to buy than readiness review",
+      "weak_evidence": "pricing signal absent",
+      "missing_capability": "payment/legal boundary for later",
+      "underestimated_risk": "may trigger legal/payment complexity too soon",
+      "dominating_alternative": "signal package with no payment commitment",
+      "conservative_loop_artifact": false,
+      "closer_to_real_money": true
+    },
+    {
+      "action_id": "action_ceo_agent_control_room_demo_script",
+      "why_this_may_be_wrong": "Runtime product is abstract without a concrete revenue win.",
+      "assumption_could_fail": "founders want command system before proof of outcomes",
+      "weak_evidence": "founder workflow evidence absent",
+      "missing_capability": "demo walkthrough",
+      "underestimated_risk": "strategic compounding can outrun cash validation",
+      "dominating_alternative": "readiness-review package first; productization later",
+      "conservative_loop_artifact": false,
+      "closer_to_real_money": false
+    }
+  ],
+  "selected_candidate_survived_falsification": true,
+  "selected_candidate_id": "action_paid_readiness_review_signal_package",
+  "main_objection_to_selected": "A package may still be internal polish if not followed by real buyer feedback.",
+  "why_objection_not_disqualifying": "E30 selects package generation as the next concrete artifact; future external feedback remains separately gated.",
+  "external_action_executed": false
+}

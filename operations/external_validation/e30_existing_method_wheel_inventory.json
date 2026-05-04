@@ -1,0 +1,414 @@
+{
+  "artifact_id": "e30_existing_method_wheel_inventory",
+  "audit_completed_before_new_e30_modules": true,
+  "repos_scanned": [
+    "ystar-bridge-labs",
+    "gov-mcp",
+    "Y-star-gov",
+    "ystar-company"
+  ],
+  "repos_scanned_count": 4,
+  "existing_method_wheels_found": 27,
+  "reused_wheels_count": 17,
+  "wrapped_wheels_count": 4,
+  "extended_wheels_count": 0,
+  "newly_built_wheels_count": 4,
+  "left_untouched_wheels_count": 2,
+  "wheels": [
+    {
+      "name": "E24 CEO KG",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/knowledge_graph/e24_ceo_kg_read_model.json",
+      "capability": "CEO KG/read model",
+      "current_status": "canonical",
+      "reuse_decision": "wrap_existing",
+      "conflict_overlap_risk": "low",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "capability graph",
+        "evidence links",
+        "opportunity links"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "E24 CEO brain state",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e24_ceo_brain_state.json",
+      "capability": "CEO working brain",
+      "current_status": "canonical",
+      "reuse_decision": "wrap_existing",
+      "conflict_overlap_risk": "low",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "revenue objective",
+        "bottleneck",
+        "portfolio"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "E24 opportunity map",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e24_field_functional_opportunity_map.json",
+      "capability": "opportunity map",
+      "current_status": "usable",
+      "reuse_decision": "reuse_existing",
+      "conflict_overlap_risk": "medium: prior ranking may anchor too much",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "ranked commercial opportunities"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "E24 commercial imagination",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e24_commercial_imagination_paths.json",
+      "capability": "counterfactual revenue paths",
+      "current_status": "usable",
+      "reuse_decision": "reuse_existing",
+      "conflict_overlap_risk": "low",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "open revenue path hypotheses"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "E24 innovation hypotheses",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e24_innovation_hypotheses.json",
+      "capability": "innovation hypotheses",
+      "current_status": "usable",
+      "reuse_decision": "reuse_existing",
+      "conflict_overlap_risk": "low",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "productization and governance ideas"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "E24 route registry",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e24_ecosystem_route_registry.json",
+      "capability": "route registry",
+      "current_status": "usable",
+      "reuse_decision": "wrap_existing",
+      "conflict_overlap_risk": "low",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "where capabilities live"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "E29 revenue branch selection",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e29_branch_selection_confirmation_gate.json",
+      "capability": "branch confirmation",
+      "current_status": "canonical",
+      "reuse_decision": "reuse_existing",
+      "conflict_overlap_risk": "medium: may over-anchor shortest cash",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "active/backup/deferred branches"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "E29 branch route activation",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e29_branch_scoped_execution_route_activation.json",
+      "capability": "branch route",
+      "current_status": "usable",
+      "reuse_decision": "wrap_existing",
+      "conflict_overlap_risk": "medium: route is candidate not default",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "secure production config route"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "E29 multi-branch guardrail",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e29_multi_branch_portfolio_guardrail.json",
+      "capability": "branch optionality",
+      "current_status": "canonical",
+      "reuse_decision": "reuse_existing",
+      "conflict_overlap_risk": "low",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "switch triggers",
+        "alternatives"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "E28 production-live decision",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e28_production_live_decision_gate.json",
+      "capability": "production-live tradeoff",
+      "current_status": "usable",
+      "reuse_decision": "reuse_existing",
+      "conflict_overlap_risk": "high: must not be treated as E30 default",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "production config decision"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "E27 live-test validator",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e27_live_readiness_validator_v2.json",
+      "capability": "live-test readiness",
+      "current_status": "canonical",
+      "reuse_decision": "reuse_existing",
+      "conflict_overlap_risk": "low",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "live-test ready",
+        "production-live blocked"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "E25 sandbox evidence",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e25_sandbox_execution_results.json",
+      "capability": "sandbox execution evidence",
+      "current_status": "usable",
+      "reuse_decision": "reuse_existing",
+      "conflict_overlap_risk": "low",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "internal provider-shape execution evidence"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "E22 dry-run receipts",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e22_dry_run_receipt_ledger.json",
+      "capability": "dry-run evidence",
+      "current_status": "usable",
+      "reuse_decision": "reuse_existing",
+      "conflict_overlap_risk": "low",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "no-effect execution receipts"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "E23 evidence tightening",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e23_evidence_tightening_evaluator.py",
+      "capability": "evidence expansion",
+      "current_status": "usable",
+      "reuse_decision": "reuse_existing",
+      "conflict_overlap_risk": "low",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "evidence gaps",
+        "candidate status"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "E23 suppression/compliance",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e23_compliance_registry.json",
+      "capability": "compliance/suppression",
+      "current_status": "usable",
+      "reuse_decision": "reuse_existing",
+      "conflict_overlap_risk": "low",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "compliance registry",
+        "suppression status"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "E13R offer revision",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e13r_offer_revision.py",
+      "capability": "offer revision",
+      "current_status": "usable",
+      "reuse_decision": "reuse_existing",
+      "conflict_overlap_risk": "low",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "offer/pain refinement"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "E14 target scoring",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e14_target_scoring.py",
+      "capability": "target scoring",
+      "current_status": "usable",
+      "reuse_decision": "reuse_existing",
+      "conflict_overlap_risk": "low",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "target quality scoring"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "E18 offer/commercial scoring",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e18_commercial_fit_scores.json",
+      "capability": "commercial scoring",
+      "current_status": "usable",
+      "reuse_decision": "reuse_existing",
+      "conflict_overlap_risk": "low",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "fit scores",
+        "offer variants"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "gov-mcp provider boundary",
+      "repo": "gov-mcp",
+      "path": "gov_mcp/outbound/provider_capability.py",
+      "capability": "provider capability",
+      "current_status": "canonical",
+      "reuse_decision": "reuse_existing",
+      "conflict_overlap_risk": "low",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "provider modes",
+        "execution boundary"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "gov-mcp live/sandbox/idempotency",
+      "repo": "gov-mcp",
+      "path": "gov_mcp/outbound/live_readiness.py",
+      "capability": "live/sandbox gates",
+      "current_status": "canonical",
+      "reuse_decision": "reuse_existing",
+      "conflict_overlap_risk": "low",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "live readiness",
+        "sandbox receipts",
+        "idempotency"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "Y-star-gov governance/CIEU/CZL",
+      "repo": "Y-star-gov",
+      "path": "README.md",
+      "capability": "governance audit",
+      "current_status": "canonical",
+      "reuse_decision": "reuse_existing",
+      "conflict_overlap_risk": "low",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "governance checks",
+        "CIEU/CZL semantics"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "ystar-company historical evidence review",
+      "repo": "ystar-company",
+      "path": "runtime_artifact_quarantine/evidence_review/README.md",
+      "capability": "historical evidence constraints",
+      "current_status": "historical",
+      "reuse_decision": "left_untouched",
+      "conflict_overlap_risk": "low",
+      "can_support_opportunity_discovery_or_action_execution": false,
+      "supports": [
+        "historical no-fake-evidence constraints"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "ystar-company live-readiness historical assets",
+      "repo": "ystar-company",
+      "path": "labs_live_readiness/README.md",
+      "capability": "historical live-readiness",
+      "current_status": "historical",
+      "reuse_decision": "left_untouched",
+      "conflict_overlap_risk": "low",
+      "can_support_opportunity_discovery_or_action_execution": false,
+      "supports": [
+        "historical live readiness framing"
+      ],
+      "new_wheel_justification": "reuse, wrap, or extend existing wheel"
+    },
+    {
+      "name": "E30 system-state reconstruction",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e30_system_state_reconstruction.py",
+      "capability": "methodological system observation",
+      "current_status": "new",
+      "reuse_decision": "build_missing",
+      "conflict_overlap_risk": "none",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "state model from existing evidence"
+      ],
+      "new_wheel_justification": "build_missing: no existing wheel performs this E30 method-specific function"
+    },
+    {
+      "name": "E30 open action-space generator",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e30_open_action_space_generator.py",
+      "capability": "open action generation",
+      "current_status": "new",
+      "reuse_decision": "build_missing",
+      "conflict_overlap_risk": "none",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "non-menu candidate actions"
+      ],
+      "new_wheel_justification": "build_missing: no existing wheel performs this E30 method-specific function"
+    },
+    {
+      "name": "E30 objective scoring/falsification",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e30_action_objective_scoring.py",
+      "capability": "objective scoring",
+      "current_status": "new",
+      "reuse_decision": "build_missing",
+      "conflict_overlap_risk": "none",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "explicit objective scores",
+        "falsification"
+      ],
+      "new_wheel_justification": "build_missing: no existing wheel performs this E30 method-specific function"
+    },
+    {
+      "name": "E30 methodological route selector",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e30_methodological_route_selection.py",
+      "capability": "method route selection",
+      "current_status": "new",
+      "reuse_decision": "build_missing",
+      "conflict_overlap_risk": "none",
+      "can_support_opportunity_discovery_or_action_execution": true,
+      "supports": [
+        "selected route from scores and objections"
+      ],
+      "new_wheel_justification": "build_missing: no existing wheel performs this E30 method-specific function"
+    }
+  ],
+  "new_wheel_creation_rule_satisfied": true,
+  "gov_mcp_modification_required": false,
+  "external_action_executed": false
+}
