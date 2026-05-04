@@ -1,0 +1,40 @@
+{
+  "artifact_id": "e16x_router_consolidation_plan",
+  "canonical_now": {
+    "risk_tier_source": "office/mission_command/e8_risk_controlled_action_model.py",
+    "bridge_runtime_router": "office/mission_command/action_authorization_router.py",
+    "progressive_domain_source": "office/mission_command/b2r_capability_domains.py",
+    "outbound_policy_prototype": "office/mission_command/e15d_ygov_outbound_policy.py"
+  },
+  "decisions": [
+    {
+      "question": "Which router is canonical now?",
+      "answer": "action_authorization_router remains the bridge-labs action authorization entrypoint, but it is incomplete for B2R/E15D."
+    },
+    {
+      "question": "Should action_authorization_router be upgraded?",
+      "answer": "yes; it should understand capability_domain, capability_level, canonical execution_mode, and E15D outbound policy reason codes."
+    },
+    {
+      "question": "Should E15D policy call action_authorization_router?",
+      "answer": "yes; E15D policy should call action_authorization_router before E16C-0, so outbound policy cannot bypass the older Tier 2 safety discipline."
+    },
+    {
+      "question": "Should B2R domains be source of truth?",
+      "answer": "yes for progressive capability domains inside bridge-labs until promoted to Y-star-gov policy."
+    },
+    {
+      "question": "Should E8 risk model remain canonical?",
+      "answer": "yes for bridge-labs risk tiers; capability levels must not replace risk tiers."
+    }
+  ],
+  "tests_required_before_e16c0": [
+    "external_validation_message Level 5 maps to Tier 2 under low-volume transparent envelope",
+    "E15D policy denies or owner-handoffs when router rejects",
+    "mcp_execute_after_activation alias normalizes to gov_mcp_execute_after_activation",
+    "owner approval state machine blocks send without activated envelope",
+    "feedback fixture cannot become validation feedback or CIEU writeback"
+  ],
+  "recommended_next_action": "Implement router/taxonomy alignment before any real send-gated pilot.",
+  "no_external_side_effects": "E16X performs read-only cross-repo inventory and static governance canonicalization only. It performs no customer contact, email/message sending, publication, payment, account creation, form submission, login, external validation submission, customer system access, legal/financial commitment, credential disclosure, core brain/CIEU/memory canonical writeback, real provider API call, outbound adapter call, or real send receipt."
+}

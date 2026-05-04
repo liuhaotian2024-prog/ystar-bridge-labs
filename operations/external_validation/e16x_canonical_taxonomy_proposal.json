@@ -1,0 +1,63 @@
+{
+  "artifact_id": "e16x_canonical_taxonomy_proposal",
+  "risk_tier": [
+    "TIER_0_INTERNAL",
+    "TIER_1_PUBLIC_READ_ONLY",
+    "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+    "TIER_3_PUBLIC_BROADCAST_OR_LANDING",
+    "TIER_4_COMMERCIAL_LEGAL_PRODUCTION_HIGH_RISK"
+  ],
+  "capability_level": {
+    "description": "Capability level describes autonomy maturity, not external risk.",
+    "levels": [
+      "LEVEL_0_INTERNAL_ONLY",
+      "LEVEL_1_PUBLIC_READ_ONLY",
+      "LEVEL_2_AUTHENTICATED_READ_ONLY",
+      "LEVEL_3_AUTHENTICATED_DRAFT_OR_FORM_FILL_WITHOUT_SUBMIT",
+      "LEVEL_4_LOW_RISK_SUBMISSION_OR_GOVERNED_PUBLICATION_WITHIN_ENVELOPE",
+      "LEVEL_5_EXTERNAL_VALIDATION_MESSAGING_WITHIN_ENVELOPE",
+      "LEVEL_6_FINANCIAL_LEGAL_CUSTOMER_SYSTEM_CORE_WRITEBACK_HARD_GATE"
+    ]
+  },
+  "canonical_mapping": {
+    "external_validation_message": {
+      "capability_level": "LEVEL_5_EXTERNAL_VALIDATION_MESSAGING_WITHIN_ENVELOPE",
+      "risk_tier_when_low_volume_transparent_non_binding": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "risk_tier_when_public_broadcast": "TIER_3_PUBLIC_BROADCAST_OR_LANDING",
+      "risk_tier_when_commercial_or_legal_commitment": "TIER_4_COMMERCIAL_LEGAL_PRODUCTION_HIGH_RISK"
+    }
+  },
+  "capability_domain": [
+    "external_validation_message",
+    "feedback_capture",
+    "authenticated_draft_creation",
+    "publication_draft",
+    "governed_publication",
+    "low_risk_form_submission",
+    "payment_or_contract_gate",
+    "core_writeback_gate"
+  ],
+  "execution_mode": [
+    "deny",
+    "prepare_only",
+    "draft_only",
+    "owner_handoff",
+    "dry_run_local",
+    "send_gated_pending_authorization",
+    "send_gated_dry_run",
+    "gov_mcp_execute_after_activation"
+  ],
+  "execution_mode_aliases": {
+    "mcp_execute_after_activation": "gov_mcp_execute_after_activation"
+  },
+  "owner_approval_state_machine": [
+    "proposed",
+    "owner_review_required",
+    "activated",
+    "rejected",
+    "revoked",
+    "expired",
+    "constitutional_hard_gate_escalated"
+  ],
+  "no_external_side_effects": "E16X performs read-only cross-repo inventory and static governance canonicalization only. It performs no customer contact, email/message sending, publication, payment, account creation, form submission, login, external validation submission, customer system access, legal/financial commitment, credential disclosure, core brain/CIEU/memory canonical writeback, real provider API call, outbound adapter call, or real send receipt."
+}
