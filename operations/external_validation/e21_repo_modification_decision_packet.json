@@ -1,0 +1,13 @@
+{
+  "artifact_id": "e21_repo_modification_decision_packet",
+  "gov_mcp_modified_and_delivered": true,
+  "bridge_labs_modified_and_delivered": true,
+  "decisions": {
+    "ystar-bridge-labs": "immediate_update_required_and_delivered_for_e21_sync",
+    "gov-mcp": "immediate_update_required_and_delivered_for_provider_foundation",
+    "Y-star-gov": "no_change_needed_for_e21_provider_scaffold",
+    "ystar-company": "future_historical_asset_migration_only"
+  },
+  "cross_repo_mutation_hidden": false,
+  "external_action_executed": false
+}

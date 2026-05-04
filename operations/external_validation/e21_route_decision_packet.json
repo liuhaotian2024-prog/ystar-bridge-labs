@@ -1,0 +1,16 @@
+{
+  "artifact_id": "e21_route_decision_packet",
+  "recommended_route": "E22_autonomous_dry_run_batch_execution",
+  "secondary_routes": [
+    "E22_live_provider_adapter_implementation",
+    "E22_evidence_tightening_before_live",
+    "keep_live_send_blocked"
+  ],
+  "why": "gov-mcp now has a disabled-live provider scaffold and dry-run simulator; live send remains blocked until live_ready provider and promotion requirements pass.",
+  "dry_run_available_count": 5,
+  "live_scaffolded_but_disabled_count": 5,
+  "evidence_required_count": 2,
+  "promotion_allowed_count": 0,
+  "keep_live_send_blocked": true,
+  "external_action_executed": false
+}

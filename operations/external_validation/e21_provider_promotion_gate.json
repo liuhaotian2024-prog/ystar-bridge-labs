@@ -1,0 +1,131 @@
+{
+  "artifact_id": "e21_provider_promotion_gate",
+  "contract_id": "e21_dry_run_to_live_provider_promotion_gate",
+  "promotion_allowed_count": 0,
+  "promotion_blocked_count": 7,
+  "rows": [
+    {
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "promotion_allowed": false,
+      "dry_run_required": true,
+      "provider_live_ready_required": true,
+      "provider_tests_required": true,
+      "rate_limit_required": true,
+      "idempotency_required": true,
+      "suppression_clear_required": true,
+      "audit_receipt_required": true,
+      "owner_approval_only_if_required_by_risk_tier": true,
+      "reason_codes": [
+        "live_provider_scaffolded_but_disabled"
+      ],
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "promotion_allowed": false,
+      "dry_run_required": true,
+      "provider_live_ready_required": true,
+      "provider_tests_required": true,
+      "rate_limit_required": true,
+      "idempotency_required": true,
+      "suppression_clear_required": true,
+      "audit_receipt_required": true,
+      "owner_approval_only_if_required_by_risk_tier": true,
+      "reason_codes": [
+        "live_provider_scaffolded_but_disabled"
+      ],
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "promotion_allowed": false,
+      "dry_run_required": true,
+      "provider_live_ready_required": true,
+      "provider_tests_required": true,
+      "rate_limit_required": true,
+      "idempotency_required": true,
+      "suppression_clear_required": true,
+      "audit_receipt_required": true,
+      "owner_approval_only_if_required_by_risk_tier": true,
+      "reason_codes": [
+        "live_provider_scaffolded_but_disabled"
+      ],
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "promotion_allowed": false,
+      "dry_run_required": true,
+      "provider_live_ready_required": true,
+      "provider_tests_required": true,
+      "rate_limit_required": true,
+      "idempotency_required": true,
+      "suppression_clear_required": true,
+      "audit_receipt_required": true,
+      "owner_approval_only_if_required_by_risk_tier": true,
+      "reason_codes": [
+        "live_provider_scaffolded_but_disabled"
+      ],
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "promotion_allowed": false,
+      "dry_run_required": true,
+      "provider_live_ready_required": true,
+      "provider_tests_required": true,
+      "rate_limit_required": true,
+      "idempotency_required": true,
+      "suppression_clear_required": true,
+      "audit_receipt_required": true,
+      "owner_approval_only_if_required_by_risk_tier": true,
+      "reason_codes": [
+        "live_provider_scaffolded_but_disabled"
+      ],
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_006_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "promotion_allowed": false,
+      "dry_run_required": true,
+      "provider_live_ready_required": true,
+      "provider_tests_required": true,
+      "rate_limit_required": true,
+      "idempotency_required": true,
+      "suppression_clear_required": true,
+      "audit_receipt_required": true,
+      "owner_approval_only_if_required_by_risk_tier": true,
+      "reason_codes": [
+        "target_evidence_required",
+        "live_provider_scaffolded_but_disabled"
+      ],
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c3_excluded_agent_direct_execution_without_activation",
+      "target_name": "Excluded direct agent execution path",
+      "promotion_allowed": false,
+      "dry_run_required": true,
+      "provider_live_ready_required": true,
+      "provider_tests_required": true,
+      "rate_limit_required": true,
+      "idempotency_required": true,
+      "suppression_clear_required": true,
+      "audit_receipt_required": true,
+      "owner_approval_only_if_required_by_risk_tier": true,
+      "reason_codes": [
+        "target_evidence_required",
+        "live_provider_scaffolded_but_disabled"
+      ],
+      "external_action_executed": false
+    }
+  ],
+  "live_execution_enabled_in_e21": false,
+  "external_action_executed": false
+}

@@ -1,0 +1,22 @@
+{
+  "artifact_id": "e21_provider_capability_sync",
+  "source_repo": "gov-mcp",
+  "source_commit": "3258488c355482eec0fd92f735d9c0ad10c7bfbe",
+  "provider_manifest_artifact_id": "gov_mcp_outbound_provider_capability_manifest_v1",
+  "provider_id": "disabled_live_outbound_provider",
+  "provider_mode": "live_disabled",
+  "no_send_available": true,
+  "dry_run_available": true,
+  "live_scaffold_available": true,
+  "live_provider_enabled": false,
+  "provider_tests_passed": true,
+  "rate_limit_guard_present": true,
+  "idempotency_guard_present": true,
+  "suppression_guard_present": true,
+  "audit_receipt_enabled": true,
+  "dry_run_and_live_receipts_distinct": true,
+  "capability_status": "live_provider_scaffolded_but_disabled",
+  "live_execution_blocked_reason": "live_provider_scaffolded_but_disabled",
+  "policy_note": "Provider absence is a live-capability blocker; low-risk send remains autonomous-eligible when provider becomes live_ready.",
+  "external_action_executed": false
+}
