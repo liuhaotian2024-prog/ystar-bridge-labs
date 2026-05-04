@@ -1,0 +1,19 @@
+{
+  "artifact_id": "e22_idempotency_replay_proof",
+  "replayed_action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+  "first_attempt": {
+    "status": "dry_run_receipt_recorded",
+    "idempotency_key": "idem_95d13f8b17e3e0ce45bf29f1093f47d4"
+  },
+  "duplicate_attempt": {
+    "status": "blocked_duplicate_noop",
+    "idempotency_key": "idem_95d13f8b17e3e0ce45bf29f1093f47d4",
+    "reason_codes": [
+      "duplicate_idempotency_key",
+      "no_duplicate_receipt_created"
+    ]
+  },
+  "duplicate_detected": true,
+  "duplicate_receipt_created": false,
+  "external_action_executed": false
+}

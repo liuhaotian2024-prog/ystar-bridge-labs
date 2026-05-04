@@ -1,0 +1,13 @@
+{
+  "artifact_id": "e22_rate_limit_proof",
+  "rate_limit_model": {
+    "bucket_id": "e22_autonomous_dry_run_batch",
+    "max_batch_actions": 5
+  },
+  "selected_batch_fits_quota": true,
+  "selected_count": 5,
+  "excess_hypothetical_count": 6,
+  "excess_hypothetical_result": "blocked_by_rate_limit",
+  "production_claims_excess_sends": false,
+  "external_action_executed": false
+}

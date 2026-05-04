@@ -1,0 +1,101 @@
+{
+  "artifact_id": "e22_dry_run_receipt_ledger",
+  "ledger_entries": [
+    {
+      "ledger_entry_id": "ledger_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "receipt_type": "dry_run_receipt",
+      "dry_run_receipt_id": "outbound_receipt_71a685d4577cb40d",
+      "live_receipt_id": null,
+      "external_provider_called": false,
+      "real_message_sent": false,
+      "live_receipt_created": false,
+      "no_external_effect_proof": {
+        "provider_called": false,
+        "real_message_sent": false,
+        "live_receipt_created": false
+      }
+    },
+    {
+      "ledger_entry_id": "ledger_c2_action_primary_002_cand_botsquash_botsquash",
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "receipt_type": "dry_run_receipt",
+      "dry_run_receipt_id": "outbound_receipt_06399c947c04cb19",
+      "live_receipt_id": null,
+      "external_provider_called": false,
+      "real_message_sent": false,
+      "live_receipt_created": false,
+      "no_external_effect_proof": {
+        "provider_called": false,
+        "real_message_sent": false,
+        "live_receipt_created": false
+      }
+    },
+    {
+      "ledger_entry_id": "ledger_c2_action_primary_003_cand_wotai_wotai",
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "receipt_type": "dry_run_receipt",
+      "dry_run_receipt_id": "outbound_receipt_d4e17366b6457a24",
+      "live_receipt_id": null,
+      "external_provider_called": false,
+      "real_message_sent": false,
+      "live_receipt_created": false,
+      "no_external_effect_proof": {
+        "provider_called": false,
+        "real_message_sent": false,
+        "live_receipt_created": false
+      }
+    },
+    {
+      "ledger_entry_id": "ledger_c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "receipt_type": "dry_run_receipt",
+      "dry_run_receipt_id": "outbound_receipt_d683026d9f0c8521",
+      "live_receipt_id": null,
+      "external_provider_called": false,
+      "real_message_sent": false,
+      "live_receipt_created": false,
+      "no_external_effect_proof": {
+        "provider_called": false,
+        "real_message_sent": false,
+        "live_receipt_created": false
+      }
+    },
+    {
+      "ledger_entry_id": "ledger_c2_action_fallback_005_cand_botsquash_botsquash",
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "receipt_type": "dry_run_receipt",
+      "dry_run_receipt_id": "outbound_receipt_09a95f8b31c678b8",
+      "live_receipt_id": null,
+      "external_provider_called": false,
+      "real_message_sent": false,
+      "live_receipt_created": false,
+      "no_external_effect_proof": {
+        "provider_called": false,
+        "real_message_sent": false,
+        "live_receipt_created": false
+      }
+    },
+    {
+      "ledger_entry_id": "ledger_replay_c2_action_primary_001_cand_alicelabs_alicelabs",
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "receipt_type": "replay_receipt",
+      "dry_run_receipt_id": null,
+      "live_receipt_id": null,
+      "duplicate_receipt_created": false,
+      "external_provider_called": false,
+      "real_message_sent": false,
+      "live_receipt_created": false
+    }
+  ],
+  "dry_run_receipt_count": 5,
+  "live_receipt_count": 0,
+  "replay_receipt_count": 1,
+  "blocked_receipt_count": 0,
+  "external_action_executed": false
+}

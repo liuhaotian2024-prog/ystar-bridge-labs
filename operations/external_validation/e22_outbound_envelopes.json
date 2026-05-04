@@ -1,0 +1,217 @@
+{
+  "artifact_id": "e22_outbound_envelopes",
+  "envelopes": [
+    {
+      "envelope_id": "e22_dry_run_envelope_8905c83f795ca284",
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_id": "alice_labs_ai_operations_consulting",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "channel": "gov_mcp_dry_run_validation_message",
+      "message_content_ref": "E18/E19 approved message variant; not executed in E20",
+      "message_hash": "9ffe2ec45530041c38c9d504f7e35a15",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "executor_decision": "agent_autonomous_dry_run",
+      "provider_mode": "dry_run",
+      "capability_domain": "external_validation_message",
+      "evidence_references": [
+        "src_alicelabs",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "guard_requirements": [
+        "risk_tier",
+        "policy_compatibility",
+        "provider_capability",
+        "dry_run_mode",
+        "rate_limit",
+        "idempotency",
+        "suppression",
+        "evidence",
+        "message_safety",
+        "owner_approval_if_required_by_risk_tier"
+      ],
+      "idempotency_key": "idem_95d13f8b17e3e0ce45bf29f1093f47d4",
+      "suppression_status": "clear",
+      "rate_limit_bucket": {
+        "bucket_id": "e22_autonomous_dry_run_batch",
+        "max_actions": 5,
+        "window": "local_batch"
+      },
+      "audit_czl_reference": "operations/external_validation/e22_czl_closure.json",
+      "live_execution_disabled": true,
+      "owner_approval_required_by_risk_tier": false,
+      "external_action_executed": false
+    },
+    {
+      "envelope_id": "e22_dry_run_envelope_ce4b4232d426ab18",
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "target_id": "botsquash_ai_automation_agency",
+      "target_name": "BotSquash AI Automation Agency",
+      "channel": "gov_mcp_dry_run_validation_message",
+      "message_content_ref": "E18/E19 approved message variant; not executed in E20",
+      "message_hash": "2c37deba0a3971c48d24b6dad74519da",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "executor_decision": "agent_autonomous_dry_run",
+      "provider_mode": "dry_run",
+      "capability_domain": "external_validation_message",
+      "evidence_references": [
+        "src_botsquash",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "guard_requirements": [
+        "risk_tier",
+        "policy_compatibility",
+        "provider_capability",
+        "dry_run_mode",
+        "rate_limit",
+        "idempotency",
+        "suppression",
+        "evidence",
+        "message_safety",
+        "owner_approval_if_required_by_risk_tier"
+      ],
+      "idempotency_key": "idem_c282bec42f33a6c6b728357b4b16218f",
+      "suppression_status": "clear",
+      "rate_limit_bucket": {
+        "bucket_id": "e22_autonomous_dry_run_batch",
+        "max_actions": 5,
+        "window": "local_batch"
+      },
+      "audit_czl_reference": "operations/external_validation/e22_czl_closure.json",
+      "live_execution_disabled": true,
+      "owner_approval_required_by_risk_tier": false,
+      "external_action_executed": false
+    },
+    {
+      "envelope_id": "e22_dry_run_envelope_0746026d63c7abc9",
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "target_id": "wotai_ai_automation",
+      "target_name": "WotAI AI Automation",
+      "channel": "gov_mcp_dry_run_validation_message",
+      "message_content_ref": "E18/E19 approved message variant; not executed in E20",
+      "message_hash": "c51e309f31cfc1ebe2d45c4b044222d2",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "executor_decision": "agent_autonomous_dry_run",
+      "provider_mode": "dry_run",
+      "capability_domain": "external_validation_message",
+      "evidence_references": [
+        "src_wotai",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "guard_requirements": [
+        "risk_tier",
+        "policy_compatibility",
+        "provider_capability",
+        "dry_run_mode",
+        "rate_limit",
+        "idempotency",
+        "suppression",
+        "evidence",
+        "message_safety",
+        "owner_approval_if_required_by_risk_tier"
+      ],
+      "idempotency_key": "idem_9be476526462914e07be3c3dd9dc5b43",
+      "suppression_status": "clear",
+      "rate_limit_bucket": {
+        "bucket_id": "e22_autonomous_dry_run_batch",
+        "max_actions": 5,
+        "window": "local_batch"
+      },
+      "audit_czl_reference": "operations/external_validation/e22_czl_closure.json",
+      "live_execution_disabled": true,
+      "owner_approval_required_by_risk_tier": false,
+      "external_action_executed": false
+    },
+    {
+      "envelope_id": "e22_dry_run_envelope_0e74ddbc243ebd1f",
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "target_id": "alice_labs_ai_operations_consulting",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "channel": "gov_mcp_dry_run_validation_message",
+      "message_content_ref": "E18/E19 approved message variant; not executed in E20",
+      "message_hash": "7a9c8761562f0fef00dbbd67fa2ca0ae",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "executor_decision": "agent_autonomous_dry_run",
+      "provider_mode": "dry_run",
+      "capability_domain": "external_validation_message",
+      "evidence_references": [
+        "src_alicelabs",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "guard_requirements": [
+        "risk_tier",
+        "policy_compatibility",
+        "provider_capability",
+        "dry_run_mode",
+        "rate_limit",
+        "idempotency",
+        "suppression",
+        "evidence",
+        "message_safety",
+        "owner_approval_if_required_by_risk_tier"
+      ],
+      "idempotency_key": "idem_8f4fdd1a37fd595d5531cea6071e7017",
+      "suppression_status": "clear",
+      "rate_limit_bucket": {
+        "bucket_id": "e22_autonomous_dry_run_batch",
+        "max_actions": 5,
+        "window": "local_batch"
+      },
+      "audit_czl_reference": "operations/external_validation/e22_czl_closure.json",
+      "live_execution_disabled": true,
+      "owner_approval_required_by_risk_tier": false,
+      "external_action_executed": false
+    },
+    {
+      "envelope_id": "e22_dry_run_envelope_ffed5477171ba26a",
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "target_id": "botsquash_ai_automation_agency",
+      "target_name": "BotSquash AI Automation Agency",
+      "channel": "gov_mcp_dry_run_validation_message",
+      "message_content_ref": "E18/E19 approved message variant; not executed in E20",
+      "message_hash": "433cb8c14860de4fc0b366f5fe140090",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+      "executor_decision": "agent_autonomous_dry_run",
+      "provider_mode": "dry_run",
+      "capability_domain": "external_validation_message",
+      "evidence_references": [
+        "src_botsquash",
+        "e13r_ev_001",
+        "e13r_ev_008",
+        "e13r_ev_009"
+      ],
+      "guard_requirements": [
+        "risk_tier",
+        "policy_compatibility",
+        "provider_capability",
+        "dry_run_mode",
+        "rate_limit",
+        "idempotency",
+        "suppression",
+        "evidence",
+        "message_safety",
+        "owner_approval_if_required_by_risk_tier"
+      ],
+      "idempotency_key": "idem_d4842b0693a60c450b7e70ee0e752c25",
+      "suppression_status": "clear",
+      "rate_limit_bucket": {
+        "bucket_id": "e22_autonomous_dry_run_batch",
+        "max_actions": 5,
+        "window": "local_batch"
+      },
+      "audit_czl_reference": "operations/external_validation/e22_czl_closure.json",
+      "live_execution_disabled": true,
+      "owner_approval_required_by_risk_tier": false,
+      "external_action_executed": false
+    }
+  ],
+  "envelope_count": 5,
+  "external_action_executed": false
+}

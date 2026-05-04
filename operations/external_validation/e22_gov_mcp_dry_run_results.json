@@ -1,0 +1,119 @@
+{
+  "artifact_id": "e22_gov_mcp_dry_run_results",
+  "integration_mode": "direct_gov_mcp_import",
+  "dry_run_results": [
+    {
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "dry_run_executed": true,
+      "dry_run_receipt_id": "outbound_receipt_71a685d4577cb40d",
+      "provider_mode": "dry_run",
+      "execution_status": "dry_run_completed",
+      "receipt_type": "dry_run_receipt",
+      "reason_codes": [
+        "owner_authorization_not_activated"
+      ],
+      "guard_summary": "dry_run_guard_passed",
+      "idempotency_key": "idem_95d13f8b17e3e0ce45bf29f1093f47d4",
+      "external_provider_called": false,
+      "real_message_sent": false,
+      "live_receipt_created": false,
+      "no_external_effect_proof": {
+        "provider_called": false,
+        "real_message_sent": false,
+        "live_receipt_created": false
+      }
+    },
+    {
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "dry_run_executed": true,
+      "dry_run_receipt_id": "outbound_receipt_06399c947c04cb19",
+      "provider_mode": "dry_run",
+      "execution_status": "dry_run_completed",
+      "receipt_type": "dry_run_receipt",
+      "reason_codes": [
+        "owner_authorization_not_activated"
+      ],
+      "guard_summary": "dry_run_guard_passed",
+      "idempotency_key": "idem_c282bec42f33a6c6b728357b4b16218f",
+      "external_provider_called": false,
+      "real_message_sent": false,
+      "live_receipt_created": false,
+      "no_external_effect_proof": {
+        "provider_called": false,
+        "real_message_sent": false,
+        "live_receipt_created": false
+      }
+    },
+    {
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "dry_run_executed": true,
+      "dry_run_receipt_id": "outbound_receipt_d4e17366b6457a24",
+      "provider_mode": "dry_run",
+      "execution_status": "dry_run_completed",
+      "receipt_type": "dry_run_receipt",
+      "reason_codes": [
+        "owner_authorization_not_activated"
+      ],
+      "guard_summary": "dry_run_guard_passed",
+      "idempotency_key": "idem_9be476526462914e07be3c3dd9dc5b43",
+      "external_provider_called": false,
+      "real_message_sent": false,
+      "live_receipt_created": false,
+      "no_external_effect_proof": {
+        "provider_called": false,
+        "real_message_sent": false,
+        "live_receipt_created": false
+      }
+    },
+    {
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "dry_run_executed": true,
+      "dry_run_receipt_id": "outbound_receipt_d683026d9f0c8521",
+      "provider_mode": "dry_run",
+      "execution_status": "dry_run_completed",
+      "receipt_type": "dry_run_receipt",
+      "reason_codes": [
+        "owner_authorization_not_activated"
+      ],
+      "guard_summary": "dry_run_guard_passed",
+      "idempotency_key": "idem_8f4fdd1a37fd595d5531cea6071e7017",
+      "external_provider_called": false,
+      "real_message_sent": false,
+      "live_receipt_created": false,
+      "no_external_effect_proof": {
+        "provider_called": false,
+        "real_message_sent": false,
+        "live_receipt_created": false
+      }
+    },
+    {
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "dry_run_executed": true,
+      "dry_run_receipt_id": "outbound_receipt_09a95f8b31c678b8",
+      "provider_mode": "dry_run",
+      "execution_status": "dry_run_completed",
+      "receipt_type": "dry_run_receipt",
+      "reason_codes": [
+        "owner_authorization_not_activated"
+      ],
+      "guard_summary": "dry_run_guard_passed",
+      "idempotency_key": "idem_d4842b0693a60c450b7e70ee0e752c25",
+      "external_provider_called": false,
+      "real_message_sent": false,
+      "live_receipt_created": false,
+      "no_external_effect_proof": {
+        "provider_called": false,
+        "real_message_sent": false,
+        "live_receipt_created": false
+      }
+    }
+  ],
+  "dry_run_executed_count": 5,
+  "dry_run_blocked_count": 0,
+  "external_action_executed": false
+}

@@ -1,0 +1,14 @@
+# E22 KPI Dry-Run Delta
+
+- dry_run_selected_count: 5
+- dry_run_executed_count: 5
+- dry_run_blocked_count: 0
+- guard_pass_count: 5
+- guard_block_count: 0
+- idempotency_block_count: 1
+- suppression_block_count: 1
+- evidence_block_count: 2
+- live_send_count: 0
+- real_response_count: 0
+- paid_signal_count: 0
+- external_action_executed: false

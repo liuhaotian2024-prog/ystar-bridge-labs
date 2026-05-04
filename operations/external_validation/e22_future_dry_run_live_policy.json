@@ -1,0 +1,18 @@
+{
+  "artifact_id": "e22_future_dry_run_live_policy",
+  "future_autonomous_outbound_milestone_must_include": [
+    "dry-run batch selector",
+    "provider envelope builder",
+    "guard stack replay",
+    "dry-run receipt ledger",
+    "idempotency proof",
+    "suppression proof",
+    "rate-limit proof",
+    "live promotion blocker report",
+    "ecosystem alignment proof",
+    "explicit no-external-effect statement until live mode is enabled"
+  ],
+  "live_mode_default_enabled": false,
+  "owner_manual_send_is_default": false,
+  "external_action_executed": false
+}

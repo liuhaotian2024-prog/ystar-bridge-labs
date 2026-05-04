@@ -1,0 +1,101 @@
+{
+  "artifact_id": "e22_live_promotion_blockers",
+  "rows": [
+    {
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "live_execution_allowed_now": false,
+      "blockers": [
+        "live_provider_enablement",
+        "provider_credentials_config",
+        "live_provider_tests",
+        "live_audit_receipt_readiness"
+      ],
+      "live_blocked_reason": "live_provider_scaffolded_but_disabled",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "live_execution_allowed_now": false,
+      "blockers": [
+        "live_provider_enablement",
+        "provider_credentials_config",
+        "live_provider_tests",
+        "live_audit_receipt_readiness"
+      ],
+      "live_blocked_reason": "live_provider_scaffolded_but_disabled",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "live_execution_allowed_now": false,
+      "blockers": [
+        "live_provider_enablement",
+        "provider_credentials_config",
+        "live_provider_tests",
+        "live_audit_receipt_readiness"
+      ],
+      "live_blocked_reason": "live_provider_scaffolded_but_disabled",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "live_execution_allowed_now": false,
+      "blockers": [
+        "live_provider_enablement",
+        "provider_credentials_config",
+        "live_provider_tests",
+        "live_audit_receipt_readiness"
+      ],
+      "live_blocked_reason": "live_provider_scaffolded_but_disabled",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "live_execution_allowed_now": false,
+      "blockers": [
+        "live_provider_enablement",
+        "provider_credentials_config",
+        "live_provider_tests",
+        "live_audit_receipt_readiness"
+      ],
+      "live_blocked_reason": "live_provider_scaffolded_but_disabled",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_006_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "live_execution_allowed_now": false,
+      "blockers": [
+        "live_provider_enablement",
+        "provider_credentials_config",
+        "live_provider_tests",
+        "live_audit_receipt_readiness",
+        "final_evidence_sufficiency"
+      ],
+      "live_blocked_reason": "evidence_required_before_execution",
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c3_excluded_agent_direct_execution_without_activation",
+      "target_name": "Excluded direct agent execution path",
+      "live_execution_allowed_now": false,
+      "blockers": [
+        "live_provider_enablement",
+        "provider_credentials_config",
+        "live_provider_tests",
+        "live_audit_receipt_readiness",
+        "final_evidence_sufficiency"
+      ],
+      "live_blocked_reason": "evidence_required_before_execution",
+      "external_action_executed": false
+    }
+  ],
+  "live_ready_count": 0,
+  "live_blocked_count": 7,
+  "external_action_executed": false
+}

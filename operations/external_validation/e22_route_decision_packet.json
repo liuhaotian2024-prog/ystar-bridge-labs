@@ -1,0 +1,13 @@
+{
+  "artifact_id": "e22_route_decision_packet",
+  "recommended_route": "E23_live_provider_enablement_plan",
+  "secondary_routes": [
+    "E23_evidence_tightening_before_live",
+    "E23_suppression_and_compliance_registry",
+    "keep_live_send_blocked"
+  ],
+  "dry_run_executed_count": 5,
+  "live_blocked_count": 7,
+  "keep_live_send_blocked": true,
+  "external_action_executed": false
+}

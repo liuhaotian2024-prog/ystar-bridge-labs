@@ -1,0 +1,12 @@
+{
+  "artifact_id": "e22_suppression_proof",
+  "proof_type": "local_test_fixture_only_not_production_target",
+  "fixture": {
+    "target_id": "suppressed_fixture_target",
+    "suppression_status": "suppress"
+  },
+  "result": "blocked_by_suppression_guard",
+  "suppressed_target_passed_dry_run": false,
+  "production_artifact_uses_synthetic_target": false,
+  "external_action_executed": false
+}

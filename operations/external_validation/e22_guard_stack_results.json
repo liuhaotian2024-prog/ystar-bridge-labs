@@ -1,0 +1,303 @@
+{
+  "artifact_id": "e22_guard_stack_results",
+  "guard_results": [
+    {
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "checks": {
+        "risk_tier_check": {
+          "status": "passed",
+          "reason": "TIER_2 low-risk validation dry-run",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "policy_compatibility_check": {
+          "status": "passed",
+          "reason": "external_validation_message with transparency/opt-out contract",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "provider_capability_check": {
+          "status": "passed",
+          "reason": "gov-mcp dry_run_available",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "dry_run_mode_check": {
+          "status": "passed",
+          "reason": "provider_mode=dry_run and live_execution_disabled=true",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "rate_limit_check": {
+          "status": "passed",
+          "reason": "within e22_autonomous_dry_run_batch quota",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "idempotency_check": {
+          "status": "passed",
+          "reason": "idempotency key present",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "suppression_check": {
+          "status": "passed",
+          "reason": "suppression clear",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "evidence_check": {
+          "status": "passed",
+          "reason": "selection excluded evidence-required candidates",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "message_safety_check": {
+          "status": "passed",
+          "reason": "message hash and content reference present",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "owner_approval_check": {
+          "status": "not_applicable",
+          "reason": "risk tier does not require owner approval",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        }
+      },
+      "resulting_action_status": "dry_run_guard_passed",
+      "failed_checks": [],
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "checks": {
+        "risk_tier_check": {
+          "status": "passed",
+          "reason": "TIER_2 low-risk validation dry-run",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "policy_compatibility_check": {
+          "status": "passed",
+          "reason": "external_validation_message with transparency/opt-out contract",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "provider_capability_check": {
+          "status": "passed",
+          "reason": "gov-mcp dry_run_available",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "dry_run_mode_check": {
+          "status": "passed",
+          "reason": "provider_mode=dry_run and live_execution_disabled=true",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "rate_limit_check": {
+          "status": "passed",
+          "reason": "within e22_autonomous_dry_run_batch quota",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "idempotency_check": {
+          "status": "passed",
+          "reason": "idempotency key present",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "suppression_check": {
+          "status": "passed",
+          "reason": "suppression clear",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "evidence_check": {
+          "status": "passed",
+          "reason": "selection excluded evidence-required candidates",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "message_safety_check": {
+          "status": "passed",
+          "reason": "message hash and content reference present",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "owner_approval_check": {
+          "status": "not_applicable",
+          "reason": "risk tier does not require owner approval",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        }
+      },
+      "resulting_action_status": "dry_run_guard_passed",
+      "failed_checks": [],
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "checks": {
+        "risk_tier_check": {
+          "status": "passed",
+          "reason": "TIER_2 low-risk validation dry-run",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "policy_compatibility_check": {
+          "status": "passed",
+          "reason": "external_validation_message with transparency/opt-out contract",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "provider_capability_check": {
+          "status": "passed",
+          "reason": "gov-mcp dry_run_available",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "dry_run_mode_check": {
+          "status": "passed",
+          "reason": "provider_mode=dry_run and live_execution_disabled=true",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "rate_limit_check": {
+          "status": "passed",
+          "reason": "within e22_autonomous_dry_run_batch quota",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "idempotency_check": {
+          "status": "passed",
+          "reason": "idempotency key present",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "suppression_check": {
+          "status": "passed",
+          "reason": "suppression clear",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "evidence_check": {
+          "status": "passed",
+          "reason": "selection excluded evidence-required candidates",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "message_safety_check": {
+          "status": "passed",
+          "reason": "message hash and content reference present",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "owner_approval_check": {
+          "status": "not_applicable",
+          "reason": "risk tier does not require owner approval",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        }
+      },
+      "resulting_action_status": "dry_run_guard_passed",
+      "failed_checks": [],
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "checks": {
+        "risk_tier_check": {
+          "status": "passed",
+          "reason": "TIER_2 low-risk validation dry-run",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "policy_compatibility_check": {
+          "status": "passed",
+          "reason": "external_validation_message with transparency/opt-out contract",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "provider_capability_check": {
+          "status": "passed",
+          "reason": "gov-mcp dry_run_available",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "dry_run_mode_check": {
+          "status": "passed",
+          "reason": "provider_mode=dry_run and live_execution_disabled=true",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "rate_limit_check": {
+          "status": "passed",
+          "reason": "within e22_autonomous_dry_run_batch quota",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "idempotency_check": {
+          "status": "passed",
+          "reason": "idempotency key present",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "suppression_check": {
+          "status": "passed",
+          "reason": "suppression clear",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "evidence_check": {
+          "status": "passed",
+          "reason": "selection excluded evidence-required candidates",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "message_safety_check": {
+          "status": "passed",
+          "reason": "message hash and content reference present",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "owner_approval_check": {
+          "status": "not_applicable",
+          "reason": "risk tier does not require owner approval",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        }
+      },
+      "resulting_action_status": "dry_run_guard_passed",
+      "failed_checks": [],
+      "external_action_executed": false
+    },
+    {
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "checks": {
+        "risk_tier_check": {
+          "status": "passed",
+          "reason": "TIER_2 low-risk validation dry-run",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "policy_compatibility_check": {
+          "status": "passed",
+          "reason": "external_validation_message with transparency/opt-out contract",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "provider_capability_check": {
+          "status": "passed",
+          "reason": "gov-mcp dry_run_available",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "dry_run_mode_check": {
+          "status": "passed",
+          "reason": "provider_mode=dry_run and live_execution_disabled=true",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "rate_limit_check": {
+          "status": "passed",
+          "reason": "within e22_autonomous_dry_run_batch quota",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "idempotency_check": {
+          "status": "passed",
+          "reason": "idempotency key present",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "suppression_check": {
+          "status": "passed",
+          "reason": "suppression clear",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "evidence_check": {
+          "status": "passed",
+          "reason": "selection excluded evidence-required candidates",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "message_safety_check": {
+          "status": "passed",
+          "reason": "message hash and content reference present",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        },
+        "owner_approval_check": {
+          "status": "not_applicable",
+          "reason": "risk tier does not require owner approval",
+          "evidence_path": "operations/external_validation/e22_outbound_envelopes.json"
+        }
+      },
+      "resulting_action_status": "dry_run_guard_passed",
+      "failed_checks": [],
+      "external_action_executed": false
+    }
+  ],
+  "guard_pass_count": 5,
+  "guard_block_count": 0,
+  "external_action_executed": false
+}
