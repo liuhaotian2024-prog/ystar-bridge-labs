@@ -1,0 +1,52 @@
+{
+  "artifact_id": "e16g_risk_capability_execution_mapping",
+  "source_e16x_taxonomy": "operations/external_validation/e16x_canonical_taxonomy_proposal.json",
+  "risk_tier_rule": "RiskTier is operational risk; CapabilityLevel is autonomy/capability maturity.",
+  "external_validation_message_mapping": {
+    "capability_level": "LEVEL_5_EXTERNAL_VALIDATION_MESSAGING_WITHIN_ENVELOPE",
+    "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION",
+    "conditions": [
+      "low volume",
+      "AI transparent",
+      "opt-out present",
+      "owner envelope constrained",
+      "no payment/account/form/login/publication",
+      "suppression checked"
+    ]
+  },
+  "canonical_execution_mode": "gov_mcp_execute_after_activation",
+  "legacy_aliases": {
+    "mcp_execute_after_activation": "gov_mcp_execute_after_activation"
+  },
+  "owner_authorization_states": [
+    "owner_review_required",
+    "activation_preflight_passed",
+    "activation_ready_but_not_approved",
+    "activated",
+    "revoked",
+    "expired",
+    "blocked_by_scope_mismatch",
+    "blocked_by_hard_gate"
+  ],
+  "feedback_cieu_eligibility": {
+    "public_evidence_is_validation_feedback": false,
+    "owner_reported_feedback_status": "provisional_until_provenance_recorded",
+    "customer_response_requires": [
+      "action_id",
+      "ledger_id",
+      "feedback_event_id"
+    ],
+    "core_cieu_writeback": "hard_gated"
+  },
+  "source_taxonomy_modes": [
+    "deny",
+    "prepare_only",
+    "draft_only",
+    "owner_handoff",
+    "dry_run_local",
+    "send_gated_pending_authorization",
+    "send_gated_dry_run",
+    "gov_mcp_execute_after_activation"
+  ],
+  "no_external_side_effects": "E16G performs code/static alignment and no-send/dry-run adapter promotion only. It performs no customer contact, email/message sending, publication, payment, account creation, form submission, login, external validation submission, customer system access, legal/financial commitment, credential disclosure, core brain/CIEU/memory writeback, real provider API call, real outbound adapter call, or real send receipt."
+}

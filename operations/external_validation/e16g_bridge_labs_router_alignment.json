@@ -1,0 +1,32 @@
+{
+  "artifact_id": "e16g_bridge_labs_router_alignment",
+  "source_e16x_router_plan": {
+    "risk_tier_source": "office/mission_command/e8_risk_controlled_action_model.py",
+    "bridge_runtime_router": "office/mission_command/action_authorization_router.py",
+    "progressive_domain_source": "office/mission_command/b2r_capability_domains.py",
+    "outbound_policy_prototype": "office/mission_command/e15d_ygov_outbound_policy.py"
+  },
+  "semantic_conflicts_addressed": [
+    "risk_tier_vs_capability_level",
+    "execution_mode_enum",
+    "owner_approval_state_machine",
+    "gov_mcp_boundary"
+  ],
+  "bridge_labs_runtime_changes": "no core runtime behavior changed in E16G; alignment is explicit artifact-level canonicalization",
+  "router_alignment_rules": [
+    "action_authorization_router remains bridge-labs local action authorization entrypoint.",
+    "E8 risk tiers remain canonical for bridge-labs operational risk.",
+    "B2R capability levels remain capability maturity, not risk tier.",
+    "E15D outbound policy must reference the gov-mcp adapter contract before any E16C pilot.",
+    "mcp_execute_after_activation is legacy alias; gov_mcp_execute_after_activation is canonical.",
+    "Feedback fixtures cannot become validation feedback or CIEU writeback without action_id/ledger_id/feedback_event_id provenance."
+  ],
+  "remaining_before_real_send": [
+    "wire bridge-labs outbound policy to gov-mcp adapter once gov-mcp promotion commit is remote-confirmed",
+    "add E16C dry-run integration test against gov_mcp.outbound",
+    "obtain explicit owner authorization envelope before any real send-gated pilot"
+  ],
+  "real_e16c0_allowed_now": false,
+  "semantic_conflict_count_from_e16x": 4,
+  "no_external_side_effects": "E16G performs code/static alignment and no-send/dry-run adapter promotion only. It performs no customer contact, email/message sending, publication, payment, account creation, form submission, login, external validation submission, customer system access, legal/financial commitment, credential disclosure, core brain/CIEU/memory writeback, real provider API call, real outbound adapter call, or real send receipt."
+}
