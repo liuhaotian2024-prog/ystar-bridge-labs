@@ -1,0 +1,244 @@
+{
+  "artifact_id": "e32_multi_path_business_plans",
+  "complete_plan_count": 5,
+  "plans": [
+    {
+      "buyer_pain": "Need clarity before scaling agents, platforms, governance, and automation spend.",
+      "category": "near_term_cash_path",
+      "current_assets_reused": [
+        "E31 package",
+        "CEO KG",
+        "source receipts",
+        "branch guardrail"
+      ],
+      "deliverable": "One-page offer, sample diagnostic, claim register, scorecard, 90-day roadmap.",
+      "delivery_motion": "Manual/service-led diagnostic using existing Y* evidence and public source binding.",
+      "kill_criteria": [
+        "owner rejects public positioning",
+        "feedback says problem is not urgent",
+        "no credible buyer segment emerges"
+      ],
+      "missing_assets": [
+        "owner-approved public copy",
+        "sample diagnostic",
+        "buyer feedback path"
+      ],
+      "next_milestone_candidate": "E33_owner_strategy_decision_packet_to_low_risk_external_signal_route",
+      "ninety_day_action_plan": [
+        "controlled feedback loop",
+        "iterate package",
+        "seek paid pilot if feedback supports"
+      ],
+      "objective": "Get first real buyer feedback and possible paid pilot using a proof-bound 48h readiness review.",
+      "plan_id": "plan_near_term_paid_readiness_review",
+      "pricing_commitment_hypothesis": "$750-$1,500 pilot, with room to move toward higher audit tiers if validated.",
+      "proof_required": "At least one real buyer feedback event; paid signal only if a buyer pays.",
+      "required_technical_assets": [
+        "claim register",
+        "diagnostic template",
+        "KG evidence map"
+      ],
+      "risks": [
+        "no buyer trust",
+        "too diagnostic if buyer wants implementation"
+      ],
+      "sales_motion": "Owner-reviewed public draft or partner validation packet before contact.",
+      "success_criteria": [
+        "one qualified feedback event",
+        "clear willingness-to-engage",
+        "paid pilot or strong referral"
+      ],
+      "target_customer": "AI consultancies, automation agencies, founder-led AI teams",
+      "thirty_day_action_plan": [
+        "owner decision",
+        "publication/partner validation draft",
+        "sample diagnostic"
+      ],
+      "validation_motion": "No-send owner review, then separately gated low-risk external validation.",
+      "value_proposition": "A fast diagnostic that maps readiness gaps, evidence boundaries, and safest next implementation step."
+    },
+    {
+      "buyer_pain": "Partners need a credible way to qualify agent implementation clients.",
+      "category": "partner_channel_path",
+      "current_assets_reused": [
+        "E31 package",
+        "AWS partner evidence",
+        "Deloitte readiness evidence"
+      ],
+      "deliverable": "Partner packet, white-label checklist, objection map, sample client scorecard.",
+      "delivery_motion": "PDF/Markdown packet and guided workshop outline.",
+      "kill_criteria": [
+        "partner feedback says no presale need"
+      ],
+      "missing_assets": [
+        "partner list",
+        "partner-specific examples"
+      ],
+      "next_milestone_candidate": "E33_partner_validation_packet_if_owner_selects_partner_route",
+      "ninety_day_action_plan": [
+        "run gated partner validation",
+        "revise packaging"
+      ],
+      "objective": "Turn readiness review into a partner presales diagnostic asset.",
+      "plan_id": "plan_partner_channel_readiness_packet",
+      "pricing_commitment_hypothesis": "$500-$2,000 pilot or future rev-share, unvalidated.",
+      "proof_required": "Partner says it improves presale clarity or reduces scoping risk.",
+      "required_technical_assets": [
+        "partner-specific claim boundaries",
+        "sample scorecard"
+      ],
+      "risks": [
+        "partners build own",
+        "white-label ambiguity"
+      ],
+      "sales_motion": "Owner-approved partner validation, not broad outbound.",
+      "success_criteria": [
+        "partner asks to reuse packet",
+        "partner proposes a pilot"
+      ],
+      "target_customer": "AI implementation consultancies and agencies",
+      "thirty_day_action_plan": [
+        "draft partner packet",
+        "define validation criteria"
+      ],
+      "validation_motion": "Discuss with one or two known-safe partner archetypes if approved later.",
+      "value_proposition": "A proof-bound diagnostic packet partners can use before scoping larger work."
+    },
+    {
+      "buyer_pain": "Need AI inventory, risk, evidence, policy, and audit readiness without fake claims.",
+      "category": "governance_infrastructure_path",
+      "current_assets_reused": [
+        "CIEU/CZL",
+        "claim registers",
+        "promotion gates"
+      ],
+      "deliverable": "Evidence boundary scorecard, no-fake-signal audit, remediation roadmap.",
+      "delivery_motion": "Manual review mapped to NIST/Credo-like public categories.",
+      "kill_criteria": [
+        "buyers require certifications or integrations Y* lacks"
+      ],
+      "missing_assets": [
+        "public examples",
+        "certification disclaimers",
+        "trust proof"
+      ],
+      "next_milestone_candidate": "E34_governance_evidence_audit_sample_if_selected",
+      "ninety_day_action_plan": [
+        "validate against one governance-sensitive buyer"
+      ],
+      "objective": "Productize Y* evidence-bound governance semantics as a readiness/audit infrastructure wedge.",
+      "plan_id": "plan_governance_infrastructure",
+      "pricing_commitment_hypothesis": "$1,500-$5,000 pilot, unvalidated.",
+      "proof_required": "One regulated/founder-led team says the pack helps internal governance.",
+      "required_technical_assets": [
+        "governance scorecard",
+        "evidence pack template"
+      ],
+      "risks": [
+        "credibility/certification gap",
+        "strong incumbents"
+      ],
+      "sales_motion": "Content and sample audit first; no compliance certification claims.",
+      "success_criteria": [
+        "buyer wants internal evidence pack review"
+      ],
+      "target_customer": "regulated AI teams and compliance-aware operators",
+      "thirty_day_action_plan": [
+        "convert E31/E32 evidence boundaries into sample scorecard"
+      ],
+      "validation_motion": "Owner-approved sample, then partner/regulatory-adjacent feedback.",
+      "value_proposition": "A practical evidence-bound governance audit pack before enterprise GRC purchase."
+    },
+    {
+      "buyer_pain": "Need repeatable readiness scoring before agent implementation.",
+      "category": "strategic_productization_path",
+      "current_assets_reused": [
+        "E32 technical synthesis",
+        "E31 package",
+        "branch registry"
+      ],
+      "deliverable": "Static prototype or spreadsheet-like scorecard, not a hosted app yet.",
+      "delivery_motion": "Prototype built from existing diagnostics.",
+      "kill_criteria": [
+        "no feedback or owner does not want product path now"
+      ],
+      "missing_assets": [
+        "UX",
+        "example input/output"
+      ],
+      "next_milestone_candidate": "E34_scorecard_prototype_if_owner_selects_productization",
+      "ninety_day_action_plan": [
+        "turn into repeatable prototype if feedback validates"
+      ],
+      "objective": "Turn diagnostics into a reusable scorecard/prototype rather than pure service.",
+      "plan_id": "plan_productized_scorecard",
+      "pricing_commitment_hypothesis": "Lead magnet or paid sample; no current WTP proof.",
+      "proof_required": "A technical buyer understands and wants to use the scorecard.",
+      "required_technical_assets": [
+        "score dimensions",
+        "sample results",
+        "export"
+      ],
+      "risks": [
+        "overbuilding before buyers",
+        "unclear distribution"
+      ],
+      "sales_motion": "Developer/public sample after owner review.",
+      "success_criteria": [
+        "sample earns saves/shares/qualified interest"
+      ],
+      "target_customer": "technical AI operators",
+      "thirty_day_action_plan": [
+        "extract scorecard from package"
+      ],
+      "validation_motion": "Low-risk public artifact feedback.",
+      "value_proposition": "Self-contained readiness scorecard grounded in public evidence and Y* guard stack."
+    },
+    {
+      "buyer_pain": "Need strategy, evidence, branch selection, and governed execution routing.",
+      "category": "ceo_agent_runtime_product_path",
+      "current_assets_reused": [
+        "CEO KG",
+        "branch registry",
+        "control rooms"
+      ],
+      "deliverable": "Strategy packet generator or guided runtime prototype.",
+      "delivery_motion": "Prototype from E24-E32 artifacts.",
+      "kill_criteria": [
+        "no clear buyer after strategy discussions"
+      ],
+      "missing_assets": [
+        "product UX",
+        "external examples",
+        "clear ICP"
+      ],
+      "next_milestone_candidate": "future_ceo_runtime_product_discovery",
+      "ninety_day_action_plan": [
+        "prototype only if near-term path stalls or owner prioritizes product"
+      ],
+      "objective": "Long-term productize CEO-agent strategic cognition for agent companies.",
+      "plan_id": "plan_ceo_agent_runtime_product",
+      "pricing_commitment_hypothesis": "Service-assisted pilot or SaaS later; no current proof.",
+      "proof_required": "Founder/operator says it clarifies a real decision enough to pay or pilot.",
+      "required_technical_assets": [
+        "read model",
+        "UI/UX",
+        "repeatable imports"
+      ],
+      "risks": [
+        "too abstract",
+        "slow cash path"
+      ],
+      "sales_motion": "Strategic reserve; do not prioritize before first paid signal.",
+      "success_criteria": [
+        "one founder/operator requests runtime pilot"
+      ],
+      "target_customer": "founders/operators building agent-native companies",
+      "thirty_day_action_plan": [
+        "preserve as strategic reserve"
+      ],
+      "validation_motion": "Owner/peer discussion only after near-term wedge has evidence.",
+      "value_proposition": "CEO KG + brain + branch registry as a decision runtime."
+    }
+  ]
+}

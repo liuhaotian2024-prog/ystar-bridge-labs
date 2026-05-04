@@ -1,0 +1,102 @@
+{
+  "artifact_id": "e32_unique_advantage_weakness_analysis",
+  "credibility_gaps": [
+    {
+      "id": "weak_no_paid_signal",
+      "summary": "No real paid signal, customer feedback, or buyer validation yet."
+    },
+    {
+      "id": "weak_no_public_brand",
+      "summary": "No buyer-visible brand proof, case study, landing page, or credible external presence attached to the offer."
+    },
+    {
+      "id": "weak_certification_gap",
+      "summary": "No third-party compliance certification or partner badge."
+    }
+  ],
+  "packaging_gaps": [
+    {
+      "id": "weak_packaging_gap",
+      "summary": "Internal assets are powerful but still need simple business packaging and language."
+    },
+    {
+      "id": "weak_product_ui",
+      "summary": "No polished product UI or hosted runtime that buyers can self-serve."
+    }
+  ],
+  "strongest_differentiator_count": 7,
+  "strongest_differentiators": [
+    {
+      "id": "adv_no_fake_evidence",
+      "summary": "No-fake-evidence discipline and strict separation of public observation, internal inference, customer feedback, and paid signal."
+    },
+    {
+      "id": "adv_governance_kernel",
+      "summary": "Governance kernel, CIEU/CZL audit semantics, and evidence-bound closure culture."
+    },
+    {
+      "id": "adv_provider_boundary",
+      "summary": "gov-mcp provider boundary with dry-run, sandbox, live-test, idempotency, suppression, compliance, receipt, and kill-switch concepts."
+    },
+    {
+      "id": "adv_ceo_kg",
+      "summary": "CEO KG/brain links capabilities, evidence, offers, risks, blockers, branch decisions, and monetization paths."
+    },
+    {
+      "id": "adv_branch_optionality",
+      "summary": "Revenue branch registry prevents overfitting to one path while preserving shortest-cash-path priority."
+    },
+    {
+      "id": "adv_real_observation_loop",
+      "summary": "E31/E32 public read-only observation loop creates evidence-bound market learning without customer contact."
+    },
+    {
+      "id": "adv_owner_conceptual_frame",
+      "summary": "Y* has a distinctive frame: agent company governance, CEO cognition, field imagination, and accountable execution."
+    }
+  ],
+  "weakness_count": 7,
+  "weaknesses": [
+    {
+      "id": "weak_no_paid_signal",
+      "summary": "No real paid signal, customer feedback, or buyer validation yet."
+    },
+    {
+      "id": "weak_no_public_brand",
+      "summary": "No buyer-visible brand proof, case study, landing page, or credible external presence attached to the offer."
+    },
+    {
+      "id": "weak_product_ui",
+      "summary": "No polished product UI or hosted runtime that buyers can self-serve."
+    },
+    {
+      "id": "weak_certification_gap",
+      "summary": "No third-party compliance certification or partner badge."
+    },
+    {
+      "id": "weak_packaging_gap",
+      "summary": "Internal assets are powerful but still need simple business packaging and language."
+    },
+    {
+      "id": "weak_delivery_capacity",
+      "summary": "The diagnostic delivery process is not yet proven against a real buyer or real artifact turnaround."
+    },
+    {
+      "id": "weak_channel_gap",
+      "summary": "No validated distribution channel; outreach, publication, and partner validation remain gated."
+    }
+  ],
+  "where_competitors_are_stronger": [
+    "public brand proof",
+    "enterprise integrations",
+    "certifications",
+    "product UI",
+    "distribution"
+  ],
+  "where_y_star_should_not_compete_now": [
+    "full observability platform",
+    "full GRC platform",
+    "large consulting transformation",
+    "production live automation without buyer proof"
+  ]
+}

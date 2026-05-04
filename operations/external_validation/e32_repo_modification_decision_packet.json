@@ -1,0 +1,13 @@
+{
+  "artifact_id": "e32_repo_modification_decision_packet",
+  "gov_mcp_modification_required": false,
+  "modified_repos": [
+    "ystar-bridge-labs"
+  ],
+  "read_only_repos": [
+    "gov-mcp",
+    "Y-star-gov",
+    "ystar-company"
+  ],
+  "reason": "E32 is CEO strategy cognition and public research synthesis; provider boundary changes are not required."
+}

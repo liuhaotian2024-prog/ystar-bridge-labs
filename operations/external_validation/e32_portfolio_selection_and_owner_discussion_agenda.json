@@ -1,0 +1,54 @@
+{
+  "artifact_id": "e32_portfolio_selection_and_owner_discussion_agenda",
+  "customer_feedback_claimed": false,
+  "evidence_that_would_change_decision": [
+    "Real buyer says readiness review is too weak but governance scorecard is valuable.",
+    "Partner expresses interest in white-label diagnostic.",
+    "Public draft feedback shows productized scorecard demand.",
+    "Owner wants to prioritize long-term CEO runtime over fastest paid signal."
+  ],
+  "market_validation_claimed": false,
+  "open_questions_for_discussion": [
+    "Is the owner comfortable discussing a paid diagnostic before customer proof exists?",
+    "Should the first external signal route be public content, partner validation, or a private owner-reviewed packet?",
+    "Which buyer segment feels most natural for Y*: consultancies, founder-led teams, regulated operators, or agent-company founders?",
+    "How much productization should happen before the first buyer conversation?"
+  ],
+  "recommended_primary_path": "path_paid_readiness_review_service",
+  "rejected_paths": [
+    {
+      "path_id": "production_live_configuration_only",
+      "reason": "Prerequisite-only and does not create strategy clarity or buyer signal by itself."
+    },
+    {
+      "path_id": "autonomous_outbound_now",
+      "reason": "Premature before owner-approved external-facing package and channel decision."
+    },
+    {
+      "path_id": "broad_platform_build_now",
+      "reason": "High effort and weak near-term validation relative to diagnostic/partner path."
+    }
+  ],
+  "scoring_summary": {
+    "path_agent_runtime_readiness_scorecard": 72,
+    "path_ceo_agent_strategy_runtime_product": 67,
+    "path_governance_evidence_audit_pack": 76,
+    "path_governed_receipts_developer_toolkit": 58,
+    "path_internal_capability_before_market": 41,
+    "path_managed_autonomous_ops_control_room": 59,
+    "path_paid_readiness_review_service": 91,
+    "path_partner_validation_packet": 83
+  },
+  "secondary_path": "path_partner_validation_packet",
+  "strategic_reserve_paths": [
+    "path_governance_evidence_audit_pack",
+    "path_agent_runtime_readiness_scorecard",
+    "path_ceo_agent_strategy_runtime_product"
+  ],
+  "what_owner_should_decide": [
+    "Choose whether E33 should turn the primary path into an owner-reviewed public draft or a partner validation packet.",
+    "Choose whether the first public-facing position should lead with readiness review, governance evidence boundary, or partner presale diagnostic.",
+    "Choose acceptable price-hypothesis language for discussion only, with no payment collection.",
+    "Choose whether to preserve production-live/provider work as blocked until a real external feedback route justifies it."
+  ]
+}

@@ -1,0 +1,363 @@
+{
+  "artifact_id": "e32_existing_learning_strategy_wheel_inventory",
+  "audit_completed_before_e32_build": true,
+  "existing_learning_strategy_wheels_found": 23,
+  "extended_wheels_count": 2,
+  "gov_mcp_modified": false,
+  "newly_built_wheels_count": 5,
+  "repos_scanned": [
+    "ystar-bridge-labs",
+    "gov-mcp",
+    "Y-star-gov",
+    "ystar-company"
+  ],
+  "repos_scanned_count": 4,
+  "reused_wheels_count": 19,
+  "safe_research_path_available": true,
+  "wheels": [
+    {
+      "can_support_deep_learning": true,
+      "capability": "bounded public page read",
+      "current_status": "canonical",
+      "lacks": [
+        "market synthesis"
+      ],
+      "path": "office/mission_command/safe_public_page_reader.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing",
+      "supports": [
+        "public read-only observation",
+        "no-login/no-form boundary"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "source-seeded public research",
+      "current_status": "canonical",
+      "lacks": [
+        "CEO strategy packet construction"
+      ],
+      "path": "office/mission_command/source_seeded_research_provider.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing",
+      "supports": [
+        "approved source seeds",
+        "receipts",
+        "summaries"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "buyer-pain and market signal extraction",
+      "current_status": "usable",
+      "lacks": [
+        "multi-path monetization planning"
+      ],
+      "path": "office/mission_command/source_evidence_extractor.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing",
+      "supports": [
+        "buyer pain",
+        "pricing proxy",
+        "competitor signals"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "research safety and receipt schema",
+      "current_status": "canonical",
+      "lacks": [
+        "owner strategy discussion synthesis"
+      ],
+      "path": "office/mission_command/tier1_public_research.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing",
+      "supports": [
+        "budgeted public research",
+        "no external effect proof"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "real public read-only observation loop",
+      "current_status": "canonical",
+      "lacks": [
+        "strategic cognition breadth"
+      ],
+      "path": "office/mission_command/e31_real_world_observation_runner.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "wrap_existing",
+      "supports": [
+        "public receipts",
+        "no-contact proof"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "paid readiness-review no-send package",
+      "current_status": "canonical",
+      "lacks": [
+        "multi-path strategy alternatives"
+      ],
+      "path": "operations/external_validation/e31_paid_readiness_review_signal_package.json",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "wrap_existing",
+      "supports": [
+        "buyer-facing package",
+        "proof-bound claims"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "methodological route selection",
+      "current_status": "canonical",
+      "lacks": [
+        "deep market landscape synthesis"
+      ],
+      "path": "office/mission_command/e30_methodological_route_selection.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing",
+      "supports": [
+        "open action-space selection"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "multi-branch revenue portfolio guardrail",
+      "current_status": "canonical",
+      "lacks": [
+        "new market learning integration"
+      ],
+      "path": "office/mission_command/e29_multi_branch_portfolio_guardrail.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing",
+      "supports": [
+        "branch optionality",
+        "switch triggers"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "revenue mode branch registry",
+      "current_status": "canonical",
+      "lacks": [
+        "post-observation strategy selection"
+      ],
+      "path": "office/mission_command/e28r_revenue_mode_branch_registry.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing",
+      "supports": [
+        "10 revenue modes",
+        "active/backup/deferred branches"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "CEO knowledge graph",
+      "current_status": "canonical",
+      "lacks": [
+        "E32 strategy nodes"
+      ],
+      "path": "office/mission_command/e24_ceo_knowledge_graph_builder.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "extend_existing",
+      "supports": [
+        "nodes/edges",
+        "evidence status",
+        "promotion candidates"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "CEO working brain",
+      "current_status": "canonical",
+      "lacks": [
+        "deep learning synthesis"
+      ],
+      "path": "office/mission_command/e24_ceo_brain_state.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "extend_existing",
+      "supports": [
+        "route state",
+        "bottleneck",
+        "decision horizon"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "field-functional opportunity map",
+      "current_status": "usable",
+      "lacks": [
+        "market evidence refresh"
+      ],
+      "path": "office/mission_command/e24_field_functional_opportunity_map.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing",
+      "supports": [
+        "opportunity mapping",
+        "capability/path links"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "innovation hypothesis generation",
+      "current_status": "usable",
+      "lacks": [
+        "pricing and competitor grounding"
+      ],
+      "path": "office/mission_command/e24_innovation_hypothesis_generator.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing",
+      "supports": [
+        "capability-derived hypotheses"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "offer revision",
+      "current_status": "usable",
+      "lacks": [
+        "current market landscape breadth"
+      ],
+      "path": "office/mission_command/e13r_offer_revision.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing",
+      "supports": [
+        "positioning improvement"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "evidence sufficiency and claim tightening",
+      "current_status": "usable",
+      "lacks": [
+        "business plan generation"
+      ],
+      "path": "office/mission_command/e23_evidence_tightening_evaluator.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing",
+      "supports": [
+        "evidence blockers",
+        "claim discipline"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "provider boundary manifest",
+      "current_status": "canonical",
+      "lacks": [
+        "commercial strategy"
+      ],
+      "path": "gov_mcp/outbound/provider_manifest.py",
+      "repo": "gov-mcp",
+      "reuse_decision": "reuse_readonly",
+      "supports": [
+        "mode separation",
+        "provider manifest"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "live readiness validator",
+      "current_status": "canonical",
+      "lacks": [
+        "market desirability"
+      ],
+      "path": "gov_mcp/outbound/live_readiness.py",
+      "repo": "gov-mcp",
+      "reuse_decision": "reuse_readonly",
+      "supports": [
+        "production live blockers",
+        "live-test distinction"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "non-production live-test gate",
+      "current_status": "canonical",
+      "lacks": [
+        "customer or market proof"
+      ],
+      "path": "gov_mcp/outbound/live_test_gate.py",
+      "repo": "gov-mcp",
+      "reuse_decision": "reuse_readonly",
+      "supports": [
+        "live_test_gate_ready",
+        "production_live_blocked"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "sandbox receipt distinction",
+      "current_status": "canonical",
+      "lacks": [
+        "business packaging"
+      ],
+      "path": "gov_mcp/outbound/sandbox_receipts.py",
+      "repo": "gov-mcp",
+      "reuse_decision": "reuse_readonly",
+      "supports": [
+        "sandbox vs live receipt safety"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "normative governance and CIEU/CZL concepts",
+      "current_status": "canonical_readonly",
+      "lacks": [
+        "Bridge Labs commercial packaging"
+      ],
+      "path": "README.md / governance docs",
+      "repo": "Y-star-gov",
+      "reuse_decision": "reuse_readonly",
+      "supports": [
+        "governance semantics",
+        "audit boundary"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "historical external observation boundaries",
+      "current_status": "historical_usable",
+      "lacks": [
+        "current commercial truth"
+      ],
+      "path": "external_observation_definition_and_scope/*",
+      "repo": "ystar-company",
+      "reuse_decision": "reuse_readonly_historical",
+      "supports": [
+        "observation scope",
+        "no fake evidence"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "claim boundary archaeology",
+      "current_status": "historical_usable",
+      "lacks": [
+        "current market evidence"
+      ],
+      "path": "evidence_extraction_and_claim_boundary/*",
+      "repo": "ystar-company",
+      "reuse_decision": "reuse_readonly_historical",
+      "supports": [
+        "claim status discipline"
+      ]
+    },
+    {
+      "can_support_deep_learning": true,
+      "capability": "legacy CEO cognition and blind-spot traces",
+      "current_status": "historical_partial",
+      "lacks": [
+        "evidence freshness"
+      ],
+      "path": "reports/ceo/brain_dream_diffs/*",
+      "repo": "ystar-company",
+      "reuse_decision": "reuse_readonly_historical",
+      "supports": [
+        "self-knowledge archaeology"
+      ]
+    }
+  ],
+  "wrapped_wheels_count": 2
+}

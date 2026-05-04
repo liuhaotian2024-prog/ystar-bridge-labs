@@ -1,0 +1,86 @@
+{
+  "approved_observation_path": "existing source-seeded/public-page research wheels plus bounded public read-only web observation",
+  "artifact_id": "e32_controlled_research_plan",
+  "bounded_source_count": 12,
+  "no_accounts": true,
+  "no_forms": true,
+  "no_login": true,
+  "planned_sources": [
+    {
+      "category": "technical/provider boundary",
+      "source_id": "e32_source_mcp_spec",
+      "url": "https://modelcontextprotocol.io/specification/2025-11-25/basic"
+    },
+    {
+      "category": "governance/risk framework",
+      "source_id": "e32_source_nist_ai_rmf",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    {
+      "category": "agent observability",
+      "source_id": "e32_source_openai_agents_tracing",
+      "url": "https://openai.github.io/openai-agents-js/guides/tracing/"
+    },
+    {
+      "category": "agent safety",
+      "source_id": "e32_source_openai_agents_guardrails",
+      "url": "https://openai.github.io/openai-agents-js/guides/guardrails/"
+    },
+    {
+      "category": "agent observability platform",
+      "source_id": "e32_source_langsmith_observability",
+      "url": "https://info.langchain.com/AI-Observability"
+    },
+    {
+      "category": "LLM evaluation and monitoring platform",
+      "source_id": "e32_source_humanloop_pricing",
+      "url": "https://humanloop.com/pricing"
+    },
+    {
+      "category": "agent orchestration platform",
+      "source_id": "e32_source_crewai_pricing",
+      "url": "https://crewai.com/pricing"
+    },
+    {
+      "category": "workflow automation and agent platform",
+      "source_id": "e32_source_retool_pricing",
+      "url": "https://retool.com/en-EU/pricing"
+    },
+    {
+      "category": "partner ecosystem",
+      "source_id": "e32_source_aws_ai_partners",
+      "url": "https://aws.amazon.com/ai/generative-ai/partners/"
+    },
+    {
+      "category": "AI governance platform",
+      "source_id": "e32_source_credo_ai",
+      "url": "https://www.credo.ai/"
+    },
+    {
+      "category": "consulting readiness service",
+      "source_id": "e32_source_deloitte_readiness",
+      "url": "https://www.deloitte.com/us/en/services/consulting/services/generative-ai-readiness-and-adoption.html"
+    },
+    {
+      "category": "readiness audit pricing proxy",
+      "source_id": "e32_source_aries_audit_pricing",
+      "url": "https://ariesconsultinggroup.com/blog/ai-readiness-audit-cost/"
+    }
+  ],
+  "public_only": true,
+  "research_status": "planned_and_executed",
+  "source_categories": [
+    "AI governance platform",
+    "LLM evaluation and monitoring platform",
+    "agent observability",
+    "agent observability platform",
+    "agent orchestration platform",
+    "agent safety",
+    "consulting readiness service",
+    "governance/risk framework",
+    "partner ecosystem",
+    "readiness audit pricing proxy",
+    "technical/provider boundary",
+    "workflow automation and agent platform"
+  ]
+}

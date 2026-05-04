@@ -1,0 +1,35 @@
+{
+  "agenda_is_method_driven": true,
+  "artifact_id": "e32_ceo_learning_agenda",
+  "evidence_status_required": "observed_public_evidence, inferred_from_public_evidence, internal_hypothesis, or unsupported_do_not_use",
+  "learning_question_count": 16,
+  "market_questions": [
+    "Which buyer pains repeatedly appear across agent observability, evaluation, governance, workflow automation, and consulting pages?",
+    "Which alternatives already solve parts of the problem?",
+    "Where do pricing/budget proxies exist, and what do they not prove?"
+  ],
+  "monetization_questions": [
+    "Which path can create first paid signal fastest?",
+    "Which strategic paths compound if near-term service validates?",
+    "Which branches should remain reserve paths?"
+  ],
+  "self_questions": [
+    "What unique Y* assets create differentiation?",
+    "Which gaps make Y* not yet credible?",
+    "Which assets can become packaging now without overbuilding?"
+  ],
+  "source_categories": [
+    "official technical docs",
+    "agent observability/evaluation platforms",
+    "governance/risk frameworks and platforms",
+    "workflow/agent platform pricing pages",
+    "consulting/readiness service pages",
+    "partner ecosystem pages",
+    "repo-local CEO KG and branch registry artifacts"
+  ],
+  "technical_questions": [
+    "What agent runtime boundaries, traces, guardrails, provider modes, receipts, idempotency, and audit trails are required before a buyer should scale agents?",
+    "Which Y* technical capabilities are real enough to sell as diagnosis criteria versus internal infrastructure only?",
+    "What technical claims can be made without certification, production access, or customer proof?"
+  ]
+}

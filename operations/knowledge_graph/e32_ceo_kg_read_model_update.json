@@ -1,0 +1,15 @@
+{
+  "active_branch": "revenue_mode_shortest_cash_path",
+  "artifact_id": "e32_ceo_kg_read_model_update",
+  "customer_feedback_claimed": false,
+  "market_validation_claimed": false,
+  "next_decision_horizon": "E33_owner_strategy_decision_packet_to_low_risk_external_signal_route",
+  "primary_monetization_path": "path_paid_readiness_review_service",
+  "production_live_enabled": false,
+  "production_live_receipt_count": 0,
+  "real_world_learning_status": "executed",
+  "receipt_count": 12,
+  "secondary_path": "path_partner_validation_packet",
+  "source_count": 12,
+  "strategic_reserve_path_count": 3
+}

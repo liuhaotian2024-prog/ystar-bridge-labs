@@ -1,0 +1,24 @@
+# E32 Real World Learning Run
+
+- artifact_id: e32_real_world_learning_run
+- learning_status: executed
+- blocked: false
+- blocker: 
+- source_count: 12
+- receipt_count: 12
+- execution_mode: bounded_public_readonly_learning
+- technical_landscape_evidence_count: 7
+- market_landscape_evidence_count: 7
+- buyer_pain_cluster_count: 7
+- competitor_alternative_category_count: 7
+- pricing_proxy_count: 5
+- no_customer_contact: true
+- no_message_sent: true
+- no_form_submitted: true
+- no_login: true
+- no_account_created: true
+- no_payment: true
+- external_side_effects: false
+- production_live_enabled: false
+- production_live_receipt_count: 0
+- receipts: 12 items

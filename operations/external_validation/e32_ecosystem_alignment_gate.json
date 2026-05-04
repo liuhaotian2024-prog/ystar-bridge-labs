@@ -1,0 +1,22 @@
+{
+  "Y_star_gov_immediate_mutation_needed": false,
+  "artifact_id": "e32_ecosystem_alignment_gate",
+  "bridge_labs_modified": true,
+  "cross_repo_impact_update": "E32 writes bridge-labs strategy/CEO KG artifacts only; gov-mcp, Y-star-gov, and ystar-company remain read-only source/context layers.",
+  "drift_blocker_update": [
+    "public learning is not customer feedback",
+    "pricing proxy is not willingness-to-pay proof",
+    "business plans are hypotheses until external validation",
+    "do not default to publication, outreach, or production live"
+  ],
+  "ecosystem_alignment_status": "ecosystem_aligned_with_documented_followups",
+  "gov_mcp_modified": false,
+  "repos_checked": [
+    "ystar-bridge-labs",
+    "gov-mcp",
+    "Y-star-gov",
+    "ystar-company"
+  ],
+  "repos_checked_count": 4,
+  "ystar_company_future_migration_followups": true
+}

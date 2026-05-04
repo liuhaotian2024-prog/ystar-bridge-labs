@@ -1,0 +1,14 @@
+{
+  "artifact_id": "e32_ceo_kg_learning_strategy_feedback",
+  "business_plan_nodes": 5,
+  "buyer_pain_cluster_nodes": 7,
+  "customer_feedback_claimed": false,
+  "kg_delta_edges": 131,
+  "kg_delta_nodes": 79,
+  "learning_source_nodes": 12,
+  "market_insight_nodes": 7,
+  "market_validation_claimed": false,
+  "monetization_path_nodes": 8,
+  "paid_signal_claimed": false,
+  "technical_insight_nodes": 7
+}

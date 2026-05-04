@@ -1,0 +1,413 @@
+{
+  "artifact_id": "e32_real_world_learning_run",
+  "blocked": false,
+  "blocker": "",
+  "buyer_pain_cluster_count": 7,
+  "competitor_alternative_category_count": 7,
+  "domains_touched": [
+    "ariesconsultinggroup.com",
+    "aws.amazon.com",
+    "crewai.com",
+    "humanloop.com",
+    "info.langchain.com",
+    "modelcontextprotocol.io",
+    "openai.github.io",
+    "retool.com",
+    "www.credo.ai",
+    "www.deloitte.com",
+    "www.nist.gov"
+  ],
+  "execution_mode": "bounded_public_readonly_learning",
+  "external_side_effects": false,
+  "learning_status": "executed",
+  "market_landscape_evidence_count": 7,
+  "no_account_created": true,
+  "no_customer_contact": true,
+  "no_form_submitted": true,
+  "no_login": true,
+  "no_message_sent": true,
+  "no_payment": true,
+  "pages_observed": [
+    "https://modelcontextprotocol.io/specification/2025-11-25/basic",
+    "https://www.nist.gov/itl/ai-risk-management-framework",
+    "https://openai.github.io/openai-agents-js/guides/tracing/",
+    "https://openai.github.io/openai-agents-js/guides/guardrails/",
+    "https://info.langchain.com/AI-Observability",
+    "https://humanloop.com/pricing",
+    "https://crewai.com/pricing",
+    "https://retool.com/en-EU/pricing",
+    "https://aws.amazon.com/ai/generative-ai/partners/",
+    "https://www.credo.ai/",
+    "https://www.deloitte.com/us/en/services/consulting/services/generative-ai-readiness-and-adoption.html",
+    "https://ariesconsultinggroup.com/blog/ai-readiness-audit-cost/"
+  ],
+  "pricing_proxy_count": 5,
+  "production_live_enabled": false,
+  "production_live_receipt_count": 0,
+  "receipt_count": 12,
+  "receipts": [
+    {
+      "access_mode": "controlled_public_readonly_web_observation",
+      "buyer_pain_signal": "Agent tool integration creates consent, authorization, schema, and boundary concerns.",
+      "category": "technical/provider boundary",
+      "evidence_quality": "high_official_spec_current",
+      "full_page_dump_saved": false,
+      "market_insight": "Standardized tool/context integration creates buyer need for governance of agent tool boundaries.",
+      "monetization_insight": "A readiness diagnostic can assess whether a team has safe MCP/provider boundary practices before scaling agent workflows.",
+      "no_contact_proof": true,
+      "no_external_effect_proof": true,
+      "no_form_submission_proof": true,
+      "no_login_proof": true,
+      "no_payment_proof": true,
+      "objection_or_risk": "Protocol expertise alone is not a paid offer unless translated into a buyer-specific readiness deliverable.",
+      "observed_at": "2026-05-04T22:30:00Z",
+      "page_title": "Model Context Protocol specification overview",
+      "receipt_id": "e32_learning_receipt_001",
+      "relevant_claims": [
+        "MCP separates base protocol, lifecycle, authorization, server features, client features, and utilities; this supports Y* positioning around boundary and contract discipline.",
+        "Standardized tool/context integration creates buyer need for governance of agent tool boundaries.",
+        "A readiness diagnostic can assess whether a team has safe MCP/provider boundary practices before scaling agent workflows."
+      ],
+      "source_id": "e32_source_mcp_spec",
+      "source_lines": [
+        "turn1view0:L84-L91",
+        "turn1view0:L172-L179"
+      ],
+      "technical_insight": "MCP separates base protocol, lifecycle, authorization, server features, client features, and utilities; this supports Y* positioning around boundary and contract discipline.",
+      "url": "https://modelcontextprotocol.io/specification/2025-11-25/basic"
+    },
+    {
+      "access_mode": "controlled_public_readonly_web_observation",
+      "buyer_pain_signal": "Organizations need practical ways to incorporate trustworthiness into AI systems.",
+      "category": "governance/risk framework",
+      "evidence_quality": "high_official_public_framework",
+      "full_page_dump_saved": false,
+      "market_insight": "Enterprise buyers have public reference frameworks for AI risk and trustworthy deployment.",
+      "monetization_insight": "Governance-readiness diagnostics can map Y* artifacts to AI RMF-style evidence without claiming certification.",
+      "no_contact_proof": true,
+      "no_external_effect_proof": true,
+      "no_form_submission_proof": true,
+      "no_login_proof": true,
+      "no_payment_proof": true,
+      "objection_or_risk": "Y* cannot claim NIST compliance or certification; it can only provide readiness mapping unless validated.",
+      "observed_at": "2026-05-04T22:30:00Z",
+      "page_title": "NIST AI Risk Management Framework",
+      "receipt_id": "e32_learning_receipt_002",
+      "relevant_claims": [
+        "AI risk management is framed around design, development, use, and evaluation of AI systems, giving Y* a credible language for governance-readiness packaging.",
+        "Enterprise buyers have public reference frameworks for AI risk and trustworthy deployment.",
+        "Governance-readiness diagnostics can map Y* artifacts to AI RMF-style evidence without claiming certification."
+      ],
+      "source_id": "e32_source_nist_ai_rmf",
+      "source_lines": [
+        "turn2view0:L153-L161"
+      ],
+      "technical_insight": "AI risk management is framed around design, development, use, and evaluation of AI systems, giving Y* a credible language for governance-readiness packaging.",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    {
+      "access_mode": "controlled_public_readonly_web_observation",
+      "buyer_pain_signal": "Teams need to debug, audit, and explain agent actions.",
+      "category": "agent observability",
+      "evidence_quality": "high_official_docs_current",
+      "full_page_dump_saved": false,
+      "market_insight": "Observability is not a nice-to-have; it is core agent operations infrastructure.",
+      "monetization_insight": "Y* can package its receipt/CZL concepts as readiness criteria for agent traceability.",
+      "no_contact_proof": true,
+      "no_external_effect_proof": true,
+      "no_form_submission_proof": true,
+      "no_login_proof": true,
+      "no_payment_proof": true,
+      "objection_or_risk": "Y* must not overclaim SDK integration; the current asset is conceptual/diagnostic unless implemented.",
+      "observed_at": "2026-05-04T22:30:00Z",
+      "page_title": "OpenAI Agents SDK tracing",
+      "receipt_id": "e32_learning_receipt_003",
+      "relevant_claims": [
+        "Agent runs need trace records covering the workflow, agent spans, generations, tool calls, guardrails, and handoffs.",
+        "Observability is not a nice-to-have; it is core agent operations infrastructure.",
+        "Y* can package its receipt/CZL concepts as readiness criteria for agent traceability."
+      ],
+      "source_id": "e32_source_openai_agents_tracing",
+      "source_lines": [
+        "turn2view1:L1038-L1049"
+      ],
+      "technical_insight": "Agent runs need trace records covering the workflow, agent spans, generations, tool calls, guardrails, and handoffs.",
+      "url": "https://openai.github.io/openai-agents-js/guides/tracing/"
+    },
+    {
+      "access_mode": "controlled_public_readonly_web_observation",
+      "buyer_pain_signal": "Agent workflows need checks that can prevent unsafe or costly execution.",
+      "category": "agent safety",
+      "evidence_quality": "high_official_docs_current",
+      "full_page_dump_saved": false,
+      "market_insight": "Customers adopting agents need controls before and after agent execution.",
+      "monetization_insight": "A Y* readiness review can assess whether a buyer has explicit guardrail tripwires and escalation paths.",
+      "no_contact_proof": true,
+      "no_external_effect_proof": true,
+      "no_form_submission_proof": true,
+      "no_login_proof": true,
+      "no_payment_proof": true,
+      "objection_or_risk": "Guardrails are a crowded platform feature; Y* needs proof-bound differentiation.",
+      "observed_at": "2026-05-04T22:30:00Z",
+      "page_title": "OpenAI Agents SDK guardrails",
+      "receipt_id": "e32_learning_receipt_004",
+      "relevant_claims": [
+        "Guardrails can run alongside agents or block execution, which matches Y* guard-stack and promotion-gate semantics.",
+        "Customers adopting agents need controls before and after agent execution.",
+        "A Y* readiness review can assess whether a buyer has explicit guardrail tripwires and escalation paths."
+      ],
+      "source_id": "e32_source_openai_agents_guardrails",
+      "source_lines": [
+        "turn2view2:L967-L971"
+      ],
+      "technical_insight": "Guardrails can run alongside agents or block execution, which matches Y* guard-stack and promotion-gate semantics.",
+      "url": "https://openai.github.io/openai-agents-js/guides/guardrails/"
+    },
+    {
+      "access_mode": "controlled_public_readonly_web_observation",
+      "buyer_pain_signal": "Teams need visibility into AI agents and LLM applications.",
+      "category": "agent observability platform",
+      "evidence_quality": "high_public_product_page",
+      "full_page_dump_saved": false,
+      "market_insight": "Observability/evaluation language is mainstream enough to anchor buyer-facing readiness claims.",
+      "monetization_insight": "Y* should sell a pre-platform diagnostic wedge, not compete head-on as an observability platform now.",
+      "no_contact_proof": true,
+      "no_external_effect_proof": true,
+      "no_form_submission_proof": true,
+      "no_login_proof": true,
+      "no_payment_proof": true,
+      "objection_or_risk": "Buyers may prefer a mature platform if they already know the problem.",
+      "observed_at": "2026-05-04T22:30:00Z",
+      "page_title": "LangSmith AI observability",
+      "receipt_id": "e32_learning_receipt_005",
+      "relevant_claims": [
+        "Public platform language emphasizes tracing, monitoring, alerts, quality scoring, hallucination debugging, latency, and cost anomalies.",
+        "Observability/evaluation language is mainstream enough to anchor buyer-facing readiness claims.",
+        "Y* should sell a pre-platform diagnostic wedge, not compete head-on as an observability platform now."
+      ],
+      "source_id": "e32_source_langsmith_observability",
+      "source_lines": [
+        "turn2view3:L4-L8",
+        "turn3view3:L19-L33"
+      ],
+      "technical_insight": "Public platform language emphasizes tracing, monitoring, alerts, quality scoring, hallucination debugging, latency, and cost anomalies.",
+      "url": "https://info.langchain.com/AI-Observability"
+    },
+    {
+      "access_mode": "controlled_public_readonly_web_observation",
+      "buyer_pain_signal": "Manual evaluation and prompt management slow product teams.",
+      "category": "LLM evaluation and monitoring platform",
+      "evidence_quality": "medium_public_page_current",
+      "full_page_dump_saved": false,
+      "market_insight": "Enterprise teams value collaboration between engineers, product managers, and domain experts around AI quality.",
+      "monetization_insight": "Y* can offer a diagnostic that tells teams whether they need platform tooling, governance workflow, or implementation support.",
+      "no_contact_proof": true,
+      "no_external_effect_proof": true,
+      "no_form_submission_proof": true,
+      "no_login_proof": true,
+      "no_payment_proof": true,
+      "objection_or_risk": "Vendor claims about performance/revenue must not be reused as Y* claims.",
+      "observed_at": "2026-05-04T22:30:00Z",
+      "page_title": "Humanloop pricing",
+      "receipt_id": "e32_learning_receipt_006",
+      "relevant_claims": [
+        "Evaluation, prompt management, observability, RBAC, VPC, SOC2, SSO, and human review appear as platformized enterprise needs.",
+        "Enterprise teams value collaboration between engineers, product managers, and domain experts around AI quality.",
+        "Y* can offer a diagnostic that tells teams whether they need platform tooling, governance workflow, or implementation support."
+      ],
+      "source_id": "e32_source_humanloop_pricing",
+      "source_lines": [
+        "turn3view1:L60-L90",
+        "turn3view1:L159-L166",
+        "turn3view1:L236-L244"
+      ],
+      "technical_insight": "Evaluation, prompt management, observability, RBAC, VPC, SOC2, SSO, and human review appear as platformized enterprise needs.",
+      "url": "https://humanloop.com/pricing"
+    },
+    {
+      "access_mode": "controlled_public_readonly_web_observation",
+      "buyer_pain_signal": "Agentic adoption requires build/test/deploy/scale governance, not only prompts.",
+      "category": "agent orchestration platform",
+      "evidence_quality": "medium_public_pricing_page",
+      "full_page_dump_saved": false,
+      "market_insight": "Agentic workflow buyers care about scale, private infrastructure, support, training, and lifecycle management.",
+      "monetization_insight": "Y* can package readiness around whether buyers are ready for agent platforms and which controls they need first.",
+      "no_contact_proof": true,
+      "no_external_effect_proof": true,
+      "no_form_submission_proof": true,
+      "no_login_proof": true,
+      "no_payment_proof": true,
+      "objection_or_risk": "CrewAI/Open-source alternatives can satisfy technical builders directly.",
+      "observed_at": "2026-05-04T22:30:00Z",
+      "page_title": "CrewAI pricing",
+      "receipt_id": "e32_learning_receipt_007",
+      "relevant_claims": [
+        "Agent platforms publish workflow executions, private infrastructure, tracing, OpenTelemetry, LLM testing, guardrails, and human-in-the-loop features.",
+        "Agentic workflow buyers care about scale, private infrastructure, support, training, and lifecycle management.",
+        "Y* can package readiness around whether buyers are ready for agent platforms and which controls they need first."
+      ],
+      "source_id": "e32_source_crewai_pricing",
+      "source_lines": [
+        "turn3view0:L45-L70",
+        "turn3view0:L89-L116",
+        "turn3view0:L210-L260",
+        "turn3view0:L462-L480"
+      ],
+      "technical_insight": "Agent platforms publish workflow executions, private infrastructure, tracing, OpenTelemetry, LLM testing, guardrails, and human-in-the-loop features.",
+      "url": "https://crewai.com/pricing"
+    },
+    {
+      "access_mode": "controlled_public_readonly_web_observation",
+      "buyer_pain_signal": "Teams want agents for repetitive work, research, triage, sales follow-up, and multi-step orchestration.",
+      "category": "workflow automation and agent platform",
+      "evidence_quality": "high_public_pricing_page",
+      "full_page_dump_saved": false,
+      "market_insight": "Agent work is being priced as productive labor time, not only token usage.",
+      "monetization_insight": "Y* readiness review can help buyers choose between no-code automation, custom agents, or governed internal operations.",
+      "no_contact_proof": true,
+      "no_external_effect_proof": true,
+      "no_form_submission_proof": true,
+      "no_login_proof": true,
+      "no_payment_proof": true,
+      "objection_or_risk": "Retool-like platforms may be a better fit for app-layer automation than a Y* diagnostic for some buyers.",
+      "observed_at": "2026-05-04T22:30:00Z",
+      "page_title": "Retool pricing",
+      "receipt_id": "e32_learning_receipt_008",
+      "relevant_claims": [
+        "Workflow runs, app seats, internal/external user pricing, and agent runtime hours show multiple budget units for AI operations.",
+        "Agent work is being priced as productive labor time, not only token usage.",
+        "Y* readiness review can help buyers choose between no-code automation, custom agents, or governed internal operations."
+      ],
+      "source_id": "e32_source_retool_pricing",
+      "source_lines": [
+        "turn3view2:L224-L232",
+        "turn2view4:L582-L637"
+      ],
+      "technical_insight": "Workflow runs, app seats, internal/external user pricing, and agent runtime hours show multiple budget units for AI operations.",
+      "url": "https://retool.com/en-EU/pricing"
+    },
+    {
+      "access_mode": "controlled_public_readonly_web_observation",
+      "buyer_pain_signal": "Customers look for validated partners to reduce risk in agentic AI production deployments.",
+      "category": "partner ecosystem",
+      "evidence_quality": "high_public_ecosystem_page",
+      "full_page_dump_saved": false,
+      "market_insight": "Partner ecosystems validate that service and software routes coexist around agentic AI.",
+      "monetization_insight": "A partner-channel path could make Y* a pre-implementation diagnostic or governance add-on for consultancies.",
+      "no_contact_proof": true,
+      "no_external_effect_proof": true,
+      "no_form_submission_proof": true,
+      "no_login_proof": true,
+      "no_payment_proof": true,
+      "objection_or_risk": "Y* lacks public partner validation or badge status today.",
+      "observed_at": "2026-05-04T22:30:00Z",
+      "page_title": "AWS AI Competency Partners",
+      "receipt_id": "e32_learning_receipt_009",
+      "relevant_claims": [
+        "AWS describes agentic AI partners as enabling secure production-grade systems with autonomous reasoning, planning, collaboration, tool usage, execution, and self-improvement.",
+        "Partner ecosystems validate that service and software routes coexist around agentic AI.",
+        "A partner-channel path could make Y* a pre-implementation diagnostic or governance add-on for consultancies."
+      ],
+      "source_id": "e32_source_aws_ai_partners",
+      "source_lines": [
+        "turn2view5:L51-L69",
+        "turn2view5:L116-L118"
+      ],
+      "technical_insight": "AWS describes agentic AI partners as enabling secure production-grade systems with autonomous reasoning, planning, collaboration, tool usage, execution, and self-improvement.",
+      "url": "https://aws.amazon.com/ai/generative-ai/partners/"
+    },
+    {
+      "access_mode": "controlled_public_readonly_web_observation",
+      "buyer_pain_signal": "Enterprises need AI system inventory, policy enforcement, and audit-ready documentation.",
+      "category": "AI governance platform",
+      "evidence_quality": "high_public_product_page",
+      "full_page_dump_saved": false,
+      "market_insight": "Governance is a real category with enterprise budget and competitive intensity.",
+      "monetization_insight": "Y* can pursue a smaller governance-readiness wedge, but should not pretend to be an enterprise GRC platform.",
+      "no_contact_proof": true,
+      "no_external_effect_proof": true,
+      "no_form_submission_proof": true,
+      "no_login_proof": true,
+      "no_payment_proof": true,
+      "objection_or_risk": "Credo-like platforms have brand, enterprise proof, and broader integrations.",
+      "observed_at": "2026-05-04T22:30:00Z",
+      "page_title": "Credo AI governance platform",
+      "receipt_id": "e32_learning_receipt_010",
+      "relevant_claims": [
+        "AI governance platforms emphasize registries, shadow AI detection, risk classification, continuous risk assessment, policy engines, evidence generation, and agent-level monitoring.",
+        "Governance is a real category with enterprise budget and competitive intensity.",
+        "Y* can pursue a smaller governance-readiness wedge, but should not pretend to be an enterprise GRC platform."
+      ],
+      "source_id": "e32_source_credo_ai",
+      "source_lines": [
+        "turn2view6:L308-L317",
+        "turn3view4:L321-L342",
+        "turn3view5:L345-L374"
+      ],
+      "technical_insight": "AI governance platforms emphasize registries, shadow AI detection, risk classification, continuous risk assessment, policy engines, evidence generation, and agent-level monitoring.",
+      "url": "https://www.credo.ai/"
+    },
+    {
+      "access_mode": "controlled_public_readonly_web_observation",
+      "buyer_pain_signal": "Organizations need game plans before diving into GenAI implementation.",
+      "category": "consulting readiness service",
+      "evidence_quality": "high_public_service_page",
+      "full_page_dump_saved": false,
+      "market_insight": "Large consultancies validate readiness/adoption as a consulting lane.",
+      "monetization_insight": "Y* should narrow to proof-bound 48h diagnostics rather than compete as broad transformation consultancy.",
+      "no_contact_proof": true,
+      "no_external_effect_proof": true,
+      "no_form_submission_proof": true,
+      "no_login_proof": true,
+      "no_payment_proof": true,
+      "objection_or_risk": "Enterprise buyers may prefer established consultancies for broad transformation.",
+      "observed_at": "2026-05-04T22:30:00Z",
+      "page_title": "Deloitte GenAI readiness and adoption",
+      "receipt_id": "e32_learning_receipt_011",
+      "relevant_claims": [
+        "Readiness/adoption consulting spans strategy, technology/data foundations, innovation, operating model, governance, and trustworthy GenAI.",
+        "Large consultancies validate readiness/adoption as a consulting lane.",
+        "Y* should narrow to proof-bound 48h diagnostics rather than compete as broad transformation consultancy."
+      ],
+      "source_id": "e32_source_deloitte_readiness",
+      "source_lines": [
+        "turn2view7:L413-L417",
+        "turn3view6:L421-L426"
+      ],
+      "technical_insight": "Readiness/adoption consulting spans strategy, technology/data foundations, innovation, operating model, governance, and trustworthy GenAI.",
+      "url": "https://www.deloitte.com/us/en/services/consulting/services/generative-ai-readiness-and-adoption.html"
+    },
+    {
+      "access_mode": "controlled_public_readonly_web_observation",
+      "buyer_pain_signal": "Buyers want concrete deliverables and dislike audits that are disguised sales calls.",
+      "category": "readiness audit pricing proxy",
+      "evidence_quality": "medium_public_competitor_blog",
+      "full_page_dump_saved": false,
+      "market_insight": "Public pricing proxy suggests narrow SMB, focused mid-market, and enterprise assessment ranges.",
+      "monetization_insight": "Y* can safely discuss a lower-friction pilot price hypothesis while acknowledging public pricing is not proof of willingness to pay for Y*.",
+      "no_contact_proof": true,
+      "no_external_effect_proof": true,
+      "no_form_submission_proof": true,
+      "no_login_proof": true,
+      "no_payment_proof": true,
+      "objection_or_risk": "Pricing article is a competitor/consultancy claim, not broad market validation.",
+      "observed_at": "2026-05-04T22:30:00Z",
+      "page_title": "AI readiness audit cost in 2026",
+      "receipt_id": "e32_learning_receipt_012",
+      "relevant_claims": [
+        "Readiness audits are framed around scorecards, stack audits, roadmaps, and walkthroughs.",
+        "Public pricing proxy suggests narrow SMB, focused mid-market, and enterprise assessment ranges.",
+        "Y* can safely discuss a lower-friction pilot price hypothesis while acknowledging public pricing is not proof of willingness to pay for Y*."
+      ],
+      "source_id": "e32_source_aries_audit_pricing",
+      "source_lines": [
+        "turn2view8:L15-L18",
+        "turn2view8:L91-L105"
+      ],
+      "technical_insight": "Readiness audits are framed around scorecards, stack audits, roadmaps, and walkthroughs.",
+      "url": "https://ariesconsultinggroup.com/blog/ai-readiness-audit-cost/"
+    }
+  ],
+  "source_count": 12,
+  "technical_landscape_evidence_count": 7
+}

@@ -1,0 +1,187 @@
+{
+  "artifact_id": "e32_market_buyer_understanding_synthesis",
+  "buyer_pain_cluster_count": 7,
+  "buyer_pain_clusters": [
+    {
+      "id": "pain_eval_observability",
+      "label": "AI quality, evaluation, observability, debugging, and feedback loops",
+      "source_ids": [
+        "e32_source_langsmith_observability",
+        "e32_source_humanloop_pricing"
+      ]
+    },
+    {
+      "id": "pain_governance_audit",
+      "label": "Governance, risk, compliance, audit-ready evidence, and policy enforcement",
+      "source_ids": [
+        "e32_source_nist_ai_rmf",
+        "e32_source_credo_ai"
+      ]
+    },
+    {
+      "id": "pain_tool_boundary",
+      "label": "MCP/provider/tool boundary safety and authorization",
+      "source_ids": [
+        "e32_source_mcp_spec",
+        "e32_source_openai_agents_guardrails"
+      ]
+    },
+    {
+      "id": "pain_agent_deployment",
+      "label": "Deploying and scaling agentic workflows with private infrastructure, support, and training",
+      "source_ids": [
+        "e32_source_crewai_pricing",
+        "e32_source_aws_ai_partners"
+      ]
+    },
+    {
+      "id": "pain_workflow_value",
+      "label": "Finding workflows where agents save real time and money",
+      "source_ids": [
+        "e32_source_retool_pricing",
+        "e32_source_deloitte_readiness"
+      ]
+    },
+    {
+      "id": "pain_budget_choice",
+      "label": "Choosing between platform spend, consulting spend, and internal build",
+      "source_ids": [
+        "e32_source_aries_audit_pricing",
+        "e32_source_humanloop_pricing"
+      ]
+    },
+    {
+      "id": "pain_trust",
+      "label": "Avoiding hype, fake ROI, and vendor-led audits that are really sales calls",
+      "source_ids": [
+        "e32_source_aries_audit_pricing",
+        "e31_offer_claim_register"
+      ]
+    }
+  ],
+  "buying_friction": [
+    "trust/case-study gap",
+    "preference for established platforms",
+    "fear of audits as sales calls",
+    "security/compliance proof burden"
+  ],
+  "competitor_alternative_categories": [
+    "agent observability/evaluation platforms",
+    "LLM evaluation/prompt-management platforms",
+    "agent orchestration platforms",
+    "workflow automation/internal-tool platforms",
+    "AI governance/GRC platforms",
+    "large GenAI transformation consultancies",
+    "boutique AI readiness audit providers"
+  ],
+  "competitor_alternative_category_count": 7,
+  "market_gaps_y_star_can_exploit": [
+    "proof-bound diagnostic wedge",
+    "no-fake-evidence governance stance",
+    "agent-company CEO KG/branch reasoning"
+  ],
+  "market_gaps_y_star_cannot_address_yet": [
+    "enterprise GRC platform",
+    "certified compliance audit",
+    "large implementation transformation"
+  ],
+  "market_insight_count": 7,
+  "market_insights": [
+    {
+      "classification": "observed_public_evidence",
+      "id": "market_eval_observability_budget",
+      "source_ids": [
+        "e32_source_langsmith_observability",
+        "e32_source_humanloop_pricing"
+      ],
+      "summary": "Evaluation, observability, monitoring, feedback, and debugging appear in multiple platforms and enterprise pages."
+    },
+    {
+      "classification": "observed_public_evidence",
+      "id": "market_governance_category",
+      "source_ids": [
+        "e32_source_nist_ai_rmf",
+        "e32_source_credo_ai"
+      ],
+      "summary": "AI governance has public platform, advisory, policy, evidence, and risk-intelligence language."
+    },
+    {
+      "classification": "observed_public_evidence",
+      "id": "market_agentic_workflow_platforms",
+      "source_ids": [
+        "e32_source_crewai_pricing",
+        "e32_source_retool_pricing"
+      ],
+      "summary": "Agentic workflow products market executions, private infrastructure, tracing, guardrails, human-in-loop, and training."
+    },
+    {
+      "classification": "observed_public_evidence",
+      "id": "market_consulting_readiness_lane",
+      "source_ids": [
+        "e32_source_deloitte_readiness",
+        "e32_source_aries_audit_pricing"
+      ],
+      "summary": "Readiness/adoption assessment is a visible consulting lane, from large consultancies to boutique audits."
+    },
+    {
+      "classification": "observed_public_evidence",
+      "id": "market_partner_channel_exists",
+      "source_ids": [
+        "e32_source_aws_ai_partners"
+      ],
+      "summary": "AWS partner categories validate that services and software both participate in agentic/generative AI adoption."
+    },
+    {
+      "classification": "internal_inference",
+      "id": "market_trust_blocker",
+      "source_ids": [
+        "e31_offer_claim_register",
+        "local_repo_audit"
+      ],
+      "summary": "Y* has no public customer feedback, paid signal, case study, or third-party validation yet."
+    },
+    {
+      "classification": "inferred_from_public_evidence",
+      "id": "market_price_proxy_not_validation",
+      "source_ids": [
+        "e32_source_aries_audit_pricing",
+        "e32_source_retool_pricing",
+        "e32_source_crewai_pricing"
+      ],
+      "summary": "Public pricing proxies support a fixed-fee diagnostic discussion, but they do not validate Y* willingness-to-pay."
+    }
+  ],
+  "pricing_proxy_count": 5,
+  "pricing_wtp_proxy_findings": [
+    {
+      "finding": "Public readiness-audit pricing proxy: focused mid-market audits are discussed around $5K-$15K and 2-3 weeks.",
+      "id": "price_audit_midmarket",
+      "source_id": "e32_source_aries_audit_pricing",
+      "status": "pricing_proxy_not_wtp_proof"
+    },
+    {
+      "finding": "Narrow SMB readiness audits are publicly discussed around $2K-$8K.",
+      "id": "price_audit_smb",
+      "source_id": "e32_source_aries_audit_pricing",
+      "status": "pricing_proxy_not_wtp_proof"
+    },
+    {
+      "finding": "Agent platforms can price by runtime hour, workflow run, or execution count.",
+      "id": "price_platform_runtime",
+      "source_id": "e32_source_retool_pricing",
+      "status": "pricing_proxy_not_wtp_proof"
+    },
+    {
+      "finding": "Enterprise agent/eval/governance products frequently use custom pricing tied to security, scale, support, and private deployment.",
+      "id": "price_enterprise_custom",
+      "source_id": "e32_source_crewai_pricing",
+      "status": "pricing_proxy_not_wtp_proof"
+    },
+    {
+      "finding": "Evaluation/observability platforms expose log/eval volume and enterprise deployment as budget drivers.",
+      "id": "price_eval_logs",
+      "source_id": "e32_source_humanloop_pricing",
+      "status": "pricing_proxy_not_wtp_proof"
+    }
+  ]
+}

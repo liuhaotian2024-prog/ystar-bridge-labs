@@ -1,0 +1,18 @@
+{
+  "artifact_id": "e32_ceo_kg_promotion_candidates_update",
+  "candidates": [
+    {
+      "candidate_id": "e32_primary_path_discussion_candidate",
+      "eligible_for_market_truth": false,
+      "promotion_status": "working_only_owner_discussion",
+      "reason": "Business plan is grounded in public evidence and internal capability, but lacks customer validation."
+    },
+    {
+      "candidate_id": "e32_partner_path_reserve_candidate",
+      "eligible_for_market_truth": false,
+      "promotion_status": "working_only_strategic_reserve",
+      "reason": "Partner/channel route is plausible but unvalidated."
+    }
+  ],
+  "promotion_candidates_count": 2
+}
