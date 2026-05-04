@@ -1,0 +1,151 @@
+{
+  "artifact_id": "e19_owner_action_model",
+  "actions": [
+    {
+      "action": "approve_manual_send_for_candidate",
+      "allowed_preconditions": [
+        "candidate status is ready_for_owner_review",
+        "message variant accepted by owner"
+      ],
+      "forbidden_preconditions": [
+        "candidate suppressed",
+        "missing evidence",
+        "owner has not reviewed message"
+      ],
+      "required_evidence": [
+        "candidate exists in E18 batch",
+        "owner decision recorded in control room"
+      ],
+      "next_state": "approved_not_sent",
+      "audit_czl_note": "Owner action is modeled locally; no external action is performed by E19."
+    },
+    {
+      "action": "revise_message",
+      "allowed_preconditions": [
+        "candidate exists in E18 batch",
+        "owner decision recorded in control room"
+      ],
+      "forbidden_preconditions": [
+        "real external action by agent"
+      ],
+      "required_evidence": [
+        "candidate exists in E18 batch",
+        "owner decision recorded in control room"
+      ],
+      "next_state": "revise-message",
+      "audit_czl_note": "Owner action is modeled locally; no external action is performed by E19."
+    },
+    {
+      "action": "reject_candidate",
+      "allowed_preconditions": [
+        "candidate exists in E18 batch",
+        "owner decision recorded in control room"
+      ],
+      "forbidden_preconditions": [
+        "real external action by agent"
+      ],
+      "required_evidence": [
+        "candidate exists in E18 batch",
+        "owner decision recorded in control room"
+      ],
+      "next_state": "reject-candidate",
+      "audit_czl_note": "Owner action is modeled locally; no external action is performed by E19."
+    },
+    {
+      "action": "request_more_evidence",
+      "allowed_preconditions": [
+        "candidate exists in E18 batch",
+        "owner decision recorded in control room"
+      ],
+      "forbidden_preconditions": [
+        "real external action by agent"
+      ],
+      "required_evidence": [
+        "candidate exists in E18 batch",
+        "owner decision recorded in control room"
+      ],
+      "next_state": "request-more-evidence",
+      "audit_czl_note": "Owner action is modeled locally; no external action is performed by E19."
+    },
+    {
+      "action": "import_feedback",
+      "allowed_preconditions": [
+        "owner manually sent outside repo",
+        "feedback evidence provided by owner"
+      ],
+      "forbidden_preconditions": [
+        "agent claims feedback",
+        "feedback lacks action_id/ledger_id/feedback_event_id"
+      ],
+      "required_evidence": [
+        "candidate exists in E18 batch",
+        "owner decision recorded in control room"
+      ],
+      "next_state": "response_imported",
+      "audit_czl_note": "Owner action is modeled locally; no external action is performed by E19."
+    },
+    {
+      "action": "suppress_candidate",
+      "allowed_preconditions": [
+        "candidate exists in E18 batch",
+        "owner decision recorded in control room"
+      ],
+      "forbidden_preconditions": [
+        "real external action by agent"
+      ],
+      "required_evidence": [
+        "candidate exists in E18 batch",
+        "owner decision recorded in control room"
+      ],
+      "next_state": "suppress-candidate",
+      "audit_czl_note": "Owner action is modeled locally; no external action is performed by E19."
+    },
+    {
+      "action": "defer_batch",
+      "allowed_preconditions": [
+        "candidate exists in E18 batch",
+        "owner decision recorded in control room"
+      ],
+      "forbidden_preconditions": [
+        "real external action by agent"
+      ],
+      "required_evidence": [
+        "candidate exists in E18 batch",
+        "owner decision recorded in control room"
+      ],
+      "next_state": "defer-batch",
+      "audit_czl_note": "Owner action is modeled locally; no external action is performed by E19."
+    },
+    {
+      "action": "prepare_provider_adapter_plan",
+      "allowed_preconditions": [
+        "planning only",
+        "no-send provider boundary remains intact"
+      ],
+      "forbidden_preconditions": [
+        "real send",
+        "provider API call",
+        "credential use"
+      ],
+      "required_evidence": [
+        "candidate exists in E18 batch",
+        "owner decision recorded in control room"
+      ],
+      "next_state": "provider_plan_prepared_no_send",
+      "audit_czl_note": "Owner action is modeled locally; no external action is performed by E19."
+    },
+    {
+      "action": "keep_real_provider_send_blocked",
+      "allowed_preconditions": [
+        "always allowed as safe default"
+      ],
+      "forbidden_preconditions": [],
+      "required_evidence": [
+        "no further evidence required"
+      ],
+      "next_state": "real_provider_send_blocked",
+      "audit_czl_note": "Owner action is modeled locally; no external action is performed by E19."
+    }
+  ],
+  "external_action_executed": false
+}

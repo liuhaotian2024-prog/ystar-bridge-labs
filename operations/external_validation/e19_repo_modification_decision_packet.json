@@ -1,0 +1,32 @@
+{
+  "artifact_id": "e19_repo_modification_decision_packet",
+  "decisions": [
+    {
+      "repo": "ystar-bridge-labs",
+      "decision": "bridge_labs_update_only",
+      "reason": "E19 control room is company runtime and should be delivered in bridge-labs.",
+      "immediate_update_required": true
+    },
+    {
+      "repo": "gov-mcp",
+      "decision": "future_gov_mcp_update_required",
+      "reason": "No immediate mutation; future real provider adapter implementation belongs here.",
+      "immediate_update_required": false
+    },
+    {
+      "repo": "Y-star-gov",
+      "decision": "no_change_needed",
+      "reason": "Governance kernel remains canonical; E19 does not require contract mutation.",
+      "immediate_update_required": false
+    },
+    {
+      "repo": "ystar-company",
+      "decision": "future_ystar_company_migration_required",
+      "reason": "Historical assets can be reviewed later, but should not be active authority now.",
+      "immediate_update_required": false
+    }
+  ],
+  "cross_repo_mutation_performed": false,
+  "bridge_labs_only_delivery": true,
+  "external_action_executed": false
+}

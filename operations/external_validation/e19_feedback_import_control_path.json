@@ -1,0 +1,36 @@
+{
+  "artifact_id": "e19_feedback_import_control_path",
+  "batch_id": "e18_first_revenue_validation_batch",
+  "owner_import_location": "operations/external_validation/e18_batch_feedback_intake_empty.json or a future owner-supplied e20 feedback import file",
+  "schema_validation_rules": [
+    "action_id",
+    "ledger_id",
+    "feedback_event_id",
+    "target_id",
+    "owner_sent_status",
+    "feedback_type",
+    "raw_feedback_summary",
+    "received_at",
+    "channel",
+    "owner_notes"
+  ],
+  "response_classifier_input": "office/mission_command/e18_batch_response_classifier.py consumes per-target explicit fields",
+  "paid_signal_evaluator_input": "e18_batch_response_classification_rules -> commercial KPI and route decision",
+  "kpi_update_path": "E20 real feedback import loop updates placeholders only after owner-imported evidence exists",
+  "followup_allowed_when": [
+    "positive_interest",
+    "meeting_request",
+    "pricing_question",
+    "technical_clarification",
+    "referral"
+  ],
+  "followup_blocked_when": [
+    "no_response",
+    "unsubscribe_or_do_not_contact",
+    "negative_response",
+    "bounce",
+    "missing feedback provenance"
+  ],
+  "real_feedback_claimed_now": false,
+  "external_action_executed": false
+}

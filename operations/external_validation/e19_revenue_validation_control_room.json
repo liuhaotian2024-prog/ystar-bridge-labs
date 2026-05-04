@@ -1,0 +1,135 @@
+{
+  "artifact_id": "e19_revenue_validation_control_room",
+  "control_room_type": "single_owner_revenue_validation_surface",
+  "batch_id": "e18_first_revenue_validation_batch",
+  "batch_level_route_recommendation": "manual_send_batch_ready",
+  "ecosystem_alignment_state": "ecosystem_aligned_with_documented_followups",
+  "kpi_state": {
+    "target_count": 7,
+    "ready_target_count": 5,
+    "sent_count_placeholder": 0,
+    "response_count_placeholder": 0,
+    "paid_signal_count_placeholder": 0
+  },
+  "blockers": [
+    {
+      "blocker_id": "real_provider_send_blocked",
+      "category": "missing_provider_implementation",
+      "summary": "gov-mcp currently provides no-send/dry-run provider boundary; real provider implementation and tests are still absent.",
+      "severity": "high_for_real_send_low_for_manual_owner_send",
+      "next_action": "Keep provider send blocked; optionally plan E20 provider adapter preparation."
+    },
+    {
+      "blocker_id": "missing_feedback_evidence",
+      "category": "missing_feedback_evidence",
+      "summary": "No owner-imported customer response exists, so paid-signal counts remain placeholders.",
+      "severity": "expected",
+      "next_action": "Owner may manually send approved candidates and import feedback later."
+    },
+    {
+      "blocker_id": "ystar_company_historical_assets_not_canonical",
+      "category": "stale_historical_assets",
+      "summary": "ystar-company includes historical revenue/outreach-disabled assets that should not be treated as current authority.",
+      "severity": "medium",
+      "next_action": "Future migration milestone may harvest useful patterns."
+    },
+    {
+      "blocker_id": "canonical_cieu_writeback_blocked",
+      "category": "governance_boundary",
+      "summary": "Y-star-gov owns canonical CIEU; E19 must not write real-world facts into CIEU/memory.",
+      "severity": "high_if_bypassed",
+      "next_action": "Keep CIEU/core writeback blocked until explicit governance contract path exists."
+    }
+  ],
+  "owner_decision_options": [
+    "approve_manual_send_for_candidate",
+    "revise_message",
+    "reject_candidate",
+    "request_more_evidence",
+    "import_feedback",
+    "suppress_candidate",
+    "defer_batch",
+    "prepare_provider_adapter_plan",
+    "keep_real_provider_send_blocked"
+  ],
+  "candidates": [
+    {
+      "action_id": "c2_action_primary_001_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "target_readiness": "ready_for_owner_review",
+      "offer_variant": "risk_reduction_framing",
+      "manual_send_state": "not_approved",
+      "feedback_import_state": "not_imported",
+      "kpi_state": "placeholder_no_fake_data",
+      "per_target_next_action": "owner_review_candidate",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION"
+    },
+    {
+      "action_id": "c2_action_primary_002_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "target_readiness": "ready_for_owner_review",
+      "offer_variant": "risk_reduction_framing",
+      "manual_send_state": "not_approved",
+      "feedback_import_state": "not_imported",
+      "kpi_state": "placeholder_no_fake_data",
+      "per_target_next_action": "owner_review_candidate",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION"
+    },
+    {
+      "action_id": "c2_action_primary_003_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "target_readiness": "ready_for_owner_review",
+      "offer_variant": "risk_reduction_framing",
+      "manual_send_state": "not_approved",
+      "feedback_import_state": "not_imported",
+      "kpi_state": "placeholder_no_fake_data",
+      "per_target_next_action": "owner_review_candidate",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION"
+    },
+    {
+      "action_id": "c2_action_fallback_004_cand_alicelabs_alicelabs",
+      "target_name": "Alice Labs AI Operations Consulting",
+      "target_readiness": "ready_for_owner_review",
+      "offer_variant": "risk_reduction_framing",
+      "manual_send_state": "not_approved",
+      "feedback_import_state": "not_imported",
+      "kpi_state": "placeholder_no_fake_data",
+      "per_target_next_action": "owner_review_candidate",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION"
+    },
+    {
+      "action_id": "c2_action_fallback_005_cand_botsquash_botsquash",
+      "target_name": "BotSquash AI Automation Agency",
+      "target_readiness": "ready_for_owner_review",
+      "offer_variant": "risk_reduction_framing",
+      "manual_send_state": "not_approved",
+      "feedback_import_state": "not_imported",
+      "kpi_state": "placeholder_no_fake_data",
+      "per_target_next_action": "owner_review_candidate",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION"
+    },
+    {
+      "action_id": "c2_action_fallback_006_cand_wotai_wotai",
+      "target_name": "WotAI AI Automation",
+      "target_readiness": "suppress_or_do_not_contact",
+      "offer_variant": "risk_reduction_framing",
+      "manual_send_state": "not_approved",
+      "feedback_import_state": "not_imported",
+      "kpi_state": "placeholder_no_fake_data",
+      "per_target_next_action": "evidence_or_suppression_review",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION"
+    },
+    {
+      "action_id": "c3_excluded_agent_direct_execution_without_activation",
+      "target_name": "Excluded direct agent execution path",
+      "target_readiness": "needs_more_evidence",
+      "offer_variant": "direct_readiness_review",
+      "manual_send_state": "not_approved",
+      "feedback_import_state": "not_imported",
+      "kpi_state": "placeholder_no_fake_data",
+      "per_target_next_action": "evidence_or_suppression_review",
+      "risk_tier": "TIER_2_TRANSPARENT_LOW_RISK_EXTERNAL_VALIDATION"
+    }
+  ],
+  "external_action_executed": false
+}

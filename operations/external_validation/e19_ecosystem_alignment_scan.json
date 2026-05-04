@@ -1,0 +1,78 @@
+{
+  "artifact_id": "e19_ecosystem_alignment_scan",
+  "alignment_status": "ecosystem_aligned_with_documented_followups",
+  "repos_checked_count": 4,
+  "repos_available_count": 4,
+  "repos": [
+    {
+      "repo_name": "ystar-bridge-labs",
+      "repo_path": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+      "exists": true,
+      "branch": "backflow/aiden-ceo-meeting-room",
+      "head": "753b6ea20ceaa109acb73c6ebf9a2a0d427120ac",
+      "relevant_file_groups_found": [
+        "e18_revenue_validation_runtime"
+      ],
+      "commercial_runtime_relevance": "canonical_company_runtime_owner",
+      "governance_relevance": "not_applicable",
+      "provider_boundary_relevance": "not_applicable",
+      "historical_asset_relevance": "not_applicable",
+      "direct_dependency_on_e18": "direct_source_of_e19_control_room",
+      "modification_needed": "bridge_labs_update_only",
+      "risk_if_not_modified": "low"
+    },
+    {
+      "repo_name": "gov-mcp",
+      "repo_path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "exists": true,
+      "branch": "backflow/company-runtime-tools",
+      "head": "582e13b5e154b0b1a13899c80cbbcdc052880905",
+      "relevant_file_groups_found": [
+        "canonical_outbound_no_send_adapter"
+      ],
+      "commercial_runtime_relevance": "not_applicable",
+      "governance_relevance": "execution_receipt_boundary",
+      "provider_boundary_relevance": "canonical_provider_boundary_owner",
+      "historical_asset_relevance": "not_applicable",
+      "direct_dependency_on_e18": "none",
+      "modification_needed": "no_change_needed",
+      "risk_if_not_modified": "medium_if_real_send_requested_without_provider_implementation"
+    },
+    {
+      "repo_name": "Y-star-gov",
+      "repo_path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "exists": true,
+      "branch": "backflow/company-runtime-domain-pack",
+      "head": "5f031f4be151b81ef1a1b1908a5c83c5420e8ce1",
+      "relevant_file_groups_found": [
+        "deterministic_governance_kernel"
+      ],
+      "commercial_runtime_relevance": "not_applicable",
+      "governance_relevance": "canonical_governance_contract_cieu_czl_owner",
+      "provider_boundary_relevance": "not_applicable",
+      "historical_asset_relevance": "not_applicable",
+      "direct_dependency_on_e18": "none",
+      "modification_needed": "no_change_needed",
+      "risk_if_not_modified": "medium_if_bridge_labs_claims_canonical_writeback_without_Y_star_gov_contract"
+    },
+    {
+      "repo_name": "ystar-company",
+      "repo_path": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "exists": true,
+      "branch": "main",
+      "head": "dd9cb6b247a9cf06d953d9319ba1ebd5c38dcbf6",
+      "relevant_file_groups_found": [
+        "historical_incubated_commercial_assets"
+      ],
+      "commercial_runtime_relevance": "not_applicable",
+      "governance_relevance": "not_applicable",
+      "provider_boundary_relevance": "not_applicable",
+      "historical_asset_relevance": "historical_assets_with_revenue_outreach_disabled_by_default",
+      "direct_dependency_on_e18": "none",
+      "modification_needed": "future_ystar_company_migration_required",
+      "risk_if_not_modified": "low_now_medium_if_old_assets_are_treated_as_current_authority"
+    }
+  ],
+  "read_only_scan": true,
+  "external_action_executed": false
+}
