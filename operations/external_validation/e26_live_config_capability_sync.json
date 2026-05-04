@@ -1,0 +1,27 @@
+{
+  "artifact_id": "e26_live_config_capability_sync",
+  "source_repo": "gov-mcp",
+  "source_head": "6703ae73a8db90bbb5cadcebd667505feb229510",
+  "live_config_schema_ready": true,
+  "credential_source_contract_ready": true,
+  "credential_source_type": "environment_variable_names_only",
+  "required_credential_variable_names": [
+    "YSTAR_OUTBOUND_PROVIDER_API_KEY"
+  ],
+  "credential_values_committed": false,
+  "secrets_committed": false,
+  "live_enabled": false,
+  "sandbox_enabled": true,
+  "dry_run_enabled": true,
+  "quota_rate_limit_config_ready": true,
+  "suppression_registry_config_ready": true,
+  "compliance_registry_config_ready": true,
+  "audit_receipt_storage_config_ready": false,
+  "live_blocked_reason": [
+    "live_enabled_false",
+    "credential_values_absent_by_design",
+    "live_provider_tests_not_configured",
+    "production_persistent_idempotency_not_configured"
+  ],
+  "external_action_executed": false
+}

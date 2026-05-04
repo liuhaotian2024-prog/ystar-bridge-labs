@@ -1,0 +1,29 @@
+{
+  "artifact_id": "e26_repo_modification_decision_packet",
+  "decisions": [
+    {
+      "repo": "gov-mcp",
+      "decision": "immediate_update_required_and_delivered",
+      "reason": "Missing live-readiness wheels belong in canonical provider boundary.",
+      "delivered_head": "6703ae73a8db90bbb5cadcebd667505feb229510"
+    },
+    {
+      "repo": "ystar-bridge-labs",
+      "decision": "bridge_labs_update_required",
+      "reason": "CEO KG/control room/canary gate artifacts live in commercial runtime.",
+      "delivered_by_this_job": true
+    },
+    {
+      "repo": "Y-star-gov",
+      "decision": "no_change_needed",
+      "reason": "Governance concepts aligned read-only."
+    },
+    {
+      "repo": "ystar-company",
+      "decision": "no_change_needed",
+      "reason": "Historical commercial context only."
+    }
+  ],
+  "cross_repo_mutation_performed": true,
+  "external_action_executed": false
+}

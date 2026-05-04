@@ -1,0 +1,98 @@
+{
+  "artifact_id": "e26_live_readiness_duplicate_conflict_map",
+  "cluster_count": 8,
+  "destructive_refactor_performed": false,
+  "clusters": [
+    {
+      "capability": "idempotency",
+      "modules_involved": [
+        "gov_mcp/outbound/idempotency.py",
+        "gov_mcp/outbound/persistent_idempotency.py"
+      ],
+      "semantic_difference": "base validator vs durable store",
+      "conflict_risk": "low",
+      "canonical_candidate": "gov_mcp/outbound/idempotency.py",
+      "recommended_route": "wrap persistent store around base validator"
+    },
+    {
+      "capability": "receipt generation",
+      "modules_involved": [
+        "gov_mcp/outbound/receipts.py",
+        "gov_mcp/outbound/sandbox_receipts.py",
+        "gov_mcp/outbound/live_receipts.py"
+      ],
+      "semantic_difference": "dry-run/sandbox/live receipt types differ by external-effect boundary",
+      "conflict_risk": "medium",
+      "canonical_candidate": "gov_mcp/outbound/receipts.py",
+      "recommended_route": "keep parallel with strict boundary router"
+    },
+    {
+      "capability": "provider modes",
+      "modules_involved": [
+        "gov_mcp/outbound/provider_capability.py",
+        "gov_mcp/outbound/provider_manifest.py"
+      ],
+      "semantic_difference": "mode enum vs manifest read model",
+      "conflict_risk": "low",
+      "canonical_candidate": "gov_mcp/outbound/provider_capability.py",
+      "recommended_route": "reuse both"
+    },
+    {
+      "capability": "promotion gates",
+      "modules_involved": [
+        "gov_mcp/outbound/provider_promotion.py",
+        "gov_mcp/outbound/sandbox_promotion.py",
+        "gov_mcp/outbound/live_readiness.py"
+      ],
+      "semantic_difference": "dry-run/sandbox gates feed E26 live readiness validator",
+      "conflict_risk": "medium",
+      "canonical_candidate": "gov_mcp/outbound/provider_promotion.py",
+      "recommended_route": "wrap existing gates"
+    },
+    {
+      "capability": "suppression/compliance",
+      "modules_involved": [
+        "office/mission_command/e23_suppression_registry.py",
+        "office/mission_command/e23_compliance_registry.py"
+      ],
+      "semantic_difference": "bridge-labs commercial policy vs future provider-specific registries",
+      "conflict_risk": "low",
+      "canonical_candidate": "office/mission_command/e23_suppression_registry.py",
+      "recommended_route": "reuse now; future provider registry optional"
+    },
+    {
+      "capability": "risk tier / owner approval",
+      "modules_involved": [
+        "office/mission_command/e20_risk_tier_taxonomy.py",
+        "gov_mcp/outbound/provider_guard_stack.py"
+      ],
+      "semantic_difference": "commercial route risk vs provider guard implementation",
+      "conflict_risk": "low",
+      "canonical_candidate": "office/mission_command/e20_risk_tier_taxonomy.py",
+      "recommended_route": "keep parallel with router"
+    },
+    {
+      "capability": "kill switch",
+      "modules_involved": [
+        "gov_mcp/outbound/live_kill_switch.py",
+        "gov_mcp/server.py safemode"
+      ],
+      "semantic_difference": "outbound live kill switch vs broad governance safemode",
+      "conflict_risk": "low",
+      "canonical_candidate": "gov_mcp/outbound/live_kill_switch.py",
+      "recommended_route": "build missing outbound-specific wheel; do not mutate broad safemode"
+    },
+    {
+      "capability": "CEO KG feedback",
+      "modules_involved": [
+        "operations/knowledge_graph/e24_ceo_kg_nodes.jsonl",
+        "operations/knowledge_graph/e25_ceo_kg_nodes_delta.jsonl"
+      ],
+      "semantic_difference": "base KG vs milestone deltas",
+      "conflict_risk": "low",
+      "canonical_candidate": "operations/knowledge_graph/e24_ceo_kg_nodes.jsonl",
+      "recommended_route": "wrap via delta files"
+    }
+  ],
+  "external_action_executed": false
+}

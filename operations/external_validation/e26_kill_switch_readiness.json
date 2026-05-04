@@ -1,0 +1,20 @@
+{
+  "artifact_id": "e26_kill_switch_readiness",
+  "kill_switch_ready": true,
+  "default_state": "global_live_disabled",
+  "supported_scopes": [
+    "global",
+    "provider",
+    "channel",
+    "campaign",
+    "target",
+    "action"
+  ],
+  "live_execution_allowed_now": false,
+  "reason_codes": [
+    "global_live_disabled",
+    "provider_live_disabled"
+  ],
+  "audit_czl_note_required": true,
+  "external_action_executed": false
+}

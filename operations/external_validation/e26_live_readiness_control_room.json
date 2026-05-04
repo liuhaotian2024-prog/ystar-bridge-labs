@@ -1,0 +1,197 @@
+{
+  "artifact_id": "e26_live_readiness_control_room",
+  "control_room_type": "live_readiness_existing_wheel_integration_and_canary_gate",
+  "existing_wheel_audit_completed_first": true,
+  "existing_wheels_reused": 9,
+  "wrapped_or_extended_wheels": 5,
+  "new_wheels_added_with_justification": 5,
+  "duplicate_overlap_risks": "documented_in_e26_live_readiness_duplicate_conflict_map",
+  "ceo_kg_selected_path": "rev_path_readiness_review_ai_consultancies",
+  "live_config_status": {
+    "artifact_id": "e26_live_config_capability_sync",
+    "source_repo": "gov-mcp",
+    "source_head": "6703ae73a8db90bbb5cadcebd667505feb229510",
+    "live_config_schema_ready": true,
+    "credential_source_contract_ready": true,
+    "credential_source_type": "environment_variable_names_only",
+    "required_credential_variable_names": [
+      "YSTAR_OUTBOUND_PROVIDER_API_KEY"
+    ],
+    "credential_values_committed": false,
+    "secrets_committed": false,
+    "live_enabled": false,
+    "sandbox_enabled": true,
+    "dry_run_enabled": true,
+    "quota_rate_limit_config_ready": true,
+    "suppression_registry_config_ready": true,
+    "compliance_registry_config_ready": true,
+    "audit_receipt_storage_config_ready": false,
+    "live_blocked_reason": [
+      "live_enabled_false",
+      "credential_values_absent_by_design",
+      "live_provider_tests_not_configured",
+      "production_persistent_idempotency_not_configured"
+    ],
+    "external_action_executed": false
+  },
+  "persistent_idempotency_status": {
+    "artifact_id": "e26_persistent_idempotency_readiness",
+    "existing_wheel_reused": "gov_mcp/outbound/persistent_idempotency.py",
+    "extension_delivered": true,
+    "persistent_status": "persistent_disabled_until_live_configuration",
+    "store_type": "file_backed_json_contract",
+    "duplicate_protection_result": "validated_by_gov_mcp_tests_duplicate_noop",
+    "corruption_handling": "corrupted_store_blocked",
+    "missing_store_handling": "missing_store_blocked",
+    "live_promotion_impact": "blocks_live_promotion_until_persistent_ready",
+    "persistent_ready": false,
+    "external_action_executed": false
+  },
+  "kill_switch_status": {
+    "artifact_id": "e26_kill_switch_readiness",
+    "kill_switch_ready": true,
+    "default_state": "global_live_disabled",
+    "supported_scopes": [
+      "global",
+      "provider",
+      "channel",
+      "campaign",
+      "target",
+      "action"
+    ],
+    "live_execution_allowed_now": false,
+    "reason_codes": [
+      "global_live_disabled",
+      "provider_live_disabled"
+    ],
+    "audit_czl_note_required": true,
+    "external_action_executed": false
+  },
+  "live_receipt_boundary_status": {
+    "artifact_id": "e26_live_receipt_boundary",
+    "receipt_types": [
+      "dry_run_receipt",
+      "sandbox_receipt",
+      "live_receipt",
+      "blocked_receipt",
+      "replay_noop_receipt"
+    ],
+    "live_receipts_created_count": 0,
+    "dry_run_cannot_create_live_receipt": true,
+    "sandbox_cannot_create_live_receipt": true,
+    "blocked_action_cannot_create_live_receipt": true,
+    "live_receipt_requires_external_effect_true": true,
+    "receipt_boundary_proof": "gov_mcp live receipt boundary tests passed; E26 created no live receipts.",
+    "external_action_executed": false
+  },
+  "live_readiness_validator_result": {
+    "artifact_id": "e26_live_provider_readiness_validator",
+    "validator_source": "gov_mcp/outbound/live_readiness.py",
+    "live_ready": false,
+    "live_ready_action_count": 0,
+    "live_blocked_action_count": 1,
+    "dry_run_receipt_history_present": true,
+    "sandbox_receipt_history_present": true,
+    "ceo_kg_route_supported": true,
+    "reason_codes": [
+      "live_enabled_false",
+      "credential_values_absent_by_design",
+      "live_provider_tests_not_configured",
+      "production_persistent_idempotency_not_configured",
+      "blocks_live_promotion_until_persistent_ready",
+      "global_live_disabled",
+      "provider_live_disabled",
+      "live_receipt_writer_not_activated"
+    ],
+    "primary_blockers": [
+      "live_enabled_false",
+      "live_provider_tests_not_configured",
+      "production_persistent_idempotency_not_configured",
+      "global_live_disabled"
+    ],
+    "external_action_executed": false
+  },
+  "one_action_canary_plan": {
+    "artifact_id": "e26_one_action_canary_plan",
+    "canary_plan_created": true,
+    "canary_executed": false,
+    "customer_contacted": false,
+    "message_sent": false,
+    "live_receipt_created": false,
+    "selected_revenue_path": "rev_path_readiness_review_ai_consultancies",
+    "selected_action_candidate": "e26_live_canary_readiness_review_ai_consultancy_candidate_1",
+    "kg_support_nodes_edges": [
+      "offer_48h_readiness_review",
+      "target_segment_ai_consultancies",
+      "blocker_live_provider_disabled",
+      "offer_48h_readiness_review",
+      "target_segment_ai_consultancies",
+      "capability_e22_autonomous_dry_run",
+      "blocker_live_provider_disabled"
+    ],
+    "target_evidence": [
+      "operations/external_validation/e18_revenue_validation_batch.json",
+      "operations/external_validation/e25_sandbox_execution_results.json"
+    ],
+    "message_content_reference": "operations/external_validation/e17_final_message_package.json",
+    "channel": "email",
+    "provider_category": "outbound_message_provider",
+    "risk_tier": "T2_low_medium_limited_outbound",
+    "autonomous_eligibility": "eligible_in_principle_after_live_readiness_passes",
+    "owner_approval_required_by_risk": false,
+    "required_live_config": "gov_mcp_live_provider_config_contract_v1",
+    "required_credential_source_names_only": [
+      "YSTAR_OUTBOUND_PROVIDER_API_KEY"
+    ],
+    "persistent_idempotency_requirement": "persistent_ready",
+    "rate_limit": {
+      "max_live_actions": 1,
+      "window": "canary"
+    },
+    "suppression_check": "required_clear",
+    "compliance_check": "required_clear",
+    "kill_switch": "required_clear",
+    "live_receipt_path": "gov_mcp/outbound/live_receipts.py",
+    "abort_criteria": [
+      "kill_switch_active",
+      "suppression_not_clear",
+      "compliance_not_clear",
+      "provider_live_not_ready",
+      "persistent_idempotency_not_ready"
+    ],
+    "success_criteria": [
+      "one live action accepted by provider",
+      "live receipt written",
+      "feedback import wait-state opened"
+    ],
+    "failure_criteria": [
+      "provider error",
+      "rate limit exceeded",
+      "bounce/suppression signal"
+    ],
+    "post_canary_feedback_import_path": "operations/external_validation/e18_batch_feedback_intake_empty.json",
+    "ceo_kg_feedback_ingestion_path": "operations/knowledge_graph/e26_ceo_kg_live_readiness_feedback.json",
+    "live_disabled_unless_validator_passes": true,
+    "external_action_executed": false
+  },
+  "blockers": [
+    "live_enabled_false",
+    "live_provider_tests_not_configured",
+    "production_persistent_idempotency_not_configured",
+    "global_live_disabled"
+  ],
+  "agent_can_do_autonomously_next": [
+    "run live readiness validation after config changes",
+    "prepare credential-source contract without values",
+    "run no-effect canary gate regression"
+  ],
+  "owner_approval_required_by_risk": [],
+  "blocked_actions": [
+    "live canary execution",
+    "provider API call",
+    "live receipt creation"
+  ],
+  "owner_manual_send_is_default": false,
+  "recommended_next_milestone": "E27 should configure live readiness prerequisites in a controlled sandbox/live-test setting before any canary execution",
+  "external_action_executed": false
+}

@@ -1,0 +1,27 @@
+{
+  "artifact_id": "e26_live_provider_readiness_validator",
+  "validator_source": "gov_mcp/outbound/live_readiness.py",
+  "live_ready": false,
+  "live_ready_action_count": 0,
+  "live_blocked_action_count": 1,
+  "dry_run_receipt_history_present": true,
+  "sandbox_receipt_history_present": true,
+  "ceo_kg_route_supported": true,
+  "reason_codes": [
+    "live_enabled_false",
+    "credential_values_absent_by_design",
+    "live_provider_tests_not_configured",
+    "production_persistent_idempotency_not_configured",
+    "blocks_live_promotion_until_persistent_ready",
+    "global_live_disabled",
+    "provider_live_disabled",
+    "live_receipt_writer_not_activated"
+  ],
+  "primary_blockers": [
+    "live_enabled_false",
+    "live_provider_tests_not_configured",
+    "production_persistent_idempotency_not_configured",
+    "global_live_disabled"
+  ],
+  "external_action_executed": false
+}

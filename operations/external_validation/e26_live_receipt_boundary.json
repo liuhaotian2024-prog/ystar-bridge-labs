@@ -1,0 +1,17 @@
+{
+  "artifact_id": "e26_live_receipt_boundary",
+  "receipt_types": [
+    "dry_run_receipt",
+    "sandbox_receipt",
+    "live_receipt",
+    "blocked_receipt",
+    "replay_noop_receipt"
+  ],
+  "live_receipts_created_count": 0,
+  "dry_run_cannot_create_live_receipt": true,
+  "sandbox_cannot_create_live_receipt": true,
+  "blocked_action_cannot_create_live_receipt": true,
+  "live_receipt_requires_external_effect_true": true,
+  "receipt_boundary_proof": "gov_mcp live receipt boundary tests passed; E26 created no live receipts.",
+  "external_action_executed": false
+}

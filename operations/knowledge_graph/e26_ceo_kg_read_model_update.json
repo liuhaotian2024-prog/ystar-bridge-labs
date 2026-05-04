@@ -1,0 +1,9 @@
+{
+  "artifact_id": "e26_ceo_kg_read_model_update",
+  "selected_revenue_path": "rev_path_readiness_review_ai_consultancies",
+  "live_ready": false,
+  "live_ready_action_count": 0,
+  "live_blocked_action_count": 1,
+  "current_strategic_bottleneck": "live canary is planned but blocked by live_enabled_false, live tests/config, production persistent idempotency, and kill switch default-disabled state",
+  "external_action_executed": false
+}

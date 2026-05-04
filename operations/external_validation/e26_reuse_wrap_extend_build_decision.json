@@ -1,0 +1,101 @@
+{
+  "artifact_id": "e26_reuse_wrap_extend_build_decision",
+  "decisions": [
+    {
+      "capability": "live provider configuration",
+      "decision": "build_missing",
+      "target_path": "gov_mcp/outbound/live_config.py",
+      "justification": "No existing credential-names-only live config contract existed."
+    },
+    {
+      "capability": "credential source contract",
+      "decision": "build_missing",
+      "target_path": "gov_mcp/outbound/live_config.py",
+      "justification": "Built names-only contract; no secret values."
+    },
+    {
+      "capability": "provider mode separation",
+      "decision": "reuse_existing",
+      "target_path": "gov_mcp/outbound/provider_capability.py",
+      "justification": "E25 provider modes already canonical."
+    },
+    {
+      "capability": "persistent idempotency",
+      "decision": "extend_existing",
+      "target_path": "gov_mcp/outbound/persistent_idempotency.py",
+      "justification": "Extended E25 store for missing/corrupted fail-closed handling."
+    },
+    {
+      "capability": "rate limit / quota",
+      "decision": "wrap_existing",
+      "target_path": "gov_mcp/outbound/live_config.py + provider_guard_stack",
+      "justification": "Use config contract and existing guard semantics."
+    },
+    {
+      "capability": "kill switch",
+      "decision": "build_missing",
+      "target_path": "gov_mcp/outbound/live_kill_switch.py",
+      "justification": "No outbound-specific live kill switch existed."
+    },
+    {
+      "capability": "suppression integration",
+      "decision": "reuse_existing",
+      "target_path": "office/mission_command/e23_suppression_registry.py",
+      "justification": "Existing bridge-labs registry reused as readiness input."
+    },
+    {
+      "capability": "compliance integration",
+      "decision": "reuse_existing",
+      "target_path": "office/mission_command/e23_compliance_registry.py",
+      "justification": "Existing bridge-labs registry reused as readiness input."
+    },
+    {
+      "capability": "live receipt boundary",
+      "decision": "build_missing",
+      "target_path": "gov_mcp/outbound/live_receipts.py",
+      "justification": "Existing receipts were dry-run/sandbox only."
+    },
+    {
+      "capability": "live readiness validator",
+      "decision": "build_missing",
+      "target_path": "gov_mcp/outbound/live_readiness.py",
+      "justification": "New wrapper integrates existing wheels."
+    },
+    {
+      "capability": "sandbox-to-live promotion gate",
+      "decision": "wrap_existing",
+      "target_path": "gov_mcp/outbound/sandbox_promotion.py",
+      "justification": "Existing promotion gate wrapped by E26 readiness validator."
+    },
+    {
+      "capability": "one-action live canary plan",
+      "decision": "build_missing",
+      "target_path": "gov_mcp/outbound/live_canary.py",
+      "justification": "No execution-free live canary plan contract existed."
+    },
+    {
+      "capability": "audit/CZL closure",
+      "decision": "reuse_existing",
+      "target_path": "Y-star-gov README/CIEU semantics + bridge-labs CZL pattern",
+      "justification": "Use read-only governance semantics and local closure artifact."
+    },
+    {
+      "capability": "CEO KG feedback",
+      "decision": "wrap_existing",
+      "target_path": "operations/knowledge_graph/e24/e25 KG artifacts",
+      "justification": "Append E26 delta nodes/edges."
+    },
+    {
+      "capability": "route registry update",
+      "decision": "wrap_existing",
+      "target_path": "operations/external_validation/e24_ecosystem_route_registry.json",
+      "justification": "E26 updates read model rather than replacing registry."
+    }
+  ],
+  "new_implementation_allowed_only_for": [
+    "build_missing",
+    "extend_existing"
+  ],
+  "all_new_wheels_have_justification": true,
+  "external_action_executed": false
+}

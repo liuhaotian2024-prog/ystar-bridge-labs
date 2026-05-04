@@ -1,0 +1,13 @@
+{
+  "artifact_id": "e26_persistent_idempotency_readiness",
+  "existing_wheel_reused": "gov_mcp/outbound/persistent_idempotency.py",
+  "extension_delivered": true,
+  "persistent_status": "persistent_disabled_until_live_configuration",
+  "store_type": "file_backed_json_contract",
+  "duplicate_protection_result": "validated_by_gov_mcp_tests_duplicate_noop",
+  "corruption_handling": "corrupted_store_blocked",
+  "missing_store_handling": "missing_store_blocked",
+  "live_promotion_impact": "blocks_live_promotion_until_persistent_ready",
+  "persistent_ready": false,
+  "external_action_executed": false
+}

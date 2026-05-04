@@ -1,0 +1,20 @@
+{
+  "artifact_id": "e26_ceo_kg_promotion_candidates_update",
+  "promotion_candidates_count": 3,
+  "promotion_candidates": [
+    {
+      "node_id": "e26_live_config_contract",
+      "promotion_status": "validated_internal_execution_candidate"
+    },
+    {
+      "node_id": "e26_kill_switch_capability",
+      "promotion_status": "validated_internal_execution_candidate"
+    },
+    {
+      "node_id": "e26_live_receipt_boundary",
+      "promotion_status": "validated_internal_execution_candidate"
+    }
+  ],
+  "canonical_truth_promoted": false,
+  "external_action_executed": false
+}

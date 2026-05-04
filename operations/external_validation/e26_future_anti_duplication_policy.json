@@ -1,0 +1,33 @@
+{
+  "artifact_id": "e26_future_anti_duplication_policy",
+  "future_milestone_start_requirements": [
+    "existing-wheel audit",
+    "duplicate/overlap map",
+    "reuse/wrap/extend/build decision",
+    "canonical route registry update",
+    "explicit new-wheel justification",
+    "ecosystem alignment proof"
+  ],
+  "future_live_canary_requirements": [
+    "CEO KG selected route",
+    "live config validation",
+    "credential source contract without committing secrets",
+    "persistent idempotency persistent_ready",
+    "kill switch clear",
+    "suppression clear",
+    "compliance clear",
+    "rate-limit budget",
+    "sandbox receipt history",
+    "dry-run receipt history",
+    "live receipt writer readiness",
+    "provider live tests",
+    "risk-tier owner approval check only if required by risk",
+    "abort criteria",
+    "post-canary feedback import path",
+    "CEO KG feedback ingestion",
+    "CZL/audit closure",
+    "ecosystem alignment proof"
+  ],
+  "owner_manual_send_default_allowed": false,
+  "external_action_executed": false
+}

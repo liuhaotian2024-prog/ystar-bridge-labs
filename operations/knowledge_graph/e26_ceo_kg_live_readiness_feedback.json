@@ -1,0 +1,268 @@
+{
+  "artifact_id": "e26_ceo_kg_live_readiness_feedback",
+  "kg_delta_nodes": [
+    {
+      "id": "e26_existing_wheel_inventory",
+      "type": "ExistingWheelInventory",
+      "label": "E26 existing live-readiness wheel inventory",
+      "source_paths": [
+        "operations/external_validation/e26_existing_live_readiness_wheel_inventory.json"
+      ],
+      "evidence_status": "evidence_bound",
+      "truth_status": "observed_internal_audit",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E26",
+      "stale_or_current": "current_working",
+      "notes": "Audit occurred before E26 implementation."
+    },
+    {
+      "id": "e26_reuse_decision",
+      "type": "ReuseDecision",
+      "label": "Reuse/wrap/extend/build decision",
+      "source_paths": [
+        "operations/external_validation/e26_reuse_wrap_extend_build_decision.json"
+      ],
+      "evidence_status": "evidence_bound",
+      "truth_status": "observed_internal_decision",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E26",
+      "stale_or_current": "current_working",
+      "notes": "Every new wheel has build_missing or extend_existing justification."
+    },
+    {
+      "id": "e26_live_config_contract",
+      "type": "LiveConfigContract",
+      "label": "Live provider configuration contract",
+      "source_paths": [
+        "operations/external_validation/e26_live_config_capability_sync.json"
+      ],
+      "evidence_status": "evidence_bound",
+      "truth_status": "observed_internal_capability",
+      "promotion_status": "validated_internal_execution_candidate",
+      "created_by_milestone": "E26",
+      "stale_or_current": "current_working",
+      "notes": "Names-only credential contract; no secrets."
+    },
+    {
+      "id": "e26_persistent_idempotency_readiness",
+      "type": "PersistentIdempotencyReadiness",
+      "label": "Persistent idempotency readiness",
+      "source_paths": [
+        "operations/external_validation/e26_persistent_idempotency_readiness.json"
+      ],
+      "evidence_status": "evidence_bound",
+      "truth_status": "observed_internal_capability",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E26",
+      "stale_or_current": "current_working",
+      "notes": "Store foundation hardened; production live persistence not configured."
+    },
+    {
+      "id": "e26_kill_switch_capability",
+      "type": "KillSwitchCapability",
+      "label": "Live kill switch capability",
+      "source_paths": [
+        "operations/external_validation/e26_kill_switch_readiness.json"
+      ],
+      "evidence_status": "evidence_bound",
+      "truth_status": "observed_internal_capability",
+      "promotion_status": "validated_internal_execution_candidate",
+      "created_by_milestone": "E26",
+      "stale_or_current": "current_working",
+      "notes": "Defaults safe and blocks live."
+    },
+    {
+      "id": "e26_live_receipt_boundary",
+      "type": "LiveReceiptBoundary",
+      "label": "Live receipt boundary",
+      "source_paths": [
+        "operations/external_validation/e26_live_receipt_boundary.json"
+      ],
+      "evidence_status": "evidence_bound",
+      "truth_status": "observed_internal_capability",
+      "promotion_status": "validated_internal_execution_candidate",
+      "created_by_milestone": "E26",
+      "stale_or_current": "current_working",
+      "notes": "No live receipts without real allowed live effect."
+    },
+    {
+      "id": "e26_live_provider_readiness_validator",
+      "type": "LiveProviderReadinessValidator",
+      "label": "Live readiness validator",
+      "source_paths": [
+        "operations/external_validation/e26_live_provider_readiness_validator.json"
+      ],
+      "evidence_status": "evidence_bound",
+      "truth_status": "observed_internal_validator",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E26",
+      "stale_or_current": "current_working",
+      "notes": "Blocks current live execution."
+    },
+    {
+      "id": "e26_canary_plan",
+      "type": "CanaryPlan",
+      "label": "One-action live canary plan",
+      "source_paths": [
+        "operations/external_validation/e26_one_action_canary_plan.json"
+      ],
+      "evidence_status": "evidence_bound",
+      "truth_status": "planned_internal_route",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E26",
+      "stale_or_current": "current_working",
+      "notes": "Plan only; not executed."
+    },
+    {
+      "id": "e26_live_promotion_blocker",
+      "type": "LivePromotionBlocker",
+      "label": "Live readiness blockers",
+      "source_paths": [
+        "operations/external_validation/e26_live_provider_readiness_validator.json"
+      ],
+      "evidence_status": "evidence_bound",
+      "truth_status": "observed_internal_blocker",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E26",
+      "stale_or_current": "current_working",
+      "notes": "live_enabled_false, live_provider_tests_not_configured, production_persistent_idempotency_not_configured, global_live_disabled"
+    },
+    {
+      "id": "e26_strategic_learning_candidate",
+      "type": "StrategicLearningCandidate",
+      "label": "Existing wheels can be integrated into a live canary gate",
+      "source_paths": [
+        "operations/external_validation/e26_ceo_brain_portfolio_update.json"
+      ],
+      "evidence_status": "evidence_bound",
+      "truth_status": "internal_readiness_learning_not_market_truth",
+      "promotion_status": "validated_internal_execution_candidate",
+      "created_by_milestone": "E26",
+      "stale_or_current": "current_working",
+      "notes": "Internal readiness evidence only."
+    }
+  ],
+  "kg_delta_edges": [
+    {
+      "id": "e26_edge_path_requires_live_config",
+      "source_node_id": "rev_path_readiness_review_ai_consultancies",
+      "target_node_id": "e26_live_config_contract",
+      "relationship": "requires",
+      "evidence_path": "operations/external_validation/e26_one_action_canary_plan.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Selected path requires live config before canary."
+    },
+    {
+      "id": "e26_edge_path_requires_idempotency",
+      "source_node_id": "rev_path_readiness_review_ai_consultancies",
+      "target_node_id": "e26_persistent_idempotency_readiness",
+      "relationship": "requires",
+      "evidence_path": "operations/external_validation/e26_persistent_idempotency_readiness.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Live promotion requires durable idempotency."
+    },
+    {
+      "id": "e26_edge_canary_routes_to_path",
+      "source_node_id": "e26_canary_plan",
+      "target_node_id": "rev_path_readiness_review_ai_consultancies",
+      "relationship": "routes_to",
+      "evidence_path": "operations/external_validation/e26_one_action_canary_plan.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Canary plan targets selected revenue path."
+    },
+    {
+      "id": "e26_edge_validator_blocks_live",
+      "source_node_id": "e26_live_provider_readiness_validator",
+      "target_node_id": "e26_live_promotion_blocker",
+      "relationship": "blocks",
+      "evidence_path": "operations/external_validation/e26_live_provider_readiness_validator.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Validator blocks current live execution."
+    },
+    {
+      "id": "e26_edge_blocker_missing_config",
+      "source_node_id": "e26_live_promotion_blocker",
+      "target_node_id": "e26_live_config_contract",
+      "relationship": "blocked_by",
+      "evidence_path": "operations/external_validation/e26_live_config_capability_sync.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Live enabled/config/tests absent."
+    },
+    {
+      "id": "e26_edge_existing_wheel_reused",
+      "source_node_id": "e26_existing_wheel_inventory",
+      "target_node_id": "e26_reuse_decision",
+      "relationship": "supports",
+      "evidence_path": "operations/external_validation/e26_reuse_wrap_extend_build_decision.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Audit gates implementation choices."
+    },
+    {
+      "id": "e26_edge_reuse_extends_idempotency",
+      "source_node_id": "e26_reuse_decision",
+      "target_node_id": "e26_persistent_idempotency_readiness",
+      "relationship": "extended_by",
+      "evidence_path": "operations/external_validation/e26_reuse_wrap_extend_build_decision.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Existing persistent idempotency wheel extended."
+    },
+    {
+      "id": "e26_edge_kill_switch_blocks_canary",
+      "source_node_id": "e26_kill_switch_capability",
+      "target_node_id": "e26_canary_plan",
+      "relationship": "governed_by",
+      "evidence_path": "operations/external_validation/e26_kill_switch_readiness.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Canary requires kill switch clear."
+    },
+    {
+      "id": "e26_edge_receipt_boundary_governs_canary",
+      "source_node_id": "e26_live_receipt_boundary",
+      "target_node_id": "e26_canary_plan",
+      "relationship": "governed_by",
+      "evidence_path": "operations/external_validation/e26_live_receipt_boundary.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Canary cannot create live receipt until boundary passes."
+    },
+    {
+      "id": "e26_edge_readiness_updates_learning",
+      "source_node_id": "e26_live_provider_readiness_validator",
+      "target_node_id": "e26_strategic_learning_candidate",
+      "relationship": "supports",
+      "evidence_path": "operations/knowledge_graph/e26_ceo_kg_live_readiness_feedback.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Readiness result informs CEO brain."
+    },
+    {
+      "id": "e26_edge_learning_updates_bottleneck",
+      "source_node_id": "e26_strategic_learning_candidate",
+      "target_node_id": "e26_ceo_brain_update",
+      "relationship": "routes_to",
+      "evidence_path": "operations/external_validation/e26_ceo_brain_portfolio_update.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "CEO brain consumes readiness feedback."
+    }
+  ],
+  "kg_delta_node_count": 10,
+  "kg_delta_edge_count": 11,
+  "internal_readiness_evidence_only": true,
+  "customer_feedback_claimed": false,
+  "market_validation_claimed": false,
+  "canonical_truth_promoted": false,
+  "promotion_candidates": [
+    {
+      "node_id": "e26_live_config_contract",
+      "promotion_status": "validated_internal_execution_candidate"
+    },
+    {
+      "node_id": "e26_kill_switch_capability",
+      "promotion_status": "validated_internal_execution_candidate"
+    },
+    {
+      "node_id": "e26_live_receipt_boundary",
+      "promotion_status": "validated_internal_execution_candidate"
+    }
+  ],
+  "promotion_candidates_count": 3,
+  "external_action_executed": false
+}
