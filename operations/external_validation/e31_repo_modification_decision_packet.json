@@ -1,0 +1,8 @@
+{
+  "Y_star_gov_modification_decision": "read_only_no_change",
+  "artifact_id": "e31_repo_modification_decision_packet",
+  "bridge_labs_modification_decision": "modify_and_deliver",
+  "gov_mcp_modification_decision": "read_only_no_change",
+  "reason": "E31 is commercial runtime and KG/package work; provider boundary does not need mutation.",
+  "ystar_company_modification_decision": "read_only_no_change"
+}

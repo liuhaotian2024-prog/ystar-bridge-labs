@@ -1,0 +1,79 @@
+{
+  "artifact_id": "e31_public_source_selection",
+  "bounded_source_count": true,
+  "rules": {
+    "bounded_source_count": true,
+    "no_account_creation": true,
+    "no_forms": true,
+    "no_login": true,
+    "no_payment": true,
+    "no_private_personal_data_collection": true,
+    "public_only": true
+  },
+  "selected_sources": [
+    {
+      "domain": "www.langchain.com",
+      "source_category": "public pricing/service page",
+      "source_id": "e31_source_langsmith_pricing",
+      "title": "LangSmith Plans and Pricing",
+      "url": "https://www.langchain.com/pricing"
+    },
+    {
+      "domain": "humanloop.com",
+      "source_category": "public pricing/service page",
+      "source_id": "e31_source_humanloop_pricing",
+      "title": "Humanloop Pricing",
+      "url": "https://humanloop.com/pricing"
+    },
+    {
+      "domain": "www.vellum.ai",
+      "source_category": "public pricing/docs page",
+      "source_id": "e31_source_vellum_pricing_docs",
+      "title": "Vellum Pricing Docs",
+      "url": "https://www.vellum.ai/docs/pricing"
+    },
+    {
+      "domain": "crewai.com",
+      "source_category": "public pricing/service page",
+      "source_id": "e31_source_crewai_pricing",
+      "title": "CrewAI Pricing",
+      "url": "https://crewai.com/pricing"
+    },
+    {
+      "domain": "github.com",
+      "source_category": "public pricing/product page",
+      "source_id": "e31_source_github_copilot_plans",
+      "title": "GitHub Copilot Plans and Pricing",
+      "url": "https://github.com/features/copilot/plans"
+    },
+    {
+      "domain": "aws.amazon.com",
+      "source_category": "public ecosystem/partner page",
+      "source_id": "e31_source_aws_genai_partners",
+      "title": "AWS Generative AI Partners",
+      "url": "https://aws.amazon.com/ai/partners/"
+    },
+    {
+      "domain": "retool.com",
+      "source_category": "public pricing/service page",
+      "source_id": "e31_source_retool_pricing",
+      "title": "Retool Pricing",
+      "url": "https://retool.com/en-EU/pricing"
+    },
+    {
+      "domain": "www.make.com",
+      "source_category": "public pricing/service page",
+      "source_id": "e31_source_make_pricing",
+      "title": "Make Pricing",
+      "url": "https://www.make.com/en/pricing"
+    }
+  ],
+  "selection_basis": [
+    "matches E31 evidence needs",
+    "present in or compatible with existing owner-approved public seed pattern",
+    "public no-login pages only",
+    "covers pricing, governance, workflow, agent operations, and consulting ecosystem evidence"
+  ],
+  "selection_status": "selected",
+  "source_count": 8
+}

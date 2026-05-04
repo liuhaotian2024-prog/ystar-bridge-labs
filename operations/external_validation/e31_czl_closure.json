@@ -1,0 +1,20 @@
+{
+  "account_created": false,
+  "artifact_id": "e31_czl_closure",
+  "buyer_facing_claims_evidence_bound_or_labeled": true,
+  "ceo_kg_updated_with_public_observation_only": true,
+  "credentials_or_secrets_committed": false,
+  "customer_contact_occurred": false,
+  "ecosystem_alignment_gate_completed": true,
+  "existing_wheels_audited_first": true,
+  "fake_customer_feedback_created": false,
+  "fake_evidence_created": false,
+  "form_submitted": false,
+  "login_occurred": false,
+  "message_sent": false,
+  "owner_manual_send_default": false,
+  "production_live_enabled": false,
+  "production_live_receipt_count": 0,
+  "provider_send_api_called": false,
+  "real_world_observation_status": "executed"
+}

@@ -1,0 +1,63 @@
+{
+  "artifact_id": "e31_competitor_service_comparison",
+  "comparison_boundary": "Comparison is category/positioning evidence only, not a superiority claim.",
+  "competitor_service_signal_count": 8,
+  "signals": [
+    {
+      "positioning_implication": "Y* should position as readiness diagnostic and proof-bound implementation review, not as a platform replacement.",
+      "pricing_or_budget_proxy": "Public self-serve and enterprise pricing language indicates budget for agent observability/evaluation tooling.",
+      "service_signal": "AI agent observability/evaluation platform.",
+      "signal_id": "comp_e31_source_langsmith_pricing",
+      "source_id": "e31_source_langsmith_pricing"
+    },
+    {
+      "positioning_implication": "Y* should position as readiness diagnostic and proof-bound implementation review, not as a platform replacement.",
+      "pricing_or_budget_proxy": "Enterprise contact-sales language implies a consultative buying process.",
+      "service_signal": "LLM evaluation and trustworthy app platform.",
+      "signal_id": "comp_e31_source_humanloop_pricing",
+      "source_id": "e31_source_humanloop_pricing"
+    },
+    {
+      "positioning_implication": "Y* should position as readiness diagnostic and proof-bound implementation review, not as a platform replacement.",
+      "pricing_or_budget_proxy": "Cost transparency language is a budget-proxy signal for AI workflow operations.",
+      "service_signal": "AI workflow/product operations platform.",
+      "signal_id": "comp_e31_source_vellum_pricing_docs",
+      "source_id": "e31_source_vellum_pricing_docs"
+    },
+    {
+      "positioning_implication": "Y* should position as readiness diagnostic and proof-bound implementation review, not as a platform replacement.",
+      "pricing_or_budget_proxy": "Execution and enterprise custom-pricing language gives a budget proxy.",
+      "service_signal": "Agentic workflow platform and enterprise adoption service.",
+      "signal_id": "comp_e31_source_crewai_pricing",
+      "source_id": "e31_source_crewai_pricing"
+    },
+    {
+      "positioning_implication": "Y* should position as readiness diagnostic and proof-bound implementation review, not as a platform replacement.",
+      "pricing_or_budget_proxy": "Public individual/pro tiers and premium-request pricing provide budget anchors for AI coding workflows.",
+      "service_signal": "Incumbent AI coding-agent platform.",
+      "signal_id": "comp_e31_source_github_copilot_plans",
+      "source_id": "e31_source_github_copilot_plans"
+    },
+    {
+      "positioning_implication": "Y* should position as readiness diagnostic and proof-bound implementation review, not as a platform replacement.",
+      "pricing_or_budget_proxy": "Marketplace and partner consulting pages show enterprise procurement pathways, not direct pricing.",
+      "service_signal": "Partner/consulting ecosystem for generative-AI implementation.",
+      "signal_id": "comp_e31_source_aws_genai_partners",
+      "source_id": "e31_source_aws_genai_partners"
+    },
+    {
+      "positioning_implication": "Y* should position as readiness diagnostic and proof-bound implementation review, not as a platform replacement.",
+      "pricing_or_budget_proxy": "Public per-builder, per-internal-user, external-user, workflow-run, and agent-hour pricing signals budget categories.",
+      "service_signal": "Internal tools/workflow/agent platform.",
+      "signal_id": "comp_e31_source_retool_pricing",
+      "source_id": "e31_source_retool_pricing"
+    },
+    {
+      "positioning_implication": "Y* should position as readiness diagnostic and proof-bound implementation review, not as a platform replacement.",
+      "pricing_or_budget_proxy": "Public free/core/pro/team pricing and custom enterprise language provide automation budget anchors.",
+      "service_signal": "Automation platform with AI-agent/MCP capabilities.",
+      "signal_id": "comp_e31_source_make_pricing",
+      "source_id": "e31_source_make_pricing"
+    }
+  ]
+}

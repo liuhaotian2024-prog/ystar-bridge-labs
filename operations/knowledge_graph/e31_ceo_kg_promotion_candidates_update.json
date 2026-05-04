@@ -1,0 +1,12 @@
+{
+  "artifact_id": "e31_ceo_kg_promotion_candidates_update",
+  "candidates": [
+    {
+      "candidate_id": "e31_public_evidence_strengthens_package",
+      "eligible_for_canonical_market_truth": false,
+      "promotion_status": "working_only",
+      "reason": "Public observation supports package claims but is not customer feedback, paid signal, or market validation."
+    }
+  ],
+  "promotion_candidates_count": 1
+}

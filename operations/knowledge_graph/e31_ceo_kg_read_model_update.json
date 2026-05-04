@@ -1,0 +1,13 @@
+{
+  "active_branch": "revenue_mode_shortest_cash_path",
+  "artifact_id": "e31_ceo_kg_read_model_update",
+  "customer_feedback_claimed": false,
+  "next_route": "proceed_to_owner_review_for_external_publication",
+  "production_live_enabled": false,
+  "production_live_receipt_count": 0,
+  "real_world_observation_status": "executed",
+  "receipt_count": 8,
+  "selected_route": "paid_readiness_review_signal_package",
+  "signal_package_status": "no_send_feedback_ready",
+  "source_count": 8
+}

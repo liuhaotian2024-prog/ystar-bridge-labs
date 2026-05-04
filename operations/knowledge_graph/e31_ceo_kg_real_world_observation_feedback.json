@@ -1,0 +1,13 @@
+{
+  "artifact_id": "e31_ceo_kg_real_world_observation_feedback",
+  "buyer_pain_evidence_count": 15,
+  "customer_feedback_claimed": false,
+  "kg_delta_edges": 57,
+  "kg_delta_nodes": 58,
+  "market_validation_claimed": false,
+  "offer_claim_count": 8,
+  "paid_signal_claimed": false,
+  "public_observation_receipts": 8,
+  "public_observation_sources": 8,
+  "unsupported_claims_removed_count": 4
+}

@@ -1,0 +1,70 @@
+{
+  "active_branch": "revenue_mode_shortest_cash_path",
+  "artifact_id": "e31_ceo_kg_real_world_evidence_needs",
+  "evidence_need_count": 4,
+  "observation_questions": [
+    {
+      "evidence_needed": "Signals about evaluation, observability, governance, access control, deployment, cost, workflow maturity, and implementation support.",
+      "kg_update": "Create BuyerPainEvidence nodes linked to observed public sources.",
+      "package_update": "Use evidence-bound pain bullets in the one-page offer.",
+      "question": "What public buyer pain language appears around AI agent implementation readiness?",
+      "question_id": "e31_q_buyer_pain",
+      "source_categories": [
+        "public pricing pages",
+        "public product/service pages",
+        "public ecosystem pages"
+      ],
+      "why_it_matters": "The paid readiness-review package must speak in real buyer-market language rather than internal architecture language."
+    },
+    {
+      "evidence_needed": "Terms such as evaluation, observability, agentic workflows, AI automation, RBAC, SSO, audit logging, deployment, and governance.",
+      "kg_update": "Create OfferClaim and CompetitorServiceSignal nodes with public-evidence status.",
+      "package_update": "Translate market language into a proof-bound diagnostic outline.",
+      "question": "Which phrases show current market language for agent/AI readiness?",
+      "question_id": "e31_q_market_language",
+      "source_categories": [
+        "pricing pages",
+        "docs",
+        "ecosystem pages"
+      ],
+      "why_it_matters": "Buyer-facing copy should mirror observed public language without copying claims."
+    },
+    {
+      "evidence_needed": "Pricing tiers, enterprise/custom pricing, seat pricing, usage pricing, workflow-run pricing, or agent-runtime pricing.",
+      "kg_update": "Link pricing proxy evidence to OfferClaim nodes and mark limitations.",
+      "package_update": "Label price as hypothesis, not validated willingness-to-pay.",
+      "question": "Is there public evidence of budget categories for AI readiness and agent operations?",
+      "question_id": "e31_q_budget_proxy",
+      "source_categories": [
+        "pricing pages"
+      ],
+      "why_it_matters": "The package needs a price/commitment hypothesis but cannot claim willingness-to-pay without customer feedback."
+    },
+    {
+      "evidence_needed": "Signals that platforms, large consultancies, or self-serve tools may already solve part of the problem.",
+      "kg_update": "Create ObjectionSignal nodes.",
+      "package_update": "Add objections and no-go buyer criteria.",
+      "question": "What objections should the package preempt?",
+      "question_id": "e31_q_objections",
+      "source_categories": [
+        "platform pricing pages",
+        "consulting ecosystem pages"
+      ],
+      "why_it_matters": "The package must define a narrow diagnostic wedge rather than pretending to replace platforms or consultancies."
+    }
+  ],
+  "package_update_rule": "Buyer-facing claims must be evidence-bound public observation, carefully labeled internal inference, or explicit hypothesis. Unsupported claims are excluded.",
+  "selected_route": "paid_readiness_review_signal_package",
+  "source_inputs": [
+    "operations/external_validation/e30_selected_action_execution_package.json",
+    "operations/external_validation/e30_methodological_route_selection.json",
+    "operations/external_validation/e30_ceo_brain_methodological_update.json",
+    "operations/knowledge_graph/e30_ceo_kg_read_model_update.json"
+  ],
+  "target_source_categories": [
+    "public AI agent/platform pricing pages",
+    "public AI implementation/consulting ecosystem pages",
+    "public AI workflow/automation pages",
+    "public AI governance/evaluation docs"
+  ]
+}

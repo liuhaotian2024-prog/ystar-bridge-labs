@@ -1,0 +1,253 @@
+{
+  "artifact_id": "e31_existing_real_world_observation_wheel_inventory",
+  "audit_completed_before_e31_build": true,
+  "audit_did_not_stop_at_gate": true,
+  "existing_observation_wheels_found": 23,
+  "external_side_effects": false,
+  "gov_mcp_modified": false,
+  "left_untouched_wheels_count": 2,
+  "newly_built_wheels_count": 4,
+  "repos_scanned": [
+    "ystar-bridge-labs",
+    "gov-mcp",
+    "Y-star-gov",
+    "ystar-company"
+  ],
+  "repos_scanned_count": 4,
+  "reused_wheels_count": 14,
+  "safe_observation_path": "existing source seeds + controlled public read-only web observation + source evidence receipt schema",
+  "safe_observation_path_available": true,
+  "wheels": [
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "public GET page reader",
+      "current_status": "canonical",
+      "name": "Safe public page reader",
+      "notes": "Provides bounded no-login public page reads and URL safety checks.",
+      "path": "office/mission_command/safe_public_page_reader.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "source-seeded read-only research",
+      "current_status": "canonical",
+      "name": "Source seeded public research provider",
+      "notes": "Runs owner-approved seed URLs through the safe page reader and writes receipts/summaries.",
+      "path": "office/mission_command/source_seeded_research_provider.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "source seed validation",
+      "current_status": "canonical",
+      "name": "Public source seed model",
+      "notes": "Validates public no-login source seeds and forbidden actions.",
+      "path": "office/mission_command/public_source_seed_model.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "research safety/receipt schema",
+      "current_status": "canonical",
+      "name": "Tier1 public research model",
+      "notes": "Defines budgets, safety boundary, receipts, and no-external-effect research evidence.",
+      "path": "office/mission_command/tier1_public_research.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "signal extraction",
+      "current_status": "usable",
+      "name": "Source evidence extractor",
+      "notes": "Extracts buyer pain, pricing, competitor, substitute, trust, and market-category signals from excerpts.",
+      "path": "office/mission_command/source_evidence_extractor.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "approved public source seeds",
+      "current_status": "usable",
+      "name": "Public source seeds",
+      "notes": "Contains owner-approved public no-login seed URLs across AI ops, governance, pricing, and partner categories.",
+      "path": "research/public_source_seeds/e5_public_source_seeds.json",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "selected package route",
+      "current_status": "canonical",
+      "name": "E30 selected action package",
+      "notes": "Defines the paid readiness-review package outputs E31 must now ground in public evidence.",
+      "path": "operations/external_validation/e30_selected_action_execution_package.json",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "wrap_existing"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "method route selection",
+      "current_status": "canonical",
+      "name": "E30 methodological route selection",
+      "notes": "Prevents defaulting to production config and selects the signal-package route.",
+      "path": "operations/external_validation/e30_methodological_route_selection.json",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "wrap_existing"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "CEO KG read model",
+      "current_status": "canonical",
+      "name": "E30 CEO KG read model update",
+      "notes": "Provides active branch, selected route, and no-live status.",
+      "path": "operations/knowledge_graph/e30_ceo_kg_read_model_update.json",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "wrap_existing"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "CEO KG",
+      "current_status": "canonical",
+      "name": "E24 CEO KG",
+      "notes": "Provides graph context for capabilities, hypotheses, paths, and evidence.",
+      "path": "operations/knowledge_graph/e24_ceo_kg_read_model.json",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "evidence quality",
+      "current_status": "usable",
+      "name": "E23 evidence tightening evaluator",
+      "notes": "Supports evidence gap framing and no-fake-evidence posture.",
+      "path": "office/mission_command/e23_evidence_tightening_evaluator.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "offer revision",
+      "current_status": "usable",
+      "name": "E13R offer revision",
+      "notes": "Supports package/offer refinement.",
+      "path": "office/mission_command/e13r_offer_revision.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "target scoring",
+      "current_status": "usable",
+      "name": "E14 target scoring",
+      "notes": "Supports target and buyer-fit checklist logic.",
+      "path": "office/mission_command/e14_target_scoring.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "evidence-needs planning",
+      "current_status": "new",
+      "name": "E31 evidence-needs planner",
+      "notes": "Missing E31-specific planner connecting E30 package to public observation questions.",
+      "path": "office/mission_command/e31_ceo_kg_real_world_evidence_needs.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "build_missing"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "claim register",
+      "current_status": "new",
+      "name": "E31 claim binding",
+      "notes": "Missing E31-specific public evidence to buyer-facing claim boundary.",
+      "path": "office/mission_command/e31_evidence_extraction_claim_binding.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "build_missing"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "buyer-facing package",
+      "current_status": "new",
+      "name": "E31 signal package",
+      "notes": "Missing package generator for proof-bound paid readiness review.",
+      "path": "office/mission_command/e31_paid_readiness_review_signal_package.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "build_missing"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "KG feedback",
+      "current_status": "new",
+      "name": "E31 KG/brain feedback",
+      "notes": "Missing E31-specific public observation KG delta.",
+      "path": "office/mission_command/e31_ceo_kg_real_world_feedback.py",
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "build_missing"
+    },
+    {
+      "can_support_real_public_readonly_observation": false,
+      "capability": "provider/send boundary",
+      "current_status": "canonical",
+      "name": "gov-mcp outbound provider boundary",
+      "notes": "Provider/send boundary remains read-only context; E31 does not modify or invoke send APIs.",
+      "path": "gov_mcp/outbound/provider_capability.py",
+      "repo": "gov-mcp",
+      "reuse_decision": "leave_untouched"
+    },
+    {
+      "can_support_real_public_readonly_observation": false,
+      "capability": "live receipt boundary",
+      "current_status": "canonical",
+      "name": "gov-mcp live receipt guard",
+      "notes": "Confirms production live receipts are out of scope and remain zero.",
+      "path": "gov_mcp/outbound/live_receipts.py",
+      "repo": "gov-mcp",
+      "reuse_decision": "leave_untouched"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "normative governance",
+      "current_status": "canonical",
+      "name": "Y-star-gov governance/CIEU/CZL",
+      "notes": "Provides governance/audit vocabulary and no-fake-evidence posture.",
+      "path": "README.md",
+      "repo": "Y-star-gov",
+      "reuse_decision": "reuse_existing"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "historical observation boundary",
+      "current_status": "historical",
+      "name": "ystar-company observation scope",
+      "notes": "Historical asset distinguishing observation from action.",
+      "path": "external_observation_definition_and_scope/external_observation_definition.json",
+      "repo": "ystar-company",
+      "reuse_decision": "reuse_existing_readonly"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "historical claim boundary",
+      "current_status": "historical",
+      "name": "ystar-company evidence claim boundary",
+      "notes": "Historical reusable pattern for bounded claims and unsupported claim quarantine.",
+      "path": "evidence_extraction_and_claim_boundary/bounded_claim_registry.json",
+      "repo": "ystar-company",
+      "reuse_decision": "reuse_existing_readonly"
+    },
+    {
+      "can_support_real_public_readonly_observation": true,
+      "capability": "historical source quality",
+      "current_status": "historical",
+      "name": "ystar-company source quality",
+      "notes": "Historical source quality and freshness scoring pattern.",
+      "path": "controlled_source_quality/source_quality_contract.json",
+      "repo": "ystar-company",
+      "reuse_decision": "reuse_existing_readonly"
+    }
+  ],
+  "wrapped_wheels_count": 3
+}

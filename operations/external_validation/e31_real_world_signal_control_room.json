@@ -1,0 +1,31 @@
+{
+  "agent_can_do_autonomously_next": [
+    "prepare owner-reviewed publication draft",
+    "prepare partner validation packet draft",
+    "run focused additional public observation only if a package claim remains weak"
+  ],
+  "artifact_id": "e31_real_world_signal_control_room",
+  "buyer_pain_signals_count": 15,
+  "claim_register_status": "supported claims bound; unsupported claims removed",
+  "evidence_strength": "moderate_public_observation_support",
+  "next_route_decision": "proceed_to_owner_review_for_external_publication",
+  "paid_readiness_review_signal_package": "created_no_send",
+  "real_public_observation_occurred": true,
+  "receipt_count": 8,
+  "remains_blocked": [
+    "customer contact",
+    "message send",
+    "form submission",
+    "production live",
+    "production live receipt",
+    "paid-signal claim"
+  ],
+  "requires_owner_approval_by_risk": [
+    "external publication",
+    "customer/partner contact",
+    "payment setup",
+    "credential/live provider setup"
+  ],
+  "sources_observed": 8,
+  "unsupported_claims_removed": 4
+}

@@ -1,0 +1,179 @@
+{
+  "artifact_id": "e31_observed_buyer_pain_evidence",
+  "buyer_pain_evidence_count": 15,
+  "customer_feedback_claimed": false,
+  "evidence": [
+    {
+      "claim_use": "allowed_with_source_binding",
+      "evidence_id": "pain_e31_source_langsmith_pricing_1",
+      "evidence_status": "evidence_bound_public_observation",
+      "quality": "high_public_page_current",
+      "source_id": "e31_source_langsmith_pricing",
+      "summary": "Teams need tracing, debugging, monitoring, evaluation, and human feedback loops for agent applications."
+    },
+    {
+      "claim_use": "allowed_with_source_binding",
+      "evidence_id": "pain_e31_source_langsmith_pricing_2",
+      "evidence_status": "evidence_bound_public_observation",
+      "quality": "high_public_page_current",
+      "source_id": "e31_source_langsmith_pricing",
+      "summary": "Enterprise buyers care about hosting options, SSO/RBAC, support SLAs, data location, procurement, and infosec review."
+    },
+    {
+      "claim_use": "allowed_with_source_binding",
+      "evidence_id": "pain_e31_source_humanloop_pricing_1",
+      "evidence_status": "evidence_bound_public_observation",
+      "quality": "medium_public_page_current",
+      "source_id": "e31_source_humanloop_pricing",
+      "summary": "Teams want to develop, evaluate, and ship trustworthy LLM applications."
+    },
+    {
+      "claim_use": "allowed_with_source_binding",
+      "evidence_id": "pain_e31_source_humanloop_pricing_2",
+      "evidence_status": "evidence_bound_public_observation",
+      "quality": "medium_public_page_current",
+      "source_id": "e31_source_humanloop_pricing",
+      "summary": "Enterprise buyers ask for access control, private deployment, and hands-on support."
+    },
+    {
+      "claim_use": "allowed_with_source_binding",
+      "evidence_id": "pain_e31_source_vellum_pricing_docs_1",
+      "evidence_status": "evidence_bound_public_observation",
+      "quality": "medium_public_docs_current",
+      "source_id": "e31_source_vellum_pricing_docs",
+      "summary": "AI implementation buyers need cost predictability and visibility into model-provider spend."
+    },
+    {
+      "claim_use": "allowed_with_source_binding",
+      "evidence_id": "pain_e31_source_crewai_pricing_1",
+      "evidence_status": "evidence_bound_public_observation",
+      "quality": "medium_public_page_current",
+      "source_id": "e31_source_crewai_pricing",
+      "summary": "Organizations adopting agentic workflows need build/manage/scale support, private infrastructure, and training."
+    },
+    {
+      "claim_use": "allowed_with_source_binding",
+      "evidence_id": "pain_e31_source_crewai_pricing_2",
+      "evidence_status": "evidence_bound_public_observation",
+      "quality": "medium_public_page_current",
+      "source_id": "e31_source_crewai_pricing",
+      "summary": "Execution volume and development capacity appear in public pricing language."
+    },
+    {
+      "claim_use": "allowed_with_source_binding",
+      "evidence_id": "pain_e31_source_github_copilot_plans_1",
+      "evidence_status": "evidence_bound_public_observation",
+      "quality": "high_public_page_current",
+      "source_id": "e31_source_github_copilot_plans",
+      "summary": "Teams are adopting AI coding agents across IDEs, CLI, GitHub, reviews, and delegated work."
+    },
+    {
+      "claim_use": "allowed_with_source_binding",
+      "evidence_id": "pain_e31_source_github_copilot_plans_2",
+      "evidence_status": "evidence_bound_public_observation",
+      "quality": "high_public_page_current",
+      "source_id": "e31_source_github_copilot_plans",
+      "summary": "Agent mode, code review, MCP integration, model choice, and premium request budgets create governance and readiness questions."
+    },
+    {
+      "claim_use": "allowed_with_source_binding",
+      "evidence_id": "pain_e31_source_aws_genai_partners_1",
+      "evidence_status": "evidence_bound_public_observation",
+      "quality": "high_public_ecosystem_page_current",
+      "source_id": "e31_source_aws_genai_partners",
+      "summary": "Buyers look for specialized consulting, secure/scalable implementation, technical validation, and proven customer success."
+    },
+    {
+      "claim_use": "allowed_with_source_binding",
+      "evidence_id": "pain_e31_source_aws_genai_partners_2",
+      "evidence_status": "evidence_bound_public_observation",
+      "quality": "high_public_ecosystem_page_current",
+      "source_id": "e31_source_aws_genai_partners",
+      "summary": "Consulting partners market strategy, evaluation, solution development, operationalization, proof-of-value, and roadmaps."
+    },
+    {
+      "claim_use": "allowed_with_source_binding",
+      "evidence_id": "pain_e31_source_retool_pricing_1",
+      "evidence_status": "evidence_bound_public_observation",
+      "quality": "high_public_page_current",
+      "source_id": "e31_source_retool_pricing",
+      "summary": "Teams need secure internal tools, workflow runs, agent behavior tracking, evaluations, permissions, audit logs, and staged environments."
+    },
+    {
+      "claim_use": "allowed_with_source_binding",
+      "evidence_id": "pain_e31_source_retool_pricing_2",
+      "evidence_status": "evidence_bound_public_observation",
+      "quality": "high_public_page_current",
+      "source_id": "e31_source_retool_pricing",
+      "summary": "Agent tasks include labor-intensive support, analysis, sales follow-up, security alert handling, research, and orchestration."
+    },
+    {
+      "claim_use": "allowed_with_source_binding",
+      "evidence_id": "pain_e31_source_make_pricing_1",
+      "evidence_status": "evidence_bound_public_observation",
+      "quality": "high_public_page_current",
+      "source_id": "e31_source_make_pricing",
+      "summary": "Teams want to streamline AI and automation efforts together, connect many apps, use MCP, and govern scalable automation."
+    },
+    {
+      "claim_use": "allowed_with_source_binding",
+      "evidence_id": "pain_e31_source_make_pricing_2",
+      "evidence_status": "evidence_bound_public_observation",
+      "quality": "high_public_page_current",
+      "source_id": "e31_source_make_pricing",
+      "summary": "Enterprise buyers value support, security, value engineering, integrations, and overage protection."
+    }
+  ],
+  "objection_evidence_count": 8,
+  "objections": [
+    {
+      "objection": "Buyer may already plan to use a platform rather than a service diagnostic.",
+      "objection_id": "objection_e31_source_langsmith_pricing_1",
+      "package_response": "address in objections/no-go checklist before external use",
+      "source_id": "e31_source_langsmith_pricing"
+    },
+    {
+      "objection": "Source includes broad vendor claims that must not be copied into Y* claims.",
+      "objection_id": "objection_e31_source_humanloop_pricing_1",
+      "package_response": "address in objections/no-go checklist before external use",
+      "source_id": "e31_source_humanloop_pricing"
+    },
+    {
+      "objection": "Pricing philosophy is not direct willingness-to-pay for a consulting diagnostic.",
+      "objection_id": "objection_e31_source_vellum_pricing_docs_1",
+      "package_response": "address in objections/no-go checklist before external use",
+      "source_id": "e31_source_vellum_pricing_docs"
+    },
+    {
+      "objection": "Page includes sign-up/demo calls; E31 observed only and did not interact.",
+      "objection_id": "objection_e31_source_crewai_pricing_1",
+      "package_response": "address in objections/no-go checklist before external use",
+      "source_id": "e31_source_crewai_pricing"
+    },
+    {
+      "objection": "Copilot is a platform, so Y* must position around readiness/gov gaps, not platform replacement.",
+      "objection_id": "objection_e31_source_github_copilot_plans_1",
+      "package_response": "address in objections/no-go checklist before external use",
+      "source_id": "e31_source_github_copilot_plans"
+    },
+    {
+      "objection": "Large consultancies may already cover strategy; Y* needs a sharper diagnostic niche.",
+      "objection_id": "objection_e31_source_aws_genai_partners_1",
+      "package_response": "address in objections/no-go checklist before external use",
+      "source_id": "e31_source_aws_genai_partners"
+    },
+    {
+      "objection": "Retool can be a substitute if the buyer only needs internal tools, not strategy/readiness.",
+      "objection_id": "objection_e31_source_retool_pricing_1",
+      "package_response": "address in objections/no-go checklist before external use",
+      "source_id": "e31_source_retool_pricing"
+    },
+    {
+      "objection": "Buyers may prefer a self-serve automation platform if the diagnostic is not concrete.",
+      "objection_id": "objection_e31_source_make_pricing_1",
+      "package_response": "address in objections/no-go checklist before external use",
+      "source_id": "e31_source_make_pricing"
+    }
+  ],
+  "public_observation_only": true
+}

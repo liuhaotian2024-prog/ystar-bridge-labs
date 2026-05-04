@@ -1,0 +1,33 @@
+{
+  "artifact_id": "e31_real_signal_route_decision",
+  "blocked_or_rejected_routes": [
+    {
+      "reason": "still premature before owner-reviewed public package draft",
+      "route": "autonomous_outbound_preflight"
+    },
+    {
+      "reason": "not justified by observed evidence; no send needed",
+      "route": "return_to_provider_config_only_if_now_justified"
+    },
+    {
+      "reason": "evidence is sufficient for package draft, not for market validation",
+      "route": "no_go_due_to_weak_evidence"
+    }
+  ],
+  "external_contact_recommended_next": false,
+  "more_evidence_or_revision_needed": "light owner review and publication-draft preparation, not another broad evidence loop",
+  "no_owner_manual_send_default": true,
+  "production_live_enabled": false,
+  "production_live_receipt_count": 0,
+  "runner_up_routes": [
+    "proceed_to_partner_validation_packet",
+    "run_additional_public_observation",
+    "revise_offer_before_external_action"
+  ],
+  "selected_next_route": "proceed_to_owner_review_for_external_publication",
+  "why_selected": [
+    "Real public observation produced enough category, pain, budget-proxy, and objection evidence to ground a no-send signal package.",
+    "Direct customer contact remains higher risk than a publication/owner-review draft and is not yet needed.",
+    "Production live/provider work remains lower value until the package has a public-facing draft or buyer feedback target."
+  ]
+}

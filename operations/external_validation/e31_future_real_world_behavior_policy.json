@@ -1,0 +1,19 @@
+{
+  "artifact_id": "e31_future_real_world_behavior_policy",
+  "forbidden_regressions": [
+    "owner manual send as default",
+    "public observation promoted to paid signal",
+    "production live/provider work as global next step"
+  ],
+  "future_policy": [
+    "start with existing-wheel audit",
+    "use lowest-risk real-world behavior first when appropriate",
+    "prefer read-only public observation before contact",
+    "bind every external claim to evidence",
+    "never fake evidence",
+    "never convert public observation into customer feedback",
+    "update CEO KG and CEO brain",
+    "decide the next real-signal route",
+    "avoid endless gate-building unless directly unlocking action"
+  ]
+}
