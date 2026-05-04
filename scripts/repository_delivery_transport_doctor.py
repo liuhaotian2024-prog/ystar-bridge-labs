@@ -22,10 +22,13 @@ def write_outputs(repo_root: Path, results: list[dict]) -> None:
     payload = {
         "artifact_id": "repository_delivery_transport_doctor",
         "transport_mode": (
-            "direct_push_first"
+            "native_direct_push_available"
             if all(item.get("transport_classification") == "direct_push_available" for item in results if item.get("is_git_repo"))
-            else "host_bootstrap_fallback"
+            else "host_local_bridge_available"
+            if any(item.get("direct_delivery_mode") == "host_local_bridge_available" for item in results if item.get("is_git_repo"))
+            else "bridge_install_required_once"
         ),
+        "host_bootstrap_fallback_is_long_term_normal": False,
         "repos": results,
         "credential_safety": {
             "tokens_printed": False,

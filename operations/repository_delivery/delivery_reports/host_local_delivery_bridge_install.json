@@ -1,0 +1,11 @@
+{
+  "artifact_id": "host_local_delivery_bridge_install",
+  "status": "pending_one_time_install",
+  "one_time_setup_required": true,
+  "future_owner_delivery_commands_required": true,
+  "repository_delivery_rt1": 1,
+  "bridge_root": "/tmp/ystar_delivery_bridge",
+  "launch_agent_label": "com.ystar.repository-delivery-bridge",
+  "credentials_printed": false,
+  "tokens_printed": false
+}

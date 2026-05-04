@@ -8,6 +8,10 @@ from pathlib import Path
 from typing import Any, Iterable
 
 
+BRIDGE_ROOT = Path("/tmp/ystar_delivery_bridge")
+BRIDGE_LABEL = "com.ystar.repository-delivery-bridge"
+
+
 def run_git(repo: Path, args: list[str], timeout: int = 60) -> dict[str, Any]:
     completed = subprocess.run(
         ["git", *args],
@@ -67,7 +71,48 @@ def classify_transport(repo: Path, facts: dict[str, Any]) -> str:
         return "direct_push_blocked_by_network"
     if os.environ.get("CODEX_SANDBOX") or os.environ.get("OPENAI_SANDBOX"):
         return "direct_push_blocked_by_sandbox"
+    if facts.get("host_local_bridge", {}).get("available"):
+        return "host_local_bridge_available"
     return "unknown_blocker"
+
+
+def inspect_host_local_bridge(bridge_root: Path = BRIDGE_ROOT) -> dict[str, Any]:
+    queues = {}
+    for name in ["pending", "running", "completed", "failed", "logs"]:
+        path = bridge_root / name
+        queues[name] = {
+            "exists": path.exists(),
+            "count": len(list(path.glob("*"))) if path.exists() else 0,
+        }
+    launchctl = subprocess.run(
+        ["launchctl", "list"],
+        text=True,
+        capture_output=True,
+        timeout=20,
+        check=False,
+    )
+    combined = (launchctl.stdout or "") + "\n" + (launchctl.stderr or "")
+    loaded = BRIDGE_LABEL in combined
+    return {
+        "bridge_root": str(bridge_root),
+        "root_exists": bridge_root.exists(),
+        "queues": queues,
+        "launch_agent_loaded": loaded,
+        "available": bridge_root.exists() and loaded,
+        "future_owner_delivery_commands_required": False if loaded else None,
+    }
+
+
+def classify_direct_delivery_mode(repo_facts: dict[str, Any]) -> str:
+    classification = repo_facts.get("transport_classification")
+    bridge = repo_facts.get("host_local_bridge", {})
+    if classification == "direct_push_available":
+        return "native_direct_push_available"
+    if bridge.get("available"):
+        return "host_local_bridge_available"
+    if bridge.get("root_exists"):
+        return "bridge_install_required_once"
+    return "blocked_no_delivery_channel"
 
 
 def inspect_repo_transport(repo_path: str | Path) -> dict[str, Any]:
@@ -89,6 +134,7 @@ def inspect_repo_transport(repo_path: str | Path) -> dict[str, Any]:
             "GITHUB_TOKEN": bool(os.environ.get("GITHUB_TOKEN")),
             "GH_TOKEN": bool(os.environ.get("GH_TOKEN")),
         },
+        "host_local_bridge": inspect_host_local_bridge(),
     }
     if not facts["is_git_repo"]:
         facts["transport_classification"] = classify_transport(repo, {**facts, "dirty_set": []})
@@ -115,6 +161,7 @@ def inspect_repo_transport(repo_path: str | Path) -> dict[str, Any]:
         }
     )
     facts["transport_classification"] = classify_transport(repo, facts)
+    facts["direct_delivery_mode"] = classify_direct_delivery_mode(facts)
     facts["safe_credential_posture"] = {
         "tokens_printed": False,
         "credential_values_printed": False,
@@ -135,6 +182,7 @@ def fix_path_for_classification(classification: str) -> dict[str, Any]:
         "direct_push_blocked_by_sandbox": ("Use host-side bootstrap until sandbox egress/auth is restored.", True, False),
         "host_side_bootstrap_required": ("Use one-command host-side bootstrap.", True, False),
         "unknown_blocker": ("Inspect command evidence in doctor report.", True, False),
+        "host_local_bridge_available": ("Submit structured delivery jobs to the host-local bridge; no owner per-milestone bootstrap.", False, True),
     }
     description, owner_action, automation_can_fix = fixes.get(classification, fixes["unknown_blocker"])
     return {
@@ -179,6 +227,8 @@ def render_transport_report(results: Iterable[dict[str, Any]]) -> str:
                 f"- remote_url_protocol: {result.get('remote_url_protocol', 'unknown')}",
                 f"- dirty_count: {len(result.get('dirty_set', []))}",
                 f"- transport_classification: {result.get('transport_classification')}",
+                f"- direct_delivery_mode: {result.get('direct_delivery_mode', 'unknown')}",
+                f"- host_local_bridge_available: {str(result.get('host_local_bridge', {}).get('available', False)).lower()}",
                 f"- fix_path: {result.get('fix_path', {}).get('description', 'unknown')}",
                 "",
             ]
