@@ -1,0 +1,230 @@
+{
+  "artifact_id": "e27_ceo_kg_live_test_feedback",
+  "kg_delta_nodes": [
+    {
+      "id": "e27_existing_wheel_audit",
+      "type": "ExistingWheelAuditE27",
+      "label": "Existing wheel audit completed before E27 implementation",
+      "source_paths": [
+        "operations/external_validation/e27_live_test_control_room.json"
+      ],
+      "evidence_status": "internal_readiness_evidence",
+      "truth_status": "observed_internal",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E27",
+      "notes": "No customer or market truth claimed."
+    },
+    {
+      "id": "e27_live_test_config_profile",
+      "type": "LiveTestConfigProfile",
+      "label": "Non-production live-test profile",
+      "source_paths": [
+        "operations/external_validation/e27_live_test_control_room.json"
+      ],
+      "evidence_status": "internal_readiness_evidence",
+      "truth_status": "observed_internal",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E27",
+      "notes": "No customer or market truth claimed."
+    },
+    {
+      "id": "e27_live_test_idempotency_gate",
+      "type": "LiveTestIdempotencyGate",
+      "label": "Temp-store idempotency gate",
+      "source_paths": [
+        "operations/external_validation/e27_live_test_control_room.json"
+      ],
+      "evidence_status": "internal_readiness_evidence",
+      "truth_status": "observed_internal",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E27",
+      "notes": "No customer or market truth claimed."
+    },
+    {
+      "id": "e27_kill_switch_live_test_gate",
+      "type": "KillSwitchLiveTestGate",
+      "label": "Kill switch block/allow test gate",
+      "source_paths": [
+        "operations/external_validation/e27_live_test_control_room.json"
+      ],
+      "evidence_status": "internal_readiness_evidence",
+      "truth_status": "observed_internal",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E27",
+      "notes": "No customer or market truth claimed."
+    },
+    {
+      "id": "e27_live_test_receipt_boundary",
+      "type": "LiveTestReceiptBoundary",
+      "label": "Live-test receipt distinct from production live",
+      "source_paths": [
+        "operations/external_validation/e27_live_test_control_room.json"
+      ],
+      "evidence_status": "internal_readiness_evidence",
+      "truth_status": "observed_internal",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E27",
+      "notes": "No customer or market truth claimed."
+    },
+    {
+      "id": "e27_live_readiness_validator_v2",
+      "type": "LiveReadinessValidatorV2",
+      "label": "Readiness split for dry-run/sandbox/live-test/production",
+      "source_paths": [
+        "operations/external_validation/e27_live_test_control_room.json"
+      ],
+      "evidence_status": "internal_readiness_evidence",
+      "truth_status": "observed_internal",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E27",
+      "notes": "No customer or market truth claimed."
+    },
+    {
+      "id": "e27_canary_prerequisite_matrix",
+      "type": "CanaryPrerequisiteMatrix",
+      "label": "Plan-only canary prerequisite matrix",
+      "source_paths": [
+        "operations/external_validation/e27_live_test_control_room.json"
+      ],
+      "evidence_status": "internal_readiness_evidence",
+      "truth_status": "observed_internal",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E27",
+      "notes": "No customer or market truth claimed."
+    },
+    {
+      "id": "e27_production_live_blocker",
+      "type": "ProductionLiveBlocker",
+      "label": "Production live remains blocked",
+      "source_paths": [
+        "operations/external_validation/e27_live_test_control_room.json"
+      ],
+      "evidence_status": "internal_readiness_evidence",
+      "truth_status": "observed_internal",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E27",
+      "notes": "No customer or market truth claimed."
+    },
+    {
+      "id": "e27_strategic_learning_candidate",
+      "type": "StrategicLearningCandidate",
+      "label": "Internal readiness evidence only",
+      "source_paths": [
+        "operations/external_validation/e27_live_test_control_room.json"
+      ],
+      "evidence_status": "internal_readiness_evidence",
+      "truth_status": "observed_internal",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E27",
+      "notes": "No customer or market truth claimed."
+    }
+  ],
+  "kg_delta_edges": [
+    {
+      "id": "e27_edge_1",
+      "source_node_id": "rev_path_readiness_review_ai_consultancies",
+      "target_node_id": "e27_live_test_config_profile",
+      "relationship": "requires",
+      "evidence_path": "operations/external_validation/e27_live_readiness_validator_v2.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal readiness evidence only."
+    },
+    {
+      "id": "e27_edge_2",
+      "source_node_id": "e27_live_test_config_profile",
+      "target_node_id": "e27_live_readiness_validator_v2",
+      "relationship": "supports",
+      "evidence_path": "operations/external_validation/e27_live_readiness_validator_v2.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal readiness evidence only."
+    },
+    {
+      "id": "e27_edge_3",
+      "source_node_id": "e27_live_test_idempotency_gate",
+      "target_node_id": "e27_live_readiness_validator_v2",
+      "relationship": "supports",
+      "evidence_path": "operations/external_validation/e27_live_readiness_validator_v2.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal readiness evidence only."
+    },
+    {
+      "id": "e27_edge_4",
+      "source_node_id": "e27_kill_switch_live_test_gate",
+      "target_node_id": "e27_live_readiness_validator_v2",
+      "relationship": "supports",
+      "evidence_path": "operations/external_validation/e27_live_readiness_validator_v2.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal readiness evidence only."
+    },
+    {
+      "id": "e27_edge_5",
+      "source_node_id": "e27_live_test_receipt_boundary",
+      "target_node_id": "e27_live_readiness_validator_v2",
+      "relationship": "supports",
+      "evidence_path": "operations/external_validation/e27_live_readiness_validator_v2.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal readiness evidence only."
+    },
+    {
+      "id": "e27_edge_6",
+      "source_node_id": "e27_live_readiness_validator_v2",
+      "target_node_id": "e27_canary_prerequisite_matrix",
+      "relationship": "enables",
+      "evidence_path": "operations/external_validation/e27_live_readiness_validator_v2.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal readiness evidence only."
+    },
+    {
+      "id": "e27_edge_7",
+      "source_node_id": "e27_production_live_blocker",
+      "target_node_id": "rev_path_readiness_review_ai_consultancies",
+      "relationship": "blocked_by",
+      "evidence_path": "operations/external_validation/e27_live_readiness_validator_v2.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal readiness evidence only."
+    },
+    {
+      "id": "e27_edge_8",
+      "source_node_id": "e27_canary_prerequisite_matrix",
+      "target_node_id": "rev_path_readiness_review_ai_consultancies",
+      "relationship": "routes_to",
+      "evidence_path": "operations/external_validation/e27_live_readiness_validator_v2.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal readiness evidence only."
+    },
+    {
+      "id": "e27_edge_9",
+      "source_node_id": "e27_existing_wheel_audit",
+      "target_node_id": "e27_live_test_config_profile",
+      "relationship": "reuses",
+      "evidence_path": "operations/external_validation/e27_live_readiness_validator_v2.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal readiness evidence only."
+    },
+    {
+      "id": "e27_edge_10",
+      "source_node_id": "e27_strategic_learning_candidate",
+      "target_node_id": "e27_live_readiness_validator_v2",
+      "relationship": "derived_from",
+      "evidence_path": "operations/external_validation/e27_live_readiness_validator_v2.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Internal readiness evidence only."
+    }
+  ],
+  "kg_delta_node_count": 9,
+  "kg_delta_edge_count": 10,
+  "selected_revenue_path": "rev_path_readiness_review_ai_consultancies",
+  "internal_readiness_evidence_only": true,
+  "customer_feedback_claimed": false,
+  "market_validation_claimed": false,
+  "production_live_readiness_promoted": false,
+  "promotion_candidates_count": 1,
+  "promotion_candidates": [
+    {
+      "id": "e27_strategic_learning_candidate",
+      "promotion_status": "working_only",
+      "reason": "Live-test gate passed, but production live remains blocked."
+    }
+  ],
+  "external_action_executed": false
+}

@@ -1,0 +1,13 @@
+{
+  "artifact_id": "e27_ceo_kg_promotion_candidates_update",
+  "promotion_candidates_count": 1,
+  "promotion_candidates": [
+    {
+      "id": "e27_strategic_learning_candidate",
+      "promotion_status": "working_only",
+      "reason": "Live-test gate passed, but production live remains blocked."
+    }
+  ],
+  "canonical_truth_promoted": false,
+  "external_action_executed": false
+}

@@ -1,0 +1,15 @@
+{
+  "artifact_id": "e27_kill_switch_live_test_gate",
+  "existing_wheel_reused": "gov_mcp/outbound/live_kill_switch.py",
+  "kill_switch_test_gate_ready": true,
+  "block_profile_passed": true,
+  "allow_profile_passed": true,
+  "allow_profile_scope": "non_production_live_test_only",
+  "production_live_remains_blocked": true,
+  "production_block_reasons": [
+    "production_kill_switch_default_block",
+    "production_live_enabled_false"
+  ],
+  "audit_czl_note_emitted": true,
+  "external_action_executed": false
+}

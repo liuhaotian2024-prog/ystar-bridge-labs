@@ -1,0 +1,5 @@
+# E27 CEO Brain Portfolio Update
+
+- selected_revenue_path: rev_path_readiness_review_ai_consultancies
+- strategic_bottleneck: live_test_gate_ready_but_production_live_blocked_by_config_persistent_idempotency_kill_switch_live_tests_and_absent_real_feedback
+- next_decision_horizon: E28_production_live_configuration_decision_gate_or_evidence_expansion

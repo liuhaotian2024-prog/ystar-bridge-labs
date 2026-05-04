@@ -1,0 +1,108 @@
+{
+  "artifact_id": "e27_reuse_wrap_extend_build_decision",
+  "decisions": [
+    {
+      "capability": "live-test configuration profile",
+      "decision": "build_missing",
+      "target_path": "gov_mcp/outbound/live_test_config.py",
+      "justification": "No dedicated non-production live-test profile existed."
+    },
+    {
+      "capability": "fake credential contract",
+      "decision": "build_missing",
+      "target_path": "gov_mcp/outbound/live_test_config.py",
+      "justification": "Covered by the same test-only credential-name profile; no values."
+    },
+    {
+      "capability": "provider mode separation",
+      "decision": "reuse_existing",
+      "target_path": "gov_mcp/outbound/provider_capability.py",
+      "justification": "Provider modes already canonical."
+    },
+    {
+      "capability": "persistent idempotency test profile",
+      "decision": "extend_existing",
+      "target_path": "gov_mcp/outbound/persistent_idempotency.py",
+      "justification": "Existing store is reused for temp-store test readiness."
+    },
+    {
+      "capability": "rate limit / quota test profile",
+      "decision": "wrap_existing",
+      "target_path": "gov_mcp/outbound/live_test_config.py",
+      "justification": "Live-test config supplies test quota budget."
+    },
+    {
+      "capability": "kill switch block/allow test profile",
+      "decision": "extend_existing",
+      "target_path": "gov_mcp/outbound/live_kill_switch.py",
+      "justification": "Existing evaluator is used for block and allow test profiles."
+    },
+    {
+      "capability": "suppression integration",
+      "decision": "reuse_existing",
+      "target_path": "office/mission_command/e23_suppression_registry.py",
+      "justification": "Existing commercial registry reused."
+    },
+    {
+      "capability": "compliance integration",
+      "decision": "reuse_existing",
+      "target_path": "office/mission_command/e23_compliance_registry.py",
+      "justification": "Existing commercial registry reused."
+    },
+    {
+      "capability": "production live receipt boundary",
+      "decision": "wrap_existing",
+      "target_path": "gov_mcp/outbound/live_receipts.py",
+      "justification": "Production receipt boundary remains canonical."
+    },
+    {
+      "capability": "non-production live-test receipt fixture",
+      "decision": "build_missing",
+      "target_path": "gov_mcp/outbound/live_test_receipts.py",
+      "justification": "No distinct live-test receipt type existed."
+    },
+    {
+      "capability": "live readiness validator",
+      "decision": "extend_existing",
+      "target_path": "gov_mcp/outbound/live_readiness.py",
+      "justification": "E27 validator v2 separates non-production from production readiness."
+    },
+    {
+      "capability": "live-test gate",
+      "decision": "build_missing",
+      "target_path": "gov_mcp/outbound/live_test_gate.py",
+      "justification": "No live-test gate existed."
+    },
+    {
+      "capability": "one-action canary prerequisite matrix",
+      "decision": "build_missing",
+      "target_path": "gov_mcp/outbound/canary_prerequisites.py",
+      "justification": "Canary plan existed; prerequisite matrix did not."
+    },
+    {
+      "capability": "audit/CZL closure",
+      "decision": "reuse_existing",
+      "target_path": "Y-star-gov CIEU/CZL semantics + bridge-labs CZL pattern",
+      "justification": "Closure pattern reused."
+    },
+    {
+      "capability": "CEO KG feedback",
+      "decision": "wrap_existing",
+      "target_path": "operations/knowledge_graph/e24/e25/e26 KG artifacts",
+      "justification": "Append delta only."
+    },
+    {
+      "capability": "route registry update",
+      "decision": "wrap_existing",
+      "target_path": "operations/external_validation/e24_ecosystem_route_registry.json",
+      "justification": "Route registry is updated as a read model."
+    }
+  ],
+  "new_implementation_allowed_only_for": [
+    "build_missing",
+    "extend_existing"
+  ],
+  "all_new_wheels_have_justification": true,
+  "new_wheel_creation_rule_satisfied": true,
+  "external_action_executed": false
+}

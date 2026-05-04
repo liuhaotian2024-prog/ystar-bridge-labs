@@ -1,0 +1,31 @@
+{
+  "artifact_id": "e27_live_readiness_validator_v2",
+  "validator_source": "gov_mcp/outbound/live_test_gate.py",
+  "dry_run_ready": true,
+  "sandbox_ready": true,
+  "live_test_gate_ready": true,
+  "production_live_ready": false,
+  "production_live_blocked": true,
+  "production_live_blocked_reasons": [
+    "production_live_enabled_false",
+    "production_credentials_absent_by_design",
+    "production_persistent_idempotency_not_configured",
+    "production_kill_switch_default_block",
+    "production_live_tests_not_configured"
+  ],
+  "live_ready_action_count": 0,
+  "live_blocked_action_count": 1,
+  "production_live_receipt_count": 0,
+  "source_checks": {
+    "live_test_config_ready": true,
+    "live_test_persistent_ready": true,
+    "kill_switch_test_gate_ready": true,
+    "receipt_boundary_ready": true,
+    "dry_run_receipt_history_present": true,
+    "sandbox_receipt_history_present": true,
+    "ceo_kg_route_supported": true,
+    "target_evidence_sufficient_for_test_gate": true,
+    "owner_approval_required_by_risk": false
+  },
+  "external_action_executed": false
+}

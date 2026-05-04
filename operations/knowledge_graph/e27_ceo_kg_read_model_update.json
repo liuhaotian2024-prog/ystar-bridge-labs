@@ -1,0 +1,15 @@
+{
+  "artifact_id": "e27_ceo_kg_read_model_update",
+  "selected_revenue_path": "rev_path_readiness_review_ai_consultancies",
+  "live_test_gate_ready": true,
+  "production_live_ready": false,
+  "production_live_blocked_reasons": [
+    "production_live_enabled_false",
+    "production_credentials_absent_by_design",
+    "production_persistent_idempotency_not_configured",
+    "production_kill_switch_default_block",
+    "production_live_tests_not_configured"
+  ],
+  "current_strategic_bottleneck": "live_test_gate_ready_but_production_live_blocked_by_config_persistent_idempotency_kill_switch_live_tests_and_absent_real_feedback",
+  "external_action_executed": false
+}

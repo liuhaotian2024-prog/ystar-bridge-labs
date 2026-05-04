@@ -1,0 +1,58 @@
+{
+  "artifact_id": "e27_canary_prerequisite_matrix",
+  "selected_revenue_path": "rev_path_readiness_review_ai_consultancies",
+  "selected_action_candidate": "e26_live_canary_readiness_review_ai_consultancy_candidate_1",
+  "kg_support_nodes_edges": [
+    "rev_path_readiness_review_ai_consultancies",
+    "offer_48h_readiness_review",
+    "target_segment_ai_consultancies",
+    "capability_live_test_gate"
+  ],
+  "target_evidence": [
+    "operations/external_validation/e18_revenue_validation_batch.json",
+    "operations/external_validation/e25_sandbox_execution_results.json"
+  ],
+  "message_content_reference": "operations/external_validation/e17_final_message_package.json",
+  "provider_category": "outbound_message_provider",
+  "channel": "email",
+  "risk_tier": "T2_low_medium_limited_outbound",
+  "autonomous_eligibility": "eligible_after_production_live_readiness_passes",
+  "owner_approval_required_by_risk": false,
+  "dry_run_history_present": true,
+  "sandbox_history_present": true,
+  "live_test_gate_ready": true,
+  "production_live_config_ready": false,
+  "production_live_enabled": false,
+  "production_persistent_idempotency_ready": false,
+  "kill_switch_result": "production_blocked_default_safe",
+  "suppression_compliance_result": "clear_for_test_gate_required_for_live",
+  "live_receipt_boundary_result": "production_live_receipt_count_zero_until_real_live_effect",
+  "abort_criteria": [
+    "production_live_enabled_false",
+    "production_persistent_idempotency_not_configured",
+    "kill_switch_active",
+    "suppression_or_compliance_not_clear"
+  ],
+  "success_criteria": [
+    "one production live action accepted by provider",
+    "production live receipt written only after external effect",
+    "feedback import wait-state opened"
+  ],
+  "feedback_import_path": "operations/external_validation/e18_batch_feedback_intake_empty.json",
+  "ceo_kg_feedback_ingestion_path": "operations/knowledge_graph/e27_ceo_kg_live_test_feedback.json",
+  "canary_matrix_created": true,
+  "canary_executed": false,
+  "production_live_receipt_count": 0,
+  "real_customer_contact": false,
+  "external_provider_called": false,
+  "real_message_sent": false,
+  "live_ready_action_count": 0,
+  "live_blocked_action_count": 1,
+  "primary_blockers": [
+    "production_live_enabled_false",
+    "production_credentials_absent_by_design",
+    "production_persistent_idempotency_not_configured",
+    "production_kill_switch_default_block",
+    "production_live_tests_not_configured"
+  ]
+}

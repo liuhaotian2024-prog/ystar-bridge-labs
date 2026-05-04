@@ -1,0 +1,121 @@
+{
+  "artifact_id": "e27_live_test_duplicate_conflict_map",
+  "cluster_count": 10,
+  "destructive_refactor_performed": false,
+  "clusters": [
+    {
+      "capability": "live config",
+      "modules_involved": [
+        "gov_mcp/outbound/live_config.py",
+        "gov_mcp/outbound/live_test_config.py"
+      ],
+      "semantic_difference": "production config contract vs non-production profile",
+      "conflict_risk": "low",
+      "canonical_candidate": "gov_mcp/outbound/live_config.py",
+      "recommended_route": "wrap_existing"
+    },
+    {
+      "capability": "credential config",
+      "modules_involved": [
+        "gov_mcp/outbound/live_config.py",
+        "gov_mcp/outbound/live_test_config.py"
+      ],
+      "semantic_difference": "production names-only contract vs fake test-only names",
+      "conflict_risk": "low",
+      "canonical_candidate": "gov_mcp/outbound/live_config.py",
+      "recommended_route": "keep_parallel_with_router"
+    },
+    {
+      "capability": "persistent idempotency",
+      "modules_involved": [
+        "gov_mcp/outbound/idempotency.py",
+        "gov_mcp/outbound/persistent_idempotency.py"
+      ],
+      "semantic_difference": "key validation vs durable/temp-store readiness",
+      "conflict_risk": "low",
+      "canonical_candidate": "gov_mcp/outbound/idempotency.py",
+      "recommended_route": "extend_existing"
+    },
+    {
+      "capability": "receipt generation",
+      "modules_involved": [
+        "gov_mcp/outbound/receipts.py",
+        "gov_mcp/outbound/sandbox_receipts.py",
+        "gov_mcp/outbound/live_receipts.py",
+        "gov_mcp/outbound/live_test_receipts.py"
+      ],
+      "semantic_difference": "dry-run/sandbox/live-test/production live receipt boundaries",
+      "conflict_risk": "medium",
+      "canonical_candidate": "gov_mcp/outbound/receipts.py",
+      "recommended_route": "keep_parallel_with_router"
+    },
+    {
+      "capability": "provider modes",
+      "modules_involved": [
+        "gov_mcp/outbound/provider_capability.py",
+        "gov_mcp/outbound/live_test_gate.py"
+      ],
+      "semantic_difference": "provider execution modes vs readiness statuses",
+      "conflict_risk": "low",
+      "canonical_candidate": "gov_mcp/outbound/provider_capability.py",
+      "recommended_route": "reuse_one"
+    },
+    {
+      "capability": "suppression/compliance",
+      "modules_involved": [
+        "office/mission_command/e23_suppression_registry.py",
+        "office/mission_command/e23_compliance_registry.py"
+      ],
+      "semantic_difference": "commercial registry vs future provider-native registry",
+      "conflict_risk": "low",
+      "canonical_candidate": "office/mission_command/e23_suppression_registry.py",
+      "recommended_route": "reuse_one"
+    },
+    {
+      "capability": "risk tier / owner approval",
+      "modules_involved": [
+        "office/mission_command/e20_risk_tier_taxonomy.py",
+        "gov_mcp/outbound/provider_guard_stack.py"
+      ],
+      "semantic_difference": "commercial policy vs provider guard",
+      "conflict_risk": "low",
+      "canonical_candidate": "office/mission_command/e20_risk_tier_taxonomy.py",
+      "recommended_route": "keep_parallel_with_router"
+    },
+    {
+      "capability": "kill switch",
+      "modules_involved": [
+        "gov_mcp/outbound/live_kill_switch.py",
+        "gov_mcp/outbound/live_test_gate.py"
+      ],
+      "semantic_difference": "live switch evaluator vs block/allow test proof",
+      "conflict_risk": "low",
+      "canonical_candidate": "gov_mcp/outbound/live_kill_switch.py",
+      "recommended_route": "extend_existing"
+    },
+    {
+      "capability": "live readiness validator",
+      "modules_involved": [
+        "gov_mcp/outbound/live_readiness.py",
+        "gov_mcp/outbound/live_test_gate.py"
+      ],
+      "semantic_difference": "production readiness vs validator v2 non-production split",
+      "conflict_risk": "medium",
+      "canonical_candidate": "gov_mcp/outbound/live_readiness.py",
+      "recommended_route": "extend_existing"
+    },
+    {
+      "capability": "canary planning",
+      "modules_involved": [
+        "gov_mcp/outbound/live_canary.py",
+        "gov_mcp/outbound/canary_prerequisites.py",
+        "operations/external_validation/e26_one_action_canary_plan.json"
+      ],
+      "semantic_difference": "plan vs prerequisite matrix vs commercial control room",
+      "conflict_risk": "medium",
+      "canonical_candidate": "gov_mcp/outbound/live_canary.py",
+      "recommended_route": "wrap_existing"
+    }
+  ],
+  "external_action_executed": false
+}

@@ -1,0 +1,34 @@
+{
+  "artifact_id": "e27_future_live_test_canary_policy",
+  "every_future_milestone_must_start_with": [
+    "existing-wheel audit",
+    "duplicate/overlap map",
+    "reuse/wrap/extend/build decision",
+    "canonical route registry update",
+    "explicit new-wheel justification",
+    "ecosystem alignment proof"
+  ],
+  "future_live_canary_requirements": [
+    "CEO KG selected route",
+    "dry-run history",
+    "sandbox history",
+    "live-test gate result",
+    "production live config validation",
+    "credential source contract without committing secrets",
+    "production persistent idempotency ready",
+    "kill switch clear",
+    "suppression clear",
+    "compliance clear",
+    "rate-limit budget",
+    "production live receipt writer readiness",
+    "provider live tests",
+    "risk-tier owner approval check only if required by risk",
+    "abort criteria",
+    "post-canary feedback import path",
+    "CEO KG feedback ingestion",
+    "CZL/audit closure",
+    "ecosystem alignment proof"
+  ],
+  "owner_manual_send_default_allowed": false,
+  "external_action_executed": false
+}

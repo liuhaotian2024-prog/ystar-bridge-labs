@@ -1,0 +1,51 @@
+{
+  "artifact_id": "e27_ecosystem_alignment_gate",
+  "repos_checked": [
+    {
+      "repo": "ystar-bridge-labs",
+      "path": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+      "branch": "backflow/aiden-ceo-meeting-room",
+      "head": "da209a304d2cc265dcaf25851843071371962fd4",
+      "role": "commercial runtime",
+      "modified_in_e27": true,
+      "delivery": "host_local_bridge_required_for_closure"
+    },
+    {
+      "repo": "gov-mcp",
+      "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "branch": "backflow/company-runtime-tools",
+      "head": "4f758d9d4823eed108ae3d63be1f4db192a974d6",
+      "role": "canonical provider boundary",
+      "modified_in_e27": true,
+      "delivered": true
+    },
+    {
+      "repo": "Y-star-gov",
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "branch": "backflow/company-runtime-domain-pack",
+      "head": "5f031f4be151b81ef1a1b1908a5c83c5420e8ce1",
+      "role": "governance/CIEU/CZL",
+      "modified_in_e27": false,
+      "immediate_mutation_needed": false
+    },
+    {
+      "repo": "ystar-company",
+      "path": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "branch": "main",
+      "head": "dd9cb6b247a9cf06d953d9319ba1ebd5c38dcbf6",
+      "role": "historical company assets",
+      "modified_in_e27": false,
+      "future_migration_followups": true
+    }
+  ],
+  "repos_checked_count": 4,
+  "gov_mcp_modified": true,
+  "gov_mcp_delivered": true,
+  "bridge_labs_modified": true,
+  "bridge_labs_delivery_requirement": "host_local_bridge_delivery_required_for_closure",
+  "Y_star_gov_immediate_mutation_needed": false,
+  "ystar_company_future_migration_followups": true,
+  "closure_status": "ecosystem_aligned_with_documented_followups",
+  "ecosystem_alignment_status": "ecosystem_aligned_with_documented_followups",
+  "external_action_executed": false
+}

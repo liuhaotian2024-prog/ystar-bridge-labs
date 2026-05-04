@@ -1,0 +1,29 @@
+{
+  "artifact_id": "e27_ceo_brain_portfolio_update",
+  "selected_revenue_path": "rev_path_readiness_review_ai_consultancies",
+  "selected_path_status": "still_selected_for_future_canary_after_production_prerequisites",
+  "live_test_readiness": "live_test_gate_ready",
+  "production_live_readiness": "production_live_blocked",
+  "idempotency_readiness": "live_test_persistent_ready_production_persistent_not_ready",
+  "kill_switch_readiness": "test_gate_ready_production_default_safe_block",
+  "receipt_boundary_readiness": "live_test_receipt_distinct_production_live_receipts_zero",
+  "canary_prerequisite_status": "matrix_created_not_executed",
+  "existing_wheel_reuse_status": "audit_completed_reuse_wrap_extend_build_decision_recorded",
+  "current_strategic_bottleneck": "live_test_gate_ready_but_production_live_blocked_by_config_persistent_idempotency_kill_switch_live_tests_and_absent_real_feedback",
+  "next_decision_horizon": "E28_production_live_configuration_decision_gate_or_evidence_expansion",
+  "portfolio": {
+    "canary_candidate_paths": [
+      "rev_path_readiness_review_ai_consultancies"
+    ],
+    "evidence_needed_paths": [
+      "rev_path_readiness_review_ai_consultancies_real_feedback_evidence"
+    ],
+    "offer_revision_needed_paths": [],
+    "blocked_no_go_paths": [
+      "production_live_execution_until_prerequisites_pass"
+    ]
+  },
+  "kg_delta_node_count": 9,
+  "kg_delta_edge_count": 10,
+  "external_action_executed": false
+}

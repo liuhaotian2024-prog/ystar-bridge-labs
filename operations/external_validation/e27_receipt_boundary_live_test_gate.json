@@ -1,0 +1,17 @@
+{
+  "artifact_id": "e27_receipt_boundary_live_test_gate",
+  "existing_wheel_reused": "gov_mcp/outbound/live_receipts.py",
+  "new_fixture": "gov_mcp/outbound/live_test_receipts.py",
+  "receipt_boundary_ready": true,
+  "dry_run_receipt_distinct": true,
+  "sandbox_receipt_distinct": true,
+  "live_test_receipt_distinct_from_production_live_receipt": true,
+  "blocked_receipt_distinct": true,
+  "replay_noop_receipt_distinct": true,
+  "live_test_receipt_count": 1,
+  "production_live_receipts_created_count": 0,
+  "production_live_receipt_count": 0,
+  "live_test_receipt_external_effect": false,
+  "live_test_receipt_accepted_as_production_live": false,
+  "external_action_executed": false
+}

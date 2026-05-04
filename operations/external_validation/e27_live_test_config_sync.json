@@ -1,0 +1,24 @@
+{
+  "artifact_id": "e27_live_test_config_sync",
+  "source_repo": "gov-mcp",
+  "source_head": "4f758d9d4823eed108ae3d63be1f4db192a974d6",
+  "source_delivery_remote_confirmed": true,
+  "live_test_config_ready": true,
+  "production_live_config_ready": false,
+  "production_live_enabled": false,
+  "live_test_enabled": true,
+  "fake_credential_variable_names": [
+    "TEST_ONLY_YSTAR_OUTBOUND_PROVIDER_API_KEY"
+  ],
+  "credential_values_committed": false,
+  "credentials_committed": false,
+  "secrets_committed": false,
+  "provider_endpoint_placeholder": "test://disabled-outbound-provider",
+  "temp_test_store_path": "/tmp/ystar_live_test_idempotency.json",
+  "external_effect_allowed": false,
+  "blocked_production_reasons": [
+    "production_live_enabled_false",
+    "production_credentials_absent_by_design",
+    "production_persistent_idempotency_not_configured"
+  ]
+}

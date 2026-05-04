@@ -1,0 +1,219 @@
+{
+  "artifact_id": "e27_live_test_control_room",
+  "control_room_type": "controlled_live_readiness_prerequisite_configuration_and_live_test_gate",
+  "existing_wheel_audit_completed_first": true,
+  "existing_wheels_found": 28,
+  "reused_wheels": 10,
+  "wrapped_or_extended_wheels": 12,
+  "newly_built_wheels": 4,
+  "duplicate_conflict_clusters": 10,
+  "all_new_wheels_have_justification": true,
+  "ceo_kg_selected_path": "rev_path_readiness_review_ai_consultancies",
+  "live_test_config_status": {
+    "artifact_id": "e27_live_test_config_sync",
+    "source_repo": "gov-mcp",
+    "source_head": "4f758d9d4823eed108ae3d63be1f4db192a974d6",
+    "source_delivery_remote_confirmed": true,
+    "live_test_config_ready": true,
+    "production_live_config_ready": false,
+    "production_live_enabled": false,
+    "live_test_enabled": true,
+    "fake_credential_variable_names": [
+      "TEST_ONLY_YSTAR_OUTBOUND_PROVIDER_API_KEY"
+    ],
+    "credential_values_committed": false,
+    "credentials_committed": false,
+    "secrets_committed": false,
+    "provider_endpoint_placeholder": "test://disabled-outbound-provider",
+    "temp_test_store_path": "/tmp/ystar_live_test_idempotency.json",
+    "external_effect_allowed": false,
+    "blocked_production_reasons": [
+      "production_live_enabled_false",
+      "production_credentials_absent_by_design",
+      "production_persistent_idempotency_not_configured"
+    ]
+  },
+  "persistent_idempotency_test_status": {
+    "artifact_id": "e27_persistent_idempotency_test_gate",
+    "existing_wheel_reused": "gov_mcp/outbound/persistent_idempotency.py",
+    "live_test_persistent_ready": true,
+    "production_persistent_ready": false,
+    "production_persistent_status": "persistent_disabled_until_live_configuration",
+    "store_type": "file_backed_json_test_profile",
+    "duplicate_protection_result": "duplicate_action_detected_and_noop",
+    "duplicate_protection_passed": true,
+    "corrupted_store_protection_result": "corrupted_store_blocked",
+    "corrupted_store_blocked": true,
+    "missing_store_protection_result": "missing_store_blocked",
+    "missing_store_blocked": true,
+    "memory_only_not_live_safe": true,
+    "production_live_promotion_impact": "blocks_production_live_until_production_persistent_ready",
+    "external_action_executed": false
+  },
+  "kill_switch_status": {
+    "artifact_id": "e27_kill_switch_live_test_gate",
+    "existing_wheel_reused": "gov_mcp/outbound/live_kill_switch.py",
+    "kill_switch_test_gate_ready": true,
+    "block_profile_passed": true,
+    "allow_profile_passed": true,
+    "allow_profile_scope": "non_production_live_test_only",
+    "production_live_remains_blocked": true,
+    "production_block_reasons": [
+      "production_kill_switch_default_block",
+      "production_live_enabled_false"
+    ],
+    "audit_czl_note_emitted": true,
+    "external_action_executed": false
+  },
+  "receipt_boundary_status": {
+    "artifact_id": "e27_receipt_boundary_live_test_gate",
+    "existing_wheel_reused": "gov_mcp/outbound/live_receipts.py",
+    "new_fixture": "gov_mcp/outbound/live_test_receipts.py",
+    "receipt_boundary_ready": true,
+    "dry_run_receipt_distinct": true,
+    "sandbox_receipt_distinct": true,
+    "live_test_receipt_distinct_from_production_live_receipt": true,
+    "blocked_receipt_distinct": true,
+    "replay_noop_receipt_distinct": true,
+    "live_test_receipt_count": 1,
+    "production_live_receipts_created_count": 0,
+    "production_live_receipt_count": 0,
+    "live_test_receipt_external_effect": false,
+    "live_test_receipt_accepted_as_production_live": false,
+    "external_action_executed": false
+  },
+  "live_readiness_validator_v2": {
+    "artifact_id": "e27_live_readiness_validator_v2",
+    "validator_source": "gov_mcp/outbound/live_test_gate.py",
+    "dry_run_ready": true,
+    "sandbox_ready": true,
+    "live_test_gate_ready": true,
+    "production_live_ready": false,
+    "production_live_blocked": true,
+    "production_live_blocked_reasons": [
+      "production_live_enabled_false",
+      "production_credentials_absent_by_design",
+      "production_persistent_idempotency_not_configured",
+      "production_kill_switch_default_block",
+      "production_live_tests_not_configured"
+    ],
+    "live_ready_action_count": 0,
+    "live_blocked_action_count": 1,
+    "production_live_receipt_count": 0,
+    "source_checks": {
+      "live_test_config_ready": true,
+      "live_test_persistent_ready": true,
+      "kill_switch_test_gate_ready": true,
+      "receipt_boundary_ready": true,
+      "dry_run_receipt_history_present": true,
+      "sandbox_receipt_history_present": true,
+      "ceo_kg_route_supported": true,
+      "target_evidence_sufficient_for_test_gate": true,
+      "owner_approval_required_by_risk": false
+    },
+    "external_action_executed": false
+  },
+  "canary_prerequisite_matrix": {
+    "artifact_id": "e27_canary_prerequisite_matrix",
+    "selected_revenue_path": "rev_path_readiness_review_ai_consultancies",
+    "selected_action_candidate": "e26_live_canary_readiness_review_ai_consultancy_candidate_1",
+    "kg_support_nodes_edges": [
+      "rev_path_readiness_review_ai_consultancies",
+      "offer_48h_readiness_review",
+      "target_segment_ai_consultancies",
+      "capability_live_test_gate"
+    ],
+    "target_evidence": [
+      "operations/external_validation/e18_revenue_validation_batch.json",
+      "operations/external_validation/e25_sandbox_execution_results.json"
+    ],
+    "message_content_reference": "operations/external_validation/e17_final_message_package.json",
+    "provider_category": "outbound_message_provider",
+    "channel": "email",
+    "risk_tier": "T2_low_medium_limited_outbound",
+    "autonomous_eligibility": "eligible_after_production_live_readiness_passes",
+    "owner_approval_required_by_risk": false,
+    "dry_run_history_present": true,
+    "sandbox_history_present": true,
+    "live_test_gate_ready": true,
+    "production_live_config_ready": false,
+    "production_live_enabled": false,
+    "production_persistent_idempotency_ready": false,
+    "kill_switch_result": "production_blocked_default_safe",
+    "suppression_compliance_result": "clear_for_test_gate_required_for_live",
+    "live_receipt_boundary_result": "production_live_receipt_count_zero_until_real_live_effect",
+    "abort_criteria": [
+      "production_live_enabled_false",
+      "production_persistent_idempotency_not_configured",
+      "kill_switch_active",
+      "suppression_or_compliance_not_clear"
+    ],
+    "success_criteria": [
+      "one production live action accepted by provider",
+      "production live receipt written only after external effect",
+      "feedback import wait-state opened"
+    ],
+    "feedback_import_path": "operations/external_validation/e18_batch_feedback_intake_empty.json",
+    "ceo_kg_feedback_ingestion_path": "operations/knowledge_graph/e27_ceo_kg_live_test_feedback.json",
+    "canary_matrix_created": true,
+    "canary_executed": false,
+    "production_live_receipt_count": 0,
+    "real_customer_contact": false,
+    "external_provider_called": false,
+    "real_message_sent": false,
+    "live_ready_action_count": 0,
+    "live_blocked_action_count": 1,
+    "primary_blockers": [
+      "production_live_enabled_false",
+      "production_credentials_absent_by_design",
+      "production_persistent_idempotency_not_configured",
+      "production_kill_switch_default_block",
+      "production_live_tests_not_configured"
+    ]
+  },
+  "production_blockers": [
+    "production_live_enabled_false",
+    "production_credentials_absent_by_design",
+    "production_persistent_idempotency_not_configured",
+    "production_kill_switch_default_block",
+    "production_live_tests_not_configured"
+  ],
+  "agent_can_do_autonomously_next": [
+    "maintain live-test gate",
+    "prepare production config checklist",
+    "run evidence expansion without external contact"
+  ],
+  "owner_approval_required_by_risk": 0,
+  "owner_manual_send_is_default": false,
+  "recommended_next_milestone": "E28_production_live_configuration_decision_gate",
+  "ceo_brain_update": {
+    "artifact_id": "e27_ceo_brain_portfolio_update",
+    "selected_revenue_path": "rev_path_readiness_review_ai_consultancies",
+    "selected_path_status": "still_selected_for_future_canary_after_production_prerequisites",
+    "live_test_readiness": "live_test_gate_ready",
+    "production_live_readiness": "production_live_blocked",
+    "idempotency_readiness": "live_test_persistent_ready_production_persistent_not_ready",
+    "kill_switch_readiness": "test_gate_ready_production_default_safe_block",
+    "receipt_boundary_readiness": "live_test_receipt_distinct_production_live_receipts_zero",
+    "canary_prerequisite_status": "matrix_created_not_executed",
+    "existing_wheel_reuse_status": "audit_completed_reuse_wrap_extend_build_decision_recorded",
+    "current_strategic_bottleneck": "live_test_gate_ready_but_production_live_blocked_by_config_persistent_idempotency_kill_switch_live_tests_and_absent_real_feedback",
+    "next_decision_horizon": "E28_production_live_configuration_decision_gate_or_evidence_expansion",
+    "portfolio": {
+      "canary_candidate_paths": [
+        "rev_path_readiness_review_ai_consultancies"
+      ],
+      "evidence_needed_paths": [
+        "rev_path_readiness_review_ai_consultancies_real_feedback_evidence"
+      ],
+      "offer_revision_needed_paths": [],
+      "blocked_no_go_paths": [
+        "production_live_execution_until_prerequisites_pass"
+      ]
+    },
+    "kg_delta_node_count": 9,
+    "kg_delta_edge_count": 10,
+    "external_action_executed": false
+  },
+  "external_action_executed": false
+}

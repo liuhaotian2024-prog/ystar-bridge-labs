@@ -1,0 +1,29 @@
+{
+  "artifact_id": "e27_repo_modification_decision_packet",
+  "decisions": [
+    {
+      "repo": "gov-mcp",
+      "decision": "modified_and_delivered",
+      "reason": "canonical provider boundary needed live-test gate wheels",
+      "remote_confirmed": true,
+      "result_head": "4f758d9d4823eed108ae3d63be1f4db192a974d6"
+    },
+    {
+      "repo": "ystar-bridge-labs",
+      "decision": "modify_and_deliver",
+      "reason": "commercial control room and CEO KG readiness feedback",
+      "remote_confirmation_required": true
+    },
+    {
+      "repo": "Y-star-gov",
+      "decision": "read_only_no_immediate_mutation",
+      "reason": "governance semantics align without repo mutation"
+    },
+    {
+      "repo": "ystar-company",
+      "decision": "read_only_with_future_migration_followup",
+      "reason": "historical assets inform route but do not need live-test mutation"
+    }
+  ],
+  "external_action_executed": false
+}

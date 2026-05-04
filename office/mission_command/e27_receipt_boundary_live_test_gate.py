@@ -1,0 +1,5 @@
+from __future__ import annotations
+
+from office.mission_command.e27_existing_live_test_wheel_inventory import build_receipt_boundary_live_test_gate
+
+__all__ = ["build_receipt_boundary_live_test_gate"]
