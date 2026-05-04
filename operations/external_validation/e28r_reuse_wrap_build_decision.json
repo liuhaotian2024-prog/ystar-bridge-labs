@@ -1,0 +1,113 @@
+{
+  "artifact_id": "e28r_reuse_wrap_build_decision",
+  "decisions": [
+    {
+      "capability": "E24 CEO KG",
+      "decision": "wrap_existing",
+      "target_path": "operations/knowledge_graph/e24_ceo_kg_nodes.jsonl",
+      "justification": "reuse or wrap existing wheel"
+    },
+    {
+      "capability": "E24 revenue portfolio selector",
+      "decision": "wrap_existing",
+      "target_path": "operations/external_validation/e24_revenue_path_portfolio_selection.json",
+      "justification": "reuse or wrap existing wheel"
+    },
+    {
+      "capability": "E24 commercial imagination paths",
+      "decision": "reuse_existing",
+      "target_path": "operations/external_validation/e24_commercial_imagination_paths.json",
+      "justification": "reuse or wrap existing wheel"
+    },
+    {
+      "capability": "E24 innovation hypotheses",
+      "decision": "reuse_existing",
+      "target_path": "operations/external_validation/e24_innovation_hypotheses.json",
+      "justification": "reuse or wrap existing wheel"
+    },
+    {
+      "capability": "E28 production live decision gate",
+      "decision": "wrap_existing",
+      "target_path": "operations/external_validation/e28_production_live_decision_gate.json",
+      "justification": "reuse or wrap existing wheel"
+    },
+    {
+      "capability": "E28 evidence vs live tradeoff",
+      "decision": "wrap_existing",
+      "target_path": "operations/external_validation/e28_evidence_vs_live_tradeoff.json",
+      "justification": "reuse or wrap existing wheel"
+    },
+    {
+      "capability": "E28 CEO brain update",
+      "decision": "wrap_existing",
+      "target_path": "operations/external_validation/e28_ceo_brain_portfolio_update.json",
+      "justification": "reuse or wrap existing wheel"
+    },
+    {
+      "capability": "E28 provider category comparison",
+      "decision": "reuse_existing",
+      "target_path": "operations/external_validation/e28_provider_category_comparison.json",
+      "justification": "reuse or wrap existing wheel"
+    },
+    {
+      "capability": "E23 evidence tightening",
+      "decision": "reuse_existing",
+      "target_path": "office/mission_command/e23_evidence_tightening_evaluator.py",
+      "justification": "reuse or wrap existing wheel"
+    },
+    {
+      "capability": "E13R offer revision",
+      "decision": "reuse_existing",
+      "target_path": "office/mission_command/e13r_offer_revision.py",
+      "justification": "reuse or wrap existing wheel"
+    },
+    {
+      "capability": "E14 target scoring",
+      "decision": "reuse_existing",
+      "target_path": "office/mission_command/e14_target_scoring.py",
+      "justification": "reuse or wrap existing wheel"
+    },
+    {
+      "capability": "gov-mcp provider boundary",
+      "decision": "reuse_existing",
+      "target_path": "gov_mcp/outbound/live_test_gate.py",
+      "justification": "reuse or wrap existing wheel"
+    },
+    {
+      "capability": "Y-star-gov governance semantics",
+      "decision": "reuse_existing",
+      "target_path": "README.md",
+      "justification": "reuse or wrap existing wheel"
+    },
+    {
+      "capability": "ystar-company historical commercial assets",
+      "decision": "left_untouched",
+      "target_path": "sales/customer_pipeline.md",
+      "justification": "reuse or wrap existing wheel"
+    },
+    {
+      "capability": "Revenue Mode Branch Registry",
+      "decision": "build_missing",
+      "target_path": "office/mission_command/e28r_revenue_mode_branch_registry.py",
+      "justification": "existing route is incomplete for branch-level revenue mode selection"
+    },
+    {
+      "capability": "Portfolio Re-selection Gate",
+      "decision": "build_missing",
+      "target_path": "office/mission_command/e28r_portfolio_reselection_gate.py",
+      "justification": "existing route is incomplete for branch-level revenue mode selection"
+    },
+    {
+      "capability": "Anti-hardcoding route policy",
+      "decision": "build_missing",
+      "target_path": "office/mission_command/e28r_route_decision.py",
+      "justification": "existing route is incomplete for branch-level revenue mode selection"
+    }
+  ],
+  "new_implementation_allowed_only_for": [
+    "build_missing"
+  ],
+  "all_new_wheels_have_justification": true,
+  "newly_built_wheels_count": 3,
+  "external_action_executed": false
+}

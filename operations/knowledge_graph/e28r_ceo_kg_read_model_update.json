@@ -1,0 +1,8 @@
+{
+  "artifact_id": "e28r_ceo_kg_read_model_update",
+  "selected_active_branch": "revenue_mode_shortest_cash_path",
+  "production_live_configuration_global_default": false,
+  "production_live_configuration_recommendation_scope": "only_if_revenue_mode_shortest_cash_path_remains_active",
+  "next_decision_horizon": "E29_revenue_mode_branch_selection_confirmation",
+  "external_action_executed": false
+}

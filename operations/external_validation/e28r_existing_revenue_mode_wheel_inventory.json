@@ -1,0 +1,227 @@
+{
+  "artifact_id": "e28r_existing_revenue_mode_wheel_inventory",
+  "audit_completed_before_new_e28r_modules": true,
+  "repos_scanned": [
+    "ystar-bridge-labs",
+    "gov-mcp",
+    "Y-star-gov",
+    "ystar-company"
+  ],
+  "repos_scanned_count": 4,
+  "existing_revenue_mode_wheels_found": 17,
+  "reused_wheels_count": 8,
+  "wrapped_wheels_count": 5,
+  "extended_wheels_count": 0,
+  "wrapped_or_extended_wheels_count": 5,
+  "newly_built_wheels_count": 3,
+  "wheels": [
+    {
+      "name": "E24 CEO KG",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/knowledge_graph/e24_ceo_kg_nodes.jsonl",
+      "capability_category": "CEO KG",
+      "reuse_decision": "wrap_existing",
+      "what_it_already_supports": [
+        "source-bound revenue paths",
+        "legacy assets",
+        "innovation hypotheses"
+      ],
+      "gap_requiring_e28r": "needs branch-mode delta",
+      "new_wheel_justification": "reuse or wrap existing wheel"
+    },
+    {
+      "name": "E24 revenue portfolio selector",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e24_revenue_path_portfolio_selection.json",
+      "capability_category": "portfolio selector",
+      "reuse_decision": "wrap_existing",
+      "what_it_already_supports": [
+        "shortest cash path selection"
+      ],
+      "gap_requiring_e28r": "does not express non-shortest-cash branch registry",
+      "new_wheel_justification": "reuse or wrap existing wheel"
+    },
+    {
+      "name": "E24 commercial imagination paths",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e24_commercial_imagination_paths.json",
+      "capability_category": "commercial imagination",
+      "reuse_decision": "reuse_existing",
+      "what_it_already_supports": [
+        "alternative money-making hypotheses"
+      ],
+      "gap_requiring_e28r": "not promoted into branch registry",
+      "new_wheel_justification": "reuse or wrap existing wheel"
+    },
+    {
+      "name": "E24 innovation hypotheses",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e24_innovation_hypotheses.json",
+      "capability_category": "innovation",
+      "reuse_decision": "reuse_existing",
+      "what_it_already_supports": [
+        "productization/governance ideas"
+      ],
+      "gap_requiring_e28r": "not selected as branch modes",
+      "new_wheel_justification": "reuse or wrap existing wheel"
+    },
+    {
+      "name": "E28 production live decision gate",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e28_production_live_decision_gate.json",
+      "capability_category": "production live decision",
+      "reuse_decision": "wrap_existing",
+      "what_it_already_supports": [
+        "production config preparation recommendation"
+      ],
+      "gap_requiring_e28r": "needs branch-scoped interpretation",
+      "new_wheel_justification": "reuse or wrap existing wheel"
+    },
+    {
+      "name": "E28 evidence vs live tradeoff",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e28_evidence_vs_live_tradeoff.json",
+      "capability_category": "route tradeoff",
+      "reuse_decision": "wrap_existing",
+      "what_it_already_supports": [
+        "live config vs evidence/offer/target comparison"
+      ],
+      "gap_requiring_e28r": "overweighted shortest cash path",
+      "new_wheel_justification": "reuse or wrap existing wheel"
+    },
+    {
+      "name": "E28 CEO brain update",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e28_ceo_brain_portfolio_update.json",
+      "capability_category": "CEO brain",
+      "reuse_decision": "wrap_existing",
+      "what_it_already_supports": [
+        "selected path and next horizon"
+      ],
+      "gap_requiring_e28r": "needs active/backup/deferred branch state",
+      "new_wheel_justification": "reuse or wrap existing wheel"
+    },
+    {
+      "name": "E28 provider category comparison",
+      "repo": "ystar-bridge-labs",
+      "path": "operations/external_validation/e28_provider_category_comparison.json",
+      "capability_category": "provider category",
+      "reuse_decision": "reuse_existing",
+      "what_it_already_supports": [
+        "email provider selected for outbound canary"
+      ],
+      "gap_requiring_e28r": "branch dependency must be conditional",
+      "new_wheel_justification": "reuse or wrap existing wheel"
+    },
+    {
+      "name": "E23 evidence tightening",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e23_evidence_tightening_evaluator.py",
+      "capability_category": "evidence expansion",
+      "reuse_decision": "reuse_existing",
+      "what_it_already_supports": [
+        "evidence gap routing"
+      ],
+      "gap_requiring_e28r": "alternative route input",
+      "new_wheel_justification": "reuse or wrap existing wheel"
+    },
+    {
+      "name": "E13R offer revision",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e13r_offer_revision.py",
+      "capability_category": "offer revision",
+      "reuse_decision": "reuse_existing",
+      "what_it_already_supports": [
+        "offer/pain revision"
+      ],
+      "gap_requiring_e28r": "alternative route input",
+      "new_wheel_justification": "reuse or wrap existing wheel"
+    },
+    {
+      "name": "E14 target scoring",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e14_target_scoring.py",
+      "capability_category": "target rebuild",
+      "reuse_decision": "reuse_existing",
+      "what_it_already_supports": [
+        "target score/readiness"
+      ],
+      "gap_requiring_e28r": "alternative route input",
+      "new_wheel_justification": "reuse or wrap existing wheel"
+    },
+    {
+      "name": "gov-mcp provider boundary",
+      "repo": "gov-mcp",
+      "path": "gov_mcp/outbound/live_test_gate.py",
+      "capability_category": "provider boundary",
+      "reuse_decision": "reuse_existing",
+      "what_it_already_supports": [
+        "live-test/production readiness split"
+      ],
+      "gap_requiring_e28r": "should not determine business branch",
+      "new_wheel_justification": "reuse or wrap existing wheel"
+    },
+    {
+      "name": "Y-star-gov governance semantics",
+      "repo": "Y-star-gov",
+      "path": "README.md",
+      "capability_category": "governance/CZL",
+      "reuse_decision": "reuse_existing",
+      "what_it_already_supports": [
+        "closure and governance concepts"
+      ],
+      "gap_requiring_e28r": "read-only alignment source",
+      "new_wheel_justification": "reuse or wrap existing wheel"
+    },
+    {
+      "name": "ystar-company historical commercial assets",
+      "repo": "ystar-company",
+      "path": "sales/customer_pipeline.md",
+      "capability_category": "historical assets",
+      "reuse_decision": "left_untouched",
+      "what_it_already_supports": [
+        "historical market context"
+      ],
+      "gap_requiring_e28r": "not a branch selector",
+      "new_wheel_justification": "reuse or wrap existing wheel"
+    },
+    {
+      "name": "Revenue Mode Branch Registry",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e28r_revenue_mode_branch_registry.py",
+      "capability_category": "revenue mode branch registry",
+      "reuse_decision": "build_missing",
+      "what_it_already_supports": [
+        "branch-level revenue strategy modes"
+      ],
+      "gap_requiring_e28r": "no existing branch registry wheel found",
+      "new_wheel_justification": "existing route is incomplete for branch-level revenue mode selection"
+    },
+    {
+      "name": "Portfolio Re-selection Gate",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e28r_portfolio_reselection_gate.py",
+      "capability_category": "branch selection",
+      "reuse_decision": "build_missing",
+      "what_it_already_supports": [
+        "select active branch before route"
+      ],
+      "gap_requiring_e28r": "no existing branch re-selection gate found",
+      "new_wheel_justification": "existing route is incomplete for branch-level revenue mode selection"
+    },
+    {
+      "name": "Anti-hardcoding route policy",
+      "repo": "ystar-bridge-labs",
+      "path": "office/mission_command/e28r_route_decision.py",
+      "capability_category": "route policy",
+      "reuse_decision": "build_missing",
+      "what_it_already_supports": [
+        "production live config is conditional"
+      ],
+      "gap_requiring_e28r": "no existing anti-hardcoding correction layer found",
+      "new_wheel_justification": "existing route is incomplete for branch-level revenue mode selection"
+    }
+  ],
+  "new_wheel_creation_rule_satisfied": true,
+  "external_action_executed": false
+}

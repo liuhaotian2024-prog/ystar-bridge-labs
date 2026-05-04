@@ -1,0 +1,41 @@
+{
+  "artifact_id": "e28r_portfolio_reselection_gate",
+  "gate_result": "branch_selection_required_before_route_assumption",
+  "selected_active_branch": "revenue_mode_shortest_cash_path",
+  "selected_active_branch_reason": "Preserves E28 shortest-cash-path route as active, but scopes it to one branch rather than a company-wide default.",
+  "production_live_configuration_recommended": true,
+  "production_live_recommendation_scope": "only_if_revenue_mode_shortest_cash_path_remains_active",
+  "production_live_configuration_global_default": false,
+  "evidence_expansion_recommended": true,
+  "offer_revision_recommended": false,
+  "target_rebuild_recommended": false,
+  "productization_prototype_recommended": true,
+  "partner_channel_research_recommended": true,
+  "enterprise_pilot_packaging_recommended": false,
+  "governance_infrastructure_productization_recommended": true,
+  "valid_alternative_routes": [
+    "evidence_expansion",
+    "offer_revision",
+    "target_rebuild",
+    "provider_selection_research",
+    "productization_prototype",
+    "partner_channel_research",
+    "enterprise_pilot_packaging",
+    "governance_infrastructure_productization",
+    "keep_production_live_blocked"
+  ],
+  "branch_scores": {
+    "revenue_mode_shortest_cash_path": 86,
+    "revenue_mode_strategic_compounding": 78,
+    "revenue_mode_platform_productization": 76,
+    "revenue_mode_enterprise_pilot": 62,
+    "revenue_mode_partner_channel": 72,
+    "revenue_mode_developer_tooling": 60,
+    "revenue_mode_governance_infrastructure": 80,
+    "revenue_mode_ceo_agent_runtime_product": 82,
+    "revenue_mode_service_cashflow": 74,
+    "revenue_mode_internal_capability_before_market": 58
+  },
+  "hardcoding_correction_applied": true,
+  "external_action_executed": false
+}

@@ -1,0 +1,5 @@
+# E28R Route Decision
+
+- route_decision: confirm_revenue_mode_branch_before_E29_execution_route
+- recommended_next_milestone: E29_revenue_mode_branch_selection_confirmation
+- production_live_global_default: False

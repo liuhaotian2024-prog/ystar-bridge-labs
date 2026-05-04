@@ -1,0 +1,49 @@
+{
+  "artifact_id": "e28r_hardcoding_assumption_audit",
+  "audit_result": "over_narrowing_detected_and_corrected_above_e28",
+  "do_not_undo_e28": true,
+  "history_rewritten": false,
+  "e28_artifacts_deleted": false,
+  "findings": [
+    {
+      "assumption": "selected revenue path treated as permanent",
+      "source_paths": [
+        "operations/external_validation/e28_production_live_decision_gate.json",
+        "operations/external_validation/e28_ceo_brain_portfolio_update.json"
+      ],
+      "risk": "future milestones may overfit to rev_path_readiness_review_ai_consultancies",
+      "correction": "scope this path to revenue_mode_shortest_cash_path and require branch selection first",
+      "severity": "medium"
+    },
+    {
+      "assumption": "production live config treated as default next step",
+      "source_paths": [
+        "operations/external_validation/e28_evidence_vs_live_tradeoff.json"
+      ],
+      "risk": "future work may configure provider before deciding whether the active branch needs outbound",
+      "correction": "production live config is branch-conditional, not global",
+      "severity": "high"
+    },
+    {
+      "assumption": "outbound treated as required for revenue",
+      "source_paths": [
+        "operations/external_validation/e28_provider_category_comparison.json"
+      ],
+      "risk": "productization, partner, enterprise, developer tooling, and governance infrastructure routes may be underweighted",
+      "correction": "branch registry includes non-outbound revenue modes",
+      "severity": "medium"
+    },
+    {
+      "assumption": "shortest cash path treated as only objective",
+      "source_paths": [
+        "operations/external_validation/e24_revenue_path_portfolio_selection.json"
+      ],
+      "risk": "strategic compounding and platform productization may be delayed indefinitely",
+      "correction": "portfolio re-selection gate ranks branches by objective, horizon, evidence, and strategic compounding value",
+      "severity": "medium"
+    }
+  ],
+  "hardcoded_or_overweighted_assumption_count": 4,
+  "production_live_config_global_default_corrected": true,
+  "external_action_executed": false
+}

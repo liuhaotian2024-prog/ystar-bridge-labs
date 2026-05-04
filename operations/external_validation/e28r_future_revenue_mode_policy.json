@@ -1,0 +1,18 @@
+{
+  "artifact_id": "e28r_future_revenue_mode_policy",
+  "policy": "Every future commercial milestone must first evaluate revenue mode branch selection before assuming a specific route.",
+  "required_before_route_assumption": [
+    "whole-ecosystem existing-wheel audit",
+    "hardcoding/over-narrowing check",
+    "revenue mode branch registry review",
+    "portfolio re-selection gate",
+    "CEO KG branch update",
+    "CEO brain selected/backup/deferred/blocked branch update",
+    "route decision with valid alternatives",
+    "explicit production-live-config scope",
+    "no-fake-evidence/no-external-action closure"
+  ],
+  "production_live_config_may_be_recommended_only_if": "the selected active branch requires outbound or a production provider for the next best action",
+  "owner_manual_send_default_allowed": false,
+  "external_action_executed": false
+}

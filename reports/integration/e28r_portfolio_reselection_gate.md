@@ -1,0 +1,5 @@
+# E28R Portfolio Reselection Gate
+
+- gate_result: branch_selection_required_before_route_assumption
+- selected_active_branch: revenue_mode_shortest_cash_path
+- production_live_scope: only_if_revenue_mode_shortest_cash_path_remains_active

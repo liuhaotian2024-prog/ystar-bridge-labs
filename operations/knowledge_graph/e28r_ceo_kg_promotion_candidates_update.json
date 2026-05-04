@@ -1,0 +1,13 @@
+{
+  "artifact_id": "e28r_ceo_kg_promotion_candidates_update",
+  "promotion_candidates_count": 1,
+  "promotion_candidates": [
+    {
+      "id": "e28r_branch_selection_policy",
+      "promotion_status": "working_only",
+      "reason": "Future milestones must select revenue mode before assuming route."
+    }
+  ],
+  "canonical_truth_promoted": false,
+  "external_action_executed": false
+}

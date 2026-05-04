@@ -1,0 +1,27 @@
+{
+  "artifact_id": "e28r_route_decision",
+  "route_decision": "confirm_revenue_mode_branch_before_E29_execution_route",
+  "selected_active_branch": "revenue_mode_shortest_cash_path",
+  "production_live_configuration_recommended": true,
+  "production_live_configuration_condition": "only_if_revenue_mode_shortest_cash_path_remains_active",
+  "production_live_configuration_global_default": false,
+  "recommended_next_milestone": "E29_revenue_mode_branch_selection_confirmation",
+  "if_shortest_cash_path_confirmed": "E29_secure_production_config_preparation",
+  "if_strategic_compounding_selected": "E29_governance_or_ceo_runtime_productization_prototype",
+  "if_evidence_gap_dominates": "E29_evidence_expansion",
+  "valid_alternatives": [
+    "evidence_expansion",
+    "offer_revision",
+    "target_rebuild",
+    "provider_selection_research",
+    "productization_prototype",
+    "partner_channel_research",
+    "enterprise_pilot_packaging",
+    "governance_infrastructure_productization",
+    "keep_production_live_blocked"
+  ],
+  "canary_executed": false,
+  "production_live_enabled": false,
+  "production_live_receipt_count": 0,
+  "external_action_executed": false
+}

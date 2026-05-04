@@ -1,0 +1,1264 @@
+{
+  "artifact_id": "e28r_ceo_kg_branch_feedback",
+  "kg_delta_nodes": [
+    {
+      "id": "revenue_mode_shortest_cash_path",
+      "type": "RevenueMode",
+      "label": "revenue_mode_shortest_cash_path",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Branch mode, not market truth."
+    },
+    {
+      "id": "revenue_mode_shortest_cash_path_objective",
+      "type": "BranchObjective",
+      "label": "Generate fastest credible cash signal from readiness-review offer.",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Objective for branch comparison."
+    },
+    {
+      "id": "revenue_mode_shortest_cash_path_evidence_need",
+      "type": "BranchEvidenceNeed",
+      "label": "real feedback, secure provider config if branch remains active",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "needs_evidence",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Evidence needed before canonical learning."
+    },
+    {
+      "id": "revenue_mode_shortest_cash_path_execution_route",
+      "type": "BranchExecutionRoute",
+      "label": "bounded outbound email canary or evidence expansion",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Execution route candidate."
+    },
+    {
+      "id": "revenue_mode_shortest_cash_path_provider_dependency",
+      "type": "BranchProviderDependency",
+      "label": "email provider only if live canary chosen",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Provider dependency is branch-scoped."
+    },
+    {
+      "id": "revenue_mode_shortest_cash_path_decision",
+      "type": "BranchDecision",
+      "label": "active",
+      "source_paths": [
+        "operations/external_validation/e28r_portfolio_reselection_gate.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "observed_internal_decision",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Active/backup/deferred/blocked status."
+    },
+    {
+      "id": "revenue_mode_strategic_compounding",
+      "type": "RevenueMode",
+      "label": "revenue_mode_strategic_compounding",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Branch mode, not market truth."
+    },
+    {
+      "id": "revenue_mode_strategic_compounding_objective",
+      "type": "BranchObjective",
+      "label": "Build compounding trust layer around governed autonomous execution.",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Objective for branch comparison."
+    },
+    {
+      "id": "revenue_mode_strategic_compounding_evidence_need",
+      "type": "BranchEvidenceNeed",
+      "label": "proof that governed execution reduces risk, demo artifacts",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "needs_evidence",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Evidence needed before canonical learning."
+    },
+    {
+      "id": "revenue_mode_strategic_compounding_execution_route",
+      "type": "BranchExecutionRoute",
+      "label": "productized demo and strategic narrative",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Execution route candidate."
+    },
+    {
+      "id": "revenue_mode_strategic_compounding_provider_dependency",
+      "type": "BranchProviderDependency",
+      "label": "none initially",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Provider dependency is branch-scoped."
+    },
+    {
+      "id": "revenue_mode_strategic_compounding_decision",
+      "type": "BranchDecision",
+      "label": "backup",
+      "source_paths": [
+        "operations/external_validation/e28r_portfolio_reselection_gate.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "observed_internal_decision",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Active/backup/deferred/blocked status."
+    },
+    {
+      "id": "revenue_mode_platform_productization",
+      "type": "RevenueMode",
+      "label": "revenue_mode_platform_productization",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Branch mode, not market truth."
+    },
+    {
+      "id": "revenue_mode_platform_productization_objective",
+      "type": "BranchObjective",
+      "label": "Turn internal control-room/KG/runtime into a repeatable platform product.",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Objective for branch comparison."
+    },
+    {
+      "id": "revenue_mode_platform_productization_evidence_need",
+      "type": "BranchEvidenceNeed",
+      "label": "usability proof, repeatable workflow evidence",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "needs_evidence",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Evidence needed before canonical learning."
+    },
+    {
+      "id": "revenue_mode_platform_productization_execution_route",
+      "type": "BranchExecutionRoute",
+      "label": "product prototype",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Execution route candidate."
+    },
+    {
+      "id": "revenue_mode_platform_productization_provider_dependency",
+      "type": "BranchProviderDependency",
+      "label": "none initially",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Provider dependency is branch-scoped."
+    },
+    {
+      "id": "revenue_mode_platform_productization_decision",
+      "type": "BranchDecision",
+      "label": "backup",
+      "source_paths": [
+        "operations/external_validation/e28r_portfolio_reselection_gate.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "observed_internal_decision",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Active/backup/deferred/blocked status."
+    },
+    {
+      "id": "revenue_mode_enterprise_pilot",
+      "type": "RevenueMode",
+      "label": "revenue_mode_enterprise_pilot",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Branch mode, not market truth."
+    },
+    {
+      "id": "revenue_mode_enterprise_pilot_objective",
+      "type": "BranchObjective",
+      "label": "Package a governance-heavy enterprise pilot.",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Objective for branch comparison."
+    },
+    {
+      "id": "revenue_mode_enterprise_pilot_evidence_need",
+      "type": "BranchEvidenceNeed",
+      "label": "enterprise pain evidence, security/compliance packet",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "needs_evidence",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Evidence needed before canonical learning."
+    },
+    {
+      "id": "revenue_mode_enterprise_pilot_execution_route",
+      "type": "BranchExecutionRoute",
+      "label": "pilot package",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Execution route candidate."
+    },
+    {
+      "id": "revenue_mode_enterprise_pilot_provider_dependency",
+      "type": "BranchProviderDependency",
+      "label": "not required before packaging",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Provider dependency is branch-scoped."
+    },
+    {
+      "id": "revenue_mode_enterprise_pilot_decision",
+      "type": "BranchDecision",
+      "label": "deferred",
+      "source_paths": [
+        "operations/external_validation/e28r_portfolio_reselection_gate.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "observed_internal_decision",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Active/backup/deferred/blocked status."
+    },
+    {
+      "id": "revenue_mode_partner_channel",
+      "type": "RevenueMode",
+      "label": "revenue_mode_partner_channel",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Branch mode, not market truth."
+    },
+    {
+      "id": "revenue_mode_partner_channel_objective",
+      "type": "BranchObjective",
+      "label": "Use partners to reach buyers without direct outbound as first motion.",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Objective for branch comparison."
+    },
+    {
+      "id": "revenue_mode_partner_channel_evidence_need",
+      "type": "BranchEvidenceNeed",
+      "label": "partner list from existing assets, partner value proposition",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "needs_evidence",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Evidence needed before canonical learning."
+    },
+    {
+      "id": "revenue_mode_partner_channel_execution_route",
+      "type": "BranchExecutionRoute",
+      "label": "partner research and warm-channel planning",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Execution route candidate."
+    },
+    {
+      "id": "revenue_mode_partner_channel_provider_dependency",
+      "type": "BranchProviderDependency",
+      "label": "none initially",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Provider dependency is branch-scoped."
+    },
+    {
+      "id": "revenue_mode_partner_channel_decision",
+      "type": "BranchDecision",
+      "label": "backup",
+      "source_paths": [
+        "operations/external_validation/e28r_portfolio_reselection_gate.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "observed_internal_decision",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Active/backup/deferred/blocked status."
+    },
+    {
+      "id": "revenue_mode_developer_tooling",
+      "type": "RevenueMode",
+      "label": "revenue_mode_developer_tooling",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Branch mode, not market truth."
+    },
+    {
+      "id": "revenue_mode_developer_tooling_objective",
+      "type": "BranchObjective",
+      "label": "Productize gov-mcp/bridge-labs tooling for developers.",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Objective for branch comparison."
+    },
+    {
+      "id": "revenue_mode_developer_tooling_evidence_need",
+      "type": "BranchEvidenceNeed",
+      "label": "developer problem evidence, API/package usability proof",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "needs_evidence",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Evidence needed before canonical learning."
+    },
+    {
+      "id": "revenue_mode_developer_tooling_execution_route",
+      "type": "BranchExecutionRoute",
+      "label": "developer tooling prototype",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Execution route candidate."
+    },
+    {
+      "id": "revenue_mode_developer_tooling_provider_dependency",
+      "type": "BranchProviderDependency",
+      "label": "none initially",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Provider dependency is branch-scoped."
+    },
+    {
+      "id": "revenue_mode_developer_tooling_decision",
+      "type": "BranchDecision",
+      "label": "deferred",
+      "source_paths": [
+        "operations/external_validation/e28r_portfolio_reselection_gate.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "observed_internal_decision",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Active/backup/deferred/blocked status."
+    },
+    {
+      "id": "revenue_mode_governance_infrastructure",
+      "type": "RevenueMode",
+      "label": "revenue_mode_governance_infrastructure",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Branch mode, not market truth."
+    },
+    {
+      "id": "revenue_mode_governance_infrastructure_objective",
+      "type": "BranchObjective",
+      "label": "Sell governance/audit infrastructure for agent execution.",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Objective for branch comparison."
+    },
+    {
+      "id": "revenue_mode_governance_infrastructure_evidence_need",
+      "type": "BranchEvidenceNeed",
+      "label": "governance buyer pain, proof of auditability",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "needs_evidence",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Evidence needed before canonical learning."
+    },
+    {
+      "id": "revenue_mode_governance_infrastructure_execution_route",
+      "type": "BranchExecutionRoute",
+      "label": "governance infrastructure productization",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Execution route candidate."
+    },
+    {
+      "id": "revenue_mode_governance_infrastructure_provider_dependency",
+      "type": "BranchProviderDependency",
+      "label": "none initially",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Provider dependency is branch-scoped."
+    },
+    {
+      "id": "revenue_mode_governance_infrastructure_decision",
+      "type": "BranchDecision",
+      "label": "backup",
+      "source_paths": [
+        "operations/external_validation/e28r_portfolio_reselection_gate.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "observed_internal_decision",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Active/backup/deferred/blocked status."
+    },
+    {
+      "id": "revenue_mode_ceo_agent_runtime_product",
+      "type": "RevenueMode",
+      "label": "revenue_mode_ceo_agent_runtime_product",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Branch mode, not market truth."
+    },
+    {
+      "id": "revenue_mode_ceo_agent_runtime_product_objective",
+      "type": "BranchObjective",
+      "label": "Sell the CEO-agent runtime as a founder/operator command system.",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Objective for branch comparison."
+    },
+    {
+      "id": "revenue_mode_ceo_agent_runtime_product_evidence_need",
+      "type": "BranchEvidenceNeed",
+      "label": "founder workflow evidence, demo walkthrough",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "needs_evidence",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Evidence needed before canonical learning."
+    },
+    {
+      "id": "revenue_mode_ceo_agent_runtime_product_execution_route",
+      "type": "BranchExecutionRoute",
+      "label": "runtime product prototype",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Execution route candidate."
+    },
+    {
+      "id": "revenue_mode_ceo_agent_runtime_product_provider_dependency",
+      "type": "BranchProviderDependency",
+      "label": "none initially",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Provider dependency is branch-scoped."
+    },
+    {
+      "id": "revenue_mode_ceo_agent_runtime_product_decision",
+      "type": "BranchDecision",
+      "label": "backup",
+      "source_paths": [
+        "operations/external_validation/e28r_portfolio_reselection_gate.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "observed_internal_decision",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Active/backup/deferred/blocked status."
+    },
+    {
+      "id": "revenue_mode_service_cashflow",
+      "type": "RevenueMode",
+      "label": "revenue_mode_service_cashflow",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Branch mode, not market truth."
+    },
+    {
+      "id": "revenue_mode_service_cashflow_objective",
+      "type": "BranchObjective",
+      "label": "Use services to finance product learning.",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Objective for branch comparison."
+    },
+    {
+      "id": "revenue_mode_service_cashflow_evidence_need",
+      "type": "BranchEvidenceNeed",
+      "label": "buyer pain signal, service delivery scope",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "needs_evidence",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Evidence needed before canonical learning."
+    },
+    {
+      "id": "revenue_mode_service_cashflow_execution_route",
+      "type": "BranchExecutionRoute",
+      "label": "service package and scoped proposal",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Execution route candidate."
+    },
+    {
+      "id": "revenue_mode_service_cashflow_provider_dependency",
+      "type": "BranchProviderDependency",
+      "label": "optional",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Provider dependency is branch-scoped."
+    },
+    {
+      "id": "revenue_mode_service_cashflow_decision",
+      "type": "BranchDecision",
+      "label": "backup",
+      "source_paths": [
+        "operations/external_validation/e28r_portfolio_reselection_gate.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "observed_internal_decision",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Active/backup/deferred/blocked status."
+    },
+    {
+      "id": "revenue_mode_internal_capability_before_market",
+      "type": "RevenueMode",
+      "label": "revenue_mode_internal_capability_before_market",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Branch mode, not market truth."
+    },
+    {
+      "id": "revenue_mode_internal_capability_before_market_objective",
+      "type": "BranchObjective",
+      "label": "Delay market push to harden internal execution capabilities.",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Objective for branch comparison."
+    },
+    {
+      "id": "revenue_mode_internal_capability_before_market_evidence_need",
+      "type": "BranchEvidenceNeed",
+      "label": "internal validation completeness",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "needs_evidence",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Evidence needed before canonical learning."
+    },
+    {
+      "id": "revenue_mode_internal_capability_before_market_execution_route",
+      "type": "BranchExecutionRoute",
+      "label": "internal build loop",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Execution route candidate."
+    },
+    {
+      "id": "revenue_mode_internal_capability_before_market_provider_dependency",
+      "type": "BranchProviderDependency",
+      "label": "maybe later",
+      "source_paths": [
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "working_hypothesis",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Provider dependency is branch-scoped."
+    },
+    {
+      "id": "revenue_mode_internal_capability_before_market_decision",
+      "type": "BranchDecision",
+      "label": "deferred",
+      "source_paths": [
+        "operations/external_validation/e28r_portfolio_reselection_gate.json"
+      ],
+      "evidence_status": "internal_strategy_evidence",
+      "truth_status": "observed_internal_decision",
+      "promotion_status": "working_only",
+      "created_by_milestone": "E28R",
+      "notes": "Active/backup/deferred/blocked status."
+    }
+  ],
+  "kg_delta_edges": [
+    {
+      "id": "e28r_edge_1",
+      "source_node_id": "revenue_mode_shortest_cash_path",
+      "target_node_id": "revenue_mode_shortest_cash_path_objective",
+      "relationship": "has_objective",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_2",
+      "source_node_id": "revenue_mode_shortest_cash_path",
+      "target_node_id": "revenue_mode_shortest_cash_path_evidence_need",
+      "relationship": "requires_evidence",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_3",
+      "source_node_id": "revenue_mode_shortest_cash_path",
+      "target_node_id": "revenue_mode_shortest_cash_path_execution_route",
+      "relationship": "routes_to",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_4",
+      "source_node_id": "revenue_mode_shortest_cash_path",
+      "target_node_id": "revenue_mode_shortest_cash_path_provider_dependency",
+      "relationship": "has_provider_dependency",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_5",
+      "source_node_id": "revenue_mode_shortest_cash_path",
+      "target_node_id": "revenue_mode_shortest_cash_path_decision",
+      "relationship": "has_branch_decision",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_6",
+      "source_node_id": "revenue_mode_strategic_compounding",
+      "target_node_id": "revenue_mode_strategic_compounding_objective",
+      "relationship": "has_objective",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_7",
+      "source_node_id": "revenue_mode_strategic_compounding",
+      "target_node_id": "revenue_mode_strategic_compounding_evidence_need",
+      "relationship": "requires_evidence",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_8",
+      "source_node_id": "revenue_mode_strategic_compounding",
+      "target_node_id": "revenue_mode_strategic_compounding_execution_route",
+      "relationship": "routes_to",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_9",
+      "source_node_id": "revenue_mode_strategic_compounding",
+      "target_node_id": "revenue_mode_strategic_compounding_provider_dependency",
+      "relationship": "has_provider_dependency",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_10",
+      "source_node_id": "revenue_mode_strategic_compounding",
+      "target_node_id": "revenue_mode_strategic_compounding_decision",
+      "relationship": "has_branch_decision",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_11",
+      "source_node_id": "revenue_mode_platform_productization",
+      "target_node_id": "revenue_mode_platform_productization_objective",
+      "relationship": "has_objective",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_12",
+      "source_node_id": "revenue_mode_platform_productization",
+      "target_node_id": "revenue_mode_platform_productization_evidence_need",
+      "relationship": "requires_evidence",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_13",
+      "source_node_id": "revenue_mode_platform_productization",
+      "target_node_id": "revenue_mode_platform_productization_execution_route",
+      "relationship": "routes_to",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_14",
+      "source_node_id": "revenue_mode_platform_productization",
+      "target_node_id": "revenue_mode_platform_productization_provider_dependency",
+      "relationship": "has_provider_dependency",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_15",
+      "source_node_id": "revenue_mode_platform_productization",
+      "target_node_id": "revenue_mode_platform_productization_decision",
+      "relationship": "has_branch_decision",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_16",
+      "source_node_id": "revenue_mode_enterprise_pilot",
+      "target_node_id": "revenue_mode_enterprise_pilot_objective",
+      "relationship": "has_objective",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_17",
+      "source_node_id": "revenue_mode_enterprise_pilot",
+      "target_node_id": "revenue_mode_enterprise_pilot_evidence_need",
+      "relationship": "requires_evidence",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_18",
+      "source_node_id": "revenue_mode_enterprise_pilot",
+      "target_node_id": "revenue_mode_enterprise_pilot_execution_route",
+      "relationship": "routes_to",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_19",
+      "source_node_id": "revenue_mode_enterprise_pilot",
+      "target_node_id": "revenue_mode_enterprise_pilot_provider_dependency",
+      "relationship": "has_provider_dependency",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_20",
+      "source_node_id": "revenue_mode_enterprise_pilot",
+      "target_node_id": "revenue_mode_enterprise_pilot_decision",
+      "relationship": "has_branch_decision",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_21",
+      "source_node_id": "revenue_mode_partner_channel",
+      "target_node_id": "revenue_mode_partner_channel_objective",
+      "relationship": "has_objective",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_22",
+      "source_node_id": "revenue_mode_partner_channel",
+      "target_node_id": "revenue_mode_partner_channel_evidence_need",
+      "relationship": "requires_evidence",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_23",
+      "source_node_id": "revenue_mode_partner_channel",
+      "target_node_id": "revenue_mode_partner_channel_execution_route",
+      "relationship": "routes_to",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_24",
+      "source_node_id": "revenue_mode_partner_channel",
+      "target_node_id": "revenue_mode_partner_channel_provider_dependency",
+      "relationship": "has_provider_dependency",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_25",
+      "source_node_id": "revenue_mode_partner_channel",
+      "target_node_id": "revenue_mode_partner_channel_decision",
+      "relationship": "has_branch_decision",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_26",
+      "source_node_id": "revenue_mode_developer_tooling",
+      "target_node_id": "revenue_mode_developer_tooling_objective",
+      "relationship": "has_objective",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_27",
+      "source_node_id": "revenue_mode_developer_tooling",
+      "target_node_id": "revenue_mode_developer_tooling_evidence_need",
+      "relationship": "requires_evidence",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_28",
+      "source_node_id": "revenue_mode_developer_tooling",
+      "target_node_id": "revenue_mode_developer_tooling_execution_route",
+      "relationship": "routes_to",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_29",
+      "source_node_id": "revenue_mode_developer_tooling",
+      "target_node_id": "revenue_mode_developer_tooling_provider_dependency",
+      "relationship": "has_provider_dependency",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_30",
+      "source_node_id": "revenue_mode_developer_tooling",
+      "target_node_id": "revenue_mode_developer_tooling_decision",
+      "relationship": "has_branch_decision",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_31",
+      "source_node_id": "revenue_mode_governance_infrastructure",
+      "target_node_id": "revenue_mode_governance_infrastructure_objective",
+      "relationship": "has_objective",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_32",
+      "source_node_id": "revenue_mode_governance_infrastructure",
+      "target_node_id": "revenue_mode_governance_infrastructure_evidence_need",
+      "relationship": "requires_evidence",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_33",
+      "source_node_id": "revenue_mode_governance_infrastructure",
+      "target_node_id": "revenue_mode_governance_infrastructure_execution_route",
+      "relationship": "routes_to",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_34",
+      "source_node_id": "revenue_mode_governance_infrastructure",
+      "target_node_id": "revenue_mode_governance_infrastructure_provider_dependency",
+      "relationship": "has_provider_dependency",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_35",
+      "source_node_id": "revenue_mode_governance_infrastructure",
+      "target_node_id": "revenue_mode_governance_infrastructure_decision",
+      "relationship": "has_branch_decision",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_36",
+      "source_node_id": "revenue_mode_ceo_agent_runtime_product",
+      "target_node_id": "revenue_mode_ceo_agent_runtime_product_objective",
+      "relationship": "has_objective",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_37",
+      "source_node_id": "revenue_mode_ceo_agent_runtime_product",
+      "target_node_id": "revenue_mode_ceo_agent_runtime_product_evidence_need",
+      "relationship": "requires_evidence",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_38",
+      "source_node_id": "revenue_mode_ceo_agent_runtime_product",
+      "target_node_id": "revenue_mode_ceo_agent_runtime_product_execution_route",
+      "relationship": "routes_to",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_39",
+      "source_node_id": "revenue_mode_ceo_agent_runtime_product",
+      "target_node_id": "revenue_mode_ceo_agent_runtime_product_provider_dependency",
+      "relationship": "has_provider_dependency",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_40",
+      "source_node_id": "revenue_mode_ceo_agent_runtime_product",
+      "target_node_id": "revenue_mode_ceo_agent_runtime_product_decision",
+      "relationship": "has_branch_decision",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_41",
+      "source_node_id": "revenue_mode_service_cashflow",
+      "target_node_id": "revenue_mode_service_cashflow_objective",
+      "relationship": "has_objective",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_42",
+      "source_node_id": "revenue_mode_service_cashflow",
+      "target_node_id": "revenue_mode_service_cashflow_evidence_need",
+      "relationship": "requires_evidence",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_43",
+      "source_node_id": "revenue_mode_service_cashflow",
+      "target_node_id": "revenue_mode_service_cashflow_execution_route",
+      "relationship": "routes_to",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_44",
+      "source_node_id": "revenue_mode_service_cashflow",
+      "target_node_id": "revenue_mode_service_cashflow_provider_dependency",
+      "relationship": "has_provider_dependency",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_45",
+      "source_node_id": "revenue_mode_service_cashflow",
+      "target_node_id": "revenue_mode_service_cashflow_decision",
+      "relationship": "has_branch_decision",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_46",
+      "source_node_id": "revenue_mode_internal_capability_before_market",
+      "target_node_id": "revenue_mode_internal_capability_before_market_objective",
+      "relationship": "has_objective",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_47",
+      "source_node_id": "revenue_mode_internal_capability_before_market",
+      "target_node_id": "revenue_mode_internal_capability_before_market_evidence_need",
+      "relationship": "requires_evidence",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_48",
+      "source_node_id": "revenue_mode_internal_capability_before_market",
+      "target_node_id": "revenue_mode_internal_capability_before_market_execution_route",
+      "relationship": "routes_to",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_49",
+      "source_node_id": "revenue_mode_internal_capability_before_market",
+      "target_node_id": "revenue_mode_internal_capability_before_market_provider_dependency",
+      "relationship": "has_provider_dependency",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_50",
+      "source_node_id": "revenue_mode_internal_capability_before_market",
+      "target_node_id": "revenue_mode_internal_capability_before_market_decision",
+      "relationship": "has_branch_decision",
+      "evidence_path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch registry edge."
+    },
+    {
+      "id": "e28r_edge_51",
+      "source_node_id": "e28_production_live_decision_gate",
+      "target_node_id": "revenue_mode_shortest_cash_path",
+      "relationship": "scoped_to",
+      "evidence_path": "operations/external_validation/e28r_hardcoding_assumption_audit.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "E28 decision remains valid only inside shortest-cash-path branch."
+    },
+    {
+      "id": "e28r_edge_52",
+      "source_node_id": "e28r_portfolio_reselection_gate",
+      "target_node_id": "revenue_mode_shortest_cash_path",
+      "relationship": "selects",
+      "evidence_path": "operations/external_validation/e28r_portfolio_reselection_gate.json",
+      "confidence_basis": "deterministic_source",
+      "notes": "Branch selection gate."
+    }
+  ],
+  "kg_delta_node_count": 60,
+  "kg_delta_edge_count": 52,
+  "branch_count": 10,
+  "selected_active_branch": "revenue_mode_shortest_cash_path",
+  "production_live_configuration_global_default": false,
+  "internal_strategy_evidence_only": true,
+  "customer_feedback_claimed": false,
+  "market_validation_claimed": false,
+  "external_action_executed": false
+}
