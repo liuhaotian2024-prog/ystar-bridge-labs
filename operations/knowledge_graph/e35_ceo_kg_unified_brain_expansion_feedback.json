@@ -4,11 +4,13 @@
   "canonical_learning_promoted": false,
   "customer_validation_claimed": false,
   "examples_treated_as_probes_not_routes": true,
-  "kg_delta_edges": 13,
-  "kg_delta_nodes": 12,
+  "kg_delta_edges": 21,
+  "kg_delta_nodes": 19,
   "opportunity_cognition_expanded_beyond_internal_asset_packaging": true,
   "paid_signal_claimed": false,
   "product_decision_made": false,
   "second_ceo_brain_created": false,
-  "six_dimensional_faculties_added_to_existing_brain": true
+  "six_dimensional_faculties_added_to_existing_brain": true,
+  "cross_repo_alignment_added": true,
+  "repo_role_boundaries_preserved": true
 }

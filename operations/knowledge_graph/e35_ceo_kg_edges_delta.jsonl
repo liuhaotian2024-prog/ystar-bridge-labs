@@ -11,3 +11,11 @@
 {"relation": "routes_to", "source": "e35_cross_domain_opportunity_field", "target": "e35_next_horizon"}
 {"relation": "updates", "source": "e35_unified_six_dimensional_ceo_cognition", "target": "CEO brain"}
 {"relation": "does_not_replace", "source": "e35_unified_six_dimensional_ceo_cognition", "target": "CEO KG"}
+{"relation": "preserves_role_of", "source": "e35_cross_repo_alignment", "target": "repo_y_star_gov_governance_kernel"}
+{"relation": "preserves_role_of", "source": "e35_cross_repo_alignment", "target": "repo_gov_mcp_execution_boundary"}
+{"relation": "preserves_role_of", "source": "e35_cross_repo_alignment", "target": "repo_ystar_bridge_labs_strategy_layer"}
+{"relation": "must_not_duplicate", "source": "repo_ystar_bridge_labs_strategy_layer", "target": "repo_y_star_gov_governance_kernel"}
+{"relation": "must_not_duplicate", "source": "repo_ystar_bridge_labs_strategy_layer", "target": "repo_gov_mcp_execution_boundary"}
+{"relation": "constrains", "source": "e35_governance_primitive_alignment_required", "target": "e35_cross_domain_opportunity_field"}
+{"relation": "constrains", "source": "e35_gov_mcp_execution_alignment_required", "target": "e35_next_horizon"}
+{"relation": "follows_from", "source": "e35_cross_repo_sync_backlog", "target": "e35_cross_repo_alignment"}

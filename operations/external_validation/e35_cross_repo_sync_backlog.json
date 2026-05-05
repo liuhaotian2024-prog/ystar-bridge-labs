@@ -1,0 +1,106 @@
+{
+  "artifact_id": "e35_cross_repo_sync_backlog",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "backlog_status": "created_targeted_followups_only",
+  "no_y_star_gov_files_modified": true,
+  "no_gov_mcp_files_modified": true,
+  "items": [
+    {
+      "sync_item_id": "e35_sync_001",
+      "source_artifact": "e35_cross_domain_opportunity_field",
+      "affected_repo": "ystar-bridge-labs",
+      "sync_reason": "Opportunity field is strategy/imagination only.",
+      "current_status": "aligned",
+      "proposed_action": "add bridge-labs mapping only",
+      "risk_if_ignored": "Future route selection may forget evidence/imagination boundaries.",
+      "priority": "medium",
+      "can_be_done_without_external_side_effects": true
+    },
+    {
+      "sync_item_id": "e35_sync_002",
+      "source_artifact": "e35_ceo_brain_unified_six_dimensional_update",
+      "affected_repo": "ystar-bridge-labs",
+      "sync_reason": "CEO brain must remember repo role separation.",
+      "current_status": "gap",
+      "proposed_action": "update CEO KG/brain delta",
+      "risk_if_ignored": "Labs could blur strategy cognition with runtime enforcement authority.",
+      "priority": "high",
+      "can_be_done_without_external_side_effects": true
+    },
+    {
+      "sync_item_id": "e35_sync_003",
+      "source_artifact": "future_owner_approved_external_action",
+      "affected_repo": "multiple",
+      "sync_reason": "Executable action must map to governance and execution layers.",
+      "current_status": "blocked",
+      "proposed_action": "owner decision required",
+      "risk_if_ignored": "Agent action could bypass IntentContract/gov-mcp boundary.",
+      "priority": "high",
+      "can_be_done_without_external_side_effects": true
+    },
+    {
+      "sync_item_id": "e35_sync_004",
+      "source_artifact": "future_agentic_commerce_or_payment_opportunities",
+      "affected_repo": "Y-star-gov",
+      "sync_reason": "Payment/delegated transaction semantics may need kernel-level primitives.",
+      "current_status": "candidate",
+      "proposed_action": "propose Y-star-gov primitive",
+      "risk_if_ignored": "Commercial imagination could overclaim governance support for payment authority.",
+      "priority": "medium",
+      "can_be_done_without_external_side_effects": true
+    },
+    {
+      "sync_item_id": "e35_sync_005",
+      "source_artifact": "future_mcp_compatible_product_or_adapter_route",
+      "affected_repo": "gov-mcp",
+      "sync_reason": "Only executable routes should become MCP adapters.",
+      "current_status": "candidate",
+      "proposed_action": "propose gov-mcp adapter",
+      "risk_if_ignored": "Labs might imply tool execution support before an adapter exists.",
+      "priority": "medium",
+      "can_be_done_without_external_side_effects": true
+    },
+    {
+      "sync_item_id": "e35_sync_006",
+      "source_artifact": "learning_eligibility_after_real_action",
+      "affected_repo": "multiple",
+      "sync_reason": "CIEU/CZL evidence should only be claimed when governed action occurred.",
+      "current_status": "aligned",
+      "proposed_action": "add bridge-labs mapping only",
+      "risk_if_ignored": "Public research or imagination could be mispromoted as enforcement evidence.",
+      "priority": "high",
+      "can_be_done_without_external_side_effects": true
+    },
+    {
+      "sync_item_id": "e35_sync_007",
+      "source_artifact": "human_life_home_health_hardware_opportunities",
+      "affected_repo": "ystar-bridge-labs",
+      "sync_reason": "Non-governance domains should not force kernel or MCP changes before selection.",
+      "current_status": "not needed",
+      "proposed_action": "no action",
+      "risk_if_ignored": "Unnecessary cross-repo churn.",
+      "priority": "low",
+      "can_be_done_without_external_side_effects": true
+    },
+    {
+      "sync_item_id": "e35_sync_008",
+      "source_artifact": "E36_evidence_seeking_and_route_selection_on_expanded_opportunity_field_under_owner_approval",
+      "affected_repo": "multiple",
+      "sync_reason": "Future route selection should carry primitive/execution alignment fields by default.",
+      "current_status": "candidate",
+      "proposed_action": "cross-repo follow-up milestone",
+      "risk_if_ignored": "A future selected route could lack governance/execution alignment proof.",
+      "priority": "high",
+      "can_be_done_without_external_side_effects": true
+    }
+  ],
+  "summary": {
+    "sync_items": 8,
+    "y_star_gov_items": 4,
+    "gov_mcp_items": 4,
+    "bridge_labs_only_items": 3,
+    "owner_decision_items": 1,
+    "external_side_effects_required": false
+  },
+  "alignment_reference": "e35_cross_repo_governance_execution_alignment"
+}

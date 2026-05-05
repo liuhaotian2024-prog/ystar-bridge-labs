@@ -1,0 +1,415 @@
+{
+  "artifact_id": "e35_cross_repo_governance_execution_alignment",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "alignment_status": "passed",
+  "inspection_mode": "read_only_cross_repo_alignment",
+  "external_side_effects": {
+    "customer_contact_occurred": false,
+    "message_sent": false,
+    "published_externally": false,
+    "provider_api_called": false,
+    "payment_occurred": false,
+    "secret_used": false
+  },
+  "repos_inspected": {
+    "ystar_bridge_labs": {
+      "path": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+      "exists": true,
+      "branch": "backflow/aiden-ceo-meeting-room",
+      "head": "2eac88fcf68402e5d25b5c9461e7dc35fce504c5",
+      "remote_tracking_head": "2eac88fcf68402e5d25b5c9461e7dc35fce504c5",
+      "dirty_status": "",
+      "inspection_mode": "read_only"
+    },
+    "Y-star-gov": {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "exists": true,
+      "branch": "backflow/company-runtime-domain-pack",
+      "head": "5f031f4be151b81ef1a1b1908a5c83c5420e8ce1",
+      "remote_tracking_head": "35d270c79f73fdd0bdf55ebdefe03fb4ccb2d397",
+      "dirty_status": "",
+      "inspection_mode": "read_only"
+    },
+    "gov-mcp": {
+      "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "exists": true,
+      "branch": "backflow/company-runtime-tools",
+      "head": "4f758d9d4823eed108ae3d63be1f4db192a974d6",
+      "remote_tracking_head": "4f758d9d4823eed108ae3d63be1f4db192a974d6",
+      "dirty_status": "",
+      "inspection_mode": "read_only"
+    }
+  },
+  "bridge_labs_e35_artifacts_inspected": [
+    {
+      "path": "operations/external_validation/e35_base_and_brain_contract_manifest.json",
+      "exists": true,
+      "role": "Labs CEO strategy/cognition delta or boundary proof"
+    },
+    {
+      "path": "operations/external_validation/e35_one_brain_integration_guard.json",
+      "exists": true,
+      "role": "Labs CEO strategy/cognition delta or boundary proof"
+    },
+    {
+      "path": "operations/external_validation/e35_cross_domain_opportunity_field.json",
+      "exists": true,
+      "role": "Labs CEO strategy/cognition delta or boundary proof"
+    },
+    {
+      "path": "operations/external_validation/e35_ceo_brain_unified_six_dimensional_update.json",
+      "exists": true,
+      "role": "Labs CEO strategy/cognition delta or boundary proof"
+    },
+    {
+      "path": "operations/external_validation/e35_czl_closure.json",
+      "exists": true,
+      "role": "Labs CEO strategy/cognition delta or boundary proof"
+    },
+    {
+      "path": "operations/knowledge_graph/e35_ceo_kg_nodes_delta.jsonl",
+      "exists": true,
+      "role": "Labs CEO strategy/cognition delta or boundary proof"
+    },
+    {
+      "path": "operations/knowledge_graph/e35_ceo_kg_edges_delta.jsonl",
+      "exists": true,
+      "role": "Labs CEO strategy/cognition delta or boundary proof"
+    }
+  ],
+  "repo_role_map": {
+    "Y-star-gov": {
+      "repo_path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "owner_layer": "deterministic runtime governance kernel / sovereignty layer",
+      "owns": [
+        "IntentContract",
+        "deterministic check/enforce semantics",
+        "CIEU tamper-evident chain",
+        "obligation and omission enforcement",
+        "delegation monotonicity",
+        "contract legitimacy lifecycle",
+        "trust-source hierarchy",
+        "governance/counterfactual/causal primitives"
+      ],
+      "must_not_own": [
+        "Labs CEO opportunity cognition",
+        "market-observation business artifacts",
+        "buyer-facing no-send packages",
+        "commercial route selection",
+        "host-local bridge delivery"
+      ],
+      "read_only_inspected_paths": [
+        "README.md",
+        "pyproject.toml",
+        "ystar/kernel/nl_to_contract.py",
+        "ystar/governance/omission_engine.py",
+        "ystar/governance/obligation_rules.py",
+        "ystar/governance/obligation_triggers.py",
+        "ystar/domains/openclaw/",
+        "docs/hook_cli_contract_compatibility.md",
+        "docs/hook_contract_adapter_dry_run.md"
+      ]
+    },
+    "gov-mcp": {
+      "repo_path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "owner_layer": "governed execution boundary for MCP-compatible agent actions",
+      "owns": [
+        "gov_check / gov_enforce MCP tool boundary",
+        "contract load / validate / activate flow",
+        "delegation / escalation tools",
+        "CIEU report / verify / doctor / audit tools",
+        "governance envelope over MCP responses",
+        "deterministic auto-execution router for safe commands",
+        "provider/outbound adapter boundary and disabled-live safety scaffolds"
+      ],
+      "must_not_own": [
+        "CEO brain",
+        "CEO KG opportunity deltas",
+        "market strategy",
+        "customer validation claims",
+        "paid-signal claims"
+      ],
+      "read_only_inspected_paths": [
+        "README.md",
+        "README_PLUGIN.md",
+        "pyproject.toml",
+        "gov_mcp/__main__.py",
+        "gov_mcp/router.py",
+        "gov_mcp/dispatch_logic.py",
+        "gov_mcp/company_runtime_tools.py",
+        "gov_mcp/outbound/"
+      ]
+    },
+    "ystar-bridge-labs": {
+      "repo_path": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+      "owner_layer": "CEO agent / Labs agent company strategy and operation layer",
+      "owns": [
+        "CEO brain and CEO KG deltas",
+        "opportunity cognition",
+        "route selection",
+        "market observation artifacts",
+        "owner decision packets",
+        "bridge delivery artifacts",
+        "no-send/no-contact/no-fake-evidence business artifacts",
+        "internal methodology generation"
+      ],
+      "must_not_own": [
+        "governance kernel",
+        "contract semantics",
+        "CIEU engine",
+        "enforcement checker",
+        "MCP tool execution layer",
+        "provider execution system",
+        "second CEO brain",
+        "second CEO KG",
+        "second route registry"
+      ],
+      "read_only_inspected_paths": [
+        "operations/external_validation/e35_base_and_brain_contract_manifest.json",
+        "operations/external_validation/e35_one_brain_integration_guard.json",
+        "operations/external_validation/e35_cross_domain_opportunity_field.json",
+        "operations/external_validation/e35_ceo_brain_unified_six_dimensional_update.json",
+        "operations/external_validation/e35_czl_closure.json",
+        "operations/knowledge_graph/e35_ceo_kg_nodes_delta.jsonl",
+        "operations/knowledge_graph/e35_ceo_kg_edges_delta.jsonl"
+      ]
+    }
+  },
+  "cross_repo_concept_map": [
+    {
+      "labs_concept": "opportunity",
+      "cross_repo_meaning": "strategy/imagination object only",
+      "not_a": [
+        "governance fact",
+        "IntentContract",
+        "gov-mcp tool"
+      ],
+      "owner_repo": "ystar-bridge-labs"
+    },
+    {
+      "labs_concept": "hypothesis",
+      "cross_repo_meaning": "evidence-labeled strategic possibility",
+      "not_a": [
+        "contract",
+        "customer validation",
+        "paid signal"
+      ],
+      "owner_repo": "ystar-bridge-labs"
+    },
+    {
+      "labs_concept": "owner decision",
+      "cross_repo_meaning": "possible approval gate before action",
+      "possible_mapping": [
+        "Y-star-gov contract lifecycle",
+        "gov-mcp escalation path"
+      ],
+      "owner_repo": "ystar-bridge-labs until executable route is approved"
+    },
+    {
+      "labs_concept": "selected route",
+      "cross_repo_meaning": "Labs route registry/decision artifact",
+      "possible_mapping": [
+        "gov-mcp execution boundary only if real action is approved"
+      ],
+      "owner_repo": "ystar-bridge-labs"
+    },
+    {
+      "labs_concept": "external action",
+      "cross_repo_meaning": "must move through governance/execution boundary when automated",
+      "possible_mapping": [
+        "Y-star-gov IntentContract",
+        "gov-mcp gov_check/gov_enforce",
+        "CIEU receipt"
+      ],
+      "owner_repo": "gov-mcp/Y-star-gov after owner approval"
+    },
+    {
+      "labs_concept": "learning eligibility",
+      "cross_repo_meaning": "Labs evidence boundary unless governed execution created CIEU evidence",
+      "possible_mapping": [
+        "CIEU/CZL boundary"
+      ],
+      "owner_repo": "ystar-bridge-labs with Y-star-gov evidence only when applicable"
+    },
+    {
+      "labs_concept": "business validation",
+      "cross_repo_meaning": "market/commercial evidence, not enforcement evidence",
+      "not_a": [
+        "Y-star-gov enforcement evidence unless governed action occurred"
+      ],
+      "owner_repo": "ystar-bridge-labs"
+    },
+    {
+      "labs_concept": "product idea",
+      "cross_repo_meaning": "not an MCP tool unless an execution route exists",
+      "possible_mapping": [
+        "gov-mcp adapter candidate after route selection and owner approval"
+      ],
+      "owner_repo": "ystar-bridge-labs"
+    }
+  ],
+  "governance_primitive_alignment": [
+    {
+      "e35_output": "six_dimensional_ceo_cognition_model",
+      "classification": "no Y-star-gov primitive",
+      "reason": "method schema inside Labs CEO brain; no runtime authority claimed"
+    },
+    {
+      "e35_output": "cross_domain_universe_expansion_method",
+      "classification": "no Y-star-gov primitive",
+      "reason": "domain imagination method, not executable action"
+    },
+    {
+      "e35_output": "capability_abstraction_recombination_method",
+      "classification": "no Y-star-gov primitive",
+      "reason": "abstracts capabilities for opportunity ideation; does not enforce"
+    },
+    {
+      "e35_output": "cross_domain_opportunity_field",
+      "classification": "no Y-star-gov primitive",
+      "reason": "opportunities remain imagination/hypothesis until evidence exists"
+    },
+    {
+      "e35_output": "future_owner_approved_external_action",
+      "classification": "existing IntentContract primitive",
+      "additional_primitives": [
+        "existing CIEU primitive",
+        "existing obligation primitive if action creates duties",
+        "existing contract lifecycle primitive",
+        "existing trust hierarchy primitive"
+      ],
+      "reason": "real automated action should be contract-bound before execution"
+    },
+    {
+      "e35_output": "future_agent_to_agent_or_payment_route",
+      "classification": "unclear / requires owner review",
+      "possible_new_y_star_gov_primitive_candidate": "agentic commerce authorization / liability primitive",
+      "reason": "payment/delegated transaction semantics exceed current E35 Labs artifact authority"
+    },
+    {
+      "e35_output": "learning_eligibility_after_real_action",
+      "classification": "existing CIEU primitive",
+      "reason": "canonical action learning should require governed evidence when execution occurred"
+    }
+  ],
+  "gov_mcp_execution_alignment": [
+    {
+      "future_action": "E35 methodology and opportunity artifacts",
+      "classification": "can remain Labs-only artifact",
+      "execution_needed": false,
+      "reason": "no tool/action execution is performed or requested"
+    },
+    {
+      "future_action": "owner-approved evidence-seeking without contact",
+      "classification": "can remain Labs-only artifact",
+      "execution_needed": false,
+      "reason": "bounded read-only public observation can stay in Labs if no provider/tool action route is invoked"
+    },
+    {
+      "future_action": "owner-approved outreach or publication",
+      "classification": "must remain blocked until owner approval",
+      "requires": [
+        "contract load/validate/activate if automated",
+        "gov_check/gov_enforce",
+        "CIEU report/verify/audit",
+        "delegation/escalation path if authority expands"
+      ]
+    },
+    {
+      "future_action": "MCP-compatible tool execution",
+      "classification": "can be governed by existing gov_check/gov_enforce",
+      "requires": [
+        "active contract",
+        "governance envelope",
+        "CIEU sequence"
+      ]
+    },
+    {
+      "future_action": "new provider or product adapter",
+      "classification": "requires new MCP adapter",
+      "requires": [
+        "gov-mcp adapter proposal",
+        "owner approval",
+        "no-send/dry-run receipt separation before live"
+      ]
+    },
+    {
+      "future_action": "agent-to-agent commerce/payment",
+      "classification": "unsafe / should not be executed",
+      "requires": [
+        "owner decision",
+        "Y-star-gov primitive review",
+        "gov-mcp adapter review"
+      ]
+    }
+  ],
+  "sync_needed_flags": {
+    "current_e35_addendum": "bridge-labs artifact only",
+    "y_star_gov_issue_or_proposal_only": [
+      "future agentic commerce/payment authorization primitive if route becomes active",
+      "future non-human identity/liability primitive if owner selects an executable route"
+    ],
+    "gov_mcp_issue_or_proposal_only": [
+      "future MCP adapter if an E35 opportunity becomes an executable tool/action route",
+      "future provider boundary updates only after owner-approved route selection"
+    ],
+    "cross_repo_follow_up_milestone": [
+      "E36 route selection must attach governance primitive and gov-mcp execution boundary classification"
+    ],
+    "no_sync_needed": [
+      "E35 methodology artifacts",
+      "E35 opportunity field",
+      "E35 examples-as-probes invariant"
+    ]
+  },
+  "no_conflict_result": {
+    "duplicate_governance_kernel_created": false,
+    "duplicate_mcp_execution_layer_created": false,
+    "duplicate_cieu_czl_contract_semantics_created": false,
+    "duplicate_ceo_brain_created": false,
+    "duplicate_ceo_kg_created": false,
+    "duplicate_route_registry_created": false,
+    "labs_ceo_brain_remained_strategy_opportunity_layer": true,
+    "y_star_gov_remained_governance_kernel": true,
+    "gov_mcp_remained_execution_boundary": true,
+    "examples_remain_probes_not_routes": true,
+    "product_answer_hardcoded": false
+  },
+  "y_star_gov_alignment_summary": {
+    "repo_inspected": true,
+    "governance_primitives_found": [
+      "IntentContract",
+      "deterministic check/enforce",
+      "CIEU tamper-evident records",
+      "obligation/omission enforcement",
+      "delegation monotonicity",
+      "contract lifecycle",
+      "trust-source traceability",
+      "OpenClaw/domain adapter",
+      "causal/counterfactual primitives"
+    ],
+    "e35_conflicts_with_governance_kernel": false,
+    "new_y_star_gov_primitive_candidates": [
+      "agentic commerce authorization / liability primitive",
+      "non-human operational workforce identity primitive"
+    ]
+  },
+  "gov_mcp_alignment_summary": {
+    "repo_inspected": true,
+    "execution_boundary_primitives_found": [
+      "gov_check",
+      "gov_enforce",
+      "contract load/validate/activate",
+      "delegation/escalation tools",
+      "governance envelope",
+      "CIEU report/verify/doctor/audit",
+      "deterministic command router",
+      "no-send outbound adapter and disabled-live provider scaffolds"
+    ],
+    "e35_creates_unsupported_execution_assumptions": false,
+    "new_gov_mcp_adapter_candidates": [
+      "future E35 opportunity execution adapter only after route selection",
+      "future agentic commerce/payment adapter only after owner and governance-kernel review"
+    ]
+  }
+}

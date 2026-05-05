@@ -10,3 +10,10 @@
 {"evidence_status": "evidence_boundary", "label": "E35 is not customer validation", "node_id": "e35_not_customer_validation", "node_type": "EvidenceBoundary"}
 {"evidence_status": "owner_decision_pending", "label": "Run evidence-seeking and route selection on expanded field", "node_id": "e35_next_horizon", "node_type": "NextDecisionHorizon"}
 {"evidence_status": "methodology", "label": "Examples are probes, not routes", "node_id": "e35_examples_as_probes", "node_type": "Constraint"}
+{"evidence_status": "methodology", "label": "Cross-repo governance and execution alignment", "node_id": "e35_cross_repo_alignment", "node_type": "AlignmentArtifact"}
+{"evidence_status": "repo_observation", "label": "Y-star-gov governance kernel", "node_id": "repo_y_star_gov_governance_kernel", "node_type": "RepositoryRole"}
+{"evidence_status": "repo_observation", "label": "gov-mcp execution boundary", "node_id": "repo_gov_mcp_execution_boundary", "node_type": "RepositoryRole"}
+{"evidence_status": "repo_observation", "label": "ystar-bridge-labs strategy/opportunity layer", "node_id": "repo_ystar_bridge_labs_strategy_layer", "node_type": "RepositoryRole"}
+{"evidence_status": "methodology", "label": "Future Labs outputs require governance primitive alignment", "node_id": "e35_governance_primitive_alignment_required", "node_type": "ReasoningInvariant"}
+{"evidence_status": "methodology", "label": "Future Labs routes require gov-mcp execution alignment", "node_id": "e35_gov_mcp_execution_alignment_required", "node_type": "ReasoningInvariant"}
+{"evidence_status": "methodology", "label": "Targeted cross-repo sync backlog", "node_id": "e35_cross_repo_sync_backlog", "node_type": "SyncBacklog"}

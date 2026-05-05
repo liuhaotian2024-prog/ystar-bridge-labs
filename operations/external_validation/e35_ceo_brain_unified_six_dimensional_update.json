@@ -18,5 +18,15 @@
   "not_paid_signal": true,
   "second_ceo_brain_created": false,
   "six_dimensional_faculties_added_to_existing_ceo_brain": true,
-  "updated_bottleneck": "CEO needs evidence-seeking and route-selection over the expanded opportunity field without collapsing examples into routes."
+  "updated_bottleneck": "expanded opportunity cognition now requires explicit cross-repo governance primitive and gov-mcp execution-boundary alignment before route execution",
+  "cross_repo_awareness": {
+    "Y-star-gov_role": "governance kernel / sovereignty layer, not Labs",
+    "gov-mcp_role": "execution boundary for MCP-compatible agent actions, not Labs",
+    "ystar_bridge_labs_role": "CEO strategy/opportunity/route cognition layer, not enforcement kernel",
+    "future_labs_outputs_require_governance_primitive_alignment": true,
+    "future_labs_routes_require_gov_mcp_execution_boundary_alignment": true,
+    "examples_remain_probes": true,
+    "opportunities_remain_imagination_or_hypothesis_until_evidence_exists": true,
+    "labs_artifacts_may_not_claim_runtime_authority_without_y_star_gov_or_gov_mcp_evidence": true
+  }
 }
