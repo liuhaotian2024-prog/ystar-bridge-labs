@@ -1,0 +1,5 @@
+{"source": "e41_route_drift_correction", "target": "e41_frontier_capability_import_loop", "type": "redirects_to"}
+{"source": "e41_whole_runtime_archaeology", "target": "e41_frontier_capability_import_loop", "type": "grounds"}
+{"source": "e41_frontier_capability_import_loop", "target": "e41_updated_bottleneck", "type": "addresses"}
+{"source": "e41_synthetic_reviewer_protocol", "target": "e41_updated_bottleneck", "type": "prevents_validation_overclaim"}
+{"source": "e41_updated_bottleneck", "target": "e42_next_decision_horizon", "type": "sets_horizon"}

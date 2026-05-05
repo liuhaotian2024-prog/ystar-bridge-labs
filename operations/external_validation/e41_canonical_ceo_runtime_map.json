@@ -1,0 +1,350 @@
+{
+  "artifact_id": "e41_canonical_ceo_runtime_map",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "components": [
+    {
+      "component": "Board directive intake",
+      "source_files": [
+        "DIRECTIVE_TRACKER.md",
+        "BOARD_PENDING.md"
+      ],
+      "source_files_found": [
+        "DIRECTIVE_TRACKER.md",
+        "BOARD_PENDING.md"
+      ],
+      "function": "Accepts owner/Board directives and preserves pending decisions.",
+      "data_artifacts": [
+        "DIRECTIVE_TRACKER.md"
+      ],
+      "owner_role": "Board/Owner",
+      "relationship_to_Y_star_gov": "Y-star-gov owns deterministic governance semantics; Labs only maps or references them.",
+      "relationship_to_gov_mcp": "gov-mcp owns governed MCP execution; Labs routes must align before any future action.",
+      "relationship_to_E31_E40_line": "Recent line contributes strategy/evidence artifacts and KG deltas, not replacement runtime.",
+      "status": "active"
+    },
+    {
+      "component": "CEO interpretation",
+      "source_files": [
+        "agents/CEO.md",
+        "governance/ceo_operating_methodology_v1.md"
+      ],
+      "source_files_found": [
+        "agents/CEO.md",
+        "governance/ceo_operating_methodology_v1.md"
+      ],
+      "function": "Translates directives into strategy and role dispatch.",
+      "data_artifacts": [
+        "agents/CEO.md"
+      ],
+      "owner_role": "CEO",
+      "relationship_to_Y_star_gov": "Y-star-gov owns deterministic governance semantics; Labs only maps or references them.",
+      "relationship_to_gov_mcp": "gov-mcp owns governed MCP execution; Labs routes must align before any future action.",
+      "relationship_to_E31_E40_line": "Recent line contributes strategy/evidence artifacts and KG deltas, not replacement runtime.",
+      "status": "active"
+    },
+    {
+      "component": "role dispatch",
+      "source_files": [
+        "agents/CFO.md",
+        "agents/CMO.md",
+        "agents/CTO.md",
+        "agents/Secretary.md",
+        "governance/dispatch_board.json"
+      ],
+      "source_files_found": [
+        "agents/CFO.md",
+        "agents/CMO.md",
+        "agents/CTO.md",
+        "agents/Secretary.md",
+        "governance/dispatch_board.json"
+      ],
+      "function": "Assigns functional responsibilities.",
+      "data_artifacts": [
+        "agents/CFO.md"
+      ],
+      "owner_role": "CEO/Secretary",
+      "relationship_to_Y_star_gov": "Y-star-gov owns deterministic governance semantics; Labs only maps or references them.",
+      "relationship_to_gov_mcp": "gov-mcp owns governed MCP execution; Labs routes must align before any future action.",
+      "relationship_to_E31_E40_line": "Recent line contributes strategy/evidence artifacts and KG deltas, not replacement runtime.",
+      "status": "active"
+    },
+    {
+      "component": "intent verification",
+      "source_files": [
+        "scripts/gov_order.py",
+        "governance/ACTIVE_OPERATING_CHARTER.md"
+      ],
+      "source_files_found": [
+        "scripts/gov_order.py",
+        "governance/ACTIVE_OPERATING_CHARTER.md"
+      ],
+      "function": "Checks intended governance action before execution.",
+      "data_artifacts": [
+        "scripts/gov_order.py"
+      ],
+      "owner_role": "CEO/Secretary",
+      "relationship_to_Y_star_gov": "Y-star-gov owns deterministic governance semantics; Labs only maps or references them.",
+      "relationship_to_gov_mcp": "gov-mcp owns governed MCP execution; Labs routes must align before any future action.",
+      "relationship_to_E31_E40_line": "Recent line contributes strategy/evidence artifacts and KG deltas, not replacement runtime.",
+      "status": "active"
+    },
+    {
+      "component": "obligation registration",
+      "source_files": [
+        ".czl_subgoals.json",
+        "CZL.md"
+      ],
+      "source_files_found": [
+        ".czl_subgoals.json",
+        "CZL.md"
+      ],
+      "function": "Records mission obligations and subgoals.",
+      "data_artifacts": [
+        ".czl_subgoals.json"
+      ],
+      "owner_role": "CEO/CZL",
+      "relationship_to_Y_star_gov": "Y-star-gov owns deterministic governance semantics; Labs only maps or references them.",
+      "relationship_to_gov_mcp": "gov-mcp owns governed MCP execution; Labs routes must align before any future action.",
+      "relationship_to_E31_E40_line": "Recent line contributes strategy/evidence artifacts and KG deltas, not replacement runtime.",
+      "status": "active"
+    },
+    {
+      "component": "CZL closure",
+      "source_files": [
+        "CZL.md",
+        "reports/integration"
+      ],
+      "source_files_found": [
+        "CZL.md",
+        "reports/integration"
+      ],
+      "function": "Closes milestones with boundary proof and next horizon.",
+      "data_artifacts": [
+        "CZL.md"
+      ],
+      "owner_role": "CEO/CZL",
+      "relationship_to_Y_star_gov": "Y-star-gov owns deterministic governance semantics; Labs only maps or references them.",
+      "relationship_to_gov_mcp": "gov-mcp owns governed MCP execution; Labs routes must align before any future action.",
+      "relationship_to_E31_E40_line": "Recent line contributes strategy/evidence artifacts and KG deltas, not replacement runtime.",
+      "status": "active"
+    },
+    {
+      "component": "CIEU evidence",
+      "source_files": [
+        "cieu_trace.py",
+        "docs/cieu_event_schema.md",
+        "governance/cieu_event_taxonomy.md"
+      ],
+      "source_files_found": [
+        "cieu_trace.py",
+        "docs/cieu_event_schema.md",
+        "governance/cieu_event_taxonomy.md"
+      ],
+      "function": "Event/evidence chain semantics.",
+      "data_artifacts": [
+        "cieu_trace.py"
+      ],
+      "owner_role": "Governance runtime",
+      "relationship_to_Y_star_gov": "Y-star-gov owns deterministic governance semantics; Labs only maps or references them.",
+      "relationship_to_gov_mcp": "gov-mcp owns governed MCP execution; Labs routes must align before any future action.",
+      "relationship_to_E31_E40_line": "Recent line contributes strategy/evidence artifacts and KG deltas, not replacement runtime.",
+      "status": "active"
+    },
+    {
+      "component": "gov-order NL pipeline",
+      "source_files": [
+        "scripts/gov_order.py",
+        "scripts/gov_order_undo.py"
+      ],
+      "source_files_found": [
+        "scripts/gov_order.py",
+        "scripts/gov_order_undo.py"
+      ],
+      "function": "Natural-language order pipeline.",
+      "data_artifacts": [
+        "scripts/gov_order.py"
+      ],
+      "owner_role": "Secretary/CEO",
+      "relationship_to_Y_star_gov": "Y-star-gov owns deterministic governance semantics; Labs only maps or references them.",
+      "relationship_to_gov_mcp": "gov-mcp owns governed MCP execution; Labs routes must align before any future action.",
+      "relationship_to_E31_E40_line": "Recent line contributes strategy/evidence artifacts and KG deltas, not replacement runtime.",
+      "status": "active"
+    },
+    {
+      "component": "CROBA pre-action boundary",
+      "source_files": [
+        "governance/pre_build_routing_gate_v1.md",
+        "governance/tiered_routing_protocol_v1.md"
+      ],
+      "source_files_found": [
+        "governance/pre_build_routing_gate_v1.md",
+        "governance/tiered_routing_protocol_v1.md"
+      ],
+      "function": "Pre-action routing and boundary checks.",
+      "data_artifacts": [
+        "governance/pre_build_routing_gate_v1.md"
+      ],
+      "owner_role": "CEO/CTO",
+      "relationship_to_Y_star_gov": "Y-star-gov owns deterministic governance semantics; Labs only maps or references them.",
+      "relationship_to_gov_mcp": "gov-mcp owns governed MCP execution; Labs routes must align before any future action.",
+      "relationship_to_E31_E40_line": "Recent line contributes strategy/evidence artifacts and KG deltas, not replacement runtime.",
+      "status": "active"
+    },
+    {
+      "component": "daily/weekly operating memory",
+      "source_files": [
+        "memory",
+        "reports/daily"
+      ],
+      "source_files_found": [
+        "memory",
+        "reports/daily"
+      ],
+      "function": "Operational continuity and briefs.",
+      "data_artifacts": [
+        "memory/INDEX.md",
+        "memory/WORLD_STATE.md",
+        "memory/archive/continuation_archived_1776273549.md",
+        "memory/archive/czl_subgoals_9fractures_20260415.json",
+        "memory/archive/czl_subgoals_IDLE_—_awaiting_next_campaign_(Campaign_v6_candidates_in_backlog)_20260416_132139.json"
+      ],
+      "owner_role": "Secretary/CEO",
+      "relationship_to_Y_star_gov": "Y-star-gov owns deterministic governance semantics; Labs only maps or references them.",
+      "relationship_to_gov_mcp": "gov-mcp owns governed MCP execution; Labs routes must align before any future action.",
+      "relationship_to_E31_E40_line": "Recent line contributes strategy/evidence artifacts and KG deltas, not replacement runtime.",
+      "status": "active"
+    },
+    {
+      "component": "directive tracker",
+      "source_files": [
+        "DIRECTIVE_TRACKER.md"
+      ],
+      "source_files_found": [
+        "DIRECTIVE_TRACKER.md"
+      ],
+      "function": "Owner/Board decision tracking.",
+      "data_artifacts": [
+        "DIRECTIVE_TRACKER.md"
+      ],
+      "owner_role": "Secretary/CEO",
+      "relationship_to_Y_star_gov": "Y-star-gov owns deterministic governance semantics; Labs only maps or references them.",
+      "relationship_to_gov_mcp": "gov-mcp owns governed MCP execution; Labs routes must align before any future action.",
+      "relationship_to_E31_E40_line": "Recent line contributes strategy/evidence artifacts and KG deltas, not replacement runtime.",
+      "status": "active"
+    },
+    {
+      "component": "reports/insights",
+      "source_files": [
+        "reports/insights",
+        "reports/integration"
+      ],
+      "source_files_found": [
+        "reports/insights",
+        "reports/integration"
+      ],
+      "function": "Learning/reporting surface.",
+      "data_artifacts": [
+        "reports/insights/INSIGHTS_INDEX.md",
+        "reports/insights/scenario_c_croba_discovery_20260414_en.md"
+      ],
+      "owner_role": "CEO/CMO/CTO",
+      "relationship_to_Y_star_gov": "Y-star-gov owns deterministic governance semantics; Labs only maps or references them.",
+      "relationship_to_gov_mcp": "gov-mcp owns governed MCP execution; Labs routes must align before any future action.",
+      "relationship_to_E31_E40_line": "Recent line contributes strategy/evidence artifacts and KG deltas, not replacement runtime.",
+      "status": "active"
+    },
+    {
+      "component": "CEO KG / brain",
+      "source_files": [
+        "operations/knowledge_graph",
+        "operations/external_validation"
+      ],
+      "source_files_found": [
+        "operations/knowledge_graph",
+        "operations/external_validation"
+      ],
+      "function": "CEO memory deltas and read-model extensions.",
+      "data_artifacts": [
+        "operations/knowledge_graph/e24_ceo_kg_edges.jsonl",
+        "operations/knowledge_graph/e24_ceo_kg_entity_resolution.json",
+        "operations/knowledge_graph/e24_ceo_kg_evidence_index.json",
+        "operations/knowledge_graph/e24_ceo_kg_nodes.jsonl",
+        "operations/knowledge_graph/e24_ceo_kg_promotion_candidates.json"
+      ],
+      "owner_role": "CEO",
+      "relationship_to_Y_star_gov": "Y-star-gov owns deterministic governance semantics; Labs only maps or references them.",
+      "relationship_to_gov_mcp": "gov-mcp owns governed MCP execution; Labs routes must align before any future action.",
+      "relationship_to_E31_E40_line": "Recent line contributes strategy/evidence artifacts and KG deltas, not replacement runtime.",
+      "status": "active"
+    },
+    {
+      "component": "route registry",
+      "source_files": [
+        "operations/external_validation",
+        "governance/runtime_capability_registry.json"
+      ],
+      "source_files_found": [
+        "operations/external_validation",
+        "governance/runtime_capability_registry.json"
+      ],
+      "function": "Route candidates and runtime capability references.",
+      "data_artifacts": [
+        "operations/external_validation/b2r_action_packet_examples.json",
+        "operations/external_validation/b2r_c1_governed_action_entry_gate.json",
+        "operations/external_validation/b2r_escalation_policy.json",
+        "operations/external_validation/b2r_owner_constitutional_envelope.request.json",
+        "operations/external_validation/b2r_progressive_capability_unlock_matrix.json"
+      ],
+      "owner_role": "CEO/CTO",
+      "relationship_to_Y_star_gov": "Y-star-gov owns deterministic governance semantics; Labs only maps or references them.",
+      "relationship_to_gov_mcp": "gov-mcp owns governed MCP execution; Labs routes must align before any future action.",
+      "relationship_to_E31_E40_line": "Recent line contributes strategy/evidence artifacts and KG deltas, not replacement runtime.",
+      "status": "active"
+    },
+    {
+      "component": "repository delivery bridge",
+      "source_files": [
+        "scripts",
+        "tests"
+      ],
+      "source_files_found": [
+        "scripts",
+        "tests"
+      ],
+      "function": "Safe host-local delivery and remote confirmation.",
+      "data_artifacts": [
+        "scripts/.agent_stack.json",
+        "scripts/.agent_stack.lock",
+        "scripts/.agent_stack.ppid_72731.json",
+        "scripts/.agent_stack.ppid_72731.lock",
+        "scripts/.agent_stack.ppid_76589.json"
+      ],
+      "owner_role": "CTO",
+      "relationship_to_Y_star_gov": "Y-star-gov owns deterministic governance semantics; Labs only maps or references them.",
+      "relationship_to_gov_mcp": "gov-mcp owns governed MCP execution; Labs routes must align before any future action.",
+      "relationship_to_E31_E40_line": "Recent line contributes strategy/evidence artifacts and KG deltas, not replacement runtime.",
+      "status": "active"
+    },
+    {
+      "component": "owner approval gates",
+      "source_files": [
+        "BOARD_PENDING.md",
+        "operations/external_validation/*owner*"
+      ],
+      "source_files_found": [
+        "BOARD_PENDING.md",
+        "operations/external_validation/*owner*"
+      ],
+      "function": "Separates preparation from external action.",
+      "data_artifacts": [
+        "BOARD_PENDING.md"
+      ],
+      "owner_role": "Owner/CEO",
+      "relationship_to_Y_star_gov": "Y-star-gov owns deterministic governance semantics; Labs only maps or references them.",
+      "relationship_to_gov_mcp": "gov-mcp owns governed MCP execution; Labs routes must align before any future action.",
+      "relationship_to_E31_E40_line": "Recent line contributes strategy/evidence artifacts and KG deltas, not replacement runtime.",
+      "status": "active"
+    }
+  ],
+  "canonical_rule": "E41 evidence intelligence and frontier import methods must plug into this one CEO runtime without replacing CIEU, CZL, gov-order, route registry, or CEO KG."
+}

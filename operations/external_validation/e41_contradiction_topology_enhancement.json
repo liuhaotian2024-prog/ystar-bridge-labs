@@ -1,0 +1,46 @@
+{
+  "artifact_id": "e41_contradiction_topology_enhancement",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "input_contradictions": 2,
+  "input_downgraded_claims": 0,
+  "topology_layers": [
+    "source-source disagreement",
+    "claim-source mismatch",
+    "cluster route implication tension",
+    "unsupported overclaim pattern",
+    "buyer-facing forbidden claim"
+  ],
+  "enhancements": [
+    {
+      "name": "contradiction severity topology",
+      "method": "Contradictions are grouped by affected cluster, claim category, and route implication severity.",
+      "route_pressure_detection": "high-severity contradictions block expert/contact readiness until reviewed."
+    },
+    {
+      "name": "unsupported claim downgrader gate",
+      "method": "Forbidden buyer-facing claims are automatically marked internal_only or forbidden.",
+      "overclaim_downgrading": [
+        "customer validation",
+        "paid signal",
+        "guaranteed ROI",
+        "superiority over incumbents",
+        "compliance certification",
+        "product-market fit"
+      ]
+    }
+  ],
+  "buyer_facing_claims_forbidden": [
+    "proven customer demand",
+    "proven Y* willingness-to-pay",
+    "guaranteed ROI",
+    "superiority over incumbents",
+    "compliance certification",
+    "customer validation",
+    "paid signal",
+    "external endorsement",
+    "product-market fit"
+  ],
+  "method_only_no_external_execution": true,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false
+}

@@ -1,0 +1,1111 @@
+{
+  "artifact_id": "e41_whole_bridge_labs_runtime_archaeology",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "inspection_scope": "whole bridge-labs repository, not only E31-E40",
+  "inspect_targets": [
+    {
+      "path": "README.md",
+      "category": "root company operating identity",
+      "required": true,
+      "exists": true,
+      "file_count": 1,
+      "examples": [
+        "README.md"
+      ]
+    },
+    {
+      "path": "AGENTS.md",
+      "category": "agent instructions",
+      "required": true,
+      "exists": true,
+      "file_count": 1,
+      "examples": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "path": "HISTORY.md",
+      "category": "operating history",
+      "required": false,
+      "exists": true,
+      "file_count": 1,
+      "examples": [
+        "HISTORY.md"
+      ]
+    },
+    {
+      "path": "OPERATIONS.md",
+      "category": "operating protocol",
+      "required": true,
+      "exists": true,
+      "file_count": 1,
+      "examples": [
+        "OPERATIONS.md"
+      ]
+    },
+    {
+      "path": "DIRECTIVE_TRACKER.md",
+      "category": "directive tracker",
+      "required": true,
+      "exists": true,
+      "file_count": 1,
+      "examples": [
+        "DIRECTIVE_TRACKER.md"
+      ]
+    },
+    {
+      "path": ".czl_subgoals.json",
+      "category": "CZL subgoal state",
+      "required": true,
+      "exists": true,
+      "file_count": 1,
+      "examples": [
+        ".czl_subgoals.json"
+      ]
+    },
+    {
+      "path": "CZL.md",
+      "category": "CZL charter",
+      "required": true,
+      "exists": true,
+      "file_count": 1,
+      "examples": [
+        "CZL.md"
+      ]
+    },
+    {
+      "path": "BOARD_PENDING.md",
+      "category": "Board pending queue",
+      "required": false,
+      "exists": true,
+      "file_count": 1,
+      "examples": [
+        "BOARD_PENDING.md"
+      ]
+    },
+    {
+      "path": "agents",
+      "category": "Board/CEO/role governance",
+      "required": true,
+      "exists": true,
+      "file_count": 6,
+      "examples": [
+        "agents/CEO.md",
+        "agents/CFO.md",
+        "agents/CMO.md",
+        "agents/CSO.md",
+        "agents/CTO.md",
+        "agents/Secretary.md"
+      ]
+    },
+    {
+      "path": "governance",
+      "category": "governance and DNA log",
+      "required": true,
+      "exists": true,
+      "file_count": 91,
+      "examples": [
+        "governance/.dispatch_board.lock",
+        "governance/ACTIVE_OPERATING_CHARTER.md",
+        "governance/BOARD_CHARTER_AMENDMENTS.md",
+        "governance/CALENDAR.md",
+        "governance/CIEU_VIDEO_METHODOLOGY.md",
+        "governance/CONTINUITY_PROTOCOL.md",
+        "governance/CSO_INTEL_PROTOCOL.md",
+        "governance/DNA_LOG.md"
+      ]
+    },
+    {
+      "path": "knowledge",
+      "category": "knowledge memory",
+      "required": false,
+      "exists": true,
+      "file_count": 715,
+      "examples": [
+        "knowledge/ARCHIVE_INDEX.md",
+        "knowledge/CURRENT_TASKS.md",
+        "knowledge/bootstrap_log.md",
+        "knowledge/cases/CASE_001_CMO_fabrication.md",
+        "knowledge/cases/CASE_002_CFO_fabrication.md",
+        "knowledge/cases/CASE_003_baseline_not_triggered.md",
+        "knowledge/cases/CASE_004_directive_subtasks_lost.md",
+        "knowledge/cases/CASE_005_cross_model_governance.md"
+      ]
+    },
+    {
+      "path": "memory",
+      "category": "daily/weekly operating memory",
+      "required": false,
+      "exists": true,
+      "file_count": 64,
+      "examples": [
+        "memory/INDEX.md",
+        "memory/WORLD_STATE.md",
+        "memory/archive/continuation_archived_1776273549.md",
+        "memory/archive/czl_subgoals_9fractures_20260415.json",
+        "memory/archive/czl_subgoals_IDLE_—_awaiting_next_campaign_(Campaign_v6_candidates_in_backlog)_20260416_132139.json",
+        "memory/archive/czl_subgoals_hiagent_9wire_20260415.json",
+        "memory/archive/czl_subgoals_v3_campaign_20260415.json",
+        "memory/archive/czl_subgoals_v3_final_20260415_pm.json"
+      ]
+    },
+    {
+      "path": "reports/daily",
+      "category": "daily briefs",
+      "required": false,
+      "exists": true,
+      "file_count": 44,
+      "examples": [
+        "reports/daily/2026-03-26.md",
+        "reports/daily/2026-03-28.md",
+        "reports/daily/2026-03-30.md",
+        "reports/daily/2026-04-01.md",
+        "reports/daily/2026-04-02.md",
+        "reports/daily/2026-04-10_twin_evolution.md",
+        "reports/daily/2026-04-11_ceo_action_log.md",
+        "reports/daily/2026-04-11_learning.md"
+      ]
+    },
+    {
+      "path": "reports/insights",
+      "category": "insights reports",
+      "required": false,
+      "exists": true,
+      "file_count": 2,
+      "examples": [
+        "reports/insights/INSIGHTS_INDEX.md",
+        "reports/insights/scenario_c_croba_discovery_20260414_en.md"
+      ]
+    },
+    {
+      "path": "reports/integration",
+      "category": "integration reports",
+      "required": true,
+      "exists": true,
+      "file_count": 535,
+      "examples": [
+        "reports/integration/aiden_evidence_grounding_smoke.md",
+        "reports/integration/aiden_meta_development_method_application_20260501.md",
+        "reports/integration/b2r_c1_entry_gate.md",
+        "reports/integration/b2r_cross_repo_integration_plan.md",
+        "reports/integration/b2r_czl_closure.md",
+        "reports/integration/b2r_progressive_capability_unlock.md",
+        "reports/integration/b2r_y_gov_governed_external_action_runtime.md",
+        "reports/integration/c1_czl_closure.md"
+      ]
+    },
+    {
+      "path": "scripts/gov_order.py",
+      "category": "gov-order NL pipeline",
+      "required": true,
+      "exists": true,
+      "file_count": 1,
+      "examples": [
+        "scripts/gov_order.py"
+      ]
+    },
+    {
+      "path": "scripts/gov_order_undo.py",
+      "category": "gov-order undo",
+      "required": false,
+      "exists": true,
+      "file_count": 1,
+      "examples": [
+        "scripts/gov_order_undo.py"
+      ]
+    },
+    {
+      "path": "scripts/k9_audit_v3.py",
+      "category": "K9 audit script",
+      "required": true,
+      "exists": true,
+      "file_count": 1,
+      "examples": [
+        "scripts/k9_audit_v3.py"
+      ]
+    },
+    {
+      "path": "office/mission_command",
+      "category": "mission command modules",
+      "required": true,
+      "exists": true,
+      "file_count": 496,
+      "examples": [
+        "office/mission_command/README.md",
+        "office/mission_command/__init__.py",
+        "office/mission_command/action_authorization_router.py",
+        "office/mission_command/action_inventory.py",
+        "office/mission_command/action_semantics.py",
+        "office/mission_command/b2r_account_governance.py",
+        "office/mission_command/b2r_authenticated_session_policy.py",
+        "office/mission_command/b2r_c1_entry_gate.py"
+      ]
+    },
+    {
+      "path": "operations/external_validation",
+      "category": "external validation artifacts",
+      "required": true,
+      "exists": true,
+      "file_count": 494,
+      "examples": [
+        "operations/external_validation/b2r_action_packet_examples.json",
+        "operations/external_validation/b2r_c1_governed_action_entry_gate.json",
+        "operations/external_validation/b2r_escalation_policy.json",
+        "operations/external_validation/b2r_owner_constitutional_envelope.request.json",
+        "operations/external_validation/b2r_progressive_capability_unlock_matrix.json",
+        "operations/external_validation/c1_action_intent_examples.json",
+        "operations/external_validation/c1_action_ledger.template.json",
+        "operations/external_validation/c1_feedback_events.template.json"
+      ]
+    },
+    {
+      "path": "operations/knowledge_graph",
+      "category": "CEO KG delta artifacts",
+      "required": true,
+      "exists": true,
+      "file_count": 83,
+      "examples": [
+        "operations/knowledge_graph/e24_ceo_kg_edges.jsonl",
+        "operations/knowledge_graph/e24_ceo_kg_entity_resolution.json",
+        "operations/knowledge_graph/e24_ceo_kg_evidence_index.json",
+        "operations/knowledge_graph/e24_ceo_kg_nodes.jsonl",
+        "operations/knowledge_graph/e24_ceo_kg_promotion_candidates.json",
+        "operations/knowledge_graph/e24_ceo_kg_read_model.json",
+        "operations/knowledge_graph/e25_ceo_kg_edges_delta.jsonl",
+        "operations/knowledge_graph/e25_ceo_kg_feedback_ingestion.json"
+      ]
+    },
+    {
+      "path": "tests",
+      "category": "test suite",
+      "required": true,
+      "exists": true,
+      "file_count": 724,
+      "examples": [
+        "tests/__init__.py",
+        "tests/conftest.py",
+        "tests/demo_rle_e2e.py",
+        "tests/domains/test_ultimate_restart.py",
+        "tests/exp008_cieu_query.py",
+        "tests/exp008_comparison.py",
+        "tests/exp008_daemon_bench.py",
+        "tests/exp008_mode_c.py"
+      ]
+    }
+  ],
+  "canonical_runtime_components": [
+    {
+      "component": "root company operating identity",
+      "source_files": [
+        "README.md",
+        "IDENTITY.md",
+        "SOUL.md",
+        "AGENTS.md"
+      ],
+      "function": "Defines company identity, agent expectations, and operating frame.",
+      "status": "active"
+    },
+    {
+      "component": "Board/CEO/role governance",
+      "source_files": [
+        "agents/CEO.md",
+        "agents/CFO.md",
+        "agents/CMO.md",
+        "agents/CSO.md",
+        "agents/CTO.md",
+        "agents/Secretary.md"
+      ],
+      "function": "Defines CEO and functional role authority surfaces.",
+      "status": "active"
+    },
+    {
+      "component": "CZL closure loop",
+      "source_files": [
+        "CZL.md",
+        ".czl_subgoals.json",
+        "office/mission_command/czl_mission_loop.py"
+      ],
+      "function": "Tracks subgoals, completion, closure, and learning boundaries.",
+      "status": "active"
+    },
+    {
+      "component": "CIEU evidence chain references",
+      "source_files": [
+        "cieu_trace.py",
+        "docs/cieu_event_schema.md",
+        "governance/cieu_event_taxonomy.md",
+        ".cieu.db"
+      ],
+      "function": "Evidence chain references and event taxonomy; E41 evidence graph does not replace this.",
+      "status": "active"
+    },
+    {
+      "component": "gov-order NL pipeline",
+      "source_files": [
+        "scripts/gov_order.py",
+        "scripts/gov_order_undo.py"
+      ],
+      "function": "Natural-language governance order handling and undo support.",
+      "status": "active"
+    },
+    {
+      "component": "CROBA / pre-action boundary",
+      "source_files": [
+        "governance/pre_build_routing_gate_v1.md",
+        "governance/tiered_routing_protocol_v1.md"
+      ],
+      "function": "Pre-action routing and build gates before operational movement.",
+      "status": "active"
+    },
+    {
+      "component": "daily operating memory",
+      "source_files": [
+        "memory/INDEX.md",
+        "memory/WORLD_STATE.md",
+        "memory/archive/continuation_archived_1776273549.md",
+        "memory/archive/czl_subgoals_9fractures_20260415.json",
+        "memory/archive/czl_subgoals_IDLE_—_awaiting_next_campaign_(Campaign_v6_candidates_in_backlog)_20260416_132139.json",
+        "memory/archive/czl_subgoals_hiagent_9wire_20260415.json",
+        "memory/archive/czl_subgoals_v3_campaign_20260415.json",
+        "memory/archive/czl_subgoals_v3_final_20260415_pm.json",
+        "memory/archive/czl_subgoals_v6_close_20260416_165342.json",
+        "memory/archive/session_handoff_now_archived_1776273549.md",
+        "reports/daily/2026-03-26.md",
+        "reports/daily/2026-03-28.md",
+        "reports/daily/2026-03-30.md",
+        "reports/daily/2026-04-01.md",
+        "reports/daily/2026-04-02.md",
+        "reports/daily/2026-04-10_twin_evolution.md",
+        "reports/daily/2026-04-11_ceo_action_log.md",
+        "reports/daily/2026-04-11_learning.md",
+        "reports/daily/2026-04-11_mission_report.md",
+        "reports/daily/2026-04-11_morning.md"
+      ],
+      "function": "Session handoff, world state, daily briefs, and operational continuity.",
+      "status": "active"
+    },
+    {
+      "component": "directive tracking",
+      "source_files": [
+        "DIRECTIVE_TRACKER.md",
+        "BOARD_PENDING.md",
+        "directive_retriage.json"
+      ],
+      "function": "Tracks Board/owner directives and pending queues.",
+      "status": "active"
+    },
+    {
+      "component": "repository delivery bridge",
+      "source_files": [
+        "scripts/check_repository_delivery.py",
+        "scripts/repository_delivery_bridge_install.py",
+        "scripts/repository_delivery_bridge_schema.py",
+        "scripts/repository_delivery_bridge_smoke_test.py",
+        "scripts/repository_delivery_bridge_status.py",
+        "scripts/repository_delivery_bridge_submit.py",
+        "scripts/repository_delivery_bridge_worker.py",
+        "scripts/repository_delivery_transport.py",
+        "scripts/repository_delivery_transport_doctor.py"
+      ],
+      "function": "Host-local safe commit/push delivery boundary.",
+      "status": "active"
+    }
+  ],
+  "E31_E40_recent_line_components": {
+    "E31": {
+      "external_validation_artifacts": [
+        "operations/external_validation/e31_ceo_brain_real_world_signal_update.json",
+        "operations/external_validation/e31_ceo_kg_real_world_evidence_needs.json",
+        "operations/external_validation/e31_competitor_service_comparison.json",
+        "operations/external_validation/e31_czl_closure.json",
+        "operations/external_validation/e31_ecosystem_alignment_gate.json",
+        "operations/external_validation/e31_existing_real_world_observation_wheel_inventory.json",
+        "operations/external_validation/e31_future_real_world_behavior_policy.json",
+        "operations/external_validation/e31_observed_buyer_pain_evidence.json",
+        "operations/external_validation/e31_offer_claim_register.json",
+        "operations/external_validation/e31_paid_readiness_review_signal_package.json",
+        "operations/external_validation/e31_public_source_selection.json",
+        "operations/external_validation/e31_real_signal_route_decision.json",
+        "operations/external_validation/e31_real_world_observation_receipts.json",
+        "operations/external_validation/e31_real_world_observation_run.json",
+        "operations/external_validation/e31_real_world_signal_control_room.json",
+        "operations/external_validation/e31_repo_modification_decision_packet.json"
+      ],
+      "mission_modules": [
+        "office/mission_command/e31_ceo_brain_real_world_signal_update.py",
+        "office/mission_command/e31_ceo_kg_real_world_evidence_needs.py",
+        "office/mission_command/e31_ceo_kg_real_world_feedback.py",
+        "office/mission_command/e31_ecosystem_alignment_gate.py",
+        "office/mission_command/e31_evidence_extraction_claim_binding.py",
+        "office/mission_command/e31_existing_real_world_observation_wheel_inventory.py",
+        "office/mission_command/e31_future_real_world_behavior_policy.py",
+        "office/mission_command/e31_paid_readiness_review_signal_package.py",
+        "office/mission_command/e31_public_source_selection.py",
+        "office/mission_command/e31_real_signal_route_decision.py",
+        "office/mission_command/e31_real_world_observation_runner.py",
+        "office/mission_command/e31_real_world_signal_control_room.py"
+      ],
+      "integration_reports": [
+        "reports/integration/e31_ceo_brain_real_world_signal_update.md",
+        "reports/integration/e31_ceo_kg_real_world_evidence_needs.md",
+        "reports/integration/e31_czl_closure.md",
+        "reports/integration/e31_ecosystem_alignment_gate.md",
+        "reports/integration/e31_evidence_extraction_and_claim_binding.md",
+        "reports/integration/e31_existing_real_world_observation_wheel_inventory.md",
+        "reports/integration/e31_future_real_world_behavior_policy.md",
+        "reports/integration/e31_paid_readiness_review_signal_package.md",
+        "reports/integration/e31_public_source_selection.md",
+        "reports/integration/e31_real_signal_route_decision.md",
+        "reports/integration/e31_real_world_observation_run.md",
+        "reports/integration/e31_real_world_signal_control_room.md"
+      ],
+      "office_tests": [
+        "tests/office/test_e31_ceo_brain_real_world_signal_update.py",
+        "tests/office/test_e31_ceo_kg_real_world_evidence_needs.py",
+        "tests/office/test_e31_ceo_kg_real_world_feedback.py",
+        "tests/office/test_e31_czl_closure.py",
+        "tests/office/test_e31_ecosystem_alignment_gate.py",
+        "tests/office/test_e31_evidence_extraction_claim_binding.py",
+        "tests/office/test_e31_existing_real_world_observation_wheel_inventory.py",
+        "tests/office/test_e31_future_real_world_behavior_policy.py",
+        "tests/office/test_e31_paid_readiness_review_signal_package.py",
+        "tests/office/test_e31_public_source_selection.py",
+        "tests/office/test_e31_real_signal_route_decision.py",
+        "tests/office/test_e31_real_world_observation_runner.py",
+        "tests/office/test_e31_real_world_signal_control_room.py"
+      ]
+    },
+    "E32": {
+      "external_validation_artifacts": [
+        "operations/external_validation/e32_base_reconciliation.json",
+        "operations/external_validation/e32_ceo_brain_deep_learning_update.json",
+        "operations/external_validation/e32_ceo_brain_frontier_mvp_update.json",
+        "operations/external_validation/e32_ceo_learning_agenda.json",
+        "operations/external_validation/e32_ceo_strategy_control_room.json",
+        "operations/external_validation/e32_controlled_research_plan.json",
+        "operations/external_validation/e32_czl_closure.json",
+        "operations/external_validation/e32_ecosystem_alignment_gate.json",
+        "operations/external_validation/e32_existing_learning_strategy_wheel_inventory.json",
+        "operations/external_validation/e32_existing_player_failure_analysis.json",
+        "operations/external_validation/e32_frontier_research_agenda.json",
+        "operations/external_validation/e32_frontier_research_receipts.json",
+        "operations/external_validation/e32_frontier_research_run.json",
+        "operations/external_validation/e32_frontier_world_model.json",
+        "operations/external_validation/e32_full_ecosystem_runtime_archaeology.json",
+        "operations/external_validation/e32_future_ceo_learning_policy.json",
+        "operations/external_validation/e32_future_frontier_mvp_policy.json",
+        "operations/external_validation/e32_market_buyer_understanding_synthesis.json",
+        "operations/external_validation/e32_multi_path_business_plans.json",
+        "operations/external_validation/e32_open_monetization_paths.json",
+        "operations/external_validation/e32_owner_discussion_packet.json",
+        "operations/external_validation/e32_portfolio_selection_and_owner_discussion_agenda.json",
+        "operations/external_validation/e32_real_world_learning_receipts.json",
+        "operations/external_validation/e32_real_world_learning_run.json",
+        "operations/external_validation/e32_repo_modification_decision_packet.json",
+        "operations/external_validation/e32_shock_level_mvp_candidates.json",
+        "operations/external_validation/e32_shock_level_mvp_selection.json",
+        "operations/external_validation/e32_technical_understanding_synthesis.json",
+        "operations/external_validation/e32_unique_advantage_weakness_analysis.json",
+        "operations/external_validation/e32_world_fracture_institutional_void_map.json",
+        "operations/external_validation/e32_y_star_unique_fitness_analysis.json"
+      ],
+      "mission_modules": [
+        "office/mission_command/e32_base_reconciliation.py",
+        "office/mission_command/e32_ceo_brain_deep_learning_update.py",
+        "office/mission_command/e32_ceo_brain_frontier_mvp_update.py",
+        "office/mission_command/e32_ceo_kg_frontier_mvp_feedback.py",
+        "office/mission_command/e32_ceo_kg_learning_strategy_feedback.py",
+        "office/mission_command/e32_ceo_learning_agenda.py",
+        "office/mission_command/e32_ceo_strategy_control_room.py",
+        "office/mission_command/e32_controlled_research_plan.py",
+        "office/mission_command/e32_ecosystem_alignment_gate.py",
+        "office/mission_command/e32_existing_learning_strategy_wheel_inventory.py",
+        "office/mission_command/e32_existing_player_failure_analysis.py",
+        "office/mission_command/e32_frontier_research_agenda.py",
+        "office/mission_command/e32_frontier_research_runner.py",
+        "office/mission_command/e32_frontier_world_model.py",
+        "office/mission_command/e32_full_ecosystem_runtime_archaeology.py",
+        "office/mission_command/e32_future_ceo_learning_policy.py",
+        "office/mission_command/e32_future_frontier_mvp_policy.py",
+        "office/mission_command/e32_market_buyer_understanding_synthesis.py",
+        "office/mission_command/e32_multi_path_business_plan_builder.py",
+        "office/mission_command/e32_open_monetization_path_generator.py",
+        "office/mission_command/e32_portfolio_selection_owner_discussion.py",
+        "office/mission_command/e32_real_world_learning_runner.py",
+        "office/mission_command/e32_shock_level_mvp_generator.py",
+        "office/mission_command/e32_shock_level_mvp_selector.py",
+        "office/mission_command/e32_technical_understanding_synthesis.py",
+        "office/mission_command/e32_unique_advantage_weakness_analysis.py",
+        "office/mission_command/e32_world_fracture_map.py",
+        "office/mission_command/e32_y_star_unique_fitness_analysis.py"
+      ],
+      "integration_reports": [
+        "reports/integration/e32_base_reconciliation.md",
+        "reports/integration/e32_ceo_brain_deep_learning_update.md",
+        "reports/integration/e32_ceo_deep_learning_market_strategy.md",
+        "reports/integration/e32_ceo_kg_brain_update.md",
+        "reports/integration/e32_ceo_learning_agenda.md",
+        "reports/integration/e32_ceo_strategy_control_room.md",
+        "reports/integration/e32_controlled_research_plan.md",
+        "reports/integration/e32_czl_closure.md",
+        "reports/integration/e32_ecosystem_alignment_gate.md",
+        "reports/integration/e32_existing_learning_strategy_wheel_inventory.md",
+        "reports/integration/e32_existing_player_failure_analysis.md",
+        "reports/integration/e32_frontier_research.md",
+        "reports/integration/e32_frontier_research_agenda.md",
+        "reports/integration/e32_frontier_world_model.md",
+        "reports/integration/e32_full_ecosystem_runtime_archaeology.md",
+        "reports/integration/e32_future_ceo_learning_policy.md",
+        "reports/integration/e32_future_frontier_mvp_policy.md",
+        "reports/integration/e32_market_buyer_understanding_synthesis.md",
+        "reports/integration/e32_multi_path_business_plans.md",
+        "reports/integration/e32_open_monetization_paths.md",
+        "reports/integration/e32_owner_discussion_packet.md",
+        "reports/integration/e32_portfolio_selection_and_owner_discussion_agenda.md",
+        "reports/integration/e32_real_world_learning_run.md",
+        "reports/integration/e32_shock_level_mvp_candidates.md",
+        "reports/integration/e32_shock_level_mvp_selection.md",
+        "reports/integration/e32_technical_understanding_synthesis.md",
+        "reports/integration/e32_unique_advantage_weakness_analysis.md",
+        "reports/integration/e32_world_fracture_institutional_void_map.md",
+        "reports/integration/e32_y_star_unique_fitness_analysis.md"
+      ],
+      "office_tests": [
+        "tests/office/test_e32_base_reconciliation.py",
+        "tests/office/test_e32_ceo_brain_deep_learning_update.py",
+        "tests/office/test_e32_ceo_brain_frontier_mvp_update.py",
+        "tests/office/test_e32_ceo_kg_frontier_mvp_feedback.py",
+        "tests/office/test_e32_ceo_kg_learning_strategy_feedback.py",
+        "tests/office/test_e32_ceo_learning_agenda.py",
+        "tests/office/test_e32_ceo_strategy_control_room.py",
+        "tests/office/test_e32_controlled_research_plan.py",
+        "tests/office/test_e32_czl_closure.py",
+        "tests/office/test_e32_ecosystem_alignment_gate.py",
+        "tests/office/test_e32_existing_learning_strategy_wheel_inventory.py",
+        "tests/office/test_e32_existing_player_failure_analysis.py",
+        "tests/office/test_e32_frontier_research_runner.py",
+        "tests/office/test_e32_frontier_world_model.py",
+        "tests/office/test_e32_frontier_world_mvp_strategy.py",
+        "tests/office/test_e32_full_ecosystem_runtime_archaeology.py",
+        "tests/office/test_e32_future_ceo_learning_policy.py",
+        "tests/office/test_e32_future_frontier_mvp_policy.py",
+        "tests/office/test_e32_market_buyer_understanding_synthesis.py",
+        "tests/office/test_e32_multi_path_business_plan_builder.py",
+        "tests/office/test_e32_open_monetization_path_generator.py",
+        "tests/office/test_e32_portfolio_selection_owner_discussion.py",
+        "tests/office/test_e32_real_world_learning_runner.py",
+        "tests/office/test_e32_shock_level_mvp_generator.py",
+        "tests/office/test_e32_shock_level_mvp_selector.py",
+        "tests/office/test_e32_technical_understanding_synthesis.py",
+        "tests/office/test_e32_unique_advantage_weakness_analysis.py",
+        "tests/office/test_e32_world_fracture_map.py",
+        "tests/office/test_e32_y_star_unique_fitness_analysis.py"
+      ]
+    },
+    "E33": {
+      "external_validation_artifacts": [
+        "operations/external_validation/e33_agent_action_black_box_demo_packet.json",
+        "operations/external_validation/e33_agent_action_black_box_demo_record.json",
+        "operations/external_validation/e33_agent_action_black_box_schema.json",
+        "operations/external_validation/e33_black_box_buyer_view.json",
+        "operations/external_validation/e33_black_box_no_fake_evidence_audit.json",
+        "operations/external_validation/e33_ceo_brain_black_box_update.json",
+        "operations/external_validation/e33_czl_closure.json",
+        "operations/external_validation/e33_input_artifact_manifest.json",
+        "operations/external_validation/e33_no_rebuild_alignment_gate.json",
+        "operations/external_validation/e33_owner_validation_route.json"
+      ],
+      "mission_modules": [
+        "office/mission_command/e33_agent_action_black_box_builder.py",
+        "office/mission_command/e33_agent_action_black_box_demo_packet.py",
+        "office/mission_command/e33_agent_action_black_box_schema.py",
+        "office/mission_command/e33_black_box_buyer_view.py",
+        "office/mission_command/e33_ceo_brain_black_box_update.py",
+        "office/mission_command/e33_ceo_kg_black_box_feedback.py",
+        "office/mission_command/e33_no_rebuild_alignment_gate.py",
+        "office/mission_command/e33_owner_validation_route.py"
+      ],
+      "integration_reports": [
+        "reports/integration/e33_agent_action_black_box_demo_packet.md",
+        "reports/integration/e33_agent_action_black_box_demo_record.md",
+        "reports/integration/e33_black_box_buyer_view.md",
+        "reports/integration/e33_black_box_no_fake_evidence_audit.md",
+        "reports/integration/e33_ceo_kg_brain_black_box_update.md",
+        "reports/integration/e33_czl_closure.md",
+        "reports/integration/e33_input_artifact_manifest.md",
+        "reports/integration/e33_no_rebuild_alignment_gate.md",
+        "reports/integration/e33_owner_validation_route.md"
+      ],
+      "office_tests": [
+        "tests/office/test_e33_agent_action_black_box_demo_packet.py",
+        "tests/office/test_e33_no_rebuild_alignment_gate.py",
+        "tests/office/test_e33_owner_validation_route.py"
+      ]
+    },
+    "E34": {
+      "external_validation_artifacts": [
+        "operations/external_validation/e34_analogy_transfer_engine.json",
+        "operations/external_validation/e34_ceo_brain_imagination_methodology_update.json",
+        "operations/external_validation/e34_ceo_decision_failure_diagnosis.json",
+        "operations/external_validation/e34_ceo_imagination_input_manifest.json",
+        "operations/external_validation/e34_ceo_imagination_to_decision_protocol.json",
+        "operations/external_validation/e34_commercial_reality_discipline.json",
+        "operations/external_validation/e34_czl_closure.json",
+        "operations/external_validation/e34_frontier_case_archaeology_methodology.json",
+        "operations/external_validation/e34_institutional_void_mapper.json",
+        "operations/external_validation/e34_no_rebuild_alignment_gate.json",
+        "operations/external_validation/e34_non_obvious_opportunity_spaces.json",
+        "operations/external_validation/e34_primitive_shift_detector.json"
+      ],
+      "mission_modules": [
+        "office/mission_command/e34_analogy_transfer_engine.py",
+        "office/mission_command/e34_ceo_brain_imagination_methodology_update.py",
+        "office/mission_command/e34_ceo_decision_failure_diagnosis.py",
+        "office/mission_command/e34_ceo_imagination_to_decision_protocol.py",
+        "office/mission_command/e34_ceo_kg_imagination_methodology_feedback.py",
+        "office/mission_command/e34_commercial_reality_discipline.py",
+        "office/mission_command/e34_frontier_case_archaeology_methodology.py",
+        "office/mission_command/e34_institutional_void_mapper.py",
+        "office/mission_command/e34_non_obvious_opportunity_generator.py",
+        "office/mission_command/e34_primitive_shift_detector.py"
+      ],
+      "integration_reports": [
+        "reports/integration/e34_analogy_transfer_engine.md",
+        "reports/integration/e34_ceo_decision_failure_diagnosis.md",
+        "reports/integration/e34_ceo_imagination_input_manifest.md",
+        "reports/integration/e34_ceo_imagination_to_decision_protocol.md",
+        "reports/integration/e34_ceo_kg_brain_imagination_methodology_update.md",
+        "reports/integration/e34_commercial_reality_discipline.md",
+        "reports/integration/e34_czl_closure.md",
+        "reports/integration/e34_frontier_case_archaeology_methodology.md",
+        "reports/integration/e34_institutional_void_mapper.md",
+        "reports/integration/e34_no_rebuild_alignment_gate.md",
+        "reports/integration/e34_non_obvious_opportunity_spaces.md",
+        "reports/integration/e34_primitive_shift_detector.md"
+      ],
+      "office_tests": [
+        "tests/office/test_e34_analogy_transfer_engine.py",
+        "tests/office/test_e34_ceo_decision_failure_diagnosis.py",
+        "tests/office/test_e34_ceo_imagination_to_decision_protocol.py",
+        "tests/office/test_e34_commercial_reality_discipline.py",
+        "tests/office/test_e34_frontier_case_archaeology_methodology.py",
+        "tests/office/test_e34_institutional_void_mapper.py",
+        "tests/office/test_e34_non_obvious_opportunity_generator.py",
+        "tests/office/test_e34_primitive_shift_detector.py"
+      ]
+    },
+    "E35": {
+      "external_validation_artifacts": [
+        "operations/external_validation/e35_base_and_brain_contract_manifest.json",
+        "operations/external_validation/e35_capability_abstraction_recombination_method.json",
+        "operations/external_validation/e35_ceo_brain_unified_six_dimensional_update.json",
+        "operations/external_validation/e35_ceo_methodology_quality_audit.json",
+        "operations/external_validation/e35_cross_domain_opportunity_field.json",
+        "operations/external_validation/e35_cross_domain_universe_expansion_method.json",
+        "operations/external_validation/e35_cross_repo_governance_execution_alignment.json",
+        "operations/external_validation/e35_cross_repo_sync_backlog.json",
+        "operations/external_validation/e35_czl_closure.json",
+        "operations/external_validation/e35_multi_hop_abstraction_jump_engine.json",
+        "operations/external_validation/e35_no_rebuild_alignment_gate.json",
+        "operations/external_validation/e35_one_brain_integration_guard.json",
+        "operations/external_validation/e35_six_dimensional_ceo_cognition_model.json",
+        "operations/external_validation/e35_six_dimensional_opportunity_cognition_protocol.json",
+        "operations/external_validation/e35_superhuman_ceo_cognition_challenge.json"
+      ],
+      "mission_modules": [
+        "office/mission_command/e35_capability_abstraction_recombination_method.py",
+        "office/mission_command/e35_ceo_brain_unified_six_dimensional_update.py",
+        "office/mission_command/e35_ceo_kg_unified_brain_expansion_feedback.py",
+        "office/mission_command/e35_ceo_methodology_quality_audit.py",
+        "office/mission_command/e35_cross_domain_opportunity_field_generator.py",
+        "office/mission_command/e35_cross_domain_universe_expansion_method.py",
+        "office/mission_command/e35_cross_repo_governance_execution_alignment.py",
+        "office/mission_command/e35_cross_repo_sync_backlog.py",
+        "office/mission_command/e35_multi_hop_abstraction_jump_engine.py",
+        "office/mission_command/e35_one_brain_integration_guard.py",
+        "office/mission_command/e35_six_dimensional_ceo_cognition_model.py",
+        "office/mission_command/e35_six_dimensional_opportunity_cognition_protocol.py",
+        "office/mission_command/e35_superhuman_ceo_cognition_challenge.py"
+      ],
+      "integration_reports": [
+        "reports/integration/e35_base_and_brain_contract_manifest.md",
+        "reports/integration/e35_capability_abstraction_recombination_method.md",
+        "reports/integration/e35_ceo_kg_brain_unified_six_dimensional_update.md",
+        "reports/integration/e35_ceo_methodology_quality_audit.md",
+        "reports/integration/e35_cross_domain_opportunity_field.md",
+        "reports/integration/e35_cross_domain_universe_expansion_method.md",
+        "reports/integration/e35_cross_repo_governance_execution_alignment.md",
+        "reports/integration/e35_cross_repo_sync_backlog.md",
+        "reports/integration/e35_czl_closure.md",
+        "reports/integration/e35_multi_hop_abstraction_jump_engine.md",
+        "reports/integration/e35_no_rebuild_alignment_gate.md",
+        "reports/integration/e35_one_brain_integration_guard.md",
+        "reports/integration/e35_six_dimensional_ceo_cognition_model.md",
+        "reports/integration/e35_six_dimensional_opportunity_cognition_protocol.md",
+        "reports/integration/e35_superhuman_ceo_cognition_challenge.md"
+      ],
+      "office_tests": [
+        "tests/office/test_e35_capability_abstraction_recombination_method.py",
+        "tests/office/test_e35_ceo_methodology_quality_audit.py",
+        "tests/office/test_e35_cross_domain_opportunity_field_generator.py",
+        "tests/office/test_e35_cross_domain_universe_expansion_method.py",
+        "tests/office/test_e35_cross_repo_governance_execution_alignment.py",
+        "tests/office/test_e35_cross_repo_sync_backlog.py",
+        "tests/office/test_e35_multi_hop_abstraction_jump_engine.py",
+        "tests/office/test_e35_one_brain_integration_guard.py",
+        "tests/office/test_e35_six_dimensional_ceo_cognition_model.py",
+        "tests/office/test_e35_six_dimensional_opportunity_cognition_protocol.py",
+        "tests/office/test_e35_superhuman_ceo_cognition_challenge.py"
+      ]
+    },
+    "E36": {
+      "external_validation_artifacts": [
+        "operations/external_validation/e36_adversarial_ceo_board_review.json",
+        "operations/external_validation/e36_base_cross_repo_state_manifest.json",
+        "operations/external_validation/e36_ceo_brain_strategy_field_trial_update.json",
+        "operations/external_validation/e36_cross_repo_governance_primitive_alignment.json",
+        "operations/external_validation/e36_cross_repo_sync_backlog.json",
+        "operations/external_validation/e36_czl_closure.json",
+        "operations/external_validation/e36_demand_budget_reality_screen.json",
+        "operations/external_validation/e36_e35_capability_effect_audit.json",
+        "operations/external_validation/e36_evidence_seeking_shortlist.json",
+        "operations/external_validation/e36_gov_mcp_execution_boundary_alignment.json",
+        "operations/external_validation/e36_new_capability_creation_planner.json",
+        "operations/external_validation/e36_no_rebuild_alignment_gate.json",
+        "operations/external_validation/e36_opportunity_evidence_ladder.json",
+        "operations/external_validation/e36_strategic_field_trial_results.json"
+      ],
+      "mission_modules": [
+        "office/mission_command/e36_adversarial_ceo_board_review.py",
+        "office/mission_command/e36_ceo_brain_strategy_field_trial_update.py",
+        "office/mission_command/e36_ceo_kg_strategy_field_trial_feedback.py",
+        "office/mission_command/e36_cross_repo_governance_primitive_alignment.py",
+        "office/mission_command/e36_demand_budget_reality_screen.py",
+        "office/mission_command/e36_e35_capability_effect_audit.py",
+        "office/mission_command/e36_evidence_seeking_shortlist_builder.py",
+        "office/mission_command/e36_gov_mcp_execution_boundary_alignment.py",
+        "office/mission_command/e36_new_capability_creation_planner.py",
+        "office/mission_command/e36_opportunity_evidence_ladder.py",
+        "office/mission_command/e36_strategic_field_trial_runner.py"
+      ],
+      "integration_reports": [
+        "reports/integration/e36_adversarial_ceo_board_review.md",
+        "reports/integration/e36_base_cross_repo_state_manifest.md",
+        "reports/integration/e36_ceo_kg_brain_strategy_field_trial_update.md",
+        "reports/integration/e36_cross_repo_governance_primitive_alignment.md",
+        "reports/integration/e36_cross_repo_sync_backlog.md",
+        "reports/integration/e36_czl_closure.md",
+        "reports/integration/e36_demand_budget_reality_screen.md",
+        "reports/integration/e36_e35_capability_effect_audit.md",
+        "reports/integration/e36_evidence_seeking_shortlist.md",
+        "reports/integration/e36_gov_mcp_execution_boundary_alignment.md",
+        "reports/integration/e36_new_capability_creation_planner.md",
+        "reports/integration/e36_no_rebuild_alignment_gate.md",
+        "reports/integration/e36_opportunity_evidence_ladder.md",
+        "reports/integration/e36_strategic_field_trial_results.md"
+      ],
+      "office_tests": [
+        "tests/office/test_e36_adversarial_ceo_board_review.py",
+        "tests/office/test_e36_cross_repo_governance_primitive_alignment.py",
+        "tests/office/test_e36_demand_budget_reality_screen.py",
+        "tests/office/test_e36_e35_capability_effect_audit.py",
+        "tests/office/test_e36_evidence_seeking_shortlist_builder.py",
+        "tests/office/test_e36_gov_mcp_execution_boundary_alignment.py",
+        "tests/office/test_e36_new_capability_creation_planner.py",
+        "tests/office/test_e36_opportunity_evidence_ladder.py",
+        "tests/office/test_e36_strategic_field_trial_runner.py"
+      ]
+    },
+    "E37": {
+      "external_validation_artifacts": [
+        "operations/external_validation/e37_base_cross_repo_state_manifest.json",
+        "operations/external_validation/e37_ceo_brain_evidence_preflight_update.json",
+        "operations/external_validation/e37_cross_repo_sync_backlog.json",
+        "operations/external_validation/e37_czl_closure.json",
+        "operations/external_validation/e37_evidence_route_gov_mcp_alignment.json",
+        "operations/external_validation/e37_evidence_route_y_star_gov_alignment.json",
+        "operations/external_validation/e37_evidence_sprint_focus_recommendation.json",
+        "operations/external_validation/e37_expert_review_route_packet.json",
+        "operations/external_validation/e37_no_rebuild_alignment_gate.json",
+        "operations/external_validation/e37_normalized_opportunity_clusters.json",
+        "operations/external_validation/e37_owner_approval_packet_for_e38.json",
+        "operations/external_validation/e37_public_readonly_evidence_sprint_design.json",
+        "operations/external_validation/e37_shortlist_taxonomy_repair.json"
+      ],
+      "mission_modules": [
+        "office/mission_command/e37_ceo_brain_evidence_preflight_update.py",
+        "office/mission_command/e37_ceo_kg_evidence_preflight_feedback.py",
+        "office/mission_command/e37_evidence_route_gov_mcp_alignment.py",
+        "office/mission_command/e37_evidence_route_y_star_gov_alignment.py",
+        "office/mission_command/e37_evidence_sprint_focus_recommender.py",
+        "office/mission_command/e37_expert_review_route_packet.py",
+        "office/mission_command/e37_opportunity_cluster_normalizer.py",
+        "office/mission_command/e37_owner_approval_packet_for_e38.py",
+        "office/mission_command/e37_public_readonly_evidence_sprint_design.py",
+        "office/mission_command/e37_shortlist_taxonomy_repair.py"
+      ],
+      "integration_reports": [
+        "reports/integration/e37_base_cross_repo_state_manifest.md",
+        "reports/integration/e37_ceo_kg_brain_evidence_preflight_update.md",
+        "reports/integration/e37_cross_repo_sync_backlog.md",
+        "reports/integration/e37_czl_closure.md",
+        "reports/integration/e37_evidence_route_gov_mcp_alignment.md",
+        "reports/integration/e37_evidence_route_y_star_gov_alignment.md",
+        "reports/integration/e37_evidence_sprint_focus_recommendation.md",
+        "reports/integration/e37_expert_review_route_packet.md",
+        "reports/integration/e37_no_rebuild_alignment_gate.md",
+        "reports/integration/e37_normalized_opportunity_clusters.md",
+        "reports/integration/e37_owner_approval_packet_for_e38.md",
+        "reports/integration/e37_public_readonly_evidence_sprint_design.md",
+        "reports/integration/e37_shortlist_taxonomy_repair.md"
+      ],
+      "office_tests": [
+        "tests/office/test_e37_evidence_route_gov_mcp_alignment.py",
+        "tests/office/test_e37_evidence_route_y_star_gov_alignment.py",
+        "tests/office/test_e37_evidence_sprint_focus_recommender.py",
+        "tests/office/test_e37_expert_review_route_packet.py",
+        "tests/office/test_e37_opportunity_cluster_normalizer.py",
+        "tests/office/test_e37_owner_approval_packet_for_e38.py",
+        "tests/office/test_e37_public_readonly_evidence_sprint_design.py",
+        "tests/office/test_e37_shortlist_taxonomy_repair.py"
+      ]
+    },
+    "E38": {
+      "external_validation_artifacts": [
+        "operations/external_validation/e38_base_cross_repo_state_manifest.json",
+        "operations/external_validation/e38_ceo_brain_public_evidence_update.json",
+        "operations/external_validation/e38_ceo_capability_gap_mapping.json",
+        "operations/external_validation/e38_claim_extraction_evidence_grading.json",
+        "operations/external_validation/e38_cluster_evidence_update.json",
+        "operations/external_validation/e38_comparative_cluster_ranking.json",
+        "operations/external_validation/e38_cross_repo_sync_backlog.json",
+        "operations/external_validation/e38_czl_closure.json",
+        "operations/external_validation/e38_expert_review_packet_refinement.json",
+        "operations/external_validation/e38_frontier_capability_import_backlog.json",
+        "operations/external_validation/e38_frontier_capability_import_scan.json",
+        "operations/external_validation/e38_gov_mcp_alignment_after_evidence.json",
+        "operations/external_validation/e38_no_rebuild_alignment_gate.json",
+        "operations/external_validation/e38_owner_decision_packet_for_e39.json",
+        "operations/external_validation/e38_public_evidence_receipts.json",
+        "operations/external_validation/e38_public_evidence_research_agenda.json",
+        "operations/external_validation/e38_public_readonly_permission_envelope.json",
+        "operations/external_validation/e38_public_source_collection_run.json",
+        "operations/external_validation/e38_y_star_gov_alignment_after_evidence.json"
+      ],
+      "mission_modules": [
+        "office/mission_command/e38_ceo_brain_public_evidence_update.py",
+        "office/mission_command/e38_ceo_capability_gap_mapping.py",
+        "office/mission_command/e38_ceo_kg_public_evidence_feedback.py",
+        "office/mission_command/e38_claim_extraction_evidence_grading.py",
+        "office/mission_command/e38_cluster_evidence_update.py",
+        "office/mission_command/e38_comparative_cluster_ranking.py",
+        "office/mission_command/e38_expert_review_packet_refinement.py",
+        "office/mission_command/e38_frontier_capability_import_scan.py",
+        "office/mission_command/e38_gov_mcp_alignment_after_evidence.py",
+        "office/mission_command/e38_owner_decision_packet_for_e39.py",
+        "office/mission_command/e38_public_evidence_research_agenda.py",
+        "office/mission_command/e38_public_readonly_permission_envelope.py",
+        "office/mission_command/e38_public_source_collector.py",
+        "office/mission_command/e38_y_star_gov_alignment_after_evidence.py"
+      ],
+      "integration_reports": [
+        "reports/integration/e38_base_cross_repo_state_manifest.md",
+        "reports/integration/e38_ceo_capability_gap_mapping.md",
+        "reports/integration/e38_ceo_kg_brain_public_evidence_update.md",
+        "reports/integration/e38_claim_extraction_evidence_grading.md",
+        "reports/integration/e38_cluster_evidence_update.md",
+        "reports/integration/e38_comparative_cluster_ranking.md",
+        "reports/integration/e38_cross_repo_sync_backlog.md",
+        "reports/integration/e38_czl_closure.md",
+        "reports/integration/e38_expert_review_packet_refinement.md",
+        "reports/integration/e38_frontier_capability_import_backlog.md",
+        "reports/integration/e38_frontier_capability_import_scan.md",
+        "reports/integration/e38_gov_mcp_alignment_after_evidence.md",
+        "reports/integration/e38_no_rebuild_alignment_gate.md",
+        "reports/integration/e38_owner_decision_packet_for_e39.md",
+        "reports/integration/e38_public_evidence_research_agenda.md",
+        "reports/integration/e38_public_readonly_permission_envelope.md",
+        "reports/integration/e38_public_source_collection_run.md",
+        "reports/integration/e38_y_star_gov_alignment_after_evidence.md"
+      ],
+      "office_tests": [
+        "tests/office/test_e38_ceo_capability_gap_mapping.py",
+        "tests/office/test_e38_claim_extraction_evidence_grading.py",
+        "tests/office/test_e38_cluster_evidence_update.py",
+        "tests/office/test_e38_comparative_cluster_ranking.py",
+        "tests/office/test_e38_expert_review_packet_refinement.py",
+        "tests/office/test_e38_frontier_capability_import_backlog.py",
+        "tests/office/test_e38_frontier_capability_import_scan.py",
+        "tests/office/test_e38_gov_mcp_alignment_after_evidence.py",
+        "tests/office/test_e38_owner_decision_packet_for_e39.py",
+        "tests/office/test_e38_public_evidence_research_agenda.py",
+        "tests/office/test_e38_public_readonly_permission_envelope.py",
+        "tests/office/test_e38_public_source_collector.py",
+        "tests/office/test_e38_y_star_gov_alignment_after_evidence.py"
+      ]
+    },
+    "E39": {
+      "external_validation_artifacts": [
+        "operations/external_validation/e39_base_cross_repo_state_manifest.json",
+        "operations/external_validation/e39_capability_import_scope_guard.json",
+        "operations/external_validation/e39_ceo_brain_evidence_intelligence_update.json",
+        "operations/external_validation/e39_ceo_decision_eval_benchmark.json",
+        "operations/external_validation/e39_contradiction_graph.json",
+        "operations/external_validation/e39_cross_repo_alignment_after_capability_import.json",
+        "operations/external_validation/e39_cross_repo_sync_backlog.json",
+        "operations/external_validation/e39_czl_closure.json",
+        "operations/external_validation/e39_deep_research_claim_graph.json",
+        "operations/external_validation/e39_durable_strategic_research_thread.json",
+        "operations/external_validation/e39_e38_evidence_ingestion_manifest.json",
+        "operations/external_validation/e39_expert_review_readiness_reassessment.json",
+        "operations/external_validation/e39_market_language_lexicon.json",
+        "operations/external_validation/e39_no_rebuild_alignment_gate.json",
+        "operations/external_validation/e39_owner_decision_packet_for_e40.json",
+        "operations/external_validation/e39_source_quality_evidence_burden_evaluator.json",
+        "operations/external_validation/e39_unsupported_claim_downgrade_register.json"
+      ],
+      "mission_modules": [
+        "office/mission_command/e39_capability_import_scope_guard.py",
+        "office/mission_command/e39_ceo_brain_evidence_intelligence_update.py",
+        "office/mission_command/e39_ceo_decision_eval_benchmark.py",
+        "office/mission_command/e39_ceo_kg_evidence_intelligence_feedback.py",
+        "office/mission_command/e39_contradiction_graph_and_downgrader.py",
+        "office/mission_command/e39_cross_repo_alignment_after_capability_import.py",
+        "office/mission_command/e39_deep_research_claim_graph.py",
+        "office/mission_command/e39_durable_strategic_research_thread.py",
+        "office/mission_command/e39_e38_evidence_ingestion_adapter.py",
+        "office/mission_command/e39_expert_review_readiness_reassessment.py",
+        "office/mission_command/e39_market_language_mining_lexicon.py",
+        "office/mission_command/e39_source_quality_evidence_burden_evaluator.py"
+      ],
+      "integration_reports": [
+        "reports/integration/e39_base_cross_repo_state_manifest.md",
+        "reports/integration/e39_capability_import_scope_guard.md",
+        "reports/integration/e39_ceo_decision_eval_benchmark.md",
+        "reports/integration/e39_ceo_kg_brain_evidence_intelligence_update.md",
+        "reports/integration/e39_contradiction_graph_and_downgrader.md",
+        "reports/integration/e39_cross_repo_alignment_after_capability_import.md",
+        "reports/integration/e39_cross_repo_sync_backlog.md",
+        "reports/integration/e39_czl_closure.md",
+        "reports/integration/e39_deep_research_claim_graph.md",
+        "reports/integration/e39_durable_strategic_research_thread.md",
+        "reports/integration/e39_e38_evidence_ingestion_manifest.md",
+        "reports/integration/e39_expert_review_readiness_reassessment.md",
+        "reports/integration/e39_market_language_lexicon.md",
+        "reports/integration/e39_no_rebuild_alignment_gate.md",
+        "reports/integration/e39_owner_decision_packet_for_e40.md",
+        "reports/integration/e39_source_quality_evidence_burden_evaluator.md"
+      ],
+      "office_tests": [
+        "tests/office/test_e39_capability_import_scope_guard.py",
+        "tests/office/test_e39_ceo_decision_eval_benchmark.py",
+        "tests/office/test_e39_contradiction_graph_and_downgrader.py",
+        "tests/office/test_e39_cross_repo_alignment_after_capability_import.py",
+        "tests/office/test_e39_czl_closure.py",
+        "tests/office/test_e39_deep_research_claim_graph.py",
+        "tests/office/test_e39_durable_strategic_research_thread.py",
+        "tests/office/test_e39_e38_evidence_ingestion_adapter.py",
+        "tests/office/test_e39_expert_review_readiness_reassessment.py",
+        "tests/office/test_e39_market_language_mining_lexicon.py",
+        "tests/office/test_e39_source_quality_evidence_burden_evaluator.py"
+      ]
+    },
+    "E40": {
+      "external_validation_artifacts": [
+        "operations/external_validation/e40_base_ecosystem_state_manifest.json",
+        "operations/external_validation/e40_ceo_brain_expert_preflight_update.json",
+        "operations/external_validation/e40_cross_repo_alignment_for_expert_preflight.json",
+        "operations/external_validation/e40_cross_repo_sync_backlog.json",
+        "operations/external_validation/e40_czl_closure.json",
+        "operations/external_validation/e40_evidence_ready_cluster_selection.json",
+        "operations/external_validation/e40_expert_evidence_briefs.json",
+        "operations/external_validation/e40_expert_profile_map.json",
+        "operations/external_validation/e40_expert_review_preflight_scope_guard.json",
+        "operations/external_validation/e40_expert_review_question_bank.json",
+        "operations/external_validation/e40_expert_review_rubric.json",
+        "operations/external_validation/e40_feedback_capture_schema.json",
+        "operations/external_validation/e40_five_minute_walkthroughs.json",
+        "operations/external_validation/e40_no_fake_evidence_overclaim_audit.json",
+        "operations/external_validation/e40_no_rebuild_alignment_gate.json",
+        "operations/external_validation/e40_no_send_message_drafts.json",
+        "operations/external_validation/e40_owner_approval_packet_for_e41.json"
+      ],
+      "mission_modules": [
+        "office/mission_command/e40_ceo_brain_expert_preflight_update.py",
+        "office/mission_command/e40_ceo_kg_expert_preflight_feedback.py",
+        "office/mission_command/e40_cross_repo_alignment_for_expert_preflight.py",
+        "office/mission_command/e40_evidence_ready_cluster_selection.py",
+        "office/mission_command/e40_expert_evidence_brief_generator.py",
+        "office/mission_command/e40_expert_profile_map.py",
+        "office/mission_command/e40_expert_review_preflight_scope_guard.py",
+        "office/mission_command/e40_expert_review_question_bank.py",
+        "office/mission_command/e40_no_fake_evidence_overclaim_audit.py",
+        "office/mission_command/e40_no_send_message_and_walkthrough.py",
+        "office/mission_command/e40_owner_approval_packet_for_e41.py",
+        "office/mission_command/e40_review_rubric_feedback_schema.py"
+      ],
+      "integration_reports": [
+        "reports/integration/e40_base_ecosystem_state_manifest.md",
+        "reports/integration/e40_ceo_kg_brain_expert_preflight_update.md",
+        "reports/integration/e40_cross_repo_alignment_for_expert_preflight.md",
+        "reports/integration/e40_cross_repo_sync_backlog.md",
+        "reports/integration/e40_czl_closure.md",
+        "reports/integration/e40_evidence_ready_cluster_selection.md",
+        "reports/integration/e40_expert_evidence_briefs.md",
+        "reports/integration/e40_expert_profile_map.md",
+        "reports/integration/e40_expert_review_preflight_scope_guard.md",
+        "reports/integration/e40_expert_review_question_bank.md",
+        "reports/integration/e40_no_fake_evidence_overclaim_audit.md",
+        "reports/integration/e40_no_rebuild_alignment_gate.md",
+        "reports/integration/e40_no_send_message_and_walkthrough.md",
+        "reports/integration/e40_owner_approval_packet_for_e41.md",
+        "reports/integration/e40_review_rubric_feedback_schema.md"
+      ],
+      "office_tests": [
+        "tests/office/test_e40_cross_repo_alignment_for_expert_preflight.py",
+        "tests/office/test_e40_czl_closure.py",
+        "tests/office/test_e40_evidence_ready_cluster_selection.py",
+        "tests/office/test_e40_expert_evidence_brief_generator.py",
+        "tests/office/test_e40_expert_profile_map.py",
+        "tests/office/test_e40_expert_review_preflight_scope_guard.py",
+        "tests/office/test_e40_expert_review_question_bank.py",
+        "tests/office/test_e40_no_fake_evidence_overclaim_audit.py",
+        "tests/office/test_e40_no_send_message_and_walkthrough.py",
+        "tests/office/test_e40_owner_approval_packet_for_e41.py",
+        "tests/office/test_e40_review_rubric_feedback_schema.py"
+      ]
+    }
+  },
+  "duplicate_or_overlapping_components": [
+    {
+      "area": "evidence intelligence vs CIEU",
+      "finding": "E39/E41 evidence graphs reason about public market claims; they must not replace CIEU tamper-evident event evidence.",
+      "risk": "evidence-boundary risk if names blur"
+    },
+    {
+      "area": "strategic research thread vs CZL",
+      "finding": "Durable research threads resume strategic questions; they do not close obligations or replace CZL.",
+      "risk": "closure confusion"
+    },
+    {
+      "area": "expert preflight artifacts",
+      "finding": "E40 no-send packets exist but E41 stops progression toward contact.",
+      "risk": "route drift"
+    }
+  ],
+  "missing_integration_points": [
+    "E31-E40 artifacts are mostly milestone-local JSON/reports with limited linkage into daily briefs.",
+    "Recent line is connected to CEO KG deltas and CZL closures, but weakly connected to DIRECTIVE_TRACKER.md.",
+    "Frontier capability import was scanned in E38 but lacked a permanent import loop before E41."
+  ],
+  "files_or_directories_not_inspected": [
+    {
+      "path": "large binary/db files",
+      "reason": "Skipped to avoid reading mutable runtime databases or binary blobs."
+    },
+    {
+      "path": "frontend dependencies",
+      "reason": "Not relevant to E41 runtime reconciliation and may be large."
+    }
+  ]
+}

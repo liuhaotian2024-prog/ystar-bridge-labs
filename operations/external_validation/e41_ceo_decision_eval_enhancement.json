@@ -1,0 +1,39 @@
+{
+  "artifact_id": "e41_ceo_decision_eval_enhancement",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "input_decisions_evaluated": 5,
+  "enhanced_dimensions": [
+    "evidence_boundary_discipline",
+    "claim_support_accuracy",
+    "contradiction_awareness",
+    "buyer_pain_clarity",
+    "budget_proxy_clarity",
+    "market_language_fit",
+    "no_overclaim_discipline",
+    "cross_repo_alignment",
+    "owner_burden_reduction",
+    "route_reversibility",
+    "high_imagination_preservation",
+    "expert_review_readiness",
+    "integration_with_original_Labs_runtime",
+    "route_drift_detection",
+    "frontier_import_loop_compliance",
+    "expert_contact_boundary_discipline"
+  ],
+  "route_drift_detection_case": {
+    "decision": "E40 expert review preflight",
+    "detected_drift": true,
+    "reason": "Owner goal was frontier capability import and whole-system improvement, not human expert route progression.",
+    "correction": "E41 stops expert-contact route progression and imports no-execution capability methods."
+  },
+  "improvements": [
+    "Adds original Labs runtime integration as a decision-quality dimension.",
+    "Adds route drift detection before owner-facing next milestone recommendations.",
+    "Adds frontier import loop compliance to prevent closed methodology drift.",
+    "Adds explicit synthetic/expert/customer feedback boundary discipline."
+  ],
+  "method_only_no_external_execution": true,
+  "customer_validation_claimed": false,
+  "expert_feedback_claimed": false,
+  "paid_signal_claimed": false
+}

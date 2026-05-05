@@ -1,0 +1,58 @@
+{
+  "artifact_id": "e41_synthetic_reviewer_simulation_protocol",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "purpose": "Internal anti-validation stress testing only.",
+  "hard_labels": [
+    "synthetic_output",
+    "internal_simulation_only",
+    "not_customer_validation",
+    "not_expert_feedback",
+    "not_paid_signal",
+    "not_canonical_learning"
+  ],
+  "allowed_uses": [
+    "stress-test questions",
+    "detect confusing language",
+    "detect overclaim",
+    "simulate skeptical objections",
+    "improve evidence packet clarity",
+    "prepare owner review"
+  ],
+  "forbidden_uses": [
+    "claim customer validation",
+    "claim expert feedback",
+    "claim market proof",
+    "replace public evidence",
+    "replace owner approval",
+    "rank final product"
+  ],
+  "fixture_simulations": [
+    {
+      "fixture_id": "e41_syn_001",
+      "synthetic_output": true,
+      "internal_simulation_only": true,
+      "not_customer_validation": true,
+      "not_expert_feedback": true,
+      "not_paid_signal": true,
+      "not_canonical_learning": true,
+      "simulated_objection": "This sounds like generic AI consulting unless the workflow pain and buyer budget are crisp.",
+      "use": "language clarity stress test"
+    },
+    {
+      "fixture_id": "e41_syn_002",
+      "synthetic_output": true,
+      "internal_simulation_only": true,
+      "not_customer_validation": true,
+      "not_expert_feedback": true,
+      "not_paid_signal": true,
+      "not_canonical_learning": true,
+      "simulated_objection": "A public source showing AI adoption friction does not prove that this buyer would pay Y*.",
+      "use": "overclaim and evidence-boundary stress test"
+    }
+  ],
+  "external_tool_called": false,
+  "provider_api_or_tool_execution_occurred": false,
+  "customer_validation_claimed": false,
+  "expert_feedback_claimed": false,
+  "paid_signal_claimed": false
+}

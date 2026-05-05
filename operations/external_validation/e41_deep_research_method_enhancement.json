@@ -1,0 +1,55 @@
+{
+  "artifact_id": "e41_deep_research_method_enhancement",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "input_claim_graph": {
+    "node_count": 138,
+    "edge_count": 360,
+    "node_types": {
+      "evidence_boundary": 2,
+      "cluster": 7,
+      "route_implication": 4,
+      "source": 27,
+      "receipt": 27,
+      "claim": 54,
+      "buyer_pain": 1,
+      "market_language": 7,
+      "contradiction": 2,
+      "unsupported_claim": 7
+    },
+    "edge_types": {
+      "source_has_receipt": 27,
+      "claim_belongs_to_cluster": 54,
+      "source_supports_claim": 52,
+      "claim_supports_buyer_pain": 8,
+      "claim_uses_market_language": 46,
+      "claim_not_customer_validation": 54,
+      "claim_not_paid_signal": 54,
+      "claim_affects_route": 54,
+      "source_contradicts_claim": 4,
+      "claim_removed_or_downgraded": 7
+    }
+  },
+  "enhancements": [
+    {
+      "name": "source graph lineage check",
+      "improves": "source graph use and claim lineage",
+      "method": "Every strategic claim must preserve source -> receipt -> claim -> cluster -> route implication lineage.",
+      "testable_rule": "claims without source_receipt lineage remain internal hypothesis only"
+    },
+    {
+      "name": "evidence burden lane",
+      "improves": "evidence burden scoring",
+      "method": "Route implications must carry missing evidence and cheapest next evidence.",
+      "testable_rule": "route pressure cannot advance without burden state"
+    },
+    {
+      "name": "high-imagination preservation lane",
+      "improves": "high-imagination preservation",
+      "method": "Low evidence cannot delete a high-imagination thread; it can only park or require simulation/public evidence.",
+      "testable_rule": "parked high-imagination clusters retain explicit resume instruction"
+    }
+  ],
+  "method_only_no_external_execution": true,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false
+}

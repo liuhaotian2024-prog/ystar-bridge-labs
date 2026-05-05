@@ -1,0 +1,83 @@
+{
+  "artifact_id": "e41_operating_memory_reconciliation",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "default_action": "artifact-only reconciliation; no direct writes to daily briefs or directive tracker",
+  "maps_recent_artifacts_to": [
+    {
+      "memory_surface": "CEO KG / brain",
+      "existing_sources": [
+        "operations/knowledge_graph/e31-e40 deltas",
+        "operations/external_validation/e31-e40 brain updates"
+      ],
+      "E41_mapping": "Add delta references for route drift correction, import loop, and runtime reconciliation.",
+      "write_performed": true
+    },
+    {
+      "memory_surface": "CZL closure",
+      "existing_sources": [
+        "operations/external_validation/e*_czl_closure.json",
+        "reports/integration/e*_czl_closure.md"
+      ],
+      "E41_mapping": "Closure proves no external action and no duplicate runtime.",
+      "write_performed": true
+    },
+    {
+      "memory_surface": "owner decision horizon",
+      "existing_sources": [
+        "owner approval packets",
+        "BOARD_PENDING.md"
+      ],
+      "E41_mapping": "Next owner decision is whether E42 runs the import loop on a selected CEO weakness.",
+      "write_performed": true
+    },
+    {
+      "memory_surface": "route registry",
+      "existing_sources": [
+        "operations/external_validation route artifacts",
+        "governance/runtime_capability_registry.json"
+      ],
+      "E41_mapping": "No final product route selected; E41 improves route-evaluation capability only.",
+      "write_performed": false
+    },
+    {
+      "memory_surface": "daily brief / reports",
+      "existing_sources": [
+        "reports/daily/2026-03-26.md",
+        "reports/daily/2026-03-28.md",
+        "reports/daily/2026-03-30.md",
+        "reports/daily/2026-04-01.md",
+        "reports/daily/2026-04-02.md",
+        "memory/INDEX.md",
+        "memory/WORLD_STATE.md",
+        "memory/archive/continuation_archived_1776273549.md",
+        "memory/archive/czl_subgoals_9fractures_20260415.json",
+        "memory/archive/czl_subgoals_IDLE_—_awaiting_next_campaign_(Campaign_v6_candidates_in_backlog)_20260416_132139.json"
+      ],
+      "E41_mapping": "Reconciliation artifact may inform future brief, but E41 does not edit daily memory.",
+      "write_performed": false
+    },
+    {
+      "memory_surface": "directive tracker",
+      "existing_sources": [
+        "DIRECTIVE_TRACKER.md",
+        "BOARD_PENDING.md"
+      ],
+      "E41_mapping": "Owner correction recorded in E41 artifacts, not directly edited into tracker.",
+      "write_performed": false
+    },
+    {
+      "memory_surface": "gov-order pipeline",
+      "existing_sources": [
+        "scripts/gov_order.py",
+        "scripts/gov_order_undo.py"
+      ],
+      "E41_mapping": "E41 does not execute gov-order; future owner-approved action can be routed there if needed.",
+      "write_performed": false
+    }
+  ],
+  "no_daily_brief_written": true,
+  "no_directive_tracker_written": true,
+  "no_route_registry_mutation": true,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false
+}

@@ -1,0 +1,12 @@
+{
+  "artifact_id": "e41_ceo_kg_read_model_update",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "delta_nodes": 6,
+  "delta_edges": 5,
+  "updated_bottleneck": "CEO agent must continuously import frontier capabilities and reconcile them with the original Labs runtime without route drift.",
+  "next_decision_horizon": "Owner chooses E42 capability-import target; recommended: run the import loop on long-horizon research memory and source-quality evaluation before any external contact.",
+  "canonical_learning_promoted": false,
+  "customer_validation_claimed": false,
+  "expert_feedback_claimed": false,
+  "paid_signal_claimed": false
+}

@@ -1,0 +1,92 @@
+{
+  "artifact_id": "e41_cross_repo_alignment_after_frontier_import",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "Y-star-gov_inspected_read_only": true,
+  "gov_mcp_inspected_read_only": true,
+  "Y-star-gov_head": "5f031f4be151b81ef1a1b1908a5c83c5420e8ce1",
+  "gov_mcp_head": "4f758d9d4823eed108ae3d63be1f4db192a974d6",
+  "imports": [
+    {
+      "capability": "Deep Research Claim Graph",
+      "bridge_labs": "implemented as method/schema/evaluator artifact",
+      "Y-star-gov": "reference only; no primitive change",
+      "gov-mcp": "no execution boundary needed in E41",
+      "candidate_future_Y_star_gov_primitive": "none in E41",
+      "candidate_future_gov_mcp_adapter": "none in E41",
+      "owner_review_required": "future external execution only",
+      "no_sync_needed_now": true
+    },
+    {
+      "capability": "Contradiction Graph and Unsupported Claim Downgrader",
+      "bridge_labs": "implemented as method/schema/evaluator artifact",
+      "Y-star-gov": "reference only; no primitive change",
+      "gov-mcp": "no execution boundary needed in E41",
+      "candidate_future_Y_star_gov_primitive": "none in E41",
+      "candidate_future_gov_mcp_adapter": "none in E41",
+      "owner_review_required": "future external execution only",
+      "no_sync_needed_now": true
+    },
+    {
+      "capability": "Durable Strategic Research Thread",
+      "bridge_labs": "implemented as method/schema/evaluator artifact",
+      "Y-star-gov": "reference only; no primitive change",
+      "gov-mcp": "no execution boundary needed in E41",
+      "candidate_future_Y_star_gov_primitive": "none in E41",
+      "candidate_future_gov_mcp_adapter": "none in E41",
+      "owner_review_required": "future external execution only",
+      "no_sync_needed_now": true
+    },
+    {
+      "capability": "CEO Decision Eval Benchmark",
+      "bridge_labs": "implemented as method/schema/evaluator artifact",
+      "Y-star-gov": "reference only; no primitive change",
+      "gov-mcp": "no execution boundary needed in E41",
+      "candidate_future_Y_star_gov_primitive": "none in E41",
+      "candidate_future_gov_mcp_adapter": "none in E41",
+      "owner_review_required": "future external execution only",
+      "no_sync_needed_now": true
+    },
+    {
+      "capability": "Synthetic Reviewer Simulation Protocol",
+      "bridge_labs": "implemented as method/schema/evaluator artifact",
+      "Y-star-gov": "reference only; no primitive change",
+      "gov-mcp": "no execution boundary needed in E41",
+      "candidate_future_Y_star_gov_primitive": "none in E41",
+      "candidate_future_gov_mcp_adapter": "possible future adapter only if simulations ever use external tools",
+      "owner_review_required": "future external execution only",
+      "no_sync_needed_now": true
+    },
+    {
+      "capability": "Market Language Mining Lexicon",
+      "bridge_labs": "implemented as method/schema/evaluator artifact",
+      "Y-star-gov": "reference only; no primitive change",
+      "gov-mcp": "no execution boundary needed in E41",
+      "candidate_future_Y_star_gov_primitive": "none in E41",
+      "candidate_future_gov_mcp_adapter": "none in E41",
+      "owner_review_required": "future external execution only",
+      "no_sync_needed_now": true
+    },
+    {
+      "capability": "Source Quality and Evidence Burden Evaluator",
+      "bridge_labs": "implemented as method/schema/evaluator artifact",
+      "Y-star-gov": "reference only; no primitive change",
+      "gov-mcp": "no execution boundary needed in E41",
+      "candidate_future_Y_star_gov_primitive": "none in E41",
+      "candidate_future_gov_mcp_adapter": "none in E41",
+      "owner_review_required": "future external execution only",
+      "no_sync_needed_now": true
+    }
+  ],
+  "proofs": {
+    "no_Labs_governance_kernel_created": true,
+    "no_Labs_MCP_execution_layer_created": true,
+    "no_Y_star_gov_modification": true,
+    "no_gov_mcp_modification": true,
+    "no_external_action": true,
+    "evidence_graph_does_not_replace_CIEU": true,
+    "strategic_research_thread_does_not_replace_CZL": true,
+    "market_language_lexicon_does_not_become_contract": true
+  },
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false
+}

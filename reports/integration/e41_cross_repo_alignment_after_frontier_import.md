@@ -1,0 +1,14 @@
+# E41 Cross-Repo Alignment After Frontier Import
+
+- Y-star-gov and gov-mcp inspected read-only.
+- No duplicate kernel or MCP layer created.
+
+## Imports
+
+- capability: Deep Research Claim Graph, bridge_labs: implemented as method/schema/evaluator artifact, Y-star-gov: reference only; no primitive change, gov-mcp: no execution boundary needed in E41, candidate_future_Y_star_gov_primitive: none in E41, candidate_future_gov_mcp_adapter: none in E41, owner_review_required: future external execution only, no_sync_needed_now: True
+- capability: Contradiction Graph and Unsupported Claim Downgrader, bridge_labs: implemented as method/schema/evaluator artifact, Y-star-gov: reference only; no primitive change, gov-mcp: no execution boundary needed in E41, candidate_future_Y_star_gov_primitive: none in E41, candidate_future_gov_mcp_adapter: none in E41, owner_review_required: future external execution only, no_sync_needed_now: True
+- capability: Durable Strategic Research Thread, bridge_labs: implemented as method/schema/evaluator artifact, Y-star-gov: reference only; no primitive change, gov-mcp: no execution boundary needed in E41, candidate_future_Y_star_gov_primitive: none in E41, candidate_future_gov_mcp_adapter: none in E41, owner_review_required: future external execution only, no_sync_needed_now: True
+- capability: CEO Decision Eval Benchmark, bridge_labs: implemented as method/schema/evaluator artifact, Y-star-gov: reference only; no primitive change, gov-mcp: no execution boundary needed in E41, candidate_future_Y_star_gov_primitive: none in E41, candidate_future_gov_mcp_adapter: none in E41, owner_review_required: future external execution only, no_sync_needed_now: True
+- capability: Synthetic Reviewer Simulation Protocol, bridge_labs: implemented as method/schema/evaluator artifact, Y-star-gov: reference only; no primitive change, gov-mcp: no execution boundary needed in E41, candidate_future_Y_star_gov_primitive: none in E41, candidate_future_gov_mcp_adapter: possible future adapter only if simulations ever use external tools, owner_review_required: future external execution only, no_sync_needed_now: True
+- capability: Market Language Mining Lexicon, bridge_labs: implemented as method/schema/evaluator artifact, Y-star-gov: reference only; no primitive change, gov-mcp: no execution boundary needed in E41, candidate_future_Y_star_gov_primitive: none in E41, candidate_future_gov_mcp_adapter: none in E41, owner_review_required: future external execution only, no_sync_needed_now: True
+- capability: Source Quality and Evidence Burden Evaluator, bridge_labs: implemented as method/schema/evaluator artifact, Y-star-gov: reference only; no primitive change, gov-mcp: no execution boundary needed in E41, candidate_future_Y_star_gov_primitive: none in E41, candidate_future_gov_mcp_adapter: none in E41, owner_review_required: future external execution only, no_sync_needed_now: True
