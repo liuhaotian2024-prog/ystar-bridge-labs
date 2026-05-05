@@ -1,0 +1,21 @@
+{
+  "E43_report_exists": true,
+  "artifact_id": "e44a_base_state_manifest",
+  "branch": "backflow/aiden-ceo-meeting-room",
+  "can_proceed_safely": true,
+  "generated_at": "2026-05-05T00:00:01Z",
+  "key_artifacts_found": {
+    "operations/external_validation/e35_cross_domain_opportunity_field.json": true,
+    "operations/external_validation/e35_six_dimensional_ceo_cognition_model.json": true,
+    "operations/external_validation/e36_adversarial_ceo_board_review.json": true,
+    "operations/external_validation/e36_demand_budget_reality_screen.json": true,
+    "operations/external_validation/e39_deep_research_claim_graph.json": true,
+    "operations/external_validation/e41_frontier_capability_import_loop.json": true,
+    "operations/external_validation/e42_task_capability_matcher_model.json": true,
+    "operations/external_validation/e43_selected_first_value_path.json": true
+  },
+  "local_head": "65ee11eaf8e693f14365bb6120cb4dd6d5bf2ae9",
+  "remote_head": "65ee11eaf8e693f14365bb6120cb4dd6d5bf2ae9",
+  "requested_base_head": "65ee11eaf8e693f14365bb6120cb4dd6d5bf2ae9",
+  "worktree_clean": true
+}

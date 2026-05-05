@@ -1,0 +1,70 @@
+{
+  "added_first_class_cognition_tags": [
+    "imagination",
+    "innovation",
+    "strategic_imagination",
+    "six_dimensional_cognition",
+    "opportunity_generation",
+    "cross_domain_opportunity",
+    "abstraction_recombination",
+    "adversarial_review",
+    "contrarian_review",
+    "skeptical_cfo",
+    "product_customer_empathy",
+    "demand_budget_screen",
+    "evidence_ladder",
+    "high_imagination_preservation",
+    "commercial_wedge",
+    "first_user_value_path",
+    "execution_feasibility"
+  ],
+  "artifact_id": "e44a_router_cognition_tag_overlay",
+  "external_action_occurred": false,
+  "generated_at": "2026-05-05T00:00:01Z",
+  "overlay_results": {
+    "business_route_task": {
+      "artifact_id": "e44a_router_synonym_upgrade_result",
+      "external_action_occurred": false,
+      "matched_capability_ids": [
+        "first_user_value_path",
+        "opportunity_evidence_ladder"
+      ],
+      "matched_cognition_tags": [
+        "commercial_wedge",
+        "evidence_ladder",
+        "first_user_value_path"
+      ],
+      "task": "business route and commercial wedge"
+    },
+    "first_user_task": {
+      "artifact_id": "e44a_router_synonym_upgrade_result",
+      "external_action_occurred": false,
+      "matched_capability_ids": [],
+      "matched_cognition_tags": [],
+      "task": "Prepare the fastest credible path toward one real external user successfully installing and understanding Y*gov / gov-mcp / Y*Bridge Labs' agent-company runtime value."
+    },
+    "innovation_task": {
+      "artifact_id": "e44a_router_synonym_upgrade_result",
+      "external_action_occurred": false,
+      "matched_capability_ids": [
+        "abstraction_recombination",
+        "cross_domain_opportunity_field",
+        "innovation",
+        "opportunity_evidence_ladder",
+        "six_dimensional_cognition",
+        "strategic_imagination"
+      ],
+      "matched_cognition_tags": [
+        "abstraction_recombination",
+        "cross_domain_opportunity",
+        "evidence_ladder",
+        "imagination",
+        "innovation",
+        "opportunity_generation",
+        "six_dimensional_cognition",
+        "strategic_imagination"
+      ],
+      "task": "innovation and creative strategic opportunity"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "artifact_id": "e44a_ceo_task_preflight_v2_contract",
+  "blocks_report_pile_only_output": true,
+  "external_action_requires_explicit_owner_approval": true,
+  "fails_if_only_router_runs_for_strategic_or_commercial_task": true,
+  "future_serious_CEO_task_flow": [
+    "E42 resource router",
+    "E44A cognition activation registry",
+    "E44A CEO cognition cascade",
+    "E42/E44A no-rebuild gate",
+    "route selection",
+    "execution plan",
+    "validation",
+    "owner packet"
+  ]
+}

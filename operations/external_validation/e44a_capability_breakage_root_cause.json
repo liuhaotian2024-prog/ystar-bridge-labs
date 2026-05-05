@@ -1,0 +1,136 @@
+{
+  "artifact_id": "e44a_capability_breakage_root_cause",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "no_external_action": true,
+  "root_causes": [
+    {
+      "evidence_paths": [
+        "office/mission_command/e31_ceo_brain_real_world_signal_update.py",
+        "office/mission_command/e31_ceo_kg_real_world_evidence_needs.py",
+        "office/mission_command/e31_ceo_kg_real_world_feedback.py",
+        "office/mission_command/e31_ecosystem_alignment_gate.py",
+        "office/mission_command/e31_evidence_extraction_claim_binding.py",
+        "office/mission_command/e31_future_real_world_behavior_policy.py",
+        "office/mission_command/e31_paid_readiness_review_signal_package.py",
+        "office/mission_command/e31_public_source_selection.py"
+      ],
+      "evidence_structure": "Capability-named modules often return stored JSON via get_artifact instead of running task-time cognition.",
+      "fix_implemented_in_E44A": "Activation registry wraps static/accessor outputs as explicit cognition lenses.",
+      "impact_on_CEO_task_quality": "CEO risks behaving like a secretary/router instead of a strategic operator when this is uncorrected.",
+      "residual_risk": "Future milestones must call preflight v2, not only E42 packet, for serious CEO/company tasks.",
+      "root_cause": "artifact_accessor_only"
+    },
+    {
+      "evidence_paths": [
+        "operations/external_validation/e35_base_and_brain_contract_manifest.json",
+        "operations/external_validation/e35_capability_abstraction_recombination_method.json",
+        "operations/external_validation/e35_ceo_brain_unified_six_dimensional_update.json",
+        "operations/external_validation/e35_ceo_methodology_quality_audit.json",
+        "operations/external_validation/e35_cross_domain_opportunity_field.json",
+        "operations/external_validation/e35_cross_domain_universe_expansion_method.json",
+        "operations/external_validation/e35_cross_repo_governance_execution_alignment.json",
+        "operations/external_validation/e35_cross_repo_sync_backlog.json"
+      ],
+      "evidence_structure": "Valuable reasoning lives in JSON artifacts but is not obligatorily invoked for new tasks.",
+      "fix_implemented_in_E44A": "CEO cognition cascade reads static artifacts as task-specific inputs and emits new reasoning.",
+      "impact_on_CEO_task_quality": "CEO risks behaving like a secretary/router instead of a strategic operator when this is uncorrected.",
+      "residual_risk": "Future milestones must call preflight v2, not only E42 packet, for serious CEO/company tasks.",
+      "root_cause": "static_artifact_not_runtime"
+    },
+    {
+      "evidence_paths": [
+        "office/mission_command/e42_task_capability_matcher.py"
+      ],
+      "evidence_structure": "E42 tags emphasized resources, evidence, delivery, governance, MCP, but not imagination/innovation/six-dimensional/opportunity-generation.",
+      "fix_implemented_in_E44A": "Router cognition tag overlay adds imagination/innovation/opportunity/customer/commercial/execution tags.",
+      "impact_on_CEO_task_quality": "CEO risks behaving like a secretary/router instead of a strategic operator when this is uncorrected.",
+      "residual_risk": "Future milestones must call preflight v2, not only E42 packet, for serious CEO/company tasks.",
+      "root_cause": "missing_first_class_tags"
+    },
+    {
+      "evidence_paths": [
+        "office/mission_command/e42_task_capability_matcher.py"
+      ],
+      "evidence_structure": "Strategic/customer/commercial language was not routed to E35/E36 cognition artifacts.",
+      "fix_implemented_in_E44A": "Synonym overlay routes strategic/commercial/customer tasks to E35/E36 cognition capabilities.",
+      "impact_on_CEO_task_quality": "CEO risks behaving like a secretary/router instead of a strategic operator when this is uncorrected.",
+      "residual_risk": "Future milestones must call preflight v2, not only E42 packet, for serious CEO/company tasks.",
+      "root_cause": "missing_synonyms"
+    },
+    {
+      "evidence_paths": [
+        "office/mission_command/e42_ceo_task_preflight_packet.py",
+        "office/mission_command/e43_first_value_loop_runner.py"
+      ],
+      "evidence_structure": "Router-first workflow helped reuse but covered over cognition-first judgment.",
+      "fix_implemented_in_E44A": "Preflight v2 requires router plus cognition cascade for strategic/company tasks.",
+      "impact_on_CEO_task_quality": "CEO risks behaving like a secretary/router instead of a strategic operator when this is uncorrected.",
+      "residual_risk": "Future milestones must call preflight v2, not only E42 packet, for serious CEO/company tasks.",
+      "root_cause": "workflow_coverage"
+    },
+    {
+      "evidence_paths": [
+        "tests/office/test_e35_capability_abstraction_recombination_method.py",
+        "tests/office/test_e35_ceo_methodology_quality_audit.py",
+        "tests/office/test_e35_cross_domain_opportunity_field_generator.py",
+        "tests/office/test_e35_cross_domain_universe_expansion_method.py",
+        "tests/office/test_e35_cross_repo_governance_execution_alignment.py",
+        "tests/office/test_e35_cross_repo_sync_backlog.py",
+        "tests/office/test_e35_multi_hop_abstraction_jump_engine.py",
+        "tests/office/test_e35_one_brain_integration_guard.py"
+      ],
+      "evidence_structure": "Tests mostly prove artifacts exist and boundaries hold, not that cognition was invoked.",
+      "fix_implemented_in_E44A": "E44A tests assert actual invocation of E35/E36/E42/customer/commercial/evidence/execution lenses.",
+      "impact_on_CEO_task_quality": "CEO risks behaving like a secretary/router instead of a strategic operator when this is uncorrected.",
+      "residual_risk": "Future milestones must call preflight v2, not only E42 packet, for serious CEO/company tasks.",
+      "root_cause": "test_blind_spot"
+    },
+    {
+      "evidence_paths": [
+        "no pre-E44A cascade runtime found"
+      ],
+      "evidence_structure": "No required pipeline combined imagination, customer empathy, evidence, commercial judgment, execution feasibility, and no-rebuild.",
+      "fix_implemented_in_E44A": "New run_ceo_cognition_cascade composes the required lenses.",
+      "impact_on_CEO_task_quality": "CEO risks behaving like a secretary/router instead of a strategic operator when this is uncorrected.",
+      "residual_risk": "Future milestones must call preflight v2, not only E42 packet, for serious CEO/company tasks.",
+      "root_cause": "no_task_time_cascade"
+    },
+    {
+      "evidence_paths": [
+        "no pre-E44A callable activation registry found"
+      ],
+      "evidence_structure": "No durable registry said which cognition module is active, static, parked, superseded, or orphaned.",
+      "fix_implemented_in_E44A": "New CEO capability activation registry classifies active/partial/static/parked capabilities.",
+      "impact_on_CEO_task_quality": "CEO risks behaving like a secretary/router instead of a strategic operator when this is uncorrected.",
+      "residual_risk": "Future milestones must call preflight v2, not only E42 packet, for serious CEO/company tasks.",
+      "root_cause": "no_activation_registry"
+    },
+    {
+      "evidence_paths": [
+        "E40 expert preflight and E42/E43 boundary artifacts"
+      ],
+      "evidence_structure": "Valid no-external-action discipline narrowed route thinking instead of activating broader CEO cognition.",
+      "fix_implemented_in_E44A": "Cascade preserves boundaries while forcing high-imagination preservation and route alternatives.",
+      "impact_on_CEO_task_quality": "CEO risks behaving like a secretary/router instead of a strategic operator when this is uncorrected.",
+      "residual_risk": "Future milestones must call preflight v2, not only E42 packet, for serious CEO/company tasks.",
+      "root_cause": "overconservative_boundary_drift"
+    },
+    {
+      "evidence_paths": [
+        "office/mission_command/e19_ecosystem_alignment_scanner.py",
+        "office/mission_command/e20_ecosystem_alignment_gate.py",
+        "office/mission_command/e20_provider_capability_detector.py",
+        "office/mission_command/e21_ecosystem_alignment_gate.py",
+        "office/mission_command/e21_provider_capability_sync.py",
+        "office/mission_command/e22_ecosystem_alignment_gate.py",
+        "office/mission_command/e22_gov_mcp_dry_run_integration.py",
+        "office/mission_command/e23_ecosystem_alignment_gate.py"
+      ],
+      "evidence_structure": "Some host-local paths exist in bridge-runtime modules; acceptable for delivery but not portable product runtime.",
+      "fix_implemented_in_E44A": "Recorded as portability residual risk, not extended in E44A.",
+      "impact_on_CEO_task_quality": "CEO risks behaving like a secretary/router instead of a strategic operator when this is uncorrected.",
+      "residual_risk": "Future milestones must call preflight v2, not only E42 packet, for serious CEO/company tasks.",
+      "root_cause": "hardcoded_or_local_only_paths"
+    }
+  ]
+}

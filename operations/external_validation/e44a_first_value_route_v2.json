@@ -1,0 +1,20 @@
+{
+  "artifact_id": "e44a_first_value_route_v2",
+  "external_action_occurred": false,
+  "first_user_persona_type_only": "AI engineer/operator using coding agents that touch files/tools",
+  "must_not_claim": [
+    "customer validation",
+    "paid signal",
+    "ROI guarantee",
+    "product-market fit",
+    "Y* superiority"
+  ],
+  "next_action": "Run the activated CEO loop on the real local first-value demo and fix the must-fix docs/demo blockers before any owner-approved external attempt.",
+  "proof_substrate": [
+    "gov-mcp install/status/check",
+    "Y-star-gov deterministic check/enforce semantics",
+    "Bridge Labs dogfood story"
+  ],
+  "selected_route": "gov-mcp + Y-star-gov governed execution in 5 minutes",
+  "user_facing_value_object": "Governed Agent Action Proof Packet"
+}

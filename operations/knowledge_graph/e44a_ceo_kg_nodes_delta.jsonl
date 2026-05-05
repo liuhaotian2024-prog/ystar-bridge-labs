@@ -1,0 +1,4 @@
+{"id": "e44a:cognition_activation_registry", "label": "CEO Capability Activation Registry", "milestone": "E44A", "type": "ceo_runtime_capability"}
+{"id": "e44a:ceo_cognition_cascade", "label": "CEO Cognition Cascade Runtime", "milestone": "E44A", "type": "ceo_runtime_capability"}
+{"id": "e44a:first_value_route_v2", "label": "Governed Agent Action Proof Packet", "milestone": "E44A", "type": "route_decision"}
+{"id": "e44a:owner_correction", "label": "CEO must activate cognition, not only route files", "milestone": "E44A", "type": "owner_correction"}

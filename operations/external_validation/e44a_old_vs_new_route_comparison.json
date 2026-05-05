@@ -1,0 +1,24 @@
+{
+  "artifact_id": "e44a_old_vs_new_route_comparison",
+  "improvements": [
+    "E35/E36 cognition/opportunity artifacts are invoked explicitly.",
+    "Raw install path is reframed as technical substrate, not the full value object.",
+    "Customer empathy and skeptical CFO lenses change the packet requirements.",
+    "High-imagination alternatives are preserved instead of discarded.",
+    "Evidence burden remains explicit and no validation is overclaimed."
+  ],
+  "new_route": {
+    "route_changed_from_E43": false,
+    "route_improved_from_E43": true,
+    "technical_substrate": "gov-mcp + Y-star-gov governed execution in 5 minutes",
+    "user_facing_value_object": "Governed Agent Action Proof Packet",
+    "why": "E43 selected the correct substrate; E44A adds strategic imagination, customer empathy, commercial/evidence screens, and high-imagination preservation."
+  },
+  "old_route": {
+    "limitation": "Correct technical substrate, but weak activation of E35/E36 strategic/customer/commercial cognition.",
+    "mode": "E42 router plus local first-value path checker",
+    "path": "gov-mcp + Y-star-gov governed execution in 5 minutes"
+  },
+  "route_changed": false,
+  "route_improved": true
+}

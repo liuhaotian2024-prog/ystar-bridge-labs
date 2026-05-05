@@ -1,0 +1,137 @@
+{
+  "artifact_id": "e44a_router_synonym_upgrade",
+  "business_route_routes_to_commercial_and_evidence": true,
+  "external_action_occurred": false,
+  "first_user_task_routes_to_required_tags": false,
+  "generated_at": "2026-05-05T00:00:01Z",
+  "innovation_routes_to_E35_E36": true,
+  "synonym_map": {
+    "CEO decision": [
+      "six_dimensional_cognition",
+      "adversarial_review",
+      "route_selection"
+    ],
+    "agent company": [
+      "first_user_value_path",
+      "opportunity_generation",
+      "execution_feasibility"
+    ],
+    "agent economy": [
+      "high_imagination_preservation",
+      "opportunity_generation",
+      "frontier_capability_import"
+    ],
+    "autonomous company": [
+      "high_imagination_preservation",
+      "frontier_capability_import"
+    ],
+    "budget": [
+      "demand_budget_screen",
+      "skeptical_cfo"
+    ],
+    "business path": [
+      "commercial_wedge",
+      "demand_budget_screen",
+      "evidence_ladder"
+    ],
+    "buyer": [
+      "product_customer_empathy",
+      "demand_budget_screen",
+      "commercial_wedge"
+    ],
+    "commercial route": [
+      "commercial_wedge",
+      "demand_budget_screen",
+      "route_selection"
+    ],
+    "contrarian": [
+      "contrarian_review",
+      "adversarial_review"
+    ],
+    "creative": [
+      "imagination",
+      "innovation",
+      "abstraction_recombination"
+    ],
+    "cross-domain": [
+      "cross_domain_opportunity",
+      "abstraction_recombination"
+    ],
+    "customer": [
+      "product_customer_empathy",
+      "demand_budget_screen"
+    ],
+    "demand": [
+      "demand_budget_screen",
+      "evidence_ladder"
+    ],
+    "first customer": [
+      "first_user_value_path",
+      "product_customer_empathy",
+      "demand_budget_screen",
+      "commercial_wedge"
+    ],
+    "first user": [
+      "first_user_value_path",
+      "product_customer_empathy",
+      "demand_budget_screen",
+      "opportunity_generation",
+      "execution_feasibility"
+    ],
+    "high imagination": [
+      "high_imagination_preservation",
+      "strategic_imagination"
+    ],
+    "imagination": [
+      "imagination",
+      "strategic_imagination",
+      "high_imagination_preservation"
+    ],
+    "innovation": [
+      "innovation",
+      "abstraction_recombination",
+      "opportunity_generation"
+    ],
+    "market": [
+      "market_language",
+      "demand_budget_screen",
+      "opportunity_generation"
+    ],
+    "new product": [
+      "opportunity_generation",
+      "commercial_wedge",
+      "product_customer_empathy"
+    ],
+    "opportunity": [
+      "opportunity_generation",
+      "cross_domain_opportunity",
+      "evidence_ladder"
+    ],
+    "product empathy": [
+      "product_customer_empathy",
+      "customer"
+    ],
+    "run company": [
+      "six_dimensional_cognition",
+      "execution_feasibility",
+      "commercial_wedge"
+    ],
+    "skeptical": [
+      "skeptical_cfo",
+      "adversarial_review"
+    ],
+    "strategic": [
+      "strategic_imagination",
+      "six_dimensional_cognition"
+    ],
+    "strategy": [
+      "strategic_imagination",
+      "six_dimensional_cognition",
+      "route_selection"
+    ],
+    "wedge": [
+      "commercial_wedge",
+      "first_user_value_path"
+    ]
+  }
+}

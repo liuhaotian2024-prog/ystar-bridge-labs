@@ -1,0 +1,702 @@
+{
+  "artifact_id": "e44a_ceo_capability_activation_registry",
+  "capabilities": [
+    {
+      "activation_mode": "compose_multiple_artifacts",
+      "boundary_notes": "Bridge Labs CEO cognition lens; no external action.",
+      "callable_entrypoint": "",
+      "capability_class": "cognition_lens",
+      "capability_id": "strategic_imagination",
+      "capability_tags": [
+        "imagination",
+        "strategic_imagination",
+        "strategy",
+        "creative"
+      ],
+      "display_name": "Strategic Imagination",
+      "maturity": "partial",
+      "owner_layer": "bridge_labs_ceo_runtime",
+      "produced_outputs": [
+        "lens_reasoning",
+        "decision_effect",
+        "route_pressure"
+      ],
+      "reason_if_parked": "",
+      "required_inputs": [
+        "task_title",
+        "task_description",
+        "owner_constraints"
+      ],
+      "source_milestone": "E35",
+      "source_paths": [
+        "operations/external_validation/e35_six_dimensional_ceo_cognition_model.json",
+        "operations/external_validation/e35_superhuman_ceo_cognition_challenge.json"
+      ],
+      "task_triggers": [
+        "imagination",
+        "strategic_imagination",
+        "strategy",
+        "creative"
+      ],
+      "tests_to_run": [
+        "tests/office/test_e35_six_dimensional_ceo_cognition_model.py"
+      ]
+    },
+    {
+      "activation_mode": "compose_multiple_artifacts",
+      "boundary_notes": "Bridge Labs CEO cognition lens; no external action.",
+      "callable_entrypoint": "",
+      "capability_class": "cognition_lens",
+      "capability_id": "innovation",
+      "capability_tags": [
+        "innovation",
+        "creative",
+        "abstraction_recombination"
+      ],
+      "display_name": "Innovation Lens",
+      "maturity": "partial",
+      "owner_layer": "bridge_labs_ceo_runtime",
+      "produced_outputs": [
+        "lens_reasoning",
+        "decision_effect",
+        "route_pressure"
+      ],
+      "reason_if_parked": "",
+      "required_inputs": [
+        "task_title",
+        "task_description",
+        "owner_constraints"
+      ],
+      "source_milestone": "E35",
+      "source_paths": [
+        "operations/external_validation/e35_capability_abstraction_recombination_method.json",
+        "operations/external_validation/e35_multi_hop_abstraction_jump_engine.json"
+      ],
+      "task_triggers": [
+        "innovation",
+        "creative",
+        "abstraction_recombination"
+      ],
+      "tests_to_run": [
+        "tests/office/test_e35_capability_abstraction_recombination_method.py"
+      ]
+    },
+    {
+      "activation_mode": "read_static_artifact_as_input",
+      "boundary_notes": "Bridge Labs CEO cognition lens; no external action.",
+      "callable_entrypoint": "",
+      "capability_class": "cognition_lens",
+      "capability_id": "six_dimensional_cognition",
+      "capability_tags": [
+        "six_dimensional_cognition",
+        "ceo_decision",
+        "strategy"
+      ],
+      "display_name": "Six-Dimensional CEO Cognition",
+      "maturity": "partial",
+      "owner_layer": "bridge_labs_ceo_runtime",
+      "produced_outputs": [
+        "lens_reasoning",
+        "decision_effect",
+        "route_pressure"
+      ],
+      "reason_if_parked": "",
+      "required_inputs": [
+        "task_title",
+        "task_description",
+        "owner_constraints"
+      ],
+      "source_milestone": "E35",
+      "source_paths": [
+        "operations/external_validation/e35_six_dimensional_ceo_cognition_model.json",
+        "operations/external_validation/e35_six_dimensional_opportunity_cognition_protocol.json"
+      ],
+      "task_triggers": [
+        "six_dimensional_cognition",
+        "ceo_decision",
+        "strategy"
+      ],
+      "tests_to_run": [
+        "tests/office/test_e35_six_dimensional_ceo_cognition_model.py"
+      ]
+    },
+    {
+      "activation_mode": "read_static_artifact_as_input",
+      "boundary_notes": "Bridge Labs CEO cognition lens; no external action.",
+      "callable_entrypoint": "",
+      "capability_class": "opportunity_generator",
+      "capability_id": "cross_domain_opportunity_field",
+      "capability_tags": [
+        "opportunity_generation",
+        "cross_domain_opportunity",
+        "market"
+      ],
+      "display_name": "Cross-Domain Opportunity Field",
+      "maturity": "partial",
+      "owner_layer": "bridge_labs_ceo_runtime",
+      "produced_outputs": [
+        "lens_reasoning",
+        "decision_effect",
+        "route_pressure"
+      ],
+      "reason_if_parked": "",
+      "required_inputs": [
+        "task_title",
+        "task_description",
+        "owner_constraints"
+      ],
+      "source_milestone": "E35",
+      "source_paths": [
+        "operations/external_validation/e35_cross_domain_opportunity_field.json"
+      ],
+      "task_triggers": [
+        "opportunity_generation",
+        "cross_domain_opportunity",
+        "market"
+      ],
+      "tests_to_run": []
+    },
+    {
+      "activation_mode": "read_static_artifact_as_input",
+      "boundary_notes": "Bridge Labs CEO cognition lens; no external action.",
+      "callable_entrypoint": "",
+      "capability_class": "opportunity_generator",
+      "capability_id": "abstraction_recombination",
+      "capability_tags": [
+        "abstraction_recombination",
+        "innovation"
+      ],
+      "display_name": "Abstraction/Recombination",
+      "maturity": "partial",
+      "owner_layer": "bridge_labs_ceo_runtime",
+      "produced_outputs": [
+        "lens_reasoning",
+        "decision_effect",
+        "route_pressure"
+      ],
+      "reason_if_parked": "",
+      "required_inputs": [
+        "task_title",
+        "task_description",
+        "owner_constraints"
+      ],
+      "source_milestone": "E35",
+      "source_paths": [
+        "operations/external_validation/e35_capability_abstraction_recombination_method.json"
+      ],
+      "task_triggers": [
+        "abstraction_recombination",
+        "innovation"
+      ],
+      "tests_to_run": [
+        "tests/office/test_e35_capability_abstraction_recombination_method.py"
+      ]
+    },
+    {
+      "activation_mode": "read_static_artifact_as_input",
+      "boundary_notes": "Bridge Labs CEO cognition lens; no external action.",
+      "callable_entrypoint": "",
+      "capability_class": "cognition_lens",
+      "capability_id": "adversarial_board_review",
+      "capability_tags": [
+        "adversarial_review",
+        "contrarian_review"
+      ],
+      "display_name": "Adversarial Board Review",
+      "maturity": "partial",
+      "owner_layer": "bridge_labs_ceo_runtime",
+      "produced_outputs": [
+        "lens_reasoning",
+        "decision_effect",
+        "route_pressure"
+      ],
+      "reason_if_parked": "",
+      "required_inputs": [
+        "task_title",
+        "task_description",
+        "owner_constraints"
+      ],
+      "source_milestone": "E36",
+      "source_paths": [
+        "operations/external_validation/e36_adversarial_ceo_board_review.json"
+      ],
+      "task_triggers": [
+        "adversarial_review",
+        "contrarian_review"
+      ],
+      "tests_to_run": [
+        "tests/office/test_e36_adversarial_ceo_board_review.py"
+      ]
+    },
+    {
+      "activation_mode": "compose_multiple_artifacts",
+      "boundary_notes": "Bridge Labs CEO cognition lens; no external action.",
+      "callable_entrypoint": "",
+      "capability_class": "commercial_screen",
+      "capability_id": "skeptical_cfo_review",
+      "capability_tags": [
+        "skeptical_cfo",
+        "budget",
+        "commercial"
+      ],
+      "display_name": "Skeptical CFO Review",
+      "maturity": "partial",
+      "owner_layer": "bridge_labs_ceo_runtime",
+      "produced_outputs": [
+        "lens_reasoning",
+        "decision_effect",
+        "route_pressure"
+      ],
+      "reason_if_parked": "",
+      "required_inputs": [
+        "task_title",
+        "task_description",
+        "owner_constraints"
+      ],
+      "source_milestone": "E36",
+      "source_paths": [
+        "operations/external_validation/e36_adversarial_ceo_board_review.json"
+      ],
+      "task_triggers": [
+        "skeptical_cfo",
+        "budget",
+        "commercial"
+      ],
+      "tests_to_run": [
+        "tests/office/test_e36_adversarial_ceo_board_review.py"
+      ]
+    },
+    {
+      "activation_mode": "compose_multiple_artifacts",
+      "boundary_notes": "Bridge Labs CEO cognition lens; no external action.",
+      "callable_entrypoint": "",
+      "capability_class": "customer_lens",
+      "capability_id": "customer_empathy_review",
+      "capability_tags": [
+        "product_customer_empathy",
+        "customer",
+        "buyer"
+      ],
+      "display_name": "Customer Empathy Review",
+      "maturity": "partial",
+      "owner_layer": "bridge_labs_ceo_runtime",
+      "produced_outputs": [
+        "lens_reasoning",
+        "decision_effect",
+        "route_pressure"
+      ],
+      "reason_if_parked": "",
+      "required_inputs": [
+        "task_title",
+        "task_description",
+        "owner_constraints"
+      ],
+      "source_milestone": "E36",
+      "source_paths": [
+        "operations/external_validation/e36_demand_budget_reality_screen.json",
+        "operations/external_validation/e36_adversarial_ceo_board_review.json"
+      ],
+      "task_triggers": [
+        "product_customer_empathy",
+        "customer",
+        "buyer"
+      ],
+      "tests_to_run": [
+        "tests/office/test_e36_demand_budget_reality_screen.py"
+      ]
+    },
+    {
+      "activation_mode": "read_static_artifact_as_input",
+      "boundary_notes": "Bridge Labs CEO cognition lens; no external action.",
+      "callable_entrypoint": "",
+      "capability_class": "commercial_screen",
+      "capability_id": "demand_budget_reality_screen",
+      "capability_tags": [
+        "demand_budget_screen",
+        "budget",
+        "buyer"
+      ],
+      "display_name": "Demand/Budget Reality Screen",
+      "maturity": "partial",
+      "owner_layer": "bridge_labs_ceo_runtime",
+      "produced_outputs": [
+        "lens_reasoning",
+        "decision_effect",
+        "route_pressure"
+      ],
+      "reason_if_parked": "",
+      "required_inputs": [
+        "task_title",
+        "task_description",
+        "owner_constraints"
+      ],
+      "source_milestone": "E36",
+      "source_paths": [
+        "operations/external_validation/e36_demand_budget_reality_screen.json"
+      ],
+      "task_triggers": [
+        "demand_budget_screen",
+        "budget",
+        "buyer"
+      ],
+      "tests_to_run": [
+        "tests/office/test_e36_demand_budget_reality_screen.py"
+      ]
+    },
+    {
+      "activation_mode": "read_static_artifact_as_input",
+      "boundary_notes": "Bridge Labs CEO cognition lens; no external action.",
+      "callable_entrypoint": "",
+      "capability_class": "evidence_lens",
+      "capability_id": "opportunity_evidence_ladder",
+      "capability_tags": [
+        "evidence_ladder",
+        "validation",
+        "evidence"
+      ],
+      "display_name": "Opportunity Evidence Ladder",
+      "maturity": "partial",
+      "owner_layer": "bridge_labs_ceo_runtime",
+      "produced_outputs": [
+        "lens_reasoning",
+        "decision_effect",
+        "route_pressure"
+      ],
+      "reason_if_parked": "",
+      "required_inputs": [
+        "task_title",
+        "task_description",
+        "owner_constraints"
+      ],
+      "source_milestone": "E36",
+      "source_paths": [
+        "operations/external_validation/e36_opportunity_evidence_ladder.json"
+      ],
+      "task_triggers": [
+        "evidence_ladder",
+        "validation",
+        "evidence"
+      ],
+      "tests_to_run": [
+        "tests/office/test_e36_opportunity_evidence_ladder.py"
+      ]
+    },
+    {
+      "activation_mode": "read_static_artifact_as_input",
+      "boundary_notes": "Bridge Labs CEO cognition lens; no external action.",
+      "callable_entrypoint": "",
+      "capability_class": "evidence_lens",
+      "capability_id": "evidence_intelligence_claim_graph",
+      "capability_tags": [
+        "claim_graph",
+        "evidence_intelligence"
+      ],
+      "display_name": "Evidence Intelligence Claim Graph",
+      "maturity": "partial",
+      "owner_layer": "bridge_labs_ceo_runtime",
+      "produced_outputs": [
+        "lens_reasoning",
+        "decision_effect",
+        "route_pressure"
+      ],
+      "reason_if_parked": "",
+      "required_inputs": [
+        "task_title",
+        "task_description",
+        "owner_constraints"
+      ],
+      "source_milestone": "E39",
+      "source_paths": [
+        "operations/external_validation/e39_deep_research_claim_graph.json"
+      ],
+      "task_triggers": [
+        "claim_graph",
+        "evidence_intelligence"
+      ],
+      "tests_to_run": [
+        "tests/office/test_e39_deep_research_claim_graph.py"
+      ]
+    },
+    {
+      "activation_mode": "read_static_artifact_as_input",
+      "boundary_notes": "Bridge Labs CEO cognition lens; no external action.",
+      "callable_entrypoint": "",
+      "capability_class": "evidence_lens",
+      "capability_id": "contradiction_awareness",
+      "capability_tags": [
+        "contradiction",
+        "overclaim"
+      ],
+      "display_name": "Contradiction Awareness",
+      "maturity": "partial",
+      "owner_layer": "bridge_labs_ceo_runtime",
+      "produced_outputs": [
+        "lens_reasoning",
+        "decision_effect",
+        "route_pressure"
+      ],
+      "reason_if_parked": "",
+      "required_inputs": [
+        "task_title",
+        "task_description",
+        "owner_constraints"
+      ],
+      "source_milestone": "E39",
+      "source_paths": [
+        "operations/external_validation/e39_contradiction_graph.json",
+        "operations/external_validation/e39_unsupported_claim_downgrade_register.json"
+      ],
+      "task_triggers": [
+        "contradiction",
+        "overclaim"
+      ],
+      "tests_to_run": []
+    },
+    {
+      "activation_mode": "read_static_artifact_as_input",
+      "boundary_notes": "Bridge Labs CEO cognition lens; no external action.",
+      "callable_entrypoint": "",
+      "capability_class": "cognition_lens",
+      "capability_id": "frontier_capability_import",
+      "capability_tags": [
+        "frontier_capability_import",
+        "self_upgrade"
+      ],
+      "display_name": "Frontier Capability Import",
+      "maturity": "partial",
+      "owner_layer": "bridge_labs_ceo_runtime",
+      "produced_outputs": [
+        "lens_reasoning",
+        "decision_effect",
+        "route_pressure"
+      ],
+      "reason_if_parked": "",
+      "required_inputs": [
+        "task_title",
+        "task_description",
+        "owner_constraints"
+      ],
+      "source_milestone": "E41",
+      "source_paths": [
+        "operations/external_validation/e41_frontier_capability_import_loop.json"
+      ],
+      "task_triggers": [
+        "frontier_capability_import",
+        "self_upgrade"
+      ],
+      "tests_to_run": [
+        "tests/office/test_e41_frontier_capability_import_loop.py"
+      ]
+    },
+    {
+      "activation_mode": "call_existing_function",
+      "boundary_notes": "Bridge Labs CEO cognition lens; no external action.",
+      "callable_entrypoint": "office.mission_command.e42_task_capability_matcher.match_task_to_capabilities",
+      "capability_class": "router",
+      "capability_id": "task_resource_router",
+      "capability_tags": [
+        "task_resource_router",
+        "reuse"
+      ],
+      "display_name": "Task Resource Router",
+      "maturity": "active",
+      "owner_layer": "bridge_labs_ceo_runtime",
+      "produced_outputs": [
+        "lens_reasoning",
+        "decision_effect",
+        "route_pressure"
+      ],
+      "reason_if_parked": "",
+      "required_inputs": [
+        "task_title",
+        "task_description",
+        "owner_constraints"
+      ],
+      "source_milestone": "E42",
+      "source_paths": [
+        "office/mission_command/e42_task_capability_matcher.py",
+        "operations/external_validation/e42_task_capability_matcher_model.json"
+      ],
+      "task_triggers": [
+        "task_resource_router",
+        "reuse"
+      ],
+      "tests_to_run": [
+        "tests/office/test_e42_task_capability_matcher.py"
+      ]
+    },
+    {
+      "activation_mode": "call_existing_function",
+      "boundary_notes": "Bridge Labs CEO cognition lens; no external action.",
+      "callable_entrypoint": "office.mission_command.e42_reuse_first_no_rebuild_gate.evaluate_reuse_first_gate",
+      "capability_class": "route_selector",
+      "capability_id": "reuse_first_no_rebuild_gate",
+      "capability_tags": [
+        "no_rebuild",
+        "reuse_first"
+      ],
+      "display_name": "Reuse-First No-Rebuild Gate",
+      "maturity": "active",
+      "owner_layer": "bridge_labs_ceo_runtime",
+      "produced_outputs": [
+        "lens_reasoning",
+        "decision_effect",
+        "route_pressure"
+      ],
+      "reason_if_parked": "",
+      "required_inputs": [
+        "task_title",
+        "task_description",
+        "owner_constraints"
+      ],
+      "source_milestone": "E42",
+      "source_paths": [
+        "office/mission_command/e42_reuse_first_no_rebuild_gate.py"
+      ],
+      "task_triggers": [
+        "no_rebuild",
+        "reuse_first"
+      ],
+      "tests_to_run": [
+        "tests/office/test_e42_reuse_first_no_rebuild_gate.py"
+      ]
+    },
+    {
+      "activation_mode": "read_static_artifact_as_input",
+      "boundary_notes": "Read-only boundary reference; no duplicate kernel/execution layer.",
+      "callable_entrypoint": "",
+      "capability_class": "execution_screen",
+      "capability_id": "execution_boundary_alignment",
+      "capability_tags": [
+        "execution_feasibility",
+        "gov_mcp",
+        "mcp"
+      ],
+      "display_name": "Execution Boundary Alignment",
+      "maturity": "partial",
+      "owner_layer": "gov_mcp_execution_boundary",
+      "produced_outputs": [
+        "lens_reasoning",
+        "decision_effect",
+        "route_pressure"
+      ],
+      "reason_if_parked": "",
+      "required_inputs": [
+        "task_title",
+        "task_description",
+        "owner_constraints"
+      ],
+      "source_milestone": "E36/E43",
+      "source_paths": [
+        "operations/external_validation/e43_minimal_cross_repo_alignment.json"
+      ],
+      "task_triggers": [
+        "execution_feasibility",
+        "gov_mcp",
+        "mcp"
+      ],
+      "tests_to_run": [
+        "tests/office/test_e43_minimal_cross_repo_alignment.py"
+      ]
+    },
+    {
+      "activation_mode": "read_static_artifact_as_input",
+      "boundary_notes": "Read-only boundary reference; no duplicate kernel/execution layer.",
+      "callable_entrypoint": "",
+      "capability_class": "governance_boundary",
+      "capability_id": "governance_boundary_alignment",
+      "capability_tags": [
+        "governance",
+        "Y-star-gov"
+      ],
+      "display_name": "Governance Boundary Alignment",
+      "maturity": "partial",
+      "owner_layer": "ystar_gov_governance_kernel",
+      "produced_outputs": [
+        "lens_reasoning",
+        "decision_effect",
+        "route_pressure"
+      ],
+      "reason_if_parked": "",
+      "required_inputs": [
+        "task_title",
+        "task_description",
+        "owner_constraints"
+      ],
+      "source_milestone": "E36/E43",
+      "source_paths": [
+        "operations/external_validation/e43_minimal_cross_repo_alignment.json"
+      ],
+      "task_triggers": [
+        "governance",
+        "Y-star-gov"
+      ],
+      "tests_to_run": [
+        "tests/office/test_e43_minimal_cross_repo_alignment.py"
+      ]
+    },
+    {
+      "activation_mode": "compose_multiple_artifacts",
+      "boundary_notes": "Bridge Labs CEO cognition lens; no external action.",
+      "callable_entrypoint": "office.mission_command.e43_first_value_loop_runner.build_first_value_loop_run_result",
+      "capability_class": "route_selector",
+      "capability_id": "first_user_value_path",
+      "capability_tags": [
+        "first_user_value_path",
+        "commercial_wedge",
+        "execution_feasibility"
+      ],
+      "display_name": "First User Value Path",
+      "maturity": "partial",
+      "owner_layer": "bridge_labs_ceo_runtime",
+      "produced_outputs": [
+        "lens_reasoning",
+        "decision_effect",
+        "route_pressure"
+      ],
+      "reason_if_parked": "",
+      "required_inputs": [
+        "task_title",
+        "task_description",
+        "owner_constraints"
+      ],
+      "source_milestone": "E43",
+      "source_paths": [
+        "operations/external_validation/e43_selected_first_value_path.json",
+        "office/mission_command/e43_first_value_loop_runner.py"
+      ],
+      "task_triggers": [
+        "first_user_value_path",
+        "commercial_wedge",
+        "execution_feasibility"
+      ],
+      "tests_to_run": [
+        "tests/office/test_e43_selected_first_value_path.py"
+      ]
+    }
+  ],
+  "generated_at": "2026-05-05T00:00:01Z",
+  "no_second_ceo_brain_created": true,
+  "no_second_ceo_kg_created": true,
+  "registry_type": "callable_activation_map_not_tag_list",
+  "required_capability_ids_present": {
+    "abstraction_recombination": true,
+    "adversarial_board_review": true,
+    "contradiction_awareness": true,
+    "cross_domain_opportunity_field": true,
+    "customer_empathy_review": true,
+    "demand_budget_reality_screen": true,
+    "evidence_intelligence_claim_graph": true,
+    "execution_boundary_alignment": true,
+    "first_user_value_path": true,
+    "frontier_capability_import": true,
+    "governance_boundary_alignment": true,
+    "innovation": true,
+    "opportunity_evidence_ladder": true,
+    "reuse_first_no_rebuild_gate": true,
+    "six_dimensional_cognition": true,
+    "skeptical_cfo_review": true,
+    "strategic_imagination": true,
+    "task_resource_router": true
+  }
+}

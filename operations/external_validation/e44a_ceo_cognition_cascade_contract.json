@@ -1,0 +1,38 @@
+{
+  "artifact_id": "e44a_ceo_cognition_cascade_contract",
+  "entrypoint": "office.mission_command.e44a_ceo_cognition_cascade_runtime.run_ceo_cognition_cascade",
+  "input_fields": [
+    "task_title",
+    "task_description",
+    "owner_constraints",
+    "target_milestone",
+    "optional previous_result_artifact_paths"
+  ],
+  "no_external_action": true,
+  "required_stages": [
+    "task_interpretation",
+    "resource_routing",
+    "activation_registry_lookup",
+    "strategic_imagination_recall",
+    "innovation_abstraction_recombination",
+    "six_dimensional_cognition",
+    "opportunity_field_comparison",
+    "adversarial_review",
+    "demand_budget_reality_screen",
+    "evidence_validation_burden",
+    "high_imagination_preservation",
+    "execution_feasibility_repo_ownership",
+    "no_rebuild_gate",
+    "route_selection",
+    "owner_action_recommendation"
+  ],
+  "stage_output_fields": [
+    "stage_id",
+    "invoked_capabilities",
+    "input_artifacts_used",
+    "reasoning_summary",
+    "decision_effect",
+    "confidence_class",
+    "what_changed_from_resource_router_only"
+  ]
+}

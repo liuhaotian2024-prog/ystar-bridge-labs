@@ -1,0 +1,8 @@
+{
+  "artifact_id": "e44a_future_task_loop_integration",
+  "entrypoint": "office.mission_command.e44a_ceo_task_preflight_v2.run_ceo_task_preflight_v2",
+  "mandatory_for_serious_company_tasks": true,
+  "no_second_ceo_brain": true,
+  "no_second_ceo_kg": true,
+  "non_serious_tasks_may_use_router_only": true
+}
