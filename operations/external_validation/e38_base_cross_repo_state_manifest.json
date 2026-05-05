@@ -1,0 +1,68 @@
+{
+  "E37_artifacts_found": true,
+  "Y-star-gov": {
+    "branch": "backflow/company-runtime-domain-pack",
+    "dirty_status": "",
+    "exists": true,
+    "head": "5f031f4be151b81ef1a1b1908a5c83c5420e8ce1",
+    "inspection_mode": "read_only",
+    "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+    "remote_tracking_head": "35d270c79f73fdd0bdf55ebdefe03fb4ccb2d397"
+  },
+  "artifact_id": "e38_base_cross_repo_state_manifest",
+  "bridge_labs": {
+    "branch": "backflow/aiden-ceo-meeting-room",
+    "dirty_status": "",
+    "exists": true,
+    "head": "eb4a4281dac884c4dc2db9c05e3795d44d63428b",
+    "inspection_mode": "primary_writable_via_bridge_only",
+    "path": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+    "remote_tracking_head": "eb4a4281dac884c4dc2db9c05e3795d44d63428b"
+  },
+  "can_proceed_safely": true,
+  "expected_bridge_labs_base_head": "eb4a4281dac884c4dc2db9c05e3795d44d63428b",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "gov-mcp": {
+    "branch": "backflow/company-runtime-tools",
+    "dirty_status": "",
+    "exists": true,
+    "head": "4f758d9d4823eed108ae3d63be1f4db192a974d6",
+    "inspection_mode": "read_only",
+    "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+    "remote_tracking_head": "4f758d9d4823eed108ae3d63be1f4db192a974d6"
+  },
+  "no_contact_boundary": true,
+  "no_publish_boundary": true,
+  "no_send_boundary": true,
+  "owner_approved_public_read_only_scope": true,
+  "required_artifacts": [
+    {
+      "exists": true,
+      "path": "operations/external_validation/e37_czl_closure.json"
+    },
+    {
+      "exists": true,
+      "path": "operations/external_validation/e37_owner_approval_packet_for_e38.json"
+    },
+    {
+      "exists": true,
+      "path": "operations/external_validation/e37_shortlist_taxonomy_repair.json"
+    },
+    {
+      "exists": true,
+      "path": "operations/external_validation/e37_normalized_opportunity_clusters.json"
+    },
+    {
+      "exists": true,
+      "path": "operations/external_validation/e37_public_readonly_evidence_sprint_design.json"
+    },
+    {
+      "exists": true,
+      "path": "operations/external_validation/e37_evidence_route_y_star_gov_alignment.json"
+    },
+    {
+      "exists": true,
+      "path": "operations/external_validation/e37_evidence_route_gov_mcp_alignment.json"
+    }
+  ]
+}

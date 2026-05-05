@@ -1,0 +1,13 @@
+{"evidence_status": "owner_approved_boundary", "label": "E38 public read-only permission envelope", "node_id": "e38_public_readonly_permission", "node_type": "PermissionEnvelope"}
+{"evidence_status": "public_observation", "label": "Public read-only source collection", "node_id": "e38_public_source_collection", "node_type": "PublicEvidenceRun"}
+{"evidence_status": "public_observation", "label": "27 public evidence receipts", "node_id": "e38_public_evidence_receipts", "node_type": "EvidenceReceiptSet"}
+{"evidence_status": "public_observation", "label": "Claim extraction and evidence grading", "node_id": "e38_claim_extraction", "node_type": "ClaimExtraction"}
+{"evidence_status": "internal_analysis", "label": "Cluster evidence update after public sprint", "node_id": "e38_cluster_evidence_update", "node_type": "ClusterEvidenceUpdate"}
+{"evidence_status": "internal_analysis", "label": "Comparative cluster ranking after public evidence", "node_id": "e38_comparative_cluster_ranking", "node_type": "ClusterRanking"}
+{"evidence_status": "owner_decision_pending", "label": "Refined unsent expert review packet", "node_id": "e38_expert_review_packet_refined", "node_type": "ExpertReviewPacket"}
+{"evidence_status": "repo_observation", "label": "Y-star-gov alignment after evidence", "node_id": "e38_y_star_gov_alignment", "node_type": "CrossRepoAlignment"}
+{"evidence_status": "repo_observation", "label": "gov-mcp alignment after evidence", "node_id": "e38_gov_mcp_alignment", "node_type": "CrossRepoAlignment"}
+{"evidence_status": "owner_decision_pending", "label": "Owner decision packet for E39", "node_id": "e38_owner_packet_e39", "node_type": "OwnerDecisionPacket"}
+{"evidence_status": "evidence_boundary", "label": "E38 is not customer validation", "node_id": "e38_no_customer_validation", "node_type": "EvidenceBoundary"}
+{"evidence_status": "evidence_boundary", "label": "E38 is not paid signal", "node_id": "e38_no_paid_signal", "node_type": "EvidenceBoundary"}
+{"evidence_status": "owner_decision_pending", "label": "E39 expert review preflight or additional evidence sprint", "node_id": "e38_next_horizon", "node_type": "NextDecisionHorizon"}

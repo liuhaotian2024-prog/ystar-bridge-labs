@@ -1,0 +1,97 @@
+{
+  "artifact_id": "e38_gov_mcp_alignment_after_evidence",
+  "entries": [
+    {
+      "adapter_candidates": [
+        "workflow/evidence collection adapter candidate after route selection"
+      ],
+      "blocked_actions": [
+        "automated outreach/publication without owner approval"
+      ],
+      "cluster": "enterprise / professional AI transformation",
+      "execution_boundary": [
+        "Labs-only artifact now",
+        "can be governed by existing gov_check/gov_enforce if later executable",
+        "requires contract load/validate/activate before executable route"
+      ],
+      "gov_mcp_files_modified": false
+    },
+    {
+      "adapter_candidates": [
+        "workflow/evidence collection adapter candidate after route selection"
+      ],
+      "blocked_actions": [
+        "automated outreach/publication without owner approval"
+      ],
+      "cluster": "AI productivity / workflow / toolchain",
+      "execution_boundary": [
+        "Labs-only artifact now",
+        "can be governed by existing gov_check/gov_enforce if later executable",
+        "requires contract load/validate/activate before executable route"
+      ],
+      "gov_mcp_files_modified": false
+    },
+    {
+      "adapter_candidates": [
+        "workflow/evidence collection adapter candidate after route selection"
+      ],
+      "blocked_actions": [
+        "automated outreach/publication without owner approval"
+      ],
+      "cluster": "governance / trust / audit / legitimacy",
+      "execution_boundary": [
+        "Labs-only artifact now",
+        "can be governed by existing gov_check/gov_enforce if later executable",
+        "requires contract load/validate/activate before executable route"
+      ],
+      "gov_mcp_files_modified": false
+    },
+    {
+      "adapter_candidates": [
+        "hardware simulator or physical-interface adapter candidate"
+      ],
+      "blocked_actions": [
+        "physical-world actuation"
+      ],
+      "cluster": "hardware + AI / physical interface",
+      "execution_boundary": [
+        "unsafe / must not execute physical action",
+        "owner approval required before execution"
+      ],
+      "gov_mcp_files_modified": false
+    },
+    {
+      "adapter_candidates": [
+        "agent-to-agent delegation/commerce adapter candidate"
+      ],
+      "blocked_actions": [
+        "agent-to-agent payment or external action execution"
+      ],
+      "cluster": "agent economy / autonomous company for execution/payment routes",
+      "execution_boundary": [
+        "blocked until owner approval",
+        "requires delegation/escalation",
+        "requires CIEU report/verify/audit",
+        "requires new MCP adapter candidate"
+      ],
+      "gov_mcp_files_modified": false
+    }
+  ],
+  "generated_at": "2026-05-05T00:00:01Z",
+  "gov_mcp_head": "4f758d9d4823eed108ae3d63be1f4db192a974d6",
+  "inspection_mode": "read_only",
+  "summary": {
+    "adapter_candidates": [
+      "agent-to-agent delegation/commerce adapter candidate",
+      "hardware simulator or physical-interface adapter candidate",
+      "workflow/evidence collection adapter candidate after route selection"
+    ],
+    "blocked_actions": [
+      "agent-to-agent payment or external action execution",
+      "automated outreach/publication without owner approval",
+      "physical-world actuation"
+    ],
+    "execution_boundary": "Labs-only evidence artifacts now; any contact/execution remains blocked until owner approval",
+    "gov_mcp_files_modified": false
+  }
+}

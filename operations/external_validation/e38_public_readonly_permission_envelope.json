@@ -1,0 +1,42 @@
+{
+  "allowed_actions": [
+    "access public web pages",
+    "read official product docs",
+    "read public pricing pages",
+    "read public case studies",
+    "read public market/analyst/research pages",
+    "read public GitHub/project docs",
+    "read public regulatory/guidance pages",
+    "record source metadata and evidence receipts",
+    "extract claims with support labels",
+    "mark contradictions and unsupported claims"
+  ],
+  "artifact_id": "e38_public_readonly_permission_envelope",
+  "execution_must_stop_if": [
+    "login wall",
+    "form required",
+    "payment required",
+    "private data",
+    "auth wall",
+    "rate-limit or robot concern"
+  ],
+  "forbidden_actions": [
+    "login",
+    "account creation",
+    "form submission",
+    "customer contact",
+    "expert contact",
+    "email/message/send",
+    "publication",
+    "payment",
+    "secrets",
+    "scraping private/authenticated content",
+    "provider send API",
+    "changing external systems",
+    "representing Y* externally"
+  ],
+  "generated_at": "2026-05-05T00:00:01Z",
+  "permission_status": "approved_for_public_read_only_execution",
+  "provider_required": false,
+  "repo_controls_block_public_readonly_execution": false
+}

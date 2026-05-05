@@ -1,0 +1,63 @@
+{
+  "artifact_id": "e38_expert_review_packet_refinement",
+  "customer_or_expert_contact_occurred": false,
+  "do_not_claim_list": [
+    "customer validation",
+    "paid signal",
+    "Y* superiority",
+    "guaranteed ROI",
+    "enterprise demand proven"
+  ],
+  "evidence_summary_to_show_reviewer": "Enterprise/professional and AI productivity have strongest public evidence and budget proxies; governance/trust has strong strategic pressure but needs route clarity; sentinel clusters are preserved without being over-promoted.",
+  "feedback_questions": [
+    "Is the pain real?",
+    "Who owns budget?",
+    "Which claim is overreaching?",
+    "What would make this worth a paid review?",
+    "What should be parked?"
+  ],
+  "generated_at": "2026-05-05T00:00:01Z",
+  "message_draft_status": "unsent",
+  "owner_approval_required_before_any_contact": true,
+  "reviewer_feedback_would_not_prove": [
+    "market validation",
+    "paid demand",
+    "product-market fit",
+    "repeatable demand"
+  ],
+  "reviewer_feedback_would_prove": [
+    "message clarity",
+    "pain plausibility",
+    "objection priority",
+    "next evidence route"
+  ],
+  "reviewer_profiles": [
+    "enterprise AI implementation lead",
+    "AI productivity/workflow operator",
+    "workflow automation consultant",
+    "AI governance/security practitioner",
+    "professional services operator"
+  ],
+  "top_clusters": [
+    "enterprise / professional AI transformation",
+    "AI productivity / workflow / toolchain",
+    "governance / trust / audit / legitimacy"
+  ],
+  "updated_five_minute_walkthrough_outline": [
+    "Show E38 public evidence boundaries.",
+    "Show strongest and contradicted claims.",
+    "Ask whether pain language matches real work.",
+    "Ask what proof is missing before paid review.",
+    "Capture disconfirming feedback before interest."
+  ],
+  "updated_no_send_message_drafts": [
+    "Draft only: We ran a public-source scan on AI productivity and enterprise AI transformation. Would this evidence packet be worth a five-minute critique if the owner later approves outreach?"
+  ],
+  "why_each_reviewer_can_evaluate": {
+    "AI governance/security practitioner": "can judge trust/audit watchlist relevance",
+    "AI productivity/workflow operator": "can judge tool sprawl, workflow yield, and ROI measurement pain",
+    "enterprise AI implementation lead": "can judge implementation-gap and value-realization claims",
+    "professional services operator": "can judge diagnostic/review offer language",
+    "workflow automation consultant": "can judge service-first commercial path"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "Y-star-gov_head": "5f031f4be151b81ef1a1b1908a5c83c5420e8ce1",
+  "artifact_id": "e38_y_star_gov_alignment_after_evidence",
+  "entries": [
+    {
+      "Y-star-gov_files_modified": false,
+      "cluster": "enterprise / professional AI transformation",
+      "primitive_candidate": "",
+      "primitives": [
+        "existing IntentContract semantics if executable",
+        "existing check/enforce semantics if executable",
+        "existing CIEU semantics",
+        "existing trust hierarchy semantics"
+      ],
+      "risks": [
+        "evidence-boundary risk",
+        "terminology risk"
+      ]
+    },
+    {
+      "Y-star-gov_files_modified": false,
+      "cluster": "AI productivity / workflow / toolchain",
+      "primitive_candidate": "",
+      "primitives": [
+        "existing IntentContract semantics if executable",
+        "existing check/enforce semantics if executable",
+        "existing CIEU semantics",
+        "existing trust hierarchy semantics"
+      ],
+      "risks": [
+        "evidence-boundary risk",
+        "terminology risk"
+      ]
+    },
+    {
+      "Y-star-gov_files_modified": false,
+      "cluster": "governance / trust / audit / legitimacy",
+      "primitive_candidate": "",
+      "primitives": [
+        "existing IntentContract semantics if executable",
+        "existing check/enforce semantics if executable",
+        "existing CIEU semantics",
+        "existing trust hierarchy semantics"
+      ],
+      "risks": [
+        "evidence-boundary risk",
+        "terminology risk"
+      ]
+    },
+    {
+      "Y-star-gov_files_modified": false,
+      "cluster": "hardware + AI / physical interface",
+      "primitive_candidate": "physical-world delegated action legitimacy primitive",
+      "primitives": [
+        "unclear / owner review",
+        "candidate new primitive"
+      ],
+      "risks": [
+        "governance-authority risk",
+        "duplicate-kernel risk"
+      ]
+    },
+    {
+      "Y-star-gov_files_modified": false,
+      "cluster": "agent economy / autonomous company for execution/payment routes",
+      "primitive_candidate": "agentic commerce / non-human workforce authorization primitive",
+      "primitives": [
+        "existing IntentContract semantics",
+        "existing delegation semantics",
+        "existing CIEU semantics",
+        "candidate new primitive"
+      ],
+      "risks": [
+        "governance-authority risk",
+        "contract-lifecycle risk",
+        "evidence-boundary risk"
+      ]
+    }
+  ],
+  "generated_at": "2026-05-05T00:00:01Z",
+  "inspection_mode": "read_only",
+  "summary": {
+    "Y-star-gov_files_modified": false,
+    "primitive_candidates": [
+      "agentic commerce / non-human workforce authorization primitive",
+      "physical-world delegated action legitimacy primitive"
+    ],
+    "primitives_used": [
+      "candidate new primitive",
+      "existing CIEU semantics",
+      "existing IntentContract semantics",
+      "existing IntentContract semantics if executable",
+      "existing check/enforce semantics if executable",
+      "existing delegation semantics",
+      "existing trust hierarchy semantics",
+      "unclear / owner review"
+    ],
+    "risks": [
+      "contract-lifecycle risk",
+      "duplicate-kernel risk",
+      "evidence-boundary risk",
+      "governance-authority risk",
+      "terminology risk"
+    ]
+  }
+}

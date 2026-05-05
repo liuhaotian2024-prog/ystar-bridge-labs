@@ -1,0 +1,23 @@
+{
+  "artifact_id": "e38_public_source_collection_run",
+  "block_reason": "",
+  "blocked": false,
+  "customer_contact_occurred": false,
+  "execution_status": "executed_public_read_only",
+  "expert_contact_occurred": false,
+  "form_submitted": false,
+  "generated_at": "2026-05-05T00:00:01Z",
+  "login_occurred": false,
+  "minimum_target_met": true,
+  "provider_api_called": false,
+  "source_count": 27,
+  "sources_by_cluster": {
+    "AI productivity / workflow / toolchain": 8,
+    "agent economy / autonomous company": 2,
+    "education / creator / family / small business": 3,
+    "enterprise / professional AI transformation": 8,
+    "governance / trust / audit / legitimacy": 3,
+    "hardware + AI / physical interface": 1,
+    "human-life / sleep / health / home": 2
+  }
+}

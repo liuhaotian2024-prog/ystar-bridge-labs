@@ -1,0 +1,92 @@
+{
+  "artifact_id": "e38_public_evidence_research_agenda",
+  "claim_extraction_schema": [
+    "claim_id",
+    "cluster",
+    "category",
+    "support_level",
+    "source_receipt_id",
+    "allowed_in_buyer_copy",
+    "limitations"
+  ],
+  "confidence_decrease_evidence": [
+    "contradictions",
+    "weak source quality",
+    "no budget owner",
+    "no public category language"
+  ],
+  "confidence_increase_evidence": [
+    "strong public reports",
+    "pricing/budget proxies",
+    "repeated buyer language",
+    "clear existing substitutes"
+  ],
+  "contradiction_checks": [
+    "adoption vs trust",
+    "individual productivity vs team productivity",
+    "pilot activity vs scaled value",
+    "protocol activity vs buyer readiness"
+  ],
+  "expert_review_move_evidence": [
+    "strong public pain but unclear buyer language",
+    "visible substitute category with unresolved objection map"
+  ],
+  "freshness_criteria": "prefer 2024-2026 sources; older sources used only when authoritative",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "high_imagination_sentinel_clusters": {
+    "agent economy / autonomous company": [
+      "Are public protocols emerging for agent commerce, identity, authorization, and payment?"
+    ],
+    "hardware + AI / physical interface": [
+      "Is AI being embedded into physical interfaces or smart-home systems?"
+    ],
+    "human-life / sleep / health / home": [
+      "Is AI entering home/health/sleep routines through public products or research?"
+    ]
+  },
+  "park_or_downgrade_evidence": [
+    "no sources",
+    "source quality low",
+    "only speculative claims",
+    "execution requires prohibited action"
+  ],
+  "primary_clusters": {
+    "AI productivity / workflow / toolchain": [
+      "Are teams struggling to measure actual AI-tool productivity?",
+      "Are companies paying for AI tools without clear proof of yield?",
+      "Is there public evidence of workflow fragmentation, tool sprawl, or unclear ROI?",
+      "What buyer language appears around productivity, ROI, workflow automation, AI ops, developer productivity, agent management, and evaluation?"
+    ],
+    "enterprise / professional AI transformation": [
+      "Are enterprises struggling to turn AI pilots into real operational value?",
+      "Are consultancies or professional services firms selling AI implementation diagnostics or transformation audits?",
+      "Is adoption blocked by governance, workflow integration, trust, ROI, or change management?",
+      "What buyer language appears around readiness, implementation audit, workflow transformation, governance, value realization, and operating model?"
+    ]
+  },
+  "secondary_watchlist_clusters": {
+    "education / creator / family / small business": [
+      "Is AI adoption visible in education and SME contexts?",
+      "Are concerns about trust, training, and operational fit visible?"
+    ],
+    "governance / trust / audit / legitimacy": [
+      "What public standards or regulations create governance/trust pressure?",
+      "What evidence objects are named by standards and guidance?"
+    ]
+  },
+  "source_categories": [
+    "official product docs",
+    "pricing pages",
+    "case studies",
+    "analyst/research reports",
+    "public GitHub/project docs",
+    "regulatory/guidance pages"
+  ],
+  "source_quality_criteria": [
+    "public",
+    "freshness-labeled",
+    "claim-relevant",
+    "no login/form/payment",
+    "publisher identified"
+  ]
+}

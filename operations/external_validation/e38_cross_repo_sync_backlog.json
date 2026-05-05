@@ -1,0 +1,111 @@
+{
+  "artifact_id": "e38_cross_repo_sync_backlog",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "items": [
+    {
+      "affected_repo": "bridge-labs",
+      "disposition": "act next",
+      "external_side_effect": false,
+      "owner_decision_required": false,
+      "priority": "high",
+      "proposed_action": "update CEO KG/brain delta",
+      "reason": "Persist public receipts and claim labels.",
+      "risk_if_ignored": "Future milestone may overclaim evidence or bypass cross-repo boundary.",
+      "source_evidence_or_route": "e38_public_evidence_receipts",
+      "sync_item_id": "e38_sync_001"
+    },
+    {
+      "affected_repo": "bridge-labs",
+      "disposition": "act next",
+      "external_side_effect": false,
+      "owner_decision_required": true,
+      "priority": "high",
+      "proposed_action": "add bridge-labs mapping only",
+      "reason": "Prepare E39 no-send expert review preflight.",
+      "risk_if_ignored": "Future milestone may overclaim evidence or bypass cross-repo boundary.",
+      "source_evidence_or_route": "e38_expert_review_packet_refinement",
+      "sync_item_id": "e38_sync_002"
+    },
+    {
+      "affected_repo": "Y-star-gov",
+      "disposition": "defer",
+      "external_side_effect": false,
+      "owner_decision_required": true,
+      "priority": "medium",
+      "proposed_action": "propose Y-star-gov primitive",
+      "reason": "Possible future primitive after owner route selection.",
+      "risk_if_ignored": "Future milestone may overclaim evidence or bypass cross-repo boundary.",
+      "source_evidence_or_route": "agentic_commerce_sentinel",
+      "sync_item_id": "e38_sync_003"
+    },
+    {
+      "affected_repo": "Y-star-gov",
+      "disposition": "park",
+      "external_side_effect": false,
+      "owner_decision_required": true,
+      "priority": "medium",
+      "proposed_action": "propose Y-star-gov primitive",
+      "reason": "Physical action legitimacy primitive remains candidate only.",
+      "risk_if_ignored": "Future milestone may overclaim evidence or bypass cross-repo boundary.",
+      "source_evidence_or_route": "physical_interface_sentinel",
+      "sync_item_id": "e38_sync_004"
+    },
+    {
+      "affected_repo": "gov-mcp",
+      "disposition": "defer",
+      "external_side_effect": false,
+      "owner_decision_required": true,
+      "priority": "medium",
+      "proposed_action": "propose gov-mcp adapter",
+      "reason": "Adapter only if future route becomes executable.",
+      "risk_if_ignored": "Future milestone may overclaim evidence or bypass cross-repo boundary.",
+      "source_evidence_or_route": "workflow_evidence_collection_adapter",
+      "sync_item_id": "e38_sync_005"
+    },
+    {
+      "affected_repo": "multiple",
+      "disposition": "defer",
+      "external_side_effect": false,
+      "owner_decision_required": true,
+      "priority": "high",
+      "proposed_action": "owner decision required",
+      "reason": "Would require explicit owner approval and boundary review.",
+      "risk_if_ignored": "Future milestone may overclaim evidence or bypass cross-repo boundary.",
+      "source_evidence_or_route": "future_external_expert_contact",
+      "sync_item_id": "e38_sync_006"
+    },
+    {
+      "affected_repo": "bridge-labs",
+      "disposition": "act next",
+      "external_side_effect": false,
+      "owner_decision_required": false,
+      "priority": "high",
+      "proposed_action": "update CEO KG/brain delta",
+      "reason": "Keep no-fake-evidence boundary in next owner packet.",
+      "risk_if_ignored": "Future milestone may overclaim evidence or bypass cross-repo boundary.",
+      "source_evidence_or_route": "unsupported_claim_removal",
+      "sync_item_id": "e38_sync_007"
+    },
+    {
+      "affected_repo": "bridge-labs",
+      "disposition": "act next",
+      "external_side_effect": false,
+      "owner_decision_required": false,
+      "priority": "high",
+      "proposed_action": "add bridge-labs mapping only",
+      "reason": "Prevent public observation from becoming validation claim.",
+      "risk_if_ignored": "Future milestone may overclaim evidence or bypass cross-repo boundary.",
+      "source_evidence_or_route": "public_evidence_not_validation",
+      "sync_item_id": "e38_sync_008"
+    }
+  ],
+  "summary": {
+    "Y-star-gov_files_modified": false,
+    "Y-star-gov_items": 3,
+    "bridge_labs_items": 4,
+    "gov_mcp_files_modified": false,
+    "gov_mcp_items": 2,
+    "items": 8,
+    "owner_decision_items": 5
+  }
+}

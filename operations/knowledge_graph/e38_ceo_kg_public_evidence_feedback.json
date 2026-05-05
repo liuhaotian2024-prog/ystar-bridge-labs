@@ -1,0 +1,10 @@
+{
+  "artifact_id": "e38_ceo_kg_public_evidence_feedback",
+  "canonical_learning_promoted": false,
+  "customer_validation_claimed": false,
+  "evidence_receipts_count": 27,
+  "kg_delta_edges": 14,
+  "kg_delta_nodes": 13,
+  "paid_signal_claimed": false,
+  "public_sources_collected": 27
+}

@@ -1,0 +1,14 @@
+{"relation": "input_to", "source": "e37_normalized_clusters", "target": "e38_public_source_collection"}
+{"relation": "bounds", "source": "e38_public_readonly_permission", "target": "e38_public_source_collection"}
+{"relation": "produces", "source": "e38_public_source_collection", "target": "e38_public_evidence_receipts"}
+{"relation": "feeds", "source": "e38_public_evidence_receipts", "target": "e38_claim_extraction"}
+{"relation": "feeds", "source": "e38_claim_extraction", "target": "e38_cluster_evidence_update"}
+{"relation": "feeds", "source": "e38_cluster_evidence_update", "target": "e38_comparative_cluster_ranking"}
+{"relation": "feeds", "source": "e38_comparative_cluster_ranking", "target": "e38_expert_review_packet_refined"}
+{"relation": "requires", "source": "e38_comparative_cluster_ranking", "target": "e38_y_star_gov_alignment"}
+{"relation": "requires", "source": "e38_comparative_cluster_ranking", "target": "e38_gov_mcp_alignment"}
+{"relation": "routes_to", "source": "e38_owner_packet_e39", "target": "e38_next_horizon"}
+{"relation": "bounds", "source": "e38_no_customer_validation", "target": "e38_public_evidence_receipts"}
+{"relation": "bounds", "source": "e38_no_paid_signal", "target": "e38_public_evidence_receipts"}
+{"relation": "maps_to", "source": "e38_y_star_gov_alignment", "target": "Y-star-gov"}
+{"relation": "maps_to", "source": "e38_gov_mcp_alignment", "target": "gov-mcp"}
