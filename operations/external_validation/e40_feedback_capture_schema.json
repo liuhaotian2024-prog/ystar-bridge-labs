@@ -1,0 +1,28 @@
+{
+  "artifact_id": "e40_feedback_capture_schema",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "fields": [
+    "feedback_id",
+    "cluster",
+    "expert_profile",
+    "feedback_classification",
+    "pain_reality_score",
+    "budget_plausibility_score",
+    "language_clarity_score",
+    "skepticism_notes",
+    "route_confidence_change",
+    "what_this_does_not_prove"
+  ],
+  "allowed_feedback_classifications": [
+    "expert opinion",
+    "customer feedback",
+    "buyer feedback",
+    "paid signal",
+    "public evidence",
+    "internal inference"
+  ],
+  "default_for_E40_E41": "expert opinion only",
+  "not_customer_validation_unless_actual_target_buyer_and_explicitly_evaluated": true,
+  "not_paid_signal_unless_money_changes_hands": true,
+  "not_canonical_learning_until_reviewed": true
+}

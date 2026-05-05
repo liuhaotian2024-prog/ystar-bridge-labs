@@ -1,0 +1,14 @@
+{
+  "artifact_id": "e40_ceo_kg_expert_preflight_feedback",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "nodes_delta_count": 11,
+  "edges_delta_count": 10,
+  "selected_clusters": [
+    "enterprise / professional AI transformation",
+    "AI productivity / workflow / toolchain",
+    "governance / trust / audit / legitimacy"
+  ],
+  "canonical_learning_promoted": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false
+}

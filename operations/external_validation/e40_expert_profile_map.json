@@ -1,0 +1,218 @@
+{
+  "artifact_id": "e40_expert_profile_map",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "profiles": [
+    {
+      "cluster": "enterprise / professional AI transformation",
+      "profile": "enterprise AI implementation lead",
+      "why_can_judge_cluster": "Has direct operational context for the cluster pain, language, and implementation friction.",
+      "what_they_can_validate": [
+        "pain plausibility",
+        "language clarity",
+        "budget-owner plausibility",
+        "objection priority"
+      ],
+      "what_they_cannot_validate": [
+        "customer validation",
+        "paid demand",
+        "product-market fit",
+        "Y* superiority"
+      ],
+      "ideal_background": "3+ years implementing, buying, governing, or operating AI/workflow systems in the target context.",
+      "conflict_bias_risk": "medium: may overweight own vendor/service model or enterprise context.",
+      "likely_vocabulary": "AI readiness, implementation audit, value realization, operating model",
+      "expected_skepticism": "Will challenge whether this is too abstract, already solved, or lacking a buyer-owned budget.",
+      "review_value": "high",
+      "owner_approval_required_before_contact": true
+    },
+    {
+      "cluster": "enterprise / professional AI transformation",
+      "profile": "professional services operator",
+      "why_can_judge_cluster": "Has direct operational context for the cluster pain, language, and implementation friction.",
+      "what_they_can_validate": [
+        "pain plausibility",
+        "language clarity",
+        "budget-owner plausibility",
+        "objection priority"
+      ],
+      "what_they_cannot_validate": [
+        "customer validation",
+        "paid demand",
+        "product-market fit",
+        "Y* superiority"
+      ],
+      "ideal_background": "3+ years implementing, buying, governing, or operating AI/workflow systems in the target context.",
+      "conflict_bias_risk": "medium: may overweight own vendor/service model or enterprise context.",
+      "likely_vocabulary": "AI readiness, implementation audit, value realization, operating model",
+      "expected_skepticism": "Will challenge whether this is too abstract, already solved, or lacking a buyer-owned budget.",
+      "review_value": "high",
+      "owner_approval_required_before_contact": true
+    },
+    {
+      "cluster": "enterprise / professional AI transformation",
+      "profile": "AI platform / agent operations builder",
+      "why_can_judge_cluster": "Has direct operational context for the cluster pain, language, and implementation friction.",
+      "what_they_can_validate": [
+        "pain plausibility",
+        "language clarity",
+        "budget-owner plausibility",
+        "objection priority"
+      ],
+      "what_they_cannot_validate": [
+        "customer validation",
+        "paid demand",
+        "product-market fit",
+        "Y* superiority"
+      ],
+      "ideal_background": "3+ years implementing, buying, governing, or operating AI/workflow systems in the target context.",
+      "conflict_bias_risk": "medium: may overweight own vendor/service model or enterprise context.",
+      "likely_vocabulary": "AI readiness, implementation audit, value realization, operating model",
+      "expected_skepticism": "Will challenge whether this is too abstract, already solved, or lacking a buyer-owned budget.",
+      "review_value": "high",
+      "owner_approval_required_before_contact": true
+    },
+    {
+      "cluster": "AI productivity / workflow / toolchain",
+      "profile": "AI productivity / workflow operator",
+      "why_can_judge_cluster": "Has direct operational context for the cluster pain, language, and implementation friction.",
+      "what_they_can_validate": [
+        "pain plausibility",
+        "language clarity",
+        "budget-owner plausibility",
+        "objection priority"
+      ],
+      "what_they_cannot_validate": [
+        "customer validation",
+        "paid demand",
+        "product-market fit",
+        "Y* superiority"
+      ],
+      "ideal_background": "3+ years implementing, buying, governing, or operating AI/workflow systems in the target context.",
+      "conflict_bias_risk": "medium: may overweight own vendor/service model or enterprise context.",
+      "likely_vocabulary": "AI productivity, workflow redesign, tool sprawl, ROI measurement",
+      "expected_skepticism": "Will challenge whether this is too abstract, already solved, or lacking a buyer-owned budget.",
+      "review_value": "high",
+      "owner_approval_required_before_contact": true
+    },
+    {
+      "cluster": "AI productivity / workflow / toolchain",
+      "profile": "workflow automation consultant",
+      "why_can_judge_cluster": "Has direct operational context for the cluster pain, language, and implementation friction.",
+      "what_they_can_validate": [
+        "pain plausibility",
+        "language clarity",
+        "budget-owner plausibility",
+        "objection priority"
+      ],
+      "what_they_cannot_validate": [
+        "customer validation",
+        "paid demand",
+        "product-market fit",
+        "Y* superiority"
+      ],
+      "ideal_background": "3+ years implementing, buying, governing, or operating AI/workflow systems in the target context.",
+      "conflict_bias_risk": "medium: may overweight own vendor/service model or enterprise context.",
+      "likely_vocabulary": "AI productivity, workflow redesign, tool sprawl, ROI measurement",
+      "expected_skepticism": "Will challenge whether this is too abstract, already solved, or lacking a buyer-owned budget.",
+      "review_value": "high",
+      "owner_approval_required_before_contact": true
+    },
+    {
+      "cluster": "AI productivity / workflow / toolchain",
+      "profile": "developer productivity / engineering productivity leader",
+      "why_can_judge_cluster": "Has direct operational context for the cluster pain, language, and implementation friction.",
+      "what_they_can_validate": [
+        "pain plausibility",
+        "language clarity",
+        "budget-owner plausibility",
+        "objection priority"
+      ],
+      "what_they_cannot_validate": [
+        "customer validation",
+        "paid demand",
+        "product-market fit",
+        "Y* superiority"
+      ],
+      "ideal_background": "3+ years implementing, buying, governing, or operating AI/workflow systems in the target context.",
+      "conflict_bias_risk": "medium: may overweight own vendor/service model or enterprise context.",
+      "likely_vocabulary": "AI productivity, workflow redesign, tool sprawl, ROI measurement",
+      "expected_skepticism": "Will challenge whether this is too abstract, already solved, or lacking a buyer-owned budget.",
+      "review_value": "high",
+      "owner_approval_required_before_contact": true
+    },
+    {
+      "cluster": "governance / trust / audit / legitimacy",
+      "profile": "AI governance / risk / security practitioner",
+      "why_can_judge_cluster": "Has direct operational context for the cluster pain, language, and implementation friction.",
+      "what_they_can_validate": [
+        "pain plausibility",
+        "language clarity",
+        "budget-owner plausibility",
+        "objection priority"
+      ],
+      "what_they_cannot_validate": [
+        "customer validation",
+        "paid demand",
+        "product-market fit",
+        "Y* superiority"
+      ],
+      "ideal_background": "3+ years implementing, buying, governing, or operating AI/workflow systems in the target context.",
+      "conflict_bias_risk": "medium: may overweight own vendor/service model or enterprise context.",
+      "likely_vocabulary": "AI risk management, AI management system, governance, audit",
+      "expected_skepticism": "Will challenge whether this is too abstract, already solved, or lacking a buyer-owned budget.",
+      "review_value": "high",
+      "owner_approval_required_before_contact": true
+    },
+    {
+      "cluster": "governance / trust / audit / legitimacy",
+      "profile": "enterprise AI implementation lead",
+      "why_can_judge_cluster": "Has direct operational context for the cluster pain, language, and implementation friction.",
+      "what_they_can_validate": [
+        "pain plausibility",
+        "language clarity",
+        "budget-owner plausibility",
+        "objection priority"
+      ],
+      "what_they_cannot_validate": [
+        "customer validation",
+        "paid demand",
+        "product-market fit",
+        "Y* superiority"
+      ],
+      "ideal_background": "3+ years implementing, buying, governing, or operating AI/workflow systems in the target context.",
+      "conflict_bias_risk": "medium: may overweight own vendor/service model or enterprise context.",
+      "likely_vocabulary": "AI risk management, AI management system, governance, audit",
+      "expected_skepticism": "Will challenge whether this is too abstract, already solved, or lacking a buyer-owned budget.",
+      "review_value": "high",
+      "owner_approval_required_before_contact": true
+    },
+    {
+      "cluster": "governance / trust / audit / legitimacy",
+      "profile": "AI platform / agent operations builder",
+      "why_can_judge_cluster": "Has direct operational context for the cluster pain, language, and implementation friction.",
+      "what_they_can_validate": [
+        "pain plausibility",
+        "language clarity",
+        "budget-owner plausibility",
+        "objection priority"
+      ],
+      "what_they_cannot_validate": [
+        "customer validation",
+        "paid demand",
+        "product-market fit",
+        "Y* superiority"
+      ],
+      "ideal_background": "3+ years implementing, buying, governing, or operating AI/workflow systems in the target context.",
+      "conflict_bias_risk": "medium: may overweight own vendor/service model or enterprise context.",
+      "likely_vocabulary": "AI risk management, AI management system, governance, audit",
+      "expected_skepticism": "Will challenge whether this is too abstract, already solved, or lacking a buyer-owned budget.",
+      "review_value": "high",
+      "owner_approval_required_before_contact": true
+    }
+  ],
+  "profile_count": 9,
+  "real_individuals_identified": false,
+  "personal_contact_info_scraped": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false
+}

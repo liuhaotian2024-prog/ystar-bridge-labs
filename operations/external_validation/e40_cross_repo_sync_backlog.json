@@ -1,0 +1,64 @@
+{
+  "artifact_id": "e40_cross_repo_sync_backlog",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "item_count": 5,
+  "items": [
+    {
+      "sync_item_id": "e40_sync_001",
+      "classification": "bridge-labs implemented",
+      "source": "expert preflight packet",
+      "affected_repo": "bridge-labs",
+      "proposed_action": "use as E41 owner-review input",
+      "owner_decision_required": false,
+      "priority": "high",
+      "status": "implemented"
+    },
+    {
+      "sync_item_id": "e40_sync_002",
+      "classification": "bridge-labs future",
+      "source": "message drafts",
+      "affected_repo": "bridge-labs",
+      "proposed_action": "revise/finalize only if owner chooses A/F",
+      "owner_decision_required": true,
+      "priority": "high",
+      "status": "future"
+    },
+    {
+      "sync_item_id": "e40_sync_003",
+      "classification": "gov-mcp proposal",
+      "source": "future contact pilot",
+      "affected_repo": "gov-mcp",
+      "proposed_action": "only if owner later approves tool-mediated send route",
+      "owner_decision_required": true,
+      "priority": "medium",
+      "status": "proposal"
+    },
+    {
+      "sync_item_id": "e40_sync_004",
+      "classification": "Y-star-gov proposal",
+      "source": "feedback canonicalization boundary",
+      "affected_repo": "Y-star-gov",
+      "proposed_action": "only if owner wants expert feedback promotion semantics in governance kernel",
+      "owner_decision_required": true,
+      "priority": "low/medium",
+      "status": "proposal"
+    },
+    {
+      "sync_item_id": "e40_sync_005",
+      "classification": "parked",
+      "source": "not-ready clusters",
+      "affected_repo": "bridge-labs",
+      "proposed_action": "watchlist agent economy/hardware/human-life until more evidence/simulation",
+      "owner_decision_required": true,
+      "priority": "low",
+      "status": "parked"
+    }
+  ],
+  "summary": {
+    "bridge_labs_items": 3,
+    "Y-star-gov_items": 1,
+    "gov_mcp_items": 1,
+    "owner_decision_items": 4,
+    "parked_items": 1
+  }
+}

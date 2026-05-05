@@ -1,0 +1,39 @@
+{
+  "artifact_id": "e40_expert_review_preflight_scope_guard",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "allowed": [
+    "expert profile generation",
+    "review question generation",
+    "no-send message drafts",
+    "evidence brief generation",
+    "5-minute walkthrough outline",
+    "review rubric",
+    "feedback capture schema",
+    "owner approval packet",
+    "cross-repo read-only alignment",
+    "CEO KG / brain delta update"
+  ],
+  "forbidden": [
+    "expert contact",
+    "customer contact",
+    "send",
+    "publish",
+    "form submission",
+    "login",
+    "provider/API/tool execution",
+    "external integration",
+    "payment",
+    "secret use",
+    "Y-star-gov modification",
+    "gov-mcp modification",
+    "final product selection",
+    "customer validation claim",
+    "paid signal claim"
+  ],
+  "any_artifact_implies_review_occurred": false,
+  "message_drafts_unsent": true,
+  "external_action_occurred": false,
+  "final_product_selected": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false
+}

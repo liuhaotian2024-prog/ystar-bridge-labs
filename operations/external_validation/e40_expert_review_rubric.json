@@ -1,0 +1,79 @@
+{
+  "artifact_id": "e40_expert_review_rubric",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "dimensions": [
+    {
+      "dimension": "pain reality",
+      "scale": "1-5",
+      "interpretation": "Expert opinion signal only; not customer validation or paid signal."
+    },
+    {
+      "dimension": "buyer clarity",
+      "scale": "1-5",
+      "interpretation": "Expert opinion signal only; not customer validation or paid signal."
+    },
+    {
+      "dimension": "budget plausibility",
+      "scale": "1-5",
+      "interpretation": "Expert opinion signal only; not customer validation or paid signal."
+    },
+    {
+      "dimension": "urgency",
+      "scale": "1-5",
+      "interpretation": "Expert opinion signal only; not customer validation or paid signal."
+    },
+    {
+      "dimension": "existing substitute strength",
+      "scale": "1-5",
+      "interpretation": "Expert opinion signal only; not customer validation or paid signal."
+    },
+    {
+      "dimension": "language clarity",
+      "scale": "1-5",
+      "interpretation": "Expert opinion signal only; not customer validation or paid signal."
+    },
+    {
+      "dimension": "trust/governance relevance",
+      "scale": "1-5",
+      "interpretation": "Expert opinion signal only; not customer validation or paid signal."
+    },
+    {
+      "dimension": "productivity/workflow relevance",
+      "scale": "1-5",
+      "interpretation": "Expert opinion signal only; not customer validation or paid signal."
+    },
+    {
+      "dimension": "implementation difficulty",
+      "scale": "1-5",
+      "interpretation": "Expert opinion signal only; not customer validation or paid signal."
+    },
+    {
+      "dimension": "differentiation",
+      "scale": "1-5",
+      "interpretation": "Expert opinion signal only; not customer validation or paid signal."
+    },
+    {
+      "dimension": "willingness-to-discuss",
+      "scale": "1-5",
+      "interpretation": "Expert opinion signal only; not customer validation or paid signal."
+    },
+    {
+      "dimension": "willingness-to-pay proxy",
+      "scale": "1-5",
+      "interpretation": "Expert opinion signal only; not customer validation or paid signal."
+    },
+    {
+      "dimension": "skepticism strength",
+      "scale": "1-5",
+      "interpretation": "Expert opinion signal only; not customer validation or paid signal."
+    },
+    {
+      "dimension": "route confidence change",
+      "scale": "1-5",
+      "interpretation": "Expert opinion signal only; not customer validation or paid signal."
+    }
+  ],
+  "default_feedback_classification": "expert opinion only",
+  "customer_validation_by_default": false,
+  "paid_signal_by_default": false
+}

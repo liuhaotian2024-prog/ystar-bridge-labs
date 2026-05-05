@@ -1,0 +1,8 @@
+{
+  "artifact_id": "e40_ceo_kg_read_model_update",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "summary": "E40 adds expert preflight packet references as CEO KG deltas only; no feedback, validation, or canonical promotion occurred.",
+  "nodes_delta_count": 11,
+  "edges_delta_count": 10,
+  "message_drafts_unsent": true
+}

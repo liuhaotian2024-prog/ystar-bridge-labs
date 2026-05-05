@@ -1,0 +1,56 @@
+{
+  "artifact_id": "e40_cross_repo_alignment_for_expert_preflight",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "Y-star-gov_head": "5f031f4be151b81ef1a1b1908a5c83c5420e8ce1",
+  "gov_mcp_head": "4f758d9d4823eed108ae3d63be1f4db192a974d6",
+  "inspection_mode": "read_only",
+  "entries": [
+    {
+      "cluster": "enterprise / professional AI transformation",
+      "Y-star-gov_primitive_relevant": [
+        "CIEU/evidence boundary reference",
+        "IntentContract only if future contact action is approved"
+      ],
+      "gov_mcp_execution_relevant": "not in E40; future E41 contact route would require execution alignment if any tool sends anything",
+      "remains_Labs_only": true,
+      "future_E41_contact_requires_gov_mcp": true,
+      "Y-star-gov_primitive_proposal_implicated": "none for E40",
+      "contract_authority_terminology_risk": "medium: avoid treating expert packet as contract, authorization, validation, or enforcement evidence"
+    },
+    {
+      "cluster": "AI productivity / workflow / toolchain",
+      "Y-star-gov_primitive_relevant": [
+        "CIEU/evidence boundary reference",
+        "IntentContract only if future contact action is approved"
+      ],
+      "gov_mcp_execution_relevant": "not in E40; future E41 contact route would require execution alignment if any tool sends anything",
+      "remains_Labs_only": true,
+      "future_E41_contact_requires_gov_mcp": true,
+      "Y-star-gov_primitive_proposal_implicated": "none for E40",
+      "contract_authority_terminology_risk": "medium: avoid treating expert packet as contract, authorization, validation, or enforcement evidence"
+    },
+    {
+      "cluster": "governance / trust / audit / legitimacy",
+      "Y-star-gov_primitive_relevant": [
+        "CIEU/evidence boundary reference",
+        "IntentContract only if future contact action is approved"
+      ],
+      "gov_mcp_execution_relevant": "not in E40; future E41 contact route would require execution alignment if any tool sends anything",
+      "remains_Labs_only": true,
+      "future_E41_contact_requires_gov_mcp": true,
+      "Y-star-gov_primitive_proposal_implicated": "none for E40",
+      "contract_authority_terminology_risk": "medium: avoid treating expert packet as contract, authorization, validation, or enforcement evidence"
+    }
+  ],
+  "proofs": {
+    "evidence_brief_does_not_replace_CIEU": true,
+    "review_rubric_does_not_replace_check_enforce": true,
+    "expert_feedback_would_not_become_canonical_learning_automatically": true,
+    "message_draft_is_not_execution": true,
+    "E40_does_not_modify_Y_star_gov_or_gov_mcp": true
+  },
+  "Y-star-gov_files_modified": false,
+  "gov_mcp_files_modified": false,
+  "duplicate_governance_kernel_created": false,
+  "duplicate_mcp_execution_layer_created": false
+}

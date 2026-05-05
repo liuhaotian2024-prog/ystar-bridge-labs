@@ -1,0 +1,314 @@
+{
+  "artifact_id": "e40_expert_evidence_briefs",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "brief_count": 3,
+  "briefs": [
+    {
+      "cluster": "enterprise / professional AI transformation",
+      "why_it_matters": "Public evidence suggests the cluster has visible pain/language, but E40 only prepares expert opinion review.",
+      "claim_graph_summary": {
+        "claim_count": 16,
+        "support_boundary": "public_observation_only",
+        "not_customer_validation": true,
+        "not_paid_signal": true
+      },
+      "strongest_public_evidence": [
+        {
+          "claim_id": "e38_claim_009_a",
+          "claim_text": "Public source supports implementation gap signal for enterprise / professional AI transformation: OpenAI reports enterprise AI use deepening into workflows and workers reporting productivity gains, supporting adoption momentum and workflow integration language.",
+          "support_level": "strong"
+        },
+        {
+          "claim_id": "e38_claim_009_b",
+          "claim_text": "Public source supports adoption friction signal for enterprise / professional AI transformation: OpenAI reports enterprise AI use deepening into workflows and workers reporting productivity gains, supporting adoption momentum and workflow integration language.",
+          "support_level": "strong"
+        },
+        {
+          "claim_id": "e38_claim_010_a",
+          "claim_text": "Public source supports implementation gap signal for enterprise / professional AI transformation: McKinsey finds widespread AI use but most organizations still early in scaling enterprise value, supporting implementation-gap pain.",
+          "support_level": "strong"
+        },
+        {
+          "claim_id": "e38_claim_010_b",
+          "claim_text": "Public source supports adoption friction signal for enterprise / professional AI transformation: McKinsey finds widespread AI use but most organizations still early in scaling enterprise value, supporting implementation-gap pain.",
+          "support_level": "strong"
+        },
+        {
+          "claim_id": "e38_claim_011_a",
+          "claim_text": "Public source supports implementation gap signal for enterprise / professional AI transformation: Deloitte highlights hard organizational change, risk management barriers, and scaling difficulty despite ROI expectations.",
+          "support_level": "strong"
+        }
+      ],
+      "contradictions": [],
+      "downgraded_or_forbidden_claims": [
+        "ROI is guaranteed",
+        "customer validation exists",
+        "paid signal exists",
+        "guaranteed ROI",
+        "superiority over incumbents",
+        "compliance certification",
+        "customer validation",
+        "paid signal",
+        "external endorsement",
+        "product-market fit"
+      ],
+      "market_language_observed": [
+        "AI readiness",
+        "implementation audit",
+        "value realization",
+        "operating model",
+        "workflow integration",
+        "change management",
+        "AI transformation",
+        "pilot-to-value"
+      ],
+      "evidence_burden_remaining": "moderate",
+      "what_expert_can_help_assess": [
+        "pain specificity",
+        "budget owner plausibility",
+        "market language fit",
+        "existing substitute strength",
+        "implementation friction"
+      ],
+      "what_expert_cannot_prove": [
+        "customer validation",
+        "paid signal",
+        "product-market fit",
+        "repeatable demand"
+      ],
+      "do_not_claim_list": [
+        "ROI is guaranteed",
+        "customer validation exists",
+        "paid signal exists",
+        "guaranteed ROI",
+        "superiority over incumbents",
+        "compliance certification",
+        "customer validation",
+        "paid signal",
+        "external endorsement",
+        "product-market fit"
+      ],
+      "no_customer_validation": true,
+      "no_paid_signal": true,
+      "no_final_product_selection": true
+    },
+    {
+      "cluster": "AI productivity / workflow / toolchain",
+      "why_it_matters": "Public evidence suggests the cluster has visible pain/language, but E40 only prepares expert opinion review.",
+      "claim_graph_summary": {
+        "claim_count": 16,
+        "support_boundary": "public_observation_only",
+        "not_customer_validation": true,
+        "not_paid_signal": true
+      },
+      "strongest_public_evidence": [
+        {
+          "claim_id": "e38_claim_001_a",
+          "claim_text": "Public source supports buyer pain signal for AI productivity / workflow / toolchain: Microsoft frames frontier firms around human-agent collaboration and work capacity pressure, supporting buyer-language around productivity and workflow redesign.",
+          "support_level": "strong"
+        },
+        {
+          "claim_id": "e38_claim_001_b",
+          "claim_text": "Public source supports productivity gap signal for AI productivity / workflow / toolchain: Microsoft frames frontier firms around human-agent collaboration and work capacity pressure, supporting buyer-language around productivity and workflow redesign.",
+          "support_level": "strong"
+        },
+        {
+          "claim_id": "e38_claim_002_a",
+          "claim_text": "Public source supports buyer pain signal for AI productivity / workflow / toolchain: Asana describes AI adoption layered on broken work and pilot purgatory, supporting the workflow-fragmentation hypothesis.",
+          "support_level": "strong"
+        },
+        {
+          "claim_id": "e38_claim_002_b",
+          "claim_text": "Public source supports productivity gap signal for AI productivity / workflow / toolchain: Asana describes AI adoption layered on broken work and pilot purgatory, supporting the workflow-fragmentation hypothesis.",
+          "support_level": "strong"
+        },
+        {
+          "claim_id": "e38_claim_003_a",
+          "claim_text": "Public source supports buyer pain signal for AI productivity / workflow / toolchain: Developer AI usage is high while trust and accuracy concerns remain material, supporting a productivity-plus-verification pain.",
+          "support_level": "strong"
+        }
+      ],
+      "contradictions": [
+        {
+          "id": "contradiction_e38_claim_003_b",
+          "claim_id": "e38_claim_003_b",
+          "cluster": "AI productivity / workflow / toolchain",
+          "claim_text": "Public source supports productivity gap signal for AI productivity / workflow / toolchain: Developer AI usage is high while trust and accuracy concerns remain material, supporting a productivity-plus-verification pain.",
+          "support_level": "contradiction",
+          "buyer_facing_use": "internal only",
+          "overclaim_risk": "medium",
+          "what_cannot_be_claimed": [
+            "customers are ready to pay Y*",
+            "Y* is better than incumbents",
+            "ROI is guaranteed",
+            "enterprise demand is proven",
+            "consumer willingness-to-pay is proven",
+            "customer validation exists",
+            "paid signal exists"
+          ]
+        },
+        {
+          "id": "contradiction_e38_claim_008_b",
+          "claim_id": "e38_claim_008_b",
+          "cluster": "AI productivity / workflow / toolchain",
+          "claim_text": "Public source supports productivity gap signal for AI productivity / workflow / toolchain: Gartner reports individual productivity gains can coexist with team-level friction, supporting the need for workflow-level yield measurement.",
+          "support_level": "contradiction",
+          "buyer_facing_use": "internal only",
+          "overclaim_risk": "medium",
+          "what_cannot_be_claimed": [
+            "customers are ready to pay Y*",
+            "Y* is better than incumbents",
+            "ROI is guaranteed",
+            "enterprise demand is proven",
+            "consumer willingness-to-pay is proven",
+            "customer validation exists",
+            "paid signal exists"
+          ]
+        }
+      ],
+      "downgraded_or_forbidden_claims": [
+        "ROI is guaranteed",
+        "customer validation exists",
+        "paid signal exists",
+        "guaranteed ROI",
+        "superiority over incumbents",
+        "compliance certification",
+        "customer validation",
+        "paid signal",
+        "external endorsement",
+        "product-market fit"
+      ],
+      "market_language_observed": [
+        "AI productivity",
+        "workflow redesign",
+        "tool sprawl",
+        "ROI measurement",
+        "developer productivity",
+        "agent management",
+        "evaluation",
+        "work capacity"
+      ],
+      "evidence_burden_remaining": "moderate",
+      "what_expert_can_help_assess": [
+        "pain specificity",
+        "budget owner plausibility",
+        "market language fit",
+        "existing substitute strength",
+        "implementation friction"
+      ],
+      "what_expert_cannot_prove": [
+        "customer validation",
+        "paid signal",
+        "product-market fit",
+        "repeatable demand"
+      ],
+      "do_not_claim_list": [
+        "ROI is guaranteed",
+        "customer validation exists",
+        "paid signal exists",
+        "guaranteed ROI",
+        "superiority over incumbents",
+        "compliance certification",
+        "customer validation",
+        "paid signal",
+        "external endorsement",
+        "product-market fit"
+      ],
+      "no_customer_validation": true,
+      "no_paid_signal": true,
+      "no_final_product_selection": true
+    },
+    {
+      "cluster": "governance / trust / audit / legitimacy",
+      "why_it_matters": "Public evidence suggests the cluster has visible pain/language, but E40 only prepares expert opinion review.",
+      "claim_graph_summary": {
+        "claim_count": 6,
+        "support_boundary": "public_observation_only",
+        "not_customer_validation": true,
+        "not_paid_signal": true
+      },
+      "strongest_public_evidence": [
+        {
+          "claim_id": "e38_claim_017_a",
+          "claim_text": "Public source supports governance/trust gap signal for governance / trust / audit / legitimacy: NIST provides a generative AI profile for risk management, supporting governance/trust language and evidence-boundary requirements.",
+          "support_level": "strong"
+        },
+        {
+          "claim_id": "e38_claim_017_b",
+          "claim_text": "Public source supports market language signal for governance / trust / audit / legitimacy: NIST provides a generative AI profile for risk management, supporting governance/trust language and evidence-boundary requirements.",
+          "support_level": "strong"
+        },
+        {
+          "claim_id": "e38_claim_018_a",
+          "claim_text": "Public source supports governance/trust gap signal for governance / trust / audit / legitimacy: ISO/IEC 42001 defines AI management-system requirements, supporting legitimacy, traceability, risk, and governance language.",
+          "support_level": "strong"
+        },
+        {
+          "claim_id": "e38_claim_018_b",
+          "claim_text": "Public source supports market language signal for governance / trust / audit / legitimacy: ISO/IEC 42001 defines AI management-system requirements, supporting legitimacy, traceability, risk, and governance language.",
+          "support_level": "strong"
+        },
+        {
+          "claim_id": "e38_claim_019_a",
+          "claim_text": "Public source supports governance/trust gap signal for governance / trust / audit / legitimacy: The EU AI Act establishes risk-based requirements and obligations, supporting compliance pressure and governance need.",
+          "support_level": "strong"
+        }
+      ],
+      "contradictions": [],
+      "downgraded_or_forbidden_claims": [
+        "ROI is guaranteed",
+        "customer validation exists",
+        "paid signal exists",
+        "guaranteed ROI",
+        "superiority over incumbents",
+        "compliance certification",
+        "customer validation",
+        "paid signal",
+        "external endorsement",
+        "product-market fit"
+      ],
+      "market_language_observed": [
+        "AI risk management",
+        "AI management system",
+        "governance",
+        "audit",
+        "trust",
+        "legitimacy",
+        "compliance",
+        "risk framework"
+      ],
+      "evidence_burden_remaining": "moderate/high",
+      "what_expert_can_help_assess": [
+        "pain specificity",
+        "budget owner plausibility",
+        "market language fit",
+        "existing substitute strength",
+        "implementation friction"
+      ],
+      "what_expert_cannot_prove": [
+        "customer validation",
+        "paid signal",
+        "product-market fit",
+        "repeatable demand"
+      ],
+      "do_not_claim_list": [
+        "ROI is guaranteed",
+        "customer validation exists",
+        "paid signal exists",
+        "guaranteed ROI",
+        "superiority over incumbents",
+        "compliance certification",
+        "customer validation",
+        "paid signal",
+        "external endorsement",
+        "product-market fit"
+      ],
+      "no_customer_validation": true,
+      "no_paid_signal": true,
+      "no_final_product_selection": true
+    }
+  ],
+  "invented_evidence": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false
+}

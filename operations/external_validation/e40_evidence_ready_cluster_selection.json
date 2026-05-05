@@ -1,0 +1,82 @@
+{
+  "artifact_id": "e40_evidence_ready_cluster_selection",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "input_artifacts": [
+    "e39_source_quality_evidence_burden_evaluator",
+    "e39_expert_review_readiness_reassessment",
+    "e39_deep_research_claim_graph",
+    "e39_contradiction_graph",
+    "e39_market_language_lexicon",
+    "e39_ceo_decision_eval_benchmark"
+  ],
+  "selected_clusters": [
+    {
+      "cluster": "enterprise / professional AI transformation",
+      "selected_for_expert_preflight": true,
+      "why_expert_preflight_is_justified": "E39 evidence burden evaluator marks expert preflight justified; claim graph has enough public evidence but remaining burden requires expert opinion, not validation.",
+      "claim_graph_maturity": "high",
+      "claim_count": 16,
+      "contradiction_risk": "low/basic",
+      "contradiction_count": 0,
+      "evidence_burden_remaining": "moderate",
+      "language_readiness": "high",
+      "buyer_expert_profile_fit": "high",
+      "no_customer_validation_boundary": true,
+      "no_paid_signal_boundary": true,
+      "why_not_final_product_selection": "Expert preflight tests route clarity and pain plausibility only; it does not select or validate a final product."
+    },
+    {
+      "cluster": "AI productivity / workflow / toolchain",
+      "selected_for_expert_preflight": true,
+      "why_expert_preflight_is_justified": "E39 evidence burden evaluator marks expert preflight justified; claim graph has enough public evidence but remaining burden requires expert opinion, not validation.",
+      "claim_graph_maturity": "high",
+      "claim_count": 16,
+      "contradiction_risk": "medium",
+      "contradiction_count": 2,
+      "evidence_burden_remaining": "moderate",
+      "language_readiness": "high",
+      "buyer_expert_profile_fit": "high",
+      "no_customer_validation_boundary": true,
+      "no_paid_signal_boundary": true,
+      "why_not_final_product_selection": "Expert preflight tests route clarity and pain plausibility only; it does not select or validate a final product."
+    },
+    {
+      "cluster": "governance / trust / audit / legitimacy",
+      "selected_for_expert_preflight": true,
+      "why_expert_preflight_is_justified": "E39 evidence burden evaluator marks expert preflight justified; claim graph has enough public evidence but remaining burden requires expert opinion, not validation.",
+      "claim_graph_maturity": "high",
+      "claim_count": 6,
+      "contradiction_risk": "low/basic",
+      "contradiction_count": 0,
+      "evidence_burden_remaining": "moderate/high",
+      "language_readiness": "high",
+      "buyer_expert_profile_fit": "high",
+      "no_customer_validation_boundary": true,
+      "no_paid_signal_boundary": true,
+      "why_not_final_product_selection": "Expert preflight tests route clarity and pain plausibility only; it does not select or validate a final product."
+    }
+  ],
+  "preserved_high_imagination_watchlist": [
+    "agent economy / autonomous company",
+    "hardware + AI / physical interface",
+    "human-life / sleep / health / home"
+  ],
+  "parked_or_not_ready_clusters": [
+    "agent economy / autonomous company",
+    "education / creator / family / small business",
+    "hardware + AI / physical interface",
+    "human-life / sleep / health / home"
+  ],
+  "clusters_needing_more_public_evidence": [
+    "education / creator / family / small business",
+    "human-life / sleep / health / home"
+  ],
+  "clusters_needing_simulation": [
+    "agent economy / autonomous company",
+    "hardware + AI / physical interface",
+    "human-life / sleep / health / home"
+  ],
+  "final_product_selected": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false
+}

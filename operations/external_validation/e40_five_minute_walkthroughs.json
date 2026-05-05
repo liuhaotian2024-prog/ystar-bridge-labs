@@ -1,0 +1,119 @@
+{
+  "artifact_id": "e40_five_minute_walkthroughs",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "walkthrough_count": 3,
+  "walkthroughs": [
+    {
+      "walkthrough_id": "e40_walk_001",
+      "cluster": "enterprise / professional AI transformation",
+      "status": "prepared_unsent",
+      "segments": [
+        {
+          "duration": "30 seconds",
+          "section": "context",
+          "content": "We ran public read-only evidence analysis and prepared a preflight critique packet."
+        },
+        {
+          "duration": "60 seconds",
+          "section": "evidence summary",
+          "content": "Show strongest public claims and source boundaries."
+        },
+        {
+          "duration": "90 seconds",
+          "section": "opportunity hypothesis",
+          "content": "Explain route hypothesis without product selection."
+        },
+        {
+          "duration": "60 seconds",
+          "section": "uncertainty / contradiction",
+          "content": "Show contradictions, downgraded claims, and what cannot be claimed."
+        },
+        {
+          "duration": "60 seconds",
+          "section": "expert questions",
+          "content": "Ask targeted questions from the bank."
+        },
+        {
+          "duration": "60 seconds",
+          "section": "next-step feedback",
+          "content": "Ask what evidence would be needed before any real validation."
+        }
+      ]
+    },
+    {
+      "walkthrough_id": "e40_walk_002",
+      "cluster": "AI productivity / workflow / toolchain",
+      "status": "prepared_unsent",
+      "segments": [
+        {
+          "duration": "30 seconds",
+          "section": "context",
+          "content": "We ran public read-only evidence analysis and prepared a preflight critique packet."
+        },
+        {
+          "duration": "60 seconds",
+          "section": "evidence summary",
+          "content": "Show strongest public claims and source boundaries."
+        },
+        {
+          "duration": "90 seconds",
+          "section": "opportunity hypothesis",
+          "content": "Explain route hypothesis without product selection."
+        },
+        {
+          "duration": "60 seconds",
+          "section": "uncertainty / contradiction",
+          "content": "Show contradictions, downgraded claims, and what cannot be claimed."
+        },
+        {
+          "duration": "60 seconds",
+          "section": "expert questions",
+          "content": "Ask targeted questions from the bank."
+        },
+        {
+          "duration": "60 seconds",
+          "section": "next-step feedback",
+          "content": "Ask what evidence would be needed before any real validation."
+        }
+      ]
+    },
+    {
+      "walkthrough_id": "e40_walk_003",
+      "cluster": "governance / trust / audit / legitimacy",
+      "status": "prepared_unsent",
+      "segments": [
+        {
+          "duration": "30 seconds",
+          "section": "context",
+          "content": "We ran public read-only evidence analysis and prepared a preflight critique packet."
+        },
+        {
+          "duration": "60 seconds",
+          "section": "evidence summary",
+          "content": "Show strongest public claims and source boundaries."
+        },
+        {
+          "duration": "90 seconds",
+          "section": "opportunity hypothesis",
+          "content": "Explain route hypothesis without product selection."
+        },
+        {
+          "duration": "60 seconds",
+          "section": "uncertainty / contradiction",
+          "content": "Show contradictions, downgraded claims, and what cannot be claimed."
+        },
+        {
+          "duration": "60 seconds",
+          "section": "expert questions",
+          "content": "Ask targeted questions from the bank."
+        },
+        {
+          "duration": "60 seconds",
+          "section": "next-step feedback",
+          "content": "Ask what evidence would be needed before any real validation."
+        }
+      ]
+    }
+  ],
+  "status": "prepared_only"
+}

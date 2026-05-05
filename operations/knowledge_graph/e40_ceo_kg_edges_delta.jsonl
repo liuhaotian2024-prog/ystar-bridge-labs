@@ -1,0 +1,10 @@
+{"from": "e40_expert_review_preflight_packet", "to": "e40_cluster_enterprise_professional_ai_transformation", "edge_type": "selects_cluster_for_preflight", "evidence_boundary": "internal_preflight_not_validation"}
+{"from": "e40_expert_review_preflight_packet", "to": "e40_cluster_ai_productivity_workflow_toolchain", "edge_type": "selects_cluster_for_preflight", "evidence_boundary": "internal_preflight_not_validation"}
+{"from": "e40_expert_review_preflight_packet", "to": "e40_cluster_governance_trust_audit_legitimacy", "edge_type": "selects_cluster_for_preflight", "evidence_boundary": "internal_preflight_not_validation"}
+{"from": "e40_expert_review_preflight_packet", "to": "e40_expert_evidence_briefs", "edge_type": "creates_artifact", "evidence_boundary": "internal_preflight_not_validation"}
+{"from": "e40_expert_review_preflight_packet", "to": "e40_expert_review_question_bank", "edge_type": "creates_artifact", "evidence_boundary": "internal_preflight_not_validation"}
+{"from": "e40_expert_review_preflight_packet", "to": "e40_no_send_message_drafts", "edge_type": "creates_artifact", "evidence_boundary": "internal_preflight_not_validation"}
+{"from": "e40_expert_review_preflight_packet", "to": "e40_expert_review_rubric", "edge_type": "creates_artifact", "evidence_boundary": "internal_preflight_not_validation"}
+{"from": "e40_expert_review_preflight_packet", "to": "e40_owner_approval_packet_for_e41", "edge_type": "creates_artifact", "evidence_boundary": "internal_preflight_not_validation"}
+{"from": "e40_expert_review_preflight_packet", "to": "e40_no_fake_evidence_overclaim_audit", "edge_type": "creates_artifact", "evidence_boundary": "internal_preflight_not_validation"}
+{"from": "e40_expert_review_preflight_packet", "to": "e40_updated_bottleneck", "edge_type": "updates_bottleneck", "evidence_boundary": "internal_preflight_not_validation"}

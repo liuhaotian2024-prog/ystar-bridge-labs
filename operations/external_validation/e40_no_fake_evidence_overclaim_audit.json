@@ -1,0 +1,70 @@
+{
+  "artifact_id": "e40_no_fake_evidence_overclaim_audit",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "materials_audited": [
+    "cluster selection",
+    "profile map",
+    "evidence briefs",
+    "question bank",
+    "message drafts",
+    "walkthroughs",
+    "rubric",
+    "feedback schema",
+    "owner packet"
+  ],
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "final_product_selected": false,
+  "expert_feedback_claimed": false,
+  "contact_occurred": false,
+  "send_occurred": false,
+  "Y_star_superiority_claimed": false,
+  "ROI_guarantee_claimed": false,
+  "compliance_certification_claimed": false,
+  "product_market_fit_claimed": false,
+  "public_evidence_remains_public_evidence": true,
+  "expert_preflight_remains_preflight": true,
+  "risky_language_actions": [
+    {
+      "language": "ROI is guaranteed",
+      "action": "forbidden or internal-only"
+    },
+    {
+      "language": "customer validation exists",
+      "action": "forbidden or internal-only"
+    },
+    {
+      "language": "paid signal exists",
+      "action": "forbidden or internal-only"
+    },
+    {
+      "language": "guaranteed ROI",
+      "action": "forbidden or internal-only"
+    },
+    {
+      "language": "superiority over incumbents",
+      "action": "forbidden or internal-only"
+    },
+    {
+      "language": "compliance certification",
+      "action": "forbidden or internal-only"
+    },
+    {
+      "language": "customer validation",
+      "action": "forbidden or internal-only"
+    },
+    {
+      "language": "paid signal",
+      "action": "forbidden or internal-only"
+    },
+    {
+      "language": "external endorsement",
+      "action": "forbidden or internal-only"
+    },
+    {
+      "language": "product-market fit",
+      "action": "forbidden or internal-only"
+    }
+  ],
+  "audit_passed": true
+}

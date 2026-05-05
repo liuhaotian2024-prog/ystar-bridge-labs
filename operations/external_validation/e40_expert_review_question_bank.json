@@ -1,0 +1,2350 @@
+{
+  "artifact_id": "e40_expert_review_question_bank",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "question_count": 90,
+  "questions": [
+    {
+      "question_id": "e40_q_001",
+      "question_text": "Where does this pain show up in real workflows, if at all?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "buyer pain reality",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_002",
+      "question_text": "Which workflow step is most painful or wasteful today?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "workflow pain specificity",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_003",
+      "question_text": "Who would have budget or authority to address this?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "budget owner plausibility",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_004",
+      "question_text": "What tools, consultants, or internal processes already solve this well enough?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "existing substitute strength",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_005",
+      "question_text": "Why would a team act now rather than later?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "urgency",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_006",
+      "question_text": "Which wording sounds natural versus internal or confusing?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "language fit",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_007",
+      "question_text": "What would make adoption difficult?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "implementation friction",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_008",
+      "question_text": "Where do trust, risk, governance, or accountability matter?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "governance / trust / risk relevance",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_009",
+      "question_text": "What would make this meaningfully different from existing tools or services?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "differentiation",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_010",
+      "question_text": "Does this feel like product, service, audit, advisory, internal tool, or not worth pursuing?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "route framing",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_011",
+      "question_text": "Where does this pain show up in real workflows, if at all?",
+      "target_profile": "professional services operator",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "buyer pain reality",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_012",
+      "question_text": "Which workflow step is most painful or wasteful today?",
+      "target_profile": "professional services operator",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "workflow pain specificity",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_013",
+      "question_text": "Who would have budget or authority to address this?",
+      "target_profile": "professional services operator",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "budget owner plausibility",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_014",
+      "question_text": "What tools, consultants, or internal processes already solve this well enough?",
+      "target_profile": "professional services operator",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "existing substitute strength",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_015",
+      "question_text": "Why would a team act now rather than later?",
+      "target_profile": "professional services operator",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "urgency",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_016",
+      "question_text": "Which wording sounds natural versus internal or confusing?",
+      "target_profile": "professional services operator",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "language fit",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_017",
+      "question_text": "What would make adoption difficult?",
+      "target_profile": "professional services operator",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "implementation friction",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_018",
+      "question_text": "Where do trust, risk, governance, or accountability matter?",
+      "target_profile": "professional services operator",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "governance / trust / risk relevance",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_019",
+      "question_text": "What would make this meaningfully different from existing tools or services?",
+      "target_profile": "professional services operator",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "differentiation",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_020",
+      "question_text": "Does this feel like product, service, audit, advisory, internal tool, or not worth pursuing?",
+      "target_profile": "professional services operator",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "route framing",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_021",
+      "question_text": "Where does this pain show up in real workflows, if at all?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "buyer pain reality",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_022",
+      "question_text": "Which workflow step is most painful or wasteful today?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "workflow pain specificity",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_023",
+      "question_text": "Who would have budget or authority to address this?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "budget owner plausibility",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_024",
+      "question_text": "What tools, consultants, or internal processes already solve this well enough?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "existing substitute strength",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_025",
+      "question_text": "Why would a team act now rather than later?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "urgency",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_026",
+      "question_text": "Which wording sounds natural versus internal or confusing?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "language fit",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_027",
+      "question_text": "What would make adoption difficult?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "implementation friction",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_028",
+      "question_text": "Where do trust, risk, governance, or accountability matter?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "governance / trust / risk relevance",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_029",
+      "question_text": "What would make this meaningfully different from existing tools or services?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "differentiation",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_030",
+      "question_text": "Does this feel like product, service, audit, advisory, internal tool, or not worth pursuing?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "enterprise / professional AI transformation",
+      "evidence_it_tests": "route framing",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_009_a",
+        "e38_claim_009_b",
+        "e38_claim_010_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_031",
+      "question_text": "Where does this pain show up in real workflows, if at all?",
+      "target_profile": "AI productivity / workflow operator",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "buyer pain reality",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_032",
+      "question_text": "Which workflow step is most painful or wasteful today?",
+      "target_profile": "AI productivity / workflow operator",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "workflow pain specificity",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_033",
+      "question_text": "Who would have budget or authority to address this?",
+      "target_profile": "AI productivity / workflow operator",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "budget owner plausibility",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_034",
+      "question_text": "What tools, consultants, or internal processes already solve this well enough?",
+      "target_profile": "AI productivity / workflow operator",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "existing substitute strength",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_035",
+      "question_text": "Why would a team act now rather than later?",
+      "target_profile": "AI productivity / workflow operator",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "urgency",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_036",
+      "question_text": "Which wording sounds natural versus internal or confusing?",
+      "target_profile": "AI productivity / workflow operator",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "language fit",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_037",
+      "question_text": "What would make adoption difficult?",
+      "target_profile": "AI productivity / workflow operator",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "implementation friction",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_038",
+      "question_text": "Where do trust, risk, governance, or accountability matter?",
+      "target_profile": "AI productivity / workflow operator",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "governance / trust / risk relevance",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_039",
+      "question_text": "What would make this meaningfully different from existing tools or services?",
+      "target_profile": "AI productivity / workflow operator",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "differentiation",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_040",
+      "question_text": "Does this feel like product, service, audit, advisory, internal tool, or not worth pursuing?",
+      "target_profile": "AI productivity / workflow operator",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "route framing",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_041",
+      "question_text": "Where does this pain show up in real workflows, if at all?",
+      "target_profile": "workflow automation consultant",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "buyer pain reality",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_042",
+      "question_text": "Which workflow step is most painful or wasteful today?",
+      "target_profile": "workflow automation consultant",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "workflow pain specificity",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_043",
+      "question_text": "Who would have budget or authority to address this?",
+      "target_profile": "workflow automation consultant",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "budget owner plausibility",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_044",
+      "question_text": "What tools, consultants, or internal processes already solve this well enough?",
+      "target_profile": "workflow automation consultant",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "existing substitute strength",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_045",
+      "question_text": "Why would a team act now rather than later?",
+      "target_profile": "workflow automation consultant",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "urgency",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_046",
+      "question_text": "Which wording sounds natural versus internal or confusing?",
+      "target_profile": "workflow automation consultant",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "language fit",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_047",
+      "question_text": "What would make adoption difficult?",
+      "target_profile": "workflow automation consultant",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "implementation friction",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_048",
+      "question_text": "Where do trust, risk, governance, or accountability matter?",
+      "target_profile": "workflow automation consultant",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "governance / trust / risk relevance",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_049",
+      "question_text": "What would make this meaningfully different from existing tools or services?",
+      "target_profile": "workflow automation consultant",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "differentiation",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_050",
+      "question_text": "Does this feel like product, service, audit, advisory, internal tool, or not worth pursuing?",
+      "target_profile": "workflow automation consultant",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "route framing",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_051",
+      "question_text": "Where does this pain show up in real workflows, if at all?",
+      "target_profile": "developer productivity / engineering productivity leader",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "buyer pain reality",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_052",
+      "question_text": "Which workflow step is most painful or wasteful today?",
+      "target_profile": "developer productivity / engineering productivity leader",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "workflow pain specificity",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_053",
+      "question_text": "Who would have budget or authority to address this?",
+      "target_profile": "developer productivity / engineering productivity leader",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "budget owner plausibility",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_054",
+      "question_text": "What tools, consultants, or internal processes already solve this well enough?",
+      "target_profile": "developer productivity / engineering productivity leader",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "existing substitute strength",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_055",
+      "question_text": "Why would a team act now rather than later?",
+      "target_profile": "developer productivity / engineering productivity leader",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "urgency",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_056",
+      "question_text": "Which wording sounds natural versus internal or confusing?",
+      "target_profile": "developer productivity / engineering productivity leader",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "language fit",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_057",
+      "question_text": "What would make adoption difficult?",
+      "target_profile": "developer productivity / engineering productivity leader",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "implementation friction",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_058",
+      "question_text": "Where do trust, risk, governance, or accountability matter?",
+      "target_profile": "developer productivity / engineering productivity leader",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "governance / trust / risk relevance",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_059",
+      "question_text": "What would make this meaningfully different from existing tools or services?",
+      "target_profile": "developer productivity / engineering productivity leader",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "differentiation",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_060",
+      "question_text": "Does this feel like product, service, audit, advisory, internal tool, or not worth pursuing?",
+      "target_profile": "developer productivity / engineering productivity leader",
+      "cluster": "AI productivity / workflow / toolchain",
+      "evidence_it_tests": "route framing",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_001_a",
+        "e38_claim_001_b",
+        "e38_claim_002_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "contradiction_e38_claim_003_b",
+        "contradiction_e38_claim_008_b"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_061",
+      "question_text": "Where does this pain show up in real workflows, if at all?",
+      "target_profile": "AI governance / risk / security practitioner",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "buyer pain reality",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_062",
+      "question_text": "Which workflow step is most painful or wasteful today?",
+      "target_profile": "AI governance / risk / security practitioner",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "workflow pain specificity",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_063",
+      "question_text": "Who would have budget or authority to address this?",
+      "target_profile": "AI governance / risk / security practitioner",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "budget owner plausibility",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_064",
+      "question_text": "What tools, consultants, or internal processes already solve this well enough?",
+      "target_profile": "AI governance / risk / security practitioner",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "existing substitute strength",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_065",
+      "question_text": "Why would a team act now rather than later?",
+      "target_profile": "AI governance / risk / security practitioner",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "urgency",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_066",
+      "question_text": "Which wording sounds natural versus internal or confusing?",
+      "target_profile": "AI governance / risk / security practitioner",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "language fit",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_067",
+      "question_text": "What would make adoption difficult?",
+      "target_profile": "AI governance / risk / security practitioner",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "implementation friction",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_068",
+      "question_text": "Where do trust, risk, governance, or accountability matter?",
+      "target_profile": "AI governance / risk / security practitioner",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "governance / trust / risk relevance",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_069",
+      "question_text": "What would make this meaningfully different from existing tools or services?",
+      "target_profile": "AI governance / risk / security practitioner",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "differentiation",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_070",
+      "question_text": "Does this feel like product, service, audit, advisory, internal tool, or not worth pursuing?",
+      "target_profile": "AI governance / risk / security practitioner",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "route framing",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_071",
+      "question_text": "Where does this pain show up in real workflows, if at all?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "buyer pain reality",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_072",
+      "question_text": "Which workflow step is most painful or wasteful today?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "workflow pain specificity",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_073",
+      "question_text": "Who would have budget or authority to address this?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "budget owner plausibility",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_074",
+      "question_text": "What tools, consultants, or internal processes already solve this well enough?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "existing substitute strength",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_075",
+      "question_text": "Why would a team act now rather than later?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "urgency",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_076",
+      "question_text": "Which wording sounds natural versus internal or confusing?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "language fit",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_077",
+      "question_text": "What would make adoption difficult?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "implementation friction",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_078",
+      "question_text": "Where do trust, risk, governance, or accountability matter?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "governance / trust / risk relevance",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_079",
+      "question_text": "What would make this meaningfully different from existing tools or services?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "differentiation",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_080",
+      "question_text": "Does this feel like product, service, audit, advisory, internal tool, or not worth pursuing?",
+      "target_profile": "enterprise AI implementation lead",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "route framing",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_081",
+      "question_text": "Where does this pain show up in real workflows, if at all?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "buyer pain reality",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_082",
+      "question_text": "Which workflow step is most painful or wasteful today?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "workflow pain specificity",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_083",
+      "question_text": "Who would have budget or authority to address this?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "budget owner plausibility",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_084",
+      "question_text": "What tools, consultants, or internal processes already solve this well enough?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "existing substitute strength",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_085",
+      "question_text": "Why would a team act now rather than later?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "urgency",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_086",
+      "question_text": "Which wording sounds natural versus internal or confusing?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "language fit",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_087",
+      "question_text": "What would make adoption difficult?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "implementation friction",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_088",
+      "question_text": "Where do trust, risk, governance, or accountability matter?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "governance / trust / risk relevance",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_089",
+      "question_text": "What would make this meaningfully different from existing tools or services?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "differentiation",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    },
+    {
+      "question_id": "e40_q_090",
+      "question_text": "Does this feel like product, service, audit, advisory, internal tool, or not worth pursuing?",
+      "target_profile": "AI platform / agent operations builder",
+      "cluster": "governance / trust / audit / legitimacy",
+      "evidence_it_tests": "route framing",
+      "claim_graph_nodes_it_probes": [
+        "e38_claim_017_a",
+        "e38_claim_017_b",
+        "e38_claim_018_a"
+      ],
+      "contradiction_or_unsupported_claim_it_probes": [
+        "ROI is guaranteed",
+        "customer validation exists"
+      ],
+      "expected_answer_types": [
+        "confirms pain plausibility",
+        "adds nuance",
+        "contradicts premise",
+        "identifies substitute",
+        "rejects route language"
+      ],
+      "how_answer_changes_route_confidence": "Raises confidence only if it clarifies pain/budget/language; lowers confidence if substitute strength or confusion dominates.",
+      "what_answer_would_not_prove": "Does not prove customer validation, paid demand, product-market fit, or Y* superiority.",
+      "leading_question": false
+    }
+  ],
+  "assumes_Y_star_superiority": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false
+}
