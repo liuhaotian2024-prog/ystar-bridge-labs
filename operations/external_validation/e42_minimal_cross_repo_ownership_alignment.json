@@ -1,0 +1,35 @@
+{
+  "artifact_id": "e42_minimal_cross_repo_ownership_alignment",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "ownership_boundaries": [
+    {
+      "repo": "Y-star-gov",
+      "owns": "governance kernel",
+      "E42_action": "read-only boundary classification"
+    },
+    {
+      "repo": "gov-mcp",
+      "owns": "execution/tool boundary",
+      "E42_action": "read-only boundary classification"
+    },
+    {
+      "repo": "ystar-bridge-labs",
+      "owns": "CEO task preflight, internal capability awareness, strategy/opportunity routing",
+      "E42_action": "implemented router"
+    },
+    {
+      "repo": "K9Audit",
+      "owns": "audit/logging capability",
+      "E42_action": "read-only capability classification if present"
+    },
+    {
+      "repo": "ystar-company",
+      "owns": "commercial/company operation artifacts",
+      "E42_action": "read-only capability classification if present"
+    }
+  ],
+  "Y-star-gov_modified": false,
+  "gov_mcp_modified": false,
+  "duplicate_governance_kernel_created": false,
+  "duplicate_MCP_execution_layer_created": false
+}

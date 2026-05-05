@@ -1,0 +1,5 @@
+{"source": "e42_task_capability_reuse_router", "target": "e42_internal_resource_inventory", "type": "uses"}
+{"source": "e42_task_capability_reuse_router", "target": "e42_task_capability_matcher", "type": "routes_through"}
+{"source": "e42_task_capability_matcher", "target": "e42_reuse_first_gate", "type": "feeds"}
+{"source": "e42_reuse_first_gate", "target": "e42_task_preflight_packet", "type": "constrains"}
+{"source": "e42_task_capability_reuse_router", "target": "e42_updated_bottleneck", "type": "addresses"}

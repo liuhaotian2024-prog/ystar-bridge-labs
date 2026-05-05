@@ -1,0 +1,15 @@
+{
+  "artifact_id": "e42_owner_decision_packet",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "owner_next_decision": "Choose one concrete task for E43 and require it to start with the E42 preflight router.",
+  "recommended_option": "Use E42 on a concrete implementation task from existing capabilities, such as improving a real delivery/status issue or applying the frontier import loop to one narrow capability.",
+  "what_not_to_do": [
+    "do not start another broad memory/safety audit",
+    "do not rebuild evidence substrate",
+    "do not create second CEO brain/KG",
+    "do not bypass gov-mcp for execution"
+  ],
+  "external_side_effect": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false
+}

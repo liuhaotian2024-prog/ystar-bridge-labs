@@ -1,0 +1,17 @@
+{
+  "artifact_id": "e42_ceo_task_preflight_packet_schema",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "fields": [
+    "task_interpretation",
+    "relevant_existing_resources",
+    "top_reusable_modules",
+    "top_reusable_artifacts",
+    "top_tests_to_run",
+    "repo_ownership_boundary",
+    "no_rebuild_gate_result",
+    "smallest_implementation_delta",
+    "forbidden_duplicate_work",
+    "recommended_execution_path"
+  ],
+  "compact": true
+}

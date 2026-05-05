@@ -1,0 +1,87 @@
+{
+  "artifact_id": "e42_task_capability_matcher_model",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "matching_modes": [
+    "keyword matching",
+    "capability tag matching",
+    "path/name matching",
+    "artifact dependency matching",
+    "test coverage matching",
+    "repo ownership matching",
+    "milestone lineage matching",
+    "known synonym mapping"
+  ],
+  "synonym_map": {
+    "external action": [
+      "gov_mcp",
+      "owner approval",
+      "croba",
+      "pre_action",
+      "mcp_execution_boundary"
+    ],
+    "tool use": [
+      "gov_mcp",
+      "mcp_execution_boundary",
+      "gov_check",
+      "gov_enforce"
+    ],
+    "evidence": [
+      "evidence",
+      "receipt",
+      "claim_graph",
+      "source",
+      "public_readonly"
+    ],
+    "route drift": [
+      "route",
+      "drift",
+      "e41",
+      "frontier_capability_import"
+    ],
+    "ceo memory": [
+      "ceo_memory",
+      "brain",
+      "kg",
+      "daily",
+      "directive"
+    ],
+    "delivery": [
+      "delivery",
+      "repository_delivery",
+      "bridge_status",
+      "check_repository_delivery"
+    ],
+    "governance": [
+      "governance",
+      "Y-star-gov",
+      "IntentContract",
+      "check",
+      "enforce"
+    ],
+    "mcp": [
+      "gov-mcp",
+      "mcp_execution_boundary",
+      "gov_check",
+      "gov_enforce"
+    ],
+    "frontier capability": [
+      "frontier_capability_import",
+      "e41",
+      "import_loop",
+      "capability"
+    ],
+    "public read-only": [
+      "public_research",
+      "evidence",
+      "readonly",
+      "receipt"
+    ],
+    "owner decision": [
+      "owner_decision",
+      "route_selection",
+      "decision",
+      "packet"
+    ]
+  },
+  "requires_llm": false
+}

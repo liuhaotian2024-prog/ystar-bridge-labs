@@ -1,0 +1,17 @@
+{
+  "artifact_id": "e42_ceo_runtime_reuse_router_integration",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "future_CEO_task_start_sequence": [
+    "task interpretation",
+    "task-capability match",
+    "reuse-first gate",
+    "compact task preflight packet",
+    "implementation plan only after reuse decision"
+  ],
+  "runtime_added": "CEO task-relevant capability awareness and reuse router",
+  "not_second_brain": true,
+  "not_second_KG": true,
+  "daily_brief_mutated": false,
+  "directive_tracker_mutated": false,
+  "external_action_occurred": false
+}

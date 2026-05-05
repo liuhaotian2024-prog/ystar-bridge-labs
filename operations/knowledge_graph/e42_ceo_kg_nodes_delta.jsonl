@@ -1,0 +1,6 @@
+{"id": "e42_task_capability_reuse_router", "type": "CEO_runtime_capability", "label": "Task-Relevant Capability Awareness and Reuse Router"}
+{"id": "e42_internal_resource_inventory", "type": "resource_index", "label": "Deterministic internal resource inventory"}
+{"id": "e42_task_capability_matcher", "type": "runtime_router", "label": "Task-to-capability deterministic matcher"}
+{"id": "e42_reuse_first_gate", "type": "no_rebuild_gate", "label": "Reuse-first no-rebuild gate"}
+{"id": "e42_task_preflight_packet", "type": "preflight_packet", "label": "Compact CEO task preflight packet"}
+{"id": "e42_updated_bottleneck", "type": "CEO_bottleneck", "label": "CEO must use existing task-relevant capabilities before building"}

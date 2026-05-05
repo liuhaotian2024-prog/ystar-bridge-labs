@@ -1,0 +1,11 @@
+{
+  "artifact_id": "e42_ceo_kg_read_model_update",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "delta_nodes": 6,
+  "delta_edges": 5,
+  "updated_bottleneck": "CEO runtime lacks task-time reuse discipline unless every task starts with E42 inventory, matcher, gate, and preflight packet.",
+  "next_decision_horizon": "Use E42 router to choose and execute one concrete existing-capability task in E43.",
+  "canonical_learning_promoted": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false
+}

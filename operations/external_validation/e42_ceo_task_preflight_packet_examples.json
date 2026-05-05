@@ -1,0 +1,423 @@
+{
+  "artifact_id": "e42_ceo_task_preflight_packet_examples",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "example_count": 6,
+  "examples": [
+    {
+      "task_title": "Continue frontier capability import",
+      "task_interpretation": "Continue frontier capability import using the existing import loop; no expert route.",
+      "relevant_existing_resources": [
+        {
+          "resource_id": "e42_ystar_bridge_labs_f21213fb7330",
+          "resource_path": "office/mission_command/e41_frontier_capability_import_loop.py",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 46,
+          "relevance_reason": "matched ['capability', 'e41', 'frontier', 'import', 'loop'] via deterministic tags/path/keywords",
+          "reuse_mode": "direct_call",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "Use existing CEO brain/KG/daily memory conventions; do not create a second brain.",
+          "recommended_action": "call_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_b3816db75ad1",
+          "resource_path": "reports/integration/e41_frontier_capability_import_loop.md",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 46,
+          "relevance_reason": "matched ['capability', 'e41', 'frontier', 'import', 'loop'] via deterministic tags/path/keywords",
+          "reuse_mode": "use_as_report_context",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "Evidence artifacts do not replace CIEU tamper-evident event semantics.",
+          "recommended_action": "read_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_726c768da826",
+          "resource_path": "office/mission_command/e41_frontier_capability_import_scope.py",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 38,
+          "relevance_reason": "matched ['capability', 'e41', 'frontier', 'import'] via deterministic tags/path/keywords",
+          "reuse_mode": "direct_call",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "Use existing CEO brain/KG/daily memory conventions; do not create a second brain.",
+          "recommended_action": "call_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_bafe8b315f18",
+          "resource_path": "reports/integration/e41_frontier_capability_import_scope.md",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 38,
+          "relevance_reason": "matched ['capability', 'e41', 'frontier', 'import'] via deterministic tags/path/keywords",
+          "reuse_mode": "use_as_report_context",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "Use existing CEO brain/KG/daily memory conventions; do not create a second brain.",
+          "recommended_action": "read_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_be82dd0084b9",
+          "resource_path": "office/mission_command/e38_frontier_capability_import_scan.py",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 30,
+          "relevance_reason": "matched ['capability', 'frontier', 'import'] via deterministic tags/path/keywords",
+          "reuse_mode": "direct_call",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "Use existing CEO brain/KG/daily memory conventions; do not create a second brain.",
+          "recommended_action": "call_existing",
+          "tests_to_run": []
+        }
+      ],
+      "no_rebuild_gate_result": "reuse_existing",
+      "smallest_implementation_delta": "reuse existing resources or create a thin adapter after gap confirmation",
+      "recommended_execution_path": "reuse_existing"
+    },
+    {
+      "task_title": "Prepare public read-only evidence sprint",
+      "task_interpretation": "Prepare public read-only evidence sprint and use receipts/claim graph without rebuilding evidence substrate.",
+      "relevant_existing_resources": [
+        {
+          "resource_id": "e42_ystar_bridge_labs_8dd8eb39adbf",
+          "resource_path": "office/mission_command/e37_public_readonly_evidence_sprint_design.py",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 38,
+          "relevance_reason": "matched ['evidence', 'public', 'readonly', 'sprint'] via deterministic tags/path/keywords",
+          "reuse_mode": "direct_call",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "Use existing CEO brain/KG/daily memory conventions; do not create a second brain.",
+          "recommended_action": "call_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_8f5558f785c2",
+          "resource_path": "office/mission_command/e39_deep_research_claim_graph.py",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 38,
+          "relevance_reason": "matched ['claim', 'evidence', 'graph', 'research'] via deterministic tags/path/keywords",
+          "reuse_mode": "direct_call",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "Use existing CEO brain/KG/daily memory conventions; do not create a second brain.",
+          "recommended_action": "call_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_cbfd51199ed2",
+          "resource_path": "reports/integration/e37_public_readonly_evidence_sprint_design.md",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 38,
+          "relevance_reason": "matched ['evidence', 'public', 'readonly', 'sprint'] via deterministic tags/path/keywords",
+          "reuse_mode": "use_as_report_context",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+          "recommended_action": "read_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_3286036b508e",
+          "resource_path": "reports/integration/e39_deep_research_claim_graph.md",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 38,
+          "relevance_reason": "matched ['claim', 'evidence', 'graph', 'research'] via deterministic tags/path/keywords",
+          "reuse_mode": "use_as_report_context",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+          "recommended_action": "read_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_5f13b3b26e13",
+          "resource_path": "office/mission_command/e31_public_source_selection.py",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 30,
+          "relevance_reason": "matched ['evidence', 'public', 'source'] via deterministic tags/path/keywords",
+          "reuse_mode": "direct_call",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+          "recommended_action": "call_existing",
+          "tests_to_run": []
+        }
+      ],
+      "no_rebuild_gate_result": "reuse_existing",
+      "smallest_implementation_delta": "reuse existing resources or create a thin adapter after gap confirmation",
+      "recommended_execution_path": "reuse_existing"
+    },
+    {
+      "task_title": "Plan external execution/tool use",
+      "task_interpretation": "Plan external action, MCP tool use, provider execution, send boundary, and owner approval.",
+      "relevant_existing_resources": [
+        {
+          "resource_id": "e42_ystar_bridge_labs_5842293e41db",
+          "resource_path": "operations/external_validation/e36_gov_mcp_execution_boundary_alignment.json",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 46,
+          "relevance_reason": "matched ['boundary', 'execution', 'external', 'gov', 'mcp'] via deterministic tags/path/keywords",
+          "reuse_mode": "read_as_input",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+          "recommended_action": "read_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_fabf45331b61",
+          "resource_path": "office/mission_command/e36_gov_mcp_execution_boundary_alignment.py",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 38,
+          "relevance_reason": "matched ['boundary', 'execution', 'gov', 'mcp'] via deterministic tags/path/keywords",
+          "reuse_mode": "direct_call",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "Use existing CEO brain/KG/daily memory conventions; do not create a second brain.",
+          "recommended_action": "call_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_114209331091",
+          "resource_path": "operations/external_validation/e16x_gov_mcp_outbound_promotion_plan.json",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 38,
+          "relevance_reason": "matched ['external', 'gov', 'mcp', 'plan'] via deterministic tags/path/keywords",
+          "reuse_mode": "read_as_input",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+          "recommended_action": "read_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_ad4c94814206",
+          "resource_path": "reports/integration/e36_gov_mcp_execution_boundary_alignment.md",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 38,
+          "relevance_reason": "matched ['boundary', 'execution', 'gov', 'mcp'] via deterministic tags/path/keywords",
+          "reuse_mode": "use_as_report_context",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+          "recommended_action": "read_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_gov_mcp_1a835905dee4",
+          "resource_path": "gov_mcp/outbound/provider_adapter.py",
+          "repo": "gov-mcp",
+          "relevance_score": 36,
+          "relevance_reason": "matched ['gov', 'mcp', 'provider'] via deterministic tags/path/keywords",
+          "reuse_mode": "do_not_modify",
+          "owner_layer": "gov_mcp_execution_boundary",
+          "boundary_warning": "gov-mcp owns MCP/tool execution boundary; bridge-labs must not create a substitute execution layer.",
+          "recommended_action": "blocked_by_boundary",
+          "tests_to_run": []
+        }
+      ],
+      "no_rebuild_gate_result": "blocked_wrong_layer",
+      "smallest_implementation_delta": "reuse existing resources or create a thin adapter after gap confirmation",
+      "recommended_execution_path": "blocked_wrong_layer"
+    },
+    {
+      "task_title": "Update CEO memory after milestone",
+      "task_interpretation": "Update CEO memory after milestone using CEO brain KG CZL closure conventions without second brain.",
+      "relevant_existing_resources": [
+        {
+          "resource_id": "e42_ystar_bridge_labs_032c0850d36e",
+          "resource_path": "reports/integration/e32_ceo_kg_brain_update.md",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 38,
+          "relevance_reason": "matched ['brain', 'ceo', 'kg', 'update'] via deterministic tags/path/keywords",
+          "reuse_mode": "use_as_report_context",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "Use existing CEO brain/KG/daily memory conventions; do not create a second brain.",
+          "recommended_action": "read_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_0460cfddf6a1",
+          "resource_path": "reports/integration/e33_ceo_kg_brain_black_box_update.md",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 38,
+          "relevance_reason": "matched ['brain', 'ceo', 'kg', 'update'] via deterministic tags/path/keywords",
+          "reuse_mode": "use_as_report_context",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "Use existing CEO brain/KG/daily memory conventions; do not create a second brain.",
+          "recommended_action": "read_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_fdb315a4d607",
+          "resource_path": "reports/integration/e34_ceo_kg_brain_imagination_methodology_update.md",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 38,
+          "relevance_reason": "matched ['brain', 'ceo', 'kg', 'update'] via deterministic tags/path/keywords",
+          "reuse_mode": "use_as_report_context",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "Use existing CEO brain/KG/daily memory conventions; do not create a second brain.",
+          "recommended_action": "read_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_415a057858c0",
+          "resource_path": "reports/integration/e35_ceo_kg_brain_unified_six_dimensional_update.md",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 38,
+          "relevance_reason": "matched ['brain', 'ceo', 'kg', 'update'] via deterministic tags/path/keywords",
+          "reuse_mode": "use_as_report_context",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "Use existing CEO brain/KG/daily memory conventions; do not create a second brain.",
+          "recommended_action": "read_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_1d7c24d99131",
+          "resource_path": "reports/integration/e36_ceo_kg_brain_strategy_field_trial_update.md",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 38,
+          "relevance_reason": "matched ['brain', 'ceo', 'kg', 'update'] via deterministic tags/path/keywords",
+          "reuse_mode": "use_as_report_context",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "Use existing CEO brain/KG/daily memory conventions; do not create a second brain.",
+          "recommended_action": "read_existing",
+          "tests_to_run": []
+        }
+      ],
+      "no_rebuild_gate_result": "reuse_existing",
+      "smallest_implementation_delta": "reuse existing resources or create a thin adapter after gap confirmation",
+      "recommended_execution_path": "reuse_existing"
+    },
+    {
+      "task_title": "Create owner decision packet for next commercial route",
+      "task_interpretation": "Create owner decision packet for next commercial route using route selection and public evidence.",
+      "relevant_existing_resources": [
+        {
+          "resource_id": "e42_ystar_bridge_labs_7d6881be495f",
+          "resource_path": "office/mission_command/e13r_owner_decision_packet.py",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 46,
+          "relevance_reason": "matched ['commercial', 'decision', 'evidence', 'owner', 'packet'] via deterministic tags/path/keywords",
+          "reuse_mode": "direct_call",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+          "recommended_action": "call_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_237d6df1edb2",
+          "resource_path": "office/mission_command/e7_owner_decision_packet.py",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 46,
+          "relevance_reason": "matched ['commercial', 'decision', 'evidence', 'owner', 'packet'] via deterministic tags/path/keywords",
+          "reuse_mode": "direct_call",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+          "recommended_action": "call_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_66c906681ee1",
+          "resource_path": "operations/external_validation/e17_route_decision_packet.json",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 46,
+          "relevance_reason": "matched ['commercial', 'decision', 'evidence', 'packet', 'route'] via deterministic tags/path/keywords",
+          "reuse_mode": "read_as_input",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+          "recommended_action": "read_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_99bf41adce03",
+          "resource_path": "operations/external_validation/e31_public_source_selection.json",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 46,
+          "relevance_reason": "matched ['commercial', 'evidence', 'public', 'selection', 'source'] via deterministic tags/path/keywords",
+          "reuse_mode": "read_as_input",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+          "recommended_action": "read_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_8798a3daed56",
+          "resource_path": "operations/external_validation/e39_owner_decision_packet_for_e40.json",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 46,
+          "relevance_reason": "matched ['decision', 'evidence', 'for', 'owner', 'packet'] via deterministic tags/path/keywords",
+          "reuse_mode": "read_as_input",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+          "recommended_action": "read_existing",
+          "tests_to_run": []
+        }
+      ],
+      "no_rebuild_gate_result": "reuse_existing",
+      "smallest_implementation_delta": "reuse existing resources or create a thin adapter after gap confirmation",
+      "recommended_execution_path": "reuse_existing"
+    },
+    {
+      "task_title": "Fix delivery bridge/status issue",
+      "task_interpretation": "Fix delivery bridge status issue and reuse repository delivery bridge tests.",
+      "relevant_existing_resources": [
+        {
+          "resource_id": "e42_ystar_bridge_labs_d6aaec1a5af9",
+          "resource_path": "scripts/repository_delivery_bridge_status.py",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 38,
+          "relevance_reason": "matched ['bridge', 'delivery', 'repository', 'status'] via deterministic tags/path/keywords",
+          "reuse_mode": "direct_call",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+          "recommended_action": "call_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_5b6b86f36624",
+          "resource_path": "scripts/repository_delivery_bridge_smoke_test.py",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 32,
+          "relevance_reason": "matched ['bridge', 'delivery', 'repository'] via deterministic tags/path/keywords",
+          "reuse_mode": "direct_call",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+          "recommended_action": "call_existing",
+          "tests_to_run": [
+            "scripts/repository_delivery_bridge_smoke_test.py"
+          ]
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_dfa219795e39",
+          "resource_path": "office/mission_command/repository_delivery_status.py",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 30,
+          "relevance_reason": "matched ['delivery', 'repository', 'status'] via deterministic tags/path/keywords",
+          "reuse_mode": "direct_call",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+          "recommended_action": "call_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_6665f4cb89c1",
+          "resource_path": "scripts/check_repository_delivery.py",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 30,
+          "relevance_reason": "matched ['check', 'delivery', 'repository'] via deterministic tags/path/keywords",
+          "reuse_mode": "direct_call",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+          "recommended_action": "call_existing",
+          "tests_to_run": []
+        },
+        {
+          "resource_id": "e42_ystar_bridge_labs_39cb723dbd72",
+          "resource_path": "scripts/repository_delivery_bridge_install.py",
+          "repo": "ystar-bridge-labs",
+          "relevance_score": 30,
+          "relevance_reason": "matched ['bridge', 'delivery', 'repository'] via deterministic tags/path/keywords",
+          "reuse_mode": "direct_call",
+          "owner_layer": "bridge_labs_strategy",
+          "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+          "recommended_action": "call_existing",
+          "tests_to_run": []
+        }
+      ],
+      "no_rebuild_gate_result": "reuse_existing",
+      "smallest_implementation_delta": "reuse existing resources or create a thin adapter after gap confirmation",
+      "recommended_execution_path": "reuse_existing"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "artifact_id": "e42_reuse_first_no_rebuild_gate",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "required_questions": [
+    "Did we search the internal resource inventory?",
+    "Which existing resources are relevant?",
+    "Why are they insufficient?",
+    "Can we directly reuse them?",
+    "Can we extend them with a thin adapter?",
+    "Are we duplicating Y-star-gov or gov-mcp responsibility?",
+    "Are we creating another CEO brain/KG?",
+    "Are we producing another report instead of using a runtime?",
+    "What is the smallest useful delta?"
+  ],
+  "decisions": [
+    "reuse_existing",
+    "extend_existing",
+    "thin_adapter_allowed",
+    "new_build_allowed",
+    "cross_repo_proposal_required",
+    "blocked_duplicate",
+    "blocked_wrong_layer",
+    "blocked_report_pile"
+  ],
+  "default_policy": "reuse or thin adapter before new build",
+  "blocks_wasteful_duplicate_work": true
+}

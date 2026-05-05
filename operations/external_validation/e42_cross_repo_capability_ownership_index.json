@@ -1,0 +1,133 @@
+{
+  "artifact_id": "e42_cross_repo_capability_ownership_index",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "ownership_index": {
+    "k9audit_audit_layer": {
+      "resource_count": 24,
+      "resource_types": {
+        "unknown": 24
+      },
+      "capability_tags": {
+        "audit": 24,
+        "cieu": 11,
+        "governance": 5,
+        "evidence": 10,
+        "ceo_memory": 1,
+        "commercial": 1,
+        "task_preflight": 1,
+        "czl": 1
+      }
+    },
+    "ystar_gov_governance_kernel": {
+      "resource_count": 488,
+      "resource_types": {
+        "governance_contract": 480,
+        "unknown": 8
+      },
+      "capability_tags": {
+        "audit": 113,
+        "ceo_memory": 190,
+        "cieu": 211,
+        "expert_route": 37,
+        "governance": 488,
+        "public_research": 25,
+        "task_preflight": 84,
+        "mcp_execution_boundary": 9,
+        "route_selection": 113,
+        "czl": 83,
+        "evidence": 97,
+        "delivery": 7,
+        "commercial": 7
+      }
+    },
+    "gov_mcp_execution_boundary": {
+      "resource_count": 113,
+      "resource_types": {
+        "MCP_boundary": 113
+      },
+      "capability_tags": {
+        "audit": 10,
+        "cieu": 21,
+        "governance": 55,
+        "mcp_execution_boundary": 113,
+        "route_selection": 16,
+        "evidence": 36,
+        "ceo_memory": 20,
+        "expert_route": 25,
+        "task_preflight": 38,
+        "claim_graph": 3,
+        "commercial": 10,
+        "czl": 1,
+        "public_research": 5
+      }
+    },
+    "bridge_labs_strategy": {
+      "resource_count": 2500,
+      "resource_types": {
+        "CIEU_or_evidence_artifact": 10,
+        "CZL_closure": 5,
+        "artifact": 120,
+        "delivery_bridge": 15,
+        "governance_contract": 89,
+        "owner_decision_packet": 13,
+        "report": 596,
+        "runtime_module": 506,
+        "script": 260,
+        "test": 32,
+        "unknown": 854
+      },
+      "capability_tags": {
+        "audit": 524,
+        "ceo_memory": 1272,
+        "commercial": 571,
+        "delivery": 62,
+        "evidence": 982,
+        "governance": 1075,
+        "public_research": 467,
+        "route_selection": 654,
+        "expert_route": 508,
+        "mcp_execution_boundary": 344,
+        "task_preflight": 659,
+        "claim_graph": 26,
+        "frontier_capability_import": 82,
+        "czl": 338,
+        "cieu": 567,
+        "general": 239
+      }
+    },
+    "ystar_company_commercial": {
+      "resource_count": 2500,
+      "resource_types": {
+        "governance_contract": 86,
+        "report": 2373,
+        "test": 5,
+        "unknown": 36
+      },
+      "capability_tags": {
+        "ceo_memory": 940,
+        "governance": 1773,
+        "task_preflight": 267,
+        "mcp_execution_boundary": 1299,
+        "cieu": 1567,
+        "evidence": 1505,
+        "audit": 1543,
+        "czl": 154,
+        "commercial": 55,
+        "expert_route": 104,
+        "route_selection": 226,
+        "public_research": 173,
+        "delivery": 8,
+        "claim_graph": 5,
+        "general": 51,
+        "frontier_capability_import": 5
+      }
+    }
+  },
+  "boundary_summary": {
+    "bridge_labs_strategy": "CEO task preflight, internal capability awareness, strategy/opportunity routing",
+    "ystar_gov_governance_kernel": "governance kernel and deterministic semantics",
+    "gov_mcp_execution_boundary": "MCP/tool execution boundary",
+    "ystar_company_commercial": "commercial/company operation artifacts",
+    "k9audit_audit_layer": "audit/logging capability"
+  }
+}
