@@ -91,6 +91,10 @@ def build_full_history_actual_invocation_trace() -> dict[str, Any]:
     commercial = _scan_assets(["sales", "marketing", "content", "finance", "reports/autonomous", "reports/cto", "reports/cmo", "reports/cso", "knowledge/cfo", "knowledge/cso"], ["plugin", "mcpb", "marketplace", "first user", "revenue", "pricing", "install", "bug bounty", "workflow resale", "enterprise", "paid signal"], limit=24)
     records.append({"family": "Commercial / plugin / sales assets", "invocation_type": "directory_scan_parse", "invoked": True, "result_status": "pass" if commercial else "empty", "nonfatal": False, "result_data": {"top_assets": commercial}, "decision_effect": "Plugin/commercial wrappers are compared with raw CLI install."})
 
+
+    notification = _scan_assets(["scripts", "reports/daily", "reports/insights", "reports/autonomous", "reports/integration", "governance"], ["telegram", "notify", "notification", "daily reminder", "board", "board_pending", "pending", "milestone", "owner packet"], limit=16)
+    records.append({"family": "Notification / Board loop", "invocation_type": "directory_scan_parse_read_only", "invoked": True, "result_status": "pass" if notification else "empty", "nonfatal": False, "result_data": {"top_assets": notification}, "decision_effect": "Owner packets can later enter Board/daily notification only after explicit owner approval; E45 performed read-only discovery and no send."})
+
     records.append({"family": "K9 / CIEU / CZL audit context", "invocation_type": "file_read_parse", "invoked": True, "result_status": "pass", "nonfatal": False, "result_data": {"CZL.md": _lines(BRIDGE_ROOT / "CZL.md", ["czl", "closure", "contract", "governance"]), "docs/cieu_event_schema.md": _lines(BRIDGE_ROOT / "docs/cieu_event_schema.md", ["event", "cieu", "audit", "decision"]), "governance/k9_alarm_consumer_v1.md": _lines(BRIDGE_ROOT / "governance/k9_alarm_consumer_v1.md", ["k9", "audit", "alarm", "watchdog"]), "K9Audit_README": _lines(K9_ROOT / "README.md", ["audit", "k9", "log", "verify"]) if K9_ROOT.exists() else []}, "decision_effect": "K9/CIEU/CZL context attaches later as audit proof."})
 
     sys.path.insert(0, str(BRIDGE_ROOT))

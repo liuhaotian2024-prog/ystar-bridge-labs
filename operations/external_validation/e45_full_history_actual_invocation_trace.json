@@ -1,5 +1,5 @@
 {
-  "actual_invocation_family_count": 7,
+  "actual_invocation_family_count": 8,
   "actual_invocation_records": [
     {
       "decision_effect": "Article 11 compliance currently fails honestly; E45 must not treat the first-value route as fully disciplined until layers are completed.",
@@ -523,6 +523,267 @@
               "- Designing initial pricing model",
               "- Pivoting from unprofitable pricing",
               "- **Per-outcome**: Leads generated, revenue processed (e.g., HubSpot, Shopify)"
+            ]
+          }
+        ]
+      },
+      "result_status": "pass"
+    },
+    {
+      "decision_effect": "Owner packets can later enter Board/daily notification only after explicit owner approval; E45 performed read-only discovery and no send.",
+      "family": "Notification / Board loop",
+      "invocation_type": "directory_scan_parse_read_only",
+      "invoked": true,
+      "nonfatal": false,
+      "result_data": {
+        "top_assets": [
+          {
+            "matched_terms": [
+              "telegram",
+              "notify",
+              "notification",
+              "board",
+              "milestone"
+            ],
+            "path": "scripts/telegram_notify.py",
+            "score": 50,
+            "snippets": [
+              "Y* Bridge Labs \u2014 Telegram notification library (Secretary-owned).",
+              "3 send paths per Board 2026-04-15 directive:",
+              "MAJOR_INCIDENT / MILESTONE_SHIPPED)",
+              "1) env TELEGRAM_BOT_TOKEN"
+            ]
+          },
+          {
+            "matched_terms": [
+              "telegram",
+              "notify",
+              "board",
+              "pending"
+            ],
+            "path": "governance/auto_commit_push_v1.md",
+            "score": 40,
+            "snippets": [
+              "**Current state**: Y* Bridge Labs generates 20-40 artifacts per autonomous session (governance specs, reports, tests, daemon scripts, agent definitions). These accumulate as uncommitted changes until Board manually triggers cleanup or resta",
+              "- Secretary `commit_watcher.py` \u2014 WATCHER only, Telegram notify, NOT a committer",
+              "| `ystar-company` (this repo) | **YES** for non-sensitive paths | Governance/knowledge/reports are append-only; Board reviews via Telegram, not pre-push gate |",
+              "4. Accumulate blocked files in `.auto_commit_pending.json` for Board manual review"
+            ]
+          },
+          {
+            "matched_terms": [
+              "notify",
+              "notification",
+              "board",
+              "pending"
+            ],
+            "path": "governance/ceo_operating_methodology_v1.md",
+            "score": 40,
+            "snippets": [
+              "**Constitutional \u2014 Board 2026-04-16 META Layer \u2014 Single Atomic**",
+              "**Problem**: CEO wrote 6+ reactive ForgetGuard rules today (coord_reply_5tuple, coordinator_summary_rt_audit, subagent_unauthorized_git_op, charter_drift_mid_session, ceo_design_ecosystem_blind, ceo_deferred_dispatch_promise_orphan, subagen",
+              "**Concept**: All inter-agent messaging (CEO\u2194Board, CEO\u2194sub-agent, sub-agent\u2192receipt) must carry verifiable structure enabling empirical closure measurement.",
+              "- **Single recommendation**: Receipts propose ONE path forward, not choice menus. Board/CEO decides via override if needed."
+            ]
+          },
+          {
+            "matched_terms": [
+              "telegram",
+              "board",
+              "pending",
+              "milestone"
+            ],
+            "path": "governance/cieu_event_taxonomy.md",
+            "score": 40,
+            "snippets": [
+              "`AGENT | HOOK | GOVERNANCE | AUDIT | INTENT | OBLIGATION | CIEU | SECRETARY | FORGET_GUARD | ARTICLE_11 | RESIDUAL_LOOP | WHITELIST | OMISSION | CANONICAL | WIRE | DEFER | BACKLOG | CHOICE | BEHAVIOR | DIRECTIVE | BOARD | SUBAGENT | CEO | T",
+              "`START | STARTED | BOOT | TRIGGER | TRIGGERED | CHECK | TICK | RECEIVED | RECORDED | REGISTERED | LINKED | DECLARED | ADJUSTED | CONFIRMED | COMPLETED | FULFILLED | CANCELLED | REJECTED | DENY | WARN | WARNING | DRIFT | BROKEN | MATCH | GAP",
+              "- **QUALIFIER** (optional, noun): disambiguating context. `RULE | TOKEN | BOARD | COMMIT | REPLY | BASH | DAILY | SESSION | LAYER_{0..12} | ARTICLE_11 | BREAK_GLASS | etc.`",
+              "- `status`: `CANONICAL | DEPRECATED | RENAME_PENDING | GRANDFATHERED | UNKNOWN_TO_AUDIT`"
+            ]
+          },
+          {
+            "matched_terms": [
+              "notify",
+              "notification",
+              "board",
+              "pending"
+            ],
+            "path": "reports/autonomous/2026-04-02-cieu-behavior-analysis.md",
+            "score": 40,
+            "snippets": [
+              "- Peak activity at 13:00 (1,471 events) aligns with 9 AM ET (Board timezone)",
+              "**Constitutional Gap:** No rule limits agent activity during off-hours. If an agent goes rogue at 3 AM, Board won't notice until morning. Need:",
+              "- Mandatory notification for off-hours activity above threshold",
+              "- Require Board approval for scheduled midnight tasks"
+            ]
+          },
+          {
+            "matched_terms": [
+              "board",
+              "board_pending",
+              "pending",
+              "milestone"
+            ],
+            "path": "reports/autonomous/autonomous_session_5_summary.md",
+            "score": 40,
+            "snippets": [
+              "**\u6a21\u5f0f:** \u81ea\u4e3b\u5de5\u4f5c\uff08Board\u79bb\u7ebf\uff09",
+              "Session 5\u805a\u7126\u4e8e**\u89c4\u5212\u4e0e\u5206\u6790**\uff0c\u5728Session 1-4\u5b8c\u6210\u53d1\u5e03\u51c6\u5907\u3001\u652f\u6301\u57fa\u7840\u8bbe\u65bd\u3001governance audit\u548centerprise sales\u7814\u7a76\u7684\u57fa\u7840\u4e0a\uff0c\u8fdb\u884c\u7cfb\u7edf\u6027\u6574\u5408\u548c\u6df1\u5ea6\u5206\u6790\uff0c\u4e3aBoard\u8fd4\u56de\u65f6\u63d0\u4f9b\u5b8c\u6574\u51b3\u7b56\u6750\u6599\u3002",
+              "- \u6309\u7d27\u6025\u7a0b\u5ea6\u5206\u7c7b\uff1aCRITICAL/HIGH/MEDIUM/LOW/BOARD-ONLY",
+              "- 6\u4e2a\u9700Board clarification/approval"
+            ]
+          },
+          {
+            "matched_terms": [
+              "telegram",
+              "notify",
+              "board",
+              "milestone"
+            ],
+            "path": "scripts/cieu_event_watcher.py",
+            "score": 40,
+            "snippets": [
+              "Y* Bridge Labs \u2014 CIEU event watcher (Secretary-owned, AMENDMENT / Board",
+              "Close the auto-trigger gap for telegram_notify.send_event. Before this watcher,",
+              "CRITICAL_INSIGHT / MAJOR_INCIDENT rows could only reach the Board channel via",
+              "manual CLI (`python3 scripts/telegram_notify.py event ...`). Any agent writing"
+            ]
+          },
+          {
+            "matched_terms": [
+              "telegram",
+              "notify",
+              "board",
+              "milestone"
+            ],
+            "path": "scripts/hook_wrapper.py",
+            "score": 40,
+            "snippets": [
+              "# Y*gov module path fix (Board 2026-04-16 P0: ModuleNotFoundError emergency)",
+              "# CZL-HOOK-V2-BYPASS 2026-04-23 \u2014 Board shell sed disabled v2 path after",
+              "# Board directive: inject WHO_I_AM v0.4 key section into every user prompt",
+              "r\"(audience|purpose|for\\s+board|stakeholder|reader[s]?|\""
+            ]
+          },
+          {
+            "matched_terms": [
+              "board",
+              "board_pending",
+              "pending"
+            ],
+            "path": "governance/DNA_LOG.md",
+            "score": 30,
+            "snippets": [
+              "2. \u4e09\u9879\u5de5\u5177\uff08audio/av_sync/video\uff09\u4efb\u4f55\u4e00\u9879 FAIL \u5219\u4e0d\u5f97\u4ea4\u4ed8 Board",
+              "3. \u81ea\u68c0\u5931\u8d25 \u2192 \u56e2\u961f\u4fee\u590d \u2192 \u91cd\u65b0\u81ea\u68c0 \u2192 \u901a\u8fc7\u540e\u624d\u7ed9 Board \u770b",
+              "- \u51ed\u4e3b\u89c2\u611f\u89c9\u89c9\u5f97\u6ca1\u95ee\u9898\u5c31\u7ed9 Board",
+              "- \u8ba9 Board \u7528\u8033\u6735/\u773c\u775b\u5e2e\u6211\u4eec QA"
+            ]
+          },
+          {
+            "matched_terms": [
+              "notify",
+              "board",
+              "pending"
+            ],
+            "path": "governance/forget_guard_rules.yaml",
+            "score": 30,
+            "snippets": [
+              "description: 'Meta-observer: same enforcement gap appears in \u22652 consecutive scans (Board 2026-04-16)'",
+              "- scan_pending_enforcement",
+              "pattern: ^(AGENTS\\.md|governance/WORKING_STYLE\\.md|governance/BOARD_CHARTER_AMENDMENTS\\.md)",
+              "\\    Secretary has native write access to governance files.\\n\\nRef: knowledge/ceo/skills/board_ceo_override_or_delegate.md\\n\\"
+            ]
+          },
+          {
+            "matched_terms": [
+              "notify",
+              "board",
+              "milestone"
+            ],
+            "path": "governance/methodology_framework_assignments_v1.md",
+            "score": 30,
+            "snippets": [
+              "**Constitutional, Board 2026-04-16, fixes self-invented-methodology problem**",
+              "- Lack of external validation (Board cannot cross-check agent reasoning against known frameworks)",
+              "| **OKR (Objectives & Key Results)** | Andy Grove (Intel), popularized by John Doerr (Google) | Set ambitious objectives, measure via 3-5 key results, quarterly review | **Used for:** Board-CEO alignment on quarterly goals (e.g., Q2 2026: s",
+              "| **OWASP Top 10** | OWASP Foundation | Top web app vulnerabilities (injection, broken auth, XSS, etc.) | **Not directly applicable (Y*gov is not web app), but:** eng-security checks for injection in Agent tool prompts (e.g., malicious Boar"
+            ]
+          },
+          {
+            "matched_terms": [
+              "board",
+              "board_pending",
+              "pending"
+            ],
+            "path": "governance/proposed_rules/feedback_board_shell_marker_proposed.yaml",
+            "score": 30,
+            "snippets": [
+              "source_file: memory/claude_code_memory_mirror/feedback_board_shell_marker.md",
+              "- id: proposed_board_shell_marker",
+              "description: Any command CEO needs Board to run in shell must be prefixed with \u2755 marker, visually prominent, with clear",
+              "source: feedback_board_shell_marker.md"
+            ]
+          },
+          {
+            "matched_terms": [
+              "board",
+              "pending",
+              "milestone"
+            ],
+            "path": "governance/reply_scan_detector_methodology_v1.md",
+            "score": 30,
+            "snippets": [
+              "> \"Maya CZL-111 forensic shipped (L3 VALIDATED), commit f00e91ac, 20/20 deliverables verified, Rt+1=1 (test file pending).\"",
+              "Keywords indicating campaign/milestone/blocker transitions:",
+              "### 1.4 Direct Response to Board ASK",
+              "Board query patterns requiring structured answer:"
+            ]
+          },
+          {
+            "matched_terms": [
+              "notification",
+              "board",
+              "pending"
+            ],
+            "path": "governance/reply_taxonomy_whitelist_v1.md",
+            "score": 30,
+            "snippets": [
+              "**Upstream**: Board 2026-04-16 architectural catch \u2014 blacklist\u2192whitelist shift + formal_methods_primer \u00a72 Aristotelian mutual exclusion",
+              "**Current architecture**: `hook_stop_reply_scan.py` scans reply text for defer_language / choice_question patterns. Detector accuracy ~90% (Board 2026-04-16 empirical: missed \"\u4e0b\u6ce2\u6d3e X\" prose promise, false-positive on \"\u597d\u7684\" ack).",
+              "**Proposed architecture**: Enumerate **all legitimate reply forms** T = {DISPATCH, RECEIPT, NOTIFICATION, QUERY, ACK}. Reply is valid iff:",
+              "All agent replies MUST start with exactly one tag: `[DISPATCH]`, `[RECEIPT]`, `[NOTIFICATION]`, `[QUERY]`, or `[ACK]`. Each tag has required/forbidden structure constraints."
+            ]
+          },
+          {
+            "matched_terms": [
+              "notification",
+              "board",
+              "pending"
+            ],
+            "path": "governance/restart_preparation_model_v1.md",
+            "score": 30,
+            "snippets": [
+              "6. Prohibit Board questions during restart flow",
+              "**Today's incident** (2026-04-16): CEO upgrade Claude model Sonnet 4.5 \u2192 Opus 4.6, but didn't manually restart. Result: 9 engineers (5 new + 4 old) active simultaneously, CHARTER_MAP out of sync, dispatch board whitelist stale. Only discove",
+              "python3 scripts/dispatch_board.py --verify-receipts-complete",
+              "- Read `governance/active_dispatch_log.md` (or dispatch board state)"
+            ]
+          },
+          {
+            "matched_terms": [
+              "notification",
+              "board",
+              "pending"
+            ],
+            "path": "governance/skill_trust_hybrid_v1.md",
+            "score": 30,
+            "snippets": [
+              "**Constitutional \u2014 Board 2026-04-16 Comprehensive Architecture**",
+              "**Context**: Board directive: \"\u63a8\u884c\" batch approval of (1) Skill-based trust scoring, (2) 5 new engineer specialists, (3) Pair-programming protocol, (4) Reward mechanisms, (5) Anti-monopoly quotas. Single atomic integrated spec.",
+              "**Integration anchor**: CTO role v2 (#governance/cto_role_v2_and_dispatch_board_20260416.md), Tier-routing v1 (#governance/tiered_routing_protocol_v1.md), Dispatch board CZL-68 (Ryan in-flight).",
+              "**Update frequency**: AI re-grain (2026-04-16): Event-driven \u2014 triggered after every 10 task completions observed OR Board requests trust audit, not hardcoded weekly schedule. Implemented via `scripts/trust_score_update.py`."
             ]
           }
         ]
