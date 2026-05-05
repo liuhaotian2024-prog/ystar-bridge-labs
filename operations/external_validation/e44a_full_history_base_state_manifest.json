@@ -1,0 +1,20 @@
+{
+  "E44A_initial_closure_exists": true,
+  "artifact_id": "e44a_full_history_base_state_manifest",
+  "branch": "backflow/aiden-ceo-meeting-room",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "local_head": "620e2f47f7123af7516c8b12b52251d26bee074f",
+  "pre_E31_runtime_files_found": {
+    "BOARD_PENDING.md": true,
+    "DIRECTIVE_TRACKER.md": true,
+    "OPERATIONS.md": true,
+    "scripts/article_11_tracker.py": true,
+    "scripts/governance_watcher.py": true,
+    "scripts/telegram_notify.py": true,
+    "scripts/wisdom_search.py": true,
+    "scripts/working_memory_snapshot.py": true
+  },
+  "remote_head": "620e2f47f7123af7516c8b12b52251d26bee074f",
+  "requested_base_head": "620e2f47f7123af7516c8b12b52251d26bee074f",
+  "worktree_clean": true
+}

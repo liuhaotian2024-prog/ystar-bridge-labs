@@ -1,0 +1,22 @@
+{
+  "artifact_id": "e44a_full_history_ceo_brain_update",
+  "correction": "E44A must include pre-E31 live CEO OS/runtime capabilities, not only E31-E43 artifacts.",
+  "next_decision_horizon": "E45 full-history activated local demo run",
+  "no_customer_validation": true,
+  "no_paid_signal": true,
+  "pre_E31_families_now_required": [
+    "live_runtime_enforcement",
+    "session_lifecycle_memory",
+    "ceo_wisdom_and_cognition",
+    "commercial_and_value_production",
+    "execution_and_delivery",
+    "governance_and_audit",
+    "notification_and_board_loop"
+  ],
+  "updated_bottleneck": "CEO cognition is reconnected to full-history runtime, but must next run a real local first-value demo bundle and resolve must-fix blockers.",
+  "updated_route": {
+    "new_route": "First Value Demo Bundle: Governed Agent Action Proof Packet plus plugin/commercial wrapper comparison",
+    "route_changed": true,
+    "why": "Full-history commercial/plugin/sales assets show gov-mcp install is a technical substrate; first-user value may need a packaged plugin/demo wrapper or commercial proof story."
+  }
+}

@@ -1,0 +1,4 @@
+{"source": "e44a_full_history:article_11", "target": "e44a:ceo_cognition_cascade", "type": "precedes"}
+{"source": "e44a_full_history:lrs_memory", "target": "e44a:ceo_cognition_cascade", "type": "feeds"}
+{"source": "e44a_full_history:wisdom_search", "target": "e44a:first_value_route_v2", "type": "broadens"}
+{"source": "e44a_full_history:commercial_assets", "target": "e44a_full_history:first_value_demo_bundle", "type": "packages"}

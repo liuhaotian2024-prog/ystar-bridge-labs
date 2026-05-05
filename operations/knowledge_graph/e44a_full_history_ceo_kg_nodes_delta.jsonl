@@ -1,0 +1,5 @@
+{"id": "e44a_full_history:article_11", "label": "Article 11 CEO OS discipline", "type": "pre_e31_runtime_capability"}
+{"id": "e44a_full_history:lrs_memory", "label": "Working Memory Snapshot / LRS", "type": "pre_e31_runtime_capability"}
+{"id": "e44a_full_history:wisdom_search", "label": "Wisdom Search / CEO Wisdom Corpus", "type": "pre_e31_runtime_capability"}
+{"id": "e44a_full_history:commercial_assets", "label": "Commercial / plugin / sales route assets", "type": "pre_e31_runtime_capability"}
+{"id": "e44a_full_history:first_value_demo_bundle", "label": "First Value Demo Bundle", "type": "route_decision"}

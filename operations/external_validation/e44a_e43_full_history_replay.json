@@ -1,0 +1,100 @@
+{
+  "E44A_initial_route": "Governed Agent Action Proof Packet on gov-mcp + Y-star-gov substrate",
+  "artifact_id": "e44a_e43_full_history_replay",
+  "concrete_next_action": "E45_run_full_history_activated_ceo_loop_on_real_local_first_value_demo",
+  "full_history_route_adjustment": {
+    "new_route": "First Value Demo Bundle: Governed Agent Action Proof Packet plus plugin/commercial wrapper comparison",
+    "route_changed": true,
+    "why": "Full-history commercial/plugin/sales assets show gov-mcp install is a technical substrate; first-user value may need a packaged plugin/demo wrapper or commercial proof story."
+  },
+  "generated_at": "2026-05-05T00:00:01Z",
+  "no_external_action": true,
+  "old_E43_route": "gov-mcp + Y-star-gov governed execution in 5 minutes",
+  "pre_E31_capability_effects": [
+    {
+      "decision_effect": "E43 replay must prove seven-layer decision discipline before treating first-user path as serious company route.",
+      "family": "Article 11 / CEO OS decision discipline",
+      "invoked": true,
+      "paths": [
+        "scripts/article_11_tracker.py",
+        "knowledge/ceo/skills/article_11_seven_layers.md"
+      ]
+    },
+    {
+      "decision_effect": "Task preflight must load recent CIEU events, subagent state, targets, and recent commits before route selection.",
+      "family": "working_memory_snapshot / LRS continuity",
+      "invoked": true,
+      "paths": [
+        "scripts/working_memory_snapshot.py",
+        "docs/c5_working_memory_snapshot.md"
+      ]
+    },
+    {
+      "decision_effect": "First-user path should compare against wisdom/M Triangle value-production logic, not only install docs.",
+      "family": "wisdom_search / CEO wisdom corpus",
+      "invoked": true,
+      "paths": [
+        "scripts/wisdom_search.py",
+        "knowledge/ceo/wisdom/M_TRIANGLE.md",
+        "knowledge/ceo/wisdom/WORK_METHODOLOGY.md"
+      ]
+    },
+    {
+      "decision_effect": "gov-mcp install remains substrate, but plugin/marketplace/commercial paths become candidate wrappers for first value or first cash.",
+      "family": "commercial / sales / plugin packaging assets",
+      "invoked": true,
+      "paths": [
+        "OPERATIONS.md",
+        "DIRECTIVE_TRACKER.md",
+        "marketing/first_user_install_guide.md",
+        "marketing/skill_marketplace_listing.md",
+        "finance/master_ledger_20260415.md"
+      ]
+    },
+    {
+      "decision_effect": "Owner packet must be linked to real install, user, and revenue/PMF operating goals instead of isolated report output.",
+      "family": "DIRECTIVE_TRACKER / OPERATIONS / revenue OKRs",
+      "invoked": true,
+      "paths": [
+        "DIRECTIVE_TRACKER.md",
+        "OPERATIONS.md"
+      ]
+    },
+    {
+      "decision_effect": "Owner packet should be eligible for dry-run Board notification routing, but no send occurs without approval.",
+      "family": "notification / Board loop",
+      "invoked": true,
+      "paths": [
+        "scripts/telegram_notify.py",
+        "BOARD_PENDING.md",
+        "knowledge/ceo/theory/board_reporting.md"
+      ]
+    },
+    {
+      "decision_effect": "K9Audit is not merely optional marketing add-on; it remains audit/watchdog context for future proof packet.",
+      "family": "K9 / CIEU / CZL audit bridge context",
+      "invoked": true,
+      "paths": [
+        "governance/k9_alarm_consumer_v1.md",
+        "docs/cieu_event_schema.md",
+        "CZL.md",
+        ".czl_subgoals.json"
+      ]
+    }
+  ],
+  "still_blocked": [
+    "No real notification send.",
+    "No external contact.",
+    "No provider/API/tool execution.",
+    "No paid signal or customer validation claim."
+  ],
+  "task": "Prepare the fastest credible path toward one real external user successfully installing and understanding Y*gov / gov-mcp / Y*Bridge Labs' agent-company runtime value.",
+  "what_changed": [
+    "Article 11 becomes pre-route discipline rather than historical note.",
+    "Working memory snapshot becomes task preflight input.",
+    "Wisdom search/M Triangle becomes strategic recall source.",
+    "Plugin/marketing/CFO/sales assets enter first-user route comparison.",
+    "Owner packet must connect to Board/notification/daily operating loop in dry-run only.",
+    "K9/CIEU/CZL bridge is treated as audit context, not only optional add-on."
+  ]
+}
