@@ -1,0 +1,2123 @@
+{
+  "artifact_id": "e36_strategic_field_trial_results",
+  "examples_promoted_to_route": false,
+  "final_product_selected": false,
+  "generated_at": "2026-05-05T00:00:01Z",
+  "major_opportunity_clusters": [
+    {
+      "cluster": "human-life / health / sleep / emotion / home",
+      "opportunity_count": 12,
+      "sample_opportunities": [
+        "e35_opportunity_01",
+        "e35_opportunity_02",
+        "e35_opportunity_03"
+      ]
+    },
+    {
+      "cluster": "AI productivity / workflow / toolchain",
+      "opportunity_count": 12,
+      "sample_opportunities": [
+        "e35_opportunity_13",
+        "e35_opportunity_14",
+        "e35_opportunity_15"
+      ]
+    },
+    {
+      "cluster": "education / creator / family / small business",
+      "opportunity_count": 10,
+      "sample_opportunities": [
+        "e35_opportunity_25",
+        "e35_opportunity_26",
+        "e35_opportunity_27"
+      ]
+    },
+    {
+      "cluster": "enterprise / professional services",
+      "opportunity_count": 10,
+      "sample_opportunities": [
+        "e35_opportunity_35",
+        "e35_opportunity_36",
+        "e35_opportunity_37"
+      ]
+    },
+    {
+      "cluster": "agent economy / autonomous company",
+      "opportunity_count": 8,
+      "sample_opportunities": [
+        "e35_opportunity_45",
+        "e35_opportunity_46",
+        "e35_opportunity_47"
+      ]
+    },
+    {
+      "cluster": "hardware + AI / physical-world interface",
+      "opportunity_count": 8,
+      "sample_opportunities": [
+        "e35_opportunity_53",
+        "e35_opportunity_54",
+        "e35_opportunity_55"
+      ]
+    }
+  ],
+  "opportunities_processed": 60,
+  "records": [
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype feedback review or concierge design sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "intent capture UI"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_01",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype feedback review or concierge design sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "source UX"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_02",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype feedback review or concierge design sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "trace visualization"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_03",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype feedback review or concierge design sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "sensitive data rules"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_04",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype feedback review or concierge design sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-friendly labels"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_05",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype feedback review or concierge design sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "approval UX"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_06",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype feedback review or concierge design sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "domain-specific options"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_07",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype feedback review or concierge design sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "workshop format"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_08",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype feedback review or concierge design sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "source selection"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_09",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype feedback review or concierge design sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "memory policy"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_10",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype feedback review or concierge design sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "simulation layer"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_11",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype feedback review or concierge design sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "sensing and consent"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_12",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: workflow-yield review, small paid audit, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer interview path"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_13",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: workflow-yield review, small paid audit, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "privacy and UI"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_14",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: workflow-yield review, small paid audit, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "intent capture UI"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_15",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: workflow-yield review, small paid audit, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_16",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: workflow-yield review, small paid audit, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_17",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: workflow-yield review, small paid audit, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "sensitive data rules"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_18",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: workflow-yield review, small paid audit, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_19",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: workflow-yield review, small paid audit, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_20",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: workflow-yield review, small paid audit, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "domain-specific options"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_21",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: workflow-yield review, small paid audit, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_22",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: workflow-yield review, small paid audit, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_23",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: workflow-yield review, small paid audit, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "memory policy"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_24",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "medium",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "education / creator / family / small business",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: service-first workshop, template pack, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "public read-only research plus owner-approved friendly reviewer prep",
+      "opportunity_id": "e35_opportunity_25",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "medium",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "education / creator / family / small business",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: service-first workshop, template pack, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "public read-only research plus owner-approved friendly reviewer prep",
+      "opportunity_id": "e35_opportunity_26",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "medium",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "education / creator / family / small business",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: service-first workshop, template pack, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer interview path"
+      ],
+      "next_proof_required": "public read-only research plus owner-approved friendly reviewer prep",
+      "opportunity_id": "e35_opportunity_27",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "medium",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "education / creator / family / small business",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: service-first workshop, template pack, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "public read-only research plus owner-approved friendly reviewer prep",
+      "opportunity_id": "e35_opportunity_28",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "medium",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "education / creator / family / small business",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: service-first workshop, template pack, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "public read-only research plus owner-approved friendly reviewer prep",
+      "opportunity_id": "e35_opportunity_29",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "medium",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "education / creator / family / small business",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: service-first workshop, template pack, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "source UX"
+      ],
+      "next_proof_required": "public read-only research plus owner-approved friendly reviewer prep",
+      "opportunity_id": "e35_opportunity_30",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "medium",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "education / creator / family / small business",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: service-first workshop, template pack, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "public read-only research plus owner-approved friendly reviewer prep",
+      "opportunity_id": "e35_opportunity_31",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "medium",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "education / creator / family / small business",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: service-first workshop, template pack, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "public read-only research plus owner-approved friendly reviewer prep",
+      "opportunity_id": "e35_opportunity_32",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "medium",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "education / creator / family / small business",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: service-first workshop, template pack, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-friendly labels"
+      ],
+      "next_proof_required": "public read-only research plus owner-approved friendly reviewer prep",
+      "opportunity_id": "e35_opportunity_33",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "medium",
+      "cross_repo_governance_requirement": [
+        "no Y-star-gov primitive needed"
+      ],
+      "domain": "education / creator / family / small business",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: service-first workshop, template pack, or pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "public read-only research plus owner-approved friendly reviewer prep",
+      "opportunity_id": "e35_opportunity_34",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics",
+        "existing trust hierarchy semantics"
+      ],
+      "domain": "enterprise / professional services",
+      "evidence_status": "no customer validation; current level 2",
+      "execution_commercial_assessment": "first plausible revenue form: readiness review, implementation audit, or advisory pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_35",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics",
+        "existing trust hierarchy semantics"
+      ],
+      "domain": "enterprise / professional services",
+      "evidence_status": "no customer validation; current level 2",
+      "execution_commercial_assessment": "first plausible revenue form: readiness review, implementation audit, or advisory pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "interesting but may be adjacent to known trust/audit forms",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "workshop format"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_36",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics",
+        "existing trust hierarchy semantics"
+      ],
+      "domain": "enterprise / professional services",
+      "evidence_status": "no customer validation; current level 2",
+      "execution_commercial_assessment": "first plausible revenue form: readiness review, implementation audit, or advisory pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "interesting but may be adjacent to known trust/audit forms",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_37",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics",
+        "existing trust hierarchy semantics"
+      ],
+      "domain": "enterprise / professional services",
+      "evidence_status": "no customer validation; current level 2",
+      "execution_commercial_assessment": "first plausible revenue form: readiness review, implementation audit, or advisory pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_38",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics",
+        "existing trust hierarchy semantics"
+      ],
+      "domain": "enterprise / professional services",
+      "evidence_status": "no customer validation; current level 2",
+      "execution_commercial_assessment": "first plausible revenue form: readiness review, implementation audit, or advisory pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "interesting but may be adjacent to known trust/audit forms",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "simulation layer"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_39",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics",
+        "existing trust hierarchy semantics"
+      ],
+      "domain": "enterprise / professional services",
+      "evidence_status": "no customer validation; current level 2",
+      "execution_commercial_assessment": "first plausible revenue form: readiness review, implementation audit, or advisory pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_40",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics",
+        "existing trust hierarchy semantics"
+      ],
+      "domain": "enterprise / professional services",
+      "evidence_status": "no customer validation; current level 2",
+      "execution_commercial_assessment": "first plausible revenue form: readiness review, implementation audit, or advisory pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "interesting but may be adjacent to known trust/audit forms",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_41",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics",
+        "existing trust hierarchy semantics"
+      ],
+      "domain": "enterprise / professional services",
+      "evidence_status": "no customer validation; current level 2",
+      "execution_commercial_assessment": "first plausible revenue form: readiness review, implementation audit, or advisory pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "interesting but may be adjacent to known trust/audit forms",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "privacy and UI"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_42",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics",
+        "existing trust hierarchy semantics"
+      ],
+      "domain": "enterprise / professional services",
+      "evidence_status": "no customer validation; current level 2",
+      "execution_commercial_assessment": "first plausible revenue form: readiness review, implementation audit, or advisory pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_43",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "higher",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing check/enforce semantics",
+        "existing CIEU semantics",
+        "existing trust hierarchy semantics"
+      ],
+      "domain": "enterprise / professional services",
+      "evidence_status": "no customer validation; current level 2",
+      "execution_commercial_assessment": "first plausible revenue form: readiness review, implementation audit, or advisory pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "interesting but may be adjacent to known trust/audit forms",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "safe public read-only research plus owner-approved expert review prep",
+      "opportunity_id": "e35_opportunity_44",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "medium",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing CIEU semantics",
+        "existing delegation semantics",
+        "existing contract lifecycle semantics",
+        "candidate new Y-star-gov primitive"
+      ],
+      "domain": "agent economy / autonomous company",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: trust-layer working session, governance review, or protocol design pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "owner approval required before any execution",
+        "requires delegation/escalation flow",
+        "requires CIEU report/verify/audit",
+        "requires new MCP adapter candidate"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "trace visualization"
+      ],
+      "next_proof_required": "owner-approved expert review with agent/security/platform practitioners",
+      "opportunity_id": "e35_opportunity_45",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "medium",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing CIEU semantics",
+        "existing delegation semantics",
+        "existing contract lifecycle semantics",
+        "candidate new Y-star-gov primitive"
+      ],
+      "domain": "agent economy / autonomous company",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: trust-layer working session, governance review, or protocol design pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "owner approval required before any execution",
+        "requires delegation/escalation flow",
+        "requires CIEU report/verify/audit",
+        "requires new MCP adapter candidate"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "interesting but may be adjacent to known trust/audit forms",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "owner-approved expert review with agent/security/platform practitioners",
+      "opportunity_id": "e35_opportunity_46",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "medium",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing CIEU semantics",
+        "existing delegation semantics",
+        "existing contract lifecycle semantics",
+        "candidate new Y-star-gov primitive"
+      ],
+      "domain": "agent economy / autonomous company",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: trust-layer working session, governance review, or protocol design pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "owner approval required before any execution",
+        "requires delegation/escalation flow",
+        "requires CIEU report/verify/audit",
+        "requires new MCP adapter candidate"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "interesting but may be adjacent to known trust/audit forms",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "owner-approved expert review with agent/security/platform practitioners",
+      "opportunity_id": "e35_opportunity_47",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "medium",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing CIEU semantics",
+        "existing delegation semantics",
+        "existing contract lifecycle semantics",
+        "candidate new Y-star-gov primitive"
+      ],
+      "domain": "agent economy / autonomous company",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: trust-layer working session, governance review, or protocol design pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "owner approval required before any execution",
+        "requires delegation/escalation flow",
+        "requires CIEU report/verify/audit",
+        "requires new MCP adapter candidate"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "approval UX"
+      ],
+      "next_proof_required": "owner-approved expert review with agent/security/platform practitioners",
+      "opportunity_id": "e35_opportunity_48",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "medium",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing CIEU semantics",
+        "existing delegation semantics",
+        "existing contract lifecycle semantics",
+        "candidate new Y-star-gov primitive"
+      ],
+      "domain": "agent economy / autonomous company",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: trust-layer working session, governance review, or protocol design pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "owner approval required before any execution",
+        "requires delegation/escalation flow",
+        "requires CIEU report/verify/audit",
+        "requires new MCP adapter candidate"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "interesting but may be adjacent to known trust/audit forms",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "owner-approved expert review with agent/security/platform practitioners",
+      "opportunity_id": "e35_opportunity_49",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "medium",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing CIEU semantics",
+        "existing delegation semantics",
+        "existing contract lifecycle semantics",
+        "candidate new Y-star-gov primitive"
+      ],
+      "domain": "agent economy / autonomous company",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: trust-layer working session, governance review, or protocol design pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "owner approval required before any execution",
+        "requires delegation/escalation flow",
+        "requires CIEU report/verify/audit",
+        "requires new MCP adapter candidate"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "owner-approved expert review with agent/security/platform practitioners",
+      "opportunity_id": "e35_opportunity_50",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "medium",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing CIEU semantics",
+        "existing delegation semantics",
+        "existing contract lifecycle semantics",
+        "candidate new Y-star-gov primitive"
+      ],
+      "domain": "agent economy / autonomous company",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: trust-layer working session, governance review, or protocol design pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "owner approval required before any execution",
+        "requires delegation/escalation flow",
+        "requires CIEU report/verify/audit",
+        "requires new MCP adapter candidate"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "interesting but may be adjacent to known trust/audit forms",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "source selection"
+      ],
+      "next_proof_required": "owner-approved expert review with agent/security/platform practitioners",
+      "opportunity_id": "e35_opportunity_51",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "medium",
+      "cross_repo_governance_requirement": [
+        "existing IntentContract semantics",
+        "existing CIEU semantics",
+        "existing delegation semantics",
+        "existing contract lifecycle semantics",
+        "candidate new Y-star-gov primitive"
+      ],
+      "domain": "agent economy / autonomous company",
+      "evidence_status": "no customer validation; current level 1",
+      "execution_commercial_assessment": "first plausible revenue form: trust-layer working session, governance review, or protocol design pilot",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "owner approval required before any execution",
+        "requires delegation/escalation flow",
+        "requires CIEU report/verify/audit",
+        "requires new MCP adapter candidate"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "interesting but may be adjacent to known trust/audit forms",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "owner-approved expert review with agent/security/platform practitioners",
+      "opportunity_id": "e35_opportunity_52",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "unclear / owner review required"
+      ],
+      "domain": "hardware + AI / physical-world interface",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype review, partner validation, or hardware/software concept sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "unsafe / should not execute",
+        "owner approval required before any execution"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_53",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "unclear / owner review required"
+      ],
+      "domain": "hardware + AI / physical-world interface",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype review, partner validation, or hardware/software concept sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "unsafe / should not execute",
+        "owner approval required before any execution"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "sensing and consent"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_54",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "unclear / owner review required"
+      ],
+      "domain": "hardware + AI / physical-world interface",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype review, partner validation, or hardware/software concept sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "unsafe / should not execute",
+        "owner approval required before any execution"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_55",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "unclear / owner review required"
+      ],
+      "domain": "hardware + AI / physical-world interface",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype review, partner validation, or hardware/software concept sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "unsafe / should not execute",
+        "owner approval required before any execution"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_56",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "unclear / owner review required"
+      ],
+      "domain": "hardware + AI / physical-world interface",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype review, partner validation, or hardware/software concept sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "unsafe / should not execute",
+        "owner approval required before any execution"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "intent capture UI"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_57",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "unclear / owner review required"
+      ],
+      "domain": "hardware + AI / physical-world interface",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype review, partner validation, or hardware/software concept sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "unsafe / should not execute",
+        "owner approval required before any execution"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_58",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "unclear / owner review required"
+      ],
+      "domain": "hardware + AI / physical-world interface",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype review, partner validation, or hardware/software concept sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "unsafe / should not execute",
+        "owner approval required before any execution"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "buyer-language validation"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_59",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    },
+    {
+      "commercial_plausibility": "speculative",
+      "cross_repo_governance_requirement": [
+        "unclear / owner review required"
+      ],
+      "domain": "hardware + AI / physical-world interface",
+      "evidence_status": "no customer validation; current level 0",
+      "execution_commercial_assessment": "first plausible revenue form: prototype review, partner validation, or hardware/software concept sprint",
+      "faculty_tension_map": [
+        "innovation may exceed evidence",
+        "emotional pain may exceed current Y* capability",
+        "near-term demo may not imply strategic category"
+      ],
+      "gov_mcp_execution_requirement": [
+        "no execution needed yet",
+        "unsafe / should not execute",
+        "owner approval required before any execution"
+      ],
+      "human_emotional_relational_assessment": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "imagination_status": "generated_opportunity_not_route",
+      "innovation_assessment": "non-obvious enough to keep in field",
+      "logical_causal_assessment": "evidence insufficient for route selection; causal chain must be tested",
+      "new_capability_requirement": [
+        "sensitive data rules"
+      ],
+      "next_proof_required": "prototype-first internal simulation plus public product/behavior research",
+      "opportunity_id": "e35_opportunity_60",
+      "original_e35_classification": "generated_opportunity_not_route",
+      "owner_burden": "approve target category and validation path later",
+      "route_selected": false,
+      "strategic_assessment": "strategically compounding if repeated pain and budget are proven",
+      "systems_assessment": "needs actors, feedback loop, interface, constraints, and boundary map before build"
+    }
+  ],
+  "strongest_cross_domain_clusters": [
+    "AI productivity / workflow / toolchain",
+    "enterprise / professional services",
+    "human-life / health / sleep / emotion / home",
+    "agent economy / autonomous company"
+  ]
+}

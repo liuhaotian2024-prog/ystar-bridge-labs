@@ -1,0 +1,43 @@
+{
+  "Y-star-gov": {
+    "branch": "backflow/company-runtime-domain-pack",
+    "dirty_status": "",
+    "exists": true,
+    "head": "5f031f4be151b81ef1a1b1908a5c83c5420e8ce1",
+    "inspection_mode": "read_only",
+    "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+    "remote_tracking_head": "35d270c79f73fdd0bdf55ebdefe03fb4ccb2d397"
+  },
+  "Y-star-gov_files_modified": false,
+  "artifact_id": "e36_base_cross_repo_state_manifest",
+  "bridge_labs": {
+    "branch": "backflow/aiden-ceo-meeting-room",
+    "dirty_status": "",
+    "exists": true,
+    "head": "a0ffb69be2cfbb67d7e73f74fb19741028a52f62",
+    "inspection_mode": "primary_writable_via_bridge_only",
+    "path": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+    "remote_tracking_head": "a0ffb69be2cfbb67d7e73f74fb19741028a52f62"
+  },
+  "ceo_brain_delta_conventions_found": "operations/external_validation/eXX_ceo_brain_*.json",
+  "ceo_kg_delta_conventions_found": "operations/knowledge_graph/eXX_ceo_kg_nodes_delta.jsonl and eXX_ceo_kg_edges_delta.jsonl",
+  "e35_closure_found": true,
+  "e35_cross_repo_alignment_found": true,
+  "e35_opportunity_field_found": true,
+  "expected_bridge_labs_base_head": "a0ffb69be2cfbb67d7e73f74fb19741028a52f62",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "gov-mcp": {
+    "branch": "backflow/company-runtime-tools",
+    "dirty_status": "",
+    "exists": true,
+    "head": "4f758d9d4823eed108ae3d63be1f4db192a974d6",
+    "inspection_mode": "read_only",
+    "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+    "remote_tracking_head": "4f758d9d4823eed108ae3d63be1f4db192a974d6"
+  },
+  "gov_mcp_files_modified": false,
+  "no_rebuild_conventions_found": true,
+  "opportunities_found": 60,
+  "read_only_cross_repo_inspection": true,
+  "repo_mismatch_blocks_e36": false
+}

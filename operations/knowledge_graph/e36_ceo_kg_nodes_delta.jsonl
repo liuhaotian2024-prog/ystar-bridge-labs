@@ -1,0 +1,12 @@
+{"evidence_status": "methodology", "label": "E36 strategic field trial", "node_id": "e36_strategy_field_trial", "node_type": "StrategyFieldTrial"}
+{"evidence_status": "internal_analysis", "label": "E35 capability effect audit", "node_id": "e36_e35_capability_effect_audit", "node_type": "CapabilityEffectAudit"}
+{"evidence_status": "methodology", "label": "Opportunity evidence ladder", "node_id": "e36_evidence_ladder", "node_type": "EvidenceLadder"}
+{"evidence_status": "hypothesis", "label": "Demand and budget reality screen", "node_id": "e36_demand_budget_screen", "node_type": "DemandBudgetScreen"}
+{"evidence_status": "methodology", "label": "New capability creation planner", "node_id": "e36_new_capability_planner", "node_type": "CapabilityPlanner"}
+{"evidence_status": "repo_observation", "label": "Y-star-gov primitive alignment", "node_id": "e36_governance_primitive_alignment", "node_type": "CrossRepoAlignment"}
+{"evidence_status": "repo_observation", "label": "gov-mcp execution-boundary alignment", "node_id": "e36_gov_mcp_execution_alignment", "node_type": "CrossRepoAlignment"}
+{"evidence_status": "internal_analysis", "label": "Adversarial CEO board review", "node_id": "e36_adversarial_board_review", "node_type": "DecisionQualityAudit"}
+{"evidence_status": "hypothesis", "label": "Evidence-seeking shortlist", "node_id": "e36_evidence_seeking_shortlist", "node_type": "EvidenceSeekingShortlist"}
+{"evidence_status": "owner_decision_pending", "label": "Owner-approved cross-domain evidence sprint preflight", "node_id": "e36_next_horizon", "node_type": "NextDecisionHorizon"}
+{"evidence_status": "evidence_boundary", "label": "E36 is not customer validation", "node_id": "e36_not_customer_validation", "node_type": "EvidenceBoundary"}
+{"evidence_status": "evidence_boundary", "label": "E36 is not paid signal", "node_id": "e36_not_paid_signal", "node_type": "EvidenceBoundary"}

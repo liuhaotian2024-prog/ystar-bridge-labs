@@ -1,0 +1,304 @@
+{
+  "anti_extremes": [
+    "Do not reject opportunities solely because capability is missing.",
+    "Do not build capabilities before the cheapest evidence route justifies them."
+  ],
+  "artifact_id": "e36_new_capability_creation_planner",
+  "capability_items": [
+    {
+      "belongs_in": "future repo",
+      "capability": "intent capture UI",
+      "capability_creation_difficulty": "medium",
+      "crude_prototype_path": "storyboard/mock/demo packet before build",
+      "current_y_star_capability_already_available": false,
+      "dependency": "owner-approved evidence route before serious build",
+      "execution_implication": "align with gov-mcp if real tool/provider execution emerges",
+      "governance_implication": "align with Y-star-gov if authority/action semantics emerge",
+      "missing_capability": "intent capture UI",
+      "opportunity_refs": [
+        "e35_opportunity_01",
+        "e35_opportunity_15",
+        "e35_opportunity_57"
+      ],
+      "transferable_capability": "intent/evidence/action-boundary reasoning",
+      "worth_building_before_evidence_exists": false
+    },
+    {
+      "belongs_in": "future repo",
+      "capability": "source UX",
+      "capability_creation_difficulty": "medium",
+      "crude_prototype_path": "storyboard/mock/demo packet before build",
+      "current_y_star_capability_already_available": false,
+      "dependency": "owner-approved evidence route before serious build",
+      "execution_implication": "align with gov-mcp if real tool/provider execution emerges",
+      "governance_implication": "align with Y-star-gov if authority/action semantics emerge",
+      "missing_capability": "source UX",
+      "opportunity_refs": [
+        "e35_opportunity_02",
+        "e35_opportunity_30"
+      ],
+      "transferable_capability": "intent/evidence/action-boundary reasoning",
+      "worth_building_before_evidence_exists": false
+    },
+    {
+      "belongs_in": "future repo",
+      "capability": "trace visualization",
+      "capability_creation_difficulty": "medium",
+      "crude_prototype_path": "storyboard/mock/demo packet before build",
+      "current_y_star_capability_already_available": false,
+      "dependency": "owner-approved evidence route before serious build",
+      "execution_implication": "align with gov-mcp if real tool/provider execution emerges",
+      "governance_implication": "align with Y-star-gov if authority/action semantics emerge",
+      "missing_capability": "trace visualization",
+      "opportunity_refs": [
+        "e35_opportunity_03",
+        "e35_opportunity_45"
+      ],
+      "transferable_capability": "intent/evidence/action-boundary reasoning",
+      "worth_building_before_evidence_exists": false
+    },
+    {
+      "belongs_in": "future repo",
+      "capability": "sensitive data rules",
+      "capability_creation_difficulty": "medium",
+      "crude_prototype_path": "storyboard/mock/demo packet before build",
+      "current_y_star_capability_already_available": false,
+      "dependency": "owner-approved evidence route before serious build",
+      "execution_implication": "align with gov-mcp if real tool/provider execution emerges",
+      "governance_implication": "align with Y-star-gov if authority/action semantics emerge",
+      "missing_capability": "sensitive data rules",
+      "opportunity_refs": [
+        "e35_opportunity_04",
+        "e35_opportunity_18",
+        "e35_opportunity_60"
+      ],
+      "transferable_capability": "intent/evidence/action-boundary reasoning",
+      "worth_building_before_evidence_exists": false
+    },
+    {
+      "belongs_in": "future repo",
+      "capability": "buyer-friendly labels",
+      "capability_creation_difficulty": "medium",
+      "crude_prototype_path": "storyboard/mock/demo packet before build",
+      "current_y_star_capability_already_available": false,
+      "dependency": "owner-approved evidence route before serious build",
+      "execution_implication": "align with gov-mcp if real tool/provider execution emerges",
+      "governance_implication": "align with Y-star-gov if authority/action semantics emerge",
+      "missing_capability": "buyer-friendly labels",
+      "opportunity_refs": [
+        "e35_opportunity_05",
+        "e35_opportunity_33"
+      ],
+      "transferable_capability": "intent/evidence/action-boundary reasoning",
+      "worth_building_before_evidence_exists": false
+    },
+    {
+      "belongs_in": "future repo",
+      "capability": "approval UX",
+      "capability_creation_difficulty": "medium",
+      "crude_prototype_path": "storyboard/mock/demo packet before build",
+      "current_y_star_capability_already_available": false,
+      "dependency": "owner-approved evidence route before serious build",
+      "execution_implication": "align with gov-mcp if real tool/provider execution emerges",
+      "governance_implication": "align with Y-star-gov if authority/action semantics emerge",
+      "missing_capability": "approval UX",
+      "opportunity_refs": [
+        "e35_opportunity_06",
+        "e35_opportunity_48"
+      ],
+      "transferable_capability": "intent/evidence/action-boundary reasoning",
+      "worth_building_before_evidence_exists": false
+    },
+    {
+      "belongs_in": "future repo",
+      "capability": "domain-specific options",
+      "capability_creation_difficulty": "medium",
+      "crude_prototype_path": "storyboard/mock/demo packet before build",
+      "current_y_star_capability_already_available": false,
+      "dependency": "owner-approved evidence route before serious build",
+      "execution_implication": "align with gov-mcp if real tool/provider execution emerges",
+      "governance_implication": "align with Y-star-gov if authority/action semantics emerge",
+      "missing_capability": "domain-specific options",
+      "opportunity_refs": [
+        "e35_opportunity_07",
+        "e35_opportunity_21"
+      ],
+      "transferable_capability": "intent/evidence/action-boundary reasoning",
+      "worth_building_before_evidence_exists": false
+    },
+    {
+      "belongs_in": "future repo",
+      "capability": "workshop format",
+      "capability_creation_difficulty": "medium",
+      "crude_prototype_path": "storyboard/mock/demo packet before build",
+      "current_y_star_capability_already_available": false,
+      "dependency": "owner-approved evidence route before serious build",
+      "execution_implication": "align with gov-mcp if real tool/provider execution emerges",
+      "governance_implication": "align with Y-star-gov if authority/action semantics emerge",
+      "missing_capability": "workshop format",
+      "opportunity_refs": [
+        "e35_opportunity_08",
+        "e35_opportunity_36"
+      ],
+      "transferable_capability": "intent/evidence/action-boundary reasoning",
+      "worth_building_before_evidence_exists": false
+    },
+    {
+      "belongs_in": "future repo",
+      "capability": "source selection",
+      "capability_creation_difficulty": "medium",
+      "crude_prototype_path": "storyboard/mock/demo packet before build",
+      "current_y_star_capability_already_available": false,
+      "dependency": "owner-approved evidence route before serious build",
+      "execution_implication": "align with gov-mcp if real tool/provider execution emerges",
+      "governance_implication": "align with Y-star-gov if authority/action semantics emerge",
+      "missing_capability": "source selection",
+      "opportunity_refs": [
+        "e35_opportunity_09",
+        "e35_opportunity_51"
+      ],
+      "transferable_capability": "intent/evidence/action-boundary reasoning",
+      "worth_building_before_evidence_exists": false
+    },
+    {
+      "belongs_in": "future repo",
+      "capability": "memory policy",
+      "capability_creation_difficulty": "medium",
+      "crude_prototype_path": "storyboard/mock/demo packet before build",
+      "current_y_star_capability_already_available": false,
+      "dependency": "owner-approved evidence route before serious build",
+      "execution_implication": "align with gov-mcp if real tool/provider execution emerges",
+      "governance_implication": "align with Y-star-gov if authority/action semantics emerge",
+      "missing_capability": "memory policy",
+      "opportunity_refs": [
+        "e35_opportunity_10",
+        "e35_opportunity_24"
+      ],
+      "transferable_capability": "intent/evidence/action-boundary reasoning",
+      "worth_building_before_evidence_exists": false
+    },
+    {
+      "belongs_in": "future repo",
+      "capability": "simulation layer",
+      "capability_creation_difficulty": "medium",
+      "crude_prototype_path": "storyboard/mock/demo packet before build",
+      "current_y_star_capability_already_available": false,
+      "dependency": "owner-approved evidence route before serious build",
+      "execution_implication": "align with gov-mcp if real tool/provider execution emerges",
+      "governance_implication": "align with Y-star-gov if authority/action semantics emerge",
+      "missing_capability": "simulation layer",
+      "opportunity_refs": [
+        "e35_opportunity_11",
+        "e35_opportunity_39"
+      ],
+      "transferable_capability": "intent/evidence/action-boundary reasoning",
+      "worth_building_before_evidence_exists": false
+    },
+    {
+      "belongs_in": "future repo",
+      "capability": "sensing and consent",
+      "capability_creation_difficulty": "medium",
+      "crude_prototype_path": "storyboard/mock/demo packet before build",
+      "current_y_star_capability_already_available": false,
+      "dependency": "owner-approved evidence route before serious build",
+      "execution_implication": "align with gov-mcp if real tool/provider execution emerges",
+      "governance_implication": "align with Y-star-gov if authority/action semantics emerge",
+      "missing_capability": "sensing and consent",
+      "opportunity_refs": [
+        "e35_opportunity_12",
+        "e35_opportunity_54"
+      ],
+      "transferable_capability": "intent/evidence/action-boundary reasoning",
+      "worth_building_before_evidence_exists": false
+    },
+    {
+      "belongs_in": "bridge-labs",
+      "capability": "buyer interview path",
+      "capability_creation_difficulty": "medium",
+      "crude_prototype_path": "storyboard/mock/demo packet before build",
+      "current_y_star_capability_already_available": false,
+      "dependency": "owner-approved evidence route before serious build",
+      "execution_implication": "align with gov-mcp if real tool/provider execution emerges",
+      "governance_implication": "align with Y-star-gov if authority/action semantics emerge",
+      "missing_capability": "buyer interview path",
+      "opportunity_refs": [
+        "e35_opportunity_13",
+        "e35_opportunity_27"
+      ],
+      "transferable_capability": "intent/evidence/action-boundary reasoning",
+      "worth_building_before_evidence_exists": false
+    },
+    {
+      "belongs_in": "bridge-labs",
+      "capability": "privacy and UI",
+      "capability_creation_difficulty": "medium",
+      "crude_prototype_path": "storyboard/mock/demo packet before build",
+      "current_y_star_capability_already_available": false,
+      "dependency": "owner-approved evidence route before serious build",
+      "execution_implication": "align with gov-mcp if real tool/provider execution emerges",
+      "governance_implication": "align with Y-star-gov if authority/action semantics emerge",
+      "missing_capability": "privacy and UI",
+      "opportunity_refs": [
+        "e35_opportunity_14",
+        "e35_opportunity_42"
+      ],
+      "transferable_capability": "intent/evidence/action-boundary reasoning",
+      "worth_building_before_evidence_exists": false
+    },
+    {
+      "belongs_in": "bridge-labs",
+      "capability": "buyer-language validation",
+      "capability_creation_difficulty": "medium",
+      "crude_prototype_path": "storyboard/mock/demo packet before build",
+      "current_y_star_capability_already_available": false,
+      "dependency": "owner-approved evidence route before serious build",
+      "execution_implication": "align with gov-mcp if real tool/provider execution emerges",
+      "governance_implication": "align with Y-star-gov if authority/action semantics emerge",
+      "missing_capability": "buyer-language validation",
+      "opportunity_refs": [
+        "e35_opportunity_16",
+        "e35_opportunity_17",
+        "e35_opportunity_19",
+        "e35_opportunity_20",
+        "e35_opportunity_22",
+        "e35_opportunity_23",
+        "e35_opportunity_25",
+        "e35_opportunity_26",
+        "e35_opportunity_28",
+        "e35_opportunity_29",
+        "e35_opportunity_31",
+        "e35_opportunity_32",
+        "e35_opportunity_34",
+        "e35_opportunity_35",
+        "e35_opportunity_37",
+        "e35_opportunity_38",
+        "e35_opportunity_40",
+        "e35_opportunity_41",
+        "e35_opportunity_43",
+        "e35_opportunity_44",
+        "e35_opportunity_46",
+        "e35_opportunity_47",
+        "e35_opportunity_49",
+        "e35_opportunity_50",
+        "e35_opportunity_52",
+        "e35_opportunity_53",
+        "e35_opportunity_55",
+        "e35_opportunity_56",
+        "e35_opportunity_58",
+        "e35_opportunity_59"
+      ],
+      "transferable_capability": "intent/evidence/action-boundary reasoning",
+      "worth_building_before_evidence_exists": false
+    }
+  ],
+  "generated_at": "2026-05-05T00:00:01Z",
+  "summary": {
+    "Y-star-gov": 0,
+    "bridge_labs": 3,
+    "external_partner": 0,
+    "future_repo": 12,
+    "gov-mcp": 0,
+    "new_capabilities_needed": 15,
+    "worth_building_before_evidence_count": 0
+  }
+}

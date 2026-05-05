@@ -1,0 +1,1216 @@
+{
+  "artifact_id": "e36_opportunity_evidence_ladder",
+  "customer_contact_required_next_count": 0,
+  "distribution": {
+    "analogy-supported": 30,
+    "imagination only": 20,
+    "public evidence supported": 10
+  },
+  "entries": [
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_01",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_02",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_03",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_04",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_05",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_06",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_07",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_08",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_09",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_10",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_11",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "human-life / health / sleep / emotion / home",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_12",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_13",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_14",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_15",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_16",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_17",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_18",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_19",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_20",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_21",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_22",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_23",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "AI productivity / workflow / toolchain",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_24",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "public read-only research plus owner-approved friendly reviewer prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "education / creator / family / small business",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_25",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "public read-only research plus owner-approved friendly reviewer prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "education / creator / family / small business",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_26",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "public read-only research plus owner-approved friendly reviewer prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "education / creator / family / small business",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_27",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "public read-only research plus owner-approved friendly reviewer prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "education / creator / family / small business",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_28",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "public read-only research plus owner-approved friendly reviewer prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "education / creator / family / small business",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_29",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "public read-only research plus owner-approved friendly reviewer prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "education / creator / family / small business",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_30",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "public read-only research plus owner-approved friendly reviewer prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "education / creator / family / small business",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_31",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "public read-only research plus owner-approved friendly reviewer prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "education / creator / family / small business",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_32",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "public read-only research plus owner-approved friendly reviewer prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "education / creator / family / small business",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_33",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "public read-only research plus owner-approved friendly reviewer prep",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "education / creator / family / small business",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_34",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "public evidence supported",
+      "current_evidence_level": 2,
+      "customer_validation_claimed": false,
+      "domain": "enterprise / professional services",
+      "evidence_supporting_current_level": "E31/E32 public observation/research plus E35 field framing; not demand proof",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_35",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "public evidence supported",
+      "current_evidence_level": 2,
+      "customer_validation_claimed": false,
+      "domain": "enterprise / professional services",
+      "evidence_supporting_current_level": "E31/E32 public observation/research plus E35 field framing; not demand proof",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_36",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "public evidence supported",
+      "current_evidence_level": 2,
+      "customer_validation_claimed": false,
+      "domain": "enterprise / professional services",
+      "evidence_supporting_current_level": "E31/E32 public observation/research plus E35 field framing; not demand proof",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_37",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "public evidence supported",
+      "current_evidence_level": 2,
+      "customer_validation_claimed": false,
+      "domain": "enterprise / professional services",
+      "evidence_supporting_current_level": "E31/E32 public observation/research plus E35 field framing; not demand proof",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_38",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "public evidence supported",
+      "current_evidence_level": 2,
+      "customer_validation_claimed": false,
+      "domain": "enterprise / professional services",
+      "evidence_supporting_current_level": "E31/E32 public observation/research plus E35 field framing; not demand proof",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_39",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "public evidence supported",
+      "current_evidence_level": 2,
+      "customer_validation_claimed": false,
+      "domain": "enterprise / professional services",
+      "evidence_supporting_current_level": "E31/E32 public observation/research plus E35 field framing; not demand proof",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_40",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "public evidence supported",
+      "current_evidence_level": 2,
+      "customer_validation_claimed": false,
+      "domain": "enterprise / professional services",
+      "evidence_supporting_current_level": "E31/E32 public observation/research plus E35 field framing; not demand proof",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_41",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "public evidence supported",
+      "current_evidence_level": 2,
+      "customer_validation_claimed": false,
+      "domain": "enterprise / professional services",
+      "evidence_supporting_current_level": "E31/E32 public observation/research plus E35 field framing; not demand proof",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_42",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "public evidence supported",
+      "current_evidence_level": 2,
+      "customer_validation_claimed": false,
+      "domain": "enterprise / professional services",
+      "evidence_supporting_current_level": "E31/E32 public observation/research plus E35 field framing; not demand proof",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_43",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "safe public read-only research plus owner-approved expert review prep",
+      "current_evidence_label": "public evidence supported",
+      "current_evidence_level": 2,
+      "customer_validation_claimed": false,
+      "domain": "enterprise / professional services",
+      "evidence_supporting_current_level": "E31/E32 public observation/research plus E35 field framing; not demand proof",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_44",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "owner-approved expert review with agent/security/platform practitioners",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "agent economy / autonomous company",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": false,
+      "next_evidence_currently_blocked": true,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_45",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "owner-approved expert review with agent/security/platform practitioners",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "agent economy / autonomous company",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": false,
+      "next_evidence_currently_blocked": true,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_46",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "owner-approved expert review with agent/security/platform practitioners",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "agent economy / autonomous company",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": false,
+      "next_evidence_currently_blocked": true,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_47",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "owner-approved expert review with agent/security/platform practitioners",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "agent economy / autonomous company",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": false,
+      "next_evidence_currently_blocked": true,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_48",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "owner-approved expert review with agent/security/platform practitioners",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "agent economy / autonomous company",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": false,
+      "next_evidence_currently_blocked": true,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_49",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "owner-approved expert review with agent/security/platform practitioners",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "agent economy / autonomous company",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": false,
+      "next_evidence_currently_blocked": true,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_50",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "owner-approved expert review with agent/security/platform practitioners",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "agent economy / autonomous company",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": false,
+      "next_evidence_currently_blocked": true,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_51",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "owner-approved expert review with agent/security/platform practitioners",
+      "current_evidence_label": "analogy-supported",
+      "current_evidence_level": 1,
+      "customer_validation_claimed": false,
+      "domain": "agent economy / autonomous company",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": false,
+      "next_evidence_currently_blocked": true,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": true,
+      "opportunity_id": "e35_opportunity_52",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "hardware + AI / physical-world interface",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_53",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "hardware + AI / physical-world interface",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_54",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "hardware + AI / physical-world interface",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_55",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "hardware + AI / physical-world interface",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_56",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "hardware + AI / physical-world interface",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_57",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "hardware + AI / physical-world interface",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_58",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "hardware + AI / physical-world interface",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_59",
+      "paid_signal_claimed": false
+    },
+    {
+      "cheapest_next_evidence": "prototype-first internal simulation plus public product/behavior research",
+      "current_evidence_label": "imagination only",
+      "current_evidence_level": 0,
+      "customer_validation_claimed": false,
+      "domain": "hardware + AI / physical-world interface",
+      "evidence_supporting_current_level": "E35 historical inputs and imagination field",
+      "missing_evidence": [
+        "expert reaction",
+        "buyer pain confirmation",
+        "budget confirmation",
+        "would-pay signal"
+      ],
+      "next_evidence_can_be_safe_public_read_only": true,
+      "next_evidence_currently_blocked": false,
+      "next_evidence_requires_customer_contact": false,
+      "next_evidence_requires_owner_approved_external_review": false,
+      "opportunity_id": "e35_opportunity_60",
+      "paid_signal_claimed": false
+    }
+  ],
+  "generated_at": "2026-05-05T00:00:01Z",
+  "imagination_only_count": 20,
+  "owner_approved_review_next_count": 40,
+  "public_evidence_supported_count": 10,
+  "safe_public_read_only_next_count": 52
+}

@@ -1,0 +1,135 @@
+{
+  "artifact_id": "e36_cross_repo_sync_backlog",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "items": [
+    {
+      "affected_repo": "ystar-bridge-labs",
+      "disposition": "act next",
+      "no_external_side_effect": true,
+      "owner_decision_required": false,
+      "priority": "high",
+      "proposed_action": "update CEO KG/brain delta",
+      "reason": "Add shortlist to Labs route-readiness memory only.",
+      "risk_if_ignored": "Future route could overclaim authority, evidence, or execution readiness.",
+      "source_opportunity_or_route": "e36_evidence_seeking_shortlist",
+      "sync_item_id": "e36_sync_001"
+    },
+    {
+      "affected_repo": "Y-star-gov",
+      "disposition": "defer",
+      "no_external_side_effect": true,
+      "owner_decision_required": true,
+      "priority": "medium",
+      "proposed_action": "propose Y-star-gov primitive",
+      "reason": "Candidate new primitive for non-human workforce / agentic commerce authority.",
+      "risk_if_ignored": "Future route could overclaim authority, evidence, or execution readiness.",
+      "source_opportunity_or_route": "agent_economy_autonomous_company_cluster",
+      "sync_item_id": "e36_sync_002"
+    },
+    {
+      "affected_repo": "gov-mcp",
+      "disposition": "defer",
+      "no_external_side_effect": true,
+      "owner_decision_required": true,
+      "priority": "medium",
+      "proposed_action": "propose gov-mcp adapter",
+      "reason": "Future execution may require MCP adapter after route selection.",
+      "risk_if_ignored": "Future route could overclaim authority, evidence, or execution readiness.",
+      "source_opportunity_or_route": "agent_economy_autonomous_company_cluster",
+      "sync_item_id": "e36_sync_003"
+    },
+    {
+      "affected_repo": "multiple",
+      "disposition": "act next",
+      "no_external_side_effect": true,
+      "owner_decision_required": true,
+      "priority": "high",
+      "proposed_action": "owner decision required",
+      "reason": "If external validation becomes automated, route must use contracts and gov-mcp boundary.",
+      "risk_if_ignored": "Future route could overclaim authority, evidence, or execution readiness.",
+      "source_opportunity_or_route": "enterprise_professional_cluster",
+      "sync_item_id": "e36_sync_004"
+    },
+    {
+      "affected_repo": "gov-mcp",
+      "disposition": "defer",
+      "no_external_side_effect": true,
+      "owner_decision_required": true,
+      "priority": "medium",
+      "proposed_action": "propose gov-mcp adapter",
+      "reason": "Tool/workflow telemetry actions may need gov_check/gov_enforce and deterministic router.",
+      "risk_if_ignored": "Future route could overclaim authority, evidence, or execution readiness.",
+      "source_opportunity_or_route": "ai_productivity_workflow_cluster",
+      "sync_item_id": "e36_sync_005"
+    },
+    {
+      "affected_repo": "Y-star-gov",
+      "disposition": "act next",
+      "no_external_side_effect": true,
+      "owner_decision_required": true,
+      "priority": "high",
+      "proposed_action": "owner decision required",
+      "reason": "Physical-world action legitimacy may need owner/kernel review before any real actuation.",
+      "risk_if_ignored": "Future route could overclaim authority, evidence, or execution readiness.",
+      "source_opportunity_or_route": "hardware_ai_hybrid_cluster",
+      "sync_item_id": "e36_sync_006"
+    },
+    {
+      "affected_repo": "ystar-bridge-labs",
+      "disposition": "park",
+      "no_external_side_effect": true,
+      "owner_decision_required": false,
+      "priority": "low",
+      "proposed_action": "no action",
+      "reason": "Keep as prototype/evidence route; no kernel or MCP work yet.",
+      "risk_if_ignored": "Future route could overclaim authority, evidence, or execution readiness.",
+      "source_opportunity_or_route": "human_life_home_health_cluster",
+      "sync_item_id": "e36_sync_007"
+    },
+    {
+      "affected_repo": "multiple",
+      "disposition": "act next",
+      "no_external_side_effect": true,
+      "owner_decision_required": false,
+      "priority": "high",
+      "proposed_action": "cross-repo follow-up milestone",
+      "reason": "Future route selection must attach governance and execution classifications.",
+      "risk_if_ignored": "Future route could overclaim authority, evidence, or execution readiness.",
+      "source_opportunity_or_route": "cross_repo_alignment_invariant",
+      "sync_item_id": "e36_sync_008"
+    },
+    {
+      "affected_repo": "ystar-bridge-labs",
+      "disposition": "park",
+      "no_external_side_effect": true,
+      "owner_decision_required": false,
+      "priority": "medium",
+      "proposed_action": "add bridge-labs mapping only",
+      "reason": "Prevent build-before-evidence behavior.",
+      "risk_if_ignored": "Future route could overclaim authority, evidence, or execution readiness.",
+      "source_opportunity_or_route": "new_capability_planner",
+      "sync_item_id": "e36_sync_009"
+    },
+    {
+      "affected_repo": "ystar-bridge-labs",
+      "disposition": "act next",
+      "no_external_side_effect": true,
+      "owner_decision_required": false,
+      "priority": "high",
+      "proposed_action": "add bridge-labs mapping only",
+      "reason": "Keep evidence levels separate from validation/paid-signal claims.",
+      "risk_if_ignored": "Future route could overclaim authority, evidence, or execution readiness.",
+      "source_opportunity_or_route": "evidence_ladder",
+      "sync_item_id": "e36_sync_010"
+    }
+  ],
+  "summary": {
+    "Y-star-gov_files_modified": false,
+    "Y-star-gov_items": 4,
+    "bridge_labs_only_items": 4,
+    "gov_mcp_files_modified": false,
+    "gov_mcp_items": 4,
+    "items": 10,
+    "owner_decision_items": 5
+  }
+}

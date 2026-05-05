@@ -1,0 +1,24 @@
+{
+  "artifact_id": "e36_ceo_kg_read_model_update",
+  "next_decision_horizon": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+  "requires_gov_mcp_sync": [
+    "agent-to-agent delegation/commerce adapter candidate",
+    "enterprise review workflow adapter candidate",
+    "hardware simulator or physical-interface adapter candidate",
+    "workflow telemetry/no-send productivity adapter candidate"
+  ],
+  "requires_y_star_gov_sync": [
+    "non-human operational workforce and agentic commerce authorization primitive",
+    "physical-world delegated action legitimacy primitive if execution becomes real"
+  ],
+  "top_evidence_ready_clusters": [
+    "AI productivity / workflow / toolchain",
+    "enterprise / professional services"
+  ],
+  "top_high_imagination_clusters": [
+    "agent economy / autonomous company",
+    "hardware + AI / physical-world interface",
+    "human-life / health / sleep / emotion / home"
+  ],
+  "updated_view": "strategy_field_trial_and_evidence_seeking_readiness"
+}

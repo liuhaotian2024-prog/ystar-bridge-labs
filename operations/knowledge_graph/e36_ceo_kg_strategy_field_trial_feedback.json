@@ -1,0 +1,10 @@
+{
+  "artifact_id": "e36_ceo_kg_strategy_field_trial_feedback",
+  "canonical_learning_promoted": false,
+  "ceo_agent_ready_for_evidence_seeking": true,
+  "customer_validation_claimed": false,
+  "e35_improved_strategy_quality": true,
+  "kg_delta_edges": 14,
+  "kg_delta_nodes": 12,
+  "paid_signal_claimed": false
+}

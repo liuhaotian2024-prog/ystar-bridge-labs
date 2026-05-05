@@ -1,0 +1,32 @@
+{
+  "artifact_id": "e36_e35_capability_effect_audit",
+  "comparison": {
+    "ai_productivity_coverage": 12,
+    "cross_repo_alignment_discipline": true,
+    "domains_considered": 6,
+    "e32_e34_pattern": "frontier/governance/trust-wedge dominated, useful but narrow",
+    "e35_pattern": "60-opportunity cross-domain field with six-faculty tension preservation and cross-repo guardrails",
+    "hardware_ai_coverage": 8,
+    "human_life_emotional_pain_coverage": 12,
+    "multi_hop_abstraction_depth": "7+ hop summaries present per opportunity",
+    "new_capability_awareness": 30,
+    "no_hardcoded_route_discipline": true,
+    "non_governance_opportunity_coverage": 46,
+    "six_dimensional_tension_preservation": true
+  },
+  "generated_at": "2026-05-05T00:00:01Z",
+  "improvement_found": true,
+  "remaining_shallow_reasoning_patterns": [
+    "Opportunity field is still mostly imagination and analogy, not buyer evidence.",
+    "Commercial language remains hypothetical until expert or buyer review.",
+    "Some high-upside domains require capabilities Y* has not built.",
+    "Cross-repo alignment is present, but route-specific contracts/adapters are not yet selected."
+  ],
+  "sufficient_to_run_strategy_trial": true,
+  "watch_during_e36": [
+    "Do not average away faculty tensions.",
+    "Do not select a final product.",
+    "Do not promote examples to routes.",
+    "Keep public evidence, expert review, customer validation, and paid signal separate."
+  ]
+}

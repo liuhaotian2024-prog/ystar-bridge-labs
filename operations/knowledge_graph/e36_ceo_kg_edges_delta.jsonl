@@ -1,0 +1,14 @@
+{"relation": "input_to", "source": "e35_cross_domain_opportunity_field", "target": "e36_strategy_field_trial"}
+{"relation": "constrains", "source": "e35_cross_repo_alignment", "target": "e36_strategy_field_trial"}
+{"relation": "supports", "source": "e36_e35_capability_effect_audit", "target": "e36_strategy_field_trial"}
+{"relation": "feeds", "source": "e36_strategy_field_trial", "target": "e36_evidence_ladder"}
+{"relation": "feeds", "source": "e36_strategy_field_trial", "target": "e36_demand_budget_screen"}
+{"relation": "feeds", "source": "e36_strategy_field_trial", "target": "e36_new_capability_planner"}
+{"relation": "requires", "source": "e36_strategy_field_trial", "target": "e36_governance_primitive_alignment"}
+{"relation": "requires", "source": "e36_strategy_field_trial", "target": "e36_gov_mcp_execution_alignment"}
+{"relation": "audits", "source": "e36_adversarial_board_review", "target": "e36_evidence_seeking_shortlist"}
+{"relation": "routes_to", "source": "e36_evidence_seeking_shortlist", "target": "e36_next_horizon"}
+{"relation": "bounds", "source": "e36_not_customer_validation", "target": "e36_evidence_seeking_shortlist"}
+{"relation": "bounds", "source": "e36_not_paid_signal", "target": "e36_evidence_seeking_shortlist"}
+{"relation": "maps_to", "source": "e36_governance_primitive_alignment", "target": "Y-star-gov"}
+{"relation": "maps_to", "source": "e36_gov_mcp_execution_alignment", "target": "gov-mcp"}

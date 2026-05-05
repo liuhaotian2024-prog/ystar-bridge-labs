@@ -1,0 +1,780 @@
+{
+  "artifact_id": "e36_evidence_seeking_shortlist",
+  "customer_contact_in_e36": false,
+  "final_product_selected": false,
+  "generated_at": "2026-05-05T00:00:01Z",
+  "high_imagination_clusters": [
+    "agent economy / autonomous company",
+    "hardware + AI / physical-world interface",
+    "human-life / health / sleep / emotion / home"
+  ],
+  "near_term_evidence_ready_clusters": [
+    "AI productivity / workflow / toolchain",
+    "enterprise / professional services"
+  ],
+  "parked_or_rejected_clusters": [
+    "hardware concepts requiring physical actuation before evidence",
+    "consumer ideas without immediate felt value or clear budget"
+  ],
+  "recommended_next_evidence_route": "owner-approved cross-domain evidence sprint preflight: public read-only research for AI productivity/enterprise clusters plus prepared expert-review route; no contact until explicit owner approval",
+  "shortlist_categories": {
+    "agent_economy_autonomous_company_opportunities": [
+      {
+        "evidence_route": "owner-approved friendly reviewer",
+        "gov_mcp_alignment": [
+          "owner approval required before any execution",
+          "requires delegation/escalation flow",
+          "requires CIEU report/verify/audit",
+          "requires new MCP adapter candidate"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing CIEU semantics",
+          "existing delegation semantics",
+          "existing contract lifecycle semantics",
+          "candidate new Y-star-gov primitive"
+        ],
+        "name": "creator economy opportunity 45",
+        "next_evidence_step": "owner-approved expert review with agent/security/platform practitioners",
+        "opportunity_id": "e35_opportunity_45",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "owner-approved friendly reviewer",
+        "gov_mcp_alignment": [
+          "owner approval required before any execution",
+          "requires delegation/escalation flow",
+          "requires CIEU report/verify/audit",
+          "requires new MCP adapter candidate"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing CIEU semantics",
+          "existing delegation semantics",
+          "existing contract lifecycle semantics",
+          "candidate new Y-star-gov primitive"
+        ],
+        "name": "enterprise AI transformation opportunity 46",
+        "next_evidence_step": "owner-approved expert review with agent/security/platform practitioners",
+        "opportunity_id": "e35_opportunity_46",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "owner-approved friendly reviewer",
+        "gov_mcp_alignment": [
+          "owner approval required before any execution",
+          "requires delegation/escalation flow",
+          "requires CIEU report/verify/audit",
+          "requires new MCP adapter candidate"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing CIEU semantics",
+          "existing delegation semantics",
+          "existing contract lifecycle semantics",
+          "candidate new Y-star-gov primitive"
+        ],
+        "name": "agent-to-agent economy opportunity 47",
+        "next_evidence_step": "owner-approved expert review with agent/security/platform practitioners",
+        "opportunity_id": "e35_opportunity_47",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "owner-approved friendly reviewer",
+        "gov_mcp_alignment": [
+          "owner approval required before any execution",
+          "requires delegation/escalation flow",
+          "requires CIEU report/verify/audit",
+          "requires new MCP adapter candidate"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing CIEU semantics",
+          "existing delegation semantics",
+          "existing contract lifecycle semantics",
+          "candidate new Y-star-gov primitive"
+        ],
+        "name": "autonomous company operations opportunity 48",
+        "next_evidence_step": "owner-approved expert review with agent/security/platform practitioners",
+        "opportunity_id": "e35_opportunity_48",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      }
+    ],
+    "ai_productivity_opportunities": [
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "Labs-only strategic artifact now",
+          "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+          "requires deterministic router if shell/tool action enters scope"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing check/enforce semantics",
+          "existing CIEU semantics"
+        ],
+        "name": "hardware + AI hybrid products opportunity 13",
+        "next_evidence_step": "safe public read-only research plus owner-approved expert review prep",
+        "opportunity_id": "e35_opportunity_13",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "Labs-only strategic artifact now",
+          "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+          "requires deterministic router if shell/tool action enters scope"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing check/enforce semantics",
+          "existing CIEU semantics"
+        ],
+        "name": "insurance / liability / audit / trust systems opportunity 14",
+        "next_evidence_step": "safe public read-only research plus owner-approved expert review prep",
+        "opportunity_id": "e35_opportunity_14",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "Labs-only strategic artifact now",
+          "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+          "requires deterministic router if shell/tool action enters scope"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing check/enforce semantics",
+          "existing CIEU semantics"
+        ],
+        "name": "social institutions / proof / certification / legitimacy opportunity 15",
+        "next_evidence_step": "safe public read-only research plus owner-approved expert review prep",
+        "opportunity_id": "e35_opportunity_15",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "Labs-only strategic artifact now",
+          "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+          "requires deterministic router if shell/tool action enters scope"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing check/enforce semantics",
+          "existing CIEU semantics"
+        ],
+        "name": "health behavior change and care navigation opportunity 16",
+        "next_evidence_step": "safe public read-only research plus owner-approved expert review prep",
+        "opportunity_id": "e35_opportunity_16",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      }
+    ],
+    "commercially_plausible_service_first_opportunities": [
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "Labs-only strategic artifact now",
+          "can be governed by existing gov_check/gov_enforce if action is later approved",
+          "requires contract load/validate/activate"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing check/enforce semantics",
+          "existing CIEU semantics",
+          "existing trust hierarchy semantics"
+        ],
+        "name": "local community coordination opportunity 35",
+        "next_evidence_step": "safe public read-only research plus owner-approved expert review prep",
+        "opportunity_id": "e35_opportunity_35",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "Labs-only strategic artifact now",
+          "can be governed by existing gov_check/gov_enforce if action is later approved",
+          "requires contract load/validate/activate"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing check/enforce semantics",
+          "existing CIEU semantics",
+          "existing trust hierarchy semantics"
+        ],
+        "name": "personal finance and household operations opportunity 36",
+        "next_evidence_step": "safe public read-only research plus owner-approved expert review prep",
+        "opportunity_id": "e35_opportunity_36",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "Labs-only strategic artifact now",
+          "can be governed by existing gov_check/gov_enforce if action is later approved",
+          "requires contract load/validate/activate"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing check/enforce semantics",
+          "existing CIEU semantics",
+          "existing trust hierarchy semantics"
+        ],
+        "name": "human body / sleep / waking / energy opportunity 37",
+        "next_evidence_step": "safe public read-only research plus owner-approved expert review prep",
+        "opportunity_id": "e35_opportunity_37",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "no execution needed yet",
+          "Labs-only strategic artifact"
+        ],
+        "governance_alignment": [
+          "no Y-star-gov primitive needed"
+        ],
+        "name": "small business operations opportunity 25",
+        "next_evidence_step": "public read-only research plus owner-approved friendly reviewer prep",
+        "opportunity_id": "e35_opportunity_25",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "no execution needed yet",
+          "Labs-only strategic artifact"
+        ],
+        "governance_alignment": [
+          "no Y-star-gov primitive needed"
+        ],
+        "name": "professional services opportunity 26",
+        "next_evidence_step": "public read-only research plus owner-approved friendly reviewer prep",
+        "opportunity_id": "e35_opportunity_26",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      }
+    ],
+    "high_imagination_high_upside_opportunities": [
+      {
+        "evidence_route": "owner-approved friendly reviewer",
+        "gov_mcp_alignment": [
+          "owner approval required before any execution",
+          "requires delegation/escalation flow",
+          "requires CIEU report/verify/audit",
+          "requires new MCP adapter candidate"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing CIEU semantics",
+          "existing delegation semantics",
+          "existing contract lifecycle semantics",
+          "candidate new Y-star-gov primitive"
+        ],
+        "name": "creator economy opportunity 45",
+        "next_evidence_step": "owner-approved expert review with agent/security/platform practitioners",
+        "opportunity_id": "e35_opportunity_45",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "owner-approved friendly reviewer",
+        "gov_mcp_alignment": [
+          "owner approval required before any execution",
+          "requires delegation/escalation flow",
+          "requires CIEU report/verify/audit",
+          "requires new MCP adapter candidate"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing CIEU semantics",
+          "existing delegation semantics",
+          "existing contract lifecycle semantics",
+          "candidate new Y-star-gov primitive"
+        ],
+        "name": "enterprise AI transformation opportunity 46",
+        "next_evidence_step": "owner-approved expert review with agent/security/platform practitioners",
+        "opportunity_id": "e35_opportunity_46",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "owner-approved friendly reviewer",
+        "gov_mcp_alignment": [
+          "owner approval required before any execution",
+          "requires delegation/escalation flow",
+          "requires CIEU report/verify/audit",
+          "requires new MCP adapter candidate"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing CIEU semantics",
+          "existing delegation semantics",
+          "existing contract lifecycle semantics",
+          "candidate new Y-star-gov primitive"
+        ],
+        "name": "agent-to-agent economy opportunity 47",
+        "next_evidence_step": "owner-approved expert review with agent/security/platform practitioners",
+        "opportunity_id": "e35_opportunity_47",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "no execution needed yet",
+          "unsafe / should not execute",
+          "owner approval required before any execution"
+        ],
+        "governance_alignment": [
+          "unclear / owner review required"
+        ],
+        "name": "local community coordination opportunity 53",
+        "next_evidence_step": "prototype-first internal simulation plus public product/behavior research",
+        "opportunity_id": "e35_opportunity_53",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "no execution needed yet",
+          "unsafe / should not execute",
+          "owner approval required before any execution"
+        ],
+        "governance_alignment": [
+          "unclear / owner review required"
+        ],
+        "name": "personal finance and household operations opportunity 54",
+        "next_evidence_step": "prototype-first internal simulation plus public product/behavior research",
+        "opportunity_id": "e35_opportunity_54",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      }
+    ],
+    "human_life_hardware_health_opportunities": [
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "no execution needed yet",
+          "Labs-only strategic artifact"
+        ],
+        "governance_alignment": [
+          "no Y-star-gov primitive needed"
+        ],
+        "name": "human body / sleep / waking / energy opportunity 01",
+        "next_evidence_step": "prototype-first internal simulation plus public product/behavior research",
+        "opportunity_id": "e35_opportunity_01",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "no execution needed yet",
+          "Labs-only strategic artifact"
+        ],
+        "governance_alignment": [
+          "no Y-star-gov primitive needed"
+        ],
+        "name": "human emotion / anxiety / motivation / loneliness / transition states opportunity 02",
+        "next_evidence_step": "prototype-first internal simulation plus public product/behavior research",
+        "opportunity_id": "e35_opportunity_02",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "no execution needed yet",
+          "Labs-only strategic artifact"
+        ],
+        "governance_alignment": [
+          "no Y-star-gov primitive needed"
+        ],
+        "name": "home / family / environment / rituals opportunity 03",
+        "next_evidence_step": "prototype-first internal simulation plus public product/behavior research",
+        "opportunity_id": "e35_opportunity_03",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "no execution needed yet",
+          "Labs-only strategic artifact"
+        ],
+        "governance_alignment": [
+          "no Y-star-gov primitive needed"
+        ],
+        "name": "education / learning / student development opportunity 04",
+        "next_evidence_step": "prototype-first internal simulation plus public product/behavior research",
+        "opportunity_id": "e35_opportunity_04",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "no execution needed yet",
+          "unsafe / should not execute",
+          "owner approval required before any execution"
+        ],
+        "governance_alignment": [
+          "unclear / owner review required"
+        ],
+        "name": "local community coordination opportunity 53",
+        "next_evidence_step": "prototype-first internal simulation plus public product/behavior research",
+        "opportunity_id": "e35_opportunity_53",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "no execution needed yet",
+          "unsafe / should not execute",
+          "owner approval required before any execution"
+        ],
+        "governance_alignment": [
+          "unclear / owner review required"
+        ],
+        "name": "personal finance and household operations opportunity 54",
+        "next_evidence_step": "prototype-first internal simulation plus public product/behavior research",
+        "opportunity_id": "e35_opportunity_54",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      }
+    ],
+    "near_term_evidence_ready_opportunities": [
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "Labs-only strategic artifact now",
+          "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+          "requires deterministic router if shell/tool action enters scope"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing check/enforce semantics",
+          "existing CIEU semantics"
+        ],
+        "name": "hardware + AI hybrid products opportunity 13",
+        "next_evidence_step": "safe public read-only research plus owner-approved expert review prep",
+        "opportunity_id": "e35_opportunity_13",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "Labs-only strategic artifact now",
+          "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+          "requires deterministic router if shell/tool action enters scope"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing check/enforce semantics",
+          "existing CIEU semantics"
+        ],
+        "name": "insurance / liability / audit / trust systems opportunity 14",
+        "next_evidence_step": "safe public read-only research plus owner-approved expert review prep",
+        "opportunity_id": "e35_opportunity_14",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "Labs-only strategic artifact now",
+          "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+          "requires deterministic router if shell/tool action enters scope"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing check/enforce semantics",
+          "existing CIEU semantics"
+        ],
+        "name": "social institutions / proof / certification / legitimacy opportunity 15",
+        "next_evidence_step": "safe public read-only research plus owner-approved expert review prep",
+        "opportunity_id": "e35_opportunity_15",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "Labs-only strategic artifact now",
+          "can be governed by existing gov_check/gov_enforce if action is later approved",
+          "requires contract load/validate/activate"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing check/enforce semantics",
+          "existing CIEU semantics",
+          "existing trust hierarchy semantics"
+        ],
+        "name": "local community coordination opportunity 35",
+        "next_evidence_step": "safe public read-only research plus owner-approved expert review prep",
+        "opportunity_id": "e35_opportunity_35",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "Labs-only strategic artifact now",
+          "can be governed by existing gov_check/gov_enforce if action is later approved",
+          "requires contract load/validate/activate"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing check/enforce semantics",
+          "existing CIEU semantics",
+          "existing trust hierarchy semantics"
+        ],
+        "name": "personal finance and household operations opportunity 36",
+        "next_evidence_step": "safe public read-only research plus owner-approved expert review prep",
+        "opportunity_id": "e35_opportunity_36",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "Labs-only strategic artifact now",
+          "can be governed by existing gov_check/gov_enforce if action is later approved",
+          "requires contract load/validate/activate"
+        ],
+        "governance_alignment": [
+          "existing IntentContract semantics",
+          "existing check/enforce semantics",
+          "existing CIEU semantics",
+          "existing trust hierarchy semantics"
+        ],
+        "name": "human body / sleep / waking / energy opportunity 37",
+        "next_evidence_step": "safe public read-only research plus owner-approved expert review prep",
+        "opportunity_id": "e35_opportunity_37",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      }
+    ],
+    "opportunities_requiring_new_capability_before_validation": [
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "no execution needed yet",
+          "unsafe / should not execute",
+          "owner approval required before any execution"
+        ],
+        "governance_alignment": [
+          "unclear / owner review required"
+        ],
+        "name": "local community coordination opportunity 53",
+        "next_evidence_step": "prototype-first internal simulation plus public product/behavior research",
+        "opportunity_id": "e35_opportunity_53",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "no execution needed yet",
+          "unsafe / should not execute",
+          "owner approval required before any execution"
+        ],
+        "governance_alignment": [
+          "unclear / owner review required"
+        ],
+        "name": "personal finance and household operations opportunity 54",
+        "next_evidence_step": "prototype-first internal simulation plus public product/behavior research",
+        "opportunity_id": "e35_opportunity_54",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "no execution needed yet",
+          "unsafe / should not execute",
+          "owner approval required before any execution"
+        ],
+        "governance_alignment": [
+          "unclear / owner review required"
+        ],
+        "name": "human body / sleep / waking / energy opportunity 55",
+        "next_evidence_step": "prototype-first internal simulation plus public product/behavior research",
+        "opportunity_id": "e35_opportunity_55",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "no execution needed yet",
+          "Labs-only strategic artifact"
+        ],
+        "governance_alignment": [
+          "no Y-star-gov primitive needed"
+        ],
+        "name": "human body / sleep / waking / energy opportunity 01",
+        "next_evidence_step": "prototype-first internal simulation plus public product/behavior research",
+        "opportunity_id": "e35_opportunity_01",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "no execution needed yet",
+          "Labs-only strategic artifact"
+        ],
+        "governance_alignment": [
+          "no Y-star-gov primitive needed"
+        ],
+        "name": "human emotion / anxiety / motivation / loneliness / transition states opportunity 02",
+        "next_evidence_step": "prototype-first internal simulation plus public product/behavior research",
+        "opportunity_id": "e35_opportunity_02",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "no execution needed yet",
+          "Labs-only strategic artifact"
+        ],
+        "governance_alignment": [
+          "no Y-star-gov primitive needed"
+        ],
+        "name": "home / family / environment / rituals opportunity 03",
+        "next_evidence_step": "prototype-first internal simulation plus public product/behavior research",
+        "opportunity_id": "e35_opportunity_03",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      }
+    ],
+    "opportunities_to_reject_or_park": [
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "no execution needed yet",
+          "unsafe / should not execute",
+          "owner approval required before any execution"
+        ],
+        "governance_alignment": [
+          "unclear / owner review required"
+        ],
+        "name": "local community coordination opportunity 53",
+        "next_evidence_step": "prototype-first internal simulation plus public product/behavior research",
+        "opportunity_id": "e35_opportunity_53",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      },
+      {
+        "evidence_route": "public read-only research",
+        "gov_mcp_alignment": [
+          "no execution needed yet",
+          "unsafe / should not execute",
+          "owner approval required before any execution"
+        ],
+        "governance_alignment": [
+          "unclear / owner review required"
+        ],
+        "name": "personal finance and household operations opportunity 54",
+        "next_evidence_step": "prototype-first internal simulation plus public product/behavior research",
+        "opportunity_id": "e35_opportunity_54",
+        "owner_burden": "approve target category and validation path later",
+        "recommended_next_milestone_path": "E37_owner_approved_cross_domain_evidence_sprint_preflight",
+        "why_included": "represents cluster evidence route, not final product selection",
+        "why_not_final_route_yet": "no customer validation or paid signal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,946 @@
+{
+  "artifact_id": "e36_gov_mcp_execution_boundary_alignment",
+  "entries": [
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "human-life / health / sleep / emotion / home",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_01",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "human-life / health / sleep / emotion / home",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_02",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "human-life / health / sleep / emotion / home",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_03",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "human-life / health / sleep / emotion / home",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_04",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "human-life / health / sleep / emotion / home",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_05",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "human-life / health / sleep / emotion / home",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_06",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "human-life / health / sleep / emotion / home",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_07",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "human-life / health / sleep / emotion / home",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_08",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "human-life / health / sleep / emotion / home",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_09",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "human-life / health / sleep / emotion / home",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_10",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "human-life / health / sleep / emotion / home",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_11",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "human-life / health / sleep / emotion / home",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_12",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "workflow telemetry/no-send productivity adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "blocked_actions": [
+        "tool execution outside active contract"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_13",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "workflow telemetry/no-send productivity adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "blocked_actions": [
+        "tool execution outside active contract"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_14",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "workflow telemetry/no-send productivity adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "blocked_actions": [
+        "tool execution outside active contract"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_15",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "workflow telemetry/no-send productivity adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "blocked_actions": [
+        "tool execution outside active contract"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_16",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "workflow telemetry/no-send productivity adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "blocked_actions": [
+        "tool execution outside active contract"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_17",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "workflow telemetry/no-send productivity adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "blocked_actions": [
+        "tool execution outside active contract"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_18",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "workflow telemetry/no-send productivity adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "blocked_actions": [
+        "tool execution outside active contract"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_19",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "workflow telemetry/no-send productivity adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "blocked_actions": [
+        "tool execution outside active contract"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_20",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "workflow telemetry/no-send productivity adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "blocked_actions": [
+        "tool execution outside active contract"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_21",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "workflow telemetry/no-send productivity adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "blocked_actions": [
+        "tool execution outside active contract"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_22",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "workflow telemetry/no-send productivity adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "blocked_actions": [
+        "tool execution outside active contract"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_23",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "workflow telemetry/no-send productivity adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if tool action is later approved",
+        "requires deterministic router if shell/tool action enters scope"
+      ],
+      "blocked_actions": [
+        "tool execution outside active contract"
+      ],
+      "domain": "AI productivity / workflow / toolchain",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_24",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "education / creator / family / small business",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_25",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "education / creator / family / small business",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_26",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "education / creator / family / small business",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_27",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "education / creator / family / small business",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_28",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "education / creator / family / small business",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_29",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "education / creator / family / small business",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_30",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "education / creator / family / small business",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_31",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "education / creator / family / small business",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_32",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "education / creator / family / small business",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_33",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [],
+      "alignment": [
+        "no execution needed yet",
+        "Labs-only strategic artifact"
+      ],
+      "blocked_actions": [],
+      "domain": "education / creator / family / small business",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_34",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "enterprise review workflow adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "blocked_actions": [
+        "automated outreach/publication without owner approval"
+      ],
+      "domain": "enterprise / professional services",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_35",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "enterprise review workflow adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "blocked_actions": [
+        "automated outreach/publication without owner approval"
+      ],
+      "domain": "enterprise / professional services",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_36",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "enterprise review workflow adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "blocked_actions": [
+        "automated outreach/publication without owner approval"
+      ],
+      "domain": "enterprise / professional services",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_37",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "enterprise review workflow adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "blocked_actions": [
+        "automated outreach/publication without owner approval"
+      ],
+      "domain": "enterprise / professional services",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_38",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "enterprise review workflow adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "blocked_actions": [
+        "automated outreach/publication without owner approval"
+      ],
+      "domain": "enterprise / professional services",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_39",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "enterprise review workflow adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "blocked_actions": [
+        "automated outreach/publication without owner approval"
+      ],
+      "domain": "enterprise / professional services",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_40",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "enterprise review workflow adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "blocked_actions": [
+        "automated outreach/publication without owner approval"
+      ],
+      "domain": "enterprise / professional services",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_41",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "enterprise review workflow adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "blocked_actions": [
+        "automated outreach/publication without owner approval"
+      ],
+      "domain": "enterprise / professional services",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_42",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "enterprise review workflow adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "blocked_actions": [
+        "automated outreach/publication without owner approval"
+      ],
+      "domain": "enterprise / professional services",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_43",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "enterprise review workflow adapter candidate"
+      ],
+      "alignment": [
+        "Labs-only strategic artifact now",
+        "can be governed by existing gov_check/gov_enforce if action is later approved",
+        "requires contract load/validate/activate"
+      ],
+      "blocked_actions": [
+        "automated outreach/publication without owner approval"
+      ],
+      "domain": "enterprise / professional services",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_44",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "agent-to-agent delegation/commerce adapter candidate"
+      ],
+      "alignment": [
+        "owner approval required before any execution",
+        "requires delegation/escalation flow",
+        "requires CIEU report/verify/audit",
+        "requires new MCP adapter candidate"
+      ],
+      "blocked_actions": [
+        "agent-to-agent payment or external action execution"
+      ],
+      "domain": "agent economy / autonomous company",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_45",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "agent-to-agent delegation/commerce adapter candidate"
+      ],
+      "alignment": [
+        "owner approval required before any execution",
+        "requires delegation/escalation flow",
+        "requires CIEU report/verify/audit",
+        "requires new MCP adapter candidate"
+      ],
+      "blocked_actions": [
+        "agent-to-agent payment or external action execution"
+      ],
+      "domain": "agent economy / autonomous company",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_46",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "agent-to-agent delegation/commerce adapter candidate"
+      ],
+      "alignment": [
+        "owner approval required before any execution",
+        "requires delegation/escalation flow",
+        "requires CIEU report/verify/audit",
+        "requires new MCP adapter candidate"
+      ],
+      "blocked_actions": [
+        "agent-to-agent payment or external action execution"
+      ],
+      "domain": "agent economy / autonomous company",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_47",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "agent-to-agent delegation/commerce adapter candidate"
+      ],
+      "alignment": [
+        "owner approval required before any execution",
+        "requires delegation/escalation flow",
+        "requires CIEU report/verify/audit",
+        "requires new MCP adapter candidate"
+      ],
+      "blocked_actions": [
+        "agent-to-agent payment or external action execution"
+      ],
+      "domain": "agent economy / autonomous company",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_48",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "agent-to-agent delegation/commerce adapter candidate"
+      ],
+      "alignment": [
+        "owner approval required before any execution",
+        "requires delegation/escalation flow",
+        "requires CIEU report/verify/audit",
+        "requires new MCP adapter candidate"
+      ],
+      "blocked_actions": [
+        "agent-to-agent payment or external action execution"
+      ],
+      "domain": "agent economy / autonomous company",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_49",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "agent-to-agent delegation/commerce adapter candidate"
+      ],
+      "alignment": [
+        "owner approval required before any execution",
+        "requires delegation/escalation flow",
+        "requires CIEU report/verify/audit",
+        "requires new MCP adapter candidate"
+      ],
+      "blocked_actions": [
+        "agent-to-agent payment or external action execution"
+      ],
+      "domain": "agent economy / autonomous company",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_50",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "agent-to-agent delegation/commerce adapter candidate"
+      ],
+      "alignment": [
+        "owner approval required before any execution",
+        "requires delegation/escalation flow",
+        "requires CIEU report/verify/audit",
+        "requires new MCP adapter candidate"
+      ],
+      "blocked_actions": [
+        "agent-to-agent payment or external action execution"
+      ],
+      "domain": "agent economy / autonomous company",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_51",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "agent-to-agent delegation/commerce adapter candidate"
+      ],
+      "alignment": [
+        "owner approval required before any execution",
+        "requires delegation/escalation flow",
+        "requires CIEU report/verify/audit",
+        "requires new MCP adapter candidate"
+      ],
+      "blocked_actions": [
+        "agent-to-agent payment or external action execution"
+      ],
+      "domain": "agent economy / autonomous company",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_52",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "hardware simulator or physical-interface adapter candidate"
+      ],
+      "alignment": [
+        "no execution needed yet",
+        "unsafe / should not execute",
+        "owner approval required before any execution"
+      ],
+      "blocked_actions": [
+        "physical-world actuation"
+      ],
+      "domain": "hardware + AI / physical-world interface",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_53",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "hardware simulator or physical-interface adapter candidate"
+      ],
+      "alignment": [
+        "no execution needed yet",
+        "unsafe / should not execute",
+        "owner approval required before any execution"
+      ],
+      "blocked_actions": [
+        "physical-world actuation"
+      ],
+      "domain": "hardware + AI / physical-world interface",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_54",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "hardware simulator or physical-interface adapter candidate"
+      ],
+      "alignment": [
+        "no execution needed yet",
+        "unsafe / should not execute",
+        "owner approval required before any execution"
+      ],
+      "blocked_actions": [
+        "physical-world actuation"
+      ],
+      "domain": "hardware + AI / physical-world interface",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_55",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "hardware simulator or physical-interface adapter candidate"
+      ],
+      "alignment": [
+        "no execution needed yet",
+        "unsafe / should not execute",
+        "owner approval required before any execution"
+      ],
+      "blocked_actions": [
+        "physical-world actuation"
+      ],
+      "domain": "hardware + AI / physical-world interface",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_56",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "hardware simulator or physical-interface adapter candidate"
+      ],
+      "alignment": [
+        "no execution needed yet",
+        "unsafe / should not execute",
+        "owner approval required before any execution"
+      ],
+      "blocked_actions": [
+        "physical-world actuation"
+      ],
+      "domain": "hardware + AI / physical-world interface",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_57",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "hardware simulator or physical-interface adapter candidate"
+      ],
+      "alignment": [
+        "no execution needed yet",
+        "unsafe / should not execute",
+        "owner approval required before any execution"
+      ],
+      "blocked_actions": [
+        "physical-world actuation"
+      ],
+      "domain": "hardware + AI / physical-world interface",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_58",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "hardware simulator or physical-interface adapter candidate"
+      ],
+      "alignment": [
+        "no execution needed yet",
+        "unsafe / should not execute",
+        "owner approval required before any execution"
+      ],
+      "blocked_actions": [
+        "physical-world actuation"
+      ],
+      "domain": "hardware + AI / physical-world interface",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_59",
+      "owner_approval_required_before_execution": true
+    },
+    {
+      "adapter_candidates": [
+        "hardware simulator or physical-interface adapter candidate"
+      ],
+      "alignment": [
+        "no execution needed yet",
+        "unsafe / should not execute",
+        "owner approval required before any execution"
+      ],
+      "blocked_actions": [
+        "physical-world actuation"
+      ],
+      "domain": "hardware + AI / physical-world interface",
+      "gov_mcp_files_modified": false,
+      "opportunity_id": "e35_opportunity_60",
+      "owner_approval_required_before_execution": true
+    }
+  ],
+  "generated_at": "2026-05-05T00:00:01Z",
+  "gov_mcp_head": "4f758d9d4823eed108ae3d63be1f4db192a974d6",
+  "inspection_mode": "read_only",
+  "summary": {
+    "adapter_candidate_count": 38,
+    "adapter_candidates": [
+      "agent-to-agent delegation/commerce adapter candidate",
+      "enterprise review workflow adapter candidate",
+      "hardware simulator or physical-interface adapter candidate",
+      "workflow telemetry/no-send productivity adapter candidate"
+    ],
+    "blocked_action_count": 38,
+    "blocked_actions": [
+      "agent-to-agent payment or external action execution",
+      "automated outreach/publication without owner approval",
+      "physical-world actuation",
+      "tool execution outside active contract"
+    ],
+    "existing_gov_check_possible": 22,
+    "gov_mcp_files_modified": false,
+    "labs_only_or_no_execution_yet": 52,
+    "opportunities_aligned": 60
+  }
+}
