@@ -1,0 +1,27 @@
+{
+  "adapter_type": "thin_demo_record_schema_not_governance_engine",
+  "artifact_id": "e33_agent_action_black_box_schema",
+  "non_claim_requirements": [
+    "customer feedback remains none",
+    "paid signal remains none",
+    "public observation remains public observation",
+    "internal inference remains internal inference",
+    "hypotheses remain hypotheses",
+    "production live remains disabled"
+  ],
+  "required_sections": [
+    "action_identity",
+    "declared_intent",
+    "evidence_chain",
+    "authorization_and_boundary",
+    "execution_trace",
+    "outcome_and_residual",
+    "learning_eligibility",
+    "buyer_visible_summary"
+  ],
+  "schema_version": "0.1",
+  "source_defaults": {
+    "demo_action_source": "E31 paid-readiness review no-send signal package",
+    "selected_mvp_source": "E32-R1 Agent Action Black Box selection"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "artifact_id": "e33_black_box_buyer_view",
+  "buyer_visible": true,
+  "non_claims": [
+    "No customer validation yet.",
+    "No paid signal yet.",
+    "No production deployment.",
+    "No external send, publication, contact, provider send API, or production live execution occurred."
+  ],
+  "plain_english_value": "You can inspect the proof chain before trusting the agent action.",
+  "recommended_buyer_facing_title": "Agent Action Black Box: proof chain for a proposed AI-agent action",
+  "what_it_does_not_prove": [
+    "customer validation",
+    "paid willingness to buy",
+    "production deployment readiness",
+    "that external contact is approved"
+  ],
+  "what_it_proves": [
+    "what the agent intended to do",
+    "what evidence it used",
+    "what boundaries applied",
+    "what it generated",
+    "what remains unvalidated"
+  ]
+}

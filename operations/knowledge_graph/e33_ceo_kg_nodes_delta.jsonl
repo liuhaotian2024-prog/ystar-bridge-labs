@@ -1,0 +1,7 @@
+{"evidence_status": "internal_demo_artifact", "label": "Black Box demo record for E31 paid-readiness action", "node_id": "e33_agent_action_black_box_demo_record", "node_type": "AgentActionBlackBoxRecord"}
+{"evidence_status": "prepared_no_send", "label": "Agent Action Black Box buyer-facing packet", "node_id": "e33_black_box_buyer_packet", "node_type": "BuyerFacingDemoPacket"}
+{"evidence_status": "internal_control", "label": "No-fake-evidence audit passed", "node_id": "e33_no_fake_evidence_audit", "node_type": "NoFakeEvidenceAudit"}
+{"evidence_status": "owner_decision_pending", "label": "Owner-approved friendly reviewer walkthrough", "node_id": "e33_owner_validation_route", "node_type": "OwnerValidationRoute"}
+{"evidence_status": "unvalidated", "label": "No external reviewer feedback or paid signal yet", "node_id": "e33_validation_gap", "node_type": "ValidationGap"}
+{"evidence_status": "working_only", "label": "Public observation is not customer validation", "node_id": "e33_black_box_learning_boundary", "node_type": "LearningBoundary"}
+{"evidence_status": "owner_decision_pending", "label": "E34 owner-approved black-box validation preflight", "node_id": "e33_black_box_next_horizon", "node_type": "NextDecisionHorizon"}

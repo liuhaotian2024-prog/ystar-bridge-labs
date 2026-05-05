@@ -1,0 +1,45 @@
+{
+  "artifact_id": "e33_no_rebuild_alignment_gate",
+  "failure_condition": "Fail if a new parallel CIEU/CZL/KG/route/receipt/provider/delivery subsystem is created.",
+  "gate_status": "passed",
+  "may_wrap_format": [
+    "buyer-facing one-page packet",
+    "action black box record",
+    "owner validation route",
+    "demo narrative",
+    "no-fake-evidence audit view"
+  ],
+  "must_not_rebuild": [
+    "CIEU engine",
+    "CZL engine",
+    "CEO KG",
+    "CEO brain",
+    "route registry",
+    "external observation runner",
+    "frontier research runner",
+    "MVP selector",
+    "provider sandbox",
+    "delivery bridge"
+  ],
+  "must_reuse": [
+    "E31 paid readiness package",
+    "E31 observation receipts",
+    "E32 selected MVP",
+    "E32 ecosystem archaeology",
+    "E32 unique fitness analysis",
+    "E32 CEO brain/KG update",
+    "CIEU/residual conventions from existing reports",
+    "CZL closure conventions",
+    "route registry conventions",
+    "no-fake-evidence conventions",
+    "host-local bridge delivery"
+  ],
+  "new_wheels_created": [
+    "Agent Action Black Box schema adapter",
+    "Agent Action Black Box demo record builder",
+    "buyer-facing demo packet formatter",
+    "owner validation route formatter"
+  ],
+  "parallel_subsystem_created": false,
+  "selected_strategy": "thin_adapter_over_existing_e31_e32_artifacts"
+}

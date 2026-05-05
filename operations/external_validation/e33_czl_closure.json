@@ -1,0 +1,26 @@
+{
+  "artifact_id": "e33_czl_closure",
+  "credentials_or_secrets_committed": false,
+  "customer_contact_occurred": false,
+  "e33_demo_packet_completed": true,
+  "fake_evidence_created": false,
+  "message_sent": false,
+  "no_rebuild_gate_passed": true,
+  "owner_validation_route_executed": false,
+  "owner_validation_route_prepared": true,
+  "production_live_enabled": false,
+  "production_live_execution_occurred": false,
+  "production_live_receipt_count": 0,
+  "provider_api_called": false,
+  "provider_send_api_called": false,
+  "published_externally": false,
+  "recommended_e34": "E34_owner_approved_black_box_validation_preflight",
+  "required_delivery_result_shape": {
+    "committed": true,
+    "pushed": true,
+    "remote_confirmed": true,
+    "repository_delivery_rt1": 0,
+    "result_head_equals_remote_head": true
+  },
+  "secret_used": false
+}

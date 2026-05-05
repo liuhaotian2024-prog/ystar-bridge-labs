@@ -1,0 +1,18 @@
+{
+  "artifact_id": "e33_black_box_no_fake_evidence_audit",
+  "audit_status": "passed",
+  "buyer_facing_claim_rule": "Only evidence-bound public observation, carefully labeled internal inference, or explicit hypothesis may appear in buyer-facing copy.",
+  "customer_contact_occurred": false,
+  "customer_feedback_claimed": false,
+  "hypothesis_labeled_as_hypothesis": true,
+  "internal_inference_labeled_as_internal_inference": true,
+  "paid_signal_claimed": false,
+  "production_live_execution_occurred": false,
+  "provider_api_send_occurred": false,
+  "public_observation_labeled_as_public_observation": true,
+  "public_research_is_customer_validation": false,
+  "publication_occurred": false,
+  "secret_used": false,
+  "send_occurred": false,
+  "unsupported_claims_removed_count": 4
+}

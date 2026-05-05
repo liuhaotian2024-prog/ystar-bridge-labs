@@ -1,0 +1,11 @@
+{
+  "artifact_id": "e33_ceo_kg_black_box_feedback",
+  "customer_feedback_claimed": false,
+  "kg_delta_edges": 9,
+  "kg_delta_nodes": 7,
+  "market_validation_claimed": false,
+  "operationalization_status": "buyer_visible_demo_packet_ready_no_send",
+  "paid_signal_claimed": false,
+  "public_observation_only": true,
+  "selected_mvp": "mvp_agent_action_black_box"
+}

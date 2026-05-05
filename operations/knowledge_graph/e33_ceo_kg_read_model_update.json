@@ -1,0 +1,10 @@
+{
+  "artifact_id": "e33_ceo_kg_read_model_update",
+  "buyer_facing_demo_ready": true,
+  "customer_feedback_claimed": false,
+  "next_decision_horizon": "E34_owner_approved_black_box_validation_preflight",
+  "owner_validation_route_prepared": true,
+  "paid_signal_claimed": false,
+  "selected_mvp": "mvp_agent_action_black_box",
+  "selected_mvp_name": "Agent Action Black Box"
+}

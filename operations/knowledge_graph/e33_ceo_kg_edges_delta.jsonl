@@ -1,0 +1,9 @@
+{"relation": "operationalized_by", "source": "mvp_agent_action_black_box", "target": "e33_agent_action_black_box_demo_record"}
+{"relation": "sample_action_for", "source": "e31_paid_readiness_review_signal_package", "target": "e33_agent_action_black_box_demo_record"}
+{"relation": "evidences", "source": "e31_real_world_observation_receipts", "target": "e33_agent_action_black_box_demo_record"}
+{"relation": "bounds_claims_for", "source": "e31_offer_claim_register", "target": "e33_black_box_buyer_packet"}
+{"relation": "guards", "source": "e33_no_fake_evidence_audit", "target": "e33_black_box_buyer_packet"}
+{"relation": "routes_to", "source": "e33_black_box_buyer_packet", "target": "e33_owner_validation_route"}
+{"relation": "blocks", "source": "e33_validation_gap", "target": "canonical_market_learning"}
+{"relation": "prevents", "source": "e33_black_box_learning_boundary", "target": "fake_customer_validation_claim"}
+{"relation": "updates", "source": "e33_owner_validation_route", "target": "e33_black_box_next_horizon"}

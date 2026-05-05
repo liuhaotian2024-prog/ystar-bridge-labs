@@ -1,0 +1,124 @@
+{
+  "actual_local_head": "e0fdae56378ac8531053ac5fe235b5e20496863b",
+  "actual_remote_tracking_head": "e0fdae56378ac8531053ac5fe235b5e20496863b",
+  "artifact_id": "e33_input_artifact_manifest",
+  "blocked_reason": "",
+  "can_proceed": true,
+  "current_branch": "backflow/aiden-ceo-meeting-room",
+  "e31_artifacts_present": true,
+  "e31_diagnostic_outline_ready": true,
+  "e31_market_observation_receipts": 8,
+  "e31_no_send_no_contact_closure_confirmed": true,
+  "e31_one_page_offer_ready": true,
+  "e31_paid_signal_package_ready": true,
+  "e31_price_hypothesis_ready": true,
+  "e32_artifacts_present": true,
+  "expected_starting_head": "e0fdae56378ac8531053ac5fe235b5e20496863b",
+  "generated_at": "2026-05-04T00:00:01Z",
+  "remote_head_source": "origin/backflow/aiden-ceo-meeting-room local tracking ref plus E32-R1 remote-confirmed bridge report",
+  "repo_path": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+  "required_e31_artifacts": [
+    {
+      "artifact_id": "e31_real_world_observation_receipts",
+      "exists": true,
+      "path": "operations/external_validation/e31_real_world_observation_receipts.json",
+      "receipt_count": 8
+    },
+    {
+      "artifact_id": "e31_real_world_observation_run",
+      "exists": true,
+      "path": "operations/external_validation/e31_real_world_observation_run.json",
+      "production_live_enabled": false,
+      "production_live_receipt_count": 0,
+      "receipt_count": 8
+    },
+    {
+      "artifact_id": "e31_paid_readiness_review_signal_package",
+      "diagnostic_outline_ready": true,
+      "exists": true,
+      "one_page_offer_ready": true,
+      "package_created": true,
+      "path": "operations/external_validation/e31_paid_readiness_review_signal_package.json",
+      "price_commitment_hypothesis_ready": true
+    },
+    {
+      "exists": true,
+      "path": "operations/external_validation/e31_paid_readiness_review_signal_package.md"
+    },
+    {
+      "artifact_id": "e31_offer_claim_register",
+      "exists": true,
+      "path": "operations/external_validation/e31_offer_claim_register.json"
+    },
+    {
+      "artifact_id": "e31_real_signal_route_decision",
+      "exists": true,
+      "path": "operations/external_validation/e31_real_signal_route_decision.json",
+      "production_live_enabled": false,
+      "production_live_receipt_count": 0
+    },
+    {
+      "artifact_id": "e31_czl_closure",
+      "customer_contact_occurred": false,
+      "exists": true,
+      "message_sent": false,
+      "path": "operations/external_validation/e31_czl_closure.json",
+      "production_live_enabled": false,
+      "production_live_receipt_count": 0,
+      "provider_send_api_called": false
+    }
+  ],
+  "required_e32_artifacts": [
+    {
+      "artifact_id": "e32_shock_level_mvp_selection",
+      "exists": true,
+      "path": "operations/external_validation/e32_shock_level_mvp_selection.json",
+      "selected_mvp": "mvp_agent_action_black_box"
+    },
+    {
+      "artifact_id": "e32_owner_discussion_packet",
+      "exists": true,
+      "path": "operations/external_validation/e32_owner_discussion_packet.json"
+    },
+    {
+      "artifact_id": "e32_full_ecosystem_runtime_archaeology",
+      "exists": true,
+      "path": "operations/external_validation/e32_full_ecosystem_runtime_archaeology.json"
+    },
+    {
+      "artifact_id": "e32_y_star_unique_fitness_analysis",
+      "exists": true,
+      "path": "operations/external_validation/e32_y_star_unique_fitness_analysis.json"
+    },
+    {
+      "artifact_id": "e32_ceo_brain_frontier_mvp_update",
+      "exists": true,
+      "path": "operations/external_validation/e32_ceo_brain_frontier_mvp_update.json",
+      "production_live_enabled": false,
+      "production_live_receipt_count": 0,
+      "selected_mvp": "mvp_agent_action_black_box"
+    },
+    {
+      "artifact_id": "e32_czl_closure",
+      "customer_contact_occurred": false,
+      "exists": true,
+      "message_sent": false,
+      "path": "operations/external_validation/e32_czl_closure.json",
+      "production_live_enabled": false,
+      "production_live_receipt_count": 0,
+      "provider_send_api_called": false,
+      "published_externally": false
+    },
+    {
+      "exists": true,
+      "line_count": 43,
+      "path": "operations/knowledge_graph/e32_ceo_kg_nodes_delta.jsonl"
+    },
+    {
+      "exists": true,
+      "line_count": 54,
+      "path": "operations/knowledge_graph/e32_ceo_kg_edges_delta.jsonl"
+    }
+  ],
+  "working_tree_clean": true
+}
