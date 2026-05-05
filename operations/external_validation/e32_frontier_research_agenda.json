@@ -1,0 +1,88 @@
+{
+  "artifact_id": "e32_frontier_research_agenda",
+  "methodology_chain": [
+    "Historical Direction of AI Agency",
+    "Ontological Shift in Action",
+    "World Fracture",
+    "Institutional Void",
+    "Existing Player Failure",
+    "Y* Unique Fitness",
+    "Shock-Level MVP Wedge",
+    "Fast Validation Path",
+    "Owner Strategic Decision"
+  ],
+  "public_research_allowed_by_existing_controls": true,
+  "topics": [
+    {
+      "evidence_needed": [
+        "framework docs",
+        "agent runtime docs",
+        "enterprise adoption reports"
+      ],
+      "mvp_implication": "MVP must make action legitimacy visible.",
+      "topic": "AI agents as action-capable systems",
+      "why_it_matters_to_y_star": "Y* must govern actions, not just answers."
+    },
+    {
+      "evidence_needed": [
+        "tracing docs",
+        "observability product pages"
+      ],
+      "mvp_implication": "Y* can differentiate by adding pre-action legitimacy and post-action learning boundaries.",
+      "topic": "agent tracing and observability",
+      "why_it_matters_to_y_star": "Tracing proves what happened after or during an agent run but does not by itself prove whether the action should have happened."
+    },
+    {
+      "evidence_needed": [
+        "guardrail docs",
+        "security guidance"
+      ],
+      "mvp_implication": "The MVP should show checks before tool/provider execution.",
+      "topic": "guardrails and tool-call boundaries",
+      "why_it_matters_to_y_star": "Tool invocation is where language becomes action."
+    },
+    {
+      "evidence_needed": [
+        "official protocol specs"
+      ],
+      "mvp_implication": "Y* should sit as trust/action layer across protocol-mediated actions.",
+      "topic": "MCP/A2A/AP2 protocols",
+      "why_it_matters_to_y_star": "Protocols create the substrate for interoperable action, delegation, and commerce."
+    },
+    {
+      "evidence_needed": [
+        "agentic governance sources",
+        "identity/security sources"
+      ],
+      "mvp_implication": "Preflight must answer who authorized the action and under what evidence.",
+      "topic": "agent identity and authorization",
+      "why_it_matters_to_y_star": "Non-human actors need scoped authority and accountable ownership."
+    },
+    {
+      "evidence_needed": [
+        "enterprise research reports"
+      ],
+      "mvp_implication": "First demo should target AI operators/consultancies/security teams before broad platform build.",
+      "topic": "enterprise agent scaling gap",
+      "why_it_matters_to_y_star": "A scaling gap creates urgent buyers before platforms fully solve it."
+    },
+    {
+      "evidence_needed": [
+        "risk frameworks",
+        "governance vendors",
+        "local artifacts"
+      ],
+      "mvp_implication": "Receipts and replay should be front-and-center, not backend details.",
+      "topic": "proof, audit, and accountability",
+      "why_it_matters_to_y_star": "Y* has CIEU/CZL/receipt semantics already."
+    },
+    {
+      "evidence_needed": [
+        "public evidence plus local no-fake-evidence artifacts"
+      ],
+      "mvp_implication": "No-Fake-Agent proof can become a validation wedge.",
+      "topic": "fake automation and fake ROI",
+      "why_it_matters_to_y_star": "The market will distrust agent demos that cannot prove what happened."
+    }
+  ]
+}

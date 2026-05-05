@@ -1,0 +1,33 @@
+{
+  "artifact_id": "e32_frontier_world_model",
+  "buyers_feeling_urgency": [
+    "AI consultancies that need to prove client-ready agent work",
+    "enterprise AI operations and security teams managing agent sprawl",
+    "founder-led teams trying to move from demos to trusted execution",
+    "governance/risk owners asked to approve AI automation"
+  ],
+  "evidence_boundaries": {
+    "inferred_from_public_evidence": [
+      "The market will need a trust/action layer above individual tools and traces.",
+      "Buyers will value proof before external action where agents touch customers, money, or enterprise systems."
+    ],
+    "internal_hypothesis": [
+      "Y* can be recognized as a distinctive action-trust layer if the first demo makes intent/action/evidence/learning visibly inseparable."
+    ],
+    "observed_public_evidence": [
+      "MCP/A2A/AP2 official protocol surfaces",
+      "OpenAI tracing and guardrail docs",
+      "OWASP/NIST governance and risk sources",
+      "2026 enterprise agent-sprawl/scaling market signals"
+    ],
+    "unsupported_do_not_use": [
+      "Any claim that buyers have validated or paid for Y*.",
+      "Any claim that Y* is certified or production-ready for regulated enterprise deployment."
+    ]
+  },
+  "historical_direction_of_ai_agency": "AI is moving from conversation and content generation toward systems that call tools, coordinate with other agents, access enterprise systems, and initiate delegated commercial actions.",
+  "institutional_void": "Enterprises lack a complete layer that proves whether an agent action is authorized, evidenced, replayable, accountable, and learnable before and after execution.",
+  "market_urgency": "Protocols and platforms are enabling action faster than governance, identity, proof, and business accountability practices can mature.",
+  "ontological_shift_in_action": "Software is no longer only a passive tool. Agentic systems increasingly become bounded actors that transform intent into operations across tools, protocols, and organizations.",
+  "primary_world_fracture": "agent_action_legitimacy_gap"
+}

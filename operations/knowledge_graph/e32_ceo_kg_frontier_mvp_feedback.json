@@ -1,0 +1,15 @@
+{
+  "artifact_id": "e32_ceo_kg_frontier_mvp_feedback",
+  "customer_feedback_claimed": false,
+  "existing_player_failure_nodes": 7,
+  "frontier_source_nodes": 12,
+  "institutional_void_nodes": 1,
+  "kg_delta_edges": 54,
+  "kg_delta_nodes": 43,
+  "market_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "selected_mvp": "mvp_agent_action_black_box",
+  "shock_level_mvp_nodes": 5,
+  "unique_fitness_nodes": 5,
+  "world_fracture_nodes": 1
+}

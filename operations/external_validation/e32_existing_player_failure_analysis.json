@@ -1,0 +1,62 @@
+{
+  "artifact_id": "e32_existing_player_failure_analysis",
+  "core_failure_summary": "Current players solve fragments: execution, tracing, policy, identity, consulting, or infrastructure. The unresolved gap is the joined proof chain from intent to action to evidence to feedback to learning to business route.",
+  "player_categories": [
+    {
+      "category": "agent_frameworks",
+      "failure_mode": "They make action easier before institutional trust catches up.",
+      "relationship_to_y_star": "integrate_or_wrap",
+      "what_they_do_not_solve": "Independent legitimacy layer tying intent, evidence, authorization, accountable receipts, learning, and revenue route.",
+      "what_they_solve": "Agent orchestration, tool calling, handoffs, memory, task execution."
+    },
+    {
+      "category": "workflow_automation_platforms",
+      "failure_mode": "Execution substrate without CEO-grade legitimacy reasoning.",
+      "relationship_to_y_star": "wrap_around",
+      "what_they_do_not_solve": "Epistemic proof that an agent action is sufficiently evidenced or strategically justified.",
+      "what_they_solve": "Business workflow execution and integrations."
+    },
+    {
+      "category": "observability_evaluation_vendors",
+      "failure_mode": "They observe the run but do not decide whether the run was legitimate in the first place.",
+      "relationship_to_y_star": "partner_or_integrate",
+      "what_they_do_not_solve": "Pre-action authorization, no-fake-evidence claim boundaries, and post-action business route learning.",
+      "what_they_solve": "Runtime traces, evaluations, debugging, monitoring, and cost/quality signals."
+    },
+    {
+      "category": "grc_compliance_tools",
+      "failure_mode": "Policy is often separate from agent runtime.",
+      "relationship_to_y_star": "validation_source_or_partner",
+      "what_they_do_not_solve": "Real-time agent action preflight and replayable execution receipts tied to concrete tool/provider actions.",
+      "what_they_solve": "Policy, risk registers, controls, compliance workflows."
+    },
+    {
+      "category": "identity_security_vendors",
+      "failure_mode": "Identity is necessary but not sufficient for action legitimacy.",
+      "relationship_to_y_star": "integrate_or_narrow_partner",
+      "what_they_do_not_solve": "Market/business action-route reasoning or evidence sufficiency for a specific delegated action.",
+      "what_they_solve": "Inventory, permissions, non-human identity governance, policy enforcement."
+    },
+    {
+      "category": "consulting_firms",
+      "failure_mode": "Human advisory without a reusable trust/action substrate.",
+      "relationship_to_y_star": "channel_or_target_buyer",
+      "what_they_do_not_solve": "A deterministic action-trust runtime that produces receipts and learning boundaries.",
+      "what_they_solve": "Strategy, readiness, transformation support, implementation advice."
+    },
+    {
+      "category": "cloud_ai_platforms",
+      "failure_mode": "Platform scope is broad but often vendor-centered.",
+      "relationship_to_y_star": "partner_ecosystem",
+      "what_they_do_not_solve": "Vendor-neutral proof that an action was legitimate across protocols and business context.",
+      "what_they_solve": "Infrastructure, model services, marketplace/partner ecosystems."
+    }
+  ],
+  "where_y_star_should_not_compete": [
+    "full enterprise GRC platform",
+    "general agent framework",
+    "generic observability dashboard",
+    "cloud marketplace",
+    "identity-security platform"
+  ]
+}

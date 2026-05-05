@@ -1,0 +1,46 @@
+{
+  "artifact_id": "e32_shock_level_mvp_selection",
+  "backup_mvps": [
+    "mvp_no_fake_agent_evidence_pack",
+    "mvp_governed_sandbox_replay",
+    "mvp_agent_company_operating_room"
+  ],
+  "candidates_generated": 5,
+  "exact_owner_facing_decision": "Approve E33 to build the Agent Action Black Box demo packet, or choose a backup MVP if the black-box framing feels too abstract for first validation.",
+  "first_demo_artifact": "Agent Action Black Box demo packet for the E31 paid readiness-review sample action",
+  "first_implementation_route": "build_no_send_agent_action_black_box_demo_packet",
+  "first_monetization_route": "fixed-fee Agent Action Legitimacy Audit / black-box review",
+  "first_validation_route": "owner-approved low-risk demo review with a friendly AI operator/consultancy or publication walkthrough only after approval",
+  "kill_criteria": [
+    "Owner cannot explain the MVP in one sentence after reviewing packet.",
+    "Friendly reviewers see it as generic observability or generic consulting.",
+    "The demo cannot show evidence boundary, preflight decision, receipt, and learning writeback in one flow."
+  ],
+  "rejected_candidates": [
+    {
+      "candidate_id": "production_live_provider_config",
+      "reason": "Prerequisite-only and not market-shocking without a buyer-visible trust demo."
+    },
+    {
+      "candidate_id": "publication_only",
+      "reason": "Could explain the idea but would not demonstrate unique action-trust capability."
+    },
+    {
+      "candidate_id": "readiness_review_only",
+      "reason": "Commercially useful but too narrow; does not expose the deeper agent-action void."
+    }
+  ],
+  "selected_mvp": "mvp_agent_action_black_box",
+  "selected_mvp_name": "Agent Action Black Box",
+  "success_criteria": [
+    "Owner approves one-sentence positioning and first demo shape.",
+    "Demo packet shows intent-to-action-to-evidence-to-learning chain without external effects.",
+    "At least one future low-risk reviewer understands the urgency without a long philosophical explanation."
+  ],
+  "why_selected": [
+    "It turns the abstract Y* philosophy into a concrete artifact buyers can understand.",
+    "It uses existing Y* wheels: CEO KG, evidence binding, provider containment, receipts, branch reasoning, and CZL closure.",
+    "It avoids fake validation because it can demo locally with public evidence and no-send receipts.",
+    "It is closer to revenue than broad platform productization while preserving product, governance, and partner branches."
+  ]
+}

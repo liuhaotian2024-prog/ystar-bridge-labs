@@ -1,0 +1,169 @@
+{
+  "artifact_id": "e32_frontier_research_run",
+  "blocked": false,
+  "blocker": "",
+  "execution_mode": "bounded_public_readonly_frontier_research",
+  "external_side_effects": false,
+  "generated_at": "2026-05-04T00:00:01Z",
+  "key_frontier_findings": [
+    "Agent protocols now expose tools, tasks, inter-agent communication, and payment authorization as explicit technical surfaces.",
+    "Agentic security guidance and enterprise reports point to a governance, identity, and scaling gap around autonomous systems.",
+    "Observability and guardrails are necessary but mostly cover runtime visibility and tool checks, not complete intent-to-action-to-learning legitimacy.",
+    "Agent commerce protocols make verifiable intent and accountability central, proving the action-trust problem is not hypothetical."
+  ],
+  "no_account_created": true,
+  "no_customer_contact": true,
+  "no_form_submitted": true,
+  "no_login": true,
+  "no_message_sent": true,
+  "no_payment": true,
+  "no_provider_send_api_called": true,
+  "production_live_enabled": false,
+  "production_live_receipt_count": 0,
+  "receipt_count": 12,
+  "research_status": "executed",
+  "source_count": 12,
+  "sources": [
+    {
+      "category": "MCP/tool protocol",
+      "claim_extraction": "MCP formalizes how AI applications connect to external tools and systems, creating a visible boundary where governance can attach.",
+      "freshness_classification": "current_official_spec",
+      "source_id": "frontier_mcp_spec",
+      "supports": [
+        "tool/provider protocol standardization",
+        "schema-bound tool interfaces"
+      ],
+      "url": "https://modelcontextprotocol.io/specification/2025-11-25/basic"
+    },
+    {
+      "category": "MCP/tool protocol",
+      "claim_extraction": "MCP is positioned as an open standard for connecting AI apps to external systems and workflows.",
+      "freshness_classification": "current_official_docs",
+      "source_id": "frontier_mcp_intro",
+      "supports": [
+        "AI applications accessing files, databases, search engines, calculators, and workflows"
+      ],
+      "url": "https://modelcontextprotocol.io/docs/getting-started/intro"
+    },
+    {
+      "category": "agent-to-agent protocol",
+      "claim_extraction": "A2A specifies multi-agent discovery, task, message, artifact, and security constructs, showing agent systems becoming interoperable actors.",
+      "freshness_classification": "current_official_spec",
+      "source_id": "frontier_a2a_spec",
+      "supports": [
+        "agent discovery",
+        "agent interoperability",
+        "task operations",
+        "auth concerns"
+      ],
+      "url": "https://a2a-protocol.org/latest/specification/"
+    },
+    {
+      "category": "agent payments/commerce",
+      "claim_extraction": "AP2 exists because human-click payment assumptions break when autonomous agents initiate transactions.",
+      "freshness_classification": "current_official_docs",
+      "source_id": "frontier_ap2_docs",
+      "supports": [
+        "agent commerce",
+        "verifiable intent",
+        "payment accountability"
+      ],
+      "url": "https://ap2-protocol.org/"
+    },
+    {
+      "category": "agent tracing",
+      "claim_extraction": "Agent runs need trace records across generations, tool calls, handoffs, guardrails, and custom events.",
+      "freshness_classification": "current_official_docs",
+      "source_id": "frontier_openai_tracing",
+      "supports": [
+        "tool-call tracing",
+        "handoff and guardrail observability",
+        "production monitoring"
+      ],
+      "url": "https://openai.github.io/openai-agents-js/guides/tracing/"
+    },
+    {
+      "category": "agent guardrails",
+      "claim_extraction": "Tool guardrails run around function-tool invocations and can reject or block unsafe tool use.",
+      "freshness_classification": "current_official_docs",
+      "source_id": "frontier_openai_guardrails",
+      "supports": [
+        "input/output/tool guardrails",
+        "tripwire blocking",
+        "tool boundary safety"
+      ],
+      "url": "https://openai.github.io/openai-agents-js/guides/guardrails/"
+    },
+    {
+      "category": "agentic AI security",
+      "claim_extraction": "OWASP frames agentic AI as expanding autonomous-system scale, capabilities, and associated security risks.",
+      "freshness_classification": "current_security_guidance",
+      "source_id": "frontier_owasp_agentic_threats",
+      "supports": [
+        "agentic threats",
+        "threat-model-based mitigation need",
+        "scale/capability risk"
+      ],
+      "url": "https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/"
+    },
+    {
+      "category": "AI risk framework",
+      "claim_extraction": "NIST AI RMF provides a voluntary framework for managing AI risks to individuals, organizations, and society.",
+      "freshness_classification": "enduring_government_framework_with_2026_updates",
+      "source_id": "frontier_nist_ai_rmf",
+      "supports": [
+        "trustworthy AI risk management",
+        "govern/map/measure/manage framing"
+      ],
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    {
+      "category": "enterprise agent sprawl",
+      "claim_extraction": "Gartner describes rapid growth of enterprise agents and governance concern around agent sprawl.",
+      "freshness_classification": "fresh_2026_market_signal",
+      "source_id": "frontier_gartner_agent_sprawl",
+      "supports": [
+        "agent sprawl",
+        "governance gap",
+        "enterprise urgency"
+      ],
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2026-04-28-gartner-identifies-six-steps-to-manage-artificial-intelligence-agent-sprawl"
+    },
+    {
+      "category": "enterprise scaling gap",
+      "claim_extraction": "Infosys/HFS reports many enterprises remain in early agentic-AI maturity and cite data/governance constraints.",
+      "freshness_classification": "fresh_2026_market_signal",
+      "source_id": "frontier_infosys_hfs_scaling_gap",
+      "supports": [
+        "limited enterprise-scale deployment",
+        "governance and data constraints",
+        "operating model gap"
+      ],
+      "url": "https://www.infosys.com/newsroom/features/2026/enterprises-scaled-agentic-ai.html"
+    },
+    {
+      "category": "enterprise AI adoption",
+      "claim_extraction": "Deloitte reports autonomous agents are entering enterprise strategies while deep transformation remains limited.",
+      "freshness_classification": "fresh_2026_market_signal",
+      "source_id": "frontier_deloitte_ai_2026",
+      "supports": [
+        "enterprise AI moving from pilots to activation",
+        "agent customization expectations"
+      ],
+      "url": "https://www.deloitte.com/us/en/about/press-room/state-of-ai-report-2026.html"
+    },
+    {
+      "category": "agent identity/governance vendor",
+      "claim_extraction": "Agent governance vendors are emerging around discovery, permissions, policy enforcement, and auditability.",
+      "freshness_classification": "fresh_2026_market_signal",
+      "source_id": "frontier_entro_agentic_governance",
+      "supports": [
+        "MCP activity visibility",
+        "identity/permission mapping",
+        "policy enforcement",
+        "audit trail"
+      ],
+      "url": "https://www.globenewswire.com/news-release/2026/03/18/3258229/0/en/Entro-Launches-Agentic-Governance-Administration-to-Bring-Visibility-and-Control-to-AI-Access-Across-the-Enterprise.html"
+    }
+  ]
+}

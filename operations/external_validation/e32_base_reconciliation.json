@@ -1,0 +1,58 @@
+{
+  "actual_current_local_head": "31f0a7125a10bf058dbc0b356f4425e0a6aaa361",
+  "actual_current_remote_head": "31f0a7125a10bf058dbc0b356f4425e0a6aaa361",
+  "ancestor_check": {
+    "command_equivalent": "git merge-base --is-ancestor 4ccf3ec7d60ec0f96183b42fb2dbc0888d36d95a 31f0a7125a10bf058dbc0b356f4425e0a6aaa361",
+    "exit_code": 0,
+    "previous_base_is_ancestor_of_current_head": true
+  },
+  "artifact_id": "e32_base_reconciliation",
+  "broken_bridge_semantics_found": false,
+  "changed_files_appear": "intentional_milestone_related",
+  "changed_files_between_previous_base_and_current_head": [
+    "office/mission_command/e32_ceo_brain_deep_learning_update.py",
+    "office/mission_command/e32_ceo_kg_learning_strategy_feedback.py",
+    "office/mission_command/e32_ceo_learning_agenda.py",
+    "office/mission_command/e32_ceo_strategy_control_room.py",
+    "office/mission_command/e32_controlled_research_plan.py",
+    "office/mission_command/e32_ecosystem_alignment_gate.py",
+    "office/mission_command/e32_existing_learning_strategy_wheel_inventory.py",
+    "office/mission_command/e32_future_ceo_learning_policy.py",
+    "office/mission_command/e32_market_buyer_understanding_synthesis.py",
+    "office/mission_command/e32_multi_path_business_plan_builder.py",
+    "office/mission_command/e32_open_monetization_path_generator.py",
+    "office/mission_command/e32_portfolio_selection_owner_discussion.py",
+    "office/mission_command/e32_real_world_learning_runner.py",
+    "office/mission_command/e32_technical_understanding_synthesis.py",
+    "office/mission_command/e32_unique_advantage_weakness_analysis.py",
+    "operations/external_validation/e32_* prior deep-learning artifacts",
+    "operations/knowledge_graph/e32_* prior deep-learning artifacts",
+    "reports/integration/e32_* prior deep-learning reports",
+    "scripts/create_e32_ceo_deep_learning_market_strategy.py",
+    "tests/office/test_e32_* prior deep-learning tests"
+  ],
+  "commits_between_previous_base_and_current_head": [
+    {
+      "classification": "intentional_milestone_commit_remote_confirmed",
+      "commit": "31f0a7125a10bf058dbc0b356f4425e0a6aaa361",
+      "dangerous_history_pollution": false,
+      "summary": "tools: add ceo deep learning market strategy"
+    }
+  ],
+  "current_branch": "backflow/aiden-ceo-meeting-room",
+  "dangerous_history_pollution_found": false,
+  "delta_classification": "single_remote_confirmed_milestone_commit",
+  "files_modified_before_reconciliation": false,
+  "force_push_performed": false,
+  "generated_at": "2026-05-04T00:00:01Z",
+  "generated_drift_found": false,
+  "missing_e31_artifacts_found": false,
+  "previous_requested_base_head": "4ccf3ec7d60ec0f96183b42fb2dbc0888d36d95a",
+  "proceed_expected_base_head": "31f0a7125a10bf058dbc0b356f4425e0a6aaa361",
+  "reason": "The stale E31 base is an ancestor of the actual local and remote head. The intervening delta is a single remote-confirmed E32 strategy commit containing allowlisted milestone artifacts, tests, and reports, with no destructive edits, pycache, secrets, live receipts, or history rewrite.",
+  "repo_path": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+  "risk_classification": "safe_to_continue_from_current_head",
+  "rollback_reset_rewrite_performed": false,
+  "runtime_pollution_found": false,
+  "working_tree_status": "clean_before_e32_r1_payload"
+}

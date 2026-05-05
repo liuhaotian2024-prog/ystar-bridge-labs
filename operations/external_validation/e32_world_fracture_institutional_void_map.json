@@ -1,0 +1,98 @@
+{
+  "artifact_id": "e32_world_fracture_institutional_void_map",
+  "closest_to_revenue_pain": "paid preflight/black-box review for a concrete agent action before client/customer/system exposure",
+  "fractures": [
+    {
+      "evidence_missing": [
+        "buyer interview",
+        "pilot request",
+        "paid signal"
+      ],
+      "evidence_support": [
+        "frontier_ap2_docs",
+        "frontier_openai_guardrails",
+        "frontier_owasp_agentic_threats",
+        "frontier_entro_agentic_governance"
+      ],
+      "fracture_id": "agent_action_legitimacy_gap",
+      "urgency_level": "high",
+      "what_is_breaking": "Agents can act through tools before organizations can prove whether the action should be allowed.",
+      "who_suffers": [
+        "AI operators",
+        "security/IAM teams",
+        "AI consultancies",
+        "business owners approving automation"
+      ],
+      "why_existing_approaches_insufficient": "Observability records what happened; GRC states policy; frameworks execute tools. Few connect intent, evidence, authorization, replay, feedback, and business route.",
+      "why_now": "MCP/A2A/AP2/tool-call ecosystems make action, delegation, and commerce concrete.",
+      "willingness_to_pay_proxy": "agent governance, audit, readiness, and platform pricing categories exist, but no Y* willingness-to-pay proof yet"
+    },
+    {
+      "evidence_missing": [
+        "which receipt format buyers trust"
+      ],
+      "evidence_support": [
+        "frontier_openai_tracing",
+        "frontier_nist_ai_rmf"
+      ],
+      "fracture_id": "post_action_accountability_gap",
+      "urgency_level": "high",
+      "what_is_breaking": "Organizations cannot easily reconstruct why an agent acted, what evidence it had, what it touched, and how learning should update.",
+      "who_suffers": [
+        "AI platform owners",
+        "audit teams",
+        "consultancies accountable to clients"
+      ],
+      "why_existing_approaches_insufficient": "Traces are not the same as legitimacy or business learning.",
+      "why_now": "Agent runs now include tool calls, handoffs, and protocol-mediated tasks.",
+      "willingness_to_pay_proxy": "observability and GRC products show budget categories"
+    },
+    {
+      "evidence_missing": [
+        "Y* buyer-specific ICP"
+      ],
+      "evidence_support": [
+        "frontier_entro_agentic_governance",
+        "frontier_gartner_agent_sprawl"
+      ],
+      "fracture_id": "agent_identity_permission_mismatch",
+      "urgency_level": "medium_high",
+      "what_is_breaking": "Human-centric IAM and approval systems strain when non-human agents act continuously and chain permissions.",
+      "who_suffers": [
+        "security/IAM",
+        "risk/compliance",
+        "platform engineering"
+      ],
+      "why_existing_approaches_insufficient": "Identity inventory does not alone determine action legitimacy or learning boundaries.",
+      "why_now": "Enterprise agents and agentic governance vendors are emerging around discovery and permissions.",
+      "willingness_to_pay_proxy": "agentic governance vendor category exists"
+    },
+    {
+      "evidence_missing": [
+        "market response to no-fake-agent positioning"
+      ],
+      "evidence_support": [
+        "e31_offer_claim_register",
+        "frontier_deloitte_ai_2026"
+      ],
+      "fracture_id": "fake_agent_progress_gap",
+      "urgency_level": "medium_high",
+      "what_is_breaking": "Demos and readiness claims can look persuasive without evidence, receipts, or real feedback.",
+      "who_suffers": [
+        "buyers",
+        "founders",
+        "consultants",
+        "investors"
+      ],
+      "why_existing_approaches_insufficient": "Consulting narratives and product dashboards can obscure whether real action and learning occurred.",
+      "why_now": "Agent adoption pressure rewards demos faster than proof.",
+      "willingness_to_pay_proxy": "readiness diagnostics and audits already sell around trust and risk"
+    }
+  ],
+  "institutional_void": "No widely understood business layer connects intent, evidence, authorization, execution containment, receipts, feedback, learning, and commercial route for agent actions.",
+  "most_strategically_compounding_pain": "institutional action-trust layer for agentic systems",
+  "primary_fracture": "agent_action_legitimacy_gap",
+  "public_research_is_not_customer_validation": true,
+  "strongest_near_term_buyer": "AI consultancies and enterprise AI/security operators preparing client or internal agent deployments.",
+  "urgent_buyer_pain": "Teams want to deploy agents but cannot prove which actions are safe, authorized, evidenced, auditable, and worth learning from."
+}

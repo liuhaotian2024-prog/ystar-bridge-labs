@@ -1,0 +1,190 @@
+{
+  "artifact_id": "e32_full_ecosystem_runtime_archaeology",
+  "capability_clusters_found": 9,
+  "conflicting_or_duplicated_wheels": [
+    {
+      "cluster": "E32 prior deep-learning artifacts vs E32-R1 frontier MVP artifacts",
+      "risk": "same E32 namespace now has a corrective strategy layer",
+      "route": "keep history, supersede current read model with E32-R1 artifacts, do not rewrite or delete prior commit"
+    },
+    {
+      "cluster": "provider/live route vs public-observation route",
+      "risk": "production live could be mistaken for default next step",
+      "route": "keep production live disabled; MVP validates trust layer without provider send"
+    }
+  ],
+  "do_not_rebuild": [
+    "safe public page reader",
+    "source-seeded public research provider",
+    "claim register",
+    "CEO KG persistence shape",
+    "gov-mcp outbound provider boundary",
+    "repository delivery bridge"
+  ],
+  "file_folder_clusters_found": [
+    {
+      "cluster_id": "ceo_kg_brain",
+      "mvp_support": true,
+      "paths": [
+        "office/mission_command/e24_ceo_knowledge_graph_builder.py",
+        "office/mission_command/e24_ceo_brain_state.py",
+        "operations/knowledge_graph/e31_ceo_kg_read_model_update.json"
+      ],
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "extend_existing",
+      "status": "canonical",
+      "unique_capability": "Strategy state can distinguish public observation, internal inference, customer feedback, paid signal, and promotion candidates.",
+      "what_it_does": "Maintains evidence-bound CEO KG and working-brain state."
+    },
+    {
+      "cluster_id": "cieu_czl_audit",
+      "mvp_support": true,
+      "paths": [
+        "tests/test_runtime_real.py",
+        "reports/system_audit_3repos_v2_20260414.md",
+        "Y-star-gov/ystar/governance"
+      ],
+      "repo": "ystar-bridge-labs/Y-star-gov",
+      "reuse_decision": "reuse_existing",
+      "status": "canonical",
+      "unique_capability": "Action accountability is native, not a bolted-on logging afterthought.",
+      "what_it_does": "Records and reasons over deterministic governance/audit closure semantics."
+    },
+    {
+      "cluster_id": "delivery_bridge",
+      "mvp_support": true,
+      "paths": [
+        "tests/office/test_repository_delivery_bridge_*.py",
+        "/tmp/ystar_delivery_bridge"
+      ],
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing",
+      "status": "canonical",
+      "unique_capability": "It proves the agent can change itself only through governed delivery.",
+      "what_it_does": "Delivers local repo changes through base-head, allowlist, validation, commit, push, and remote-confirm checks."
+    },
+    {
+      "cluster_id": "controlled_public_observation",
+      "mvp_support": true,
+      "paths": [
+        "office/mission_command/safe_public_page_reader.py",
+        "office/mission_command/source_seeded_research_provider.py",
+        "office/mission_command/tier1_public_research.py",
+        "operations/external_validation/e31_real_world_observation_run.json"
+      ],
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "wrap_existing",
+      "status": "canonical",
+      "unique_capability": "The agent can learn from the world without pretending observation is customer validation.",
+      "what_it_does": "Reads bounded public sources with no login, form, account, payment, contact, or send."
+    },
+    {
+      "cluster_id": "evidence_claim_binding",
+      "mvp_support": true,
+      "paths": [
+        "office/mission_command/e31_evidence_extraction_claim_binding.py",
+        "operations/external_validation/e31_offer_claim_register.json",
+        "office/mission_command/e23_evidence_tightening_evaluator.py"
+      ],
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing",
+      "status": "canonical",
+      "unique_capability": "No-fake-evidence is operationalized as an artifact boundary.",
+      "what_it_does": "Binds claims to observed evidence, internal inference, hypothesis, or unsupported status."
+    },
+    {
+      "cluster_id": "route_branch_cognition",
+      "mvp_support": true,
+      "paths": [
+        "operations/external_validation/e29_branch_selection_confirmation_gate.json",
+        "operations/external_validation/e30_methodological_route_selection.json",
+        "operations/external_validation/e28r_revenue_mode_branch_registry.json"
+      ],
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "reuse_existing",
+      "status": "canonical",
+      "unique_capability": "Commercial action can be reasoned, not menu-selected.",
+      "what_it_does": "Prevents hardcoding one revenue branch or route while still allowing near-term prioritization."
+    },
+    {
+      "cluster_id": "provider_execution_boundary",
+      "mvp_support": true,
+      "paths": [
+        "gov_mcp/outbound/provider_sandbox.py",
+        "gov_mcp/outbound/live_test_gate.py",
+        "gov_mcp/outbound/live_receipts.py",
+        "gov_mcp/outbound/persistent_idempotency.py",
+        "gov_mcp/outbound/provider_promotion.py"
+      ],
+      "repo": "gov-mcp",
+      "reuse_decision": "reuse_readonly",
+      "status": "canonical",
+      "unique_capability": "Action can be contained before external effects.",
+      "what_it_does": "Separates dry-run, sandbox, live-test, and production live with receipts, idempotency, suppression, compliance, and kill-switch boundaries."
+    },
+    {
+      "cluster_id": "paid_signal_package",
+      "mvp_support": true,
+      "paths": [
+        "operations/external_validation/e31_paid_readiness_review_signal_package.json",
+        "operations/external_validation/e31_real_signal_route_decision.json"
+      ],
+      "repo": "ystar-bridge-labs",
+      "reuse_decision": "wrap_existing",
+      "status": "usable",
+      "unique_capability": "It can become a sample action in the black-box MVP without contacting anyone.",
+      "what_it_does": "Provides a no-send buyer-facing package grounded in public evidence."
+    },
+    {
+      "cluster_id": "historical_company_assets",
+      "mvp_support": true,
+      "paths": [
+        "tiny_evidence_capture_packet/evidence_capture_schema.json",
+        "real_approval_decision_packet_fixture/real_approval_decision_packet_fixture.json",
+        "reports/ceo/brain_dream_diffs"
+      ],
+      "repo": "ystar-company",
+      "reuse_decision": "reuse_readonly_historical",
+      "status": "historical_seed",
+      "unique_capability": "Gives the MVP a long-running philosophical and governance lineage.",
+      "what_it_does": "Stores earlier evidence capture, approval-boundary, and field-functional identity assets."
+    }
+  ],
+  "generated_at": "2026-05-04T00:00:01Z",
+  "gov_mcp_modified": false,
+  "newly_required_wheels": [
+    "base reconciliation artifact",
+    "frontier world model",
+    "world fracture/institutional void map",
+    "existing-player failure map",
+    "Y* unique-fitness analysis",
+    "shock-level MVP selector"
+  ],
+  "newly_required_wheels_count": 6,
+  "repos_scanned": [
+    "ystar-bridge-labs",
+    "gov-mcp",
+    "Y-star-gov",
+    "ystar-company"
+  ],
+  "repos_scanned_count": 4,
+  "reused_wheels": [
+    "CEO KG/brain read model",
+    "CIEU/CZL audit semantics",
+    "host-local repository delivery bridge",
+    "controlled public observation",
+    "claim/evidence binding",
+    "E29/E30 route and branch cognition",
+    "E31 paid readiness signal package",
+    "gov-mcp dry-run/sandbox/live-test/provider boundary",
+    "Y-star-gov deterministic governance kernel",
+    "ystar-company historical approval/evidence seeds"
+  ],
+  "reused_wheels_count": 10,
+  "wrap_or_extend_existing": [
+    "extend CEO KG with frontier/MVP nodes",
+    "wrap E31 signal package as sample action evidence",
+    "wrap gov-mcp provider controls as read-only capability evidence",
+    "wrap branch registry to preserve route optionality"
+  ]
+}

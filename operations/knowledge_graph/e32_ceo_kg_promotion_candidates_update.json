@@ -2,16 +2,16 @@
   "artifact_id": "e32_ceo_kg_promotion_candidates_update",
   "candidates": [
     {
-      "candidate_id": "e32_primary_path_discussion_candidate",
+      "candidate_id": "agent_action_black_box_strategy_candidate",
       "eligible_for_market_truth": false,
-      "promotion_status": "working_only_owner_discussion",
-      "reason": "Business plan is grounded in public evidence and internal capability, but lacks customer validation."
+      "promotion_status": "working_strategy_only",
+      "reason": "Selected MVP is strategy and needs external validation."
     },
     {
-      "candidate_id": "e32_partner_path_reserve_candidate",
-      "eligible_for_market_truth": false,
-      "promotion_status": "working_only_strategic_reserve",
-      "reason": "Partner/channel route is plausible but unvalidated."
+      "candidate_id": "public_frontier_evidence_candidate",
+      "eligible_for_customer_feedback": false,
+      "promotion_status": "public_evidence_only",
+      "reason": "Frontier research is public observation, not customer feedback."
     }
   ],
   "promotion_candidates_count": 2
