@@ -1,0 +1,193 @@
+{
+  "artifact_id": "e34_institutional_void_mapper",
+  "institutional_voids_generated": 12,
+  "mapper_status": "created",
+  "most_important_void": "agent_action_authority",
+  "no_final_product_selected": true,
+  "voids": [
+    {
+      "affected_buyer": "AI operators and security owners",
+      "budget_owner": "AI/security/ops",
+      "commercialization_path_candidates": [
+        "legitimacy audit",
+        "pre-action mandate review",
+        "trust packet"
+      ],
+      "existing_substitutes": "human approval, IAM, SOPs",
+      "possible_y_star_role": "action legitimacy authority layer",
+      "question": "Who authorizes agent action?",
+      "required_proof": "proof buyers trust",
+      "risk": "medium",
+      "urgency": "high",
+      "void_id": "agent_action_authority",
+      "why_substitutes_fail": "They do not prove evidence sufficiency or business legitimacy per action."
+    },
+    {
+      "affected_buyer": "enterprise AI leads",
+      "budget_owner": "security/compliance",
+      "commercialization_path_candidates": [
+        "black-box review",
+        "agent boundary audit"
+      ],
+      "existing_substitutes": "logs, access review",
+      "possible_y_star_role": "scope-exceedance proof record",
+      "question": "Who proves the agent did not exceed authority?",
+      "required_proof": "replay evidence",
+      "risk": "medium",
+      "urgency": "high",
+      "void_id": "authority_exceedance_proof",
+      "why_substitutes_fail": "Logs may not encode declared intent or forbidden classes."
+    },
+    {
+      "affected_buyer": "founders, consultancies, investors",
+      "budget_owner": "sales/trust",
+      "commercialization_path_candidates": [
+        "evidence pack",
+        "work proof review"
+      ],
+      "existing_substitutes": "screenshots, demos",
+      "possible_y_star_role": "no-fake-agent proof object",
+      "question": "Who proves agent work is real?",
+      "required_proof": "buyer trust test",
+      "risk": "low",
+      "urgency": "high",
+      "void_id": "agent_work_reality",
+      "why_substitutes_fail": "Demos can fake progress."
+    },
+    {
+      "affected_buyer": "ops/knowledge leaders",
+      "budget_owner": "knowledge ops",
+      "commercialization_path_candidates": [
+        "memory promotion review"
+      ],
+      "existing_substitutes": "manual review",
+      "possible_y_star_role": "learning eligibility gate",
+      "question": "Who decides whether agent output can enter memory?",
+      "required_proof": "memory incidents",
+      "risk": "medium",
+      "urgency": "medium",
+      "void_id": "organizational_memory_entry",
+      "why_substitutes_fail": "Review lacks evidence lineage."
+    },
+    {
+      "affected_buyer": "AI platform owners",
+      "budget_owner": "AI governance",
+      "commercialization_path_candidates": [
+        "learning audit"
+      ],
+      "existing_substitutes": "post-hoc retros",
+      "possible_y_star_role": "learning boundary registry",
+      "question": "Who determines learning eligibility?",
+      "required_proof": "governance feedback",
+      "risk": "medium",
+      "urgency": "high",
+      "void_id": "learning_eligibility",
+      "why_substitutes_fail": "They may mix public evidence, inference, feedback, and paid signal."
+    },
+    {
+      "affected_buyer": "boards, insurers, auditors",
+      "budget_owner": "risk/audit",
+      "commercialization_path_candidates": [
+        "board/insurance packet"
+      ],
+      "existing_substitutes": "GRC reports",
+      "possible_y_star_role": "agent action evidence dossier",
+      "question": "Who provides proof for insurance, audit, board, compliance, or investor review?",
+      "required_proof": "risk-owner interview",
+      "risk": "high",
+      "urgency": "medium_high",
+      "void_id": "board_audit_insurance_proof",
+      "why_substitutes_fail": "Periodic reports miss action-level context."
+    },
+    {
+      "affected_buyer": "engineering/ops buyers",
+      "budget_owner": "digital labor",
+      "commercialization_path_candidates": [
+        "agent labor review"
+      ],
+      "existing_substitutes": "QA, evals",
+      "possible_y_star_role": "agent labor quality proof",
+      "question": "Who validates agent labor quality?",
+      "required_proof": "buyer interviews",
+      "risk": "medium",
+      "urgency": "high",
+      "void_id": "agent_labor_quality",
+      "why_substitutes_fail": "Eval score does not prove business fitness."
+    },
+    {
+      "affected_buyer": "regulated ops",
+      "budget_owner": "audit/compliance",
+      "commercialization_path_candidates": [
+        "receipt design service"
+      ],
+      "existing_substitutes": "logs/traces",
+      "possible_y_star_role": "chain-of-custody receipt",
+      "question": "Who records chain of custody for autonomous action?",
+      "required_proof": "auditor validation",
+      "risk": "medium",
+      "urgency": "medium_high",
+      "void_id": "autonomous_chain_of_custody",
+      "why_substitutes_fail": "Trace fragments omit authority and business route."
+    },
+    {
+      "affected_buyer": "platform teams",
+      "budget_owner": "protocol ecosystems",
+      "commercialization_path_candidates": [
+        "protocol trust profile"
+      ],
+      "existing_substitutes": "protocol specs",
+      "possible_y_star_role": "delegation proof registry",
+      "question": "Who governs agent-to-agent delegation?",
+      "required_proof": "protocol case research",
+      "risk": "medium",
+      "urgency": "medium",
+      "void_id": "agent_to_agent_delegation",
+      "why_substitutes_fail": "Specs do not create business legitimacy."
+    },
+    {
+      "affected_buyer": "commerce/payment teams",
+      "budget_owner": "payments",
+      "commercialization_path_candidates": [
+        "transaction mandate review"
+      ],
+      "existing_substitutes": "payment auth",
+      "possible_y_star_role": "delegated transaction mandate",
+      "question": "Who governs agent-to-agent payment?",
+      "required_proof": "payment case evidence",
+      "risk": "high",
+      "urgency": "medium_high",
+      "void_id": "agent_to_agent_payment",
+      "why_substitutes_fail": "Human-click assumptions break."
+    },
+    {
+      "affected_buyer": "founders/operators",
+      "budget_owner": "agent company runtime",
+      "commercialization_path_candidates": [
+        "operating room package"
+      ],
+      "existing_substitutes": "manual founder oversight",
+      "possible_y_star_role": "agent company operating doctrine",
+      "question": "Who governs autonomous company operations?",
+      "required_proof": "operator feedback",
+      "risk": "medium",
+      "urgency": "medium",
+      "void_id": "autonomous_company_ops",
+      "why_substitutes_fail": "Manual oversight does not scale."
+    },
+    {
+      "affected_buyer": "insurers/legal/risk",
+      "budget_owner": "insurance/legal",
+      "commercialization_path_candidates": [
+        "underwriting packet"
+      ],
+      "existing_substitutes": "contracts, cyber insurance",
+      "possible_y_star_role": "agent liability evidence bundle",
+      "question": "Who absorbs liability when an agent causes harm?",
+      "required_proof": "insurer feedback",
+      "risk": "high",
+      "urgency": "high",
+      "void_id": "agent_liability_allocation",
+      "why_substitutes_fail": "Contracts may not map action evidence."
+    }
+  ]
+}

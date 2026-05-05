@@ -1,0 +1,141 @@
+{
+  "artifact_id": "e34_primitive_shift_detector",
+  "detector_status": "created",
+  "future_generation_rule": "From each future case, extract old primitive, new primitive, destabilized category, new trust/control problem, possible buyer budget, Y* response, and evidence requirement.",
+  "most_important_primitive_shift": "software tool -> accountable economic actor",
+  "primitive_shifts": [
+    {
+      "evidence_requirement": "case evidence plus buyer interviews",
+      "market_category_destabilized": "SaaS, IAM, GRC, automation",
+      "new_buyer_budget_might_emerge": "agent action legitimacy budget",
+      "new_primitive": "accountable economic actor",
+      "new_trust_control_problem": "Who proves the actor was allowed to act?",
+      "old_primitive": "software tool",
+      "possible_y_star_response": "action legitimacy runtime or proof packet",
+      "shift_id": "primitive_shift_01",
+      "why_it_matters": "Tools now initiate delegated work, not merely wait for clicks."
+    },
+    {
+      "evidence_requirement": "observed deployments and failure modes",
+      "market_category_destabilized": "workflow automation",
+      "new_buyer_budget_might_emerge": "automation risk/audit budget",
+      "new_primitive": "autonomous action chain",
+      "new_trust_control_problem": "How is chain-of-custody preserved?",
+      "old_primitive": "workflow",
+      "possible_y_star_response": "chain-of-custody receipts",
+      "shift_id": "primitive_shift_02",
+      "why_it_matters": "Multi-step workflows can decide and act across systems."
+    },
+    {
+      "evidence_requirement": "buyer willingness evidence",
+      "market_category_destabilized": "HR, BPO, SaaS seats",
+      "new_buyer_budget_might_emerge": "agent labor operations budget",
+      "new_primitive": "digital labor unit",
+      "new_trust_control_problem": "How is agent labor quality proven?",
+      "old_primitive": "employee seat",
+      "possible_y_star_response": "agent work proof ledger",
+      "shift_id": "primitive_shift_03",
+      "why_it_matters": "Agent labor may be bought, governed, and evaluated like workforce capacity."
+    },
+    {
+      "evidence_requirement": "identity/security case studies",
+      "market_category_destabilized": "IAM/security",
+      "new_buyer_budget_might_emerge": "non-human identity governance budget",
+      "new_primitive": "delegated agency",
+      "new_trust_control_problem": "Who scopes and reviews delegated intent?",
+      "old_primitive": "permission",
+      "possible_y_star_response": "delegated-action contract layer",
+      "shift_id": "primitive_shift_04",
+      "why_it_matters": "Authority is no longer just access; it is scoped intent to act."
+    },
+    {
+      "evidence_requirement": "auditor feedback",
+      "market_category_destabilized": "observability",
+      "new_buyer_budget_might_emerge": "audit/readiness budget",
+      "new_primitive": "accountability record",
+      "new_trust_control_problem": "What is enough to satisfy audit/board review?",
+      "old_primitive": "log",
+      "possible_y_star_response": "flight-recorder proof object",
+      "shift_id": "primitive_shift_05",
+      "why_it_matters": "A log becomes insufficient unless it proves intent, boundary, evidence, and residual."
+    },
+    {
+      "evidence_requirement": "buyer review",
+      "market_category_destabilized": "sales engineering",
+      "new_buyer_budget_might_emerge": "sales assurance / due diligence budget",
+      "new_primitive": "economic proof",
+      "new_trust_control_problem": "What counts as credible proof?",
+      "old_primitive": "demo",
+      "possible_y_star_response": "no-fake-agent evidence packet",
+      "shift_id": "primitive_shift_06",
+      "why_it_matters": "Demos need proof that work is real and not narrative theater."
+    },
+    {
+      "evidence_requirement": "protocol ecosystem cases",
+      "market_category_destabilized": "API/platform ecosystems",
+      "new_buyer_budget_might_emerge": "protocol compliance budget",
+      "new_primitive": "protocol-mediated delegation",
+      "new_trust_control_problem": "Who governs cross-agent delegation?",
+      "old_primitive": "integration",
+      "possible_y_star_response": "delegation registry or test harness",
+      "shift_id": "primitive_shift_07",
+      "why_it_matters": "Protocols let agents delegate across organizations."
+    },
+    {
+      "evidence_requirement": "risk-owner feedback",
+      "market_category_destabilized": "GRC",
+      "new_buyer_budget_might_emerge": "agent governance budget",
+      "new_primitive": "real-time action legitimacy",
+      "new_trust_control_problem": "Who decides before action?",
+      "old_primitive": "compliance",
+      "possible_y_star_response": "pre-action legitimacy scoring",
+      "shift_id": "primitive_shift_08",
+      "why_it_matters": "Compliance moves from periodic checklist to per-action decision."
+    },
+    {
+      "evidence_requirement": "case observations",
+      "market_category_destabilized": "customer support",
+      "new_buyer_budget_might_emerge": "CX automation budget",
+      "new_primitive": "autonomous service resolution",
+      "new_trust_control_problem": "Who proves resolution quality and authority?",
+      "old_primitive": "support ticket",
+      "possible_y_star_response": "service resolution proof",
+      "shift_id": "primitive_shift_09",
+      "why_it_matters": "Agents can resolve issues instead of only triaging."
+    },
+    {
+      "evidence_requirement": "engineering leader interviews",
+      "market_category_destabilized": "software engineering platforms",
+      "new_buyer_budget_might_emerge": "engineering productivity/risk budget",
+      "new_primitive": "autonomous software worker",
+      "new_trust_control_problem": "Who owns quality and risk?",
+      "old_primitive": "code assistant",
+      "possible_y_star_response": "PR-quality agent work proof",
+      "shift_id": "primitive_shift_10",
+      "why_it_matters": "Code agents may open, test, modify, and ship changes."
+    },
+    {
+      "evidence_requirement": "enterprise case research",
+      "market_category_destabilized": "enterprise operations",
+      "new_buyer_budget_might_emerge": "agent sprawl governance budget",
+      "new_primitive": "non-human operational workforce",
+      "new_trust_control_problem": "Who inventories, supervises, and audits?",
+      "old_primitive": "enterprise automation",
+      "possible_y_star_response": "agent workforce operating room",
+      "shift_id": "primitive_shift_11",
+      "why_it_matters": "Many agents become a shadow workforce."
+    },
+    {
+      "evidence_requirement": "owner/risk review",
+      "market_category_destabilized": "legal/ops governance",
+      "new_buyer_budget_might_emerge": "approval tooling/advisory budget",
+      "new_primitive": "reversible delegated mandate",
+      "new_trust_control_problem": "What mandate is valid?",
+      "old_primitive": "approval",
+      "possible_y_star_response": "mandate design review",
+      "shift_id": "primitive_shift_12",
+      "why_it_matters": "Approval must specify scope, rollback, residual, and learning rules."
+    }
+  ],
+  "primitive_shifts_identified": 12
+}

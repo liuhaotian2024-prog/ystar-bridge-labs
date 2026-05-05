@@ -1,0 +1,64 @@
+{
+  "artifact_id": "e34_frontier_case_archaeology_methodology",
+  "case_categories_supported": [
+    "AI customer operations transformation",
+    "AI software engineering agents",
+    "AI legal/professional-service agents",
+    "GUI/computer-use agents",
+    "agent protocol ecosystems",
+    "agent payment/commerce systems",
+    "enterprise agent platforms",
+    "agent failures / accidents / near-misses",
+    "governance risk audit insurance trust infrastructure"
+  ],
+  "case_categories_supported_count": 9,
+  "case_schema": {
+    "case_id": "",
+    "category": "",
+    "evidence_needed_before_acting": [],
+    "evidence_status": "empty_schema_until_future_case_research",
+    "new_control_problem": "",
+    "new_economic_actor": "",
+    "non_obvious_opportunity": "",
+    "old_institution_insufficient": "",
+    "possible_market_category": "",
+    "possible_y_star_mapping": "",
+    "primitive_changed": "",
+    "role_transformed": "",
+    "source_artifacts_or_sources": [],
+    "trust_gap": "",
+    "visible_buyer_pain": "",
+    "y_star_lacks": ""
+  },
+  "extraction_dimensions": [
+    "what primitive changed",
+    "what human or organizational role was transformed",
+    "what new control problem appeared",
+    "what new economic actor appeared",
+    "what old institutions became insufficient",
+    "what buyer pain became visible",
+    "what trust gap emerged",
+    "what new market category might form",
+    "what Y* capability might map to it",
+    "what Y* currently lacks",
+    "what non-obvious opportunity is inspired",
+    "what evidence is needed before acting"
+  ],
+  "extraction_dimensions_count": 12,
+  "methodology_status": "created",
+  "not_a_final_opportunity_conclusion": true,
+  "seeded_case_stubs": [
+    {
+      "case_stub_id": "agent_payment_protocol_case",
+      "category": "agent payment/commerce systems",
+      "evidence_status": "future_case_required",
+      "question_to_answer": "What institution proves a delegated transaction was authorized before and accountable after action?"
+    },
+    {
+      "case_stub_id": "ai_software_worker_case",
+      "category": "AI software engineering agents",
+      "evidence_status": "future_case_required",
+      "question_to_answer": "What changes when code contribution shifts from assistant output to autonomous worker action?"
+    }
+  ]
+}

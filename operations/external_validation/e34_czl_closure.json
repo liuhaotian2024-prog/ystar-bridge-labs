@@ -1,0 +1,19 @@
+{
+  "artifact_id": "e34_czl_closure",
+  "customer_contact_occurred": false,
+  "customer_validation_claimed": false,
+  "existing_wheels_rebuilt": false,
+  "historical_inputs_used": true,
+  "message_sent": false,
+  "methodology_upgraded_not_product_selection_only": true,
+  "next_milestone_should_use_new_methodology": true,
+  "paid_signal_claimed": false,
+  "payment_occurred": false,
+  "product_answer_hardcoded": false,
+  "production_live_enabled": false,
+  "production_live_receipt_count": 0,
+  "provider_api_called": false,
+  "published_externally": false,
+  "recommended_next_milestone": "E35_opportunity_creation_and_route_reframing_using_ceo_imagination_runtime",
+  "secret_used": false
+}

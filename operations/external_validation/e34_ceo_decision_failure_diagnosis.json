@@ -1,0 +1,116 @@
+{
+  "artifact_id": "e34_ceo_decision_failure_diagnosis",
+  "correction_principles": [
+    "Start from frontier cases and primitive shifts, not owned artifacts.",
+    "Separate architecture-core from buyer-facing wedge.",
+    "Generate opportunity spaces before product names.",
+    "Use mature trust-system analogies to expand imagination.",
+    "Commercially discipline each imaginative opportunity.",
+    "Label imagination, evidence, hypothesis, and validation separately.",
+    "Audit decision biases before committing to a route."
+  ],
+  "customer_validation_claimed": false,
+  "diagnosis_scope": [
+    "E32-R1",
+    "E33"
+  ],
+  "failure_modes": [
+    {
+      "correction_required": "Force architecture-core vs buyer-wedge separation before route commitment.",
+      "evidence_from_e32_e33": "E32 moved from Y* unique fitness to Black Box quickly; E33 operationalized the artifact rather than widening the imagination space.",
+      "failure_mode": "asset_to_product_bias",
+      "reusable_ceo_reasoning_invariant": "Force architecture-core vs buyer-wedge separation before route commitment.",
+      "severity": "high"
+    },
+    {
+      "correction_required": "Require case archaeology before choosing the sample that represents the company.",
+      "evidence_from_e32_e33": "The E31 paid package was convenient and concrete, so E33 used it as sample action.",
+      "failure_mode": "artifact_convenience_bias",
+      "reusable_ceo_reasoning_invariant": "Require case archaeology before choosing the sample that represents the company.",
+      "severity": "medium_high"
+    },
+    {
+      "correction_required": "Keep safety, but require a separate commercial shock and buyer-pain test.",
+      "evidence_from_e32_e33": "E33 favored friendly walkthrough because it is safe.",
+      "failure_mode": "low_risk_validation_bias",
+      "reusable_ceo_reasoning_invariant": "Keep safety, but require a separate commercial shock and buyer-pain test.",
+      "severity": "medium"
+    },
+    {
+      "correction_required": "Future CEO research must analyze cases, roles transformed, primitives changed, and institutional failures.",
+      "evidence_from_e32_e33": "E31/E32 public sources were useful but category-level; they did not deeply inspect frontier cases.",
+      "failure_mode": "superficial_market_observation",
+      "reusable_ceo_reasoning_invariant": "Future CEO research must analyze cases, roles transformed, primitives changed, and institutional failures.",
+      "severity": "high"
+    },
+    {
+      "correction_required": "Add structured case archaeology with primitive, role, actor, void, pain, and opportunity extraction.",
+      "evidence_from_e32_e33": "E32 described protocol/governance shifts but did not build a reusable case archaeology schema.",
+      "failure_mode": "insufficient_frontier_case_depth",
+      "reusable_ceo_reasoning_invariant": "Add structured case archaeology with primitive, role, actor, void, pain, and opportunity extraction.",
+      "severity": "high"
+    },
+    {
+      "correction_required": "Run analogy transfer before naming market wedges.",
+      "evidence_from_e32_e33": "Black Box analogy was used but not systematically compared with financial audit, SOC2, insurance, PR review, escrow, or chain-of-custody systems.",
+      "failure_mode": "insufficient_analogy_transfer",
+      "reusable_ceo_reasoning_invariant": "Run analogy transfer before naming market wedges.",
+      "severity": "high"
+    },
+    {
+      "correction_required": "Generate broad opportunity spaces before selecting products.",
+      "evidence_from_e32_e33": "E32 generated 5 MVP candidates; the owner wants a much larger strange-but-plausible opportunity space.",
+      "failure_mode": "insufficient_non_obvious_opportunity_generation",
+      "reusable_ceo_reasoning_invariant": "Generate broad opportunity spaces before selecting products.",
+      "severity": "high"
+    },
+    {
+      "correction_required": "Attach commercial reality tests to each opportunity.",
+      "evidence_from_e32_e33": "E33 did not test who has budget, who can say yes quickly, or what would trigger a paid experiment.",
+      "failure_mode": "insufficient_commercial_reality_discipline",
+      "reusable_ceo_reasoning_invariant": "Attach commercial reality tests to each opportunity.",
+      "severity": "medium_high"
+    },
+    {
+      "correction_required": "Separate language hypotheses from evidence and validate only after approval.",
+      "evidence_from_e32_e33": "E33 prepared buyer phrasing but did not compare multiple buyer languages.",
+      "failure_mode": "insufficient_buyer_language_testing",
+      "reusable_ceo_reasoning_invariant": "Separate language hypotheses from evidence and validate only after approval.",
+      "severity": "medium"
+    },
+    {
+      "correction_required": "Require explicit architecture-core, wedge, proof object, and buyer-context mapping.",
+      "evidence_from_e32_e33": "Agent Action Black Box mixes Y* architecture-core with one buyer-facing wedge.",
+      "failure_mode": "architecture_core_vs_market_wedge_blur",
+      "reusable_ceo_reasoning_invariant": "Require explicit architecture-core, wedge, proof object, and buyer-context mapping.",
+      "severity": "high"
+    },
+    {
+      "correction_required": "Require opportunity categories beyond audit, dashboard, preflight, and review.",
+      "evidence_from_e32_e33": "The path narrowed around audit/review/black-box vocabulary.",
+      "failure_mode": "insufficient_imagination_expansion",
+      "reusable_ceo_reasoning_invariant": "Require opportunity categories beyond audit, dashboard, preflight, and review.",
+      "severity": "high"
+    },
+    {
+      "correction_required": "Ask what new institution mediates agent labor, delegated action, proof, liability, and learning.",
+      "evidence_from_e32_e33": "Prior artifacts did not fully ask what economic/institutional category Y* could create.",
+      "failure_mode": "failure_to_ask_new_category",
+      "reusable_ceo_reasoning_invariant": "Ask what new institution mediates agent labor, delegated action, proof, liability, and learning.",
+      "severity": "high"
+    }
+  ],
+  "major_shallow_reasoning_failure_modes_found": [
+    "asset_to_product_bias",
+    "artifact_convenience_bias",
+    "superficial_market_observation",
+    "insufficient_frontier_case_depth",
+    "insufficient_analogy_transfer",
+    "insufficient_non_obvious_opportunity_generation",
+    "insufficient_commercial_reality_discipline",
+    "architecture_core_vs_market_wedge_blur",
+    "insufficient_imagination_expansion",
+    "failure_to_ask_new_category"
+  ],
+  "paid_signal_claimed": false
+}

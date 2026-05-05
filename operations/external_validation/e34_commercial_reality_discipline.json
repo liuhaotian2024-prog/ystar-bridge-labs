@@ -1,0 +1,655 @@
+{
+  "artifact_id": "e34_commercial_reality_discipline",
+  "biggest_credibility_gap": "No buyer interview, meeting request, paid experiment, or customer validation exists yet.",
+  "discipline_status": "created",
+  "opportunity_tests": [
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "medium",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_01",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "AI/security/ops",
+      "who_has_pain_now": "AI operators and security owners",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "high",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_02",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "security/compliance",
+      "who_has_pain_now": "enterprise AI leads",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "high",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_03",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "sales/trust",
+      "who_has_pain_now": "founders, consultancies, investors",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "high",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_04",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "knowledge ops",
+      "who_has_pain_now": "ops/knowledge leaders",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "medium",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_05",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "AI governance",
+      "who_has_pain_now": "AI platform owners",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "medium",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_06",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "risk/audit",
+      "who_has_pain_now": "boards, insurers, auditors",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "high",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_07",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "digital labor",
+      "who_has_pain_now": "engineering/ops buyers",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "high",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_08",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "audit/compliance",
+      "who_has_pain_now": "regulated ops",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "high",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_09",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "protocol ecosystems",
+      "who_has_pain_now": "platform teams",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "medium",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_10",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "payments",
+      "who_has_pain_now": "commerce/payment teams",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "medium",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_11",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "agent company runtime",
+      "who_has_pain_now": "founders/operators",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "high",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_12",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "insurance/legal",
+      "who_has_pain_now": "insurers/legal/risk",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "high",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_13",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "AI/security/ops",
+      "who_has_pain_now": "AI operators and security owners",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "high",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_14",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "security/compliance",
+      "who_has_pain_now": "enterprise AI leads",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "medium",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_15",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "sales/trust",
+      "who_has_pain_now": "founders, consultancies, investors",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "medium",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_16",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "knowledge ops",
+      "who_has_pain_now": "ops/knowledge leaders",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "high",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_17",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "AI governance",
+      "who_has_pain_now": "AI platform owners",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "high",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_18",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "risk/audit",
+      "who_has_pain_now": "boards, insurers, auditors",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "high",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_19",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "digital labor",
+      "who_has_pain_now": "engineering/ops buyers",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "medium",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_20",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "audit/compliance",
+      "who_has_pain_now": "regulated ops",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "medium",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_21",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "protocol ecosystems",
+      "who_has_pain_now": "platform teams",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    },
+    {
+      "agent_team_can_do_autonomously": [
+        "prepare packets",
+        "run internal scoring",
+        "generate owner-ready validation materials"
+      ],
+      "cheapest_credible_proof": "one concrete historical-action packet plus one owner-approved expert review",
+      "commercial_readiness": "promising_hypothesis_not_validated",
+      "evidence_strength": "historical_internal_plus_public_observation_only",
+      "imagination_quality": "high",
+      "implementation_readiness": "packet_or_method_ready",
+      "opportunity_id": "opportunity_space_22",
+      "owner_effort_minimized_by": "agent team prepares packet, script, questions, and feedback capture",
+      "owner_effort_required": "approve reviewer profile/message/route only",
+      "requires_explicit_owner_approval": [
+        "external contact",
+        "publication",
+        "paid offer",
+        "partner validation"
+      ],
+      "validation_readiness": "requires_owner_approved_external_review",
+      "who_can_pay_for_review_service_pilot": "AI consultancy, AI operator, or enterprise AI implementation lead if pain is concrete",
+      "who_can_say_yes_quickly": "founder/operator/consultancy lead for service-first paths; risk owner for infrastructure paths",
+      "who_has_budget": "payments",
+      "who_has_pain_now": "commerce/payment teams",
+      "would_be_dismissed_as_abstract": "naming a new institution without showing an action, proof object, and buyer trigger",
+      "would_trigger_real_meeting": "clear before/after artifact tied to liability, audit, budget, or failed-agent-action pain",
+      "would_trigger_small_paid_experiment": "buyer asks Y* to review one real proposed agent action or agent workflow"
+    }
+  ],
+  "opportunity_tests_count": 22,
+  "owner_burden_reduction_exists": true,
+  "separation": {
+    "commercial_readiness": "budget owner and meeting trigger clarity",
+    "evidence_strength": "public/internal evidence only unless buyer feedback exists",
+    "imagination_quality": "quality of non-obvious opportunity framing",
+    "implementation_readiness": "ability to create credible proof artifact",
+    "validation_readiness": "owner-approved path to external reality"
+  },
+  "strongest_near_term_commercial_pattern": "service-first proof/review around one concrete agent action or delegated-agent workflow, while keeping broader institution-building options open"
+}

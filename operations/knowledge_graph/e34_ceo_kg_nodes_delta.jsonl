@@ -1,0 +1,11 @@
+{"evidence_status": "methodology", "label": "Strategic imagination runtime", "node_id": "e34_strategic_imagination_runtime", "node_type": "CEOCapability"}
+{"evidence_status": "methodology", "label": "E32/E33 shallow reasoning diagnosis", "node_id": "e34_decision_failure_diagnosis", "node_type": "DecisionQualityAudit"}
+{"evidence_status": "methodology", "label": "Frontier case archaeology", "node_id": "e34_frontier_case_archaeology", "node_type": "Methodology"}
+{"evidence_status": "methodology", "label": "Primitive shift detector", "node_id": "e34_primitive_shift_detector", "node_type": "Methodology"}
+{"evidence_status": "methodology", "label": "Institutional void mapper", "node_id": "e34_institutional_void_mapper", "node_type": "Methodology"}
+{"evidence_status": "methodology", "label": "Analogy transfer engine", "node_id": "e34_analogy_transfer_engine", "node_type": "Methodology"}
+{"evidence_status": "imagination", "label": "22 opportunity spaces", "node_id": "e34_non_obvious_opportunity_spaces", "node_type": "OpportunitySpaceSet"}
+{"evidence_status": "methodology", "label": "Commercial reality discipline", "node_id": "e34_commercial_reality_discipline", "node_type": "CommercialDiscipline"}
+{"evidence_status": "methodology", "label": "Imagination-to-decision protocol", "node_id": "e34_imagination_to_decision_protocol", "node_type": "ReasoningInvariant"}
+{"evidence_status": "evidence_boundary", "label": "E34 is not customer validation", "node_id": "e34_not_customer_validation", "node_type": "EvidenceBoundary"}
+{"evidence_status": "owner_decision_pending", "label": "Run opportunity creation using new methodology", "node_id": "e34_next_horizon", "node_type": "NextDecisionHorizon"}

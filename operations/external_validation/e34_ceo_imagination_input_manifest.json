@@ -1,0 +1,110 @@
+{
+  "actual_local_head": "166c8a5f4dde87d35d8dc074ed98e7b302772f54",
+  "actual_remote_tracking_head": "166c8a5f4dde87d35d8dc074ed98e7b302772f54",
+  "artifact_id": "e34_ceo_imagination_input_manifest",
+  "blocked_reason": "",
+  "can_proceed": true,
+  "current_branch": "backflow/aiden-ceo-meeting-room",
+  "e31_receipt_count": 8,
+  "e32_primary_fracture": "agent_action_legitimacy_gap",
+  "e32_selected_mvp_historical_only": "mvp_agent_action_black_box",
+  "e33_no_fake_evidence_audit_status": "passed",
+  "e33_packet_status": "created_no_send",
+  "expected_base_head": "166c8a5f4dde87d35d8dc074ed98e7b302772f54",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "historical_inputs": [
+    {
+      "artifact_id": "e31_real_world_observation_receipts",
+      "exists": true,
+      "path": "operations/external_validation/e31_real_world_observation_receipts.json",
+      "receipt_count": 8
+    },
+    {
+      "artifact_id": "e31_paid_readiness_review_signal_package",
+      "exists": true,
+      "package_created": true,
+      "path": "operations/external_validation/e31_paid_readiness_review_signal_package.json"
+    },
+    {
+      "artifact_id": "e31_offer_claim_register",
+      "customer_feedback_claimed": false,
+      "exists": true,
+      "paid_signal_claimed": false,
+      "path": "operations/external_validation/e31_offer_claim_register.json"
+    },
+    {
+      "artifact_id": "e31_czl_closure",
+      "customer_contact_occurred": false,
+      "exists": true,
+      "message_sent": false,
+      "path": "operations/external_validation/e31_czl_closure.json",
+      "production_live_enabled": false,
+      "provider_send_api_called": false
+    },
+    {
+      "artifact_id": "e32_frontier_world_model",
+      "exists": true,
+      "path": "operations/external_validation/e32_frontier_world_model.json"
+    },
+    {
+      "artifact_id": "e32_world_fracture_institutional_void_map",
+      "exists": true,
+      "path": "operations/external_validation/e32_world_fracture_institutional_void_map.json"
+    },
+    {
+      "artifact_id": "e32_shock_level_mvp_candidates",
+      "exists": true,
+      "path": "operations/external_validation/e32_shock_level_mvp_candidates.json"
+    },
+    {
+      "artifact_id": "e32_shock_level_mvp_selection",
+      "exists": true,
+      "path": "operations/external_validation/e32_shock_level_mvp_selection.json",
+      "selected_mvp": "mvp_agent_action_black_box"
+    },
+    {
+      "artifact_id": "e32_y_star_unique_fitness_analysis",
+      "exists": true,
+      "path": "operations/external_validation/e32_y_star_unique_fitness_analysis.json"
+    },
+    {
+      "artifact_id": "e33_agent_action_black_box_demo_packet",
+      "exists": true,
+      "packet_status": "created_no_send",
+      "path": "operations/external_validation/e33_agent_action_black_box_demo_packet.json"
+    },
+    {
+      "artifact_id": "e33_black_box_no_fake_evidence_audit",
+      "audit_status": "passed",
+      "customer_contact_occurred": false,
+      "customer_feedback_claimed": false,
+      "exists": true,
+      "paid_signal_claimed": false,
+      "path": "operations/external_validation/e33_black_box_no_fake_evidence_audit.json"
+    },
+    {
+      "artifact_id": "e33_owner_validation_route",
+      "exists": true,
+      "path": "operations/external_validation/e33_owner_validation_route.json",
+      "route_status": "prepared_not_executed"
+    },
+    {
+      "artifact_id": "e33_ceo_brain_black_box_update",
+      "exists": true,
+      "path": "operations/external_validation/e33_ceo_brain_black_box_update.json"
+    },
+    {
+      "exists": true,
+      "line_count": 7,
+      "path": "operations/knowledge_graph/e33_ceo_kg_nodes_delta.jsonl"
+    },
+    {
+      "exists": true,
+      "line_count": 9,
+      "path": "operations/knowledge_graph/e33_ceo_kg_edges_delta.jsonl"
+    }
+  ],
+  "historical_inputs_all_present": true,
+  "use_of_inputs": "historical_inputs_only_not_fixed_menu_or_product_answer",
+  "working_tree_clean": true
+}

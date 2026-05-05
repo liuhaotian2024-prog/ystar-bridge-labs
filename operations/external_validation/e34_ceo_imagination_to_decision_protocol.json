@@ -1,0 +1,25 @@
+{
+  "architecture_core_vs_buyer_wedge_required": true,
+  "artifact_id": "e34_ceo_imagination_to_decision_protocol",
+  "decision_output_rule": "Future milestones may select a route only after the checks are satisfied and evidence/imagination/hypothesis labels remain explicit.",
+  "evidence_vs_imagination_separation_required": true,
+  "invariant_checks": [
+    "frontier case evidence check",
+    "primitive shift check",
+    "institutional void check",
+    "analogy transfer check",
+    "non-obvious opportunity check",
+    "commercial reality check",
+    "owner burden check",
+    "no-fake-evidence check",
+    "architecture-core vs buyer-wedge separation",
+    "decision bias audit",
+    "evidence vs imagination separation",
+    "next-action reversibility check"
+  ],
+  "invariant_checks_count": 12,
+  "no_fake_evidence_required": true,
+  "no_hardcoded_route_menu": true,
+  "protocol_status": "created",
+  "reversibility_required": true
+}

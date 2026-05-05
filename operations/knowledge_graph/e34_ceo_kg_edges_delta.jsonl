@@ -1,0 +1,12 @@
+{"relation": "diagnosed_by", "source": "e32_shock_level_mvp_selection", "target": "e34_decision_failure_diagnosis"}
+{"relation": "historical_input_to", "source": "e33_agent_action_black_box_demo_packet", "target": "e34_decision_failure_diagnosis"}
+{"relation": "requires", "source": "e34_decision_failure_diagnosis", "target": "e34_strategic_imagination_runtime"}
+{"relation": "feeds", "source": "e34_frontier_case_archaeology", "target": "e34_primitive_shift_detector"}
+{"relation": "feeds", "source": "e34_primitive_shift_detector", "target": "e34_institutional_void_mapper"}
+{"relation": "expands", "source": "e34_analogy_transfer_engine", "target": "e34_non_obvious_opportunity_spaces"}
+{"relation": "disciplined_by", "source": "e34_non_obvious_opportunity_spaces", "target": "e34_commercial_reality_discipline"}
+{"relation": "gated_by", "source": "e34_commercial_reality_discipline", "target": "e34_imagination_to_decision_protocol"}
+{"relation": "updates", "source": "e34_imagination_to_decision_protocol", "target": "e34_next_horizon"}
+{"relation": "bounds", "source": "e34_not_customer_validation", "target": "e34_non_obvious_opportunity_spaces"}
+{"relation": "updates", "source": "e34_strategic_imagination_runtime", "target": "CEO brain"}
+{"relation": "does_not_replace", "source": "e34_strategic_imagination_runtime", "target": "CEO KG"}

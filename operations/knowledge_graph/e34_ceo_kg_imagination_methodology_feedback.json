@@ -1,0 +1,14 @@
+{
+  "artifact_id": "e34_ceo_kg_imagination_methodology_feedback",
+  "canonical_learning_promoted": false,
+  "customer_validation_claimed": false,
+  "evidence_labeled": true,
+  "hypothesis_labeled": true,
+  "imagination_labeled": true,
+  "kg_delta_edges": 12,
+  "kg_delta_nodes": 11,
+  "methodology_labeled": true,
+  "new_ceo_capability": "strategic_imagination_runtime",
+  "paid_signal_claimed": false,
+  "required_reasoning_invariant": "imagination_to_decision_protocol"
+}
