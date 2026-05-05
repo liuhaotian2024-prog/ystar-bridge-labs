@@ -1,0 +1,16 @@
+{
+  "artifact_id": "e35_ceo_kg_read_model_update",
+  "current_bottleneck": "CEO needs evidence-seeking and route-selection over the expanded opportunity field without collapsing examples into routes.",
+  "customer_validation_claimed": false,
+  "new_ceo_faculties": [
+    "logical_causal",
+    "innovation_invention",
+    "strategic",
+    "systems",
+    "human_emotional_relational",
+    "execution_commercial"
+  ],
+  "next_decision_horizon": "E36_evidence_seeking_and_route_selection_on_expanded_opportunity_field_under_owner_approval",
+  "opportunity_field_count": 60,
+  "paid_signal_claimed": false
+}

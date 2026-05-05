@@ -1,0 +1,374 @@
+{
+  "artifact_id": "e35_multi_hop_abstraction_jump_engine",
+  "deepest_jump_examples": [
+    "healthier waking -> trusted adaptive transition infrastructure",
+    "AI workflow yield recovery -> proof of useful transition",
+    "agent labor marketplace trust -> institution for digital work legitimacy"
+  ],
+  "hop_records": [
+    {
+      "capability_transfer": [
+        "intent modeling",
+        "residual learning",
+        "evidence binding"
+      ],
+      "commercial_plausibility": "hypothesis_only",
+      "emotional_user_insight": "people pay when a painful transition becomes calmer, legible, and repeatable",
+      "evidence_needed": [
+        "user interviews",
+        "behavior observation",
+        "would-pay signal"
+      ],
+      "generated_from_phase_3_4": true,
+      "hop_count": 8,
+      "hop_ladder": [
+        "surface object: healthier waking / alarm / light",
+        "user experience: reduce friction during a fragile transition",
+        "behavior pattern: intention repeatedly fails at the moment of action",
+        "human/system state: anxiety, fatigue, ambiguity, or coordination overload",
+        "system shift: adaptive agentic assistance enters a daily/organizational loop",
+        "economic primitive: proof of useful transition becomes valuable",
+        "institutional/human gap: who verifies the intervention worked without fake progress",
+        "future category: trusted adaptive transition infrastructure"
+      ],
+      "new_capability_required": [
+        "domain sensing",
+        "interaction design",
+        "buyer validation"
+      ],
+      "owner_example_probe": true,
+      "seed_theme": "healthier waking / alarm / light",
+      "status": "hypothesis_probe",
+      "surprising_opportunity_revealed": "healthier waking / alarm / light as evidence-bound transition support, not just a tool"
+    },
+    {
+      "capability_transfer": [
+        "intent modeling",
+        "residual learning",
+        "evidence binding"
+      ],
+      "commercial_plausibility": "hypothesis_only",
+      "emotional_user_insight": "people pay when a painful transition becomes calmer, legible, and repeatable",
+      "evidence_needed": [
+        "user interviews",
+        "behavior observation",
+        "would-pay signal"
+      ],
+      "generated_from_phase_3_4": true,
+      "hop_count": 8,
+      "hop_ladder": [
+        "surface object: AI workflow yield recovery",
+        "user experience: reduce friction during a fragile transition",
+        "behavior pattern: intention repeatedly fails at the moment of action",
+        "human/system state: anxiety, fatigue, ambiguity, or coordination overload",
+        "system shift: adaptive agentic assistance enters a daily/organizational loop",
+        "economic primitive: proof of useful transition becomes valuable",
+        "institutional/human gap: who verifies the intervention worked without fake progress",
+        "future category: trusted adaptive transition infrastructure"
+      ],
+      "new_capability_required": [
+        "domain sensing",
+        "interaction design",
+        "buyer validation"
+      ],
+      "owner_example_probe": true,
+      "seed_theme": "AI workflow yield recovery",
+      "status": "hypothesis_probe",
+      "surprising_opportunity_revealed": "AI workflow yield recovery as evidence-bound transition support, not just a tool"
+    },
+    {
+      "capability_transfer": [
+        "intent modeling",
+        "residual learning",
+        "evidence binding"
+      ],
+      "commercial_plausibility": "hypothesis_only",
+      "emotional_user_insight": "people pay when a painful transition becomes calmer, legible, and repeatable",
+      "evidence_needed": [
+        "user interviews",
+        "behavior observation",
+        "would-pay signal"
+      ],
+      "generated_from_phase_3_4": true,
+      "hop_count": 8,
+      "hop_ladder": [
+        "surface object: founder decision transition",
+        "user experience: reduce friction during a fragile transition",
+        "behavior pattern: intention repeatedly fails at the moment of action",
+        "human/system state: anxiety, fatigue, ambiguity, or coordination overload",
+        "system shift: adaptive agentic assistance enters a daily/organizational loop",
+        "economic primitive: proof of useful transition becomes valuable",
+        "institutional/human gap: who verifies the intervention worked without fake progress",
+        "future category: trusted adaptive transition infrastructure"
+      ],
+      "new_capability_required": [
+        "domain sensing",
+        "interaction design",
+        "buyer validation"
+      ],
+      "owner_example_probe": false,
+      "seed_theme": "founder decision transition",
+      "status": "hypothesis_probe",
+      "surprising_opportunity_revealed": "founder decision transition as evidence-bound transition support, not just a tool"
+    },
+    {
+      "capability_transfer": [
+        "intent modeling",
+        "residual learning",
+        "evidence binding"
+      ],
+      "commercial_plausibility": "hypothesis_only",
+      "emotional_user_insight": "people pay when a painful transition becomes calmer, legible, and repeatable",
+      "evidence_needed": [
+        "user interviews",
+        "behavior observation",
+        "would-pay signal"
+      ],
+      "generated_from_phase_3_4": true,
+      "hop_count": 8,
+      "hop_ladder": [
+        "surface object: family routine orchestration",
+        "user experience: reduce friction during a fragile transition",
+        "behavior pattern: intention repeatedly fails at the moment of action",
+        "human/system state: anxiety, fatigue, ambiguity, or coordination overload",
+        "system shift: adaptive agentic assistance enters a daily/organizational loop",
+        "economic primitive: proof of useful transition becomes valuable",
+        "institutional/human gap: who verifies the intervention worked without fake progress",
+        "future category: trusted adaptive transition infrastructure"
+      ],
+      "new_capability_required": [
+        "domain sensing",
+        "interaction design",
+        "buyer validation"
+      ],
+      "owner_example_probe": false,
+      "seed_theme": "family routine orchestration",
+      "status": "hypothesis_probe",
+      "surprising_opportunity_revealed": "family routine orchestration as evidence-bound transition support, not just a tool"
+    },
+    {
+      "capability_transfer": [
+        "intent modeling",
+        "residual learning",
+        "evidence binding"
+      ],
+      "commercial_plausibility": "hypothesis_only",
+      "emotional_user_insight": "people pay when a painful transition becomes calmer, legible, and repeatable",
+      "evidence_needed": [
+        "user interviews",
+        "behavior observation",
+        "would-pay signal"
+      ],
+      "generated_from_phase_3_4": true,
+      "hop_count": 8,
+      "hop_ladder": [
+        "surface object: student growth loop",
+        "user experience: reduce friction during a fragile transition",
+        "behavior pattern: intention repeatedly fails at the moment of action",
+        "human/system state: anxiety, fatigue, ambiguity, or coordination overload",
+        "system shift: adaptive agentic assistance enters a daily/organizational loop",
+        "economic primitive: proof of useful transition becomes valuable",
+        "institutional/human gap: who verifies the intervention worked without fake progress",
+        "future category: trusted adaptive transition infrastructure"
+      ],
+      "new_capability_required": [
+        "domain sensing",
+        "interaction design",
+        "buyer validation"
+      ],
+      "owner_example_probe": false,
+      "seed_theme": "student growth loop",
+      "status": "hypothesis_probe",
+      "surprising_opportunity_revealed": "student growth loop as evidence-bound transition support, not just a tool"
+    },
+    {
+      "capability_transfer": [
+        "intent modeling",
+        "residual learning",
+        "evidence binding"
+      ],
+      "commercial_plausibility": "hypothesis_only",
+      "emotional_user_insight": "people pay when a painful transition becomes calmer, legible, and repeatable",
+      "evidence_needed": [
+        "user interviews",
+        "behavior observation",
+        "would-pay signal"
+      ],
+      "generated_from_phase_3_4": true,
+      "hop_count": 8,
+      "hop_ladder": [
+        "surface object: small business operational memory",
+        "user experience: reduce friction during a fragile transition",
+        "behavior pattern: intention repeatedly fails at the moment of action",
+        "human/system state: anxiety, fatigue, ambiguity, or coordination overload",
+        "system shift: adaptive agentic assistance enters a daily/organizational loop",
+        "economic primitive: proof of useful transition becomes valuable",
+        "institutional/human gap: who verifies the intervention worked without fake progress",
+        "future category: trusted adaptive transition infrastructure"
+      ],
+      "new_capability_required": [
+        "domain sensing",
+        "interaction design",
+        "buyer validation"
+      ],
+      "owner_example_probe": false,
+      "seed_theme": "small business operational memory",
+      "status": "hypothesis_probe",
+      "surprising_opportunity_revealed": "small business operational memory as evidence-bound transition support, not just a tool"
+    },
+    {
+      "capability_transfer": [
+        "intent modeling",
+        "residual learning",
+        "evidence binding"
+      ],
+      "commercial_plausibility": "hypothesis_only",
+      "emotional_user_insight": "people pay when a painful transition becomes calmer, legible, and repeatable",
+      "evidence_needed": [
+        "user interviews",
+        "behavior observation",
+        "would-pay signal"
+      ],
+      "generated_from_phase_3_4": true,
+      "hop_count": 8,
+      "hop_ladder": [
+        "surface object: agent labor marketplace trust",
+        "user experience: reduce friction during a fragile transition",
+        "behavior pattern: intention repeatedly fails at the moment of action",
+        "human/system state: anxiety, fatigue, ambiguity, or coordination overload",
+        "system shift: adaptive agentic assistance enters a daily/organizational loop",
+        "economic primitive: proof of useful transition becomes valuable",
+        "institutional/human gap: who verifies the intervention worked without fake progress",
+        "future category: trusted adaptive transition infrastructure"
+      ],
+      "new_capability_required": [
+        "domain sensing",
+        "interaction design",
+        "buyer validation"
+      ],
+      "owner_example_probe": false,
+      "seed_theme": "agent labor marketplace trust",
+      "status": "hypothesis_probe",
+      "surprising_opportunity_revealed": "agent labor marketplace trust as evidence-bound transition support, not just a tool"
+    },
+    {
+      "capability_transfer": [
+        "intent modeling",
+        "residual learning",
+        "evidence binding"
+      ],
+      "commercial_plausibility": "hypothesis_only",
+      "emotional_user_insight": "people pay when a painful transition becomes calmer, legible, and repeatable",
+      "evidence_needed": [
+        "user interviews",
+        "behavior observation",
+        "would-pay signal"
+      ],
+      "generated_from_phase_3_4": true,
+      "hop_count": 8,
+      "hop_ladder": [
+        "surface object: hardware AI room state interface",
+        "user experience: reduce friction during a fragile transition",
+        "behavior pattern: intention repeatedly fails at the moment of action",
+        "human/system state: anxiety, fatigue, ambiguity, or coordination overload",
+        "system shift: adaptive agentic assistance enters a daily/organizational loop",
+        "economic primitive: proof of useful transition becomes valuable",
+        "institutional/human gap: who verifies the intervention worked without fake progress",
+        "future category: trusted adaptive transition infrastructure"
+      ],
+      "new_capability_required": [
+        "domain sensing",
+        "interaction design",
+        "buyer validation"
+      ],
+      "owner_example_probe": false,
+      "seed_theme": "hardware AI room state interface",
+      "status": "hypothesis_probe",
+      "surprising_opportunity_revealed": "hardware AI room state interface as evidence-bound transition support, not just a tool"
+    },
+    {
+      "capability_transfer": [
+        "intent modeling",
+        "residual learning",
+        "evidence binding"
+      ],
+      "commercial_plausibility": "hypothesis_only",
+      "emotional_user_insight": "people pay when a painful transition becomes calmer, legible, and repeatable",
+      "evidence_needed": [
+        "user interviews",
+        "behavior observation",
+        "would-pay signal"
+      ],
+      "generated_from_phase_3_4": true,
+      "hop_count": 8,
+      "hop_ladder": [
+        "surface object: creator proof-of-work authenticity",
+        "user experience: reduce friction during a fragile transition",
+        "behavior pattern: intention repeatedly fails at the moment of action",
+        "human/system state: anxiety, fatigue, ambiguity, or coordination overload",
+        "system shift: adaptive agentic assistance enters a daily/organizational loop",
+        "economic primitive: proof of useful transition becomes valuable",
+        "institutional/human gap: who verifies the intervention worked without fake progress",
+        "future category: trusted adaptive transition infrastructure"
+      ],
+      "new_capability_required": [
+        "domain sensing",
+        "interaction design",
+        "buyer validation"
+      ],
+      "owner_example_probe": false,
+      "seed_theme": "creator proof-of-work authenticity",
+      "status": "hypothesis_probe",
+      "surprising_opportunity_revealed": "creator proof-of-work authenticity as evidence-bound transition support, not just a tool"
+    },
+    {
+      "capability_transfer": [
+        "intent modeling",
+        "residual learning",
+        "evidence binding"
+      ],
+      "commercial_plausibility": "hypothesis_only",
+      "emotional_user_insight": "people pay when a painful transition becomes calmer, legible, and repeatable",
+      "evidence_needed": [
+        "user interviews",
+        "behavior observation",
+        "would-pay signal"
+      ],
+      "generated_from_phase_3_4": true,
+      "hop_count": 8,
+      "hop_ladder": [
+        "surface object: enterprise agent sprawl control",
+        "user experience: reduce friction during a fragile transition",
+        "behavior pattern: intention repeatedly fails at the moment of action",
+        "human/system state: anxiety, fatigue, ambiguity, or coordination overload",
+        "system shift: adaptive agentic assistance enters a daily/organizational loop",
+        "economic primitive: proof of useful transition becomes valuable",
+        "institutional/human gap: who verifies the intervention worked without fake progress",
+        "future category: trusted adaptive transition infrastructure"
+      ],
+      "new_capability_required": [
+        "domain sensing",
+        "interaction design",
+        "buyer validation"
+      ],
+      "owner_example_probe": false,
+      "seed_theme": "enterprise agent sprawl control",
+      "status": "hypothesis_probe",
+      "surprising_opportunity_revealed": "enterprise agent sprawl control as evidence-bound transition support, not just a tool"
+    }
+  ],
+  "product_selected": false,
+  "seed_theme_count": 10,
+  "seed_themes": [
+    "healthier waking / alarm / light",
+    "AI workflow yield recovery",
+    "founder decision transition",
+    "family routine orchestration",
+    "student growth loop",
+    "small business operational memory",
+    "agent labor marketplace trust",
+    "hardware AI room state interface",
+    "creator proof-of-work authenticity",
+    "enterprise agent sprawl control"
+  ]
+}

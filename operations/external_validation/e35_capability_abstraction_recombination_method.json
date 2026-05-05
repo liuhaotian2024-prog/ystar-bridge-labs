@@ -1,0 +1,318 @@
+{
+  "abstract_capabilities": [
+    {
+      "capability_id": "abstract_capability_01",
+      "deeper_abstract_function": "model what a person/system is trying to make real",
+      "internal_or_buyer_facing": "can become buyer-facing if tied to painful action",
+      "name": "intent modeling",
+      "non_governance_transfer": true,
+      "non_obvious_use_cases": [
+        "intent modeling for sleep",
+        "intent modeling for family routines"
+      ],
+      "original_y_star_use": "governed action packet",
+      "proof_needed": "domain-specific crude demo plus owner-approved evidence-seeking",
+      "required_new_capability": [
+        "intent capture UI"
+      ],
+      "risk_of_overextension": "Y* may mistake an internal primitive for a buyer-facing product before pain is proven.",
+      "transferable_domains": [
+        "sleep",
+        "family routines",
+        "founder decisions"
+      ]
+    },
+    {
+      "capability_id": "abstract_capability_02",
+      "deeper_abstract_function": "bind claims, decisions, or routines to proof",
+      "internal_or_buyer_facing": "buyer-facing as proof pack",
+      "name": "evidence binding",
+      "non_governance_transfer": true,
+      "non_obvious_use_cases": [
+        "evidence binding for education",
+        "evidence binding for creator economy"
+      ],
+      "original_y_star_use": "claim register",
+      "proof_needed": "domain-specific crude demo plus owner-approved evidence-seeking",
+      "required_new_capability": [
+        "source UX"
+      ],
+      "risk_of_overextension": "Y* may mistake an internal primitive for a buyer-facing product before pain is proven.",
+      "transferable_domains": [
+        "education",
+        "creator economy",
+        "professional services"
+      ]
+    },
+    {
+      "capability_id": "abstract_capability_03",
+      "deeper_abstract_function": "make a sequence inspectable",
+      "internal_or_buyer_facing": "internal or buyer-facing",
+      "name": "action trace",
+      "non_governance_transfer": true,
+      "non_obvious_use_cases": [
+        "action trace for AI workflow",
+        "action trace for home automation"
+      ],
+      "original_y_star_use": "Black Box record",
+      "proof_needed": "domain-specific crude demo plus owner-approved evidence-seeking",
+      "required_new_capability": [
+        "trace visualization"
+      ],
+      "risk_of_overextension": "Y* may mistake an internal primitive for a buyer-facing product before pain is proven.",
+      "transferable_domains": [
+        "AI workflow",
+        "home automation",
+        "software teams"
+      ]
+    },
+    {
+      "capability_id": "abstract_capability_04",
+      "deeper_abstract_function": "learn from what remains unresolved",
+      "internal_or_buyer_facing": "mostly internal until privacy solved",
+      "name": "residual learning",
+      "non_governance_transfer": true,
+      "non_obvious_use_cases": [
+        "residual learning for therapy-adjacent habits",
+        "residual learning for student development"
+      ],
+      "original_y_star_use": "CIEU/CZL residuals",
+      "proof_needed": "domain-specific crude demo plus owner-approved evidence-seeking",
+      "required_new_capability": [
+        "sensitive data rules"
+      ],
+      "risk_of_overextension": "Y* may mistake an internal primitive for a buyer-facing product before pain is proven.",
+      "transferable_domains": [
+        "therapy-adjacent habits",
+        "student development",
+        "ops retros"
+      ]
+    },
+    {
+      "capability_id": "abstract_capability_05",
+      "deeper_abstract_function": "separate truth, inference, fantasy, and validation",
+      "internal_or_buyer_facing": "buyer-facing trust layer",
+      "name": "no-fake-evidence classification",
+      "non_governance_transfer": false,
+      "non_obvious_use_cases": [
+        "no-fake-evidence classification for creator claims",
+        "no-fake-evidence classification for student work"
+      ],
+      "original_y_star_use": "E31/E33 audits",
+      "proof_needed": "domain-specific crude demo plus owner-approved evidence-seeking",
+      "required_new_capability": [
+        "buyer-friendly labels"
+      ],
+      "risk_of_overextension": "Y* may mistake an internal primitive for a buyer-facing product before pain is proven.",
+      "transferable_domains": [
+        "creator claims",
+        "student work",
+        "AI demos"
+      ]
+    },
+    {
+      "capability_id": "abstract_capability_06",
+      "deeper_abstract_function": "reduce risk before external effect",
+      "internal_or_buyer_facing": "internal control or buyer feature",
+      "name": "owner approval boundaries",
+      "non_governance_transfer": false,
+      "non_obvious_use_cases": [
+        "owner approval boundaries for families",
+        "owner approval boundaries for SMB workflows"
+      ],
+      "original_y_star_use": "validation route",
+      "proof_needed": "domain-specific crude demo plus owner-approved evidence-seeking",
+      "required_new_capability": [
+        "approval UX"
+      ],
+      "risk_of_overextension": "Y* may mistake an internal primitive for a buyer-facing product before pain is proven.",
+      "transferable_domains": [
+        "families",
+        "SMB workflows",
+        "enterprise pilots"
+      ]
+    },
+    {
+      "capability_id": "abstract_capability_07",
+      "deeper_abstract_function": "compare paths without collapsing to menu",
+      "internal_or_buyer_facing": "buyer-facing decision co-pilot",
+      "name": "route registry",
+      "non_governance_transfer": true,
+      "non_obvious_use_cases": [
+        "route registry for founder strategy",
+        "route registry for career decisions"
+      ],
+      "original_y_star_use": "commercial route artifacts",
+      "proof_needed": "domain-specific crude demo plus owner-approved evidence-seeking",
+      "required_new_capability": [
+        "domain-specific options"
+      ],
+      "risk_of_overextension": "Y* may mistake an internal primitive for a buyer-facing product before pain is proven.",
+      "transferable_domains": [
+        "founder strategy",
+        "career decisions",
+        "household operations"
+      ]
+    },
+    {
+      "capability_id": "abstract_capability_08",
+      "deeper_abstract_function": "generate opportunity space before product",
+      "internal_or_buyer_facing": "service-first",
+      "name": "strategic imagination runtime",
+      "non_governance_transfer": false,
+      "non_obvious_use_cases": [
+        "strategic imagination runtime for founders",
+        "strategic imagination runtime for consultants"
+      ],
+      "original_y_star_use": "E34 methodology",
+      "proof_needed": "domain-specific crude demo plus owner-approved evidence-seeking",
+      "required_new_capability": [
+        "workshop format"
+      ],
+      "risk_of_overextension": "Y* may mistake an internal primitive for a buyer-facing product before pain is proven.",
+      "transferable_domains": [
+        "founders",
+        "consultants",
+        "product teams"
+      ]
+    },
+    {
+      "capability_id": "abstract_capability_09",
+      "deeper_abstract_function": "learn from the world without contact or fake validation",
+      "internal_or_buyer_facing": "service or tool",
+      "name": "external observation discipline",
+      "non_governance_transfer": true,
+      "non_obvious_use_cases": [
+        "external observation discipline for market research",
+        "external observation discipline for education"
+      ],
+      "original_y_star_use": "E31 observation",
+      "proof_needed": "domain-specific crude demo plus owner-approved evidence-seeking",
+      "required_new_capability": [
+        "source selection"
+      ],
+      "risk_of_overextension": "Y* may mistake an internal primitive for a buyer-facing product before pain is proven.",
+      "transferable_domains": [
+        "market research",
+        "education",
+        "consumer product discovery"
+      ]
+    },
+    {
+      "capability_id": "abstract_capability_10",
+      "deeper_abstract_function": "decide what should update memory",
+      "internal_or_buyer_facing": "buyer-facing where memory risk matters",
+      "name": "learning eligibility",
+      "non_governance_transfer": false,
+      "non_obvious_use_cases": [
+        "learning eligibility for student learning",
+        "learning eligibility for company knowledge"
+      ],
+      "original_y_star_use": "KG promotion gates",
+      "proof_needed": "domain-specific crude demo plus owner-approved evidence-seeking",
+      "required_new_capability": [
+        "memory policy"
+      ],
+      "risk_of_overextension": "Y* may mistake an internal primitive for a buyer-facing product before pain is proven.",
+      "transferable_domains": [
+        "student learning",
+        "company knowledge",
+        "personal habits"
+      ]
+    },
+    {
+      "capability_id": "abstract_capability_11",
+      "deeper_abstract_function": "let action be rehearsed before reality",
+      "internal_or_buyer_facing": "buyer-facing demo/pilot",
+      "name": "action containment",
+      "non_governance_transfer": false,
+      "non_obvious_use_cases": [
+        "action containment for home devices",
+        "action containment for AI workflows"
+      ],
+      "original_y_star_use": "sandbox/live block",
+      "proof_needed": "domain-specific crude demo plus owner-approved evidence-seeking",
+      "required_new_capability": [
+        "simulation layer"
+      ],
+      "risk_of_overextension": "Y* may mistake an internal primitive for a buyer-facing product before pain is proven.",
+      "transferable_domains": [
+        "home devices",
+        "AI workflows",
+        "service ops"
+      ]
+    },
+    {
+      "capability_id": "abstract_capability_12",
+      "deeper_abstract_function": "model rhythms and state transitions",
+      "internal_or_buyer_facing": "future capability, not current claim",
+      "name": "behavior waveform",
+      "non_governance_transfer": false,
+      "non_obvious_use_cases": [
+        "behavior waveform for sleep/wake",
+        "behavior waveform for motivation"
+      ],
+      "original_y_star_use": "historical behavior analysis if found",
+      "proof_needed": "domain-specific crude demo plus owner-approved evidence-seeking",
+      "required_new_capability": [
+        "sensing and consent"
+      ],
+      "risk_of_overextension": "Y* may mistake an internal primitive for a buyer-facing product before pain is proven.",
+      "transferable_domains": [
+        "sleep/wake",
+        "motivation",
+        "family rituals"
+      ]
+    },
+    {
+      "capability_id": "abstract_capability_13",
+      "deeper_abstract_function": "turn imagination into budget-tested action",
+      "internal_or_buyer_facing": "service-first",
+      "name": "commercial reality discipline",
+      "non_governance_transfer": false,
+      "non_obvious_use_cases": [
+        "commercial reality discipline for founders",
+        "commercial reality discipline for consultancies"
+      ],
+      "original_y_star_use": "E34 discipline",
+      "proof_needed": "domain-specific crude demo plus owner-approved evidence-seeking",
+      "required_new_capability": [
+        "buyer interview path"
+      ],
+      "risk_of_overextension": "Y* may mistake an internal primitive for a buyer-facing product before pain is proven.",
+      "transferable_domains": [
+        "founders",
+        "consultancies",
+        "product managers"
+      ]
+    },
+    {
+      "capability_id": "abstract_capability_14",
+      "deeper_abstract_function": "preserve learning without overwriting truth",
+      "internal_or_buyer_facing": "internal then buyer-facing",
+      "name": "KG delta memory",
+      "non_governance_transfer": true,
+      "non_obvious_use_cases": [
+        "KG delta memory for education",
+        "KG delta memory for company ops"
+      ],
+      "original_y_star_use": "CEO KG deltas",
+      "proof_needed": "domain-specific crude demo plus owner-approved evidence-seeking",
+      "required_new_capability": [
+        "privacy and UI"
+      ],
+      "risk_of_overextension": "Y* may mistake an internal primitive for a buyer-facing product before pain is proven.",
+      "transferable_domains": [
+        "education",
+        "company ops",
+        "personal knowledge"
+      ]
+    }
+  ],
+  "abstract_capability_count": 14,
+  "artifact_id": "e35_capability_abstraction_recombination_method",
+  "examples_are_probes_not_routes": true,
+  "method_rule": "Ask what abstract capability can transfer to a distant pain, not what current asset can be packaged.",
+  "new_capability_requirements_count": 14,
+  "non_governance_transfer_count": 7
+}

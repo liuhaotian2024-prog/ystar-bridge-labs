@@ -1,0 +1,782 @@
+{
+  "artifact_id": "e35_cross_domain_universe_expansion_method",
+  "open_ended_universe_method": true,
+  "product_selected": false,
+  "universe_count": 18,
+  "universes": [
+    {
+      "budget_owner_or_adopter": "individual, household, founder, team lead, operator, school, enterprise, insurer, or platform depending on universe",
+      "core_human_or_business_pain": "people or organizations cannot reliably transition from intention to action with enough trust, feedback, and adaptation",
+      "crude_demo_forms": [
+        "storyboard",
+        "no-send packet",
+        "interactive mock",
+        "manual concierge simulation",
+        "small local prototype"
+      ],
+      "current_broken_substitutes": [
+        "manual tracking",
+        "generic apps",
+        "consultants",
+        "dashboards",
+        "habit reminders"
+      ],
+      "fastest_evidence_seeking_route": "owner-approved interview/review or public observation; no E35 outreach",
+      "hidden_emotional_social_job": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "name": "human body / sleep / waking / energy",
+      "new_capability_required": [
+        "domain-specific sensing",
+        "behavior design",
+        "buyer-language validation"
+      ],
+      "possible_y_star_capability_transfer": [
+        "evidence binding",
+        "residual learning",
+        "intent modeling",
+        "route reasoning",
+        "no-fake classification"
+      ],
+      "relevant_primitive_shifts": [
+        "tool -> actor",
+        "routine -> adaptive loop",
+        "demo -> proof",
+        "permission -> delegated agency"
+      ],
+      "universe_id": "domain_universe_01",
+      "why_may_fit_y_star": "Y* can reason about action, evidence, residual, and learning boundaries.",
+      "why_may_not_fit_y_star": "domain may require hardware, regulated expertise, distribution, or consumer taste outside current assets.",
+      "willingness_to_pay_hypothesis": "payment appears only if the method removes friction, risk, waste, or emotional load in a concrete routine"
+    },
+    {
+      "budget_owner_or_adopter": "individual, household, founder, team lead, operator, school, enterprise, insurer, or platform depending on universe",
+      "core_human_or_business_pain": "people or organizations cannot reliably transition from intention to action with enough trust, feedback, and adaptation",
+      "crude_demo_forms": [
+        "storyboard",
+        "no-send packet",
+        "interactive mock",
+        "manual concierge simulation",
+        "small local prototype"
+      ],
+      "current_broken_substitutes": [
+        "manual tracking",
+        "generic apps",
+        "consultants",
+        "dashboards",
+        "habit reminders"
+      ],
+      "fastest_evidence_seeking_route": "owner-approved interview/review or public observation; no E35 outreach",
+      "hidden_emotional_social_job": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "name": "human emotion / anxiety / motivation / loneliness / transition states",
+      "new_capability_required": [
+        "domain-specific sensing",
+        "behavior design",
+        "buyer-language validation"
+      ],
+      "possible_y_star_capability_transfer": [
+        "evidence binding",
+        "residual learning",
+        "intent modeling",
+        "route reasoning",
+        "no-fake classification"
+      ],
+      "relevant_primitive_shifts": [
+        "tool -> actor",
+        "routine -> adaptive loop",
+        "demo -> proof",
+        "permission -> delegated agency"
+      ],
+      "universe_id": "domain_universe_02",
+      "why_may_fit_y_star": "Y* can reason about action, evidence, residual, and learning boundaries.",
+      "why_may_not_fit_y_star": "domain may require hardware, regulated expertise, distribution, or consumer taste outside current assets.",
+      "willingness_to_pay_hypothesis": "payment appears only if the method removes friction, risk, waste, or emotional load in a concrete routine"
+    },
+    {
+      "budget_owner_or_adopter": "individual, household, founder, team lead, operator, school, enterprise, insurer, or platform depending on universe",
+      "core_human_or_business_pain": "people or organizations cannot reliably transition from intention to action with enough trust, feedback, and adaptation",
+      "crude_demo_forms": [
+        "storyboard",
+        "no-send packet",
+        "interactive mock",
+        "manual concierge simulation",
+        "small local prototype"
+      ],
+      "current_broken_substitutes": [
+        "manual tracking",
+        "generic apps",
+        "consultants",
+        "dashboards",
+        "habit reminders"
+      ],
+      "fastest_evidence_seeking_route": "owner-approved interview/review or public observation; no E35 outreach",
+      "hidden_emotional_social_job": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "name": "home / family / environment / rituals",
+      "new_capability_required": [
+        "domain-specific sensing",
+        "behavior design",
+        "buyer-language validation"
+      ],
+      "possible_y_star_capability_transfer": [
+        "evidence binding",
+        "residual learning",
+        "intent modeling",
+        "route reasoning",
+        "no-fake classification"
+      ],
+      "relevant_primitive_shifts": [
+        "tool -> actor",
+        "routine -> adaptive loop",
+        "demo -> proof",
+        "permission -> delegated agency"
+      ],
+      "universe_id": "domain_universe_03",
+      "why_may_fit_y_star": "Y* can reason about action, evidence, residual, and learning boundaries.",
+      "why_may_not_fit_y_star": "domain may require hardware, regulated expertise, distribution, or consumer taste outside current assets.",
+      "willingness_to_pay_hypothesis": "payment appears only if the method removes friction, risk, waste, or emotional load in a concrete routine"
+    },
+    {
+      "budget_owner_or_adopter": "individual, household, founder, team lead, operator, school, enterprise, insurer, or platform depending on universe",
+      "core_human_or_business_pain": "people or organizations cannot reliably transition from intention to action with enough trust, feedback, and adaptation",
+      "crude_demo_forms": [
+        "storyboard",
+        "no-send packet",
+        "interactive mock",
+        "manual concierge simulation",
+        "small local prototype"
+      ],
+      "current_broken_substitutes": [
+        "manual tracking",
+        "generic apps",
+        "consultants",
+        "dashboards",
+        "habit reminders"
+      ],
+      "fastest_evidence_seeking_route": "owner-approved interview/review or public observation; no E35 outreach",
+      "hidden_emotional_social_job": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "name": "education / learning / student development",
+      "new_capability_required": [
+        "domain-specific sensing",
+        "behavior design",
+        "buyer-language validation"
+      ],
+      "possible_y_star_capability_transfer": [
+        "evidence binding",
+        "residual learning",
+        "intent modeling",
+        "route reasoning",
+        "no-fake classification"
+      ],
+      "relevant_primitive_shifts": [
+        "tool -> actor",
+        "routine -> adaptive loop",
+        "demo -> proof",
+        "permission -> delegated agency"
+      ],
+      "universe_id": "domain_universe_04",
+      "why_may_fit_y_star": "Y* can reason about action, evidence, residual, and learning boundaries.",
+      "why_may_not_fit_y_star": "domain may require hardware, regulated expertise, distribution, or consumer taste outside current assets.",
+      "willingness_to_pay_hypothesis": "payment appears only if the method removes friction, risk, waste, or emotional load in a concrete routine"
+    },
+    {
+      "budget_owner_or_adopter": "individual, household, founder, team lead, operator, school, enterprise, insurer, or platform depending on universe",
+      "core_human_or_business_pain": "people or organizations cannot reliably transition from intention to action with enough trust, feedback, and adaptation",
+      "crude_demo_forms": [
+        "storyboard",
+        "no-send packet",
+        "interactive mock",
+        "manual concierge simulation",
+        "small local prototype"
+      ],
+      "current_broken_substitutes": [
+        "manual tracking",
+        "generic apps",
+        "consultants",
+        "dashboards",
+        "habit reminders"
+      ],
+      "fastest_evidence_seeking_route": "owner-approved interview/review or public observation; no E35 outreach",
+      "hidden_emotional_social_job": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "name": "AI tool productivity / AI workflow yield",
+      "new_capability_required": [
+        "domain-specific sensing",
+        "behavior design",
+        "buyer-language validation"
+      ],
+      "possible_y_star_capability_transfer": [
+        "evidence binding",
+        "residual learning",
+        "intent modeling",
+        "route reasoning",
+        "no-fake classification"
+      ],
+      "relevant_primitive_shifts": [
+        "tool -> actor",
+        "routine -> adaptive loop",
+        "demo -> proof",
+        "permission -> delegated agency"
+      ],
+      "universe_id": "domain_universe_05",
+      "why_may_fit_y_star": "Y* can reason about action, evidence, residual, and learning boundaries.",
+      "why_may_not_fit_y_star": "domain may require hardware, regulated expertise, distribution, or consumer taste outside current assets.",
+      "willingness_to_pay_hypothesis": "payment appears only if the method removes friction, risk, waste, or emotional load in a concrete routine"
+    },
+    {
+      "budget_owner_or_adopter": "individual, household, founder, team lead, operator, school, enterprise, insurer, or platform depending on universe",
+      "core_human_or_business_pain": "people or organizations cannot reliably transition from intention to action with enough trust, feedback, and adaptation",
+      "crude_demo_forms": [
+        "storyboard",
+        "no-send packet",
+        "interactive mock",
+        "manual concierge simulation",
+        "small local prototype"
+      ],
+      "current_broken_substitutes": [
+        "manual tracking",
+        "generic apps",
+        "consultants",
+        "dashboards",
+        "habit reminders"
+      ],
+      "fastest_evidence_seeking_route": "owner-approved interview/review or public observation; no E35 outreach",
+      "hidden_emotional_social_job": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "name": "founder / executive decision-making",
+      "new_capability_required": [
+        "domain-specific sensing",
+        "behavior design",
+        "buyer-language validation"
+      ],
+      "possible_y_star_capability_transfer": [
+        "evidence binding",
+        "residual learning",
+        "intent modeling",
+        "route reasoning",
+        "no-fake classification"
+      ],
+      "relevant_primitive_shifts": [
+        "tool -> actor",
+        "routine -> adaptive loop",
+        "demo -> proof",
+        "permission -> delegated agency"
+      ],
+      "universe_id": "domain_universe_06",
+      "why_may_fit_y_star": "Y* can reason about action, evidence, residual, and learning boundaries.",
+      "why_may_not_fit_y_star": "domain may require hardware, regulated expertise, distribution, or consumer taste outside current assets.",
+      "willingness_to_pay_hypothesis": "payment appears only if the method removes friction, risk, waste, or emotional load in a concrete routine"
+    },
+    {
+      "budget_owner_or_adopter": "individual, household, founder, team lead, operator, school, enterprise, insurer, or platform depending on universe",
+      "core_human_or_business_pain": "people or organizations cannot reliably transition from intention to action with enough trust, feedback, and adaptation",
+      "crude_demo_forms": [
+        "storyboard",
+        "no-send packet",
+        "interactive mock",
+        "manual concierge simulation",
+        "small local prototype"
+      ],
+      "current_broken_substitutes": [
+        "manual tracking",
+        "generic apps",
+        "consultants",
+        "dashboards",
+        "habit reminders"
+      ],
+      "fastest_evidence_seeking_route": "owner-approved interview/review or public observation; no E35 outreach",
+      "hidden_emotional_social_job": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "name": "small business operations",
+      "new_capability_required": [
+        "domain-specific sensing",
+        "behavior design",
+        "buyer-language validation"
+      ],
+      "possible_y_star_capability_transfer": [
+        "evidence binding",
+        "residual learning",
+        "intent modeling",
+        "route reasoning",
+        "no-fake classification"
+      ],
+      "relevant_primitive_shifts": [
+        "tool -> actor",
+        "routine -> adaptive loop",
+        "demo -> proof",
+        "permission -> delegated agency"
+      ],
+      "universe_id": "domain_universe_07",
+      "why_may_fit_y_star": "Y* can reason about action, evidence, residual, and learning boundaries.",
+      "why_may_not_fit_y_star": "domain may require hardware, regulated expertise, distribution, or consumer taste outside current assets.",
+      "willingness_to_pay_hypothesis": "payment appears only if the method removes friction, risk, waste, or emotional load in a concrete routine"
+    },
+    {
+      "budget_owner_or_adopter": "individual, household, founder, team lead, operator, school, enterprise, insurer, or platform depending on universe",
+      "core_human_or_business_pain": "people or organizations cannot reliably transition from intention to action with enough trust, feedback, and adaptation",
+      "crude_demo_forms": [
+        "storyboard",
+        "no-send packet",
+        "interactive mock",
+        "manual concierge simulation",
+        "small local prototype"
+      ],
+      "current_broken_substitutes": [
+        "manual tracking",
+        "generic apps",
+        "consultants",
+        "dashboards",
+        "habit reminders"
+      ],
+      "fastest_evidence_seeking_route": "owner-approved interview/review or public observation; no E35 outreach",
+      "hidden_emotional_social_job": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "name": "professional services",
+      "new_capability_required": [
+        "domain-specific sensing",
+        "behavior design",
+        "buyer-language validation"
+      ],
+      "possible_y_star_capability_transfer": [
+        "evidence binding",
+        "residual learning",
+        "intent modeling",
+        "route reasoning",
+        "no-fake classification"
+      ],
+      "relevant_primitive_shifts": [
+        "tool -> actor",
+        "routine -> adaptive loop",
+        "demo -> proof",
+        "permission -> delegated agency"
+      ],
+      "universe_id": "domain_universe_08",
+      "why_may_fit_y_star": "Y* can reason about action, evidence, residual, and learning boundaries.",
+      "why_may_not_fit_y_star": "domain may require hardware, regulated expertise, distribution, or consumer taste outside current assets.",
+      "willingness_to_pay_hypothesis": "payment appears only if the method removes friction, risk, waste, or emotional load in a concrete routine"
+    },
+    {
+      "budget_owner_or_adopter": "individual, household, founder, team lead, operator, school, enterprise, insurer, or platform depending on universe",
+      "core_human_or_business_pain": "people or organizations cannot reliably transition from intention to action with enough trust, feedback, and adaptation",
+      "crude_demo_forms": [
+        "storyboard",
+        "no-send packet",
+        "interactive mock",
+        "manual concierge simulation",
+        "small local prototype"
+      ],
+      "current_broken_substitutes": [
+        "manual tracking",
+        "generic apps",
+        "consultants",
+        "dashboards",
+        "habit reminders"
+      ],
+      "fastest_evidence_seeking_route": "owner-approved interview/review or public observation; no E35 outreach",
+      "hidden_emotional_social_job": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "name": "creator economy",
+      "new_capability_required": [
+        "domain-specific sensing",
+        "behavior design",
+        "buyer-language validation"
+      ],
+      "possible_y_star_capability_transfer": [
+        "evidence binding",
+        "residual learning",
+        "intent modeling",
+        "route reasoning",
+        "no-fake classification"
+      ],
+      "relevant_primitive_shifts": [
+        "tool -> actor",
+        "routine -> adaptive loop",
+        "demo -> proof",
+        "permission -> delegated agency"
+      ],
+      "universe_id": "domain_universe_09",
+      "why_may_fit_y_star": "Y* can reason about action, evidence, residual, and learning boundaries.",
+      "why_may_not_fit_y_star": "domain may require hardware, regulated expertise, distribution, or consumer taste outside current assets.",
+      "willingness_to_pay_hypothesis": "payment appears only if the method removes friction, risk, waste, or emotional load in a concrete routine"
+    },
+    {
+      "budget_owner_or_adopter": "individual, household, founder, team lead, operator, school, enterprise, insurer, or platform depending on universe",
+      "core_human_or_business_pain": "people or organizations cannot reliably transition from intention to action with enough trust, feedback, and adaptation",
+      "crude_demo_forms": [
+        "storyboard",
+        "no-send packet",
+        "interactive mock",
+        "manual concierge simulation",
+        "small local prototype"
+      ],
+      "current_broken_substitutes": [
+        "manual tracking",
+        "generic apps",
+        "consultants",
+        "dashboards",
+        "habit reminders"
+      ],
+      "fastest_evidence_seeking_route": "owner-approved interview/review or public observation; no E35 outreach",
+      "hidden_emotional_social_job": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "name": "enterprise AI transformation",
+      "new_capability_required": [
+        "domain-specific sensing",
+        "behavior design",
+        "buyer-language validation"
+      ],
+      "possible_y_star_capability_transfer": [
+        "evidence binding",
+        "residual learning",
+        "intent modeling",
+        "route reasoning",
+        "no-fake classification"
+      ],
+      "relevant_primitive_shifts": [
+        "tool -> actor",
+        "routine -> adaptive loop",
+        "demo -> proof",
+        "permission -> delegated agency"
+      ],
+      "universe_id": "domain_universe_10",
+      "why_may_fit_y_star": "Y* can reason about action, evidence, residual, and learning boundaries.",
+      "why_may_not_fit_y_star": "domain may require hardware, regulated expertise, distribution, or consumer taste outside current assets.",
+      "willingness_to_pay_hypothesis": "payment appears only if the method removes friction, risk, waste, or emotional load in a concrete routine"
+    },
+    {
+      "budget_owner_or_adopter": "individual, household, founder, team lead, operator, school, enterprise, insurer, or platform depending on universe",
+      "core_human_or_business_pain": "people or organizations cannot reliably transition from intention to action with enough trust, feedback, and adaptation",
+      "crude_demo_forms": [
+        "storyboard",
+        "no-send packet",
+        "interactive mock",
+        "manual concierge simulation",
+        "small local prototype"
+      ],
+      "current_broken_substitutes": [
+        "manual tracking",
+        "generic apps",
+        "consultants",
+        "dashboards",
+        "habit reminders"
+      ],
+      "fastest_evidence_seeking_route": "owner-approved interview/review or public observation; no E35 outreach",
+      "hidden_emotional_social_job": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "name": "agent-to-agent economy",
+      "new_capability_required": [
+        "domain-specific sensing",
+        "behavior design",
+        "buyer-language validation"
+      ],
+      "possible_y_star_capability_transfer": [
+        "evidence binding",
+        "residual learning",
+        "intent modeling",
+        "route reasoning",
+        "no-fake classification"
+      ],
+      "relevant_primitive_shifts": [
+        "tool -> actor",
+        "routine -> adaptive loop",
+        "demo -> proof",
+        "permission -> delegated agency"
+      ],
+      "universe_id": "domain_universe_11",
+      "why_may_fit_y_star": "Y* can reason about action, evidence, residual, and learning boundaries.",
+      "why_may_not_fit_y_star": "domain may require hardware, regulated expertise, distribution, or consumer taste outside current assets.",
+      "willingness_to_pay_hypothesis": "payment appears only if the method removes friction, risk, waste, or emotional load in a concrete routine"
+    },
+    {
+      "budget_owner_or_adopter": "individual, household, founder, team lead, operator, school, enterprise, insurer, or platform depending on universe",
+      "core_human_or_business_pain": "people or organizations cannot reliably transition from intention to action with enough trust, feedback, and adaptation",
+      "crude_demo_forms": [
+        "storyboard",
+        "no-send packet",
+        "interactive mock",
+        "manual concierge simulation",
+        "small local prototype"
+      ],
+      "current_broken_substitutes": [
+        "manual tracking",
+        "generic apps",
+        "consultants",
+        "dashboards",
+        "habit reminders"
+      ],
+      "fastest_evidence_seeking_route": "owner-approved interview/review or public observation; no E35 outreach",
+      "hidden_emotional_social_job": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "name": "autonomous company operations",
+      "new_capability_required": [
+        "domain-specific sensing",
+        "behavior design",
+        "buyer-language validation"
+      ],
+      "possible_y_star_capability_transfer": [
+        "evidence binding",
+        "residual learning",
+        "intent modeling",
+        "route reasoning",
+        "no-fake classification"
+      ],
+      "relevant_primitive_shifts": [
+        "tool -> actor",
+        "routine -> adaptive loop",
+        "demo -> proof",
+        "permission -> delegated agency"
+      ],
+      "universe_id": "domain_universe_12",
+      "why_may_fit_y_star": "Y* can reason about action, evidence, residual, and learning boundaries.",
+      "why_may_not_fit_y_star": "domain may require hardware, regulated expertise, distribution, or consumer taste outside current assets.",
+      "willingness_to_pay_hypothesis": "payment appears only if the method removes friction, risk, waste, or emotional load in a concrete routine"
+    },
+    {
+      "budget_owner_or_adopter": "individual, household, founder, team lead, operator, school, enterprise, insurer, or platform depending on universe",
+      "core_human_or_business_pain": "people or organizations cannot reliably transition from intention to action with enough trust, feedback, and adaptation",
+      "crude_demo_forms": [
+        "storyboard",
+        "no-send packet",
+        "interactive mock",
+        "manual concierge simulation",
+        "small local prototype"
+      ],
+      "current_broken_substitutes": [
+        "manual tracking",
+        "generic apps",
+        "consultants",
+        "dashboards",
+        "habit reminders"
+      ],
+      "fastest_evidence_seeking_route": "owner-approved interview/review or public observation; no E35 outreach",
+      "hidden_emotional_social_job": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "name": "hardware + AI hybrid products",
+      "new_capability_required": [
+        "domain-specific sensing",
+        "behavior design",
+        "buyer-language validation"
+      ],
+      "possible_y_star_capability_transfer": [
+        "evidence binding",
+        "residual learning",
+        "intent modeling",
+        "route reasoning",
+        "no-fake classification"
+      ],
+      "relevant_primitive_shifts": [
+        "tool -> actor",
+        "routine -> adaptive loop",
+        "demo -> proof",
+        "permission -> delegated agency"
+      ],
+      "universe_id": "domain_universe_13",
+      "why_may_fit_y_star": "Y* can reason about action, evidence, residual, and learning boundaries.",
+      "why_may_not_fit_y_star": "domain may require hardware, regulated expertise, distribution, or consumer taste outside current assets.",
+      "willingness_to_pay_hypothesis": "payment appears only if the method removes friction, risk, waste, or emotional load in a concrete routine"
+    },
+    {
+      "budget_owner_or_adopter": "individual, household, founder, team lead, operator, school, enterprise, insurer, or platform depending on universe",
+      "core_human_or_business_pain": "people or organizations cannot reliably transition from intention to action with enough trust, feedback, and adaptation",
+      "crude_demo_forms": [
+        "storyboard",
+        "no-send packet",
+        "interactive mock",
+        "manual concierge simulation",
+        "small local prototype"
+      ],
+      "current_broken_substitutes": [
+        "manual tracking",
+        "generic apps",
+        "consultants",
+        "dashboards",
+        "habit reminders"
+      ],
+      "fastest_evidence_seeking_route": "owner-approved interview/review or public observation; no E35 outreach",
+      "hidden_emotional_social_job": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "name": "insurance / liability / audit / trust systems",
+      "new_capability_required": [
+        "domain-specific sensing",
+        "behavior design",
+        "buyer-language validation"
+      ],
+      "possible_y_star_capability_transfer": [
+        "evidence binding",
+        "residual learning",
+        "intent modeling",
+        "route reasoning",
+        "no-fake classification"
+      ],
+      "relevant_primitive_shifts": [
+        "tool -> actor",
+        "routine -> adaptive loop",
+        "demo -> proof",
+        "permission -> delegated agency"
+      ],
+      "universe_id": "domain_universe_14",
+      "why_may_fit_y_star": "Y* can reason about action, evidence, residual, and learning boundaries.",
+      "why_may_not_fit_y_star": "domain may require hardware, regulated expertise, distribution, or consumer taste outside current assets.",
+      "willingness_to_pay_hypothesis": "payment appears only if the method removes friction, risk, waste, or emotional load in a concrete routine"
+    },
+    {
+      "budget_owner_or_adopter": "individual, household, founder, team lead, operator, school, enterprise, insurer, or platform depending on universe",
+      "core_human_or_business_pain": "people or organizations cannot reliably transition from intention to action with enough trust, feedback, and adaptation",
+      "crude_demo_forms": [
+        "storyboard",
+        "no-send packet",
+        "interactive mock",
+        "manual concierge simulation",
+        "small local prototype"
+      ],
+      "current_broken_substitutes": [
+        "manual tracking",
+        "generic apps",
+        "consultants",
+        "dashboards",
+        "habit reminders"
+      ],
+      "fastest_evidence_seeking_route": "owner-approved interview/review or public observation; no E35 outreach",
+      "hidden_emotional_social_job": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "name": "social institutions / proof / certification / legitimacy",
+      "new_capability_required": [
+        "domain-specific sensing",
+        "behavior design",
+        "buyer-language validation"
+      ],
+      "possible_y_star_capability_transfer": [
+        "evidence binding",
+        "residual learning",
+        "intent modeling",
+        "route reasoning",
+        "no-fake classification"
+      ],
+      "relevant_primitive_shifts": [
+        "tool -> actor",
+        "routine -> adaptive loop",
+        "demo -> proof",
+        "permission -> delegated agency"
+      ],
+      "universe_id": "domain_universe_15",
+      "why_may_fit_y_star": "Y* can reason about action, evidence, residual, and learning boundaries.",
+      "why_may_not_fit_y_star": "domain may require hardware, regulated expertise, distribution, or consumer taste outside current assets.",
+      "willingness_to_pay_hypothesis": "payment appears only if the method removes friction, risk, waste, or emotional load in a concrete routine"
+    },
+    {
+      "budget_owner_or_adopter": "individual, household, founder, team lead, operator, school, enterprise, insurer, or platform depending on universe",
+      "core_human_or_business_pain": "people or organizations cannot reliably transition from intention to action with enough trust, feedback, and adaptation",
+      "crude_demo_forms": [
+        "storyboard",
+        "no-send packet",
+        "interactive mock",
+        "manual concierge simulation",
+        "small local prototype"
+      ],
+      "current_broken_substitutes": [
+        "manual tracking",
+        "generic apps",
+        "consultants",
+        "dashboards",
+        "habit reminders"
+      ],
+      "fastest_evidence_seeking_route": "owner-approved interview/review or public observation; no E35 outreach",
+      "hidden_emotional_social_job": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "name": "health behavior change and care navigation",
+      "new_capability_required": [
+        "domain-specific sensing",
+        "behavior design",
+        "buyer-language validation"
+      ],
+      "possible_y_star_capability_transfer": [
+        "evidence binding",
+        "residual learning",
+        "intent modeling",
+        "route reasoning",
+        "no-fake classification"
+      ],
+      "relevant_primitive_shifts": [
+        "tool -> actor",
+        "routine -> adaptive loop",
+        "demo -> proof",
+        "permission -> delegated agency"
+      ],
+      "universe_id": "domain_universe_16",
+      "why_may_fit_y_star": "Y* can reason about action, evidence, residual, and learning boundaries.",
+      "why_may_not_fit_y_star": "domain may require hardware, regulated expertise, distribution, or consumer taste outside current assets.",
+      "willingness_to_pay_hypothesis": "payment appears only if the method removes friction, risk, waste, or emotional load in a concrete routine"
+    },
+    {
+      "budget_owner_or_adopter": "individual, household, founder, team lead, operator, school, enterprise, insurer, or platform depending on universe",
+      "core_human_or_business_pain": "people or organizations cannot reliably transition from intention to action with enough trust, feedback, and adaptation",
+      "crude_demo_forms": [
+        "storyboard",
+        "no-send packet",
+        "interactive mock",
+        "manual concierge simulation",
+        "small local prototype"
+      ],
+      "current_broken_substitutes": [
+        "manual tracking",
+        "generic apps",
+        "consultants",
+        "dashboards",
+        "habit reminders"
+      ],
+      "fastest_evidence_seeking_route": "owner-approved interview/review or public observation; no E35 outreach",
+      "hidden_emotional_social_job": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "name": "local community coordination",
+      "new_capability_required": [
+        "domain-specific sensing",
+        "behavior design",
+        "buyer-language validation"
+      ],
+      "possible_y_star_capability_transfer": [
+        "evidence binding",
+        "residual learning",
+        "intent modeling",
+        "route reasoning",
+        "no-fake classification"
+      ],
+      "relevant_primitive_shifts": [
+        "tool -> actor",
+        "routine -> adaptive loop",
+        "demo -> proof",
+        "permission -> delegated agency"
+      ],
+      "universe_id": "domain_universe_17",
+      "why_may_fit_y_star": "Y* can reason about action, evidence, residual, and learning boundaries.",
+      "why_may_not_fit_y_star": "domain may require hardware, regulated expertise, distribution, or consumer taste outside current assets.",
+      "willingness_to_pay_hypothesis": "payment appears only if the method removes friction, risk, waste, or emotional load in a concrete routine"
+    },
+    {
+      "budget_owner_or_adopter": "individual, household, founder, team lead, operator, school, enterprise, insurer, or platform depending on universe",
+      "core_human_or_business_pain": "people or organizations cannot reliably transition from intention to action with enough trust, feedback, and adaptation",
+      "crude_demo_forms": [
+        "storyboard",
+        "no-send packet",
+        "interactive mock",
+        "manual concierge simulation",
+        "small local prototype"
+      ],
+      "current_broken_substitutes": [
+        "manual tracking",
+        "generic apps",
+        "consultants",
+        "dashboards",
+        "habit reminders"
+      ],
+      "fastest_evidence_seeking_route": "owner-approved interview/review or public observation; no E35 outreach",
+      "hidden_emotional_social_job": "reduce anxiety, preserve dignity, feel in control, or make invisible work legible",
+      "name": "personal finance and household operations",
+      "new_capability_required": [
+        "domain-specific sensing",
+        "behavior design",
+        "buyer-language validation"
+      ],
+      "possible_y_star_capability_transfer": [
+        "evidence binding",
+        "residual learning",
+        "intent modeling",
+        "route reasoning",
+        "no-fake classification"
+      ],
+      "relevant_primitive_shifts": [
+        "tool -> actor",
+        "routine -> adaptive loop",
+        "demo -> proof",
+        "permission -> delegated agency"
+      ],
+      "universe_id": "domain_universe_18",
+      "why_may_fit_y_star": "Y* can reason about action, evidence, residual, and learning boundaries.",
+      "why_may_not_fit_y_star": "domain may require hardware, regulated expertise, distribution, or consumer taste outside current assets.",
+      "willingness_to_pay_hypothesis": "payment appears only if the method removes friction, risk, waste, or emotional load in a concrete routine"
+    }
+  ]
+}

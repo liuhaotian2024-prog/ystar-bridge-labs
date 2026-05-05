@@ -1,0 +1,71 @@
+{
+  "artifact_id": "e35_six_dimensional_ceo_cognition_model",
+  "canonical_model_discovered": false,
+  "discovery_summary": "Repo search found many CEO brain/KG deltas and method updates, but no canonical six-dimensional cognition model.",
+  "faculties_are_not_separate_brains": true,
+  "model_status": "provisional_methodology_not_canonical_learning",
+  "one_brain_model": true,
+  "six_faculties": [
+    {
+      "faculty": "logical_causal",
+      "outputs": [
+        "contradictions",
+        "missing evidence",
+        "causal assumptions",
+        "unsupported leaps"
+      ],
+      "role": "contradiction detection, evidence sufficiency, causal chain, false inference prevention"
+    },
+    {
+      "faculty": "innovation_invention",
+      "outputs": [
+        "new category hypotheses",
+        "recombinations",
+        "surprising wedges"
+      ],
+      "role": "non-obvious recombination, analogy transfer, category creation, strange-but-plausible generation"
+    },
+    {
+      "faculty": "strategic",
+      "outputs": [
+        "timing",
+        "moat hypothesis",
+        "compounding path",
+        "strategic risk"
+      ],
+      "role": "market timing, wedge-to-platform path, moat, compounding advantage, capital allocation logic"
+    },
+    {
+      "faculty": "systems",
+      "outputs": [
+        "actor map",
+        "feedback loops",
+        "bottlenecks",
+        "interfaces"
+      ],
+      "role": "actors, feedback loops, interfaces, constraints, control points, route dependencies"
+    },
+    {
+      "faculty": "human_emotional_relational",
+      "outputs": [
+        "felt pain",
+        "identity job",
+        "adoption emotion",
+        "trust texture"
+      ],
+      "role": "pain intensity, hidden emotional job, social identity job, trust, delight, adoption friction, daily texture"
+    },
+    {
+      "faculty": "execution_commercial",
+      "outputs": [
+        "crude demo",
+        "first proof",
+        "owner burden",
+        "revenue route",
+        "reversibility"
+      ],
+      "role": "demo feasibility, validation speed, owner burden, first revenue path, reversibility, governance boundary"
+    }
+  ],
+  "unified_decision_object_required": true
+}

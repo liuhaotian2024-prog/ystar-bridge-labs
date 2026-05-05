@@ -1,0 +1,32 @@
+{
+  "artifact_id": "e35_superhuman_ceo_cognition_challenge",
+  "challenge_questions": [
+    "What would a normal founder miss?",
+    "What would a product manager reduce this to incorrectly?",
+    "What would a McKinsey-style CEO integrator notice?",
+    "What would an Amazon working-backwards process ask?",
+    "What would a Jobs-to-Be-Done lens reveal?",
+    "What would design thinking reveal about human desirability?",
+    "What would integrative thinking create beyond the given options?",
+    "What would a science-fiction-level but commercially disciplined CEO imagine?",
+    "What would become obvious if 1 billion agents existed?",
+    "What would become obvious if every human used 20 AI tools daily?",
+    "What would become obvious if 100 million households had AI-controlled micro-environments?",
+    "What could become a new category rather than a feature?",
+    "What could become a new institution rather than a product?",
+    "What could become a new human-machine interface primitive?"
+  ],
+  "challenge_status": "created",
+  "questions_are_prompts_not_answers": true,
+  "strongest_new_questions_added": [
+    "What would a normal founder miss?",
+    "What would a product manager reduce this to incorrectly?",
+    "What would a McKinsey-style CEO integrator notice?",
+    "What would an Amazon working-backwards process ask?",
+    "What would a Jobs-to-Be-Done lens reveal?",
+    "What would design thinking reveal about human desirability?",
+    "What could become a new category rather than a feature?",
+    "What could become a new institution rather than a product?",
+    "What could become a new human-machine interface primitive?"
+  ]
+}

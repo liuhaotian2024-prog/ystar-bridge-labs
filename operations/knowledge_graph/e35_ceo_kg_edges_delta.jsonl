@@ -1,0 +1,13 @@
+{"relation": "extended_by", "source": "e34_strategic_imagination_runtime", "target": "e35_unified_six_dimensional_ceo_cognition"}
+{"relation": "guards", "source": "e35_one_brain_guard", "target": "e35_unified_six_dimensional_ceo_cognition"}
+{"relation": "feeds", "source": "e35_cross_domain_universe_method", "target": "e35_cross_domain_opportunity_field"}
+{"relation": "feeds", "source": "e35_capability_recombination", "target": "e35_cross_domain_opportunity_field"}
+{"relation": "expands", "source": "e35_multi_hop_jump_engine", "target": "e35_cross_domain_opportunity_field"}
+{"relation": "evaluates", "source": "e35_six_faculty_protocol", "target": "e35_cross_domain_opportunity_field"}
+{"relation": "challenges", "source": "e35_superhuman_challenge", "target": "e35_cross_domain_opportunity_field"}
+{"relation": "audits", "source": "e35_methodology_quality_audit", "target": "e35_unified_six_dimensional_ceo_cognition"}
+{"relation": "bounds", "source": "e35_not_customer_validation", "target": "e35_cross_domain_opportunity_field"}
+{"relation": "prevents", "source": "e35_examples_as_probes", "target": "hardcoded_product_route"}
+{"relation": "routes_to", "source": "e35_cross_domain_opportunity_field", "target": "e35_next_horizon"}
+{"relation": "updates", "source": "e35_unified_six_dimensional_ceo_cognition", "target": "CEO brain"}
+{"relation": "does_not_replace", "source": "e35_unified_six_dimensional_ceo_cognition", "target": "CEO KG"}

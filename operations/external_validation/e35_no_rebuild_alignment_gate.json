@@ -1,0 +1,23 @@
+{
+  "artifact_id": "e35_no_rebuild_alignment_gate",
+  "cross_domain_opportunity_field_generated": true,
+  "examples_remained_probes": true,
+  "gate_status": "passed",
+  "must_not_rebuild": [
+    "CEO brain",
+    "CEO KG",
+    "CIEU",
+    "CZL",
+    "route registry",
+    "observation runner",
+    "MVP selector",
+    "Black Box builder",
+    "provider sandbox",
+    "delivery bridge"
+  ],
+  "no_existing_wheel_rebuilt": true,
+  "no_second_ceo_brain_created": true,
+  "one_brain_integration_guard_passed": true,
+  "product_answer_hardcoded": false,
+  "six_dimensional_faculties_created_as_one_brain_method": true
+}

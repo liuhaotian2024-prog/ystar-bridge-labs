@@ -1,0 +1,35 @@
+{
+  "artifact_id": "e35_six_dimensional_opportunity_cognition_protocol",
+  "faculty_tensions_preserved_by": "Tensions are explicit records, not averaged into a single score.",
+  "naive_score_collapse_allowed": false,
+  "record_schema": {
+    "capability_transfer": [],
+    "commercial_reality_status": "",
+    "domain_universe": "",
+    "evidence_status": "",
+    "faculty_tension_map": [],
+    "imagination_status": "",
+    "institutional_or_human_void": "",
+    "new_capability_needed": [],
+    "next_proof_required": "",
+    "no_fake_evidence_boundary": "",
+    "opportunity_id": "",
+    "owner_burden": "",
+    "primitive_shift": "",
+    "six_faculty_outputs": {
+      "execution_commercial": "",
+      "human_emotional_relational": "",
+      "innovation_invention": "",
+      "logical_causal": "",
+      "strategic": "",
+      "systems": ""
+    }
+  },
+  "tension_examples": [
+    "high innovation but weak execution",
+    "high emotional pain but weak Y* fit",
+    "high strategic compounding but poor near-term validation",
+    "high feasibility but low imagination",
+    "high evidence but low category creation"
+  ]
+}
